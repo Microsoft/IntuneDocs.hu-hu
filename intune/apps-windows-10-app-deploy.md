@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d76e170627d7e08cc3da6fe4a48eb14ee839de98
-ms.sourcegitcommit: 948ff8f56639e6dc7091134a0efd8d44efca63f2
+ms.openlocfilehash: 4e46eae92dfa145f1fc2b38379285dbb45b24590
+ms.sourcegitcommit: 864fdf995c2b41f104a98a7e2665088c2864774f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/27/2019
-ms.locfileid: "68590926"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680077"
 ---
 # <a name="windows-10-app-deployment-using-microsoft-intune"></a>Windows 10-es alkalmazások telepítése a Microsoft Intune-nal 
 
@@ -34,6 +34,8 @@ A Windows 10-es eszközökön támogatott alkalmazástípusok az üzleti alkalma
 > A modern alkalmazások telepítéséhez minimálisan szükséges Windows 10-frissítések a következők:
 > - A Windows 10 1803-as verziójához: [2018. május 23. – KB4100403 (operációs rendszer: 17134.81-es build)](https://support.microsoft.com/help/4100403/windows-10-update-kb4100403).
 > - A Windows 10 1709-es verziójához: [2018. június 21. – KB4284822 (operációs rendszer: 16299.522-es build)](https://support.microsoft.com/help/4284822).
+>
+> Csak a Windows 10 1803 és újabb verziók támogatják az alkalmazások telepítését, ha nincs elsődleges felhasználó társítva.
 
 ## <a name="windows-10-line-of-business-apps"></a>Windows 10-es üzletági alkalmazások
 

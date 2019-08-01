@@ -1,7 +1,7 @@
 ---
 title: Eszközmegfelelési szabályzat Jamf-eszközökhöz
 titleSuffix: Microsoft Intune
-description: Az Azure Active Directory feltételes hozzáférés a Microsoft Intune megfelelőségi szabályzatok használatával segítheti a biztonságos Jamf által felügyelt eszközökön.
+description: A JAMF által felügyelt eszközök biztonságossá tételéhez használja a Microsoft Intune megfelelőségi szabályzatokat Azure Active Directory feltételes hozzáféréssel.
 keywords: ''
 author: brenduns
 ms.author: brenduns
@@ -17,23 +17,26 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc4fdaea99a0e8fb247ac6a70b853497927cdc04
-ms.sourcegitcommit: 4b83697de8add3b90675c576202ef2ecb49d80b2
+ms.openlocfilehash: d23e725db965a249522f7f8fa89f8bb27bc24fd8
+ms.sourcegitcommit: 864fdf995c2b41f104a98a7e2665088c2864774f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67045213"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680009"
 ---
 # <a name="enforce-compliance-on-macs-managed-with-jamf-pro"></a>Jamf Pro által felügyelt Mac számítógépek megfelelőségének kikényszerítése
 
 Érintett kiadások: Intune az Azure Portalon
 
-Használhatja az Azure Active Directory és a Microsoft Intune feltételes hozzáférési szabályzatai biztosítják, hogy a végfelhasználók megfeleljenek a szervezeti követelményeknek. Ezeket a szabályzatokat a [Jamf Pro által felügyelt](conditional-access-integrate-jamf.md) Mac számítógépekre is alkalmazhatja. Ennek megvalósításához az Intune és a Jamf Pro konzolhoz egyaránt hozzáférésre van szüksége.
+A Azure Active Directory és az Microsoft Intune feltételes hozzáférési szabályzatai biztosítják, hogy a végfelhasználók megfeleljenek a szervezeti követelményeknek. Ezeket a szabályzatokat a [Jamf Pro által felügyelt](conditional-access-integrate-jamf.md) Mac számítógépekre is alkalmazhatja. Ennek megvalósításához az Intune és a Jamf Pro konzolhoz egyaránt hozzáférésre van szüksége.
 
 ## <a name="set-up-device-compliance-policies-in-intune"></a>Eszközmegfelelőségi szabályzatok beállítása az Intune-ban
 
-1. Nyissa meg a Microsoft Azure-t, majd az **Intune** > **Eszközmegfelelőség** > **Szabályzatok** oldalt. Nem megfelelő felhasználók és csoportok MacOS eszközökre, beleértve számos műveletek (például figyelmeztető e-mailek küldése) szabályzatokat hozhat létre.
-2. Keresse meg a kívánt csoportokat, és alkalmazza rájuk a szabályzatokat.
+1. Nyissa meg a Microsoft Azure-t, majd az **Intune** > **Eszközmegfelelőség** > **Szabályzatok** oldalt. A macOS-re vonatkozó szabályzatokat is létrehozhat, többek között a nem megfelelő felhasználóknak és csoportoknak szóló műveletek (például figyelmeztető e-mailek küldése) kiválasztásával.
+2. Válassza ki a szabályzatot > hozzárendeléseket. Belefoglalhat vagy kizárhat Azure Active Directory (AD) biztonsági csoportokat.
+3. Válassza a kiválasztott csoportok lehetőséget az Azure AD biztonsági csoportok megjelenítéséhez. Válassza ki azokat a felhasználói csoportokat, amelyekre alkalmazni szeretné a szabályzatot > válassza a mentés lehetőséget a szabályzat felhasználók számára történő telepítéséhez.
+
+A szabályzatot alkalmazta a felhasználókra. A szabályzat által megadott felhasználók által használt eszközök megfelelőségét a rendszer kiértékeli, és compliantfor jelöli meg az "eszköz megfelelőként való megjelölésének megkövetelése" beállítást Azure Active Directoryban.
 
 > [!Note]
 > A megfelelőség érdekében az Intune teljes lemeztitkosítást követel meg.
@@ -79,4 +82,4 @@ A Jamf által felügyelt eszközöknek az Intune-konzolról történő eltávol�
 ## <a name="next-steps"></a>További lépések
 
 - [Feltételes hozzáférés az Azure Active Directoryban](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal)
-- [Az Azure Active Directory feltételes hozzáférés használatának első lépései](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
+- [Ismerkedés a feltételes hozzáféréssel Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)

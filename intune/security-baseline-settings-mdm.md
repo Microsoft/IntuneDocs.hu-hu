@@ -16,23 +16,23 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c307c7baaef77c697b486adb63a2cee089e1007
-ms.sourcegitcommit: 99b74d7849fbfc8f5cf99cba33e858eeb9f537aa
+ms.openlocfilehash: 5565ce7a355136a749d79b52e4830af91684440a
+ms.sourcegitcommit: 864fdf995c2b41f104a98a7e2665088c2864774f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/31/2019
-ms.locfileid: "68671030"
+ms.locfileid: "68680040"
 ---
 # <a name="mdm-security-baseline-settings-for-intune"></a>MDM biztonsági alapkonfigurációjának beállításai az Intune-ban  
 
 Tekintse meg a Microsoft Intune által támogatott MDM biztonsági alapbeállításokat a Windows 10 vagy újabb rendszerű eszközökön. Az alapkonfigurációban a beállítások alapértelmezett értékei a megfelelő eszközök ajánlott konfigurációját jelentik, és előfordulhat, hogy nem egyeznek az alapértékekkel más biztonsági alaptervekben.  
 
-A legújabb alapverzió a **Spring 2019 Update (19H1) Mdm biztonsági** alapterve  
+A legújabb alapverzió a 2019-as **Mdm biztonsági** alapkonfiguráció.  
 
 Ha többet szeretne megtudni arról, hogy mi változott az alapkonfiguráció legújabb verziójában az előző verzióban, tekintse meg [a mi változott az új sablonban](#whats-changed-in-the-new-template).  
 
 > [!NOTE]  
-> 2019 júniusában az előzetes verziójú MDM biztonsági alapkonfigurációt a *Spring 2019 Update (19H1) sablon Mdm biztonsági* alapkonfigurációjának kiadása váltotta fel, amely általánosságban elérhető (nem előzetes verzióban). A *spring 2019 Update (19H1)* alapkonfigurációjának Mdm biztonsági alaptervének rendelkezésre állása előtt létrehozott profilok nem frissülnek, hogy TÜKRÖZZÉK a Mdm biztonsági alapkonfigurációjában a Spring 2019 Update (19H1) verziójának beállításait és értékeit.  Bár az előnézeti sablon alapján nem hozhatók létre új profilok, szerkesztheti és tovább használhatja a korábban létrehozott profilokat az előnézeti sablon alapján.   
+> Az előzetes verziójú MDM biztonsági alapkonfigurációt a 2019-es számú biztonsági alapkonfiguráció váltotta fel, amely a május 2019 sablonra vonatkozó, általánosan elérhető (nem előzetes verzióban elérhető) *Mdm biztonsági* alaptervet váltott ki. A *május 2019-es Mdm biztonsági* alapkonfigurációjának rendelkezésre állása előtt létrehozott profilok nem frissülnek, hogy TÜKRÖZZÉK a Mdm biztonsági alaptervében a 2019-es verzióra vonatkozó beállításokat és értékeket.  Bár az előnézeti sablon alapján nem hozhatók létre új profilok, szerkesztheti és tovább használhatja a korábban létrehozott profilokat az előnézeti sablon alapján.   
   
 A biztonsági alapkonfigurációk Intune-nal történő használatáról további információt a biztonsági alapkonfigurációk [használata](security-baselines.md)című témakörben talál.  
 
@@ -1825,7 +1825,7 @@ További információ: [Policy CSP-WindowsPowerShell](https://docs.microsoft.com
   **Alapértelmezett**: Enabled
 
 ## <a name="whats-changed-in-the-new-template"></a>Az új sablon módosítása
-A *Spring 2019 Update (19H1) sablon Mdm biztonsági* alapterve a következő változásokkal rendelkezik az előnézeti sablonban.
+A *május 2019 sablon Mdm biztonsági* alapterve a következő változásokkal rendelkezik az előnézeti sablonban.
 
 ### <a name="changes-to-the-baseline-settings"></a>Az alapkonfiguráció beállításainak módosításai
 A következő beállítások egyike:

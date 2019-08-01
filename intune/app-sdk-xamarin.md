@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7525971f9ab48b92c3274f56cb1046a6fde948a5
-ms.sourcegitcommit: 2614d1b08b8a78cd792aebd2ca9848f391df8550
+ms.openlocfilehash: a8d1ad3648348783306fb0bc1e61defc4197a9d9
+ms.sourcegitcommit: 864fdf995c2b41f104a98a7e2665088c2864774f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67794370"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680051"
 ---
 # <a name="microsoft-intune-app-sdk-xamarin-bindings"></a>Microsoft Intune App SDK Xamarin Bindings
 
@@ -114,6 +114,9 @@ Ha ki szeretne zárni egy osztályt a MAM-ification a remapper használatával, 
   </PropertyGroup>
 ```
 
+> [!NOTE]
+> Jelenleg a remapper hibája megakadályozza a hibakeresést a Xamarin. Android-alkalmazásokban. A manuális integráció ajánlott az alkalmazás hibakereséséhez, amíg a probléma nem oldódik meg.
+
 #### <a name="renamed-methodsapp-sdk-androidmdrenamed-methods"></a>[Átnevezett metódusok](app-sdk-android.md#renamed-methods)
 Sok esetben az androidos osztályban rendelkezésre álló metódus végsőként van megjelölve a helyettesítő MAM-osztályban. Ebben az esetben a helyettesítő MAM-osztály egy hasonlóan elnevezett metódust biztosít (a `MAM` utótaggal), amelyet felül kell írni. Így például a `MAMActivity` származtatásakor az `OnCreate()` felülírása, illetve a `base.OnCreate()` metódus hívása helyett az `Activity` tevékenységnek felül kell írnia az `OnMAMCreate()` metódust, és meg kell hívnia a `base.OnMAMCreate()` metódust.
 
@@ -177,7 +180,7 @@ IMAMEnrollmentManager mgr = MAMComponents.Get<IMAMEnrollmentManager>();
 Az `Xamarin.Forms` alkalmazások esetében `Microsoft.Intune.MAM.Remapper` a csomag automatikusan `MAM` kicseréli a MAM-osztályokat, ha osztályokat szúr be `Xamarin.Forms` a gyakran használt osztályok osztály-hierarchiába. 
 
 > [!NOTE]
-> A Xamarin. Forms integrációt a fentiekben ismertetett Xamarin. Android-integráció mellett kell elvégezni.
+> A Xamarin. Forms integrációt a fentiekben ismertetett Xamarin. Android-integráció mellett kell elvégezni. A remapper másként viselkedik a Xamarin. Forms-alkalmazásoknál, így a kézi MAM-cserék továbbra is szükségesek.
 
 Miután hozzáadta az újraleképezést a projekthez, el kell végeznie a MAM-beli egyenértékű visszahelyezést. `FormsAppCompatActivity` Például a és `OnMAMResume` `OnCreate` `OnMAMCreate` `OnResume` a továbbra is használható az alkalmazásban, és a rendszer felülbírálja a következőt:. `FormsApplicationActivity`
 
@@ -199,6 +202,9 @@ Ennek az az oka, hogy ha a remapper módosítja a Xamarin-osztályok öröklés�
 
 > [!NOTE]
 > A remapper újra ír egy függőséget, amelyet a Visual Studio az IntelliSense automatikus kiegészítéséhez használ. Ezért előfordulhat, hogy újra kell töltenie és újra létre kell hoznia a projektet, ha a remapper hozzá van adva az IntelliSensehoz a módosítások megfelelő felismeréséhez.
+
+#### <a name="troubleshooting"></a>Hibaelhárítás
+* Ha üres, fehér képernyőt tapasztal az alkalmazás indításakor, akkor előfordulhat, hogy a fő szálon végre kell hajtania a navigációs hívásokat.
 
 ### <a name="company-portal-app"></a>Vállalati portál alkalmazás
 Az Intune SDK-Xamarin kötései a [céges portál](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal) Android-alkalmazás jelenlétét használják az eszközön az alkalmazás-védelmi házirendek engedélyezéséhez. A Céges portál az Intune szolgáltatástól kéri le az alkalmazásvédelmi szabályzatokat. Az alkalmazás az inicializáláskor betölti a Céges portálról a szabályzatot és a betartatásához szükséges kódot. A felhasználónak nem kell bejelentkeznie.

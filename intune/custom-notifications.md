@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f938afb738e75789194db0c74fee56deb1476dbc
-ms.sourcegitcommit: c715c93bb242f4fe44bbdf2fd585909854ed72b6
+ms.openlocfilehash: 3a4314abec83bc31cd6fe178873ba5bce7bf1a0c
+ms.sourcegitcommit: 864fdf995c2b41f104a98a7e2665088c2864774f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68660382"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680102"
 ---
 # <a name="send-custom-notifications-in-intune"></a>Egyéni értesítések küldése az Intune-ban  
 
@@ -38,8 +38,9 @@ Az egyéni értesítési üzenetek közé tartozik egy rövid cím és egy 500 k
 ## <a name="considerations-for-using-custom-notifications"></a>Az egyéni értesítések használatának szempontjai  
 
 **Eszköz konfigurációja**:  
-- Az eszközökön telepítve kell lennie a Céges portál alkalmazásnak, mielőtt a felhasználók egyéni értesítéseket tudnak fogadni. Emellett konfigurált engedélyekkel kell rendelkezniük ahhoz, hogy az Céges portál alkalmazás leküldéses értesítéseket küldjön. A Céges portál kérni fogja a felhasználókat, hogy engedélyezzenek értesítéseket.  
+- Az eszközökön telepítve kell lennie a Céges portál alkalmazásnak, mielőtt a felhasználók egyéni értesítéseket tudnak fogadni. Emellett konfigurált engedélyekkel kell rendelkezniük ahhoz, hogy az Céges portál alkalmazás leküldéses értesítéseket küldjön. A Céges portál megkéri a felhasználókat, hogy a telepítés vagy a frissítés során bármikor engedélyezzék az értesítéseket.  
 - Androidon a Google Play-szolgáltatások egy szükséges függőség.  
+- Az eszköznek regisztrálva kell lennie a MDM.
 
 **Értesítések létrehozása**:  
 - Üzenet létrehozásához használjon egy Intune-szerepkörhöz rendelt fiókot, amely tartalmazza a szervezetre vonatkozó **frissítési** engedélyt. Engedélyek felhasználóhoz rendeléséhez lásd: [szerepkör](role-based-access-control.md#role-assignments) -hozzárendelések  

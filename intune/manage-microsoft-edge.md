@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc18ba2210719cbebe77cd5b37024be4bb7b0d3e
-ms.sourcegitcommit: a01f0f3070932e3be44a4f545d4de11d715381ea
+ms.openlocfilehash: 7636e1914e23e7009a25f45f330fe85af2a03536
+ms.sourcegitcommit: 293dfbea2b4756bb9b7df1705a2b5f752dfaa807
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68287215"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701008"
 ---
 # <a name="manage-web-access-by-using-microsoft-edge-with-microsoft-intune"></a>Webes elérés kezelése a Microsoft Edge és a Microsoft Intune használatával
 
@@ -76,9 +76,6 @@ Az Azure AD-hez csatlakozó webalkalmazások korlátozása az iOS-és Android-al
 
 9. A **hozzárendelések** szakaszban válassza a **felhasználók és csoportok**lehetőséget, majd válassza ki azokat a felhasználókat vagy csoportokat, amelyekhez hozzá szeretné rendelni a szabályzatot.
 
-    > [!NOTE]
-    > Az alkalmazáskonfigurációs szabályzatok fogadása érdekében a felhasználókat Intune App Protection-szabályzattal kell megcélozni. További információ az Intune alkalmazásvédelmi szabályzatainak létrehozásáról: [Mik azok az alkalmazásvédelmi szabályzatok?](app-protection-policy.md)
-
 10. A szabályzat védelme alá tartozó alkalmazások megadásához a **Hozzárendelések** szakaszban válassza a **Felhőalkalmazások** lehetőséget.
 
 A fenti házirend konfigurálása után a felhasználóknak a Microsoft Edge használatára kell használniuk az ezzel a házirenddel védett Azure AD-hez kapcsolódó webalkalmazásokhoz való hozzáférést. Ha ebben a forgatókönyvben a felhasználók nem felügyelt böngészőt próbálnak használni, egy üzenetet kapnak arról, hogy a Microsoft Edge-t kell használniuk.
@@ -96,8 +93,6 @@ Az SSO használatához az eszköznek regisztrálnia kell az iOS-eszközök Micro
 > Az eszközregisztráció egy egyszerű bejelentkezés az Azure AD szolgáltatással. Nem igényli a teljes eszköz beléptetését, és nem biztosít további jogosultságokat az eszközön.
 
 ## <a name="create-a-protected-browser-app-configuration"></a>Egy védett böngésző alkalmazáskonfigurációjának létrehozása
-
-Az alkalmazások konfigurációjának alkalmazásához a felhasználó védett böngészőjét vagy egy másik alkalmazást az eszközön már az [Intune app Protection](app-protection-policy.md)-szabályzatnak kell kezelnie.
 
 Alkalmazás-konfiguráció létrehozása a Microsoft Edge-hez:
 
@@ -129,11 +124,11 @@ A beállításokat az Azure AD-ben felhasználói csoportokhoz rendelheti hozzá
 
 A Intune Managed Browser és a Microsoft Edge is használható házirend által védett böngészőkként. Annak biztosítása érdekében, hogy a felhasználók a megfelelő böngésző alkalmazás használatára legyenek irányítva, célozza meg az összes Intune által felügyelt alkalmazást (például Outlook, OneDrive és SharePoint) a következő konfigurációs beállítással:
 
-|    Kulcs    |    Érték    |
+|    Kulcs    |    Value    |
 |------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    `com.microsoft.intune.useEdge`    |    Az érték `true` a Microsoft Edge letöltésére és használatára utasítja a felhasználókat.<br>Az érték `false` lehetővé teszi, hogy a felhasználók a Intune Managed Browser használják.    |
 
-Ha az alkalmazás konfigurációs értéke nincs  beállítva, a következő logika határozza meg, hogy melyik böngészőt fogja használni a vállalati hivatkozások megnyitásához.
+Ha az alkalmazás konfigurációs értéke nincs **beállítva,** a következő logika határozza meg, hogy melyik böngészőt fogja használni a vállalati hivatkozások megnyitásához.
 
 Androidon:
 - A Intune Managed Browser akkor indul el, ha a felhasználó a Intune Managed Browser és a Microsoft Edge is le van töltve az eszközön. 
@@ -183,7 +178,7 @@ Ezzel a beállítással beállíthatja a Microsoft Edge-re mutató parancsikont.
 
 A Kezdőlap parancsikonjának konfigurálásához használja a következő kulcs/érték párokat:
 
-|    Kulcs    |    Érték    |
+|    Kulcs    |    Value    |
 |-------------------------------------------------------------------|-------------|
 |    com.microsoft.intune.mam.managedbrowser.homepage   |    Adjon meg egy érvényes URL-címet. A helytelen URL-címek biztonsági intézkedésként le vannak tiltva.<br>**Például** <`https://www.bing.com`>
     |
@@ -209,7 +204,7 @@ A felügyelt könyvjelzők konfigurálásához használja a következő kulcs/é
 
 Alapértelmezés szerint a felhasználók a Microsoft Edge-könyvjelzőn belül egy mappában konfigurált MyApps-helyeket jelenítik meg. A mappa a szervezet nevével van megjelölve.
 
-|    Kulcs    |    Érték    |
+|    Kulcs    |    Value    |
 |------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
 |    com.microsoft.intune.mam.managedbrowser.MyApps    |    A **true (igaz** ) érték a Microsoft Edge-könyvjelzőn belüli MyApps mutatja.<p>**Hamis** elrejti a MyApps a Microsoft Edge-n belül.    |
 
@@ -218,7 +213,7 @@ Az alkalmazás konfigurációja segítségével meghatározhatja, hogy a felhasz
 
 A következő kulcs/érték párokkal konfigurálhatja a Microsoft Edge számára engedélyezett vagy letiltott helyek listáját. 
 
-|    Kulcs    |    Value    |
+|    Kulcs    |    Érték    |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    A következő lehetőségek közül választhat:<p>1. Engedélyezett URL-címek megadása (csak ezek az URL-címek engedélyezettek, más webhelyek nem érhetők el):<br>`com.microsoft.intune.mam.managedbrowser.AllowListURLs`<p>2. Tiltott URL-címek megadása (minden más webhely elérhető lesz):<br>`com.microsoft.intune.mam.managedbrowser.BlockListURLs`    |    A kulcs megfelelő értéke egy URL-címlista. Minden olyan URL-címet meg kell adnia, amelyet egyetlen értékként szeretne engedélyezni vagy letiltani, `|` egy cső karakterrel elválasztva.<br>**Példák:**<br>`URL1|URL2|URL3`<br>`http://.contoso.com/|https://.bing.com/|https://expenses.contoso.com`  |
 
