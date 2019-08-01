@@ -233,6 +233,8 @@
               displayName: gms
             - name: Dedikált Vállalati Android-eszközök vagy teljes körűen felügyelt eszközök regisztrálása
               href: android-dedicated-devices-fully-managed-enroll.md
+            - name: Android-eszköz rendszergazdai regisztrációja
+              href: android-enroll-device-administrator.md
             - name: Vállalati androidos munkahelyi profilos eszközök kezelése
               href: android-enterprise-overview.md
             - name: Samsung Knox Mobile Enrollment
@@ -705,6 +707,8 @@
               items:
                 - name: iOS-eszközök regisztrálásával kapcsolatos problémák elhárítása
                   href: troubleshoot-ios-enrollment-errors.md
+                - name: Windows-eszközök regisztrálásával kapcsolatos problémák elhárítása
+                  href: troubleshoot-windows-enrollment-errors.md
             - name: Segítség a felhasználóknak a problémák elhárításában
               href: help-desk-operators.md
             - name: Vállalati erőforrás-hozzáférési problémák elhárítása
