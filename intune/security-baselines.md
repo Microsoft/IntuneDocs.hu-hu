@@ -1,6 +1,6 @@
 ---
 title: Biztonsági alapkonfigurációk használata a Microsoft Intuneban – Azure | Microsoft Docs
-description: Ajánlott Windows biztonsági beállítások hozzáadása vagy konfigurálása a felhasználók és az eszközök adatainak a mobileszköz-felügyelethez Microsoft Intune való védelméhez. A BitLocker engedélyezése, a Microsoft Defender komplex veszélyforrások elleni védelem konfigurálása, az Internet Explorer vezérlése, intelligens képernyő használata, helyi biztonsági házirendek beállítása, jelszó megkövetelése, internetes letöltések letiltása stb.
+description: Az ajánlott Windows biztonsági beállításokkal biztosíthatja, hogy a felhasználók és az eszközök megfeleljenek a mobileszköz-felügyelettel Microsoft Intune eszközön. Titkosítás engedélyezése, a Microsoft Defender komplex veszélyforrások elleni védelem konfigurálása, az Internet Explorer vezérlése, helyi biztonsági házirendek beállítása, jelszó megkövetelése, internetes letöltések letiltása stb.
 keywords: ''
 author: brenduns
 ms.author: brenduns
@@ -15,12 +15,12 @@ ms.reviewer: joglocke
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bbab505d668f0e348b3b4d34fb2c39ac683f340b
-ms.sourcegitcommit: bd09decb754a832574d7f7375bad0186a22a15ab
+ms.openlocfilehash: c378fd3b208396f9d2f83b7bd56f50dbf7a7e3f7
+ms.sourcegitcommit: 864fdf995c2b41f104a98a7e2665088c2864774f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68353587"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68679976"
 ---
 # <a name="use-security-baselines-to-configure-windows-10-devices-in-intune"></a>Biztonsági alapkonfigurációk használata a Windows 10-es eszközök Intune-ban való konfigurálásához
 
@@ -60,14 +60,14 @@ A használt alapverziókkal kapcsolatos információk megtekintéséhez válassz
 
 Amikor létrehoz egy biztonsági alapkonfiguráció- *profilt*, a profil automatikusan a legutóbb kiadott biztonsági alapkonfiguráció-példányt használja.  Továbbra is használhatja és szerkesztheti azokat a profilokat, amelyeket korábban az alapkonfiguráció korábbi verziójának használatával hozott létre, beleértve az előzetes verzió használatával létrehozott alapterveket is. 
 
-A biztonsági alapprofilok [](#change-the-baseline-instance-for-a-profile) támogatják a használatban lévő alapterv verziójának módosítását. Ez azt jelenti, hogy amikor egy új verzió jön létre, nem kell létrehoznia új alapkonfigurációt, hogy kihasználhassa. Ehelyett, ha elkészült, kiválaszthat egy alapkonfigurációt, majd a beépített lehetőség használatával módosíthatja a profil példányának verzióját.  
+A biztonsági alapprofilok támogatják a használatban lévő alapterv [verziójának módosítását](#change-the-baseline-instance-for-a-profile). Ez azt jelenti, hogy amikor egy új verzió jön létre, nem kell létrehoznia új alapkonfigurációt, hogy kihasználhassa. Ehelyett, ha elkészült, kiválaszthat egy alapkonfigurációt, majd a beépített lehetőség használatával módosíthatja a profil példányának verzióját.  
 
 ## <a name="available-security-baselines"></a>Elérhető biztonsági alaptervek 
 
 Az Intune-nal az alábbi biztonsági alapkonfigurációk használhatók. A hivatkozások használatával megtekintheti az egyes alaptervek legutóbbi példányának beállításait. 
 
 - **MDM biztonsági alapterv**
-  - [A MDM biztonsági alapterve a Spring 2019 (19H1) számára](security-baseline-settings-mdm.md)
+  - [MDM biztonsági alapkonfiguráció a május 2019-es verziójához](security-baseline-settings-mdm.md)
   - [Előnézet MDM biztonsági alapterv október 2018](security-baseline-settings-mdm-archive.md)
 
 - **A Microsoft Defender ATP alapterve**  
@@ -109,13 +109,13 @@ A közösen felügyelt eszközök használatakor az **eszköz konfigurációs** 
 
 4. A konfigurációs beállítások lapon tekintse meg a kiválasztott alaptervben elérhető **Beállítások** csoportjait. Egy csoport kibontásával megtekintheti a csoport beállításait, valamint az alapkonfigurációban lévő beállítások alapértelmezett értékeit is. Megadott beállítások keresése:
    - Válassza ki a kibontani kívánt csoportot, és tekintse át a rendelkezésre álló beállításokat.  
-   - A keresősáv  használatával olyan kulcsszavakat határozhat meg, amelyek szűrik a nézetet úgy, hogy csak azok a csoportok jelenjenek meg, amelyek tartalmazzák a keresési feltételeket.  
+   - *A keresősáv* használatával olyan kulcsszavakat határozhat meg, amelyek szűrik a nézetet úgy, hogy csak azok a csoportok jelenjenek meg, amelyek tartalmazzák a keresési feltételeket.  
  
    Az alapkonfiguráció mindegyik beállításának alapértelmezett konfigurációja az adott alapverzióhoz tartozik. Konfigurálja újra az alapértelmezett beállításokat az üzleti igények kielégítése érdekében. A különböző alapkonfigurációk ugyanazt a beállítást tartalmazhatják, és a beállítástól függően különböző alapértelmezett értékeket is használhatnak az alaptervnek megfelelően. 
 
     ![Csoport kibontása a csoport beállításainak megtekintéséhez](./media/security-baselines/sample-list-of-settings.png)
 
-5. A hatókör  Címkék lapon válassza a **hatókör címkék kiválasztása** lehetőséget a *címkék kiválasztása* panel megnyitásához a hatókör címkék a profilhoz való hozzárendeléséhez. 
+5. A hatókör **Címkék lapon válassza** a **hatókör címkék kiválasztása** lehetőséget a *címkék kiválasztása* panel megnyitásához a hatókör címkék a profilhoz való hozzárendeléséhez. 
 
 6. A **hozzárendelések** lapon válassza a **csoportok kiválasztása** lehetőséget, majd rendelje hozzá az alaptervet egy vagy több csoporthoz. **Válassza ki** a kizárni kívánt csoportokat a hozzárendelés finomhangolásához.  
 
@@ -149,7 +149,7 @@ A mentés után a rendszer azonnal újratelepíti az alaptervet a hozzárendelt 
 
 ### <a name="to-change-the-instance-for-a-baseline"></a>Egy alapterv példányának módosítása  
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, majd válassza az **eszköz biztonsági** > alapkonfigurációk lehetőséget, majd válassza ki a módosítani kívánt profilt tartalmazó alapkonfiguráció csempéjét.  
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, majd válassza az **eszköz biztonsági** > alapkonfigurációk**lehetőséget, majd**válassza ki a módosítani kívánt profilt tartalmazó alapkonfiguráció csempéjét.  
 
 2. Ezután válassza a **profilok**lehetőséget, majd jelölje be a szerkeszteni kívánt profilhoz tartozó jelölőnégyzetet, majd válassza a **verzió módosítása**lehetőséget.  
 
