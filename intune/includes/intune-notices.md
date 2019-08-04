@@ -7,12 +7,12 @@ ms.topic: include
 ms.date: 03/28/2019
 ms.author: erikje
 ms.custom: include file
-ms.openlocfilehash: 4423e731bc1538cd2454de32f0d50f2d08eedc69
-ms.sourcegitcommit: 99b74d7849fbfc8f5cf99cba33e858eeb9f537aa
+ms.openlocfilehash: 0721c62d44234a44881cdc562376c9bb62412187
+ms.sourcegitcommit: 73fbecf7cee4fdfc37d3c30ea2007d2a9a6d2d12
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68670934"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68775879"
 ---
 Ezek a hirdetmények olyan fontos információkat tartalmaznak, amelyek segíthetnek a jövőbeli Intune-változások és-funkciók előkészítésében. 
 
@@ -36,6 +36,10 @@ A Google által végzett módosítások miatt az Intune-felhasználók a követk
 A 2020-as nyári időszakban elérhető funkciók csökkenésének elkerüléséhez a következőket javasoljuk:
 - Ne helyezze be az új eszközöket az eszköz-rendszergazda felügyeletbe.
 - Ha egy eszköznek az Android 10-es verzióra kell frissítenie az eszközt, telepítse azt az eszköz rendszergazdai felügyelete alól az Android Enterprise Management és/vagy az App Protection szabályzatok segítségével.
+
+#### <a name="additional-information"></a>További információ
+- [A Google útmutatója az eszköz-rendszergazdától az Android Enterprise rendszerre való áttelepítéshez](http://static.googleusercontent.com/media/android.com/en/enterprise/static/2016/pdfs/enterprise/Android-Enterprise-Migration-Bluebook_2019.pdf)
+- [A Google dokumentációja az eszköz rendszergazdai API-jával való érvénytelenítésének tervéről](https://developers.google.com/android/work/device-admin-deprecation)
 
 ### <a name="update-your-android-company-portal-app-to-the-latest-version---4536963--"></a>Android Céges portál-alkalmazás frissítése a legújabb verzióra <!--4536963-->
 Az Intune rendszeres időközönként frissítéseket szabadít fel az Android Céges portál alkalmazásban. November 2018-én közzétettünk egy vállalati portál frissítést, amely tartalmaz egy back-end kapcsolót, amely felkészíti a Google-t a meglévő értesítési platformról a Google Firebase Cloud Messaging (FCM) szolgáltatásba való váltásra. Ha a Google kihasználja a meglévő értesítési platformot, és áthelyezi az FCM-re, a végfelhasználóknak legalább november 2018 kiadásban frissíteniük kell a vállalati portál alkalmazást, hogy továbbra is kommunikáljanak a Google Play áruházral.

@@ -16,12 +16,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d76b9581cac6e9d74e83ce50400e14468a13d3e6
-ms.sourcegitcommit: c715c93bb242f4fe44bbdf2fd585909854ed72b6
+ms.openlocfilehash: e3c4b1541de3500089bafc388779a3cfe97fbd29
+ms.sourcegitcommit: 73fbecf7cee4fdfc37d3c30ea2007d2a9a6d2d12
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68664178"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68756575"
 ---
 # <a name="troubleshoot-windows-device-enrollment-problems-in-microsoft-intune"></a>A Windows-eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune
 
@@ -268,6 +268,119 @@ Ha a **Mdm felhasználói hatóköre**  **none**értékre van állítva, köv
 3. A **Mdm felhasználói hatókörének** beállítása az **összes**értékre. Vagy állítsa be a **Mdm felhasználói hatókörét** **néhány**értékre, és válassza ki azokat a csoportokat, amelyek automatikusan regisztrálhatják Windows 10-es eszközeiket.    
 4. A **MAM felhasználói hatókör** beállítása **none**értékre.
 
+
+### <a name="an-error-occurred-while-creating-autopilot-profile"></a>Hiba történt az Autopilot-profil létrehozásakor.
+
+**Okozhat** Az eszköznév sablonjának megadott elnevezési formátuma nem felel meg a követelményeknek. Használhat például kisbetűs értéket a soros makróhoz, például% Serial%-ot a (z)% SERIAL% helyett.
+
+#### <a name="resolution"></a>Megoldás:
+
+Győződjön meg arról, hogy az elnevezési formátum megfelel a következő követelményeknek:
+
+- Hozzon létre egy egyedi nevet az eszközök számára. A névnek legalább 15 karakterből kell állnia, és tartalmazhat betűket (a-z, A-Z), számokat (0-9) és kötőjeleket ().
+- A nevek nem állhatnak csak számokból.
+- A nevek nem tartalmazhatnak üres helyet.
+- A (z)% SERIAL% Macro használatával adjon hozzá egy hardver-specifikus sorozatszámot. Vagy használja a (z)% RAND: < # számjegyeket >% Macro használatával véletlenszerű karakterláncok hozzáadásához, a karakterlánc a számjegyek számának > <ét tartalmazza. Például a MYPC-% RAND: 6% olyan nevet hoz létre, mint például a MYPC-123456.
+
+### <a name="something-went-wrong-oobeidps"></a>Hiba történt. OOBEIDPS.
+
+**Okozhat** Ez a probléma akkor fordul elő, ha van proxy, tűzfal vagy más olyan hálózati eszköz, amely blokkolja az identitás-szolgáltató (identitásszolgáltató) elérését.
+
+#### <a name="resolution"></a>Megoldás:
+Győződjön meg arról, hogy az Autopilot Internet alapú szolgáltatásaihoz szükséges hozzáférés nincs letiltva. További információ: a [Windows Autopilot hálózati követelményei](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-autopilot-requirements-network).
+
+
+### <a name="registering-your-device-for-mobile-management-failed3-0x801c03ea"></a>Az eszköz regisztrálása a Mobile Management szolgáltatásban (sikertelen: 3, 0x801C03EA).
+
+**Okozhat** Az eszközön van olyan TPM-lapka, amely támogatja az 2,0-es verziót, de még nem frissítették a 2,0-es verzióra.
+
+#### <a name="resolution"></a>Megoldás:
+Frissítse a TPM-lapka-t a 2,0-es verzióra.
+
+Ha a probléma továbbra is fennáll, ellenőrizze, hogy ugyanaz az eszköz két hozzárendelt csoportban van-e, és hogy az egyes csoportok egy másik Autopilot-profilt rendelnek hozzá. Ha két csoportban van, állapítsa meg, hogy melyik Autopilot-profilt kell alkalmazni az eszközön, majd távolítsa el a másik profil hozzárendelését.
+
+További információ arról, hogyan telepíthet egy Windows-eszközt kioszk módban az Autopilot [használatával: kioszk üzembe helyezése a Windows Autopilot használatával](https://blogs.technet.microsoft.com/mniehaus/2018/06/07/deploying-a-kiosk-using-windows-autopilot/).
+
+
+### <a name="securing-your-hardware-failed-0x800705b4"></a>A hardver biztonságossá tétele (sikertelen: 0x800705b4).
+
+800705B4 hiba: 
+```
+Securing your hardware (Failed: 0x800705b4)
+Joining your organization's network (Previous step failed)
+Registering your device for mobile management (Previous step failed)
+```
+
+**Okozhat** A célként megadott Windows-eszköz nem felel meg az alábbi követelmények egyikének:
+
+- Az eszköznek rendelkeznie kell fizikai TPM 2,0-csiptel. A virtuális TPM (például Hyper-V virtuális gépek) vagy a TPM 1,2-es chipek nem működnek öntelepítési módban.
+- Az eszköznek a Windows következő verziói egyikét kell futtatnia:
+    - Windows 10 Build 1703 vagy újabb verzió.
+    - Ha hibrid Azure AD-csatlakozást használ, a Windows 10 1809-es vagy újabb verzióját használja.
+
+
+#### <a name="resolution"></a>Megoldás:
+Győződjön meg arról, hogy a célként megadott eszköz megfelel az **OK** szakaszban ismertetett követelményeknek.
+
+További információ arról, hogyan telepíthet egy Windows-eszközt kioszk módban az Autopilot [használatával: kioszk üzembe helyezése a Windows Autopilot használatával](https://blogs.technet.microsoft.com/mniehaus/2018/06/07/deploying-a-kiosk-using-windows-autopilot/).
+
+
+### <a name="something-went-wrong-error-code-80070774"></a>Hiba történt. Hibakód: 80070774.
+
+0x80070774 hiba: Hiba történt. Ellenőrizze, hogy a megfelelő bejelentkezési adatokat használja-e, és hogy a szervezet használja-e ezt a funkciót. Próbálkozzon újra, vagy forduljon a rendszergazdához a 80070774 hibakódgal.
+
+Ez a probléma általában akkor fordul elő, ha az eszköz újraindul egy hibrid Azure AD Autopilot-forgatókönyvben, amikor az eszköz időtúllépést okoz a kezdeti bejelentkezési képernyőn. Ez azt jelenti, hogy a tartományvezérlő nem található vagy nem érhető el sikeresen a kapcsolódási problémák miatt. Vagy azt, hogy az eszköz olyan állapotba lépett, amely nem tud csatlakozni a tartományhoz.
+
+**Okozhat** A leggyakoribb ok az, hogy a hibrid Azure AD-csatlakozás használatban van, és a felhasználó kiosztása funkció az Autopilot-profilban van konfigurálva. A felhasználó kiosztása funkcióval Azure AD-csatlakozást hajt végre az eszközön a kezdeti bejelentkezési képernyőn, amely olyan állapotba helyezi az eszközt, amelyben nem tud csatlakozni a helyszíni tartományhoz. Ezért a felhasználó kiosztása funkció csak a standard Azure AD JOIN Autopilot-forgatókönyvekben használható.  A funkciót a hibrid Azure AD JOIN forgatókönyvekben kell használni.
+
+#### <a name="resolution"></a>Megoldás:
+
+1. Nyissa meg az **Intune** >  -**eszközök tanúsítványigénylési** > **Windows-regisztrációs** > **eszközeit**.
+2. Válassza ki a problémát észlelő eszközt > kattintson a három pontra (...) a jobb oldali oldalon.
+3. Válassza a **felhasználó hozzárendelésének** megszüntetése lehetőséget, és várjon, amíg a folyamat befejeződik.
+4. Ellenőrizze, hogy a hibrid Azure AD Autopilot-profil hozzá van-e rendelve az OOBE ismételt megkísérlése előtt.
+
+#### <a name="second-resolution"></a>Második megoldás
+Ha a probléma továbbra is fennáll, a kapcsolat nélküli tartományhoz csatlakozás Intune-összekötőt futtató kiszolgálón ellenőrizze, hogy a 30312-es azonosítójú esemény be van-e jelentkezve a ODJ-összekötő szolgáltatási naplójába. Az 30312-as esemény a következőhöz hasonló:
+
+```
+Log Name:      ODJ Connector Service
+Source:        ODJ Connector Service Source
+Event ID:      30132
+Level:         Error
+Description:
+{
+          "Metric":{
+                   "Dimensions":{
+                             "RequestId":"<RequestId>",
+                             "DeviceId":"<DeviceId>",
+                             "DomainName":"contoso.com",
+                             "ErrorCode":"5",
+                             "RetryCount":"1",
+                              "ErrorDescription":"Failed to get the ODJ Blob. The ODJ connector does not have sufficient privileges to complete the operation",
+                              "InstanceId":"<InstanceId>",
+                              "DiagnosticCode":"0x00000800",
+                              "DiagnosticText":"Failed to get the ODJ Blob. The ODJ connector does not have sufficient privileges to complete the operation [Exception Message: \"DiagnosticException: 0x00000800. Failed to get the ODJ Blob. The ODJ connector does not have sufficient privileges to complete the operation\"] [Exception Message: \"Failed to call NetProvisionComputerAccount machineName=<ComputerName>\"]"
+                   },
+                   "Name":"RequestOfflineDomainJoinBlob_Failure",
+                   "Value":0
+          }
+}
+```
+
+Ezt a problémát általában a Windows Autopilot-eszközöket létrehozó szervezeti egység engedélyeinek helytelen delegálása okozza. További információ: [a számítógépfiók korlátjának megemelése a szervezeti egységben](windows-autopilot-hybrid.md#increase-the-computer-account-limit-in-the-organizational-unit).
+
+1. Nyissa meg **Active Directory felhasználókat és számítógépeket (DSA. msc)** .
+2. Kattintson a jobb gombbal arra a szervezeti egységre, amelyet hibrid Azure AD-hez csatlakoztatott számítógépek létrehozásához fog használni, > delegálja a **vezérlést**.
+3. A Control Wizard ( **vezérlés delegálása** ) varázslóban válassza ki a **következő** > **Objektumtípusok** **hozzáadása** > elemet.
+4. Az **Objektumtípusok** ablaktáblán jelölje be a **számítógépek** jelölőnégyzetet, > **az OK gombra**.
+5. A **felhasználók**, **számítógépek**vagy **csoportok** kiválasztása panelen az **adja meg a kijelölendő objektumok nevét** mezőbe írja be annak a számítógépnek a nevét, amelyen az összekötő telepítve van.
+6. Válassza a Névellenőrzés lehetőséget a bejegyzés ellenőrzéséhez > **OK** > **tovább**gombra.
+7. Válassza az **Egyéni feladat létrehozása lehetőséget a** > **következő**delegáláshoz.
+8. Jelölje be a **csak a következő objektumokat a mappában** jelölőnégyzetből, majd jelölje ki a **számítógép-objektumokat**, hozzon létre a **kijelölt objektumokat**ebben a mappában, és **törölje a kijelölt objektumokat a mappában** jelölőnégyzetből.
+9. Kattintson a **Tovább** gombra.
+10. Az **engedélyek**területen jelölje be a **teljes hozzáférés** jelölőnégyzetet. Ez a művelet kijelöli az összes többi beállítást.
+11. Válassza a **következő** > **Befejezés**lehetőséget.
 
 ## <a name="next-steps"></a>További lépések
 

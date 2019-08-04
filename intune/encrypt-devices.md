@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 07/25/2019
+ms.date: 08/02/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -16,12 +16,12 @@ ms.reviewer: annovich
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
-ms.openlocfilehash: 3f37b9b0bc16572cc86cbf79be616c7f395aa784
-ms.sourcegitcommit: 2bce5e43956b6a5244a518caa618f97f93b4f727
+ms.openlocfilehash: 09b5e59f4af534d4919574631568a7581bb3fba9
+ms.sourcegitcommit: 73fbecf7cee4fdfc37d3c30ea2007d2a9a6d2d12
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68467473"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68756545"
 ---
 # <a name="use-device-encryption-with-intune"></a>Az eszközök titkosításának használata az Intune-nal  
 
@@ -67,6 +67,13 @@ Az Intune-nal kezelhető FileVault-beállítás részleteiért lásd: [FileVault
    Példa: Elveszett vagy nemrég elforgatott helyreállítási kulcs lekéréséhez jelentkezzen be a Intune Céges portál webhelyére bármely eszközről. A portálon lépjen az *eszközök* elemre, és válassza ki azt az eszközt, amelyen engedélyezve van az FileVault, majd válassza a *helyreállítási kulcs*beolvasása elemet. Megjelenik az aktuális helyreállítási kulcs.  
 
 6. Konfigurálja a fennmaradó [FileVault-beállításokat](endpoint-protection-macos.md#filevault) az üzleti igények kielégítéséhez, majd kattintson **az OK gombra**.  
+
+   > [!IMPORTANT]  
+   > Ismert hiba történt, ha a **Letiltás** beállítás a kijelentkezéskor beállítás *engedélyezve*értékre van állítva. Ha az *Engedélyezés*beállítást adja meg, a megkerülő időpontok **számának** meg kell adni egy értéket, és nem állítható be *nem konfiguráltként*. Ha a *nincs konfigurálva*értékre van állítva, a profil meghiúsul az eszközön. Ebben az esetben az eszköz egy **profil állapotának összegzése** , további részletek nélkül.
+   > 
+   > Ha a kijelentkezéskor a **Letiltás** beállítás nincs *konfigurálva*értékre van állítva, a megkerülő időpontok **száma** *nem konfigurálható* , és nem rendelkezhet értékkel.  
+   > 
+   > Ezt a problémát egy jövőbeli frissítés fogja megoldani. 
 
 7. Fejezze be a további beállítások konfigurációját, majd mentse a profilt.  
 

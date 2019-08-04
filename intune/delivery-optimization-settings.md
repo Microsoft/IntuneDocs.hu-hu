@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 03/09/2019
+ms.date: 08/01/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.localizationpriority: medium
@@ -15,12 +15,12 @@ ms.reviewer: kerimh
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5cd4eeec59437c73500fa382a55ecabcd4b6e7f3
-ms.sourcegitcommit: c715c93bb242f4fe44bbdf2fd585909854ed72b6
+ms.openlocfilehash: 11361b65735a7ed7e724a77349e3624e0e35ecaf
+ms.sourcegitcommit: 73fbecf7cee4fdfc37d3c30ea2007d2a9a6d2d12
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68660873"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68756567"
 ---
 # <a name="delivery-optimization-settings-for-intune"></a>Az Intune kézbesítési optimalizálási beállításai
 
@@ -67,6 +67,15 @@ Ha az Intune-t a beállítások használatára szeretné konfigurálni, tekintse
 | [Gyorsítótár maximális kora (nap)](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization-reference#max-cache-age)    | 1511         | Annak megadása, hogy az egyes fájlok után mennyi ideig töltse le a rendszer, hogy a fájl a kézbesítési optimalizálási gyorsítótárban legyen tárolva az eszközön.   <br><br>Az Intune-nal a gyorsítótár kora napokban van konfigurálva. A megadott napok számát a rendszer a megfelelő számú másodpercre konvertálja, azaz azt, hogy a Windows hogyan határozza meg ezt a beállítást. Egy 3 napos Intune-konfiguráció például 259200 másodpercre (3 nap) lesz átalakítva az eszközön.  <br><br>**Alapértelmezett**:   *Nincs beállítva érték*     <br><br>**Ajánlott**: 7   <br><br>Házirend CSP: [DOMaxCacheAge](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-deliveryoptimization#deliveryoptimization-domaxcacheage)  <br><br>          |
 | Gyorsítótár maximális méretének típusa  | *Részletek megtekintése*    | Válassza ki, hogyan szeretné kezelni a lemezterület mennyiségét egy olyan eszközön, amelyet a kézbesítési optimalizálás használ. Ha nincs konfigurálva, a gyorsítótár mérete alapértelmezés szerint a rendelkezésre álló szabad lemezterület 20%-a.  <br><ul><li>**Nincs konfigurálva** Alapértelmezett</li><br><li>**Absolute (abszolút** ) – adja meg a [maximális gyorsítótár-MÉRETet (GB-ban)](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization-reference#absolute-max-cache-size) az eszköz által a kézbesítés optimalizálásához használt maximális lemezterület beállításához. Ha 0 (nulla) értékre van állítva, akkor a gyorsítótár mérete korlátlan, bár a kézbesítési optimalizálás törli a gyorsítótárat, ha az eszköz kevés a lemezen. <br><br>Windows 1607 szükséges<br><br> Házirend CSP: [DOAbsoluteMaxCacheSize](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-deliveryoptimization#deliveryoptimization-doabsolutemaxcachesize) </li><br><li>**Százalék** – adja meg a [gyorsítótár maximális méretét (%-ban](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization-reference#max-cache-size) ) azon lemezterület maximális méretének beállításához, amelyet az eszköz használhat a kézbesítési optimalizáláshoz. A rendelkezésre álló lemezterület százalékos aránya, a kézbesítés optimalizálása pedig folyamatosan kivizsgálja a rendelkezésre álló lemezterületet, és törli a gyorsítótárat, hogy a gyorsítótár maximális mérete a beállított százalék alatt maradjon. <br><br>Windows 1511 szükséges<br><br>Házirend CSP: [DOMaxCacheSize](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-deliveryoptimization#deliveryoptimization-domaxcachesize)  |
 | [VPN társ gyorsítótárazása](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization-reference#enable-peer-caching-while-the-device-connects-via-vpn)  | 1709  | Jelölje be az **engedélyezve** lehetőséget, ha úgy szeretné konfigurálni az eszközt, hogy részt vegyen a társ-gyorsítótárazásban, miközben a VPN a tartományi hálózathoz csatlakozik. Az engedélyezett eszközök tölthetők le vagy tölthetők fel más tartományi hálózati eszközökre, akár VPN-en, akár a vállalati tartományi hálózaton.  <br><br>**Alapértelmezett**: Nincs konfigurálva  <br><br>Házirend CSP: [DOAllowVPNPeerCaching](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-deliveryoptimization#deliveryoptimization-domaxcacheage)    |
+
+## <a name="local-server-caching"></a>Helyi kiszolgáló gyorsítótárazása  
+
+|Beállítás  |Windows-verzió  |Részletek  |
+|---------|-----------------|---------|
+|Gyorsítótár-kiszolgálók állomásneve | 1809  |Adja meg annak a hálózati gyorsítótár-kiszolgálónak az IP-címét vagy teljes tartománynevét, amelyet az eszközei a kézbesítés optimalizálásához használni fognak, majd válassza a **Hozzáadás** lehetőséget a bejegyzés a listához való hozzáadásához.  <br><br>**Alapértelmezett**: Nincs konfigurálva  <br><br>Házirend CSP: [DOCacheHost](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-deliveryoptimization#deliveryoptimization-docachehost)  |
+|[Előtér-letöltési gyorsítótár-kiszolgáló tartalékának késleltetése (másodperc)](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization-reference#delay-foreground-download-cache-server-fallback-in-secs) | 1903    |Másodpercben (0-2592000) megadásával késleltetéssel késleltetheti a tartalékot egy gyorsítótár-kiszolgálóról az előtéri tartalom letöltéséhez tartozó HTTP-forrásra. Ha a házirendet az előtér http-ről való letöltésének késleltetésére szeretné késleltetni, akkor a rendszer először az alkalmazást fogja alkalmazni (ha először szeretné engedélyezni a letöltéseket). (0-2592000)    <br><br>**Alapértelmezett**: 0  <br><br>Házirend CSP- [DODelayCacheServerFallbackForeground](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-deliveryoptimization#deliveryoptimization-dodelaycacheserverfallbackforeground)  |
+|[A háttérben futó letöltési gyorsítótár-kiszolgáló tartalékának késleltetése (másodperc)](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization-reference#delay-background-download-cache-server-fallback-in-secs) | 1903    |A háttérben futó tartalom letöltéséhez másodperc (0-2592000) értéket kell megadni a gyorsítótár-kiszolgálóról a HTTP-forrásra való visszalépés késleltetéséhez. A *háttérben futó http-Letöltés késleltetése (másodpercben)* , ez a beállítás először a társak letöltésének engedélyezésére vonatkozik. (0-2592000)   <br><br>**Alapértelmezett**: 0 <br><br>Házirend CSP: [DODelayCacheServerFallbackBackground](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-deliveryoptimization#deliveryoptimization-dodelaycacheserverfallbackbackground)  |
+
 
 ## <a name="next-steps"></a>További lépések
 

@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a369b3bde7967db04a76ae1794d7b8fb86c21e4
-ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
+ms.openlocfilehash: 794a0b7e999c8f42d075da982c7246081ce9ed7d
+ms.sourcegitcommit: 73fbecf7cee4fdfc37d3c30ea2007d2a9a6d2d12
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67548418"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68756389"
 ---
 # <a name="develop-a-rollout-plan"></a>Bevezetési terv kidolgozása
 
@@ -93,16 +93,16 @@ Itt következik a fenti Intune-regisztrációs terv regisztrációs módszerekke
 
 | **Bevezetési fázis** | **Július** | **Augusztus** | **Szeptember** | **Október** |
 |:---:|:---:|:---:|:---:|:---:|
-| Korlátozott próbaüzem |  |  |  |  |                                                         
+| Korlátozott próbaüzem |  |  |  |  |
 | Önkiszolgáló | Informatikai részleg |  |  |  |
-| Bővített próbaüzem |  |  |  |  |                                                         
+| Bővített próbaüzem |  |  |  |  |
 | Önkiszolgáló | Informatikai részleg |  |  |  |
 | Körültekintő | Informatikai vezetők |  |  |  |
 | Éles bevezetés, 1. fázis |  | Értékesítés, Marketing |  |  |
 | Önkiszolgáló |  | Értékesítés és marketing |  |  |
 | Éles bevezetés, 2. fázis |  |  | Kereskedelem |  |
-| Önkiszolgáló |  |  |  |  |
-| Éles bevezetés, 3. fázis |  |  | Kereskedelem |  |
+| Önkiszolgáló |  |  | Kereskedelem |  |
+| Éles bevezetés, 3. fázis |  |  |  | Vezetők, HR, pénzügy |
 | Önkiszolgáló |  |  |  | HR, Pénzügy |
 | Körültekintő |  |  |  | A vezetők |
 

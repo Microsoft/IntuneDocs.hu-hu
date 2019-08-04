@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 921934eead9ff3a1074203dad55ee60f3fe77947
-ms.sourcegitcommit: 916fed64f3d173498a2905c7ed8d2d6416e34061
+ms.openlocfilehash: c626bb50868e6b966eb7c8867f4c4ff7178eadcf
+ms.sourcegitcommit: 73fbecf7cee4fdfc37d3c30ea2007d2a9a6d2d12
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66047271"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68756531"
 ---
 # <a name="intune-on-azure-console-and-legacy-intune-pc-client"></a>Intune az Azure-konzolon és az örökölt Intune szoftverügyfél
 
@@ -45,7 +45,7 @@ Miután az Intune áttért az Azure AD-csoportok használatára, a Silverlight-k
 1. Válasszon ki egy nézetet.
 2. A **Szűrők** mezőbe írja be a szűrni kívánt csoport a nevét, majd nyomja le az Enter billentyűt. Ez a művelet szűrni fogja az eszközök listanézetét a megadott csoportban.
 
-   ![](media/intune-legacy-pc-client/image01.png)
+   ![Legördülő lista bemenetének szűrése nincs kijelölve](media/intune-legacy-pc-client/image01.png)
 
 
 ## <a name="continue-to-manage-windows-7-by-using-intune-pc-client"></a>A Windows 7 további felügyelete az Intune számítógép-ügyféllel
@@ -61,7 +61,7 @@ A szoftverügyfél és az MDM képességeinek összehasonlításához lásd: [Wi
 Kövesse az alábbi lépéseket a Windows 10-eszközök felügyeletének áthelyezéséhez az Intune szoftverügyfélről az MDM-re:
 
 1. Végezzen el egy **szelektív törlést** a Silverlight-konzolon, ezzel visszavonja az eszköz regisztrációját a szoftverügyfélről.
-  ![](media/intune-legacy-pc-client/image02.png)
+  ![Figyelmeztetés felugró ablak a "kiválasztott eszköz szelektív törlése" választógomb bejelölésével](media/intune-legacy-pc-client/image02.png)
 2. Regisztrálja újra az eszközt az [MDM (és/vagy az Azure AD-csatlakozási felület)](https://docs.microsoft.com/intune/windows-enroll) használatával. 
 
 ## <a name="next-steps"></a>További lépések
