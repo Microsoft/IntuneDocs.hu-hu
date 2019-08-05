@@ -11,7 +11,7 @@ ms.openlocfilehash: 0721c62d44234a44881cdc562376c9bb62412187
 ms.sourcegitcommit: 73fbecf7cee4fdfc37d3c30ea2007d2a9a6d2d12
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/03/2019
+ms.lasthandoff: 08/05/2019
 ms.locfileid: "68775879"
 ---
 Ezek a hirdetmények olyan fontos információkat tartalmaznak, amelyek segíthetnek a jövőbeli Intune-változások és-funkciók előkészítésében. 
