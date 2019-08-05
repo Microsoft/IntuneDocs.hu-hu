@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 07/25/2019
+ms.date: 08/02/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.localizationpriority: medium
@@ -14,16 +14,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1fe22291c808c498f9c099498b97e131ea531334
-ms.sourcegitcommit: 2bce5e43956b6a5244a518caa618f97f93b4f727
+ms.openlocfilehash: d4aa0c47f0aa099ff469eb31b212f387836ad69b
+ms.sourcegitcommit: 73fbecf7cee4fdfc37d3c30ea2007d2a9a6d2d12
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68467420"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68756509"
 ---
 # <a name="macos-endpoint-protection-settings-in-intune"></a>MacOS Endpoint Protection-beállítások az Intune-ban  
 
-Ez a cikk a macOS-t futtató eszközökhöz konfigurálható Endpoint Protection-beállításokat ismerteti. Ezeket a beállításokat [MacOS-eszköz](endpoint-protection-configure.md) konfigurációs profiljának használatával konfigurálhatja az Intune-ban.  
+Ez a cikk a macOS-t futtató eszközökhöz konfigurálható Endpoint Protection-beállításokat ismerteti. Ezeket a beállításokat macOS-eszköz konfigurációs profiljának használatával konfigurálhatja [](endpoint-protection-configure.md) az Intune-ban.  
 
 ## <a name="gatekeeper"></a>Forgalomirányító  
 
@@ -83,7 +83,7 @@ A tűzfalat inkább a kapcsolatok alkalmazásonkénti, nem pedig portonkénti ko
 Az Apple FileVault beállításaival kapcsolatos további információkért lásd: [FDEFileVault](https://developer.apple.com/documentation/devicemanagement/fdefilevault) az Apple fejlesztői tartalomban. 
 
 - **FileVault**  
-  A XTS  -AES 128 és újabb rendszerű 10,13 eszközökön a FileVault használatával engedélyezheti a teljes lemezes titkosítást.  
+  A XTS -AES 128 és újabb rendszerű 10,13 eszközökön a FileVault használatával engedélyezheti a teljes lemezes titkosítást.  
   - **Nincs konfigurálva**  
   - **Engedélyezése**  
 
@@ -97,11 +97,18 @@ Az Apple FileVault beállításaival kapcsolatos további információkért lás
     - **Személyes helyreállítási kulcs** elforgatása – Itt adhatja meg, hogy az eszköz személyes helyreállítási kulcsa milyen gyakran legyen elforgatva. Kiválaszthatja a **nincs konfigurálva**beállítás alapértelmezett értékét, vagy **1** és **12** hónap közötti értéket is megadhat.  
 
   - **Figyelmeztetés letiltása a kijelentkezéskor**  
-    Megakadályozza, hogy a rendszer felszólítsa a felhasználót, hogy engedélyezze a FileVault a kijelentkezéskor.  Ha a beállítás letiltva értékre van állítva, a kijelentkezéskor megjelenő üzenet le lesz tiltva, és a rendszer a bejelentkezéskor kéri a felhasználót.  
+    Megakadályozza, hogy a rendszer felszólítsa a felhasználót, hogy engedélyezze a FileVault a kijelentkezéskor.  Ha az engedélyezés értékre van állítva, a rendszer letiltja a kijelentkezéskor megjelenő kérést, és a felhasználó bejelentkezik.  
     - **Nincs konfigurálva**  
-    - **Megbénít**  
+    - **Engedélyezés** – tiltsa le a kijelentkezéskor megjelenő üzenetet.
 
     **Alapértelmezett**: Nincs konfigurálva  
+
+     > [!IMPORTANT]  
+     > Ismert hiba történt, ha a **Letiltás** beállítás a kijelentkezéskor beállítás *engedélyezve*értékre van állítva. Ha az *Engedélyezés*beállítást adja meg, a megkerülő időpontok **számának** meg kell adni egy értéket, és nem állítható be *nem konfiguráltként*. Ha a *nincs konfigurálva*értékre van állítva, a profil meghiúsul az eszközön. Ebben az esetben az eszköz egy **profil állapotának összegzése** , további részletek nélkül.
+     > 
+     > Ha a kijelentkezéskor a **Letiltás** beállítás nincs *konfigurálva*értékre van állítva, a megkerülő időpontok **száma** *nem konfigurálható* , és nem rendelkezhet értékkel.  
+     > 
+     > Ezt a problémát egy jövőbeli frissítés fogja megoldani. 
 
   - **Megkerülő időpontok száma**  
   Állítsa be, hogy a felhasználó hányszor hagyhatja figyelmen kívül a kéréseket, hogy engedélyezze a FileVault, mielőtt FileVault a felhasználónak a bejelentkezéshez.  
