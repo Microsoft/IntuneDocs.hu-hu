@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f2015bb6997861d8856c7fe89662c21be105f5b
-ms.sourcegitcommit: d2ac912b834c4840de9cc92ba1815b6ecfbfb52b
+ms.openlocfilehash: edc193c80960872cc3a0e25438432195de3a7c34
+ms.sourcegitcommit: e6edfbfd63dd7c2500ce1123205aa2af9a7e8e2e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68482951"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68783218"
 ---
 # <a name="microsoft-intune-app-sdk-for-android-developer-guide"></a>A Microsoft Intune App SDK Androidon – útmutató fejlesztőknek
 
@@ -636,7 +636,7 @@ A következő értesítéseket küldi a program az alkalmazásnak, és némelyik
 > [!NOTE]
 > Az alkalmazások nem regisztrálhatnak egyszerre a `WIPE_USER_DATA` és a `WIPE_USER_AUXILIARY_DATA` értesítésre.
 
-### <a name="managementremoved"></a>MANAGEMENT_REMOVED
+### <a name="management_removed"></a>MANAGEMENT_REMOVED
 
 Az `MANAGEMENT_REMOVED` értesítés azt jelzi, hogy az Intune MAM-szabályzata már nem fogja felügyelni a korábban házirend által kezelt felhasználókat. Ehhez nincs szükség a felhasználói adatok törlésére vagy a felhasználó kijelentkezésére (ha törlésre van szükség `WIPE_USER_DATA` , értesítést küld a rendszer). Előfordulhat, hogy számos alkalmazásnak egyáltalán nem kell kezelnie ezt az értesítést, azonban a `MAMDataProtectionManager` használatban lévő alkalmazásoknak külön megjegyzésre van szükségük [az értesítésről](#data-protection).
 
@@ -684,7 +684,7 @@ Az alkalmazás konfigurálásához és a megfelelő hitelesítés engedélyezés
 
 * A **SkipBroker** az alapértelmezett ADAL SSO-részvételi viselkedés felülbírálására szolgál. A SkipBroker csak olyan alkalmazások esetében szabad megadni, amelyek ClientID határoznak meg **, és** nem támogatják a felügyelt hitelesítést/eszközre kiterjedő egyszeri bejelentkezést. Ebben az esetben a tulajdonságot "true" értékre kell beállítani. A legtöbb alkalmazás nem állíthatja be a SkipBroker paramétert.
 
-  * SkipBroker érték megadásához meg kell adni **egy ClientID a** jegyzékfájlban.
+  * SkipBroker érték megadásához meg kell adni egy ClientID a jegyzékfájlban.
 
   * Ha meg van adva egy ClientID, az alapértelmezett érték a "false".
 
@@ -1218,7 +1218,7 @@ A fejlesztők (csökkenő prioritási sorrendben) a következő szinteken állí
   2. `Context`(általában `Activity`) szint
   3. Folyamat szintje
 
-A szál szintjén beállított identitás felülírja a Context szintjén beállított identitást, és a `Context` szinten beállított identitás felülírja a folyamat szintjén beállított identitást. Az a `Context` alkalmazásban beállított identitás csak a megfelelő kapcsolódó helyzetekben használatos. A fájl i/o-műveleteihez például nincs társítva `Context`. Az alkalmazások leggyakrabban az `Context` identitást `Activity`fogják beállítani. Egy alkalmazás *csak* akkor jelenítheti meg a felügyelt identitás adatait `Activity` , ha az identitás ugyanarra az identitásra van beállítva. A folyamatszintű identitás általában csak akkor hasznos, ha az alkalmazás egyszerre csak egy-egy felhasználóval működik az összes szálon. Számos alkalmazásnak nem feltétlenül kell igénybe vennie.
+A szál szintjén beállított identitás felülírja a Context szintjén beállított identitást, és a `Context` szinten beállított identitás felülírja a folyamat szintjén beállított identitást. Az a `Context` alkalmazásban beállított identitás csak a megfelelő kapcsolódó helyzetekben használatos. A fájl i/o-műveleteihez például nincs társítva `Context`. Az alkalmazások leggyakrabban az `Context` identitást `Activity`fogják beállítani. Egy alkalmazás csak akkor jelenítheti meg a felügyelt identitás adatait `Activity` , ha az identitás ugyanarra az identitásra van beállítva. A folyamatszintű identitás általában csak akkor hasznos, ha az alkalmazás egyszerre csak egy-egy felhasználóval működik az összes szálon. Számos alkalmazásnak nem feltétlenül kell igénybe vennie.
 
 Ha az alkalmazás a környezetet `Application` használja a rendszerszolgáltatások beolvasásához, győződjön meg arról, hogy a szál vagy a folyamat identitása be van állítva, vagy hogy beállította `Application` a felhasználói felület identitását az alkalmazás környezetében.
 
@@ -1370,7 +1370,7 @@ Az `onMAMIdentitySwitchRequired` metódus hívandó az összes implicit identit�
 
   * Az identitásváltás blokkolásakor az eredmény ugyanaz lesz, mint amikor a `Receive` megosztási beállítások tiltják le az adatok beérkezését.
 
-  * Ha egy szolgáltatás a főszálon fut, a `reportIdentitySwitchResult` hívását **kötelező** szinkron módon végrehajtani, ellenkező esetben a felhasználói felület szála leáll.
+  * Ha egy szolgáltatás a főszálon fut, akkor `reportIdentitySwitchResult` szinkron módon kell meghívni, vagy a felhasználói felületi szál nem válaszol.
 
   * A **`Activity`** létrehozáselőtt`onMAMCreate`a rendszer a következőt fogja hívni:. `onMAMIdentitySwitchRequired` Ha az alkalmazásnak felhasználói felületet kell megjelenítenie annak megállapításához, hogy engedélyezhető-e az identitásváltás, akkor az adott felhasználói felületet *egy másik* tevékenységgel kell megjeleníteni.
 

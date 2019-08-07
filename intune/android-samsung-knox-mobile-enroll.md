@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c962085ce61f01613bfc04ef0c80699e6f5a3e8
-ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
+ms.openlocfilehash: 94c92f70844594fd8524f2e49c537f1afaadaf96
+ms.sourcegitcommit: e6edfbfd63dd7c2500ce1123205aa2af9a7e8e2e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67547431"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68783197"
 ---
 # <a name="automatically-enroll-android-devices-by-using-samsungs-knox-mobile-enrollment"></a>Eszközök automatikus regisztrációja a Samsung Knox Mobile Enrollmenttel
 
@@ -44,15 +44,15 @@ A rendszer automatikusan hozzáadja az eszközazonosítókat (a sorozatszámokat
 ## <a name="prerequisites"></a>Előfeltételek
 
 Ha regisztrálni szeretne eszközöket az Intune-ban a KME-vel, először a cégét kell regisztrálnia a Samsung Knox portálon. Ehhez kövesse az alábbi lépéseket:
-1. [Ellenőrizze, hogy az Ön régiójában érhető el KME](https://www.samsungknox.com/en/solutions/it-solutions/knox-configure/available-countries): KME több mint 55 országban érhető el. Győződjön meg róla, hogy az üzembe helyezés országa támogatott.
+1. Győződjön [meg arról, hogy a KME elérhető az Ön országában vagy régiójában](https://www.samsungknox.com/en/solutions/it-solutions/knox-configure/available-countries): A KME több mint 55 országban/régióban érhető el. Győződjön meg arról, hogy a központi telepítés országa/régiója támogatott.
 
-2. [Támogatott eszközök](https://www.samsungknox.com/en/knox-platform/supported-devices/2.4+): Az összes Samsung-eszközök az Android-eszközök regisztrálási Knox 2.4 legalább és az Android vállalati regisztrációjának Knox 2.8 legalább KME érhető el.
+2. [Támogatott eszközök](https://www.samsungknox.com/en/knox-platform/supported-devices/2.4+): A KME minden Samsung-eszközön elérhető, legalább Knox 2,4 for Android-regisztrációval, és legalább Knox 2,8 az Android Enterprise-regisztrációhoz.
 
-3. [Hálózati követelmények](https://docs.samsungknox.com/KME-Getting-Started/Content/firewall_exceptions.htm): Győződjön meg arról, hogy a szükséges tűzfal és a hálózatelérési szabályok használata engedélyezett a hálózaton.
+3. [Hálózati követelmények](https://docs.samsungknox.com/KME-Getting-Started/Content/firewall_exceptions.htm): Győződjön meg arról, hogy a szükséges tűzfal-és hálózati hozzáférési szabályok engedélyezve vannak a hálózaton.
 
-4. [Samsung-fiók regisztrálása](https://www2.samsungknox.com/en/user/register): Egy Samsung-fiók regisztrálása és KME engedélyezése és kezelése egyetlen helyen történő összes Knox vállalati jogosultságok van szükség.
+4. [Regisztráljon egy Samsung](https://www2.samsungknox.com/en/user/register)-fiókra: Samsung-fiókra van szükség a KME regisztrálásához és engedélyezéséhez, valamint az összes Knox-beli nagyvállalati jogosultság egyetlen helyen történő kezeléséhez.
 
-5. Regisztráció áttekintése: Után profilját befejeződött, és elküldeni, Samsung áttekinti az alkalmazást, és akár azonnal engedélyezi, vagy állapotba állítja azt egy folyamatban lévő felülvizsgálati további nyomon követés céljából. A fiók jóváhagyása után továbbhaladhat a következő lépésekre.
+5. Regisztráció áttekintése: Miután elvégezte és elküldte a profilt, a Samsung végrehajtja az alkalmazás áttekintését, és vagy azonnal jóváhagyja, vagy egy függőben lévő felülvizsgálati állapotba helyezi a további követést. A fiók jóváhagyása után továbbhaladhat a következő lépésekre.
 
 ## <a name="create-mdm-profile"></a>MDM-profil létrehozása
 
@@ -69,12 +69,12 @@ Miután sikeresen regisztrálta a cégét, az alábbi adatokkal létrehozhat egy
 |Az alkalmazás engedélyezése Google-eszköztulajdonosként | Igen | A lehetőség kiválasztásával Android Enterprise-ként regisztrálhatja az eszközt. 
 |Támogatott mobileszköz-kezelés      | Igen       |Microsoft Intune 
 |A rendszeralkalmazások engedélyezettek maradnak | Nem | A lehetőség kiválasztásával biztosíthatja, hogy az összes alkalmazás engedélyezve legyen, és elérhető legyen a profilhoz. Ha ez a beállítás nincs bejelölve, csak nagyon korlátozott számú rendszeralkalmazás jelenik meg az eszköz alkalmazástálcáján. Az olyan alkalmazások, mint például az e-mail-alkalmazás, rejtve maradnak. 
-|Egyéni JSON        | Nem        |{"com.google.android.apps.work.clouddpc.EXTRA_ENROLLMENT_TOKEN": "Adja meg az Intune regisztrációs jogkivonat-karakterláncot"}. Ismerje meg, a [Beléptetési profil létrehozásának](android-kiosk-enroll.md) folyamatát. 
+|Egyéni JSON        | Nem        |{"com.google.android.apps.work.clouddpc.EXTRA_ENROLLMENT_TOKEN": "Adja meg az Intune beléptetési token sztringjét"}. Ismerje meg, a [Beléptetési profil létrehozásának](android-kiosk-enroll.md) folyamatát. 
 | Jogi szerződések hozzáadása | Nem | Hagyja üresen a mezőt. 
 
 ### <a name="for-android"></a>Android rendszerhez
 
-Lépésenkénti útmutatásért tekintse meg a [Samsung Knox profil beállítása varázsló](https://docs.samsungknox.com/KME-Getting-Started/Content/getting-started-wizard.htm) utasításokat.
+Részletes útmutatásért tekintse meg a [Samsung Knox profil telepítése varázsló](https://docs.samsungknox.com/KME-Getting-Started/Content/getting-started-wizard.htm) utasításait.
 
 | MDM-profil – mezők| Kötelező? | értékek |
 |-------------------|-----------|-------|
@@ -92,9 +92,9 @@ Knox-licenc társítása a profilhoz | Nem | Hagyja üresen a beállítást. A K
 ## <a name="add-devices"></a>Eszközök felvétele
 
 Ha MDM-profilokat szeretne hozzárendelni az eszközökhöz, a támogatott Samsung Knox-eszközöket hozzá kell adnia a Knox portálhoz az alábbi módszerek egyikével:
-- **Samsung által jóváhagyott Reseller(s) használatával:** Ezt a módszert akkor használja, ha az egyik a Samsung által jóváhagyott viszonteladók eszközökön megvásárolt. Ha jóváhagyja, a viszonteladók automatikusan feltölthetnek eszközöket. [A viszonteladók hozzáadásáról tájékoztatást a Samsung Knox regisztrációs útmutatójában találhat](https://docs.samsungknox.com/KME-Getting-Started/Content/Register_resellers.htm).
+- **A Samsung által jóváhagyott viszonteladó (k) használata:** Ezt a módszert akkor használja, ha az egyik Samsung által jóváhagyott viszonteladótól vásárol eszközöket. Ha jóváhagyja, a viszonteladók automatikusan feltölthetnek eszközöket. [A viszonteladók hozzáadásáról tájékoztatást a Samsung Knox regisztrációs útmutatójában találhat](https://docs.samsungknox.com/KME-Getting-Started/Content/Register_resellers.htm).
 
-- **A Knox-telepítésre kijelölt alkalmazás (KDA) használatával:** Ezt a módszert használja, ha meglévő eszközöket, amelyek segítségével KME regisztrálni kell. Ezzel a módszerrel Bluetooth vagy NFC használatával adhat hozzá eszközöket a Knox portálhoz. [A KDA használatáról tájékoztatást a Samsung Knox regisztrációs útmutatójában találhat](https://docs.samsungknox.com/KME-Getting-Started/Content/add-device-info.htm).
+- **A Knox üzembehelyezési alkalmazás (KDA) használata:** Akkor használja ezt a módszert, ha olyan meglévő eszközöket használ, amelyeket a KME használatával kell regisztrálni. Ezzel a módszerrel Bluetooth vagy NFC használatával adhat hozzá eszközöket a Knox portálhoz. [A KDA használatáról tájékoztatást a Samsung Knox regisztrációs útmutatójában találhat](https://docs.samsungknox.com/KME-Getting-Started/Content/add-device-info.htm).
 
 ## <a name="assign-an-mdm-profile-to-devices"></a>MDM-profil hozzárendelése az eszközökhöz
 A regisztráció előtt a Knox portálon hozzá kell rendelnie egy MDM-profilt a hozzáadott eszközökhöz. [Az eszközkonfigurációról tájékoztatást a Samsung Knox regisztrációs útmutatójában találhat](https://docs.samsungknox.com/KME-Getting-Started/Content/configure-devices.htm).
@@ -103,9 +103,9 @@ A regisztráció előtt a Knox portálon hozzá kell rendelnie egy MDM-profilt a
 
 Az Intune-ba androidos KME-vel beléptetett eszközök esetében a következőképp konfigurálhatja a végfelhasználói bejelentkezést:
 
-- **Nélkül társított felhasználónév:** A Knox portál **eszközadatok**, hagyja a **felhasználói azonosító** és **jelszó** mezőket a hozzáadott eszközök esetén üres. Így a végfelhasználónak az Intune-regisztráció során nevet és jelszót is meg kell adnia.
+- **Felhasználónév-társítás nélkül:** A Knox-portál **eszköz részletei**területén hagyja üresen a **felhasználói azonosító** és a **jelszó** mezőket a hozzáadott eszközökhöz. Így a végfelhasználónak az Intune-regisztráció során nevet és jelszót is meg kell adnia.
 
-- **A felhasználónév-hozzárendelés:** A Knox portál **eszközadatok**, adjon meg egy **felhasználói azonosító** (például egy felhasználó nevét a hozzárendelt felhasználó vagy egy [Készülékregisztráció-kezelő](https://docs.microsoft.com/intune/device-enrollment-manager-enroll) fiók) a hozzáadott eszközökhöz. Így a végfelhasználó felhasználó neve előre ki lesz töltve, az Intune-regisztráció során pedig neki egy jelszót kell megadnia.
+- **Felhasználónévvel társítva:** A Knox-portál **eszköz részletei**területén adjon meg egy **felhasználói azonosítót** (például egy felhasználónevet a hozzárendelt felhasználóhoz vagy egy [eszköz](https://docs.microsoft.com/intune/device-enrollment-manager-enroll) beléptetési kezelői fiókhoz) a hozzáadott eszközökhöz. Így a végfelhasználó felhasználó neve előre ki lesz töltve, az Intune-regisztráció során pedig neki egy jelszót kell megadnia.
 
 > [!NOTE]
 >
@@ -120,15 +120,15 @@ További segítségre van szüksége? Tekintse meg a teljes [Knox mobileszköz-r
 
 ## <a name="frequently-asked-questions"></a>Gyakori kérdések
 
-- **Eszköz tulajdonosa támogatása:** Az Intune támogatja az eszközök regisztrálását csak Android enterprise használatával teljes képernyős módra. Egyéb Android Enterprise eszköztulajdonosi módok támogatására is sor kerül, amint elérhetővé válnak az Intune-ban.
+- **Eszköz tulajdonosának támogatása:** Az Intune az eszközök csak kioszk módban való regisztrálását támogatja az Android Enterprise használatával. Egyéb Android Enterprise eszköztulajdonosi módok támogatására is sor kerül, amint elérhetővé válnak az Intune-ban.
 
-- **Nincsenek munkahelyi profilt támogató:** KME a vállalati tulajdonú eszközök regisztrációs módszer és az Androidos munkahelyi profillal regisztrált eszközök biztosítása a munkahelyi és személyes adatok elkülönülnek a személyes eszközökhöz. Tehát eszközök regisztrálása a munkahelyi profilba KME használatával nem támogatjuk az Intune-ban.
+- **A munkahelyi profil nem támogatott:** A KME a vállalati eszközök regisztrálási módszere és az Android munkahelyi profilban regisztrált eszközök biztosítják, hogy a munkahelyi és a személyes adatmennyiség külön legyen a személyes eszközökön. Tehát eszközök regisztrálása a munkahelyi profilba KME használatával nem támogatjuk az Intune-ban.
 
-- **A gyári beállítások visszaállítására Android Enterprise regisztrálása:** Ha átkonfigurálása eszközöket, amelyek már be van állítva, eszközök kell lennie a gyári beállításokat Android Enterprise regisztrálása során.
+- **Gyári beállítások visszaállítása az Android Enterprise-ba való regisztráláshoz:** Ha a már beállított eszközöket kell beállítani, az eszközöknek gyári beállításokra van szükségük az Android Enterprise-ban való regisztráláskor.
 
-- **A frissítések a Google Play-fiók használatával:** Google Play-fiók már nem szükséges regisztrálni az eszközt a Microsoft Intune-bA. Az Intune Céges portál alkalmazás jövőbeli frissítései azonban ezt kötelezővé tehetik. A Google Eszköztulajdonos-regisztrációhoz nem szükséges Google Play-fiók.
+- **Frissítések a Google Play-fiók használatával:** A Google Play-fiók nem szükséges az eszköz Microsoft Intune való regisztrálásához. Az Intune Céges portál alkalmazás jövőbeli frissítései azonban ezt kötelezővé tehetik. A Google Eszköztulajdonos-regisztrációhoz nem szükséges Google Play-fiók.
 
-- **"Password" mezőt a rendszer figyelmen kívül hagyja:** Ha a **jelszó** mező fel van töltve **eszközadatok** a Knox-portálon, figyelmen kívül hagyja az Intune vállalati portál alkalmazás Android-regisztráció során. A végfelhasználónak meg kell adnia egy jelszót az eszközön az eszközregisztráció befejezéséhez.
+- **A "password" mezőt a rendszer figyelmen kívül hagyja:** Ha a Knox-portálon a **jelszó** mező fel van töltve az **eszköz részletei** között, a Intune céges portál alkalmazás figyelmen kívül hagyja az Android-regisztráció során. A végfelhasználónak meg kell adnia egy jelszót az eszközön az eszközregisztráció befejezéséhez.
 
 
 ## <a name="getting-support"></a>Támogatás igénybevétele

@@ -18,12 +18,12 @@ ms.reviewer: japoehlm
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3941c41b24d458d14acb1361bc463af657a0ca67
-ms.sourcegitcommit: 84c79ceea27f7411528defc5ee8ba35ae2bf473c
+ms.openlocfilehash: 273342f7181bcc577a44126404d145ca9b5bff3e
+ms.sourcegitcommit: e6edfbfd63dd7c2500ce1123205aa2af9a7e8e2e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67511928"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68783022"
 ---
 # <a name="enroll-your-organization-provided-macos-device-in-management"></a>A vállalat által biztosított macOS-eszköz felügyeleti regisztrálása
 
@@ -40,10 +40,10 @@ Lehetséges, hogy vállalata az úgynevezett *Apple Készülékregisztrációs p
 Az alábbi lépésekkel regisztrálhatja macOS-eszközét a felügyeleti szolgáltatásban. Ha nem a vállalat által biztosított, hanem saját eszközt használ, kövesse a [személyes és saját eszközökre](enroll-your-device-in-intune-macos-cp.md) vonatkozó lépéseket.  
 
 1. Kapcsolja be a macOS-eszközt. 
-2. Válassza ki az országát, és kattintson a **Folytatás** gombra.  
+2. Válassza ki az országot vagy régiót, majd kattintson a **Folytatás**gombra.  
 
    ![Képernyőkép egy macOS-eszköz Beállítási asszisztensének üdvözlőképernyőjéről, a nyelvválasztó listával.](./media/macos-dep-welcome-1808.png)   
-3. Válasszon egy billentyűzetkiosztást. A lista a kiválasztott országtól függően több lehetőséget is felkínálhat. Ha a kiválasztott országtól függetlenül az összes lehetséges kiosztást látni szeretné, kattintson az **Összes megjelenítése** elemre. Ha végzett, kattintson a **Folytatás** gombra.  
+3. Válasszon egy billentyűzetkiosztást. A listában egy vagy több lehetőség látható a kiválasztott ország/régió alapján. Az összes elrendezési beállítás megjelenítéséhez, a kiválasztott országtól/régiótól függetlenül, kattintson az **összes megjelenítése**elemre. Ha végzett, kattintson a **Folytatás** gombra.  
 
    ![Képernyőkép egy macOS-eszköz Beállítási asszisztensének billentyűzetkiosztási képernyőjéről. Látható a választható nyelvek listája, egy bejelöletlen Összes megjelenítése lehetőség, illetve a Vissza és Folytatás gombok.](./media/macos-dep-keyboard-1808.png)  
 4. Válassza ki a Wi-Fi-hálózatot. A beállítás folytatásához internetkapcsolat szükséges. Ha nem látja a saját hálózatát, vagy vezetékes hálózattal szeretne kapcsolódni, kattintson az **Egyéb hálózati beállítások** lehetőségre. Ha végzett, kattintson a **Folytatás** gombra.  

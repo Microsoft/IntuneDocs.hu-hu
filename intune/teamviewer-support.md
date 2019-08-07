@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 397ca3c03c96adc9bd6b0ca691f835e3e579fba0
-ms.sourcegitcommit: 7c251948811b8b817e9fe590b77f23aed95b2d4e
+ms.openlocfilehash: 8b39c9f4f875ca458817940819716e1188d36eef
+ms.sourcegitcommit: e6edfbfd63dd7c2500ce1123205aa2af9a7e8e2e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67882244"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68783253"
 ---
 # <a name="use-teamviewer-to-remotely-administer-intune-devices"></a>A TeamViewer használata Intune-eszközök távoli felügyeletéhez
 
@@ -28,7 +28,10 @@ Az Intune által kezelt eszközök a [TeamViewer](https://www.teamviewer.com) ha
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-- Használjon támogatott eszközt. Az Intune-nal felügyelt Android-, Windows-, iOS- és macOS-eszközök támogatják a távfelügyeletet. A TeamViewer nem feltétlenül támogatja a Windows Holographic (HoloLens), Windows Team (Surface Hub), vagy Windows 10 S rendszerű eszközöket. A támogatással kapcsolatban tekintse át a [TeamViewer](https://www.teamviewer.com) frissítéseit.
+- Használjon támogatott eszközt. Az Intune által felügyelt Android-eszköz rendszergazdája, androidos munkahelyi profil, Windows, iOS és macOS rendszerű eszközök támogatják a távoli felügyeletet. A TeamViewer nem feltétlenül támogatja a Windows Holographic (HoloLens), Windows Team (Surface Hub), vagy Windows 10 S rendszerű eszközöket. A támogatással kapcsolatban tekintse át a [TeamViewer](https://www.teamviewer.com) frissítéseit.
+
+> [!NOTE]
+> Az Android dedikált és teljes körűen felügyelt funkciója nem támogatott.
 
 - Az Azure Portal-beli Intune rendszergazdának a következő [Intune-szerepkörökkel](role-based-access-control.md) kell rendelkeznie:  
 

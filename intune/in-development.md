@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 969e7bc4804e1f66230c76d742bec2c67c2fa006
-ms.sourcegitcommit: 99b74d7849fbfc8f5cf99cba33e858eeb9f537aa
+ms.openlocfilehash: 95eede7c62e728aa0dbade4478eb87f31c252558
+ms.sourcegitcommit: a6775522df49d17a4125ccb31be395f2343bdae8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68670920"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68833550"
 ---
 # <a name="in-development-for-microsoft-intune---august-2019"></a>Fejlesztés a Microsoft Intune – augusztus 2019
 
@@ -62,7 +62,7 @@ A készültség és a tervezés elősegítése érdekében ez az oldal felsorolj
 A rendszergazdák kezelhetik, hogy egy alkalmazás törlődik-e, vagy megmaradnak-e az eszközön, ha az eszköz regisztrálva van a felhasználó vagy az eszköz csoport szintjén. 
 
 ### <a name="categorize-microsoft-store-for-business-apps----3926922---"></a>Üzleti alkalmazások kategorizálása Microsoft Store <!-- 3926922 -->
-A vállalati alkalmazások Microsoft Store kategorizálható. Ehhez válassza az **Intune** > **ügyfélalkalmazások** > alkalmazásai**lehetőséget > válassza** ki a Microsoft Store for Business alkalmazást > **alkalmazás-információ** > **kategóriát**. A legördülő menüben rendeljen hozzá egy kategóriát.
+A vállalati alkalmazások Microsoft Store kategorizálható. Ehhez válassza az **Intune** > **ügyfélalkalmazások** > alkalmazásai lehetőséget > Válassza ki a Microsoft Store for Business alkalmazást > **alkalmazás-információ** > **kategóriát**. A legördülő menüben rendeljen hozzá egy kategóriát.
 ### <a name="configure-app-notification-content-for-organization-accounts----2576686---"></a>Alkalmazás-értesítési tartalom konfigurálása a szervezeti fiókokhoz <!-- 2576686 -->
 Az Intune app Protection-szabályzatok (alkalmazás) Android és iOS rendszerű eszközökön lehetővé teszik a szervezeti fiókok alkalmazás-értesítési tartalmának szabályozását. Ennek a funkciónak támogatásra van szüksége az alkalmazásoktól, és előfordulhat, hogy nem érhető el az összes alkalmazás-kompatibilis alkalmazáshoz. További információ az ALKALMAZÁSról: [Mi az az App Protection-szabályzat?](app-protection-policy.md).
 
@@ -73,7 +73,7 @@ Az androidos munkahelyi Profilos eszközökön elérhető alkalmazások telepít
 ## <a name="device-configuration"></a>Eszközök konfigurálása
 
 ### <a name="some-unsupervised-ios-device-restrictions-will-become-supervised-only-with-the-ios-130-release----4867809----"></a>Néhány nem felügyelt iOS-eszközre vonatkozó korlátozás csak az iOS 13,0-es kiadással lesz felügyelve <!-- 4867809  -->
-Egyes beállítások csak a felügyelt eszközökre érvényesek az iOS 13,0 kiadással. Ezek a beállítások a következők:
+Egyes beállítások a felügyelt eszközökre lesznek érvényesek, az iOS 13,0-es kiadásával kezdődően. Ezek a beállítások a következők:
 
 - Alkalmazás-áruház, dokumentumok megtekintése, játékok
   - Alkalmazás-áruház
@@ -98,7 +98,7 @@ Az aktuális beállítások megjelenítéséhez nyissa meg az [IOS-eszköz beál
 - iOS 13,0 és újabb verziók
 
 ### <a name="new-settings-and-changes-to-existing-settings-to-restrict-features-on-ios-and-macos-devices----4867699-4867709----"></a>Új beállítások és meglévő beállítások módosítása az iOS-és macOS-eszközök funkcióinak korlátozásához <!-- 4867699 4867709  -->
-Létrehozhat olyan profilokat, amelyekkel korlátozhatja a beállításokat iOS és MacOS rendszerű eszközökön **(az** **eszköz konfigurációs** > **profiljainak** > **létrehozása** >  írja be > **eszköz korlátozásait**). A következő funkciók lesznek hozzáadva:
+Létrehozhat olyan profilokat, amelyekkel korlátozhatja a beállításokat iOS és MacOS rendszerű eszközökön (az**eszköz konfigurációs** >  **profiljainak** >  **létrehozása** >  írja be > **eszköz korlátozásait**). A következő funkciók lesznek hozzáadva:
 
 - A **MacOS** > -**eszköz korlátozása** > a**felhőre és**a tárhelyre az új **handoff** beállítással letilthatja a felhasználók számára, hogy egy MacOS-eszközön dolgozhassanak, és folytatják a munkát egy másik MacOS vagy iOS rendszerű eszközön.
   Ha szeretné megtekinteni az aktuális beállításokat, lépjen a [MacOS eszközbeállítások lehetőségre, hogy engedélyezze vagy korlátozza a szolgáltatásokat az Intune használatával](device-restrictions-macos.md).

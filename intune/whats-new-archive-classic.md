@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d09a996e3e1a47cae33e8a4189b4406a940acfe3
-ms.sourcegitcommit: bd09decb754a832574d7f7375bad0186a22a15ab
+ms.openlocfilehash: d414295966580e0dd91ce2b94757509fd13bdfbe
+ms.sourcegitcommit: e6edfbfd63dd7c2500ce1123205aa2af9a7e8e2e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68353277"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68783137"
 ---
 # <a name="whats-new-in-the-intune-classic-portal---previous-months"></a>A klasszikus Intune-portál újdonságai – korábbi hónapok
 
@@ -152,7 +152,7 @@ Az Androidhoz készült Céges portál alkalmazás új, modern megjelenésű és
 - Apps Az **alkalmazások** lapon a **Kiemelt alkalmazások** és a **minden alkalmazás** gomb frissül.
 - Keresés Az **alkalmazások** lapon a **Keresés** gomb egy lebegő művelet gomb.
 - Navigálás az alkalmazásokban: Az **összes alkalmazás** nézet a **Kiemelt**, az **összes**és a **Kategóriák** Többlapos nézetét jeleníti meg a Navigálás megkönnyítésére.
-- Támogatja **Az eszközök** és  a hozzájuk tartozó kapcsolattartási lapok frissülnek az olvashatóság javítása érdekében.
+- Támogatja **Az eszközök** és a hozzájuk tartozó kapcsolattartási lapok frissülnek az olvashatóság javítása érdekében.
 
 A változásokkal kapcsolatos további részletekért lásd: [Felhasználói felületi frissítések az Intune végfelhasználói alkalmazásaiban](whats-new-app-ui.md).
 
@@ -178,7 +178,7 @@ Jelenleg nem tudunk ismert problémáról. Ha problémákat tapasztal az iOS 10.
 Kínában nem érhető el a Google Play Áruház, ezért az androidos eszközöknek kínai áruházakból kell beszerezniük az alkalmazásokat. A Céges portál alkalmazás ezt azzal segíti, hogy az Android rendszert Kínában használó ügyfeleket a Céges portál és az Outlook alkalmazások letöltéséhez helyi alkalmazásáruházakba irányítja át. Ezzel javul a mobileszköz-felügyelet és a mobilalkalmazás-felügyelet felhasználói élményének minősége, ha a feltételes hozzáférési szabályzatok engedélyezve vannak. Az androidos Céges portál és Outlook alkalmazások az alábbi kínai alkalmazásáruházakból tölthetők le:
 
 - [Baidu](https://go.microsoft.com/fwlink/?linkid=836946)
-- [Xiaomi](https://go.microsoft.com/fwlink/?linkid=836947)
+- [Xiaomi](http://en.miui.com/thread-469541-1-1.html)
 - [Tencent](https://go.microsoft.com/fwlink/?linkid=836949)
 - [Huawei](https://go.microsoft.com/fwlink/?linkid=836948)
 - [Wandoujia](https://go.microsoft.com/fwlink/?linkid=836950)
@@ -328,7 +328,7 @@ Kínában való letöltésre is közzétesszük a Munkahelyi portál alkalmazás
 * [Huawei](https://go.microsoft.com/fwlink/?linkid=836948)
 * [Tencent](https://go.microsoft.com/fwlink/?linkid=836949)
 * [Wandoujia](https://go.microsoft.com/fwlink/?linkid=836950)
-* [Xiaomi](https://go.microsoft.com/fwlink/?linkid=836947)
+* [Xiaomi](http://en.miui.com/thread-469541-1-1.html)
 
 A Munkahelyi portál alkalmazás androidos verziója a Google Play szolgáltatások segítségével kommunikál a Microsoft Intune szolgáltatással. A Google Play szolgáltatások egyelőre nem érhetők el Kínában, ezért a következő műveletek bármelyike akár 8 órát is igénybe vehet. 
 

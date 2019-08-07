@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3870918378a2b3dd115d6449c3c83d37fe8e96c5
-ms.sourcegitcommit: 7c251948811b8b817e9fe590b77f23aed95b2d4e
+ms.openlocfilehash: 269ba2e951ccee2b0fdf2c4cd5a93a9d78aa6923
+ms.sourcegitcommit: e6edfbfd63dd7c2500ce1123205aa2af9a7e8e2e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67884878"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68783244"
 ---
 # <a name="create-a-design"></a>Terv létrehozása
 
@@ -116,7 +116,7 @@ Az Intune kétféle telepítési lehetőséget kínál, ezek az önálló és a 
 
 ## <a name="intune-tenant-location"></a>Az Intune-bérlő földrajzi helye
 
-A globálisan jelen lévő vállalatoknak a szolgáltatásra való előfizetéskor célszerű megtervezniük, hogy hol tartják a bérlőjüket. Az ország az első Intune-előfizetésre való regisztráláskor lesz definiálva, és az alább felsorolt régiókban helyezkedhet el:
+A globálisan jelen lévő vállalatoknak a szolgáltatásra való előfizetéskor célszerű megtervezniük, hogy hol tartják a bérlőjüket. Az ország/régió akkor van meghatározva, ha első alkalommal regisztrál egy Intune-előfizetésre, és a világ országaihoz/régióihoz rendel hozzá, amelyek alább láthatók:
 
 - Észak-Amerika
 
@@ -125,7 +125,7 @@ A globálisan jelen lévő vállalatoknak a szolgáltatásra való előfizetésk
 - Ázsia és a Csendes-óceáni térség
 
 >[!IMPORTANT]
-> Az országot és a bérlő helyét később nem lehet módosítani.
+> Később nem lehet módosítani az országot/régiót és a bérlő helyét.
 
 ## <a name="external-dependencies"></a>Külső függőségek
 

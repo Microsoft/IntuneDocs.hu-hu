@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b6db255cc4c4bb8466d36e25deaf36e5c3480106
-ms.sourcegitcommit: 2bce5e43956b6a5244a518caa618f97f93b4f727
+ms.openlocfilehash: 47c2e509c9eb032dae67dbb5a44839f88fa5de4b
+ms.sourcegitcommit: e6edfbfd63dd7c2500ce1123205aa2af9a7e8e2e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68467502"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68783076"
 ---
 # <a name="configure-and-use-scep-certificates-with-intune"></a>SCEP-tanúsítványok konfigurálása és használata az Intune-nal
 
@@ -225,7 +225,7 @@ Ebben a lépésben a következőket fogja elvégezni:
 3. Az NDES-kiszolgálóra rendkívül hosszú URL-címek (lekérdezések) érkeznek, melyekhez két beállításjegyzékbeli bejegyzést kell felvennie:
 
 
-   |                        Location                        |      Value      | Type  |      Data       |
+   |                        Location                        |      Érték      | Type  |      Data       |
    |--------------------------------------------------------|-----------------|-------|-----------------|
    | HKLM\SYSTEM\CurrentControlSet\Services\HTTP\Parameters | MaxFieldLength  | DWORD | 65534 (decimális) |
    | HKLM\SYSTEM\CurrentControlSet\Services\HTTP\Parameters | MaxRequestBytes | DWORD | 65534 (decimális) |
@@ -410,7 +410,7 @@ A szolgáltatás futásának ellenőrzéséhez nyisson meg egy böngészőt, és
 
             **CN={{UserName}},E={{EmailAddress}},OU=Mobile,O=Finance Group,L=Redmond,ST=Washington,C=US**
 
-            Ez a példa egy olyan tulajdonosnév-formátumot hoz létre, amely a CN és az E változó mellett a Szervezeti Egység (OU), a Szervezet (O), a Hely (L) és az Ország/régió (C) értékek sztringjét is alkalmazza. A függvény leírását és a támogatott sztringeket a [CertStrToName függvény](https://msdn.microsoft.com/library/windows/desktop/aa377160.aspx) című cikkben találhatja meg.
+            Ebben a példában létrehozta a tulajdonos nevének formátumát, amely a CN és az E változó mellett a szervezeti egység, szervezet, hely, állam és ország/régió értékek sztringjét is használja. A függvény leírását és a támogatott sztringeket a [CertStrToName függvény](https://msdn.microsoft.com/library/windows/desktop/aa377160.aspx) című cikkben találhatja meg.
 
         **Eszköz tanúsítványtípus**  
 

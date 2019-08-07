@@ -5,9 +5,8 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 12/06/2018
+ms.date: 08/05/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -17,35 +16,40 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ec97819e49bdb1564b8dd75b23302608492e183
-ms.sourcegitcommit: 25e6aa3bfce58ce8d9f8c054bc338cc3dff4a78b
+ms.openlocfilehash: 38b381fca17dec66303958ee04c018967ae0d999
+ms.sourcegitcommit: a6775522df49d17a4125ccb31be395f2343bdae8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57397339"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68833537"
 ---
-# <a name="licenses-that-include-intune"></a>Az Intune-t tartalmazó licencek
+# <a name="microsoft-intune-licensing"></a>Microsoft Intune licencelés
+A Microsoft Intune a különböző ügyfelek igényeihez és a szervezeti méretekhez érhető el, az iskolák és kisvállalkozások számára egyszerűen használható felügyeleti felülettel, a nagyvállalati ügyfelek által igényelt fejlettebb funkciókhoz. A legtöbb Microsoft Intunet tartalmazó licenc a System Center Configuration Manager használatának jogát is megadja, feltéve, hogy az előfizetés aktív marad. 
 
-[!INCLUDE [both-portals](./includes/note-for-both-portals.md)]
+## <a name="microsoft-intune"></a>Microsoft Intune
+Az Intune-t a következő licencek tartalmazzák:
 
-Az alábbi táblázat azt mutatja, hogy az Intune mely verziója érhető el az adott licenccel:
+- Microsoft 365 E5
+- Microsoft 365 E3
+- Enterprise Mobility + Security E5
+- Enterprise Mobility + Security E3
+- Microsoft 365 Business
+- Microsoft 365 F1
 
-| Licenc | Intune-verzió | Árak és funkciók összehasonlítása |
-|-----------------------------------------------------------------------|-------------------------------------------------------------|---|
-| Intune | Intune | [További információ](https://www.microsoft.com/en-us/cloud-platform/microsoft-intune-pricing) |
-| Enterprise Mobility + Security E3 | Intune | [További információ](https://www.microsoft.com/en-us/cloud-platform/microsoft-intune-pricing) |
-| Enterprise Mobility + Security E5 | Intune | [További információ](https://www.microsoft.com/en-us/cloud-platform/microsoft-intune-pricing) |
-| Microsoft 365 oktatási célokra A1 | Oktatási célokra Intune | [További információ](https://www.microsoft.com/en-us/education/buy-license/microsoft365/default.aspx#) |
-| Microsoft 365 oktatási célokra A3 | Oktatási célokra Intune | [További információ](https://www.microsoft.com/en-us/education/buy-license/microsoft365/default.aspx#) |
-| Microsoft 365 oktatási célokra A5 | Oktatási célokra Intune | [További információ](https://www.microsoft.com/en-us/education/buy-license/microsoft365/default.aspx#) |
-| Microsoft 365 E3 | Intune | [További információ](https://www.microsoft.com/en-US/microsoft-365/enterprise) |
-| Microsoft 365 E5 | Intune | [További információ](https://www.microsoft.com/en-US/microsoft-365/enterprise) |
-| Microsoft 365 F1 | Intune | [További információ](https://www.microsoft.com/en-us/microsoft-365/enterprise/firstline) |
-| Microsoft 365 Business | Intune | [További információ](https://www.microsoft.com/en-us/microsoft-365/business) |
 
-Intune licencek ezen a listán szereplő nem található.
 
-Megfelelő licenc szükséges olyan esetben, ha a felhasználó közvetve vagy közvetlenül előnyt élvez a licenc által nyújtott funkciók bármelyikéből eredően.
+## <a name="microsoft-intune-for-education"></a>Microsoft Intune for Education
+A Intune for Education a következő licencek tartalmazzák:
 
-A licencek felhasználókhoz való hozzárendeléséről az [Intune-licencek hozzárendelése felhasználói fiókokhoz](licenses-assign.md) című cikkben olvashat.
+- Microsoft 365 oktatási célokra A5
+- Microsoft 365 oktatási célokra A3
 
+## <a name="additional-information"></a>További információ
+- Egy Microsoft Intune felhasználói és eszköz-előfizetés önállóként érhető el a fent felsorolt csomagokon kívül.
+- A Microsoft Intune csak eszközre vonatkozó előfizetések olyan kioszk típusú forgatókönyvekhez érhetők el, amelyekben nincsenek használatban felhasználói affinitási funkciók.
+- A megfelelő Microsoft Intune licencre akkor van szükség, ha egy felhasználó vagy eszköz közvetlenül vagy közvetve a Microsoft Intune szolgáltatástól származik, beleértve a Microsoft Intune szolgáltatás elérését egy [Microsoft API](https://docs.microsoft.com/legal/microsoft-apis/terms-of-use)-n keresztül.
+- Az Intune nem tartalmazza az előző táblázatokban nem szereplő licenceket.
+
+Látogasson el a [Microsoft licencelési](https://www.microsoft.com/licensing/default) oldalára, ahol megtekintheti a termék kiadásait, a termék licencelési frissítéseit, a mennyiségi licencelési csomagokat, valamint az adott felhasználási esetekkel kapcsolatos egyéb információkat.  
+
+Arról, hogy a felhasználók és az eszközök licencei hogyan érintik a szolgáltatásokhoz való hozzáférést, valamint a licencek felhasználóhoz rendelését, tekintse [meg az Intune-licencek a felhasználói fiókokhoz való hozzárendelésével kapcsolatos cikket](licenses-assign.md).
