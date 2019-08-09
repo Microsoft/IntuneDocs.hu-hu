@@ -18,16 +18,16 @@ ms.reviewer: arnab
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d44af8f40243596bda58d610b369db6f54be6d1e
-ms.sourcegitcommit: 3baa9965095bb874d9b8c7a3cbb4aa925ed52cae
+ms.openlocfilehash: 16c6708fb730c459f41fec573a939bfb4fb5ddda
+ms.sourcegitcommit: 549352bdea93cc2809e3e0010bfcc10bd44dc728
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68625119"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68862144"
 ---
 # <a name="install-missing-certificate-required-by-your-organization"></a>A szervezet által igényelt hiányzó tanúsítvány telepítése  
 
-Ha az eszköz nincs regisztrálva az Intune-ban, és hiányzik róla egy, a cég informatikai támogatási szolgálata által kért tanúsítvány, nem fog tudni bejelentkezni a Céges portál alkalmazásba. Amikor megpróbál bejelentkezni, a következő üzenet jelenik meg:
+Ha az eszköz nincs regisztrálva az Intune-ban, és hiányzik egy szükséges tanúsítvány, nem fog tudni bejelentkezni a Céges portál alkalmazásba. Amikor megpróbál bejelentkezni, a következő üzenet jelenik meg:
 
 ![képernyőfelvétel-hibaüzenet-hiányzó-tanúsítványról](./media/andr-cert_install-1-cert_missing.png)
 
@@ -82,3 +82,7 @@ A következő lépések végrehajtásával manuálisan azonosíthatja és telep�
 7. Nyissa ismét meg a Céges portál alkalmazást. Ekkor már be kell, hogy tudjon jelentkezni a Céges portál alkalmazásba. Ha segítségre van szüksége, lépjen kapcsolatba a cég informatikai támogató szolgálatával.
 
 Ha ugyanazt a „Hiányzó tanúsítvány” üzenetet látja, mint amelyik fentebb is látható, és már követte a fenti lépéseket, akkor valószínűleg egy másik tanúsítvány is van, amelyet a cég informatikai támogató szolgálatának segítségével telepíteni kell. Kérje a cég informatikai támogató szolgálatának segítségét a [Céges portál webhelyen](https://go.microsoft.com/fwlink/?linkid=2010980) található elérhetőségeken.
+
+## <a name="next-steps"></a>További lépések  
+
+További segítségre van szüksége? Forduljon a cég informatikai támogatásához. Az elérhetőségét keresse meg a [Vállalati portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).  

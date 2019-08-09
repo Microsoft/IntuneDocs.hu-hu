@@ -16,38 +16,46 @@ ms.reviewer: dagerrit
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d207d1ac51da5b34f48aeffd83791bdbb40bf971
-ms.sourcegitcommit: 116ef72b9da4d114782d4b8dd9f57556c9b01511
+ms.openlocfilehash: a06b40adee9c2eb66c4eafd44ce9b798a95df39f
+ms.sourcegitcommit: 549352bdea93cc2809e3e0010bfcc10bd44dc728
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67494558"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68862364"
 ---
-# <a name="plan-communications"></a>A kommunikáció tervezése 
-A kommunikációs terv kulcseleme az Intune-migráció. A következő eszközök és sablonok segítséget nyújt a felhasználók képzése biztosítják. Az Intune bevezetési Kit e-mail-sablonok, egy Intune-regisztrációs útmutató és a végfelhasználói beléptetési Oktatóvideók mutató hivatkozásokat tartalmaz.  
+# <a name="plan-communications"></a>A kommunikáció tervezése
 
-Letöltés:  [Az Intune bevezetési csomag](https://aka.ms/IntuneAdoptionKit)
+A kommunikációs terv az Intune áttelepítésének kulcsfontosságú eleme. A következő eszközök és sablonok nyújtanak segítséget a végfelhasználók nevelésében. Az Intune bevezetési csomagja tartalmazza az e-mail-sablonokat, az Intune-regisztrációs útmutatót, valamint a végfelhasználói beléptetéshez kapcsolódó oktatói videókra mutató hivatkozásokat.  
 
-## <a name="email-templates"></a>E-mail-sablonok 
-A következő e-mail-kommunikációs terv követését javasoljuk. A mellékelt sablonokat saját kommunikációs tervéhez igazíthatja:
-- **E-mail-#1**: Az előnyök, az elvárások és az ütemezés ismertetik. Használja ki a lehetőséget az Intune által felügyelt eszközökön elérhető új szolgáltatások bemutatására. 
+Letöltés  [Intune bevezetési csomag](https://aka.ms/IntuneAdoptionKit)
 
-- **E-mail-#2**: Jelentjük be, hogy szolgáltatások az Intune-on keresztül hozzáférhető készen állnak. Szólítsa fel a felhasználókat, hogy most regisztráljanak.  Engedélyezheti a felhasználók egy idővonalon a hozzáférése az érintett előtt. Emlékeztesse a felhasználókat a migrálás előnyeire és stratégiai okaira.
-Adott időszak elteltével megkezdheti a megfelelőség kényszerítését a feltételes hozzáférési házirendek betartatásával és feltételként használhatja azokat a vállalati adatok eléréséhez a [Drive end-user adoption a feltételes hozzáférés](migration-guide-drive-adoption.md).
+## <a name="email-templates"></a>E-mail-sablonok
 
-## <a name="intune-enrollment-guide"></a>Útmutató az Intune-regisztráció 
-A PDF-mellékletet biztosítható, hogy a felhasználók számára, mint-van, vagy testreszabhatja a Word verzióját, például a belső erőforrásokhoz, és a kapcsolattartási adatokat.
+A következő e-mail-kommunikációs terv követését javasoljuk. A következő sablonokat adta meg a kommunikációs tervhez való alkalmazkodáshoz:
 
-## <a name="instructional-videos"></a>Oktatóvideók
-Hoztunk létre, ezzel elősegítve a felhasználók könnyedén regisztrálják az eszközüket az Intune-ban a rövid, részletes videókat.
+- **E-mail #1**: Az előnyök, az elvárások és az ütemterv ismertetése. Használja ki a lehetőséget az Intune által felügyelt eszközökön elérhető új szolgáltatások bemutatására.
+
+- **E-mail #2**: Be kell jelentenie, hogy a szolgáltatások készen állnak az Intune-on keresztül történő hozzáférésre. Szólítsa fel a felhasználókat, hogy most regisztráljanak.  Adja meg a felhasználóknak az ütemtervet a hozzáférésük megkezdése előtt. Emlékeztesse a felhasználókat a migrálás előnyeire és stratégiai okaira.
+Egy adott időszak elteltével megkezdheti a megfelelőség kényszerítését a feltételes hozzáférési házirendeken keresztül, és feltételként használhatja a vállalati adathozzáféréshez, ahogy azt a végfelhasználói bevezetés a [feltételes hozzáféréssel](migration-guide-drive-adoption.md)című részben leírtak szerint.
+
+## <a name="intune-enrollment-guide"></a>Intune-regisztrációs útmutató
+
+Ezt a PDF-mellékletet megadhatja a felhasználók számára, vagy testreszabhatja a Word-verziót, hogy tartalmazza a belső erőforrásokat és a kapcsolattartási adatokat.
+
+## <a name="instructional-videos"></a>Útmutató videók
+
+Rövid, részletes videókat hoztunk létre, amelyek segítségével a felhasználók egyszerűen regisztrálhatják eszközeiket az Intune-ban.
+
 - [Android-eszköz regisztrálása](https://www.youtube.com/watch?v=k0Q_sGLSx6o&t=1s)
-- [Az Androidos munkahelyi profil eszköz regisztrálása](https://www.youtube.com/watch?v=9Dl8HsGk4tI&t=3s)
+- [Androidos munkahelyi profil eszköz regisztrálása](https://www.youtube.com/watch?v=9Dl8HsGk4tI&t=3s)
 - [iOS-eszköz regisztrálása](https://www.youtube.com/watch?v=mJyv6YcHi7c)
 - [macOS-eszköz regisztrálása](https://www.youtube.com/watch?v=Pa2pfhwq_yk)
-- [A Windows regisztrálása](https://www.youtube.com/watch?v=TKQxEckBHiE)
+- [Windows regisztrálása](https://www.youtube.com/watch?v=TKQxEckBHiE)
 
 ## <a name="next-steps"></a>További lépések
-Az Intune segítségével a felhasználók számára eszközregisztráció támogatása további erőforrások rendelkezik:
-- Az [A végfelhasználók oktatása az Intune használatával kapcsolatban](https://docs.microsoft.com/intune/end-user-educate) című témakör részletezi a regisztrálás lépéseit az egyes mobiloperációsrendszer-platformok esetében. 
-- A [rendszergazdák számára az Intune-os eszközregisztrációhoz](https://docs.microsoft.com/intune/device-enrollment) azt ismerteti, hogyan Android, iOS és Mac-eszközök regisztrálása az Intune-ban.
-- Megosztás a [céges portál alkalmazás URL-címe](http://go.microsoft.com/fwlink/?LinkID=396941) az Android, iOS és Windows felhasználókkal. Az URL-címet átirányítja a megfelelő vállalati portál alkalmazást az Android, iOS és Windows-eszközök listázása.
+
+Az Intune további erőforrásokkal rendelkezik, amelyekkel elősegítheti az eszközök regisztrálását a felhasználók számára:
+
+- Az [A végfelhasználók oktatása az Intune használatával kapcsolatban](https://docs.microsoft.com/intune/end-user-educate) című témakör részletezi a regisztrálás lépéseit az egyes mobiloperációsrendszer-platformok esetében.
+- Az [Intune-eszközök](https://docs.microsoft.com/intune/device-enrollment) regisztrálása a rendszergazdáknak az Android-, iOS-és Mac-eszközök Intune-ban való regisztrálását ismerteti.
+- Ossza meg a [céges portál alkalmazás URL-címét](http://go.microsoft.com/fwlink/?LinkID=396941) Android-, iOS-és Windows-felhasználóival. Ez az URL-cím átirányítja az Android, iOS és Windows rendszerű eszközök megfelelő Céges portál alkalmazásának listájára.
