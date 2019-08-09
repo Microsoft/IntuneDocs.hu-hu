@@ -40,7 +40,7 @@
 #### [Az eszköz frissítése](you-need-to-update-your-android-device.md)
 #### [Nem támogatott verzió](your-android-version-isnt-yet-supported.md)
 #### [Az eszközt feltörték, és nem lehet csatlakoztatni](your-device-is-rooted-and-you-cant-connect-android.md)
-#### [Hiányzik egy szükséges tanúsítvány](your-device-is-missing-a-required-certificate-landing-android.md)
+#### [Hiányzik egy szükséges tanúsítvány](your-device-is-missing-an-IT-required-certificate-android.md)
 #### [Ismeretlen források kikapcsolása](you-need-to-turn-off-unknown-sources-android.md)
 #### [USB-hibakeresés kikapcsolása](you-need-to-turn-off-usb-debugging-android.md)
 #### [Biztonsági fenyegetések keresésének bekapcsolása](you-need-to-turn-on-scanning-for-security-threats-android.md)
