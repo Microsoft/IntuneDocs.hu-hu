@@ -68,7 +68,7 @@ Az Intune felügyeleti bővítmény a következő előfeltételekkel rendelkezik
     - [Configuration Manager számítási feladatok átváltása az Intune-ba](https://docs.microsoft.com/sccm/comanage/how-to-switch-workloads)
   
 > [!TIP]
-> Győződjön meg arról, hogy az eszközök csatlakoznak az Azure AD- [hez](https://docs.microsoft.com/azure/active-directory/user-help/user-help-join-device-on-network) . Azok az eszközök, [](https://docs.microsoft.com/azure/active-directory/user-help/user-help-register-device-on-network) amelyek csak az Azure ad-ben vannak regisztrálva, nem kapják meg a parancsfájlokat.
+> Győződjön meg arról, hogy az eszközök csatlakoznak az Azure AD- [hez](https://docs.microsoft.com/azure/active-directory/user-help/user-help-join-device-on-network) . Azok az eszközök, [regisztrálva](https://docs.microsoft.com/azure/active-directory/user-help/user-help-register-device-on-network) amelyek csak az Azure ad-ben vannak, nem kapják meg a parancsfájlokat.
 
 ## <a name="create-a-script-policy-and-assign-it"></a>Hozzon létre egy parancsfájl-szabályzatot, és rendelje hozzá
 
@@ -101,7 +101,7 @@ Az Intune felügyeleti bővítmény a következő előfeltételekkel rendelkezik
 
     2. Ha elkészült, kattintson a **Tovább gombra**.
 
-6. Válassza  > a hozzárendelések lehetőséget **, majd válassza a csoportok elemet**. Megjelenik az Azure AD-csoportok meglévő listája.
+6. Válassza > a hozzárendelések lehetőséget **, majd válassza a csoportok elemet**. Megjelenik az Azure AD-csoportok meglévő listája.
 
     1. Válasszon ki egy vagy több olyan csoportot, amely tartalmazza azokat a felhasználókat, akiknek az eszközei megkapják a parancsfájlt. Válassza a **Kiválasztás** lehetőséget A kiválasztott csoportok megjelennek a listában, és megkapják a szabályzatot.
 
@@ -147,7 +147,7 @@ A **PowerShell-parancsfájlok** panelen kattintson a jobb gombbal a parancsfájl
 
 **Lehetséges megoldások**:
 
-- Az eszköz nincs csatlakoztatva az Azure AD-hez. Győződjön meg arról, hogy az [](#prerequisites) eszközök megfelelnek az előfeltételeknek (ebben a cikkben). 
+- Az eszköz nincs csatlakoztatva az Azure AD-hez. Győződjön meg arról, hogy az [előfeltételeknek](#prerequisites) eszközök megfelelnek az (ebben a cikkben). 
 - Nincsenek olyan PowerShell-parancsfájlok vagy Win32-alkalmazások rendelve a csoportokhoz, amelyekhez a felhasználó vagy az eszköz tartozik.
 - Az eszköz nem tud bejelentkezni az Intune szolgáltatásba, mert nincs internet-hozzáférés, nincs hozzáférése a Windows leküldéses Notification Serviceshoz (WNS) és így tovább.
 - Az eszköz S üzemmódban van. Az Intune felügyeleti bővítmény nem támogatott az S módban futó eszközökön. 
@@ -174,7 +174,7 @@ A [Windows 10 automatikus regisztrációjának engedélyezése](windows-enroll.m
     > [!TIP]
     > A **Microsoft Intune felügyeleti bővítmény** egy olyan szolgáltatás, amely az eszközön fut, ugyanúgy, mint a Services alkalmazásban (Services. msc) felsorolt egyéb szolgáltatások. Az eszköz újraindítása után a szolgáltatás újraindulhat, és megkeresheti az Intune szolgáltatással társított PowerShell-parancsfájlokat is. Ha a **Microsoft Intune felügyeleti bővítmény** szolgáltatás manuális értékre van állítva, akkor előfordulhat, hogy a szolgáltatás nem indul újra az eszköz újraindítása után.
 
-- Győződjön [meg arról, hogy az eszközök csatlakoznak az Azure ad-hez](https://docs.microsoft.com/azure/active-directory/user-help/user-help-join-device-on-network). Azok az eszközök, amelyek csak a munkahelyhez vagy[](https://docs.microsoft.com/azure/active-directory/user-help/user-help-register-device-on-network) szervezethez csatlakoznak (az Azure ad-ben regisztrálva vannak), nem kapják meg a parancsfájlokat.
+- Győződjön [meg arról, hogy az eszközök csatlakoznak az Azure ad-hez](https://docs.microsoft.com/azure/active-directory/user-help/user-help-join-device-on-network). Azok az eszközök, amelyek csak a munkahelyhez vagy[regisztrálva](https://docs.microsoft.com/azure/active-directory/user-help/user-help-register-device-on-network) szervezethez csatlakoznak (az Azure ad-ben vannak), nem kapják meg a parancsfájlokat.
 - Az Intune felügyeleti bővítmény ügyfél óránként egyszer ellenőrzi a parancsfájl vagy a szabályzat Intune-ban történt változásait.
 - Erősítse meg, hogy `%ProgramFiles(x86)%\Microsoft Intune Management Extension`a rendszer letölti az Intune felügyeleti bővítményét.
 - A parancsfájlok nem futnak a Surface hubokon vagy a Windows 10-es módban.

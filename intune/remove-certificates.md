@@ -48,7 +48,7 @@ Ebben a forgatókönyvben a tanúsítvány törlését követően az eszköz kö
 Az SCEP-tanúsítvány visszavonására *és* eltávolítására a következő esetekben kerül sor:
 
 - A felhasználó törli A regisztrációt.
-- Egy rendszergazda futtatja [](devices-wipe.md#wipe) a törlési műveletet.
+- Egy rendszergazda futtatja a [törlési](devices-wipe.md#wipe) műveletet.
 - A rendszergazda futtatja [a](devices-wipe.md#retire) kivonási műveletet.
 - Az eszköz el lett távolítva egy Azure AD-csoportból.
 - A rendszer eltávolítja a tanúsítvány-profilt a csoport-hozzárendelésből.
@@ -58,10 +58,10 @@ Az SCEP-tanúsítvány visszavonására a következő esetekben kerül sor:
 
 A főtanúsítvány törlődik, ha:
 - A felhasználó törli A regisztrációt.
-- Egy rendszergazda futtatja [](devices-wipe.md#wipe) a törlési műveletet.
+- Egy rendszergazda futtatja a [törlési](devices-wipe.md#wipe) műveletet.
 - A rendszergazda futtatja [a](devices-wipe.md#retire) kivonási műveletet.
 
-A SCEP  -tanúsítványok az eszközön maradnak (a tanúsítványok nem vonhatók vissza vagy nem törlődnek), ha:
+A SCEP -tanúsítványok az eszközön maradnak (a tanúsítványok nem vonhatók vissza vagy nem törlődnek), ha:
 - A felhasználó elveszíti az Intune-licencet.
 - A rendszergazda visszavonja az Intune-licencet.
 - A rendszergazda eltávolítja a felhasználót vagy csoportot az Azure AD-ből.
@@ -71,15 +71,15 @@ A SCEP  -tanúsítványok az eszközön maradnak (a tanúsítványok nem vonhat�
 A PKCS-tanúsítvány visszavonására *és* eltávolítására a következő esetekben kerül sor:
 
 - A felhasználó törli A regisztrációt.
-- Egy rendszergazda futtatja [](devices-wipe.md#wipe) a törlési műveletet.
+- Egy rendszergazda futtatja a [törlési](devices-wipe.md#wipe) műveletet.
 - A rendszergazda futtatja [a](devices-wipe.md#retire) kivonási műveletet.
 
 A főtanúsítvány törlődik, ha:
 - A felhasználó törli A regisztrációt.
-- Egy rendszergazda futtatja [](devices-wipe.md#wipe) a törlési műveletet.
+- Egy rendszergazda futtatja a [törlési](devices-wipe.md#wipe) műveletet.
 - A rendszergazda futtatja [a](devices-wipe.md#retire) kivonási műveletet.
 
-A PKCS  -tanúsítványok az eszközön maradnak (a tanúsítványok nem vonhatók vissza és nem távolíthatók el), ha:
+A PKCS -tanúsítványok az eszközön maradnak (a tanúsítványok nem vonhatók vissza és nem távolíthatók el), ha:
 - A felhasználó elveszíti az Intune-licencet.
 - A rendszergazda visszavonja az Intune-licencet.
 - A rendszergazda eltávolítja a felhasználót vagy csoportot az Azure AD-ből.
@@ -94,7 +94,7 @@ A PKCS  -tanúsítványok az eszközön maradnak (a tanúsítványok nem vonhat�
 Az SCEP-tanúsítvány visszavonására *és* eltávolítására a következő esetekben kerül sor:
 
 - A felhasználó törli A regisztrációt.
-- Egy rendszergazda futtatja [](devices-wipe.md#wipe) a törlési műveletet.
+- Egy rendszergazda futtatja a [törlési](devices-wipe.md#wipe) műveletet.
 - A rendszergazda futtatja [a](devices-wipe.md#retire) kivonási műveletet.
 - Az eszköz el lesz távolítva az Azure AD-csoportból.
 - A rendszer eltávolítja a tanúsítvány-profilt a csoport-hozzárendelésből.
@@ -104,10 +104,10 @@ Az SCEP-tanúsítvány visszavonására a következő esetekben kerül sor:
 
 A főtanúsítvány törlődik, ha:
 - A felhasználó törli A regisztrációt.
-- Egy rendszergazda futtatja [](devices-wipe.md#wipe) a törlési műveletet.
+- Egy rendszergazda futtatja a [törlési](devices-wipe.md#wipe) műveletet.
 - A rendszergazda futtatja [a](devices-wipe.md#retire) kivonási műveletet.
 
-A SCEP  -tanúsítványok az eszközön maradnak (a tanúsítványok nem vonhatók vissza vagy nem törlődnek), ha:
+A SCEP -tanúsítványok az eszközön maradnak (a tanúsítványok nem vonhatók vissza vagy nem törlődnek), ha:
 - A felhasználó elveszíti az Intune-licencet.
 - A rendszergazda visszavonja az Intune-licencet.
 - A rendszergazda eltávolítja a felhasználót vagy csoportot az Azure AD-ből.
@@ -117,7 +117,7 @@ A SCEP  -tanúsítványok az eszközön maradnak (a tanúsítványok nem vonhat�
 A PKCS-tanúsítvány visszavonására *és* eltávolítására a következő esetekben kerül sor:
 
 - A felhasználó törli A regisztrációt.
-- Egy rendszergazda futtatja [](devices-wipe.md#wipe) a törlési műveletet.
+- Egy rendszergazda futtatja a [törlési](devices-wipe.md#wipe) műveletet.
 - A rendszergazda futtatja [a](devices-wipe.md#retire) kivonási műveletet.
 
 A PKCS-tanúsítvány eltávolítására a következő esetekben kerül sor:
@@ -125,10 +125,10 @@ A PKCS-tanúsítvány eltávolítására a következő esetekben kerül sor:
 
 A főtanúsítvány törlődik, ha:
 - A felhasználó törli A regisztrációt.
-- Egy rendszergazda futtatja [](devices-wipe.md#wipe) a törlési műveletet.
+- Egy rendszergazda futtatja a [törlési](devices-wipe.md#wipe) műveletet.
 - A rendszergazda futtatja [a](devices-wipe.md#retire) kivonási műveletet.
 
-A PKCS  -tanúsítványok az eszközön maradnak (a tanúsítványok nem vonhatók vissza és nem távolíthatók el), ha:
+A PKCS -tanúsítványok az eszközön maradnak (a tanúsítványok nem vonhatók vissza és nem távolíthatók el), ha:
 - A felhasználó elveszíti az Intune-licencet.
 - A rendszergazda visszavonja az Intune-licencet.
 - A rendszergazda eltávolítja a felhasználót vagy csoportot az Azure AD-ből.
@@ -140,7 +140,7 @@ A PKCS  -tanúsítványok az eszközön maradnak (a tanúsítványok nem vonhat�
 
 Az SCEP-tanúsítvány visszavonására *és* eltávolítására a következő esetekben kerül sor:
 - A felhasználó törli A regisztrációt.
-- Egy rendszergazda futtatja [](devices-wipe.md#wipe) a törlési műveletet.
+- Egy rendszergazda futtatja a [törlési](devices-wipe.md#wipe) műveletet.
 
 Az SCEP-tanúsítvány visszavonására a következő esetekben kerül sor:
 - A rendszergazda futtatja [a](devices-wipe.md#retire) kivonási műveletet.
@@ -151,10 +151,10 @@ Az SCEP-tanúsítvány visszavonására a következő esetekben kerül sor:
 
 A főtanúsítvány törlődik, ha:
 - A felhasználó törli A regisztrációt.
-- Egy rendszergazda futtatja [](devices-wipe.md#wipe) a törlési műveletet.
+- Egy rendszergazda futtatja a [törlési](devices-wipe.md#wipe) műveletet.
 - A rendszergazda futtatja [a](devices-wipe.md#retire) kivonási műveletet.
 
-A SCEP  -tanúsítványok az eszközön maradnak (a tanúsítványok nem vonhatók vissza vagy nem törlődnek), ha:
+A SCEP -tanúsítványok az eszközön maradnak (a tanúsítványok nem vonhatók vissza vagy nem törlődnek), ha:
 - A felhasználó elveszíti az Intune-licencet.
 - A rendszergazda visszavonja az Intune-licencet.
 - A rendszergazda eltávolítja a felhasználót vagy csoportot az Azure AD-ből.
@@ -164,15 +164,15 @@ A SCEP  -tanúsítványok az eszközön maradnak (a tanúsítványok nem vonhat�
 A PKCS-tanúsítvány visszavonására *és* eltávolítására a következő esetekben kerül sor:
 
 - A felhasználó törli A regisztrációt.
-- Egy rendszergazda futtatja [](devices-wipe.md#wipe) a törlési műveletet.
+- Egy rendszergazda futtatja a [törlési](devices-wipe.md#wipe) műveletet.
 - A rendszergazda futtatja [a](devices-wipe.md#retire) kivonási műveletet.
 
 A főtanúsítvány törlődik, ha:
 - A felhasználó törli A regisztrációt.
-- Egy rendszergazda futtatja [](devices-wipe.md#wipe) a törlési műveletet.
+- Egy rendszergazda futtatja a [törlési](devices-wipe.md#wipe) műveletet.
 - A rendszergazda futtatja [a](devices-wipe.md#retire) kivonási műveletet.
 
-A PKCS  -tanúsítványok az eszközön maradnak (a tanúsítványok nem vonhatók vissza és nem távolíthatók el), ha:
+A PKCS -tanúsítványok az eszközön maradnak (a tanúsítványok nem vonhatók vissza és nem távolíthatók el), ha:
 - A felhasználó elveszíti az Intune-licencet.
 - A rendszergazda visszavonja az Intune-licencet.
 - A rendszergazda eltávolítja a felhasználót vagy csoportot az Azure AD-ből.
@@ -197,7 +197,7 @@ Az SCEP-tanúsítvány visszavonására *és* eltávolítására a következő e
 Az SCEP-tanúsítvány visszavonására a következő esetekben kerül sor:
 - A rendszergazda módosítja vagy frissíti a SCEP-profilt.
 
-A SCEP  -tanúsítványok az eszközön maradnak (a tanúsítványok nem vonhatók vissza vagy nem törlődnek), ha:
+A SCEP -tanúsítványok az eszközön maradnak (a tanúsítványok nem vonhatók vissza vagy nem törlődnek), ha:
 - A felhasználó elveszíti az Intune-licencet.
 - A rendszergazda visszavonja az Intune-licencet.
 - A rendszergazda eltávolítja a felhasználót vagy csoportot az Azure AD-ből.
