@@ -14,12 +14,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d4aa0c47f0aa099ff469eb31b212f387836ad69b
-ms.sourcegitcommit: 73fbecf7cee4fdfc37d3c30ea2007d2a9a6d2d12
+ms.openlocfilehash: 919fef62cf1d979d6a4f67c3653d90af1442fa55
+ms.sourcegitcommit: ec22a186a9cfa489a8490698e387624e480892d8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68756509"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68960418"
 ---
 # <a name="macos-endpoint-protection-settings-in-intune"></a>MacOS Endpoint Protection-beállítások az Intune-ban  
 
@@ -81,6 +81,9 @@ A tűzfalat inkább a kapcsolatok alkalmazásonkénti, nem pedig portonkénti ko
 
 ## <a name="filevault"></a>FileVault  
 Az Apple FileVault beállításaival kapcsolatos további információkért lásd: [FDEFileVault](https://developer.apple.com/documentation/devicemanagement/fdefilevault) az Apple fejlesztői tartalomban. 
+
+> [!IMPORTANT]  
+> A macOS 10,15-es verziótól kezdve a FileVault-konfigurációhoz a felhasználó által jóváhagyott MDM-regisztráció szükséges. 
 
 - **FileVault**  
   A XTS -AES 128 és újabb rendszerű 10,13 eszközökön a FileVault használatával engedélyezheti a teljes lemezes titkosítást.  

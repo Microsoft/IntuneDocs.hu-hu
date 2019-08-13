@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8508915f0b4711b2aa65465dd7ac79f575a8d008
-ms.sourcegitcommit: 99b74d7849fbfc8f5cf99cba33e858eeb9f537aa
+ms.openlocfilehash: b148abfaeffaf02178e34c3e9abfe86f70fb529c
+ms.sourcegitcommit: ec22a186a9cfa489a8490698e387624e480892d8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68670965"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68960654"
 ---
 # <a name="enforce-compliance-for-microsoft-defender-atp-with-conditional-access-in-intune"></a>A Microsoft Defender ATP megfelelőségének betartatása feltételes hozzáféréssel az Intune-ban  
 
@@ -82,11 +82,12 @@ Az első lépés a szolgáltatás és a szolgáltatás közötti kapcsolat beál
 Ezt a feladatot általában egyszer kell elvégezni. Miután engedélyezte a Microsoft Defender ATP-t az Intune-bérlőhöz, nem kell újra végrehajtania.
 
 > [!TIP]  
-> Amikor új alkalmazást integrál az Intune Mobile Threat Defense-be, és engedélyezi a kapcsolatot, az Intune egy klasszikus feltételes hozzáférési szabályzatot hoz létre Azure Active Directoryban. Minden MTD-alkalmazás, mint például a [DEFENDER ATP](advanced-threat-protection.md) vagy bármely további [MTD-partner](mobile-threat-defense.md#mobile-threat-defense-partners), új klasszikus feltételes hozzáférési szabályzatot hoz létre.  Ezek a szabályzatok figyelmen kívül hagyhatók, de nem szerkeszthetők, nem törölhetők és nem tilthatók le.
+> Amikor új alkalmazást integrál az Intune Mobile Threat Defense-be, és engedélyezi az Intune-nal való kapcsolatot, az Intune egy klasszikus feltételes hozzáférési szabályzatot hoz létre Azure Active Directoryban. Minden olyan MTD-alkalmazás, amelyet integrál, beleértve a [DEFENDER ATP](advanced-threat-protection.md) -t vagy bármely további [MTD](mobile-threat-defense.md#mobile-threat-defense-partners)-partnert, új klasszikus feltételes hozzáférési szabályzatot hoz létre. Ezek a szabályzatok figyelmen kívül hagyhatók, de nem szerkeszthetők, nem törölhetők és nem tilthatók le.
 > 
 > Klasszikus feltételes hozzáférési szabályzatok a MTD-alkalmazásokhoz: 
 > 
-> - Az Intune-MTD arra használják, hogy az eszközök regisztrálva legyenek az Azure AD-ben, hogy rendelkezzenek az eszköz azonosítójával. Az azonosító megadása kötelező, hogy az eszközök és az állapotuk sikeresen jelentse az Intune-nak.  
+> - Az Intune-MTD arra használják, hogy az eszközök regisztrálva legyenek az Azure AD-ben, hogy a MTD-partnerekkel való kommunikáció előtt rendelkezzenek az eszköz azonosítójával. Az azonosító megadása kötelező, hogy az eszközök és az állapotuk sikeresen jelentse az Intune-nak.  
+> - Semmilyen más felhőalapú alkalmazásra vagy erőforrásra nincs hatással.  
 > - Nem különböznek a MTD kezeléséhez esetlegesen létrehozott feltételes hozzáférési házirendektől.
 > - Alapértelmezés szerint a kiértékeléshez használt egyéb feltételes hozzáférési szabályzatok nem működnek együtt.  
 > 
@@ -109,12 +110,12 @@ Miután bevezet egy eszközt a konfigurációs csomag használatával, nem kell 
 5. A **Profil típusa**beállításnál válassza a **Microsoft Defender ATP (Windows 10 asztali verzió)** lehetőséget.
 6. A beállítások konfigurálása:
 
-   - **Microsoft DEFENDER ATP-ügyfél konfigurációs csomagjának típusa**: Válassza **a** bevezetést, hogy hozzáadja a konfigurációs csomagot a profilhoz. A **Regisztráció megszüntetése** lehetőséget választva eltávolíthatja profilból a konfigurációs csomagot.
+   - **Microsoft DEFENDER ATP-ügyfél konfigurációs csomagjának típusa**: Válassza a bevezetést, hogy hozzáadja a konfigurációs csomagot a profilhoz. A **Regisztráció megszüntetése** lehetőséget választva eltávolíthatja profilból a konfigurációs csomagot.
   
      > [!NOTE]  
-     > Ha megfelelően létesített egy, a Microsoft Defender ATP-sel létesített kapcsolatokat, az **Intune automatikusan** előkészíti a konfigurációs profilt, és a **Microsoft Defender ATP-ügyfél konfigurációs csomagjának típusa** beállítás nem lesz elérhető.
+     > Ha megfelelően létesített egy, a Microsoft Defender ATP-sel létesített kapcsolatokat, az Intune automatikusan előkészíti a konfigurációs profilt, és a **Microsoft Defender ATP-ügyfél konfigurációs csomagjának típusa** beállítás nem lesz elérhető.
   
-    - **Minta megosztása az összes fájlhoz**: A **lehetővé teszi a** minták gyűjtését és a Microsoft Defender ATP-vel való megosztását. Ha például egy gyanús fájlt lát, beküldheti azt a Microsoft Defender ATP-be a Deep Analysis használatával. **Nincs konfigurálva, nem** oszt meg egyetlen mintát sem a Microsoft Defender ATP-ben.
+    - **Minta megosztása az összes fájlhoz**: A lehetővé teszi a minták gyűjtését és a Microsoft Defender ATP-vel való megosztását. Ha például egy gyanús fájlt lát, beküldheti azt a Microsoft Defender ATP-be a Deep Analysis használatával. **Nincs konfigurálva, nem** oszt meg egyetlen mintát sem a Microsoft Defender ATP-ben.
     - A **telemetria-jelentéskészítés gyakoriságának gyorsítása**: A magas kockázatú eszközök esetében **engedélyezze** ezt a beállítást, hogy az a Microsoft Defender ATP szolgáltatásnak gyakrabban telemetria jelentést.
 
     A [Windows 10-es gépek System Center Configuration Manager használatával történő](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-endpoints-sccm) előkészítése további részleteket tartalmaz ezekről a Microsoft Defender ATP-beállításokról.

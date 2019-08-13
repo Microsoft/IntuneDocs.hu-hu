@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7e69236f7babc974bca0db32245de2323627e494
-ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
+ms.openlocfilehash: cb5176189cb689c8341704440463881cb1aa7e4f
+ms.sourcegitcommit: 299d8d481f0edfa60041c5dff626e1f27bcbe252
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67548351"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68956564"
 ---
 # <a name="develop-a-rollout-communication-plan"></a>Bevezetési kommunikációs terv kidolgozása
 
@@ -50,13 +50,13 @@ A kommunikálandó információt annak függvényében lehet meghatározni, hogy
 
 **Regisztrálás utáni szakasz**<br/> Célzott kommunikáció az Intune-ban már regisztrált egységekkel és felhasználókkal. Ennek során további hasznos erőforrásokat kell javasolni a felhasználóknak, és visszajelzéseket kell gyűjteni tőlük a regisztráció során és azóta keletkezett tapasztalataikról.
 
-Ez a [végfelhasználói regisztrációs útmutató](https://gallery.technet.microsoft.com/Intune-End-User-Enrollment-3a0c9b0c?WT.mc_id=Blog_Intune_General_PCIT) hasznos segédanyag lehet. Eredeti formájában is felhasználhatja, de a szervezet igényei szerint módosíthatja is.
+Ez a [végfelhasználói regisztrációs útmutató](/enterprise-mobility-security/solutions/fasttrack-intune-enduser-enrollment-instructions) hasznos segédanyag lehet. Eredeti formájában is felhasználhatja, de a szervezet igényei szerint módosíthatja is.
 
 ## <a name="communication-delivery-methods"></a>Kommunikációs módszerek
 
 Az Intune bevezetéséről többféle módszerrel tájékoztathatók a releváns szervezeti egységek és felhasználók. Az alábbi listában néhány példát talál arra, hogy egyes kommunikációs módszereket mely szakaszban használhat:
 
-- Szervezeti kiterjedő személyes vagy a Microsoft Teams-megbeszélések használata a kezdeti szakaszban javasolt
+- Szervezetre kiterjedő személyes vagy Microsoft Teams-találkozók a kickoff Wave-hoz
 
 - E-mail használata a regisztrálást megelőző, a regisztrálási és az azt követő szakaszokban ajánlott
 

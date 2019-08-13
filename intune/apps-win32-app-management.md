@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 19b8693a5d2c2df042bd9339cb74bbcde0da626d
-ms.sourcegitcommit: 7c251948811b8b817e9fe590b77f23aed95b2d4e
+ms.openlocfilehash: 890d398de938680447b71a46d4e329a6bdf52616
+ms.sourcegitcommit: ec22a186a9cfa489a8490698e387624e480892d8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67884051"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68960584"
 ---
 # <a name="intune-standalone---win32-app-management"></a>Önálló Intune – Win32-alkalmazások kezelése
 
@@ -179,7 +179,7 @@ Az alábbi lépések útmutatást nyújtanak a Windows-alkalmazások Intune-hoz 
         - **Érték neve** – Az észlelendő beállításazonosító neve. Ha ez az érték üres, akkor az észlelés a kulcs alapján történik. A rendszer egy kulcs (alapértelmezett) értékét használja észlelési értékként, ha az észlelési módszer nem a fájl vagy a mappa meglétén alapul.
         - **Beállításkulcs követelménye** – válassza ki a beállításkulcs összehasonlításának típusát, amely meghatározza a követelmény szabályának érvényességét.
         - **32 bites alkalmazással társítva 64 bites ügyfeleken** – Ha a 32 bites beállításjegyzékben szeretne keresni a 64 bites ügyfeleken, válassza az **Igen** lehetőséget. A **Nem** (ez az alapértelmezett beállítás) kiválasztásakor a rendszer a 64 bites ügyfeleken a 64 bites beállításjegyzékben fog keresni. A 32 bites ügyfeleknél a keresés mindig a 32 bites beállításjegyzéket érinti.
-    - **Parancsfájl**: A  **követelmény típusaként**válassza a parancsfájlt, ha a fájl, a beállításjegyzék vagy bármely más, az Intune-konzolon elérhető módszer alapján nem hozható létre követelmény-szabály.
+    - **Parancsfájl**: A **követelmény típusaként**válassza a parancsfájlt, ha a fájl, a beállításjegyzék vagy bármely más, az Intune-konzolon elérhető módszer alapján nem hozható létre követelmény-szabály.
         - **Parancsfájl** – a PowerShell parancsfájl-alapú követelményi szabályához (ha létezik kód 0), a rendszer részletesebben felderíti az stdout-ot. Például észlelhető az STDOUT olyan egész számként, amelynek értéke 1.
         - **Parancsfájl futtatása 32 bites folyamatként 64 bites ügyfeleken** – válassza az **Igen** lehetőséget, ha a parancsfájlt 32 bites folyamaton szeretné futtatni 64 bites ügyfeleken. Válassza a **nem** (alapértelmezett) lehetőséget, hogy a parancsfájlt 64 bites folyamaton futtassa a 64 bites ügyfeleken. 32 bites ügyfelek a szkriptet egy 32 bites folyamatban futtatják.
         - **Futtassa ezt a parancsfájlt a bejelentkezett hitelesítő adatok használatával**: Válassza az **Igen** lehetőséget a szkript futtatásához a bejelentkezett eszköz hitelesítő adatai * * használatával.
@@ -282,7 +282,9 @@ Ekkor elvégezte a Win32-alkalmazások Intune-hoz való hozzáadásának lépés
 
 ## <a name="app-dependencies"></a>Alkalmazás függőségei
 
-Az alkalmazás-függőségek olyan alkalmazások, amelyeket telepíteni kell a Win32-alkalmazás telepítése előtt. Megkövetelheti, hogy más alkalmazások függőségként legyenek telepítve. Pontosabban, az eszköznek a Win32-alkalmazás telepítése előtt telepítenie kell a függő alkalmazást (ka) t. A rendszer legfeljebb 100 függőséget tartalmaz, amely magában foglalja a benne foglalt függőségek függőségeit, valamint magát az alkalmazást. Win32-alkalmazások függőségei csak a Win32-alkalmazás hozzáadása és az Intune-ba való feltöltése után adhatók hozzá. A Win32-alkalmazás hozzáadása után megjelenik a függőségek lehetőség a  Win32-alkalmazás paneljén. 
+Az alkalmazás-függőségek olyan alkalmazások, amelyeket telepíteni kell a Win32-alkalmazás telepítése előtt. Megkövetelheti, hogy más alkalmazások függőségként legyenek telepítve. Pontosabban, az eszköznek a Win32-alkalmazás telepítése előtt telepítenie kell a függő alkalmazást (ka) t. A rendszer legfeljebb 100 függőséget tartalmaz, amely magában foglalja a benne foglalt függőségek függőségeit, valamint magát az alkalmazást. Win32-alkalmazások függőségei csak a Win32-alkalmazás hozzáadása és az Intune-ba való feltöltése után adhatók hozzá. A Win32-alkalmazás hozzáadása után megjelenik a függőségek lehetőség a Win32-alkalmazás paneljén. 
+
+A Win32-alkalmazások függőségének is Win32-alkalmazásnak kell lennie. Más típusú alkalmazásoktól, például egyetlen MSI LOB-alkalmazástól vagy áruházbeli alkalmazástól függően nem támogatott.
 
 Alkalmazás-függőség hozzáadásakor az alkalmazás neve és közzétevője alapján kereshet. Emellett az alkalmazás neve és a közzétevője alapján is rendezheti a hozzáadott függőségeket. A korábban hozzáadott alkalmazás-függőségek nem választhatók ki a hozzáadott alkalmazás-függőségek listájában. 
 

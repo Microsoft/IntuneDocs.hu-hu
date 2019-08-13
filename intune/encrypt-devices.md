@@ -16,12 +16,12 @@ ms.reviewer: annovich
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
-ms.openlocfilehash: 09b5e59f4af534d4919574631568a7581bb3fba9
-ms.sourcegitcommit: 73fbecf7cee4fdfc37d3c30ea2007d2a9a6d2d12
+ms.openlocfilehash: b7c76439b734837b5a4dd7e5fdbba5d21d0681d7
+ms.sourcegitcommit: ec22a186a9cfa489a8490698e387624e480892d8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68756545"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68960427"
 ---
 # <a name="use-device-encryption-with-intune"></a>Az eszközök titkosításának használata az Intune-nal  
 
@@ -69,7 +69,7 @@ Az Intune-nal kezelhető FileVault-beállítás részleteiért lásd: [FileVault
 6. Konfigurálja a fennmaradó [FileVault-beállításokat](endpoint-protection-macos.md#filevault) az üzleti igények kielégítéséhez, majd kattintson **az OK gombra**.  
 
    > [!IMPORTANT]  
-   > Ismert hiba történt, ha a **Letiltás** beállítás a kijelentkezéskor beállítás *engedélyezve*értékre van állítva. Ha az *Engedélyezés*beállítást adja meg, a megkerülő időpontok **számának** meg kell adni egy értéket, és nem állítható be *nem konfiguráltként*. Ha a *nincs konfigurálva*értékre van állítva, a profil meghiúsul az eszközön. Ebben az esetben az eszköz egy **profil állapotának összegzése** , további részletek nélkül.
+   > Ismert hiba történt, ha a **Letiltás** beállítás a kijelentkezéskor beállítás *engedélyezve*értékre van állítva. Ha az *Engedélyezés*beállítást adja meg, a megkerülő időpontok **számának** meg kell adni egy értéket, és nem állítható be *nem konfiguráltként*. Ha a *nincs konfigurálva*értékre van állítva, a profil meghiúsul az eszközön. Ebben az esetben az eszköz a **profil állapotának összegzése** **hibát** jelez, további részletek nélkül.
    > 
    > Ha a kijelentkezéskor a **Letiltás** beállítás nincs *konfigurálva*értékre van állítva, a megkerülő időpontok **száma** *nem konfigurálható* , és nem rendelkezhet értékkel.  
    > 

@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d0f155a9a4900ed10b2030af3c80c13def0bb82e
-ms.sourcegitcommit: c715c93bb242f4fe44bbdf2fd585909854ed72b6
+ms.openlocfilehash: 3ff5b29b3d417b9c3bdabfc860b46579b168fb71
+ms.sourcegitcommit: ec22a186a9cfa489a8490698e387624e480892d8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68660913"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68960642"
 ---
 # <a name="network-access-control-nac-integration-with-intune"></a>Hálózati hozzáférés-vezérlés (NAC) integrálása az Intune-nal
 
@@ -74,7 +74,7 @@ A követező listában megtalálhatja annak áttekintését, hogyan működik az
   - A Citrix Gateway 12.0.59 vagy újabb verzióját használja.  
   - A felhasználóknak Citrix SSO 1.1.6 vagy újabb verzióval kell rendelkezniük.
   - Integrálja a NetScaler-t a [NAC Intune](https://docs.citrix.com/en-us/netscaler-gateway/12/microsoft-intune-integration/configuring-network-access-control-device-check-for-netscaler-gateway-virtual-server-for-single-factor-authentication-deployment.html) -nal a Citrix termék dokumentációjában leírtak szerint.
-  - A VPN-profilban válassza > az alapbeállítások**engedélyezése hálózati Access Control (NAC)** > válassza az Elfogadom **lehetőséget.**
+  - A VPN-profilban válassza az alapbeállítások > **engedélyezése hálózati Access Control (NAC)** >válassza az Elfogadom lehetőséget.
 
   Biztonsági okokból a VPN-kapcsolat 24 óránként le van választva. A VPN-t azonnal újra lehet kapcsolni.
 
@@ -82,7 +82,7 @@ A követező listában megtalálhatja annak áttekintését, hogyan működik az
 
   - Használja az F5 BIG-IP 13.1.1.5. A BIG-IP 14 nem támogatott.
   - A BIG-IP integrálása az Intune-nal a NAC-hoz. Az [Áttekintés: Az APM konfigurálása eszköz-testhelyzeti ellenőrzésekhez végpont-](https://support.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-client-configuration-7-1-6/6.html#guid-0bd12e12-8107-40ec-979d-c44779a8cc89) felügyeleti rendszerekkel az F5 útmutató felsorolja a lépéseket.
-  - A VPN-profilban válassza > az alapbeállítások**engedélyezése hálózati Access Control (NAC)** > válassza az Elfogadom **lehetőséget.**
+  - A VPN-profilban válassza az alapbeállítások > **engedélyezése hálózati Access Control (NAC)** >válassza az Elfogadom lehetőséget.
 
   Biztonsági okokból a VPN-kapcsolat 24 óránként le van választva. A VPN-t azonnal újra lehet kapcsolni.
 
@@ -97,4 +97,4 @@ Partnereinkkel dolgozunk, hogy kiszabadítson egy NAC-megoldást ezekre az újab
 - [A Citrix NetScaler integrálása az Intune-nal](https://docs.citrix.com/en-us/netscaler-gateway/12/microsoft-intune-integration/configuring-network-access-control-device-check-for-netscaler-gateway-virtual-server-for-single-factor-authentication-deployment.html)
 - [Az F5 BIG-IP Access Policy Manager integrálása az Intune-nal](https://support.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-client-configuration-13-0-0/6.html)
 - [A HP Aruba ClearPass integrálása az Intune-nal](https://support.arubanetworks.com/Documentation/tabid/77/DMXModule/512/Command/Core_Download/Default.aspx?EntryId=31271)
-- [Squadra Security Removable Media Manager integrálása az Intune-nal](https://www.squadratechnologies.com/StaticContent/ProductDownload/secRMM/9.9.0.0/secRMMIntuneAccessControlSetupGuide.pdf)
+- [Squadra Security Removable Media Manager integrálása az Intune-nal](http://www.squadratechnologies.com/StaticContent/ProductDownload/secRMM/9.9.0.0/secRMMIntuneAccessControlSetupGuide.pdf)
