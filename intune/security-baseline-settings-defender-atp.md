@@ -86,7 +86,7 @@ További információ: [Policy CSP-SmartScreen](https://docs.microsoft.com/windo
 ## <a name="attack-surface-reduction"></a>Támadási felület csökkentése  
 
 - **Az Office-alkalmazások alárendelt folyamatának indítása**  
-  [Támadási felület csökkentési szabálya](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard#attack-surface-reduction-rules) – ha blokkolásra van beállítva, az Office-alkalmazások nem hozhatnak létre alárendelt folyamatokat. Az Office-alkalmazások közé tartozik a Word, az Excel, a PowerPoint, a OneNote és a hozzáférés. Egy alárendelt folyamat létrehozása tipikus kártevő-viselkedés, különösen olyan makró-alapú támadások esetén, amelyek az Office-alkalmazások használatával kísérlik meg a rosszindulatú végrehajtható fájlok indítását vagy letöltését.  
+  [Támadási felület csökkentési szabálya](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard#attack-surface-reduction-rules) –ha blokkolásra van beállítva, az Office-alkalmazások nem hozhatnak létre alárendelt folyamatokat. Az Office-alkalmazások közé tartozik a Word, az Excel, a PowerPoint, a OneNote és a hozzáférés. Egy alárendelt folyamat létrehozása tipikus kártevő-viselkedés, különösen olyan makró-alapú támadások esetén, amelyek az Office-alkalmazások használatával kísérlik meg a rosszindulatú végrehajtható fájlok indítását vagy letöltését.  
 
   **Alapértelmezett**: Letiltás
 
@@ -120,7 +120,7 @@ További információ: [Policy CSP-SmartScreen](https://docs.microsoft.com/windo
   **Alapértelmezett**: Letiltás
 
 - **Nem megbízható USB-folyamat típusa**  
-  [Támadási felület csökkentési szabálya](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard#attack-surface-reduction-rules) – ha a blokkolt, aláíratlan vagy nem megbízható végrehajtható fájlokat USB cserélhető meghajtókról és SD-kártyákból állítja be, nem futtatható.
+  [Támadási felület csökkentési szabálya](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard#attack-surface-reduction-rules) –ha a blokkolt, aláíratlan vagy nem megbízható végrehajtható fájlokat USB cserélhető meghajtókról és SD-kártyákból állítja be, nem futtatható.
 
   A végrehajtható fájlok a következők:
   - Végrehajtható fájlok (például. exe,. dll vagy. scr)
@@ -129,7 +129,7 @@ További információ: [Policy CSP-SmartScreen](https://docs.microsoft.com/windo
   **Alapértelmezett**: Letiltás
 
 - **Office-alkalmazások egyéb folyamat-injektálási típusa**  
-  [Támadási felület csökkentési szabálya](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard#attack-surface-reduction-rules) – ha blokkolásra van beállítva, az Office-alkalmazások, például a Word, az Excel, a PowerPoint és a OneNote, nem adhatnak hozzá kódot más folyamatokhoz. A programkódot általában a kártevők használják arra, hogy rosszindulatú kódot futtassanak a tevékenységek víruskeresőből való elrejtésére tett kísérlet során.  
+  [Támadási felület csökkentési szabálya](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard#attack-surface-reduction-rules) –ha blokkolásra van beállítva, az Office-alkalmazások, például a Word, az Excel, a PowerPoint és a OneNote, nem adhatnak hozzá kódot más folyamatokhoz. A programkódot általában a kártevők használják arra, hogy rosszindulatú kódot futtassanak a tevékenységek víruskeresőből való elrejtésére tett kísérlet során.  
 
   **Alapértelmezett**: Letiltás
 
@@ -144,7 +144,7 @@ További információ: [Policy CSP-SmartScreen](https://docs.microsoft.com/windo
   **Alapértelmezett**: Engedélyezés
 
 - **Office-alkalmazások végrehajtható tartalom létrehozási vagy indítási típusa**  
-  [Támadási felület csökkentési szabálya](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard#attack-surface-reduction-rules) – ha blokkolásra van beállítva, az Office-alkalmazások nem hozhatnak létre végrehajtható tartalmat. Az Office-alkalmazások közé tartozik a Word, az Excel, a PowerPoint, a OneNote és a hozzáférés.  
+  [Támadási felület csökkentési szabálya](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard#attack-surface-reduction-rules) –ha blokkolásra van beállítva, az Office-alkalmazások nem hozhatnak létre végrehajtható tartalmat. Az Office-alkalmazások közé tartozik a Word, az Excel, a PowerPoint, a OneNote és a hozzáférés.  
 
   Ez a szabály a végrehajtható fájlokat létrehozó vagy indító gyanús és kártékony bővítmények és parancsfájlok (bővítmények) által használt jellemző viselkedéseket célozza meg. Ez egy tipikus kártevő-módszer. Az Office-alkalmazások nem használják a bővítményeket. Ezek a bővítmények általában a Windows Scripting Host (. wsh fájlok) használatával futtatnak bizonyos feladatokat automatizáló vagy felhasználó által létrehozott kiegészítő funkciókat biztosító parancsfájlokat.
 
@@ -393,7 +393,7 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
   [Defender/PUAProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-puaprotection) – a Windows Defender víruskereső képes azonosítani és letiltani a *vélhetően nemkívánatos alkalmazások* (PUAs) letöltését és telepítését a hálózatban lévő végpontokon. 
  
   - Ha a *blokk*értékre van állítva, a Windows Defender blokkolja a PUAs, és felsorolja azokat az előzményekben más fenyegetésekkel együtt.
-  - Ha naplózásra van beállítva, a Windows Defender észleli a PUAs, de nem blokkolja őket. A Windows Defender alkalmazással kapcsolatos információk megtalálhatók a Windows Defender által a Eseménynaplóban létrehozott események keresésekor.  
+  - Ha naplózásravan beállítva, a Windows Defender észleli a PUAs, de nem blokkolja őket. A Windows Defender alkalmazással kapcsolatos információk megtalálhatók a Windows Defender által a Eseménynaplóban létrehozott események keresésekor.  
   - Ha az *eszköz alapértelmezett*értékre van állítva, a Pua-védelem ki van kapcsolva.  
  
   **Alapértelmezett**: Letiltás
@@ -598,7 +598,7 @@ További információ: [TŰZFAL CSP](https://docs.microsoft.com/windows/client-m
 
 További információ: [PASSPORTFORWORK CSP](https://docs.microsoft.com/windows/client-management/mdm/passportforwork-csp) a Windows dokumentációjában.
 
-- **Vállalati Windows Hello***TenantId/házirendek/UsePassportForWork konfigurálása*  -     
+- **Vállalati Windows Hello** *TenantId/házirendek/UsePassportForWork konfigurálása*  -     
   A vállalati Windows Hello egy alternatív módszer a Windowsba való bejelentkezéshez jelszavak, intelligens kártyák és virtuális intelligens kártyák helyett.  
 
   - Ha az *Igen*értékre van állítva, akkor engedélyezi ezt a házirendet, és az eszköz kiépíti a vállalati Windows Hello-t.  
