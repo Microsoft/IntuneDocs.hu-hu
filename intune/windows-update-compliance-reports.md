@@ -44,7 +44,7 @@ A konfigurált Windows 10-es frissítési körök telepítési állapotára vona
       - **Felhasználó állapota**  
 
 ## <a name="use-update-compliance"></a>Update Compliance használata
-A Windows 10-es frissítések bevezetését a Windows Analytics megoldás [Update Compliance](https://technet.microsoft.com/itpro/windows/manage/update-compliance-monitor)használatával figyelheti. Update Compliance a Azure Portal keresztül érhető el, és az előfeltételeknek megfelelő eszközök számára [](https://docs.microsoft.com/windows/deployment/update/update-compliance-get-started#update-compliance-prerequisites)ingyenesen elérhető.  
+A Windows 10-es frissítések bevezetését a Windows Analytics megoldás [Update Compliance](https://technet.microsoft.com/itpro/windows/manage/update-compliance-monitor)használatával figyelheti. Update Compliance a Azure Portal keresztül érhető el, és az megfelelő eszközök számára [előfeltételeknek](https://docs.microsoft.com/windows/deployment/update/update-compliance-get-started#update-compliance-prerequisites)ingyenesen elérhető.  
 
 Ha ezt a megoldást használja, egy kereskedelmi azonosítót kell központilag telepítenie az Intune által kezelt Windows 10 rendszerű eszközökre, amelyekről jelentést szeretne készíteni a frissítés megfelelőségéről.  
 

@@ -19,7 +19,7 @@ ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7f2e4870d1a2614ecccc1647db828e214a6aede8
 ms.sourcegitcommit: e9911a6bbfb8532a27e70d70402a214a8b2b6c75
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 08/06/2019
 ms.locfileid: "68818789"
