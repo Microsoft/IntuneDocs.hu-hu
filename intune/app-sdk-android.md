@@ -61,7 +61,7 @@ Az eszközregisztráció nélküli alkalmazásvédelem esetében a felhasználó
 ## <a name="sdk-integration"></a>SDK-integráció
 
 ### <a name="sample-app"></a>Minta alkalmazás
-Az Intune app SDK-val való integrálásának példája a githubon érhető [](https://github.com/msintuneappsdk/Taskr-Sample-Intune-Android-App)el. Ez a példa a [Gradle Build beépülő modult](#gradle-build-plugin)használja.
+Az Intune app SDK-val való integrálásának példája a [githubon](https://github.com/msintuneappsdk/Taskr-Sample-Intune-Android-App) érhető el. Ez a példa a [Gradle Build beépülő modult](#gradle-build-plugin)használja.
 
 ### <a name="referencing-intune-app-libraries"></a>Hivatkozás Intune App-kódtárakra
 

@@ -23,7 +23,7 @@ ms.locfileid: "68960418"
 ---
 # <a name="macos-endpoint-protection-settings-in-intune"></a>MacOS Endpoint Protection-beállítások az Intune-ban  
 
-Ez a cikk a macOS-t futtató eszközökhöz konfigurálható Endpoint Protection-beállításokat ismerteti. Ezeket a beállításokat macOS-eszköz konfigurációs profiljának használatával konfigurálhatja [](endpoint-protection-configure.md) az Intune-ban.  
+A cikk a macOS rendszerű eszközökhöz konfigurálható, végpontvédelemre vonatkozó beállításokat mutatja be. Ezeket a beállításokat macOS-eszköz konfigurációs profiljának használatával konfigurálhatja [Endpoint Protection](endpoint-protection-configure.md) az Intune-ban.  
 
 ## <a name="gatekeeper"></a>Forgalomirányító  
 

@@ -51,7 +51,7 @@ Ha egy bennfentes csatornát választ, az Intune automatikusan konfigurálja a W
 
 
 > [!IMPORTANT]  
-> A Windows 1903-es verziójától kezdődően a *féléves csatorna (megcélozt)* (SAC-T) használata megszűnik. Ezzel a módosítással a SAC-T egyesítve van a féléves csatornával. Ha többet szeretne megtudni erről a változásról, valamint arról, hogy miként befolyásolja a vállalati Windows Update működését, tekintse meg a Windows IT Pro blog post [Windows Update for Business és a SAC-T](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/Windows-Update-for-Business-and-the-retirement-of-SAC-T/ba-p/339523)kivonulását ismertető témakört.
+> A Windows 1903-es verziójától kezdődően a *féléves csatorna (megcélozt)* (SAC-T) használata megszűnik. Ezzel a módosítással a SAC-T egyesítve vana féléves csatornával. Ha többet szeretne megtudni erről a változásról, valamint arról, hogy miként befolyásolja a vállalati Windows Update működését, tekintse meg a Windows IT Pro blog post [Windows Update for Business és a SAC-T](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/Windows-Update-for-Business-and-the-retirement-of-SAC-T/ba-p/339523)kivonulását ismertető témakört.
  
 
 
@@ -60,7 +60,7 @@ Ha egy bennfentes csatornát választ, az Intune automatikusan konfigurálja a W
 - **Alapértelmezett**:  Allow
 - **Windows**-referenciák dokumentációja: [Update/AllowMUUpdateService](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-update#update-allowmuupdateservice)
 
-Válassza  az alkalmazás frissítéseinek keresése Microsoft Updateról lehetőséget.    
+Válassza az alkalmazás frissítéseinek keresése Microsoft Updateról lehetőséget.    
 
 ### <a name="windows-drivers"></a>Windows-illesztőprogramok  
 
@@ -182,7 +182,7 @@ Egy adott frissítés telepítésének felfüggesztését engedélyező vagy blo
 - **Alapértelmezett**: Allow
 - **Windows**-referenciák dokumentációja: [Update/SetDisableUXWUAccess](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-update#update-setdisableuxwuaccess) 
 
-Megadja, hogy engedélyezi vagy letiltja a felhasználó hozzáférését a vizsgálat Windows Update. Ha például egy blokkot konfigurál, a felhasználók nem férhetnek hozzá a Windows Update Scan, download és install funkciókhoz.  
+Megadja, hogy engedélyezi vagy letiltja a felhasználó hozzáférését a vizsgálat Windows Update. Ha például egy blokkot konfigurál,a felhasználók nem férhetnek hozzá a Windows Update Scan, download és install funkciókhoz.  
 
 ### <a name="require-users-approval-to-restart-outside-of-work-hours"></a>A felhasználó jóváhagyásának megkövetelése a munkaidőn kívüli újraindításhoz  
 
@@ -222,7 +222,7 @@ Határozza meg, hogy a felhasználók milyen mértékben látják a Windows Upda
 
 A **kötelező**beállítás megadása esetén engedélyezheti a Windows 10 frissítéseinek kapcsolódó újraindítási lehetőségeinek használatát. Ezekkel a lehetőségekkel az eszköz felhasználója felügyelheti az eszközt, ha olyan frissítést telepít, amely újraindítást igényel.  
 
-A beállítással kapcsolatos további információkért tekintse [](https://docs.microsoft.com/windows/deployment/update/waas-restart#engaged-restart) meg a Windows 10-es dokumentációjában a frissítések központi telepítésével foglalkozó témakört.  
+A beállítással kapcsolatos további információkért tekintse [Elindult újraindítás](https://docs.microsoft.com/windows/deployment/update/waas-restart#engaged-restart) meg a Windows 10-es dokumentációjában a frissítések központi telepítésével foglalkozó témakört.  
 
 A következő beállításokkal szabályozhatja, hogy mikor történjen a művelet újraindítása.  
 
