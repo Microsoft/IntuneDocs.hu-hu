@@ -16,12 +16,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e3c4b1541de3500089bafc388779a3cfe97fbd29
-ms.sourcegitcommit: 73fbecf7cee4fdfc37d3c30ea2007d2a9a6d2d12
+ms.openlocfilehash: 6313741af237478bc5eea0cc5b5524250b5d46ac
+ms.sourcegitcommit: db68056e2db17dfdeaa216c684302567742e6416
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68756575"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68993696"
 ---
 # <a name="troubleshoot-windows-device-enrollment-problems-in-microsoft-intune"></a>A Windows-eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune
 
@@ -60,31 +60,31 @@ A probléma több lehetséges megoldást is kínál:
 
 ##### <a name="remove-devices-that-were-enrolled"></a>A regisztrált eszközök eltávolítása
 1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com/?Microsoft_Intune=1&Microsoft_Intune_DeviceSettings=true&Microsoft_Intune_Enrollment=true&Microsoft_Intune_Apps=true&Microsoft_Intune_Devices=true#blade/Microsoft_Intune_DeviceSettings/ExtensionLandingBlade/overview).    
-2. Ugrás a **felhasználók** > **minden felhasználója**számára.    
+2. Ugrás a **felhasználók** > **minden felhasználója**számára.    
 3. Válassza ki az érintett felhasználói fiókot, majd kattintson az **eszközök**elemre.    
 4. Válassza ki a fel nem használt vagy nemkívánatos eszközöket, majd kattintson a **Törlés**gombra. 
 
-##### <a name="increase-thedevice-enrollment-limit"></a>Az eszközök regisztrálási korlátjának emelése
+##### <a name="increase-the-device-enrollment-limit"></a>Az eszközök regisztrálási korlátjának emelése
 
 > [!NOTE]
 > Ez a módszer növeli az eszközök regisztrálási korlátját az összes felhasználó számára, nem csak az érintett felhasználót.
 
 1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com/?Microsoft_Intune=1&Microsoft_Intune_DeviceSettings=true&Microsoft_Intune_Enrollment=true&Microsoft_Intune_Apps=true&Microsoft_Intune_Devices=true#blade/Microsoft_Intune_DeviceSettings/ExtensionLandingBlade/overview).
-2. Lépjen az **eszközök** >regisztrálása **regisztrációs korlátozások**elemre, majd válassza az **eszköz korlátozási korlátozásait**.    
+2. Lépjen az **eszközök** > regisztrálása**regisztrációs korlátozások**elemre, majd válassza az **eszköz korlátozási korlátozásait**.    
 3. Növelje az **eszköz korlátjának**értékét. 
 
-##### <a name="checkdevice-type-restrictions"></a>Az eszközök típusára vonatkozó korlátozások keresése
-1. Jelentkezzen be az [Intune](https://portal.azure.com/?Microsoft_Intune=1&Microsoft_Intune_DeviceSettings=true&Microsoft_Intune_Enrollment=true&Microsoft_Intune_Apps=true&Microsoft_Intune_Devices=true#blade/Microsoft_Intune_DeviceSettings/ExtensionLandingBlade/overview) -portálra egy globális rendszergazdai fiókkal.
-2. Lépjen az **eszközök** > regisztrálása beléptetési**korlátozásokhoz**, majd válassza ki az **alapértelmezett** korlátozást az **eszköz típusa korlátozásai**alatt.    
-3. Válassza a **platformok**lehetőséget, majd válassza a Windows **engedélyezése**  **(Mdm)** lehetőséget.
+##### <a name="check-device-type-restrictions"></a>Az eszközök típusára vonatkozó korlátozások keresése
+1. Jelentkezzen be az [Intune](https://portal.azure.com/?Microsoft_Intune=1&Microsoft_Intune_DeviceSettings=true&Microsoft_Intune_Enrollment=true&Microsoft_Intune_Apps=true&Microsoft_Intune_Devices=true#blade/Microsoft_Intune_DeviceSettings/ExtensionLandingBlade/overview) -portálra egy globális rendszergazdai fiókkal.
+2. Lépjen az **eszközök** > regisztrálása beléptetési**korlátozásokhoz**, majd válassza ki az **alapértelmezett** korlátozást az **eszköz típusa korlátozásai**alatt.    
+3. Válassza a **platformok**lehetőséget, majd válassza a **Windows engedélyezése (Mdm)** lehetőséget.
 
     > [!IMPORTANT]
-    > Ha az aktuális beállítás már **engedélyezve**van, módosítsa a **blokkolás**értékre, mentse a beállítást, majd állítsa vissza, hogy **engedélyezze** , majd mentse újra a beállítást. Ezzel alaphelyzetbe állítja a beléptetési beállítást.
+    > Ha az aktuális beállítás már **engedélyezve**van, módosítsa a **blokkolás**értékre, mentse a beállítást, majd állítsa vissza, hogy **engedélyezze** , majd mentse újra a beállítást. Ezzel alaphelyzetbe állítja a beléptetési beállítást.
 
 4. Várjon körülbelül 15 percet, majd regisztrálja újra az érintett eszközt.    
 
 ##### <a name="upgrade-windows-10-home"></a>A Windows 10 Home frissítése
-[Frissítse a Windows 10 Home rendszert a Windows 10 Pro](https://support.microsoft.com/help/12384/windows-10-upgrading-home-to-pro) vagy újabb verzióra. 
+[Frissítse a Windows 10 Home rendszert a Windows 10 Pro](https://support.microsoft.com/help/12384/windows-10-upgrading-home-to-pro) vagy újabb verzióra. 
 
 
 
@@ -92,17 +92,17 @@ A probléma több lehetséges megoldást is kínál:
 
 0x801c0003 hiba: "A felhasználó regisztrációja nem engedélyezett. Próbálkozzon újra, vagy forduljon a rendszergazdához a hibakód 801c0003. "
 
-**Okozhat** Előfordulhat, hogy a **felhasználók az Azure ad-** be való csatlakozáshoz a **none**értékre vannak beállítva. Ez megakadályozza, hogy az új felhasználók az eszközeiket az Azure AD-be csatlakozzanak. Ezért az Intune-regisztráció meghiúsul.
+**Okozhat** Előfordulhat, hogy a **felhasználók az Azure ad-** be való csatlakozáshoz a **none**értékre vannak beállítva. Ez megakadályozza, hogy az új felhasználók az eszközeiket az Azure AD-be csatlakozzanak. Ezért az Intune-regisztráció meghiúsul.
 
 #### <a name="resolution"></a>Megoldás:
-1. Jelentkezzen be rendszergazdaként a [Azure Portalba](https://portal.azure.com/) .    
-2. Lépjen **Azure Active Directory** eszközök>**eszközbeállítások menüpontra**. ****  >     
-3. A felhasználók beállíthatja, hogy az eszközök az **Azure ad** -hez csatlakozzanak.    
+1. Jelentkezzen be rendszergazdaként a [Azure Portalba](https://portal.azure.com/) .    
+2. Lépjen **Azure Active Directory** > eszközökeszközbeállítások > **menüpontra**.    
+3. A felhasználók beállíthatja, hogy az eszközök az **Azure ad** -hez csatlakozzanak.    
 4. Regisztrálja újra az eszközt.   
 
 ### <a name="the-device-is-already-enrolled"></a>Az eszköz már regisztrálva van.
 
-8018000a hiba: "Hiba történt. Az eszköz már regisztrálva van.  Forduljon a rendszergazdához a hibakód 8018000a. "
+8018000a hiba: "Hiba történt. Az eszköz már regisztrálva van.  Forduljon a rendszergazdához a hibakód 8018000a. "
 
 **Okozhat** A következő feltételek egyike igaz:
 - Egy másik felhasználó már regisztrálta az eszközt az Intune-ban, vagy csatlakoztatta az eszközt az Azure AD-hez. Annak megállapításához, hogy ez a helyzet-e, lépjen a **Beállítások** > **fiókok** > **munkahelyi hozzáférés elemre**. Keresse meg az alábbihoz hasonló üzenetet: "Egy másik felhasználó a rendszeren már csatlakoztatva van egy munkahelyi vagy iskolai hálózathoz. Távolítsa el a munkahelyi vagy iskolai kapcsolatokat, és próbálkozzon újra. "    
@@ -136,7 +136,7 @@ Rendeljen érvényes Intune-licencet a felhasználóhoz, majd regisztrálja az e
 ### <a name="looks-like-the-mdm-terms-of-use-endpoint-is-not-correctly-configured"></a>Úgy tűnik, hogy a MDM használati feltételeinek végpontja helytelenül van konfigurálva.
 
 **Okozhat** A következő feltételek egyike igaz: 
- - Az Office 365-hez és az Intune-hoz készült mobileszköz-kezelést (MDM) is használhatja a bérlőn, és az eszköz regisztrálását végző felhasználó nem rendelkezik érvényes Intune-licenccel vagy Office 365-licenccel.     
+ - Az Office 365-hez és az Intune-hoz készült mobileszköz-kezelést (MDM) is használhatja a bérlőn, és az eszköz regisztrálását végző felhasználó nem rendelkezik érvényes Intune-licenccel vagy Office 365-licenccel.     
 - Az Azure AD MDM használati feltételei üresek, vagy nem tartalmazzák a megfelelő URL-címet.    
 
 #### <a name="resolution"></a>Megoldás:
@@ -144,12 +144,12 @@ Rendeljen érvényes Intune-licencet a felhasználóhoz, majd regisztrálja az e
 A probléma megoldásához használja az alábbi módszerek egyikét: 
  
 ##### <a name="assign-a-valid-license-to-the-user"></a>Érvényes licencet rendeljen a felhasználóhoz
-Lépjen a [Microsoft 365 felügyeleti](https://portal.office.com/adminportal/home)központba, majd rendeljen hozzá egy Intune-t vagy egy Office 365-licencet a felhasználóhoz.
+Lépjen a [Microsoft 365 felügyeleti](https://portal.office.com/adminportal/home)központba, majd rendeljen hozzá egy Intune-t vagy egy Office 365-licencet a felhasználóhoz.
 
-##### <a name="correct-themdm-terms-of-use-url"></a>Javítsa ki a MDM használati feltételeinek URL-címét
-  1. Jelentkezzen be a [Azure Portalba](https://portal.azure.com/), majd válassza a **Azure Active Directory**lehetőséget.    
-  2. Válassza a **mobilitás (Mdm és MAM)** lehetőséget, majd kattintson a **Microsoft Intune**elemre.    
-  3. Válassza az **alapértelmezett Mdm-URL-címek visszaállítása**lehetőséget, és ellenőrizze, hogy a **Mdm URL-címe** beállítás értéke **https://portal.manage.microsoft.com/TermsofUse.aspx** .    
+##### <a name="correct-the-mdm-terms-of-use-url"></a>Javítsa ki a MDM használati feltételeinek URL-címét
+  1. Jelentkezzen be a [Azure Portalba](https://portal.azure.com/), majd válassza a **Azure Active Directory**lehetőséget.    
+  2. Válassza a **mobilitás (Mdm és MAM)** lehetőséget, majd kattintson a **Microsoft Intune**elemre.    
+  3. Válassza az **alapértelmezett Mdm-URL-címek visszaállítása**lehetőséget, és ellenőrizze, hogy a **Mdm URL-címe** beállítás értéke **https://portal.manage.microsoft.com/TermsofUse.aspx** .    
   4. Válassza a **Mentés** elemet.    
 
 
@@ -164,10 +164,10 @@ Lépjen a [Microsoft 365 felügyeleti](https://portal.office.com/adminportal/ho
 #### <a name="resolution"></a>Megoldás:
 A probléma megoldásához használja az alábbi módszerek egyikét:
 
-##### <a name="disablemdm-automatic-enrollment-in-azure"></a>Tiltsa le a MDM automatikus regisztrációját az Azure-ban.
-1. Jelentkezzen be a [Azure Portalba](https://portal.azure.com/).    
-2. Lépjen a **Azure Active Directory** > **mobilitás (Mdm és MAM)**  > **Microsoft Intune**.    
-3. Állítsa a **Mdm felhasználói hatókörét** **none**értékre, majd kattintson a **Mentés**gombra.    
+##### <a name="disable-mdm-automatic-enrollment-in-azure"></a>Tiltsa le a MDM automatikus regisztrációját az Azure-ban.
+1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com/).    
+2. Lépjen a **Azure Active Directory** > **mobilitás (Mdm és MAM)**  > **Microsoft Intune**.    
+3. Állítsa a **Mdm felhasználói hatókörét** **none**értékre, majd kattintson a **Mentés**gombra.    
      
 ##### <a name="uninstall"></a>Eltávolítás
 Távolítsa el az Intune PC-ügyfelet vagy Configuration Manager-ügynököt a számítógépről.    
@@ -179,8 +179,8 @@ Hiba: "A szoftver nem telepíthető, 0x80cf4017."
 **Okozhat** Az ügyfélszoftver elavult.
 
 #### <a name="resolution"></a>Megoldás:
-1. Jelentkezzen be [https://admin.manage.microsoft.com](https://admin.manage.microsoft.com)a szolgáltatásba.    
-2. Nyissa meg a **felügyeleti** > **ügyfélszoftver letöltése**lehetőséget, majd kattintson az **ügyfélszoftver letöltése**elemre.    
+1. Jelentkezzen be itt: [https://admin.manage.microsoft.com](https://admin.manage.microsoft.com).    
+2. Nyissa meg a **felügyeleti** > **ügyfélszoftver letöltése**lehetőséget, majd kattintson az **ügyfélszoftver letöltése**elemre.    
 3. Mentse a telepítőcsomagot, majd telepítse az ügyfélszoftvert. 
 
 
@@ -191,22 +191,22 @@ Hiba: "A fiók tanúsítványa nem érvényes, és lehet, hogy lejárt, 0x80cf40
 **Okozhat** Az ügyfélszoftver elavult.
 
 #### <a name="resolution"></a>Megoldás:
-1. Jelentkezzen be [https://admin.manage.microsoft.com](https://admin.manage.microsoft.com)a szolgáltatásba.    
-2. Nyissa meg a **felügyeleti** > **ügyfélszoftver letöltése**lehetőséget, majd kattintson az **ügyfélszoftver letöltése**elemre.    
+1. Jelentkezzen be itt: [https://admin.manage.microsoft.com](https://admin.manage.microsoft.com).    
+2. Nyissa meg a **felügyeleti** > **ügyfélszoftver letöltése**lehetőséget, majd kattintson az **ügyfélszoftver letöltése**elemre.    
 3. Mentse a telepítőcsomagot, majd telepítse az ügyfélszoftvert.    
 
 ### <a name="your-organization-does-not-support-this-version-of-windows"></a>A szervezet nem támogatja a Windows ezen verzióját. 
 
-Hiba: "Hiba történt. A szervezet nem támogatja a Windows ezen verzióját.  (0x80180014) "
+Hiba: "Hiba történt. A szervezet nem támogatja a Windows ezen verzióját.  (0x80180014) "
 
 **Okozhat** A Windows MDM regisztrációja le van tiltva az Intune-bérlőben.
 
 #### <a name="resolution"></a>Megoldás:
 A probléma önálló Intune-környezetben való kijavításához kövesse az alábbi lépéseket: 
  
-1. Jelentkezzen be rendszergazdaként a [Azure Portalba](https://portal.azure.com/) .    
-2. Válassza az **Intune** lehetőséget a bal oldalon, majd lépjen az ****  > eszközök regisztrálása beléptetési**korlátozásokhoz**.    
-3. Az **eszközök típusának korlátozásai**területen kattintson a **platformok**elemre, majd válassza a Windows **engedélyezése**  **(Mdm)** lehetőséget.    
+1. Jelentkezzen be rendszergazdaként a [Azure Portalba](https://portal.azure.com/) .    
+2. Válassza az **Intune** lehetőséget a bal oldalon, majd lépjen az > eszközök regisztrálása beléptetési**korlátozásokhoz**.    
+3. Az **eszközök típusának korlátozásai**területen kattintson a **platformok**elemre, majd válassza a Windows **engedélyezése** **(Mdm)** lehetőséget.    
 4. Kattintson a **Save** (Mentés) gombra.    
  
 A probléma megoldásához az Intune-nal és a Configuration Managertel rendelkező hibrid MDM hajtsa végre az alábbi lépéseket: 
@@ -221,11 +221,11 @@ A probléma megoldásához az Intune-nal és a Configuration Managertel rendelke
 **Okozhat** A megfelelő kiépítési csomaghoz tartozó Account Package (Package_GUID) Azure AD felhasználói fiókjai nem jogosultak eszközök csatlakoztatására az Azure AD-hez. Ezek az Azure AD-fiókok automatikusan létrejönnek a Windows Configuration Designerrel (WCD) rendelkező kiépítési csomag vagy az iskolai PC-alkalmazás beállítása során, és ezeket a fiókokat az eszközök Azure AD-hez való csatlakoztatására használják.
 
 #### <a name="resolution"></a>Megoldás:
-1. Jelentkezzen be rendszergazdaként a [Azure Portalba](https://portal.azure.com/) .    
+1. Jelentkezzen be rendszergazdaként a [Azure Portalba](https://portal.azure.com/) .    
 2. Lépjen **Azure Active Directory > eszközök > eszközbeállítások menüpontra**.    
-3. Beállíthatja, hogy a **felhasználók az Azure ad** -be vagy az **összes**  **kiválasztott**eszközhöz csatlakozzanak.
+3. Beállíthatja, hogy a **felhasználók az Azure ad** -be vagy az **összes** **kiválasztott**eszközhöz csatlakozzanak.
 
-   Ha a **kijelölt**lehetőséget választja, kattintson a **kijelölt**elemre, majd kattintson a **Tagok hozzáadása** lehetőségre az összes olyan felhasználó hozzáadásához, akik csatlakozhatnak az eszközéhez az Azure ad-ben. Győződjön meg arról, hogy a kiépítési csomaghoz tartozó összes Azure AD-fiók hozzá van adva.
+   Ha a **kijelölt**lehetőséget választja, kattintson a **kijelölt**elemre, majd kattintson a **Tagok hozzáadása** lehetőségre az összes olyan felhasználó hozzáadásához, akik csatlakozhatnak az eszközéhez az Azure ad-ben. Győződjön meg arról, hogy a kiépítési csomaghoz tartozó összes Azure AD-fiók hozzá van adva.
  
 További információ a kiépítési csomag létrehozásáról a Windows Configuration Designerben: létesítési [csomag létrehozása a Windows 10](https://docs.microsoft.com/windows/configuration/provisioning-packages/provisioning-create-package)rendszerhez.
 
@@ -246,7 +246,7 @@ Ha Csoportházirend használatával próbál automatikusan regisztrálni egy Win
     ```
 **Okozhat** A következő feltételek egyike igaz: 
 - Az UPN nem ellenőrzött vagy nem irányítható tartományt tartalmaz, például:. local ( joe@contoso.localpéldául).    
-- **A Mdm felhasználói hatóköre**  **none**értékre van állítva. 
+- A **Mdm felhasználói hatóköre** **none**értékre van állítva. 
 
 #### <a name="resolution"></a>Megoldás:
 Ha az UPN nem ellenőrzött vagy nem irányítható tartományt tartalmaz, kövesse az alábbi lépéseket: 
@@ -261,7 +261,7 @@ Ha az UPN nem ellenőrzött vagy nem irányítható tartományt tartalmaz, köve
     Start-ADSyncSyncCycle -PolicyType Delta
     ```
 
-Ha a **Mdm felhasználói hatóköre**  **none**értékre van állítva, kövesse az alábbi lépéseket: 
+Ha a **Mdm felhasználói hatóköre** **none**értékre van állítva, kövesse az alábbi lépéseket: 
  
 1. Jelentkezzen be a [Azure Portalba](https://portal.azure.com/), majd válassza a **Azure Active Directory**lehetőséget.
 2. Válassza a **mobilitás (Mdm és MAM)** lehetőséget, majd válassza a **Microsoft Intune**lehetőséget.    

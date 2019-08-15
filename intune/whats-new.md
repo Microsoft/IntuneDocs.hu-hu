@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 07/23/2019
+ms.date: 08/07/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f2e4870d1a2614ecccc1647db828e214a6aede8
-ms.sourcegitcommit: e9911a6bbfb8532a27e70d70402a214a8b2b6c75
-ms.translationtype: HT
+ms.openlocfilehash: 75e3f6ebf5d36777780ba77b7d503396ab808e22
+ms.sourcegitcommit: 6f84e880411a202c5500eb460779b7ef63a7f430
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68818789"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68978569"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -53,6 +53,17 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 -->  
 
 <!-- ########################## -->
+
+## <a name="week-of-august-5-2019"></a>Hét augusztus 5-ig, 2019
+
+### <a name="zebra-technologies-is-a-supported-oem-for-oemconfig-on-android-enterprise-devices-----4843713---"></a>A zebra Technologies egy támogatott OEM OEMConfig az androidos vállalati eszközökön  <!-- 4843713 -->
+
+Az Intune-ban létrehozhat eszköz-konfigurációs profilokat, és beállításokat alkalmazhat az androidos vállalati eszközökre a OEMConfig használatával (**eszköz-konfigurációs** > **profilok** > **létrehozási profil létrehozása**  >   **Android Enterprise** for platform > **OEMConfig** ).
+
+Ebben a frissítésben a zebra Technologies a OEMConfig által támogatott eredeti berendezésgyártó (OEM). További információ a OEMConfig-ről: [androidos vállalati eszközök használata és kezelése a OEMConfig](android-oem-configuration-overview.md)-mel.
+
+Érintett kiadások:  
+- Android Enterprise
 
 ## <a name="week-of-july-22-2019"></a>2019. július 22-i hét 
 
@@ -138,7 +149,7 @@ Az eszköz megkeresése művelettel nagyíthatja az eszköz pontos koordinátái
 
 ### <a name="device-security"></a>Eszköz biztonsága
 
-#### <a name="advanced-settings-for-windows-defender-firewall--public-preview-------1311949-------"></a>Speciális beállítások a Windows Defender-tűzfalhoz (nyilvános előzetes verzió)  <!--  1311949     -->  
+#### <a name="advanced-settings-for-windows-defender-firewall--public-preview------1311949-------"></a>Speciális beállítások a Windows Defender-tűzfalhoz (nyilvános előzetes verzió)  <!--  1311949     -->  
 Az Intune használatával kezelheti az egyéni tűzfalszabályok az Endpoint Protection [eszköz konfigurációs profiljának részeként](endpoint-protection-configure.md#add-custom-firewall-rules-for-windows-10-devices) a Windows 10 rendszerben. A szabályok megadhatják a bejövő és kimenő viselkedést az alkalmazásokhoz, a hálózati címekhez és a portokhoz. 
 
 #### <a name="updated-ui-for-managing-security-baselines------4091125-------"></a>Frissített felhasználói felület a biztonsági alapkonfigurációk kezeléséhez   <!-- 4091125     -->
@@ -235,7 +246,7 @@ Az új beállítás megjelenítéséhez nyissa meg a [Windows 10 (és újabb) es
 Érintett kiadások: Windows 10 és újabb
 
 #### <a name="deploy-multiple-zebra-mobility-extensions-device-profiles-to-a-device-same-user-group-or-same-devices-group----4089955---"></a>Több Zebra Mobility Extensions-eszköz profiljának üzembe helyezése egy eszközön, azonos felhasználói csoporton vagy azonos eszközök csoporton <!-- 4089955 -->
-Az Intune-ban az eszköz konfigurációs profiljában a zebra Mobility Extensions (MX) segítségével testreszabhatja az Intune-ba nem beépített Zebra-eszközök beállításait. Jelenleg egyetlen eszközre is telepíthet egyetlen profilt. Ebben a frissítésben több profilt is üzembe helyezhet:
+Az Intune-ban az eszköz konfigurációs profiljában a zebra Mobility Extensions (MX) segítségével testre szabhatja az Intune-ba nem beépített Zebra-eszközök beállításait. Jelenleg egyetlen eszközre is telepíthet egyetlen profilt. Ebben a frissítésben több profilt is üzembe helyezhet:
 - Ugyanazon felhasználói csoport
 - Ugyanazok az eszközök csoport
 - Egyetlen eszköz

@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cb5176189cb689c8341704440463881cb1aa7e4f
-ms.sourcegitcommit: 299d8d481f0edfa60041c5dff626e1f27bcbe252
+ms.openlocfilehash: cba8b59931bd60db0d9169af5016f01118c64cf0
+ms.sourcegitcommit: b30a2ba2b67aa2fc3421f0b2f6c5f361a0de612a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68956564"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69022829"
 ---
 # <a name="develop-a-rollout-communication-plan"></a>Bevezetési kommunikációs terv kidolgozása
 
@@ -50,7 +50,7 @@ A kommunikálandó információt annak függvényében lehet meghatározni, hogy
 
 **Regisztrálás utáni szakasz**<br/> Célzott kommunikáció az Intune-ban már regisztrált egységekkel és felhasználókkal. Ennek során további hasznos erőforrásokat kell javasolni a felhasználóknak, és visszajelzéseket kell gyűjteni tőlük a regisztráció során és azóta keletkezett tapasztalataikról.
 
-Ez a [végfelhasználói regisztrációs útmutató](/enterprise-mobility-security/solutions/fasttrack-intune-enduser-enrollment-instructions) hasznos segédanyag lehet. Eredeti formájában is felhasználhatja, de a szervezet igényei szerint módosíthatja is.
+Az [Intune bevezetési csomagja](https://aka.ms/IntuneAdoptionKit) hasznos lehet. Használhatja a-t, vagy módosíthatja a szervezete számára.
 
 ## <a name="communication-delivery-methods"></a>Kommunikációs módszerek
 

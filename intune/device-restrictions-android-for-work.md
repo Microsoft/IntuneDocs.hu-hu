@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 06/05/2019
+ms.date: 08/14/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.localizationpriority: medium
@@ -14,12 +14,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d4ab90a36254de49eb27e326086ffb137c782005
-ms.sourcegitcommit: 7c251948811b8b817e9fe590b77f23aed95b2d4e
+ms.openlocfilehash: 35676b95356df002fdd784f67110f048643e444e
+ms.sourcegitcommit: b30a2ba2b67aa2fc3421f0b2f6c5f361a0de612a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67883435"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69022884"
 ---
 # <a name="android-enterprise-device-settings-to-allow-or-restrict-features-using-intune"></a>Android Enterprise eszközbeállítások engedélyezett vagy korlátozott funkciók az Intune-nal
 
@@ -92,6 +92,9 @@ Teljes **képernyős mód**: Válassza ki, hogy az eszköz futtat-e egy alkalmaz
 
   2. Válasszon **OK** > **OK** az alkalmazás hozzáadásához.
 
+  > [!IMPORTANT]
+  > Egyalkalmazásos kioszk mód használata esetén előfordulhat, hogy a tárcsázó/telefonos alkalmazások nem működnek megfelelően. 
+  
 - **Több alkalmazás**: A felhasználók korlátozott számú alkalmazást tudnak elérni az eszközön. Amikor az eszköz elindul, csak a hozzáadott alkalmazások indítsa el. Bizonyos webes hivatkozások, amelyek a felhasználó meg tudja nyitni is hozzáadhat. A házirend van érvényben, amikor megjelenik a felhasználók számára az engedélyezett alkalmazások ikonjai a kezdőképernyőn.
 
   > [!IMPORTANT]
@@ -101,7 +104,7 @@ Teljes **képernyős mód**: Válassza ki, hogy az eszköz futtat-e egy alkalmaz
   > 
   > A **kezdőlap képernyő felügyelt** alkalmazás nem található a konfigurációs profil feltétlenül szükséges, de ügyfélalkalmazásként hozzá kell adni. Ha a **felügyelt kezdőképernyő** alkalmazást ügyfél-alkalmazásként adja hozzá, a konfigurációs profilban hozzáadott más alkalmazások ikonként jelennek meg a felügyelt **kezdőképernyő** alkalmazásban. 
   >
-  > A többalkalmazásos kioszk mód felügyelt kezdőképernyő használatával történő használata esetén előfordulhat, hogy a tárcsázó/telefonos alkalmazások nem működnek megfelelően. 
+  > Többalkalmazásos kioszk mód használata esetén előfordulhat, hogy a tárcsázó/telefonos alkalmazások nem működnek megfelelően. 
 
   - Válasszon **Hozzáadás**, és válassza ki az alkalmazások a listából.
 

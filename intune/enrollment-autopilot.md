@@ -17,17 +17,17 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7e0be106b47d933c4407a02369edff3645682b1c
-ms.sourcegitcommit: 293dfbea2b4756bb9b7df1705a2b5f752dfaa807
+ms.openlocfilehash: f275ed15b02b182e6a880dc6fde2ca67140e7d78
+ms.sourcegitcommit: db68056e2db17dfdeaa216c684302567742e6416
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68701003"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68993724"
 ---
 # <a name="enroll-windows-devices-in-intune-by-using-the-windows-autopilot"></a>Windows-eszközök regisztrálása az Intune-ban a Windows Autopilot használatával  
 A Windows Autopilot egyszerűbbé teszi az eszközök regisztrálását az Intune-ban. A testre szabott operációsrendszer-lemezképek létrehozása és karbantartása sok időt vesz igénybe. Gyakran ezeknek az egyéni operációsrendszer-lemezképeknek az új eszközökre való alkalmazásával is időt kell töltenie, hogy felkészítse az eszközöket a használatra, mielőtt a végfelhasználóknak adná azokat. A Microsoft Intune és az AutoPilot révén új eszközöket adhat hozzá a végfelhasználók számára anélkül, hogy egyéni operációsrendszer-lemezképek létrehozására, kezelésére és az eszközökre való alkalmazására lenne szükség. Az AutoPilot-eszközök Intune-nal való felügyelete során a regisztráció után szabályzatokat, profilokat, alkalmazásokat és sok mást is kezelni tud. A megoldás előnyeinek, használati eseteinek és előfeltételeinek áttekintéséről lásd [a Windows AutoPilot áttekintését](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot).
 
-A robotpilóta-telepítés négyféle típusú: [Önálló üzembe helyezési mód](https://docs.microsoft.com/en-us/windows/deployment/windows-autopilot/self-deploying) kioszkokhoz, digitális aláírásokhoz vagy megosztott eszközökhöz, a [fehér kesztyű](https://docs.microsoft.com/windows/deployment/windows-autopilot/white-glove) lehetővé teszi, hogy a partnerek vagy az informatikai munkatársak előzetesen kiépítsék a Windows 10 rendszerű számítógépeket, hogy teljes mértékben konfigurálva legyenek, és készen álljanak a [meglévő eszközök robotpilóta](https://docs.microsoft.com/windows/deployment/windows-autopilot/existing-devices) egyszerűen üzembe helyezheti a Windows 10-es legújabb verzióját a meglévő eszközökön, valamint a hagyományos felhasználók [felhasználói által vezérelt üzemmódját](https://docs.microsoft.com/en-us/windows/deployment/windows-autopilot/user-driven) . 
+A robotpilóta-telepítés négyféle típusú: [Önálló üzembe helyezési mód](https://docs.microsoft.com/windows/deployment/windows-autopilot/self-deploying) kioszkokhoz, digitális aláírásokhoz vagy megosztott eszközökhöz, a [fehér kesztyű](https://docs.microsoft.com/windows/deployment/windows-autopilot/white-glove) lehetővé teszi, hogy a partnerek vagy az informatikai munkatársak előzetesen kiépítsék a Windows 10 rendszerű számítógépeket, hogy teljes mértékben konfigurálva legyenek, és készen álljanak a [meglévő eszközök robotpilóta](https://docs.microsoft.com/windows/deployment/windows-autopilot/existing-devices) egyszerűen üzembe helyezheti a Windows 10-es legújabb verzióját a meglévő eszközökön, valamint a hagyományos felhasználók [felhasználói által vezérelt üzemmódját](https://docs.microsoft.com/windows/deployment/windows-autopilot/user-driven) . 
 
 
 ## <a name="prerequisites"></a>Előfeltételek
