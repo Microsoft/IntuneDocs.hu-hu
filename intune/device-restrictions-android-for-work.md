@@ -14,12 +14,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 35676b95356df002fdd784f67110f048643e444e
-ms.sourcegitcommit: b30a2ba2b67aa2fc3421f0b2f6c5f361a0de612a
+ms.openlocfilehash: 8bd537315a09c0c7cf338ac0892fc4ae3d1dc8fc
+ms.sourcegitcommit: b78793ccbef2a644a759ca3110ea73e7ed6ceb8f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69022884"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69550188"
 ---
 # <a name="android-enterprise-device-settings-to-allow-or-restrict-features-using-intune"></a>Android Enterprise eszközbeállítások engedélyezett vagy korlátozott funkciók az Intune-nal
 
@@ -85,12 +85,9 @@ Teljes **képernyős mód**: Válassza ki, hogy az eszköz futtat-e egy alkalmaz
 
 - **Egyetlen alkalmazás**: A felhasználók csak egyetlen alkalmazást tudnak elérni az eszközön. Amikor az eszköz elindul, csak az adott alkalmazás elindul. A felhasználók nem nyithatnak meg új alkalmazásokat, és nem módosíthatják a futó alkalmazást.
 
-  **Lépések**
-  1. Válasszon **felügyelt alkalmazás kiválasztása**, és válassza ki a felügyelt Google Play-alkalmazást a listából. 
+  - **Felügyelt alkalmazás kiválasztása**: Válassza ki a felügyelt Google Play alkalmazást a listából.
 
-      Ha nem rendelkezik az összes alkalmazás szerepel a listában, majd [bizonyos Android-alkalmazások hozzáadása](apps-add-android-for-work.md) az eszközön. Ügyeljen arra, hogy [az alkalmazást a dedikált eszközökhöz létrehozott eszközcsoport](apps-deploy.md)számára társítsa.
-
-  2. Válasszon **OK** > **OK** az alkalmazás hozzáadásához.
+    Ha nem rendelkezik az összes alkalmazás szerepel a listában, majd [bizonyos Android-alkalmazások hozzáadása](apps-add-android-for-work.md) az eszközön. Ügyeljen arra, hogy [az alkalmazást a dedikált eszközökhöz létrehozott eszközcsoport](apps-deploy.md)számára társítsa.
 
   > [!IMPORTANT]
   > Egyalkalmazásos kioszk mód használata esetén előfordulhat, hogy a tárcsázó/telefonos alkalmazások nem működnek megfelelően. 
@@ -106,41 +103,63 @@ Teljes **képernyős mód**: Válassza ki, hogy az eszköz futtat-e egy alkalmaz
   >
   > Többalkalmazásos kioszk mód használata esetén előfordulhat, hogy a tárcsázó/telefonos alkalmazások nem működnek megfelelően. 
 
-  - Válasszon **Hozzáadás**, és válassza ki az alkalmazások a listából.
+  - **Hozzáadás**: Válassza ki az alkalmazásokat a listából.
 
     Ha a **kezdőlap képernyő felügyelt** alkalmazás nem szerepel a listán, majd [adja hozzá a Google Play áruházból](https://play.google.com/work/apps/details?id=com.microsoft.launcher.enterprise). Ügyeljen arra, hogy [az alkalmazást](apps-deploy.md) a dedikált eszközökhöz létrehozott eszközcsoport számára társítsa.
 
     Is hozzáadhat más [Android-alkalmazások](apps-add-android-for-work.md) és [webes alkalmazások](web-app.md) hozta létre a szervezet az eszköz számára. Ügyeljen arra, hogy [az alkalmazást a dedikált eszközökhöz létrehozott eszközcsoport](apps-deploy.md)számára társítsa.
 
-  - **Virtuális otthoni gomb**: Válassza az **Engedélyezés** lehetőséget a Kezdőlap gomb megjelenítéséhez a dedikált eszközön. Kiválasztásakor visszaadja a felhasználó az eszköz kezdőképernyőjére így a felhasználók egyszerűen válthat az alkalmazások között. Néhány Android-eszközön a felhasználók valószínűleg a pöccintsen felfelé a kezdőlap gombjának megjelenítése a képernyőn. **Tiltsa le** egy otthoni gomb nem jelenik meg, így a felhasználók alkalmazások közötti váltás kell használnia a Vissza gombra.
-  - A **kioszk mód**kihagyása: Az **Engedélyezés** lehetőség kiválasztásával engedélyezheti, hogy a rendszergazdák ideiglenesen szüneteltetik a kioszk módot az eszköz frissítéséhez. A szolgáltatás használatához a rendszergazda: 
-  
-    1. Továbbra is kijelöli a vissza gombot, amíg meg nem jelenik a "kilépési kioszk" gomb. 
-    2. Kiválasztja a gombot, és belép a teljes **képernyős mód kód** PIN-kódjába.
-    3. Amikor végzett a módosításokkal, válassza ki a **kezdőlap képernyő felügyelt** alkalmazást. Ez a lépés az eszköz relocks többalkalmazásos kioszk módba. 
+  - **Virtuális otthoni gomb**: Egy Soft-Key gomb, amely a felhasználókat a felügyelt kezdőképernyő számára adja vissza, így a felhasználók válthatnak az alkalmazások között. A választható lehetőségek:
 
-    **Tiltsa le** nem lehetővé teheti a teljes képernyős mód felfüggesztése. Ha a rendszergazda továbbra is kiválasztja a vissza gombot, és kiválasztja a "kilépés a kioszkból" gombot, akkor egy üzenet jelzi, hogy PIN-kódot kell megadnia.
+    - **Nincs konfigurálva** (alapértelmezett): A Kezdőlap gomb nem jelenik meg. Az alkalmazások közötti váltáshoz a felhasználóknak a vissza gombot kell használniuk.
+    - **Elcsúsztatás**: A Kezdőlap gomb azt jeleníti meg, hogy a felhasználó mikor kerül be az eszközre.
+    - **Lebegő**: Egy állandó, lebegő Kezdőlap gomb megjelenítése az eszközön.
+
+  - A **kioszk mód**kihagyása: Az **Engedélyezés** lehetőség kiválasztásával engedélyezheti, hogy a rendszergazdák ideiglenesen szüneteltetik a kioszk módot az eszköz frissítéséhez. A szolgáltatás használatához a rendszergazda:
+  
+    1. Továbbra is kijelöli a vissza gombot, amíg meg nem jelenik a kilépési **kioszk** gomb. 
+    2. Kiválasztja a **kilépési kioszk** gombot, és belép a teljes **képernyős mód kód** PIN-kódjába.
+    3. Ha elkészült, válassza a **felügyelt kezdőképernyő** alkalmazást. Ez a lépés az eszköz relocks többalkalmazásos kioszk módba.
+
+      Ha a **nincs konfigurálva**értékre van állítva, a rendszergazdák nem tudják szüneteltetni a kioszk üzemmódot. Ha a rendszergazda továbbra is kiválasztja a vissza gombot, és kiválasztja a kilépési **kioszk** gombot, akkor egy üzenet jelzi, hogy PIN-kódot kell megadnia.
 
     - A **kioszk mód kódjának**kihagyása: Adjon meg egy 4-6 számjegyű numerikus PIN-kódot. A rendszergazda ideiglenesen letilthatja a teljes képernyős mód a PIN-kódot használja.
 
   - **Egyéni URL-cím beállításának beállítása**: Adjon meg egy URL-címet, amely testreszabja a háttér képernyőt a dedikált eszközön.
-    
+
     > [!NOTE]
     > A legtöbb esetben azt javasoljuk, hogy legalább a következő méretű képekkel kezdjen el:
     >
     > - Phone 1080x1920 px
     > - Tabletta 1920 × 1080 px
-    >    
+    >
     > A legjobb élmény és a ropogós részletek tekintetében azt javasoljuk, hogy eszközönként a megjelenítési specifikációk alapján hozzon létre egy eszközön rendszerkép-eszközöket.
     >
     > A modern kijelzők nagyobb képpontokkal rendelkeznek, és megfelelő 2K/4K definíciós képeket tudnak megjeleníteni.
-  - **Wi-Fi-konfiguráció**: Az **Engedélyezés** lehetőség kiválasztásával engedélyezheti a végfelhasználók számára az eszköz csatlakoztatását a különböző WiFi-hálózatokhoz. A funkció engedélyezése az eszköz helyét is bekapcsolja. **Nincs konfigurálva** (alapértelmezés) megakadályozza, hogy a felhasználók a felügyelt kezdőképernyő (a zárolási feladat mód) közben csatlakozzanak a WiFi-hálózatokhoz.
 
-    További információ a [zárolási feladat módjáról](https://developer.android.com/work/dpc/dedicated-devices/lock-task-mode) (az Android webhely megnyitása).
+  - **Wi-Fi-konfiguráció**: Az **Engedélyezés** megjeleníti a Wi-Fi vezérlőelemet a felügyelt kezdőképernyőn, és lehetővé teszi a végfelhasználók számára az eszköz csatlakoztatását a különböző WiFi-hálózatokhoz. A funkció engedélyezése az eszköz helyét is bekapcsolja. **Nincs konfigurálva** (alapértelmezés) nem jeleníti meg a Wi-Fi vezérlőelemet a felügyelt kezdőképernyő képernyőjén. Megakadályozza, hogy a felhasználók a felügyelt kezdőképernyő használatával csatlakozzanak a Wi-Fi-hálózatokhoz.
 
-  - **Bluetooth-konfiguráció**: Az **Engedélyezés** gombra kattintva engedélyezheti a Bluetooth használatát az eszközön, és lehetővé teheti a végfelhasználók számára az eszközök párosítását Bluetooth-kapcsolaton keresztül A funkció engedélyezése az eszköz helyét is bekapcsolja. **Nincs konfigurálva** (alapértelmezés) megakadályozza, hogy a felhasználók a felügyelt kezdőlapon (a zárolási feladat módban) a Bluetooth és a párosítási eszközöket konfigurálja. 
+  - **Bluetooth-konfiguráció**: Az **Engedélyezés** megjeleníti a felügyelt kezdőképernyő Bluetooth-vezérlését, és lehetővé teszi a végfelhasználók számára az eszközök párosítását a Bluetooth-on keresztül. A funkció engedélyezése az eszköz helyét is bekapcsolja. **Nincs konfigurálva** (alapértelmezés) nem jeleníti meg a Bluetooth-vezérlést a felügyelt kezdőképernyő képernyőjén. Megakadályozza, hogy a felhasználók a felügyelt kezdőképernyő használata közben a Bluetooth és a párosítási eszközöket konfigurálja.
 
-    További információ a [zárolási feladat módjáról](https://developer.android.com/work/dpc/dedicated-devices/lock-task-mode) (az Android webhely megnyitása).
+  - **Zseblámpa-hozzáférés**: Az **Engedélyezés** megjeleníti a zseblámpa vezérlőelemet a felügyelt kezdőképernyőn, és lehetővé teszi a végfelhasználók számára a zseblámpa be-vagy kikapcsolását. **Nincs konfigurálva** (alapértelmezés) nem jeleníti meg a zseblámpa vezérlőelemet a felügyelt kezdőképernyő képernyőjén. Ez megakadályozza a felhasználók számára a zseblámpa használatát a felügyelt kezdőképernyő használata közben.
+
+  - **Adathordozó-kötet vezérlőelem**: Az **Engedélyezés** beállítás megjeleníti a Media Volume Control eszközt a felügyelt kezdőlapon, és lehetővé teszi a végfelhasználók számára, hogy a csúszka segítségével módosítsák az eszköz adathordozó-kötetét. **Nincs konfigurálva** (alapértelmezés) nem jeleníti meg a Media Volume Control szolgáltatást a felügyelt kezdőképernyőn. Ez megakadályozza, hogy a felhasználók a felügyelt kezdőképernyő használata közben módosítsák az eszköz adathordozó-kötetét, kivéve, ha a hardveres gombok támogatják azt. 
+
+  - **Képernyővédő mód**: Az **Engedélyezés** megjeleníti a képernyővédőt a felügyelt kezdőképernyőn, ha az eszköz zárolva van vagy időtúllépés miatt megtörténik. **Nincs konfigurálva** (alapértelmezés) nem jeleníti meg a képernyővédőt a felügyelt kezdőképernyőn.
+
+    Ha engedélyezve van, konfigurálja a következőket is:
+
+    - **Egyéni képernyőkímélő rendszerképének beállítása**: Adja meg az egyéni rendszerkép URL-címét. Írja be például a következőt:
+
+      - `http://www.contoso.com/image.jpg`
+      - `www.contoso.com/image.bmp`
+      - `https://www.contoso.com/image.html`
+
+      Ha nem ad meg URL-címet, a rendszer az eszköz alapértelmezett képét használja, ha van alapértelmezett rendszerkép.
+
+    - **Azon másodpercek száma, ameddig az eszköz képernyőkímélőt mutat a képernyő kikapcsolása előtt**: Válassza ki, hogy az eszköz mennyi ideig jelenítse meg a képernyővédőt. 0-9999999 másodperc közötti értéket adjon meg. Az `0` alapértelmezett érték másodperc. Ha üresen hagyja, vagy nulla (`0`) értékre van állítva, a képernyőkímélő aktív, amíg a felhasználó nem kommunikál az eszközzel.
+    - **Azon másodpercek száma, ameddig az eszköz inaktív a képernyőkímélő megjelenítése előtt**: Válassza ki, hogy az eszköz mennyi ideig tétlen a képernyővédő megjelenítése előtt. 1-9999999 másodperc közötti értéket adjon meg. Az `30` alapértelmezett érték másodperc. Nullánál (`0`) nagyobb számot kell megadnia.
+    - **Adathordozó észlelése a képernyőkímélő elindítása előtt**: **Engedélyezés** (alapértelmezés) nem jeleníti meg a képernyőkímélőt, ha a hang vagy a videó lejátszása az eszközön történik. A **nincs konfigurálva beállítás** megjeleníti a képernyőkímélőt, még akkor is, ha a hang vagy a videó lejátszása megtörténik.
 
 ### <a name="device-password-settings"></a>Eszköz jelszóbeállításai
 

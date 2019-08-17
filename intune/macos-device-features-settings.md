@@ -1,11 +1,11 @@
 ---
-title: macOS eszközfunkció-beállítások a Microsoft Intune – Azure |} A Microsoft Docs
-description: Tekintse meg a beállítások macOS-eszközök konfigurálhatja az AirPrint és testre szabhatja a bejelentkezési ablakban, a Microsoft Intune-ban power gomb megjelenítése vagy elrejtése. Tekintse meg a lépéseket a az IP-cím, elérési útja és portbeállítások az AirPrint-kiszolgáló a hálózaton. Az eszközkonfigurációs profil ezek a beállítások segítségével konfigurálhatja a macOS eszközök funkciói.
+title: macOS-eszköz funkciójának beállításai a Microsoft Intune-Azure-ban | Microsoft Docs
+description: Tekintse meg a macOS-eszközök AirPrint való konfigurálásának beállításait, és szabja testre a bejelentkezési ablakot a Microsoft Intune lévő főkapcsoló gombok megjelenítéséhez vagy elrejtéséhez. Tekintse meg a AirPrint-kiszolgáló IP-címének, elérési útjának és portbeállítások beszerzésének lépéseit a hálózaton. Ezeket a beállításokat egy eszköz konfigurációs profiljában a macOS-eszközök funkcióinak konfigurálásához használhatja.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 04/23/2019
+ms.date: 08/05/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.localizationpriority: medium
@@ -15,96 +15,109 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1826498b3bfa2191900d7574f79051af8f758558
-ms.sourcegitcommit: 916fed64f3d173498a2905c7ed8d2d6416e34061
+ms.openlocfilehash: 63f2832dd321425efe8092f1bb12dd0d479ef71b
+ms.sourcegitcommit: b78793ccbef2a644a759ca3110ea73e7ed6ceb8f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66041703"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69549934"
 ---
-# <a name="macos-device-feature-settings-in-intune"></a>macOS eszközfunkció-beállítások az Intune-ban
+# <a name="macos-device-feature-settings-in-intune"></a>macOS-eszköz funkciójának beállításai az Intune-ban
 
-Az Intune beépített beállítások segítségével testre szabhatja a macOS-eszközök funkcióinak tartalmaz. Ez a cikk ezeket a beállításokat, és ismerteti az egyes beállítások funkciója. Azt is megjeleníti a lépéseket a az IP-cím, elérési útja és a terminál alkalmazással (emulátor) port az AirPrint-nyomtatókhoz.
+Az Intune tartalmaz néhány beépített beállítást a macOS-eszközök funkcióinak testreszabásához. Ez a cikk felsorolja ezeket a beállításokat, és leírja az egyes beállításokat. Emellett felsorolja azokat a lépéseket, amelyekkel lekérheti a AirPrint-nyomtatók IP-címét, elérési útját és portját a Terminal app (Emulator) használatával.
 
 Ez a funkció az alábbiakra vonatkozik:
 
 - macOS
 
-A mobileszköz-felügyelet (MDM) megoldás részeként használja ezeket a beállításokat, hozzon létre egy szalagcím, válassza ki, hogy a felhasználók hogyan jelentkeznek be, az AirPrint-kiszolgáló, és felvenni.
+A mobileszköz-kezelési (MDM) megoldás részeként ezekkel a beállításokkal létrehozhat egy szalagcímet, kiválaszthatja a felhasználók bejelentkezésének módját, a AirPrint-kiszolgáló hozzáadását és egyebeket.
 
-Ezek a beállítások hozzá egy eszközkonfigurációs profilt az Intune-ban, és ezután hozzárendelt vagy a macOS-eszközökre telepített.
+Ezek a beállítások hozzáadódnak az Intune-ban lévő eszköz konfigurációs profiljához, majd a macOS-eszközökhöz vannak rendelve vagy telepítve.
 
 ## <a name="before-you-begin"></a>Előkészületek
 
-[A macOS-eszközkonfigurációs profil létrehozása](device-features-configure.md).
+[Hozzon létre egy MacOS-eszköz konfigurációs profilt](device-features-configure.md).
 
 ## <a name="airprint"></a>AirPrint
 
-- **IP-cím**: Adja meg a nyomtató IPv4 vagy IPv6-címét. Ha állomásnevek nyomtatók azonosítására használ, a nyomtató a terminál alkalmazásban történő megpingelésével beszerezheti az IP-címet. [Az IP-cím és az elérési út](#get-the-ip-address-and-path) (a jelen cikkben) további információt talál.
-- **Elérési út**: Adja meg a nyomtató elérési útját. Az elérési út általában `ipp/print` nyomtatók a hálózaton. [Az IP-cím és az elérési út](#get-the-ip-address-and-path) (a jelen cikkben) további információt talál.
-- **Port** (az iOS 11.0-s és újabb verziók): Adja meg az AirPrint-célhely figyelőportja. Ha üresen hagyja ezt a tulajdonságot, az AirPrint az alapértelmezett portot használ.
-- **A TLS** (az iOS 11.0-s és újabb verziók): Válassza ki **engedélyezése** AirPrint-kapcsolatok a Transport Layer Security (TLS) biztonságos.
+- **IP-cím**: Adja meg a nyomtató IPv4-vagy IPv6-címeit. Ha állomásneveket használ a nyomtatók azonosítására, akkor az IP-címet a nyomtatónak a terminál alkalmazásban történő pingelésével érheti el. [Az IP-cím és az elérési út](#get-the-ip-address-and-path) lekérése (ebben a cikkben) további részleteket tartalmaz.
+- **Elérési út**: Adja meg a nyomtató elérési útját. Az elérési út `ipp/print` általában a hálózatban lévő nyomtatókhoz van. [Az IP-cím és az elérési út](#get-the-ip-address-and-path) lekérése (ebben a cikkben) további részleteket tartalmaz.
+- **Port** (iOS 11,0 és újabb verziók): Adja meg a AirPrint célhelyének figyelési portját. Ha üresen hagyja ezt a tulajdonságot, a AirPrint az alapértelmezett portot használja.
+- **TLS** (iOS 11,0 és újabb verziók): Válassza az **Engedélyezés** lehetőséget a AirPrint-kapcsolatok TRANSPORT Layer Security (TLS) használatával történő biztonságossá tételéhez.
 
-**Adjon hozzá** az AirPrint-kiszolgáló. Számos AirPrint-kiszolgálókat is hozzáadhat.
+**Hozzáadás** A AirPrint-kiszolgáló. Több AirPrint-kiszolgálót is hozzáadhat.
 
-- **Importálás** (nem kötelező): Emellett **importálás** egy vesszővel tagolt fájlt (.csv), amely tartalmazza az AirPrint-nyomtatókra listáját. Miután hozzáadta az AirPrint-nyomtatókra az Intune-ban, azt is megtehetjük, **exportálása** ebben a listában.
+- **Importálás** (nem kötelező): Importálhat egy vesszővel tagolt (. csv) fájlt is, amely tartalmazza a AirPrint-nyomtatók listáját. Emellett a AirPrint-nyomtatók Intune-ban való hozzáadása után **exportálhatja** a listát.
 
-Válassza ki **OK** a beállítások mentéséhez.
+A beállítások mentéséhez kattintson **az OK gombra** .
 
-### <a name="get-the-ip-address-and-path"></a>Az IP-cím és az elérési út
+### <a name="get-the-ip-address-and-path"></a>Az IP-cím és az elérési út lekérése
 
-Az IP-címét a nyomtatót, az erőforrás elérési útja és a portot kell AirPrinter-kiszolgálók hozzáadásához. A következő lépések bemutatják, hogyan beolvasni ezeket az információkat.
+AirPrinter-kiszolgálók hozzáadásához szüksége lesz a nyomtató IP-címére, az erőforrás elérési útjára és a portra. Az alábbi lépések bemutatják, hogyan kérheti le ezeket az információkat.
 
-1. Az azonos helyi hálózatra (alhálózatra), az AirPrint-nyomtatókra csatlakoztatott Mac számítógépen nyissa meg a **terminálon** (a **/Applications/Utilities**).
-2. A Terminálszolgáltatások alkalmazásban írjon be `ippfind`, és válassza ki, adja meg.
+1. Olyan Mac gépen, amely ugyanahhoz a helyi hálózathoz (alhálózat) csatlakozik, mint a AirPrint-nyomtatók, nyissa meg a terminált (a **/Applications/Utilities alatt**).
+2. A terminál alkalmazásban írja be `ippfind`a parancsot, majd kattintson az ENTER (bevitel) gombra.
 
-    Megjegyzés: a nyomtató-információkat. Például előfordulhat, hogy vissza valami hasonló `ipp://myprinter.local.:631/ipp/port1`. Az első része a nyomtató neve. A második (`ipp/port1`) az erőforrás elérési útja.
+    Jegyezze fel a nyomtató adatait. Előfordulhat például, hogy a `ipp://myprinter.local.:631/ipp/port1`következőhöz hasonló értéket ad vissza:. Az első rész a nyomtató neve. Az utolsó rész (`ipp/port1`) az erőforrás elérési útja.
 
-3. A Terminalba írja be a `ping myprinter.local`, és válassza ki, adja meg.
+3. A terminálon írja be `ping myprinter.local`a parancsot, majd kattintson az ENTER (bevitel) gombra.
 
-   Megjegyzés: az IP-címet. Például előfordulhat, hogy vissza valami hasonló `PING myprinter.local (10.50.25.21)`.
+   Jegyezze fel az IP-címet. Előfordulhat például, hogy a `PING myprinter.local (10.50.25.21)`következőhöz hasonló értéket ad vissza:.
 
-4. IP-cím és az erőforrás elérési útja értéket használja. Ebben a példában az IP-cím van `10.50.25.21`, és az erőforrás-elérési út `/ipp/port1`.
+4. Használja az IP-cím és az erőforrás elérési útjának értékét. Ebben a példában az IP-cím `10.50.25.21`, az erőforrás elérési útja pedig. `/ipp/port1`
+
+## <a name="login-items"></a>Bejelentkezési elemek
+
+- **Fájlok, mappák és egyéni alkalmazások**: **Adja** meg a megnyitni kívánt fájl, mappa, egyéni alkalmazás vagy rendszeralkalmazás elérési útját, amikor egy felhasználó bejelentkezik az eszközre. A szervezete számára létrehozott vagy testre szabott rendszeralkalmazások vagy alkalmazások általában a `Applications` mappában találhatók, a következőhöz `/Applications/AppName.app`hasonló elérési úttal. 
+
+  Számos fájlt, mappát és alkalmazást adhat hozzá. Írja be például a következőt:  
+  
+  - `/Applications/Calculator.app`
+  - `/Applications`
+  - `/Applications/Microsoft Office/root/Office16/winword.exe`
+  - `/Users/UserName/music/itunes.app`
+  
+  Ha bármilyen alkalmazást, mappát vagy fájlt ad hozzá, ügyeljen arra, hogy a helyes elérési utat adja meg. Nem minden elem szerepel a `Applications` mappában. Ha a felhasználó egy elemet helyez át egyik helyről a másikra, az elérési út megváltozik. Ez az áthelyezett tétel nem nyílik meg, amikor a felhasználó bejelentkezik.
 
 ## <a name="login-window"></a>Bejelentkezési ablak
 
-### <a name="window-layout"></a>Ablak
+### <a name="window-layout"></a>Ablak elrendezése
 
-- **További információ megjelenítése a menüsoron**: Ha a menüsávon az idő területen van jelölve, **engedélyezése** a gazdagép nevét és a macOS-verziókat mutatja. **Nincs konfigurálva** (alapértelmezett) nem jelenik meg ez az információ a menüsávon.
-- **Banner**: Adjon meg egy üzenetet, amely a bejelentkezési az eszközön képernyő jelenik meg. Adja meg például a szervezet adatait, egy üdvözlő üzenet, a talált adatokat, és így tovább.
-- **Válassza ki a bejelentkezési formátum**: Válassza ki, hogyan jelentkeznek be az eszközt. A választható lehetőségek:
-  - **Rákérdezés a felhasználónév és jelszó** (alapértelmezett): A felhasználók beírjanak egy felhasználónevet és jelszót igényel.
-  - **Minden felhasználó, jelszó kérése listában**: A felhasználónak a felhasználóneve a felhasználó listából ki, és adja meg a jelszavát kell. Is konfigurálhatja:
+- **További információk megjelenítése a menüsorban**: Ha a menüsorban az időszak van kiválasztva, az **Engedélyezés** megjeleníti az állomásnév és a MacOS verzióját. **Nincs konfigurálva** (alapértelmezés) nem jeleníti meg ezeket az információkat a menüsávon.
+- **Szalagcím**: Adja meg az eszköz bejelentkezési képernyőjén látható üzenetet. Adja meg például a szervezeti adatokat, egy üdvözlő üzenetet, az elveszett és a talált információkat, és így tovább.
+- **Adja meg a bejelentkezési formátumot**: Válassza ki, hogyan jelentkeznek be a felhasználók az eszközre. A választható lehetőségek:
+  - **Felhasználónév és jelszó kérése** (alapértelmezett): Felhasználónevet és jelszót kell megadnia a felhasználóknak.
+  - **Az összes felhasználó listázása, jelszó kérése**: A felhasználóknak a felhasználónevet a felhasználói listából kell kiválasztaniuk, majd meg kell adniuk a jelszavukat. Konfigurálja a következőket is:
 
-    - **A helyi felhasználók**: **Elrejtése** nem jelenik meg a helyi felhasználói fiókokat a felhasználók listájában, amelyek magukban foglalhatják a standard és a rendszergazdai fiókokat. Csak a hálózati és rendszerkövetelményeivel felhasználói fiókok jelennek meg. **Nincs konfigurálva** (alapértelmezett) a helyi felhasználói fiókok jelennek meg a felhasználók listájában.
-    - **Mobil fiókok**: **Elrejtése** mobil fiókok nem jelenik meg a felhasználók listájában. **Nincs konfigurálva** (alapértelmezett) a mobil fiókok jelennek meg a felhasználók listájában. Előfordulhat, hogy a hálózati felhasználók szabályzatként jelenik meg néhány mobil fiókot.
-    - **A hálózati felhasználók**: Válassza ki **megjelenítése** listázhatja a hálózati felhasználók a felhasználói listájában. **Nincs konfigurálva** (alapértelmezett) nem jelenik meg a hálózat felhasználói fiókokat a felhasználók listájában.
-    - **Rendszergazda felhasználók**: **Elrejtése** nem jelenik meg a rendszergazda felhasználói fiókokat a felhasználók listájában. **Nincs konfigurálva** (alapértelmezett) jeleníti meg a rendszergazda felhasználói fiókokat a felhasználók listájában.
-    - **Más felhasználók**: Válassza ki **megjelenítése** listához **más...**  felhasználók a felhasználói listájában. **Nincs konfigurálva** (alapértelmezett) nem jelenik meg a felhasználói fiókokat a felhasználók listájában.
+    - **Helyi felhasználók**: Az **Elrejtés** nem jeleníti meg a felhasználók listájában a helyi felhasználói fiókokat, amelyek magukban foglalhatják a standard és a rendszergazdai fiókokat. Csak a hálózat és a rendszer felhasználói fiókjai jelennek meg. **Nincs konfigurálva** (alapértelmezés) megjeleníti a helyi felhasználói fiókokat a felhasználók listájában.
+    - **Mobile-fiókok**: Az **Elrejtés** nem jeleníti meg a mobil fiókokat a felhasználók listájában. **Nincs konfigurálva** (alapértelmezés) megjeleníti a felhasználói listán szereplő mobil fiókokat. Egyes Mobile-fiókok hálózati felhasználóként jelenhetnek meg.
+    - **Hálózati felhasználók**: Válassza a **Megjelenítés** lehetőséget a felhasználók listájában szereplő hálózati felhasználók listázásához. **Nincs konfigurálva** (alapértelmezés) nem jeleníti meg a hálózati felhasználói fiókokat a felhasználók listájában.
+    - **Rendszergazda felhasználók**: Az **Elrejtés** nem jeleníti meg a rendszergazdai felhasználói fiókokat a felhasználók listájában. **Nincs konfigurálva** (alapértelmezés) a felhasználók listájában a rendszergazdai felhasználói fiókokat jeleníti meg.
+    - **Egyéb felhasználók**: Válassza a **Megjelenítés** elemet a felhasználók listájának **más...** felhasználóinak listázásához. **Nincs konfigurálva** (alapértelmezés) nem jeleníti meg a többi felhasználói fiókot a felhasználók listájában.
 
-### <a name="login-screen-power-settings"></a>Bejelentkezési képernyő energiaellátási beállítások
+### <a name="login-screen-power-settings"></a>Bejelentkezési képernyő energiagazdálkodási beállításai
 
-- **Leállítás gomb**: **Elrejtése** a leállítási gomb nem jelenik meg a bejelentkezési képernyőn. **Nincs konfigurálva** (alapértelmezett) jeleníti meg a Leállítás gombra.
-- **Indítsa újra a gomb**: **Elrejtése** az újraindítás gomb nem jelenik meg a bejelentkezési képernyőn. **Nincs konfigurálva** (alapértelmezett) jeleníti meg az Újraindítás gombra.
-- **Alvás gomb**: **Elrejtése** az Alvás gomb nem jelenik meg a bejelentkezési képernyőn. **Nincs konfigurálva** (alapértelmezett) az Alvás gomb látható.
+- **Leállítás gomb**: Az **Elrejtés** gomb nem jelenik meg a bejelentkezési képernyő leállítás gombjával. **Nincs konfigurálva** (alapértelmezés) megjeleníti a Leállítás gombot.
+- **Újraindítás gomb**: Az **Elrejtés** gomb nem jeleníti meg az újraindítás gombot a bejelentkezési képernyőn. **Nincs konfigurálva** (alapértelmezés) az újraindítás gombot jeleníti meg.
+- **Alvó gomb**: Az **Elrejtés** gomb nem jeleníti meg az alvó gombot a bejelentkezési képernyőn. **Nincs konfigurálva** (alapértelmezés) az alvó gomb megjelenítése.
 
 ### <a name="other"></a>Egyéb
 
-- **Tiltsa le a felhasználói bejelentkezést konzolról**: **Tiltsa le** elrejti a macOS parancssori való bejelentkezéshez használt. Jellemző felhasználók **letiltása** ezt a beállítást. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi a speciális jelentkezzen be a macOS-parancssor használatával. Adja meg a konzol üzemmódban, hogy a felhasználóknak megadniuk `>console` a felhasználónév mezőben, majd a konzolablakban kell hitelesítenie.
+- **Felhasználói bejelentkezés letiltása a konzolról**: A **Letiltás letiltja** a bejelentkezéshez használt MacOS-parancssort. A tipikus felhasználók esetében **Tiltsa le** ezt a beállítást. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a haladó felhasználók a macOS parancssor használatával jelentkezzenek be. A konzol mód megadásához a `>console` felhasználók a Felhasználónév mezőbe lépnek be, és a konzol ablakban kell hitelesíteniük magukat.
 
 ### <a name="apple-menu"></a>Apple menü
 
-Után a felhasználók bejelentkeznek az eszközök, hatással a következő beállításokat, azok felhasználásáról.
+Miután a felhasználók bejelentkeznek az eszközökre, a következő beállítások befolyásolhatják, hogy milyen műveleteket végezhetnek el.
 
-- **Tiltsa le a Leállítás le**: **Tiltsa le** megakadályozza, hogy a felhasználók kiválasztása a **leállítási** lehetőséget, miután a felhasználó bejelentkezik. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi a felhasználóknak, hogy a **leállítási** menüpont az eszközön.
-- **Újraindítás letiltása**: **Tiltsa le** megakadályozza, hogy a felhasználók kiválasztása a **indítsa újra a** lehetőséget, miután a felhasználó bejelentkezik. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi a felhasználóknak, hogy a **indítsa újra a** menüpont az eszközön.
-- **Kiemelt letiltása ki**: **Tiltsa le** megakadályozza, hogy a felhasználók kiválasztása a **kikapcsolásához** lehetőséget, miután a felhasználó bejelentkezik. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi a felhasználóknak, hogy a **kikapcsolásához** menüpont az eszközön.
-- **Tiltsa le a Kijelentkezés** (macOS 10.13 és újabb verziók): **Tiltsa le** megakadályozza, hogy a felhasználók kiválasztása a **jelentkezzen ki** lehetőséget, miután a felhasználó bejelentkezik. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi a felhasználóknak, hogy a **Kijelentkezés** menüpont az eszközön.
-- **Tiltsa le a zárolási képernyőn** (macOS 10.13 és újabb verziók): **Tiltsa le** megakadályozza, hogy a felhasználók kiválasztása a **zárolási képernyő** lehetőséget, miután a felhasználó bejelentkezik. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi a felhasználóknak, hogy a **zárolási képernyő** menüpont az eszközön.
+- **Leállítás letiltása**: A **Letiltás** beállítás megadásával megakadályozható, hogy a felhasználók bejelentkeznek a **Leállítás** lehetőséggel. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználóknak az eszköz **Leállítás** menüpontjának kiválasztását.
+- **Újraindítás letiltása**: A **Letiltás** beállítás megadásával megakadályozható, hogy a felhasználók bejelentkeznek az újraindítási lehetőség választásával. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára az újraindítási menüelem kiválasztását az eszközön.
+- Kikapcsolás **letiltása**: A **Letiltás** beállítás megadásával megakadályozható, hogy a felhasználók bejelentkeznek a kikapcsolás lehetőséggel. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára , hogy kiválassza a kikapcsolt menüelemet az eszközön.
+- Kijelentkezés **letiltása** (macOS 10,13 és újabb verziók): A **Letiltás** beállítás megadásával megakadályozható, hogy a felhasználók bejelentkeznek a kijelentkezés lehetőséggel. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára a kijelentkezés menüpont kiválasztását az eszközön.
+- **Zárolási képernyő letiltása** (macOS 10,13 és újabb verziók): A **Letiltás** beállítás megadásával megakadályozható, hogy a felhasználók bejelentkeznek a **zárolási képernyő** lehetőséggel. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy kiválassza a **zárolási képernyő** menüelemét az eszközön.
 
-Válassza ki **OK** a beállítások mentéséhez.
+A beállítások mentéséhez kattintson **az OK gombra** .
 
 ## <a name="next-steps"></a>További lépések
 
-- A megadott beállítások megjelenítéséhez [iOS](ios-device-features-settings.md) eszközök.
-- [Ez a profil hozzárendelése](device-profile-assign.md) a csoportokhoz, és [állapotát nyomon](device-profile-monitor.md).
+- Az [iOS](ios-device-features-settings.md) -eszközök összes beállításának megtekintése.
+- [Rendelje hozzá a profilt](device-profile-assign.md) a csoportokhoz, és [Figyelje annak állapotát](device-profile-monitor.md).

@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 91440bc536869fb0559bf7be12386434f217d229
-ms.sourcegitcommit: db68056e2db17dfdeaa216c684302567742e6416
+ms.openlocfilehash: df090e0e942291d5430b101db378aca296466bf9
+ms.sourcegitcommit: b78793ccbef2a644a759ca3110ea73e7ed6ceb8f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68993809"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69549981"
 ---
 # <a name="automatically-enroll-ios-devices-with-apples-device-enrollment-program"></a>iOS-eszközök automatikus regisztrálása az Apple készülékregisztrációs programjával (DEP)
 
@@ -207,14 +207,14 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
     |------------------------------------------|------------------------------------------|
     | <strong>PIN-kód</strong> | Elkéri a felhasználótól a PIN-kódot. Mindig PIN-kódot kell megadnia a nem biztonságos eszközökhöz, kivéve, ha a hozzáférés valamilyen más módon van szabályozva (például a kioszk mód, amely az eszközt egyetlen alkalmazásra korlátozza). |
     | <strong>Helyalapú szolgáltatások</strong> | Elkéri a felhasználó tartózkodási helyét. |
-    | <strong>Visszaállítás</strong> | Megjeleníti az **Alkalmazások és adatok** képernyőt. Ezen a képernyőn az eszköz beállításakor a felhasználónak lehetősége van adatok visszaállítására vagy átvitelére az iCloudos biztonsági mentésből. |
-    | <strong>iCloud és Apple ID</strong> | Lehetőséget nyújt a felhasználónak arra, hogy bejelentkezzen az **Apple ID**-jével, és használja az **iCloud** szolgáltatást.                         |
+    | <strong>Visszaállítás</strong> | Megjeleníti az alkalmazások & az adatképernyőt. Ezen a képernyőn az eszköz beállításakor a felhasználónak lehetősége van adatok visszaállítására vagy átvitelére az iCloudos biztonsági mentésből. |
+    | <strong>iCloud és Apple ID</strong> | Adja meg a felhasználónak az Apple ID-vel való bejelentkezéshez szükséges beállításokat, és használja az iCloudt.                         |
     | <strong>Feltételek és kikötések</strong> | Felkéri a felhasználót, hogy fogadja el az Apple használati feltételeit. |
     | <strong>Touch ID</strong> | Lehetőséget nyújt a felhasználónak ujjlenyomat-azonosítás beállítására az eszközön. |
     | <strong>Apple Pay</strong> | Lehetőséget nyújt a felhasználónak az Apple Pay beállítására az eszközön. |
     | <strong>Nagyítás</strong> | Lehetőséget nyújt a felhasználónak a képernyő nagyítására az eszköz beállításakor. |
     | <strong>Siri</strong> | Lehetőséget nyújt a felhasználónak a Siri beállítására. |
-    | <strong>Diagnosztikai adatok</strong> | Megjeleníti a **Diagnosztika** képernyőt. Ezen a képernyőn a felhasználó diagnosztikai adatokat küldhet az Apple-nek. |
+    | <strong>Diagnosztikai adatok</strong> | Jelenítse meg a diagnosztika képernyőt a felhasználó számára. Ezen a képernyőn a felhasználó diagnosztikai adatokat küldhet az Apple-nek. |
     | <strong>Hangjelzés</strong> | Adja meg a felhasználó számára a megjelenítési hang bekapcsolásának lehetőségét. |
     | <strong>Adatvédelmi</strong> | Jelenítse meg az adatvédelmi képernyőt a felhasználó számára. |
     | <strong>Android-áttelepítés</strong> | Adja meg a felhasználónak a dátum áttelepítését egy Android-eszközről. |
@@ -224,6 +224,11 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
     | <strong>Képernyő időpontja</strong> | Jelenítse meg a képernyő időképernyőjét. |
     | <strong>Szoftverfrissítés</strong> | A kötelező szoftverfrissítés képernyő megjelenítése. |
     | <strong>SIM-telepítés</strong> | Adjon lehetőséget a felhasználónak a mobil terv hozzáadására. |
+    | <strong>Megjelenés</strong> | Jelenítse meg a megjelenés képernyőt a felhasználó számára. |
+    | <strong>Expressz nyelv</strong>| Az expressz nyelvi képernyő megjelenítése a felhasználónak. |
+    | <strong>Előnyben részesített nyelv</strong> | Adja meg a felhasználó számára a **kívánt nyelv**kiválasztását. |
+    | <strong>Eszközről az eszközre való Migrálás</strong> | Adja meg a felhasználónak a régi eszközről az eszközre történő áttelepítési lehetőséget.|
+    
 
 16. A **tovább** gombra kattintva nyissa meg a **felülvizsgálat + létrehozás** lapot.
 

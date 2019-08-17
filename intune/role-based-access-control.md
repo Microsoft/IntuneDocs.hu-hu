@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 935d8d0803e5bcfcd25703295f84f24b664f7fce
-ms.sourcegitcommit: 02fb7ceae60d0e2cfa42fb7d017753c7437ccf59
+ms.openlocfilehash: 83b1de6c246baaef54a31c0b3f4c5094d066c64d
+ms.sourcegitcommit: b78793ccbef2a644a759ca3110ea73e7ed6ceb8f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68913834"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69549965"
 ---
 # <a name="role-based-access-control-rbac-with-microsoft-intune"></a>Szerepköralapú hozzáférés-vezérlés (RBAC) Microsoft Intune
 
@@ -90,11 +90,11 @@ A szerepkör-hozzárendelés megtekintéséhez válassza az **Intune** > -**szer
 - **[Hatókör (címkék)](scope-tags.md)** : A tagok felhasználói láthatják azokat az erőforrásokat, amelyek azonos hatókörű címkékkel rendelkeznek.
 
 ### <a name="multiple-role-assignments"></a>Több szerepkör-hozzárendelés
-Ha egy felhasználó több szerepkör-hozzárendeléssel rendelkezik, akkor a szerepkör-hozzárendelések engedélyei a következőképpen terjednek ki a különböző objektumokra:
+Ha egy felhasználó több szerepkör-hozzárendeléssel, engedélyekkel és hatókör-címkékkel rendelkezik, a szerepkör-hozzárendelések a következőképpen bővülnek a különböző objektumokra:
 
-- A hozzárendelési engedélyek csak az adott szerepkör hozzárendelési hatókörében (csoportok) lévő objektumokra (például szabályzatokra vagy alkalmazásokra) vonatkoznak. A hozzárendelési engedélyek nem vonatkoznak más szerepkör-hozzárendelések objektumaira, kivéve, ha a másik hozzárendelés kifejezetten megadja azokat.
-- Egyéb engedélyek (például Létrehozás és olvasás), az azonos típusú összes objektumra érvényesek (mint az összes házirend vagy az összes alkalmazás) a felhasználó hozzárendeléseiben.
-- A különböző típusú objektumok (például szabályzatok vagy alkalmazások) engedélyei nem vonatkoznak egymásra. Egy házirendhez tartozó olvasási engedély például nem ad olvasási engedélyt a felhasználó hozzárendeléseiben lévő alkalmazásokhoz.
+- Az engedélyek és a hatókör-címkék hozzárendelése csak az adott szerepkör hozzárendelési hatókörében (csoportok) lévő objektumokra (például szabályzatokra vagy alkalmazásokra) vonatkozik. Az engedélyek és a hatókör-címkék hozzárendelése nem vonatkozik más szerepkör-hozzárendelések objektumaira, kivéve, ha a másik hozzárendelés kifejezetten megadja őket.
+- Más engedélyek (például a létrehozás, olvasás, frissítés, törlés) és a hatókör-címkék minden olyan objektumra érvényesek, amely azonos típusú (például az összes szabályzatot vagy az összes alkalmazást) érinti a felhasználó hozzárendeléseiben.
+- A különböző típusú (például szabályzatok vagy alkalmazások) objektumok engedélyei és hatóköri címkéi nem vonatkoznak egymásra. Egy házirendhez tartozó olvasási engedély például nem ad olvasási engedélyt a felhasználó hozzárendeléseiben lévő alkalmazásokhoz.
 
 ## <a name="next-steps"></a>További lépések
 - [Szerepkör társítása felhasználóhoz](assign-role.md)

@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 07/26/2019
+ms.date: 07/29/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4e46eae92dfa145f1fc2b38379285dbb45b24590
-ms.sourcegitcommit: 864fdf995c2b41f104a98a7e2665088c2864774f
+ms.openlocfilehash: c853608f46bb01263ddd08193f729cdfb018fed9
+ms.sourcegitcommit: b78793ccbef2a644a759ca3110ea73e7ed6ceb8f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680077"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69550062"
 ---
 # <a name="windows-10-app-deployment-using-microsoft-intune"></a>Windows 10-es alkalmazások telepítése a Microsoft Intune-nal 
 
@@ -44,6 +44,13 @@ A Windows 10-es üzletági alkalmazások alá vannak írva és fel vannak töltv
 ## <a name="microsoft-store-for-business-apps"></a>Vállalati Microsoft Áruházbeli alkalmazások
 
 Az üzleti alkalmazások Microsoft Store a Microsoft Store for Business felügyeleti portálon vásárolt modern alkalmazások, amelyek ezután szinkronizálva lesznek a felügyelethez Microsoft Intune. Az alkalmazások lehetnek **online licencelésűek** vagy **offline licencelésűek**. A Microsoft Store for Business alkalmazások frissítéseit közvetlenül a Microsoft Store kezeli, és nincs szükség további beavatkozásra, a rendszergazdára. Egy egyéni Uniform Resource Identifier (URI) használatával megakadályozhatja, hogy bizonyos alkalmazások frissítései is meglegyenek. További információ: [Vállalati alkalmazásfelügyelet – Alkalmazás automatikus frissítésének megakadályozása](https://docs.microsoft.com/windows/client-management/mdm/enterprise-app-management#prevent-app-from-automatic-updates). Az eszközön a végfelhasználó is letilthatja az eszközön lévő összes Vállalati Microsoft Áruházbeli alkalmazás frissítéseit. 
+
+### <a name="categorize-microsoft-store-for-business-apps"></a>Üzleti alkalmazások kategorizálása Microsoft Store 
+Az üzleti alkalmazások Microsoft Store kategorizálásához kövesse az alábbi lépéseket: 
+
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
+2. Válassza ki az **ügyfélalkalmazások** > alkalmazásait > Válassza ki a Microsoft Store for Business alkalmazást > **alkalmazás-információ** > **kategóriát**. 
+3. Válasszon ki egy kategóriát a legördülő menüből.
 
 ## <a name="installing-apps-on-windows-10-devices"></a>Alkalmazások telepítése Windows 10-es eszközökön
 Az alkalmazás típusától függően az alkalmazás két módszer egyikével telepíthető Windows 10-es eszközre:

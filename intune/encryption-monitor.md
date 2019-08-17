@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 07/19/2019
+ms.date: 08/15/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -16,12 +16,12 @@ ms.reviewer: shpate
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
-ms.openlocfilehash: 64bdc59e08a2b17c82e1798d454f0a0403e61b13
-ms.sourcegitcommit: 99b74d7849fbfc8f5cf99cba33e858eeb9f537aa
+ms.openlocfilehash: 76a0df5933127641d299a2a2f5e01d848e4d5d18
+ms.sourcegitcommit: b78793ccbef2a644a759ca3110ea73e7ed6ceb8f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68671057"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69550115"
 ---
 # <a name="monitor-device-encryption-with-intune"></a>Az eszközök titkosításának figyelése az Intune-nal   
 
@@ -102,15 +102,15 @@ Amikor kijelöl egy eszközt a titkosítási jelentésből, az Intune megjelení
   Az alábbi példák az Intune által jelentett állapot részleteire mutatnak:  
   
   **MacOS**:
-  - A profilt jelenleg nem lehet telepíteni, mert egy előfeltételt várunk.  
+  - A helyreállítási kulcsot még nem sikerült lekérdezni és tárolni. Legvalószínűbb, hogy az eszköz nem lett zárolva, vagy nincs bejelölve.  
  
-    *Úgy Ez az eredmény nem feltétlenül jelent hibát, hanem olyan ideiglenes állapotot, amely az eszközön a titkosítási kérelem elküldése előtt be kell állítani a helyreállítási kulcsokra vonatkozó letéti időt. Ez azt is jelezheti, hogy az eszköz zárolva marad, vagy az Intune-ban az utóbbi időben nem jelentkezett be. Végül, mivel a FileVault titkosítás nem indul el, amíg egy eszköz be nem töltődik (töltés), lehetséges, hogy a felhasználó olyan eszköz helyreállítási kulcsát kapja, amely még nincs titkosítva*.  
+    *Úgy Ez az eredmény nem feltétlenül jelent hibát, hanem ideiglenes állapotot, amelynek oka az lehet, hogy az eszközön a titkosítási kérelem elküldése előtt be kell állítani a helyreállítási kulcsokra vonatkozó letéti időt. Ez az állapot azt is jelezheti, hogy az eszköz zárolva marad, vagy az Intune-nal nem ellenőrizte az utóbbi időben. Végül, mivel a FileVault titkosítás nem indul el, amíg egy eszköz be nem töltődik (töltés), lehetséges, hogy a felhasználó olyan eszköz helyreállítási kulcsát kapja, amely még nincs titkosítva*.  
 
-  - A FileVault-profil telepítve van, de a FileVault nincs engedélyezve az eszközön.  
+  - A felhasználó késlelteti a titkosítást, vagy jelenleg a titkosítás folyamatban van.  
  
     *Úgy Vagy a felhasználó még nem jelentkezett be a titkosítási kérelem kézhezvétele után, ami szükséges ahhoz, hogy a FileVault titkosítsa az eszközt, vagy ha a felhasználó manuálisan visszafejti az eszközt. Az Intune nem tudja megakadályozni, hogy a felhasználó visszafejtse eszközét.*  
 
-  - A felhasználó már engedélyezte a FileVault, így az Intune nem tudja kezelni a helyreállítást.  
+  - Az eszköz már titkosítva van. A folytatáshoz az eszköz felhasználójának vissza kell fejtenie az eszközt.  
  
     *Úgy Az Intune nem tudja beállítani a FileVault olyan eszközön, amely már titkosítva van. Ehelyett a felhasználónak manuálisan kell visszafejtenie az eszközét, mielőtt az eszköz-konfigurációs szabályzattal és az Intune*-nal tudja felügyelni. 
  
@@ -118,9 +118,9 @@ Amikor kijelöl egy eszközt a titkosítási jelentésből, az Intune megjelení
  
     *Úgy A MacOS 10,15-as (Catalina) verziótól kezdődően a felhasználó által jóváhagyott regisztrációs beállítások azt a követelményt eredményezhetik, hogy a felhasználók manuálisan hagyják jóvá a FileVault titkosítást. További információ: [felhasználó által jóváhagyott regisztráció](macos-enroll.md) az Intune-ban –* dokumentáció.  
 
-  - az iOS-eszköz egy NotNow adott vissza (zárolva van).  
+  - Ismeretlen.  
 
-    *Úgy Az eszköz jelenleg zárolva van, és az Intune nem tudja elindítani a letéti vagy titkosítási folyamatot. Az eszköz zárolása után a folyamat továbbra*is folytatódhat.  
+    *Úgy Ismeretlen állapot esetén az egyik lehetséges ok az, hogy az eszköz zárolva van, és az Intune nem tudja elindítani a letéti vagy titkosítási folyamatot. Az eszköz zárolása után a folyamat továbbra*is folytatódhat.  
 
   **Windows 10**:  
   - A BitLocker-házirend felhasználói beleegyezik, hogy elindítsa a BitLocker meghajtótitkosítás varázslót az operációsrendszer-kötet titkosításának megkezdéséhez, de a felhasználó nem járult hozzá.  
@@ -161,7 +161,7 @@ A titkosítási jelentés panel megtekintése közben kiválaszthatja az **Expor
   
 ![Exportálás részletei](./media/encryption-monitor/export.png) 
  
-Ez a jelentés az eszközök csoportjaiban felmerülő problémák azonosításában is felhasználható. Például használhatja a jelentést azon macOS-eszközök listájának azonosítására, amelyeket az összes jelentés *FileVault már engedélyeztek a felhasználó*, amely azokat az eszközöket jelöli, amelyeket manuálisan kell visszafejteni ahhoz, hogy az Intune el tudja kezdeni a FileVault-beállítások kezelését.  
+Ez a jelentés az eszközök csoportjaiban felmerülő problémák azonosításában is felhasználható. Például használhatja a jelentést azon macOS-eszközök listájának azonosítására, amelyeket az összes jelentés *FileVault már engedélyeztek a felhasználó*, amely azokat az eszközöket jelöli, amelyeket manuálisan kell visszafejteni, mielőtt az Intune felügyelni tudja a FileVault beállításait.  
  
 ## <a name="filevault-recovery-keys"></a>FileVault helyreállítási kulcsok   
 Amikor az Intune először titkosít egy macOS-eszközt a FileVault-mel, létrejön egy személyes helyreállítási kulcs. A titkosítás után az eszköz egyetlen alkalommal jeleníti meg a személyes kulcsot a végfelhasználó számára.  
