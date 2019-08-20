@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 06/05/2019
+ms.date: 08/19/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7636e1914e23e7009a25f45f330fe85af2a03536
-ms.sourcegitcommit: 293dfbea2b4756bb9b7df1705a2b5f752dfaa807
+ms.openlocfilehash: 3740212e8023bb49c7a51e233741791ef2597b10
+ms.sourcegitcommit: 6b5907046f920279bbda3ee6c93e98594624c05c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68701008"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69582673"
 ---
 # <a name="manage-web-access-by-using-microsoft-edge-with-microsoft-intune"></a>Webes elérés kezelése a Microsoft Edge és a Microsoft Intune használatával
 
@@ -128,7 +128,7 @@ A Intune Managed Browser és a Microsoft Edge is használható házirend által 
 |------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    `com.microsoft.intune.useEdge`    |    Az érték `true` a Microsoft Edge letöltésére és használatára utasítja a felhasználókat.<br>Az érték `false` lehetővé teszi, hogy a felhasználók a Intune Managed Browser használják.    |
 
-Ha az alkalmazás konfigurációs értéke nincs **beállítva,** a következő logika határozza meg, hogy melyik böngészőt fogja használni a vállalati hivatkozások megnyitásához.
+Ha az alkalmazás konfigurációs értéke nincs beállítva, a következő logika határozza meg, hogy melyik böngészőt fogja használni a vállalati hivatkozások megnyitásához.
 
 Androidon:
 - A Intune Managed Browser akkor indul el, ha a felhasználó a Intune Managed Browser és a Microsoft Edge is le van töltve az eszközön. 
@@ -196,7 +196,7 @@ A könnyű hozzáférés érdekében beállíthatja, hogy a felhasználók a Mic
 
 A felügyelt könyvjelzők konfigurálásához használja a következő kulcs/érték párokat:
 
-|    Kulcs    |    Érték    |
+|    Kulcs    |    Value    |
 |---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    com.microsoft.intune.mam.managedbrowser.bookmarks    |    A konfiguráció értéke könyvjelzők listája. Mindegyik könyvjelző a könyvjelző és a könyvjelző URL-címét tartalmazza. Válassza el a címet és az URL `|` -címet a karakterrel.      Példa:<br>`Microsoft Bing|https://www.bing.com`<br>Több könyvjelző konfigurálásához az egyes párokat a dupla karakterrel `||`válassza el.<p>Példa:<br>`Microsoft Bing|https://www.bing.com||Contoso|https://www.contoso.com`    |
 
@@ -213,7 +213,7 @@ Az alkalmazás konfigurációja segítségével meghatározhatja, hogy a felhasz
 
 A következő kulcs/érték párokkal konfigurálhatja a Microsoft Edge számára engedélyezett vagy letiltott helyek listáját. 
 
-|    Kulcs    |    Érték    |
+|    Kulcs    |    Value    |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    A következő lehetőségek közül választhat:<p>1. Engedélyezett URL-címek megadása (csak ezek az URL-címek engedélyezettek, más webhelyek nem érhetők el):<br>`com.microsoft.intune.mam.managedbrowser.AllowListURLs`<p>2. Tiltott URL-címek megadása (minden más webhely elérhető lesz):<br>`com.microsoft.intune.mam.managedbrowser.BlockListURLs`    |    A kulcs megfelelő értéke egy URL-címlista. Minden olyan URL-címet meg kell adnia, amelyet egyetlen értékként szeretne engedélyezni vagy letiltani, `|` egy cső karakterrel elválasztva.<br>**Példák:**<br>`URL1|URL2|URL3`<br>`http://.contoso.com/|https://.bing.com/|https://expenses.contoso.com`  |
 
@@ -232,7 +232,8 @@ Az engedélyezett/letiltott webhelyek listája a különböző URL-címek haszn�
     |    `http://www.contoso.com`    |    Egyetlen lapnak felel meg    |    `www.contoso.com`    |    `host.contoso.com`<br>`www.contoso.com/images`<br>`contoso.com/`    |
     |    `http://contoso.com`    |    Egyetlen lapnak felel meg    |    `contoso.com/`    |    `host.contoso.com`<br>`www.contoso.com/images`<br>`www.contoso.com`    |
     |    `http://www.contoso.com/*;`   |    Az összes `www.contoso.com` karakterlánccal kezdődő URL-cím    |    `www.contoso.com`<br>`www.contoso.com/images`<br>`www.contoso.com/videos/tvshows`    |    `host.contoso.com`<br>`host.contoso.com/images`    |
-    |    `http://*.contoso.com/*`    |    Az összes altartományra illeszkedik`contoso.com`    |    `developer.contoso.com/resources`<br>`news.contoso.com/images`<br>`news.contoso.com/videos`    |    `contoso.host.com`    |    `http://*contoso.com/*`    |    A-vel végződő összes altartományra illeszkedik`contoso.com/`    |    `http://news-contoso.com`<br>`http://news-contoso.com.com/daily`    |    `http://news-contoso.host.com`    |
+    |    `http://*.contoso.com/*`    |    Az összes altartományra illeszkedik`contoso.com`    |    `developer.contoso.com/resources`<br>`news.contoso.com/images`<br>`news.contoso.com/videos`    |    `contoso.host.com`
+    |    `http://*contoso.com/*`    |    A-vel végződő összes altartományra illeszkedik`contoso.com/`    |    `http://news-contoso.com`<br>`http://news-contoso.com.com/daily`    |    `http://news-contoso.host.com`    |
     `http://www.contoso.com/images`    |    Egyetlen mappa    |    `www.contoso.com/images`    |    `www.contoso.com/images/dogs`    |
     |    `http://www.contoso.com:80`    |    Egyetlen lapra illeszkedik, egy portszám használatával    |    `http://www.contoso.com:80`    |         |
     |    `https://www.contoso.com`    |    Egyetlen biztonságos lap    |    `https://www.contoso.com`    |    `http://www.contoso.com`    |
@@ -257,7 +258,7 @@ A Microsoft Edge-be épített kettős identitású modellel rugalmasabb felhaszn
 
 A következő kulcs/érték párokkal konfigurálhatja, hogy engedélyezettek-e az alábbi Soft-váltások:
 
-|    Kulcs    |    Érték    |
+|    Kulcs    |    Value    |
 |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    `com.microsoft.intune.mam.managedbrowser.AllowTransitionOnBlock`    |    A **true** értékkel engedélyezheti a Microsoft Edge számára a felhasználók személyes környezetbe való átváltását a blokkolt helyek megnyitására.<p>A **Letiltás** megakadályozza a Microsoft Edge számára a felhasználók átváltását. A felhasználók egyszerűen megjelenítenek egy üzenetet arról, hogy az elérni kívánt hely le van tiltva.    |
 

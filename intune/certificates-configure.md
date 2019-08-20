@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 82d5b26071cad6ee854ae08e85b4ea0cff8d0af3
-ms.sourcegitcommit: b78793ccbef2a644a759ca3110ea73e7ed6ceb8f
+ms.openlocfilehash: f13b5b92ca442f4b5ae05d3567f8385288d92909
+ms.sourcegitcommit: 6b5907046f920279bbda3ee6c93e98594624c05c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69550133"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69582917"
 ---
 # <a name="configure-a-certificate-profile-for-your-devices-in-microsoft-intune"></a>Eszközök tanúsítványprofiljainak konfigurálása a Microsoft Intune-ban
 
@@ -112,9 +112,9 @@ Ahhoz, hogy SCEP- vagy PKCS-tanúsítványprofilt hozhasson létre, először l�
 3. Keresse meg a 2. [lépésben mentett tanúsítványt: Exportálja a megbízható legfelső](#step-2-export-your-trusted-root-ca-certificate)szintű hitelesítésszolgáltatói tanúsítványt, majd kattintson **az OK gombra**.
 4. Válassza ki – csak a Windows 8.1- és Windows 10-eszközök esetében – a megbízható tanúsítvány céltárolóját a **Céltároló** mezőben, a következő lehetőségek közül:
 
-    - **Számítógép tanúsítványtárolója – fő**
-    - **Számítógép tanúsítványtárolója – köztes**
-    - **Felhasználói tanúsítványtároló – köztes**
+    - **Számítógép tanúsítványtárolója – gyökér** SCEP
+    - **Számítógép tanúsítványtárolója – köztes** SCEP
+    - **Felhasználói tanúsítványtároló-köztes** (PKCS, SCEP)
 
 5. Ha elkészült, válassza az **OK** gombot, lépjen vissza a **Profil létrehozása** panelre, és válassza a **Létrehozás** gombot.
 

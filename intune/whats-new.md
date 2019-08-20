@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 29483c7694ef96a026942a670aa8a52cb8cc8857
-ms.sourcegitcommit: f75386986d24e7d5dd63a3f1a0a014cb52056063
+ms.openlocfilehash: 267eb630b962893d5ab32530a095fe2fd3f7102e
+ms.sourcegitcommit: cbd406e3c6ab8c9a29d58dfda4a18e34277a1594
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560132"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620217"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -440,9 +440,6 @@ A következőre vonatkozik: iOS
 
 ### <a name="device-enrollment"></a>Eszközök beléptetése
 
-#### <a name="windows-autopilot-reset-removes-the-devices-primary-user----4156123---"></a>A Windows Autopilot alaphelyzetbe állítása eltávolítja az eszköz elsődleges felhasználóját <!-- 4156123 -->
-Ez a szolgáltatás késleltetve lett, és egy közelgő Sprint-ben jelenik meg.    
-
 #### <a name="windows-autopilot-support-for-hybrid-azure-ad-join----4809146--"></a>Windows Autopilot-támogatás hibrid Azure AD-csatlakozáshoz <!-- 4809146-->
 A meglévő eszközökhöz készült Windows Autopilot mostantól támogatja a hibrid Azure AD-csatlakozást (a meglévő Azure AD-csatlakozás támogatása mellett). A Windows 10 1809-es vagy újabb verziójára vonatkozik. További információ: [a Windows Autopilot a meglévő eszközökhöz](https://docs.microsoft.com/windows/deployment/windows-autopilot/existing-devices).
 
@@ -709,7 +706,7 @@ A követelmények szabályai a PowerShell-parancsfájlok, a beállításjegyzék
 #### <a name="configure-your-win32-apps-to-be-installed-on-intune-enrolled-azure-ad-joined-devices----3695227----"></a>A Win32-alkalmazások konfigurálása az Intune-ban regisztrált Azure AD-hez csatlakoztatott eszközökre <!-- 3695227  -->
 Hozzárendelheti a Win32-alkalmazásokat az Intune-ban regisztrált Azure AD-hez csatlakoztatott eszközökhöz. További információ az Intune-beli Win32-alkalmazásokról: [win32 app Management](apps-win32-app-management.md).
 
-#### <a name="device-overview-shows-primary-user---794259----"></a>Az eszköz áttekintése az elsődleges felhasználót mutatja <!--794259  -->
+#### <a name="device-overview-shows-primary-user---3794259----"></a>Az eszköz áttekintése az elsődleges felhasználót mutatja <!--3794259  -->
 Az eszköz áttekintő oldala az elsődleges felhasználót, más néven a felhasználó-eszköz kapcsolat felhasználóját (UDA) fogja megjeleníteni. Az eszköz elsődleges felhasználójának megtekintéséhez válassza az **Intune** > -**eszközök** > **minden eszköz** lehetőséget > válasszon ki egy eszközt. Az elsődleges felhasználó megjelenik az **Áttekintés** oldal tetején.
 
 #### <a name="additional-managed-google-play-app-reporting-for-android-enterprise-work-profile-devices----4105925----"></a>További felügyelt Google Play-alkalmazások jelentéskészítése androidos vállalati munkahelyi Profilos eszközökhöz <!-- 4105925  -->
