@@ -665,6 +665,8 @@
                   href: app-protection-policies-validate.md
                 - name: Alkalmazásvédelmi szabályzat kézbesítése
                   href: app-protection-policy-delivery.md
+                - name: Alkalmazásbővítmények védelme
+                  href: app-protection-policy-extensions.md
                 - name: Alkalmazásvédelmi felhasználó állapotának figyelése
                   href: app-protection-policies-monitor.md
                 - name: Felkészülés az alkalmazásvédelmi WIP-szabályzatokra
