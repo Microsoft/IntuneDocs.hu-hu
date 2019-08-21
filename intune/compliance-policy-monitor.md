@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 05/20/2019
+ms.date: 08/20/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -14,12 +14,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ce117f21c1ad78c2c977466398ce6d30989cc6a
-ms.sourcegitcommit: a2bad7465422b98eb3c10f03dc5a24fd99cee78d
+ms.openlocfilehash: 9f8560262d8c501af4127876eaafed293fbc4041
+ms.sourcegitcommit: b1ddc7f4a3d520b7d6755c7a423a46d1e2548592
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67041296"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69651212"
 ---
 # <a name="monitor-intune-device-compliance-policies"></a>Intune-eszközmegfelelőségi szabályzatok figyelése
 
@@ -34,7 +34,7 @@ A megfelelőségi jelentések segítenek az eszközmegfelelőség áttekintésé
 
 Nyissa meg az **Intune Eszközmegfelelőségi irányítópultját**:
 
-1. Jelentkezzen be a [Intune](https://go.microsoft.com/fwlink/?linkid=2090973).
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 
 2. Válassza az **Eszközmegfelelőség** > **Áttekintés** elemet. Megnyílik az **Eszközmegfelelőségi irányítópult**.
 
@@ -57,35 +57,35 @@ A jelentések részletes vizsgálata során láthatja az adott eszközre vonatko
 
 ### <a name="device-compliance-status-report"></a>Eszközmegfelelőségi állapotjelentés
 
-A diagram megmutatja az összes Intune-ban regisztrált eszköz megfelelőségi állapotát. Az eszköz megfelelőségi állapotai két külön adatbázis tartják: Az Intune és az Azure Active Directoryban. 
+A diagram megmutatja az összes Intune-ban regisztrált eszköz megfelelőségi állapotát. Az eszköz megfelelőségi állapotai két különböző adatbázisban maradnak: Intune és Azure Active Directory. 
 
 > [!IMPORTANT]
-> Intune az eszköz bejelentkezési ütemezés az összes megfelelőségi értékelést követi az eszközön. [További információ az eszköz bejelentkezési ütemezés](https://docs.microsoft.com/intune/device-profile-troubleshoot#how-long-does-it-take-for-devices-to-get-a-policy-profile-or-app-after-they-are-assigned).
+> Az Intune az eszköz összes megfelelőségi értékeléséhez az eszköz beadási ütemtervét követi. [További információ az eszköz](https://docs.microsoft.com/intune/device-profile-troubleshoot#how-long-does-it-take-for-devices-to-get-a-policy-profile-or-app-after-they-are-assigned)beadásának ütemtervéről.
 
 A különböző eszközmegfelelőségi szabályzatállapotok leírása:
 
-- **Megfelelő**: Az eszköz egy vagy több eszközmegfelelőségi szabályzat beállításai sikeresen alkalmazva.
+- **Megfelelő**: Az eszköz sikeresen alkalmazott egy vagy több eszköz megfelelőségi szabályzatának beállításait.
 
-- **Türelmi időszak:** Az eszköz célként az egy vagy több eszközmegfelelőségi szabályzat beállításai. A felhasználó azonban még nem alkalmazta a szabályzatokat. Ez azt jelenti, hogy az eszköz nem megfelelő, de a rendszergazda által meghatározott türelmi időszakban van.
+- **Türelmi időszak:** Az eszköz egy vagy több eszköz megfelelőségi szabályzatának beállításait célozza meg. A felhasználó azonban még nem alkalmazta a szabályzatokat. Ez azt jelenti, hogy az eszköz nem megfelelő, de a rendszergazda által meghatározott türelmi időszakban van.
 
   - További információ a [nem megfelelő eszközökre alkalmazható műveletekről](actions-for-noncompliance.md).
 
-- **Nem értékelt**: Kezdeti állapot azon újonnan regisztrált eszközök számára. Lehetséges okokat, ezt állapota a következők:
+- **Nincs**kiértékelve: Az újonnan beléptetett eszközök kezdeti állapota. Ezen állapot további lehetséges okai a következők:
 
-  - Eszközök, amelyek nincsenek hozzárendelve megfelelőségi szabályzat, és nem rendelkezik egy eseményindító a megfelelőség ellenőrzése
-  - Eszközök, amelyek jelentkeztek be, mert a megfelelőségi szabályzat utolsó frissítés
-  - Az eszköz nincs hozzárendelve egy adott felhasználó kapcsán, mint például:
-    - iOS-eszközök az Apple eszköz beléptetési Program (DEP) keresztül vásárolt, amelyekhez nincs felhasználói affinitás
-    - Androidos teljes képernyős vagy dedikált vállalati Android-eszköz
-  - Egy eszközregisztráció-kezelői (DEM-) fiók-ban regisztrált eszközök
+  - Azok az eszközök, amelyek nem rendelkeznek megfelelőségi szabályzattal, és nem rendelkeznek a megfelelőség ellenőrzéséhez szükséges triggerrel
+  - Azok az eszközök, amelyeket nem ellenőriztek a megfelelőségi szabályzat legutóbbi frissítése óta
+  - Egy adott felhasználóhoz nem társított eszközök, például:
+    - az Apple Készülékregisztrációs programon (DEP) keresztül vásárolt iOS-eszközök, amelyek nem rendelkeznek felhasználói affinitással
+    - Androidos kioszk vagy Android Enterprise dedikált eszközök
+  - Eszköz beléptetési kezelőjével (DEM) regisztrált eszközök
 
-- **Nem megfelelő:** Az eszköz nem sikerült a alkalmazni egy vagy több eszközmegfelelőségi szabályzat beállításai. Lehetséges, hogy a felhasználó nem a szabályzatoknak megfelelően járt el.
+- **Nem megfelelő:** Az eszköz nem tudott alkalmazni egy vagy több eszköz megfelelőségi szabályzatának beállításait. Lehetséges, hogy a felhasználó nem a szabályzatoknak megfelelően járt el.
 
-- **Az eszköz nincs szinkronizálva:** Az eszköz nem sikerült jelenteni jelentette az eszközmegfelelőségi szabályzat állapotát, mert a következő okok egyike miatt:
+- **Az eszköz nincs szinkronizálva:** Az eszköz nem tudta jelenteni az eszköz megfelelőségi szabályzatának állapotát a következő okok egyike miatt:
 
-  - **Ismeretlen**: Az eszköz offline állapotban van, vagy nem sikerült kapcsolatba lépniük az Intune-ban vagy Azure ad-ben más okok miatt.
+  - **Ismeretlen**: Az eszköz offline állapotban van, vagy más okból nem tud kommunikálni az Intune-nal vagy az Azure AD-vel.
 
-  - **Hiba**: Az eszköz nem tudott kommunikálni az Intune és az Azure ad-ben, és üzenetben megkapta a hiba okát.
+  - **Hiba**: Az eszköz nem tudott kommunikálni az Intune-nal és az Azure AD-vel, ezért hibaüzenetet kapott.
 
 > [!IMPORTANT]
 > A jelentésben a **Megfelelő** gyűjtőben szerepelnek azok az eszközök, amelyek regisztrálva vannak az Intune-ban, de nem vonatkozik rájuk eszközmegfelelőségi szabályzat.
@@ -152,7 +152,9 @@ Az **Eszközmegfelelőség** > **Beállításoknak való megfelelőség** jelent
 Egy adott beállítás kijelölésével megtekinthető a **megfelelőségi állapot**, a **felhasználói e-mail-alias**, az **eszköztípus** és a **hely** minden olyan eszközhöz, amelyre ez a beállítás vonatkozik.
 
 > [!NOTE]
-> Előfordulhat, hogy az Azure AD-hoz csatlakoztatott Windows 10-eszközök a Rendszerfiókot nem megfelelő felhasználóként érzékelik. Ez normális működés, amely az általános eszközmegfelelőséget nem befolyásolja. 
+> Egy házirend hozzárendelhető egy eszközhöz, és az ugyanazon az eszközön található felhasználó. Bizonyos esetekben előfordulhat, hogy az eszköz a felhasználó bejelentkezése előtt szinkronizál, például az eszköz újraindításakor. A megfelelőség kiértékelheti ezt a felhasználót, és nem megfelelőként jelenítheti meg az eszközt. Ez a viselkedés azt is megteheti, hogy a rendszerfiók nem megfelelő felhasználóként jelenik meg.
+>
+> Ez egy ismert probléma a többfelhasználós Windows 10-es eszközökön. A viselkedés változásairól vagy frissítéseiről a [fejlesztés](in-development.md) és/vagy Újdonságok című [](whats-new.md)cikkben van bejelentve.
 
 ## <a name="view-status-of-device-policies"></a>Eszközszabályzatok állapotának megtekintése
 
@@ -163,11 +165,11 @@ Ezt a funkciót tartalmazza az eszköz állapotjelentése:
 1. Válassza az **Eszközmegfelelőség** > **Szabályzatok** elemet. Megjelenik a szabályzatok listája, amely tartalmazza a platformot, hogy hozzá van-e rendelve a szabályzat, és további részleteket.
 2. Válasszon ki egy szabályzatot > **Áttekintés**. Ebben a nézetben a szabályzat-hozzárendelés a következő állapotokat tartalmazza:
 
-    - Sikeres: Szabályzat érvényes
+    - Sikerült Házirend alkalmazva
     - Hiba: Nem sikerült alkalmazni a szabályzatot. Az üzenethez általában egy hibakód is tartozik, amely a hiba ismertetésére hivatkozik. 
-    - Ütközés: Két beállítás ugyanazon az eszközön érvénybe lépnek, és az Intune nem rendezhető, az ütközést. Rendszergazdai ellenőrzés szükséges.
-    - Függőben: Az eszköz még nem jelentkezett be az Intune-ban még megkapja a szabályzatot. 
-    - Not applicable: Az eszköz nem megkapja a szabályzatot. A szabályzat például egy, az iOS 11.1-re vonatkozó beállítást frissít, az eszköz azonban az iOS 10-et használja. 
+    - Ütközés A rendszer két beállítást alkalmaz ugyanarra az eszközre, és az Intune nem tudja rendezni az ütközést. Rendszergazdai ellenőrzés szükséges.
+    - Függőben Az eszköz még nem jelentkezett be az Intune-nal, hogy megkapja a szabályzatot. 
+    - Nem alkalmazható: Az eszköz nem tudja fogadni a szabályzatot. A szabályzat például egy, az iOS 11.1-re vonatkozó beállítást frissít, az eszköz azonban az iOS 10-et használja. 
 
 3. A szabályzatot használó eszközökön a részletek megtekintéséhez válassza ki a állapotok egyikét. Válassza például a **Sikeres** elemet. A következő ablakban megjelennek az eszköz adatai, például az eszköz neve és az üzembe helyezési állapot.
 

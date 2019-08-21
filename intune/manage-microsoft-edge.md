@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3740212e8023bb49c7a51e233741791ef2597b10
-ms.sourcegitcommit: 6b5907046f920279bbda3ee6c93e98594624c05c
+ms.openlocfilehash: 8ec1af80d52a8331c2bef136cd0947b81beaa3ea
+ms.sourcegitcommit: b1ddc7f4a3d520b7d6755c7a423a46d1e2548592
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69582673"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69651169"
 ---
 # <a name="manage-web-access-by-using-microsoft-edge-with-microsoft-intune"></a>Webes elérés kezelése a Microsoft Edge és a Microsoft Intune használatával
 
@@ -181,7 +181,22 @@ A Kezdőlap parancsikonjának konfigurálásához használja a következő kulcs
 |    Kulcs    |    Value    |
 |-------------------------------------------------------------------|-------------|
 |    com.microsoft.intune.mam.managedbrowser.homepage   |    Adjon meg egy érvényes URL-címet. A helytelen URL-címek biztonsági intézkedésként le vannak tiltva.<br>**Például** <`https://www.bing.com`>
-    |
+
+## <a name="configure-your-organizations-logo-and-brand-color-for-new-tab-pages-in-microsoft-edge"></a>A szervezet emblémájának és a márka színének konfigurálása új lapokra a Microsoft Edge-ben
+
+Ezekkel a beállításokkal testreszabhatja a Microsoft Edge új lap lapját, hogy az oldal hátterében megjelenjen a szervezet emblémája és a márka színe.
+
+A szervezet emblémájának és színének feltöltéséhez először hajtsa végre a következő lépéseket:
+- A Azure Portal belül navigáljon az Intune-> ügyfélalkalmazások – > branding és a Testreszabás – > vállalati identitás arculata
+- A márka emblémájának beállításához a "Megjelenítés" alatt válassza a "csak vállalati embléma" lehetőséget. A transzparens háttér-emblémák használata javasolt. 
+- A márka háttérszínének megadásához a "Megjelenítés" területen válassza a "téma színe" lehetőséget. A Microsoft Edge a szín világosabb árnyalatát alkalmazza az új lap lapon, amely biztosítja, hogy a lap nagy mértékben olvasható legyen. 
+
+Ezután használja a következő kulcs/érték párokat a szervezetek arculatának a Microsoft Edge-be való lekéréséhez:
+
+|    Kulcs    |    Value    |
+|--------------------------------------------------------------------|------------|
+|    com. microsoft. Intune. Mam. managedbrowser. NewTabPage. BrandLogo    |    True    |
+|    com. microsoft. Intune. Mam. managedbrowser. NewTabPage. BrandColor    |    True    |
 
 ## <a name="configure-managed-bookmarks-for-microsoft-edge"></a>Felügyelt könyvjelzők konfigurálása a Microsoft Edge-hez
 

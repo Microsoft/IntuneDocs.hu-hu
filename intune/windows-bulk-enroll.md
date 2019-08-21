@@ -16,18 +16,18 @@ ms.reviewer: damionw
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 996380a4938ca73bbf5f71c82e99814f772001a4
-ms.sourcegitcommit: 256952cac44bc6289156489b6622fdc1a3c9c889
+ms.openlocfilehash: 1775bdf0030968cdd16d87d91794480a43a22d12
+ms.sourcegitcommit: b1ddc7f4a3d520b7d6755c7a423a46d1e2548592
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67403448"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69651034"
 ---
 # <a name="bulk-enrollment-for-windows-devices"></a>Windowsos eszközök csoportos regisztrálása
 
-A rendszergazda nagy számú új windowsos eszközt csatlakoztathat az Azure Active Directoryhoz és az Intune-hoz. Ha az Azure AD-bérlőhöz csoportosan szeretne eszközöket regisztrálni, először a Windows Configuration Designer (WCD) alkalmazással létre kell hoznia egy kiépítési csomagot. Ha a kiépítési csomagokat céges tulajdonban lévő eszközökre alkalmazza, az eszközök az Azure AD-bérlőhöz lesznek csatlakoztatva, és regisztrálódnak az Intune-felügyeletben. A csomag alkalmazása után készen áll a jelentkezzen be az Azure AD-felhasználók számára.
+A rendszergazda nagy számú új windowsos eszközt csatlakoztathat az Azure Active Directoryhoz és az Intune-hoz. Ha az Azure AD-bérlőhöz csoportosan szeretne eszközöket regisztrálni, először a Windows Configuration Designer (WCD) alkalmazással létre kell hoznia egy kiépítési csomagot. Ha a kiépítési csomagokat céges tulajdonban lévő eszközökre alkalmazza, az eszközök az Azure AD-bérlőhöz lesznek csatlakoztatva, és regisztrálódnak az Intune-felügyeletben. A csomag alkalmazása után készen áll az Azure AD-felhasználók bejelentkezésére.
 
-Az Azure AD-felhasználók általános jogú felhasználók ezeken az eszközökön, és megkapják a hozzájuk rendelt Intune-szabályzatokat és a kötelező alkalmazásokat. Az Intune-ban Windows csoportos regisztrálással beléptetett Windows-eszközök a vállalati portál alkalmazás segítségével telepítik az elérhető alkalmazásokat. 
+Az Azure AD-felhasználók általános jogú felhasználók ezeken az eszközökön, és megkapják a hozzájuk rendelt Intune-szabályzatokat és a kötelező alkalmazásokat. Az Intune-nal a Windows csoportos regisztráció használatával beléptetett Windows-eszközök a Céges portál alkalmazást használhatják az elérhető alkalmazások telepítéséhez. 
 
 ## <a name="prerequisites-for-windows-devices-bulk-enrollment"></a>Windowsos eszközök csoportos regisztrációjának előfeltételei
 
@@ -47,7 +47,7 @@ Az Azure AD-felhasználók általános jogú felhasználók ezeken az eszközök
    - **Project folder** (Projektmappa) – A projekt mentési helye
    - **Description** (Leírás) – A projekt leírása (nem kötelező) ![Képernyőkép a név, a projektmappa és a leírás megadásáról a Windows Configuration Designerben](media/bulk-enroll-name.png)
 
-4. Adjon meg egyedi neveket az eszközök számára. Névben szerepelhet sorozatszám (% soros %) vagy egy véletlenszerű karakter. Megadhat továbbá termékkulcsot arra az esetre, ha másik Windows-kiadásra vált, konfigurálhatja az eszközt közös használatra, és eltávolíthatja az előre telepített szoftvereket.
+4. Adjon meg egyedi neveket az eszközök számára. A nevek tartalmazhatnak sorozatszámot (% SERIAL%) vagy véletlenszerűen beállított karakterek. Megadhat továbbá termékkulcsot arra az esetre, ha másik Windows-kiadásra vált, konfigurálhatja az eszközt közös használatra, és eltávolíthatja az előre telepített szoftvereket.
    
    ![Képernyőkép a név és a termékkulcs megadásáról a Windows Configuration Designerben](media/bulk-enroll-device.png)
 
@@ -73,7 +73,7 @@ Az Azure AD-felhasználók általános jogú felhasználók ezeken az eszközök
 
 2. Válassza ki azt a módszert, amellyel a kiépítési csomagot alkalmazni szeretné az eszközre.  A kiépítési csomagot az alábbi módszerekkel lehet eszközre alkalmazni:
    - Másolja a kiépítési csomagot USB-meghajtóra, majd csatlakoztassa az USB-meghajtót a csoportosan regisztrálni kívánt eszközhöz, majd a kezdeti beállításnál alkalmazza a csomagot.
-   - Másolja a kiépítési csomagot egy hálózati meghajtóra, majd a kezdeti beállításnál alkalmazza a csomagot a csoportosan regisztrálni kívánt eszközre.
+   - Helyezze el a kiépítési csomagot egy hálózati mappába, és alkalmazza azt a kezdeti beállítás után
 
    A kiépítési csomag használatának részletes leírását megtalálja a [Kiépítési csomag alkalmazása](https://technet.microsoft.com/itpro/windows/configure/provisioning-apply-package) című témakörben.
 
@@ -95,4 +95,4 @@ A kiépítés alapvetően új windowsos eszközök esetében használható. Kié
 A csoportosan regisztrált eszközök nem tudnak használni felhasználókat célzó tanúsítványokat Wi-Fi-n keresztüli üzembe helyezéssel. Az ilyen kapcsolatok kezeléséhez [eszközszintű tanúsítványokat](certificates-configure.md) kell használni. 
 
 ### <a name="conditional-access"></a>Feltételes hozzáférés
-Feltételes hozzáférés nem érhető el csoportos regisztrálással beléptetett Windows-eszközökhöz.
+A feltételes hozzáférés nem érhető el a csoportos regisztráció használatával beléptetett Windows-eszközökhöz.
