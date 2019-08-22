@@ -5,7 +5,7 @@ keywords: sdk, Xamarin, intune
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/15/2019
+ms.date: 08/21/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.localizationpriority: medium
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dd2a2b73c5dc7b792e5766c3fded152eabc1f53b
-ms.sourcegitcommit: 6b5907046f920279bbda3ee6c93e98594624c05c
+ms.openlocfilehash: dcfc43c3fe023d54c99a88356f9bfc2a8bdebc47
+ms.sourcegitcommit: 4f3fcc6dcbfe2c4e0651d54a130907a25a4ff66e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69582910"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69894341"
 ---
 # <a name="microsoft-intune-app-sdk-xamarin-bindings"></a>Microsoft Intune App SDK Xamarin Bindings
 
@@ -55,9 +55,11 @@ Az Intune App SDK Xamarin Bindingsszal létrehozott Xamarin-alkalmazásokra most
 
 A [licencfeltételek](https://github.com/msintuneappsdk/intune-app-sdk-xamarin/blob/master/Microsoft%20License%20Terms%20Intune%20App%20SDK%20Xamarin%20Component.pdf) áttekintése. Nyomtassa ki és őrizze meg a licencfeltételeket. Az Intune App SDK Xamarin Bindings letöltésével és használatával elfogadja licencfeltételeket. Amennyiben a feltételeket nem fogadja el, ne használja a szoftvert.
 
-Az SDK a [hitelesítési](https://azure.microsoft.com/documentation/articles/active-directory-authentication-scenarios/) és feltételes indítási forgatókönyvek [Active Directory-hitelesítési tárra (ADAL)](https://azure.microsoft.com/documentation/articles/active-directory-authentication-libraries/) támaszkodik, amelyeknek az alkalmazásoknak a [Azure Active Directoryval](https://azure.microsoft.com/documentation/articles/active-directory-whatis/)való konfigurálására van szükségük. 
+Az Intune SDK a hitelesítésre és a feltételes indítási forgatókönyvekre [](https://azure.microsoft.com/documentation/articles/active-directory-authentication-scenarios/) támaszkodik [Active Directory-hitelesítési tárre (ADAL)](https://azure.microsoft.com/documentation/articles/active-directory-authentication-libraries/) , amelyeknek az alkalmazásoknak [](https://azure.microsoft.com/documentation/articles/active-directory-whatis/)a Azure Active Directoryval való konfigurálására van szükségük. 
 
 Ha az alkalmazás már konfigurálva van a ADAL vagy a MSAL használatára, és rendelkezik a saját egyéni ügyfél-azonosítójával a hitelesítéshez a Azure Active Directory használatával, győződjön meg arról, hogy a Xamarin-alkalmazás engedélyeit az Intune Mobile Application Management (MAM) szolgáltatáshoz adja meg majd. Az útmutató az Intune app Protection szolgáltatáshoz című szakaszában található útmutatást követve megtudhatja, [Hogyan](app-sdk-get-started.md)érheti el az[alkalmazást az Intune-hoz](app-sdk-get-started.md#give-your-app-access-to-the-intune-app-protection-service-optional).
+
+
 
 ## <a name="enabling-intune-app-protection-polices-in-your-ios-mobile-app"></a>Az Intune alkalmazásvédelmi szabályzatainak engedélyezése az iOS-mobilalkalmazásban
 1. Adja hozzá Xamarin.iOS-projektjéhez a [Microsoft.Intune.MAM.Xamarin.iOS NuGet-csomagot](https://www.nuget.org/packages/Microsoft.Intune.MAM.Xamarin.iOS).
@@ -83,13 +85,15 @@ Ha az alkalmazás már konfigurálva van a ADAL vagy a MSAL használatára, és 
       IntuneMAMEnrollmentManager.Instance.RegisterAndEnrollAccount(string identity);
       ```
 
-      Az alkalmazások meghatározhatják a regisztrációs kísérleteke eredményeit az EnrollmentRequestWithStatus metódus az IntuneMAMEnrollmentDelegate egyik alosztályában való alkalmazásával, valamint az IntuneMAMEnrollmentManager Delegate tulajdonságának az osztály egyik példányához való beállításával. Erről példát a [Xamarin.iOS-mintaalkalmazásban](https://github.com/msintuneappsdk/sample-intune-xamarin-ios) találhat.
+      Az alkalmazások meghatározhatják a regisztrációs kísérleteke eredményeit az EnrollmentRequestWithStatus metódus az IntuneMAMEnrollmentDelegate egyik alosztályában való alkalmazásával, valamint az IntuneMAMEnrollmentManager Delegate tulajdonságának az osztály egyik példányához való beállításával. 
 
       Sikeres regisztráció esetén az alkalmazások meghatározhatják a regisztrált fiók egyszerű felhasználónevét a következő tulajdonság lekérdezésével (amennyiben azt addig nem ismerték): 
 
       ```csharp
        string enrolledAccount = IntuneMAMEnrollmentManager.Instance.EnrolledAccount;
       ```      
+### <a name="sample-applications"></a>Példák az alkalmazásokra
+A MAM-funkciókat kiemelő Xamarin. az iOS-alkalmazások a [githubon](https://github.com/msintuneappsdk/sample-intune-xamarin-ios)érhetők el.
 
 > [!NOTE] 
 > iOS rendszerre nincs remapper. A Xamarin.Forms-alkalmazásokba való integrálásnak ugyanúgy kell történnie, mint általában a Xamarin.iOS-projektek esetén. 
@@ -205,6 +209,7 @@ Ennek az az oka, hogy ha a remapper módosítja a Xamarin-osztályok öröklés�
 
 #### <a name="troubleshooting"></a>Hibaelhárítás
 * Ha üres, fehér képernyőt tapasztal az alkalmazás indításakor, akkor előfordulhat, hogy a fő szálon végre kell hajtania a navigációs hívásokat.
+* Az Intune SDK-Xamarin kötései nem támogatják a többplatformos keretrendszert használó alkalmazásokat, például a MvvmCross-et a MvvmCross és az Intune MAM-osztályok közötti ütközések miatt. Előfordulhat, hogy néhány ügyfél sikerrel járt együtt az alkalmazások egyszerű Xamarin. Forms-ra való áthelyezése után, és nem biztosítunk explicit útmutatást vagy beépülő modult az MvvmCross használó alkalmazás-fejlesztőknek.
 
 ### <a name="company-portal-app"></a>Vállalati portál alkalmazás
 Az Intune SDK-Xamarin kötései a [céges portál](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal) Android-alkalmazás jelenlétét használják az eszközön az alkalmazás-védelmi házirendek engedélyezéséhez. A Céges portál az Intune szolgáltatástól kéri le az alkalmazásvédelmi szabályzatokat. Az alkalmazás az inicializáláskor betölti a Céges portálról a szabályzatot és a betartatásához szükséges kódot. A felhasználónak nem kell bejelentkeznie.
@@ -215,7 +220,7 @@ Az Intune SDK-Xamarin kötései a [céges portál](https://play.google.com/store
 Az eszközregisztráció nélküli alkalmazásvédelem esetében a felhasználónak _**nem**_ kell regisztrálnia az eszközt a Céges portál alkalmazással.
 
 ### <a name="sample-applications"></a>Példák az alkalmazásokra
-A MAM-funkciókat kiemelő Xamarin. Android és Xamarin Forms alkalmazások a [githubon](https://github.com/msintuneappsdk/Taskr-Sample-Intune-Xamarin-Android-Apps)érhetők el.
+A Xamarin. Android-és Xamarin. Forms-alkalmazások MAM-funkcióit kiemelő példák a [githubon](https://github.com/msintuneappsdk/Taskr-Sample-Intune-Xamarin-Android-Apps)érhetők el.
 
 ## <a name="support"></a>Támogatás
-Ha a szervezete egy meglévő Intune-ügyfél, akkor a Microsoft ügyfélszolgálati képviselőjével együttműködve nyisson meg egy támogatási jegyet, és hozzon létre egy problémát a [GitHub-problémák oldalon](https://github.com/msintuneappsdk/intune-app-sdk-xamarin/issues) , és segítünk a lehető leghamarabb. 
+Ha a szervezete egy meglévő Intune-ügyfél, forduljon a Microsoft ügyfélszolgálati képviselőjéhez, és nyisson meg egy támogatási jegyet, és hozzon létre egy problémát [a GitHub-problémák oldalon](https://github.com/msintuneappsdk/intune-app-sdk-xamarin/issues). A lehető leghamarabb segíteni fogunk. 

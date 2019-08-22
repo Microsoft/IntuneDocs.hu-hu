@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9aec6ca40a1e93ebc6b2e7393177281941435b01
-ms.sourcegitcommit: b1ddc7f4a3d520b7d6755c7a423a46d1e2548592
+ms.openlocfilehash: ca7e7646f51331e4d24cec9b50d7afae4870ebe3
+ms.sourcegitcommit: 4f3fcc6dcbfe2c4e0651d54a130907a25a4ff66e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69651190"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69894362"
 ---
 # <a name="microsoft-intune-app-sdk-for-ios-developer-guide"></a>A Microsoft Intune App SDK iOS rendszeren – fejlesztői útmutató
 
@@ -186,33 +186,31 @@ Az Intune App SKD engedélyezéséhez kövesse az alábbi lépéseket:
 
 Ha nem adja meg az „-o” paramétert, a bemeneti fájl helyben lesz módosítva. Az eszköz idempotens, és az Info.plist fájl vagy a jogosultságok változása esetén újra kell futtatnia. Emellett ha frissíti az Intune SDK-t, javasoljuk, hogy töltse le és futtassa az eszköz legújabb verzióját, mert elképzelhető, hogy megváltoztak az Info.plist fájl konfigurációs követelményei a legújabb kiadásban.
 
-## <a name="configure-azure-active-directory-authentication-library-adal"></a>Az Azure Active Directory Authentication Library (ADAL) konfigurálása (nem kötelező)
+## <a name="configure-adalmsal"></a>ADAL/MSAL konfigurálása
 
-Az Intune App SDK az [Azure Active Directory Authentication Libraryt](https://github.com/AzureAD/azure-activedirectory-library-for-objc) hitelesítésre és a feltételes indítási forgatókönyvek készítésére használja. Az ADAL-t használja ezenkívül arra, hogy regisztrálja a felhasználó identitását a MAM-szolgáltatásnál az eszközök regisztrációja nélkül történő felügyelet esetére.
+Az Intune app SDK a hitelesítési és feltételes indítási forgatókönyvekhez használhatja a [Azure Active Directory hitelesítési függvénytárat](https://github.com/AzureAD/azure-activedirectory-library-for-objc) vagy a [Microsoft hitelesítési függvénytárát](https://github.com/AzureAD/microsoft-authentication-library-for-objc) . Emellett a ADAL/MSAL-ra is támaszkodik, hogy regisztrálja a felhasználói identitást a MAM szolgáltatásban eszközök regisztrálási forgatókönyvek nélkül történő felügyeletéhez.
 
-Az ADAL használata során az alkalmazáshoz tartozó jogkivonatok biztonsága érdekében az alkalmazások használata legtöbbször az Azure Active Directoryban (AAD) való regisztrációhoz, valamint egyedi azonosító (ClientID) és egyéb azonosítók lekéréséhez kötött. Ha másként nincs megadva, az Intune App SDK az alapértelmezett regisztrációs értékeket használja, amikor kapcsolatba lép az Azure AD-val.  
+A ADAL/MSAL általában az alkalmazások regisztrálását igénylik Azure Active Directory (HRE), és egyedi ügyfél-azonosítót és átirányítási URI-t kell létrehoznia az alkalmazás számára biztosított jogkivonatok biztonságának garantálása érdekében. Ha az alkalmazás már használja a ADAL vagy a MSAL a felhasználók hitelesítéséhez, az alkalmazásnak a meglévő regisztrációs értékeit kell használnia, és felül kell bírálnia az Intune app SDK alapértelmezett értékeit. Ez biztosítja azt, hogy a felhasználóknak ne kelljen kétszer hitelesíteniük magukat (egyszer az Intune App SDK felé, egyszer pedig az alkalmazás felé).
 
-Ha az alkalmazás már ADAL-t használ felhasználók hitelesítésére, akkor a meglévő regisztrációs értékeket kell használnia, és felül kell bírálnia az Intune App SDK alapértékeit. Ez biztosítja azt, hogy a felhasználóknak ne kelljen kétszer hitelesíteniük magukat (egyszer az Intune App SDK felé, egyszer pedig az alkalmazás felé).
+Ha az alkalmazás még nem használja a ADAL vagy a MSAL-t, és nincs szüksége a HRE-erőforrásokhoz való hozzáférésre, nem kell beállítania ügyfélalkalmazás-regisztrációt a HRE, ha a ADAL integrálását választja. Ha úgy dönt, hogy integrálja a MSAL-t, konfigurálnia kell egy alkalmazás regisztrációját, és felül kell bírálnia az Intune-ügyfél alapértelmezett AZONOSÍTÓját és átirányítási URI-JÁT  
 
-Javasolt az alkalmazást a főágban az [ADAL legújabb verziójához](https://github.com/AzureAD/azure-activedirectory-library-for-objc/releases) kapcsolni. Az Intune app SDK jelenleg a ADAL Broker ágát használja a feltételes hozzáférést igénylő alkalmazások támogatásához. (Tehát olyan alkalmazásokhoz, amelyek ebből következően függenek a Microsoft Authenticator alkalmazástól.) Az SDK ugyanakkor továbbra is kompatibilis az ADAL fő (master) ágával is. Az alkalmazásának megfelelő ágat használja.
+Javasoljuk, hogy az alkalmazás a [ADAL](https://github.com/AzureAD/azure-activedirectory-library-for-objc/releases) vagy a [MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-objc/releases)legújabb verziójára mutasson.
 
-### <a name="link-to-adal-binaries"></a>Hivatkozás az ADAL bináris fájljaira
+### <a name="link-to-adal-or-msal-binaries"></a>Hivatkozás ADAL vagy MSAL bináris fájlokra
 
-Az ADAL bináris fájljaira való hivatkozáshoz kövesse az alábbi lépéseket:
+**1. lehetőség –** Az [alábbi lépéseket](https://github.com/AzureAD/azure-activedirectory-library-for-objc#download) követve összekapcsolhatja az alkalmazást a ADAL bináris fájljaival.
 
-1. Töltse le az [Azure Active Directory Authentication Library (ADAL) for Objective-C](https://github.com/AzureAD/azure-activedirectory-library-for-objc) erőforrástárat a GitHubról, majd kövesse az [utasításokat](https://github.com/AzureAD/azure-activedirectory-library-for-objc#download) az ADAL Git-almodulok vagy CocoaPods használatával történő letöltéséhez.
+**2. lehetőség –** Azt is megteheti, hogy [ezeket az utasításokat](https://github.com/AzureAD/microsoft-authentication-library-for-objc#installation) követve összekapcsolja az alkalmazást a MSAL bináris fájljaival.
 
-2. Vegye fel az ADAL-keretrendszert (1. lehetőség) vagy a statikus kódtárat (2. lehetőség) a projektjébe.
+1. Ha az alkalmazás nem határozott meg kulcslánc-hozzáférési csoportokat, hozza létre az első csoportot az alkalmazás csomagazonosítójának felvételével.
 
-3. Ha az alkalmazás nem határozott meg kulcslánc-hozzáférési csoportokat, hozza létre az első csoportot az alkalmazás csomagazonosítójának felvételével.
+2. Engedélyezze a ADAL/MSAL egyszeri bejelentkezést (SSO) a kulcstartó `com.microsoft.adalcache` -hozzáférési csoportok hozzáadásával.
 
-4. Engedélyezze az ADAL egyszeri bejelentkezési (SSO) funkcióját úgy, hogy hozzáadja a `com.microsoft.adalcache` hozzáférési csoportot a kulcslánc jogosultságai közé.
+3. Ha explicit módon beállítja az ADAL megosztott gyorsítótárának kulcslánccsoportját, akkor feltétlenül a következő értékre állítsa: `<appidprefix>.com.microsoft.adalcache`. Az ADAL ezt állítja be, hacsak Ön felül nem bírálja. Ha egyéni kulcslánccsoportot szeretne megadni a `com.microsoft.adalcache` helyett az Info.plist fájl „IntuneMAMSettings” szakaszában, azt az `ADALCacheKeychainGroupOverride` kulccsal kell megadnia.
 
-5. Ha explicit módon beállítja az ADAL megosztott gyorsítótárának kulcslánccsoportját, akkor feltétlenül a következő értékre állítsa: `<appidprefix>.com.microsoft.adalcache`. Az ADAL ezt állítja be, hacsak Ön felül nem bírálja. Ha egyéni kulcslánccsoportot szeretne megadni a `com.microsoft.adalcache` helyett az Info.plist fájl „IntuneMAMSettings” szakaszában, azt az `ADALCacheKeychainGroupOverride` kulccsal kell megadnia.
+### <a name="configure-adalmsal-settings-for-the-intune-app-sdk"></a>Az Intune app SDK ADAL/MSAL beállításainak konfigurálása
 
-### <a name="configure-adal-settings-for-the-intune-app-sdk"></a>Az Intune App SDK ADAL-beállításainak konfigurálása
-
-Ha az alkalmazás már ADAL-t használ hitelesítéshez, és saját ADAL-beállításokkal rendelkezik, akkor kényszerítheti az Intune App SDK-t, hogy az Azure Active Directory helyett ezeket a beállításokat használja. Ezzel biztosítható, hogy az alkalmazás ne kérje a hitelesítést kétszer is a felhasználótól. Az [Intune App SDK-beállítások konfigurálása](#configure-settings-for-the-intune-app-sdk) című témakörben tájékoztatást talál a következő beállítások értékének kitöltéséről:  
+Ha az alkalmazás már használja az ADAL-t vagy a MSAL-t a hitelesítéshez, és saját Azure Active Directory beállításai vannak, akkor kényszerítheti az Intune app SDK-t, hogy ugyanazokat a beállításokat használja a HRE-alapú hitelesítés során. Ezzel biztosítható, hogy az alkalmazás ne kérje a hitelesítést kétszer is a felhasználótól. Az [Intune App SDK-beállítások konfigurálása](#configure-settings-for-the-intune-app-sdk) című témakörben tájékoztatást talál a következő beállítások értékének kitöltéséről:  
 
 * ADALClientId
 * ADALAuthority
@@ -220,7 +218,7 @@ Ha az alkalmazás már ADAL-t használ hitelesítéshez, és saját ADAL-beáll�
 * ADALRedirectScheme
 * ADALCacheKeychainGroupOverride
 
-Ha az alkalmazás már ADAL-t használ, az alábbi konfigurációs beállítások kötelezőek:
+Ha az alkalmazás már használja az ADAL-t vagy a MSAL-t, a következő konfigurációk szükségesek:
 
 1. Adja meg az ADAL-hívásokhoz használandó ClientID-t a projekt Info.plist fájljában, az **IntuneMAMSettings** szótár alatt található `ADALClientId` nevű kulcsban.
 
@@ -235,9 +233,19 @@ Az alkalmazások felülbírálhatják ezeket az Azure AD-beállításokat futtat
 > [!NOTE]
 > Az Info.plist fájl használatát javasoljuk az összes olyan beállításhoz, amely statikus, és nem igényel futtatáskori meghatározást. Az `IntuneMAMPolicyManager`-tulajdonságokhoz rendelt értékek elsőbbséget élveznek az Info.plist fájlban megadott hasonló értékekkel szemben, és még az alkalmazás újraindítása után is megmaradnak. Az SDK továbbra is használni fogja ezeket szabályzat-ellenőrzéshez egészen a felhasználó regisztrációjának törléséig, vagy addig, amíg nem módosítja vagy törli az értékeket.
 
-### <a name="if-your-app-does-not-use-adal"></a>Ha az alkalmazás nem használ ADAL-t
+### <a name="if-your-app-does-not-use-adal-or-msal"></a>Ha az alkalmazás nem használja a ADAL vagy a MSAL
 
-Ahogy korábban említettük, az Intune App SDK az [Azure Active Directory Authentication Libraryt](https://github.com/AzureAD/azure-activedirectory-library-for-objc) hitelesítésre és a feltételes indítási forgatókönyvek készítésére használja. Az ADAL-t használja ezenkívül arra, hogy regisztrálja a felhasználó identitását a MAM-szolgáltatásnál az eszközök regisztrációja nélkül történő felügyelet esetére. Ha **az alkalmazás nem ADAL-t használ a saját hitelesítési mechanizmusához**, akkor az Intune App SDK alapértelmezett értékeket ad meg az ADAL-paraméterekhez, és kezeli az Azure AD-vel való hitelesítést. A fent ismertetett ADAL-beállítások egyikéhez sem szükséges értéket megadnia. Az alkalmazás által használt összes hitelesítési mechanizmus (ha van ilyen) az ADAL-utasítások felett jelenik meg. 
+Ahogy korábban említettük, az Intune app SDK a hitelesítési és feltételes indítási forgatókönyvekhez használhatja a [Azure Active Directory hitelesítési függvénytárat](https://github.com/AzureAD/azure-activedirectory-library-for-objc) vagy a [Microsoft hitelesítési függvénytárát](https://github.com/AzureAD/microsoft-authentication-library-for-objc) . Emellett a ADAL/MSAL-ra is támaszkodik, hogy regisztrálja a felhasználói identitást a MAM szolgáltatásban eszközök regisztrálási forgatókönyvek nélkül történő felügyeletéhez. Ha **az alkalmazás nem használja a ADAL vagy a MSAL a saját hitelesítési mechanizmusához**, akkor előfordulhat, hogy egyéni HRE-beállításokat kell konfigurálnia attól függően, hogy melyik hitelesítési függvénytárat szeretné integrálni:   
+
+ADAL – az Intune app SDK alapértelmezett értékeket biztosít a ADAL paraméterekhez, és kezeli az Azure AD-vel való hitelesítést. A fejlesztőknek nem kell megadniuk a korábban említett ADAL-beállítások értékeit. 
+
+MSAL – a fejlesztőknek létre kell hozniuk egy alkalmazás regisztrációját a HRE-ben egy egyéni átirányítási URI-val az [itt](https://github.com/AzureAD/microsoft-authentication-library-for-objc/wiki/Migrating-from-ADAL-Objective-C-to-MSAL-Objective-C#app-registration-migration)megadott formátumban. A fejlesztőknek be `ADALClientID` kell `ADALRedirectUri` állítania a korábban említett és a beállításokat `aadClientIdOverride` , `aadRedirectUriOverride` vagy a `IntuneMAMPolicyManager` példányon a megfelelő és a tulajdonságokat. A fejlesztőknek azt is biztosítaniuk kell, hogy az előző szakaszban 4. lépéssel megadják az alkalmazás regisztrációs hozzáférését az Intune app Protection szolgáltatáshoz.
+
+### <a name="special-considerations-when-using-msal"></a>A MSAL használata során felmerülő különleges szempontok 
+
+1. **Tekintse meg a** webnézetet – ajánlott, hogy az alkalmazások ne használják a SFSafariViewController, a SFAuthSession vagy a ASWebAuthSession webnézetként bármely, az alkalmazás által kezdeményezett MSAL interaktív hitelesítési művelethez. Ha valamilyen oknál fogva az alkalmazásnak az egyik interaktív MSAL-hitelesítési művelethez is használnia kell ezeket a webnézeteket, akkor `SafariViewControllerBlockedOverride` az `true` alkalmazás info. plist fájljában is be kell állítania a `IntuneMAMSettings` szótár alá. FIGYELMEZTETÉS Ezzel kikapcsolja az Intune SafariViewController hookokat az Auth-munkamenet engedélyezéséhez. Ez kockázatos adatszivárgást tesz lehetővé az alkalmazásban, ha az alkalmazás a SafariViewController használatával tekinti meg a vállalati adatforrásokat, így az alkalmazás nem jelenítheti meg a vállalati adattípusokat ezen webnézet-típusok közül.
+2. A **ADAL és a MSAL** összekapcsolása esetén a fejlesztőknek engedélyeznie kell a lehetőséget, ha azt szeretnék, hogy az Intune előnyben részesítette a MSAL a ADAL- Alapértelmezés szerint az Intune a támogatott ADAL-verziókat részesíti előnyben a támogatott MSAL-verziókhoz, ha mindkettő a futtatókörnyezethez van csatolva. Az Intune csak a támogatott MSAL `IntuneMAMUseMSALOnNextLaunch` `true` - `NSUserDefaults`verziót részesíti előnyben, ha az Intune első hitelesítési műveletének időpontjában a (z). Ha `IntuneMAMUseMSALOnNextLaunch` a `false` értéke vagy nincs beállítva, az Intune az alapértelmezett viselkedéshez fog visszatérni. Ahogy a neve is sugallja, a `IntuneMAMUseMSALOnNextLaunch` változás a következő indításkor lép érvénybe.
+
 
 ## <a name="configure-settings-for-the-intune-app-sdk"></a>Az Intune App SDK-beállítások konfigurálása
 
@@ -249,21 +257,22 @@ Egy részükről már volt szó korábbi szakaszokban, más részük pedig nem v
 
 Beállítás  | Type  | Meghatározás | Kötelező?
 --       |  --   |   --       |  --
-ADALClientId  | Sztring  | Az alkalmazás Azure AD ügyfél-azonosítója. | Kötelező, ha az alkalmazás használja az ADAL-t. |
-ADALAuthority | Sztring | Az alkalmazás használatban lévő Azure AD-szolgáltatója. Használja azt a saját környezetet, ahol az AAD-fiókok konfigurálása megtörtént. | Kötelező, ha az alkalmazás használja az ADAL-t. Ha ez az érték hiányzik, a rendszer egy Intune-beli alapértelmezett értéket használ.|
-ADALRedirectUri  | Sztring  | Az alkalmazás Azure AD átirányítási URI-ja. | Az ADALRedirectUri vagy az ADALRedirectScheme kötelező, ha az alkalmazás használja az ADAL-t.  |
-ADALRedirectScheme  | Sztring  | Az alkalmazás Azure AD átirányítási sémája. Használható az ADALRedirectUri helyett, ha az alkalmazás átirányítási URI-ja `scheme://bundle_id` formátumú. | Az ADALRedirectUri vagy az ADALRedirectScheme kötelező, ha az alkalmazás használja az ADAL-t. |
-ADALLogOverrideDisabled | Logikai  | Megadásával az SDK átirányítja az összes ADAL-naplófájlt (beleértve az esetleges ADAL-hívásokat az alkalmazásból) a saját naplófájljába. Az alapértelmezett érték a Nem. Állítsa be a YES értéket, ha az alkalmazás visszahívja a saját ADAL-naplóját. | Nem kötelező. |
-ADALCacheKeychainGroupOverride | Sztring  | Az ADAL-gyorsítótárhoz a „com.microsoft.adalcache” helyett használandó kulcslánccsoportot adja meg. Vegye figyelembe, hogy ez nem tartalmazza az app-id előtagot. Ezt az előtagot futás közben fogja megkapni a sztring. | Nem kötelező. |
+ADALClientId  | Sztring  | Az alkalmazás Azure AD ügyfél-azonosítója. | Minden olyan alkalmazáshoz szükséges, amely a MSAL és bármely olyan ADAL alkalmazást használja, amely egy nem Intune-beli HRE-erőforráshoz fér hozzá. |
+ADALAuthority | Sztring | Az alkalmazás használatban lévő Azure AD-szolgáltatója. Használja azt a saját környezetet, ahol az AAD-fiókok konfigurálása megtörtént. | Kötelező, ha az alkalmazás ADAL vagy MSAL használ egy nem Intune-beli HRE-erőforrás eléréséhez. Ha ez az érték hiányzik, a rendszer egy Intune-beli alapértelmezett értéket használ.|
+ADALRedirectUri  | Sztring  | Az alkalmazás Azure AD átirányítási URI-ja. | ADALRedirectUri vagy ADALRedirectScheme szükséges minden olyan alkalmazáshoz, amely a MSAL-t és bármely olyan ADAL-alkalmazást használ, amely nem Intune HRE-erőforráshoz fér hozzá.  |
+ADALRedirectScheme  | Sztring  | Az alkalmazás Azure AD átirányítási sémája. Használható az ADALRedirectUri helyett, ha az alkalmazás átirányítási URI-ja `scheme://bundle_id` formátumú. | ADALRedirectUri vagy ADALRedirectScheme szükséges minden olyan alkalmazáshoz, amely a MSAL-t és bármely olyan ADAL-alkalmazást használ, amely nem Intune HRE-erőforráshoz fér hozzá. |
+ADALLogOverrideDisabled | Logikai  | Megadja, hogy az SDK átirányítsa-e az összes ADAL-/MSAL-naplót (beleértve az alkalmazásból származó ADAL-hívásokat is) a saját naplófájlba. Az alapértelmezett érték a Nem. Állítsa az Igen értékre, ha az alkalmazás a saját ADAL/MSAL-napló visszahívását fogja beállítani. | Nem kötelező. |
+ADALCacheKeychainGroupOverride | Sztring  | Megadja a ADAL-/MSAL-gyorsítótárhoz a "com. microsoft. adalcache" helyett használandó kulcstartó csoportot. Vegye figyelembe, hogy ez nem tartalmazza az app-id előtagot. Ezt az előtagot futás közben fogja megkapni a sztring. | Nem kötelező. |
 AppGroupIdentifiers | karakterláncok tömbje  | Az alkalmazáscsoportok tömbje az alkalmazás jogosultságainak com.apple.security.application-groups szakaszában. | Szükséges, ha az alkalmazás alkalmazáscsoportokat használ. |
 ContainingAppBundleId | Sztring | Megadja a bővítményt tartalmazó alkalmazás csomagazonosítóját. | IOS-bővítményekhez szükséges. |
 DebugSettingsEnabled| Logikai | Ha YES értékű, használhatók a Settings csomagban található tesztszabályzatok. Az alkalmazásokat *tilos* úgy szállítani, hogy engedélyezve van bennük ez a beállítás. | Nem kötelező. Az alapértelmezett érték a nem. |
 MainNibFile<br>MainNibFile~ipad  | Sztring  | Ennek a beállításnak tartalmaznia kell az alkalmazás fő Nib-fájljának nevét.  | Kötelező, ha az alkalmazás a MainNibFile-t az Info.plist fájlban definiálja. |
 MainStoryboardFile<br>MainStoryboardFile~ipad  | Sztring  | Ennek a beállításnak tartalmaznia kell az alkalmazás fő storyboard-fájljának nevét. | Kötelező, ha az alkalmazás a UIMainStoryboardFile-t az Info.plist fájlban definiálja. |
-AutoEnrollOnLaunch| Logikai| Megadja, hogy az alkalmazás megpróbáljon-e automatikusan regisztrálni indításkor, ha meglévő felügyelt identitást érzékel, és ha korábban még nem történt regisztráció. Az alapértelmezett érték a Nem. <br><br> Megjegyzések: Ha nem található felügyelt identitás, vagy az identitáshoz nem érhető el érvényes jogkivonat a ADAL-gyorsítótárban, a beléptetési kísérlet a hitelesítő adatok kérése nélkül csendesen meghiúsul, kivéve, ha az alkalmazás az Igen értékre állítja a MAMPolicyRequired beállítást is. | Nem kötelező. Az alapértelmezett érték a nem. |
+AutoEnrollOnLaunch| Logikai| Megadja, hogy az alkalmazás megpróbáljon-e automatikusan regisztrálni indításkor, ha meglévő felügyelt identitást érzékel, és ha korábban még nem történt regisztráció. Az alapértelmezett érték a Nem. <br><br> Megjegyzések: Ha nem található felügyelt identitás, vagy az identitáshoz nem érhető el érvényes jogkivonat a ADAL-/MSAL-gyorsítótárban, a beléptetési kísérlet a hitelesítő adatok kérése nélkül csendesen meghiúsul, kivéve, ha az alkalmazás az Igen értékre állítja be a MAMPolicyRequired. | Nem kötelező. Az alapértelmezett érték a nem. |
 MAMPolicyRequired| Logikai| Azt adja meg, hogy megakadályozza-e a rendszer az alkalmazás elindítását, ha az alkalmazásnak nincs Intune alkalmazásvédelmi szabályzata. Az alapértelmezett érték a Nem. <br><br> Megjegyzések: Az alkalmazás nem küldhető el az App Store-ba az MAMPolicyRequired beállítás Igen értékre állításával. HA a MAMPolicyRequired értéke IGEN, az AutoEnrollOnLaunch beállítását is IGEN értékre kell állítani. | Nem kötelező. Az alapértelmezett érték a nem. |
 MAMPolicyWarnAbsent | Logikai| Azt adja meg, hogy figyelmeztesse-e az alkalmazás a felhasználót az indítás közben, ha az alkalmazásnak nincs Intune alkalmazásvédelmi szabályzata. <br><br> Megjegyezés: A felhasználók továbbra is használhatják az alkalmazást házirend nélkül, miután elutasította a figyelmeztetést. | Nem kötelező. Az alapértelmezett érték a nem. |
 MultiIdentity | Logikai| Azt adja meg, hogy az alkalmazás képes-e kezelni a többszörös identitást. | Nem kötelező. Az alapértelmezett érték a nem. |
+SafariViewControllerBlockedOverride | Logikai| Letiltja az Intune SafariViewController hookot a MSAL-hitelesítés engedélyezéséhez SFSafariViewController, SFAuthSession vagy ASWebAuthSession használatával. | Nem kötelező. Az alapértelmezett érték a nem. Figyelmeztetés: adatszivárgást eredményezhet, ha nem megfelelően használják. Csak akkor engedélyezze, ha feltétlenül szükséges. A részletekért tekintse meg a MSAL használatakor felmerülő [különleges szempontokat](#special-considerations-when-using-msal) .  |
 SplashIconFile <br>SplashIconFile ~ ipad | Sztring  | Az Intune-kezdőképet (indítóképernyőt) tartalmazó ikonfájlt határozza meg. | Nem kötelező. |
 SplashDuration | Szám | Az Intune-kezdőképernyő megjelenésének minimális időtartama (másodpercben) az alkalmazás indításakor. Az alapértelmezett érték 1.5. | Nem kötelező. |
 BackgroundColor| Sztring| A kezdő- és a PIN-kód bevitelére szolgáló képernyő háttérszínét adja meg. Hexadecimális RGB-sztringet fogad el „#XXXXXX” alakban, amelyben az X-ek helyén számjegy (0–9), illetve és A és F közötti nagybetű állhat. A kettőskereszt jel kihagyható.   | Nem kötelező. Alapértelmezése a világosszürke szín. |
@@ -281,9 +290,9 @@ WebViewHandledURLSchemes | Sztringek tömbje | Az alkalmazás WebView-ja által 
 
 Az Intune alkalmazásvédelmi szabályzatának fogadásához az alkalmazásoknak regisztrációs kérelmet kell kezdeményezniük az Intune MAM szolgáltatásban. Az Intune konzollal konfigurálhatja az alkalmazásokat az alkalmazásvédelmi szabályzat eszközregisztrációtól független fogadására. Az **APP-WE** vagy MAM-WE néven is ismert eszközregisztráció nélküli alkalmazásvédelmi szabályzat lehetővé teszi, hogy az Intune anélkül is felügyelhesse az alkalmazásokat, hogy az eszközök az Intune mobileszköz-felügyeletre (MDM) regisztrálva lennének. Mindkét esetben szükséges regisztrálni az Intune MAM szolgáltatásban a szabályzat fogadásához.
 
-### <a name="apps-that-use-adal"></a>ADAL-t használó alkalmazások
+### <a name="apps-that-already-use-adal-or-msal"></a>ADAL vagy MSAL már használó alkalmazások
 
-Az ADAL-t már használó alkalmazásoknak az `IntuneMAMEnrollmentManager` példány `registerAndEnrollAccount` metódusát kell meghívniuk a felhasználó sikeres hitelesítése után:
+Azok az alkalmazások, amelyek már használják a ADAL vagy `registerAndEnrollAccount` a MSAL, `IntuneMAMEnrollmentManager` a felhasználó sikeres hitelesítését követően meg kell hívni a metódust a példányon:
 
 ```objc
 /*
@@ -303,9 +312,9 @@ Az API meghívása után az alkalmazás a szokásos módon működhet tovább. H
 [[IntuneMAMEnrollmentManager instance] registerAndEnrollAccount:@”user@foo.com”];
 ```
 
-### <a name="apps-that-do-not-use-adal"></a>Az ADAL-t nem használó alkalmazások
+### <a name="apps-that-do-not-use-adal-or-msal"></a>ADAL vagy MSAL nem használó alkalmazások
 
-Olyan alkalmazás is fogadhat alkalmazásvédelmi szabályzatot az Intune MAM szolgáltatástól, amely nem jelentkezteti be a felhasználót az ADAL használatával. Ez esetben az API meghívásával kell utasítani az SDK-t ennek a hitelesítésnek a kezelésére. Az alkalmazásoknak ezt a módszert kell használniuk abban az esetben, ha nem hitelesítették a felhasználót az Azure AD-vel, ugyanakkor szükség van az alkalmazásvédelmi szabályzat lekérésére az adatok védelméhez. Ilyen például, ha másik hitelesítési szolgáltatást használ az alkalmazásba való bejelentkezésre, vagy ha az alkalmazás egyáltalán nem támogatja a bejelentkezést. Ehhez az alkalmazás használhatja az `IntuneMAMEnrollmentManager` példány `loginAndEnrollAccount` metódusát:
+Azok az alkalmazások, amelyek nem jelentkeznek be a felhasználóhoz a ADAL vagy a MSAL használatával, továbbra is fogadhatnak alkalmazás-védelmi szabályzatot az Intune MAM szolgáltatásból, ha az API-t úgy hívja meg, hogy az SDK kezelje Az alkalmazásoknak ezt a módszert kell használniuk abban az esetben, ha nem hitelesítették a felhasználót az Azure AD-vel, ugyanakkor szükség van az alkalmazásvédelmi szabályzat lekérésére az adatok védelméhez. Ilyen például, ha másik hitelesítési szolgáltatást használ az alkalmazásba való bejelentkezésre, vagy ha az alkalmazás egyáltalán nem támogatja a bejelentkezést. Ehhez az alkalmazás használhatja az `IntuneMAMEnrollmentManager` példány `loginAndEnrollAccount` metódusát:
 
 ```objc
 /**
@@ -331,11 +340,11 @@ Példa:
 
 ### <a name="let-intune-handle-authentication-and-enrollment-at-launch"></a>Indításkor az Intune kezelheti a hitelesítést és a regisztrációt
 
-Ha azt szeretné, hogy az Intune SDK minden hitelesítést az ADAL és a regisztráció használatával kezeljen még az alkalmazás indításának befejeződése előtt, és hogy az alkalmazás mindig kérjen APP-szabályzatot, akkor nem kell használnia a `loginAndEnrollAccount` API-t. Egyszerűen megadhatja a két alábbi beállításhoz a YES értéket az alkalmazás Info.plist fájljának IntuneMAMSettings szótárában.
+Ha azt szeretné, hogy az Intune SDK a ADAL/MSAL használatával és az alkalmazás befejezése előtt is kezeljen minden hitelesítést, és az alkalmazásnak mindig az alkalmazás-szabályzatot kell használnia `loginAndEnrollAccount` , nem szükséges az API használata. Egyszerűen megadhatja a két alábbi beállításhoz a YES értéket az alkalmazás Info.plist fájljának IntuneMAMSettings szótárában.
 
 Beállítás  | Type  | Meghatározás |
 --       |  --   |   --       |  
-AutoEnrollOnLaunch| Logikai| Megadja, hogy az alkalmazás megpróbáljon-e automatikusan regisztrálni indításkor, ha meglévő felügyelt identitást érzékel, és ha korábban még nem történt regisztráció. Az alapértelmezett érték a Nem. <br><br> Megjegyezés: Ha nem található felügyelt identitás, vagy az identitáshoz nem érhető el érvényes jogkivonat a ADAL-gyorsítótárban, a beléptetési kísérlet a hitelesítő adatok kérése nélkül csendesen meghiúsul, kivéve, ha az alkalmazás az Igen értékre állítja a MAMPolicyRequired beállítást is. |
+AutoEnrollOnLaunch| Logikai| Megadja, hogy az alkalmazás megpróbáljon-e automatikusan regisztrálni indításkor, ha meglévő felügyelt identitást érzékel, és ha korábban még nem történt regisztráció. Az alapértelmezett érték a Nem. <br><br> Megjegyezés: Ha nem található felügyelt identitás, vagy az identitáshoz nem érhető el érvényes jogkivonat a ADAL-/MSAL-gyorsítótárban, a beléptetési kísérlet a hitelesítő adatok kérése nélkül csendesen meghiúsul, kivéve, ha az alkalmazás az Igen értékre állítja be a MAMPolicyRequired. |
 MAMPolicyRequired| Logikai| Azt adja meg, hogy megakadályozza-e a rendszer az alkalmazás elindítását, ha az alkalmazásnak nincs Intune alkalmazásvédelmi szabályzata. Az alapértelmezett érték a Nem. <br><br> Megjegyezés: Az alkalmazás nem küldhető el az App Store-ba az MAMPolicyRequired beállítás Igen értékre állításával. HA a MAMPolicyRequired értéke IGEN, az AutoEnrollOnLaunch beállítását is IGEN értékre kell állítani. |
 
 Ha ezt a beállítást választja az alkalmazáshoz, akkor regisztráció után nem kell az alkalmazás újraindításával foglalkoznia.
