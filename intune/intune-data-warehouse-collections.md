@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 04/09/2019
+ms.date: 08/22/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.localizationpriority: medium
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 816ac1d97e7be485717905fe9d5d62b812408446
-ms.sourcegitcommit: 84c79ceea27f7411528defc5ee8ba35ae2bf473c
+ms.openlocfilehash: b333c848368f00f005ed0febc61f67f098ee7e5e
+ms.sourcegitcommit: 76d59edfd5900ce33c64470ae604eb3db016c8ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67512217"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69979188"
 ---
 # <a name="intune-data-warehouse-collections"></a>Intune adattárház-gyűjtemények
 
@@ -230,7 +230,7 @@ A **device** entitás felsorolja az összes kezelt regisztrált eszközt és azo
 | DeviceEnrollmentType       | Az eszközhöz társított, a regisztráció módját jelző regisztrációtípus kulcsa.                                                                                             |
 | ComplianceStateKey         | Az eszközhöz társított megfelelőségi állapot kulcsa.                                                                                                                             |
 | OSVersion                  | Az eszközön futó operációs rendszer verziószáma.                                                                                                                                                |
-| EasDeviceId                | Exchange ActiveSync-Azonosítóját az eszköz.                                                                                                                                                  |
+| EasDeviceId                | Az eszköz Exchange ActiveSync-azonosítója.                                                                                                                                                  |
 | a sorozatszám               | a sorozatszám                                                                                                                                                                           |
 | UserId                     | Az eszközhöz társított felhasználó egyedi azonosítója.                                                                                                                           |
 | RowLastModifiedDateTimeUTC | Az eszköz adattárházban történő utolsó módosításának dátuma és időpontja (UTC).                                                                                                       |
@@ -280,7 +280,7 @@ A **deviceType** entitás az adattárház más entitásai által hivatkozott esz
 | 12           | ISocConsumer      | iSoc Consumer-eszköz                                |
 | 13           | Unix              | UNIX rendszerű eszköz                                         |
 | 14           | MacMDM            | A beépített MDM-ügynökkel felügyelt Mac OS X-eszköz |
-| 15           | HoloLens          | HoloLens eszköz                                       |
+| 15           | HoloLens          | HoloLens-eszköz                                       |
 | 16           | SurfaceHub        | Surface Hub-eszköz                                  |
 | 17           | AndroidForWork    | Android Profile Owner használatával felügyelt Android-eszköz  |
 | 18           | AndroidEnterprise | Vállalati Android-eszköz.                          |
@@ -310,95 +310,95 @@ A **deviceEnrollmentType** entitás egy eszköz regisztrálásának módját jel
 | 6                | WindowsBulkUserless                | A Windows 10-es csoportos regisztrálás ICD-n keresztül tanúsítvánnyal.                               |
 | 7                | WindowsAutoEnrollment              | Windows 10-es eszközök automatikus regisztrálás.   (Munkahelyi fiók hozzáadása)                                    |
 | 8                | WindowsBulkAzureDomainJoin         | Windows 10-es tömeges, az Azure AD-csatlakoztatás.                                                           |
-| 9                | WindowsCoManagement                | Windows 10-es megosztott kezelési AutoPilot vagy a csoportházirend által aktivált.                       |
+| 9                | WindowsCoManagement                | Az Autopilot vagy Csoportházirend által aktivált Windows 10 együttes felügyelet.                       |
 | 10               | WindowsAzureADJoinsUsingDeviceAuth | Windows 10-es Azure AD-csatlakoztatás Device Auth használatával.                                            |
 
 ## <a name="enrollmentactivities"></a>enrollmentActivities 
-A **EnrollmentActivity** entitás azt jelzi, hogy egy eszköz beléptetési tevékenységét.
+Az **EnrollmentActivity** entitás az eszközök regisztrálásának tevékenységét jelzi.
 
 | Tulajdonság                      | Leírás                                                               |
 |-------------------------------|---------------------------------------------------------------------------|
-| dateKey                       | Mikor lett rögzítve a regisztrációs tevékenység dátumának kulcsa.               |
-| deviceEnrollmentTypeKey       | A tagság típusa kulcsa.                                        |
-| deviceTypeKey                 | Eszköz típusa kulcsa.                                                |
-| enrollmentEventStatusKey      | A sikeres vagy sikertelen, a beléptetési jelző állapot kulcsa.    |
-| enrollmentFailureCategoryKey  | A regisztráció sikertelen kategória (Ha a regisztráció sikertelen) kulcsa.        |
-| enrollmentFailureReasonKey    | A regisztrációs hiba okának (Ha a regisztráció sikertelen) kulcsa.          |
-| osVersion                     | Az eszköz operációs rendszer verzióját.                               |
-| count                         | A fenti besorolások megfelelő tevékenységeket teljes száma.  |
+| dateKey                       | A beléptetési tevékenység rögzítési dátumának kulcsa.               |
+| deviceEnrollmentTypeKey       | A beléptetés típusának kulcsa.                                        |
+| deviceTypeKey                 | Az eszköz típusának kulcsa.                                                |
+| enrollmentEventStatusKey      | A regisztráció sikerességét vagy hibáját jelző állapot kulcsa.    |
+| enrollmentFailureCategoryKey  | A beléptetési hiba kategóriájának kulcsa (ha a regisztráció sikertelen volt).        |
+| enrollmentFailureReasonKey    | A beléptetési hiba okának kulcsa (ha a regisztráció sikertelen volt).          |
+| osVersion                     | Az eszköz operációs rendszerének verziója.                               |
+| count                         | A fenti besorolásoknak megfelelő beléptetési tevékenységek teljes száma.  |
 
 ## <a name="enrollmenteventstatuses"></a>enrollmentEventStatuses 
-A **EnrollmentEventStatus** entitás azt jelzi, hogy egy eszköz beléptetési eredményét.
+Az **EnrollmentEventStatus** entitás az eszközök regisztrálásának eredményét jelzi.
 
 | Tulajdonság                   | Leírás                                                                       |
 |----------------------------|-----------------------------------------------------------------------------------|
-| enrollmentEventStatusKey   | Az adatraktárban (helyettes kulcs) a regisztrációs állapot egyedi azonosítója  |
-| enrollmentEventStatusName  | A regisztrációs állapot neve. Lásd az alábbi példákat.                            |
+| enrollmentEventStatusKey   | A regisztrációs állapot egyedi azonosítója az adattárházban (helyettes kulcs)  |
+| enrollmentEventStatusName  | A beléptetési állapot neve. Lásd az alábbi példákat.                            |
 
 ### <a name="example"></a>Példa
 
 | enrollmentEventStatusName  | Leírás                            |
 |----------------------------|----------------------------------------|
-| Siker                    | Egy sikeres eszközök beléptetése         |
-| Meghiúsult                     | A sikertelen eszközök beléptetése             |
-| Nem érhető el              | A beléptetés állapota nem érhető el.  |
+| Siker                    | Sikeres eszközök beléptetése         |
+| Meghiúsult                     | Sikertelen eszközök beléptetése             |
+| Nem érhető el              | A beléptetési állapot nem érhető el.  |
 
 ## <a name="enrollmentfailurecategories"></a>enrollmentFailureCategories 
-A **EnrollmentFailureCategory** entitás azt jelzi, hogy miért-eszközök regisztrálása sikertelen volt. 
+A **EnrollmentFailureCategory** entitás jelzi, hogy az eszközök regisztrálásának miért nem sikerült. 
 
 | Tulajdonság                       | Leírás                                                                                 |
 |--------------------------------|---------------------------------------------------------------------------------------------|
-| enrollmentFailureCategoryKey   | Egyedi azonosítója az adattárházban (helyettes kulcs), a regisztrációs hiba kategória  |
-| enrollmentFailureCategoryName  | A regisztráció sikertelen kategória neve. Lásd az alábbi példákat.                            |
+| enrollmentFailureCategoryKey   | A beléptetési hiba kategóriájának egyedi azonosítója az adattárházban (helyettes kulcs)  |
+| enrollmentFailureCategoryName  | A beléptetési hiba kategóriájának neve. Lásd az alábbi példákat.                            |
 
 ### <a name="example"></a>Példa
 
 | enrollmentFailureCategoryName   | Leírás                                                                                                   |
 |---------------------------------|---------------------------------------------------------------------------------------------------------------|
-| Nem alkalmazható                  | A regisztráció sikertelen kategória nem alkalmazható.                                                            |
-| Nem érhető el                   | A regisztráció sikertelen kategória nem érhető el.                                                             |
+| Nem alkalmazható                  | A beléptetési hiba kategóriája nem alkalmazható.                                                            |
+| Nem érhető el                   | A beléptetési hiba kategóriája nem érhető el.                                                             |
 | Ismeretlen                         | Ismeretlen hiba.                                                                                                |
 | Authentication                  | A hitelesítés sikertelen.                                                                                        |
-| Authorization                   | Hívás történt hitelesítése, de nem jogosult a regisztrációra.                                                         |
-| AccountValidation               | Nem sikerült érvényesíteni a fiókot a regisztrációhoz. (Blokkolva, fiók regisztrációs nincs engedélyezve)                      |
-| UserValidation                  | Felhasználó nem érvényesíthető. (Felhasználó nem létezik, licenc hiányzik)                                           |
-| DeviceNotSupported              | Eszköz mobileszköz-kezelés nem támogatott.                                                         |
-| InMaintenance                   | Fiók karbantartás alatt van.                                                                                    |
-| BadRequest                      | Ügyfél, amely nem a szolgáltatás által ismert és támogatott kérést küldött.                                        |
-| FeatureNotSupported             | Ezzel a beléptetési által használt vagy több nem támogatottak ehhez a fiókhoz.                                        |
-| EnrollmentRestrictionsEnforced  | Ezzel a beléptetési blokkolja a rendszergazda által konfigurált regisztrációs korlátozások.                                          |
-| ClientDisconnected              | Ügyfél túllépte az időkorlátot, vagy regisztráció a végfelhasználó megszakították.                                                        |
-| UserAbandonment                 | Regisztráció a végfelhasználó félbeszakadt. (Végfelhasználói bevezetési elindult, de nem tudta befejezni a időben)  |
+| Authorization                   | A hívás hitelesítése megtörtént, de nem jogosult a regisztrálásra.                                                         |
+| AccountValidation               | Nem sikerült érvényesíteni a fiókot a beléptetéshez. (Fiók letiltva, regisztráció nincs engedélyezve)                      |
+| UserValidation                  | A felhasználót nem lehetett érvényesíteni. (A felhasználó nem létezik, hiányzó licenc)                                           |
+| DeviceNotSupported              | A mobileszköz-kezelés nem támogatja az eszközt.                                                         |
+| Karbantartás                   | A fiók karbantartás alatt áll.                                                                                    |
+| BadRequest                      | Az ügyfél elküldte a szolgáltatás által nem értelmezhető/támogatott kérelmet.                                        |
+| FeatureNotSupported             | A regisztráció során használt szolgáltatás (ok) nem támogatott ehhez a fiókhoz.                                        |
+| EnrollmentRestrictionsEnforced  | A rendszergazda által konfigurált regisztrációs korlátozások blokkolták ezt a beléptetést.                                          |
+| ClientDisconnected              | Az ügyfél túllépte az időkorlátot, vagy a felhasználó megszakította a regisztrációt.                                                        |
+| UserAbandonment                 | A regisztrációt a végfelhasználó felhagyta. (A végfelhasználó elindította a bevezetést, de nem tudta időben befejezni a végrehajtását)  |
 
 ## <a name="enrollmentfailurereasons"></a>enrollmentFailureReasons  
-A **EnrollmentFailureReason** entitás azt jelzi, hogy egy adott hiba kategórián belül az eszköz regisztrációs nem részletesebb okát.  
+A **EnrollmentFailureReason** entitás egy adott meghibásodási kategórián belül egy eszköz regisztrálási hibájának részletesebb okát jelzi.  
 
 | Tulajdonság                     | Leírás                                                                               |
 |------------------------------|-------------------------------------------------------------------------------------------|
-| enrollmentFailureReasonKey   | A regisztrációs hiba okát az adatraktárban (helyettes kulcs) egyedi azonosítója  |
-| enrollmentFailureReasonName  | A regisztrációs hiba okának neve. Lásd az alábbi példákat.                            |
+| enrollmentFailureReasonKey   | A beléptetési hiba okának egyedi azonosítója az adattárházban (helyettes kulcs)  |
+| enrollmentFailureReasonName  | A beléptetési hiba okának neve. Lásd az alábbi példákat.                            |
 
 ### <a name="example"></a>Példa
 
 | enrollmentFailureReasonName      | Leírás                                                                                                                                                                                            |
 |----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Nem alkalmazható                   | A regisztrációs hiba oka nem alkalmazható.                                                                                                                                                       |
-| Nem érhető el                    | A regisztrációs hiba oka nem érhető el.                                                                                                                                                        |
-| Ismeretlen                          | Ismeretlen hiba történt.                                                                                                                                                                                         |
+| Nem alkalmazható                   | A beléptetési hiba oka nem alkalmazható.                                                                                                                                                       |
+| Nem érhető el                    | A beléptetési hiba oka nem érhető el.                                                                                                                                                        |
+| Ismeretlen                          | Ismeretlen hiba.                                                                                                                                                                                         |
 | UserNotLicensed                  | A felhasználó nem található az Intune-ban, vagy nem rendelkezik érvényes licenccel.                                                                                                                                     |
-| UserUnknown                      | Felhasználó nem ismeri az Intune-hoz.                                                                                                                                                                           |
-| BulkAlreadyEnrolledDevice        | Csak egy felhasználó regisztrálhat egy eszközt. Egy másik felhasználó korábban már regisztrálta az eszközt.                                                                                                                |
-| EnrollmentOnboardingIssue        | Az Intune mobileszköz-felügyelet (MDM) szolgáltatóként még nincs konfigurálva.                                                                                                                                 |
-| AppleChallengeIssue              | Az iOS felügyeleti profil telepítése késleltetve lett vagy nem sikerült.                                                                                                                                         |
-| AppleOnboardingIssue             | Intune-ban való regisztrálása az Apple MDM push-tanúsítvány szükséges.                                                                                                                                       |
-| DeviceCap                        | A felhasználó regisztrációját további eszközöket, mint a maximális engedélyezett.                                                                                                                                        |
-| AuthenticationRequirementNotMet  | Az Intune regisztrációs szolgáltatást nem sikerült engedélyezni ezt a kérelmet.                                                                                                                                            |
-| UnsupportedDeviceType            | Az eszköz nem felel meg az Intune-regisztráció minimális követelményeinek.                                                                                                                                  |
-| EnrollmentCriteriaNotMet         | Ez az eszköz regisztrálása egy konfigurált regisztrációs korlátozási szabály miatt nem sikerült.                                                                                                                          |
-| BulkDeviceNotPreregistered       | Az eszköz nemzetközi mobilkészülék-azonosító (IMEI) vagy sorozatszáma nem található.  Ezen azonosító nélkül eszközök ismerik a személyes tulajdonú eszközök, amelyek jelenleg le vannak tiltva.  |
-| FeatureNotSupported              | A felhasználó próbált hozzáférni egy szolgáltatás, amely még nem lett kiadva minden ügyfél számára, vagy nem kompatibilis az Intune-konfigurációval.                                                            |
-| UserAbandonment                  | Regisztráció a végfelhasználó félbeszakadt. (Végfelhasználói bevezetési elindult, de nem tudta befejezni a időben)                                                                                           |
-| APNSCertificateExpired           | Lejárt Apple MDM push-tanúsítványt az Apple-eszközök nem felügyelhetők.                                                                                                                            |
+| UserUnknown                      | A felhasználó nem ismeri az Intune-t.                                                                                                                                                                           |
+| BulkAlreadyEnrolledDevice        | Csak egy felhasználó regisztrálhat egy eszközt. Ezt az eszközt korábban egy másik felhasználó regisztrálta.                                                                                                                |
+| EnrollmentOnboardingIssue        | Az Intune mobileszköz-felügyeleti (MDM-) szolgáltató még nincs konfigurálva.                                                                                                                                 |
+| AppleChallengeIssue              | Az iOS felügyeleti profil telepítése késleltetve vagy sikertelen volt.                                                                                                                                         |
+| AppleOnboardingIssue             | Az Intune-ba való regisztráláshoz Apple MDM push-tanúsítvány szükséges.                                                                                                                                       |
+| DeviceCap                        | A felhasználó a maximálisan engedélyezettnél több eszközt próbált regisztrálni.                                                                                                                                        |
+| AuthenticationRequirementNotMet  | Az Intune-beléptetési szolgáltatás nem tudta engedélyezni a kérelmet.                                                                                                                                            |
+| UnsupportedDeviceType            | Ez az eszköz nem felel meg az Intune-regisztráció minimális követelményeinek.                                                                                                                                  |
+| EnrollmentCriteriaNotMet         | Az eszközt nem sikerült regisztrálni egy konfigurált regisztrációs korlátozási szabály miatt.                                                                                                                          |
+| BulkDeviceNotPreregistered       | Nem található az eszköz nemzetközi mobileszköz-azonosítója (IMEI) vagy sorozatszáma.  Ez az azonosító nélkül az eszközöket a rendszer a jelenleg blokkolt személyes tulajdonú eszközökként ismeri fel.  |
+| FeatureNotSupported              | A felhasználó olyan szolgáltatás elérésére tett kísérletet, amely még nem lett közzétéve az összes ügyfél számára, vagy nem kompatibilis az Intune-konfigurációval.                                                            |
+| UserAbandonment                  | A regisztrációt a végfelhasználó felhagyta. (A végfelhasználó elindította a bevezetést, de nem tudta időben befejezni a végrehajtását)                                                                                           |
+| APNSCertificateExpired           | Az Apple-eszközök nem kezelhetők lejárt Apple MDM push-tanúsítvánnyal.                                                                                                                            |
 
 ## <a name="intunemanagementextensions"></a>intuneManagementExtensions
 Az **intuneManagementExtension** az **intuneManagementExtension**-állapotok az egyes Windows 10 rendszerű eszközökön naponta készülő listája. Az entitás az utolsó 60 nap adatait őrzi meg.
@@ -434,8 +434,8 @@ A **MamApplication** entitás azokat az üzletági alkalmazásokat sorolja fel, 
 | Tulajdonság | Leírás | Példa |
 |---------|------------|--------|
 | mamApplicationKey |A MAM-alkalmazás egyedi azonosítója. | 432 |
-| mamApplicationName |A MAM-alkalmazás neve. |MAM-alkalmazás példa neve |
-| mamApplicationId |A MAM-alkalmazás alkalmazásazonosítója. | 123 |
+| mamApplicationName |A MAM-alkalmazás neve. |MAM-alkalmazás példájának neve |
+| mamApplicationId |A MAM-alkalmazás alkalmazás-azonosítója. | 123 |
 | IsDeleted |Jelzi, hogy frissítve lett-e ez a MAM-alkalmazásrekord. <br>Igaz – a MAM-alkalmazáshoz új, frissített mezőkből álló rekord tartozik a táblában. <br>Hamis – a MAM-alkalmazás legfrissebb rekordja. |Igaz/hamis |
 | StartDateInclusiveUTC |A MAM-alkalmazás adattárházban történő létrehozásának dátuma és időpontja (UTC). |2016.11.23. 12:00:00 |
 | DeletedDateUTC |Az IsDeleted paraméter True (Igaz) értékre módosulásának dátuma és időpontja (UTC). |2016.11.23. 12:00:00 |
@@ -450,17 +450,17 @@ A **MamApplicationInstance** entitás a felügyelt Mobilalkalmazás-felügyeleti
 |          Tulajdonság          |                                                                                                  Leírás                                                                                                  |               Példa                |
 |----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|
 |   ApplicationInstanceKey   |                                                               A MAM-alkalmazáspéldány egyedi azonosítója az adattárházban – helyettes kulcs.                                                                |                 123                  |
-|           UserId           |                                                                              A MAM-alkalmazás telepítve van a felhasználó felhasználói azonosítója.                                                                              | b66bc706-ffff-7437-0340-032819502773 |
+|           UserId           |                                                                              Azon felhasználó felhasználói azonosítója, aki ezt a MAM-alkalmazást telepítette.                                                                              | b66bc706-ffff-7437-0340-032819502773 |
 |   ApplicationInstanceId    |                                              A MAM-alkalmazáspéldány egyedi azonosítója – hasonló az ApplicationInstanceKey-hez, de az azonosító természetes kulcs.                                              | b66bc706-ffff-7437-0340-032819502773 |
-| mamApplicationId | A Mam-alkalmazás a Mam-alkalmazáspéldány készült alkalmazás azonosítója.   | 2016.11.23. 12:00:00   |
+| mamApplicationId | Annak a MAM-alkalmazásnak az azonosítója, amelyhez a MAM-alkalmazás példánya létrejött.   | 2016.11.23. 12:00:00   |
 |     ApplicationVersion     |                                                                                     A MAM-alkalmazás verziószáma.                                                                                      |                  2                   |
 |        CreatedDate         |                                                                 A MAM-alkalmazáspéldány rekordjának létrehozási dátuma. Az érték lehet null is.                                                                 |        2016.11.23. 12:00:00        |
 |          Platform          |                                                                          Az eszköz platformja, amelyen ez a MAM-alkalmazás telepítve van.                                                                           |                  2                   |
 |      PlatformVersion       |                                                                      Az eszköz platformjának verziója, amelyen ez a MAM-alkalmazás telepítve van.                                                                       |                 2.2                  |
 |         SdkVersion         |                                                                            A MAM-SDK verziója, amellyel az adott MAM-alkalmazást becsomagolták.                                                                            |                 3.2                  |
-| mamDeviceId | Eszköz az eszköz azonosítója, amelyekkel MAM-alkalmazáspéldány társítva van.   | 2016.11.23. 12:00:00   |
-| mamDeviceType | Eszköz típusa, amelyekkel MAM-alkalmazáspéldány társított eszköz.   | 2016.11.23. 12:00:00   |
-| mamDeviceName | Eszköz az eszköz nevét, amelyekkel MAM-alkalmazáspéldány társítva van.   | 2016.11.23. 12:00:00   |
+| mamDeviceId | Annak az eszköznek az azonosítója, amelyhez a MAM-alkalmazás példánya társítva van.   | 2016.11.23. 12:00:00   |
+| mamDeviceType | Annak az eszköznek a típusa, amellyel a MAM-alkalmazás-példány társítva van.   | 2016.11.23. 12:00:00   |
+| mamDeviceName | Annak az eszköznek a neve, amelyhez a MAM Application instance társítva van.   | 2016.11.23. 12:00:00   |
 |         IsDeleted          | Jelzi, hogy frissítve lett-e ez a MAM-alkalmazásrekord. <br>Igaz – a MAM-alkalmazáspéldányhoz új, frissített mezőkből álló rekord tartozik a táblában. <br>Hamis – a MAM-alkalmazás legfrissebb rekordja. |              Igaz/hamis              |
 |   StartDateInclusiveUTC    |                                                              A MAM-alkalmazáspéldány adattárházban történő létrehozásának dátuma és időpontja (UTC).                                                               |        2016.11.23. 12:00:00        |
 |       DeletedDateUTC       |                                                                             Az IsDeleted paraméter True (Igaz) értékre módosulásának dátuma és időpontja (UTC).                                                                              |        2016.11.23. 12:00:00        |
@@ -478,7 +478,7 @@ A **MamCheckin** entitás a MAM-alkalmazáspéldány Intune szolgáltatásba tö
 | DateKey |A dátumkulcs azt jelzi, hogy az adattárházban mikor lett rögzítve a MAM-alkalmazás bejelentkezése. | 20160703 |
 | ApplicationInstanceKey |A MAM-alkalmazás bejelentkezéséhez társított alkalmazáspéldány kulcsa. | 123 |
 | UserKey |A MAM-alkalmazás bejelentkezéséhez társított felhasználó kulcsa. | 4323 |
-| mamApplicationKey |Alkalmazás kulcs a társított alkalmazást a MAM-alkalmazás ellenőrzése. | 432 |
+| mamApplicationKey |A MAM-alkalmazás bejelentkezéséhez társított alkalmazás kulcsa. | 432 |
 | DeviceHealthKey |A MAM-alkalmazás bejelentkezéséhez társított DeviceHealth kulcsa. | 321 |
 | PlatformKey |A MAM-alkalmazás bejelentkezéséhez társított eszköz platformját jelöli. |123 |
 | LastCheckInDate |A MAM-alkalmazás utolsó bejelentkezésének dátuma és időpontja. Az érték lehet null is. |2016.11.23. 12:00:00 |
@@ -526,7 +526,7 @@ A **managementAgentTypes** az eszköz kezelésére szolgáló ügynököket jel�
 | 5                     | EasIntuneClient                   | Az Exchange Active Sync szolgáltatással és Intune PC-ügynökkel kezelt eszköz |
 | 8                     | ConfigManagerClient               | A System Center Configuration Manager-ügynökkel kezelt eszköz     |
 | 10                    | ConfigurationManagerClientMdm     | Az eszköz a Configuration Managerrel és az MDM-mel van felügyelve.                    |
-| 11                    | ConfigurationManagerCLientMdmEas  | Az eszköz a Configuration Manager, az MDM és az Exchange Active Sync szolgáltatással kezeli.               |
+| 11                    | ConfigurationManagerCLientMdmEas  | Az eszközt a Configuration Manager, a MDM és a Exchange Active Sync felügyeli.               |
 | 16                    | Ismeretlen                           | A kezelőügynök típusa ismeretlen                                              |
 | 32                    | Jamf                              | Az eszköz attribútumai a Jamf-ből vannak beolvasva.                               |
 | 64                    | GoogleCloudDevicePolicyController |  Az eszközt a Google CloudDPC kezeli.                                 |
@@ -585,10 +585,10 @@ Az **ownerType** entitás jelzi, hogy az eszköz tulajdonosa a vállalat, magán
 |:-------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------:|
 | ownerTypeID   | A tulajdonostípus egyedi azonosítója.                                                                                                                                               |                            |
 | ownerTypeKey  | A tulajdonostípus egyedi azonosítója az adattárházban – helyettes kulcs.                                                                                                       |                            |
-| ownerTypeName | Az eszközök tulajdonosának típusát jelzi:  Vállalati – eszköz vállalati tulajdonban.  Personal – az eszköz saját tulajdonban van (BYOD).   Unknown – nincs információ az eszközről. | Vállalati személyes ismeretlen |
+| ownerTypeName | Az eszközök tulajdonosának típusát jelzi:  Vállalati – az eszköz vállalati tulajdonban van.  Personal – az eszköz saját tulajdonban van (BYOD).   Unknown – nincs információ az eszközről. | Vállalati személyes ismeretlen |
 
 > [!Note]  
-> Az a `ownerTypeName` szűrő az Azure ad dinamikus csoportok létrehozásakor eszközökhöz, állítsa az értékét módosítania `deviceOwnership` , `Company`. További információkért lásd: [eszközök szabályai](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-dynamic-membership#rules-for-devices). 
+> Ahhoz, `ownerTypeName` hogy az eszközökhöz dinamikus csoportokat hozzon létre, a AzureAD szűrőhöz a `Company`értéket `deviceOwnership` kell beállítani. További információ: [eszközök szabályai](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-dynamic-membership#rules-for-devices). 
 
 ## <a name="policies"></a>policies
 A **Szabályzat** entitás eszköz- és alkalmazáskonfigurációs profilokat, valamint megfelelőségi szabályzatokat tartalmaz. A szabályzatokat a Mobileszköz-kezelési (MDM) megoldás segítségével rendelheti hozzá a vállalat valamely csoportjához.
@@ -696,7 +696,7 @@ A **user** entitásgyűjtemény felhasználói adatokat tartalmaz. A rekordok k�
 | UserId                     | A felhasználó egyedi azonosítója – a UserKey-hez hasonló, de természetes kulcs.                                                                                                                                                    | b66bc706-ffff-7437-0340-032819502773 |
 | UserEmail                  | A felhasználó e-mail címe.                                                                                                                                                                                                     | John@constoso.com                    |
 | userPrincipalName                        | A felhasználó egyszerű felhasználóneve.                                                                                                                                                                                               | John@constoso.com                    |
-| displayName                | A felhasználó megjelenítendő neve.                                                                                                                                                                                                      | István                                 |
+| DisplayName                | A felhasználó megjelenítendő neve.                                                                                                                                                                                                      | István                                 |
 | IntuneLicensed             | Megadja, hogy a felhasználó rendelkezik-e Intune-licenccel.                                                                                                                                                                              | Igaz/hamis                           |
 | IsDeleted                  | Azt jelzi, hogy a felhasználó összes engedélye lejárt-e, és a felhasználót emiatt eltávolították-e az Intune-ból. Egyetlen rekord esetén ez a jelölő nem változik. Ehelyett új rekord jön létre egy új felhasználói állapothoz. | Igaz/hamis                           |
 | RowLastModifiedDateTimeUTC | A rekord adattárházban történt utolsó módosításának dátuma és időpontja (UTC)                                                                                                                                                 | 2016. 11. 23. 0:00                      |
