@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 07/16/2019
+ms.date: 08/20/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -17,16 +17,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2825286c652a7229c32435a24ca816f21b8f2ff4
-ms.sourcegitcommit: db68056e2db17dfdeaa216c684302567742e6416
+ms.openlocfilehash: 63ab31845ba4d084c81ff33970703ec630d67daa
+ms.sourcegitcommit: c8cb314256c4896e838918f015ffaefb8f00ace5
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68993743"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70002026"
 ---
 # <a name="microsoft-intune-protected-apps"></a>Microsoft Intune védett alkalmazások  
 
-Az Intune által felügyelt alkalmazások a Mobile Application Protection-szabályzatok gazdag készletével engedélyezettek. A felügyelt alkalmazások a következőket teszik lehetővé:
+A jelen témakörben felsorolt alkalmazások támogatott partneri és Microsoft-alkalmazások, amelyeket gyakran használ a Microsoft Intune. Az Intune-védelemmel ellátott alkalmazások a Mobile Application Protection-szabályzatok gazdag készletével engedélyezettek. Ezek az alkalmazások a következőket teszik lehetővé:
 - A másolás és beillesztés, valamint a Mentés másként függvények korlátozása
 - Webhivatkozások konfigurálása a biztonságos Microsoft böngészőn belüli megnyitáshoz
 - A többszörös identitás használatának és az alkalmazások szintjének feltételes hozzáférésének engedélyezése
@@ -77,7 +77,7 @@ A következő táblázatok a támogatott partneri és Microsoft-alkalmazások r�
 | Alkalmazás címe | Alkalmazás leírása | Az App Store-hivatkozások támogatott platform (ok) hoz | 
 |-------------------------------------------------|-------------------------|---------------------------------------------|
 | **Acronis-hozzáférés**<p><img alt="Partner app - Acronis Access icon" src="./media/apps-supported-intune-apps/icon-p-acronis-access.png" width="100"> | Biztonságosan érheti el üzleti fájljait bárhonnan és bármely olyan eszközről, amely Acronis-hozzáféréssel rendelkezik. A dokumentumokat egyszerűen megoszthatja a munkatársaival, az ügyfelekkel és a szállítókkal, miközben a fájlokat és az adatbiztonságot, valamint a személyes adatvédelmet csak Ön és a szervezete használhatja. Az alkalmazás rendkívül egyszerű használatot biztosít páratlan biztonsággal, adatvédelemmel és felügyeleti lehetőségekkel. | [iOS-tároló hivatkozása](https://itunes.apple.com/us/app/acronis-access/id429704844?mt=8) |                       
-| **Adobe Acrobat Reader a Microsoft Intunehoz**<p><img alt="Partner app - Adobe Acrobat Reader for Microsoft Intune icon" src="./media/apps-supported-intune-apps/icon-p-adobe-acrobat-reader.png" width="100"> | PDF-fájlok megnyitása, megtekintése és használata Microsoft Intune felügyelt környezetben az Intune-hoz készült Adobe Acrobat Readerrel. IOS és Android rendszerekhez érhető el. | [Android áruházbeli hivatkozás](https://play.google.com/store/apps/details?id=com.adobe.reader.intune),<br>[iOS-tároló hivatkozása](https://geo.itunes.apple.com/us/app/adobe-acrobat-reader-for-microsoft/id1051980424?mt=8) |                      
+| **Adobe Acrobat Reader**<p><img alt="Partner app - Adobe Acrobat Reader icon" src="./media/apps-supported-intune-apps/icon-p-adobe-acrobat-reader.png" width="100"> | PDF-fájlok megnyitása, megtekintése és használata egy Microsoft Intune felügyelt környezetben az Adobe Acrobat Readerrel. IOS és Android rendszerekhez érhető el. | [Android áruházbeli hivatkozás](https://play.google.com/store/apps/details?id=com.adobe.reader),<br>[iOS-tároló hivatkozása](https://apps.apple.com/app/adobe-acrobat-reader-for-pdf/id469337564) |                      
 | **BlackBerry Enterprise BRIDGE**<p><img alt="Partner app - Blackberry Enterprise BRIDGE icon" src="./media/apps-supported-intune-apps/icon-p-blackberry-enterprise-bridge.png" width="100"> | A BlackBerry Enterprise BRIDGE lehetővé teszi dokumentumok biztonságos megtekintését, szerkesztését és mentését az Intune által felügyelt Microsoft-alkalmazásokkal, például a Microsoft Word, a Microsoft PowerPoint és a Microsoft Excel használatával a BlackBerry Dynamicsből. A dokumentumok megoszthatók e-mail-mellékletekként, és megtarthatják az adattitkosítást a BlackBerry Dynamics és az Intune által felügyelt Mobile apps közötti dokumentum-megosztási folyamat során. | [Android áruházbeli hivatkozás](https://play.google.com/store/apps/details?id=com.blackberry.intune.bridge),<br>[iOS-tároló hivatkozása](https://itunes.apple.com/us/app/blackberry-enterprise-bridge/id1305494864?mt=8) |
 | **A Box for**<p><img alt="Partner app - Box for EMM icon" src="./media/apps-supported-intune-apps/icon-p-box-for-emm.png" width="100"> | Tartsa az alkalmazottakat a csatlakozáshoz és az együttműködéshez, miközben központilag kezeli a biztonságot, a házirendet és a kiépítés bármely mobileszközön az | [iOS-tároló hivatkozása](https://itunes.apple.com/us/app/box-for-emm/id882085676?mt=8) |
 | **Microsoft Intune™ CellTrust SL2**<p><img alt="Partner app - CellTrust SL2 for Microsoft Intune icon" src="./media/apps-supported-intune-apps/icon-p-celltrust-sl2.png" width="100"> | A CellTrust SL2™ for Microsoft Intune egy nagyvállalati szintű alkalmazás, amely úgy működik, hogy egy biztonságos mobil üzleti számot (MBN) rendel a saját eszközökhöz, hogy a személyes és üzleti kommunikációt különálló eszközön tárolja. A zökkenőmentes megoldások a személyes szám használata nélkül biztosítanak SMS-üzeneteket és üzleti hívásokat az eszközön. Ez a képesség létfontosságú olyan vállalatok számára, amelyek nagyobb biztonságot igényelnek az üzleti kommunikációban, valamint a elektronikus iratkezelési és a megfelelőségi igények archiválását. <br> A Microsoft Intune egy felhőalapú szolgáltatás a nagyvállalati mobilitási felügyeletben ("az"), amely lehetővé teszi, hogy a munkaerő hatékony legyen, miközben a vállalati adatvédelmet tartja. <br> A CellTrust SL2™ for Microsoft Intune hatékony nagyvállalati mobilitási platformot biztosít, amely lehetővé teszi az alkalmazottak számára, hogy útközben is működjenek – egyszerű hozzáférést biztosítanak az üzleti alkalmazásokhoz, valamint a hang-és szöveges üzenetküldéshez. Az alkalmazás Microsoft Intune SDK-k és testreszabott funkciók használatával lett kifejlesztve, hogy a szervezetek az iparáguk és az informatikai részleg igényei szerint testre szabják azt. | [Android áruházbeli hivatkozás](https://play.google.com/store/apps/details?id=com.celltrust.sl2_intune),<br>[iOS-tároló hivatkozása](https://itunes.apple.com/us/app/celltrust-sl2-for-intune/id1442087513?mt=8) |

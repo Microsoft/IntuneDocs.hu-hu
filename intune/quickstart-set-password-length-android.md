@@ -1,12 +1,12 @@
 ---
-title: Rövid útmutató – Android-eszközök megfelelőségi szabályzatának jelszó
+title: Gyors útmutató – jelszó-megfelelőségi szabályzat Android-eszközökhöz
 titleSuffix: Microsoft Intune
 description: Ebben a rövid útmutatóban a Microsoft Intune-t fogja használni az Android-eszközöknél megkövetelt jelszóhosszúság beállításához.
 keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 04/15/2019
+ms.date: 08/23/2019
 ms.topic: quickstart
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -17,18 +17,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cdedbfc611d44b4d6acb01e5e05bf3e73ed7fbda
-ms.sourcegitcommit: 4b83697de8add3b90675c576202ef2ecb49d80b2
+ms.openlocfilehash: 30c4d5976b7f743a12a9691878e2b7031e373b1d
+ms.sourcegitcommit: c8cb314256c4896e838918f015ffaefb8f00ace5
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67044198"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70001835"
 ---
-# <a name="quickstart-create-a-password-compliance-policy-for-android-devices"></a>Gyors útmutató: Az Android-eszközök jelszó megfelelőségi szabályzat létrehozása
+# <a name="quickstart-create-a-password-compliance-policy-for-android-devices"></a>QuickStart Jelszó-megfelelőségi szabályzat létrehozása Android-eszközökhöz
 
 Ebben a rövid útmutatóban a Microsoft Intune-t használjuk annak beállítására, hogy a rendszer az Android-eszközöket használó munkatársaktól adott hosszúságú jelszót kérjen el, mielőtt engedélyezné az eszközökön található információkhoz való hozzáférést. 
 
-Az Intune-eszközmegfelelőségi szabályzatokkal megszabhatja az eszközök megfelelőségéhez kötelezően szükséges szabályokat és beállításokat. Segítségével megfelelőségi szabályzatok a feltételes hozzáférés a vállalati erőforrásokhoz való hozzáférés engedélyezése vagy letiltása. Emellett lekérhet eszközjelentéseket, és különböző műveleteket hajthat végre meg nem felelés esetén.
+Az Intune-eszközmegfelelőségi szabályzatokkal megszabhatja az eszközök megfelelőségéhez kötelezően szükséges szabályokat és beállításokat. A megfelelőségi szabályzatokat feltételes hozzáféréssel használhatja a vállalati erőforrásokhoz való hozzáférés engedélyezéséhez vagy letiltásához. Emellett lekérhet eszközjelentéseket, és különböző műveleteket hajthat végre meg nem felelés esetén.
 
 > [!IMPORTANT]
 > Az alkalmazottak tartalmainak védelme érdekében a jelszóbeállítások mellett egyéb rendszerbiztonsági beállításokat használatát is érdemes fontolóra venni. További információkért tekintse meg a [rendszerbiztonsági beállításokat](compliance-policy-create-android-for-work.md) ismertető cikket.
@@ -48,7 +48,7 @@ Ebben a rövid útmutatóban a Intune-t használja majd annak beállítására, 
 3. A **Platform** beállításban válassza az **Android** lehetőséget. 
 4. Kattintson a **Beállítások** > **Rendszerbiztonság** elemre az Android **Rendszerbiztonság** paneljének megjelenítéséhez.
 5. Kattintson a **Kötelező** elemre a **Jelszó szükséges a mobileszközök feloldásához** mellett.
-6. Válassza ki **legalább numerikus** melletti **jelszó kötelező típusa**.
+6. Válasszon ki **legalább egy numerikus** **értéket a kötelező jelszó típusa**mellett.
 7. Adja meg a **6** értéket a **Jelszó minimális hossza** mellett. 
 
     ![Képernyőkép egy csoport létrehozásáról a Microsoft Intune-ban](media/quickstart-set-password-length-android/quickstart-set-password-length-android-01.png)
@@ -68,4 +68,4 @@ Ebben a rövid útmutatóban az Intune használatával létrehozott egy megfelel
 Kövesse az Intune rövid útmutatóinak sorozatát a következő rövid útmutatóval.
 
 > [!div class="nextstepaction"]
-> [Gyors útmutató: Értesítések küldése nem megfelelő eszközök](quickstart-send-notification.md)
+> [QuickStart Értesítések küldése a nem megfelelő eszközökre](quickstart-send-notification.md)

@@ -14,12 +14,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6fb1111a7f660e8c59f45fb1893364dcadd34dca
-ms.sourcegitcommit: 6a8de7bb4870ea19aa08db1f188ea7b5e8a387dd
+ms.openlocfilehash: e8300e9a4faf29ada79fad2a11e2470b965b53d1
+ms.sourcegitcommit: b64869b4be357c0741ec01b1a2f0bae13efce937
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69487751"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69998893"
 ---
 # <a name="windows-10-and-later-device-settings-to-run-as-a-kiosk-in-intune"></a>Windows 10 és újabb eszközbeállítások az Intune-ban való futtatáshoz
 
@@ -97,6 +97,17 @@ Csak egy alkalmazást futtat az eszközön.
   - **Áruházbeli alkalmazás hozzáadása**: Válassza az **áruházbeli alkalmazás hozzáadása**lehetőséget, és válasszon egy alkalmazást a listából.
 
     Nincsenek alkalmazások a listában? Adjon hozzá néhányat az [Ügyfélalkalmazások](apps-add.md) rész lépéseinek használatával.
+    
+ - **Karbantartási időszak megadása az alkalmazások**újraindításához: Az alapértelmezett érték "nincs konfigurálva", a "require" (kötelező) beállítás megadásával a telepítés befejezéséhez újraindítás szükséges.
+ 
+     Ha a kioszk böngésző vagy más Microsoft Store for Business alkalmazást használ, döntse el, hogy az alkalmazás telepítésének befejezéséhez milyen gyakran kell az újraindítást igénylő alkalmazás-frissítéseket megkeresni. Ha nincs konfigurálva, a Microsoft Store for Business alkalmazások az alkalmazás frissítését követően 3 nappal nem ütemezett időpontban lesznek újraindítva.
+     
+     - **Karbantartási időszak kezdő időpontja**: Válassza ki a nap dátumát és időpontját, hogy megkezdje az ügyfelek ellenőrzését az újraindítást igénylő alkalmazások frissítéseinek ellenőrzéséhez. Az alapértelmezett indítási idő éjfél vagy nulla perc.
+     
+     - **Karbantartási**időszak ismétlődése: Az alapértelmezett érték naponta.
+         Állítsa be, hogy a karbantartási időszakok milyen gyakran történjenek az alkalmazások frissítései számára. A javaslat napi rendszerességgel elkerülheti a nem ütemezett alkalmazások újraindítását.
+
+  [ApplicationManagement/ScheduleForceRestartForUpdateFailures CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationmanagement#applicationmanagement-scheduleforcerestartforupdatefailures)
 
 ## <a name="multi-app-kiosks"></a>Többalkalmazásos kioszk
 
