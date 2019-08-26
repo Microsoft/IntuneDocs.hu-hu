@@ -14,12 +14,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7c75930f3eee35146afbc5714135ececbe7c9643
-ms.sourcegitcommit: b78793ccbef2a644a759ca3110ea73e7ed6ceb8f
+ms.openlocfilehash: 5b3fd474e938e2e85a0a08951a9e3f154d980411
+ms.sourcegitcommit: b64869b4be357c0741ec01b1a2f0bae13efce937
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69550177"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69998948"
 ---
 # <a name="windows-10-and-newer-device-settings-to-allow-or-restrict-features-using-intune"></a>Windows 10 (és újabb) eszközbeállítások az Intune-t használó szolgáltatások engedélyezéséhez vagy korlátozásához
 
@@ -66,13 +66,6 @@ Ezek a beállítások a [ApplicationManagement házirend CSP](https://docs.micro
   - **Előnyben részesített tároló**: Figyelmezteti a felhasználókat, ha a Microsoft Storetól eltérő helyekről telepítik az alkalmazásokat.
 
   [SmartScreen/EnableAppInstallControl CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-smartscreen#smartscreen-enableappinstallcontrol)
-
-- **Alkalmazások újraindításának kényszerítése frissítési hiba esetén**: Ha egy alkalmazás használatban van, előfordulhat, hogy nem frissíti. Ezzel a beállítással kényszerítheti az alkalmazások újraindítását. **Nincs konfigurálva** (alapértelmezés) nem kényszeríti az alkalmazások újraindítását. A megkövetelése lehetővé teszi a rendszergazdák számára, hogy egy adott dátumra és időpontra vagy ismétlődő ütemtervre kényszerítsék az újraindítást. A **kötelező**beállításnál adja meg a következőt is:
-
-  - **Kezdési dátum/idő**: Az alkalmazások újraindításához válasszon ki egy adott dátumot és időpontot.
-  - **Ismétlődés**: Válassza ki a napi, heti vagy havi újraindítást.
-
-  [ApplicationManagement/ScheduleForceRestartForUpdateFailures CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationmanagement#applicationmanagement-scheduleforcerestartforupdatefailures)
 
 - A **telepítés felhasználói ellenőrzése**: Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), Windows Installer megakadályozhatja, hogy a felhasználók a rendszergazdák számára fenntartott telepítési beállításokat módosítsák, például a fájlok telepítéséhez a címtárat. A **Letiltás** lehetővé teszi a felhasználók számára, hogy megváltoztassák ezeket a telepítési beállításokat, és néhány Windows Installer biztonsági funkciót kihagynak.
 
