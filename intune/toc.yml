@@ -541,7 +541,7 @@
       items:
         - name: Az Intune-alkalmazásfelügyelet ismertetése
           href: app-management.md
-        - name: Alkalmazások hozzáadása
+        - name: Alkalmazások hozzáadásának áttekintése
           href: apps-add.md
           displayName: apk; ipa; msi; appx; appxbundle; msix; msixbundle; app
           items:
@@ -645,7 +645,7 @@
               href: apps-selective-wipe.md
             - name: Alkalmazásvédelmi szabályzatok használata
               items:
-                - name: Alkalmazásvédelmi szabályzatok megismerése
+                - name: Alkalmazásvédelmi szabályzatok áttekintése
                   href: app-protection-policy.md
                   displayName: app; protection; policy
                 - name: Alkalmazásvédelmi szabályzatok létrehozása
