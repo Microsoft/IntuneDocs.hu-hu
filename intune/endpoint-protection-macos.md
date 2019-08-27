@@ -14,12 +14,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 919fef62cf1d979d6a4f67c3653d90af1442fa55
-ms.sourcegitcommit: ec22a186a9cfa489a8490698e387624e480892d8
+ms.openlocfilehash: 82eca1a9c4bfd8944b9ba5ae1716ec46c52a5a81
+ms.sourcegitcommit: 58a22f1b4a3fffffb1f7da228f470b3b0774fc42
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68960418"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70021700"
 ---
 # <a name="macos-endpoint-protection-settings-in-intune"></a>MacOS Endpoint Protection-beállítások az Intune-ban  
 
@@ -100,14 +100,14 @@ Az Apple FileVault beállításaival kapcsolatos további információkért lás
     - **Személyes helyreállítási kulcs** elforgatása – Itt adhatja meg, hogy az eszköz személyes helyreállítási kulcsa milyen gyakran legyen elforgatva. Kiválaszthatja a **nincs konfigurálva**beállítás alapértelmezett értékét, vagy **1** és **12** hónap közötti értéket is megadhat.  
 
   - **Figyelmeztetés letiltása a kijelentkezéskor**  
-    Megakadályozza, hogy a rendszer felszólítsa a felhasználót, hogy engedélyezze a FileVault a kijelentkezéskor.  Ha az engedélyezés értékre van állítva, a rendszer letiltja a kijelentkezéskor megjelenő kérést, és a felhasználó bejelentkezik.  
+    Megakadályozza, hogy a rendszer felszólítsa a felhasználót, hogy engedélyezze a FileVault a kijelentkezéskor.  Ha a Letiltás értékre van állítva, a rendszer letiltja a kijelentkezéskor megjelenő kérést, és a felhasználó bejelentkezik.  
     - **Nincs konfigurálva**  
-    - **Engedélyezés** – tiltsa le a kijelentkezéskor megjelenő üzenetet.
+    - **Letiltás** – tiltsa le a kijelentkezéskor megjelenő üzenetet.
 
     **Alapértelmezett**: Nincs konfigurálva  
 
      > [!IMPORTANT]  
-     > Ismert hiba történt, ha a **Letiltás** beállítás a kijelentkezéskor beállítás *engedélyezve*értékre van állítva. Ha az *Engedélyezés*beállítást adja meg, a megkerülő időpontok **számának** meg kell adni egy értéket, és nem állítható be *nem konfiguráltként*. Ha a *nincs konfigurálva*értékre van állítva, a profil meghiúsul az eszközön. Ebben az esetben az eszköz egy **profil állapotának összegzése** , további részletek nélkül.
+     > Ismert probléma, ha a **Letiltás beállítás letiltása** a kijelentkezéskor beállítás értéke letiltva értékre van állítva. Ha a Letiltva értékre van állítva, a megkerülő időpontok **számának** meg kell adni egy értéket, és nem állítható be *nem konfiguráltként*. Ha a *nincs konfigurálva*értékre van állítva, a profil meghiúsul az eszközön. Ebben az esetben az eszköz egy **profil állapotának összegzése** , további részletek nélkül.
      > 
      > Ha a kijelentkezéskor a **Letiltás** beállítás nincs *konfigurálva*értékre van állítva, a megkerülő időpontok **száma** *nem konfigurálható* , és nem rendelkezhet értékkel.  
      > 

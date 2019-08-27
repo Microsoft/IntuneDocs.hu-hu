@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 08/15/2019
+ms.date: 08/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -16,16 +16,16 @@ ms.reviewer: shpate
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
-ms.openlocfilehash: 76a0df5933127641d299a2a2f5e01d848e4d5d18
-ms.sourcegitcommit: b78793ccbef2a644a759ca3110ea73e7ed6ceb8f
+ms.openlocfilehash: c64ea07cb87bc980d01864468d788229bfc58a5f
+ms.sourcegitcommit: a6385b8370c20a44d0869f7920d6b2866edaa5e2
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69550115"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70027388"
 ---
 # <a name="monitor-device-encryption-with-intune"></a>Az eszközök titkosításának figyelése az Intune-nal   
 
-A Microsoft Intune titkosítási jelentés központi hely a felügyelt eszközök titkosítási állapotának részleteinek megtekintéséhez. Megtekintheti az eszköz titkosítási állapotának részleteit, és megkeresheti az eszköz helyreállítási kulcsainak kezeléséhez szükséges beállításokat. A rendelkezésre álló helyreállítási kulcs beállításai a megtekintett eszköz típusától függenek.  
+A Microsoft Intune titkosítási jelentés központi hely az eszköz titkosítási állapotának részleteinek megtekintéséhez és az eszköz helyreállítási kulcsainak kezeléséhez szükséges beállítások megkereséséhez. A rendelkezésre álló helyreállítási kulcs beállításai a megtekintett eszköz típusától függenek.  
 
 A jelentés megkereséséhez jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és lépjen az **eszköz konfigurálása**elemre, majd a *figyelés*területen válassza a **titkosítási jelentés**elemet.  
 
@@ -48,7 +48,7 @@ A titkosítási jelentés panel megjeleníti az eszközök magas szintű részle
 - **Operációs rendszer verziója** – a Windows vagy MacOS verziója az eszközön.  
 - **TPM-verzió** *(Csak a Windows 10 rendszerre vonatkozik)* – a Windows 10-es eszközön lévő PLATFORMMEGBÍZHATÓSÁGI modul (TPM) lapka verziója.  
 - **Titkosítási készültség** – az eszközök kiértékelése a megfelelő titkosítási technológiák, például a BitLocker vagy a FileVault titkosítás támogatásához. Az eszközök azonosítása a következőképpen történik:  
-  - **Kész**: Az eszköz MDM házirenddel titkosítható, amely megköveteli, hogy az eszköz megfeleljen a következő követelményeknek:  
+  - **Kész**: Az eszköz MDM házirenddel titkosítható, amelyhez az eszköznek az alábbi követelményeknek kell megfelelnie:  
     
     **MacOS-eszközök esetén**:  
     - MacOS 10,13 vagy újabb verzió  
@@ -64,7 +64,7 @@ A titkosítási jelentés panel megjeleníti az eszközök magas szintű részle
 
 - **Titkosítási állapot** – azt határozza meg, hogy az operációsrendszer-meghajtó titkosítva van-e.  
 
-- **Felhasználói elv neve** – az eszköz elsődleges felhasználója.  
+- **Egyszerű felhasználónév** – az eszköz elsődleges felhasználója.  
 
 ### <a name="device-encryption-status"></a>Eszköz titkosítási állapota  
 
@@ -74,9 +74,11 @@ Amikor kijelöl egy eszközt a titkosítási jelentésből, az Intune megjelení
 
 - **Titkosítási készültség** – az eszközök kiértékelése felkészültséget nyújt a titkosítás támogatásához a Mdm szabályzaton keresztül.  
   
-  Példa: Ha egy Windows 10-es eszköz készültsége *nem áll készen*, akkor is támogatja a titkosítást. Ahhoz, hogy a *kész* megjelölés megtörténjen, a Windows 10-es ESZKÖZnek TPM-lapka kell lennie. A titkosítás támogatásához TPM-chipek nem szükségesek. (További részletekért lásd az előző szakaszban található titkosítási felkészültséget ismertető szakaszt.)  
+  Példa: Ha egy Windows 10-es eszköz készültsége *nem áll készen*, akkor is támogatja a titkosítást. Ahhoz, hogy a *kész* megjelölés megtörténjen, a Windows 10-es ESZKÖZnek TPM-lapka kell lennie. A titkosítás támogatásához TPM-chipek nem szükségesek. (További információ: *titkosítási készültség* az előző szakaszban.)  
 
-- **Titkosítási állapot** – azt határozza meg, hogy az operációsrendszer-meghajtó titkosítva van-e. Akár 24 óráig is eltarthat, amíg az Intune jelentést tud készíteni az eszköz titkosítási állapotáról vagy az adott állapot változásáról.  
+- **Titkosítási állapot** – azt határozza meg, hogy az operációsrendszer-meghajtó titkosítva van-e. Akár 24 óráig is eltarthat, amíg az Intune jelentést tud készíteni az eszköz titkosítási állapotáról vagy az adott állapot változásáról. Ez az idő magában foglalja az operációs rendszer titkosításának idejét, valamint azt, hogy az eszköz Mikor jelentsen vissza az Intune-nak.  
+
+  A FileVault titkosítási állapot jelentésének felgyorsításához, mielőtt az eszköz bejelentkezik, a felhasználók a titkosítás befejeződése után szinkronizálják az eszközeiket.  
 
 - **Profilok** – az eszközre érvényes, az eszközhöz tartozó *konfigurációs* profilok listája, és a következő értékekkel vannak konfigurálva:  
 
@@ -91,6 +93,8 @@ Amikor kijelöl egy eszközt a titkosítási jelentésből, az Intune megjelení
   A profilok listáját használva azonosíthatja az egyes házirendeket, hogy a *profil állapotának összegzése* problémákat jelez-e.  
 
 - **Profil állapotának összegzése** – az eszközre érvényes profilok összegzése. Az összefoglalás a legkevésbé kedvező feltételt jelöli a megfelelő profilok között. Ha például a különböző profilok közül csak egy jelenik meg, akkor a *profil állapota összefoglaló* *hibaüzenetet*jelenít meg.  
+  
+  Az állapot további részleteinek megtekintéséhez nyissa meg az **Intune** > -**eszköz konfigurációs** > **profiljait**, és válassza ki a profilt. Szükség esetén kiválaszthatja az **eszköz állapotát** , majd kiválaszthat egy eszközt.  
 
 - **Állapotadatok** – részletes információk az eszköz titkosítási állapotáról.  
 
@@ -168,7 +172,7 @@ Amikor az Intune először titkosít egy macOS-eszközt a FileVault-mel, létrej
  
 A felügyelt eszközök esetében az Intune a személyes helyreállítási kulcs egy másolatát is letétbe helyezheti. A kulcsok letétbe való bekapcsolása lehetővé teszi az Intune-rendszergazdák számára, hogy a kulcsokat az eszközök védelmére, valamint az elveszett vagy elforgatott személyes helyreállítási kulcsok helyreállítására.  
  
-Az Intune több lehetőséget is támogat a személyes helyreállítási kulcsok elforgatására és helyreállítására. A kulcsok elforgatásának egyik oka az, hogy ha az aktuális személyes kulcs elvesztését kockáztatják.  
+Az Intune több lehetőséget is támogat a személyes helyreállítási kulcsok elforgatására és helyreállítására. A kulcsok elforgatásának egyik oka az, hogy ha az aktuális személyes kulcs elveszett vagy veszélyben van.  
  
 > [!IMPORTANT]  
 >  Azokat az eszközöket, amelyeket a felhasználók titkosítottak, és nem az Intune, nem kezelhetik az Intune-nal. Ez azt jelenti, hogy az Intune nem tudja kiutalni ezeknek az eszközöknek a személyes helyreállítását, és nem kezeli a helyreállítási kulcs rotációját.  Mielőtt az Intune felügyelni tudja az eszköz FileVault és helyreállítási kulcsait, a felhasználónak vissza kell fejtenie az eszközét, majd engedélyeznie kell az Intune-nak az eszköz titkosítását.  
@@ -177,7 +181,7 @@ Az Intune több lehetőséget is támogat a személyes helyreállítási kulcsok
 
 - **Automatikus elforgatás**: Rendszergazdaként beállíthatja a személyes helyreállítási kulcs FileVault beállítását, hogy az új helyreállítási kulcs rendszeres időközönként automatikusan létrejöjjön.  Ha egy eszközhöz új kulcs jön létre, a kulcs nem jelenik meg a felhasználó számára. Ehelyett a felhasználónak rendszergazda vagy a vállalati portál alkalmazás használatával kell lekérnie a kulcsot.  
 
-- **Manuális elforgatás**: Rendszergazdaként megtekintheti az Intune-nal felügyelt eszközökre vonatkozó információkat, amelyek titkosítása FileVault történik. Ezután megadhatja, hogy a vállalati eszközök helyreállítási kulcsa manuálisan legyen elforgatva. A személyes eszközökhöz nem lehet elforgatni a helyreállítási kulcsokat.  
+- **Manuális elforgatás**: Rendszergazdaként megtekintheti az Intune-nal kezelt és a FileVault-mel titkosított eszközök adatait. Ezután dönthet úgy, hogy manuálisan elforgatja a vállalati eszközök helyreállítási kulcsát. A személyes eszközökhöz nem lehet elforgatni a helyreállítási kulcsokat.  
 
   Helyreállítási kulcs elforgatása: 
   1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba, lépjen az **eszközök** pontra, majd a kezelés területen válassza a **minden eszköz**lehetőséget.  

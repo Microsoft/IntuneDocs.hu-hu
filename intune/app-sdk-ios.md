@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ca7e7646f51331e4d24cec9b50d7afae4870ebe3
-ms.sourcegitcommit: 4f3fcc6dcbfe2c4e0651d54a130907a25a4ff66e
+ms.openlocfilehash: 8774b5af7555462b7754e4d0f8a6f50a330854ff
+ms.sourcegitcommit: 58a22f1b4a3fffffb1f7da228f470b3b0774fc42
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69894362"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70021816"
 ---
 # <a name="microsoft-intune-app-sdk-for-ios-developer-guide"></a>A Microsoft Intune App SDK iOS rendszeren – fejlesztői útmutató
 
@@ -115,21 +115,8 @@ Az Intune App SKD engedélyezéséhez kövesse az alábbi lépéseket:
      Húzza az `IntuneMAMResources.bundle` erőforrás-csomagot a **Copy Bundle Resources** (Erőforrás-csomagok másolása) alatti **Build Phases** (Összeállítási fázisok) elemre a projektbe való felvételhez.
 
      ![Intune App SDK (iOS) – erőforráscsomagok másolása](./media/intune-app-sdk-ios-copy-bundle-resources.png)
-     
-2. Ha az Intune API-k bármelyikét meg kell hívni a Swift-ből, az alkalmazásnak/bővítménynek egy Objective-C áthidaló fejlécen keresztül kell importálnia a szükséges Intune SDK-fejléceket. Ha az alkalmazás/bővítmény még nem tartalmaz Objective-c áthidaló fejlécet, megadhat egyet a `SWIFT_OBJC_BRIDGING_HEADER` konfiguráció létrehozása vagy a Xcode felhasználói felületének **Objective-c áthidaló fejléc** mezője segítségével. Az áthidaló fejlécnek a következőhöz hasonlóan kell kinéznie:
-
-   ```objc
-      #import <IntuneMAMSwift/IntuneMAM.h>
-   ```
-   
-   Így az összes Intune SDK API-jának elérhetővé válik az alkalmazás vagy a bővítmény összes gyors forrásfájl-fájlja. 
-   
-    > [!NOTE]
-    > * Dönthet úgy, hogy csak bizonyos Intune SDK-fejléceket szeretne a Swift-be áthidalni, nem pedig a teljes mértékben felölelő IntuneMAM. h
-    > * Attól függően, hogy az Ön által integrált keretrendszer/statikus könyvtár milyen mértékben eltérhet, akkor a fejlécsor (ok) elérési útja eltérő lehet.
-    > * Az Intune SDK API-k Swift-ben elérhetővé tétele egy modul-importálási utasítással (pl.: import IntuneMAMSwift) jelenleg nem támogatott. Az ajánlott módszer a Objective-C áthidaló fejléc használata.
-    
-3. Vegye fel a következő iOS-keretrendszereket a projektbe:  
+         
+2. Vegye fel a következő iOS-keretrendszereket a projektbe:  
 -  MessageUI.framework  
 -  Security.framework  
 -  MobileCoreServices.framework  
@@ -142,7 +129,7 @@ Az Intune App SKD engedélyezéséhez kövesse az alábbi lépéseket:
 -  QuartzCore.framework  
 -  WebKit.framework
 
-4. Engedélyezze a kulcsláncmegosztást (ha még nincs engedélyezve) a projekthez használni kívánt elemeken a **Capabilities** (Képességek) lehetőségre kattintva, majd kapcsolja be a **Keychain Sharing** (Kulcsláncmegosztás) kapcsolót. A következő lépéshez szükséges a kulcsláncmegosztás.
+3. Engedélyezze a kulcsláncmegosztást (ha még nincs engedélyezve) a projekthez használni kívánt elemeken a **Capabilities** (Képességek) lehetőségre kattintva, majd kapcsolja be a **Keychain Sharing** (Kulcsláncmegosztás) kapcsolót. A következő lépéshez szükséges a kulcsláncmegosztás.
 
    > [!NOTE]
    > A telepítési profil esetében elengedhetetlen az új kulcsláncmegosztási értékek támogatása. A kulcslánc-hozzáférési csoportoknak támogatniuk kell a helyettesítő karaktert. Ezt úgy is megtekintheti, ha megnyitja a. mobileprovision fájlt egy szövegszerkesztőben, megkeresi a **kulcstartó-hozzáférési csoportokat**, és gondoskodik arról, hogy legyen helyettesítő karaktere. Példa:
@@ -154,7 +141,7 @@ Az Intune App SKD engedélyezéséhez kövesse az alábbi lépéseket:
    >  </array>
    >  ```
 
-5. A kulcstartó megosztásának engedélyezése után kövesse az alábbi lépéseket egy külön hozzáférési csoport létrehozásához, amelyben az Intune app SDK tárolja az adattárolót. A kulcslánc-hozzáférési csoportokat a kezelőfelületet vagy a jogosultságokat tartalmazó fájl használatával hozhatja létre. Ha a felhasználói felületet használja a kulcstartó-hozzáférési csoport létrehozásához, kövesse az alábbi lépéseket:
+4. A kulcstartó megosztásának engedélyezése után kövesse az alábbi lépéseket egy külön hozzáférési csoport létrehozásához, amelyben az Intune app SDK tárolja az adattárolót. A kulcslánc-hozzáférési csoportokat a kezelőfelületet vagy a jogosultságokat tartalmazó fájl használatával hozhatja létre. Ha a felhasználói felületet használja a kulcstartó-hozzáférési csoport létrehozásához, kövesse az alábbi lépéseket:
 
      a. Ha a Mobile alkalmazás nem rendelkezik definiált kulcstartó-hozzáférési csoportokkal, adja hozzá az alkalmazás köteg-AZONOSÍTÓját az **első** csoporthoz.
     
@@ -172,11 +159,11 @@ Az Intune App SKD engedélyezéséhez kövesse az alábbi lépéseket:
       > [!NOTE]
       > A jogosultságokat tartalmazó fájl egy XML-fájl, amely minden mobilalkalmazásnál egyedi. és speciális engedélyek és képességek meghatározására szolgál az iOS-alkalmazásban. Ha az alkalmazása eddig nem rendelkezett jogosultságokat tartalmazó fájllal, a kulcsláncmegosztás engedélyezésekor (3. lépés) az Xcode generál egyet. Győződjön meg arról, hogy az alkalmazás köteg-azonosítója a lista első bejegyzése.
 
-6. Az alkalmazáshoz tartozó Info.plist fájl `LSApplicationQueriesSchemes` tömbjében tüntessen fel minden protokollt, amelyet az alkalmazás átad az `UIApplication canOpenURL` számára. Ne felejtse el menteni a módosításokat, mielőtt folytatná a következő lépéssel.
+5. Az alkalmazáshoz tartozó Info.plist fájl `LSApplicationQueriesSchemes` tömbjében tüntessen fel minden protokollt, amelyet az alkalmazás átad az `UIApplication canOpenURL` számára. Ne felejtse el menteni a módosításokat, mielőtt folytatná a következő lépéssel.
 
-7. Ha az alkalmazás még nem használ FaceID-t, győződjön meg róla, hogy az [NSFaceIDUsageDescription Info.plist kulcs](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW75) az alapértelmezett üzenettel van konfigurálva. Ez kötelező, mivel az iOS így tudata a felhasználóval, hogy az alkalmazás hogyan használja a FaceID-t. A FaceID egy Intune App Protection szabályzatbeállítással alkalmazás-hozzáférési módként használható, ha ezt a rendszergazda konfigurálta.
+6. Ha az alkalmazás még nem használ FaceID-t, győződjön meg róla, hogy az [NSFaceIDUsageDescription Info.plist kulcs](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW75) az alapértelmezett üzenettel van konfigurálva. Ez kötelező, mivel az iOS így tudata a felhasználóval, hogy az alkalmazás hogyan használja a FaceID-t. A FaceID egy Intune App Protection szabályzatbeállítással alkalmazás-hozzáférési módként használható, ha ezt a rendszergazda konfigurálta.
 
-8. Fejezze be az alkalmazás Info.plist fájljának konfigurálását az [SDK adattárában](https://github.com/msintuneappsdk/ms-intune-app-sdk-ios) található IntuneMAMConfigurator eszközzel. Az eszköz három paraméterrel rendelkezik:
+7. Fejezze be az alkalmazás Info.plist fájljának konfigurálását az [SDK adattárában](https://github.com/msintuneappsdk/ms-intune-app-sdk-ios) található IntuneMAMConfigurator eszközzel. Az eszköz három paraméterrel rendelkezik:
 
    |Tulajdonság|Használat|
    |---------------|--------------------------------|
@@ -228,7 +215,7 @@ Ha az alkalmazás már használja az ADAL-t vagy a MSAL-t, a következő konfigu
 
 Az alkalmazások felülbírálhatják ezeket az Azure AD-beállításokat futtatáskor. Ehhez egyszerűen állítsa be az `aadAuthorityUriOverride`, `aadClientIdOverride` és az `aadRedirectUriOverride` tulajdonságot az `IntuneMAMPolicyManager` példányon.
 
-4. Győződjön meg arról, hogy az iOS-alkalmazás engedélyeit az App Protection-szabályzat (APP) szolgáltatáshoz adja meg. Az [első lépések az INTUNE SDK](https://docs.microsoft.com/intune/app-sdk-get-started#next-steps-after-integration) -útmutatóban című témakör útmutatását követve adja meg az alkalmazás hozzáférését az Intune app Protection szolgáltatáshoz (nem kötelező).  
+4. Győződjön meg arról, hogy az iOS-alkalmazás engedélyeit az App Protection-szabályzat (APP) szolgáltatáshoz adja meg. Az [első lépések az INTUNE SDK](https://docs.microsoft.com/intune/app-sdk-get-started#next-steps-after-integration) -útmutatóban című témakör útmutatását követve[adja meg az alkalmazás hozzáférését az Intune app Protection szolgáltatáshoz (nem kötelező)](https://docs.microsoft.com/intune/app-sdk-get-started#give-your-app-access-to-the-intune-app-protection-service-optional).  
 
 > [!NOTE]
 > Az Info.plist fájl használatát javasoljuk az összes olyan beállításhoz, amely statikus, és nem igényel futtatáskori meghatározást. Az `IntuneMAMPolicyManager`-tulajdonságokhoz rendelt értékek elsőbbséget élveznek az Info.plist fájlban megadott hasonló értékekkel szemben, és még az alkalmazás újraindítása után is megmaradnak. Az SDK továbbra is használni fogja ezeket szabályzat-ellenőrzéshez egészen a felhasználó regisztrációjának törléséig, vagy addig, amíg nem módosítja vagy törli az értékeket.

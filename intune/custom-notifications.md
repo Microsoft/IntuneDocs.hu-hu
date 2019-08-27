@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3a4314abec83bc31cd6fe178873ba5bce7bf1a0c
-ms.sourcegitcommit: 864fdf995c2b41f104a98a7e2665088c2864774f
+ms.openlocfilehash: 5a75397222117b8e56cb34947363f8624b89b27b
+ms.sourcegitcommit: 58a22f1b4a3fffffb1f7da228f470b3b0774fc42
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680102"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70021755"
 ---
 # <a name="send-custom-notifications-in-intune"></a>Egyéni értesítések küldése az Intune-ban  
 
@@ -51,7 +51,6 @@ Az egyéni értesítési üzenetek közé tartozik egy rövid cím és egy 500 k
 - A csoportok tartalmazhatnak felhasználókat vagy eszközöket, de az üzeneteket csak a felhasználók kapják meg, és a rendszer minden olyan iOS-vagy Android-eszközre elküldi, amelyet a felhasználó regisztrált.  
 
 **Kézbesítés**:  
-- Az Intune egy értesítés elküldése után legfeljebb egy óráig próbálkozik a kézbesítéssel.  
 - Az Intune üzeneteket küld a felhasználók Céges portál alkalmazásnak, amely ezután létrehozza a leküldéses értesítést. A felhasználóknak nem kell bejelentkezniük az alkalmazásba az értesítés küldéséhez az eszközön.  
 - Az Intune és a Céges portál alkalmazás nem tudja garantálni az egyéni értesítések kézbesítését. Előfordulhat, hogy az egyéni értesítések több órányi késés után is megjelennek, így sürgős üzenetekhez nem használhatók.  
 - Az Intune-ból származó egyéni értesítési üzenetek szabványos leküldéses értesítésként jelennek meg az eszközökön. Ha a Céges portál alkalmazás egy iOS-eszközön van megnyitva, amikor megkapja az értesítést, a rendszer leküldéses értesítés helyett az alkalmazásban jeleníti meg az értesítést.  

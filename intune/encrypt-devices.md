@@ -16,12 +16,12 @@ ms.reviewer: annovich
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
-ms.openlocfilehash: b7c76439b734837b5a4dd7e5fdbba5d21d0681d7
-ms.sourcegitcommit: ec22a186a9cfa489a8490698e387624e480892d8
+ms.openlocfilehash: 5e97e23322150c7a030a3657b6476090d719a448
+ms.sourcegitcommit: a6385b8370c20a44d0869f7920d6b2866edaa5e2
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68960427"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70027400"
 ---
 # <a name="use-device-encryption-with-intune"></a>Az eszközök titkosításának használata az Intune-nal  
 
@@ -80,6 +80,8 @@ Az Intune-nal kezelhető FileVault-beállítás részleteiért lásd: [FileVault
 ### <a name="manage-filevault"></a>FileVault kezelése  
 
 Miután az Intune titkosít egy macOS-eszközt a FileVault-mel, megtekintheti és kezelheti a FileVault helyreállítási kulcsait, amikor megtekinti az Intune [titkosítási jelentését](encryption-monitor.md).  
+
+Miután az Intune titkosít egy macOS-eszközt a FileVault-mel, megtekintheti az eszköz személyes helyreállítási kulcsát a webes Céges portál bármely eszközön. Egyszer a webes Céges portál válassza ki a titkosított macOS-eszközt, majd válassza a "helyreállítási kulcs beolvasása" lehetőséget távoli eszköz műveletként. 
 
 ## <a name="bitlocker-encryption-for-windows-10"></a>BitLocker-titkosítás a Windows 10 rendszerhez  
 

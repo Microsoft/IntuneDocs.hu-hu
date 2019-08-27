@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 08/15/2019
+ms.date: 08/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 330bfa319ca0202a5edc09d8f27e40c18ce89d39
-ms.sourcegitcommit: 6b5907046f920279bbda3ee6c93e98594624c05c
+ms.openlocfilehash: 0cda32e72956e5998d5ebc8d8bed2baea39951ec
+ms.sourcegitcommit: 58a22f1b4a3fffffb1f7da228f470b3b0774fc42
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69582945"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70021805"
 ---
 # <a name="configure-and-use-pkcs-certificates-with-intune"></a>PKCS-tanúsítványok konfigurálása és használata az Intune-nal
 
@@ -70,9 +70,10 @@ A PKCS-tanúsítványok Intune-nal való használatához a következő infrastru
   Ez az összekötő kezeli az Intune-ba importált PFX-fájlok kéréseit egy adott felhasználó számára az S/MIME e-mail-titkosításhoz.  
 
   Ez az összekötő automatikusan képes frissíteni magát, ha új verziók válnak elérhetővé. A frissítési képesség használatához a következőket kell tennie:
-  - Telepítse az importált PFX tanúsítvány-összekötőt Microsoft Intune a kiszolgálón.
-  - A fontos frissítések automatikus fogadásához győződjön meg arról, hogy a tűzfalak nyitva vannak, amelyek lehetővé teszik, hogy az összekötő kapcsolatba lépjen a **443**-es port **AutoUpdate.msappproxy.net** .  
+  - Telepítse az importált PFX tanúsítvány-összekötőt Microsoft Intune a kiszolgálón.  
+  - A fontos frissítések automatikus fogadásához győződjön meg arról, hogy a tűzfalak nyitva vannak, amelyek lehetővé teszik, hogy az összekötő kapcsolatba lépjen a **443**-es port **AutoUpdate.msappproxy.net** .   
 
+  További információ az összekötő által elérhető összes hálózati végpontról: [Microsoft Intune tanúsítvány-összekötő](intune-endpoints.md#microsoft-intune-certificate-connector).
 
 - **Windows Server**:  
   Windows-kiszolgálót használ a gazdagéphez:
