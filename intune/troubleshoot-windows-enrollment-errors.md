@@ -16,12 +16,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6313741af237478bc5eea0cc5b5524250b5d46ac
-ms.sourcegitcommit: db68056e2db17dfdeaa216c684302567742e6416
+ms.openlocfilehash: e8af18192a3a15fee15dd2204ada572e6a67be1c
+ms.sourcegitcommit: 6c74ff568267d85fd1d44fda75e3e24ead87cb2b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68993696"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70063006"
 ---
 # <a name="troubleshoot-windows-device-enrollment-problems-in-microsoft-intune"></a>A Windows-eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune
 
@@ -331,7 +331,7 @@ További információ arról, hogyan telepíthet egy Windows-eszközt kioszk mó
 
 Ez a probléma általában akkor fordul elő, ha az eszköz újraindul egy hibrid Azure AD Autopilot-forgatókönyvben, amikor az eszköz időtúllépést okoz a kezdeti bejelentkezési képernyőn. Ez azt jelenti, hogy a tartományvezérlő nem található vagy nem érhető el sikeresen a kapcsolódási problémák miatt. Vagy azt, hogy az eszköz olyan állapotba lépett, amely nem tud csatlakozni a tartományhoz.
 
-**Okozhat** A leggyakoribb ok az, hogy a hibrid Azure AD-csatlakozás használatban van, és a felhasználó kiosztása funkció az Autopilot-profilban van konfigurálva. A felhasználó kiosztása funkcióval Azure AD-csatlakozást hajt végre az eszközön a kezdeti bejelentkezési képernyőn, amely olyan állapotba helyezi az eszközt, amelyben nem tud csatlakozni a helyszíni tartományhoz. Ezért a felhasználó kiosztása funkció csak a standard Azure AD JOIN Autopilot-forgatókönyvekben használható.  A funkciót a hibrid Azure AD JOIN forgatókönyvekben kell használni.
+**Okozhat** A leggyakoribb ok az, hogy a hibrid Azure AD-csatlakozás használatban van, és a felhasználó kiosztása funkció az Autopilot-profilban van konfigurálva. A felhasználó kiosztása funkcióval Azure AD-csatlakozást hajt végre az eszközön a kezdeti bejelentkezési képernyőn, amely olyan állapotba helyezi az eszközt, amelyben nem tud csatlakozni a helyszíni tartományhoz. Ezért a felhasználó kiosztása funkció csak a standard Azure AD JOIN Autopilot-forgatókönyvekben használható.  A szolgáltatás nem használható hibrid Azure AD JOIN-forgatókönyvekben.
 
 #### <a name="resolution"></a>Megoldás:
 

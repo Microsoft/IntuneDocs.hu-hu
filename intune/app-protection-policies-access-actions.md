@@ -1,12 +1,12 @@
 ---
-title: Alkalmazás alkalmazásvédelmi szabályzat feltételes indítási műveletekről használatával adatok törlése
+title: Adatok törlése az App Protection-szabályzat feltételes indítási műveleteivel
 titleSuffix: Microsoft Intune
-description: Ismerje meg, hogy a Microsoft Intune app protection szabályzat feltételes indítási műveletekről használata az adatok szelektív törlése.
+description: Megtudhatja, hogyan törölheti az adatok szelektív törlését az alkalmazás-védelmi szabályzat feltételes indítási műveleteivel Microsoft Intuneban.
 keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 05/20/2019
+ms.date: 08/27/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -17,26 +17,26 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 65115f6520122cd4b3429411db67052481984617
-ms.sourcegitcommit: cb4e71cd48311ea693001979ee59f621237a6e6f
+ms.openlocfilehash: 8cf55084951c3a423b79e4588f8814b5e73ce8e8
+ms.sourcegitcommit: 6c74ff568267d85fd1d44fda75e3e24ead87cb2b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67558444"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70063020"
 ---
-# <a name="selectively-wipe-data-using-app-protection-policy-conditional-launch-actions-in-intune"></a>Az Intune app protection szabályzat feltételes indítási műveletekről használata az adatok szelektív törlése
+# <a name="selectively-wipe-data-using-app-protection-policy-conditional-launch-actions-in-intune"></a>Adatok szelektív törlése az App Protection-szabályzat feltételes indítási műveleteivel az Intune-ban
 
 Az Intune alkalmazásvédelmi szabályzatainak használatával olyan beállításokat konfigurálhat, amelyek megakadályozzák, hogy a felhasználók hozzáférjenek egy vállalati alkalmazáshoz vagy fiókhoz. Ezek a vállalat által meghatározott adatáttelepítési és hozzáférési követelményekre vonatkozó beállítások például a feltört eszközök vagy a minimális operációsrendszer-verzió kezelésére.
  
 Ezekkel a beállításokkal egyértelműen megadható az összes vállalati adat törlése a felhasználó eszközéről mint a nem megfelelőség esetén végrehajtandó művelet. Bizonyos beállításokhoz több művelet is konfigurálható, például a hozzáférés tiltása és az adatok törlése bizonyos megadott értékek alapján.
 
-## <a name="create-an-app-protection-policy-using-conditional-launch-actions"></a>Hozzon létre egy alkalmazásvédelmi szabályzatot használja a feltételes indítási műveletekről
+## <a name="create-an-app-protection-policy-using-conditional-launch-actions"></a>Alkalmazás-védelmi szabályzat létrehozása feltételes indítási műveletek használatával
 
-1. Jelentkezzen be a [Intune](https://go.microsoft.com/fwlink/?linkid=2090973).
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** panelen válassza az **Ügyfélalkalmazások** > **Alkalmazásvédelmi szabályzatok** lehetőséget.
 4. Kattintson a **Szabályzat hozzáadása** lehetőségre (a meglévő szabályzatok is módosíthatók). 
 5. Kattintson a **Kötelező beállítások konfigurálása** lehetőségre a szabályzathoz konfigurálható beállítások listájának megjelenítéséhez. 
-6. A Görgetés lefelé a beállítások ablaktáblában, látni fogja a szakaszig **feltételes indítási** egy szerkeszthető táblával.
+6. A Settings (beállítások) ablaktáblán lefelé görgetve megtekintheti a **feltételes indítás** nevű szakaszt egy szerkeszthető táblával.
 
     ![Képernyőkép az Intune alkalmazásvédelmi hozzáférési műveleteiről](./media/apps-selective-wipe-access-actions01.png)
 
@@ -81,14 +81,14 @@ Android rendszeren a következő beállításokhoz konfigurálhat műveleteket a
 - Alkalmazás minimális verziója
 - Minimális javításverzió
 - Eszközgyártó(k)
-- SafetyNet eszközigazolás
+- Biztonság-eszköz igazolása
 - Alkalmazások fenyegetettségvizsgálata
 
 Az **Eszközgyártó(k)** beállítás használatához gépelje be az Android-gyártók pontosvesszővel tagolt felsorolását. Az eszköz Android-gyártóját az eszközbeállításokban találja meg.<br>
-Példabemenet: *Gyártó A; B gyártója* 
+Példa bemenetre: *A gyártó; "B" gyártó* 
 
 >[!NOTE]
-> Ezek az eszközök Intune-beli jelentett néhány gyakori gyártó, és bemenetként is használható: Asus;Blackberry;Bq;Gionee;Google;Hmd global;Htc;Huawei;Infinix;Kyocera;Lemobile;Lenovo;Lge;Motorola;Oneplus;Oppo;Samsung;Sharp;Sony;Tecno;Vivo;Vodafone;Xiaomi;Zte;Zuk
+> Ezek az Intune-t használó eszközökről jelentett gyakori gyártók, amelyek bemenetként is használhatók: Asus;Blackberry;Bq;Gionee;Google;Hmd global;Htc;Huawei;Infinix;Kyocera;Lemobile;Lenovo;Lge;Motorola;Oneplus;Oppo;Samsung;Sharp;Sony;Tecno;Vivo;Vodafone;Xiaomi;Zte;Zuk
 
 A végfelhasználói eszközökön az Intune-ügyfél az Intune-ban az Application Protection-szabályzatokhoz megadott eszközmodellsztringek egyszerű egyeztetése alapján végez műveleteket. Az egyeztetés teljes mértékben az eszköz által jelentett értéktől függ. Az informatikai rendszergazda számára ajánlatos ellenőrizni, hogy a szándéknak megfelelő viselkedés történik-e, ennek a beállításnak kölönféle eszközgyártókon és modelleken alapuló, kisméretű felhasználói csoportot célzó tesztelésével. Az alapértelmezett érték a **Nincs konfigurálva**.<br>
 Állítsa be a következő műveletek egyikét: 
@@ -111,7 +111,7 @@ A következő lista a leggyakoribb műveleteket sorolja fel:
 
 Bizonyos beállítások, például az **Operációs rendszer minimális verziója**, a különféle verziószámok alapján minden lehetséges műveletet végrehajtásához konfigurálhatók. 
 
-![Képernyőkép a app protection hozzáférési műveletek – minimális operációsrendszer-verzió](./media/apps-selective-wipe-access-actions05.png)
+![Képernyőkép az App Protection-hozzáférési műveletekről – minimális operációsrendszer-verzió](./media/apps-selective-wipe-access-actions05.png)
 
 Ha egy beállítás teljesen konfigurálva van, akkor a sor megjelenik a csak olvasható nézetben, de bármikor módosítható. Ezen kívül megjelenik egy sor, amelyben új érték választható ki a **Beállítás** oszlopban. Azok a már konfigurált beállítások, amelyekhez nem adható meg több művelet, nem lesznek kiválaszthatók a legördülő listában.
 

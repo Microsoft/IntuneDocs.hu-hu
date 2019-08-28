@@ -1,12 +1,12 @@
 ---
 title: Alkalmazásalapú hitelesítés az Intune-adattárházban
 titleSuffix: Microsoft Intune
-description: Ez a témakör ismerteti a Microsoft Intune alkalmazásalapú hitelesítés Data warehouse-bA.
+description: Ez a témakör a Microsoft Intune adatraktár-alkalmazásra vonatkozó hitelesítést ismerteti.
 keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 05/31/2019
+ms.date: 08/27/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.localizationpriority: medium
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f87256580ce3a0e31ef86f15244f49046d9dd35e
-ms.sourcegitcommit: 7315fe72b7e55c5dcffc6d87f185f3c2cded9028
+ms.openlocfilehash: 2f70ca7d8d85853c38e2e8e88d06bae966431989
+ms.sourcegitcommit: 6c74ff568267d85fd1d44fda75e3e24ead87cb2b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67530244"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70062977"
 ---
 # <a name="intune-data-warehouse-application-only-authentication"></a>Alkalmazásalapú hitelesítés az Intune-adattárházban
 
@@ -92,7 +92,7 @@ Hozzon létre a Visual Studióban egy .NET-keretrendszerre épülő, C# nyelvű 
 2. A bal oldali listában válassza a **Visual C#** lehetőséget a .NET-keretrendszerre épülő összes projekttípus megjelenítéséhez.
 3. Válassza a **Console App (.NET Framework)** lehetőséget, adja meg az alkalmazás nevét, majd kattintson az **OK** gombra az alkalmazás létrehozásához.
 4. A **Solution Explorer** (Megoldáskezelő) panelen válassza a **Program.cs** fájlt a kód megjelenítéséhez.
-5. A Megoldáskezelőben, fel kell vennie egy hivatkozást a szerelvény `System.Configuration`.
+5. A Megoldáskezelőban adjon hozzá egy hivatkozást a szerelvényhez `System.Configuration`.
 6. Válassza a helyi menüben az **Add (Hozzáadás)**  > **New item (Új elem)** lehetőséget. Ekkor megjelenik az **Add New Item** (Új elem hozzáadása) párbeszédpanel.
 7. Válassza a bal oldali listában a **Visual C#** > **Code** (Kód) lehetőséget.
 8. Válassza a **Class** (Osztály) lehetőséget, módosítsa az osztály nevét az *IntuneDataWarehouseClass.cs* névre, és kattintson az **Add** (Hozzáadás) gombra.

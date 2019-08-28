@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 08/13/2019
+ms.date: 08/27/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -15,12 +15,12 @@ ms.reviewer: joglocke
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 26ad26fedc6fe0e44328f5c77fa5f093c1230a28
-ms.sourcegitcommit: 6f84e880411a202c5500eb460779b7ef63a7f430
+ms.openlocfilehash: b7c4cf67c93277ef4b54cdd72a6e06f64dd442e4
+ms.sourcegitcommit: 6c74ff568267d85fd1d44fda75e3e24ead87cb2b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68978509"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70063033"
 ---
 # <a name="use-security-baselines-to-configure-windows-10-devices-in-intune"></a>Biztonsági alapkonfigurációk használata a Windows 10-es eszközök Intune-ban való konfigurálásához
 
@@ -64,6 +64,12 @@ Amikor létrehoz egy biztonsági alapkonfiguráció- *profilt*, a profil automat
 Dönthet úgy, hogy egy adott profilhoz használt alapkonfiguráció [verzióját módosítja](#change-the-baseline-version-for-a-profile) . Ez azt jelenti, hogy amikor egy új verzió jön létre, nem kell létrehoznia új alapkonfigurációt, hogy kihasználhassa. Ehelyett, ha elkészült, kiválaszthat egy alapkonfigurációt, majd a beépített lehetőség használatával módosíthatja a profil példányának verzióját egy újat.  
 
 ## <a name="available-security-baselines"></a>Elérhető biztonsági alaptervek 
+
+ Az Intune-környezet egy vagy több elérhető alaptervét egyszerre használhatja. Ugyanazon biztonsági alapkonfigurációk több példányát is használhatja, amelyek eltérő testreszabási lehetőségekkel rendelkeznek. 
+
+Ha több biztonsági alapkonfigurációt használ, tekintse át az egyes beállításokban található beállításokat annak azonosításához, hogy a különböző alaptervek hogyan vezessenek egymással ütköző értékeket ugyanahhoz a beállításhoz. Mivel a különböző szándékokhoz tervezett biztonsági alapkonfigurációkat telepítheti, és ugyanazon alapterv több példányát is üzembe helyezheti, amely testreszabott beállításokat tartalmaz, létrehozhat konfigurációs ütközéseket [a vizsgálni kívánt eszközökhöz, és Megoldott](security-baselines-monitor.md#troubleshoot-using-per-setting-status).  Vegye figyelembe az [eszköz konfigurációs profiljait](device-profiles.md)is, amelyek számos, a biztonsági alapkonfigurációhoz hasonló beállítást konfigurálnak. 
+
+
 
 Az Intune-nal az alábbi biztonsági alapkonfigurációk használhatók. A hivatkozások használatával megtekintheti az egyes alaptervek legutóbbi példányának beállításait. 
 
