@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 269ba2e951ccee2b0fdf2c4cd5a93a9d78aa6923
-ms.sourcegitcommit: e6edfbfd63dd7c2500ce1123205aa2af9a7e8e2e
+ms.openlocfilehash: a3055d375c98f9a74d0e738b7e894ba038b31776
+ms.sourcegitcommit: cf40f641af4746a1e34edd980dc6ec96fd040126
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68783244"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121861"
 ---
 # <a name="create-a-design"></a>Terv létrehozása
 
@@ -166,7 +166,7 @@ A nyilvános kulcsú infrastruktúra tanúsítványokat szolgáltat, amelyekkel 
 
 Ha az Intune VPN-, Wi-Fi- vagy e-mail-profiljaihoz tanúsítványokat tervez használni, bizonyosodjon meg róla, hogy a szervezetnél [már ki van alakítva egy támogatott PKI-infrastruktúra](certificates-configure.md), amely készen áll a tanúsítványprofilok létrehozására és üzembe helyezésére.
 
-Emellett SCEP-tanúsítványok kiállítása esetén azt is el kell dönteni, hogy melyik kiszolgálón üzemeljen a Hálózati eszközök tanúsítványigénylési szolgáltatása (NDES), és hogyan fog zajlani a kommunikáció.
+Továbbá, ha SCEP-profilokat fog használni, meg kell határoznia, hogy melyik kiszolgáló fogja üzemeltetni a hálózati eszközök tanúsítványigénylési szolgáltatását (NDES), és hogy a kommunikáció hogyan fog történni.
 
 További információk az alábbiakról:
 
@@ -297,7 +297,7 @@ Az Intune a tanúsítványprofilok alapján bocsát ki tanúsítványokat a felh
 Ajánlott dokumentálnia, hogy mely felhasználói csoportoknak van szüksége tanúsítványra, hány tanúsítványprofilra lesz szükség, és mely felhasználói csoportokhoz kell őket telepíteni.
 
 >[!NOTE]
-> Ne feledje, hogy a SCEP-tanúsítványokhoz megbízható főtanúsítvány is szükséges. Ezért gondoskodjon róla, hogy minden SCEP-tanúsítványt kapó felhasználó kapjon megbízható főtanúsítványt is. Ha SCEP-tanúsítványokra van szüksége, tervezze meg és dokumentálja a szükséges SCEP-tanúsítványsablonokat.
+> Ne feledje, hogy a SCEP tanúsítvány-profilhoz a megbízható főtanúsítvány szükséges, ezért győződjön meg arról, hogy az SCEP-tanúsítvány profiljának összes felhasználója megbízható főtanúsítványt is kap. Ha SCEP-tanúsítványokra van szüksége, tervezze meg és dokumentálja a szükséges SCEP-tanúsítványsablonokat.
 
 Az alábbi példa szemlélteti, hogyan lehet dokumentálni a tanúsítványokat a tervezés folyamán:
 

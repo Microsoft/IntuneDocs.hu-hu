@@ -1,11 +1,11 @@
 ---
-title: Naplók irányítása az Azure monitorban Microsoft Intune-Azure használatával | Microsoft Docs
+title: Naplók átirányítása Azure Monitor Microsoft Intune-Azure használatával | Microsoft Docs
 description: A diagnosztikai beállításokkal naplókat és műveleti naplókat küldhet Microsoft Intune Azure Storage-fiókba, Event hubokba vagy log analyticsbe. Válassza ki, hogy mennyi ideig szeretné megőrizni az adatmennyiséget, és megtekintheti a különböző méretű bérlők becsült költségeit.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/18/2019
+ms.date: 08/28/2019
 ms.topic: troubleshooting
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -15,16 +15,20 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d95b37d18fa609f1c4e98d4fad5cfa600333b90a
-ms.sourcegitcommit: bd09decb754a832574d7f7375bad0186a22a15ab
+ms.openlocfilehash: ed32ad564f850c06b37b15e1994ac066a929ffaa
+ms.sourcegitcommit: cf40f641af4746a1e34edd980dc6ec96fd040126
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68354519"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70122416"
 ---
 # <a name="send-log-data-to-storage-event-hubs-or-log-analytics-in-intune-preview"></a>Naplózási adatküldés a Storage, az Event hubok vagy a log Analytics számára az Intune-ban (előzetes verzió)
 
-A Microsoft Intune beépített naplókat tartalmaz, amelyek információkat biztosítanak a környezetéről. A **naplók** az Intune-ban megjelenő különböző eseményekre vagy feladatokra vonatkozó adatokat jelenítik meg. Az **operatív naplók (előzetes verzió)** részletesen ismertetik a regisztrálni kívánt (vagy sikertelen) felhasználókat és eszközöket, valamint a nem megfelelő eszközök részleteit.
+A Microsoft Intune tartalmaz olyan beépített naplókat, amelyek a környezettel kapcsolatos információkat biztosítanak:
+
+- A **naplók** az Intune-ban megjelenő különböző eseményekre vagy feladatokra vonatkozó adatokat jelenítik meg.
+- Az **operatív naplók (előzetes verzió)** részletesen ismertetik a regisztrálni kívánt felhasználók és eszközök részleteit, valamint a nem megfelelő eszközök részleteit.
+- Az **eszköz megfelelőségi szervezeti naplói (előzetes verzió)** az eszköz megfelelőségének szervezeti jelentését mutatják be az Intune-ban, valamint a nem megfelelő eszközök részleteit.
 
 Ezeket a naplókat Azure Monitor szolgáltatásokhoz is el lehet juttatni, beleértve a Storage-fiókokat, az Event hubokat és a log Analytics szolgáltatást. Pontosabban a következőket teheti:
 
@@ -35,7 +39,7 @@ Ezeket a naplókat Azure Monitor szolgáltatásokhoz is el lehet juttatni, bele�
 
 Ezek a funkciók az Intune **diagnosztikai beállításainak** részét képezik.
 
-Ez a cikk bemutatja, hogyan lehet **diagnosztikai beállításokkal** elküldeni a naplózási adatait különböző szolgáltatásokra, példákat és becsléseket adni, és választ kaphat a gyakori kérdésekre.
+Ez a cikk bemutatja, hogyan lehet **diagnosztikai beállításokkal** elküldeni a naplózási adatait különböző szolgáltatásokra, példákat és becsléseket adni, és választ kaphat a gyakori kérdésekre. Ha engedélyezi ezt a funkciót, a rendszer átirányítja a naplókat a kiválasztott Azure Monitor szolgáltatáshoz.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -54,7 +58,7 @@ Attól függően, hogy hová szeretné átirányítani a naplózási naplót, a 
 ## <a name="send-logs-to-azure-monitor"></a>Naplók küldése az Azure monitornak
 
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. A **figyelés**területen válassza a **diagnosztikai beállítások**elemet. Amikor először nyitja meg, kapcsolja be:
+2. A **figyelés**területen válassza a **diagnosztikai beállítások**elemet. Amikor először nyitja meg, kapcsolja be. Ellenkező esetben adjon hozzá egy beállítást.
 
     ![A diagnosztikai beállítások bekapcsolása az Intune-ban a naplók Azure Monitorba való küldéséhez](media/diagnostics-settings-turn-on.png)
 
@@ -87,13 +91,20 @@ Attól függően, hogy hová szeretné átirányítani a naplózási naplót, a 
       Ha a Storage-fiók használata mellett dönt, adja meg, hogy hány napig szeretné megőrizni az adatok megőrzésének idejét. Az adatok örökre megtartásához állítsa a `0` **megőrzés (nap)** értéket (nulla).
 
       > [!NOTE]
-      > Az operatív naplók előzetes verzióban érhetők el. Ha visszajelzést szeretne küldeni, beleértve az operatív naplókban található információkat is, lépjen a [UserVoice](https://microsoftintune.uservoice.com/forums/291681-ideas/suggestions/36613948-diagnostics-settings-feedback) (új webhely megnyitása).
+      > Az operatív naplók előzetes verzióban érhetők el. A visszajelzések megadásához, beleértve az operatív naplókban található információkat is, ugorjon a [UserVoice](https://microsoftintune.uservoice.com/forums/291681-ideas/suggestions/36613948-diagnostics-settings-feedback).
+
+    - Napló > **DeviceComplianceOrg**: Az eszköz megfelelőségi szervezeti naplói (előzetes verzió) az eszköz megfelelőségének szervezeti jelentését mutatják be az Intune-ban, valamint a nem megfelelő eszközök részleteit. Válassza ezt a lehetőséget, ha el szeretné küldeni a megfelelőségi naplókat a Storage-fiókba, az Event hub-ba vagy a log analyticsbe.
+
+      Ha a Storage-fiók használata mellett dönt, adja meg, hogy hány napig szeretné megőrizni az adatok megőrzésének idejét. Az adatok örökre megtartásához állítsa a `0` **megőrzés (nap)** értéket (nulla).
+ 
+      > [!NOTE]
+      > Az eszközök megfelelőségi szervezeti naplói előzetes verzióban érhetők el. Ha visszajelzést szeretne küldeni, beleértve a jelentésben szereplő információkat is, ugorjon a [UserVoice](https://microsoftintune.uservoice.com/forums/291681-ideas/suggestions/36613948-diagnostics-settings-feedback).
 
     Ha elkészült, a beállítások a következő beállításokhoz hasonlóan néznek ki: 
 
     ![Az Intune-naplókat egy Azure Storage-fiókba küldő minta képe](media/diagnostics-settings-example.png)
 
-4. **Mentse** a változtatásokat. A beállítás megjelenik a listában. A létrehozást követően a beállítások módosításával módosíthatja a**beállításokat**.  > 
+4. **Mentse** a változtatásokat. A beállítás megjelenik a listában. A létrehozást követően a beállítások módosításával módosíthatja a beállításokat. > 
 
 ## <a name="use-audit-logs-throughout-intune"></a>Naplófájlok használata az Intune-ban
 

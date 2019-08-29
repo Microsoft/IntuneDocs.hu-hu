@@ -1,6 +1,6 @@
 ---
-title: Külső hitelesítésszolgáltatók (CA) használata SCEP-beli Microsoft Intune - ban |} A Microsoft Docs
-description: A Microsoft Intune a gyártó vagy külső hitelesítésszolgáltató (CA) segítségével kiadhatók tanúsítványok az SCEP protokollt használó mobileszközök is hozzáadhat. Ebben az áttekintő cikkben egy Azure Active Directory (Azure AD) alkalmazás ad engedélyeket a Microsoft Intune-nak tanúsítványok hitelesítésére. Ezután az SCEP-kiszolgáló beállítása következik a tanúsítványok kiadásához, az alkalmazás azonosítója, a hitelesítési kulcs és az AAD-alkalmazás bérlőazonosítója alapján.
+title: Harmadik féltől származó hitelesítésszolgáltatók (CA) használata az Azure-beli SCEP-val Microsoft Intune-Azure | Microsoft Docs
+description: A Microsoft Intuneban hozzáadhat egy gyártót vagy külső hitelesítésszolgáltatót (CA), amely a SCEP protokollt használó mobileszközök számára állít ki tanúsítványokat. Ebben az áttekintő cikkben egy Azure Active Directory (Azure AD) alkalmazás ad engedélyeket a Microsoft Intune-nak tanúsítványok hitelesítésére. Ezután az SCEP-kiszolgáló beállítása következik a tanúsítványok kiadásához, az alkalmazás azonosítója, a hitelesítési kulcs és az AAD-alkalmazás bérlőazonosítója alapján.
 keywords: ''
 author: brenduns
 ms.author: brenduns
@@ -15,34 +15,34 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c5ddb32502aa15f6eaf8f5866772ecd32e970d4
-ms.sourcegitcommit: 1b7ee2164ac9490df4efa83c5479344622c181b5
+ms.openlocfilehash: faff917dfafaaedb988cbbfb8174547f0b0ccf3b
+ms.sourcegitcommit: cf40f641af4746a1e34edd980dc6ec96fd040126
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67648455"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70122264"
 ---
 # <a name="add-partner-certification-authority-in-intune-using-scep"></a>Partner hitelesítésszolgáltató hozzáadása az Intune-ban SCEP protokollal
 
-Az Intune használatához a külső hitelesítésszolgáltatók (CA). Külső hitelesítésszolgáltatók is hozzon létre új vagy megújított tanúsítványokat a mobileszközök az egyszerű tanúsítványigénylési protokoll (SCEP) használatával, és a Windows, iOS, Android és macOS-eszközt támogathat.
+Harmadik féltől származó hitelesítésszolgáltatók (CA) használata az Intune-nal. A külső hitelesítésszolgáltatók létrehozhatnak új vagy megújított tanúsítványokat a Egyszerű tanúsítványigénylési protokoll (SCEP) használatával, és támogathatják a Windows, az iOS, az Android és a macOS rendszerű eszközöket.
 
 A funkció használata két részből áll: a nyílt forráskódú API-val kapcsolatos és az Intune-rendszergazdai feladatokból.
 
 **1. rész – Nyílt forráskódú API használata**  
-A Microsoft hozott létre API-t integrálja az Intune-nal. Ellenőrizheti az API-t, ha a tanúsítványok, sikeres vagy sikertelen az értesítéseket küldeni, és SSL, kifejezetten SSL szoftvercsatorna gyári segítségével kommunikál az Intune-ban.
+A Microsoft létrehozott egy API-t az Intune-nal való integráláshoz. Bár az API-val ellenőrizheti a tanúsítványokat, elküldheti a sikeres vagy sikertelen értesítéseket, és SSL-t, különösen SSL socket Factoryt használhat az Intune-nal való kommunikációhoz.
 
-Az API az [Intune SCEP API nyilvános GitHub-tárházban](http://github.com/Microsoft/Intune-Resource-Access/tree/develop/src/CsrValidation) érhető el, ahonnan letöltheti és felhasználhatja saját megoldásaiban. Ez az API használata külső SCEP-kiszolgálók egyéni leellenőrizni futtatásához Intune-ban, mielőtt SCEP építi ki egy tanúsítványt az eszközökre.
+Az API az [Intune SCEP API nyilvános GitHub-tárházban](http://github.com/Microsoft/Intune-Resource-Access/tree/develop/src/CsrValidation) érhető el, ahonnan letöltheti és felhasználhatja saját megoldásaiban. Használja ezt az API-t külső SCEP-kiszolgálókkal az egyéni Challenge-ellenőrzés futtatásához az Intune-nal, mielőtt SCEP a tanúsítványt egy eszközhöz.
 
 Az [Intune-integráció SCEP-felügyeleti megoldásról](scep-libraries-apis.md) szóló témakör részletesebben is leírja az API használatát, metódusait és az elkészített megoldások tesztelését.
 
 **2. rész – Az alkalmazás és profil létrehozása**  
-Azure Active Directory-alkalmazás használatakor az eszközökről érkező SCEP-kérelmek kezelésének jogosultságai az Intune-nak delegálhatók. Az Azure AD-alkalmazás a fejlesztő által létrehozott API-megoldásban használt alkalmazásazonosítót és hitelesítési kulcsot is tartalmazza. A rendszergazdák majd létrehozása és üzembe helyezése a SCEP-tanúsítványok profilokat az Intune-nal, és jelentéseket tekintheti meg az eszközön a telepítés állapota.
+Azure Active Directory-alkalmazás használatakor az eszközökről érkező SCEP-kérelmek kezelésének jogosultságai az Intune-nak delegálhatók. Az Azure AD-alkalmazás a fejlesztő által létrehozott API-megoldásban használt alkalmazásazonosítót és hitelesítési kulcsot is tartalmazza. A rendszergazdák ezután SCEP-tanúsítványokat hozhatnak létre és telepíthetnek az Intune-nal, és megtekinthetik a jelentéseket a telepítési állapotáról az eszközökön.
 
 Ez a cikk rendszergazdai szempontból tekinti át ezt a funkciót, beleértve az Azure AD-alkalmazás létrehozását is.
 
 ## <a name="overview"></a>Áttekintés
 
-A következő lépések áttekintést adnak a SCEP-tanúsítványok Intune-beli kiadásáról:
+A következő lépések áttekintést nyújtanak a tanúsítványok SCEP való használatáról az Intune-ban:
 
 1. Az Intune-ban egy rendszergazda létrehoz egy SCEP-tanúsítványprofilt, majd a profil céljaként felhasználókat vagy eszközöket jelöl ki.
 2. Az eszköz bejelentkezik az Intune-ba.
@@ -68,36 +68,36 @@ Külső hitelesítésszolgáltatók Intune-nal való integrálása előtt győz�
 
 Ahhoz, hogy egy külső SCEP-kiszolgáló egyéni kérdésen alapuló ellenőrzést végezhessen az Intune-nal, készítsen egy alkalmazást az Azure AD-ban. Ez az alkalmazás delegált jogosultságokat ad az Intune-nak az SCEP-kérelmek ellenőrzéséhez.
 
-Ehhez mindenképpen rendelkeznie kell az Azure AD-alkalmazás regisztrálásához szükséges engedélyekkel. Lásd: [szükséges engedélyek](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions), az Azure AD dokumentációjában.
+Ehhez mindenképpen rendelkeznie kell az Azure AD-alkalmazás regisztrálásához szükséges engedélyekkel. Tekintse meg a [szükséges engedélyeket](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions)az Azure ad dokumentációjában.
 
-#### <a name="create-an-application-in-azure-active-directory"></a>Alkalmazás létrehozása az Azure Active Directoryban  
+#### <a name="create-an-application-in-azure-active-directory"></a>Alkalmazás létrehozása Azure Active Directory  
 
-1. Az a [az Azure portal](https://portal.azure.com), lépjen a **Azure Active Directory** > **Alkalmazásregisztrációk**, majd válassza ki **új regisztrációs**.  
+1. A [Azure Portal](https://portal.azure.com)válassza a **Azure Active Directory** > **alkalmazás**-regisztrációk, majd az **új regisztráció**lehetőséget.  
 
-2. Az a **alkalmazás regisztrálása** csoportjában adja meg a következő adatokat:  
-   - Az a **neve** területén adjon meg egy kifejező alkalmazásnevet.  
-   - Az a **támogatott fióktípusok** szakaszban jelölje be **bármely szervezeti directory fiókok**.  
-   - A **átirányítási URI-t**, hagyja meg az alapértelmezett Web, és adja meg a bejelentkezési URL-címet a külső SCEP-kiszolgáló.  
+2. Az **alkalmazás regisztrálása** lapon a következő részleteket kell megadnia:  
+   - A **név** szakaszban adjon meg egy értelmes alkalmazás nevét.  
+   - A **támogatott fióktípus** szakaszban válassza a fiókok lehetőséget **bármely szervezeti címtárban**.  
+   - Az **átirányítási URI**esetében hagyja meg az alapértelmezett webes beállítást, majd adja meg a bejelentkezési URL-címet a külső gyártó SCEP-kiszolgálójához.  
 
-3. Válassza ki **regisztrálása** hozhat létre az alkalmazást, és az új alkalmazáshoz – Áttekintés lap megnyitásához.  
+3. Válassza a **regisztráció** lehetőséget az alkalmazás létrehozásához és az új alkalmazás Áttekintés lapjának megnyitásához.  
 
-4. Az alkalmazás **áttekintése** lapon, másolja a **Alkalmazásazonosítót (ügyfél)** értékét, és jegyezze fel későbbi használat céljából. Ezt az értéket később még szüksége lesz.  
+4. Az alkalmazás **áttekintése** lapon másolja az **alkalmazás (ügyfél) azonosító** értékét, és jegyezze fel későbbi használatra. Ezt az értéket később kell megadnia.  
 
-5. A navigációs ablaktáblán az alkalmazás Ugrás **tanúsítványok és titkos kulcsok** alatt **kezelése**. Válassza ki a **új titkos ügyfélkulcsot** gombra. Adjon meg egy értéket a leírás, az egyik lehetőséget sem **lejárat**, majd válassza **Hozzáadás** létrehozni egy *érték* a titkos. 
+5. Az alkalmazás navigációs ablaktábláján lépjen a **tanúsítványok & titkok** elemre a **kezelés**alatt. Válassza az **új ügyfél titka** gombot. Adjon meg egy értéket a Leírás mezőben, válassza kia lejárati lehetőséget, majd a **Hozzáadás** gombra kattintva adja meg az ügyfél titkos kulcsának *értékét* . 
    > [!IMPORTANT]  
-   > Mielőtt kilép az oldalról, másolja az értéket a titkos, és jegyezze fel a harmadik fél hitelesítésszolgáltató megvalósításra későbbi használatra. Ez az érték nem jelenik meg újból. Mindenképpen olvassa el a harmadik fél hitelesítésszolgáltató hogyan szeretnének az alkalmazás Azonosítóját, a hitelesítési kulcsot és a konfigurált bérlő azonosítója a útmutatást.  
+   > Mielőtt elhagyja ezt a lapot, másolja ki az ügyfél titkos kulcsának értékét, és jegyezze fel későbbi használatra a külső HITELESÍTÉSSZOLGÁLTATÓ által megvalósított implementációval. Ez az érték nem jelenik meg újra. Mindenképpen tekintse át a külső HITELESÍTÉSSZOLGÁLTATÓ útmutatását, hogy miként szeretné beállítani az alkalmazás AZONOSÍTÓját, a hitelesítési kulcsot és a bérlő AZONOSÍTÓját.  
 
-6. Rekord a **Bérlőazonosító**. A Bérlőazonosító a tartomány szöveg után a @ karakter a fiókjában. Például, ha a fiókja *admin@name.onmicrosoft.com* , akkor a bérlő Azonosítóját **name.onmicrosoft.com**.  
+6. Jegyezze fel a **bérlő azonosítóját**. A bérlő azonosítója a fiókhoz tartozó @ bejelentkezés után a tartomány szövege. Ha például a fiókja *admin@name.onmicrosoft.com* , akkor a bérlő azonosítója **Name.onmicrosoft.com**.  
 
-7. Lépjen a navigációs ablaktáblán az alkalmazás **API-engedélyek** alatt **kezelés**, majd válassza ki **adjon hozzá egy engedélyt**.  
+7. Az alkalmazás navigációs ablaktábláján nyissa meg az **API-engedélyeket** a **kezelés**területen, majd válassza az **engedély hozzáadása**elemet.  
 
-8. Az a **kérelem API-engedélyek** lapon jelölje be **Intune**, majd válassza ki **Alkalmazásengedélyek**. Jelölje be a **scep_challenge_provider** (SCEP leellenőrizni).  
+8. Az **API-engedélyek kérése** lapon válassza az **Intune**lehetőséget, majd válassza az **alkalmazás engedélyei**lehetőséget. Jelölje be a **scep_challenge_provider** jelölőnégyzetét (SCEP Challenge validate).  
 
-   Válassza ki **engedélyek hozzáadása** a konfiguráció mentéséhez.  
+   Válassza az **engedélyek hozzáadása** lehetőséget a konfiguráció mentéséhez.  
 
-9. Továbbra is a **API-engedélyek** lapon, és válassza ki **adja meg a Microsoft a rendszergazdai jóváhagyás**, majd válassza ki **Igen**.  
+9. Maradjon az **API-engedélyek** lapon, és válassza a **rendszergazdai jóváhagyás megadása a Microsoft számára**lehetőséget, majd válassza az **Igen**lehetőséget.  
    
-   Az Azure ad-ben az alkalmazás regisztrációs folyamat befejeződött.
+   Befejeződött az alkalmazás regisztrációs folyamata az Azure AD-ben.
 
 
 
@@ -106,9 +106,9 @@ Ehhez mindenképpen rendelkeznie kell az Azure AD-alkalmazás regisztrálásáho
 ### <a name="configure-and-deploy-a-scep-certificate-profile"></a>SCEP-tanúsítványprofil konfigurálása és telepítése
 Rendszergazdaként hozzon létre egy felhasználóknak vagy eszközöknek szánt SCEP-tanúsítványprofilt. Ezt követően végezze el a profil hozzárendelését.
 
-- [SCEP-tanúsítványprofil létrehozása](certificates-scep-configure.md#create-a-scep-certificate-profile)
+- [SCEP-tanúsítványprofil létrehozása](certificates-profile-scep.md#create-a-scep-certificate-profile)
 
-- [A tanúsítványprofil felhasználókhoz vagy eszközökhöz rendelése](certificates-scep-configure.md#assign-the-certificate-profile)
+- [A tanúsítványprofil felhasználókhoz vagy eszközökhöz rendelése](certificates-profile-scep.md#assign-the-certificate-profile)
 
 ## <a name="removing-certificates"></a>Tanúsítványok eltávolítása
 

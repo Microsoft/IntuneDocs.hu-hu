@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b3c2b5bc0091544136848bf92fc6cef7524ffa54
-ms.sourcegitcommit: bd09decb754a832574d7f7375bad0186a22a15ab
+ms.openlocfilehash: 4893f3484c497ed72352b2bbb229003c2d639107
+ms.sourcegitcommit: cf40f641af4746a1e34edd980dc6ec96fd040126
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68354513"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70122287"
 ---
 # <a name="set-up-per-app-virtual-private-network-vpn-for-ios-devices-in-intune"></a>App virtual private Network (VPN) beállítása iOS-eszközökhöz az Intune-ban
 
@@ -83,7 +83,7 @@ A megbízható főtanúsítvány-profil lehetővé teszi, hogy az eszköz automa
 
 Az ügyfél-hitelesítési tanúsítvány konfigurálásához és hozzárendeléséhez tekintse meg az alábbi cikkek egyikét:
 
-- [SCEP-tanúsítványok konfigurálása és kezelése az Intune-nal](certificates-scep-configure.md)
+- [Infrastruktúra konfigurálása az Intune-nal való SCEP támogatásához](certificates-scep-configure.md)
 - [PKCS-tanúsítványok konfigurálása és kezelése az Intune-nal](certficates-pfx-configure.md)
 
 Ügyeljen arra, hogy konfigurálja a tanúsítványt az ügyfél-hitelesítéshez. Ezt közvetlenül is megadhatja a SCEP-tanúsítvány profiljaiban (**Kibővített kulcshasználat** lista > **ügyfél-hitelesítés**). A PKCS beállításnál állítsa be az ügyfél-hitelesítést a hitelesítésszolgáltató (CA) tanúsítvány sablonjában.
@@ -107,11 +107,11 @@ A VPN-profil tartalmazza a SCEP vagy a PKCS-tanúsítványt az ügyfél hiteles�
     - **Hitelesítési tanúsítvány**: Válasszon ki egy meglévő SCEP vagy PKCS-tanúsítványt > **az OK gombra**.      
     - **Megosztott bújtatás**: A **Letiltás** lehetőség kiválasztásával kényszerítheti az összes FORGALMAT a VPN-alagút használatára, amikor a VPN-kapcsolat aktív. 
 
-      ![Egy alkalmazáson belüli VPN-profilban adja meg a kapcsolat, az IP-cím vagy a teljes tartománynév, a hitelesítési módszer és a felosztási műveletek Microsoft Intune](./media/vpn-per-app-create-vpn-profile.png)
+      ![Egy alkalmazáson belüli VPN-profilban adja meg a kapcsolat, az IP-cím vagy a teljes tartománynév, a hitelesítési módszer és a felosztott bújtatás Microsoft Intune](./media/vpn-per-app-create-vpn-profile.png)
 
     További információt a további beállításokról az [iOS VPN-beállítások](vpn-settings-ios.md)című témakörben talál.
 
-5. Válassza  > kiazautomatikus > VPN-**alapú VPN-** típus automatikus VPN-típusát
+5. Válassza > kiazautomatikus > VPN-**alapú VPN-** típus automatikus VPN-típusát
 
     ![Az Intune-ban állítsa be az automatikus VPN-t az alkalmazáson belüli VPN-re iOS-eszközökön](./media/vpn-per-app-automatic.png)
 
@@ -122,7 +122,7 @@ A VPN-profil tartalmazza a SCEP vagy a PKCS-tanúsítványt az ügyfél hiteles�
 Miután hozzáadta a VPN-profilt, társítsa az alkalmazást és a Microsoft Azure Active Directory-csoportot a profillal.
 
 1. Az **Intune-ban** válassza az **Ügyfélalkalmazások** > **Alkalmazások** elemet.
-2. Válasszon ki egy alkalmazást a listáról  > > hozzárendelések**hozzáadása csoportot**.
+2. Válasszon ki egy alkalmazást a listáról > > hozzárendelések**hozzáadása csoportot**.
 3. A **hozzárendelés típusa**mezőben válassza a **kötelező** vagy **a regisztrált eszközök számára elérhető**lehetőséget.
 4. Jelölje be a belefoglalt **csoportok** > kiválasztása lehetőséget > Válassza ki a [létrehozott](#create-a-group-for-your-vpn-users) csoportot (ebben a cikkben) > **válassza ki**.
 5. A **VPN**-EK területen válassza ki a [létrehozott](#create-a-per-app-vpn-profile) app VPN-profilt (ebben a cikkben).

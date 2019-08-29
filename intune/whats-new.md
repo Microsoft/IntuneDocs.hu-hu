@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 08/16/2019
+ms.date: 08/27/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 267eb630b962893d5ab32530a095fe2fd3f7102e
-ms.sourcegitcommit: cbd406e3c6ab8c9a29d58dfda4a18e34277a1594
+ms.openlocfilehash: 09d80964a417772b1f011478db59398ceede5c5e
+ms.sourcegitcommit: cf40f641af4746a1e34edd980dc6ec96fd040126
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620217"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70122143"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -53,6 +53,18 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 -->  
 
 <!-- ########################## -->
+
+## <a name="week-of-august-26-2019"></a>2019. augusztus 26. hét
+
+### <a name="configure-microsoft-edge-settings-using-administrative-templates-for-windows-10-and-newer----5228061---"></a>A Microsoft Edge-beállítások konfigurálása a Windows 10 és újabb rendszerhez készült felügyeleti sablonok használatával <!-- 5228061 -->
+
+Windows 10 és újabb rendszerű eszközökön felügyeleti sablonokat hozhat létre az Intune csoportházirend-beállításainak konfigurálásához. Ebben a frissítésben olyan beállításokat adhat meg, amelyek a Microsoft Edge 77-es vagy újabb verziójára vonatkoznak.
+
+A felügyeleti sablonokkal kapcsolatos további információkért lásd: [Windows 10 sablonok használata a csoportházirend-beállítások konfigurálásához az Intune-ban](administrative-templates-windows.md).
+
+Érintett kiadások:
+
+- Windows 10 és újabb (Windows RS4 +)
 
 ## <a name="week-of-august-12-2019"></a>2019. augusztus 12-i hét
 
@@ -1016,8 +1028,8 @@ A rendszergazda által megjelenő új vagy meglévő jelszóházirend-módosít�
 Érintett kiadások:  
 macOS
 
-#### <a name="assign-scep-certificates-to-a-userless-macos-device-----2340521----"></a>SCEP-tanúsítványok társítása egy felhasználó nélküli macOS-eszközhöz  <!-- 2340521  -->
-Egyszerű tanúsítványigénylési protokoll (SCEP) tanúsítványokat a macOS-eszközökhöz, például a felhasználói affinitás nélküli eszközökhöz, valamint a tanúsítvány profiljának a Wi-Fi-vagy VPN-profilokhoz való társításához rendelhet hozzá. Ez kibővíti azt a támogatást, amelyhez már hozzá van rendelve a SCEP-tanúsítványok a Windows, iOS és Android rendszerű [felhasználói affinitással rendelkező és azok nélküli eszközökhöz](certificates-scep-configure.md#create-a-scep-certificate-profile) .  Ezzel a frissítéssel kiválaszthatja az *eszköz* SCEP, ha a MacOS-hez konfigurálja a tanúsítvány-profilt.
+#### <a name="assign-scep-certificates-to-a-userless-macos-device-------2340521------"></a>SCEP-tanúsítványok társítása egy felhasználó nélküli macOS-eszközhöz    <!-- 2340521    -->
+Egyszerű tanúsítványigénylési protokoll (SCEP) tanúsítványokat a macOS-eszközökhöz, például a felhasználói affinitás nélküli eszközökhöz, valamint a tanúsítvány profiljának a Wi-Fi-vagy VPN-profilokhoz való társításához rendelhet hozzá. Ez kibővíti azt a támogatást, amelyhez már hozzá van rendelve a SCEP-tanúsítványok a Windows, iOS és Android rendszerű [felhasználói affinitással rendelkező és azok nélküli eszközökhöz](certificates-profile-scep.md) .  Ezzel a frissítéssel kiválaszthatja az *eszköz* SCEP, ha a MacOS-hez konfigurálja a tanúsítvány-profilt.
 
 Érintett kiadások: 
 - macOS
