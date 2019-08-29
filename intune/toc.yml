@@ -510,8 +510,12 @@
           href: certificates-configure.md
           items:
             - name: SCEP
-              href: certificates-scep-configure.md
-              displayName: ksp
+              items:
+                - name: SCEP-infrastruktúra
+                  href: certificates-scep-configure.md
+                  displayName: ksp
+                - name: SCEP-tanúsítványprofilok
+                  href: certificates-profile-scep.md
             - name: PKCS
               href: certficates-pfx-configure.md
               displayName: ksp
@@ -733,6 +737,8 @@
               href: troubleshoot-email-profiles-in-microsoft-intune.md
             - name: A feltételes hozzáférés hibaelhárítása
               href: troubleshoot-conditional-access.md
+            - name: A tanúsítvány-összekötő hibaelhárítása
+              href: troubleshoot-certificate-connector-events.md
             - name: Az Exchange-összekötő hibaelhárítása
               href: troubleshoot-exchange-connector.md
         - name: Támogatás kérése
