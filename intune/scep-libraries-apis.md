@@ -203,7 +203,7 @@ Paraméterek:
     - certificateRequest DER kódolású PKCS #10 tanúsítványkérelem, sztringként kódolva Base64 kódolással
     - certThumprint A telepített tanúsítvány ujjlenyomata
     - certSerialNumber A telepített tanúsítvány sorozatszáma
-    - certExpirationDate A telepített tanúsítvány lejárati dátuma. A dátum-idő karakterláncot webes UTC időként kell formázni (ÉÉÉÉ-HH-NNTmm:ss.sssTZD) ISO 8601.
+    - certExpirationDate A telepített tanúsítvány lejárati dátuma. A dátum-idő sztringet webes UTC időként kell formázni (ÉÉÉÉ-HH-NNTmm:ss.sssTZD) ISO 8601.
     - certIssuingAuthority A tanúsítványt kiállító hitelesítésszolgáltató neve
 
 Jelzések:

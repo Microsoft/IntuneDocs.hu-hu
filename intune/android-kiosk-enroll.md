@@ -20,7 +20,7 @@ ms.custom: seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5e980049797ffc3c727d89c197037c019b94326a
 ms.sourcegitcommit: 1cae690ca2ac6cc97bbcdf656f54b31878297ae8
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/22/2019
 ms.locfileid: "59900128"
@@ -54,7 +54,7 @@ Dedikált Android Enterprise eszközkezelése beállításához, kövesse az al�
 
 ### <a name="create-an-enrollment-profile"></a>Beléptetési profil létrehozása
 
-Létre kell hoznia egy regisztrációs profilt, úgy, hogy a dedikált eszközöket regisztrálni. A profil a létrehozásakor ad egy regisztrációs jogkivonatot (véletlenszerű karakterlánc) és egy QR-kódot. Az Android operációs rendszer és az eszköz verziója, használhatja a jogkivonattal vagy QR-kód [dedikált regisztrációhoz](#enroll-the-dedicated-devices).
+Létre kell hoznia egy regisztrációs profilt, úgy, hogy a dedikált eszközöket regisztrálni. A profil a létrehozásakor ad egy regisztrációs jogkivonatot (véletlenszerű sztring) és egy QR-kódot. Az Android operációs rendszer és az eszköz verziója, használhatja a jogkivonattal vagy QR-kód [dedikált regisztrációhoz](#enroll-the-dedicated-devices).
 
 1. Nyissa meg a [Intune-portálon](https://portal.azure.com) válassza **eszközregisztráció** > **Android-eszközök regisztrálási** > **céges dedikált eszközök**.
 2. Válassza a **Létrehozás** lehetőséget, és töltse ki a kötelező mezőket.

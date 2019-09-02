@@ -72,7 +72,7 @@ A Google Zero Touch rendszerének használatához az eszköznek támogatnia kell
 
 1. Hozzon létre új konfigurációt a Zero Touch-konzolon.
 2. Az EMM DPC legördülő listából válassza a **Microsoft Intune** lehetőséget.
-3. Másolja és illessze be a következő JSON-kódot a Google Zero Touch-konzoljának Egyéb DPC beállítások mezőjébe. A *YourEnrollmentToken* szöveget írja át a regisztrációs profilja részeként létrehozott regisztrációs jogkivonatra. Ügyeljen rá, hogy a regisztrációs jogkivonat időzőjelek között legyen.
+3. Másolja és illessze be a következő JSON-kódot a Google Zero Touch-konzoljának Egyéb DPC beállítások mezőjébe. A *YourEnrollmentToken* sztringet írja át a regisztrációs profilja részeként létrehozott regisztrációs jogkivonatra. Ügyeljen rá, hogy a regisztrációs jogkivonat időzőjelek között legyen.
 
     ```json
     {
