@@ -1,149 +1,234 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Hub
 title: Microsoft Intune-dokumentáció
+summary: A Microsoft Intune hivatalos termékdokumentációja
 metadata:
-  document_id: 99e91b60-d6a5-44a8-908f-442161fbb077
-  title: Microsoft Intune-dokumentáció
-  description: Gyorsan használatba veheti a Microsoft Intune-t. A felhőalapú nagyvállalati mobileszköz-felügyeleti (EMM) szolgáltatással segítséget nyújthat a munkatársak hatékonyságának fenntartásához a vállalati adatok védelmének megőrzése mellett.
-  keywords: 'védelem, cég, adatok, Azure, Intune, EMM, eszköz, alkalmazás, felügyelet'
+  services: service
+  ms.service: microsoft-intune
+  ms.topic: hub-page
   author: dougeby
   ms.author: dougeby
-  manager: dougeby
-  ms.date: 07/03/2019
-  ms.topic: landing-page
-  ms.devlang: null
-  ms.service: microsoft-intune
-sections:
-  - items:
-      - type: markdown
-        text: 'Gyorsan használatba veheti a Microsoft Intune-t. A felhőalapú nagyvállalati mobileszköz-felügyeleti (EMM) szolgáltatással segítséget nyújthat a munkatársak hatékonyságának fenntartásához a vállalati adatok védelmének megőrzése mellett. Az Intune együttműködik az identitáskezelés és a hozzáférés-vezérlés terén az Azure Active Directoryval, valamint az adatvédelem terén az Azure Information Protectionnel.'
-  - items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 2
-        items:
-          - href: introduction-intune.md
-            html: <p>Olvashat az Intune által ellátott feladatokról és működéséről.</p>
-            image:
-              src: 'https://docs.microsoft.com/en-us/media/common/i_overview.svg'
-            title: Mi az az Intune?
-          - href: free-trial-sign-up.md
-            html: <p>Próbálja ki az Intune-t ezzel az egyszerű oktatóanyaggal.</p>
-            image:
-              src: 'https://docs.microsoft.com/en-us/media/common/i_get-started.svg'
-            title: Első lépések
-          - href: get-support.md
-            html: '<p>Megtudhatja, hogyan hozhat létre támogatási jegyeket, és kérhet segítséget, ha szüksége van rá.</p>'
-            image:
-              src: 'https://docs.microsoft.com/en-us/media/common/i_support.svg'
-            title: Támogatás kérése
-          - href: whats-new.md
-            html: <p>Megismerheti az Intune e heti újdonságait.</p>
-            image:
-              src: 'https://docs.microsoft.com/en-us/media/common/i_whats-new.svg'
-            title: Újdonságok
-  - title: Új cikkek és blogbejegyzések
+  manager: mtillman
+  ms.date: 08/30/2019
+  ms.openlocfilehash: 4d33b03ecf4a83b4fb962dc3672cb4ca45bfeedb
+  ms.sourcegitcommit: ffbd1542d33810ab97a0be8faf26f8061328c228
+  ms.translationtype: HT
+  ms.contentlocale: hu-HU
+  ms.lasthandoff: 08/31/2019
+  ms.locfileid: "70206444"
+highlightedContent:
+  items:
+  - title: Mi az az Intune?
+    itemType: overview
+    url: what-is-intune.md
+  - title: Az Intune újdonságai
+    itemType: overview
+    url: whats-new.md
+  - title: Fejlesztés alatt álló funkciók
+    itemType: overview
+    url: in-development.md
+  - title: Az Intune ingyenes kipróbálása
+    itemType: get-started
+    url: free-trial-sign-up.md
+  - title: Területi beállítások alkalmazása hatókör-címkékkel
+    itemType: get-started
+    url: scope-tags.md
+  - title: Windows-eszközök védelme a Microsoft által ajánlott beállításokkal
+    itemType: get-started
+    url: security-baselines.md
+conceptualContent:
+  items:
+  - title: Az Intune bevezetésének megtervezése
+    links:
+    - url: planning-guide.md
+      itemType: concept
+      text: Tervezési útmutató az Intune-hoz
+    - url: migration-guide.md
+      itemType: concept
+      text: Intune migrációs útmutató
+    - url: migration-guide-communication-plan.md
+      itemType: concept
+      text: Terv a felhasználókkal való kommunikációhoz
+  - title: Az Intune beállítása
+    links:
+    - url: setup-steps.md
+      itemType: how-to-guide
+      text: Az Intune beállításának lépései
+    - url: supported-devices-browsers.md
+      itemType: reference
+      text: Támogatott operációs rendszerek és böngészők
+    - url: role-based-access-control.md
+      itemType: reference
+      text: Szerepköralapú hozzáférés-vezérlés
+    - url: licenses.md
+      itemType: concept
+      text: Az Intune licencelése
+  - title: Eszközök regisztrálása
+    links:
+    - url: device-enrollment.md
+      itemType: concept
+      text: Eszközök regisztrálásának áttekintése
+    - url: windows-enroll.md
+      itemType: how-to-guide
+      text: Regisztrálás beállítása Windowshoz
+    - url: ios-enroll.md
+      itemType: how-to-guide
+      text: Regisztrálás beállítása iOS-eszközökhöz
+    - url: android-enroll.md
+      itemType: how-to-guide
+      text: Regisztrálás beállítása Android-eszközökhöz
+  - title: Eszközök távoli kezelése
+    links:
+    - url: device-management.md
+      itemType: concept
+      text: Eszközkezelés áttekintése
+    - url: device-management-capabilities.md
+      itemType: concept
+      text: Eszközkezelési képességek
+    - url: custom-notifications.md
+      itemType: how-to-guide
+      text: Egyéni értesítések küldése
+    - url: devices-wipe.md
+      itemType: how-to-guide
+      text: Eszközök eltávolítása
+  - title: Megfelelőségi szabályok létrehozása felhasználók és eszközök számára
+    links:
+    - url: device-compliance-get-started.md
+      itemType: concept
+      text: Megfelelőség – áttekintés
+    - url: use-network-locations.md
+      itemType: how-to-guide
+      text: Hálózati kerítés + megfelelőség Androidon
+    - url: actions-for-noncompliance.md
+      itemType: how-to-guide
+      text: A nem megfelelő eszközökre alkalmazható műveletek
+  - title: Eszközök funkcióinak és beállításainak szabályozása
+    links:
+    - url: device-profiles.md
+      itemType: concept
+      text: Eszközök konfigurálása – áttekintés
+    - url: device-restrictions-configure.md
+      itemType: how-to-guide
+      text: Beállítások és funkciók korlátozása
+    - url: vpn-settings-configure.md
+      itemType: how-to-guide
+      text: VPN hozzáadása az eszközökhöz
+    - url: administrative-templates-windows.md
+      itemType: how-to-guide
+      text: Csoportházirend ADMX-beállításainak konfigurálása
+  - title: Eszközök és adatok védelme
+    links:
+    - url: device-protect.md
+      itemType: concept
+      text: Eszközvédelem – áttekintés
+    - url: conditional-access.md
+      itemType: concept
+      text: Feltételes hozzáférés az Intune-nal
+    - url: mobile-threat-defense.md
+      itemType: concept
+      text: A Mobile Threat Defense integrációja az Intune-nal
+  - title: Alkalmazások kezelése
+    links:
+    - url: app-management.md
+      itemType: concept
+      text: Az alkalmazáskezelés áttekintése
+    - url: apps-add.md
+      itemType: how-to-guide
+      text: Alkalmazások hozzáadása az Intune-hoz
+    - url: apps-deploy.md
+      itemType: how-to-guide
+      text: Alkalmazások hozzárendelése csoportokhoz
+    - url: app-configuration-policies-overview.md
+      itemType: overview
+      text: Alkalmazáskonfigurációs szabályzatok
+    - url: app-protection-policy.md
+      itemType: concept
+      text: Alkalmazásvédelmi szabályzatok
+  - title: Súgó és támogatás
+    links:
+    - url: get-support.md
+      itemType: concept
+      text: Hogyan kérhet támogatást az Intune-hoz?
+    - url: help-desk-operators.md
+      itemType: concept
+      text: Segítség a felhasználóknak a problémák elhárításában
+    - url: monitor-audit-logs.md
+      itemType: concept
+      text: Auditnaplók használata események nyomon követéséhez és figyeléséhez
+    - url: troubleshoot-app-install.md
+      itemType: concept
+      text: Alkalmazások telepítésével kapcsolatos problémák elhárítása
+    - url: troubleshoot-policies-in-microsoft-intune.md
+      itemType: concept
+      text: Szabályzatok és profilok problémáinak elhárítása az Intune-ban
+  - title: Fejlesztő
+    links:
+    - url: intune-graph-apis.md
+      itemType: concept
+      text: Hozzáférés az Intune API-khoz a Microsoft Graphban
+    - url: https://github.com/Microsoft/Intune-PowerShell-SDK/
+      itemType: concept
+      text: PowerShell-parancsmagok használata a műveletek automatizálásához
+    - url: reports-nav-create-intune-reports.md
+      itemType: concept
+      text: A Microsoft Intune Data Warehouse használata
+    - url: https://docs.microsoft.com/intune/app-sdk
+      itemType: overview
+      text: A Microsoft Intune App SDK áttekintése
+    - url: reports-nav-create-intune-reports.md
+      itemType: concept
+      text: A Microsoft Intune Data Warehouse használata
+additionalContent:
+  sections:
+  - title: További források az eszközök kezeléséhez
     items:
-      - type: paragraph
-        text: 'Hozzájuthat a legújabb és legérdekesebb információkhoz, melyekre szüksége van.'
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: what-is-intune.md
-            title: További információ az Intune-ról az Azure Portalon
-            image:
-              src: 'https://docs.microsoft.com/en-us/media/common/i_portal.svg'
-          - href: ui-changes.md
-            title: Az Intune-funkciók elhelyezkedése az Azure Portalon
-            image:
-              src: 'https://docs.microsoft.com/en-us/media/common/i_guide.svg'
-          - href: high-level-architecture.md
-            title: Az Intune magas szintű architektúrájának megtekintése
-            image:
-              src: 'https://docs.microsoft.com/en-us/media/common/i_architecture.svg'
-          - href: enrollment-autopilot.md
-            title: A Windows AutoPilot üzembe helyezési program támogatása a Microsoft Intune-ban
-            image:
-              src: 'https://docs.microsoft.com/en-us/media/common/i_generic-database.svg'
-          - href: 'https://blogs.technet.microsoft.com/intunesupport/2018/09/12/support-tip-intune-support-for-ios-12/'
-            title: '[Blog] Támogatási tipp: Intune-támogatás az iOS 12-es verzióhoz'
-            image:
-              src: 'https://docs.microsoft.com/en-us/media/common/i_blog.svg'
-          - href: 'https://blogs.technet.microsoft.com/intunesupport/2018/09/04/coming-soon-new-intune-support-experience-for-premier-customers/'
-            title: '[Blog] Új Intune-támogatási élmény a Premier ügyfelek számára'
-            image:
-              src: 'https://docs.microsoft.com/en-us/media/common/i_blog.svg'
-  - title: Videók
+    - title: Oktatási célokra Intune
+      links:
+      - text: Mi az az Intune for Education?
+        url: https://docs.microsoft.com/intune-education/what-is-intune-for-education
+      - text: Az Intune for Education újdonságai
+        url: https://docs.microsoft.com/intune-education/whats-new-in-edu
+      - text: Miben tér el az Intune for Education a teljes verziótól?
+        url: introduction-intune-education.md
+    - title: Intune for Government
+      links:
+      - text: Az USA kormányzati szervei által használható Enterprise Mobility + Security szolgáltatás leírása
+        url: https://docs.microsoft.com/enterprise-mobility-security/solutions/ems-govt-service-description
+      - text: Government-végpontok használata az Intune-hoz
+        url: https://docs.microsoft.com/intune/intune-us-government-endpoints
+      - text: Azure Government-webhely
+        url: https://azure.microsoft.com/global-infrastructure/government/
+    - title: Microsoft 365
+      links:
+      - text: Ismerje meg a Microsoft 365-öt, amely egy teljes megoldás, mely tartalmazza az Intune-t
+        url: https://docs.microsoft.com/microsoft-365/
+      - text: A Microsoft 365 Nagyvállalati verzió dokumentációja
+        url: https://docs.microsoft.com/microsoft-365/enterprise/
+      - text: Microsoft 365 Nagyvállalati verzió alapinfrastruktúrája
+        url: https://docs.microsoft.com/microsoft-365/enterprise/deploy-foundation-infrastructure
+    - title: Azure Active Directory
+      links:
+      - text: Felhasználókezelési dokumentáció
+        url: https://docs.microsoft.com/azure/active-directory/users-groups-roles/
+      - text: Hitelesítési dokumentáció
+        url: https://docs.microsoft.com/azure/active-directory/authentication/
+      - text: Eszközazonosítói dokumentáció
+        url: https://docs.microsoft.com/azure/active-directory/devices/
+      - text: Hibrid identitás dokumentációja
+        url: https://docs.microsoft.com/azure/active-directory/hybrid/
+  - title: Intune közösségi források
     items:
-      - type: markdown
-        text: '>[!VIDEO https://www.youtube.com/embed/DnmnLr2NUXk]'
-      - type: paragraph
-        text: ' '
-      - type: markdown
-        text: '>[!VIDEO https://www.youtube.com/embed/Cn29dmgDcIw]'
-  - title: Ingyenes Intune-képézés
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 1
-        items:
-          - href: 'https://www.pluralsight.com/courses/windows-10-configuring-intune-creators'
-            title: 'A Windows 10 konfigurálása: A Microsoft Intune megtervezése és megvalósítása'
-            image:
-              src: 'https://docs.microsoft.com/en-us/media/logos/logo_pluralsight.svg'
-  - title: Tervezési cikkek
-    items:
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/intune/planning-guide">Útmutató az Intune üzembe helyezésének megtervezéséhez és implementálásához</a>
-          - html: <a href="/intune/migration-guide">Intune migrációs útmutató</a>
-  - title: Útmutatók
-    items:
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/intune/device-enrollment">Eszközök regisztrálása</a>
-          - html: <a href="/intune/device-management">Eszközök kezelése</a>
-          - html: <a href="/intune/app-management">Alkalmazások kezelése</a>
-          - html: <a href="/intune/device-profiles">Eszközök konfigurálása</a>
-          - html: <a href="/intune/device-compliance-get-started">Eszközmegfelelőség beállítása</a>
-          - html: <a href="/intune/conditional-access">Feltételes hozzáférés beállítása</a>
-          - html: <a href="/intune/app-protection-policy">Alkalmazások védelme</a>
-          - html: <a href="/intune/mobile-threat-defense">A Mobile Threat Defense beállítása</a>
-          - html: <a href="/intune/network-access-control-integrate">A hálózati hozzáférés-vezérlés integrálása</a>
-          - html: <a href="/intune/role-based-access-control">Szerepkörök kezelése</a>
-          - html: <a href="/intune-classic/deploy-use/manage-windows-pcs-with-microsoft-intune?toc=/intune/toc.json">Számítógépek kezelése az Intune-szoftverügyféllel</a>
-  - title: Hibaelhárítási cikkek
-    items:
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/intune/help-desk-operators">Segítségnyújtás a felhasználóknak a hibaelhárítási portál használatával</a>
-          - html: <a href="/intune/known-issues">Az Intune ismert problémái</a>
-          - html: <a href="/intune/get-support">Támogatás kérése</a>
-  - title: Fejlesztési és testreszabási cikkek
-    items:
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/intune/custom-settings-configure">Egyéni eszközbeállítások konfigurálása</a>
-          - html: <a href="/intune/apps-prepare-mobile-application-management">Üzletági alkalmazások előkészítése az Intune alkalmazásburkoló eszközével</a>
-          - html: <a href="/intune/app-sdk">Üzletági alkalmazások előkészítése az Intune App SDK-val</a>
-          - html: '<a href="https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/resources/intune_graph_overview">Az Intune használata a Microsoft Graph-fal</a>'
-          - html: <a href="/intune/reports-nav-intune-data-warehouse">Intune-adattárház API</a>
-  - title: Egyéb erőforrások
-    items:
-      - type: list
-        style: unordered
-        items:
-          - html: '<a href="https://docs.microsoft.com/enterprise-mobility-security/solutions/enterprise-mobility-fasttrack-program">Több mint 150 licence van? Éljen a FastTrack előnyeivel!</a>'
-          - html: '<a href="https://docs.microsoft.com/microsoft-365">Ismerje meg a Microsoft 365-öt, amely egy teljes megoldás, mely tartalmazza az Intune-t</a>'
-          - html: '<a href="https://blogs.technet.microsoft.com/enterprisemobility/">Az Enterprise Mobility + Security blog megnyitása</a>'
-          - html: '<a href="https://blogs.technet.microsoft.com/intunesupport/">Segítség kérése az Intune támogatási blogján</a>'
-          - html: '<a href="https://microsoftintune.uservoice.com/forums/291681-ideas">Visszajelzés küldése az Intune-ról a UserVoice szolgáltatásban</a>'
-          - html: '<a href="https://social.technet.microsoft.com/Forums/en-US/home?category=microsoftintune&filter=alltypes&sort=lastpostdesc">Kérdések feltevése vagy megválaszolása az Intune vitafórumán</a>'
+    - title: Az Intune technikai fórumai
+      summary: Műszaki kérdéseket tehet fel a termékfórumokban
+      url: https://social.technet.microsoft.com/Forums/home?category=microsoftintune&filter=alltypes&sort=lastpostdesc
+    - title: UserVoice-visszajelzés a termékekről
+      summary: Termékkel kapcsolatos javaslatok küldése a mérnökcsapatnak
+      url: https://microsoftintune.uservoice.com/forums/291681-ideas
+    - title: Intune – technikai közösségi beszélgetések
+      summary: Tekintse meg a technikai közösség aktív beszélgetéseit
+      url: https://techcommunity.microsoft.com/t5/Microsoft-Intune/bd-p/Microsoft-Intune
+    - title: '#<a name="intune-on-twitter"></a>Az Intune a Twitteren'
+      summary: Maradjon naprakész az aktív Twitter-Közösséggel
+      url: https://twitter.com/hashtag/msintune
+    - title: Intune-ügyfélsikeresség
+      summary: Segítség kérése az Intune-ügyfélsikeresség webhelyén
+      url: https://techcommunity.microsoft.com/t5/Intune-Customer-Success/bg-p/IntuneCustomerSuccess
