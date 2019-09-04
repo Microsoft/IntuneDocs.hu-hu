@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 08/28/2019
+ms.date: 09/03/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
@@ -16,28 +16,32 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9cdd36406dc579822324013b4a04ef66404c5d6f
-ms.sourcegitcommit: cf40f641af4746a1e34edd980dc6ec96fd040126
+ms.openlocfilehash: 0e553229530f826ead91be981ff446b7cb3ebbf2
+ms.sourcegitcommit: 7269abaefb2857bc8b343896bb2138bdb01bf8dc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70129562"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70214279"
 ---
 # <a name="create-and-assign-scep-certificate-profiles-in-intune"></a>SCEP-tanúsítványok létrehozása és társítása az Intune-ban
 
 Miután [konfigurálta az infrastruktúrát](certificates-scep-configure.md) a egyszerű tanúsítványigénylési protokoll-(SCEP-) tanúsítványok támogatásához, létrehozhat és hozzárendelhet SCEP-tanúsítványokat a felhasználók és az eszközök számára az Intune-ban.
 
 > [!IMPORTANT]  
-> A SCEP létrehozása előtt a SCEP-tanúsítványt használó eszközöknek megbízható legfelső szintű hitelesítésszolgáltatót (CA) kell megbízniuk. Az Intune *megbízható tanúsítvány* -profiljának használatával kiépítheti a megbízható legfelső szintű hitelesítésszolgáltatói tanúsítványt a felhasználóknak és az eszközöknek a megbízható tanúsítvány profiljával kapcsolatos információkért lásd: [a megbízható legfelső szintű hitelesítésszolgáltatói tanúsítvány exportálása](certificates-configure.md#export-the-trusted-root-ca-certificate) és [megbízható tanúsítvány létrehozása a profilok](certificates-configure.md#create-trusted-certificate-profiles) a *tanúsítványok használata az Intune-ban*történő hitelesítéshez.
+> A SCEP létrehozása előtt a SCEP-tanúsítványt használó eszközöknek megbízható legfelső szintű hitelesítésszolgáltatót (CA) kell megbízniuk. Az Intune *megbízható tanúsítvány-profiljának* használatával kiépítheti a megbízható legfelső szintű hitelesítésszolgáltatói tanúsítványt a felhasználóknak és az eszközöknek a megbízható tanúsítvány profiljával kapcsolatos információkért lásd: [a megbízható legfelső szintű hitelesítésszolgáltatói tanúsítvány exportálása](certificates-configure.md#export-the-trusted-root-ca-certificate) és [megbízható tanúsítvány létrehozása a profilok](certificates-configure.md#create-trusted-certificate-profiles) a *tanúsítványok használata az Intune-ban történő hitelesítéshez*.
 
 
 ## <a name="create-a-scep-certificate-profile"></a>SCEP-tanúsítványprofil létrehozása
 
-1. Jelentkezzen be az [Intune](https://aka.ms/intuneportal)-portálra.
+1. Jelentkezzen be az [Intune-portálra](https://aka.ms/intuneportal).
 2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
 3. Adja meg az SCEP-tanúsítványprofil **nevét** és **leírását**.
-4. A **platform** legördülő listából válassza ki a SCEP-tanúsítvány [támogatott eszköz](certificates-configure.md#supported-platforms-and-certificate-profiles) -platformját. 
-5. A **Profil típusa** legördülő listában válassza az SCEP- **tanúsítvány**lehetőséget.
+4. A **platform** legördülő listából válassza ki a SCEP-tanúsítvány [támogatott eszköz-platformját](certificates-configure.md#supported-platforms-and-certificate-profiles) . 
+5. A **Profil típusa** legördülő listában válassza az SCEP- **tanúsítvány**lehetőséget.  
+
+   > [!NOTE]  
+   > Az **Android Enterprise** platform esetében a *Profil típusa* két kategóriára oszlik: Csak az *eszköz tulajdonosa* és a *munkahelyi profil*.  A SCEP csak *munkahelyi profil*esetén támogatottak.
+
 6. Válassza a **Beállítások**lehetőséget, majd hajtsa végre a következő konfigurációkat:
 
    - **Tanúsítvány típusa**:   
@@ -104,7 +108,7 @@ Miután [konfigurálta az infrastruktúrát](certificates-scep-configure.md) a e
 
         > [!IMPORTANT]  
         > - Ha változót ad meg, a hiba elkerüléséhez tegye a változó nevét kapcsos zárójelben ({}) a példában látható módon.  
-        > - Az eszköz tulajdonosának vagy *San* -tanúsítványának (például **IMEI**, **serialnumber**és **FullyQualifiedDomainName**) használt tulajdonságai olyan tulajdonságok, amelyek az eszközhöz hozzáféréssel rendelkező személy által meghamisítható.
+        > - Az eszköz *tulajdonosának* vagy *San* -tanúsítványának (például **IMEI**, **serialnumber**és **FullyQualifiedDomainName**) használt tulajdonságai olyan tulajdonságok, amelyek az eszközhöz hozzáféréssel rendelkező személy által meghamisítható.
         > - Egy eszköznek támogatnia kell az adott profilhoz tartozó tanúsítvány-profilban megadott összes változót az adott eszközre való telepítéshez.  Ha például a **{{IMEI}}** egy SCEP-profil tulajdonos nevében van használatban, és olyan eszközhöz van rendelve, amely nem rendelkezik IMEI-számmal, akkor a profilt nem lehet telepíteni.  
  
 
@@ -145,8 +149,8 @@ Miután [konfigurálta az infrastruktúrát](certificates-scep-configure.md) a e
 
         > [!IMPORTANT]  
         > - Az eszköz tanúsítványa változó használatakor a változó neve kapcsos zárójelben {}.  
-        > - Ne használjon kapcsos zárójeleket **{}** , cső szimbólumokat **|** és pontosvesszőket, a változót követő szövegben.  
-        > - Az eszköz tulajdonosának vagy *San* -tanúsítványának (például **IMEI**, **serialnumber**és **FullyQualifiedDomainName**) használt tulajdonságai olyan tulajdonságok, amelyek az eszközhöz hozzáféréssel rendelkező személy által meghamisítható.  
+        > - Ne használjon kapcsos zárójeleket **{}** , cső szimbólumokat **|** és pontosvesszőket **, a**változót követő szövegben.  
+        > - Az eszköz *tulajdonosának* vagy *San* -tanúsítványának (például **IMEI**, **serialnumber**és **FullyQualifiedDomainName**) használt tulajdonságai olyan tulajdonságok, amelyek az eszközhöz hozzáféréssel rendelkező személy által meghamisítható.  
         > - Egy eszköznek támogatnia kell az adott profilhoz tartozó tanúsítvány-profilban megadott összes változót az adott eszközre való telepítéshez.  Ha például a **{{IMEI}}** egy SCEP-profil San-ban van használatban, és olyan eszközhöz van rendelve, amely nem rendelkezik IMEI-számmal, akkor a profilt nem lehet telepíteni.
 
    - **Tanúsítvány érvényességi időtartama**:  
@@ -236,7 +240,7 @@ A SCEP-profilokat ugyanúgy rendelheti hozzá, mint az [eszközök profiljait](d
 
 - Ha azt szeretné, hogy a tanúsítványok gyorsan megjelenjenek az eszközökön a regisztráció után, a tanúsítványprofilt felhasználócsoporthoz és ne eszközcsoporthoz rendelje hozzá. Ha eszközcsoporthoz rendel hozzá, akkor teljes eszközregisztráció szükséges, mielőtt az eszköz megkaphatná a szabályzatokat.  
 
-- Ha az Intune és a Configuration Manager együttes felügyeletét használja, akkor a Configuration Manager az **Intune** -hoz vagy az Intune-hoz tartozóerőforrás-hozzáférési szabályzat munkaterhelésének [csúszkáját állítsa be](https://docs.microsoft.com/sccm/comanage/how-to-switch-workloads) . Ez a beállítás lehetővé teszi, hogy a Windows 10-ügyfelek elindítsák a tanúsítvány kérelmezésének folyamatát.
+- Ha az Intune és a Configuration Manager együttes felügyeletét használja, akkor a Configuration Manager az **Intune** - **hoz vagy az Intune-hoz**tartozó erőforrás-hozzáférési szabályzat [munkaterhelésének csúszkáját állítsa be](https://docs.microsoft.com/sccm/comanage/how-to-switch-workloads) . Ez a beállítás lehetővé teszi, hogy a Windows 10-ügyfelek elindítsák a tanúsítvány kérelmezésének folyamatát.
 
 - Bár a megbízható tanúsítvány profilját és a SCEP-tanúsítvány profilját külön hozza létre és rendeli hozzá, mindkettőt hozzá kell rendelni. Az SCEP-tanúsítvány házirendje nem működik együtt az eszközön. Győződjön meg arról, hogy a megbízható főtanúsítvány-profilok is ugyanarra a csoportra vannak telepítve, mint a SCEP-profil.
 

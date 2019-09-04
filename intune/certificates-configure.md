@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 08/28/2019
+ms.date: 09/03/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1b1d1146a2300311c2c92d0d7a23cd25082b6b84
-ms.sourcegitcommit: cf40f641af4746a1e34edd980dc6ec96fd040126
+ms.openlocfilehash: 4d9554893a8317b014007bd7089ed62f222975c8
+ms.sourcegitcommit: 7269abaefb2857bc8b343896bb2138bdb01bf8dc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70122374"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70214300"
 ---
 # <a name="use-certificates-for-authentication-in-microsoft-intune"></a>Tanúsítványok használata a Microsoft Intune történő hitelesítéshez  
 
@@ -40,7 +40,7 @@ Minden egyes létrehozott tanúsítvány egyetlen platformot támogat. Ha péld�
 **Általános szempontok**:  
 - Ha nem rendelkezik vállalati hitelesítésszolgáltatóval (CA), akkor létre kell hoznia egyet, vagy egyet kell használnia a [támogatott partnereink közül](certificate-authority-add-scep-overview.md#third-party-certification-authority-partners).
 - Ha a Microsoft Active Directory tanúsítványszolgáltatás használatával SCEP-tanúsítványokat használ, a hálózati eszközök tanúsítványigénylési szolgáltatásának (NDES) kiszolgálóját kell konfigurálnia.
-- Ha a SCEP-t az egyik hitelesítésszolgáltatói partnerrel együtt használja, integrálnia kell [azt az Intune](certificate-authority-add-scep-overview.md#set-up-third-party-ca-integration)-nal.
+- Ha a SCEP-t az egyik hitelesítésszolgáltatói partnerrel együtt használja, [integrálnia kell azt az Intune](certificate-authority-add-scep-overview.md#set-up-third-party-ca-integration)-nal.
 - A SCEP-és a PKCS-tanúsítványok profiljaihoz a Microsoft Intune Tanúsítvány-összekötő letöltésére, telepítésére és konfigurálására van szükség. 
 - A PCKS importált tanúsítványokhoz le kell töltenie, telepítenie és konfigurálnia kell a PFX tanúsítvány-összekötőt Microsoft Intune számára.
 - A PKCS importált tanúsítványok megkövetelik, hogy tanúsítványokat exportáljon a hitelesítésszolgáltatótól, és importálja őket Microsoft Intuneba. Lásd [a PFXImport PowerShell-projektet](https://github.com/Microsoft/Intune-Resource-Access/tree/develop/src/PFXImportPowershell)
@@ -49,8 +49,9 @@ Minden egyes létrehozott tanúsítvány egyetlen platformot támogat. Ha péld�
 ## <a name="supported-platforms-and-certificate-profiles"></a>Támogatott platformok és tanúsítványok profiljai  
 | Platform              | Megbízható tanúsítvány profilja | PKCS-tanúsítvány profilja | SCEP-tanúsítvány profilja | PKCS importált tanúsítvány profilja  |
 |--|--|--|--|---|
-| Android               | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png)|  ![Támogatott](./media/certificates-configure/green-check.png) |
-| Android Enterprise    | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) |
+| Android-eszköz rendszergazdája | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png)|  ![Támogatott](./media/certificates-configure/green-check.png) |
+| Vállalati Android <br> – Eszköz tulajdonosa   | ![Támogatott](./media/certificates-configure/green-check.png) |   |  |   |
+| Vállalati Android <br> -Munkahelyi profil    | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) |
 | iOS                   | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) |
 | macOS                 | ![Támogatott](./media/certificates-configure/green-check.png) |   |![Támogatott](./media/certificates-configure/green-check.png)|![Támogatott](./media/certificates-configure/green-check.png)|
 | Windows Phone 8.1     |![Támogatott](./media/certificates-configure/green-check.png)  |  | ![Támogatott](./media/certificates-configure/green-check.png)| ![Támogatott](./media/certificates-configure/green-check.png) |
@@ -62,7 +63,7 @@ A PKCS, a SCEP és a PKCS importált tanúsítványok használatához az eszköz
 
 A tanúsítvány exportálásához tekintse meg a hitelesítésszolgáltató dokumentációját. A nyilvános tanúsítványt. cer fájlként kell exportálnia.  Ne exportálja a titkos kulcsot, a. pfx-fájlt.  
 
-Ezt a. cer fájlt fogja használni, amikor [megbízható tanúsítvány](#create-trusted-certificate-profiles) -profilokat hoz létre a tanúsítvány eszközökön való telepítéséhez.  
+Ezt a. cer fájlt fogja használni, amikor [megbízható tanúsítvány-profilokat hoz létre](#create-trusted-certificate-profiles) a tanúsítvány eszközökön való telepítéséhez.  
 
 ## <a name="create-trusted-certificate-profiles"></a>Megbízható tanúsítványok profiljainak létrehozása  
 Hozzon létre egy megbízható tanúsítványsablont, mielőtt SCEP, PKCS vagy PKCS importált tanúsítványsablont hozna létre. A megbízható tanúsítvány-profilok üzembe helyezése biztosítja, hogy mindegyik eszköz felismeri a HITELESÍTÉSSZOLGÁLTATÓ legitimitását. A SCEP tanúsítvány-profilok közvetlenül egy megbízható tanúsítvány profiljára hivatkoznak. A PKCS-tanúsítványok profiljai nem hivatkoznak közvetlenül a megbízható tanúsítvány profiljára, de közvetlenül hivatkoznak a HITELESÍTÉSSZOLGÁLTATÓT futtató kiszolgálóra. A PKCS importált tanúsítvány-profilok nem hivatkoznak közvetlenül a megbízható tanúsítvány profiljára, hanem használhatják azt az eszközön. A megbízható tanúsítvány-profilok eszközökre való telepítése biztosítja ezt a megbízhatósági kapcsolatot. Ha egy eszköz nem bízik meg a legfelső szintű HITELESÍTÉSSZOLGÁLTATÓban, a SCEP-vagy PKCS-tanúsítvány profiljának házirendje sikertelen lesz.  
@@ -72,7 +73,7 @@ Hozzon létre külön megbízható tanúsítványt a támogatni kívánt összes
 
 ### <a name="to-create-a-trusted-certificate-profile"></a>Megbízható tanúsítványprofil létrehozásához  
 
-1. Jelentkezzen be az [Intune](https://aka.ms/intuneportal)-portálra.  
+1. Jelentkezzen be az [Intune-portálra](https://aka.ms/intuneportal).  
 2. Válassza az **Eszközkonfiguráció** > **Kezelés** > **Profilok** > **Profil létrehozása** lehetőséget.  
 3. Adja meg a megbízható tanúsítvány profiljának **nevét és leírását** .  
 4. Válassza ki a megbízható tanúsítvány eszközplatformját a **Platform** legördülő listából.  

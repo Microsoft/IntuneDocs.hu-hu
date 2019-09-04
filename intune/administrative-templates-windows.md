@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f69ab5f4498519fd0d1dee02eca59ea6865598b7
-ms.sourcegitcommit: cf40f641af4746a1e34edd980dc6ec96fd040126
+ms.openlocfilehash: 608f9045d676a756c4ee7440072040075e497605
+ms.sourcegitcommit: 7269abaefb2857bc8b343896bb2138bdb01bf8dc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70122433"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70214335"
 ---
 # <a name="use-windows-10-templates-to-configure-group-policy-settings-in-microsoft-intune"></a>Csoportházirend-beállítások konfigurálása a Windows 10-es sablonokkal Microsoft Intune
 
@@ -38,7 +38,7 @@ Ez a cikk a Windows 10-es eszközökhöz készült sablonok létrehozásának l�
 
 - Ezen beállítások némelyike a Windows 10 1703-es (RS2) verziótól kezdődően érhető el. A legjobb megoldás az, ha a Windows 10 Enterprise 1903 (19H1) és újabb verzióját használja.
 
-- A Windows-beállítások a [Windows házirend](https://docs.microsoft.com/windows/client-management/mdm/policy-configuration-service-provider#admx-backed-policies)-kriptográfiai szolgáltatásait használják. A kriptográfiai szolgáltatók a Windows különböző kiadásaiban működnek, például a Home, a Professional, a Enterprise stb. Ha szeretné megtekinteni, hogy egy CSP egy adott kiadáson működik-e, lépjen a [Windows házirend](https://docs.microsoft.com/windows/client-management/mdm/policy-configuration-service-provider#admx-backed-policies)-kriptográfiai szolgáltatásra.
+- A Windows-beállítások a [Windows házirend-kriptográfiai](https://docs.microsoft.com/windows/client-management/mdm/policy-configuration-service-provider#admx-backed-policies)szolgáltatásait használják. A kriptográfiai szolgáltatók a Windows különböző kiadásaiban működnek, például a Home, a Professional, a Enterprise stb. Ha szeretné megtekinteni, hogy egy CSP egy adott kiadáson működik-e, lépjen a [Windows házirend-kriptográfiai](https://docs.microsoft.com/windows/client-management/mdm/policy-configuration-service-provider#admx-backed-policies)szolgáltatásra.
 
 ## <a name="create-a-template"></a>Sablon létrehozása
 
@@ -67,8 +67,9 @@ Ez a cikk a Windows 10-es eszközökhöz készült sablonok létrehozásának l�
     >
     > - Windows 10 RS4 és újabb, [KB 4512509](https://support.microsoft.com/kb/4512509) -es verzióval.
     > - Windows 10 RS5 és újabb, [KB 4512534](https://support.microsoft.com/kb/4512534) -es verzióval.
+    > - Windows 10 19H1 és újabb, [KB 4512941](https://support.microsoft.com/kb/4512941) -es verzióval.
 
-6. Válassza ki a kívánt beállításokat. Például az **Office**-on, és válassza a **korlátozott böngészés aktiválása**lehetőséget. Megjelenik a beállítás részletes leírása. Válassza az **engedélyezve**, Letiltva lehetőséget, vagy hagyja meg a beállítást **nincs konfigurálva** (alapértelmezett). A részletes leírás azt is ismerteti, hogy mi történik, ha az **engedélyezve**, a Letiltva vagy a **nincs konfigurálva**beállítást választja.
+6. Válassza ki a kívánt beállításokat. Például az **Office**-on, és válassza a **korlátozott böngészés aktiválása**lehetőséget. Megjelenik a beállítás részletes leírása. Válassza az **engedélyezve**, **Letiltva**lehetőséget, vagy hagyja meg a beállítást **nincs konfigurálva** (alapértelmezett). A részletes leírás azt is ismerteti, hogy mi történik, ha az **engedélyezve**, a **Letiltva**vagy a **nincs konfigurálva**beállítást választja.
 7. Válassza ki **OK** a módosítások mentéséhez.
 
 Folytassa a beállítások listájának átadását, és konfigurálja a kívánt beállításokat a környezetében. Néhány példa:
