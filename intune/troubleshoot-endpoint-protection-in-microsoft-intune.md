@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 05/29/2019
+ms.date: 08/26/2019
 ms.topic: troubleshooting
 ms.service: microsoft-intune
 ms.localizationpriority: medium
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5159ee595a6699eb457b194162d21038d4667063
-ms.sourcegitcommit: bd09decb754a832574d7f7375bad0186a22a15ab
+ms.openlocfilehash: c76466acb375fe49afefc542606350733970f416
+ms.sourcegitcommit: 18be0ccc6e51073af32c44abeba421d69a5ae21a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68353338"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70302339"
 ---
 # <a name="endpoint-protection-issues-and-possible-solutions-in-microsoft-intune"></a>Endpoint Protection-problémák és lehetséges megoldások a Microsoft Intune
 
@@ -30,7 +30,7 @@ Ez a cikk a hibák és figyelmeztetések lehetséges okait és megoldásait soro
 
 ## <a name="windows-defender-error-codes"></a>Windows Defender-hibakódok
 
-Tekintse át az eseménynaplókat és a hibakódokat a [Windows DEFENDER AV-vel kapcsolatos](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/troubleshoot-windows-defender-antivirus)hibák elhárításához.
+Tekintse át az eseménynaplókat és a hibakódokat a [Windows DEFENDER AV-vel kapcsolatos hibák elhárításához](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/troubleshoot-windows-defender-antivirus).
 
 ## <a name="common-intune-errors-and-possible-resolutions"></a>Gyakori Intune-hibák és lehetséges megoldások
 
@@ -60,20 +60,20 @@ Előfordulhat, hogy bizonyos funkciók le vannak tiltva. Ezek az üzenetek akkor
 **Lehetséges megoldások**: Engedélyezze ezeket a funkciókat. Útmutatásért lásd:
 
 - [Endpoint Protection-beállítások hozzáadása](endpoint-protection-configure.md)
-- [Windows Defender víruskereső](device-restrictions-windows-10.md#windows-defender-antivirus)
+- [Windows Defender víruskereső](device-restrictions-windows-10.md#microsoft-defender-antivirus)
 - [Végfelhasználók: A valós idejű védelem bekapcsolása a vállalati erőforrások eléréséhez](/intune-user-help/turn-on-defender-windows)
 
 ### <a name="malware-definitions-out-of-date"></a>A kártevő-definíciók elavultak
 
 Ez az állapot akkor jelenik meg, ha az eszközön a kártevő-definíciók elavultak (14 nap). Előfordulhat például, hogy az üzenet megmutathatja, hogy az eszköz le van választva az internetről, vagy elavultak a kártevő-definíciók.
 
-**Lehetséges megoldások**: Ha a kártevő-definíciók elavultak, frissítse a definíciókat a [Windows Defender Antivirus](device-restrictions-windows-10.md#windows-defender-antivirus)használatával.
+**Lehetséges megoldások**: Ha a kártevő-definíciók elavultak, frissítse a definíciókat a [Windows Defender Antivirus](device-restrictions-windows-10.md#microsoft-defender-antivirus)használatával.
 
 ### <a name="full-scan-overdue-or-quick-scan-overdue"></a>A teljes ellenőrzés elmaradt, vagy a gyors ellenőrzés késésben
 
 A teljes vizsgálat vagy a gyors vizsgálat 14 napig nem fejeződött be. Ez a forgatókönyv akkor fordulhat elő, ha az eszköz egy teljes vizsgálat során újraindul.
 
-**Lehetséges megoldások**: Ha egy vizsgálat késésben van, futtathat egy egyszeri vizsgálatot, vagy ismétlődő vizsgálatokat is ütemezhet. Lásd: [Windows Defender víruskereső](device-restrictions-windows-10.md#windows-defender-antivirus).
+**Lehetséges megoldások**: Ha egy vizsgálat késésben van, futtathat egy egyszeri vizsgálatot, vagy ismétlődő vizsgálatokat is ütemezhet. Lásd: [Windows Defender víruskereső](device-restrictions-windows-10.md#microsoft-defender-antivirus).
 
 ### <a name="another-endpoint-protection-application-running"></a>Egy másik végpontvédelmi alkalmazás fut
 
@@ -83,4 +83,4 @@ Egy másik Endpoint Protection-alkalmazás fut, és az eszköz kifogástalan ál
 
 ## <a name="next-steps"></a>További lépések
 
-Kérjen [támogatási segítséget](get-support.md)a Microsofttól, vagy használja a [közösségi fórumokat](https://social.technet.microsoft.com/Forums/en-US/home?category=microsoftintune).
+Kérjen [támogatási segítséget a Microsofttól](get-support.md), vagy használja a [közösségi fórumokat](https://social.technet.microsoft.com/Forums/en-US/home?category=microsoftintune).
