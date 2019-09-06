@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 8/28/2019
+ms.date: 09/04/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -15,20 +15,20 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 608f9045d676a756c4ee7440072040075e497605
-ms.sourcegitcommit: 7269abaefb2857bc8b343896bb2138bdb01bf8dc
+ms.openlocfilehash: c474ac2eccf90e829abe753c82d40bdfae9146ec
+ms.sourcegitcommit: 5bb46d3c0bf8c5595132c4200849b1c4bcfe7cdb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70214335"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70376927"
 ---
 # <a name="use-windows-10-templates-to-configure-group-policy-settings-in-microsoft-intune"></a>Csoportházirend-beállítások konfigurálása a Windows 10-es sablonokkal Microsoft Intune
 
 A szervezetben lévő eszközök kezelésekor olyan beállításokat kíván létrehozni, amelyek különböző eszközcsoport-csoportokra vonatkoznak. Például több eszközosztály is van. A Groupa esetében a beállítások egy adott készletét szeretné hozzárendelni. A GroupB esetében más beállításokat szeretne hozzárendelni. Azt is szeretné, hogy a konfigurálható beállítások egyszerű áttekintése legyen.
 
-Ezt a feladatot Microsoft Intune **Felügyeleti sablonok** használatával végezheti el. A felügyeleti sablonok több száz olyan beállítást foglalnak magukban, amelyek a Microsoft Edge, az Internet Explorer, a Microsoft Office programok, a távoli asztal, a OneDrive, a jelszavak és a PIN-kódok funkcióit vezérlik. Ezek a beállítások lehetővé teszik a csoport rendszergazdái számára a csoportházirendek kezelését a felhő használatával.
+Ezt a feladatot Microsoft Intune **Felügyeleti sablonok** használatával végezheti el. A felügyeleti sablonok több száz olyan beállítást foglalnak magukban, amelyek a Microsoft Edge 77-es és újabb verzióiban, az Internet Explorerben, Microsoft Office programokban, a távoli asztalokon, a OneDrive, a jelszavakban és a PIN-kódokban Ezek a beállítások lehetővé teszik a csoport rendszergazdái számára a csoportházirendek kezelését a felhő használatával.
 
-A Windows beállításai hasonlóak a csoportházirend (GPO) beállításaihoz Active Directory (AD). Ezek a beállítások a Windowsba vannak építve, és az [ADMX által támogatott](https://docs.microsoft.com/windows/client-management/mdm/understanding-admx-backed-policies) , XML-t használó beállítások. Az Office-beállítások az ADMX-betöltés alatt állnak, és az ADMX-beállításokat használják az [Office felügyeleti sablon fájljaiban](https://www.microsoft.com/download/details.aspx?id=49030). Az Intune-sablonok azonban 100%-os felhő-alapúak. Egyszerű és közvetlen továbbítási módot kínálnak a beállítások konfigurálásához, és megkeresik a kívánt beállításokat.
+A Windows beállításai hasonlóak a csoportházirend (GPO) beállításaihoz Active Directory (AD). Ezek a beállítások a Windowsba vannak építve, és az [ADMX által támogatott](https://docs.microsoft.com/windows/client-management/mdm/understanding-admx-backed-policies) , XML-t használó beállítások. Az Office-és a Microsoft Edge-beállítások az ADMX-betöltés alatt állnak, és az [Office felügyeleti sablon fájljai](https://www.microsoft.com/download/details.aspx?id=49030) és a [Microsoft Edge felügyeleti sablonfájlok](https://www.microsoftedgeinsider.com/enterprise)ADMX-beállításaival használhatók. Az Intune-sablonok azonban 100%-os felhő-alapúak. Egyszerű és közvetlen továbbítási módot kínálnak a beállítások konfigurálásához, és megkeresik a kívánt beállításokat.
 
 **Felügyeleti sablonok** beépítettek az Intune-ba, és nincs szükség testreszabásra, beleértve az OMA-URI használatát is. A mobileszköz-kezelési (MDM) megoldás részeként ezeket a sablonokat a Windows 10-es eszközök felügyeletéhez használja egyablakos szolgáltatásként.
 
@@ -58,16 +58,17 @@ Ez a cikk a Windows 10-es eszközökhöz készült sablonok létrehozásának l�
     > [!TIP]
     > Az Intune-ban található Windows-beállítások a helyi csoportházirend elérési útjára vonatkoznak Helyicsoportházirend-szerkesztő (`gpedit`).
 
-5. Alapértelmezés szerint a legördülő lista az **összes terméket**megjeleníti. A listából úgy is szűrheti a beállításokat, hogy csak a **Windows** -beállításokat jelenítse meg, csak az **Office** -beállításokat, vagy csak a **Microsoft Edge** -beállításokat jelenítse meg:
+5. Alapértelmezés szerint a legördülő lista az **összes terméket**megjeleníti. A listából úgy is szűrheti a beállításokat, hogy csak a **Windows** -beállításokat jelenítse meg, csak az **Office** -beállításokat, vagy csak az **Edge 77-es vagy újabb verzióját** jeleníti meg:
 
     ![A lista szűrése az összes Windows vagy az összes Office-beállítás megjelenítéséhez a felügyeleti sablonokban az Intune-ban](./media/administrative-templates-windows/administrative-templates-choose-windows-office-all-products.png)
 
     > [!NOTE]
     > A Microsoft Edge-beállítások a következőkre vonatkoznak:
     >
-    > - Windows 10 RS4 és újabb, [KB 4512509](https://support.microsoft.com/kb/4512509) -es verzióval.
-    > - Windows 10 RS5 és újabb, [KB 4512534](https://support.microsoft.com/kb/4512534) -es verzióval.
-    > - Windows 10 19H1 és újabb, [KB 4512941](https://support.microsoft.com/kb/4512941) -es verzióval.
+    > - A Microsoft Edge 77-es és újabb verziója. A Microsoft Edge 45-es és korábbi verziójának konfigurálásához tekintse meg a [Microsoft Edge böngésző eszközének korlátozási beállításait](device-restrictions-windows-10.md#microsoft-edge-browser).
+    > - Windows 10 RS4 és újabb, [KB 4512509](https://support.microsoft.com/kb/4512509) -es verzióval
+    > - Windows 10 RS5 és újabb, [KB 4512534](https://support.microsoft.com/kb/4512534) -es verzióval
+    > - Windows 10 19H1 és újabb, [KB 4512941](https://support.microsoft.com/kb/4512941) -es verzióval
 
 6. Válassza ki a kívánt beállításokat. Például az **Office**-on, és válassza a **korlátozott böngészés aktiválása**lehetőséget. Megjelenik a beállítás részletes leírása. Válassza az **engedélyezve**, **Letiltva**lehetőséget, vagy hagyja meg a beállítást **nincs konfigurálva** (alapértelmezett). A részletes leírás azt is ismerteti, hogy mi történik, ha az **engedélyezve**, a **Letiltva**vagy a **nincs konfigurálva**beállítást választja.
 7. Válassza ki **OK** a módosítások mentéséhez.

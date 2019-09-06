@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7202ea3230cef8f6d262bdd99fe035076e4466b1
-ms.sourcegitcommit: 9d26ac74eff7647031ae29b13da815703c436f03
+ms.openlocfilehash: 7e89d37d18e49c0faef5fb2f4f53a4bbeb929935
+ms.sourcegitcommit: 5bb46d3c0bf8c5595132c4200849b1c4bcfe7cdb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70176910"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70376890"
 ---
 # <a name="network-endpoints-for-microsoft-intune"></a>Microsoft Intune hálózati végpontok  
 
@@ -148,38 +148,4 @@ Kézbesítési optimalizálási metaadatok:
 |Kommunikáció a APNS-kiszolgálókkal|#-courier.push.apple.com<br>a "#" a 0 és 50 közötti véletlenszerű szám.|    TCP     |  5223 és 443  |
 |Különböző funkciók, többek között a World Wide Web, az iTunes Store, a macOS App Store, az iCloud, az üzenetküldés stb. |phobos.apple.com<br>ocsp.apple.com<br>ax.itunes.apple.com<br>ax.itunes.apple.com.edgesuite.net| HTTP/HTTPS |  80 vagy 443   |
 
-További információkért lásd az Apple [szoftvertermékek által használt Apple TCP-és UDP](https://support.apple.com/en-us/HT202944)-portokat, [a MacOS-, iOS-és iTunes Server Host-kapcsolatokat](https://support.apple.com/en-us/HT201999), valamint az iTunes-alapú háttér-folyamatokat, és [Ha a MacOS-és iOS-ügyfelek nem kapnak Apple push-t értesítések](https://support.apple.com/en-us/HT203609).  
-
-## <a name="microsoft-intune-certificate-connector"></a>A Microsoft Intune Certificate Connector  
-
-A Microsoft Intune Tanúsítvány-összekötő futtató kiszolgálónak hozzáféréssel kell rendelkeznie a **443** -es **TCP** -porton az alábbi táblázatban felsorolt nyilvános IP-címekhez. A tanúsítványokkal kapcsolatos további információkért lásd: [PKCS-tanúsítványok konfigurálása és használata az Intune](certficates-pfx-configure.md) -nal, valamint [a SCEP-tanúsítványok konfigurálása és használata az Intune](certificates-scep-configure.md)-nal.
-
-|Tartományok                             |IP-cím       |
-|---------------|--------------------------------------|
-|Manage.microsoft.com <br> i.manage.microsoft.com <br> r.manage.microsoft.com <br> a.manage.microsoft.com <br> p.manage.microsoft.com <br> EnterpriseEnrollment.manage.microsoft.com <br> EnterpriseEnrollment-s.manage.microsoft.com|13.76.177.110  |
-|fef.msua06.manage.microsoft.com  |13.78.185.97  |
-|Manage.microsoft.com <br> i.manage.microsoft.com <br> r.manage.microsoft.com <br> a.manage.microsoft.com <br> p.manage.microsoft.com <br> EnterpriseEnrollment.manage.microsoft.com <br> EnterpriseEnrollment-s.manage.microsoft.com |13.82.96.212  |
-|fef.amsua0502.manage.microsoft.com |13.85.68.142   |
-| portal.manage.microsoft.com <br> m.manage.microsoft.com <br> portal.fei.msuc01.manage.microsoft.com <br> m.fei.msuc01.manage.microsoft.com <br> portal.fei.msuc02.manage.microsoft.com <br> m.fei.msuc02.manage.microsoft.com <br> portal.fei.msuc03.manage.microsoft.com <br> m.fei.msuc03.manage.microsoft.com <br> portal.fei.msuc05.manage.microsoft.com <br> m.fei.msuc05.manage.microsoft.com |20.188.107.228|
-|fef.msua04.manage.microsoft.com  |23.96.112.28  |
-|fef.amsua0402.manage.microsoft.com|40.69.157.122    |
-|Manage.microsoft.com <br> i.manage.microsoft.com <br> r.manage.microsoft.com <br> a.manage.microsoft.com <br> p.manage.microsoft.com <br> EnterpriseEnrollment.manage.microsoft.com <br> EnterpriseEnrollment-s.manage.microsoft.com |40.83.123.72    |
-|portal.manage.microsoft.com <br> m.manage.microsoft.com <br> portal.fei.msub01.manage.microsoft.com <br> m.fei.msub01.manage.microsoft.com <br> portal.fei.amsub0102.manage.microsoft.com <br> m.fei.amsub0102.manage.microsoft.com <br> fei.msub02.manage.microsoft.com <br> portal.fei.msub02.manage.microsoft.com <br> m.fei.msub02.manage.microsoft.com <br> portal.fei.msub03.manage.microsoft.com <br> m.fei.msub03.manage.microsoft.com <br> portal.fei.msub05.manage.microsoft.com <br> m.fei.msub05.manage.microsoft.com <br> portal.fei.amsub0202.manage.microsoft.com <br> m.fei.amsub0202.manage.microsoft.com <br> portal.fei.amsub0302.manage.microsoft.com <br> m.fei.amsub0302.manage.microsoft.com |51.144.161.187 |
-|portal.manage.microsoft.com <br> m.manage.microsoft.com <br> portal.fei.msub01.manage.microsoft.com <br> m.fei.msub01.manage.microsoft.com <br> portal.fei.amsub0102.manage.microsoft.com <br> m.fei.amsub0102.manage.microsoft.com <br> fei.msub02.manage.microsoft.com <br> portal.fei.msub02.manage.microsoft.com <br> m.fei.msub02.manage.microsoft.com <br> portal.fei.msub03.manage.microsoft.com <br> m.fei.msub03.manage.microsoft.com <br> portal.fei.msub05.manage.microsoft.com <br> m.fei.msub05.manage.microsoft.com <br> portal.fei.amsub0202.manage.microsoft.com <br> m.fei.amsub0202.manage.microsoft.com <br> portal.fei.amsub0302.manage.microsoft.com <br> m.fei.amsub0302.manage.microsoft.com  |52.138.193.149  |
-|portal.manage.microsoft.com <br> m.manage.microsoft.com <br> portal.fei.msua01.manage.microsoft.com <br> m.fei.msua01.manage.microsoft.com <br> portal.fei.msua02.manage.microsoft.com <br> m.fei.msua02.manage.microsoft.com <br> portal.fei.msua04.manage.microsoft.com <br> m.fei.msua04.manage.microsoft.com <br> portal.fei.msua05.manage.microsoft.com <br> m.fei.msua05.manage.microsoft.com <br> portal.fei.amsua0502.manage.microsoft.com <br> m.fei.amsua0502.manage.microsoft.com <br> portal.fei.msua06.manage.microsoft.com <br> m.fei.msua06.manage.microsoft.com <br> portal.fei.amsua0602.manage.microsoft.com <br> m.fei.amsua0602.manage.microsoft.com <br> fei.amsua0202.manage.microsoft.com <br> portal.fei.amsua0202.manage.microsoft.com <br> m.fei.amsua0202.manage.microsoft.com <br> portal.fei.amsua0402.manage.microsoft.com <br> m.fei.amsua0402.manage.microsoft.com |52.160.70.20  |
-|fef.amsua0602.manage.microsoft.com |52.161.28.64   |
-|fef.amsua0202.manage.microsoft.com |52.165.165.17   |
-|portal.manage.microsoft.com <br> m.manage.microsoft.com <br> portal.fei.msua01.manage.microsoft.com <br> m.fei.msua01.manage.microsoft.com <br> portal.fei.msua02.manage.microsoft.com <br> m.fei.msua02.manage.microsoft.com <br> portal.fei.msua04.manage.microsoft.com <br> m.fei.msua04.manage.microsoft.com <br> portal.fei.msua05.manage.microsoft.com <br> m.fei.msua05.manage.microsoft.com <br> portal.fei.amsua0502.manage.microsoft.com <br> m.fei.amsua0502.manage.microsoft.com <br> portal.fei.msua06.manage.microsoft.com <br> m.fei.msua06.manage.microsoft.com <br> portal.fei.amsua0602.manage.microsoft.com <br> m.fei.amsua0602.manage.microsoft.com <br> fei.amsua0202.manage.microsoft.com <br> portal.fei.amsua0202.manage.microsoft.com <br> m.fei.amsua0202.manage.microsoft.com <br> portal.fei.amsua0402.manage.microsoft.com <br> m.fei.amsua0402.manage.microsoft.com |52.168.54.64   |
-|r.manage.microsoft.com |52.169.9.87    |
-|. manage.microsoft.com  |52.174.26.23   |
-|portal.fei.msuc01.manage.microsoft.com <br> m.fei.msuc01.manage.microsoft.com <br> portal.fei.msuc02.manage.microsoft.com <br> m.fei.msuc02.manage.microsoft.com <br> portal.fei.msuc03.manage.microsoft.com <br> m.fei.msuc03.manage.microsoft.com <br> portal.fei.msuc05.manage.microsoft.com <br> m.fei.msuc05.manage.microsoft.com |52.175.12.209  |
-|fef.msua07.manage.microsoft.com |52.175.208.218     |
-|fef.msua02.manage.microsoft.com |52.177.194.236    |
-|sts.manage.microsoft.com        |104.40.82.191    |
-|fef.msua01.manage.microsoft.com |138.91.243.97     |
-|fef.msua05.manage.microsoft.com |138.91.244.151     |
-
-
-
-
-
+További információkért lásd az Apple [szoftvertermékek által használt Apple TCP-és UDP-portokat](https://support.apple.com/en-us/HT202944), [a MacOS-, iOS-és iTunes Server Host-kapcsolatokat, valamint az iTunes-alapú háttér-folyamatokat](https://support.apple.com/en-us/HT201999), és [Ha a MacOS-és iOS-ügyfelek nem kapnak Apple push-t értesítések](https://support.apple.com/en-us/HT203609).  

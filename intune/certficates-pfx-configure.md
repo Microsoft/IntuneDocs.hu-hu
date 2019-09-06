@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf4559d03f7dfc8ec8c48242defa391b4b49e41a
-ms.sourcegitcommit: cf40f641af4746a1e34edd980dc6ec96fd040126
+ms.openlocfilehash: 25beef7e6593865b92e349163768ded5ce3b9e2d
+ms.sourcegitcommit: 5bb46d3c0bf8c5595132c4200849b1c4bcfe7cdb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70122396"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70376936"
 ---
 # <a name="configure-and-use-pkcs-certificates-with-intune"></a>PKCS-tanúsítványok konfigurálása és használata az Intune-nal
 
@@ -63,7 +63,7 @@ A PKCS-tanúsítványok Intune-nal való használatához a következő infrastru
   A Microsoft Intune Tanúsítvány-összekötő támogatja a Federal Information Processing standard (FIPS) üzemmódot is. A FIPS nem szükséges, de ha engedélyezve van, akkor lehetőség van tanúsítványok kibocsátására és visszavonására.
 
 - **Pfx tanúsítvány-összekötő a Microsoft Intunehoz**:  
-  Ha az S/MIME e-mailek titkosítását tervezi használni, az Intune-portálon töltheti le az *importált pfx*-tanúsítványokhoz tartozó összekötőt.  Nyissa meg az **eszköz konfigurációs** > **tanúsítvány** > -összekötők**Hozzáadás**lehetőséget, és kövesse a *lépéseket az importált pfx-tanúsítványokhoz tartozó összekötő telepítéséhez*. Az **PfxCertificateConnectorBootstrapper. exe**telepítőjének letöltéséhez használja a portál letöltési hivatkozását. 
+  Ha az S/MIME e-mailek titkosítását tervezi használni, az Intune-portálon töltheti le az *importált pfx-tanúsítványokhoz*tartozó összekötőt.  Nyissa meg az **eszköz konfigurációs** > **tanúsítvány-összekötők** > **Hozzáadás**lehetőséget, és kövesse a *lépéseket az importált pfx-tanúsítványokhoz tartozó összekötő telepítéséhez*. Az **PfxCertificateConnectorBootstrapper. exe**telepítőjének letöltéséhez használja a portál letöltési hivatkozását. 
 
   Minden Intune-bérlő támogatja az összekötő egyetlen példányát. Ezt az összekötőt telepítheti ugyanarra a kiszolgálóra, mint az Microsoft Intune Certificate Connector példánya.
 
@@ -73,7 +73,7 @@ A PKCS-tanúsítványok Intune-nal való használatához a következő infrastru
   - Telepítse az importált PFX tanúsítvány-összekötőt Microsoft Intune a kiszolgálón.  
   - A fontos frissítések automatikus fogadásához győződjön meg arról, hogy a tűzfalak nyitva vannak, amelyek lehetővé teszik, hogy az összekötő kapcsolatba lépjen a **443**-es port **AutoUpdate.msappproxy.net** .   
 
-  További információ az összekötő által elérhető összes hálózati végpontról: [Microsoft Intune tanúsítvány-összekötő](intune-endpoints.md#microsoft-intune-certificate-connector).
+  További információ az összekötő által elérhető összes hálózati végpontról: [Microsoft Intune tanúsítvány-összekötő](intune-endpoints.md).
 
 - **Windows Server**:  
   Windows-kiszolgálót használ a gazdagéphez:
@@ -81,7 +81,7 @@ A PKCS-tanúsítványok Intune-nal való használatához a következő infrastru
   - Microsoft Intune Tanúsítvány-összekötő – hitelesítéshez és S/MIME e-mail aláírási forgatókönyvekhez
   - PFX tanúsítvány-összekötő a Microsoft Intunehoz – S/MIME e-mail titkosítási forgatókönyvek esetén.
 
-  Mindkét összekötőt (*Microsoft Intune tanúsítvány-összekötő* és *pfx tanúsítvány*-összekötőt) is telepítheti ugyanarra a kiszolgálóra.
+  Mindkét összekötőt (*Microsoft Intune tanúsítvány-összekötő* és *pfx tanúsítvány-összekötőt*) is telepítheti ugyanarra a kiszolgálóra.
 
 ## <a name="export-the-root-certificate-from-the-enterprise-ca"></a>Főtanúsítvány exportálása a vállalati hitelesítésszolgáltatótól
 
@@ -157,7 +157,7 @@ VPN-, WiFi-vagy más erőforrásokkal rendelkező eszköz hitelesítéséhez az 
 5. A Microsoft Intune Tanúsítvány-összekötő megnyitja a **beléptetés** lapot. Az Intune-hoz való kapcsolódás engedélyezéséhez válassza a **Bejelentkezés** lehetőséget, és adjon meg egy globális rendszergazdai engedélyekkel rendelkező fiókot.
 6. Javasoljuk, hogy a **Speciális** lapon hagyja kijelölve az **E számítógép SYSTEM fiókjának a használata (alapértelmezett)** beállítást.
 7. **Alkalmaz** > **Bezárás**
-8. Térjen vissza az Intune-portálra (**Intune** > -**eszköz konfigurációs** > **tanúsítvány**-összekötők). Néhány pillanat múlva megjelenik egy zöld pipa jel, és a **kapcsolatok állapota** **aktív**. Az összekötő kiszolgáló mostantól kapcsolatba tud lépni az Intune-nal.
+8. Térjen vissza az Intune-portálra (**Intune** > -**eszköz konfigurációs** > **tanúsítvány-összekötők**). Néhány pillanat múlva megjelenik egy zöld pipa jel, és a **kapcsolatok állapota** **aktív**. Az összekötő kiszolgáló mostantól kapcsolatba tud lépni az Intune-nal.
 9. Ha a hálózati környezetben van webproxyja, további konfigurációkra lehet szükség az összekötő működésének engedélyezéséhez. További információ: a [meglévő helyszíni proxykiszolgálók használata](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-connectors-with-proxy-servers) az Azure Active Directory dokumentációjában.
 
 > [!NOTE]  
@@ -166,7 +166,7 @@ VPN-, WiFi-vagy más erőforrásokkal rendelkező eszköz hitelesítéséhez az 
 ### <a name="pfx-certificate-connector-for-microsoft-intune"></a>A Microsoft Intune-hoz készült PFX tanúsítvány-összekötő
 
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Válassza ki az **eszköz konfigurációja** > **tanúsítvány** > -összekötők**hozzáadása** elemet.
+2. Válassza ki az **eszköz konfigurációja** > **tanúsítvány-összekötők** > **hozzáadása** elemet.
 3. Töltse le és mentse a Microsoft Intune-hoz készült PFX tanúsítvány-összekötőt. Mentse egy olyan helyre, amely elérhető a kiszolgálóról, amelyre az összekötő telepítve lesz.
 4. A letöltés befejezése után jelentkezzen be a kiszolgálóra. Ha ez megvan:
 
@@ -176,7 +176,7 @@ VPN-, WiFi-vagy más erőforrásokkal rendelkező eszköz hitelesítéséhez az 
 
 5. A Microsoft Intune-hoz készült PFX tanúsítvány-összekötő telepítés után megnyitja a **Regisztráció** lapot. Az Intune-hoz való kapcsolódás engedélyezéséhez **Jelentkezzen be**, és adjon meg egy globális Azure-rendszergazdai vagy Intune-rendszergazdai engedélyekkel rendelkező fiókot.
 6. Zárja be az ablakot.
-7. Térjen vissza a Azure Portalhoz (**Intune** > -**eszköz konfigurációs** > **tanúsítvány**-összekötők). Néhány pillanat múlva megjelenik egy zöld pipa jel, és a **kapcsolatok állapota** **aktív**. Az összekötő kiszolgáló mostantól kapcsolatba tud lépni az Intune-nal.
+7. Térjen vissza a Azure Portalhoz (**Intune** > -**eszköz konfigurációs** > **tanúsítvány-összekötők**). Néhány pillanat múlva megjelenik egy zöld pipa jel, és a **kapcsolatok állapota** **aktív**. Az összekötő kiszolgáló mostantól kapcsolatba tud lépni az Intune-nal.
 
 ## <a name="create-a-trusted-certificate-profile"></a>Megbízható tanúsítványprofil létrehozása
 
@@ -286,5 +286,5 @@ A *pfx-tanúsítványok összekötője Microsoft Intune* [támogatja az automati
 
 A profil létrejött, de egyelőre nem csinál semmit. Ezután [rendelje hozzá a profilt](device-profile-assign.md) , és [Figyelje annak állapotát](device-profile-monitor.md).
 
-[SCEP használata tanúsítványokhoz](certificates-scep-configure.md)vagy [PKCS-tanúsítványok kiállítása a Symantec PKI Manager](certificates-symantec-configure.md)webszolgáltatásból.
+[SCEP használata tanúsítványokhoz](certificates-scep-configure.md)vagy [PKCS-tanúsítványok kiállítása a Symantec PKI Manager webszolgáltatásból](certificates-symantec-configure.md).
 
