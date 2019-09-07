@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 08/27/2019
+ms.date: 09/06/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d8d952194cedde9dc25ecb47e1c7af80035d23fb
-ms.sourcegitcommit: 18be0ccc6e51073af32c44abeba421d69a5ae21a
+ms.openlocfilehash: 78ea485b88891680baa68bfcee1ce1641524d90b
+ms.sourcegitcommit: e477e399cba673a2a9e1fa342e8303ed993801eb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70302309"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70739075"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -53,6 +53,13 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 -->  
 
 <!-- ########################## -->
+## <a name="week-of-september-2-2019"></a>2019. szeptember 2. hét
+
+### <a name="monitor-and-troubleshoot"></a>Monitorozás és hibaelhárítás
+
+#### <a name="intune-user-interface-update--tenant-status-dashboard-----5273210----"></a>Intune felhasználói felület frissítése – bérlői állapot irányítópultja  <!-- 5273210  -->
+A bérlői állapot irányítópultjának felhasználói felülete frissítve lett az Azure felhasználói felületi stílusokkal való összehangoláshoz. További információ: [bérlői állapot](tenant-status.md).
+
 
 ## <a name="week-of-august-26-2019"></a>2019. augusztus 26. hét
 

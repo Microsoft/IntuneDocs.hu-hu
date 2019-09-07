@@ -12,12 +12,12 @@ ms.localizationpriority: high
 ms.technology: ''
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5a5c9dea847ace51c7d6f06cfa43c44beead18f8
-ms.sourcegitcommit: 78ae22b1a7cb221648fc7346db751269d9c898b1
+ms.openlocfilehash: 6df42d908169ab591150e88e03f2f419710c9e54
+ms.sourcegitcommit: e477e399cba673a2a9e1fa342e8303ed993801eb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66373419"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70739207"
 ---
 # <a name="add-ios-software-update-policies-in-intune"></a>IOS-szoftverfrissítési szabályzatok hozzáadása az Intune-ban
 
@@ -25,50 +25,44 @@ A-frissítési szabályzatokkal kikényszerítheti a legújabb elérhető rendsz
 
 Ez a funkció az alábbiakra vonatkozik:
 
-- iOS 10.3 vagy újabb (csak felügyelt eszköz)
+- iOS 10,3 és újabb verziók (felügyelt)
 
 Az eszköz körülbelül 8 óránként jelentkezik be az Intune-ba. Ha az eszköz elérhető frissítést talál a megadott korlátozott időszakokon kívül, akkor letölti és telepíti a legújabb rendszerfrissítéseket. Az eszköz frissítéséhez nincs szükség felhasználói beavatkozásra. A szabályzat nem akadályozza meg, hogy a felhasználó manuálisan frissítse az operációs rendszert.
 
 ## <a name="configure-the-policy"></a>A szabályzat konfigurálása
 
-1. Jelentkezzen be a [Intune](https://go.microsoft.com/fwlink/?linkid=2090973).
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 2. Válassza a **Szoftverfrissítések** > **iOS-frissítési szabályzatok** > **Létrehozás** lehetőséget.
 3. Adja meg a következő beállításokat:
 
-    - **Név**: Adja meg a szoftver frissítések házirend nevét. Például írja be a következőt: `iOS restricted update times`.
-    - **Description** (Leírás): Adja meg a házirend leírását. A beállítás használata nem kötelező, de ajánlott.
+    - **Név**: Adja meg a szoftverfrissítési házirend nevét. Például írja be a következőt: `iOS restricted update times`.
+    - **Description** (Leírás): Adja meg a szabályzat leírását. A beállítás használata nem kötelező, de ajánlott.
 
-4. Válassza ki **beállítások > konfigurálása**. Adja meg a következő beállításokat:
+4. Válassza a **beállítások > konfigurálás**lehetőséget. Adja meg a következő beállításokat:
 
-    - **Válassza ki a frissítések telepítésének elkerüléséhez alkalommal**: Adjon meg egy korlátozott időkeret, amikor nem kényszerített telepíti a frissítéseket. 
-      - Egynapos blokkok nem támogatottak, és nem fognak működni. Például ne konfigurálja a szabályzat egy *kezdési idő* du. 8- és a egy *befejezési idő* , reggel 6 óra.
-      - Egy szabályzatot, amely 12 AM-nél kezdődik és ér véget, Éjfélkor lesz kiértékelve, mint 0 óra és a nem a 24 órát, aminek eredményeképpen nincs korlátozás.
+    - **A frissítések telepítésének megakadályozására szolgáló időpontok kiválasztása**: A korlátozott időkeret megadása, ha a frissítések kényszerített telepítése nem történik meg. 
+      - Az egynapos blokkok nem támogatottak, és előfordulhat, hogy nem működnek. Tegyük fel például, hogy nem állít be egy szabályzatot 8 PM *kezdő időponttal* , és 6 órakor *befejező* időpontot.
+      - Egy olyan szabályzat, amely 12 órakor kezdődik, és 12 ÓRAKOR ér véget, 0 óra, nem pedig 24 óra, ami korlátozás nélkül jár.
 
-      A korlátozott időtartamon beállításakor adja meg a következő adatokat:
+      A korlátozott időkeret beállításakor adja meg a következő adatokat:
 
-      - **Nap**: Válassza ki a nap, hét, ha nincsenek telepítve a frissítések. Ellenőrizze például, hétfőn, szerdán és pénteken ahhoz, hogy ezek a napok való telepítése is.
+      - **Napok**: Válassza ki a hét napját, amikor a frissítések nincsenek telepítve. Például a hétfő, a szerda és a péntek beállítás megadásával megakadályozhatja, hogy a frissítések ezekben a napokban legyenek telepítve.
       - **Időzóna**: Válasszon időzónát.
-      - **Kezdési idő**: Válassza ki a korlátozott időkeret kezdési idejét. Adja meg például 05-kor, így a frissítések nincsenek telepítve, 05-kor kezdődik.
-      - **Befejezési idő**: Válassza ki a korlátozott időkeret befejezési időpontja. Adja meg például 1 AM, így a frissítések telepíthetők, hogy 1 Órakor indítása.
+      - **Kezdés időpontja**: Válassza ki a korlátozott időkeret kezdési idejét. Adja meg például az 5, hogy a frissítések ne legyenek telepítve 5 ÓRAKOR.
+      - **Befejezés időpontja**: Válassza ki a korlátozott időkeret befejezési időpontját. Adja meg például a következőt: 1, így a frissítések telepíthetők a-től kezdődően.
 
-    - **Látható-e a szoftverfrissítések a végfelhasználók számára nem változik az ütemezett frissítések késleltetése (nap)** : 
+    - A **szoftverfrissítések láthatóságának késleltetése a végfelhasználók számára az ütemezett frissítések módosítása nélkül (nap)** : 
 
-      **Ez a beállítás át [Eszközkorlátozások](device-restrictions-ios.md#general). Ezen a helyen, a portálon eltávolítjuk**. Egy rövid ideig a meglévő szabályzatok itt módosítható. Miután körülbelül egy hónap, ezzel a beállítással a meglévő szabályzatok törlődik.
+      \* * Ha a felügyelt iOS-eszközökön bizonyos ideig szeretné megtekinteni a szoftverfrissítések láthatóságát, konfigurálja ezeket a beállításokat az [eszköz korlátozásai](device-restrictions-ios.md#general)között.
+     
+      > [! Fontos  
+      > A *kezdési időt* és a *befejezési időpontot* a 12-es értékre beállított szabályzat 0 óra, nem pedig 24 óra. Ez az eredmény nem korlátozza a korlátozást.  
 
-      Szeretné korlátozni a hatás, a következőket javasoljuk:
-        - Távolítsa el a meglévő szabályzat ezen a helyen, a portálon.
-        - Hozzon létre egy új [eszközkorlátozási szabályzatot](device-restrictions-ios.md#general).
-        - A céloznia ugyanazokat a felhasználókat, mint az eredeti házirenddel.
-
-      Ütközés esetén ez a beállítás nem módosítja *, kivéve, ha* a két érték azonosak. Ütközés elkerülése érdekében ügyeljen arra, módosítsa vagy távolítsa el a meglévő szabályzatot erről a helyről a portálon.
-      > [! [Fontos]  
-      > Egy szabályzatot, amely rendelkezik egy *kezdési idő* és *befejezési idő* éjféltől set ki lesz értékelve, mint 0 óra, és nem 24 óra. Ennek eredményeképpen nincs korlátozás.  
-
-5. Válassza ki **OK** > **létrehozás** a módosítások mentéséhez és a szabályzat létrehozásához.
+5. Kattintson a**Létrehozás** **gombra** > a módosítások mentéséhez és a szabályzat létrehozásához.
 
 A szabályzat létrejön, és megjelenik a szabályzatok listájában.
 
-Az Intune támogatási csapat útmutatásért lásd: [látható-e a felügyelt eszközökön az Intune-ban szoftverfrissítéseket késleltetés](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Delaying-visibility-of-software-updates-in-Intune-for-supervised/ba-p/345753).
+Az Intune támogatási csapatával kapcsolatos útmutatásért lásd az [Intune-ban felügyelt eszközökre vonatkozó szoftverfrissítések láthatóságának késleltetését](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Delaying-visibility-of-software-updates-in-Intune-for-supervised/ba-p/345753)ismertető témakört.
 
 > [!NOTE]
 > Az Apple mobileszköz-kezelése nem teszi lehetővé, hogy a készülékek számára kikényszerítse a frissítések adott időpontban történő telepítését.
@@ -84,7 +78,7 @@ Az Intune támogatási csapat útmutatásért lásd: [látható-e a felügyelt e
     3. Adja meg a feketelistás órák kezdő és záró idejét
 
     > [!NOTE]
-    > Ha a **kezdési idő** és **befejezési idő** mindkét beállítás 12 óra, akkor az Intune nem ellenőrzi a korlátozások mikor telepítse a frissítéseket. Ez azt jelenti, hogy rendelkezik a konfigurációk, mint **válassza ki a frissítések telepítésének elkerüléséhez alkalommal** figyelmen kívül hagy, és a frissítések bármikor telepíthetik.  
+    > Ha a **kezdési** és a **befejezési időpont** is 12am értékre van állítva, akkor az Intune nem korlátozza a frissítések telepítésének idejét. Ez azt jelenti, **hogy a frissítési telepítések** figyelmen kívül hagyása, és a frissítések telepítése bármikor megtörténik, ha az összes konfigurációt meg szeretné akadályozni.  
 
 ## <a name="assign-the-policy-to-users"></a>A szabályzat hozzárendelése a felhasználókhoz
 
@@ -99,7 +93,7 @@ A rendszer ekkor kiértékeli a szabályzat hatókörébe tartozó felhasználó
 
 ## <a name="monitor-device-installation-failures"></a>Eszközök telepítési hibáinak figyelése
 <!-- 1352223 -->
-**Szoftverfrissítések** > **iOS-eszközök telepítési hibái** felügyelt IOS-eszközök egy frissítési szabályzattal, frissítéssel próbálkoztak, és nem sikerült frissíteni a listáját jeleníti meg. Minden eszköz mellett látható egy állapotleírás, amelyből kiderül, hogy az adott eszköz miért nem frissült automatikusan. A kifogástalan, naprakész eszközök nem jelennek meg a listában. A naprakész eszközökön telepítve van az a legújabb frissítés, amelyet az eszköz támogatni képes.
+**A szoftverfrissítések** **telepítési hibái iOS-eszközökön** megjelenítik a frissítési szabályzat által megcélozott felügyelt iOS-eszközök listáját, frissítést próbáltak meg, és nem lehetett frissíteni. >  Minden eszköz mellett látható egy állapotleírás, amelyből kiderül, hogy az adott eszköz miért nem frissült automatikusan. A kifogástalan, naprakész eszközök nem jelennek meg a listában. A naprakész eszközökön telepítve van az a legújabb frissítés, amelyet az eszköz támogatni képes.
 
 ## <a name="next-steps"></a>További lépések
 

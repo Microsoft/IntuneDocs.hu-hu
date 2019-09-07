@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 64a66fde0f501bf2e1e7f6b0cc98eddd871717b2
-ms.sourcegitcommit: 916fed64f3d173498a2905c7ed8d2d6416e34061
+ms.openlocfilehash: b2947969c1c07d595a0a5baa48be11ba7a941424
+ms.sourcegitcommit: e477e399cba673a2a9e1fa342e8303ed993801eb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66050366"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70739212"
 ---
 # <a name="data-storage-and-processing-in-intune"></a>Adattárolás és -feldolgozás az Intune-ban
 
@@ -41,13 +41,13 @@ Azok a telemetrikus adatok (szolgáltatásnaplók, teljesítménynaplók, hibák
 
 A Microsoft világszerte számos régióban kínál és működtet Intune-szolgáltatásokat. Az Intune az egyéni adatok esetén a rendszergazda által kiválasztott tárolási helyeket használja.
 
-További információt a [Microsoft Intune: hol vannak az ügyféladataim?](For more information, see Microsoft Intune Where is my customer data?) című témakörben talál.
+További információ: [Hol találhatók az adatok?](https://www.microsoft.com/trust-center/privacy/data-location)
 
 ### <a name="personal-data-retention"></a>Személyes adatok megtartása
 
-Az Intune a személyes adatokat általában a felhasználó Intune-felügyeletből való eltávolítását követő 30 napig őrzi meg.
+A személyes adatok általában a felhasználó Intune-felügyeletből való eltávolítása után 30 nappal maradnak meg az Intune-ban.
 
-Az Intune-használat részeként gyűjtött telemetriai adatokat legfeljebb 30 napig őrizzük meg.
+Az Intune-használat részeként gyűjtött telemetria-adatok maximális száma 30 nap.
 
 Az auditnaplókat legfeljebb egy évig őrizzük meg.
 

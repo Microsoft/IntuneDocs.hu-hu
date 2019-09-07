@@ -1,11 +1,11 @@
 ---
-title: A jelszó nem felel meg a cég informatikai támogatási szolgálata követelményeinek | Microsoft Docs
-description: ''
+title: A Intune Céges portál eszközök jelszavára vonatkozó követelmények | Microsoft Docs
+description: Ez a cikk a szervezete által érvényesített általános jelszó-követelményeket ismerteti.
 keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 07/10/2018
+ms.date: 09/05/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
@@ -16,42 +16,86 @@ searchScope:
 ROBOTS: ''
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ac0a8b076fe6f21621826dec32f7aaa72eba88c7
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: bce3ae1fd5386c749285313f29fc88cf7b464750
+ms.sourcegitcommit: d0d320fbac69b063b4264491d8a918cfe12bd485
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61503788"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70751779"
 ---
-# <a name="your-password-does-not-meet-your-company-supports-requirements"></a>A jelszó nem felel meg a cég informatikai támogatási szolgálata követelményeinek
+# <a name="device-password-requirements-for-enrolled-devices"></a>A regisztrált eszközökhöz tartozó eszköz jelszavára vonatkozó követelmények
 
-A cég informatikai támogatási szolgálata megköveteli jelszó használatát az eszköz védelme érdekében. Jelenleg a munkahelyi vagy iskolai erőforrások eléréséhez használt jelszó nem felel meg egy vagy több, a cég informatikai támogatási szolgálata által meghatározott követelménynek. A probléma elhárításához kövesse az eszközén megjelent utasításokat. A problémák leírása az alábbiakban olvasható.
+A munkahelyi vagy iskolai erőforrásokhoz való hozzáférés engedélyezése előtt a szervezete megkövetelheti, hogy biztonságosabb jelszót hozzon létre. Ez a cikk a Windows 10, iOS, macOS és Android rendszerű eszközök gyakori jelszavas követelményeit ismerteti. Előfordulhat, hogy a szervezete nem kényszeríti ki az összes követelményt.  
 
-A PIN-kód vagy a jelszó beállításához használja az eszközének megfelelő hivatkozást:
 
-- [Android-eszköz PIN-kódjának vagy jelszavának beállítása](set-your-pin-or-password-android.md)
-- [iOS-eszköz PIN-kódjának beállítása és módosítása](set-or-change-your-passcode-ios.md)
-- [Windows-eszköz jelszavának beállítása és módosítása](set-or-change-your-password-windows.md)
+Ha egy jelszó vagy PIN-kód már nem felel meg a követelménynek, a Céges portál üzenet jelenik meg. Ez a művelet leírja a szükséges módosításokat. Ha nem találhatók részletek az üzenetben, használja ezt a cikket hivatkozásként az aktuális jelszó összehasonlításához.  
 
-> [!NOTE]
-> Ha nem tudja, hogyan alakíthat ki a cég támogatási szolgálata által meghatározott követelményeknek megfelelő jelszót, forduljon a cég támogatási szolgálatához. Az elérhetőségét keresse meg a [Vállalati portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).
+> [!IMPORTANT]
+> Ha módosította a jelszavát a követelmények teljesítése érdekében, de még mindig fogad értesítéseket, indítsa újra az eszközt.  
 
-## <a name="pin-or-password-issue-descriptions"></a>PIN-kóddal vagy jelszóval kapcsolatos problémák leírása
+További segítségért vagy a szervezet konkrét követelményeinek megkereséséhez forduljon az informatikai támogatási szolgálathoz. Keresse meg a kapcsolattartási adatokat a [céges portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980) .  
 
-| **Probléma** | **Leírás** |
+## <a name="windows-10-password-requirements"></a>A Windows 10 jelszavára vonatkozó követelmények
+
+| Message | A javítás módja |
 |-----------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Nincsenek számok, nagybetűk, speciális karakterek a jelszóban.** | A cég informatikai támogatási szolgálata előírja, hogy számok, nagybetűk és speciális karakterek legyenek a jelszavában. A számok és nagybetűk mellett például ilyen szimbólumok szerepelhetnek: $, %, #. |
-| **A jelszó túl egyszerű, így nem elég biztonságos.** | Példák a túl egyszerű jelszóra: 1234 vagy 1111. Ha nem biztos abban, milyen jelszavak engedélyezettek, ügyeljen arra, hogy a jelszó ne tartalmazzon olyan egymást sorban követő vagy ismétlődő számokat, mint amilyen a példában is látható. |
-| **A jelszó lejárt.** | Ha jelszava lejárt, egy újat kell beállítania, amely megfelel a cég informatikai támogatási szolgálata által meghatározott feltételeknek. |
-| **Nincs beállítva jelszó.** | Mielőtt hozzáférne munkahelyi e-mailjéhez vagy az eszközén lévő adatokhoz, a cég informatikai támogatási szolgálata által meghatározott feltételeknek megfelelő jelszót kell beállítania. |
-| **A jelszó túl rövid.** | A cég informatikai támogatási szolgálata megköveteli, hogy hosszabb, több karakterből álló jelszót használjon. |
-| **A jelszót a közelmúltban használták.** | A cég informatikai támogatási szolgálata nem engedélyezi, hogy régi jelszót újra alkalmazzon. Válasszon egy korábban még nem használt jelszót. |
-| **A jelszó nem elég bonyolult.** | A cég informatikai támogatási szolgálata előírja, hogy számok, nagybetűk és speciális karakterek legyenek a jelszavában. A számok és nagybetűk mellett például ilyen szimbólumok szerepelhetnek: $, %, #. Ez az eszközön lévő más fiókokra is igaz lehet, tehát mindenképpen ellenőrizze az egyéb munkahelyi fiókokat, hogy a jelszó megfeleljen az informatikai részleg által az eszköz számára előírt követelményeknek. |
+| A jelszó megadása kötelező. | Adja meg a jelszót. A szervezetnek meg kell adnia egy jelszót az eszköz zárolásának feloldásához. |
+| A jelszó túl egyszerű. |  Győződjön meg arról, hogy a jelszó nem tartalmaz szekvenciális vagy ismétlődő számokat, például 1234 vagy 1111. |
+| A jelszó túl rövid.| Frissítsen vagy állítson be egy több karakterből álló jelszót. A szervezete megköveteli, hogy a jelszó bizonyos hosszúságú legyen. A ténylegesen kiválasztott elemek változhatnak, de a szükséges minimális hossz 4 karakter, a maximális érték pedig 16. |
+| A jelszónak csak számokat kell tartalmaznia. | Olyan jelszót állítson be, amely csak számokat tartalmaz.|
+| A jelszónak csak alfanumerikus karaktereket kell tartalmaznia. | Számok és betűk kombinációját tartalmazó jelszó beállítása.|
+| A jelszónak összetett karaktereket kell tartalmaznia. | Adjon hozzá összetett karaktereket, például számokat, nagybetűket és szimbólumokat ( `$`például `#`:, `%`, és). A szervezete több betűt, számot és nem alfanumerikus karaktert is felhasználhat, hogy mások is megnehezítik a jelszó kibecslését.|  
+| A jelszó lejárt. | Állítson be egy új jelszót. A szervezete megköveteli, hogy bizonyos számú nap elteltével módosítsa a jelszavát. |
+| A jelszó túl nemrég lett használva. | Válassza ki a korábban még nem használt jelszót. A szervezete megköveteli, hogy a jelszó újbóli felhasználása előtt bizonyos mennyiségű időt kell megadnia. |
+
+## <a name="ios-passcode-requirements"></a>iOS-PIN-kódokra vonatkozó követelmények
+
+| Message | A javítás módja |
+|-----------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| A PIN-kód megadása kötelező.| Állítson be egy PIN-kódot. A szervezete megköveteli az eszköz zárolásának feloldásához szükséges PIN-kód megadását. |
+| A PIN-kód túl egyszerű. |  Győződjön meg arról, hogy a PIN-kód nem tartalmaz szekvenciális vagy ismétlődő számokat, például 1234 vagy 1111. |
+| A PIN-kód túl rövid. | Frissítsen vagy állítson be egy több karaktert tartalmazó PIN-kódot. A szervezete megköveteli, hogy a PIN-kód egy bizonyos hosszúságú legyen. A ténylegesen kiválasztott elemek változhatnak, de a szükséges minimális hossz 4 karakter, a maximum pedig 14. A PIN-kód módosításakor előfordulhat, hogy az Apple felszólítja, hogy adjon meg 6 vagy több karaktert. Ez az üzenet egy Apple System-javaslat. Ha a szervezetnek csak 4 vagy 5 karakterből álló PIN-kódot kell megadnia, akkor nem szükséges 6 számjegyű PIN-kódot beírnia.|  
+| A PIN-kódnak csak számokat kell tartalmaznia. | Olyan PIN-kódot állítson be, amely csak számokat tartalmaz.|
+| A PIN-kódnak csak alfanumerikus karaktereket kell tartalmaznia.| Számok és betűk kombinációját tartalmazó PIN-kód beállítása.|
+| A PIN-kódnak nem alfanumerikus karaktereket kell tartalmaznia. | Adjon hozzá speciális karaktereket, `&`például `!` `$` `%`,,, és `#`. A szervezete több betűt, számot és nem alfanumerikus karaktert is felhasználhat, hogy mások is megnehezítik a PIN-kód kibecslését.|
+| A PIN-kód lejárt. | Állítson be egy új jelszót. A szervezete megköveteli, hogy bizonyos számú nap elteltével módosítsa a jelszavát. |
+| A PIN-kódot a közelmúltban használták.| Válassza ki a korábban még nem használt PIN-kódot. A szervezete megköveteli, hogy a PIN-kód újbóli felhasználása előtt egy bizonyos ideig elhaladjon. |
+|A Touch ID vagy a Face ID hitelesítés szükséges. | Állítsa be a Touch ID-t vagy a Face ID-t. A szervezete megköveteli, hogy a fenti módszerek egyikével hitelesítse magát, mielőtt a jelszavakat vagy a hitelkártya-adatokat használja. | 
+
+## <a name="macos-password-requirements"></a>macOS-jelszóra vonatkozó követelmények
+| Message | A javítás módja |
+|-----------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| A jelszó megadása kötelező. | Adja meg a jelszót. A szervezetnek meg kell adnia egy jelszót az eszköz zárolásának feloldásához. |
+| A jelszó túl egyszerű.|  Győződjön meg arról, hogy a jelszó nem tartalmaz szekvenciális vagy ismétlődő számokat, például 1234 vagy 1111. |
+| A jelszó túl rövid. | Frissítsen vagy állítson be egy több karakterből álló jelszót. A szervezete megköveteli, hogy a jelszó bizonyos hosszúságú legyen.|
+| A jelszónak csak számokat kell tartalmaznia. | Olyan jelszót állítson be, amely csak számokat tartalmaz.|
+| A jelszónak csak alfanumerikus karaktereket kell tartalmaznia. | Számok és betűk kombinációját tartalmazó jelszó beállítása.|
+| A jelszónak nem alfanumerikus karaktereket kell tartalmaznia. | Adjon hozzá speciális karaktereket, `&`például `!` `$` `%`,,, és `#`. A szervezete több betűt, számot és nem alfanumerikus karaktert is felhasználhat, hogy mások is megnehezítik a jelszó kibecslését.|
+| A jelszó lejárt. | Állítson be egy új jelszót. A szervezete megköveteli, hogy bizonyos számú nap elteltével módosítsa a jelszavát. |
+| A jelszó túl nemrég lett használva. | Válassza ki a korábban még nem használt jelszót. A szervezete megköveteli, hogy a jelszó újbóli felhasználása előtt bizonyos mennyiségű időt kell megadnia. |
+
+## <a name="android-password-requirements"></a>Az Android-jelszóra vonatkozó követelmények
+| Message | A javítás módja |
+|-----------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| A jelszó megadása kötelező. | Jelszó vagy PIN-kód beállítása. A szervezetnek meg kell adnia egy jelszót az eszköz zárolásának feloldásához. |
+| A jelszó túl egyszerű. |  Győződjön meg arról, hogy a jelszó vagy a PIN-kód nem tartalmaz szekvenciális vagy ismétlődő számokat, például 1234 vagy 1111. |
+| A jelszó túl rövid. | Frissítsen vagy állítson be egy több karakterből álló jelszót. A szervezete megköveteli, hogy a jelszó bizonyos hosszúságú legyen.|
+| A jelszónak számokat kell tartalmaznia. | Számokat tartalmazó jelszó vagy PIN-kód beállítása.|
+| A jelszónak betűket kell tartalmaznia. | Olyan jelszót állítson be, amely az ábécéből származó betűket tartalmaz.|
+| A jelszónak alfanumerikus karaktereket kell tartalmaznia. | Számok és betűk kombinációját tartalmazó jelszó beállítása.|
+| A jelszónak alfanumerikus karaktereket és szimbólumokat kell tartalmaznia. | Olyan jelszót állítson be, amely betűk, számok és speciális `&`karakterek (például `$`, `!` `%`,, és `#`) kombinációját tartalmazza. |
+| A jelszónak biometrikus technológiát kell használnia.| Állítsa be az eszközt biometrikus hitelesítés, például ujjlenyomat vagy Arcfelismerés használatára.
+| A jelszó lejárt. | Állítson be egy új jelszót. A szervezete megköveteli, hogy bizonyos számú nap elteltével módosítsa a jelszavát. |
+| A jelszó túl nemrég lett használva. | Válassza ki a korábban még nem használt jelszót. A szervezete megköveteli, hogy a jelszó újbóli felhasználása előtt bizonyos mennyiségű időt kell megadnia. |
 
 ## <a name="next-steps"></a>További lépések
 
-A PIN-kód vagy a jelszó beállításához használja az eszközének megfelelő hivatkozást:
+Az eszköz jelszavának, PIN-kódjának vagy PIN-kódjának létrehozásához vagy módosításához tekintse meg a következő cikkeket.  
 
-- [Android-eszköz PIN-kódjának vagy jelszavának beállítása](set-your-pin-or-password-android.md)
-- [iOS-eszköz PIN-kódjának beállítása és módosítása](set-or-change-your-passcode-ios.md)
-- [Windows-eszköz jelszavának beállítása és módosítása](set-or-change-your-password-windows.md)
+- [Windows 10-es eszköz jelszavának beállítása](set-or-change-your-password-windows.md)  
+- [IOS-eszköz PIN-kódának beállítása](set-or-change-your-passcode-ios.md)  
+- [Android-eszköz PIN-kódjának vagy jelszavának beállítása](set-your-pin-or-password-android.md)  
+
+További segítségre van szüksége? Forduljon a támogatási személyhez. Az elérhetőségét keresse meg a [Vállalati portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).  
+
+
