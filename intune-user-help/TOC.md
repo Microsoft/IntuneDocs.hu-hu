@@ -158,6 +158,7 @@
 
 ## [Az Intune Munkahelyi portál webhelyének használata](using-the-intune-company-portal-website.md)
 ### [Alkalmazások kezelése](manage-apps-cpweb.md)  
+### [Helyreállítási kulcs beolvasása](get-recovery-key-cpweb.md)
 ### [Eszköz távoli zárolása](remote-lock-your-device-cpwebsite.md)  
 ### [Eszköz átnevezése](rename-your-device-cpwebsite.md)  
 ### [Eszköz eltávolítása](remove-your-device-cpwebsite.md)  
