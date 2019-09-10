@@ -4,7 +4,7 @@
 
 ## [Milyen információkat tekinthet meg a cégem az Intune-nal? ](what-info-can-your-company-see-when-you-enroll-your-device-in-intune.md)
 
-## [Jelszó frissítése](password-does-not-meet-it-administrator-requirements.md)
+## [Eszközjelszóra vonatkozó követelmények](password-does-not-meet-it-administrator-requirements.md)
 
 ## [Bejelentkezés a céges portálra](sign-in-to-the-company-portal.md)
 
