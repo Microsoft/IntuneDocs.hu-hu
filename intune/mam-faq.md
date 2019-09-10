@@ -5,7 +5,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 06/04/2019
+ms.date: 09/09/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2d4cf000d395bb278b3207fc7a4327d3307abbe4
-ms.sourcegitcommit: 7c251948811b8b817e9fe590b77f23aed95b2d4e
+ms.openlocfilehash: 28a7838e174d84dd15592c9e4f6d3e40bc679a90
+ms.sourcegitcommit: a25cd79a33feb536d9b2fc11aa7d3e3972f1ca5a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67883013"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70842107"
 ---
 # <a name="frequently-asked-questions-about-mam-and-app-protection"></a>Gyakori kérdések az MAM-ről és az alkalmazásvédelemről
 
@@ -123,7 +123,7 @@ A személyes azonosítószám (PIN-kód) egy olyan kód, amellyel ellenőrizni l
 
 - **Milyen gyakran kell a felhasználónak megadnia az Intune PIN-kódját?**<br></br> A rendszergazda az Intune felügyeleti konzolján beállíthatja az Intune alkalmazásvédelmi szabályzatának „Hozzáférési követelmények újbóli ellenőrzése ennyi idő után (perc)” beállítását. Ez a beállítás azt határozza meg, hogy mennyi idő után ellenőrzi a rendszer a hozzáférési követelményeket az eszközön, és jelenik meg újból az alkalmazás PIN-kódot bekérő képernyője. Ugyanakkor a PIN-kóddal kapcsolatos alábbi fontos információk is befolyásolják, hogy a rendszer milyen gyakran kér felhasználói bevitelt: 
 
-  - **A PIN-kód azonos közzétevő alkalmazásai között van megosztva a használhatóság javítása érdekében:** IOS rendszeren egyetlen alkalmazás-PIN-kód van megosztva **az azonos alkalmazás**-közzétevőhöz tartozó alkalmazások között. Androidon minden alkalmazás egyetlen közös alkalmazásszintű PIN-kódot használ.
+  - **A PIN-kód azonos közzétevő alkalmazásai között van megosztva a használhatóság javítása érdekében:** IOS rendszeren egyetlen alkalmazás-PIN-kód van megosztva **az azonos alkalmazás-közzétevőhöz**tartozó alkalmazások között. Androidon minden alkalmazás egyetlen közös alkalmazásszintű PIN-kódot használ.
   - **Az eszköz újraindítása után a "hozzáférési követelmények újravizsgálása ennyi idő után (perc)" viselkedés után:** A "PIN-kód időzítő" érték azt jelzi, hogy hány perc inaktivitás után kell megállapítani, hogy mikor jelenjen meg az Intune-alkalmazás PIN-kódja. iOS rendszeren a PIN-kód-számlálót nem érinti az eszköz-újraindítás. Az eszközök újraindítása így nincs hatással arra, hogy a felhasználó hány percig inaktív egy Intune-os PIN-kód-szabályzattal ellátott iOS-alkalmazásban. Android rendszeren a PIN-kód-számláló újraindul az eszköz újraindításakor. Ennek köszönhetően az Intune-os PIN-kód-szabályzattal ellátott Android-alkalmazások **az eszköz újra indítása után** valószínűleg kérni fogják az alkalmazás PIN-kódját „A hozzáférési követelmények ismételt ellenőrzése ennyi idő után (perc)” beállítás értékének függetlenül.  
   - **A PIN-kóddal társított időzítő működés közbeni jellege:** Miután megadta a PIN-kódot egy alkalmazás eléréséhez (A alkalmazáshoz), és az alkalmazás elhagyja az előtért (a fő bemeneti fókuszt) az eszközön, a PIN-kód időzítője visszaáll az adott PIN-kódra. Egy olyan alkalmazás (B alkalmazás) sem fogja bekérni a PIN-kódot a felhasználótól, amely szintén ezt a PIN-kódot használja, mivel a számláló alaphelyzetbe állt. Az adatkérés akkor jelenik meg újra, amikor a rendszer ismét eléri a „Hozzáférési követelmények újbóli ellenőrzése ennyi idő után (perc)” beállítás értékét.
 
@@ -184,7 +184,7 @@ Különböző beállítások esetén először a az alkalmazás verziókövetelm
 
 **A Intune App Protection házirendek lehetővé teszik a rendszergazdák számára, hogy a végfelhasználói eszközöket a Google biztonság-igazolásának átadásához adják át Android-eszközökre. Milyen gyakran érkezik új biztonság igazolási eredmény a szolgáltatásnak?** <br><br> A Google Play szolgáltatás új meghatározása az Intune szolgáltatás által meghatározott időközönként jelentést küld a rendszergazdának. A szolgáltatás hívásának gyakorisága a terhelés miatt szabályozva van, ezért ez az érték belsőleg marad, és nem konfigurálható. A Google biztonság igazolási beállításához a rendszergazda által konfigurált rendszergazdai műveletek a feltételes indításkor az Intune szolgáltatás utolsó jelentett eredményei alapján lesznek elvégezve. Ha nincs adat, a hozzáférés más feltételes indítási ellenőrzéstől függően nem lehetséges, és a Google Play szolgáltatás "oda" helyezése az igazolási eredmények meghatározásához a háttérbe kerül, és aszinkron módon kéri a felhasználót, ha az eszköz meghibásodik. Elavult adatmennyiség esetén a rendszer letiltja vagy engedélyezi a hozzáférést az utolsó jelentett eredménytől függően, és Hasonlóképpen az igazolási eredmények meghatározásához a Google Play szolgáltatás "oda" helyezése is megkezdődik, és aszinkron módon kéri a felhasználót, ha az eszköz sikertelen volt.
 
-**A Intune App Protection szabályzatok lehetővé teszik a rendszergazdák számára, hogy a végfelhasználói eszközökön jeleket küldjenek az Android-eszközökön a Google ellenőrzése alkalmazások API-n keresztül. Hogyan kapcsolhatja be a végfelhasználó az alkalmazás vizsgálatát, hogy azok ne legyenek letiltva a hozzáférés miatt?**<br><br> Az ehhez szükséges útmutatást az eszköz kissé eltérőnek kell lennie. Az általános folyamat magában foglalja a Google Play Áruház, majd a **saját alkalmazások & játékok**elemre kattint, és az utolsó alkalmazás vizsgálatának eredményére kattint, amely a lejátszás elleni védelem menübe kerül. Ellenőrizze, hogy be van-e kapcsolva a **biztonsági fenyegetések keresése** az eszközön.
+**A Intune App Protection szabályzatok lehetővé teszik a rendszergazdák számára, hogy a végfelhasználói eszközökön jeleket küldjenek az Android-eszközökön a Google ellenőrzése alkalmazások API-n keresztül. Hogyan kapcsolhatja be a végfelhasználó az alkalmazás vizsgálatát, hogy azok ne legyenek letiltva a hozzáférés miatt?**<br><br> Az ehhez szükséges útmutatást az eszköz kissé eltérőnek kell lennie. Az általános folyamat magában foglalja a Google Play Áruház, majd a **saját alkalmazások & játékok**elemre kattint, és az utolsó alkalmazás vizsgálatának eredményére kattint, amely a lejátszás elleni védelem menübe kerül. Ellenőrizze, hogy be van-e kapcsolva a **biztonsági fenyegetések keresése az eszközön** .
 
 **Mit jelent a Google biztonság igazolási API-je az Android-eszközökön? Mi a különbség az "alapszintű integritás ellenőrzése" és az "alapszintű integritás ellenőrzése & tanúsított eszközök" között?** <br><br>
 Az Intune kihasználja a Google Play Protect biztonság API-kat a nem regisztrált eszközökhöz való meglévő gyökérszintű észlelési ellenőrzésekhez való hozzáadáshoz. A Google fejleszti és karbantartja ezt az API-készletet az Android-alkalmazások számára, ha nem szeretné, hogy az alkalmazások feltört eszközökön fussanak. Az Android Pay-alkalmazás beépítette ezt, például:. Noha a Google nem osztja meg nyilvánosan a legfelső szintű észlelési ellenőrzéseket, az API-k elvárják, hogy észlelje az eszközeit feltört felhasználókat. Ezek a felhasználók ezt követően le lehet tiltani a hozzáférését, vagy a vállalati fiókjaikat a szabályzattal kompatibilis alkalmazásokból törölve. Az "alapszintű integritás ellenőrzése" című rész az eszköz általános integritását mutatja be. A feltört eszközök, emulátorok, virtuális eszközök és eszközök, amelyekkel a rendszer nem módosítja az alapszintű integritást. "Az alapszintű integritás & minősítésű eszközök ellenőrzése" című rész az eszköznek a Google szolgáltatásaival való kompatibilitását mutatja be. Csak a Google által hitelesített, nem módosított eszközök adhatják át ezt az ellenőrzést. A meghiúsuló eszközök közé tartoznak a következők:

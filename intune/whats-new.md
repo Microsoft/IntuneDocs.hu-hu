@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 09/06/2019
+ms.date: 09/09/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78ea485b88891680baa68bfcee1ce1641524d90b
-ms.sourcegitcommit: e477e399cba673a2a9e1fa342e8303ed993801eb
+ms.openlocfilehash: 48474ca9fcfafcd050b7ef9c5a64adb56388b9a4
+ms.sourcegitcommit: a25cd79a33feb536d9b2fc11aa7d3e3972f1ca5a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70739075"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70842140"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -53,6 +53,18 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 -->  
 
 <!-- ########################## -->
+
+## <a name="week-of-september-9-2019"></a>2019. szeptember 9. hét
+
+### <a name="app-management"></a>Alkalmazáskezelés
+
+#### <a name="updates-to-microsoft-intune-app----4997846---"></a>Microsoft Intune alkalmazás frissítései <!-- 4997846 -->
+Az Android rendszerhez készült Microsoft Intune alkalmazás a következő továbbfejlesztett funkciókkal bővült:
+- Frissítve és javította az elrendezést, hogy a legfontosabb műveleteknél a legalsó szintű Navigálás szerepeljen.
+- Hozzáadott egy további oldalt, amely megjeleníti a felhasználó profilját.
+- Az alkalmazásban a felhasználó számára elérhető végrehajtható értesítések megjelenítése, például az eszköz beállításainak frissítése szükséges.
+- Az egyéni leküldéses értesítések megjelenítése, az alkalmazás igazítása az iOS és Android rendszerhez készült Céges portál alkalmazásban nemrégiben hozzáadott támogatással. További információt [az egyéni értesítések küldése az Intune-ban](custom-notifications.md)című témakörben talál.
+
 ## <a name="week-of-september-2-2019"></a>2019. szeptember 2. hét
 
 ### <a name="monitor-and-troubleshoot"></a>Monitorozás és hibaelhárítás

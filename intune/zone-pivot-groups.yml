@@ -1,0 +1,25 @@
+### YamlMime:ZonePivotGroups
+groups:
+- id: security-baseline-settings-one
+  title: Biztonsági alapkonfigurációk
+  prompt: Válassza ki a biztonsági alaptervet
+  pivots:
+  - id: windows-mdm
+    title: Windows MDM
+  - id: microsoft-defender-atp
+    title: Microsoft Defender komplex veszélyforrások elleni védelem
+- id: windows-mdm-versions
+  title: A Windows MDM alapverziói
+  prompt: Válasszon verziót
+  pivots:
+  - id: mdm-may-2019
+    title: 2019. május
+  - id: mdm-preview
+    title: Előnézet – október 2018
+metadata:
+  ms.openlocfilehash: 1b1f0e7b28dfda7ba9b4867c9641154147aa4c1f
+  ms.sourcegitcommit: 393953dd2a15aff68b246d3633b47566dd43f7cc
+  ms.translationtype: MT
+  ms.contentlocale: hu-HU
+  ms.lasthandoff: 09/09/2019
+  ms.locfileid: "70816043"
