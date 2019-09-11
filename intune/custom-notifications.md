@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 07/18/2019
+ms.date: 09/10/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -17,28 +17,28 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5a75397222117b8e56cb34947363f8624b89b27b
-ms.sourcegitcommit: 58a22f1b4a3fffffb1f7da228f470b3b0774fc42
+ms.openlocfilehash: bffbc96e945d522453c299717a6eb413354a4af4
+ms.sourcegitcommit: 98f2597eec28c6096985d5a1acae72430c2afb1a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70021755"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70878041"
 ---
 # <a name="send-custom-notifications-in-intune"></a>Egyéni értesítések küldése az Intune-ban  
 
-A Microsoft Intune használatával egyéni értesítéseket küldhet a felügyelt iOS-és Android-eszközök felhasználóinak. Ezek az üzenetek szabványos leküldéses értesítésként jelennek meg a felhasználó eszközén lévő Céges portál alkalmazásból, ahogy az eszközön lévő más alkalmazások értesítései is megjelennek. A Windows-eszközök nem támogatják az egyéni Intune-értesítéseket.   
+A Microsoft Intune használatával egyéni értesítéseket küldhet a felügyelt iOS-és Android-eszközök felhasználóinak. Ezek az üzenetek szabványos leküldéses értesítésként jelennek meg a Céges portál alkalmazásból és a felhasználó eszközén található Microsoft Intune alkalmazásból, ugyanúgy, mint az eszközön lévő más alkalmazások értesítései. A Windows-eszközök nem támogatják az egyéni Intune-értesítéseket.   
 
 Az egyéni értesítési üzenetek közé tartozik egy rövid cím és egy 500 karakterből álló üzenettörzs. Ezek az üzenetek bármilyen általános kommunikációs célra testreszabhatók.
 
 ## <a name="common-scenarios-for-sending-custom-notifications"></a>Egyéni értesítések küldésének gyakori forgatókönyvei  
 
-- Egyéni értesítések használata adott felhasználók riasztására egy új, a Céges portál elérhető alkalmazásról.  
+- Egyéni értesítéseket használhat arra vonatkozóan, hogy egy új alkalmazás elérhető legyen a Céges portálban.  
 - Értesítés az összes alkalmazottról az ütemterv változásáról, például a zord időjárás miatti bezárások létrehozásáról.  
 
 ## <a name="considerations-for-using-custom-notifications"></a>Az egyéni értesítések használatának szempontjai  
 
 **Eszköz konfigurációja**:  
-- Az eszközökön telepítve kell lennie a Céges portál alkalmazásnak, mielőtt a felhasználók egyéni értesítéseket tudnak fogadni. Emellett konfigurált engedélyekkel kell rendelkezniük ahhoz, hogy az Céges portál alkalmazás leküldéses értesítéseket küldjön. A Céges portál megkéri a felhasználókat, hogy a telepítés vagy a frissítés során bármikor engedélyezzék az értesítéseket.  
+- Az eszközökön telepítve kell lennie a Céges portál alkalmazásnak vagy a Microsoft Intune alkalmazásnak, mielőtt a felhasználók egyéni értesítéseket tudnak fogadni. Emellett konfigurált engedélyekkel kell rendelkezniük ahhoz, hogy a Céges portál alkalmazás vagy a Microsoft Intune alkalmazás leküldéses értesítéseket küldjön. Ha szükséges, a Céges portál alkalmazás és a Microsoft Intune alkalmazás kérheti a felhasználókat, hogy engedélyezzenek értesítéseket.  
 - Androidon a Google Play-szolgáltatások egy szükséges függőség.  
 - Az eszköznek regisztrálva kell lennie a MDM.
 
@@ -51,8 +51,8 @@ Az egyéni értesítési üzenetek közé tartozik egy rövid cím és egy 500 k
 - A csoportok tartalmazhatnak felhasználókat vagy eszközöket, de az üzeneteket csak a felhasználók kapják meg, és a rendszer minden olyan iOS-vagy Android-eszközre elküldi, amelyet a felhasználó regisztrált.  
 
 **Kézbesítés**:  
-- Az Intune üzeneteket küld a felhasználók Céges portál alkalmazásnak, amely ezután létrehozza a leküldéses értesítést. A felhasználóknak nem kell bejelentkezniük az alkalmazásba az értesítés küldéséhez az eszközön.  
-- Az Intune és a Céges portál alkalmazás nem tudja garantálni az egyéni értesítések kézbesítését. Előfordulhat, hogy az egyéni értesítések több órányi késés után is megjelennek, így sürgős üzenetekhez nem használhatók.  
+- Az Intune üzeneteket küld a felhasználók Céges portál alkalmazásnak vagy a Microsoft Intune alkalmazásnak, amely ezután létrehozza a leküldéses értesítést. A felhasználóknak nem kell bejelentkezniük az alkalmazásba az értesítés küldéséhez az eszközön.  
+- Az Intune, valamint a Céges portál alkalmazás és a Microsoft Intune alkalmazás nem garantálja az egyéni értesítések kézbesítését. Előfordulhat, hogy az egyéni értesítések több órányi késés után is megjelennek, így sürgős üzenetekhez nem használhatók.  
 - Az Intune-ból származó egyéni értesítési üzenetek szabványos leküldéses értesítésként jelennek meg az eszközökön. Ha a Céges portál alkalmazás egy iOS-eszközön van megnyitva, amikor megkapja az értesítést, a rendszer leküldéses értesítés helyett az alkalmazásban jeleníti meg az értesítést.  
 - Az egyéni értesítések az eszköz beállításaitól függően az iOS-és Android-eszközök zárolási képernyőjén is láthatók.  
 - Az Android-eszközökön más alkalmazások is hozzáférhetnek az egyéni értesítések adataihoz. Ne használja őket bizalmas kommunikációra.  
@@ -80,7 +80,7 @@ Az Intune nem követi az Ön által küldött egyéni értesítéseket, és az e
 
 ## <a name="receive-a-custom-notification"></a>Egyéni értesítés fogadása  
 
-Egy eszközön a felhasználók az Intune által az Céges portál alkalmazástól szokásos leküldéses értesítésként küldött egyéni értesítési üzeneteket látják. Ezek az értesítések hasonlóak az eszközön lévő más alkalmazásokból érkező leküldéses értesítések felhasználóinak.  
+Egy eszközön a felhasználók az Intune által az Céges portál alkalmazásból vagy a Microsoft Intune alkalmazásból küldött szabványos leküldéses értesítésként látják az egyéni értesítési üzeneteket. Ezek az értesítések hasonlóak az eszközön lévő más alkalmazásokból érkező leküldéses értesítések felhasználóinak.  
 
 IOS-eszközökön, ha a Céges portál alkalmazás az értesítés fogadásakor meg van nyitva, az értesítés az alkalmazásban jelenik meg leküldéses értesítés helyett.  
 

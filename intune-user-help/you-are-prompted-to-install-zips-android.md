@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 09/25/2017
+ms.date: 09/10/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
@@ -16,12 +16,12 @@ searchScope:
 ROBOTS: ''
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f83504e5d651d7f981fa605fc9157287bdb09a4
-ms.sourcegitcommit: 7315fe72b7e55c5dcffc6d87f185f3c2cded9028
+ms.openlocfilehash: b12cb83485c25181bdcc015857c68da795676219
+ms.sourcegitcommit: 47b06bf2d32e2f84c382dec3366d6f4a31d98012
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67529278"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70864444"
 ---
 # <a name="install-zimperium-zips-on-your-android-device"></a>A Zimperium zIPS alkalmazás telepítése Android-eszközön
 
@@ -31,7 +31,7 @@ Ha problémája akad a telepítéssel, próbálja ki a témakör végén olvasha
 
 ## <a name="what-you-need-to-do"></a>A következőket kell tennie:
 
-1. Húzza le az értesítési sávot a képernyő tetejéről és koppintson a **Szükséges alkalmazás – A(z) Skycure telepítése a Play Áruházból** gombra. Ugyanez a Céges portál alkalmazásban is elérhető a __Megfelelőségi részletek__ között.
+1. Húzza le az értesítési sávot a képernyő felső részén, majd koppintson a **szükséges alkalmazás – Zimperium telepítése Play áruház**lehetőségre. Ugyanez a Céges portál alkalmazásban is elérhető a __Megfelelőségi részletek__ között.
 
 2. Ekkor megnyílik a Zimperium zIPS telepítési lapja a Play Áruházban. Telepítse a Zimperium zIPS-t, majd az **ELFOGADÁS** elemre kattintva adjon hozzáférést a Zimperium zIPS-nek az eszközhöz.
 

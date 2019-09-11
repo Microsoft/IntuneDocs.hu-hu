@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5cf6299f46ed8db4fdca02947ce15a920816d110
-ms.sourcegitcommit: c715c93bb242f4fe44bbdf2fd585909854ed72b6
+ms.openlocfilehash: 3bc5f8a3f0094c363a705b37b904435ef9e91781
+ms.sourcegitcommit: 47b06bf2d32e2f84c382dec3366d6f4a31d98012
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68660943"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70864478"
 ---
 # <a name="set-up-the-intune-on-premises-exchange-connector-in-microsoft-intune"></a>A helyszíni Intune Exchange Connector beállítása Microsoft Intune
 A cikkben található információk segítségével telepítheti és figyelheti a Exchange Active Sync helyszíni összekötőt az Intune-hoz.  Az Intune helyszíni Exchange Connector és a [feltételes hozzáférési szabályzatok segítségével engedélyezheti vagy letilthatja a helyszíni Exchange-postaládák elérését](conditional-access-exchange-create.md). 
@@ -124,6 +124,9 @@ A helyszíni Intune Exchange-összekötő telepítéséhez hajtsa végre az alá
    Győződjön meg arról, hogy az Automatikus észlelés szolgáltatás és az Exchange-webszolgáltatások konfigurálva vannak az Exchange ügyfélelérési kiszolgálón. Az ezzel kapcsolatos további információkért lásd: [Ügyfélelérési kiszolgáló](https://technet.microsoft.com/library/dd298114.aspx).
 
 6. A **Jelszó** mezőben adja meg a fiók jelszavát, hogy az Intune hozzáférhessen az Exchange-kiszolgálóhoz.
+
+   > [!NOTE]
+   > Ahhoz, hogy a kapcsolódás sikeres legyen, a bérlőhöz való bejelentkezéshez használt fióknak legalább Intune szolgáltatás-rendszergazdának kell lennie. Enélkül sikertelen lesz a hiba: "A távoli kiszolgáló hibát adott vissza: (400) helytelen kérelem ".
 
 7. Válassza a **Csatlakozás** elemet.
 
