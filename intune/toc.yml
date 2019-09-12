@@ -546,10 +546,11 @@
         - name: Az Intune-alkalmazásfelügyelet ismertetése
           href: app-management.md
           displayName: mam-we
-        - name: Alkalmazások hozzáadásának áttekintése
-          href: apps-add.md
-          displayName: apk; ipa; msi; appx; appxbundle; msix; msixbundle; app
+        - name: Alkalmazások hozzáadása
           items:
+            - name: Alkalmazások hozzáadásának áttekintése
+              href: apps-add.md
+              displayName: apk; ipa; msi; appx; appxbundle; msix; msixbundle; app
             - name: Intune-nal védett alkalmazások
               href: apps-supported-intune-apps.md
             - name: Áruházbeli alkalmazások
@@ -561,9 +562,10 @@
                 - name: Windows Phone 8.1-es áruházbeli alkalmazások
                   href: store-apps-windows-phone-8-1.md
                 - name: Microsoft Áruházbeli alkalmazások
-                  href: store-apps-windows.md
                   items:
-                    - name: A Céges portál alkalmazás manuális hozzáadása
+                    - name: Windows-alkalmazás
+                      href: store-apps-windows.md
+                    - name: Vállalati portál alkalmazás
                       href: store-apps-company-portal-app.md
                 - name: Felügyelt Google Play-alkalmazások
                   href: apps-add-android-for-work.md
@@ -571,10 +573,13 @@
                   href: apps-add-office365.md
                 - name: macOS-es Office 365-alkalmazások
                   href: apps-add-office365-macos.md
+            - name: Webalkalmazások
+              href: web-app.md
+              displayName: web; web link; weblink; web-link
+            - name: Beépített alkalmazások
+              href: apps-add-built-in.md
             - name: Alkalmazás létrehozása (üzletági)
               items:
-                - name: Win32-alkalmazások kezelése
-                  href: apps-win32-app-management.md
                 - name: Androidos üzletági alkalmazások
                   href: lob-apps-android.md
                 - name: iOS-es üzletági alkalmazások
@@ -587,11 +592,8 @@
                   href: app-sideload-windows.md
                 - name: macOS-es üzletági alkalmazások
                   href: lob-apps-macos.md
-            - name: Webalkalmazások
-              href: web-app.md
-              displayName: web; web link; weblink; web-link
-            - name: Beépített alkalmazások
-              href: apps-add-built-in.md
+            - name: Win32-alkalmazások kezelése
+              href: apps-win32-app-management.md
             - name: PowerShell-parancsprogramok
               href: intune-management-extension.md
         - name: Alkalmazások hozzárendelése
@@ -849,7 +851,7 @@
                   href: vpn-settings-windows-10.md
                 - name: Wi-Fi
                   href: wi-fi-settings-windows.md
-                - name: Oktatás
+                - name: Biztonságos értékelés
                   href: education-settings-windows.md
                 - name: Többfelhasználós megosztott eszköz
                   href: shared-user-device-settings-windows.md
