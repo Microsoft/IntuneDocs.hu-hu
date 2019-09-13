@@ -1,7 +1,7 @@
 ---
-title: iOS bundle azonosítók beépített alkalmazások a Microsoft Intune – Azure |} A Microsoft Docs
+title: iOS-csomagok azonosítói a Microsoft Intune-Azure beépített alkalmazásaihoz | Microsoft Docs
 titleSuffix: ''
-description: A csomagazonosító a beépített iOS-alkalmazások listájának megtekintéséhez. Ezek alkalmazásköteg-azonosítókat használni, hogy kifejezetten engedélyezzék az eszközkonfigurációs profilok alkalmazásokat és szabályzatokat a Microsoft Intune-ban.
+description: Tekintse meg a beépített iOS-alkalmazások köteg-azonosítóinak listáját. Ezekkel a köteg-azonosítókkal explicit módon engedélyezheti az alkalmazások számára az eszközök konfigurációs profiljaiban és házirendjeiben Microsoft Intune.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
@@ -15,26 +15,27 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ff5b411f14fef4ad294b0dd8b265680fd67df08
-ms.sourcegitcommit: a97b6139770719afbd713501f8e50f39636bc202
+ms.openlocfilehash: 04cafd2cf69bbd42a35ade3ae180e8af8789c938
+ms.sourcegitcommit: e8d788d033be4320cd72c98c892b383e1bb77e18
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66402764"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70912819"
 ---
-# <a name="bundle-ids-for-built-in-ios-apps-you-can-use-in-intune"></a>Alkalmazásköteg-azonosítókat beépített iOS-alkalmazások is használhatja az Intune-ban
+# <a name="bundle-ids-for-built-in-ios-apps-you-can-use-in-intune"></a>Az Intune-ban használható beépített iOS-alkalmazások köteg-azonosítói
 
-Funkciók az iOS-eszközökön való konfigurálásakor azt is megteheti a beépített alkalmazások az iOS-eszközökön. Ez a cikk a csomag néhány gyakori beépített iOS-alkalmazás azonosítóit sorolja fel. Ha más alkalmazás csomagazonosítóját szeretné megismerni, lépjen kapcsolatba a szoftver gyártójával. Az Apple listájának megtekintéséhez [iOS bundle azonosítók](https://support.apple.com/guide/mdm/ios-bundle-ids-mdm90f60c1ce/web) (az Apple webhelyén nyílik meg).
+Ha iOS-eszközökön konfigurálja a szolgáltatásokat, a beépített alkalmazásokat is hozzáadhatja az iOS-eszközökhöz. Ez a cikk a gyakori beépített iOS-alkalmazások köteg-azonosítóit sorolja fel. Ha más alkalmazás csomagazonosítóját szeretné megismerni, lépjen kapcsolatba a szoftver gyártójával. Tekintse meg az Apple [iOS-csomagok azonosítóinak](https://support.apple.com/guide/mdm/ios-bundle-ids-mdm90f60c1ce/web) listáját (az Apple webhelyének megnyitása).
 
-## <a name="bundle-ids"></a>Alkalmazásköteg-azonosítókat
+## <a name="bundle-ids"></a>Köteg-azonosítók
 
 | Csomagazonosító                   | Alkalmazásnév     | Kiadó |
 |-----------------------------|--------------|-----------|
-| com.apple.AppStore          | Alkalmazásáruház    | Apple     |
+| com. Apple. Store             | Alkalmazásáruház    | Apple     |
 | com.apple.calculator        | Számológép   | Apple     |
 | com.apple.mobilecal         | Naptár     | Apple     |
 | com.apple.camera            | Kamera       | Apple     |
 | com.apple.mobiletimer       | Óra        | Apple     |
+| com. Apple. clips             | Klipek        | Apple     |
 | com.apple.compass           | Iránytű      | Apple     |
 | com.apple.MobileAddressBook | Névjegyek     | Apple     |
 | com.apple.facetime          | FaceTime     | Apple     |
@@ -47,7 +48,7 @@ Funkciók az iOS-eszközökön való konfigurálásakor azt is megteheti a beép
 | com.apple.Home              | Otthoni         | Apple     |
 | com.apple.iBooks            | iBooks       | Apple     |
 | com.apple.iMovie            | iMovie       | Apple     |
-| com.apple.itunesconnect.mobile | iTunes Connectben | Apple |
+| com.apple.itunesconnect.mobile | iTunes-kapcsolat | Apple |
 | com.apple.MobileStore       | iTunes Store | Apple     |
 | com.apple.itunesu           | iTunes U     | Apple     |
 | com.apple.Keynote           | Keynote      | Apple     |
@@ -74,8 +75,8 @@ Funkciók az iOS-eszközökön való konfigurálásakor azt is megteheti a beép
 | com.apple.VoiceMemos        | Hangjegyzetek   | Apple     |
 | com.apple.Passbook          | Wallet       | Apple     |
 | com.apple.Bridge            | Watch        | Apple     |
-| com.apple.weather           | Időjárás      | Apple     |
+| com.apple.weather           | Időjárás      | Apple     |      
 
 ## <a name="next-steps"></a>További lépések
 
-Ezek alkalmazásköteg-azonosítókat segítségével konfigurálhatja a [eszközfunkciók](ios-device-features-settings.md) és [engedélyezése vagy korlátozása bizonyos beállítások](device-restrictions-ios.md) az iOS-eszközökön.
+Ezekkel a köteg-azonosítókkal konfigurálhatja az [eszköz funkcióit](ios-device-features-settings.md) , és [engedélyezheti vagy korlátozhatja az iOS-eszközök egyes beállításait](device-restrictions-ios.md) .

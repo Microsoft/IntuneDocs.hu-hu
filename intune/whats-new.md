@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 48474ca9fcfafcd050b7ef9c5a64adb56388b9a4
-ms.sourcegitcommit: a25cd79a33feb536d9b2fc11aa7d3e3972f1ca5a
+ms.openlocfilehash: 3abf0b45abfe7567692f6bb653c7c2a1c3986546
+ms.sourcegitcommit: f5d216e1b8230045161bb10afbc33d9608782229
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70842140"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70936660"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -228,7 +228,7 @@ Készülékregisztrációs program profilokat is beállíthat, hogy kihagyja a k
 A beállítási asszisztens testreszabásával kapcsolatos további információkért lásd: [Apple beléptetési profil létrehozása iOS rendszerhez](device-enrollment-program-enroll-ios.md#create-an-apple-enrollment-profile) és [Apple regisztrációs profil létrehozása MacOS rendszerhez ](device-enrollment-program-enroll-macos.md#create-an-apple-enrollment-profile).
 
 #### <a name="add-a-user-column-to-the-autopilot-device-csv-upload-process----3823054---"></a>Felhasználói oszlop hozzáadása az Autopilot-eszköz CSV-feltöltési folyamatához <!-- 3823054 -->
-Mostantól hozzáadhat egy felhasználói oszlopot az Autopilot-eszközökhöz tartozó CSV-feltöltéshez. Ez lehetővé teszi a felhasználók tömeges hozzárendelését a CSV importálásakor. A CSV-sorok új formátuma így néz ki: sorozatszám, Windows-termék-azonosító, hardver-kivonat, opcionális-csoport-címke, opcionálisan hozzárendelt felhasználó. További információ: [Windows-eszközök regisztrálása az Intune-ban a Windows Autopilot használatával](enrollment-autopilot.md).
+Mostantól hozzáadhat egy felhasználói oszlopot az Autopilot-eszközökhöz tartozó CSV-feltöltéshez. Ez lehetővé teszi a felhasználók tömeges hozzárendelését a CSV importálásakor. További információ: [Windows-eszközök regisztrálása az Intune-ban a Windows Autopilot használatával](enrollment-autopilot.md).
 
 
 ### <a name="device-management"></a>Eszközkezelés
@@ -292,7 +292,7 @@ Az Intune-ban létrehozhat egy OEMConfig-alkalmazást használó eszköz-konfigu
 
 Ez a frissítés egy továbbfejlesztett felhasználói élményt biztosító konfigurációs tervezőt tartalmaz, amely az alkalmazásban beágyazott részleteket jeleníti meg, beleértve a címeket, a leírásokat és egyebeket. A JSON-szerkesztő továbbra is elérhető, és a Configuration Designerben végrehajtott módosításokat jeleníti meg.
 
-Az aktuális beállítások megtekintéséhez válassza az [androidos vállalati eszközök használata és kezelése a OEMConfig](android-oem-configuration-overview.md)-mel című témakört.
+Az aktuális beállítások megtekintéséhez válassza az androidos [vállalati eszközök használata és kezelése a OEMConfig](android-oem-configuration-overview.md)-mel című témakört.
 
 Érintett kiadások: Vállalati Android
 
@@ -334,7 +334,7 @@ A diagnosztikai adatgyűjtés alapértelmezett értéke megváltozott a Windows 
 ### <a name="device-management"></a>Eszközkezelés
 
 #### <a name="improve-device-location---3855417----"></a>Az eszköz helyének javítása<!-- 3855417  -->
-Az eszköz **megkeresése** művelettel nagyíthatja az eszköz pontos koordinátáit. Az elveszett iOS-eszközök megkeresésével kapcsolatos további információkért lásd: [elveszett iOS-eszközök megkeresése](device-locate.md).
+Az eszköz **megkeresése** művelettel nagyíthatja az eszköz pontos koordinátáit. Az elveszett iOS-eszközök megkeresésével kapcsolatos további információkért lásd: [elveszett iOS-eszközök](device-locate.md)megkeresése.
 
 
 ### <a name="device-security"></a>Eszköz biztonsága
@@ -414,7 +414,7 @@ A **minden alkalmazás** oldalon elérhetők az Microsoft Store for Business (MS
 A felhasználók mostantól hozzáférhetnek a Céges portál alkalmazáshoz a Windows megosztott eszközökön. A végfelhasználók egy **megosztott** címkét fognak látni az eszköz csempén. Ez a Windows Céges portál alkalmazás 10.3.45609.0 és újabb verziójára vonatkozik.
 
 #### <a name="view-all-installed-apps-from-new-company-portal-web-page----4224326---"></a>Az összes telepített alkalmazás megtekintése új Céges portál weboldalról <!-- 4224326 -->
-A Céges portál webhely új **telepített alkalmazások** lapja felsorolja a felhasználó eszközeire telepített összes felügyelt alkalmazást (mindkettő szükséges és elérhető). A hozzárendelés típusa mellett a felhasználók láthatják az alkalmazás közzétevőjét, a közzététel dátumát és a jelenlegi telepítési állapotot. Ha még nem tette meg a felhasználók számára szükséges vagy elérhető alkalmazásokat, egy üzenet jelenik meg arról, hogy nincs telepítve vállalati alkalmazás. Ha szeretné megtekinteni az új lapot a weben, lépjen a [céges portál webhelyére](https://portal.manage.microsoft.com) , és kattintson a **telepített alkalmazások**elemre.  
+A Céges portál webhely új **telepített alkalmazások** lapja felsorolja a felhasználó eszközeire telepített összes felügyelt alkalmazást (mindkettő szükséges és elérhető). A hozzárendelés típusa mellett a felhasználók láthatják az alkalmazás közzétevőjét, a közzététel dátumát és a jelenlegi telepítési állapotot. Ha még nem tette meg a felhasználók számára szükséges vagy elérhető alkalmazásokat, egy üzenet jelenik meg arról, hogy nincs telepítve vállalati alkalmazás. Ha szeretné megtekinteni az új lapot a weben, lépjen a [céges portál](https://portal.manage.microsoft.com) webhelyére, és kattintson a **telepített alkalmazások**elemre.  
 
 #### <a name="new-view-lets-app-users-see-all-managed-apps-installed-on-device----2352913---"></a>Az új nézet lehetővé teszi, hogy az alkalmazások felhasználói lássák az eszközre telepített összes felügyelt alkalmazást. <!-- 2352913 -->  
 A Windows Céges portál alkalmazás mostantól felsorolja a felhasználó eszközére telepített összes felügyelt alkalmazást (mindkettő kötelező és elérhető). A felhasználók láthatják a megkísérelt és függőben lévő alkalmazás-telepítéseket, valamint a jelenlegi állapotukat is. Ha még nem tette meg a felhasználók számára a szükséges vagy elérhető alkalmazásokat, megjelenik egy üzenet, amely arról tájékoztatja, hogy nincsenek telepítve a vállalati alkalmazások. Az új nézet megjelenítéséhez nyissa meg a céges portál navigációs ablaktáblát, és válassza az **alkalmazások** > **telepített alkalmazások**elemet.    
@@ -1384,7 +1384,7 @@ Az új Céges portál Súgó & támogatási oldal segít a felhasználóknak a h
 
 #### <a name="new-help-and-support-experience-for-intune------3307080---"></a>Új Súgó és támogatási élmény az Intune-hoz   <!-- #3307080 -->
 Az új Súgó és támogatás élményét minden bérlő számára elérhetővé tesszük a következő néhány napban. Ez az új felhasználói felület elérhető az Intune-ban, és a [Azure Portalban](https://portal.azure.com/)található Intune-pengék használatával érhető el.
-Az új felületen saját szavaival fejtheti ki problémáját, valamint hibaelhárítási ötleteket kaphat, és webalapú szervizelési tartalmakat találhat. Ezeket a megoldásokat egy, a felhasználói lekérdezések által vezérelt, szabályon alapuló gépi tanulási algoritmus segítségével ajánljuk. A probléma-specifikus útmutatás mellett az új eset-létrehozási munkafolyamattal is megnyithat egy támogatási esetet e-mailben vagy telefonon. Ez az új felhasználói élmény a Súgó és támogatás megnyitásakor a konzol területén alapuló, előre kiválasztott beállítások statikus készletének korábbi súgóját és támogatását váltja fel. További információkért lásd: [a Microsoft Intune támogatásának beszerzése](get-support.md).
+Az új felületen saját szavaival fejtheti ki problémáját, valamint hibaelhárítási ötleteket kaphat, és webalapú szervizelési tartalmakat találhat. Ezeket a megoldásokat egy, a felhasználói lekérdezések által vezérelt, szabályon alapuló gépi tanulási algoritmus segítségével ajánljuk. A probléma-specifikus útmutatás mellett az új eset-létrehozási munkafolyamattal is megnyithat egy támogatási esetet e-mailben vagy telefonon. Ez az új felhasználói élmény a Súgó és támogatás megnyitásakor a konzol területén alapuló, előre kiválasztott beállítások statikus készletének korábbi súgóját és támogatását váltja fel. További információkért lásd: [a Microsoft Intune támogatásának](get-support.md)beszerzése.
 
 ### <a name="role-based-access-control"></a>Szerepköralapú hozzáférés-vezérlés
 

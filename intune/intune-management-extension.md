@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 230f226cba70a7fc61efd236cc0fde0ca6b7fa68
-ms.sourcegitcommit: c3a4fefbac8ff7badc42b1711b7ed2da81d1ad67
+ms.openlocfilehash: 9cf3a3735688d12e69dc297aa42ab2869c69bfc9
+ms.sourcegitcommit: 05139901411d14a85c2340c0ebae02d2c178a851
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68374932"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70904985"
 ---
 # <a name="use-powershell-scripts-on-windows-10-devices-in-intune"></a>PowerShell-parancsfájlok használata Windows 10-es eszközökön az Intune-ban
 
@@ -194,7 +194,29 @@ A [Windows 10 automatikus regisztrációjának engedélyezése](windows-enroll.m
 
   - Az Intune nélküli parancsfájlok végrehajtásának teszteléséhez futtassa a rendszerfiókban lévő parancsfájlokat a [PsExec eszköz](https://docs.microsoft.com/sysinternals/downloads/psexec) helyi használatával:
 
-    `psexec -i -s`
+    `psexec -i -s`  
+    
+  - Ha a parancsfájl-végrehajtás sikeres, de az eredmény nem történik (például a fenti parancsfájl nem hoz létre fájlt), akkor előfordulhat, hogy a víruskereső AgentExecutor. A következő parancsfájlnak mindig hibát kell jelentenie az Intune-ban – ha sikeres jelentést készít, tekintse meg a AgentExecutor. log naplófájlt a hiba eredményének megerősítéséhez – a hossznak > 2 értékűnek kell lennie, ha a parancsfájlt minden esetben végrehajtja:
+
+    ```powershell
+    Write-Error -Message "Forced Fail" -Category OperationStopped
+    mkdir "c:\temp" 
+    echo "Forced Fail" | out-file c:\temp\Fail.txt
+    ```
+    
+  - Ha rögzíteni kell a. Error és a. output parancsot, a következő kódrészlet végrehajtja a szkriptet a AgentExecutor-on keresztül a PSx86, és a gyűjtemény mögött hagyja a naplókat (mivel az Intune felügyeleti bővítmény a végrehajtás után törli a naplókat):
+  
+    ```powershell
+    $scriptPath = read-host "Enter the path to the script file to execute"
+    $logFolder = read-host "Enter the path to a folder to output the logs to"
+    $outputPath = $logFolder+"\output.output"
+    $errorPath =  $logFolder+"\error.error"
+    $timeoutPath =  $logFolder+"\timeout.timeout"
+    $timeoutVal = 60000 
+    $PSFolder = "C:\Windows\SysWOW64\WindowsPowerShell\v1.0"
+    $AgentExec = "C:\Program Files (x86)\Microsoft Intune Management Extension\agentexecutor.exe"
+    &$AgentExec -powershell  $scriptPath $outputPath $errorPath $timeoutPath $timeoutVal $PSFolder 0 0
+    ```
 
 ## <a name="next-steps"></a>További lépések
 

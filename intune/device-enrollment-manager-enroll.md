@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bd870a788ff5cac7e0aff47c5b8175c0bdfacff2
-ms.sourcegitcommit: 614c4c36cfe544569db998e17e29feeaefbb7a2e
+ms.openlocfilehash: c3ec5bf1ed668f5775cf5a7c46a2c19d02eb227d
+ms.sourcegitcommit: 05139901411d14a85c2340c0ebae02d2c178a851
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68427299"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70905037"
 ---
 # <a name="enroll-devices-in-intune-by-using-a-device-enrollment-manager-account"></a>Eszközök regisztrálása az Intune-ban egy eszközregisztráció-kezelői fiók használatával
 
@@ -39,7 +39,7 @@ A DEM-fiókokra és a DEM-fiókokkal regisztrált eszközökre a következő kor
 - Az eszközök akkor telepíthetnek VPP-alkalmazásokat, ha rendelkeznek Apple VPP-eszközlicenccel.
 - Eszközei le lettek tiltva a feltételes hozzáférés Windows 10 1803 + kivételével
 - A DEM-fiókkal regisztrált összes eszköznek megfelelő licenccel kell rendelkeznie ahhoz, hogy az Intune kezelje őket. A licenc lehet Intune-beli felhasználói licenc vagy Intune-eszköz licence.
-
+- Ha egy DEM-fiók használatával [regisztrálja az androidos vállalati munkahelyi profilokat](android-work-profile-enroll.md) , akkor a fiókhoz legfeljebb 10 eszköz regisztrálható.
 
 
 ## <a name="add-a-device-enrollment-manager"></a>Eszközregisztráció-kezelő hozzáadása
