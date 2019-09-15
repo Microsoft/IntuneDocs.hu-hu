@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3abf0b45abfe7567692f6bb653c7c2a1c3986546
-ms.sourcegitcommit: f5d216e1b8230045161bb10afbc33d9608782229
+ms.openlocfilehash: f5ea00f2e2631433ece3e9053b8f9ea9d9e359c8
+ms.sourcegitcommit: c9725ddae6c0f82a491de27c87f240254d32716b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70936660"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70986402"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -64,6 +64,10 @@ Az Android rendszerhez készült Microsoft Intune alkalmazás a következő tov�
 - Hozzáadott egy további oldalt, amely megjeleníti a felhasználó profilját.
 - Az alkalmazásban a felhasználó számára elérhető végrehajtható értesítések megjelenítése, például az eszköz beállításainak frissítése szükséges.
 - Az egyéni leküldéses értesítések megjelenítése, az alkalmazás igazítása az iOS és Android rendszerhez készült Céges portál alkalmazásban nemrégiben hozzáadott támogatással. További információt [az egyéni értesítések küldése az Intune-ban](custom-notifications.md)című témakörben talál.
+
+#### <a name="for-ios-devices-customize-the-enrollment-process-privacy-screen-of-the-company-portal----4394993---"></a>IOS-eszközök esetén szabja testre a beléptetési folyamat adatvédelmi képernyőjét a Céges portál <!-- 4394993 -->
+A Markdown segítségével testre szabhatja a Céges portál adatvédelmi képernyőjét, amelyet a végfelhasználók az iOS-regisztráció során látnak. Pontosabban testreszabhatja azon dolgok listáját, amelyeket a szervezete nem lát vagy tesz az eszközön. További információ: [a Intune céges portál alkalmazás konfigurálása](company-portal-app.md#privacy-statement-customization).
+
 
 ## <a name="week-of-september-2-2019"></a>2019. szeptember 2. hét
 

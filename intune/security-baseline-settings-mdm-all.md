@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b45dde2958535259206c6f99ca1c06a51b28b9d4
-ms.sourcegitcommit: 393953dd2a15aff68b246d3633b47566dd43f7cc
+ms.openlocfilehash: 845f798c246d1872080d26ec269662cec154eee2
+ms.sourcegitcommit: c9725ddae6c0f82a491de27c87f240254d32716b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70816035"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70986366"
 ---
 # <a name="windows-mdm-security-baseline-settings-for-intune"></a>A Windows MDM biztonsági alapkonfigurációjának beállításai az Intune-ban
 Tekintse meg a Microsoft Intune által támogatott MDM biztonsági alapbeállításokat a Windows 10 vagy újabb rendszerű eszközökön. Az alapkonfigurációban a beállítások alapértelmezett értékei az ajánlott konfigurációt jelentik a megfelelő eszközökhöz, és előfordulhat, hogy nem egyeznek meg a többi biztonsági alapkonfigurációtól vagy az alapkonfiguráció más verzióitól származó alapértékekkel.
@@ -106,7 +106,7 @@ További információ: [Policy CSP-ApplicationManagement](https://docs.microsoft
 További információ: [Policy CSP-Robotpilota](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-autoplay) a Windows dokumentációjában.  
 
 - **Automatikus lejátszás alapértelmezett automatikus futtatási viselkedése**  
-  Ez a beállítás hatással van az automatikus futtatási parancsok alapértelmezett viselkedésére. Az automatikus futtatási parancsok az Autorun. inf fájlban tárolódnak, és a telepítőprogramokat vagy más rutinokat indíthatnak el. Ha ez a *beállítás engedélyezve van*, a rendszergazdák megváltoztathatják a Windows Vista vagy újabb rendszert futtató eszközök alapértelmezett automatikus futtatási viselkedését. A viselkedés beállítható a következőre: a) teljesen letilthatja az automatikus futtatási parancsokat, vagy b) visszatérhet a Windows Vista előtti működésre, amely automatikusan végrehajtja az Autorun parancs futtatását. Ha a beállítás *Letiltva* vagy *nincs konfigurálva*értékre van állítva, akkor a Windows Vista vagy újabb rendszerű eszközök megkérik a felhasználót, hogy az Autorun parancs fusson.  
+  Ez a beállítás hatással van az automatikus futtatási parancsok alapértelmezett viselkedésére. Az automatikus futtatási parancsok az Autorun. inf fájlban tárolódnak, és a telepítőprogramokat vagy más rutinokat indíthatnak el. Ha ez a *beállítás engedélyezve van*, a rendszergazdák megváltoztathatják a Windows Vista vagy újabb rendszert futtató eszközök alapértelmezett automatikus futtatási viselkedését. A viselkedés beállítható a következőre: a) teljesen letilthatja az automatikus futtatási parancsokat, vagy b) visszatérhet a Windows Vista előtti működésre, amely automatikusan végrehajtja az Autorun parancs futtatását. Ha a beállítás letiltva vagy *nincs konfigurálva*értékre van állítva, akkor a Windows Vista vagy újabb rendszerű eszközök megkérik a felhasználót, hogy az Autorun parancs fusson.  
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067133)       
   
   **Alapértelmezett**: Végrehajtás mellőzése  
@@ -135,17 +135,28 @@ További információ: [Policy CSP-BitLocker](https://docs.microsoft.com/windows
 
   - **Titkosítás megkövetelése írási hozzáféréshez**  
     **Alapértelmezett**: Igen  
+
 ::: zone-end
 ::: zone pivot="mdm-preview"
-    - **Titkosítási módszer**  
-      **Alapértelmezett**: AES 256bit CBC  
+
+- **Bites zárolás cserélhető meghajtó házirendje**  
+  Ezzel a házirend-beállítással szabályozható a titkosítási módszer és a titkosítás erőssége. A szabályzat értékei határozzák meg a BitLocker által a titkosításhoz használt rejtjel erősségét. A vállalatok a fokozott biztonság érdekében érdemes szabályozni a titkosítási szintet (az AES-256 erősebb, mint az AES-128). Ha engedélyezi ezt a beállítást, konfigurálhat egy titkosítási algoritmust és a kulcs titkosítási erősségét a rögzített adatmeghajtók, az operációsrendszer-meghajtók és a cserélhető adatmeghajtók számára egyenként. A rögzített és az operációsrendszer-meghajtók esetében javasoljuk, hogy használja a XTS-AES algoritmust. A cserélhető meghajtók esetében az AES-CBC 128-bit vagy az AES-CBC 256-bit használatát kell használnia, ha a meghajtót olyan más eszközök használják, amelyeken nem fut a Windows 10, a 1511-es vagy újabb verzió. A titkosítási módszer módosítása nincs hatással, ha a meghajtó már titkosítva van, vagy ha a titkosítás folyamatban van. Ezekben az esetekben a rendszer figyelmen kívül hagyja ezt a házirend-beállítást.  
+  [További információ](https://go.microsoft.com/fwlink/?linkid=2067140) 
+
+  A következő beállítással állíthatja be a cserélhető meghajtó cserélhető meghajtójának házirendjét:
+
+  - **Titkosítás megkövetelése írási hozzáféréshez**  
+    **Alapértelmezett**: Igen  
+
+  - **Titkosítási módszer**  
+    **Alapértelmezett**: AES 256bit CBC  
 
 - **Bit Locker rögzített meghajtó szabályzata**  
   Ezzel a házirend-beállítással szabályozható a titkosítási módszer és a titkosítás erőssége. A szabályzat értékei határozzák meg a BitLocker által a titkosításhoz használt rejtjel erősségét. A vállalatok a fokozott biztonság érdekében érdemes szabályozni a titkosítási szintet (az AES-256 erősebb, mint az AES-128). Ha engedélyezi ezt a beállítást, beállíthatja a titkosítási algoritmust és a kulcs titkosítási erősségét a rögzített adatmeghajtókhoz, az operációsrendszer-meghajtókhoz és a cserélhető adatmeghajtókhoz. A rögzített és az operációsrendszer-meghajtók esetében javasoljuk, hogy használja a XTS-AES algoritmust. A cserélhető meghajtók esetében az AES-CBC 128-bit vagy az AES-CBC 256-bit használatát kell használnia, ha a meghajtót olyan más eszközök használják, amelyeken nem fut a Windows 10, a 1511-es vagy újabb verzió. A titkosítási módszer módosítása nincs hatással, ha a meghajtó már titkosítva van, vagy ha a titkosítás folyamatban van. Ezekben az esetekben a rendszer figyelmen kívül hagyja ezt a házirend-beállítást.  
  
-   A bit Locker rögzített meghajtó házirendje beállításnál adja meg a következő beállításokat: 
-   - **Alapértelmezett titkosítási módszer**
-     : AES 256bit XTS  
+  A bit Locker rögzített meghajtó házirendje beállításnál adja meg a következő beállításokat: 
+  - **Alapértelmezett titkosítási módszer**
+    : AES 256bit XTS  
 
 - **Bites zárolás rendszermeghajtó-házirendje**  
   Ezzel a házirend-beállítással szabályozható a titkosítási módszer és a titkosítás erőssége. A szabályzat értékei határozzák meg a BitLocker által a titkosításhoz használt rejtjel erősségét. A vállalatok a fokozott biztonság érdekében érdemes szabályozni a titkosítási szintet (az AES-256 erősebb, mint az AES-128). Ha engedélyezi ezt a beállítást, beállíthatja a titkosítási algoritmust és a kulcs titkosítási erősségét a rögzített adatmeghajtókhoz, az operációsrendszer-meghajtókhoz és a cserélhető adatmeghajtókhoz. A rögzített és az operációsrendszer-meghajtók esetében javasoljuk, hogy használja a XTS-AES algoritmust. A cserélhető meghajtók esetében az AES-CBC 128-bit vagy az AES-CBC 256-bit használatát kell használnia, ha a meghajtót olyan más eszközök használják, amelyeken nem fut a Windows 10, a 1511-es vagy újabb verzió. A titkosítási módszer módosítása nincs hatással, ha a meghajtó már titkosítva van, vagy ha a titkosítás folyamatban van. Ezekben az esetekben a rendszer figyelmen kívül hagyja ezt a házirend-beállítást.  
@@ -328,7 +339,7 @@ További információ: [Policy CSP-DeviceLock](https://docs.microsoft.com/window
   
   **Alapértelmezett**: Igen  
   
-  Ha a *jelszó megkövetelése* *Igen*értékre van állítva, a következő beállítások érhetők el.
+  Ha a *jelszó* megkövetelése *Igen*értékre van állítva, a következő beállítások érhetők el.
 
   - **Jelszó minimális karakterkészletének száma**  
     Az erős PIN-kódokhoz vagy jelszóhoz szükséges összetett elemek (kis-és nagybetűk, számok és írásjelek) száma. A PIN-kód a következő viselkedést alkalmazza az asztali és a mobileszközök esetében: 1 – csak 2 számjegyből és kisbetűkből álló számjegyek szükségesek 3 számjegyű, kisbetűket és nagybetűket. Asztali Microsoft-fiókok és tartományi fiókok esetében nem támogatott. 4 számjegyű, kisbetűket, nagybetűket és speciális karaktereket kell megadni. Az asztali verzióban nem támogatott. Az alapértelmezett érték az 1.  
@@ -690,11 +701,11 @@ További információ: [Policy CSP-InternetExplorer](https://docs.microsoft.com/
 - **Az Internet Explorer korlátozott zónájának bejelentkezési beállításai**  
   Ezzel a házirend-beállítással kezelheti a bejelentkezési beállítások beállításait. Ha engedélyezi ezt a házirend-beállítást, a következő bejelentkezési beállítások közül választhat. 
   - *Névtelen* – Névtelen bejelentkezés használata a http-hitelesítés letiltásához és a vendég fiók csak a Common Internet File System (CIFS) protokollhoz való használatához. 
-  - A felhasználók felhasználói azonosítóinak és jelszavának lekérdezéséhez *kérje a* Felhasználónév és a jelszó megadását. A felhasználó lekérdezése után ezek az értékek csendesen használhatók a munkamenet hátralevő részében. 
+  - A felhasználók felhasználói azonosítóinak és jelszavának lekérdezéséhez kérje a Felhasználónév és a jelszó megadását. A felhasználó lekérdezése után ezek az értékek csendesen használhatók a munkamenet hátralevő részében. 
   - *Automatikus bejelentkezés csak az intranet zónában* – ezzel a beállítással lekérdezheti a felhasználókat a többi zónában lévő felhasználói azonosítók és jelszavak számára. A felhasználó lekérdezése után ezek az értékek csendesen használhatók a munkamenet hátralevő részében. 
   - *Automatikus bejelentkezés a jelenlegi felhasználónévvel és jelszóval*– ezzel a beállítással megpróbálhatja bejelentkezni a Windows NT kérdéses válasz (más néven NTLM-hitelesítés) használatával. Ha a kiszolgáló támogatja a Windows NT kérdéses választ, a bejelentkezés a felhasználó hálózati felhasználónevét és jelszavát használja a bejelentkezéshez. Ha a kiszolgáló nem támogatja a Windows NT kérdéses választ, a rendszer lekérdezi a felhasználót, hogy megadja a felhasználónevet és a jelszót. 
 
-  Ha letiltja ezt a házirend-beállítást, a bejelentkezés *csak az intranet zónában automatikus bejelentkezésre*van beállítva. Ha nem konfigurálja ezt a házirend-beállítást, a bejelentkezés a Felhasználónév és a jelszó *megadására* van beállítva.  
+  Ha letiltja ezt a házirend-beállítást, a bejelentkezés *csak az intranet zónában automatikus bejelentkezésre*van beállítva. Ha nem konfigurálja ezt a házirend-beállítást, a bejelentkezés a Felhasználónév és a jelszó megadására van beállítva.  
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067110)  
   
   **Alapértelmezett**: Névtelen  
@@ -1281,9 +1292,9 @@ További információ: [Policy CSP-LocalPoliciesSecurityOptions](https://docs.mi
   
 - **Minimális munkamenet-biztonság az NTLM SSP-alapú ügyfelek számára**  
   Ez a biztonsági beállítás lehetővé teszi az ügyfél számára, hogy megkövetelje a 128 bites titkosítás és/vagy az NTLMv2 munkamenet-biztonság egyeztetését. Ezek az értékek a LAN Manager hitelesítési szintjének biztonsági beállításának értékétől függenek. Az alábbi lehetőségek állnak rendelkezésére:
-  - *NTLMv2-munkamenet biztonságának megkövetelése* – a kapcsolat sikertelen lesz, ha az NTLMv2 protokoll nincs egyeztetve. 
-  - *128 bites titkosítás megkövetelése* – ha erős titkosítás (128 bites) nincs egyeztetve, a rendszer nem fogja tudni a kapcsolatokat.
-  - *NTLMv2 és 128 bites titkosítás megkövetelése*.  
+  - *NTLMv2-munkamenet biztonságának* megkövetelése – a kapcsolat sikertelen lesz, ha az NTLMv2 protokoll nincs egyeztetve. 
+  - *128 bites titkosítás* megkövetelése – ha erős titkosítás (128 bites) nincs egyeztetve, a rendszer nem fogja tudni a kapcsolatokat.
+  - *NTLMv2 és 128 bites titkosítás*megkövetelése.  
 
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067324)  
 
@@ -1318,7 +1329,7 @@ További információ: [Policy CSP-LocalPoliciesSecurityOptions](https://docs.mi
   
 - **Normál felhasználói jogosultságszint-emelési kérések viselkedése**  
   Ezzel a házirend-beállítással szabályozható az általános jogú felhasználók jogosultságszint-emelési kérésének viselkedése. 
-  - Jogosultságszint-emelési *kérések automatikus megtagadása* – ha egy művelethez emelt szintű jogosultságra van szükség, egy konfigurálható hozzáférés-megtagadási hibaüzenet jelenik meg. Az asztali gépeket futtató vállalatok az általános jogú felhasználók ezt a beállítást választva csökkenthetik az ügyfélszolgálati hívásokat. 
+  - *Jogosultságszint* -emelési kérések automatikus megtagadása – ha egy művelethez emelt szintű jogosultságra van szükség, egy konfigurálható hozzáférés-megtagadási hibaüzenet jelenik meg. Az asztali gépeket futtató vállalatok az általános jogú felhasználók ezt a beállítást választva csökkenthetik az ügyfélszolgálati hívásokat. 
   - *Hitelesítő adatok kérése a biztonságos asztalon* – ha egy művelethez jogosultságszint-emelési jogosultságra van szükség, a felhasználónak a biztonságos asztalon kell megadnia egy másik felhasználónevet és jelszót. Ha a felhasználó érvényes hitelesítő adatokat ad meg, a művelet folytatódik a megfelelő jogosultsággal. 
   - *Hitelesítő adatok kérése* – ha egy művelethez jogosultságszint-emelési jogosultságra van szükség, a rendszer kéri a felhasználótól, hogy adjon meg egy rendszergazdai felhasználónevet és jelszót. Ha a felhasználó érvényes hitelesítő adatokat ad meg, a művelet folytatódik a megfelelő jogosultsággal.  
 
@@ -1469,7 +1480,9 @@ További információ: [házirend CSP-Power](https://docs.microsoft.com/windows/
 ::: zone-end
 ::: zone pivot="mdm-may-2019"
 
-## <a name="remote-assistance"></a>Távsegítség
+## <a name="remote-assistance"></a>Távsegítség   
+További információ: [Policy CSP-RemoteAssistance](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-remoteassistance#remoteassistance-solicitedremoteassistance) a Windows dokumentációjában.  
+
 - **Távsegítség kérése**  
   Ezzel a házirend-beállítással engedélyezheti vagy kikapcsolhatja a Távsegítség kérését a számítógépen. 
   - *Ha engedélyezi ezt a házirend-beállítást*, akkor a számítógépen lévő felhasználók e-mailben vagy fájlátvitel használatával kérhetnek segítséget. Emellett a felhasználók csevegési programokat is használhatnak a számítógéphez való csatlakozás engedélyezéséhez, és további Távsegítség-beállításokat is konfigurálhat. 
@@ -1579,7 +1592,7 @@ További információ: [Policy CSP-RemoteProcedureCall](https://docs.microsoft.c
 - **Nem hitelesített RPC-ügyfél beállításai**  
   Ezzel a házirend-beállítással szabályozható, hogy az RPC-kiszolgáló futtatókörnyezete hogyan kezelje az RPC-kiszolgálókhoz csatlakozó nem hitelesített RPC-ügyfeleket Ezzel a házirend-beállítással az összes RPC-alkalmazás hatással van. Tartományi környezetben ezt a házirend-beállítást körültekintően kell használni, mivel ez a funkció számos funkciót érint, beleértve a csoportházirend feldolgozását is. A házirend-beállítás módosításának visszaállításához manuális beavatkozásra van szükség az egyes érintett gépeken. Ez a házirend-beállítás soha nem alkalmazható tartományvezérlőre. Ha letiltja ezt a házirend-beállítást, az RPC-kiszolgáló futtatókörnyezete a "hitelesített" értéket használja a Windows-ügyfélen, és a "None" értéket a Windows Server azon verzióiban, amelyek támogatják ezt a házirend-beállítást. Ha nem konfigurálja ezt a házirend-beállítást, az továbbra is le lesz tiltva. Az RPC-kiszolgáló futtatókörnyezete úgy viselkedik, mintha engedélyezve volt a Windows-ügyfélhez használt "hitelesített" értékkel, valamint a "nincs" értékkel, amelyet ez a házirend-beállítás támogat. Ha engedélyezi ezt a házirend-beállítást, a rendszer az RPC-kiszolgáló futtatókörnyezetét arra utasítja, hogy korlátozza a gépen futó RPC-kiszolgálókhoz csatlakozó nem hitelesített RPC-ügyfeleket. Az ügyfél akkor tekinthető hitelesített ügyfélnek, ha nevesített csövet használ a kiszolgálóval való kommunikációhoz, vagy ha RPC-biztonságot használ. A nem hitelesített ügyfelek által elérhetővé tett RPC-felületek mentesülnek ettől a korlátozástól attól függően, hogy a házirend-beállítás kiválasztott értéke milyen.  
   - A *none* értékkel az összes RPC-ügyfél csatlakozhat a házirend-beállítást alkalmazó számítógépen futó RPC-kiszolgálókhoz. 
-  - A *hitelesítéssel* csak a hitelesített RPC-ügyfelek (a fenti definíció alapján) csatlakozhatnak azon a számítógépen futó RPC-kiszolgálókhoz, amelyen a házirend-beállítás alkalmazva van. A rendszer kivételeket biztosít azokhoz az interfészekhez, amelyek kérték azokat. 
+  - A hitelesítéssel csak a hitelesített RPC-ügyfelek (a fenti definíció alapján) csatlakozhatnak azon a számítógépen futó RPC-kiszolgálókhoz, amelyen a házirend-beállítás alkalmazva van. A rendszer kivételeket biztosít azokhoz az interfészekhez, amelyek kérték azokat. 
   - A *kivételek nélküli hitelesítés* lehetővé teszi, hogy csak a fenti definíción alapuló hitelesített RPC-ügyfelek csatlakozzanak a házirend-beállítást alkalmazó számítógépen futó RPC-kiszolgálókhoz. A kivételek nem engedélyezettek. Megjegyezés: Ez a házirend-beállítás csak a rendszer újraindítása után lesz alkalmazva.  
 
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067225)  
@@ -1620,7 +1633,7 @@ További információ: [Policy CSP – rendszer](https://docs.microsoft.com/wind
   Ezzel a házirend-beállítással megadhatja, hogy mely rendszerindítási illesztőprogramok legyenek inicializálva egy korai indítási antimalware rendszerindítási illesztőprogram által meghatározott besorolás alapján. A korai indítású antimalware rendszerindítási illesztőprogram a következő besorolásokat adhatja vissza minden rendszerindítási illesztőprogramhoz: 
   - *Jó* – az illesztőprogram aláírása megtörtént, és a nem lett illetéktelenül módosítva.  
   - *Rossz* – az illesztőprogram kártevőként lett azonosítva. Azt javasoljuk, hogy ne engedélyezze az ismert hibás illesztőprogramok inicializálását. 
-  - *Rossz, de szükséges a rendszerindításhoz* – az illesztőprogram kártevőként van azonosítva, de a számítógép nem tud sikeresen elindulni az illesztőprogram betöltése nélkül. 
+  - *Rossz, de szükséges a* rendszerindításhoz – az illesztőprogram kártevőként van azonosítva, de a számítógép nem tud sikeresen elindulni az illesztőprogram betöltése nélkül. 
   - *Ismeretlen* – ezt az illesztőprogramot a kártevő-észlelési alkalmazás nem tanúsította, és a korai indítású antimalware rendszerindítási illesztőprogram nem sorolta be.  
 
   Ha engedélyezi ezt a házirend-beállítást, kiválaszthatja, hogy mely rendszerindítási illesztőprogramokat szeretné inicializálni a számítógép következő indításakor. Ha letiltja vagy nem konfigurálja ezt a házirend-beállítást, a rendszerindítási illesztőprogramok helyesnek, ismeretlennek vagy hibásnak, de a rendszerindítási kritikusnak megfelelően vannak inicializálva, és a helytelenül meghatározott illesztőprogramok inicializálását a rendszer kihagyja. Ha a kártevő-észlelési alkalmazás nem tartalmaz korai indítású antimalware rendszerindítási illesztőprogramot, vagy ha a korai indítású kártevő-indítási illesztőprogram le van tiltva, akkor ez a beállítás nem lép érvénybe, és az összes rendszerindítási illesztőprogram inicializálva van.  
@@ -1804,7 +1817,7 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
 ::: zone-end
 ::: zone pivot="mdm-may-2019"
 ## <a name="windows-defender-firewall"></a>Windows Defender-tűzfal  
-További információ: [2.2.2 FW_PROFILE_TYPOE]( https://docs.microsoft.com/openspecs/windows_protocols/ms-fasp/7704e238-174d-4a5e-b809-5f3787dd8acc) a Windows-protokollok dokumentációjában.  
+További információ: [2.2.2 FW_PROFILE_TYPE]( https://docs.microsoft.com/openspecs/windows_protocols/ms-fasp/7704e238-174d-4a5e-b809-5f3787dd8acc) a Windows-protokollok dokumentációjában.  
 
 - **Tűzfal-profil tartománya**  
   Meghatározza azokat a profilokat, amelyekre a szabály tartozik: Tartomány, magán, nyilvános. Ez az érték a tartományokhoz csatlakozó hálózatok profilját jelöli.  
@@ -1904,7 +1917,7 @@ További információ: [Policy CSP-WindowsInkWorkspace](https://docs.microsoft.c
 
 - **Szabadkézi munkaterület**  
   Megadja, hogy engedélyezi-e a felhasználó számára a szabadkézi munkaterület elérését. 
-  - *Letiltva* – a szabadkézi munkaterület hozzáférése le van tiltva. A szolgáltatás ki van kapcsolva.
+  - Letiltva – a szabadkézi munkaterület hozzáférése le van tiltva. A szolgáltatás ki van kapcsolva.
   - *Engedélyezve* – a tinta munkaterület funkció be van kapcsolva, de a felhasználó nem férhet hozzá a zárolási képernyő felett.
   - *Nincs konfigurálva* – a tinta munkaterület funkció be van kapcsolva, és a felhasználó a zárolási képernyő felett is használhatja.  
 
@@ -1930,7 +1943,7 @@ A *május 2019 sablon Mdm biztonsági alapterve* a következő változásokkal r
 A következő beállítások egyike:
 - *Új* az alapkonfiguráció ezen legújabb verziójában.
 - A rendszer *eltávolítja* a legújabb alapverzióról, de az előző verzióban szerepelt.
-- A beállítások a korábbi verziókban való megjelenésének valamilyen módon *módosultak* . 
+- A beállítások a korábbi verziókban való megjelenésének valamilyen módon módosultak. 
 
 *[Új]* [**Zárolás felett**](#above-lock):
 - **Alkalmazások hang aktiválása zárolt képernyőről**    
@@ -1942,7 +1955,7 @@ A következő beállítások egyike:
 *[Eltávolítva]* [**BitLocker**](#bitlocker):  
 - Bites zárolás cserélhető meghajtó házirendje > **titkosítási módszer**
 - **Bit Locker rögzített meghajtó szabályzata** *(minden beállítás)*
-- **Bites zárolás rendszermeghajtó-házirendje** *(minden beállítás)*
+- **Bites zárolás rendszermeghajtó** -házirendje *(minden beállítás)*
 
 *[Új]* [**Kapcsolat**](#connectivity):
 - **Az UNC elérési utak biztonságos elérésének konfigurálása**
@@ -1962,7 +1975,7 @@ A következő beállítások egyike:
 - **Az Internet Explorer titkosításának támogatása**  
 
 *[Módosítva]* [**Internet Explorer**](#internet-explorer):
-- **Internet Explorer Internet Zone automatikus Rákérdezés a fájlok letöltésére** > az alapértelmezett érték most **le van tiltva**. Az előzetes verzióban ez engedélyezve értékre van állítva.
+- **Internet Explorer Internet Zone automatikus** Rákérdezés a fájlok letöltésére > az alapértelmezett érték most **le van tiltva**. Az előzetes verzióban ez engedélyezve értékre van állítva.
 
 *[Új]* [**Távsegítség**](#remote-assistance):  
 - **Távsegítség kérése** 
