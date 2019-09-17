@@ -1,6 +1,6 @@
 # Az Intune felhasználói súgója
 
-## [Felügyelt eszközök használata](use-managed-devices-to-get-work-done.md)
+## [Mi az eszközregisztrálás?](use-managed-devices-to-get-work-done.md)
 
 ## [Milyen információkat tekinthet meg a cégem az Intune-nal? ](what-info-can-your-company-see-when-you-enroll-your-device-in-intune.md)
 

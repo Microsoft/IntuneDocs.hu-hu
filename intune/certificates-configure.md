@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4d9554893a8317b014007bd7089ed62f222975c8
-ms.sourcegitcommit: 7269abaefb2857bc8b343896bb2138bdb01bf8dc
+ms.openlocfilehash: 76e6ba8cb1ed6804bfb50f69a00817a50fe1912e
+ms.sourcegitcommit: 3db8af810b95c3a6ed3f8cc00f6ce79076ebb9db
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70214300"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71012443"
 ---
 # <a name="use-certificates-for-authentication-in-microsoft-intune"></a>Tanúsítványok használata a Microsoft Intune történő hitelesítéshez  
 
@@ -98,5 +98,5 @@ A profil megjelenik a profilok listájában az *eszköz konfigurációja – pro
 Miután létrehozta és hozzárendelte a megbízható tanúsítvány-profilokat, hozzon létre SCEP, PKCS vagy PKCS importálású tanúsítvány-profilokat a használni kívánt platformokhoz. A folytatáshoz tekintse meg a következő cikkeket:  
 - [Infrastruktúra konfigurálása az SCEP-tanúsítványok támogatásához az Intune-nal](certificates-scep-configure.md)  
 - [PKCS-tanúsítványok konfigurálása és kezelése az Intune-nal](certficates-pfx-configure.md)  
-- [PKCS importált tanúsítvány-profil létrehozása](certficates-pfx-configure.md#create-a-pkcs-imported-certificate-profile)  
+- [PKCS importált tanúsítvány-profil létrehozása](certificates-imported-pfx-configure.md#create-a-pkcs-imported-certificate-profile)  
 

@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 399b0c6065c51343e4802d4e8aec29381c6dc468
-ms.sourcegitcommit: 549352bdea93cc2809e3e0010bfcc10bd44dc728
+ms.openlocfilehash: fba9bc63a2ee9d68fdc1d6e41698435144676b2e
+ms.sourcegitcommit: 3db8af810b95c3a6ed3f8cc00f6ce79076ebb9db
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68861854"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71012483"
 ---
 # <a name="deploy-hybrid-azure-ad-joined-devices-by-using-intune-and-windows-autopilot"></a>Hibrid Azure AD-hez csatlakoztatott eszközök üzembe helyezése az Intune és a Windows Autopilot használatával
 Az Intune és a Windows Autopilot használatával hibrid Azure Active Directory (Azure AD) csatlakoztatott eszközöket állíthat be. Ehhez kövesse a cikk lépéseit.
@@ -85,11 +85,11 @@ A számítógépek létrehozásához szükséges jogokat biztosító szervezeti 
 
     ![A felhasználók, számítógépek vagy csoportok kiválasztása panel](media/windows-autopilot-hybrid/enter-object-names.png)
 
-1. Jelölje be a Névellenőrzés jelölőnégyzetet a bejegyzés ellenőrzéséhez, majd kattintson **az OK gombra**, majd válassza a **tovább**lehetőséget.
+1. Jelölje be a Névellenőrzés **jelölőnégyzetet** a bejegyzés ellenőrzéséhez, majd kattintson **az OK gombra**, majd válassza a **tovább**lehetőséget.
 
-1. Válassza az **Egyéni feladat létrehozása lehetőséget a** > **következő**delegáláshoz.
+1. Válassza az **Egyéni feladat létrehozása lehetőséget a következő delegáláshoz** > .
 
-1. Jelölje be a **csak a következő objektumokat a mappában** jelölőnégyzetből, majd jelölje ki a **számítógép-objektumokat**, hozzon létre a **kijelölt objektumokat**ebben a mappában, és **törölje a kijelölt objektumokat a mappában** jelölőnégyzetből.
+1. Jelölje be a **csak a következő objektumokat a mappában** jelölőnégyzetből, majd jelölje ki a **számítógép-objektumokat**, **hozzon létre a kijelölt objektumokat**ebben a mappában, és **törölje a kijelölt objektumokat a mappában** jelölőnégyzetből.
 
     ![Az Active Directory objektumtípus panel](media/windows-autopilot-hybrid/only-following-objects.png)
     
@@ -106,14 +106,14 @@ A számítógépek létrehozásához szükséges jogokat biztosító szervezeti 
 
 A Active Directory Intune-összekötőjét a Windows Server 2016-es vagy újabb verzióját futtató számítógépre kell telepíteni. A számítógépnek hozzáféréssel kell rendelkeznie az internethez és a Active Directoryhoz is. A méret és a rendelkezésre állás növelése érdekében, valamint egyszerre több Active Directory-tartomány támogatásához egyszerre több összekötőt is telepíthet környezetében. Javasoljuk, hogy az összekötőt olyan kiszolgálóra telepítse, amely nem futtat más Intune-összekötőket.
 
-1. Az [Intune](https://aka.ms/intuneportal)-ban válassza az **eszközök** > beléptetése**Windows-regisztráció** > **Intune-összekötő a Active Directory (előzetes verzió)**  > **összekötő hozzáadása**elemet. 
+1. Az [Intune](https://aka.ms/intuneportal)-ban válassza az **eszközök beléptetése** > **Windows-regisztráció** > **Intune-összekötő Active Directory** > **Hozzáadás**lehetőséget. 
 2. Az összekötő letöltéséhez kövesse az utasításokat.
 3. Az összekötő telepítéséhez nyissa meg a letöltött összekötő telepítési fájlját ( *ODJConnectorBootstrapper. exe)* .
 4. A beállítás végén válassza a **Konfigurálás**lehetőséget.
 5. Válassza **a bejelentkezés**lehetőséget.
 6. Adja meg a felhasználó globális rendszergazdai vagy Intune-rendszergazdai szerepkörének hitelesítő adatait.  
    A felhasználói fióknak rendelkeznie kell egy hozzárendelt Intune-licenccel.
-7. Válassza az **eszközök** > beléptetése**Windows-regisztráció** > **Intune-összekötő a Active Directory (előzetes verzió)** lehetőséget, majd ellenőrizze, hogy **aktív**-e a kapcsolódási állapot.
+7. Lépjen az **eszközök beléptetése** > **Windows-regisztráció** > **Intune-összekötő a Active Directoryhoz**, és ellenőrizze, hogy **aktív**-e a kapcsolódási állapot.
 
 > [!NOTE]
 > Az Összekötőbe való bejelentkezés után néhány percet is igénybe vehet, hogy megjelenjen az [Intune](https://aka.ms/intuneportal)-ban. A rendszer csak akkor jelenik meg, ha sikeresen tud kommunikálni az Intune szolgáltatással.
@@ -165,24 +165,24 @@ Ha az eszközök még nincsenek beléptetve, regisztrációjukat saját kezűleg
 
 Új eszközök vásárlásakor egyes számítógépgyártók (OEM) regisztrálhatják az eszközöket az Ön számára. További információkat a [Windows Autopilot oldala](https://aka.ms/WindowsAutopilot) tartalmaz.
 
-Az Autopilot-eszközök regisztrálásaelőtt az Intune-ba való regisztrálás előtt három helyen jelennek meg (a nevük a sorozatszámokra van állítva):
-- Az Azure Portal az Intune-ban található **robotpilóta-eszközök** panel. Válassza az **eszközök** > regisztrálása**Windows** > -beléptetési**eszközök**elemet.
+Az Autopilot-eszközök *regisztrálása*előtt az Intune-ba való regisztrálás előtt három helyen jelennek meg (a nevük a sorozatszámokra van állítva):
+- Az Azure Portal az Intune-ban található **robotpilóta-eszközök** panel. Válassza az **eszközök** > regisztrálása**Windows-beléptetési** > **eszközök**elemet.
 - Az **Azure ad-eszközök** panel a Azure Portal Intune-ban. Válassza az **eszközök** > **Azure ad-eszközök**elemet.
 - Az **Azure ad minden** eszköz paneljének Azure Active Directory a Azure Portal az **eszközök** > **minden eszköz**lehetőség kiválasztásával.
 
-Az Autopilot-eszközök regisztrálásátkövetően négy helyen jelennek meg:
-- Az Azure Portal az Intune-ban található **robotpilóta-eszközök** panel. Válassza az **eszközök** > regisztrálása**Windows** > -beléptetési**eszközök**elemet.
+Az Autopilot-eszközök *regisztrálását*követően négy helyen jelennek meg:
+- Az Azure Portal az Intune-ban található **robotpilóta-eszközök** panel. Válassza az **eszközök** > regisztrálása**Windows-beléptetési** > **eszközök**elemet.
 - Az **Azure ad-eszközök** panel a Azure Portal Intune-ban. Válassza az **eszközök** > **Azure ad-eszközök**elemet.
 - Az **Azure ad minden eszköz** paneljének Azure Active Directory a Azure Portal. Válassza az **eszközök** > **minden eszköz**lehetőséget.
 - A Azure Portalban található Intune **minden eszköz** panelje. Válassza az **eszközök** > **minden eszköz**lehetőséget.
 
-Az Autopilot-eszközök regisztrálását követően a nevük az eszköz állomásneve lesz. Alapértelmezés szerint az állomásnév a Desktoptalkezdődik.
+Az Autopilot-eszközök regisztrálását követően a nevük az eszköz állomásneve lesz. Alapértelmezés szerint az állomásnév a *desktoptal*kezdődik.
 
 
 ## <a name="create-and-assign-an-autopilot-deployment-profile"></a>Autopilot-üzembehelyezési profil létrehozása és hozzárendelése
 Az Autopilot-üzembehelyezési profilokkal Autopilot-eszközeit konfigurálhatja.
 
-1. Az [Intune](https://aka.ms/intuneportal)-ban válassza az **eszközök** > beléptetése**Windows-regisztráció** > **üzembe helyezési profilok** > **Létrehozás profil létrehozása**lehetőséget.
+1. Az [Intune](https://aka.ms/intuneportal)-ban válassza az **eszközök beléptetése** > **Windows-regisztráció** > **üzembe helyezési profilok** > **Létrehozás profil létrehozása**lehetőséget.
 1. Írjon be egy **nevet** és (opcionálisan) egy **leírást**.
 1. Az **üzembe helyezési mód**beállításnál válassza a **felhasználó által vezérelt**lehetőséget.
 1. Az **illesztés az Azure ad** -ba mezőben válassza a **hibrid Azure ad-csatlakozás (előzetes verzió)** lehetőséget.
@@ -209,16 +209,16 @@ Körülbelül 15 percet vesz igénybe, hogy az eszköz profiljának állapota *n
    - **Név**: Adjon meg egy leíró nevet az új profilhoz.
    - **Description** (Leírás): Adja meg a profil leírását.
    - **Platform**: Válassza **a Windows 10 és újabb**lehetőséget.
-   - **Profil típusa**: Válassza a tartományhoz való **csatlakozás (előzetes verzió)** lehetőséget.
+   - **Profil típusa**: Válassza a **tartományhoz való csatlakozás (előzetes verzió)** lehetőséget.
 1. Válassza a **Beállítások**lehetőséget, majd adja meg a **számítógép nevének előtagját**, a **tartománynevet**és a (választható) **szervezeti egységet** [DN formátumban](https://docs.microsoft.com/windows/desktop/ad/object-names-and-identities#distinguished-name). 
 1. Kattintson **az OK** > **Létrehozás**gombra.  
     Ekkor létrejön a profil, és megjelenik a listában.
-1. A profil hozzárendeléséhez kövesse az [eszköz profiljának](device-profile-assign.md#assign-a-device-profile) kiosztása és a profil társítása ugyanahhoz a lépésben használt csoporthoz című témakör [](windows-autopilot-hybrid.md#create-a-device-group) lépéseit.
+1. A profil hozzárendeléséhez kövesse az [eszköz profiljának](device-profile-assign.md#assign-a-device-profile) kiosztása és a profil társítása ugyanahhoz [a lépésben használt](windows-autopilot-hybrid.md#create-a-device-group) csoporthoz című témakör lépéseit.
    - Több tartományhoz való csatlakozás profilok üzembe helyezése
    
      a. Hozzon létre egy dinamikus csoportot, amely tartalmazza az összes Autopilot-eszközt egy adott Autopilot Deployment-profillal, írja be a következőt: (Device. enrollmentProfileName-EQ "Autopilot-profil neve"). 
      
-     b. Cserélje le az "Autopilot-profil neve" nevet az [Autopilot Deployment-profil létrehozása és](windows-autopilot-hybrid.md#create-and-assign-an-autopilot-deployment-profile)kiosztása alatt létrehozott profil megjelenített nevére. 
+     b. Cserélje le az "Autopilot-profil neve" nevet az [Autopilot Deployment-profil létrehozása és kiosztása](windows-autopilot-hybrid.md#create-and-assign-an-autopilot-deployment-profile)alatt létrehozott profil megjelenített nevére. 
      
      c. Hozzon létre több Autopilot Deployment-profilt, és rendelje hozzá az eszközt a dinamikus csoportban megadott profilhoz.
 
