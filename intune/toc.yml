@@ -519,6 +519,8 @@
             - name: PKCS
               href: certficates-pfx-configure.md
               displayName: ksp
+            - name: Importált PKCS
+              href: certificates-imported-pfx-configure.md
             - name: E-mailek titkosítása S/MIME protokollal
               href: certificates-s-mime-encryption-sign.md
             - name: Külső hitelesítésszolgáltató használata SCEP-pel
@@ -744,6 +746,8 @@
               href: troubleshoot-certificate-connector-events.md
             - name: Az Exchange-összekötő hibaelhárítása
               href: troubleshoot-exchange-connector.md
+        - name: Az Intune-dokumentáció használata
+          href: use-docs.md
         - name: Támogatás kérése
           href: get-support.md
 - name: Hivatkozás
