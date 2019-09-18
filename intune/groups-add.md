@@ -12,17 +12,17 @@ ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: f0a2b858-a824-4598-ab81-bdd8e62ac3b3
-ms.reviewer: amyros
+ms.reviewer: altsou
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 60f2368fc8c6d4f8e2713a8386ccdd7e5958ac6b
-ms.sourcegitcommit: 063177c6c365fef3642edd7c455790958469aad9
+ms.openlocfilehash: bab0a33eee5f4d4856fb9d01d822236d1927a4e3
+ms.sourcegitcommit: 74911a263944f2dbd9b754415ccda6c68dae0759
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66412609"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71071727"
 ---
 # <a name="add-groups-to-organize-users-and-devices"></a>Csoportok hozzáadása a felhasználók és eszközök rendszerezéséhez
 Az Intune Azure Active Directory- (AD-) csoportokat használ az eszközök és felhasználók kezelésére. Intune-rendszergazdaként csoportokat állíthat be a vállalat igényeinek megfelelően. Létrehozhat csoportokat a felhasználók és eszközök földrajzi hely, részleg vagy hardverjellemzők szerinti rendezéséhez. Használjon csoportokat a feladatok nagy számban való végrehajtásához. Beállíthat például szabályzatokat számos felhasználóhoz, vagy üzembe helyezhet alkalmazásokat eszközök egy csoportján.
@@ -34,14 +34,14 @@ A következő típusú csoportokat veheti fel:
 ## <a name="add-a-new-group"></a>Új csoport felvétele
 
 Új csoport létrehozásához használja a következő lépéseket.
-1. Jelentkezzen be a [Intune](https://go.microsoft.com/fwlink/?linkid=2090973).
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** panelen válassza a **Csoportok** lehetőséget, majd válassza az **Összes csoport** panelen az **Új csoport** lehetőséget.
    ![Az Azure Portal képernyőképe a kijelölt Új csoport lehetőséggel](./media/groups-add-new.png)
-4. A **csoporttípust**, a következő lehetőségek közül választhat:
-    - **Biztonsági**: A biztonsági csoportok jól használhatók a felhasználói csoportok feltöltésekor. Mivel a biztonsági csoportok határozzák meg, hogy mely erőforrásokhoz kinek van hozzáférése, azok egyszerűen leképezhetők Intune felhasználói csoportokra. Biztonsági csoportok, amely szinkronizálva lesznek az Active Directoryból az Azure Active Directoryba, illetve amelyeket közvetlenül az Azure Active Directoryban, a Microsoft 365 felügyeleti központban vagy az Azure Portalon hoz létre lesznek elérhetők a felhasználói csoportok létrehozásához az Intune-ban.
+4. A **csoport típusa**beállításnál válasszon a következő lehetőségek közül:
+    - **Biztonság**: A biztonsági csoportok jól használhatók a felhasználói csoportok feltöltésekor. Mivel a biztonsági csoportok határozzák meg, hogy mely erőforrásokhoz kinek van hozzáférése, azok egyszerűen leképezhetők Intune felhasználói csoportokra. Azok a biztonsági csoportok, amelyeket a Active Directory szinkronizált a Azure Active Directory, vagy amelyeket közvetlenül a Azure Active Directory hoz létre a Microsoft 365 felügyeleti központban vagy a Azure Portal, ha felhasználói csoportokat hoz létre az Intune-ban.
     - **Office 365**
 
-5. Adjon meg egy **neve** és **leírás** az új csoport. Ezek a tulajdonságok csak a felügyeleti portálon jelennek meg, és a felhasználók nem láthatják.
+5. Adja meg az új csoport **nevét** és **leírását** . Ezek a tulajdonságok csak a felügyeleti portálon jelennek meg, és a felhasználók nem láthatják.
 
 6. Válassza a **Tagságtípus**:
    - **Hozzárendelt** lehetőséget manuálisan hozzárendelt tagokkal rendelkező csoport létrehozásához. További tudnivalók az [Azure AD hozzárendelt csoportjairól](https://docs.microsoft.com/azure/active-directory/active-directory-groups-create-azure-portal).
@@ -57,7 +57,7 @@ A következő típusú csoportokat veheti fel:
 
 ## <a name="groups-and-policies"></a>Csoportok és házirendek
 
-Csoportok létrehozásakor gondolja át, hogyan szeretné alkalmazni [házirendek](device-compliance-get-started.md). Lehetnek például az eszközök operációs rendszereire szabott, vagy a szervezet különböző szerepköreinek, illetve az Active Directoryban már definiált szervezeti egységeknek megfelelő szabályzatok. Hasznos lehet külön eszközcsoportokat létrehozni az iOS, Android és Windows operációs rendszerekhez rendelt eszközcsoportok számára, valamint külön felhasználói csoportokat az egyes szerepekörök számára a szervezeten belül.
+A csoportok létrehozásakor gondolja át, hogyan fogja alkalmazni a [szabályzatokat](device-compliance-get-started.md). Lehetnek például az eszközök operációs rendszereire szabott, vagy a szervezet különböző szerepköreinek, illetve az Active Directoryban már definiált szervezeti egységeknek megfelelő szabályzatok. Hasznos lehet külön eszközcsoportokat létrehozni az iOS, Android és Windows operációs rendszerekhez rendelt eszközcsoportok számára, valamint külön felhasználói csoportokat az egyes szerepekörök számára a szervezeten belül.
 
 Érdemes létrehozni egy valamennyi csoportra és eszközre vonatkozó alapértelmezett szabályzatot a szervezetre vonatkozó alapvető megfelelőségi követelmények meghatározásához. Ezt követően létrehozhatók részletesebb szabályzatok a felhasználók és eszközök legszélesebb kategóriáira. Létrehozhat például levelezési szabályzatokat az eszközök különböző operációs rendszerei számára.
 

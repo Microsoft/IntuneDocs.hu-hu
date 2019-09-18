@@ -6,7 +6,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 06/28/2019
+ms.date: 09/09/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ecfd482df452c52d81621cdc49c6ca78c4d4c1f6
-ms.sourcegitcommit: bd09decb754a832574d7f7375bad0186a22a15ab
+ms.openlocfilehash: 1710fd315803c4b47ad3be343893f93f7d155135
+ms.sourcegitcommit: 27e63a96d15bc4062af68c2764905631bd928e7b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68354540"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061729"
 ---
 # <a name="ui-updates-for-intune-end-user-apps"></a>Felhasználói felületi frissítések az Intune végfelhasználói alkalmazásaiban
 Ismerkedjen meg a Microsoft Intune alkalmazások legújabb frissítéseivel. Rendszeresen hozzáadjuk és fejlesztjük a Intune Céges portál alkalmazást és a webhelyet. Ha Ön Intune-rendszergazda vagy-támogató személy, ez a cikk a következőkhöz szükséges információkat tartalmazza:
@@ -33,6 +33,23 @@ Ismerkedjen meg a Microsoft Intune alkalmazások legújabb frissítéseivel. Ren
 Ha Ön alkalmazott vagy tanuló, tekintse meg a képernyőképeket, és mutasson a Céges portál Súgó dokumentációra. További információ a Céges portál alkalmazás használatáról: [céges portál felhasználói súgó dokumentációja](https://docs.microsoft.com/intune-user-help/).  
 
 <!---End-user messaging for accounts 1573558, 1712; changes to be made for other platforms for 1801 Users of the Company Portal website, will be blocked from taking actions that require write access to your tenant. They will see appropriate error messaging explaining that their account is under maintenance. Similar changes are coming to the Company Portal apps for Android, iOS, macOS, and Windows soon. ![Error message that occurs during account move](./media/account-move-rom-iwp-user-1712.png)--->
+
+
+## <a name="week-of-september-9-2019"></a>2019. szeptember 9. hét
+
+### <a name="updates-to-microsoft-intune-app----4997846---"></a>Microsoft Intune alkalmazás frissítései <!-- 4997846 -->
+Az Android rendszerhez készült Microsoft Intune alkalmazás a következő továbbfejlesztett funkciókkal bővült:
+- Frissítve és javította az elrendezést, hogy a legfontosabb műveleteknél a legalsó szintű Navigálás szerepeljen.
+- Hozzáadott egy további oldalt, amely megjeleníti a felhasználó profilját.
+- Az alkalmazásban a felhasználó számára elérhető végrehajtható értesítések megjelenítése, például az eszköz beállításainak frissítése szükséges.
+- Az egyéni leküldéses értesítések megjelenítése, az alkalmazás igazítása az iOS és Android rendszerhez készült Céges portál alkalmazásban nemrégiben hozzáadott támogatással. További információt [az egyéni értesítések küldése az Intune-ban](custom-notifications.md)című témakörben talál.
+
+    Felhasználói profil példája:<br>
+    <img src="./media/intune-app-android-device-profile.png" alt="Screenshot of Microsoft Intune app for Android - User Profile" width="300">   
+
+    Értesítések és alsó navigációs példa:<br>
+    <img src="./media/intune-app-android-device-notify.png" alt="Screenshot of Microsoft Intune app for Android - Notification" width="300">   
+
 
 ## <a name="week-of-june-24-2019"></a>2019. június 24-i hét  
 
@@ -139,7 +156,7 @@ A Windowsos Céges portál alkalmazás mostantól lehetővé teszi, hogy a szink
 
 ### <a name="new-browsing-experiences-in-the-company-portal-app-for-windows"></a>Új böngészési élmény a windowsos Céges portál alkalmazásban  
 
-Most, amikor a Windows Céges portál alkalmazásban böngészik vagy keres alkalmazásokat, válthat a meglévő csempék nézet  és az új **részletek** nézet között. Ez az új nézet felsorolja az alkalmazás részleteit, például a nevet, a közzétevőt, a közzétételi dátumot és a telepítési állapotot.  
+Most, amikor a Windows Céges portál alkalmazásban böngészik vagy keres alkalmazásokat, válthat a meglévő csempék nézet és az új **részletek** nézet között. Ez az új nézet felsorolja az alkalmazás részleteit, például a nevet, a közzétevőt, a közzétételi dátumot és a telepítési állapotot.  
 
 Az **Alkalmazások** lapon található egy **Telepítve** nézet is, amely a befejezett és a folyamatban lévő telepítések adatait jeleníti meg.  
 

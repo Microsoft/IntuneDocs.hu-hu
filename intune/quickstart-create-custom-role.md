@@ -8,19 +8,19 @@ ms.localizationpriority: high
 ms.topic: quickstart
 ms.date: 03/26/2019
 ms.author: erikje
-ms.reviewer: angerobe
+ms.reviewer: pjain
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6cf4e365f4e68920ea5d24dc3ce2e1bd5eb9f817
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: f63bbc80c055cfcb3bd52f79e7b810094107ec2a
+ms.sourcegitcommit: d2989b9992d10d133573d9bc31479659fb7e242c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61511590"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71080059"
 ---
-# <a name="quickstart-create-and-assign-a-custom-role"></a>Gyors útmutató: Egyéni szerepkör létrehozása és hozzárendelése
+# <a name="quickstart-create-and-assign-a-custom-role"></a>QuickStart Egyéni szerepkör létrehozása és hozzárendelése
 
 Ezt a rövid Intune-útmutatót követve létrehozhat egy meghatározott engedélyeket biztosító egyéni szerepkört egy biztonsági üzemeltetési részleg számára. Ez után a szerepkört hozzárendelheti az ezen a területen dolgozók egy csoportjához. Több azonnal használható alapértelmezett szerepkör is létezik. Az ehhez hasonló egyéni szerepkörök létrehozásával azonban mobileszköz-kezelési rendszere minden részletét precízen szabályozhatja.
 
@@ -56,10 +56,10 @@ Ahhoz, hogy egy biztonsági munkatárs használhassa az új engedélyeket, a sze
 1. Az Intune-ban válassza a **Szerepkörök** > **Minden szerepkör** > **Biztonsági műveletek** lehetőséget.
 2. Az **Intune-szerepkörök** alatt válassza a **Hozzárendelések** > **Hozzárendelés** lehetőséget.
 3. A **Hozzárendelés neve** mezőbe írja be a *Bizt. üz.* nevet.
-4. Válassza a **Tag (Csoportok)** > **Hozzáadás** lehetőséget.
+4. Válassza a **Tag (Csoportok)**  > **Hozzáadás** lehetőséget.
 5. Jelölje ki a **Contoso tesztelők** csoportot.
 6. Válassza a **Kiválasztás** > **OK** lehetőséget.
-7. Válassza a **Hatókör (Csoportok)** > **Befoglalandó csoportok kijelölése** > **Contoso tesztelők** lehetőséget.
+7. Válassza a **Hatókör (Csoportok)**  > **Befoglalandó csoportok kijelölése** > **Contoso tesztelők** lehetőséget.
 8. Válassza a **Kiválasztás** > **OK** > **OK** lehetőséget.
 
 A csoportban már mindenki tagja a *Biztonsági üzemeltetés* szerepkörnek, és megtekintheti az eszközzel kapcsolatos következő információkat: vállalati eszközazonosítók, eszközmegfelelőségi szabályzatok, eszközkonfigurációk és vállalati információk.
@@ -75,4 +75,4 @@ Ebben a rövid útmutatóban létrehozta az egyéni Biztonsági üzemeltetés sz
 Kövesse az Intune rövid útmutatóinak sorozatát a következő rövid útmutatóval.
 
 > [!div class="nextstepaction"]
-> [Gyors útmutató: Egy IOS e-mail profil létrehozása](quickstart-email-profile.md)
+> [QuickStart E-mail eszköz profil létrehozása iOS rendszerhez](quickstart-email-profile.md)

@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8774b5af7555462b7754e4d0f8a6f50a330854ff
-ms.sourcegitcommit: 58a22f1b4a3fffffb1f7da228f470b3b0774fc42
+ms.openlocfilehash: cde8269ca9d2ca2348fb6da377ad46150c90015a
+ms.sourcegitcommit: 27e63a96d15bc4062af68c2764905631bd928e7b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70021816"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061562"
 ---
 # <a name="microsoft-intune-app-sdk-for-ios-developer-guide"></a>A Microsoft Intune App SDK iOS rendszeren – fejlesztői útmutató
 
@@ -215,7 +215,7 @@ Ha az alkalmazás már használja az ADAL-t vagy a MSAL-t, a következő konfigu
 
 Az alkalmazások felülbírálhatják ezeket az Azure AD-beállításokat futtatáskor. Ehhez egyszerűen állítsa be az `aadAuthorityUriOverride`, `aadClientIdOverride` és az `aadRedirectUriOverride` tulajdonságot az `IntuneMAMPolicyManager` példányon.
 
-4. Győződjön meg arról, hogy az iOS-alkalmazás engedélyeit az App Protection-szabályzat (APP) szolgáltatáshoz adja meg. Az [első lépések az INTUNE SDK](https://docs.microsoft.com/intune/app-sdk-get-started#next-steps-after-integration) -útmutatóban című témakör útmutatását követve[adja meg az alkalmazás hozzáférését az Intune app Protection szolgáltatáshoz (nem kötelező)](https://docs.microsoft.com/intune/app-sdk-get-started#give-your-app-access-to-the-intune-app-protection-service-optional).  
+4. Győződjön meg arról, hogy az iOS-alkalmazás engedélyeit az App Protection-szabályzat (APP) szolgáltatáshoz adja meg. Az [első lépések az INTUNE SDK-útmutatóban](https://docs.microsoft.com/intune/app-sdk-get-started#next-steps-after-integration) című témakör útmutatását követve[adja meg az alkalmazás hozzáférését az Intune app Protection szolgáltatáshoz (nem kötelező)](https://docs.microsoft.com/intune/app-sdk-get-started#give-your-app-access-to-the-intune-app-protection-service-optional).  
 
 > [!NOTE]
 > Az Info.plist fájl használatát javasoljuk az összes olyan beállításhoz, amely statikus, és nem igényel futtatáskori meghatározást. Az `IntuneMAMPolicyManager`-tulajdonságokhoz rendelt értékek elsőbbséget élveznek az Info.plist fájlban megadott hasonló értékekkel szemben, és még az alkalmazás újraindítása után is megmaradnak. Az SDK továbbra is használni fogja ezeket szabályzat-ellenőrzéshez egészen a felhasználó regisztrációjának törléséig, vagy addig, amíg nem módosítja vagy törli az értékeket.
@@ -230,8 +230,8 @@ MSAL – a fejlesztőknek létre kell hozniuk egy alkalmazás regisztrációját
 
 ### <a name="special-considerations-when-using-msal"></a>A MSAL használata során felmerülő különleges szempontok 
 
-1. **Tekintse meg a** webnézetet – ajánlott, hogy az alkalmazások ne használják a SFSafariViewController, a SFAuthSession vagy a ASWebAuthSession webnézetként bármely, az alkalmazás által kezdeményezett MSAL interaktív hitelesítési művelethez. Ha valamilyen oknál fogva az alkalmazásnak az egyik interaktív MSAL-hitelesítési művelethez is használnia kell ezeket a webnézeteket, akkor `SafariViewControllerBlockedOverride` az `true` alkalmazás info. plist fájljában is be kell állítania a `IntuneMAMSettings` szótár alá. FIGYELMEZTETÉS Ezzel kikapcsolja az Intune SafariViewController hookokat az Auth-munkamenet engedélyezéséhez. Ez kockázatos adatszivárgást tesz lehetővé az alkalmazásban, ha az alkalmazás a SafariViewController használatával tekinti meg a vállalati adatforrásokat, így az alkalmazás nem jelenítheti meg a vállalati adattípusokat ezen webnézet-típusok közül.
-2. A **ADAL és a MSAL** összekapcsolása esetén a fejlesztőknek engedélyeznie kell a lehetőséget, ha azt szeretnék, hogy az Intune előnyben részesítette a MSAL a ADAL- Alapértelmezés szerint az Intune a támogatott ADAL-verziókat részesíti előnyben a támogatott MSAL-verziókhoz, ha mindkettő a futtatókörnyezethez van csatolva. Az Intune csak a támogatott MSAL `IntuneMAMUseMSALOnNextLaunch` `true` - `NSUserDefaults`verziót részesíti előnyben, ha az Intune első hitelesítési műveletének időpontjában a (z). Ha `IntuneMAMUseMSALOnNextLaunch` a `false` értéke vagy nincs beállítva, az Intune az alapértelmezett viselkedéshez fog visszatérni. Ahogy a neve is sugallja, a `IntuneMAMUseMSALOnNextLaunch` változás a következő indításkor lép érvénybe.
+1. **Tekintse meg a webnézetet** – ajánlott, hogy az alkalmazások ne használják a SFSafariViewController, a SFAuthSession vagy a ASWebAuthSession webnézetként bármely, az alkalmazás által kezdeményezett MSAL interaktív hitelesítési művelethez. Ha valamilyen oknál fogva az alkalmazásnak az egyik interaktív MSAL-hitelesítési művelethez is használnia kell ezeket a webnézeteket, akkor `SafariViewControllerBlockedOverride` az `true` alkalmazás info. plist fájljában is be kell állítania a `IntuneMAMSettings` szótár alá. FIGYELMEZTETÉS Ezzel kikapcsolja az Intune SafariViewController hookokat az Auth-munkamenet engedélyezéséhez. Ez kockázatos adatszivárgást tesz lehetővé az alkalmazásban, ha az alkalmazás a SafariViewController használatával tekinti meg a vállalati adatforrásokat, így az alkalmazás nem jelenítheti meg a vállalati adattípusokat ezen webnézet-típusok közül.
+2. A **ADAL és a MSAL összekapcsolása** esetén a fejlesztőknek engedélyeznie kell a lehetőséget, ha azt szeretnék, hogy az Intune előnyben részesítette a MSAL a ADAL- Alapértelmezés szerint az Intune a támogatott ADAL-verziókat részesíti előnyben a támogatott MSAL-verziókhoz, ha mindkettő a futtatókörnyezethez van csatolva. Az Intune csak a támogatott MSAL `IntuneMAMUseMSALOnNextLaunch` `true` - `NSUserDefaults`verziót részesíti előnyben, ha az Intune első hitelesítési műveletének időpontjában a (z). Ha `IntuneMAMUseMSALOnNextLaunch` a `false` értéke vagy nincs beállítva, az Intune az alapértelmezett viselkedéshez fog visszatérni. Ahogy a neve is sugallja, a `IntuneMAMUseMSALOnNextLaunch` változás a következő indításkor lép érvénybe.
 
 
 ## <a name="configure-settings-for-the-intune-app-sdk"></a>Az Intune App SDK-beállítások konfigurálása
@@ -259,7 +259,7 @@ AutoEnrollOnLaunch| Logikai| Megadja, hogy az alkalmazás megpróbáljon-e autom
 MAMPolicyRequired| Logikai| Azt adja meg, hogy megakadályozza-e a rendszer az alkalmazás elindítását, ha az alkalmazásnak nincs Intune alkalmazásvédelmi szabályzata. Az alapértelmezett érték a Nem. <br><br> Megjegyzések: Az alkalmazás nem küldhető el az App Store-ba az MAMPolicyRequired beállítás Igen értékre állításával. HA a MAMPolicyRequired értéke IGEN, az AutoEnrollOnLaunch beállítását is IGEN értékre kell állítani. | Nem kötelező. Az alapértelmezett érték a nem. |
 MAMPolicyWarnAbsent | Logikai| Azt adja meg, hogy figyelmeztesse-e az alkalmazás a felhasználót az indítás közben, ha az alkalmazásnak nincs Intune alkalmazásvédelmi szabályzata. <br><br> Megjegyezés: A felhasználók továbbra is használhatják az alkalmazást házirend nélkül, miután elutasította a figyelmeztetést. | Nem kötelező. Az alapértelmezett érték a nem. |
 MultiIdentity | Logikai| Azt adja meg, hogy az alkalmazás képes-e kezelni a többszörös identitást. | Nem kötelező. Az alapértelmezett érték a nem. |
-SafariViewControllerBlockedOverride | Logikai| Letiltja az Intune SafariViewController hookot a MSAL-hitelesítés engedélyezéséhez SFSafariViewController, SFAuthSession vagy ASWebAuthSession használatával. | Nem kötelező. Az alapértelmezett érték a nem. Figyelmeztetés: adatszivárgást eredményezhet, ha nem megfelelően használják. Csak akkor engedélyezze, ha feltétlenül szükséges. A részletekért tekintse meg a MSAL használatakor felmerülő [különleges szempontokat](#special-considerations-when-using-msal) .  |
+SafariViewControllerBlockedOverride | Logikai| Letiltja az Intune SafariViewController hookot a MSAL-hitelesítés engedélyezéséhez SFSafariViewController, SFAuthSession vagy ASWebAuthSession használatával. | Nem kötelező. Az alapértelmezett érték a nem. Figyelmeztetés: adatszivárgást eredményezhet, ha nem megfelelően használják. Csak akkor engedélyezze, ha feltétlenül szükséges. A részletekért tekintse meg a [MSAL használatakor felmerülő különleges szempontokat](#special-considerations-when-using-msal) .  |
 SplashIconFile <br>SplashIconFile ~ ipad | Sztring  | Az Intune-kezdőképet (indítóképernyőt) tartalmazó ikonfájlt határozza meg. | Nem kötelező. |
 SplashDuration | Szám | Az Intune-kezdőképernyő megjelenésének minimális időtartama (másodpercben) az alkalmazás indításakor. Az alapértelmezett érték 1.5. | Nem kötelező. |
 BackgroundColor| Sztring| A kezdő- és a PIN-kód bevitelére szolgáló képernyő háttérszínét adja meg. Hexadecimális RGB-sztringet fogad el „#XXXXXX” alakban, amelyben az X-ek helyén számjegy (0–9), illetve és A és F közötti nagybetű állhat. A kettőskereszt jel kihagyható.   | Nem kötelező. Alapértelmezése a világosszürke szín. |
@@ -412,9 +412,6 @@ Ezek a delegáltmetódusok egy `IntuneMAMEnrollmentStatus` objektumot adnak viss
 * A kérés eredményét jelölő állapotkódot
 * Az állapotkód leírását tartalmazó hibaüzenet-sztringet
 * Egy `NSError` objektumot. Ezt az objektumot az `IntuneMAMEnrollmentStatus.h` nevű fájl definiálja a visszaadható konkrét állapotkódokkal együtt.
-
-> [!NOTE]
-> Ez az információ csak hibakeresési célra szolgál. Az alkalmazásban nem alapulhat üzleti logika ezeken az értesítéseken. Ezt az információt el lehet küldeni telemetriai szolgáltatásnak hibakeresési vagy figyelési célból.
 
 ### <a name="sample-code"></a>Mintakód
 

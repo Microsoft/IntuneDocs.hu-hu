@@ -17,12 +17,12 @@ ms.reviewer: ''
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 97bc1658dcd432bdd5e31c7100022959e96c3039
-ms.sourcegitcommit: a25cd79a33feb536d9b2fc11aa7d3e3972f1ca5a
+ms.openlocfilehash: 83b10bdfacbcf76b9f75b90d99e094b6854d525e
+ms.sourcegitcommit: 27e63a96d15bc4062af68c2764905631bd928e7b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70842078"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061662"
 ---
 # <a name="tutorial-configure-slack-to-use-intune-for-emm-and-app-configuration"></a>Oktatóanyag A Slack konfigurálása az Intune és az alkalmazások konfigurációjának használatára
 
@@ -77,7 +77,6 @@ Adja hozzá a Slack iOS-hez készült alkalmazás-konfigurációs szabályzatát
 5. Válassza a **társított alkalmazás**lehetőséget.
 6. A keresősáv mezőben adja meg a "Slack for a" kifejezést, és válassza ki az alkalmazást.
 7. Kattintson **az OK**, majd a **konfigurációs beállítások**elemre. 
-    - A konfigurációs kulcsokkal és azok értékeivel kapcsolatos információkért olvassa el a [Slack AppConfig weboldalának](https://www.appconfig.org/company/slack/)"technikai" lapján található dokumentációt.
 8. Válassza **az OK**, majd a **Hozzáadás**lehetőséget.
 9. A keresősáv mezőben adja meg a "Slack app Configuration Policy test" kifejezést, és válassza ki az imént hozzáadott szabályzatot.
 10. A kezelés területen válassza a **hozzárendelések**lehetőséget.

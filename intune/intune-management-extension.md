@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 06/27/2019
+ms.date: 09/16/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9cf3a3735688d12e69dc297aa42ab2869c69bfc9
-ms.sourcegitcommit: 05139901411d14a85c2340c0ebae02d2c178a851
+ms.openlocfilehash: cbf2031a316b1f7c2e22d165363cca12cfd70291
+ms.sourcegitcommit: 27e63a96d15bc4062af68c2764905631bd928e7b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70904985"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061578"
 ---
 # <a name="use-powershell-scripts-on-windows-10-devices-in-intune"></a>PowerShell-parancsfájlok használata Windows 10-es eszközökön az Intune-ban
 
@@ -181,7 +181,7 @@ A [Windows 10 automatikus regisztrációjának engedélyezése](windows-enroll.m
 - Tekintse át a hibákat a naplókban. Lásd: az [Intune felügyeleti bővítmény naplófájljai](#intune-management-extension-logs) (ebben a cikkben).
 - A lehetséges engedélyekkel kapcsolatos problémák esetén győződjön meg arról, hogy a PowerShell- `Run this script using the logged on credentials`parancsfájl tulajdonságai a következőre vannak beállítva:. Győződjön meg arról is, hogy a bejelentkezett felhasználó rendelkezik a megfelelő engedélyekkel a parancsfájl futtatásához.
 
-- A parancsfájlokkal kapcsolatos problémák elkülönítéséhez hajtsa végre a következő lépéseket:
+- A parancsfájlokkal kapcsolatos problémák elkülönítéséhez a következőket teheti:
 
   - Tekintse át a PowerShell-végrehajtási konfigurációt az eszközökön. Útmutatásért tekintse meg a [PowerShell végrehajtási szabályzatát](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6) .
   - Futtasson egy minta parancsfájlt az Intune felügyeleti bővítmény használatával. Hozza létre például a könyvtárat `C:\Scripts` , és adja meg mindenki számára a teljes hozzáférést. Futtassa a következő parancsfájlt:
@@ -196,15 +196,17 @@ A [Windows 10 automatikus regisztrációjának engedélyezése](windows-enroll.m
 
     `psexec -i -s`  
     
-  - Ha a parancsfájl-végrehajtás sikeres, de az eredmény nem történik (például a fenti parancsfájl nem hoz létre fájlt), akkor előfordulhat, hogy a víruskereső AgentExecutor. A következő parancsfájlnak mindig hibát kell jelentenie az Intune-ban – ha sikeres jelentést készít, tekintse meg a AgentExecutor. log naplófájlt a hiba eredményének megerősítéséhez – a hossznak > 2 értékűnek kell lennie, ha a parancsfájlt minden esetben végrehajtja:
-
+  - Ha a parancsfájl azt jelenti, hogy sikeres volt, de valójában nem sikerült, akkor lehetséges, hogy a víruskereső szolgáltatás AgentExecutor. A következő parancsfájl mindig hibát jelez az Intune-ban. Tesztként a következő parancsfájlt használhatja:
+  
     ```powershell
     Write-Error -Message "Forced Fail" -Category OperationStopped
     mkdir "c:\temp" 
     echo "Forced Fail" | out-file c:\temp\Fail.txt
     ```
-    
-  - Ha rögzíteni kell a. Error és a. output parancsot, a következő kódrészlet végrehajtja a szkriptet a AgentExecutor-on keresztül a PSx86, és a gyűjtemény mögött hagyja a naplókat (mivel az Intune felügyeleti bővítmény a végrehajtás után törli a naplókat):
+
+    Ha a parancsfájl sikert jelez, tekintse meg `AgentExecutor.log` a következőt: a hiba eredményének megerősítése. Ha a szkript végrehajtja a parancsot, a hossznak > 2 értéknek kell lennie.
+
+  - A. Error és a. output fájlok rögzítéséhez a következő kódrészlet a AgentExecutor és a PSx86 (`C:\Windows\SysWOW64\WindowsPowerShell\v1.0`) használatával hajtja végre a parancsfájlt. Megtartja a naplókat a felülvizsgálathoz. Ne feledje, hogy az Intune felügyeleti bővítmény a szkript végrehajtása után törli a naplókat:
   
     ```powershell
     $scriptPath = read-host "Enter the path to the script file to execute"

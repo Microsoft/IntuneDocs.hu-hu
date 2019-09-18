@@ -11,17 +11,17 @@ ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 96990be0-eb1e-43a4-a0e4-09c7dbdc2bf4
-ms.reviewer: angerobe
+ms.reviewer: kerimh
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 659fdb9b67b941a27cef5a3680537f3eeb3bbbeb
-ms.sourcegitcommit: 119962948045079022aa48f968dde3e961d7cd0c
+ms.openlocfilehash: c6bb00dc966503439b1553b4167e05b2a630b02a
+ms.sourcegitcommit: d2989b9992d10d133573d9bc31479659fb7e242c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67031682"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71080176"
 ---
 # <a name="audit-export-or-delete-personal-data-in-intune"></a>Személyes adatok naplózása, exportálása vagy törlése az Intune-ban
 
@@ -81,7 +81,7 @@ Amennyiben hibrid MDM-környezettel rendelkezik (a Configuration Managerrel inte
 3. [Törölje a felhasználót az AAD-ból](https://docs.microsoft.com/azure/active-directory/fundamentals/add-users-azure-active-directory#delete-a-user). Ezáltal a felhasználó és a hozzá tartozó adatok egyidejűleg törölve lesznek az Azure Active Directoryból és az Intune-ból is. Amikor egy felhasználót törölnek az AAD-ból (végleges törléssel), az Intune jelzést kap a törlésről az AAD-tól és automatikusan elkezdi törölni az adott felhasználó összes személyes adatát az Intune szolgáltatásból. A felhasználó adatai az eltávolítási műveletet követő 30 napon belül törölve lesznek az Intune szolgáltatásból.
 
 > [!Important]
->Új hibrid MDM-ügyfelek bevezetésének elavult. További információkért lásd: a [válthatnak a hibrid mobileszköz-kezelés az Intune-bA az Azure-ban](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Move-from-Hybrid-Mobile-Device-Management-to-Intune-on-Azure/ba-p/280150) blogbejegyzést.
+>Az új hibrid MDM-ügyfelek bevezetése elavult. További információ: [áttérés hibrid mobileszköz-kezelésről az Intune-ra az Azure-](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Move-from-Hybrid-Mobile-Device-Management-to-Intune-on-Azure/ba-p/280150) blogbejegyzésben.
 
 ## <a name="next-steps"></a>További lépések
 

@@ -12,17 +12,17 @@ ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
-ms.reviewer: chrisbal
+ms.reviewer: priyar
 ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 54d9fa1016ff39fcf1e7da9c21391ce70f7acaac
-ms.sourcegitcommit: e451295ca3ee3efc31bf9ee360e599b28ef643ea
+ms.openlocfilehash: 7dff37794d6c58094749821748dcc96a4f36e28a
+ms.sourcegitcommit: 74911a263944f2dbd9b754415ccda6c68dae0759
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67863085"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71071629"
 ---
 # <a name="set-up-intune-enrollment-of-android-enterprise-fully-managed-devices-preview"></a>Az Android Enterprise teljes körűen felügyelt eszközök Intune-regisztrációjának beállítása (előzetes verzió)
 

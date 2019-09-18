@@ -12,17 +12,17 @@ ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 8518d8fa-a0de-449d-89b6-8a33fad7b3eb
-ms.reviewer: damionw
+ms.reviewer: priyar
 ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fba9bc63a2ee9d68fdc1d6e41698435144676b2e
-ms.sourcegitcommit: 3db8af810b95c3a6ed3f8cc00f6ce79076ebb9db
+ms.openlocfilehash: 0bf683aebee50b4f2172f11ce205a910a47d0845
+ms.sourcegitcommit: 74911a263944f2dbd9b754415ccda6c68dae0759
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71012483"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71071148"
 ---
 # <a name="deploy-hybrid-azure-ad-joined-devices-by-using-intune-and-windows-autopilot"></a>Hibrid Azure AD-hez csatlakoztatott eszközök üzembe helyezése az Intune és a Windows Autopilot használatával
 Az Intune és a Windows Autopilot használatával hibrid Azure Active Directory (Azure AD) csatlakoztatott eszközöket állíthat be. Ehhez kövesse a cikk lépéseit.
@@ -183,14 +183,17 @@ Az Autopilot-eszközök regisztrálását követően a nevük az eszköz állom�
 Az Autopilot-üzembehelyezési profilokkal Autopilot-eszközeit konfigurálhatja.
 
 1. Az [Intune](https://aka.ms/intuneportal)-ban válassza az **eszközök beléptetése** > **Windows-regisztráció** > **üzembe helyezési profilok** > **Létrehozás profil létrehozása**lehetőséget.
-1. Írjon be egy **nevet** és (opcionálisan) egy **leírást**.
-1. Az **üzembe helyezési mód**beállításnál válassza a **felhasználó által vezérelt**lehetőséget.
-1. Az **illesztés az Azure ad** -ba mezőben válassza a **hibrid Azure ad-csatlakozás (előzetes verzió)** lehetőséget.
-1. Válassza ki a beépített **felhasználói élményt (OOBE)** , igény szerint konfigurálja a beállításokat, majd kattintson a **Mentés**gombra.
-1. Válassza a **Létrehozás** lehetőséget a profil létrehozásához. 
-1. A profil ablaktáblán válassza a **hozzárendelések**lehetőséget.
-1. Válassza a **csoportok kiválasztása**lehetőséget.
-1. A **csoportok kiválasztása** panelen jelölje ki az eszközcsoport elemet, majd kattintson a **kiválasztás**gombra.
+2. Az **alapvető beállítások** lapon adja meg a **nevet** és a **leírást**(nem kötelező).
+3. Ha azt szeretné, hogy a hozzárendelt csoportokban lévő minden eszköz automatikusan átálljon az AutoPilotra, állítsa a **Minden megcélzott eszköz AutoPilot-eszközzé alakítása** beállítást **Igen** értékre. A hozzárendelt csoportokban lévő nem AutoPilot-eszközök az AutoPilot üzembehelyezési szolgáltatással regisztrálnak. A regisztráció feldolgozása 48 órát is igénybe vehet. Az eszköz regisztrációjának törlése és alaphelyzetbe állítása után az Autopilot regisztrálja az eszközt. Miután ilyen módon regisztrál egy eszközt, a beállítás letiltása vagy a profil-hozzárendelés eltávolítása nem távolítja el az eszközt az Autopilot üzembehelyezési szolgáltatásból. Ehhez [közvetlenül kell törölnie az eszközt](enrollment-autopilot.md#delete-autopilot-devices).
+4. Kattintson a **Tovább** gombra.
+5. A beépített felhasználói **élmény (OOBE)** lapon a **telepítési mód**beállításnál válassza a **felhasználó által vezérelt**lehetőséget.
+6. Az **illesztés az Azure ad** -ba mezőben válassza a **hibrid Azure ad-hez csatlakoztatott**lehetőséget.
+7. Szükség szerint konfigurálja a további beállításokat a beépített **élmény (OOBE)** lapon.
+8. Kattintson a **Tovább** gombra.
+9. A **hatókör címkék** lapon válassza ki a profil [hatókör-címkéi](scope-tags.md) elemet.
+10. Kattintson a **Tovább** gombra.
+11. A **hozzárendelések** lapon válassza a **csoportok kiválasztása** lehetőséget > kereséséhez, majd válassza ki az eszközcsoport > **válassza ki**azt.
+12. Válassza a **következő** > **Létrehozás**elemet.
 
 Körülbelül 15 percet vesz igénybe, hogy az eszköz profiljának állapota *ne* legyen hozzárendelve *hozzárendeléshez* , és végül hozzá legyen *rendelve*.
 

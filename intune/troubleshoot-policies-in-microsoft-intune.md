@@ -1,6 +1,6 @@
 ---
 title: Hibaelhárítás az Azure-beli Microsoft Intune-ban | Microsoft Docs
-description: Tekintse meg a beépített hibaelhárítás szolgáltatással, és olvassa el kapcsolatos gyakori problémák vagy a problémákat és azok megoldásait a megfelelőségi szabályzatokról és alkalmazáskonfigurációs profilok használata a Microsoft Intune-ban
+description: Tekintse meg a beépített hibaelhárítási funkció használatát ismertető témakört, és olvassa el a gyakori problémákat és problémákat, valamint a megfelelőségi szabályzatok és konfigurációs profilok használatakor Microsoft Intune
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
@@ -17,142 +17,142 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9314617640d0bfd7f3a7b0cd0ba572e99ede53f9
-ms.sourcegitcommit: cd451ac487c7ace18ac9722a28b9facfba41f6d3
+ms.openlocfilehash: 68ffdcccdd3588ac5127e6c54426acfdcad17d34
+ms.sourcegitcommit: 74911a263944f2dbd9b754415ccda6c68dae0759
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67298403"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71071708"
 ---
-# <a name="troubleshoot-policies-and-profiles-and-in-intune"></a>Házirendek és profilok hibaelhárítása és az Intune-ban
+# <a name="troubleshoot-policies-and-profiles-and-in-intune"></a>Szabályzatok és profilok és az Intune hibáinak megoldása
 
-A Microsoft Intune hibaelhárítási szolgáltatásai néhány beépített. Ezek a funkciók használatával hibaelhárításához a megfelelőségi szabályzatokról és konfigurációs profilokat a környezetben.
+Microsoft Intune tartalmaz néhány beépített hibaelhárítási funkciót. Ezekkel a szolgáltatásokkal elháríthatja a környezetben a megfelelőségi szabályzatokat és a konfigurációs profilokat.
 
-Ez a cikk néhány gyakori hibaelhárítási eljárásokat, és ismerteti a problémák léphetnek fel.
+Ez a cikk néhány gyakori hibaelhárítási módszert sorol fel, és ismerteti az esetlegesen felmerülő problémákat.
 
-## <a name="check-tenant-status"></a>A bérlő állapotának ellenőrzése
-Ellenőrizze a [Bérlőállapot](tenant-status.md) , majd erősítse meg az előfizetés nem aktív. Aktív incidens által érintett és tanácsok, amely hatással lehet a házirend vagy -profil központi telepítés részleteit is megtekintheti.
+## <a name="check-tenant-status"></a>Bérlői állapot keresése
+Ellenőrizze a [bérlő állapotát](tenant-status.md) , és ellenőrizze, hogy az előfizetés aktív-e. Megtekintheti azokat az aktív incidenseket és tanácsadókat is, amelyek hatással lehetnek a szabályzatra vagy a profil telepítésére.
 
-## <a name="use-built-in-troubleshooting"></a>Használja a beépített hibáinak elhárítása
+## <a name="use-built-in-troubleshooting"></a>Beépített hibaelhárítás használata
 
-1. A [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)válassza **hibaelhárítás**:
+1. Az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ban válassza a **hibakeresés**elemet:
 
-    ![Az Intune-ban nyissa meg a Súgó és támogatás, és válassza ki a hibaelhárítás](./media/help-and-support-troubleshoot.png)
+    ![Az Intune-ban lépjen a Súgó és támogatás elemre, és válassza a hibakeresés lehetőséget.](./media/help-and-support-troubleshoot.png)
 
-2. Válasszon **felhasználó kiválasztása** > Válassza ki a felhasználót, hogy a probléma > **kiválasztása**.
-3. Ellenőrizze, hogy **Intune-licencet** és **fiók állapota** is zöld ellenőrzések megjelenítése:
+2. Válassza a **felhasználó kiválasztása** lehetőséget > Válassza ki azt a felhasználót, aki a probléma > **válassza a lehetőséget**.
+3. Győződjön meg arról, hogy az **Intune-licenc** és- **fiók állapota** mind a zöld ellenőrzések megjelenítése:
 
-    ![Az Intune-ban válassza ki a felhasználót, és ellenőrizze a fiók állapota és az Intune-licencet az állapot zöld ellenőrzések jelek megjelenítése](./media/account-status-intune-license-show-green.png)
+    ![Az Intune-ban válassza ki a felhasználót, és erősítse meg a fiók állapotát és az Intune-licenc megjelenítése zöld ellenőrzési jelek az állapothoz](./media/account-status-intune-license-show-green.png)
 
     **Hasznos hivatkozások**:
 
-    - [Licencek hozzárendelése, így a felhasználók regisztrálhatják eszközeiket](licenses-assign.md)
+    - [Licencek kiosztása, hogy a felhasználók regisztrálhatják az eszközöket](licenses-assign.md)
     - [Felhasználók hozzáadása az Intune-hoz](users-add.md)
 
-4. A **eszközök**, keresse meg az eszközt, hogy a probléma. Tekintse át a különböző oszlopból:
+4. Az **eszközök**területen keresse meg a problémával rendelkező eszközt. Tekintse át a különböző oszlopokat:
 
-    - **Felügyelt**: Egy eszköz megfelelőségi vagy konfigurációs szabályzatokkal fogadására, ezt a tulajdonságot kell megjelennie **MDM** vagy **EAS-/ MDM**.
+    - **Felügyelt**: Ahhoz, hogy egy eszköz megfelelőségi vagy konfigurációs szabályzatokat kapjon, ennek a tulajdonságnak **Mdm** vagy **EAS/Mdm**kell mutatnia.
 
-      - Ha **felügyelt** nincs beállítva **MDM** vagy **EAS-/ MDM**, majd az eszköz nincs regisztrálva. Megfelelőségi vagy konfigurációs szabályzatokat, nem kap, amíg a rendszer regisztrálja az eszközöket.
+      - Ha a **felügyelt** nem **Mdm** vagy **EAS/Mdm**értékre van állítva, akkor az eszköz nincs regisztrálva. Nem kap megfelelőségi vagy konfigurációs szabályzatot, amíg a regisztrációja be nem fejeződik.
 
-      - Az alkalmazásvédelmi szabályzatok (mobilalkalmazás-kezelés) az eszközöknek nincs szükségük. További információkért lásd: [létrehozása és hozzárendelése az alkalmazásvédelmi szabályzatok](app-protection-policies.md).
+      - Az alkalmazás-védelmi szabályzatok (mobileszköz-kezelés) nem igénylik az eszközök regisztrálását. További információ: az [alkalmazás-védelmi szabályzatok létrehozása és kiosztása](app-protection-policies.md).
 
-    - **Azure AD-csatlakozás típusa**: Jelölje meg **munkahelyi** vagy **AzureAD**.
+    - **Azure ad-csatlakozás típusa**: **Munkahelyre** vagy **AzureAD**kell beállítani.
  
-      - Ha ez az oszlop **nincs regisztrálva**, előfordulhat, hogy regisztrációs problémáját. Általában regisztrációjának törlése, és az eszköz adták feloldása ebben az állapotban.
+      - Ha ez az oszlop nincs **regisztrálva**, lehet, hogy probléma van a regisztrációval. Az eszköz regisztrációjának törlése és újbóli regisztrálása általában feloldja ezt az állapotot.
 
-    - **Intune-kompatibilis**: Meg kell **Igen**. Ha **nem** jelenik meg, előfordulhat, hogy egy problémát a megfelelőségi szabályzatok, vagy az eszköz nem csatlakozik az Intune szolgáltatáshoz. Például az eszköz ki van kapcsolva, vagy nincs hálózati kapcsolat. Végül, az eszköz nem megfelelővé válik, akár 30 nap letelte után.
+    - **Intune-kompatibilis**: **Igen értékűnek**kell lennie. Ha **nem** látható, a megfelelőségi szabályzatokkal kapcsolatos probléma merülhet fel, vagy az eszköz nem csatlakozik az Intune szolgáltatáshoz. Előfordulhat például, hogy az eszköz ki van kapcsolva, vagy nem rendelkezik hálózati kapcsolatban. Végül az eszköz nem megfelelővé válik, valószínűleg 30 nap után.
 
-      További információkért lásd: [eszközmegfelelőségi szabályzatok – első lépések](device-compliance-get-started.md).
+      További információ: [Bevezetés az eszközök megfelelőségi házirendjeibe](device-compliance-get-started.md).
 
-    - **Az Azure AD-kompatibilis**: Meg kell **Igen**. Ha **nem** jelenik meg, előfordulhat, hogy egy problémát a megfelelőségi szabályzatok, vagy az eszköz nem csatlakozik az Intune szolgáltatáshoz. Például az eszköz ki van kapcsolva, vagy nincs hálózati kapcsolat. Végül, az eszköz nem megfelelővé válik, akár 30 nap letelte után.
+    - **Azure ad-kompatibilis**: **Igen értékűnek**kell lennie. Ha **nem** látható, a megfelelőségi szabályzatokkal kapcsolatos probléma merülhet fel, vagy az eszköz nem csatlakozik az Intune szolgáltatáshoz. Előfordulhat például, hogy az eszköz ki van kapcsolva, vagy nem rendelkezik hálózati kapcsolatban. Végül az eszköz nem megfelelővé válik, valószínűleg 30 nap után.
 
-      További információkért lásd: [eszközmegfelelőségi szabályzatok – első lépések](device-compliance-get-started.md).
+      További információ: [Bevezetés az eszközök megfelelőségi házirendjeibe](device-compliance-get-started.md).
 
-    - **Utolsó beadás**: Kell egy legutóbbi dátuma és időpontja. Alapértelmezés szerint az Intune-eszközök ellenőrzés 8 óránként.
+    - **Utolsó beadás**: A legutóbbi dátumnak és időpontnak kell lennie. Alapértelmezés szerint az Intune-eszközök 8 óránként kerülnek beadásra.
 
-      - Ha **utolsó beadás** 24 óránál tovább áll, előfordulhat, hogy egy hiba történt az eszközön. Olyan eszköz, amely nem vehető fel a szabályzatok nem kapnak az Intune-ból.
+      - Ha a **legutóbbi bejelentkezés** 24 óránál hosszabb, lehet, hogy probléma van az eszközzel. Olyan eszköz, amely nem tud bejelentkezni, nem tudja fogadni a szabályzatokat az Intune-ból.
 
-      - Bejelentkezés kényszerítése:
-        - Az Android-eszközön nyissa meg a céges portál alkalmazás > **eszközök** > Válassza ki az eszközt a listából > **eszközbeállítások ellenőrzése**.
-        - Az iOS-eszközön nyissa meg a céges portál alkalmazás > **eszközök** > Válassza ki az eszközt a listából > **beállítások ellenőrzése**. 
-        - A Windows-eszközön nyissa meg a **beállítások** > **fiókok** > **hozzáférés munkahelyi vagy iskolai** > Válassza ki a fiók vagy MDM-regisztráció >  **Adatok** > **szinkronizálási**.
+      - A bejelentkezés kényszerítése:
+        - Az Android-eszközön nyissa meg az Céges portál alkalmazás > **eszközök** > válassza ki az eszközt a listából > az **eszközbeállítások ellenõrzése**lehetőséget.
+        - Az iOS-eszközön nyissa meg a vállalati portál alkalmazást > **eszközök** > válassza ki az eszközt a listából > a **Beállítások ellenőrzését**. 
+        - Windows-eszközön nyissa meg a **Beállítások** > **fiókok** > **hozzáférés munkahelyi vagy iskolai** > Válassza ki a fiókot vagy a Mdm beléptetési > az **adatok** > **szinkronizálása**lehetőséget.
 
-    - Válassza ki az eszközt, a házirend-specifikus információk megtekintéséhez.
+    - Válassza ki az eszközt a házirend-specifikus információk megjelenítéséhez.
 
-      **Eszközmegfelelőség** jeleníti meg a tartományvezérlők állapotait az eszközhöz rendelt megfelelőségi szabályzatok.
+      Az **eszköz megfelelősége** az eszközhöz rendelt megfelelőségi szabályzatok állapotát mutatja.
 
-      **Eszközkonfiguráció** jeleníti meg a állapotok konfigurációs házirendek hozzárendeli az eszközhöz.
+      Az **eszköz konfigurációja** megjeleníti az eszközhöz rendelt konfigurációs házirendek állapotait.
 
-      Ha a várt szabályzatok nem jelennek meg a **Eszközmegfelelőség** vagy **eszközkonfiguráció**, majd a házirendek nem célzott megfelelően. Nyissa meg a szabályzatot, és rendelje hozzá a szabályzatot a felhasználó vagy eszköz számára.
+      Ha a várt szabályzatok nem jelennek meg az **eszköz megfelelősége** vagy az **eszköz konfigurációja**területen, akkor a házirendek nem megfelelően vannak megcélozva. Nyissa meg a szabályzatot, és rendelje hozzá a szabályzatot ehhez a felhasználóhoz vagy eszközhöz.
 
-      **Szabályzatok**:
+      **Szabályzat állapota**:
 
-      - **Nem alkalmazható**: Ez a szabályzat ezen a platformon nem támogatott. Például az iOS-szabályzatok az Android nem működnek. Samsung KNOX-szabályzatok nem működnek a Windows-eszközökön.
-      - **Ütközés**: Nincs az eszközt, hogy az Intune nem írhatja felül a meglévő beállításokat. Vagy az ugyanazt a beállítást különböző értékekkel telepített két szabályzat.
-      - **Függőben lévő**: Az eszköz az Intune-ban, hogy lekérje a házirendet nem jelentkezett. Vagy az eszköz megkapta a házirendet, de az nem jelentette az állapotot az Intune-hoz.
-      - **Hibák**: Hibák és a lehetséges megoldásokért keresse ki [vállalati erőforrás-hozzáférési problémák hibaelhárítása](troubleshoot-company-resource-access-problems.md).
+      - **Nem alkalmazható**: Ez a szabályzat nem támogatott ezen a platformon. Az iOS-házirendek például nem működnek az Android rendszeren. A Samsung KNOX-szabályzatok nem működnek Windows-eszközökön.
+      - **Ütközés**: Létezik egy meglévő beállítás az eszközön, amelyet az Intune nem tud felülbírálni. Másik lehetőségként két házirendet is üzembe helyezett ugyanazzal a beállítással különböző értékek használatával.
+      - **Függőben**: Az eszköz nem ellenőrizte az Intune-t a szabályzat beszerzéséhez. Vagy az eszköz fogadta a szabályzatot, de nem jelentette az állapotot az Intune-nak.
+      - **Hibák**: A [Vállalati erőforrás-hozzáférési problémák elhárításával kapcsolatos](troubleshoot-company-resource-access-problems.md)hibákat és lehetséges megoldásokat kereshet.
 
       **Hasznos hivatkozások**: 
 
-      - [Az eszközmegfelelőségi szabályzatok üzembe helyezésének módjai](device-compliance-get-started.md#ways-to-deploy-device-compliance-policies)
+      - [Eszközök megfelelőségi házirendjeinek központi telepítésének módjai](device-compliance-get-started.md#ways-to-deploy-device-compliance-policies)
       - [Eszközmegfelelőségi szabályzatok figyelése](compliance-policy-monitor.md)
 
-## <a name="youre-unsure-if-a-profile-is-correctly-applied"></a>Nem tudja biztosan, ha a profil megfelelően van-e érvényben
+## <a name="youre-unsure-if-a-profile-is-correctly-applied"></a>Nem biztos benne, hogy a profil megfelelően van-e alkalmazva
 
-1. Jelentkezzen be a [Intune](https://go.microsoft.com/fwlink/?linkid=2090973).
-2. Válassza ki **eszközök** > **minden eszköz** > Válassza ki az eszközt > **eszközkonfiguráció**. 
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
+2. Válassza az **eszközök** > **minden eszköz** lehetőséget > Válassza ki az eszköz > **eszköz konfigurációját**. 
 
-    Minden eszköz a profilok listája. Minden profil egy **állapot**. Az állapot vonatkozik, az összes hardver és az operációs rendszer korlátozásokat és követelményeket, ideértve a hozzárendelt profilok együttese. Lehetséges állapotok a következők:
+    Minden eszköz felsorolja a profilokat. Minden profil rendelkezik **állapottal**. Az állapot akkor érvényes, ha az összes hozzárendelt profil, beleértve a hardvert és az operációs rendszer korlátozásait és követelményeit együttesen veszi figyelembe. A lehetséges állapotok a következők:
 
-    - **Megfelel**: Az eszköz kapott a profil és a jelentések az Intune-hoz, amely megfelel a beállításnak.
+    - **Megfelel**a következőket: Az eszköz megkapta a profilt és a jelentéseket az Intune-nak, amely megfelel a beállításnak.
 
-    - **Nem alkalmazható**: A profil beállítás nem alkalmazható. IOS-eszközök e-mail beállításai például egy Android-eszközre nem vonatkoznak.
+    - **Nem alkalmazható**: A profil beállítása nem alkalmazható. Az iOS-eszközök e-mail-beállításai például nem alkalmazhatók Android-eszközre.
 
-    - **Függőben lévő**: A profilt az eszköznek továbbítja, de az állapot nem jelentette az Intune-ban. Például az Android rendszeren csak akkor működik a titkosítás, ha a felhasználó engedélyezi, ezért függőben lehet.
+    - **Függőben**: A rendszer elküldje a profilt az eszközre, de nem jelentett állapotot az Intune-nak. Például az Android rendszeren csak akkor működik a titkosítás, ha a felhasználó engedélyezi, ezért függőben lehet.
 
-**Hasznos hivatkozás**: [Konfigurációs eszközprofilok figyelése](device-profile-monitor.md)
+**Hasznos hivatkozás**: [Konfigurációs eszközök profiljainak figyelése](device-profile-monitor.md)
 
 > [!NOTE]
 > Ha két különböző korlátozási szintű szabályzat vonatkozik egy eszközre vagy felhasználóra, akkor a gyakorlatban a szigorúbb szabályzat lesz érvényes.
 
-## <a name="policy-troubleshooting-resources"></a>Csoportházirend hibaelhárítási erőforrások
+## <a name="policy-troubleshooting-resources"></a>Házirend-hibaelhárítási erőforrások
 
-- [IOS vagy Android-házirendek nem kezeli az eszközöket hibaelhárítási](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-tip-Troubleshooting-iOS-or-Android-policies-not-applying/ba-p/280154) (megnyílik egy másik Microsoft-hely)
-- [A Windows 10-es Intune hibáinak elhárítása](http://configmgrdogsarchive.com/2018/08/09/troubleshooting-windows-10-intune-policy-failures/) (megnyílik egy blog)
-- [CSP egyéni beállítások Windows 10-es hibaelhárítása](https://support.microsoft.com/en-us/help/4055338/troubleshoot-csp-setting-windows-10-computer-intune) (megnyílik egy másik Microsoft-hely)
-- [A Windows 10-es csoportházirend és az Intune mobileszköz-kezelési házirend](https://blogs.technet.microsoft.com/cbernier/2018/04/02/windows-10-group-policy-vs-intune-mdm-policy-who-wins/) (megnyílik egy másik Microsoft-hely)
+- [Az eszközökön nem alkalmazott iOS-vagy Android-házirendek hibaelhárítása](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-tip-Troubleshooting-iOS-or-Android-policies-not-applying/ba-p/280154) (másik Microsoft-webhely megnyitása)
+- A [Windows 10 Intune-szabályzat hibáinak elhárítása](https://blogs.technet.microsoft.com/configmgrdogs/2018/08/09/troubleshooting-windows-10-intune-policy-failures/) (blog megnyitása)
+- [A Windows 10 rendszerhez készült CSP egyéni beállításainak megoldása](https://support.microsoft.com/en-us/help/4055338/troubleshoot-csp-setting-windows-10-computer-intune) (másik Microsoft-webhely megnyitása)
+- [Windows 10 csoportházirend vs INTUNE Mdm szabályzat](https://blogs.technet.microsoft.com/cbernier/2018/04/02/windows-10-group-policy-vs-intune-mdm-policy-who-wins/) (másik Microsoft-webhely megnyitása)
 
-## <a name="alert-saving-of-access-rules-to-exchange-has-failed"></a>Riasztás: Az Exchange hozzáférési szabályok mentése sikertelen volt
+## <a name="alert-saving-of-access-rules-to-exchange-has-failed"></a>Riasztás Sikertelen volt a hozzáférési szabályok mentése az Exchange szolgáltatásba
 
-**A probléma**: A riasztás **a hozzáférési szabályok mentése az Exchange-hez nem sikerült** a felügyeleti konzolon.
+**Probléma**: A felügyeleti konzolon az Exchange-re vonatkozó **hozzáférési szabályok mentése sikertelen volt** .
 
-Szabályzatok létrehozása a helyszíni Exchange-szabályzat munkaterületen (felügyeleti konzol), de az Office 365-höz használ, ha a konfigurált szabályzatbeállítások kényszeríti nem Intune-ban. Kattintson a riasztásra jegyezze fel. A helyszíni Exchange-szabályzat munkaterületen törölje az örökölt szabályokat. Az örökölt szabályokat globális Exchange-szabályok a helyszíni Exchange-hez az Intune-ban, és nem releváns, az Office 365-höz. Ezután hozzon létre új szabályzatot az Office 365-höz.
+Ha szabályzatokat hoz létre a helyszíni Exchange-házirend munkaterületen (felügyeleti konzol), de az Office 365-et használja, akkor az Intune nem kényszeríti ki a konfigurált házirend-beállításokat. A riasztásban jegyezze fel a házirend forrását. A helyszíni Exchange-szabályzat munkaterületen törölje az örökölt szabályokat. Az örökölt szabályok az Intune-ban a helyszíni Exchange-en belüli globális Exchange-szabályok, és nem vonatkoznak az Office 365-re. Ezután hozzon létre új szabályzatot az Office 365-hez.
 
-[Az Intune helyszíni Exchange connector hibaelhárítása](troubleshoot-exchange-connector.md) jól lehet.
+Előfordulhat, hogy [az Intune helyszíni Exchange Connector](troubleshoot-exchange-connector.md) a megfelelő erőforrást fogja elhárítani.
 
-## <a name="cant-change-security-policies-for-enrolled-devices"></a>Biztonsági házirendek a regisztrált eszközökhöz nem módosítható.
+## <a name="cant-change-security-policies-for-enrolled-devices"></a>Nem lehet módosítani a regisztrált eszközökhöz tartozó biztonsági házirendeket
 
-Windows Phone-eszközök nem teszik lehetővé a biztonsági szabályzatok beállítása az MDM-en vagy az EAS használatával, hogy a beállításukat követően őket. Például, ha beállítja egy **legalább hány karakterből álló jelszót** 8, és próbálja meg a 4-re csökkenteni. A szigorúbb szabályzat az eszközre érvényes.
+Windows Phone-telefon az eszközök nem teszik lehetővé, hogy a MDM vagy EAS-vel beállított biztonsági házirendek a biztonságuk után csökkentsék a biztonságot. Például beállíthatja, hogy a **jelszó minimális száma** 8 legyen, majd próbálja meg csökkenteni a 4 értékre. Az eszközre szigorúbb házirend vonatkozik.
 
-Ha Ön a házirendet (állítsa le az üzembe helyezés) hozzárendelésének megszüntetése Windows 10-eszközök nem távolíthatja el biztonsági szabályzatokat. Szükség lehet a hozzárendelt szabályzat hagyja, és módosítsa a biztonsági beállításokat az alapértelmezett értékekre.
+Előfordulhat, hogy a Windows 10-es eszközök nem távolítják el a biztonsági házirendeket a szabályzat hozzárendelésének megszüntetésekor (az üzemelő példány leállítása). Előfordulhat, hogy el kell hagynia a hozzárendelt szabályzatot, majd vissza kell állítania a biztonsági beállításokat az alapértelmezett értékekre.
 
-Az eszköz platformjától függően meg szeretné változtatni a szabályzatot egy kevésbé biztonságos értékre, ha, előfordulhat, hogy alaphelyzetbe kell állítania a biztonsági szabályzatokat.
+Ha a házirendet kevésbé biztonságos értékre szeretné módosítani, előfordulhat, hogy alaphelyzetbe kell állítania a biztonsági szabályzatokat.
 
-Ha például a Windows 8.1, az asztalon, pöccintsen jobbról, nyissa meg a **gombok** sáv. Válasszon **beállítások** > **vezérlőpultot** > **felhasználói fiókok**. A bal oldalon válassza a **Biztonsági szabályzatok alaphelyzetbe állítása** hivatkozást, majd válassza a **Szabályzatok alaphelyzetbe állítása** lehetőséget.
+Például a Windows 8,1-ben az asztalon, a jobb oldalon a **varázsok** sáv megnyitásához. Válassza a **Beállítások** > **Vezérlőpult** > **felhasználói fiókok**elemet. A bal oldalon válassza a **Biztonsági szabályzatok alaphelyzetbe állítása** hivatkozást, majd válassza a **Szabályzatok alaphelyzetbe állítása** lehetőséget.
 
-Más platformokon, például Android, iOS és Windows Phone 8.1-es, szükség lehet kevésbé korlátozó szabályzat alkalmazásához vonni, majd.
+Előfordulhat, hogy más platformokon (például Android, iOS vagy Windows Phone-telefon 8,1) ki kell vonni a rendszert, és újból regisztrálni kell, hogy kevésbé szigorú házirendet alkalmazzon.
 
-[Eszközök regisztrálásával kapcsolatos problémák elhárítása](troubleshoot-device-enrollment-in-intune.md) jól lehet.
+Előfordulhat, hogy az [eszközök regisztrálásának hibája](troubleshoot-device-enrollment-in-intune.md) jó erőforrás.
 
-## <a name="pcs-using-the-intune-software-client---classic-portal"></a>Számítógépek az Intune szoftveres ügyfele – klasszikus portál használatával
+## <a name="pcs-using-the-intune-software-client---classic-portal"></a>Az Intune szoftveres ügyfélprogramot használó számítógépek – klasszikus portál
 
 > [!NOTE]
-> Ez a szakasz a klasszikus portálon vonatkozik. 
+> Ez a szakasz a klasszikus portálra vonatkozik. 
 
 ### <a name="microsoft-intune-policy-related-errors-in-policyplatformlog"></a>Microsoft Intune-házirendekkel kapcsolatos hibák a policyplatform.log fájlban
 
-Az Intune szoftveres ügyfele, a hibák házirend által felügyelt Windows rendszerű számítógépekhez a `policyplatform.log` fájl lehet a nem alapértelmezett beállítások a a Windows felhasználói fiókok felügyelete (UAC) az eszközön. Néhány nem alapértelmezett UAC-beállítás hatással lehet a Microsoft Intune ügyféltelepítéseire és a házirendek érvénybe léptetésére.
+Az Intune-ügyfélszoftverrel felügyelt Windows rendszerű számítógépeken előfordulhat, `policyplatform.log` hogy a fájlban lévő házirend-hibák a Windows felhasználói fiókok felügyelete (UAC) nem alapértelmezett beállításaiból származnak az eszközön. Néhány nem alapértelmezett UAC-beállítás hatással lehet a Microsoft Intune ügyféltelepítéseire és a házirendek érvénybe léptetésére.
 
 #### <a name="resolve-uac-issues"></a>UAC-problémák megoldása
 
@@ -163,19 +163,19 @@ Az Intune szoftveres ügyfele, a hibák házirend által felügyelt Windows rend
     > [!NOTE]
     > Ne próbálja meg eltávolítani az ügyfelet a Programok és szolgáltatások területről.
 
-3. A start menüben írja be a **UAC** a felhasználói fiókok felügyelete beállításainak megnyitásához.
+3. A Start menüben írja be az **UAC** parancsot a felhasználói fiókok vezérlési beállításainak megnyitásához.
 
-4. Az értesítési csúszkát az alapértelmezett beállítás.
+4. Helyezze át az értesítési csúszkát az alapértelmezett értékre.
 
-### <a name="error-cannot-obtain-the-value-from-the-computer-0x80041013"></a>HIBA: Nem szerezhető be érték a számítógépről, 0x80041013
+### <a name="error-cannot-obtain-the-value-from-the-computer-0x80041013"></a>HIBA Nem lehet beolvasni az értéket a számítógépről, 0x80041013
 
-Ez akkor fordulhat elő, ha a helyi rendszeren lévő idő legalább öt perccel eltér a szinkronizált értéktől. Ha a helyi számítógépen lévő idő nincs szinkronban, a biztonságos tranzakciók sikertelen, mert az időbélyegek érvénytelenek.
+Ez akkor fordulhat elő, ha a helyi rendszeren lévő idő legalább öt perccel eltér a szinkronizált értéktől. Ha a helyi számítógépen lévő idő nincs szinkronban, a biztonságos tranzakciók sikertelenek, mert az időbélyegek érvénytelenek.
 
-A probléma megoldásához állítsa a helyi rendszeridő legközelebb az internetes időhöz. Vagy állítsa be az idő a tartományvezérlőkön a hálózaton.
+A probléma megoldásához állítsa be a helyi rendszeridőt a lehető legrövidebb idő alatt az internetes idő értékre. Vagy állítsa be a hálózatban lévő tartományvezérlőkön beállított időpontra.
 
 
 ## <a name="next-steps"></a>További lépések
 
-[Gyakori problémák és megoldásuk e-mail-profilokkal](troubleshoot-email-profiles-in-microsoft-intune.md)
+[Az e-mail-profilokkal kapcsolatos gyakori problémák és megoldások](troubleshoot-email-profiles-in-microsoft-intune.md)
 
-Első [segítséget a Microsoft támogatási](get-support.md), vagy használja a [közösségi fórumokat is talál](https://social.technet.microsoft.com/Forums/en-US/home?category=microsoftintune).
+Kérjen [támogatási segítséget](get-support.md)a Microsofttól, vagy használja a [közösségi fórumokat](https://social.technet.microsoft.com/Forums/en-US/home?category=microsoftintune).

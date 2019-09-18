@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8cf55084951c3a423b79e4588f8814b5e73ce8e8
-ms.sourcegitcommit: 6c74ff568267d85fd1d44fda75e3e24ead87cb2b
+ms.openlocfilehash: a038f55f6dbdd894742a8712c878e77557a77210
+ms.sourcegitcommit: 27e63a96d15bc4062af68c2764905631bd928e7b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70063020"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061546"
 ---
 # <a name="selectively-wipe-data-using-app-protection-policy-conditional-launch-actions-in-intune"></a>Adatok szelektív törlése az App Protection-szabályzat feltételes indítási műveleteivel az Intune-ban
 
@@ -44,7 +44,7 @@ Ezekkel a beállításokkal egyértelműen megadható az összes vállalati adat
 8. Válassza ki a **Műveletet**, amelyet akkor kell végrehajtani, ha a felhasználó nem felel meg a követelményeknek. Bizonyos esetekben egy beállításhoz több művelet is megadható. További információt az [Alkalmazásvédelmi szabályzatok létrehozása és hozzárendelése](app-protection-policies.md) című cikkben talál.
 
 >[!NOTE]
-> Az **Eszközmodell(ek) vagy Eszközgyártó(k)** beállítás használatához gépelje be a modellazonosítók pontosvesszővel tagolt felsorolását. Több értéket tartalmazó felsorolásban kerülje a szóközöket. Ezekben az értékekben nincsenek megkülönböztetve a kis- és a nagybetűk. 
+> Az **eszköz modell (ek) vagy az eszköz gyártó (k)** beállításainak használatához adja meg az eszköz modell-azonosítóinak (iOS) vagy az eszközök gyártóinak (Android) pontosvesszővel tagolt listáját. Több értéket tartalmazó felsorolásban kerülje a szóközöket. Ezekben az értékekben nincsenek megkülönböztetve a kis- és a nagybetűk. 
 
 ## <a name="policy-settings"></a>Szabályzatbeállítások 
 

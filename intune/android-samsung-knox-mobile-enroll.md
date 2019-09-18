@@ -12,17 +12,17 @@ ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 30df0f9e-6e9e-4d75-a722-3819e33d480d
-ms.reviewer: arnab
+ms.reviewer: chmaguir
 ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a637ae12f3a2ee395503bedd595c490579fdb43c
-ms.sourcegitcommit: db68056e2db17dfdeaa216c684302567742e6416
+ms.openlocfilehash: f4236b3fd1b7dab25a3450b95b75f3623ec7ba95
+ms.sourcegitcommit: 74911a263944f2dbd9b754415ccda6c68dae0759
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68993548"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71071644"
 ---
 # <a name="automatically-enroll-android-devices-by-using-samsungs-knox-mobile-enrollment"></a>Eszközök automatikus regisztrációja a Samsung Knox Mobile Enrollmenttel
 
@@ -50,7 +50,7 @@ Ha regisztrálni szeretne eszközöket az Intune-ban a KME-vel, először a cég
 
 3. [Hálózati követelmények](https://docs.samsungknox.com/KME-Getting-Started/Content/firewall_exceptions.htm): Győződjön meg arról, hogy a szükséges tűzfal-és hálózati hozzáférési szabályok engedélyezve vannak a hálózaton.
 
-4. [Regisztráljon egy Samsung](https://www2.samsungknox.com/en/user/register)-fiókra: Samsung-fiókra van szükség a KME regisztrálásához és engedélyezéséhez, valamint az összes Knox-beli nagyvállalati jogosultság egyetlen helyen történő kezeléséhez.
+4. [Regisztráljon egy Samsung-fiókra](https://www2.samsungknox.com/en/user/register): Samsung-fiókra van szükség a KME regisztrálásához és engedélyezéséhez, valamint az összes Knox-beli nagyvállalati jogosultság egyetlen helyen történő kezeléséhez.
 
 5. Regisztráció áttekintése: Miután elvégezte és elküldte a profilt, a Samsung áttekinti az alkalmazást, vagy azonnal jóváhagyja, vagy egy függőben lévő felülvizsgálati állapotba helyezi a további követés érdekében. A fiók jóváhagyása után további lépéseket is végrehajthat.
 
@@ -105,7 +105,7 @@ Az Intune-ba androidos KME-vel beléptetett eszközök esetében a következők�
 
 - **Felhasználónév-társítás nélkül:** A Knox-portál **eszköz részletei**területén hagyja üresen a **felhasználói azonosító** és a **jelszó** mezőket a hozzáadott eszközökhöz. Ehhez a beállításhoz a felhasználónak a felhasználónevet és a jelszót is meg kell adnia az Intune-ba való regisztráláskor.
 
-- **Felhasználónévvel társítva:** A Knox-portál **eszköz részletei**területén adjon meg egy **felhasználói azonosítót** (például egy felhasználónevet a hozzárendelt felhasználóhoz vagy egy [eszköz](https://docs.microsoft.com/intune/device-enrollment-manager-enroll) beléptetési kezelői fiókhoz) a hozzáadott eszközökhöz. Ez a beállítás előre feltölti a felhasználónevet, és megköveteli a végfelhasználótól, hogy jelszót adjon meg az Intune-ba való regisztráláskor.
+- **Felhasználónévvel társítva:** A Knox-portál **eszköz részletei**területén adjon meg egy **felhasználói azonosítót** (például egy felhasználónevet a hozzárendelt felhasználóhoz vagy egy [eszköz beléptetési kezelői](https://docs.microsoft.com/intune/device-enrollment-manager-enroll) fiókhoz) a hozzáadott eszközökhöz. Ez a beállítás előre feltölti a felhasználónevet, és megköveteli a végfelhasználótól, hogy jelszót adjon meg az Intune-ba való regisztráláskor.
 
 > [!NOTE]
 >

@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 09/09/2019
+ms.date: 09/16/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f5ea00f2e2631433ece3e9053b8f9ea9d9e359c8
-ms.sourcegitcommit: c9725ddae6c0f82a491de27c87f240254d32716b
+ms.openlocfilehash: 7b7b4453d441d2f2367b19a6bf0505dabd8e6e48
+ms.sourcegitcommit: 27e63a96d15bc4062af68c2764905631bd928e7b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70986402"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061676"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -53,6 +53,21 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 -->  
 
 <!-- ########################## -->
+
+## <a name="week-of-september-16-2019"></a>2019. szeptember 16-i hét
+
+### <a name="app-management"></a>Alkalmazáskezelés
+
+#### <a name="macos-support-for-web-apps----3174427---"></a>macOS-támogatás webes alkalmazásokhoz <!-- 3174427 -->
+Webalkalmazások, amelyek lehetővé teszik a webes URL-címekhez való parancsikonok hozzáadását a Dockon a macOS Céges portál használatával. A végfelhasználók a macOS Céges portál webalkalmazásának alkalmazás részletei lapján érhetik el a **telepítési** műveletet. A **Webhivatkozás** alkalmazás típusával kapcsolatos további információkért lásd: [alkalmazások hozzáadása a Microsoft Intunehez](apps-add.md) és [webalkalmazások hozzáadása Microsoft Intunehoz](web-app.md).
+
+#### <a name="macos-support-for-vpp-apps----3173501----"></a>a macOS-alkalmazások macOS-támogatása <!-- 3173501  -->
+az Apple Business Managerrel megvásárolt macOS-alkalmazások a konzolon jelennek meg, amikor az Apple VPP-tokenek szinkronizálva vannak az Intune-ban. Az Intune-konzollal rendelhet hozzá, vonhat vissza és rendelhet hozzá eszközöket és felhasználó-alapú licenceket a csoportokhoz. A Microsoft Intune segítségével kezelheti a vállalat által a cégnél való használatra megvásárolt VPP-alkalmazásokat:
+- Licencinformációk jelentése az App Store-ból.
+- A felhasznált licencek számának nyilvántartása.
+- Segít, hogy ne telepítse az alkalmazás több példányát, mint amennyit a tulajdonosa.
+
+Az Intune-nal és a VPP-vel kapcsolatos további információkért lásd: [mennyiségi programban vásárolt alkalmazások és könyvek kezelése Microsoft Intuneokkal](vpp-apps.md).
 
 ## <a name="week-of-september-9-2019"></a>2019. szeptember 9. hét
 

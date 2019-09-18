@@ -13,19 +13,19 @@ ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
 Customer intent: As an Intune admin, I want to set up Windows Autopilot so that users can enroll in Intune.
-ms.reviewer: angerobe
+ms.reviewer: spshumwa
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2ee353e5e6c39c3b402c0b4f039bb02efcfa4532
-ms.sourcegitcommit: 916fed64f3d173498a2905c7ed8d2d6416e34061
+ms.openlocfilehash: 292ffb5eebd4ae0accb51212cf6f1648a090d66e
+ms.sourcegitcommit: 74911a263944f2dbd9b754415ccda6c68dae0759
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66044527"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71071674"
 ---
-# <a name="tutorial-use-autopilot-to-enroll-windows-devices-in-intune"></a>Oktatóanyag: Windows-eszközök regisztrálása az Intune Autopilot használatával
+# <a name="tutorial-use-autopilot-to-enroll-windows-devices-in-intune"></a>Oktatóanyag Windows-eszközök regisztrálása az Intune-ban az Autopilot használatával
 A Windows Autopilot leegyszerűsíti az eszközök regisztrálását. A Microsoft Intune és az AutoPilot használatával új eszközöket adhat a végfelhasználóknak anélkül, hogy egyéni operációsrendszer-lemezképek létrehozására, fenntartására és alkalmazására lenne szükség. 
 
 Az oktatóanyag segítségével megtanulhatja a következőket:
@@ -43,7 +43,7 @@ Az AutoPilot előnyeinek, használati eseteinek és előfeltételeinek áttekint
 
 ## <a name="prerequisites"></a>Előfeltételek
 - [Windowsos eszközök automatikus regisztrációjának beállítása](quickstart-setup-auto-enrollment.md)
-- [Az Azure Active Directory Premium előfizetéssel](https://docs.microsoft.com/azure/active-directory/active-directory-get-started-premium) <!--&#40;[trial subscription](http://go.microsoft.com/fwlink/?LinkID=816845)&#41;-->
+- [Előfizetés prémium szintű Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-get-started-premium) <!--&#40;[trial subscription](http://go.microsoft.com/fwlink/?LinkID=816845)&#41;-->
 
 
 ## <a name="add-devices"></a>Eszközök felvétele
@@ -52,9 +52,9 @@ A Windows Autopilot beállításának első lépéseként hozzá kell adnia az I
 
 1. Egy szövegszerkesztőben hozza létre a Windows rendszerű eszközöket azonosító, vesszővel elválasztott értékeket (CSV) tartalmazó listát. Használja a következő formátumot:
     
-    *serial-number*, *windows-product-id*, *hardware-hash*, *optional-Group-Tag*
+    *sorozatszám*, *Windows-termék-azonosító*, *hardver-kivonat*, *opcionális-Group-tag*
     
-    Az első három elem megadása kötelező, de a csoporthoz címke (korábbi nevén "order ID") nem kötelező.
+    Az első három elem megadása kötelező, de a csoport címkéje (korábbi nevén "Order ID") nem kötelező.
 
 2. Mentse a CSV-fájlt.
 
@@ -89,20 +89,20 @@ Ezután létrehoz egy eszközcsoportot, és belehelyezi az előbb betöltött Au
 Egy eszközcsoport létrehozása után létre kell hoznia egy Deployment-profilt az AutoPilot-eszközök konfigurálásához.
 
 1. Az [Azure Portalbeli Intune-ban](https://aka.ms/intuneportal) válassza az **Eszközök regisztrálása** > **Windows-regisztráció** > **Telepítési profilok** > **Profil létrehozása** elemet.
-2. Az a **alapjai** oldal, tor **neve**, adja meg *Autopilot-profil*. A **Leírás** mezőbe írja be az *AutoPilot-eszközök tesztprofilja* leírást.
+2. Az **alapbeállítások** lapon a Tor **neve**mezőbe írja be az *Autopilot-profilt*. A **Leírás** mezőbe írja be az *AutoPilot-eszközök tesztprofilja* leírást.
 3. Állítsa a **Minden megcélzott eszköz átalakítása az Autopilotra** beállítást **Igen** értékre. Ez a beállítás biztosítja, hogy a listában lévő összes eszköz regisztrálva legyen az Autopilot üzembehelyezési szolgáltatásban. A regisztráció feldolgozása 48 órát is igénybe vehet.
 4. Kattintson a **Tovább** gombra.
-5. Az a **Out-of-box élmény (OOBE)** lapon a **üzembe helyezési mód**, válassza a **felhasználó-központú**. Az ilyen profillal rendelkező eszközök az őket regisztráló felhasználóhoz vannak társítva. Az eszköz regisztrálásához felhasználói hitelesítő adatokra van szükség.
+5. A beépített felhasználói **élmény (OOBE)** lapon a **központi telepítési mód**beállításnál válassza a **felhasználó által vezérelt**elemet. Az ilyen profillal rendelkező eszközök az őket regisztráló felhasználóhoz vannak társítva. Az eszköz regisztrálásához felhasználói hitelesítő adatokra van szükség.
 6. A **Csatlakozás az Azure AD-hez mint** mezőben válassza az **Azure AD-hez csatlakoztatott** lehetőséget.
-7. Konfigurálja a következő beállításokat, és hagyja, mások az alapértelmezett értékre:
-    - **Végfelhasználói licencszerződés (EULA)**: **Elrejtése**
-    - **Adatvédelmi beállítások**: **Show**
+7. Konfigurálja az alábbi beállításokat, és hagyja, hogy a többi beállítás az alapértelmezett értékre legyen állítva:
+    - **Végfelhasználói licencszerződés (EULA)** : **Elrejtése**
+    - **Adatvédelmi beállítások**: **Megjelenítése**
     - **Felhasználói fiók típusa**: **Standard**
 8. Kattintson a **Tovább** gombra.
-9. Az a **hozzárendelések** lapon a **kijelölt csoportok** a **hozzárendelése**.
-10. Válasszon **válassza ki a befoglalandó csoportokat**, válassza a **Autopilot csoport**.
+9. A **hozzárendelések** lapon válassza a **kijelölt csoportok** lehetőséget a **hozzárendeléshez**.
+10. Válassza ki **a felvenni kívánt csoportok kiválasztása**lehetőséget, majd válassza az **Autopilot-csoport**lehetőséget.
 11. Kattintson a **Tovább** gombra.
-12. Az a **felülvizsgálat + létrehozás** lapon a **létrehozás** a profil létrehozásához.
+12. A profil létrehozásához a **felülvizsgálat + létrehozás** lapon válassza a **Létrehozás** lehetőséget.
 
 ## <a name="distribute-devices-to-users"></a>Eszközök terjesztése a felhasználóknak
 
@@ -110,7 +110,7 @@ A Windows rendszerű eszközök ekkor már kioszthatók a felhasználóknak. Az 
 
 ## <a name="clean-up-resources"></a>Az erőforrások eltávolítása
 
-Ha az Autopilot-eszközök használata már nem szeretné, törölheti őket.
+Ha már nem szeretne Autopilot-eszközöket használni, törölheti őket.
 
 1. Ha az eszközök regisztrálva vannak az Intune-ban, akkor először [törölnie kell azokat az Azure Active Directory portálról](devices-wipe.md#delete-devices-from-the-azure-active-directory-portal).
 

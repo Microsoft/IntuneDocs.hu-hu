@@ -17,18 +17,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cda0453009855d96e7c13e170ba908479a0773ea
-ms.sourcegitcommit: 513e805bbea8bf652c2901dfc5460e34946077df
+ms.openlocfilehash: c0cbc2c7334675e91450b9c2d7129a098498d978
+ms.sourcegitcommit: 27e63a96d15bc4062af68c2764905631bd928e7b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70160591"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061596"
 ---
 # <a name="app-configuration-policies-for-microsoft-intune"></a>Alkalmazáskonfigurációs szabályzatok a Microsoft Intune-hoz
 
 Az alkalmazás-konfigurációs házirendek segíthetnek az alkalmazások telepítésével kapcsolatos problémák elhárításában azáltal, hogy a konfigurációs beállításokat egy olyan házirendhez rendeli hozzá, amely hozzá van rendelve a végfelhasználók számára az alkalmazás futtatása előtt. Ezt követően a rendszer automatikusan megadja a beállításokat, amikor az alkalmazás konfigurálva van a végfelhasználói eszközön, és a végfelhasználóknak nem kell végrehajtaniuk a műveletet. A konfigurációs beállítások minden alkalmazás esetében egyediek. 
 
-Alkalmazás-konfigurációs szabályzatokat hozhat létre és használhat az iOS-és Android-alkalmazások konfigurációs beállításainak megadásához. Ezek a konfigurációs beállítások lehetővé teszik, hogy az alkalmazások testreszabhatók legyenek az alkalmazások konfigurációjának és felügyeletének [iparági standard megközelítésével](https://www.appconfig.org/) . A konfigurációs házirend beállításai akkor használatosak, amikor az alkalmazás ellenőrzi ezeket a beállításokat, általában az alkalmazás első futtatásakor. 
+Alkalmazás-konfigurációs szabályzatokat hozhat létre és használhat az iOS-és Android-alkalmazások konfigurációs beállításainak megadásához. Ezek a konfigurációs beállítások lehetővé teszik, hogy az alkalmazások testreszabhatók legyenek az alkalmazások konfigurációjának és felügyeletének használatával. A konfigurációs házirend beállításai akkor használatosak, amikor az alkalmazás ellenőrzi ezeket a beállításokat, általában az alkalmazás első futtatásakor. 
 
 Az alkalmazás konfigurációs beállításai például a következők bármelyikének megadását tehetik szükségessé:
 
@@ -48,7 +48,7 @@ Az elérhető konfigurációs paramétereket végül az alkalmazás fejlesztői 
 >
 > Az Android-eszközök regisztrálási típusaként csak a [felügyelt Google Play áruházból](https://play.google.com/work)származó alkalmazások jelennek meg, nem a [Google Play áruházból](https://play.google.com/store/apps), a felügyelt eszközök használatakor. Felügyelt Google Play Áruház, amelyek az Android for Work (AfW) és az Android Enterprise rendszerhez is ismertek, a munkahelyi profilban található alkalmazások, amelyek az alkalmazás konfigurációját támogató alkalmazásokat tartalmazzák.
 
-Alkalmazás-konfigurációs házirendet a végfelhasználók és az eszközök egy csoportjára is hozzárendelhet a belefoglalási [és kizárási hozzárendelések](apps-inc-exl-assignments.md)együttes használatával. Miután hozzáadta az alkalmazáskonfigurálási szabályzatot, beállíthatja az alkalmazáskonfigurálási szabályzat hozzárendeléseit. A szabályzat hozzárendeléseinek beállításakor kiválaszthatja, hogy kivonja és kizárja azokat a végfelhasználói [csoportokat](groups-add.md) , amelyekre a szabályzat vonatkozik. Amikor felvesz egy vagy több csoportot, kiválaszthat bizonyos csoportokat, vagy választhat beépített csoportokat. Beépített csoportok a következők: **Minden felhasználó**, **Minden eszköz**, és **Minden felhasználó és minden eszköz**.
+Alkalmazás-konfigurációs házirendet a végfelhasználók és az eszközök egy csoportjára is hozzárendelhet a [belefoglalási és kizárási hozzárendelések](apps-inc-exl-assignments.md)együttes használatával. Miután hozzáadta az alkalmazáskonfigurálási szabályzatot, beállíthatja az alkalmazáskonfigurálási szabályzat hozzárendeléseit. A szabályzat hozzárendeléseinek beállításakor kiválaszthatja, hogy kivonja és kizárja azokat a végfelhasználói [csoportokat](groups-add.md) , amelyekre a szabályzat vonatkozik. Amikor felvesz egy vagy több csoportot, kiválaszthat bizonyos csoportokat, vagy választhat beépített csoportokat. Beépített csoportok a következők: **Minden felhasználó**, **Minden eszköz**, és **Minden felhasználó és minden eszköz**.
 
 Az alkalmazás-konfigurációs szabályzatok Intune-nal való használatának két lehetősége van:
 - **Felügyelt eszközök** – Az eszköz mobileszköz-kezelő (MDM) szolgáltatója az Intune. Az alkalmazást úgy kell tervezni, hogy támogassa az alkalmazás konfigurációját.
@@ -60,12 +60,12 @@ Az alkalmazás-konfigurációs szabályzatok Intune-nal való használatának k�
 ## <a name="apps-that-support-app-configuration"></a>Az alkalmazáskonfigurációt támogató alkalmazások
 
 ### <a name="managed-devices"></a>Felügyelt eszközök
-Alkalmazás-konfigurációs házirendeket használhat az azt támogató alkalmazásokhoz. Az Intune-ban az alkalmazások konfigurációjának támogatásához a [AppConfig-Közösség](https://www.appconfig.org/members)által meghatározott alkalmazás-konfigurációk használatát támogató alkalmazásokat kell írni. Részletekért forduljon az alkalmazás forgalmazójához.
+Alkalmazás-konfigurációs házirendeket használhat az azt támogató alkalmazásokhoz. Az alkalmazás-konfiguráció Intune-ban való támogatásához az alkalmazásokat az operációs rendszer által meghatározott alkalmazások konfigurációjának támogatásához kell írni. Az alkalmazás gyártójától tájékozódhat az általa támogatott alkalmazás-konfigurációs kulcsokról.
 
 ### <a name="managed-apps"></a>Felügyelt alkalmazások
 Előkészítheti az üzletági alkalmazásokat az [Intune app SDK](app-sdk.md) -nak az alkalmazásba való beépítésével, vagy az alkalmazásnak az [Intune alkalmazás-burkoló eszköz](apps-prepare-mobile-application-management.md)használatával történő becsomagolásával. Az Intune app SDK arra törekszik, hogy minimálisra csökkentse az alkalmazás fejlesztője által igényelt kód módosításának mértékét. További információ: [Az Intune App SDK áttekintése](app-sdk.md). Az Intune app SDK és az Intune alkalmazás-burkoló eszköz közötti összehasonlításért lásd: [üzletági alkalmazások előkészítése az App Protection-szabályzatokhoz](apps-prepare-mobile-application-management.md#feature-comparison).
 
-A **felügyelt alkalmazások** kiválasztása az **eszköz** beléptetési típusaként kifejezetten az Intune konfigurációs házirendjei által konfigurált, az Eszközkezelőben nem regisztrált eszközökre vonatkozik, míg a **felügyelt eszközök** az üzembe helyezett alkalmazásokra vonatkoznak. az MDM-csatornán keresztül, így az Intune kezeli. Válassza ki a megfelelő választást a leírások alapján. 
+A **felügyelt alkalmazások** kiválasztása az **eszköz beléptetési típusaként** kifejezetten az Intune konfigurációs házirendjei által konfigurált, az Eszközkezelőben nem regisztrált eszközökre vonatkozik, míg a **felügyelt eszközök** az üzembe helyezett alkalmazásokra vonatkoznak. az MDM-csatornán keresztül, így az Intune kezeli. Válassza ki a megfelelő választást a leírások alapján. 
 
 ![Eszköz beléptetésének típusa](./media/app-configuration-policy-overview/device-enrollment-type.png)
 

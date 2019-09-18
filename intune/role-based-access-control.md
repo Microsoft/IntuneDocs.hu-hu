@@ -11,17 +11,17 @@ ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ca3de752-3caa-46a4-b4ed-ee9012ccae8e
-ms.reviewer: ''
+ms.reviewer: pjain
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 83b1de6c246baaef54a31c0b3f4c5094d066c64d
-ms.sourcegitcommit: b78793ccbef2a644a759ca3110ea73e7ed6ceb8f
+ms.openlocfilehash: e636e2df8271210d8938727eb99491e1ffdd5bdc
+ms.sourcegitcommit: d2989b9992d10d133573d9bc31479659fb7e242c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69549965"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71080034"
 ---
 # <a name="role-based-access-control-rbac-with-microsoft-intune"></a>Szerepköralapú hozzáférés-vezérlés (RBAC) Microsoft Intune
 
@@ -50,7 +50,7 @@ A csoportok számára további konfigurálás nélkül is hozzárendelhet beép�
 - **Csak olvasási operátor**: A felhasználó, az eszköz, a beléptetés, a konfiguráció és az alkalmazás adatainak megtekintése. Nem lehet módosítani az Intune-t.
 - **Application Manager**: A mobil-és felügyelt alkalmazásokat felügyeli, képes olvasni az eszköz adatait, és megtekintheti az eszköz konfigurációs profiljait.
 - **Intune-szerepkör rendszergazdája**: Kezeli az egyéni Intune-szerepköröket, és hozzárendeli a beépített Intune-szerepkörökhöz tartozó hozzárendeléseket. Ez az egyetlen Intune-szerepkör, amely engedélyeket rendelhet a rendszergazdákhoz.
-- **Iskolai rendszergazda**: Felügyeli a Windows 10-es [](introduction-intune-education.md)eszközöket a Intune for Educationban.
+- **Iskolai rendszergazda**: Felügyeli a Windows 10-es eszközöket a [Intune for Educationban](introduction-intune-education.md).
 
 ### <a name="custom-roles"></a>Egyéni szerepkörök
 Egyéni engedélyekkel saját szerepköröket is létrehozhat. További információ az egyéni szerepkörökről: [Egyéni szerepkör létrehozása](create-custom-role.md).

@@ -12,17 +12,17 @@ ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: a2dc5594-a373-48dc-ba3d-27aff0c3f944
-ms.reviewer: angerobe
+ms.reviewer: spshumwa
 ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e0f1f7d937f08e32b30ee9facdcca03d263bc27e
-ms.sourcegitcommit: a25cd79a33feb536d9b2fc11aa7d3e3972f1ca5a
+ms.openlocfilehash: 1bb6efa8bff9ff428a7ea6cc1bd245070cfc0e1f
+ms.sourcegitcommit: 74911a263944f2dbd9b754415ccda6c68dae0759
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70842176"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71070949"
 ---
 # <a name="enroll-windows-devices-in-intune-by-using-the-windows-autopilot"></a>Windows-eszközök regisztrálása az Intune-ban a Windows Autopilot használatával  
 A Windows Autopilot egyszerűbbé teszi az eszközök regisztrálását az Intune-ban. A testre szabott operációsrendszer-lemezképek létrehozása és karbantartása sok időt vesz igénybe. Gyakran ezeknek az egyéni operációsrendszer-lemezképeknek az új eszközökre való alkalmazásával is időt kell töltenie, hogy felkészítse az eszközöket a használatra, mielőtt a végfelhasználóknak adná azokat. A Microsoft Intune és az AutoPilot révén új eszközöket adhat hozzá a végfelhasználók számára anélkül, hogy egyéni operációsrendszer-lemezképek létrehozására, kezelésére és az eszközökre való alkalmazására lenne szükség. Az AutoPilot-eszközök Intune-nal való felügyelete során a regisztráció után szabályzatokat, profilokat, alkalmazásokat és sok mást is kezelni tud. A megoldás előnyeinek, használati eseteinek és előfeltételeinek áttekintéséről lásd [a Windows AutoPilot áttekintését](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot).
@@ -120,15 +120,15 @@ Az Autopilot-üzembehelyezési profilokkal Autopilot-eszközeit konfigurálhatja
 
     ![Képernyőfelvétel a hozzárendelésekről lap](media/enrollment-autopilot/create-profile-assignments.png)
 
-12. Válassza ki a **felvenni kívánt csoportokat**, majd válassza ki azokat a csoportokat, amelyeket bele szeretne foglalni ebbe a profilba.
-13. Ha ki szeretne zárni egy csoportot, válassza ki a **kizárni kívánt csoportokat**, majd válassza ki a kizárandó csoportokat.
+12. Válassza ki a felvenni kívánt **csoportokat**, majd válassza ki azokat a csoportokat, amelyeket bele szeretne foglalni ebbe a profilba.
+13. Ha ki szeretne zárni egy csoportot, válassza ki a kizárni kívánt **csoportokat**, majd válassza ki a kizárandó csoportokat.
 14. Kattintson a **Tovább** gombra.
 15. A profil létrehozásához a **felülvizsgálat + létrehozás** lapon válassza a **Létrehozás** lehetőséget.
 
     ![A felülvizsgálati oldal képernyőképe](media/enrollment-autopilot/create-profile-review.png)
 
 > [!NOTE]
-> Az Intune rendszeresen ellenőrzi az új eszközöket a hozzárendelt csoportokban, majd megkezdi a profilok hozzárendelésének folyamatát az eszközökhöz. A folyamat végrehajtása több percet is igénybe vehet. Az eszköz telepítése előtt győződjön meg arról, hogy a folyamat befejeződött.  Az **eszközök beléptetése** > **Windows-beléptetési** > **eszközök** területen tekintheti meg, hogy a profil állapota "nincs hozzárendelve" értékről "hozzárendelés", végül pedig "hozzárendelés" állapotba kerül.
+> Az Intune rendszeresen ellenőrzi az új eszközöket a hozzárendelt csoportokban, majd megkezdi a profilok hozzárendelésének folyamatát az eszközökhöz. A folyamat végrehajtása több percet is igénybe vehet. Az eszköz telepítése előtt győződjön meg arról, hogy a folyamat befejeződött.  Az **eszközök** > beléptetése**Windows** > -beléptetési**eszközök** területen tekintheti meg, hogy a profil állapota "nincs hozzárendelve" értékről "hozzárendelés", végül pedig "hozzárendelés" állapotba kerül.
 
 ## <a name="edit-an-autopilot-deployment-profile"></a>AutoPilot üzembehelyezési profil szerkesztése
 Az AutoPilot üzembehelyezési profil létrehozása után módosíthatja az üzembehelyezési profil egyes részeit.   
@@ -175,15 +175,15 @@ Előfeltételek: Azure Active Directory Céges portál konfigurálva van, és a 
 
 Törölheti az Intune-ban nem regisztrált Windows Autopilot-eszközöket:
 
-- Törölje az eszközöket a Windows Autopilot **eszközről** > az eszközök regisztrálása**Windows-beléptetési** > **eszközökön**. Válassza ki a törölni kívánt eszközöket, majd válassza a **Törlés**lehetőséget. A Windows Autopilot-eszközök törlése néhány percet igénybe vehet.
+- Törölje az eszközöket a Windows Autopilot eszközről > az eszközök regisztrálása**Windows** > -beléptetési**eszközökön**. Válassza ki a törölni kívánt eszközöket, majd válassza a **Törlés**lehetőséget. A Windows Autopilot-eszközök törlése néhány percet igénybe vehet.
 
 Az eszköz bérlőből való teljes eltávolítása az Intune-eszköz, a Azure Active Directory eszköz és a Windows Autopilot-eszköz rekordjainak törlését igényli. Ezt az Intune-ból végezheti el:
 
 1. Ha az eszközök regisztrálva vannak az Intune-ban, először [törölnie kell őket az Intune minden eszköz](devices-wipe.md#delete-devices-from-the-azure-active-directory-portal)paneljéről.
 
-2. Az **eszközök** > **Azure ad-eszközökön**Azure Active Directory eszközeinek törlése.
+2. Az eszközök > **Azure ad**-eszközökön Azure Active Directory eszközeinek törlése.
 
-3. Törölje az eszközöket a Windows Autopilot **eszközről** > az eszközök regisztrálása**Windows-beléptetési** > **eszközökön**. Válassza ki a törölni kívánt eszközöket, majd válassza a **Törlés**lehetőséget. A Windows Autopilot-eszközök törlése néhány percet igénybe vehet.
+3. Törölje az eszközöket a Windows Autopilot eszközről > az eszközök regisztrálása**Windows** > -beléptetési**eszközökön**. Válassza ki a törölni kívánt eszközöket, majd válassza a **Törlés**lehetőséget. A Windows Autopilot-eszközök törlése néhány percet igénybe vehet.
 
 ## <a name="using-autopilot-in-other-portals"></a>Az AutoPilot használata más portálokon
 Ha nem kíván a mobileszközök felügyeletével foglalkozni, más portálokon is használhatja az AutoPilotot. Más portálok is használhatók, de javasoljuk, hogy az Intune-t csak AutoPilottal végzett üzembe helyezések felügyeletéhez használja. Az Intune más portálokkal való használatakor az Intune nem tudja végrehajtani a következőket:  

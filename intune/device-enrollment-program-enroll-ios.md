@@ -12,17 +12,17 @@ ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 7ddbf360-0c61-11e8-ba89-0ed5f89f718b
-ms.reviewer: dagerrit
+ms.reviewer: tisilver
 ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df090e0e942291d5430b101db378aca296466bf9
-ms.sourcegitcommit: b78793ccbef2a644a759ca3110ea73e7ed6ceb8f
+ms.openlocfilehash: cd4a195af0b3be5038a34b44606abcddf02c5a1e
+ms.sourcegitcommit: 74911a263944f2dbd9b754415ccda6c68dae0759
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69549981"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71071562"
 ---
 # <a name="automatically-enroll-ios-devices-with-apples-device-enrollment-program"></a>iOS-eszközök automatikus regisztrálása az Apple készülékregisztrációs programjával (DEP)
 
@@ -30,7 +30,7 @@ Beállíthatja az Intune-t az Apple [Készülékregisztrációs programon (DEP)]
 
 DEP-regisztráció engedélyezéséhez az Intune- és az Apple DEP-portált is használnia kell. Ahhoz, hogy az eszközök felügyeletét az Intune-hoz rendelhesse, szükség van a sorozatszámok vagy a beszerzési rendelésszámok listájára. Olyan DEP-regisztrációs profilokat hoz létre, amelyek tartalmazzák a regisztráció során az eszközre vonatkozó beállításokat.
 
-A DEP-regisztráció így nem működik az [eszköz](device-enrollment-manager-enroll.md)beléptetési kezelőjével.
+A DEP-regisztráció így nem működik az [eszköz beléptetési kezelőjével](device-enrollment-manager-enroll.md).
 
 ## <a name="dep-and-the-company-portal"></a>DEP és a Céges portál
 A DEP-regisztrációk nem kompatibilisek a Céges portál alkalmazás App Store-verziójával. Hozzáférést biztosíthat a felhasználóknak a Céges portál alkalmazáshoz egy DEP-eszközön. Ha hozzáférést szeretne biztosítani nekik, küldje le az alkalmazást az eszközre a DEP-profilban található VPP (Volume Purchase program) használatával a **céges portál telepítésével** . További információ: iOS- [eszközök automatikus regisztrálása az Apple Készülékregisztrációs program](device-enrollment-program-enroll-ios.md#create-an-apple-enrollment-profile).
@@ -152,7 +152,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
 6. Ha a **céges portál** lehetőséget választotta, **ahol a felhasználóknak hitelesíteniük kell a HITELESÍTÉST**, a VPP-token használatával automatikusan telepítheti a céges portál az eszközre. Ebben az esetben a felhasználónak nem kell megadnia egy Apple ID azonosítót. A Céges portál VPP-jogkivonattal való telepítéséhez válasszon egy jogkivonatot a **Céges portál telepítése a VPP-vel** résznél. Ehhez a Céges portál már hozzá lett adva a VPP-tokenhez. Ne konfiguráljon olyan házirendet, amely megköveteli az alkalmazás használatát a felhasználók számára, az Intune automatikusan telepíti a Céges portált az ezzel a beléptetési profillal alkalmazott eszközökön. Fontos, hogy a jogkivonat ne járjon le, és hogy elég eszközlicenccel rendelkezzen a Céges portál alkalmazáshoz. Ha a jogkivonat lejár vagy lejár a licencek közül, az Intune telepíti az App Store-Céges portált, és felszólítja az Apple ID azonosítóra. 
 
     > [!NOTE]
-    > Ha kijelöli, hogy a **felhasználóknak hogyan kell** **céges portál**hitelesíteniük a szolgáltatást, akkor győződjön meg arról, hogy az eszköz beléptetési folyamata a vállalati portál DEP-eszközre való letöltésének első 24 óráján belül történik. Ellenkező esetben előfordulhat, hogy a regisztráció meghiúsul, és a gyári beállítások visszaállítására lesz szükség az eszköz regisztrálásához.
+    > Ha **kijelöli, hogy a felhasználóknak hogyan kell céges portál hitelesíteniük** a szolgáltatást, akkor győződjön meg arról, hogy az eszköz beléptetési folyamata a vállalati portál DEP-eszközre való letöltésének első 24 óráján belül történik. Ellenkező esetben előfordulhat, hogy a regisztráció meghiúsul, és a gyári beállítások visszaállítására lesz szükség az eszköz regisztrálásához.
     
     ![Képernyőfelvétel a vállalati portál VPP-vel való telepítéséről.](./media/device-enrollment-program-enroll-ios/install-cp-with-vpp.png)
 
@@ -182,7 +182,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
 
 10. Válassza ki, hogy a profilt használó eszközök zárolt regisztrációját kívánja-e használni. A **Zárolt regisztráció** letiltja azokat az iOS-beállításokat a **Beállítások** menüből, amelyek segítségével eltávolítható a felügyeleti profil. Az eszközök regisztrálását követően a beállítás nem módosítható az eszköz törlése nélkül. A zárolt regisztrációjú eszközökön a **Felügyelt** felügyeleti módot az *Igen* értékre kell beállítani. 
 
-11. Válassza ki, hogy szeretné-e, hogy a profilt használó eszközökképesek legyenek szinkronizálni a számítógépekkel. Ha az **Apple Configurator engedélyezése tanúsítvány szerint** lehetőséget választja, tanúsítványt kell választania az **Apple Configurator-tanúsítványok** területen.
+11. Válassza ki, hogy szeretné-e, hogy a profilt használó eszközök képesek legyenek **szinkronizálni a számítógépekkel**. Ha az **Apple Configurator engedélyezése tanúsítvány szerint** lehetőséget választja, tanúsítványt kell választania az **Apple Configurator-tanúsítványok** területen.
 
 12. Ha az **Apple Configurator engedélyezése tanúsítvány szerint** lehetőséget választotta az előző lépésben, válasszon egy importálandó Apple Configurator-tanúsítványt.
 

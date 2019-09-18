@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 09/04/2019
+ms.date: 09/17/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c474ac2eccf90e829abe753c82d40bdfae9146ec
-ms.sourcegitcommit: 5bb46d3c0bf8c5595132c4200849b1c4bcfe7cdb
+ms.openlocfilehash: 8b41405e2256d6d2608b05a9c7e8a40cbb3ab349
+ms.sourcegitcommit: 74911a263944f2dbd9b754415ccda6c68dae0759
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70376927"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71071055"
 ---
 # <a name="use-windows-10-templates-to-configure-group-policy-settings-in-microsoft-intune"></a>Csoportházirend-beállítások konfigurálása a Windows 10-es sablonokkal Microsoft Intune
 
@@ -36,7 +36,7 @@ Ez a cikk a Windows 10-es eszközökhöz készült sablonok létrehozásának l�
 
 ## <a name="before-you-begin"></a>Előkészületek
 
-- Ezen beállítások némelyike a Windows 10 1703-es (RS2) verziótól kezdődően érhető el. A legjobb megoldás az, ha a Windows 10 Enterprise 1903 (19H1) és újabb verzióját használja.
+- Ezen beállítások némelyike a Windows 10 1703-es (RS2) verziótól kezdődően érhető el. Bizonyos beállítások nem szerepelnek az összes Windows-kiadásban. A legjobb megoldás az, ha a Windows 10 Enterprise 1903 (19H1) és újabb verzióját használja.
 
 - A Windows-beállítások a [Windows házirend-kriptográfiai](https://docs.microsoft.com/windows/client-management/mdm/policy-configuration-service-provider#admx-backed-policies)szolgáltatásait használják. A kriptográfiai szolgáltatók a Windows különböző kiadásaiban működnek, például a Home, a Professional, a Enterprise stb. Ha szeretné megtekinteni, hogy egy CSP egy adott kiadáson működik-e, lépjen a [Windows házirend-kriptográfiai](https://docs.microsoft.com/windows/client-management/mdm/policy-configuration-service-provider#admx-backed-policies)szolgáltatásra.
 
@@ -70,7 +70,7 @@ Ez a cikk a Windows 10-es eszközökhöz készült sablonok létrehozásának l�
     > - Windows 10 RS5 és újabb, [KB 4512534](https://support.microsoft.com/kb/4512534) -es verzióval
     > - Windows 10 19H1 és újabb, [KB 4512941](https://support.microsoft.com/kb/4512941) -es verzióval
 
-6. Válassza ki a kívánt beállításokat. Például az **Office**-on, és válassza a **korlátozott böngészés aktiválása**lehetőséget. Megjelenik a beállítás részletes leírása. Válassza az **engedélyezve**, **Letiltva**lehetőséget, vagy hagyja meg a beállítást **nincs konfigurálva** (alapértelmezett). A részletes leírás azt is ismerteti, hogy mi történik, ha az **engedélyezve**, a **Letiltva**vagy a **nincs konfigurálva**beállítást választja.
+6. Válassza ki a kívánt beállításokat. Például az **Office**-on, és válassza a **korlátozott böngészés aktiválása**lehetőséget. Megjelenik a beállítás részletes leírása. Válassza az **engedélyezve**, Letiltva lehetőséget, vagy hagyja meg a beállítást **nincs konfigurálva** (alapértelmezett). A részletes leírás azt is ismerteti, hogy mi történik, ha az **engedélyezve**, a Letiltva vagy a **nincs konfigurálva**beállítást választja.
 7. Válassza ki **OK** a módosítások mentéséhez.
 
 Folytassa a beállítások listájának átadását, és konfigurálja a kívánt beállításokat a környezetében. Néhány példa:
