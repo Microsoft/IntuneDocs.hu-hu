@@ -7,12 +7,12 @@ ms.topic: include
 ms.date: 03/28/2019
 ms.author: erikje
 ms.custom: include file
-ms.openlocfilehash: 0721c62d44234a44881cdc562376c9bb62412187
-ms.sourcegitcommit: 73fbecf7cee4fdfc37d3c30ea2007d2a9a6d2d12
+ms.openlocfilehash: 1d9903de9d23532174e138709cb40c9cdf49995f
+ms.sourcegitcommit: 8934b1abec96e18cee15a77107d37551766f7666
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68775879"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71107254"
 ---
 Ezek a hirdetmények olyan fontos információkat tartalmaznak, amelyek segíthetnek a jövőbeli Intune-változások és-funkciók előkészítésében. 
 
@@ -66,7 +66,7 @@ Semmilyen műveletet nem kell elvégeznie, de szükség esetén érdemes lehet a
 #### <a name="additional-information"></a>További információ 
 https://aka.ms/intune_fullscreen
 
-### <a name="plan-for-change-intune-moving-to-support-ios-11-and-higher-in-september----4665342--"></a>Tervezze meg a változást: Az Intune az iOS 11 és újabb verzióinak támogatására való áttérés szeptemberben <!-- 4665342-->
+### <a name="plan-for-change-intune-moving-to-support-ios-11-and-higher-in-september----4665324--"></a>Tervezze meg a változást: Az Intune az iOS 11 és újabb verzióinak támogatására való áttérés szeptemberben <!-- 4665324-->
 Szeptemberben azt várjuk, hogy az iOS 13 az Apple számára legyen felszabadítva. Az Intune-regisztráció, a Céges portál és a Managed Browser az iOS 11 kiadása után nem sokkal magasabban támogatja az iOS 11-es verzióját.
 
 #### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
@@ -76,7 +76,7 @@ Ha a O365 Mobile apps iOS 11,0-es és újabb verziókban is támogatott, akkor e
 - iPhone 5c
 - iPad (4. generáció)
 
-A júliustól kezdődően az iOS 10-es MDM regisztrált eszközök, a Céges portál pedig az operációs rendszer vagy az eszköz frissítésére vonatkozó kérést kapnak. Ha alkalmazás-védelmi házirendeket (alkalmazást) használ, a "minimális iOS operációs rendszer megkövetelése (csak figyelmeztetés)" hozzáférési beállítást is beállíthatja.
+Ha alkalmazás-védelmi házirendeket (alkalmazást) használ, a "minimális iOS operációs rendszer megkövetelése (csak figyelmeztetés)" hozzáférési beállítást is beállíthatja.
 
 #### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
 Tekintse meg az Intune-jelentéskészítést, hogy megtekintse, milyen eszközökre vagy felhasználókra lehet hatással. Válassza az **eszközök** > **minden eszköz** lehetőséget, és szűrje az operációs rendszer alapján. További oszlopokat is hozzáadhat, amelyekkel azonosítható, hogy a szervezeten belül kik rendelkeznek iOS 10 rendszerű eszközökkel. Kérje meg, hogy a végfelhasználók szeptember előtt frissítsenek eszközeiket egy támogatott operációsrendszer-verzióra.

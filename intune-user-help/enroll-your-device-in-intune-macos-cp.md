@@ -18,12 +18,12 @@ ms.reviewer: elocholi
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ee17e963964b6d2e4aa9d3e05c7a562f3c61bbf5
-ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
+ms.openlocfilehash: 9047dd9bbc55162eae4693d3035cb05ff4becb91
+ms.sourcegitcommit: 8934b1abec96e18cee15a77107d37551766f7666
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67545734"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71099850"
 ---
 # <a name="enroll-your-macos-device-in-intune-with-the-company-portal-app"></a>A macOS-eszköz Céges portál alkalmazással való regisztrálása az Intune-ban
 
@@ -46,7 +46,7 @@ Ha a regisztráció után a vállalat új biztonsági követelményt, például 
 További információk a regisztrációval kapcsolatban: [Mi történik a Céges portál alkalmazás telepítésekor és az eszköz regisztrálásakor?](what-happens-if-you-install-the-Company-Portal-app-and-enroll-your-device-in-intune-macos.md).  
 
 ## <a name="get-your-device-managed"></a>Eszköz felügyelet alá vonása  
-OS X El Capitan 10.11 és újabb verziójú macOS-eszközöket a következő lépésekben regisztrálhat.   
+A macOS 10,12-es vagy újabb verzióját futtató macOS-eszközök regisztrálásához kövesse az alábbi lépéseket.   
 
 
 1. A Céges portál webhelyének eléréséhez nyisson új ablakot a __Safariban__, és lépjen a https://portal.manage.microsoft.com URL-címre.  
@@ -60,7 +60,7 @@ OS X El Capitan 10.11 és újabb verziójú macOS-eszközöket a következő lé
 
 4. Az __Eszközök__ oldalon vagy a felügyelt eszközök listája, vagy egy szalagcím látható. Hogy mi jelenik meg, az attól függ, hogy rendelkezik-e már felügyelt eszközzel. 
     * A felsoroltak között nem szereplő eszköz hozzáadásához válassza az **Ide koppintva tudathatja velünk, melyik eszközt használja, vagy új eszközt adhat meg.** feliratú szalagcímet.
-    * Ha nem rendelkezik minden olyan eszközt, a transzparens olvassa be: **Nem kell minden olyan felügyelt eszközökön. Ezt az eszközt ide koppintva adhatja meg.** Az eszköz hozzáadásához kattintson a szalagcímre.  
+    * Ha nem rendelkezik eszközökkel, a szalagcím a következőket olvassa: **Nem rendelkezik felügyelt eszközökkel. Ezt az eszközt ide koppintva adhatja meg.** Az eszköz hozzáadásához kattintson a szalagcímre.  
 
      ![Képernyőkép az Eszközök oldalról, a kattintás helyét kiemelő piros téglalappal bekeretezett szalagcímmel.](./media/CP-enroll-MACOS-1808.png)  
 5. Hajtsa végre az alábbi lépések közül a Céges portálon éppen megjelenő üzenetnek megfelelőt.  

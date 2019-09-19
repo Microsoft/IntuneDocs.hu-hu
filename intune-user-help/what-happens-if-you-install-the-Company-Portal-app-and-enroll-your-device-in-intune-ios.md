@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 11/06/2017
+ms.date: 09/12/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
@@ -18,12 +18,12 @@ ms.reviewer: esmich
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9333cda33142b9a0a4e0995b4bafe5365f7cb69f
-ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
+ms.openlocfilehash: c15f2434f67ec08baf04883da6f9525b5f803823
+ms.sourcegitcommit: 8934b1abec96e18cee15a77107d37551766f7666
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67545866"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71099810"
 ---
 # <a name="what-happens-if-you-install-the-company-portal-app-and-enroll-your-ios-device-in-intune"></a>Mi történik a Céges portál alkalmazás telepítésekor és az iOS-eszköz Intune-beli regisztrálásakor?
 
@@ -37,7 +37,10 @@ A Céges portál alkalmazás telepítése és az iOS-eszköznek az Intune-ban va
 
 - Automatikusan beállíthatja a vállalati e-mail-fiókját.
 
-Az eszköz Intune-beli regisztrálásával engedélyezi a cég informatikai támogatási szolgálatának az eszköz kezelését, így biztosítható az eszközön tárolt munkahelyi adatok védelme.
+> [!NOTE]
+> A szolgáltatás által gyűjtött adatokat semmilyen okból nem adjuk át harmadik félnek.  
+
+Az eszköz Intune-beli regisztrálásával engedélyezi a cég informatikai támogatási szolgálatának az eszköz kezelését, így biztosítható az eszközön tárolt munkahelyi adatok védelme.  
 
 A regisztrált eszközökön a következőkre van lehetősége a cég informatikai támogatási szolgálatának:
 
@@ -64,5 +67,7 @@ A regisztrált eszközökön a következőkre van lehetősége a cég informatik
 - A barangoláskor létesített hangátviteli kapcsolatok engedélyezése vagy letiltása az eszközön. Ha a hangbarangolás engedélyezve van, barangolási költségek léphetnek fel.
 
 - Az automatikus fájlszinkronizálás engedélyezése vagy letiltása, amíg az eszköz barangol. Az automatikus fájlszinkronizálás engedélyezése barangolási költségekkel járhat.
+
+
 
 Ha kérdése van, lépjen kapcsolatba a cég informatikai támogatási szolgálatával. Az elérhetőségét keresse meg a [Vállalati portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).

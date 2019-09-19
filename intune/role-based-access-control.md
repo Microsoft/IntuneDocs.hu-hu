@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e636e2df8271210d8938727eb99491e1ffdd5bdc
-ms.sourcegitcommit: d2989b9992d10d133573d9bc31479659fb7e242c
+ms.openlocfilehash: a5372d079b08a3a324d8ef1d98d26c07073ccd45
+ms.sourcegitcommit: 49f25efb9bc0f16f587f27878cf45de5e4e6a27f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 09/18/2019
-ms.locfileid: "71080034"
+ms.locfileid: "71094663"
 ---
 # <a name="role-based-access-control-rbac-with-microsoft-intune"></a>Szerepköralapú hozzáférés-vezérlés (RBAC) Microsoft Intune
 
@@ -43,7 +43,7 @@ Ha meg szeretne tekinteni egy szerepkört, válassza az **Intune** > -**szerepk�
 - **Hozzárendelések**: Azon szerepkör- [hozzárendelések]( assign-role.md) listája, amelyek meghatározzák, hogy mely felhasználók férhetnek hozzá a felhasználókhoz vagy eszközökhöz. Egy szerepkör több hozzárendeléssel is rendelkezhet, és a felhasználók több hozzárendelésben is szerepelhetnek.
 
 ### <a name="built-in-roles"></a>Beépített szerepkörök
-A csoportok számára további konfigurálás nélkül is hozzárendelhet beépített szerepköröket. Nem törölheti vagy szerkesztheti a beépített szerepkör nevét, leírását, típusát vagy engedélyeit. Az egyes beépített szerepkörök engedélyeinek teljes listáját az [INTUNE RBAC táblázatában](https://gallery.technet.microsoft.com/Intune-RBAC-table-2e3c9a1a)tekintheti meg.
+A csoportok számára további konfigurálás nélkül is hozzárendelhet beépített szerepköröket. Nem törölheti vagy szerkesztheti a beépített szerepkör nevét, leírását, típusát vagy engedélyeit.
 
 - **Ügyfélszolgálati operátor**: Távoli feladatokat hajt végre a felhasználókon és az eszközökön, valamint alkalmazásokat és szabályzatokat rendelhet hozzá a felhasználókhoz vagy eszközökhöz.
 - **Házirend-és profil-kezelő**: Felügyeli a megfelelőségi szabályzatot, a konfigurációs profilokat, az Apple-regisztrációt, a vállalati eszközök azonosítóit és a biztonsági alapterveket.

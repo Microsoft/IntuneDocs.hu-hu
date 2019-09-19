@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 04/19/2019
+ms.date: 09/18/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
@@ -18,29 +18,28 @@ ms.reviewer: esmich
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6bfd8496061b4b3aba2589b73c3e98bce94a5011
-ms.sourcegitcommit: 7315fe72b7e55c5dcffc6d87f185f3c2cded9028
+ms.openlocfilehash: 16d7142e6dc38a177f8820f60e7335b8b23a1eeb
+ms.sourcegitcommit: 8934b1abec96e18cee15a77107d37551766f7666
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67528649"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71099802"
 ---
-# <a name="sign-in-to-company-portal"></a>Jelentkezzen be céges portál  
+# <a name="sign-in-to-company-portal"></a>Bejelentkezés Céges portál  
 
-Jelentkezzen be a vállalati portál alkalmazást a három módja van:
+Háromféle módon jelentkezhet be a Céges portál alkalmazásba:
 
-* Jelentkezzen be a munkahelyi e-mail címét és jelszavát.  
-* Jelentkezzen be a tanúsítvány alapú hitelesítést.  
-* Bejelentkezés másik eszközről.    
+* Jelentkezzen be a munkahelyi e-mail-címével és jelszavával.  
+* Tanúsítvány alapú hitelesítéssel jelentkezzen be.  
+* Jelentkezzen be egy másik eszközről.    
 
 
-## <a name="sign-in-with-your-email-address-and-password"></a>Jelentkezzen be az e-mail cím és jelszó
-A következő lépések bemutatják a képernyőképek a vállalati portál iOS-hez.  
+## <a name="sign-in-with-your-email-address-and-password"></a>Jelentkezzen be az e-mail-címével és jelszavával
+A következő lépések az iOS-Céges portál képernyőképeit mutatják be.  
 
-1. Nyissa meg az alkalmazást az eszközön, és koppintson **bejelentkezés**.  
+1. Nyissa meg az alkalmazást az eszközön, és koppintson a **Bejelentkezés**elemre.  
 
-   ![A Céges portál bejelentkezési oldala, amelyen egy webhely rajza előtt látható egy ember ikonja. Alatta a "Férjen hozzá a vállalati erőforrásokhoz, és megőrizheti azok biztonságát" szöveg, de a "Bejelentkezés" gomb. Az oldal alján látható egy hivatkozás, amely a Microsoft Adatvédelem és cookie-k oldalára mutat.](/intune-user-help/media/cp_ios_aad_signin_after_1804_001.png)
-
+   [![Példa a céges portál bejelentkezési oldalának képernyőképére. ](/intune-user-help/media/intune-ios-cp-signin-1908.png)](/intune-user-help/media/intune-ios-cp-signin-lightbox-1908.png#lightbox)  
 
 
 2. Adja meg **munkahelyi vagy iskolai fiókját**, és koppintson a **Tovább** lehetőségre.
@@ -51,11 +50,11 @@ A következő lépések bemutatják a képernyőképek a vállalati portál iOS-
 
    ![A felhasználótól csak akkor kéri a rendszer a jelszavát ha már helyesen megadta az e-mail-címét.](/intune-user-help/media/cp_ios_aad_signin_after_1804_003.png)
 
-4. Az alkalmazás ellenőrzi, hogy a hitelesítő adatait. Ha elkészült, a munkahelyi erőforrások eléréséhez, és kereshessék az alkalmazásokat.  
+4. Az alkalmazás ellenőrzi a hitelesítő adatait. Ha elkészült, elérheti a szervezet erőforrásait, és telepítheti az elérhető alkalmazásokat.  
 
-   ![Miután a hitelesítési folyamaton keresztül, a vállalati portál alkalmazás bejelentkezik, egy betöltési sáv jeleníti meg.](/intune-user-help/media/cp_ios_aad_signin_after_1804_004.png)
+   ![A hitelesítési folyamat után a Céges portál alkalmazás bejelentkezik, és megjeleníti a betöltési sávot.](/intune-user-help/media/cp_ios_aad_signin_after_1804_004.png)
 
-## <a name="sign-in-with-certificate-based-authentication"></a>Jelentkezzen be a Tanúsítványalapú hitelesítés
+## <a name="sign-in-with-certificate-based-authentication"></a>Bejelentkezés tanúsítványalapú hitelesítéssel
 
 1. Nyissa meg az eszközén a Céges portál alkalmazást.  
 
@@ -67,23 +66,23 @@ A következő lépések bemutatják a képernyőképek a vállalati portál iOS-
 
 ## <a name="sign-in-from-another-device"></a>Bejelentkezés másik eszközről
 
-Ha a vállalat intelligens kártyákat használ a számítógépek eléréséhez, valószínű, hogy jelentkezzen be a másik eszközről történő hitelesítéséhez.  
+Ha a vállalata intelligens kártyák használatával fér hozzá a számítógépekhez, akkor valószínű, hogy a hitelesítést egy másik eszközről kell bejelentkeznie.  
 
-1. Nyissa meg az eszközén a Céges portál alkalmazást. Győződjön meg arról, hogy az eszköz a munkahelyi erőforrások eléréséhez fog használni.       
+1. Nyissa meg az eszközén a Céges portál alkalmazást. Győződjön meg arról, hogy az eszköz, amelyet használni fog a munkahelyi erőforrások eléréséhez.       
 
-1. Válassza ki **bejelentkezés másik eszközről**.  
+1. Válassza a **bejelentkezés másik eszközről**lehetőséget.  
 
-   ![A céges portál bejelentkező oldala kéri a felhasználó e-mail-cím.  A Next (Tovább) gombra, és a egy hivatkozás látható a "Bejelentkezés másik eszközről." Tartalmaz egy „Nem tud hozzáférni a fiókjához?” hivatkozást is. Az oldal alján látható egy hivatkozás, amely a Microsoft Adatvédelem és cookie-k oldalára mutat.](/intune-user-help/media/cp_ios_aad_signin_after_1804_005.png)
+   ![A bejelentkezési oldal Céges portál bekéri a felhasználót az e-mail-címre.  Megjeleníti a "Next" (tovább) gombot, valamint a "bejelentkezés másik eszközről" hivatkozást. Tartalmaz egy „Nem tud hozzáférni a fiókjához?” hivatkozást is. Az oldal alján látható egy hivatkozás, amely a Microsoft Adatvédelem és cookie-k oldalára mutat.](/intune-user-help/media/cp_ios_aad_signin_after_1804_005.png)
 
-2. Ekkor egy egyedi, egyszer használatos kódot kap a Céges portálra történő bejelentkezéshez. A kód másolásához.
+2. Ekkor egy egyedi, egyszer használatos kódot kap a Céges portálra történő bejelentkezéshez. Másolja a kódot.
 
    ![A rendszer arra kéri a felhasználót, hogy látogassa meg az https://microsoft.com/devicelogin oldalt a munkahelyi számítógéphez tartozó, megjelenített egyedi kódot használva a bejelentkezéshez.](/intune-user-help/media/cp_ios_aad_signin_after_1804_006.png)
 
-3. Az eszközön más (a hitelesítéshez használ egy), nyissa meg a böngészőt, és nyissa meg [ https://microsoft.com/devicelogin ](https://microsoft.com/devicelogin). Írja be vagy illessze be a kódot.  
+3. A másik eszközön (amelyet a hitelesítéshez használ) nyissa meg a böngészőt, és keresse fel [https://microsoft.com/devicelogin](https://microsoft.com/devicelogin)a következőt:. Adja meg vagy illessze be a kódot.  
 
    ![A felhasználó munkagépén futó böngészőablak képe (nem pedig a Céges portál alkalmazásé). A megjelenített „Eszközbejelentkezés” oldal arra kéri a felhasználót, hogy adja meg a Céges portál alkalmazástól kapott kódot.](/intune/media/cp_ios_aad_signin_from_another_device_after_1704_004.png)
 
-4. Válassza ki __Folytatás__ , hogy jelentkezzen be a munkahelyi eszközét a céges portál.   
+4. Válassza a __Folytatás__ lehetőséget, hogy a céges portál bejelentkezzen a munkahelyi eszközére.   
 
    ![A felhasználó beírta a mezőbe az egyedi kódját, az „Eszközbejelentkezés” webhely pedig a felhasználó megerősítését kéri, hogy az Intune Céges portálnak kell-e bejelentkezési engedélyt kapnia.](/intune/media/cp_ios_aad_signin_from_another_device_after_1704_005.png)
 
@@ -91,7 +90,7 @@ Ha a vállalat intelligens kártyákat használ a számítógépek eléréséhez
 
    ![Jóváhagyást jelző oldal, amely megerősíti, hogy a felhasználó bejelentkezett a Céges portál alkalmazásra az eszközén, és hogy ez az oldal bezárható.](/intune/media/cp_ios_aad_signin_from_another_device_after_1704_006.png)
 
-6. A vállalati portál alkalmazás bejelentkezik a munkahelyi eszközén.  
+6. A Céges portál alkalmazás aláírja a munkahelyi eszközén.  
 
    ![Miután a hitelesítési folyamat lezárult, bejelentkezik a Céges portál alkalmazás, és a folyamatot egy betöltést jelző sáv mutatja.](/intune-user-help/media/cp_ios_aad_signin_after_1804_007.png)
 

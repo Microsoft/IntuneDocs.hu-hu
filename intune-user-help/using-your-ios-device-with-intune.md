@@ -18,25 +18,26 @@ ms.reviewer: esmich
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f9c25166ed9b004cc4e43e777008e33e88983912
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: 2ced8f1ec37f652b7e283328141bc591b5961587
+ms.sourcegitcommit: 8934b1abec96e18cee15a77107d37551766f7666
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61501799"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71099836"
 ---
 # <a name="using-your-ios-device-with-intune-company-portal"></a>iOS-eszköz használata az Intune Céges portállal
 A cikk az iOS-hez készült Céges portálra vonatkozó feladatokat és információkat sorolja fel. Ezek ismerete segítheti az iOS-eszköz hibaelhárítását és felügyeletét. Kattintson a hivatkozások bármelyikére, ha további részleteket, lépéseket és képernyőképeket kíván megtekinteni.
 
 ## <a name="supported-versions"></a>Támogatott verziók
 
-A Céges portál jelenleg az Android 10.0-s és újabb verzióit támogatja.
+A Céges portál jelenleg az Android 10.0-s és újabb verzióit támogatja.  
+
 
 ## <a name="enrolling-into-intune-and-installing-the-company-portal"></a>Regisztrálás az Intune-ban és a Céges portál telepítése
 
 - [Az Intune Munkahelyi portál alkalmazásának telepítése, majd bejelentkezés a portálra](install-and-sign-in-to-the-intune-company-portal-app-ios.md)
 - [iOS-eszköz regisztrálása az Intune-ban](enroll-your-device-in-intune-ios.md)
-- [Mi történik a Munkahelyi portál alkalmazás telepítésekor és az eszköz Intune-beli regisztrálásakor?](what-happens-if-you-install-the-Company-Portal-app-and-enroll-your-device-in-intune-ios.md)
+- [Mi történik a Munkahelyi portál alkalmazás telepítésekor és az eszköz Intune-beli regisztrálásakor?](what-happens-if-you-install-the-Company-Portal-app-and-enroll-your-device-in-intune-ios.md)  
 
 ## <a name="things-you-can-do-when-your-device-is-enrolled-in-intune"></a>Az Intune-ban regisztrált eszközökön végezhető műveletek
 
