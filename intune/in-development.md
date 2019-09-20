@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2b96fa9fac25f6de4180d3dcc9ee4022a2cc43fe
-ms.sourcegitcommit: 7484ef8006f6b81d8976c328dd704512a31872ec
+ms.openlocfilehash: 6ab2e258553c049223806ddf199976c84ff6bcba
+ms.sourcegitcommit: 89a973bbfa1702b2d275af6814874e4305bdcb77
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70190244"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71140686"
 ---
 # <a name="in-development-for-microsoft-intune---september-2019"></a>Fejlesztés a Microsoft Intune – szeptember 2019
 
@@ -143,7 +143,7 @@ Egy későbbi frissítés során az iOS-és MacOS-eszközökhöz tartozó új eg
 
 Ezekkel a beállításokkal konfigurálhatja az egyszeri bejelentkezési élményt, különösen a Kerberos-hitelesítést használó alkalmazásokhoz és webhelyekhez. Választhat egy általános hitelesítő adatok egyszeri bejelentkezési alkalmazás-bővítménye és az Apple beépített Kerberos-bővítménye közül.
 
-Az eszköz aktuálisan konfigurálható szolgáltatásainak megtekintéséhez nyissa meg az [iOS-eszközök funkcióit](ios-device-features-settings.md) és a MacOS- [eszközök funkcióit](macos-device-features-settings.md).
+Az eszköz aktuálisan konfigurálható szolgáltatásainak megtekintéséhez nyissa meg az [iOS-eszközök funkcióit](ios-device-features-settings.md) és a [MacOS-eszközök funkcióit](macos-device-features-settings.md).
 
 Érintett kiadások:
 
@@ -187,7 +187,7 @@ A következőre vonatkozik: iOS
 ## <a name="device-enrollment"></a>Eszközök beléptetése
 
 ### <a name="new-tenants-will-default-away-from-android-device-administrator-management----4869790----"></a>Az új bérlők alapértelmezetten az Android-eszközök rendszergazdájának felügyeletével lesznek elérhetők <!-- 4869790  -->
-Az Android rendszerű eszközök rendszergazdai képességeit az Android Enterprise váltja fel. Ezért javasoljuk, hogy az Android Enterprise új regisztrációkat használjon. A jövőbeli frissítésekben az új bérlőknek a következő előfeltételeket kell végrehajtaniuk az Android-regisztrációban az eszköz rendszergazdai felügyeletének használatához: Nyissa meg az **Intune** > -**eszközök regisztrációjának** > **Android** > -regisztrációja**személyes és vállalati tulajdonú eszközök eszköz-felügyeleti jogosultságok** > **használata eszközt az eszközök felügyeletére szolgáló rendszergazda**.
+Az Android rendszerű eszközök rendszergazdai képességeit az Android Enterprise váltja fel. Ezért javasoljuk, hogy az Android Enterprise új regisztrációkat használjon. A jövőbeli frissítésekben az új bérlőknek a következő előfeltételeket kell végrehajtaniuk az Android-regisztrációban az eszköz rendszergazdai felügyeletének használatához: Nyissa meg az **Intune** > -**eszközök regisztrációjának** > **Android-regisztrációja** > **személyes és vállalati tulajdonú eszközök eszköz-felügyeleti jogosultságok** > **használata eszközt az eszközök felügyeletére szolgáló rendszergazda**.
 
 A meglévő bérlők semmilyen változást nem fognak tapasztalni a környezetében. 
 
@@ -213,10 +213,10 @@ Az Android teljes körűen felügyelt eszközeihez a következő támogatást fo
     - SCEP-profil létrehozása az Android Enterprise DO szakaszban
     - SCEP-tanúsítványok csatolása Wi-Fi-profil hitelesítéshez
     - SCEP-tanúsítványok csatolása a VPN-profilokhoz hitelesítéshez
-    - SCEP-tanúsítványok csatolása e-mail-profilokhoz a hitelesítéshez (AppConfig keresztül)
+    - SCEP-tanúsítványok csatolása e-mail-profilokhoz a hitelesítéshez (az alkalmazás konfigurációja alapján)
 - Az Android rendszerű vállalati eszközökön a rendszeralkalmazások támogatottak. Az Intune-ban egy androidos nagyvállalati rendszeralkalmazást kell hozzáadnia az **ügyfélalkalmazások** > **alkalmazások** > **hozzáadása**lehetőség kiválasztásával. Az **alkalmazás típusa** listában válassza az **Android Enterprise System app**elemet. További információk az alkalmazások Intune-hoz való hozzáadásáról: [Alkalmazások hozzáadása a Microsoft Intune-hoz](apps-add.md). <!-- 4062195 -->
 - Az **eszköz megfelelősége** > **Android Enterprise** > -**eszköz tulajdonosában**létrehozhat egy megfelelőségi szabályzatot, amely beállítja a Google biztonság igazolási szintjét.   <!-- 4631425 -->
-- Az Android Enterprise teljes körűen felügyelt eszközökön a Mobile Threat Defense-szolgáltatók lesznek támogatottak. Az **eszköz megfelelősége** > **Android Enterprise** > -**eszköz tulajdonosa**lehetőség van egy elfogadható kockázati szint kiválasztására. <!-- 4631440 --> Az [Android vállalati beállítások az eszközök megfelelő vagy nem megfelelőként való](compliance-policy-create-android-for-work.md#device-owner) megjelölésére az Intune-ban az aktuális beállítások szerepelnek.
+- Az Android Enterprise teljes körűen felügyelt eszközökön a Mobile Threat Defense-szolgáltatók lesznek támogatottak. Az **eszköz megfelelősége** > **Android Enterprise** > -**eszköz tulajdonosa**lehetőség van egy elfogadható kockázati szint kiválasztására. <!-- 4631440 --> Az [Android vállalati beállítások az eszközök megfelelő vagy nem megfelelőként való megjelölésére az Intune](compliance-policy-create-android-for-work.md#device-owner) -ban az aktuális beállítások szerepelnek.
 
 
 Érintett kiadások: 

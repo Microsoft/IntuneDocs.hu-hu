@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d87b617f49a3df71b767fe91f1f03f88f36ee8a3
-ms.sourcegitcommit: a25cd79a33feb536d9b2fc11aa7d3e3972f1ca5a
+ms.openlocfilehash: 452602ee98378ecd61ee0cfae8eb16f7fb69cb42
+ms.sourcegitcommit: 89a973bbfa1702b2d275af6814874e4305bdcb77
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70842201"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71140760"
 ---
 # <a name="intune-standalone---win32-app-management"></a>Önálló Intune – Win32-alkalmazások kezelése
 
@@ -179,12 +179,12 @@ Az alábbi lépések útmutatást nyújtanak a Windows-alkalmazások Intune-hoz 
         - **Érték neve** – Az észlelendő beállításazonosító neve. Ha ez az érték üres, akkor az észlelés a kulcs alapján történik. A rendszer egy kulcs (alapértelmezett) értékét használja észlelési értékként, ha az észlelési módszer nem a fájl vagy a mappa meglétén alapul.
         - **Beállításkulcs követelménye** – válassza ki a beállításkulcs összehasonlításának típusát, amely meghatározza a követelmény szabályának érvényességét.
         - **32 bites alkalmazással társítva 64 bites ügyfeleken** – Ha a 32 bites beállításjegyzékben szeretne keresni a 64 bites ügyfeleken, válassza az **Igen** lehetőséget. A **Nem** (ez az alapértelmezett beállítás) kiválasztásakor a rendszer a 64 bites ügyfeleken a 64 bites beállításjegyzékben fog keresni. A 32 bites ügyfeleknél a keresés mindig a 32 bites beállításjegyzéket érinti.
-    - **Parancsfájl**: A **követelmény típusaként**válassza a **parancsfájlt** , ha a fájl, a beállításjegyzék vagy bármely más, az Intune-konzolon elérhető módszer alapján nem hozható létre követelmény-szabály.
+    - **Parancsfájl**: A **követelmény típusaként**válassza a parancsfájlt, ha a fájl, a beállításjegyzék vagy bármely más, az Intune-konzolon elérhető módszer alapján nem hozható létre követelmény-szabály.
         - **Parancsfájl** – a PowerShell parancsfájl-alapú követelményi szabályához (ha létezik kód 0), a rendszer részletesebben felderíti az stdout-ot. Például észlelhető az STDOUT olyan egész számként, amelynek értéke 1.
         - **Parancsfájl futtatása 32 bites folyamatként 64 bites ügyfeleken** – válassza az **Igen** lehetőséget, ha a parancsfájlt 32 bites folyamaton szeretné futtatni 64 bites ügyfeleken. Válassza a **nem** (alapértelmezett) lehetőséget, hogy a parancsfájlt 64 bites folyamaton futtassa a 64 bites ügyfeleken. 32 bites ügyfelek a szkriptet egy 32 bites folyamatban futtatják.
         - **Futtassa ezt a parancsfájlt a bejelentkezett hitelesítő adatok használatával**: Válassza az **Igen** lehetőséget a szkript futtatásához a bejelentkezett eszköz hitelesítő adatai * * használatával.
         - **Szkriptaláírás ellenőrzésének kényszerítése** – Az **Igen** lehetőség kiválasztásával ellenőrizheti, hogy a szkriptet egy megbízható gyártó írta-e alá, így a szkript figyelmeztetések és felszólítások megjelenítése nélkül fog futni. A szkript letiltás nélkül fog futni. A **Nem** (ez az alapértelmezett beállítás) kiválasztásakor a szkript végfelhasználói megerősítéssel, az aláírás ellenőrzése nélkül fut.
-        - **Válassza ki a kimeneti adattípust**: Válassza ki a követelmény szabályának meghatározásakor használt adattípust.
+        - **Válassza ki a kimeneti**adattípust: Válassza ki a követelmény szabályának meghatározásakor használt adattípust.
 4. Amikor végzett, válassza az **OK** gombot.
 
 ### <a name="step-6-configure-app-detection-rules"></a>6\. lépés: Alkalmazás-észlelési szabályok konfigurálása
@@ -194,6 +194,8 @@ Az alábbi lépések útmutatást nyújtanak a Windows-alkalmazások Intune-hoz 
 
     > [!NOTE]
     > Az **Észlelési szabályok** panelen, ha szeretne, több szabályt is hozzáadhat. Az alkalmazás észleléséhez az **összes** szabály feltételeinek teljesülnie kell.
+    >
+    > Ha az Intune észleli, hogy az alkalmazás nem található az eszközön, akkor az Intune 24 óra elteltével ismét felajánlja az alkalmazást. Ez csak a kötelező szándékot megcélzó alkalmazások esetében fordul elő.
 
     - **Észlelési szabályok manuális konfigurálása** – A következő szabálytípusok egyikét választhatja ki:
         1. **MSI** – Jóváhagyás MSI-verzióellenőrzés alapján. Ezt a lehetőséget csak egyszer lehet hozzáadni. Ha ezt a szabálytípust választja, kétféle beállítás áll a rendelkezésére:
@@ -282,7 +284,7 @@ Ekkor elvégezte a Win32-alkalmazások Intune-hoz való hozzáadásának lépés
 
 ## <a name="app-dependencies"></a>Alkalmazás függőségei
 
-Az alkalmazás-függőségek olyan alkalmazások, amelyeket telepíteni kell a Win32-alkalmazás telepítése előtt. Megkövetelheti, hogy más alkalmazások függőségként legyenek telepítve. Pontosabban, az eszköznek a Win32-alkalmazás telepítése előtt telepítenie kell a függő alkalmazást (ka) t. A rendszer legfeljebb 100 függőséget tartalmaz, amely magában foglalja a benne foglalt függőségek függőségeit, valamint magát az alkalmazást. Win32-alkalmazások függőségei csak a Win32-alkalmazás hozzáadása és az Intune-ba való feltöltése után adhatók hozzá. A Win32-alkalmazás hozzáadása után megjelenik a **függőségek** lehetőség a Win32-alkalmazás paneljén. 
+Az alkalmazás-függőségek olyan alkalmazások, amelyeket telepíteni kell a Win32-alkalmazás telepítése előtt. Megkövetelheti, hogy más alkalmazások függőségként legyenek telepítve. Pontosabban, az eszköznek a Win32-alkalmazás telepítése előtt telepítenie kell a függő alkalmazást (ka) t. A rendszer legfeljebb 100 függőséget tartalmaz, amely magában foglalja a benne foglalt függőségek függőségeit, valamint magát az alkalmazást. Win32-alkalmazások függőségei csak a Win32-alkalmazás hozzáadása és az Intune-ba való feltöltése után adhatók hozzá. A Win32-alkalmazás hozzáadása után megjelenik a függőségek lehetőség a Win32-alkalmazás paneljén. 
 
 A Win32-alkalmazások függőségének is Win32-alkalmazásnak kell lennie. Más típusú alkalmazásoktól, például egyetlen MSI LOB-alkalmazástól vagy áruházbeli alkalmazástól függően nem támogatott.
 
@@ -336,11 +338,11 @@ Az ügynöknaplók általában a következő helyen érhetők el az ügyfélgép
 
 > [!IMPORTANT]
 > A LOB Win32-alkalmazások megfelelő telepítésének és végrehajtásának engedélyezéséhez a kártevők elleni beállításoknak ki kell zárnia a következő könyvtárakat a vizsgálatból:<p>
-> **X64-es ügyfélszámítógépeken**:<br>
+> **X64**-es ügyfélszámítógépeken:<br>
 > *C:\Program Files (x86) \Microsoft Intune felügyeleti Extension\Content*<br>
 > *C:\windows\IMECache*
 >  
-> **X86-os ügyfélszámítógépeken**:<br>
+> **X86**-os ügyfélszámítógépeken:<br>
 > *C:\Program Files\Microsoft Intune Management Extension\Content*<br>
 > *C:\windows\IMECache*
 

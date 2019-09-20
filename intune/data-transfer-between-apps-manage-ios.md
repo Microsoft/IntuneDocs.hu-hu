@@ -17,32 +17,32 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9a1e370b65d8bfd7e61562347323bf1455dfe55b
-ms.sourcegitcommit: bd09decb754a832574d7f7375bad0186a22a15ab
+ms.openlocfilehash: eaf381d6d7b6bf8e9508eac4ccfc5431aa008658
+ms.sourcegitcommit: 89a973bbfa1702b2d275af6814874e4305bdcb77
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68354298"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71140706"
 ---
 # <a name="how-to-manage-data-transfer-between-ios-apps-in-microsoft-intune"></a>iOS-alkalmazások közti adatátvitel felügyelete a Microsoft Intune-ban
 
 A vállalati adatai védelme érdekében korlátozza a fájlátvitelt csak a felügyelt alkalmazásokra. Az iOS-alkalmazásokat az alábbi módokon felügyelheti:
 
-- A vállalat adatvesztésének megakadályozása az alkalmazásokra vonatkozó adatvédelmi szabályzat konfigurálásával, amelyet  a szabályzattal felügyelt alkalmazások hívására hívunk. [Az Intune által kezelt alkalmazásvédelmi szabályzattal védhető alkalmazások listája](https://www.microsoft.com/cloud-platform/microsoft-intune-apps)
+- Munkahelyi vagy iskolai fiókok szervezeti adatainak védelme az alkalmazások alkalmazás-védelmi szabályzatának konfigurálásával. a szabályzat által *felügyelt alkalmazásokat*hívjuk.  [Az Intune által kezelt alkalmazásvédelmi szabályzattal védhető alkalmazások listája](https://www.microsoft.com/cloud-platform/microsoft-intune-apps)
 
-- Alkalmazások üzembe helyezése és kezelése a **Mdm**-csatornán keresztül, amely az eszközök regisztrálását igényli mobileszköz-kezelési (Mdm) megoldásban. Az Ön által telepített alkalmazások **házirend által felügyelt** alkalmazások vagy más felügyelt alkalmazások lehetnek.
+- Az alkalmazásokat az iOS-eszközök felügyeletén keresztül telepítheti és kezelheti, ehhez pedig egy mobileszköz-kezelési (MDM) megoldásban kell regisztrálnia az eszközöket. Az üzembe helyezett alkalmazások házirend által *felügyelt alkalmazások* vagy más, iOS által felügyelt alkalmazások lehetnek.
 
-Az iOS-eszközök **Megnyitási engedélyek felügyelete** szolgáltatásával a fájlátvitel az **MDM-csatornával** telepített alkalmazásokra korlátozható. Állítsa be a *Megnyitás a felügyeleti* korlátozásokban beállítást a konfigurációs beállításokban, majd telepítse őket a Mdm-megoldás használatával.  Amikor egy felhasználó telepíti az üzembe helyezett alkalmazást, a rendszer alkalmazza a megadott korlátozásokat.
+A regisztrált iOS-eszközök **megnyitási felügyeleti** funkciója korlátozhatja az iOS által felügyelt alkalmazások közötti fájlátvitelt. Állítsa be a *megnyitási felügyeleti* korlátozásokat a konfigurációs beállításokban, majd telepítse őket a Mdm-megoldás használatával.  Amikor egy felhasználó telepíti az üzembe helyezett alkalmazást, a rendszer alkalmazza a megadott korlátozásokat.
 
 ## <a name="use-app-protection-with-ios-apps"></a>Az App Protection használata iOS-alkalmazásokkal
-A vállalati adatvédelmet a következő módokon végezheti el az alkalmazás-védelmi házirendek és az iOS **megnyitási felügyeleti** funkciójának használatával:
+Az iOS- **es Open-in Management** szolgáltatással az alábbi módokon biztosíthatja a vállalati adatainak védelmét az alkalmazás-védelmi házirendek használatával:
 
-- **Az alkalmazottak tulajdonában lévő eszközök, amelyeket nem egyetlen MDM-megoldás felügyel:** Beállíthatja, hogy az alkalmazás **csak a szabályzat által felügyelt alkalmazások számára engedélyezze**az alkalmazások adatátvitelét. A  házirend által felügyelt alkalmazásokban a megnyitási viselkedés csak más szabályzat által felügyelt alkalmazásokat jelenít meg megosztási lehetőségként. Ha a felhasználó egy, a natív posta alkalmazásban található OneDrive mellékletként próbál meg egy szabályzattal védett fájlt küldeni, a fájl nem olvasható.
+- **Egyetlen MDM-megoldás által nem kezelt eszközök:** Az alkalmazás védelmi házirendjének beállításait beállíthatja úgy, hogy az adatmegosztást más alkalmazásokkal is megtekintse *megnyitási* vagy *megosztási bővítmények*használatával.  Ehhez konfigurálja a **szervezeti adatküldés más alkalmazásra** beállítást a szabályzat által **felügyelt alkalmazások számára a Megnyitás/megosztás szűrési** értékkel.  A *házirend által felügyelt alkalmazás* *megnyitási és megosztási* viselkedése csak más *szabályzat által felügyelt alkalmazásokat* jelenít meg megosztási lehetőségként. 
 
 - **Mdm-megoldások által felügyelt eszközök**: Az Intune-ban vagy harmadik féltől származó MDM-megoldásokban regisztrált eszközökön az alkalmazások közötti adatmegosztást az alkalmazás-védelmi szabályzatokkal és az MDM-n keresztül telepített egyéb felügyelt iOS-alkalmazásokkal az Intune APP policys és az iOS **Open in Management** szolgáltatás vezérli. Annak biztosításához, hogy a MDM-megoldással telepített alkalmazások is társítva legyenek az Intune app Protection-szabályzatokhoz, konfigurálja a felhasználói UPN-beállítást a következő szakaszban leírtak szerint, [konfigurálja a felhasználói UPN-beállítást](data-transfer-between-apps-manage-ios.md#configure-user-upn-setting-for-microsoft-intune-or-third-party-emm). Annak megadásához, hogy hogyan kívánja engedélyezni a más alkalmazásoknak való adatátvitelt, engedélyezze a **szervezeti adatok más alkalmazásokba való küldését** , majd válassza ki az előnyben részesített megosztási szintet. Annak megadásához, hogy az alkalmazások hogyan fogadhatnak más alkalmazásokból származó adatfogadást, engedélyezze a **más alkalmazásokból** érkező adatok fogadását, majd válassza ki az adatok fogadásának kívánt szintjét. Az alkalmazásadatok fogadására és megosztására vonatkozó további információért lásd az [Adatáthelyezési beállítások](app-protection-policy-settings-ios.md#data-protection) szakaszt.
 
 ## <a name="configure-user-upn-setting-for-microsoft-intune-or-third-party-emm"></a>Az egyszerű felhasználónév beállításának konfigurálása a Microsoft Intune-hoz vagy külső EMM-megoldáshoz
-Az egyszerű felhasználónév beállítását **kötelező** megadni olyan eszközök esetében, amelyek az Intune-nal vagy külső EMM-megoldással vannak kezelve. Az UPN-konfiguráció az Intune-ból üzembe helyezett alkalmazás-védelmi házirendekkel működik. Az alábbi eljárás az UPN-beállítás és az eredményül kapott felhasználói élmény konfigurálásának általános folyamata:
+A felhasználó UPN-beállításának konfigurálása az Intune által felügyelt eszközökön, vagy egy harmadik féltől származó, a regisztrált felhasználói fiók azonosítására **szolgáló más** gyártótól származó Az UPN-konfiguráció az Intune-ból üzembe helyezett alkalmazás-védelmi házirendekkel működik. Az alábbi eljárás az UPN-beállítás és az eredményül kapott felhasználói élmény konfigurálásának általános folyamata:
 
 1. Az [Azure Portalon](https://portal.azure.com) [hozzon létre és osszon ki alkalmazásvédelmi szabályzatot](app-protection-policies.md) az iOS-nek. A vállalati igényeknek megfelelően konfigurálja a szabályzat beállításait, majd válassza ki azokat az iOS-es alkalmazásokat, amelyekre ennek a szabályzatnak kell vonatkoznia.
 
@@ -74,7 +74,7 @@ Az egyszerű felhasználónév beállítását **kötelező** megadni olyan eszk
    |Külső MDM-szolgáltató| Konfigurációs kulcs | Érték típusa | Konfigurációs érték|
    | ------- | ---- | ---- | ---- |
    |Microsoft Intune| IntuneMAMUPN | Sztring | {{UserPrincipalName}}|
-   |VMware AirWatch| IntuneMAMUPN | Karakterlánc | {UserPrincipalName}|
+   |VMware AirWatch| IntuneMAMUPN | Sztring | {UserPrincipalName}|
    |MobileIron | IntuneMAMUPN | Sztring | ${userUPN} **vagy** ${userEmailAddress} |
    |Citrix Endpoint Management | IntuneMAMUPN | Sztring | $ {User. userPrincipalName} |
    |ManageEngine Mobile Device Manager | IntuneMAMUPN | Sztring | %upn% |
@@ -85,26 +85,40 @@ Az egyszerű felhasználónév beállítását **kötelező** megadni olyan eszk
 
 ### <a name="example-2-end-user-experience"></a>2\. példa: Végfelhasználói élmény
 
-1. A felhasználó egy eszközön telepíti a Microsoft Word alkalmazást.
+Házirend *által* felügyelt alkalmazás megosztása *más ALKALMAZÁSOKKAL az operációs rendszer megosztásával*
 
-2. A felhasználó elindítja a felügyelt natív e-mail-alkalmazást az e-mailek eléréséhez.
+1. A felhasználók megnyitják a Microsoft OneDrive alkalmazást egy regisztrált iOS-eszközön, és bejelentkeznek a munkahelyi fiókjába.  A felhasználó által megadott fióknak meg kell egyeznie a Microsoft OneDrive alkalmazás konfigurációs beállításaiban megadott fiók UPN-fiókjával.
 
-3. A felhasználó megpróbál megnyitni egy dokumentumot a natív levelekből a Microsoft Wordben.
+2. Bejelentkezés után a rendszergazda által konfigurált Alkalmazásbeállítások a Microsoft OneDrive felhasználói fiókjára vonatkoznak.  Ez magában foglalja a **szervezeti adatküldés más alkalmazásoknak** beállítását a **szabályzat által felügyelt alkalmazások számára az operációs rendszer megosztási** értékével.
 
-4. A Word alkalmazás indításakor a rendszer felszólítja a felhasználót, hogy jelentkezzen be a munkahelyi fiókjával. A felhasználó által megadott fióknak meg kell egyeznie a Microsoft Word alkalmazás alkalmazás-konfigurációs beállításaiban megadott fiókkal.
+3. A felhasználó előzetesen megtekint egy munkahelyi fájlt, és az iOS-es felügyelt alkalmazásba való megnyitással próbálkozik.  
+
+4. Az adatátvitel sikeresen megtörtént, és az adatok mostantól az iOS által felügyelt alkalmazásban is megtalálhatók a **nyílt felügyelettel** .  Az Intune-alkalmazás nem alkalmazható olyan alkalmazásokra, amelyek nem *házirend által felügyelt alkalmazások*.
+
+Az iOS által felügyelt alkalmazások *megosztása* *egy házirend által* felügyelt alkalmazásba *a bejövő szervezeti adatokkal*
+
+1. A felhasználók egy felügyelt e-mail-profillal megnyitják a natív e-maileket egy regisztrált iOS-eszközön.  
+
+1. A felhasználó megnyit egy munkahelyi dokumentum mellékletét a natív levelezésből a Microsoft Wordbe.
+
+1. A Word alkalmazás indításakor a következő két élmény egyike fordul elő:
+   1. Az Intune-alkalmazás az alábbiak szerint védi az adatvédelmet:
+      - A felhasználó bejelentkezett a munkahelyi fiókjába, amely megfelel a Microsoft Word alkalmazás alkalmazás-konfigurációs beállításaiban megadott fiók UPN-nek. 
+      - A rendszergazda által konfigurált alkalmazás beállításai a Microsoft Word felhasználói fiókjára vonatkoznak.  Ide tartozik a **más alkalmazásoktól érkező adatok fogadásának** beállítása a **minden alkalmazásra a bejövő szervezeti** adatértékkel.
+      - Az adatátvitel sikeres lesz, és a dokumentum a munkahelyi identitással van címkézve az alkalmazásban.  Az Intune-alkalmazás védi a dokumentum felhasználói műveleteit.
+   1. Az Intune-alkalmazás **nem** védi az adatvédelmet, ha:
+      - A felhasználó **nem** jelentkezett be a munkahelyi fiókjába.
+      - A rendszergazda által konfigurált beállítások **nem** lesznek alkalmazva a Microsoft Wordre, mert a felhasználó nincs bejelentkezve.
+      - Az adatátvitel sikeres lesz, és a dokumentum **nem** az alkalmazásban található munkahelyi identitással van megjelölve.  Az Intune-alkalmazás nem védi a dokumentum felhasználói műveleteit, mert **az nem aktív** .
 
     > [!NOTE]
     > A felhasználók hozzáadhatnak és használhatnak személyes fiókjaikat a Word használatával. Az alkalmazás-védelmi szabályzatok nem érvényesek, ha a felhasználó a Word alkalmazást a munkahelyi környezeten kívül használja. 
-
-5. A bejelentkezést követően az alkalmazás védelmi házirend-beállításai a Word alkalmazásra vonatkoznak.
-
-6. Mostantól az adatátvitel sikeres lesz, és a dokumentum egy vállalati identitással van megjelölve az alkalmazásban.  Az adatkezelés munkahelyi kontextusban történik, és a házirend-beállítások érvényesek. 
 
 ### <a name="validate-user-upn-setting-for-third-party-emm"></a>Külső EMM-megoldásban megadott UPN-beállítás ellenőrzése
 
 A felhasználói UPN-beállítás konfigurálása után ellenőrizze, hogy az iOS-alkalmazás képes-e az Intune app Protection-szabályzat fogadására és betartására.
 
-Az **alkalmazás PIN** -kódjának megkövetelése házirend-beállítás például egyszerűen tesztelhető. Ha a házirend-beállítás értéke **Igen**, a felhasználónak meg kell jelennie a PIN-kód beállításához vagy megadásához, mielőtt hozzá tudnak férni a vállalati információkhoz.
+Az **alkalmazás PIN** -kódjának megkövetelése házirend-beállítás például egyszerűen tesztelhető. Ha a házirend-beállítás értéke **kötelező**, a felhasználónak meg kell jelennie a PIN-kód beállításához vagy megadásához, mielőtt hozzá tudnak férni a vállalati információkhoz.
 
 Először [hozzon létre és osszon ki egy alkalmazásvédelmi szabályzatot](app-protection-policies.md) az iOS-alkalmazásnak. Az alkalmazás-védelmi szabályzat tesztelésével kapcsolatos további információkért lásd: az [alkalmazás-védelmi házirendek érvényesítése](app-protection-policies-validate.md).
 

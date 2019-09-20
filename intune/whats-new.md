@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b7b4453d441d2f2367b19a6bf0505dabd8e6e48
-ms.sourcegitcommit: 27e63a96d15bc4062af68c2764905631bd928e7b
+ms.openlocfilehash: a39c4a5830f5ce3d724508f5e6da64767c0bcdd0
+ms.sourcegitcommit: 89a973bbfa1702b2d275af6814874e4305bdcb77
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71061676"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71140725"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -57,6 +57,9 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 ## <a name="week-of-september-16-2019"></a>2019. szeptember 16-i hét
 
 ### <a name="app-management"></a>Alkalmazáskezelés
+
+#### <a name="company-portal-experience----1473353-3598357---"></a>Céges portáli élmény <!-- 1473353, 3598357 -->
+A Céges portál frissítése folyamatban van. Az alkalmazások lapon több szűrőt is használhat a Céges portálon belül. Az eszköz részletes felhasználói felülete is frissül. Ezen frissítések minden ügyfelünk számára folyamatban vagyunk, és a következő hét végére várhatóan elvégezhető.
 
 #### <a name="macos-support-for-web-apps----3174427---"></a>macOS-támogatás webes alkalmazásokhoz <!-- 3174427 -->
 Webalkalmazások, amelyek lehetővé teszik a webes URL-címekhez való parancsikonok hozzáadását a Dockon a macOS Céges portál használatával. A végfelhasználók a macOS Céges portál webalkalmazásának alkalmazás részletei lapján érhetik el a **telepítési** műveletet. A **Webhivatkozás** alkalmazás típusával kapcsolatos további információkért lásd: [alkalmazások hozzáadása a Microsoft Intunehez](apps-add.md) és [webalkalmazások hozzáadása Microsoft Intunehoz](web-app.md).
