@@ -14,12 +14,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 061a3c4615de6d84b5400b2f5d2a4c39d53dc3ab
-ms.sourcegitcommit: d2989b9992d10d133573d9bc31479659fb7e242c
+ms.openlocfilehash: 2fb82b02057e1e028755da16a05755b0b8ddb93a
+ms.sourcegitcommit: c19584b36448bbd4c8638d7cab552fe9b3eb3408
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71080140"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71163804"
 ---
 # <a name="use-role-based-access-control-rbac-and-scope-tags-for-distributed-it"></a>A szerepköralapú hozzáférés-vezérlés (RBAC) és a hatókör-címkék használata a terjesztéshez
 
@@ -101,7 +101,6 @@ A hatókör-címkék használatakor jegyezze fel ezeket a részleteket:
     - Eszközök kategóriái
     - Regisztrációs korlátozások
     - Corp-eszközök azonosítói
-    - Feltételek és kikötések
     - Autopilot-eszközök
     - Eszköz megfelelőségi helyei
     - JAMF-eszközök

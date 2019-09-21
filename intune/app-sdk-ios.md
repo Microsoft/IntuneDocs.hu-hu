@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eb9d6921a3a2bfa3556e0a8b010e42dddc62a656
-ms.sourcegitcommit: 89a973bbfa1702b2d275af6814874e4305bdcb77
+ms.openlocfilehash: ea31c06019643a3eaf10d79857dfdc319a8453c3
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71140738"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71167217"
 ---
 # <a name="microsoft-intune-app-sdk-for-ios-developer-guide"></a>A Microsoft Intune App SDK iOS rendszeren – fejlesztői útmutató
 
@@ -215,7 +215,7 @@ Ha az alkalmazás már használja az ADAL-t vagy a MSAL-t, a következő konfigu
 
 Az alkalmazások felülbírálhatják ezeket az Azure AD-beállításokat futtatáskor. Ehhez egyszerűen állítsa be az `aadAuthorityUriOverride`, `aadClientIdOverride` és az `aadRedirectUriOverride` tulajdonságot az `IntuneMAMPolicyManager` példányon.
 
-4. Győződjön meg arról, hogy az iOS-alkalmazás engedélyeit az App Protection-szabályzat (APP) szolgáltatáshoz adja meg. Az [első lépések az INTUNE SDK-útmutatóban](https://docs.microsoft.com/intune/app-sdk-get-started#next-steps-after-integration) című témakör útmutatását követve[adja meg az alkalmazás hozzáférését az Intune app Protection szolgáltatáshoz (nem kötelező)](https://docs.microsoft.com/intune/app-sdk-get-started#give-your-app-access-to-the-intune-app-protection-service-optional).  
+4. Győződjön meg arról, hogy az iOS-alkalmazás engedélyeit az App Protection-szabályzat (APP) szolgáltatáshoz adja meg. Az [első lépések az INTUNE SDK-útmutatóban](app-sdk-get-started.md#next-steps-after-integration) című témakör útmutatását követve[adja meg az alkalmazás hozzáférését az Intune app Protection szolgáltatáshoz (nem kötelező)](app-sdk-get-started.md#give-your-app-access-to-the-intune-app-protection-service-optional).  
 
 > [!NOTE]
 > Az Info.plist fájl használatát javasoljuk az összes olyan beállításhoz, amely statikus, és nem igényel futtatáskori meghatározást. Az `IntuneMAMPolicyManager`-tulajdonságokhoz rendelt értékek elsőbbséget élveznek az Info.plist fájlban megadott hasonló értékekkel szemben, és még az alkalmazás újraindítása után is megmaradnak. Az SDK továbbra is használni fogja ezeket szabályzat-ellenőrzéshez egészen a felhasználó regisztrációjának törléséig, vagy addig, amíg nem módosítja vagy törli az értékeket.
@@ -593,7 +593,7 @@ Az Intune-rendszergazdák az Intune Azure Portalon és az Intune Graph API-val c
 
 További információ a Graph API funkcióiról: [Graph API-segédlet](https://developer.microsoft.com/graph/docs/concepts/overview).
 
-A célzott MAM-alkalmazáskonfigurációs szabályzat iOS rendszerben való létrehozásáról lásd [A Microsoft Intune alkalmazáskonfigurációs szabályzatainak használata iOS rendszerben](https://docs.microsoft.com/intune/app-configuration-policies-use-ios) célzott MAM-alkalmazáskonfigurációról szóló szakaszát.
+A célzott MAM-alkalmazáskonfigurációs szabályzat iOS rendszerben való létrehozásáról lásd [A Microsoft Intune alkalmazáskonfigurációs szabályzatainak használata iOS rendszerben](app-configuration-policies-use-ios.md) célzott MAM-alkalmazáskonfigurációról szóló szakaszát.
 
 ## <a name="telemetry"></a>Telemetria
 

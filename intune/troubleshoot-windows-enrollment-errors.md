@@ -16,12 +16,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e8af18192a3a15fee15dd2204ada572e6a67be1c
-ms.sourcegitcommit: 6c74ff568267d85fd1d44fda75e3e24ead87cb2b
+ms.openlocfilehash: 0f78f069f46ce036752fde80519abc03dc7c424c
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70063006"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71167774"
 ---
 # <a name="troubleshoot-windows-device-enrollment-problems-in-microsoft-intune"></a>A Windows-eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune
 
@@ -74,8 +74,8 @@ A probléma több lehetséges megoldást is kínál:
 3. Növelje az **eszköz korlátjának**értékét. 
 
 ##### <a name="check-device-type-restrictions"></a>Az eszközök típusára vonatkozó korlátozások keresése
-1. Jelentkezzen be az [Intune](https://portal.azure.com/?Microsoft_Intune=1&Microsoft_Intune_DeviceSettings=true&Microsoft_Intune_Enrollment=true&Microsoft_Intune_Apps=true&Microsoft_Intune_Devices=true#blade/Microsoft_Intune_DeviceSettings/ExtensionLandingBlade/overview) -portálra egy globális rendszergazdai fiókkal.
-2. Lépjen az **eszközök** > regisztrálása beléptetési**korlátozásokhoz**, majd válassza ki az **alapértelmezett** korlátozást az **eszköz típusa korlátozásai**alatt.    
+1. Jelentkezzen be az [Intune-portálra](https://portal.azure.com/?Microsoft_Intune=1&Microsoft_Intune_DeviceSettings=true&Microsoft_Intune_Enrollment=true&Microsoft_Intune_Apps=true&Microsoft_Intune_Devices=true#blade/Microsoft_Intune_DeviceSettings/ExtensionLandingBlade/overview) egy globális rendszergazdai fiókkal.
+2. Lépjen az **eszközök** > regisztrálása**beléptetési korlátozásokhoz**, majd válassza ki az **alapértelmezett** korlátozást az **eszköz típusa korlátozásai**alatt.    
 3. Válassza a **platformok**lehetőséget, majd válassza a **Windows engedélyezése (Mdm)** lehetőséget.
 
     > [!IMPORTANT]
@@ -92,12 +92,12 @@ A probléma több lehetséges megoldást is kínál:
 
 0x801c0003 hiba: "A felhasználó regisztrációja nem engedélyezett. Próbálkozzon újra, vagy forduljon a rendszergazdához a hibakód 801c0003. "
 
-**Okozhat** Előfordulhat, hogy a **felhasználók az Azure ad-** be való csatlakozáshoz a **none**értékre vannak beállítva. Ez megakadályozza, hogy az új felhasználók az eszközeiket az Azure AD-be csatlakozzanak. Ezért az Intune-regisztráció meghiúsul.
+**Okozhat** Előfordulhat, hogy a **felhasználók az Azure ad-be való csatlakozáshoz** a **none**értékre vannak beállítva. Ez megakadályozza, hogy az új felhasználók az eszközeiket az Azure AD-be csatlakozzanak. Ezért az Intune-regisztráció meghiúsul.
 
 #### <a name="resolution"></a>Megoldás:
 1. Jelentkezzen be rendszergazdaként a [Azure Portalba](https://portal.azure.com/) .    
 2. Lépjen **Azure Active Directory** > eszközökeszközbeállítások > **menüpontra**.    
-3. A felhasználók beállíthatja, hogy az eszközök az **Azure ad** -hez csatlakozzanak.    
+3. A felhasználók beállíthatja, **hogy az**eszközök az **Azure ad** -hez csatlakozzanak.    
 4. Regisztrálja újra az eszközt.   
 
 ### <a name="the-device-is-already-enrolled"></a>Az eszköz már regisztrálva van.
@@ -144,7 +144,7 @@ Rendeljen érvényes Intune-licencet a felhasználóhoz, majd regisztrálja az e
 A probléma megoldásához használja az alábbi módszerek egyikét: 
  
 ##### <a name="assign-a-valid-license-to-the-user"></a>Érvényes licencet rendeljen a felhasználóhoz
-Lépjen a [Microsoft 365 felügyeleti](https://portal.office.com/adminportal/home)központba, majd rendeljen hozzá egy Intune-t vagy egy Office 365-licencet a felhasználóhoz.
+Lépjen a [Microsoft 365 felügyeleti központba](https://portal.office.com/adminportal/home), majd rendeljen hozzá egy Intune-t vagy egy Office 365-licencet a felhasználóhoz.
 
 ##### <a name="correct-the-mdm-terms-of-use-url"></a>Javítsa ki a MDM használati feltételeinek URL-címét
   1. Jelentkezzen be a [Azure Portalba](https://portal.azure.com/), majd válassza a **Azure Active Directory**lehetőséget.    
@@ -205,14 +205,14 @@ Hiba: "Hiba történt. A szervezet nem támogatja a Windows ezen verzióját.  (
 A probléma önálló Intune-környezetben való kijavításához kövesse az alábbi lépéseket: 
  
 1. Jelentkezzen be rendszergazdaként a [Azure Portalba](https://portal.azure.com/) .    
-2. Válassza az **Intune** lehetőséget a bal oldalon, majd lépjen az > eszközök regisztrálása beléptetési**korlátozásokhoz**.    
+2. Válassza az **Intune** lehetőséget a bal oldalon, majd lépjen az > eszközök regisztrálása**beléptetési korlátozásokhoz**.    
 3. Az **eszközök típusának korlátozásai**területen kattintson a **platformok**elemre, majd válassza a Windows **engedélyezése** **(Mdm)** lehetőséget.    
 4. Kattintson a **Save** (Mentés) gombra.    
  
 A probléma megoldásához az Intune-nal és a Configuration Managertel rendelkező hibrid MDM hajtsa végre az alábbi lépéseket: 
 1. Nyissa meg a Configuration Manager-konzolt.    
 2. Válassza az **Adminisztráció**, majd a **Cloud Services**lehetőséget.    
-3. Kattintson a jobb gombbal **Microsoft Intune**előfizetésre, majd válassza a **platformok konfigurálása > Windows**lehetőséget.    
+3. Kattintson a jobb gombbal **Microsoft Intune előfizetésre**, majd válassza a **platformok konfigurálása > Windows**lehetőséget.    
 4.  > Jelölje be a **Windows-regisztráció** > engedélyezése**OK**elemet.  
 
 
@@ -223,7 +223,7 @@ A probléma megoldásához az Intune-nal és a Configuration Managertel rendelke
 #### <a name="resolution"></a>Megoldás:
 1. Jelentkezzen be rendszergazdaként a [Azure Portalba](https://portal.azure.com/) .    
 2. Lépjen **Azure Active Directory > eszközök > eszközbeállítások menüpontra**.    
-3. Beállíthatja, hogy a **felhasználók az Azure ad** -be vagy az **összes** **kiválasztott**eszközhöz csatlakozzanak.
+3. Beállíthatja, hogy a felhasználók az Azure AD-be vagy az **összes** **kiválasztott** **eszközhöz csatlakozzanak** .
 
    Ha a **kijelölt**lehetőséget választja, kattintson a **kijelölt**elemre, majd kattintson a **Tagok hozzáadása** lehetőségre az összes olyan felhasználó hozzáadásához, akik csatlakozhatnak az eszközéhez az Azure ad-ben. Győződjön meg arról, hogy a kiépítési csomaghoz tartozó összes Azure AD-fiók hozzá van adva.
  
@@ -235,8 +235,8 @@ További információ az iskolai számítógépek alkalmazásának beállítás�
 ### <a name="auto-mdm-enroll-failed"></a>Automatikus MDM-regisztráció: Meghiúsult 
 
 Ha Csoportházirend használatával próbál automatikusan regisztrálni egy Windows 10-es eszközt, a következő problémákat tapasztalhatja: 
-- A Feladatütemezőben, a **Microsoft** > **Windows** > **EnterpriseMgmt**alatt a beléptetési **ügyfél által a Mdm-re való automatikus regisztráláshoz létrehozott ütemezés** utolsó futtatási eredménye a következő: **Az 76-es esemény automatikus MDM regisztrálása: Sikertelen művelet (ismeretlen Win32-hibakód: 0x8018002b)**       
-- Eseménynapló a következő eseményt naplózza az Applications **and Services logs/Microsoft/Windows/DeviceManagement-Enterprise-Diagnostics-Provider/admin**területen:   
+- A Feladatütemezőben, a **Microsoft** > **Windows** > **EnterpriseMgmt**alatt a **beléptetési ügyfél által a Mdm-re való automatikus regisztráláshoz létrehozott ütemezés** utolsó futtatási eredménye a következő: **Az 76-es esemény automatikus MDM regisztrálása: Sikertelen művelet (ismeretlen Win32-hibakód: 0x8018002b)**       
+- Eseménynapló a következő eseményt naplózza az **Applications and Services logs/Microsoft/Windows/DeviceManagement-Enterprise-Diagnostics-Provider/admin**területen:   
     ```asciidoc
     Log Name: Microsoft-Windows-DeviceManagement-Enterprise-Diagnostics-Provider/Admin
     Source: DeviceManagement-Enterprise-Diagnostics-Provider
@@ -371,13 +371,13 @@ Description:
 Ezt a problémát általában a Windows Autopilot-eszközöket létrehozó szervezeti egység engedélyeinek helytelen delegálása okozza. További információ: [a számítógépfiók korlátjának megemelése a szervezeti egységben](windows-autopilot-hybrid.md#increase-the-computer-account-limit-in-the-organizational-unit).
 
 1. Nyissa meg **Active Directory felhasználókat és számítógépeket (DSA. msc)** .
-2. Kattintson a jobb gombbal arra a szervezeti egységre, amelyet hibrid Azure AD-hez csatlakoztatott számítógépek létrehozásához fog használni, > delegálja a **vezérlést**.
+2. Kattintson a jobb gombbal arra a szervezeti egységre, amelyet hibrid Azure AD-hez csatlakoztatott számítógépek létrehozásához fog használni, > **delegálja a vezérlést**.
 3. A Control Wizard ( **vezérlés delegálása** ) varázslóban válassza ki a **következő** > **Objektumtípusok** **hozzáadása** > elemet.
 4. Az **Objektumtípusok** ablaktáblán jelölje be a **számítógépek** jelölőnégyzetet, > **az OK gombra**.
 5. A **felhasználók**, **számítógépek**vagy **csoportok** kiválasztása panelen az **adja meg a kijelölendő objektumok nevét** mezőbe írja be annak a számítógépnek a nevét, amelyen az összekötő telepítve van.
-6. Válassza a Névellenőrzés lehetőséget a bejegyzés ellenőrzéséhez > **OK** > **tovább**gombra.
-7. Válassza az **Egyéni feladat létrehozása lehetőséget a** > **következő**delegáláshoz.
-8. Jelölje be a **csak a következő objektumokat a mappában** jelölőnégyzetből, majd jelölje ki a **számítógép-objektumokat**, hozzon létre a **kijelölt objektumokat**ebben a mappában, és **törölje a kijelölt objektumokat a mappában** jelölőnégyzetből.
+6. Válassza a **Névellenőrzés lehetőséget a bejegyzés ellenőrzéséhez** > **OK** > **tovább**gombra.
+7. Válassza az **Egyéni feladat létrehozása lehetőséget a következő delegáláshoz** > .
+8. Jelölje be a **csak a következő objektumokat a mappában** jelölőnégyzetből, majd jelölje ki a **számítógép-objektumokat**, **hozzon létre a kijelölt objektumokat**ebben a mappában, és **törölje a kijelölt objektumokat a mappában** jelölőnégyzetből.
 9. Kattintson a **Tovább** gombra.
 10. Az **engedélyek**területen jelölje be a **teljes hozzáférés** jelölőnégyzetet. Ez a művelet kijelöli az összes többi beállítást.
 11. Válassza a **következő** > **Befejezés**lehetőséget.
@@ -388,4 +388,4 @@ Ezt a problémát általában a Windows Autopilot-eszközöket létrehozó szerv
 - [Kérdés feltevése az Intune-fórumon](https://social.technet.microsoft.com/Forums/%7Blang-locale%7D/home?category=microsoftintune&filter=alltypes&sort=lastpostdesc)
 - [A Microsoft Intune támogatási csapatának blogja](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/bg-p/IntuneCustomerSuccess)
 - [A Microsoft nagyvállalati mobilitási és biztonsági blogjának beolvasása](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Announcing-the-public-preview-of-Azure-AD-group-based-license/ba-p/245210)
-- [Támogatás kérése Microsoft Intune](https://docs.microsoft.com/intune/get-support) 
+- [Támogatás kérése Microsoft Intune](get-support.md)

@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c626bb50868e6b966eb7c8867f4c4ff7178eadcf
-ms.sourcegitcommit: 73fbecf7cee4fdfc37d3c30ea2007d2a9a6d2d12
+ms.openlocfilehash: f3891ce150ea740baa3ba18591139c66d78d9d00
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68756531"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71166365"
 ---
 # <a name="intune-on-azure-console-and-legacy-intune-pc-client"></a>Intune az Azure-konzolon és az örökölt Intune szoftverügyfél
 
@@ -31,7 +31,7 @@ Ha az Azure-beli Intune-t használja cége Windows-eszközeihez, vegye figyelemb
 
 ## <a name="manage-windows-10-devices-by-using-mdm"></a>Windows 10-eszközök felügyelete az MDM segítségével
 
-Azt javasoljuk, hogy a [Windows 10-eszközök felügyeletéhez a mobileszköz-felügyeletet (MDM) válassza](https://docs.microsoft.com/intune/device-restrictions-windows-10) az örökölt Intune szoftverügyfél helyett. Az Azure Portal-beli Intune lehetőséget ad a Windows 10 MDM-alapú felügyeletére. A Windows 10-es MDM számos új felügyeleti és biztonsági képességet nyújt, amelyek az örökölt Intune szoftverügyféllel nem elérhetők.
+Azt javasoljuk, hogy a [Windows 10-eszközök felügyeletéhez a mobileszköz-felügyeletet (MDM) válassza](device-restrictions-windows-10.md) az örökölt Intune szoftverügyfél helyett. Az Azure Portal-beli Intune lehetőséget ad a Windows 10 MDM-alapú felügyeletére. A Windows 10-es MDM számos új felügyeleti és biztonsági képességet nyújt, amelyek az örökölt Intune szoftverügyféllel nem elérhetők.
 
 ## <a name="legacy-pc-client-features-are-only-available-in-the-silverlight-console"></a>Az örökölt számítógépügyfelek funkciói csak a Silverlight-konzolon érhetők el
 
@@ -54,7 +54,7 @@ Mivel a Windows 7-et nem lehet az MDM használatával felügyelni, ebben az eset
 
 ## <a name="mdm-capabilities"></a>Az MDM képességei
 
-A szoftverügyfél és az MDM képességeinek összehasonlításához lásd: [Windows-számítógépek számítógépként és mobileszközként való összehasonlítása](pc-management-comparison.md). Az MDM frissítései továbbra is eljuttatják az új felügyeleti képességeket az MDM által regisztrált Windows 10 rendszerű eszközökre, beleértve a Win 32 alkalmazások lehetőségeinek kiértékelését is. A szolgáltatás legújabb kiegészítéseihez tekintse meg az [Újdonságokat](https://docs.microsoft.com/intune/whats-new).
+A szoftverügyfél és az MDM képességeinek összehasonlításához lásd: [Windows-számítógépek számítógépként és mobileszközként való összehasonlítása](pc-management-comparison.md). Az MDM frissítései továbbra is eljuttatják az új felügyeleti képességeket az MDM által regisztrált Windows 10 rendszerű eszközökre, beleértve a Win 32 alkalmazások lehetőségeinek kiértékelését is. A szolgáltatás legújabb kiegészítéseihez tekintse meg az [Újdonságokat](whats-new.md).
 
 ## <a name="switch-from-pc-client-to-mdm"></a>Váltás a szoftverügyfélről az MDM-re
 
@@ -62,9 +62,7 @@ Kövesse az alábbi lépéseket a Windows 10-eszközök felügyeletének áthely
 
 1. Végezzen el egy **szelektív törlést** a Silverlight-konzolon, ezzel visszavonja az eszköz regisztrációját a szoftverügyfélről.
   ![Figyelmeztetés felugró ablak a "kiválasztott eszköz szelektív törlése" választógomb bejelölésével](media/intune-legacy-pc-client/image02.png)
-2. Regisztrálja újra az eszközt az [MDM (és/vagy az Azure AD-csatlakozási felület)](https://docs.microsoft.com/intune/windows-enroll) használatával. 
+2. Regisztrálja újra az eszközt az [MDM (és/vagy az Azure AD-csatlakozási felület)](windows-enroll.md) használatával.
 
 ## <a name="next-steps"></a>További lépések
-[Windows-eszközök regisztrálása](https://docs.microsoft.com/intune/windows-enroll)
-
- 
+[Windows-eszközök regisztrálása](windows-enroll.md)

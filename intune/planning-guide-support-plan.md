@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c654b8e05cabf132324e8dafe70e5991a67bd516
-ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
+ms.openlocfilehash: c71edf84fb1ade261eefc1b3de4543e941bf0657
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67548332"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71166811"
 ---
 # <a name="develop-a-support-plan"></a>Támogatási terv kidolgozása
 
@@ -84,7 +84,7 @@ Alább bemutatunk egy példát egy Intune-támogatási képzés programtervére.
 
 - Kérdések és válaszok
 
-Az [Intune dokumentációja](https://docs.microsoft.com/intune/) áttekintést nyújt az Intune-ról, részletes funkcióleírást és néhány hibaelhárítási információt tartalmaz. Az [Intune-fórum](https://social.technet.microsoft.com/Forums/home) egy közösségen alapuló erőforrás az Intune dokumentációjában nem szereplő kérdések és témakörök megbeszéléséhez.
+Az [Intune dokumentációja](index.yml) az Intune áttekintését, a funkciók részletes leírását és néhány hibaelhárítási információt tartalmaz. Az [Intune-fórum](https://social.technet.microsoft.com/Forums/home) egy közösségen alapuló erőforrás az Intune dokumentációjában nem szereplő kérdések és témakörök megbeszéléséhez.
 
 ## <a name="what-opportunities-are-there-to-involve-the-support-team-earlier"></a>Mennyire vonható be a támogatási csoport a korai fázisban?
 

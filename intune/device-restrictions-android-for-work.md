@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 08/14/2019
+ms.date: 09/18/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.localizationpriority: medium
@@ -14,12 +14,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8bd537315a09c0c7cf338ac0892fc4ae3d1dc8fc
-ms.sourcegitcommit: b78793ccbef2a644a759ca3110ea73e7ed6ceb8f
+ms.openlocfilehash: 53a9c3e8b80f611bc9e293ba7e07c1aece0cfc58
+ms.sourcegitcommit: c19584b36448bbd4c8638d7cab552fe9b3eb3408
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69550188"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71163040"
 ---
 # <a name="android-enterprise-device-settings-to-allow-or-restrict-features-using-intune"></a>Android Enterprise eszközbeállítások engedélyezett vagy korlátozott funkciók az Intune-nal
 
@@ -117,11 +117,11 @@ Teljes **képernyős mód**: Válassza ki, hogy az eszköz futtat-e egy alkalmaz
 
   - A **kioszk mód**kihagyása: Az **Engedélyezés** lehetőség kiválasztásával engedélyezheti, hogy a rendszergazdák ideiglenesen szüneteltetik a kioszk módot az eszköz frissítéséhez. A szolgáltatás használatához a rendszergazda:
   
-    1. Továbbra is kijelöli a vissza gombot, amíg meg nem jelenik a kilépési **kioszk** gomb. 
-    2. Kiválasztja a **kilépési kioszk** gombot, és belép a teljes **képernyős mód kód** PIN-kódjába.
+    1. Továbbra is kijelöli a vissza gombot, amíg meg nem jelenik a **kilépési kioszk** gomb. 
+    2. Kiválasztja a **kilépési kioszk** gombot, és belép a teljes **képernyős mód kód PIN-kódjába** .
     3. Ha elkészült, válassza a **felügyelt kezdőképernyő** alkalmazást. Ez a lépés az eszköz relocks többalkalmazásos kioszk módba.
 
-      Ha a **nincs konfigurálva**értékre van állítva, a rendszergazdák nem tudják szüneteltetni a kioszk üzemmódot. Ha a rendszergazda továbbra is kiválasztja a vissza gombot, és kiválasztja a kilépési **kioszk** gombot, akkor egy üzenet jelzi, hogy PIN-kódot kell megadnia.
+      Ha a **nincs konfigurálva**értékre van állítva, a rendszergazdák nem tudják szüneteltetni a kioszk üzemmódot. Ha a rendszergazda továbbra is kiválasztja a vissza gombot, és kiválasztja a **kilépési kioszk** gombot, akkor egy üzenet jelzi, hogy PIN-kódot kell megadnia.
 
     - A **kioszk mód kódjának**kihagyása: Adjon meg egy 4-6 számjegyű numerikus PIN-kódot. A rendszergazda ideiglenesen letilthatja a teljes képernyős mód a PIN-kódot használja.
 
@@ -201,6 +201,9 @@ Teljes **képernyős mód**: Válassza ki, hogy az eszköz futtat-e egy alkalmaz
 - **Felhasználó eltávolítása**: A **Letiltás** elem kiválasztásával megakadályozhatja, hogy a felhasználók eltávolítsanak felhasználókat. **Nincs konfigurálva** lehetővé teszi a felhasználóknak más felhasználók eltávolítása az eszközről.
 - **Fiók módosításai**: A **Letiltás** elem kiválasztásával megakadályozhatja, hogy a felhasználók módosíthassák a fiókokat. **Nincs konfigurálva** lehetővé teszi, hogy a felhasználók frissíthetik a felhasználói fiókokat az eszközön.
 
+  > [!NOTE]
+  > Ez a beállítás nem felel meg az eszköz tulajdonosának (teljes mértékben felügyelt) eszközeinek. Ha ezt a beállítást konfigurálja, a rendszer figyelmen kívül hagyja a beállítást, és nincs hatással.
+
 ### <a name="applications"></a>Alkalmazások
 
 - **Ismeretlen forrásból történő telepítés engedélyezése**: Válassza az **Engedélyezés lehetőséget** , hogy a felhasználók be tudják kapcsolni az **ismeretlen forrásokat**. Ez a beállítás lehetővé teszi, hogy az alkalmazások ismeretlen forrásokból telepítsenek, beleértve a Google Play Áruházon kívüli forrásokat is. **Nincs konfigurálva** megakadályozza, hogy a felhasználók ne tudják bekapcsolni a **ismeretlen források**.
@@ -270,6 +273,10 @@ Teljes **képernyős mód**: Válassza ki, hogy az eszköz futtat-e egy alkalmaz
 - **Munkahelyi Névjegyek keresése a személyes profilból**: A **Letiltás** elem kiválasztásával megakadályozhatja, hogy a felhasználók munkahelyi névjegyeket keressenek a személyes profilban található alkalmazásokban. **Nem szükséges** lehetővé teszi, hogy a személyes profilban munkahelyi névjegyek keresése.
 
 - **Kamera**: A **blokkolás** gombra kattintva megakadályozhatja, hogy a munkahelyi profilban lévő eszközön hozzáférhessen a kamerához. A beállítás nincs hatással a fényképezőkép személyes profilban való használatára. **Nem szükséges** a kamerához való hozzáférés lehetővé teszi a munkahelyi profil.
+
+- **Widgetek munkahelyi profilbeli alkalmazásokból való engedélyezése**: Az **Engedélyezés** beállítás lehetővé teszi a végfelhasználók számára, hogy a kezdőképernyő alkalmazásai által elérhetővé tegyék a widgeteket. A **Nincs konfigurálva** (alapértelmezett) érték letiltja a funkciót.
+
+  Az Outlook például a felhasználók munkahelyi profiljaira van telepítve. Az **Engedélyezés**beállítás megadása esetén a felhasználók az eszköz kezdőlapjára helyezhetik el a napirend widgetet.
 
 #### <a name="work-profile-password"></a>Munkahelyi profilhoz tartozó jelszó
 

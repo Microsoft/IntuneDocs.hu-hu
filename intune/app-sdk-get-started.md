@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fbaeb5efa2b23a7fad4761878b25118786609447
-ms.sourcegitcommit: a25cd79a33feb536d9b2fc11aa7d3e3972f1ca5a
+ms.openlocfilehash: 4b24387636408d2e28891aae13962c2febf9f329
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70842128"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71167203"
 ---
 # <a name="get-started-with-the-microsoft-intune-app-sdk"></a>Bevezetés a Microsoft Intune App SDK használatába
 
@@ -85,7 +85,7 @@ A következő fejlesztői útmutatók segítséget nyújtanak az Intune App SDK 
 
 * **[Az Androidhoz készült Intune app SDK Fejlesztői útmutatója](app-sdk-android.md)** : Ez a dokumentum részletesen ismerteti a natív Android-alkalmazás Intune app SDK-val való engedélyezésének lépéseit.
 
-* **[Intune app SDK Xamarin-kötések útmutatója](app-sdk-xamarin.md)** : Ez a dokumentum segít iOS-és Android-alkalmazások készítésében az Intune app Protection-szabályzatok Xamarin használatával.
+* **[Intune app SDK Xamarin](app-sdk-xamarin.md)** -kötések útmutatója: Ez a dokumentum segít iOS-és Android-alkalmazások készítésében az Intune app Protection-szabályzatok Xamarin használatával.
 
 
 
@@ -161,9 +161,9 @@ Miután elvégezte az iOS vagy Android alkalmazásnak az Intune App SDK-való in
 
   * Az áruházban nem közzéteendő üzleti alkalmazások fejlesztői az adott szervezeten keresztül kaphatnak hozzáférést a Microsoft Intune-hoz. Emellett feliratkozhat a [Microsoft Intune](https://admin.microsoft.com/Signup/Signup.aspx?OfferId=40BE278A-DFD1-470a-9EF7-9F2596EA7FF9&dl=INTUNE_A&ali=1#0) egyhónapos ingyenes próbaidőszakára is.
 
-  * Ha egy végfelhasználói fiók használatával teszteli az alkalmazást egy mobileszközön, győződjön meg arról, hogy a rendszergazdai fiókkal való bejelentkezést követően a Microsoft 365 felügyeleti központ webhelyén az Intune-licencet adta meg, a következő témakörben: [Microsoft Intune licenc kiosztása](https://docs.microsoft.com/intune/licenses-assign).
+  * Ha egy végfelhasználói fiók használatával teszteli az alkalmazást egy mobileszközön, győződjön meg arról, hogy a rendszergazdai fiókkal való bejelentkezést követően a Microsoft 365 felügyeleti központ webhelyén az Intune-licencet adta meg, a következő témakörben: [Microsoft Intune licenc](licenses-assign.md)kiosztása.
 
-* **Intune app Protection-szabályzatok**: Ha tesztelni szeretné az alkalmazást az összes Intune app Protection-szabályzaton, tudnia kell, hogy mi a várt viselkedés az egyes házirend-beállításoknál. Lásd az [iOS alkalmazásvédelmi szabályzatainak](app-protection-policy-settings-ios.md) és az [Android alkalmazásvédelmi szabályzatainak](app-protection-policy-settings-android.md) ismertetését. Ha az alkalmazás integrálva van az Intune SDK-val, de nem szerepel a Azure Portal megcélzott alkalmazásként, megcélozhatja azt egy szabályzattal, ha kiválasztja a "+ További alkalmazások" lehetőséget, és megadja a köteg-azonosítót (iOS) vagy a csomag nevét (Android) a szövegmezőben.
+* **Intune app Protection**-szabályzatok: Ha tesztelni szeretné az alkalmazást az összes Intune app Protection-szabályzaton, tudnia kell, hogy mi a várt viselkedés az egyes házirend-beállításoknál. Lásd az [iOS alkalmazásvédelmi szabályzatainak](app-protection-policy-settings-ios.md) és az [Android alkalmazásvédelmi szabályzatainak](app-protection-policy-settings-android.md) ismertetését. Ha az alkalmazás integrálva van az Intune SDK-val, de nem szerepel a Azure Portal megcélzott alkalmazásként, megcélozhatja azt egy szabályzattal, ha kiválasztja a "+ További alkalmazások" lehetőséget, és megadja a köteg-azonosítót (iOS) vagy a csomag nevét (Android) a szövegmezőben.
 
 * **Hibák megoldása**: Ha az alkalmazás telepítési felhasználói felületének manuális tesztelése során problémákba ütközik, tekintse meg az [alkalmazás telepítési problémáinak elhárítása](troubleshoot-app-install.md)című témakört. 
 

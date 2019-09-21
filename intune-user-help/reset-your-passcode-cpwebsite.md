@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 08/28/2018
+ms.date: 09/18/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
@@ -18,21 +18,20 @@ ms.reviewer: jieyang
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f2cd69725ad10c08f7c137f4444cce831160dd88
-ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
+ms.openlocfilehash: 690fb81350c0c264677c6c75b8942e9cdcd4e8f0
+ms.sourcegitcommit: c19584b36448bbd4c8638d7cab552fe9b3eb3408
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67546807"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71163363"
 ---
 # <a name="how-to-reset-your-device-passcode-from-the-company-portal-website"></a>Az eszköz jelszavának alaphelyzetbe állítása a Vállalati portál webhelyén
 
-Ha elveszíti egy eszköz PIN-kódját vagy jelszavát, a [Céges portál webhelyen](https://portal.manage.microsoft.com) kérhet újat.  
+Ha elveszíti egy eszköz PIN-kódját vagy jelszavát, a [Céges portál webhelyen](https://portal.manage.microsoft.com) kérhet újat. 
 
-Vállalat által birtokolt eszköz használata esetén lehet, hogy nem jelenik meg a jelszó alaphelyzetbe állításának lehetősége. Kérje meg a vállalat informatikai támogatási szolgálatát, hogy állítsa alaphelyzetbe a jelszót.
+Előfordulhat, hogy a PIN-kód alaphelyzetbe állítása beállítás nem jelenik meg a vállalat által regisztrált eszköz esetében. Ebben az esetben kérje meg a cég informatikai támogatási szolgálatát, hogy állítsa alaphelyzetbe.  
 
-   > [!NOTE]
-   > A PIN-kód Android 7.0-s vagy újabb rendszerű eszközök esetén nem állítható alaphelyzetbe. Ha elfelejti a PIN-kódját, a gyári beállításokra kell visszaállítani az eszközt. 
+A PIN-kód alaphelyzetbe állítása nem érhető el az Android 7,0 és újabb rendszerű eszközökön. Ha elfelejti a PIN-kódját az egyik eszközön, vissza kell állítania a gyári beállításokra.  
 
 ## <a name="reset-your-passcode"></a>A jelszó alaphelyzetbe állítása
 
@@ -40,15 +39,15 @@ Vállalat által birtokolt eszköz használata esetén lehet, hogy nem jelenik m
 
 2. Válassza ki azt az eszközt, amelynek a jelszavát alaphelyzetbe kell állítani.  
 
-    ![Képernyőkép az Eszközök oldalról, amelyen két csempén azonosítatlan, általános nevű eszközök láthatók. Közvetlenül az eszközök alatt egy szürke szalagcím helyezkedik el, amely arra kéri a felhasználót, hogy azonosítsa a használt eszközt, vagy adjon hozzá egy újat.](./media/rename-reset-device-step2-1808.png) 
+    ![Az eszközök lap képernyőképe, amelyen két csempe azonosítatlan, általános névvel ellátott eszközök láthatók. A szürke szalagcím közvetlenül az eszközök alatt található, és felszólítja a felhasználót, hogy azonosítsa az Ön által használt eszközt, vagy újat adjon hozzá.](./media/rename-reset-device-step2-1808.png) 
 
 3. Válassza a **Jelszó alaphelyzetbe állítása** lehetőséget. Ha a jelszó lehetőség nem jelenik meg az oldal tetején, válassza az **Egyéb (…)**  > **Jelszó alaphelyzetbe állítása** lehetőséget.   
 
    ![A kiválasztott eszköz adatai a Céges portál webhelyén, felül az Átnevezés, az Eltávolítás, az Eszköz alaphelyzetbe állítása, a Jelszó alaphelyzetbe állítása és a Távoli zárolás lehetőségekre mutató hivatkozásokkal. ](./media/rename-reset-device-1808.png)   
 
-    ![Az Egyéb ikon kinagyított képe egy piros nyíllal kiemelve.](./media/rename-reset-device-step3-more-1808.png)  
+    ![Képernyőkép a további ikonról, amely piros nyíllal van kiemelve.](./media/rename-reset-device-step3-more-1808.png)  
 
-4. Ha a program arra kéri, kattintson a **Kijelentkezés** gombra. Újabb kérés esetén jelentkezzen be ismét. Ha öt percen belül nem jelentkezik be újra a Céges portálra, a Céges portál nem állítja alaphelyzetbe a jelszót.  
+4. Ha a program arra kéri, kattintson a **Kijelentkezés** gombra. Újabb kérés esetén jelentkezzen be ismét. Jelentkezzen be ismét a Céges portál webhelyre öt percen belül, vagy Céges portál nem állítja vissza az eszköz PIN-kódját.  
 
    > [!NOTE]
    > A személyazonossága megerősítéséhez újra be kell jelentkeznie. Ennek a beállításnak az a célja, hogy megakadályozza a jelszó alaphelyzetbe állítására vonatkozó rosszindulatú kísérleteket.
@@ -61,7 +60,7 @@ Vállalat által birtokolt eszköz használata esetén lehet, hogy nem jelenik m
 
    ![A képernyőképen a jelszó alaphelyzetbe állítására vonatkozó második üzenet látható. Tartalmaz egy hivatkozást, amely a dokumentációban az új jelszó beállítására vonatkozó részre mutat, és egyéni gombokat, amelyekkel alaphelyzetbe állíthatja a jelszót, és megszakíthatja a műveletet.](./media/iwp-reset-passcode-popup2-1808.png) 
 
-6. Ha iOS-eszközön állítja alaphelyzetbe a jelszót, a meglévő jelszó el lesz távolítva. Windows vagy Android rendszerű eszközök esetén ideiglenes jelszót kap az eszköz zárolásának feloldásához és az új jelszó beállításához. 
+6. Ha iOS-eszközön állítja alaphelyzetbe a jelszót, a meglévő jelszó el lesz távolítva. Windows-vagy Android-eszközök esetén ideiglenes PIN-kódot kell kiadni az eszköz zárolásának feloldásához és egy új PIN-kód beállításához. 
 
    > [!NOTE]
    > A Windows és Android rendszerű eszközökhöz tartozó ideiglenes jelszó a Céges portálon, az eszközadatokat tartalmazó lapon található. Az egyes operációs rendszerek jelszóbeállításaihoz tekintse meg az [Új jelszó beállítása](reset-your-passcode-cpwebsite.md#set-up-a-new-passcode) szakaszt.  
@@ -76,7 +75,7 @@ Ez a szakasz a jelszó alaphelyzetbe állítását és az ideiglenes jelszó vis
 
 **Android**: Eltávolítja a meglévő jelszót, és egy betűkből és számokból álló ideiglenes jelszót hoz létre.
 
-**iOS**: Eltávolítja a meglévő jelszót, és nem hoz létre ideiglenes jelszót. Ha a Touch ID ujjlenyomat-leolvasóval megnyitja az eszközt vagy vásárol, a jelszót ismét be kell állítania.  
+**iOS**: Eltávolítja a meglévő jelszót, és nem hoz létre ideiglenes jelszót. Ha a Touch ID-t használja az eszköz megnyitásához vagy a vásárláshoz, azt újra be kell állítania.  
 
 **Windows 10 Mobile**: Eltávolítja a meglévő jelszót, és egy betűkből és számokból álló ideiglenes jelszót hoz létre. A beállítás után a Windows Hello arcfelismerő rendszer továbbra is működni fog az eszközön.
 

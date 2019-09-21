@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 08/02/2019
+ms.date: 09/19/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.localizationpriority: medium
@@ -14,12 +14,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 97674627ac1894aa7fcf3f6a6550677b89e1a150
-ms.sourcegitcommit: 3f0cc80c5dbb4d04519c5aa98eae8426dad8cb30
+ms.openlocfilehash: 80b904893f118bac1f4d0d79da0cd10498b9f2ed
+ms.sourcegitcommit: c19584b36448bbd4c8638d7cab552fe9b3eb3408
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70158024"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71162867"
 ---
 # <a name="macos-endpoint-protection-settings-in-intune"></a>MacOS Endpoint Protection-beállítások az Intune-ban  
 
@@ -105,13 +105,6 @@ Az Apple FileVault beállításaival kapcsolatos további információkért lás
     - **Letiltás** – tiltsa le a kijelentkezéskor megjelenő üzenetet.
 
     **Alapértelmezett**: Nincs konfigurálva  
-
-     > [!IMPORTANT]  
-     > Ismert probléma, ha a **Letiltás beállítás letiltása** a kijelentkezéskor beállítás értéke letiltva értékre van állítva. Ha a Letiltva értékre van állítva, a megkerülő időpontok **számának** meg kell adni egy értéket, és nem állítható be *nem konfiguráltként*. Ha a *nincs konfigurálva*értékre van állítva, a profil meghiúsul az eszközön. Ebben az esetben az eszköz egy **profil állapotának összegzése** , további részletek nélkül.
-     > 
-     > Ha a kijelentkezéskor a **Letiltás** beállítás nincs *konfigurálva*értékre van állítva, a megkerülő időpontok **száma** *nem konfigurálható* , és nem rendelkezhet értékkel.  
-     > 
-     > Ezt a problémát egy jövőbeli frissítés fogja megoldani. 
 
   - **Megkerülő időpontok száma**  
   Állítsa be, hogy a felhasználó hányszor hagyhatja figyelmen kívül a kéréseket, hogy engedélyezze a FileVault, mielőtt FileVault a felhasználónak a bejelentkezéshez.  

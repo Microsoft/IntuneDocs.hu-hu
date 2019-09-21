@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b333c848368f00f005ed0febc61f67f098ee7e5e
-ms.sourcegitcommit: 76d59edfd5900ce33c64470ae604eb3db016c8ca
+ms.openlocfilehash: eb470885be8f09f0c99dfe26a1d982570644ac8a
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69979188"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71167604"
 ---
 # <a name="intune-data-warehouse-collections"></a>Intune adattárház-gyűjtemények
 
@@ -427,7 +427,7 @@ Az **IntuneManagementExtensionVersion** entitás az **IntuneManagementExtension*
 | ExtensionVersionKey | Az IntuneManagementExtension verziójának egyedi azonosítója. | 1       |
 | ExtensionVersion    | A négyjegyű verziószám.                                   | 1.0.2.0 |
 
-## <a name="mamapplications"></a>MamApplications
+## <a name="mamapplications"></a>mamApplications
 
 A **MamApplication** entitás azokat az üzletági alkalmazásokat sorolja fel, amelyek felügyelete a Mobilalkalmazás-felügyelet használatával történik és nincsenek beléptetve a vállalat rendszerébe.
 
@@ -466,7 +466,7 @@ A **MamApplicationInstance** entitás a felügyelt Mobilalkalmazás-felügyeleti
 |       DeletedDateUTC       |                                                                             Az IsDeleted paraméter True (Igaz) értékre módosulásának dátuma és időpontja (UTC).                                                                              |        2016.11.23. 12:00:00        |
 | RowLastModifiedDateTimeUTC |                                                           A MAM-alkalmazáspéldány adattárházban történő utolsó módosításának dátuma és időpontja (UTC).                                                            |        2016.11.23. 12:00:00        |
 
-## <a name="mamcheckins"></a>MamCheckins
+## <a name="mamcheckins"></a>mamCheckins
 
 A **MamCheckin** entitás a MAM-alkalmazáspéldány Intune szolgáltatásba történő legutóbbi bejelentkezése során begyűjtött adatokat jelöli. 
 
@@ -494,7 +494,7 @@ A **MamDeviceHealth** entitás azokat az eszközöket jelöli, amelyekhez mobila
 | DeviceHealthName |Az eszköz állapotát jelöli. <br>Not available – nincs információ az eszközről. <br>Healthy – az eszköz nem jailbreakelt. <br>Unhealthy – az eszköz jailbreakelt. |Not Available Healthy Unhealthy |
 | RowLastModifiedDateTimeUTC |Az adott MAM-eszközállapot adattárházban történt utolsó módosításának dátuma és időpontja (UTC). |2016.11.23. 12:00:00 |
 
-## <a name="mamplatforms"></a>MamPlatforms
+## <a name="mamplatforms"></a>mamPlatforms
 
 A **MamPlatform** entitás azoknak a platformoknak a nevét és típusát sorolja fel, amelyeken telepítettek MAM-alkalmazást.
 
@@ -731,5 +731,4 @@ A **vppProgramType** entitás az alkalmazás lehetséges VPP-programtípusait li
 
 ## <a name="next-steps"></a>További lépések
 
-Az Intune Adattárházról további információt talál [Az adattárház adatmodellje](https://docs.microsoft.com/intune/reports-ref-data-model) című témakörben.
-
+Az Intune Adattárházról további információt talál [Az adattárház adatmodellje](reports-ref-data-model.md) című témakörben.

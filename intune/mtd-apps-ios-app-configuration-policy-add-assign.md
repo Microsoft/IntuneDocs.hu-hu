@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fef4b6969680101e2e4f045bc83a8974536eaf2a
-ms.sourcegitcommit: c715c93bb242f4fe44bbdf2fd585909854ed72b6
+ms.openlocfilehash: 55132570683742bd3e8dcec1c20726b9eb2c4b16
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68660957"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71166826"
 ---
 # <a name="add-and-assign-mobile-threat-defense-mtd-apps-with-intune"></a>Mobile Threat Defense- (MTD) alkalmazások felvétele és hozzárendelése az Intune-nal  
 
@@ -35,8 +35,8 @@ A Mobile Threat Defense-(MTD-) alkalmazások hozzáadásához és üzembe helyez
 Az [Azure Portalon](https://portal.azure.com/) végre kell hajtani az alábbi lépéseket. Előzőleg ismerkedjen meg a következő eljárásokkal:
 
 - [Alkalmazás felvétele az Intune-ba](apps-add.md)
-- [iOS-es alkalmazáskonfigurációs szabályzat felvétele az Intune-ba](https://docs.microsoft.com/intune/deploy-use/configure-ios-apps-with-mobile-app-configuration-policies-in-microsoft-intune)
-- [Alkalmazás hozzárendelése az Intune-hoz](https://docs.microsoft.com/intune/deploy-use/deploy-apps-in-microsoft-intune).
+- [iOS-es alkalmazáskonfigurációs szabályzat felvétele az Intune-ba](app-configuration-policies-use-ios.md)
+- [Alkalmazás hozzárendelése az Intune-hoz](apps-deploy.md).
 
 > [!TIP]
 > A Intune Céges portál az Android-eszközökön működő közvetítőként működik, így a felhasználók az Azure AD-ben is megadhatják az identitásuk ellenőrzését.
@@ -136,7 +136,7 @@ Válassza ki az MTD-szolgáltatójának megfelelő szakaszt:
   - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](store-apps-android.md). Használja a [Wanda Mobile App Store-beli URL-címét](https://play.google.com/store/apps/details?id=com.wandera.android) a **7. lépésben**. A **minimális operációs rendszer**beállításnál válassza az **Android 5,0**lehetőséget.
 
 - **iOS**
-  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](https://docs.microsoft.com/intune/store-apps-ios). Használja a [Wanda Mobile App Store-beli URL-címét](https://itunes.apple.com/app/wandera/id605469330) az **AppStore URL-** címének **11** . lépésében.
+  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](store-apps-ios.md). Használja a [Wanda Mobile App Store-beli URL-címét](https://itunes.apple.com/app/wandera/id605469330) az **AppStore URL-** címének **11** . lépésében.
 
 ## <a name="configure-your-mtd-apps-with-an-ios-app-configuration-policy"></a>MTD-alkalmazások konfigurálása egy iOS-es alkalmazáskonfigurációs szabályzattal  
 

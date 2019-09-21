@@ -1,6 +1,6 @@
 ---
-title: A Microsoft Intune App SDK for Android fejlesztői tesztelési útmutató
-description: A Microsoft Intune App SDK Androidban tesztelési útmutató segítséget nyújt az Intune-nal felügyelt Android-alkalmazás teszteléséhez.
+title: Microsoft Intune app SDK Androidon – fejlesztői tesztelési útmutató
+description: Az Androidhoz készült Microsoft Intune app SDK tesztelési útmutatója segítségével tesztelheti az Intune által felügyelt Android-alkalmazást.
 keywords: SDK
 author: Erikre
 ms.author: erikre
@@ -16,115 +16,115 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa6b07c77b0d92ceb7bdc960d8c2fd754c277499
-ms.sourcegitcommit: 63b55e81122e5c15893302b109ae137c30855b55
+ms.openlocfilehash: 91b7fc7414c3a6d6517cd4b704cb5e99ddcf96d0
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67713234"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71167183"
 ---
-# <a name="microsoft-intune-app-sdk-for-android-developers-testing-guide"></a>A Microsoft Intune App SDK tesztelési útmutató Androidos fejlesztőknek
+# <a name="microsoft-intune-app-sdk-for-android-developers-testing-guide"></a>Microsoft Intune app SDK Android-fejlesztőknek – tesztelési útmutató
 
-Célja, hogy a Microsoft Intune App SDK Androidban tesztelési útmutató segítséget nyújt az Intune-nal felügyelt Android-alkalmazás teszteléséhez.  
+Az Android rendszerhez készült Microsoft Intune app SDK tesztelési útmutatója segítségével tesztelheti az Intune által felügyelt Android-alkalmazást.  
 
-## <a name="prerequisite-test-accounts"></a>Előfeltétel-ellenőrzési tesztelés fiókok
-Új fiókokat is létrehozható, és anélkül előre létrehozott adatokat. Új fiók létrehozása:
-1. Keresse meg a [Microsoft Demos](https://demos.microsoft.com/environments/create/tenant) hely. 
-2. [Az Intune beállítása](https://docs.microsoft.com/intune/setup-steps) mobileszköz-felügyelet (MDM) engedélyezése.
-3. [Felhasználók létrehozása](https://docs.microsoft.com/intune/users-add).
-4. [Csoportok létrehozása a](https://docs.microsoft.com/intune/groups-add).
-5. [Licencek hozzárendelése](https://docs.microsoft.com/intune/licenses-assign) szükség szerint a teszteléshez.
+## <a name="prerequisite-test-accounts"></a>Előfeltétel-ellenőrzési fiókok
+Új fiókok hozhatók létre előre generált adattal és anélkül. Új fiók létrehozása:
+1. Navigáljon a [Microsoft bemutatók](https://demos.microsoft.com/environments/create/tenant) webhelyére. 
+2. [Állítsa be az Intune](setup-steps.md) -t a mobileszköz-kezelés (Mdm) engedélyezéséhez.
+3. [Hozzon létre felhasználókat](users-add.md).
+4. [Csoportok létrehozása](groups-add.md).
+5. A teszteléshez szükség szerint [rendeljen licenceket](licenses-assign.md) .
 
 
-## <a name="azure-portal-policy-configuration"></a>Az Azure portal-házirend konfigurálása
-[Alkalmazás alkalmazásvédelmi szabályzatok létrehozása és hozzárendelése](https://docs.microsoft.com/intune/app-protection-policies) a a [az Azure portal Intune panelén](https://portal.azure.com/?feature.customportal=false#blade/Microsoft_Intune_Apps/MainMenu/14/selectedMenuItem/Overview). A [alkalmazáskonfigurációs szabályzat](https://docs.microsoft.com/intune/app-configuration-policies-overview) is létrehozva és hozzárendelve az Intune panelen.
+## <a name="azure-portal-policy-configuration"></a>Azure Portal házirend-konfiguráció
+[Hozzon létre és rendeljen alkalmazás-védelmi szabályzatokat](app-protection-policies.md) a [Azure Portal Intune](https://portal.azure.com/?feature.customportal=false#blade/Microsoft_Intune_Apps/MainMenu/14/selectedMenuItem/Overview)-paneljén. Az [alkalmazás-konfigurációs szabályzat](app-configuration-policies-overview.md) az Intune panelen is létrehozható és hozzárendelhető.
 
 > [!NOTE]
-> Ha az alkalmazás nem szerepel az Azure Portalon, is cél szabályzat kiválasztásával a **további alkalmazások** lehetőséget és a kezeléséről a csomag nevét a szövegmezőbe.
+> Ha az alkalmazás nem szerepel a Azure Portalban, a **További alkalmazások** lehetőség kiválasztásával és a csomag nevének a szövegmezőben való megadásával megcélozhatja a szabályzatot.
 
 > [!IMPORTANT]
-> Alkalmazás-konfigurációs házirend alkalmazásához, a felhasználó regisztrálásának kell vonatkozni egy [az Intune alkalmazásvédelmi szabályzatának](https://docs.microsoft.com/intune/app-protection-policy).
+> Az alkalmazásra vonatkozó konfigurációs házirend alkalmazásához a beléptetési felhasználót egy [Intune app Protection-szabályzatnak](app-protection-policy.md)kell megcéloznia.
 
-## <a name="test-cases"></a>Vizsgálati eset
+## <a name="test-cases"></a>Tesztelési esetek
 
-A következő esetek adja meg a konfigurációs és a megerősítő lépéseket. Ez az útmutató segítségével az Intune által felügyelt Android alkalmazásokkal kapcsolatos problémák elhárításához.
+A következő tesztelési esetekben konfigurációs és megerősítési lépéseket kell megadnia. Ez az útmutató segítséget nyújt az Intune által felügyelt Android-alkalmazások hibáinak elhárításához.
 
-### <a name="required-pin-and-corporate-credentials"></a>Szükséges PIN-kód és a vállalati hitelesítő adatok
+### <a name="required-pin-and-corporate-credentials"></a>Szükséges PIN-kód és vállalati hitelesítő adatok
 
-Vállalati erőforrások eléréséhez PIN-kód is szükséges. Is vállalati hitelesítés kényszerítése, mielőtt a felhasználók a felügyelt alkalmazások használhatják. Az alábbi lépések segítségével állítsa be ezeket a követelményeket:
+PIN-kód megkövetelése a vállalati erőforrások eléréséhez. Emellett a vállalati hitelesítés is kikényszeríthető, mielőtt a felhasználók használhatják a felügyelt alkalmazásokat. A következő lépésekkel állíthatja be ezeket a követelményeket:
 
-1. Konfigurálása **PIN-kód megkövetelése a hozzáféréshez** és **vállalati hitelesítő adatok megkövetelése a hozzáféréshez** való **Igen**. További információkért lásd: [Androidos alkalmazásvédelmi szabályzat beállításai a Microsoft Intune-ban](app-protection-policy-settings-android.md#access-requirements).
-2. Erősítse meg a következő feltételeknek:
-    - Alkalmazásindítás kell mutatnia a PIN-kód beviteli/telepítés és/vagy a termelési felhasználó a céges portállal a regisztráció során használt kérdés.
-    - Hiba egy érvényes bejelentkezési kérések jelenhetnek nyújtjuk egy helytelenül konfigurált android-jegyzékfájlban, kifejezetten az ADAL-integrációs (SkipBroker ClientID és hatóság) értékeit oka lehet.
-    - Nyújtjuk bármilyen kérdés hibája okozhatja egy helytelenül integrált `MAMActivity` értéket. További információ `MAMActivity`, lásd: [Microsoft Intune App SDK Androidon – útmutató fejlesztőknek](app-sdk-android.md).
+1. Adja meg **a PIN-kód megkövetelése a hozzáféréshez** és a **vállalati hitelesítő adatok megkövetelése az** **Igen**lehetőséget. További információ: [az Android-alkalmazások védelmi házirendjének beállításai a Microsoft Intuneban](app-protection-policy-settings-android.md#access-requirements).
+2. Erősítse meg a következő feltételeket:
+    - Az alkalmazás elindítása előtt szerepelnie kell a PIN-kód beírásának/beállításának és/vagy a Céges portál való regisztráció során használt üzemi felhasználónak.
+    - Az érvényes bejelentkezési Rákérdezés oka lehet egy nem megfelelően konfigurált Android-jegyzékfájl, különösen a ADAL-integráció (SkipBroker, ClientID és Authority) értékei.
+    - Nem sikerült bemutatni az esetleges kéréseket egy helytelenül `MAMActivity` integrált érték miatt. További információ `MAMActivity`: [Microsoft Intune app SDK for Android fejlesztői útmutató](app-sdk-android.md).
 
 > [!NOTE] 
-> Ha a fenti teszt nem működik, a tesztek az alábbi valószínűleg nem is. Felülvizsgálat [SDK](app-sdk-android.md##sdk-integration) és [ADAL](app-sdk-android.md#configure-azure-active-directory-authentication-library-adal) integrációja.
+> Ha a fenti teszt nem működik, az alábbi tesztek valószínűleg sikertelenek lesznek. Az [SDK](app-sdk-android.md##sdk-integration) és a [ADAL](app-sdk-android.md#configure-azure-active-directory-authentication-library-adal) integráció áttekintése.
 
-### <a name="restrict-transferring-and-receiving-data-with-other-apps"></a>Átvitele és fogadása, adatok más alkalmazásokkal korlátozása
-Felügyelt vállalati alkalmazások közötti adatátvitel módon lehet szabályozni:
+### <a name="restrict-transferring-and-receiving-data-with-other-apps"></a>Az adatátviteli és-fogadási művelet korlátozása más alkalmazásokkal
+A vállalat által felügyelt alkalmazások közötti adatátvitel a következőképpen szabályozható:
 
-1. Állítsa be **///az alkalmazás átadhat adatokat más alkalmazásoknak** való **szabályzattal felügyelt alkalmazások**.
-2. Állítsa be **alkalmazás fogadhat adatokat más alkalmazásokból** való **minden alkalmazás**. Ezek a szabályzatok által érintett leképezések és tartalomszolgáltatók használatát.
-3. Erősítse meg a következő feltételeknek:
-    - Nyissa meg egy nem felügyelt alkalmazásból való az alkalmazás működését megfelelően.
-    - Tartalom megosztása a felügyelt alkalmazások között engedélyezett.
-    - Nem felügyelt alkalmazásokba (például a Chrome böngészőben) a felügyelt alkalmazásokból való megosztása le van tiltva.
+1. Állítsa be az **alkalmazás átviheti az adatátvitelt más alkalmazásokba** a **szabályzattal felügyelt alkalmazásokba**.
+2. Állítsa be az alkalmazás más alkalmazásokból az **összes alkalmazásba**való **fogadásának engedélyezése lehetőséget** . Ezen szabályzatok hatással lesznek a szándékok és a tartalomszolgáltatók használatára.
+3. Erősítse meg a következő feltételeket:
+    - A nem felügyelt alkalmazásokból való megnyitás megfelelően működik.
+    - A tartalom megosztása a felügyelt alkalmazások között engedélyezett.
+    - A felügyelt alkalmazások és a nem felügyelt alkalmazások (például a Chrome) megosztása le van tiltva.
 
-### <a name="restrict-cut-copy-and-paste"></a>Kivágás, másolás és beillesztés korlátozása
-A rendszer vágólapjára az alábbiak szerint korlátozhatja a felügyelt alkalmazások:
+### <a name="restrict-cut-copy-and-paste"></a>Kivágási, másolási és beillesztési műveletek korlátozása
+A következő módon korlátozhatja a rendszervágólapot a felügyelt alkalmazásokra:
 
-1. Állítsa be **Kivágás, másolás és beillesztés korlátozása más alkalmazásokkal** való **szabályzat által felügyelt beillesztéssel**.
-2. Erősítse meg a következő feltételeknek:
-    - Az alkalmazás be egy felügyelt szöveget másol a nem felügyelt alkalmazások (például üzenetek) le van tiltva.
+1. A **kivágási, másolási és beillesztési műveletek korlátozása más alkalmazásokkal** a **szabályzatba való beillesztéssel felügyelt**csoportba.
+2. Erősítse meg a következő feltételeket:
+    - Az alkalmazásból származó szöveg másolása felügyelt, nem felügyelt alkalmazásba (például üzenetek) le van tiltva.
 
-### <a name="prevent-save-as"></a>Megakadályozása **Mentés másként**
-Szabályozhatja, **Mentés másként** funkciók az alábbiak szerint:
+### <a name="prevent-save-as"></a>**A Mentés másként** művelet letiltása
+A **Mentés másként** funkció a következőképpen szabályozható:
 
-1. Ha az alkalmazásának [integrált "Mentés másként" vezérlők](app-sdk-android.md#example-determine-if-saving-to-device-or-cloud-storage-is-permitted)állítsa be **"Mentés másként" tiltása** való **Igen**.
-2. Erősítse meg a következő feltételeknek:
-    - Mentse a csak a megfelelő felügyelt helyekre korlátozódik.
+1. Ha az alkalmazáshoz [integrált "Mentés másként" vezérlők](app-sdk-android.md#example-determine-if-saving-to-device-or-cloud-storage-is-permitted)szükségesek, állítsa a **"Mentés másként"** beállítást **Igen**értékre.
+2. Erősítse meg a következő feltételeket:
+    - A mentés csak a megfelelő felügyelt helyekre korlátozódik.
 
-### <a name="file-encryption"></a>Fájlok titkosítása
-Az eszközön tárolt adatok módon titkosíthatók:
+### <a name="file-encryption"></a>Fájl titkosítása
+Az eszközön tárolt adatai a következőképpen titkosíthatók:
 
-1. Állítsa be **titkosítja az alkalmazásadatokat** való **Igen**.
-2. Erősítse meg a következő feltételeknek:
-    - Ez nem érinti a normál alkalmazási viselkedését.
+1. Állítsa az **alkalmazásadatok titkosítása** **Igen**értékre.
+2. Erősítse meg a következő feltételeket:
+    - A normál alkalmazás viselkedése nincs hatással.
 
-### <a name="prevent-android-backups"></a>Android-biztonsági mentések tiltása
-Alkalmazás biztonsági másolatának módon lehet szabályozni:
+### <a name="prevent-android-backups"></a>Androidos biztonsági mentések tiltása
+Az alkalmazások biztonsági mentését az alábbiak szerint vezérelheti:
 
-1. Ha meg van [integrált biztonsági korlátozások](app-sdk-android.md#protecting-backup-data), konfigurálja **megakadályozása Android-biztonsági mentések** való **Igen**.
-2. Erősítse meg a következő feltételeknek:
-    - Biztonsági másolatok korlátozva.
+1. Ha [integrált biztonsági mentési korlátozásokat](app-sdk-android.md#protecting-backup-data)állított be, az **androidos biztonsági mentések letiltása** **Igen**értékre állítható.
+2. Erősítse meg a következő feltételeket:
+    - A biztonsági mentések korlátozottak.
 
-### <a name="unenrollment"></a>Regisztráció törlésének
-Távolról törölhetik a vállalati e-mailek és dokumentumok tartalmazó felügyelt alkalmazásokat, és a személyes adatok visszafejtése, amikor már nem felügyelt módon:
+### <a name="unenrollment"></a>Törlésének
+Távolról törölheti a vállalati e-maileket és dokumentumokat tartalmazó felügyelt alkalmazásokat, és a rendszer visszafejti a személyes adatait, ha az már nem az alábbiak szerint van kezelve:
 
-1. Az Azure Portalról [adja ki a Törlés](https://docs.microsoft.com/intune/apps-selective-wipe).
-2. Ha az alkalmazás nem regisztrálható minden törlési kezelők erősítse meg a következő feltételeknek:
-    - Az alkalmazás teljes törlést akkor fordul elő.
-3. Ha az alkalmazás regisztrálva van `WIPE_USER_DATA` vagy `WIPE_USER_AUXILARY_DATA`, erősítse meg a következő feltételeknek:
-    - A felügyelt tartalomra el lesznek távolítva az alkalmazásból. További információkért lásd: [Intune App SDK for Android fejlesztői útmutató – szelektív Törlés](app-sdk-android.md#selective-wipe).
+1. A Azure Portal [kiadja a törlést](apps-selective-wipe.md).
+2. Ha az alkalmazás nem regisztrálja az összes törlési kezelőt, erősítse meg a következő feltételeket:
+    - Az alkalmazás teljes törlése történik.
+3. Ha az alkalmazás regisztrálva van `WIPE_USER_DATA` a `WIPE_USER_AUXILARY_DATA`(z) vagy rendszerhez, ellenőrizze a következő feltételeket:
+    - A felügyelt tartalom el lesz távolítva az alkalmazásból. További információ: [az Androidhoz készült Intune app SDK Fejlesztői útmutatója – szelektív törlés](app-sdk-android.md#selective-wipe).
 
 ### <a name="multi-identity"></a>Többszörös identitás
-Integrálás [többszörös identitást támogató](app-sdk-android.md#multi-identity-optional) magas kockázatú módosítják, hogy alaposan tesztelni kell. A leggyakoribb problémák miatt nem megfelelő beállítást az identitás (környezet és a fenyegetettségi szint) és a is nyomon követi, fájlok lesznek (`MAMFileProtectionManager`).
+A [többszörös identitás támogatásának](app-sdk-android.md#multi-identity-optional) integrálása magas kockázatú változás, amelyet alaposan meg kell vizsgálni. A leggyakoribb problémák az identitás helytelen beállítása (a környezeti és a veszélyforrások szintjén), valamint a fájlok (`MAMFileProtectionManager`) követése miatt is.
 
-A többszörös identitást a következő esetekben minimálisan kell ellenőrizhető:
+A többszörös identitásra vonatkozó következő forgatókönyvek minimálisra kell, hogy legyenek újra érvényesítve:
 
-- **Mentés másként** házirend a felügyelt identitásokból megfelelően működik.
-- Másolás és beillesztés korlátozások érvényben vannak megfelelően a személyes felügyelt.
-- Csak a felügyelt identitáshoz tartozó adatokat titkosítjuk, és a személyes fájlokat nem módosulnak.
-- Regisztráció törlésének során szelektív törlés csak eltávolítja a felügyelt identitás adatait.
-- A rendszer felszólítja a végfelhasználót a feltételes indítási felügyeltről felügyelt fiók (csak az első alkalommal) való módosításakor.
+- A **Mentés másként** házirend megfelelően működik a felügyelt identitások esetében.
+- A másolási beillesztési korlátozásokat a rendszer megfelelően kikényszeríti a személyes felügyeletre.
+- Csak a felügyelt identitáshoz tartozó adatok titkosítottak, és a személyes fájlok nem módosulnak.
+- A regisztráció törlése során a szelektív törlés csak a felügyelt identitások adatait távolítja el.
+- A végfelhasználót a rendszer feltételes indításra kéri a nem felügyelt fiókra történő váltáskor (csak első alkalommal).
 
-### <a name="app-configuration-optional"></a>Alkalmazások konfigurálása (nem kötelező)
-Felügyelt alkalmazások viselkedése, így a következő konfigurálhatja:
+### <a name="app-configuration-optional"></a>Alkalmazás konfigurációja (nem kötelező)
+A felügyelt alkalmazások viselkedését az alábbiak szerint állíthatja be:
 
-1. Ha az alkalmazás minden olyan alkalmazás-konfigurációs beállítást használ fel, tesztelje, hogy az alkalmazás megfelelően kezeli az összes értéket, amely (rendszergazdaként) lehet. [Alkalmazáskonfigurációs szabályzatok](https://docs.microsoft.com/intune/app-configuration-policies-overview) hozhat létre és hozzárendelve az Intune-nal.
+1. Ha az alkalmazás az alkalmazások konfigurációs beállításait használja, tesztelje, hogy az alkalmazás megfelelően kezeli-e az összes olyan értéket, amelyet Ön (rendszergazdaként) be tud állítani. Az [alkalmazás-konfigurációs házirendek](app-configuration-policies-overview.md) létrehozhatók és hozzárendelhetők az Intune használatával.
 
 ## <a name="next-steps"></a>További lépések
 
-- [Android – üzletági alkalmazás hozzáadása a Microsoft Intune](lob-apps-android.md).
+- [Microsoft Intunehez adjon hozzá egy androidos üzletági alkalmazást](lob-apps-android.md).

@@ -14,12 +14,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9f8560262d8c501af4127876eaafed293fbc4041
-ms.sourcegitcommit: b1ddc7f4a3d520b7d6755c7a423a46d1e2548592
+ms.openlocfilehash: 22bee478160347256e7e2fa1422b74ccbead57b9
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69651212"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71167051"
 ---
 # <a name="monitor-intune-device-compliance-policies"></a>Intune-eszközmegfelelőségi szabályzatok figyelése
 
@@ -60,7 +60,7 @@ A jelentések részletes vizsgálata során láthatja az adott eszközre vonatko
 A diagram megmutatja az összes Intune-ban regisztrált eszköz megfelelőségi állapotát. Az eszköz megfelelőségi állapotai két különböző adatbázisban maradnak: Intune és Azure Active Directory. 
 
 > [!IMPORTANT]
-> Az Intune az eszköz összes megfelelőségi értékeléséhez az eszköz beadási ütemtervét követi. [További információ az eszköz](https://docs.microsoft.com/intune/device-profile-troubleshoot#how-long-does-it-take-for-devices-to-get-a-policy-profile-or-app-after-they-are-assigned)beadásának ütemtervéről.
+> Az Intune az eszköz összes megfelelőségi értékeléséhez az eszköz beadási ütemtervét követi. [További információ az eszköz beadásának ütemtervéről](device-profile-troubleshoot.md#how-long-does-it-take-for-devices-to-get-a-policy-profile-or-app-after-they-are-assigned).
 
 A különböző eszközmegfelelőségi szabályzatállapotok leírása:
 
@@ -70,7 +70,7 @@ A különböző eszközmegfelelőségi szabályzatállapotok leírása:
 
   - További információ a [nem megfelelő eszközökre alkalmazható műveletekről](actions-for-noncompliance.md).
 
-- **Nincs**kiértékelve: Az újonnan beléptetett eszközök kezdeti állapota. Ezen állapot további lehetséges okai a következők:
+- **Nincs kiértékelve**: Az újonnan beléptetett eszközök kezdeti állapota. Ezen állapot további lehetséges okai a következők:
 
   - Azok az eszközök, amelyek nem rendelkeznek megfelelőségi szabályzattal, és nem rendelkeznek a megfelelőség ellenőrzéséhez szükséges triggerrel
   - Azok az eszközök, amelyeket nem ellenőriztek a megfelelőségi szabályzat legutóbbi frissítése óta
@@ -154,7 +154,7 @@ Egy adott beállítás kijelölésével megtekinthető a **megfelelőségi álla
 > [!NOTE]
 > Egy házirend hozzárendelhető egy eszközhöz, és az ugyanazon az eszközön található felhasználó. Bizonyos esetekben előfordulhat, hogy az eszköz a felhasználó bejelentkezése előtt szinkronizál, például az eszköz újraindításakor. A megfelelőség kiértékelheti ezt a felhasználót, és nem megfelelőként jelenítheti meg az eszközt. Ez a viselkedés azt is megteheti, hogy a rendszerfiók nem megfelelő felhasználóként jelenik meg.
 >
-> Ez egy ismert probléma a többfelhasználós Windows 10-es eszközökön. A viselkedés változásairól vagy frissítéseiről a [fejlesztés](in-development.md) és/vagy Újdonságok című [](whats-new.md)cikkben van bejelentve.
+> Ez egy ismert probléma a többfelhasználós Windows 10-es eszközökön. A viselkedés változásairól vagy frissítéseiről a [fejlesztés](in-development.md) és [/vagy](whats-new.md)Újdonságok című cikkben van bejelentve.
 
 ## <a name="view-status-of-device-policies"></a>Eszközszabályzatok állapotának megtekintése
 

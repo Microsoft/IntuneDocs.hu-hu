@@ -17,14 +17,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7dff37794d6c58094749821748dcc96a4f36e28a
-ms.sourcegitcommit: 74911a263944f2dbd9b754415ccda6c68dae0759
+ms.openlocfilehash: 0035f8d5cd67a995924f7d07a662d8c0671bf063
+ms.sourcegitcommit: c19584b36448bbd4c8638d7cab552fe9b3eb3408
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71071629"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71163784"
 ---
-# <a name="set-up-intune-enrollment-of-android-enterprise-fully-managed-devices-preview"></a>Az Android Enterprise teljes körűen felügyelt eszközök Intune-regisztrációjának beállítása (előzetes verzió)
+# <a name="set-up-intune-enrollment-of-android-enterprise-fully-managed-devices"></a>Az Android Enterprise teljes körűen felügyelt eszközök Intune-regisztrációjának beállítása 
 
 Az Android Enterprise teljes körűen felügyelt eszközei olyan vállalati tulajdonú eszközök, amelyek egyetlen felhasználóhoz vannak társítva, és kizárólag munkahelyi és nem személyes használatra használatosak. A rendszergazdák kezelhetik a teljes eszközt, és a házirend-vezérlők nem érhetők el a munkahelyi profilok számára, például:
 - Alkalmazások telepítésének engedélyezése csak a felügyelt Google Play áruházból.
@@ -39,7 +39,7 @@ Az Android Enterprise teljes körűen felügyelt eszközeinek felügyeletéhez �
 
 Az eszközöknek meg kell felelniük az alábbi követelményeknek, hogy az Android Enterprise teljes körűen felügyelt eszközként legyenek kezelve:
 
-- Android 5.1 vagy újabb operációs rendszer.
+- Android operációs rendszer 6,0-es vagy újabb verziója.
 - Az eszközöknek a Google Mobile Services (GM) kapcsolattal rendelkező Android-buildet kell futtatniuk. Az eszközöknek el kell érniük a GMS-t, és képesnek kell lenniük a GMS-hez való kapcsolódásra.
 
 Ha a fenti követelmények teljesülnek, az eszköz gyártója vagy OEM-je nem korlátozza a korlátozást.
@@ -55,7 +55,7 @@ Az Android Enterprise teljes körűen felügyelt eszközkezelés beállításáh
 
 ### <a name="enable-corporate-owned-user-devices"></a>Vállalati tulajdonú felhasználói eszközök engedélyezése
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és válassza az **eszközök** > beléptetése**Android-regisztráció** > **vállalat által birtokolt, teljes mértékben felügyelt felhasználói eszközök (előzetes verzió)**
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és válassza az > eszközök regisztrálása**Android-regisztráció** > **vállalat által birtokolt, teljes körűen felügyelt felhasználói eszközöket**.
 2. A **vállalati tulajdonú felhasználói eszközök regisztrálásának engedélyezése a felhasználók**számára területen válassza az **Igen**lehetőséget.
 
 > [!NOTE]
@@ -65,25 +65,6 @@ Ha a beállítás értéke **Igen**, akkor egy beléptetési tokent (egy véletl
 
 ## <a name="enroll-the-fully-managed-devices"></a>A teljes körűen felügyelt eszközök regisztrálása
 Most már [regisztrálhat a teljes körűen felügyelt eszközöket](android-dedicated-devices-fully-managed-enroll.md).
-
-## <a name="considerations-for-this-preview-feature"></a>Az előzetes verzió funkciójának szempontjai
-Ez a nyilvános előzetes verzió az Android Enterprise teljes körűen felügyelt megoldásához tartozó funkciók alapkészletét tartalmazza. Azt szeretnénk, ha az előzetes verziójú funkciókkal az aktuális kommunikációs csatornákkal (például a [UserVoice](https://microsoftintune.uservoice.com/forums/291681-ideas?category_id=210853)) használja a felhasználói élményt.
-
-Ez az előzetes verzió a következő funkciókat támogatja az Android Enterprise teljes körűen felügyelt eszközökhöz:
-- Eszközök beléptetése az NFC, a jogkivonat-bejegyzés, a QR-kód és a Zero Touch használatával
-- Felhasználói csoportok eszköz-konfigurációja
-- Alkalmazás-terjesztés és-konfiguráció felhasználói csoportokhoz
-
-
-Az előzetes verziójú szolgáltatások használatakor tartsa szem előtt a következőket:
-- Az előzetes verzió funkciói nem ajánlottak a kritikus fontosságú vagy éles környezetben üzemelő példányokhoz. 
-- Az előzetes verziójú funkciók Microsoft Intune a termelési szabványok megvalósítására szolgálnak. Azonban nem minden Intune-funkció érhető el az Android Enterprise teljes körűen felügyelt felhasználói eszközeivel. Az előzetes verziójú funkciók egyértelműen az "(előzetes verzió)" címkével rendelkeznek az Intune-konzolon. 
-- Az előzetes verziójú funkciók teljes mértékben támogatottak a szokásos Intune-támogatási csatornákon keresztül.
-- Az Android Enterprise teljes körűen felügyelt, Samsung Knox Mobile-regisztrációt használó eszközök regisztrációja nem támogatott az előzetes verzióban. 
-- A Intune Céges portál alkalmazás használata nem támogatott az Android Enterprise teljes körűen felügyelt eszközökön. 
-- Az Intune funkciói, például a feltételes hozzáférés, az alkalmazás-védelmi szabályzatok és a tanúsítványok telepítése nem támogatott az előzetes verzióban. 
-- Az összes profil vagy alkalmazás eszközcsoport általi célzása nem támogatott az előzetes verzióban. Csak a felhasználói csoportok célzása támogatott. 
-- Az e-mailek, a Wi-Fi és a VPN konfigurálásához nem áll rendelkezésre első osztályú KEZELŐFELÜLET. Alkalmazás-konfigurációs házirendek használatával konfigurálhatja a támogatott alkalmazások konfigurációs beállításait.
 
 ## <a name="next-steps"></a>További lépések
 - [Androidos vállalati teljes körűen felügyelt eszköz konfigurációs szabályzatok hozzáadása](device-restrictions-android-for-work.md#device-owner-only)

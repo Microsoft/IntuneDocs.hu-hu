@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e18279fd9cca88de5f04c57a8bcccce1c211c6de
-ms.sourcegitcommit: 4f3fcc6dcbfe2c4e0651d54a130907a25a4ff66e
+ms.openlocfilehash: 4494d5f75336f7152668cfa1bb6fa1cd1a94305c
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69894333"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71167858"
 ---
 # <a name="create-an-intune-report-from-the-odata-feed-with-power-bi"></a>Intune-jelentés létrehozása a OData-hírcsatornából Power BI
 
@@ -57,7 +57,7 @@ Telepítse a Power BI Desktop legújabb verzióját. Power BI Desktop a követke
 2. Nyissa meg az **Intune** -adattárház panelt az adatraktár hivatkozásának kiválasztásával az **Microsoft Intune – áttekintés** panel jobb oldalán található **egyéb feladatok** területen.
 3. Másolja az egyéni URL-címet. Például:`https://fef.tenant.manage.microsoft.com/ReportingService/DataWarehouseFEService?api-version=beta`
 4. Nyissa meg a Power BI Desktop alkalmazást.
-5. A menüsávon válassza a **fájl** > **adatok** > beolvasása**OData-hírcsatorna**lehetőséget.
+5. A menüsávon válassza a **fájl** >  > **adatok beolvasása** **OData-hírcsatorna**lehetőséget.
 6. Illessze be az egyéni hírcsatorna URL-címét, amelyet a korábbi lépésből másolt be a OData- **hírcsatorna** ablakának URL mezőjébe.
 7. Válassza az **Alapszintű** lehetőséget.
 
@@ -95,7 +95,7 @@ A fatérkép diagramon a hierarchikus adatmezők a mezőkön belül találhatók
 2. A **mezők** ablaktáblán keresse meg a `devices` táblázatot.
 3. Bontsa `devices` ki a táblázatot, `manufacturer` és válassza ki az adatmezőt.
 4. Húzza az `manufacturer` adatmezőt a jelentés vászonra, és dobja el a **fatérkép** diagramon.
-5. Húzza az `deviceKey` adatmezőt a `devices` táblázatból a **vizualizációk** panelre, és az **értékek** szakaszban adja meg az adatmezők **hozzáadása mezőt**.  
+5. Húzza az `deviceKey` adatmezőt a `devices` táblázatból a **vizualizációk** panelre, és az **értékek** szakaszban adja meg az **adatmezők hozzáadása mezőt**.  
 
 Ezzel elkészített egy olyan vizualizációt, amely megmutatja, hogy milyen a szervezetben az eszközök gyártók szerinti eloszlása.
 
@@ -108,7 +108,7 @@ A fatérkép-diagramhoz szűrőt is hozzáadhat, hogy az további kérdésekre i
 1. Szűrő hozzáadásához jelölje ki a jelentés vászonját, majd válassza a **szeletelő ikont** (![fatérkép adatmodellel és támogatott kapcsolatokkal](media/reports-create-slicer.png)) a **vizualizációk**alatt. Ekkor megjelenik az üres **szeletelő** vizualizációja a vásznon.
 2. A **mezők** ablaktáblán keresse meg a `ownerTypes` táblázatot.
 3. Bontsa `ownerTypes` ki a táblázatot, `ownerTypeName` és válassza ki az adatmezőt.
-4. Húzza az `onwerTypeName` adatmezőt a `ownerTypes` táblázatból a **szűrők** panelre, és a **szűrők ezen az oldalon** szakaszban az adatmezők **hozzáadása**feliratú mezőbe.  
+4. Húzza az `onwerTypeName` adatmezőt a `ownerTypes` táblázatból a **szűrők** panelre, és a **szűrők ezen az oldalon** szakaszban az **adatmezők hozzáadása**feliratú mezőbe.  
 
    A `OwnerTypes` táblázat alatt található egy nevű `OwnerTypeKey`adatmező, amely az adott eszköz vállalati tulajdonú vagy személyes adatát tartalmazza. Mivel ebben a szűrőben szeretné megjeleníteni a felhasználóbarát neveket, keresse meg a `ownerTypes` táblázatot, és húzza a **ownerTypeName** a szeletelőbe. Ebből a példából láthatja, hogyan támogatja az adatmodell a táblák közötti kapcsolatokat.
 
@@ -122,4 +122,4 @@ Ezzel létrehozott egy olyan interaktív szűrőt, amelyben egyszerű váltássa
 ## <a name="next-steps"></a>További lépések
 
 - Olvassa el a Power BI dokumentációjában, hogyan [hozhatók létre és hogyan kezelhetők kapcsolatok](https://powerbi.microsoft.com/documentation/powerbi-desktop-create-and-manage-relationships/) a Power BI Desktopban.
-- Ismerkedjen meg az [Intune-adattárház modelljével](https://docs.microsoft.com/intune/reports-ref-data-model).
+- Ismerkedjen meg az [Intune-adattárház modelljével](reports-ref-data-model.md).

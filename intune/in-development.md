@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ab2e258553c049223806ddf199976c84ff6bcba
-ms.sourcegitcommit: 89a973bbfa1702b2d275af6814874e4305bdcb77
+ms.openlocfilehash: 4bd5392abba3ea22127cb9bcbbb53ec4929f2d5e
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71140686"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71166325"
 ---
 # <a name="in-development-for-microsoft-intune---september-2019"></a>Fejlesztés a Microsoft Intune – szeptember 2019
 
@@ -90,7 +90,7 @@ Az alkalmazások az Intune-Graph API az olvasási és írási műveletekkel is m
 Az Intune app Protection-szabályzatok (alkalmazás) Android és iOS rendszerű eszközökön lehetővé teszik a szervezeti fiókok alkalmazás-értesítési tartalmának szabályozását. Ennek a funkciónak támogatásra van szüksége az alkalmazásoktól, és előfordulhat, hogy nem érhető el az összes alkalmazás-kompatibilis alkalmazáshoz. További információ az ALKALMAZÁSról: [Mi az az App Protection-szabályzat?](app-protection-policy.md).
 
 ### <a name="available-google-play-app-reporting-for-android-work-profiles----3041956----"></a>Elérhető Google Play-alkalmazások jelentéskészítése androidos munkahelyi profilokhoz <!-- 3041956  -->
-Az androidos munkahelyi Profilos eszközökön elérhető alkalmazások telepítéséhez megtekintheti az alkalmazás telepítési állapotát és a felügyelt Google Play-alkalmazások telepített verzióját. További információ: [az alkalmazás-védelmi szabályzatok figyelése](app-protection-policies-monitor.md), [androidos munkahelyi profilú eszközök kezelése az Intune](android-enterprise-overview.md) -nal és a [felügyelt Google Play-alkalmazás típusa](apps-add-android-for-work.md#managed-google-play-app-type).
+Az androidos munkahelyi Profilos eszközökön elérhető alkalmazások telepítéséhez megtekintheti az alkalmazás telepítési állapotát és a felügyelt Google Play-alkalmazások telepített verzióját. További információ: [az alkalmazás-védelmi szabályzatok figyelése](app-protection-policies-monitor.md), [androidos munkahelyi profilú eszközök kezelése az Intune](android-enterprise-overview.md) -nal és a [felügyelt Google Play-alkalmazás típusa](apps-add-android-for-work.md#managed-google-play-app-types).
 
 <!-- ***********************************************-->
 ## <a name="device-configuration"></a>Eszközök konfigurálása
@@ -132,7 +132,7 @@ A jövőbeli frissítésekben új beállítások is megadhatók:
 - Hangvezérelt **vezérlés**: Kioszk módban engedélyezheti a hangvezérelt vezérlést az eszközön.
 - **A hangvezéreltség módosítása**: Lehetővé teszi a felhasználók számára, hogy kioszk módban módosítsák az eszköz hangvezérlési beállítását.
 
-Az aktuális beállítások megjelenítéséhez nyissa meg az [iOS kioszk (csak felügyelt) beállításokat](device-restrictions-ios.md#kiosk-supervised-only).
+Az aktuális beállítások megjelenítéséhez nyissa meg az [iOS kioszk (csak felügyelt) beállításokat](device-restrictions-ios.md#kiosk).
 
 Érintett kiadások:
 
@@ -167,7 +167,7 @@ Megadhatja az iTunes alkalmazás-áruház URL-címét `https://itunes.apple.com/
 - `https://itunes.apple.com/us/app/work-folders/id950878067?mt=8`
 - `https://apps.apple.com/us/app/work-folders/id950878067?mt=8`
 
-További információ ezekről a beállításokról: [alkalmazások megjelenítése vagy elrejtése (csak felügyelt](device-restrictions-ios.md#show-or-hide-apps-supervised-only)eszköz esetén).
+További információ ezekről a beállításokról: [alkalmazások megjelenítése vagy elrejtése](device-restrictions-ios.md#show-or-hide-apps).
 
 Érintett kiadások:
 
@@ -191,7 +191,7 @@ Az Android rendszerű eszközök rendszergazdai képességeit az Android Enterpr
 
 A meglévő bérlők semmilyen változást nem fognak tapasztalni a környezetében. 
 
-További információ az Android-eszközök rendszergazdájáról az Intune-ban: [Android-eszközök rendszergazdai regisztrációja](https://docs.microsoft.com/intune/android-enroll-device-administrator).
+További információ az Android-eszközök rendszergazdájáról az Intune-ban: [Android-eszközök rendszergazdai regisztrációja](android-enroll-device-administrator.md).
 
 ### <a name="for-ios-devices-customize-the-enrollment-process-privacy-screen-of-the-company-portal----4394993----"></a>IOS-eszközök esetén szabja testre a beléptetési folyamat adatvédelmi képernyőjét a Céges portál <!-- 4394993  -->
 A Markdown segítségével testre szabhatja a Céges portál adatvédelmi képernyőjét, amelyet a végfelhasználók az iOS-regisztráció során látnak. Pontosabban testreszabhatja azon dolgok listáját, amelyeket a szervezete nem lát vagy tesz az eszközön.

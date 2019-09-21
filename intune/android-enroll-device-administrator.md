@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1dc495e6356a35215943415e03a46496a72bddf1
-ms.sourcegitcommit: 74911a263944f2dbd9b754415ccda6c68dae0759
+ms.openlocfilehash: c8c9375449e55d2e6cac511cb0e279355ec95294
+ms.sourcegitcommit: c19584b36448bbd4c8638d7cab552fe9b3eb3408
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71071051"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71163277"
 ---
 # <a name="android-device-administrator-enrollment"></a>Android-eszköz rendszergazdai regisztrációja
 
@@ -49,8 +49,9 @@ A Google androidos vállalati funkcióival kapcsolatos további információkér
 
 Az Intune alapértelmezés szerint lehetővé teszi az Android-eszközök regisztrálását az eszköz rendszergazdai képességeivel.
 
-1. A mobileszközök kezelésének előkészítéseként a **Microsoft Intune**-t kell beállítani mobileszköz-kezelő (MDM) szolgáltatóként. Erről [Az MDM-szolgáltató beállítása](mdm-authority-set.md) című cikk nyújt útmutatást. Ezt az értéket csak egyszer kell beállítania, amikor első alkalommal állítja be az Intune-t a mobileszköz-kezeléshez
-2. [A felhasználók tájékoztatása arról, hogy miképpen regisztrálhatják az eszközeiket](/intune-user-help/enroll-your-device-in-intune-android).  
+1. A mobileszközök kezelésének előkészítéseként a **Microsoft Intune**-t kell beállítani mobileszköz-kezelő (MDM) szolgáltatóként. Erről [Az MDM-szolgáltató beállítása](mdm-authority-set.md) című cikk nyújt útmutatást. Ezt a beállítást csak egyszer, az Intune-nak a mobileszközök kezelésére való kezdeti beállítása során kell megadni.
+2. Nyissa meg az **Intune** > -**eszközök regisztrációjának** > **Android-regisztrációja** > **személyes és vállalati tulajdonú eszközök eszköz-felügyeleti jogosultságok** > **használata eszközt az eszközök felügyeletére szolgáló rendszergazda**.
+3. [A felhasználók tájékoztatása arról, hogy miképpen regisztrálhatják az eszközeiket](/intune-user-help/enroll-your-device-in-intune-android).  
 
 Miután a felhasználó elvégezte a regisztrálást, elkezdheti az eszközeik felügyeletét az Intune-ban, így többek között [megfelelőségi szabályzatokat rendelhet hozzájuk](compliance-policy-create-android.md) vagy [felügyelheti az alkalmazásokat](app-management.md).
 

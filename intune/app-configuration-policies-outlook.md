@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 14eded43200aed7e9ebf4454bcde61133351e4e2
-ms.sourcegitcommit: 76d59edfd5900ce33c64470ae604eb3db016c8ca
+ms.openlocfilehash: d6fe60cf53f88186448cd9586d5c75fca4d517ad
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69979201"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71167390"
 ---
 # <a name="microsoft-outlook-configuration-settings"></a>A Microsoft Outlook konfigurációs beállításai 
 
@@ -30,7 +30,7 @@ Regisztrált eszközök esetén:
 - Alkalmazáskonfigurációs szabályzat felügyelt iOS-eszközökhöz történő létrehozásával kapcsolatban lásd: [Alkalmazáskonfigurációs szabályzatok hozzáadása felügyelt iOS-eszközökhöz](app-configuration-policies-use-ios.md). 
 - Alkalmazáskonfigurációs szabályzat felügyelt androidos eszközökhöz történő létrehozásával kapcsolatban lásd: [Alkalmazáskonfigurációs szabályzatok hozzáadása felügyelt Android-eszközökhöz](app-configuration-policies-use-android.md). 
 
-A nem regisztrált eszközök esetében lásd: [alkalmazás-konfigurációs szabályzatok hozzáadása a felügyelt alkalmazásokhoz eszközök regisztrációja nélkül](https://docs.microsoft.com/intune/app-configuration-policies-managed-app) az iOS és az Android rendszerhez készült alkalmazás-konfigurációs házirend létrehozásához az Outlookhoz.
+A nem regisztrált eszközök esetében lásd: [alkalmazás-konfigurációs szabályzatok hozzáadása a felügyelt alkalmazásokhoz eszközök regisztrációja nélkül](app-configuration-policies-managed-app.md) az iOS és az Android rendszerhez készült alkalmazás-konfigurációs házirend létrehozásához az Outlookhoz.
 
 ## <a name="configuration-settings"></a>Konfigurációs beállítások
 

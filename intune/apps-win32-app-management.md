@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 452602ee98378ecd61ee0cfae8eb16f7fb69cb42
-ms.sourcegitcommit: 89a973bbfa1702b2d275af6814874e4305bdcb77
+ms.openlocfilehash: 22cf93aa7418e5e8be2338e70f762a451bb3bdcf
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71140760"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71167143"
 ---
 # <a name="intune-standalone---win32-app-management"></a>Önálló Intune – Win32-alkalmazások kezelése
 
@@ -280,7 +280,7 @@ Az alábbi lépések útmutatást nyújtanak a Windows-alkalmazások Intune-hoz 
 7. A **Csoport hozzáadása** panelen kattintson az **OK** gombra.
 8. Az alkalmazás **Hozzárendelések** ablaktábláján kattintson a **Mentés** gombra.
 
-Ekkor elvégezte a Win32-alkalmazások Intune-hoz való hozzáadásának lépéseit. Az alkalmazás-hozzárendeléssel és monitorozással kapcsolatos további információ: [Alkalmazások hozzárendelése csoportokhoz a Microsoft Intune-nal](https://docs.microsoft.com/intune/apps-deploy) és [Alkalmazásadatok és -hozzárendelések figyelése a Microsoft Intune-ban](https://docs.microsoft.com/intune/apps-monitor).
+Ekkor elvégezte a Win32-alkalmazások Intune-hoz való hozzáadásának lépéseit. Az alkalmazás-hozzárendeléssel és monitorozással kapcsolatos további információ: [Alkalmazások hozzárendelése csoportokhoz a Microsoft Intune-nal](apps-deploy.md) és [Alkalmazásadatok és -hozzárendelések figyelése a Microsoft Intune-ban](apps-monitor.md).
 
 ## <a name="app-dependencies"></a>Alkalmazás függőségei
 

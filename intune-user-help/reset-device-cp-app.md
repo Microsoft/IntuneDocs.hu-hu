@@ -1,6 +1,6 @@
 ---
-title: Az Intune céges portál alkalmazás eszköz alaphelyzetbe állítása |} A Microsoft Docs
-description: Az eszköz gyári beállításainak visszaállítása a vállalati portál Windows 10-es.
+title: Eszköz alaphelyzetbe állítása Intune Céges portál alkalmazásból | Microsoft Docs
+description: Állítsa alaphelyzetbe az eszközt a gyári beállításokból a Windows 10-es Céges portál.
 keywords: ''
 author: lenewsad
 ms.author: lanewsad
@@ -18,34 +18,35 @@ ms.reviewer: jieyang
 ms.suite: ems
 ms.custom: intune-enduser; intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 882248261f4386a8191067a0e8533c4c24fc2a5b
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: e5aff186d3850e8f9a6081168a5adc9956504019
+ms.sourcegitcommit: c19584b36448bbd4c8638d7cab552fe9b3eb3408
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61504400"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71163343"
 ---
-# <a name="reset-device-from-the-company-portal-app"></a>Alaphelyzetbe állíthatja az eszközt a céges portál alkalmazásból  
+# <a name="reset-device-from-the-company-portal-app"></a>Eszköz alaphelyzetbe állítása a Céges portál alkalmazásból  
 
-Használt, elveszett vagy ellopott eszköz gyári beállításainak visszaállítása a céges portál alkalmazásból.  
+Egy használt, elveszett vagy ellopott eszköz visszaállítása a gyári beállításokra a Céges portál alkalmazásból.  
 
-Ha alaphelyzetbe állít egy eszközt, többé nem jelenik a céges portál. A meglévő alkalmazások és fájlok törlődnek, és visszaállítja a out-of-box beállítások.  
+Az eszköz alaphelyzetbe állítása után már nem fog megjelenni Céges portálban. A rendszer törli a meglévő alkalmazásokat és fájlokat, és visszaállítja a beépített beállításokra.  
 
-1. A céges portál megnyitása.  
-2. A **Eszközeim**, válassza ki az eszközt vissza szeretné állítani.   
 
-    ![Példa Képernyőkép a céges portál alkalmazást, a kezdőképernyőn, kiemelve az Eszközeim szakasz.](./media/1802-cp-app-windows-home.png)  
+1. Nyissa meg Céges portál.  
+2. Az **eszközök**területen válassza ki az alaphelyzetbe állítani kívánt eszközt.   
 
-3. Az a **eszközadatok** képernyőn válassza ki a **Továbbiak** menü.  
+    ![Példa a Céges portál alkalmazás, a kezdőképernyő, a saját eszközök kiemelése szakasz képernyőképére.](./media/1802-cp-app-windows-home.png)  
 
-    ![Példa Képernyőkép a céges portál alkalmazást, az eszköz részletek képernyő, lásd: kiemelése további menü.](./media/1802-cp-app-windows-device-details.png)  
+3. Az **eszköz részletei** képernyőn válassza a **továbbiak** lehetőséget.  
+
+    ![Példa a Céges portál alkalmazásra, az eszköz részletei képernyőre, és válassza a továbbiak menüt.](./media/1802-cp-app-windows-device-details.png)  
 
 4. Válassza az **Alaphelyzetbe állítás** lehetőséget.  
 
-     ![Példa Képernyőkép a céges portál alkalmazást, az eszközadatok képernyőjére lép, kiemelve a visszaállítási művelet. ](./media/1802-cp-app-windows-device-details-reset.png)  
+     ![Példa a Céges portál alkalmazás, eszköz részletei képernyő, az alaphelyzetbe állítási művelet kiemelése elemre. ](./media/1802-cp-app-windows-device-details-reset.png)  
 
-5. Amikor a rendszer kéri, erősítse meg, válassza ki a **alaphelyzetbe**. Az eszköz alaphelyzetbe állítja saját maga.  
+5. Amikor a rendszer felszólítja a megerősítésre, válassza a **visszaállítás**lehetőséget. Az eszköz alaphelyzetbe áll.  
 
-     ![Példa Képernyőkép a céges portál alkalmazást, alaphelyzetbe állítása megerősítő üzenetet, kiemelve a Visszaállítás gombra. ](./media/1802-cp-app-windows-reset-confirm.png)  
+     ![Példa a Céges portál alkalmazás képernyőképére, a megerősítő üzenet visszaállítása, az Alaphelyzetbe állítás gomb kiemelése gombra. ](./media/1802-cp-app-windows-reset-confirm.png)  
 
 További segítségre van szüksége? Forduljon a cég informatikai támogatásához. Az elérhetőségét keresse meg a [Vállalati portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).  

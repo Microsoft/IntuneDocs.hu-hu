@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 527d71f0e48627498b05af8ee497579c648d3156
-ms.sourcegitcommit: ec22a186a9cfa489a8490698e387624e480892d8
+ms.openlocfilehash: 8d6f0182fed362cba1e4c383ac6b4e083b6baa8e
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68960555"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71167159"
 ---
 # <a name="microsoft-intune-app-sdk-for-android-developer-guide"></a>A Microsoft Intune App SDK Androidon – útmutató fejlesztőknek
 
@@ -707,7 +707,7 @@ Szükség esetén a szolgáltató is megadható.
 
 Regisztrálnia kell az alkalmazást az Azure AD-ben, és hozzáférést kell adnia az alkalmazásnak az alkalmazás-védelmi házirend szolgáltatáshoz:
 * Az alkalmazások Azure AD-ban való regisztrálásáról [itt](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications) találhat információt.
-* Győződjön meg arról, hogy a lépéseket követve megadhatja az Android-alkalmazás engedélyeit az App Protection-házirend (alkalmazás) szolgáltatáshoz. Az [első lépések az INTUNE SDK](https://docs.microsoft.com/intune/app-sdk-get-started#next-steps-after-integration) -útmutatóban című témakör útmutatását követve adja meg az alkalmazás hozzáférését az Intune app Protection szolgáltatáshoz (nem kötelező). 
+* Győződjön meg arról, hogy a lépéseket követve megadhatja az Android-alkalmazás engedélyeit az App Protection-házirend (alkalmazás) szolgáltatáshoz. Az [első lépések az INTUNE SDK](app-sdk-get-started.md#next-steps-after-integration) -útmutatóban című témakör útmutatását követve adja meg az alkalmazás hozzáférését az Intune app Protection szolgáltatáshoz (nem kötelező). 
 
 Lásd emellett alább a [Feltételes hozzáférés](#conditional-access) követelményeit.
 
@@ -723,18 +723,18 @@ Az Authority és a NonBrokerRedirectURI megadható szükséges esetén.
 
 ### <a name="conditional-access"></a>Feltételes hozzáférés
 
-A feltételes hozzáférés egy Azure Active Directorybeli [szolgáltatás](https://docs.microsoft.com/azure/active-directory/develop/active-directory-conditional-access-developer), mellyel vezérelheti az AAD-erőforrások elérését. [Az Intune-rendszergazdák definiálhatnak feltételes hozzáférési szabályokat](https://docs.microsoft.com/intune/conditional-access), melyekkel az erőforrások elérését az Intune által felügyelt eszközökre és alkalmazásokra korlátozhatják. Kövesse az alábbi lépéseket annak biztosításához, hogy az alkalmazása el tudja érni a szükséges erőforrásokat. Ha az alkalmazása nem szerez be egyetlen AAD-hozzáférési tokent sem, vagy ha csak feltételes hozzáféréssel nem védhető erőforrásokhoz fér hozzá, akkor kihagyhatja ezeket a lépéseket.
+A feltételes hozzáférés egy Azure Active Directorybeli [szolgáltatás](https://docs.microsoft.com/azure/active-directory/develop/active-directory-conditional-access-developer), mellyel vezérelheti az AAD-erőforrások elérését. [Az Intune-rendszergazdák definiálhatnak feltételes hozzáférési szabályokat](conditional-access.md), melyekkel az erőforrások elérését az Intune által felügyelt eszközökre és alkalmazásokra korlátozhatják. Kövesse az alábbi lépéseket annak biztosításához, hogy az alkalmazása el tudja érni a szükséges erőforrásokat. Ha az alkalmazása nem szerez be egyetlen AAD-hozzáférési tokent sem, vagy ha csak feltételes hozzáféréssel nem védhető erőforrásokhoz fér hozzá, akkor kihagyhatja ezeket a lépéseket.
 
 1. Kövesse az [ADAL-integráció irányelveit](https://github.com/AzureAD/azure-activedirectory-library-for-android#how-to-use-this-library). 
    Fordítson különös figyelmet a 11. lépésben ismertetett közvetítőhasználatra.
 2. [Regisztrálja az alkalmazását az Azure Active Directoryban] (https://docs.microsoft.com/azure/active-directory/active-directory-app-registration). 
    Az átirányítási URI-t megtalálhatja a fentebb hivatkozott ADAL-integrációs irányelvekben.
 3. Állítsa be a jegyzékfájl metaadat-paramétereit az [Általános ADAL-konfigurációk](#common-adal-configurations) szerint (2. elem, fentebb).
-4. Tesztelje a konfiguráció helyességét. Ehhez engedélyezze az [eszközalapú feltételes hozzáférést](https://docs.microsoft.com/intune/conditional-access-intune-common-ways-use) az [Azure Portalon](https://portal.azure.com/#blade/Microsoft_Intune_DeviceSettings/ExchangeConnectorMenu/aad/connectorType/2), és bizonyosodjon meg a következőkről:
+4. Tesztelje a konfiguráció helyességét. Ehhez engedélyezze az [eszközalapú feltételes hozzáférést](conditional-access-intune-common-ways-use.md) az [Azure Portalon](https://portal.azure.com/#blade/Microsoft_Intune_DeviceSettings/ExchangeConnectorMenu/aad/connectorType/2), és bizonyosodjon meg a következőkről:
     - Hogy az alkalmazásába való bejelentkezéskor a rendszer kéri a Céges portál telepítését és regisztrálását.
     - Hogy a regisztrálás után sikeresen befejeződik az alkalmazásába való bejelentkezés.
-5. Miután az alkalmazás beszállította az Intune app SDK- msintuneappsdk@microsoft.com integrációt, vegye fel a kapcsolatot a jóváhagyott alkalmazások listájával az [alkalmazás-alapú feltételes hozzáféréshez](https://docs.microsoft.com/intune/conditional-access-intune-common-ways-use#app-based-conditional-access)
-6. Miután az alkalmazását hozzáadtuk a jóváhagyott alkalmazások listájához, ellenőrizze a rendszer működését. Ehhez [konfigurálja az alkalmazásalapú feltételes hozzáférést](https://docs.microsoft.com/intune/app-based-conditional-access-intune-create), és győződjön meg róla, hogy az alkalmazásába való bejelentkezés sikeresen befejeződik.
+5. Miután az alkalmazás beszállította az Intune app SDK- msintuneappsdk@microsoft.com integrációt, vegye fel a kapcsolatot a jóváhagyott alkalmazások listájával az [alkalmazás-alapú feltételes hozzáféréshez](conditional-access-intune-common-ways-use.md#app-based-conditional-access)
+6. Miután az alkalmazását hozzáadtuk a jóváhagyott alkalmazások listájához, ellenőrizze a rendszer működését. Ehhez [konfigurálja az alkalmazásalapú feltételes hozzáférést](app-based-conditional-access-intune-create.md), és győződjön meg róla, hogy az alkalmazásába való bejelentkezés sikeresen befejeződik.
 
 ## <a name="app-protection-policy-without-device-enrollment"></a>Eszközregisztráció nélküli alkalmazásvédelmi szabályzat
 
@@ -1370,7 +1370,7 @@ Az `onMAMIdentitySwitchRequired` metódus hívandó az összes implicit identit�
 
   * Az identitásváltás blokkolásakor az eredmény ugyanaz lesz, mint amikor a `Receive` megosztási beállítások tiltják le az adatok beérkezését.
 
-  * Ha egy szolgáltatás a főszálon fut, akkor `reportIdentitySwitchResult` szinkron módon kell meghívni, vagy a felhasználói felületi szál nem válaszol.
+  * Ha egy szolgáltatás a főszálon fut, akkor `reportIdentitySwitchResult` szinkron **módon kell** meghívni, vagy a felhasználói felületi szál nem válaszol.
 
   * A **`Activity`** létrehozáselőtt`onMAMCreate`a rendszer a következőt fogja hívni:. `onMAMIdentitySwitchRequired` Ha az alkalmazásnak felhasználói felületet kell megjelenítenie annak megállapításához, hogy engedélyezhető-e az identitásváltás, akkor az adott felhasználói felületet *egy másik* tevékenységgel kell megjeleníteni.
 
@@ -1639,7 +1639,7 @@ Az alapértelmezett szelektív törlés automatikusan lezárta az alkalmazást, 
 
 
 ## <a name="enabling-mam-targeted-configuration-for-your-android-applications-optional"></a>Célzott MAM-konfiguráció engedélyezése Android-alkalmazásokhoz (nem kötelező)
-Az alkalmazás-specifikus kulcs-érték párok az Intune-konzolon konfigurálhatók a [MAM-We](https://docs.microsoft.com/intune/app-configuration-policies-managed-app) és az [Android munkahelyi profil alkalmazásaihoz](https://docs.microsoft.com/intune/app-configuration-policies-use-android).
+Az alkalmazás-specifikus kulcs-érték párok az Intune-konzolon konfigurálhatók a [MAM-We](app-configuration-policies-managed-app.md) és az [Android munkahelyi profil alkalmazásaihoz](app-configuration-policies-use-android.md).
 A kulcs-érték párokat az Intune nem értelmezi, hanem továbbadja az alkalmazásnak. Azon alkalmazások, amelyek ilyen konfigurációt kívánnak kapni, a `MAMAppConfigManager` és `MAMAppConfig` osztályokat használhatják ehhez. Ha több szabályzat ugyanazon alkalmazást célozza, valószínűleg több ütköző érték érhető el ugyanazon kulcshoz.
 
 > [!NOTE] 
@@ -1673,7 +1673,7 @@ Az alkalmazás konfigurációja egy új értesítéstípust ad hozzá:
 ### <a name="further-reading"></a>További olvasnivalók
 További információ a Graph API funkcióiról: [Graph API-segédlet](https://developer.microsoft.com/graph/docs/concepts/overview). <br>
 
-A célzott MAM-alkalmazáskonfigurációs szabályzat Android rendszerben való létrehozásáról lásd [A Microsoft Intune alkalmazáskonfigurációs szabályzatainak használata Android rendszerben](https://docs.microsoft.com/intune/app-configuration-policies-use-android) célzott MAM-alkalmazáskonfigurációról szóló szakaszát.
+A célzott MAM-alkalmazáskonfigurációs szabályzat Android rendszerben való létrehozásáról lásd [A Microsoft Intune alkalmazáskonfigurációs szabályzatainak használata Android rendszerben](app-configuration-policies-use-android.md) célzott MAM-alkalmazáskonfigurációról szóló szakaszát.
 
 ## <a name="style-customization-optional"></a>Stílus testreszabása (nem kötelező)
 

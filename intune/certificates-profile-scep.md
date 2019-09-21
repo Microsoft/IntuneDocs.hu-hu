@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 09/03/2019
+ms.date: 09/19/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0e553229530f826ead91be981ff446b7cb3ebbf2
-ms.sourcegitcommit: 7269abaefb2857bc8b343896bb2138bdb01bf8dc
+ms.openlocfilehash: a9091b4623e456f5b00134542282b2032ce70e6a
+ms.sourcegitcommit: c19584b36448bbd4c8638d7cab552fe9b3eb3408
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70214279"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71163737"
 ---
 # <a name="create-and-assign-scep-certificate-profiles-in-intune"></a>SCEP-tanúsítványok létrehozása és társítása az Intune-ban
 
@@ -38,9 +38,19 @@ Miután [konfigurálta az infrastruktúrát](certificates-scep-configure.md) a e
 3. Adja meg az SCEP-tanúsítványprofil **nevét** és **leírását**.
 4. A **platform** legördülő listából válassza ki a SCEP-tanúsítvány [támogatott eszköz-platformját](certificates-configure.md#supported-platforms-and-certificate-profiles) . 
 5. A **Profil típusa** legördülő listában válassza az SCEP- **tanúsítvány**lehetőséget.  
+   
+   Az **Android Enterprise** platform esetében a *Profil típusa* két kategóriára oszlik, csak az *eszköz tulajdonosára* és a *munkahelyi profilra*. Ügyeljen arra, hogy a felügyelt eszközökhöz a megfelelő SCEP-tanúsítványt adja meg.  
 
-   > [!NOTE]  
-   > Az **Android Enterprise** platform esetében a *Profil típusa* két kategóriára oszlik: Csak az *eszköz tulajdonosa* és a *munkahelyi profil*.  A SCEP csak *munkahelyi profil*esetén támogatottak.
+   Az *eszköz tulajdonosi* profiljához tartozó SCEP a következő korlátozások vonatkoznak:  
+
+   1. A következő változók nem támogatottak:  
+
+      - CN = {{OnPrem_Distinguished_Name}}  
+      - CN = {{onPremisesSamAccountName}}  
+
+   2. A figyelés alatt a tanúsítvány-jelentéskészítés nem érhető el az eszköz tulajdonosának SCEP.
+   
+   3. Az Intune-ban az SCEP-tanúsítvány profiljai által kiépített tanúsítványok visszavonása nem támogatott, de egy külső folyamaton vagy közvetlenül a hitelesítésszolgáltatón keresztül is kezelhető.
 
 6. Válassza a **Beállítások**lehetőséget, majd hajtsa végre a következő konfigurációkat:
 

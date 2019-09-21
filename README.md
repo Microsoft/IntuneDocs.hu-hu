@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 1c716f48a46e4fd2dc24d203426c364dd4cd88c0
-ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
+ms.openlocfilehash: 8d76ff182ea4402b6a4cd3242b15288d8bea16b9
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67545231"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71166464"
 ---
 ## <a name="microsoft-open-source-code-of-conduct"></a>A Microsoft nyílt forráskódra vonatkozó viselkedési szabályzata
 
@@ -16,30 +16,30 @@ További információt talál a [Viselkedési szabályzat – gyakori kérdések
 Ön a GitHub-adattárak egyikére talált rá, amelyek a Microsoft Cloud and Enterprise részlegének központi technikai jellegű webhelyén, a [https://docs.microsoft.com](https://docs.microsoft.com/.) oldalon közzétett tartalom forrását tárolják.
 
 ## <a name="contribute-to-your-documentation"></a>Közreműködés a dokumentáció írásában
-Hogy **szeretné és a hozzájárulások ösztönzése** az közösségi (felhasználók, ügyfelek, partnerek, más planets ismerősök) és a Microsoft-alkalmazottak számára a dokumentációjában javítása érdekében. Adunk néhány tippet:
+A közösségi (felhasználók, ügyfelek, partnerek, barátok más bolygókon) és a Microsoft alkalmazottai által a dokumentáció tökéletesítéséhez való **hozzájárulást szeretnénk és bátorítani** . Adunk néhány tippet:
 
-* **GitHub-fiók létrehozása**: Regisztráció az ingyenes, [GitHub.com](https://www.github.com).
+* **GitHub-fiók létrehozása**: A regisztráció ingyenes a [GitHub.com](https://www.github.com)címen.
 
-* **A böngészőjében**: Két lehetőség érhető el: 
+* **Böngésző használata**: Két lehetőség érhető el: 
 
-    **1. lehetőség: Közvetlenül a dics.Microsoft szerkesztése**  
-    1. Nyissa meg a témakör, például [ https://docs.microsoft.com/intune/troubleshoot-policies-in-microsoft-intune ](https://docs.microsoft.com/intune/troubleshoot-policies-in-microsoft-intune). 
-    2. Válassza ki **szerkesztése** (jobb felső). A markdown-fájlban szerepel a GitHub-adattárban.
-    3. Kattintson a ceruza ikonra. Ha a ceruza ikon fölé viszi, látni fogja a **szerkessze a fájlt** elemleírást. 
-    4. Hajtsa végre a módosításokat, majd **véglegesítési** a módosításokat. 
-    5. A lekéréses kérelem létrehozása.
+    **1. lehetőség: Szerkesztés közvetlenül a docs.microsoft.com**  
+    1. Ugorjon a témakörre, például [https://docs.microsoft.com/intune/troubleshoot-policies-in-microsoft-intune](troubleshoot-policies-in-microsoft-intune.md):. 
+    2. Válassza a **Szerkesztés** lehetőséget (a jobb felső sarokban). Ez a Markdown-fájlt mutatja a GitHub-tárházban.
+    3. Válassza a ceruza ikont. Ha a ceruza ikon fölé viszi a kurzort, megjelenik a **fájl szerkesztése** elemleírás. 
+    4. Végezze el a módosításokat, majd **véglegesítse** a módosításokat. 
+    5. Hozza létre a pull-kérelmet.
     
-    **2. lehetőség: Keresse meg a cikket a tárházban, és frissítése**  
-    1. A legtöbb témakörök szerepelnek `https://github.com/MicrosoftDocs/IntuneDocs/tree/master/intune`. Ebben a mappában, keresse meg a témakör nevét, például `troubleshoot-policies-in-microsoft-intune`. 
-    2. Válassza ki a hivatkozást, és kattintson a ceruza ikonra. Ha a ceruza ikon fölé viszi, látni fogja a **szerkessze a fájlt** elemleírást. 
-    3. Hajtsa végre a módosításokat, majd **véglegesítési** a módosításokat. 
-    4. A lekéréses kérelem létrehozása. 
+    **2. lehetőség: A tárházban található cikk megkeresése és frissítése**  
+    1. A legtöbb témakör a `https://github.com/MicrosoftDocs/IntuneDocs/tree/master/intune`-ban található. Ebben a mappában keresse meg a témakör nevét, például `troubleshoot-policies-in-microsoft-intune`:. 
+    2. Válassza ki a hivatkozást, és kattintson a ceruza ikonra. Ha a ceruza ikon fölé viszi a kurzort, megjelenik a **fájl szerkesztése** elemleírás. 
+    3. Végezze el a módosításokat, majd **véglegesítse** a módosításokat. 
+    4. Hozza létre a pull-kérelmet. 
 
   Amikor frissít egy cikket, a rendszer kérheti arra, hogy fogadja el a licencszerződést. Ezt a műveletet egyszer kell elvégezni. Ezzel a GitHub-profillal a jövőbeli változtatásoknál már nem lesz szükség a szerződés újbóli elfogadására. 
   
-  Az értéket a `author` metaadatok (az összes többi témakör tetején) a GitHub-Szerző sorolja fel. Az a `troubleshoot-policies-in-microsoft-intune` példában láthatja `MandiOhlinger`. A lekéréses kérelemben, akkor is is említik (@*authorValue*) a szerző tetszés szerint.
+  A `author` metaadatok (az egyes témakörök tetején) lévő érték a GitHub-szerzőt sorolja fel. A `troubleshoot-policies-in-microsoft-intune` példában látható `MandiOhlinger`. A lekéréses kérelemben a szerzőt (@*authorValue*) is megemlítheti, ha szeretné.
   
-* **MSFT alkalmazottak**: Miután létrehozott egy GitHub-fiókra, csatolása Microsoftos e-mail-címéhez. Összekapcsolt fiók esetén nincs szükség a licencszerződés elfogadására ahhoz, hogy frissíthesse a tartalmakat. lépések:
+* **MSFT-alkalmazottak**: Miután létrehozta a GitHub-fiókot, kapcsolja össze a Microsoft e-mail-címével. Összekapcsolt fiók esetén nincs szükség a licencszerződés elfogadására ahhoz, hogy frissíthesse a tartalmakat. Lépéseket
 
   1. Vállalati hálózathoz kapcsolt eszköz használata esetén nyissa meg a [GitHub-fiók beállítása](https://review.docs.microsoft.com/en-us/help/contribute/contribute-get-started-setup-github?branch=master) oldalt. Ha az eszköz nincs a vállalati hálózathoz csatlakoztatva, a hivatkozás 404-es hibakóddal tér vissza.
   
@@ -54,5 +54,5 @@ Hogy **szeretné és a hozzájárulások ösztönzése** az közösségi (felhas
 ## <a name="use-markdown-to-format-your-topic"></a>A tartalom formázása Markdown-szintaxis használatával
 Ebben a kódtárban minden cikk GitHub-stílusú Markdown-jelöléseket használ. Kezdésként a következő forrásokat ajánljuk:
 
-* [A markdown alapjai](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
-* [Nyomtatható markdown-puska](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
+* [Markdown alapjai](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
+* [Nyomtatható Markdown súgókártya](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)

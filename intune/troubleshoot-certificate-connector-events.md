@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8a282662032fe77cbf39da279c587bff31ad9e24
-ms.sourcegitcommit: cf40f641af4746a1e34edd980dc6ec96fd040126
+ms.openlocfilehash: 682d51269798dff181a3bd8384268da862118a70
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70129554"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71167759"
 ---
 # <a name="intune-certificate-connector-events-and-diagnostic-codes"></a>Intune tanúsítvány-összekötő eseményei és diagnosztikai kódok
 
@@ -60,7 +60,7 @@ A 6.1806.x.x verziótól kezdődően az Intune Connector Service naplózza az es
 | -------------   | -------------   | -------------      |
 | 0x00000000 | Siker  | Siker |
 | 0x00000400 | PKCS_Issue_CA_Unavailable  | A hitelesítésszolgáltató érvénytelen vagy elérhetetlen. Győződjön meg róla, hogy a hitelesítésszolgáltató elérhető, és hogy a kiszolgálója tud kommunikálni vele. |
-| 0x00000401 | Symantec_ClientAuthCertNotFound  | A Symantec Client Auth tanúsítvány nem található meg a helyi tanúsítványtárban. További információért lásd: [A Symantec regisztrációszolgáltató tanúsítvány telepítése](https://docs.microsoft.com/intune/certificates-symantec-configure#install-the-symantec-registration-authorization-certificate).  |
+| 0x00000401 | Symantec_ClientAuthCertNotFound  | A Symantec Client Auth tanúsítvány nem található meg a helyi tanúsítványtárban. További információért lásd: [A Symantec regisztrációszolgáltató tanúsítvány telepítése](certificates-digicert-configure.md#install-the-digicert-ra-certificate).  |
 | 0x00000402 | RevokeCert_AccessDenied  | A megadott fióknak nincs engedélye hitelesítésszolgáltatói tanúsítvány visszavonására. A kibocsátó hitelesítésszolgáltató nevét megtalálhatja a Hitelesítésszolgáltató neve mezőben.  |
 | 0x00000403 | CertThumbprint_NotFound  | Nem található a bemenetnek megfelelő tanúsítvány. Regisztrálja a tanúsítvány-összekötőt, és próbálkozzon ismét. |
 | 0x00000404 | Certificate_NotFound  | Nem található a megadott bemenetnek megfelelő tanúsítvány. Regisztrálja ismét a tanúsítvány-összekötőt, és próbálkozzon újra. |
@@ -73,4 +73,4 @@ A 6.1806.x.x verziótól kezdődően az Intune Connector Service naplózza az es
 
 
 ## <a name="next-steps"></a>További lépések
-További segítségért tekintse [meg Microsoft Intune útmutató SCEP-profiljának hibaelhárítása](https://support.microsoft.com/help/4457481/troubleshooting-scep-certificate-profile-deployment-in-intune) című témakört.
+További segítségért tekintse [meg Microsoft Intune útmutató SCEP-profiljának hibaelhárítása című témakört](https://support.microsoft.com/help/4457481/troubleshooting-scep-certificate-profile-deployment-in-intune) .

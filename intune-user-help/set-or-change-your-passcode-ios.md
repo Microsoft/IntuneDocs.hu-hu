@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 11/14/2017
+ms.date: 09/18/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
@@ -16,30 +16,31 @@ searchScope:
 ROBOTS: ''
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 346e6219c10cc8b90d3bf83170adffa677c6c484
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: dddcb16a0067ed6e278ff3f9032695e075a0fb6a
+ms.sourcegitcommit: c19584b36448bbd4c8638d7cab552fe9b3eb3408
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61503917"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71163293"
 ---
 # <a name="set-or-change-your-passcode"></a>PIN-kód beállítása vagy módosítása
 
-Ha az iOS-eszköz nem felel meg a cég informatikai támogató szolgálata PIN-kód-szabályzatának, megjelenik egy üzenet, amely röviden ismerteti a problémát, és elmagyarázza, mit kell tennie, hogy a PIN-kódja megfeleljen a követelményeknek.
+Hozzon létre egy új jelszót, vagy módosítsa a meglévőt, hogy megfeleljen a szervezet igényeinek. A PIN-kód megakadályozza a jogosulatlan személyek számára az eszköz zárolásának feloldását és használatát. 
 
-A cég informatikai támogató szolgálata több követelményt is beállíthat a PIN-kódhoz. Például megadhatja, hogy a PIN-kód bizonyos számú karakterből álljon, és hogy számok, betűk és speciális karakterek is szerepeljenek benne. Mivel több követelményt is be lehet állítani, ez az útmutató csak azt ismerteti, hogyan állítsa be vagy változtassa meg a PIN-kódját. Nem ismerteti azonban a követelmények minden lehetséges kombinációját. Ezeket a PIN-kódokat többek között arra használhatja, hogy a zárolási képernyőről érje el az eszközt.
+A szervezet legfeljebb egy PIN-kód megadását állíthatja be. A jelszóval kapcsolatos gyakori követelmények listáját a [regisztrált eszközök eszköz jelszavával kapcsolatos követelmények](password-does-not-meet-it-administrator-requirements.md)című témakörben tekintheti meg.  
 
-Ha gondja van a PIN-kóddal kapcsolatos követelménynek megfelelő PIN-kód beállításával, segítségért forduljon a cég informatikai támogató szolgálatához.
+Ha problémája van a PIN-kód létrehozásával vagy módosításával, lépjen kapcsolatba az informatikai támogatási személlyel.  
+
 
 ## <a name="set-your-passcode"></a>A PIN-kód beállítása
 
-1. Koppintson a **Settings (Beállítások)** > **Touch ID & Passcode** (Touch ID és PIN-kód) pontra.
+1. Koppintson a **Settings (Beállítások)**  > **Touch ID & Passcode** (Touch ID és PIN-kód) pontra.
 2. A **Touch ID & Passcode** (Touch ID és PIN-kód) menüben koppintson a **Turn Passcode On** (PIN-kód bekapcsolása) pontra.
 3. Adjon meg egy új PIN-kódot, amely megfelel a cég informatikai támogató szolgálata által meghatározott követelményeknek, majd a megerősítéshez írja be még egyszer.
 
 ## <a name="change-your-passcode"></a>PIN-kód módosítása
 
-1. Koppintson a **Settings (Beállítások)** > **Touch ID & Passcode** (Touch ID és PIN-kód) pontra.
+1. Koppintson a **Settings (Beállítások)**  > **Touch ID & Passcode** (Touch ID és PIN-kód) pontra.
 2. Adja meg a jelenlegi PIN-kódot. Megnyílik a **Touch ID & Passcode** (Touch ID és PIN-kód) menü.
 2. Koppintson a **Change Passcode** (PIN-kód módosítása) elemre, és adja meg a régi PIN-kódját.
 3. Adjon meg egy új PIN-kódot, amely megfelel a cég informatikai támogató szolgálata által meghatározott követelményeknek, majd a megerősítéshez írja be még egyszer.

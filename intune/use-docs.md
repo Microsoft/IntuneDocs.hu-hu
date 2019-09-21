@@ -1,5 +1,5 @@
 ---
-title: Az Intune docs használata
+title: Az Intune-dokumentáció használata
 titleSuffix: Microsoft Intune
 description: Megtudhatja, hogyan keresheti meg az Intune-dokumentumokat, hogyan biztosíthat dokumentációt, és Hogyan járulhat hozzá a dokumentumokhoz.
 ms.date: 09/15/2019
@@ -10,14 +10,14 @@ author: dougeby
 ms.author: dougeby
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ede8d8a55bf9573bb81daaeb9f5ac174196a8911
-ms.sourcegitcommit: 3db8af810b95c3a6ed3f8cc00f6ce79076ebb9db
+ms.openlocfilehash: 278ba505bcc5acd73adcfc4a356dee07fc06d5f7
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71017937"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71167742"
 ---
-# <a name="using-the-intune-docs"></a>Az Intune docs használata
+# <a name="using-the-intune-docs"></a>Az Intune-dokumentáció használata
 
 Ez a cikk segítséget nyújt a Microsoft Intune dokumentációban való kereséshez, az Intune-dokumentumok visszajelzésének megadásához, valamint azt, hogy miként lehet gyorsan és egyszerűen hozzájárulni a dokumentációhoz.
 
@@ -67,7 +67,7 @@ A GitHub-problémák használatával elküldheti a következő típusú visszaje
 - Honosítási Visszajelzés a tartalom fordításáról.
 - Keresőmotor-optimalizálás (SEO): Visszajelzés a tartalom keresésével kapcsolatos problémákról. Adja meg a keresőmotort, a kulcsszavakat és a célként megadott cikket a megjegyzésekben.
 
-Ha problémák merülnek fel a nem doc-hoz kapcsolódó témakörök esetében, például a [termékekkel kapcsolatos visszajelzések](https://microsoftintune.uservoice.com/forums/291681-ideas), a [termékek kérdései](https://social.technet.microsoft.com/Forums/en-US/home?forum=microsoftintuneprod)vagy a [támogatási kérelmek](https://docs.microsoft.com/intune/get-support), a rendszer bezárja ezeket a problémákat, és a felhasználó átirányítja a megfelelő visszajelzési csatornára.
+Ha problémák merülnek fel a nem doc-hoz kapcsolódó témakörök esetében, például a [termékekkel kapcsolatos visszajelzések](https://microsoftintune.uservoice.com/forums/291681-ideas), a [termékek kérdései](https://social.technet.microsoft.com/Forums/en-US/home?forum=microsoftintuneprod)vagy a [támogatási kérelmek](get-support.md), a rendszer bezárja ezeket a problémákat, és a felhasználó átirányítja a megfelelő visszajelzési csatornára.
 
 Ha visszajelzést szeretne küldeni a docs.microsoft.com platformról, tekintse meg a [docs-visszajelzéseket](https://aka.ms/sitefeedback). A platform tartalmazza az összes burkoló összetevőt, például a fejlécet, a tartalomjegyzéket és a jobb oldali menüt. Továbbá a cikkek böngészőben történő megjelenítésének módja, például a betűkészlet, a riasztási mezők és az oldal-horgonyok.
 

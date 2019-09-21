@@ -7,18 +7,18 @@ ms.topic: include
 ms.date: 03/28/2019
 ms.author: erikje
 ms.custom: include file
-ms.openlocfilehash: 1d9903de9d23532174e138709cb40c9cdf49995f
-ms.sourcegitcommit: 8934b1abec96e18cee15a77107d37551766f7666
+ms.openlocfilehash: 041f37e56e85b0ac26a4dd7a9dbbdb49bc0ebd9e
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71107254"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71166330"
 ---
 Ezek a hirdetmények olyan fontos információkat tartalmaznak, amelyek segíthetnek a jövőbeli Intune-változások és-funkciók előkészítésében. 
 
 
 ### <a name="decreasing-support-for-android-device-administrator"></a>Az Android-eszközök rendszergazdai támogatásának csökkentése 
-Android-eszköz rendszergazdája (más néven a "régi" Android-kezelés és az Android 2,2 kiadásban megjelent) az androidos eszközök felügyeletének módja. A továbbfejlesztett felügyeleti funkciók azonban mostantól elérhetők az [Android Enterprise]( https://docs.microsoft.com/intune/connect-intune-android-enterprise) (Android 5,0) verzióban. A modern, gazdagabb és biztonságosabb eszközkezelés érdekében a Google az új Android-kiadásokban csökkenti az eszköz-rendszergazda támogatását.
+Android-eszköz rendszergazdája (más néven a "régi" Android-kezelés és az Android 2,2 kiadásban megjelent) az androidos eszközök felügyeletének módja. A továbbfejlesztett felügyeleti funkciók azonban mostantól elérhetők az [Android Enterprise](../connect-intune-android-enterprise.md) (Android 5,0) verzióban. A modern, gazdagabb és biztonságosabb eszközkezelés érdekében a Google az új Android-kiadásokban csökkenti az eszköz-rendszergazda támogatását.
 
 #### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
 A Google által végzett módosítások miatt az Intune-felhasználók a következő módokon lesznek hatással: 
@@ -96,7 +96,7 @@ Keresse meg a Microsoft, harmadik féltől származó és üzletági (LOB) alkal
 A dokumentációt és a fejlesztői útmutatót is frissítenie kell, ha ez a módosítás az SDK támogatásában is szerepel.
 
 #### <a name="additional-information"></a>További információ
-https://docs.microsoft.com/intune/apps-prepare-mobile-application-management
+[Üzletági alkalmazások előkészítése az alkalmazás-védelmi szabályzatokhoz](../apps-prepare-mobile-application-management.md)
 
 ### <a name="plan-for-change-new-windows-updates-settings-in-intune----4464404---"></a>Tervezze meg a változást: Új Windows Update-beállítások az Intune-ban <!-- 4464404 -->
 Az Intune szolgáltatás vagy a 1908 új "határidő-beállítások" részének megadásával kezdődően a "felhasználó újraindításának engedélyezése (lefoglalt újraindításkor)" beállítások helyett a következő beállításokat vesszük igénybe. Azt tervezzük, hogy letiltjuk a bekapcsolt újraindítási beállításokat a felhasználói felületen a 1909-as vagy a szeptemberi frissítés után, majd a konzolról teljesen el kell távolítani őket a konzolról október végére. 

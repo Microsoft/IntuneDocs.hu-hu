@@ -17,14 +17,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99ccc8c61aa781bdcb6ac79c76202253597b8ef6
-ms.sourcegitcommit: 74911a263944f2dbd9b754415ccda6c68dae0759
+ms.openlocfilehash: 4012dc4046eccf836c73e15409dae182eaf12231
+ms.sourcegitcommit: c19584b36448bbd4c8638d7cab552fe9b3eb3408
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71070988"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71163250"
 ---
-# <a name="enroll-your-android-enterprise-dedicated-devices-or-fully-managed-devices-preview"></a>Androidos vállalati dedikált eszközök vagy teljes körűen felügyelt eszközök regisztrálása (előzetes verzió)
+# <a name="enroll-your-android-enterprise-dedicated-devices-or-fully-managed-devices"></a>Androidos vállalati dedikált eszközök vagy teljes körűen felügyelt eszközök regisztrálása
 
 Miután beállította az androidos [vállalati dedikált eszközöket](android-kiosk-enroll.md) vagy a [teljes körűen felügyelt eszközöket](android-fully-managed-enroll.md) az Intune-ban, regisztrálhat az eszközöket. Az androidos vállalati eszközök regisztrálásának módja az operációs rendszertől függ.
 

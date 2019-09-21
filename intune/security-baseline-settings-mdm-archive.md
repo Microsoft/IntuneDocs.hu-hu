@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6df943fdc0105b0f32401b79434045811f065bef
-ms.sourcegitcommit: 47b06bf2d32e2f84c382dec3366d6f4a31d98012
+ms.openlocfilehash: 19307f2ffc234a1eacf30b3aa43fe9c626073f6c
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70864538"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71167831"
 ---
 <!-- This article contains the exact baseline details for baseline versions that were previously published in security-baseline-settings-mdm.md.  -->
 
@@ -34,12 +34,12 @@ Tekintse meg az Intune MDM biztonsági alapkonfigurációjának archivált verzi
 
 Ha egy alapkonfiguráció már nem támogatott a használathoz, a rendszer eltávolítja a cikkből.
 
-- Az [aktuális Mdm biztonsági alaptervben](https://docs.microsoft.com/intune/security-baseline-settings-mdm-all?pivots=mdm-may-2019)elérhető beállítások megtekintése. 
+- Az [aktuális Mdm biztonsági alaptervben](security-baseline-settings-mdm-all.md?pivots=mdm-may-2019)elérhető beállítások megtekintése.
 - Ismerje meg a [biztonsági](security-baselines.md)alapkonfigurációkat, valamint azt, hogyan frissítheti az alapkonfigurációt a biztonsági alapkonfigurációk profiljaiban.
 
 ## <a name="preview-mdm-security-baseline-for-october-2018"></a>Előnézet MDM biztonsági alapterv október 2018  
 
-*Ezt az alapkonfigurációt a Mdm biztonsági alapkonfiguráció felülírja [a május 2019](https://docs.microsoft.com/intune/security-baseline-settings-mdm-all?pivots=mdm-may-2019)*
+*Ezt az alapkonfigurációt a Mdm biztonsági alapkonfiguráció felülírja [a május 2019](security-baseline-settings-mdm-all.md?pivots=mdm-may-2019)*
 
 ### <a name="above-lock"></a>Zárolás felett  
 
@@ -1441,5 +1441,5 @@ További információ: [Policy CSP-WindowsPowerShell](https://docs.microsoft.com
  
 ## <a name="next-steps"></a>További lépések  
 
-[Az aktuális alapverzió megtekintése](https://docs.microsoft.com/intune/security-baseline-settings-mdm-all?pivots=mdm-may-2019)  
+[Az aktuális alapverzió megtekintése](security-baseline-settings-mdm-all.md?pivots=mdm-may-2019)  
 [Profilok frissítése új alapverzió használatára](security-baselines.md#change-the-baseline-version-for-a-profile)

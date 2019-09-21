@@ -18,12 +18,12 @@ ms.reviewer: japoehlm
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c592b558ace0a2a39059de9f64531f1e078c539d
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: 40fe8f1f54779d3ab0a49951ad13c0cb2d0f0ff5
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61494982"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71166793"
 ---
 # <a name="enroll-your-organization-provided-ios-device-in-management"></a>A vállalat által biztosított iOS-eszköz felügyeleti regisztrálása
 
@@ -34,15 +34,16 @@ A munkahely vagy iskola által biztosított iOS-eszközöket gyakran előre konf
 A beállítások megkezdéséhez kapcsolja be az eszközt, majd jelentkezzen be a munkahelyi vagy iskolai hitelesítő adataival. A cikk a továbbiakban azokat a lépéseket és képernyőket ismerteti, amelyekkel a Beállítási asszisztensben találkozni fog. 
 
 ## <a name="what-is-apple-dep"></a>Mi az Apple DEP?
-Lehetséges, hogy vállalata az úgynevezett *Apple Készülékregisztrációs programon* (DEP) keresztül vásárolta meg eszközeit. Az Apple DEP nagy mennyiségű iOS- vagy macOS-eszköz vásárlását teszi lehetővé a vállalatok számára. Ezt követően ezeket az eszközöket egy általuk preferált mobileszköz-felügyeleti szolgáltatóval, például az Intune-nal konfigurálják és felügyelik. Ha Ön rendszergazda, és információt szeretne az Apple DEP-vel kapcsolatban, tekintse át az [iOS-eszközök automatikus regisztrálása az Apple készülékregisztrációs programjával (DEP)](https://docs.microsoft.com/intune/device-enrollment-program-enroll-ios) című cikket.  
 
-## <a name="set-up-your-ios-device"></a>Az iOS-eszköz beállítása  
+Lehetséges, hogy vállalata az úgynevezett *Apple Készülékregisztrációs programon* (DEP) keresztül vásárolta meg eszközeit. Az Apple DEP nagy mennyiségű iOS- vagy macOS-eszköz vásárlását teszi lehetővé a vállalatok számára. Ezt követően ezeket az eszközöket egy általuk preferált mobileszköz-felügyeleti szolgáltatóval, például az Intune-nal konfigurálják és felügyelik. Ha Ön rendszergazda, és információt szeretne az Apple DEP-vel kapcsolatban, tekintse át az [iOS-eszközök automatikus regisztrálása az Apple készülékregisztrációs programjával (DEP)](https://docs.microsoft.com/intune/device-enrollment-program-enroll-ios.md) című cikket.  
+
+## <a name="set-up-your-ios-device"></a>Az iOS-eszköz beállítása
+
 Ha nem a vállalat által biztosított, hanem saját iOS-eszközt használ, kövesse a [személyes és saját eszközökre](enroll-your-device-in-intune-ios.md) vonatkozó lépéseket.  
 
-1. Kapcsolja be az iOS-eszközt. 
+1. Kapcsolja be az iOS-eszközt.
 2. A **nyelv** kiválasztása után csatlakozzon egy Wi-Fi-hálózathoz.
-3. Az **iOS-eszköz beállítása** képernyőn válasszon az alábbi lehetőségek közül: 
- 
+3. Az **iOS-eszköz beállítása** képernyőn válasszon az alábbi lehetőségek közül:
    - **Beállítás új eszközként**
    - **iCloud biztonsági másolat visszaállítása**
    - **iTunes biztonsági másolat visszaállítása**
@@ -53,7 +54,7 @@ Ha nem a vállalat által biztosított, hanem saját iOS-eszközt használ, köv
  
    **A konfiguráció beállítója: [Az Ön cége] iOS-csoportja [Cím]**
 
-5. Jelentkezzen be az Apple ID azonosítójával. A bejelentkezés után telepítheti a Céges portál alkalmazást, valamint a felügyeleti profilt, amellyel a cége hozzáférést adhat Önnek az erőforrásokhoz, például az e-mailekhez és az alkalmazásokhoz. 
+5. Jelentkezzen be az Apple ID azonosítójával. A bejelentkezés után telepítheti a Céges portál alkalmazást, valamint a felügyeleti profilt, amellyel a cége hozzáférést adhat Önnek az erőforrásokhoz, például az e-mailekhez és az alkalmazásokhoz.
 6. Fogadja el a **feltételeket és kikötéseket**, majd döntse el, hogy szeretne-e diagnosztikai adatokat küldeni az Apple-nek.
 7. A regisztráció befejeztével az eszköz további műveletek elvégzését kérheti. Ezek között szerepelhet az e-mail-hozzáféréshez szükséges jelszó megadása vagy egy PIN-kód beállítása.
 

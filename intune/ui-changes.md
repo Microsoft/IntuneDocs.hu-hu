@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 052190185159dfdee4adee94d4c43c72ce6f41d4
-ms.sourcegitcommit: 4b83697de8add3b90675c576202ef2ecb49d80b2
+ms.openlocfilehash: ac74cc547d13e92b87a8e148845ff1bc7be8efe4
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67046326"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71167001"
 ---
 # <a name="where-did-my-intune-feature-go-in-azure"></a>Hová kerültek az Intune-funkciók az Azure-ban?
 Az Intune Azure Portalra való költöztetésekor éltünk a lehetőséggel, és logikusabban rendeztünk el néhány feladatot. Minden ilyen előrelépés azzal jár, hogy meg kell tanulni az új elrendezést. Ez az útmutató azoknak készült, akik jól ismerik a klasszikus Intune-portált, és szeretnék megtudni, hogyan végezhetik el a feladatokat az Azure Portalbeli Intune-ban. Ha a cikk nem tartalmazza az Ön által keresett információt, írja meg a lap alján hozzászólásban, hogy pótolhassuk.
@@ -51,7 +51,7 @@ A klasszikus portálon be lehetett állítani a modern windowsos és macOS-es, v
 
 ![Klasszikus mobileszköz-regisztrációs szabályok képe](./media/01-classic-rules.png)
 
-Ezek a szabályok kivétel nélkül vonatkoztak az Intune-fiók összes felhasználójára. Az Azure Portalon ezek a szabályok most két különböző csoportházirend-típusok jelennek meg: Eszköztípus-korlátozásokkal és eszközszám-korlátozást.
+Ezek a szabályok kivétel nélkül vonatkoztak az Intune-fiók összes felhasználójára. A Azure Portalban ezek a szabályok két különböző típusú házirendben jelennek meg: Az eszközök típusának korlátozásai és az eszközökre vonatkozó korlátozások korlátozása.
 
 ![Azure-os mobileszköz-regisztrációs korlátozások képe](./media/02-azure-enroll-restrictions.png)
 
@@ -69,15 +69,15 @@ A személyes tulajdonú eszközök letiltásának vagy engedélyezésének képe
 
 A további korlátozási képességek csak az Azure Portalon érhetők el.
 
-## <a name="where-did-my-conditional-access-policies-go"></a>Hová tűntek a saját feltételes hozzáférési szabályzatokat?
-A bérlő áttelepítése az Azure Portalra, után a bérlő feltételes hozzáférési szabályzatok továbbra is kényszeríthető. Megtekinteni vagy módosítani viszont nem tudja őket az Intune-ból az Azure Portalon.
+## <a name="where-did-my-conditional-access-policies-go"></a>Hová mennek a feltételes hozzáférési szabályzatok?
+Miután a bérlő áttelepítette a Azure Portal, a bérlő feltételes hozzáférési házirendjei továbbra is érvényben vannak. Megtekinteni vagy módosítani viszont nem tudja őket az Intune-ból az Azure Portalon.
 
-Ha szeretné megtekintése és módosítása a feltételes hozzáférési szabályzatokat az Azure Portalról, szüksége lesz a távolítsa el a régi szabályzatok a klasszikus portálon. Ez után újra létrehozhatja azokat az Azure Portalon. Áttelepítése feltételes hozzáférési szabályzatokkal kapcsolatos további információkért lásd: [az Azure Portalon klasszikus szabályzatok Migrálása](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-migration). 
+Ha szeretné megtekinteni és módosítani a feltételes hozzáférési szabályzatokat a Azure Portalból, el kell távolítania a régi szabályzatokat a klasszikus portálról. Ez után újra létrehozhatja azokat az Azure Portalon. A feltételes hozzáférési szabályzatok áttelepítésével kapcsolatos további információkért lásd: [klasszikus szabályzatok áttelepítése az Azure Portalon](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-migration). 
 
 ## <a name="where-did-my-compliance-policies-go"></a>Mi történt a megfelelőségi szabályzataimmal?
 Miután a bérlője migrál az Azure Portalra, a bérlő megfelelőségi szabályzatai továbbra is érvényesülnek. Megtekinteni vagy módosítani viszont nem tudja őket az Intune-ból az Azure Portalon.
 
-Ha meg kívánja tekinteni vagy módosítani szeretné a megfelelőségi szabályzatokat az Azure Portalon, akkor el kell távolítania a régi szabályzatokat a klasszikus portálról. Ez után újra létrehozhatja azokat az Azure Portalon. További információk az eszközmegfelelőségi szabályzatokról: [Az Intune eszközmegfelelőségi szabályzatai – első lépések](https://docs.microsoft.com/intune/device-compliance-get-started). 
+Ha meg kívánja tekinteni vagy módosítani szeretné a megfelelőségi szabályzatokat az Azure Portalon, akkor el kell távolítania a régi szabályzatokat a klasszikus portálról. Ez után újra létrehozhatja azokat az Azure Portalon. További információk az eszközmegfelelőségi szabályzatokról: [Az Intune eszközmegfelelőségi szabályzatai – első lépések](device-compliance-get-started.md). 
 
 ## <a name="where-did-apple-dep-go"></a>Hová tűnt az Apple DEP?
 A klasszikus portálon az Intune-t integrálni lehetett az Apple készülékregisztrációs programjával, és manuálisan szinkronizálást kérni az Apple szolgáltatásával:

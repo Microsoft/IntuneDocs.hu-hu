@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b58b27264e2f6955ae4f16843bb3493e5fdc993e
-ms.sourcegitcommit: fe67741c62749fc9114e9191092ed8b786dd4ffa
+ms.openlocfilehash: 69f214b4fd3f3b7767e719c0f68f19e178a8e29c
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270284"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71167250"
 ---
 # <a name="use-intune-to-remediate-vulnerabilities-identified-by-microsoft-defender-atp"></a>Az Intune használata a Microsoft Defender ATP által azonosított sebezhetőségek javítására  
 
@@ -37,13 +37,15 @@ A Microsoft Defender Security Center konzolon az ATP biztonsági rendszergazdák
 Ha egy feladat el van fogadva, az Intune rendszergazdája ezt követően elhárítja a biztonsági rést, ha az Intune-t használja a biztonsági feladat részeként biztosított útmutatás alapján.  
 
 A szervizeléssel kapcsolatos gyakori műveletek a következők:  
+
 - Alkalmazás futtatásának **letiltása**  
 - Operációs rendszer frissítésének **központi telepítése** a biztonsági rés enyhítése érdekében.  
 - **Módosítsa** a beállításazonosító értékét.  
 - **Tiltsa le** vagy **engedélyezze** a biztonsági rést befolyásoló konfigurációt.  
 - **Ügyeljen** arra, hogy a rendszergazda a fenyegetés hiányában ne kapjon megfelelő javaslatot.  
 
-Példa munkafolyamat:  
+Példa munkafolyamat:
+
 - A Microsoft Defender ATP szolgáltatáson belül a contoso Media Player v4 nevű alkalmazás biztonsági rése észlelhető, és egy rendszergazda biztonsági feladatot hoz létre az alkalmazás frissítéséhez. A contoso Media Player egy nem felügyelt alkalmazás, amelyet az Intune-nal telepítettek.  
 
   Ez a biztonsági feladat az Intune-konzolon függőben lévő állapottal jelenik meg:  
@@ -61,13 +63,16 @@ Példa munkafolyamat:
 ## <a name="prerequisites"></a>Előfeltételek  
 
 Előfizetések:  
+
 - Microsoft Intune  
 - Microsoft Defender komplex veszélyforrások elleni védelem ([regisztráljon az ingyenes próbaverzióra](https://www.microsoft.com/WindowsForBusiness/windows-atp?ocid=docs-wdatp-main-abovefoldlink).)  
 
 **Az ATP**-beli Intune-konfigurációk:  
+
 - Szolgáltatás konfigurálása a Microsoft Defender ATP szolgáltatással való kapcsolódásra.  
 - Helyezzen üzembe egy eszköz megfelelőségi szabályzatot a **Microsoft DEFENDER ATP (Windows 10 asztali verzió)** profiljával olyan eszközökre, amelyek az ATP által értékelt kockázattal rendelkeznek.
-  További információ arról, hogyan állíthatja be az Intune-t az ATP szolgáltatással való együttműködéshez: a [Microsoft DEFENDER ATP megfelelőségének kikényszerítés feltételes hozzáféréssel az Intune-ban](https://docs.microsoft.com/intune/advanced-threat-protection#enable-microsoft-defender-atp-in-intune).  
+
+  További információ arról, hogyan állíthatja be az Intune-t az ATP szolgáltatással való együttműködéshez: a [Microsoft DEFENDER ATP megfelelőségének kikényszerítés feltételes hozzáféréssel az Intune-ban](advanced-threat-protection.md#enable-microsoft-defender-atp-in-intune).  
 
 ## <a name="work-with-security-tasks"></a>Biztonsági feladatok használata  
 
@@ -89,6 +94,6 @@ Előfizetések:
 A szervizelés sikeres befejezését követően az ATP kockázati expozíciós pontszáma eldobásra kerül a szervizelt eszközökről származó új információk alapján. 
 
 ## <a name="next-steps"></a>További lépések
-További információ az Intune-ról és a [Microsoft DEFENDER ATP](https://docs.microsoft.com/intune/advanced-threat-protection) -ről  
-Az Intune [Mobile Threat Defense](https://docs.microsoft.com/intune/mobile-threat-defense) áttekintése  
+További információ az Intune-ról és a [Microsoft DEFENDER ATP](advanced-threat-protection.md) -ről  
+Az Intune [Mobile Threat Defense](mobile-threat-defense.md) áttekintése  
 Tekintse át a veszélyforrások elleni [& biztonsági rések kezelése irányítópultot](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/tvm-dashboard-insights) a Microsoft Defender ATP-ben

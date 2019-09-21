@@ -18,12 +18,12 @@ ms.reviewer: arnab
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d63ecdb23b107d844c37d7a805247092116618e1
-ms.sourcegitcommit: b30a2ba2b67aa2fc3421f0b2f6c5f361a0de612a
+ms.openlocfilehash: 0ec52069c4c53c464cfe5a1e17718ba6725fd0b5
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69022731"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71167440"
 ---
 # <a name="device-encrypted-but-apps-say-otherwise"></a>Az eszköz titkosítva van, de az alkalmazások másként
 
@@ -31,7 +31,7 @@ Ha Céges portál vagy a Microsoft Intune alkalmazás azt mondja, hogy az eszkö
 
 ## <a name="add-a-startup-pin"></a>Indítási PIN-kód hozzáadása
 
-Egyes Android-eszközök indítási PIN-kód létrehozását teszik kötelezővé az eszköz biztonsága érdekében. A beállítás helye az eszköz Settings ( **Beállítások** ) alkalmazásában lesz. A beállítás neve és helye eltérő lehet. A Samsung Galaxy S7 esetében például a beállítást **biztonságos indításnak**nevezzük. A **beállítás** > engedélyezéséhez és a PIN-kód létrehozásához lépjen a beállítások zárolási**képernyő és biztonság** > **biztonságos indítás**menüpontra.  
+Egyes Android-eszközök indítási PIN-kód létrehozását teszik kötelezővé az eszköz biztonsága érdekében. A beállítás helye az eszköz **Settings (beállítások** ) alkalmazásában lesz. A beállítás neve és helye eltérő lehet. A Samsung Galaxy S7 esetében például a beállítást **biztonságos indításnak**nevezzük. A beállítás engedélyezéséhez és a PIN-kód létrehozásához lépjen a beállítások**zárolási képernyő és biztonság** > **biztonságos indítás** **menüpontra** > .  
 
 ## <a name="encrypt-the-entire-device"></a>Titkosítsa a teljes eszközt
 
@@ -48,16 +48,17 @@ Ez a szakasz csak a Céges portál alkalmazásra vonatkozik. Ha az eszköz felaj
 
 ## <a name="specific-manufacturer-issues"></a>Gyártóspecifikus problémák
 
-Néhány androidos eszköz a 7,0-es és újabb verzióiban olyan módon titkosítja az adattitkosítást, amely nem konzisztens bizonyos Android-platformokra vonatkozó szabványokkal. Ezek a titkosítási módszerek veszélyeztetik az eszközök adatait. Ennek eredményeképpen ezek az eszközök nem támogatottak. 
+Néhány androidos eszköz a 7,0-es és újabb verzióiban olyan módon titkosítja az adattitkosítást, amely nem konzisztens bizonyos Android-platformokra vonatkozó szabványokkal. Ezek a titkosítási módszerek veszélyeztetik az eszközök adatait. Ennek eredményeképpen ezek az eszközök nem támogatottak.
 
-A támogatott androidos eszközök nem teljes listájáért tekintse meg az Intune- [ban támogatott operációs rendszereket és böngészőket](https://docs.microsoft.com/intune/supported-devices-browsers#supported-samsung-knox-standard-devices)ismertető cikket. Ha az eszköz nem szerepel a listáján, tekintse meg az eszköz gyártóját, vagy forduljon a támogatási személyhez. 
+A támogatott androidos eszközök nem teljes listájáért tekintse meg az Intune- [ban támogatott operációs rendszereket és böngészőket](https://docs.microsoft.com/intune/supported-devices-browsers.md#supported-samsung-knox-standard-devices)ismertető cikket. Ha az eszköz nem szerepel a listáján, tekintse meg az eszköz gyártóját, vagy forduljon a támogatási személyhez.
 
 > [!Note]
-> A Microsoft együttműködik a gyártókkal a tesztelés vagy a felhasználók által jelentett problémák megoldásához. Ezt a cikket folyamatosan frissítjük, ha új információk állnak rendelkezésünkre. 
+> A Microsoft együttműködik a gyártókkal a tesztelés vagy a felhasználók által jelentett problémák megoldásához. Ezt a cikket folyamatosan frissítjük, ha új információk állnak rendelkezésünkre.
 
-## <a name="update-devices"></a>Eszközök frissítése   
+## <a name="update-devices"></a>Eszközök frissítése
 
 Ha még nem frissítette az eszközt az Android legújabb verziójára, nyissa meg az eszköz **Beállítások** alkalmazását, és válassza a **frissítés**lehetőséget.  
 
-## <a name="next-steps"></a>További lépések   
+## <a name="next-steps"></a>További lépések
+
 További segítségre van szüksége? Forduljon a cég informatikai támogatási szolgálatához (a kapcsolattartási adatokat a [céges portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980) találja), vagy írjon a <a href="mailto:wintunedroidfbk@microsoft.com?subject=I'm having trouble with enrolling my Android device&body=Describe the issue you're experiencing here.">Microsoft Android-csapatának</a>.  

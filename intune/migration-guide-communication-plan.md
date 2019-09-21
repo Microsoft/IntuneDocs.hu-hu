@@ -16,12 +16,12 @@ ms.reviewer: dagerrit
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5688039101e7cecf5631a0ad8dee4f343e183d96
-ms.sourcegitcommit: b30a2ba2b67aa2fc3421f0b2f6c5f361a0de612a
+ms.openlocfilehash: 325a0efeff56a2bc930fa0082023202f9c2e7696
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69022854"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71166772"
 ---
 # <a name="plan-communications"></a>A kommunikáció tervezése
 
@@ -37,7 +37,7 @@ A következő e-mail-kommunikációs terv követését javasoljuk. Szerkesztheti
 
 - **E-mail #2**: Be kell jelentenie, hogy a szolgáltatások készen állnak az Intune-on keresztül történő hozzáférésre. Szólítsa fel a felhasználókat, hogy most regisztráljanak. Adja meg a felhasználóknak az ütemtervet a hozzáférésük megkezdése előtt. Emlékeztesse a felhasználókat a migrálás előnyeire és stratégiai okaira.
 
-Egy adott időszak elteltével megkezdheti a megfelelőség kényszerítését a feltételes hozzáférési házirendeken keresztül, és feltételként használhatja a vállalati adathozzáféréshez, ahogy azt a végfelhasználói bevezetés a [feltételes hozzáféréssel](migration-guide-drive-adoption.md)című részben leírtak szerint.
+Egy adott időszak elteltével megkezdheti a megfelelőség kényszerítését a feltételes hozzáférési házirendeken keresztül, és feltételként használhatja a vállalati adathozzáféréshez, ahogy azt a [végfelhasználói bevezetés a feltételes hozzáféréssel](migration-guide-drive-adoption.md)című részben leírtak szerint.
 
 ## <a name="intune-enrollment-guide"></a>Intune-regisztrációs útmutató
 
@@ -59,6 +59,6 @@ Rövid, részletes videókat hoztunk létre, amelyek segítségével a felhaszn�
 
 Az Intune további erőforrásokkal rendelkezik, amelyekkel elősegítheti az eszközök regisztrálását a felhasználók számára:
 
-- Az [A végfelhasználók oktatása az Intune használatával kapcsolatban](https://docs.microsoft.com/intune/end-user-educate) című témakör részletezi a regisztrálás lépéseit az egyes mobiloperációsrendszer-platformok esetében.
-- Az [Intune-eszközök](https://docs.microsoft.com/intune/device-enrollment) regisztrálása a rendszergazdáknak az Android-, iOS-és Mac-eszközök Intune-ban való regisztrálását ismerteti.
+- Az [A végfelhasználók oktatása az Intune használatával kapcsolatban](end-user-educate.md) című témakör részletezi a regisztrálás lépéseit az egyes mobiloperációsrendszer-platformok esetében.
+- Az Intune-eszközök regisztrálása a [rendszergazdáknak](device-enrollment.md) az Android-, iOS-és Mac-eszközök Intune-ban való regisztrálását ismerteti.
 - Ossza meg a [céges portál alkalmazás URL-címét](http://go.microsoft.com/fwlink/?LinkID=396941) Android-, iOS-és Windows-felhasználóival. Ez az URL-cím átirányítja az Android, iOS és Windows rendszerű eszközök megfelelő Céges portál alkalmazásának listájára.

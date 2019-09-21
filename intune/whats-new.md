@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 09/16/2019
+ms.date: 09/20/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a39c4a5830f5ce3d724508f5e6da64767c0bcdd0
-ms.sourcegitcommit: 89a973bbfa1702b2d275af6814874e4305bdcb77
+ms.openlocfilehash: fbdd143e25e632601ec1f8ee4b57c9b77c3b3caf
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71140725"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71166901"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -56,21 +56,203 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 
 ## <a name="week-of-september-16-2019"></a>2019. szeptember 16-i hét
 
-### <a name="app-management"></a>Alkalmazáskezelés
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name="app-management"></a>Alkalmazáskezelés 
+
+#### <a name="managed-google-play-private-lob-apps----1464182----"></a>Felügyelt Google Play Private LOB-alkalmazások <!-- 1464182  -->
+Az Intune mostantól lehetővé teszi a rendszergazdák számára, hogy privát Android LOB-alkalmazásokat tegyenek közzé a Google Play szolgáltatásban az Intune-konzolon beágyazott iframe használatával.  Korábban a rendszergazdák számára szükséges, hogy a LOB-alkalmazásokat közvetlenül a Google Play közzétételi konzolján tegye közzé, amely több lépést igényelt, és időigényes volt. Ez az új funkció lehetővé teszi a LOB-alkalmazások egyszerű közzétételét a lépések minimális készletével anélkül, hogy az Intune-konzolt el kellene hagynia.  A rendszergazdáknak többé nem kell manuálisan regisztrálniuk a Google-fejlesztőként, és a továbbiakban nem kell fizetniük a Google $25 regisztrációs díját.  A felügyelt Google Play szolgáltatást használó androidos vállalati felügyeleti forgatókönyvek bármelyike kihasználhatja ezt a funkciót (munkahelyi profil, dedikált, teljes körűen felügyelt és nem regisztrált eszközök). Az Intune-ból válassza az **ügyfélalkalmazások** > **alkalmazások** > **Hozzáadás**elemet. Ezután válassza a **felügyelt Google Play** lehetőséget az **alkalmazás típusa** listából. A felügyelt Google Play-alkalmazásokkal kapcsolatos további információkért lásd: [felügyelt Google Play-alkalmazások hozzáadása androidos vállalati eszközökhöz az Intune](apps-add-android-for-work.md)-nal.
 
 #### <a name="company-portal-experience----1473353-3598357---"></a>Céges portáli élmény <!-- 1473353, 3598357 -->
 A Céges portál frissítése folyamatban van. Az alkalmazások lapon több szűrőt is használhat a Céges portálon belül. Az eszköz részletes felhasználói felülete is frissül. Ezen frissítések minden ügyfelünk számára folyamatban vagyunk, és a következő hét végére várhatóan elvégezhető.
 
 #### <a name="macos-support-for-web-apps----3174427---"></a>macOS-támogatás webes alkalmazásokhoz <!-- 3174427 -->
-Webalkalmazások, amelyek lehetővé teszik a webes URL-címekhez való parancsikonok hozzáadását a Dockon a macOS Céges portál használatával. A végfelhasználók a macOS Céges portál webalkalmazásának alkalmazás részletei lapján érhetik el a **telepítési** műveletet. A **Webhivatkozás** alkalmazás típusával kapcsolatos további információkért lásd: [alkalmazások hozzáadása a Microsoft Intunehez](apps-add.md) és [webalkalmazások hozzáadása Microsoft Intunehoz](web-app.md).
+Webalkalmazások, amelyek lehetővé teszik a webes URL-címekhez való parancsikonok hozzáadását a Dockon a macOS Céges portál használatával. A végfelhasználók a macOS Céges portál webalkalmazáshoz tartozó alkalmazás részletei lapon érhetik el a **telepítési** műveletet. A **Webhivatkozás** alkalmazás típusával kapcsolatos további információkért lásd: [alkalmazások hozzáadása a Microsoft Intunehez](apps-add.md) és [webalkalmazások hozzáadása Microsoft Intunehoz](web-app.md).
 
 #### <a name="macos-support-for-vpp-apps----3173501----"></a>a macOS-alkalmazások macOS-támogatása <!-- 3173501  -->
 az Apple Business Managerrel megvásárolt macOS-alkalmazások a konzolon jelennek meg, amikor az Apple VPP-tokenek szinkronizálva vannak az Intune-ban. Az Intune-konzollal rendelhet hozzá, vonhat vissza és rendelhet hozzá eszközöket és felhasználó-alapú licenceket a csoportokhoz. A Microsoft Intune segítségével kezelheti a vállalat által a cégnél való használatra megvásárolt VPP-alkalmazásokat:
 - Licencinformációk jelentése az App Store-ból.
 - A felhasznált licencek számának nyilvántartása.
-- Segít, hogy ne telepítse az alkalmazás több példányát, mint amennyit a tulajdonosa.
+- Segít megelőzni az alkalmazás több példányának telepítését, mint amennyit Ön birtokol.
 
 Az Intune-nal és a VPP-vel kapcsolatos további információkért lásd: [mennyiségi programban vásárolt alkalmazások és könyvek kezelése Microsoft Intuneokkal](vpp-apps.md).
+
+#### <a name="managed-google-play-iframe-support----2871756----"></a>Felügyelt Google Play iframe-támogatás <!-- 2871756  -->
+Az Intune mostantól támogatást nyújt a webhivatkozások hozzáadásához és kezeléséhez közvetlenül az Intune-konzolon a felügyelt Google Play iframe használatával.  Ez lehetővé teszi, hogy a rendszergazdák elküldjék az URL-címet és az ikont, majd ezeket a hivatkozásokat a normál Android-alkalmazásokhoz hasonló eszközökre telepítse. A felügyelt Google Play szolgáltatást használó androidos vállalati felügyeleti forgatókönyvek bármelyike kihasználhatja ezt a funkciót (munkahelyi profil, dedikált, teljes körűen felügyelt és nem regisztrált eszközök). Az Intune-ból válassza az **ügyfélalkalmazások** > **alkalmazások** > **Hozzáadás**elemet. Ezután válassza a **felügyelt Google Play** lehetőséget az **alkalmazás típusa** listából. A felügyelt Google Play-alkalmazásokkal kapcsolatos további információkért lásd: [felügyelt Google Play-alkalmazások hozzáadása androidos vállalati eszközökhöz az Intune](apps-add-android-for-work.md)-nal.
+
+#### <a name="silently-install-android-lob-apps-on-zebra-devices----4252734----"></a>Android LOB-alkalmazások csendes telepítése a zebra-eszközökön <!-- 4252734  -->
+Ha az androidos üzletági (LOB) alkalmazásokat a [Zebra-eszközökre](android-zebra-mx-overview.md)telepíti, és nem kéri a LOB-alkalmazás letöltését és telepítését, akkor az alkalmazást csendesen is telepítheti. Az Intune-ban válassza az **ügyfélalkalmazások** > **alkalmazások** > **Hozzáadás**lehetőséget. Az **Alkalmazás hozzáadása** panelen válassza az **Üzletági alkalmazás** lehetőséget. További információ: [androidos üzletági alkalmazás hozzáadása a Microsoft Intunehoz](lob-apps-android.md).
+
+Jelenleg a LOB-alkalmazás letöltése után a rendszer **letölti a sikerről** szóló értesítést a felhasználó eszközén. Az értesítés csak akkor törölhető, ha az értesítési árnyékban az **összes törlése** elemre koppint. Ez az értesítési probléma egy közelgő kiadásban fog megjelenni, és a telepítés teljesen csendes marad, és nem jelenik meg vizuális mutató.
+
+#### <a name="read-and-write-graph-api-operations-for-intune-apps----5031704----"></a>Az Intune-alkalmazások Graph API műveleteinek olvasása és írása <!-- 5031704  -->
+Az alkalmazások az Intune-Graph API az olvasási és írási műveletekkel is meghívhatják az alkalmazás identitása felhasználói hitelesítő adatok nélkül. További információ az Intune-hoz készült Microsoft Graph API eléréséről: az [Intune használata a Microsoft Graphban](https://docs.microsoft.com/graph/api/resources/intune-graph-overview?view=graph-rest-1.0).
+
+#### <a name="protected-data-sharing-and-encryption-for-intune-app-sdk-for-ios----3586942----"></a>Az iOS-hez készült Intune app SDK védett adatmegosztása és titkosítása <!-- 3586942  -->
+Az Intune App SDK IOS rendszerhez készült 256 bites titkosítási kulcsok fogja használni, ha az alkalmazásvédelmi szabályzatok engedélyezve van a titkosítási. Minden alkalmazásnak rendelkeznie kell egy SDK-verzió 8.1.1 a védett adatmegosztás engedélyezéséhez.
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name="device-configuration"></a>Eszközök konfigurálása
+
+#### <a name="allow-or-restrict-adding-app-widgets-to-the-home-screen-on-android-enterprise-work-profile-devices----1109650--wnstaged--"></a>Alkalmazás-widgetek a kezdőképernyőn való hozzáadásának engedélyezése vagy korlátozása Android Enterprise Work profiling-eszközökön <!-- 1109650  wnstaged--> 
+
+Az Android Enterprise rendszerű eszközökön a munkahelyi profilban konfigurálhatja a szolgáltatásokat (az**eszköz konfigurációs** > **profiljainak** > **profil** > létrehozása**Android Enterprise** for platform >  **A munkahelyi profil csak > eszköz korlátozásait** adja meg.) Ebben a frissítésben engedélyezheti a felhasználóknak, hogy a munkahelyi profil alkalmazásai által közzétett widgeteket adjanak az eszköz kezdőlapjára.
+
+A konfigurálható beállítások megjelenítéséhez nyissa meg az [androidos vállalati eszköz beállításait, hogy engedélyezze vagy korlátozza a szolgáltatásokat az Intune használatával](device-restrictions-android-for-work.md).
+
+Érintett kiadások:
+- Androidos vállalati munkahelyi profil
+
+#### <a name="support-for-ikev2-vpn-profiles-for-ios----1943438-----"></a>Az iOS rendszerhez készült IKEv2 VPN-profilok támogatása <!-- 1943438   -->
+Ebben a frissítésben VPN-profilokat hozhat létre az iOS natív VPN-ügyfél számára a IKEv2 protokoll használatával. A IKEv2 egy új kapcsolattípus az **eszköz konfigurációs** > **profiljaiban** > **profil** > létrehozása**iOS** for platform > **VPN** a profil típusa > **kapcsolat típusa**.
+
+Ezek a VPN-profilok a natív VPN-ügyfelet konfigurálja, így a rendszer nem telepíti a VPN-ügyfélszoftvert, és nem küldi azokat a felügyelt eszközökre Ehhez a szolgáltatáshoz regisztrálni kell az eszközöket az Intune-ban (MDM-regisztráció).
+
+Az aktuálisan konfigurálható VPN-beállítások megjelenítéséhez nyissa [meg a VPN-beállítások konfigurálása iOS-eszközökön](vpn-settings-ios.md)című témakört.
+
+Érintett kiadások:
+- iOS
+
+#### <a name="device-features-device-restrictions-and-extension-profiles-for-ios-and-macos-settings-are-shown-by-enrollment-type----4886161-----"></a>A regisztrációs típus megjeleníti az eszközök funkcióit, az eszközök korlátozásait és a bővítményi profilokat az iOS-és macOS-beállításokhoz. <!-- 4886161   -->
+
+Az Intune-ban létrehozhat profilokat az iOS-és MacOS-eszközökhöz (az eszköz**konfigurációs** > **profiljai** > az**iOS** vagy **MacOS** rendszerek**létrehozása** > platform > **eszköz funkciói** , **Eszközök korlátozásai**vagy **bővítmények** a profil típusához). 
+
+Ebben a frissítésben az Intune-portálon elérhető beállítások a beléptetési típus szerint vannak kategorizálva:
+
+- iOS
+  - Felhasználó beléptetése
+  - Eszközök beléptetése
+  - Automatikus eszközök beléptetése (felügyelt)
+  - Minden regisztrációs típus
+
+- macOS
+  - Felhasználó által jóváhagyott
+  - Eszközök beléptetése
+  - Automatikus eszközök beléptetése
+  - Minden regisztrációs típus
+
+Érintett kiadások:
+- iOS
+
+#### <a name="new-voice-control-settings-for-supervised-ios-devices-running-in-kiosk-mode----4892835-----"></a>A teljes képernyős módban futó, felügyelt iOS-eszközök új hang-vezérlési beállításai <!-- 4892835   -->
+Az Intune-ban házirendeket hozhat létre a felügyelt iOS-eszközök kioszkként való futtatásához, vagy dedikált eszközként (az**eszköz konfigurációs** > **profiljainak** > **profil** > létrehozása**iOS** platformon >A profil típusa > **kioszk**) eszközre vonatkozó korlátozások. 
+
+Ebben a frissítésben új beállítások vezérelhetők:
+- Hangvezérelt **vezérlés**: Kioszk módban engedélyezheti a hangvezérelt vezérlést az eszközön.
+- **A hangvezéreltség módosítása**: Lehetővé teszi a felhasználók számára, hogy kioszk módban módosítsák az eszköz hangvezérlési beállítását.
+
+Az aktuális beállítások megjelenítéséhez nyissa meg az [iOS kioszk beállításait](device-restrictions-ios.md#kiosk).
+
+Érintett kiadások:
+- iOS 13,0 és újabb verziók
+
+#### <a name="use-single-sign-on-for-apps-and-websites-on-your-ios-and-macos-devices----4893175-----"></a>Egyszeri bejelentkezés használata az iOS-és macOS-eszközökön futó alkalmazásokhoz és webhelyekhez <!-- 4893175   -->
+Ebben a > frissítésben > **az iOS és** >  **a MacOS** rendszerű > eszközökre vonatkozó új egyszeri bejelentkezési beállítások vannak Az **eszköz funkciói** a profil típusa).
+
+Ezekkel a beállításokkal konfigurálhatja az egyszeri bejelentkezési élményt, különösen a Kerberos-hitelesítést használó alkalmazásokhoz és webhelyekhez. Választhat egy általános hitelesítő adatok egyszeri bejelentkezési alkalmazás-bővítménye és az Apple beépített Kerberos-bővítménye közül.
+
+Az eszköz aktuálisan konfigurálható szolgáltatásainak megtekintéséhez nyissa meg az [iOS-eszközök funkcióit](ios-device-features-settings.md) és a [MacOS-eszközök funkcióit](macos-device-features-settings.md).
+
+Érintett kiadások:
+- iOS 13,0 és újabb verziók
+- macOS 10,15 és újabb verziók
+
+#### <a name="associate-domains-to-apps-on-macos-1015-devices----4898079-----"></a>Tartományok hozzárendelése macOS-10.15 és-eszközökön futó alkalmazásokhoz <!-- 4898079   -->
+MacOS-eszközökön különböző funkciókat konfigurálhat, és leküldheti ezeket a funkciókat az eszközökre egy szabályzat használatával (az**eszköz konfigurációs** > **profiljaiban** > a**profil** > létrehozása**MacOS** for platform > **eszköz jellemzői** a profil típusaként). Ebben a frissítésben tartományokat rendelhet az alkalmazásaihoz. Ez a szolgáltatás segít megosztani a hitelesítő adatokat az alkalmazással kapcsolatos webhelyekkel, és használható az Apple egyszeri bejelentkezési bővítménnyel, az univerzális hivatkozásokkal és a jelszavak automatikus kitöltésével. 
+
+Az aktuálisan konfigurálható szolgáltatások megjelenítéséhez nyissa meg a [MacOS-eszköz szolgáltatás beállításait az Intune-ban](macos-device-features-settings.md).
+
+Érintett kiadások:
+- macOS 10,15 és újabb verziók
+
+#### <a name="use-itunes-and-apps-in-the-itunes-app-store-url-when-showing-or-hiding-apps-on-ios-supervised-devices----4928474-----"></a>Az iOS-es felügyelt eszközökön lévő alkalmazások megjelenítéséhez vagy elrejtéséhez használja az iTunes alkalmazás-áruház URL-címe "iTunes" és "alkalmazások" elemét. <!-- 4928474   --> 
+Az Intune-ban szabályzatokat hozhat létre a felügyelt iOS-eszközökön lévő alkalmazások megjelenítéséhez vagy elrejtéséhez (az**eszköz konfigurációs** > **profiljaiban** > **létrehozhat egy profilt** > **iOS** platform > **eszközhöz** a profil típusának korlátozásai > **alkalmazások megjelenítése vagy elrejtése**). 
+
+Megadhatja az iTunes alkalmazás-áruház URL-címét `https://itunes.apple.com/us/app/work-folders/id950878067?mt=8`, például:. Ebben a frissítésben `apps` a és `itunes` az URL-címben is használható, például:
+- `https://itunes.apple.com/us/app/work-folders/id950878067?mt=8`
+- `https://apps.apple.com/us/app/work-folders/id950878067?mt=8`
+
+További információ ezekről a beállításokról: [alkalmazások megjelenítése vagy elrejtése](device-restrictions-ios.md#show-or-hide-apps).
+
+Érintett kiadások:
+- iOS
+
+#### <a name="windows-10-compliance-policy-password-type-values-are-clearer-and-match-csp---5138985---"></a>A Windows 10-es megfelelőségi szabályzat jelszavának típusa világosabb és egyező CSP<!-- 5138985 -->
+Windows 10 rendszerű eszközökön létrehozhat egy olyan megfelelőségi szabályzatot, amely meghatározott jelszó-funkciókat igényel (az**eszköz megfelelőségi** >  > **szabályzatai** > a**Windows 10 és újabb** rendszerekre vonatkozó**házirendet hoznak létre** platform > **rendszer biztonsága**). Ebben a frissítésben:
+- A **jelszó típusú** értékek világosabbak, és frissülnek, hogy megfeleljenek a [DEVICELOCK/AlphanumericDevicePasswordRequired CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-devicelock#devicelock-alphanumericdevicepasswordrequired)-nek.
+- A **jelszó lejárati ideje (nap)** beállítás frissült, így az 1-730 napos értékek is megengedettek. 
+
+A Windows 10 megfelelőségi beállításaival kapcsolatos további információkért lásd: [Windows 10 és újabb beállítások az eszközök megfelelő vagy nem megfelelőként való megjelöléséhez](compliance-policy-create-windows.md). 
+
+Érintett kiadások:
+- Windows 10 és újabb
+
+ #### <a name="updated-ui-for-configuring-microsoft-exchange-on-premises-access-------4092920---"></a>Frissített felhasználói felület a Microsoft Exchange helyszíni hozzáférésének konfigurálásához    <!-- 4092920 -->  
+Frissítettük a konzolt, ahol a [Microsoft Exchange helyszíni hozzáférését konfigurálja](conditional-access-exchange-create.md). A helyszíni Exchange-hozzáférés összes konfigurációja már elérhető a konzol ugyanazon paneljén, ahol *engedélyezheti a helyszíni Exchange-hozzáférés-vezérlést*.  
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name="device-enrollment"></a>Eszközök beléptetése
+
+#### <a name="new-tenants-will-default-away-from-android-device-administrator-management----4869790-----"></a>Az új bérlők alapértelmezetten az Android-eszközök rendszergazdájának felügyeletével lesznek elérhetők <!-- 4869790   -->
+Az Android rendszerű eszközök rendszergazdai képességeit az Android Enterprise váltja fel. Ezért javasoljuk, hogy az Android Enterprise új regisztrációkat használjon. A jövőbeli frissítésekben az új bérlőknek a következő előfeltételeket kell végrehajtaniuk az Android-regisztrációban az eszköz rendszergazdai felügyeletének használatához: Nyissa meg az **Intune** > -**eszközök regisztrációjának** > **Android-regisztrációja** > **személyes és vállalati tulajdonú eszközök eszköz-felügyeleti jogosultságok** > **használata eszközt az eszközök felügyeletére szolgáló rendszergazda**.
+
+A meglévő bérlők semmilyen változást nem fognak tapasztalni a környezetében. 
+
+További információ az Android-eszközök rendszergazdájáról az Intune-ban: [Android-eszközök rendszergazdai regisztrációja](https://docs.microsoft.com/intune/android-enroll-device-administrator).
+
+#### <a name="list-of-dep-devices-associated-with-a-profile----5012045-idmiss---"></a>A profilhoz társított DEP-eszközök listája <!-- 5012045 idmiss -->
+Most már megtekintheti a profilhoz társított Apple automatizált Készülékregisztrációs program (DEP) eszközök lapozható listáját. A listában bármelyik oldalról kereshet. A lista megjelenítéséhez nyissa meg **az Intune** > -**eszközök** > beléptetése**Apple-regisztráció** > **beléptetési program jogkivonatait** > válasszon ki egy tokent > **profilokat** > válasszon egy profilt >  **Hozzárendelt eszközök** (a **figyelő**alatt). 
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name="device-management"></a>Eszközkezelés
+
+#### <a name="more-android-fully-managed-support----3464667-4631425-4631440-5227935-4062195-----"></a>További Android teljes körűen felügyelt támogatás <!-- 3464667, 4631425, 4631440, 5227935, 4062195   -->
+Az Android teljes körűen felügyelt eszközeihez a következő támogatást adtuk hozzá:
+
+- A teljes körűen felügyelt Android-tanúsítványok SCEP tanúsítványokat biztosítanak az eszköz tulajdonosként felügyelt eszközökön. A SCEP-tanúsítványok már támogatottak a munkahelyi profil eszközein.  Az SCEP-tanúsítványokkal a következőket teheti: <!-- 5227935 -->
+    - SCEP-profil létrehozása az Android Enterprise DO szakaszban
+    - SCEP-tanúsítványok csatolása Wi-Fi-profil hitelesítéshez
+    - SCEP-tanúsítványok csatolása a VPN-profilokhoz hitelesítéshez
+    - SCEP-tanúsítványok csatolása e-mail-profilokhoz a hitelesítéshez (AppConfig keresztül)
+- A rendszeralkalmazások az Android Enterprise rendszerű eszközökön támogatottak. Az Intune-ban adjon hozzá egy androidos nagyvállalati rendszeralkalmazást az **ügyfélalkalmazás** > **alkalmazások** > **Hozzáadás**lehetőség kiválasztásával. Az **alkalmazás típusa** listában válassza az **Android Enterprise System app**elemet. További információ: [androidos nagyvállalati rendszeralkalmazások hozzáadása a Microsoft Intunehoz](apps-ae-system.md). <!-- 4062195 -->
+- Az **eszköz megfelelősége** > **Android Enterprise** > -**eszköz tulajdonosában**létrehozhat egy megfelelőségi szabályzatot, amely beállítja a Google biztonság igazolási szintjét.   <!-- 4631425 -->
+- Az Android Enterprise teljes körűen felügyelt eszközökön a Mobile Threat Defense-szolgáltatók támogatottak. Az **eszköz megfelelősége** > **Android Enterprise** > -**eszköz tulajdonosa**lehetőség van egy elfogadható kockázati szint kiválasztására. <!-- 4631440 --> Az [Android vállalati beállítások az eszközök megfelelő vagy nem megfelelőként való megjelölésére az Intune](compliance-policy-create-android-for-work.md#device-owner) -ban az aktuális beállítások szerepelnek.
+- Az Android Enterprise teljes körűen felügyelt eszközökön a Microsoft Launcher alkalmazás mostantól az App Protection-szabályzatok segítségével konfigurálható a teljes körűen felügyelt eszközön a szabványosított végfelhasználói élmény érdekében. Az Android-eszköz személyre szabásához használhatja a Microsoft Launcher alkalmazást. Az alkalmazással Microsoft-fiók vagy munkahelyi/iskolai fiókkal is elérheti a naptárt, a dokumentumokat és a legutóbbi tevékenységeket a személyre szabott hírcsatornában. Megnyithatja a fényképeket, a dokumentumokat és a weblapokat a Windows rendszerű SZÁMÍTÓGÉPeken, így hatékonyabbá teheti az eszközöket. <!-- 5334044 -->
+
+Ezzel a frissítéssel örömmel jelentjük be, hogy az Android Enterprise teljes körűen felügyelt Intune-támogatás már általánosan elérhető. 
+
+Érintett kiadások: 
+- Android Enterprise teljes körűen felügyelt eszközök
+
+#### <a name="send-custom-notifications-to-a-single-device-----4928910---"></a>Egyéni értesítések küldése egyetlen eszközre  <!-- 4928910 -->
+Most már kijelölhet egyetlen eszközt, majd egy távoli eszköz művelettel [Egyéni értesítéseket küldhet csak erre az eszközre](custom-notifications.md#send-a-custom-notification-to-a-single-device).
+
+#### <a name="wipe-and-passcode-reset-actions-arent-available-for-ios-devices-that-are-enrolled-by-using-user-enrollment----4950491---"></a>A törlés és a PIN-kód átállítása művelet nem érhető el a felhasználói regisztráció használatával beléptetett iOS-eszközökön <!-- 4950491 -->
+A felhasználó beléptetése új típusú Apple-eszközök beléptetése. Ha felhasználói beléptetést használó eszközöket regisztrál, a törlés és a jelszó-visszaállítás távoli műveletei nem lesznek elérhetők az ilyen eszközökön.
+
+#### <a name="intune-support-for-ios-13-and-macos-catalina-devices----4665317---"></a>Intune-támogatás iOS 13-és macOS-eszközökhöz <!-- 4665317 -->
+Az Intune mostantól támogatja az iOS 13 és macOS Catalina eszközök felügyeletét. További információkért lásd az [iOS 13 és a iPadOS Microsoft Intune támogatását ismertető blogbejegyzést](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Microsoft-Intune-Support-for-iOS-13-and-iPadOS/ba-p/861998).
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name="device-security"></a>Eszköz biztonsága
+
+#### <a name="bitlocker-support-for-client-driven-recovery-password-rotation-------3444125---"></a>BitLocker-támogatás az ügyfél által vezérelt helyreállítási jelszó elforgatásához   <!--  3444125 -->
+Az Intune-Endpoint Protection beállítások segítségével konfigurálhatja az [ügyfél által vezérelt helyreállítási jelszavakat](endpoint-protection-windows-10.md#windows-encryption) a Bitlockerhez a Windows 1909-es vagy újabb verzióját futtató eszközökön.
+
+Ez a beállítás egy, az operációsrendszer-meghajtó helyreállítása után (a Csizmadia vagy a WinRE használatával) és a helyreállítási jelszó zárolásának feloldása után kezdeményezi az ügyfél által vezérelt helyreállítási jelszó frissítését egy rögzített adatmeghajtón. Ez a beállítás frissíti a használt helyreállítási jelszót, és a köteten található egyéb nem használt jelszavak változatlanok maradnak. További információ: a BitLocker CSP dokumentációja a [ConfigureRecoveryPasswordRotation](https://docs.microsoft.com/windows/client-management/mdm/bitlocker-csp#configurerecoverypasswordrotation).
+
+#### <a name="tamper-protection-for-windows-defender-antivirus-----4705448----------"></a>Illetéktelen védelem a Windows Defender Víruskeresőben  <!-- 4705448        -->
+Az Intune használatával kezelheti a Windows Defender víruskereső *illetéktelen hozzáférést biztosító védelmét* . Az [illetéktelen hozzáférést biztosító védelem beállítását](endpoint-protection-windows-10.md#windows-defender-security-center) a Microsoft Defender Security Center csoportjában találja, ha a Windows 10-es végpontok védelméhez eszköz-konfigurációs profilokat használ. Beállíthatja, hogy az illetéktelen hozzáférést *engedélyező* védelem bekapcsolja a Temper Protection-korlátozásokat, *Letiltva* a kikapcsolását, vagy beállíthatja, hogy a rendszer*ne* állítsa be az eszközök aktuális konfigurációját.  
+
+További információ az illetéktelen hozzáférést biztosító védelemről: a [biztonsági beállítások módosításának megakadályozása](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/prevent-changes-to-security-settings-with-tamper-protection) a Windows dokumentációjában. 
+
+#### <a name="advanced-settings-for-windows-defender-firewall-are-now-generally-available-----5317392---------"></a>Mostantól általánosan elérhető a Windows Defender-tűzfal speciális beállításai <!--  5317392       -->  
+A [Windows Defender egyéni tűzfalszabályok az Endpoint Protection számára](endpoint-protection-configure.md#add-custom-firewall-rules-for-windows-10-devices), amelyet az eszköz konfigurációs profiljának részeként konfigurál, a szolgáltatás nem nyilvános előzetes verzióban érhető el, és általánosan elérhető (GA).  Ezekkel a szabályokkal megadhatja a bejövő és kimenő viselkedést az alkalmazásokhoz, a hálózati címekhez és a portokhoz. Ezek a szabályok júliusban lettek közzétéve nyilvános előzetes verzióként. 
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name="role-based-access-control"></a>Szerepköralapú hozzáférés-vezérlés
+
+#### <a name="scope-tags-now-support-terms-of-use-policies----2358863-idmiss---"></a>A hatókör-címkék mostantól támogatják a Használati szabályzatok használati feltételeit <!-- 2358863 idmiss -->
+Mostantól hozzárendelheti a [hatókörhöz tartozó címkéket](scope-tags.md) a használati szabályzatokhoz. Ehhez nyissa meg az **Intune** > -**eszközök regisztrálási** > **feltételeit és kikötéseit** > válasszon ki egy elemet a listáról > **Tulajdonságok** > **hatóköre címkék** > Válassza ki a hatókör címkét.
 
 ## <a name="week-of-september-9-2019"></a>2019. szeptember 9. hét
 
@@ -231,7 +413,7 @@ A Windows Defender víruskereső beállításaival kapcsolatos további informá
 ### <a name="device-enrollment"></a>Eszközök beléptetése
 
 #### <a name="default-scope-tags----3702875----"></a>Alapértelmezett hatókör-Címkék <!-- 3702875  -->
-Mostantól elérhető egy új beépített alapértelmezett hatóköri címke. A hatóköri címkéket támogató összes nem címkézett Intune-objektum automatikusan hozzá lesz rendelve az alapértelmezett hatókör-címkéhez. Az **alapértelmezett** hatókör címkét a rendszer hozzáadja az összes meglévő szerepkör-hozzárendeléshez a paritásnak a rendszergazdai felülettel való fenntartásához. Ha nem szeretné, hogy a rendszergazda az alapértelmezett hatókör címkével lássa el az Intune-objektumokat, távolítsa el az alapértelmezett hatóköri címkét a szerepkör-hozzárendelésből. Ez a funkció a System Center Configuration Manager biztonsági hatókörök funkciójának hasonló. További információ: a [RBAC és a hatókör-címkék használata a terjesztéshez](scope-tags.md).
+Mostantól elérhető egy új beépített alapértelmezett hatóköri címke. A hatóköri címkéket támogató összes nem címkézett Intune-objektum automatikusan hozzá lesz rendelve az alapértelmezett hatókör-címkéhez. Az **alapértelmezett** hatókör címkét a rendszer hozzáadja az összes meglévő szerepkör-hozzárendeléshez a paritásnak a rendszergazdai felülettel való fenntartásához. Ha nem szeretné, hogy a rendszergazda az alapértelmezett hatókör címkével lássa el az Intune-objektumokat, távolítsa el az alapértelmezett hatóköri címkét a szerepkör-hozzárendelésből. Ez a funkció hasonló a System Center Configuration Manager biztonsági hatókörök szolgáltatásához. További információ: a [RBAC és a hatókör-címkék használata a terjesztéshez](scope-tags.md).
 
 #### <a name="android-enrollment-device-administrator-support----4869749-----"></a>Android beléptetési eszköz rendszergazdai támogatása <!-- 4869749   -->
 Az Android-eszköz rendszergazdai beléptetési lehetősége hozzá lett adva az Android-eszközök regisztrálási lapjához (**Intune** > -**eszközök regisztrációjának** > **Android-regisztrációja**). Az Android-eszközök rendszergazdája alapértelmezés szerint továbbra is engedélyezve lesz az összes bérlő esetében.  További információ: Android- [eszközök rendszergazdai regisztrációja](android-enroll-device-administrator.md).
@@ -336,7 +518,7 @@ További információ: [POWERSHELL SDK Microsoft Intune Graph API](https://www.p
 ### <a name="device-enrollment"></a>Eszközök beléptetése
 
 #### <a name="updates-for-enrollment-restrictions-----2871968---"></a>Regisztrációs korlátozások frissítései  <!-- 2871968 -->
-Az új bérlők regisztrálási korlátozásai frissültek, így az androidos vállalati munkahelyi profilok alapértelmezés szerint engedélyezve vannak. A meglévő bérlők semmilyen változást nem fognak tapasztalni. Az androidos vállalati munkahelyi profilok használatához továbbra is [össze kell kapcsolnia Intune-fiókját a felügyelt Google Play-fiókkal](https://docs.microsoft.com/intune/connect-intune-android-enterprise).
+Az új bérlők regisztrálási korlátozásai frissültek, így az androidos vállalati munkahelyi profilok alapértelmezés szerint engedélyezve vannak. A meglévő bérlők semmilyen változást nem fognak tapasztalni. Az androidos vállalati munkahelyi profilok használatához továbbra is [össze kell kapcsolnia Intune-fiókját a felügyelt Google Play-fiókkal](connect-intune-android-enterprise.md).
 
 #### <a name="ui-updates-for-apple-enrollment-and-enrollment-restrictions---4089575-4089579----"></a>Felhasználói felületi frissítések az Apple-regisztrációhoz és a regisztrációs korlátozásokhoz <!--4089575, 4089579  -->
 A következő folyamatok mindegyike egy varázsló stílusú felhasználói felületet használ:
@@ -344,7 +526,7 @@ A következő folyamatok mindegyike egy varázsló stílusú felhasználói fel�
 - Regisztráció korlátozásának létrehozása. További információkért lásd a [regisztrációs korlátozások beállítása](enrollment-restrictions-set.md)című témakört.
 
 #### <a name="handling-pre-configuration-of-corporate-device-identifiers-for-android-q-devices----4711509--idmiss---"></a>A vállalati eszközök azonosítóinak előzetes konfigurációjának kezeléséhez Android Q-eszközökhöz <!-- 4711509  idmiss -->
-Az Android Q (v10)-ben a Google eltávolítja a MDM-ügynököket a örökölt felügyelt (eszköz-rendszergazda) Android-eszközökön az eszköz-azonosító információk összegyűjtéséhez.  Az Intune olyan funkcióval rendelkezik, amely lehetővé teszi a rendszergazdák számára, hogy [előre konfigurálják az eszközök sorozatszámait vagy IMEI-listáját](https://docs.microsoft.com/intune/corporate-identifiers-add#identify-corporate-owned-devices-with-imei-or-serial-number) , hogy automatikusan címkével lássa el ezeket az eszközöket a vállalat tulajdonában. Ez a funkció nem működik az eszköz rendszergazdája által felügyelt Android Q-eszközökön.  Függetlenül attól, hogy az eszköz sorozatszáma vagy IMEI-je fel van-e töltve, a rendszer mindig személyesnek tekinti az Intune-regisztráció során.  A regisztráció után manuálisan is átválthatja a vállalati tulajdont.  Ez csak az új regisztrációkat érinti, és a meglévő regisztrált eszközöket nem érinti.  A munkahelyi profillal felügyelt Android-eszközöket ez a változás nem érinti, és továbbra is működik, ahogy ma.  Emellett az eszköz-rendszergazdaként regisztrált Android Q-eszközök nem tudnak a sorozatszámot vagy IMEI-t jelenteni az Intune-konzolon az eszköz tulajdonságaiként.
+Az Android Q (v10)-ben a Google eltávolítja a MDM-ügynököket a örökölt felügyelt (eszköz-rendszergazda) Android-eszközökön az eszköz-azonosító információk összegyűjtéséhez.  Az Intune olyan funkcióval rendelkezik, amely lehetővé teszi a rendszergazdák számára, hogy [előre konfigurálják az eszközök sorozatszámait vagy IMEI-listáját](corporate-identifiers-add.md#identify-corporate-owned-devices-with-imei-or-serial-number) , hogy automatikusan címkével lássa el ezeket az eszközöket a vállalat tulajdonában. Ez a funkció nem működik az eszköz rendszergazdája által felügyelt Android Q-eszközökön.  Függetlenül attól, hogy az eszköz sorozatszáma vagy IMEI-je fel van-e töltve, a rendszer mindig személyesnek tekinti az Intune-regisztráció során.  A regisztráció után manuálisan is átválthatja a vállalati tulajdont.  Ez csak az új regisztrációkat érinti, és a meglévő regisztrált eszközöket nem érinti.  A munkahelyi profillal felügyelt Android-eszközöket ez a változás nem érinti, és továbbra is működik, ahogy ma.  Emellett az eszköz-rendszergazdaként regisztrált Android Q-eszközök nem tudnak a sorozatszámot vagy IMEI-t jelenteni az Intune-konzolon az eszköz tulajdonságaiként.
 
 #### <a name="icons-have-changed-for-android-enterprise-enrollments-work-profile-dedicated-devices-and-fully-managed-devices----4977730---"></a>Az androidos vállalati regisztrációk (munkahelyi profil, dedikált eszközök és teljes körűen felügyelt eszközök) ikonjai módosultak. <!-- 4977730 -->
 Az Android Enterprise beléptetési profilok ikonjai módosultak. Az új ikonok megjelenítéséhez nyissa meg az **Intune** > **regisztrációs** > **Android-regisztráció** > a **beléptetési profilok**szakaszban.
@@ -470,7 +652,7 @@ Az MX használata az Intune-ban című témakörben Microsoft Intune bemutatja, 
 #### <a name="some-kiosk-settings-on-ios-devices-are-set-using-block-replacing-allow----4404075----"></a>Egyes kioszk-beállítások iOS-eszközökön a "letiltás" értékkel vannak beállítva, az "engedélyezés" kifejezés helyett <!-- 4404075  -->
 Ha iOS-eszközökön hoz létre egy eszköz-korlátozási profilt (az eszköz**konfigurációs** > **profiljai** > az**iOS** -es**profil** > létrehozása platform > **eszköz korlátozásai** Profil típusa > **kioszk**), beállíthatja az **automatikus zárolást**, a **csengetés kapcsolóját**, a **képernyő elforgatását**, a **képernyő alvó állapotának**és a **hangerő gombját**. 
 
-Ebben a frissítésben az értékek **blokkolva** vannak (blokkolja a funkciót), és **nincs konfigurálva** (engedélyezi a funkciót). A beállítások megjelenítéséhez nyissa meg az [IOS-eszköz beállításait a funkciók engedélyezéséhez vagy korlátozásához](device-restrictions-ios.md#kiosk-supervised-only). 
+Ebben a frissítésben az értékek **blokkolva** vannak (blokkolja a funkciót), és **nincs konfigurálva** (engedélyezi a funkciót). A beállítások megjelenítéséhez nyissa meg az [IOS-eszköz beállításait a funkciók engedélyezéséhez vagy korlátozásához](device-restrictions-ios.md#kiosk). 
 
 A következőre vonatkozik: iOS
 
@@ -671,7 +853,7 @@ A regisztráció állapota lap már nem előzetes verzió. További információ
 
 
 #### <a name="intune-user-interface-update---autopilot-enrollment-profile-creation-----4593669---"></a>Intune felhasználói felület frissítése – Autopilot beléptetési profil létrehozása  <!-- 4593669 -->
-Az Autopilot-beléptetési profil létrehozásához szükséges felhasználói felület frissítve lett az Azure felhasználói felületi stílusokkal való összehangolás érdekében. További információt az Autopilot- [beléptetési profil létrehozása](https://docs.microsoft.com/intune/enrollment-autopilot#create-an-autopilot-deployment-profile)című témakörben talál. A továbbítást követően további Intune-forgatókönyvek is frissülnek az új felhasználói felületi stílusba.
+Az Autopilot-beléptetési profil létrehozásához szükséges felhasználói felület frissítve lett az Azure felhasználói felületi stílusokkal való összehangolás érdekében. További információt az Autopilot- [beléptetési profil létrehozása](enrollment-autopilot.md#create-an-autopilot-deployment-profile)című témakörben talál. A továbbítást követően további Intune-forgatókönyvek is frissülnek az új felhasználói felületi stílusba.
 
 #### <a name="enable-autopilot-reset-for-all-windows-devices----4225665---"></a>Az Autopilot alaphelyzetbe állításának engedélyezése az összes Windows-eszközön <!-- 4225665 -->
 Az Autopilot alaphelyzetbe állítása mostantól minden Windows-eszközön működik, még azok is, amelyek nincsenek konfigurálva a regisztrációs állapot lap használatára. Ha a regisztráció állapotát jelző lap nem lett konfigurálva az eszközre a kezdeti eszközök beléptetése során, az eszköz a bejelentkezés után egyenesen az asztalra kerül. Akár nyolc órát is igénybe vehet, és az Intune-ban megfelelőnek tűnik. További információ: [eszközök alaphelyzetbe állítása a távoli Windows Autopilot alaphelyzetbe állításával](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-autopilot-reset-remote).
@@ -831,7 +1013,7 @@ Még egy nyilvános előzetes verzióban is kibővítettük az Android Enterpris
 
 - [Feltételes hozzáférés](conditional-access.md) – az Androidra érvényes feltételes hozzáférési szabályzatok az Android Enterprise teljes körűen felügyelt eszközökre is érvényesek. A felhasználók mostantól regisztrálhatják teljes mértékben felügyelt eszközét Azure Active Directory a **Microsoft Intune alkalmazással**. Ezután tekintse meg és oldja meg a szervezeti erőforrások elérésére vonatkozó megfelelőségi problémákat.
 
-- Új végfelhasználói alkalmazás (Microsoft Intune alkalmazás) – új végfelhasználói alkalmazás érhető el az Android rendszerű, teljes körűen felügyelt eszközökhöz, amelyeket **Microsoft Intune**. Ez az új alkalmazás könnyű és modern, és hasonlóan működik a Céges portál alkalmazáshoz, de a teljes körűen felügyelt eszközökhöz. További információ: [Microsoft Intune alkalmazás a Google Play](https://play.google.com/store/apps/details?id=com.microsoft.intune)áruházban.
+- Új végfelhasználói alkalmazás (Microsoft Intune alkalmazás) – új végfelhasználói alkalmazás érhető el az Android rendszerű, teljes mértékben felügyelt eszközökhöz, amelyeket **Microsoft Intune**. Ez az új alkalmazás könnyű és modern, és hasonlóan működik a Céges portál alkalmazáshoz, de a teljes körűen felügyelt eszközökhöz. További információ: [Microsoft Intune alkalmazás a Google Play](https://play.google.com/store/apps/details?id=com.microsoft.intune)áruházban.
 
 Az Android teljes körűen felügyelt eszközeinek beállításához lépjen az **eszközök** > regisztrálása**Android-regisztráció** > **vállalat által birtokolt, teljes körűen felügyelt felhasználói eszközök**elemre. A teljes körűen felügyelt Android-eszközök támogatása előzetes verzióban érhető el, és előfordulhat, hogy egyes Intune-funkciók nem teljesen működőképesek.  
 
@@ -920,7 +1102,7 @@ Most már telepítheti a Microsoft Visio Pro for Office 365 és a Microsoft Proj
 Az Intune-rendszergazdák kivételt adhatnak meg az Intune-alkalmazás számára a **kivágási, másolási és beillesztési műveletek korlátozása más alkalmazásokkal** házirend-beállítással.  Rendszergazdaként megadhatja, hogy hány karakterből lehet kivágni vagy másolni egy felügyelt alkalmazást. Ez a beállítás lehetővé teszi a megadott számú karakter megosztását bármely alkalmazásra, a "Kivágás, másolás és beillesztés más alkalmazásokkal" beállítástól függetlenül. Vegye figyelembe, hogy az Androidhoz készült Intune Céges portál alkalmazás verziójának 5.0.4364.0 vagy újabb verziójúnak kell lennie. További információ: [iOS](app-protection-policy-settings-ios.md#data-protection)-adatvédelem, Android- [Adatvédelem](app-protection-policy-settings-android.md#data-protection)és az ügyfélalkalmazás- [védelmi naplók áttekintése](app-protection-policy-settings-log.md#app-protection-policy-settings).
 
 #### <a name="office-deployment-tool-odt-xml-for-office-proplus-deployment----3192477-----"></a>Office Deployment Tool (ODT) XML az Office ProPlus telepítéséhez <!-- 3192477   -->
-Az Office Pro Plus egy példányának létrehozásakor az Intune felügyeleti konzolján megadhatja az Office Deployment Tool (ODT) XML-t. Ez nagyobb testreszabhatóság lehetővé tétele, ha a meglévő Intune felhasználói felületi lehetőségek nem felelnek meg az igényeinek. További információ: [office 365-alkalmazások kiosztása Windows 10-es eszközökhöz Microsoft Intune](https://docs.microsoft.com/intune/apps-add-office365) és [konfigurációs beállításokkal az Office-telepítő eszközhöz](https://docs.microsoft.com/DeployOffice/configuration-options-for-the-office-2016-deployment-tool).
+Az Office Pro Plus egy példányának létrehozásakor az Intune felügyeleti konzolján megadhatja az Office Deployment Tool (ODT) XML-t. Ez nagyobb testreszabhatóság lehetővé tétele, ha a meglévő Intune felhasználói felületi lehetőségek nem felelnek meg az igényeinek. További információ: [office 365-alkalmazások kiosztása Windows 10-es eszközökhöz Microsoft Intune](apps-add-office365.md) és [konfigurációs beállításokkal az Office-telepítő eszközhöz](https://docs.microsoft.com/DeployOffice/configuration-options-for-the-office-2016-deployment-tool).
 
 #### <a name="app-icons-will-now-be-displayed-with-an-automatically-generated-background----1429026----"></a>Az alkalmazás ikonjai ekkor automatikusan generált háttérrel jelennek meg <!-- 1429026  -->
 A Windows Céges portál alkalmazásban az alkalmazás ikonjai mostantól automatikusan generált háttérrel jelennek meg az ikon domináns színe alapján (ha ez észlelhető). Ha alkalmazható, ez a háttér azt a szürke szegélyt váltja fel, amely korábban már látható az alkalmazás csempén. A felhasználók ezt a változást a Céges portál későbbi verzióiban fogják látni a 10.3.3451.0.
@@ -985,15 +1167,15 @@ A [bérlő állapota lap](tenant-status.md) ekkor megjeleníti a további össze
 
 ### <a name="role-based-access-control"></a>Szerepköralapú hozzáférés-vezérlés
 
-#### <a name="granting-intune-read-only-access-to-some-azure-active-directory-roles----3637917----"></a>Az Intune csak olvasási hozzáférésének engedélyezése néhány Azure Active Directory szerepkörhöz <!-- 3637917  -->
+#### <a name="granting-intune-read-only-access-to-some-azure-active-directory-roles----3637917----"></a>Az Intune írásvédett hozzáférésének biztosítása néhány Azure Active Directory szerepkörhöz <!-- 3637917  -->
 Az Intune írásvédett hozzáférése a következő Azure AD-szerepkörökhöz lett megadva. Az Azure AD-szerepkörökhöz megadott engedélyek felülírják az Intune szerepköralapú hozzáférés-vezérléssel (RBAC) biztosított engedélyeket.
 
-Csak olvasási hozzáférés az Intune-beli naplózási információkhoz:
+Írásvédett hozzáférés az Intune-beli naplózási információkhoz:
 
 - Megfelelőségi rendszergazda
 - Megfelelőségi adatkezelő
 
-Csak olvasási hozzáférés az összes Intune-adattal:
+Olvasási hozzáférés az összes Intune-adattal:
 
 - Biztonsági rendszergazda
 - Biztonsági operátor
@@ -1046,7 +1228,7 @@ A következőhöz kapcsolódó új alkalmazás-telepítési hibaüzenetek talál
 Az Intune-ban válassza az **ügyfélalkalmazások** > **alkalmazások** > "alkalmazás neve" > **eszköz telepítési állapota**lehetőséget. Az új hibaüzenetek az **állapot részletei** oszlopban lesznek elérhetők.
 
 #### <a name="new-app-categories-screen-in-the-company-portal-app-for-windows-10---3834780----"></a>Új alkalmazás-kategóriák képernyő a Windows 10-es Céges portál alkalmazásban<!-- 3834780  -->
-Az alkalmazás- **Kategóriák** nevű új képernyő lett hozzáadva az alkalmazások böngészési és kiválasztási élményének javításához a Windows 10-es céges portál. A felhasználók mostantól a **Kiemelt**, az **oktatási**és a **termelékenység**kategóriák szerint rendezve láthatják az alkalmazásaikat. Ez a módosítás Céges portál 10.3.3451.0 és újabb verziókban jelenik meg. Az új képernyő megtekintéséhez tekintse [meg az alkalmazás felhasználói felületének újdonságai](https://docs.microsoft.com/intune/whats-new-app-ui)című témakört. A Céges portál alkalmazásokkal kapcsolatos további információkért lásd: [alkalmazások telepítése és megosztása az eszközön](/intune-user-help/install-apps-cpapp-windows).  
+Az alkalmazás- **Kategóriák** nevű új képernyő lett hozzáadva az alkalmazások böngészési és kiválasztási élményének javításához a Windows 10-es céges portál. A felhasználók mostantól a **Kiemelt**, az **oktatási**és a **termelékenység**kategóriák szerint rendezve láthatják az alkalmazásaikat. Ez a módosítás Céges portál 10.3.3451.0 és újabb verziókban jelenik meg. Az új képernyő megtekintéséhez tekintse [meg az alkalmazás felhasználói felületének újdonságai](whats-new-app-ui.md)című témakört. A Céges portál alkalmazásokkal kapcsolatos további információkért lásd: [alkalmazások telepítése és megosztása az eszközön](/intune-user-help/install-apps-cpapp-windows).  
 
 #### <a name="power-bi-compliance-app----1455231-doc-work-item---"></a>Megfelelőségi alkalmazás Power BI <!-- 1455231 doc-work-item -->
 Az Intune [megfelelőségi (adattárház-)](https://aka.ms/intune/datawarehouseapi/getpowerbiapp) alkalmazásával érheti el az Intune-adattárházat Power bi online-ban. Ezzel a Power BI alkalmazással mostantól a telepítés nélkül is elérheti és megoszthatja az előre létrehozott jelentéseket anélkül, hogy a böngészőt el kellene hagynia. További információkért lásd: a [log-Power bi megfelelőségi alkalmazás módosítása](reports-changelog.md#power-bi-compliance-app).
@@ -1064,7 +1246,7 @@ A PowerShell használatával kapcsolatos további információkért lásd: [Powe
 #### <a name="macos-users-are-prompted-to-update-their-password----1873216---"></a>a macOS-felhasználók a jelszavuk frissítésére kérik <!-- 1873216 -->
 Az Intune a macOS-eszközök **ChangeAtNextAuth** beállítását érvényesíti. Ez a beállítás hatással van a végfelhasználók és az eszközök megfelelőségi jelszavas szabályzatokkal vagy az eszköz korlátozási jelszavas profiljaival. A rendszer egyszer kéri a végfelhasználókat a jelszavuk frissítésére. Ez akkor fordul elő, amikor egy felhasználó először futtat egy hitelesítést igénylő feladatot, például bejelentkezik az eszközre. A felhasználókat arra is kérheti, hogy a rendszergazdai jogosultságokat igénylő bármit, például a kulcstartók elérésének kérésével frissítse a jelszavát. 
 
-A rendszergazda által megjelenő új vagy meglévő jelszóházirend-módosítások ismét frissítik a felhasználókat a jelszavuk frissítéséhez.
+A rendszergazda által megjelenő új vagy meglévő jelszóházirend-módosítások ismét frissítik a jelszavukat.
 
 Érintett kiadások:  
 macOS
@@ -1182,7 +1364,7 @@ Az Intune macOS Céges portál mostantól támogatja a sötét üzemmódot macOS
 ### <a name="app-management"></a>Alkalmazáskezelés
 
 #### <a name="toast-notifications-for-win32-apps----3136566-----"></a>Bejelentési értesítések a Win32-alkalmazásokhoz <!-- 3136566   -->
-Az alkalmazás-hozzárendeléssel kapcsolatos végfelhasználói bejelentési értesítéseket nem lehet letiltani. Az Intune-ból válassza az **ügyfélalkalmazások** > **alkalmazások** lehetőséget > Válassza ki az alkalmazás > **hozzárendelések** > **csoportok**lehetőséget. 
+A végfelhasználói bejelentési értesítések megjelenítése az alkalmazás-hozzárendelések esetében letiltható. Az Intune-ból válassza az **ügyfélalkalmazások** > **alkalmazások** lehetőséget > Válassza ki az alkalmazás > **hozzárendelések** > **csoportok**lehetőséget. 
 
 #### <a name="intune-app-protection-policies-ui-update----3251427----"></a>Az Intune app Protection-szabályzatok felhasználói felületének frissítése <!-- 3251427  -->
 Módosítottuk az Intune app Protection beállításainak és gombjainak feliratait, hogy könnyebben érthetőek legyenek. A módosítások némelyike a következőkből áll:  
@@ -1321,7 +1503,7 @@ A szolgáltatással kapcsolatos további információkért látogasson el a [Win
 #### <a name="use-smime-to-encrypt-and-sign-multiple-devices-for-a-user-----1333642---"></a>Az S/MIME használata több eszköz titkosításához és aláírásához a felhasználó számára  <!-- 1333642 -->
 A frissítés része az új importált tanúsítványprofilt használó S/MIME e-mail-titkosítás (**Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** > platform kiválasztása > **Importált PKCS-tanúsítvány** profiltípus). Az Intune-ban a tanúsítványok PFX formátumban importálhatók. Az Intune képes ugyanazokat a tanúsítványokat az egy felhasználó által regisztrált több eszközre is telepíteni. Ez a következőket is magában foglalja:
 - A natív iOS-es e-mail-profil támogatja az S/MIME titkosítás PFX formátumú importált tanúsítványok használatával történő engedélyezését.
-- A Windows Phone 10 rendszerű eszközök natív levelezőalkalmazása automatikusan az S/MIME tanúsítványt használja.
+- Windows Phone-telefon 10 eszközön a natív posta alkalmazás automatikusan az S/MIME-tanúsítványt használja.
 - A privát tanúsítványok több platformon is telepíthetők. A S/MIME-ot azonban nem minden e-mail-alkalmazás támogatja.
 - Más platformokon az S/MIME engedélyezéséhez szükség lehet a levelező alkalmazás manuális konfigurálására.  
 - Az S/MIME titkosítást támogató e-mail-alkalmazások esetleg az MDM által nem támogatható módon kezelik az S/MIME e-mail-titkosításhoz szükséges tanúsítványok fogadását, például a közzétevőjük tanúsítványtárából olvassák ki azokat.

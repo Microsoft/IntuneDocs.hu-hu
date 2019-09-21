@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 18d01692f8c42b67605c223f59e13b1e5197a8db
-ms.sourcegitcommit: 3db8af810b95c3a6ed3f8cc00f6ce79076ebb9db
+ms.openlocfilehash: f68ee794ce1fce2fbdbae8898c412309906b3f5c
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71017941"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71167076"
 ---
 # <a name="configure-and-use-imported-pkcs-certificates-with-intune"></a>Importált PKCS-tanúsítványok konfigurálása és használata az Intune-nal
 
@@ -43,7 +43,7 @@ Az importált PKCS-tanúsítványok Intune-nal való használatához a következ
 
   Ez az összekötő automatikusan képes frissíteni magát, ha új verziók válnak elérhetővé. A frissítési képesség használatához meg kell győződnie arról, hogy a tűzfalak nyitva vannak, amelyek lehetővé teszik, hogy az összekötő kapcsolatba lépjen a **AutoUpdate.msappproxy.net** a **443**-es porton.  
 
-  További információ az összekötő által elért összes hálózati végpontról: az [Intune hálózati konfigurációjának követelményei és sávszélessége](https://docs.microsoft.com/intune/network-bandwidth-use).
+  További információ az összekötő által elért összes hálózati végpontról: az [Intune hálózati konfigurációjának követelményei és sávszélessége](network-bandwidth-use.md).
 
 
 - **Windows Server**:  

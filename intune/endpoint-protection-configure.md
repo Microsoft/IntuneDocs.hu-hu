@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 07/18/2019
+ms.date: 09/19/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -15,12 +15,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 mr.reviewer: karthib
-ms.openlocfilehash: 13e8c7fd0c822a2bdfbf7c183ea6752f99cf7991
-ms.sourcegitcommit: d2ac912b834c4840de9cc92ba1815b6ecfbfb52b
+ms.openlocfilehash: 8248991e1facc78def580d75a5b7e7e6ba353c98
+ms.sourcegitcommit: c19584b36448bbd4c8638d7cab552fe9b3eb3408
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68482773"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71163690"
 ---
 # <a name="add-endpoint-protection-settings-in-intune"></a>Endpoint Protection-beállítások hozzáadása az Intune-ban  
 
@@ -54,7 +54,6 @@ A profil létrehozása előtt tekintse át a következő cikkeket, amelyek rész
    Ekkor létrejön a profil, és megjelenik a profilok listáját tartalmazó lapon. Ha csoportokhoz szeretné hozzárendelni a profilt, tekintse meg az [eszközprofilok hozzárendelését](device-profile-assign.md) ismertető cikket.  
 
 ## <a name="add-custom-firewall-rules-for-windows-10-devices"></a>Egyéni tűzfalszabályok hozzáadása Windows 10-es eszközökhöz  
-***Az egyéni tűzfalszabályok nyilvános előzetes verzióban érhetők el.***  
 
 Ha a Windows Defender-tűzfalat olyan profil részeként konfigurálja, amely a Windows 10 Endpoint Protection-szabályait tartalmazza, a tűzfalakra vonatkozó egyéni szabályokat is konfigurálhat. Az egyéni szabályok lehetővé teszik a Windows 10 által támogatott tűzfalszabályok előre definiált készletének kibontását.  
 
