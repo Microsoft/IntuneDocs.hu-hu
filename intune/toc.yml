@@ -321,30 +321,33 @@
           href: device-profiles.md
         - name: Profil létrehozása
           href: device-profile-create.md
-        - name: Felügyeleti sablonok
+        - name: Felügyeleti sablonok Windowson
           href: administrative-templates-windows.md
-        - name: Eszközfunkciók
+          displayName: 'group policy, gpo, admx'
+        - name: Eszközfunkciók iOS-en és macOS-en
           href: device-features-configure.md
         - name: Eszközbeállítások és -funkciók korlátozása
           href: device-restrictions-configure.md
           displayName: Device restrictions
-        - name: Frissítések kiadása
+        - name: Frissítések
           href: delivery-optimization-windows.md
-          displayName: delivery optimization; updates
+          displayName: delivery optimization; Windows update
         - name: Kiadások frissítése és az S mód
           href: edition-upgrade-configure-windows-10.md
-        - name: E-mail konfigurálása
+        - name: E-mail
           href: email-settings-configure.md
-        - name: Teljes képernyős mód engedélyezése
+        - name: Kioszkok és dedikált eszközök
           href: kiosk-settings.md
-        - name: VPN hozzáadása
+        - name: Többfelhasználós megosztott eszközök
+          href: shared-user-device-settings.md
+        - name: VPN
           href: vpn-settings-configure.md
           items:
             - name: Alkalmazásonkénti VPN Androidhoz
               href: android-pulse-secure-per-app-vpn.md
             - name: Alkalmazásonkénti VPN iOS-hez
               href: vpn-setting-configure-per-app.md
-        - name: Vezeték nélküli Wi-Fi-hálózat választása
+        - name: Wi-Fi-hálózat
           href: wi-fi-settings-configure.md
           displayName: wifi
           items:
@@ -354,8 +357,6 @@
           href: kernel-extensions-overview-macos.md
         - name: Education – Vizsgaalkalmazás
           href: education-settings-configure.md
-        - name: Többfelhasználós megosztott eszközök
-          href: shared-user-device-settings.md
         - name: Mobilbővítmények Zebra-eszközökön
           href: android-zebra-mx-overview.md
           displayName: mx
@@ -594,6 +595,8 @@
                   href: app-sideload-windows.md
                 - name: macOS-es üzletági alkalmazások
                   href: lob-apps-macos.md
+            - name: A Vállalati Android rendszeralkalmazásai
+              href: apps-ae-system.md
             - name: Win32-alkalmazások kezelése
               href: apps-win32-app-management.md
             - name: PowerShell-parancsprogramok
@@ -623,12 +626,24 @@
               href: app-configuration-policies-use-ios.md
             - name: Android felügyelt eszközök
               href: app-configuration-policies-use-android.md
-            - name: A felügyelt kezdőképernyő konfigurálása
-              href: app-configuration-managed-home-screen-app.md
-            - name: Felügyelt alkalmazások
+            - name: Felügyelt alkalmazások konfigurálása regisztráció nélkül
               href: app-configuration-policies-managed-app.md
             - name: iOS-alkalmazáskiépítési profilok használata
               href: app-provisioning-profile-ios.md
+            - name: Egyes alkalmazások konfigurálása
+              items:
+                - name: A felügyelt kezdőképernyő konfigurálása
+                  href: app-configuration-managed-home-screen-app.md
+                - name: A Céges portál konfigurálása
+                  href: company-portal-app.md
+                - name: A Managed Browser konfigurálása
+                  href: app-configuration-managed-browser.md
+                - name: A Microsoft Launcher konfigurálása
+                  href: configure-microsoft-launcher.md
+                - name: A Microsoft Edge konfigurálása
+                  href: manage-microsoft-edge.md
+                - name: Az Outlook konfigurálása
+                  href: app-configuration-policies-outlook.md
             - name: Mennyiségi licencszerződés keretében vásárolt alkalmazások és könyvek
               items:
                 - name: VPP-alkalmazások kezelése és könyvek
@@ -640,14 +655,6 @@
                   href: windows-store-for-business.md
                 - name: iOS-es e-könyvek
                   href: vpp-ebooks-ios.md
-            - name: A Céges portál konfigurálása
-              href: company-portal-app.md
-            - name: A Managed Browser konfigurálása
-              href: app-configuration-managed-browser.md
-            - name: A Microsoft Edge konfigurálása
-              href: manage-microsoft-edge.md
-            - name: Az Outlook konfigurálása
-              href: app-configuration-policies-outlook.md
         - name: Alkalmazások védelme
           items:
             - name: Alkalmazások szelektív törlése
