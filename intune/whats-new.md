@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fbdd143e25e632601ec1f8ee4b57c9b77c3b3caf
-ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
+ms.openlocfilehash: 35d64aba1c4c9a06e295699ac862198c29d8b9b1
+ms.sourcegitcommit: 9f91d803dfc39336a954b79ccec6420e58375d31
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71166901"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71211561"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -92,15 +92,6 @@ Az Intune App SDK IOS rendszerhez készült 256 bites titkosítási kulcsok fogj
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
 ### <a name="device-configuration"></a>Eszközök konfigurálása
-
-#### <a name="allow-or-restrict-adding-app-widgets-to-the-home-screen-on-android-enterprise-work-profile-devices----1109650--wnstaged--"></a>Alkalmazás-widgetek a kezdőképernyőn való hozzáadásának engedélyezése vagy korlátozása Android Enterprise Work profiling-eszközökön <!-- 1109650  wnstaged--> 
-
-Az Android Enterprise rendszerű eszközökön a munkahelyi profilban konfigurálhatja a szolgáltatásokat (az**eszköz konfigurációs** > **profiljainak** > **profil** > létrehozása**Android Enterprise** for platform >  **A munkahelyi profil csak > eszköz korlátozásait** adja meg.) Ebben a frissítésben engedélyezheti a felhasználóknak, hogy a munkahelyi profil alkalmazásai által közzétett widgeteket adjanak az eszköz kezdőlapjára.
-
-A konfigurálható beállítások megjelenítéséhez nyissa meg az [androidos vállalati eszköz beállításait, hogy engedélyezze vagy korlátozza a szolgáltatásokat az Intune használatával](device-restrictions-android-for-work.md).
-
-Érintett kiadások:
-- Androidos vállalati munkahelyi profil
 
 #### <a name="support-for-ikev2-vpn-profiles-for-ios----1943438-----"></a>Az iOS rendszerhez készült IKEv2 VPN-profilok támogatása <!-- 1943438   -->
 Ebben a frissítésben VPN-profilokat hozhat létre az iOS natív VPN-ügyfél számára a IKEv2 protokoll használatával. A IKEv2 egy új kapcsolattípus az **eszköz konfigurációs** > **profiljaiban** > **profil** > létrehozása**iOS** for platform > **VPN** a profil típusa > **kapcsolat típusa**.
@@ -189,6 +180,14 @@ A Windows 10 megfelelőségi beállításaival kapcsolatos további információ
  #### <a name="updated-ui-for-configuring-microsoft-exchange-on-premises-access-------4092920---"></a>Frissített felhasználói felület a Microsoft Exchange helyszíni hozzáférésének konfigurálásához    <!-- 4092920 -->  
 Frissítettük a konzolt, ahol a [Microsoft Exchange helyszíni hozzáférését konfigurálja](conditional-access-exchange-create.md). A helyszíni Exchange-hozzáférés összes konfigurációja már elérhető a konzol ugyanazon paneljén, ahol *engedélyezheti a helyszíni Exchange-hozzáférés-vezérlést*.  
 
+#### <a name="allow-or-restrict-adding-app-widgets-to-the-home-screen-on-android-enterprise-work-profile-devices----1109650----"></a>Alkalmazás-widgetek a kezdőképernyőn való hozzáadásának engedélyezése vagy korlátozása Android Enterprise Work profiling-eszközökön <!-- 1109650  --> 
+Az Android Enterprise rendszerű eszközökön a munkahelyi profilban konfigurálhatja a szolgáltatásokat (az**eszköz konfigurációs** > **profiljainak** > **profil** > létrehozása**Android Enterprise** for platform >  **A munkahelyi profil csak > eszköz korlátozásait** adja meg.) Ebben a frissítésben engedélyezheti a felhasználóknak, hogy a munkahelyi profil alkalmazásai által közzétett widgeteket adjanak az eszköz kezdőlapjára.
+
+A konfigurálható beállítások megjelenítéséhez nyissa meg az [androidos vállalati eszköz beállításait, hogy engedélyezze vagy korlátozza a szolgáltatásokat az Intune használatával](device-restrictions-android-for-work.md).
+
+Érintett kiadások:
+- Androidos vállalati munkahelyi profil
+
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
 ### <a name="device-enrollment"></a>Eszközök beléptetése
 
@@ -216,7 +215,7 @@ Az Android teljes körűen felügyelt eszközeihez a következő támogatást ad
 - A rendszeralkalmazások az Android Enterprise rendszerű eszközökön támogatottak. Az Intune-ban adjon hozzá egy androidos nagyvállalati rendszeralkalmazást az **ügyfélalkalmazás** > **alkalmazások** > **Hozzáadás**lehetőség kiválasztásával. Az **alkalmazás típusa** listában válassza az **Android Enterprise System app**elemet. További információ: [androidos nagyvállalati rendszeralkalmazások hozzáadása a Microsoft Intunehoz](apps-ae-system.md). <!-- 4062195 -->
 - Az **eszköz megfelelősége** > **Android Enterprise** > -**eszköz tulajdonosában**létrehozhat egy megfelelőségi szabályzatot, amely beállítja a Google biztonság igazolási szintjét.   <!-- 4631425 -->
 - Az Android Enterprise teljes körűen felügyelt eszközökön a Mobile Threat Defense-szolgáltatók támogatottak. Az **eszköz megfelelősége** > **Android Enterprise** > -**eszköz tulajdonosa**lehetőség van egy elfogadható kockázati szint kiválasztására. <!-- 4631440 --> Az [Android vállalati beállítások az eszközök megfelelő vagy nem megfelelőként való megjelölésére az Intune](compliance-policy-create-android-for-work.md#device-owner) -ban az aktuális beállítások szerepelnek.
-- Az Android Enterprise teljes körűen felügyelt eszközökön a Microsoft Launcher alkalmazás mostantól az App Protection-szabályzatok segítségével konfigurálható a teljes körűen felügyelt eszközön a szabványosított végfelhasználói élmény érdekében. Az Android-eszköz személyre szabásához használhatja a Microsoft Launcher alkalmazást. Az alkalmazással Microsoft-fiók vagy munkahelyi/iskolai fiókkal is elérheti a naptárt, a dokumentumokat és a legutóbbi tevékenységeket a személyre szabott hírcsatornában. Megnyithatja a fényképeket, a dokumentumokat és a weblapokat a Windows rendszerű SZÁMÍTÓGÉPeken, így hatékonyabbá teheti az eszközöket. <!-- 5334044 -->
+- Az Android Enterprise teljes körűen felügyelt eszközökön a Microsoft Launcher alkalmazás mostantól az App Protection-szabályzatok segítségével konfigurálható a teljes körűen felügyelt eszközön a szabványosított végfelhasználói élmény érdekében. Az Android-eszköz személyre szabásához használhatja a Microsoft Launcher alkalmazást. Az alkalmazással Microsoft-fiók vagy munkahelyi/iskolai fiókkal is elérheti a naptárt, a dokumentumokat és a legutóbbi tevékenységeket a személyre szabott hírcsatornában. <!-- 5334044 -->
 
 Ezzel a frissítéssel örömmel jelentjük be, hogy az Android Enterprise teljes körűen felügyelt Intune-támogatás már általánosan elérhető. 
 
