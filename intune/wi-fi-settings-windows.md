@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3bbd90b5a317629bd5b4d87b619d89023053518d
-ms.sourcegitcommit: 7c251948811b8b817e9fe590b77f23aed95b2d4e
+ms.openlocfilehash: 528819452accf4a7f17e54b3c05693dee5cab74f
+ms.sourcegitcommit: 6a946a055a2014e00a4ca9d71986727a4ebbc777
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67884243"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71239456"
 ---
 # <a name="add-wi-fi-settings-for-windows-10-and-later-devices-in-intune"></a>Wi-Fi-beállítások hozzáadása Windows 10 és újabb rendszerű eszközökhöz az Intune-ban
 
@@ -58,10 +58,13 @@ Ez a cikk ezeket a beállításokat ismerteti.
   - **Megnyitás (nincs hitelesítés)** : Csak akkor használja ezt a beállítást, ha a hálózat nem biztonságos.
   - **WPA/WPA2-Personal**: Egy biztonságosabb megoldás, amelyet általában a Wi-Fi-kapcsolathoz használ a rendszer. A további biztonság érdekében előre megosztott kulcsot vagy hálózati kulcsot is megadhat. 
 
-    - **Előmegosztott kulcs** (PSK): Választható. Akkor jelenik meg, ha a **WPA/WPA2 (személyes)** biztonsági típust választja. A cég hálózatának beállítása vagy konfigurálása során a rendszer egy jelszót vagy egy hálózati kulcsot is konfigurál. Adja meg ezt a jelszót vagy hálózati kulcsot a PSK értékeként. 8–64 karakter közötti hosszúságú sztringet adjon meg. Ha a jelszó vagy a hálózati kulcs 64 karakterből áll, akkor hexadecimális karakteret adjon meg.
+    - **Előmegosztott kulcs** (PSK): Nem kötelező. Akkor jelenik meg, ha a **WPA/WPA2 (személyes)** biztonsági típust választja. A cég hálózatának beállítása vagy konfigurálása során a rendszer egy jelszót vagy egy hálózati kulcsot is konfigurál. Adja meg ezt a jelszót vagy hálózati kulcsot a PSK értékeként. 8–64 karakter közötti hosszúságú sztringet adjon meg. Ha a jelszó vagy a hálózati kulcs 64 karakterből áll, akkor hexadecimális karakteret adjon meg.
     
       > [!NOTE]
       > A Wi-Fi-profil mentésekor a PSK megadott értéke nem jelenik meg biztonsági okokból. Az előre megosztott kulcs vízjele továbbra is **Nincs konfigurálva** értéket mutat annak ellenére, hogy a PSK el van mentve a profilban. A PSK módosításához adjon meg egy új kulcsot, majd mentse a profilt. Ha a PSK mentésekor szerkeszti a szabályzatot, a PSK-t pedig üresen hagyja, továbbra is a meglévő PSK lesz használatban.
+      
+      > [!IMPORTANT]
+      > A PSK a profule megcélzott összes eszköz esetében azonos. Ha a kulcs biztonsága sérül, bármely eszköz használhatja a Wi-Fi hálózathoz való csatlakozáshoz. A jogosulatlan hozzáférés elkerüléséhez tartsa biztonságos PSKs.
 
 - **Vállalati proxybeállítások**: Válassza ki a szervezeten belüli proxybeállítások használatát. A választható lehetőségek:
   - **Nincs**: Nincsenek proxybeállítások konfigurálva.

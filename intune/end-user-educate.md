@@ -8,7 +8,6 @@ ms.author: lanewsad
 manager: dougeby
 ms.date: 06/01/2018
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f8405aceaa1fd9c00b966d03a1f7b80e5946d96
-ms.sourcegitcommit: 1cae690ca2ac6cc97bbcdf656f54b31878297ae8
+ms.openlocfilehash: 52f8af06fffb3643714ed318e474b73be21963ed
+ms.sourcegitcommit: 6a946a055a2014e00a4ca9d71986727a4ebbc777
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59898479"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71239799"
 ---
 # <a name="how-to-educate-your-end-users-about-microsoft-intune"></a>A végfelhasználók felkészítése a Microsoft Intune használatára
 
@@ -44,7 +43,7 @@ __Milyen szintű technológiai tapasztalattal rendelkeznek a felhasználók?__ A
 
 __Mit jelent a mobileszköz-kezelés a felhasználók számára?__ Nem biztos, hogy a felhasználók pontosan értik, hogy Ön milyen hozzáféréssel rendelkezik – vagy nem rendelkezik – az eszközükhöz és az adataikhoz. A felhasználók tarthatnak attól, hogy az informatikai részleg vagy a vezetőség nyomon követi a tevékenységüket. A kevésbé tapasztalt eszközhasználók úgy vélhetik, hogy az eszközükön végzett összes tevékenység magánjellegű. 
 
-__Milyen kellemetlenségeket okozhat a felhasználóknak az Intune?__  Vegye figyelembe és tartsa tiszteletben, hogy a felhasználóknak időbe telik az alkalmazások telepítése, az eszközregisztráció és a megfelelőség fenntartása. Az Intune központi telepítéseinek legfontosabb eleme minden esetben a céges adatbiztonság. Az eszközhasználatról alkotott felhasználói elképzeléseket azonban rossz irányban befolyásolhatják az olyan szabályzatok, amelyek például a következőkkel járnak együtt:  
+__Milyen kellemetlenségeket okozhat a felhasználóknak az Intune?__  Vegye figyelembe és tartsa tiszteletben, hogy a felhasználóknak időbe telik az alkalmazások telepítése, az eszközregisztráció és a megfelelőség fenntartása. Az Intune központi telepítéseinek legfontosabb eleme minden esetben a céges adatbiztonság. Az eszközkezelés felé irányuló felhasználói hozzáállás azonban negatív hatással lehet, ha leküldi a szabályzatokat, például:  
 * Érthetetlen PIN-kódok használatának megkövetelése a személyes eszközökön
 * Kötelező alkalmazásfrissítések kiküldése fontos munkafázisok közben  
 
@@ -58,9 +57,9 @@ Olvassa el az alábbi tippeket az Intune központi telepítésének megkönnyít
 
 * __Legyen elérhető.__ Tájékoztassa a felhasználókat, hogy az eszköz problémája esetén hol kérhetnek segítséget. Amikor [testre szabja a Céges portált](company-portal-customize.md), ne feledje megadni az informatikai rendszergazda elérhetőségét.
 
-* __Legyen személyes.__ Adjon a konkrét cég központi telepítésére vonatkozó útmutatásokat. Ez meggyőzi a felhasználókat, hogy odafigyel a személyes tapasztalataikra. Ezen a [testre szabható, felhasználói Intune-regisztrációs sablonon](https://gallery.technet.microsoft.com/office/Intune-End-User-Enrollment-3a0c9b0c) megadhatja a saját regisztrációs instrukcióit a felhasználók számára.
+* __Legyen személyes.__ Adjon a konkrét cég központi telepítésére vonatkozó útmutatásokat. Ez meggyőzi a felhasználókat, hogy odafigyel a személyes tapasztalataikra. Ezzel a testre szabható [Intune bevezetési csomaggal](https://aka.ms/IntuneAdoptionKit) saját regisztrációs utasításokat hozhat létre a felhasználók számára.
 
-* __Keresse a különböző kommunikációs lehetőségeket.__ A felhasználók [eltérő stílusban tanulnak](https://www.umassd.edu/dss/resources/facultystaff/howtoteachandaccommodate/howtoaccommodatedifferentlearningstyles/), és különböznek az információfogyasztási szokásaik is. A vizuális típusok számára az Intune a Channel 9 oldalán elérhetővé tette [a különböző eszköztípusok regisztrációját bemutató videókat](https://channel9.msdn.com/Series/IntuneEnrollment). A videókat közvetlenül beágyazhatja a saját [SharePoint-oldalán](https://support.office.com/article/Embed-a-video-from-Office-365-Video-59e19984-c34e-4be8-889b-f6fa93910581). Helyi példányokat is letölthet a videókról vagy a hanganyagokról.
+* __Keresse a különböző kommunikációs lehetőségeket.__ A felhasználók [eltérő stílusban tanulnak](https://www.umassd.edu/dss/resources/faculty--staff/how-to-teach-and-accommodate/how-to-accommodate-different-learning-styles/), és különböznek az információfogyasztási szokásaik is. A vizuális típusok számára az Intune a Channel 9 oldalán elérhetővé tette [a különböző eszköztípusok regisztrációját bemutató videókat](https://channel9.msdn.com/Series/IntuneEnrollment). A videókat közvetlenül beágyazhatja a saját [SharePoint-oldalán](https://support.office.com/article/Embed-a-video-from-Office-365-Video-59e19984-c34e-4be8-889b-f6fa93910581). Helyi példányokat is letölthet a videókról vagy a hanganyagokról.
 
 * __Legyen figyelmes.__ Az Intune-felhasználók tapasztalatai az Ön munkájának hatékonyságát is érintik. Ha megérti ezeket a tapasztalatokat, könnyebben oldhatja meg az eszközök és a felhasználók problémáit. Például tájékozódhat arról, hogy a felhasználók milyen módon jutnak hozzá az alkalmazásokhoz. Ha előre tájékozódik, könnyebben és gyorsabban diagnosztizálhatja és javíthatja a hibákat.
 

@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 35d64aba1c4c9a06e295699ac862198c29d8b9b1
-ms.sourcegitcommit: 9f91d803dfc39336a954b79ccec6420e58375d31
+ms.openlocfilehash: 657f30748d3c4e6c4a819c5ed888c541bcb7b5c1
+ms.sourcegitcommit: 6a946a055a2014e00a4ca9d71986727a4ebbc777
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 09/24/2019
-ms.locfileid: "71211561"
+ms.locfileid: "71238226"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -62,8 +62,8 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 #### <a name="managed-google-play-private-lob-apps----1464182----"></a>Felügyelt Google Play Private LOB-alkalmazások <!-- 1464182  -->
 Az Intune mostantól lehetővé teszi a rendszergazdák számára, hogy privát Android LOB-alkalmazásokat tegyenek közzé a Google Play szolgáltatásban az Intune-konzolon beágyazott iframe használatával.  Korábban a rendszergazdák számára szükséges, hogy a LOB-alkalmazásokat közvetlenül a Google Play közzétételi konzolján tegye közzé, amely több lépést igényelt, és időigényes volt. Ez az új funkció lehetővé teszi a LOB-alkalmazások egyszerű közzétételét a lépések minimális készletével anélkül, hogy az Intune-konzolt el kellene hagynia.  A rendszergazdáknak többé nem kell manuálisan regisztrálniuk a Google-fejlesztőként, és a továbbiakban nem kell fizetniük a Google $25 regisztrációs díját.  A felügyelt Google Play szolgáltatást használó androidos vállalati felügyeleti forgatókönyvek bármelyike kihasználhatja ezt a funkciót (munkahelyi profil, dedikált, teljes körűen felügyelt és nem regisztrált eszközök). Az Intune-ból válassza az **ügyfélalkalmazások** > **alkalmazások** > **Hozzáadás**elemet. Ezután válassza a **felügyelt Google Play** lehetőséget az **alkalmazás típusa** listából. A felügyelt Google Play-alkalmazásokkal kapcsolatos további információkért lásd: [felügyelt Google Play-alkalmazások hozzáadása androidos vállalati eszközökhöz az Intune](apps-add-android-for-work.md)-nal.
 
-#### <a name="company-portal-experience----1473353-3598357---"></a>Céges portáli élmény <!-- 1473353, 3598357 -->
-A Céges portál frissítése folyamatban van. Az alkalmazások lapon több szűrőt is használhat a Céges portálon belül. Az eszköz részletes felhasználói felülete is frissül. Ezen frissítések minden ügyfelünk számára folyamatban vagyunk, és a következő hét végére várhatóan elvégezhető.
+#### <a name="windows-company-portal-experience----1473353-3598357---"></a>Windows Céges portál-élmény <!-- 1473353, 3598357 -->
+A Windows Céges portál frissítése folyamatban van. Az alkalmazások lapon több szűrőt is használhat a Windows Céges portálon belül. Az eszköz részletes felhasználói felülete is frissül. Ezen frissítések minden ügyfelünk számára folyamatban vagyunk, és a következő hét végére várhatóan elvégezhető.
 
 #### <a name="macos-support-for-web-apps----3174427---"></a>macOS-támogatás webes alkalmazásokhoz <!-- 3174427 -->
 Webalkalmazások, amelyek lehetővé teszik a webes URL-címekhez való parancsikonok hozzáadását a Dockon a macOS Céges portál használatával. A végfelhasználók a macOS Céges portál webalkalmazáshoz tartozó alkalmazás részletei lapon érhetik el a **telepítési** műveletet. A **Webhivatkozás** alkalmazás típusával kapcsolatos további információkért lásd: [alkalmazások hozzáadása a Microsoft Intunehez](apps-add.md) és [webalkalmazások hozzáadása Microsoft Intunehoz](web-app.md).
@@ -237,10 +237,10 @@ Az Intune mostantól támogatja az iOS 13 és macOS Catalina eszközök felügye
 #### <a name="bitlocker-support-for-client-driven-recovery-password-rotation-------3444125---"></a>BitLocker-támogatás az ügyfél által vezérelt helyreállítási jelszó elforgatásához   <!--  3444125 -->
 Az Intune-Endpoint Protection beállítások segítségével konfigurálhatja az [ügyfél által vezérelt helyreállítási jelszavakat](endpoint-protection-windows-10.md#windows-encryption) a Bitlockerhez a Windows 1909-es vagy újabb verzióját futtató eszközökön.
 
-Ez a beállítás egy, az operációsrendszer-meghajtó helyreállítása után (a Csizmadia vagy a WinRE használatával) és a helyreállítási jelszó zárolásának feloldása után kezdeményezi az ügyfél által vezérelt helyreállítási jelszó frissítését egy rögzített adatmeghajtón. Ez a beállítás frissíti a használt helyreállítási jelszót, és a köteten található egyéb nem használt jelszavak változatlanok maradnak. További információ: a BitLocker CSP dokumentációja a [ConfigureRecoveryPasswordRotation](https://docs.microsoft.com/windows/client-management/mdm/bitlocker-csp#configurerecoverypasswordrotation).
+Ez a beállítás egy, az operációsrendszer-meghajtó helyreállítása után (a Csizmadia vagy a WinRE használatával) és a helyreállítási jelszó zárolásának feloldása után kezdeményezi az ügyfél által vezérelt helyreállítási jelszó frissítését egy rögzített adatmeghajtón. Ez a beállítás frissíti a használt helyreállítási jelszót, és a köteten található egyéb nem használt jelszavak változatlanok maradnak. További információ: a BitLocker CSP dokumentációja a [ConfigureRecoveryPasswordRotation](https://docs.microsoft.com/windows/client-management/mdm/bitlocker-csp).
 
 #### <a name="tamper-protection-for-windows-defender-antivirus-----4705448----------"></a>Illetéktelen védelem a Windows Defender Víruskeresőben  <!-- 4705448        -->
-Az Intune használatával kezelheti a Windows Defender víruskereső *illetéktelen hozzáférést biztosító védelmét* . Az [illetéktelen hozzáférést biztosító védelem beállítását](endpoint-protection-windows-10.md#windows-defender-security-center) a Microsoft Defender Security Center csoportjában találja, ha a Windows 10-es végpontok védelméhez eszköz-konfigurációs profilokat használ. Beállíthatja, hogy az illetéktelen hozzáférést *engedélyező* védelem bekapcsolja a Temper Protection-korlátozásokat, *Letiltva* a kikapcsolását, vagy beállíthatja, hogy a rendszer*ne* állítsa be az eszközök aktuális konfigurációját.  
+Az Intune használatával kezelheti a Windows Defender víruskereső *illetéktelen hozzáférést biztosító védelmét* . Az [illetéktelen hozzáférést biztosító védelem beállítását](endpoint-protection-windows-10.md#windows-defender-security-center) a Microsoft Defender Security Center csoportjában találja, ha a Windows 10-es végpontok védelméhez eszköz-konfigurációs profilokat használ. Beállíthatja, hogy az illetéktelen hozzáférést *engedélyező* védelem bekapcsolja az illetéktelen hozzáférést a védelem korlátozásához, állítsa le a *Letiltva* lehetőséget, vagy állítsa be úgy, hogy ne legyenek*beállítva* az eszközök aktuális konfigurációja.  
 
 További információ az illetéktelen hozzáférést biztosító védelemről: a [biztonsági beállítások módosításának megakadályozása](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/prevent-changes-to-security-settings-with-tamper-protection) a Windows dokumentációjában. 
 

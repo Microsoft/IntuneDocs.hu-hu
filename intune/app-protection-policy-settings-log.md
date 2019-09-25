@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f9ee4d978bcb44f3b13ddcf9aafa4a3210f0f7e
-ms.sourcegitcommit: 7c251948811b8b817e9fe590b77f23aed95b2d4e
+ms.openlocfilehash: ea64a8b9c4e8fb044e0fd66be32dcc71e4a5aefc
+ms.sourcegitcommit: 6a946a055a2014e00a4ca9d71986727a4ebbc777
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67885066"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71239433"
 ---
 # <a name="review-client-app-protection-logs"></a>Ügyfelekre vonatkozó alkalmazásvédelmi naplók áttekintése
 
@@ -31,7 +31,7 @@ Ismerje meg az alkalmazásvédelmi naplók áttekinthető beállításait. A nap
 A naplók engedélyezésére és gyűjtésére szolgáló folyamat a következő platformokra változik:
 - **Android-eszközök** – használja a *céges portál*. Tekintse [meg az e-mail naplókat a cég informatikai támogatási szolgálatának](/intune-user-help/send-logs-to-your-it-admin-by-email-android).
 - **iOS-eszközök** – Managed Browser vagy *Microsoft Edge* használatával gyűjti össze a naplókat. További részletekért tekintse meg az Intune támogatási csapatának blogja az [új Intune diagnosztikai konzolt a naplók küldéséhez a Intune Managed Browser](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-Tip-New-Intune-Diagnostic-Console-for-Log-Submission-in/ba-p/280021). 
-- **Windows 10-es eszközök** – a *MDMDiag* és az eseménynaplókat használja. Lásd: [Mdm hibák diagnosztizálása a Windows 10-es](https://docs.microsoft.com/windows/client-management/mdm/diagnose-mdm-failures-in-windows-10) verzióban a Windows ügyfél-felügyeleti tartalomban, valamint a [Windows 10 Intune-szabályzat hibáinak elhárítása](http://configmgrdogsarchive.com/2018/08/09/troubleshooting-windows-10-intune-policy-failures) a blogon
+- **Windows 10-es eszközök** – a *MDMDiag* és az eseménynaplókat használja. Tekintse meg a Windows [Mdm hibáinak diagnosztizálása](https://docs.microsoft.com/windows/client-management/mdm/diagnose-mdm-failures-in-windows-10) a Windows 10 rendszerben című témakört, valamint a Windows [10 Intune-szabályzat hibáit](https://blogs.technet.microsoft.com/configmgrdogs/2018/08/09/troubleshooting-windows-10-intune-policy-failures/)ismertető blogot.
 
 
 A következő táblázat a naplóban rögzített beállítások nevét és magyarázatát tartalmazza.

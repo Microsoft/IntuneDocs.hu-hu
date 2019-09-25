@@ -1,14 +1,13 @@
 ---
-title: Közvetlen telepítése Windows és Windows Phone-alkalmazások
+title: Windows-és Windows Phone-telefon-alkalmazások Oldalazva társas viszony
 titleSuffix: Microsoft Intune
 description: A cikkből megtudhatja, hogyan írhatja alá az üzleti alkalmazásokat, hogy az Intune segítségével telepíthesse őket.
 keywords: ''
 author: erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 04/15/2019
+ms.date: 07/25/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -16,158 +15,83 @@ ms.assetid: e44f1756-52e1-4ed5-bf7d-0e80363a8674
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8652d260849537d1e0b504f5d309a3ab2708e5cd
-ms.sourcegitcommit: 8c795b041cd39e3896595f64f53ace48be0ec84c
+ms.openlocfilehash: 4d30f2f392a760701337fb17b902458ea01ed00b
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59587518"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71238875"
 ---
 # <a name="sign-line-of-business-apps-so-they-can-be-deployed-to-windows-devices-with-intune"></a>Üzleti alkalmazások aláírása, hogy telepíteni lehessen őket Windows-eszközökre az Intune segítségével
 
 [!INCLUDE [both-portals](./includes/note-for-both-portals.md)]
 
-Intune-rendszergazdaként telepíthet üzleti alkalmazásokat (köztük a Munkahelyi portál alkalmazást) Windows és Windows 10 Mobile rendszerű eszközökre. Ahhoz, hogy .appx vagy .xap alkalmazásokat telepíthessen Windows 10 vagy a Windows 10 Mobile rendszerű eszközökre, vagy bármilyen üzleti alkalmazást telepíthessen Windows 8.1 vagy Windows Phone 8.1 rendszerű eszközökre, **be kell szereznie a Symantec vállalati mobil-kódaláíró tanúsítványt**. Az ilyen Windows-eszközökön csak a Symantec aláírásával ellátott alkalmazások minősülnek megbízhatónak. A Windows 10-alkalmazások és az „univerzális” alkalmazások esetében használhatja saját hitelesítésszolgáltatóját. Ez a tanúsítvány az alábbiakhoz szükséges:
+Intune-rendszergazdaként üzletági (LOB) univerzális alkalmazásokat telepíthet a Windows 8,1 asztali vagy Windows 10 asztali & mobileszközökön, beleértve a Céges portál alkalmazást is. A. Appx alkalmazások Windows 8,1 asztali vagy Windows 10 rendszerű asztali & mobileszközökön való üzembe helyezéséhez a Windows-eszközök által már megbízhatóként használt nyilvános hitelesítésszolgáltatótól származó kód-aláíró tanúsítványt használhat, vagy használhatja saját hitelesítésszolgáltatóját is.
 
--   A Munkahelyi portál aláírása, hogy telepíteni lehessen a Windows rendszerű számítógépekre, Windows 10 Mobile rendszerű eszközökre és a Windows Phone rendszerű eszközökre
+A Windows 8,1 Desktophoz vállalati házirend szükséges a közvetlen telepítési engedélyezéséhez vagy a közvetlen telepítési kulcsok használatához (automatikusan engedélyezve a tartományhoz csatlakoztatott eszközök esetében). További információ: [Windows 8 közvetlen telepítési](https://blogs.technet.microsoft.com/scd-odtsp/2012/09/27/windows-8-sideloading-requirements-from-technet/).
 
--   A cég üzleti alkalmazásainak aláírása, hogy az Intune telepíthesse őket a Windows-eszközökre
+A Windows 10-es verzióban a közvetlen telepítési eltér a Windows korábbi verzióiban:
 
-Az alábbi lépésekkel beszerezheti a szükséges tanúsítványokat, és aláírhatja az alkalmazásokat. Regisztrálnia kell Microsoft-fejlesztőként, majd vásárolnia kell egy Symantec-tanúsítványt.
+- A közvetlen telepítési egy vállalati házirend segítségével oldhatja fel az eszköz zárolását. Az Intune egy "megbízható alkalmazás telepítése" nevű eszköz-konfigurációs szabályzatot biztosít. Ha ezt a <allow> beállítást szeretné beállítani, akkor a Appx alkalmazás aláírásához használt tanúsítványban már megbízható eszközökhöz is szükség van.
 
-
-1. **Regisztrálás Microsoft-fejlesztőként**<br>
-   [A Microsoft-fejlesztőként való regisztrálást](https://go.microsoft.com/fwlink/?LinkId=268442) azokkal a céges fiókadatokkal végezheti el, amelyeket bejelentkezéskor használt a céges fiók vásárlásakor. Ezt a kérelmet engedélyeznie kell egy vállalati tisztviselőnek ahhoz, hogy kódaláíró tanúsítványt kaphasson.
-
-2. **Céges Symantec-tanúsítvány beszerzése**<br>
-  Vásároljon tanúsítványt a [Symantec webhelyéről](https://go.microsoft.com/fwlink/?LinkId=268441) Symantec-azonosítója használatával. A tanúsítvány megvásárlása után a Microsoft-fejlesztőként való regisztráláskor kijelölt munkahelyi jóváhagyó kap egy e-mailt, amely a tanúsítványkérelem jóváhagyását kéri. A Symantec-tanúsítványra vonatkozó követelményekről a [Miért szükséges a Windows Phone-telefonok kezeléséhez Symantec-tanúsítvány?](https://technet.microsoft.com/library/dn764959.aspx#BKMK_Symantec) című részben talál további információkat. „Gyakori kérdések a Windows Phone rendszerű mobileszközök kezelésével kapcsolatban” szakaszban.
-
-3.  **Tanúsítványok importálása**<br>
-    Amint jóváhagyják a kérelmét, kapni fog egy e-mailt, amely a tanúsítványok importálására vonatkozó útmutatást tartalmaz. A tanúsítványok importálásához kövesse az e-mailben szereplő utasításokat.
-
-4.  **Az importált tanúsítványok ellenőrzése**<br>
-    A tanúsítványimportálás helyes voltának ellenőrzéséhez nyissa meg a **Tanúsítványkezelő** beépülő modult, kattintson a jobb gombbal a **Tanúsítványok** elemre, és válassza a **Tanúsítványok keresése** parancsot. A **Tartalmazza** mezőben adja meg a „Symantec” kifejezést, majd kattintson a **Keresés most**lehetőségre. Az eredmények között meg kell jelennie az importált tanúsítványoknak.
-
-    ![A tanúsítvány eredményei láthatók a tanúsítványok keresése párbeszédpanel](./media/wit.gif)
-
-5. **Aláíró tanúsítvány exportálása**<br>
-    Miután ellenőrizte, hogy telepítve vannak-e a tanúsítványok, exportálhatja a vállalati portál aláírásához szükséges PFX-fájlt. Válassza ki a Symantec-tanúsítványt, amelynek **Felhasználási célja** a „kód aláírása”. Kattintson jobb gombbal a kódaláíró tanúsítványra, majd válassza az **Exportálás** lehetőséget.
-
-    ![Aláíró tanúsítvány exportálása](./media/wit-walk-cert2.gif)
-
-    A **Tanúsítványexportáló varázslóban**válassza az **Igen, a titkos kulcs exportálását választom** lehetőséget, majd kattintson a **Tovább**gombra. Válassza ki a **Személyes információcsere - PKCS #12 (.PFX)** lehetőséget, majd jelölje be a **Minden tanúsítvány felvétele a tanúsítványláncba, ha lehetséges** jelölőnégyzetet. A varázsló befejezése. További tudnivalókért lásd: [Tanúsítvány exportálása a titkos kulccsal](https://go.microsoft.com/fwlink/?LinkID=203031).
-
-6.  **Az alkalmazás feltöltése az Intune-ba**<br>
-    Töltse fel az alkalmazás aláírt fájlját és a kódaláíró tanúsítványt, így elérhetővé téve az alkalmazást a végfelhasználók számára.
-
-    1.  Az Azure Portalon kattintson a **Felügyelet** &gt; **Windows Phone** lehetőségre.
-
-    2.  Kattintson az **Aláírt alkalmazásfájl feltöltése** lehetőségre, és jelentkezzen be az Intune-rendszergazdai azonosítójával.
-
-    3.  Adja hozzá az exportált tanúsítványfájlt (.pfx) a **Kódaláíró tanúsítvány** elemhez, és hozzon létre egy jelszót a tanúsítványhoz.
-
-    4.  A varázsló befejezése.
-
-## <a name="example-download-sign-and-deploy-the-company-portal-app-for-windows-devices"></a>Példa: Letöltése, aláírása és a Windows-eszközökhöz készült céges portál alkalmazás telepítése
-
-A Windows-eszközökre (a Windows Phone-telefonokat és a Windows 10 Mobile rendszerű eszközöket is beleértve) az Intune-nal is telepítheti a Céges portál alkalmazást, nem kell a Microsoft Áruházból telepítenie. Ehhez le kell töltenie a Munkahelyi portál alkalmazást, és alá kell írnia a cég tanúsítványával.  Erre csak akkor van szükség, ha a felhasználók nem fogják igénybe venni a Vállalati portál alkalmazást, és Windows Phone 8.1-es telefonokra szeretné azt telepíteni.
+- A Symantec Phone-tanúsítványok és a közvetlen telepítési-licenc kulcsa nem szükséges. Ha azonban egy helyszíni hitelesítésszolgáltató nem érhető el, előfordulhat, hogy egy kód-aláíró tanúsítványt kell beszereznie egy nyilvános hitelesítésszolgáltatótól. További információ: [Bevezetés a kód aláírására](https://docs.microsoft.com/windows/desktop/SecCrypto/cryptography-tools#introduction-to-code-signing).
 
 
-1.  **A Vállalati portál alkalmazás letöltése**
+## <a name="code-sign-your-app"></a>Az alkalmazás kódjának aláírása
 
-    Ha az Intune segítségével szeretné telepíteni a Munkahelyi portál alkalmazást, töltse le a [Windows Phone 8.1 rendszerhez készült Microsoft Intune Munkahelyi portál alkalmazást](https://go.microsoft.com/fwlink/?LinkId=615799) a letöltőközpontból, és futtassa az önkicsomagoló (.exe) fájlt. Ez a fájl két fájlt tartalmaz:
+Az első lépés a Appx-csomag aláírása: [alkalmazáscsomag aláírása a SignTool használatával](https://docs.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool)
 
-    -   CompanyPortal.appx – a Windows Phone 8.1 rendszerhez készült vállalati portált telepítő alkalmazás
+## <a name="upload-your-app"></a>Alkalmazás feltöltése
 
-    -   WinPhoneCompanyPortal.ps1 – egy PowerShell-parancsprogram, amellyel aláírhatja a Vállalati portál alkalmazás fájlját, hogy az telepíthető legyen Windows Phone 8.1-es telefonokra
+Ezután töltse fel az aláírt Appx-fájlt az [üzletági Windows-alkalmazás feltöltése](lob-apps-windows.md) című cikkben leírtak szerint.
 
-    Azt is megteheti, hogy letölti a Windows Phone 8.1-es vagy a Windows 10-es Céges portált (az offline licenccel rendelkező csomagot) a [Vállalati Microsoft Áruházból](https://businessstore.microsoft.com/). A Munkahelyi portál alkalmazást offline licenccel kell beszerezni, és az offline használatra megfelelő csomagot kell letölteni. A kínálatban a Windows 8 és a Windows Phone 8 platformra készültként megjelölt termékek valójában a 8.1-beli megfelelőjükre utalnak. Ennek az Intune-nal való végrehajtásáról bővebben [A Vállalati Microsoft Áruházban vásárolt alkalmazások kezelése](windows-store-for-business.md) című témakörben olvashat.
+Ha a felhasználók vagy eszközök számára szükséges módon telepíti az alkalmazást, akkor nincs szüksége a Inutne Céges portál alkalmazásra. Ha azonban a felhasználók számára elérhetővé teszi az alkalmazást, akkor használhatja a Céges portál alkalmazást a nyilvános Microsoft Storeból, az Céges portál alkalmazást használhatja a vállalati privát Microsoft Store, vagy be kell jelentkeznie és manuálisan telepítenie kell az Intune-céget. Portál alkalmazás.
 
-2.  **A Windows Phone SDK letöltése** Töltse le a Windows Phone SDK 8.0-s verzióját] (https://go.microsoft.com/fwlink/?LinkId=615570)), és telepítse a számítógépre. Az SDK az alkalmazásregisztrációs adatblokkok létrehozásához szükséges.
+## <a name="upload-the-code-signing-certificate"></a>A kód aláíró tanúsítványának feltöltése
 
-3.  **AETX-fájl létrehozása** Hozza létre az alkalmazásregisztrációs adatblokk .aetx kiterjesztésű fájlját a Symantec PFX-fájlból a Windows Phone SDK 8.0 részét képező AETGenerator.exe eszközzel. Az AETX-fájlok létrehozásával kapcsolatos útmutatást itt találja: [Alkalmazásregisztrációs adatblokk létrehozása a Windows Phone rendszerhez](https://msdn.microsoft.com/library/windows/apps/jj735576.aspx)
+Ha a Windows 10-es eszköze még nem bízik meg a hitelesítésszolgáltatóban, akkor a Appx-csomag aláírása és az Intune szolgáltatásba való feltöltése után fel kell töltenie a kód aláíró tanúsítványát az Intune-portálra:
+1. Kattintson az ügyfélalkalmazások lehetőségre
+2. Kattintson a Windows Enterprise-tanúsítványok elemre.
+3. Válassza a fájl kiválasztása elemet a kód aláíró tanúsítványa alatt.
+4. Válassza ki a. cer fájlt, és kattintson a feltöltés gombra.
 
-4.  **A Windows 8.1 rendszerhez készült Windows SDK letöltése** Töltse le és telepítse a [Windows Phone SDK-t](https://go.microsoft.com/fwlink/?LinkId=613525) (https://go.microsoft.com/fwlink/?LinkId=613525)). Ügyeljen arra, hogy a Vállalati portál alkalmazás PowerShell-parancsprogramja az alapértelmezett telepítési helyet ( `${env:ProgramFiles(x86)}\Windows Kits\8.1`) használja. Ha máshová telepíti, meg kell adnia a helyet egy parancsmag-paraméterben.
+Most, hogy az Intune szolgáltatás által Appx üzemelő Windows 10 asztali & mobileszköz automatikusan letölti a megfelelő vállalati tanúsítványt, és az alkalmazás a telepítés után is elindítható.
 
-5.  **Az alkalmazás kódjának aláírása a PowerShell használatával** A telepített Windows SDK-t és a Symantec Enterprise Mobile Code Signing Certificate tanúsítványt tartalmazó gazdagépről nyissa meg a **Windows PowerShell** alkalmazást rendszergazdaként, keresse meg a Sign-WinPhoneCompanyPortal.ps1 fájlt, és futtassa a parancsprogramot.
-
-    **1. példa**
-
-    ```PowerShell
-    .\Sign-WinPhoneCompanyPortal.ps1 -InputAppx 'C:\temp\CompanyPortal.appx' -OutputAppx 'C:\temp\CompanyPortalEnterpriseSigned.appx' -PfxFilePath 'C:\signing\cert.pfx' -PfxPassword '1234' -AetxPath 'C:\signing\cert.aetx'
-    ```
-    Ebben a példában a CompanyPortal.appx fájl lesz aláírva a C:\temp\ mappában, így létrejön a CompanyPortalEnterpriseSigned.appx fájl. A program az 1234 PFX-jelszót használja, a gyártó azonosítóját pedig a PFX-fájlból olvassa be. Emellett beolvassa a vállalati azonosítót is a cert.aetx fájlból.
-
-    **2. példa**
-
-    ```PowerShell
-    .\Sign-WinPhoneCompanyPortal.ps1 -InputAppx 'C:\temp\CompanyPortal.appx' -OutputAppx 'C:\temp\CompanyPortalEnterpriseSigned.appx' -PfxFilePath 'C:\signing\cert.pfx' -PfxPassword '1234' -PublisherId 'OID.0.9.2342.19200300.100.1.1=1000000001, CN="Test, Inc.", OU=Test 1' -EnterpriseId 1000000001
-    ```
-    Ebben a példában a CompanyPortal.appx fájl lesz aláírva a C:\temp\ mappában, így létrejön a CompanyPortalEnterpriseSigned.appx fájl. A program az 1234 PFX-jelszót, valamint a megadott gyártóazonosítót használja.
-
-    **Paraméterek:**
-
-    -   `-InputAppx` – a CompanyPortal.appx fájl helyi elérési útja aposztrófok között. Például: 'C:\temp\CompanyPortal.appx'.
-
-    -   `-OutputAppx` – az aláírt Vállalati portál alkalmazás helyi elérési útja és fájlneve aposztrófok között. Például: 'C:\temp\CompanyPortalEnterpriseSigned.appx'.
-
-    -   `-PfxFilePath` – a Symantec-tanúsítvány exportált PFX-fájljának helyi elérési útja és fájlneve. Például: 'C:\signing\cert.pfx'.
-
-    -   `-PfxPassword` – a PFX-fájl aláírásához használt jelszó aposztrófok között. Például: '1234'.
-
-    -   `-AetxPath` – a vállalati azonosító beolvasásához használt .aetx fájl helyi elérési útja, ha nincs megadva az EnterpriseId argumentum. Ezt az argumentumot vagy az EnterpriseId argumentumot kötelező megadni. Például: 'C:\signing\cert.aetx'.
-
-    -   `-PublisherId` – a vállalat gyártóazonosítója. Ha nincs megadva, a program a Symantec Enterprise Mobile Code Signing Certificate tanúsítvány Subject (Tulajdonos) mezőjének értékét használja. Például: 'OID.0.9.2342.19200300.100.1.1=1000000001, CN="Test, Inc.", OU=Test 1'.
-
-    -   `-SdkPath` – a Windows 8.1-hez készült Windows SDK gyökérmappájának elérési útja. Ezt az argumentumot nem kötelező megadni, alapértelmezett értéke pedig ${env:ProgramFiles(x86)}\Windows Kits\8.1.
-
-    -   `-EnterpriseId` – a vállalat azonosítója. Ezt az argumentumot vagy az AetxPath argumentumot kötelező megadni. Ha nincs megadva ez az argumentum, a program az AETX-fájlból olvassa be a vállalat azonosítóját. Például: 1000000001.
-
-6.  Telepítse a Windows Phone 8.1-es Vállalati portál alkalmazást (SSP.appx). További útmutatást a [Windows Phone rendszerű üzletági (LOB) alkalmazások hozzáadásával](lob-apps-windows-phone.md) foglalkozó témakörben talál.
+Az Intune csak a feltöltött legújabb. cer fájlt telepíti. Ha több, a szervezete számára nem társított fejlesztő által létrehozott Appx-fájllal rendelkezik, akkor az aláírás nélküli Appx-fájlokat is meg kell adnia a tanúsítvánnyal való bejelentkezéshez, vagy meg kell adnia nekik a kód által használt aláírási tanúsítványt. a szervezete.
 
 ## <a name="how-to-renew-the-symantec-enterprise-code-signing-certificate"></a>A Symantec vállalati kódaláíró tanúsítvány megújítása
 
-A Windows és Windows Phone rendszerű mobilalkalmazások telepítésére szolgáló Symantec-tanúsítványt rendszeresen meg kell újítani.
+A Windows Phone-telefon 8,1 Mobile apps üzembe helyezéséhez használt tanúsítvány a 28 2019 februárjában megszűnt, és már nem érhető el a Symantec megújításához. Ha a WIndows 10 Mobile rendszerre végzi a telepítést, akkor továbbra is használhatja a Symantec asztali nagyvállalati kód-aláíró tanúsítványait a Windows 10-es utasítások követésével.
 
-1.  Keressen a Symantec által küldött, megújításra vonatkozó e-mailt körülbelül két héttel a tanúsítvány lejárta előtt. Ez az e-mail tartalmazza a Symantec a vállalati tanúsítvány megújítására vonatkozó utasításait.
+## <a name="how-to-install-the-updated-certificate-for-line-of-business-lob-apps"></a>A frissített alkalmazások telepítése az üzleti alkalmazások számára
 
-    A Symantec-tanúsítványokkal kapcsolatos további tudnivalókért keresse fel a [www.symantec.com](https://www.symantec.com) webhelyet, vagy hívja az 1-877-438-8776 vagy az 1-650-426-3400 telefonszámot.
+Windows Phone 8.1
 
-2.  Nyissa meg a webhelyet (például: [https://products.websecurity.symantec.com/orders/enrollment/microsoftCert.do](https://products.websecurity.symantec.com/orders/enrollment/microsoftCert.do)) és jelentkezzen be a tanúsítványhoz tartozó Symantec-közzétevőazonosítóval és e-mail-címmel. Fontos, hogy ugyanazon a számítógépen indítása el a megújítást, amelyen le fogja tölteni a tanúsítványt.
+Az Intune szolgáltatás már nem tud LOB-alkalmazásokat telepíteni ehhez a platformhoz, ha a meglévő Symantec Mobile Enterprise-kód-aláíró tanúsítvány lejár. Az aláíratlan XAP/APPX-fájlok Oldalazva társas viszony SD-kártyával vagy a fájlnak az eszközre való letöltésével továbbra is lehetséges. További információ: XAP- [fájlok telepítése Windows Phone-telefonon](https://answers.microsoft.com/en-us/mobiledevices/forum/mdlumia-mdapps/how-to-install-xap-file-in-windows-phone-8/da09ee72-51ae-407c-9b85-bc148df89280).
 
-3.  Miután megkapta a jóváhagyást a megújításhoz és kifizette azt, töltse le a tanúsítványt.
+Windows 8,1 asztali/Windows 10 asztali & Mobile
 
-### <a name="how-to-install-the-updated-certificate-for-line-of-business-lob-apps"></a>A frissített alkalmazások telepítése az üzleti alkalmazások számára
-
-1.  Írja alá az üzleti alkalmazás legújabb verzióját.
-
-2.  Nyissa meg az Azure Portalt, majd a **Felügyelet** &gt; **Mobileszköz-kezelés** &gt; **Windows Phone** szakaszban kattintson az **Aláírt alkalmazás feltöltése** gombra.
-
-3.  Töltse fel az imént aláírt Vállalati portál alkalmazást. Az újonnan aláírt SSP.xap fájlra és a Symantectől kapott új .PFX-fájlra, vagy az ezzel az új .PFX-fájllal létrehozott alkalmazásregisztrációs adatblokkra lesz szüksége.
-
-4.  A feltöltés befejeződése után távolítsa el a vállalati portál régi verzióját a **Szoftverek**  munkaterületről.
-
-5.  Írja alá az összes új és az esetlegesen frissített üzletági alkalmazásokat az új tanúsítvánnyal. A meglévő alkalmazásokat nem kell újra ellátni aláírással és újratelepíteni.
+Ha a tanúsítvány időtartama lejárt, a Appx-fájlok elindítása leállhat. Szerezzen be egy új. cer fájlt, és kövesse az utasításokat az egyes telepített Appx-fájlok kódjának aláírásához, majd töltse fel újra az összes Appx-fájlt és a frissített. cer fájlt az Intune-portál Windows Enterprise-tanúsítványok szakaszába.
 
 ## <a name="manually-deploy-windows-10-company-portal-app"></a>A Windows 10-es Céges portál alkalmazás manuális telepítése
-A Windows 10-es Céges portál alkalmazást akkor is telepítheti manuálisan, közvetlenül az Intune-ból, ha az Intune-t nem integrálta a Vállalati Microsoft Áruházzal.
+Ha nem kíván hozzáférést biztosítani a Microsoft Storehoz, manuálisan telepítheti a Windows 10 Céges portál alkalmazást az Intune-ból, még akkor is, ha az Intune-t nem integrálta a vállalati Microsoft Store (MSFB). Ha integrált, akkor a Céges portál alkalmazást a MSFB használatával telepítheti az [alkalmazások telepítése](store-apps-windows.md)használatával.
 
  > [!NOTE]
  > Ha ezt a lehetőséget választja, manuális frissítést kell végrehajtania minden alkalommal, amikor új frissítés válik elérhetővé az alkalmazáshoz.
 
-1. Jelentkezzen be [Vállalati Microsoft Áruház](https://www.microsoft.com/business-store) fiókjába, és szerezze be a Céges portál alkalmazás **offline licencű** verzióját.  
+1. Jelentkezzen be a fiókjába a [vállalati Microsoft Storeban](https://www.microsoft.com/business-store) , és szerezze be a céges portál alkalmazás **Offline licenccel** rendelkező verzióját.  
 2. Miután beszerezte az alkalmazást, válassza ki a **Készlet** lapon.  
 3. A **Platform** listából válassza ki a **Windows 10 minden eszközre** lehetőséget, majd válassza ki a megfelelő **architektúrát**, és töltse le az alkalmazást. Ehhez az alkalmazáshoz nincs szükség alkalmazás-licencfájlra.
-![Kép a Windows 10-es X86 csomag részleteinek letöltése](./media/Win10CP-all-devices.png)
+   ![A Windows 10 x86 csomag részletes adatainak képe a letöltéshez](./media/Win10CP-all-devices.png)
 4. Töltse le a „Szükséges keretrendszer” cím alatt található összes csomagot. Ezt az x86, az x64 és az ARM architektúrákkal kell elvégezni, összesen 9 csomaggal, ahogy az alábbi ábrán látható.
 
-![Kép a letöltendő függőségi fájlokról ](./media/Win10CP-dependent-files.png)
+   ![Kép a letöltendő függőségi fájlokról ](./media/Win10CP-dependent-files.png)
 5. Mielőtt feltöltené a Céges portál alkalmazást az Intune-ra, hozzon létre egy mappát (pl. C:&#92;Céges portál) a következőképpen felépített csomagokkal:
    1. Helyezze el a Céges portál csomagot a C:\Céges portál helyen. Ugyanitt hozzon létre egy Függőségek almappát is.  
-   ![APPXBUN fájllal mentett Függőségek mappa képe](./media/Win10CP-Dependencies-save.png)
+      ![APPXBUN fájllal mentett Függőségek mappa képe](./media/Win10CP-Dependencies-save.png)
    2. Helyezze el a kilenc függőségcsomagot a Függőségek mappában.  
-   Ha a függőségeket nem ebben a formátumban helyezi el, az Intune nem tudja majd felismerni és feltölteni őket a csomag feltöltésekor, így a folyamat sikertelen lesz a következő hiba miatt.  
-   ![A Windows-alkalmazás függősége hibaüzenet - kötelező megadni.](./media/Win10CP-error-message.png)
+      Ha a függőségeket nem ebben a formátumban helyezi el, az Intune nem tudja majd felismerni és feltölteni őket a csomag feltöltésekor, így a folyamat sikertelen lesz a következő hiba miatt.  
+      ![Hibaüzenet – meg kell adni a Windows-alkalmazás függőségét.](./media/Win10CP-error-message.png)
 6. Lépjen vissza az Intune-ba, és töltse fel a Céges portál alkalmazást új alkalmazásként. Telepítse szükséges alkalmazásként a kívánt felhasználói célcsoport számára.  
 
 Itt talál további információkat arról, hogy az Intune miképpen kezeli az univerzális alkalmazások függőségeit: [appxbundle telepítése függőségekkel a Microsoft Intune MDM-en keresztül](https://blogs.technet.microsoft.com/configmgrdogs/2016/11/30/deploying-an-appxbundle-with-dependencies-via-microsoft-intune-mdm/).  

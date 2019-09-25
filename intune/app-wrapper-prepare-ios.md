@@ -5,9 +5,8 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 12/14/2018
+ms.date: 08/12/2019
 ms.topic: reference
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.technology: ''
@@ -17,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b6e51e936a70580643cbaa232441e0ba21c3db14
-ms.sourcegitcommit: 25e6aa3bfce58ce8d9f8c054bc338cc3dff4a78b
+ms.openlocfilehash: 228a4af302a1344f60dc43c02c12efac23e34f74
+ms.sourcegitcommit: ec22a186a9cfa489a8490698e387624e480892d8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57566658"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "71238633"
 ---
 # <a name="prepare-ios-apps-for-app-protection-policies-with-the-intune-app-wrapping-tool"></a>iOS-alkalmazások előkészítése alkalmazásvédelmi szabályzatokkal való felügyeletre az Intune alkalmazásburkoló eszközével
 
@@ -102,7 +101,7 @@ Az Intune által burkolt alkalmazások terjesztéséhez az alábbiakra van szük
 
 4. Kattintson a **Certificates, IDs & Profiles** (Tanúsítványok, azonosítók és profilok) lehetőségre.
 
-   ![Apple fejlesztői portálján - tanúsítványok, azonosítók és profilok](./media/iOS-signing-cert-1.png)
+   ![Apple fejlesztői portál – tanúsítványok, azonosítók & profilok](./media/iOS-signing-cert-1.png)
 
 5. Kattintson az ![Apple fejlesztői portál plusz jel](./media/iOS-signing-cert-2.png) jelre a jobb felső sarokban iOS-tanúsítvány hozzáadásához.
 
@@ -127,7 +126,7 @@ Az Intune által burkolt alkalmazások terjesztéséhez az alábbiakra van szük
 
 11. CSR-fájl létrehozásához kövesse az Apple fejlesztői webhely fenti útmutatóját. A CSR-fájlt mentse el a macOS-számítógépre.
 
-    ![Adja meg a tanúsítvány, amely a kért információkat](./media/iOS-signing-cert-6.png)
+    ![Adja meg a kért tanúsítvány adatait](./media/iOS-signing-cert-6.png)
 
 12. Térjen vissza az Apple fejlesztői webhelyre. Kattintson a **Folytatás** gombra. Töltse fel a CSR-fájlt.
 
@@ -143,7 +142,7 @@ Az Intune által burkolt alkalmazások terjesztéséhez az alábbiakra van szük
 
 16. Ekkor megjelenik egy információs ablak. Görgessen az ablak aljára, és keresse meg a **Fingerprints** (Ujjlenyomatok) címkét. Másolja ki az (itt homályosan látható) **SHA1** sztringet, és használja ezt az App Wrapping Tool -c paraméterének argumentumaként.
 
-    ![iPhone-adatok – ujjlenyomatok SHA1 karakterlánc](./media/iOS-signing-cert-9.png)
+    ![iPhone Information – ujjlenyomatok SHA1-karakterlánca](./media/iOS-signing-cert-9.png)
 
 
 
@@ -169,9 +168,9 @@ Az Intune által burkolt alkalmazások terjesztéséhez az alábbiakra van szük
 
 ## <a name="download-the-app-wrapping-tool"></a>Az App Wrapping Tool letöltése
 
-1.  Töltse le az alkalmazásburkoló eszköz fájljait a [GitHubról](https://github.com/msintuneappsdk/intune-app-wrapping-tool-ios) egy macOS-számítógépre.
+1. Töltse le az alkalmazásburkoló eszköz fájljait a [GitHubról](https://github.com/msintuneappsdk/intune-app-wrapping-tool-ios) egy macOS-számítógépre.
 
-2.  Kattintson duplán a **Microsoft Intune App Wrapping Tool for iOS.dmg** fájlra. Megjelenik a végfelhasználói licencszerződés (EULA) ablaka. Figyelmesen olvassa el a dokumentumot.
+2. Kattintson duplán a **Microsoft Intune App Wrapping Tool for iOS.dmg** fájlra. Megjelenik a végfelhasználói licencszerződés (EULA) ablaka. Figyelmesen olvassa el a dokumentumot.
 
 3. A licencszerződés elfogadásához válassza az **Elfogadom** lehetőséget, amivel a csomagot az adott számítógéphez rendeli.
 
@@ -188,7 +187,7 @@ Nyissa meg a macOS terminált, és futtassa az alábbi parancsot:
 > [!NOTE]
 > Egyes paraméterek megadása nem kötelező, amint az az alábbi táblázatban látható.
 
-**Példa:** A következő példaparancs a MyApp.ipa nevű alkalmazáson az Alkalmazásburkoló eszközt futtatja. Meg van adva benne egy létesítési profil és az aláíró tanúsítvány SHA-1 kivonata. Ezzel írja alá az eszköz a beburkolt alkalmazást. A kimeneti alkalmazás (MyApp_Wrapped.ipa) elkészül, és a felhasználó Asztal mappájába kerül.
+**Példa:** A következő példa parancs futtatja az alkalmazás burkoló eszközét az SajátPr. ipa nevű alkalmazásban. Meg van adva benne egy létesítési profil és az aláíró tanúsítvány SHA-1 kivonata. Ezzel írja alá az eszköz a beburkolt alkalmazást. A kimeneti alkalmazás (MyApp_Wrapped.ipa) elkészül, és a felhasználó Asztal mappájába kerül.
 
 ```bash
 ./IntuneMAMPackager/Contents/MacOS/IntuneMAMPackager -i ~/Desktop/MyApp.ipa -o ~/Desktop/MyApp_Wrapped.ipa -p ~/Desktop/My_Provisioning_Profile_.mobileprovision -c "12 A3 BC 45 D6 7E F8 90 1A 2B 3C DE F4 AB C5 D6 E7 89 0F AB"  -v true
@@ -203,30 +202,38 @@ Az alkalmazásburkoló eszközzel a következő parancssori paraméterek haszná
 |**-o**|`<Path of the wrapped output application>` |
 |**-p**|`<Path of your provisioning profile for iOS apps>`|
 |**-c**|`<SHA1 hash of the signing certificate>`|
-|**-h**|Részletes használati információkat jelenít meg az alkalmazásburkoló eszközben elérhető parancssori tulajdonságokról.|
-|**-v**|(Nem kötelező) Részletes üzeneteket jelenít meg a konzolon. A hibakeresést célszerű ezzel a kapcsolóval végezni.|
+|**-h**| Részletes használati információkat jelenít meg az alkalmazásburkoló eszközben elérhető parancssori tulajdonságokról. |
+|**– AA**|Választható `<Authority URI of the input app if the app uses the Azure Active Directory Authentication Library>` azaz `login.windows.net/common` |
+|**– AC**|Választható `<Client ID of the input app if the app uses the Azure Active Directory Authentication Library>` Ez az ügyfél-azonosító mezőben lévő GUID az alkalmazás regisztráció paneljén az alkalmazás listájában található. |
+|**– AR**|Választható `<Redirect/Reply URI of the input app if the app uses the Azure Active Directory Authentication Library>` Ez az alkalmazás-regisztrációban konfigurált átirányítási URI. Általában ez az alkalmazás URL-protokollja, amelyet a Microsoft Authenticator alkalmazás a felügyelt hitelesítés után visszatérhet. |
+|**-v**| (Nem kötelező) Részletes üzeneteket jelenít meg a konzolon. A hibakeresést célszerű ezzel a kapcsolóval végezni. |
 |**-e**| (Nem kötelező) Ezzel a kapcsolóval utasíthatja az alkalmazásburkoló eszközt a hiányzó jogosultságok törlésére alkalmazásfeldolgozás közben. További részletek az [Alkalmazásjogosultságok beállítása](#setting-app-entitlements) című részben olvashatók.|
 |**-xe**| (Nem kötelező) Információkat jelenít meg az alkalmazás iOS-bővítményeiről, továbbá arról, hogy ezek milyen jogosultságokkal használhatók. További részletek az [Alkalmazásjogosultságok beállítása](#setting-app-entitlements) című részben olvashatók. |
 |**-x**| (Nem kötelező) `<An array of paths to extension provisioning profiles>`. Akkor használja, ha az alkalmazáshoz bővítménylétesítési profil szükséges.|
-|**-f**|(Nem kötelező) `<Path to a plist file specifying arguments.>` Ez a kapcsoló a [plist](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html)-fájl neve előtt használandó, ha az IntuneMAMPackager többi tulajdonságát (például -i, -o és -p) a plist-sablonban adja meg. Lásd a plist használata argumentumok megadásához című részt. |
 |**-b**|(Nem kötelező) A -b argumentumok nélküli használatával a burkolt kimeneti alkalmazás csomagverziója ugyanaz lesz, mint a bementi alkalmazásé (nem ajánlott). <br/><br/> A `-b <custom bundle version>` használatával a burkolt alkalmazás egyéni CFBundleVersion-számmal fog rendelkezni. Ha egyéni CFBundleVersion-számot szeretne megadni, célszerű a natív alkalmazás CFBundleVersion-számában a legalacsonyabb értékű tagot megnövelni, például 1.0.0 -> 1.0.1. |
+|**– Citrix**|Választható Adja meg a Citrix XenMobile app SDK-t (csak a hálózatra vonatkozó változat). A beállítás használatához telepíteni kell a [CITRIX MDX eszközkészletet](https://docs.citrix.com/en-us/mdx-toolkit/about-mdx-toolkit.html) . |
+|**-f**|(Nem kötelező) `<Path to a plist file specifying arguments.>` Ez a kapcsoló a [plist](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html)-fájl neve előtt használandó, ha az IntuneMAMPackager többi tulajdonságát (például -i, -o és -p) a plist-sablonban adja meg. Lásd a plist használata argumentumok megadásához című részt. |
 
 ### <a name="use-a-plist-to-input-arguments"></a>Plist használata argumentumok megadásához
 Az App Wrapping Tool egyszerűen futtatható úgy is, ha minden parancssori argumentumot egy [plist](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html)-fájlban ad meg. A plist az XML-hez hasonló fájlformátum, amelyben űrlapon lehet megadni a parancssori argumentumokat.
 
 Az IntuneMAMPackager/Contents/MacOS mappában nyissa meg a `Parameters.plist` nevű üres plist-sablont egy szövegszerkesztő alkalmazással vagy az Xcode-dal. Írja be az alábbi kulcsokhoz tartozó argumentumokat:
 
-| Plist-kulcs |  Alapértelmezett érték| Megjegyzések |
-|------------------|--------------|-----|
-| Bemeneti alkalmazáscsomag elérési útja  |üres| Ugyanaz, mint az -i|
-| Kimeneti alkalmazáscsomag elérési útja |üres| Ugyanaz, mint az -o|
-| Létesítési profil elérési útja |üres| Ugyanaz, mint a -p|
-| SHA-1 tanúsítvány kivonata |üres| Ugyanaz, mint a -c|
-| Részletes üzenetek engedélyezve |false| Ugyanaz, mint a -v|
-| Hiányzó jogosultságok eltávolítása | false| Ugyanaz, mint a -c|
-| Alapértelmezett build tiltása |false | Ugyanaz, mint a -b argumentumok nélkül|
-|Build sztringjének felülbírálása | üres| A burkolt kimeneti alkalmazás egyéni CFBundleVersion-száma |
-|Bővítménylétesítési profilok elérési útjai | üres| Az alkalmazás bővítménylétesítési profiljainak tömbje.
+| Plist-kulcs | Type |  Alapértelmezett érték | Megjegyzések |
+|------------------|-----|--------------|-----|
+| Bemeneti alkalmazáscsomag elérési útja |Sztring|empty| Ugyanaz, mint az -i|
+| Kimeneti alkalmazáscsomag elérési útja |Sztring|empty| Ugyanaz, mint az -o|
+| Létesítési profil elérési útja |Sztring|empty| Ugyanaz, mint a -p|
+| SHA-1 tanúsítvány kivonata |Sztring|empty| Ugyanaz, mint a -c|
+| ADAL-szolgáltató |Sztring|empty| Ugyanaz, mint az-AA|
+| ADAL-ügyfél azonosítója |Sztring|empty| Ugyanaz, mint az-AC|
+| ADAL válasz URI-ja |Sztring|empty| Ugyanaz, mint az-AR|
+| Részletes üzenetek engedélyezve |Logikai|false| Ugyanaz, mint a -v|
+| Hiányzó jogosultságok eltávolítása |Logikai|false| Ugyanaz, mint a -c|
+| Az alapértelmezett Build frissítésének tiltása |Boolen|false| Ugyanaz, mint a -b argumentumok nélkül|
+| Build sztringjének felülbírálása |Sztring|empty| A burkolt kimeneti alkalmazás egyéni CFBundleVersion-száma|
+| A Citrix XenMobile app SDK belefoglalása (csak hálózati változat)|Logikai|false| Ugyanaz, mint a-Citrix|
+| Bővítménylétesítési profilok elérési útjai |Sztringek tömbje|empty| Az alkalmazás bővítménylétesítési profiljainak tömbje.
 
 
 Futtassa az IntuneMAMPackager parancsot, egyetlen argumentumként a plist-fájlt megadva:
@@ -280,20 +287,21 @@ Ha az alkalmazásburkoló eszköz nem jár sikerrel, az alábbi hibaüzenetek va
 |A megadott bemeneti alkalmazás nincs aláírva. Adjon meg egy érvényes aláírt alkalmazást.|Az alkalmazásburkoló eszköz megköveteli az alkalmazások aláírását. A fejlesztői dokumentációból megtudhatja, hogy miként írhat alá burkolt alkalmazásokat.|
 |A megadott bemeneti alkalmazásnak .ipa vagy .app formátumúnak kell lennie.|Az alkalmazásburkoló eszköz csak .app és .ipa kiterjesztést fogad el. Ellenőrizze, hogy a bemeneti fájl érvényes kiterjesztéssel rendelkezik-e, és .app vagy .ipa fájlként lett-e összeállítva.|
 |A megadott bemeneti alkalmazás már burkolt, és a házirendsablon legújabb verziójában van.|Az alkalmazásburkoló eszköz nem burkol újra egy már meglévő burkolt alkalmazást a szabályzatsablon legújabb verziójával.|
-|FIGYELMEZTETÉS: Nem adta meg a SHA1 tanúsítvány kivonatát. Ellenőrizze, hogy a burkolt alkalmazás alá van-e írva a telepítés előtt.|Adjon meg egy érvényes SHA1 kivonatot a –c parancssori kapcsoló után. |
+|FIGYELMEZTETÉS Nem adott meg SHA1 tanúsítvány kivonatát. Ellenőrizze, hogy a burkolt alkalmazás alá van-e írva a telepítés előtt.|Adjon meg egy érvényes SHA1 kivonatot a –c parancssori kapcsoló után. |
 
 ### <a name="log-files-for-the-app-wrapping-tool"></a>Az alkalmazásburkoló eszköz naplófájljai
 Az alkalmazásburkoló eszközzel burkolt alkalmazások az iOS-ügyféleszköz konzoljára írt naplófájlokat hoznak létre. Ezek az adatok akkor hasznosak, ha problémát tapasztal az alkalmazással kapcsolatban, és meg kell állapítania, hogy a hiba az alkalmazásburkoló eszközzel kapcsolatos-e. Az adatokat az alábbi lépéseket követve olvashatja be:
 
-1.  Az alkalmazást futtatva reprodukálja a hibát.
+1. Az alkalmazást futtatva reprodukálja a hibát.
 
-2.  Gyűjtse össze a konzol kimenetét az Apple [telepített iOS-alkalmazások hibakeresésére](https://developer.apple.com/library/ios/qa/qa1747/_index.html)vonatkozó utasításait követve.
+2. Gyűjtse össze a konzol kimenetét az Apple [telepített iOS-alkalmazások hibakeresésére](https://developer.apple.com/library/ios/qa/qa1747/_index.html)vonatkozó utasításait követve.
 
-3.  A következő szkriptet a konzolon megadva szűrje a mentett naplókat az alkalmazáskorlátozások kimenetre:
+3. A következő szkriptet a konzolon megadva szűrje a mentett naplókat az alkalmazáskorlátozások kimenetre:
 
     ```bash
     grep “IntuneAppRestrictions” <text file containing console output> > <required filtered log file name>
     ```
+
     A szűrt naplót elküldheti a Microsoftnak.
 
     > [!NOTE]
@@ -331,7 +339,7 @@ Az alkalmazást a burkolása előtt *jogosultságok* megadásával további enge
 
 ### <a name="steps-to-enable-entitlements"></a>A jogosultságok engedélyezésének lépései
 
-1.  Képességek engedélyezése az alkalmazásban:
+1. Képességek engedélyezése az alkalmazásban:
 
     a.  Az Xcode-ban keresse meg az alkalmazás célját, és kattintson a **Capabilities** (Képességek) elemre.
 
@@ -341,7 +349,7 @@ Az alkalmazást a burkolása előtt *jogosultságok* megadásával további enge
 
     d.  Készítse el és írja alá a burkolandó alkalmazást.
 
-2.  Jogosultságok engedélyezése a létesítési profiljában:
+2. Jogosultságok engedélyezése a létesítési profiljában:
 
     a.  Jelentkezzen be az Apple Developer Member Center webhelyre.
 
@@ -351,7 +359,7 @@ Az alkalmazást a burkolása előtt *jogosultságok* megadásával további enge
 
     d.  Fejezze be a létesítési profil varázslót, és töltse le a fájlt.
 
-3.  Ellenőrizze, hogy minden előfeltétel teljesült-e, majd burkolja az alkalmazást.
+3. Ellenőrizze, hogy minden előfeltétel teljesült-e, majd burkolja az alkalmazást.
 
 ### <a name="troubleshoot-common-errors-with-entitlements"></a>A jogosultságokkal kapcsolatos gyakori hibák elhárítása
 Ha az iOS-hez készült alkalmazásburkoló eszköz jogosultsággal kapcsolatos hibát jelenít meg, próbálkozzon az alábbi hibaelhárítási lépésekkel.
@@ -364,20 +372,20 @@ Ha az iOS-hez készült alkalmazásburkoló eszköz jogosultsággal kapcsolatos 
 ### <a name="find-the-existing-entitlements-of-a-signed-app"></a>Aláírt alkalmazás meglévő jogosultságainak megkeresése
 Aláírt alkalmazás és létesítési profil meglévő jogosultságainak ellenőrzése:
 
-1.  Keresse meg az .ipa fájlt, és módosítsa .zip kiterjesztésűre.
+1. Keresse meg az .ipa fájlt, és módosítsa .zip kiterjesztésűre.
 
-2.  Bontsa ki a .zip fájlt. Ez a művelet létrehoz egy Payload nevű mappát, amely tartalmazza az .app csomagot.
+2. Bontsa ki a .zip fájlt. Ez a művelet létrehoz egy Payload nevű mappát, amely tartalmazza az .app csomagot.
 
-3.  A codesign eszközzel ellenőrizze a jogosultságokat az .app csomagon (a `YourApp.app` helyére adott .app csomag nevét kell beírni):
+3. A codesign eszközzel ellenőrizze a jogosultságokat az .app csomagon (a `YourApp.app` helyére adott .app csomag nevét kell beírni):
 
     ```bash
-    $ codesign -d --entitlements :- "Payload/YourApp.app"
+    codesign -d --entitlements :- "Payload/YourApp.app"
     ```
 
-4.  A security eszközzel ellenőrizze a jogosultságokat az .app beépített létesítési profilján (a `YourApp.app` helyére adott .app csomag nevét kell beírni).
+4. A security eszközzel ellenőrizze a jogosultságokat az .app beépített létesítési profilján (a `YourApp.app` helyére adott .app csomag nevét kell beírni).
 
     ```bash
-    $ security -D -i "Payload/YourApp.app/embedded.mobileprovision"
+    security cms -D -i "Payload/YourApp.app/embedded.mobileprovision"
     ```
 
 ### <a name="remove-entitlements-from-an-app-by-using-the-e-parameter"></a>Jogosultságok eltávolítása az alkalmazásból az –e paraméterrel
@@ -390,19 +398,19 @@ Ezzel a paranccsal eltávolítja az alkalmazásból azon engedélyezett képess�
 ## <a name="security-and-privacy-for-the-app-wrapping-tool"></a>Az alkalmazásburkoló eszközzel kapcsolatos biztonsági és adatvédelmi szempontok
 Az alkalmazásburkoló eszköz használata során kövesse az alábbi biztonsági és adatvédelmi gyakorlati tanácsokat.
 
--   Az aláíró tanúsítványnak, a létesítési profilnak és a megadott üzletági alkalmazásnak ugyanazon a macOS-számítógépen kell lennie, mint amelyet az alkalmazásburkoló eszköz futtatásához használ. Ha a fájlok egy UNC elérési úton vannak, ellenőrizze, hogy elérhetők-e a macOS -számítógépről. Az elérési utat IPsec- vagy SMB-aláírással védeni kell.
+- Az aláíró tanúsítványnak, a létesítési profilnak és a megadott üzletági alkalmazásnak ugyanazon a macOS-számítógépen kell lennie, mint amelyet az alkalmazásburkoló eszköz futtatásához használ. Ha a fájlok egy UNC elérési úton vannak, ellenőrizze, hogy elérhetők-e a macOS -számítógépről. Az elérési utat IPsec- vagy SMB-aláírással védeni kell.
 
     A felügyeleti konzolra importált beburkolt alkalmazásnak ugyanazon a számítógépen kell lennie, mint amelyen az eszközt futtatja. Ha a fájl egy UNC elérési úton van, győződjön meg róla, hogy a mappa elérhető a felügyeleti konzolt futtató számítógépről. Az elérési utat IPsec- vagy SMB-aláírással védeni kell.
 
--   IPsec- vagy SMB-aláírással kell védeni azt a környezetet, ahová az alkalmazásburkoló eszközt a GitHub-tárházból letölti.
+- IPsec- vagy SMB-aláírással kell védeni azt a környezetet, ahová az alkalmazásburkoló eszközt a GitHub-tárházból letölti.
 
--   A feldolgozott alkalmazásnak megbízható forrásból kell származnia ahhoz, hogy a támadások elleni védelmét biztosítani lehessen.
+- A feldolgozott alkalmazásnak megbízható forrásból kell származnia ahhoz, hogy a támadások elleni védelmét biztosítani lehessen.
 
--   Gondoskodjon az alkalmazásburkoló eszközben megadott kimeneti mappa védelméről, különösen ha távoli mappáról van szó.
+- Gondoskodjon az alkalmazásburkoló eszközben megadott kimeneti mappa védelméről, különösen ha távoli mappáról van szó.
 
--   A fájlfeltöltési párbeszédpanelt tartalmazó iOS-alkalmazások lehetővé tehetik a felhasználóknak, hogy megkerüljék az alkalmazáshoz megadott kivágási, másolási és beillesztési korlátozásokat. A felhasználók a fájlfeltöltési párbeszédpanelt használhatják például az alkalmazásadatok képernyőfelvételének feltöltéséhez.
+- A fájlfeltöltési párbeszédpanelt tartalmazó iOS-alkalmazások lehetővé tehetik a felhasználóknak, hogy megkerüljék az alkalmazáshoz megadott kivágási, másolási és beillesztési korlátozásokat. A felhasználók a fájlfeltöltési párbeszédpanelt használhatják például az alkalmazásadatok képernyőfelvételének feltöltéséhez.
 
--   Amikor egy burkolt alkalmazásból figyeli az eszközükön lévő dokumentummappát, láthatja az .msftintuneapplauncher nevű mappát. Ha módosítja vagy törli ezt a mappát, az hatással lehet a korlátozott alkalmazások megfelelő működésére.
+- Amikor egy burkolt alkalmazásból figyeli az eszközükön lévő dokumentummappát, láthatja az .msftintuneapplauncher nevű mappát. Ha módosítja vagy törli ezt a mappát, az hatással lehet a korlátozott alkalmazások megfelelő működésére.
 
 ## <a name="intune-app-wrapping-tool-for-ios-with-citrix-mdx-mvpn"></a>Intune alkalmazásburkoló eszköz iOS rendszerhez Citrix MDX mVPN-nel
 Ez a funkció az iOS rendszerre készült Citrix MDX alkalmazásburkolóval való integrációt jelenti. Az integráció egyszerűen egy további, opcionális parancssori jelzőt (`-citrix`) az általános Intune alkalmazásburkoló eszközökhöz.
@@ -418,11 +426,13 @@ A `-citrix` jelző használatához telepíteni kell az adott macOS-eszközre az 
 Egyszerűen futtassa az általános alkalmazásburkoló parancsot, és fűzze hozzá a `-citrix` jelzőt. A `-citrix` jelző jelenleg nem használ argumentumokat.
 
 **Használat formátuma**:
+
 ```bash
 ./IntuneMAMPackager/Contents/MacOS/IntuneMAMPackager -i /<path of input app>/<app filename> -o /<path to output folder>/<app filename> -p /<path to provisioning profile> -c <SHA1 hash of the certificate> [-b [<output app build string>]] [-v] [-e] [-x /<array of extension provisioing profile paths>] [-citrix]
 ```
 
 **Példaparancs**:
+
 ```bash
 ./IntuneMAMPackager/Contents/MacOS/IntuneMAMPackager -i ~/Desktop/MyApp.ipa -o ~/Desktop/MyApp_Wrapped.ipa -p ~/Desktop/My_Provisioning_Profile_.mobileprovision -c 12A3BC45D67EF8901A2B3CDEF4ABC5D6E7890FAB  -v true -citrix
 ```
@@ -442,5 +452,5 @@ Hibaelhárítás során az alábbi lépésekkel szerezhet be naplófájlokat a b
 ## <a name="see-also"></a>Lásd még:
 
 - [Annak eldöntése, hogyan készíti elő az alkalmazásokat a mobilalkalmazás-kezeléshez a Microsoft Intune-nal](apps-prepare-mobile-application-management.md)
-- [Gyakori kérdések, problémák és megoldások a szabályzatok és profilok](device-profile-troubleshoot.md)
+- [Általános kérdések, problémák és megoldások az eszközök házirendjével és profiljaival](device-profile-troubleshoot.md)
 - [Alkalmazások előkészítése a mobilalkalmazás-felügyeletre az SDK segítségével](app-sdk.md)

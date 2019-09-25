@@ -7,7 +7,6 @@ ms.author: erikje
 manager: dougeby
 ms.date: 01/02/2018
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -17,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 956fe061912e0eb96a18c410e1455252874d6b84
-ms.sourcegitcommit: 25e6aa3bfce58ce8d9f8c054bc338cc3dff4a78b
+ms.openlocfilehash: 22e5c38be9dc5a8a09888651e471f64bf6739c72
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57459951"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71238908"
 ---
 # <a name="sign-up-or-sign-in-to-microsoft-intune"></a>A Microsoft Intune szolgáltatásba való regisztráció vagy bejelentkezés
 
@@ -37,7 +36,7 @@ Ha már rendelkezik munkahelyi vagy iskolai fiókkal, **jelentkezzen be** vele, 
 >[!WARNING]
 >Meglévő munkahelyi vagy iskolai fiókok nem vonhatók össze újonnan regisztrált fiókokkal.
 
-## <a name="how-to-sign-up-or-sign-in-to-intune"></a>Az Intune szolgáltatásba való regisztráció vagy bejelentkezés módja
+## <a name="how-to-sign-up-for-intune"></a>Regisztráció az Intune-ra
 
 1. Látogasson el az [Intune regisztrációs oldalára](https://admin.microsoft.com/Signup/Signup.aspx?OfferId=40BE278A-DFD1-470a-9EF7-9F2596EA7FF9&dl=INTUNE_A&ali=1#0%20).
 
@@ -48,4 +47,32 @@ Ha már rendelkezik munkahelyi vagy iskolai fiókkal, **jelentkezzen be** vele, 
 ## <a name="post-sign-up-considerations"></a>A regisztrációt követően megfontolandó szempontok
 Az új előfizetés regisztrálása után e-mailben elküldjük a fiókadatait a regisztráció során megadott e-mail címre. Az e-mail megerősíti, hogy az előfizetés aktív.
 
-A regisztrációs folyamat befejezését követően átirányítjuk a Microsoft 365 felügyeleti központban, a felhasználók hozzáadása és licenceket rendelhet a felhasználókhoz. Ha kizárólag az alapértelmezett onmicrosoft.com tartományt használó felhőalapú fiókokkal rendelkezik, akkor már ennél a lépésnél felveheti a felhasználókat, és hozzárendelheti a licenceket. Ha azonban a szervezet [egyéni tartománynevét](custom-domain-name-configure.md) szeretné használni, illetve szeretné [szinkronizálni a felhasználóifiók-adatokat](users-add.md#sync-active-directory-and-add-users-to-intune) a helyi Active Directoryval, zárja be a böngészőablakot.
+A regisztrációs folyamat befejezése után a rendszer átirányítja a Microsoft 365 felügyeleti központba, amely a felhasználók hozzáadására és a licencek hozzárendelésére szolgál. Ha kizárólag az alapértelmezett onmicrosoft.com tartományt használó felhőalapú fiókokkal rendelkezik, akkor már ennél a lépésnél felveheti a felhasználókat, és hozzárendelheti a licenceket. Ha azonban a szervezet [egyéni tartománynevét](custom-domain-name-configure.md) szeretné használni, illetve szeretné [szinkronizálni a felhasználóifiók-adatokat](users-add.md#sync-active-directory-and-add-users-to-intune) a helyi Active Directoryval, zárja be a böngészőablakot.
+
+## <a name="sign-in-to-microsoft-intune"></a>Bejelentkezés Microsoft Intune
+Miután regisztrált az Intune-ra, bármilyen, [támogatott böngészővel](supported-devices-browsers.md#intune-supported-web-browsers) rendelkező eszközt használhat az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba való bejelentkezéshez a szolgáltatás felügyeletéhez.
+
+Alapértelmezés szerint a fiókjának a következő engedélyek egyikével kell rendelkeznie az Azure AD-ben:
+- Globális rendszergazda
+- Intune szolgáltatás-rendszergazda (más néven Intune-rendszergazda)
+
+Ha hozzáférést szeretne biztosítani a szolgáltatás felügyeletéhez más engedélyekkel rendelkező felhasználók számára, tekintse meg a [szerepköralapú Access Control](role-based-access-control.md)
+
+### <a name="intune-admin-portal-url"></a>Intune felügyeleti portál URL-címe
+
+Microsoft 365 felügyeleti központ: https://devicemanagement.microsoft.com
+
+Intune Azure Portal: https://portal.azure.com/#blade/Microsoft_Intune_DeviceSettings/ExtensionLandingBlade
+
+Intune for Education: https://intuneeducation.portal.azure.com
+
+Klasszikus Intune-portál: https://manage.microsoft.com A klasszikus Intune-portált csak az Intune PC szoftver ügyfélprogrammal regisztrált eszközök kezelésére használjuk.
+
+### <a name="urls-for-intune-services-provided-by-office-365"></a>Az Office 365 által biztosított Intune-szolgáltatások URL-címei
+
+Microsoft 365 Vállalati verzió: https://portal.microsoft.com/adminportal
+
+Office 365 mobileszköz-kezelés: https://portal.office.com/adminportal/home#/MifoDevices
+
+## <a name="see-also"></a>Lásd még:
+[Nem lehet bejelentkezni az Office 365-be, az Azure-ba vagy az Intune-ba](https://support.microsoft.com/help/2412085)

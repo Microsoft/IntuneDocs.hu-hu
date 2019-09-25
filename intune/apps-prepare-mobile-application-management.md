@@ -5,9 +5,8 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 03/19/2019
+ms.date: 09/09/2019
 ms.topic: reference
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.technology: ''
@@ -17,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f3addd79b20c685c5643a2b99fb7120e958cdecb
-ms.sourcegitcommit: 1069b3b1ed593c94af725300aafd52610c7d8f04
+ms.openlocfilehash: e7b1ea4914b2c4593c0d4abe6396e349020d1a95
+ms.sourcegitcommit: a25cd79a33feb536d9b2fc11aa7d3e3972f1ca5a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58394881"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "71239540"
 ---
 # <a name="prepare-line-of-business-apps-for-app-protection-policies"></a>Üzletági alkalmazások felkészítése az alkalmazásvédelmi szabályzatok használatára
 
@@ -33,7 +32,7 @@ Az Intune alkalmazásburkoló eszközével vagy az Intune App SDK-val engedélye
 ## <a name="intune-app-wrapping-tool"></a>Intune alkalmazásburkoló eszköz
 Az alkalmazásburkoló eszköz főleg **belső** üzletági (LOB) alkalmazásokhoz készült. Az eszköz egy parancssori alkalmazás, amely egy burkolót hoz létre az alkalmazás körül, amely lehetővé teszi az alkalmazás Intune alkalmazásvédelmi szabályzatokkal való kezelését. Egy független szoftverszállító (ISV) által biztosított alkalmazás védelme esetén fontos tisztázni, hogy az ISV támogatja-e a becsomagolt alkalmazást.
 
-Nincs szüksége a forráskódra az eszköz használatához, de aláíró hitelesítő adatokra igen. További információ az aláíró hitelesítő adatokról: [Intune blog](https://blogs.technet.microsoft.com/enterprisemobility/2015/02/25/how-to-obtain-the-prerequisites-for-the-intune-app-wrapping-tool-for-ios/). Az alkalmazásburkoló eszköz dokumentációja az [Android alkalmazásburkoló eszköz](app-wrapper-prepare-android.md) és az [iOS alkalmazásburkoló eszköz](app-wrapper-prepare-ios.md) című cikkekben található.
+Nincs szüksége a forráskódra az eszköz használatához, de aláíró hitelesítő adatokra igen. További információ az aláíró hitelesítő adatokról: [Intune blog](https://blogs.technet.microsoft.com/enterprisemobility/2015/02/25/how-to-obtain-the-prerequisites-for-the-intune-app-wrapping-tool-for-ios/). Az alkalmazás-burkoló eszköz dokumentációjában tekintse meg az [androidos alkalmazás-burkoló eszköz](app-wrapper-prepare-android.md) és az [iOS-alkalmazás burkoló eszközét](app-wrapper-prepare-ios.md).
 
 Az Alkalmazásburkoló eszköz **nem támogatja** az Apple App Store vagy a Google Play áruházban elérhető alkalmazásokat. Nem támogatja továbbá a szolgáltatásokat, amelyek fejlesztői integrációt igényelnek (lásd a következő szolgáltatás-összehasonlító táblázatot).
 
@@ -74,6 +73,9 @@ További információk az SDK-ról: [Áttekintés](app-sdk.md). Az SDK használa
 |**iOS**|Igen – használja az [Intune App SDK Xamarin-kötéseket](app-sdk-xamarin.md).|Nem|
 |**Android**| Igen – használja az [Intune App SDK Xamarin-kötéseket](app-sdk-xamarin.md).|Nem|
 
+### <a name="not-using-an-app-development-platform-listed-above"></a>Nem használ a fentiekben felsorolt app Development platformot? 
+Az Intune SDK Fejlesztői csapata aktívan teszteli és karbantartja a natív Android, iOS (obj-C, Swift), a Xamarin, a Xamarin. Forms és a Cordova platformmal létrehozott alkalmazásokat. Míg egyes ügyfelek sikerrel jártak az Intune SDK-val más platformokkal, például a natív és a NativeScript reagálva, a támogatott platformoktól eltérő módon nem biztosítunk explicit útmutatást vagy beépülő modult az alkalmazás-fejlesztőknek. 
+
 ## <a name="feature-comparison"></a>Szolgáltatások összehasonlítása
 Ez a táblázat az App SDK-hoz és az alkalmazásburkoló eszközhöz használható beállításokat sorolja fel.
 
@@ -87,36 +89,39 @@ Ez a táblázat az App SDK-hoz és az alkalmazásburkoló eszközhöz használha
 |Más alkalmazásokból való adatátvitel engedélyezése az alkalmazásnak|X|X|
 |Más alkalmazásokból való adatfogadás engedélyezése az alkalmazásnak|X|X|
 |Más alkalmazásokkal végzett kivágás, másolás és beillesztés korlátozása|X|X|
-|Adja meg, amely kivágott vagy másolt a kezelt alkalmazások karakterek száma|X|X|
+|A felügyelt alkalmazásból kivágott vagy másolt karakterek számának meghatározása|X|X|
 |Egyszerű PIN-kód szükséges a hozzáféréshez|X|X|
 |A PIN-kód alaphelyzetbe állítása előtti kísérletek számának megadása|X|X|
 |Ujjlenyomat használatának engedélyezése PIN-kód helyett|X|X|
 |Arcfelismerés használatának engedélyezése PIN-kód helyett (csak iOS)|X|X|
 |Vállalati hitelesítő adatok szükségesek a hozzáféréshez|X|X|
+|PIN-kód lejáratának beállítása|X|X|
 |A felügyelt alkalmazások futtatásának tiltása jailbreakelt vagy rootolt eszközökön|X|X|
 |Alkalmazásadatok titkosítása|X|X|
 |A hozzáférési követelmények ismételt ellenőrzése a megadott számú percek után|X|X|
 |Az offline türelmi időszak megadása|X|X|
 |Képernyőrögzítés letiltása (csak Android esetén)|X|X|
 |Eszközregisztráció nélküli MAM támogatása|X|X|
-|Az alkalmazás adatainak teljes törlése|X|X|
-|Többidentitásos környezetben a munkahelyi és iskolai adatok szelektív törlése <br><br>**Megjegyzés:** IOS-a felügyeleti profil törlésekor az alkalmazás is eltávolítja.|X||
+|Alkalmazás adatainak teljes törlése|X|X|
+|Munkahelyi és iskolai adatok szelektív törlése több identitásos helyzetekben <br><br>**Megjegyzés:** IOS esetén a felügyeleti profil eltávolításakor az alkalmazás is törlődik.|X||
 |A „Mentés másként” művelet letiltása|X||
-|Célzott alkalmazáskonfiguráció|X||
+|Célként megadott alkalmazás konfigurációja (vagy az alkalmazás konfigurációja a "MAM Channel" használatával)|X|X|
 |Többszörös identitás támogatása|X||
 |Testreszabható stílus |X|||
 |Igény szerinti VPN-alkalmazáskapcsolatok Citrix mVPN segítségével|X|X| 
 |Névjegy-szinkronizálás letiltása|X|X|
 |Nyomtatás letiltása|X|X|
 |Az alkalmazás minimális verziójának megkövetelése|X|X|
-|Operációs rendszer minimális verziójának megkövetelése (iOS és Android)|X|X|
+|Minimális operációs rendszer megkövetelése|X|X|
 |Minimális Android biztonsági javítási szint megkövetelése (csak Android)|X|X|
 |Minimális iOS Intune SDK-verzió megkövetelése (csak iOS)|X|X|
+|Biztonság-eszköz igazolása (csak Android esetén)|X|X|
+|Veszélyforrások vizsgálata az alkalmazásokban (csak Android esetén)|X|X|
 
 ## <a name="next-steps"></a>További lépések
 
 A következő témakörökből tudhat meg többet az alkalmazásvédelmi szabályzatokról és az Intune-ról:
 
-  - [Android alkalmazásburkoló eszköz](app-wrapper-prepare-android.md)<br>
-  - [iOS alkalmazásburkoló eszköz](app-wrapper-prepare-ios.md)<br>
-  - [Alkalmazások előkészítése a mobilalkalmazás-felügyeletre az SDK segítségével](app-sdk.md)
+- [Android alkalmazásburkoló eszköz](app-wrapper-prepare-android.md)<br>
+- [iOS alkalmazásburkoló eszköz](app-wrapper-prepare-ios.md)<br>
+- [Alkalmazások előkészítése a mobilalkalmazás-felügyeletre az SDK segítségével](app-sdk.md)

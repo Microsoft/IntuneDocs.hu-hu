@@ -18,12 +18,12 @@ ms.reviewer: arnab
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ec52069c4c53c464cfe5a1e17718ba6725fd0b5
-ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
+ms.openlocfilehash: caae22e59e8adb6952e9a69ff03c575ae4467b2d
+ms.sourcegitcommit: 6a946a055a2014e00a4ca9d71986727a4ebbc777
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71167440"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71238976"
 ---
 # <a name="device-encrypted-but-apps-say-otherwise"></a>Az eszköz titkosítva van, de az alkalmazások másként
 
@@ -50,7 +50,7 @@ Ez a szakasz csak a Céges portál alkalmazásra vonatkozik. Ha az eszköz felaj
 
 Néhány androidos eszköz a 7,0-es és újabb verzióiban olyan módon titkosítja az adattitkosítást, amely nem konzisztens bizonyos Android-platformokra vonatkozó szabványokkal. Ezek a titkosítási módszerek veszélyeztetik az eszközök adatait. Ennek eredményeképpen ezek az eszközök nem támogatottak.
 
-A támogatott androidos eszközök nem teljes listájáért tekintse meg az Intune- [ban támogatott operációs rendszereket és böngészőket](https://docs.microsoft.com/intune/supported-devices-browsers.md#supported-samsung-knox-standard-devices)ismertető cikket. Ha az eszköz nem szerepel a listáján, tekintse meg az eszköz gyártóját, vagy forduljon a támogatási személyhez.
+A támogatott androidos eszközök nem teljes listájáért tekintse meg az Intune- [ban támogatott operációs rendszereket és böngészőket](https://docs.microsoft.com/intune/supported-devices-browsers#supported-samsung-knox-standard-devices)ismertető cikket. Ha az eszköz nem szerepel a listáján, tekintse meg az eszköz gyártóját, vagy forduljon a támogatási személyhez.
 
 > [!Note]
 > A Microsoft együttműködik a gyártókkal a tesztelés vagy a felhasználók által jelentett problémák megoldásához. Ezt a cikket folyamatosan frissítjük, ha új információk állnak rendelkezésünkre.

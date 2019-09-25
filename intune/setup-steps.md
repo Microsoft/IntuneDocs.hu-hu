@@ -1,5 +1,5 @@
 ---
-title: A Microsoft Intune beállítása
+title: Microsoft Intune beállítása
 description: Az Intune-előfizetés használatának megkezdéséhez szükséges követelmények és előfeltételek
 keywords: ''
 author: ErikjeMS
@@ -7,7 +7,6 @@ ms.author: erikje
 manager: dougeby
 ms.date: 01/24/2018
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -17,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b5944f7bacd87e2ef1e1117dd44eb80b6fe572e6
-ms.sourcegitcommit: 25e6aa3bfce58ce8d9f8c054bc338cc3dff4a78b
+ms.openlocfilehash: 5dbebfee60c0c558a8d876471ddba93fb2979831
+ms.sourcegitcommit: 916fed64f3d173498a2905c7ed8d2d6416e34061
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57391915"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "71238295"
 ---
 # <a name="set-up-intune"></a>Az Intune beállítása
 
@@ -32,14 +31,14 @@ Ezek a beállítási lépések segítenek az Intune mobileszköz-kezelésének (
 
 Néhány lépés, például az Intune-előfizetés és az MDM-jogosultság beállítása, a legtöbb forgatókönyv esetén szükséges. Egyéb lépések, például egyéni tartomány konfigurálása vagy alkalmazások hozzáadása, nem kötelezőek, és a vállalat igényeitől függnek.
 
-Ha a számítógépek és kiszolgálók kezelésére jelenleg a Microsoft System Center Configuration Manager használ, [-felhőcsatolási Configuration Manager a megosztott kezelés](https://docs.microsoft.com/sccm/comanage/overview).
+Ha jelenleg a Microsoft System Center Configuration Manager használatával felügyeli a számítógépeket és a kiszolgálókat, akkor [a felhőhöz csatolhatja a Configuration Managert a közös felügyelettel](https://docs.microsoft.com/sccm/comanage/overview).
 
 >[!TIP]
 >Ha egy erre jogosult csomagban megvásárol legalább 150 Intune-licencet, akkor használhatja a *FastTrack Center értékcsomagot*. Ennek a szolgáltatásnak a keretében a Microsoft szakemberei együttműködnek Önnel a környezete Intune-hoz való előkészítése érdekében. Lásd: [FastTrack Center juttatás az Enterprise Mobility + Securityhez (EMS)](https://docs.microsoft.com/enterprise-mobility-security/Solutions/enterprise-mobility-fasttrack-program).
 
 
 
-| Lépések |                                                                                                                       Állapot                                                                                                                       |
+| Lépések |                                                                                                                       State                                                                                                                       |
 |-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   1   |                                        [Támogatott konfigurációk](supported-devices-browsers.md) – Tudnivalók a kezdés előtt. Ez a szakasz tartalmazza a támogatott konfigurációkat és a hálózati követelményeket.                                         |
 |   2   |                                                                 [Bejelentkezés az Intune-ba](account-sign-up.md) – Jelentkezzen be a próba-előfizetésbe, vagy hozzon létre egy új Intune-előfizetést.                                                                  |

@@ -18,12 +18,12 @@ ms.reviewer: arnab
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0a472e4d8c3ef7b922f02b4d2407362ba738486c
-ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
+ms.openlocfilehash: 91aefbc8c3960100ce5e9164ce48a2b9d33c3f3e
+ms.sourcegitcommit: 6a946a055a2014e00a4ca9d71986727a4ebbc777
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71167544"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71238967"
 ---
 # <a name="unenroll-your-android-device-from-management"></a>Android-eszköz regisztrációjának törlése  
 
@@ -64,7 +64,7 @@ Vagy koppintson a **Beállítások** > **alkalmazások** > **céges portál** > 
 
 Utolsó megoldásként eltávolíthatja az alkalmazást az eszközről az eszköz rendszergazdájaként.  
 
-Ha a vállalat tulajdonában álló eszközről van szó, a szervezetnek szüksége lehet arra, hogy a Céges portál mindig az eszközön legyen. Ha eltávolítja, akkor a védett vállalati erőforrásokhoz, például e-mailekhez, alkalmazásokhoz, Wi-Fi-hez vagy VPN-hez férhet hozzá, amíg újra nem telepíti az alkalmazást. További információ a szükséges alkalmazások telepítéséről, frissítéséről és eltávolításáról: [Alkalmazások hozzáadása Microsoft Intunehoz](https://docs.microsoft.com/intune/apps-add.md#apps-that-are-added-automatically-by-intune).  
+Ha a vállalat tulajdonában álló eszközről van szó, a szervezetnek szüksége lehet arra, hogy a Céges portál mindig az eszközön legyen. Ha eltávolítja, akkor a védett vállalati erőforrásokhoz, például e-mailekhez, alkalmazásokhoz, Wi-Fi-hez vagy VPN-hez férhet hozzá, amíg újra nem telepíti az alkalmazást. További információ a szükséges alkalmazások telepítéséről, frissítéséről és eltávolításáról: [Alkalmazások hozzáadása Microsoft Intunehoz](https://docs.microsoft.com/intune/apps-add#apps-that-are-added-automatically-by-intune).  
 
 A következőképpen tilthatja le a Céges portál eszközt rendszergazdaként. Az egyes beállítások tényleges nevei eltérőek lehetnek az Android-eszközön.  
 

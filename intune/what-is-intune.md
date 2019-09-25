@@ -1,13 +1,12 @@
 ---
 title: Mi az a Microsoft Intune?
-description: Ismerkedjen meg a Microsoft Intune, a mobileszköz-felügyelet (MDM) és mobilalkalmazás-kezelés (MAM) összetevő, az Enterprise Mobility + Security megoldás segítséget nyújt a vállalati adatok védelme érdekében.
+description: Ismerje meg, hogyan Microsoft Intune a Enterprise Mobility + Security megoldás mobileszköz-kezelési (MDM-) és Mobile App Management (MAM) összetevője, és hogyan segít a vállalati adatvédelemben.
 keywords: Mi az az Intune?
 author: dougeby
 ms.author: dougeby
 manager: dougeby
-ms.date: 02/26/2019
+ms.date: 06/20/2019
 ms.topic: overview
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -17,19 +16,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 511e672193ec609f817c10572c99ac73831c54ae
-ms.sourcegitcommit: 25e6aa3bfce58ce8d9f8c054bc338cc3dff4a78b
+ms.openlocfilehash: 2cde4e37889b981decfd18138feeb4edac46c4c8
+ms.sourcegitcommit: 7315fe72b7e55c5dcffc6d87f185f3c2cded9028
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57460580"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "71238273"
 ---
 # <a name="what-is-microsoft-intune"></a>Mi az a Microsoft Intune?
 
 [!INCLUDE [both-portals](./includes/note-for-both-portals.md)]
 
-A Microsoft Intune egy felhőalapú szolgáltatás, a nagyvállalati mobilitási felügyeleti (EMM) területet, amely segítséget nyújt a munkatársak hatékonyságának a vállalati adatok védelmének megőrzése mellett a rendszer. A Microsoft Intune a többi Azure-szolgáltatáshoz hasonlóan az Azure Portalon érhető el. Az Intune-nal a következőkre nyílik lehetősége:
-* Kezelheti a mobileszközöket és számítógépeket, a munkatársak által használt céges adatok elérésére.
+A Microsoft Intune egy felhőalapú szolgáltatás a nagyvállalati mobilitási felügyeletben ("az"), amely lehetővé teszi, hogy a munkaerő hatékony legyen, miközben a vállalati adatvédelmet tartja. A Microsoft Intune a többi Azure-szolgáltatáshoz hasonlóan az Azure Portalon érhető el. Az Intune-nal a következőkre nyílik lehetősége:
+* Kezelheti a munkaerő által a vállalati adatszolgáltatásokhoz használt mobileszközök és számítógépek adatait.
 * Felügyelheti a munkatársak által használt alkalmazásokat.
 * Megóvhatja vállalati adatokat, szabályozva azt, ahogyan a munkatársak elérik és megosztják őket.
 * Gondoskodhat arról, hogy az eszközök és az alkalmazások megfeleljenek a vállalat biztonsági követelményeinek.
@@ -45,7 +44,7 @@ A Microsoft Intune egy felhőalapú szolgáltatás, a nagyvállalati mobilitási
 
 
 ## <a name="how-does-intune-work"></a>Hogyan működik az Intune?
-Intune-nal, a Microsoft Enterprise Mobility + Security (EMS) csomag, amely felügyeli a mobileszközök és alkalmazások összetevője. Szorosan együttműködik más EMS-összetevőkkel, így az identitáskezelés és a hozzáférés-vezérlés terén az Azure Active Directoryval (Azure AD), valamint az adatvédelem terén az Azure Information Protectionnel. Az Office 365-tel együttesen használva lehetővé teszi, hogy a dolgozók minden eszközükön hatékonyan dolgozzanak, emellett gondoskodik a cég adatainak biztonságáról is.
+Az Intune a Microsoft Enterprise Mobility + Security (EMS) csomag összetevője, amely a mobileszközök és az alkalmazások felügyeletét végzi. Szorosan együttműködik más EMS-összetevőkkel, így az identitáskezelés és a hozzáférés-vezérlés terén az Azure Active Directoryval (Azure AD), valamint az adatvédelem terén az Azure Information Protectionnel. Az Office 365-tel együttesen használva lehetővé teszi, hogy a dolgozók minden eszközükön hatékonyan dolgozzanak, emellett gondoskodik a cég adatainak biztonságáról is.
 
 ![Kép az Intune architektúrájáról](./media/intunearch_sm.png)
 
@@ -64,7 +63,7 @@ Az Intune-alapú eszközfelügyelet a mobil operációs rendszerekben elérhető
 * Jelentéseket készíthet arról, illetve mérheti, hogy az eszközök mennyire felelnek meg a vállalati előírásoknak.
 * Eltávolíthatja a vállalati adatokat a felügyelt eszközökről.  
 
-Vannak, akik szerint **céges adatokhoz való hozzáférés vezérlése** az Eszközfelügyelet egyik funkciója. Mi ezt nem így gondoljuk, mert ez nem olyan funkció, amelyet a mobil operációs rendszer biztosít. Ez inkább az identitásszolgáltató feladata. Esetünkben az identitásszolgáltató az Azure Active Directory (Azure AD), a Microsoft identitás- és hozzáférés-felügyeleti rendszere.  
+Előfordulhat, hogy az emberek úgy gondolják, **hogy a vállalati adathozzáférés vezérlése** eszköz-felügyeleti szolgáltatás. Mi ezt nem így gondoljuk, mert ez nem olyan funkció, amelyet a mobil operációs rendszer biztosít. Ez inkább az identitásszolgáltató feladata. Esetünkben az identitásszolgáltató az Azure Active Directory (Azure AD), a Microsoft identitás- és hozzáférés-felügyeleti rendszere.  
 
 Az Intune az Azure AD-vel együttműködve a hozzáférés-vezérlési forgatókönyvek széles választékát teszi elérhetővé. Így például Ön megkövetelheti, hogy egy mobileszköz megfeleljen az Intune-ban meghatározott céges előírásoknak, mielőtt hozzáférhetne az olyan céges szolgáltatásokhoz, mint az Exchange. Ehhez hasonlóan megadhat olyan korlátozást, amely csak meghatározott mobilalkalmazásoknak engedélyezi a vállalati szolgáltatások elérését. Előírhatja például, hogy csak az Outlook vagy az Outlook Mobile férhessen hozzá az Exchange Online-hoz.
 
@@ -78,15 +77,15 @@ Alkalmazásfelügyelet alatt a következőket értjük:
 * Nyilvántarthatják a használt mobilalkalmazásokat.
 * Nyomon követhetik a mobilalkalmazások használatát.
 
-Tapasztalataink szerint a „mobilalkalmazás-felügyelet” (MAM) kifejezést úgy is szokták használni, hogy csak külön utal a fent felsorolt tevékenységek valamelyikére, vagy a tevékenységek valamilyen kombinációjára. Különösen fontos hogy kombinálja az alkalmazáskonfiguráció fogalmát a céges adatok mobilalkalmazásokon belüli fogalmát. Ez azzal magyarázható, hogy egyes mobilalkalmazások olyan beállításokat is tartalmaznak, amelyekkel az adatvédelmi funkciók konfigurálhatók.
+Tapasztalataink szerint a „mobilalkalmazás-felügyelet” (MAM) kifejezést úgy is szokták használni, hogy csak külön utal a fent felsorolt tevékenységek valamelyikére, vagy a tevékenységek valamilyen kombinációjára. Különösen gyakori, hogy az emberek az alkalmazások konfigurálásának fogalmát kombinálják a vállalati adatok Mobile apps szolgáltatásban való biztonságossá tételével. Ez azzal magyarázható, hogy egyes mobilalkalmazások olyan beállításokat is tartalmaznak, amelyekkel az adatvédelmi funkciók konfigurálhatók.
 
 Amikor az alkalmazások konfigurálása és az Intune összefüggésében használjuk a fogalmat, konkrétan olyan technológiákra gondolunk, mint [a felügyelt alkalmazások konfigurálása az iOS-ben](https://developer.apple.com/library/content/samplecode/sc2279/Introduction/Intro.html).
 
-Ha az Intune-t használja az EMS más szolgáltatásaival, akkor a mobil operációs rendszer és a mobilalkalmazások saját alkalmazáskonfigurációs lehetőségei által nyújtottnál magasabb szintű mobilalkalmazás-védelmet biztosíthat a szervezet számára. Az EMS használatával felügyelt alkalmazás hozzáfér a mobilalkalmazások és az adatvédelmi funkciók szélesebb köréhez férhetnek, amely tartalmazza:
+Ha az Intune-t használja az EMS más szolgáltatásaival, akkor a mobil operációs rendszer és a mobilalkalmazások saját alkalmazáskonfigurációs lehetőségei által nyújtottnál magasabb szintű mobilalkalmazás-védelmet biztosíthat a szervezet számára. Az EMS szolgáltatással felügyelt alkalmazások szélesebb körben férnek hozzá a Mobile App és az adatvédelmi funkciókhoz, amely a következőket tartalmazza:
 
 * [Egyszeri bejelentkezés](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)  
-*   [Többtényezős hitelesítés](https://docs.microsoft.com/azure/active-directory/authentication/multi-factor-authentication)
-* [Alkalmazás feltételes hozzáférése – hozzáférés engedélyezése, ha a mobilalkalmazás vállalati adatokat tartalmaz](app-based-conditional-access-intune.md)
+* [Többtényezős hitelesítés](https://docs.microsoft.com/azure/active-directory/authentication/multi-factor-authentication)
+* [Alkalmazás feltételes hozzáférése – hozzáférés engedélyezése, ha a Mobile alkalmazás vállalati adattartalomot tartalmaz](app-based-conditional-access-intune.md)
 * [A vállalati adatok és a személyes adatok elkülönítése alkalmazáson belül](app-protection-policy.md)
 * [Alkalmazásvédelmi szabályzat (PIN-kód, titkosítás, mentés másként, vágólap stb.)](app-protection-policies.md)
 * [Vállalati adatok törlése a mobilalkalmazásokból](apps-selective-wipe.md)
@@ -100,16 +99,16 @@ Az alkalmazások biztonságáról való gondoskodás az alkalmazásfelügyelet r
 * A felhasználók által a vállalati adatokkal végrehajtható műveletek (például másolás, kivágás és beillesztés, mentés és megtekintés) korlátozása
 * A vállalati adatok eltávolítása a mobilalkalmazásokból (más elnevezéssel: szelektív törlés vagy vállalati törlés)
 
-Egyik módja az Intune kínál keresztül van mobilalkalmazás-védelmet a **alkalmazásvédelmi szabályzat** funkció. Az alkalmazásvédelmi szabályzat az Azure AD identitásvédelmi szolgáltatását használja a vállalati adatok és a személyes adatok elkülönítéséhez. Vállalati hitelesítő adatok használatával elérhető adatok további vállalati szintű védelmet kapnak.
+Az Intune egyik módja, hogy a Mobile App Security az **alkalmazás-védelmi házirend** szolgáltatáson keresztül érhető el. Az alkalmazásvédelmi szabályzat az Azure AD identitásvédelmi szolgáltatását használja a vállalati adatok és a személyes adatok elkülönítéséhez. A vállalati hitelesítő adatokkal elért adatok további vállalati védelemben részesülnek.
 
-Például amikor egy felhasználó bejelentkezik az eszközt a vállalati hitelesítő adataikkal, a céges identitása lehetővé teszi számukra, hogy a személyes identitásával megtagadva hozzá adatokhoz. A céges adatok használata során az alkalmazásvédelmi szabályzatok határozzák meg, hogy az adatok miként menthetők, illetve oszthatók meg. Ezek a védelmi funkciók sem lépnek érvénybe, amikor a felhasználó bejelentkezik a személyes identitásával eszköz elért adatokat. Ezzel a módszerrel informatikai vállalati adatok szabályozzák, amíg tart fenn és biztonságának a végfelhasználó személyes adataik felett.
+Ha például egy felhasználó vállalati hitelesítő adataival jelentkezik be az eszközre, a vállalati identitásuk lehetővé teszi, hogy hozzáférjenek a személyes identitásukat megtagadott adatokhoz. A céges adatok használata során az alkalmazásvédelmi szabályzatok határozzák meg, hogy az adatok miként menthetők, illetve oszthatók meg. Ugyanazok a védelem nem vonatkoznak azokra az adatokra, amelyek akkor érhetők el, ha a felhasználó személyes identitásával jelentkezik be az eszközre. Ily módon felügyelheti a vállalati adatokat, míg a végfelhasználók a személyes adataik felett kezelik az irányítást és az adatvédelmet.
 
 ## <a name="emm-with-and-without-device-enrollment"></a>Nagyvállalati mobileszköz-felügyelet az eszközök regisztrálásával és anélkül
 A legtöbb nagyvállalati mobilitási felügyeleti megoldás támogatja az alapvető mobileszköz- és mobilalkalmazás-felügyeleti technológiákat. Ezek általában a cég mobileszköz-felügyeleti (MDM-) megoldásában regisztrált eszközökhöz kapcsolódnak. Az Intune támogatja ezeket a forgatókönyveket, és emellett számos „regisztráció nélküli” forgatókönyvet is.  
 
-A szervezetek különböző mértékben alkalmazzák a „regisztráció nélküli” forgatókönyveket. Egyes szervezetek egységesen ezeket alkalmazzák. Más szervezetek a kiegészítő eszközökhöz, például a személyes táblagépekhez használják. Megint más szervezetek egyáltalán nem támogatják. Még akkor is, ez utóbbi esetben előírják minden munkatárs számára az eszközöknek a mobileszköz-felügyeleti, általában támogatják a "regisztráció nélküli" forgatókönyveket alvállalkozók, a szállítók és a meghatározott mentességgel rendelkező egyéb eszközök számára.
+A szervezetek különböző mértékben alkalmazzák a „regisztráció nélküli” forgatókönyveket. Egyes szervezetek egységesen ezeket alkalmazzák. Más szervezetek a kiegészítő eszközökhöz, például a személyes táblagépekhez használják. Megint más szervezetek egyáltalán nem támogatják. Még ebben az utolsó esetben is, ha egy szervezet megköveteli, hogy az összes alkalmazotti eszköz regisztrálva legyen a MDM-ben, általában a "regisztráció nélküli" forgatókönyveket támogatják a vállalkozók, a szállítók és más olyan eszközök esetében, amelyek adott kivételt tartalmaznak.
 
-Az Intune „regisztráció nélküli” technológiáját akár még a regisztrált eszközökhöz is használhatja. Az MDM-ben regisztrált eszközöknek például lehet a mobil operációs rendszer által biztosított megnyitásvédelmük. "Megnyitás a következőben" védelmi funkciója biztosítja, hogy a dokumentum megnyitása egy alkalmazásból, például az Outlook, egy másik alkalmazásba, például a Word, kivéve, ha mindkét alkalmazásnak ugyanabban az MDM-szolgáltató kezeli az Apple IOS-es. Ezenkívül informatikai érvényesek az alkalmazásvédelmi szabályzatot az ellenőrzési mentse az EMS által kezelt mobilalkalmazások-szerint, vagy a multi-factor Authentication hitelesítés.
+Az Intune „regisztráció nélküli” technológiáját akár még a regisztrált eszközökhöz is használhatja. Az MDM-ben regisztrált eszközöknek például lehet a mobil operációs rendszer által biztosított megnyitásvédelmük. A "Megnyitás" védelem az Apple iOS egyik funkciója, amely korlátozza, hogy egy alkalmazásból, például az Outlookból egy másik alkalmazásba, például a Wordbe nyissa meg a dokumentumot, kivéve, ha mindkét alkalmazást egyetlen MDM-szolgáltató felügyeli. Emellett alkalmazhatja az alkalmazás-védelmi házirendet az EMS által felügyelt mobil alkalmazásokra a Mentés másként vagy a többtényezős hitelesítés biztosításához.
 
 Függetlenül attól, hogy a szervezet milyen helyzetben van a regisztrált és a nem regisztrált mobileszközök és -alkalmazások terén, az Intune az EMS részeként rendelkezik azokkal az eszközökkel, amelyekkel növelhető a munkatársak hatékonysága a vállalati adatok védelmének fenntartásával párhuzamosan.
 

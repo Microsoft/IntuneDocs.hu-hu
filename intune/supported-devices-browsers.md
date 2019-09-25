@@ -6,9 +6,8 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 01/03/2018
+ms.date: 07/29/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dc0cf701450e594fd4b72a8e0565246994bb8a9e
-ms.sourcegitcommit: 25e6aa3bfce58ce8d9f8c054bc338cc3dff4a78b
+ms.openlocfilehash: 5946f8ffb8179bb5109de45df8f89012ec706023
+ms.sourcegitcommit: 3baa9965095bb874d9b8c7a3cbb4aa925ed52cae
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57460614"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "71239569"
 ---
 # <a name="supported-operating-systems-and-browsers-in-intune"></a>Támogatott operációs rendszereket és böngészőket az Intune-ban
 
@@ -33,7 +32,7 @@ A Microsoft Intune beállítása előtt tekintse át a támogatott operációs r
 
 Az eszközön az Intune telepítésével kapcsolatos útmutatásért lásd: [munkavégzés felügyelt eszközökkel](/intune-user-help/company-portal-frequently-asked-questions) és [az Intune hálózatisávszélesség-felhasználás](network-bandwidth-use.md).
 
-A konfigurációs szolgáltatás által támogatott szolgáltatók további információért látogasson el a [Configuration service provider referencia](https://docs.microsoft.com/windows/client-management/mdm/configuration-service-provider-reference).
+A konfigurációs szolgáltató támogatásával kapcsolatos további információkért látogasson el a konfigurációs szolgáltatói [referenciára](https://docs.microsoft.com/windows/client-management/mdm/configuration-service-provider-reference).
 
 ## <a name="intune-supported-operating-systems"></a>Az Intune által támogatott operációs rendszerek
 
@@ -100,7 +99,7 @@ You can manage [Exchange ActiveSync devices](device-enrollment.md#mobile-device-
 
 A különféle felügyeleti tevékenységek elvégzésére a következő két felügyeleti webhely valamelyikét kell használnia.
 
-- [A Microsoft 365 felügyeleti központban](http://go.microsoft.com/fwlink/p/?LinkId=698854)
+- [Microsoft 365 felügyeleti központ](http://go.microsoft.com/fwlink/p/?LinkId=698854)
 - [Azure Portal](https://portal.azure.com/)
 
 Ezeken a portálokon jelenleg a következő böngészők támogatottak:
@@ -115,12 +114,12 @@ Ezeken a portálokon jelenleg a következő böngészők támogatottak:
 
 ### <a name="intune-classic-portal"></a>Klasszikus Intune-portál
 
-A csak a klasszikus Intune-ban szereplő funkciók, például az Intune PC-s szoftverügyfél, vagy a Mobile Threat Defense-partnerekkel való integráció csak a klasszikus Intune-portálon (https://manage.microsoft.com) érhető el. A klasszikus Intune-portálhoz a böngésző Silverlight-támogatása szükséges.
+A klasszikus Intune-portált csak az Intune PC szoftverrel rendelkező ügyfélszoftverrel regisztrált eszközök kezelésére használjuk https://manage.microsoft.com) (. A klasszikus Intune-portálhoz a böngésző Silverlight-támogatása szükséges.
 
 A klasszikus Intune-portál a következő Silverlight-kompatibilis böngészőkkel használható:
 - Internet Explorer 10 vagy újabb
 - Google Chrome (42-es vagy korábbi verziók)
-- Mozilla Firefox (a Silverlightot engedélyezni kell) – [További információ](https://go.microsoft.com/fwlink/?linkid=836872)
+- Mozilla Firefox – Silverlight engedélyezve (56-es verziónál korábbi verziók)
 
 > [!Note]
 > A Microsoft Edge és a mobilböngészők a klasszikus Intune-portálhoz való használata nem támogatott, mivel nem támogatják a [Microsoft Silverlightot](https://msdn.microsoft.com/library/cc838158(v=vs.95).aspx).

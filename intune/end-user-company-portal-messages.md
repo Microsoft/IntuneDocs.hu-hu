@@ -8,7 +8,6 @@ ms.author: lanewsad
 manager: dougeby
 ms.date: 03/09/2017
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -17,24 +16,27 @@ ms.reviewer: aanavath
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2168c39c80369e16284078df608bdab5f29858c6
-ms.sourcegitcommit: 1cae690ca2ac6cc97bbcdf656f54b31878297ae8
+ms.openlocfilehash: 1ed123bcf8c5c1a5df1a356cf8d2522caad20ea2
+ms.sourcegitcommit: c9725ddae6c0f82a491de27c87f240254d32716b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59894965"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "71239392"
 ---
 # <a name="help-end-users-understand-company-portal-app-messages"></a>A Vállalati portál alkalmazás üzeneteinek ismertetése a végfelhasználókkal
 
 [!INCLUDE [both-portals](./includes/note-for-both-portals.md)]
 
 > [!NOTE]
-> A következő információk kizárólag Android 6.0-s és újabb rendszerű eszközökre vonatkoznak.
+> Az alábbi információk csak az Android 6.0 + és az iOS 10 + rendszerű eszközökre vonatkoznak.
 
 A cikk azokat az alkalmazásüzeneteket ismerteti, amelyeket a végfelhasználók láthatnak a Céges portálon. Az alkalmazásüzenetek általában a regisztrációs folyamat különféle szakaszaiban jelennek meg. A cikk bemutatja, hol jelennek meg az üzenetek, milyen konkrét jelentésük van, és hogy mi történik, ha a felhasználók nem adnak hozzáférést. Ezen kívül megtudhatja, hogyan érdemes az üzeneteket ismertetni a felhasználók számára.
 
 - __Allow Company Portal to make and manage phone calls? (Engedélyezi, hogy a Munkahelyi portál alkalmazás telefonhívásokat indítson és kezeljen?)__
 - __Allow Company Portal to access photos, media, and files on your device? (Engedélyezi a Munkahelyi portál alkalmazásnak, hogy hozzáférjen az eszközén tárolt fényképekhez, médiatartalmakhoz és fájlokhoz?)__
+
+> [!NOTE]
+> A szolgáltatás által gyűjtött adatokat semmilyen okból nem adjuk át harmadik félnek.
 
 ## <a name="allow-company-portal-to-make-and-manage-phone-calls"></a>Allow Company Portal to make and manage phone calls? (Engedélyezi, hogy a Munkahelyi portál alkalmazás telefonhívásokat indítson és kezeljen?)
 
@@ -110,35 +112,35 @@ Ha nem adta hozzá a Céges portált az **Engedélyezett alkalmazások** vagy a 
 
 ### <a name="what-it-means"></a>Mit jelent
 
-Adja hozzá a céges portál a **engedélyezett alkalmazások** vagy **mentesített alkalmazások** a Windows Information Protection (WIP) alkalmazásvédelmi szabályzat listájában. További információ: [A Windows Információvédelem (WIP) alkalmazásvédelmi szabályzatainak létrehozása és bevezetése az Intune használatával](windows-information-protection-policy-create.md).
+Adja hozzá a Céges portál az **engedélyezett alkalmazások** vagy a **mentesített alkalmazások** listájához a Windows Information Protection (folyamatban lévő) alkalmazás-védelmi házirendben. További információ: [A Windows Információvédelem (WIP) alkalmazásvédelmi szabályzatainak létrehozása és bevezetése az Intune használatával](windows-information-protection-policy-create.md).
 
-## <a name="approve-a-ios-company-app-line-of-business-app-on-your-ios-device"></a>Hagyja jóvá az iOS vállalati alkalmazások (üzleti alkalmazás) iOS-eszközön 
+## <a name="approve-a-ios-company-app-line-of-business-app-on-your-ios-device"></a>IOS-es vállalati alkalmazás jóváhagyása (üzletági alkalmazás) iOS-eszközön 
 
 ### <a name="where-it-appears"></a>Megjelenési helye
-iOS-alkalmazásokat a szervezet által fejlesztett, amelyek nem érhető el az App Store nem talál megbízhatónak a eszköz alapértelmezés szerint. Ha ilyen vállalati portállal alkalmazásokat telepíteni, és indítsa el az alkalmazást, a következő üzenet jelenik meg:
+a szervezet által fejlesztett, az App Store-ban nem elérhető iOS-alkalmazásokat az eszköz alapértelmezés szerint nem megbízhatónak minősíti. Ha a Céges portál használatával telepíti az alkalmazásokat, és elindítja az alkalmazást, a következő üzenet jelenik meg:
 
-![iOS-alkalmazás üzenet - nem megbízható nagyvállalati fejlesztő](./media/end-user-company-portal-messages/end-user-company-portal-messages-01.png)
+![iOS-alkalmazás üzenete – nem megbízható nagyvállalati fejlesztő](./media/end-user-company-portal-messages/end-user-company-portal-messages-01.png)
 
 ### <a name="what-it-means"></a>Mit jelent
-Ez az üzenet azt jelenti, hogy módosítania kell az iOS-eszközbeállítások jóváhagyása és telepítése az iOS-eszközön a vállalat által fejlesztett alkalmazás.
+Ez az üzenet azt jelenti, hogy módosítania kell az iOS-eszköz beállításait a vállalat által az iOS-eszközön fejlesztett alkalmazások jóváhagyásához és telepítéséhez.
 
-A vállalati portálon az ilyen alkalmazások telepítésekor, és indítsa el az alkalmazást, az alkalmazás jóváhagyása a letöltés után az alábbi lépésekkel:
+Ha az alkalmazásokat a Céges portál használatával telepíti, és elindítja az alkalmazást, az alábbi lépéseket követve jóváhagyhatja az alkalmazást a letöltés után:
 
-1. Után (az üzletági alkalmazásokat) telepített munkahelyi alkalmazás elindítása, látni fogja a "Nem megbízható nagyvállalati fejlesztő" üzenet. <br>
-   Nyomja meg **Mégse**.
-2. Navigáljon a **beállítások** > **általános** > **Eszközkezelés**.
+1. A telepített vállalati alkalmazások (üzletági alkalmazások) indításakor a "nem megbízható nagyvállalati fejlesztő" üzenet jelenik meg. <br>
+   Nyomja meg a **Mégse**gombot.
+2. Navigáljon a **Beállítások** > **általános** > **eszközök kezelése**elemre.
 
-   ![iOS-eszköz UI - kezelés](./media/end-user-company-portal-messages/end-user-company-portal-messages-02.png)
+   ![iOS-eszköz felhasználói felülete – eszközkezelés](./media/end-user-company-portal-messages/end-user-company-portal-messages-02.png)
 
-3. Válassza ki **felügyeleti profil** > **vállalati alkalmazás**.
-4. Válassza ki a fejlesztői nevét.
-5. Nyomja meg **megbízható _fejlesztő neve_**.
-6. Erősítse meg az alkalmazás kiválasztásával **megbízható** az alkalmazás telepítése az előugró üzenet.
+3. Válassza a **felügyeleti profil** > **vállalati alkalmazás**lehetőséget.
+4. Válassza ki a fejlesztő nevét.
+5. Kattintson a **megbízhatóság _fejlesztő neve_** gombra.
+6. Erősítse meg az alkalmazást úgy, hogy kijelöli a **megbízhatóság** lehetőséget az alkalmazás telepítése előugró üzenetben.
 
-   ![iOS-eszköz UI - megbízhatósági alkalmazás üzenet](./media/end-user-company-portal-messages/end-user-company-portal-messages-03.png)
+   ![iOS-eszköz felhasználói felülete – megbízhatósági alkalmazás üzenete](./media/end-user-company-portal-messages/end-user-company-portal-messages-03.png)
 
-    Indítsa el, és használhassák a vállalati alkalmazás kell lennie.
+    Képesnek kell lennie a vállalati alkalmazás indítására és használatára.
 
 
-### <a name="see-also"></a>Lásd még:
+## <a name="see-also"></a>Lásd még:
 [Mit kell tudniuk a végfelhasználóknak az Intune használatáról?](end-user-educate.md)

@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9a24c4b45b962f77846b4f7f7add3872daf38635
-ms.sourcegitcommit: 7c251948811b8b817e9fe590b77f23aed95b2d4e
+ms.openlocfilehash: 36e7b8468e4ee9d1f6be71a82d18f066bd7568d4
+ms.sourcegitcommit: 9110124a481160039d476cf0374a4fa0464a8509
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67883794"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71256200"
 ---
 # <a name="reassign-conditional-access-policies-from-intune-classic-portal-to-the-azure-portal"></a>Feltételes hozzáférési szabályzatok ismételt társítása az Intune klasszikus portálján a Azure Portal
 
@@ -194,15 +194,9 @@ Miután hozzárendelte a feltételes hozzáférési szabályzatokat a Azure Port
 
 ### <a name="to-disable-the-conditional-access-policies"></a>A feltételes hozzáférési szabályzatok letiltása
 
-1. Jelentkezzen be hitelesítő adataival az [Intune klasszikus portálon](https://manage.microsoft.com).
+Mivel a MDM el lett távolítva a klasszikus Intune-portálról, a következő hivatkozás található a klasszikus szabályzatok megtekintéséhez/letiltásához:
 
-2. Válassza a bal oldali menü **Szabályzat** pontját.
-
-3. Válassza a **feltételes hozzáférés**lehetőséget, majd válassza ki azt a Microsoft Cloud Service-t (például Exchange Online vagy SharePoint Online), amelyhez feltételes hozzáférési szabályzatot hozott létre.
-
-4. Törölje a **feltételes hozzáférési házirend engedélyezése**beállítást, majd kattintson a **Mentés**gombra.
-
-    ![A feltételes hozzáférési szabályzatok letiltásának képe a klasszikus Intune-portálon](./media/reassign-ca-18.png)
+https://portal.azure.com/?microsoft_aad_iam_classicPolicyDontHide=true#blade/Microsoft_AAD_IAM/ConditionalAccessBlade/ClassicPolicies
 
 ## <a name="see-also"></a>Lásd még:
 

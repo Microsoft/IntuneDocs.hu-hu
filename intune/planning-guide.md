@@ -8,7 +8,6 @@ ms.author: dougeby
 manager: dougeby
 ms.date: 01/02/2018
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5b8a4a76e59604038ae133701b3378c573e862aa
-ms.sourcegitcommit: 1cae690ca2ac6cc97bbcdf656f54b31878297ae8
+ms.openlocfilehash: 03eb6e8f58d644d0f5ad1058984d0dc2ce4a5a9b
+ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59897153"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "71239549"
 ---
 # <a name="intune-deployment-planning-design-and-implementation-guide"></a>Útmutató az Intune üzembe helyezésének megtervezéséhez és implementálásához
 
@@ -35,34 +34,34 @@ A sikeres Microsoft Intune-bevezetés alapja a jó terv. Ez az útmutató részl
 
 Az útmutató szakaszai végigvezetik Önt az Intune üzembe helyezésének teljes folyamatán. Kezdje az 1. szakasszal a céljai, célkitűzései és a kihívások tisztázásához. Aztán folytassa a 2–7. szakaszokkal az igényeinek legjobban megfelelő sorrendben. Nem kell ezeken a szakaszokon sorban végigmennie, elvégezheti őket egymással párhuzamosan is.
 
--   [1. szakasz: Telepítési célok, célkitűzések és kihívások meghatározása](planning-guide-deployment-goals.md)
+- [1. szakasz: Telepítési célok, célkitűzések és kihívások meghatározása](planning-guide-deployment-goals.md)
 
--   [2. szakasz: Használati esetek azonosítása](planning-guide-scenarios.md)
+- [2. szakasz: Használati esetek azonosítása](planning-guide-scenarios.md)
 
--   [3. szakasz: Használatieset-követelményeinek meghatározása](planning-guide-requirements.md)
+- [3. szakasz: Használati esetek követelményeinek meghatározása](planning-guide-requirements.md)
 
--   [4. szakasz: Bevezetési terv kidolgozása](planning-guide-rollout-plan.md)
+- [4. szakasz: Bevezetési terv kidolgozása](planning-guide-rollout-plan.md)
 
--   [5. szakasz: Bevezetési kommunikációs terv kidolgozása](planning-guide-communication-plan.md)
+- [5. szakasz: Bevezetési kommunikációs terv kidolgozása](planning-guide-communication-plan.md)
 
--   [6. szakasz: Támogatási terv kidolgozása](planning-guide-support-plan.md)
+- [6. szakasz: Támogatási csomag fejlesztése](planning-guide-support-plan.md)
 
--   [7. szakasz: Intune-terv létrehozása](planning-guide-design.md)
+- [7. szakasz: Intune-terv létrehozása](planning-guide-design.md)
 
--   [8. szakasz: Az Intune implementációja](planning-guide-onboarding.md)
+- [8. szakasz: Intune-implementáció](planning-guide-onboarding.md)
 
--   [9. szakasz: Tesztelés és ellenőrzés](planning-guide-test-validation.md)
+- [9. szakasz: Tesztelés és érvényesítés](planning-guide-test-validation.md)
 
 Az útmutatóban szerepelnek még további technikai információk és táblasablonok, amelyek segítséget nyújtanak az Intune-környezet megtervezése és kialakítása során.
 
--   [További források: Hivatkozások és táblasablonok](planning-guide-resources.md)
+- [További források: Hivatkozások és táblázatos sablonok](planning-guide-resources.md)
 
 ## <a name="assumptions"></a>Előfeltételek
 
--   Ön már kiértékelte az Intune-t egy megvalósíthatósági tesztkörnyezetben, és úgy döntött, hogy mobileszköz-felügyeleti megoldásként üzembe helyezi a munkahelyén.
+- Ön már kiértékelte az Intune-t egy megvalósíthatósági tesztkörnyezetben, és úgy döntött, hogy mobileszköz-felügyeleti megoldásként üzembe helyezi a munkahelyén.
 
--   Ön már ismeri az Intune-t és funkcióit.
+- Ön már ismeri az Intune-t és funkcióit.
 
 ## <a name="next-steps"></a>További lépések
 
-Kezdjük az első szakasszal: [Telepítési célok, célkitűzések és kihívások meghatározása](planning-guide-deployment-goals.md).
+Ismerkedjen meg az első szakasszal: A [telepítési célok, célkitűzések és kihívások meghatározása](planning-guide-deployment-goals.md).
