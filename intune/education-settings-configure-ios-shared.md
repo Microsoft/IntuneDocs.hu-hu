@@ -8,7 +8,6 @@ ms.author: lanewsad
 manager: dougeby
 ms.date: 12/06/2018
 ms.topic: archived
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.technology: ''
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4e0b8230a842a7b4e3b1368388cb186defa8df72
-ms.sourcegitcommit: 25e6aa3bfce58ce8d9f8c054bc338cc3dff4a78b
+ms.openlocfilehash: 8747a398447dc1f477e2b0149104c4c65d3ed741
+ms.sourcegitcommit: ede86a3cb094c12e3e218b956abb9935bec76902
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57566590"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "71302191"
 ---
 # <a name="configure-intune-education-settings-for-shared-ipad-devices"></a>Megosztott iPad-eszközökhöz az Intune oktatási beállításainak konfigurálása
 
@@ -44,7 +43,7 @@ A megosztott iPad használatának előfeltételei:
 - A diákok [felügyelt Apple ID-jának](http://help.apple.com/schoolmanager/#/tes78b477c81) konfigurálása az Apple School Manager telepítése során. [További tudnivalók a felügyelt Apple ID-król](https://support.apple.com/HT205918).
 - Egy regisztrációs profil létrehozása az Apple School Managerből szinkronizált eszközök sorozatszámaihoz.
 
-## <a name="step-1---import-your-school-data-into-azure-active-directory"></a>1. lépés – Importálja az iskolai adatokat az Azure Active Directoryba
+## <a name="step-1---import-your-school-data-into-azure-active-directory"></a>1\. lépés – Importálja az iskolai adatokat az Azure Active Directoryba
 
 A Microsoft School Data Sync (SDS) használatával importálja az iskolai adatokat egy meglévő hallgatói információs rendszerből (Student Information System, SIS) az Azure Active Directoryba (Azure AD).
 Az SDS szinkronizálja a SIS adatait, és tárolja azokat az Azure AD-ben. Az Azure AD egy Microsoft felügyeleti rendszer, amely segítséget nyújt a felhasználók és eszközök rendezéséhez. Ezeket az adatokat felhasználhatja a diákok és a tanórák kezeléséhez. További információk az [SDS üzembe helyezésével](https://support.office.com/article/Overview-of-School-Data-Sync-and-Classroom-f3d1147b-4ade-4905-8518-508e729f2e91) kapcsolatban.
@@ -64,12 +63,11 @@ Az SDS-be a következő módszerek valamelyikével importálhat adatokat:
 - [További tudnivalók az Azure Active Directorybeli licencelésről](https://docs.microsoft.com/azure/active-directory/active-directory-licensing-whatis-azure-portal)
 
 
-## <a name="step-2---create-and-assign-an-ios-education-profile-in-intune"></a>2. lépés – Egy iOS-es Oktatás profil létrehozása és hozzárendelése az Intune-ban
+## <a name="step-2---create-and-assign-an-ios-education-profile-in-intune"></a>2\. lépés – Egy iOS-es Oktatás profil létrehozása és hozzárendelése az Intune-ban
 
 ### <a name="configure-general-settings"></a>Általános beállítások konfigurálása
 
-1. Jelentkezzen be az [Azure Portal](https://portal.azure.com) webhelyre.
-2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget. Az Intune a **Figyelés + felügyelet** szakaszban található.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** panelen válassza az **Eszközkonfiguráció** lehetőséget.
 2. Az **Eszközkonfiguráció** panel **Kezelés** területén válassza a **Profilok** lehetőséget.
 5. A profilok paneljén válassza a **Profil létrehozása** lehetőséget.
@@ -137,10 +135,9 @@ Miután befejezte a tanúsítványok konfigurálását, kattintson az **OK** gom
 
 Ekkor létrejön a profil, és megjelenik a profilok listáját tartalmazó panelen.
 
-## <a name="step-3---create-a-device-category"></a>3. lépés – eszközkategória létrehozása
+## <a name="step-3---create-a-device-category"></a>3\. lépés – eszközkategória létrehozása
 
-1. Jelentkezzen be az [Azure Portal](https://portal.azure.com) webhelyre.
-2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget. Az Intune a **Figyelés + felügyelet** szakaszban található.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** panelen válassza az **Eszközregisztráció** lehetőséget.
 4. Az **Eszközregisztráció – Áttekintés** panelen válassza az **Eszközkategóriák** elemet.
 5. Az **Eszközregisztráció – Eszközkategóriák** panelen válassza a **Létrehozás** lehetőséget.
@@ -149,10 +146,9 @@ Ekkor létrejön a profil, és megjelenik a profilok listáját tartalmazó pane
 
 Az eszközkategória ekkor létrejön a **Regisztráció – Eszközkategóriák** panelen.
 
-## <a name="step-4--create-a-dynamic-group"></a>4. lépés – dinamikus csoport létrehozása
+## <a name="step-4--create-a-dynamic-group"></a>4\. lépés – dinamikus csoport létrehozása
 
-1. Jelentkezzen be az [Azure Portal](https://portal.azure.com) webhelyre.
-2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget. Az Intune a **Figyelés + felügyelet** szakaszban található.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** panelen válassza az **Csoportok** lehetőséget.
 4. A **Felhasználók és csoportok – Minden csoport** panelen válassza az **Új csoport** lehetőséget.
 5. A **Csoport** panelen válasszon **Csoporttípust**, majd adja meg a csoport **Nevét** és **Leírását**.
@@ -167,10 +163,9 @@ Az eszközkategória ekkor létrejön a **Regisztráció – Eszközkategóriák
 
 A dinamikus csoport ekkor létrejön a **Felhasználók és csoportok – Minden csoport** panelen.
 
-## <a name="step-5--assign-a-device-to-a-category-carts"></a>5. lépés – eszközök hozzárendelése egy kategóriához (kocsik)
+## <a name="step-5--assign-a-device-to-a-category-carts"></a>5\. lépés – eszközök hozzárendelése egy kategóriához (kocsik)
 
-1. Jelentkezzen be az [Azure Portal](https://portal.azure.com) webhelyre.
-2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget. Az Intune a **Figyelés + felügyelet** szakaszban található.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** panelen válassza az **Eszközök** lehetőséget.
 4. Az **Eszközök** panelen válassza a **Minden eszköz** lehetőséget.
 5. Az **Eszközök – Minden eszköz** panelen válasszon ki egy eszközt.
@@ -180,31 +175,29 @@ A dinamikus csoport ekkor létrejön a **Felhasználók és csoportok – Minden
 
 Az eszköz mostantól hozzá van rendelve az eszközkategóriához. Ismételje meg ezt a folyamatot minden olyan eszközre, amelyet hozzá szeretne rendelni a létrehozott eszközkategóriához.
 
-## <a name="step-6--create-classroom-profiles"></a>6. lépés – Osztályterem-profilok létrehozása
+## <a name="step-6--create-classroom-profiles"></a>6\. lépés – Osztályterem-profilok létrehozása
 
-1. Jelentkezzen be az [Azure Portal](https://portal.azure.com) webhelyre.
-2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget. Az Intune a **Figyelés + felügyelet** szakaszban található.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** panelen válassza az **Eszközkonfiguráció** lehetőséget.
 4. Az **Eszközkonfiguráció** panelen válassza a **Felügyelet** > **Kocsiprofilok** lehetőséget.
 5. A profilok paneljén válassza a **Profil létrehozása** lehetőséget.
 6. A **Hozzárendelés létrehozása** panelen adjon meg egy **Nevet** és egy **Leírást**.
 7. A csoportok kocsiprofillal való társításához válassza az **Osztályok kiválasztása** > **Konfigurálás** lehetőséget.
-8. Válassza ki a kocsiprofilhoz hozzáadni kívánt osztályokat, majd kattintson a **Kijelölés** lehetőségre. 
+8. Válassza ki a kocsiprofilhoz hozzáadni kívánt osztályokat, majd kattintson a **Kijelölés** lehetőségre. 
 9. A csoportok kocsiprofillal való társításához válassza az **Kocsik kiválasztása** > **Konfigurálás** lehetőséget.
 10. Válassza ki a kocsiprofilban alkalmazni kívánt csoportokat, majd kattintson a **Kijelölés** lehetőségre.
 11. A kocsiprofil mentéséhez a **Hozzárendelés létrehozása** panelen válassza a **Mentés** lehetőséget.
 
 Ekkor létrejön a profil, és megjelenik a profilok listáját tartalmazó panelen.
 
-## <a name="step-7---assign-the-cart-profile-to-classes"></a>7. lépés – a kocsiprofil hozzárendelése az osztályokhoz
+## <a name="step-7---assign-the-cart-profile-to-classes"></a>7\. lépés – a kocsiprofil hozzárendelése az osztályokhoz
 
-1. Jelentkezzen be az [Azure Portal](https://portal.azure.com) webhelyre.
-2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget. Az Intune a **Figyelés + felügyelet** szakaszban található.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** panelen válassza az **Eszközkonfiguráció** lehetőséget.
 4. Az **Eszközkonfiguráció** panelen válassza a **Figyelés** > **Hozzárendelés állapota** lehetőséget.
 5. A **Hozzárendelés állapota** panelen jelölje ki a létrehozott **kocsiprofilt**.
 6. A **Kocsiprofil** panelen válassza a **Hozzárendelések** lehetőséget, majd a **Belefoglalás** területen a **Válassza ki a befoglalandó csoportokat** lehetőséget.
-7. Válassza ki a kocsiprofil célosztályait (ne válasszon ki csoportokat), majd kattintson a **Kijelölés** lehetőségre. 
+7. Válassza ki a kocsiprofil célosztályait (ne válasszon ki csoportokat), majd kattintson a **Kijelölés** lehetőségre. 
 8. Ha elkészült, válassza a **Mentés** elemet.
 
 A hozzárendelés ekkor befejeződik, az Intune pedig üzembe helyezi az Osztályterem profilját a céleszközökön az osztályterem-hozzárendelés alapján.

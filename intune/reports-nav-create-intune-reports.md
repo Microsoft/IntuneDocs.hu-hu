@@ -6,9 +6,8 @@ keywords: Intune-adattárház
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 12/14/2018
+ms.date: 08/27/2019
 ms.topic: reference
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.technology: ''
@@ -18,32 +17,32 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0728fefc40bc82db7926faf282a69d0471c3a1ea
-ms.sourcegitcommit: 1cae690ca2ac6cc97bbcdf656f54b31878297ae8
+ms.openlocfilehash: 88681696716080b38d0f7d9e79264d002f335029
+ms.sourcegitcommit: 6c74ff568267d85fd1d44fda75e3e24ead87cb2b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59897136"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "71303304"
 ---
-# <a name="use-the-microsoft-intune-data-warehouse"></a>A Microsoft Intune-adattárház használata
+# <a name="use-the-microsoft-intune-data-warehouse"></a>A Microsoft Intune Data Warehouse használata
 
 [!INCLUDE [azure_portal](./includes/azure_portal.md)]
 
 Az Intune-adattárház használatával a vállalat mobilkörnyezetéről szóló jelentéseket hozhat létre. A jelentésekben például a következők szerepelhetnek:
--   Az Intune-ban regisztráló felhasználók trendje a licencvásárlások optimalizálásához
--   Az alkalmazások és az operációs rendszerek listázása verziók szerinti bontásban a mobileszközök állapotának ellenőrzéséhez
--   Regisztrációs és eszközmegfelelőségi trendek a szabályzatfrissítések zökkenőmentes bevezetéséhez
+- Az Intune-ban regisztráló felhasználók trendje a licencvásárlások optimalizálásához
+- Az alkalmazások és az operációs rendszerek listázása verziók szerinti bontásban a mobileszközök állapotának ellenőrzéséhez
+- Regisztrációs és eszközmegfelelőségi trendek a szabályzatfrissítések zökkenőmentes bevezetéséhez
 
-## <a name="data-warehouse-benefits"></a>Az adattárház előnyei
+## <a name="data-warehouse-benefits"></a>Az adatraktár előnyei
 
 Az adattárház az Azure Portalnál több információt nyújt a mobilkörnyezettel kapcsolatban. Az Intune-adattárház segítségével a következőkhöz férhet hozzá:
 
-  -  Intune-előzményadatok
-  -  Napi szintű frissített adatok
-  -  OData-szabványt használó adatmodell
+- Intune-előzményadatok
+- Napi szintű frissített adatok
+- OData-szabványt használó adatmodell
 
 > [!Note]
-> Ha Ön egy közös felügyelt mobil Eszközkezelés (MDM) a System Center Configuration Manager és a Microsoft Intune, kell lekérni az adatokat a Configuration Manager alkalmazásból. Az Intune-adattárház csak az Intune-adatokat tartalmazza. Egy Configuration Manager Power BI-irányítópult az egyéni jelentésekhez használhatja. További információ: „[A Power BI-megoldássablon bejelentése a System Center Configuration Managerhez]( https://powerbi.microsoft.com/blog/sccm-solution-template)”, valamint „[Power BI-tartalom a Dynamics 365-höz](https://docs.microsoft.com/dynamics365/unified-operations/dev-itpro/analytics/power-bi-home-page).”
+> Ha a közösen felügyelt mobileszköz-kezelést (MDM) használja System Center Configuration Manager és Microsoft Intune, az adatait Configuration Manager kell lekérnie. Az Intune-adattárház csak az Intune-adatokat tartalmazza. Az egyéni jelentésekhez Configuration Manager Power BI irányítópultot is használhat. További információ: „[A Power BI-megoldássablon bejelentése a System Center Configuration Managerhez]( https://powerbi.microsoft.com/blog/sccm-solution-template)”, valamint „[Power BI-tartalom a Dynamics 365-höz](https://docs.microsoft.com/dynamics365/unified-operations/dev-itpro/analytics/power-bi-home-page).”
 
 > [!Important]  
 > Most már használható az Intune Adattárház v1.0-ás verziója az  `api-version=v1.0` lekérdezésparaméter megadásával. Az Adattárház gyűjteményeinek frissítései hozzáadó jellegűek, és nem okoznak fennakadást a meglévő forgatókönyvekben.<br><br>
@@ -53,4 +52,4 @@ Az adattárház az Azure Portalnál több információt nyújt a mobilkörnyezet
 
 - Kapcsolódjon az adattárházhoz a Power BI használatával, és készítsen információs jelentéseket. További információt a [Csatlakozás az Intune-adattárházhoz a Power BI segítségével](reports-proc-get-a-link-powerbi.md)című témakörben talál.
 - A hivatkozást felhasználva készítsen egyéni jelentéseket a Power BI használatával. Ehhez a [Jelentés készítése az OData-adatcsatornából a Power BI használatával](reports-proc-create-with-odata.md) című témakörben talál útmutatót.
-- Részletes tájékoztatást nyújt az Intune-adattárház API adatmodell, és az entitások közötti kapcsolatok<!-- , and an example of creating a custom client to retrieve data,--> Lásd: [Intune-adattárház API](reports-nav-intune-data-warehouse.md).
+- További információ az Intune-adattárház API-ról, az adatmodellről és az entitások közötti kapcsolatokról<!-- , and an example of creating a custom client to retrieve data,--> Lásd: [az Intune-adattárház API](reports-nav-intune-data-warehouse.md)-ját.

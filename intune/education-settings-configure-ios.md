@@ -8,7 +8,6 @@ ms.author: lanewsad
 manager: dougeby
 ms.date: 05/9/2018
 ms.topic: archived
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.technology: ''
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 75628ab45d4c0d7f43f07d530a76988ca5f772b8
-ms.sourcegitcommit: 25e6aa3bfce58ce8d9f8c054bc338cc3dff4a78b
+ms.openlocfilehash: 578dcf8a714197d9414e8ffeeec9a6c6e8a30311
+ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57461158"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "71302180"
 ---
 # <a name="how-to-configure-intune-settings-for-the-ios-classroom-app"></a>Az iOS-beli Osztályterem alkalmazás Intune-beállításainak konfigurálása
 
@@ -55,7 +54,7 @@ A beállítások konfigurálása előtt vegye figyelembe a következőket:
 - Ebben a kiadásban az Intune az 1:1-es forgatókönyv kezelését támogatja, amelynek esetén minden diák saját dedikált iPad készülékkel rendelkezik.
 
 
-## <a name="step-1---import-your-school-data-into-azure-active-directory"></a>1. lépés – Importálja az iskolai adatokat az Azure Active Directoryba
+## <a name="step-1---import-your-school-data-into-azure-active-directory"></a>1\. lépés – Importálja az iskolai adatokat az Azure Active Directoryba
 
 A Microsoft School Data Sync (SDS) használatával importálja az iskolai adatokat egy meglévő hallgatói információs rendszerből (Student Information System, SIS) az Azure Active Directoryba (Azure AD).
 Az SDS szinkronizálja a SIS adatait, és tárolja azokat az Azure AD-ben. Az Azure AD egy Microsoft felügyeleti rendszer, amely segítséget nyújt a felhasználók és eszközök rendezéséhez. Ezeket az adatokat felhasználhatja a diákok és a tanórák kezeléséhez. További információk az [SDS üzembe helyezésével](https://support.office.com/article/Overview-of-School-Data-Sync-and-Classroom-f3d1147b-4ade-4905-8518-508e729f2e91) kapcsolatban.
@@ -74,19 +73,18 @@ Az SDS-be a következő módszerek valamelyikével importálhat adatokat:
 - [További információ a Microsoft School Data Sync-kel kapcsolatban](https://sds.microsoft.com/)
 - [További tudnivalók az Azure Active Directorybeli licencelésről](https://docs.microsoft.com/azure/active-directory/active-directory-licensing-whatis-azure-portal)
 
-## <a name="step-2---create-and-assign-an-ios-education-profile-in-intune"></a>2. lépés – Egy iOS-es Oktatás profil létrehozása és hozzárendelése az Intune-ban
+## <a name="step-2---create-and-assign-an-ios-education-profile-in-intune"></a>2\. lépés – Egy iOS-es Oktatás profil létrehozása és hozzárendelése az Intune-ban
 
 ### <a name="configure-general-settings"></a>Általános beállítások konfigurálása
 
-1. Jelentkezzen be az [Azure Portal](https://portal.azure.com) webhelyre.
-2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget. Az Intune a **Figyelés + felügyelet** szakaszban található.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** panelen válassza az **Eszközkonfiguráció** lehetőséget.
 2. Az **Eszközkonfiguráció** panel **Kezelés** területén válassza a **Profilok** lehetőséget.
-5.  A profilok paneljén válassza a **Profil létrehozása** lehetőséget.
-6.  A **Profil létrehozása** panelen adja meg az iOS-es oktatási profil **Nevét** és **Leírását**.
-7.  A **Platform** legördülő listájában válassza az **iOS** lehetőséget.
-8.  A **Profil típusa** legördülő listában válassza az **Oktatás** lehetőséget.
-9.  Válassza a **Beállítások** > **Konfigurálás** lehetőséget.
+5. A profilok paneljén válassza a **Profil létrehozása** lehetőséget.
+6. A **Profil létrehozása** panelen adja meg az iOS-es oktatási profil **Nevét** és **Leírását**.
+7. A **Platform** legördülő listájában válassza az **iOS** lehetőséget.
+8. A **Profil típusa** legördülő listában válassza az **Oktatás** lehetőséget.
+9. Válassza a **Beállítások** > **Konfigurálás** lehetőséget.
 
 
 A következő lépésben tanúsítványokat fog létrehozni az oktató és a diákok iPadjei közötti megbízhatósági kapcsolat létrehozásához. A tanúsítványok az eszközök közötti kapcsolatok felhasználónevek és jelszavak megadása nélküli, zökkenőmentes és csendes hitelesítéséhez használatosak.
@@ -124,8 +122,8 @@ Miután befejezte a tanúsítványok konfigurálását, kattintson az **OK** gom
 
 ### <a name="configure-student-certificates"></a>Diáktanúsítványok konfigurálása
 
-1.  Az **Oktatás** panelen válassza a **Diáktanúsítványok** lehetőséget.
-2.  A **Diáktanúsítványok** panelen a **Tanulóieszköz-tanúsítványok típusa** listából válassza az **1:1** lehetőséget.
+1. Az **Oktatás** panelen válassza a **Diáktanúsítványok** lehetőséget.
+2. A **Diáktanúsítványok** panelen a **Tanulóieszköz-tanúsítványok típusa** listából válassza az **1:1** lehetőséget.
 
 #### <a name="configure-student-root-certificate"></a>Tanulói főtanúsítvány konfigurálása
 
@@ -149,9 +147,9 @@ Miután befejezte a tanúsítványok konfigurálását, kattintson az **OK** gom
 
 ## <a name="finish-up"></a>Befejezés
 
-1.  Az **Oktatás** panelen kattintson az OK gombra.
-2.  A **Profil létrehozása** panelen válassza a **Létrehozás** lehetőséget.
-    
+1. Az **Oktatás** panelen kattintson az OK gombra.
+2. A **Profil létrehozása** panelen válassza a **Létrehozás** lehetőséget.
+
 Ekkor létrejön a profil, és megjelenik a profilok listáját tartalmazó panelen.
 
 Rendelje hozzá a profilt az iskolai adatok az Azure AD-vel való szinkronizálásakor létrehozott osztálytermi csoportokban található tanulói eszközökhöz (lásd: [Eszközprofilok hozzárendelése](device-profile-assign.md)).

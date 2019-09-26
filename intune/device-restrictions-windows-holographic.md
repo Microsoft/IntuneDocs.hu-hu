@@ -7,7 +7,6 @@ ms.author: mandia
 manager: dougeby
 ms.date: 01/22/2019
 ms.topic: reference
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.technology: ''
@@ -15,12 +14,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fed8c33bbf4ff302d08576dc5e34ce1257425090
-ms.sourcegitcommit: 25e6aa3bfce58ce8d9f8c054bc338cc3dff4a78b
+ms.openlocfilehash: bea8d6d8e3503b9ec6fba7b2eda4842b68786e54
+ms.sourcegitcommit: bd09decb754a832574d7f7375bad0186a22a15ab
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57565247"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "71302304"
 ---
 # <a name="windows-holographic-for-business-device-settings-to-allow-or-restrict-features-using-intune"></a>Windows Holographic for Business eszközbeállítások engedélyezett vagy korlátozott funkciók az Intune-nal
 
@@ -34,32 +33,32 @@ Ez a cikk és szabályozhatja a különböző beállításokat ismerteti a Windo
 
 ## <a name="general"></a>Általános
 
-- **Regisztráció manuális törlésének**: Lehetővé teszi a felhasználó számára a munkahelyi fiók manuális törlését az eszközről.
+- **Regisztráció manuális**törlése: Lehetővé teszi a felhasználó számára a munkahelyi fiók manuális törlését az eszközről.
 - **Cortana**: A Cortana beszédfelismerési asszisztens engedélyezése vagy letiltása.
-- **Földrajzi hely meghatározásának**: Meghatározza, hogy az eszköz használhatja-e a helyalapú szolgáltatások adatait.
+- Földrajzi **hely:** Meghatározza, hogy az eszköz használhatja-e a helyalapú szolgáltatások adatait.
 
 ## <a name="password"></a>Windows 10
 
 - **Jelszó**: Megköveteli a végfelhasználótól, hogy jelszót adjon meg az eszköz eléréséhez.
-- **Jelszó kérése, ha az eszköz visszatér inaktív állapotból**: Itt adhatja meg, hogy a felhasználónak meg kell adnia egy jelszót az eszköz zárolásának feloldásához.
+- **Jelszó megkövetelése, ha az eszköz visszatér az inaktív állapotból**: Megadja, hogy a felhasználónak meg kell adnia egy jelszót az eszköz zárolásának feloldásához.
 
 ## <a name="app-store"></a>Alkalmazásáruház
 
-- **Áruházból származó alkalmazások automatikus frissítése**: Lehetővé teszi, hogy a Microsoft Store automatikusan frissíteni kell a telepített alkalmazások.
-- **Megbízható alkalmazás telepítése**: Lehetővé teszi az alkalmazások közvetlen telepítését a megbízható tanúsítvánnyal aláírt.
-- **Fejlesztői zárolás feloldása**: Lehetővé teszi a Windows fejlesztői beállításait, például lehetővé teszi a végfelhasználók által módosítható a közvetlenül telepített alkalmazások.
+- **Az áruházból származó alkalmazások automatikus frissítése**: Lehetővé teszi, hogy a Microsoft Store telepített alkalmazások automatikusan frissüljenek.
+- **Megbízható alkalmazás telepítése**: Lehetővé teszi, hogy a megbízható tanúsítvánnyal aláírt alkalmazások közvetlenül telepített legyenek.
+- **Fejlesztői zárolás feloldása**: Engedélyezze a Windows fejlesztői beállításait, például lehetővé teszi a közvetlenül telepített alkalmazások módosítását a végfelhasználók számára.
 
 ## <a name="microsoft-edge-browser"></a>Microsoft Edge böngésző
 
-- **A cookie-k**: Lehetővé teszi, hogy a böngésző cookie-k mentse az eszközön.
-- **Előugró ablakok**: Blokkolja az előugró ablakokat a böngészőben (csak Windows 10 asztali verzióra vonatkozik).
+- **Cookie-k**: Lehetővé teszi a böngésző számára az internetes cookie-k mentését az eszközre.
+- **Előugró ablakok**: Blokkolja az előugró ablakokat a böngészőben (csak a Windows 10 asztali verzióra vonatkozik).
 - **Keresési javaslatok**: Lehetővé teszi, hogy a keresőmotor webhelyeket javasoljon a keresőkifejezések beírása közben.
-- **Jelszókezelő**: Engedélyezi vagy letiltja a Microsoft Edge böngésző jelszókezelő szolgáltatását.
-- **"Do not track" fejlécek küldése**: Konfigurálja a Microsoft Edge böngésző küldése tiltó fejlécek felhasználók által meglátogatott webhelyeknek.
+- **Password Manager**: A Microsoft Edge Password Manager funkció engedélyezése vagy letiltása.
+- **Nem nyomon követett fejlécek küldése**: Úgy konfigurálja a Microsoft Edge böngészőt, hogy ne kövesse nyomon a fejléceket a felhasználók által felkeresett webhelyeken.
 
 ## <a name="windows-defender-smart-screen"></a>Windows Defender SmartScreen
 
-- **A Microsoft Edge SmartScreen**: Engedélyezze a Microsoft Edge SmartScreen webhely- és fájlletöltésekhez eléréséhez.
+- **SmartScreen a Microsoft Edge-hez**: A Microsoft Edge SmartScreen engedélyezése a hely-és fájlletöltés eléréséhez.
 
 ## <a name="search"></a>Keresés
 
@@ -71,13 +70,13 @@ Ez a cikk és szabályozhatja a különböző beállításokat ismerteti a Windo
 
 ## <a name="cellular-and-connectivity"></a>Mobilhálózati és egyéb kapcsolatok
 
-- **Bluetooth**: Azt szabályozza, hogy a felhasználó engedélyezése és az eszköz Bluetooth konfigurálásához.
-- **Bluetooth-észlelhetőség**: Észlelhetővé teszi az eszközt más Bluetooth-kompatibilis eszközök által.
-- **Bluetooth-hirdetés**: Lehetővé teszi az eszközök hirdetéseket fogadjanak Bluetooth-on keresztül.
+- **Bluetooth**: Azt szabályozza, hogy a felhasználó engedélyezheti és konfigurálhatja-e a Bluetooth-t az eszközön.
+- **Bluetooth-felderíthetőség**: Lehetővé teszi, hogy az eszközt más Bluetooth-kompatibilis eszközök is felderítsék.
+- **Bluetooth-hirdetés**: Lehetővé teszi, hogy az eszköz hirdetéseket kapjon Bluetooth-kapcsolaton keresztül.
 
 ## <a name="control-panel-and-settings"></a>Vezérlőpult és Gépház
 
-- **Rendszeridő módosítása**: Megakadályozza, hogy a végfelhasználó megváltoztassa az eszköz rendszeridejét.
+- **Rendszeridő módosítása**: Megakadályozza, hogy a végfelhasználó megváltoztassa az eszköz dátumát és időpontját.
 
 ## <a name="kiosk---obsolete"></a>Kioszkmód – elavult
 
@@ -85,27 +84,27 @@ Ezek a beállítások csak olvashatók, és nem módosíthatók. A kioszkmód ko
 
 A kioszkeszközök jellemzően egy adott alkalmazást futtatnak. A rendszer a felhasználóknak csak a kioszkalkalmazáshoz ad hozzáférést, és meggátolja az eszköz más funkcióinak és szolgáltatásainak elérését.
 
-- **Teljes képernyős mód**: A szabályzat által támogatott teljes képernyős mód típusát jelöli. A lehetőségek a következők:
+- Teljes **képernyős mód**: Meghatározza a házirend által támogatott kioszk mód típusát. A lehetőségek a következők:
 
-  - **Nincs konfigurálva** (alapértelmezett): A házirend nem engedélyezi a teljes képernyős módot. 
-  - **Egyalkalmazásos kioszk**: A profil engedélyezi az eszköznek csak egyetlen alkalmazás futtatását. Amikor a felhasználó bejelentkezik, elindul az adott alkalmazás. Ez a mód emellett meggátolja a felhasználót abban, hogy új alkalmazásokat nyisson meg vagy másik futó alkalmazásra váltson.
-  - **Többalkalmazásos kioszk**: A profil engedélyezi több alkalmazás futtatását az eszköz. Csak a hozzáadott alkalmazások lesznek elérhetők a felhasználónak. A többalkalmazásos kioszk (vagy fix célú eszköz) előnye az, hogy egy olyan, könnyen érthető környezetet nyújt a felhasználónak, amelyben csak a szükséges alkalmazások érhetőek el. Azokat az alkalmazásokat pedig, amelyekre nincsen szükség, elrejti a rendszer. 
+  - **Nincs konfigurálva** (alapértelmezett): A házirend nem engedélyezi a kioszk üzemmódot. 
+  - **Egyalkalmazásos kioszk**: A profil lehetővé teszi, hogy az eszköz csak egy alkalmazást futtasson. Amikor a felhasználó bejelentkezik, elindul az adott alkalmazás. Ez a mód emellett meggátolja a felhasználót abban, hogy új alkalmazásokat nyisson meg vagy másik futó alkalmazásra váltson.
+  - **Többalkalmazásos kioszk**: A profil lehetővé teszi, hogy az eszköz több alkalmazást futtasson. Csak a hozzáadott alkalmazások lesznek elérhetők a felhasználónak. A többalkalmazásos kioszk (vagy fix célú eszköz) előnye az, hogy egy olyan, könnyen érthető környezetet nyújt a felhasználónak, amelyben csak a szükséges alkalmazások érhetőek el. Azokat az alkalmazásokat pedig, amelyekre nincsen szükség, elrejti a rendszer. 
   
-    Amikor egy többalkalmazásos kioszkhoz alkalmazásokat ad hozzá, egy fájlt is meg kell adnia a Start menü elrendezéséhez. A [Start menü elrendezési fájlját](https://docs.microsoft.com/hololens/hololens-kiosk#start-layout-file-for-intune) bemutató cikk tartalmaz egy minta XML-fájlt is, amelyet használhat az Intune-ban. 
+    Amikor egy többalkalmazásos kioszkhoz alkalmazásokat ad hozzá, egy fájlt is meg kell adnia a Start menü elrendezéséhez. A [Start menü elrendezési fájlját](/hololens/hololens-kiosk#start-layout-file-for-mdm-intune-and-others) bemutató cikk tartalmaz egy minta XML-fájlt is, amelyet használhat az Intune-ban. 
 
-#### <a name="single-app-kiosks"></a>Egyalkalmazásos kioszk
+### <a name="single-app-kiosks"></a>Egyalkalmazásos kioszk
 
 Adja meg a következő beállításokat:
 
-- **Felhasználói fiók**: Adja meg a helyi (eszközön létező) felhasználói fiók vagy az Azure AD-fiókot a teljes képernyős alkalmazáshoz társított bejelentkezési. Azure AD-tartományhoz csatlakozó fiókot a következő formában tud megadni: `domain\username@tenant.org`. 
+- **Felhasználói fiók**: Adja meg a kioszk alkalmazáshoz társított helyi (eszköz) felhasználói fiókot vagy az Azure AD-fiók bejelentkezési adatait. Azure AD-tartományhoz csatlakozó fiókot a következő formában tud megadni: `domain\username@tenant.org`. 
 
     Nyilvános környezetben működő, automatikus bejelentkezésű kioszkeszköz esetében ajánlott a legalacsonyabb szintű hozzáféréssel rendelkező felhasználótípust (például egyszerű helyi felhasználó fiókot) választania. Ha Azure Active Directory- (AD-) fiókot kíván konfigurálni a kioszkmódhoz, használja az `AzureAD\user@contoso.com` formátumot.
 
-- **Alkalmazás alkalmazásfelhasználói modellben használt azonosítója (AUMID) alkalmazás**: Adja meg a teljes képernyős alkalmazás alkalmazásfelhasználói modellben használt AZONOSÍTÓJÁT. További információkat a [Find the Application User Model ID of an installed app](https://docs.microsoft.com/windows-hardware/customize/enterprise/find-the-application-user-model-id-of-an-installed-app) (Telepített alkalmazás alkalmazásfelhasználói modellben használt azonosítójának megkeresése) című témakörben találhat.
+- **Alkalmazás felhasználói modell-azonosítója (AUMID)** : Adja meg a kioszk alkalmazás AUMID. További információkat a [Find the Application User Model ID of an installed app](https://docs.microsoft.com/windows-hardware/customize/enterprise/find-the-application-user-model-id-of-an-installed-app) (Telepített alkalmazás alkalmazásfelhasználói modellben használt azonosítójának megkeresése) című témakörben találhat.
 
 ## <a name="reporting-and-telemetry"></a>Jelentéskészítés és telemetria
 
-- **Használati adatok megosztása**: Válassza ki a diagnosztikai adatok küldésének szintjét.
+- **Használati adatok megosztása**: Válassza ki a diagnosztikai adatok beküldésének szintjét.
 
 ## <a name="next-steps"></a>További lépések
 

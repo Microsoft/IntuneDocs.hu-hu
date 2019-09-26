@@ -7,7 +7,6 @@ ms.author: erikje
 manager: dougeby
 ms.date: 09/18/2018
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -16,32 +15,33 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a7a2b39307f97fa6839095b2595f36a7f554dc35
-ms.sourcegitcommit: 25e6aa3bfce58ce8d9f8c054bc338cc3dff4a78b
+ms.openlocfilehash: 9eb46a557dfbd21d45ab3b395ccaf169d187bf1f
+ms.sourcegitcommit: c19584b36448bbd4c8638d7cab552fe9b3eb3408
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57389103"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71303502"
 ---
 # <a name="reset-or-remove-a-device-passcode-in-intune"></a>Eszközök PIN-kódjának visszaállítása vagy eltávolítása az Intune-ban
 
 [!INCLUDE [azure_portal](./includes/azure_portal.md)]
 
-Ez a dokumentum a PIN-kód eszközszintű alaphelyzetbe állítását és a munkahelyi profil PIN-kódjának alaphelyzetbe állítását ismerteti vállalati Android (korábbi nevén Android for Work, vagy AfW) rendszerű eszközökön. Ezt a megkülönböztetést fontos szem előtt tartani, hiszen a követelmények eltérőek lehetnek. Az eszközszintű PIN-kód alaphelyzetbe állítása az egész eszközön átállítja a PIN-kódot. A munkahelyi profil PIN-kódjának alaphelyzetbe állítása csak a felhasználó munkahelyi profiljára vonatkozó PIN-kódot állítja át a vállalati Android rendszerű eszközökön.
+Ez a dokumentum a PIN-kód alaphelyzetbe állítása és a munkahelyi profil PIN-kód alaphelyzetbe állítását ismerteti az Android Enterprise (korábbi nevén Android for Work vagy AfW) eszközökön. Fontos megjegyezni, hogy ez a különbség a követelmények szerint változhat. Az eszközszintű PIN-kód alaphelyzetbe állítása az egész eszközön átállítja a PIN-kódot. A munkahelyi profil PIN-kódjának alaphelyzetbe állítása csak a felhasználó munkahelyi profiljára vonatkozó PIN-kódot állítja át a vállalati Android rendszerű eszközökön.
 
 ## <a name="supported-platforms-for-device-level-passcode-reset"></a>Az eszközszintű PIN-kód alaphelyzetbe állításának támogatott platformjai
 
 | Platform | Támogatott? |
 | ---- | ---- |
-| 6.x vagy régebbi verziójú Android-eszközök | Igen |
+| 6\.x vagy régebbi verziójú Android-eszközök | Igen |
 | Vállalati Android rendszerű eszközök kioszkmódban | Igen |
 | iOS-eszközök | Igen |
-| Munkahelyi profillal regisztrált, 7.0-s vagy régebbi verziójú Android-eszközök | Nem |
-| 7.0-ás vagy újabb verziójú Android-eszközök | Nem |
+| Felhasználói regisztrációval regisztrált iOS-eszközök | Nem |
+| Munkahelyi profillal regisztrált Android-eszközök | Nem |
+| 7\.0-ás vagy újabb verziójú Android-eszközök | Nem |
 | macOS | Nem |
 | Windows | Nem |
 
-Az Android-eszközök esetében ez tulajdonképpen annyit jelent, hogy az eszközszintű PIN-kód alaphelyzetbe állítása csak 6.x vagy korábbi verziójú, illetve kioszkmódban futó vállalati Android rendszerű eszközökön támogatott. Ennek az az oka, hogy a Google többé nem támogatja az Android 7 rendszerű eszközökön a PIN-kód/jelszó alaphelyzetbe állítását eszközrendszergazda által jóváhagyott alkalmazásokból, minden MDM-szállítóra vonatkozóan.
+Android-eszközök esetén ez azt jelenti, hogy az eszköz szintű PIN-kód alaphelyzetbe állítása csak a 6. x vagy korábbi rendszerű eszközökön, illetve a kioszk módban futó androidos vállalati eszközökön támogatott. Ennek az az oka, hogy a Google többé nem támogatja az Android 7 rendszerű eszközökön a PIN-kód/jelszó alaphelyzetbe állítását eszközrendszergazda által jóváhagyott alkalmazásokból, minden MDM-szállítóra vonatkozóan.
 
 ## <a name="supported-platforms-for-android-enterprise-work-profile-passcode-reset"></a>Azok a platformok, amelyeken alaphelyzetbe állítható a vállalati Android munkahelyi profil PIN-kódja
 
@@ -49,16 +49,14 @@ Az Android-eszközök esetében ez tulajdonképpen annyit jelent, hogy az eszkö
 | ---- | ---- |
 | Munkahelyi profillal regisztrált, 8.0-s vagy újabb verziójú vállalati Android-eszközök | Igen |
 | Munkahelyi profillal regisztrált, 7.x vagy korábbi verziójú vállalati Android-eszközök | Nem |
-| 7.x vagy korábbi verziójú Android-eszközök | Nem |
-| iOS | Nem |
-| macOS | Nem |
+| 7\.x vagy korábbi verziójú Android-eszközök | Nem |
 
 A munkahelyi profilokhoz a PIN-kód alaphelyzetbe állítása művelettel hozhat létre új PIN-kódot. Ez a művelet elindítja a PIN-kód alaphelyzetbe állítását, és új, ideiglenes PIN-kódot hoz létre, kizárólag a munkahelyi profilhoz. 
 
 ## <a name="reset-a-passcode"></a>Új PIN-kód kérése
 
 
-1. Jelentkezzen be a [az Azure portal](https://portal.azure.com) azokkal a következő szerepkörök: Az Azure Active Directory globális rendszergazdája, az Azure Active Directory Intune Szolgáltatásadminisztrátor, ügyfélszolgálati operátor vagy szerepkörű rendszergazda. Szerepkörök és engedélyek teljes listáját lásd: a [Intune RBAC-táblázat](https://gallery.technet.microsoft.com/Intune-RBAC-table-2e3c9a1a).
+1. Jelentkezzen be a [Azure Portalba](https://portal.azure.com) a következő szerepkörök bármelyikével: Azure Active Directory globális rendszergazda, Azure Active Directory Intune-szolgáltatás rendszergazdája, segélyszolgálat-kezelő vagy szerepkör-rendszergazda.
 2. Válassza a **Minden szolgáltatás** lehetőséget, szűrjön az **Intune**-ra, és válassza a **Microsoft Intune** elemet.
 3. Válassza az **Eszközök**, majd a **Minden eszköz** lehetőséget.
 4. Az Ön által kezel eszközök listájáról válasszon ki egy eszközt, majd válassza a **...További** lehetőséget. Majd válassza a **PIN-kód eltávolítása** távoli eszközműveletet.

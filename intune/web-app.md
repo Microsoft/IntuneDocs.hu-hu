@@ -1,14 +1,13 @@
 ---
 title: Webalkalmazások hozzáadása az Intune-hoz
 titleSuffix: ''
-description: További web apps (ügyfél és kiszolgáló-alkalmazások) Microsoft Intune-ba való felvételéhez.
+description: További információ a webalkalmazások (ügyfél-kiszolgáló alkalmazások) Microsoft Intune való hozzáadásáról.
 keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 12/19/2018
+ms.date: 09/13/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9f1f0c36441b98c334311bdbfa85fa725c26b675
-ms.sourcegitcommit: 25e6aa3bfce58ce8d9f8c054bc338cc3dff4a78b
+ms.openlocfilehash: 4beab94e6facd3d5f35292d68b6256577d59073a
+ms.sourcegitcommit: 27e63a96d15bc4062af68c2764905631bd928e7b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57393546"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71302650"
 ---
 # <a name="add-web-apps-to-microsoft-intune"></a>Webalkalmazások hozzáadása az Intune-hoz
 
@@ -34,31 +33,29 @@ Az Intune számos különböző alkalmazástípust támogat, beleértve a webalk
 Ahhoz, hogy kezelhesse és felhasználókhoz rendelhesse hozzá az alkalmazásokat, hozzá kell adnia őket az Intune-hoz. Az Intune létrehoz egy parancsikont a webalkalmazáshoz a felhasználó eszközének kezdőképernyőjén.
 
 > [!Note]
-> A webalkalmazások használata az androidos munkahelyi profilt használó és macOS-eszközökön nincs támogatva.
+> Az androidos munkahelyi profilú eszközökön nem támogatottak a webalkalmazások.
 
 ## <a name="add-a-web-app-to-intune"></a>Webalkalmazás hozzáadása az Intune-hoz
 A következő módon adhat hozzá egy alkalmazást az Intune-hoz egy alkalmazás webes hivatkozásaként:
 
-1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com).
-2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget.  
-    Az Intune a **Figyelés + felügyelet** szakaszban található.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** ablaktáblán válassza az **Ügyfélalkalmazások** lehetőséget.
 4. Az **Ügyfélalkalmazások** tevékenységprofil panelén a **Kezelés** szakaszban válassza az **Alkalmazások** lehetőséget.
 5. Az **Alkalmazások** panelen válassza a **Hozzáadás** lehetőséget.
 6. Az **Alkalmazás felvétele** panelen az **Alkalmazás típusa** legördülő listában válassza a **Webes hivatkozás** típust.
 7. Válassza ki a **Konfigurálás** lehetőséget.
 8. Az **Alkalmazásadatok** panelen adja meg az alábbi információkat:
-    - **Név**:  Adja meg az alkalmazás nevét, mivel a vállalati portálon megjeleníteni kívánt. 
-    
+    - **Név**:  Adja meg az alkalmazásnak a vállalati portálon megjelenítendő nevét. 
+
         > [!NOTE]
         > Ha az alkalmazás telepítését követően módosítja annak nevét az Intune Azure Portalon, az alkalmazást nem fogják megtalálni a parancsok.
-    
+
     - **Description** (Leírás): Adja meg az alkalmazás leírását. A leírás a céges portálon jelenik meg a felhasználók számára.
-    - **Közzétevő**: Adja meg az alkalmazás kiadójának nevét.
-    - **Alkalmazás URL-címe**: Adja meg az URL-címét a webhely, amelyen a hozzárendelni kívánt alkalmazás található.
-    - **Kategória**: Kiválaszthat egy vagy több, a beépített Alkalmazáskategóriák vagy egy létrehozott kategóriát is. Ezzel megkönnyítheti a felhasználók számára az alkalmazás megkeresését a céges portálon való böngészés során.
-    - **Megjelenítés kiemelt alkalmazásként a céges portálon**: Válassza ki ezt a beállítást, az alkalmazáscsomag hangsúlyosan jelenítheti fő lapján, a céges portál főoldalán alkalmazásokat kereső felhasználók számára.
-    - **A hivatkozás megnyitásához felügyelt böngésző szükséges**: Válassza ki ezt a beállítást, hozzárendelheti a felhasználókhoz egy webhelyre vagy webalkalmazásra alkalmazást, akkor az Intune által felügyelt böngészőben megnyitható mutató hivatkozást. Ezt a böngészőt telepíteni kell az eszközökön.
+    - **Közzétevő**: Adja meg az alkalmazás közzétevője nevét.
+    - **Alkalmazás URL-címe**: Adja meg annak a webhelynek az URL-címét, amely a hozzárendelni kívánt alkalmazást tárolja.
+    - **Kategória**: Szükség esetén kiválaszthat egy vagy több beépített alkalmazás-kategóriát vagy egy Ön által létrehozott kategóriát is. Ezzel megkönnyítheti a felhasználók számára az alkalmazás megkeresését a céges portálon való böngészés során.
+    - **Megjelenítés Kiemelt alkalmazásként a céges portálban**: Ezzel a beállítással Kiemelt módon jelenítheti meg az App Suite-t a vállalati portál főoldalán, amikor a felhasználók megkeresik az alkalmazásokat.
+    - A **hivatkozás megnyitásához felügyelt böngésző szükséges**: Válassza ezt a lehetőséget, ha a felhasználókhoz szeretne rendelni egy webhelyre vagy webalkalmazásra mutató hivatkozást, amelyet megnyithatnak az Intune által felügyelt böngészőben. Ezt a böngészőt telepíteni kell az eszközökön.
     - **Embléma**: Itt töltheti fel az alkalmazáshoz hozzárendelni kívánt ikont. Ez az alkalmazásikon jelenik meg a céges portálon böngésző felhasználók számára.
 9. Kattintson az **OK** gombra.
 10. Az **Alkalmazás hozzáadása** panelen válassza a **Hozzáadás** lehetőséget.

@@ -1,13 +1,12 @@
 ---
-title: OEMConfig használata az Android Enterprise eszközökön a Microsoft Intune – Azure |} A Microsoft Docs
-description: A Microsoft Intune segítségével kezelheti és OEMConfig az Android Enterprise rendszerű eszközök használata. Minden egyes lépést, beleértve a áttekintése, tekintse meg az előfeltételeket, a konfigurációs profil létrehozása az Intune-ban és támogatott OEMConfig alkalmazások listájának megtekintéséhez.
+title: A OEMConfig használata androidos vállalati eszközökön Microsoft Intune-Azure-ban | Microsoft Docs
+description: Az OEMConfig használatával az Android Enterprise rendszert futtató eszközöket a Microsoft Intune segítségével kezelheti és használhatja. Tekintse meg az összes lépést, beleértve az áttekintést, az előfeltételek, a konfigurációs profil létrehozása az Intune-ban című témakört, és tekintse meg a támogatott OEMConfig-alkalmazások listáját.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 04/17/2019
+ms.date: 09/18/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: ''
 ms.technology: ''
@@ -17,114 +16,141 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 022bbcf98a5e00888f33e22941515ca03c5f6995
-ms.sourcegitcommit: 1cae690ca2ac6cc97bbcdf656f54b31878297ae8
-ms.translationtype: HT
+ms.openlocfilehash: c3108364850641cd85abf6b97a2b981735f59895
+ms.sourcegitcommit: 8934b1abec96e18cee15a77107d37551766f7666
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59901782"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71303916"
 ---
-# <a name="use-and-manage-android-enterprise-devices-with-oemconfig-in-microsoft-intune"></a>Használhatja és kezelheti a Microsoft Intune-ban OEMConfig vállalati Android-eszköz
+# <a name="use-and-manage-android-enterprise-devices-with-oemconfig-in-microsoft-intune"></a>Androidos nagyvállalati eszközök használata és kezelése a OEMConfig-ben Microsoft Intune
 
 [!INCLUDE [azure_portal](./includes/azure_portal.md)]
 
-A Microsoft Intune OEMConfig használatával adja hozzá, létrehozása és testreszabása a vállalati Android-eszköz OEM-specifikus beállításokat. OEMConfig általában szolgál, amely nem beépített részei az Intune-beállítások konfigurálása. Különböző OEM-ek különböző beállításokat tartalmazza. Így a rendelkezésre álló beállítások függ az OEM tartalma azok OEMConfig alkalmazásban.
+A Microsoft Intune a OEMConfig használatával adhat hozzá, hozhat létre és szabhat testre OEM-specifikus beállításokat az androidos vállalati eszközökhöz. A OEMConfig általában az Intune-ban nem beépített beállítások konfigurálására szolgálnak. Az eredeti berendezésgyártó (OEM) különböző beállításokat tartalmaz. Az elérhető beállítások attól függnek, hogy az OEM milyen tartalmakat tartalmaz a OEMConfig alkalmazásban.
 
 Ez a funkció az alábbiakra vonatkozik:  
 
 - Vállalati Android
 
-Ez a cikk azt ismerteti, OEMConfig, mire, a szükséges előfeltételeket ismerteti, bemutatja, hogyan hozhat létre egy profilt és sorolja fel az támogatott OEMConfig alkalmazásokat az Intune-ban.
+Ez a cikk a OEMConfig ismerteti, felsorolja az előfeltételeket, bemutatja, hogyan hozhat létre konfigurációs profilt, és listázza a támogatott OEMConfig-alkalmazásokat az Intune-ban.
 
 ## <a name="overview"></a>Áttekintés
 
-OEMConfig házirendek nincsenek eszközkonfigurációs szabályzat nagyon hasonlít egy speciális típusú [alkalmazáskonfigurációs szabályzat](app-configuration-policies-overview.md). OEMConfig rendszer által meghatározott standard a [AppConfig közösségi](https://www.appconfig.org/android-oemconfig/) (megnyílik egy másik webhely), amely lehetővé teszi, hogy számítógépgyártók (az eredeti berendezésgyártók) és a EMMs (enterprise mobility management) hozhat létre, és támogatja az OEM-specifikus szolgáltatások egy egységes módon. Hagyományosan EMMs, például az Intune-ban manuálisan hozhat létre az OEM-specifikus szolgáltatások támogatása után azok az OEM által vagyunk bevezetni. Ez a megközelítés duplikált erőfeszítések és a lassú bevezetési vezet.
+A OEMConfig szabályzatok az [alkalmazás-konfigurációs házirendhez](app-configuration-policies-overview.md)hasonló speciális típusú eszköz-konfigurációs házirend. A OEMConfig egy, a Google által meghatározott szabvány, amely az alkalmazások konfigurációját használja az Androidban az eszközök beállításainak az OEM-ek által írt alkalmazásokba való küldéséhez (eredeti berendezésgyártó). Ez a szabvány lehetővé teszi, hogy a számítógépgyártók és a EMMs (nagyvállalati mobilitási felügyelet) szabványosított módon hozzanak létre és támogassák az OEM-specifikus szolgáltatásokat. [További információ a OEMConfig](https://blog.google/products/android-enterprise/oemconfig-supports-enterprise-device-features/).
 
-OEMConfig az OEM létrehoz egy sémát, amely meghatározza az OEM-specifikus felügyeleti funkciókat. Az OEM a séma beágyazása egy alkalmazásba, és majd helyezi az alkalmazást a Google Play áruházból. A EMM beolvassa a sémát az alkalmazásból, és elérhetővé teszi a sémát a EMM felügyeleti konzolon. A konzol lehetővé teszi, hogy az Intune-rendszergazdák a beállítások konfigurálása a sémában.
+A EMMs, például az Intune, az OEM-specifikus funkciók támogatását manuálisan is kiépítheti, miután a számítógépgyártó bevezette őket. Ez a megközelítés ismétlődő erőfeszítéseket és lassú bevezetést eredményez.
 
-A OEMConfig alkalmazás van telepítve az eszközön, ha azt a EMM felügyeleti konzolon konfigurált beállítások használatával felügyeli az eszközt. Az eszközön található beállítások futtatásukat az OEMConfig alkalmazás helyett a EMM által készített MDM-ügynökkel.
+A OEMConfig esetében az OEM egy olyan sémát hoz létre, amely az OEM-specifikus felügyeleti funkciókat definiálja. Az OEM beágyazza a sémát egy alkalmazásba, majd ezt az alkalmazást a Google Play webhelyen helyezi el. Az az alkalmazásból beolvassa a sémát, és elérhetővé teszi a sémát a az a-ben lévő, a (az A konzol lehetővé teszi az Intune-rendszergazdák számára a séma beállításainak konfigurálását.
 
-Amikor az OEM ad hozzá, és javítja a felügyeleti funkciók, az OEM frissíti az alkalmazást a Google Play áruházból is. A rendszergazdák kap az új funkciókról és a frissítések (beleértve a javítások) EMMs tartalmazza a frissítések várakozás nélkül.
+Amikor a OEMConfig alkalmazást telepíti egy eszközre, az a következő beállításokkal kezeli az eszközt: Az eszköz beállításait a OEMConfig alkalmazás hajtja végre, nem pedig az MDM-ügynök által készített,
+
+Ha az OEM hozzáadja és javítja a felügyeleti funkciókat, az OEM az alkalmazást a Google Play áruházban is frissíti. Rendszergazdaként ezeket az új szolgáltatásokat és frissítéseket (beleértve a javításokat is) úgy érheti el, hogy a EMMs-re való várakozás nélkül is felveszi ezeket a frissítéseket.
 
 > [!TIP]
-> Használhatja OEMConfig csak olyan eszközökkel, amelyek támogatják ezt a szolgáltatást, és rendelkezik a megfelelő OEMConfig alkalmazással. Részletekért tekintse meg az OEM.
+> A OEMConfig csak olyan eszközökkel használható, amelyek támogatják ezt a funkciót, és rendelkeznek egy megfelelő OEMConfig-alkalmazással. További részletekért forduljon az OEM-hez.
 
 ## <a name="before-you-begin"></a>Előkészületek
 
-OEMConfig használatakor vegye figyelembe a következő információkat:
+A OEMConfig használatakor vegye figyelembe a következő információkat:
 
-- Intune a OEMConfig app séma tesz elérhetővé, így a segítségével konfigurálhatja. Az Intune nem ellenőrzése, vagy módosítsa a sémát, az alkalmazás által biztosított. Így ha a séma helytelen, vagy pontatlan adatokat, majd ezeket az adatokat továbbra is megkap eszközökre. Ha a séma származó problémát észlel, forduljon az OEM útmutatást.
-- Az Intune nem befolyásolja, vagy szabályozhatja az alkalmazás séma tartalma. Például az Intune nem szabályozhatják minden olyan karakterláncok, nyelvi, az engedélyezett műveletek és így tovább. Azt javasoljuk, hogy vegye fel a kapcsolatot az OEM a részletekért és az eszközeiket az OEMConfig kezelésére vonatkozó ajánlott eljárások.
-- Bármikor OEM-ek frissítheti a támogatott funkciókkal és sémák, és töltse fel egy új alkalmazást a Google Play áruházból. Az Intune mindig szinkronizálja a legújabb verzióra a OEMConfig alkalmazás Google Play áruházból. Az Intune nem tartanak fenn a séma vagy az alkalmazás régebbi verzióját. Ha tapasztal verziót ütközések, javasoljuk, vegye fel a kapcsolatot az OEM további információt.
-- Kell hozzárendelhet csak egy OEMConfig profilt egy eszközhöz. Ha több profil hozzá van rendelve, ugyanarra az eszközre, kiszámíthatatlan működést jelenhet meg. A OEMConfig modell eszközönként egy szabályzatban csak támogatja.
+- Az Intune elérhetővé teszi a OEMConfig alkalmazás sémáját, hogy beállítsa. Az Intune nem ellenőrzi vagy nem módosítja az alkalmazás által biztosított sémát. Így ha a séma helytelen, vagy pontatlan adatmennyiséggel rendelkezik, ezeket az adatait a rendszer továbbra is elküldi az eszközöknek. Ha olyan problémát talál, amely a sémából származik, forduljon az OEM-hez útmutatásért.
+- Az Intune nem befolyásolja vagy szabályozza az alkalmazás sémájának tartalmát. Az Intune például nem rendelkezik a karakterláncok, a nyelv, az engedélyezett műveletek és így tovább. Javasoljuk, hogy vegye fel a kapcsolatot az OEM-vel az eszközök OEMConfig-vel való kezelésével kapcsolatos részletekért és ajánlott eljárásokhoz.
+- A számítógépgyártók bármikor frissíthetik a támogatott szolgáltatásokat és sémákat, és új alkalmazást tölthetnek fel a Google Play áruházba. Az Intune mindig szinkronizálja a OEMConfig alkalmazás legújabb verzióját a Google Play áruházból. Az Intune nem tartja karban a séma vagy az alkalmazás régebbi verzióit. Ha a verziószáma ütközik, javasoljuk, hogy további információért forduljon az OEM-hez.
+- Rendeljen egy OEMConfig-profilt egy eszközhöz. Ha ugyanahhoz az eszközhöz több profil is hozzá van rendelve, akkor inkonzisztens viselkedést tapasztalhat. A OEMConfig-modell csak egyetlen házirendet támogat eszközönként.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-Az eszközök OEMConfig használatához győződjön meg az alábbi követelményekkel rendelkezik:
+A OEMConfig eszközön való használatához győződjön meg arról, hogy rendelkezik a következő követelményekkel:
 
-- Az Android Enterprise-eszköz regisztrálása az Intune-ban.
-- OEMConfig alkalmazás az OEM által készített, és feltölti a Google Play áruházból. Ha nem a Google Play áruházból, további információért forduljon az OEM.
-- Az Intune-rendszergazda rendelkezik szerepköralapú hozzáférés-vezérlés (RBAC) vonatkozó **mobilalkalmazások** és **DeviceConfigurations**. Ennek az az oka OEMConfig profilok győződjön meg arról, eszköz-konfigurációk kezelése az által kezelt alkalmazás konfigurációjának használatával.
+- Az Intune-ban regisztrált androidos vállalati eszköz.
+- Az OEM által készített OEMConfig-alkalmazás, amelyet a Google Play áruházba töltöttek fel. Ha nem a Google Play áruházban van, további információért forduljon az OEM-hez.
+- Az Intune rendszergazdája szerepköralapú hozzáférés-vezérlési (RBAC) engedélyekkel rendelkezik a **Mobile apps** és a **DeviceConfigurations**számára. Ezek az engedélyek azért szükségesek, mert a OEMConfig-profilok felügyelt alkalmazás-konfigurációkat használnak az eszközök konfigurációjának kezeléséhez.
 
 ## <a name="prepare-the-oemconfig-app"></a>A OEMConfig alkalmazás előkészítése
 
-Győződjön meg arról, hogy az eszköz támogatja-e OEMConfig, a megfelelő OEMConfig alkalmazáshoz hozzáadott az Intune-hoz, és hogy az alkalmazás telepítve van az eszközön. Forduljon az OEM ezt az információt.
+Győződjön meg arról, hogy az eszköz támogatja a OEMConfig, a megfelelő OEMConfig-alkalmazást adja hozzá az Intune-hoz, és az alkalmazás telepítve van az eszközön. Ehhez az információhoz forduljon az OEM-hez.
 
 > [!TIP] 
-> Az OEM OEMConfig alkalmazások kapcsolódnak. Ha például egy Sony OEMConfig az alkalmazás telepítve van az eszközön Zebra technológiák sem csinál.
+> A OEMConfig-alkalmazások az OEM-re jellemzőek. Egy Zebra Technologies-eszközre telepített Sony OEMConfig-alkalmazás például nem csinál semmit.
 
-1. Lekérheti a OEMConfig app a felügyelt Google Play Store. [Felügyelt Google Play-alkalmazások hozzáadása a vállalati Android-eszköz](apps-add-android-for-work.md) felsorolja azokat a lépéseket.
-2. Egyes számítógépgyártók (OEM) lehetséges, hogy el olyan eszközöket, az előre telepített OEMConfig alkalmazással. Ha az alkalmazás nincs telepítve, használja az Intune-nal [hozzáadása és az alkalmazás üzembe helyezése az eszközök](apps-deploy.md).
+1. Szerezze be a OEMConfig alkalmazást a felügyelt Google Play Áruház. [Felügyelt Google Play-alkalmazások hozzáadása Android Enterprise-eszközökhöz](apps-add-android-for-work.md) a lépések felsorolása.
+2. Egyes számítógépgyártók előre telepített OEMConfig-alkalmazással is eldönthetik az eszközök szállítását. Ha az alkalmazás nincs előtelepítve, az Intune használatával [adhatja hozzá és helyezheti üzembe az alkalmazást az eszközökön](apps-deploy.md).
 
-## <a name="create-an-oemconfig-profile"></a>OEMConfig profil létrehozása
+## <a name="create-an-oemconfig-profile"></a>OEMConfig-profil létrehozása
 
-1. Az a [az Azure portal](https://portal.azure.com), jelölje be **minden szolgáltatás** > szűréséhez **Intune** > Válassza ki **Intune**.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
 3. Adja meg a következő tulajdonságokat:
 
-    - **Név**: Adja meg az új profil leíró nevét.
+    - **Név**: Adjon meg egy leíró nevet az új profilhoz.
     - **Description** (Leírás): Adja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
-    - **Platform**: Válassza ki **Android enterprise**.
-    - **Profil típusa**: Válassza ki **OEMConfig**.
+    - **Platform**: Válassza az **Android Enterprise**lehetőséget.
+    - **Profil típusa**: Válassza a **OEMConfig**lehetőséget.
 
-4. Válassza ki **társított alkalmazás**, és válasszon ki egy meglévő OEMConfig alkalmazást a korábban hozzáadott. Mindenképp válassza ki a megfelelő OEMConfig alkalmazást, még a szabályzat hozzárendelése az eszközökhöz.
+4. Válassza a **társított alkalmazás**lehetőséget, válassza ki a korábban hozzáadott meglévő OEMConfig-alkalmazást > **OK gombra**. Ügyeljen arra, hogy a megfelelő OEMConfig-alkalmazást válassza ki azokhoz az eszközökhöz, amelyekre a szabályzatot hozzárendeli.
 
-    Ha nem látja a felsorolt alkalmazások, majd állítsa be a felügyelt Google Play, és -alkalmazások beszerzése a felügyelt Google Play áruházból. [Felügyelt Google Play-alkalmazások hozzáadása a vállalati Android-eszköz](apps-add-android-for-work.md) felsorolja azokat a lépéseket.
+    Ha nem látja a felsorolt alkalmazásokat, akkor állítsa be a felügyelt Google Play áruházat, és szerezze be az alkalmazásokat a felügyelt Google Play áruházból. [Felügyelt Google Play-alkalmazások hozzáadása Android Enterprise-eszközökhöz](apps-add-android-for-work.md) a lépések felsorolása.
 
     > [!IMPORTANT]
-    > Ha hozzáadott egy OEMConfig alkalmazást, és a Google Play áruházból szinkronizált, de nem szerepel egy **társított alkalmazás**, forduljon az Intune-ban üzembe helyezni az alkalmazást is. Lásd: [új alkalmazás felvételére](#supported-oemconfig-apps) (a jelen cikkben).
+    > Ha egy OEMConfig-alkalmazást adott hozzá, és szinkronizálta azt a Google Play-be, de nem szerepel a **társított alkalmazásban**, akkor előfordulhat, hogy kapcsolatba kell lépnie az Intune-nal az alkalmazás bevezetéséhez. Lásd: [új alkalmazás hozzáadása](#supported-oemconfig-apps) (ebben a cikkben).
 
-5. Válassza a **Configuration** (Konfigurálás) lapot.
+5. A **beállítások konfigurálása**a alkalmazásban területen válassza a **Configuration Designer** vagy a **JSON-szerkesztő**használatát:
 
-    A konfigurációs séma az alkalmazás a beágyazott sablon JSON-szerkesztővel nyílik meg. A szerkesztőben testre szabhatja a sablont a különböző konfigurációs beállítások értékeit. 
+    > [!TIP]
+    > Olvassa el az OEM dokumentációját, és győződjön meg róla, hogy helyesen konfigurálja a tulajdonságokat. Ezeket az alkalmazás-tulajdonságokat az OEM, nem pedig az Intune tartalmazza. Az Intune minimálisan ellenőrzi a tulajdonságokat, vagy a beírt értéket. Ha például egy portszámot ad `abcd` meg, a profil a-ként lesz mentve, és az eszközön a konfigurált értékekkel lesz telepítve. Ügyeljen arra, hogy a helyes adatokat adja meg.
+
+    - **Konfigurációs tervező**: Ha ezt a beállítást választja, az alkalmazás sémáján belül elérhető tulajdonságok is megjelennek a konfiguráláshoz.
+
+      - A Configuration Designer helyi menüi azt jelzik, hogy több lehetőség is rendelkezésre áll. A helyi menü például lehetővé teheti a beállítások hozzáadását, törlését és átrendezését. Ezeket a beállításokat a SZÁMÍTÓGÉPGYÁRTÓ is tartalmazza. Olvassa el az OEM-alkalmazás dokumentációját, amelyből megtudhatja, hogyan kell használni ezeket a beállításokat a profilok létrehozásához.
+
+      - Számos beállításhoz az OEM által megadott alapértelmezett értékek tartoznak. Ha meg szeretné tekinteni, hogy van-e alapértelmezett érték, vigye a kurzort a beállítás melletti információs ikonra. Az elemleírás az adott beállítás alapértelmezett értékeit (ha alkalmazható) és az OEM által biztosított további részleteket jeleníti meg.
+
+      - A **Törlés** gombra kattintva törölheti a beállításokat a profilból. Ha egy beállítás nincs a profilban, az eszköz értéke nem változik a profil alkalmazása után.
+        
+      - Ha üres (nem konfigurált) köteget hoz létre a Configuration Designerben, a rendszer törli a JSON-szerkesztőre való áttéréskor.
+
+    - **JSON-szerkesztő**: Ha ezt a beállítást választja, a rendszer egy JSON-szerkesztőt nyit meg az alkalmazásban beágyazott teljes konfigurációs sémához tartozó sablonnal. A szerkesztőben szabja testre a sablont a különböző beállítások értékeivel. Ha a **Configuration Designer** használatával módosítja az értékeket, a JSON-szerkesztő felülírja a sablont a Configuration Designer értékével.
     
-    OEMConfig sémák nagy és összetett lehet, mivel a **JSON-sablon letöltése** gombot, amellyel elkezdheti a sablont egy fájlba. Konfigurálja a sablon fájlt egy tetszőleges szövegszerkesztőben, és másolja a tartalmat a Intune felügyeleti konzolba.
+      - Ha meglévő profilt frissít, a JSON-szerkesztő megjeleníti azokat a beállításokat, amelyek utoljára mentve lettek a profillal.
 
-6. Válassza ki **OK** > **Hozzáadás** a módosítások mentéséhez. A házirend létrehozása és jelennek meg a listában.
+      - A OEMConfig sémái nagyok és összetettebbek lehetnek. Ha egy másik szerkesztő használatával szeretné frissíteni ezeket a beállításokat, válassza a **JSON-sablon letöltése** gombot. Az Ön által választott szerkesztővel adhatja hozzá a konfigurációs értékeket a sablonhoz. Ezután másolja és illessze be a frissített JSON-t a **JSON-szerkesztő** tulajdonságba.
 
-Ügyeljen arra, hogy [rendelje hozzá a profilt](device-profile-assign.md) és [állapotát nyomon](device-profile-monitor.md).
-    
+      - A JSON-szerkesztő segítségével biztonsági másolatot készíthet a konfigurációról. Miután konfigurálta a beállításokat, ezzel a funkcióval lekérheti a JSON-beállításokat az értékekkel. Másolja és illessze be a JSON-fájlt egy fájlba, és mentse. Most már van egy biztonságimásolat-fájlja.
+
+    A Configuration Designerben végrehajtott módosítások a JSON-szerkesztőben is automatikusan megtörténik. Hasonlóképpen, a JSON-szerkesztőben végrehajtott módosítások automatikusan a Configuration Designerben történnek. Ha a bemenet érvénytelen értékeket tartalmaz, nem válthat a Configuration Designer és a JSON-szerkesztő között, amíg ki nem javítja a problémákat.
+
+6. A módosítások mentéséhez kattintson **az OK** > **Hozzáadás** gombra. Ekkor létrejön a szabályzat, és megjelenik a listában.
+
+Ügyeljen arra, hogy [hozzárendelje a profilt](device-profile-assign.md) , és [Figyelje annak állapotát](device-profile-monitor.md).
+
  > [!NOTE]
- > Egy profil hozzárendelése az adott eszközön. A OEMConfig modell csak az eszközönként egy szabályzat támogatja.
+ > Rendeljen hozzá egy profilt az egyes eszközökhöz. A OEMConfig-modell csak egy házirendet támogat eszközönként.
 
-A következő alkalommal ellenőrzi az eszköz konfigurációs frissítések, a OEMConfig alkalmazás megadott OEM-specifikus beállítások érvényesek.
-
-## <a name="supported-oemconfig-apps"></a>Támogatott OEMConfig alkalmazások
-
-Standard szintű alkalmazások képest, OEMConfig alkalmazások bontsa ki az összetettebb sémák támogatja a Google által felügyelt konfigurációk jogosultsággal. Az Intune jelenleg a következő OEMConfig alkalmazásokat támogatja:
-
------------------
-
-| OEM | Csomagazonosító |
-| --- | --- |
-| Samsung | com.samsung.android.knox.kpu |
-
------------------
-
-Kérjen új OEMConfig alkalmazás lesz bevezetve, e-mailben `IntuneOEMConfig@microsoft.com`.
+Amikor az eszköz legközelebb megkeresi a konfigurációs frissítéseket, a rendszer a OEMConfig alkalmazásra alkalmazza a beállított SZÁMÍTÓGÉPGYÁRTÓi beállításokat.
 
 > [!NOTE]
-> OEMConfig alkalmazások előre telepített Intune előtt kell azok OEMConfig profilok is konfigurálhatók.
+> A OEMConfig standard jelenleg nem tartalmazza az állapotjelentések bejelentését. A profilok alapértelmezés szerint **függő** állapotot jelenítenek meg.
+
+## <a name="supported-oemconfig-apps"></a>Támogatott OEMConfig-alkalmazások
+
+A standard szintű alkalmazásokhoz képest a OEMConfig-alkalmazások kibővítik a Google által az összetettebb sémák támogatásához biztosított felügyelt konfigurációkra vonatkozó jogosultságokat. Az Intune jelenleg a következő OEMConfig-alkalmazásokat támogatja:
+
+-----------------
+
+| OEM | Csomagazonosító | OEM-dokumentáció (ha elérhető) |
+| --- | --- | ---|
+| Samsung | com.samsung.android.knox.kpu | [A Knox szolgáltatás beépülő moduljának rendszergazdai útmutatója](https://docs.samsungknox.com/knox-service-plugin/admin-guide/welcome.htm) |
+| Zebra-technológiák | com. zebra. oemconfig. Common | [A zebra OEMConfig áttekintése](http://techdocs.zebra.com/oemconfig ) |
+| Datalogic | com. Datalogic. oemconfig | [A Datalogic OEMConfig felhasználói dokumentációja](https://datalogic.github.io/oemconfig/) |
+| Honeywell | com. Honeywell. oemconfig |  |
+
+-----------------
+
+Ha létezik egy OEMConfig-alkalmazás az eszközhöz, de nem szerepel a fenti táblázatban, vagy nem jelenik meg az Intune-konzolon, küldjön `IntuneOEMConfig@microsoft.com`e-mailt.
+
+> [!NOTE]
+> A OEMConfig-alkalmazásokat az Intune-nak kell bejelentkeznie ahhoz, hogy OEMConfig-profilokkal lehessen konfigurálni őket. Az alkalmazások támogatása után nem kell felvennie a kapcsolatot a Microsofttal a bérlőben való beállításával kapcsolatban. Csak kövesse az ezen az oldalon található utasításokat.
 
 ## <a name="next-steps"></a>További lépések
 

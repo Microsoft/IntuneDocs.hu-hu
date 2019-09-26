@@ -1,14 +1,13 @@
 ---
 title: Androidos áruházbeli alkalmazások hozzáadása a Microsoft Intune-hoz
 titleSuffix: ''
-description: Útmutató Androidos áruházbeli alkalmazások hozzáadása a Google Play áruházból a Microsoft Intune-bA.
+description: Ismerje meg, hogyan adhat hozzá androidos áruházbeli alkalmazásokat a Google Play áruházból a Microsoft Intunehoz.
 keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 12/19/2018
+ms.date: 08/27/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fe313fb43c838e3fc41a6c911668b46f7d3dc9de
-ms.sourcegitcommit: 25e6aa3bfce58ce8d9f8c054bc338cc3dff4a78b
+ms.openlocfilehash: 93ea735121432c99c93ffe35c96c344160de3e22
+ms.sourcegitcommit: 6c74ff568267d85fd1d44fda75e3e24ead87cb2b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57388559"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "71303149"
 ---
 # <a name="add-android-store-apps-to-microsoft-intune"></a>Androidos áruházbeli alkalmazások hozzáadása a Microsoft Intune-hoz
 
@@ -31,33 +30,31 @@ ms.locfileid: "57388559"
 
 Mielőtt az alkalmazást hozzárendelné egy eszközhöz vagy felhasználói csoporthoz, az eszközt először hozzá kell adnia a Microsoft Intune-hoz. 
 
-## <a name="add-an-app"></a>Alkalmazás felvétele
+## <a name="add-an-app"></a>Alkalmazás hozzáadása
 
 A következő módon adhat hozzá Android-áruházból származó alkalmazást az Intune-hoz az Azure Portalon:
 
-1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com).
-2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget.  
-    Az Intune a **Figyelés + felügyelet** szakaszban található.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** ablaktáblán válassza az **Ügyfélalkalmazások** lehetőséget.
 4. Az **Ügyfélalkalmazások** tevékenységprofil panelén a **Kezelés** szakaszban válassza az **Alkalmazások** lehetőséget.
 5. Válassza a **Hozzáadás** lehetőséget.
 6. Az **Alkalmazás hozzáadása** panelen az elérhető **Áruházbeli alkalmazások** típusai közül válassza az **Android** lehetőséget.
 7. Az alkalmazás adatainak megadásához válassza a **Konfigurálás** lehetőséget, majd adja meg a következő adatokat. Android-alkalmazások esetén keresse fel a [Google Play áruházat](https://play.google.com/store), és keresse meg az üzembe helyezni kívánt alkalmazást. Válassza ki az alkalmazást, és jegyezze fel az alkalmazás adatait. A választott alkalmazástól függően előfordulhat, hogy egyes értékek automatikusan ki vannak töltve a panelen:
-    - **Név**: Adja meg az alkalmazás nevét, mivel a vállalati portálon megjeleníteni kívánt. Gondoskodjon róla, hogy az alkalmazás neve egyedi legyen. Ha két alkalmazás neve megegyezik, a felhasználók csak az egyik alkalmazást fogják látni a céges portálon.
+    - **Név**: Adja meg az alkalmazásnak a vállalati portálon megjelenítendő nevét. Gondoskodjon róla, hogy az alkalmazás neve egyedi legyen. Ha két alkalmazás neve megegyezik, a felhasználók csak az egyik alkalmazást fogják látni a céges portálon.
     - **Description** (Leírás): Adja meg az alkalmazás leírását. A leírás a céges portálon jelenik meg a felhasználók számára.
     - **Közzétevő**: Itt adhatja meg az alkalmazás kiadójának nevét.
-    - **Alkalmazásáruház URL-címe**: Adja meg az alkalmazást, amelyet a létrehozni kívánt alkalmazás áruházbeli URL-CÍMÉT.
-    - **Az operációs rendszer minimális**: A listában válassza ki a legkorábbi operációs rendszer verziója, amelyen az alkalmazás telepíthető. Ha az alkalmazást régebbi operációs rendszerrel rendelkező eszközhöz rendelik hozzá, akkor nem lesz telepítve.
-    - **Kategória**: Kiválaszthat egy vagy több, a beépített Alkalmazáskategóriák vagy egy létrehozott kategóriát is. Ezzel megkönnyítheti a felhasználók számára az alkalmazás megkeresését a céges portálon való böngészés során.
-    - **Megjelenítés kiemelt alkalmazásként a céges portálon**: Válassza ki ezt a beállítást, az alkalmazáscsomag hangsúlyosan jelenítheti fő lapján, a céges portál főoldalán alkalmazásokat kereső felhasználók számára.
+    - **AppStore URL-cím**: Adja meg a létrehozni kívánt alkalmazás alkalmazás-áruházbeli URL-címét.
+    - **Minimális operációs rendszer**: A listából válassza ki az operációs rendszer legkorábbi verzióját, amelyre az alkalmazás telepíthető. Ha az alkalmazást régebbi operációs rendszerrel rendelkező eszközhöz rendelik hozzá, akkor nem lesz telepítve.
+    - **Kategória**: Szükség esetén kiválaszthat egy vagy több beépített alkalmazás-kategóriát vagy egy Ön által létrehozott kategóriát is. Ezzel megkönnyítheti a felhasználók számára az alkalmazás megkeresését a céges portálon való böngészés során.
+    - **Megjelenítés Kiemelt alkalmazásként a céges portálban**: Ezzel a beállítással Kiemelt módon jelenítheti meg az App Suite-t a vállalati portál főoldalán, amikor a felhasználók megkeresik az alkalmazásokat. Az elérhető szándékkal üzembe helyezett alkalmazásokra vonatkozik.
     - **Információs URL-cím**: Nem kötelező: megadhatja az alkalmazással kapcsolatos információkat tartalmazó webhely URL-címét. Ez az URL-cím jelenik meg a felhasználók számára a céges portálon.
-    - **Adatvédelmi URL-címe**: Nem kötelező: megadhatja az alkalmazás adatvédelmi nyilatkozatát tartalmazó webhely URL-címét. Ez az URL-cím jelenik meg a felhasználók számára a céges portálon.
-    - **Fejlesztői**: Megadhatja az alkalmazás fejlesztőjének nevét.
-    - **Tulajdonos**: Szükség esetén adja meg például az alkalmazás tulajdonosának nevét *HR részleg*.
-    - **Megjegyzések**: Megadhatja, hogy az alkalmazáshoz társítani kívánt megjegyzéseket.
-    - **Embléma**: Szükség esetén töltse fel az alkalmazáshoz hozzárendelni kívánt ikont. Ez az alkalmazásikon jelenik meg a céges portálon böngésző felhasználók számára.
-1. Kattintson az **OK** gombra.
-2. Válassza a **Hozzáadás** lehetőséget.
+    - **Adatvédelmi URL-cím**: Nem kötelező: megadhatja az alkalmazás adatvédelmi nyilatkozatát tartalmazó webhely URL-címét. Ez az URL-cím jelenik meg a felhasználók számára a céges portálon.
+    - **Fejlesztő**: Igény szerint megadhatja az alkalmazás-fejlesztő nevét.
+    - **Tulajdonos**: Igény szerint megadhatja az alkalmazás tulajdonosának nevét (például *HR-osztály*).
+    - **Megjegyzések**: Igény szerint megadhatja az alkalmazáshoz társítandó megjegyzéseket.
+    - **Embléma**: Igény szerint feltöltheti az alkalmazáshoz hozzárendelni kívánt ikont is. Ez az alkalmazásikon jelenik meg a céges portálon böngésző felhasználók számára.
+8. Kattintson az **OK** gombra.
+9. Válassza a **Hozzáadás** lehetőséget.
 
 A létrehozott alkalmazás megjelenik az alkalmazáslistában, ahol hozzárendelheti a kiválasztott csoportokhoz. 
 

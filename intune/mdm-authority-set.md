@@ -6,9 +6,8 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 04/30/2018
+ms.date: 08/16/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 898c4eee19aa50136736f4ee72c55e4e8931317d
-ms.sourcegitcommit: 1cae690ca2ac6cc97bbcdf656f54b31878297ae8
+ms.openlocfilehash: 534c51112345ea9300f3258c2600990896042b64
+ms.sourcegitcommit: 6b5907046f920279bbda3ee6c93e98594624c05c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59894773"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "71299181"
 ---
 # <a name="set-the-mobile-device-management-authority"></a>Mobileszköz-felügyeleti szolgáltató megadása
 
@@ -35,26 +34,22 @@ A lehetséges konfigurációk a következők:
 
 - **Önálló Intune** – kizárólag felhőalapú felügyelet használata, amelyet az Azure Portal segítségével konfigurálhat. Az Intune-ban elérhető összes lehetőség a rendelkezésére áll. [MDM-szolgáltató beállítása az Intune-konzolon](#set-mdm-authority-to-intune).
 
-- **Megosztott kezelés Intune** -integrációja az Intune felhőalapú megoldás a System Center Configuration Managerrel Windows 10 rendszerű eszközökhöz. Az Intune-t a Configuration Manager konzolja segítségével konfigurálhatja. [Eszközök automatikus regisztrációjának beállítása az Intune-ban](https://docs.microsoft.com/sccm/comanage/tutorial-co-manage-clients#configure-auto-enrollment-of-devices-to-intune). 
+- **Intune közös felügyelet** – az Intune felhőalapú megoldásának integrációja System Center Configuration Manager Windows 10-es eszközökhöz. Az Intune-t a Configuration Manager konzolja segítségével konfigurálhatja. Az [eszközök automatikus regisztrálásának konfigurálása az Intune-ban](https://docs.microsoft.com/sccm/comanage/tutorial-co-manage-clients#configure-auto-enrollment-of-devices-to-intune). 
 
     > [!Important]
-    >Új hibrid MDM-ügyfelek bevezetésének elavult. További információkért lásd: a [válthatnak a hibrid mobileszköz-kezelés az Intune-bA az Azure-ban](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Move-from-Hybrid-Mobile-Device-Management-to-Intune-on-Azure/ba-p/280150) blogbejegyzést.
+    >Az új hibrid MDM-ügyfelek bevezetése elavult. További információ: [áttérés hibrid mobileszköz-kezelésről az Intune-ra az Azure-](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Move-from-Hybrid-Mobile-Device-Management-to-Intune-on-Azure/ba-p/280150) blogbejegyzésben.
 
-- **Mobileszköz-felügyelet az Office 365 használatával** – Az Office 365 és az Intune felhőalapú megoldásának integrációja. Az Intune a Microsoft 365 felügyeleti központban konfigurálhatja. Az önálló Intune-nal elérhető funkciók egy részét tartalmazza. Az MDM-szolgáltató beállítása a Microsoft 365 felügyeleti központban.
+- **Mobileszköz-felügyelet az Office 365 használatával** – Az Office 365 és az Intune felhőalapú megoldásának integrációja. Az Intune-t a Microsoft 365 felügyeleti központból konfigurálhatja. Az önálló Intune-nal elérhető funkciók egy részét tartalmazza. A MDM-szolgáltató beállítása Microsoft 365 felügyeleti központban.
 
-> [!IMPORTANT]
-> A Configuration Manager 1610-es vagy későbbi verziójában és a Microsoft Intune 1705-ös verziójában anélkül módosíthatja az MDM-szolgáltatót, hogy fel kellene vennie a kapcsolatot a Microsoft ügyfélszolgálatával, vagy hogy el kellene végeznie a már felügyelt eszközök regisztrációjának törlését és a regisztráció újbóli elvégzését. További információkért lásd: [előkészítése az MDM-szolgáltató módosítása a Configuration Manager](mdm-authority-set.md#prepare-to-change-the-mdm-authority-to-configuration-manager).
+- **Office 365 Mdm együttes létezése** Az Office 365 és az Intune MDM is aktiválhatja és használhatja egyszerre a bérlőn, és a felügyeleti szolgáltatót úgy állíthatja be, hogy az Intune-t vagy a MDM-t az Office 365-hoz az egyes felhasználók számára a mobileszközök felügyeletére szolgáló szolgáltatás megadásához. A felhasználó felügyeleti szolgáltatója a felhasználóhoz rendelt licenc alapján van definiálva. További információ: [Microsoft Intune együttes létezése a Mdm for Office 365](https://blogs.technet.microsoft.com/configmgrdogs/2016/01/04/microsoft-intune-co-existence-with-mdm-for-office-365)
 
 ## <a name="set-mdm-authority-to-intune"></a>Az Intune beállítása MDM-szolgáltatóként
 
-Ha még nem állította be az MDM-szolgáltatót, kövesse az alábbi lépéseket. Az MDM-szolgáltatók váltásához lásd az alábbi [Mobileszköz-felügyeleti szolgáltató módosítása](#prepare-to-change-the-mdm-authority-to-configuration-manager) szakaszt.
+Ha még nem állította be az MDM-szolgáltatót, kövesse az alábbi lépéseket. A SCCM való váltásról lásd: [hibrid Mdm-felhasználók és-eszközök migrálása önálló Intune-ba](https://docs.microsoft.com/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa).
 
-1. Jelentkezzen be az [Azure Portal](https://portal.azure.com) webhelyre.
-2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget. Az Intune a **Figyelés + felügyelet** szakaszban található.
-3. A **Mobileszköz-kezelő szolgáltató** beállítás megnyitásához válassza a narancssárga szalagcímet. A narancssárga szalagcím csak akkor jelenik meg, ha még nem állított be az MDM-szolgáltatót.
-4. A **Mobileszköz-kezelő szolgáltató** szakaszban válassza ki az alábbiak közül a kívánt MDM-szolgáltatót:
+1. A [Azure Portal Intune-](https://aka.ms/intuneportal)ban válassza ki a narancssárga szalagcímet a **mobileszköz-kezelő szolgáltató** beállításának megnyitásához. A narancssárga szalagcím csak akkor jelenik meg, ha még nem állított be az MDM-szolgáltatót.
+2. A **Mobileszköz-kezelő szolgáltató** szakaszban válassza ki az alábbiak közül a kívánt MDM-szolgáltatót:
    - **Intune MDM-szolgáltató**
-   - **Configuration Manager MDM-szolgáltató**.
    - **Nincsenek**
 
    ![Képernyőkép az Intune mobileszköz-kezelő szolgáltató beállítására szolgáló képernyőjéről](media/set-mdm-auth.png)
@@ -80,42 +75,9 @@ Az új MDM-szolgáltatóra való váltás után, az eszköz bejelentkezése és 
 - Ha ugyanazok az eszközkategóriák megtalálhatóak mind az Intune-ban, mind pedig Configuration Managerben, akkor az új MDM-szolgáltatóra váltás után az eszközökre vonatkozó eszközkategória-hozzárendelések nem lesznek áthozva. Ha továbbra is használni szeretné az eszközkategóriákat, akkor azokat manuálisan kell hozzáadnia a megfelelő gyűjteményekhez azt követően, hogy az új MDM-szolgáltatóra váltás megtörtént, és az eszközök megjelennek a Configuration Manager konzolján.
 - Azok az eszközök, amelyek nem rendelkeznek hozzárendelt felhasználókkal (általában az iOS Készülékregisztrációs programja vagy csoportos regisztrálási folyamatok esetén), nem migrálhatók az új MDM-szolgáltatóba. Ezeknek az eszközöknek az új MDM-szolgáltatóba való áthelyezéséhez az ügyfélszolgálat segítségét kell kérnie.
 
-## <a name="prepare-to-change-the-mdm-authority-to-configuration-manager"></a>A Configuration Manager beállítása mobileszköz-felügyeleti szolgáltatóként – előkészületek
-
-Ha fel szeretne készülni az új MDM-szolgáltatóra való váltásra, tekintse át az alábbi tudnivalókat:
-- Az MDM-szolgáltató váltását lehetővé tevő beállítás eléréséhez a Configuration Manager 1610-es vagy újabb verziójával kell rendelkeznie.
-- Az új MDM-szolgáltatóra való váltás után az eszköz a szolgáltatóhoz való csatlakozása akár 8 órát is igénybe vehet.
-- Hozzon létre egy olyan felhasználógyűjteményt a Configuration Managerben, amely minden, az Intune önálló verziója által kezelt felhasználót tartalmaz. Ezzel a gyűjteménnyel állíthatja be az Intune-előfizetést a Configuration Manager konzoljában. Ezzel a lépéssel gondoskodhat róla, hogy a felhasználó és az eszközei Configuration Manager-licencet kapjanak, és a hibrid környezetben is kezelhesse őket az új MDM-szolgáltatóra való váltás után.
-- Győződjön meg arról, hogy a rendszergazda felhasználó is ebben a felhasználógyűjteményben található.  
-- A váltás előtt az MDM-szolgáltató **Beállítás a Microsoft Intune-hoz** (önálló) értékként fog megjelenni az Intune felügyeleti konzolban.
-- Az MDM-kiszolgáló a váltás előtt **Beállítás a Microsoft Intune-hoz** (önálló bérlő) értéket kell, hogy mutasson a Microsoft Intune felügyeleti konzolban.
-    > [!NOTE]    
-    > Ha az MDM-kiszolgáló **Az Intune és az Office 365 által kezelt** értéket jeleníti meg, az Office 365 által kezelt MDM-eszközei nem lesznek kezelve az MDM-szolgáltató **Configuration Managerre** (hibrid) való váltása után. Azt javasoljuk, hogy az érintett felhasználókat az MDM-szolgáltató módosítása előtt licencelje az Intune-hoz vagy az Enterprise Mobility Suite-hez.   
-
-- A [Microsoft Intune felügyeleti konzolon](http://manage.microsoft.com) távolítsa el az Eszközregisztráció-kezelő szerepkört. Részletes információ: [Eszközregisztráció-kezelő törlése az Intune-ból](device-enrollment-manager-enroll.md#remove-device-enrollment-manager-permissions).
-- Kapcsolja ki a konfigurált eszközcsoport-leképezéseket. Részletes információ: [Eszközök kategorizálása eszközcsoport-leképezéssel a Microsoft Intune-ban](device-group-mapping.md).
-- Az MDM-szolgáltató módosítása során a végfelhasználók várhatóan nem tapasztalnak észrevehető változást. A módosítást azonban célszerű előre tudatnia a felhasználókkal, hogy gondoskodni tudjanak róla, hogy az eszközeik be legyenek kapcsolva, és hogy a váltás után minél hamarabb csatlakozzanak a szolgáltatáshoz. Ezzel gondoskodhat róka, hogy a lehető legtöbb eszköz a lehető leghamarabb csatlakozzon és regisztráljon a szolgáltatásba az új szolgáltatón keresztül.
-- Ha az új MDM-szolgáltatóra való váltást megelőzően az Intune önálló verziójával kezeli az iOS-eszközöket, akkor meg kell újítania az Intune által korábban használt Apple Push Notification Service (APNs) tanúsítványát, és annak segítségével kell újra beállítania a bérlőt a hibrid Configuration Managerben.    
-
-    > [!IMPORTANT]  
-    > Ha a hibrid szolgáltatóhoz más APNs-tanúsítványt használ, az ÖSSZES korábban regisztrált iOS-eszköz regisztrációja megszűnik, és újból végre kell hajtania a regisztrációs folyamatot. Az MDM-szolgáltató módosítása előtt győződjön meg róla, hogy tisztában van az Intune-ban az iOS-eszközök kezeléséhez használt APNs-tanúsítvány típusával. Keresse meg ugyanazt a tanúsítványt az Apple Push Certificates portálon (https://identity.apple.com), majd ellenőrizze, hogy az eredeti APNs-tanúsítvány létrehozásához használt felhasználói Apple ID-t azonosította és elérhetőként észlelte a program, így megújíthatja vele a megegyező APNs-tanúsítványt az új MDM-szolgáltatóra való váltás részeként.
-
-## <a name="change-the-mdm-authority-to-configuration-manager"></a>A Configuration Manager beállítása mobileszköz-felügyeleti szolgáltatóként
-
-1. A Configuration Manager konzolban lépjen a **Felügyelet** &gt; **Áttekintés** &gt; **Felhőszolgáltatások** &gt; **Microsoft Intune-előfizetés** területre, majd kijelöléssel adjon hozzá egy Intune-előfizetést.
-2. Jelentkezzen be az MDM-szolgáltató eredeti beállításakor használt Intune-bérlőbe, majd kattintson a **Tovább** gombra.
-3. Válassza **A Configuration Manager beállítása mobileszköz-felügyeleti szolgáltatóként** lehetőséget, majd kattintson a **Tovább** gombra.
-4. Állítsa be, hogy a felhasználógyűjtemény az összes olyan felhasználót tartalmazza, akik továbbra is az új hibrid MDM-szolgáltató által lesznek kezelve.
-5. Kattintson a **tovább** fejezze be a varázslót. Az MDM-szolgáltató mostantól a **Configuration Manager**.
-6. Jelentkezzen be a [Microsoft Intune felügyeleti konzolba](http://manage.microsoft.com) ugyanazzal az Intune-bérlővel, majd erősítse meg, hogy az MDM-szolgáltatót módosította **a Configuration Manager szolgáltatáshoz beállított** értékre.
-7. Miután beállította a Configuration Managert mobileszköz-felügyeleti szolgáltatóként, beállíthatja az [iOS-regisztrációt](https://docs.microsoft.com/sccm/mdm/deploy-use/enroll-hybrid-ios-mac) és az [Android-regisztrációt](https://docs.microsoft.com/sccm/mdm/deploy-use/enroll-hybrid-android).
-8. A Configuration Manager konzolban konfigurálja és alkalmazza az új MDM-szolgáltató (hibrid) beállításait és alkalmazásait.
-
-Amikor az eszközök legközelebb csatlakoznak a szolgáltatáshoz, az szinkronizálja a beállításokat az új MDM-szolgáltatóval.
-
 ## <a name="change-mdm-authority-to-office-365"></a>Az Office 365 beállítása mobileszköz-felügyeleti szolgáltatóként
 
-A meglévő Intune szolgáltatásban az Office 365 mobileszköz-felügyeleti szolgáltatásként való beállításához nyissa meg a [https://protection.office.com](https://protection.office.com) oldalt, majd válassza az **Adatveszteség-megelőzés** > **Eszközbiztonsági szabályzatok** > **Felügyelt eszközök listájának megtekintése** > **Első lépések** lehetőséget.
+Az Office 365 Mdm aktiválásához (vagy az Mdm párhuzamos létezésének engedélyezéséhez a meglévő Intune-szolgáltatáson kívül) válassza [https://protection.office.com](https://protection.office.com)a következőt:, **adatveszteség-megelőzési** > **eszköz biztonsági szabályzatok** > **megtekintése a felügyelt eszközök listáján** Első lépések.  > 
 
 További információ: [Mobileszköz-felügyelet (MDM) beállítása az Office 365-ben](https://support.office.com/en-us/article/Set-up-Mobile-Device-Management-MDM-in-Office-365-dd892318-bc44-4eb1-af00-9db5430be3cd).
 
@@ -127,7 +89,7 @@ Az MDM-tanúsítvány automatikusan megújul, amikor a mobileszköz kommunikál 
 
 ## <a name="remove-mdm-authority"></a>Mobileszköz-felügyeleti szolgáltató eltávolítása
 
-A mobileszköz-felügyeleti szolgáltató nem állítható vissza Ismeretlenre. A Microsoft-kiszolgálók a mobileszköz-felügyeleti szolgáltató használatával állapítják meg, hogy melyik portálnak jelentenek a regisztrált eszközök (ConfigMGR, Azure Intune, Office 365 MDM).
+A mobileszköz-felügyeleti szolgáltató nem állítható vissza Ismeretlenre. A szolgáltatás a MDM-szolgáltatót használja annak meghatározására, hogy mely portálon regisztrált eszközök jelentenek jelentést (Microsoft Intune vagy Office 365 MDM).
 
 ## <a name="what-to-expect-after-changing-the-mdm-authority"></a>Amire a mobileszköz-felügyeleti szolgáltató módosítása után számítani kell
 
@@ -140,21 +102,21 @@ A mobileszköz-felügyeleti szolgáltató nem állítható vissza Ismeretlenre. 
 - A felhasználók gyorsan átválthatnak az új MDM-szolgáltatóra, ha manuálisan bejelentkeznek az eszközről a szolgáltatásba. Ezt könnyen megtehetik a Céges portál alkalmazásból, ha elindítanak egy eszközmegfelelőségi ellenőrzést.
 - Ha ellenőrizni szeretné, hogy az MDM-szolgáltató módosítása után megfelelően működik-e minden a bejelentkezett és a szolgáltatással szinkronizált eszközök esetében, keresse meg az eszközöket a Configuration Manager konzolban. A korábban az Intune által kezelt eszközök mostantól kezelt eszközökként jelennek meg a Configuration Manager konzolban.    
 - Az MDM-szolgáltató váltásakor, valamint az eszköz szolgáltatásba való bejelentkezésekor az eszköz ideiglenesen offline állapotba kerül. Annak érdekében, hogy az eszköz az ideiglenes időszak alatt is védelem alatt álljon és megfelelően működjön, az alábbi profilok az eszközön maradnak legfeljebb 7 napig (vagy addig, amíg az eszköz nem csatlakozik az új MDM-szolgáltatóhoz és kapja meg a meglévő beállításokat felülíró új beállításokat):
-    - E-mail-profil
-    - VPN-profil
-    - Tanúsítványprofil
-    - Wi-Fi profil
-    - Konfigurációs profilok
+  - E-mail-profil
+  - VPN-profil
+  - Tanúsítványprofil
+  - Wi-Fi profil
+  - Konfigurációs profilok
 - Az új MDM-szolgáltatóra való váltás után a Microsoft Intune felügyeleti konzol megfelelőségi adatainak akár egy hétre is szükségük lehet, hogy pontosan jelenjenek meg. Az Azure Active Directory és az eszköz megfelelőségi állapotai azonban pontosak maradnak, az eszköz így továbbra is védelem alatt áll.
 - Ügyeljen rá, hogy a meglévő beállításokat felülírandó új beállítások ugyanazzal a névvel rendelkezzenek, mint a korábbiak. Így az új beállítások biztosan felülírják a korábbiakat. Ellenkező esetben előfordulhat, hogy az eszközökön felesleges profilok és szabályzatok maradnak.    
 
   > [!TIP]    
   > Ajánlott eljárásként érdemes létrehozni minden kezelési beállítást, konfigurációt és példányt nem sokkal az MDM-szolgáltató módosítása után. Ezzel biztosíthatja, hogy az eszközök az ideiglenes időszak alatt is védelem és kezelés alatt álljanak.
 
--  Az MDM-szolgáltató módosítása után végezze el az alábbi lépéseket az új eszközök sikeres regisztrációjának ellenőrzéséhez:   
-    - Új eszköz regisztrációja
-    - Ellenőrizze, hogy az újonnan regisztrált eszköz megjelenik-e a Configuration Manager konzolban.
-    - Végezzen el egy, az eszközre vonatkozó műveletet (például távoli zárolást) a felügyeleti konzolban. Ha a művelet sikeres, az eszközt már az új MDM-szolgáltató kezeli.
+- Az MDM-szolgáltató módosítása után végezze el az alábbi lépéseket az új eszközök sikeres regisztrációjának ellenőrzéséhez:   
+  - Új eszköz regisztrációja
+  - Ellenőrizze, hogy az újonnan regisztrált eszköz megjelenik-e a Configuration Manager konzolban.
+  - Végezzen el egy, az eszközre vonatkozó műveletet (például távoli zárolást) a felügyeleti konzolban. Ha a művelet sikeres, az eszközt már az új MDM-szolgáltató kezeli.
 - Ha problémába ütközik bizonyos eszközökkel, szüntesse meg azok regisztrációját, majd regisztrálja őket újra, így azok csatlakozni tudnak az új szolgáltatóhoz, és a lehető leggyorsabban újra kezelés alatt állhatnak.
 
 ## <a name="next-steps"></a>További lépések

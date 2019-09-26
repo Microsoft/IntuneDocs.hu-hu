@@ -7,12 +7,12 @@ ms.topic: include
 ms.date: 03/28/2019
 ms.author: erikje
 ms.custom: include file
-ms.openlocfilehash: 041f37e56e85b0ac26a4dd7a9dbbdb49bc0ebd9e
-ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
+ms.openlocfilehash: 90c770fec5bd9456151e601188254a3a022cd13f
+ms.sourcegitcommit: 62c41976c4da43b36015b715bc255397ebb8c6ad
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71166330"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71279904"
 ---
 Ezek a hirdetmények olyan fontos információkat tartalmaznak, amelyek segíthetnek a jövőbeli Intune-változások és-funkciók előkészítésében. 
 
@@ -66,38 +66,6 @@ Semmilyen műveletet nem kell elvégeznie, de szükség esetén érdemes lehet a
 #### <a name="additional-information"></a>További információ 
 https://aka.ms/intune_fullscreen
 
-### <a name="plan-for-change-intune-moving-to-support-ios-11-and-higher-in-september----4665324--"></a>Tervezze meg a változást: Az Intune az iOS 11 és újabb verzióinak támogatására való áttérés szeptemberben <!-- 4665324-->
-Szeptemberben azt várjuk, hogy az iOS 13 az Apple számára legyen felszabadítva. Az Intune-regisztráció, a Céges portál és a Managed Browser az iOS 11 kiadása után nem sokkal magasabban támogatja az iOS 11-es verzióját.
-
-#### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
-Ha a O365 Mobile apps iOS 11,0-es és újabb verziókban is támogatott, akkor ez nem érinti Önt; valószínűleg már frissítette az operációs rendszert vagy az eszközöket. Ha azonban rendelkezik az alább felsorolt eszközök bármelyikével, vagy dönthet úgy, hogy az alább felsorolt eszközök bármelyikét regisztrálja, akkor tudja, hogy az alábbi eszközök nem támogatják az iOS 10 rendszernél nagyobb operációs rendszert. Ezeket az eszközöket frissíteni kell egy olyan eszközre, amely támogatja az iOS 11 vagy újabb verzióját:
-
-- iPhone 5
-- iPhone 5c
-- iPad (4. generáció)
-
-Ha alkalmazás-védelmi házirendeket (alkalmazást) használ, a "minimális iOS operációs rendszer megkövetelése (csak figyelmeztetés)" hozzáférési beállítást is beállíthatja.
-
-#### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
-Tekintse meg az Intune-jelentéskészítést, hogy megtekintse, milyen eszközökre vagy felhasználókra lehet hatással. Válassza az **eszközök** > **minden eszköz** lehetőséget, és szűrje az operációs rendszer alapján. További oszlopokat is hozzáadhat, amelyekkel azonosítható, hogy a szervezeten belül kik rendelkeznek iOS 10 rendszerű eszközökkel. Kérje meg, hogy a végfelhasználók szeptember előtt frissítsenek eszközeiket egy támogatott operációsrendszer-verzióra.
-
-### <a name="plan-for-change-support-for-version-811-and-higher-of-intune-app-sdk-for-ios----3586942--"></a>Tervezze meg a változást: Az iOS-hez készült Intune app SDK 8.1.1 és újabb verziójának támogatása <!-- 3586942-->
-Az Intune 2019-től kezdve az iOS-alkalmazások támogatásához az Intune app SDK 8.1.1 és újabb verzióit fogja támogatni. A 8.1.1-nál kisebb SDK-verziókkal létrehozott alkalmazások már nem támogatottak. Ez a változás az Apple iOS 13 kiadásával lép érvénybe, amely várhatóan szeptembertől kezdődően, illetve a MC181399-ben is jelent meg.
-
-#### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
-Az Intune app SDK-val vagy az alkalmazások csomagolásának integrálásával az adatok titkosításával biztosíthatja a nem jóváhagyott alkalmazásokból és felhasználóktól származó vállalati adatok védelmet. Az iOS-hez készült Intune app SDK a 256 bites titkosítási kulcsokat alapértelmezés szerint a Intune App Protection szabályzatok (alkalmazás) általi titkosítás engedélyezésekor fogja használni. Ennek a változásnak a megkezdése után minden, a 128 bites titkosítási kulcsokat használó SDK-verzióhoz tartozó iOS-alkalmazás a továbbiakban nem fogja tudni megosztani az SDK-8.1.1 integrált és a 256 bites kulcsokat használó alkalmazásokkal rendelkező 8.1.1. A védett adatmegosztás engedélyezéséhez minden iOS-alkalmazáshoz 8.1.1 vagy újabb SDK-verzió szükséges.
-
-#### <a name="what-can-i-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
-Keresse meg a Microsoft, harmadik féltől származó és üzletági (LOB) alkalmazásokat. Győződjön meg arról, hogy az Intune-ALKALMAZÁSsal védett összes alkalmazás az SDK 8.1.1 vagy újabb verzióját használja.
-
-- LOB-alkalmazások esetén: Előfordulhat, hogy újra kell közzétennie az SDK-8.1.1 vagy újabb verzióval integrált alkalmazásokat. A legújabb SDK-verziót ajánljuk. Az ÜZLETÁGI alkalmazások alkalmazás-védelmi házirendekkel való előkészítésével kapcsolatos információkért lásd: üzletági [alkalmazások előkészítése az App Protection-szabályzatokhoz](../apps-prepare-mobile-application-management.md).
-- Microsoft/harmadik féltől származó alkalmazások esetén: Győződjön meg arról, hogy az alkalmazások legújabb verzióját telepíti a felhasználók számára.
-
-A dokumentációt és a fejlesztői útmutatót is frissítenie kell, ha ez a módosítás az SDK támogatásában is szerepel.
-
-#### <a name="additional-information"></a>További információ
-[Üzletági alkalmazások előkészítése az alkalmazás-védelmi szabályzatokhoz](../apps-prepare-mobile-application-management.md)
-
 ### <a name="plan-for-change-new-windows-updates-settings-in-intune----4464404---"></a>Tervezze meg a változást: Új Windows Update-beállítások az Intune-ban <!-- 4464404 -->
 Az Intune szolgáltatás vagy a 1908 új "határidő-beállítások" részének megadásával kezdődően a "felhasználó újraindításának engedélyezése (lefoglalt újraindításkor)" beállítások helyett a következő beállításokat vesszük igénybe. Azt tervezzük, hogy letiltjuk a bekapcsolt újraindítási beállításokat a felhasználói felületen a 1909-as vagy a szeptemberi frissítés után, majd a konzolról teljesen el kell távolítani őket a konzolról október végére. 
 
@@ -132,3 +100,19 @@ Az alábbi listában megtalálhatja az Intune-ban regisztrált általános eszk�
 
 #### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
 Alkalmazások becsomagolása a legújabb Intune app SDK-val. Az "a minimális operációsrendszer-verzió megkövetelése (csak figyelmeztetés)" beállítást is beállíthatja a feltételes indítási beállítással, hogy a végfelhasználók tájékoztassák a felhasználókat a személyes eszközökről.
+
+
+### <a name="intune-plan-for-change-nearing-end-of-support-for-windows-7----3042987---"></a>Intune-terv a változáshoz: a Windows 7 támogatásának megszűnése <!-- 3042987 -->
+Ahogy azt a MC148476-ben közzétettük, az elmúlt szeptember 2018-ben, majd a MC176794-ben ismét visszatért a 2019-es verzióra, a Windows 7 a 2020-as januári meghosszabbított támogatás végére ér. Ebben az esetben az Intune kivonja a Windows 7 rendszerű eszközök támogatását, így az új technológiákat támogató beruházásokra koncentrálhat, és nagyszerű új végfelhasználói élményt biztosíthat. Ezen dátum után a Windows 7 rendszerű számítógépek védelméhez segítséget nyújtó technikai segítségnyújtás és automatikus frissítések többé nem lesznek elérhetők az Intune-on keresztül. A Microsoft határozottan azt ajánlja, hogy a Windows 10-es rendszerre való áttérés előtt 2020 január, hogy elkerülje azt a helyzetet, amikor olyan szolgáltatásra vagy támogatásra van szüksége, amely már nem érhető el. További információk a Windows támogatási életciklusáról [itt](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)olvashat.
+
+#### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
+Azért kapta ezt az üzenetet, mert jelenleg a Windows 7 rendszerű SZÁMÍTÓGÉPeket a régi Intune PC szoftver ügynökével kezeli. Ha kevesebb mint egy évig marad a Windows 7 kiterjesztett támogatása, javasoljuk, hogy a lehető leghamarabb indítsa el a szervezetet a Windows 10-es verzióra való frissítéshez. A számítógép-felügyeleti funkciók közvetlenül a Windows 10-es operációs rendszerbe vannak építve, és már nem kell telepítenie az ügyfél-ügynököt, például a Windows 7 rendszerhez készült Intune-ügyfélszoftvert. A Windows 8,1-től kezdve a Microsoft a mobileszköz-kezelési (MDM) architektúrát használja a Windows rendszerű számítógépek kiépítéséhez, konfigurálásához, frissítéséhez és felügyeletéhez. Miután beállította az Intune-t, a Windows 10 rendszerű [számítógépek Intune-ba való regisztrálásával](..\windows-enroll.md) egyszerűsítheti a Windows-regisztrációt a Mdm-csatornán keresztül. Javasoljuk, hogy a Windows 10 rendszerű számítógépek kezeléséhez használja ezt az "ügynök nélküli" MDM-kezelési megoldást.
+
+#### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
+Javasoljuk, hogy a szervezet azonnal vegye fontolóra ezt a műveleti tervet:
+
+- Tervezze meg és frissítse a Windows 7 flottáját a Windows 10-es verzióra 2020. január 14. előtt.
+- Ismerkedjen meg a [Windows 10-es üzembe helyezési támogatással](https://docs.microsoft.com/windows/deployment/) , és tudjon meg többet arról, hogyan frissítheti a Windows 7 rendszerű számítógépek meglévő flottáját a Windows 10 rendszerre.
+- Tekintse át az [asztali alkalmazást](https://www.microsoft.com/fasttrack/microsoft-365/desktop-app-assure?rtc=1) , és nyújtson segítséget a Microsoft alkalmazás-kompatibilitási ígéretének gyors nyomon követésében.
+- Meglévő korábbi Intune szoftveres ügyfelek által felügyelt eszközök átváltása a Microsoft által ajánlott megoldásra a Windows 10 felügyeletéhez a MDM-kezelés használatával. Az összes új Windows 10 rendszerű számítógép regisztrálása az Intune-hoz készült MDM-felügyelettel a Azure Portalban.
+- További információért tekintse meg az [itt közzétett blogot](https://aka.ms/Windows7_Intune) .

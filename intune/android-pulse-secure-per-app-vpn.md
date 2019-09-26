@@ -8,7 +8,6 @@ ms.author: mandia
 manager: dougeby
 ms.date: 04/05/2018
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 38763d5c16d5cba36220c03e9d74b30a465d752b
-ms.sourcegitcommit: 1cae690ca2ac6cc97bbcdf656f54b31878297ae8
+ms.openlocfilehash: f6eca8e2f4544255f67d3a4e0e1673e415123967
+ms.sourcegitcommit: 7315fe72b7e55c5dcffc6d87f185f3c2cded9028
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59899601"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "71304611"
 ---
 # <a name="use-a-microsoft-intune-custom-profile-to-create-a-per-app-vpn-profile-for-android-devices"></a>Alkalmazásonkénti VPN-profil létrehozása androidos eszközökhöz egyéni Microsoft Intune-profillal
 
@@ -38,11 +37,10 @@ Miután hozzárendeli a szabályzatot az Android rendszerű eszközhöz vagy fel
 > Ez a profil csak a Pulse Secure és a Citrix kapcsolattípust támogatja.
 
 
-## <a name="step-1-create-a-vpn-profile"></a>1. lépés: VPN-profil létrehozása
+## <a name="step-1-create-a-vpn-profile"></a>1\. lépés: VPN-profil létrehozása
 
 
-1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com).
-2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget. Az Intune a **Figyelés + felügyelet** szakaszban található.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** panelen válassza az **Eszközkonfiguráció** lehetőséget.
 2. Az **Eszközkonfiguráció** panel **Kezelés** területén válassza a **Profilok** lehetőséget.
 2. A profilok listáját mutató panelen válassza a **Profil létrehozása** lehetőséget.
@@ -53,10 +51,9 @@ Miután hozzárendeli a szabályzatot az Android rendszerű eszközhöz vagy fel
 
 Jegyezze le a VPN-profil létrehozásakor megadott **Kapcsolat neve** értéket. Erre szükség lesz a következő lépésben. Például: **AlkVpnProfil**.
 
-## <a name="step-2-create-a-custom-configuration-policy"></a>2. lépés: Egyéni konfigurációs szabályzat létrehozása
+## <a name="step-2-create-a-custom-configuration-policy"></a>2\. lépés: Egyéni konfigurációs szabályzat létrehozása
 
-1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com).
-2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget. Az Intune a **Figyelés + felügyelet** szakaszban található.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** panelen válassza az **Eszközkonfiguráció** lehetőséget.
 2. Az **Eszközkonfiguráció** panel **Kezelés** területén válassza a **Profilok** lehetőséget.
 3. A profilok panelen kattintson a **Profil létrehozása** lehetőségre.
@@ -75,14 +72,14 @@ Jegyezze le a VPN-profil létrehozásakor megadott **Kapcsolat neve** értéket.
 ### <a name="set-your-app-list-to-blacklist-or-whitelist-optional"></a>Az alkalmazáslista Blacklist (Letiltott) vagy Whitelist (Engedélyezett) értékre állítása (nem kötelező)
   A **BLACKLIST** (LETILTOTT) érték kiválasztásával megadhatja azoknak az alkalmazásoknak a listáját, amelyek *nem* használhatják a VPN-kapcsolatot. Minden más alkalmazás VPN-kapcsolaton keresztül fog csatlakozni az internethez.
 Másik megoldásként használhatja a **WHITELIST** (ENGEDÉLYEZETT) értéket, és megadhatja azon alkalmazások listáját, amelyek *használhatják* a VPN-kapcsolatot. A listán nem szereplő alkalmazások nem csatlakozhatnak az internethez a VPN-kapcsolaton keresztül.
-  1.    Az **Egyéni OMA-URI beállítások** panelen válassza a **Hozzáadás** lehetőséget.
-  2.    Adja meg a beállítás nevét.
-  3.    Az **OMA-URI** mezőbe írja be a következő sztringet: **./Vendor/MSFT/VPN/Profile/*Név*/Mode**, ahol a *Név* az 1. lépésben feljegyzett VPN-profil neve. A fenti példában a sztring a következő lenne: **./Vendor/MSFT/VPN/Profile/AlkVpnProfil/Mode**.
-  4.    Az **Adattípus** mezőben válassza a **Sztring** lehetőséget.
-  5.    Az **Érték** mezőbe írja be a **BLACKLIST** (LETILTOTT) vagy a **WHITELIST** (ENGEDÉLYEZETT) értéket.
+  1. Az **Egyéni OMA-URI beállítások** panelen válassza a **Hozzáadás** lehetőséget.
+  2. Adja meg a beállítás nevét.
+  3. Az **OMA-URI** mezőbe írja be a következő sztringet: **./Vendor/MSFT/VPN/Profile/*Név*/Mode**, ahol a *Név* az 1. lépésben feljegyzett VPN-profil neve. A fenti példában a sztring a következő lenne: **./Vendor/MSFT/VPN/Profile/AlkVpnProfil/Mode**.
+  4. Az **Adattípus** mezőben válassza a **Sztring** lehetőséget.
+  5. Az **Érték** mezőbe írja be a **BLACKLIST** (LETILTOTT) vagy a **WHITELIST** (ENGEDÉLYEZETT) értéket.
 
 
 
-## <a name="step-3-assign-both-policies"></a>3. lépés: Mindkét szabályzat hozzárendelése
+## <a name="step-3-assign-both-policies"></a>3\. lépés: Mindkét szabályzat kiosztása
 
 Használja a következő témakör utasításait mindkét profil hozzárendelésére a szükséges felhasználókhoz vagy eszközökhöz: [Eszközprofilok hozzárendelése](device-profile-assign.md).

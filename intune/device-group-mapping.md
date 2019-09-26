@@ -8,7 +8,6 @@ ms.author: erikje
 manager: dougeby
 ms.date: 02/22/2018
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -17,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f63c5a3dbeb7c8626ec1412dbcee661b82afc88
-ms.sourcegitcommit: 1cae690ca2ac6cc97bbcdf656f54b31878297ae8
+ms.openlocfilehash: 2bf0d7a972aea8a82e731100931332e42cbc100f
+ms.sourcegitcommit: 7315fe72b7e55c5dcffc6d87f185f3c2cded9028
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59896014"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "71303564"
 ---
 # <a name="categorize-devices-into-groups"></a>Eszközök csoportokba sorolása
 
@@ -44,7 +43,7 @@ Bármilyen tetszés szerinti eszközkategóriát létrehozhat. Példa:
 
 ## <a name="how-to-configure-device-categories"></a>Az eszközkategóriák konfigurálása
 
-### <a name="step-1-create-device-categories-on-the-intune-blade-of-the-azure-portal"></a>1. lépés: Eszközkategóriák létrehozása az Azure portal Intune panelén
+### <a name="step-1-create-device-categories-on-the-intune-blade-of-the-azure-portal"></a>1\. lépés: Eszközök kategóriáinak létrehozása a Azure Portal Intune paneljén
 1. Az [Azure Portalbeli Intune-on](https://aka.ms/intuneportal) válassza az **Eszközök regisztrálása** elemet.
 2. Az **Eszközregisztráció** panelen válassza az **Eszközkategóriák** elemet.
 3. Az **Eszközkategóriák** lapon a **Létrehozás** elemmel hozhat létre új kategóriát.
@@ -53,7 +52,7 @@ Bármilyen tetszés szerinti eszközkategóriát létrehozhat. Példa:
 
 Azure Active Directory (Azure AD) biztonsági csoportok létrehozásakor az eszközkategória nevét fogja használni a 2. lépésben.
 
-### <a name="step-2-create-azure-active-directory-security-groups"></a>2. lépés: Azure Active Directory biztonsági csoportok létrehozása
+### <a name="step-2-create-azure-active-directory-security-groups"></a>2\. lépés: Azure Active Directory biztonsági csoportok létrehozása
 Ebben a lépésben az eszközkategória és az eszközkategória-név alapján dinamikus csoportokat fog létrehozni az Azure-portálon.
 
 A folytatáshoz tekintse meg a [Speciális szabályok létrehozása attribútumok használatával](https://azure.microsoft.com/documentation/articles/active-directory-accessmanagement-groups-with-advanced-rules/#using-attributes-to-create-rules-for-device-objects) című témakört az Azure AD dokumentációjában.
@@ -64,11 +63,11 @@ Ha vannak konfigurált eszközcsoportok, amikor a felhasználók regisztrálják
 
 ### <a name="view-the-categories-of-devices-that-you-manage"></a>A felügyelt eszközök kategóriáinak megtekintése
 
-1.  Az [Azure Portalbeli Intune-on](https://aka.ms/intuneportal) válassza az **Eszközök** elemet.
+1. Az [Azure Portalbeli Intune-on](https://aka.ms/intuneportal) válassza az **Eszközök** elemet.
 
-2.  A **Felügyelet** alatt válassza a **Minden eszköz** lehetőséget.
+2. A **Felügyelet** alatt válassza a **Minden eszköz** lehetőséget.
 
-3.  Az eszközlistában keresse meg az **Eszközkategória** oszlopot.
+3. Az eszközlistában keresse meg az **Eszközkategória** oszlopot.
 
 Ha az **Eszközkategória** oszlop nem jelenik meg, válassza az **Oszlopok** elemet. Jelölje ki a lista **Eszközkategória** elemét majd válassza az **Alkalmaz** lehetőséget.
 

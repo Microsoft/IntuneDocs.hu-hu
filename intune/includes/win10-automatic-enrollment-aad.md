@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 04afc9c44bc1c4898950e6f3aff5dac7cb93370f
-ms.sourcegitcommit: 25e6aa3bfce58ce8d9f8c054bc338cc3dff4a78b
+ms.openlocfilehash: 3aadafbcf9c9208e7c87504c5459731de1e402b5
+ms.sourcegitcommit: 614c4c36cfe544569db998e17e29feeaefbb7a2e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "56323478"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "71302603"
 ---
 ## <a name="enable-windows-10-automatic-enrollment"></a>Windows 10-es eszközök automatikus regisztrációjának engedélyezése
 
@@ -36,12 +36,12 @@ Az automatikus regisztrálással a felhasználók Windows 10-es eszközeiket reg
    - **Mind** – Minden felhasználó automatikusan regisztrálhatja Windows 10-es eszközeit
 
       > [!IMPORTANT]
-      > A BYOD-eszközök esetén a MAM-felhasználói hatókör Ha MAM-felhasználói hatókör és az MDM-felhasználói hatókör (automatikus MDM-regisztráció) engedélyezve van az összes felhasználó (vagy a felhasználók ugyanazok a csoportok) élvez elsőbbséget. Az eszköz használandó Windows Information Protection (WIP) házirendek (Ha úgy állította be őket) ahelyett, hogy az MDM-regisztrálása folyamatban van.
+      > A BYOD-eszközök esetében a MAM felhasználói hatókör elsőbbséget élvez, ha a MAM felhasználói hatóköre és a MDM felhasználói hatóköre (az automatikus MDM-regisztráció) minden felhasználó számára engedélyezve van (vagy ugyanazokat a felhasználói csoportokat). Az eszköz a Windows Information Protection (folyamatban lévő) házirendeket fogja használni (ha konfigurálta őket) ahelyett, hogy MDM a regisztrálást.
       >
-      > Vállalati eszközök esetén az MDM-felhasználói hatókör két hatókörnek engedélyezésével élvez elsőbbséget. Az eszközök MDM-regisztrálása beolvasása.
+      > A vállalati eszközök esetében a MDM felhasználói hatóköre elsőbbséget élvez, ha mindkét hatókör engedélyezve van. Az eszközök bekerülnek a MDM.
 
    > [!NOTE]
-   > MAM-felhasználói hatókör állítson be egy felhasználói csoport vagy a gyűjtemény.
+   > A MDM felhasználói hatókörét olyan Azure AD-csoportra kell beállítani, amely felhasználói objektumokat tartalmaz.
 
    ![Az Azure Portal képernyőképe](../media/auto-enroll-scope.png)
 

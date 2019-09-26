@@ -6,9 +6,8 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 04/15/2019
+ms.date: 08/23/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bd0eb13a0a65116545922ddae05f5959224fc571
-ms.sourcegitcommit: 1cae690ca2ac6cc97bbcdf656f54b31878297ae8
+ms.openlocfilehash: 0017981b203b93819bd06f00351816668b0198c4
+ms.sourcegitcommit: c19584b36448bbd4c8638d7cab552fe9b3eb3408
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59897697"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71305293"
 ---
 # <a name="add-apps-to-microsoft-intune"></a>Alkalmazások hozzáadása a Microsoft Intune-hoz 
 
@@ -39,10 +38,10 @@ Az Intune sokféle alkalmazástípust támogat. Az elérhető beállítások min
 
 | Alkalmazástípusok | Telepítés | Frissítések |
 |---|---|---|
-| Áruházbeli alkalmazások | Az Intune telepíti az alkalmazást az eszközön.  | Az alkalmazások frissítése automatikus.   |
-| Belső fejlesztésű (üzletági) alkalmazások  | Az Intune telepíti az alkalmazást az eszközön (a telepítőfájlt Önnek kell letöltenie).     | Az alkalmazást Önnek kell frissítenie.  |
-| Beépített alkalmazások    | Az Intune telepíti az alkalmazást az eszközön.  | Az alkalmazások frissítése automatikus.  |
-| Alkalmazások a weben (webes hivatkozás) | Az Intune létrehoz egy parancsikont a webalkalmazáshoz az eszköz kezdőképernyőjén.  | Az alkalmazások frissítése automatikus.    |
+| Áruházbeli alkalmazások | Az Intune telepíti az alkalmazást az eszközön.  | Az alkalmazások frissítése automatikus. |
+| Belső fejlesztésű (üzletági) alkalmazások | Az Intune telepíti az alkalmazást az eszközön (a telepítőfájlt Önnek kell letöltenie). | Az alkalmazást Önnek kell frissítenie. |
+| Beépített alkalmazások | Az Intune telepíti az alkalmazást az eszközön.  | Az alkalmazások frissítése automatikus. |
+| Alkalmazások a weben (webes hivatkozás) | Az Intune létrehoz egy parancsikont a webalkalmazáshoz az eszköz kezdőképernyőjén. | Az alkalmazások frissítése automatikus. |
 
 ### <a name="specific-app-type-details"></a>Alkalmazástípusok konkrét részletei
  
@@ -51,11 +50,11 @@ A következő táblázatban megtekintheti a konkrét alkalmazástípusokat és a
 | **Alkalmazásspecifikus típus** | **Általános típus** | **Alkalmazásspecifikus eljárások** |
 | --- | --- | --- |
 | Androidos áruházbeli alkalmazások  | Áruházbeli alkalmazás  | Válassza az **Android** lehetőséget az **alkalmazás típusa** területen, majd adja meg a Google Play áruház alkalmazáshoz tartozó URL-címét. |
-| Androidos vállalati alkalmazások  | Áruházbeli alkalmazás  | Válassza ki **Android** , a **alkalmazástípus**, és adja meg az alkalmazás a felügyelt Google Play áruházbeli URL-CÍMÉT. <sup>1</sup> |
+| Androidos vállalati alkalmazások  | Áruházbeli alkalmazás  | Válassza az **Android** lehetőséget az **alkalmazás típusa**területen, majd adja meg az alkalmazás felügyelt Google Play áruházbeli URL-címét. <sup>1</sup> |
 | iOS-es áruházbeli alkalmazások  | Áruházbeli alkalmazás  | Válassza az **iOS** lehetőséget az **alkalmazás típusa** területen, keresse meg az alkalmazást majd jelölje ki az Intune-ban. |
 | Windows Phone 8.1-es áruházbeli alkalmazások  | Áruházbeli alkalmazás  | Válassza a **Windows Phone 8.1** lehetőséget az **alkalmazás típusa** területen, majd adja meg a Microsoft Store alkalmazáshoz tartozó URL-címét. |
 | Microsoft Store-beli alkalmazások  | Áruházbeli alkalmazás  | Válassza a **Windows** lehetőséget az **alkalmazás típusa** területen, majd adja meg a Microsoft Store alkalmazáshoz tartozó URL-címét. |
-| Felügyelt Google Play-alkalmazások | Áruházbeli alkalmazás  | Válassza ki **felügyelt Google Play** , a **alkalmazástípus**, keresse meg az alkalmazást, és válassza ki az alkalmazást az Intune-ban. |
+| Felügyelt Google Play-alkalmazások | Áruházbeli alkalmazás  | Válassza a **felügyelt Google Play** lehetőséget az **alkalmazás típusa**területen, keresse meg az alkalmazást, és válassza ki az alkalmazást az Intune-ban. |
 | Windows 10-es Office 365-alkalmazások  | Áruházbeli alkalmazás (Office 365) | Válassza a **Windows 10** lehetőséget az **Office 365 csomag** területen, az **alkalmazás típusa** részen, majd válassza ki a telepíteni kívánt Office 365-alkalmazást.  |
 | macOS-es Office 365-alkalmazások | Áruházbeli alkalmazás (Office 365) | Válassza a **macOS** lehetőséget az **Office 365 csomag** területen, az **alkalmazás típusa** részen, majd válassza ki az Office 365 csomagot. |
 | Androidos üzletági (LOB) alkalmazások | Üzletági (LOB) alkalmazás | Válassza az **Üzletági alkalmazás** lehetőséget az **alkalmazás típusa** területen, válassza az **Alkalmazáscsomag-fájl** elemet, majd adjon meg egy **.apk** kiterjesztésű Androidos telepítőfájlt.  |
@@ -65,9 +64,12 @@ A következő táblázatban megtekintheti a konkrét alkalmazástípusokat és a
 | Beépített iOS-alkalmazás  | Beépített alkalmazás | Válassza a **Beépített alkalmazás** lehetőséget az **alkalmazás típusa** területen, majd jelöljön ki egy beépített alkalmazást az elérhető alkalmazások listáján.  |
 | Beépített Android-alkalmazás  | Beépített alkalmazás | Válassza a **Beépített alkalmazás** lehetőséget az **alkalmazás típusa** területen, majd jelöljön ki egy beépített alkalmazást az elérhető alkalmazások listáján.  |
 | Webalkalmazások  | Web app  | Válassza a **Webes hivatkozás** lehetőséget az **alkalmazás típusa** területen, majd adjon meg egy érvényes, a webalkalmazásra mutató URL-címet.  |
+| A Vállalati Android rendszeralkalmazásai  | Áruházbeli alkalmazás  | Válassza az **Android Enterprise System app** elemet az **alkalmazás típusa**területen, majd adja meg az alkalmazás nevét, közzétevőjét és csomagfájl.  |
 | Windows-alkalmazás (Win32)  | Üzletági (LOB) alkalmazás  | Válassza a **Windows-alkalmazás (Win32)** lehetőséget az **alkalmazás típusa** területen, válassza az **Alkalmazáscsomag-fájl** elemet, majd válasszon egy **.intunewin** kiterjesztésű telepítőfájlt.  |
+| macOS-es üzletági alkalmazások | Üzletági (LOB) alkalmazás  | Válassza az **üzletági** lehetőséget az **alkalmazás típusa**területen, válassza ki az **alkalmazáscsomag-fájlt**, majd válassza ki a **. intunemac**kiterjesztésű telepítési fájlt.  |
 
-<sup>1</sup> Android Enterprise és Androidos munkahelyi profilok kapcsolatos további információkért lásd: [a licencelt alkalmazások megértése](apps-add.md#understanding-licensed-apps) alatt.
+
+<sup>1</sup> az Android Enterprise és Android rendszerű munkahelyi profilokkal kapcsolatos további információkért lásd az alábbi [licencelt alkalmazások ismertetése](apps-add.md#understanding-licensed-apps) című témakört.
 
 Az alkalmazásokat az **Ügyfélalkalmazások** > **Alkalmazások** > **Hozzáadás** lehetőséggel adhatja hozzá a Microsoft Intune-hoz. Megjelenik az **Alkalmazás hozzáadása** panel, ahol kiválaszthatja az **alkalmazás típusát**. 
 
@@ -104,9 +106,9 @@ Az [Intune az üzembe helyezésének tervezésével, kialakításával és kivit
 ### <a name="determine-the-type-of-app-for-your-solution"></a>A saját megoldáshoz tartozó alkalmazás meghatározása
 
 Az alábbi alkalmazástípusok közül választhat:
-- **Áruházból származó alkalmazások**: Fel lett töltve a Microsoft store, az IOS-es áruházból, vagy az Androidos áruházbeli alkalmazások áruházbeli alkalmazásoknak számítanak. Az áruházbeli alkalmazásokat a szolgáltatójuk tartja karban és frissíti. Az áruház listájából Ön választja ki az alkalmazást, és teszi elérhetővé a felhasználói számára az Intune segítségével.
-- **Belső fejlesztésű (üzletági, LOB) alkalmazások**: Belső fejlesztésű alkalmazások – üzletági (LOB) alkalmazások. Az ilyen típusú alkalmazásokat az Intune által támogatott platformok egyikére hoztuk létre, például a Windows, az iOS vagy az Android rendszerre. A cége egy külön fájlként hozza létre és teszi elérhetővé Ön számára a frissítéseket. Az alkalmazás frissítéseit a felhasználók számára az Intune-nal teheti elérhetővé.
-- **Webes alkalmazások**: Web apps olyan ügyfél-kiszolgáló alkalmazások. A kiszolgáló szolgáltatja a webalkalmazást, amely tartalmazza a felhasználói felületet, a tartalmat és a funkciókat. A modern webszolgáltatási platformok emellett gyakran kínálnak biztonsági, terheléselosztási és egyéb szolgáltatásokat. Az ilyen típusú alkalmazásokat külön, a weben kezelik. Ehhez az alkalmazástípushoz az Intune-t kell használnia. Azt is Ön dönti el, hogy mely felhasználói csoportok férhetnek hozzá ezekhez az alkalmazásokhoz. Vegye figyelembe, hogy az Android nem támogatja a webalkalmazásokat.
+- **Az áruházból származó alkalmazások**: A Microsoft áruházba, az iOS-tárolóba vagy az Android áruházba feltöltött alkalmazások áruházbeli alkalmazások. Az áruházbeli alkalmazásokat a szolgáltatójuk tartja karban és frissíti. Az áruház listájából Ön választja ki az alkalmazást, és teszi elérhetővé a felhasználói számára az Intune segítségével.
+- **Házon belül írt alkalmazások (üzletági)** : A házon belül létrehozott alkalmazások üzletági (LOB) alkalmazások. Az ilyen típusú alkalmazások funkciói az Intune által támogatott platformok (például Windows, iOS, macOS vagy Android) egyikére lettek létrehozva. A cége egy külön fájlként hozza létre és teszi elérhetővé Ön számára a frissítéseket. Az alkalmazás frissítéseit a felhasználók számára az Intune-nal teheti elérhetővé.
+- **Webes alkalmazások**: A webalkalmazások ügyfél-kiszolgáló alkalmazások. A kiszolgáló szolgáltatja a webalkalmazást, amely tartalmazza a felhasználói felületet, a tartalmat és a funkciókat. A modern webszolgáltatási platformok emellett gyakran kínálnak biztonsági, terheléselosztási és egyéb szolgáltatásokat. Az ilyen típusú alkalmazásokat külön, a weben kezelik. Ehhez az alkalmazástípushoz az Intune-t kell használnia. Azt is Ön dönti el, hogy mely felhasználói csoportok férhetnek hozzá ezekhez az alkalmazásokhoz. Vegye figyelembe, hogy az Android nem támogatja a webalkalmazásokat.
 
 A szervezet alkalmazásigényének felmérésekor vegye figyelembe, hogy ezek az alkalmazások hogyan integrálhatók felhőszolgáltatásokkal, milyen adatokhoz férhetnek hozzá, elérhetők-e BYOD-felhasználók számára, valamint szükség van-e hozzájuk internet-hozzáférésre.
 
@@ -117,15 +119,15 @@ Az Intune-nal módosíthatja a telepített alkalmazások funkcióit, hogy azok �
 
 - A másolás és beillesztés, valamint a mentés másként funkció korlátozása.
 - A webes hivatkozások konfigurálása, hogy azok az Intune Managed Browser alkalmazásban nyíljanak meg.
-- Több identitás, valamint az alkalmazásszintű feltételes hozzáférés használatának engedélyezése.
+- A többszörös identitás használatának és az alkalmazás szintű feltételes hozzáférésének engedélyezése.
 
 Az Intune által kezelt alkalmazások regisztráció nélkül nyújtanak alkalmazásvédelmet, így Ön a felhasználói eszköz kezelése nélkül alkalmazhat adatveszteség-megelőzési szabályzatokat. Emellett az Intune alkalmazás szoftverfejlesztői készletével (SDK) és alkalmazásburkoló eszközével beépítheti a mobilalkalmazás-kezelést az üzletági és mobilalkalmazásaiba. További információ ezekről az eszközökről: [Az Intune App SDK áttekintése](app-sdk.md).
 
 ### <a name="understanding-licensed-apps"></a>A licencelt alkalmazások megértése
 A webes, az áruházbeli és az üzletági alkalmazásokon kívül érdemes tisztában lennie a Volume Purchase Program alkalmazásainak és a licencelt alkalmazások sajátosságaival, például: 
-- **Apple Volume Purchasing Program (iOS) a vállalati**: Az iOS App Store lehetővé teszi, hogy a vállalatban futtatni kívánt több licencet is vásároljon. Több licenc vásárlásával hatékonyabban kezelhetők a vállalaton belüli alkalmazások. További információ: [Mennyiségi programban vásárolt iOS-alkalmazások felügyelete](vpp-apps-ios.md).
-- **Androidos munkahelyi profil**: Az alkalmazások androidos munkahelyi profilos eszközökhöz való hozzárendelése eltér a hagyományos androidos eszközökhöz való hozzárendeléstől. Minden olyan alkalmazás, amelyet az androidos munkahelyi profil részeként telepít a felügyelt Google Play áruházból szerezhető be. Az Intune használatával keresse meg az alkalmazások szeretne, majd hagyja jóvá a választást. Az alkalmazás megjelenik az Azure Portal **Licencelt alkalmazások** lapján, és a hozzárendelése ugyanúgy kezelhető, mint bármely más alkalmazásé.
-- **Microsoft Store vállalatoknak (Windows 10-es)**: Microsoft Store vállalatoknak hely, ahol a szervezet számára alkalmazásokat vásárolhat, egyenként vagy mennyiségi biztosítja. Az áruházat a Microsoft Intune-nal összekapcsolva a mennyiségi programban vásárolt alkalmazásokat az Azure Portalon kezelheti. További információ: [A Microsoft Store Vállalatoknak áruházban vásárolt alkalmazások felügyelete](windows-store-for-business.md).
+- **Apple Volume vásárlási program for Business (iOS)** : Az iOS App Store áruház lehetővé teszi, hogy több licencet vásároljon a vállalatnál futtatni kívánt alkalmazásokhoz. Több licenc vásárlásával hatékonyabban kezelhetők a vállalaton belüli alkalmazások. További információ: [Mennyiségi programban vásárolt iOS-alkalmazások felügyelete](vpp-apps-ios.md).
+- **Androidos munkahelyi profil**: Az alkalmazások androidos munkahelyi profilos eszközökhöz való hozzárendelése eltér a hagyományos androidos eszközökhöz való hozzárendeléstől. Minden olyan alkalmazás, amelyet az androidos munkahelyi profil részeként telepít a felügyelt Google Play áruházból szerezhető be. Az Intune használatával megkeresheti a kívánt alkalmazásokat, és jóváhagyhatja azokat. Az alkalmazás megjelenik az Azure Portal **Licencelt alkalmazások** lapján, és a hozzárendelése ugyanúgy kezelhető, mint bármely más alkalmazásé.
+- **Üzleti Microsoft Store (Windows 10)** : A Microsoft Store for Business lehetővé teszi, hogy megkeresse és megvásárolja a szervezete alkalmazásait egyénileg vagy köteten. Az áruházat a Microsoft Intune-nal összekapcsolva a mennyiségi programban vásárolt alkalmazásokat az Azure Portalon kezelheti. További információ: [A Microsoft Store Vállalatoknak áruházban vásárolt alkalmazások felügyelete](windows-store-for-business.md).
 
     > [!NOTE]
     > A windowsos alkalmazások fájlnévkiterjesztései közé tartozik az **.msi**, **.appx**, **.appxbundle**, **.msix** és **.msixbundle** is.  
@@ -148,7 +150,7 @@ A felhőtárhelyre vonatkozó követelmények az alábbiak:
 - A feltöltött fájlok legfeljebb 8 GB méretűek lehetnek.
 
   > [!NOTE]
-  > Windows – üzletági (LOB) alkalmazások alkalmazásonként 8 GB maximális méretkorlát rendelkezik. iOS LOB-alkalmazások maximális mérete 4 GB az egyes alkalmazások rendelkeznek.
+  > A Windows rendszerű üzletági (LOB) alkalmazások esetében az alkalmazás legfeljebb 8 GB méretű lehet. az iOS LOB-alkalmazások esetében az alkalmazás legfeljebb 4 GB méretű lehet.
 
 ## <a name="create-and-edit-categories-for-apps"></a>Alkalmazáskategóriák létrehozása és szerkesztése
 
@@ -156,15 +158,14 @@ Az alkalmazáskategóriák segítségével úgy rendezheti az alkalmazásokat, h
 
 Amikor hozzáad egy alkalmazást az Intune-hoz, kiválaszthatja a kívánt kategóriát. Az alkalmazások felvételéről és a kategóriák hozzárendeléséről az egyes platformokra vonatkozó témakörökből tájékozódhat. Saját kategóriáit a következő eljárással hozhatja létre és szerkesztheti:
 
-1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com).
-2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget. Az Intune a **Figyelés + felügyelet** szakaszban található.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** ablaktáblán válassza az **Ügyfélalkalmazások** lehetőséget.
 4. Az **Ügyfélalkalmazások** területen a **Beállítások** alatt válassza az **Alkalmazáskategóriák** lehetőséget.  
     Az **Alkalmazáskategóriák** panel megjeleníti az aktuális kategóriák listáját. 
 5. A következő lehetőségek közül választhat:
     - Új kategória megadásához válassza a **Kategória létrehozása** panel **Hozzáadás** elemét, majd adja meg a kategória nevét.  
     A neveket csak egy nyelven lehet megadni, és az Intune nem fordítja le őket.
-    - Kategória szerkesztéséhez válassza a kategória melletti három pontot (**...**) majd a **Rögzítés irányítópulton** vagy **Törlés** lehetőséget.
+    - Kategória szerkesztéséhez válassza a kategória melletti három pontot ( **...** ) majd a **Rögzítés irányítópulton** vagy **Törlés** lehetőséget.
 6. Kattintson a **Létrehozás** gombra.
 
 ## <a name="apps-that-are-added-automatically-by-intune"></a>Az Intune által automatikusan hozzáadott alkalmazások
@@ -196,6 +197,7 @@ Az alkalmazások Intune-hoz adásáról a különböző platformokon az alábbi 
 - [Androidos üzletági alkalmazások](lob-apps-android.md)
 - [iOS rendszerhez készült áruházbeli alkalmazások](store-apps-ios.md)
 - [iOS-es üzletági alkalmazások](lob-apps-ios.md)
+- [macOS LOB-alkalmazások](lob-apps-macos.md)
 - [Webalkalmazások (az összes platformra)](web-app.md)
 - [Windows Phone 8.1-es áruházbeli alkalmazások](store-apps-windows-phone-8-1.md)
 - [Windows Phone LOB-alkalmazások](lob-apps-windows-phone.md)
@@ -204,4 +206,5 @@ Az alkalmazások Intune-hoz adásáról a különböző platformokon az alábbi 
 - [Windows 10-es Office 365-alkalmazások](apps-add-office365.md)
 - [macOS-es Office 365-alkalmazások](apps-add-office365-macos.md)
 - [Beépített alkalmazások](apps-add-built-in.md)
+- [Android Enterprise System-alkalmazás](apps-ae-system.md)
 - [Win32-alkalmazások](apps-win32-app-management.md) 

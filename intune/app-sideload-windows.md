@@ -6,7 +6,7 @@ keywords: ''
 author: erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 07/25/2019
+ms.date: 09/24/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -15,12 +15,12 @@ ms.assetid: e44f1756-52e1-4ed5-bf7d-0e80363a8674
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4d30f2f392a760701337fb17b902458ea01ed00b
-ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
+ms.openlocfilehash: a1e952acc2fe8eafc6376b0cab9012af52b0acf4
+ms.sourcegitcommit: 62c41976c4da43b36015b715bc255397ebb8c6ad
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71238875"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274848"
 ---
 # <a name="sign-line-of-business-apps-so-they-can-be-deployed-to-windows-devices-with-intune"></a>Üzleti alkalmazások aláírása, hogy telepíteni lehessen őket Windows-eszközökre az Intune segítségével
 
@@ -28,7 +28,10 @@ ms.locfileid: "71238875"
 
 Intune-rendszergazdaként üzletági (LOB) univerzális alkalmazásokat telepíthet a Windows 8,1 asztali vagy Windows 10 asztali & mobileszközökön, beleértve a Céges portál alkalmazást is. A. Appx alkalmazások Windows 8,1 asztali vagy Windows 10 rendszerű asztali & mobileszközökön való üzembe helyezéséhez a Windows-eszközök által már megbízhatóként használt nyilvános hitelesítésszolgáltatótól származó kód-aláíró tanúsítványt használhat, vagy használhatja saját hitelesítésszolgáltatóját is.
 
-A Windows 8,1 Desktophoz vállalati házirend szükséges a közvetlen telepítési engedélyezéséhez vagy a közvetlen telepítési kulcsok használatához (automatikusan engedélyezve a tartományhoz csatlakoztatott eszközök esetében). További információ: [Windows 8 közvetlen telepítési](https://blogs.technet.microsoft.com/scd-odtsp/2012/09/27/windows-8-sideloading-requirements-from-technet/).
+ > [!NOTE]
+ > A Windows 8,1 Desktophoz vállalati házirend szükséges a közvetlen telepítési engedélyezéséhez vagy a közvetlen telepítési kulcsok használatához (automatikusan engedélyezve a tartományhoz csatlakoztatott eszközök esetében). További információ: [Windows 8 közvetlen telepítési](https://blogs.technet.microsoft.com/scd-odtsp/2012/09/27/windows-8-sideloading-requirements-from-technet/).
+
+## <a name="windows-10-sideloading"></a>Windows 10 közvetlen telepítési
 
 A Windows 10-es verzióban a közvetlen telepítési eltér a Windows korábbi verzióiban:
 
@@ -36,18 +39,17 @@ A Windows 10-es verzióban a közvetlen telepítési eltér a Windows korábbi v
 
 - A Symantec Phone-tanúsítványok és a közvetlen telepítési-licenc kulcsa nem szükséges. Ha azonban egy helyszíni hitelesítésszolgáltató nem érhető el, előfordulhat, hogy egy kód-aláíró tanúsítványt kell beszereznie egy nyilvános hitelesítésszolgáltatótól. További információ: [Bevezetés a kód aláírására](https://docs.microsoft.com/windows/desktop/SecCrypto/cryptography-tools#introduction-to-code-signing).
 
+### <a name="code-sign-your-app"></a>Az alkalmazás kódjának aláírása
 
-## <a name="code-sign-your-app"></a>Az alkalmazás kódjának aláírása
+Első lépésként írja alá a Appx-csomagot. Részletekért lásd: [alkalmazáscsomag aláírása a SignTool használatával](https://docs.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool).
 
-Az első lépés a Appx-csomag aláírása: [alkalmazáscsomag aláírása a SignTool használatával](https://docs.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool)
+### <a name="upload-your-app"></a>Alkalmazás feltöltése
 
-## <a name="upload-your-app"></a>Alkalmazás feltöltése
-
-Ezután töltse fel az aláírt Appx-fájlt az [üzletági Windows-alkalmazás feltöltése](lob-apps-windows.md) című cikkben leírtak szerint.
+Ezután fel kell töltenie az aláírt Appx fájlt. Részletekért lásd: [Windows rendszerű üzletági alkalmazás hozzáadása Microsoft Intunehoz](lob-apps-windows.md).
 
 Ha a felhasználók vagy eszközök számára szükséges módon telepíti az alkalmazást, akkor nincs szüksége a Inutne Céges portál alkalmazásra. Ha azonban a felhasználók számára elérhetővé teszi az alkalmazást, akkor használhatja a Céges portál alkalmazást a nyilvános Microsoft Storeból, az Céges portál alkalmazást használhatja a vállalati privát Microsoft Store, vagy be kell jelentkeznie és manuálisan telepítenie kell az Intune-céget. Portál alkalmazás.
 
-## <a name="upload-the-code-signing-certificate"></a>A kód aláíró tanúsítványának feltöltése
+### <a name="upload-the-code-signing-certificate"></a>A kód aláíró tanúsítványának feltöltése
 
 Ha a Windows 10-es eszköze még nem bízik meg a hitelesítésszolgáltatóban, akkor a Appx-csomag aláírása és az Intune szolgáltatásba való feltöltése után fel kell töltenie a kód aláíró tanúsítványát az Intune-portálra:
 1. Kattintson az ügyfélalkalmazások lehetőségre
@@ -61,7 +63,7 @@ Az Intune csak a feltöltött legújabb. cer fájlt telepíti. Ha több, a szerv
 
 ## <a name="how-to-renew-the-symantec-enterprise-code-signing-certificate"></a>A Symantec vállalati kódaláíró tanúsítvány megújítása
 
-A Windows Phone-telefon 8,1 Mobile apps üzembe helyezéséhez használt tanúsítvány a 28 2019 februárjában megszűnt, és már nem érhető el a Symantec megújításához. Ha a WIndows 10 Mobile rendszerre végzi a telepítést, akkor továbbra is használhatja a Symantec asztali nagyvállalati kód-aláíró tanúsítványait a Windows 10-es utasítások követésével.
+A Windows Phone-telefon 8,1 Mobile apps üzembe helyezéséhez használt tanúsítvány a 28 2019 februárjában megszűnt, és már nem érhető el a Symantec megújításához. Ha a WIndows 10 Mobile rendszerre végzi a telepítést, a [Windows 10 közvetlen telepítési](app-sideload-windows.md#windows-10-sideloading) utasításait követve továbbra is használhatja a Symantec asztali vállalati kódú aláírási tanúsítványait.
 
 ## <a name="how-to-install-the-updated-certificate-for-line-of-business-lob-apps"></a>A frissített alkalmazások telepítése az üzleti alkalmazások számára
 

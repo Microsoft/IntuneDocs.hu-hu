@@ -6,7 +6,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 08/14/2019
+ms.date: 09/05/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.localizationpriority: medium
@@ -15,14 +15,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 04b864689bce1814eba78dc2435905d4df82e8c0
-ms.sourcegitcommit: b30a2ba2b67aa2fc3421f0b2f6c5f361a0de612a
+ms.openlocfilehash: 2358ec854e9cc78cbc36570c45a96b98d2844f5d
+ms.sourcegitcommit: c19584b36448bbd4c8638d7cab552fe9b3eb3408
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69022680"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71302583"
 ---
 # <a name="add-wi-fi-settings-for-ios-devices-in-microsoft-intune"></a>iOS-eszközökre vonatkozó Wi-Fi-beállítások hozzáadása a Microsoft Intune-ban
+
+[!INCLUDE [azure_portal](./includes/azure_portal.md)]
 
 Adott Wi-Fi-beállításokkal rendelkező profilt hozhat létre, majd ezt a profilt üzembe helyezheti az iOS-eszközökön. A Microsoft Intune számos szolgáltatást nyújt, beleértve a hálózaton való hitelesítést, a PKS- vagy SCEP-tanúsítványok hozzáadását és egyéb lehetőségeket.
 
@@ -34,6 +36,9 @@ Ez a cikk ezeket a beállításokat ismerteti.
 
 [Eszközprofil létrehozása](device-profile-create.md).
 
+> [!NOTE]
+> Ezek a beállítások minden regisztrációs típushoz elérhetők. A regisztrációs típusokkal kapcsolatos további információkért lásd: [iOS-regisztráció](ios-enroll.md).
+
 ## <a name="basic-profiles"></a>Alapszintű profilok
 
 - **Wi-Fi típusa**: Válassza a **Basic** (Egyszerű) lehetőséget.
@@ -44,12 +49,12 @@ Ez a cikk ezeket a beállításokat ismerteti.
 - **Biztonság típusa**: Válassza ki a Wi-Fi-hálózat hitelesítéséhez használandó biztonsági protokollt. A választható lehetőségek:
 
   - **Megnyitás (nincs hitelesítés)** : Csak akkor használja ezt a beállítást, ha a hálózat nem biztonságos.
-  - **WPA/WPA2-Personal**: Adja meg a jelszót **előmegosztott kulcsban**. A cég hálózatának beállítása vagy konfigurálása során a rendszer egy jelszót vagy egy hálózati kulcsot is konfigurál. Adja meg ezt a jelszót vagy hálózati kulcsot a PSK értékeként.
+  - **WPA/WPA2-Personal**: Adja meg a jelszót a **előmegosztott kulcsban**. A cég hálózatának beállítása vagy konfigurálása során a rendszer egy jelszót vagy egy hálózati kulcsot is konfigurál. Adja meg ezt a jelszót vagy hálózati kulcsot a PSK értékeként.
   - **Adattitkosítás**
 
 - **Proxybeállítások**: A választható lehetőségek:
   - **Nincs**: Nincsenek proxybeállítások konfigurálva.
-  - **Manuális**: Adja meg a **proxykiszolgáló címét** IP-címként és portszámként.
+  - **Manuális**: Adja meg a **proxykiszolgáló címét** IP-címként és **portszámként**.
   - **Automatikus**: Egy fájl használatával konfigurálja a proxykiszolgálót. Adja meg a konfigurációs fájlt tartalmazó **proxykiszolgáló URL-címét** (például: `http://proxy.contoso.com`).
 
 ## <a name="enterprise-profiles"></a>Vállalati profilok
@@ -74,18 +79,12 @@ Ez a cikk ezeket a beállításokat ismerteti.
     - **Kiszolgálói megbízhatósági** - **tanúsítványok kiszolgálójának nevei**: **Adjon hozzá** egy vagy több köznapi nevet a megbízható HITELESÍTÉSSZOLGÁLTATÓ (CA) által kiállított tanúsítványokban a vezeték nélküli hálózati hozzáférési kiszolgálókhoz. Adja `mywirelessserver.contoso.com` meg például a következőt: vagy `mywirelessserver`. Ha megadja ezt az információt, elkerülheti azt a dinamikus megbízhatósági ablakot, amely akkor jelenik meg a felhasználók eszközein, amikor ehhez a Wi-Fi-hálózathoz csatlakoznak.
     - **Kiszolgáló-ellenőrzés**főtanúsítványa: Válasszon ki egy meglévő megbízható főtanúsítvány-profilt. Ez a tanúsítvány lehetővé teszi az ügyfél számára, hogy megbízzon a vezeték nélküli hálózati hozzáférési kiszolgáló tanúsítványán.
 
-      Válassza ki **OK** a módosítások mentéséhez.
-
     - Ügyfél-hitelesítési ügyféltanúsítvány ügyfél **-hitelesítéshez (identitás-tanúsítvány):**  -  Válassza ki azt a SCEP-vagy PKCS-ügyféltanúsítvány-profilt, amely az eszközre is telepítve van. Az eszköz ezt a tanúsítványt adja meg identitásként a kiszolgálónak a kapcsolat hitelesítéséhez.
-
-      Válassza ki **OK** a módosítások mentéséhez.
 
   - **EAP-TTLS**: Ezt is adja meg:
 
     - **Kiszolgálói megbízhatósági** - **tanúsítványok kiszolgálójának nevei**: **Adjon hozzá** egy vagy több köznapi nevet a megbízható HITELESÍTÉSSZOLGÁLTATÓ (CA) által kiállított tanúsítványokban a vezeték nélküli hálózati hozzáférési kiszolgálókhoz. Adja `mywirelessserver.contoso.com` meg például a következőt: vagy `mywirelessserver`. Ha megadja ezt az információt, elkerülheti azt a dinamikus megbízhatósági ablakot, amely akkor jelenik meg a felhasználók eszközein, amikor ehhez a Wi-Fi-hálózathoz csatlakoznak.
     - **Kiszolgáló-ellenőrzés**főtanúsítványa: Válasszon ki egy meglévő megbízható főtanúsítvány-profilt. Ez a tanúsítvány lehetővé teszi az ügyfél számára, hogy megbízzon a vezeték nélküli hálózati hozzáférési kiszolgáló tanúsítványán.
-
-      Válassza ki **OK** a módosítások mentéséhez.
 
     - **Ügyfél-hitelesítés** – Válasszon egy **hitelesítési módszert**. A választható lehetőségek:
 
@@ -96,8 +95,6 @@ Ez a cikk ezeket a beállításokat ismerteti.
 
       - **Tanúsítványok**: Válassza ki azt a SCEP-vagy PKCS-ügyféltanúsítvány-profilt, amely az eszközre is telepítve van. Az eszköz ezt a tanúsítványt adja meg identitásként a kiszolgálónak a kapcsolat hitelesítéséhez.
 
-        Válassza ki **OK** a módosítások mentéséhez.
-
       - **Személyazonosság védelme (külső identitás)** : Adja meg az EAP-identitásra irányuló kérelemre adott válasz szövegét. Ez a szöveg bármilyen érték lehet, például `anonymous`. A hitelesítés során a rendszer először a névtelen identitást küldi el, majd később egy biztonságos csatornán küldi el a valódi azonosítót.
 
   - **LEAP**
@@ -107,29 +104,21 @@ Ez a cikk ezeket a beállításokat ismerteti.
     - **Kiszolgálói megbízhatósági** - **tanúsítványok kiszolgálójának nevei**: **Adjon hozzá** egy vagy több köznapi nevet a megbízható HITELESÍTÉSSZOLGÁLTATÓ (CA) által kiállított tanúsítványokban a vezeték nélküli hálózati hozzáférési kiszolgálókhoz. Adja `mywirelessserver.contoso.com` meg például a következőt: vagy `mywirelessserver`. Ha megadja ezt az információt, elkerülheti azt a dinamikus megbízhatósági ablakot, amely akkor jelenik meg a felhasználók eszközein, amikor ehhez a Wi-Fi-hálózathoz csatlakoznak.
     - **Kiszolgáló-ellenőrzés**főtanúsítványa: Válasszon ki egy meglévő megbízható főtanúsítvány-profilt. Ez a tanúsítvány lehetővé teszi az ügyfél számára, hogy megbízzon a vezeték nélküli hálózati hozzáférési kiszolgáló tanúsítványán.
 
-      Válassza ki **OK** a módosítások mentéséhez.
-
     - **Ügyfél-hitelesítés** – Válasszon egy **hitelesítési módszert**. A választható lehetőségek:
 
       - **Felhasználónév és jelszó**: A kapcsolódás hitelesítéséhez kérje meg a felhasználót, hogy adjon meg egy felhasználónevet és egy jelszót. 
 
       - **Tanúsítványok**: Válassza ki azt a SCEP-vagy PKCS-ügyféltanúsítvány-profilt, amely az eszközre is telepítve van. Az eszköz ezt a tanúsítványt adja meg identitásként a kiszolgálónak a kapcsolat hitelesítéséhez.
 
-        Válassza ki **OK** a módosítások mentéséhez.
-
       - **Személyazonosság védelme (külső identitás)** : Adja meg az EAP-identitásra irányuló kérelemre adott válasz szövegét. Ez a szöveg bármilyen érték lehet, például `anonymous`. A hitelesítés során a rendszer először a névtelen identitást küldi el, majd később egy biztonságos csatornán küldi el a valódi azonosítót.
 
 - **Proxybeállítások**: A választható lehetőségek:
   - **Nincs**: Nincsenek proxybeállítások konfigurálva.
-  - **Manuális**: Adja meg a **proxykiszolgáló címét** IP-címként és portszámként.
+  - **Manuális**: Adja meg a **proxykiszolgáló címét** IP-címként és **portszámként**.
   - **Automatikus**: Egy fájl használatával konfigurálja a proxykiszolgálót. Adja meg a konfigurációs fájlt tartalmazó **proxykiszolgáló URL-címét** (például: `http://proxy.contoso.com`).
-
-A módosítások mentéséhez válassza az **OK** > **Létrehozás** lehetőséget. Ekkor létrejön a profil, és megjelenik a profilok listájában.
 
 ## <a name="next-steps"></a>További lépések
 
-A profil létrejön, de egyelőre nem csinál semmit. A következő lépés a [profil hozzárendelése](device-profile-assign.md).
+A profil létrejön, de egyelőre nem csinál semmit. Ezután [rendelje hozzá ezt a profilt](device-profile-assign.md), és [Figyelje annak állapotát](device-profile-monitor.md).
 
-## <a name="more-resources"></a>További források
-
-[Wi-Fi-beállítások áttekintése](wi-fi-settings-configure.md), beleértve a többi rendelkezésre álló platformot is.
+Wi-Fi-beállítások konfigurálása [Android](wi-fi-settings-android.md), [Android Enterprise](wi-fi-settings-android-enterprise.md), [MacOS](wi-fi-settings-macos.md)és [Windows 10 rendszerű](wi-fi-settings-windows.md) eszközökön.

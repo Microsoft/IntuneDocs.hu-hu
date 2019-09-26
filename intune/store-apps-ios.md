@@ -1,14 +1,13 @@
 ---
 title: iOS-es áruházbeli alkalmazások hozzáadása a Microsoft Intune-hoz
 titleSuffix: ''
-description: Útmutató iOS-es áruházbeli alkalmazások a Microsoft Intune-ba való hozzáadásához. Ezt a módszert használja, ha az alkalmazásokat az App Store ingyenesen elérhető alkalmazásokat rendelhet.
+description: Útmutató iOS-es áruházbeli alkalmazások a Microsoft Intune-ba való hozzáadásához. Ezzel a módszerrel rendelhet alkalmazásokat, ha az alkalmazások díjmentesek az App Store-ban.
 keywords: Intune
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 12/19/2018
+ms.date: 08/27/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 454000ccc7ac2d6f531b5ab43bb7652541559992
-ms.sourcegitcommit: 1cae690ca2ac6cc97bbcdf656f54b31878297ae8
+ms.openlocfilehash: 40bb5e1b14fa0c8c9b1af4e5a07e6a855808324a
+ms.sourcegitcommit: 6c74ff568267d85fd1d44fda75e3e24ead87cb2b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59896116"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "71303121"
 ---
 # <a name="add-ios-store-apps-to-microsoft-intune"></a>iOS-es áruházbeli alkalmazások hozzáadása a Microsoft Intune-hoz
 
@@ -41,34 +40,32 @@ Ezzel az eljárással csak az áruházban ingyenesen elérhető alkalmazások ho
 >[!NOTE]
 >A Microsoft Intune használatához javasoljuk, hogy a Microsoft Edge vagy a Google Chrome böngészőt használja.
 
-1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com).
-2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget.  
-    Az Intune a **Figyelés + felügyelet** szakaszban található.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** ablaktáblán válassza az **Ügyfélalkalmazások** lehetőséget.
 4. Az **Ügyfélalkalmazások** tevékenységprofil panelén a **Kezelés** szakaszban válassza az **Alkalmazások** lehetőséget.
 5. Az **Alkalmazások** panelen válassza a **Hozzáadás** lehetőséget.
 6. Az **Alkalmazás típusa** lista **Áruházbeli alkalmazás** területén válassza az **iOS** lehetőséget.
 7. Válassza a **Keresés az App Store-ban** lehetőséget.
-8. A **Keresés az App Store-ban** panelen válassza ki az App Store országkódját.
+8. A **Keresés az App Store** -ban panelen válassza ki az App Store ország/régió területi beállítást.
 9. Írja be a **Keresés** mezőbe az alkalmazás nevét (vagy a név egy részét).  
     Az Intune ekkor rákeres arra az áruházban, és a kapott eredmények listáját adja vissza.
 10. Az eredmények listájában válassza ki a kívánt alkalmazást, majd válassza a **Kiválasztás** lehetőséget.
 11. Az alkalmazás konfigurálásához az **Alkalmazás hozzáadása** panelen válassza az **Alkalmazás adatai** elemet.
 12. Az **Alkalmazásadatok** panelen adja meg az alkalmazás adatait. A választott alkalmazástól függően előfordulhat, hogy egyes értékek automatikusan ki vannak töltve a panelen:
-    - **Név**: Adja meg az alkalmazás nevét, mivel a vállalati portálon megjeleníteni kívánt. Gondoskodjon róla, hogy az alkalmazás neve egyedi legyen. Ha két alkalmazás neve megegyezik, a felhasználók csak az egyik alkalmazást fogják látni a céges portálon.
+    - **Név**: Adja meg az alkalmazásnak a vállalati portálon megjelenítendő nevét. Gondoskodjon róla, hogy az alkalmazás neve egyedi legyen. Ha két alkalmazás neve megegyezik, a felhasználók csak az egyik alkalmazást fogják látni a céges portálon.
     - **Description** (Leírás): Adja meg az alkalmazás leírását. A leírás a céges portálon jelenik meg a felhasználók számára.
     - **Közzétevő**: Itt adhatja meg az alkalmazás kiadójának nevét.
-    - **Alkalmazásáruház URL-címe**: Adja meg a létrehozni kívánt alkalmazás App Store URL-CÍMÉT.
-    - **Az operációs rendszer minimális**: A listában válassza ki a legkorábbi operációs rendszer verziója, amelyen az alkalmazás telepíthető. Ha az alkalmazást régebbi operációs rendszerrel rendelkező eszközhöz rendelik hozzá, akkor nem lesz telepítve.
-    - **Alkalmazható eszköztípus**: A listában válassza ki az alkalmazás által használt eszközöket.
-    - **Kategória**: Kiválaszthat egy vagy több, a beépített Alkalmazáskategóriák vagy egy létrehozott kategóriát is. Ezzel megkönnyítheti a felhasználók számára az alkalmazás megkeresését a céges portálon való böngészés során.
-    - **Megjelenítés kiemelt alkalmazásként a céges portálon**: Válassza ki ezt a beállítást, az alkalmazáscsomag hangsúlyosan jelenítheti fő lapján, a céges portál főoldalán alkalmazásokat kereső felhasználók számára.
+    - **AppStore URL-cím**: Írja be a létrehozni kívánt alkalmazás alkalmazás-áruházbeli URL-címét.
+    - **Minimális operációs rendszer**: A listából válassza ki az operációs rendszer legkorábbi verzióját, amelyre az alkalmazás telepíthető. Ha az alkalmazást régebbi operációs rendszerrel rendelkező eszközhöz rendelik hozzá, akkor nem lesz telepítve.
+    - **Alkalmazható eszköz típusa**: A listából válassza ki az alkalmazás által használt eszközöket.
+    - **Kategória**: Szükség esetén kiválaszthat egy vagy több beépített alkalmazás-kategóriát vagy egy Ön által létrehozott kategóriát is. Ezzel megkönnyítheti a felhasználók számára az alkalmazás megkeresését a céges portálon való böngészés során.
+    - **Megjelenítés Kiemelt alkalmazásként a céges portálban**: Ezzel a beállítással Kiemelt módon jelenítheti meg az App Suite-t a vállalati portál főoldalán, amikor a felhasználók megkeresik az alkalmazásokat.
     - **Információs URL-cím**: Nem kötelező: megadhatja az alkalmazással kapcsolatos információkat tartalmazó webhely URL-címét. Ez az URL-cím jelenik meg a felhasználók számára a céges portálon.
-    - **Adatvédelmi URL-címe**: Nem kötelező: megadhatja az alkalmazás adatvédelmi nyilatkozatát tartalmazó webhely URL-címét. Ez az URL-cím jelenik meg a felhasználók számára a céges portálon.
-    - **Fejlesztői**: Megadhatja az alkalmazás fejlesztőjének nevét. Ez a mező csak a rendszergazdák számára látható, a felhasználók számára nem.
-    - **Tulajdonos**: Szükség esetén adja meg például az alkalmazás tulajdonosának nevét *HR részleg*. Ez a mező csak a rendszergazdák számára látható, a felhasználók számára nem.
-    - **Megjegyzések**: Megadhatja, hogy az alkalmazáshoz társítani kívánt megjegyzéseket. Ez a mező csak rendszergazdáknak jelenik meg, a végfelhasználók nem láthatják.
-    - **Embléma**: Szükség esetén töltse fel az alkalmazáshoz hozzárendelni kívánt ikont. Ez az alkalmazásikon jelenik meg a céges portálon böngésző felhasználók számára.
+    - **Adatvédelmi URL-cím**: Nem kötelező: megadhatja az alkalmazás adatvédelmi nyilatkozatát tartalmazó webhely URL-címét. Ez az URL-cím jelenik meg a felhasználók számára a céges portálon.
+    - **Fejlesztő**: Igény szerint megadhatja az alkalmazás-fejlesztő nevét. Ez a mező csak a rendszergazdák számára látható, a felhasználók számára nem.
+    - **Tulajdonos**: Igény szerint megadhatja az alkalmazás tulajdonosának nevét (például *HR-osztály*). Ez a mező csak a rendszergazdák számára látható, a felhasználók számára nem.
+    - **Megjegyzések**: Igény szerint megadhatja az alkalmazáshoz társítandó megjegyzéseket. Ez a mező csak rendszergazdáknak jelenik meg, a végfelhasználók nem láthatják.
+    - **Embléma**: Igény szerint feltöltheti az alkalmazáshoz hozzárendelni kívánt ikont is. Ez az alkalmazásikon jelenik meg a céges portálon böngésző felhasználók számára.
 13. Kattintson az **OK** gombra.
 14. Válassza a **Hozzáadás** lehetőséget.
 

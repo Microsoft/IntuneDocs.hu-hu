@@ -1,134 +1,124 @@
 ---
-title: Feltételes Exchange-hozzáférési szabályzat létrehozása
+title: Exchange feltételes hozzáférési szabályzat létrehozása
 titleSuffix: Microsoft Intune
-description: Feltételes hozzáférési szabályzat konfigurálása a helyszíni Exchange-hez és régi Dedikált Exchange Online-hoz az Intune-nal.
+description: Feltételes hozzáférés konfigurálása a helyszíni Exchange-hez és az örökölt dedikált Exchange Online-hoz az Intune-ban.
 keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 04/15/2019
+ms.date: 09/19/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 127dafcb-3f30-4745-a561-f62c9f095907
+ms.reviewer: stama
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 003e6e5aa78440861e6aff5be138c4a302171c1b
-ms.sourcegitcommit: a2cd14c30949cef17bfc6576513e7660a8015669
+ms.openlocfilehash: 0b53f3dc338f543468984df362b22f6b88ee5c53
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59571739"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71304061"
 ---
-# <a name="create-a-conditional-access-policy-for-exchange-on-premises-and-legacy-exchange-online-dedicated"></a>Feltételes hozzáférési szabályzat létrehozása a helyszíni Exchange-hez és régi Dedikált Exchange Online-hoz
+# <a name="create-a-conditional-access-policy-for-exchange-on-premises-and-legacy-exchange-online-dedicated"></a>Feltételes hozzáférési szabályzat létrehozása a helyszíni Exchange-hez és az örökölt dedikált Exchange Online-hoz
 
 [!INCLUDE [azure_portal](./includes/azure_portal.md)]
 
-A cikk azt mutatja be, hogyan konfigurálható az eszközök megfelelősége alapján feltételes hozzáférés a helyszíni Exchange-hez.
+Ez a cikk bemutatja, hogyan konfigurálhatja a feltételes hozzáférést a helyszíni Exchange-hez az eszközök megfelelősége alapján.
 
-Ha dedikált Exchange Online-környezettel rendelkezik, és szeretné tudni, hogy az új vagy az örökölt konfiguráció tartozik-e hozzá, lépjen kapcsolatba a fiókkezelővel. A helyszíni Exchange-hez vagy az örökölt dedikált Exchange Online környezethez való e-mail hozzáférés szabályozásához az Intune-ban konfiguráljon feltételes hozzáférést a helyszíni Exchange-hez.
+Ha dedikált Exchange Online-környezettel rendelkezik, és szeretné tudni, hogy az új vagy az örökölt konfiguráció tartozik-e hozzá, lépjen kapcsolatba a fiókkezelővel. A helyszíni Exchange-hez vagy az örökölt dedikált Exchange Online-környezethez való e-mail-hozzáférés szabályozásához konfigurálja a feltételes hozzáférést a helyszíni Exchange-hez az Intune-ban.
 
 ## <a name="before-you-begin"></a>Előkészületek
 
-Mielőtt konfigurálja a feltételes hozzáférést, ellenőrizze a következőket:
+A feltételes hozzáférés konfigurálása előtt ellenőrizze, hogy a következő konfigurációk léteznek-e:
 
-- Az Exchange esetében **Exchange 2010 SP1 vagy újabb verzió** szükséges. Az Exchange-kiszolgáló ügyfél-hozzáférési kiszolgálótömbje (CAS) nem támogatott.
+- Exchange-verziója: **exchange 2010 SP1 vagy újabb**. Az Exchange-kiszolgáló ügyfél-hozzáférési kiszolgálótömbje (CAS) nem támogatott.
 
-- Az [Exchange Active Sync helyszíni Exchange-összekötőt](exchange-connector-install.md) kell használni, amely összekapcsolja az Intune-t a helyszíni Exchange-dzsel.
+- Telepítette és használja a [Exchange Active Sync helyszíni Exchange Connectort](exchange-connector-install.md), amely összeköti az Intune-t a helyszíni Exchange-hez.
 
-    >[!IMPORTANT]
-    >Az Exchange-összekötő az Intune-bérlőjéhez tartozik, és semmilyen más bérlővel nem használható. Az Intune mostantól egy előfizetésben több helyszíni Exchange-összekötőt is támogat. Ha a cég egynél több helyszíni Exchange-összekötővel rendelkezik, minden Exchange-szervezet részére külön összekötőt építhet ki.
+    >[!IMPORTANT]  
+    >Az Intune egy előfizetésben több helyszíni Exchange-összekötőt is támogat.  A helyszíni Exchange Connector azonban egyetlen Intune-bérlőre vonatkozik, és más Bérlővel nem használható.  Ha a cége egynél több helyszíni Exchange-összekötővel rendelkezik, minden Exchange-szervezet részére külön összekötőt építhet ki.
 
-- A helyszíni Exchange-szervezet összekötője bármely gépen telepíthető, amennyiben az képes az Exchange-kiszolgálóval való kommunikációra.
+- A helyszíni Exchange-szervezet összekötője bármely gépen telepíthető, feltéve, hogy a gép kommunikálni tud az Exchange-kiszolgálóval.
 
-- Ez az összekötő támogatja az **Exchange CAS-környezetet**. Ha szeretné, technikailag az is megoldható, hogy közvetlenül az Exchange CAS-kiszolgálóra telepítse az összetevőt, ez azonban nem javasolt, mert növeli a kiszolgálót érő terhelést. Az összekötőt úgy kell konfigurálni, hogy az kommunikáljon az Exchange CAS-kiszolgálók valamelyikével.
+- Ez az összekötő támogatja az **Exchange CAS-környezetet**. Az Intune lehetővé teszi, hogy közvetlenül az Exchange CAS-kiszolgálóra telepítse az összekötőt, de javasoljuk, hogy az összekötő további betöltése miatt telepítse azt egy külön számítógépre. Az összekötőt úgy kell konfigurálni, hogy az kommunikáljon az Exchange CAS-kiszolgálók valamelyikével.
 
 - Az **Exchange ActiveSync** tanúsítványalapú hitelesítéssel vagy felhasználó által megadott hitelesítő adatokkal konfigurálandó.
 
-- Amikor feltételes hozzáférési szabályzatokat konfigurál és rendel hozzá felhasználókhoz, a felhasználók csak akkor csatlakozhatnak az e-mail fiókjukhoz, ha a használt **eszköz**:
-    - **Regisztrálva** van az Intune-ban, vagy olyan számítógép, amely csatlakoztatva van egy tartományhoz.
-    - **Regisztrálva van az Azure Active Directoryban**. Ezenkívül az ügyfél Exchange ActiveSync-azonosítójának regisztrálva kell lennie az Azure Active Directoryban.
-<br></br>
-- Az Azure AD eszközregisztrációs szolgáltatása (DRS) automatikusan aktiválódik az Intune-t és az Office 365-öt használó ügyfelek számára. Azon ügyfelek számára, akik már telepítették az ADFS eszközregisztrációs szolgáltatását, nem láthatók a regisztrált eszközök a helyszíni Active Directoryban. **Ez nem érvényes a Windows rendszerű számítógépekre és a Windows Phone-eszközökre**.
+- Ha a feltételes hozzáférési szabályzatok konfigurálva vannak és egy felhasználóhoz vannak rendelve, mielőtt egy felhasználó csatlakozni tud az e-mailhez, az általa használt **eszköznek** a következőnek kell lennie:
+  - **Regisztrálva** van az Intune-ban, vagy olyan számítógép, amely csatlakoztatva van egy tartományhoz.
+  - **Regisztrálva van az Azure Active Directoryban**. Ezenkívül az ügyfél Exchange ActiveSync-azonosítójának regisztrálva kell lennie az Azure Active Directoryban.
+
+- Az Azure AD eszközregisztrációs szolgáltatása (DRS) automatikusan aktiválódik az Intune-t és az Office 365-öt használó ügyfelek számára. Azok az ügyfelek, akik már telepítették az ADFS-eszköz regisztrációs szolgáltatását, nem látják a regisztrált eszközöket a helyszíni Active Directoryban. **Ez nem érvényes a Windows rendszerű számítógépekre és a Windows Phone-eszközökre**.
 
 - **Meg kell felelnie** az eszközre telepített összes megfelelőségi szabályzatnak.
 
-- Ha az eszköz nem felel meg a feltételes hozzáférés beállításainak, a felhasználó a következő üzenetek valamelyikét kapja bejelentkezéskor:
-    - Ha az eszköz nincs regisztrálva az Intune-ban vagy az Azure Active Directoryban, megjelenik egy üzenet, amely leírja, hogyan kell telepíteni a Munkahelyi portál alkalmazást, regisztrálni az eszközt és aktiválni az e-mailt. Ez a folyamat hozzárendeli az eszköz Exchange ActiveSync-azonosítóját is az Azure Active Directoryban lévő eszközrekordhoz.
-    - Ha az eszköz nem felel meg a feltételeknek, egy üzenet jelenik meg, amely a felhasználót az Intune Munkahelyi portál webhelyére vagy a Munkahelyi portál alkalmazásba irányítja, ahol további információt talál a problémáról és megoldásáról.
+- Ha az eszköz nem felel meg a feltételes hozzáférési beállításoknak, a felhasználó a következő üzenetek egyikével jelenik meg a bejelentkezéskor:
+  - Ha az eszköz nincs regisztrálva az Intune-ban, vagy nincs regisztrálva a Azure Active Directoryban, egy üzenet jelenik meg, amely bemutatja, hogyan kell telepíteni a Céges portál alkalmazást, regisztrálni az eszközt és aktiválni az e-mailt. Ez a folyamat hozzárendeli az eszköz Exchange ActiveSync-azonosítóját is az Azure Active Directoryban lévő eszközrekordhoz.
+  - Ha az eszköz nem megfelelő, egy üzenet jelenik meg, amely a felhasználót a Intune Céges portál webhelyre vagy a Céges portál alkalmazásba irányítja, ahol információt talál a problémáról és annak megoldásáról.
 
 ### <a name="support-for-mobile-devices"></a>A mobileszközök támogatása
 
 - Windows Phone 8.1 és újabb verziók
 - Natív e-mail alkalmazás iOS rendszerű eszközökön.
 - EAS levelezési ügyfélprogramok, mint például a Gmail az Android 4-es vagy újabb verzióiban.
-- EAS levelezési ügyfélprogramok **Android munkahelyi profilos eszközök:** Csak **Gmail** és **Nine Work Android Enterprise** a a **munkahelyi profil** Android munkahelyi profilos eszközök támogatottak. Ahhoz, hogy a feltételes hozzáférés működjön az androidos munkahelyi profilos eszközökön, telepíteni kell egy e-mail-profilt a Gmail vagy a Nine Work for Android Enterprise alkalmazáshoz, és ezeket az alkalmazásokat kötelező telepítésként kell központilag telepíteni.
+- EAS levelezési ügyfélprogramok **androidos munkahelyi profil eszközei:** A **munkahelyi profilban** csak a **Gmail** és a **Nine work for Android Enterprise** használható androidos munkahelyi Profilos eszközökön. Az androidos munkahelyi profilokkal végzett feltételes hozzáféréshez telepítenie kell egy e-mail-profilt a Gmail vagy a Nine work for Android Enterprise alkalmazáshoz, és ezeket az alkalmazásokat kötelező telepítésként is telepítenie kell.
 
 > [!NOTE]
-> A Microsoft Outlook Androidra és IOS-es nem támogatott az Exchange helyszíni összekötő keresztül. Ha szeretné kihasználni az Azure Active Directory feltételes hozzáférési szabályzatok és az Intune alkalmazásvédelmi szabályzatok IOS rendszerhez készült Outlook és a helyileg üzemeltetett postaládák esetében az Android, tekintse meg [használata hibrid IOS rendszerhez készült Outlook Modern hitelesítést és Android](https://docs.microsoft.com/Exchange/clients/outlook-for-ios-and-android/use-hybrid-modern-auth). 
+> Az Android és az iOS rendszerhez készült Microsoft Outlook nem támogatott a helyszíni Exchange-összekötőn keresztül. Ha szeretné kihasználni Azure Active Directory feltételes hozzáférési szabályzatokat, és Intune App Protection szabályzatokat az iOS-hez és az Androidhoz készült Outlook használatával a helyszíni postaládákhoz, tekintse meg a [hibrid modern hitelesítés használata az Outlookban iOS és Android](https://docs.microsoft.com/Exchange/clients/outlook-for-ios-and-android/use-hybrid-modern-auth) rendszerhez című témakört. . 
 
 ### <a name="support-for-pcs"></a>Számítógépek támogatása
 
-A natív **Posta** alkalmazás a Windows 8.1-es és újabb verzióiban (az Intune-ban regisztrálva)
-
+A natív **posta** alkalmazás a Windows 8,1-es és újabb verzióiban (ha a Mdm-be az Intune-nal regisztrálták)
 
 ## <a name="configure-exchange-on-premises-access"></a>A helyszíni Exchange-hozzáférés konfigurálása
 
-1. Az [Azure Portalon](https://portal.azure.com/) jelentkezzen be az Intune-os hitelesítő adataival.
+Mielőtt az alábbi eljárást használja a helyszíni Exchange-hozzáférés beállításához, telepítenie és konfigurálnia kell legalább egy Intune helyszíni Exchange [Connectort](exchange-connector-install.md) a helyszíni Exchange-hez.
 
-2. Lépjen a **Intune** > **Exchange-hozzáférés**, majd válassza ki **a helyszíni Exchange-hozzáférés**. 
+1. Bejelentkezés az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba
 
-3. Az a **a helyszíni Exchange-hozzáférés** panelen válassza a **Igen** való *engedélyezése a helyszíni Exchange-hozzáférés-vezérlés*.
+2. Lépjen az **Exchange-hozzáférés**elemre, majd válassza **a helyszíni Exchange-hozzáférés**lehetőséget. 
 
-4. Válassza a bal oldali menü **Minden szolgáltatás** pontját, majd írja be a szűrő szövegmezőbe az **Intune** nevet.
+3. A helyszíni Exchange- **hozzáférés** panel **Igen** elemét választva engedélyezheti a helyszíni *Exchange-hozzáférés-vezérlést*.
 
-5. Az **Intune** kiválasztásával megjelenik az **Intune irányítópultja**.
+4. A **hozzárendelés**területen válassza **a csoportok kiválasztása a belefoglaláshoz**lehetőséget, majd válasszon ki egy vagy több csoportot a hozzáférés konfigurálásához. 
 
-6. Válassza a **Helyszíni hozzáférés** lehetőséget. A **Helyszíni hozzáférés** panelen látható a feltételes hozzáférési szabályzat állapota, és az, hogy mely eszközökre van hatással.
+   A kiválasztott csoportok tagjai a feltételes hozzáférési szabályzattal rendelkeznek a helyszíni Exchange-hozzáféréshez. A szabályzatot fogadó felhasználóknak regisztrálniuk kell az eszközeiket az Intune-ban, és meg kell felelniük a megfelelőségi profiloknak ahhoz, hogy hozzáférhessenek a helyszíni Exchange-hez.
 
-7. Válassza a **Kezelés** terület **Helyszíni Exchange-hozzáférés** elemét.
+5. A csoportok kizárásához válassza a **kizárni kívánt csoportok kiválasztása**lehetőséget, majd válasszon ki egy vagy több olyan csoportot, amely mentesül az eszközök regisztrálására vonatkozó követelmények alól, és a helyszíni Exchange-hez való hozzáférés előtt meg kell felelnie a megfelelőségi profiloknak. 
 
-8. Engedélyezze a helyszíni Exchange hozzáférés-vezérlését az **Helyszíni Exchange-hozzáférés** panel **Igen** elemét választva.
+6. Ezután konfigurálja a helyszíni Intune Exchange Connector beállításait.  Az **Exchange-hozzáférés ablaktáblán**válassza az **Exchange ActiveSync helyszíni összekötő** lehetőséget, majd válassza ki a konfigurálni kívánt Exchange-szervezet összekötőjét.
 
-    > [!NOTE]
-    > Ha nem konfigurált Exchange Active Sync helyszíni összekötőt, ez a beállítás nem érhető el.  Először telepítenie és konfigurálnia kell legalább egy összekötőt, és csak azt követően aktiválhatja a feltételes hozzáférést a helyszíni Exchange-hez. További részletek [A helyszíni Intune Exchange Connector telepítése](exchange-connector-install.md) című cikkben olvashatók.
+7. A **Beállítások**területen válassza a **felhasználói értesítések** lehetőséget a felhasználóknak küldött alapértelmezett e-mail-üzenet módosításához, ha az eszköz nem megfelelő, és szeretné elérni a helyszíni Exchange-t. Az üzenetsablon egy jelölőnyelvet használ.  Amint beírja az üzenetet, azt is követheti, hogy mit fog látni a címzett.
+   > [!TIP]
+   > A jelölőnyelvekről ez a [Wikipedia-cikk](https://en.wikipedia.org/wiki/Markup_language) nyújt tájékoztatást.
+ 
+   A módosítások mentéséhez kattintson **az OK gombra** , hogy elvégezze a helyszíni Exchange-hozzáférés konfigurálását.
 
-9. A **Hozzárendelés** beállításnál válassza a **Tartalmazott csoportok** lehetőséget.  Használja azt a biztonsági felhasználócsoportot, amelynek feltételes hozzáférést szeretne előírni. Ez a művelet megköveteli a felhasználóktól, hogy regisztrálják az eszközüket az Intune-ban, és megfeleljenek a megfelelőségi profiloknak.
+8. Ezután válassza a **speciális Exchange Active Sync hozzáférési beállítások** elemet a *speciális Exchange ActiveSync hozzáférési beállítások* panel megnyitásához, ahol az eszköz-hozzáférési szabályokat konfigurálhatja:  
 
-10. Ha ki szeretne zárni bizonyos felhasználócsoportokat, akkor válassza a **Kizárt csoportok** lehetőséget, majd egy olyan felhasználócsoportot, amelyet mentesíteni szeretne a kötelező eszközregisztráció és a feltételeknek való megfelelés alól.
+   - A nem **felügyelt eszközök hozzáféréséhez**állítsa be a globális alapértelmezett szabályt a hozzáféréshez a feltételes hozzáférés vagy más szabályok által nem érintett eszközökről:
 
-11. Válassza a **Beállítások** terület **Felhasználói értesítések** elemét, és módosítsa az alapértelmezett e-mail szövegét. Ezt az üzenetet küldi el a rendszer a felhasználóknak, ha egy a feltételeknek nem megfelelő eszközzel próbálják meg elérni a helyszíni Exchange-et. Az üzenetsablon egy jelölőnyelvet használ.  Amint beírja az üzenetet, azt is követheti, hogy mit fog látni a címzett.
-    > [!TIP]
-    > A jelölőnyelvekről ez a [Wikipedia-cikk](https://en.wikipedia.org/wiki/Markup_language) nyújt tájékoztatást.
+     - **Hozzáférés engedélyezése** – az összes eszköz azonnal hozzáférhet a helyszíni Exchange-hez. Azok az eszközök, amelyek az előző eljárásban megadott csoportokba tartozó felhasználókhoz tartoznak, le vannak tiltva, ha később kiértékelik azokat, amelyek nem felelnek meg a megfelelő szabályzatoknak, vagy nincsenek regisztrálva az Intune-ban.
 
-12. Az **Exchange ActiveSync speciális hozzáférési beállításai** panelen adja meg a következő két lépésben ismertetett módon az Intune által nem kezelt eszközökre vonatkozó alapértelmezett globális hozzáférési szabályt, illetve a platformszintű szabályokat. A Speciális beállítások panelen a beolvasásához a *Exchange-hozzáférés – helyszíni Exchange-hozzáférés* nézetben válassza *– az Exchange ActiveSync helyszíni összekötő*.
+     - **Hozzáférés letiltása** és **karanténba helyezése** – az összes eszköz azonnal le lesz tiltva a helyszíni Exchange-hez való hozzáféréshez. Azok az eszközök, amelyek az előző eljárás részeként konfigurált csoportokban lévő felhasználókhoz tartoznak, hozzáférhetnek az Intune-ban az eszköz regisztrálása után, és megfelelőnek értékelik azokat. 
 
-13. Választhat, hogy engedélyezi vagy letiltja az Exchange elérését az olyan eszközök számára, amelyekre nem vonatkoznak feltételes hozzáférési vagy egyéb szabályok.
+       A Samsung Knox standard-t *nem* futtató Android-eszközök nem támogatják ezt a beállítást, és mindig le vannak tiltva.
 
-   - Ha itt a hozzáférés engedélyezését állítja be, azonnal minden eszköz hozzáfér a helyszíni Exchange-hez.  A **Tartalmazott csoportokban** foglalt felhasználók eszközeinek hozzáférését letiltja a rendszer, ha a kiértékelés során nem felelnek meg a megfelelőségi szabályzatoknak, vagy nincsenek regisztrálva az Intune-ban.
-   - Ha ezt a beállítást a hozzáférés letiltására állítja be, akkor a rendszer kezdetben azonnal megakadályoz minden eszközt a helyszíni Exchange elérésében.  A **Tartalmazott csoportokban** foglalt eszközök felhasználói viszont hozzáférést kapnak, ha az eszközük regisztrálva van az Intune-ban, és a kiértékeléskor megfelel a feltételeknek. A nem Samsung Knox Standard rendszerű androidos eszközöket mindig letiltja a rendszer, mert az ilyen eszközök nem támogatják ezt a beállítást.
+   -  Az **eszközök platformjának kivételei**esetében válassza a **Hozzáadás**lehetőséget, majd adja meg a környezethez szükséges platform részleteit. 
+   
+      Ha a nem **felügyelt eszköz hozzáférésének** beállítása **blokkolva**értékre van állítva, a regisztrált és megfelelő eszközök akkor is engedélyezettek, ha a platform kivételt okoz.  
+   
+   A módosítások mentéséhez kattintson **az OK gombra** .
 
-14. Válassza az **Eszközplatform-kivételek** terület **Hozzáadás** gombját a platformok megadásához. Ha a **Nem felügyelt eszközhozzáférés** beállítása a **Letiltva** értékre van állítva, a regisztrált és a feltételeknek megfelelő eszközök akkor is hozzáférést kapnak, ha egy platformkivétel letiltja őket. Mentse a beállításokat az **OK** gombra kattintva.
+9. Válassza a **Mentés** lehetőséget az Exchange feltételes hozzáférési szabályzatának mentéséhez.
 
-15. Mentse a feltételes hozzáférési szabályzatot a **Helyszíni** panel **Mentés** gombjára kattintva.
-
-## <a name="create-azure-ad-conditional-access-policies-in-intune"></a>Azure AD feltételes hozzáférési szabályzatok létrehozása az Intune-ban
-
-A feltételes hozzáférés az Azure Active Directory (Azure AD) technológiája. Az *Intune-ból* elérhető feltételes hozzáférési csomópont ugyanaz a csomópont, amelyet az *Azure AD-ből* is el lehet érni.  
-
-> [!IMPORTANT]
-> Ahhoz, hogy Azure AD feltételes hozzáférési szabályzatokat hozhasson létre az Intune Azure Portal webhelyen, Azure AD Premium szintű előfizetésre van szükség.
-
-### <a name="to-create-a-conditional-access-policy"></a>Egy feltételes hozzáférési szabályzat létrehozása
-
-1. Az a **Intune irányítópult**válassza **feltételes hozzáférési**.
-
-2. Az a **házirendek** ablaktáblán válassza előbb **új szabályzat** hozhat létre az új Azure AD feltételes hozzáférési szabályzat.
+Ezután hozzon létre egy megfelelőségi szabályzatot, és rendelje hozzá a felhasználókhoz az Intune-nal a mobileszközök kiértékeléséhez lásd: [az eszközök megfelelőségének megkezdése](device-compliance-get-started.md).
 
 ## <a name="see-also"></a>Lásd még:
 
-[Feltételes hozzáférés az Azure Active Directoryban](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access)
+[A helyszíni Intune Exchange Connector hibaelhárítása Microsoft Intune](https://support.microsoft.com/help/4471887)

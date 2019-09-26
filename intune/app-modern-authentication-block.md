@@ -1,13 +1,12 @@
 ---
 title: Modern hitelesítés nélküli alkalmazások blokkolása az Intune-ban
 titleSuffix: Microsoft Intune
-description: Tudnivalók az alkalmazások és modern authentication (ADAL) a Microsoft Intune-nal.
+description: Ismerkedjen meg az alkalmazásokkal és a modern hitelesítéssel (ADAL) Microsoft Intune használatával.
 keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 04/03/2019
-ms.prod: ''
+ms.date: 08/15/2019
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.topic: conceptual
@@ -18,30 +17,30 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ca96f36f8813d80c7ebb07bfb3bd65f8aa0b392
-ms.sourcegitcommit: 1cae690ca2ac6cc97bbcdf656f54b31878297ae8
+ms.openlocfilehash: 37f2eec82c0d7ada146e8b17738cff577661e4af
+ms.sourcegitcommit: 5968a38c302394d4b0cf81156e7b52531cdec107
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59897306"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71304274"
 ---
-# <a name="block-apps-that-dont-use-modern-authentication-adal"></a>Nem modern authentication (ADAL) használó alkalmazások letiltása
+# <a name="block-apps-that-dont-use-modern-authentication-adal"></a>Modern hitelesítést nem használó alkalmazások blokkolása (ADAL)
 
 [!INCLUDE [azure_portal](./includes/azure_portal.md)]
 
-Alkalmazásalapú feltételes hozzáférés az alkalmazásvédelmi szabályzatokkal védett alkalmazások használatával támaszkodjon [modern hitelesítést](https://support.office.com/article/Using-Office-365-modern-authentication-with-Office-clients-776c0036-66fd-41cb-8928-5495c0f9168a), azaz az OAuth2 implementációja. A legújabb Office asztali és mobil alkalmazások modern hitelesítést használnak. Előfordulhatnak azonban olyan harmadik féltől származó alkalmazások és régebbi Office-alkalmazások, hogy a felhasználó más hitelesítési módszerek, például alapszintű, vagy űrlap alapú hitelesítéssel.
+Az alkalmazás-alapú feltételes hozzáférés az App Protection-szabályzatokkal a [modern hitelesítést](https://support.office.com/article/Using-Office-365-modern-authentication-with-Office-clients-776c0036-66fd-41cb-8928-5495c0f9168a)használó alkalmazásokra támaszkodik, amely a OAuth2 implementációja. A legtöbb aktuális Office mobil-és asztali alkalmazás modern hitelesítést használ. Vannak azonban olyan harmadik féltől származó alkalmazások és régebbi Office-alkalmazások, amelyek más hitelesítési módszereket használnak, például az alapszintű hitelesítéshez és az űrlapalapú hitelesítéshez.
 
-## <a name="block-access-to-apps"></a>Alkalmazások elérésének blokkolása
+## <a name="block-access-to-apps"></a>Alkalmazások elérésének letiltása
 
-Letiltja a nem modern hitelesítést használó alkalmazásokhoz való hozzáférés, használja az Intune alkalmazásvédelmi szabályzatai feltétel hozzáférés megvalósításához. További információkért lásd: [alkalmazásalapú feltételes hozzáférés Intune-nal](app-based-conditional-access-intune.md).
+A modern hitelesítést nem használó alkalmazásokhoz való hozzáférés blokkolásához használja az Intune app Protection-szabályzatokat a feltételek elérésének megvalósításához. További információ: [app-based feltételes hozzáférés az Intune](app-based-conditional-access-intune.md)-nal.
 
 ## <a name="additional-information"></a>További információ
 
-Azure AD feltételes hozzáférésével kapcsolatos további információkért lásd a következő témaköröket:
-- [Mi az az Azure Active Directory feltételes hozzáférés?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-- [Alkalmazásalapú feltételes hozzáférés működése](app-based-conditional-access-intune.md#how-app-based-conditional-access-works)
-- [Az Azure Active Directory feltételes hozzáférés beállítása a SharePoint Online és Exchange online-hoz](https://docs.microsoft.com/azure/active-directory/conditional-access/conditional-access-for-exo-and-spo)
+Az Azure AD feltételes hozzáférésével kapcsolatos további információkért tekintse meg a következő témaköröket:
+- [Mi a feltételes hozzáférés a Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Az alkalmazás-alapú feltételes hozzáférés működése](app-based-conditional-access-intune.md#how-app-based-conditional-access-works)
+- [A SharePoint Online és az Exchange Online beállítása Azure Active Directory feltételes hozzáféréshez](https://docs.microsoft.com/azure/active-directory/conditional-access/conditional-access-for-exo-and-spo)
 
 ## <a name="next-steps"></a>További lépések
 
-- [Alkalmazásalapú feltételes hozzáférés az Intune-nal](app-based-conditional-access-intune.md)
+- [Alkalmazás-alapú feltételes hozzáférés az Intune-nal](app-based-conditional-access-intune.md)

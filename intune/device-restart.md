@@ -7,7 +7,6 @@ ms.author: erikje
 manager: dougeby
 ms.date: 03/21/2018
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -16,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1602288939c8ea2b044f09245230c67d00dc896c
-ms.sourcegitcommit: 25e6aa3bfce58ce8d9f8c054bc338cc3dff4a78b
+ms.openlocfilehash: 446f952e9a891406b9307f1ebbef85d96c4e9690
+ms.sourcegitcommit: 74911a263944f2dbd9b754415ccda6c68dae0759
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57392615"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71303350"
 ---
 # <a name="remotely-restart-devices-with-intune"></a>Az eszközök távoli újraindítása az Intune-nal
 
@@ -34,7 +33,7 @@ Az **újraindítási** eszközművelettel a kiválasztott eszköz újraindíthat
 
 - Windows – A Windows 8.1-es és újabb verziói esetén támogatott
 - Windows Phone – A Windows Phone 8.1-es és újabb verziói esetén támogatott
-- Androidos teljes képernyős eszközökhöz – az Android 7.0-s és újabb verzióiban támogatott
+- Androidos kioszk-eszközök – az Android 7,0-es és újabb verzióiban támogatott
 - iOS – támogatott
 
     > [!Note]  
@@ -44,8 +43,7 @@ Az **újraindítási** eszközművelettel a kiválasztott eszköz újraindíthat
 
 ## <a name="restart-a-device"></a>Eszköz újraindítása
 
-1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com).
-2. Kattintson az **Összes szolgáltatás** lehetőségre, szűrjön az **Intune-ra**, és válassza ki a **Microsoft Intune** elemet.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Válassza az **Eszközök** > **Minden eszköz** lehetőséget.
 4. A kezelt eszközök listájában válasszon ki egy eszközt, válassza a **További** lehetőséget, majd az **Újraindítás** távoli eszközműveletet.
 

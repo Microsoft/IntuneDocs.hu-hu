@@ -1,0 +1,76 @@
+---
+title: macOS kernel-bővítmény beállításai a Microsoft Intune-Azure-ban | Microsoft Docs
+titleSuffix: ''
+description: A macOS-eszközökhöz hozzáadhat, konfigurálhat vagy hozhat létre beállításokat a kernel-bővítmények használatához. Azt is lehetővé teszi, hogy a felhasználók felülbírálják a jóváhagyott bővítményeket, engedélyezik az összes bővítményt a csoport azonosítójában, vagy engedélyezik az egyes bővítményeket vagy alkalmazásokat a Microsoft Intune.
+keywords: ''
+author: MandiOhlinger
+ms.author: mandia
+manager: dougeby
+ms.date: 09/10/2019
+ms.topic: reference
+ms.service: microsoft-intune
+ms.localizationpriority: medium
+ms.technology: ''
+ms.suite: ems
+search.appverid: MET150
+ms.custom: intune-azure
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 04fed38283a2a4623dfa838ac53b494d34629293
+ms.sourcegitcommit: c19584b36448bbd4c8638d7cab552fe9b3eb3408
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71303417"
+---
+# <a name="macos-device-settings-to-configure-and-use-kernel-extensions-in-intune"></a>macOS-eszközbeállítások a kernel-bővítmények konfigurálásához és használatához az Intune-ban
+
+[!INCLUDE [azure_portal](./includes/azure_portal.md)]
+
+Ez a cikk a macOS-eszközökön vezérelhető különböző kernel-bővítményi beállításokat sorolja fel és ismerteti. A mobileszköz-kezelési (MDM) megoldás részeként ezeket a beállításokat használhatja kernel-bővítmények hozzáadásához és kezeléséhez az eszközökön.
+
+További információ az Intune-beli kernel-bővítményekről és az előfeltételekről: [MacOS kernel-bővítmények hozzáadása](kernel-extensions-overview-macos.md).
+
+Ezek a beállítások hozzáadódnak az Intune-ban lévő eszköz konfigurációs profiljához, majd a macOS-eszközökhöz vannak rendelve vagy telepítve.
+
+## <a name="before-you-begin"></a>Előkészületek
+
+[Hozzon létre egy eszköz kernel-bővítmények konfigurációs profilt](kernel-extensions-overview-macos.md).
+
+> [!NOTE]
+> Ezek a beállítások a különböző regisztrációs típusokra vonatkoznak. A különböző regisztrációs típusokkal kapcsolatos további információkért lásd: [MacOS-regisztráció](macos-enroll.md).
+
+## <a name="kernel-extensions"></a>Kernel-bővítmények
+
+### <a name="settings-apply-to-user-approved-automated-device-enrollment"></a>A beállítások a következőkre vonatkoznak: Felhasználó által jóváhagyott, automatizált eszközök beléptetése
+
+- **Felhasználói felülbírálások engedélyezése**: **Lehetővé** teszi, hogy a felhasználók jóváhagyják a konfigurációs profilban nem szereplő kernel-bővítményeket. **Nincs konfigurálva** (alapértelmezés) megakadályozza, hogy a felhasználók a konfigurációs profilban nem szereplő bővítményeket engedélyezzenek. Ez azt jelenti, hogy csak a konfigurációs profilban szereplő bővítmények engedélyezettek.
+
+  A szolgáltatással kapcsolatos további információkért tekintse meg a [felhasználó által jóváhagyott kernel-bővítmény betöltését](https://developer.apple.com/library/archive/technotes/tn2459/_index.html) (az Apple webhelyének megnyitása).
+
+- **Engedélyezett csoport azonosítója**: Ezzel a beállítással egy vagy több csoport azonosítóját engedélyezheti. Az Ön által megadott csoport-azonosítókkal aláírt kernel-bővítmények engedélyezettek és megbízhatók. Más szóval, ezzel a beállítással engedélyezheti az összes kernel-bővítményt ugyanazon a csapat-AZONOSÍTÓn belül, amely lehet egy adott fejlesztő vagy partner.
+
+  **Adja** meg a betölteni kívánt érvényes és aláírt kernel-bővítmények csoportjának azonosítóját. Több csoport azonosítóját is hozzáadhatja. A csoport azonosítójának alfanumerikusnak (betűket és számokat) kell tartalmaznia, és 10 karakterből kell állnia. Például írja be a következőt: `ABCDE12345`.
+
+  A csoport azonosítójának hozzáadása után az is törölhető.
+
+  [A csoport azonosítójának megkeresése](https://help.apple.com/developer-account/#/dev55c3c710c) (az Apple webhelyének megnyitása) további információkat tartalmaz.
+
+- **Engedélyezett kernel-bővítmények**: Ezzel a beállítással engedélyezheti a megadott kernel-bővítményeket. Csak a megadott kernel-bővítmények engedélyezettek vagy megbízhatók. 
+
+  **Adja hozzá** a betölteni kívánt kernel-bővítmény köteg-azonosítóját és csoportjának azonosítóját. Aláíratlan örökölt kernel-bővítmények esetén használjon üres csapat-azonosítót. Több kernel-bővítményt is hozzáadhat. A csoport azonosítójának alfanumerikusnak (betűket és számokat) kell tartalmaznia, és 10 karakterből kell állnia. Adja meg `com.contoso.appname.macos` például a **csomag azonosítóját**és `ABCDE12345` a **csoport azonosítóját**.
+
+  > [!TIP]
+  > Ha egy macOS-eszközön szeretné lekérni a kernel-bővítmény (kext) köteg-AZONOSÍTÓját, a következőket teheti:
+  >
+  > 1. A terminálban futtassa a `kextstat | grep -v com.apple`parancsot, és jegyezze fel a kimenetet. Telepítse a kívánt szoftvert vagy kext. Futtassa `kextstat | grep -v com.apple` újra a parancsot, és keresse meg a módosításokat.
+  >
+  >    A terminálban `kextstat` az operációs rendszer összes kernel-bővítményét listázza. 
+  >
+  > 2. Az eszközön nyissa meg a kext információs tulajdonságának listáját (info. plist). Megjelenik a köteg azonosítója. Minden kext tartalmaz egy info. plist fájlt, amely belül tárolva van. 
+
+> [!NOTE]
+> Nem kell felvennie a csoport azonosítóit és a kernel-bővítményeket. Az egyiket vagy a másikat is konfigurálhatja.
+
+## <a name="next-steps"></a>További lépések
+
+[Rendelje hozzá a profilt](device-profile-assign.md), és [kövesse nyomon az állapotát](device-profile-monitor.md).

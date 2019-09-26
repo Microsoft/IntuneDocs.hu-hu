@@ -1,5 +1,5 @@
 ---
-title: Feltételes hozzáférés a Microsoft Intune-nal
+title: Feltételes hozzáférés Microsoft Intune
 titleSuffix: Microsoft Intune
 description: Útmutató a felhasználókra, eszközökre és alkalmazásokra vonatkozó feltételek meghatározásához a vállalati adatok eléréséhez a Microsoft Intune-ban.
 keywords: ''
@@ -8,7 +8,6 @@ ms.author: brenduns
 manager: dougeby
 ms.date: 03/06/2018
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -17,18 +16,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a06bcd27778885d69c2122b2b68e53eb6f319a34
-ms.sourcegitcommit: 47eb67df69f237121f5197b2ac904a177aab5400
+ms.openlocfilehash: e9f5d0bbbb215ecf89d4b547cc59ffa6e622f0a2
+ms.sourcegitcommit: 99b74d7849fbfc8f5cf99cba33e858eeb9f537aa
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59671781"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "71304033"
 ---
-# <a name="whats-conditional-access"></a>Mi a feltételes hozzáférés?
+# <a name="learn-about-conditional-access-and-intune"></a>Tudnivalók a feltételes hozzáférésről és az Intune-ról
 
 [!INCLUDE [azure_portal](./includes/azure_portal.md)]
 
-A feltétles hozzáférés azokat a módszereket jelenti, amelyekkel vezérelheti az e-mail-fiókjához és a céges erőforrásaihoz való eszköz- és alkalmazás-hozzáférést. Ez a témakör az eszköz- és alkalmazásalapú feltételes hozzáférést ismerteti, valamint az Intune feltételes hozzáférésének gyakori használati eseteit mutatja be.
+A feltételes hozzáférés arra utal, hogy miként szabályozható az e-mailekhez és a vállalati erőforrásokhoz való kapcsolódásra jogosult eszközök és alkalmazások. Ebben a témakörben megismerheti az eszköz-és az alkalmazás-alapú feltételes hozzáférést, valamint a feltételes hozzáférés Intune-nal való használatának gyakori forgatókönyveit.
 
 Az Enterprise Mobility + Security (EMS) feltételes hozzáférése nem önálló termék, hanem olyan megoldás, amely az EMS részét képező összes szolgáltatásban és a termékben megtalálható. A részletes hozzáférés-vezérlést biztosít a vállalati adatok védelméhez, miközben olyan felhasználói felületet nyújt, amely lehetővé teszi, hogy bármely eszközről, bárhonnan a lehető leghatékonyabban dolgozhassanak a felhasználók.
 
@@ -37,32 +36,32 @@ Olyan feltételeket adhat meg, amelyek a vállalati adatokhoz való hozzáféré
 > [!NOTE] 
 > A feltételes hozzáférési funkciók kiterjednek az [Office 365-szolgáltatásokra](https://docs.microsoft.com/office365/enterprise/office-365-client-support-conditional-access) is.
 
-![A feltételes hozzáférés architekturális diagramja](./media/ca-diagram-1.png)
+![Feltételes hozzáférés építészeti diagramja](./media/ca-diagram-1.png)
 
-## <a name="conditional-access-with-intune"></a>Feltételes hozzáférés az Intune-nal
+## <a name="use-conditional-access-with-intune"></a>Feltételes hozzáférés használata az Intune-nal
 
-A feltételes hozzáférés az Azure Active Directory egyik lehetősége, amelyet a prémium szintű Azure Active Directory-licencek biztosítanak. Az Intune ezt a lehetőséget mobileszköz-megfelelőségi és mobilalkalmazás-felügyeleti megoldások hozzáadásával bővíti tovább. 
+A feltételes hozzáférés egy prémium szintű Azure Active Directory-licenc részét képező Azure Active Directory képesség. Az Intune ezt a lehetőséget mobileszköz-megfelelőségi és mobilalkalmazás-felügyeleti megoldások hozzáadásával bővíti tovább. 
 
-![Az Intune és a feltételes hozzáférés az EMS használata esetén](./media/intune-with-ca-1.png)
+![Az Intune és a feltételes hozzáférés az EMS használatakor](./media/intune-with-ca-1.png)
 
-A feltételes hozzáférés használatának szokásos módjai az Intune-nal:
+A feltételes hozzáférés Intune-nal való használatának módjai:
 
--   **Eszközalapú feltételes hozzáférés**
+- **Eszköz alapú feltételes hozzáférés**
 
-    -   Feltételes hozzáférés a helyszíni Exchange-hez
+  - Feltételes hozzáférés a helyszíni Exchange-hez
 
-    -   Hálózati hozzáférés-vezérlésen alapuló feltételes hozzáférés
+  - A hálózati hozzáférés-vezérlésen alapuló feltételes hozzáférés
 
-    -   Eszközkockázaton alapuló feltételes hozzáférés
+  - Az eszköz kockázatán alapuló feltételes hozzáférés
 
-    -   Feltételes hozzáférés Windows rendszerű számítógépeken
+  - Feltételes hozzáférés Windows rendszerű számítógépekhez
 
-        -   Céges tulajdonú eszközök
+    - Céges tulajdonú eszközök
 
-        -   Saját eszközök használata (Bring Your Own Device, BYOD)
+    - Saját eszközök használata (BYOD)
 
--   **Alkalmazásalapú feltételes hozzáférés**
+- **Alkalmazás-alapú feltételes hozzáférés**
 
 ## <a name="next-steps"></a>További lépések
 
-[A feltételes hozzáférés szokásos módjai az Intune-nal](conditional-access-intune-common-ways-use.md)
+[A feltételes hozzáférés használatának gyakori módjai az Intune-nal](conditional-access-intune-common-ways-use.md)

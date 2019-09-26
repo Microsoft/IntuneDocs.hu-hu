@@ -1,13 +1,12 @@
 ---
-title: WiFi-profil létrehozása előmegosztott kulccsal az Azure-beli Microsoft Intune-ban | Microsoft Docs
+title: Wi-Fi-profil létrehozása előmegosztott kulccsal – Microsoft Intune – Azure | Microsoft Docs
 description: Egyéni profil segítségével létrehozhat egy előmegosztott kulcsú Wi-Fi-profilt. A cikkben találhat XML-mintakódot Android-, Windows- és EAP-alapú Wi-Fi-profilok Microsoft Intune-ban való létrehozásához.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/26/2019
+ms.date: 06/25/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -17,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7bf859075e675ef0205b24e0575fca5ab74f312c
-ms.sourcegitcommit: 44095bbd1502b02201a01604531f4105401fbb92
+ms.openlocfilehash: 632bf2c68133f80a44950f154e1b5d9092da3cab
+ms.sourcegitcommit: a63b9eaa59867ab2b0a6aa415c19d9fff4fda874
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58490632"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "71303258"
 ---
 # <a name="use-a-custom-device-profile-to-create-a-wifi-profile-with-a-pre-shared-key---intune"></a>Előmegosztott kulccsal ellátott WiFi-profil létrehozása egyéni eszközprofil segítségével – Intune
 [!INCLUDE [azure_portal](./includes/azure_portal.md)]
@@ -38,7 +37,7 @@ Az előmegosztott kulcsok (PSK-k) segítségével hitelesítheti a felhasználó
 - Egyszerűbb lehet, ha a kódot egy, az adott hálózathoz már csatlakozó számítógépről másolja. Ennek leírását a cikk későbbi részében megtalálhatja.
 - További OMA-URI-beállítások megadásával több hálózatot és kulcsot is hozzáadhat.
 - iOS-rendszereken a profil létrehozásához használja az Apple Configurator programot egy Mac munkaállomáson.
-- Az előmegosztott kulcsokhoz egy 64 hexadecimális számból álló sztringet vagy egy 8–63 nyomtatható ASCII-karakterből álló jelszót kell megadnia. Bizonyos karakterek, például a csillag ( * ), nem támogatottak.
+- Az előmegosztott kulcsokhoz egy 64 hexadecimális számból álló sztringet vagy egy 8–63 nyomtatható ASCII-karakterből álló jelszót kell megadnia. Bizonyos karakterek, például a csillag (*) nem támogatottak.
 
 ## <a name="create-a-custom-profile"></a>Egyéni profil létrehozása
 Hozhat létre előmegosztott kulcsot tartalmazó egyéni profilt Androidhoz vagy Windowshoz, illetve EAP-alapú Wi-Fi-profilt. A profil Azure Portallal való létrehozásáról az [Egyéni eszközbeállítások létrehozása](custom-settings-configure.md) című témakörben tájékozódhat. Az eszközprofil létrehozásakor válassza az eszköz platformjához tartozó **Egyéni** lehetőséget. Ne válassza a Wi-Fi-profil lehetőséget. Az Egyéni lehetőség választása után: 
@@ -60,7 +59,7 @@ Hozhat létre előmegosztott kulcsot tartalmazó egyéni profilt Androidhoz vagy
      > [!NOTE]
      > Ne hagyja ki a karaktersor elején található pontot.
 
-     Az SSID az az SSID, amelyhez létrehozza a házirendet. Például írja be a következőt: `./Vendor/MSFT/WiFi/Profile/Hotspot-1/Settings`.
+     Az SSID az az SSID, amelyhez létrehozza a házirendet. Ha például a Wi-Fi neve `Hotspot-1`, írja be `./Vendor/MSFT/WiFi/Profile/Hotspot-1/Settings`a következőt:.
 
    e. **Érték mező**: ide illessze be az XML-kódot. Tekintse át a cikkben található példákat. Módosítsa az értékeket a saját hálózati beállításainak megfelelően. A kódban található megjegyzések további információt nyújtanak.
 3. Válassza az **OK** gombot, mentsen, majd társítsa a szabályzatot.
@@ -74,26 +73,28 @@ Amikor az egyes eszközök legközelebb bejelentkeznek, a rendszer telepíti a s
 
 Az alábbi példában megtalálhatja az Android vagy Windows rendszerhez készült Wi-Fi-profilhoz használható XML-kódot. A példa a megfelelő formátumot mutatja be, valamint részletesebb információkkal is szolgál. Ez azonban csak egy példa, és nem az Ön környezetéhez ajánlott konfiguráció.
 
-> [!IMPORTANT]
->
-> - A `<protected>false</protected>` tulajdonságot **false** (hamis) értékre kell állítania. Ha **true** (igaz) értékre állítja, előfordulhat, hogy az eszköz titkosított jelszót vár, és a kapott jelszót megpróbálja visszafejteni, melynek következtében a kapcsolódás meghiúsulhat.
->
-> - A `<hex>53534944</hex>` helyére a `<name><SSID of wifi profile></name>` paraméter hexadecimális értékét kell beírni.
->  Előfordulhat, hogy Windows 10-eszközön a *0x87D1FDE8 Sikertelen szervizelés* hamis hibaüzenet jelenik meg, az eszköz azonban ettől függetlenül tartalmazni fogja a profilt.
->
-> - XML speciális karaktereket is tartalmaz, mint például a `&` (és jel). Speciális karakterek használatával előfordulhat, hogy az XML-fájl működő a várt módon. 
+### <a name="important-considerations"></a>Fontos szempontok
 
-```
+- A `<protected>false</protected>` tulajdonságot **false** (hamis) értékre kell állítania. Ha **true** (igaz) értékre állítja, előfordulhat, hogy az eszköz titkosított jelszót vár, és a kapott jelszót megpróbálja visszafejteni, melynek következtében a kapcsolódás meghiúsulhat.
+
+- A `<hex>53534944</hex>` helyére a `<name><SSID of wifi profile></name>` paraméter hexadecimális értékét kell beírni. Előfordulhat, hogy a Windows 10-es eszközök `x87D1FDE8 Remediation failed` hamis hibát adnak vissza, de az eszköz továbbra is tartalmazza a profilt.
+
+- Az XML speciális karaktereket tartalmaz, például a `&` (jel) karaktert. A speciális karakterek használata megakadályozhatja, hogy az XML a várt módon működjön. 
+
+### <a name="example"></a>Példa
+
+``` xml
 <!--
-<Name of wifi profile> = Name of profile
-<SSID of wifi profile> = Plain text of SSID. Does not need to be escaped, could be <name>Your Company's Network</name>
+<hex>53534944</hex> = The hexadecimal value of <name><SSID of wifi profile></name>
+<Name of wifi profile> = Name of profile shown to users. It could be <name>Your Company's Network</name>.
+<SSID of wifi profile> = Plain text of SSID. Does not need to be escaped. It could be <name>Your Company's Network</name>.
 <nonBroadcast><true/false></nonBroadcast>
 <Type of authentication> = Type of authentication used by the network, such as WPA2PSK.
-<Type of encryption> = Type of encryption used by the network
+<Type of encryption> = Type of encryption used by the network, such as AES.
 <protected>false</protected> do not change this value, as true could cause device to expect an encrypted password and then try to decrypt it, which may result in a failed connection.
-<password> = Password to connect to the network
-x>53534944</hex> should be set to the hexadecimal value of <name><SSID of wifi profile></name>
+<password> = Plain text of the password to connect to the network
 -->
+
 <WLANProfile
 xmlns="http://www.microsoft.com/networking/WLAN/profile/v1">
   <name><Name of wifi profile></name>
@@ -129,7 +130,7 @@ xmlns="http://www.microsoft.com/networking/WLAN/profile/v1">
 Az alábbi példában megtalálhatja az EAP-alapú Wi-Fi-profilhoz használható XML-kódot: A példa a megfelelő formátumot mutatja be, valamint részletesebb információkkal is szolgál. Ez azonban csak egy példa, és nem az Ön környezetéhez ajánlott konfiguráció.
 
 
-```
+```xml
     <WLANProfile xmlns="http://www.microsoft.com/networking/WLAN/profile/v1">
       <name>testcert</name>
       <SSIDConfig>
@@ -210,18 +211,29 @@ Az alábbi példában megtalálhatja az EAP-alapú Wi-Fi-profilhoz használható
 ```
 
 ## <a name="create-the-xml-file-from-an-existing-wi-fi-connection"></a>XML-fájl létrehozása meglévő Wi-Fi kapcsolat alapján
-Az XML-fájlt meglévő Wi-Fi-kapcsolat alapján is létrehozhatja az alábbi lépések követésével: 
 
-1. Nyissa meg a következő mappát egy olyan számítógépen, amely kapcsolódik a kívánt vezeték nélküli hálózathoz, vagy a közelmúltban kapcsolódott hozzá: `\ProgramData\Microsoft\Wlansvc\Profiles\Interfaces\{guid}`.
+Meglévő Wi-Fi-kapcsolatból is létrehozhat egy XML-fájlt. Windows rendszerű számítógépen hajtsa végre a következő lépéseket:
 
-   Célszerű olyan számítógépet választania, amely nem csatlakozott sok vezeték nélküli hálózathoz. Máskülönben előfordulhat, hogy végig kell böngésznie az összes profilt a helyes profil megtalálásához.
+1. Hozzon létre egy helyi mappát az exportált W-Fi-profilokhoz, például c:\WiFi.
+2. Nyisson meg egy parancssort rendszergazdaként (kattintson a jobb gombbal `cmd`a **Futtatás rendszergazdaként**lehetőségre  > )
+3. Futtassa az `netsh wlan show profiles` parancsot. A rendszer felsorolja az összes profil nevét.
+4. Futtassa az `netsh wlan export profile name="YourProfileName" folder=c:\Wifi` parancsot. Ez a parancs létrehoz egy nevű `Wi-Fi-YourProfileName.xml` fájlt a c:\Wifi.-ben.
 
-2. Keresse meg az XML-fájlok között a megfelelő nevű fájlt.
-3. Miután megtalálta a megfelelő XML-fájlt, másolja, majd illessze be az XML-kódot az OMA-URI-beállítások oldal **Adat** mezőjébe.
+    - Ha előmegosztott kulcsot tartalmazó Wi-Fi-profilt exportál, adja hozzá `key=clear` a parancsot a következőhöz:
+  
+      `netsh wlan export profile name="YourProfileName" key=clear folder=c:\Wifi`
+
+      `key=clear`a kulcsot egyszerű szövegként exportálja, amely a profil sikeres használatához szükséges.
+
+Az XML-fájl létrehozása után másolja és illessze be az XML-szintaxist az OMA-URI beállítások > **adattípusba**. [Egyéni profil létrehozása](#create-a-custom-profile) (ebben a cikkben) a lépéseket sorolja fel.
+
+> [!TIP]
+> `\ProgramData\Microsoft\Wlansvc\Profiles\Interfaces\{guid}`az XML-formátumú összes profilt is tartalmazza.
 
 ## <a name="best-practices"></a>Ajánlott eljárások
+
 - A Wi-Fi-profil PSK használatával való üzembe helyezése előtt győződjön meg róla, hogy az eszköz tud közvetlenül kapcsolódni a végponthoz.
 
-- Kulcsok (jelszavak és hozzáférési kódok) cseréjekor számítson üzemszünetre, és az üzembe helyezést ennek figyelembe vételével tervezze meg. A Wi-Fi-profilok leküldését ajánlatos munkaidőn kívülre időzíteni. A felhasználókat is figyelmeztesse a kapcsolat esetleges kimaradására.
+- A kulcsok (jelszavak vagy hozzáférési kódok) elforgatásakor a rendszer leállást vár, és megtervezi az üzemelő példányokat. A Wi-Fi-profilok leküldését ajánlatos munkaidőn kívülre időzíteni. Továbbá figyelmeztesse a felhasználókat, hogy a kapcsolat befolyásolhatja a kapcsolatot.
 
-- A zökkenőmentes átállás érdekében gondoskodjon róla, hogy a felhasználó eszköze más módon csatlakozzon az internethez. A felhasználónak például vissza kell tudni váltani a Vendég Wi-Fi-hálózatra (vagy egy másik Wi-Fi-hálózatra), vagy mobilhálózati kapcsolattal kell rendelkeznie, amellyel kommunikálhat az Intune-nal. E további kapcsolat révén a felhasználó továbbra is megkaphatja a szabályzatfrissítéseket, amíg a vállalati Wi-Fi-hálózat frissül az eszközön.
+- A zökkenőmentes átállás érdekében győződjön meg arról, hogy a végfelhasználó eszköze rendelkezik egy másik internetkapcsolattal. A végfelhasználó például visszaválthat a vendég Wi-Fi-ra (vagy más Wi-Fi hálózatra), vagy mobil kapcsolattal kommunikálhat az Intune-nal. E további kapcsolat révén a felhasználó továbbra is megkaphatja a szabályzatfrissítéseket, amíg a vállalati Wi-Fi-hálózat frissül az eszközön.

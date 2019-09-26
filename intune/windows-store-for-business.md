@@ -1,14 +1,13 @@
 ---
-title: Kezelheti a mennyiségi licencszerződés keretében vásárolt, vagy a Microsoft Store for Business apps ingyenes
+title: A Microsoft Store for Business VPP-alkalmazásainak kezelése
 titleSuffix: Microsoft Intune
-description: Ismerje meg, hogyan szinkronizálhatja a megvásárolt (vagy ingyenes) alkalmazások a Microsoft Store vállalatoknak az Intune-bA.
+description: Megtudhatja, hogyan szinkronizálhatja az alkalmazásokat az Intune-ban a Microsoft Store for Business használatával.
 keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 04/15/2019
+ms.date: 08/12/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,20 +17,21 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 67d99977776657219638980eb6de8a4079384185
-ms.sourcegitcommit: 8c795b041cd39e3896595f64f53ace48be0ec84c
+ms.openlocfilehash: a58136fc9e973963fbfe12efd03f92b5b8a01f9f
+ms.sourcegitcommit: ec22a186a9cfa489a8490698e387624e480892d8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59587501"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "71302523"
 ---
-# <a name="how-to-manage-volume-purchased-or-free-apps-from-the-microsoft-store-for-business-with-microsoft-intune"></a>Kötet megvásárolt (vagy ingyenes) alkalmazások a Microsoft Store vállalatoknak a Microsoft Intune-nal való kezelése
+# <a name="how-to-manage-volume-purchased-apps-from-the-microsoft-store-for-business-with-microsoft-intune"></a>Mennyiségi programban vásárolt alkalmazások felügyelete a Microsoft Store for Business és a Microsoft Intune használatával
 
 [!INCLUDE [azure_portal](./includes/azure_portal.md)]
 
 A [Vállalati Microsoft Áruház](https://www.microsoft.com/business-store) az a hely, ahol alkalmazásokat vásárolhat a szervezete számára egyenként vagy mennyiségi program keretében. Az áruházat a Microsoft Intune-nal összekapcsolva a mennyiségi programban vásárolt alkalmazásokat az Azure Portalról kezelheti. Példa:
-* Szinkronizálhatja a megvásárolt (vagy az ingyenes) alkalmazások listáját az Intune-nal az áruházból.
+* Szinkronizálhatja az áruházból az Intune-nal megvásárolt (vagy ingyenes) alkalmazások listáját.
 * A szinkronizált alkalmazások megjelennek az Intune felügyeleti konzolján; ezen alkalmazásokat a többi alkalmazáshoz hasonlóan oszthatja ki.
+* Az alkalmazások online és offline licenccel rendelkező verziója is szinkronizálva van az Intune-nal. Az alkalmazások neve "online" vagy "offline" értékkel lesz hozzáfűzve a portálon.
 * Az Intune felügyeleti konzolján nyomon követheti a szabad és a használatban lévő licencek számát.
 * Ha nincs elegendő elérhető licenc, az Intune letiltja az alkalmazások kiosztását és telepítését.
 * A Vállalati Microsoft Áruház által kezelt alkalmazások automatikusan visszavonják a licenceket, amikor egy felhasználó elhagyja a vállalatot, vagy amikor a rendszergazda eltávolítja a felhasználót és a felhasználói eszközöket.
@@ -54,9 +54,9 @@ Emellett a kapcsolódó készletek és a Vállalati Microsoft Áruházból szink
 
 ## <a name="associate-your-microsoft-store-for-business-account-with-intune"></a>A Vállalati Microsoft Áruházbeli fiók összekapcsolása az Intune-nal
 Mielőtt engedélyezné a szinkronizálást az Intune-konzolon, konfigurálnia kell az áruházbeli fiókját az Intune használatára felügyeleti eszközként:
-1. Győződjön meg arról, hogy jelentkezzen be a [Microsoft Store vállalatoknak](https://www.microsoft.com/business-store) használhatja az Intune-ba való bejelentkezéshez ugyanazt a bérlőt használja.
-2. Az üzleti Store válassza a **kezelés** lapon jelölje be **beállítások**, és válassza a **terjesztése** fülre.
-3. Ha nincs kifejezetten **a Microsoft Intune** egy mobileszköz-felügyeleti eszközként elérhető válasszon **kezelőeszköz hozzáadása** hozzáadása **a Microsoft Intune**. Ha nem rendelkezik **a Microsoft Intune** aktiválta a mobileszköz-felügyeleti eszközként, kattintson a **aktiválás** melletti **a Microsoft Intune**. Vegye figyelembe, hogy aktiválnia kell **a Microsoft Intune** helyett **a Microsoft Intune-regisztráció**.
+1. Ügyeljen arra, hogy az Intune-ba való bejelentkezéshez használt bérlői fiókkal jelentkezzen be a [vállalati Microsoft Storeba](https://www.microsoft.com/business-store) .
+2. A vállalati áruházban válassza a **kezelés** lapot, válassza a **Beállítások**lehetőséget, majd kattintson a **terjesztés** fülre.
+3. Ha nem kifejezetten mobileszköz-felügyeleti eszközként **Microsoft Intune** érhető el, válassza a **felügyeleti eszköz hozzáadása** lehetőséget **Microsoft Intune**hozzáadásához. Ha nincs **Microsoft Intune** aktiválva a mobileszköz-kezelő eszközként, kattintson az **aktiválás** elemre **Microsoft Intune**gombra. Vegye figyelembe, hogy **Microsoft Intune-regisztráció**helyett aktiválni kell **Microsoft Intune** .
 
 > [!NOTE]
 > Korábban csak egyetlen felügyeleti eszközt társíthatott a Vállalati Microsoft Áruházhoz az alkalmazások hozzárendeléséhez. Mostantól több felügyeleti eszközzel is megteheti ezt (például az Intune-nal és a Configuration Managerrel). 
@@ -65,8 +65,7 @@ Most már folytathatja a műveletet, és beállíthatja a szinkronizálást az I
 
 ## <a name="configure-synchronization"></a>A szinkronizálás konfigurálása
 
-1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com).
-2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget. Az Intune a **Figyelés + felügyelet** szakaszban található.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** ablaktáblán válassza az **Ügyfélalkalmazások** lehetőséget.
 1. Az **Ügyfélalkalmazások** panelen válassza a **Beállítás** > **Vállalati Microsoft Áruház** lehetőséget.
 2. Kattintson az **Engedélyezés** lehetőségre.
@@ -78,6 +77,9 @@ Most már folytathatja a műveletet, és beállíthatja a szinkronizálást az I
 
 1. Az **Ügyfélalkalmazások** panelen válassza a **Beállítás** > **Vállalati Microsoft Áruház** lehetőséget.
 2. Kattintson a **Szinkronizálás** lehetőségre a Microsoft Áruházból megvásárolt alkalmazások Intune-ba való felvételéhez.
+
+> [!NOTE]
+> A titkosított alkalmazáscsomag által kezelt alkalmazások jelenleg nem támogatottak, és nem lesznek szinkronizálva az Intune-nal.
 
 ## <a name="assign-apps"></a>Alkalmazások hozzárendelése
 
@@ -94,12 +96,12 @@ A Vállalati Microsoft Áruházból származó alkalmazások hozzárendelésekor
 
 ## <a name="remove-apps"></a>Alkalmazások eltávolítása
 
-A Microsoft Store Vállalatoknak szolgáltatásból szinkronizált alkalmazás eltávolításához be kell jelentkeznie a Microsoft Store Vállalatoknak szolgáltatásba, és vissza kell térítenie az alkalmazás árát. A folyamat megegyezik-e az alkalmazás ingyenes-e. Ingyenes alkalmazások esetén a tárolóban lesz visszatérítési 0 USD. Az alábbi példa bemutatja egy ingyenes alkalmazás díjakért jóváírást. 
+A Microsoft Store Vállalatoknak szolgáltatásból szinkronizált alkalmazás eltávolításához be kell jelentkeznie a Microsoft Store Vállalatoknak szolgáltatásba, és vissza kell térítenie az alkalmazás árát. A folyamat ugyanaz, függetlenül attól, hogy az alkalmazás ingyenes-e. Az ingyenes alkalmazások esetében az áruház $0-es visszatérítést biztosít. Az alábbi példa egy ingyenes alkalmazásra vonatkozó visszatérítést mutat be. 
 
 ![Képernyőkép az alkalmazás eltávolításának részleteiről](./media/microsoft-store-for-business-01.png)
 
 > [!NOTE]
-> Látható-e az alkalmazás eltávolítása a személyes tárolójában nem, hogy az Intune az alkalmazás szinkronizálása. Az alkalmazásnak, hogy az alkalmazás teljes eltávolításához kell visszatérítési.
+> Az alkalmazások privát tárolóban való láthatóságának eltávolítása nem fogja tudni megőrizni az Intune-t az alkalmazás szinkronizálásával. Az alkalmazás teljes eltávolításához vissza kell térítenie az alkalmazást.
 
 ## <a name="next-steps"></a>További lépések
 

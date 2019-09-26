@@ -1,11 +1,11 @@
 ---
-title: Eszközkorlátozási beállítások konfigurálása a Microsoft Intune-ban – Azure | Microsoft Docs
-description: Eszközprofillal korlátozhatja a funkciókat Android, macOS, iOS, Windows Phone és Windows 10 rendszerű eszközökön a Microsoft Intune-ban
+title: Az eszközök funkcióinak korlátozása az Microsoft Intune az Azure-ban | Microsoft Docs
+description: Az Android-, macOS-, iOS-, iPadOS-, Windows Phone-telefon-és Windows 10-es eszközökön található szolgáltatások korlátozásához vegyen fel egy eszköz-profilt Microsoft Intune
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/20/2018
+ms.date: 09/04/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -14,46 +14,56 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4cae90723c7ff92a8042f068fb49c1709506c7ff
-ms.sourcegitcommit: 063177c6c365fef3642edd7c455790958469aad9
+ms.openlocfilehash: 8030d3c12ca3f0eda3afef39a940cce6d53bc5e8
+ms.sourcegitcommit: c19584b36448bbd4c8638d7cab552fe9b3eb3408
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66412432"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71302396"
 ---
 # <a name="configure-device-restriction-settings-in-microsoft-intune"></a>Ezközkorlátozásokra vonatkozó beállítások konfigurálása a Microsoft Intune-ban
 
-Az eszközkorlátozások révén számos kategóriában szabályozhatja a kezelt beállítások és funkciók széles körét, például:
-- Biztonság
-- Böngésző
-- Hardver
-- Adatmegosztási beállítások
+[!INCLUDE [azure_portal](./includes/azure_portal.md)]
 
-Létrehozhat például egy olyan eszközkorlátozási profilt, amely megakadályozza, hogy az iOS-eszközök felhasználói hozzáférjenek az eszköz kamerájához.
+Az Intune olyan eszköz-korlátozási szabályzatokat tartalmaz, amelyek segítségével a rendszergazdák vezérelhetik az Android, iOS, macOS és Windows rendszerű eszközöket. Ezek a korlátozások lehetővé teszik a beállítások és szolgáltatások széles körének szabályozását a szervezet erőforrásainak megóvása érdekében. A rendszergazdák például a következőket tehetik:
 
-A cikk az eszközkorlátozási profilok alapjait ismerteti, és további cikkeket ajánl a különféle platformokhoz tartozó eszközspecifikus kérdésekhez.
+- Az eszköz kamerájának engedélyezése vagy letiltása
+- A Google Play, az alkalmazás-áruházak, a dokumentumok megtekintése és a játékok elérésének szabályozása
+- Beépített alkalmazások blokkolása vagy a megengedett vagy tiltott alkalmazások listájának létrehozása
+- Fájlok Felhőbeli és Storage-fiókba való biztonsági mentésének engedélyezése vagy letiltása
+- Adja meg a jelszó minimális hosszát, és tiltsa le az egyszerű jelszavakat
+
+Ezek a funkciók az Intune-ban érhetők el, és a rendszergazda konfigurálható. Az Intune a "konfigurációs profilok" használatával hozza létre és szabja testre ezeket a beállításokat a szervezet igényeinek megfelelően. Miután hozzáadta ezeket a funkciókat egy profilhoz, leküldheti vagy üzembe helyezheti a profilt a szervezet eszközein.
+
+Ez a cikk bemutatja, hogyan hozhat létre egy eszköz-korlátozási profilt. A különböző platformokhoz elérhető összes beállítást is megtekintheti.
 
 ## <a name="create-the-profile"></a>A profil létrehozása
 
-1. Jelentkezzen be a [Intune](https://go.microsoft.com/fwlink/?linkid=2090973).
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
-3. Adja meg az eszközkorlátozási profil nevét és leírását a **Név** és a **Leírás** mezőben.
-4. A **Platform** legördülő listából válassza ki azt az eszközplatformot, amelyre egyéni beállításokat szeretne alkalmazni. Jelenleg az alábbi platformok egyikét választhatja ki az eszközkorlátozási beállításokhoz:
+3. Adja meg a következő tulajdonságokat:
 
-    - **Android**
-    - **Vállalati Android**
-    - **iOS**
-    - **macOS**
-    - **Windows Phone 8.1**
-    - **Windows 8.1 és újabb**
-    - **Windows 10 és újabb**
+    - **Név**: Adjon meg egy leíró nevet a szabályzatnak. Nevezze el a szabályzatokat, hogy később könnyebben azonosítható legyen. A helyes szabályzat neve **például iOS: A kamera letiltása az**eszközökön.
+    - **Description** (Leírás): Adja meg a szabályzat leírását. A beállítás használata nem kötelező, de ajánlott.
+    - **Platform**: Válassza ki az eszközök platformját. A választható lehetőségek:  
 
-5. A **Profil típusa** legördülő listában válassza az **Eszközkorlátozások** lehetőséget. Eszköz létrehozásához korlátozások Windows 10 Team eszközök, például a Surface hubon és a profilt, majd válassza **eszközkorlátozások (Windows 10 Team)** .
-6. A kiválasztott platformtól függően a konfigurálható beállítások eltérőek. Válassza ki a platformot a részletes beállításokat:
+        - **Android**
+        - **Vállalati Android**
+        - **iOS/iPadOS**
+        - **macOS**
+        - **Windows Phone 8.1**
+        - **Windows 8.1 és újabb**
+        - **Windows 10 és újabb**
+
+    - **Profil típusa**: Válassza ki az **eszközök korlátozásait**.
+
+        A Windows 10-es Team-eszközökhöz, például a Surface Hubhoz tartozó eszköz-korlátozási profil létrehozásához válassza az eszközök **korlátozásai (Windows 10 Team)** lehetőséget.
+
+4. A kiválasztott platformtól függően a konfigurálható beállítások eltérőek. Válassza ki a platformot a részletes beállításokhoz:
 
     - [Android-beállítások](device-restrictions-android.md)
-    - [Android enterprise-beállítások](device-restrictions-android-for-work.md)
-    - [iOS-beállítások](device-restrictions-ios.md)
+    - [Androidos vállalati beállítások](device-restrictions-android-for-work.md)
+    - [iOS-/iPadOS-beállítások](device-restrictions-ios.md)
     - [macOS-beállítások](device-restrictions-macos.md)
     - [Windows Phone 8.1-beállítások](device-restrictions-windows-phone-8-1.md)
     - [Windows 8.1](device-restrictions-windows-8-1.md)
@@ -61,13 +71,13 @@ A cikk az eszközkorlátozási profilok alapjait ismerteti, és további cikkeke
     - [Windows 10 Team-beállítások](device-restrictions-windows-10-teams.md)
     - [A Windows Holographic for Business beállításai](device-restrictions-windows-holographic.md)
 
-7. Ha elkészült, a módosítások mentéséhez válassza az **OK** > **Létrehozás** lehetőséget.
+5. Ha elkészült, a módosítások mentéséhez válassza az **OK** > **Létrehozás** lehetőséget.
 
-A profil létrehozásáról és a profilok listájában jelenik meg.
+Ekkor létrejön a profil, és megjelenik a profilok listán.
 
 ## <a name="next-steps"></a>További lépések
 
-A profil létrehozását követően készen áll hozzá kell rendelni. Ezután [rendelje hozzá a profilt](device-profile-assign.md) és [állapotát nyomon](device-profile-monitor.md).
+A profil létrehozása után készen áll a hozzárendelésre. Ezután [rendelje hozzá a profilt](device-profile-assign.md) , és [Figyelje annak állapotát](device-profile-monitor.md).
 
 <!--  Removing image as part of design review; retaining source until we known the disposition.
 

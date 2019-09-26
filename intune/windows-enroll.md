@@ -6,24 +6,23 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 09/27/2018
+ms.date: 08/05/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: f94dbc2e-a855-487e-af6e-8d08fabe6c3d
-ms.reviewer: damionw
+ms.reviewer: spshumwa
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d7dd4ab5f7cecfa8a765b6dfa038b73015a0c768
-ms.sourcegitcommit: 1cae690ca2ac6cc97bbcdf656f54b31878297ae8
+ms.openlocfilehash: 6e90bd41a59975a85350229dc517aa03fd853f19
+ms.sourcegitcommit: d2989b9992d10d133573d9bc31479659fb7e242c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59900162"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71302608"
 ---
 # <a name="set-up-enrollment-for-windows-devices"></a>Windowsos eszközök regisztrációjának beállítása
 
@@ -48,16 +47,24 @@ A Windows-eszközök regisztrálásának egyszerűsítését két tényező hat�
 
 Azok a cégek, amelyek használhatják az automatikus regisztrációt, a Windows Configuration Designer alkalmazással is konfigurálhatják az [eszközök csoportos regisztrációját](windows-bulk-enroll.md).
 
+## <a name="device-enrollment-prerequisites"></a>Eszközök regisztrálásának előfeltételei
+
+Mielőtt a rendszergazda felügyelni tudja az eszközöket az Intune-ban, a licenceket már hozzá kell rendelni a rendszergazdai fiókhoz. [További információ az eszközök regisztrálásához szükséges licencek hozzárendeléséről](licenses-assign.md)
+
 ## <a name="multi-user-support"></a>Több felhasználó támogatása
 
-Az Intune többfelhasználós felügyeletet támogat a Windows 10 alkotói frissítését futtató, Azure Active Directory-tartományhoz csatlakozó eszközökön. Ha általános jogú felhasználók jelentkeznek be az Azure AD-beli hitelesítő adataikkal, a felhasználónevükhöz hozzárendelt alkalmazásokat és szabályokat kapnak. A felhasználók jelenleg nem használhatják a Céges portált önkiszolgálói forgatókönyvek esetén (például alkalmazások telepítése).
+Az Intune több felhasználót is támogat a következő eszközökön:
+- a Windows 10 Creator frissítésének futtatása
+- Azure Active Directory tartományhoz van csatlakoztatva.
+
+Ha általános jogú felhasználók jelentkeznek be az Azure AD-beli hitelesítő adataikkal, a felhasználónevükhöz hozzárendelt alkalmazásokat és szabályokat kapnak. Csak az eszköz [elsődleges felhasználója](find-primary-user.md) használhatja a céges portál önkiszolgáló forgatókönyvekhez, például alkalmazások telepítéséhez és az eszközök műveleteinek elvégzéséhez (eltávolítás, alaphelyzetbe állítás). A megosztott Windows 10-es eszközökhöz, amelyekhez nincs hozzárendelve elsődleges felhasználó, a Céges portál továbbra is használhatók az elérhető alkalmazások telepítéséhez.
 
 [!INCLUDE [AAD-enrollment](./includes/win10-automatic-enrollment-aad.md)]
 
 ## <a name="simplify-windows-enrollment-without-azure-ad-premium"></a>Windowsos regisztráció egyszerűsítése Prémium szintű Azure AD nélkül
 A regisztráció leegyszerűsítéséhez hozzon létre egy DNS-aliast (CNAME rekordtípust), amely átirányítja a regisztrációs kérelmeket az Intune-kiszolgálókra. Ellenkező esetben az Intune-hoz csatlakozni kívánó felhasználóknak a regisztráció során meg kell adniuk az Intune-kiszolgáló nevét.
 
-**1. lépés: Hozzon létre CNAME** (nem kötelező)<br>
+**1. lépés: CNAME** létrehozása (nem kötelező)<br>
 Hozza létre a megfelelő CNAME DNS-erőforrásrekordokat a céges tartományhoz. Ha a munkahelyi webhely címe például contoso.com, akkor olyan CNAME rekordot kell létrehoznia a DNS-ben, amely az EnterpriseEnrollment.contoso.com webhelyről átirányítja a felhasználókat az enterpriseenrollment-s.manage.microsoft.com webhelyre.
 
 A CNAME DNS-bejegyzések létrehozása nem kötelező, viszont a CNAME rekordok létrehozása egyszerűbbé teszi a regisztrációt a felhasználók számára. Ha nem található CNAME rekord, akkor a rendszer kéri a felhasználókat, hogy írják be az MDM-kiszolgáló nevét: enrollment.manage.microsoft.com.
@@ -79,19 +86,19 @@ A Contoso DNS-rendszergazdájának a következő CNAME-elemeket kell létrehozni
 |----------|---------------|---------------|---|
 |CNAME|EnterpriseEnrollment.contoso.com|EnterpriseEnrollment-s.manage.microsoft.com|1 óra|
 |CNAME|EnterpriseEnrollment.us.contoso.com|EnterpriseEnrollment-s.manage.microsoft.com|1 óra|
-|CNAME|EnterpriseEnrollment.eu.contoso.com|EnterpriseEnrollment-s.manage.microsoft.com| 1 óra|
+|CNAME|EnterpriseEnrollment.eu.contoso.com|EnterpriseEnrollment-s.manage.microsoft.com| 1 óra|
 
 `EnterpriseEnrollment-s.manage.microsoft.com` – A levelezési tartomány nevéből felismert tartománynévvel irányítja át a felhasználókat az Intune-ba.
 
 A DNS-rekord módosításának terjesztése akár 72 órát is igénybe vehet. Az Intune-ban nem ellenőrizhető a DNS-módosítás, amíg a DNS-rekord propagálása zajlik.
 
-## <a name="additional-endpoints-are-supported-but-not-recommended"></a>További végpontokat támogatottak, de nem ajánlott.
-EnterpriseEnrollment-s.Manage.microsoft.com címre regisztrációs előnyben részesített teljes Tartománynevét, de vannak más végpontokat, amelyek az elmúlt ügyfelek által használt, és támogatja. Enterpriseenrollment.Manage.microsoft.com webhelyre (nélkül az -s) és a Manage.microsoft.com címre irányítja át is működik az automatikus felderítési kiszolgáló, de a felhasználó számára a cél kell touch OK gombra a megerősítést kérő üzenet. EnterpriseEnrollment-s.Manage.microsoft.com webhelyre mutat, ha a felhasználó kell tennie a további megerősítő lépés, ezért ez az ajánlott konfiguráció
+## <a name="additional-endpoints-are-supported-but-not-recommended"></a>A további végpontok támogatottak, de nem ajánlottak
+A EnterpriseEnrollment-s.manage.microsoft.com az előnyben részesített teljes tartománynév a beléptetéshez, de két másik végpontot is használtak a múltban, és támogatottak. A EnterpriseEnrollment.manage.microsoft.com (az-s nélkül) és a manage.microsoft.com egyaránt ugyanúgy működnek, mint az automatikus felderítési kiszolgáló célja, de a felhasználónak meg kell érintenie az OK gombot egy megerősítő üzenetben. Ha a EnterpriseEnrollment-s.manage.microsoft.com pontra mutat, a felhasználónak nem kell végrehajtania a további megerősítési lépést, ezért ez az ajánlott konfiguráció.
 
-## <a name="alternate-methods-of-redirection-are-not-supported"></a>Alternatív módszerek az átirányítás nem támogatottak.
-A CNAME-konfigurációja eltérő módszerrel nem támogatott. Például proxykiszolgálóval enterpriseenrollment.contoso.com/EnrollmentServer/Discovery.svc átirányítása vagy enterpriseenrollment-s.manage.microsoft.com/EnrollmentServer/Discovery.svc vagy manage.microsoft.com/EnrollmentServer/Discovery.svc nem támogatott.
+## <a name="alternate-methods-of-redirection-are-not-supported"></a>Az átirányítás alternatív módszerei nem támogatottak
+A CNAME-konfigurációtól eltérő metódus használata nem támogatott. Ha például egy proxykiszolgálót használ a enterpriseenrollment.contoso.com/EnrollmentServer/Discovery.svc átirányítására a enterpriseenrollment-s.manage.microsoft.com/EnrollmentServer/Discovery.svc vagy a manage.microsoft.com/EnrollmentServer/Discovery.svc-re, nem támogatott.
 
-**2. lépés: A CNAME ellenőrzése** (nem kötelező)<br>
+**2. lépés: CNAME** ellenőrzése (nem kötelező)<br>
 1. Az [Azure Portalbeli Intune-ban](https://aka.ms/intuneportal) válassza az **Eszközök regisztrálása** > **Windows-regisztráció** > **CNAME-ellenőrzés** elemet.
 2. A **tartomány** mezőben adja meg a céges webhelyet, majd válassza a **Teszt** lehetőséget.
 

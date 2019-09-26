@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 06/27/2019
+ms.date: 09/16/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.localizationpriority: medium
@@ -15,41 +15,49 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bac591a625fd915056234a75b26bc2f90f50cae7
-ms.sourcegitcommit: 8023ba7d42e61bd37305c69f52a649cf83bf72e2
+ms.openlocfilehash: 7eaed88adc8603ee1f79f47cbd94eec1c3b71b95
+ms.sourcegitcommit: c19584b36448bbd4c8638d7cab552fe9b3eb3408
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387104"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71301850"
 ---
-# <a name="ios-device-settings-to-use-common-ios-features-in-intune"></a>iOS-eszközbeállítások a közös iOS-funkciók használatához az Intune-ban
+# <a name="ios-and-ipados-device-settings-to-use-common-ios-features-in-intune"></a>iOS-és iPadOS-eszközök beállításai az Intune közös iOS-funkcióinak használatához
+
+[!INCLUDE [azure_portal](./includes/azure_portal.md)]
 
 Az Intune tartalmaz néhány beépített beállítást, amely lehetővé teszi, hogy az iOS-felhasználók különböző Apple-funkciókat használjanak az eszközön. A rendszergazdák például szabályozhatják, hogy az iOS-felhasználók hogyan használják a AirPrint-nyomtatókat, hogyan adhatnak hozzá alkalmazásokat és mappákat a kezdőképernyőn lévő dockhoz és lapokhoz, hogyan jeleníthetők meg az alkalmazás értesítései, megjelenjenek az eszköz címkéi adatai a zárolási képernyőn, egyszeri bejelentkezéses hitelesítés használata és felhasználók hitelesítése tanúsítványokkal.
 
 Ezekkel a szolgáltatásokkal vezérelheti az iOS-eszközöket a mobileszköz-kezelési (MDM) megoldás részeként.
 
-Ez a cikk felsorolja ezeket a beállításokat, és leírja az egyes beállításokat.
+Ez a cikk felsorolja ezeket a beállításokat, és leírja az egyes beállításokat. További információ ezekről a funkciókról: [iOS-vagy MacOS-eszköz funkció beállításainak](device-features-configure.md)megadása.
 
 ## <a name="before-you-begin"></a>Előkészületek
 
-[Hozzon létre egy IOS-eszköz konfigurációs profilját](device-features-configure.md#create-a-device-profile).
+[Hozzon létre egy IOS-eszköz konfigurációs profilját](device-features-configure.md).
+
+> [!NOTE]
+> Ezek a beállítások a különböző regisztrációs típusokra vonatkoznak, és egyes beállítások az összes regisztrációs lehetőségre érvényesek. A különböző regisztrációs típusokkal kapcsolatos további információkért lásd: [iOS-regisztráció](ios-enroll.md).
 
 ## <a name="airprint"></a>AirPrint
+
+### <a name="settings-apply-to-all-enrollment-types"></a>A beállítások a következőkre vonatkoznak: Minden regisztrációs típus
 
 - **IP-cím**: Adja meg a nyomtató IPv4-vagy IPv6-címeit. Ha az állomásnevek használatával azonosítja a nyomtatókat, az IP-címet a nyomtató a terminálon való pingelésével érheti el. Az IP-cím és az elérési út (ebben a cikkben) beszerzése további részleteket tartalmaz.
 - **Elérési út**: Az elérési út `ipp/print` általában a hálózatban lévő nyomtatókhoz van. Az IP-cím és az elérési út (ebben a cikkben) beszerzése további részleteket tartalmaz.
 - **Port**: Adja meg a AirPrint célhelyének figyelési portját. Ha üresen hagyja ezt a tulajdonságot, a AirPrint az alapértelmezett portot használja. Elérhető az iOS 11,0-es és újabb verzióiban.
 - **TLS**: Válassza az **Engedélyezés** lehetőséget a AirPrint-kapcsolatok TRANSPORT Layer Security (TLS) használatával történő biztonságossá tételéhez. Elérhető az iOS 11,0-es és újabb verzióiban.
 
-A **Hozzáadás** hozzáadja a AirPrint-kiszolgálót a listához. Számos AirPrint-kiszolgáló adható hozzá. A vesszővel tagolt (. csv) fájlt is **importálhatja** ezen információk használatával. Az **Exportálás** a hozzáadott AirPrint-kiszolgálók listáját hozza létre.
+AirPrint-kiszolgálók hozzáadásához a következőket teheti:
 
-A lista mentéséhez kattintson **az OK gombra** .
+- A **Hozzáadás** hozzáadja a AirPrint-kiszolgálót a listához. Számos AirPrint-kiszolgáló adható hozzá.
+- **Importáljon** egy vesszővel tagolt (. csv) fájlt ezekkel az adatokkal. Vagy az **Exportálás** gombra kattintva hozzon létre egy listát a hozzáadott AirPrint-kiszolgálókról.
 
 ### <a name="get-server-ip-address-resource-path-and-port"></a>Kiszolgáló IP-címének, erőforrás-elérési útjának és portjának beolvasása
 
 AirPrinter-kiszolgálók hozzáadásához szüksége lesz a nyomtató IP-címére, az erőforrás elérési útjára és a portra. Az alábbi lépések bemutatják, hogyan kérheti le ezeket az információkat.
 
-1. Olyan Mac gépen, amely ugyanahhoz a helyi hálózathoz (alhálózat) csatlakozik, mint a AirPrint-nyomtatók,  nyissa meg a terminált (a **/Applications/Utilities alatt**).
+1. Olyan Mac gépen, amely ugyanahhoz a helyi hálózathoz (alhálózat) csatlakozik, mint a AirPrint-nyomtatók, nyissa meg a terminált (a **/Applications/Utilities alatt**).
 2. A terminálon írja be `ippfind`a parancsot, majd kattintson az ENTER (bevitel) gombra.
 
     Jegyezze fel a nyomtató adatait. Előfordulhat például, hogy a `ipp://myprinter.local.:631/ipp/port1`következőhöz hasonló értéket ad vissza:. Az első rész a nyomtató neve. Az utolsó rész (`ipp/port1`) az erőforrás elérési útja.
@@ -60,9 +68,13 @@ AirPrinter-kiszolgálók hozzáadásához szüksége lesz a nyomtató IP-címér
 
 4. Használja az IP-cím és az erőforrás elérési útjának értékét. Ebben a példában az IP-cím `10.50.25.21`, az erőforrás elérési útja pedig. `/ipp/port1`
 
-## <a name="home-screen-layout-settings"></a>Kezdőképernyő-elrendezés beállításai
+## <a name="home-screen-layout"></a>A kezdőképernyő elrendezése
 
-Ezekkel a beállításokkal konfigurálhatja az alkalmazások elrendezését és mappáit az iOS-eszközök Dock és Home (Kezdőlap) képernyőjén. A funkció használatához az iOS-eszközöknek felügyelt módban kell lenniük, és az iOS 9,3-es vagy újabb verzióját kell futtatniuk.
+Ez a funkció az alábbiakra vonatkozik:
+
+- iOS 9,3 vagy újabb
+
+### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: Automatikus eszközök beléptetése (felügyelt)
 
 ### <a name="dock"></a>Dock
 
@@ -78,8 +90,6 @@ Az eszköz dockhoz legfeljebb **hat** elemet (az alkalmazások és a mappák egy
     - **Alkalmazás neve**: Adja meg az alkalmazás nevét. A rendszer ezt a nevet használja a Azure Portalban való hivatkozáshoz. *Nem* jelenik meg az iOS-eszközön.
     - Alkalmazáscsomag **azonosítója**: Adja meg az alkalmazás köteg-AZONOSÍTÓját. További Példákért lásd a [beépített iOS-alkalmazások köteg-azonosítóit](bundle-ids-built-in-ios-apps.md) .
 
-    Válassza ki **OK** a módosítások mentéséhez.
-
   - **Mappa**: Válassza ezt a lehetőséget, ha mappát szeretne hozzáadni a képernyőn a dockhoz.
 
     A mappában lévő lapokhoz hozzáadott alkalmazások balról jobbra, a listával megegyező sorrendben lesznek elrendezve. Ha több alkalmazást ad hozzá, mint amennyi elfér egy oldalon, az alkalmazások átkerülnek egy másik lapra.
@@ -92,8 +102,6 @@ Az eszköz dockhoz legfeljebb **hat** elemet (az alkalmazások és a mappák egy
       - Alkalmazáscsomag **azonosítója**: Adja meg az alkalmazás köteg-AZONOSÍTÓját. További Példákért lásd a [beépített iOS-alkalmazások köteg-azonosítóit](bundle-ids-built-in-ios-apps.md) .
 
       Akár **20** oldalt is hozzáadhat az eszköz dockhoz.
-
-    Válassza ki **OK** a módosítások mentéséhez.
 
 > [!NOTE]
 > Amikor ikonokat ad hozzá a Dock-beállításokkal, a kezdőképernyő és az oldalak ikonjai zárolva vannak, és nem helyezhetők át. Ez az iOS-és az Apple MDM-házirendjeivel is megtervezhető.
@@ -132,8 +140,6 @@ Egy eszközön legfeljebb **40** lapot adhat hozzá.
         - **Alkalmazás neve**: Adja meg az alkalmazás nevét. A rendszer ezt a nevet használja a Azure Portalban való hivatkozáshoz. *Nem* jelenik meg az iOS-eszközön.
         - Alkalmazáscsomag **azonosítója**: Adja meg az alkalmazás köteg-AZONOSÍTÓját. További Példákért lásd a [beépített iOS-alkalmazások köteg-azonosítóit](bundle-ids-built-in-ios-apps.md) .
 
-      Válassza ki **OK** a módosítások mentéséhez.
-
       - **Mappa**: Válassza ezt a lehetőséget, ha mappát szeretne hozzáadni a képernyőn a dockhoz.
 
         A mappában lévő lapokhoz hozzáadott alkalmazások balról jobbra, a listával megegyező sorrendben lesznek elrendezve. Ha több alkalmazást ad hozzá, mint amennyi elfér egy oldalon, az alkalmazások átkerülnek egy másik lapra.
@@ -145,8 +151,6 @@ Egy eszközön legfeljebb **40** lapot adhat hozzá.
           - **Alkalmazás neve**: Adja meg az alkalmazás nevét. A rendszer ezt a nevet használja a Azure Portalban való hivatkozáshoz. *Nem* jelenik meg az iOS-eszközön.
           - Alkalmazáscsomag **azonosítója**: Adja meg az alkalmazás köteg-AZONOSÍTÓját. További Példákért lásd a [beépített iOS-alkalmazások köteg-azonosítóit](bundle-ids-built-in-ios-apps.md) .
 
-      Válassza ki **OK** a módosítások mentéséhez.
-
 #### <a name="example"></a>Példa
 
 A következő példában egy **contoso** nevű új oldal van hozzáadva. Az oldalon a barátok és beállítások keresése alkalmazások láthatók. A beállítások alkalmazás a tulajdonságok megjelenítéséhez van kiválasztva:
@@ -157,18 +161,18 @@ Ha a szabályzatot egy iPhone-hoz rendeli hozzá, az oldal az alábbi képhez ha
 
 ![iOS-eszköz módosított kezdőképernyővel](./media/Bd37PHa.png)
 
-## <a name="app-notifications-settings"></a>Alkalmazás-értesítések beállításai
+## <a name="app-notifications"></a>Alkalmazás-értesítések
 
-Válassza ki, hogy a telepített alkalmazások hogyan küldjenek értesítéseket az iOS-eszközökön. Ezek a beállítások az iOS 9.3-at vagy újabb verziót futtató felügyelt eszközökön vannak támogatva.
+### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: Automatikus eszközök beléptetése (felügyelt)
 
 - **Hozzáadás**: Értesítések hozzáadása az alkalmazásokhoz:
 
     ![Alkalmazás-értesítés hozzáadása az iOS-profilban az Intune-ban](./media/ios-macos-app-notifications.png)
 
-  - Alkalmazáscsomag **azonosítója**: Adja meg  a hozzáadni kívánt alkalmazás ALKALMAZÁSCSOMAG-azonosítóját. További Példákért lásd a [beépített iOS-alkalmazások köteg-azonosítóit](bundle-ids-built-in-ios-apps.md) .
+  - Alkalmazáscsomag **azonosítója**: Adja meg a hozzáadni kívánt alkalmazás ALKALMAZÁSCSOMAG-azonosítóját. További Példákért lásd a [beépített iOS-alkalmazások köteg-azonosítóit](bundle-ids-built-in-ios-apps.md) .
   - **Alkalmazás neve**: Adja meg a hozzáadni kívánt alkalmazás nevét. A rendszer ezt a nevet használja a Azure Portalban való hivatkozáshoz. *Nem* jelenik meg az eszközön.
   - **Közzétevő**: Adja meg a hozzáadni kívánt alkalmazás közzétevőjét. A rendszer ezt a nevet használja a Azure Portalban való hivatkozáshoz. *Nem* jelenik meg az eszközön.
-  - **Értesítések**:  Engedélyezheti  vagy letilthatja, hogy az alkalmazás értesítéseket küldjön az eszközre.
+  - **Értesítések**: Engedélyezheti vagy letilthatja, hogy az alkalmazás értesítéseket küldjön az eszközre.
     - **Megjelenítés az értesítési központban**: Az **Engedélyezés** beállítás megadásával az alkalmazás értesítéseket jeleníthet meg az eszköz értesítési központban. A **Letiltás** beállítás megadásával megakadályozható, hogy az alkalmazás értesítéseket jelenít meg az értesítési központban.
     - **Megjelenítés a zárolási képernyőn**: Az **Engedélyezés** gombra kattintva megtekintheti az alkalmazásból származó értesítéseket az eszköz zárolási képernyőjén. A **Letiltás** beállítás megadásával megakadályozható, hogy az alkalmazás megjelenítse az értesítéseket a zárolási képernyőn.
     - **Riasztás típusa**: Amikor az eszköz zárolva van, válassza ki, hogyan jelenjen meg az értesítés. A választható lehetőségek:
@@ -178,13 +182,13 @@ Válassza ki, hogy a telepített alkalmazások hogyan küldjenek értesítéseke
     - **Jelvény az alkalmazás ikonján**: Az **Engedélyezés** elemre kattintva hozzáadhat egy jelvényt az alkalmazás ikonjához. A jelvény azt jelenti, hogy az alkalmazás elküldött egy értesítést.
     - **Hangok**: Az **Engedélyezés** gombra kattintva hangjelzést adhat az értesítés kézbesítéséről.
 
-Válassza ki **OK** a módosítások mentéséhez.
+## <a name="lock-screen-message"></a>A zárolási képernyő üzenete
 
-## <a name="lock-screen-message-settings"></a>A zárolási képernyő üzenetének beállításai
+Ez a funkció az alábbiakra vonatkozik:
 
-Ezekkel a beállításokkal egyéni üzenetet vagy szöveget jeleníthet meg a bejelentkezési ablak és a zárolási képernyő megjelenítéséhez. Megadhat például egy "ha elveszett, vissza..." értéket. az üzenet és az eszköz címkéje adatai. 
+- iOS 9.3 és újabb verziók
 
-Ez a funkció támogatja az iOS 9,3-es vagy újabb verzióját futtató felügyelt eszközöket.
+### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: Automatikus eszközök beléptetése (felügyelt)
 
 - **Eszköz címkéjének adatai**: Adja meg az eszköz eszköz címkéjével kapcsolatos adatokat. Például írja be a következőt: `Owned by Contoso Corp` vagy `Serial Number: {{serialnumber}}`.
 
@@ -197,18 +201,9 @@ Ez a funkció támogatja az iOS 9,3-es vagy újabb verzióját futtató felügye
   > [!NOTE]
   > A rendszer nem érvényesíti a változókat a felhasználói felületen, és megkülönbözteti a kis-és nagybetűket. Ennek eredményeképpen előfordulhat, hogy a profilok helytelen bevitelsel lettek mentve. Ha például a `{{deviceid}}`helyett a értéket `{{DeviceID}}` adja meg, akkor az eszköz egyedi azonosítója helyett a literál sztring jelenik meg. Ügyeljen arra, hogy a helyes adatokat adja meg.
 
-Válassza ki **OK** a módosítások mentéséhez.
+## <a name="single-sign-on"></a>Egyszeri bejelentkezés
 
-## <a name="single-sign-on-settings"></a>Egyszeri bejelentkezési beállítások
-
-A legtöbb üzletviteli alkalmazás biztonsági célokból megkövetel bizonyos szintű felhasználóhitelesítést. A hitelesítés sok esetben megköveteli a felhasználótól, hogy ismételten adja meg ugyanazokat a hitelesítő adatokat, ami bosszantó a felhasználók számára. A felhasználói élmény javítása érdekében a fejlesztők egyszeri bejelentkezést (SSO) használó alkalmazásokat hozhatnak létre. Az egyszeri bejelentkezés használata csökkenti azt a számot, ahányszor a felhasználónak meg kell adnia a hitelesítő adatokat.
-
-Az egyszeri bejelentkezés használatához ellenőrizze, hogy rendelkezik-e az alábbiakkal:
-
-- Egy alkalmazás, amely úgy van kódolva, hogy az eszközön egyszeri bejelentkezéssel megkeresse a felhasználói hitelesítőadat-tárolót.
-- Az iOS-eszközön való egyszeri bejelentkezéshez konfigurált Intune.
-
-![Egyszeri bejelentkezés panel](./media/sso-blade.png)
+### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: Eszközök beléptetése, automatikus eszközök beléptetése (felügyelt)
 
 - **Username attribútum a HRE**: Az Intune az Azure AD-ben minden felhasználó számára keresi ezt az attribútumot. Az Intune ezután feltölti a megfelelő mezőt (például UPN) az eszközre telepített XML-kód létrehozása előtt. A választható lehetőségek:
 
@@ -249,11 +244,9 @@ Az egyszeri bejelentkezés használatához ellenőrizze, hogy rendelkezik-e az a
 
 - **Hitelesítőadat**-megújítási tanúsítvány: Ha tanúsítványokat használ a hitelesítéshez (nem a jelszavakhoz), válassza ki a meglévő SCEP-vagy PFX-tanúsítványt a hitelesítési tanúsítványként. Ez a tanúsítvány általában ugyanaz a tanúsítvány, amelyet más profilokhoz, például VPN-hez, Wi-Fi-hez vagy e-mailhez telepítenek a felhasználó számára.
 
-Válassza ki **OK** a módosítások mentéséhez.
+## <a name="web-content-filter"></a>Webes tartalom szűrője
 
-## <a name="web-content-filter-settings"></a>Webes tartalom szűrési beállításai
-
-Ezek a beállítások vezérlik a böngésző URL-hozzáférését a felügyelt iOS-eszközökön.
+### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: Automatikus eszközök beléptetése (felügyelt)
 
 - **Szűrő típusa**: Válassza az adott webhelyek engedélyezése lehetőséget. A választható lehetőségek:
 
@@ -261,14 +254,10 @@ Ezek a beállítások vezérlik a böngésző URL-hozzáférését a felügyelt 
 
     - **Engedélyezett URL-címek**: **Adja hozzá** az engedélyezni kívánt URL-címeket. Ezek az URL-címek megkerülik az Apple webes szűrőjét.
 
-      > [!NOTE]
+        > [!NOTE]
         > A beírt URL-címek azok az URL-címek, amelyeket nem szeretne evauluated az Apple Web Filter használatával. Ezek az URL-címek nem az engedélyezett webhelyek listája. Az engedélyezett webhelyek listájának létrehozásához állítsa be a **szűrő típusát** **adott**webhelyekre.
 
-      Válassza ki **OK** a módosítások mentéséhez.
-
     - **Letiltott URL-címek**: **Adja hozzá** azokat az URL-címeket, amelyekről le szeretné állítani a megnyitását, függetlenül az Apple Web Filter beállításaitól.
-
-      Válassza ki **OK** a módosítások mentéséhez.
 
   - **Csak meghatározott webhelyek** (csak a Safari böngészőben): Ezek az URL-címek hozzáadódnak a Safari böngésző könyvjelzői közé. A felhasználó számára **csak** a helyek meglátogatása engedélyezett; más helyek nem nyithatók meg. Akkor célszerű ezt a lehetőséget választani, ha a felhasználók által elérhető URL-ek listája pontosan ismert.
 
@@ -278,20 +267,75 @@ Ezek a beállítások vezérlik a böngésző URL-hozzáférését a felügyelt 
 
     Ha nem ad meg URL-címet, a végfelhasználók csak a, `microsoft.com` `microsoft.net`, és `apple.com`rendszerű webhelyekhez férhetnek hozzá. Az Intune automatikusan engedélyezi ezeket az URL-címeket.
 
-    Válassza ki **OK** a módosítások mentéséhez.
+## <a name="single-sign-on-app-extension"></a>Egyszeri bejelentkezési alkalmazás bővítménye
 
-## <a name="wallpaper-settings"></a>Háttérkép beállításai
+Ez a funkció az alábbiakra vonatkozik:
 
-Adjon hozzá egy egyéni. png,. jpg vagy. jpeg formátumú rendszerképet a felügyelt iOS-eszközökhöz. Például a zárolási képernyőn használjon egy vállalati emblémát.
+- iOS 13,0 és újabb verziók
+- iPadOS 13,0 és újabb verziók
+
+### <a name="settings-apply-to-all-enrollment-types"></a>A beállítások a következőkre vonatkoznak: Minden regisztrációs típus
+
+- **Egyszeri bejelentkezéses alkalmazás bővítményének típusa**: Válassza ki a hitelesítő adatok SSO-alkalmazásának típusát. A választható lehetőségek:
+
+  - **Nincs konfigurálva**: Nem használják az alkalmazás-bővítményeket. Az alkalmazás-bővítmény letiltásához átválthatja az SSO-alkalmazás kiterjesztésének típusát a **Kerberos** vagy a **hitelesítő adatok** között, hogy **ne legyen konfigurálva**.
+  - **Hitelesítő adat**: Használjon egy általános, testreszabható hitelesítőadat-alkalmazás-bővítményt az SSO végrehajtásához. Győződjön meg arról, hogy ismeri a szervezet SSO-alkalmazásának bővítmény-AZONOSÍTÓját.
+  - **Kerberos**: Használja az Apple beépített Kerberos-bővítményét, amely az iOS 13,0 (és újabb) és a iPadOS 13,0 (és újabb verziók) része. Ez a beállítás a **hitelesítőadat** -alkalmazás kiterjesztésének Kerberos-specifikus verziója.
+
+  > [!TIP]
+  > A **hitelesítő adatok** típusával adja hozzá a saját konfigurációs értékeit, hogy áthaladjon a bővítményen. Ehelyett érdemes lehet az Apple által biztosított beépített konfigurációs beállításokat használni a **Kerberos** -típusban.
+
+- **BŐVÍTMÉNY azonosítója** (Csak hitelesítő adatok): Adja meg az SSO-alkalmazás kiterjesztését azonosító köteg-azonosítót, `com.apple.extensiblesso`például:.
+- **Csoport azonosítója** (Csak hitelesítő adatok): Adja meg az egyszeri bejelentkezéses alkalmazás bővítményének csapat-azonosítóját. A csapat azonosítója az Apple által generált, 10 karakterből álló alfanumerikus (számok és betűk) karakterlánc, például `ABCDE12345`:. A csoport AZONOSÍTÓjának megadása nem kötelező.
+
+  [A csoport azonosítójának megkeresése](https://help.apple.com/developer-account/#/dev55c3c710c) (az Apple webhelyének megnyitása) további információkat tartalmaz.
+
+- **Tartomány**: Adja meg a Kerberos-tartomány nevét. A tartománynevet tőkésíteni kell, például `CONTOSO.COM`:. A tartománynév általában megegyezik a DNS-tartománynévvel, de minden nagybetűvel.
+
+- **Tartományok**: Adja meg az egyszeri bejelentkezéssel hitelesíthető helyek tartomány-vagy állomásnevek nevét. Ha például a webhelye `mysite.contoso.com`, akkor `mysite` az az állomásnév, `contoso.com` a pedig a tartománynév. Ha a felhasználók bármelyik webhelyhez csatlakoznak, az alkalmazás-bővítmény kezeli a hitelesítési kihívást. Ez a hitelesítés lehetővé teszi a felhasználók számára a bejelentkezéshez a Face ID, a Touch ID vagy az Apple pincode/PIN-kód használatát.
+
+  - Az egyszeri bejelentkezési alkalmazás bővítményének Intune-profiljainak minden tartományának egyedinek kell lennie. A tartományokat nem lehet megismételni a Bejelentkezési alkalmazás bővítményeinek egyik profiljában sem, még akkor is, ha különböző típusú egyszeri bejelentkezéses alkalmazás-bővítményeket használ.
+  - Ezek a tartományok nem megkülönböztetik a kis-és nagybetűket
+
+- **További konfiguráció** (Csak hitelesítő adatok): Adja meg az egyszeri bejelentkezéses alkalmazás kiterjesztésére vonatkozó további, bővítményekre vonatkozó adatbevitelt:
+  - **Konfigurációs kulcs**: Adja meg a hozzáadni kívánt elem nevét, például `user name`:.
+  - **Érték típusa**: Adja meg az adattípust. A választható lehetőségek:
+
+    - Sztring
+    - Logikai A **konfigurációs érték**mezőben adja `True` meg `False`a vagy a értéket.
+    - Egész A **konfigurációs érték**mezőbe írjon be egy számot.
+    
+  - **Konfigurációs érték**: Adja meg az adatbevitelt.
+
+  - **Hozzáadás**: A konfigurációs kulcsok hozzáadásához válassza a lehetőséget.
+
+- **Kulcstartó használata** (Csak Kerberos esetén): A **blokkolás** gombra kattintva megakadályozhatja a jelszavak mentését és tárolását a kulcstartóban. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a jelszavak mentését és tárolását a kulcstartóban.
+- **Face ID, Touch ID vagy PIN kód** (Csak Kerberos esetén): **Megkövetelheti** a felhasználóktól, hogy a hozzáadott tartományba való bejelentkezéshez megadják a Face ID, a Touch ID vagy az Apple PIN-kódot. **Nincs konfigurálva** (alapértelmezés) nem igényli, hogy a felhasználók a bejelentkezéshez biometria vagy PIN-kódot használjanak.
+- **Alapértelmezett tartomány** (Csak Kerberos esetén): Válassza az **Engedélyezés** lehetőséget az alapértelmezett tartományként megadott **tartomány** értékének beállításához. **Nincs konfigurálva** (alapértelmezés) nem állítja be az alapértelmezett tartományt.
+
+  > [!TIP]
+  > - Akkor **engedélyezze** ezt a beállítást, ha több Kerberos SSO-alkalmazás-bővítményt konfigurál a szervezetében.
+  > - Ha több birodalmat használ, **engedélyezze** ezt a beállítást. Az alapértelmezett tartományként megadott **tartományi** értéket állítja be.
+  > - Ha csak egy tartománya van, hagyja meg, hogy **nincs konfigurálva** (alapértelmezett).
+
+- **Egyszerű név** (Csak Kerberos esetén): Adja meg a Kerberos-tag felhasználónevét. Nem kell belefoglalni a tartománynevet. Például a-ben `user@contoso.com` `user` a az egyszerű név, a pedigatartományneve.`contoso.com`
+- **Active Directory Helykód** (Csak Kerberos esetén): Adja meg annak a Active Directory helynek a nevét, amelyet a Kerberos-bővítménynek használnia kell. Előfordulhat, hogy nem kell módosítania ezt az értéket, mivel a Kerberos-bővítmény automatikusan megkeresi a Active Directory hely kódját.
+- **Gyorsítótár neve** (Csak Kerberos esetén): Adja meg a Kerberos-gyorsítótár általános biztonsági szolgáltatásainak (GSS) nevét. Valószínűleg nem kell beállítania ezt az értéket.
+- Alkalmazáscsomag- **azonosítók** (Csak Kerberos esetén): **Adja hozzá** azokat az alkalmazáscsomag-azonosítókat, amelyeken egyszeri bejelentkezést kell használnia az eszközökön. Ezek az alkalmazások hozzáférést kapnak a Kerberos-jegy biztosításához, a hitelesítési jegyet, és hitelesítik a felhasználókat a hozzáférésre jogosult szolgáltatásokhoz.
+- **Tartományi tartomány leképezése** (Csak Kerberos esetén): **Adja hozzá** a tartományhoz hozzárendelni kívánt tartományi DNS-utótagokat. Akkor használja ezt a beállítást, ha a gazdagépek DNS-nevei nem egyeznek a tartománynév nevével. Valószínűleg nem kell létrehoznia ezt az egyéni tartomány – tartomány társítást.
+
+## <a name="wallpaper"></a>Háttérkép
 
 Váratlan viselkedést tapasztalhat, ha egy rendszerkép nélküli profilt egy meglévő rendszerképpel rendelkező eszközhöz rendel hozzá. Létrehozhat például egy rendszerkép nélküli profilt. Ez a profil olyan eszközökhöz van rendelve, amelyeken már van rendszerkép. Ebben az esetben előfordulhat, hogy a rendszerkép módosul az eszköz alapértelmezett értékére, vagy az eredeti rendszerkép is marad az eszközön. Ezt a viselkedést az Apple MDM platformja szabályozza és korlátozza.
+
+### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: Automatikus eszközök beléptetése (felügyelt)
 
 - **Háttérkép megjelenítési helye**: Válasszon egy helyet az eszközön a rendszerkép megjelenítéséhez. A választható lehetőségek:
   - **Nincs konfigurálva**: Nincs hozzáadva egyéni rendszerkép az eszközhöz. Az eszköz az operációs rendszer alapértelmezett értékeit használja.
   - **Zárolási képernyő**: Hozzáadja a rendszerképet a zárolási képernyőhöz.
   - **Kezdőképernyő**: Hozzáadja a rendszerképet a kezdőképernyő képernyőhöz.
   - **A zárolási képernyő és a kezdőképernyő**: Ugyanazt a rendszerképet használja a zárolási képernyőn és a kezdőképernyőn.
-- **Háttérkép**: Töltsön fel egy meglévő. png,. jpg vagy. jpeg rendszerképet, amelyet használni szeretne. Győződjön meg arról, hogy a fájl mérete kisebb, mint 750 KB. Eltávolíthatja a  hozzáadott rendszerképet is.
+- **Háttérkép**: Töltsön fel egy meglévő. png,. jpg vagy. jpeg rendszerképet, amelyet használni szeretne. Győződjön meg arról, hogy a fájl mérete kisebb, mint 750 KB. Eltávolíthatja a hozzáadott rendszerképet is.
 
 > [!TIP]
 > Ha különböző képeket szeretne megjeleníteni a zárolási képernyőn és a kezdőképernyőn, hozzon létre egy profilt a zárolási képernyő képével. Hozzon létre egy másik profilt a kezdőképernyő képével. Mindkét profilt hozzárendelheti az iOS-felhasználókhoz vagy-eszközökhöz.

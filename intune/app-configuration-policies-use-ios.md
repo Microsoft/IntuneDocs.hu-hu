@@ -6,9 +6,8 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 04/16/2019
+ms.date: 07/15/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,53 +17,53 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5bd57d12630d5e2c8b69963f513ef007a9023f9b
-ms.sourcegitcommit: 9e196e4a3b381f0da97ce3c163b18a3012f4aed1
+ms.openlocfilehash: 746d9b35e63e5f68ed018ff65ace129b364f18d7
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59704892"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71303810"
 ---
 # <a name="add-app-configuration-policies-for-managed-ios-devices"></a>Alkalmazáskonfigurációs szabályzatok hozzáadása felügyelt iOS-eszközökhöz
 
 [!INCLUDE [azure_portal](./includes/azure_portal.md)]
 
-Ha iOS-alkalmazáshoz szeretne egyéni konfigurációs beállításokat megadni, használja az alkalmazáskonfigurációs szabályzatokat a Microsoft Intune-ban. Ezeket a konfigurációs beállításokat engedélyezése egy alkalmazás testre kell szabni az alkalmazás szállítók irány alapján. Ezeket a konfigurációs beállításokat (kulcsokat és értékeket) az alkalmazás szállítójától kell beszerezni. Az alkalmazás konfigurálásához a beállításokat kulcs-érték párokban, vagy a kulcsokat és az értékeket tartalmazó XML-fájlként kell megadni. Ezeket a konfigurációs szabályzatokat nem kell közvetlenül felhasználókhoz vagy eszközökhöz rendelni. Ehelyett a konfigurációs szabályzatot egy alkalmazáshoz kell társítani, majd az alkalmazást hozzárendelni a felhasználókhoz vagy eszközökhöz. A konfigurációs szabályzatbeállítások akkor használatosak, amikor egy alkalmazás keresi azokat (általában az első futtatáskor).
+Ha iOS-alkalmazáshoz szeretne egyéni konfigurációs beállításokat megadni, használja az alkalmazáskonfigurációs szabályzatokat a Microsoft Intune-ban. Ezek a konfigurációs beállítások lehetővé teszik, hogy az alkalmazások testreszabhatók legyenek az alkalmazás-szállítók iránya alapján. Ezeket a konfigurációs beállításokat (kulcsokat és értékeket) az alkalmazás szállítójától kell beszerezni. Az alkalmazás konfigurálásához a beállításokat kulcs-érték párokban, vagy a kulcsokat és az értékeket tartalmazó XML-fájlként kell megadni.
+
+A Microsoft Intune rendszergazdájaként szabályozhatja, hogy melyik felhasználói fiókok legyenek hozzáadva a Microsoft Office-alkalmazásokhoz a felügyelt eszközökön. A hozzáférést korlátozhatja csak a szervezeti felhasználói fiókokra, és blokkolhatja a személyes fiókok használatát a regisztrált eszközökön. A támogató alkalmazások feldolgozzák az alkalmazáskonfigurációt, majd eltávolítják és letiltják a nem jóváhagyott fiókokat. A konfigurációs szabályzatbeállítások akkor használatosak, amikor egy alkalmazás keresi azokat (általában az első futtatáskor).
 
 Miután hozzáadta az alkalmazáskonfigurálási szabályzatot, beállíthatja az alkalmazáskonfigurálási szabályzat hozzárendeléseit. A szabályzat hozzárendeléseinek beállításakor felvehet vagy kizárhat a szabályzat hatálya alá eső felhasználói csoportokat. Amikor felvesz egy vagy több csoportot, kiválaszthat bizonyos csoportokat, vagy választhat beépített csoportokat. Beépített csoportok a következők: **Minden felhasználó**, **Minden eszköz**, és **Minden felhasználó és minden eszköz**. 
 
->[!NOTE]
->Az Intune biztosítja az előre létrehozott **Minden felhasználó** és **Minden eszköz** csoportok beépített optimalizálását a felhasználók kényelme érdekében a konzolon. Mindenképpen ajánlott ezeket a csoportokat használni az összes felhasználó és az összes eszköz megcélzására az Ön által létrehozott „Minden felhasználó” vagy „Minden eszköz” csoport helyett.<p></p>
->A Microsoft Intune rendszergazdájaként szabályozhatja, hogy melyik felhasználói fiókok legyenek hozzáadva a Microsoft Office-alkalmazásokhoz a felügyelt eszközökön. A hozzáférést korlátozhatja csak a szervezeti felhasználói fiókokra, és blokkolhatja a személyes fiókok használatát a regisztrált eszközökön. A támogató alkalmazások feldolgozzák az alkalmazáskonfigurációt, majd eltávolítják és letiltják a nem jóváhagyott fiókokat.
+> [!NOTE]
+> Az Intune biztosítja az előre létrehozott **Minden felhasználó** és **Minden eszköz** csoportok beépített optimalizálását a felhasználók kényelme érdekében a konzolon. Mindenképpen ajánlott ezeket a csoportokat használni az összes felhasználó és az összes eszköz megcélzására az Ön által létrehozott „Minden felhasználó” vagy „Minden eszköz” csoport helyett.
 
 Miután kiválasztotta a belefoglalt csoportokat az alkalmazáskonfigurálási szabályzathoz, kiválaszthatja az adott kizárni kívánt csoportokat is. További információ: [Alkalmazás-hozzárendelések belefoglalása vagy kizárása a Microsoft Intune-ban](apps-inc-exl-assignments.md).
 
 > [!TIP]
 > Ez a szabályzattípus jelenleg csak az iOS 8.0-ás vagy újabb verzióit futtató eszközökön érhető el. A szabályzat az alábbi alkalmazástelepítési módszereket támogatja:
 >
-> -   **Felügyelt iOS-alkalmazás az App Store-ból**
-> -   **Alkalmazáscsomag az iOS számára**
+> - **Felügyelt iOS-alkalmazás az App Store-ból**
+> - **Alkalmazáscsomag az iOS számára**
 >
-> Az alkalmazástelepítés-típusokról bővebben a következő témakörben olvashat: [Alkalmazás felvétele a Microsoft Intune-ba](apps-add.md).
+> Az alkalmazástelepítés-típusokról bővebben a következő témakörben olvashat: [Alkalmazás felvétele a Microsoft Intune-ba](apps-add.md). További információ az alkalmazások konfigurációjának a. ipa-alkalmazáscsomag a felügyelt eszközökhöz való beépítéséről: felügyelt alkalmazások konfigurálása az [iOS fejlesztői dokumentációjában](https://developer.apple.com/library/archive/samplecode/sc2279/Introduction/Intro.html).
 
 ## <a name="create-an-app-configuration-policy"></a>Alkalmazáskonfigurációs szabályzat konfigurálása
 
-1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com).
-2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget. Az Intune a **Figyelés + felügyelet** szakaszban található.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Válassza az **Ügyfélalkalmazások** tevékenységprofilt.
 4. Válassza az **Alkalmazáskonfigurációs szabályzatok** lehetőséget a **Felügyelet** csoportban, majd a **Hozzáadás** lehetőséget.
 5. Adja meg a következő adatokat:
     - **Név** – Az Azure Portalon megjelenítendő profilnév.
     - **Leírás** – Az Azure Portalon megjelenítendő profilleírás.
-    - **Eszközregisztráció típusa** -válassza **felügyelt eszközök** az Intune-ban regisztrált eszközök esetében.
+    - **Eszköz beléptetése** – válassza a **felügyelt eszközök** lehetőséget az Intune-ban regisztrált eszközökhöz.
 6. A **Platform** beállításban válassza az **iOS** lehetőséget.
-7.  Válassza a **Társított alkalmazás** lehetőséget. A **Társított alkalmazás** panelen jelölje ki azt a felügyelt alkalmazást, amelyre a konfigurációt alkalmazni szeretné, majd nyomja meg az **OK** gombot.
-8.  A **Konfigurációs szabályzat hozzáadása** panelen válassza a **Konfigurációs beállítások** lehetőséget.
-9. Válassza a **Konfigurációs beállítások formátuma** lehetőséget. Válassza ki a konfigurációs adatok megadása a következő módszerek egyikét:
+7. Válassza a **Társított alkalmazás** lehetőséget. A **Társított alkalmazás** panelen jelölje ki azt a felügyelt alkalmazást, amelyre a konfigurációt alkalmazni szeretné, majd nyomja meg az **OK** gombot.
+8. A **Konfigurációs szabályzat hozzáadása** panelen válassza a **Konfigurációs beállítások** lehetőséget.
+9. Válassza a **Konfigurációs beállítások formátuma** lehetőséget. Konfigurációs adatok hozzáadásához válassza az alábbi módszerek egyikét:
     - **Konfigurációtervező használata**
     - **XML-adatok megadása**<br><br>
     A konfigurációtervező használatáról a [Konfigurációtervező használatát](#use-configuration-designer) ismertető cikkben talál bővebb információt. Az XML-adatok megadásáról az [XML-adatok megadása](#enter-xml-data) című cikkben talál útmutatást. 
-10. Miután hozzáadta a konfigurációs adatokat, válassza ki a **OK**, és válassza a **Hozzáadás** az alkalmazáskonfigurációs szabályzat felvételéhez. Ekkor megjelenik a konfigurációs szabályzat áttekintő panelje.
+10. Miután hozzáadta a konfigurációs adatokat, kattintson **az OK gombra**, majd válassza a **Hozzáadás** lehetőséget a konfigurációs szabályzat hozzáadásához. Ekkor megjelenik a konfigurációs szabályzat áttekintő panelje.
 11. Válassza a **Hozzárendelések** lehetőséget a belefoglalási és kizárási beállítások megjelenítéséhez. 
 
     ![Képernyőkép a szabályzat-hozzárendelések Belefoglalás lapjáról](./media/app-config-policy01.png)
@@ -95,21 +94,21 @@ A Microsoft Intune olyan konfigurációs beállításokat tesz elérhetővé, am
 
 ### <a name="delete-a-setting"></a>Beállítás törlése
 
-1. Válassza a beállítás melletti három pontot (**...**).
+1. Válassza a beállítás melletti három pontot ( **...** ).
 2. Válassza a **Törlés** elemet.
 
 A \{\{ és \}\} karaktereket csak a tokentípusok használják, ezek más célokra nem használhatók.
 
 ### <a name="allow-only-configured-organization-accounts-in-multi-identity-apps"></a>Csak a konfigurált szervezeti fiókok engedélyezése a többidentitásos alkalmazásokban 
 
-IOS-eszközök esetén használja az alábbi kulcs-érték párok:
+IOS-eszközök esetén használja a következő kulcs/érték párokat:
 
 | **Kulcs** | IntuneMAMAllowedAccountsOnly |
 |--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Értékek** | <ul><li>**Engedélyezett**: Az egyetlen fiók által meghatározott felügyelt felhasználói fióknak a [IntuneMAMUPN](data-transfer-between-apps-manage-ios.md#configure-user-upn-setting-for-microsoft-intune-or-third-party-emm) kulcsot.</li><li>**Letiltott** (vagy bármilyen érték, amely nem különbözteti meg a megfelelő **engedélyezve**): Minden olyan fiók használata engedélyezett.</li></ul> |.
+| **Értékek** | <ul><li>**Engedélyezve**: Az egyetlen fiók engedélyezett a [IntuneMAMUPN](data-transfer-between-apps-manage-ios.md#configure-user-upn-setting-for-microsoft-intune-or-third-party-emm) kulcs által definiált felügyelt felhasználói fiók.</li><li>**Letiltva** (vagy bármely olyan érték, amely nem megkülönbözteti a kis- **és nagybetűket):** Bármely fiók engedélyezett.</li></ul> |.
 
    > [!NOTE]
-   > Kell használnia a OneDrive vállalati verzió iOS 10.34 vagy újabb verzió és az Outlook iOS 2.99.0-es vagy újabb és az alkalmazás verziókkal kell működnie [az Intune alkalmazásvédelmi szabályzatai](app-protection-policy.md) amikor így csak konfigurált szervezeti fiókok a többszörös identitást.
+   > Az iOS 10,34-es vagy újabb verziójának OneDrive, valamint az iOS 2.99.0 vagy újabb verziójához készült Outlook alkalmazást kell használnia, és az alkalmazásnak az [Intune app Protection-szabályzatokkal](app-protection-policy.md) kell rendelkeznie, ha csak konfigurált, többszörös identitású szervezeti fiókokat engedélyez.
 
 ## <a name="enter-xml-data"></a>XML-adatok megadása
 
@@ -119,7 +118,7 @@ Az Intune ellenőrzi az XML-formátumot, azt azonban nem, hogy az XML-tulajdons�
 
 További információ az XML-tulajdonságlistákról:
 
-  -  Tekintse meg az [Understand XML Property Lists](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/PropertyLists/UnderstandXMLPlist/UnderstandXMLPlist.html) (Az XML-tulajdonságlisták ismertetése) című témakört az iOS Developer Libraryben.
+- Tekintse meg az [Understand XML Property Lists](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/PropertyLists/UnderstandXMLPlist/UnderstandXMLPlist.html) (Az XML-tulajdonságlisták ismertetése) című témakört az iOS Developer Libraryben.
 
 ### <a name="example-format-for-an-app-configuration-xml-file"></a>Alkalmazáskonfigurációs XML-fájl példaformátuma
 
@@ -151,6 +150,7 @@ Alkalmazáskonfigurációs fájl létrehozásakor a következő értékeket adha
   <string>{{aaddeviceid}}</string>
 </dict>
 ```
+
 ### <a name="supported-xml-plist-data-types"></a>Támogatott XML PList-adattípusok
 
 Az Intune a következő adattípusokat támogatja a tulajdonságlistákban:
@@ -176,8 +176,36 @@ Ezenkívül az Intune a következő tokentípusokat támogatja a tulajdonságlis
 - \{\{serialnumberlast4digits\}\} — például **G5V2** (iOS-eszközök esetén)
 - \{\{aaddeviceid\}\}– például **ab0dc123-45d6-7e89-aabb-cde0a1234b56**
 
+## <a name="configure-the-company-portal-app-to-support-ios-dep-devices"></a>A Céges portál alkalmazás konfigurálása az iOS DEP-eszközök támogatásához
+
+A DEP (Apple Készülékregisztrációs program) regisztrációi nem kompatibilisek a Céges portál alkalmazás App Store-verziójával. A következő lépésekkel azonban konfigurálhatja a Céges portál alkalmazást az iOS DEP-eszközök támogatásához.
+
+1. A Azure Portal Intune-ban:
+    - Ha szükséges, adja hozzá a Intune céges portál az **Intune** > **ügyfélalkalmazások** >  > alkalmazások**hozzáadása**lehetőséggel.
+    - Az céges portál alkalmazáshoz tartozó alkalmazás-konfigurációs házirend létrehozásához nyissa meg az **ügyfélalkalmazások** > **alkalmazás-konfigurációs házirendjeit**.
+2. Hozzon létre egy alkalmazás-konfigurációs szabályzatot az alábbi XML-sel. Az alkalmazás-konfigurációs házirend létrehozásával és az XML-adatok megadásával kapcsolatos további információkért tekintse meg az [alkalmazás-konfigurációs szabályzatok hozzáadása a felügyelt iOS-eszközökhöz](app-configuration-policies-use-ios.md) vagy a hibrid Mdm, [Beállítások alkalmazása iOS-alkalmazásokra a System Center alkalmazás konfigurációs házirendjeivel című témakört. Configuration Manager](https://docs.microsoft.com/sccm/mdm/deploy-use/configure-ios-apps-with-app-configuration-policies).
+
+    ``` xml
+    <dict>
+        <key>IntuneCompanyPortalEnrollmentAfterUDA</key>
+        <dict>
+            <key>IntuneDeviceId</key>
+            <string>{{deviceid}}</string>
+            <key>UserId</key>
+            <string>{{userid}}</string>
+        </dict>
+    </dict>
+    ```
+
+3. Telepítse a Céges portált az eszközökre az alkalmazás-konfigurációs házirenddel megcélozva a kívánt csoportokra. Ügyeljen arra, hogy csak olyan eszközök csoportjaira telepítse a szabályzatot, amelyeken már van regisztrálva a DEP.
+4. Kérje meg a végfelhasználókat, hogy jelentkezzenek be a Céges portál alkalmazásba, amikor az automatikusan települ.
+
 ## <a name="monitor-ios--app-configuration-status-per-device"></a>Az iOS-alkalmazáskonfigurációk figyelése minden egyes eszközön 
 Konfigurációs szabályzat hozzárendelése után figyelheti az iOS-alkalmazások konfigurációs állapotát az egyes felügyelt eszközökön. Az Azure Portal **Microsoft Intune** oldalán kattintson az **Eszközök** > **Minden eszköz** lehetőségre. A felügyelt eszközök listáján az egyik eszközre kattintva nyissa meg a hozzá tartozó panelt. Az eszköz paneljén kattintson az **Alkalmazáskonfiguráció** elemre.  
+
+## <a name="additional-information"></a>További információ
+
+- [Az Outlook telepítése az iOS-és Android-alkalmazásokhoz – konfigurációs beállítások](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune)
 
 ## <a name="next-steps"></a>További lépések
 

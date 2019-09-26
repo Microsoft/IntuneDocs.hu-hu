@@ -1,529 +1,1645 @@
 ---
-title: Védelmi beállítások Windows 10 rendszerű eszközökhöz a Microsoft Intune – Azure |} A Microsoft Docs
-description: A Microsot Intune-ban, Windows 10-eszközökön az Endpoint Protection-beállítások használatával vagy konfigurálásával engedélyezheti a Windows Defender funkcióit, így az alkalmazásőrt, a tűzfalat, a SmartScreent, a titkosítást és a BitLockert, a biztonsági rés kiaknázása elleni védelmet, az alkalmazásvezérlést, a biztonsági központot és a helyi eszközök biztonságát.
+title: Védelmi beállítások Windows 10-es eszközökhöz a Microsoft Intune-ban – Azure | Microsoft Docs
+description: Windows 10-es eszközökön használja vagy konfigurálja az Endpoint Protection beállításait a Windows Defender szolgáltatásainak engedélyezéséhez, beleértve az Application Guard, a tűzfal, a SmartScreen, a titkosítás és a BitLocker, az őr, az alkalmazás-vezérlés, a Security Center és a biztonság beállítást helyi eszközök Microsoft Intuneban.
 keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 03/04/2019
+ms.date: 09/19/2019
 ms.topic: reference
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: 3af7c91b-8292-4c7e-8d25-8834fcf3517a
-ms.reviewer: ilwu
+ms.reviewer: karthig
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c2df888e146a7f240530e5cbc6628dbce34cb61
-ms.sourcegitcommit: b0b1030017e741d92c508130447a8242d9ad7a51
+ms.openlocfilehash: cdd5ae83d1ef71be31ad4507b32d2d4484da58cb
+ms.sourcegitcommit: 6a946a055a2014e00a4ca9d71986727a4ebbc777
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58342997"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71301734"
 ---
-# <a name="windows-10-and-later-settings-to-protect-devices-using-intune"></a>A Windows 10 (és újabb verziók) beállítások az Intune-eszközök védelméhez
+# <a name="windows-10-and-later-settings-to-protect-devices-using-intune"></a>Windows 10 (és újabb) beállítások az eszközök az Intune-nal való védelemmel való ellátásához  
 
-[!INCLUDE [azure_portal](./includes/azure_portal.md)]
+[!INCLUDE [azure_portal](./includes/azure_portal.md)]  
 
-A Microsoft Intune az eszközök védelme érdekében számos beállításokat tartalmaz. Ez a cikk bemutatja az összes beállítás engedélyezheti és konfigurálhatja a Windows 10-es és újabb eszközökre. Ezek a beállítások az endpoint protection konfigurációs profilban az Intune-ban biztonság szabályozásához, beleértve a BitLocker és a Windows Defender jönnek létre.
+Microsoft Intune számos olyan beállítást tartalmaz, amelyek segítenek az eszközök védelmében. Ez a cikk a Windows 10 és újabb rendszerű eszközökön engedélyezhető és konfigurálható beállításokat ismerteti. Ezek a beállítások az Intune-beli Endpoint Protection-konfigurációs profilban jönnek létre a biztonság szabályozásához, beleértve a BitLockert és a Windows Defendert is.  
 
-A Windows Defender víruskereső beállítása: [eszközkorlátozások Windows 10-es](device-restrictions-windows-10.md#windows-defender-antivirus).
+A Windows Defender víruskereső konfigurálásához tekintse meg a [Windows 10-es eszközök korlátozásait](device-restrictions-windows-10.md#microsoft-defender-antivirus)ismertető témakört.  
 
-## <a name="before-you-begin"></a>Előkészületek
+## <a name="before-you-begin"></a>Előkészületek  
 
-[Az endpoint protection eszközkonfigurációs profil létrehozása](endpoint-protection-configure.md).
+[Hozzon létre egy Endpoint Protection-eszköz konfigurációs profilját](endpoint-protection-configure.md).  
 
-## <a name="windows-defender-application-guard"></a>Windows Defender alkalmazásőr
+További információ a konfigurációs szolgáltatókról (CSP): a [Configuration Service Provider referenciája](https://docs.microsoft.com/windows/client-management/mdm/configuration-service-provider-reference).  
 
-A következő Windows 10-kiadásokon támogatott:
+## <a name="windows-defender-application-guard"></a>Windows Defender alkalmazásőr  
 
-- Vállalati
-- Professional
+A Microsoft Edge használata közben a Windows Defender alkalmazásőr megvédi a környezetét az olyan webhelyektől, amelyek nincsenek megbízhatóként meghatározva a szervezetében. Ha a felhasználók olyan helyeket látogatnak meg, amelyek nem szerepelnek az elszigetelt hálózati határon, a helyek egy Hyper-V virtuális böngészési munkamenetben nyílnak meg. A megbízható helyeket egy hálózati határ definiálja, amely az eszköz konfigurációjában van konfigurálva.  
 
-A Microsoft Edge használata közben a Windows Defender alkalmazásőr megvédi a környezetét az olyan webhelyektől, amelyek nincsenek megbízhatóként meghatározva a szervezetében. Amikor a felhasználók a webhelyeket, amely nem szerepel a elkülönített hálózat határát, a helyek nyissa meg a Hyper-V virtuális böngészési munkamenetben. Megbízható helyek határozzák meg hálózati határok, amely megtörténik az eszköz konfigurálása a.
+Az Alkalmazásőr csak a 64 bites Windows 10-eszközöknél érhető el. Ennek a profilnak a használatával telepítve lesz az Alkalmazásőr aktiválásához szükséges Win32-összetevő.  
 
-Az Alkalmazásőr csak a 64 bites Windows 10-eszközöknél érhető el. Ennek a profilnak a használatával telepítve lesz az Alkalmazásőr aktiválásához szükséges Win32-összetevő.
+- **Application Guard**  
+  **Alapértelmezett**: Nincs konfigurálva  
+   Application Guard CSP: [Beállítások/AllowWindowsDefenderApplicationGuard](https://docs.microsoft.com/windows/client-management/mdm/windowsdefenderapplicationguard-csp#allowwindowsdefenderapplicationguard)  
 
-- **Alkalmazásőr**: **Az Edge-hez engedélyezett** , kapcsolja be ezt a szolgáltatást, amely nem megbízható webhelyek egy Hyper-V virtualizált böngészési tárolóban nyitja meg. **Nincs konfigurálva** (alapértelmezett) azt jelenti, hogy minden hely (megbízható és nem megbízható) megnyitja az eszközön.
-- **A vágólap viselkedése**: Válassza ki a helyi számítógép és az Alkalmazásőr virtuális böngészőjében között milyen másolási és beillesztési műveletek engedélyezettek.
-- **Vállalati webhelyeken lévő külső tartalom**: **Blokk** betöltését nem jóváhagyott webhelyekről származó tartalom. A **Nincs konfigurálva** (alapértelmezett) érték azt jelenti, hogy a nem vállalati webhelyek megnyílhatnak az eszközön.
-- **Nyomtatás virtuális böngészőből**: Válasszon **engedélyezése** Igen PDF-, XPS, helyi, és a hálózati nyomtatók a a virtuális böngészőben megjelenő tartalom nyomtatását is. A **Nincs konfigurálva** (alapértelmezett) érték letilt minden nyomtatási funkciót.
-- **Naplók gyűjtése**: **Lehetővé teszi** az alkalmazásőr virtuális böngészési munkamenetében előforduló események naplóinak összegyűjtése. A **Nincs konfigurálva** (alapértelmezett) érték nem gyűjt naplókat a böngészési munkamenetben.
-- **Felhasználó által létrehozott böngészési adatok megtartása**: **Lehetővé teszi** menti a felhasználói adatok (például jelszavak, Kedvencek és cookie-k) az Alkalmazásőr virtuális böngészési munkamenet során létrehozott. A **Nincs konfigurálva** (alapértelmezett) érték elveti a felhasználó által letöltött fájlokat és adatokat az eszköz újraindulásakor vagy a felhasználó kijelentkezésekor.
-- **Grafikus gyorsítás**: Válasszon **engedélyezése** grafikai igényű webhelyeket és gyorsabb videó betöltése egy virtuális grafikai feldolgozóegységhez való hozzáférést is. A **Nincs konfigurálva** (alapértelmezett) érték az eszköz CPU-ját használja a grafikus feladatokhoz, és nem a virtuális grafikus feldolgozóegységet.
-- **Fájlok letöltése a gazdagép fájlrendszerébe**: **Engedélyezése** így a felhasználók letölteni a fájlokat a virtualizált böngészőből a gazdagép operációs rendszeréhez. A **Nincs konfigurálva** (alapértelmezett) érték a fájlokat helyi szinten, az eszközön tárolja, és nem tölti le őket a gazdarendszerbe.
+  - **Engedélyezve az Edge számára** – bekapcsolja ezt a funkciót, amely nem megbízható helyeket nyit meg egy Hyper-V virtualizált tallózási tárolóban.  
+  - **Nincs konfigurálva** – bármely hely (megbízható és nem megbízható) megnyitható az eszközön.  
 
-## <a name="windows-defender-firewall"></a>Windows Defender-tűzfal
+- **A vágólap viselkedése**  
+  **Alapértelmezett**: Nincs konfigurálva  
+   Application Guard CSP: [Beállítások/ClipboardSettings](https://go.microsoft.com/fwlink/?linkid=872351)  
 
-A következő Windows 10-kiadásokon támogatott:
-- Otthoni
-- Professional
-- Üzleti
-- Vállalati
-- Oktatás
-- mobil
-- Mobile Enterprise
+  Válassza ki, hogy mely másolási és beillesztési műveletek engedélyezettek a helyi számítógép és az Application Guard virtuális böngésző között.  
+  - **Nincs konfigurálva**  
+  - **Csak a SZÁMÍTÓGÉPről a böngészőbe való másolás és beillesztés engedélyezése**  
+  - **A böngészőből csak a számítógépre való másolás és beillesztés engedélyezése**  
+  - **A számítógép és a böngésző közötti másolás és beillesztés engedélyezése**  
+  - **A számítógép és a böngésző közötti másolás és beillesztés tiltása**  
 
-### <a name="global-settings"></a>Globális beállítások
+- **Vágólap tartalma**  
+  Ez a beállítás csak akkor érhető el, ha a *vágólap viselkedése* az *engedélyezési* beállítások egyikére van beállítva.  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Application Guard CSP: [Beállítások/ClipboardFileType](https://docs.microsoft.com/windows/client-management/mdm/windowsdefenderapplicationguard-csp#clipboardfiletype)  
 
-Ezek a beállítások minden hálózattípusnál alkalmazhatók.
+  Válassza ki az engedélyezett vágólap tartalmát.  
+  - **Nincs konfigurálva**  
+  - **Text**  
+  - **Képek**  
+  - **Szöveg és képek**  
 
-- **File Transfer Protocol**: **Blokk** állapot-nyilvántartó FTP letiltása. Ha a **Nincs konfigurálva** (alapértelmezett) érték van beállítva, a tűzfal szűrést végez az állapot-nyilvántartó FTP-re a másodlagos kapcsolatok engedélyezéséhez.
-- **Biztonsági társítás üresjárati ideje törlés előtt**: Biztonsági társítások törölve lesznek az észlelt nincs hálózati forgalom *n* másodperc. Adja meg másodpercben az üresjárati időt.
-- **Előmegosztott kulcsok kódolása**: Válasszon **engedélyezése** használatához az előmegosztott kulcsok kódolása az UTF-8 használatával. A **Nincs konfigurálva** (alapértelmezett) érték a helyi tárolóértéket használja.
-- **IPsec-kivételek**: Az IPsec, alól mentesülő forgalomtípusok megadása többek között:
-  - **Szomszédfelderítési IPv6 ICMP-típuskódok**
-  - **ICMP**
-  - **Útválasztó-felderítési IPv6 ICMP-típuskódok**
-  - **IPv4-es és IPv6-os DHCP hálózati forgalom**
-- **Visszavont tanúsítványok listájának ellenőrzése**: Válassza ki, hogyan ellenőrzi az eszköz, a visszavont tanúsítványok listáját. Lehetőségek a következők **CRL-ellenőrzés letiltása**, **sikertelen CRL-ellenőrzés csak visszavont tanúsítvány**, és **sikertelen CRL-ellenőrzés bármilyen hibánál**.
-- **Hitelesítési készlet kulcsmodulonként megfelelő**: **Engedélyezése** , a kulcskezelő modulok figyelmen kívül kell hagynia csak a hitelesítési csomagokat tartalmaz, amelyek nem támogatják. **Ha nincs konfigurálva**, a kulcsmoduloknak kötelező figyelmen kívül hagyniuk a teljes hitelesítési készletet, ha nem támogatják a készletben megadott összes hitelesítési csomagot.
-- **Csomagok várólistára helyezése**: Adja meg, a fogadó oldali skálázás szoftverek miként legyen engedélyezve a titkosított fogadás és az egyszerű szöveges továbbítás számára az IPsec alagutas átjáró használata esetén. Ezzel a beállítással ellenőrzi, hogy a csomagsorrend megőrzése.
+- **Külső tartalom a vállalati webhelyeken**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Application Guard CSP: [Beállítások/BlockNonEnterpriseContent](https://go.microsoft.com/fwlink/?linkid=872352)  
 
-### <a name="network-settings"></a>Hálózati beállítások
+  - A nem jóváhagyott webhelyekről származó tartalom betöltésének **tiltása.**  
+  - **Nem konfigurált** – a nem vállalati webhelyek megnyithatók az eszközön.  
+ 
+- **Nyomtatás a virtuális böngészőből**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Application Guard CSP: [Beállítások/PrintingSettings](https://go.microsoft.com/fwlink/?linkid=872354)  
 
-Ezek a beállítások meghatározott hálózattípusokra vonatkoznak. Ilyen többek között a **Tartományi (munkahelyi) hálózat**, a **Magánhálózat (észlelhető)** és a **Nyilvános (nem észlelhető) hálózat**.
+  - **Engedélyezés** – engedélyezi a kiválasztott tartalom kinyomtatását a virtuális böngészőből.  
+  - **Nincs konfigurálva** Tiltsa le az összes nyomtatási funkciót.  
+
+  Ha *engedélyezi* a nyomtatást, a következő beállításokat állíthatja be:
+  - **Nyomtatási típus (ok)** Válasszon egyet vagy többet a következő lehetőségek közül:  
+    - PDF  
+    - XPS  
+    - Helyi nyomtatók
+    - Hálózati nyomtatók  
+
+- **Naplók összegyűjtése**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Application Guard CSP: [Naplózás/AuditApplicationGuard](https://go.microsoft.com/fwlink/?linkid=872418)  
+
+  - **Engedélyezés** – naplók gyűjtése az Application Guard-böngészési munkamenetben előforduló eseményekhez.  
+  - **Nincs konfigurálva** – a böngészési munkameneten belül ne gyűjtsön naplókat.  
+
+- **A felhasználó által létrehozott böngészőbeli adat megőrzése**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Application Guard CSP: [Beállítások/AllowPersistence](https://go.microsoft.com/fwlink/?linkid=872419)  
+
+  - **Engedélyezés** Az Application Guard virtuális böngészési munkamenet során létrehozott felhasználói adatfájlok (például jelszavak, kedvencek és cookie-k) mentése.  
+  - **Nincs konfigurálva** A felhasználó által letöltött fájlok és az adatértékek elvetése az eszköz újraindításakor, vagy amikor egy felhasználó kijelentkezik.  
+
+- **Grafikus gyorsítás**  
+ **Alapértelmezett**: Nincs konfigurálva  
+  Application Guard CSP: [Beállítások/AllowVirtualGPU](https://go.microsoft.com/fwlink/?linkid=872420)  
+      
+  - A virtuális grafikus processzorhoz való hozzáférés megszerzésével gyorsabbá **teheti** a grafikai igényű webhelyek és videók betöltését.  
+  - **Nincs konfigurálva** Az eszköz PROCESSZORának használata grafikus elemekhez; Ne használja a virtuális grafikus feldolgozó egységet.  
+
+- **Fájlok letöltése a gazdagép fájlrendszerére**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Application Guard CSP: [Beállítások/SaveFilesToHost](https://go.microsoft.com/fwlink/?linkid=872421)  
+
+  - **Engedélyezés** – a felhasználók fájlokat tölthetnek le a virtualizált böngészőből a gazda operációs rendszerre.  
+  - **Nincs konfigurálva** – megtartja a fájlok helyi beállításait az eszközön, és nem tölti le a fájlokat a gazdagép fájlrendszerére.  
+
+## <a name="windows-defender-firewall"></a>Windows Defender-tűzfal  
+ 
+### <a name="global-settings"></a>Globális beállítások  
+
+Ezek a beállítások minden hálózattípusnál alkalmazhatók.  
+
+- **File Transfer Protocol**  
+  **Alapértelmezett**: Nincs konfigurálva  
+   Tűzfal CSP: [MdmStore/globális/DisableStatefulFtp](https://go.microsoft.com/fwlink/?linkid=872536)  
+
+  - Állapot **-nyilvántartó FTP letiltásának** letiltása.  
+  - **Nincs konfigurálva** – a tűzfal állapot-nyilvántartó FTP-szűrést végez a másodlagos kapcsolatok engedélyezéséhez.  
+
+- **Biztonsági társítás üresjárati ideje törlés előtt**  
+  **Alapértelmezett**: *Nincs konfigurálva*  
+   Tűzfal CSP: [MdmStore/globális/SaIdleTime](https://go.microsoft.com/fwlink/?linkid=872539)  
+
+   A biztonsági társítások törlését követő üresjárati idő másodpercben megadva.   
+
+- **Előmegosztott kulcs kódolás**  
+  **Alapértelmezett**: Nincs konfigurálva  
+   Tűzfal CSP: [MdmStore/globális/PresharedKeyEncoding](https://go.microsoft.com/fwlink/?linkid=872541)  
+
+   - **Engedélyezheti** az előre elnyírt kulcsok kódolását UTF-8 használatával.  
+   - **Nincs konfigurálva** – a helyi tároló értékének használatával kódolja az előre lenyírt kulcsokat.  
+
+- **IPsec-kivételek**  
+  **Alapértelmezett**: *0 kiválasztva*  
+   Tűzfal CSP: [MdmStore/globális/IPsecExempt](https://go.microsoft.com/fwlink/?linkid=872547)
+
+   Válasszon ki egyet vagy többet a következő típusú forgalom alól, amely mentesül az IPsec alól:  
+   - **Szomszédfelderítési IPv6 ICMP-típuskódok**  
+   - **ICMP**  
+   - **Útválasztó-felderítési IPv6 ICMP-típuskódok**  
+   - **IPv4-es és IPv6-os DHCP hálózati forgalom**  
+
+- **Visszavont tanúsítványok listájának ellenőrzése**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Tűzfal CSP: [MdmStore/globális/CRLcheck](https://go.microsoft.com/fwlink/?linkid=872548)  
+
+  Válassza ki, hogy az eszköz hogyan ellenőrizze a visszavont tanúsítványok listáját. A lehetőségek a következők:  
+  - **CRL-ellenőrzés letiltása**  
+  - **Sikertelen CRL-ellenőrzés csak visszavont tanúsítványon**  
+  - **Sikertelen CRL-ellenőrzés az észlelt hibákon**.  
+ 
+
+- **A hitelesítési készletek alkalmi egyeztetése egy beírási modulban**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Tűzfal CSP: [MdmStore/globális/OpportunisticallyMatchAuthSetPerKM](https://go.microsoft.com/fwlink/?linkid=872550)  
+  
+  - **Engedélyezés** A beírási moduloknak csak a nem támogatott hitelesítési csomagokat kell figyelmen kívül hagyniuk.  
+  - **Nincs konfigurálva**, a beírási moduloknak figyelmen kívül kell hagyniuk a teljes hitelesítési készletet, ha nem támogatják a készletben megadott összes hitelesítési lakosztályt.  
+
+
+- **Csomagok várólistára helyezése**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Tűzfal CSP: [MdmStore/globális/EnablePacketQueue](https://go.microsoft.com/fwlink/?linkid=872551)  
+
+  Itt adhatja meg, hogy a rendszer hogyan engedélyezze a szoftveres skálázást a fogadási oldalon az IPsec Tunnel Gateway-forgatókönyvhöz továbbított titkosított fogadás és tiszta szöveg esetén. Ez a beállítás megerősíti a csomagok sorrendjét. A lehetőségek a következők:  
+  - **Nincs konfigurálva**  
+  - **Az összes Packet Queuing letiltása**  
+  - **Csak bejövő titkosított csomagok várólistára helyezése**  
+  - **Várólista-csomagok a visszafejtés után csak továbbításra**  
+  - **Bejövő és kimenő csomagok konfigurálása**  
+
+### <a name="network-settings"></a>Hálózati beállítások  
+
+Ebben a cikkben a következő beállítások jelennek meg egyetlen alkalommal, de a három adott hálózati típusra vonatkoznak:  
+- **Tartományi (munkahelyi) hálózat**  
+- **Privát (felderíthető) hálózat**  
+- **Nyilvános (nem felderíthető) hálózat**  
 
 #### <a name="general-settings"></a>Általános beállítások  
-- **Windows Defender-tűzfal**: Válasszon **engedélyezése** a tűzfal és a speciális biztonsági bekapcsolása. A **Nincs konfigurálva** (alapértelmezett) beállítással a házirendbeállításokból függetlenül minden hálózati forgalom engedélyezve van.
-- **Rejtett üzemmód**: **Blokk** a tűzfal rejtett üzemmódban. A rejtett üzemmód tiltásnak a beállítása az **IPsec-et használó csomagok mentességének** letiltását is lehetővé teszi. A **Nincs konfigurálva** (alapértelmezett) érték rejtett üzemmódban működteti a tűzfalat, ami segít megelőzni az ellenőrzési kérelmekre adott válaszokat.
-- **Védett**: **Blokk** kapcsolja ki ezt a szolgáltatást. A **Nincs konfigurálva** (alapértelmezett) érték engedélyezi a beállítást. Ha a beállítás és a Windows Defender-tűzfal be van kapcsolva, minden bejövő forgalom le van tiltva az egyéb házirend-beállításoktól függetlenül.
-- **Egyedi küldésű válaszok a csoportos küldésű szórásokra**: Ha a beállítása **blokk**, egyedi küldésű válaszok a csoportos küldésű szórásokra letilt. Csoportos küldésű vagy szórási üzenetekre általában nem kívánatos egyedi küldésű válaszokat kapni, Ezek a válaszok szolgáltatásmegtagadási (DOS) támadásokkal szemben, vagy egy támadó mintavételi egy ismert aktív számítógépbe próbál adhatja meg. A **Nincs konfigurálva** (alapértelmezett) érték engedélyezi a beállítást.
-- **Bejövő értesítések**: Ha a beállítása **blokk**, azt elrejti értesítések küldéséhez felhasználók számára, ha az alkalmazás figyeljen egy portot az le van tiltva. A **Nincs konfigurálva** (alapértelmezett) érték engedélyezi a beállítást, és megjeleníthet értesítéseket a felhasználóknak, amikor le van tiltva, hogy egy alkalmazás figyeljen egy portot.
-- **Alapértelmezett művelet bejövő kapcsolatokhoz**: Ha a beállítása **blokk**, a tűzfal alapértelmezett művelet bejövő kapcsolatokat nem futtathatók. A **Nincs konfigurálva** (alapértelmezett) értékre állítva az alapértelmezett tűzfalművelet elindul a bejövő kapcsolatoknál.
 
-#### <a name="rule-merging"></a>Szabályegyesítés
+- **Windows Defender-tűzfal**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Tűzfal CSP: [EnableFirewall](https://go.microsoft.com/fwlink/?linkid=872558)  
+  
+  - **Engedélyezze** a tűzfal bekapcsolását és a fokozott biztonságot. 
+  - **Nincs konfigurálva** Engedélyezi az összes hálózati forgalmat, függetlenül az egyéb házirend-beállításoktól.  
 
-- **Engedélyezett alkalmazás Windows Defender-tűzfal-szabályokat a helyi tároló**: Válasszon **engedélyezése** tűzfalszabályok a helyi tároló alkalmazandó, így Ön elfogadtatni és érvényesíteni. A **Nincs konfigurálva** (alapértelmezett) érték figyelmen kívül hagyja és nem kényszeríti a helyi tároló alkalmazásának engedélyezett tűzfalszabályait.
-- **Globális Windows Defender-tűzfal portszabályok a helyi tároló**: Válasszon **engedélyezése** , a helyi tároló elfogadtatni és érvényesíteni kívánt globális tűzfalszabályainak alkalmazása. A **Nincs konfigurálva** (alapértelmezett) érték figyelmen kívül hagyja és nem kényszeríti a helyi tároló globális portjának engedélyezett tűzfalszabályait.
-- **A Windows Defender-tűzfalszabályok a helyi tároló**: Válasszon **engedélyezése** , a helyi tároló elfogadandó és érvényesítendő tűzfalszabályainak alkalmazása. A **Nincs konfigurálva** (alapértelmezett) érték figyelmen kívül hagyja és nem kényszeríti a helyi tároló tűzfalszabályait.
-- **A helyi tároló IPsec-szabályai**: Válasszon **engedélyezése** , függetlenül a sémától és a kapcsolatbiztonsági szabály verziójától, a helyi tároló kapcsolatbiztonsági szabályainak alkalmazása. A **Nincs konfigurálva** (alapértelmezett) érték figyelmen kívül hagyja és nem kényszeríti a helyi tároló kapcsolatbiztonsági szabályait, függetlenül a sémától és a kapcsolatbiztonsági szabály verziójától.
+- **Rejtett üzemmód**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Tűzfal CSP: [DisableStealthMode](https://go.microsoft.com/fwlink/?linkid=872559)  
+  - **Nincs konfigurálva**  
+  - A **Block** -Firewall blokkolva van a rejtett módban való működésben. A rejtett üzemmód tiltásnak a beállítása az **IPsec-et használó csomagok mentességének** letiltását is lehetővé teszi.  
+  - **Engedélyezés** – a tűzfal lopakodó üzemmódban működik, ami segít megelőzni a kérelmekre való válaszadást.  
 
-## <a name="windows-defender-smartscreen-settings"></a>A Windows Defender SmartScreen beállításai
+- **IPsec által védett csomagok kivétele rejtett móddal**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Tűzfal CSP: [DisableStealthModeIpsecSecuredPacketExemption](https://go.microsoft.com/fwlink/?linkid=872560)  
 
-A következő, Microsoft Edge böngészővel rendelkező Windows 10- kiadásokon támogatott:
-- Otthoni
-- Professional
-- Üzleti
-- Vállalati
-- Oktatás
-- mobil
-- Mobile Enterprise
+  Ezt a beállítást a rendszer figyelmen kívül hagyja, ha a *rejtett mód* *blokkolásra*van beállítva.  
 
-**Beállítások**:
+  - **Nincs konfigurálva**  
+  - **Letiltás** – az IPSec által védett csomagok nem kapnak kivételeket.  
+  - **Engedélyezés** – kivételek engedélyezése. A tűzfal lopakodó üzemmódja nem akadályozhatja meg, hogy a gazdaszámítógép ne válaszoljon az IPsec által védett, kéretlen hálózati forgalomra.  
 
-- **SmartScreen használata alkalmazások és fájlok esetén**: **Engedélyezése** Windows SmartScreen használata fájlok, és alkalmazások futtatásához. A SmartScreen egy felhőalapú, adathalászat elleni és kártevőirtó összetevő. A **Nincs konfigurálva** (alapértelmezett) érték letiltja a SmartScreent.
-- **Nem ellenőrzött fájlok futtatása**: **Blokk** futtatását, fájlok, amelyek végfelhasználók által a Windows SmartScreen még nem jóvá lett hagyva. A **Nincs konfigurálva** (alapértelmezett) érték letiltja a funkciót, és engedélyezi a végfelhasználók számára, hogy nem ellenőrzött fájlokat futtassanak.
+- **Védett**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Tűzfal CSP: [Védett](https://go.microsoft.com/fwlink/?linkid=872561)  
+    - **Nincs konfigurálva**  
+    - **Letiltás** – ha a Windows Defender-tűzfal be van kapcsolva, és ez a beállítás *blokkolásra*van beállítva, az összes bejövő forgalom le lesz tiltva, az egyéb házirend-beállításoktól függetlenül. 
+    - **Engedélyezés** – ha engedélyezve értékre van *állítva, ez*a beállítás ki van kapcsolva, és a bejövő forgalom más házirend-beállítások alapján engedélyezett.
 
-## <a name="windows-encryption"></a>Windows Encryption
+- **Egyedi küldéses válaszok a csoportos küldésű szórásokra**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Tűzfal CSP: [DisableUnicastResponsesToMulticastBroadcast](https://go.microsoft.com/fwlink/?linkid=872562)  
+  
+  Csoportos küldésű vagy szórási üzenetekre általában nem kívánatos egyedi küldésű válaszokat kapni, Ezek a válaszok szolgáltatásmegtagadást (DOS) okozó támadást vagy egy támadó által megkísérelt, ismert élő számítógép mintavételét jelezhetik.  
+  - **Nincs konfigurálva**  
+  - Egyedi küldésű **válaszok letiltása csoportos** küldésű szórásra – letiltás.  
+  - **Engedélyezés** – egyedi küldésű válaszok küldése csoportos küldésű szórásra.  
 
-### <a name="windows-settings"></a>Windowsos beállítások
+- **Bejövő értesítések**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Tűzfal CSP: [DisableInboundNotifications](https://go.microsoft.com/fwlink/?linkid=8725630)  
 
-A következő Windows 10-kiadásokon támogatott:
+  - **Nincs konfigurálva**  
+  - **Blokkolhatja** azokat az értesítéseket, amelyeket akkor kell használni, ha egy alkalmazás nem figyeli a portot.  
+  - **Engedélyezés** – engedélyezi ezt a beállítást, és értesítéseket jeleníthet meg a felhasználóknak, ha egy alkalmazás nem figyeli a portot.  
 
-- Professional
-- Üzleti
-- Vállalati
-- Oktatás
-- mobil
-- Mobile Enterprise
+- **A kimenő kapcsolatok alapértelmezett művelete**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Tűzfal CSP: [DefaultOutboundAction](https://aka.ms/intune-firewall-outboundaction)  
+  
+  Konfigurálja az alapértelmezett műveleti tűzfalat a kimenő kapcsolatokon. Ez a beállítás a Windows 1809-es vagy újabb verziójára lesz alkalmazva.  
 
-**Beállítások**:
+  - **Nincs konfigurálva**  
+  - **Letiltás** – az alapértelmezett tűzfalszabály nem fut a kimenő forgalomon, kivéve, ha explicit módon nincs megadva a blokkolás.  
+  - **Engedélyezés** – az alapértelmezett tűzfalszabályok a kimenő kapcsolatokon futnak.  
 
-- **Eszközök titkosítása**: **Szükséges** az eszköztitkosítás engedélyezése a felhasználóknak. A Windows kiadásától és a rendszerkonfigurációtól függően a rendszer a következőket kérheti a felhasználóktól:  
-  - Megerősítés arról, hogy nincs engedélyezve másik szolgáltató titkosítási funkciója
-  - A BitLocker meghajtótitkosítás kikapcsolása, majd a Bitlocker újbóli bekapcsolása
+- **Bejövő kapcsolatok alapértelmezett művelete**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Tűzfal CSP: [DefaultInboundAction](https://go.microsoft.com/fwlink/?linkid=872564)  
+ 
+  - **Nincs konfigurálva**  
+  - **Letiltás** – az alapértelmezett tűzfalszabály nem fut a bejövő kapcsolatokon.  
+  - **Engedélyezés** – az alapértelmezett tűzfalszabály a bejövő kapcsolatokon fut.  
+
+#### <a name="rule-merging"></a>Szabályegyesítés  
+
+- **Engedélyezve van az alkalmazás Windows Defender-tűzfalszabályok a helyi tárolóból**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Tűzfal CSP: [AuthAppsAllowUserPrefMerge](https://go.microsoft.com/fwlink/?linkid=872565)  
+
+  - **Nincs konfigurálva**  
+  - **Letiltás** – a rendszer figyelmen kívül hagyja a helyi tárolóban lévő, a jogosult alkalmazás tűzfalszabályok szabályait, és nem kényszeríti ki őket.  
+  - **Engedélyezés** Válassza az engedélyezés a tűzfalszabályok alkalmazása a helyi tárolóban lehetőséget, hogy azok felismerhetők és kikényszerítve legyenek. -
+     
+
+- **Globális port a Windows Defender tűzfalszabályok a helyi tárolóból**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Tűzfal CSP: [GlobalPortsAllowUserPrefMerge](https://go.microsoft.com/fwlink/?linkid=872566)  
+
+  - **Nincs konfigurálva**  
+  - **Letiltás** – a helyi tárolóban a globális porthoz tartozó tűzfalszabályok figyelmen kívül lesznek hagyva, és nincsenek kikényszerítve.  
+  - **Engedélyezés** – a globális port tűzfalszabályok alkalmazása a helyi tárolóban felismerhető és érvényesíthető.  
+
+- **Windows Defender-tűzfalszabályok a helyi tárolóban**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Tűzfal CSP: [AllowLocalPolicyMerge](https://go.microsoft.com/fwlink/?linkid=872567)  
+
+  - **Nincs konfigurálva**  
+  - A **rendszer figyelmen** kívül hagyja a tűzfal szabályait a helyi tárolóból, és nem kényszeríti ki.
+  - **Engedélyezés** – tűzfalszabályok alkalmazása a helyi tárolóban felismerés és kényszerített állapotba.  
+
+- **Az IPsec-szabályok a helyi tárolóból**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Tűzfal CSP: [AllowLocalIpsecPolicyMerge](https://go.microsoft.com/fwlink/?linkid=872568)  
+
+  - **Nincs konfigurálva**  
+  - **Letiltás** – a helyi tárolóban lévő kapcsolatbiztonsági szabályok figyelmen kívül lesznek hagyva és nem kényszerítve, a séma verziójától és a kapcsolatbiztonsági szabály verziójától függetlenül.  
+  - **Engedélyezés** – kapcsolatbiztonsági szabályok alkalmazása a helyi tárolóból, a séma vagy a kapcsolatbiztonsági szabály verziójától függetlenül.  
+
+### <a name="firewall-rules"></a>Tűzfalszabályok  
+
+**Hozzáadhat** egy vagy több egyéni tűzfalszabály-szabályt is. További információ: [Egyéni tűzfalszabályok hozzáadása Windows 10-es eszközökhöz](endpoint-protection-configure.md#add-custom-firewall-rules-for-windows-10-devices).  
+
+Az egyéni tűzfalszabályok a következő beállításokat támogatják:  
+
+#### <a name="general-settings"></a>Általános beállítások:  
+
+- **Name**  
+  **Alapértelmezett**: *Nincs név*  
+
+  Adjon meg egy rövid nevet a szabálynak. Ez a név fog megjelenni a szabályok listájában, hogy könnyebben azonosítható legyen.  
+
+- **Leírás**  
+  **Alapértelmezett**: *Nincs Leírás*  
+
+  Adja meg a szabály leírását.  
+
+- **Irányba**   
+  **Alapértelmezett**: Nincs konfigurálva  
+  Tűzfal CSP: [FirewallRules/*FirewallRuleName*/Direction](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#direction)  
+  
+  Annak meghatározása, hogy ez a szabály a **bejövő**vagy a **kimenő** forgalomra vonatkozik-e. Ha a beállítás **nincs konfigurálva**, a szabály automatikusan a kimenő forgalomra vonatkozik.  
+
+- **Művelet**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Tűzfal CSP: [FirewallRules/*FirewallRuleName*/Action](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#action)és [FirewallRules/*FirewallRuleName*/Action/type](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#type)  
+
+  Válassza az **Engedélyezés** vagy a **Letiltás**lehetőséget. Ha a **nincs konfigurálva**értékre van állítva, a szabály alapértelmezés szerint engedélyezi a forgalmat.  
+
+- **Hálózat típusa**  
+  **Alapértelmezett**: 0 kijelölt  
+  Tűzfal CSP: [FirewallRules/*FirewallRuleName*/Profiles](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#profiles)  
+
+  Válasszon legfeljebb három olyan típusú hálózati típust, amelyhez ez a szabály tartozik. A lehetőségek közé tartozik a **tartomány**, a **saját**és a **nyilvános**.  Ha nincs kiválasztva hálózati típus, a szabály mindhárom hálózati típusra vonatkozik.  
+
+#### <a name="application-settings"></a>Alkalmazásbeállítások  
+
+- **Alkalmazás (ok)**  
+  **Alapértelmezett**: Összes  
+
+  Egy alkalmazás vagy program kapcsolatainak vezérlése. Válasszon egyet a következő lehetőségek közül, majd fejezze be a további konfigurálást:  
+  - **Csomag családjának neve** – adja meg a csomag családjának nevét. A csomag családi nevének megkereséséhez használja a **Get-AppxPackage PowerShell-** parancsot.   
+    Tűzfal CSP: [FirewallRules/*FirewallRuleName*/app/PackageFamilyName](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#packagefamilyname)  
+ 
+  - **Fájl elérési útja** – meg kell adnia egy, az eszközön található alkalmazás elérési útját, amely abszolút elérési út vagy relatív elérési út lehet. Példa:  C:\Windows\System\Notepad.exe vagy%WINDIR%\Notepad.exe.  
+    Tűzfal CSP: [FirewallRules/*FirewallRuleName*/app/filepath](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#filepath)  
+
+  - **Windows-szolgáltatás** – adja meg a Windows-szolgáltatás rövid nevét, ha az szolgáltatás, és nem olyan alkalmazás, amely forgalmat küld vagy fogad. A szolgáltatás rövid nevének megkereséséhez használja a **Get-Service PowerShell-** parancsot.  
+    Tűzfal CSP: [FirewallRules/*FirewallRuleName*/app/servicename](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#servicename)  
+
+  - **Összes**– *nem érhető el további konfiguráció*.  
+
+#### <a name="ip-address-settings"></a>IP-cím beállításai  
+
+Itt adhatja meg azokat a helyi és távoli címeket, amelyekre ez a szabály vonatkozik.  
+
+- **Helyi címek**    
+  **Alapértelmezett**: Bármely címe  
+  Tűzfal CSP: [FirewallRules/*FirewallRuleName*/LocalPortRanges](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#localportranges)  
+
+  Válassza ki **a kívánt címeket vagy a** **megadott címeket**.  
+
+  Ha *megadott címet*használ, egy vagy több címet ad hozzá a szabály által érintett helyi címek vesszővel tagolt listájához. Az érvényes tokenek a következők:  
+  - *Bármely* helyi címként használjon csillagot "*". Ha csillagot használ, az csak az Ön által használt token lehet.  
+  - Alhálózat megadásához használja az alhálózati maszkot vagy a hálózati előtag jelölését. Ha nincs megadva alhálózati maszk és hálózati előtag, az alhálózati maszk alapértelmezett értéke 255.255.255.255.  
+  - Érvényes IPv6-cím.  
+  - Egy IPv4-címtartomány a "kezdő címe-záró címe" formátumban, szóközök nélkül.  
+  - Egy IPv6-címtartomány a "kezdő cím-záró cím" formátumban, szóközök nélkül.  
+
+- **Távoli címek**  
+  **Alapértelmezett**: Bármely címe  
+  Tűzfal CSP: [FirewallRules/*FirewallRuleName*/RemoteAddressRanges](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#remoteaddressranges)  
+ 
+  Válassza ki **a kívánt címeket vagy a** **megadott címeket**.  
+
+  Ha *megadott címet*használ, egy vagy több címet ad hozzá a szabály által érintett távoli címek vesszővel tagolt listájához. A tokenek nem kis-és nagybetűk. Az érvényes tokenek a következők:  
+  - *Bármely* távoli címként használjon csillagot "*". Ha csillagot használ, az csak az Ön által használt token lehet.  
+  - "Defaultgateway"  
+  - DHCP-  
+  - DNS  
+  - WINS  
+  - "Intranet" (a Windows 1809-es és újabb verzióiban támogatott)  
+  - "RmtIntranet" (Windows 1809 és újabb verziók esetén támogatott)  
+  - "Internet" (a Windows 1809-es és újabb verzióiban támogatott)  
+  - "Ply2Renders" (Windows 1809 és újabb verziók esetén támogatott)  
+  - A "LocalSubnet" kifejezés a helyi alhálózaton lévő helyi címeket jelöli.  
+  - Alhálózat megadásához használja az alhálózati maszkot vagy a hálózati előtag jelölését. Ha nincs megadva alhálózati maszk és hálózati előtag, az alhálózati maszk alapértelmezett értéke 255.255.255.255.  
+  - Érvényes IPv6-cím.  
+  - Egy IPv4-címtartomány a "kezdő címe-záró címe" formátumban, szóközök nélkül.  
+  - Egy IPv6-címtartomány a "kezdő cím-záró cím" formátumban, szóközök nélkül.  
+
+#### <a name="port-and-protocol-settings"></a>Port és protokoll beállításai  
+Itt adhatja meg azokat a helyi és távoli portokat, amelyekre ez a szabály vonatkozik.  
+
+- **Protokoll**  
+  **Alapértelmezett**: Any  
+  Tűzfal CSP: [FirewallRules/*FirewallRuleName*/Protocol](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#protocol)  
+  Válasszon az alábbiak közül, és végezze el az összes szükséges konfigurációt:  
+  - **Összes** – nem érhető el további konfiguráció.  
+  - **TCP** – helyi és távoli portok konfigurálása. Mindkét beállítás támogatja az összes portot vagy a megadott portokat. Vesszővel tagolt lista használatával adja meg a megadott portokat.  
+    - **Helyi portok** – tűzfal CSP: [FirewallRules/*FirewallRuleName*/LocalPortRanges](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#localportranges)  
+    - **Távoli portok** – tűzfal CSP: [FirewallRules/*FirewallRuleName*/RemotePortRanges](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#remoteportranges)  
+  - **UDP** – a helyi és a távoli portok konfigurálása. Mindkét beállítás támogatja az összes portot vagy a megadott portokat. Vesszővel tagolt lista használatával adja meg a megadott portokat.  
+    - **Helyi portok** – tűzfal CSP: [FirewallRules/*FirewallRuleName*/LocalPortRanges](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#localportranges)  
+    - **Távoli portok** – tűzfal CSP: [FirewallRules/*FirewallRuleName*/RemotePortRanges](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#remoteportranges)  
+  - **Custom (egyéni** ) – a 0 és 255 közötti egyéni **protokoll** -számot ad meg.  
+
+#### <a name="advanced-configuration"></a>Speciális konfiguráció  
+- **Illesztőfelület-típusok**  
+  **Alapértelmezett**: 0 kijelölt  
+  Tűzfal CSP: [FirewallRules/*FirewallRuleName*/InterfaceTypes](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#interfacetypes)  
+
+  Válasszon a következő lehetőségek közül:  
+  - **Távelérés**  
+  - **Szikratávíró**  
+  - **Helyi hálózat**  
+
+- **Kapcsolatok engedélyezése csak ezektől a felhasználóktól**  
+  **Alapértelmezett**: Minden felhasználó *(alapértelmezés szerint az összes használja, ha nincs megadva lista)*  
+  Tűzfal CSP: [FirewallRules/*FirewallRuleName*/LocalUserAuthorizationList](https://aka.ms/intunefirewallauthorizedusers)  
+
+  A szabályhoz tartozó helyi felhasználók listájának megadása. Nem lehet megadni a jogosultsággal rendelkező felhasználók listáját, ha ez a szabály egy Windows-szolgáltatásra vonatkozik.  
+
+
+## <a name="windows-defender-smartscreen-settings"></a>A Windows Defender SmartScreen beállításai  
+ 
+A Microsoft Edge-nek telepítve kell lennie az eszközön.  
+
+- **SmartScreen alkalmazások és fájlok számára**  
+  **Alapértelmezett**: Nincs konfigurálva  
+   SmartScreen CSP: [SmartScreen/EnableSmartScreenInShell](https://go.microsoft.com/fwlink/?linkid=872784)  
+
+  - **Nincs konfigurálva** – letiltja a SmartScreen használatát.  
+  - **Engedélyezés** – a Windows SmartScreen engedélyezése a fájlok végrehajtásához és az alkalmazások futtatásához. A SmartScreen egy felhőalapú, adathalászat elleni és kártevőirtó összetevő.  
+
+- **Nem ellenőrzött fájlok végrehajtása**  
+  **Alapértelmezett**: Nincs konfigurálva  
+   SmartScreen CSP: [SmartScreen/PreventOverrideForFilesInShell](https://go.microsoft.com/fwlink/?linkid=872783)
+
+  - **Nincs konfigurálva** – letiltja ezt a funkciót, és lehetővé teszi a végfelhasználók számára a nem ellenőrzött fájlok futtatását.  
+  - **Letiltás** – megakadályozza, hogy a végfelhasználók futtassák a Windows SmartScreen által nem ellenőrzött fájlokat.  
+
+## <a name="windows-encryption"></a>Windows Encryption  
+ 
+### <a name="windows-settings"></a>Windowsos beállítások  
+
+Ezek a titkosítási beállítások a Windows 10 összes verziójára érvényesek.  
+
+- **Eszközök titkosítása**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  BitLocker CSP: [RequireDeviceEncryption](https://go.microsoft.com/fwlink/?linkid=872523)  
+
+  - **Megkövetelt** – a felhasználóknak az eszközök titkosításának engedélyezését kell kérniük. A Windows kiadásától és a rendszerkonfigurációtól függően a rendszer a következőket kérheti a felhasználóktól:  
+    - Annak megerősítéséhez, hogy egy másik szolgáltatótól származó titkosítás nincs engedélyezve.  
+    - Szükség van a BitLocker meghajtótitkosítás kikapcsolására, majd a BitLocker újbóli bekapcsolására.  
+  - **Nincs konfigurálva**  
+  
+  Az eszköz ugyanis instabillá válhat, ha a windowsos titkosítást úgy kapcsolják be, hogy közben egy másik titkosítási módszer aktív marad.  
+
+- **Storage-kártya titkosítása (csak mobil)**  
+  *Ez a beállítás csak a Windows 10 Mobile rendszerre vonatkozik.*  
+  **Alapértelmezett**: Nincs konfigurálva  
+  BitLocker CSP: [RequireStorageCardEncryption](https://go.microsoft.com/fwlink/?linkid=872524)  
+
+  - Az eszköz által használt cserélhető tárolók titkosításának **megkövetelése** .  
+  - **Nincs konfigurálva** – nincs szükség a Storage Card encryption használatára, és nem kéri a felhasználót, hogy kapcsolja be.  
+
+### <a name="bitlocker-base-settings"></a>BitLocker-alapbeállítások  
+
+Az alapbeállítások minden típusú adatmeghajtóra vonatkozó univerzális BitLocker-beállítások. Ezek a beállítások szabályozzák a végfelhasználók által a különböző típusú adatmeghajtókon módosítható meghajtótitkosítási feladatokat vagy konfigurációs beállításokat.  
+
+- **Figyelmeztetés más lemezes titkosításhoz**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  BitLocker CSP: [AllowWarningForOtherDiskEncryption](https://go.microsoft.com/fwlink/?linkid=872525)  
+
+  - **Letiltás** – a figyelmeztető üzenet letiltása, ha egy másik lemez-titkosítási szolgáltatás van az eszközön.  
+  - **Nincs konfigurálva** – engedélyezze a figyelmeztetést más lemezes titkosítás megjelenítéséhez.  
+
+  Ha a *blokkolás*értékre van állítva, akkor a következő beállítást állíthatja be:  
+
+  - **Titkosítás engedélyezése az általános jogú felhasználók számára az Azure AD JOIN szolgáltatásban**  
+    *Ez a beállítás csak Azure Active Directory csatlakoztatott (Azure ADJ) eszközökre vonatkozik, és az előző beállítástól `Warning for other disk encryption`függ.*  
+    **Alapértelmezett**: Nincs konfigurálva  
+    BitLocker CSP: [AllowStandardUserEncryption](https://docs.microsoft.com/windows/client-management/mdm/bitlocker-csp#allowstandarduserencryption)
+
+     - **Engedélyezés** – az általános jogú felhasználók (nem rendszergazdák) engedélyezhetik a BitLocker titkosítást a bejelentkezéskor.  
+     - **Nincs konfigurálva** , csak a rendszergazdák engedélyezhetik a BitLocker titkosítást az eszközön.  
+
+- **Titkosítási módszerek konfigurálása**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  BitLocker CSP: [EncryptionMethodByDriveType](https://go.microsoft.com/fwlink/?linkid=872526)  
+
+  - **Engedélyezés** – titkosítási algoritmusok konfigurálása az operációs rendszer, az adattároló és a cserélhető meghajtók számára.  
+  - **Nincs konfigurálva** – a BITLOCKER az XTS-AES 128 bitet használja alapértelmezett titkosítási módszerként, vagy pedig a telepítési parancsfájl által megadott titkosítási módszert használja.  
+
+  Az *Engedélyezés*beállításnál a következő beállításokat állíthatja be:  
+
+  - **Operációs rendszer-meghajtók titkosítása**  
+    **Alapértelmezett**: XTS-AES 128 bites  
+   
+    Válassza ki az operációs rendszer meghajtók titkosítási módszerét. Javasoljuk az XTS-AES algoritmus használatát.  
+    - **AES – CBC 128 bites**  
+    - **AES – CBC 256 bites**  
+    - **XTS-AES 128 bites**  
+    - **XTS-AES 256 bites**  
+
+  - **Rögzített adatmeghajtók titkosítása**  
+    **Alapértelmezett**: AES – CBC 128 bites  
+   
+    Válassza ki a rögzített (beépített) adatmeghajtók titkosítási módszerét. Javasoljuk az XTS-AES algoritmus használatát.  
+    - **AES – CBC 128 bites**  
+    - **AES – CBC 256 bites**  
+    - **XTS-AES 128 bites**  
+    - **XTS-AES 256 bites**  
+
+  - **Cserélhető adatmeghajtók titkosítása**  
+    **Alapértelmezett**: AES – CBC 128 bites  
+
+    Válassza ki a cserélhető adatmeghajtók titkosítási módszerét. Ha a cserélhető meghajtót olyan eszközökkel is használja, amelyeken nem Windows 10 operációs rendszer fut, az AES-CBC algoritmus használatát javasoljuk.  
+    - **AES – CBC 128 bites**  
+    - **AES – CBC 256 bites**  
+    - **XTS-AES 128 bites**  
+    - **XTS-AES 256 bites**  
+
+### <a name="bitlocker-os-drive-settings"></a>Operációsrendszer-meghajtók BitLocker-beállításai  
+
+Ezek a beállítások kifejezetten az operációsrendszer-adatmeghajtókra érvényesek.  
+
+- **További hitelesítés indításkor**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  BitLocker CSP: [SystemDrivesRequireStartupAuthentication](https://go.microsoft.com/fwlink/?linkid=872527)  
+
+  - **Szükséges** – konfigurálja a számítógép indításának hitelesítési követelményeit, beleértve a PLATFORMMEGBÍZHATÓSÁGI modul (TPM) használatát.  
+  - **Nincs konfigurálva** – csak az alapszintű beállításokat konfigurálja TPM-sel rendelkező eszközökön.  
+
+  A *kötelező*beállításhoz a következő beállításokat állíthatja be:  
+
+  - **BitLocker nem kompatibilis TPM-lapkával**  
+    **Alapértelmezett**: Nincs konfigurálva  
+
+    - **Letiltás – a** BitLocker használatának letiltása, ha egy eszközön nincs kompatibilis TPM-lapka.  
+    - **Nincs konfigurálva** – a felhasználók a BitLockert kompatibilis TPM-lapka nélkül is használhatják. A BitLockerhez jelszóra vagy indítókulcsra lehet szüksége.  
+
+  - **Kompatibilis TPM-indítás**  
+    **Alapértelmezett**: TPM engedélyezése  
+
+    Annak konfigurálása, hogy a TPM engedélyezett, kötelező vagy nem engedélyezett.  
+
+    - **TPM engedélyezése**  
+    - **TPM letiltása**  
+    - **TPM megkövetelése**  
+
+  - **Kompatibilis TPM-indítási PIN-kód**  
+    **Alapértelmezett**: Indítási PIN-kód engedélyezése a TPM-sel  
+
+    A TPM-lapka indítási PIN-kódjának használatával engedélyezheti, nem engedélyezheti vagy megkövetelheti a használatát. Indítási PIN-kód engedélyezéséhez végfelhasználói beavatkozás szükséges.  
+
+    - **Indítási PIN-kód engedélyezése a TPM-sel**  
+    - **Indítási PIN-kód tiltása a TPM-sel**  
+    - **Indítási PIN-kód megkövetelése a TPM-sel**
+
+  - **Kompatibilis TPM-indítási kulcs**  
+    **Alapértelmezett**: Indítási kulcs engedélyezése a TPM-sel  
+
+    A TPM-lapka használatával engedélyezheti, nem engedélyezheti vagy megkövetelheti az indítási kulcs használatát. Indítókulcs engedélyezéséhez végfelhasználói beavatkozás szükséges.  
+
+    - **Indítási kulcs engedélyezése a TPM-sel**  
+    - **Indítási kulcs letiltása a TPM-sel**  
+    - **Indítási kulcs megkövetelése a TPM-sel**  
+
+  - **Kompatibilis TPM-indítási kulcs és PIN-kód**  
+    **Alapértelmezett**: Indítási kulcs és PIN-kód engedélyezése a TPM-sel  
+
+    A TPM-lapka használatával engedélyezheti, nem engedélyezheti vagy megkövetelheti az indítási kulcs használatát és a PIN-kódot. Indítókulcs és indítási PIN-kód engedélyezéséhez végfelhasználói beavatkozás szükséges.  
+    - **Indítási kulcs és PIN-kód engedélyezése a TPM-sel**  
+    - **Indítási kulcs és PIN-kód tiltása a TPM-sel**  
+    - **Indítási kulcs és PIN-kód megkövetelése a TPM-sel**   
+
+- **PIN-kód minimális hossza**  
+    **Alapértelmezett**: Nincs konfigurálva  
+    BitLocker CSP: [SystemDrivesMinimumPINLength](https://go.microsoft.com/fwlink/?linkid=872528)   
+
+    - **Engedélyezés** Állítsa be a TPM-indítási PIN-kód minimális hosszát.  
+    - **Nincs konfigurálva** – a felhasználók tetszőleges hosszúságú indítási PIN-kódot állíthatnak be 6 és 20 számjegy között.  
+
+  Az *Engedélyezés*beállításnál a következő beállítást állíthatja be:  
+
+  - **Minimális karakterek**  
+    **Alapértelmezett**: *Nincs konfigurálva* BitLocker CSP: [SystemDrivesMinimumPINLength](https://go.microsoft.com/fwlink/?linkid=872528)  
+
+    Adja meg a **4**-**20**indítási PIN-kód számára szükséges karakterek számát.  
+
+- **OPERÁCIÓSRENDSZER-meghajtó helyreállítása**  
+  **Alapértelmezett**: Nincs konfigurálva   
+  BitLocker CSP: [SystemDrivesRecoveryOptions](https://go.microsoft.com/fwlink/?linkid=872529)  
+
+  - **Engedélyezés** – a BitLocker által védett operációsrendszer-meghajtók helyreállításának szabályozása, ha a szükséges indítási információk nem érhetők el.  
+  - **Nincs konfigurálva** – a BitLocker helyreállításhoz az alapértelmezett helyreállítási beállítások támogatottak. Alapértelmezés szerint a DRA engedélyezett, a helyreállítási beállításokat a felhasználó választja ki, beleértve a helyreállítási jelszót és a helyreállítási kulcsot, és a helyreállítási adatokat nem biztonsági másolat készül a AD DS.  
+
+  Az *Engedélyezés*beállításnál a következő beállításokat állíthatja be:  
+
+  - **Tanúsítvány alapú adathelyreállítási ügynök**  
+    **Alapértelmezett**: Nincs konfigurálva  
+     
+    - **Letiltás** – megakadályozza az adathelyreállítási ügynök használatát a BitLocker által védett operációsrendszer-meghajtók használatával.  
+    - **Nincs konfigurálva** – engedélyezi, hogy a rendszer az adathelyreállítási ügynököket a BitLocker által védett operációsrendszer-meghajtókon használja.  
+
+  - **Helyreállítási jelszó felhasználói létrehozása**  
+    **Alapértelmezett**: 48 számjegyű helyreállítási jelszó engedélyezése  
+
+    Válassza ki, hogy a felhasználók számára engedélyezett, kötelező vagy nem engedélyezett-e a 48 számjegyű helyreállítási jelszó létrehozása.  
+    - **48 számjegyű helyreállítási jelszó engedélyezése**  
+    - **Ne engedélyezze a 48 számjegyű helyreállítási jelszót**  
+    - **48 számjegyű helyreállítási jelszó megkövetelése**  
+
+  - **Helyreállítási kulcs felhasználói létrehozása**  
+    **Alapértelmezett**: 256 bites helyreállítási kulcs engedélyezése  
+
+    Válassza ki, hogy a felhasználók számára engedélyezett, kötelező vagy nem engedélyezett-e a 256 bites helyreállítási kulcs létrehozása.  
+    - **256 bites helyreállítási kulcs engedélyezése**  
+    - **Ne engedélyezze a 256 bites helyreállítási kulcsot**  
+    - **256 bites helyreállítási kulcs megkövetelése**  
+
+  - **Helyreállítási beállítások a BitLocker telepítővarázsló varázslóban**  
+    **Alapértelmezett**: Nincs konfigurálva  
+
+    - **Letiltás** – a felhasználók nem látják és nem módosíthatják a helyreállítási beállításokat. Ha be van állítva 
+    - **Nincs konfigurálva** – a felhasználók a BitLocker bekapcsolásakor megtekinthetik és módosíthatják a helyreállítási beállításokat. 
+ 
+  - **A BitLocker helyreállítási adatainak mentése a Azure Active Directoryba**  
+    **Alapértelmezett**: Nincs konfigurálva  
+
+    - **Engedélyezés** – a BitLocker helyreállítási információinak tárolása Azure Active Directoryba (Azure ad).  
+    - **Nincs konfigurálva** – a BitLocker helyreállítási információit a rendszer nem TÁROLJA a HRE.  
+
+  - **A BitLocker Azure Active Directory tárolt helyreállítási információi**  
+    **Alapértelmezett**: A helyreállítási jelszavak és a kulcscsomagok biztonsági mentése  
+
+    Annak konfigurálása, hogy a BitLocker helyreállítási információinak mely részei legyenek tárolva az Azure AD-ben. A következő lehetőségek közül választhat:  
+    - **A helyreállítási jelszavak és a kulcscsomagok biztonsági mentése**  
+    - **Csak a helyreállítási jelszavak biztonsági mentése**  
+
+  - **Ügyfél által vezérelt helyreállítási jelszó elforgatása**  
+    **Alapértelmezett**: Az Azure AD-hez csatlakoztatott eszközökhöz engedélyezett a kulcs elforgatása  
+    BitLocker CSP: [ConfigureRecoveryPasswordRotation](https://docs.microsoft.com/windows/client-management/mdm/bitlocker-csp)  
     
-    Az eszköz ugyanis instabillá válhat, ha a windowsos titkosítást úgy kapcsolják be, hogy közben egy másik titkosítási módszer aktív marad. 
-- **(Csak mobil) tárolókártya titkosítása**: **Szükséges** , minden cserélhető tárolókártyát titkosítani fog a eszköz által használt. A **Nincs konfigurálva** (alapértelmezett) érték nem teszi kötelezővé a tárolókártya titkosítását, és nem kéri a felhasználót, hogy kapcsolja be. Ez a beállítás csak Windows 10 Mobile-eszközökre vonatkozik.
+    Ez a beállítás az operációsrendszer-meghajtó helyreállítása után kezdeményezi az ügyfél által vezérelt helyreállítási jelszavak rotációját (a Csizmadia vagy a WinRE használatával).  
 
-### <a name="bitlocker-base-settings"></a>BitLocker-alapbeállítások
+    - Nincs konfigurálva  
+    - Kulcs elforgatása letiltva  
+    - Az Azure AD-hez csatlakoztatott elforgatási sebesség engedélyezve  
+    - Az Azure AD-hez és a hibridhez csatlakoztatott eszközökhöz engedélyezve van a kulcs elforgatása  
 
-A következő Windows 10-kiadásokon támogatott:
+  - **A helyreállítási információk tárolása Azure Active Directory a BitLocker engedélyezése előtt**  
+    **Alapértelmezett**: Nincs konfigurálva  
+ 
+     Annak megakadályozása, hogy a felhasználók engedélyezzék a BitLocker engedélyezését, kivéve, ha a számítógép sikeresen biztonsági másolatot készít a BitLocker helyreállítási adatairól Azure Active Directory.  
 
-- Vállalati
-- Oktatás
-- mobil
-- Mobile Enterprise
-- Professional
+    - **Megkövetelés** – a felhasználók csak akkor kapcsoljuk be a BitLockert, ha a BitLocker helyreállítási adatokat nem sikerült az Azure ad-ben tárolni.  
+    - **Nincs konfigurálva** – a felhasználók akkor is bekapcsolhatják a BitLockert, ha a helyreállítási adatok tárolása nem sikerült az Azure ad-ben.  
 
-Az alapbeállítások minden típusú adatmeghajtóra vonatkozó univerzális BitLocker-beállítások. Ezek a beállítások szabályozzák a végfelhasználók által a különböző típusú adatmeghajtókon módosítható meghajtótitkosítási feladatokat vagy konfigurációs beállításokat.
+- **Rendszerindítás előtti helyreállítási üzenet és URL-cím**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  BitLocker CSP: [SystemDrivesRecoveryMessage](https://go.microsoft.com/fwlink/?linkid=872530)  
 
-- **Figyelmeztetés egyéb lemeztitkosításra**: Válassza ki **blokk** figyelmeztető üzenet letiltása, ha egy másik lemez titkosítási szolgáltatás az eszközön. A **Nincs konfigurálva** (alapértelmezett) értékre állítva megjelenhetnek a figyelmeztetések.
-    - **Engedélyezze a titkosítást az Azure AD Join során általános jogú felhasználók**: Ha úgy dönt **engedélyezése**, normál felhasználók/nem rendszergazda engedélyezheti a BitLocker-titkosítást, amikor a felhasználó bejelentkezett. Ez a beállítás csak az Azure Active Directoryhoz csatlakoztatott (Azure beállítás) eszközökre vonatkozik. **Nincs konfigurálva** csak lehetővé teszi, hogy rendszergazdái engedélyezhetik a BitLocker-titkosítást az eszközön.
-      
-      Ez a beállítás csak az Azure Active Directoryhoz csatlakoztatott (Azure beállítás) eszközökre vonatkozik. Azt is megköveteli, hogy a **figyelmeztetés egyéb lemeztitkosításra** beállítást megadni **blokk**.
-- **Titkosítási módszerek konfigurálása**: **Engedélyezése** ezt a beállítást, az operációs rendszer, az adat- és cserélhető meghajtók titkosítási algoritmusok konfigurálásához. A **Nincs konfigurálva** (alapértelmezett) értékre állítva a BitLocker az XTS-AES 128 bites funkciót használja alapértelmezett titkosítási módszerként, vagy egy telepítési szkript által meghatározott titkosítási módszert.
-  - **Operációsrendszer-meghajtók titkosítása**: Válassza ki az operációsrendszer-meghajtók titkosítási módszer kiválasztására szolgál. Javasoljuk az XTS-AES algoritmus használatát.
-  - **Rögzített adatmeghajtók titkosítása**: A rögzített (beépített) adatmeghajtókhoz titkosítási módszert választania. Javasoljuk az XTS-AES algoritmus használatát.
-  - **Cserélhető adatmeghajtók titkosítása**: Válassza ki a cserélhető adatmeghajtók titkosítási módszer kiválasztására szolgál. Ha a cserélhető meghajtót olyan eszközökkel is használja, amelyeken nem Windows 10 operációs rendszer fut, az AES-CBC algoritmus használatát javasoljuk.
+  - **Engedélyezés** – konfigurálja a rendszerindítás előtti kulcs-helyreállítási képernyőn megjelenő üzenetet és URL-címet.  
+  - **Nincs konfigurálva** – tiltsa le ezt a funkciót.  
+  
+  Az *Engedélyezés*beállításnál a következő beállítást állíthatja be:  
+  - **Rendszerindítás előtti helyreállítási üzenet**  
+    **Alapértelmezett**: Alapértelmezett helyreállítási üzenet és URL-cím használata   
+ 
+    Beállíthatja, hogy a rendszerindítás előtti helyreállítási üzenet hogyan jelenjen meg a felhasználók számára. A következő lehetőségek közül választhat:  
+    - **Az alapértelmezett helyreállítási üzenet és URL-cím használata**  
+    - **Üres helyreállítási üzenet és URL-cím használata**  
+    - **Egyéni helyreállítási üzenet**  
+    - **Egyéni helyreállítási URL**  
 
-### <a name="bitlocker-os-drive-settings"></a>Operációsrendszer-meghajtók BitLocker-beállításai
-A következő Windows 10-kiadásokon támogatott:
+### <a name="bitlocker-fixed-data-drive-settings"></a>Rögzített adatmeghajtók BitLocker-beállításai  
 
-- Vállalati
-- Oktatás
-- mobil
-- Mobile Enterprise
-- Professional
+Ezek a beállítások kifejezetten a rögzített adatmeghajtókra érvényesek.  
 
-Ezek a beállítások kifejezetten az operációsrendszer-adatmeghajtókra érvényesek.
+- **Írási hozzáférés a BitLocker által nem védett rögzített adatmeghajtóhoz**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  BitLocker CSP: [FixedDrivesRequireEncryption](https://go.microsoft.com/fwlink/?linkid=872534)  
 
-- **További hitelesítés indításkor**: Válassza ki **megkövetelése** konfigurálhatja a hitelesítési követelmények, a számítógép indításakor, beleértve a platformmegbízhatósági modul (TPM) használatát. Válassza a **Nincs konfigurálva** (alapértelmezett) értéket, ha csak az alapszintű beállításokat szeretné konfigurálni a TPM-mel rendelkező eszközökön.
-  - **BitLocker nem kompatibilis TPM-lapkával**: **Blokk** (letiltása) használatával a BitLocker, amikor egy eszköz nem kompatibilis TPM-lapka. Ha **nincs konfigurálva**, a felhasználók kompatibilis TPM-lapka nélkül használhatják a BitLockert. A BitLockerhez jelszóra vagy indítókulcsra lehet szüksége.
-  - **Kompatibilis TPM-indítási**: Engedélyezi, nem engedélyezi, vagy választhat megkövetelése a TPM-lapka.
-  - **Kompatibilis TPM-indítási PIN-kód**: Engedélyezi, nem engedélyezése, vagy választhat egy indítási PIN-kód használatát a TPM-lapka igényelnek. Indítási PIN-kód engedélyezéséhez végfelhasználói beavatkozás szükséges. 
-  - **Kompatibilis TPM-indítási kulcs**: Válassza ki, lehetővé teszik, nem engedélyezi vagy megkövetelése a TPM-lapkával indítási kulcs használatával. Indítókulcs engedélyezéséhez végfelhasználói beavatkozás szükséges. 
-  - **Kompatibilis TPM-indítási kulcs és PIN-kód**: Válassza ki, lehetővé teszik, nem engedélyezi vagy megkövetelése a TPM-lapkával indítókulcs és PIN-kód használatával. Indítókulcs és indítási PIN-kód engedélyezéséhez végfelhasználói beavatkozás szükséges.
-- **PIN-kód minimális hossza**: **Engedélyezése** ezzel a beállítással a TPM-indítási PIN-kód minimális hosszának konfigurálása. A **Nincs konfigurálva** (alapértelmezett) értékre állítva a felhasználók bármilyen, 6 és 20 karakter közötti hosszúságú indítási PIN-kódot megadhatnak.
-  - **Karakterek minimális száma**: Az indítási PIN-kód a karakterek számát adja meg a **4**-**20**.
-- **Operációsrendszer-meghajtók helyreállítási**: **Engedélyezése** ezzel a beállítással szabályozhatja, hogyan a BitLocker által védett operációsrendszer-meghajtók helyreállítása, ha nem áll rendelkezésre az indításhoz szükséges információk. A **Nincs konfigurálva** (alapértelmezett) értékre állítva az alapértelmezett helyreállítási beállítások támogatva vannak a BitLocker-helyreállításhoz. Alapértelmezés szerint a DRA engedélyezve van, a helyreállítási lehetőségek közül választ a felhasználó, beleértve a helyreállítási jelszó és a helyreállítási kulcsot, és helyreállítási adatok AD DS-ben nem készíteni.
-  - **Tanúsítványalapú adat-helyreállítási ügynök**: Ha a beállítása **blokk**, adat-helyreállítási ügynök nem használható együtt a BitLocker által védett operációsrendszer-meghajtók esetében. A beállítás engedélyezéséhez állítsa azt **Nincs konfigurálva** (alapértelmezett) értékre, így használhatók adat-helyreállítási ügynökök a BitLocker által védett operációsrendszer-lemezekkel.
-  - **A helyreállítási jelszó felhasználói létrehozása**: Válassza ki, ha a felhasználók engedélyezi, kötelező vagy nem engedélyezett egy 48 jegyű helyreállítási jelszó létrehozása.
-  - **Helyreállítási kulcs felhasználói létrehozása**: Válassza ki, ha a felhasználó engedélyezi, kötelező vagy egy 256 bites helyreállítási kulcs létrehozása nem engedélyezett.
-  - **Helyreállítási beállítások a BitLocker konfigurációs varázslójában**: Állítsa be **blokk** így a felhasználók nem látják, és a helyreállítási beállítások megváltoztatása. **Nincs konfigurálva** (alapértelmezett) értékre állítva a felhasználók láthatják és módosíthatják a helyreállítási beállításokat a BitLocker bekapcsolásakor.
-  - **BitLocker helyreállítási adatainak mentése az AD DS**: Válasszon **engedélyezése** a BitLocker helyreállítási információit az Azure Active Directory (AAD) tárolásához. **Nincs konfigurálva** (alapértelmezett) értékre állítva a rendszer nem tárolja a helyreállítási információkat az AAD-ben.
-  - **Az AD DS-ben tárolt BitLocker helyreállítási adatok**: Konfigurálja a BitLocker helyreállítási információi mely részeit az Azure ad-ben tárolódnak. A következő lehetőségek közül választhat:
-    - **A helyreállítási jelszavak és a kulcscsomagok biztonsági mentése**
-    - **Csak a helyreállítási jelszavak biztonsági mentése**
-  - **Store helyreállítási adatok AD DS-ben a BitLocker engedélyezése előtt**: **Szükséges** ezt a beállítást, hogy a felhasználók ne tudják bekapcsolni a Bitlockert, kivéve, ha a BitLocker helyreállítási információi nem sikerült menteni az Azure Active Directory (AD). **Nincs konfigurálva** (alapértelmezett) lehetővé teszi, hogy kapcsolja be a Bitlockert, hogy a felhasználók akkor is, ha nem sikerült menteni a helyreállítási információit az Azure ad-ben.
-- **Rendszerindítás előtti helyreállítási üzenet és URL-cím**: **Engedélyezése** ezt a beállítást, konfigurálhatja az üzenet és URL-címet, a rendszerindítás előtti kulcsalapú helyreállítási képernyőn jelennek meg. A **Nincs konfigurálva** (alapértelmezett) érték letiltja a funkciót.
-  - **Rendszerindítás előtti helyreállítási üzenet**: Konfigurálja, hogy a rendszerindítás előtti helyreállítási üzenet jelenik meg, a felhasználóknak. A következő lehetőségek közül választhat:
-    - **Az alapértelmezett helyreállítási üzenet és URL-cím használata**
-    - **Üres helyreállítási üzenet és URL-cím használata**
-    - **Egyéni helyreállítási üzenet**
-    - **Egyéni helyreállítási URL**
+  - **Letiltás** – csak olvasási hozzáférést adhat a BitLocker által nem védett adatmeghajtókhoz.  
+  - **Nincs konfigurálva** – alapértelmezés szerint nem titkosított adatmeghajtók olvasási és írási hozzáférése.  
 
-### <a name="bitlocker-fixed-data-drive-settings"></a>Rögzített adatmeghajtók BitLocker-beállításai
+- **Rögzített meghajtó helyreállítása**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  BitLocker CSP: [FixedDrivesRecoveryOptions](https://go.microsoft.com/fwlink/?linkid=872538)  
 
-A következő Windows 10-kiadásokon támogatott:
+  - **Engedélyezés** – a BitLocker által védett rögzített meghajtók helyreállításának szabályozása, ha a szükséges indítási információk nem érhetők el.  
+  - **Nincs konfigurálva** – tiltsa le ezt a funkciót.  
 
-- Vállalati
-- Oktatás
-- mobil
-- Mobile Enterprise
-- Professional
+  Az *Engedélyezés*beállításnál a következő beállításokat állíthatja be:  
 
-**Beállítások**:
+  - **Az adathelyreállítási ügynök**  
+    **Alapértelmezett**: Nincs konfigurálva  
+ 
+    - **Letiltás** – megakadályozza az adathelyreállítási ügynök használatát a BitLocker által védett rögzített meghajtók házirend-szerkesztőjével. 
+    - **Nincs konfigurálva** – engedélyezi az adathelyreállítási ügynökök használatát a BitLocker által védett rögzített meghajtók használatával.  
 
-- **Rögzített adatmeghajtók BitLocker által nem védett írási hozzáférést**: Állítsa be **blokk** a csak olvasási hozzáférést biztosíthat, amelyek nem a BitLocker által védett meghajtók. Amikor **nincs konfigurálva** (alapértelmezett), hogy az olvasási és írási hozzáférés, amelyek nem a BitLocker által védett adatok meghajtókra.
-- **Rögzített meghajtó helyreállítása**: **Engedélyezése** a beállításnak a megadásával vezérelheti, hogy a BitLocker által védett rögzített meghajtók helyreállítása, ha nem áll rendelkezésre az indításhoz szükséges információk. A **Nincs konfigurálva** (alapértelmezett) érték letiltja a funkciót.
-  - **Adat-helyreállítási ügynök**: **Blokk** a BitLocker által védett adat-helyreállítási megbízott használatának rögzített meghajtók Helyicsoportházirend-szerkesztő. A **Nincs konfigurálva** (alapértelmezett) érték engedélyezi az adat-helyreállítási ügynök a BitLocker által védett rögzített meghajtókkal történő használatát.
-  - **A helyreállítási jelszó felhasználói létrehozása**: Beállíthatja, hogy a felhasználók engedélyezett, kötelező vagy nem engedélyezett egy 48 jegyű helyreállítási jelszó létrehozása.  
-  - **Helyreállítási kulcs felhasználói létrehozása**: Beállíthatja, hogy a felhasználók engedélyezett, kötelező vagy nem engedélyezett egy 256 bites helyreállítási kulcs létrehozásához.
-  - **Helyreállítási beállítások a BitLocker konfigurációs varázslójában**: Állítsa be **blokk** így a felhasználók nem látják, és a helyreállítási beállítások megváltoztatása. **Nincs konfigurálva** (alapértelmezett) értékre állítva a felhasználók láthatják és módosíthatják a helyreállítási beállításokat a BitLocker bekapcsolásakor.
-  - **BitLocker helyreállítási adatainak mentése az Azure Active Directoryhoz**: Válasszon **engedélyezése** a BitLocker helyreállítási adatok tárolására az Azure Active Directoryban (Azure AD). Amikor **nincs konfigurálva** (alapértelmezett), a helyreállítási információk nem tárolja az Azure ad-ben.
-  - **Az Azure Active Directoryban tárolt BitLocker helyreállítási adatok**: Konfigurálja a BitLocker helyreállítási információi mely részeit az Azure ad-ben tárolódnak. A választható lehetőségek:
-    - **A helyreállítási jelszavak és a kulcscsomagok biztonsági mentése**
-    - **Csak a helyreállítási jelszavak biztonsági mentése**
-  - **Helyreállítási információk Store az Azure Active Directoryban a BitLocker engedélyezése előtt**: **Szükséges** ezt a beállítást, hogy a felhasználók ne tudják bekapcsolni a Bitlockert, kivéve, ha a BitLocker helyreállítási információi nem sikerült menteni az Azure ad-ben. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi, hogy kapcsolja be a Bitlockert, hogy a felhasználók akkor is, ha a helyreállítási információk nem sikerült tárolja az Azure ad-ben.
+  - **Helyreállítási jelszó felhasználói létrehozása**  
+    **Alapértelmezett**: 48 számjegyű helyreállítási jelszó engedélyezése  
 
-### <a name="bitlocker-removable-data-drive-settings"></a>Cserélhető adatmeghajtók BitLocker-beállításai
+    Válassza ki, hogy a felhasználók számára engedélyezett, kötelező vagy nem engedélyezett-e a 48 számjegyű helyreállítási jelszó létrehozása.  
+    - **48 számjegyű helyreállítási jelszó engedélyezése**  
+    - **Ne engedélyezze a 48 számjegyű helyreállítási jelszót**  
+    - **48 számjegyű helyreállítási jelszó megkövetelése**  
 
-A következő Windows 10-kiadásokon támogatott:
+  - **Helyreállítási kulcs felhasználói létrehozása**  
+    **Alapértelmezett**: 256 bites helyreállítási kulcs engedélyezése
 
-- Vállalati
-- Oktatás
-- mobil
-- Mobile Enterprise
-- Professional
+    Válassza ki, hogy a felhasználók számára engedélyezett, kötelező vagy nem engedélyezett-e a 256 bites helyreállítási kulcs létrehozása.
+    - **256 bites helyreállítási kulcs engedélyezése**  
+    - **Ne engedélyezze a 256 bites helyreállítási kulcsot**  
+    - **256 bites helyreállítási kulcs megkövetelése**  
 
-**Beállítások**:
+  - **Helyreállítási beállítások a BitLocker telepítővarázsló varázslóban**  
+    **Alapértelmezett**: Nincs konfigurálva  
 
-- **Cserélhető adatmeghajtók BitLocker által nem védett írási hozzáférést**: Állítsa be **blokk** a csak olvasási hozzáférést biztosíthat, amelyek nem a BitLocker által védett meghajtók. Amikor **nincs konfigurálva** (alapértelmezett), hogy az olvasási és írási hozzáférés, amelyek nem a BitLocker által védett adatok meghajtókra.
-  - **Írási hozzáférés a más szervezetben konfigurált eszközökhöz**: **Blokk** írási hozzáférést biztosít a más szervezetben konfigurált eszközökhöz. A **Nincs konfigurálva** (alapértelmezett) érték letiltja az írási hozzáférést.
+    - **Letiltás** – a felhasználók nem látják és nem módosíthatják a helyreállítási beállításokat. Ha be van állítva 
+    - **Nincs konfigurálva** – a felhasználók a BitLocker bekapcsolásakor megtekinthetik és módosíthatják a helyreállítási beállításokat.
+ 
+  - **A BitLocker helyreállítási adatainak mentése a Azure Active Directoryba**  
+    **Alapértelmezett**: Nincs konfigurálva  
 
-## <a name="windows-defender-exploit-guard"></a>Windows Defender – biztonsági rés kiaknázása elleni védelem
+    - **Engedélyezés** – a BitLocker helyreállítási információinak tárolása Azure Active Directoryba (Azure ad).  
+    - **Nincs konfigurálva** – a BitLocker helyreállítási információit a rendszer nem TÁROLJA a HRE.
 
-A következő Windows 10-kiadásokon támogatott:
+  - **A BitLocker Azure Active Directory tárolt helyreállítási információi**  
+    **Alapértelmezett**: A helyreállítási jelszavak és a kulcscsomagok biztonsági mentése  
 
-- Otthoni
-- Professional
-- Üzleti
-- Vállalati
-- Oktatás
-- mobil
-- Mobile Enterprise
+    Annak konfigurálása, hogy a BitLocker helyreállítási információinak mely részei legyenek tárolva az Azure AD-ben. A következő lehetőségek közül választhat:  
+    - **A helyreállítási jelszavak és a kulcscsomagok biztonsági mentése**  
+    - **Csak a helyreállítási jelszavak biztonsági mentése**  
 
-A [Windows Defender - biztonsági rés kiaknázása elleni védelem](https://docs.microsoft.com/windows/threat-protection/windows-defender-exploit-guard/windows-defender-exploit-guard) használatával az alkalmazottak által használt alkalmazásokat lehet kezelni, és csökkenthető vele az alkalmazások támadási felülete.
+  - **Ügyfél által vezérelt helyreállítási jelszó elforgatása**  
+    **Alapértelmezett**: Az Azure AD-hez csatlakoztatott eszközökhöz engedélyezett a kulcs elforgatása  
+    BitLocker CSP: [ConfigureRecoveryPasswordRotation](https://docs.microsoft.com/windows/client-management/mdm/bitlocker-csp)  
+    
+    Ez a beállítás az operációsrendszer-meghajtó helyreállítása után kezdeményezi az ügyfél által vezérelt helyreállítási jelszavak rotációját (a Csizmadia vagy a WinRE használatával).  
 
-### <a name="attack-surface-reduction"></a>Támadási felület csökkentése
+    - Nincs konfigurálva  
+    - Kulcs elforgatása letiltva  
+    - Az Azure AD-hez csatlakoztatott elforgatási sebesség engedélyezve  
+    - Az Azure AD-hez és a hibridhez csatlakoztatott eszközökhöz engedélyezve van a kulcs elforgatása  
 
-- **A Windows helyi biztonsági szervezet alrendszeréből történő hitelesítő adatok lopásának megjelölése**
+  - **A helyreállítási információk tárolása Azure Active Directory a BitLocker engedélyezése előtt**  
+    **Alapértelmezett**: Nincs konfigurálva  
+ 
+    Annak megakadályozása, hogy a felhasználók engedélyezzék a BitLocker engedélyezését, kivéve, ha a számítógép sikeresen biztonsági másolatot készít a BitLocker helyreállítási adatairól Azure Active Directory.  
 
-  [Kiküszöbölhetők azok az események és alkalmazások](https://docs.microsoft.com/windows/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard), amelyeket általában a biztonsági réseket kereső kártevő szoftverek használnak a számítógépek megfertőzése céljából.
+    - **Megkövetelés** – a felhasználók csak akkor kapcsoljuk be a BitLockert, ha a BitLocker helyreállítási adatokat nem sikerült az Azure ad-ben tárolni.  
+    - **Nincs konfigurálva** – a felhasználók akkor is bekapcsolhatják a BitLockert, ha a helyreállítási adatok tárolása nem sikerült az Azure ad-ben.  
 
-#### <a name="rules-to-prevent-office-macro-threats"></a>Veszélyes Office-makrók letiltására szolgáló szabályok
+### <a name="bitlocker-removable-data-drive-settings"></a>Cserélhető adatmeghajtók BitLocker-beállításai  
 
-Az alábbi műveletek elvégzését letilthatja Office-alkalmazások esetén:
+Ezek a beállítások kifejezetten a cserélhető adatmeghajtókra érvényesek.  
 
-- **Office-alkalmazások más folyamatokba való injektálása (nincs kivétel)**
-- **Végrehajtható tartalmat létrehozó Office-alkalmazások és -makrók**
-- **Gyermekfolyamatokat elindító Office-alkalmazások**
-- **Office-makró-kódból történő Win32-alapú importálás**
+- **Írási hozzáférés a BitLocker által nem védett cserélhető adatmeghajtóhoz**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  BitLocker CSP: [RemovableDrivesRequireEncryption](https://go.microsoft.com/fwlink/?linkid=872540)  
 
-#### <a name="rules-to-prevent-script-threats"></a>Veszélyes szkriptek letiltására szolgáló szabályok
+  - **Letiltás** – csak olvasási hozzáférést adhat a BitLocker által nem védett adatmeghajtókhoz.  
+  - **Nincs konfigurálva** – alapértelmezés szerint nem titkosított adatmeghajtók olvasási és írási hozzáférése.  
 
-Az alábbiak letiltásával a veszélyes szkriptek ellen védekezhet:
+  Az *Engedélyezés*beállításnál a következő beállítást állíthatja be:  
 
-- **Js-, VBS-, PS-fájlok és makrók rejtjelezett kódja**
-- **Internetről letöltött .js vagy .vbs fájlok végrehajtása (nincs kivétel)**
-- **Folyamatlétrehozás a PSExec- és WMI-parancsokból**
-- **Nem megbízható és aláíratlan, USB-ről futó folyamatok**
-- **Az elterjedtségre, korra és megbízható listákra vonatkozó kritériumoknak nem megfelelő végrehajtható fájlok**
+  - **Írási hozzáférés más szervezetben konfigurált eszközökhöz**  
+    **Alapértelmezett**: Nincs konfigurálva  
 
-#### <a name="rules-to-prevent-email-threats"></a>E-mail-fenyegetések megakadályozását szolgáló szabályok
+    - Az írási **hozzáférés letiltása más** szervezetekben konfigurált eszközökhöz.  
+    - **Nincs konfigurálva** – írási hozzáférés megtagadása.  
+ 
+## <a name="windows-defender-exploit-guard"></a>Windows Defender – biztonsági rés kiaknázása elleni védelem  
 
-Az alábbiak letiltásával megakadályozhatja az e-mail-fenyegetéseket:
+A [Windows Defender - biztonsági rés kiaknázása elleni védelem](https://docs.microsoft.com/windows/threat-protection/windows-defender-exploit-guard/windows-defender-exploit-guard) használatával az alkalmazottak által használt alkalmazásokat lehet kezelni, és csökkenthető vele az alkalmazások támadási felülete.  
 
-- **Webes levelezés vagy az asztali levelezőprogramok e-mailjeiből eltávolított végrehajtható tartalom (például .exe, .dll, .ps, .js, és .vbs fájlok) futtatása (nincs kivétel)**
+### <a name="attack-surface-reduction"></a>Támadási felület csökkentése  
 
-#### <a name="rules-to-protect-against-ransomware"></a>Zsarolóprogramok elleni szabályok
-- **Zsarolóprogramok elleni speciális védelem**
+A *támadási felület csökkentési* szabályaival kapcsolatos információkért lásd: a [támadási felületek csökkentése a Windows Defender Exploit Guard-védelemmel](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard) a Windows Defender Exploit Guard-dokumentációban.  
 
-> [!TIP]
-> További információ a szabályokról: [A támadási felület csökkentése a Windows Defender – biztonsági rés kiaknázása elleni védelemmel](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard).
+#### <a name="attack-surface-reduction-rules"></a>Támadási felület csökkentésére vonatkozó szabályok  
+
+- **A Windows helyi biztonsági szervezet alrendszeréből történő hitelesítő adatok lopásának megjelölése**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Védelem kiaknázása: [Támadási felület csökkentésére vonatkozó szabályok](https://go.microsoft.com/fwlink/?linkid=874499)
+
+  Segít megelőzni azokat a műveleteket és alkalmazásokat, amelyeket általában a kártevők elleni támadással a gépek megfertőzésére használnak.  
+  - **Nincs konfigurálva**  
+  - **Engedélyezheti** a hitelesítő adatok ellopását a Windows helyi biztonsági szervezet alrendszeréről (LSASS. exe).  
+  - **Csak naplózás**  
+
+- **Folyamat létrehozása az Adobe Readerből (bétaverzió)**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Védelem kiaknázása: [Támadási felület csökkentésére vonatkozó szabályok](https://go.microsoft.com/fwlink/?linkid=853979)  
+
+  - **Nincs konfigurálva**  
+  - **Engedélyezés** – az Adobe Readerből létrehozott alárendelt folyamatok letiltása.  
+  - **Csak naplózás**  
+
+#### <a name="rules-to-prevent-office-macro-threats"></a>Veszélyes Office-makrók letiltására szolgáló szabályok  
+
+Az alábbi műveletek elvégzését letilthatja Office-alkalmazások esetén:  
+
+- **Office-alkalmazások más folyamatokba való injektálása (nincs kivétel)**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  [Az őr dokumentációjának kiaknázása](https://go.microsoft.com/fwlink/?linkid=872974)  
+
+  - **Nincs konfigurálva**  
+  - Az Office-alkalmazások más folyamatokba való beadásának **tiltása.**  
+  - **Csak naplózás**  
+
+- **Végrehajtható tartalmat létrehozó Office-alkalmazások és -makrók**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  [Az őr dokumentációjának kiaknázása](https://go.microsoft.com/fwlink/?linkid=872975)  
+
+  - **Nincs konfigurálva**  
+  - Az Office-alkalmazások és-makrók **letiltásával** végrehajtható tartalom hozható létre.  
+  - **Csak naplózás**  
+
+- **Gyermekfolyamatokat elindító Office-alkalmazások**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  [Az őr dokumentációjának kiaknázása](https://go.microsoft.com/fwlink/?linkid=872976)  
+
+  - **Nincs konfigurálva**  
+  - **Letilthatja** , hogy az Office-alkalmazások alárendelt folyamatokat indítsanak.  
+  - **Csak naplózás**  
+  
+- **Office-makró-kódból történő Win32-alapú importálás**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  [Az őr dokumentációjának kiaknázása](https://go.microsoft.com/fwlink/?linkid=872977)  
+
+  - **Nincs konfigurálva**  
+  - **Blokkolja** a Win32-alapú importálások blokkolását az Office-ban.  
+  - **Csak naplózás**  
+  
+- **Folyamat létrehozása Office-kommunikációs termékekből**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  [Az őr dokumentációjának kiaknázása](https://go.microsoft.com/fwlink/?linkid=874499)  
+
+  - **Nincs konfigurálva**  
+  - **Engedélyezés** – alárendelt folyamat létrehozásának tiltása az Office Communications-alkalmazásokból.  
+  - **Csak naplózás**  
+
+#### <a name="rules-to-prevent-script-threats"></a>Veszélyes szkriptek letiltására szolgáló szabályok  
+
+Az alábbiak letiltásával a veszélyes szkriptek ellen védekezhet:  
+
+- **Js-, VBS-, PS-fájlok és makrók rejtjelezett kódja**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  [Az őr dokumentációjának kiaknázása](https://go.microsoft.com/fwlink/?linkid=872978)    
+
+  - **Nincs konfigurálva**  
+  - **Letiltás** – blokkolt js/vbs/PS/Macro kód letiltása.  
+  - **Csak naplózás**  
+
+- **Internetről letöltött .js vagy .vbs fájlok végrehajtása (nincs kivétel)**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  [Az őr dokumentációjának kiaknázása](https://go.microsoft.com/fwlink/?linkid=872979)  
+
+  - **Nincs konfigurálva**  
+  - **Blokkolja** a JS/vbs blokkolását az internetről letöltött hasznos adatok végrehajtásához.  
+  - **Csak naplózás**  
+
+- **Folyamatlétrehozás a PSExec- és WMI-parancsokból**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  [Az őr dokumentációjának kiaknázása](https://go.microsoft.com/fwlink/?linkid=874500)  
+
+  - **Nincs konfigurálva**  
+  - A PSExec és a WMI-parancsokból származó folyamat-létrehozás **tiltása** .  
+  
+  - **Csak naplózás**  
+
+- **Nem megbízható és aláíratlan, USB-ről futó folyamatok**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  [Az őr dokumentációjának kiaknázása](https://go.microsoft.com/fwlink/?linkid=874502)    
+
+  - **Nincs konfigurálva**  
+  - A nem megbízható és aláíratlan, USB-ről futó **folyamatok blokkolása** .  
+  - **Csak naplózás**  
+  
+- **Az elterjedtségre, korra és megbízható listákra vonatkozó kritériumoknak nem megfelelő végrehajtható fájlok**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  [Az őr dokumentációjának kiaknázása](https://go.microsoft.com/fwlink/?linkid=874503)    
+
+  - **Nincs konfigurálva**  
+  - **Letiltja** a végrehajtható fájlok futtatását, kivéve, ha azok nem felelnek meg az előfordulási, az életkori vagy a megbízható lista feltételeinek.  
+  - **Csak naplózás**  
+
+#### <a name="rules-to-prevent-email-threats"></a>E-mail-fenyegetések megakadályozását szolgáló szabályok  
+
+Az alábbiak letiltásával megakadályozhatja az e-mail-fenyegetéseket:  
+
+- **Webes levelezés vagy az asztali levelezőprogramok e-mailjeiből eltávolított végrehajtható tartalom (például .exe, .dll, .ps, .js, és .vbs fájlok) futtatása (nincs kivétel)**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  [Az őr dokumentációjának kiaknázása](https://go.microsoft.com/fwlink/?linkid=872980)  
+
+  - **Nincs konfigurálva**  
+  - Az e-mailből (webmail/mail-Client) eldobott végrehajtható tartalom **letiltása** (exe, dll, PS, js, vbs stb.).  
+  - **Csak naplózás**  
+
+#### <a name="rules-to-protect-against-ransomware"></a>Zsarolóprogramok elleni szabályok  
+
+- **Zsarolóprogramok elleni speciális védelem**  
+  Alapértelmezett  Nincs konfigurálva  
+  [Az őr dokumentációjának kiaknázása](https://go.microsoft.com/fwlink/?linkid=874504)  
+
+  - **Nincs konfigurálva**  
+  - **Engedélyezés** – agresszív ransomware-védelem használata.  
+  - **Csak naplózás**  
 
 #### <a name="attack-surface-reduction-exceptions"></a>Támadási felület csökkentése – kivételek
 
-- **Fájlok és mappák kizárása a támadási felület csökkentésére szolgáló szabályok**: Importálása és hozzáadása a konfigurált szabályok hatálya alól kizárandó helyek listáját.
+- **A támadási felület csökkentési szabályaiból kizárandó fájlok és mappák**  
+  Defender CSP: [AttackSurfaceReductionOnlyExclusions](https://go.microsoft.com/fwlink/?linkid=872981)  
 
-> [!IMPORTANT]
-> Ahhoz, hogy a megfelelő telepítéséhez és futtatásához a LOB-Win32-alkalmazások, a kártevőirtó-beállítások a következő könyvtárait kizárása kell éppen beolvasott:<p>
-> **A X64 ügyfélgépek**:<br>
-> *C:\Program Files (x86)\Microsoft Intune Management Extension\Content*<br>
-> *C:\windows\IMECache*
+  - **Importáljon** egy. csv-fájlt, amely a támadási felület csökkentési szabályaiból kizárandó fájlokat és mappákat tartalmaz.  
+  - Manuálisan **adja hozzá** a helyi fájlokat vagy mappákat.  
+
+> [!IMPORTANT]  
+> A LOB Win32-alkalmazások megfelelő telepítésének és végrehajtásának engedélyezéséhez a kártevők elleni beállításoknak ki kell zárnia a következő könyvtárakat a vizsgálatból:  
+> **X64**-es ügyfélszámítógépeken:  
+> *C:\Program Files (x86) \Microsoft Intune felügyeleti Extension\Content*  
+> *C:\windows\IMECache*  
 >  
-> **A X86 ügyfélgépek**:<br>
-> *C:\Program Files\Microsoft Intune Management Extension\Content*<br>
-> *C:\windows\IMECache*
+> **X86**-os ügyfélszámítógépeken:  
+> *C:\Program Files\Microsoft Intune Management Extension\Content*  
+> *C:\windows\IMECache*  
 
-### <a name="controlled-folder-access"></a>Mappahozzáférés felügyelete
+### <a name="controlled-folder-access"></a>Mappahozzáférés felügyelete  
 
-Rosszindulatú alkalmazások és fenyegetések, például zsarolóprogramok ellen védheti értékes adatait.
+Segít megvédeni a kártékony alkalmazásokból és fenyegetésekből származó [értékes adatok](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/controlled-folders-exploit-guard) , például a ransomware.  
 
-- **Mappavédelem**: Rosszindulatú alkalmazások által végrehajtott jogosulatlan módosításainak megakadályozása védelme fájlokat és mappákat. **Védett mappákhoz hozzáférő alkalmazások listáját** importálhatja, vagy manuálisan is hozzáadhatja. **További védendő mappák listáját** is hozzáadhatja feltöltéssel, vagy manuálisan is hozzáadhatja őket.
+- **Mappák védelme**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Defender CSP: [EnableControlledFolderAccess](https://go.microsoft.com/fwlink/?linkid=872614)  
 
-### <a name="network-filtering"></a>Hálózatszűrés
+  Fájlok és mappák védelme a nemkívánatos alkalmazások által végrehajtott, jogosulatlan módosítások ellen.  
 
-- **Hálózatvédelem**: IP-címek vagy tartományok védelmet biztosít a kimenő kapcsolatok bármely alkalmazásból. A célja a végfelhasználók szembeni hozzáféréssel rendelkező alkalmazások folytathatnak, biztonsági rés kiaknázása elleni futtató helyek és az interneten rosszindulatú tartalmat. Azt is megakadályozza, hogy külső böngészők veszélyes helyek csatlakozik.
+  - **Nincs konfigurálva**  
+  - **Engedélyezése**  
+  - **Csak naplózás**  
+  - **Lemez módosításának letiltása**  
+  - **Lemez módosításának naplózása**  
 
-  A választható lehetőségek:
+  Ha *nem konfigurált*konfigurációt választ ki, akkor az alábbiakat állíthatja be:  
+  - **A védett mappákhoz hozzáférő alkalmazások listája**  
+    Defender CSP: [ControlledFolderAccessAllowedApplications](https://go.microsoft.com/fwlink/?linkid=872616)  
 
-  - A **Nincs konfigurálva** (alapértelmezett) érték letiltja a funkciót. Felhasználók és alkalmazások nincsenek letiltva veszélyes tartományokhoz csatlakozzon. A rendszergazdák nem láthatják ezt a tevékenységet, a Windows Defender biztonsági központban.
-  - **Engedélyezése** bekapcsolja a hálózatvédelem, és blokkolja-felhasználók és alkalmazások veszélyes tartományokhoz csatlakozzon. A rendszergazdák láthatják ezt a tevékenységet, a Windows Defender biztonsági központban.
-  - **Csak naplózás**: Felhasználók és alkalmazások nincsenek letiltva veszélyes tartományokhoz csatlakozzon. A rendszergazdák láthatják ezt a tevékenységet, a Windows Defender biztonsági központban.
+    - **Importáljon** egy. csv-fájlt, amely tartalmazza az alkalmazások listáját.  
+    - Manuálisan **adja hozzá** az alkalmazásokat a listához.  
 
-  [Defender/EnableNetworkProtection CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-enablenetworkprotection)
+  - **A védeni kívánt további mappák listája**  
+    Defender CSP: [ControlledFolderAccessProtectedFolders](https://go.microsoft.com/fwlink/?linkid=872617)  
 
-### <a name="exploit-protection"></a>Biztonsági rés kiaknázása elleni védelem
+    - **Importáljon** egy. csv kiterjesztésű fájlt, amely tartalmazza a mappalista listáját.  
+    - Mappák **hozzáadása** a listához manuálisan.  
 
-Biztonsági rés kiaknázása elleni védelem használatához hozzon létre egy XML-fájlt, amely tartalmazza azt szeretné, a rendszer- és kockázatcsökkentési beállításokat. Két lehetőség érhető el:
+### <a name="network-filtering"></a>Hálózatszűrés  
 
- 1. PowerShell: Egy vagy több Get-ProcessMitigation, Set-ProcessMitigation és ConvertTo-ProcessMitigationPolicy PowerShell-parancsmagot használja. A parancsmagokkal konfigurálhatja a kockázatcsökkentési beállításokat, és exportálhatja ezek XML-reprezentációját.
+Letiltja a kimenő kapcsolatokat bármely alkalmazásból az IP-címekre vagy-tartományokra alacsony hírnévvel. A hálózati szűrés mind a naplózási, mind a blokkolási módban támogatott.  
 
- 2. A Windows Defender biztonsági központ felhasználói felülete: A Windows Defender biztonsági központ alkalmazás-és böngészőszabályozás kattintson, és keresse meg a biztonsági rés kiaknázása elleni védelem a megjelenő képernyő alján görgessen. Először a Rendszerbeállítások és a Programbeállítások lap használatával konfigurálja a kockázatcsökkentési beállításokat. Ha végzett, a képernyő alján keresse meg az Exportálási beállítások hivatkozást, amellyel exportálhatja ezek XML-reprezentációját.
+- **Hálózati védelem**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  Defender CSP: [EnableNetworkProtection](https://go.microsoft.com/fwlink/?linkid=872618)  
 
-Letilthatja, hogy a **felhasználók a Biztonsági rés kiaknázása elleni védelem felületét módosítsák**, ha feltölt egy olyan XML-fájlt, amely lehetővé teszi a memória, a vezérlésfolyam és a szabályzatkorlátozások konfigurálását. Az XML-fájlban található beállításokkal megvédheti az alkalmazást a biztonsági rések ellen. A **Nincs konfigurálva** (alapértelmezett) érték nem nyújt egyéni konfigurációt. 
+  Ennek a beállításnak a célja, hogy megvédje a végfelhasználókat az adathalászatgal kapcsolatos csalások, a kiaknázást biztosító webhelyek és az interneten található kártékony tartalmak hozzáférésével. Azt is megakadályozza, hogy a harmadik féltől származó böngészők csatlakozzanak a veszélyes helyekhez.  
 
-## <a name="windows-defender-application-control"></a>Windows Defender Alkalmazásvezérlés
+  - **Nincs konfigurálva** – tiltsa le ezt a funkciót. A felhasználók és az alkalmazások nem blokkolják a veszélyes tartományokhoz való kapcsolódást. A rendszergazdák nem látják ezt a tevékenységet a Windows Defender Security Centerban.  
+  - **Engedélyezze** a hálózati védelem bekapcsolását, és tiltsa le a felhasználókat és az alkalmazásokat a veszélyes tartományokhoz való csatlakozáshoz. A rendszergazdák láthatják ezt a tevékenységet a Windows Defender Security Centerban.  
+  - **Csak naplózás**: – a felhasználók és az alkalmazások nem blokkolják a veszélyes tartományokhoz való kapcsolódást. A rendszergazdák láthatják ezt a tevékenységet a Windows Defender Security Centerban.  
 
-A következő Windows 10-kiadásokon támogatott:
+### <a name="exploit-protection"></a>Biztonsági rés kiaknázása elleni védelem  
+ 
 
-**Mobileszköz-felügyelet (MDM)**: 
-- Professional
-- Üzleti
-- Vállalati
-- Oktatás
-- mobil
-- Mobile Enterprise
+- **XML feltöltése**  
+  **Alapértelmezett**: *Nincs konfigurálva*  
 
-**Csoportházirend-kezelés**: 
-- Vállalati
+  Ha a védelem kiaknázásával védelmet kíván biztosítani az [eszközöknek a](/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection)biztonsági rések ellen, hozzon létre egy XML-fájlt, amely tartalmazza a kívánt rendszer-és alkalmazás-kockázatcsökkentő beállításokat. Az XML-fájl létrehozása két módszerrel lehetséges:  
 
-Az **Alkalmazás-ellenőrző kódintegritási szabályzatok** használatával további alkalmazásokat is kiválaszthat, amelyeket a Windows Defender Alkalmazásvezérlés ellenőriz, vagy biztonságosan futtathatónak sorolja be. A Windows-összetevők és a Windows Áruházból származó alkalmazások automatikusan biztonságosan futtathatóként lesznek besorolva.
+  - *PowerShell* – a *Get-ProcessMitigation*, a *set-ProcessMitigation*és a *ConvertTo-ProcessMitigationPolicy* PowerShell-parancsmagok közül egyet vagy többet használhat. A parancsmagokkal konfigurálhatja a kockázatcsökkentési beállításokat, és exportálhatja ezek XML-reprezentációját.  
 
-**Naplózási módban** az alkalmazások nincsenek letiltva. A **naplózási mód** minden eseményt egy ügyfélnaplóban rögzít.
+  - *Windows defender Security Center felhasználói felület* – a windows Defender Security Center kattintson az App & Browser Control elemre, majd görgessen az eredményül kapott képernyő aljára, és keresse meg a kihasználatlan védelmet. Először a Rendszerbeállítások és a Programbeállítások lap használatával konfigurálja a kockázatcsökkentési beállításokat. Ha végzett, a képernyő alján keresse meg az Exportálási beállítások hivatkozást, amellyel exportálhatja ezek XML-reprezentációját.  
 
-Ha az Alkalmazásvezérlést bekapcsolták, utána csak úgy lehet letiltani, ha a módot **Kényszerítésről** **Naplózási módra** változtatja. Ha a módot **Kényszerítésről** **Nincs konfigurálva** értékre változtatja, akkor az Alkalmazásvezérlés a hozzárendelt eszközökön továbbra is kényszerítve lesz.
+- **A védelem kiaknázása felület felhasználó általi szerkesztése**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  ExploitGuard CSP: [ExploitProtectionSettings](https://go.microsoft.com/fwlink/?linkid=872887)  
 
-## <a name="windows-defender-credential-guard"></a>Windows Defender Credential Guard
 
-A következő Windows 10-kiadásokon támogatott:
+  - **Blokk** – olyan XML-fájl feltöltése, amely lehetővé teszi a memória, a vezérlési folyamat és a házirendek korlátozásának konfigurálását. Az XML-fájlban található beállításokkal megvédheti az alkalmazást a biztonsági rések ellen.  
+  - **Nincs konfigurálva** – egyéni konfiguráció nincs használatban.  
 
-- Vállalati
+## <a name="windows-defender-application-control"></a>Windows Defender Alkalmazásvezérlés  
 
-A Windows Defender Credential Guard a hitelesítő adatok ellopása ellen nyújt védelmet. Úgy különíti el a titkos kulcsokat, hogy csak a jogosult rendszerszoftverek férjenek hozzájuk.
+Válassza ki azokat a további alkalmazásokat, amelyeket naplózni kell, vagy megbízhatónak kell lennie a Windows Defender alkalmazás-vezérlő futtatásához. A Windows-összetevők és a Windows Áruházból származó alkalmazások automatikusan biztonságosan futtathatóként lesznek besorolva.  
 
-A **Credential Guard** beállításai:
 
-- **Tiltsa le**: Kikapcsolja a Credential Guard távolról, ha azt korábban bekapcsolta az a **engedélyezve UEFI-zárolás nélkül** lehetőséget.
+- **Alkalmazás-felügyeleti kód integritási házirendjei**  
+  **Alapértelmezett**: Nincs konfigurálva  
+   CSP [AppLocker CSP](https://go.microsoft.com/fwlink/?linkid=874543)  
 
-- **UEFI-zárolással engedélyezése**: Credential Guard egy beállításkulcs használatával nem tiltható le távolról, vagy a csoportházirend.
+  - **Kikényszerítés** – válassza ki az Application Control Code-integritási szabályzatokat a felhasználói eszközökhöz.  
+  
+    Az eszközön való engedélyezés után az alkalmazás-vezérlő csak akkor tiltható le, ha a mód *kényszerített* állapotból *csak naplózásra*vált. Ha a módot *Kényszerítésről* *Nincs konfigurálva* értékre változtatja, akkor az Alkalmazásvezérlés a hozzárendelt eszközökön továbbra is kényszerítve lesz.  
+
+  - **Nincs konfigurálva** – az alkalmazás vezérlő nincs hozzáadva az eszközökhöz. A korábban hozzáadott beállítások azonban továbbra is érvényben lesznek a hozzárendelt eszközökön. 
+ 
+  - **Csak naplózás** – az alkalmazások nincsenek letiltva. Az összes esemény a helyi ügyfél naplóiban van naplózva.  
+
+## <a name="windows-defender-credential-guard"></a>Windows Defender Credential Guard  
+
+A Windows Defender Credential Guard a hitelesítő adatok ellopása ellen nyújt védelmet. Úgy különíti el a titkos kulcsokat, hogy csak a jogosult rendszerszoftverek férjenek hozzájuk.  
+
+- **Hitelesítőadat-őr**  
+  **Alapértelmezett**: Letiltás  
+  [DeviceGuard CSP](https://go.microsoft.com/fwlink/?linkid=872424)  
+
+  - **Tiltsa le** a hitelesítő adatok távoli kikapcsolását, ha azt korábban már bekapcsolta az **UEFI Lock nélkül engedélyezve** beállítással.  
+
+  - **Az UEFI Lock** -hitelesítőadat-őr használatának engedélyezése nem tiltható le távolról egy beállításkulcs vagy csoportházirend használatával.  
 
     > [!NOTE]
-    > Ha ezt a beállítást használja, majd később le szeretné tiltani a Credential Guardot, a csoportházirendet **letiltott** állapotra kell állítania, majd törölnie kell az UEFI-konfigurációs adatokat minden számítógépről. Amíg megvannak a UEFI-konfigurációk, a Credential Guard engedélyezve marad.
+    > Ha ezt a beállítást használja, majd később le szeretné tiltani a Credential Guardot, a csoportházirendet **letiltott** állapotra kell állítania, majd törölnie kell az UEFI-konfigurációs adatokat minden számítógépről. Amíg megvannak a UEFI-konfigurációk, a Credential Guard engedélyezve marad.  
 
-- **Engedélyezés UEFI-zárolás nélkül**: Lehetővé teszi a Credential Guard csoportházirenddel távolról le kell tiltani. Azokon az eszközökön, amelyek ezt a beállítást használják, a Windows 10 1511-es vagy újabb verziójának kell futnia.
+  - **Engedélyezés UEFI zárolás nélkül** – lehetővé teszi a hitelesítő adatok távoli letiltását csoportházirend használatával. Azokon az eszközökön, amelyek ezt a beállítást használják, a Windows 10 1511-es vagy újabb verziójának kell futnia.  
 
-Ha engedélyezi a Credential Guardot, azzal az alábbi kötelező funkciókat is engedélyezi:
+  A hitelesítőadat-őr *engedélyezésekor* a következő szükséges szolgáltatások is engedélyezve vannak:  
+  
+  - **Virtualizálás-alapú biztonság** VBS  
+    A következő újraindításkor bekapcsol. A virtualizálás-alapú biztonság a Windows hipervizorral nyújt támogatást biztonsági szolgáltatásokhoz.  
+  - **Biztonságos rendszerindítás a címtár memóriájának elérésével**  
+    Bekapcsolja a VBS-et a biztonságos rendszerindítási és a közvetlen memória-hozzáférés (DMA) elleni védelemmel. A DMA-védelemhez hardveres támogatás szükséges, és csak a megfelelően konfigurált eszközökön alkalmazható.  
 
-- **A virtualizálás-alapú biztonsági** (VBS): Kapcsolja be a során a következő újraindításkor. A virtualizálás-alapú biztonság a Windows hipervizorral nyújt támogatást biztonsági szolgáltatásokhoz.
-- **A biztonságos rendszerindítás, a memória-hozzáférés Directory**: A biztonságos rendszerindítással és közvetlen memória-hozzáférés (DMA) védelmi VBS bekapcsolása. A DMA-védelemhez hardveres támogatás szükséges, és csak a megfelelően konfigurált eszközökön alkalmazható.
+## <a name="windows-defender-security-center"></a>Windows Defender biztonsági központ  
 
-## <a name="windows-defender-security-center"></a>Windows Defender biztonsági központ
+A Windows Defender biztonsági központ az egyes funkcióktól elkülönített alkalmazásként működik. Az értesítéseket a Műveletközponton keresztül jeleníti meg. Gyűjtőként vagy egyetlen helyen működik az állapot megtekintéséhez és az egyes funkciókhoz tartozó konfiguráció futtatásához. További információt a [Windows Defender](https://docs.microsoft.com/windows/threat-protection/windows-defender-security-center/windows-defender-security-center) dokumentációjában talál.  
 
-A következő Windows 10-kiadásokon támogatott:
+### <a name="windows-defender-security-center-app-and-notifications"></a>A Windows Defender biztonsági központ alkalmazás és az értesítések  
 
-- Otthoni
-- Professional
-- Üzleti
-- Vállalati
-- Oktatás
-- mobil
-- Mobile Enterprise
+Letilthatja a felhasználói hozzáférést a Windows Defender biztonsági központ alkalmazás különböző területeihez. Egy szakasz elrejtése a kapcsolódó értesítéseket is letiltja.  
 
-A Windows Defender biztonsági központ az egyes funkcióktól elkülönített alkalmazásként működik. Az értesítéseket a Műveletközponton keresztül jeleníti meg. Gyűjtő vagy egyetlen helyen megnézheti az állapotukat, és futtathat néhány beállítást a minden funkció működik. További információt a [Windows Defender](https://docs.microsoft.com/windows/threat-protection/windows-defender-security-center/windows-defender-security-center) dokumentációjában talál.
+- **Vírusok és veszélyforrások elleni védelem**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  WindowsDefenderSecurityCenter CSP: [DisableVirusUI](https://go.microsoft.com/fwlink/?linkid=873662)  
 
-#### <a name="windows-defender-security-center-app-and-notifications"></a>A Windows Defender biztonsági központ alkalmazás és az értesítések
+  Annak megadása, hogy a végfelhasználók megtekinthetik-e a vírus-és veszélyforrások elleni védelem területén a Windows Defender Security Center. A szakasz elrejtésével a vírus-és veszélyforrások elleni védelemmel kapcsolatos összes értesítés is blokkolva lesz.  
 
-Letilthatja a felhasználói hozzáférést a Windows Defender biztonsági központ alkalmazás különböző területeihez. Egy szakasz elrejtése a kapcsolódó értesítéseket is letiltja.
-
-- **Vírusok és veszélyforrások elleni védelem**
-- **Eszközteljesítmény és -állapot**
-- **Tűzfal és hálózatvédelem**
-- **Alkalmazás- és böngészővezérlés**
-- **Családi beállítások**
-- **Alkalmazás megjelenített területeihez kapcsolódó értesítések**: Válassza ki, hogy mely értesítések jelenjenek meg a végfelhasználók számára. A nem kritikus értesítések közé tartoznak a Windows Defender víruskereső összefoglalói, például a vizsgálatok befejezését jelző értesítések. Minden más értesítés kritikusnak minősül.
-
-#### <a name="it-contact-information"></a>Az informatikai szolgálat kapcsolattartási adatai
-
-Adja meg az informatikai szolgálat azon elérhetőségeit, amelyek megjelennek majd a Windows Defender biztonsági központ alkalmazásban és az alkalmazásértesítésekben. Az alábbi lehetőségek közül választhat: **Az alkalmazásban és az értesítésekben is jelenjen meg**, **Csak az alkalmazásban jelenjen meg**, **Csak az értesítésekben jelenjen meg** és **Ne jelenjen meg**. Adja meg az **IT-szervezet nevét**, és az alábbi kapcsolatfelvételi lehetőségek közül legalább egyet:
-
-- **IT-részleg telefonszáma vagy Skype-elérhetősége**
-- **IT-részleg e-mail címe**
-- **Informatikai támogatási webhely URL-címe**
-
-## <a name="local-device-security-options"></a>Helyi eszközbiztonsági beállítások
-
-A következő Windows 10-kiadásokon támogatott:
- 
-- Otthoni
-- Professional
-- Üzleti
-- Vállalati
-- Oktatás
-
-Ezekkel a beállításokkal konfigurálhatja a Windows 10-eszközök helyi biztonsági beállításait.
-
-### <a name="accounts"></a>Fiókok
-
-- **Új Microsoft-fiókok hozzáadása**: Állítsa be **blokk** megakadályozza, hogy a felhasználók új Microsoft-fiókok hozzáadásának az eszközön. **Nincs konfigurálva** (alapértelmezett) értékre állítva a felhasználók használhatnak Microsoft-fiókokat az eszközön.
-- **Távoli bejelentkezés jelszó nélkül**: **Blokk** lehetővé teszi, hogy csak helyi fiókok jelentkezzen be az eszköz billentyűzet üres jelszó mellett. A **Nincs konfigurálva** (alapértelmezett) értékkel az üres jelszóval rendelkező helyi fiókok nem csak a fizikai eszközön jelentkezhetnek be.
-
-#### <a name="admin"></a>rendszergazda
-
-- **Helyi rendszergazdai fiók**: Állítsa be **engedélyezve** , hogy a helyi rendszergazdai fiók. A **Nincs konfigurálva** (alapértelmezett) értékkel letilthatja a helyi rendszergazdai fiókot.
-- **Rendszergazdai fiók átnevezése**: Adja meg a rendszergazdai fiók biztonsági azonosítójához (SID) társítani kell egy másik fióknevet.
-
-#### <a name="guest"></a>Vendég
-
-- **Vendégfiók**: Állítsa be **engedélyezve** , hogy a helyi Vendég fiókhoz. A **Nincs konfigurálva** (alapértelmezett) értékkel letilthatja a helyi vendégfiókot.
-- **Vendégfiók átnevezése**: Adja meg a Vendég fiók biztonsági azonosítójához (SID) társítani kell egy másik fióknevet.
-
-### <a name="devices"></a>Eszközök
-
-- **Bejelentkezés nélkül az eszköz zárolásának feloldása**: Állítsa be **blokk** így a felhasználók nyomja le a dokkolt hordozható eszközön fizikai kiadása gombra kattintva biztonságosan a az eszköz zárolásának feloldása. **Nincs konfigurálva** (alapértelmezett) értékre állítva a felhasználóknak be kell jelentkezniük az eszközbe, és engedélyt kell kapniuk az eszköz dokkolásának megszüntetéséhez.
-- **A megosztott nyomtatók nyomtató-illesztőprogramjainak telepítése**: Amikor **engedélyezve**, bármely felhasználó megosztott nyomtatókhoz való csatlakozás részeként is telepítheti a nyomtató-illesztőprogramot. **Nincs konfigurálva** (alapértelmezett) értékre állítva csak a rendszergazdák telepíthetik a megosztott nyomtatókhoz való csatlakozáskor a nyomtató-illesztőprogramok telepítését.
-- **CD-ROM-hozzáférés korlátozása aktív helyi felhasználó**: Amikor **engedélyezve**, csak az interaktív módon bejelentkezett felhasználó a CD-ROM adathordozóhoz használható. Ha a házirend engedélyezve van, és nincs interaktív módon bejelentkezett felhasználó, a CD-ROM-hoz a hálózaton keresztül lehet hozzáférni. **Nincs konfigurálva** (alapértelmezett) értékre állítva bárki hozzáférhet a CD-ROM-hoz.
-- **Cserélhető adathordozó formázására és kiadására**: A cserélhető NTFS-adathordozók formázására és kiadására jogosult felhasználók megadása:
-  - **Nincs konfigurálva**
-  - **Rendszergazdák**
-  - **Rendszergazdák és kiemelt felhasználók**
-  - **Rendszergazdák és interaktív felhasználók**
-
-### <a name="interactive-logon"></a>Interaktív bejelentkezés
-
-- **Percek száma zárolási képernyőn a képernyőkímélő**: Adja meg a ennyi perc inaktivitás az interaktív asztal bejelentkezési képernyő, mindaddig, amíg a képernyőkímélő elindul.
-- **CTRL + ALT + DEL való bejelentkezéshez szükséges**: Állítsa be **engedélyezése** , nyomja le a CTRL + ALT + DEL nem szükséges a felhasználók jelentkezhetnek be. **Nincs konfigurálva** (alapértelmezett) értékre állítva a felhasználók csak a CTRL+ALT+DEL billentyűkombináció lenyomásával jelentkezhetnek be a Windowsba.
-- **Viselkedés az intelligens kártya eltávolításakor**: Meghatározza, hogy mi történik, ha a bejelentkezett felhasználó intelligens kártyáját eltávolítják az intelligenskártya-olvasó. A választható lehetőségek:
-
-  - **Munkaállomás zárolása**: A munkaállomás zárolva van, az intelligens kártya eltávolításakor. Ez a beállítás lehetővé teszi a felhasználóknak, hogy elhagyják a helyiséget, magukkal vigyék az intelligens kártyájukat, és továbbra is fenntartsák védett munkamenetüket.
-  - **Kijelentkezés kényszerítése**: A felhasználó rendszer automatikusan kijelentkezteti az intelligens kártya eltávolításakor.
-  - **Ha egy távoli asztali szolgáltatások munkamenet leválasztása**: Az intelligens kártya eltávolítása nélkül a felhasználó kijelentkeztetése leválasztja a munkamenetet. Ez a beállítás lehetővé teszi, hogy a felhasználó az intelligens kártya újbóli beillesztésével később, vagy más intelligenskártya-olvasóval felszerelt gépnél újbóli bejelentkezés nélkül folytathassa a munkamenetet. Helyi munkamenet esetén ez a szabályzat pontosan úgy működik, mint a Munkaállomás zárolása.
-
-    A [LocalPoliciesSecurity-beállítások](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-localpoliciessecurityoptions#localpoliciessecurityoptions-interactivelogon-smartcardremovalbehavior) című témakörben további információt találhat.
-
-#### <a name="display"></a>Megjelenítés
-
-- **Felhasználói adatokat a zárolási képernyőn**: A munkamenet zárolásakor megjelenített felhasználói adatok konfigurálása. Ha nincs konfigurálva, a felhasználó megjelenített neve, a tartomány és a felhasználónév látható.
   - **Nincs konfigurálva**  
-  - **Felhasználó megjelenített neve, tartomány- és felhasználónév**
-  - **Csak a felhasználó megjelenített neve**
-  - **Ne jelenjenek meg a felhasználói adatok**
-- **Utolsó bejelentkezett felhasználó elrejtése**: **Engedélyezése** elrejti a felhasználónevet. A **Nincs konfigurálva** (alapértelmezett) értékkel megjelenítheti a felhasználónevet.
-- **Bejelentkezés felhasználónév elrejtése**: **Engedélyezése** elrejti a felhasználónevet. A **Nincs konfigurálva** (alapértelmezett) értékkel megjelenítheti a felhasználónevet.
-- **Bejelentkezési üzenet címe**: Az üzenet címének megadása a bejelentkező felhasználókat.
-- **Bejelentkezési üzenet szövege**: Az üzenet szövegének megadása a bejelentkező felhasználókat.
+  - **Elrejtése**  
 
+- **Ransomware-védelem**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  WindowsDefenderSecurityCenter CSP: [HideRansomwareDataRecovery](https://go.microsoft.com/fwlink/?linkid=873664)  
+
+  Annak megadása, hogy a végfelhasználók megtekinthetik-e a Windows Defender Security Center ransomware-védelmi felületét. A szakasz elrejtésével a ransomware-védelemmel kapcsolatos összes értesítés is blokkolva lesz.  
+
+  - **Nincs konfigurálva**  
+  - **Elrejtése**  
+
+- **Fiókok védelme**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  WindowsDefenderSecurityCenter CSP: [DisableAccountProtectionUI](https://go.microsoft.com/fwlink/?linkid=873666)  
+
+  Annak megadása, hogy a végfelhasználók megtekinthetik-e a Windows Defender Security Center fiók védelme területén. A szakasz elrejtésével a fiókok védelmével kapcsolatos összes értesítés is blokkolva lesz.  
+
+  - **Nincs konfigurálva**  
+  - **Elrejtése**  
+
+- **Tűzfal és hálózatvédelem**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  WindowsDefenderSecurityCenter CSP: [DisableNetworkUI](https://go.microsoft.com/fwlink/?linkid=873668)  
+
+  Annak megadása, hogy a végfelhasználók megtekinthetik-e a tűzfal és a hálózat védelmét a Windows Defender biztonsági központban. A szakasz elrejtésével a tűzfal és a hálózat védelmével kapcsolatos összes értesítés is blokkolva lesz.  
+
+  - **Nincs konfigurálva**  
+  - **Elrejtése**  
+
+- **Alkalmazás-és böngésző-vezérlő**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  WindowsDefenderSecurityCenter CSP: [DisableAppBrowserUI](https://go.microsoft.com/fwlink/?linkid=873669)  
+
+  Annak megadása, hogy a végfelhasználók megtekinthetik-e az alkalmazás és a böngésző vezérlőelem területén a Windows Defender biztonsági központban. A szakasz elrejtésével az alkalmazás-és böngésző-vezérlőkkel kapcsolatos összes értesítés is blokkolva lesz.  
+
+  - **Nincs konfigurálva**  
+  - **Elrejtése**  
+
+- **Hardveres védelem**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  WindowsDefenderSecurityCenter CSP: [DisableDeviceSecurityUI](https://go.microsoft.com/fwlink/?linkid=873670)  
+
+  Annak megadása, hogy a végfelhasználók megtekinthetik-e a Windows Defender Security Center a hardveres védelem részét. A szakasz elrejtésével a hardveres védelemmel kapcsolatos összes értesítés is blokkolva lesz.  
+
+  - **Nincs konfigurálva**  
+  - **Elrejtése**  
+
+- **Eszközteljesítmény és -állapot**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  WindowsDefenderSecurityCenter CSP: [DisableHealthUI](https://go.microsoft.com/fwlink/?linkid=873671)  
+
+  Annak megadása, hogy a végfelhasználók megtekinthetik-e az eszköz teljesítményét és állapotát a Windows Defender biztonsági központban. A szakasz elrejtésével az eszköz teljesítményével és állapotával kapcsolatos összes értesítés is blokkolva lesz.  
+  
+  - **Nincs konfigurálva**  
+  - **Elrejtése**  
+
+- **Családi beállítások**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  WindowsDefenderSecurityCenter CSP: [DisableFamilyUI](https://go.microsoft.com/fwlink/?linkid=873673)  
+
+  Annak megadása, hogy a végfelhasználók megtekinthetik-e a család beállításait a Windows Defender biztonsági központban. A szakasz elrejtésével az összes, a családra vonatkozó beállítással kapcsolatos értesítés is blokkolva lesz.  
+  
+  - **Nincs konfigurálva**  
+  - **Elrejtése**  
+
+- **Az alkalmazás megjelenített területeinek értesítései**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  WindowsDefenderSecurityCenter CSP: [DisableNotifications](https://go.microsoft.com/fwlink/?linkid=873675)  
+
+  Válassza ki, hogy mely értesítések jelenjenek meg a végfelhasználók számára. A nem kritikus értesítések közé tartoznak a Windows Defender víruskereső összefoglalói, például a vizsgálatok befejezését jelző értesítések. Minden más értesítés kritikusnak minősül.  
+
+  - **Nincs konfigurálva**  
+  - **Nem kritikus értesítések letiltása**  
+  - **Az összes értesítés letiltása**  
+
+- **Windows Security Center ikon a tálcán**  
+  **Alapértelmezett**: Nincs konfigurálva  
+
+  Az értesítési terület vezérlőelem megjelenítésének konfigurálása. A felhasználónak ki kell jelentkeznie, majd be kell jelentkeznie, vagy újra kell indítania a számítógépet a beállítás érvénybe léptetéséhez.  
+  
+  - **Nincs konfigurálva**  
+  - **Elrejtése**  
+
+- **TPM gomb törlése**  
+  **Alapértelmezett**: Nincs konfigurálva  
+
+  Konfigurálja a TPM törlése gomb megjelenítését.  
+  
+  - **Nincs konfigurálva**  
+  - **Megbénít**  
+
+- **Figyelmeztetés a TPM belső vezérlőprogram frissítésére**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  
+  Konfigurálja a TPM belső vezérlőprogram frissítésének megjelenítését sebezhető belső vezérlőprogram észlelésekor.  
+
+  - **Nincs konfigurálva**  
+  - **Elrejtése**  
+
+- **Illetéktelen védelem**  
+  **Alapértelmezett**: Nincs konfigurálva
+
+  Az eszközökön be-és kikapcsolhatja a jogosulatlan védelmet. A jogosulatlan védelem használatához [integrálnia kell a Microsoft Defender komplex veszélyforrások elleni védelmet az Intune](advanced-threat-protection.md)-nal, és [Enterprise Mobility + Security E5-licencekkel](licenses.md)kell rendelkeznie.  
+  - **Nincs konfigurálva** – az eszközbeállítások nem módosul.
+  - Az **engedélyezett** – illetéktelen módosítások elleni védelem be van kapcsolva, és a korlátozások kényszerítve vannak az eszközökön.
+  - **Letiltott** – az illetéktelen módosítások elleni védelem ki van kapcsolva, és a rendszer nem kényszeríti a korlátozásokat.
+
+### <a name="it-contact-information"></a>Az informatikai szolgálat kapcsolattartási adatai  
+
+Adja meg az informatikai szolgálat azon elérhetőségeit, amelyek megjelennek majd a Windows Defender biztonsági központ alkalmazásban és az alkalmazásértesítésekben.  
+
+Az alábbi lehetőségek közül választhat: **Az alkalmazásban és az értesítésekben is jelenjen meg**, **Csak az alkalmazásban jelenjen meg**, **Csak az értesítésekben jelenjen meg** és **Ne jelenjen meg**. Adja meg az **IT-szervezet nevét**, és az alábbi kapcsolatfelvételi lehetőségek közül legalább egyet:  
+
+
+- **Kapcsolattartási adatok**  
+  **Alapértelmezett**: Ne jelenjen meg  
+  WindowsDefenderSecurityCenter CSP: [EnableCustomizedToasts](https://go.microsoft.com/fwlink/?linkid=873676)  
+  
+  Itt adhatja meg, hogy hol jelenjen meg az informatikai kapcsolattartási adatok a végfelhasználók számára.  
+  
+  - **Megjelenítés az alkalmazásban és az értesítésekben**  
+  - **Csak az alkalmazásban jelenjen meg**  
+  - **Csak az értesítésekben jelenjen meg**  
+  - **Ne jelenjen meg**  
+
+  Ha a megjelenítésre van konfigurálva, a következő beállításokat állíthatja be:  
+
+  - **INFORMATIKAI szervezet neve**  
+    **Alapértelmezett**: *Nincs konfigurálva*  
+    WindowsDefenderSecurityCenter CSP: [CompanyName](https://go.microsoft.com/fwlink/?linkid=873677)  
+
+  - **IT-részleg telefonszáma vagy Skype-elérhetősége**  
+    **Alapértelmezett**: *Nincs konfigurálva*  
+    WindowsDefenderSecurityCenter CSP: [Phone](https://go.microsoft.com/fwlink/?linkid=873678) 
+
+  - **IT-részleg e-mail címe**  
+    **Alapértelmezett**: *Nincs konfigurálva*  
+    WindowsDefenderSecurityCenter CSP: [E-mail](https://go.microsoft.com/fwlink/?linkid=873679)  
+
+  - **Informatikai támogatási webhely URL-címe**  
+    **Alapértelmezett**: *Nincs konfigurálva*  
+    WindowsDefenderSecurityCenter CSP: [URL-cím](https://go.microsoft.com/fwlink/?linkid=873680)  
+ 
+## <a name="local-device-security-options"></a>Helyi eszközbiztonsági beállítások  
+
+Ezekkel a beállításokkal konfigurálhatja a Windows 10-eszközök helyi biztonsági beállításait.  
+
+### <a name="accounts"></a>Fiókok  
+
+- **Új Microsoft-fiókok hozzáadása**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [Accounts_BlockMicrosoftAccounts](https://go.microsoft.com/fwlink/?linkid=867916)  
+
+
+  - **Letiltás** Annak megakadályozása, hogy a felhasználók új Microsoft-fiókokat adjanak hozzá az eszközhöz.  
+  - **Nincs konfigurálva** – a felhasználók Microsoft-fiókokat használhatnak az eszközön.  
+
+- **Távoli bejelentkezés jelszó nélkül**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [Accounts_LimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly](https://go.microsoft.com/fwlink/?linkid=867890)  
+
+
+   - **Letiltás** – csak az üres jelszavakkal rendelkező helyi fiókok bejelentkezésének engedélyezése az eszköz billentyűzetén keresztül.  
+   - **Nincs konfigurálva** – engedélyezi a helyi fiókok számára az üres jelszavakat a fizikai eszköztől eltérő helyről való bejelentkezéshez.  
+
+#### <a name="admin"></a>rendszergazda  
+
+- **Helyi rendszergazdai fiók**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [Accounts_LimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly](https://go.microsoft.com/fwlink/?linkid=867850)  
+
+
+  - **Letiltás** Helyi rendszergazdai fiók használatának megakadályozása.  
+  - **Nincs konfigurálva**  
+
+- **Rendszergazdai fiók átnevezése**  
+  **Alapértelmezett**: *Nincs konfigurálva*  
+  LocalPoliciesSecurityOptions CSP: [Accounts_RenameAdministratorAccount](https://go.microsoft.com/fwlink/?linkid=867917)  
+ 
+
+  Adjon meg egy másik fióknevet, amely társítva lesz a "rendszergazda" fiók biztonsági azonosítójához (SID).  
+
+ #### <a name="guest"></a>Vendég  
+
+- **Vendég fiók**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [LocalPoliciesSecurityOptions](https://go.microsoft.com/fwlink/?linkid=867853)  
+
+  - **Letiltás** – vendég fiók használatának megakadályozása.  
+  - **Nincs konfigurálva**  
+
+- **Vendég fiók átnevezése**  
+  **Alapértelmezett**: *Nincs konfigurálva*  
+  LocalPoliciesSecurityOptions CSP: [Accounts_RenameGuestAccount](https://go.microsoft.com/fwlink/?linkid=867918)  
+  
+  Adjon meg egy másik fióknevet, amely társítva lesz a "vendég" fiók biztonsági azonosítójához (SID).  
+
+### <a name="devices"></a>Eszközök  
+
+- **Eszköz dokkolásának feloldása bejelentkezés nélkül**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [Devices_AllowUndockWithoutHavingToLogon](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-localpoliciessecurityoptions#localpoliciessecurityoptions-devices-allowundockwithouthavingtologon)  
+
+  
+  - **Letiltás** – a felhasználók lenyomhatja a dokkolt hordozható eszköz fizikai kidobási gombját, hogy biztonságosan le tudja tiltani az eszköz dokkolását.  
+  - **Nincs konfigurálva** – a felhasználónak be kell jelentkeznie az eszközre, és engedélyt kell kapnia az eszköz dokkolásának feloldására.  
+
+- **Nyomtató-illesztőprogramok telepítése megosztott nyomtatókhoz**  
+  **Alapértelmezett**:  Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [Devices_PreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters](https://go.microsoft.com/fwlink/?linkid=867921)  
+
+
+  - **Engedélyezve** – bármely felhasználó telepíthet egy nyomtatóillesztőt egy megosztott nyomtatóhoz való csatlakozás részeként.  
+  - **Nincs konfigurálva** – csak rendszergazdák telepíthetnek nyomtatóillesztőt egy megosztott nyomtatóhoz való csatlakozás részeként.  
+
+- **A CD-ROM-hozzáférés korlátozása helyi aktív felhasználóra**  
+  **Alapértelmezett**:  Nincs konfigurálva  
+  CSP [Devices_RestrictCDROMAccessToLocallyLoggedOnUserOnly](https://go.microsoft.com/fwlink/?linkid=867922)  
+
+
+  - **Engedélyezve** – csak az interaktívan bejelentkezett felhasználó használhatja a CD-ROM-adathordozót. Ha a házirend engedélyezve van, és nincs interaktív módon bejelentkezett felhasználó, a CD-ROM-hoz a hálózaton keresztül lehet hozzáférni.  
+  - **Nincs konfigurálva** – bárki HOZZÁFÉRHET a CD-ROM-hoz.  
+
+- **Cserélhető adathordozó formázása és kiadása**  
+  **Alapértelmezett**: A rendszergazdák  
+  CSP [Devices_AllowedToFormatAndEjectRemovableMedia](https://go.microsoft.com/fwlink/?linkid=867920)  
+ 
+
+  A cserélhető NTFS-adathordozók formázására és kiadására jogosult személyek megadása:  
+  - **Nincs konfigurálva**  
+  - **Rendszergazdák**  
+  - **Rendszergazdák és kiemelt felhasználók**  
+  - **Rendszergazdák és interaktív felhasználók**  
+
+### <a name="interactive-logon"></a>Interaktív bejelentkezés  
+
+- **A zárolási képernyő inaktivitásának percben, amíg a képernyőkímélő be nem kapcsol**  
+  **Alapértelmezett**: *Nincs konfigurálva*  
+  LocalPoliciesSecurityOptions CSP: [InteractiveLogon_MachineInactivityLimit](https://go.microsoft.com/fwlink/?linkid=867891)  
+
+
+  Adja meg az interaktív asztal bejelentkezési képernyőjének maximálisan ennyi perc inaktivitását, amíg a képernyővédő el nem indul. (**0** - **99999**)  
+
+- **CTRL + ALT + DEL használatának megkövetelése a bejelentkezéshez**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [InteractiveLogon_DoNotRequireCTRLALTDEL](https://go.microsoft.com/fwlink/?linkid=867951)  
+
+
+  - **Engedélyezés** – a Ctrl + Alt + Del billentyűkombináció lenyomása nem kötelező a felhasználóknak a bejelentkezéshez.  
+  - **Nincs konfigurálva** A CTRL + ALT + DEL billentyűkombináció lenyomásának megkövetelése a felhasználóktól a Windowsba való bejelentkezés előtt.  
+
+- **Intelligens kártya eltávolításának viselkedése**  
+  **Alapértelmezett**: Munkaállomás zárolása   
+  LocalPoliciesSecurityOptions CSP: [InteractiveLogon_SmartCardRemovalBehavior](https://go.microsoft.com/fwlink/?linkid=868437)  
+    
+  Meghatározza, hogy mi történjen, ha a bejelentkezett felhasználó intelligens kártyáját eltávolítja az intelligenskártya-olvasóból. A választható lehetőségek:  
+
+  - **Munkaállomás zárolása** – a munkaállomás az intelligens kártya eltávolításakor zárolva van. Ez a beállítás lehetővé teszi a felhasználóknak, hogy elhagyják a helyiséget, magukkal vigyék az intelligens kártyájukat, és továbbra is fenntartsák védett munkamenetüket.  
+  - **Nincs művelet**  
+  - **Kijelentkezés kényszerítése** – a rendszer automatikusan kijelentkezik a felhasználót az intelligens kártya eltávolításakor.  
+  - **Kapcsolat bontása, ha távoli asztali szolgáltatások munkamenet** – az intelligens kártya eltávolítása leválasztja a munkamenetet a felhasználó kijelentkezése nélkül. Ez a beállítás lehetővé teszi, hogy a felhasználó az intelligens kártya újbóli beillesztésével később, vagy más intelligenskártya-olvasóval felszerelt gépnél újbóli bejelentkezés nélkül folytathassa a munkamenetet. Helyi munkamenet esetén ez a szabályzat pontosan úgy működik, mint a Munkaállomás zárolása.  
+
+#### <a name="display"></a>Megjelenítés  
+
+- **Felhasználói információk a zárolási képernyőn**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [InteractiveLogon_DisplayUserInformationWhenTheSessionIsLocked](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-localpoliciessecurityoptions#localpoliciessecurityoptions-interactivelogon-displayuserinformationwhenthesessionislocked)  
+
+  A munkamenet zárolásakor megjelenő felhasználói adatok konfigurálása. Ha nincs konfigurálva, a felhasználó megjelenített neve, a tartomány és a felhasználónév látható.  
+
+  - **Nincs konfigurálva**  
+  - **Felhasználó megjelenített neve, tartomány- és felhasználónév**  
+  - **Csak a felhasználó megjelenített neve**  
+  - **Ne jelenjenek meg a felhasználói adatok**  
+
+- **Utolsó bejelentkezett felhasználó elrejtése**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [InteractiveLogon_DoNotDisplayLastSignedIn](https://go.microsoft.com/fwlink/?linkid=868437)  
+  
+  
+  - **Engedélyezés** – a Felhasználónév elrejtése.  
+  - **Nincs konfigurálva** – az utolsó felhasználónevet jeleníti meg.  
+
+- **Felhasználónév elrejtése a bejelentkezés**
+  **alapértelmezett értékeként**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [InteractiveLogon_DoNotDisplayUsernameAtSignIn](https://go.microsoft.com/fwlink/?linkid=867959)  
+
+  
+  - **Engedélyezés** – a Felhasználónév elrejtése.  
+  - **Nincs konfigurálva** – az utolsó felhasználónevet jeleníti meg.  
+
+- **Bejelentkezési üzenet címe**  
+  **Alapértelmezett**: *Nincs konfigurálva*  
+  LocalPoliciesSecurityOptions CSP: [InteractiveLogon_MessageTitleForUsersAttemptingToLogOn](https://go.microsoft.com/fwlink/?linkid=867964)  
+
+  Adja meg az üzenet címét a bejelentkezett felhasználók számára.  
+
+- **Bejelentkezési üzenet szövege**  
+  **Alapértelmezett**: *Nincs konfigurálva*  
+  LocalPoliciesSecurityOptions CSP: [InteractiveLogon_MessageTextForUsersAttemptingToLogOn](https://go.microsoft.com/fwlink/?linkid=867962)  
+
+  Az üzenet szövegének beállítása a bejelentkezett felhasználók számára.  
+  
 ### <a name="network-access-and-security"></a>Hálózati hozzáférés és biztonság
 
-- **Nevesített csövekhez és megosztások való névtelen hozzáférés**: **Nincs konfigurálva** (alapértelmezett) korlátozza a névtelen hozzáférés a megosztás és a Named Pipe-beállítások. A névtelenül megadható beállításokra vonatkozik.
-- **SAM-fiókok névtelen felsorolása**: **Lehetővé teszi** névtelen felhasználók számára a SAM-fiókok. A Windows engedélyezi a névtelen felhasználók számára a tartományfiókok és hálózati megosztások enumerálását.
-- **SAM-fiókok és-megosztások névtelen felsorolása**: **Nincs konfigurálva** (alapértelmezett) azt jelenti, névtelen felhasználók névlistázás tartományi fiókok és hálózati megosztásokra. A SAM-fiókok és -megosztások névtelen számbavételének megakadályozásához állítsa **Letilt** értékre.
-- **Jelszómódosításkor tárolt LAN-kezelő üzenetkivonatát**: Jelenleg a következő jelszómódosításkor dönt, hogy **engedélyezése** a LAN Manager-(LM-) tárolására, az új jelszó a kivonat értékével. **Nincs konfigurálva** (alapértelmezett) érték esetén az üzenetkivonat nem tárolódik.
-- **PKU2U hitelesítési kérelmek**: **Blokk** PKU2U hitelesítési kérelmek, az eszköz online identitások használatára. **Nem konfigurált** (alapértelmezett) érték esetén ezek a kérelmek engedélyezve vannak.
-- **Távoli RPC-kapcsolatok az SAM korlátozása**: Állítsa be **engedélyezése** számára megtagadja a felhasználók és csoportok abban, hogy a távoli RPC-hívások, a biztonsági fiókkezelő (SAM), amely tárolja a felhasználói fiókkal és jelszóval. **Lehetővé teszi** is lehetővé teszi, hogy módosítja az alapértelmezett Security Descriptor Definition Language (SDDL) karakterlánc explicit módon engedélyezi vagy megtagadja a felhasználók és csoportok távoli hívásokat ezeket. **Nincs konfigurálva** (alapértelmezett) használja az alapértelmezett biztonsági leíró, és engedélyezheti a felhasználók és csoportok távoli RPC hívásokat küldjenek a SAM-nek.
-  - **Biztonsági leíró**
+- **Névtelen hozzáférés nevesített csövekhez és megosztásokhoz**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [NetworkAccess_RestrictAnonymousAccessToNamedPipesAndShares](https://go.microsoft.com/fwlink/?linkid=868432)  
 
-### <a name="recovery-console-and-shutdown"></a>Helyreállítási konzol és leállítás
+  - **Nincs konfigurálva** – a névtelen hozzáférés korlátozása a megosztáshoz és a nevesített pipe-beállításokhoz. A névtelenül megadható beállításokra vonatkozik.  
+  - **Tiltsa le** ezt a házirendet, így a névtelen hozzáférés elérhetővé válik.  
 
-- **Virtuális memória lapozófájljának törlése leállításkor**: Állítsa be **engedélyezése** törölje a virtuális memória lapozófájljának törlése, amikor az eszköz le van-e kapcsolva. A **Nincs konfigurálva** érték nem törli a virtuális memóriát.
-- **A napló nélkül leállítása**: **Blokk** elrejti a leállítási lehetőséget, a Windows bejelentkezési képernyő. A felhasználóknak a leállítás előtt be kell jelentkezniük az eszközbe. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi, hogy a felhasználók számára, hogy állítsa le az eszközt a Windows bejelentkezési képernyő.
+- **SAM-fiókok névtelen enumerálása**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [NetworkAccess_DoNotAllowAnonymousEnumerationOfSAMAccounts](https://go.microsoft.com/fwlink/?linkid=868434)  
+  
+  - **Nincs konfigurálva** – a névtelen felhasználók számba vehetik a SAM-fiókokat.  
+  - **Block** – a SAM-fiókok névtelen számbavételének tiltása.  
 
-### <a name="user-account-control"></a>Felhasználói fiókok felügyelete
+- **SAM-fiókok és-megosztások névtelen enumerálása**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [NetworkAccess_DoNotAllowAnonymousEnumerationOfSamAccountsAndShares](https://go.microsoft.com/fwlink/?linkid=868435)  
 
-- **Az UIA integritása biztonságos hely hiányában**: Ha a beállítása **blokk**, biztonságos helyen a fájlrendszerben található alkalmazások futnak, csak a UIAccess integritási szinttel. **Nincs konfigurálva** (alapértelmezett) értékkel az alkalmazások akkor is futtathatók UIAccess integritási szinttel, ha a fájlrendszer nem biztonságos helyein találhatók.
-- **Fájl- és beállításjegyzék-írási hibák felhasználónként különböző helyekre virtualizálása**: Ha a beállítása **engedélyezve**, az alkalmazásokat, amelyek adatokat író védett helyek sikertelen. Ha a beállítása **nincs konfigurálva** (alapértelmezett), alkalmazás-írási hibák irányítja át a futási időt a fájlrendszer és a beállításjegyzék definiált felhasználói helyét.
-- **Csak az aláírt és érvényesített végrehajtható fájlok jogosultságszintjének emelése**: Állítsa be **engedélyezve** kényszeríteni a nyilvános kulcsokra épülő infrastruktúra tanúsítványlánc érvényességének ellenőrzését egy végrehajtható fájlt, ahhoz, hogy futtatható. **Nincs konfigurálva** (alapértelmezett) értékkel nem kényszeríti a PKI-tanúsítványlánc érvényesítését egy végrehajtható fájlhoz, mielőtt az futhatna.
+  - **Nincs konfigurálva** – a névtelen felhasználók számba vehetik a tartományi fiókok és hálózati megosztások nevét.  
+  - **Blokk** – a SAM-fiókok és-megosztások névtelen számbavételének tiltása. 
 
-#### <a name="uia-elevation-prompt-behavior-settings"></a>UIA jogosultságszint-emelési kérés viselkedésének beállításai
+- **A LAN Manager kivonatának jelszavas változáson tárolt értéke**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [NetworkSecurity_DoNotStoreLANManagerHashValueOnNextPasswordChange](https://go.microsoft.com/fwlink/?linkid=868431)  
+   
+  Állapítsa meg, hogy a jelszó kivonatának értékét a rendszer a jelszó következő módosításakor tárolja-e. 
+  - **Nincs konfigurálva** – a kivonatoló érték nincs tárolva  
+  - **Letiltás** – a LAN-kezelő (LM) tárolja az új jelszó kivonatának értékét.  
 
-- **Jogosultságszint-emelési kérés rendszergazdák**: Rendszergazdai engedélyezéses módban a rendszergazdák számára a jogosultságszint-emelési kérés viselkedésének megadása:
-  - **Jogosultságszint-emelés kérés nélkül**
-  - **Hitelesítő adatok bekérése a biztonságos asztalon**
-  - **Beleegyezés kérése a biztonságos asztalon**
-  - **Hitelesítő adatok bekérése**
-  - **Beleegyezés kérése**
-  - **Nincs konfigurálva**: Beleegyezés kérése nem Windows bináris fájlok
-- **Jogosultságszint-emelési kérés általános jogú felhasználók esetében**: Általános jogú felhasználók esetében a jogosultságszint-emelési kérés viselkedésének megadása:
-  - **Jogosultságszint-emelési kérések automatikus megtagadása**
-  - **Hitelesítő adatok bekérése a biztonságos asztalon**
-  - **Nincs konfigurálva**: Hitelesítő adatok kérése
-- **Jogosultságszint-emelési kérések átirányítása a felhasználó interaktív asztalára**: **Engedélyezése** , nyissa meg az összes jogosultságszint-emelési kérések az interaktív felhasználó asztalán, nem a biztonsági asztal. A rendszer a rendszergazdákra és az általános jogú felhasználókra vonatkozó kérések viselkedését szabályzó házirend-beállításokat alkalmazza. A **Nincs konfigurálva** (alapértelmezett) értékre állítva minden jogosultságszint-emelési kérés a biztonságos asztalra lesz irányítva a rendszergazdákra és szabványos felhasználókra vonatkozó, a kérések viselkedését szabályzó házirend-beállításoktól függetlenül.
-- **Jogosultságszint-emelési kérés alkalmazástelepítések**: Ha a beállítása **engedélyezve**, alkalmazáscsomagok telepítési nem észlelhető, vagy a jogosultságszint-emeléshez kéri. A **Nincs konfigurálva** (alapértelmezett) értékre állítva a rendszer rendszergazdai felhasználónevet és jelszót kér a felhasználótól, amikor egy alkalmazástelepítési csomag emelt szintű jogosultságot igényel.
-- **UIA jogosultságszint-emelési kérés biztonsági asztal hiányában**: **Engedélyezése** , hogy UIAccess-alkalmazások emelését, a biztonsági asztal használata nélkül. A **Nincs konfigurálva** (alapértelmezett) értékre állítva a jogosultságszint-emelési kérések egy biztonsági asztalt használnak.
+- **PKU2U-hitelesítési kérelmek**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [NetworkSecurity_AllowPKU2UAuthenticationRequests](https://go.microsoft.com/fwlink/?linkid=867892)  
 
-#### <a name="admin-approval-mode-settings"></a>A rendszergazdai engedélyezéses mód beállításai
+  - **Nincs konfigurálva**– PU2U kérelmek engedélyezése.  
+  - **Blokkolja** a PKU2U hitelesítési kérelmeit az eszközön.  
 
-- **Rendszergazdai jóváhagyás mód a beépített rendszergazdához**: **Engedélyezett** lehetővé teszi, hogy a beépített Rendszergazda fiók rendszergazdai engedélyezéses mód használatára. A jogosultságszint-emelést igénylő műveletek felhasználói jóváhagyást kérnek. A **Nincs konfigurálva** (alapértelmezett) érték minden alkalmazást teljes rendszergazdai jogosultságokkal futtat.
-- **Minden rendszergazda futtatása rendszergazdai engedélyezéses módban**: Állítsa be **engedélyezve** letiltani a rendszergazdai engedélyezéses mód és az összes kapcsolódó felhasználói fiókok Felügyeletének házirend-beállításokat. A **Nincs konfigurálva** (alapértelmezett) érték engedélyezi a rendszergazdai engedélyezéses módot.
+- **Távoli RPC-kapcsolatok korlátozása a SAM-ra**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [NetworkAccess_RestrictClientsAllowedToMakeRemoteCallsToSAM](https://go.microsoft.com/fwlink/?linkid=867893)  
+  
+  - **Nincs konfigurálva** – használja az alapértelmezett biztonsági leírót, amely lehetővé teheti a felhasználók és csoportok számára, hogy távoli RPC-hívásokat hajtanak végre a SAM-ben.
+  - **Engedélyezés** – megtagadhatja a felhasználókat és a csoportokat, hogy távoli RPC-hívásokat hozzanak a biztonsági FIÓKKEZELŐ (SAM) számára, amely a felhasználói fiókokat és jelszavakat tárolja. Az **Engedélyezés** beállítás megadásával megváltoztathatja az alapértelmezett biztonsági leíró definíciójának nyelvét (SDDL), hogy a felhasználók és csoportok explicit módon engedélyezzék vagy megtagadják ezeket a távoli hívásokat.  
 
-### <a name="microsoft-network-client"></a>Microsoft hálózati ügyfél
+    - **Biztonsági leíró**  
+      **Alapértelmezett**: *Nincs konfigurálva*  
+    
+- **Minimális munkamenet-biztonság az NTLM SSP-alapú ügyfelek számára**  
+  **Alapértelmezett**: Nincsenek  
+  LocalPoliciesSecurityOptions CSP: [NetworkSecurity_MinimumSessionSecurityForNTLMSSPBasedClients](https://aka.ms/policy-csp-localpoliciessecurityoptions-networksecurity-minimumsessionsecurityforntlmsspbasedclients)  
+  
+  Ez a biztonsági beállítás lehetővé teszi a kiszolgáló számára, hogy megkövetelje a 128 bites titkosítás és/vagy az NTLMv2 munkamenet-biztonság egyeztetését.  
 
-- **Kommunikáció digitális aláírása (Ha a kiszolgáló egyetért)**: Azt határozza meg, ha az SMB-ügyfél egyezteti az SMB-csomagaláírást. Ha ez a beállítás **Nincs konfigurálva**, vagy engedélyezve van (ez az alapértelmezés), a Microsoft hálózati ügyfél a kiszolgálótól a munkamenet beállításakor az SMB-csomagok aláírását kéri. Ha a csomagaláírás engedélyezve van a kiszolgálón, a csomagaláírás egyeztetése megkezdődik. Ha ez a szabályzat **le van tiltva**, az SMB-ügyfél soha nem egyezteti az SMB-csomagok aláírását.
-- **Titkosítatlan jelszavak küldése egyéb SMB-kiszolgálóknak**: Ha a beállítása **engedélyezése**, a Server Message Block (SMB) átirányító egyszerű szöveges jelszavakat küldhet nem Microsoft SMB - kiszolgálóknak, amelyek nem támogatják a titkosítási jelszó a hitelesítés során. A **Nincs konfigurálva** (alapértelmezett) értékkel a jelszavak titkosítva vannak.
+  - **Nincsenek**  
+  - **NTLMv2-munkamenet biztonságának megkövetelése**  
+  - **128 bites titkosítás megkövetelése**  
+  - **NTLMv2 és 128 bites titkosítás**  
+ 
+- **Az NTLM SSP-alapú kiszolgáló minimális munkamenet-biztonsága**  
+  **Alapértelmezett**: Nincsenek  
+  LocalPoliciesSecurityOptions CSP: [NetworkSecurity_MinimumSessionSecurityForNTLMSSPBasedServers](https://aka.ms/policy-csp-localpoliciessecurityoptions-networksecurity-minimumsessionsecurityforntlmsspbasedservers)  
 
-### <a name="microsoft-network-server"></a>Microsoft hálózati kiszolgáló
+  Ez a biztonsági beállítás határozza meg, hogy melyik kérdés-válasz hitelesítési protokollt használja a rendszer a hálózati bejelentkezésekhez.  
 
-- **Kommunikáció digitális aláírása (ha az ügyfél egyetért)**: Azt határozza meg, ha az SMB-kiszolgálón egyezteti az SMB-csomagaláírás, az azt kérő ügyfelekkel. **Engedélyezés** értékre állítva a Microsoft hálózati kiszolgáló egyezteti az SMB-csomagok aláírását az ügyfél kérése szerint. Ez azt jelenti, hogy ha a csomagaláírás engedélyezve van az ügyfélnél, a csomagaláírás egyeztetése megkezdődik. Ha ez a beállítás **Nem konfigurált** állapotú vagy le van tiltva (alapértelmezett), akkor az SMB-ügyfél soha nem egyezteti az SMB-csomagok aláírását.
-- **Kommunikáció digitális aláírása (mindig)**: Azt határozza meg, ha az SMB kiszolgáló-összetevő szüksége van a csomag aláírása. **Engedélyezés** értékre állítva a Microsoft hálózati kiszolgáló nem kommunikál a Microsoft hálózati ügyféllel, hacsak az ügyfél bele nem egyezik az SMB-csomagok aláírásába. Ha ez a beállítás **Nincs konfigurálva** vagy le van tiltva (alapértelmezett), akkor az SMB-csomagok aláírásának egyeztetése megkezdődik az ügyfél és a kiszolgáló között.
+  - **Nincsenek**  
+  - **NTLMv2-munkamenet biztonságának megkövetelése**  
+  - **128 bites titkosítás megkövetelése**  
+  - **NTLMv2 és 128 bites titkosítás**  
+
+- **A LAN-kezelő hitelesítési szintje**  
+  **Alapértelmezett**: LM és NTLM  
+  LocalPoliciesSecurityOptions CSP: [NetworkSecurity_LANManagerAuthenticationLevel](https://aka.ms/policy-csp-localpoliciessecurityoptions-lanmanagerauthenticationlevel)  
+
+
+  - **LM és NTLM**  
+  - **LM, NTLM és NTLMv2**  
+  - **NTLM**  
+  - **NTLMv2**  
+  - **NTLMv2 és nem LM**  
+  - **NTLMv2 és nem LM vagy NTLM**  
+  
+- **Nem biztonságos vendég bejelentkezések**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LanmanWorkstation CSP: [LanmanWorkstation](https://aka.ms/policy-csp-lanmanworkstation-enableinsecureguestlogons)  
+
+  Ha engedélyezi ezt a beállítást, az SMB-ügyfél elutasítja a nem biztonságos vendég bejelentkezéseket.  
+
+  - **Nincs konfigurálva**  
+  - **Letiltás** – az SMB-ügyfél elutasítja a nem biztonságos vendég bejelentkezéseket.  
+
+### <a name="recovery-console-and-shutdown"></a>Helyreállítási konzol és leállítás  
+
+- **Virtuális memória lapozófájljának törlése leállításkor**  
+  **Alapértelmezett**: Nincs konfigurálva  
+   LocalPoliciesSecurityOptions CSP: [Shutdown_ClearVirtualMemoryPageFile](https://go.microsoft.com/fwlink/?linkid=867914)  
+
+
+  - **Engedélyezés** – a virtuális memória lapozófájljának törlése, ha az eszköz le van kapcsolva.  
+  - **Nincs konfigurálva** – nem törli a virtuális memóriát.  
+
+- **Leállítás bejelentkezés nélkül**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [Shutdown_AllowSystemToBeShutDownWithoutHavingToLogOn](https://go.microsoft.com/fwlink/?linkid=867912)  
+
+  
+  - **Letiltás** – a leállítási lehetőség elrejtése a Windows bejelentkezési képernyőjén. A felhasználóknak a leállítás előtt be kell jelentkezniük az eszközbe.  
+  - **Nincs konfigurálva** – lehetővé teszi a felhasználók számára az eszköz leállítását a Windows bejelentkezési képernyőjéről.  
+
+### <a name="user-account-control"></a>Felhasználói fiókok felügyelete  
+
+- **UIA épsége biztonságos hely nélkül**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [UserAccountControl_OnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations](https://go.microsoft.com/fwlink/?linkid=867897)  
+  
+  - A fájlrendszer biztonságos helyén lévő alkalmazások csak a UIAccess integritását fogják futtatni.  
+  - **Nincs konfigurálva** – lehetővé teszi, hogy az alkalmazások az UIAccess integritásával fussanak, még akkor is, ha az alkalmazások nem biztonságos helyen vannak a fájlrendszerben.  
+
+- **A fájl-és beállításjegyzék-írási hibák virtualizálása felhasználónkénti helyen**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [UserAccountControl_VirtualizeFileAndRegistryWriteFailuresToPerUserLocations](https://go.microsoft.com/fwlink/?linkid=867900)  
+
+  - **Engedélyezve** – nem sikerül az olyan alkalmazások, amelyek a védett helyszínekre írnak.  
+  - **Nem konfigurált** – az alkalmazások írási hibáit a rendszer futási időben átirányítja a fájlrendszer és a beállításjegyzék meghatározott felhasználói helyeire.  
+
+- **Csak az aláírt és érvényesített végrehajtható fájlok emelése**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [UserAccountControl_OnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations](https://go.microsoft.com/fwlink/?linkid=867965)  
+
+  - **Engedélyezve** – a Futtatás előtt kényszerítse ki a PKI-tanúsítvány elérési útjának érvényesítését egy végrehajtható fájlra.  
+  - **Nincs konfigurálva** – a rendszer nem kényszeríti ki a PKI-tanúsítványlánc érvényesítését egy végrehajtható fájl futtatása előtt.  
+
+#### <a name="uia-elevation-prompt-behavior"></a>UIA jogosultságszint-emelési kérések viselkedése  
+
+- **Jogosultságszint-emelési kérés rendszergazdák számára**  
+  **Alapértelmezett**: Beleegyezés kérése nem Windows rendszerű bináris fájlokhoz  
+  LocalPoliciesSecurityOptions CSP: [UserAccountControl_BehaviorOfTheElevationPromptForAdministrators](https://go.microsoft.com/fwlink/?linkid=867895)  
+
+  Adja meg a rendszergazdák jogosultságszint-emelési kérésének viselkedését rendszergazdai jóváhagyás módban.  
+
+  - **Nincs konfigurálva**  
+  - **Jogosultságszint-emelés kérés nélkül**  
+  - **Hitelesítő adatok bekérése a biztonságos asztalon**  
+  - **Hitelesítő adatok bekérése**  
+  - **Beleegyezés kérése**  
+  - **Beleegyezés kérése nem Windows rendszerű bináris fájlokhoz**  
+
+
+- **Jogosultságszint-emelési kérés általános jogú felhasználók számára**  
+  **Alapértelmezett**: Hitelesítő adatok kérése  
+  LocalPoliciesSecurityOptions CSP: [UserAccountControl_BehaviorOfTheElevationPromptForStandardUsers](https://go.microsoft.com/fwlink/?linkid=867896)  
+
+  A jogosultságszint-emelési kérés viselkedésének meghatározása az általános jogú felhasználók számára.  
+
+  - **Nincs konfigurálva**  
+  - **Jogosultságszint-emelési kérések automatikus megtagadása**  
+  - **Hitelesítő adatok bekérése a biztonságos asztalon**  
+  - **Hitelesítő adatok bekérése**  
+
+- **Jogosultságszint-emelési kérések átirányítása a felhasználó interaktív asztalára**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [UserAccountControl_SwitchToTheSecureDesktopWhenPromptingForElevation](https://go.microsoft.com/fwlink/?linkid=867899)  
+
+
+  - **Engedélyezve** – az összes jogosultságszint-emelési kérelem nem a biztonságos asztal helyett az interaktív felhasználó asztalára lép. A rendszer a rendszergazdákra és az általános jogú felhasználókra vonatkozó kérések viselkedését szabályzó házirend-beállításokat alkalmazza.  
+  - **Nincs konfigurálva** – kényszerítse az összes jogosultságszint-emelési kérést a biztonságos asztalra, függetlenül attól, hogy a rendszergazdák és a normál felhasználók milyen figyelmeztetési viselkedési házirend-beállításokkal rendelkeznek.
+
+- **Emelt szintű kérés az alkalmazások telepítéséhez**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [UserAccountControl_DetectApplicationInstallationsAndPromptForElevation](https://go.microsoft.com/fwlink/?linkid=867901)  
+
+   - **Engedélyezett** – az alkalmazás telepítési csomagjai nem észlelhetők vagy jogosultságszint-emelésre kérik.
+   - **Nincs konfigurálva** – a felhasználóknak rendszergazdai felhasználónevet és jelszót kell megadniuk, ha az alkalmazás telepítési csomagja emelt szintű jogosultságokat igényel.
+
+- **UIA jogosultságszint-emelési kérés biztonságos asztal nélkül**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [UserAccountControl_AllowUIAccessApplicationsToPromptForElevation](https://go.microsoft.com/fwlink/?linkid=867894)  
+
+- **Engedélyezés – engedélyezi** , hogy a UIAccess alkalmazások jogosultságszint-emelést kérjenek a biztonságos asztal használata nélkül.  
+- **Nem konfigurált** – a jogosultságszint-emelési kérések biztonságos asztalt használnak.  
+
+#### <a name="admin-approval-mode"></a>Rendszergazdai jóváhagyási mód  
+
+- **Rendszergazdai jóváhagyási mód a beépített rendszergazda számára**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [UserAccountControl_UseAdminApprovalMode](https://go.microsoft.com/fwlink/?linkid=867902)  
+
+  - **Engedélyezve** – engedélyezi a beépített rendszergazdai fiók számára a rendszergazdai jóváhagyási mód használatát. A jogosultságszint-emelést igénylő műveletek felhasználói jóváhagyást kérnek.  
+  - **Nincs konfigurálva** – minden alkalmazást teljes rendszergazdai jogosultságokkal futtat.  
+
+- **Összes rendszergazda futtatása rendszergazdai jóváhagyás módban**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [UserAccountControl_RunAllAdministratorsInAdminApprovalMode](https://go.microsoft.com/fwlink/?linkid=867898)  
+
+
+  - **Engedélyezve**– rendszergazdai jóváhagyási mód engedélyezése.  
+  - **Nincs konfigurálva** – a rendszergazdai engedélyezési mód és az összes kapcsolódó UAC-házirend-beállítás letiltása.  
+
+### <a name="microsoft-network-client"></a>Microsoft hálózati ügyfél  
+
+- **Kommunikáció digitális aláírása (ha a kiszolgáló egyetért)**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [MicrosoftNetworkClient_DigitallySignCommunicationsIfServerAgrees](https://go.microsoft.com/fwlink/?linkid=868423)  
+
+  Meghatározza, hogy az SMB-ügyfél egyeztet-e az SMB-csomagok aláírásával.  
+  - **Letiltás** – az SMB-ügyfél soha nem tárgyalja az SMB-csomagok aláírását.
+  - **Nincs konfigurálva** – a Microsoft hálózati ügyfél arra kéri a kiszolgálót, hogy futtassa az SMB-csomagot a munkamenet beállításakor. Ha a csomagaláírás engedélyezve van a kiszolgálón, a csomagaláírás egyeztetése megkezdődik.  
+
+- **Titkosítatlan jelszó küldése harmadik féltől származó SMB-kiszolgálókra**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [MicrosoftNetworkClient_SendUnencryptedPasswordToThirdPartySMBServers](https://go.microsoft.com/fwlink/?linkid=868426)  
+
+
+  - **Blokkolás** – a kiszolgáló-üzenetblokk (SMB) átirányító képes szöveges jelszavakat küldeni a nem Microsoft SMB-kiszolgálókra, amelyek nem támogatják a jelszó titkosítását a hitelesítés során.  
+  - **Nincs konfigurálva** – egyszerű szöveges jelszavak küldésének tiltása. A jelszavak titkosítva vannak.  
+
+- **Kommunikáció digitális aláírása (mindig)**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  LocalPoliciesSecurityOptions CSP: [MicrosoftNetworkClient_DigitallySignCommunicationsAlways](https://go.microsoft.com/fwlink/?linkid=868425)  
+
+
+  - **Engedélyezés** – a Microsoft hálózati ügyfél nem kommunikál Microsoft hálózati kiszolgálóval, kivéve, ha az adott kiszolgáló egyetért az SMB-csomagok aláírásával.  
+  - **Nincs konfigurálva** – az SMB-csomagok aláírása egyeztetve van az ügyfél és a kiszolgáló között.  
+
+### <a name="microsoft-network-server"></a>Microsoft hálózati kiszolgáló  
+  
+- **Kommunikáció digitális aláírása (ha az ügyfél egyetért)**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  CSP [MicrosoftNetworkServer_DigitallySignCommunicationsIfClientAgrees](https://go.microsoft.com/fwlink/?linkid=868429)  
+
+  - **Engedélyezés** – a Microsoft hálózati kiszolgáló egyezteti az SMB-csomagokat az ügyfél által kért aláírással. Ez azt jelenti, hogy ha a csomagaláírás engedélyezve van az ügyfélnél, a csomagaláírás egyeztetése megkezdődik.  
+  - **Nincs konfigurálva** – az SMB-ügyfél soha nem tárgyalja az SMB-csomagok aláírását.  
+
+- **Kommunikáció digitális aláírása (mindig)**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  CSP [MicrosoftNetworkServer_DigitallySignCommunicationsAlways](https://go.microsoft.com/fwlink/?linkid=868428)  
+
+  - **Engedélyezés** – a Microsoft hálózati kiszolgáló nem kommunikál a Microsoft hálózati ügyféllel, kivéve, ha az ügyfél elfogadja az SMB-csomagok aláírását.  
+  - **Nincs konfigurálva** – az SMB-csomagok aláírása egyeztetve van az ügyfél és a kiszolgáló között.  
+
+## <a name="xbox-services"></a>Xbox-szolgáltatások
+
+- **Xbox-játék mentési feladata**  
+  **Alapértelmezett**: Nincs konfigurálva  
+  CSP [TaskScheduler/EnableXboxGameSaveTask](https://go.microsoft.com/fwlink/?linkid=875480)  
+   
+  Ez a beállítás határozza meg, hogy az Xbox-játékok mentési feladata engedélyezve van-e vagy le van tiltva.  
+  - **Engedélyezve**
+  - **Nincs konfigurálva**
+
+- **Xbox-tartozékok kezelési szolgáltatása**  
+  **Alapértelmezett**: Manuális  
+  CSP [SystemServices/ConfigureXboxAccessoryManagementServiceStartupMode](https://go.microsoft.com/fwlink/?linkid=875481)  
+
+  Ez a beállítás határozza meg a tartozék-felügyeleti szolgáltatás indítási típusát.  
+  - **Kézi**
+  - **Automatikus**
+  - **Letiltva**
+
+- **Xbox Live Auth Manager szolgáltatás**  
+  **Alapértelmezett**: Manuális  
+  CSP [SystemServices/ConfigureXboxLiveAuthManagerServiceStartupMode](https://go.microsoft.com/fwlink/?linkid=875482)  
+ 
+  Ez a beállítás határozza meg az élő Auth Manager szolgáltatás indítási típusát.  
+  - **Kézi**
+  - **Automatikus**
+  - **Letiltva**
+ 
+- **Xbox Live game Save szolgáltatás**  
+  **Alapértelmezett**: Manuális  
+  CSP [SystemServices/ConfigureXboxLiveGameSaveServiceStartupMode](https://go.microsoft.com/fwlink/?linkid=875483)  
+
+  Ez a beállítás határozza meg az élő játékok mentési szolgáltatásának indítási típusát.  
+  - **Kézi**
+  - **Automatikus**
+  - **Letiltva**
+
+- **Xbox Live hálózatkezelési szolgáltatás**  
+  **Alapértelmezett**: Manuális  
+  CSP [SystemServices/ConfigureXboxLiveNetworkingServiceStartupMode](https://go.microsoft.com/fwlink/?linkid=875484)  
+
+  Ez a beállítás határozza meg a hálózati szolgáltatás indítási típusát.  
+  - **Kézi**
+  - **Automatikus**
+  - **Letiltva**
 
 ## <a name="next-steps"></a>További lépések
 
-A profil létrejött, de egyelőre nem csinál semmit. Ezután [rendelje hozzá a profilt](device-profile-assign.md), és [állapotát nyomon](device-profile-monitor.md).
+A profil létrejött, de egyelőre nem csinál semmit. Ezután [rendelje hozzá a profilt](device-profile-assign.md), és [Figyelje annak állapotát](device-profile-monitor.md).  
 
-Végpont-védelmi beállítások konfigurálása a [macOS](endpoint-protection-macos.md) eszközök.
+Endpoint Protection-beállítások konfigurálása [MacOS](endpoint-protection-macos.md) -eszközökön.  

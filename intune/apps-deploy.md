@@ -1,14 +1,13 @@
 ---
 title: Alkalmazások hozzárendelése csoportokhoz a Microsoft Intune-ban
 titleSuffix: ''
-description: Útmutató az Intune alkalmazás hozzárendelése csoportokhoz a felhasználók vagy eszközök Microsoft Intune-nal.
+description: Megtudhatja, hogyan rendelhet hozzá egy Intune-alkalmazást felhasználók vagy eszközök csoportjaihoz Microsoft Intune használatával.
 keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/24/2019
+ms.date: 08/21/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1db613f93e50caa377297e3873f6817a39714fe7
-ms.sourcegitcommit: 1cae690ca2ac6cc97bbcdf656f54b31878297ae8
+ms.openlocfilehash: 13b1a8851e9e88648311f3cd12bea89bb0bc2396
+ms.sourcegitcommit: 4f3fcc6dcbfe2c4e0651d54a130907a25a4ff66e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59900621"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "71305268"
 ---
 # <a name="assign-apps-to-groups-with-microsoft-intune"></a>Alkalmazások hozzárendelése csoportokhoz a Microsoft Intune-nal
 
@@ -32,7 +31,7 @@ ms.locfileid: "59900621"
 Miután [hozzáadott egy alkalmazást](apps-add.md) a Microsoft Intune-hoz, azt felhasználókhoz és eszközökhöz rendelheti hozzá. Vegye figyelembe, hogy az alkalmazást attól függetlenül hozzárendelheti az eszközhöz, hogy az eszközt az Intune felügyeli-e.
 
 > [!NOTE]
-> Az elérhető üzembe helyezési szándék a nem támogatott eszközcsoportok, csak a felhasználói csoportok támogatottak.
+> Az elérhető üzembe helyezési szándék nem támogatott az eszközök csoportjai esetében, csak a felhasználói csoportok támogatottak.
 
 Az alábbi táblázat az alkalmazások felhasználókhoz és eszközökhöz való hozzárendelésével kapcsolatos különböző lehetőségeket sorolja fel:
 
@@ -53,25 +52,28 @@ Az alábbi táblázat az alkalmazások felhasználókhoz és eszközökhöz val�
 >
 > Az alkalmazásfrissítések fogadásához az Intune-ban nem regisztrált eszközök felhasználóinak fel kell keresniük saját céges portáljukat, hogy manuálisan telepítsék az alkalmazásfrissítéseket.
 
-## <a name="assign-an-app"></a>Egy alkalmazás a hozzárendelése
+## <a name="assign-an-app"></a>Alkalmazás kiosztása
 
-1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com).
-2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget. Az Intune a **Figyelés + felügyelet** szakaszban található.
-3. Az **Intune** menüben válassza az **Ügyfélalkalmazások** lehetőséget.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
+3. Az **Intune** ablaktáblán válassza az **Ügyfélalkalmazások** lehetőséget.
 4. A menü **Kezelés** szakaszában válassza az **Alkalmazások**. elemet.
 5. Az **Alkalmazások** ablaktáblán jelölje ki a hozzárendelni kívánt alkalmazást.
 6. A menü **Kezelés** szakaszában válassza a **Hozzárendelések** elemet.
 7. Válassza a **Csoport hozzáadása** lehetőséget az alkalmazáshoz kapcsolódó **Csoport hozzáadása** ablaktábla megnyitásához.
 8. Az adott alkalmazáshoz válasszon egy **hozzárendelés-típust**:
-   - **Regisztrált eszközök esetében elérhető**: Az alkalmazás hozzárendelése csoportokhoz a felhasználók számára is telepítheti az alkalmazást a céges portál alkalmazásból vagy webhelyről.
-   - **Elérhető regisztrációval és anélkül**: Ez az alkalmazás hozzárendelése csoportokhoz a felhasználók, akiknek az eszközei nincsenek regisztrálva az Intune-ban. Felhasználóknak hozzá kell rendelni egy Intune-licencet, lásd: [Intune-licencek](licenses.md).
-   - **Szükséges**: Az alkalmazás telepítve van a kiválasztott csoportok eszközeire. Előfordulhat, hogy az egyes platformok esetében a felhasználó elfogadja az alkalmazások telepítésének megkezdése előtt a további utasításokat.
-   - **Távolítsa el**: Az alkalmazás el lesz távolítva a kijelölt csoportokba eszközök Intune-ban korábban már telepítve van az alkalmazást az eszközön keresztül egy "regisztrált eszközökhöz elérhető" vagy "Kötelező" hozzárendelés a azonos üzemelő példány használatával. A webes hivatkozások telepítése után nem lehet eltávolítani.
+   - **Regisztrálva lévő eszközökhöz érhető el**: Rendelje hozzá az alkalmazást azon felhasználók csoportjaihoz, akik telepíthetik az alkalmazást a Céges portál alkalmazásból vagy webhelyről.
+   - **Regisztrációval vagy anélkül is elérhető**: Rendelje hozzá az alkalmazást azon felhasználók csoportjaihoz, akiknek az eszközei nincsenek regisztrálva az Intune-ban. A felhasználóknak Intune-licencet kell rendelniük, lásd: [Intune-licencek](licenses.md).
+   - **Kötelező**: Az alkalmazás a kiválasztott csoportokban található eszközökre van telepítve. Egyes platformok további kérésekkel rendelkezhetnek arról, hogy a végfelhasználó tudomásul veszi az alkalmazás telepítésének megkezdése előtt.
+   - **Eltávolítás**: Az alkalmazást a kiválasztott csoportok eszközeiből távolítja el, ha az Intune már telepítette az alkalmazást az eszközön a "rendelkezésre álló regisztrált eszközökön" vagy a "szükséges" hozzárendelés használatával ugyanazzal az üzembe helyezéssel. A központi telepítés után nem távolíthatók el a webes hivatkozások.
 
      > [!NOTE]
-     > **Csak az iOS-alkalmazások**: Ha IOS rendszerű alkalmazásonkénti VPN-beállításokat tartalmazó VPN-profilt hozott létre, válassza a VPN-profil alatt **VPN**. Az alkalmazás futtatásakor megnyílik a VPN-kapcsolat. További tudnivalókért lásd: [VPN-beállítások iOS-eszközökön](vpn-settings-ios.md).
+     > **Csak iOS-alkalmazások esetén**:
+     > - Ha azt szeretné beállítani, hogy mi történik a felügyelt alkalmazásokkal, ha az eszközök már nem kezelhetők, kiválaszthatja a kívánt beállítást az Eltávolítás az **eszköz eltávolításakor**lehetőség alatt. További információ: alkalmazás- [eltávolítási beállítás az iOS által felügyelt alkalmazásokhoz](apps-deploy.md#app-uninstall-setting-for-ios-managed-apps).
+     > - Ha létrehozott egy iOS-es VPN-profilt, amely az alkalmazáson belüli VPN-beállításokat tartalmazza, akkor a VPN **-profilt**is kiválaszthatja. Az alkalmazás futtatásakor megnyílik a VPN-kapcsolat. További tudnivalókért lásd: [VPN-beállítások iOS-eszközökön](vpn-settings-ios.md).
      >
-     > **Android-alkalmazások csak**: Ha telepít egy Android-alkalmazás, **elérhető regisztrációval és anélkül**, reporting állapota csak a regisztrált eszközökön elérhető lesz.
+     > **Csak Android-alkalmazások esetén**: Ha olyan Android-alkalmazást telepít, **amely regisztrálva van vagy anélkül is elérhető**, a jelentéskészítési állapot csak a regisztrált eszközökön lesz elérhető.
+     >
+     > A **regisztrált eszközök számára elérhető**: Az alkalmazás csak akkor jelenik meg elérhetőként, ha a felhasználó bejelentkezett a Céges portálbe az az elsődleges felhasználó, aki regisztrálta az eszközt, és az alkalmazás alkalmazható az eszközre.
 
 9. Az alkalmazás-hozzárendelés által érintett felhasználócsoportok kiválasztásához válassza a **Belefoglalt csoportok** lehetőséget.
 10. Miután kiválasztott egy vagy több csoportot a belefoglaláshoz, válassza a **Kiválasztás** lehetőséget.
@@ -85,9 +87,10 @@ Ezzel az alkalmazást hozzárendelte a kiválasztott csoportokhoz. További info
 
 ## <a name="how-conflicts-between-app-intents-are-resolved"></a>Alkalmazások hozzárendelési ütközéseinek feloldása
 
-Néha előfordul, hogy ugyanazt az alkalmazást eltérő szándékkal rendelik hozzá különböző csoportokhoz. A következő táblázatban található információk segítségével megértheti, hogy amikor ez előfordul, milyen szándékot eredményez:
+Egyetlen csoportot sem lehet megtervezni több alkalmazás-hozzárendelési cél megcélzására, azonban ha egy felhasználó vagy egy eszköz több olyan csoport tagja, amely különböző leképezésekkel van társítva, akkor ütközést eredményezhet. Nem ajánlott hozzárendelési ütközéseket létrehozni az alkalmazásokhoz.
+Az alábbi táblázatban található információk segítenek megérteni az eredményül kapott szándékot ütközés esetén:
 
-| 1. csoport hozzárendelési szándéka | 2. csoport hozzárendelési szándéka | Eredmény |
+| 1\. csoport hozzárendelési szándéka | 2\. csoport hozzárendelési szándéka | Eredmény |
 |-----------------------------------|-----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |A felhasználó kötelező|A felhasználó elérhető|Kötelező és elérhető|
 |A felhasználó kötelező|A felhasználható nem érhető el|Kötelező|
@@ -123,21 +126,39 @@ Néha előfordul, hogy ugyanazt az alkalmazást eltérő szándékkal rendelik h
 
 > [!NOTE]
 > Csak áruházból származó felügyelt iOS-alkalmazások esetén, ha ezeket az alkalmazásokat a Microsoft Intune-ban **kötelezőként** rendeli hozzá, akkor a **Kötelező** és az **Elérhető** szándék automatikusan egyaránt fog vonatkozni rájuk.<br><br>
-> A kötelező hozzárendelési szándékkal célzott (nem iOS VPP) iOS Store-alkalmazások az eszköz bejelentkezésekor kikényszerítetten hozzá lesznek rendelve az eszközhöz, és megjelennek a Céges portál alkalmazásban is.
+> A kötelező hozzárendelési szándékkal célzott (nem iOS VPP) iOS Store-alkalmazások az eszköz bejelentkezésekor kikényszerítetten hozzá lesznek rendelve az eszközhöz, és megjelennek a Céges portál alkalmazásban is.<br><br>
+> Ha ütközés lép fel az **eltávolításkor az eszköz eltávolításakor** , az alkalmazás nem lesz eltávolítva az eszközről, ha az eszköz már nem lett felügyelve.
 
-## <a name="managed-google-play-app-deployment-to-unmanaged-devices"></a>Felügyelt Google Play alkalmazás üzembe helyezése nem felügyelt eszközökre
-Android-eszközökhöz a egy nem regisztrált alkalmazás alkalmazásvédelmi szabályzat regisztráció nélkül (alkalmazás-TUDJUK) a telepítési forgatókönyvben segítségével felügyelt Google Play áruházbeli alkalmazások és az üzletági (LOB) alkalmazások telepítése a felhasználók számára. Felügyelt Google Play-alkalmazások **elérhető regisztrációval és anélkül** fog megjelenni a felhasználó eszközén a Play Store alkalmazást, és nem a céges portál alkalmazásban. Végfelhasználói fog alkalmazások tallózásához és telepítéséhez telepítve ezen a módon kikapcsolja a Play alkalmazásból. Mivel az alkalmazásokat telepít a felügyelt Google Play áruházból, a végfelhasználónak nem kell alter ismeretlen forrásokból, ami azt jelenti, az eszközök biztonságosabb lesz alkalmazások telepítésének engedélyezése az eszköz beállításai. Az alkalmazás fejlesztőjének egy alkalmazás egy új verziója, amely a felhasználó eszközén települt Play tesz közzé, ha az alkalmazást automatikusan frissíti Play. 
+## <a name="managed-google-play-app-deployment-to-unmanaged-devices"></a>Felügyelt Google Play-alkalmazások telepítése nem felügyelt eszközökre
+A nem regisztrált app Protection-szabályzatok (APP-WE) üzembe helyezési forgatókönyve nélküli Android-eszközök esetén a felügyelt Google Play használatával telepítheti az áruházbeli alkalmazásokat és üzletági (LOB) alkalmazásokat a felhasználók számára. A **beléptetéssel vagy anélkül elérhető** felügyelt Google Play-alkalmazások a Play áruház alkalmazásban jelennek meg a végfelhasználó eszközén, és nem a céges portál alkalmazásban. A végfelhasználó megkeresi és telepíti az ilyen módon üzembe helyezett alkalmazásokat a Play alkalmazásból. Mivel az alkalmazások a felügyelt Google Play áruházból települnek, a végfelhasználónak nem kell módosítania az eszköz beállításait, hogy az alkalmazás telepítése ismeretlen forrásból történjen, ami azt jelenti, hogy az eszközök biztonságosabbak lesznek. Ha az alkalmazás fejlesztője közzétesz egy alkalmazás egy új verzióját, amelyet a felhasználó eszközére telepített, akkor az alkalmazást a Play automatikusan frissíti. 
 
-A felügyelt Google Play alkalmazás hozzárendelése nem felügyelt eszközök lépéseket:
+A felügyelt Google Play-alkalmazások nem felügyelt eszközökhöz való hozzárendelésének lépései:
 
-1. Az Intune-bérlő csatlakozhat a felügyelt Google Play áruházból. Ha már ezt annak érdekében, hogy az Android Enterprise munkahelyi profilt, dedikált, és teljes körűen felügyelt eszközöket, nem kell ismét megtennie.
-2. Alkalmazások hozzáadása a felügyelt Google Play áruházból az Intune-konzolon.
-3. Felügyelt Google Play-alkalmazások, cél **elérhető regisztrációval és anélkül** a kívánt felhasználói csoporthoz. **Szükséges** és **Eltávolítás** célcsoport-kezelési alkalmazás nem támogatottak a nem regisztrált eszközökön.
-4. Alkalmazásvédelmi szabályzat hozzárendelése a felhasználói csoportot.
-5. Amikor a felhasználó megnyitja a vállalati portál alkalmazást, akkor fogja látni egy üzenet arról, hogy nincsenek alkalmazások a Play Store alkalmazás ezekhez rendelkezésre.  A felhasználó koppintson erre az értesítésre, le kell tölteni a Play alkalmazás közvetlenül a vállalati alkalmazások jelennek meg, vagy azok is keresse meg a Play Store alkalmazás külön-külön.
-6. A végfelhasználó kibontásával, a helyi menüben a Play Store-alkalmazás és a Váltás (ahol megjelenik a személyes alkalmazásokat) személyes Google-fiókjával, és a munkahelyi fiókjával (ahol látják áruházbeli és ÜZLETÁGI alkalmazások azokból) között. A végfelhasználók az alkalmazások telepítése a Play Store alkalmazás koppintva telepítse.
+1. Az Intune-bérlő összekötése a felügyelt Google Play szolgáltatással. Ha már megtette ezt az androidos vállalati munkahelyi profil, dedikált vagy teljes körűen felügyelt eszközök kezeléséhez, nem kell újra végrehajtania.
+2. Alkalmazások hozzáadása a felügyelt Google Play áruházból az Intune-konzolra.
+3. A felügyelt Google Play-alkalmazások a kívánt felhasználói csoportba való **regisztrációval vagy anélkül is elérhetők** . A nem regisztrált eszközök esetében nem támogatottak a **kötelező** és az **eltávolítást** célzó alkalmazások.
+4. Rendeljen egy alkalmazás-védelmi szabályzatot a felhasználói csoporthoz.
+5. Amikor a felhasználó legközelebb megnyitja a Céges portál alkalmazást, megjelenik egy üzenet, amely jelzi, hogy elérhetők-e alkalmazások a Play Áruház alkalmazásban.  A felhasználó az értesítésre koppintva közvetlenül a Play alkalmazásba helyezheti a vállalati alkalmazásokat, vagy a Play Áruház alkalmazást külön is megnyithatja.
+6. A végfelhasználó kiterjesztheti a helyi menüt a Play Áruház alkalmazáson belül, és válthat a személyes Google-fiókja (ahol a személyes alkalmazások láthatók) és a munkahelyi fiókjuk között (ahol megtekintheti őket tároló és LOB-alkalmazások). A végfelhasználók a Play Áruház alkalmazásban az install (telepítés) gombra koppintva telepítik az alkalmazásokat.
 
-Kiadásakor az alkalmazások szelektív törlése az Intune-konzolon, a munkahelyi fiók automatikusan eltávolítjuk a Play Store-alkalmazás és a felhasználó lesz a pontot többé nem látja munkahelyi alkalmazások a Play Store alkalmazás katalógusban. A munkahelyi fiókot eltávolítják az eszközről, ha a Play Store telepített alkalmazások marad az eszközön telepített, és nem lehet eltávolítani. 
+Ha az Intune-konzolon kiadja az alkalmazás szelektív törlését, a munkahelyi fiók automatikusan el lesz távolítva a Play Áruház alkalmazásból, és a végfelhasználó ettől kezdve nem látja a munkahelyi alkalmazásokat a Play Áruház app Catalogban. Ha a munkahelyi fiókot eltávolítják egy eszközről, az Play Áruház telepített alkalmazások továbbra is telepítve lesznek az eszközön, és nem lesznek eltávolítva. 
+
+## <a name="app-uninstall-setting-for-ios-managed-apps"></a>Az iOS által felügyelt alkalmazások alkalmazás-eltávolítási beállítása
+IOS-eszközök esetén kiválaszthatja, hogy mi történik a felügyelt alkalmazásokkal az eszköz Intune-regisztrációjának törlésével vagy a felügyeleti profil eltávolításával az **eszköz eltávolítási** beállításának eltávolításával. Ez a beállítás csak az eszköz regisztrálását követően érvényes az alkalmazásokra, és az alkalmazások felügyelt vannak telepítve. A beállítás nem konfigurálható webalkalmazásokhoz vagy webes hivatkozásokhoz. 
+
+A beállítás alapértelmezett értékei az új hozzárendelésekhez az alábbiak szerint vannak feltöltve:
+
+|iOS-alkalmazás típusa | Alapértelmezett beállítás az Eltávolítás az eszköz eltávolításakor |
+|--------------------|----------------|
+| Üzletági alkalmazás | Igen |
+| Áruházbeli alkalmazás | Nem |
+| VPP-alkalmazás | Nem |
+| Buit-alkalmazás | Nem |
+
+>[!NOTE]
+>**"Elérhető" hozzárendelési típusok:** Ha ezt a beállítást "elérhető regisztrált eszközökhöz" vagy "a regisztráció nélkül vagy anélkül elérhető" csoportok esetében frissíti, akkor a felügyelt alkalmazással már rendelkező felhasználók nem kapják meg a frissített beállítást, amíg nem szinkronizálják az eszközt az Intune-nal, és nem telepítik újra az alkalmazást. 
+>
+>**Korábban létező hozzárendelések:** A beállítás bevezetését megelőzően létező hozzárendelések nem módosulnak, és az összes felügyelt alkalmazás el lesz távolítva az eszköz eltávolításáról a felügyelet alól.
 
 ## <a name="next-steps"></a>További lépések
 

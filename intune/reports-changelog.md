@@ -1,14 +1,13 @@
 ---
 title: Intune-adattárház – módosítási napló
 titleSuffix: Microsoft Intune
-description: Ez a témakör biztosít a Microsoft Intune-adattárház API módosítások listája olvasható.
+description: Ez a témakör a Microsoft Intune adattárház API változásainak listáját tartalmazza.
 keywords: Intune-adattárház
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 04/11/2019
+ms.date: 08/23/2019
 ms.topic: reference
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.technology: ''
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 30f315f58a905e690a43ab3c44aee783bd0ef8c9
-ms.sourcegitcommit: a2cd14c30949cef17bfc6576513e7660a8015669
+ms.openlocfilehash: 0aaa305ac216e0f80f82116e626b21f3ae7a8510
+ms.sourcegitcommit: c8cb314256c4896e838918f015ffaefb8f00ace5
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59571807"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "71303314"
 ---
 # <a name="change-log-for-the-intune-data-warehouse-api"></a>Az Intune-adattárház API módosítási naplója
 
@@ -32,172 +31,172 @@ ms.locfileid: "59571807"
 Maradjon naprakész az Intune-adattárház frissítéseivel kapcsolatban.
 
 ## <a name="1903-part-2"></a>1903 (2. rész)
-_Kiadás dátuma: április 2019_
+_Kiadás dátuma 2019 április_
 
-### <a name="beta-changes"></a>Bétaverzió módosítások
+### <a name="beta-changes"></a>Béta-változások
 
-A következő táblázat felsorolja a legutóbbi eltávolított gyűjtemények és az Intune-adattárház a lecserélendő gyűjtemény.
+A következő táblázat felsorolja a közelmúltban eltávolított gyűjteményeket és az Intune-adattárházban található cserék gyűjteményeket.
 
-|    Gyűjtemény                          |    Módosítás     |    További információ                                                                                                                                                                                                                                                                                                                                                                 |
+|    Collection                          |    Módosítás     |    További információ                                                                                                                                                                                                                                                                                                                                                                 |
 |----------------------------------------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    mobileAppDeviceUserInstallStatus    |    Eltávolítva    |    Használat [mobileAppInstallStatusCounts](intune-data-warehouse-collections.md#mobileappinstallstatuscounts) helyette.                                                                                                                                                                                                                                                                     |
-|    EnrollmentTypes                     |    Eltávolítva    |    Használat [deviceEnrollmentTypes](intune-data-warehouse-collections.md#deviceenrollmenttypes) helyette.                                                                                                                                                                                                                                                                                      |
-|    mdmStatuses                         |    Eltávolítva    |    Használat [complianceStates](intune-data-warehouse-collections.md#compliancestates) helyette.                                                                                                                                                                                                                                                                                               |
-|    workPlaceJoinStateTypes             |    Eltávolítva    |    Használja a `azureAdRegistered` tulajdonságot a [eszközök](intune-data-warehouse-collections.md#devices) és [devicePropertyHistories](intune-data-warehouse-collections.md#devicepropertyhistories) gyűjtemények helyett.                                                                                                                                                                                                             |
-|    clientRegistrationStateTypes        |    Eltávolítva    |    Használat [deviceRegistrationStates](intune-data-warehouse-collections.md#deviceregistrationstates) helyette.                                                                                                                                                                                                                                                                             |
-|    currentUser                         |    Eltávolítva    |    Használja a [felhasználók](intune-data-warehouse-collections.md#users) gyűjtemény helyett.                                                                                                                                                                                                                                                                                                      |
-|    mdmDeviceInventoryHistories         |    Eltávolítva    |    Sok tulajdonság redundáns volt, vagy lehet, hogy most már a található a [devicePropertyHistories](intune-data-warehouse-collections.md#devicepropertyhistories) vagy [eszközök](intune-data-warehouse-collections.md#devices) gyűjteményeket. Bármely **mdmDeviceInventoryHistories** már nem érhetők el a következő két gyűjteményekhez még nem szereplő tulajdonságokat. A részleteket alább találja.    |
+|    mobileAppDeviceUserInstallStatus    |    Eltávolítva    |    Használja helyette a [mobileAppInstallStatusCounts](intune-data-warehouse-collections.md#mobileappinstallstatuscounts) .                                                                                                                                                                                                                                                                     |
+|    enrollmentTypes                     |    Eltávolítva    |    Használja helyette a [deviceEnrollmentTypes](intune-data-warehouse-collections.md#deviceenrollmenttypes) .                                                                                                                                                                                                                                                                                      |
+|    mdmStatuses                         |    Eltávolítva    |    Használja helyette a [complianceStates](intune-data-warehouse-collections.md#compliancestates) .                                                                                                                                                                                                                                                                                               |
+|    workPlaceJoinStateTypes             |    Eltávolítva    |    Ehelyett használja `azureAdRegistered` az [eszközök](intune-data-warehouse-collections.md#devices) és [devicePropertyHistories](intune-data-warehouse-collections.md#devicepropertyhistories) gyűjtemények tulajdonságát.                                                                                                                                                                                                             |
+|    clientRegistrationStateTypes        |    Eltávolítva    |    Használja helyette a [deviceRegistrationStates](intune-data-warehouse-collections.md#deviceregistrationstates) .                                                                                                                                                                                                                                                                             |
+|    currentUser                         |    Eltávolítva    |    Használja helyette a [felhasználók](intune-data-warehouse-collections.md#users) gyűjteményét.                                                                                                                                                                                                                                                                                                      |
+|    mdmDeviceInventoryHistories         |    Eltávolítva    |    A tulajdonságok többsége redundáns volt, vagy már a [devicePropertyHistories](intune-data-warehouse-collections.md#devicepropertyhistories) vagy az [eszközök](intune-data-warehouse-collections.md#devices) gyűjteményében is megtalálható. A két gyűjteményben még nem szereplő **mdmDeviceInventoryHistories** -tulajdonságok már nem érhetők el. Tekintse meg az alábbi részleteket.    |
 
-A következő táblázat felsorolja a régi tulajdonságokat korábban a **mdmDeviceInventoryHistories** adatgyűjtési és -módosítás/váltja fel. Szereplő tulajdonságokat **mdmDeviceInventoryHistories** , de nem szerepel a listán az alábbiakban el lettek távolítva.
+A következő táblázat felsorolja a korábban a **mdmDeviceInventoryHistories** -gyűjteményben és a módosítás/csere során megtalált régi tulajdonságokat. A **mdmDeviceInventoryHistories** összes olyan tulajdonsága el lett távolítva, amely nem szerepel az alábbi listában.
 
-|    Régi tulajdonság                |    Módosítás/cseréje                                                           |
+|    Régi tulajdonság                |    Módosítás/csere                                                           |
 |--------------------------------|---------------------------------------------------------------------------------|
-|    CellularTechnology          |    az eszközök gyűjteményére cellularTechnology                                     |
-|    deviceClientId              |    az eszközök gyűjteményét az eszközazonosító                                               |
-|    deviceManufacturer          |    az eszközök gyűjteményére gyártója                                           |
-|    deviceModel                 |    az eszközök gyűjteményére modell                                                  |
-|    deviceName                  |    az eszközök gyűjteményére eszköznév                                             |
-|    deviceOsPlatform            |    az eszközök gyűjteményére deviceTypeKey                                          |
-|    deviceOsVersion             |    osVersion devicePropertyHistories gyűjteményben                              |
-|    deviceType                  |    az eszközök gyűjteményét, deviceTypes gyűjtemény hivatkozó deviceTypeKey    |
-|    encryptionState             |    az eszközök gyűjteményben encryptionState tulajdonság                           |
-|    exchangeActiveSyncId        |    az eszközök gyűjteményben easDeviceId tulajdonság                               |
-|    exchangeDeviceId            |    az eszközök gyűjteményére easDeviceId                                            |
-|    IMEI                        |    imei-eszközök gyűjteményét az                                                   |
-|    isSupervised                |    az eszközök gyűjteményben isSupervised tulajdonság                              |
-|    jailBroken                  |    feltört devicePropertyHistories gyűjteményben                             |
-|    MEID                        |    az eszközök gyűjteményben meid tulajdonság                                      |
-|    oem                         |    az eszközök gyűjteményére gyártója                                           |
-|    osName                      |    az eszközök gyűjteményét, deviceTypes gyűjtemény hivatkozó deviceTypeKey    |
-|    phoneNumber                 |    az eszközök gyűjteményére telefonszám                                            |
-|    platformType                |    az eszközök gyűjteményére modell                                                  |
-|    A termék                     |    az eszközök gyűjteményére deviceTypeKey                                          |
-|    ProductVersion              |    osVersion devicePropertyHistories gyűjteményben                              |
-|    serialNumber                |    serialNumber eszközök gyűjtemény                                           |
-|    storageFree                 |    az eszközök gyűjteményben freeStorageSpaceInBytes tulajdonság                   |
-|    StorageTotal                |    az eszközök gyűjteményben totalStorageSpaceInBytes tulajdonság                |
-|    SubscriberCarrierNetwork    |    az eszközök gyűjteményben subscriberCarrier tulajdonság                         |
-|    wifimac                     |    az eszközök gyűjteményére wiFiMacAddress                                         |
+|    CellularTechnology          |    cellularTechnology az eszközök gyűjteményében                                     |
+|    deviceClientId              |    deviceId az eszközök gyűjteményében                                               |
+|    deviceManufacturer          |    gyártó az eszközök gyűjteményében                                           |
+|    deviceModel                 |    modell az eszközök gyűjteményében                                                  |
+|    DeviceName                  |    deviceName az eszközök gyűjteményében                                             |
+|    deviceOsPlatform            |    deviceTypeKey az eszközök gyűjteményében                                          |
+|    deviceOsVersion             |    osVersion a devicePropertyHistories-gyűjteményben                              |
+|    deviceType                  |    deviceTypeKey az eszközök gyűjteményében, hivatkozó deviceTypes-gyűjtemény    |
+|    EncryptionState             |    encryptionState tulajdonság az eszközök gyűjteményében                           |
+|    exchangeActiveSyncId        |    easDeviceId tulajdonság az eszközök gyűjteményében                               |
+|    exchangeDeviceId            |    easDeviceId az eszközök gyűjteményében                                            |
+|    IMEI                        |    IMEI az eszközök gyűjteményében                                                   |
+|    isSupervised                |    isSupervised tulajdonság az eszközök gyűjteményében                              |
+|    jailBroken                  |    feltört a devicePropertyHistories-gyűjteményben                             |
+|    MEID                        |    meid tulajdonság az eszközök gyűjteményében                                      |
+|    OEM                         |    gyártó az eszközök gyűjteményében                                           |
+|    osName                      |    deviceTypeKey az eszközök gyűjteményében, hivatkozó deviceTypes-gyűjtemény    |
+|    Telefonszám                 |    Telefonszám az eszközök gyűjteményében                                            |
+|    platformType                |    modell az eszközök gyűjteményében                                                  |
+|    product                     |    deviceTypeKey az eszközök gyűjteményében                                          |
+|    productVersion              |    osVersion a devicePropertyHistories-gyűjteményben                              |
+|    serialNumber                |    serialNumber az eszközök gyűjteményében                                           |
+|    storageFree                 |    freeStorageSpaceInBytes tulajdonság az eszközök gyűjteményében                   |
+|    storageTotal                |    totalStorageSpaceInBytes tulajdonság az eszközök gyűjteményében                |
+|    subscriberCarrierNetwork    |    subscriberCarrier tulajdonság az eszközök gyűjteményében                         |
+|    wifimac                     |    wiFiMacAddress az eszközök gyűjteményében                                         |
 
-A következő táblázatban található a tulajdonságainak módosításait a [devicePropertyHistories](intune-data-warehouse-collections.md#devicepropertyhistories) gyűjtemény: 
+A következő táblázat a [devicePropertyHistories](intune-data-warehouse-collections.md#devicepropertyhistories) -gyűjteményben található tulajdonságok változásait sorolja fel: 
 
-|    Régi tulajdonság                  |    Módosítás/cseréje                                               |
+|    Régi tulajdonság                  |    Módosítás/csere                                               |
 |----------------------------------|---------------------------------------------------------------------|
-|    CategoryId                    |    deviceCategoryKey, hivatkozó deviceCategories gyűjtemény       |
+|    categoryId                    |    deviceCategoryKey, hivatkozó deviceCategories-gyűjtemény       |
 |    certExpirationDate            |    Eltávolítva                                                          |
 |    clientRegistrationStateKey    |    deviceRegistrationStateKey                                       |
-|    createdDate                   |    az eszközök gyűjteményére enrolledDateTime                           |
-|    deviceTypeKey                 |    az eszközök gyűjteményére deviceTypeKey                              |
-|    EasID                         |    az eszközök gyűjteményére easDeviceId                                |
-|    EnrolledByUser                |    eszközök gyűjteményben szereplő felhasználói azonosító                                     |
-|    enrollmentTypeKey             |    az eszközök gyűjteményére deviceEnrollmentTypeKey                    |
+|    CreatedDate                   |    enrolledDateTime az eszközök gyűjteményében                           |
+|    deviceTypeKey                 |    deviceTypeKey az eszközök gyűjteményében                              |
+|    easID                         |    easDeviceId az eszközök gyűjteményében                                |
+|    enrolledByUser                |    Felhasználóazonosító az eszközök gyűjteményében                                     |
+|    enrollmentTypeKey             |    deviceEnrollmentTypeKey az eszközök gyűjteményében                    |
 |    graphDeviceIsCompliant        |    Eltávolítva                                                          |
 |    graphDeviceIsManaged          |    Eltávolítva                                                          |
-|    LastContact                   |    az eszközök gyűjteményére lastSyncDateTime                           |
-|    LastContactNotification       |    Eltávolítva                                                          |
+|    lastContact                   |    lastSyncDateTime az eszközök gyűjteményében                           |
+|    lastContactNotification       |    Eltávolítva                                                          |
 |    lastContactWorkplaceJoin      |    Eltávolítva                                                          |
 |    lastExchangeStatusUtc         |    Eltávolítva                                                          |
 |    lastModifiedDateTimeUTC       |    Eltávolítva                                                          |
 |    lastPolicyUpdateUtc           |    Eltávolítva                                                          |
-|    managementAgentKey            |    managementStateKey                                               |
-|    gyártó                  |    az eszközök gyűjteményére gyártója                               |
-|    mdmStatusKey                  |    complianceStateKey, hivatkozó complianceStates gyűjtemény    |
-|    modell                         |    az eszközök gyűjteményére modell                                      |
-|    operációsrendszer-család                      |    eszközök gyűjteményét az operációs rendszer                            |
-|    osRevisionNumber              |    eszközök gyűjteményét az osVersion                                  |
-|    Processzorarchitektúra         |    Eltávolítva                                                          |
-|    referenceId                   |    az eszközök gyűjteményére azureAdDeviceId                            |
-|    serialNumber                  |    serialNumber eszközök gyűjtemény                               |
+|    ManagementAgentKey            |    managementStateKey                                               |
+|    gyártó                  |    gyártó az eszközök gyűjteményében                               |
+|    mdmStatusKey                  |    complianceStateKey, hivatkozó complianceStates-gyűjtemény    |
+|    modell                         |    modell az eszközök gyűjteményében                                      |
+|    osFamily                      |    operatingSystem az eszközök gyűjteményében                            |
+|    osRevisionNumber              |    osVersion az eszközök gyűjteményében                                  |
+|    processorArchitecture         |    Eltávolítva                                                          |
+|    referenceId                   |    azureAdDeviceId az eszközök gyűjteményében                            |
+|    serialNumber                  |    serialNumber az eszközök gyűjteményében                               |
 |    workplaceJoinStateKey         |    azureAdRegistered                                                |
 
-A következő táblázatban található a tulajdonságainak módosításait a [eszközök](intune-data-warehouse-collections.md#devices) gyűjtemény: 
+A következő táblázat az [eszközök](intune-data-warehouse-collections.md#devices) gyűjteményében található tulajdonságok változásait sorolja fel: 
 
-|    Régi tulajdonság                  |    Módosítás/cseréje                                               |
+|    Régi tulajdonság                  |    Módosítás/csere                                               |
 |----------------------------------|---------------------------------------------------------------------|
-|    CategoryId                    |    deviceCategoryKey, hivatkozó deviceCategories gyűjtemény       |
+|    categoryId                    |    deviceCategoryKey, hivatkozó deviceCategories-gyűjtemény       |
 |    certExpirationDate            |    Eltávolítva                                                          |
 |    clientRegistrationStateKey    |    deviceRegistrationStateKey                                       |
-|    createdDate                   |    enrolledDateTime                                                 |
+|    CreatedDate                   |    enrolledDateTime                                                 |
 |    easId                         |    easDeviceId                                                      |
-|    EnrolledByUser                |    userId                                                           |
+|    enrolledByUser                |    userId                                                           |
 |    enrollmentTypeKey             |    deviceEnrollmentTypeKey                                          |
 |    graphDeviceIsCompliant        |    Eltávolítva                                                          |
 |    graphDeviceIsManaged          |    Eltávolítva                                                          |
-|    LastContact                   |    lastSyncDateTime                                                 |
-|    LastContactNotification       |    Eltávolítva                                                          |
+|    lastContact                   |    lastSyncDateTime                                                 |
+|    lastContactNotification       |    Eltávolítva                                                          |
 |    lastContactWorkplaceJoin      |    Eltávolítva                                                          |
 |    lastExchangeStatusUtc         |    Eltávolítva                                                          |
 |    lastPolicyUpdateUtc           |    Eltávolítva                                                          |
-|    mdmStatusKey                  |    complianceStateKey, hivatkozó complianceStates gyűjtemény    |
-|    operációsrendszer-család                      |    operatingSystem                                                  |
-|    Processzorarchitektúra         |    Eltávolítva                                                          |
+|    mdmStatusKey                  |    complianceStateKey, hivatkozó complianceStates-gyűjtemény    |
+|    osFamily                      |    operatingSystem                                                  |
+|    processorArchitecture         |    Eltávolítva                                                          |
 |    referenceId                   |    azureAdDeviceId                                                  |
 |    workplaceJoinStateKey         |    azureAdRegistered                                                |
 
-A következő táblázatban található a tulajdonságainak módosításait a [enrollmentActivities](intune-data-warehouse-collections.md#enrollmentactivities) gyűjtemény: 
+A következő táblázat a [enrollmentActivities](intune-data-warehouse-collections.md#enrollmentactivities) -gyűjteményben található tulajdonságok változásait sorolja fel: 
 
-|    Régi tulajdonság         |    Módosítás/cseréje         |
+|    Régi tulajdonság         |    Módosítás/csere         |
 |-------------------------|-------------------------------|
 |    enrollmentTypeKey    |    deviceEnrollmentTypeKey    |
 
-A következő táblázatban található a tulajdonságainak módosításait a [mamApplications](intune-data-warehouse-collections.md#mamapplications) gyűjtemény: 
+A következő táblázat a [mamApplications](intune-data-warehouse-collections.md#mamapplications) -gyűjteményben található tulajdonságok változásait sorolja fel: 
 
-|    Régi tulajdonság       |    Módosítás/cseréje    |
+|    Régi tulajdonság       |    Módosítás/csere    |
 |-----------------------|--------------------------|
-|    applicationKey     |    mamApplicationKey     |
+|    ApplicationKey     |    mamApplicationKey     |
 |    applicationName    |    mamApplicationName    |
 |    applicationId      |    mamApplicationId      |
 
-A következő táblázatban található a tulajdonságainak módosításait a [mamApplicationInstances](intune-data-warehouse-collections.md#mamapplicationinstances) gyűjtemény: 
+A következő táblázat a [mamApplicationInstances](intune-data-warehouse-collections.md#mamapplicationinstances) -gyűjteményben található tulajdonságok változásait sorolja fel: 
 
-|    Régi tulajdonság     |    Módosítás/cseréje    |
+|    Régi tulajdonság     |    Módosítás/csere    |
 |---------------------|--------------------------|
 |    applicationId    |    mamApplicationId      |
 |    deviceId         |    mamDeviceId           |
 |    deviceType       |    mamDeviceType         |
-|    deviceName       |    mamDeviceName         |
+|    DeviceName       |    mamDeviceName         |
 
-A következő táblázatban található a tulajdonságainak módosításait a [mamCheckins](intune-data-warehouse-collections.md#mamcheckins) gyűjtemény: 
+A következő táblázat a [mamCheckins](intune-data-warehouse-collections.md#mamcheckins) -gyűjteményben található tulajdonságok változásait sorolja fel: 
 
-|    Régi tulajdonság      |    Módosítás/cseréje    |
+|    Régi tulajdonság      |    Módosítás/csere    |
 |----------------------|--------------------------|
-|    applicationKey    |    mamApplicationKey     |
+|    ApplicationKey    |    mamApplicationKey     |
 
-A következő táblázatban található a tulajdonságainak módosításait a [felhasználók](intune-data-warehouse-collections.md#users) gyűjtemény: 
+A következő táblázat a [felhasználók](intune-data-warehouse-collections.md#users) gyűjteményében található tulajdonságok változásait sorolja fel: 
 
-|    Régi tulajdonság             |    Módosítás/cseréje    |
+|    Régi tulajdonság             |    Módosítás/csere    |
 |-----------------------------|--------------------------|
-|    startDateInclusiveUtc    |    Eltávolítva               |
+|    StartDateInclusiveUtc    |    Eltávolítva               |
 |    endDateInclusiveUtc      |    Eltávolítva               |
 |    IsCurrent                |    Eltávolítva               |
 
 ## <a name="1903"></a>1903
-_Kiadás dátuma: 2019. március_
+_Kiadás dátuma 2019_
 
-### <a name="v10-changes-reflecting-back-to-beta"></a>Vissza a bétaverzió tükröző 1.0-s verziójú módosítások
-Ha az 1.0-s verziójú 1808 rendszerben bevezetett, az API alkalmazást jelentős módokon eltérő számú. A 1903 ezeket a módosításokat megjelennek a bétaverzió API be újra. Ha fontos a bétaverzió API-t használó jelentéseket, erősen ajánlott ezeket a jelentéseket átváltása 1.0-s verziójú parancsban történt használhatatlanná tévő elkerülése érdekében. Tekintse meg [API verzióinformációkat](reports-api-url.md) további információt az adattárház API-verziók és a visszamenőleges kompatibilitás. 
+### <a name="v10-changes-reflecting-back-to-beta"></a>A Beta-re visszatükröző v 1.0-változások
+Ha a 1.0-s verzió először mutatkozott be a 1808-ben, a Beta API néhány jelentős módon eltért. 1903 ezek a változások a Beta API-verzióba kerülnek vissza. Ha olyan fontos jelentésekkel rendelkezik, amelyek a Beta API verzióját használják, javasoljuk, hogy a módosítások elvégzése érdekében váltson át a jelentéseket a 1.0-s verzióra. Az adatraktár API-verzióival és a visszamenőleges kompatibilitással kapcsolatos további információkért tekintse meg az [API-verzióval kapcsolatos információkat](reports-api-url.md) . 
 
 ## <a name="1902"></a>1902 
-_Released February 2019_
+_Megjelent február 2019_
 
-### <a name="power-bi-compliance-app"></a>A Power BI megfelelőségi alkalmazás 
+### <a name="power-bi-compliance-app"></a>Megfelelőségi alkalmazás Power BI 
 
-A Power BI online-hoz az Intune-adattárház elérése a [(adatraktár) az Intune megfelelőségi](https://app.powerbi.com/groups/me/getapps/services/Intune_dw_compliance) alkalmazást. A Power BI alkalmazással most már elérheti és megoszthatja az előre létrehozott jelentések beállítások nélkül, és a böngésző elhagyása nélkül. 
+Az Intune [megfelelőségi (adattárház-)](https://aka.ms/intune/datawarehouseapi/getpowerbiapp) alkalmazásával érheti el az Intune-adattárházat Power bi online-ban. Ezzel a Power BI alkalmazással mostantól a telepítés nélkül is elérheti és megoszthatja az előre létrehozott jelentéseket anélkül, hogy a böngészőt el kellene hagynia. 
 
 > [!NOTE]
-> Nincsenek két további szűrőket is alkalmazhat az Intune megfelelőségi alkalmazást.
+> Az Intune megfelelőségi alkalmazásához két további szűrő is alkalmazható.
 
-#### <a name="add-additional-filters-to-the-intune-compliance-app"></a>További szűrők hozzáadása az Intune megfelelőségi alkalmazáshoz
-1. Nyissa meg a [(adatraktár) az Intune megfelelőségi](https://app.powerbi.com/groups/me/getapps/services/Intune_dw_compliance) a böngészők alkalmazást.
-2. Kattintson a **nem megfelelő eszközök** válassza **nem megfelelő** a a **complianceStatus** szűrőt. 
-3. Kattintson a **ismeretlen eszközök** válassza **még nem érhető el** a a **complianceStatus** szűrőt. 
+#### <a name="add-additional-filters-to-the-intune-compliance-app"></a>További szűrők hozzáadása az Intune megfelelőségi alkalmazásához
+1. Nyissa meg az [Intune megfelelőségi (adattárház-)](https://aka.ms/intune/datawarehouseapi/getpowerbiapp) alkalmazását a böngészőben.
+2. Kattintson a **nem megfelelő eszközök** elemre, és válassza a **nem megfelelő** elemet a **complianceStatus** szűrőben. 
+3. Kattintson az **ismeretlen eszközök** elemre, és válassza a **még nem érhető el** lehetőséget a **complianceStatus** szűrőben. 
 
 ## <a name="1812"></a>1812 
-_Kiadás dátuma: 2018. December_
+_Megjelent december 2018_
 
-### <a name="enrollment-activities-collection-released-to-v10"></a>Regisztráció tevékenységek gyűjtemény nyilvánosan 1.0-s verzió 
+### <a name="enrollment-activities-collection-released-to-v10"></a>Regisztrációs tevékenységek gyűjteménye 1.0-s verzióban 
 
-A beléptetési aktivitást gyűjtemény már elérhető az 1.0-s verziója. Ez a gyűjtemény segítségével megismerheti a regisztrációs hiba mennyiségi és trendeket a környezetben. További információkért lásd: [enrollmentActivities](intune-data-warehouse-collections.md#enrollmentactivities), [enrollmentEventStatuses](intune-data-warehouse-collections.md#enrollmenteventstatuses), [enrollmentFailureCategories](intune-data-warehouse-collections.md#enrollmentfailurecategories), és [ enrollmentFailureReasons](intune-data-warehouse-collections.md#enrollmentfailurereasons).
+A beléptetési tevékenységek gyűjteménye mostantól a 1.0-s verzióban érhető el. Ezt a gyűjteményt használhatja a regisztrálási hibák mennyiségének és a környezet trendjeinek a megismeréséhez. További információ: [enrollmentActivities](intune-data-warehouse-collections.md#enrollmentactivities), [enrollmentEventStatuses](intune-data-warehouse-collections.md#enrollmenteventstatuses), [enrollmentFailureCategories](intune-data-warehouse-collections.md#enrollmentfailurecategories)és [enrollmentFailureReasons](intune-data-warehouse-collections.md#enrollmentfailurereasons).
 
 ## <a name="1808"></a>1808
 _Kiadás dátuma: 2018. augusztus_
@@ -206,7 +205,7 @@ _Kiadás dátuma: 2018. augusztus_
 
 Most már használható az Intune Adattárház v1.0-ás verziója az `api-version=v1.0` lekérdezésparaméter megadásával. Az Adattárház gyűjteményeinek frissítései hozzáadó jellegűek, és nem okoznak fennakadást a meglévő forgatókönyvekben.
 
-### <a name="enrollment-activities-collection-released-to-beta"></a>Regisztráció tevékenységek gyűjtemény béta általánosan elérhető
+### <a name="enrollment-activities-collection-released-to-beta"></a>Beléptetési tevékenységek gyűjteménye a Beta kiadásban
 
 Az új `Enrollment Activities` gyűjtemény elérhető béta verzióban Ennek a gyűjteménynek a használatával megismerheti a regisztrálás előrehaladását, és megtekintheti a leggyakoribb hibákat. 
 
@@ -239,13 +238,13 @@ OData-lekérdezési paraméterként a következőt is használhatja: <code>$sele
 
 ### <a name="new-entities-in-the-in-data-warehouse-data-model----2077804---"></a>Új entitások az adattárház adatmodelljében <!-- 2077804 -->
 
- - A [**MobileAppDeviceuserInstallStatus**](reports-ref-application.md) entitást hozzáadtuk. A **MobileAppDeviceUserInstallStatus** a mobilalkalmazás telepítési állapotát jelöli egy adott eszközre és felhasználóra vonatkozóan.
- - A [**MobileAppInstallState**](reports-ref-application.md#mobileappinstallstate) entitást hozzáadtuk. A **MobileAppInstallState** entitás egy mobilalkalmazás telepítési állapotát jelöli, miután az hozzá lett rendelve egy eszközöket, felhasználókat vagy mindkettőt tartalmazó csoporthoz. 
+- A [**MobileAppDeviceuserInstallStatus**](reports-ref-application.md) entitást hozzáadtuk. A **MobileAppDeviceUserInstallStatus** a mobilalkalmazás telepítési állapotát jelöli egy adott eszközre és felhasználóra vonatkozóan.
+- Az entitás ( [**MobileAppInstallStates**](reports-ref-application.md#mobileappinstallstates)) hozzá lett adva. A **MobileAppInstallState** entitás egy mobilalkalmazás telepítési állapotát jelöli, miután az hozzá lett rendelve egy eszközöket, felhasználókat vagy mindkettőt tartalmazó csoporthoz. 
 
 ## <a name="1710"></a>1710
 _Kiadás dátuma: 2017. november_
 
-### <a name="a-new-entity-collection-named-current-user-is-limited-to-currently-active-user-data----1544273---"></a>Az aktuális felhasználó nevű új entitásgyűjtemény a jelenleg aktív felhasználói adatokra korlátozódik <!-- 1544273 -->
+### <a name="a-new-entity-collection-named-current-user-is-limited-to-currently-active-user-data----1544273---"></a>Az aktuális felhasználó nevű új entitás jelenleg aktív felhasználói adatként van korlátozva <!-- 1544273 -->
 
 A **Felhasználók** entitásgyűjtemény a vállalaton belül hozzárendelt licenccel rendelkező összes Azure Active Directory- (Azure AD-) felhasználót tartalmazza. A rekordok között akkor is ott vannak az adatgyűjtési időszakon belüli felhasználói állapotok, ha a felhasználót azóta eltávolították. Például az elmúlt egy hónap során hozzáadhattak az Intune-hoz egy felhasználót, majd el is távolíthatták onnan. A felhasználó a jelentés időpontjában nincs jelen, de az adatok tartalmazzák a felhasználót és állapotát. Ekkor létrehozhat egy olyan jelentést, amely megjeleníti a felhasználó korábbi jelenlétének időtartamát az adatokban.
 
@@ -254,15 +253,15 @@ Ezzel szemben az új **Aktuális felhasználó** entitásgyűjtemény csak azoka
 ## <a name="1709"></a>1709
 _Kiadás dátuma: 2017. október_
 
-### <a name="user-device-association-entity-collection-added-to-intune-data-warehouse-data-model----1187917---"></a>Felhasználói eszközök társítási entitásgyűjteménye Intune-adattárház adatmodelljében <!-- 1187917 -->
+### <a name="user-device-association-entity-collection-added-to-intune-data-warehouse-data-model----1187917---"></a>Az Intune-adattárház adatmodelljébe felvett felhasználó-eszköz társítási entitások gyűjteménye <!-- 1187917 -->
 
 A felhasználók és eszközök gyűjteményének társítását végző felhasználói eszköztársítási információ használatával jelentéseket és adatvizualizációkat hozhat létre. Az adatmodell a Power BI-fájlon (PBIX) keresztül érhető el az adattárház Intune-oldaláról az OData-végpont használatával vagy egyéni ügyfél létrehozásával. További információkért lásd: [Felhasználók és eszközök társítása](reports-ref-user-device.md).
 
 ### <a name="new-entities-in-the-in-data-warehouse-data-model----1479526--------"></a>Új entitások az adattárház adatmodelljében <!-- 1479526 --><!-- -->
 
- - Új entitás: [**UserDeviceAssociation**](reports-ref-user-device.md). A **UserDeviceAssociation** tartalmazza a szervezet felhasználói hozzárendeléseit. A felhasználók és eszközök gyűjteményének társítását végző felhasználói eszköztársítási információ használatával jelentéseket és adatvizualizációkat hozhat létre.  
- - Megjelent az [**IntuneManagementExtension**](reports-ref-intunemanagementextension.md) entitás. Az **IntuneManagementExtension** mobileszközökhöz készült entitásokat tartalmaz, amelyek többek között a verziószámot és a telepítési állapotot követik nyomon.
+- Új entitás: [**UserDeviceAssociation**](reports-ref-user-device.md). A **UserDeviceAssociation** tartalmazza a szervezet felhasználói hozzárendeléseit. A felhasználók és eszközök gyűjteményének társítását végző felhasználói eszköztársítási információ használatával jelentéseket és adatvizualizációkat hozhat létre.  
+- Megjelent az [**IntuneManagementExtension**](reports-ref-intunemanagementextension.md) entitás. Az **IntuneManagementExtension** mobileszközökhöz készült entitásokat tartalmaz, amelyek többek között a verziószámot és a telepítési állapotot követik nyomon.
 
 ## <a name="next-steps"></a>További lépések
- - Heti összesítésben [olvashat az Intune újdonságairól](whats-new.md). Emellett tájékozódhat a jövőbeni változtatásokról, a szolgáltatással kapcsolatos fontos bejelentésekről és a korábbi verziókról is.
- - Tekintse meg [a Microsoft Intune blogját](https://go.microsoft.com/fwlink/?LinkID=273882).
+- Heti összesítésben [olvashat az Intune újdonságairól](whats-new.md). Emellett tájékozódhat a jövőbeni változtatásokról, a szolgáltatással kapcsolatos fontos bejelentésekről és a korábbi verziókról is.
+- Tekintse meg [a Microsoft Intune blogját](https://go.microsoft.com/fwlink/?LinkID=273882).

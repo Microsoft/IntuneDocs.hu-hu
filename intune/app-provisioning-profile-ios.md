@@ -6,9 +6,8 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 04/08/2019
+ms.date: 08/15/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 888c136934deca80877d75879e270807af194a1e
-ms.sourcegitcommit: 1cae690ca2ac6cc97bbcdf656f54b31878297ae8
+ms.openlocfilehash: fcc4939e5469cd69914d59af33be84beff9b2cf1
+ms.sourcegitcommit: 6b5907046f920279bbda3ee6c93e98594624c05c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59895753"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "71304188"
 ---
 # <a name="use-ios-app-provisioning-profiles-to-prevent-your-apps-from-expiring"></a>Az iOS-alkalmazáskiépítési profilok segítségével megakadályozhatja, hogy az alkalmazásai lejárjanak
 
@@ -44,15 +43,14 @@ Rendszergazdaként belefoglaló vagy kizáró biztonsági csoportokat hozhat lé
 
 ## <a name="how-to-create-an-ios-mobile-app-provisioning-profile"></a>iOS-beli mobilalkalmazás-kiépítési profilok létrehozása
 
-1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com).
-2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget. Az Intune a **Figyelés + felügyelet** szakaszban található.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** ablaktáblán válassza az **Ügyfélalkalmazások** lehetőséget.
-1.  Az **Ügyfélalkalmazások** tevékenységprofilban válassza a **Felügyelet** > **iOS-alkalmazáskiépítési profilok** elemet.
-2.  A profilok listáját mutató panelen válassza a **Profil létrehozása** lehetőséget.
+1. Az **Ügyfélalkalmazások** tevékenységprofilban válassza a **Felügyelet** > **iOS-alkalmazáskiépítési profilok** elemet.
+2. A profilok listáját mutató panelen válassza a **Profil létrehozása** lehetőséget.
 3. A **Profil létrehozása** panelen konfigurálja a következő értékeket:
     - **Név** – Adjon egy nevet a mobil kiépítési profilnak.
     - **Leírás** – Lehetősége van a házirend ismertetésének megadására.
-    - **Profilfájl feltöltése** -válassza **nyílt** ikonra, majd egy Apple Mobile konfigurációs profilfájlt (kiterjesztésű `.mobileprovision`), amelyikbe kibontotta a [Apple fejlesztői webhely](https://developer.apple.com/).
+    - **Profil feltöltése** – válassza a **Megnyitás** ikon elemet, majd válassza ki az Apple [fejlesztői webhelyéről](https://developer.apple.com/)letöltött Apple Mobile `.mobileprovision`konfigurációs profilt (kiterjesztéssel).
 4. Ha elkészült, válassza a **Létrehozás** elemet.
 
 ## <a name="next-steps"></a>További lépések

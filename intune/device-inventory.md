@@ -5,9 +5,8 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 05/10/2018
+ms.date: 07/26/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -16,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c22822f34f426897549383df5e9c71b21b497a7e
-ms.sourcegitcommit: 25e6aa3bfce58ce8d9f8c054bc338cc3dff4a78b
+ms.openlocfilehash: e7b6b4525bd3374e1eac960f35c4ebd309c6cfd9
+ms.sourcegitcommit: db68056e2db17dfdeaa216c684302567742e6416
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57391201"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "71304827"
 ---
 # <a name="see-device-details-in-intune"></a>Eszközadatok megtekintése az Intune-ban
 
@@ -33,40 +32,29 @@ Ez a cikk bemutatja, hogyan tekintheti meg az összes eszközét és azok tulajd
 
 ## <a name="view-the-device-details"></a>Eszköz részletes adatainak megtekintése
 
-1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com).
-2. Kattintson az **Összes szolgáltatás** lehetőségre, szűrjön az **Intune-ra**, és válassza ki a **Microsoft Intune** elemet.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Válassza az **Eszközök** > **Minden eszköz** lehetőséget, majd jelölje ki a listában szereplő eszközök egyikét, hogy megnyissa annak részletes adatait:
 
-   - Az **Áttekintés** az eszköz nevét és néhány lényeges tulajdonságát tartalmazza, köztük sok más mellett azt is, hogy saját eszköz-e (BYOD), és mikor jelentkezett be. Az eszközön a következő műveleteket hajthatja végre:
+   - Az **Áttekintés** megjeleníti az eszköz nevét, és felsorolja az eszköz néhány kulcsfontosságú tulajdonságát, például azt, hogy egy saját eszköz (BYOD) eszköz-e, és hogy van-e. A következő műveleteket végezheti el az eszközön:
       - [Kivonás](devices-wipe.md#retire)
-        - [Törlés](devices-wipe.md#wipe)
-        - [Távoli zárolás](device-remote-lock.md)
-        - [Eszköz szinkronizálása](device-sync.md)
-        - [Új PIN-kód](device-passcode-reset.md)
-        - [Újraindítás](device-restart.md) (kizárólag Windowson)
-        - [Újrakezdés](device-fresh-start.md) (kizárólag Windowson)
-     - Távsegítség-munkamenet indítása
+      - [Törlés](devices-wipe.md#wipe)
+      - [Távoli zárolás](device-remote-lock.md)
+      - [Eszköz szinkronizálása](device-sync.md)
+      - [Új PIN-kód](device-passcode-reset.md)
+      - [Újraindítás](device-restart.md) (kizárólag Windowson)
+      - [Újrakezdés](device-fresh-start.md) (kizárólag Windowson)
+      - Távsegítség-munkamenet indítása
    - [Saját létrehozású eszközkategória](device-group-mapping.md) hozzárendelésére és az eszköz tulajdonosának (saját eszköz vagy vállalati eszköz) átállítására használja a **Tulajdonságok** lehetőséget.
-   - A **Hardver** sok részletet tartalmaz az eszközről, köztük sok más mellett az eszköz azonosítóját, operációs rendszerét és annak verzióját, a tárhelyet, a modellt és a gyártót és a feltételes hozzáférés beállításait.
-   - Az **Észlelt alkalmazások** verziójukkal együtt sorolja fel azon telepített alkalmazásokat, amelyet az Intune talált az eszközön. Az alkalmazások listáját **Exportálni** is tudja egy .csv-fájlba. Ez a lista 7 naponta frissül.
+   - A **hardver** számos információt tartalmaz az eszközről, például az eszköz azonosítóját, az operációs rendszert és a verziót, a tárolóhelyet és további részleteket.
+   - Az **Észlelt alkalmazások** verziójukkal együtt sorolja fel azon telepített alkalmazásokat, amelyet az Intune talált az eszközön. További információ: az [Intune által felderített alkalmazások](app-discovered-apps.md).
    - Az **Eszközmegfelelőség** a hozzárendelt megfelelőségi szabályzatok listája mellett azt is tartalmazza, hogy az eszköz megfelelő vagy nem.
    - Az **Eszközkonfiguráció** az eszközhöz rendelt összes eszközkonfigurációs szabályzat listáját mutatja meg, és hogy a szabályzat alkalmazása sikeres vagy sikertelen.
 
-Az Intune csak a vállalat tulajdonában lévő eszközökön található alkalmazásokról készít listát. A személyes eszközökön található alkalmazásokat nem ellenőrzi. A vállalat tulajdonában lévő Windows 10 rendszerű számítógépekről csak a modern alkalmazásokat veszi figyelembe a lista készítésekor. A Win32-es alkalmazásokról az Intune nem gyűjt információkat. Az eszközök szolgáltatójától függően előfordulhat, hogy nem minden alkalmazásról talál információt.
-
-|Platform|Személyes tulajdonú eszközök esetében|A vállalat által birtokolt eszközök|  
-|--------------|---------------------------------|--------------------------------|  
-|Windows 10 (a Configuration Manager-ügyfél nélkül)|Csak a felügyelt alkalmazások|Csak a felügyelt alkalmazások|
-|Windows 8.1 (a Configuration Manager-ügyfél nélkül)|Csak a felügyelt alkalmazások|Csak a felügyelt alkalmazások|  
-|Windows Phone 8|Csak a felügyelt alkalmazások|Csak a felügyelt alkalmazások|  
-|Windows RT|Csak a felügyelt alkalmazások|Csak a felügyelt alkalmazások|  
-|iOS|Csak a felügyelt alkalmazások|Az eszközön telepített összes alkalmazás|
-|macOS|Az eszközön telepített összes alkalmazás|Az eszközön telepített összes alkalmazás|  
-|Android|Csak a felügyelt alkalmazások|Az eszközön telepített összes alkalmazás|  
-|Vállalati Android|Csak a felügyelt alkalmazások|Csak a munkahelyi profilban található telepített alkalmazások|  
-
 ## <a name="hardware-device-details"></a>Hardvereszköz részletes adatai
-Az eszközök által használt szolgáltatótól, függően nem minden adata gyűjthető
+Az eszközök által használt szolgáltatótól függően az összes adat gyűjtése nem lehetséges
+
+> [!Note]  
+> A hardver-és a szoftveres leltár 7 naponta frissül az Intune szolgáltatásban.
 
 |Részletek|Leírás|Platform| 
 |--------------|----------------------|----|  
@@ -76,10 +64,12 @@ Az eszközök által használt szolgáltatótól, függően nem minden adata gy�
 |Intune-eszközazonosító|Az eszközt egyedileg azonosító GUID.|Windows, iOS|
 |Sorozatszám|Az eszköz gyártótól származó sorozatszáma.|Windows, iOS|
 |Megosztott eszköz|Ha **Igen**, akkor az eszköz több felhasználó között van megosztva.|Windows, iOS|
-|Felhasználó által jóváhagyott regisztráció|Ha **Igen**, akkor az eszközön felhasználó által jóváhagyott regisztráció van érvényben. Ezáltal a rendszergazdák felügyelni tudják az eszköz bizonyos biztonsági beállításait.|Windows, iOS|
+|Felhasználó által jóváhagyott regisztráció|Ha **Igen**, akkor az eszköz felhasználó által jóváhagyott regisztrációja lehetővé teszi, hogy a rendszergazdák bizonyos biztonsági beállításokat kezelhesse az eszközön.|Windows, iOS|
 |Operációs rendszer|Az eszközön futó operációs rendszer.|Windows, iOS|
 |Operációs rendszer verziója|Az eszközön futó operációs rendszer verziója.|Windows, iOS|
 |Operációs rendszer nyelve|Az eszközön futó operációs rendszerhez beállított nyelv.|Windows, iOS|
+|Build száma|Az operációs rendszer összeállításának száma.|Android|
+|Biztonsági javítási szint|Az eszköz biztonsági javítási szintje.|Android|
 |Teljes tárterület|Az eszközön lévő teljes tárterület (gigabájtban).|Windows, iOS|
 |Szabad tárterület|Az eszközön lévő felhasználatlan tárterület (gigabájtban).|Windows, iOS|
 |IMEI|Az eszköz Nemzetközi mobilkészülék-azonosító (IMEI) száma.|Windows, iOS, Android|
@@ -95,6 +85,7 @@ Az eszközök által használt szolgáltatótól, függően nem minden adata gy�
 |Utolsó kapcsolat|Az eszköz Intune-hoz való utolsó kapcsolódásának dátuma és időpontja.|Windows, iOS, Android|
 |Kód az aktiválási zár megkerüléséhez|Az aktiválási zár megkerüléséhez használható kód.|Windows, iOS, Android|
 |Az Azure AD-ban regisztrálva|Ha **Igen**, akkor az eszköz regisztrálva van az Azure Active Directoryban.|Windows, iOS, Android|
+|Intune regisztrálva|Ha **Igen**, az eszköz regisztrálva van az Intune-ban|Windows, iOS, Android|
 |Megfelelőség|Az eszköz megfelelőségi állapota.|Windows, iOS, Android|
 |EAS aktiválva|Ha **Igen**, akkor az eszköz szinkronizálva van egy Exchange-postafiókkal.|Windows, iOS, Android|
 |EAS-aktiválási azonosító|Az eszköz Exchange ActiveSync-azonosítója.|Windows, iOS, Android|

@@ -1,14 +1,13 @@
 ---
 title: A Céges portál alkalmazás konfigurálása
 titleSuffix: Microsoft Intune
-description: További információ a vállalatspecifikus védjegyezés az Intune Céges portál alkalmazásban való alkalmazásáról.
+description: Ismerje meg, hogyan alkalmazhatja a vállalatra jellemző arculatot a Intune Céges portál alkalmazásra.
 keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 04/01/2019
+ms.date: 09/17/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,63 +17,68 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 33f24a3d7b30973855bb303bb97bf703cd4dc5fa
-ms.sourcegitcommit: 1cae690ca2ac6cc97bbcdf656f54b31878297ae8
+ms.openlocfilehash: 435d13fe1d8b159296ee2155a8f49c0ce282ca87
+ms.sourcegitcommit: 2ab41ce2c781fc7bd1140a82b4f44d4cd2fc07b1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59895408"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71305094"
 ---
 # <a name="how-to-configure-the-microsoft-intune-company-portal-app"></a>A Microsoft Intune Céges portál alkalmazásának konfigurálása
 
 [!INCLUDE [azure_portal](./includes/azure_portal.md)]
 
-A felhasználók a Microsoft Intune Céges portálon férhetnek hozzá a vállalati adatokhoz, és olyan gyakori feladatokat hajthatnak végre, mint például az eszközök regisztrálása, az alkalmazások telepítése és az informatikai támogatási információk megtekintése.        
+A felhasználók a Microsoft Intune Céges portálon férhetnek hozzá a vállalati adatokhoz, és olyan gyakori feladatokat hajthatnak végre, mint például az eszközök regisztrálása, az alkalmazások telepítése és az informatikai támogatási információk megtekintése. Emellett a vállalati portál alkalmazás lehetővé teszi a felhasználó számára a vállalati erőforrások biztonságos elérését. A vállalati portál alkalmazás több különböző oldalt is biztosít, például a kezdőlapot, az alkalmazásokat, az alkalmazás részleteit, az eszközöket és az eszközök részleteit. A Céges portálon belüli alkalmazások gyors megtalálásához az alkalmazások lapon szűrheti az alkalmazásokat.
 
-> [!Tip]        
-> A vállalati portál testreszabása a vállalati portál webhelyére és a vállalati portál alkalmazásaira egyaránt hatással van. Vegye figyelembe, hogy felhasználóknak rendelkezniük kell Intune-licencet a céges portál webhely eléréséhez.
+> [!IMPORTANT]
+> A Google Firebase Cloud Messaging (FCM) támogatásához frissítenie kell az Android Céges portál alkalmazást a legújabb verzióra. További információ: Újdonságok – [Android céges portál-alkalmazás frissítése a legújabb verzióra](whats-new.md#update-your-android-company-portal-app-to-the-latest-version-).
 
-A vállalati portál testreszabásával kapcsolatban, segít adjon meg egy ismerős és könnyen használható környezetet teremthet felhasználóinak. Ehhez az Intune-portálon válassza **ügyfélalkalmazások** > **Branding és testreszabási**, majd konfigurálja a szükséges beállításokat. 
+> [!Tip]
+> A vállalati portál testreszabása a vállalati portál webhelyére és a vállalati portál alkalmazásaira egyaránt hatással van. Vegye figyelembe, hogy a felhasználóknak Intune-licenccel kell rendelkezniük a Céges portál webhely eléréséhez.
 
-> [!Note]       
+A Céges portál személyre szabásával segítséget nyújt a végfelhasználók számára ismerős és hasznos felhasználói élményben. Ehhez az Intune-portálon válassza az **ügyfélalkalmazások** > **védjegyezése és testreszabása**lehetőséget, majd adja meg a szükséges beállításokat.
+
+Amikor egy felhasználó egy iOS-alkalmazást telepít a Céges portál, a rendszer kérni fogja a kérést. Ez akkor fordul elő, ha az iOS-alkalmazás az alkalmazás-áruházhoz van csatolva, egy mennyiségi vásárlási programhoz (VPP) vagy egy üzletági (LOB) alkalmazáshoz csatolva. A prompt lehetővé teszi, hogy a felhasználók elfogadják a műveletet, vagy engedélyezzék az alkalmazás felügyeletét. A prompt megjeleníti a vállalat nevét, vagy ha a cég neve nem érhető el, **céges portál** jelenik meg. 
+
+> [!Note]
 > Az Azure Government használata esetében a végfelhasználó alkalmazásnaplókkal döntheti el, hogy hogyan végzi a megosztást, amikor segítségkérési folyamatot indít el egy probléma kapcsán. Ha azonban nem az Azure Governmentet használja, akkor a Windows 10 Céges portál közvetlenül a Microsoftnak küldi az alkalmazásnaplókat, amikor egy felhasználó segítségkérési folyamatot indít el egy probléma kapcsán. Az alkalmazásnaplók Microsoftnak való elküldésével könnyebben háríthatók el és oldhatók meg a problémák. 
 
-## <a name="company-information-and-privacy-statement"></a>A vállalat adatai és adatvédelmi nyilatkozata        
+## <a name="company-information-and-privacy-statement"></a>A vállalat adatai és adatvédelmi nyilatkozata
 A vállalat neve a Vállalati portál címeként jelenik meg. Az adatvédelmi nyilatkozat az Adatvédelem hivatkozásra kattintva jeleníthető meg.
-
-A csillaggal (*) jelölt mezők kitöltése kötelező.       
-
 
 | Mező neve | Maximális hossz | További információ |
 |---|---|---|
 |**Vállalat neve**| 40 | Ez a név a Céges portál címeként jelenik meg, és az Intune használata alatt végig szöveges formában olvasható. |
 | **Az adatvédelmi nyilatkozat URL-címe** |     79     | Itt adhatja meg vállalatának adatvédelmi nyilatkozatát, amely akkor jelenik meg, ha a felhasználó a Vállalati portál adatvédelmi hivatkozásaira kattint. Érvényes URL-címet kell megadnia, a következő formátumban: `<https://www.contoso.com>`. |
 
-## <a name="support-information"></a>Támogatási információk      
-Adja meg a vállalat adatait egy ügyfél a munkatársak rendelkezésére az Intune-nal kapcsolatos kérdésekre.          
+> [!NOTE]
+> A Microsoft és az Apple-szabályzattal összhangban a szolgáltatás által gyűjtött adatokat semmilyen okból nem adjuk át semmilyen harmadik félnek.
+
+## <a name="support-information"></a>Támogatási információk
+Adja meg a vállalat támogatási információit, hogy az alkalmazottak számára az Intune-nal kapcsolatos kérdésekre vonatkozó kapcsolatfelvételt nyújtson.
 
 |Mező neve|Maximális hossz|További információ|
 |---|---|---|
-|**Kapcsolattartó neve** | 40 | Ez a név az **IT-csoport elérhetősége** lapon jelenik meg. |
-|**Telefonszám** | 20 | A kapcsolattartási szám megjelenik az **IT-csoport elérhetősége** lapon, és lehetővé teszi munkatársai számára a támogatáskérést. |
-|**E-mail cím**| 40 | Ez a cím az **IT-csoport elérhetősége** lapon jelenik meg. Meg kell adnia egy érvényes e-mail-címet a következő formátumban: `alias@domainname.com`. |
-|**Webhely neve**| 40 | Ez a név a támogatási webhely URL-címének rövid neveként jelenik meg. Ha a támogatási webhelyhez csak URL-címet ad meg, de rövid nevet nem, akkor Az IT-csoport weboldalának megnyitása felirat jelenik meg a Céges portál **IT-csoport elérhetősége** lapján. |
-|**Webhely URL-címe**| 150 | Ha rendelkezik saját felhasználóinak szánt támogatási webhellyel, ide írja be az URL-címét. Az URL-cím formátumának a következőnek kell lennie: `https://www.contoso.com`. Ha nem ad meg URL-címet, semmi sem jelenik meg a támogatási webhelyről a Vállalati portál **IT-csoport elérhetősége** lapján. |
-| **További információ**| 120 | Az **IT-csoport elérhetősége** lapon jelenik meg. |
+|**Kapcsolattartó neve** | 40 | Ez a név jelenik meg a **Súgó és támogatás** lapon. |
+|**Telefonszám** | 20 | Ez a telefonszám jelenik meg a **Súgó és támogatás** lapon, hogy az alkalmazottak kapcsolatba lépjenek Önnel a támogatási szolgálattal. |
+|**E-mail cím**| 40 | Ez a kapcsolattartási e-mail a **Súgó és támogatás** oldalon jelenik meg. Meg kell adnia egy érvényes e-mail-címet a következő formátumban: `alias@domainname.com`. |
+|**Webhely neve**| 40 | Ez a név a támogatási webhely URL-címének rövid neveként jelenik meg. Ha a támogatási webhely URL-címét és a név nélküli nevet adja meg, akkor az IT-webhely a Céges portál **Súgó és támogatás** lapján jelenik meg. |
+|**Webhely URL-címe**| 150 | Ha rendelkezik saját felhasználóinak szánt támogatási webhellyel, ide írja be az URL-címét. Az URL-cím formátumának a következőnek kell lennie: `https://www.contoso.com`. Ha nem ad meg URL-címet, semmi nem jelenik meg a támogatási webhelyhez a Céges portál **Súgó és támogatás** lapján. |
+| **További információ**| 120 | Megjelenik a **Súgó és támogatás** oldalon. |
 
 
-## <a name="company-identity-branding-customization"></a>Vállalati identitási arculat testreszabása      
-A Vállalati portál testre szabható a vállalat emblémájának és nevének, valamint a téma színének és a háttérnek a megadásával.     
+## <a name="company-identity-branding-customization"></a>Vállalati identitási arculat testreszabása
+A Vállalati portál testre szabható a vállalat emblémájának és nevének, valamint a téma színének és a háttérnek a megadásával.
 
 ### <a name="theme-color-and-logo-in-the-company-portal"></a>Témaszín és embléma a Céges portálon
 Témaszínt alkalmazhat a Céges portálon. Jelöljön ki egy szabványos színt, vagy adjon meg egy hexadecimális hatjegyű kódot az egyéni színhez.
 
 |Mező neve|További információ|
 |---|---|
-|**Jelöljön ki egy szabványos színt, vagy adjon meg egy hexadecimális hatjegyű kódot**| Válasszon **Standard** vizuálisan válassza ki a színt. Válassza az **Egyéni** lehetőséget egy hexadecimális kódon alapuló meghatározott szín kiválasztásához.|
+|**Jelöljön ki egy szabványos színt, vagy adjon meg egy hexadecimális hatjegyű kódot**| Válassza a **standard** elemet a szín kiválasztásához. Válassza az **Egyéni** lehetőséget egy hexadecimális kódon alapuló meghatározott szín kiválasztásához.|
 |**Téma színének kiválasztása**| A Vállalati portálra alkalmazni kívánt témaszín kiválasztása. Választhat a színválasztóból, vagy megadhat egy hexadecimális kódot. |
 |**Megjelenítés**| Válassza ki, hogy mit szeretne megjeleníteni: **Cégembléma és -név**, **Csak cégembléma** vagy **Csak cégnév**. |
-|**A céges embléma feltöltése**|Feltöltheti a Céges portálon megjeleníteni kívánt vállalati emblémát. Vegye figyelembe, hogy a szöveg színének kiválasztása automatikusan történik a legnagyobb kontraszt eléréséhez. Az optimális megjelenés érdekében töltsön fel egy áttetsző hátterű emblémát.<p><ul><li>Maximális Képméret: 400px x 400px</li><li>Maximális fájlméret: 750KB</li><li>Fájltípus: PNG, JPG vagy JPEG</li></ul>|
+|**A céges embléma feltöltése**|Feltöltheti a Céges portálon megjeleníteni kívánt vállalati emblémát. Vegye figyelembe, hogy a szöveg színének kiválasztása automatikusan történik a legnagyobb kontraszt eléréséhez. Az optimális megjelenés érdekében töltsön fel egy áttetsző hátterű emblémát.<p><ul><li>Maximális képméret: 400 képpont x 400 képpont</li><li>Maximális fájlméret: 750KB</li><li>Fájl típusa: PNG, JPG vagy JPEG</li></ul>|
 
 Miután feltöltötte az emblémát, az előnézeti területen meg fog jelenni az embléma a téma színével. Ha úgy dönt, hogy megjeleníti a cég nevét, az feketén vagy fehéren fog megjelenni a Céges portálon, és a téma színe alapján automatikusan a lehető legnagyobb kontraszttal fog megjelenni. A képernyő előnézeti területén nem fog megjelenni a cég neve. 
 
@@ -83,7 +87,7 @@ Válasszon olyan emblémát, amely fehér vagy világos háttéren mutat a legjo
 
 |Mező neve|További információ|
 |---|---|
-|**Embléma feltöltése**| Ez a lehetőség akkor érhető el, ha a céges embléma megjelenítése mellett döntött. Az optimális megjelenés érdekében töltsön fel egy áttetsző hátterű emblémát.<p><ul><li>Maximális Képméret: 400px x 400px</li><li>Maximális fájlméret: 750KB</li><li>Fájltípus: PNG, JPG vagy JPEG</li></ul>|
+|**Embléma feltöltése**| Ez a lehetőség akkor érhető el, ha a céges embléma megjelenítése mellett döntött. Az optimális megjelenés érdekében töltsön fel egy áttetsző hátterű emblémát.<p><ul><li>Maximális képméret: 400 képpont x 400 képpont</li><li>Maximális fájlméret: 750KB</li><li>Fájl típusa: PNG, JPG vagy JPEG</li></ul>|
 
 ### <a name="brand-image-for-company-portal"></a>Márkakép a Céges portálhoz
 
@@ -91,39 +95,48 @@ Márkakép feltöltése, amely tükrözi a vállalati márkát. A módosítások
 
 |Mező neve|További információ|
 |---|---|
-|**Márkakép feltöltése**| Ez a beállítás lehetővé teszi egy márka kép megjelenítéséhez. Az iOS Vállalatiportál-mutatja be a felhasználói profil oldalához háttérképként.<p><ul><li>Kép szélessége ajánlott: Kisebb, mint 1125px, de nem kisebb, mint 640 képpont</li><li>Maximális Képméret: 1.3 MB</li><li>Fájltípus: PNG, JPG vagy JPEG</li></ul>|
+|**Márkakép feltöltése**| Ez a beállítás lehetővé teszi a márka képének megjelenítését. Az iOS Céges portál háttérképként jelenik meg a felhasználó profiljának oldalán.<p><ul><li>Ajánlott képszélesség: Nagyobb, mint 1125px (legalább 650 px szükséges)</li><li>Maximális képméret: 1,3 MB</li><li>Fájl típusa: PNG, JPG vagy JPEG</li></ul>|
 
 A megfelelő márkakép javíthatja a felhasználó Céges portálba vetett bizalmát a cég márkájának hangsúlyozásával. Íme néhány tipp, amelyet érdemes figyelembe venni a kép Céges portálhoz történő beszerzésekor, kiválasztásakor és optimalizálásakor. 
 
-- Vegye fel a kapcsolatot az értékesítési vagy művészeti osztállyal. Előfordulhat, hogy már van jóváhagyott márka lemezképek. Előfordulhat, hogy a képek igény szerinti optimalizálásában is tudnak segíteni. 
+- Vegye fel a kapcsolatot az értékesítési vagy művészeti osztállyal. Lehetséges, hogy már rendelkezik egy jóváhagyott márkás készlettel. Előfordulhat, hogy a képek igény szerinti optimalizálásában is tudnak segíteni. 
 
-- Fontolja meg a fekvő és az álló tájolású kompozíciókat is. A képnek megfelelő háttérrel kell rendelkeznie, amely körülveszi a fókuszpontot. A kép eszköz mérete, a tájolást és a platform menübeállításoktól függően előfordulhat, hogy levágja. 
+- Fontolja meg a fekvő és az álló tájolású kompozíciókat is. A képnek megfelelő háttérrel kell rendelkeznie, amely körülveszi a fókuszpontot. Az eszköz mérete, tájolása és platformja alapján a rendszerképet különbözőképpen lehet megtakarítani. 
 
 - Kerülje az általános, készletben elérhető képek használatát. A képnek tükröznie kell a vállalati márkát, és ismerősnek kell tűnnie a felhasználóknak. Ha még nem rendelkezik ilyen képpel, jobb ha nem használ semmilyet, mint sem hogy olyan általános képet adjon meg, ami semmit nem jelent a felhasználóknak. 
 
 - Szükségtelen metaadatok eltávolítása. A képfájl tartalmazhat metaadatokat, például kameraprofilt, földrajzi helyet, címet, feliratot stb. Használjon képoptimalizáló eszközt ezeknek az adatoknak az eltávolításához a minőség fájlméretkorlátok betartásával történő megőrzéséhez. 
 
-A márka lemezkép van hozzáadva, vagy módosítása után az Intune-ban a végfelhasználó előfordulhat, hogy nem jelenik meg az iOS-eszközökön a vállalati portál a Start menüben a módosítás mentése elismert, és ezután újra lett indítva a márka kép megjelenítéséhez. 
+Miután hozzáadta vagy megváltoztatta a rendszerképét az Intune-ban, előfordulhat, hogy a végfelhasználó nem látja az iOS-eszközök változását, amíg a Céges portál felismerte a rendszerindítási módosítást, majd újraindult a márka rendszerképének megjelenítéséhez. 
 
-### <a name="brand-image-examples"></a>Márka kép példák
+### <a name="brand-image-examples"></a>Példa a Brand-képekre
 
-Az alábbi képen látható példában iPad védjegyzési kép:
+Az alábbi képen egy példa iPad arculatot ábrázoló rendszerkép látható:
 
-![Védjegyzési kép például iPhone képernyőképe](media/company-portal-app/company-portal-app-03.png)
+![Képernyőkép – példa az iPhone arculati képére](media/company-portal-app/company-portal-app-03.png)
 
-Az alábbi képen látható védjegyzési kép például iPhone-on:
+Az alábbi képen az iPhone arculatát bemutató példa látható:
 
-![Védjegyzési kép például iPad képernyőképe](media/company-portal-app/company-portal-app-02.png)
+![Képernyőkép – példa iPad arculati rendszerkép](media/company-portal-app/company-portal-app-02.png)
+
+## <a name="privacy-statement-customization"></a>Adatvédelmi nyilatkozat testreszabása
+
+Testreszabhatja a szervezete számára a felügyelt iOS-eszközökön megjelenő adatvédelmi nyilatkozatot. Ez az üzenet felsorolja azokat az elemeket, amelyeket a szervezet nem láthat vagy végezhet a felügyelt iOS-eszközökön.
+
+A **céges portál testreszabási** > **eszköz kezelése és adatvédelmi üzenete**alatt a következőket teheti:
+
+- Fogadja el az **alapértelmezett értéket** a lista használatára a következő módon, vagy
+- Az **Egyéni** elem kiválasztásával testreszabhatja azon elemek listáját, amelyeket a szervezet nem láthat vagy végezhet a felügyelt iOS-eszközökön. A [Markdown](https://daringfireball.net/projects/markdown/) használatával felsorolásjeleket, félkövéreket, dőlteket és hivatkozásokat adhat hozzá.
 
 ## <a name="windows-company-portal-keyboard-shortcuts"></a>A Windows Céges portálon használható billentyűparancsok
 
-A végfelhasználók a Windows céges portál (megoldásgyorsítók) billentyűparancsok használata a navigációs, alkalmazás és eszköz műveletek is indíthat.
+A végfelhasználók a billentyűparancsok (gyorssegédek) használatával indíthatnak navigációs, alkalmazás-és eszköz-műveleteket a Windows Céges portálban.
 
 A következő billentyűparancsok érhetők el a Windows Céges portál alkalmazásban.
 
 | Terület | Leírás | Billentyűparancs |
 |:------------------:|:--------------:|:-----------------:|
-| Navigációs menü | Navigáció | Alt+M |
+| Navigációs menü | Navigációs | Alt+M |
 |  | Otthoni | Alt+H |
 |  | Minden alkalmazás | Alt+A |
 |  | Telepített alkalmazások | Alt+I |
@@ -137,10 +150,42 @@ A következő billentyűparancsok érhetők el a Windows Céges portál alkalmaz
 |  | Eltávolítás | Ctrl+D vagy Delete |
 |  | Hozzáférés ellenőrzése | Ctrl+M vagy F9 |
 | Alkalmazás részletei | Telepítés | Ctrl+I |
+| Eszközök | Elérhető | CTRL + D |
 
-A végfelhasználók is elérhetik a Windows céges portál alkalmazásban elérhető parancsikonjait megtekintéséhez.
+A végfelhasználók az elérhető parancsikonokat is láthatják a Windows Céges portál alkalmazásban.
 
-![Képernyőfelvétel a Windows vállalati portálon elérhető hivatkozása](media/company-portal-app/company-portal-app-01.png)
+![Képernyőkép a Windows Céges portál elérhető parancsikonjairól](media/company-portal-app/company-portal-app-01.png)
+
+## <a name="user-self-service-device-actions-from-the-company-portal"></a>A felhasználó önkiszolgáló eszközének műveletei a Céges portál
+
+A felhasználók a helyi vagy távoli eszközökön végezhetnek műveleteket a Céges portál alkalmazás vagy webhely használatával. A felhasználók által elvégezhető műveletek az eszköz platformján és konfigurációjától függően változhatnak. A távoli eszközök műveleteit minden esetben csak az eszköz elsődleges felhasználója hajthatja végre.
+- **Kivonás – eltávolítja** az eszközt az Intune-felügyeletből. A céges portál alkalmazásban és webhelyen az **Eltávolítás**elem jelenik meg.
+- **Törlés** – ez a művelet elindítja az eszköz alaphelyzetbe állítását. A céges portál webhelyen ez a beállítás **alaphelyzetbe állításként**jelenik meg, vagy a **gyári beállítások visszaállítása** az iOS céges portál alkalmazásban.
+- **Átnevezés** – ez a művelet megváltoztatja azt az eszköznév, amelyet a felhasználó láthat a céges portálban. Nem módosítja a helyi eszköznév nevét, csak a Céges portál lévő listaelemet.
+- **Sync (szinkronizálás** ) – Ez a művelet az Intune szolgáltatással kezdeményezi az eszköz beadását. Ez a Céges portál **ellenőrzési állapotaként** jelenik meg.
+- **Távoli zárolás** – ezzel zárolja az eszközt, és PIN-kódot igényel a zárolás feloldásához.
+- Jelszó **alaphelyzetbe állítása** – ezzel a művelettel alaphelyzetbe állíthatja az eszköz PIN-kódját. IOS-eszközökön a PIN-kód el lesz távolítva, és a végfelhasználónak új kódot kell megadnia a beállításokban. A támogatott androidos eszközökön új PIN-kódot hoz létre az Intune, és ideiglenesen megjelenik a Céges portál.
+- **Kulcs helyreállítása** – ezzel a művelettel lehet helyreállítani a titkosított eszközök titkosítási kulcsát.
+
+### <a name="self-service-actions"></a>Önkiszolgáló műveletek
+
+Egyes platformok és konfigurációk nem engedélyezik az önkiszolgáló eszközök műveleteit. Az alábbi táblázat további részleteket tartalmaz az önkiszolgáló műveletekről:
+
+|     Platform    |    Kivonás    |    Törlés     |    Átnevezés<sup>(4)</sup>    |    Szinkronizálás    |    Távoli zárolás    |    Jelszó alaphelyzetbe állítása    |    Kulcshelyreállítás    |
+|------------------------|--------------------|--------------------|-----------------|-----------------|--------------------------|--------------------------|--------------------|
+|    Windows 10<sup>(3)</sup>    |    Elérhető<sup>(1)</sup>    |    Elérhető    |    Elérhető    |    Elérhető    |    Csak Windows Phone-telefon    |    Csak Windows Phone-telefon    |    NA    |
+|    iOS<sup>(3)</sup>    |    Elérhető    |    Elérhető    |    Elérhető    |    Elérhető    |    Elérhető    |    Elérhető    |    NA    |
+|    MacOS<sup>(3)</sup><sup>(5)</sup>    |    Elérhető    |    NA    |    Elérhető    |    Elérhető    |    Elérhető    |    NA    |    Elérhető<sup>(2)</sup>    |
+|    Android<sup>(3)</sup>    |    Elérhető<sup>(7)</sup>    |    Elérhető<sup>(7)</sup>    |    Elérhető    |    Elérhető    |    Elérhető    |    Elérhető<sup>(6)</sup>    |    NA    |
+
+
+<sup>(1)</sup> a kivonás mindig le van tiltva az Azure ad-hez csatlakoztatott Windows-eszközökön.<br>
+<sup>(2)</sup> a MacOS rendszerhez készült kulcs-helyreállítás csak a webes portálon keresztül érhető el.<br>
+<sup>(3)</sup> az összes távoli művelet le van tiltva, ha egy eszköz beléptetési kezelőt használ.<br>
+<sup>(4)</sup> az Átnevezés csak az eszköz nevét módosítja a céges portál alkalmazásban vagy webhelyen, nem az eszközön.<br>
+<sup>(5)</sup> a távoli törlés nem érhető el MacOS-eszközökön.<br>
+<sup>(6)</sup> a PIN-kód alaphelyzetbe állítása néhány Android-és androidos vállalati konfiguráció esetén nem támogatott. További információkért lásd: [eszköz PIN-kód alaphelyzetbe állítása vagy eltávolítása az Intune-ban](device-passcode-reset.md).<br>
+<sup>(7)</sup> a kivonás és a törlés nem érhető el az androidos vállalati eszközök tulajdonosi forgatókönyvei esetében (Cope, COBO, COSU).<br> 
 
 ## <a name="next-steps"></a>További lépések
 

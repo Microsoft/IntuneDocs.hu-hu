@@ -3,12 +3,11 @@ title: A Windows Információvédelem beállításai a Microsoft Intune-ban
 titleSuffix: Microsoft Intune
 description: A Windows Információvédelem kezelésére használható Microsoft Intune-beállítások.
 keywords: ''
-author: brenduns
-ms.author: brenduns
+author: Erikre
+ms.author: erikre
 manager: dougeby
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -17,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fc3684a04611e0b7ec8cd17cb5cdf428c1150a55
-ms.sourcegitcommit: 1cae690ca2ac6cc97bbcdf656f54b31878297ae8
+ms.openlocfilehash: e3cc2cbc86eefc2344176919bf59f36e2364fb12
+ms.sourcegitcommit: 8934b1abec96e18cee15a77107d37551766f7666
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59894739"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71302479"
 ---
 # <a name="how-to-configure-windows-information-protection-in-microsoft-intune"></a>A Windows Információvédelem konfigurálása a Microsoft Intune-ban
 
@@ -37,9 +36,8 @@ Ez az Intune-szabályzat látja el a Windows Information Protection által véde
 >[!NOTE]
 > A Windows 10-es Céges portál alkalmazás Windows Információvédelemmel való használatához a Céges portál alkalmazást fel kell vennie a Windows Információvédelem **Kivételek** listájára. 
 
-## <a name="next-steps"></a>További lépések
 További információkért lásd:
--  [Vállalati adatok védelme a Windows információvédelemmel](https://technet.microsoft.com/itpro/windows/keep-secure/protect-enterprise-data-using-wip).
+- [Vállalati adatok védelme a Windows információvédelemmel](https://technet.microsoft.com/itpro/windows/keep-secure/protect-enterprise-data-using-wip).
 - [Windows információvédelmi (WIP-) szabályzat létrehozása a hagyományos Microsoft Intune-konzollal](https://docs.microsoft.com/windows/threat-protection/windows-information-protection/create-wip-policy-using-intune)
 - [MDM-mel ellátott Windows információvédelmi (WIP-) szabályzat létrehozása a Microsoft Intune Azure Portaljával](https://docs.microsoft.com/windows/threat-protection/windows-information-protection/create-wip-policy-using-intune-azure)
 - [MDM-mel ellátott Windows információvédelmi (WIP-) szabályzat létrehozása a Microsoft Intune Azure Portaljával](https://docs.microsoft.com/windows/threat-protection/windows-information-protection/create-wip-policy-using-mam-intune-azure)

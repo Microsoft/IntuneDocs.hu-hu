@@ -6,79 +6,47 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 12/31/2018
+ms.date: 7/23/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: f276d98c-b077-452a-8835-41919d674db5
-ms.reviewer: chrisbal
+ms.reviewer: chmaguir
 ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b76b461d445bfbec5fe2e8d355cd2a4f228735df
-ms.sourcegitcommit: 47eb67df69f237121f5197b2ac904a177aab5400
+ms.openlocfilehash: 7dcde377dbf3e97e94957ab5c984aa6dfede9136
+ms.sourcegitcommit: 74911a263944f2dbd9b754415ccda6c68dae0759
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59671840"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71303921"
 ---
 # <a name="enroll-android-devices"></a>Androidos eszközök regisztrálása
 
 [!INCLUDE [azure_portal](./includes/azure_portal.md)]
 
-Az Intune rendszergazdái az alábbi Android-eszközöket kezelhetik:
-- Android-eszközök, beleértve a Samsung Knox Standard-eszközökön és [Zebra eszközök](android-zebra-mx-overview.md).
-- Android Enterprise-eszközök, többek között:
-    - **Vállalati munkahelyi profilos eszközök Android**: Személyes eszközök vállalati adatok elérésére vonatkozó engedélyt kaphatnak. Rendszergazdái kezelhetik a munkahelyi fiókok, alkalmazások és adatok. Személyes adatok az eszközön tárolt munkahelyi adatoktól és a rendszergazdák nem szabályozza a személyes beállításokat és adatokat. 
-    - **Android Enterprise dedikált eszközök**: Vállalat által birtokolt, egyetlen eszközöket, például a digitális aláírási nyomtatás jegyet, vagy a szoftverleltár-kezelő. A rendszergazdák alkalmazások és webes hivatkozások egy adott körére korlátozzák az eszköz használatát. Ez azt is megakadályozza, hogy a felhasználók más alkalmazásokat adjanak az eszközhöz, vagy más műveleteket hajtsanak végre rajta.
-    - **Android Enterprise teljes körűen felügyelt eszközök**: Vállalat által birtokolt, egyetlen felhasználói eszközök használt kizárólag a munkahelyi és személyes nem használja. A rendszergazdák a teljes eszköz kezelése és nem érhető el a munkahelyi profilok házirend-vezérlők kényszerítésére. 
+Intune-rendszergazdaként a következő módokon regisztrálhat Android-eszközöket:
+- Android Enterprise (olyan regisztrációs beállításokat kínál, amelyek a legnaprakészebb és biztonságos funkciókat biztosítanak a felhasználóknak):
+    - [**Androidos vállalati munkahelyi profil**](android-work-profile-enroll.md): A személyes eszközök számára engedélyezték a vállalati adatelérést. A rendszergazdák kezelhetik a munkahelyi fiókokat, az alkalmazásokat és az adatmennyiséget. Az eszközön tárolt személyes adatok külön maradnak a munkahelyi adatoktól, és a rendszergazdák nem szabályozzák a személyes beállításokat vagy az adatok adatait. 
+    - [**Android Enterprise dedikált**](android-kiosk-enroll.md): A vállalat által birtokolt, egyszer használatos eszközök, például a digitális aláírások, a jegyek nyomtatása vagy a leltár kezelése. A rendszergazdák alkalmazások és webes hivatkozások egy adott körére korlátozzák az eszköz használatát. Ez azt is megakadályozza, hogy a felhasználók más alkalmazásokat adjanak az eszközhöz, vagy más műveleteket hajtsanak végre rajta.
+    - [**Teljes körűen felügyelt Android Enterprise**](android-fully-managed-enroll.md): A kizárólag munkahelyi és nem személyes használatra szánt, vállalati tulajdonú, egyetlen felhasználói eszközök esetében. A rendszergazdák kezelhetik a teljes eszközt, és a házirend-vezérlők nem érhetők el a munkahelyi profilokhoz. 
+- [**Android-eszköz rendszergazdája**](android-enroll-device-administrator.md), beleértve a Samsung Knox standard-eszközöket és a [Zebra-eszközöket](android-zebra-mx-overview.md). 
 
 ## <a name="prerequisites"></a>Előfeltételek
 
 A mobileszközök kezelésének előkészítéseként a **Microsoft Intune**-t kell beállítani mobileszköz-kezelő (MDM) szolgáltatóként. Erről [Az MDM-szolgáltató beállítása](mdm-authority-set.md) című cikk nyújt útmutatást. Ezt a beállítást csak egyszer, az Intune-nak a mobileszközök kezelésére való kezdeti beállítása során kell megadni.
 
-A Zebra technológiák által előállított eszközök esetében szükség lehet a vállalati portál további engedélyeket adnia függően az adott eszköz. [Mobilitási bővítmények Zebra eszközökön](android-zebra-mx-overview.md) további részleteket is tartalmaz.
+A zebra Technologies által gyártott eszközök esetében előfordulhat, hogy az adott eszköz képességeitől függően további engedélyeket kell megadnia a Céges portál. [A zebra-eszközök mobilitási bővítményei](android-zebra-mx-overview.md) további részleteket tartalmaznak.
 
-## <a name="set-up-android-enrollment"></a>Az androidos eszközök regisztrálásának beállítása
-
-Alapértelmezés szerint az Intune engedélyezi az Android, Samsung Knox Standard és Zebra eszközök. Az Előfeltételek teljesítése, után a rendszergazdák egyszerűen kell [meg, hogy a felhasználók hogyan regisztrálhatják az eszközeiket](/intune-user-help/enroll-your-device-in-intune-android).
-
-Miután a felhasználó elvégezte a regisztrálást, elkezdheti az eszközeik felügyeletét az Intune-ban, így többek között [megfelelőségi szabályzatokat rendelhet hozzájuk](compliance-policy-create-android.md) vagy [felügyelheti az alkalmazásokat](app-management.md).
-
-Más felhasználói feladatokkal kapcsolatos további információkért tanulmányozza a következő cikkeket:
-
-- [Információk végfelhasználóknak a Microsoft Intune használatáról](end-user-educate.md)
-- [Android-eszköz használata az Intune-nal](https://docs.microsoft.com/intune-user-help/using-your-android-device-with-intune)
-
-Az androidos eszközök (vagy csak a személyes tulajdonban levők) regisztrálásának letiltásáról a [Típus szerinti korlátozás beállítása](enrollment-restrictions-set.md) című témakörben olvashat.
-
-## <a name="set-up-android-enterprise-enrollment"></a>Az Android vállalati regisztrációjának beállítása
-
-Android Enterprise tanúsítványigénylési beállításokat, amelyek biztosítható a felhasználók a legtöbb naprakészen tartását és védelmét a funkciók készletét kínálja. Androidos vállalati eszközregisztrációs lehetőségek közé tartozik a munkahelyi profilt, teljes körűen felügyelt, dedikált eszközök.
-
-- [Android Enterprise munkahelyi profil regisztrációk beállítása](android-work-profile-enroll.md)
-- [Dedikált Android Enterprise eszközregisztrációk beállítása](android-kiosk-enroll.md)
-- [Állítsa be a teljes körűen felügyelt Android Enterprise-regisztrációk](android-fully-managed-enroll.md)
-
-## <a name="end-user-experience-when-enrolling-a-samsung-knox-device"></a>Végfelhasználói élmény Samsung Knox-eszköz regisztrálása során
-
-Samsung Knox Standard-eszközökön az Intune többfelhasználós felügyelet támogatottak. Ez azt jelenti, hogy a végfelhasználók Azure AD-beli hitelesítő adataikkal jelentkezhetnek be az eszközökön. Az eszköz központilag felügyelt, függetlenül attól, hogy használatban van-e vagy sem. A bejelentkezett felhasználó hozzáfér az alkalmazásokhoz, és a rá érvényes szabályzatok is működnek. Amikor a felhasználók kijelentkezés összes alkalmazásadat törlődik.
-
-A Samsung Knox-eszközök regisztrálása során több szempontot figyelembe kell venni:
--   Ha a szabályzatok nem követelnek PIN-kódot, az eszköznek akkor is egy legalább négyjegyű PIN-kódra lesz szüksége a regisztrációhoz. Ha az eszköznek nincs PIN-kódja, a felhasználónak létre kell hoznia egyet.
--   A Munkahelyi csatlakozás tanúsítványai (WPJ) esetében nincs felhasználói tevékenység.
--   A felhasználónak megjelennek a szolgáltatásregisztráció adatai, valamint az alkalmazás funkciói.
--   A felhasználónak megjelennek a Knox-regisztráció adatai, valamint a Knox funkciói.
--   Ha kényszerítve van egy titkosítási szabályzat, a felhasználóknak be kell állítaniuk egy legalább hat karakterből álló összetett jelszót az eszközön.
--   A vállalati erőforrás-hozzáférés szolgáltatásai által leküldött tanúsítványok esetében nincsenek további felhasználói telepítési kérések.
-- Egyes régebbi Knox-eszközök további, vállalati erőforrás-hozzáféréshez használt tanúsítványokat kérhetnek a felhasználóktól.
-- Ha egy Samsung Mini-eszköz nem tudja telepíteni a WPJ-t **A tanúsítvány nem található** vagy a **Nem sikerült regisztrálni az eszközt** hibák miatt, telepítse a Samsung-vezérlőprogramok legújabb frissítéseit.
+A Samsung Knox standard-eszközökhöz [további előfeltételek](android-samsung-knox-mobile-enroll.md)tartoznak.
 
 ## <a name="next-steps"></a>További lépések
 
-- [Android Enterprise munkahelyi profil regisztrációk beállítása](android-work-profile-enroll.md)
-- [Dedikált Android Enterprise eszközregisztrációk beállítása](android-kiosk-enroll.md)
-- [Állítsa be a teljes körűen felügyelt Android Enterprise-regisztrációk](android-fully-managed-enroll.md)
+- [Androidos vállalati munkahelyi profil regisztrálásának beállítása](android-work-profile-enroll.md)
+- [Androidos vállalati dedikált eszközök regisztrálásának beállítása](android-kiosk-enroll.md)
+- [Androidos vállalati teljes körűen felügyelt regisztrációk beállítása](android-fully-managed-enroll.md)
+- [Androidos eszközök rendszergazdai regisztrációjának beállítása](android-enroll-device-administrator.md)
+

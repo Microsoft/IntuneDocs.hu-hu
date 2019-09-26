@@ -8,22 +8,21 @@ ms.author: erikje
 manager: dougeby
 ms.date: 12/06/2018
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
-ms.reviewer: dagerrit
+ms.reviewer: tisilver
 ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ae1685e2d252103591ebbe775aab32f2de017594
-ms.sourcegitcommit: 1cae690ca2ac6cc97bbcdf656f54b31878297ae8
+ms.openlocfilehash: f835bbf54cf1cdced759d612731aee1adc9d76bc
+ms.sourcegitcommit: 74911a263944f2dbd9b754415ccda6c68dae0759
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59900757"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71303674"
 ---
 # <a name="automatically-enroll-macos-devices-with-the-device-enrollment-program-or-apple-school-manager"></a>A Készülékregisztrációs Program vagy az Apple School Manager macOS-eszközök automatikus regisztrálása
 
@@ -74,8 +73,8 @@ A token létrehozásához használhatja az Apple portálján. Az Apple portálj�
 ### <a name="step-2-use-your-key-to-download-a-token-from-apple"></a>2. lépés Töltsön le a kulcsa segítségével egy tokent az Apple-től.
 
 1. Válasszon **token létrehozása az Apple Device Enrollment Program** vagy **hozzon létre egy tokent az Apple School Manager programon keresztül** nyissa meg a megfelelő Apple-portált, és jelentkezzen be vállalati Apple ID azonosítójával. Ezt az Apple ID használatával a jogkivonat megújításához.
-2.  A DEP, az Apple portálján válassza **Ismerkedés** a **Device Enrollment Program** > **kiszolgálók kezelése** > **MDM hozzáadása Kiszolgáló**.
-3.  Az Apple School kezelése, az Apple portálján válassza a **MDM kiszolgálók** > **MDM-kiszolgáló hozzáadása**.
+2. A DEP, az Apple portálján válassza **Ismerkedés** a **Device Enrollment Program** > **kiszolgálók kezelése** > **MDM hozzáadása Kiszolgáló**.
+3. Az Apple School kezelése, az Apple portálján válassza a **MDM kiszolgálók** > **MDM-kiszolgáló hozzáadása**.
 4. Az **MDM Server Name** (MDM-kiszolgáló neve) mezőben adja meg az MDM-kiszolgáló nevét, majd kattintson a **Next** (Tovább) gombra. A kiszolgálónév Önnek segít a mobileszköz-felügyeleti (MDM-) kiszolgáló azonosításában, nem ez a Microsoft Intune-kiszolgáló URL-címe vagy neve.
 
 5. Megjelenik a **Hozzáadás:&lt;Kiszolgálónév&gt;** párbeszédablak, és kéri **a nyilvános kulcs feltöltését**. Kattintson a **Choose File…** (Fájl kiválasztása…) elemre a .pem-fájl feltöltéséhez, majd válassza a **Next** (Tovább) lehetőséget.
@@ -108,7 +107,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhat egy regisztrációs profilt
 
     ![Készítsen egy képernyőképet a profilról.](./media/device-enrollment-program-enroll-ios/image04.png)
 
-3. A **Profil létrehozása** panelen adminisztrációs célból adja meg a profil **Nevét** és **Leírását**. Ezeket a felhasználók nem fogják látni. A **Név** mező felhasználásával dinamikus csoportot hozhat létre az Azure Active Directoryban. Használja a profilnevet az enrollmentProfileName paraméter meghatározásához, hogy ezzel a regisztrációs profillal rendelhesse hozzá az eszközöket. További információk az [Azure Active Directory-alapú dinamikus csoportokról](https://docs.microsoft.com/azure/active-directory/active-directory-groups-dynamic-membership-azure-portal#using-attributes-to-create-rules-for-device-objects).
+3. A **Profil létrehozása** panelen adminisztrációs célból adja meg a profil **Nevét** és **Leírását**. Ezeket a felhasználók nem fogják látni. A **Név** mező felhasználásával dinamikus csoportot hozhat létre az Azure Active Directoryban. Használja a profilnevet az enrollmentProfileName paraméter meghatározásához, hogy ezzel a regisztrációs profillal rendelhesse hozzá az eszközöket. További információk az [Azure Active Directory-alapú dinamikus csoportokról](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-dynamic-membership#rules-for-devices).
 
     ![A profil neve és leírása.](./media/device-enrollment-program-enroll-macos/createprofile.png)
 
@@ -132,29 +131,31 @@ Most, hogy telepítette a jogkivonatot, létrehozhat egy regisztrációs profilt
     | <strong>Részleg neve</strong> | Akkor jelenik meg, ha a felhasználó az aktiválás során a <strong>Konfiguráció névjegye</strong> elemre koppint. |
     | <strong>Részleg telefonszáma</strong> | Akkor jelenik meg, ha a felhasználó az aktiválás során a <strong>Segítségre van szüksége?</strong> gombra kattint. |
 
-  Választhat, hogy megjelenjenek-e a Beállítási asszisztens különböző képernyői, amikor a felhasználó beállítja az eszközt.
-  - Ha az **Elrejtés** lehetőséget választja, az adott képernyő nem fog megjelenni a beállítás során. Az eszköz beállítását követően a felhasználó a **Beállítások** menüben továbbra is beállíthatja az érintett funkciót.
-  - Ha a **Megjelenítés** lehetőséget választja, az adott képernyő megjelenik a beállítás során. A felhasználó egyes esetekben átugorhat egy-egy képernyőt anélkül, hogy bármit is tenne. A kihagyott funkciókat később az eszköz **Beállítások** menüjében állíthatja be. 
+    Választhat, hogy megjelenjenek-e a Beállítási asszisztens különböző képernyői, amikor a felhasználó beállítja az eszközt.
+    - Ha az **Elrejtés** lehetőséget választja, az adott képernyő nem fog megjelenni a beállítás során. Az eszköz beállítását követően a felhasználó a **Beállítások** menüben továbbra is beállíthatja az érintett funkciót.
+    - Ha a **Megjelenítés** lehetőséget választja, az adott képernyő megjelenik a beállítás során. A felhasználó egyes esetekben átugorhat egy-egy képernyőt anélkül, hogy bármit is tenne. A kihagyott funkciókat később az eszköz **Beállítások** menüjében állíthatja be. 
 
 
     | Beállítási asszisztens képernyőinek beállításai | Ha a **Megjelenítés** lehetőséget választja, a telepítés során az eszköz... |
     |------------------------------------------|------------------------------------------|
     | <strong>PIN-kód</strong> | Elkéri a felhasználótól a PIN-kódot. PIN-kód megadására mindig szükség van, kivéve, ha az eszköz biztonságát, illetve elérésének szabályozását valamilyen más módszer biztosítja (például teljes képernyős mód, amely egyetlen alkalmazás futtatására korlátozza az eszközt). |
     | <strong>Helyalapú szolgáltatások</strong> | Elkéri a felhasználó tartózkodási helyét. |
-    | <strong>Visszaállítás</strong> | Megjeleníti az **Alkalmazások és adatok** képernyőt. Ezen a képernyőn az eszköz beállításakor a felhasználónak lehetősége van adatok visszaállítására vagy átvitelére az iCloudos biztonsági mentésből. |
+    | <strong>Visszaállítás</strong> | Megjeleníti az alkalmazások & az adatképernyőt. Ezen a képernyőn az eszköz beállításakor a felhasználónak lehetősége van adatok visszaállítására vagy átvitelére az iCloudos biztonsági mentésből. |
     | <strong>iCloud és Apple ID</strong> | Lehetőséget nyújt a felhasználónak arra, hogy bejelentkezzen az **Apple ID**-jével, és használja az **iCloud** szolgáltatást.                         |
     | <strong>Feltételek és kikötések</strong> | Felkéri a felhasználót, hogy fogadja el az Apple használati feltételeit. |
     | <strong>Touch ID</strong> | Lehetőséget nyújt a felhasználónak ujjlenyomat-azonosítás beállítására az eszközön. |
     | <strong>Apple Pay</strong> | Lehetőséget nyújt a felhasználónak az Apple Pay beállítására az eszközön. |
     | <strong>Nagyítás</strong> | Lehetőséget nyújt a felhasználónak a képernyő nagyítására az eszköz beállításakor. |
     | <strong>Siri</strong> | Lehetőséget nyújt a felhasználónak a Siri beállítására. |
-    | <strong>Diagnosztikai adatok</strong> | Megjeleníti a **Diagnosztika** képernyőt. Ezen a képernyőn a felhasználó diagnosztikai adatokat küldhet az Apple-nek. |
+    | <strong>Diagnosztikai adatok</strong> | Jelenítse meg a diagnosztika képernyőt a felhasználó számára. Ezen a képernyőn a felhasználó diagnosztikai adatokat küldhet az Apple-nek. |
     | <strong>FileVault</strong> | Lehetőséget nyújt a felhasználónak a FileVault-titkosítás beállítására. |
     | <strong>iCloud-diagnosztika</strong> | Lehetőséget nyújt a felhasználónak arra, hogy iCloud diagnosztikai adatokat küldhessen az Apple-nek. |
-    | <strong>iCloud Storage</strong> | Lehetővé teheti a felhasználó icloud-alapú tárolók használatához. |    
-    | <strong>Megjeleníti a képviselő hangvételét</strong> | Lehetővé teheti a felhasználó, kapcsolja be a megjelenítendő képviselő hangvételét. |
-    | <strong>Megjelenés</strong> | A Megjelenés képernyő jelenik meg a felhasználónak. |
+    | <strong>iCloud tároló</strong> | Adjon lehetőséget a felhasználónak az iCloud-tároló használatára. |    
+    | <strong>Hangjelzés</strong> | Adja meg a felhasználó számára a megjelenítési hang bekapcsolásának lehetőségét. |
+    | <strong>Megjelenés</strong> | Jelenítse meg a megjelenés képernyőt a felhasználó számára. |
     | <strong>Regisztráció</strong>| Kötelezi a felhasználót az eszköz regisztrálására. |
+    | <strong>Adatvédelmi</strong>| Jelenítse meg az adatvédelmi képernyőt a felhasználó számára. |
+    | <strong>Képernyő időpontja</strong>| Jelenítse meg a képernyő időképernyőjét a felhasználó számára. |
    
 
 10. Válassza az **OK** gombot.

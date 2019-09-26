@@ -1,13 +1,12 @@
 ---
-title: Zebra mobilitási-bővítmények használata az Android-eszközökön a Microsoft Intune – Azure |} A Microsoft Docs
-description: A Microsoft Intune segítségével kezelheti és Android rendszerű Zebra mobilitási Extensions (MX) Zebra eszközökről. Tekintse meg az összes lépését, beleértve a vállalati portál alkalmazást, az alkalmazás közvetlen telepítéséhez, eszköz-rendszergazdai szerepkör hozzárendelése, hozzon létre egy StageNow profilt, és több.
+title: A zebra Mobility Extensions használata Android-eszközökön Microsoft Intune-Azure-ban | Microsoft Docs
+description: Az Android rendszerű Zebra Mobility Extensions (MX) használatával felügyelheti és használhatja a Microsoft Intune-t. Tekintse meg az összes lépést, beleértve a Céges portál alkalmazás telepítését, az alkalmazás Oldalazva társas viszony, az eszköz rendszergazdai szerepkörének hozzárendelését, a StageNow-profil létrehozását és egyebeket.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 04/23/2019
+ms.date: 09/16/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: ''
 ms.technology: ''
@@ -17,137 +16,149 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 69814b91978aa3cd74c4dc239b099883ae402af9
-ms.sourcegitcommit: b0cf661145ccc6e3518db620af199786a623a0d9
+ms.openlocfilehash: df7f81c5cda0fab90fa424033f1c7a34728b213f
+ms.sourcegitcommit: c19584b36448bbd4c8638d7cab552fe9b3eb3408
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64764771"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71304310"
 ---
-# <a name="use-and-manage-zebra-devices-with-zebra-mobility-extensions-in-microsoft-intune"></a>Használhatja és kezelheti a Zebra eszközök Zebra mobilitási bővítmények Microsoft Intune-ban
+# <a name="use-and-manage-zebra-devices-with-zebra-mobility-extensions-in-microsoft-intune"></a>Zebra-eszközök használata és kezelése a zebra Mobility Extensions használatával Microsoft Intune
 
 [!INCLUDE [azure_portal](./includes/azure_portal.md)]
 
-Intune szolgáltatások és alkalmazások kezelését és az eszköz beállítások konfigurálásával gazdag készletét tartalmazza. Ezek a beépített funkciók és beállítások Android-eszközök Zebra technológiák, más néven "Zebra eszközök" által gyártott kezelésére használhatók.
+Az Intune számos funkciót tartalmaz, többek között az alkalmazások kezelését és az eszközbeállítások konfigurálását. Ezek a beépített funkciók és beállítások a zebra Technologies által gyártott Android-eszközöket, más néven "Zebra-eszközöket" kezelnek.
 
-Android-eszközön használja **mobilitási bővítmények MX** profilok testreszabásához, vagy adjon hozzá további Zebra-specifikus beállításokat.
+Android-eszközökön használja a **Mobility Extensions (MX)** profilokat a további Zebra-specifikus beállítások testreszabásához vagy hozzáadásához.
 
-Ez a cikk bemutatja, hogyan Zebra mobilitási bővítmények MX használandó Zebra eszközökön a Microsoft Intune-ban.
+Ez a cikk bemutatja, hogyan használható a zebra Mobility Extensions (MX) a zebra-eszközökön a Microsoft Intune.
 
 Ez a funkció az alábbiakra vonatkozik:
 
 - Android
 
-A vállalat a kiskereskedelmi, a gyári és másokról Zebra eszközök használjuk. Például egy közvetítő Ön és a környezet tartalmaz Zebra mobileszközök értékesítési hozzárendeli által használt több ezer. Az Intune segítségével kezelheti ezeket az eszközöket a mobileszköz-felügyelet (MDM) megoldás részeként.
+A vállalat felhasználhatja a zebra-eszközöket a lakossági, a gyári szinten, és így tovább. Például Ön egy kiskereskedő, és a környezet több ezer olyan Zebra-mobil eszközt is tartalmaz, amelyeket a Sales Associates használ. Az Intune a mobileszköz-kezelési (MDM) megoldás részeként segíti az eszközök felügyeletét.
 
-Az Intune-ban, Zebra eszközöket regisztrálhatja, az üzleti alkalmazások telepítése az eszközökre. "Eszköz" profilok lehetővé teszik a Zebra-specifikus beállítások kezeléséhez MX-profilok létrehozása.
+Az Intune használatával olyan Zebra-eszközöket regisztrálhat, amelyekkel az üzletági alkalmazásokat az eszközökön helyezheti üzembe. Az "eszköz konfigurációja" profilok lehetővé teszik, hogy MX-profilokat hozzon létre a zebra-specifikus beállítások kezeléséhez.
+
+> [!NOTE]
+> Alapértelmezés szerint a zebra MX API-k nincsenek zárolva az eszközökön. Az eszköz az Intune-ban való regisztrálása előtt lehetséges, hogy az eszköz rosszindulatú módon sérülhet. Ha az eszköz tiszta állapotban van, javasoljuk, hogy zárolja az MX API-kat az Access Manager (AccessMgr) használatával. Kiválaszthatja például, hogy csak a megbízható Céges portál alkalmazás és alkalmazások számára engedélyezett az MX API-k hívása.
+>
+> További információ: [az eszköz zárolása](https://developer.zebra.com/community/home/blog/2017/04/11/locking-down-your-device) a zebra webhelyén.
 
 ## <a name="before-you-begin"></a>Előkészületek
 
-- Győződjön meg arról, hogy az StageNow Zebra technológiák asztali alkalmazás legújabb verziójával rendelkezik.
-- Ügyeljen arra, hogy ellenőrizze, hogy [Zebra a teljes MX funkció mátrix](http://techdocs.zebra.com/mx/compatibility) (Zebra a webhely megnyitása) ellenőrizze, hogy a létrehozott profilok kompatibilisek-e az eszköz MX verziója, az operációs rendszer verziója és modell.
-- Bizonyos eszközök, például TC20/25-eszközök nem támogatják a rendelkezésre álló MX a funkciók StageNow. Ügyeljen arra, hogy ellenőrizze, hogy [Zebra a szolgáltatás mátrix](http://techdocs.zebra.com/mx/tc2x/) (Zebra a webhely megnyitása) frissített támogatási információkat.
+- Győződjön meg arról, hogy a StageNow asztali alkalmazás legújabb verziója található a zebra Technologies-től.
+- Ügyeljen arra, hogy a [Zebra teljes MX-szolgáltatásának mátrixát](http://techdocs.zebra.com/mx/compatibility) (a zebra webhelyének megnyitása) ellenőrizze, hogy az Ön által létrehozott profilok kompatibilisek-e az eszköz MX verziójával, az operációs rendszer verziójával és a modellel.
+- Bizonyos eszközök, például a TC20/25 eszközök, nem támogatják az összes elérhető MX-funkciót a StageNow-ben. Győződjön meg arról, hogy a [Zebra funkciójának mátrixa](http://techdocs.zebra.com/mx/tc2x/) (a zebra webhelyének megnyitása) a frissített támogatási információkra vonatkozik.
 
-## <a name="step-1-install-the-latest-company-portal-app"></a>1. lépés: A legújabb vállalati portál alkalmazás telepítésekor
+## <a name="step-1-install-the-latest-company-portal-app"></a>1\. lépés: A legújabb Céges portál alkalmazás telepítése
 
-Az eszközön nyissa meg a Google Play áruházban, és töltse le, és az Intune vállalati portál alkalmazás telepítése a Microsoft. Amikor telepíti a Google Play áruházból, a vállalati portál alkalmazás lekérdezi a frissítéseket, és automatikusan kijavítja.
+Az eszközön nyissa meg a Google Play áruházat. Töltse le és telepítse a Intune Céges portál alkalmazást a Microsofttól. A Google Play áruházból való telepítéskor a Céges portál alkalmazás automatikusan frissítéseket és javításokat kap.
 
-Ha a Google Play áruházban nem érhető el, töltse le a [a Microsoft Intune vállalati portál Android](https://www.microsoft.com/download/details.aspx?id=49140) (nyit meg egy másik Microsoft-webhelyhez), és [közvetlen telepítése,](#sideload-the-company-portal-app) (a jelen cikkben). Ha ezzel a módszerrel telepíti, az alkalmazás nem kapják a frissítéseket, vagy automatikusan kijavítja. Érdemes rendszeresen frissíteni, és manuálisan javítása az alkalmazás.
+Ha a Google Play nem érhető el, töltse le az [Androidhoz készült Microsoft Intune céges portál](https://www.microsoft.com/download/details.aspx?id=49140) (megnyílik egy másik Microsoft-webhely), és [Oldalazva társas viszony](#sideload-the-company-portal-app) (ebben a cikkben). Ha így van telepítve, az alkalmazás nem kap automatikusan frissítéseket vagy javításokat. Győződjön meg arról, hogy rendszeresen frissíti az alkalmazást, és manuálisan javítja a javítást.
 
-### <a name="sideload-the-company-portal-app"></a>A céges portál alkalmazás közvetlen telepítése
+### <a name="sideload-the-company-portal-app"></a>A Céges portál alkalmazás Oldalazva társas viszony
 
-"Saját telepítési" akkor, ha a Google Play alkalmazás telepítése nem használja. A vállalati portál alkalmazás közvetlen telepítése StageNow használja. 
+"Közvetlen telepítési", ha nem használja a Google Play alkalmazást az alkalmazások telepítéséhez. A Céges portál alkalmazás Oldalazva társas viszony használja a StageNow. 
 
-Az alábbi lépéseket működéséről nyújt áttekintést. Részletes Zebra a dokumentációjában talál. [Egy mobileszköz-felügyeleti StageNow használatával regisztrálása](http://techdocs.zebra.com/stagenow/3-1/Profiles/enrollmdm/) (Zebra a webhely megnyitása) jól lehet.
+A következő lépések áttekintést nyújtanak. További részletekért lásd a zebra dokumentációját. [Regisztrálás egy Mdm a StageNow használatával](http://techdocs.zebra.com/stagenow/3-1/Profiles/enrollmdm/) (a zebra webhelyének megnyitása) lehet jó erőforrás.
 
-1. StageNow, hozzon létre egy profilt **Regisztrálás az MDM-ben**.
-2. A **üzembe helyezési**, válassza ki a mobileszköz-kezelési ügynök fájl letöltéséhez.
-3. Állítsa be a **támogatási alkalmazás** és **konfiguráció letöltése** lépések **nem**.
-4. A **letöltése MDM**válassza **fájl adatátviteli/másolása**. Adja hozzá a forrás- és a vállalati portál Android csomag-(APK-).
-5. A **indítsa el a mobileszköz-kezelési**, módosítsa az alapértelmezett értékeket, mint-akkor. Adja hozzá a következő adatokat:
+1. A StageNow-ben hozzon létre egy profilt a **regisztráláshoz egy Mdm**.
+2. Az **üzembe helyezés**területen válassza a Mdm-ügynök fájljának letöltését.
+3. Állítsa be a **támogatási alkalmazást** , és **töltse le a konfigurációs** lépéseket a **nem**értékre.
+4. A **Mdm letöltése**lapon válassza a **fájl átvitele/másolása**lehetőséget. Adja hozzá a Céges portál android-csomag (APK) forrását és célját.
+5. Az **Indítás Mdm**területen hagyja meg az alapértelmezett értékeket. Adja hozzá a következő adatokat:
 
-    - **Csomag neve**: `com.microsoft.windowsintune.companyportal`
-    - **Osztálynév**: `com.microsoft.windowsintune.companyportal.views.SplashActivity`
+    - **Csomag neve**:`com.microsoft.windowsintune.companyportal`
+    - **Osztály neve**:`com.microsoft.windowsintune.companyportal.views.SplashActivity`
 
-Továbbra is a profil közzétételét és felhasználását, a StageNow alkalmazást az eszközön. A vállalati portál alkalmazás van telepítve, és megnyitja az eszközön.
-
-> [!TIP]
-> StageNow, és hogyan kezeli a további információkért lásd: [StageNow Android-eszköz átmeneti](https://www.zebra.com/us/en/products/software/mobile-computers/mobile-app-utilities/stagenow.html) (Zebra a webhely megnyitása).
-
-## <a name="step-2-confirm-the-company-portal-app-has-device-administrator-role"></a>2. lépés: Győződjön meg róla a vállalati portál alkalmazás eszköz-rendszergazdai szerepkör
-
-A vállalati portál alkalmazás eszköz-rendszergazdai Android-eszközök kezeléséhez szükséges. Az eszköz-rendszergazdai szerepkör aktiválásához bizonyos Zebra eszközök közé tartozik a felhasználói felület (UI) az eszközön. Ha az eszköz felhasználói Felületet is tartalmaz, a vállalati portál alkalmazást a kéri megadni az eszköz-rendszergazdai során [regisztrációs](#step-3-enroll-the-device-in-to-intune) (a jelen cikkben).
-
-Ha egy felhasználói felület nem érhető el, használja a **DevAdmin Manager** StageNow hozhat létre egy profilt, amely manuálisan engedélyezi az eszköz-rendszergazdai a vállalati portál alkalmazásba a.
-
-Az alábbi lépéseket működéséről nyújt áttekintést. Részletes Zebra a dokumentációjában talál. 
-[Lapozófájl-kapacitás mód beállítása akkumulátor, eszköz-rendszergazdai](https://zebratechnologies.force.com/s/article/Set-Battery-Swap-Mode-as-Device-Administrator-using-StageNow-Tool) (Zebra a webhely megnyitása) jól lehet.
-
-1. StageNow, hozzon létre egy profilt, és válassza **Xpert mód**.
-2. Adjon hozzá **DevAdmin Manager** a profilhoz.
-3. Állítsa be **felügyeleti művelet** való **eszköz rendszergazdaként bekapcsolása**.
-4. Állítsa be **eszköz felügyeleti csomag neve** való `com.microsoft.windowsintune.companyportal`.
-5. Állítsa be **eszközt rendszergazdai osztálynév** való `com.microsoft.omadm.client.PolicyManagerReceiver`.
-
-Továbbra is a profil közzétételét és felhasználását, a StageNow alkalmazást az eszközön. A vállalati portál alkalmazást az eszköz-rendszergazdai szerepkör kapnak.
-
-## <a name="step-3-enroll-the-device-in-to-intune"></a>3. lépés: Az eszköz regisztrálása az Intune-bA
-
-Az első két lépések elvégzése után a vállalati portál alkalmazás telepítve van az eszközön. Az eszköz készen áll a regisztrálhatók az Intune-hoz.
-
-[Android-eszközök regisztrálása](android-enroll.md) felsorolja azokat a lépéseket. Ha sok Zebra eszköze van, előfordulhat, hogy használni kívánt egy [eszközregisztráció-kezelői (DEM-) fiók](device-enrollment-manager-enroll.md). DEM-fiókkal is eltávolítja az a lehetőség törli a regisztrációt a céges portál alkalmazásból, úgy, hogy a felhasználók nem könnyű az eszköz regisztrációját az.
-
-## <a name="step-4-create-a-device-management-profile-in-stagenow"></a>4. lépés: StageNow a felügyeleti profil létrehozása
-
-StageNow használatával hozzon létre egy profilt, amely az eszköz a kezelni kívánt beállításait konfigurálja. Részletes Zebra a dokumentációjában talál. [Profilok](http://techdocs.zebra.com/stagenow/3-2/stagingprofiles/) (Zebra a webhely megnyitása) jól lehet.
-
-A profil létrehozásakor a StageNow, a legutóbbi lépésben, válasszon **exportálása az MDM-**. Ez létrehoz egy XML-fájlt. Mentse el ezt a fájlt. Egy későbbi lépésben kell.
+Folytassa a profil közzétételével, és használja a StageNow alkalmazással az eszközön. A Céges portál alkalmazás telepítve van és meg van nyitva az eszközön.
 
 > [!TIP]
-> Azt javasoljuk, hogy a profil tesztelése előtt eszközökre telepíti központilag azt a szervezetében. Az utolsó lépésben a számítógépen, a StageNow-profilok létrehozása során teszteléséhez használja a **tesztelése** beállítások. Ezt követően lefoglalhatja a StageNow által létrehozott fájlt a StageNow alkalmazást az eszközön. 
-> 
-> A StageNow alkalmazást az eszközön a profil tesztelésekor létrehozott naplók jeleníti meg. [Használat StageNow naplók Zebra az Intune-ban Android rendszerű eszközökön](android-zebra-mx-logs-troubleshoot.md) StageNow naplók segítségével megismerheti a hibák szóló információt tartalmaz.
+> További információ a StageNow-ről és azokról: [StageNow Android-eszközök átmeneti](https://www.zebra.com/us/en/products/software/mobile-computers/mobile-app-utilities/stagenow.html) beállítása (a zebra webhely megnyitása).
 
-> [!NOTE]
-> Alkalmazások hivatkozhat, frissítési csomagok vagy más frissítésfájlok StageNow profilját szeretné-e az eszközt, ezeket a frissítéseket. A frissítések beszerzéséhez a eszköz kell csatlakozni a StageNow rendszerbe állítási kiszolgáló a profil alkalmazása esetén. 
-> 
-> Vagy használhatja a beépített funkciók az Intune-ban ezeket a módosításokat, beleértve a beolvasásához: 
-> - Az alkalmazás-felügyeleti funkciót [hozzáadása](apps-add.md), [üzembe helyezése](apps-deploy.md), frissítéséhez és [figyelő](apps-monitor.md) alkalmazások.
-> - Kezelése [rendszer és alkalmazás-frissítések](device-restrictions-android-for-work.md#device-owner-only) Android Enterprise rendszerű eszközökön
+## <a name="step-2-confirm-the-company-portal-app-has-device-administrator-role"></a>2\. lépés: Ellenőrizze, hogy a Céges portál alkalmazás rendelkezik-e rendszergazdai szerepkörrel
 
-Miután a fájl teszteléséhez a következő lépés az telepítse a profilt az eszközök Intune-nal.
+Az Céges portál alkalmazásnak az Android-eszközök felügyeletéhez az eszköz rendszergazdájának kell lennie. Az eszköz rendszergazdai szerepkörének aktiválásához néhány Zebra-eszköz tartalmaz egy felhasználói felületet (UI) az eszközön. Ha az eszköz felhasználói felületet tartalmaz, a Céges portál alkalmazás bekéri a felhasználót, hogy a [regisztráció](#step-3-enroll-the-device-in-to-intune) során adja meg az eszköz rendszergazdáját (ebben a cikkben).
 
-> [!NOTE]
-> Minden eszköz egy profilt. Ha több StageNow profilt az eszközökön telepítendő, a StageNow profilok exportálása, és a beállítások egyetlen XML-fájlban egyesíteni, az Intune-hoz való hozzáadása előtt. 
-> 
-> Két, ugyanabban a XML-fájlban ugyanahhoz a tulajdonsághoz konfiguráló beállítások nem szeretné. A célja, hogy az eszköz beállításai között.
+Ha a felhasználói felület nem érhető el, a StageNow **DevAdmin-kezelőjével** létrehozhat egy profilt, amely manuálisan engedélyezi az eszköz rendszergazdájának az céges portál alkalmazást.
 
-## <a name="step-5-create-a-profile-in-intune"></a>5. lépés: Hozzon létre egy profilt az Intune-ban
+A következő lépések áttekintést nyújtanak. További részletekért lásd a zebra dokumentációját. 
+[Akkumulátor-swap mód beállítása az eszköz rendszergazdájaként](https://zebratechnologies.force.com/s/article/Set-Battery-Swap-Mode-as-Device-Administrator-using-StageNow-Tool) (a zebra webhelyének megnyitása) lehet jó erőforrás.
 
-Az Intune-ban eszközkonfigurációs profil létrehozása:
+1. A StageNow-ben hozzon létre egy profilt, és válassza a **Xpert mód**lehetőséget.
+2. Adja hozzá a **DevAdmin-kezelőt** a profilhoz.
+3. Eszköz- **rendszergazdaként való bekapcsoláshoz**állítsa be az **eszközkezelés műveletet** .
+4. Adja meg az **eszköz rendszergazdai csomagjának nevét** a `com.microsoft.windowsintune.companyportal`következőre:.
+5. Adja meg az **eszköz rendszergazdai osztályának nevét** a `com.microsoft.omadm.client.PolicyManagerReceiver`következőre:.
 
-1. Az a [az Azure portal](https://portal.azure.com), jelölje be **minden szolgáltatás** > szűréséhez **Intune** > Válassza ki **Intune**.
+Folytassa a profil közzétételével, és használja a StageNow alkalmazással az eszközön. A Céges portál alkalmazás megkapja az eszköz rendszergazdai szerepkörét.
+
+## <a name="step-3-enroll-the-device-in-to-intune"></a>3\. lépés: Az eszköz regisztrálása az Intune-ban
+
+Az első két lépés elvégzése után a Céges portál alkalmazás telepítve van az eszközön. Az eszköz készen áll az Intune-ba való regisztrálásra.
+
+Az [Android-eszközök regisztrálása](android-enroll.md) a lépéseket tartalmazza. Ha sok Zebra-eszközzel rendelkezik, érdemes lehet egy [eszköz beléptetési kezelő (DEM) fiókot](device-enrollment-manager-enroll.md)használni. A DEM-fiók használatával eltávolítja a Céges portál alkalmazásból való regisztráció törlésének lehetőségét is, így a felhasználók nem tudják törölni az eszköz regisztrációját.
+
+## <a name="step-4-create-a-device-management-profile-in-stagenow"></a>4\. lépés: Eszközkezelő profil létrehozása a StageNow-ben
+
+A StageNow használatával hozzon létre egy profilt, amely az eszközön kezelni kívánt beállításokat konfigurálja. További részletekért lásd a zebra dokumentációját. [Profilok](http://techdocs.zebra.com/stagenow/3-2/stagingprofiles/) (a zebra webhelyének megnyitása) lehet jó erőforrás.
+
+Amikor létrehozza a profilt a StageNow-ben, az utolsó lépésben válassza az **EXPORTÁLÁS Mdm**lehetőséget. Ez a lépés létrehoz egy XML-fájlt. Mentse el ezt a fájlt. Egy későbbi lépésben szüksége lesz rá.
+
+- Javasoljuk, hogy tesztelje a profilt, mielőtt üzembe helyezné a szervezetében lévő eszközökön. Ha tesztelni szeretné, az utolsó lépésben, amikor a StageNow használatával hoz létre profilokat a számítógépen, használja a **tesztelési** lehetőségeket. Ezután használja fel a StageNow által generált fájlt a StageNow alkalmazással az eszközön.
+
+  A StageNow alkalmazás az eszközön megjeleníti a profil tesztelésekor generált naplókat. A [StageNow-naplók használata az Android rendszerű Zebra-eszközökön az Intune-ban](android-zebra-mx-logs-troubleshoot.md) található információk a StageNow-naplók használatáról a hibák megismerése érdekében.
+
+- Ha az alkalmazásokra hivatkozik, frissíti a csomagokat, vagy frissít más fájlokat a StageNow-profilban, azt szeretné, hogy az eszköz megkapja ezeket a frissítéseket. A frissítések beszerzéséhez az eszköznek csatlakoznia kell a StageNow központi telepítési kiszolgálójához a profil alkalmazása során. 
+
+  Az Intune beépített funkciói az alábbi módosításokat is igénybe vehetik, többek között:
+
+  - Alkalmazás-felügyeleti funkciók alkalmazások [hozzáadásához](apps-add.md), [üzembe helyezéséhez](apps-deploy.md), frissítéséhez és [figyeléséhez](apps-monitor.md) .
+  - A [rendszer-és alkalmazás-frissítések](device-restrictions-android-for-work.md#device-owner-only) kezelése az Android Enterprise rendszert futtató eszközökön
+
+A fájl tesztelése után a következő lépés a profil üzembe helyezése az eszközökön az Intune használatával.
+
+- Egy vagy több MX-profilt is üzembe helyezhet egy eszközön.
+- Több StageNow-profilt is exportálhat, és egyetlen XML-fájlba egyesítheti a beállításokat. Ezután töltse fel az XML-fájlt az Intune-ba az eszközökre való üzembe helyezéshez.
+
+  > [!WARNING]
+  > Ha több MX-profil is ugyanahhoz a csoporthoz van rendelve, és ugyanazt a tulajdonságot konfigurálja, ütközések lesznek az eszközön.
+  >
+  > Ha ugyanaz a tulajdonság többször van konfigurálva egyetlen MX-profilban, akkor az utolsó konfiguráció WINS.
+
+## <a name="step-5-create-a-profile-in-intune"></a>5\. lépés: Profil létrehozása az Intune-ban
+
+Az Intune-ban hozzon létre egy eszköz konfigurációs profilt:
+
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
 3. Adja meg a következő tulajdonságokat:
 
-    - **Név**: Adja meg az új profil leíró nevét.
+    - **Név**: Adjon meg egy leíró nevet az új profilhoz.
     - **Description** (Leírás): Adja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
     - **Platform**: Válassza az **Android** lehetőséget.
-    - **Profil típusa**: Válassza ki **MX-profil (csak Zebra)**.
+    - **Profil típusa**: **MX-profil kiválasztása (csak Zebra)** .
 
-4. A **MX profil .xml formátumú**, adja hozzá az XML-profil fájl [StageNow exportált](#step-4-create-a-device-management-profile-in-stagenow) (a jelen cikkben).
-5. A módosítások mentéséhez válassza az **OK** > **Létrehozás** lehetőséget. A házirend létrehozása és jelennek meg a listában.
+4. A **. XML formátumú MX-profilban**adja hozzá a [StageNow exportált](#step-4-create-a-device-management-profile-in-stagenow) XML-profil fájlját (ebben a cikkben).
+5. A módosítások mentéséhez válassza az **OK** > **Létrehozás** lehetőséget. Ekkor létrejön a szabályzat, és megjelenik a listában.
 
-A profil létrejött, de egyelőre nem csinál semmit. Ezután [rendelje hozzá a profilt](device-profile-assign.md) és [állapotát nyomon](device-profile-monitor.md).
+    > [!TIP]
+    > Biztonsági okokból a mentés után nem jelenik meg a profil XML-szövege. A szöveg titkosítva van, és csak a csillag (`****`) látható. A hivatkozáshoz ajánlott az MX-profilok másolatait menteni, mielőtt hozzáadja őket az Intune-hoz.
 
-A következő alkalommal ellenőrzi az eszköz konfigurációs frissítések, az MX-profil telepítve azon az eszközön. Eszközök szinkronizálása az Intune-nal, amikor regisztrálják az eszközöket, és körülbelül 8 óránként. Emellett [kényszerítheti az Intune-ban](device-sync.md). Vagy nyissa meg az eszközön a **céges portál alkalmazás** > **beállítások** > **szinkronizálási**. 
+A profil létrejött, de egyelőre nem csinál semmit. Ezután [rendelje hozzá a profilt](device-profile-assign.md) , és [Figyelje annak állapotát](device-profile-monitor.md).
 
-> [!TIP]
-> - Biztonsági okokból nem jelenik meg a profil XML-szöveg után mentse. A szöveg van titkosítva, és megjelenik csak csillagot (`****`). Referenciaként azt javasoljuk, hogy az MX-profilok másolatának mentése, mielőtt hozzáadhatná őket az Intune-hoz.
-> 
-> - Profil frissítése után Zebra eszközökhöz van hozzárendelve, hozzon létre egy frissített StageNow XML-fájlt, módosítsa a meglévő Intune-profilt, és adja hozzá az új StageNow XML-fájlt. Ez az új fájl felülírja az előző StageNow házirendet a profilban.
+Amikor az eszköz legközelebb ellenőrzi a konfigurációs frissítéseket, a rendszer az MX-profilt telepíti az eszközre. Az eszközök az Intune-nal szinkronizálhatók, ha az eszközök regisztrálva vannak, majd körülbelül 8 óránként. [A szinkronizálást is kényszerítheti az Intune-ban](device-sync.md). Vagy az eszközön nyissa meg a **céges portál** > **Alkalmazásbeállítások** > **szinkronizálását**. 
+
+## <a name="update-a-zebra-mx-configuration-after-its-assigned"></a>A zebra MX konfigurációjának frissítése a hozzárendelés után
+
+A zebra-eszközök MX-specifikus konfigurációjának frissítéséhez a következőket teheti: 
+
+- Hozzon létre egy frissített StageNow XML-fájlt, szerkessze a meglévő Intune MX-profilt, és töltse fel az új StageNow XML-fájlt. Ez az új fájl felülírja az előző szabályzatot a profilban, és lecseréli az előző konfigurációt.
+- Hozzon létre egy új StageNow XML-fájlt, amely különböző beállításokat konfigurál, hozzon létre egy új Intune MX-profilt, töltse fel az új StageNow XML-fájlt, és rendelje hozzá ugyanahhoz a csoporthoz. Több profil is telepítve van. Ha az új profil olyan beállításokat konfigurál, amelyek már létező profilokban vannak, akkor ütközések történnek.
 
 ## <a name="next-steps"></a>További lépések
 
 - [Rendelje hozzá a profilt](device-profile-assign.md), és [kövesse nyomon az állapotát](device-profile-monitor.md).
-- [StageNow naplók használata a hibaelhárításhoz Zebra eszközök](android-zebra-mx-logs-troubleshoot.md).
+- [Használjon StageNow-naplókat a zebra-eszközök hibakereséséhez](android-zebra-mx-logs-troubleshoot.md).

@@ -8,7 +8,6 @@ ms.author: erikje
 manager: dougeby
 ms.date: 02/22/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -17,12 +16,12 @@ ROBOTS: ''
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cf5611b3b9292222582d66cae39b4f751279dcec
-ms.sourcegitcommit: 1cae690ca2ac6cc97bbcdf656f54b31878297ae8
+ms.openlocfilehash: 0bd4e902631b197df46ece2ea59b30f04968f56b
+ms.sourcegitcommit: 4b83697de8add3b90675c576202ef2ecb49d80b2
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59897680"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "71303337"
 ---
 # <a name="require-multi-factor-authentication-for-intune-device-enrollments"></a>Többtényezős hitelesítés megkövetelése az Intune-os eszközregisztrációhoz
 
@@ -51,7 +50,7 @@ Ha meg szeretné követelni a többtényezős hitelesítést a regisztráció so
 >Ne konfiguráljon **eszközalapú hozzáférési szabályokat** a Microsoft Intune-regisztrációhoz.
 
 1. Jelentkezzen be a [Microsoft Azure Portálra](https://portal.azure.com) a hitelesítő adataival.
-2. A portálon lépjen a **Intune** válassza **feltételes hozzáférési**. A feltételes hozzáférés csomópont elérhető *Intune* van ugyanazon a csomóponton, elérhető *Azure ad-ben*.
+2. A portálon nyissa meg az **Intune** -t, és válassza a **feltételes hozzáférés**lehetőséget. Az *Intune-ból* elérhető feltételes hozzáférési csomópont ugyanaz a csomópont, amelyet az *Azure AD-ből* is el lehet érni.
 4. Válassza az **Új szabályzat** lehetőséget.
 5. Az **Új** szabályzat mezőbe írjon be egy beszédes nevet a szabályzathoz.
 6. A **Hozzárendelések** szakaszban válassza a **Felhasználók és csoportok** lehetőséget. 

@@ -8,7 +8,6 @@ ms.author: dougeby
 manager: dougeby
 ms.date: 03/11/2019
 ms.topic: troubleshooting
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.technology: ''
@@ -17,12 +16,12 @@ ms.reviewer: sumitp
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df5b20be667159689aaaee9a790c0a4c5b5864fd
-ms.sourcegitcommit: 1cae690ca2ac6cc97bbcdf656f54b31878297ae8
+ms.openlocfilehash: 8a4e6cbf2d9edcff83ae756c2dbcf098cae0ae54
+ms.sourcegitcommit: 73fbecf7cee4fdfc37d3c30ea2007d2a9a6d2d12
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59900859"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "71301862"
 ---
 # <a name="use-the-troubleshooting-portal-to-help-users-at-your-company"></a>Segítségnyújtás a céges felhasználóknak a hibaelhárítási portál használatával
 
@@ -47,8 +46,7 @@ Ha egy felhasználó Intune-nal kapcsolatos műszaki problémával fordul az üg
 
 A hibaelhárítási panelen a **Felhasználó kiválasztása** hivatkozással lehet megnézni a felhasználó adatait. A felhasználói adatok segítséget nyújtanak a felhasználók és eszközeik aktuális állapotának áttekintésében.  
 
-1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com).
-2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget. Az Intune a **Figyelés + felügyelet** szakaszban található.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** panelen válassza a **Hibaelhárítás** lehetőséget.
 4. A felhasználó kiválasztásához kattintson a **Kijelölés** lehetőségre.
 5. Jelöljön ki egy felhasználót a megfelelő név vagy e-mail cím beírásával. Kattintson a **Kiválasztás** lehetőségre. A felhasználóval kapcsolatos hibaelhárítási információ a Hibaelhárítás panelen jelenik meg. Az alábbi táblázat tartalmazza az információk leírását.
@@ -60,7 +58,7 @@ A hibaelhárítási panelen a **Felhasználó kiválasztása** hivatkozással le
 
 A **Hibaelhárítás** panel használatával felhasználói információkat tekinthet meg.
 
-![](/intune/media/troubleshooting-dash.png)
+![Hibaelhárítási irányítópult, a következő táblázatban leírt számozott területtel](/intune/media/troubleshooting-dash.png)
 
 | Terület | Name (Név) | Leírás |
 | ---  | ---  | ---         |
@@ -108,7 +106,7 @@ Devices managed by Intune or by users managed by Intune or Azure AD.
 
 ### App protection status
 
-An app protection policy is available to mobile apps that integrate with Enterprise Mobility Solution (EMS) technologies. These policies give a baseline of protection for your corporate data when it is downloaded to mobile apps, including the Office mobile apps. 
+An app protection policy is available to mobile apps that integrate with Enterprise Mobility Solution (EMS) technologies. These policies give a baseline of protection for your corporate data when it is downloaded to mobile apps, including the Office mobile apps. 
 
 | Property    | Description                                                                           |
 |-------------|---------------------------------------------------------------------------------------|
@@ -121,7 +119,7 @@ An app protection policy is available to mobile apps that integrate with Enterpr
 
 ## App protection policies reference
 
-An app protection policy is available to mobile apps that integrate with EMS technologies.These policies give a baseline of protection for your corporate data when it is downloaded to mobile apps, including the Office mobile apps. 
+An app protection policy is available to mobile apps that integrate with EMS technologies.These policies give a baseline of protection for your corporate data when it is downloaded to mobile apps, including the Office mobile apps. 
 
 ### Properties
 
@@ -154,7 +152,7 @@ Devices managed by Intune or by users managed by Intune or Azure AD.
 
 ## Compliance policies reference
 
-Makes sure that the devices used to access company apps and data, comply with certain rules like using a PIN to access the device, and encryption of data stored on the device.
+Makes sure that the devices used to access company apps and data, comply with certain rules like using a PIN to access the device, and encryption of data stored on the device.
 
 ### Properties
 
@@ -186,7 +184,7 @@ Devices managed by Intune or by users managed by Intune or Azure AD.
 
 ### App protection policies
 
-An app protection policy is available to mobile apps that integrate with EMS technologies. These policies give a baseline of protection for your corporate data when it is downloaded to mobile apps, including the Office mobile apps. 
+An app protection policy is available to mobile apps that integrate with EMS technologies. These policies give a baseline of protection for your corporate data when it is downloaded to mobile apps, including the Office mobile apps. 
 
 | Property    | Description                                                                           |
 |-------------|---------------------------------------------------------------------------------------|
@@ -199,7 +197,7 @@ An app protection policy is available to mobile apps that integrate with EMS tec
 
 ## Configuration policies reference
 
-An app configuration policy is available to mobile apps with vendor-specific configuration. 
+An app configuration policy is available to mobile apps with vendor-specific configuration. 
 
 ### Properties
 
@@ -232,7 +230,7 @@ Devices managed by Intune or by users managed by Intune or Azure AD.
 
 ### App protection policies
 
-An app protection policy is available to mobile apps that integrate with EMS technologies. These policies give a baseline of protection for your corporate data when it is downloaded to mobile apps, including the Office mobile apps. 
+An app protection policy is available to mobile apps that integrate with EMS technologies. These policies give a baseline of protection for your corporate data when it is downloaded to mobile apps, including the Office mobile apps. 
 
 | Property    | Description                                                                           |
 |-------------|---------------------------------------------------------------------------------------|
@@ -252,7 +250,7 @@ A Regisztrációs hibák táblázat a sikertelen regisztrációs kísérleteket 
 | Táblázatoszlop | Leírás |
 |-------------|----------|
 | Regisztráció kezdete | A felhasználó első regisztrációjának kezdési időpontja. |
-| Operációs rendszer | Az eszköz operációs rendszere. |
+| OS | Az eszköz operációs rendszere. |
 | Operációs rendszer verziója | Az eszköz operációs rendszerének verziója. |
 | Hiba | A hiba oka. |
 
@@ -260,7 +258,7 @@ A Regisztrációs hibák táblázat a sikertelen regisztrációs kísérleteket 
 
 Egy hibasort kijelölve további adatokat jeleníthet meg.
 
-| Section | Leírás |
+| `Section` | Leírás |
 |-------------|----------|
 | Hiba részletei | A hiba részletes leírása. |
 | Lehetséges megoldások | Javasolt lépések a hiba megoldásához. Bizonyos hibákat nem lehet javítani. |
@@ -277,15 +275,15 @@ Egy hibasort kijelölve további adatokat jeleníthet meg.
 | Sikertelen regisztrációs hitelesítés | Valaki a Céges portál régi verziójával próbált regisztrálni. |
 | Nem támogatott eszköz | Az eszköz nem felel meg az Intune-regisztráció minimális követelményeinek. |
 | Regisztrációs korlátozások miatt letiltva | A regisztráció le lett tiltva egy rendszergazda által konfigurált regisztrációs korlátozás miatt. |
-| Eszköz verziószáma túl alacsony | A rendszergazda hogyan konfigurálta az eszközregisztrációs korlátozás igénylő magasabb eszköz verzióját. |
-| Eszköz-verziója túl magas | A rendszergazda hogyan konfigurálta az eszközregisztrációs korlátozás igénylő alacsonyabb eszköz verzióját. |
-| A személyes eszközök nem regisztrálhatók | A rendszergazda hogyan konfigurálta az eszközregisztrációs korlátozás személyes regisztrációk blokkolására, és a sikertelen eszközt a vállalati előre meghatározott nem volt. |
-| Eszközplatform blokkolva | A rendszergazda hogyan konfigurálta az eszközregisztrációs korlátozás, amely blokkolja az eszköz platformja. |
-| Bulk token lejárt. | A kiépítési csomag a csoportos jogkivonat lejárt. |
-| Az autopilot-eszköz vagy nem található részletei | Az Autopilot-eszköz nem található, amikor regisztrálni próbál. |
-| Nem található vagy nincs hozzárendelve autopilot-profil | Az eszköz nem rendelkezik aktív Autopilot-profil. |
-| Az autopilot-regisztrációs módszer nem várt | Az eszköz regisztrációját a nem engedélyezett metódus használatával. |
-| Az autopilot-eszköz eltávolítva | Az eszközt próbál regisztrálni a fiókhoz tartozó Autopilot eltávolították. |
+| Az eszköz verziószáma túl alacsony | A rendszergazda olyan regisztrációs korlátozást konfigurált, amely nagyobb eszköz verzióját igényli. |
+| Az eszköz verziószáma túl magas | A rendszergazda olyan regisztrációs korlátozást konfigurált, amely az eszköz alacsonyabb verzióját igényli. |
+| Az eszköz nem regisztrálható személyesként | A rendszergazda beléptetési korlátozást konfigurált a személyes regisztrációk blokkolására, és a hibás eszköz nem a vállalati módon van definiálva. |
+| Az eszköz platformja blokkolva | A rendszergazda olyan regisztrációs korlátozást konfigurált, amely letiltja az eszköz platformját. |
+| Tömeges jogkivonat lejárt | A kiépítési csomagban lévő tömeges jogkivonat lejárt. |
+| Az Autopilot-eszköz vagy a részletek nem találhatók | Az Autopilot-eszköz nem található a regisztrálási kísérlet során. |
+| Az Autopilot-profil nem található vagy nincs hozzárendelve | Az eszközön nincs aktív Autopilot-profil. |
+| Az Autopilot beléptetési metódusa váratlan | Az eszköz nem engedélyezett módszer használatával próbált regisztrálni. |
+| Robotpilóta-eszköz eltávolítva | A regisztrálni próbált eszköz el lett távolítva az Autopilot-ből ehhez a fiókhoz. |
 | Eszközök maximális száma elérve | A regisztráció le lett tiltva egy rendszergazda által konfigurált eszközkorlátozás miatt. |
 | Apple-bevezetés | Az iOS-eszközök regisztrációja jelenleg le van tiltva egy Intune-beli hiányzó vagy lejárt Apple MDM Push-tanúsítvány miatt. |
 | Az eszköz nincs előzetesen regisztrálva | Az eszközt nem regisztrálták előre, mert annak céges és személyes regisztrációját egy rendszergazda letiltotta. |
@@ -294,11 +292,11 @@ Egy hibasort kijelölve további adatokat jeleníthet meg.
 ## <a name="collect-available-data-from-mobile-device"></a>Rendelkezésre álló adatok gyűjtése mobileszközön
 
 A következő erőforrásokkal eszközadatokat gyűjthet a felhasználói eszközök hibáinak elhárításakor:
-  - [Az iOS regisztrálási hibáinak elküldése a rendszergazdának](/intune-user-help/send-errors-to-your-it-admin-ios)
-  - [A cég informatikai támogatási szolgálatának segítése az eszközproblémák megoldásában részletes naplózással](/intune-user-help/use-verbose-logging-to-help-your-it-administrator-fix-device-issues-android)
-  - [Android-naplók elküldése a cég informatikai támogatási szolgálatának USB-kábelen keresztül](/intune-user-help/send-diagnostic-data-logs-to-your-it-administrator-using-a-usb-cable-android)
-  - [Az Android diagnosztikai adatait tartalmazó naplófájlok elküldése e-mailben a rendszergazdának](/intune-user-help/send-logs-to-your-it-admin-by-email-android)
-  - [Az Android regisztrálási hibáinak elküldése a rendszergazdának](/intune-user-help/send-enrollment-errors-to-your-it-administrator-android)
+- [Az iOS regisztrálási hibáinak elküldése a rendszergazdának](/intune-user-help/send-errors-to-your-it-admin-ios)
+- [A cég informatikai támogatási szolgálatának segítése az eszközproblémák megoldásában részletes naplózással](/intune-user-help/use-verbose-logging-to-help-your-it-administrator-fix-device-issues-android)
+- [Android-naplók elküldése a cég informatikai támogatási szolgálatának USB-kábelen keresztül](/intune-user-help/send-diagnostic-data-logs-to-your-it-administrator-using-a-usb-cable-android)
+- [Az Android diagnosztikai adatait tartalmazó naplófájlok elküldése e-mailben a rendszergazdának](/intune-user-help/send-logs-to-your-it-admin-by-email-android)
+- [Az Android regisztrálási hibáinak elküldése a rendszergazdának](/intune-user-help/send-enrollment-errors-to-your-it-administrator-android)
 
 ## <a name="next-steps"></a>További lépések
 

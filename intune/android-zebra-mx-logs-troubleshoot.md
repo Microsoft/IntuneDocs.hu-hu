@@ -1,13 +1,12 @@
 ---
-title: Használat StageNow bejelentkezik a Android Zebra eszközök Microsoft Intune - Azure-ban |} A Microsoft Docs
-description: 'Tekintse meg a gyakori problémák és megoldásuk StageNow használata az Android-eszközökön a Microsoft Intune-nal. Is megtudhatja, hogyan naplók lekérése és példák: a sikeres, a hibák és a naplók olvasása.'
+title: StageNow-naplók használata androidos Zebra-eszközökön a Microsoft Intune-Azure-ban | Microsoft Docs
+description: A StageNow androidos eszközökön Microsoft Intune használatával történő használatakor gyakori problémák és megoldások találhatók. Azt is megtudhatja, hogyan kérhet naplókat, és hogyan olvashatja el a naplókat a sikeres vagy sikertelen hibákhoz.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
 ms.date: 03/26/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: ''
 ms.technology: ''
@@ -17,63 +16,63 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 36476820805c00cefafcd9f64dd2f08a014762c0
-ms.sourcegitcommit: 44095bbd1502b02201a01604531f4105401fbb92
+ms.openlocfilehash: 6110476aace30daa27450326aea3f4abd4fb3ea0
+ms.sourcegitcommit: 916fed64f3d173498a2905c7ed8d2d6416e34061
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58490541"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "71303886"
 ---
-# <a name="troubleshoot-and-see-potential-issues-on-android-zebra-devices-in-microsoft-intune"></a>Tekintse meg a potenciális problémákat Zebra Androidos eszközökön a Microsoft Intune-ban és hibáinak elhárítása
+# <a name="troubleshoot-and-see-potential-issues-on-android-zebra-devices-in-microsoft-intune"></a>Az androidos Zebra-eszközök lehetséges problémáinak elhárítása és megjelenítése Microsoft Intune
 
 [!INCLUDE [azure_portal](./includes/azure_portal.md)]
 
-A Microsoft Intune, használhatja a [Zebra mobilitási bővítmények MX Android Zebra-eszközök kezeléséhez](android-zebra-mx-overview.md). Zebra eszközök használata esetén profilok létrehozása a StageNow kezelheti a beállításait, és feltölti őket az Intune-ban. Intune-ban a StageNow alkalmazást használ, alkalmazza a beállításokat az eszközökön. A StageNow alkalmazást is létrehoz egy részletes naplófájlt, amellyel hibáinak elhárítása az eszközön.
+Microsoft Intune a [Zebra Mobility Extensions (MX) segítségével kezelheti az androidos Zebra-eszközöket](android-zebra-mx-overview.md). A zebra-eszközök használatakor a StageNow profilokat hozhat létre a beállítások kezeléséhez, és feltöltheti őket az Intune-ba. Az Intune a StageNow alkalmazás használatával alkalmazza a beállításokat az eszközökön. A StageNow alkalmazás egy részletes naplófájlt is létrehoz a hibakereséshez használt eszközön.
 
 Ez a funkció az alábbiakra vonatkozik:
 
 - Android
 
-Ha például a profil létrehozásakor StageNow eszköz beállítása. A StageNow profilt hoz létre, amikor az utolsó lépés létrehoz egy fájlt a tesztelni a profilt. A fájlt a StageNow alkalmazást az eszközön felhasznált.
+Például létrehozhat egy profilt a StageNow-ben egy eszköz konfigurálásához. A StageNow-profil létrehozásakor az utolsó lépés létrehoz egy fájlt a profil teszteléséhez. Ezt a fájlt a StageNow alkalmazással használja az eszközön.
 
-Egy másik példa StageNow hozzon létre egy profilt, és tesztelheti. Az Intune-ban a StageNow profil hozzáadásához, és rendelje hozzá a Zebra eszközök. A hozzárendelt profil állapotának ellenőrzésekor a profil egy magas szintű állapotát jeleníti meg.
+Egy másik példában létrehozhat egy profilt a StageNow-ben, és tesztelheti. Az Intune-ban adja hozzá a StageNow-profilt, majd rendelje hozzá a zebra-eszközökhöz. A hozzárendelt profil állapotának ellenőrzésekor a profil magas szintű állapotot mutat be.
 
-Mindkét esetben a további részleteket is kérhet a StageNow naplófájlt, amely minden alkalommal, amikor egy StageNow profilt alkalmazza az eszközre mentett.
+Mindkét esetben további részleteket is megtudhat a StageNow naplófájlból, amelyet a rendszer minden alkalommal ment az eszközön, amikor StageNow-profilt alkalmaz.
 
-Bizonyos problémák nem kapcsolódnak a StageNow profil tartalmát, és nem kerülnek időben a naplókat.
+Néhány probléma nem kapcsolódik a StageNow-profil tartalmához, és nem tükröződik a naplókban.
 
-Ez a cikk bemutatja, hogyan olvashatja be a StageNow naplókat, és megjeleníti az egyes más potenciális problémákat, Zebra eszközök, amelyek nem tükrözik a naplókban.
+Ez a cikk bemutatja, hogyan olvashatja el a StageNow-naplókat, és megtekintheti azokat a lehetséges problémákat, amelyek a naplókban esetleg nem látható Zebra-eszközökkel kapcsolatosak.
 
-[Használhatja és kezelheti a Zebra eszközök Zebra mobilitási kiterjesztésű](android-zebra-mx-overview.md) funkció további részleteket tartalmaz.
+A zebra [mobilitási bővítménnyel rendelkező Zebra-eszközök használata és kezelése](android-zebra-mx-overview.md) további információkat tartalmaz a szolgáltatással kapcsolatban.
 
-## <a name="get-the-logs"></a>A naplók lekérése
+## <a name="get-the-logs"></a>Naplók beolvasása
 
-### <a name="use-the-stagenow-app-on-the-device"></a>Az StageNow alkalmazás használatát az eszközön
-Ha egy profil közvetlenül a StageNow használata helyett, a számítógép tesztelése [telepítse a profilt az Intune](android-zebra-mx-overview.md#step-4-create-a-device-management-profile-in-stagenow), a StageNow alkalmazást az eszközön a teszt menti a naplókat. A naplófájl lekéréséhez használja a **(...)**  StageNow alkalmazás lehetőséget az eszközön.
+### <a name="use-the-stagenow-app-on-the-device"></a>A StageNow alkalmazás használata az eszközön
+Ha közvetlenül a számítógépen lévő StageNow használatával tesztel egy profilt, ahelyett, [hogy az Intune-t használja a profil üzembe helyezéséhez](android-zebra-mx-overview.md#step-4-create-a-device-management-profile-in-stagenow), a StageNow alkalmazás az eszközön menti a naplókat a tesztből. A naplófájl beszerzéséhez használja a StageNow alkalmazás **további (...)** beállítását az eszközön.
 
-### <a name="get-logs-using-android-debug-bridge"></a>Android hibakeresési híd használata naplók lekérése
-Naplók lekéréséhez a profilt az Intune-ban már üzembe helyezését követően csatlakoztassa az eszközt egy olyan számítógéppel [Android hibakeresési híd (adb)](https://developer.android.com/studio/command-line/adb) (az Android a webhely nyílik meg).
+### <a name="get-logs-using-android-debug-bridge"></a>Naplók beolvasása az Android hibakeresési híddal
+Ha a profil már telepítve van az Intune-nal, a naplók beszerzéséhez az eszközt az [Android debug Bridge (ADB)](https://developer.android.com/studio/command-line/adb) használatával (az Android webhelyének megnyitásakor) kapcsolja be.
 
-A mentett naplókat az eszközön `/sdcard/Android/data/com.microsoft.windowsintune.companyportal/files`
+Az eszközön a naplók a következő helyre lesznek mentve:`/sdcard/Android/data/com.microsoft.windowsintune.companyportal/files`
 
-### <a name="get-logs-from-email"></a>Naplók lekérése az e-mailből
-Szerezhet be naplófájlokat, miután a profil már telepítve van az Intune-nal, a végfelhasználók is e-mailben a naplók használatával egy e-mail alkalmazást az eszközön. A Zebra eszközön nyissa meg a vállalati portál alkalmazást, és [naplók küldése](https://docs.microsoft.com/intune-user-help/send-logs-to-your-it-admin-by-email-android). A naplók küldése funkció segítségével is létrehoz egy PowerLift incidens azonosítója, amelyet hivatkozhat, ha kapcsolatba lépne a Microsoft ügyfélszolgálatával.
+### <a name="get-logs-from-email"></a>Naplók beolvasása e-mailben
+A naplók az Intune-nal való üzembe helyezését követően a végfelhasználók e-mailben elérhetik a naplókat az eszközön lévő e-mail-alkalmazás használatával. A zebra eszközön nyissa meg a Céges portál alkalmazást, és [küldje el a naplókat](https://docs.microsoft.com/intune-user-help/send-logs-to-your-it-admin-by-email-android). A naplók küldése funkcióval egy PowerLift-incidens AZONOSÍTÓját is létrehozhatja, amelyet akkor hivatkozhat, ha kapcsolatba lép a Microsoft ügyfélszolgálatával.
 
-## <a name="read-the-logs"></a>A naplók olvasása
+## <a name="read-the-logs"></a>Naplók olvasása
 
-Ha megnézzük a naplókat, hiba történik, amikor megjelenik a `<characteristic-error>` címke. Hiba részleteinek kerüljenek a `<parm-error>` címke > `desc` tulajdonság.
+Amikor megtekinti a naplókat, hiba történt, amikor megjelenik a `<characteristic-error>` címke. A hiba részletei a `<parm-error>` címke > `desc` tulajdonságba íródnak.
 
-## <a name="error-types"></a>Alkalmazáshiba-típusok
+## <a name="error-types"></a>Hibák típusai
 
-Zebra eszközök közé tartoznak a különböző hibajelentési szintek:
+A zebra-eszközök különböző hibajelentési szinteket tartalmaznak:
 
-- A kriptográfiai Szolgáltató nem támogatott eszközön. Például az eszköz nem a mobil eszközök, de nem rendelkezik a mobilhálózati manager.
-- A MX vagy OSX-verzió nem egyezik. Minden Felhőszolgáltató egy verzióval ellátott. Egy teljes támogatási mátrixa, lásd: [Zebra a dokumentáció](http://techdocs.zebra.com/mx/) (Zebra a webhely megnyitása).
-- Az eszköz jelenti, egy másik probléma vagy hiba.
+- A CSP nem támogatott az eszközön. Például az eszköz nem egy mobil eszköz, és nem rendelkezik mobil kezelővel.
+- Az MX vagy az OSX verziója nem egyezik. Minden CSP verziója. A teljes támogatási mátrixért lásd a [Zebra dokumentációját](http://techdocs.zebra.com/mx/) (a zebra webhelyének megnyitása).
+- Az eszköz egy másik problémát vagy hibát jelez.
 
 ## <a name="examples"></a>Példák
 
-Például hogy a következő bemeneti profil:
+Például a következő bemeneti profillal rendelkezik:
 
 ```xml
 <wap-provisioningdoc>
@@ -86,7 +85,7 @@ Például hogy a következő bemeneti profil:
 </wap-provisioningdoc>
 ```
 
-A naplóban az XML-fájl megegyezik a bemeneti. A megfelelő kimeneti azt jelenti, hogy a profil alkalmazása sikeresen megtörtént az eszköz hiba nélkül:
+A naplóban az XML megegyezik a bemenettel. Ez a megfelelő kimenet azt jelenti, hogy a profil sikeresen alkalmazva lett az eszközre, hibák nélkül:
 
 ```xml
 <wap-provisioningdoc>
@@ -99,7 +98,7 @@ A naplóban az XML-fájl megegyezik a bemeneti. A megfelelő kimeneti azt jelent
 </wap-provisioningdoc>
 ```
 
-A következő bemeneti van egy másik példa:
+Egy másik példában a következő adatok szerepelnek:
 
 ```xml
 <wap-provisioningdoc>
@@ -113,7 +112,7 @@ A következő bemeneti van egy másik példa:
 </wap-provisioningdoc>
 ```
 
-A napló akkor jelez hibát, mert tartalmaz egy `<characteristic-error>` címke. Ebben a forgatókönyvben a profil próbált meg telepíteni egy Android-csomag (APK-), amely nem létezik a megadott elérési úton:
+A napló hibaüzenetet jelenít meg, mivel `<characteristic-error>` címkét tartalmaz. Ebben az esetben a profil olyan Android-csomagot (APK) próbált meg telepíteni, amely nem létezik a megadott elérési úton:
 
 ```xml
 <wap-provisioningdoc>
@@ -127,28 +126,28 @@ A napló akkor jelez hibát, mert tartalmaz egy `<characteristic-error>` címke.
 </wap-provisioningdoc>
 ```
 
-## <a name="other-potential-issues-with-zebra-devices"></a>Más potenciális problémákat Zebra eszközökkel
+## <a name="other-potential-issues-with-zebra-devices"></a>Egyéb lehetséges problémák a zebra-eszközökkel
 
-Ez a szakasz felsorolja a további lehetséges okokat, látni az eszköz-rendszergazdai Zebra eszközök használatakor. Ezeket a problémákat a StageNow naplók nem láthatók.
+Ez a szakasz a zebra-eszközök az eszköz rendszergazdájával való használatakor esetlegesen megjelenő esetleges problémákat sorolja fel. Ezek a problémák nem szerepelnek a StageNow-naplókban.
 
-### <a name="android-system-webview-is-out-of-date"></a>Android System WebView alkalmazást nem naprakész
+### <a name="android-system-webview-is-out-of-date"></a>Android System WebView elavult
 
-Ha a régebbi eszközöket jelentkezzen be a vállalati portál alkalmazást, felhasználók által is látható egy üzenet, hogy a System WebView alkalmazást összetevő elavult, és meg kell frissíteni. Ha az eszköz a Google Play áruházból telepített, csatlakoztassa az internethez, és a frissítések keresése. Ha az eszköz nem rendelkezik a Google Play telepítve, töltse le a frissített verziót az összetevő, és alkalmazhatja azokat az eszközöket. Vagy, a legújabb eszköz operációs rendszere Zebra által kiadott.
+Ha a régebbi eszközök bejelentkeznek a céges portál alkalmazással, a felhasználók egy üzenetet láthatnak arról, hogy a webnézet összetevő elavult, és frissítenie kell a szolgáltatást. Ha az eszközön telepítve van a Google Play, kapcsolja össze az internettel, és keressen frissítéseket. Ha az eszközön nincs telepítve a Google Play, szerezze be az összetevő frissített verzióját, és alkalmazza azt az eszközökre. Vagy frissítsen a zebra által kiadott legújabb eszköz operációs rendszerre.
 
-### <a name="management-actions-take-a-long-time"></a>Felügyeleti műveletek hosszú ideig tarthat.
+### <a name="management-actions-take-a-long-time"></a>A felügyeleti műveletek hosszú ideig tartanak
 
-Google Play-szolgáltatások nem érhetők el, ha egyes feladatok akár 8 órát is igénybe. [Korlátozások az Intune vállalati portál alkalmazás Androidos](https://support.microsoft.com/help/3211588/limitations-of-intune-company-portal-app-for-android-in-china) (megnyílik egy másik Microsoft-webhely) jól lehet.
+Ha a Google Play-szolgáltatások nem érhetők el, néhány feladat akár 8 órát is igénybe vehet. [Az Android rendszerhez készült Intune céges portál alkalmazás korlátai](https://support.microsoft.com/help/3211588/limitations-of-intune-company-portal-app-for-android-in-china) (egy másik Microsoft-webhely megnyitása) jó erőforrás lehet.
 
-### <a name="device-spoofing-suspected-shows-in-intune"></a>"Az eszköz hamisítást feltételezett" bemutatja az Intune-ban
+### <a name="device-spoofing-suspected-shows-in-intune"></a>"Az eszköz hamisításának gyanúja" mutatja az Intune-ban
 
-Ez a hiba, az azt jelenti, hogy az Intune gyanakszik egy nem Zebra Android-eszköz jelent a modell és a gyártó Zebra eszközt.
+Ez a hiba azt jelenti, hogy az Intune egy nem Zebra típusú Android-eszközt jelent, amely a modelljét és a gyártóját Zebra-eszközként jelenti.
 
-### <a name="company-portal-app-is-older-than-minimum-required-version"></a>Vállalati portál alkalmazás a régebbi, mint a minimálisan szükséges verzió
+### <a name="company-portal-app-is-older-than-minimum-required-version"></a>Céges portál alkalmazás régebbi a minimálisan szükséges verziónál
 
-Intune-ban előfordulhat, hogy frissítse a vállalati portál alkalmazás minimálisan szükséges verzió. Ha a Google Play áruházból az eszközön nincs telepítve, a vállalati portál alkalmazás automatikusan frissül nem beolvasása. Ha a minimálisan szükséges verzió újabb, mint a telepített verzió, a vállalati portál alkalmazás nem működik tovább. Frissítés a legújabb vállalati portál alkalmazás történő [Zebra eszközökön saját telepítési](android-zebra-mx-overview.md#sideload-the-company-portal-app).
+Előfordulhat, hogy az Intune frissíti a Céges portál alkalmazás minimálisan szükséges verzióját. Ha a Google Play nincs telepítve az eszközön, a Céges portál alkalmazás nem lesz automatikusan frissítve. Ha a minimálisan szükséges verzió újabb, mint a telepített verzió, akkor a Céges portál-alkalmazás működése leáll. Frissítsen a legújabb Céges portál alkalmazásra a [közvetlen telepítési használatával a zebra-eszközökön](android-zebra-mx-overview.md#sideload-the-company-portal-app).
 
 ## <a name="next-steps"></a>További lépések
 
-[Zebra vitafórumok](https://developer.zebra.com/community/home/discussions) (Zebra a webhely megnyitása)
+[Zebra-vitafórumok](https://developer.zebra.com/community/home/discussions) (a zebra webhely megnyitása)
 
-[Használhatja és kezelheti a Zebra eszközök Zebra mobilitási bővítmények az Intune-ban](android-zebra-mx-overview.md)
+[Zebra-eszközök használata és kezelése a zebra Mobility-bővítményekkel az Intune-ban](android-zebra-mx-overview.md)

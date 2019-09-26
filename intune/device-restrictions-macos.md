@@ -1,14 +1,13 @@
 ---
-title: macOS beállításai a Microsoft Intune – Azure |} A Microsoft Docs
+title: macOS-eszközbeállítások a Microsoft Intuneban – Azure | Microsoft Docs
 titleSuffix: ''
-description: Adja hozzá, adja meg, vagy létrehozása beállítások macOS-eszközökre korlátozhatja a funkciókat, beleértve a jelszókövetelmények beállítása, szabályozhatja a zárolási képernyő, használja a beépített alkalmazások, korlátozott vagy jóváhagyott alkalmazások hozzáadása, bluetooth-eszközök kezeléséhez, csatlakoztatása a felhőhöz, a biztonsági mentéshez és a tárolási, teljes képernyős mód engedélyezése, tartományokkal és vezérelheti a felhasználók hogyan használják a Safari böngészővel a Microsoft Intune-ban.
+description: Beállítások hozzáadása, konfigurálása vagy létrehozása macOS-eszközökön a szolgáltatások korlátozása érdekében, beleértve a jelszó megadását, a zárolt képernyő vezérlését, a beépített alkalmazások használatát, a korlátozott vagy jóváhagyott alkalmazások hozzáadását, a Bluetooth-eszközök kezelését, a felhőhöz való kapcsolódást a biztonsági mentéshez és tárterület, a teljes képernyős mód engedélyezése, tartományok hozzáadása és annak szabályozása, hogy a felhasználók hogyan használják a Safari böngészőt Microsoft Intuneban.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/13/2019
+ms.date: 09/10/2019
 ms.topic: reference
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.technology: ''
@@ -16,112 +15,166 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5feec66e791da4038bd069cdad69a7ba573f27f3
-ms.sourcegitcommit: 1cae690ca2ac6cc97bbcdf656f54b31878297ae8
+ms.openlocfilehash: d32224581c16325f0b060608409aa422cbf49d90
+ms.sourcegitcommit: c19584b36448bbd4c8638d7cab552fe9b3eb3408
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59897051"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71302360"
 ---
-# <a name="macos-device-settings-to-allow-or-restrict-features-using-intune"></a>engedélyezi, vagy korlátozhatja a funkciókat az Intune-nal macOS beállításai
+# <a name="macos-device-settings-to-allow-or-restrict-features-using-intune"></a>macOS eszközbeállítások az Intune-t használó funkciók engedélyezéséhez vagy korlátozásához
 
 [!INCLUDE [azure_portal](./includes/azure_portal.md)]
 
-Ez a cikk és macOS-eszközökön vezérelheti a különböző beállításokat ismerteti. A mobileszköz-felügyelet (MDM) megoldás részeként használatával ezek a beállítások lehetővé teszik vagy szolgáltatásokat tilthat le, jelszószabályok beállítása, engedélyezése vagy korlátozása egyedi alkalmazások és más.
+Ez a cikk a macOS-eszközökön szabályozható különböző beállításokat sorolja fel és ismerteti. A mobileszköz-kezelési (MDM) megoldás részeként ezekkel a beállításokkal engedélyezheti vagy letilthatja a szolgáltatásokat, beállíthatja a jelszavas szabályokat, engedélyezheti vagy korlátozhatja az egyes alkalmazásokat, és így tovább.
 
-Ezek a beállítások hozzá egy eszközkonfigurációs profilt az Intune-ban, és ezután hozzárendelt vagy a macOS-eszközökre telepített.
+Ezek a beállítások hozzáadódnak az Intune-ban lévő eszköz konfigurációs profiljához, majd a macOS-eszközökhöz vannak rendelve vagy telepítve.
 
 ## <a name="before-you-begin"></a>Előkészületek
 
-[Hozzon létre egy eszközkorlátozási profilt konfigurációs](device-restrictions-configure.md#create-the-profile).
+[Hozzon létre egy eszköz-korlátozási konfigurációs profilt](device-restrictions-configure.md).
+
+> [!NOTE]
+> Ezek a beállítások a különböző regisztrációs típusokra vonatkoznak. A különböző regisztrációs típusokkal kapcsolatos további információkért lásd: [MacOS-regisztráció](macos-enroll.md).
 
 ## <a name="general"></a>Általános
 
-- **Keresésének letiltása**: **Blokk** megakadályozza, hogy a felhasználó általi kiemelve egy szót, és ezután keresése az eszközön a meghatározását. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi, hogy a definíció keresési szolgáltatáshoz való hozzáférést.
-- **Diktálás letiltása**: **Blokk** megakadályozza a felhasználó szóbeli bemeneti szöveg beírásához. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi, hogy a felhasználó diktálással történő bevitel használja.
-- **Letiltja a tartalom gyorsítótárazása**: Válasszon **nincs konfigurálva** tartalom gyorsítótárazásának engedélyezése (alapértelmezett). Tartalom gyorsítótárazása az alkalmazásadatok, webes böngésző adatokat, letöltések és további helyileg, az eszközön tárolja. Válassza ki **blokk** megakadályozza, hogy ezek az adatok tárolása a gyorsítótárban.
+### <a name="settings-apply-to-device-enrollment"></a>A beállítások a következőkre vonatkoznak: Eszközök beléptetése
 
-  A tartalom gyorsítótárazása macOS rendszeren további információkért lásd: [kezelni a tartalom gyorsítótárazása Mac gépen](https://support.apple.com/guide/mac-help/manage-content-caching-on-mac-mchl3b6c3720/mac) (megnyílik egy másik webhely).
+- **Definíciók keresése**: A **Letiltás** megakadályozza, hogy a felhasználó kiemelje a szót, majd megkeresse a definícióját az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a hozzáférést a definíciós keresési szolgáltatáshoz.
+- **Diktálás**: A **Letiltás** leállítja a felhasználótól a hangbemenet használatát szöveg megadásához. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára a diktálási bevitel használatát.
+- **Tartalom gyorsítótárazása**: Válassza a **nincs konfigurálva** (alapértelmezett) lehetőséget a tartalom gyorsítótárazásának engedélyezéséhez. A tartalom-gyorsítótárazás az alkalmazásadatok, a webböngésző-adatokat, a letöltéseket és a helyileg tárolt adatokat az eszközön tárolja. A **Letiltás** lehetőség kiválasztásával megakadályozhatja, hogy az adatok a gyorsítótárban legyenek tárolva.
+
+  A macOS-tartalom gyorsítótárazásával kapcsolatos további információkért lásd: a [tartalom gyorsítótárazásának kezelése Mac gépen](https://support.apple.com/guide/mac-help/manage-content-caching-on-mac-mchl3b6c3720/mac) (egy másik webhely megnyitása).
 
   Ez a funkció az alábbiakra vonatkozik:  
-  - macOS 10.13 és újabb verziók
+  - macOS 10,13 és újabb verziók
 
-- **Késlelteti a szoftverfrissítéseket**: Ha a beállítása **nincs konfigurálva** (alapértelmezett), szoftverfrissítések jelennek meg az eszközön, az Apple által kiadott. Például ha egy macOS-frissítést lekérdezi elérhető az Apple által egy adott dátumon, majd a frissítési természetes módon megjelenik-e az eszközön a Megjelenés dátumához körül. Kezdőérték build frissítések engedélyezettek késedelem nélkül.
+- **Szoftverfrissítések késleltetése**: Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), a szoftverfrissítések az eszközön jelennek meg, ahogy az Apple kiadják őket. Ha például egy macOS-frissítést az Apple adott időpontban szabadít fel, akkor ez a frissítés természetesen az eszközön jelenik meg a kiadási dátum körül. A magok létrehozási frissítései késedelem nélkül engedélyezettek.
 
-  **Engedélyezése** lehetővé teszi, hogy amikor a szoftverfrissítések jelennek meg az eszközökön, a 0 – 90 nappal késleltetés. Ez a beállítás nem szabályozza, amikor a frissítések vannak, vagy nincsenek telepítve. 
+  Az **Engedélyezés** beállítás megadásával késleltetheti, hogy a szoftverfrissítések mikor jelenjenek meg az eszközökön, 0-90 nap múlva. Ez a beállítás nem szabályozza, hogy a frissítések Mikor vagy nincsenek telepítve. 
 
-  - **Látható-e szoftverfrissítéseket késleltetés**: Adjon meg egy 0-90 nap közötti értéket. Amikor a késleltetés lejár, a felhasználók frissíteni az operációs rendszer legkorábbi verziójára, ha a késleltetés lett elindítva értesítést kaphat.
+  - **Szoftverfrissítések láthatóságának késleltetése**: 0-90 napos értéket adjon meg. Ha a késleltetés lejár, a felhasználók értesítést kapnak, hogy az operációs rendszer legkorábbi verziójára frissítsen a késleltetés elindításakor.
 
-    Például, ha egy macOS-frissítés érhető el **január 1-től**, és **látható-e késleltetni** értékre van állítva **5 nap**, majd a frissítés nem eszközökön elérhető frissítésként jelenik meg. Az a **hatodik nap** , hogy a frissítés érhető el, és a végfelhasználók telepíthetik a kiadásban a következő.
+    Ha például egy macOS-es frissítés **január 1-jén**érhető el, és a **láthatóság késleltetése** **5 nap**, akkor a frissítés nem jelenik meg elérhető frissítésként. A kiadást követő **hatodik napon** a frissítés elérhető lesz, és a végfelhasználók is telepíthetik azt.
 
     Ez a funkció az alábbiakra vonatkozik:  
     - macOS 10.13.4 és újabb verziók
 
+- **Képernyőképek**: Az eszközt regisztrálni kell az Apple automatikus eszköz-regisztrációjában (DEP). Ha a **blokkolás**értékre van állítva, a felhasználók nem menthetnek egy képernyőképet a kijelzőről. Emellett megakadályozza, hogy az osztályterem alkalmazás megfigyelje a távoli képernyőket. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára a képernyőképek rögzítését, és lehetővé teszi, hogy az osztályterem alkalmazás megtekintse a távoli képernyőket.
+
+### <a name="settings-apply-to-automated-device-enrollment"></a>A beállítások a következőkre vonatkoznak: Automatikus eszközök beléptetése
+
+- **A távoli képernyő megfigyelése az osztályterem alkalmazáson keresztül**: A **Letiltás** beállítás megadásával megakadályozhatja, hogy a tanárok az osztályterem alkalmazás használatával lássák a tanulók képernyőjét. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a tanárok számára, hogy megtekintsék a tanulók képernyőjét.
+
+  Ha ezt a beállítást szeretné használni, állítsa be a **képernyőképek** beállítást úgy, hogy **ne legyen konfigurálva** (a képernyőképek engedélyezve vannak).
+
+- Nem megjelenő **képernyő-megfigyelés az osztályterem alkalmazásban**: Az **Engedélyezés** lehetővé teszi a tanárok számára, hogy a tanulók számára ne kelljen elfogadniuk a tanulók képernyőjét. **Nincs konfigurálva** (alapértelmezés szerint) a tanulónak meg kell egyeznie ahhoz, hogy a tanár láthassa a képernyőket.
+
+  Ha ezt a beállítást szeretné használni, állítsa be a **képernyőképek** beállítást úgy, hogy **ne legyen konfigurálva** (a képernyőképek engedélyezve vannak).
+
+- **A tanulóknak engedélyt kell kérniük az osztályterem osztály elhagyására**: **Megkövetelheti** , hogy a tanulók a tanfolyam elhagyása érdekében egy nem felügyelt osztályteremben regisztrálják a tanári jóváhagyást. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a tanulók számára, hogy a tanuló által választott időben elhagyják a tanfolyamot.
+
+- **A tanárok automatikusan le tudják zárni az eszközöket és az alkalmazásokat az osztályterem alkalmazásban**: **Lehetővé** teszi, hogy a tanárok a tanulók jóváhagyása nélkül zárolják a tanuló eszközét vagy alkalmazását. **Nincs konfigurálva** (alapértelmezés szerint) a tanulónak meg kell egyeznie ahhoz, hogy a tanár zárolni tudja az eszközt vagy alkalmazást.
+
+- A **tanulók automatikusan csatlakozhatnak az osztályterem osztályhoz**: **Lehetővé** teszi, hogy a tanulók a tanár megkérdezése nélkül csatlakozzanak egy osztályhoz. **Nincs konfigurálva** (alapértelmezés) a tanárok jóváhagyását igényli egy osztályhoz való csatlakozáshoz.
+
 ## <a name="password"></a>Windows 10
 
-- **Jelszó**: **Szükséges** a végfelhasználó számára adjon meg egy jelszót az eszköz elérésére. **Nincs konfigurálva** (alapértelmezett) nincs szükség a jelszó, és nem kényszerített korlátozásokat, például az egyszerű jelszavak blokkolása vagy beállítás minimális hosszát.
-  - **Kötelező jelszótípus**: Adja meg, hogy a jelszó is csak numerikus lehet, vagy hogy Alfanumerikusnak kell lennie (betűket és számokat tartalmazhat). Ezt a beállítást csak a Mac OS X 10.10.3-as és újabb verziói támogatják.
-  - **Jelszavak nem alfanumerikus karaktereinek száma**: Adja meg a jelszóban használandó speciális karakterek minimális számát (**0** - **4**).<br>A speciális karakterek olyan szimbólumok, mint például a „**?**”.
-  - **Jelszó minimális hossza**: Adja meg a felhasználó beállítandó jelszó minimális hosszát (közötti **4** és **16** karakter).
+### <a name="settings-apply-to-device-enrollment"></a>A beállítások a következőkre vonatkoznak: Eszközök beléptetése
+
+- **Jelszó**: **Kérje** meg a végfelhasználót, hogy adjon meg egy jelszót az eszköz eléréséhez. **Nincs konfigurálva** (alapértelmezés) nem igényel jelszót. Emellett nem kényszerít semmilyen korlátozást, mint például az egyszerű jelszavak blokkolása vagy a minimális hossz beállítása.
+  - **Szükséges jelszó típusa**: Annak megadása, hogy a jelszó csak numerikus lehet-e, vagy Alfanumerikusnak kell lennie (betűket és számokat is tartalmaznia kell).
+
+    Ez a funkció az alábbiakra vonatkozik:  
+    - macOS 10.10.3 és újabb verziók
+
+  - **Nem alfanumerikus karakterek száma a jelszóban**: Adja meg a jelszóban használandó speciális karakterek minimális számát (**0** - **4**).<br>A speciális karakterek olyan szimbólumok, mint például a „ **?** ”.
+  - **Jelszó minimális hossza**: Adja meg a jelszó minimális hosszát, amelyet a felhasználónak be kell állítania ( **4** és **16** karakter között).
   - **Egyszerű jelszavak**: Az egyszerű jelszavak (például a **0000**vagy az**1234**) használatának engedélyezése.
-  - **Jelszó kérése ennyi képernyőzárolás után legfeljebb ennyi perc**: Adja meg, hogy mennyi ideig legyen a számítógép inaktív ahhoz, hogy bekapcsoljon a jelszavas zárolás.
-  - **Ennyi perc inaktivitás képernyőzárolás**: Adja meg az, hogy mennyi ideig legyen a számítógép üresjáratban a képernyő zárolása előtt.
-  - **Jelszó érvényessége (napokban)**: Adja meg, hogy hány nap telhet el a kötelező jelszómódosításig (**1** **255** nap).
-  - **Korábbi jelszavak újbóli használatának tiltása**: Adja meg a korábban használt jelszavak számát, amelyeket nem használható fel újra, a **1** való **24**.
+  - **A jelszó megadása után legfeljebb ennyi perccel a képernyő zárolása után**: Adja meg, hogy mennyi ideig legyen a számítógép inaktív ahhoz, hogy bekapcsoljon a jelszavas zárolás.
+  - **A képernyőfelvételek legfeljebb ennyi perc inaktivitás**után: Itt adhatja meg, hogy a számítógépnek mennyi ideig kell tétlennek lennie a képernyő zárolása előtt.
+  - **Jelszó érvényessége (napokban)** : Adja meg, hogy hány nap telhet el a kötelező jelszómódosításig (**1** **255** nap).
+  - **Korábbi jelszavak újbóli használatának tiltása**: Adja meg a korábban nem használható jelszavak számát **1** és **24**között.
 
-- **Megakadályozza a felhasználó PIN-kód módosítása**: Válasszon **blokk** a PIN-kód módosításának, hozzáadva vagy eltávolítva billentyűkombinációt. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi, hogy a PIN-kódok hozzáadni, módosítani vagy eltávolítani.
-- **Ujjlenyomattal történő Zárolásfeloldás letiltása**: Válasszon **blokk** az eszközzárolás ujjlenyomattal történő elkerülése érdekében. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi, hogy a felhasználó számára az eszközzárolás ujjlenyomattal történő használatával.
+- **A PIN-kód módosításának tiltása a felhasználó**számára: Válassza a **Letiltás** lehetőséget a jelszó módosításának, hozzáadásának vagy eltávolításának leállításához. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a PIN-kódok hozzáadását, módosítását vagy eltávolítását.
+- **Ujjlenyomat feloldásának tiltása**: Válassza a **Letiltás** lehetőséget, hogy ne használjon ujjlenyomatot az eszköz zárolásának feloldásához. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára az eszköz zárolásának feloldását ujjlenyomat használatával.
 
-- **Automatikus kitöltés letiltása jelszó**: Válasszon **blokk** , hogy az automatikus kitöltés jelszavak funkció használatával a MacOS-gépeken. Választás **blokk** is az az alábbi hatással van:
+- **Jelszó automatikus**kitöltésének tiltása: A **Letiltás** lehetőség kiválasztásával megakadályozhatja a MacOS-en a jelszavak automatikus kitöltését funkció használatát. A **blokk** kiválasztása a következő hatással is van:
 
-  - Felhasználók sem kapnak felszólítást a mentett jelszó használata a Safari vagy az alkalmazások.
-  - Automatikus erős jelszavak le vannak tiltva, és erős jelszavakat nem javasolt a felhasználók számára.
+  - A felhasználók nem kérik a mentett jelszavak használatát a Safariban vagy bármely alkalmazásban.
+  - Az automatikus erős jelszavak le vannak tiltva, és az erős jelszavakat nem javasoljuk a felhasználók számára.
 
-  **Nincs konfigurálva** (alapértelmezett) lehetővé teszi, hogy ezeket a funkciókat.
+  **Nincs konfigurálva** (alapértelmezés) engedélyezi ezeket a funkciókat.
 
-- **Jelszó közelségi-kérések blokkolása**: Válasszon **blokk** , a felhasználó-eszköz nem jelszavakat kérhet közelben lévő eszközökhöz. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi, hogy a jelszó forrásától.
+- **Jelszó-közelségi kérelmek letiltása**: Válassza a **Letiltás** lehetőséget, hogy a felhasználó eszköze ne kérjen jelszavakat a közeli eszközökről. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezeket a jelszavakra vonatkozó kérelmeket.
 
-- **Jelszó adatmegosztás blokkolására**: **Blokk** megakadályozza, hogy a jelszavak használatával AirDrop eszközök közötti megosztását. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi, hogy a jelszavak megoszthatók.
+- **Jelszó megosztásának letiltása**: A **Letiltás** megakadályozza a jelszavak megosztását az eszközök között a AirDrop használatával. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a jelszavak megosztását.
 
 ## <a name="built-in-apps"></a>Beépített alkalmazások
 
-- **Safari böngésző automatikus kitöltés letiltása**: **Blokk** letiltja az automatikus kitöltés funkciót az eszközön a Safariban. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi, hogy a felhasználók számára a böngésző automatikus kiegészítési funkciója beállításainak módosítását.
-- **Kamera letiltása**: Válasszon **blokk** kívánja tagadni a hozzáférést az eszközön a kamera. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi, hogy az eszköz kamerájához való hozzáférést.
-- **Az Apple Music letiltása**: **Blokk** klasszikus módra a Music alkalmazás visszaáll, és letiltja a Music szolgáltatást. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi, hogy az Apple Music alkalmazás használatával.
-- **Letiltása a Spotlight internetes keresési eredmények**: **Blokk** reflektorfény leállítja az eredményt visszatérésre egy internetes keresés. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi, hogy a Spotlight kereső csatlakozzon az internethez, hogy adja meg a keresési eredmények.
-- **Blokk fájlátviteli iTunes használatával**: **Blokk** letiltja az alkalmazás fájlmegosztási szolgáltatásokat. Elérhető a macOS 10.13 és újabb verziók. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi, hogy az alkalmazás fájlmegosztási szolgáltatásokat.
+### <a name="settings-apply-to-device-enrollment"></a>A beállítások a következőkre vonatkoznak: Eszközök beléptetése
+
+- **Safari automatikus**kitöltésének tiltása: A **Letiltás** letiltja az eszközön a Safari automatikus kitöltés szolgáltatását. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára a webböngésző automatikus kiegészítési beállításainak módosítását.
+- **Kamera letiltása**: Válassza a **Letiltás** lehetőséget a kamera elérésének megakadályozásához az eszközön. **Nincs konfigurálva** (alapértelmezés) engedélyezi az eszköz kamerájának elérését.
+- **Apple Music blokkolása**: A **Block** a Music alkalmazást klasszikus módra vált, és letiltja a Music szolgáltatást. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi az Apple Music alkalmazás használatát.
+- **Reflektorfény internetes keresési eredményeinek letiltása**: A **Letiltás** megszakítja a reflektorfényben az internetes keresésből származó eredmények visszaadását. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a Spotlight-keresés kapcsolódását az internethez a keresési eredmények biztosítása érdekében.
+- **Fájlátvitel letiltása az iTunes használatával**: A **Letiltás** letiltja az alkalmazás fájlmegosztó szolgáltatásait. **Nincs konfigurálva** (alapértelmezés) engedélyezi az Application file Sharing Services szolgáltatást.
+
+  Ez a funkció az alábbiakra vonatkozik:  
+  - macOS 10,13 és újabb verziók
 
 ## <a name="restricted-apps"></a>Korlátozott alkalmazások
 
-A korlátozott alkalmazások listájában a következő listák valamelyikét konfigurálhatja:
+### <a name="settings-apply-to-device-enrollment"></a>A beállítások a következőkre vonatkoznak: Eszközök beléptetése
 
-- A **tiltott alkalmazások** lista: Az Intune-ban, hogy a felhasználók nem telepíthetnek és futtathatnak által nem kezelt alkalmazások listája. Felhasználók tiltott alkalmazásokat telepítsenek nem akadályozza meg, de ilyen esetben a rendszergazda jelentett.
-- Egy **jóváhagyott alkalmazások** lista: Azokat az alkalmazásokat listázza, amelyek telepítése engedélyezett a felhasználók számára. Felhasználók nem telepíthetnek olyan alkalmazásokat, amelyek nem jelennek meg. Az Intune által kezelt alkalmazások automatikusan engedélyezettek. Felhasználó egy alkalmazást, amely nem szerepel az engedélyezési listán nem akadályozza. De ha igen, a rendszergazda számára jelentett.
+- **A korlátozott alkalmazások listájának típusa**: Hozza létre azon alkalmazások listáját, amelyeket a felhasználók nem telepíthetnek és nem használhatnak. A választható lehetőségek:
 
-A lista konfigurálásához kattintson a **Hozzáadás** gombra, adja meg a kívánt nevet, igény szerint az alkalmazás kiadóját, valamint az alkalmazás csomagazonosítóját (például *com.apple.calculator*).
+  - **Nincs konfigurálva** (alapértelmezett): Az Intune-ban nincsenek korlátozások. A felhasználók hozzáférhetnek a hozzárendelt alkalmazásokhoz és a beépített alkalmazásokhoz.
+  - **Tiltott alkalmazások**: Az Intune által nem felügyelt alkalmazásokat, amelyeket nem szeretne telepíteni az eszközre. A felhasználók nem akadályozzák meg a tiltott alkalmazások telepítését. Ha azonban a felhasználó a listából telepít egy alkalmazást, az az Intune-ban szerepel.
+  - **Jóváhagyott alkalmazások**: Azok az alkalmazások, amelyeket a felhasználók telepíthetnek. A felhasználók nem telepíthetnek olyan alkalmazásokat, amelyek nem szerepelnek a felsorolásban. Az Intune által kezelt alkalmazások automatikusan engedélyezettek. A felhasználók nem akadályozzák meg a jóváhagyott listán nem szereplő alkalmazások telepítését. De ha igen, az Intune-ban jelentett jelentés.
+- Alkalmazáscsomag **azonosítója**: Adja meg a kívánt alkalmazás alkalmazáscsomag- [azonosítóját](bundle-ids-built-in-ios-apps.md) . Megjelenítheti vagy elrejtheti a beépített alkalmazásokat és üzletági alkalmazásokat. Az Apple webhelye tartalmazza a [beépített Apple apps-alkalmazásokat](https://support.apple.com/HT208094).
+- **Alkalmazás neve**: Adja meg a kívánt alkalmazás nevét. Megjelenítheti vagy elrejtheti a beépített alkalmazásokat és üzletági alkalmazásokat. Az Apple webhelye tartalmazza a [beépített Apple apps-alkalmazásokat](https://support.apple.com/HT208094).
+- **Közzétevő**: Adja meg a kívánt alkalmazás közzétevőjét.
+
+Ha alkalmazásokat szeretne hozzáadni a listához, a következőket teheti:
+
+- **Hozzáadás**: Válassza a lehetőséget az alkalmazások listájának létrehozásához.
+- **Importáljon** egy CSV-fájlt az alkalmazás részleteivel, beleértve az URL-címet is. Használja a következő formátumot: `<app bundle ID>, <app name>, <app publisher>`. Vagy az **Exportálás** gombra kattintva hozza létre a hozzáadott alkalmazások listáját ugyanabban a formátumban.
 
 ## <a name="connected-devices"></a>Csatlakoztatott eszközök
 
-- **AirDrop tiltása**: **Blokk** megakadályozza, hogy az eszközön található AirDrop használatával. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi a közeli eszközökkel az AirDrop funkció használatával.
-- **Apple Watch automatikus letiltása feloldásához**: **Blokk** megakadályozza, hogy a felhasználók macOS-eszközeiket az Apple Watch-zárolás feloldásához. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi, hogy a macOS-eszközeiket az Apple Watch-feloldását a felhasználóknak.
+### <a name="settings-apply-to-device-enrollment"></a>A beállítások a következőkre vonatkoznak: Eszközök beléptetése
+
+- **AirDrop letiltása**: A **blokk** megakadályozza a AirDrop használatát az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a AirDrop funkció használatát a tartalmak a közeli eszközökhöz való cseréjéhez.
+- Az **Apple Watch automatikus feloldásának letiltása**: A Letiltás megakadályozza, hogy a felhasználók **leoldják** a MacOS-eszközét az Apple Watch szolgáltatással. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználóknak a macOS-eszközük zárolását az Apple Watch használatával.
 
 ## <a name="cloud-and-storage"></a>Felhő és tárolás
 
-- **Icloud-alapú kulcslánc-szinkronizálás letiltása**: Válasszon **blokk** tárolt meg a Kulcsláncban Icloudba történő szinkronizálása folyamatban hitelesítő letiltása. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi, hogy a felhasználók ezeket a hitelesítő adatokat szinkronizálni.
-- **Dokumentumok icloudba szinkronizálásának letiltása**: **Blokk** megakadályozza, hogy a iCloud dokumentumok és adatok szinkronizálását. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi, hogy a dokumentumok és kulcsértékek szinkronizálását az iCloud tárhelyére.
-- **ICloud biztonsági másolata letiltása**: **Blokk** icloud-alapú megakadályozza, hogy a macOS-Mail alkalmazásban történő szinkronizálásának engedélyezése. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi, hogy a Mail szinkronizálási az icloud szolgáltatásba.
-- **Icloud-alapú ügyfél biztonsági mentés letiltása**: **Blokk** icloud-alapú megakadályozza, hogy az eszközök névjegyek szinkronizálása. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi, hogy az adatokat az iCloud segítségével névjegy-szinkronizálás.
-- **Icloud-alapú naptár biztonsági mentés letiltása**: **Blokk** icloud-alapú megakadályozza, hogy a macOS-naptár app történő szinkronizálásának engedélyezése. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi, hogy a naptár szinkronizálását az icloud szolgáltatásba.
-- **Icloud-alapú emlékeztető biztonsági mentés letiltása**: **Blokk** icloud-alapú megakadályozza, hogy a macOS emlékeztetők app történő szinkronizálásának engedélyezése. **Nincs konfigurálva** (alapértelmezett) emlékeztetők szinkronizálásának Icloudba történő szinkronizálásának engedélyezése.
-- **Icloud-alapú könyvjelző biztonsági mentés letiltása**: **Blokk** icloud-alapú megakadályozza, hogy az eszközök a könyvjelzők szinkronizálása. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi, hogy a könyvjelző szinkronizálási az icloud szolgáltatásba.
-- **Icloud-alapú megjegyzések biztonsági mentés letiltása**: **Blokk** icloud-alapú megakadályozza, hogy az eszközök Megjegyzések szinkronizálása. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi, hogy a feljegyzések szinkronizálását az icloud szolgáltatásba.
+### <a name="settings-apply-to-device-enrollment"></a>A beállítások a következőkre vonatkoznak: Eszközök beléptetése
+
+- **ICloud-kulcstartó szinkronizálásának letiltása**: Válassza a **Letiltás** lehetőséget, ha le szeretné tiltani a kulcstartóban tárolt hitelesítő adatok icloudba való szinkronizálását. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy szinkronizálják ezeket a hitelesítő adatokat.
+- **ICloud-dokumentumok szinkronizálásának letiltása**: A **blokk** megakadályozza, hogy az iCloud szinkronizálja a dokumentumokat és az adatokkal. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a dokumentumok és a kulcs-érték szinkronizálását az iCloud tárhelyére.
+- **ICloud levelek biztonsági mentésének letiltása**: A **Letiltás** megakadályozza, hogy az iCloud szinkronizáljon a MacOS mail alkalmazásba. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a levelezés szinkronizálását az iCloudba.
+- **ICloud-kapcsolattartó biztonsági mentésének letiltása**: A **blokk** megakadályozza, hogy az iCloud szinkronizálja az eszközök névjegyeit. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a kapcsolattartási szinkronizálást az iCloud használatával.
+- **ICloud naptár biztonsági mentésének letiltása**: A **Letiltás** megakadályozza, hogy az iCloud szinkronizáljon a MacOS Calendar alkalmazásba. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a naptár szinkronizálását az iCloudba.
+- **ICloud-emlékeztető biztonsági mentésének letiltása**: A **Letiltás** megakadályozza, hogy az iCloud szinkronizáljon a MacOS-emlékeztetők alkalmazásba. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi az emlékeztetők szinkronizálását az iCloudba.
+- **ICloud könyvjelző biztonsági mentésének letiltása**: A **blokk** megakadályozza, hogy az iCloud szinkronizálja az eszközök könyvjelzőit. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a könyvjelzők szinkronizálását az iCloudba.
+- **ICloud-megjegyzések biztonsági mentésének letiltása**: A **blokk** megakadályozza, hogy az iCloud szinkronizálja az eszközök megjegyzéseit. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a jegyzetek szinkronizálását az iCloudba.
+- **ICloud Photo Library letiltása**: A **Letiltás** letiltja az iCloud fényképgyűjteményt, és megakadályozza, hogy az iCloud szinkronizálja az eszközök fényképeit. Az iCloud fényképgyűjteményből nem teljes mértékben letöltött fényképek el lesznek távolítva az eszköz helyi tárolójából. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi fényképek szinkronizálását az eszköz és az iCloud Photo Library között.
+- **Handoff**: **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy egy macOS-eszközön kezdjenek munkát, majd folytassa az elindított munkát egy másik iOS-vagy macOS-eszközön. A **Letiltás** megakadályozza a handoff funkciót az eszközön. 
+
+  Ez a funkció az alábbiakra vonatkozik:  
+  - macOS 10,15 és újabb verziók
 
 ## <a name="domains"></a>Tartományok
 
-- **E-mail-tartomány URL-címe**: Egy vagy több URL-címek hozzáadása a listához. Ha a felhasználó nem a konfigurált tartományok egyikéből kap e-mailt, a MacOS-es Mail alkalmazásban ez az e-mail nem megbízhatóként jelenik meg.
+### <a name="settings-apply-to-device-enrollment"></a>A beállítások a következőkre vonatkoznak: Eszközök beléptetése
+
+- **E-mail-tartomány URL-címe**: **Adjon hozzá** egy vagy több URL-címet a listához. Ha a felhasználók a konfigurálttól eltérő tartományból kapnak e-mailt, az e-mail-cím nem megbízhatóként van megjelölve a macOS posta alkalmazásban.
 
 ## <a name="next-steps"></a>További lépések
 
 [Rendelje hozzá a profilt](device-profile-assign.md), és [kövesse nyomon az állapotát](device-profile-monitor.md).
 
-Korlátozhatja is eszközök funkcióinak és beállításainak a [iOS](device-restrictions-ios.md) eszközök.
+Az eszköz funkcióit és beállításait [iOS](device-restrictions-ios.md) -eszközökön is korlátozhatja.

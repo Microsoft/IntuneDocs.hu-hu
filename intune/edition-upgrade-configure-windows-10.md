@@ -1,13 +1,12 @@
 ---
-title: Frissítés vagy S mód használata a Windows 10-eszközök – Microsoft Intune – Azure |} A Microsoft Docs
-description: Egy másik kiadásra a Windows 10-eszközök frissítése a Microsoft Intune használatával, vagy váltson S mód. A rendszergazdák eszközkonfigurációs profil használatával frissítse a Windows 10 Professional, Windows 10 Enterprise, és váltson S módból. A támogatott frissítési útvonalakat Windows 10 Pro, N kiadás, Education, Cloud, Enterprise, Core, Holographic és Mobile talál.
+title: Az S mód frissítése vagy használata Windows 10-es eszközökön – Microsoft Intune – Azure | Microsoft Docs
+description: A Microsoft Intune használatával frissítse a Windows 10-es eszközöket egy másik kiadásra, vagy váltson az S üzemmódra. A rendszergazdák az eszköz konfigurációs profiljának használatával frissíthetik a Windows 10 Professional rendszert a Windows 10 Enterprise rendszerre, és kikapcsolhatják az S üzemmódot. Tekintse meg a Windows 10 Pro, N Edition, Education, Cloud, Enterprise, Core, holografikus és Mobile támogatott frissítési útvonalait.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
 ms.date: 04/22/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -17,42 +16,42 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2f4195a2c622b68feb21a15faf23d4cca3f95b48
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
-ms.translationtype: HT
+ms.openlocfilehash: 76a1c9d646cea5f39a0e9fd1429c6c91515a0e57
+ms.sourcegitcommit: 1494ff4b33c13a87f20e0f3315da79a3567db96e
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60164124"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71302207"
 ---
-# <a name="upgrade-windows-10-editions-or-switch-out-of-s-mode-on-devices-using-microsoft-intune"></a>A Windows 10-kiadás frissítése, vagy váltson ki S mód eszközökön a Microsoft Intune-nal
+# <a name="upgrade-windows-10-editions-or-switch-out-of-s-mode-on-devices-using-microsoft-intune"></a>A Windows 10 kiadások frissítése vagy az eszközökön való kikapcsolás Microsoft Intune használatával
 
 [!INCLUDE [azure_portal](./includes/azure_portal.md)]
 
-A mobileszköz-felügyelet (MDM) megoldás részeként, előfordulhat, hogy frissíteni szeretné a Windows 10 rendszerű eszközök. Ha például szeretné a Windows 10 Professional-eszközök frissítése a Windows 10 Enterprise. Másik lehetőségként azt szeretné, hogy az eszköz S módból váltani.
+A mobileszköz-kezelési (MDM) megoldás részeként érdemes lehet frissíteni a Windows 10-es eszközöket. Például a Windows 10 Professional rendszerű eszközöket szeretné frissíteni Windows 10 Enterprise-ra. Vagy ha azt szeretné, hogy az eszköz kikapcsolja az S üzemmódot.
 
-[A Windows 10 S mód](https://support.microsoft.com/help/4456067/windows-10-switch-out-of-s-mode) (megnyílik egy másik Microsoft-webhely) lett tervezve, biztonságot és teljesítményt. Az Intune segítségével S módból váltani. Az S módból való váltás nem vonható vissza. Ha vált az S módból, nem válthat vissza később.
+[Windows 10 S üzemmód](https://support.microsoft.com/help/4456067/windows-10-switch-out-of-s-mode) (megnyílik egy másik Microsoft-webhely), amely biztonság és teljesítmény érdekében készült. Az Intune használatával kikapcsolhatja az S üzemmódot. Az S módból való váltás nem vonható vissza. Ha vált az S módból, nem válthat vissza később.
 
-Ismerkedjen meg néhány [gyakran ismételt kérdések](https://support.microsoft.com/help/4020089/windows-10-in-s-mode-faq) S módjával kapcsolatban.
+Tekintse meg az S móddal kapcsolatos [gyakran ismételt kérdéseket](https://support.microsoft.com/help/4020089/windows-10-in-s-mode-faq) .
 
 Ez a funkció az alábbiakra vonatkozik:
 
 - Windows 10 és újabb
-- A Windows 10-es 1809 vagy újabb S mód
+- Windows 10 1809 vagy újabb az S mód esetében
 - Windows Holographic for Business
 
-Ezek a funkciók érhetők el az Intune-ban, és a rendszergazda által konfigurálható. Az Intune használja a "profilok" hozhat létre, és ezeket a beállításokat a szervezet igényeinek megfelelően. Után ezeket a funkciókat ad hozzá egy profilt, amit leküldéses, vagy telepítse a profilt a Windows 10-eszközökre a szervezetben. A profil központi telepítése, az Intune automatikusan frissíti az eszközök vagy kapcsolók S módból.
+Ezek a funkciók az Intune-ban érhetők el, és a rendszergazda konfigurálható. Az Intune a "konfigurációs profilok" használatával hozza létre és szabja testre ezeket a beállításokat a szervezet igényeinek megfelelően. Miután hozzáadta ezeket a szolgáltatásokat egy profilhoz, leküldheti vagy üzembe helyezheti a profilt a szervezet Windows 10-es eszközein. A profil központi telepítésekor az Intune automatikusan frissíti az eszközöket, vagy kikapcsolja az S üzemmódot.
 
-Ez a cikk a támogatott frissítési útvonalakat sorolja fel, és bemutatja, hogyan hozhat létre az eszközkonfigurációs profilban. Emellett megtekintheti az összes elérhető frissítés és S mód beállításainak [Windows 10-es](edition-upgrade-windows-settings.md).
+Ez a cikk a támogatott frissítési útvonalakat sorolja fel, és bemutatja, hogyan hozhatja létre az eszköz konfigurációs profilját. Megtekintheti a [Windows 10](edition-upgrade-windows-settings.md)összes elérhető frissítési és S módú beállítását is.
 
 > [!NOTE]
-> Ha eltávolítja a szabályzat-hozzárendelés később, a Windows az eszközön lévő verziója nem állítja vissza a rendszer. Az eszköz továbbra is normál módon futnak.
+> Ha később eltávolítja a szabályzat-hozzárendelést, az eszközön lévő Windows-verzió nem áll vissza. Az eszköz továbbra is szabályosan fut.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-Mielőtt frissítené az eszközt, lehet, hogy a következő előfeltételek vonatkoznak:
+Az eszközök frissítése előtt győződjön meg arról, hogy rendelkezik a következő előfeltételekkel:
 
 - Érvényes termékkulcs a frissített Windows-verzió telepítéséhez a szabályzat céljaként meghatározott eszközökön (Windows 10 asztali verziók esetén). Többször használható aktiválási kulcsokat (MAK) vagy kulcskezelő kiszolgálói (KMS) kulcsokat használhat.
-- Windows 10 Mobile és Windows 10 Holographic esetén használhatja a Microsoft-licencfájl. A licencfájl történő telepítése a frissített edition minden eszközön, amelyet céljaként a szabályzatot a licencelési adatokat tartalmazza.
+- A Windows 10 Mobile és a Windows 10 holografikus kiadásaihoz Microsoft-licencfájl is használható. A licencfájl tartalmazza azokat a licencelési adatokat, amelyek a frissített kiadás telepítéséhez szükségesek a szabályzattal megcélzott összes eszközön.
 - Már regisztrálva vannak a Microsoft Intune-ban azok a Windows 10 rendszerű eszközök, amelyekhez hozzárendeli a szabályzatot. A kiadásfrissítési szabályzat nem használható az Intune PC-ügyfélszoftvert futtató számítógépekkel.
 
 ## <a name="supported-upgrade-paths"></a>Támogatott frissítési útvonalak
@@ -89,35 +88,35 @@ A Windows 10-kiadás frissítési profiljának támogatott frissítési útvonal
 |Cloud N|![unsupported](./media/x_blk.png)|![supported](./media/check_grn.png)|![unsupported](./media/x_blk.png)|![supported](./media/check_grn.png)|![unsupported](./media/x_blk.png)|![supported](./media/check_grn.png)|![unsupported](./media/x_blk.png)|![supported](./media/check_grn.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|
 |Enterprise|![supported](./media/check_grn.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|
 |Enterprise N|![unsupported](./media/x_blk.png)|![supported](./media/check_grn.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|
-|Core|![supported](./media/check_grn.png)|![unsupported](./media/x_blk.png)|![supported](./media/check_grn.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)   |![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|
+|Core|![supported](./media/check_grn.png)|![unsupported](./media/x_blk.png)|![supported](./media/check_grn.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|
 |Core N|![unsupported](./media/x_blk.png)|![supported](./media/check_grn.png)|![unsupported](./media/x_blk.png)|![supported](./media/check_grn.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|
 |Mobile|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![supported](./media/check_grn.png)|![unsupported](./media/x_blk.png)|
 |Holographic|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![unsupported](./media/x_blk.png)|![supported](./media/check_grn.png) -->
 
 ## <a name="create-the-profile"></a>A profil létrehozása
 
-1. Az a [az Azure portal](https://portal.azure.com), jelölje be **minden szolgáltatás** > szűréséhez **Intune** > Válassza ki **Intune**.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
 3. Adja meg a következő tulajdonságokat:
 
-    - **Név**: Adja meg az új profil leíró nevét. Például adja meg az alábbihoz hasonló `Windows 10 edition upgrade profile` vagy `Windows 10 switch off S mode`.
+    - **Név**: Adjon meg egy leíró nevet az új profilhoz. Adja meg `Windows 10 edition upgrade profile` például a következőt: `Windows 10 switch off S mode`vagy.
     - **Description** (Leírás): Adja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
     - **Platform**: Válassza ki a platformot:  
 
         - **Windows 10 és újabb**
 
-    - **Profil típusa**: Válassza ki **kiadásfrissítés**.
-    - **Beállítások**: Adja meg a konfigurálni kívánt beállításokat. Az összes beállítások listáját, és mit tesznek lásd:
+    - **Profil típusa**: Válassza a **kiadás frissítése**lehetőséget.
+    - **Beállítások**: Adja meg a konfigurálni kívánt beállításokat. Az összes beállítás listáját és a teendőket lásd:
 
-        - [Windows 10-es frissítés és S mód](edition-upgrade-windows-settings.md)
+        - [Windows 10 frissítési és S üzemmód](edition-upgrade-windows-settings.md)
         - [Windows Holographic for Business](holographic-upgrade.md)
 
 4. A módosítások mentéséhez válassza az **OK** > **Létrehozás** lehetőséget. 
 
-A profil létrehozásáról és jelennek meg a listában. Ügyeljen arra, hogy [rendelje hozzá a profilt](device-profile-assign.md) és [állapotát nyomon](device-profile-monitor.md).
+Ekkor létrejön a profil, és megjelenik a listában. Ügyeljen arra, hogy [hozzárendelje a profilt](device-profile-assign.md) , és [Figyelje annak állapotát](device-profile-monitor.md).
 
 ## <a name="next-steps"></a>További lépések
 
-A profil létrehozását követően készen áll hozzá kell rendelni. Ezután [rendelje hozzá a profilt](device-profile-assign.md) és [állapotát nyomon](device-profile-monitor.md).
+A profil létrehozása után készen áll a hozzárendelésre. Ezután [rendelje hozzá a profilt](device-profile-assign.md) , és [Figyelje annak állapotát](device-profile-monitor.md).
 
-A frissítés és S mód beállításainak megtekintése [Windows 10-es](edition-upgrade-windows-settings.md) és [Windows Holographic for Business](holographic-upgrade.md) eszközök.
+Megtekintheti a [Windows 10](edition-upgrade-windows-settings.md) és a [Windows holografikus for Business](holographic-upgrade.md) rendszerű eszközök frissítési és S üzemmódjának beállításait.

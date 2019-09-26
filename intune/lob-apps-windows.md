@@ -1,14 +1,13 @@
 ---
 title: Üzletági Windows-alkalmazás hozzáadása a Microsoft Intune-hoz
 titleSuffix: ''
-description: Ismerje meg, hogyan adhat hozzá egy Windows üzletági (LOB) alkalmazások Microsoft Intune-nal.
+description: Megtudhatja, hogyan adhat hozzá egy Windows rendszerű üzletági (LOB) alkalmazást Microsoft Intune használatával.
 keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 04/10/2019
+ms.date: 07/29/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0eadff455a25a22d53d58d87790a356072f9db66
-ms.sourcegitcommit: b0cf661145ccc6e3518db620af199786a623a0d9
+ms.openlocfilehash: eae10cc2a7e1965d83d2c0c59d138b44eafcddf0
+ms.sourcegitcommit: 3baa9965095bb874d9b8c7a3cbb4aa925ed52cae
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64764721"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "71303377"
 ---
 # <a name="add-a-windows-line-of-business-app-to-microsoft-intune"></a>Üzletági Windows-alkalmazás hozzáadása a Microsoft Intune-hoz
 
@@ -31,16 +30,15 @@ ms.locfileid: "64764721"
 
 Az üzletági (LOB) alkalmazásokat egy alkalmazástelepítő fájlból adja hozzá. Az ilyen alkalmazásokat általában házon belül írják. Az alábbi lépések nyújtanak útmutatást az üzletági Windows-alkalmazások a Microsoft Intune-hoz való hozzáadásához.
 
-## <a name="step-1-specify-the-software-setup-file"></a>1. lépés: A szoftvertelepítő fájl megadása
+## <a name="step-1-specify-the-software-setup-file"></a>1\. lépés: A szoftvertelepítési fájl beállítása
 
-1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com).
-2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget. Az Intune a **Figyelés + felügyelet** szakaszban található.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** ablaktáblán válassza az **Ügyfélalkalmazások** lehetőséget.
 4. Az **Ügyfélalkalmazások** területen válassza a **Kezelés** > **Alkalmazások** elemet.
 5. Az alkalmazások listája fölött válassza a **Hozzáadás** lehetőséget.
 6. Az **Alkalmazás hozzáadása** panelen válassza az **Üzletági alkalmazás** lehetőséget.
 
-## <a name="step-2-configure-the-app-package-file"></a>2. lépés: Az alkalmazáscsomag-fájl konfigurálása
+## <a name="step-2-configure-the-app-package-file"></a>2\. lépés: Az alkalmazáscsomag-fájl konfigurálása
 
 1. Az **Alkalmazás hozzáadása** panelen válassza az **Alkalmazáscsomag-fájl** lehetőséget.
 2. Az **Alkalmazáscsomag-fájl** panelen válassza a tallózás gombot. Ez után jelölje ki az **.msi**, **.appx** vagy **.appxbundle** kiterjesztésű telepítőfájlt.
@@ -51,34 +49,37 @@ Az üzletági (LOB) alkalmazásokat egy alkalmazástelepítő fájlból adja hoz
 1. Amikor végzett, válassza az **OK** gombot.
 
 
-## <a name="step-3-configure-app-information"></a>3. lépés: Az alkalmazásadatok konfigurálása
+## <a name="step-3-configure-app-information"></a>3\. lépés: Az alkalmazásadatok konfigurálása
 
 1. Az **Alkalmazás hozzáadása** panelen válassza az **Alkalmazásadatok** lehetőséget.
 2. Az **Alkalmazás adatai** panelen konfigurálja az alábbi információkat. Lehetséges, hogy ezen a panelen néhány érték automatikusan ki lesz töltve.
-    - **Név**: Adja meg az alkalmazás nevét, a vállalati portálon megjelenő. Ügyeljen arra, hogy a megadott alkalmazásnevek egyediek legyenek. Ha ugyanazt az alkalmazásnevet kétszer adja meg, csak az egyik alkalmazás fog megjelenni a Céges portálon.
+    - **Név**: Adja meg az alkalmazásnak a vállalati portálon megjelenő nevét. Ügyeljen arra, hogy a megadott alkalmazásnevek egyediek legyenek. Ha ugyanazt az alkalmazásnevet kétszer adja meg, csak az egyik alkalmazás fog megjelenni a Céges portálon.
     - **Description** (Leírás): Adja meg az alkalmazás leírását. A leírás megjelenik a Céges portálon.
     - **Közzétevő**: Itt adhatja meg az alkalmazás kiadójának nevét.
-    - **Alkalmazásverzió figyelmen kívül hagyása**: Állítsa be **Igen** , ha az alkalmazást automatikusan frissíti annak fejlesztője az alkalmazás. Ez a beállítás csak mobil .msi alkalmazásokra vonatkozik.
-    - **Kategória**: Válasszon ki egyet vagy többet a beépített Alkalmazáskategóriák közül, vagy válasszon egy kategóriát, amelyet Ön hozott létre. A kategóriákkal megkönnyítheti a felhasználók számára az alkalmazás megkeresését a Céges portálon való böngészés során.
-    - **Megjelenítés kiemelt alkalmazásként a céges portálon**: Az alkalmazás jól észrevehető módon való megjelenítése a vállalati portál fő lapján, amikor a felhasználók tallózással alkalmazásokat keresnek.
-    - **Információs URL-cím**: Igény esetén megadhatja az alkalmazással kapcsolatos információkat tartalmazó webhely URL-CÍMÉT. Az URL-cím megjelenik a Céges portálon.
-    - **Adatvédelmi URL-címe**: Igény esetén megadhatja az alkalmazás adatvédelmi nyilatkozatát tartalmazó webhely URL-CÍMÉT. Az URL-cím megjelenik a Céges portálon.
-    - **Parancssori argumentumok**: Megadhatja, hogy a alkalmazni az .msi fájl futtatásakor kívánt parancssori argumentumokat.  Például: **/q**. Nem tartalmazzák az msiexec parancs vagy argumentumok, mint például **/i** vagy **/x**, ahogy a rendszer automatikusan használja. További információkért lásd: [parancssori kapcsolói](https://docs.microsoft.com/windows/desktop/Msi/command-line-options). 
-    - **Fejlesztői**: Megadhatja az alkalmazás fejlesztőjének nevét.
-    - **Tulajdonos**: Szükség esetén adja meg az alkalmazás tulajdonosának nevét. Például **HR részleg**.
-    - **Megjegyzések**: Adja meg az alkalmazáshoz társítani kívánt megjegyzéseket.
+    - **Alkalmazás verziójának mellőzése**: Állítsa **Igen** értékre, ha az alkalmazás fejlesztője automatikusan frissíti az alkalmazást. Ez a beállítás csak mobil .msi alkalmazásokra vonatkozik.
+    - **Kategória**: Válasszon ki egy vagy több beépített alkalmazás-kategóriát, vagy válasszon ki egy Ön által létrehozott kategóriát. A kategóriákkal megkönnyítheti a felhasználók számára az alkalmazás megkeresését a Céges portálon való böngészés során.
+    - **Megjelenítés Kiemelt alkalmazásként a céges portálban**: Az alkalmazás jól észrevehető módon való megjelenítése a vállalati portál fő lapján, amikor a felhasználók tallózással alkalmazásokat keresnek.
+    - **Információs URL-cím**: Igény szerint megadhatja az alkalmazással kapcsolatos információkat tartalmazó webhely URL-címét. Az URL-cím megjelenik a Céges portálon.
+    - **Adatvédelmi URL-cím**: Igény szerint megadhatja az alkalmazás adatvédelmi információit tartalmazó webhely URL-címét. Az URL-cím megjelenik a Céges portálon.
+    - **Parancssori argumentumok**: Szükség esetén olyan parancssori argumentumokat is megadhat, amelyeket az. msi fájl futtatásakor alkalmazni kíván.  Például: **/q**. Ne foglalja bele az msiexec parancsot vagy argumentumokat, például a **/i** vagy az **/x**függvényt, mivel azok automatikusan használatban vannak. További információ: [parancssori kapcsolók](https://docs.microsoft.com/windows/desktop/Msi/command-line-options). Ha a. Az MSI-fájlhoz további parancssori kapcsolók szükségesek a [Win32-alkalmazások kezeléséhez](apps-win32-app-management.md).
+    - **Fejlesztő**: Igény szerint megadhatja az alkalmazás-fejlesztő nevét.
+    - **Tulajdonos**: Igény szerint megadhatja az alkalmazás tulajdonosának nevét. Például **HR részleg**.
+    - **Megjegyzések**: Adja meg az alkalmazáshoz hozzárendelni kívánt megjegyzéseket.
     - **Embléma**: Töltse fel az alkalmazáshoz társított ikont. Ez az ikon jelenik meg az alkalmazásnál a Céges portálon böngésző felhasználók számára.
 3. Amikor végzett, válassza az **OK** gombot.
 
-## <a name="step-4-finish-up"></a>4. lépés: Befejezés
+## <a name="step-4-finish-up"></a>4\. lépés: Befejezés
 
 1. Az **Alkalmazás hozzáadása** panelen ellenőrizze, hogy helyesen konfigurálta-e az alkalmazásadatokat.
 2. Az alkalmazást a **Hozzáadás** elem kiválasztásával töltheti fel az Intune-ba.
 
-## <a name="step-5-update-a-line-of-business-app"></a>5. lépés: Az üzletági alkalmazás frissítése
+## <a name="step-5-update-a-line-of-business-app"></a>5\. lépés: Üzletági alkalmazás frissítése
 
 [!INCLUDE [shared-proc-lob-updateapp](./includes/shared-proc-lob-updateapp.md)]
 
+   > [!NOTE]
+   > Ahhoz, hogy az Intune szolgáltatás sikeresen üzembe helyezzen egy új Appx-fájlt az eszközön, növelnie kell a `Version` karakterláncot a Appx-csomagban található AppxManifest. xml fájlban.
+    
 ## <a name="configure-a-self-updating-mobile-msi-app-to-ignore-the-version-check-process"></a>Önfrissítő MSI-mobilalkalmazások konfigurálása a verzióellenőrzési folyamat figyelmen kívül hagyására
 
 Az ismert önfrissítő MSI-mobilalkalmazásokat konfigurálhatja úgy, hogy figyelmen kívül hagyják a verzióellenőrzési folyamatot. 
@@ -93,4 +94,4 @@ Ez a funkció akkor hasznos, ha nem szeretne versenyhelyzetbe kerülni. Konflikt
 
 - További tájékoztató az alkalmazás jellemzőinek és hozzárendelési állapotának figyeléséről. Lásd: [Alkalmazásadatok és -hozzárendelések figyelése](apps-monitor.md).
 
-- További tudnivalók az Intune-beli alkalmazás környezetéről. Lásd: [Microsoft Intune-ban az alkalmazás-életciklus áttekintése](app-lifecycle.md).
+- További tudnivalók az Intune-beli alkalmazás környezetéről. Lásd: [az alkalmazások életciklusának áttekintése Microsoft Intuneban](app-lifecycle.md).

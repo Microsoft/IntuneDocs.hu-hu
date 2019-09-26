@@ -1,14 +1,13 @@
 ---
 title: A Windows 10-es Céges portál alkalmazás manuális hozzáadása
 titleSuffix: Microsoft Intune
-description: Ismerje meg, hogyan a munkatársak manuálisan is hozzáadhat a Windows 10-es céges portál alkalmazás Számítógépeiket, a Microsoft Store.
+description: Ismerje meg, hogy a dolgozók Hogyan vehetik fel manuálisan a Windows 10-es Céges portál alkalmazást a Microsoft Store a SZÁMÍTÓGÉPére.
 keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 12/19/2018
+ms.date: 07/26/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a55993e564297016c6c926c6d3be46c32fe1d86b
-ms.sourcegitcommit: 25e6aa3bfce58ce8d9f8c054bc338cc3dff4a78b
+ms.openlocfilehash: 50846ae3bfdea435a24e0a387817b5b1a96cf535
+ms.sourcegitcommit: 293dfbea2b4756bb9b7df1705a2b5f752dfaa807
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57394493"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "71303157"
 ---
 # <a name="manually-add-the-windows-10-company-portal-app-by-using-microsoft-intune"></a>A Windows 10-es Céges portál alkalmazás manuális hozzáadása a Microsoft Intune-nal
 
@@ -47,24 +46,25 @@ A felhasználók maguk telepíthetik a Microsoft Store-ból a Céges portál alk
 3. Válassza **Az alkalmazás letöltése** lehetőséget az offline Céges portál letöltéséhez és a leltárba való felvételéhez.
 4. Válassza a **Felügyelet** lehetőséget a **Céges portál** alkalmazáslapján.
 5. A **Platform** listából válassza ki a **Windows 10 minden eszközre** lehetőséget, majd válassza ki a megfelelő értékeket a **Minimális verzió**, az **Architektúra** és az **Alkalmazás metaadatainak letöltése** elemekhez. 
-6. Válassza a **Letöltés** lehetőséget a fájl a helyi gépen való mentéséhez.
+6. Ha a fájlt a helyi gépre szeretné menteni, válassza a **Letöltés** lehetőséget a **csomag részletei** területen.
 
-    ![Ahol architektúra egyenlő X86, Windows 10-eszközökre van kiválasztva](./media/Win10CP-all-devices.png)
+    ![A Windows 10 rendszerű eszközök, amelyekben az architektúra értéke x86, ki van választva](./media/Win10CP-all-devices.png)
 
 7. Töltse le a „Szükséges keretrendszer” cím alatt található összes csomagot a **Letöltés** elem kiválasztásával.  
-    Ezt a műveletet az x86, az x64 és az ARM architektúrákkal kell elvégezni, összesen 12 csomaggal.
-8. Mielőtt feltölti a céges portál alkalmazást az Intune-hoz, hozzon létre egy mappát (például: C:\Company portál) a csomagokkal, strukturált, a következő módon:
-   - Helyezze el a Céges portál csomagot a C:\Céges portál helyen. Ugyanitt hozzon létre egy *Függőségek* almappát is.  
 
-     ![Az APPXBUN fájllal mentett Függőségek mappája](./media/Win10CP-Dependencies-save.png)
+    Ezt a műveletet az x86, az x64 és az ARM architektúrák esetében kell végrehajtani:<br> 
+    *A 1507-as minimális operációsrendszer-verzióként, 12 csomaggal, a 1511-es és a 15 csomag kiválasztásakor a 1607 kiválasztásakor 9 szükséges keretrendszer-csomag található.*
 
-   - Helyezze el a függőségcsomagokat a *Dependencies* mappában. 
+8. Az Azure Portalon található Microsoft Intune-ban töltse fel a Céges portál alkalmazást új alkalmazásként. Az alkalmazás **hozzáadása** panel alkalmazás **típusa** részén az üzletági alkalmazás lehetőség kiválasztásával adhatja hozzá az alkalmazást. Ezután válassza ki az alkalmazáscsomag-fájlt (kiterjesztés. AppxBundle).
+
+9. A **függőségi alkalmazások kiválasztása** területen válassza ki a 7. lépésben letöltött összes függőséget a shift-click paranccsal, és ellenőrizze, hogy a **hozzáadott** oszlop **Igen** értéket jelenít-e meg a szükséges architektúrák esetében.
 
      > [!NOTE]
-     > Ha a függőségeket nem a megfelelő formátumban helyezi el, az Intune nem tudja felismerni és feltölteni a fájlokat a csomag feltöltésekor, így a folyamat sikertelen lesz, és hibaüzenet jelenik meg.
+     > Ha a függőségek nem lettek hozzáadva, előfordulhat, hogy az alkalmazás nem lesz telepítve a megadott típusú eszközökön.
 
-9. Az Azure Portalon található Microsoft Intune-ban töltse fel a Céges portál alkalmazást új alkalmazásként. 
-10. Végezze el a Céges portál alkalmazás kötelező alkalmazásként való hozzárendelését a célfelhasználók kijelölt csoportjához.  
+10. Kattintson **az OK**gombra, adja meg a kívánt **alkalmazás adatait**, majd kattintson a **Hozzáadás**gombra.
+
+11. Rendelje hozzá a Céges portál alkalmazást kötelező alkalmazásként a kiválasztott felhasználói vagy eszközosztály számára.  
 
 További információ az univerzális alkalmazások függőségeinek Intune általi kezeléséről: [Appxbundle telepítése függőségekkel a Microsoft Intune MDM-en keresztül](https://blogs.technet.microsoft.com/configmgrdogs/2016/11/30/deploying-an-appxbundle-with-dependencies-via-microsoft-intune-mdm/).  
 

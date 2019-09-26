@@ -7,7 +7,6 @@ ms.author: mandia
 manager: dougeby
 ms.date: 06/25/2018
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -17,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 786cd6e7d0acaeb6e78035d8ec580c30d29d09e7
-ms.sourcegitcommit: 25e6aa3bfce58ce8d9f8c054bc338cc3dff4a78b
+ms.openlocfilehash: e4b95894e00ce160323a5951b30eb9621585ea85
+ms.sourcegitcommit: 7c251948811b8b817e9fe590b77f23aed95b2d4e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57391708"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "71303461"
 ---
 # <a name="monitor-device-profiles-in-microsoft-intune"></a>Eszközprofilok figyelése a Microsoft Intune-ban
 
@@ -32,8 +31,7 @@ Az Intune egyes Azure Portalbeli funkcióival figyelheti és kezelheti az eszkö
 
 ## <a name="view-existing-profiles"></a>Meglévő profilok megtekintése
 
-1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com).
-2. Kattintson az **Összes szolgáltatás** lehetőségre, szűrjön az **Intune-ra**, és válassza ki a **Microsoft Intune** elemet.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Válassza az **Eszközkonfiguráció** > **Profilok** lehetőséget.
 
 Itt mindegyik meglévő profil megjelenik olyan adatokkal, mint a platform, és megmutatja a profil eszköz-hozzárendelési állapotát is.
@@ -66,11 +64,11 @@ Az eszközprofil létrehozása után az Intune grafikus diagramokat nyújt. Ezek
     Zárja be a **Felhasználó állapota** adatait.
 
 5. Miután visszalépett a **Profilok** listára, válasszon ki egy adott profilt. A meglévő tulajdonságokat is módosíthatja:
-  - **Tulajdonságok**: Módosítsa a nevet, vagy frissítse a meglévő beállítások.
-  - **Hozzárendelések**: Belefoglalhat vagy kizárhat az eszközöket, amelyek a alkalmazni kell a házirendet. Adott csoportok kiválasztásához válassza a **Kiválasztott csoportok** lehetőséget.
-  - **Eszköz állapota**: Itt láthatja a profilhoz rendelt eszközöket, valamint azt, hogy a profilt sikeresen üzembe helyezték-e. Egy adott eszközt kijelölve még több adatot megtekinthet, például a telepített alkalmazásokat.
-  - **Felhasználói állapot**: A felhasználónevek megjeleníti az eszközök negatív hatással a profil, és ha a profil sikeresen telepítve. Egy adott felhasználót kijelölve még több adatot megtekinthet.
-  - **Állapot beállításonként**: A kimenet szűri a profilon belül az egyes beállítások megjelenítésével, és jeleníti meg, ha a beállítás sikeresen vonatkozik.
+    - **Tulajdonságok**: Módosítsa a nevet, vagy frissítse a meglévő beállításokat.
+    - **Hozzárendelések**: A házirend hatálya alá tartozó eszközök belefoglalása vagy kizárása. Adott csoportok kiválasztásához válassza a **Kiválasztott csoportok** lehetőséget.
+    - **Eszköz állapota**: Itt láthatja a profilhoz rendelt eszközöket, valamint azt, hogy a profilt sikeresen üzembe helyezték-e. Egy adott eszközt kijelölve még több adatot megtekinthet, például a telepített alkalmazásokat.
+    - **Felhasználói állapot**: Felsorolja azokat a felhasználóneveket, amelyek hatással vannak a profil által érintett eszközökre, és ha a profil sikeresen telepítve lett. Egy adott felhasználót kijelölve még több adatot megtekinthet.
+    - **/Beállítás állapota**: Kiszűri a kimenetet a profilban lévő egyes beállítások megjelenítésével, és megjeleníti, hogy a beállítás alkalmazása sikeres volt-e.
 
 ## <a name="view-conflicts"></a>Ütközések megtekintése
 

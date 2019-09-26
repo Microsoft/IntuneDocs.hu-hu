@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 09/20/2019
+ms.date: 09/23/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 657f30748d3c4e6c4a819c5ed888c541bcb7b5c1
-ms.sourcegitcommit: 6a946a055a2014e00a4ca9d71986727a4ebbc777
+ms.openlocfilehash: 235cb317625786c1254ecf572726c66480c01b2e
+ms.sourcegitcommit: 62c41976c4da43b36015b715bc255397ebb8c6ad
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71238226"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274843"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -51,6 +51,21 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 ### Role-based access control
 
 -->  
+
+<!-- ########################## -->
+
+## <a name="week-of-september-23-2019"></a>2019. szeptember 23-i hét
+
+#### <a name="ios-user-enrollment-in-preview----4817900---"></a>iOS-felhasználók regisztrációja az előzetes verzióban <!-- 4817900 -->
+Az Apple iOS 13,1 kiadásában a felhasználók beléptetése, valamint az iOS-eszközökhöz készült egyszerűsített felügyelet új formája szerepel. A személyes tulajdonú eszközök esetében az eszközök beléptetése vagy az automatikus eszközök beléptetése (korábban Készülékregisztrációs program) helyett is felhasználható. Az Intune előzetes verziója a következő lépésekkel támogatja a szolgáltatáskészlet támogatását:
+
+- Felhasználói csoportokba való felhasználói regisztráció megcélzása.
+- Lehetővé teszi a végfelhasználók számára, hogy az eszközük regisztrálásakor a könnyebb felhasználói regisztráció vagy erősebb eszközök beléptetése között választhatnak.
+
+Az iOS 31,1-es verziójától kezdődően a 9/24/2019-es verziótól kezdve a frissítések minden ügyfelünk számára elérhetők lesznek, és a következő hét végére várhatóan befejeződtek.
+Érintett kiadások:
+
+iOS 13,1 és újabb verziók
 
 <!-- ########################## -->
 

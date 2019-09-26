@@ -5,9 +5,8 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 04/02/2018
+ms.date: 09/19/2018
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -16,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dbed5ee5ca31a85f1ab227916619b0750a1b84e5
-ms.sourcegitcommit: 25e6aa3bfce58ce8d9f8c054bc338cc3dff4a78b
+ms.openlocfilehash: a68a6ef0224cde88d0414b5225610448b01218f1
+ms.sourcegitcommit: c19584b36448bbd4c8638d7cab552fe9b3eb3408
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57393997"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71304763"
 ---
 # <a name="what-is-microsoft-intune-device-management"></a>A Microsoft Intune-eszközfelügyelet ismertetése
 
@@ -33,8 +32,7 @@ Az **Eszközök** munkafolyamat áttekintést nyújt a felügyelt eszközökről
 
 ## <a name="get-to-your-devices"></a>Az eszközök elérése
 
-1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com).
-2. Kattintson az **Összes szolgáltatás** lehetőségre, szűrjön az **Intune-ra**, és válassza ki a **Microsoft Intune** elemet.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Válassza az **Eszközök** lehetőséget. Ez a nézet részletes információkat jelenít meg az egyes eszközökről, illetve megjeleníti a velük elvégezhető műveleteket, például:
 
    - Az **Áttekintés** a regisztrált eszközök pillanatképét jeleníti meg, valamint azt, hogy hány eszköz használja a különböző platformokat (Android, iOS és egyebek).
@@ -42,7 +40,7 @@ Az **Eszközök** munkafolyamat áttekintést nyújt a felügyelt eszközökről
 
      Az **Exportálás** funkcióval létrehozhat egy .csv formátumú listát minden eszközről, egyenként 10000 (Internet Explorer), iletve 30000 (Microsoft Edge, Chrome) eszközzel.
 
-     Egy eszköz kijelölésével [további részleteket tekinthet meg róla](device-inventory.md), így a hardveradatokat, a telepített alkalmazásokat, a megfelelőségi állapotot és egyéb adatokat.
+     Válassza ki bármelyik eszközt az [eszköz további részleteinek megtekintéséhez](device-inventory.md), beleértve a hardver részleteit, a telepített alkalmazásokat, a megfelelőségi szabályzat állapotát és egyebeket.
 
    - Az **Azure AD-eszközök** – az Azure Active Directory (AD) szolgáltatásban regisztrált vagy azzal összekapcsolt eszközöket jeleníti meg. További tudnivalók az [Azure AD eszközkezeléséről](https://docs.microsoft.com/azure/active-directory/device-management-introduction).
    - Az **Eszközműveletek** az eszközökön végrehajtott távoli műveletek előzményei, amelyek tartalmazzák a műveletet, az állapotot, a műveletet kezdeményező felhasználót és az időt.
@@ -50,7 +48,7 @@ Az **Eszközök** munkafolyamat áttekintést nyújt a felügyelt eszközökről
      ![Képernyőkép az eszközműveletek figyeléséről](./media/monitor-device-actions.png)
 
    - Az **auditnaplókban** az Intune-ban változást előidéző tevékenységek jegyzéke érhető el. Az [auditnaplók](monitor-audit-logs.md) további részletekkel szolgálnak.
-   - A **TeamViewer-összekötő** szolgáltatással az Intune-ban kezelt Android-eszközök használói távsegítséget kérhetnek a rendszergazdájuktól. További információ a [TeamViewerről](device-profile-android-teamviewer.md).
+   - A **TeamViewer-összekötő** szolgáltatással az Intune-ban kezelt Android-eszközök használói távsegítséget kérhetnek a rendszergazdájuktól. További információ a [TeamViewerről](teamviewer-support.md).
    - A **Súgó és támogatás** hibaelhárítási tippekhez, támogatás kéréséhez és az Intune állapotának ellenőrzéséhez nyújt hivatkozást.
 
 ## <a name="available-device-actions"></a>Elérhető eszközműveletek
@@ -58,18 +56,19 @@ Az egyes műveletek az eszköz platformjának és konfigurációjának függvén
 
 - [Az eszközleltár megtekintése](device-inventory.md)
 - A távoli eszközműveletek futtatása:
-    - [Kivonás](devices-wipe.md#retire)
-    - [Törlés](devices-wipe.md#wipe)
-    - [Távoli zárolás](device-remote-lock.md)
-    - [Új PIN-kód](device-passcode-reset.md)
-    - [Az aktiválási zár megkerülése](device-activation-lock-bypass.md) (kizárólag iOS esetében)
-    - [Újrakezdés](device-fresh-start.md) (kizárólag Windowson)
-    - [Elveszett eszköz mód](device-lost-mode.md) (kizárólag iOS esetében)
-    - [Eszköz megkeresése](device-locate.md) (kizárólag iOS esetében)
-    - [Újraindítás](device-restart.md) (kizárólag Windowson)
-    - [Windows 10-es PIN-kód alaphelyzetbe állítása](device-windows-pin-reset.md)
-    - [Távirányítás Androidhoz](device-profile-android-teamviewer.md)
-    - [Eszköz szinkronizálása](device-sync.md)
+  - [Kivonás](devices-wipe.md#retire)
+  - [Törlés](devices-wipe.md#wipe)
+  - [Távoli zárolás](device-remote-lock.md)
+  - [Új PIN-kód](device-passcode-reset.md)
+  - [Az aktiválási zár megkerülése](device-activation-lock-bypass.md) (kizárólag iOS esetében)
+  - [Újrakezdés](device-fresh-start.md) (kizárólag Windowson)
+  - [Elveszett eszköz mód](device-lost-mode.md) (kizárólag iOS esetében)
+  - [Eszköz megkeresése](device-locate.md) (kizárólag iOS esetében)
+  - [Újraindítás](device-restart.md) (kizárólag Windowson)
+  - [Windows 10-es PIN-kód alaphelyzetbe állítása](device-windows-pin-reset.md)
+  - [Távirányítás Androidhoz](teamviewer-support.md)
+  - [Eszköz szinkronizálása](device-sync.md)
+  - [Egyéni értesítés küldése](custom-notifications.md#send-a-custom-notification-to-a-single-device) (Android, iOS)
 
 ## <a name="next-steps"></a>További lépések
 

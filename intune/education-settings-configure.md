@@ -1,13 +1,12 @@
 ---
-title: Adjon hozzá vagy oktatási beállításainak konfigurálása a Microsoft Intune – Azure |} A Microsoft Docs
-description: Használja a végezze el a vizsga alkalmazás a Windows 10 és újabb rendszerű eszközökhöz a Microsoft Intune eszközkonfigurációs profil. Az oktatási settiings használó konfigurációs profil létrehozása és a egy teszt alkalmazás URL-CÍMÉT adja meg, hogyan felhasználókat jelentkezzen be, figyelheti a képernyő a teszt során, és lehetővé vagy szövegjavaslatokat megakadályozása a teszt során.
+title: Oktatási beállítások hozzáadása vagy konfigurálása a Microsoft Intuneban – Azure | Microsoft Docs
+description: A Windows 10-es és újabb rendszerű eszközökön a teszt alkalmazása eszköz konfigurációs profiljában a Microsoft Intune. Hozzon létre egy konfigurációs profilt az oktatási beállítások segítségével, és írja be a teszt alkalmazás URL-címét, válassza ki a felhasználók bejelentkezésének módját, figyelje a képernyőt a teszt során, és engedélyezze vagy tiltsa le a szöveges javaslatokat a teszt során.
 keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
 ms.date: 01/10/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -17,35 +16,35 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: efa990e12416c292d9446428165e4bff99c7eca2
-ms.sourcegitcommit: 25e6aa3bfce58ce8d9f8c054bc338cc3dff4a78b
+ms.openlocfilehash: a64c5c6779d3fcc34f4ff120ed27e7f300bc09b0
+ms.sourcegitcommit: 063177c6c365fef3642edd7c455790958469aad9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57393203"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "71301971"
 ---
-# <a name="use-the-take-a-test-app-on-windows-10-devices-in-microsoft-intune"></a>A végezze el a vizsga alkalmazás használata a Windows 10 rendszerű eszközökön a Microsoft Intune-ban
+# <a name="use-the-take-a-test-app-on-windows-10-devices-in-microsoft-intune"></a>A teszt alkalmazás használata Windows 10-es eszközökön Microsoft Intune
 
 [!INCLUDE [azure_portal](./includes/azure_portal.md)]
 
-Oktatási profilok az Intune-ban egy teszt vagy a vizsgára érvénybe az eszközökön a tanulók számára tervezték. Ez a funkció tartalmazza a **vizsga** alkalmazás és a egy tesztcélú URL-cím hozzáadása beállítások válassza ki, hogyan végfelhasználók jelentkezzen be a teszt és egyéb. Ez a funkció a következő platformot támogatja:
+Az Intune-beli oktatási profilokat tanulók számára tervezték, hogy tesztet vagy vizsgát tegyenek az eszközökön. Ez a funkció magában foglalja a teszt-URL-cím hozzáadására szolgáló **tesztelési** alkalmazást és beállításokat, valamint azt, hogy a végfelhasználó Hogyan jelentkezzen be a tesztbe, és így tovább. Ez a funkció a következő platformot támogatja:
 
 - Windows 10 és újabb
 
-Ha a felhasználó bejelentkezik, a végezze el a vizsga alkalmazás automatikusan megnyílik a megadott tesztet. Más alkalmazás nem futtatható az eszközön, amíg a vizsgálat folyamatban van. [Tesztek is a Windows 10](https://docs.microsoft.com/education/windows/take-tests-in-windows-10) további információt talál a hajtsa végre a megfelelő alkalmazás.
+Amikor a felhasználó bejelentkezik, a teszt alkalmazás automatikusan megnyílik a megadott teszttel. Az eszközön semmilyen más alkalmazás nem futtatható, amíg a teszt folyamatban van. A [Windows 10 tesztelési](https://docs.microsoft.com/education/windows/take-tests-in-windows-10) szolgáltatásával további részleteket tudhat meg a próbaverzió alkalmazásról.
 
-Ez a cikk a Microsoft Intune eszközkonfigurációs profil létrehozásának lépéseit sorolja fel. Olvassa el, és a Windows 10 rendszerű eszközökhöz elérhető oktatási beállítások ismertetése információkat is tartalmaz.
+Ez a cikk a Microsoft Intune eszköz konfigurációs profiljának létrehozásának lépéseit sorolja fel. Emellett információkat is tartalmaz a Windows 10-es eszközökhöz elérhető oktatási beállítások olvasásához és megismeréséhez.
 
 ## <a name="create-a-device-profile"></a>Eszközprofil létrehozása
 
-1. Az a [az Azure portal](https://portal.azure.com), jelölje be **minden szolgáltatás** > szűréséhez **Intune** > Válassza ki **a Microsoft Intune**.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
 3. Adja meg a következő tulajdonságokat:
 
-    - **Név**: Adja meg az új profil leíró nevét.
+    - **Név**: Adjon meg egy leíró nevet az új profilhoz.
     - **Description** (Leírás): Adja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
-    - **Platform**: Válasszon **Windows 10 és újabb**.
-    - **Profil**: Válasszon **oktatási profil**.
+    - **Platform**: Válassza **a Windows 10 és újabb**lehetőséget.
+    - **Profil**: Válassza az **oktatási profil**lehetőséget.
 
 4. Adja meg a konfigurálni kívánt beállításokat:
 
@@ -57,6 +56,6 @@ A beállítások megadása és a profil létrehozása után a profil megjelenik 
 
 ## <a name="next-steps"></a>További lépések
 
-Listájának megtekintéséhez a [Windows 10-es oktatási beállítások](education-settings-windows.md) és azok leírásait.
+Tekintse meg a [Windows 10-es oktatási beállítások](education-settings-windows.md) listáját és azok leírását.
 
 [Rendelje hozzá a profilt](device-profile-assign.md), és [kövesse nyomon az állapotát](device-profile-monitor.md).

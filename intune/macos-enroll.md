@@ -8,22 +8,21 @@ ms.author: erikje
 manager: dougeby
 ms.date: 08/13/2018
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 46429114-2e26-4ba7-aa21-b2b1a5643e01
-ms.reviewer: chrisbal
+ms.reviewer: tisilver
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c2a968334ecf3ddb90a3f97841cc191c553b39ca
-ms.sourcegitcommit: 1cae690ca2ac6cc97bbcdf656f54b31878297ae8
+ms.openlocfilehash: ef8bbe90b9cc3f1b04300646c8b56676cbd23766
+ms.sourcegitcommit: d2989b9992d10d133573d9bc31479659fb7e242c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59893867"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71303361"
 ---
 # <a name="set-up-enrollment-for-macos-devices-in-intune"></a>Regisztráció beállítása macOS-eszközökhöz az Intune-ban
 
@@ -37,11 +36,12 @@ Az Intune rendszergazda beállíthatja a vállalati tulajdonú macOS-eszközök 
 
 macOS-eszközök regisztrációjának indítása előtt végezze el az alábbiakat:
 
+- Győződjön [meg arról, hogy az eszköz jogosult az Apple-eszközök regisztrálására](https://support.apple.com/en-us/HT204142#eligibility).
 - [Tartományok beállítása](custom-domain-name-configure.md)
 - [Az MDM-szolgáltató beállítása](mdm-authority-set.md)
 - [Csoportok létrehozása](groups-add.md)
 - [A Céges portál konfigurálása](company-portal-app.md)
-- Felhasználói licencek hozzárendelése a [Microsoft 365 felügyeleti központban](http://go.microsoft.com/fwlink/p/?LinkId=698854)
+- Felhasználói licencek kiosztása a [Microsoft 365 felügyeleti központban](http://go.microsoft.com/fwlink/p/?LinkId=698854)
 - [Apple MDM push-tanúsítvány beszerzése](apple-mdm-push-certificate-get.md)
 
 ## <a name="user-owned-macos-devices-byod"></a>A felhasználó tulajdonában macOS-eszközök (BYOD)
@@ -49,7 +49,7 @@ macOS-eszközök regisztrációjának indítása előtt végezze el az alábbiak
 Azt is engedélyezheti, hogy a felhasználók saját személyes eszközeiket regisztrálják az Intune-felügyelethez. Ez a „saját eszköz használata” vagy BYOD (Bring Your Own Device) néven ismert. Miután teljesítette az előfeltételeket, és kiosztotta a felhasználói licenceket, a felhasználók a következőképp regisztrálhatják az eszközeiket:
 - a [Céges portál](https://portal.manage.microsoft.com) webhelyre lépve, vagy
 - a Céges portál alkalmazás letöltésével.
-Meg is küldhet nekik egy hivatkozást az online regisztrációhoz: [Az Intune-ban macOS-eszköz regisztrálása](https://docs.microsoft.com/intune-user-help/enroll-your-device-in-intune-macos).
+Emellett az online regisztráció lépéseire mutató hivatkozást is küldhet: [MacOS-eszköz regisztrálása az Intune-ban](https://docs.microsoft.com/intune-user-help/enroll-your-device-in-intune-macos).
 
 Más végfelhasználói feladatokkal kapcsolatos további információkért tanulmányozza a következő cikkeket:
 
@@ -58,8 +58,8 @@ Más végfelhasználói feladatokkal kapcsolatos további információkért tanu
 
 ## <a name="company-owned-macos-devices"></a>Vállalati tulajdonban lévő macOS-eszközök
 A felhasználóknak eszközöket vásárló szervezetek számára az Intune a következő módszereket támogatja a vállalati tulajdonban lévő macOS-eszközök regisztrálásához:
-- [Az Apple Készülékregisztrációs Program (DEP)](device-enrollment-program-enroll-macos.md): MacOS-eszközök az Apple eszköz beléptetési Program (DEP) keresztül is vásárolhatók. A DEP vezeték nélkül képes telepíteni egy regisztrációs profilt, amely felügyelet alá helyezi az eszközöket.
-- [Eszközregisztráció-kezelő (DEM-)](device-enrollment-manager-enroll.md): A DEM-fiók használhatja legfeljebb 1000 eszköz regisztrálásához.
+- [Apple Készülékregisztrációs program (DEP)](device-enrollment-program-enroll-macos.md): A szervezetek macOS-eszközöket vásárolhatnak az Apple Készülékregisztrációs program (DEP) használatával. A DEP vezeték nélkül képes telepíteni egy regisztrációs profilt, amely felügyelet alá helyezi az eszközöket.
+- [Eszköz beléptetési kezelője (DEM)](device-enrollment-manager-enroll.md): A DEM-fiók használatával akár 1 000 eszközt is regisztrálhat.
 
 ## <a name="block-macos-enrollment"></a>macOS-regisztráció letiltása
 Alapértelmezés szerint az Intune engedélyezi a macOS-eszközök regisztrálását. A macOS-eszközök regisztrálásának letiltásáról a [Típus szerinti korlátozás beállítása](enrollment-restrictions-set.md) című témakörben olvashat.
@@ -71,7 +71,7 @@ Alapértelmezés szerint az Intune engedélyezi a macOS-eszközök regisztrálá
 
 A virtuális macOS-gépeket a Parallels Desktop vagy a VMWare Fusion segítségével regisztrálhatja tesztelésre. 
 
-A Parallels Desktophoz meg kell adnia a virtuális gépek hardvertípusát és sorozatszámát, hogy az Intune felismerje őket. A hardvertípust Parallels utasítások és [sorozatszám](http://kb.parallels.com/123455) a teszteléshez szükséges beállítások megadásához. Azt javasoljuk, hogy a virtuális gépeket futtató eszközök hardvertípusa egyezzen meg a létrehozandó virtuális gépek hardvertípusával. A hardvertípust az **Apple menü** > **A Mac névjegye** > **Rendszerjelentés** > **Modellazonosító** területen találhatja meg. 
+A Parallels Desktophoz meg kell adnia a virtuális gépek hardvertípusát és sorozatszámát, hogy az Intune felismerje őket. A teszteléshez szükséges beállítások beállításához kövesse a Parallels utasításait a hardver típusának és [sorozatszámának](http://kb.parallels.com/123455) beállításához. Azt javasoljuk, hogy a virtuális gépeket futtató eszközök hardvertípusa egyezzen meg a létrehozandó virtuális gépek hardvertípusával. A hardvertípust az **Apple menü** > **A Mac névjegye** > **Rendszerjelentés** > **Modellazonosító** területen találhatja meg. 
 
 A VMware Fusion esetében [szerkesztenie kell a .vmx-fájlt](https://kb.vmware.com/s/article/1014782) a virtuális gép hardvermodelljének és sorozatszámának megadásához. Azt javasoljuk, hogy a virtuális gépeket futtató eszközök hardvertípusa egyezzen meg a létrehozandó virtuális gépek hardvertípusával. A hardvertípust az **Apple menü** > **A Mac névjegye** > **Rendszerjelentés** > **Modellazonosító** területen találhatja meg. 
 

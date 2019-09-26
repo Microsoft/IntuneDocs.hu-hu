@@ -1,14 +1,13 @@
 ---
-title: Felügyelt Google Play-alkalmazások hozzárendelése Android Enterprise-eszközök
+title: Felügyelt Google Play-alkalmazások kiosztása androidos vállalati eszközökhöz
 titleSuffix: Microsoft Intune
-description: Megtudhatja, hogyan szinkronizálhatja és alkalmazások hozzárendelése Android Enterprise-eszközöket a felügyelt Google Play áruházból.
+description: Ismerje meg, hogyan lehet alkalmazásokat szinkronizálni és hozzárendelni androidos vállalati eszközökhöz a felügyelt Google Play áruházból.
 keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 04/15/2019
+ms.date: 09/18/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,60 +17,71 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b977d60c982a43e4465cd451cc2fc24b4e69f4cf
-ms.sourcegitcommit: 1cae690ca2ac6cc97bbcdf656f54b31878297ae8
+ms.openlocfilehash: da1ee116d66fff3b244a1231c311adceeb72df85
+ms.sourcegitcommit: c19584b36448bbd4c8638d7cab552fe9b3eb3408
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59898107"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71304218"
 ---
-# <a name="add-managed-google-play-apps-to-android-enterprise-devices-with-intune"></a>Felügyelt Google Play-alkalmazások hozzáadása az Intune-nal vállalati Android-eszköz
+# <a name="add-managed-google-play-apps-to-android-enterprise-devices-with-intune"></a>Felügyelt Google Play-alkalmazások hozzáadása androidos vállalati eszközökhöz az Intune-nal
 
 [!INCLUDE [azure_portal](./includes/azure_portal.md)]
 
-Android Enterprise Android munkahelyi profilos eszközök, dedikált/kioszkok, a programot, és teljes körűen felügyelt eszközökre. Az Android munkahelyi profilos eszközök Android Enterprise egy olyan funkciók és szolgáltatások, amelyek elkülönítik a személyes alkalmazásait és adatait a munkahelyi alkalmazásokhoz és adatokhoz. Amikor a felhasználók Android-eszközt használnak a munkahelyi Android Enterprise további felügyeleti lehetőségeket és adatvédelmi biztosít. Az Intune-nal úgy telepítheti az alkalmazásokat és a beállításokat az androidos munkahelyi profilos eszközökre, hogy elkülöníti egymástól a munkához kapcsolódó és a személyes adatokat. Minden olyan alkalmazás, amelyet az androidos munkahelyi profilos eszközökön telepít, a felügyelt Google Play áruházból szerezhető be. Az alkalmazások androidos munkahelyi profilos eszközökhöz való hozzárendelése eltér a hagyományos androidos eszközökhöz való hozzárendeléstől. Jelentkezzen be az áruházba, keresse meg a kívánt alkalmazásokat, majd hagyja jóvá a választást. Az alkalmazás megjelenik az Azure Portal **Licencelt alkalmazások** lapján, és a hozzárendelése ugyanúgy kezelhető, mint bármely más alkalmazásé.
+A felügyelt Google Play a Google Enterprise App Store áruháza, és az Android Enterprise rendszerhez készült egyéni alkalmazások forrása. Az Intune-nal a felügyelt Google Play szolgáltatással is összehangolhatja az alkalmazások telepítését bármilyen androidos nagyvállalati forgatókönyv esetén (beleértve a munkahelyi profilt, a dedikált és a teljes körűen felügyelt regisztrációkat). Felügyelt Google Play-alkalmazások hozzáadása az Intune-hoz – eltér attól, hogy az Android-alkalmazások hogyan lesznek hozzáadva a nem androidos vállalatok számára. Az áruházbeli alkalmazásokat, üzletági (LOB) alkalmazásokat és webalkalmazásokat a rendszer jóváhagyja vagy hozzáadja a felügyelt Google Play szolgáltatáshoz, majd szinkronizálja az Intune-nal, hogy megjelenjenek az ügyfélalkalmazások listájában. Miután megjelentek az ügyfélalkalmazások listájának listáján, kezelheti a felügyelt Google Play-alkalmazások hozzárendelését, ahogyan bármely más alkalmazásban.
 
-Ha saját üzletági (LOB) alkalmazásokat hozott létre, azok hozzárendelését is elvégezheti az alábbiak szerint:
-- Hozzon létre egy Google Developer-fiókot, amellyel saját területen tehet közzé alkalmazásokat a Google Play Áruházban.
-- Szinkronizálja az alkalmazásokat az Intune-nal.
+Ahhoz, hogy az Intune-bérlőt a felügyelt Google Play szolgáltatáshoz csatlakoztassa, könnyebben konfigurálhatja és használhatja az androidos vállalati felügyeletet, az Intune-nal automatikusan négy általános Android-alapú nagyvállalati alkalmazást fog hozzáadni az Intune felügyeleti konzolhoz. A négy alkalmazás a következő:
+
+- **[Microsoft Intune](https://play.google.com/store/apps/details?id=com.microsoft.intune)** – az Android Enterprise teljes körűen felügyelt forgatókönyvekhez használható. Ez az alkalmazás automatikusan települ a teljes körűen felügyelt eszközökre az eszköz beléptetési folyamata során.
+- **[Microsoft Authenticator](https://play.google.com/store/apps/details?id=com.azure.authenticator)** – segít bejelentkezni a fiókjába, ha kétfaktoros ellenőrzést használ. Ez az alkalmazás automatikusan települ a teljes körűen felügyelt eszközökre az eszköz beléptetési folyamata során.
+- **[Intune céges portál](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal)** – az alkalmazás-és az Android Enterprise Work-profil forgatókönyvek esetében használatos.
+- **[Felügyelt kezdőképernyő](https://play.google.com/store/apps/details?id=com.microsoft.launcher.enterprise)** – az Android Enterprise dedikált többalkalmazásos kioszk-forgatókönyvekhez használható. A rendszergazdáknak létre kell hozniuk egy hozzárendelést az alkalmazás telepítéséhez olyan dedikált eszközökön, amelyeket többalkalmazásos kioszk-forgatókönyvekben fog használni.
+
+>[!NOTE]
+>Amikor egy végfelhasználó regisztrálja az Android Enterprise teljes mértékben felügyelt eszközét, a Intune Céges portál alkalmazás automatikusan települ, és az alkalmazás ikonja látható lesz a végfelhasználó számára. Ha a végfelhasználó megpróbálja elindítani a Intune Céges portál alkalmazást, a rendszer átirányítja a felhasználót a Microsoft Intune alkalmazásba, és a Céges portál alkalmazás ikonja el lesz rejtve.
 
 ## <a name="before-you-start"></a>Előkészületek
-
-Fontos, hogy az Intune-t és az androidos munkahelyi profilokat beállítsa a közös munkára az Azure Portal **Eszközök regisztrálása** területén. További információ: [Android-eszközök regisztrálása](android-work-profile-enroll.md).
+- Győződjön meg arról, hogy az Intune-bérlőt a felügyelt Google Play szolgáltatáshoz csatlakoztatta.  További információ: [az Intune-fiók összekötése a felügyelt Google Play-fiókkal](connect-intune-android-enterprise.md).
+- Ha munkahelyi profilokat szeretne regisztrálni, győződjön meg arról, hogy az Intune-t és az Android munkahelyi profilokat úgy konfigurálta, hogy együtt működjenek a Azure Portal **eszköz-regisztrálási** munkaterhelésében. További információ: [Android-eszközök regisztrálása](android-work-profile-enroll.md).
 
 >[!NOTE]
 >A Microsoft Intune használatához javasoljuk, hogy a Microsoft Edge vagy a Google Chrome böngészőt használja.
 
-## <a name="managed-google-play-app-type"></a>Felügyelt Google Play alkalmazás típusa
-A **felügyelt Google Play** alkalmazástípus lehetővé teszi, hogy kifejezetten [felügyelt Google Play alkalmazások](https://play.google.com/work/search?q=microsoft&c=apps) az Intune-hoz. Az Intune rendszergazdájaként, most keresse meg, keresés, hagyja jóvá, szinkronizálása, és hozzárendelheti jóváhagyott a felügyelt Google Play alkalmazások Intune-ban.  Már nem kell külön tallózással keresse meg a felügyelt Google Play konzolon, és többé nem kell újból hitelesítésre.
+## <a name="managed-google-play-app-types"></a>Felügyelt Google Play-alkalmazások típusai
+A felügyelt Google Play szolgáltatásban háromféle alkalmazás érhető el:
 
-> [!NOTE]
-> Ha egy felügyelt Google Play alkalmazás szinkronizálása az Intune-nal szeretne használni, tekintse meg [a felügyelt Google Play alkalmazás szinkronizálása az Intune-nal](apps-add-android-for-work.md#synchronize-a-managed-google-play-app-with-intune-alternative)
+* **Felügyelt Google Play áruházbeli alkalmazás** – a Play áruház általánosan elérhető nyilvános alkalmazások. Ezeket az alkalmazásokat az Intune-ban kezelheti, ha megkeresi a felügyelni kívánt alkalmazásokat, jóváhagyja őket, majd szinkronizálja őket az Intune-ban.
+* **Felügyelt Google Play Private-alkalmazás** – ezek azok a LOB-alkalmazások, amelyeket az Intune-rendszergazdák felügyelnek a Google Play szolgáltatásban.  Ezek az alkalmazások magánjellegűek, és csak az Intune-bérlő számára érhetők el. A LOB-alkalmazások felügyelete és üzembe helyezése a felügyelt Google Play és az Android Enterprise platformon történik.
+* **Felügyelt Google Play webes hivatkozás** – a webes hivatkozások az androidos vállalati eszközökre telepíthető, rendszergazda által definiált ikonokkal. Ezek az eszközök alkalmazás-listájában jelennek meg, ugyanúgy, mint a normál alkalmazások.
 
-## <a name="add-a-managed-google-play-app-using-intune"></a>Az Intune-nal felügyelt Google Play alkalmazás hozzáadása
+## <a name="managed-google-play-store-apps"></a>Felügyelt Google Play áruházbeli alkalmazások
+A felügyelt Google Play áruházbeli alkalmazások az Intune-nal való tallózásának és jóváhagyásának két módja van:
 
-1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com).
-2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget.  
-    Az Intune a **Figyelés + felügyelet** szakaszban található.
-3. Az a **Intune** ablaktáblán válassza **ügyfélalkalmazás** > **alkalmazások**.
+1. Közvetlenül az Intune-konzolon – az áruházbeli alkalmazások tallózása és jóváhagyása az Intune-ban üzemeltetett nézetben. Ez közvetlenül az Intune-konzolon nyílik meg, és nem igényli, hogy egy másik fiókkal újra hitelesítenie kell magát.
+1. A felügyelt Google Play konzolon lehetőség van a felügyelt Google Play-konzol közvetlen megnyitására és az alkalmazások jóváhagyására is. További információt a [felügyelt Google Play-alkalmazás szinkronizálása az Intune](apps-add-android-for-work.md#sync-a-managed-google-play-app-with-intune) -nal című témakörben talál.  Ehhez külön bejelentkezésre van szükség az Intune-bérlőnek a felügyelt Google Play szolgáltatáshoz való összekapcsolásához használt fiókkal.
+
+
+### <a name="add-a-managed-google-play-store-app-directly-in-the-intune-console"></a>Felügyelt Google Play áruházbeli alkalmazás hozzáadása közvetlenül az Intune-konzolon
+
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
+3. Az **Intune** panelen válassza az > ügyfélalkalmazások**alkalmazások**lehetőséget.
 5. Az **Alkalmazások** panelen válassza a **Hozzáadás** lehetőséget.
-6. Az a **alkalmazástípus** legördülő listában jelölje ki **felügyelt Google Play**.
-7. Válassza ki **felügyelt Google Play - jóváhagyása** , nyissa meg a felügyelt Google Play-katalógusban.
-8. A keresőmező használatával kereshet alkalmazásokat, amelyeket fel szeretne venni.
-9. Kattintson a **jóváhagyás** hagyja jóvá az alkalmazást a felügyelt Google Play áruházban, és kattintson a **jóváhagyás** az alkalmazás-engedélyek elfogadását.
-10. Válassza ki **jóváhagyás fenntartása, amikor az alkalmazás új engedélyeket kér** az jóváhagyási beállítások ablakban, majd kattintson a **mentése**. Ha nem ezt a lehetőséget, szüksége lesz a manuális jóváhagyásáról az új engedélyek, ha az alkalmazás fejlesztőjének frissítésként közzéteszi. Ennek hatására telepítésein és frissítésein az alkalmazás leállításához, amíg az engedélyeket. Ebből kifolyólag javasolt jelölje ki a lehetőséget, amely automatikusan jóváhagyja az új engedélyeket. 
-11. Kattintson a **OK** hagyott jóvá a alkalmazás(ok) tartalmazza.
-12. Kattintson a **szinkronizálási** a a **alkalmazás** szinkronizálása a felügyelt Google Play szolgáltatással ablaktáblán.
+6. Az **alkalmazás típusa** legördülő listában válassza a **felügyelt Google Play**lehetőséget.
+7. Válassza a **felügyelt Google Play-Megnyitás** lehetőséget a felügyelt Google Play katalógus megnyitásához.
+7. Válassza a **Search Play áruház** lehetőséget a Google Play katalógusban.
+8. A keresőmező segítségével megkeresheti a felügyelni kívánt alkalmazásokat.
+9. Kattintson a **jóváhagyás** gombra a felügyelt Google Play-alkalmazás jóváhagyásához, majd kattintson a **jóváhagyás** gombra az alkalmazás engedélyeinek elfogadásához.
+10. Válassza a jóváhagyás **megtartása, ha az alkalmazás új engedélyeket kér** a jóváhagyási beállítások ablakban, majd kattintson a **Mentés**gombra. Ha nem ezt a lehetőséget választja, akkor manuálisan jóvá kell hagynia az új engedélyeket, ha az alkalmazás fejlesztője közzétesz egy frissítést. Ez azt eredményezi, hogy az alkalmazás telepítései és frissítései leállnak az engedélyek jóváhagyása előtt. Ezért javasoljuk, hogy válassza az új engedélyek automatikus jóváhagyása lehetőséget. 
+11. Kattintson az **OK** gombra a jóváhagyott alkalmazás (ok) belefoglalásához.
+12. Kattintson a **szinkronizálás** elemre az **app app** panelen a felügyelt Google Play szolgáltatással való szinkronizáláshoz.
 
-## <a name="synchronize-a-managed-google-play-app-with-intune-alternative"></a>A felügyelt Google Play alkalmazás szinkronizálása az Intune-nal (megoldás)
-Ha közvetlenül az Intune segítségével hozzáadása helyett az Intune a felügyelt Google Play alkalmazás szinkronizálni szeretne használni, kövesse az alábbi lépéseket.
+### <a name="add-a-managed-google-play-store-app-in-the-managed-google-play-console-alternative"></a>Felügyelt Google Play áruházbeli alkalmazás hozzáadása a felügyelt Google Play-konzolon (alternatív)
+Ha a felügyelt Google Play-alkalmazást az Intune-nal közvetlenül az Intune-nal való hozzáadása helyett szeretné szinkronizálni, kövesse az alábbi lépéseket.
 
 > [!IMPORTANT]
-> Az alábbi információk egy alternatív módszer a fent leírt Intune-nal felügyelt Google Play alkalmazás hozzáadása.
+> Az alábbi információk egy másik módszer a felügyelt Google Play-alkalmazások Intune-nal való hozzáadására a fentiekben leírtak alapján.
 
-### <a name="synchronize-an-app-from-the-managed-google-play-store"></a>Felügyelt Google Play áruházbeli alkalmazások szinkronizálása
-
-1. Keresse fel a [Felügyelt Google Play áruházat](https://play.google.com/work). Jelentkezzen be ugyanazzal a fiókkal, amellyel beállította az Intune és az Android Enterprise közötti kapcsolatot.
+1. Keresse fel a [Felügyelt Google Play áruházat](https://play.google.com/work). Jelentkezzen be ugyanazzal a fiókkal, amelyet az Intune és az Android Enterprise közötti kapcsolat konfigurálásához használt.
 2. Az áruházban keresse meg és válassza ki az Intune-nal hozzárendelendő alkalmazást.
 3. Az alkalmazást megjelenítő oldalon válassza a **Jóváhagyás** lehetőséget.  
     A következő példákban a Microsoft Excel alkalmazás van kiválasztva.
@@ -88,14 +98,76 @@ Ha közvetlenül az Intune segítségével hozzáadása helyett az Intune a fel�
 
     ![Új alkalmazásengedély-kérelmek kezelési lehetőségei](media/approve-app-settings.png)
 
-    A jóváhagyás megtörténik, és az alkalmazás megjelenik a rendszergazdai konzolon. Ezt követően [szinkronizálhatja az androidos munkahelyi profilos alkalmazást az Intune-nal](apps-add-android-for-work.md#sync-a-managed-google-play-app-with-intune).
+    A jóváhagyás megtörténik, és az alkalmazás megjelenik a rendszergazdai konzolon. Ezután [szinkronizálhatja az Android munkahelyi profil alkalmazást az Intune](apps-add-android-for-work.md#sync-a-managed-google-play-app-with-intune)-nal.
 
-### <a name="sync-a-managed-google-play-app-with-intune"></a>Felügyelt Google Play áruházbeli alkalmazás szinkronizálása az Intune-nal
+## <a name="managed-google-play-private-lob-apps"></a>Felügyelt Google Play Private-(LOB-) alkalmazások
 
-Ha jóváhagyott egy áruházból beszerzett alkalmazást, de nem látja az **Ügyfélalkalmazások** munkaterület **Licencelt alkalmazások** csomópontjában, az alábbi lépésekkel kényszerítheti az azonnali szinkronizálást:
+Az ÜZLETÁGI alkalmazások a felügyelt Google Play szolgáltatással kétféleképpen vehetők fel:
 
-1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com).
-2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget. Az Intune a **Figyelés + felügyelet** szakaszban található.
+1. Közvetlenül az Intune-konzolon – ez lehetővé teszi a LOB-alkalmazások hozzáadását úgy, hogy csak az alkalmazás APK-t és egy címet küldi el közvetlenül az Intune-on belül. Ehhez a módszerhez nincs szükség Google Developer-fiókra, és nem kell fizetnie a Google-nak fejlesztőként való regisztrálás díját.  Ez a módszer egyszerűbb, és lényegesen kevesebb lépésből áll, és a LOB-alkalmazások számára elérhetővé teszi a felügyeletet mindössze tíz perc alatt.
+1. A Google Play fejlesztői konzolon – ha rendelkezik Google Developer-fiókkal, vagy olyan speciális terjesztési funkciókat szeretne konfigurálni, amelyek csak a Google Play fejlesztői konzolon érhetők el (például további alkalmazás-képernyőképek hozzáadásával), használhatja a [Google Playt Fejlesztői konzol](https://play.google.com/apps/publish). 
+
+### <a name="managed-google-play-private-lob-app-publishing-directly-in-the-intune-console"></a>Felügyelt Google Play Private-(LOB-) alkalmazások közzététele közvetlenül az Intune-konzolon
+
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
+3. Az **Intune** panelen válassza az > ügyfélalkalmazások**alkalmazások**lehetőséget.
+5. Az **Alkalmazások** panelen válassza a **Hozzáadás** lehetőséget.
+6. Az **alkalmazás típusa** legördülő listában válassza a **felügyelt Google Play**lehetőséget.
+7. Válassza a **felügyelt Google Play-Megnyitás** lehetőséget a felügyelt Google Play katalógus megnyitásához.
+7. Válassza a **privát alkalmazások** lehetőséget a Google Play katalógusban.
+7. Új alkalmazás hozzáadásához kattintson a **"+"** gombra.
+8. Alkalmazás címének és APK-csomagjának beküldése az alkalmazáshoz
+9. Kattintson a **Létrehozás** gombra.
+9. A felügyelt Google Play panel bezárásával, ha elkészült az alkalmazások hozzáadásával
+12. Kattintson a **szinkronizálás** elemre az **app app** panelen a felügyelt Google Play szolgáltatással való szinkronizáláshoz. Vegye figyelembe, hogy a privát alkalmazások több percet is igénybe vehetnek a szinkronizáláshoz. Ha nem jelenik meg az első alkalommal, amikor szinkronizálást hajt végre, várjon néhány percet, és kezdeményezzen új szinkronizálást.
+
+A felügyelt Google Play Private-alkalmazásokkal kapcsolatos további információkért, beleértve a gyakori kérdéseket is, tekintse meg a Google támogatási cikkét: https://support.google.com/googleplay/work/answer/9146439
+
+>[!NOTE]
+>Az ezzel a módszerrel hozzáadott privát alkalmazások soha nem tehetők közzé. Csak akkor használja ezt a közzétételi lehetőséget, ha biztos benne, hogy az alkalmazás mindig privát lesz a szervezet számára.
+  
+
+### <a name="managed-google-play-private-lob-app-publishing-using-the-google-developer-console"></a>Felügyelt Google Play Private (LOB) alkalmazások közzététele a Google fejlesztői konzol használatával
+
+1. Jelentkezzen be a [Google Play fejlesztői konzolba](https://play.google.com/apps/publish) ugyanazzal a fiókkal, amelyet az Intune és az Android Enterprise közötti kapcsolat konfigurálásához használt.  
+    Az első bejelentkezés előtt regisztrálni kell, továbbá megfizetni a Google Developer-program regisztrációs díját.
+2. A konzolon válassza az **Új alkalmazás hozzáadása** elemet.
+3. Az alkalmazások és azok információinak feltöltése ugyanúgy történik, mint bármelyik alkalmazás közzététele a Google Play áruházban. Ugyanakkor ki kell választani **Az alkalmazás elérhetővé tétele csak a saját cég tagjai számára (<*cég neve*>)** lehetőséget.
+
+    ![Az alkalmazás elérhetővé tétele csak a saját vállalat számára](media/restrict.png)
+
+    Ez a művelet az alkalmazást csak a saját cége számára teszi elérhetővé. A nyilvános Google Play áruházban azonban nem lesz elérhető.
+
+    Az androidos alkalmazások feltöltéséről és közzétételéről a [Google Play fejlesztői központ súgójában](https://support.google.com/googleplay/android-developer/answer/113469) talál további információt.
+4. Miután közzétette az alkalmazást, jelentkezzen be a [felügyelt Google Play áruházba](https://play.google.com/work) ugyanazzal a fiókkal, amelyet az Intune és az Android Enterprise közötti kapcsolat konfigurálásához használt.
+5. Az áruház **Alkalmazások** csomópontjában ellenőrizze, hogy megjelenik-e a közzétett alkalmazás.  
+    Az alkalmazás automatikusan megkapja az engedélyt az Intune-nal való szinkronizálásra.
+
+## <a name="managed-google-play-web-links"></a>Felügyelt Google Play webes hivatkozások
+
+A felügyelt Google Play-webhivatkozások telepíthetők és kezelhetők ugyanúgy, mint más Android-alkalmazások. Az eszközön való telepítéskor a rendszer a felhasználó alkalmazás-listájában fogja megjelenni az általuk telepített többi alkalmazás mellett. A rendszer az eszköz böngészőjében indít el.
+
+A webhivatkozások a Microsoft Edge vagy bármely más, a telepítéshez kiválasztott böngésző alkalmazásban nyílnak meg. Ügyeljen arra, hogy legalább egy böngészőt helyezzen üzembe az eszközökön ahhoz, hogy a webhivatkozások megfelelően meg tudják nyitni a webhelyeket. A webes hivatkozások (teljes képernyős, önálló és minimális felhasználói felület) összes **megjelenítési** lehetősége azonban csak a Chrome böngészővel használható. 
+
+> [!IMPORTANT]
+> Ennek a dokumentumnak a közzétételét követően egy ismert Google-hiba található, amely megakadályozza, hogy a webhivatkozások a Chrome-on kívül más böngészőkkel is megnyissák az eszközöket. A Google elkötelezett a hiba kijavítása érdekében.  Ez az értesítés akkor kerül eltávolításra, ha a Microsoft megerősítette, hogy a Google közzétette a javítást.
+
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
+3. Az **Intune** panelen válassza az > ügyfélalkalmazások**alkalmazások**lehetőséget.
+5. Az **Alkalmazások** panelen válassza a **Hozzáadás** lehetőséget.
+6. Az **alkalmazás típusa** legördülő listában válassza a **felügyelt Google Play**lehetőséget.
+7. Válassza a **felügyelt Google Play-Megnyitás** lehetőséget a felügyelt Google Play katalógus megnyitásához.
+7. Válassza a **Web Apps** elemet a Google Play katalógusban.
+7. Új alkalmazás hozzáadásához kattintson a **"+"** gombra.
+7. Adja meg a szükséges adatokat, majd kattintson a **Létrehozás** gombra.
+7. A felügyelt Google Play panel bezárásával, ha elkészült az alkalmazások hozzáadásával
+12. Kattintson a **szinkronizálás** elemre az **app app** panelen a felügyelt Google Play szolgáltatással való szinkronizáláshoz. Vegye figyelembe, hogy a privát alkalmazások több percet is igénybe vehetnek a szinkronizáláshoz. Ha nem jelenik meg az első alkalommal, amikor szinkronizálást hajt végre, várjon néhány percet, és kezdeményezzen új szinkronizálást.
+
+## <a name="sync-a-managed-google-play-app-with-intune"></a>Felügyelt Google Play áruházbeli alkalmazás szinkronizálása az Intune-nal
+
+Ha jóváhagyott egy alkalmazást az áruházból, és nem látja az **ügyfélalkalmazások** munkaterhelésében, kényszerítse az azonnali szinkronizálást az alábbiak szerint:
+
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** ablaktáblán válassza az **Ügyfélalkalmazások** lehetőséget.
 4. Az **Ügyfélalkalmazások** munkaterületen a **Beállítások** alatt válassza a **Felügyelt Google Play** lehetőséget.
 5. A **Felügyelt Google Play** panelen válassza a **Frissítés** lehetőséget.  
@@ -103,23 +175,26 @@ Ha jóváhagyott egy áruházból beszerzett alkalmazást, de nem látja az **Ü
 6. Az **Ügyfélalkalmazások** munkaterületen válassza az **Alkalmazások** lehetőséget.  
     Megjelenik az elérhetővé vált Felügyelt Google Play-alkalmazás.
 
-## <a name="assigning-a-managed-google-play-app-to-android-enterprise-work-profile-devices"></a>A felügyelt Google Play alkalmazás vállalati Android munkahelyi profilos eszközök hozzárendelése
+## <a name="assigning-a-managed-google-play-app-to-android-enterprise-work-profile-devices"></a>Felügyelt Google Play-alkalmazás kiosztása androidos vállalati munkahelyi Profilos eszközökhöz
 
-Ha az alkalmazás megjelenik a **alkalmazáslicencek** csomópontján a **ügyfélalkalmazás** számítási feladatok paneljének [ugyanúgy hozzárendelheti, mint bármilyen más alkalmazást](/intune-azure/manage-apps/deploy-apps) hozzárendelésével a az alkalmazásnak, hogy felhasználói csoportok.
+Ha az alkalmazás megjelenik az **ügyfélalkalmazások** munkafolyamatok ablaktábla **alkalmazás-licencek** csomópontjában, akkor [ugyanúgy rendelheti hozzá, mint bármely más alkalmazást](/intune-azure/manage-apps/deploy-apps) , ha az alkalmazást felhasználók csoportjaihoz rendeli hozzá.
 
-A hozzárendelés után az alkalmazás rendelkezésre áll a célzott eszközökön. A rendszer nem kér telepítési jóváhagyást az eszköz felhasználójától. Vállalati Android munkahelyi profilos eszközök kapcsolatos további információkért lásd: [vállalati Android munkahelyi profilos eszközök regisztrációjának beállítása](android-work-profile-enroll.md).
+Az alkalmazás hozzárendelését követően a rendszer telepíti (vagy telepíthető) a célként kijelölt felhasználók eszközeire. A rendszer nem kér telepítési jóváhagyást az eszköz felhasználójától. Az androidos vállalati munkahelyi profil eszközeivel kapcsolatos további információkért lásd: [az androidos vállalati munkahelyi profilok regisztrációjának beállítása](android-work-profile-enroll.md). 
 
-## <a name="assigning-a-managed-google-play-app-to-android-enterprise-fully-managed-devices"></a>Hozzárendelés a felügyelt Google Play Android Enterprise alkalmazás teljes körűen felügyelt eszközök
+> [!NOTE] 
+> Csak a hozzárendelt alkalmazások jelennek meg a felügyelt Google Play áruházban a végfelhasználók számára. Ez egy fontos lépés ahhoz, hogy a rendszergazda elvégezze a felügyelt Google Play-alkalmazásokkal rendelkező alkalmazások beállítását.
 
-[Android Enterprise teljes körűen felügyelt eszközök](android-fully-managed-enroll.md) társított egy egyetlen felhasználó, és kizárólag használt munkahelyi és személyes nem használja a vállalat által birtokolt eszközök. Teljes körűen felügyelt eszközök felhasználói számára elérhető vállalati alkalmazások érheti el a felügyelt Google Play-alkalmazást az eszközükön.
+## <a name="assigning-a-managed-google-play-app-to-android-enterprise-fully-managed-devices"></a>Felügyelt Google Play-alkalmazás kiosztása Android Enterprise teljes körűen felügyelt eszközökhöz
 
-Alapértelmezés szerint egy teljes körűen felügyelt Android Enterprise-eszközként nem teszi lehetővé az alkalmazottak a szervezet által jóvá nem hagyott alkalmazások telepítéséhez. Az alkalmazottak is, nem lesz képes eltávolítani minden olyan telepített alkalmazásokat a szabályzat. Ha szeretné, hogy a felhasználók a teljes Google Play áruház alkalmazások telepítéséhez, nem pedig csak a jóváhagyott alkalmazások hozzáférését a felügyelt Google Play áruház, beállíthatja a **minden alkalmazás Google Play áruházban való hozzáférés engedélyezése** való  **Lehetővé teszi**. Ezzel a beállítással a felhasználó számára elérhető összes alkalmazását a Google Play áruház, a vállalati fiókjával, azonban a vásárlások előfordulhat, hogy korlátozott. Eltávolíthatja a korlátozott vásárlások korlátozás azáltal, hogy új fiókokat vegyen fel az eszközön a felhasználók. Így fog engedélyezése végfelhasználók számára, hogy a személyes fiókok használatát a Google Play áruházból származó alkalmazások beszerzési lehetősége, valamint alkalmazáson belüli vásárlások egyetlen elvégezheti. További információkért lásd: [engedélyezett vagy korlátozott funkciók az Intune-nal az Android Enterprise eszközbeállítások](device-restrictions-android-for-work.md). 
+Az [Android Enterprise teljes körűen felügyelt eszközei](android-fully-managed-enroll.md) olyan vállalati tulajdonú eszközök, amelyek egyetlen felhasználóhoz vannak társítva, és kizárólag munkahelyi és nem személyes használatra használatosak. A teljes körűen felügyelt eszközökön lévő felhasználók a felügyelt Google Play alkalmazásból szerezhetik be elérhető vállalati alkalmazásaikat az eszközön.
+
+Alapértelmezés szerint az Android Enterprise teljes körűen felügyelt eszköze nem teszi lehetővé az alkalmazottak számára a szervezet által nem jóváhagyott alkalmazások telepítését. Emellett az alkalmazottak nem tudják eltávolítani a telepített alkalmazásokat a szabályzattal szemben. Ha engedélyezni szeretné a felhasználók számára a teljes Google Play áruház elérését az alkalmazások telepítéséhez, és nem csak a felügyelt Google Play áruházban lévő jóváhagyott alkalmazásokhoz való hozzáférést, akkor a **Google Play áruházban lévő összes alkalmazás** **számára engedélyezheti**a hozzáférést. Ezzel a beállítással a felhasználók a Google Play áruházban lévő összes alkalmazást a vállalati fiók használatával érhetik el, de a vásárlások korlátozottak lehetnek. A korlátozott vásárlások korlátozását úgy távolíthatja el, hogy lehetővé teszi a felhasználók számára új fiókok hozzáadását az eszközhöz. Ez lehetővé teszi a végfelhasználók számára, hogy a Google Play áruházból származó alkalmazásokat a személyes fiókok használatával, valamint az alkalmazáson belüli vásárlásokkal is megvásárolják. További információ: [androidos vállalati eszközbeállítások az Intune-nal kapcsolatos szolgáltatások engedélyezéséhez vagy korlátozásához](device-restrictions-android-for-work.md). 
 
 > [!NOTE]
-> A Microsoft Intune app és a Microsoft Authenticator alkalmazás lesz telepítve, a szükséges alkalmazásokat az összes teljes körűen felügyelt eszközök az előkészítés során. A feltételes hozzáférést támogató ezeket az alkalmazásokat automatikusan telepíteni kellene biztosít, és a Microsoft Intune alkalmazás felhasználói tekintse meg, és a megfelelőségi problémák megoldása. 
+> A Microsoft Intune alkalmazás és a Microsoft Authenticator alkalmazás a bevezetéskor szükséges alkalmazásként lesz telepítve az összes teljes körűen felügyelt eszközre. Ha ezek az alkalmazások automatikusan telepítve vannak, a feltételes hozzáférési támogatást biztosít, és Microsoft Intune alkalmazás felhasználói láthatják és elhárítják a megfelelőségi problémákat. 
 
-## <a name="manage-android-enterprise-app-permissions"></a>Android Enterprise Alkalmazásengedélyek kezelése
-Android Enterprise kell hagynia az alkalmazásokat a felügyelt Google Play webkonzolon, mielőtt, szinkronizálhatja őket az Intune-nal, és hozzárendelheti azokat a felhasználók számára. Mivel az Android Enterprise lehetővé teszi az automatikus és csendes módban küldje le az alkalmazások felhasználói eszközökön, el kell fogadnia az Alkalmazásengedélyek összes felhasználó nevében. A végfelhasználóknak az alkalmazások telepítésénél nem jelennek meg alkalmazásengedélyek, ezért fontos, hogy Ön megértse ezeket az engedélyeket.
+## <a name="manage-android-enterprise-app-permissions"></a>Androidos vállalati alkalmazás engedélyeinek kezelése
+Az Android Enterprise a felügyelt Google Play webkonzolon lévő alkalmazások jóváhagyását igényli, mielőtt szinkronizálja őket az Intune-nal, és hozzárendeli azokat a felhasználókhoz. Mivel az Android Enterprise lehetővé teszi az alkalmazások csendes és automatikus leküldését a felhasználói eszközökre, el kell fogadnia az alkalmazás engedélyeit az összes felhasználó nevében. A végfelhasználóknak az alkalmazások telepítésénél nem jelennek meg alkalmazásengedélyek, ezért fontos, hogy Ön megértse ezeket az engedélyeket.
 
 Ha az alkalmazás fejlesztője megváltozott engedélyekkel rendelkező új alkalmazásverziót tesz közzé, az új engedélyek nem lesznek automatikusan elfogadva akkor sem, ha Ön az előző verzió engedélykéréseit elfogadta. Az alkalmazás korábbi verzióját futtató eszközök továbbra is használhatják az alkalmazást. Az alkalmazás frissítése azonban nem történik meg, amíg el nem fogadja az új engedélyeket. Az alkalmazással még nem rendelkező eszközökre az új engedélyek elfogadásáig nem telepíthető az alkalmazás. 
 
@@ -134,28 +209,17 @@ Ellenőrizze rendszeresen a felügyelt Google Play-konzolon az új alkalmazásen
 
 Alternatív megoldásként beállíthatja, hogy a Google Play alkalmazásalapon automatikusan végezze el az engedélyek ismételt megadását.
 
-## <a name="additional-managed-google-play-app-reporting-for-android-enterprise-work-profile-devices"></a>Jelentéskészítés a vállalati Android munkahelyi profilos eszközök további felügyelt Google Play alkalmazás
+## <a name="additional-managed-google-play-app-reporting-for-android-enterprise-work-profile-devices"></a>További felügyelt Google Play-alkalmazások jelentéskészítése androidos vállalati munkahelyi Profilos eszközökhöz
 
-A telepített vállalati Android munkahelyi profilos eszközök felügyelt Google Play alkalmazások megtekintheti az alkalmazást az eszközön telepített adott verziószáma. Ez csak a szükséges alkalmazások vonatkozik. 
+Az Android Enterprise Work profiling-eszközökre telepített felügyelt Google Play-alkalmazások esetében megtekintheti az eszközre telepített alkalmazás adott verziószámát. Ez csak a szükséges alkalmazásokra vonatkozik. 
 
-## <a name="working-with-a-line-of-business-app-from-the-managed-google-play-store"></a>A felügyelt Google Play áruházból származó üzletági alkalmazások használata
-
-1. Jelentkezzen be a [Google Play fejlesztői konzolján](https://play.google.com/apps/publish) ugyanazzal a fiókkal, amellyel beállította az Intune és az Android Enterprise közötti kapcsolatot.  
-    Az első bejelentkezés előtt regisztrálni kell, továbbá megfizetni a Google Developer-program regisztrációs díját.
-2. A konzolon válassza az **Új alkalmazás hozzáadása** elemet.
-3. Az alkalmazások és azok információinak feltöltése ugyanúgy történik, mint bármelyik alkalmazás közzététele a Google Play áruházban. Ugyanakkor ki kell választani **Az alkalmazás elérhetővé tétele csak a saját cég tagjai számára (<*cég neve*>)** lehetőséget.
-
-    ![Az alkalmazás elérhetővé tétele csak a saját vállalat számára](media/restrict.png)
-
-    Ez a művelet az alkalmazást csak a saját cége számára teszi elérhetővé. A nyilvános Google Play áruházban azonban nem lesz elérhető.
-
-    Az androidos alkalmazások feltöltéséről és közzétételéről a [Google Play fejlesztői központ súgójában](https://support.google.com/googleplay/android-developer/answer/113469) talál további információt.
-4. Miután közzétette az alkalmazást, jelentkezzen be a [felügyelt Google Play áruház](https://play.google.com/work) ugyanazzal a fiókkal, amellyel beállította az Intune és az Android Enterprise közötti kapcsolatot.
-5. Az áruház **Alkalmazások** csomópontjában ellenőrizze, hogy megjelenik-e a közzétett alkalmazás.  
-    Az alkalmazás automatikusan megkapja az engedélyt az Intune-nal való szinkronizálásra.
 
 ## <a name="delete-managed-google-play-apps"></a>Felügyelt Google Play-alkalmazások törlése
-Ha szükséges, törölheti a felügyelt Google Play-alkalmazások Microsoft Intune-ból. Felügyelt Google Play alkalmazás törléséhez nyissa meg a Microsoft Intune az Azure Portalon, és válassza a **ügyfélalkalmazás** > **alkalmazások**. Az alkalmazás listában jelölje ki a három pontra (...) jobb oldalán a felügyelt Google Play-alkalmazást, majd válassza ki **törlése** a megjelenő listából. Ha egy felügyelt Google Play-alkalmazást töröl alkalmazásokat az alkalmazáslistából, a felügyelt Google Play alkalmazás automatikusan jóvá nem hagyott.
+Ha szükséges, törölheti a felügyelt Google Play-alkalmazásokat Microsoft Intuneról. Felügyelt Google Play-alkalmazás törléséhez nyissa meg Microsoft Intune a Azure Portal, és válassza az **ügyfélalkalmazások** > **alkalmazások**elemet. Az alkalmazás listából válassza a felügyelt Google Play alkalmazás jobb oldalán található három pontot (...), majd válassza a **Törlés** lehetőséget a megjelenített listából. Ha töröl egy felügyelt Google Play-alkalmazást az alkalmazások listájáról, a felügyelt Google Play-alkalmazás automatikusan nem lesz jóváhagyva.
+
+## <a name="android-enterprise-system-apps"></a>A Vállalati Android rendszeralkalmazásai
+
+Az androidos vállalati rendszeralkalmazások az [Android Enterprise dedikált eszközökhöz](android-kiosk-enroll.md) vagy [teljes körűen felügyelt eszközökhöz](android-fully-managed-enroll.md)is engedélyezhetők. Az androidos nagyvállalati rendszeralkalmazások hozzáadásával kapcsolatos további információkért lásd: [az androidos nagyvállalati rendszeralkalmazások hozzáadása a Microsoft Intunehoz](apps-ae-system.md).
 
 ## <a name="next-steps"></a>További lépések
 

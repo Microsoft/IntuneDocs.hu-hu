@@ -12,12 +12,12 @@ ms.localizationpriority: high
 ms.technology: ''
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6df42d908169ab591150e88e03f2f419710c9e54
-ms.sourcegitcommit: e477e399cba673a2a9e1fa342e8303ed993801eb
+ms.openlocfilehash: eeaf3dc1e7f1dfa1cfc3ff0da554f65d416a354b
+ms.sourcegitcommit: 62c41976c4da43b36015b715bc255397ebb8c6ad
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70739207"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274813"
 ---
 # <a name="add-ios-software-update-policies-in-intune"></a>IOS-szoftverfrissítési szabályzatok hozzáadása az Intune-ban
 
@@ -51,9 +51,9 @@ Az eszköz körülbelül 8 óránként jelentkezik be az Intune-ba. Ha az eszkö
       - **Kezdés időpontja**: Válassza ki a korlátozott időkeret kezdési idejét. Adja meg például az 5, hogy a frissítések ne legyenek telepítve 5 ÓRAKOR.
       - **Befejezés időpontja**: Válassza ki a korlátozott időkeret befejezési időpontját. Adja meg például a következőt: 1, így a frissítések telepíthetők a-től kezdődően.
 
-    - A **szoftverfrissítések láthatóságának késleltetése a végfelhasználók számára az ütemezett frissítések módosítása nélkül (nap)** : 
+    - **A szoftverfrissítések láthatóságának késleltetése a végfelhasználók számára az ütemezett frissítések módosítása nélkül a szoftverfrissítési házirendben (nap)** : 
 
-      \* * Ha a felügyelt iOS-eszközökön bizonyos ideig szeretné megtekinteni a szoftverfrissítések láthatóságát, konfigurálja ezeket a beállításokat az [eszköz korlátozásai](device-restrictions-ios.md#general)között.
+      \* * Ha a felügyelt iOS-eszközökön bizonyos ideig szeretné megtekinteni a szoftverfrissítések láthatóságát, konfigurálja ezeket a beállításokat az [eszköz korlátozásai](device-restrictions-ios.md#general)között. A szoftverfrissítési házirendek felülbírálják az eszközre vonatkozó korlátozásokat. Ha mindkét beállítása be van állítva, a szoftverfrissítési házirend minden alkalommal először megkezdődik. 
      
       > [! Fontos  
       > A *kezdési időt* és a *befejezési időpontot* a 12-es értékre beállított szabályzat 0 óra, nem pedig 24 óra. Ez az eredmény nem korlátozza a korlátozást.  

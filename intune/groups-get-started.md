@@ -8,7 +8,6 @@ ms.author: erikje
 manager: dougeby
 ms.date: 03/31/2019
 ms.topic: archived
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.technology: ''
@@ -16,12 +15,12 @@ ms.assetid: 323f384d-8a76-4adc-999b-e508d641bfa1
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e912c14418d54321b0998dad3081f297ae81114d
-ms.sourcegitcommit: 1cae690ca2ac6cc97bbcdf656f54b31878297ae8
+ms.openlocfilehash: 7837ab6e24c5d4fa848218b662cbd89dfbbe7b72
+ms.sourcegitcommit: 74911a263944f2dbd9b754415ccda6c68dae0759
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59897034"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71301879"
 ---
 # <a name="microsoft-intune-classic-groups-in-the-azure-portal"></a>Klasszikus Microsoft Intune-csoportok az Azure Portalon
 
@@ -47,11 +46,11 @@ Előfordulhat, hogy a korábbi Intune-csoportok funkcióinak némelyike nem érh
 ## <a name="how-to-get-started"></a>Első lépések
 
 - Az alábbi Azure AD-vel kapcsolatos cikkek segítenek tájékozódni az Azure AD-alapú biztonsági csoportokról és azok működéséről:
-    -  [Az erőforrásokhoz való hozzáférés kezelése Azure Active Directory-csoportokkal](https://azure.microsoft.com/documentation/articles/active-directory-manage-groups/).
-    -  [Csoportkezelés az Azure Active Directoryban](https://azure.microsoft.com/documentation/articles/active-directory-accessmanagement-manage-groups/).
-    -  [Attribútumok használata speciális szabályok létrehozására](https://azure.microsoft.com/documentation/articles/active-directory-accessmanagement-groups-with-advanced-rules/).
--  Fontos, hogy azok a rendszergazdák, akik csoportokat fognak létrehozni, hozzá legyenek adva az **Intune-szolgáltatásadminisztrátor** Azure AD-szerepkörhöz. Az Azure AD szolgáltatásadminisztrátori szerepkörének nincs **Csoportok kezelése** engedélye.
--  Ha Intune-csoportjai használták a **Meghatározott tagok kizárása** beállítást, akkor el kell döntenie, hogy át tudja-e alakítani ezeket a csoportokat úgy, hogy ne legyen bennük kizárás, vagy speciális szabályokra van szüksége a céges igények miatt.
+  - [Az erőforrásokhoz való hozzáférés kezelése Azure Active Directory-csoportokkal](https://azure.microsoft.com/documentation/articles/active-directory-manage-groups/).
+  - [Csoportkezelés az Azure Active Directoryban](https://azure.microsoft.com/documentation/articles/active-directory-accessmanagement-manage-groups/).
+  - [Attribútumok használata speciális szabályok létrehozására](https://azure.microsoft.com/documentation/articles/active-directory-accessmanagement-groups-with-advanced-rules/).
+- Fontos, hogy azok a rendszergazdák, akik csoportokat fognak létrehozni, hozzá legyenek adva az **Intune-szolgáltatásadminisztrátor** Azure AD-szerepkörhöz. Az Azure AD szolgáltatásadminisztrátori szerepkörének nincs **Csoportok kezelése** engedélye.
+- Ha Intune-csoportjai használták a **Meghatározott tagok kizárása** beállítást, akkor el kell döntenie, hogy át tudja-e alakítani ezeket a csoportokat úgy, hogy ne legyen bennük kizárás, vagy speciális szabályokra van szüksége a céges igények miatt.
 
 
 ## <a name="what-happened-to-intune-groups"></a>Mi történt az Intune-csoportokkal?
