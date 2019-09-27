@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 235cb317625786c1254ecf572726c66480c01b2e
-ms.sourcegitcommit: 62c41976c4da43b36015b715bc255397ebb8c6ad
+ms.openlocfilehash: 7b7a0df354c505272ced187ead615734ae1c830f
+ms.sourcegitcommit: 022f52cb03e25d555229019599cdafc994427327
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71274843"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71313447"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -62,7 +62,7 @@ Az Apple iOS 13,1 kiadásában a felhasználók beléptetése, valamint az iOS-e
 - Felhasználói csoportokba való felhasználói regisztráció megcélzása.
 - Lehetővé teszi a végfelhasználók számára, hogy az eszközük regisztrálásakor a könnyebb felhasználói regisztráció vagy erősebb eszközök beléptetése között választhatnak.
 
-Az iOS 31,1-es verziójától kezdődően a 9/24/2019-es verziótól kezdve a frissítések minden ügyfelünk számára elérhetők lesznek, és a következő hét végére várhatóan befejeződtek.
+Az iOS 13,1-es verziójától kezdődően a 9/24/2019-es verziótól kezdve a frissítések minden ügyfelünk számára elérhetők lesznek, és a következő hét végére várhatóan befejeződtek.
 Érintett kiadások:
 
 iOS 13,1 és újabb verziók

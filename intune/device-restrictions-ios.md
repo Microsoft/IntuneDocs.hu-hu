@@ -6,7 +6,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 09/24/2019
+ms.date: 09/26/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.localizationpriority: medium
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e31fc3b199f6437bbdd7b12e4be8b17ead689c7e
-ms.sourcegitcommit: 6a946a055a2014e00a4ca9d71986727a4ebbc777
+ms.openlocfilehash: 4b9b2db7aa58d2db519615ca2741b28c09f29096
+ms.sourcegitcommit: ec0a69c88fdb30b538df1ac4f407a62a28ddf8d1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71302372"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71320039"
 ---
 # <a name="ios-and-ipados-device-settings-to-allow-or-restrict-features-using-intune"></a>iOS-és iPadOS-eszközök beállításai az Intune-t használó funkciók engedélyezéséhez vagy korlátozásához
 
@@ -130,36 +130,51 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
 
 ## <a name="password"></a>Windows 10
 
+> [!NOTE]
+> A jövőbeli kiadásokban ezek a jelszó-beállítások az Intune KEZELŐFELÜLETén frissülnek, hogy megfeleljenek a regisztrációs típusnak.
+
 ### <a name="settings-apply-to-all-enrollment-types"></a>A beállítások a következőkre vonatkoznak: Minden regisztrációs típus
 
 - **Jelszó**: **Kérje** meg a végfelhasználót, hogy adjon meg egy jelszót az eszköz eléréséhez. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a felhasználók jelszó megadása nélkül férhessenek hozzá az eszközhöz.
-  - **Egyszerű jelszavak**: A **Letiltás** elemre kattintva összetettebb jelszavakat igényelhet. A **nincs konfigurálva** beállítás lehetővé teszi az egyszerű `0000` jelszavak `1234`használatát, például a és a.
-  - **Szükséges jelszó típusa**: Válassza ki a szervezet által igényelt jelszó típusát. A választható lehetőségek:
+
+### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: Eszközök beléptetése, automatikus eszközök beléptetése (felügyelt)
+
+> [!IMPORTANT]
+> A felhasználó által beléptetett eszközökön a jelszó beállításának beállításakor a rendszer automatikusan **letiltja**az **egyszerű jelszavak** beállításait, és egy 6 számjegyű PIN-kódot kényszerít ki.
+>
+> Például beállíthatja a **jelszó lejárati** beállítását, és leküldheti a szabályzatot a felhasználó által regisztrált eszközökre. Az eszközökön a következők történnek:
+>
+>  - A **jelszó lejárati** beállítását a rendszer figyelmen kívül hagyja.
+>  - Az egyszerű jelszavak, például `1111` a `1234`vagy a, nem engedélyezettek.
+>  - Egy 6 számjegyű PIN-kód kényszerítve. 
+
+- **Egyszerű jelszavak**: A **Letiltás** elemre kattintva összetettebb jelszavakat igényelhet. A **nincs konfigurálva** beállítás lehetővé teszi az egyszerű `0000` jelszavak `1234`használatát, például a és a.
+
+- **Szükséges jelszó típusa**: Válassza ki a szervezet által igényelt jelszó típusát. A választható lehetőségek:
     - **Eszköz alapértelmezése**
     - **Numerikus**
     - **Alphanumeric**
-  - **Nem alfanumerikus karakterek száma a jelszóban**: Adja meg a szimbólum karaktereinek `#` számát (például vagy `@`), amelynek szerepelnie kell a jelszóban.
-  - **Jelszó minimális hossza**: Adja meg a minimális hosszt, amelyet a felhasználónak 4 és 14 karakter között kell megadnia. A felhasználó által regisztrált eszközökön adjon meg egy 4 és 6 karakter közötti hosszúságot.
-  
-    > [!NOTE]
-    > A felhasználó által beléptetett eszközök esetében:
-    >  - Ha egy meglévő PIN-kód 6 karakternél nagyobb, akkor a rendszer csak az első 6 karaktert használja. Ha például a PIN `12345678`-kód, a PIN-kód lerövidítve. `123456`
-    >  - Ha a felhasználók 6 karakternél hosszabb új PIN-kódot ad meg, akkor csak az első 6 karaktert használja a rendszer. Ha például PIN-kódot ad `12345678` meg, a PIN-kód lerövidítve `123456`lesz.
+- **Nem alfanumerikus karakterek száma a jelszóban**: Adja meg a szimbólum karaktereinek `#` számát (például vagy `@`), amelynek szerepelnie kell a jelszóban.
 
-  - **Sikertelen bejelentkezések száma az eszköz törlése előtt**: Adja meg az eszköz törlése előtt engedélyezni kívánt sikertelen bejelentkezések számát (4-11).
+- **Jelszó minimális hossza**: Adja meg a minimális hosszt, amelyet a felhasználónak 4 és 14 karakter között kell megadnia. A felhasználó által regisztrált eszközökön adjon meg egy 4 és 6 karakter közötti hosszúságot.
   
-    az iOS beépített biztonságot tartalmaz, amely hatással lehet erre a beállításra. Előfordulhat például, hogy az iOS késlelteti a szabályzat aktiválását a bejelentkezési hibák számától függően. Azt is fontolóra veheti, hogy ismételten ugyanazzal a PIN-kóddal adja meg ugyanazt a jelszót, mint egy kísérletet. Az Apple [IOS-alapú biztonsági útmutatója](https://www.apple.com/business/site/docs/iOS_Security_Guide.pdf) (az Apple webhelyének megnyitása) jó erőforrás, és pontosabb részleteket biztosít a PIN-kódokról.
+  > [!NOTE]
+  > A felhasználó által beléptetett eszközök esetében a felhasználók 6 számjegynél nagyobb PIN-kódot állíthatnak be. Azonban az eszközön legfeljebb 6 számjegy kényszeríthető ki. A rendszergazda például beállítja a minimális hosszt `8`a következőre:. A felhasználó által regisztrált eszközökön a felhasználóknak csak 6 számjegyű PIN-kódot kell megadniuk. Az Intune nem kényszeríti a 6 számjegynél nagyobb PIN-kód megadását a felhasználó által regisztrált eszközökön.
+
+- **Sikertelen bejelentkezések száma az eszköz törlése előtt**: Adja meg az eszköz törlése előtt engedélyezni kívánt sikertelen bejelentkezések számát (4-11).
   
-  - **A képernyő zárolása utáni maximális percek a jelszó megadása előtt** <sup>1</sup>: Adja meg, hogy az eszköz mennyi ideig maradjon üresjáratban, mielőtt a felhasználónak újra meg kell adnia a jelszavát. Ha a megadott idő hosszabb az eszközön jelenleg beállított értéknél, akkor az eszköz figyelmen kívül hagyja a beírt időt. IOS 8,0 és újabb rendszerű eszközökön támogatott.
-  - **A képernyő zárolása legfeljebb ennyi perc inaktivitás** után <sup>1</sup>: Adja meg az eszközön a képernyő zárolása előtt legfeljebb ennyi perc inaktivitás engedélyezett számát. Ha a megadott idő hosszabb az eszközön jelenleg beállított értéknél, akkor az eszköz figyelmen kívül hagyja a beírt időt. Ha a érték **azonnal**be van állítva, a képernyő zárolása az eszköz minimális ideje alapján történik. IPhone-on 30 másodperc. IPaden ez két perc.
-  - **Jelszó érvényessége (napokban)** : Adja meg, hogy hány nap elteltével kell megváltoztatni az eszköz jelszavát.
-  - **Korábbi jelszavak újbóli használatának tiltása**: Adja meg, hogy hány új jelszót kell használni, amíg egy régit újra fel nem használ.
-  - **Touch ID és Face ID feloldása**: Az eszköz zárolásának feloldásához válassza a **Letiltás** lehetőséget, hogy ne használjon ujjlenyomatot vagy arcot. A **nincs konfigurálva** beállítás lehetővé teszi, hogy a felhasználó ezeket a módszereket használja fel az eszköz zárolásának feloldásához.
+  az iOS beépített biztonságot tartalmaz, amely hatással lehet erre a beállításra. Előfordulhat például, hogy az iOS késlelteti a szabályzat aktiválását a bejelentkezési hibák számától függően. Azt is fontolóra veheti, hogy ismételten ugyanazzal a PIN-kóddal adja meg ugyanazt a jelszót, mint egy kísérletet. Az Apple [IOS-alapú biztonsági útmutatója](https://www.apple.com/business/site/docs/iOS_Security_Guide.pdf) (az Apple webhelyének megnyitása) jó erőforrás, és pontosabb részleteket biztosít a PIN-kódokról.
+  
+- **A képernyő zárolása utáni maximális percek a jelszó megadása előtt** <sup>1</sup>: Adja meg, hogy az eszköz mennyi ideig maradjon üresjáratban, mielőtt a felhasználónak újra meg kell adnia a jelszavát. Ha a megadott idő hosszabb az eszközön jelenleg beállított értéknél, akkor az eszköz figyelmen kívül hagyja a beírt időt. IOS 8,0 és újabb rendszerű eszközökön támogatott.
+- **A képernyő zárolása legfeljebb ennyi perc inaktivitás** után <sup>1</sup>: Adja meg az eszközön a képernyő zárolása előtt legfeljebb ennyi perc inaktivitás engedélyezett számát. Ha a megadott idő hosszabb az eszközön jelenleg beállított értéknél, akkor az eszköz figyelmen kívül hagyja a beírt időt. Ha a érték **azonnal**be van állítva, a képernyő zárolása az eszköz minimális ideje alapján történik. IPhone-on 30 másodperc. IPaden ez két perc.
+- **Jelszó érvényessége (napokban)** : Adja meg, hogy hány nap elteltével kell megváltoztatni az eszköz jelszavát.
+- **Korábbi jelszavak újbóli használatának tiltása**: Adja meg, hogy hány új jelszót kell használni, amíg egy régit újra fel nem használ.
+- **Touch ID és Face ID feloldása**: Az eszköz zárolásának feloldásához válassza a **Letiltás** lehetőséget, hogy ne használjon ujjlenyomatot vagy arcot. A **nincs konfigurálva** beállítás lehetővé teszi, hogy a felhasználó ezeket a módszereket használja fel az eszköz zárolásának feloldásához.
 
-    A beállítás letiltása azt is megakadályozza, hogy a FaceID hitelesítést használja az eszköz zárolásának feloldásához.
+  A beállítás letiltása azt is megakadályozza, hogy a FaceID hitelesítést használja az eszköz zárolásának feloldásához.
 
-    A Face ID a következőkre vonatkozik:  
-    - iOS 11,0 és újabb verziók
+  A Face ID a következőkre vonatkozik:  
+  - iOS 11,0 és újabb verziók
 
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: Automatikus eszközök beléptetése (felügyelt)
 
