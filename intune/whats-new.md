@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b7a0df354c505272ced187ead615734ae1c830f
-ms.sourcegitcommit: 022f52cb03e25d555229019599cdafc994427327
+ms.openlocfilehash: 6be3bcac9cde5c234964591d15fbbcfcd62c7f6f
+ms.sourcegitcommit: 734545054ce4e16c5c9ca2bb13f39da72e6c3afd
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71313447"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71687444"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -66,6 +66,9 @@ Az iOS 13,1-es verziójától kezdődően a 9/24/2019-es verziótól kezdve a fr
 Érintett kiadások:
 
 iOS 13,1 és újabb verziók
+
+#### <a name="intune-support-for-ipados-and-ios-131-devices---5439574--"></a>Intune-támogatás a iPadOS és az iOS 13,1-eszközökhöz <!--5439574-->
+Az Intune mostantól támogatja a iPadOS és az iOS 13,1-eszközök kezelését is. További információkat [ebben a blogban](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Microsoft-Intune-Support-for-iOS-13-1-and-iPadOS/ba-p/873094) talál.
 
 <!-- ########################## -->
 

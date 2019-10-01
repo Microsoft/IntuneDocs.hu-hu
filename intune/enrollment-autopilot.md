@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8b91420d4c90c38420b20080b25e91f23510503f
-ms.sourcegitcommit: ec0a69c88fdb30b538df1ac4f407a62a28ddf8d1
+ms.openlocfilehash: 3a08fb08792e4095235161079594ab40cf110e31
+ms.sourcegitcommit: 2be16108b759caa8e067e8217e53a100d2880637
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71320059"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71681688"
 ---
 # <a name="enroll-windows-devices-in-intune-by-using-the-windows-autopilot"></a>Windows-eszközök regisztrálása az Intune-ban a Windows Autopilot használatával  
 A Windows Autopilot egyszerűbbé teszi az eszközök regisztrálását az Intune-ban. A testre szabott operációsrendszer-lemezképek létrehozása és karbantartása sok időt vesz igénybe. Gyakran ezeknek az egyéni operációsrendszer-lemezképeknek az új eszközökre való alkalmazásával is időt kell töltenie, hogy felkészítse az eszközöket a használatra, mielőtt a végfelhasználóknak adná azokat. A Microsoft Intune és az AutoPilot révén új eszközöket adhat hozzá a végfelhasználók számára anélkül, hogy egyéni operációsrendszer-lemezképek létrehozására, kezelésére és az eszközökre való alkalmazására lenne szükség. Az AutoPilot-eszközök Intune-nal való felügyelete során a regisztráció után szabályzatokat, profilokat, alkalmazásokat és sok mást is kezelni tud. A megoldás előnyeinek, használati eseteinek és előfeltételeinek áttekintéséről lásd [a Windows AutoPilot áttekintését](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot).
@@ -108,7 +108,7 @@ Az Autopilot-üzembehelyezési profilokkal Autopilot-eszközeit konfigurálhatja
     >A diagnosztikai adatbeállítás alapértelmezett értéke a Windows-verziók között változik. A Windows 10 1903-es verzióját futtató eszközök esetében az alapértelmezett érték a teljes beépített élmény. További információ: [Windows diagnosztikai adatok](https://docs.microsoft.com/windows/privacy/windows-diagnostic-data) <br>
     
     - **Fiók beállításainak módosítása (Windows 10 1809-es vagy újabb verzió szükséges)** : Az **Elrejtés** lehetőség kiválasztásával megakadályozhatja a Fiókbeállítások megjelenítését a vállalati bejelentkezési és tartományi hibák oldalain. Ez a beállítás megköveteli, hogy [az Azure Active Directoryban konfigurálva legyen a Vállalati védjegyezés](https://docs.microsoft.com/azure/active-directory/fundamentals/customize-branding).
-    - **Felhasználói fiók típusa**: Válassza ki a felhasználó fiókjának típusát (**rendszergazda** vagy **általános jogú** felhasználó).
+    - **Felhasználói fiók típusa**: Válassza ki a felhasználó fiókjának típusát (**rendszergazda** vagy **általános jogú** felhasználó). Lehetővé tesszük, hogy a felhasználó a helyi rendszergazda csoportba való felvételsel a helyi rendszergazdához csatlakozzon az eszközhöz. A felhasználó alapértelmezett rendszergazdaként nem engedélyezhető az eszközön.
     - **Fehér kesztyűs Oobe engedélyezése** (a Windows 10 1903-es vagy újabb verziójára van szükség; [További fizikai követelmények](https://docs.microsoft.com/windows/deployment/windows-autopilot/white-glove#prerequisites)): Válassza az **Igen** lehetőséget a fehér kesztyű támogatásának engedélyezéséhez.
     - **Eszköz nevének sablonjának alkalmazása** (a Windows 10 1809-es vagy újabb verziójára van szükség): Válassza az **Igen** lehetőséget, ha létre szeretne hozni egy, az eszköznek a beléptetés során való elnevezéséhez használandó sablont. A nevek legfeljebb 15 karakterből állhatnak, és betűket, számokat és kötőjelet tartalmazhatnak. A nevek nem állhatnak csak számokból. Hardverspecifikus sorozatszám hozzáadásához használja a [%SERIAL% makrót](https://docs.microsoft.com/windows/client-management/mdm/accounts-csp). Egy másik lehetőség a [%RAND:x% makró](https://docs.microsoft.com/windows/client-management/mdm/accounts-csp) használata, amellyel véletlenszerű számsort adhat hozzá. Az x a hozzáadni kívánt számjegyek számát jelenti. 
     - **Nyelv (régió)** \*: Válassza ki az eszközhöz használni kívánt nyelvet. Ez a lehetőség csak akkor érhető el, ha a **Telepítési mód** beállításnál az **Öntelepítő** lehetőséget választotta.
