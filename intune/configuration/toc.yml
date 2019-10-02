@@ -1,0 +1,190 @@
+- name: Eszközbeállítások megadása
+  href: index.yml
+- name: Áttekintés
+  expanded: true
+  items:
+    - name: Eszközök konfigurálása – áttekintés
+      href: device-profiles.md
+- name: Gyorsútmutatók
+  items:
+    - name: E-mail-eszközprofil létrehozása
+      href: quickstart-email-profile.md
+- name: Használati útmutatók
+  items:
+    - name: Profil létrehozása
+      href: device-profile-create.md
+    - name: Felügyeleti sablonok Windowson
+      href: administrative-templates-windows.md
+    - name: Eszközfunkciók iOS-en és macOS-en
+      href: device-features-configure.md
+    - name: Eszközbeállítások és -funkciók korlátozása
+      href: device-restrictions-configure.md
+      displayName: Device restrictions
+    - name: Frissítések
+      href: delivery-optimization-windows.md
+      displayName: delivery optimization; updates
+    - name: Kiadások frissítése és az S mód
+      href: edition-upgrade-configure-windows-10.md
+    - name: E-mail
+      href: email-settings-configure.md
+    - name: Kioszkok és dedikált eszközök
+      href: kiosk-settings.md
+    - name: Többfelhasználós megosztott eszközök
+      href: shared-user-device-settings.md
+    - name: VPN
+      href: vpn-settings-configure.md
+      items:
+        - name: Alkalmazásonkénti VPN Androidhoz
+          href: android-pulse-secure-per-app-vpn.md
+        - name: Alkalmazásonkénti VPN iOS-hez
+          href: vpn-setting-configure-per-app.md
+    - name: Wi-Fi-hálózat
+      href: wi-fi-settings-configure.md
+      displayName: wifi
+      items:
+        - name: Wi-Fi előmegosztott kulccsal
+          href: wi-fi-profile-shared-key.md
+    - name: Bővítmények macOS rendszeren
+      href: kernel-extensions-overview-macos.md
+    - name: Education – Vizsgaalkalmazás
+      href: education-settings-configure.md
+    - name: Mobilbővítmények Zebra-eszközökön
+      href: android-zebra-mx-overview.md
+      displayName: mx
+    - name: OEMConfig Android Enterprise-on
+      href: android-oem-configuration-overview.md
+    - name: eSIM mobilprofilok
+      href: esim-device-configuration.md
+    - name: Távközlési költségek monitorozása
+      href: telecom-expenses-monitor.md
+    - name: Egyéni eszközbeállítások
+      href: custom-settings-configure.md
+    - name: Profilok hozzárendelése
+      href: device-profile-assign.md
+    - name: Profilok monitorozása
+      href: device-profile-monitor.md
+    - name: Hibaelhárítás
+      items:
+        - name: Szabályzatok és profilok problémáinak elhárítása
+          href: troubleshoot-policies-in-microsoft-intune.md
+        - name: E-mail profilokkal kapcsolatos problémák és megoldásaik
+          href: troubleshoot-email-profiles-in-microsoft-intune.md
+        - name: StageNow-naplók és gyakori problémák
+          href: android-zebra-mx-logs-troubleshoot.md
+        - name: Gyakori kérdések és válaszok
+          href: device-profile-troubleshoot.md
+- name: Hivatkozás
+  items:
+    - name: Konfigurációs profil beállításai
+      items:
+        - name: Android
+          items:
+            - name: Eszközkorlátozások
+              href: device-restrictions-android.md
+            - name: E-mail
+              href: email-settings-android.md
+            - name: VPN
+              href: vpn-settings-android.md
+            - name: Wi-Fi
+              href: wi-fi-settings-android.md
+            - name: Egyéni
+              href: custom-settings-android.md
+              items:
+                - name: Alkalmazások engedélyezése/letiltása a Samsung Knox Standard használatával
+                  href: samsung-knox-apps-allow-block.md
+        - name: Vállalati Android
+          items:
+            - name: Eszközkorlátozások
+              href: device-restrictions-android-for-work.md
+            - name: E-mail
+              href: email-settings-android-enterprise.md
+            - name: VPN
+              href: vpn-settings-android-enterprise.md
+            - name: Wi-Fi
+              href: wi-fi-settings-android-enterprise.md
+            - name: Egyéni
+              href: custom-settings-android-for-work.md
+        - name: iOS
+          items:
+            - name: Eszközfunkciók
+              href: ios-device-features-settings.md
+            - name: Eszközkorlátozások
+              href: device-restrictions-ios.md
+            - name: E-mail
+              href: email-settings-ios.md
+            - name: VPN
+              href: vpn-settings-ios.md
+            - name: Wi-Fi
+              href: wi-fi-settings-ios.md
+            - name: Egyéni
+              href: custom-settings-ios.md
+            - name: Kötegazonosítók beépített alkalmazásokhoz
+              href: bundle-ids-built-in-ios-apps.md
+        - name: macOS
+          items:
+            - name: Eszközfunkciók
+              href: macos-device-features-settings.md
+            - name: Eszközkorlátozások
+              href: device-restrictions-macos.md
+            - name: VPN
+              href: vpn-settings-macos.md
+            - name: Wi-Fi
+              href: wi-fi-settings-macos.md
+            - name: Bővítmények
+              href: kernel-extensions-settings-macos.md
+            - name: Egyéni
+              href: custom-settings-macos.md
+        - name: Windows 10 és újabb
+          items:
+            - name: Teljesítésoptimalizálás
+              href: delivery-optimization-settings.md
+            - name: Eszközkorlátozások
+              href: device-restrictions-windows-10.md
+            - name: Eszközkorlátozások (Windows 10 Team esetén)
+              href: device-restrictions-windows-10-teams.md
+            - name: Kiadásfrissítés és módváltás
+              href: edition-upgrade-windows-settings.md
+            - name: E-mail
+              href: email-settings-windows-10.md
+            - name: Kioszkmód
+              href: kiosk-settings-windows.md
+            - name: VPN
+              href: vpn-settings-windows-10.md
+            - name: Wi-Fi
+              href: wi-fi-settings-windows.md
+            - name: Biztonságos értékelés
+              href: education-settings-windows.md
+            - name: Többfelhasználós megosztott eszköz
+              href: shared-user-device-settings-windows.md
+            - name: Egyéni
+              href: custom-settings-windows-10.md
+        - name: Windows Holographic for Business
+          items:
+            - name: Eszközkorlátozások
+              href: device-restrictions-windows-holographic.md
+            - name: Többfelhasználós megosztott eszköz
+              href: shared-user-device-settings-windows-holographic.md
+            - name: Kiadásfrissítés és módváltás
+              href: holographic-upgrade.md
+            - name: Kioszkmód
+              href: kiosk-settings-holographic.md
+            - name: Egyéni
+              href: custom-settings-windows-holographic.md
+        - name: "Windows\_8.1"
+          items:
+            - name: Eszközkorlátozások
+              href: device-restrictions-windows-8-1.md
+            - name: VPN
+              href: vpn-settings-windows-8-1.md
+            - name: Wi-Fi-importálás
+              href: wi-fi-settings-import-windows-8-1.md
+        - name: Windows Phone 8.1
+          items:
+            - name: Eszközkorlátozások
+              href: device-restrictions-windows-phone-8-1.md
+            - name: E-mail
+              href: email-settings-windows-phone-8-1.md
+            - name: VPN
+              href: vpn-settings-windows-phone-8-1.md
+            - name: Egyéni
+              href: custom-settings-windows-phone-8-1.md

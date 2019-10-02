@@ -18,12 +18,12 @@ ms.reviewer: scottduf
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6a545bff8624f4447ca9805aecf6d4d288fe4314
-ms.sourcegitcommit: 6a946a055a2014e00a4ca9d71986727a4ebbc777
+ms.openlocfilehash: 6f37e5c8d700d33e368966c8c3c31abd4f42d3b9
+ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71239518"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71721188"
 ---
 # <a name="enable-code-integrity"></a>Kód integritásának engedélyezése
 
@@ -35,7 +35,7 @@ Ha speciális eszköz felhasználóként azonosítja magát, és saját maga sze
 
 ## <a name="additional-resources-for-it-administrators"></a>További erőforrások a rendszergazdák számára
 
-Ha Ön Intune-rendszergazda, és szeretne többet megtudni az Intune Eszközállapot-megfelelőségi beállításairól, tekintse meg az [eszköz megfelelőségi szabályzatának hozzáadása Windows 10-es eszközökhöz az Intune-ban](https://docs.microsoft.com/intune/compliance-policy-create-windows)című témakört. Az Intune-ban elvégezhető megfelelőségi műveletek részletes ismertetését az [HEALTHATTESTATION CSP](https://docs.microsoft.com/windows/client-management/mdm/healthattestation-csp#step-8-take-appropriate-policy-action-based-on-evaluation-results)-vel foglalkozó témakörben tekintheti meg.  
+Ha Ön Intune-rendszergazda, és szeretne többet megtudni az Intune Eszközállapot-megfelelőségi beállításairól, tekintse meg az [eszköz megfelelőségi szabályzatának hozzáadása Windows 10-es eszközökhöz az Intune-ban](https://docs.microsoft.com/intune/protect/compliance-policy-create-windows.md)című témakört. Az Intune-ban elvégezhető megfelelőségi műveletek részletes ismertetését az [HEALTHATTESTATION CSP](https://docs.microsoft.com/windows/client-management/mdm/healthattestation-csp#step-8-take-appropriate-policy-action-based-on-evaluation-results)-vel foglalkozó témakörben tekintheti meg.  
 
 ## <a name="next-steps"></a>További lépések
 

@@ -7,18 +7,18 @@ ms.topic: include
 ms.date: 03/28/2019
 ms.author: erikje
 ms.custom: include file
-ms.openlocfilehash: 90c770fec5bd9456151e601188254a3a022cd13f
-ms.sourcegitcommit: 62c41976c4da43b36015b715bc255397ebb8c6ad
+ms.openlocfilehash: fa251a0edd943d566849b138af5cbab0be248a53
+ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71279904"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71731759"
 ---
 Ezek a hirdetmények olyan fontos információkat tartalmaznak, amelyek segíthetnek a jövőbeli Intune-változások és-funkciók előkészítésében. 
 
 
 ### <a name="decreasing-support-for-android-device-administrator"></a>Az Android-eszközök rendszergazdai támogatásának csökkentése 
-Android-eszköz rendszergazdája (más néven a "régi" Android-kezelés és az Android 2,2 kiadásban megjelent) az androidos eszközök felügyeletének módja. A továbbfejlesztett felügyeleti funkciók azonban mostantól elérhetők az [Android Enterprise](../connect-intune-android-enterprise.md) (Android 5,0) verzióban. A modern, gazdagabb és biztonságosabb eszközkezelés érdekében a Google az új Android-kiadásokban csökkenti az eszköz-rendszergazda támogatását.
+Android-eszköz rendszergazdája (más néven a "régi" Android-kezelés és az Android 2,2 kiadásban megjelent) az androidos eszközök felügyeletének módja. A továbbfejlesztett felügyeleti funkciók azonban mostantól elérhetők az [Android Enterprise](../enrollment/connect-intune-android-enterprise.md) (Android 5,0) verzióban. A modern, gazdagabb és biztonságosabb eszközkezelés érdekében a Google az új Android-kiadásokban csökkenti az eszköz-rendszergazda támogatását.
 
 #### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
 A Google által végzett módosítások miatt az Intune-felhasználók a következő módokon lesznek hatással: 
@@ -67,10 +67,11 @@ Semmilyen műveletet nem kell elvégeznie, de szükség esetén érdemes lehet a
 https://aka.ms/intune_fullscreen
 
 ### <a name="plan-for-change-new-windows-updates-settings-in-intune----4464404---"></a>Tervezze meg a változást: Új Windows Update-beállítások az Intune-ban <!-- 4464404 -->
-Az Intune szolgáltatás vagy a 1908 új "határidő-beállítások" részének megadásával kezdődően a "felhasználó újraindításának engedélyezése (lefoglalt újraindításkor)" beállítások helyett a következő beállításokat vesszük igénybe. Azt tervezzük, hogy letiltjuk a bekapcsolt újraindítási beállításokat a felhasználói felületen a 1909-as vagy a szeptemberi frissítés után, majd a konzolról teljesen el kell távolítani őket a konzolról október végére. 
+Az Intune szolgáltatás vagy a 1908 új "határidő-beállítások" részének megadásával kezdődően a "felhasználó újraindításának engedélyezése (lefoglalt újraindításkor)" beállítások helyett a következő beállításokat vesszük igénybe. Azt tervezzük, hogy letiltjuk a bekapcsolt újraindítási beállításokat a felhasználói felületen a 1909-as vagy a szeptemberi frissítés után, majd a konzolról teljesen el kell távolítani őket a konzolról október végére.
 
 #### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
-Ha Windows 10-es eszközöket kezel a környezetben: 
+Ha Windows 10-es eszközöket kezel a környezetben:
+
 - Az Intune frissítésével vagy 1908-as verziójában az új határidő-beállítások jelennek meg a konzolon a régi, lefolytatott újraindítási beállítások mellett.
 - Ha a régi és az új beállítások is konfigurálva vannak, a határidő-beállítási értékek felülbírálják a befoglalt újraindítási beállítások értékeit.
 - A határidő beállításai lecserélik a "felhasználó újraindításának engedélyezése (a művelet újraindítása)" beállítást a konzolon a 1910-es frissítésben.
@@ -78,7 +79,7 @@ Ha Windows 10-es eszközöket kezel a környezetben:
 #### <a name="what-can-i-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
 Az 1908-as határidő-beállítások használatával kezdje meg a kívánt értékeket beállítani. Ha ezt megtörtént, beállíthatja, hogy a kapcsolódó újraindítási beállítás "nincs konfigurálva" értékűre készüljön, hogy előkészítse ezeket a beállításokat a konzolról októberben.
 
-Szükség esetén frissítse a dokumentációt és az Automation-parancsfájlokat. 
+Szükség esetén frissítse a dokumentációt és az Automation-parancsfájlokat.
 
 Folyamatosan frissítjük, és egy emlékeztetőt teszünk közzé az üzenetközpont előtt, mielőtt eltávolítjuk a befoglalt újraindítási beállításokat.
 
@@ -86,12 +87,13 @@ Folyamatosan frissítjük, és egy emlékeztetőt teszünk közzé az üzenetkö
 Az Intune az Android 5. x (nyalóka) és újabb verzióinak támogatására lesz áthelyezve. Frissítheti az összes burkolt alkalmazást a legújabb Intune app SDK-val, és frissítheti az eszközeit.
 
 #### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
-Ha nem használja az SDK-t vagy az alkalmazást az Androidhoz, akkor ez a változás nem érinti Önt. Ha az Intune app SDK-t használja, frissítsen a legújabb verzióra, és frissítse az eszközeit az Android 5. x vagy újabb verziójára. Ha nem frissíti, az alkalmazások nem kapják meg a frissítéseket, és a tapasztalatok minősége idővel csökken. 
+Ha nem használja az SDK-t vagy az alkalmazást az Androidhoz, akkor ez a változás nem érinti Önt. Ha az Intune app SDK-t használja, frissítsen a legújabb verzióra, és frissítse az eszközeit az Android 5. x vagy újabb verziójára. Ha nem frissíti, az alkalmazások nem kapják meg a frissítéseket, és a tapasztalatok minősége idővel csökken.
 
 Az alábbi listában megtalálhatja az Intune-ban regisztrált általános eszközök listáját, amelyek az Android 4. x verzióját futtatják. Ha rendelkezik ezekkel az eszközökkel, hajtsa végre a megfelelő lépéseket annak biztosításához, hogy az eszköz támogassa az Android 5,0-es vagy újabb verzióját, vagy hogy a rendszer az Android 5,0-es vagy újabb verzióját támogató eszközre cserélje. Ez a lista nem teljes körű a kiértékeléshez szükséges összes eszközről:
+
 - Samsung SM – T561  
-- Samsung SM – T365 
-- Samsung GT – I9195 
+- Samsung SM – T365
+- Samsung GT – I9195
 - Samsung SM – G800F
 - Samsung SM – G357FZ
 - Motorola XT1080
@@ -100,7 +102,6 @@ Az alábbi listában megtalálhatja az Intune-ban regisztrált általános eszk�
 
 #### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
 Alkalmazások becsomagolása a legújabb Intune app SDK-val. Az "a minimális operációsrendszer-verzió megkövetelése (csak figyelmeztetés)" beállítást is beállíthatja a feltételes indítási beállítással, hogy a végfelhasználók tájékoztassák a felhasználókat a személyes eszközökről.
-
 
 ### <a name="intune-plan-for-change-nearing-end-of-support-for-windows-7----3042987---"></a>Intune-terv a változáshoz: a Windows 7 támogatásának megszűnése <!-- 3042987 -->
 Ahogy azt a MC148476-ben közzétettük, az elmúlt szeptember 2018-ben, majd a MC176794-ben ismét visszatért a 2019-es verzióra, a Windows 7 a 2020-as januári meghosszabbított támogatás végére ér. Ebben az esetben az Intune kivonja a Windows 7 rendszerű eszközök támogatását, így az új technológiákat támogató beruházásokra koncentrálhat, és nagyszerű új végfelhasználói élményt biztosíthat. Ezen dátum után a Windows 7 rendszerű számítógépek védelméhez segítséget nyújtó technikai segítségnyújtás és automatikus frissítések többé nem lesznek elérhetők az Intune-on keresztül. A Microsoft határozottan azt ajánlja, hogy a Windows 10-es rendszerre való áttérés előtt 2020 január, hogy elkerülje azt a helyzetet, amikor olyan szolgáltatásra vagy támogatásra van szüksége, amely már nem érhető el. További információk a Windows támogatási életciklusáról [itt](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)olvashat.

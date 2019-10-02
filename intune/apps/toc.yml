@@ -1,0 +1,202 @@
+- name: Alkalmazások kezelése
+  href: index.yml
+- name: Áttekintés
+  expanded: true
+  items:
+    - name: Az alkalmazáskezelés áttekintése
+      href: app-management.md
+- name: Gyorsútmutatók
+  items:
+    - name: Alkalmazás hozzáadása és hozzárendelése
+      href: quickstart-add-assign-app.md
+    - name: Alkalmazásvédelmi szabályzat létrehozása és hozzárendelése
+      href: quickstart-create-assign-app-policy.md
+- name: Oktatóanyagok
+  items:
+    - name: E-mailek védelme a nem felügyelt eszközökön
+      href: ../protect/tutorial-protect-email-on-unmanaged-devices.md?toc=/intune/apps/toc.json&bc=/intune/apps/breadcrumb/toc.json
+    - name: A Slack konfigurálása az Intune használatára
+      href: tutorial-configure-slack-enterprise-grid.md
+- name: Fogalmak
+  items:
+    - name: Alkalmazások életciklusa
+      href: app-lifecycle.md
+    - name: Alkalmazásvédelmi szabályzatok és munkahelyi profilok (Android)
+      href: android-deployment-scenarios-app-protection-work-profiles.md
+      displayName: app-we; without; without enrollment
+    - name: MAM – GYAKORI KÉRDÉSEK
+      href: mam-faq.md
+- name: Használati útmutatók
+  items:
+    - name: Alkalmazások hozzáadása
+      items:
+        - name: Alkalmazások hozzáadásának áttekintése
+          href: apps-add.md
+        - name: Intune-nal védett alkalmazások
+          href: apps-supported-intune-apps.md
+        - name: Áruházbeli alkalmazások
+          items:
+            - name: Androidos áruházbeli alkalmazások
+              href: store-apps-android.md
+            - name: iOS-es áruházbeli alkalmazások
+              href: store-apps-ios.md
+            - name: Windows Phone 8.1-es áruházbeli alkalmazások
+              href: store-apps-windows-phone-8-1.md
+            - name: Microsoft Áruházbeli alkalmazások
+              items:
+                - name: Windows-alkalmazás
+                  href: store-apps-windows.md
+                - name: Vállalati portál alkalmazás
+                  href: store-apps-company-portal-app.md
+            - name: Felügyelt Google Play-alkalmazások
+              href: apps-add-android-for-work.md
+            - name: Windows 10-es Office 365-alkalmazások
+              href: apps-add-office365.md
+            - name: macOS-es Office 365-alkalmazások
+              href: apps-add-office365-macos.md
+        - name: Webalkalmazások
+          href: web-app.md
+          displayName: web; web link; weblink; web-link
+        - name: Beépített alkalmazások
+          href: apps-add-built-in.md
+        - name: Alkalmazás létrehozása (üzletági)
+          items:
+            - name: Androidos üzletági alkalmazások
+              href: lob-apps-android.md
+            - name: iOS-es üzletági alkalmazások
+              href: lob-apps-ios.md
+            - name: Windows Phone LOB-alkalmazások
+              href: lob-apps-windows-phone.md
+            - name: Windows LOB apps
+              href: lob-apps-windows.md
+            - name: Windows LOB-alkalmazások közvetlen telepítése
+              href: app-sideload-windows.md
+            - name: macOS-es üzletági alkalmazások
+              href: lob-apps-macos.md
+        - name: A Vállalati Android rendszeralkalmazásai
+          href: apps-ae-system.md
+        - name: Win32-alkalmazások kezelése
+          href: apps-win32-app-management.md
+        - name: PowerShell-parancsprogramok
+          href: intune-management-extension.md
+    - name: Alkalmazások hozzárendelése
+      items:
+        - name: Alkalmazások hozzárendelése csoportokhoz
+          href: apps-deploy.md
+          displayName: app assignment; assignment
+        - name: Alkalmazások belefoglalása vagy kizárása
+          href: apps-inc-exl-assignments.md
+          displayName: app assignment
+        - name: Windows 10-alkalmazások telepítése
+          href: apps-windows-10-app-deploy.md
+        - name: Alkalmazások üzembe helyezése kormányzati környezetekben
+          href: apps-deploy-gcc-dod.md
+    - name: Alkalmazások figyelése
+      href: apps-monitor.md
+    - name: Felderített alkalmazások
+      href: app-discovered-apps.md
+    - name: Alkalmazások konfigurálása
+      items:
+        - name: Alkalmazáskonfigurációs szabályzatok
+          href: app-configuration-policies-overview.md
+          displayName: App configuration policy; configuration policy
+        - name: iOS felügyelt eszközök
+          href: app-configuration-policies-use-ios.md
+        - name: Android felügyelt eszközök
+          href: app-configuration-policies-use-android.md
+        - name: A felügyelt kezdőképernyő konfigurálása
+          href: app-configuration-managed-home-screen-app.md
+        - name: Felügyelt alkalmazások
+          href: app-configuration-policies-managed-app.md
+        - name: iOS-alkalmazáskiépítési profilok használata
+          href: app-provisioning-profile-ios.md
+        - name: Mennyiségi licencszerződés keretében vásárolt alkalmazások és könyvek
+          items:
+            - name: VPP-alkalmazások kezelése és könyvek
+              href: vpp-apps.md
+              displayName: vpp; volume purchased
+            - name: iOS VPP-alkalmazások
+              href: vpp-apps-ios.md
+            - name: Vállalati Microsoft Áruházbeli alkalmazások
+              href: windows-store-for-business.md
+            - name: iOS-es e-könyvek
+              href: vpp-ebooks-ios.md
+        - name: A Céges portál konfigurálása
+          href: company-portal-app.md
+        - name: A Managed Browser konfigurálása
+          href: app-configuration-managed-browser.md
+        - name: A Microsoft Edge konfigurálása
+          href: manage-microsoft-edge.md
+        - name: A Microsoft Launcher konfigurálása
+          href: configure-microsoft-launcher.md
+        - name: Az Outlook konfigurálása
+          href: app-configuration-policies-outlook.md
+    - name: Alkalmazások védelme
+      items:
+        - name: Alkalmazások szelektív törlése
+          href: apps-selective-wipe.md
+        - name: Alkalmazásvédelmi szabályzatok használata
+          items:
+            - name: Alkalmazásvédelmi szabályzatok áttekintése
+              href: app-protection-policy.md
+              displayName: app; protection; policy
+            - name: Alkalmazásvédelmi szabályzatok létrehozása
+              items:
+                - name: Általános beállítások
+                  href: app-protection-policies.md
+                  displayName: dlp; data loss prevention
+                - name: Android-beállítások
+                  href: app-protection-policy-settings-android.md
+                - name: iOS-beállítások
+                  href: app-protection-policy-settings-ios.md
+                - name: Hozzáférési műveletek
+                  href: app-protection-policies-access-actions.md
+                - name: Adatátvitel kivételek
+                  href: app-protection-policies-exception.md
+            - name: Az alkalmazásvédelmi szabályzatok ellenőrzése
+              href: app-protection-policies-validate.md
+            - name: Alkalmazásvédelmi szabályzat kézbesítése
+              href: app-protection-policy-delivery.md
+            - name: Alkalmazásbővítmények védelme
+              href: app-protection-policy-extensions.md
+            - name: Alkalmazásvédelmi felhasználó állapotának figyelése
+              href: app-protection-policies-monitor.md
+            - name: Felkészülés az alkalmazásvédelmi WIP-szabályzatokra
+              href: app-protection-policies-configure-windows-10.md
+            - name: Alkalmazásvédelmi WIP-szabályzatok létrehozása és hozzárendelése
+              href: windows-information-protection-policy-create.md
+            - name: iOS-alkalmazások közti adatátvitel kezelése
+              href: data-transfer-between-apps-manage-ios.md
+    - name: Hibaelhárítás
+      items:
+        - name: Segítség a felhasználóknak a problémák elhárításában
+          href: ../fundamentals/help-desk-operators.md?toc=/intune/apps/toc.json&bc=/apps/breadcrumb/toc.json
+        - name: Alkalmazások telepítésével kapcsolatos problémák elhárítása
+          href: troubleshoot-app-install.md
+        - name: Mobilalkalmazás-kezelési hibaelhárítás
+          href: troubleshoot-mam.md
+        - name: Alkalmazásvédelmi naplók áttekintése
+          href: app-protection-policy-settings-log.md
+- name: Hivatkozás
+  items:
+    - name: Alkalmazások védelme az Intune App SDK-val
+      href: ../developer/app-sdk.md
+      items:
+        - name: Ismerkedés az Intune App SDK-val
+          href: ../developer/app-sdk-get-started.md
+        - name: Üzletági alkalmazások előkészítése alkalmazásvédelemre
+          href: ../developer/apps-prepare-mobile-application-management.md
+        - name: OS alkalmazásburkoló eszköz
+          href: ../developer/app-wrapper-prepare-ios.md
+        - name: Intune App SDK iOS rendszerhez
+          href: ../developer/app-sdk-ios.md
+        - name: Alkalmazásburkoló eszköz Android rendszerhez
+          href: ../developer/app-wrapper-prepare-android.md
+          displayName: dex
+        - name: Intune App SDK Android rendszerhez
+          href: ../developer/app-sdk-android.md
+          items:
+            - name: Androidhoz készült Intune App SDK – tesztelési útmutató
+              href: ../developer/app-sdk-android-testing-guide.md
+        - name: Intune App SDK Xamarin-kötések
+          href: ../developer/app-sdk-xamarin.md
