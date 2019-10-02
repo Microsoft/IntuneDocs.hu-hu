@@ -18,12 +18,12 @@ ms.reviewer: japoehlm
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4484dbc9a8348101c0f7409b009998baca32f8a4
-ms.sourcegitcommit: 6a946a055a2014e00a4ca9d71986727a4ebbc777
+ms.openlocfilehash: bca7ff55653d12d352b4fb90163f4622a9e573ab
+ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71239411"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71721007"
 ---
 # <a name="enroll-your-organization-provided-ios-device-in-management"></a>A vállalat által biztosított iOS-eszköz felügyeleti regisztrálása
 
@@ -31,11 +31,11 @@ ms.locfileid: "71239411"
 
 A munkahely vagy iskola által biztosított iOS-eszközöket gyakran előre konfigurálják, mielőtt Ön megkapja azokat. A vállalat akkor küldi az eszközre ezeket az előre konfigurált beállításokat, miután Ön először bekapcsolta azt, és bejelentkezett. Miután az eszköz elvégezte a beállításokat, Ön hozzáférhet munkahelyi vagy iskolai erőforrásaihoz.  
 
-A beállítások megkezdéséhez kapcsolja be az eszközt, majd jelentkezzen be a munkahelyi vagy iskolai hitelesítő adataival. A cikk a továbbiakban azokat a lépéseket és képernyőket ismerteti, amelyekkel a Beállítási asszisztensben találkozni fog. 
+A beállítások megkezdéséhez kapcsolja be az eszközt, majd jelentkezzen be a munkahelyi vagy iskolai hitelesítő adataival. A cikk a továbbiakban azokat a lépéseket és képernyőket ismerteti, amelyekkel a Beállítási asszisztensben találkozni fog.
 
 ## <a name="what-is-apple-dep"></a>Mi az Apple DEP?
 
-Lehetséges, hogy vállalata az úgynevezett *Apple Készülékregisztrációs programon* (DEP) keresztül vásárolta meg eszközeit. Az Apple DEP nagy mennyiségű iOS- vagy macOS-eszköz vásárlását teszi lehetővé a vállalatok számára. Ezt követően ezeket az eszközöket egy általuk preferált mobileszköz-felügyeleti szolgáltatóval, például az Intune-nal konfigurálják és felügyelik. Ha Ön rendszergazda, és információt szeretne az Apple DEP-vel kapcsolatban, tekintse át az [iOS-eszközök automatikus regisztrálása az Apple készülékregisztrációs programjával (DEP)](https://docs.microsoft.com/intune/device-enrollment-program-enroll-ios) című cikket.  
+Lehetséges, hogy vállalata az úgynevezett *Apple Készülékregisztrációs programon* (DEP) keresztül vásárolta meg eszközeit. Az Apple DEP nagy mennyiségű iOS- vagy macOS-eszköz vásárlását teszi lehetővé a vállalatok számára. Ezt követően ezeket az eszközöket egy általuk preferált mobileszköz-felügyeleti szolgáltatóval, például az Intune-nal konfigurálják és felügyelik. Ha Ön rendszergazda, és információt szeretne az Apple DEP-vel kapcsolatban, tekintse át az [iOS-eszközök automatikus regisztrálása az Apple készülékregisztrációs programjával (DEP)](https://docs.microsoft.com/intune/enrollment/device-enrollment-program-enroll-ios.md) című cikket.  
 
 ## <a name="set-up-your-ios-device"></a>Az iOS-eszköz beállítása
 
@@ -51,7 +51,7 @@ Ha nem a vállalat által biztosított, hanem saját iOS-eszközt használ, köv
 4. Miután csatlakozott, megjelenik a **Konfiguráció** képernyő. Ez tudatja Önnel, hogy **[a cége] automatikusan konfigurálja az eszközét.**
 
    **A konfiguráció lehetővé teszi, hogy [az Ön cége] távolról kezelje ezt az eszközt. A rendszergazdák távolról segíthetnek e-mail- ás hálózati fiókok beállításában, alkalmazások telepítésében és konfigurálásában és a beállítások kezelésében. A rendszergazdák funkciókat tilthatnak le, alkalmazásokat telepíthetnek és távolíthatnak el, megfigyelhetik és korlátozhatják az internetes forgalmat és távolról törölhetik az eszköz tartalmát.**
- 
+
    **A konfiguráció beállítója: [Az Ön cége] iOS-csoportja [Cím]**
 
 5. Jelentkezzen be az Apple ID azonosítójával. A bejelentkezés után telepítheti a Céges portál alkalmazást, valamint a felügyeleti profilt, amellyel a cége hozzáférést adhat Önnek az erőforrásokhoz, például az e-mailekhez és az alkalmazásokhoz.

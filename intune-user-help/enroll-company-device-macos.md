@@ -18,12 +18,12 @@ ms.reviewer: japoehlm
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0de0e676e72d46bde922fd97b651cc1a9268e45e
-ms.sourcegitcommit: 6a946a055a2014e00a4ca9d71986727a4ebbc777
+ms.openlocfilehash: f2e2ecc79cd24a68c1a5642f64474f2d31217bd7
+ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71239777"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71721022"
 ---
 # <a name="enroll-your-organization-provided-macos-device-in-management"></a>A vállalat által biztosított macOS-eszköz felügyeleti regisztrálása
 
@@ -35,7 +35,7 @@ A felügyelet beállításának megkezdéséhez kapcsolja be az eszközt, majd j
 
 ## <a name="what-is-apple-dep"></a>Mi az Apple DEP?
 
-Lehetséges, hogy vállalata az úgynevezett *Apple Készülékregisztrációs programon* (DEP) keresztül vásárolta meg eszközeit. Az Apple DEP nagy mennyiségű iOS- vagy macOS-eszköz vásárlását teszi lehetővé a vállalatok számára. Ezt követően ezeket az eszközöket egy általuk preferált mobileszköz-felügyeleti szolgáltatóval, például az Intune-nal konfigurálják és felügyelik. Ha Ön rendszergazda, és információt szeretne az Apple DEP-vel kapcsolatban, tekintse át a [macOS-eszközök automatikus regisztrálása az Apple készülékregisztrációs programjával (DEP)](https://docs.microsoft.com/intune/device-enrollment-program-enroll-macos) című cikket.  
+Lehetséges, hogy vállalata az úgynevezett *Apple Készülékregisztrációs programon* (DEP) keresztül vásárolta meg eszközeit. Az Apple DEP nagy mennyiségű iOS- vagy macOS-eszköz vásárlását teszi lehetővé a vállalatok számára. Ezt követően ezeket az eszközöket egy általuk preferált mobileszköz-felügyeleti szolgáltatóval, például az Intune-nal konfigurálják és felügyelik. Ha Ön rendszergazda, és információt szeretne az Apple DEP-vel kapcsolatban, tekintse át a [macOS-eszközök automatikus regisztrálása az Apple készülékregisztrációs programjával (DEP)](https://docs.microsoft.com/intune/enrollment/device-enrollment-program-enroll-macos.md) című cikket.  
 
 ## <a name="get-your-device-managed"></a>Eszköz felügyelet alá vonása
 
@@ -63,7 +63,7 @@ Az alábbi lépésekkel regisztrálhatja macOS-eszközét a felügyeleti szolgá
     * A használati feltételek elfogadása
     * Egy számítógépes fiók létrehozása
     * Egy gyorstelepítési folyamat elvégzése
-    * A Mac gép beállítása  
+    * A Mac gép beállítása
 
 ## <a name="get-the-company-portal-app"></a>A Céges portál alkalmazás beszerzése
 
