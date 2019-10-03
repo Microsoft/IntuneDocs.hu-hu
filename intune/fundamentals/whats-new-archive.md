@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dad8a4ed2770018b2ec6ad20c238d5e527103fb7
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 1af106227442e91121f6c8c653c261bd677f3a9f
+ms.sourcegitcommit: f04e21ec459998922ba9c7091ab5f8efafd8a01c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732367"
+ms.locfileid: "71814179"
 ---
 # <a name="whats-new-in-the-microsoft-intune---previous-months"></a>A Microsoft Intune újdonságai – korábbi hónapok
 
@@ -1655,7 +1655,7 @@ Az Azure Portalon mostantól új folyamatok és eszközök érhetők el a felhas
 A részletekért lásd: [Hibrid MDM-felhasználók és -eszközök migrálása az önálló Intune szolgáltatásba](https://docs.microsoft.com/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa).
 
 ### <a name="on-premises-exchange-connector-high-availability-support-----676614---"></a>Magas rendelkezésre állású helyszíni Exchange Connector támogatása  <!-- 676614 -->
-Miután az Exchange-összekötő létrehozott egy Exchange-kapcsolatot a megadott CAS (ügyfél-hozzáférési kiszolgáló) használatával, mostantól képes felfedezni más CAS kiszolgálókat is. Ha az elsődleges CAS elérhetetlenné válik, az összekötő átvált egy másik CAS-ra (ha elérhető), amíg az elsődleges CAS elérhetősége helyre nem áll. További információért lásd: [Magas rendelkezésre állású helyszíni Exchange Connector támogatása](../protect/exchange-connector-install.md#on-premises-exchange-connector-high-availability-support).
+Miután az Exchange Connector létrehoz egy kapcsolatot az Exchange-lel a megadott ügyfél-hozzáférési kiszolgáló (CAS) használatával, az összekötő mostantól képes a többi CASs felderítésére. Ha az elsődleges CAS elérhetetlenné válik, az összekötő átvált egy másik CAS-ra (ha elérhető), amíg az elsődleges CAS elérhetősége helyre nem áll. További információért lásd: [Magas rendelkezésre állású helyszíni Exchange Connector támogatása](../protect/exchange-connector-install.md#on-premises-intune-exchange-connector-high-availability-support).
 
 ### <a name="remotely-restart-ios-device-supervised-only----1424595---"></a>IOS-eszköz távoli újraindítása (csak felügyelt eszköz esetén) <!-- 1424595 -->
 

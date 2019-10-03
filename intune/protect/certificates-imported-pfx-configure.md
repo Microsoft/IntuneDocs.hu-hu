@@ -5,7 +5,7 @@ keywords: ''
 author: ralms
 ms.author: brenduns
 manager: dougeby
-ms.date: 09/16/2019
+ms.date: 10/02/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b801da3bd4245361e8c55a40c67daf2c8890fd1e
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 48a7fe51c2fa6bc27ed4dda206335a3171c2500c
+ms.sourcegitcommit: f04e21ec459998922ba9c7091ab5f8efafd8a01c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729387"
+ms.locfileid: "71814153"
 ---
 # <a name="configure-and-use-imported-pkcs-certificates-with-intune"></a>Importált PKCS-tanúsítványok konfigurálása és használata az Intune-nal
 
@@ -168,7 +168,7 @@ Válassza ki azt a kulcstároló-szolgáltatót, amely megfelel a kulcs létreho
 
 7. A **UserPFXCertificate** objektum importálása az Intune-ba a futtatásával`Import-IntuneUserPfxCertificate -AuthenticationResult $authResult -CertificateList $userPFXObject`
 
-8. A tanúsítvány importálásának ellenőrzéséhez futtassa a következőt`Get-IntuneUserPfxCertificate -AuthenticationResult $authResult -UsertList "<UserUPN>"`
+8. A tanúsítvány importálásának ellenőrzéséhez futtassa a következőt`Get-IntuneUserPfxCertificate -AuthenticationResult $authResult -UserList "<UserUPN>"`
 
 További információ az egyéb elérhető parancsokról: a [PFXImport PowerShell-projekt](https://github.com/microsoft/Intune-Resource-Access/tree/develop/src/PFXImportPowershell)információs fájlja a githubon.
 

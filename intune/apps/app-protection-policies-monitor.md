@@ -1,7 +1,7 @@
 ---
 title: Az alkalmazásvédelmi szabályzatok figyelése
 titleSuffix: Microsoft Intune
-description: Ez a témakör bemutatja, hogyan figyelheti a Mobile App Management-szabályzatok megfelelőségi állapotát az Intune-ban.
+description: Ez a témakör az alkalmazás-védelmi szabályzatok Intune-ban történő figyelését ismerteti.
 keywords: ''
 author: Erikre
 ms.author: erikre
@@ -12,24 +12,24 @@ ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 9b0afb7d-cd4e-4fc6-83e2-3fc0da461d02
-ms.reviewer: joglocke
+ms.reviewer: aanavath
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fad554ace3b7c8c279161f149bc06854dfaca93d
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 0b4ab3369f241c9f33d4e0bddfd0dcf98c8ab915
+ms.sourcegitcommit: fc356fd69beaeb3d69982b47e2bdffb6f7127f8c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731367"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71830597"
 ---
 # <a name="how-to-monitor-app-protection-policies"></a>Az alkalmazásvédelmi szabályzatok figyelése
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
 A [Azure Portal](https://portal.azure.com)Intune app Protection paneljén a felhasználókra alkalmazott Mobile App Management-(MAM-) szabályzatok megfelelőségi állapotát figyelheti. Emellett információkat találhat a MAM-szabályzatok által érintett felhasználókról, a MAM-szabályzatok megfelelőségi állapotáról, valamint a felhasználók által esetlegesen tapasztalt problémákról.
 
-A MAM-szabályzatok megfelelőségi állapotának figyelésére három különböző hely van:
+Az alkalmazás-védelmi házirendek három különböző helyen figyelhetők:
 - Összefoglalás megtekintése
 - Részletes nézet
 - Jelentéskészítés nézet
@@ -72,10 +72,20 @@ Itt megkeresheti az adott felhasználókat, és ellenőrizheti a megfelelési á
 - **Állapot**:
   - **Bejelölve**: A házirend a felhasználó számára lett telepítve, és az alkalmazást legalább egyszer használták a munkahelyi környezetben.
   - **Nincs bejelölve**: A házirend a felhasználó számára lett telepítve, de az alkalmazást azóta nem használták a munkahelyi környezetben.
-- **Utolsó szinkronizálás**: Az eszköz legutóbbi szinkronizálása után.
+- **Utolsó szinkronizálás**: Az alkalmazás az Intune-nal való legutóbbi szinkronizálása után. 
 
 >[!NOTE]
-> Ha a keresett felhasználók nem rendelkeznek telepített MAM-szabályzattal, egy üzenet jelenik meg, amely arról tájékoztatja, hogy a felhasználóra nem vonatkozik egyetlen MAM-szabályzat sem.Ha a keresett felhasználók nem rendelkeznek telepített MAM-szabályzattal, egy üzenet jelenik meg, amely arról tájékoztatja, hogy a felhasználóra nem vonatkozik egyetlen MAM-szabályzat sem.
+> A "Last Sync" oszlop ugyanazt az értéket jelöli a konzolon belüli felhasználói állapot jelentésben és az alkalmazás-védelmi házirend [exportálható. csv-jelentésében](https://docs.microsoft.com/intune/app-protection-policies-monitor#export-app-protection-activities-to-csv)is. A különbség a két jelentés értéke közötti szinkronizálás kis késleltetése. 
+>
+> Az "utolsó szinkronizálás" során hivatkozott idő az, amikor az Intune utoljára látta az "app instance" kifejezést. Az alkalmazás-példány az App + User + eszköz egyedi kombinációja. Amikor egy végfelhasználó elindít egy alkalmazást, előfordulhat, hogy az utolsó beadástól függően nem kommunikál a Intune App Protection szolgáltatással az adott indítási időpontban. Ez a dokumentáció segít tisztázni [az App Protection-házirend beadásának újrapróbálkozási időpontját](https://docs.microsoft.com/en-us/intune/app-protection-policy-delivery). Tehát ha egy végfelhasználó nem használta az adott alkalmazást az utolsó beadási intervallumban (amely általában 30 perc az aktív használat esetén), és elindítja az alkalmazást, akkor:
+>
+> - Az alkalmazás védelmi szabályzata exportálható. a CSV-jelentés a legmodernebb időt 1 percen belül (szokásos; minimum) – 30 percre (az Intune-jelentéskészítés által használt SQL-összesítés által ténylegesen megadott maximális SLA-ra vonatkozik).
+> - A felhasználó állapota jelentés a legújabb időpontban azonnal elérhető lesz.
+>
+> Tegyük fel például, hogy egy megcélozt és egy licenccel rendelkező végfelhasználót, amely 12:00 ÓRAKOR indít el egy védett alkalmazást:
+> - Ha első alkalommal jelentkezik be, az azt jelenti, hogy a végfelhasználó kijelentkezett (nem aktív használat), ami azt jelenti, hogy az Intune-ban nem voltak alkalmazás-példányok regisztrálása. Ha bejelentkeznek, egy új alkalmazás-példány regisztrációt kapnak, és azonnal be kell jelentkezniük, amíg nincs kapcsolati probléma; a későbbi bejelentkezések során a fent felsorolt késések is megegyeznek. Így az utolsó szinkronizálás ideje 12:00 PM-ként jelent jelentést a felhasználói állapot jelentésében, és 12:01 PM (vagy 12:30 PM legrosszabb esetben) alkalmazás-védelmi házirend jelentést. 
+> - Ha csak elindítják az alkalmazást, a jelentett utolsó szinkronizálási idő attól függ, hogy mikor utoljára bejelentkeznek.
+
 
 A felhasználóhoz tartozó jelentések megtekintéséhez kövesse az alábbi lépéseket:
 
@@ -89,11 +99,14 @@ A felhasználóhoz tartozó jelentések megtekintéséhez kövesse az alábbi l�
 
 3. Válassza ki a listából a felhasználót. Megjelennek a felhasználó megfelelési állapotára vonatkozó információk.
 
+>[!NOTE]
+> Ha a keresett felhasználók nem rendelkeznek telepített MAM-szabályzattal, egy üzenet jelenik meg, amely arról tájékoztatja, hogy a felhasználóra nem vonatkozik egyetlen MAM-szabályzat sem.Ha a keresett felhasználók nem rendelkeznek telepített MAM-szabályzattal, egy üzenet jelenik meg, amely arról tájékoztatja, hogy a felhasználóra nem vonatkozik egyetlen MAM-szabályzat sem.
+
 ### <a name="flagged-users"></a>Megjelölt felhasználók
 A részletes nézetben látható a hibaüzenet, annak az alkalmazásnak a neve, amelynek a használata közben fellépett a hiba, az eszközök érintett operációsrendszer-platformja, valamint egy időbélyeg. A "biztonság-eszköz igazolása" feltételes indítási ellenőrzés által megjelölt eszközökkel rendelkező felhasználók itt jelennek meg a Google által jelentett okból.
 
 ### <a name="users-with-potentially-harmful-apps"></a>Potenciálisan ártalmas alkalmazásokat használó felhasználók
-A részletes nézetben látható a felhasználó, az alkalmazáscsomag azonosítója, ha az alkalmazás MAM engedélyezve van, a veszélyforrások kategóriája, az e-mail, az eszköz neve és az időbélyegző. A "veszélyforrások beolvasása az alkalmazásokban" feltételes ellátott eszközökkel rendelkező felhasználók itt jelennek meg a veszélyforrások kategóriájában, amelyet a Google jelentett. Ha az Intune-on keresztül üzembe helyezett alkalmazások vannak felsorolva, lépjen kapcsolatba az alkalmazás fejlesztővel, és/vagy távolítsa el az alkalmazást a végfelhasználók számára. 
+A részletes nézetben látható a felhasználó, az alkalmazáscsomag azonosítója, ha az alkalmazás MAM engedélyezve van, a veszélyforrások kategóriája, az e-mail, az eszköz neve és az időbélyegző. A "veszélyforrások vizsgálatának megkövetelése az alkalmazásokban" feltételes indítási ellenőrzésre megjelölt eszközökkel rendelkező felhasználók itt jelennek meg a veszélyforrások kategóriájában, amelyet a Google jelentett. Ha az Intune-on keresztül üzembe helyezett alkalmazások vannak felsorolva, lépjen kapcsolatba az alkalmazás fejlesztővel, és/vagy távolítsa el az alkalmazást a végfelhasználók számára. 
 
 ## <a name="reporting-view"></a>Jelentéskészítés nézet
 

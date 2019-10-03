@@ -17,62 +17,68 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ce9a92a9fffad13c6723504735b1b1cb9442f61f
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 449e799dfc0531958c1578179cf07440d348ecf8
+ms.sourcegitcommit: f04e21ec459998922ba9c7091ab5f8efafd8a01c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729315"
+ms.locfileid: "71813949"
 ---
 # <a name="data-jamf-pro-sends-to-intune"></a>A Jamf Pro által az Intune-ba küldött adatok
 
 Ha a [JAMF Pro](https://www.jamf.com) használatával felügyeli a végfelhasználók Mac számítógépét az Intune-nal, a JAMF Pro rögzíti a felügyelt MacOS-eszközök leltározási adatait. 
 
 ## <a name="data"></a>Data  
-A Jamf Pro a következő információkat továbbítja az Intune-nak:  
+Az Intune-nal JAMF Pro-megosztások listáját itt tekintheti meg: [Appendix: A JAMF Pro technikai dokumentációjában a Microsoft Intune @ no__t-0 címen megosztott leltári adatok. 
 
-* Azure AD-eszközazonosító
-* JAMF eszközkészlet-állapot (a Jamf Pro szolgáltatásba az elmúlt 24 órán belül bejelentkezett számítógép eszközkészlet-állapota)
-* Operációs rendszer verziója
-* Azure AD-felhasználói azonosító
-* Titkosított (FileVault 2)
-* Forgalomirányító állapota
-* Jelszó: Karakterkészletek minimális száma
-* Jelszó lejárata (nap)
-* Jelszó típusa – egyszerű, alfanumerikus, vagy ismeretlen
-* Automatikus bejelentkezés tiltása
-* PIN-kód minimális hossza
-* Jelszó: az újrafelhasználásból kizárt korábbi jelszavak száma
-* Rendszer sértetlenségének védelme
-* Legutóbbi bejelentkezés
-* Architektúra típusa
-* Rendelkezésre álló RAM-tárhelyek
-* Akkumulátor kapacitása
-* Rendszerindító ROM
-* Busz sebessége
-* Gyorsítótár mérete
-* Eszköz neve
-* Csatlakozás tartományhoz
-* Jamf-azonosító
-* MAC-cím
-* Fordítás
-* Modell
-* Modellazonosító
-* Hálózati adapter sebessége
-* Magok száma
-* Processzorok száma
+<!--  
+Jamf Pro reports the following information to Intune:  
+
+* Device Azure AD ID
+* JAMF Inventory State (inventory state of a computer checked in with Jamf Pro within the last 24 hours)
+* OS Version
+* User Azure AD ID
+* Encrypted (FileVault 2)
+* Gatekeeper Status
+* Password: minimum number of character sets
+* Password expiration (days)
+* Password Type - simple, alphanumeric, or unknown
+* Prevent Auto Login
+* Required Passcode Length
+* Password: number of previous passwords to prevent reuse
+* System Integrity Protection
+* Last Check-In Time
+* Architecture Type
+* Available RAM Slots
+* Battery Capacity
+* Boot ROM
+* Bus Speed
+* Cache Size
+* Device Name
+* Domain Join
+* Jamf ID
+* MAC address
+* Make
+* Model
+* Model Identifier
+* NIC Speed
+* Number of Cores
+* Number of Processors
 * OS
 * Platform
-* Processzor sebessége
-* Processzor típusa
-* Másodlagos MAC-cím
-* Sorozatszám
-* SMC verziója
-* RAM összesen
+* Processor Speed
+* Processor Type
+* Secondary MAC Address
+* Serial Number
+* SMC Version
+* Total RAM
 * UDID
-* Felhasználó e-mail-címe
+* User Email
+--> 
 
-A Jamf által felügyelt eszközöknek az Intune-konzolról történő eltávolításához a **Minden eszköz** nézetben kattintson a **Törlés** elemre. Az eszközök csoportos törlésére is van lehetőség: jelöljön ki több eszközt, és kattintson a **Törlés** elemre.
+<!-- 
+You can remove a Jamf-managed device from the Intune console by selecting **Delete** in the **All devices** view. Bulk device deletion can be enabled by selecting multiple devices and clicking **Delete**.
+-->
 
 ## <a name="next-steps"></a>További lépések
 [A Jamf által felügyelt eszköz eltávolításáról a Jamf Pro dokumentációjában](https://www.jamf.com/jamf-nation/articles/80/unmanaging-computers-while-preserving-their-inventory-information) olvashat részletesebben. Ha további segítségre van szüksége, támogatási jegyet is küldhet a [Jamf támogatási szolgálatának](https://www.jamf.com/support/). 

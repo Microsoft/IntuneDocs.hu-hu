@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 09/19/2019
+ms.date: 10/02/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.localizationpriority: medium
@@ -14,12 +14,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 80b904893f118bac1f4d0d79da0cd10498b9f2ed
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 6090d329eee6f27da21b6133a2b7ccdc7072feb3
+ms.sourcegitcommit: f04e21ec459998922ba9c7091ab5f8efafd8a01c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729299"
+ms.locfileid: "71814113"
 ---
 # <a name="macos-endpoint-protection-settings-in-intune"></a>MacOS Endpoint Protection-beállítások az Intune-ban  
 
@@ -107,13 +107,13 @@ Az Apple FileVault beállításaival kapcsolatos további információkért lás
     **Alapértelmezett**: Nincs konfigurálva  
 
   - **Megkerülő időpontok száma**  
-  Állítsa be, hogy a felhasználó hányszor hagyhatja figyelmen kívül a kéréseket, hogy engedélyezze a FileVault, mielőtt FileVault a felhasználónak a bejelentkezéshez.  
+  Állítsa be, hogy a felhasználó hányszor hagyhatja figyelmen kívül a kéréseket, hogy engedélyezze a FileVault, mielőtt FileVault a felhasználónak a bejelentkezéshez. 
 
     - **Nincs konfigurálva** – az eszközön a következő bejelentkezés engedélyezése előtt titkosítás szükséges.  
     - **1** – **10** – lehetővé teszi, hogy a felhasználó 1 – 10 alkalommal figyelmen kívül hagyja a kérést, mielőtt titkosítást kellene megadnia az eszközön.  
     - **Nincs korlát, mindig** Rákérdezés – a rendszer felszólítja a felhasználót, hogy engedélyezze a FileVault, de a titkosítás soha nem szükséges.  
  
-    **Alapértelmezett**: Nincs konfigurálva  
+    **Alapértelmezett**: *Változó* – ha a *kijelentkezéskor a Letiltás* beállítás nincs **konfigurálva**értékre van állítva, akkor ez a beállítás alapértelmezés szerint **nincs konfigurálva**. Ha a *kijelentkezéskor a Letiltás* lehetőség van letiltva értékre van **állítva, akkor**a beállítás alapértelmezett értéke **1** , a **nem konfigurált** érték pedig nem.
 
 Az Intune-nal történő FileVault kapcsolatos további információkért lásd: [FileVault helyreállítási kulcsok](encryption-monitor.md#filevault-recovery-keys).
 

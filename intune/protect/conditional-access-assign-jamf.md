@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 01/02/2019
+ms.date: 10/02/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -17,61 +17,97 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3542d86429293531a22678e14520e59cd9de9dc6
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 74ee1eaf0581c4500830514fa9ad272f0de09d3b
+ms.sourcegitcommit: f04e21ec459998922ba9c7091ab5f8efafd8a01c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729359"
+ms.locfileid: "71813978"
 ---
 # <a name="enforce-compliance-on-macs-managed-with-jamf-pro"></a>Jamf Pro által felügyelt Mac számítógépek megfelelőségének kikényszerítése
 
-Érintett kiadások: Intune az Azure Portalon
+Ha [integrálja a JAMF Pro-t az Intune](conditional-access-integrate-jamf.md)-nal, a feltételes hozzáférési szabályzatok segítségével kényszerítheti a Mac-eszközök megfelelőségét a szervezeti követelményeknek megfelelően.  Ez a cikk a következő feladatokhoz nyújt segítséget:  
 
-A Azure Active Directory és az Microsoft Intune feltételes hozzáférési szabályzatai biztosítják, hogy a végfelhasználók megfeleljenek a szervezeti követelményeknek. Ezeket a szabályzatokat a [Jamf Pro által felügyelt](conditional-access-integrate-jamf.md) Mac számítógépekre is alkalmazhatja. Ennek megvalósításához az Intune és a Jamf Pro konzolhoz egyaránt hozzáférésre van szüksége.
+- Feltételes hozzáférési szabályzatok létrehozása.
+- Konfigurálja a JAMF Pro-t, hogy a Intune Céges portál alkalmazást a JAMF-mel kezelt eszközökre telepítse.
+- Konfigurálja az eszközöket az Azure AD-ben való regisztrálásra, amikor az eszköz felhasználója bejelentkezik a Céges portál alkalmazásba, amely a JAMF önkiszolgáló alkalmazásból indul el. Az eszköz regisztrálása létrehoz egy identitást az Azure AD-ben, amely lehetővé teszi, hogy a feltételes hozzáférési szabályzatok alapján kiértékelje az eszközt a vállalati erőforrásokhoz való hozzáféréshez.  
+ 
+A cikkben ismertetett eljárásokhoz az Intune és a JAMF Pro konzolokhoz is hozzá kell férni.
 
 ## <a name="set-up-device-compliance-policies-in-intune"></a>Eszközmegfelelőségi szabályzatok beállítása az Intune-ban
 
-1. Nyissa meg a Microsoft Azure-t, majd az **Intune** > **Eszközmegfelelőség** > **Szabályzatok** oldalt. A macOS-re vonatkozó szabályzatokat is létrehozhat, többek között a nem megfelelő felhasználóknak és csoportoknak szóló műveletek (például figyelmeztető e-mailek küldése) kiválasztásával.
-2. Válassza ki a szabályzatot > hozzárendeléseket. Belefoglalhat vagy kizárhat Azure Active Directory (AD) biztonsági csoportokat.
-3. Válassza a kiválasztott csoportok lehetőséget az Azure AD biztonsági csoportok megjelenítéséhez. Válassza ki azokat a felhasználói csoportokat, amelyekre alkalmazni szeretné a szabályzatot > válassza a mentés lehetőséget a szabályzat felhasználók számára történő telepítéséhez.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és lépjen az **eszköz megfelelősége**@no__t – 2**szabályzatra**. 
+2. Ha korábban létrehozott házirendet használ, válassza ki ezt a házirendet a konzolon, majd folytassa az eljárás következő lépésével.  
+   
+   Válassza a **házirend létrehozása** lehetőséget, majd adja meg a szabályzat részleteit a **MacOS** *platformmal* . Konfigurálja a nem megfelelőség *beállításait* és *műveleteit* a szervezeti követelmények teljesítéséhez, majd válassza a **Létrehozás** lehetőséget a szabályzat mentéséhez.
 
-A szabályzatot alkalmazta a felhasználókra. A szabályzat által megadott felhasználók által használt eszközök megfelelőségét a rendszer kiértékeli, és compliantfor jelöli meg az "eszköz megfelelőként való megjelölésének megkövetelése" beállítást Azure Active Directoryban.
+3. A házirendek *Áttekintés* ablaktáblán válassza a **hozzárendelések**lehetőséget. Az elérhető beállítások segítségével konfigurálhatja, hogy mely Azure Active Directory (Azure AD) felhasználók és biztonsági csoportok kapják meg ezt a házirendet. A JAMF és az Intune közötti integráció nem támogatja az erőforráscsoportok megkeresésére vonatkozó megfelelőségi szabályzatot. 
 
-> [!Note]
+4. A **Mentés**gombra kattintva a házirend a felhasználók számára települ.  
+
+Az Ön által telepített házirendek a hozzárendelt felhasználók által használt eszközöket célozzák meg. Az eszközök megfelelőségét a rendszer kiértékeli. A megfelelő eszközök megfelelőként vannak megjelölve az Azure AD-ben az "*eszköz megfelelőként való megjelölésének megkövetelése*" beállítással.  
+
+> [!NOTE]
 > A megfelelőség érdekében az Intune teljes lemeztitkosítást követel meg.
 
 ## <a name="deploy-the-company-portal-app-for-macos-in-jamf-pro"></a>A macOS-hez készült Vállalati portál alkalmazás üzembe helyezése a Jamf Pro szolgáltatásban
 
-Az alábbi eljárást követve háttérbeli telepítésként kell üzembe helyeznie a macOS-hez készült Céges portál alkalmazást a Jamf Pro szolgáltatásban:
+Hozzon létre egy szabályzatot a JAMF Pro-ban a Intune Céges portál telepítéséhez. Ez a szabályzat telepíti a vállalati portál alkalmazást, hogy az elérhető legyen a JAMF önkiszolgáló szolgáltatásban. A szabályzat létrehozása előtt hozza létre a szabályzatot a JAMF Pro-ban a felhasználók számára az eszközök Azure AD-vel való regisztrálásához.  
 
-1. A macOS-eszközön töltse le a [macOS-hez készült céges portál alkalmazás](https://go.microsoft.com/fwlink/?linkid=862280) jelenlegi verzióját. Ne telepítse azt. Az alkalmazás egy másolatára van szükség a Jamf Pro szolgáltatásba való feltöltésre.
-2. Nyissa meg a Jamf Pro szolgáltatást, majd a **Számítógép-kezelés** > **Csomagok** oldalt.
-3. Hozzon létre egy új csomagot a macOS-hez készült Céges portál alkalmazással, majd kattintson a **Mentés** elemre.
+Az alábbi eljárás végrehajtásához hozzáférésre van szüksége egy macOS-eszközhöz és a JAMF Pro portálhoz. 
+
+### <a name="to-deploy-the-company-portal-app"></a>A vállalati portál alkalmazás üzembe helyezése  
+
+1. MacOS-eszközön töltse le, de ne telepítse a [MacOS rendszerhez készült céges portál alkalmazás](https://go.microsoft.com/fwlink/?linkid=862280)aktuális verzióját. Csak az alkalmazás egy példányát kell használnia, hogy feltöltse az alkalmazást a JAMF Pro-ba.  
+
+2. Nyissa meg a JAMF Pro-t, és lépjen a **Számítógép-kezelés** > **csomagra**.
+
+3. Hozzon létre egy új csomagot a macOS rendszerhez készült Céges portál alkalmazással, majd válassza a **Mentés**lehetőséget.
+
 4. Nyissa meg a **Számítógépek** > **Szabályzatok** oldalt, majd kattintson az **Új** elemre.
+
 5. Az **Általános** tartalom használatával konfigurálja a szabályzat beállításait. A következő beállításokat kell használnia:
    - Eseményindító: válassza a **Regisztráció kész** és az **Ismétlődő bejelentkezés** beállítást.
    - Végrehajtás gyakorisága: válassza a **Számítógépenként egyszer** beállítást.
+
 6. Válassza ki a **Csomagok** tartalmat, és kattintson a **Konfigurálás** elemre.
+
 7. A **Hozzáadás** elemre kattintva válassza ki a csomagot a Céges portál alkalmazással.
-8. A felugró **Művelet** menüből válassza ki a **Telepítés** lehetőséget.
+
+8. Válassza a **telepítés** lehetőséget a **művelet** előugró menüből.
 9. Konfigurálja a csomag beállításait.
-10. Kattintson a **Hatókör** lapra annak meghatározásához, hogy mely számítógépeken kell telepíteni a Céges portál alkalmazást. Kattintson a **Save** (Mentés) gombra. Legközelebb, amikor a megadott eseményindító kiváltódik a számítógépen, és megfelel az **Általános** tartalomban szereplő feltételeknek, a szabályzat lefut a hatókörbe bevont eszközökön.
 
-## <a name="create-a-policy-in-jamf-pro-to-have-users-register-their-devices-with-azure-active-directory"></a>Szabályzat létrehozása a Jamf Pro szolgáltatásban a felhasználók eszközének Azure Active Directoryban való regisztrálásához
+10. Válassza ki a **hatókör** lapot annak megadásához, hogy mely számítógépeken kell telepíteni a céges portál alkalmazást. Kattintson a **Mentés** gombra. A házirend hatókörön belüli eszközökön fut, amikor a kiválasztott aktiválás következő lépése a számítógépen történik, és az **általános** adattartalomban szereplő feltételek teljesülnek.
 
-> [!NOTE]
-> A következő lépések előtt [üzembe kell helyeznie a macOS-eszközökhöz készült Céges portált](conditional-access-assign-jamf.md#deploy-the-company-portal-app-for-macos-in-jamf-pro).  
+## <a name="create-a-policy-in-jamf-pro-to-have-users-register-their-devices-with-azure-active-directory"></a>Szabályzat létrehozása a Jamf Pro szolgáltatásban a felhasználók eszközének Azure Active Directoryban való regisztrálásához  
 
-Ahhoz, hogy az eszközt Jamf Pro által kezelt eszközként regisztrálhassák az Azure AD szolgáltatásban, a végfelhasználóknak a Jamf Self Service oldalról kell megnyitniuk a Céges portál alkalmazást. Ez egy művelet végrehajtását fogja igényelni a végfelhasználók részéről. Javasoljuk, hogy [lépjen kapcsolatba a végfelhasználókkal](../fundamentals/end-user-educate.md) e-mailben, Jamf Pro-értesítésben vagy más módon, és kérje meg őket, hogy kattintsanak a gombra a Jamf Self Service szolgáltatásban.
+Miután [telepítette a](conditional-access-assign-jamf.md#deploy-the-company-portal-app-for-macos-in-jamf-pro) MacOS rendszerhez készült céges portál a JAMF Pro önkiszolgáló szolgáltatással, létrehozhatja a JAMF Pro-szabályzatot, amely a felhasználó eszközét regisztrálja az Azure ad-ben. 
+
+Az eszközök regisztrálásához az eszköz felhasználójának manuálisan kell kiválasztania a Intune Céges portál alkalmazást a JAMF önkiszolgáló szolgáltatáson belül. Javasoljuk, hogy e-mailben, JAMF Pro-értesítéseken vagy bármely más, a szervezet által használt módon [lépjen kapcsolatba a végfelhasználókkal](../fundamentals/end-user-educate.md) a művelet befejezéséhez, hogy az eszközök regisztrálva legyenek. 
 
 > [!WARNING]
-> Az eszközregisztráció sikeres megkezdéséhez a Céges portál alkalmazást mindenképpen a Jamf Self Service szolgáltatásból kell indítani. <br><br>A Céges portál alkalmazás manuális – például az alkalmazások vagy a letöltések mappájából való – indítása esetén az eszköz nem lesz regisztrálva. Ha egy végfelhasználó manuálisan indítja a Céges portál alkalmazást, az „AccountNotOnboarded” figyelmeztetést fogja látni.
+> A Céges portál alkalmazás manuális elindítása (például az alkalmazások vagy a letöltések mappából) nem regisztrálja az eszközt. Ha az eszköz felhasználója manuálisan indítja el a Céges portál, akkor megjelenik egy figyelmeztetés, **"AccountNotOnboarded"** .
 
-1. A Jamf Pro oldalán nyissa meg a **Számítógépek** > **Szabályzatok** oldalt, és hozzon létre egy új eszközregisztrációs szabályzatot.
+### <a name="to-create-the-registration-policy"></a>A regisztrációs szabályzat létrehozása  
+
+1. A JAMF Pro-ban lépjen a **számítógépek** > **házirendek**elemre, majd hozzon létre egy új szabályzatot az eszközök regisztrálásához.
+
 2. Konfigurálja a **Microsoft Intune-integráció** tartalmat, beleértve az eseményindítót és a végrehajtás gyakoriságát is.
-3. A **Hatókör** lapra kattintva terjessze ki a szabályzat hatókörét az összes megcélzott eszközre.
-4. A **Self Service** lapra kattintva tegye elérhetővé a szabályzatot a Jamf Self Service szolgáltatásban. Adja hozzá a szabályzatot az **Eszközmegfelelőség** kategóriához. Kattintson a **Save** (Mentés) gombra.
+
+3. Válassza a **hatókör** fület, majd a házirend hatókörét az összes megcélzott eszközre.
+
+4. Válassza az **önkiszolgáló** fület, hogy a szabályzat elérhető legyen a JAMF önkiszolgáló szolgáltatásban. Adja hozzá a szabályzatot az **Eszközmegfelelőség** kategóriához. Kattintson a **Save** (Mentés) gombra.
+
+## <a name="validate-intune-and-jamf-integration"></a>Az Intune és a JAMF integrációjának ellenőrzése  
+
+A JAMF Pro konzollal ellenőrizze, hogy a JAMF Pro és a Microsoft Intune közötti kommunikáció sikeres-e. 
+
+- A JAMF Pro-ban lépjen a **beállítások** > **globális felügyelet** > **Microsoft Intune integráció**elemre, majd válassza a **teszt**elemet. 
+
+    A konzolon megjelenik egy üzenet, amely a kapcsolatok sikerességét vagy hibáját jelzi.  
+
+Ha a JAMF Pro konzolon nem sikerül a kapcsolatok tesztelése, tekintse át a JAMF konfigurációját. 
+
 
 ## <a name="removing-a-jamf-managed-device-from-intune"></a>Jamf által felügyelt eszköz eltávolítása az Intune-ból
 

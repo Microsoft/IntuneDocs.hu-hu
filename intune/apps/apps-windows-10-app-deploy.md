@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 07/29/2019
+ms.date: 10/02/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c853608f46bb01263ddd08193f729cdfb018fed9
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 04e943f573fb2485a2ef7f1e3245f08d4222d142
+ms.sourcegitcommit: fc356fd69beaeb3d69982b47e2bdffb6f7127f8c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731191"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71830564"
 ---
 # <a name="windows-10-app-deployment-using-microsoft-intune"></a>Windows 10-es alkalmazások telepítése a Microsoft Intune-nal 
 
@@ -36,6 +36,8 @@ A Windows 10-es eszközökön támogatott alkalmazástípusok az üzleti alkalma
 > - A Windows 10 1709-es verziójához: [2018. június 21. – KB4284822 (operációs rendszer: 16299.522-es build)](https://support.microsoft.com/help/4284822).
 >
 > Csak a Windows 10 1803 és újabb verziók támogatják az alkalmazások telepítését, ha nincs elsődleges felhasználó társítva.
+>
+> A LOB-alkalmazások központi telepítése nem támogatott a Windows 10 Home kiadásait futtató eszközökön.
 
 ## <a name="windows-10-line-of-business-apps"></a>Windows 10-es üzletági alkalmazások
 

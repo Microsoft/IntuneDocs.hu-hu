@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 05/16/2019
+ms.date: 09/20/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -17,26 +17,49 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b439067d06cf49a4ff83288e109d1fccd3801106
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: d7a63f3ff1e2936eff0961d4a9b368b0289e2b65
+ms.sourcegitcommit: f04e21ec459998922ba9c7091ab5f8efafd8a01c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729771"
+ms.locfileid: "71813968"
 ---
 # <a name="integrate-jamf-pro-with-intune-for-compliance"></a>A Jamf Pro integrálása az Intune-nal a megfelelőség érdekében
 
 Érintett kiadások: Intune az Azure Portalon
 
-Ha a szervezete a [JAMF Pro](https://www.jamf.com) -t használja a végfelhasználói Mac gépek felügyeletéhez, Microsoft Intune megfelelőségi szabályzatokat Azure Active Directory feltételes hozzáféréssel, hogy biztosítsa, hogy a szervezetben lévő eszközök megfeleljenek.
+Ha a szervezete a [JAMF Pro](https://www.jamf.com) -t használja a MacOS-eszközök kezeléséhez, Microsoft Intune megfelelőségi szabályzatokat használhat Azure Active Directory (Azure ad) feltételes hozzáféréssel annak biztosításához, hogy a szervezetben lévő eszközök megfeleljenek a hozzáféréshez vállalati erőforrások. Ez a cikk segítséget nyújt a JAMF-integráció konfigurálásához az Intune-nal.
+
+Ha a JAMF Pro integrálva van az Intune-nal, az Azure AD-n keresztül szinkronizálhatja a macOS-eszközök leltári adatait az Intune használatával. Az Intune megfelelőségi motorja ezután elemzi a leltári adatkészletet a jelentések létrehozásához. Az Intune elemzése az eszköz felhasználójának Azure AD-identitásával kapcsolatos intelligenciával együtt a kényszerítést a feltételes hozzáférés használatával hajtja. A feltételes hozzáférési szabályzatoknak megfelelő eszközök hozzáférést kaphatnak a védett vállalati erőforrásokhoz.
+
+Az integráció konfigurálása után [konfigurálja a JAMF és az Intune-t úgy, hogy](conditional-access-assign-jamf.md) a JAMF által felügyelt eszközökön feltételes hozzáféréssel kényszerítse ki a megfelelőséget.  
+
 
 ## <a name="prerequisites"></a>Előfeltételek
 
+### <a name="products-and-services"></a>Termékek és szolgáltatások
 A JAMF Pro-val való feltételes hozzáférés konfigurálásához a következőkre van szükség:
 
 - A Jamf Pro 10.1.0-ás vagy későbbi verziója
 - [macOS-hez készült Céges portál alkalmazás](https://aka.ms/macoscompanyportal)
 - OS X 10.11-es vagy későbbi Yosemite verzióval rendelkező macOS-alapú eszközök
+
+### <a name="network-ports"></a>Hálózati portok
+<!-- source: https://support.microsoft.com/en-us/help/4519171/troubleshoot-problems-when-integrating-jamf-with-microsoft-intune -->
+A következő portoknak elérhetőknek kell lenniük a JAMF és az Intune megfelelő integrálásához: 
+- **Intune**: 443-as port
+- **Apple**: Portok 2195, 2196 és 5223 (leküldéses értesítések az Intune-ba)
+- **JAMF**: 80-es és 5223-es portok
+
+Ahhoz, hogy a APNS megfelelően működjön a hálózaton, engedélyeznie kell a kimenő kapcsolatokat is a következőhöz:
+- az Apple 17.0.0.0/8 blokkolja a 5223-es és a 443-es TCP-portokat az összes ügyfél-hálózatról.   
+- a JAMF Pro-kiszolgálók 2195-es és 2196-es portjai.  
+
+További információt ezekről a portokról a következő cikkekben talál:  
+- [Az Intune hálózati konfigurációs követelményei és sávszélessége](../fundamentals/network-bandwidth-use.md).
+- A JAMF Pro által a jamf.com-on [használt hálózati portok](https://www.jamf.com/jamf-nation/articles/34/network-ports-used-by-jamf-pro) .
+- Az [Apple Software Products által használt TCP-és UDP-portok](https://support.apple.com/HT202944) a support.Apple.com-on
+
 
 ## <a name="connect-intune-to-jamf-pro"></a>Az Intune és a JAMF Pro összekötése
 
@@ -70,7 +93,7 @@ Az Intune és a JAMF Pro összekötése:
 
    Válassza a **Hozzáadás engedély** lehetőséget a konfiguráció mentéséhez.  
 
-8. Az **API-engedélyek** lapon válassza a **rendszergazdai jóváhagyás megadása a Microsoft számára**lehetőséget, majd válassza az **Igen**lehetőséget.  
+8. Az **API-engedélyek** lapon válassza a * * rendszergazdai jóváhagyás megadása * @no__t – 1your bérlő > * * * lehetőséget, majd kattintson az **Igen**gombra.  Az alkalmazás sikeres regisztrálását követően az API-engedélyek az alábbiak szerint jelennek meg: @no__t 0Successful engedélyek @ no__t-1
 
    Befejeződött az alkalmazás regisztrációs folyamata az Azure AD-ben.
 
@@ -99,6 +122,7 @@ Az Intune és a JAMF Pro összekötése:
 ## <a name="set-up-compliance-policies-and-register-devices"></a>Megfelelőségi szabályzatok beállítása és eszközök regisztrálása
 
 Miután konfigurálta az Intune és a JAMF közötti integrációt, a [JAMF által felügyelt eszközökre vonatkozó megfelelőségi szabályzatokat kell alkalmaznia](conditional-access-assign-jamf.md).
+
 
 ## <a name="disconnect-jamf-pro-and-intune"></a>A JAMF Pro és az Intune leválasztása 
 

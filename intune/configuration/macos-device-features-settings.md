@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 09/16/2019
+ms.date: 10/02/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.localizationpriority: medium
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e3e270fc3efcc92a138fe97cbe599f7bd2bf1e55
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 2ae9637e827330fb33c407122450deb014b3725a
+ms.sourcegitcommit: f04e21ec459998922ba9c7091ab5f8efafd8a01c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730567"
+ms.locfileid: "71816871"
 ---
 # <a name="macos-device-feature-settings-in-intune"></a>macOS-eszköz funkciójának beállításai az Intune-ban
 
@@ -128,7 +128,7 @@ Ez a funkció az alábbiakra vonatkozik:
 
 ### <a name="settings-apply-to-all-enrollment-types"></a>A beállítások a következőkre vonatkoznak: Minden regisztrációs típus 
 
-- **Egyszeri bejelentkezéses alkalmazás bővítményének típusa**: Válassza ki a hitelesítő adatok SSO-alkalmazásának típusát. A választható lehetőségek:
+- **Egyszeri bejelentkezéses alkalmazás bővítményének típusa**: Válassza ki a hitelesítő adatok SSO-alkalmazásának típusát. Az SSO app Extension-profil mentésekor nem módosítható az egyszeri bejelentkezéses alkalmazás bővítményének típusa. A választható lehetőségek:
 
   - **Nincs konfigurálva**: Nem használják az alkalmazás-bővítményeket. Az egyszeri bejelentkezéses alkalmazások kiterjesztésének letiltásához állítsa át az egyszeri bejelentkezéses alkalmazás kiterjesztésének típusát a **Kerberos** vagy a **hitelesítő adatok** közül a **nincs konfigurálva**értékre
   - **Hitelesítő adat**: Használjon egy általános, testreszabható hitelesítőadat-alkalmazás-bővítményt az egyszeri bejelentkezés használatához. Győződjön meg róla, hogy ismeri a szervezete SSO-alkalmazásának bővítmény-AZONOSÍTÓját és a csoport AZONOSÍTÓját.  
@@ -207,6 +207,8 @@ Ez a funkció az alábbiakra vonatkozik:
   `osascript -e 'id of app "ExampleApp"'`
 
 - **Tartomány**: Adja meg az alkalmazáshoz társítandó webhely-tartományt. A tartomány tartalmaz egy szolgáltatástípus és egy teljes tartománynevet, például `webcredentials:www.contoso.com`a következőt:.
+
+  A társított tartomány összes altartományával egyeztetheti `*.` (egy csillag helyettesítő karakter és egy pont) megadásával a tartomány elejéig. Az időszakot kötelező megadni. A pontos tartományok magasabb prioritással rendelkeznek, mint a helyettesítő tartományok. Így a fölérendelt tartományokból származó minták egyeztetése akkor történik meg, *Ha* nem található egyezés a teljes altartományban.
 
   A szolgáltatás típusa a következő lehet:
 
