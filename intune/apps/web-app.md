@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 09/13/2019
+ms.date: 10/02/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a2880d6a0028006a7122b9f9a78de6b1ef03b9f3
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: a8beb8291ede1bf2fde32014fadf9f8cd52da5b6
+ms.sourcegitcommit: fc356fd69beaeb3d69982b47e2bdffb6f7127f8c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730979"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71830577"
 ---
 # <a name="add-web-apps-to-microsoft-intune"></a>Webalkalmazások hozzáadása az Intune-hoz
 
@@ -33,7 +33,7 @@ Az Intune számos különböző alkalmazástípust támogat, beleértve a webalk
 Ahhoz, hogy kezelhesse és felhasználókhoz rendelhesse hozzá az alkalmazásokat, hozzá kell adnia őket az Intune-hoz. Az Intune létrehoz egy parancsikont a webalkalmazáshoz a felhasználó eszközének kezdőképernyőjén.
 
 > [!Note]
-> Az androidos munkahelyi profilú eszközökön nem támogatottak a webalkalmazások.
+> Az androidos munkahelyi profilú eszközökön nem támogatottak a webalkalmazások. A webalkalmazások indításához egy böngészőt kell telepíteni a felhasználó eszközén.
 
 ## <a name="add-a-web-app-to-intune"></a>Webalkalmazás hozzáadása az Intune-hoz
 A következő módon adhat hozzá egy alkalmazást az Intune-hoz egy alkalmazás webes hivatkozásaként:
