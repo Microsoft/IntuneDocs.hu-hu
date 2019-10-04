@@ -1,0 +1,81 @@
+### YamlMime:Landing
+title: Fejlesztői útmutatás
+summary: Elsajátíthatja az Intune olyan fejlesztői erőforrásainak használatát, mint az Intune App SDK és az App Wrapping Tool az üzletági alkalmazások védelméhez, az Intune Data Warehouse jelentéskészítés és API az Intune sikerességének figyeléséhez és a Microsoft Graph az Intune-funkciók Azure AD-val való eléréséhez.
+metadata:
+  title: Fejlesztői útmutatás
+  description: Elsajátíthatja az Intune olyan fejlesztői erőforrásainak használatát, mint az Intune App SDK és az App Wrapping Tool az üzletági alkalmazások védelméhez, az Intune Data Warehouse jelentéskészítés és API az Intune sikerességének figyeléséhez és a Microsoft Graph az Intune-funkciók Azure AD-val való eléréséhez.
+  services: service
+  ms.service: microsoft-intune
+  ms.topic: landing-page
+  ms.collection: collection
+  author: erikre
+  ms.author: erikre
+  ms.manager: dougeby
+  ms.date: 09/23/2019
+  ms.openlocfilehash: f7d48e1b5473d84743adee4a7ef7b6c83b960d19
+  ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+  ms.translationtype: HT
+  ms.contentlocale: hu-HU
+  ms.lasthandoff: 10/02/2019
+  ms.locfileid: "71728873"
+landingContent:
+- title: Alkalmazások védelme az Intune App SDK-val
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: A Microsoft Intune App SDK áttekintése
+      url: app-sdk.md
+  - linkListType: concept
+    links:
+    - text: Bevezetés a Microsoft Intune App SDK használatába
+      url: app-sdk-get-started.md
+    - text: Üzletági alkalmazások felkészítése az alkalmazásvédelemre
+      url: apps-prepare-mobile-application-management.md
+  - linkListType: how-to-guide
+    links:
+    - text: Intune App SDK iOS rendszerhez
+      url: app-sdk-ios.md
+    - text: iOS-alkalmazások előkészítése az alkalmazásvédelmi szabályzatokhoz
+      url: app-wrapper-prepare-ios.md
+    - text: Intune App SDK Android rendszerhez
+      url: app-wrapper-prepare-android.md
+- title: Az Intune-adattárház használata
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: A Data Warehouse áttekintése
+      url: reports-nav-create-intune-reports.md
+    - text: A Data Warehouse API módosítási naplója
+      url: reports-changelog.md
+    - text: Az Intune-beli Data Warehouse API áttekintése
+      url: reports-nav-intune-data-warehouse.md
+    - text: Az Intune-beli Data Warehouse-adatmodell áttekintése
+      url: reports-ref-data-model.md
+  - linkListType: concept
+    links:
+    - text: Intune adattárház-gyűjtemények
+      url: intune-data-warehouse-collections.md
+  - linkListType: how-to-guide
+    links:
+    - text: Kapcsolódás az adattárházhoz a Power BI használatával
+      url: reports-proc-get-a-link-powerbi.md
+    - text: Intune-jelentés létrehozása az OData-adatcsatornából a Power BI-jal
+      url: reports-proc-create-with-odata.md
+    - text: Adatok beolvasása az Intune-adattárház API-ból REST-ügyféllel
+      url: reports-proc-data-rest.md
+    - text: Intune-adattárház API-végpontja
+      url: reports-api-url.md
+- title: Hozzáférés Intune API-khoz a Microsoft Graphban
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Az Intune-ban használt Graph API-k és a megfelelő Windows 10 CSP-k
+      url: graph-apis-used-by-intune-device-configuration-windows.md
+  - linkListType: how-to-guide
+    links:
+    - text: Intune API-k elérése az Azure AD használatával a Microsoft Graphban
+      url: intune-graph-apis.md
+  - linkListType: reference
+    links:
+    - text: Intune Graph API segédlet
+      url: https://docs.microsoft.com/graph/api/resources/intune-graph-overview?view=graph-rest-beta

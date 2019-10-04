@@ -1,0 +1,111 @@
+### YamlMime:Landing
+title: Alkalmazások kezelése
+summary: A Microsoft Intune a vállalat által használt ügyfélalkalmazások felügyeletét teszi lehetővé. Többféle platform és felhasználó alkalmazásait veheti fel, társíthatja, figyelheti, frissítheti és vonhatja ki.
+metadata:
+  title: Alkalmazások kezelése
+  description: Alkalmazások felügyelete és védelme
+  services: service
+  ms.service: microsoft-intune
+  ms.topic: landing-page
+  ms.collection: collection
+  author: erikre
+  ms.author: erikre
+  ms.manager: dougeby
+  ms.date: 09/25/2019
+  ms.openlocfilehash: ba12c3a3253fd35bf803342214b73fc094abc3aa
+  ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+  ms.translationtype: HT
+  ms.contentlocale: hu-HU
+  ms.lasthandoff: 10/02/2019
+  ms.locfileid: "71729009"
+landingContent:
+- title: Első lépések az alkalmazásokkal
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Az alkalmazáskezelés áttekintése
+      url: app-management.md
+  - linkListType: quickstart
+    links:
+    - text: Alkalmazás hozzáadása és hozzárendelése
+      url: quickstart-add-assign-app.md
+  - linkListType: concept
+    links:
+    - text: Alkalmazások életciklusa
+      url: app-lifecycle.md
+- title: Alkalmazások hozzáadása
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Alkalmazások hozzáadásának áttekintése
+      url: apps-add.md
+    - text: Intune-nal védett alkalmazások
+      url: apps-supported-intune-apps.md
+  - linkListType: how-to-guide
+    links:
+    - text: Áruházbeli alkalmazások
+      url: store-apps-android.md
+    - text: Üzletági alkalmazások
+      url: lob-apps-android.md
+    - text: Win32-alkalmazások kezelése az önálló Intune-hoz
+      url: apps-win32-app-management.md
+    - text: PowerShell-szkriptek használata Windows 10 rendszerű eszközökön
+      url: intune-management-extension.md
+    - text: Alkalmazások hozzárendelése csoportokhoz
+      url: apps-deploy.md
+- title: Alkalmazások hozzárendelése
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Alkalmazások hozzárendelése csoportokhoz
+      url: apps-deploy.md
+    - text: Az Intune és az eszközök kizárása
+      url: apps-inc-exl-assignments.md
+    - text: Windows 10-alkalmazások telepítése
+      url: apps-windows-10-app-deploy.md
+    - text: Alkalmazások üzembe helyezése kormányzati környezetekben
+      url: apps-deploy-gcc-dod.md
+- title: Alkalmazások konfigurálása
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Alkalmazások szelektív törlése
+      url: apps-selective-wipe.md
+    - text: iOS felügyelt eszközök
+      url: app-configuration-policies-use-ios.md
+    - text: Felügyelt Android Enterprise-eszközök
+      url: app-configuration-policies-use-android.md
+    - text: Felügyelt alkalmazások eszközregisztráció nélkül
+      url: app-configuration-policies-managed-app.md
+    - text: A Managed Browser konfigurálása
+      url: app-configuration-managed-browser.md
+    - text: VPP-alkalmazások kezelése és könyvek
+      url: vpp-apps.md
+- title: Alkalmazások védelme
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Alkalmazásvédelmi szabályzatok áttekintése
+      url: app-protection-policy.md
+  - linkListType: how-to-guide
+    links:
+    - text: Alkalmazásvédelmi szabályzatok létrehozása és hozzárendelése
+      url: app-protection-policies.md
+    - text: Az alkalmazásvédelmi szabályzatok ellenőrzése
+      url: app-protection-policies-validate.md
+    - text: Alkalmazásvédelmi felhasználó állapotának figyelése
+      url: app-protection-policies-monitor.md
+    - text: Alkalmazásvédelmi WIP-szabályzatok létrehozása és hozzárendelése
+      url: windows-information-protection-policy-create.md
+    - text: iOS-alkalmazások közti adatátvitel kezelése
+      url: data-transfer-between-apps-manage-ios.md
+- title: Alkalmazások hibáinak elhárítása
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Alkalmazások telepítésével kapcsolatos problémák elhárítása
+      url: troubleshoot-app-install.md
+    - text: Mobilalkalmazás-kezelési hibaelhárítás
+      url: troubleshoot-mam.md
+    - text: Alkalmazásvédelmi naplók áttekintése
+      url: app-protection-policy-settings-log.md

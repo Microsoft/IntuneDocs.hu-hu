@@ -1,0 +1,79 @@
+- name: Fejlesztői útmutatás
+  href: index.yml
+- name: Használati útmutatók
+  expanded: true
+  items:
+    - name: Alkalmazások védelme az Intune App SDK-val
+      href: app-sdk.md
+      items:
+        - name: Ismerkedés az Intune App SDK-val
+          href: app-sdk-get-started.md
+        - name: Üzletági alkalmazások előkészítése alkalmazásvédelemre
+          href: apps-prepare-mobile-application-management.md
+        - name: OS alkalmazásburkoló eszköz
+          href: app-wrapper-prepare-ios.md
+        - name: Intune App SDK iOS rendszerhez
+          href: app-sdk-ios.md
+        - name: Alkalmazásburkoló eszköz Android rendszerhez
+          href: app-wrapper-prepare-android.md
+          displayName: dex
+        - name: Intune App SDK Android rendszerhez
+          href: app-sdk-android.md
+          items:
+            - name: Androidhoz készült Intune App SDK – tesztelési útmutató
+              href: app-sdk-android-testing-guide.md
+        - name: Intune App SDK Xamarin-kötések
+          href: app-sdk-xamarin.md
+    - name: Az Intune-adattárház használata
+      href: reports-nav-create-intune-reports.md
+      items:
+        - name: Módosítási napló Adatraktár
+          href: reports-changelog.md
+        - name: Kapcsolódás az adattárházhoz a Power BI használatával
+          href: reports-proc-get-a-link-powerbi.md
+        - name: Jelentés készítése az OData-adatcsatornából a Power BI használatával
+          href: reports-proc-create-with-odata.md
+    - name: Jelentéskészítés az Intune-adattárház API-val
+      href: reports-nav-intune-data-warehouse.md
+      items:
+        - name: Adatok beolvasása az adattárház API-ból REST-ügyféllel
+          href: reports-proc-data-rest.md
+        - name: Az adattárház API-végpontja
+          href: reports-api-url.md
+        - name: Alkalmazásalapú hitelesítés az adattárházban
+          href: data-warehouse-app-only-auth.md
+        - name: Az adattárház adatmodellje
+          href: reports-ref-data-model.md
+          items:
+            - name: Adattárház-gyűjtemények
+              href: intune-data-warehouse-collections.md
+            - name: Adattárház-gyűjtemények (bétaverzió)
+              items:
+                - name: A felhasználói élettartam reprezentációja az Intune-adattárházban
+                  href: reports-ref-user-timeline.md
+                - name: Alkalmazás-entitások referencia
+                  href: reports-ref-application.md
+                - name: Dátum típusú entitás referenciája
+                  href: reports-ref-date.md
+                - name: Eszközök típusú entitások referenciája
+                  href: reports-ref-devices.md
+                - name: Intune felügyeleti bővítmény típusú entitás referenciája
+                  href: reports-ref-intunemanagementextension.md
+                - name: Mobilalkalmazás-felügyelet (MAM) típusú entitások referenciája
+                  href: reports-ref-mobile-app-management.md
+                - name: Szabályzat típusú entitások referenciája
+                  href: reports-ref-policy.md
+                - name: Felhasználói eszköztársítás típusú entitás referenciája
+                  href: reports-ref-user-device.md
+                - name: Felhasználó típusú entitás referenciája
+                  href: reports-ref-user.md
+        - name: Az Intune-adattárház fiókadatainak áthelyezése
+          href: data-warehouse-account-move.md
+    - name: Hozzáférés Intune API-khoz a Microsoft Graphban
+      items:
+        - name: Az Azure AD használata az Intune API-k elérésére a Microsoft Graphban
+          href: intune-graph-apis.md
+        - name: Intune API – referencia
+          href: 'https://developer.microsoft.com/graph/docs/api-reference/beta/resources/intune_graph_overview'
+        - name: Eszközök konfigurálásához használt Graph API-k
+          href: graph-apis-used-by-intune-device-configuration-windows.md

@@ -1,0 +1,67 @@
+- name: Távoli műveletek
+  href: index.yml
+- name: Áttekintés
+  expanded: true
+  items:
+    - name: Eszközkezelés áttekintése
+      href: device-management.md
+- name: Használati útmutatók
+  items:
+    - name: Zárolások és jelszavak
+      items:
+        - name: Eszköz zárolása
+          href: device-remote-lock.md
+        - name: Jelszó alaphelyzetbe állítása
+          href: device-passcode-reset.md
+        - name: Windows 10-es PIN-kód alaphelyzetbe állítása
+          href: device-windows-pin-reset.md
+    - name: Eltávolítás és újraindítás
+      items:
+        - name: Eszközök eltávolítása
+          href: devices-wipe.md
+        - name: A Windows újrakezdés műveletének kezelése
+          href: device-fresh-start.md
+        - name: Eszköz újraindítása
+          href: device-restart.md
+    - name: Apple-eszközműveletek
+      items:
+        - name: Elveszett iOS-eszköz megkeresése
+          href: device-locate.md
+        - name: Az iOS-es elveszett mód engedélyezése
+          href: device-lost-mode.md
+        - name: iOS-es felügyelt mód bekapcsolása
+          href: device-supervised-mode.md
+        - name: macOS-eszköz adatainak törlése
+          href: device-erase.md
+        - name: Aktiválási zár megkerülése
+          href: device-activation-lock-bypass.md
+    - name: Felhasználói műveletek
+      items:
+        - name: Aktuális felhasználó kijelentkeztetése
+          href: device-logout-user.md
+        - name: Felhasználó eltávolítása
+          href: device-remove-user.md
+        - name: Elsődleges felhasználó megkeresése
+          href: find-primary-user.md
+    - name: Egyéb műveletek
+      items:
+        - name: Eszköz átnevezése
+          href: device-rename.md
+        - name: Értesítések küldése
+          href: custom-notifications.md
+        - name: Távolról vezérelt mobileszközök
+          href: teamviewer-support.md
+        - name: Eszköz szinkronizálása
+          href: device-sync.md
+        - name: Eszközkészlet vizsgálata
+          href: device-inventory.md
+    - name: Hibaelhárítás
+      items:
+        - name: Eszközműveletekkel kapcsolatos problémák elhárítása
+          href: troubleshoot-device-actions.md
+- name: Erőforrások
+  items:
+    - name: Forgatókönyvek végrehajtási útmutatói
+      items:
+        - name: Az ügyfélszolgálati költségek csökkentése
+          href: password-reset.md
