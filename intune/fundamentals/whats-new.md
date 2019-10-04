@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1a6f0786c5b11e30bf86b237bc1f5c05a55010d5
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 571974e1736fb78ae633c02fcfd6e6233056379b
+ms.sourcegitcommit: 78f9750712c254d8b123ef15b74f30ca999aa128
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732347"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71920124"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -235,7 +235,7 @@ Az Android teljes körűen felügyelt eszközeihez a következő támogatást ad
 - A rendszeralkalmazások az Android Enterprise rendszerű eszközökön támogatottak. Az Intune-ban adjon hozzá egy androidos nagyvállalati rendszeralkalmazást az **ügyfélalkalmazás** > **alkalmazások** > **Hozzáadás**lehetőség kiválasztásával. Az **alkalmazás típusa** listában válassza az **Android Enterprise System app**elemet. További információ: [androidos nagyvállalati rendszeralkalmazások hozzáadása a Microsoft Intunehoz](../apps/apps-ae-system.md). <!-- 4062195 -->
 - Az **eszköz megfelelősége** > **Android Enterprise** > -**eszköz tulajdonosában**létrehozhat egy megfelelőségi szabályzatot, amely beállítja a Google biztonság igazolási szintjét.   <!-- 4631425 -->
 - Az Android Enterprise teljes körűen felügyelt eszközökön a Mobile Threat Defense-szolgáltatók támogatottak. Az **eszköz megfelelősége** > **Android Enterprise** > -**eszköz tulajdonosa**lehetőség van egy elfogadható kockázati szint kiválasztására. <!-- 4631440 --> Az [Android vállalati beállítások az eszközök megfelelő vagy nem megfelelőként való megjelölésére az Intune](../protect/compliance-policy-create-android-for-work.md#device-owner) -ban az aktuális beállítások szerepelnek.
-- Az Android Enterprise teljes körűen felügyelt eszközökön a Microsoft Launcher alkalmazás mostantól az App Protection-szabályzatok segítségével konfigurálható a teljes körűen felügyelt eszközön a szabványosított végfelhasználói élmény érdekében. Az Android-eszköz személyre szabásához használhatja a Microsoft Launcher alkalmazást. Az alkalmazással Microsoft-fiók vagy munkahelyi/iskolai fiókkal is elérheti a naptárt, a dokumentumokat és a legutóbbi tevékenységeket a személyre szabott hírcsatornában. <!-- 5334044 -->
+- Az Android Enterprise teljes körűen felügyelt eszközökön a Microsoft Launcher alkalmazás mostantól az alkalmazás-konfigurációs szabályzatok segítségével konfigurálható, hogy lehetővé váljon a teljes körűen felügyelt eszközön a szabványosított végfelhasználói élmény. Az Android-eszköz személyre szabásához használhatja a Microsoft Launcher alkalmazást. Az alkalmazással Microsoft-fiók vagy munkahelyi/iskolai fiókkal is elérheti a naptárt, a dokumentumokat és a legutóbbi tevékenységeket a személyre szabott hírcsatornában. <!-- 5334044 -->
 
 Ezzel a frissítéssel örömmel jelentjük be, hogy az Android Enterprise teljes körűen felügyelt Intune-támogatás már általánosan elérhető.
 

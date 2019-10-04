@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0d495265580bc9801a1fadb636a62274a4f728a
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 8b630709646b2f4489cbfea6284689c9436798ca
+ms.sourcegitcommit: 78f9750712c254d8b123ef15b74f30ca999aa128
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731439"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71916371"
 ---
 # <a name="what-is-microsoft-intune-app-management"></a>A Microsoft Intune-alkalmazásfelügyelet ismertetése
 
@@ -67,7 +67,7 @@ Az Intune számos szolgáltatással segít a szükséges alkalmazások üzembe h
 | Áruházbeli alkalmazások | Igen | Igen | Nem | Igen | Igen |
 | Alkalmazások frissítése | Igen | Igen | Nem | Igen | Igen |
 
-<sup>1</sup> Vagye fontolóra a [Windows Információvédelem](../windows-information-protection-configure.md) használatát a Windows 10 rendszerű eszközökön futó alkalmazások védelmére.<br>
+<sup>1</sup> Vagye fontolóra a [Windows Információvédelem](../protect/windows-information-protection-configure.md) használatát a Windows 10 rendszerű eszközökön futó alkalmazások védelmére.<br>
 <sup>2</sup> Csak az Intune által kezelt eszközökre vonatkozik.<br>
 <sup>3</sup> az Intune támogatja a felügyelt Google Play áruházból származó, androidos vállalati eszközökön elérhető alkalmazásokat.<br>
 <sup>4</sup> az Intune nem biztosít parancsikont webes hivatkozásként a szabványos Android Enterprise-eszközökön. A Weblink-támogatást azonban a [többalkalmazásos dedikált Android Enterprise-eszközökhöz](../configuration/device-restrictions-android-for-work.md#dedicated-device-settings)is biztosítjuk. 

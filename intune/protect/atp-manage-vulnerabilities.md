@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 69f214b4fd3f3b7767e719c0f68f19e178a8e29c
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 06fdd8a6b64dfd58457b5d9b92144530aa2856cd
+ms.sourcegitcommit: 223d64a72ec85fe222f5bb10639da729368e6d57
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729899"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940492"
 ---
 # <a name="use-intune-to-remediate-vulnerabilities-identified-by-microsoft-defender-atp"></a>Az Intune használata a Microsoft Defender ATP által azonosított sebezhetőségek javítására  
 
@@ -70,7 +70,7 @@ Előfizetések:
 **Az ATP**-beli Intune-konfigurációk:  
 
 - Szolgáltatás konfigurálása a Microsoft Defender ATP szolgáltatással való kapcsolódásra.  
-- Helyezzen üzembe egy eszköz megfelelőségi szabályzatot a **Microsoft DEFENDER ATP (Windows 10 asztali verzió)** profiljával olyan eszközökre, amelyek az ATP által értékelt kockázattal rendelkeznek.
+- Helyezzen üzembe egy eszköz-konfigurációs házirendet a **Microsoft DEFENDER ATP (Windows 10 Desktop)** profiljával olyan eszközökön, amelyeken az ATP által kiértékelt kockázat fog megjelenni.
 
   További információ arról, hogyan állíthatja be az Intune-t az ATP szolgáltatással való együttműködéshez: a [Microsoft DEFENDER ATP megfelelőségének kikényszerítés feltételes hozzáféréssel az Intune-ban](advanced-threat-protection.md#enable-microsoft-defender-atp-in-intune).  
 

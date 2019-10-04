@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af81552942805bed07e818d6005231e9305b3460
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 08017be16e4257ef0bd7bfb775197feaa20baf75
+ms.sourcegitcommit: 223d64a72ec85fe222f5bb10639da729368e6d57
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731451"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940352"
 ---
 # <a name="app-configuration-policies-for-microsoft-intune"></a>Alkalmazáskonfigurációs szabályzatok a Microsoft Intune-hoz
 
@@ -88,6 +88,77 @@ Az alkalmazás konfigurációs szabályzatát az alábbi három módszer haszná
 
       ![Az alkalmazás konfigurációjának képernyőképe](./media/app-configuration-policies-overview/app-configuration.png)
 
+## <a name="diagnostic-logs"></a>Diagnosztikai naplók
+
+### <a name="ios-configuration-on-unmanaged-devices"></a>iOS-konfiguráció a nem felügyelt eszközökön
+
+Az iOS-konfigurációt az **Intune diagnosztikai naplójában** ellenőrizheti a felügyelt alkalmazások konfigurációjának nem felügyelt eszközein.
+
+1. Ha még nincs telepítve az eszközön, töltse le és telepítse a **Intune Managed Browsert** az App Store áruházból. További információ: [Microsoft Intune védett alkalmazások](apps-supported-intune-apps.md).
+2. Indítsa el a **Intune Managed Browser** , majd a navigációs sávon válassza a  > **intunehelp** **névjegye**elemet.
+3. Kattintson az első **lépések**elemre.
+4. Kattintson a **megosztási naplók**elemre.
+5. Az Ön által választott levelezési alkalmazás használatával elküldheti a naplót saját magára, hogy megtekinthető legyen a SZÁMÍTÓGÉPén. 
+6. Tekintse át a **IntuneMAMDiagnostics. txt** fájlt a szövegfájl-megjelenítőben.
+7. Keressen a `ApplicationConfiguration` kifejezésre. Az eredmények a következőhöz hasonlóan fognak kinézni:
+
+    ``` JSON
+        {
+            (
+                {
+                    Name = "com.microsoft.intune.mam.managedbrowser.BlockListURLs";
+                    Value = "https://www.aol.com";
+                },
+                {
+                    Name = "com.microsoft.intune.mam.managedbrowser.bookmarks";
+                    Value = "Outlook Web|https://outlook.office.com||Bing|https://www.bing.com";
+                }
+            );
+        },
+        {
+            ApplicationConfiguration =             
+            (
+                {
+                Name = IntuneMAMUPN;
+                Value = "CMARScrubbedM:13c45c42712a47a1739577e5c92b5bc86c3b44fd9a27aeec3f32857f69ddef79cbb988a92f8241af6df8b3ced7d5ce06e2d23c33639ddc2ca8ad8d9947385f8a";
+                },
+                {
+                Name = "com.microsoft.outlook.Mail.NotificationsEnabled";
+                Value = false;
+                }
+            );
+        }
+    ```
+
+Az alkalmazás konfigurációjának részleteinek meg kell egyezniük a bérlőhöz konfigurált alkalmazás-konfigurációs házirendekkel. 
+
+![Megcélzó alkalmazás konfigurációja](./media/app-configuration-policies-overview/targeted-app-configuration-3.png)
+
+### <a name="ios-configuration-on-managed-devices"></a>iOS-konfiguráció a felügyelt eszközökön
+
+Az iOS-konfigurációt érvényesítheti az **Intune diagnosztikai naplóval** a felügyelt eszközökön a felügyelt alkalmazások konfigurálásához.
+
+1. Ha még nincs telepítve az eszközön, töltse le és telepítse a **Intune Managed Browsert** az App Store áruházból. További információ: [Microsoft Intune védett alkalmazások](apps-supported-intune-apps.md).
+2. Indítsa el a **Intune Managed Browser** , majd a navigációs sávon válassza a  > **intunehelp** **névjegye**elemet.
+3. Kattintson az első **lépések**elemre.
+4. Kattintson a **megosztási naplók**elemre.
+5. Az Ön által választott levelezési alkalmazás használatával elküldheti a naplót saját magára, hogy megtekinthető legyen a SZÁMÍTÓGÉPén. 
+6. Tekintse át a **IntuneMAMDiagnostics. txt** fájlt a szövegfájl-megjelenítőben.
+7. Keressen a `AppConfig` kifejezésre. Az eredményeknek meg kell egyezniük a bérlőhöz konfigurált alkalmazás-konfigurációs házirendekkel.
+
+### <a name="android-configuration-on-managed-devices"></a>Android-konfiguráció a felügyelt eszközökön
+
+Az iOS-konfigurációt érvényesítheti az **Intune diagnosztikai naplóval** a felügyelt eszközökön a felügyelt alkalmazások konfigurálásához.
+
+Ha androidos eszközről szeretne naplókat gyűjteni, Önnek vagy a felhasználónak USB-kapcsolaton keresztül le kell töltenie a naplókat az eszközről (vagy az eszközön található **fájlkezelővel** egyenértékű). A lépések a következők:
+
+1. Csatlakoztassa az Android-eszközt a számítógéphez az USB-kábellel.
+2. A számítógépen keresse meg az eszköz nevével megegyező nevű könyvtárt. Ebben a könyvtárban keresse meg a `Android Device\Phone\Android\data\com.microsoft.windowsintune.companyportal` értéket.
+3. A `com.microsoft.windowsintune.companyportal` mappában Nyissa meg a Files mappát, és nyissa meg a `OMADMLog_0` fájlt.
+3. Keresse meg a `AppConfigHelper` értéket az alkalmazás-konfigurációval kapcsolatos üzenetek kereséséhez. Az eredmények a következő adatblokkhoz hasonlóan jelennek meg:
+
+    `2019-06-17T20:09:29.1970000       INFO   AppConfigHelper     10888  02256  Returning app config JSON [{"ApplicationConfiguration":[{"Name":"com.microsoft.intune.mam.managedbrowser.BlockListURLs","Value":"https:\/\/www.aol.com"},{"Name":"com.microsoft.intune.mam.managedbrowser.bookmarks","Value":"Outlook Web|https:\/\/outlook.office.com||Bing|https:\/\/www.bing.com"},{"Name":"com.microsoft.intune.mam.managedbrowser.homepage","Value":"https:\/\/www.arstechnica.com"}]},{"ApplicationConfiguration":[{"Name":"IntuneMAMUPN","Value":"AdeleV@M365x935807.OnMicrosoft.com"},{"Name":"com.microsoft.outlook.Mail.NotificationsEnabled","Value":"false"},{"Name":"com.microsoft.outlook.Mail.NotificationsEnabled.UserChangeAllowed","Value":"false"}]}] for user User-875363642`
+    
 ## <a name="graph-api-support-for-app-configuration"></a>Graph API-támogatás az alkalmazáskonfigurációhoz
 
 Az alkalmazások konfigurációs feladatainak elvégzéséhez Graph API is használhatja. További információk: [Graph API-kézikönyv ‒ MAM célzott konfiguráció](https://graph.microsoft.io/docs/api-reference/beta/api/intune_mam_targetedmanagedappconfiguration_create).

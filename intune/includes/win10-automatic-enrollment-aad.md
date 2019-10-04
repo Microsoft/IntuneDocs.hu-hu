@@ -1,33 +1,33 @@
 ---
-ms.openlocfilehash: 3aadafbcf9c9208e7c87504c5459731de1e402b5
-ms.sourcegitcommit: 614c4c36cfe544569db998e17e29feeaefbb7a2e
+ms.openlocfilehash: 6f5b0c8df86cf5bf1206c1cccb879e37c7944a21
+ms.sourcegitcommit: 78f9750712c254d8b123ef15b74f30ca999aa128
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "71302603"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71912762"
 ---
 ## <a name="enable-windows-10-automatic-enrollment"></a>Windows 10-es eszközök automatikus regisztrációjának engedélyezése
 
 Az automatikus regisztrálással a felhasználók Windows 10-es eszközeiket regisztrálhatják az Intune-ban. A regisztráláshoz a felhasználónak a személyes tulajdonú eszközén hozzá kell adnia a munkahelyi fiókját, vagy a céges tulajdonban lévő eszközt csatlakoztatnia kell az Azure Active Directoryhoz. A háttérben az eszköz regisztrálja magát, és csatlakozik az Azure Active Directoryhoz. A regisztrációt követően az eszközt az Intune felügyeli.
 
 **Előfeltételek**
+
 - Azure Active Directory Premium-előfizetés ([próba-előfizetés](http://go.microsoft.com/fwlink/?LinkID=816845))
 - Microsoft Intune-előfizetés
-
 
 ### <a name="configure-automatic-mdm-enrollment"></a>Az automatikus MDM-regisztráció konfigurálása
 
 1. Jelentkezzen be az [Azure Portalon](https://portal.azure.com), majd válassza az **Azure Active Directory** elemet.
 
-   ![Az Azure Portal képernyőképe](../media/auto-enroll-azure-main.png)
+   ![Az Azure Portal képernyőképe](../enrollment/media/windows-enroll/auto-enroll-azure-main.png)
 
 2. Válassza a **Mobilitás (MDM és MAM)** elemet.
 
-   ![Az Azure Portal képernyőképe](../media/auto-enroll-mdm.png)
+   ![Az Azure Portal képernyőképe](../enrollment/media/windows-enroll/auto-enroll-mdm.png)
 
 3. Válassza a **Microsoft Intune** elemet.
 
-   ![Az Azure Portal képernyőképe](../media/auto-enroll-intune.png)
+   ![Az Azure Portal képernyőképe](../enrollment/media/windows-enroll/auto-enroll-intune.png)
 
 4. Konfigurálja az **MDM-felhasználói hatókört**. Adja meg, hogy mely felhasználók eszközeit felügyelje a Microsoft Intune. Ezeket a Windows 10 rendszerű eszközöket a rendszer automatikusan regisztrálni tudja a Microsoft Intune-felügyeletbe.
 
@@ -43,7 +43,7 @@ Az automatikus regisztrálással a felhasználók Windows 10-es eszközeiket reg
    > [!NOTE]
    > A MDM felhasználói hatókörét olyan Azure AD-csoportra kell beállítani, amely felhasználói objektumokat tartalmaz.
 
-   ![Az Azure Portal képernyőképe](../media/auto-enroll-scope.png)
+   ![Az Azure Portal képernyőképe](../enrollment/media/windows-enroll/auto-enroll-scope.png)
 
 5. A következő URL-címekhez használja az alapértelmezett értékeket:
     - **MDM használati feltételeinek URL-címe**

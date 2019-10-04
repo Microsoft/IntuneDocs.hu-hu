@@ -17,18 +17,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 80b9091b723e78631a13c9358687ae77c36b8d47
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: c4f3424c0d9712affbbf8ba3929e825b62ce5864
+ms.sourcegitcommit: 223d64a72ec85fe222f5bb10639da729368e6d57
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729687"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940317"
 ---
 # <a name="enroll-ios-devices-in-intune"></a>iOS-eszközök regisztrálása az Intune-ban
 
-Az Intune lehetőséget nyújt az iPadek és iPhone-ok mobileszköz-felügyeletére (MDM), és hozzáférést biztosít a felhasználóknak a vállalati e-mailjeikhez és alkalmazásaikhoz.
+Az Intune lehetővé teszi az iPadek és iPhone-eszközök mobileszköz-felügyeletét (MDM), hogy biztonságos hozzáférést biztosítson a felhasználóknak a vállalati levelezéshez, az adatszolgáltatásokhoz és az alkalmazásokhoz
 
-Intune-rendszergazdaként engedélyezheti az iOS-eszközök regisztrációját. Engedélyezheti a felhasználók számára a személyes tulajdonban lévő eszközök regisztrálását, azaz a BYOD-regisztrációt. Emellett vállalati tulajdonban lévő eszközök is regisztrálását is engedélyezheti.
+Intune-rendszergazdaként beállíthatja az iOS-és iPadOS-eszközök regisztrálását a vállalati erőforrások eléréséhez. Lehetővé teheti a felhasználók számára a személyes tulajdonú eszközök regisztrálását, azaz a "saját eszközök használata" (BYOD) beléptetését. Beállíthatja a vállalati tulajdonú eszközök regisztrálását is.
 
 ## <a name="prerequisites-for-ios-enrollment"></a>Az iOS eszközök beléptetésének előfeltételei
 
@@ -38,9 +38,14 @@ iOS-eszközök engedélyezése előtt végezze el az alábbi lépéseket:
 - [Az Intune beállítása](../fundamentals/setup-steps.md) – Ezekkel a lépésekkel állíthatja be az Intune-infrastruktúrát. Különösen fontos, hogy az eszközregisztrációhoz szükség van [saját MDM-szolgáltató beállítására](../fundamentals/mdm-authority-set.md).
 - [Apple MDM push-tanúsítvány beszerzése](apple-mdm-push-certificate-get.md) – Az Apple tanúsítványt igényel az iOS- és macOS eszközök felügyeletének lehetővé tételéhez.
 
-## <a name="user-owned-ios-devices-byod"></a>A felhasználó tulajdonában lévő iOS-eszközök (BYOD)
+## <a name="user-owned-ios-and-ipados-devices-byod"></a>Felhasználó által birtokolt iOS-és iPadOS-eszközök (BYOD)
 
-Azt is engedélyezheti, hogy a felhasználók saját személyes eszközeiket regisztrálják az Intune-felügyelethez. Ezt „saját eszköz használata” vagy BYOD (Bring Your Own Device) néven ismerjük. Az előfeltételek teljesítése és a felhasználói licencek hozzárendelése után a felhasználók letölthetik az Intune Céges portál alkalmazást az App Store-ból, és az alkalmazástól kapott utasításokat követve elvégezhetik a regisztrációt. Az iOS-eszközök Céges portál adatvédelmi nyilatkozatát az [adatvédelmi nyilatkozat testreszabása](../apps/company-portal-app.md#privacy-statement-customization)című részben leírtak szerint szabhatja testre.
+Azt is engedélyezheti, hogy a felhasználók saját személyes eszközeiket regisztrálják az Intune-felügyelethez. Ezt „saját eszköz használata” vagy BYOD (Bring Your Own Device) néven ismerjük. A felhasználók regisztrálására három lehetőség áll rendelkezésre:
+- Az alkalmazás-védelmi szabályzatok a legkönnyebb BYOD élményt biztosítják, és csak az alkalmazás szintjén biztosítanak felügyeletet. Ha azonban egy 6 számjegyű, összetett PIN-kóddal rendelkező eszközt is biztonságossá kíván tenni, ezeket a házirendeket a felhasználó beléptetésével együtt is használhatja.
+- Az eszközök regisztrálása a szokásos BYOD-regisztrációnak tekinthető. Számos felügyeleti lehetőséggel látja el a rendszergazdákat.
+- A felhasználó beléptetése egy egyszerűbb regisztrációs folyamat, amely az Eszközkezelő lehetőségeinek egy részhalmazát biztosítja a rendszergazdák számára. Ez a szolgáltatás jelenleg előzetes kiadásban elérhető. 
+
+Miután végrehajtotta az előfeltételeket és a hozzárendelt felhasználói licenceket, a felhasználók letöltheti az Intune Céges portál alkalmazást az App Store áruházból, és követheti a regisztrációs utasításokat az alkalmazásban. Az iOS-eszközök Céges portál adatvédelmi nyilatkozatát az [adatvédelmi nyilatkozat testreszabása](../apps/company-portal-app.md#privacy-statement-customization)című részben leírtak szerint szabhatja testre.
 
 ## <a name="company-owned-ios-devices"></a>Vállalati tulajdonban lévő iOS-eszközök
 
@@ -55,7 +60,10 @@ A vállalati tulajdonban lévő iOS-eszközök [készülékregisztráció-kezel�
 
 ## <a name="device-enrollment-program"></a>Készülékregisztrációs program
 
-A szervezetek az Apple Device Enrollment készülékregisztrációs programján keresztül vásárolhatnak iOS-eszközöket. A DEP vezeték nélkül képes telepíteni egy regisztrációs profilt, amely felügyelet alá helyezi az eszközöket. További tudnivalók a [Készülékregisztrációs programról](device-enrollment-program-enroll-ios.md).
+A szervezetek az Apple Device Enrollment készülékregisztrációs programján keresztül vásárolhatnak iOS-eszközöket. A DEP vezeték nélkül képes telepíteni egy regisztrációs profilt, amely felügyelet alá helyezi az eszközöket. További információ: [Készülékregisztrációs program](device-enrollment-program-enroll-ios.md).
+
+## <a name="user-enrollment"></a>Felhasználó beléptetése
+A felhasználó regisztrálása a rendszergazdák számára a felügyeleti lehetőségek egy részhalmazát adja meg a többi regisztrációs módszerhez képest. További információ: a [felhasználói regisztráció által támogatott műveletek, jelszavak és egyéb beállítások](ios-user-enrollment-supported-actions.md) , valamint az [iOS és a iPadOS felhasználói regisztrációjának beállítása](ios-user-enrollment.md).
 
 ## <a name="apple-school-manager"></a>Apple School Manager
 
