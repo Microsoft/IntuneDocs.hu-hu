@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 19f398f58c643928497d8083c173f88862cb0c24
-ms.sourcegitcommit: 223d64a72ec85fe222f5bb10639da729368e6d57
+ms.openlocfilehash: c07ce82bbc056e1d76abeb5d31bf57e0973fad6e
+ms.sourcegitcommit: bdf948be824cf5390d5166a277f389f3785c81f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940086"
+ms.locfileid: "71960880"
 ---
 # <a name="add-android-enterprise-system-apps-to-microsoft-intune"></a>Android rendszerű nagyvállalati rendszeralkalmazások hozzáadása a Microsoft Intunehoz
 
@@ -49,8 +49,6 @@ A létrehozott alkalmazás megjelenik az alkalmazáslistában, ahol hozzárendel
 
 Az Android Enterprise rendszerbeli alkalmazások lehetővé teszik a platform már részét képező alkalmazások engedélyezését vagy letiltását. Alkalmazás engedélyezéséhez rendelje hozzá a rendszeralkalmazást **szükség**szerint. Az alkalmazások letiltásához rendelje hozzá a rendszeralkalmazást **eltávolításként**. A rendszeralkalmazások nem rendelhetők hozzá elérhetőként a felhasználó számára.
 
-> [!TIP]
-> Meghívja a rendszeralkalmazást, ha a gyári beállítások visszaállítása nélkül is engedélyezheti a rendszer alkalmazását.
 
 ## <a name="next-steps"></a>További lépések
 
