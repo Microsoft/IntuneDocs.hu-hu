@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 02006acc58789f2a6fb5944e677a1983f7ea9614
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: b16dca0b6a73e7228e65c840bfbc91f3577bb59a
+ms.sourcegitcommit: 29b1113dc04534c4c87c33c773c5a0e24266e042
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730067"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71999283"
 ---
 # <a name="automatically-enroll-android-devices-by-using-samsungs-knox-mobile-enrollment"></a>Eszközök automatikus regisztrációja a Samsung Knox Mobile Enrollmenttel
 
@@ -109,7 +109,8 @@ Az Intune-ba androidos KME-vel beléptetett eszközök esetében a következők�
 
 > [!NOTE]
 >
->A felhasználó-hozzárendelés csak Android-eszközök beléptetésére vonatkozik. Ha meghatároz egy felhasználó-hozzárendelést, csak a hozzárendelt felhasználó regisztrálhatja az eszközt a KME-vel. Ez az eszköz gyári alaphelyzetbe állítása után is így marad. Ha nem határoz meg felhasználó-hozzárendelést a Knox portálon, bármely, érvényes Intune-licenccel rendelkező felhasználó regisztrálhatja az eszközt a KME-vel.
+>A felhasználói társítás csak az Android-eszközök rendszergazdai regisztrálására vonatkozik. Ha meghatároz egy felhasználó-hozzárendelést, csak a hozzárendelt felhasználó regisztrálhatja az eszközt a KME-vel. Ez az eszköz gyári alaphelyzetbe állítása után is így marad. Ha nem határoz meg felhasználó-hozzárendelést a Knox portálon, bármely, érvényes Intune-licenccel rendelkező felhasználó regisztrálhatja az eszközt a KME-vel.
+>Az Android Enterprise teljes körűen felügyelt eszközök esetében akkor is, ha a felhasználói társítás definiálva van, nem lesz továbbítva az eszköznek vagy nem köti az eszközt a felhasználóhoz.
 >
 
 ## <a name="distribute-devices"></a>Eszközök terjesztése
@@ -126,7 +127,7 @@ További segítségre van szüksége? Tekintse meg a teljes [KME felhasználói 
 
 - **Gyári beállítások visszaállítása az Android Enterprise-ba való regisztráláshoz:** Ha a már beállított eszközöket kell beállítani, az eszközöknek gyári beállításokra van szükségük az Android Enterprise-ban való regisztráláskor.
 
-- **Frissítések a Google Play-fiók használatával:** Nincs szükség Google Play-fiókra az eszköz Microsoft Intune való regisztrálásához. Az Intune Céges portál alkalmazás jövőbeli frissítései azonban ezt kötelezővé tehetik. Nincs szükség Google Play-fiókra a Google-eszköz tulajdonosának való regisztráláskor.
+- **Frissítések a Google Play-fiók használatával:** Nincs szükség Google Play-fiókra az eszköz Microsoft Intune való regisztrálásához. Az androidos eszközök rendszergazdai regisztrációja esetén azonban előfordulhat, hogy a Intune Céges portál alkalmazás jövőbeli frissítéseihez Google Play-fiókra lehet szükség az eszközön. Nincs szükség Google Play-fiókra a Google-eszköz tulajdonosának való regisztráláskor.
 
 - **A "password" mezőt a rendszer figyelmen kívül hagyja:** Ha a Knox-portálon a **jelszó** mező fel van töltve az **eszköz részletei** között, a Intune céges portál alkalmazás figyelmen kívül hagyja az Android-regisztráció során. A végfelhasználónak meg kell adnia egy jelszót az eszközön az eszközregisztráció befejezéséhez.
 

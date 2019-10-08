@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 09/27/2019
+ms.date: 10/07/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.technology: ''
@@ -16,26 +16,26 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 009b9cf22bcdd73eb563c772cc9995047f05a9c1
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 0e7c4e5ed45455dda941fb0c61c989c12c57135d
+ms.sourcegitcommit: 29b1113dc04534c4c87c33c773c5a0e24266e042
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731755"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71999323"
 ---
 # <a name="in-development-for-microsoft-intune---october-2019"></a>Fejlesztés a Microsoft Intune – október 2019
 
 A készültség és a tervezés elősegítése érdekében ez az oldal felsorolja az Intune felhasználói felületének frissítéseit és a fejlesztés alatt álló, de még nem kiadott funkciókat. Továbbá:
 
 - Ha várható, hogy a módosítás előtt végre kell hajtania a lépéseket, közzé kell tenni egy kiegészítő Office Message Center-bejegyzést.
-- Ha egy szolgáltatás éles környezetben, előzetes verzióként vagy általánosan elérhetőként van elindítva, a szolgáltatás leírása kikerül ezen az oldalon, [](whats-new.md)és az Újdonságok oldalára kerül.
+- Ha egy szolgáltatás éles környezetben, előzetes verzióként vagy általánosan elérhetőként van elindítva, a szolgáltatás leírása kikerül ezen az oldalon, és az [Újdonságok oldalára](whats-new.md)kerül.
 - Ez az oldal és az [új oldal](whats-new.md) rendszeresen frissül. További hírekért látogasson vissza.
 - Tekintse meg a [M365 ütemtervet](https://www.microsoft.com/microsoft-365/roadmap?rtc=2&filters=EMS) a stratégiai termékekhez és a határidőkhöz.
 
 > [!Note]
 > Ezek az elemek tükrözik a Microsoft aktuális elvárásait az Intune-képességekről a jövőbeli kiadásokban. A dátumok és az egyes funkciók változhatnak. A fejlesztés nem minden eleme rendelkezik a funkció leírásával ezen a lapon.
 
-**RSS-hírcsatorna**: Értesítést kaphat az oldal frissítésekor, ha a következő URL-címet másolja és beillesztette a hírcsatorna-olvasóba:`https://docs.microsoft.com/api/search/rss?search=%22in+development+-+microsoft+intune%22&locale=en-us`
+**RSS-hírcsatorna**: Értesítést kaphat az oldal frissítésekor, ha a következő URL-címet másolja és beillesztette a hírcsatorna-olvasóba: `https://docs.microsoft.com/api/search/rss?search=%22in+development+-+microsoft+intune%22&locale=en-us`
 
 <!--
 ## What's coming to Intune in the Azure portal 
@@ -80,7 +80,7 @@ A házirend-készletek lehetővé teszik, hogy a már meglévő felügyeleti ent
 Win32-alkalmazásokat telepíthet és futtathat a Windows 10 S Mode által felügyelt eszközökön. A Windows Defender Application Control (WDAC) PowerShell-eszközeivel létrehozhat egy vagy több kiegészítő szabályzatot az S üzemmódhoz. Írja alá a kiegészítő szabályzatokat az Eszközkezelő-aláírási portálon, majd töltse fel és terjessze a szabályzatokat az Intune-on keresztül. Az Intune-ban ezt a képességet az **ügyfélalkalmazások** > **Windows 10 S kiegészítő szabályzatok**kiválasztásával találja meg. 
 
 ### <a name="set-app-availability-based-on-a-date-and-time----3510685----"></a>Alkalmazás rendelkezésre állásának beállítása dátum és idő alapján <!-- 3510685  -->
-Rendszergazdaként konfigurálhatja a szükséges alkalmazás kezdési idejét és határidejét. A kezdési időpontban az Intune felügyeleti bővítmény elindítja az alkalmazás tartalmának letöltését és gyorsítótárazását. Az alkalmazás a határidő lejártakor lesz telepítve. Az elérhető alkalmazások esetében a kezdési idő akkor fog megjelenni, amikor az alkalmazás látható Céges portálban. Az Intune-ban válassza az **ügyfélalkalmazások** > **alkalmazások**lehetőséget. Ezután válasszon ki egy adott alkalmazást a listából, vagy válassza a **Hozzáadás** lehetőséget egy új alkalmazás hozzáadásához. Az alkalmazás panelen válassza a **hozzárendelések** > **Csoport hozzáadása**elemet. Állítsa a **hozzárendelés típusát** **kötelező** értékre, majd válassza a **befoglalt csoportok**lehetőséget. Állítsa be, hogy az **alkalmazás minden felhasználó számára kötelező legyen** **, és válassza** a **Szerkesztés** lehetőséget a **végfelhasználói élmény** beállításainak módosításához. A **végfelhasználói élmény** panelen szükség szerint állítsa be a **szoftver rendelkezésre állási idejét** . További információ az alkalmazások hozzáadásáról: [Alkalmazások hozzáadása Microsoft Intunehoz](../apps/apps-add.md).
+Rendszergazdaként konfigurálhatja a szükséges alkalmazás kezdési idejét és határidejét. A kezdési időpontban az Intune felügyeleti bővítmény elindítja az alkalmazás tartalmának letöltését és gyorsítótárazását. Az alkalmazás a határidő lejártakor lesz telepítve. Az elérhető alkalmazások esetében a kezdési idő akkor fog megjelenni, amikor az alkalmazás látható Céges portálban. Az Intune-ban válassza a **Client apps** > **alkalmazások**elemet. Ezután válasszon ki egy adott alkalmazást a listából, vagy válassza a **Hozzáadás** lehetőséget egy új alkalmazás hozzáadásához. Az alkalmazás panelen válassza a **hozzárendelések** > **Csoport hozzáadása**elemet. Állítsa a **hozzárendelés típusát** **kötelező** értékre, majd válassza a **befoglalt csoportok**lehetőséget. Állítsa be, hogy az **alkalmazás minden felhasználó számára kötelező legyen** **, és válassza** a **Szerkesztés** lehetőséget a **végfelhasználói élmény** beállításainak módosításához. A **végfelhasználói élmény** panelen szükség szerint állítsa be a **szoftver rendelkezésre állási idejét** . További információ az alkalmazások hozzáadásáról: [Alkalmazások hozzáadása Microsoft Intunehoz](../apps/apps-add.md).
 
 ### <a name="require-win32-apps-to-restart----3136567----"></a>Win32-alkalmazások újraindításának megkövetelése <!-- 3136567  -->
 A sikeres telepítés után a Win32-alkalmazások újraindítására lehet szükség. Azt is megteheti, hogy az újraindítás előtt ki kell választania az időt (a türelmi időszakot).
@@ -95,7 +95,7 @@ A Céges portál alkalmazás további alkalmazás-telepítési állapotüzenetek
 - Az alkalmazás telepítése folyamatban van, de a folytatáshoz újraindítás szükséges.
 
 #### <a name="assign-microsoft-edge-beta-for-macos----4678761----"></a>Microsoft Edge Beta társítása macOS-hez <!-- 4678761  -->
-A Microsoft Edge Beta legújabb verzióját a macOS rendszerű eszközökhöz hozzáadhatja és hozzárendelheti az Intune-hoz. Az Intune-ból válassza az **ügyfélalkalmazások** > **alkalmazások** > **Microsoft Edge-MacOS** **hozzáadása** > elemet. Ezután rendelje hozzá a Microsoft Edge Beta-t a kívánt csoportokhoz. A Microsoft AutoUpdate (MAU) naprakészen tartja a Microsoft Edge-t. A Microsoft Edge-vel kapcsolatos további információkért lásd: [webes elérés kezelése a Microsoft Edge és a Microsoft Intune használatával](../apps/manage-microsoft-edge.md).
+A Microsoft Edge Beta legújabb verzióját a macOS rendszerű eszközökhöz hozzáadhatja és hozzárendelheti az Intune-hoz. Az Intune-ból válassza a **Client apps** > **alkalmazások** > **alkalmazás hozzáadása** > **Microsoft Edge-MacOS**elemet. Ezután rendelje hozzá a Microsoft Edge Beta-t a kívánt csoportokhoz. A Microsoft AutoUpdate (MAU) naprakészen tartja a Microsoft Edge-t. A Microsoft Edge-vel kapcsolatos további információkért lásd: [webes elérés kezelése a Microsoft Edge és a Microsoft Intune használatával](../apps/manage-microsoft-edge.md).
 
 ### <a name="configure-app-notification-content-for-organization-accounts----2576686---"></a>Alkalmazás-értesítési tartalom konfigurálása a szervezeti fiókokhoz <!-- 2576686 -->
 Az Intune app Protection-szabályzatok (alkalmazás) Android és iOS rendszerű eszközökön lehetővé teszik a szervezeti fiókok alkalmazás-értesítési tartalmának szabályozását. Ennek a funkciónak támogatásra van szüksége az alkalmazásoktól, és előfordulhat, hogy nem érhető el az összes alkalmazás-kompatibilis alkalmazáshoz. További információ az ALKALMAZÁSról: [Mi az az App Protection-szabályzat?](../apps/app-protection-policy.md).
@@ -131,7 +131,7 @@ Az aktuális beállítások megtekintéséhez lépjen az [Android Wi-Fi beállí
 - Vállalati Android
 
 ### <a name="create-a-global-http-proxy-on-android-enterprise-device-owner-devices----4816339----"></a>Globális HTTP-proxy létrehozása androidos vállalati eszköz tulajdonosi eszközein <!-- 4816339  -->
-Az Android Enterprise rendszerű eszközökön létrehozhat egy VPN-profilt különböző VPN-ügyfelekkel (az**eszköz konfigurációja** > **profilok** > **profil létrehozása** > **Android Enterprise** for platform > **eszköz tulajdonosa > A profil** típusa > a **kapcsolat**). Egy globális HTTP-proxy konfigurálható úgy, hogy az megfeleljen a szervezete webes böngészési szabványainak. A HTTP-webhelyekre ugrást használó alkalmazások ezt a proxyt használják.
+Az Android Enterprise rendszerű eszközökön konfigurálhat egy globális HTTP-proxyt a szervezete webböngészési szabványainak megfelelően (**eszköz konfigurációja** > **profilok** > **create Profile** > **Android Enterprise** for platform > **eszköz tulajdonosa > eszköz korlátozásai** a profil típusa > a **kapcsolat**). A konfigurálást követően az összes HTTP-forgalom ezt a proxyt fogja használni.
 
 Érintett kiadások:
 - Androidos vállalati eszköz tulajdonosa
@@ -139,10 +139,10 @@ Az Android Enterprise rendszerű eszközökön létrehozhat egy VPN-profilt kül
 ### <a name="new-device-firmware-configuration-interface-profile-for-windows-10-and-later-devices----2266073----"></a>Új eszköz belső vezérlőprogram-konfigurációs felületének profilja a Windows 10 és újabb rendszerű eszközökhöz <!-- 2266073  -->
 Windows 10 és újabb rendszereken létrehozhat egy eszköz-konfigurációs profilt a beállítások és szolgáltatások vezérléséhez (**eszköz konfigurációja** > **profilok** > **create Profile** > **Windows 10 és újabb verziók** a platformhoz). Egy új, az eszköz belső vezérlőprogram-konfigurációs felületének profilja lesz, amely lehetővé teszi az Intune számára az UEFI-(BIOS-) beállítások kezelését.
 
-A konfigurálható beállítások áttekintését itt tekintheti meg: a [szolgáltatások és beállítások alkalmazása az eszközökön a Microsoft Intune eszköz profiljainak használatával](../configuration/device-profiles.md).
+Az aktuálisan konfigurálható beállítások áttekintését lásd: a [szolgáltatások és beállítások alkalmazása az eszközökön a Microsoft Intune eszköz profiljainak használatával](../configuration/device-profiles.md).
 
 Érintett kiadások:
-- Windows 10 RS5 (1809) és újabb verziók egyes OEM-eken
+- Windows 10 RS5 (1809) és újabb rendszerű eszközök kiválasztása
 
 ### <a name="pkcs-certificates-for-macos-----1333650------------------"></a>PKCS-tanúsítványok macOS rendszerhez  <!-- 1333650                -->
 A macOS rendszerű eszközökön teljes körű támogatást biztosítunk a PKCS-tanúsítványokhoz. A felhasználók a Testreszabás tárgya és a tulajdonos alternatív neve mezők használatával telepíthetik a felhasználói és az eszköz tanúsítványait. Egy új beállítás is elérhető lesz, amely lehetővé teszi az összes alkalmazás elérését, ami lehetővé teszi, hogy az összes társított alkalmazás hozzáférhessen a titkos kulcshoz. A beállítással kapcsolatos további információkért tekintse meg a következő Apple-dokumentációt: https://developer.apple.com/business/documentation/Configuration-Profile-Reference.pdf.

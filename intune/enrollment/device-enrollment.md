@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a345cdf2162db6b55fe5698488036fad0677a6e1
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: e3fb9af260b8fddc78b644b8ede056c90bac24d0
+ms.sourcegitcommit: 29b1113dc04534c4c87c33c773c5a0e24266e042
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729979"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71999350"
 ---
 # <a name="what-is-device-enrollment"></a>Mi az eszközregisztrálás?
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
@@ -76,7 +76,7 @@ Alapértelmezés szerint platformtól függetlenül minden eszköz regisztráci�
 |**Android-eszköz rendszergazdája**|**(Előre deklarált IMEI vagy SN) Felhasználó által kezdeményezett Céges portál**| Nem | Igen | Nem | [További információ](./../corporate-identifiers-add.md)|
 |**Android-eszköz rendszergazdája a zebra Mobility Extensions bővítménnyel**|**Céges portál használatával kezdeményezett felhasználó vagy [DEM](#device-enrollment-manager)**| Nem | Igen, ha a felhasználó kezdeményezte, nem, ha a [DEM](#device-enrollment-manager) kezdeményezte | Nem | [További információ](../configuration/android-zebra-mx-overview.md)|
 |**Android Enterprise dedikált**|**NFC, token, QR-kód, nulla érintés**| Igen | Nem | Konfigurálható házirenden keresztül | [További információ](android-kiosk-enroll.md)|
-|**Android Enterprise teljes körűen felügyelt (előzetes verzió)**|**NFC, token, QR-kód, nulla érintés**| Igen | Igen | Konfigurálható házirenden keresztül | [További információ](android-dedicated-devices-fully-managed-enroll.md)|
+|**Android Enterprise teljes körűen felügyelt**|**NFC, token, QR-kód, nulla érintés**| Igen | Igen | Konfigurálható házirenden keresztül | [További információ](android-dedicated-devices-fully-managed-enroll.md)|
 
 
 ## <a name="bring-your-own-device"></a>Saját eszközök használata (Bring Your Own Device)
