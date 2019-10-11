@@ -18,12 +18,12 @@ ms.reviewer: arnab
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ecc73fc9c51ae11f7541d1b9d28f0ccc8297c187
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 8f2e9313cf2a4d639096f783b895596fc2535649
+ms.sourcegitcommit: 884654da8e72a63bfaea6b5def6c7891b065f251
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71721208"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72163551"
 ---
 # <a name="unenroll-your-android-device-from-management"></a>Android-eszköz regisztrációjának törlése  
 
@@ -58,24 +58,24 @@ Az Android-eszközhöz készült Céges portál alkalmazás által az eszközön
 
 Céges portál egy Eszközkezelő alkalmazás. Nem távolítható el, amíg nem törli az eszköz regisztrációját a felügyelet alól. Miután ezt megtette, koppintson a Céges portál alkalmazás ikonjára, és tartsa nyomva addig, amíg az **Eltávolítás** lehetőség meg nem jelenik. Koppintson az **Eltávolítás** lehetőségre az alkalmazás eszközről való eltávolításához.  
 
-Vagy koppintson a **Beállítások** > **alkalmazások** > **céges portál** > **Eltávolítás**elemre.  
+Vagy koppintson a **beállítások** > **alkalmazások** > **céges portál** > **Eltávolítás**elemre.  
 
 ### <a name="remove-the-company-portal-app-as-a-device-administrator"></a>Az Céges portál alkalmazás eltávolítása eszköz-rendszergazdaként
 
 Utolsó megoldásként eltávolíthatja az alkalmazást az eszközről az eszköz rendszergazdájaként.  
 
-Ha a vállalat tulajdonában álló eszközről van szó, a szervezetnek szüksége lehet arra, hogy a Céges portál mindig az eszközön legyen. Ha eltávolítja, akkor a védett vállalati erőforrásokhoz, például e-mailekhez, alkalmazásokhoz, Wi-Fi-hez vagy VPN-hez férhet hozzá, amíg újra nem telepíti az alkalmazást. További információ a szükséges alkalmazások telepítéséről, frissítéséről és eltávolításáról: [Alkalmazások hozzáadása Microsoft Intunehoz](https://docs.microsoft.com/intune/apps/apps-add.md#apps-that-are-added-automatically-by-intune).
+Ha a vállalat tulajdonában álló eszközről van szó, a szervezetnek szüksége lehet arra, hogy a Céges portál mindig az eszközön legyen. Ha eltávolítja, akkor a védett vállalati erőforrásokhoz, például e-mailekhez, alkalmazásokhoz, Wi-Fi-hez vagy VPN-hez férhet hozzá, amíg újra nem telepíti az alkalmazást. További információ a szükséges alkalmazások telepítéséről, frissítéséről és eltávolításáról: [Alkalmazások hozzáadása Microsoft Intunehoz](/intune/apps/apps-add#apps-that-are-added-automatically-by-intune).
 
 A következőképpen tilthatja le a Céges portál eszközt rendszergazdaként. Az egyes beállítások tényleges nevei eltérőek lehetnek az Android-eszközön.  
 
 **1. lehetőség**:  
 
-1. Válassza a **Beállítások** > **Biztonság** > **további biztonsági beállítások** > **eszköz adminisztrátorok**lehetőséget.  
+1. Válassza a **beállítások** > **biztonsági** > **további biztonsági beállítások** > **eszköz-rendszergazdák**elemet.  
 2. Törölje a **céges portál** kijelölését.  
 
 **2. lehetőség**:
 
-1. Válassza a **Beállítások** > **zárolása képernyő és biztonság** > **egyéb biztonsági beállítások** > **eszköz rendszergazdai alkalmazások**lehetőséget.
+1. Válassza a **beállítások** > **zárolási képernyő és biztonság** > **egyéb biztonsági beállítások** > **eszköz rendszergazdai alkalmazások**elemet.
 2. Törölje a **céges portál** kijelölését.
 
 További segítségre van szüksége? Forduljon a cég informatikai támogatásához. Az elérhetőségét keresse meg a [Vállalati portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).

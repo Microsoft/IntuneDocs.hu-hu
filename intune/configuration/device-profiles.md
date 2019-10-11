@@ -16,18 +16,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 656a6903284be01b8afd493cdbd36afe299db02a
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 3afdb365d0ed88a58028287cc7010bb334e9001e
+ms.sourcegitcommit: fca2670142c083d7562c0a36547a6a451863e315
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730787"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72036446"
 ---
 # <a name="apply-features-and-settings-on-your-devices-using-device-profiles-in-microsoft-intune"></a>Szolgáltatások és beállítások alkalmazása az eszközökön a Microsoft Intune eszköz profiljainak használatával
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-A Microsoft Intune olyan beállításokat és funkciókat tartalmaz, amelyekkel engedélyezheti vagy letilthatja a szervezeten belüli különböző eszközökön. Ezek a beállítások és funkciók hozzáadódnak a "konfigurációs profilokhoz". Létrehozhat profilokat különböző eszközökhöz és különböző platformokhoz, például iOS-, Android-és Windows-rendszerekhez is. Ezután az Intune-nal alkalmazza vagy "rendelje hozzá" a profilt az eszközökhöz.
+A Microsoft Intune olyan beállításokat és funkciókat kínál, amelyeket Ön engedélyezhet vagy tilthat le a vállalatához tartozó különböző eszközökön. Ezek a beállítások és funkciók hozzáadódnak a "konfigurációs profilokhoz". Létrehozhat profilokat különböző eszközökhöz és különböző platformokhoz, például iOS-, Android-és Windows-rendszerekhez is. Ezután az Intune-nal alkalmazza vagy "rendelje hozzá" a profilt az eszközökhöz.
 
 A mobileszköz-kezelési (MDM) megoldás részeként ezeket a konfigurációs profilokat használhatja a különböző feladatok elvégzéséhez. Néhány példa profilok használatára:
 
@@ -40,7 +40,7 @@ A mobileszköz-kezelési (MDM) megoldás részeként ezeket a konfigurációs pr
 
 Ez a cikk áttekintést nyújt a létrehozott profilok különböző típusairól. Ezekkel a profilokkal engedélyezheti vagy megtilthatja az eszközök egyes funkcióinak használatát.
 
-## <a name="administrative-templates-preview"></a>Felügyeleti sablonok (előzetes verzió)
+## <a name="administrative-templates"></a>Felügyeleti sablonok
 
 A [Felügyeleti sablonok](administrative-templates-windows.md) több száz beállítást tartalmaznak, amelyek az Internet Explorer, a OneDrive, a távoli asztal, a Word, az Excel és más Office-programok számára konfigurálhatók.
 
@@ -78,7 +78,7 @@ Ez a funkció a következőket támogatja:
 
 ## <a name="delivery-optimization"></a>Teljesítésoptimalizálás
 
-A [kézbesítés optimalizálása](../delivery-optimization-windows.md) jobb élményt nyújt a szoftverfrissítések kézbesítéséhez. Ezek a beállítások a **szoftverfrissítések** > **Windows 10-es frissítési kör** beállításait cserélik le.
+A [kézbesítés optimalizálása](../delivery-optimization-windows.md) jobb élményt nyújt a szoftverfrissítések kézbesítéséhez. Ezek a beállítások a **szoftverfrissítések**@no__t – 1**Windows 10 frissítési kör** beállításait cserélik le.
 
 Ezekkel a beállításokkal szabályozhatja, hogy a rendszer hogyan töltse le a szoftverfrissítéseket a szervezet eszközeire. Megadhatja például, hogy a felhasználók megkapják a saját frissítéseiket, vagy egy eszköz profiljában a kézbesítési optimalizálás Cloud Services használatával frissítéseket szerezzenek be.
 

@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eab50a21ea01cd4075bd78add980d2839606a1a2
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 6e9df15efc7a16a0ce1ee6b0412f9160831efdec
+ms.sourcegitcommit: 884654da8e72a63bfaea6b5def6c7891b065f251
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729487"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72163513"
 ---
 # <a name="role-based-access-control-rbac-with-microsoft-intune"></a>Szerepköralapú hozzáférés-vezérlés (RBAC) Microsoft Intune
 
@@ -29,14 +29,14 @@ A szerepköralapú hozzáférés-vezérlés (RBAC) segítségével felügyelheti
 
 A szerepkörök létrehozásához, szerkesztéséhez vagy hozzárendeléséhez a fióknak rendelkeznie kell a következő jogosultságok egyikével az Azure AD-ben:
 - **Globális rendszergazda**
-- **Intune szolgáltatás rendszergazdája** (más néven **Intune-rendszergazda**)
+- **Intune szolgáltatás-rendszergazda** (más néven **Intune-rendszergazda**)
 
 Az Intune RBAC kapcsolatos tanácsokért és javaslatokért tekintse meg az alábbi öt videót, amelyek példákat és bemutatókat mutatnak be: [1](https://www.youtube.com/watch?v=5deXLMLcnKY), [2](https://www.youtube.com/watch?v=38dnMBLuxbQ), [3](https://www.youtube.com/watch?v=6vqg9cAkMbY), [4](https://www.youtube.com/watch?v=5yOLajFFMHE), [5](https://www.youtube.com/watch?v=P5DDvsSF4Wk).
 
 ## <a name="roles"></a>Szerepkörök
 A szerepkörök határozzák meg az adott szerepkörhöz rendelt felhasználók számára biztosított engedélyek készletét.
 Használhatja a beépített és az egyéni szerepköröket is. A beépített szerepkörök néhány gyakori Intune-forgatókönyvet érintenek. [Saját egyéni szerepköröket is létrehozhat](create-custom-role.md) a szükséges engedélyek pontos készletével. Számos Azure Active Directory szerepkör rendelkezik engedéllyel az Intune-hoz.
-Ha meg szeretne tekinteni egy szerepkört, válassza az **Intune** > -**szerepkörök** > **minden** szerepkör > válasszon egy szerepkört. A következő lapokat fogja látni:
+Ha meg szeretne tekinteni egy szerepkört, válassza az **Intune** > **szerepkörök** > **minden szerepkör** lehetőséget, > válasszon egy szerepkört. A következő lapokat fogja látni:
 
 - **Tulajdonságok**: A szerepkör neve, leírása, típusa, hozzárendelései és hatókör-címkéi. 
 - **Engedélyek**: A hosszú váltások listáját adja meg, amelyek meghatározzák, hogy a szerepkör milyen engedélyekkel rendelkezik.
@@ -66,6 +66,7 @@ Egyéni engedélyekkel saját szerepköröket is létrehozhat. További informá
 | Biztonsági olvasó | Csak olvasható | Csak olvasható |
 | Megfelelőségi rendszergazda | Nincsenek | Csak olvasható |
 | Megfelelőségi adatkezelő | Nincsenek | Csak olvasható |
+| Globális olvasó | Csak olvasás | Csak olvasás |
 
 > [!TIP]
 > Az Intune három Azure AD-bővítményt is megjelenít: **Felhasználók**, **csoportok**és **feltételes hozzáférés**, amelyeket az Azure ad RBAC segítségével szabályozhat. A **Felhasználóifiók-adminisztrátori** szerepkör csak az Azure AD-felhasználói vagy -csoporttevékenységek végrehajtására jogosít fel, és nem biztosít teljes körű engedélyt az összes Intune-beli tevékenységhez. További információ: [RBAC az Azure ad-vel](https://docs.microsoft.com/azure/active-directory/active-directory-assign-admin-roles).
@@ -82,7 +83,7 @@ A szerepkör-hozzárendelések A következőket határozzák meg:
 - milyen erőforrásokat módosíthatnak.
 
 Egyéni és beépített szerepköröket is hozzárendelhet a felhasználókhoz. Intune-szerepkör hozzárendeléséhez a felhasználónak Intune-licenccel kell rendelkeznie.
-A szerepkör-hozzárendelés megtekintéséhez válassza az **Intune** > -**szerepkörök** > **minden** szerepkör > válasszon egy szerepkört > válasszon ki egy hozzárendelést. A következő lapokat fogja látni:
+A szerepkör-hozzárendelés megjelenítéséhez válassza az **Intune** > **szerepkörök**@no__t – 3**minden szerepkör** lehetőséget, > válasszon egy szerepkört > válasszon ki egy hozzárendelést. A következő lapokat fogja látni:
 
 - **Tulajdonságok**: A hozzárendelés neve, leírása, szerepköre, tagjai, hatókörei és címkéi.
 - **Tagok**: A felsorolt Azure-beli biztonsági csoportok minden felhasználója jogosult a hatókörben (csoportok) felsorolt felhasználók vagy eszközök felügyeletére.

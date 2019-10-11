@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 09/19/2019
+ms.date: 10/08/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.localizationpriority: medium
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0b9b9119294fe0757671568eb6b627974796b2de
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 22e3779cd0772753ccd8843cd1f1ff38617298d6
+ms.sourcegitcommit: 884654da8e72a63bfaea6b5def6c7891b065f251
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729251"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72163586"
 ---
 # <a name="windows-10-and-later-settings-to-protect-devices-using-intune"></a>Windows 10 (és újabb) beállítások az eszközök az Intune-nal való védelemmel való ellátásához  
 
@@ -269,8 +269,8 @@ Ebben a cikkben a következő beállítások jelennek meg egyetlen alkalommal, d
 
   - **Nincs konfigurálva**  
   - **Letiltás** – a rendszer figyelmen kívül hagyja a helyi tárolóban lévő, a jogosult alkalmazás tűzfalszabályok szabályait, és nem kényszeríti ki őket.  
-  - **Engedélyezés** Válassza az engedélyezés a tűzfalszabályok alkalmazása a helyi tárolóban lehetőséget, hogy azok felismerhetők és kikényszerítve legyenek. -
-     
+  - Engedélyezi, hogy a -
+   Choose **engedélyezze** a helyi tárolóban a tűzfalszabályok **használatát** , hogy azok felismerhetők és érvénybe lépjenek.  
 
 - **Globális port a Windows Defender tűzfalszabályok a helyi tárolóból**  
   **Alapértelmezett**: Nincs konfigurálva  
@@ -314,7 +314,7 @@ Az egyéni tűzfalszabályok a következő beállításokat támogatják:
 
   Adja meg a szabály leírását.  
 
-- **Irányba**   
+- **Irány**@no__t – 1  
   **Alapértelmezett**: Nincs konfigurálva  
   Tűzfal CSP: [FirewallRules/*FirewallRuleName*/Direction](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#direction)  
   
@@ -353,7 +353,7 @@ Az egyéni tűzfalszabályok a következő beállításokat támogatják:
 
 Itt adhatja meg azokat a helyi és távoli címeket, amelyekre ez a szabály vonatkozik.  
 
-- **Helyi címek**    
+- **Helyi címek**@no__t – 1  
   **Alapértelmezett**: Bármely címe  
   Tűzfal CSP: [FirewallRules/*FirewallRuleName*/LocalPortRanges](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#localportranges)  
 
@@ -478,7 +478,7 @@ Az alapbeállítások minden típusú adatmeghajtóra vonatkozó univerzális Bi
   Ha a *blokkolás*értékre van állítva, akkor a következő beállítást állíthatja be:  
 
   - **Titkosítás engedélyezése az általános jogú felhasználók számára az Azure AD JOIN szolgáltatásban**  
-    *Ez a beállítás csak Azure Active Directory csatlakoztatott (Azure ADJ) eszközökre vonatkozik, és az előző beállítástól `Warning for other disk encryption`függ.*  
+    *Ez a beállítás csak Azure Active Directory csatlakoztatott (Azure ADJ) eszközökre vonatkozik, és az előző, `Warning for other disk encryption` beállítástól függ.*  
     **Alapértelmezett**: Nincs konfigurálva  
     BitLocker CSP: [AllowStandardUserEncryption](https://docs.microsoft.com/windows/client-management/mdm/bitlocker-csp#allowstandarduserencryption)
 
@@ -587,7 +587,7 @@ Ezek a beállítások kifejezetten az operációsrendszer-adatmeghajtókra érv�
   - **Minimális karakterek**  
     **Alapértelmezett**: *Nincs konfigurálva* BitLocker CSP: [SystemDrivesMinimumPINLength](https://go.microsoft.com/fwlink/?linkid=872528)  
 
-    Adja meg a **4**-**20**indítási PIN-kód számára szükséges karakterek számát.  
+    Adja meg az indítási PIN-kódhoz szükséges karakterek számát **4**-**20**értékkel.  
 
 - **OPERÁCIÓSRENDSZER-meghajtó helyreállítása**  
   **Alapértelmezett**: Nincs konfigurálva   
@@ -776,26 +776,27 @@ Ezek a beállítások kifejezetten a cserélhető adatmeghajtókra érvényesek.
  
 ## <a name="windows-defender-exploit-guard"></a>Windows Defender – biztonsági rés kiaknázása elleni védelem  
 
-A [Windows Defender - biztonsági rés kiaknázása elleni védelem](https://docs.microsoft.com/windows/threat-protection/windows-defender-exploit-guard/windows-defender-exploit-guard) használatával az alkalmazottak által használt alkalmazásokat lehet kezelni, és csökkenthető vele az alkalmazások támadási felülete.  
+A [védelem kiaknázásával](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/exploit-protection) kezelheti és csökkentheti az alkalmazottak által használt alkalmazások támadási felületét.  
 
 ### <a name="attack-surface-reduction"></a>Támadási felület csökkentése  
 
-A *támadási felület csökkentési* szabályaival kapcsolatos információkért lásd: a [támadási felületek csökkentése a Windows Defender Exploit Guard-védelemmel](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard) a Windows Defender Exploit Guard-dokumentációban.  
+A támadási felület csökkentési szabályai segítenek megakadályozni, hogy a kártevő szoftvereket gyakran használják a kártékony kóddal rendelkező számítógépek megfertőzésére.  
 
 #### <a name="attack-surface-reduction-rules"></a>Támadási felület csökkentésére vonatkozó szabályok  
 
 - **A Windows helyi biztonsági szervezet alrendszeréből történő hitelesítő adatok lopásának megjelölése**  
   **Alapértelmezett**: Nincs konfigurálva  
-  Védelem kiaknázása: [Támadási felület csökkentésére vonatkozó szabályok](https://go.microsoft.com/fwlink/?linkid=874499)
+  Szabály [A hitelesítő adatok ellopásának tiltása a Windows helyi biztonsági szolgáltatójának alrendszeréről (LSASS. exe)](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-credential-stealing-from-the-windows-local-security-authority-subsystem-lsassexe)
 
   Segít megelőzni azokat a műveleteket és alkalmazásokat, amelyeket általában a kártevők elleni támadással a gépek megfertőzésére használnak.  
+
   - **Nincs konfigurálva**  
   - **Engedélyezheti** a hitelesítő adatok ellopását a Windows helyi biztonsági szervezet alrendszeréről (LSASS. exe).  
   - **Csak naplózás**  
 
 - **Folyamat létrehozása az Adobe Readerből (bétaverzió)**  
   **Alapértelmezett**: Nincs konfigurálva  
-  Védelem kiaknázása: [Támadási felület csökkentésére vonatkozó szabályok](https://go.microsoft.com/fwlink/?linkid=853979)  
+  Szabály [Az Adobe Reader nem hozhat létre alárendelt folyamatokat](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-adobe-reader-from-creating-child-processes)  
 
   - **Nincs konfigurálva**  
   - **Engedélyezés** – az Adobe Readerből létrehozott alárendelt folyamatok letiltása.  
@@ -807,7 +808,7 @@ Az alábbi műveletek elvégzését letilthatja Office-alkalmazások esetén:
 
 - **Office-alkalmazások más folyamatokba való injektálása (nincs kivétel)**  
   **Alapértelmezett**: Nincs konfigurálva  
-  [Az őr dokumentációjának kiaknázása](https://go.microsoft.com/fwlink/?linkid=872974)  
+  Szabály [A kód más folyamatokra való beadásának letiltása az Office-alkalmazásokban](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-office-applications-from-injecting-code-into-other-processes)  
 
   - **Nincs konfigurálva**  
   - Az Office-alkalmazások más folyamatokba való beadásának **tiltása.**  
@@ -815,7 +816,7 @@ Az alábbi műveletek elvégzését letilthatja Office-alkalmazások esetén:
 
 - **Végrehajtható tartalmat létrehozó Office-alkalmazások és -makrók**  
   **Alapértelmezett**: Nincs konfigurálva  
-  [Az őr dokumentációjának kiaknázása](https://go.microsoft.com/fwlink/?linkid=872975)  
+  Szabály [Az Office-alkalmazások nem hozhatnak létre végrehajtható tartalmat](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-office-applications-from-creating-executable-content)  
 
   - **Nincs konfigurálva**  
   - Az Office-alkalmazások és-makrók **letiltásával** végrehajtható tartalom hozható létre.  
@@ -823,7 +824,7 @@ Az alábbi műveletek elvégzését letilthatja Office-alkalmazások esetén:
 
 - **Gyermekfolyamatokat elindító Office-alkalmazások**  
   **Alapértelmezett**: Nincs konfigurálva  
-  [Az őr dokumentációjának kiaknázása](https://go.microsoft.com/fwlink/?linkid=872976)  
+  Szabály [Az összes Office-alkalmazás alárendelt folyamatok létrehozásának letiltása](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-all-office-applications-from-creating-child-processes)  
 
   - **Nincs konfigurálva**  
   - **Letilthatja** , hogy az Office-alkalmazások alárendelt folyamatokat indítsanak.  
@@ -831,7 +832,7 @@ Az alábbi műveletek elvégzését letilthatja Office-alkalmazások esetén:
   
 - **Office-makró-kódból történő Win32-alapú importálás**  
   **Alapértelmezett**: Nincs konfigurálva  
-  [Az őr dokumentációjának kiaknázása](https://go.microsoft.com/fwlink/?linkid=872977)  
+  Szabály [Az Office-makrók Win32 API-hívásainak letiltása](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-win32-api-calls-from-office-macros)  
 
   - **Nincs konfigurálva**  
   - **Blokkolja** a Win32-alapú importálások blokkolását az Office-ban.  
@@ -839,7 +840,7 @@ Az alábbi műveletek elvégzését letilthatja Office-alkalmazások esetén:
   
 - **Folyamat létrehozása Office-kommunikációs termékekből**  
   **Alapértelmezett**: Nincs konfigurálva  
-  [Az őr dokumentációjának kiaknázása](https://go.microsoft.com/fwlink/?linkid=874499)  
+  Szabály [Az Office kommunikációs alkalmazás nem hozható létre alárendelt folyamatokból](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-office-communication-application-from-creating-child-processes)  
 
   - **Nincs konfigurálva**  
   - **Engedélyezés** – alárendelt folyamat létrehozásának tiltása az Office Communications-alkalmazásokból.  
@@ -851,7 +852,7 @@ Az alábbiak letiltásával a veszélyes szkriptek ellen védekezhet:
 
 - **Js-, VBS-, PS-fájlok és makrók rejtjelezett kódja**  
   **Alapértelmezett**: Nincs konfigurálva  
-  [Az őr dokumentációjának kiaknázása](https://go.microsoft.com/fwlink/?linkid=872978)    
+  Szabály [Potenciálisan elhomályosított parancsfájlok végrehajtásának letiltása](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-execution-of-potentially-obfuscated-scripts)    
 
   - **Nincs konfigurálva**  
   - **Letiltás** – blokkolt js/vbs/PS/Macro kód letiltása.  
@@ -859,7 +860,7 @@ Az alábbiak letiltásával a veszélyes szkriptek ellen védekezhet:
 
 - **Internetről letöltött .js vagy .vbs fájlok végrehajtása (nincs kivétel)**  
   **Alapértelmezett**: Nincs konfigurálva  
-  [Az őr dokumentációjának kiaknázása](https://go.microsoft.com/fwlink/?linkid=872979)  
+  Szabály [A JavaScript vagy a VBScript letöltött végrehajtható tartalom indításának letiltása](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-javascript-or-vbscript-from-launching-downloaded-executable-content)  
 
   - **Nincs konfigurálva**  
   - **Blokkolja** a JS/vbs blokkolását az internetről letöltött hasznos adatok végrehajtásához.  
@@ -867,7 +868,7 @@ Az alábbiak letiltásával a veszélyes szkriptek ellen védekezhet:
 
 - **Folyamatlétrehozás a PSExec- és WMI-parancsokból**  
   **Alapértelmezett**: Nincs konfigurálva  
-  [Az őr dokumentációjának kiaknázása](https://go.microsoft.com/fwlink/?linkid=874500)  
+  Szabály [PSExec és WMI-parancsokból származó folyamatok létrehozásának letiltása](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-process-creations-originating-from-psexec-and-wmi-commands)  
 
   - **Nincs konfigurálva**  
   - A PSExec és a WMI-parancsokból származó folyamat-létrehozás **tiltása** .  
@@ -876,7 +877,7 @@ Az alábbiak letiltásával a veszélyes szkriptek ellen védekezhet:
 
 - **Nem megbízható és aláíratlan, USB-ről futó folyamatok**  
   **Alapértelmezett**: Nincs konfigurálva  
-  [Az őr dokumentációjának kiaknázása](https://go.microsoft.com/fwlink/?linkid=874502)    
+  Szabály [A nem megbízható és aláíratlan, USB-ről futó folyamatok blokkolása](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-untrusted-and-unsigned-processes-that-run-from-usb)    
 
   - **Nincs konfigurálva**  
   - A nem megbízható és aláíratlan, USB-ről futó **folyamatok blokkolása** .  
@@ -884,7 +885,7 @@ Az alábbiak letiltásával a veszélyes szkriptek ellen védekezhet:
   
 - **Az elterjedtségre, korra és megbízható listákra vonatkozó kritériumoknak nem megfelelő végrehajtható fájlok**  
   **Alapértelmezett**: Nincs konfigurálva  
-  [Az őr dokumentációjának kiaknázása](https://go.microsoft.com/fwlink/?linkid=874503)    
+  Szabály [A végrehajtható fájlok futtatásának letiltása, ha nem felelnek meg az előfordulási, az életkori vagy a megbízható lista feltételeinek](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-executable-files-from-running-unless-they-meet-a-prevalence-age-or-trusted-list-criterion)    
 
   - **Nincs konfigurálva**  
   - **Letiltja** a végrehajtható fájlok futtatását, kivéve, ha azok nem felelnek meg az előfordulási, az életkori vagy a megbízható lista feltételeinek.  
@@ -896,7 +897,7 @@ Az alábbiak letiltásával megakadályozhatja az e-mail-fenyegetéseket:
 
 - **Webes levelezés vagy az asztali levelezőprogramok e-mailjeiből eltávolított végrehajtható tartalom (például .exe, .dll, .ps, .js, és .vbs fájlok) futtatása (nincs kivétel)**  
   **Alapértelmezett**: Nincs konfigurálva  
-  [Az őr dokumentációjának kiaknázása](https://go.microsoft.com/fwlink/?linkid=872980)  
+  Szabály [Végrehajtható tartalom letiltása az e-mail-ügyfélprogramból és a webmailből](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-executable-content-from-email-client-and-webmail)  
 
   - **Nincs konfigurálva**  
   - Az e-mailből (webmail/mail-Client) eldobott végrehajtható tartalom **letiltása** (exe, dll, PS, js, vbs stb.).  
@@ -906,7 +907,7 @@ Az alábbiak letiltásával megakadályozhatja az e-mail-fenyegetéseket:
 
 - **Zsarolóprogramok elleni speciális védelem**  
   Alapértelmezett  Nincs konfigurálva  
-  [Az őr dokumentációjának kiaknázása](https://go.microsoft.com/fwlink/?linkid=874504)  
+  Szabály [Speciális védelem használata a ransomware-on](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#use-advanced-protection-against-ransomware)  
 
   - **Nincs konfigurálva**  
   - **Engedélyezés** – agresszív ransomware-védelem használata.  
@@ -922,17 +923,17 @@ Az alábbiak letiltásával megakadályozhatja az e-mail-fenyegetéseket:
 
 > [!IMPORTANT]  
 > A LOB Win32-alkalmazások megfelelő telepítésének és végrehajtásának engedélyezéséhez a kártevők elleni beállításoknak ki kell zárnia a következő könyvtárakat a vizsgálatból:  
-> **X64**-es ügyfélszámítógépeken:  
+> **X64-es ügyfélszámítógépeken**:  
 > *C:\Program Files (x86) \Microsoft Intune felügyeleti Extension\Content*  
 > *C:\windows\IMECache*  
 >  
-> **X86**-os ügyfélszámítógépeken:  
+> **X86-os ügyfélszámítógépeken**:  
 > *C:\Program Files\Microsoft Intune Management Extension\Content*  
 > *C:\windows\IMECache*  
 
 ### <a name="controlled-folder-access"></a>Mappahozzáférés felügyelete  
 
-Segít megvédeni a kártékony alkalmazásokból és fenyegetésekből származó [értékes adatok](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/controlled-folders-exploit-guard) , például a ransomware.  
+Segít megvédeni a kártékony alkalmazásokból és fenyegetésekből származó [értékes adatok](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/controlled-folders) , például a ransomware.  
 
 - **Mappák védelme**  
   **Alapértelmezett**: Nincs konfigurálva  
@@ -979,7 +980,7 @@ Letiltja a kimenő kapcsolatokat bármely alkalmazásból az IP-címekre vagy-ta
 - **XML feltöltése**  
   **Alapértelmezett**: *Nincs konfigurálva*  
 
-  Ha a védelem kiaknázásával védelmet kíván biztosítani az [eszközöknek a](/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection)biztonsági rések ellen, hozzon létre egy XML-fájlt, amely tartalmazza a kívánt rendszer-és alkalmazás-kockázatcsökkentő beállításokat. Az XML-fájl létrehozása két módszerrel lehetséges:  
+  Ha a védelem kiaknázásával védelmet kíván biztosítani az [eszközöknek a](https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection)biztonsági rések ellen, hozzon létre egy XML-fájlt, amely tartalmazza a kívánt rendszer-és alkalmazás-kockázatcsökkentő beállításokat. Az XML-fájl létrehozása két módszerrel lehetséges:  
 
   - *PowerShell* – a *Get-ProcessMitigation*, a *set-ProcessMitigation*és a *ConvertTo-ProcessMitigationPolicy* PowerShell-parancsmagok közül egyet vagy többet használhat. A parancsmagokkal konfigurálhatja a kockázatcsökkentési beállításokat, és exportálhatja ezek XML-reprezentációját.  
 
@@ -1029,7 +1030,7 @@ A Windows Defender Credential Guard a hitelesítő adatok ellopása ellen nyújt
 
   A hitelesítőadat-őr *engedélyezésekor* a következő szükséges szolgáltatások is engedélyezve vannak:  
   
-  - **Virtualizálás-alapú biztonság** VBS  
+  - **Virtualizálás-alapú biztonság** (vbs)  
     A következő újraindításkor bekapcsol. A virtualizálás-alapú biztonság a Windows hipervizorral nyújt támogatást biztonsági szolgáltatásokhoz.  
   - **Biztonságos rendszerindítás a címtár memóriájának elérésével**  
     Bekapcsolja a VBS-et a biztonságos rendszerindítási és a közvetlen memória-hozzáférés (DMA) elleni védelemmel. A DMA-védelemhez hardveres támogatás szükséges, és csak a megfelelően konfigurált eszközökön alkalmazható.  
@@ -1290,7 +1291,7 @@ Ezekkel a beállításokkal konfigurálhatja a Windows 10-eszközök helyi bizto
   LocalPoliciesSecurityOptions CSP: [InteractiveLogon_MachineInactivityLimit](https://go.microsoft.com/fwlink/?linkid=867891)  
 
 
-  Adja meg az interaktív asztal bejelentkezési képernyőjének maximálisan ennyi perc inaktivitását, amíg a képernyővédő el nem indul. (**0** - **99999**)  
+  Adja meg az interaktív asztal bejelentkezési képernyőjének maximálisan ennyi perc inaktivitását, amíg a képernyővédő el nem indul. (**0**@no__t – 1**99999**)  
 
 - **CTRL + ALT + DEL használatának megkövetelése a bejelentkezéshez**  
   **Alapértelmezett**: Nincs konfigurálva  
@@ -1332,8 +1333,8 @@ Ezekkel a beállításokkal konfigurálhatja a Windows 10-eszközök helyi bizto
   - **Engedélyezés** – a Felhasználónév elrejtése.  
   - **Nincs konfigurálva** – az utolsó felhasználónevet jeleníti meg.  
 
-- **Felhasználónév elrejtése a bejelentkezés**
-  **alapértelmezett értékeként**: Nincs konfigurálva  
+- **Felhasználónév elrejtése bejelentkezéskor**
+  **alapértelmezett**: Nincs konfigurálva  
   LocalPoliciesSecurityOptions CSP: [InteractiveLogon_DoNotDisplayUsernameAtSignIn](https://go.microsoft.com/fwlink/?linkid=867959)  
 
   

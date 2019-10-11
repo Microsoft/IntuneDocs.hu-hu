@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eee3d4187dd513cd3945e86aff478fe96b341660
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 52420375ae5ed88ab713a1da3e927e43e433db83
+ms.sourcegitcommit: 884654da8e72a63bfaea6b5def6c7891b065f251
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729503"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72163491"
 ---
 # <a name="microsoft-defender-advanced-threat-protection-baseline-settings-for-intune"></a>A Microsoft Defender komplex veszélyforrások elleni védelem alapkonfigurációjának beállításai az Intune-ban
 
@@ -29,7 +29,7 @@ Tekintse meg a Microsoft Defender komplex veszélyforrások elleni védelmet (ko
 
 A Microsoft Defender komplex veszélyforrások elleni védelem alapterve akkor érhető el, ha a környezet megfelel a [Microsoft Defender komplex veszélyforrások elleni védelem](advanced-threat-protection.md#prerequisites)használatának előfeltételeinek. 
 
-Ez az alapkonfiguráció fizikai eszközökre van optimalizálva, és jelenleg nem ajánlott virtuális gépeken (VM) vagy VDI-végpontokon használni. Bizonyos alapbeállítások befolyásolhatják a távoli interaktív munkameneteket a virtualizált környezetekben. További információ: a [Microsoft DEFENDER ATP biztonsági](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-machines-security-baseline) alapkonfigurációjának nagyobb megfelelősége a Windows dokumentációjában.
+Ez az alapkonfiguráció fizikai eszközökre van optimalizálva, és jelenleg nem ajánlott virtuális gépeken (VM) vagy VDI-végpontokon használni. Bizonyos alapbeállítások befolyásolhatják a távoli interaktív munkameneteket a virtualizált környezetekben. További információ: a [Microsoft DEFENDER ATP biztonsági alapkonfigurációjának nagyobb megfelelősége](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-machines-security-baseline) a Windows dokumentációjában.
 
 
 > [!NOTE]  
@@ -47,12 +47,12 @@ A Microsoft Edge használata közben a Microsoft Defender Application Guard véd
 
   **Alapértelmezett**: Igen
  
-  - **Külső tartalom a vállalati webhelyek** - *beállításai/BlockNonEnterpriseContent*  
+  - **Külső tartalom a vállalati webhelyeken** - *Beállítások/BlockNonEnterpriseContent*  
     Válassza az *Igen* lehetőséget a nem jóváhagyott webhelyekről származó tartalom betöltésének letiltásához. Ha a *nincs konfigurálva*értékre van állítva, a nem vállalati webhelyek megnyithatók az eszközön. 
  
     **Alapértelmezett**: Igen
 
-  - **Vágólap viselkedési** - *beállításai/ClipboardSettings*  
+  - A **vágólap viselkedése** - *Beállítások/ClipboardSettings*  
     Válassza ki, hogy mely másolási és beillesztési műveletek engedélyezettek a helyi számítógép és az Application Guard virtuális böngésző között.  A lehetőségek a következők:
     - *Nincs konfigurálva*  
     - A *both* -adatok nem vihetők át a számítógép és a virtuális böngésző között.  
@@ -86,7 +86,7 @@ További információ: [Policy CSP-SmartScreen](https://docs.microsoft.com/windo
 ## <a name="attack-surface-reduction"></a>Támadási felület csökkentése  
 
 - **Az Office-alkalmazások alárendelt folyamatának indítása**  
-  [Támadási felület csökkentési szabálya](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard#attack-surface-reduction-rules) –ha blokkolásra van beállítva, az Office-alkalmazások nem hozhatnak létre alárendelt folyamatokat. Az Office-alkalmazások közé tartozik a Word, az Excel, a PowerPoint, a OneNote és a hozzáférés. Egy alárendelt folyamat létrehozása tipikus kártevő-viselkedés, különösen olyan makró-alapú támadások esetén, amelyek az Office-alkalmazások használatával kísérlik meg a rosszindulatú végrehajtható fájlok indítását vagy letöltését.  
+  [Támadási felület csökkentési szabálya](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – ha *blokkolásra*van beállítva, az Office-alkalmazások nem hozhatnak létre alárendelt folyamatokat. Az Office-alkalmazások közé tartozik a Word, az Excel, a PowerPoint, a OneNote és a hozzáférés. Egy alárendelt folyamat létrehozása tipikus kártevő-viselkedés, különösen olyan makró-alapú támadások esetén, amelyek az Office-alkalmazások használatával kísérlik meg a rosszindulatú végrehajtható fájlok indítását vagy letöltését.  
 
   **Alapértelmezett**: Letiltás
 
@@ -96,12 +96,12 @@ További információ: [Policy CSP-SmartScreen](https://docs.microsoft.com/windo
   **Alapértelmezett**: Letiltás 
 
 - **Hitelesítő adatok ellopási típusának tiltása**  
-  Állítsa az *Engedélyezés* elemre a származtatott tartományi hitelesítő adatoknak [a hitelesítő adatokkal](https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard)való ellátásához. A Windows Defender hitelesítőadat-őr virtualizálás-alapú biztonságot használ a titkok elkülönítésére, így csak a rendszerjogosultságú rendszerszoftverek férhetnek hozzájuk. A titkos kódokhoz való illetéktelen hozzáférés a hitelesítési adatok ellopását okozó (például pass-the-hash vagy pass-the-ticket típusú) támadásokhoz vezethetnek. A Windows Defender hitelesítőadat-őr megakadályozza ezeket a támadásokat az NTLM jelszó-kivonatok, a Kerberos-jegyek és az alkalmazások tartományi hitelesítő adatokként tárolt hitelesítő adatainak védelmével.  
+  Állítsa az *Engedélyezés* [elemre a származtatott tartományi hitelesítő adatoknak a hitelesítő adatokkal](https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard)való ellátásához. A Windows Defender hitelesítőadat-őr virtualizálás-alapú biztonságot használ a titkok elkülönítésére, így csak a rendszerjogosultságú rendszerszoftverek férhetnek hozzájuk. A titkos kódokhoz való illetéktelen hozzáférés a hitelesítési adatok ellopását okozó (például pass-the-hash vagy pass-the-ticket típusú) támadásokhoz vezethetnek. A Windows Defender hitelesítőadat-őr megakadályozza ezeket a támadásokat az NTLM jelszó-kivonatok, a Kerberos-jegyek és az alkalmazások tartományi hitelesítő adatokként tárolt hitelesítő adatainak védelmével.  
 
   **Alapértelmezett**: Engedélyezés
 
 - **E-mail tartalom végrehajtásának típusa**  
-  [Támadási felület csökkentési szabálya](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard#attack-surface-reduction-rules) – ha a *blokkolás*értékre van állítva, ez a szabály blokkolja a következő fájltípusokat a Microsoft Outlookban vagy webmailben (például gmail.com vagy Outlook.com) látott e-mailből:  
+  [Támadási felület csökkentési szabálya](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – ha a *blokkolás*értékre van állítva, ez a szabály blokkolja a következő fájltípusokat a Microsoft Outlookban vagy webmailben (például gmail.com vagy Outlook.com) látott e-mailből:  
 
   - Végrehajtható fájlok (például. exe,. dll vagy. scr)  
   - Parancsfájlok (például PowerShell. ps, VisualBasic. vbs vagy JavaScript. js fájl)  
@@ -110,17 +110,17 @@ További információ: [Policy CSP-SmartScreen](https://docs.microsoft.com/windo
   **Alapértelmezett**: Letiltás
 
 - **Adobe Reader indítása alárendelt folyamatban**  
-  [Támadási felület csökkentési szabálya](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard#attack-surface-reduction-rules) – ennek a szabálynak az *engedélyezésével* letilthatja az Adobe Reader számára az alárendelt folyamat létrehozását. A közösségi mérnöki vagy biztonsági rések révén a kártevők további hasznos adatokat tölthetnek le és indíthatnak el, és kitörhetnek az Adobe Readerből.  
+  [Támadási felület csökkentési szabálya](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – ennek a szabálynak az *engedélyezésével* letilthatja az Adobe Reader számára az alárendelt folyamat létrehozását. A közösségi mérnöki vagy biztonsági rések révén a kártevők további hasznos adatokat tölthetnek le és indíthatnak el, és kitörhetnek az Adobe Readerből.  
 
   **Alapértelmezett**: Engedélyezés
 
 - **Parancsfájl által eltorzított kód típusa**  
-  [Támadási felület csökkentési szabálya](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard#attack-surface-reduction-rules) – a kártevők és egyéb fenyegetések megpróbálják eltorzítani vagy elrejteni a kártékony kódokat bizonyos parancsfájlokban. Ez a szabály akadályozza meg, hogy a rendszer ne futtasson olyan parancsfájlokat, amelyek nem futtathatók.  
+  [Támadási felület csökkentési szabálya](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – a kártevők és egyéb fenyegetések megpróbálják eltorzítani vagy elrejteni a kártékony kódokat bizonyos parancsfájlokban. Ez a szabály akadályozza meg, hogy a rendszer ne futtasson olyan parancsfájlokat, amelyek nem futtathatók.  
     
   **Alapértelmezett**: Letiltás
 
 - **Nem megbízható USB-folyamat típusa**  
-  [Támadási felület csökkentési szabálya](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard#attack-surface-reduction-rules) –ha a blokkolt, aláíratlan vagy nem megbízható végrehajtható fájlokat USB cserélhető meghajtókról és SD-kártyákból állítja be, nem futtatható.
+  [Támadási felület csökkentési szabálya](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – ha a *blokkolt*, aláíratlan vagy nem megbízható végrehajtható fájlokat USB cserélhető meghajtókról és SD-kártyákból állítja be, nem futtatható.
 
   A végrehajtható fájlok a következők:
   - Végrehajtható fájlok (például. exe,. dll vagy. scr)
@@ -129,22 +129,22 @@ További információ: [Policy CSP-SmartScreen](https://docs.microsoft.com/windo
   **Alapértelmezett**: Letiltás
 
 - **Office-alkalmazások egyéb folyamat-injektálási típusa**  
-  [Támadási felület csökkentési szabálya](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard#attack-surface-reduction-rules) –ha blokkolásra van beállítva, az Office-alkalmazások, például a Word, az Excel, a PowerPoint és a OneNote, nem adhatnak hozzá kódot más folyamatokhoz. A programkódot általában a kártevők használják arra, hogy rosszindulatú kódot futtassanak a tevékenységek víruskeresőből való elrejtésére tett kísérlet során.  
+  [Támadási felület csökkentési szabálya](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – ha *blokkolásra*van beállítva, az Office-alkalmazások, például a Word, az Excel, a PowerPoint és a OneNote, nem adhatnak hozzá kódot más folyamatokhoz. A programkódot általában a kártevők használják arra, hogy rosszindulatú kódot futtassanak a tevékenységek víruskeresőből való elrejtésére tett kísérlet során.  
 
   **Alapértelmezett**: Letiltás
 
 - **Office-makróvédelmi kód engedélyezése Win32 importálási típus**  
-  [Támadási felület csökkentési szabálya](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard#attack-surface-reduction-rules) – ha a *blokkolás*értékre van állítva, akkor ez a szabály megkísérli letiltani a Win32 DLL-eket importáló makrókat tartalmazó Office-fájlokat. Az Office-fájlok a következők: Word, Excel, PowerPoint és OneNote. A kártevők az Office-fájlokban lévő makróvírus használatával importálhatók és betölthetők a Win32 DLL-fájlok, amelyek ezután API-hívásokkal teszik lehetővé a további fertőzéseket a rendszeren.  
+  [Támadási felület csökkentési szabálya](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – ha a *blokkolás*értékre van állítva, akkor ez a szabály megkísérli letiltani a Win32 DLL-eket importáló makrókat tartalmazó Office-fájlokat. Az Office-fájlok a következők: Word, Excel, PowerPoint és OneNote. A kártevők az Office-fájlokban lévő makróvírus használatával importálhatók és betölthetők a Win32 DLL-fájlok, amelyek ezután API-hívásokkal teszik lehetővé a további fertőzéseket a rendszeren.  
 
   **Alapértelmezett**: Letiltás
 
 - **Office kommunikációs alkalmazások indítása alárendelt folyamatban**  
-  [Támadási felület csökkentési szabálya](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard#attack-surface-reduction-rules) – ha az *Engedélyezés*beállítás értéke, ez a szabály megakadályozza, hogy az Outlook alárendelt folyamatokat hozzon létre. Ha letiltja egy alárendelt folyamat létrehozását, ez a szabály védelmet biztosít a közösségi mérnöki támadásokkal szemben, és megakadályozza, hogy a programkód felhasználja a biztonsági rést az Outlookban.  
+  [Támadási felület csökkentési szabálya](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – ha az *Engedélyezés*beállítás értéke, ez a szabály megakadályozza, hogy az Outlook alárendelt folyamatokat hozzon létre. Ha letiltja egy alárendelt folyamat létrehozását, ez a szabály védelmet biztosít a közösségi mérnöki támadásokkal szemben, és megakadályozza, hogy a programkód felhasználja a biztonsági rést az Outlookban.  
 
   **Alapértelmezett**: Engedélyezés
 
 - **Office-alkalmazások végrehajtható tartalom létrehozási vagy indítási típusa**  
-  [Támadási felület csökkentési szabálya](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard#attack-surface-reduction-rules) –ha blokkolásra van beállítva, az Office-alkalmazások nem hozhatnak létre végrehajtható tartalmat. Az Office-alkalmazások közé tartozik a Word, az Excel, a PowerPoint, a OneNote és a hozzáférés.  
+  [Támadási felület csökkentési szabálya](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – ha *blokkolásra*van beállítva, az Office-alkalmazások nem hozhatnak létre végrehajtható tartalmat. Az Office-alkalmazások közé tartozik a Word, az Excel, a PowerPoint, a OneNote és a hozzáférés.  
 
   Ez a szabály a végrehajtható fájlokat létrehozó vagy indító gyanús és kártékony bővítmények és parancsfájlok (bővítmények) által használt jellemző viselkedéseket célozza meg. Ez egy tipikus kártevő-módszer. Az Office-alkalmazások nem használják a bővítményeket. Ezek a bővítmények általában a Windows Scripting Host (. wsh fájlok) használatával futtatnak bizonyos feladatokat automatizáló vagy felhasználó által létrehozott kiegészítő funkciókat biztosító parancsfájlokat.
 
@@ -209,13 +209,13 @@ További információ a [BitLocker csoportházirend beállítások](https://docs
 
   A lehetőségek a következők: 
   - *Alapértelmezett eszköz* – a bejelentkezés vagy a képernyő zárolásának feloldása után az eszközök a DMA újramegfeleltetésével kompatibilis illesztőprogramokat bármikor fel lehet sorolni. A nem kompatibilis illesztőprogramok DMA-újramegfeleltetésével rendelkező eszközök enumerálása csak azt követően történik meg, hogy a felhasználó feloldja a képernyőt.
-  - Minden, az összes külső DMA-kompatibilis PCIe eszköz enumerálása bármikor megtörténik
-  - A DMA-újramegfeleltetéssel kompatibilis illesztőprogramokat tartalmazó *összes* eszköz letiltását bármikor megadhatja. A nem kompatibilis illesztőprogramokat a DMA-újramegfeleltetéssel rendelkező eszközök soha nem fogják tudni elindítani és végrehajtani a DMA-t bármikor.
+  - *Minden,* az összes külső DMA-kompatibilis PCIe eszköz enumerálása bármikor megtörténik
+  - A DMA-újramegfeleltetéssel kompatibilis illesztőprogramokat tartalmazó *összes eszköz letiltását* bármikor megadhatja. A nem kompatibilis illesztőprogramokat a DMA-újramegfeleltetéssel rendelkező eszközök soha nem fogják tudni elindítani és végrehajtani a DMA-t bármikor.
 
   **Alapértelmezett**: Eszköz alapértelmezése
 
 - **Hardvereszközök telepítése eszköz-azonosítók alapján**  
-  [DeviceInstallation/PreventInstallationOfMatchingDeviceIDs](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-deviceinstallation#deviceinstallation-preventinstallationofmatchingdeviceids) – ezzel a szabályzattal megadhatja Plug and Play hardver-azonosítók és kompatibilis azonosítók listáját azon eszközök esetében, amelyeket a Windows megakadályoz a telepítésben. Ez a házirend-beállítás elsőbbséget élvez minden más olyan házirend-beállítással szemben, amely lehetővé teszi, hogy a Windows telepítsen egy eszközt. Ha engedélyezi ezt a házirend-beállítást (a *hardveres eszközök telepítésének*letiltására van beállítva), a Windows megakadályozza, hogy olyan eszközt telepítsen, amelynek hardver-azonosítója vagy kompatibilis azonosítója megjelenik a létrehozott listában. Ha engedélyezi ezt a házirend-beállítást egy távoli asztali kiszolgálón, a házirend a megadott eszközök távoli asztali ügyfélről a távoli asztali kiszolgálóra való átirányítását befolyásolja. Ha letiltja vagy nem konfigurálja ezt a házirend-beállítást (a *hardveres eszközök telepítésének engedélyezésére*van beállítva), az eszközök az engedélyezett módon telepíthetik és frissíthetik a beállításokat, vagy más házirend-beállítások is megtiltják azokat.  
+  [DeviceInstallation/PreventInstallationOfMatchingDeviceIDs](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-deviceinstallation#deviceinstallation-preventinstallationofmatchingdeviceids) – ezzel a szabályzattal megadhatja Plug and Play hardver-azonosítók és kompatibilis azonosítók listáját azon eszközök esetében, amelyeket a Windows megakadályoz a telepítésben. Ez a házirend-beállítás elsőbbséget élvez minden más olyan házirend-beállítással szemben, amely lehetővé teszi, hogy a Windows telepítsen egy eszközt. Ha engedélyezi ezt a házirend-beállítást (a *hardveres eszközök telepítésének letiltására*van beállítva), a Windows megakadályozza, hogy olyan eszközt telepítsen, amelynek hardver-azonosítója vagy kompatibilis azonosítója megjelenik a létrehozott listában. Ha engedélyezi ezt a házirend-beállítást egy távoli asztali kiszolgálón, a házirend a megadott eszközök távoli asztali ügyfélről a távoli asztali kiszolgálóra való átirányítását befolyásolja. Ha letiltja vagy nem konfigurálja ezt a házirend-beállítást (a *hardveres eszközök telepítésének engedélyezésére*van beállítva), az eszközök az engedélyezett módon telepíthetik és frissíthetik a beállításokat, vagy más házirend-beállítások is megtiltják azokat.  
 
   **Alapértelmezett**: Hardvereszköz telepítésének letiltása  
 
@@ -239,7 +239,7 @@ További információ a [BitLocker csoportházirend beállítások](https://docs
 
 
 - **Hardvereszközök telepítése telepítési osztályok szerint**  
-  [DeviceInstallation/AllowInstallationOfMatchingDeviceSetupClasses](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-deviceinstallation#deviceinstallation-allowinstallationofmatchingdevicesetupclasses) – ezzel a szabályzattal megadhatja az eszközök telepítési osztályának globálisan egyedi azonosítókat (GUID azonosítókat) tartalmazó listáját, amely megakadályozza a Windows telepítését. Ez a házirend-beállítás elsőbbséget élvez minden más olyan házirend-beállítással szemben, amely lehetővé teszi, hogy a Windows telepítsen egy eszközt. Ha engedélyezi ezt a házirend-beállítást (a *hardveres eszközök telepítésének*letiltására van beállítva), a Windows nem tudja telepíteni vagy frissíteni azokat az eszközillesztőket, amelyek az eszköz telepítési OSZTÁLYÁNAK GUID azonosítói megjelennek a létrehozott listában. Ha engedélyezi ezt a házirend-beállítást egy távoli asztali kiszolgálón, a házirend-beállítás a megadott eszközök távoli asztali ügyfélről a távoli asztali kiszolgálóra való átirányítását befolyásolja. Ha letiltja vagy nem konfigurálja ezt a házirend-beállítást (a *hardveres eszközök telepítésének engedélyezésére*van beállítva), a Windows telepítheti és frissítheti az eszközöket az engedélyezett módon, illetve megakadályozhatja más házirend-beállítások alapján.  
+  [DeviceInstallation/AllowInstallationOfMatchingDeviceSetupClasses](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-deviceinstallation#deviceinstallation-allowinstallationofmatchingdevicesetupclasses) – ezzel a szabályzattal megadhatja az eszközök telepítési osztályának globálisan egyedi azonosítókat (GUID azonosítókat) tartalmazó listáját, amely megakadályozza a Windows telepítését. Ez a házirend-beállítás elsőbbséget élvez minden más olyan házirend-beállítással szemben, amely lehetővé teszi, hogy a Windows telepítsen egy eszközt. Ha engedélyezi ezt a házirend-beállítást (a *hardveres eszközök telepítésének letiltására*van beállítva), a Windows nem tudja telepíteni vagy frissíteni azokat az eszközillesztőket, amelyek az eszköz telepítési OSZTÁLYÁNAK GUID azonosítói megjelennek a létrehozott listában. Ha engedélyezi ezt a házirend-beállítást egy távoli asztali kiszolgálón, a házirend-beállítás a megadott eszközök távoli asztali ügyfélről a távoli asztali kiszolgálóra való átirányítását befolyásolja. Ha letiltja vagy nem konfigurálja ezt a házirend-beállítást (a *hardveres eszközök telepítésének engedélyezésére*van beállítva), a Windows telepítheti és frissítheti az eszközöket az engedélyezett módon, illetve megakadályozhatja más házirend-beállítások alapján.  
 
   **Alapértelmezett**: Hardvereszköz telepítésének letiltása
 
@@ -258,13 +258,13 @@ További információ a [BitLocker csoportházirend beállítások](https://docs
 ## <a name="endpoint-detection-and-response"></a>Végpontok észlelése és válasza  
 További információ: [WINDOWSADVANCEDTHREATPROTECTION CSP](https://docs.microsoft.com/windows/client-management/mdm/windowsadvancedthreatprotection-csp) a Windows dokumentációjában.  
 
-- **Telemetria jelentéskészítés gyakoriságának** - *konfigurálása/TelemetryReportingFrequency*  
+- **Gyorsítsa fel a telemetria jelentéskészítési gyakoriságát** - *konfiguráció/TelemetryReportingFrequency*  
 
   A Microsoft Defender komplex veszélyforrások elleni védelem telemetria jelentéskészítési gyakoriságának gyorsítása.  
 
   **Alapértelmezett**: Igen
 
-- **Minta megosztása minden fájl** - *konfiguráció/SampleSharing*  
+- **Minta megosztása az összes fájlhoz** - *konfiguráció/SampleSharing*  
 
   Visszaadja vagy beállítja a Microsoft Defender komplex veszélyforrások elleni védelem minta-megosztási konfigurációs paraméterét.  
 
@@ -273,7 +273,7 @@ További információ: [WINDOWSADVANCEDTHREATPROTECTION CSP](https://docs.micros
 ## <a name="exploit-protection"></a>Védelem kiaknázása  
 
 - **Védelem XML-kódjának kiaknázása**  
-  További információkért lásd: a Windows dokumentációjának biztonsági réseket kihasználó [védelmi konfigurációk importálása, exportálása és üzembe helyezése](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/import-export-exploit-protection-emet-xml) .  
+  További információkért lásd: a Windows dokumentációjának biztonsági réseket [kihasználó védelmi konfigurációk importálása, exportálása és üzembe helyezése](/windows/security/threat-protection/microsoft-defender-atp/import-export-exploit-protection-emet-xml) .  
 
   Lehetővé teszi a rendszergazda számára egy olyan konfiguráció kiküldését, amely a kívánt rendszer-és alkalmazás-kockázatcsökkentő beállításokat jelképezi a szervezet összes eszközén. A konfigurációt egy XML-fájl jelképezi. 
 
@@ -393,7 +393,7 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
   [Defender/PUAProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-puaprotection) – a Windows Defender víruskereső képes azonosítani és letiltani a *vélhetően nemkívánatos alkalmazások* (PUAs) letöltését és telepítését a hálózatban lévő végpontokon. 
  
   - Ha a *blokk*értékre van állítva, a Windows Defender blokkolja a PUAs, és felsorolja azokat az előzményekben más fenyegetésekkel együtt.
-  - Ha naplózásravan beállítva, a Windows Defender észleli a PUAs, de nem blokkolja őket. A Windows Defender alkalmazással kapcsolatos információk megtalálhatók a Windows Defender által a Eseménynaplóban létrehozott események keresésekor.  
+  - Ha *naplózásra*van beállítva, a Windows Defender észleli a PUAs, de nem blokkolja őket. A Windows Defender alkalmazással kapcsolatos információk megtalálhatók a Windows Defender által a Eseménynaplóban létrehozott események keresésekor.  
   - Ha az *eszköz alapértelmezett*értékre van állítva, a Pua-védelem ki van kapcsolva.  
  
   **Alapértelmezett**: Letiltás
@@ -466,11 +466,11 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
 ## <a name="windows-defender-firewall"></a>Windows Defender-tűzfal
 További információ: [TŰZFAL CSP](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp) a Windows dokumentációjában.
 
-- **Biztonsági társítás tétlenségi ideje a törlés** - előtt*MdmStore/globális/SaIdleTime*   
+- **Biztonsági társítás üresjárati ideje törlés előtt** - *MdmStore/Global/SaIdleTime*   
   A biztonsági társítások akkor törlődnek, ha a hálózati forgalom nem látható az adott számú másodpercnél.  
   **Alapértelmezett**: 300
 
-- FileTransferProtocol - *MdmStore/Global/DisableStatefulFtp*   
+- **File Transfer Protocol** - *MdmStore/Global/DisableStatefulFtp*   
   Állapot-nyilvántartó File Transfer Protocol (FTP) blokkolása.  
   **Alapértelmezett**: Igen
 
@@ -478,7 +478,7 @@ További információ: [TŰZFAL CSP](https://docs.microsoft.com/windows/client-m
   Itt adhatja meg, hogy a fogadási oldalon lévő szoftver skálázása engedélyezve legyen-e az IPsec Tunnel Gateway-forgatókönyvhöz továbbított titkosított fogadás és tiszta szöveg esetében. Ez biztosítja, hogy a rendszer megőrzi a csomagok sorrendjét.  
   **Alapértelmezett**: Eszköz alapértelmezése
 
-- **Tűzfal-profil tartomány** - *FirewallRules/FirewallRuleName/profilok*  
+- **Tűzfal-profil tartománya** - *FirewallRules/FirewallRuleName/profilok*  
   Meghatározza azokat a profilokat, amelyekre a szabály tartozik: Tartomány, magán, nyilvános. Ez az érték a tartományokhoz csatlakozó hálózatok profilját jelöli.  
 
   Elérhető beállítások:  
@@ -506,7 +506,7 @@ További információ: [TŰZFAL CSP](https://docs.microsoft.com/windows/client-m
   - **A csoportházirend házirend-szabályai nem lettek egyesítve**  
     **Alapértelmezett**: Igen
 
-- **Tűzfal-profil nyilvános** - *FirewallRules/FirewallRuleName/profilok*  
+- **Tűzfal profil nyilvános**@no__t – 1*FirewallRules/FirewallRuleName/profilok*  
   Meghatározza azokat a profilokat, amelyekre a szabály tartozik: Tartomány, magán, nyilvános. Ez az érték a nyilvános hálózatok profilját jelöli. Ezek a hálózatok a kiszolgáló gazdagépének rendszergazdái. A besorolás akkor történik meg, amikor a gazdagép először csatlakozik a hálózathoz. Ezek a hálózatok általában olyan repülőtereken, kávézókban és más nyilvános helyeken találhatók, ahol a hálózat vagy a hálózat rendszergazdája nem megbízható.  
 
   Elérhető beállítások:
@@ -547,7 +547,7 @@ További információ: [TŰZFAL CSP](https://docs.microsoft.com/windows/client-m
   - **A csoportházirend házirend-szabályai nem lettek egyesítve**  
     **Alapértelmezett**: Igen  
 
-- **Tűzfal profil privát** - *FirewallRules/FirewallRuleName/profilok*  
+- **Tűzfal-profil private** - *FirewallRules/FirewallRuleName/Profiles*  
   Meghatározza azokat a profilokat, amelyekre a szabály tartozik: Tartomány, magán, nyilvános. Ez az érték a magánhálózatok profilját jelöli.  
 
   Elérhető beállítások: 
@@ -614,12 +614,12 @@ A vállalati Windows Hello egy alternatív módszer a Windowsba való bejelentke
 
   **Alapértelmezett**: Igen  
 
-- **Kisbetűk megkövetelése a PIN** - -*TenantId/-házirendekben/PINComplexity/LowercaseLetters*  
+- **Kisbetűk megkövetelése a PIN**-kódban  - *TenantId/policies/PINComplexity/LowercaseLetters*  
   **Alapértelmezett**: Engedélyezett  
 
-- **Speciális karakterek megkövetelése a PIN** - -*TenantId/házirendek/PINComplexity/SpecialCharacters*  
+- **Speciális karakterek megkövetelése a PIN**-kódban  - *TenantId/policies/PINComplexity/SpecialCharacters*  
   **Alapértelmezett**: Engedélyezett  
 
-- **Nagybetűk megkövetelése a PIN** - -*TenantId/-házirendekben/PINComplexity/UppercaseLetters*   
+- Nagybetűk **megkövetelése a PIN**-kódban  - *TenantId/policies/PINComplexity/UppercaseLetters*   
   **Alapértelmezett**: Engedélyezett  
 

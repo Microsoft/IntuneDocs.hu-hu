@@ -43,18 +43,20 @@
               href: store-apps-ios.md
             - name: Windows Phone 8.1-es áruházbeli alkalmazások
               href: store-apps-windows-phone-8-1.md
-            - name: Microsoft Áruházbeli alkalmazások
-              items:
-                - name: Windows-alkalmazás
-                  href: store-apps-windows.md
-                - name: Vállalati portál alkalmazás
-                  href: store-apps-company-portal-app.md
+            - name: Windows-alkalmazás
+              href: store-apps-windows.md
+            - name: Vállalati Microsoft Áruházbeli alkalmazások
+              href: windows-store-for-business.md
             - name: Felügyelt Google Play-alkalmazások
               href: apps-add-android-for-work.md
+        - name: Office 365 csomag
+          items:
             - name: Windows 10-es Office 365-alkalmazások
               href: apps-add-office365.md
             - name: macOS-es Office 365-alkalmazások
               href: apps-add-office365-macos.md
+        - name: A Vállalati Android rendszeralkalmazásai
+          href: apps-ae-system.md
         - name: Webalkalmazások
           href: web-app.md
           displayName: web; web link; weblink; web-link
@@ -74,10 +76,12 @@
               href: app-sideload-windows.md
             - name: macOS-es üzletági alkalmazások
               href: lob-apps-macos.md
-        - name: A Vállalati Android rendszeralkalmazásai
-          href: apps-ae-system.md
-        - name: Win32-alkalmazások kezelése
-          href: apps-win32-app-management.md
+            - name: Win32-alkalmazások kezelése
+              href: apps-win32-app-management.md
+        - name: Meghatározott alkalmazások hozzáadása
+          items:
+            - name: Vállalati portál alkalmazás
+              href: store-apps-company-portal-app.md
         - name: PowerShell-parancsprogramok
           href: intune-management-extension.md
     - name: Alkalmazások hozzárendelése

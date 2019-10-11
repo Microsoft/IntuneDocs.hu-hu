@@ -18,12 +18,12 @@ ms.reviewer: ''
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 24e597d6dbfbfe399422c3e1679f675c9525abcd
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 8048b29bdd456f9db8bb3d01e84bad5899e0b9a6
+ms.sourcegitcommit: 884654da8e72a63bfaea6b5def6c7891b065f251
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71720982"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72163567"
 ---
 # <a name="get-a-recovery-key-for-a-macos-device"></a>A macOS-eszköz helyreállítási kulcsának beolvasása
 
@@ -33,7 +33,7 @@ Ez a beállítás csak olyan eszközök esetében érhető el, amelyeket a szerv
 
 1. Bármely eszközön jelentkezzen be a [céges portál webhelyére](https://portal.manage.microsoft.com) , és válassza a menü gomb > **eszközök** **menüpontot** .  
 2. Válassza ki a titkosított macOS-eszközt.  
-3. Válassza a **helyreállítási kulcs**beolvasása elemet.  
+3. Válassza a **helyreállítási kulcs beolvasása**elemet.  
 
     ![Képernyőkép a Céges portál webhelyéről, kiemelve a helyreállítási kulcs beolvasása szakaszt.](./media/1907-recovery2-cpweb-intune.PNG)  
 
@@ -47,7 +47,7 @@ Ha a kulcs nem található, de az eszköz megfelelően titkosított, forduljon a
 
 ## <a name="it-pro-support"></a>IT Pro-támogatás
 
-Ha informatikai támogató személy, és a macOS-eszközök FileVault-titkosítását szeretné konfigurálni és felügyelni, tekintse meg az [eszközök titkosításának használata az Intune](https://docs.microsoft.com/intune/protect/encrypt-devices.md)-nal című témakört.
+Ha informatikai támogató személy, és a macOS-eszközök FileVault-titkosítását szeretné konfigurálni és felügyelni, tekintse meg az [eszközök titkosításának használata az Intune](/intune/protect/encrypt-devices)-nal című témakört.
 
 ## <a name="next-steps"></a>További lépések
 
