@@ -127,6 +127,8 @@
               href: manage-microsoft-edge.md
             - name: Az Outlook konfigurálása
               href: app-configuration-policies-outlook.md
+            - name: A Google Chrome konfigurálása Androidhoz
+              href: apps-configure-chrome-android.md
         - name: Mennyiségi licencszerződés keretében vásárolt alkalmazások és könyvek
           items:
             - name: VPP-alkalmazások kezelése és könyvek
