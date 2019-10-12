@@ -1,31 +1,31 @@
 ---
-ms.openlocfilehash: f42baa1ca6e3ac6dca3c95a0eb9e422df2506031
-ms.sourcegitcommit: 3f0cc80c5dbb4d04519c5aa98eae8426dad8cb30
+ms.openlocfilehash: b8878ade48fb9d186df9ba27edfc9eb9a19be6a6
+ms.sourcegitcommit: f1bd3b866f3ba62a562d88fdae07eef64ac11cbb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "71729215"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72272981"
 ---
 ### <a name="apple"></a>Apple
-- Apple iOS 9.0 vagy újabb verziók
-- Mac OS X 10.9 és újabb verziók
+- Apple iOS és iPadOS 9,0 és újabb verziók
+- Mac OS X 10,9 és újabb verziók
 
 ### <a name="windows"></a>Windows
-- Windows 10 (Home, Pro, Education és Enterprise) operációs rendszerű számítógépek
-- Windows 10 mobil verzió
-- Windows 10 IoT Enterprise rendszerű eszközök (x86, x64)
-- Windows 10 IoT Enterprise Mobile rendszerű eszközök
-- Windows Holographic &amp; Windows Holographic Enterprise
-- Windows Phone 8.1, Windows 8.1 RT és Windows 8.1-et futtató PC-k (fenntartási módban)
+- Windows 10 rendszerű számítógépek (Home, Pro, Education és Enterprise verziók)
+- Windows 10 Mobile
+- Windows 10 IoT Enterprise rendszert futtató eszközök (x86, x64)
+- Windows 10 IoT Mobile Enterprise rendszert futtató eszközök
+- Windows holografikus &amp; Windows holografikus vállalat
+- Windows Phone-telefon 8,1, Windows 8,1 RT és Windows 8,1 rendszert futtató számítógépek (fenntartási mód)
 
-  Az Enterprise Mobility + Security (EMS) csomaggal rendelkező ügyfelek az [Azure Active Directory (AAD) használatával is regisztrálhatják Windows 10 rendszerű eszközeiket](/intune-classic/deploy-use/set-up-windows-device-management-with-microsoft-intune#azure-active-directory-enrollment).
+  Az Enterprise Management + Security (EMS) csomaggal rendelkező ügyfelek [a Azure Active Directory (HRE) használatával regisztrálhatják a Windows 10-es eszközöket](/intune-classic/deploy-use/set-up-windows-device-management-with-microsoft-intune#azure-active-directory-enrollment).
 
-  Az [Intune szoftveres ügyfele](/intune-classic/deploy-use/manage-windows-pcs-with-microsoft-intune) segítségével a Windows 7 és újabb rendszerű számítógépeket is felügyelheti (kivéve a Windows 10 Home verziót).
+  Windows 7 és újabb rendszerű számítógépek, a Windows 10 Home Edition kivételével, az Intune- [ügyfélszoftverrel](/intune-classic/deploy-use/manage-windows-pcs-with-microsoft-intune)is kezelhetők.
 
 ### <a name="google"></a>Google
-- Google Android 4.0 és újabb verziók (beleértve a Samsung KNOX Standard 4.0-s és újabb verzióit is)*
+- Google Android 4,0 és újabb verziók (beleértve a Samsung KNOX standard 4,0-es és újabb verzióit is) *
 - Google Android for Work ([követelmények](https://support.google.com/work/android/answer/6174145?hl=en&ref_topic=6151012 style="target=new_window"))
 
-\* A Samsung Galaxy Ace-telefon következő modelljeit nem lehet Samsung KNOX standard-eszközként kezelni az Intune-ban: SM-G313HU, SM-G313HY, SM-G313M, SM-G313MY és SM-G313U. Ezeket az eszközöket a rendszer szabványos Android-eszközökként kezeli. További tájékoztatást a [Samsung KNOX](https://www.samsungknox.com/en) webhelyén talál.
+\* A Samsung Galaxy Ace-telefonok következő modelljeit az Intune nem tudja Samsung KNOX standard-eszközként kezelni: SM-G313HU, SM-G313HY, SM-G313M, SM-G313MY és SM-G313U. Ezeket az eszközöket szabványos Android-eszközökként kezeli a rendszer. További információt a [Samsung Knox webhelyén](https://www.samsungknox.com/en)talál.
 
-Az eszközök és a felügyeleti metódusok teljes listája [Az Intune által támogatott eszközök](/intune/supported-devices-browsers#intune-supported-devices) című cikkben található.
+Az eszközök és a felügyeleti módszerek teljes listáját lásd: az [Intune által támogatott eszközök](/intune/supported-devices-browsers#intune-supported-devices).
