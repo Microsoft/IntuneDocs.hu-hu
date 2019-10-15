@@ -1,6 +1,6 @@
 ---
 title: A Microsoft Intune eszköz-felügyeleti képességei
-description: Ebből a témakörből megtudhatja, hogyan segíthet az Intune kezelni az Ön által regisztrált mobileszközöket.
+description: Ebből a témakörből megtudhatja, hogyan segíthet az Intune a regisztrált eszközök kezelésében.
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
@@ -17,56 +17,57 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1bac049aebfb0fec6c9d86e1e08e81237867175d
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: bf862e59e135a875f5f18af731c581f3e5ea89d5
+ms.sourcegitcommit: dd6755383ba89824d1cc128698a65fde6bb2de55
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729931"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72306615"
 ---
-# <a name="enrolled-device-management-capabilities-of-microsoft-intune"></a>A Microsoft Intune regisztrált eszközök kezelésével kapcsolatos képességei
+# <a name="enrolled-device-management-capabilities-of-microsoft-intune"></a>A Microsoft Intune regisztrált eszközök felügyeleti képességei
 
-A Microsoft Intune segítségével sokféle eszközt kezelhet úgy, hogy *regisztrálja* őket a szolgáltatásban. Egyes eszköztípusokat regisztrálhat saját maga, vagy regisztrálhatják a felhasználók a *Vállalati portál* alkalmazással. A regisztráció lehetővé teszi az alkalmazások tallózását és telepítését, gondoskodjon arról, hogy az eszközök megfeleljenek a vállalati házirendeknek, és kapcsolatba lépjenek az informatikai támogatási szolgálattal.
+A Microsoft Intune lehetővé teszi, hogy a szolgáltatásba való *regisztrálással* különböző eszközöket kezeljen. Regisztrálhat bizonyos típusú eszközöket, vagy a felhasználók regisztrálhatnak a *Vállalati portál* alkalmazással. A regisztráció lehetővé teszi az alkalmazások tallózását és telepítését, gondoskodjon arról, hogy az eszközök megfeleljenek a vállalati házirendeknek, és kapcsolatba lépjenek az informatikai támogatási szolgálattal.
 
 Ez a cikk az eszközök regisztrálását követően kapott funkciók teljes listáját tartalmazza.
 
 A felügyeletet, a leltárt, az alkalmazások telepítését, a kiépítést és a kivonást egyaránt az Intune-ban kezeli a Azure Portal.
 
-A felhasználók hozzáférést kapnak a vállalati portálhoz, és ennek segítségével alkalmazásokat telepíthetnek, eszközöket regisztrálhatnak vagy távolíthatnak el, és segítségért az informatikai osztályhoz vagy a segélyszolgálathoz fordulhatnak.
+A felhasználók hozzáférést kapnak a vállalati portálhoz, amely lehetővé teszi az alkalmazások telepítését, az eszközök regisztrálását és eltávolítását, valamint az informatikai részleg vagy a segélyszolgálat elérhetőségét.
 
 
 
-## <a name="device-security-and-configuration"></a>Eszközvédelem és -beállítás
+## <a name="device-security-and-configuration"></a>Eszköz biztonsága és konfigurációja
 
-|Képesség|Részletek|További információ|
+|Szolgáltatás|Részletek|További információ|
 |--------------|-----------|--------------------|
-|Konfigurációs szabályzatok<br><br>Egyéni házirendek| Lehetővé teszi számos beállítás és funkció kezelését a szervezethez tartozó mobileszközökön. Például megkövetelheti jelszó használatát, korlátozhatja a sikertelen bejelentkezési kísérletek számát, megadhatja, hogy a képernyő hány perc után zárolódjon, beállíthatja a jelszó lejárati idejét, és letilthatja a korábban használt jelszavak ismételt használatát. Szabályozhatja továbbá a hardveres és szoftveres funkcióknak (például az eszköz kamerájának és a webböngészőnek) a használatát.<br><br>Egyéni szabályzatok használata, ha a konfigurációs házirendek nem tartalmazzák a szükséges beállításokat. iOS-eszközök esetén importálhatja az Apple Configurator eszközből exportált beállításokat. Más eszközök esetében az Open Mobile Alliance Uniform Resource Identifier (OMA-URI) beállítások segítségével konfigurálhatja a beállításokat és a szolgáltatásokat az eszközön.|[Az eszközök beállításainak és funkcióinak kezelése a Microsoft Intune-szabályzatok használatával](../protect/device-compliance-get-started.md)|
-|Távoli törlés, távoli zárolás és PIN-kód alaphelyzetbe állítása|Az eszköz elvesztése vagy eltulajdonítása esetén törli a bizalmas adatokat. Távolról zárolhatja például az eszközt, visszaállíthatja a gyári beállításokat vagy törölheti csak a vállalati adatokat.<br><br>Ha a felhasználók nem tudnak hozzáférni egy eszközhöz, alaphelyzetbe állíthatja a PIN-kódokat, zárolhatja az eltűnt vagy ellopott eszközöket, vagy törölhet róluk minden adatot.|Az eszközök védelmének biztosítása [távoli zárolás](../remote-actions/device-remote-lock.md) és [PIN-kód alaphelyzetbe állítása](../remote-actions/device-passcode-reset.md) révén|
-|Teljes képernyős mód|Lehetővé teszi a mobileszközök bizonyos funkciói, például a képernyőfelvétel-készítés és a kikapcsolás zárolását. Emellett az eszközt egyetlen meghatározott alkalmazás futtatására korlátozhatja. |[iOS-eszközök konfigurációs házirendjének beállításai a Microsoft Intune-ban](../configuration/device-restrictions-ios.md)|
+|Konfigurációs szabályzatok<br><br>Egyéni szabályzatok| Lehetővé teszi a szervezeten belüli mobileszközök számos beállításának és funkciójának kezelését. Megkövetelheti például a jelszót, korlátozhatja a sikertelen próbálkozások számát, korlátozhatja a képernyő zárolása előtti időt, a jelszó lejáratát, és megakadályozhatja a korábban használt jelszavakat. A hardveres és szoftveres funkciók, például az eszköz kamera vagy a webböngésző használatát is szabályozhatja.<br><br>Egyéni szabályzatok használata, ha a konfigurációs házirendek nem tartalmazzák a szükséges beállításokat. IOS-eszközök esetén importálhatja az Apple konfigurátor eszközből exportált beállításokat. Más eszközök esetében az Open Mobile Alliance Uniform Resource Identifier (OMA-URI) beállítások segítségével konfigurálhatja az eszköz beállításait és funkcióit.|[Az eszközök beállításainak és funkcióinak kezelése Microsoft Intune házirenddel](../protect/device-compliance-get-started.md)|
+|Távoli törlés, távoli zárolás és PIN-kód alaphelyzetbe állítása|Bizalmas adatokat töröl az eszköz elvesztésekor vagy ellopásakor. Például távolról zárolhatja az eszközt, visszaállíthatja a gyári beállításokat, vagy törölheti csak a vállalati adatokból.<br><br>Alaphelyzetbe állíthatja a PIN-kódokat, ha a felhasználók elvesztik a hozzáférést az eszközhöz, zárolják az eltűnt vagy ellopott eszközöket, vagy törölhetik az adatokból a hiányzó vagy ellopott eszközökről.|Az eszközök védelmének biztosítása [távoli zárolás](../remote-actions/device-remote-lock.md) és [PIN-kód alaphelyzetbe állítása](../remote-actions/device-passcode-reset.md) révén|
+|Teljes képernyős mód|Lehetővé teszi a mobileszközök bizonyos funkcióinak, például a képernyőfelvételek és a Power switchek zárolását. Azt is lehetővé teszi, hogy az eszközök egyetlen megadott alkalmazás futtatására legyenek korlátozva. |[az iOS-es konfigurációs házirend beállításai a Microsoft Intune](../configuration/device-restrictions-ios.md)|
+|Autopilot alaphelyzetbe állítása|Feladatot küld az eszköznek, hogy távolról elindítsa az alaphelyzetbe állítási folyamatot, elkerülve annak szükségességét, hogy az informatikai munkatársak vagy más rendszergazdák felkeressék az egyes gépeket a folyamat elindításához. Ha az Autopilot alaphelyzetbe állítását egy eszközön használja, az eszköz elsődleges felhasználója el lesz távolítva. A következő felhasználó, aki az Alaphelyzetbe állítás után bejelentkezik, elsődleges felhasználóként lesz beállítva.|[Távoli Windows Autopilot alaphelyzetbe állítása](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-autopilot-reset#reset-devices-with-remote-windows-autopilot-reset)|
 
-## <a name="app-management"></a>Alkalmazáskezelés
+## <a name="app-management"></a>Alkalmazások kezelése
 
-|Képesség|Részletek|További információ|
+|Szolgáltatás|Részletek|További információ|
 |--------------|-----------|--------------------|
-|Alkalmazások telepítése és kezelése|Számos eszközt kínál, amelyek segítségével kezelheti a mobilalkalmazásokat teljes életciklusukon keresztül, beleértve a telepítési fájlokból és alkalmazás-áruházakból történő telepítést, az alkalmazás állapotának részletes megfigyelését, valamint az alkalmazás eltávolítását.|[Alkalmazások telepítése a Microsoft Intune-ban](../apps/apps-deploy.md)|
-|Megfelelő és nem megfelelő alkalmazások|Lehetővé teszi a szabályzatnak megfelelő (így a felhasználók által telepíthető) és nem megfelelő (így a felhasználók által nem telepíthető) alkalmazások listájának megadását.|[iOS-szabályzatbeállítások a Microsoft Intune-ban](../configuration/device-restrictions-ios.md)|
-|Mobilalkalmazás-kezelés|A mobilalkalmazás-felügyelet révén korlátozásokat konfigurálhat az alkalmazásokra vonatkozóan az Intune-nal kezelt eszközökre és a nem az Intune-nal kezelt eszközökre egyaránt. A vállalati adatok biztonságát a műveletek, például a másolás és beillesztés, az adatok külső biztonsági mentése és az alkalmazások közötti adatátvitel korlátozásával növelheti.|[Mobilalkalmazás-kezelési házirendek konfigurálása és telepítése a Microsoft Intune-konzolon](../developer/app-wrapper-prepare-android.md)|
-|iOS-mobilalkalmazás konfigurálása|A mobilalkalmazás-konfigurációs szabályzatokkal automatikusan megadhatja azokat a beállításokat, amelyekre szükség lehet, amikor egy felhasználó egy iOS-alkalmazást futtat. Előfordulhat például, hogy az alkalmazás portszám vagy bejelentkezési beállítások megadását kéri a felhasználótól. Egyszerűsítheti az alkalmazások konfigurációját, és csökkentheti a támogatási hívások számát.|[iOS-alkalmazások konfigurálása mobilalkalmazás-konfigurációs házirendek segítségével a Microsoft Intune-ban](../apps/app-configuration-policies-use-ios.md)|
-|iOS-mobilalkalmazás létesítési profiljai|Segít létesítési profilokat telepíteni a lejárathoz közelítő iOS-alkalmazásokhoz. |[Az iOS-mobileszközös létesítésiprofil-szabályzatok segítségével megakadályozhatja, hogy az alkalmazásai lejárjanak](../apps/app-provisioning-profile-ios.md)|
-|Felügyelt böngésző|Konfigurálja a felügyeltböngésző-szabályzatokat, amelyekkel szabályozható, hogy az eszköz felhasználói mely webhelyeket látogathatják meg. Emellett mobilalkalmazás-kezelési házirendeket is alkalmazhat a felügyelt böngészőre.|[Az internet-hozzáférés felügyelt böngészőszabályzatokkal való kezelése a Microsoft Intune-ban](../apps/app-configuration-managed-browser.md)|
-|Vállalati Windows Hello|Lehetővé teszi az integrációt a Vállalati Windows Hello nevű, a Windows 10-ben használható alternatív bejelentkezési módszerrel. Ez a helyi Active Directoryt vagy az Azure Active Directoryt használja jelszavak, intelligens kártyák vagy virtuális intelligens kártyák helyett.|[A Vállalati Windows Hello beállításainak szabályozása az eszközökön a Microsoft Intune-nal](../protect/windows-hello.md)|
-|Mennyiségi licencszerződés keretében vásárolt alkalmazások|Segít a mennyiségi licencszerződés keretében vásárolt alkalmazások felügyeletében. Ehhez importálja a licencadatokat az App Store áruházból, figyelemmel kíséri, hogy hány licencet használt fel, és meggátolja, hogy több alkalmazáspéldányt telepítsen, mint amennyit vásárolt.|[Mennyiségi programban vásárolt alkalmazások felügyelete a Microsoft Intune-nal](../apps/vpp-apps.md)|
+|Alkalmazások központi telepítése és kezelése|Számos eszközt biztosít a mobileszközök életcikluson keresztüli kezeléséhez, beleértve a telepítési fájlokból és az alkalmazás-áruházakból származó alkalmazások telepítését, az alkalmazások állapotának részletes figyelését és az alkalmazások eltávolítását.|[Alkalmazások telepítése Microsoft Intune](../apps/apps-deploy.md)|
+|Megfelelő és nem megfelelő alkalmazások|Lehetővé teszi, hogy megadhatja a megfelelő alkalmazások (a felhasználók által telepíthető) és a nem megfelelő alkalmazások (a felhasználók által nem telepíthető) listáját.|[iOS-szabályzat beállításai a Microsoft Intune](../configuration/device-restrictions-ios.md)|
+|Mobile Application Management|Az alkalmazásokra vonatkozó korlátozásokat az Intune-nal felügyelt és az Intune-nal nem felügyelt összes eszközön a mobileszköz-felügyelet használatával konfigurálja. A vállalati adatok biztonságát a műveletek, például a másolás és beillesztés, az adatok külső biztonsági mentése és az alkalmazások közötti adatátvitel korlátozásával növelheti.|[A mobileszköz-kezelési házirendek konfigurálása és telepítése a Microsoft Intune-konzolon](../developer/app-wrapper-prepare-android.md)|
+|iOS-alapú Mobile App-konfiguráció|A a Mobile App konfigurációs házirendjeivel adja meg az iOS-alkalmazások beállításait, amelyekre szükség lehet, amikor a felhasználó futtatja az alkalmazást. Előfordulhat például, hogy egy alkalmazás portszám vagy bejelentkezési adatok megadását kéri a felhasználótól. Egyszerűsítheti az alkalmazások konfigurációját, és csökkentheti a támogatási hívások számát.|[IOS-alkalmazások konfigurálása a Mobile App konfigurációs házirendjeivel Microsoft Intune](../apps/app-configuration-policies-use-ios.md)|
+|iOS Mobile App kiépítési profilok|Segítséget nyújt a kiépítési profilok üzembe helyezéséhez a közeljövőben lejáró iOS-alkalmazásokhoz. |[IOS Mobile-alapú kiépítési profilok használata az alkalmazások lejáratának megakadályozása érdekében](../apps/app-provisioning-profile-ios.md)|
+|Felügyelt böngésző|A Managed Browser-szabályzatok konfigurálásával szabályozhatja azokat a webhelyeket, amelyeket az eszköz felhasználói megkereshetnek. Emellett a felügyelt böngészőre is alkalmazhat Mobile Application Management-házirendeket.|[Internet-hozzáférés kezelése Managed Browser-szabályzatokkal a Microsoft Intune használatával](../apps/app-configuration-managed-browser.md)|
+|Vállalati Windows Hello|Lehetővé teszi az integrációt a Windows Hello for Business szolgáltatással, amely egy alternatív bejelentkezési módszer a Windows 10 rendszerhez, amely helyszíni Active Directory vagy Azure Active Directory használ a jelszavak, intelligens kártyák vagy virtuális intelligens kártyák helyett.|[A vállalati Windows Hello beállításainak szabályozása az eszközökön Microsoft Intune](../protect/windows-hello.md)|
+|Mennyiségi licencszerződés keretében vásárolt alkalmazások|Segít a mennyiségi vásárlási program keretében vásárolt alkalmazások kezelésében. Ehhez importálja a licenceket az App Store áruházból, nyomon követi, hogy hány licencet használt fel, és meggátolja, hogy több példányt telepítsen az alkalmazásból, mint amennyit a tulajdonosa.|[Mennyiségi programban vásárolt alkalmazások felügyelete Microsoft Intune használatával](../apps/vpp-apps.md)|
 
-## <a name="company-resource-access"></a>Vállalati erőforrások elérése
+## <a name="company-resource-access"></a>Vállalati erőforrás-hozzáférés
 
-|Képesség|Részletek|További információ|
+|Szolgáltatás|Részletek|További információ|
 |--------------|-----------|--------------------|
-|Tanúsítványprofilok|Létrehozhat és telepíthet megbízhatótanúsítvány-profilokat és egyszerű tanúsítványigénylési protokollon (SCEP) alapuló tanúsítványokat, amelyek segítségével biztonságossá teheti és hitelesítheti a Wi-Fi-, VPN- és e-mail-profilokat.|[Az erőforrások biztonságos elérése a Microsoft Intune tanúsítványprofiljai segítségével](../protect/certificates-configure.md)|
-|Wi-Fi profilok|Vezeték nélküli hálózati beállításokat léptethet érvénybe a felhasználók számára. E beállítások érvénybe léptetésével csökkentheti a vállalati hálózat eléréséhez szükséges felhasználói beavatkozást.|[Wi-Fi-kapcsolatok a Microsoft Intune-ban](../configuration/wi-fi-settings-configure.md)|
-|E-mail profilok|E-mail-beállításokat hoz létre és helyez üzembe az eszközökön, így a felhasználók a saját eszközein anélkül érhetik el a vállalati e-maileket, hogy azok megadják a szükséges beállításokat|[Vállalati levelezéshez való hozzáférés konfigurálása e-mail profilokkal a Microsoft Intune-ban](../configuration/email-settings-configure.md)|
-|VPN-profilok|VPN-beállításokat léptethet érvénybe a szervezethez tartozó felhasználók és eszközök számára. A beállítások központi telepítésével csökkentheti a vállalati hálózatban lévő erőforrások eléréséhez szükséges felhasználói beavatkozást.|[VPN-kapcsolatok a Microsoft Intune-ban](../configuration/device-profiles.md#vpn)|
-|Feltételes hozzáférési szabályzatok|A Microsoft Exchange-levelezéshez és a SharePoint Online-hoz való hozzáférés felügyelete a nem az Intune által felügyelt eszközökön.|[Az e-mailek és a SharePoint elérésének korlátozása a Microsoft Intune használatával](../protect/app-based-conditional-access-intune.md)|
+|Tanúsítvány-profilok|Megbízható tanúsítvány-és Egyszerű tanúsítványigénylési protokoll-(SCEP-) tanúsítványokat hoz létre és telepít, amelyek segítségével biztonságossá teheti és hitelesítheti a Wi-Fi-, VPN-és e-mail-profilokat.|[Az erőforrások biztonságos elérése a Microsoft Intune tanúsítványprofiljai segítségével](../protect/certificates-configure.md)|
+|Wi-Fi profilok|A vezeték nélküli hálózati beállításokat telepíti a felhasználók számára. Ezeknek a beállításoknak a központi telepítésével minimálisra csökkenthető a vállalati hálózathoz való kapcsolódáshoz szükséges felhasználói erőfeszítés.|[Wi-Fi-kapcsolatok a Microsoft Intune-ban](../configuration/wi-fi-settings-configure.md)|
+|E-mail profilok|E-mail-beállításokat hoz létre és helyez üzembe az eszközökön, így a felhasználók a saját eszközein anélkül érhetik el a vállalati e-maileket, hogy azok megadják a szükséges beállításokat|[Vállalati levelezéshez való hozzáférés konfigurálása e-mail-profilokkal a Microsoft Intune-ban](../configuration/email-settings-configure.md)|
+|VPN-profilok|VPN-beállításokat helyez üzembe a szervezet felhasználói és eszközei számára. Ezeknek a beállításoknak a központi telepítésével minimálisra csökkenthető a vállalati hálózaton lévő erőforrásokhoz való kapcsolódáshoz szükséges felhasználói erőfeszítés.|[VPN-kapcsolatok a Microsoft Intune-ban](../configuration/device-profiles.md#vpn)|
+|Feltételes hozzáférési szabályzatok|A a Microsoft Exchange e-mailekhez és a SharePoint Online-hoz való hozzáférést a nem az Intune által felügyelt eszközökön kezeli.|[Az e-mailek és a SharePoint elérésének korlátozása Microsoft Intune](../protect/app-based-conditional-access-intune.md)|
 
-## <a name="next-steps"></a>További lépések
+## <a name="next-steps"></a>Következő lépések
 
 [Tekintse meg a felügyelhető eszközök listáját](../remote-actions/device-management.md).

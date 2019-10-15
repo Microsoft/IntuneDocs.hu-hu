@@ -6,8 +6,9 @@
     - name: A Microsoft Intune áttekintése
       href: what-is-intune.md
       displayName: ems; emm; azure ad; active directory; ad
-    - name: Hogyan válhat az Intune a cégem előnyére?
-      href: get-started-evaluation.md
+    - name: Eszközkezelés áttekintése
+      href: what-is-device-management.md
+      displayName: teamviewer
     - name: Újdonságok
       href: whats-new.md
       items:
@@ -32,9 +33,6 @@
       href: tutorial-walkthrough-intune-portal.md
 - name: Fogalmak
   items:
-    - name: Mi az eszközkezelés?
-      href: what-is-device-management.md
-      displayName: teamviewer
     - name: Mi az az Intune for Education?
       href: introduction-intune-education.md
     - name: Magas szintű architektúra

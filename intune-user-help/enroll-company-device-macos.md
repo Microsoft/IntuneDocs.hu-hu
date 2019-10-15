@@ -1,6 +1,6 @@
 ---
-title: A vállalat által biztosított macOS-eszköz felügyeleti regisztrálása | Microsoft Docs
-description: Azt mutatja be, hogyan regisztrálhat az Intune-ban egy, a cég által vásárolt és rendelkezésre bocsátott macOS-eszközt.
+title: A szervezet által biztosított macOS-eszköz regisztrálása a felügyeletben | Microsoft Docs
+description: Leírja, hogyan regisztrálhat egy olyan macOS-eszközt az Intune-ban, amelyet a szervezet megvásárolt és biztosít.
 keywords: ''
 author: lenewsad
 ms.author: lanewsad
@@ -18,63 +18,63 @@ ms.reviewer: japoehlm
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f2e2ecc79cd24a68c1a5642f64474f2d31217bd7
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 9c20ad54f71eb44f69638eacd4ae1c3796771896
+ms.sourcegitcommit: 45d7c76e760c5117bf134fb57f7e248e5b6c4ad5
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71721022"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72314657"
 ---
-# <a name="enroll-your-organization-provided-macos-device-in-management"></a>A vállalat által biztosított macOS-eszköz felügyeleti regisztrálása
+# <a name="enroll-your-organization-provided-macos-device-in-management"></a>A szervezet által biztosított macOS-eszköz regisztrálása a felügyeletben
 
-Útmutató új macOS-eszköz Intune-felügyelet alá helyezéséhez.  
+Ismerje meg, hogyan kezelheti az új macOS-eszközt az Intune-ban.  
 
-A munkahelye vagy iskolája által biztosított eszközöket gyakran előre konfigurálják, mielőtt Ön megkapja azokat. A vállalat akkor küldi az eszközre ezeket az előre konfigurált beállításokat, miután Ön először bekapcsolta azt, és bejelentkezett. Miután az eszköz elvégezte a beállításokat, Ön hozzáférhet munkahelyi vagy iskolai erőforrásaihoz.
+A munkahelye vagy iskolája által biztosított eszközök gyakran előre vannak konfigurálva, mielőtt megkapta őket. A szervezet ezeket az előre konfigurált beállításokat a bekapcsolás és az első bejelentkezés után elküldi az eszközre. Miután az eszköz befejezte a telepítést, hozzáférést kap a munkahelyi vagy iskolai erőforrásokhoz.
 
-A felügyelet beállításának megkezdéséhez kapcsolja be az eszközt, majd jelentkezzen be a munkahelyi vagy iskolai fiókjával. A cikk a továbbiakban azokat a lépéseket és képernyőket ismerteti, amelyekkel a Beállítási asszisztensben találkozni fog.
+A kezelés megkezdéséhez kapcsolja be az eszközt, és jelentkezzen be a munkahelyi vagy iskolai hitelesítő adataival. A cikk további részében azokat a lépéseket és képernyőket mutatjuk be, amelyeket a beállítási Asszisztensen keresztül láthat.
 
 ## <a name="what-is-apple-dep"></a>Mi az Apple DEP?
 
-Lehetséges, hogy vállalata az úgynevezett *Apple Készülékregisztrációs programon* (DEP) keresztül vásárolta meg eszközeit. Az Apple DEP nagy mennyiségű iOS- vagy macOS-eszköz vásárlását teszi lehetővé a vállalatok számára. Ezt követően ezeket az eszközöket egy általuk preferált mobileszköz-felügyeleti szolgáltatóval, például az Intune-nal konfigurálják és felügyelik. Ha Ön rendszergazda, és információt szeretne az Apple DEP-vel kapcsolatban, tekintse át a [macOS-eszközök automatikus regisztrálása az Apple készülékregisztrációs programjával (DEP)](https://docs.microsoft.com/intune/enrollment/device-enrollment-program-enroll-macos.md) című cikket.  
+Előfordulhat, hogy a szervezete az *Apple Készülékregisztrációs program* (DEP) nevű eszközön vásárolta meg az eszközöket. Az Apple DEP lehetővé teszi, hogy a szervezetek nagy mennyiségű iOS-vagy macOS-eszközt vásárolnak. A szervezetek ezután konfigurálhatják és kezelhetik az eszközöket az előnyben részesített mobileszköz-kezelő szolgáltatón belül, például az Intune-ban. Ha Ön rendszergazda, és további információra van szüksége az Apple DEP szolgáltatásról, olvassa el [a MacOS-eszközök automatikus regisztrálása az apple Készülékregisztrációs programban](https://docs.microsoft.com/intune/enrollment/device-enrollment-program-enroll-macos)című témakört.  
 
-## <a name="get-your-device-managed"></a>Eszköz felügyelet alá vonása
+## <a name="get-your-device-managed"></a>Eszköz felügyeletének beolvasása
 
-Az alábbi lépésekkel regisztrálhatja macOS-eszközét a felügyeleti szolgáltatásban. Ha nem a vállalat által biztosított, hanem saját eszközt használ, kövesse a [személyes és saját eszközökre](enroll-your-device-in-intune-macos-cp.md) vonatkozó lépéseket.  
+A macOS-eszköz felügyeletbe való regisztrálásához hajtsa végre az alábbi lépéseket. Ha saját eszközt használ, és nem egy szervezet által biztosított eszközt, kövesse a [személyes és a saját eszközök](enroll-your-device-in-intune-macos-cp.md)használatára vonatkozó lépéseket.  
 
-1. Kapcsolja be a macOS-eszközt.
+1. A macOS-eszköz bekapcsolása.
 2. Válassza ki az országot vagy régiót, majd kattintson a **Folytatás**gombra.  
 
-   ![Képernyőkép egy macOS-eszköz Beállítási asszisztensének üdvözlőképernyőjéről, a nyelvválasztó listával.](./media/macos-dep-welcome-1808.png)
-3. Válasszon egy billentyűzetkiosztást. A listában egy vagy több lehetőség látható a kiválasztott ország/régió alapján. Az összes elrendezési beállítás megjelenítéséhez, a kiválasztott országtól/régiótól függetlenül, kattintson az **összes megjelenítése**elemre. Ha végzett, kattintson a **Folytatás** gombra.  
+   ![Képernyőfelvétel a macOS-eszközök beállítási asszisztensének üdvözlőképernyő képernyőjéről, amely megjeleníti a választható nyelvek listáját.](./media/macos-dep-welcome-1808.png)
+3. Válassza ki a billentyűzet elrendezését. A listában egy vagy több lehetőség látható a kiválasztott ország/régió alapján. Az összes elrendezési beállítás megjelenítéséhez, a kiválasztott országtól/régiótól függetlenül, kattintson az **összes megjelenítése**elemre. Ha elkészült, kattintson a **Continue (folytatás) gombra.**  
 
-   ![Képernyőkép egy macOS-eszköz Beállítási asszisztensének billentyűzetkiosztási képernyőjéről. Látható a választható nyelvek listája, egy bejelöletlen Összes megjelenítése lehetőség, illetve a Vissza és Folytatás gombok.](./media/macos-dep-keyboard-1808.png)  
-4. Válassza ki a Wi-Fi-hálózatot. A beállítás folytatásához internetkapcsolat szükséges. Ha nem látja a saját hálózatát, vagy vezetékes hálózattal szeretne kapcsolódni, kattintson az **Egyéb hálózati beállítások** lehetőségre. Ha végzett, kattintson a **Folytatás** gombra.  
+   ![Képernyőkép a macOS-eszköz beállítási asszisztensének billentyűzetkiosztási képernyőjéről, amely megjeleníti a választható billentyűzetek listáját, az összes megjelenítése jelölőnégyzetet, valamint a vissza és a folytatás gombot.](./media/macos-dep-keyboard-1808.png)  
+4. Válassza ki a Wi-Fi hálózatot. A telepítés folytatásához internetkapcsolat szükséges. Ha nem látja a hálózatot, vagy ha vezetékes hálózaton keresztül szeretne csatlakozni, kattintson az **egyéb hálózati beállítások**elemre. Ha elkészült, kattintson a **Continue (folytatás**) gombra.  
 
-   ![Képernyőkép egy macOS-eszköz Beállítási asszisztensének Wi-Fi-hálózatot kiválasztó képernyőjéről, a választható hálózatok listájával. Az Egyéb hálózati beállítások, illetve a Vissza és a Folytatás gomb is látható.](./media/macos-dep-wifi-1808.png)  
-5. Miután csatlakozott a Wi-Fi-hálózathoz, megjelenik a **Távoli felügyelet** képernyő. A távoli felügyelet lehetővé teszi, hogy a cég rendszergazdája távolról konfigurálja az eszközön a vállalat által előírt fiókokat, beállításokat, alkalmazásokat, hálózatokat. Olvassa el figyelmesen a távfelügyelet ismertetését, ebből jobban megértheti, hogyan történik eszközének felügyelete. Ezután kattintson a **Continue** (Folytatás) gombra.  
+   ![Képernyőfelvétel a macOS-eszközök beállítási Asszisztenséről válassza ki a Wi-Fi hálózat képernyőjét, amely megjeleníti a választható hálózatok listáját. Egy másik hálózati beállítások gomb, vissza gomb és Folytatás gomb is látható.](./media/macos-dep-wifi-1808.png)  
+5. Miután csatlakozott a Wi-Fi-hez, megjelenik a **távfelügyelet** képernyő. A távfelügyelet lehetővé teszi, hogy a szervezet rendszergazdája távolról konfigurálja az eszközt a vállalat által igényelt fiókokkal, beállításokkal, alkalmazásokkal és hálózatokkal. Az eszköz felügyeletének megismeréséhez olvassa el a távfelügyelet magyarázatát. Ezután kattintson a **Continue** (Folytatás) gombra.  
 
-   ![Képernyőkép egy macOS-eszköz Beállítási asszisztensének távoli felügyeleti képernyőjéről. Látható a távoli felügyeletet ismertető szöveg, valamint egy hivatkozás, amely a további információkat tartalmazó dokumentációra mutat. A Vissza és a Folytatás gomb is látható.](./media/macos-dep-remote-management-1-1808.png)  
-6. Ha az eszköz kéri, jelentkezzen be a munkahelyi vagy iskolai fiókjával. A hitelesítést követően az eszköz telepít egy felügyeleti profilt. Ez a profil konfigurálja és engedélyezi a hozzáférést a céges erőforrásokhoz.  
-7. Olvassa el az Apple adatkezelést és adatvédelmet jelölő ikonjának ismertetését, hogy később meg tudja állapítani, mikor kerül sor személyes adatok gyűjtésére. Ezután kattintson a **Folytatás** gombra.  
+   ![Képernyőkép a macOS-eszköz beállítási asszisztensének távfelügyeleti képernyőjéről, a távoli felügyeletet magyarázó szöveggel, valamint a további információkat tartalmazó dokumentációra mutató hivatkozással. A vissza gombot és a folytatás gombot is megjeleníti.](./media/macos-dep-remote-management-1-1808.png)  
+6. Ha a rendszer kéri, jelentkezzen be munkahelyi vagy iskolai fiókjával. A hitelesítés után az eszköz egy felügyeleti profilt fog telepíteni. A profil konfigurálja és engedélyezi a szervezet erőforrásaihoz való hozzáférést.  
+7. Olvassa el az Apple-adatok & adatvédelmi ikonját, hogy később azonosítani tudja a személyes adatok gyűjtését. Ezután kattintson a **Continue** (Folytatás) gombra.  
 
-   ![Képernyőkép egy macOS-eszköz Beállítási asszisztensének Adatkezelés és adatvédelem képernyőjéről. Látható egy illusztráció, rajta két kezet fogó alakkal, és annak az ismertetése, hogyan használja fel az Apple a személyes adatokat. A Vissza és a Folytatás gomb is látható.](./media/macos-dep-apple-data-privacy-1808.png)  
-8. Az eszköz regisztrálását követően előfordulhat, hogy további lépéseket is el kell végeznie. A megjelenő lépések attól függnek, hogy a cég hogyan szabta személyre a beállítási folyamatot. Az alábbi lépésekre lehet szükség:
-    * Bejelentkezés egy Apple-fiókba
-    * A használati feltételek elfogadása
-    * Egy számítógépes fiók létrehozása
-    * Egy gyorstelepítési folyamat elvégzése
-    * A Mac gép beállítása
+   ![Képernyőfelvétel a macOS-eszközök beállítási asszisztensi & adatvédelmi képernyőjéről, amely két személyből álló illusztrációt mutat be, és leírja, hogy az Apple milyen személyes adatokat használ. A vissza és a folytatás gombot is megjeleníti.](./media/macos-dep-apple-data-privacy-1808.png)  
+8. Az eszköz regisztrálását követően további lépéseket is végrehajthat. A megjelenő lépések attól függnek, hogy a szervezet hogyan szabta testre a telepítési folyamatot. Ehhez a következőket kell tennie:
+    * Bejelentkezés Apple-fiókba
+    * A feltételek és Kikötések elfogadása
+    * Számítógépfiók létrehozása
+    * Az expressz telepítés
+    * A Mac beállítása
 
 ## <a name="get-the-company-portal-app"></a>A Céges portál alkalmazás beszerzése
 
-Töltse le az eszközére a macOS-re készült Intune Céges portál alkalmazást. Ezzel az alkalmazással monitorozhatja, szinkronizálhatja, hozzáadhatja és eltávolíthatja az eszközt a felügyeletből, és további alkalmazásokat is telepíthet. Ezek a lépések azt is bemutatják, hogyan regisztrálhatja eszközét a Céges portálon.
+Töltse le a macOS rendszerhez készült Intune Céges portál alkalmazást az eszközön. Az alkalmazás lehetővé teszi az eszköz felügyeletét, szinkronizálását, hozzáadását és eltávolítását, valamint az alkalmazások telepítését. Ezek a lépések azt is ismertetik, hogyan lehet regisztrálni az eszközt a Céges portál.
 
-1. A macOS-eszközön nyissa [https://portal.manage.microsoft.com/EnrollmentRedirect.aspx](https://portal.manage.microsoft.com/EnrollmentRedirect.aspx)meg a következőt:.
+1. A macOS-eszközön nyissa meg a következőt: [https://portal.manage.microsoft.com/EnrollmentRedirect.aspx](https://portal.manage.microsoft.com/EnrollmentRedirect.aspx).
 2. Jelentkezzen be a Céges portál webhelyére munkahelyi vagy iskolai fiókjával. 
-3. Kattintson az **Alkalmazás beszerzése** lehetőségre a Céges portál macOS rendszerre készült telepítőjének letöltéséhez.
-4. Amikor a rendszer kéri, nyissa meg a .pkg fájlt, és hajtsa végre a telepítési lépéseket.
-5. Nyissa meg a Céges portál alkalmazást, és jelentkezzen be a munkahelyi vagy iskolai fiókjával.
-6. Keresse meg az eszközét, és kattintson a **Regisztráció** lehetőségre.
-7. Kattintson a **Folytatás** > **Kész** lehetőségre. Ekkor az eszközének vállalati, megfelelő eszközként kell látszania a Céges portál alkalmazásban.
+3. Kattintson **az alkalmazás** letöltése gombra a MacOS céges portál telepítőjének letöltéséhez.
+4. Ha a rendszer kéri, nyissa meg a. pkg fájlt, és fejezze be a telepítési lépéseket.
+5. Nyissa meg a Céges portál alkalmazást, és jelentkezzen be munkahelyi vagy iskolai fiókjával.
+6. Keresse meg az eszközt, és kattintson a **regisztráció**elemre.
+7. Kattintson a **folytatás** > **kész**lehetőségre. Az eszköznek most meg kell jelennie a Céges portál alkalmazásban vállalati és megfelelő eszközként.
 
-További segítségre van szüksége? Forduljon a cég informatikai támogatásához. Az elérhetőségét keresse meg a [Vállalati portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).
+Továbbra is segítségre van szüksége? Forduljon a cég informatikai támogatási szolgálatához. A kapcsolattartási adatokat a [céges portál webhelyén találja](https://go.microsoft.com/fwlink/?linkid=2010980).

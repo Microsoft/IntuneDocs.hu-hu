@@ -1,5 +1,5 @@
 ---
-title: Eszközök titkosítása a Microsoft Intune a platformok által támogatott titkosítási módszerek használatával
+title: Eszközök titkosítása támogatott titkosítási módszerrel
 titleSuffix: Microsoft Intune
 description: Olyan beépített titkosítási módszerekkel titkosíthatja az eszközöket, mint például a BitLocker vagy a FileVault, és felügyelheti a titkosított eszközök helyreállítási kulcsait az Intune-portálon belül.
 keywords: ''
@@ -16,12 +16,12 @@ ms.reviewer: annovich
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
-ms.openlocfilehash: ad995a4b8b67a2ff7e3604f899fdbeebc2bad8cc
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: f885cbddf8ecb984dc6e98db38c9adbc6a07119a
+ms.sourcegitcommit: dd6755383ba89824d1cc128698a65fde6bb2de55
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729287"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72306854"
 ---
 # <a name="use-device-encryption-with-intune"></a>Az eszközök titkosításának használata az Intune-nal  
 
@@ -49,14 +49,14 @@ Az Intune-nal kezelhető FileVault-beállítás részleteiért lásd: [FileVault
 
 ### <a name="how-to-configure-macos-filevault"></a>MacOS-FileVault konfigurálása 
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és lépjen az **eszköz konfigurációs** > **profilok** > **létrehozási profil létrehozása**pontra.  
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és nyissa meg az **eszköz konfigurációja** > **profilok** > **profil létrehozása**lehetőséget.  
 
 2. Adja meg a következő beállításokat:  
 
    - Platform: macOS  
    - Profil típusa: Endpoint Protection  
 
-3. Válassza a **Beállítások** > **FileVault**lehetőséget.  
+3. Válassza a **beállítások** > **FileVault**lehetőséget.  
 
 4. A *FileVault*területen válassza az **Engedélyezés**lehetőséget.  
 
@@ -64,7 +64,7 @@ Az Intune-nal kezelhető FileVault-beállítás részleteiért lásd: [FileVault
 
    Vegye fontolóra egy üzenet hozzáadását, amely segítséget nyújt a végfelhasználók számára az eszköz helyreállítási kulcsának lekéréséhez. Ezek az információk hasznosak lehetnek a végfelhasználók számára, ha a személyes helyreállítási kulcs elforgatására vonatkozó beállítást használja, amely rendszeres időközönként automatikusan létrehoz egy új helyreállítási kulcsot az eszközhöz.  
 
-   Példa: Elveszett vagy nemrég elforgatott helyreállítási kulcs lekéréséhez jelentkezzen be a Intune Céges portál webhelyére bármely eszközről. A portálon lépjen az *eszközök* elemre, és válassza ki azt az eszközt, amelyen engedélyezve van az FileVault, majd válassza a *helyreállítási kulcs*beolvasása elemet. Megjelenik az aktuális helyreállítási kulcs.  
+   Például: egy elveszett vagy nemrég elforgatott helyreállítási kulcs lekéréséhez jelentkezzen be a Intune Céges portál webhelyre bármilyen eszközről. A portálon lépjen az *eszközök* elemre, és válassza ki azt az eszközt, amelyen engedélyezve van az FileVault, majd válassza a *helyreállítási kulcs beolvasása*elemet. Megjelenik az aktuális helyreállítási kulcs.  
 
 6. Konfigurálja a fennmaradó [FileVault-beállításokat](endpoint-protection-macos.md#filevault) az üzleti igények kielégítéséhez, majd kattintson **az OK gombra**.  
 
@@ -98,10 +98,10 @@ Konfigurálja a BitLockert, ha a Windows 10 vagy újabb rendszerű platformhoz h
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és nyissa meg az eszköz konfigurációja > profilok > profil létrehozása lehetőséget.  
 
 2. Adja meg a következő beállításokat:  
-   - Platform Windows 10 és újabb  
+   - Platform: Windows 10 és újabb verziók  
    - Profil típusa: Endpoint Protection  
 
-3. Válassza a **Beállítások** > **Windows-titkosítás**lehetőséget.
+3. Válassza a **beállítások**@no__t – 1**Windows-titkosítás**lehetőséget.
 
 4. Konfigurálja a BitLocker beállításait az üzleti igények kielégítéséhez, majd kattintson **az OK gombra**.  
 
@@ -111,7 +111,7 @@ Konfigurálja a BitLockert, ha a Windows 10 vagy újabb rendszerű platformhoz h
 
 Miután az Intune titkosít egy Windows 10-es eszközt a BitLocker használatával, megtekintheti és lekérheti a BitLocker helyreállítási kulcsait az Intune [titkosítási jelentés](encryption-monitor.md)megtekintésekor.  
 
-## <a name="next-steps"></a>További lépések  
+## <a name="next-steps"></a>Következő lépések  
 
 [Eszköz megfelelőségi](compliance-policy-create-windows.md) szabályzatának létrehozása  
 

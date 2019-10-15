@@ -1,7 +1,7 @@
 ---
 title: Vállalati azonosítók hozzáadása az Intune-hoz
 titleSuffix: ''
-description: Ismerje meg, hogyan adhat hozzá vállalati azonosítókat (regisztrációs módszer, IMEI és sorozatszámok) a Microsoft Intune-bA.
+description: Megtudhatja, hogyan adhat hozzá vállalati azonosítókat (regisztrációs módszert, IMEI-t és sorozatszámokat) a Microsoft Intunehoz.
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
@@ -17,32 +17,32 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ac86e9155f08683ab073ae0b46ea3f2780060c90
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: afc9d953e1d324adb3f00eb5209732a858bbbcda
+ms.sourcegitcommit: 45d7c76e760c5117bf134fb57f7e248e5b6c4ad5
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730003"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72314675"
 ---
-# <a name="identify-devices-as-corporate-owned"></a>Eszközök azonosítása vállalati tulajdonúként
+# <a name="identify-devices-as-corporate-owned"></a>Vállalati tulajdonú eszközök azonosítása
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-Intune-rendszergazdaként vállalati tulajdonúként azonosíthat eszközöket, így finomíthatja a felügyeletet és az azonosítást. Az Intune további felügyeleti feladatokat végezhet, valamint további adatokat gyűjthet, például a vállalati tulajdonú eszközök teljes telefonszámát és az eszközökön található alkalmazások leltárát. Eszközkorlátozásokat is beállíthat a nem vállalati tulajdonú eszközök regisztrációjának megakadályozásához.
+Intune-rendszergazdaként a felügyelet és az azonosítás pontosításához vállalati tulajdonban lévő eszközöket is azonosíthat. Az Intune további felügyeleti feladatokat hajthat végre, és további információkat gyűjthet, például a teljes telefonszámot és a vállalati tulajdonú eszközökből származó alkalmazások leltárát. Megadhatja az eszköz korlátozásait is, hogy blokkolja a vállalati tulajdonú eszközök regisztrációját.
 
-A regisztrálás idején az Intune automatikusan vállalati tulajdonú státuszt rendel az eszközhöz, ha azt:
+A regisztráláskor az Intune automatikusan vállalati tulajdonú állapotot rendel a következő eszközökhöz:
 
-- [i](device-enrollment-manager-enroll.md) fiókkal regisztrálták (bármely platformon).
-- Az Apple [Készülékregisztrációs programban](device-enrollment-program-enroll-ios.md), az [Apple School Managerrel](apple-school-manager-set-up-ios.md) vagy az [Apple Configuratorral](apple-configurator-enroll-ios.md) regisztrálták (csak iOS esetén).
-- [Regisztráció előtt az eszközt céges eszközként azonosították](#identify-corporate-owned-devices-with-imei-or-serial-number) nemzetközi mobilkészülék-azonosító (IMEI-) számmal (minden IMEI-számmal rendelkező platform esetében) vagy sorozatszámmal (csak iOS és Android esetében)
-- Csatlakozva az Azure Active Directoryhoz Windows 10 Enterprise-eszközként
-- Vállalatiként van beállítva az [eszköz tulajdonságaiban](#change-device-ownership)
+- Regisztrálva van egy [eszköz beléptetési Manager](device-enrollment-manager-enroll.md) -fiókkal (minden platform)
+- Regisztrálva van az Apple [Készülékregisztrációs programban](device-enrollment-program-enroll-ios.md), az [Apple School Managerben](apple-school-manager-set-up-ios.md)vagy az [Apple konfigurátorban](apple-configurator-enroll-ios.md) (csak iOS esetén)
+- [Vállalati tulajdonban van azonosítva, mielőtt](#identify-corporate-owned-devices-with-imei-or-serial-number) bejelentkezett volna egy nemzetközi mobileszköz-azonosító (IMEI) számmal (az összes IMEI-számmal rendelkező platformmal) vagy sorozatszámmal (iOS és Android).
+- Azure Active Directory munkahelyi vagy iskolai hitelesítő adatokkal. A [Azure Active Directory regisztrált eszközök](https://docs.microsoft.com/azure/active-directory/devices/overview) személyesként lesznek megjelölve.
+- Beállítás vállalatiként az [eszköz Tulajdonságok listájában](#change-device-ownership)
 
-A regisztrálás után [a tulajdonosi beállítás módosítható](#change-device-ownership), és beállítható akár **Személyes**, akár **Vállalati** tulajdonra.
+A regisztráció után [megváltoztathatja a tulajdonosi beállítást a](#change-device-ownership) **személyes** és a **vállalati**felhasználók között.
 
-## <a name="identify-corporate-owned-devices-with-imei-or-serial-number"></a>Céges eszközök azonosítása IMEI- vagy sorozatszám alapján
+## <a name="identify-corporate-owned-devices-with-imei-or-serial-number"></a>A vállalat által birtokolt eszközök azonosítása IMEI-vagy sorozatszámmal
 
-Intune-rendszergazdaként létrehozhat és importálhat egy olyan vesszővel tagolt (. csv) fájlt, amely 14 számjegyű IMEI-számot vagy sorozatszámot listáz. Az Intune ezeket az azonosítókat használva határozza meg a regisztráció során, hogy egy adott eszköz céges tulajdonú-e. Adminisztrációs célból minden IMEI-azonosítóhoz vagy sorozatszámhoz megadhat további adatokat is.
+Intune-rendszergazdaként létrehozhat és importálhat egy olyan vesszővel tagolt (. csv) fájlt, amely 14 számjegyű IMEI-számot vagy sorozatszámot listáz. Az Intune ezeket az azonosítókat használja a vállalati eszközök tulajdonjogának megadásához az eszközök regisztrálásakor. Az egyes IMEI-vagy sorozatszám-azonosítók a listában a felügyeleti célokra is megadhatók.
 
 Ez a funkció a következő platformokon támogatott:
 
@@ -55,20 +55,20 @@ Ez a funkció a következő platformokon támogatott:
 
 <!-- When you upload serial numbers for corporate-owned iOS devices, they must be paired with a corporate enrollment profile. Devices must then be enrolled using either Apple’s device enrollment program (DEP) or Apple Configurator to have them appear as corporate-owned. -->
 
-[Ismerje meg, hogyan találhatja meg egy Apple-eszköz sorozatszámát](https://support.apple.com/HT204308).<br>
-[Ismerje meg, hogyan találhatja meg a saját Apple-eszköz sorozatszámát](https://support.google.com/store/answer/3333000).
+[Megtudhatja, hogyan keresheti meg az Apple-eszközök sorozatszámát](https://support.apple.com/HT204308).<br>
+[Megtudhatja, hogyan keresheti meg az androidos eszköz sorozatszámát](https://support.google.com/store/answer/3333000).
 
-## <a name="add-corporate-identifiers-by-using-a-csv-file"></a>Vállalati azonosítók felvétele .csv-fájlból
-Hozzon létre egy kétoszlopos, fejléc nélküli listát .csv formátumban. Adja hozzá a 14 számjegyből álló IMEI-t vagy sorozatszámot a bal oldali oszlopban, valamint a jobb oldali oszlopban található adatokat. Egy .csv-fájlból csak egyféle azonosítót (IMEI-azonosítót vagy sorozatszámot) importálhat. A részletes adatok maximális terjedelme 128 karakter, csak adminisztratív célt szolgálnak, és nem jelennek meg az eszközön. A .csv-fájlok jelenleg legfeljebb 5 000 sorosak lehetnek.
+## <a name="add-corporate-identifiers-by-using-a-csv-file"></a>Vállalati azonosítók hozzáadása. csv-fájl használatával
+A lista létrehozásához hozzon létre egy kétoszlopos, vesszővel tagolt (. csv) listát fejléc nélkül. Adja hozzá a 14 számjegyből álló IMEI-t vagy sorozatszámot a bal oldali oszlopban, valamint a jobb oldali oszlopban található adatokat. Egyetlen. csv fájlban csak egy azonosító, IMEI vagy sorozatszám lehet importálható. A részletek legfeljebb 128 karakterből állhatnak, és csak rendszergazdai használatra használhatók. A részletek nem jelennek meg az eszközön. Az aktuális korlát 5 000 sor. csv-fájl.
 
-**Sorozatszámokat tartalmazó .csv-fájl feltöltése** – Hozzon létre egy vesszővel elválasztott, kétoszlopos, fejléc nélküli értéklistát (.csv), amelyben maximum 5,000 eszköz szerepel. A csv-fájl mérete nem haladja meg az 5 MB-ot.
+**Töltsön fel egy sorozatszámmal rendelkező. csv-fájlt** – hozzon létre egy kétoszlopos, vesszővel tagolt (. csv) listát fejléc nélkül, és korlátozza a listát 5 000 eszközre vagy 5 MB/. csv-fájlra.
 
 |||
 |-|-|
-|&lt;1. azonosító&gt;|&lt;1. eszköz részletei&gt;|
-|&lt;2. azonosító&gt;|&lt;2. eszköz részletei&gt;|
+|&lt;ID #1 &gt;|&lt;Device #1 részletek @ no__t-1|
+|&lt;ID #2 &gt;|&lt;Device #2 részletek @ no__t-1|
 
-Ez a .csv- fájl egy szövegszerkesztőben megtekintve így jelenik meg:
+Ez a. csv-fájl egy szövegszerkesztőben megtekintve a következőképpen jelenik meg:
 
 ```
 01234567890123,device details
@@ -76,56 +76,56 @@ Ez a .csv- fájl egy szövegszerkesztőben megtekintve így jelenik meg:
 ```
 
 > [!IMPORTANT]
-> Egyes Android-és iOS-eszközök több IMEI-számmal rendelkeznek. Az Intune regisztrált eszközönként csak egy IMEI-számot olvas be. Ha olyan IMEI-számot importál, amely nem az Intune által leltározott, akkor az eszköz a vállalat által birtokolt eszköz helyett személyes eszközként lesz besorolva. Ha egy eszközhöz több IMEI-számot importál, a leltárban nem szereplő számok **Ismeretlen** regisztrációs állapottal jelennek meg.<br>
->Vegye figyelembe a következőket is: A sorozatszámok az iOS-eszközök azonosításának ajánlott formája.
->Az Android-sorozatszámok nem garantáltan egyediek vagy jelennek meg. Egyeztessen az eszköz szállítójával arról, hogy a sorozatszám tekinthető-e megbízható eszközazonosítónak.
->Elképzelhető, hogy az a sorozatszám, amelyet az eszköz az Intune felé jelez, nem egyezik meg az eszköz Android beállítások/Névjegy (Android Settings/About) menüjében megjelenő azonosítóval. Ellenőrizze, hogy az eszköz gyártója milyen típusú sorozatszámot tüntet fel itt.
->Ha a feltöltendő sorozatszámokból álló fájl pontokat (.) tartalmaz, a feltöltés sikertelen lesz. A pontokat tartalmazó sorozatszámok nem támogatottak.
+> Egyes Android-és iOS-eszközök több IMEI-számmal rendelkeznek. Az Intune-ban regisztrált eszközökön csak egy IMEI-szám olvasható. Ha olyan IMEI-számot importál, amely nem az Intune által leltározott, akkor az eszköz a vállalat által birtokolt eszköz helyett személyes eszközként lesz besorolva. Ha egy eszközhöz több IMEI-számot importál, a uninventoried száma **ismeretlen** a beléptetési állapotnál.<br>
+>Megjegyzés: a sorozatszámok az iOS-eszközök azonosításának ajánlott formája.
+>Az Android-sorozatszámok nem garantáltan egyediek vagy jelennek meg. Kérdezze meg az eszköz szállítóját, hogy megtudja, a sorozatszám megbízható eszköz-azonosító-e.
+>Előfordulhat, hogy az eszköz által az Intune-nak küldött sorozatszámok nem egyeznek meg az eszközön az Android-beállítások/a menük között. Ellenőrizze az eszköz gyártója által jelentett sorozatszám típusát.
+>A pontokat (.) tartalmazó sorozatszámok feltöltésére tett kísérlet miatt a feltöltés sikertelen lesz. A pontokkal rendelkező sorozatszámok nem támogatottak.
 
-### <a name="upload-a-csv-list-of-corporate-identifiers"></a>Céges azonosítók .csv-listájának feltöltése
+### <a name="upload-a-csv-list-of-corporate-identifiers"></a>Vállalati azonosítók. csv-listájának feltöltése
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba, válassza az **eszközök beléptetése** > **vállalati eszközök azonosítóinak** > **Hozzáadás** > **CSV-fájl feltöltése**elemet.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba, válassza az **eszközök beléptetése** > **vállalati eszköz azonosítóját** > **Hozzáadás** > **CSV-fájl feltöltése**elemet.
 
-   ![A céges készülékazonosítók munkaterülete a Hozzáadás gomb kiemelésével](./media/corporate-identifiers-add/add-corp-id.png)
-
-2. Az **azonosítók hozzáadása** panelen adja meg az azonosító típusát: **IMEI** vagy **sorozatszám**.
-
-3. Kattintson a mappa ikonra, és adja meg az importálni kívánt lista elérési útját. Keresse meg a .csv-fájlt, és kattintson a **Hozzáadás** elemre. 
-
-4. Ha a .csv-fájl az Intune-ban már meglévő céges azonosítókat tartalmaz, de más részletekkel, megjelenik az **Ismétlődő azonosítók áttekintése** előugró üzenet. Válassza ki azokat az azonosítókat, amelyeket szeretne felülírni az Intune-ban, majd válassza az **OK** gombot az azonosítók hozzáadásához. Az egyes azonosítóknál csak az első ismétlődés lesz összehasonlítva.
-
-## <a name="manually-enter-corporate-identifiers"></a>A céges azonosítók manuális megadása
-
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba, válassza az **eszközök beléptetése** > **vállalati eszközök azonosítóinak** > **Hozzáadás** > **manuálisan**lehetőséget.
+   ![Vállalati eszköz azonosító munkaterülete a Hozzáadás gombbal kiemelve](./media/corporate-identifiers-add/add-corp-id.png)
 
 2. Az **azonosítók hozzáadása** panelen adja meg az azonosító típusát: **IMEI** vagy **sorozatszám**.
 
-3. Adja meg a hozzáadni kívánt azonosítók **azonosítóját** és **részleteit** . Az azonosítók megadásának befejezése után válassza a **Hozzáadás** gombot.
+3. Kattintson a mappa ikonra, és válassza ki az importálni kívánt lista elérési útját. Navigáljon a. CSV-fájlhoz, és válassza a **Hozzáadás**lehetőséget. 
 
-5. Ha az Intune-ban már meglévő céges azonosítókat adott meg, de más részletekkel, megjelenik az **Ismétlődő azonosítók áttekintése** előugró üzenet. Válassza ki azokat az azonosítókat, amelyeket szeretne felülírni az Intune-ban, majd válassza az **OK** gombot az azonosítók hozzáadásához. Az egyes azonosítóknál csak az első ismétlődés lesz összehasonlítva.
+4. Ha a. csv-fájl olyan vállalati azonosítókat tartalmaz, amelyek már szerepelnek az Intune-ban, de eltérő adatokkal rendelkeznek, megjelenik a **felülvizsgálati duplikált azonosítók** előugró ablak. Válassza ki az Intune-ba írni kívánt azonosítókat, majd az azonosítók hozzáadásához kattintson **az OK gombra** . Minden azonosító esetében csak az első ismétlődés lesz összehasonlítva.
 
-A **Frissítés** elemre kattintva megtekintheti az új eszközazonosítókat.
+## <a name="manually-enter-corporate-identifiers"></a>Vállalati azonosítók manuális megadása
 
-Az importált eszközöket nem mindig regisztrálja a rendszer. Emiatt az eszközök **Regisztrált** vagy **Nincs kapcsolat** állapotúak lehetnek. Utóbbi állapot azt jelenti, hogy az eszköz még **nem lépett kapcsolatba** az Intune szolgáltatással.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba, válassza az **eszközök beléptetése** > **vállalati eszköz azonosítóját** >  adja**hozzá**a  > **értéket manuálisan**.
 
-## <a name="delete-corporate-identifiers"></a>Céges azonosítók törlése
+2. Az **azonosítók hozzáadása** panelen adja meg az azonosító típusát: **IMEI** vagy **sorozatszám**.
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba, válassza az **eszközök beléptetése** > **vállalati eszközök azonosítói**lehetőséget.
-2. Válassza ki a törölni kívánt eszközazonosítókat, majd kattintson a **Törlés** gombra.
-3. Hagyja jóvá a törlést.
+3. Adja meg a hozzáadni kívánt azonosítók **azonosítóját** és **részleteit** . Ha elkészült az azonosítók beírásával, válassza a **Hozzáadás**lehetőséget.
 
-Ha törli egy regisztrált eszköz céges azonosítóját, azzal nem változtatja meg az eszköz tulajdonosát. Az eszköz tulajdonosának módosításához nyissa meg az **Eszközök** panelt, válassza ki az eszközt, majd válassza a **Tulajdonságok** lehetőséget, és módosítsa az **Eszköz tulajdonosa** értékét.
+5. Ha olyan vállalati azonosítókat adott meg, amelyek már szerepelnek az Intune-ban, de eltérő adatokkal rendelkeznek, megjelenik a **felülvizsgálati duplikált azonosítók** előugró ablak. Válassza ki az Intune-ba írni kívánt azonosítókat, majd az azonosítók hozzáadásához kattintson **az OK gombra** . Minden azonosító esetében csak az első ismétlődés lesz összehasonlítva.
 
-## <a name="imei-specifications"></a>IMEI-azonosítók specifikációi
-Az IMEI-azonosítók részletes specifikációját a [3GGPP TS 23.003](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=729) lapon találja.
+A **frissítés** gombra kattintva megtekintheti az új eszközök azonosítóit.
 
-## <a name="change-device-ownership"></a>Eszköz tulajdonosának módosítása
+Az importált eszközök nem feltétlenül lettek regisztrálva. Az eszközök lehetnek **regisztráltak** vagy **nincsenek kapcsolatba**. **Nem történt kapcsolat** azt jelenti, hogy az eszköz soha nem kommunikált az Intune szolgáltatással.
 
-Az Intune-ban az eszközök tulajdonságai között mindegyik eszközbejegyzésnél szerepel a **Tulajdonos**. Rendszergazdaként megadhatja, hogy az adott eszköz **Személyes** vagy **Céges**.
+## <a name="delete-corporate-identifiers"></a>Vállalati azonosítók törlése
 
-**Eszköz tulajdonosának módosítása:**
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba, válassza az **eszközök beléptetése**@no__t – 2**vállalati eszköz azonosítóját**.
+2. Válassza ki a törölni kívánt eszközök azonosítóit, és válassza a **Törlés**lehetőséget.
+3. Erősítse meg a törlési szándékát.
+
+Egy regisztrált eszköz vállalati azonosítójának törlése nem változtatja meg az eszköz tulajdonjogát. Az eszköz tulajdonjogának módosításához lépjen az **eszközök**elemre, válassza ki az eszközt, válassza a **Tulajdonságok**lehetőséget, és módosítsa az **eszköz tulajdonjogát**.
+
+## <a name="imei-specifications"></a>IMEI-specifikációk
+A nemzetközi mobileszközök azonosítóinak részletes leírását lásd: [3GGPP TS 23,003](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=729).
+
+## <a name="change-device-ownership"></a>Eszköz tulajdonjogának módosítása
+
+Az eszközök tulajdonságai megmutatják az Intune-ban lévő minden eszköz rekordjainak **tulajdonjogát** . Rendszergazdaként megadhatja az eszközöket **személyesként** vagy **vállalatiként**.
+
+**Az eszköz tulajdonjogának módosítása:**
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba, lépjen az **eszközök** pontra, és válassza ki az eszközt.
-2. Válassza a **Tulajdonságok** lehetőséget.
-3. Adja meg az **Eszköz tulajdonosa** beállításnál, hogy az eszköz **Személyes** vagy **Céges**.
+2. Kattintson a **Tulajdonságok** elemre.
+3. **Személyes** vagy **céges** **eszközök tulajdonjogának** megadása.
 
-   ![Az eszköz tulajdonságai képernyő az Eszközkategória és az Eszköz tulajdonosa beállításokkal](./media/corporate-identifiers-add/device-properties.png)
+   ![Az eszköz kategóriáját és az eszköz tulajdonjogát megjelenítő eszközbeállítások](./media/corporate-identifiers-add/device-properties.png)

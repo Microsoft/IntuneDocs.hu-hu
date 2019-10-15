@@ -1,6 +1,6 @@
 ---
-title: Eszköz megfelelőségi szabályzatai az Microsoft Intune-ban – Azure | Microsoft Docs
-description: Az eszközök megfelelőségi házirendjeinek használatának első lépései, az állapot és a súlyossági szintek áttekintése, a türelmi időszakban állapot, a feltételes hozzáférés használata, a hozzárendelt házirend nélküli eszközök kezelése, valamint a Azure Portal megfelelőségének eltérései klasszikus portál Microsoft Intune
+title: Eszköz megfelelőségi szabályzatok létrehozása a Microsoft Intuneban – Azure | Microsoft Docs
+description: Eszköz megfelelőségi szabályzatok létrehozása, az állapot és a súlyossági szintek áttekintése, a türelmi időszakban állapota, a feltételes hozzáférés használata, a hozzárendelt házirend nélküli eszközök kezelése, valamint a Azure Portal és a klasszikus portál megfelelőségének eltérései Microsoft Intune
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ffd1e120a364be1ecaa98e01ff71ac723672b546
-ms.sourcegitcommit: a50a1ca123ecc2c5ac129f112f73838748f56476
+ms.openlocfilehash: 0ec8003264c28ea40d53731c8fb8c3eddef7fded
+ms.sourcegitcommit: dd6755383ba89824d1cc128698a65fde6bb2de55
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72237194"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72306580"
 ---
 # <a name="create-a-compliance-policy-in-microsoft-intune"></a>Megfelelőségi szabályzat létrehozása Microsoft Intune
 

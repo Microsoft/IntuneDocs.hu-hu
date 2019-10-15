@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b8878ade48fb9d186df9ba27edfc9eb9a19be6a6
-ms.sourcegitcommit: f1bd3b866f3ba62a562d88fdae07eef64ac11cbb
+ms.openlocfilehash: f7916bc38be085625f5a65d7889212827bcae5d3
+ms.sourcegitcommit: 45d7c76e760c5117bf134fb57f7e248e5b6c4ad5
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72272981"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72314603"
 ---
 ### <a name="apple"></a>Apple
 - Apple iOS és iPadOS 9,0 és újabb verziók
@@ -18,7 +18,7 @@ ms.locfileid: "72272981"
 - Windows holografikus &amp; Windows holografikus vállalat
 - Windows Phone-telefon 8,1, Windows 8,1 RT és Windows 8,1 rendszert futtató számítógépek (fenntartási mód)
 
-  Az Enterprise Management + Security (EMS) csomaggal rendelkező ügyfelek [a Azure Active Directory (HRE) használatával regisztrálhatják a Windows 10-es eszközöket](/intune-classic/deploy-use/set-up-windows-device-management-with-microsoft-intune#azure-active-directory-enrollment).
+  Az Enterprise Management + Security (EMS) csomaggal rendelkező ügyfelek [a Azure Active Directory (HRE) használatával regisztrálhatják a Windows 10-es eszközöket](/intune/enrollment/windows-enroll#enable-windows-10-automatic-enrollment).
 
   Windows 7 és újabb rendszerű számítógépek, a Windows 10 Home Edition kivételével, az Intune- [ügyfélszoftverrel](/intune-classic/deploy-use/manage-windows-pcs-with-microsoft-intune)is kezelhetők.
 
@@ -27,5 +27,3 @@ ms.locfileid: "72272981"
 - Google Android for Work ([követelmények](https://support.google.com/work/android/answer/6174145?hl=en&ref_topic=6151012 style="target=new_window"))
 
 \* A Samsung Galaxy Ace-telefonok következő modelljeit az Intune nem tudja Samsung KNOX standard-eszközként kezelni: SM-G313HU, SM-G313HY, SM-G313M, SM-G313MY és SM-G313U. Ezeket az eszközöket szabványos Android-eszközökként kezeli a rendszer. További információt a [Samsung Knox webhelyén](https://www.samsungknox.com/en)talál.
-
-Az eszközök és a felügyeleti módszerek teljes listáját lásd: az [Intune által támogatott eszközök](/intune/supported-devices-browsers#intune-supported-devices).
