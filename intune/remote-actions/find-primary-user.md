@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 312aee3752525ab2898c6d4e4ea06da685d1cdec
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 308f152a585fe7b605d309943545f242031ea177
+ms.sourcegitcommit: 60ed93682a21860e9d99ba1592ede120477f2b4d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732559"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72379701"
 ---
 # <a name="find-the-primary-user-of-an-intune-device"></a>Intune-eszköz elsődleges felhasználójának megkeresése
 
@@ -46,13 +46,13 @@ A Céges portál alkalmazás azt várja, hogy a Céges portálbe bejelentkezett 
 
 Ha egy Intune-eszközhöz nincs hozzárendelve elsődleges felhasználó, akkor a Céges portál alkalmazás megosztott eszközként észleli azt. A megosztott eszközök vizuálisan azonosíthatók az eszköz csempén megjelenő "Shared" címkével. Ebben a módban a Céges portál továbbra is használható az elérhető alkalmazások igénylésére és telepítésére. Az önkiszolgáló műveletek (alaphelyzetbe állítás/Átnevezés/kivonás) azonban nem érhetők el.  
 
-Ahhoz, hogy megjelenjenek a megosztott eszközök Céges portálján, az elérhető alkalmazásokat hozzá kell rendelni egy felhasználói csoporthoz. A rendszer a rendszerkörnyezetbe vagy a felhasználói környezetbe telepíti, attól függően, hogy az alkalmazás hogyan lett konfigurálva az informatikai rendszergazda által. Az alkalmazás kontextusával kapcsolatos további információkért lásd: [alkalmazások telepítése Windows 10-es eszközökre](../apps/apps-windows-10-app-deploy.md#installing-apps-on-windows-10-devices). A funkció használatához Céges portál 10.3.4651.0 vagy újabb verzió szükséges.
+Ahhoz, hogy megjelenjenek a megosztott eszközök Céges portálján, az elérhető alkalmazásokat hozzá kell rendelni egy felhasználói csoporthoz. A rendszer a rendszerkörnyezetbe vagy a felhasználói környezetbe telepíti, attól függően, hogy az alkalmazás hogyan lett konfigurálva az informatikai rendszergazda által. Az alkalmazás kontextusával kapcsolatos további információkért lásd: [alkalmazások telepítése Windows 10-es eszközökre](../apps/apps-windows-10-app-deploy.md). A funkció használatához Céges portál 10.3.4651.0 vagy újabb verzió szükséges.
 
 
 ## <a name="who-is-assigned-as-the-primary-user"></a>Ki van rendelve elsődleges felhasználóként?
 Az Intune a regisztráció után automatikusan hozzáadja az elsődleges felhasználót az eszközökhöz. A beléptetési módszer határozza meg, hogy mikor kerül be az elsődleges felhasználó egy eszközre.
 
-| Platform | Regisztráció módszere | Elsődleges felhasználó hozzárendelve | Az elsődleges felhasználó hozzá van rendelve |
+| Platfésm | Regisztráció módszere | Elsődleges felhasználó hozzárendelve | Az elsődleges felhasználó hozzá van rendelve |
 | ---- | ---- | ---- | ---- |
 | Windows | Munkahelyi vagy iskolai (felhasználó által vezérelt) hozzáadása | Felhasználó regisztrálása | Regisztráció során |   
 | Windows | Modern alkalmazás-bejelentkezés (felhasználó által vezérelt) | Felhasználó regisztrálása | Regisztráció során | 
@@ -62,16 +62,16 @@ Az Intune a regisztráció után automatikusan hozzáadja az elsődleges felhasz
 | Windows | Csak a MDM regisztrálása | Felhasználó regisztrálása | Regisztráció során | 
 | Windows | Hibrid AADJ + automatikus regisztrálási csoportházirend-objektum | Első felhasználó a Windowsba való bejelentkezéshez | Amikor az első felhasználó bejelentkezik a Windowsba| 
 | Windows | Közös felügyelet | Első felhasználó a Windowsba való bejelentkezéshez | Amikor az első felhasználó bejelentkezik a Windowsba | 
-| Windows | Azure AD JOIN (csoportos beléptetési jogkivonat) | Nincsenek | Nem alkalmazható | 
-| Windows | Azure AD JOIN (Autopilot öntelepítő üzemmód) | Nincsenek | Nem alkalmazható | 
+| Windows | Azure AD JOIN (csoportos beléptetési jogkivonat) | Nincsenek | Not applicable | 
+| Windows | Azure AD JOIN (Autopilot öntelepítő üzemmód) | Nincsenek | Not applicable | 
 | Platformfüggetlen | Felhasználó által vezérelt regisztráció Céges portál alkalmazással | Felhasználó regisztrálása | Regisztráció során |
 | Platformfüggetlen | Eszköz beléptetési kezelője (DEM) | DEM-felhasználó regisztrálása | Regisztráció során |
 | iOS, macOS | Apple automatikus eszközök beléptetése (DEP felhasználói affinitással | Felhasználó regisztrálása | Regisztráció során |
-| iOS, macOS | Apple automatikus eszközök beléptetése (DEP felhasználói affinitás nélkül) | Nincsenek | Nem alkalmazható |
-| Android | Androidos vállalati tulajdonú, dedikált eszközök | Nincsenek | Nem alkalmazható |
+| iOS, macOS | Apple automatikus eszközök beléptetése (DEP felhasználói affinitás nélkül) | Nincsenek | Not applicable |
+| Android: | Androidos vállalati tulajdonú, dedikált eszközök | Nincsenek | Not applicable |
 
 ## <a name="primary-user-and-azure-ad-device-owner"></a>Elsődleges felhasználó és Azure AD-eszköz tulajdonosa
-Bizonyos esetekben előfordulhat, hogy az Intune elsődleges felhasználója nem azonos az Azure ad-eszköz **tulajdonosi** tulajdonságával (amely az **eszközök** > **Azure ad-eszközök**területen látható). Az Azure AD-eszköz tulajdonosát az eszköz regisztrációja során Azure Active Directoryba adja hozzá a rendszer.
+Bizonyos esetekben előfordulhat, hogy az Intune elsődleges felhasználója eltér az Azure AD-eszköz **tulajdonosi** tulajdonságával (az **eszközök** > **Azure ad-eszközök**területen látható). Az Azure AD-eszköz tulajdonosát az eszköz regisztrációja során Azure Active Directoryba adja hozzá a rendszer.
 
 ## <a name="next-steps"></a>További lépések
 [Intune-eszközök kezelése.](device-management.md)

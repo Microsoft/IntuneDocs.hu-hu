@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e3fb9af260b8fddc78b644b8ede056c90bac24d0
-ms.sourcegitcommit: 29b1113dc04534c4c87c33c773c5a0e24266e042
+ms.openlocfilehash: 304e869460a5396a486b6de0cd5c2f549c192b70
+ms.sourcegitcommit: 60ed93682a21860e9d99ba1592ede120477f2b4d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "71999350"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72379866"
 ---
 # <a name="what-is-device-enrollment"></a>Mi az eszközregisztrálás?
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
@@ -80,7 +80,7 @@ Alapértelmezés szerint platformtól függetlenül minden eszköz regisztráci�
 
 
 ## <a name="bring-your-own-device"></a>Saját eszközök használata (Bring Your Own Device)
-Saját eszközök használata (BYOD) személyes telefonokkal, tablettákkal és számítógépekkel is rendelkezhet. A BYOD-eszközök regisztrálásához a felhasználók telepítik és futtatják a Céges portál alkalmazást. A program lehetővé teszi, hogy a felhasználók elérhessék a vállalati erőforrásokat, például az e-mailt.
+Saját eszközök használata (BYOD) személyes tulajdonú telefonok, tabletták és számítógépek. A BYOD-eszközök regisztrálásához a felhasználók telepítik és futtatják a Céges portál alkalmazást. A program lehetővé teszi, hogy a felhasználók elérhessék a vállalati erőforrásokat, például az e-mailt.
 
 ## <a name="corporate-owned-device"></a>Céges eszköz
 A [céges eszközök (COD)](corporate-identifiers-add.md) közé tartoznak a szervezet tulajdonában lévő és a dolgozóknak kiosztott telefonok, táblagépek és számítógépek. A céges eszközök (COD) regisztrációja olyan forgatókönyveket támogat, mint például az automatikus regisztráció, a megosztott eszközök vagy az előre engedélyezett regisztrációs követelmények. A céges eszközök regisztrálásának egy rendszergazdák és menedzserek által gyakran használt módja a készülékregisztráció-kezelő (DEM) alkalmazása. Az iOS-eszközök közvetlenül regisztrálhatók a Készülékregisztrációs program (DEP) Apple által biztosított eszközeivel. Az IMEI-számmal rendelkező eszközök is azonosíthatók és megcímkézve vállalati tulajdonban.

@@ -1,5 +1,5 @@
 ---
-title: Windows 10-es alkalmazások telepítése a Microsoft Intune-nal
+title: Windows 10-es alkalmazások központi telepítése Microsoft Intune használatával
 titleSuffix: ''
 description: Ismerkedjen meg a Windows 10-es alkalmazások Microsoft Intunesal elérhető telepítési forgatókönyvével.
 keywords: ''
@@ -17,74 +17,74 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 04e943f573fb2485a2ef7f1e3245f08d4222d142
-ms.sourcegitcommit: fc356fd69beaeb3d69982b47e2bdffb6f7127f8c
+ms.openlocfilehash: b7772a7476f197f455191debf8e252ba83e06f49
+ms.sourcegitcommit: 60ed93682a21860e9d99ba1592ede120477f2b4d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71830564"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72379762"
 ---
-# <a name="windows-10-app-deployment-using-microsoft-intune"></a>Windows 10-es alkalmazások telepítése a Microsoft Intune-nal 
+# <a name="windows-10-app-deployment-by-using-microsoft-intune"></a>Windows 10-es alkalmazások központi telepítése Microsoft Intune használatával 
 
-A Microsoft Intune jelenleg többféle alkalmazástípust és telepítési helyzetet támogat Windows 10 rendszerű eszközökön. Miután hozzáadott egy alkalmazást az Intune-hoz, azt felhasználókhoz és eszközökhöz rendelheti hozzá. A következő információ a támogatott Windows 10-es alkalmazási helyzetekkel kapcsolatos további részleteket mutat be. Ezenfelül alkalmazásoknak a Windowsban történő telepítésekor figyelembe veendő fontos tudnivalókat is tartalmaz. 
+A Microsoft Intune számos különböző típusú alkalmazás-és üzembe helyezési forgatókönyvet támogat a Windows 10-es eszközökön. Miután hozzáadott egy alkalmazást az Intune-hoz, azt felhasználókhoz és eszközökhöz rendelheti hozzá. Ez a cikk további részleteket tartalmaz a támogatott Windows 10-es forgatókönyvekről, valamint ismerteti az alkalmazások Windows rendszerre történő központi telepítésével kapcsolatos fontos tudnivalókat is. 
 
-A Windows 10-es eszközökön támogatott alkalmazástípusok az üzleti alkalmazások és a Vállalati Microsoft Áruházbeli alkalmazások. A windowsos alkalmazások fájlnévkiterjesztései közé tartozik az **.msi**, az **.appx** és az **.appxbundle** is.  
+A Windows 10-es eszközökön támogatott alkalmazástípusok az üzleti alkalmazások és a Vállalati Microsoft Áruházbeli alkalmazások. A Windows-alkalmazások fájlkiterjesztés a következő:. msi,. Appx és. appxbundle.  
 
 > [!Note]
-> A modern alkalmazások telepítéséhez minimálisan szükséges Windows 10-frissítések a következők:
+> Modern alkalmazások telepítéséhez legalább a következőkre van szükség:
 > - A Windows 10 1803-as verziójához: [2018. május 23. – KB4100403 (operációs rendszer: 17134.81-es build)](https://support.microsoft.com/help/4100403/windows-10-update-kb4100403).
 > - A Windows 10 1709-es verziójához: [2018. június 21. – KB4284822 (operációs rendszer: 16299.522-es build)](https://support.microsoft.com/help/4284822).
 >
-> Csak a Windows 10 1803 és újabb verziók támogatják az alkalmazások telepítését, ha nincs elsődleges felhasználó társítva.
+> Csak a Windows 10 1803-es és újabb verziói támogatják az alkalmazások telepítését, ha nincs hozzárendelve elsődleges felhasználó.
 >
-> A LOB-alkalmazások központi telepítése nem támogatott a Windows 10 Home kiadásait futtató eszközökön.
+> A LOB-alkalmazások telepítése nem támogatott a Windows 10 Home kiadásait futtató eszközökön.
 
-## <a name="windows-10-line-of-business-apps"></a>Windows 10-es üzletági alkalmazások
+## <a name="windows-10-lob-apps"></a>Windows 10 LOB-alkalmazások
 
-A Windows 10-es üzletági alkalmazások alá vannak írva és fel vannak töltve az Intune felügyeleti konzoljára. Lehetnek olyan modern alkalmazások, mint az Univerzális Windows-platform (UWP) alkalmazások és a Windows-alkalmazáscsomagok (AppX), de Win 32-alkalmazások is, amilyenek az egyszerű Microsoft Installer telepítőcsomag-fájlok (MSI). Az üzletági alkalmazások frissítéseit minden alkalommal a rendszergazdának kell feltöltenie és üzembe helyeznie. Az üzembe helyezett frissítések felhasználói beavatkozás nélkül, automatikusan telepítve lesznek azoknak a végfelhasználóknak az eszközein, akik telepítették az alkalmazást. A felhasználó nem avatkozhat be a frissítésekbe. 
+Windows 10 LOB-alkalmazásokat az Intune felügyeleti konzolra lehet aláírni és feltölteni. Ezek közé tartozhatnak a modern alkalmazások, például a Univerzális Windows-platform (UWP) alkalmazások és a Windows-alkalmazáscsomag (AppX), valamint a Win 32-alkalmazások, például a Microsoft Installer-csomagok egyszerű fájljai (MSI). A rendszergazdának manuálisan kell feltöltenie és telepítenie a LOB-alkalmazások frissítéseit. Ezeket a frissítéseket a rendszer automatikusan telepíti az alkalmazást telepítő felhasználói eszközökre. Nincs szükség felhasználói beavatkozásra, és a felhasználónak nincs hozzáférése a frissítésekhez. 
 
 ## <a name="microsoft-store-for-business-apps"></a>Vállalati Microsoft Áruházbeli alkalmazások
 
-Az üzleti alkalmazások Microsoft Store a Microsoft Store for Business felügyeleti portálon vásárolt modern alkalmazások, amelyek ezután szinkronizálva lesznek a felügyelethez Microsoft Intune. Az alkalmazások lehetnek **online licencelésűek** vagy **offline licencelésűek**. A Microsoft Store for Business alkalmazások frissítéseit közvetlenül a Microsoft Store kezeli, és nincs szükség további beavatkozásra, a rendszergazdára. Egy egyéni Uniform Resource Identifier (URI) használatával megakadályozhatja, hogy bizonyos alkalmazások frissítései is meglegyenek. További információ: [Vállalati alkalmazásfelügyelet – Alkalmazás automatikus frissítésének megakadályozása](https://docs.microsoft.com/windows/client-management/mdm/enterprise-app-management#prevent-app-from-automatic-updates). Az eszközön a végfelhasználó is letilthatja az eszközön lévő összes Vállalati Microsoft Áruházbeli alkalmazás frissítéseit. 
+Az üzleti alkalmazások Microsoft Store a Microsoft Store for Business felügyeleti portálon vásárolt modern alkalmazások. Ezután szinkronizálva lesznek a Microsoft Intune a felügyelethez. Az alkalmazások lehetnek Online licenccel vagy offline licenccel rendelkezők. A Microsoft Store közvetlenül kezeli a frissítéseket, és nem igényel további műveletet a rendszergazda. Egy egyéni Uniform Resource Identifier (URI) használatával megakadályozhatja, hogy bizonyos alkalmazások frissítései is meglegyenek. További információ: [Vállalati alkalmazásfelügyelet – Alkalmazás automatikus frissítésének megakadályozása](https://docs.microsoft.com/windows/client-management/mdm/enterprise-app-management#prevent-app-from-automatic-updates). A felhasználó emellett letilthatja a frissítéseket az összes Microsoft Store for Business-alkalmazáshoz az eszközön. 
 
 ### <a name="categorize-microsoft-store-for-business-apps"></a>Üzleti alkalmazások kategorizálása Microsoft Store 
-Az üzleti alkalmazások Microsoft Store kategorizálásához kövesse az alábbi lépéseket: 
+A Microsoft Store for Business alkalmazások kategorizálása: 
 
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Válassza ki az **ügyfélalkalmazások** > **alkalmazások** lehetőséget > válasszon ki egy Microsoft Store for Business alkalmazást > **alkalmazás adatai** > **kategóriában**. 
-3. Válasszon ki egy kategóriát a legördülő menüből.
+2. Válassza az **ügyfélalkalmazások** > **alkalmazások**elemet. Válasszon egy Microsoft Store vállalati alkalmazáshoz. Ezután válassza az **alkalmazásadatok @no__t-** 1**kategóriát**. 
+3. Válasszon ki egy kategóriát.
 
-## <a name="installing-apps-on-windows-10-devices"></a>Alkalmazások telepítése Windows 10-es eszközökön
-Az alkalmazás típusától függően az alkalmazás két módszer egyikével telepíthető Windows 10-es eszközre:
+## <a name="install-apps-on-windows-10-devices"></a>Alkalmazások telepítése Windows 10-es eszközökre
+Az alkalmazás típusától függően a következő két módszer egyikével telepítheti az alkalmazást egy Windows 10-es eszközre:
 
-- **Felhasználói környezet**: Ha egy alkalmazás felhasználói környezetben van telepítve, akkor a felügyelt alkalmazás a felhasználó számára az eszközön fog települni, amikor a felhasználó bejelentkezik az eszközre. Lényeges, hogy az alkalmazás telepítése csak akkor lesz sikeres, ha a felhasználó bejelentkezik az eszközre. 
-  - A modern üzletági és Microsoft Áruházbeli alkalmazások (online vagy offline) telepíthetők felhasználói környezetben, és az Elérhető és Szükséges hozzárendelés-típust is támogatják.
-  - A **felhasználói módban** vagy **kettős módban** készült Win32-alkalmazások felhasználói környezetben helyezhetők üzembe, és egyaránt támogatják a **Kötelező** és az **Elérhető** szándékmegjelölésű telepítést. 
-- **Eszköz környezete**: Ha egy alkalmazás az eszköz kontextusában van telepítve, a felügyelt alkalmazás közvetlenül az eszközre lesz telepítve az Intune-ban.
-  - Csak a modern üzletági alkalmazások és az offline licenccel rendelkező Microsoft Store for Business alkalmazások helyezhetők üzembe az eszköz környezetében, és csak a szükséges szándékot támogatják.
-  - A **Számítógép módban** vagy **kettős módban** készült Win32-alkalmazások felhasználói környezetben helyezhetők üzembe, és csak a **Kötelező** szándékmegjelölésű telepítést támogatják.
+- **Felhasználói környezet**: Ha egy alkalmazás felhasználói környezetben van telepítve, a felügyelt alkalmazás az adott felhasználó számára az eszközre kerül, amikor a felhasználó bejelentkezik az eszközre. Vegye figyelembe, hogy az alkalmazás telepítése nem sikerül, amíg a felhasználó be nem jelentkezik az eszközre. 
+  - A modern üzletági alkalmazások és a Microsoft Store for Business-alkalmazások (online és offline) felhasználói környezetben is üzembe helyezhetők. Az alkalmazások támogatják mind a szükséges, mind az elérhető szándékot.
+  - A felhasználói módban vagy kettős módban létrehozott Win32-alkalmazások felhasználói környezetben is üzembe helyezhetők, és mind a szükséges, mind a rendelkezésre álló szándékot támogatják. 
+- **Eszköz környezete**: Ha az alkalmazás az eszköz kontextusában van telepítve, a felügyelt alkalmazás közvetlenül az Intune-ba települ az eszközre.
+  - Csak a modern üzletági alkalmazások és az offline licenccel rendelkező Microsoft Store for Business alkalmazások helyezhetők üzembe az eszköz környezetében. Ezek az alkalmazások csak a szükséges szándékot támogatják.
+  - A gépi mód vagy kettős mód használatával létrehozott Win32-alkalmazások az eszköz kontextusában telepíthetők, és csak a szükséges szándékot támogatják.
 
 > [!NOTE]
-> A **kettős módban** készült Win32-alkalmazások esetén Önnek (a rendszergazdának) kell kiválasztania, hogy az alkalmazás **felhasználói módban** vagy **Számítógép módban** fog-e működni az adott példányhoz kapcsolódó összes hozzárendelés esetében. Az üzembe helyezési környezet hozzárendelésenként változtatható.  
+> A kettős üzemmódú alkalmazásokként létrehozott Win32-alkalmazások esetében a rendszergazdának ki kell választania, hogy az alkalmazás felhasználói vagy gépi üzemmódú alkalmazásként fog működni az adott példánnyal társított összes hozzárendeléshez. A telepítési környezet nem módosítható hozzárendelés alapján.  
 
-Ha egy alkalmazás eszközkörnyezetben van üzembe helyezve, a telepítés csak akkor lesz sikeres, ha célja az eszközkörnyezetet támogató eszköz. Az eszközkörnyezetben történő üzembe helyezés ezen felül a következő feltételeknek tesz eleget:
-- Ha egy alkalmazás eszközkörnyezetben van üzembe helyezve, célja pedig egy felhasználó, akkor a telepítés sikertelen lesz és a következő állapot- és hibaüzenet jelenik meg a felügyeleti konzolon:
+Ha egy alkalmazás az eszköz kontextusában van telepítve, a telepítés csak akkor lesz sikeres, ha az eszköz környezetét támogató eszközre irányul. Az eszközkörnyezetben történő üzembe helyezés ezen felül a következő feltételeknek tesz eleget:
+- Ha egy alkalmazás az eszköz kontextusában van telepítve, és egy felhasználóra irányul, a telepítés sikertelen lesz. A következő állapot és hiba jelenik meg a felügyeleti konzolon:
   - Állapot: Sikertelen.
   - Hiba: A felhasználó nem célozhatja meg az eszköz környezetének telepítését.
-- Ha egy alkalmazás eszközkörnyezetben van üzembe helyezve, célja azonban egy olyan eszköz, amely nem támogatja az eszközkörnyezetet, akkor a telepítés sikertelen lesz, és a következő állapot- és hibaüzenet jelenik meg a felügyeleti konzolon:
+- Ha egy alkalmazás az eszköz kontextusában van telepítve, de olyan eszközre irányul, amely nem támogatja az eszköz kontextusát, a telepítés sikertelen lesz. A következő állapot és hiba jelenik meg a felügyeleti konzolon:
   - Állapot: Sikertelen.
-  - Hiba: Ez a platform nem támogatja az eszközök környezetének telepítését. 
+  - Hiba: A platform nem támogatja az eszközkörnyezetben történő telepítést. 
 
 > [!Note]
-> Ha egy adott üzembe helyezés alkalmazás-hozzárendelése már ki van mentve, ennek a hozzárendelésnek a környezete többé nem módosítható, csak a modern alkalmazások esetén. Modern alkalmazások esetén a környezet felhasználóiról eszközkörnyezetre módosítható. 
+> Ha egy adott központi telepítéssel ment egy alkalmazás-hozzárendelést, az adott hozzárendelés kontextusa nem módosítható, kivéve a modern alkalmazásokat. Modern alkalmazások esetén a kontextust a felhasználói környezetből az eszköz környezetére módosíthatja. 
 
-Ha egy felhasználó/eszköz esetében a szabályzatok ellentmondanak, az érvényre jutó szabályzat a következő prioritások alapján lesz meghatározva:
+Ha egyetlen felhasználó vagy eszköz házirendje ütközik, a következő prioritások érvényesek:
 - Az eszközkörnyezetek szabályzatai magasabb prioritásúak a felhasználói környezetekéinél. 
 - A telepítési szabályzatok magasabb prioritásúak az eltávolításiaknál.
 
-Alkalmazásoknak a Microsoft Intune használatával való hozzárendeléséről az [Alkalmazások hozzárendelése csoportokhoz a Microsoft Intune-nal](apps-deploy.md) és az [Alkalmazás-hozzárendelések belefoglalása vagy kizárása a Microsoft Intune-ban](apps-inc-exl-assignments.md) című cikkek tartalmaznak további információt. Az Intune-beli alkalmazástípusokat az [Alkalmazások hozzáadása a Microsoft Intune-hoz](apps-add.md) című cikk ismerteti.
+További információ: [Alkalmazás-hozzárendelések belefoglalása vagy kizárása a Microsoft Intune-ban](apps-inc-exl-assignments.md). Az Intune-beli alkalmazástípusokat az [Alkalmazások hozzáadása a Microsoft Intune-hoz](apps-add.md) című cikk ismerteti.
 
 ## <a name="next-steps"></a>További lépések
 
-- További információ az alkalmazások csoportokhoz rendeléséről: [Alkalmazások hozzárendelése csoportokhoz a Microsoft Intune-nal](apps-deploy.md).
-- Alkalmazás-hozzárendelések figyelésével kapcsolatos további tudnivalókért lásd: [Alkalmazások figyelése](apps-monitor.md).
+- [Alkalmazások társítása a csoportokhoz Microsoft Intune](apps-deploy.md)
+- [Alkalmazások figyelése](apps-monitor.md)

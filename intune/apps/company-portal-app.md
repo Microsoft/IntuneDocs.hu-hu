@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b32d34c1878bc0355c510ca342091010af43bca7
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 419fd15f747c8b41377f3aca94c4b96d7c4910c1
+ms.sourcegitcommit: b8127c7a62d9ac4d0f768980fa1424567bb58733
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731175"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72350008"
 ---
 # <a name="how-to-configure-the-microsoft-intune-company-portal-app"></a>A Microsoft Intune Céges portál alkalmazásának konfigurálása
 
@@ -36,7 +36,7 @@ A felhasználók a Microsoft Intune Céges portálon férhetnek hozzá a vállal
 > [!Tip]
 > A vállalati portál testreszabása a vállalati portál webhelyére és a vállalati portál alkalmazásaira egyaránt hatással van. Vegye figyelembe, hogy a felhasználóknak Intune-licenccel kell rendelkezniük a Céges portál webhely eléréséhez.
 
-A Céges portál személyre szabásával segítséget nyújt a végfelhasználók számára ismerős és hasznos felhasználói élményben. Ehhez az Intune-portálon válassza az **ügyfélalkalmazások** > **védjegyezése és testreszabása**lehetőséget, majd adja meg a szükséges beállításokat.
+A Céges portál személyre szabásával segítséget nyújt a végfelhasználók számára ismerős és hasznos felhasználói élményben. Ehhez az Intune-portálon válassza az **ügyféloldali alkalmazások** > **védjegyezés és testreszabás**lehetőséget, majd konfigurálja a szükséges beállításokat.
 
 Amikor egy felhasználó egy iOS-alkalmazást telepít a Céges portál, a rendszer kérni fogja a kérést. Ez akkor fordul elő, ha az iOS-alkalmazás az alkalmazás-áruházhoz van csatolva, egy mennyiségi vásárlási programhoz (VPP) vagy egy üzletági (LOB) alkalmazáshoz csatolva. A prompt lehetővé teszi, hogy a felhasználók elfogadják a műveletet, vagy engedélyezzék az alkalmazás felügyeletét. A prompt megjeleníti a vállalat nevét, vagy ha a cég neve nem érhető el, **céges portál** jelenik meg. 
 
@@ -78,7 +78,7 @@ Témaszínt alkalmazhat a Céges portálon. Jelöljön ki egy szabványos színt
 |**Jelöljön ki egy szabványos színt, vagy adjon meg egy hexadecimális hatjegyű kódot**| Válassza a **standard** elemet a szín kiválasztásához. Válassza az **Egyéni** lehetőséget egy hexadecimális kódon alapuló meghatározott szín kiválasztásához.|
 |**Téma színének kiválasztása**| A Vállalati portálra alkalmazni kívánt témaszín kiválasztása. Választhat a színválasztóból, vagy megadhat egy hexadecimális kódot. |
 |**Megjelenítés**| Válassza ki, hogy mit szeretne megjeleníteni: **Cégembléma és -név**, **Csak cégembléma** vagy **Csak cégnév**. |
-|**A céges embléma feltöltése**|Feltöltheti a Céges portálon megjeleníteni kívánt vállalati emblémát. Vegye figyelembe, hogy a szöveg színének kiválasztása automatikusan történik a legnagyobb kontraszt eléréséhez. Az optimális megjelenés érdekében töltsön fel egy áttetsző hátterű emblémát.<p><ul><li>Maximális képméret: 400 képpont x 400 képpont</li><li>Maximális fájlméret: 750KB</li><li>Fájl típusa: PNG, JPG vagy JPEG</li></ul>|
+|**A céges embléma feltöltése**|Feltöltheti a Céges portálon megjeleníteni kívánt vállalati emblémát. Vegye figyelembe, hogy a szöveg színének kiválasztása automatikusan történik a legnagyobb kontraszt eléréséhez. Az optimális megjelenés érdekében töltsön fel egy áttetsző hátterű emblémát.<p><ul><li>Maximális képméret: 400px x 400px</li><li>Maximális fájlméret: 750KB</li><li>Fájltípus: PNG, JPG vagy JPEG</li></ul>|
 
 Miután feltöltötte az emblémát, az előnézeti területen meg fog jelenni az embléma a téma színével. Ha úgy dönt, hogy megjeleníti a cég nevét, az feketén vagy fehéren fog megjelenni a Céges portálon, és a téma színe alapján automatikusan a lehető legnagyobb kontraszttal fog megjelenni. A képernyő előnézeti területén nem fog megjelenni a cég neve. 
 
@@ -87,7 +87,7 @@ Válasszon olyan emblémát, amely fehér vagy világos háttéren mutat a legjo
 
 |Mező neve|További információ|
 |---|---|
-|**Embléma feltöltése**| Ez a lehetőség akkor érhető el, ha a céges embléma megjelenítése mellett döntött. Az optimális megjelenés érdekében töltsön fel egy áttetsző hátterű emblémát.<p><ul><li>Maximális képméret: 400 képpont x 400 képpont</li><li>Maximális fájlméret: 750KB</li><li>Fájl típusa: PNG, JPG vagy JPEG</li></ul>|
+|**Embléma feltöltése**| Ez a lehetőség akkor érhető el, ha a céges embléma megjelenítése mellett döntött. Az optimális megjelenés érdekében töltsön fel egy áttetsző hátterű emblémát.<p><ul><li>Maximális képméret: 400px x 400px</li><li>Maximális fájlméret: 750KB</li><li>Fájltípus: PNG, JPG vagy JPEG</li></ul>|
 
 ### <a name="brand-image-for-company-portal"></a>Márkakép a Céges portálhoz
 
@@ -95,7 +95,7 @@ Márkakép feltöltése, amely tükrözi a vállalati márkát. A módosítások
 
 |Mező neve|További információ|
 |---|---|
-|**Márkakép feltöltése**| Ez a beállítás lehetővé teszi a márka képének megjelenítését. Az iOS Céges portál háttérképként jelenik meg a felhasználó profiljának oldalán.<p><ul><li>Ajánlott képszélesség: Nagyobb, mint 1125px (legalább 650 px szükséges)</li><li>Maximális képméret: 1,3 MB</li><li>Fájl típusa: PNG, JPG vagy JPEG</li></ul>|
+|**Márkakép feltöltése**| Ez a beállítás lehetővé teszi a márka képének megjelenítését. Az iOS Céges portál háttérképként jelenik meg a felhasználó profiljának oldalán.<p><ul><li>Ajánlott képszélesség: nagyobb mint 1125px (legalább 650 px szükséges)</li><li>Maximális képméret: 1,3 MB</li><li>Fájltípus: PNG, JPG vagy JPEG</li></ul>|
 
 A megfelelő márkakép javíthatja a felhasználó Céges portálba vetett bizalmát a cég márkájának hangsúlyozásával. Íme néhány tipp, amelyet érdemes figyelembe venni a kép Céges portálhoz történő beszerzésekor, kiválasztásakor és optimalizálásakor. 
 
@@ -123,7 +123,7 @@ Az alábbi képen az iPhone arculatát bemutató példa látható:
 
 Testreszabhatja a szervezete számára a felügyelt iOS-eszközökön megjelenő adatvédelmi nyilatkozatot. Ez az üzenet felsorolja azokat az elemeket, amelyeket a szervezet nem láthat vagy végezhet a felügyelt iOS-eszközökön.
 
-A **céges portál testreszabási** > **eszköz kezelése és adatvédelmi üzenete**alatt a következőket teheti:
+A **céges portál testreszabás** > **eszközkezelés és adatvédelmi üzenet**területen a következőket teheti:
 
 - Fogadja el az **alapértelmezett értéket** a lista használatára a következő módon, vagy
 - Az **Egyéni** elem kiválasztásával testreszabhatja azon elemek listáját, amelyeket a szervezet nem láthat vagy végezhet a felügyelt iOS-eszközökön. A [Markdown](https://daringfireball.net/projects/markdown/) használatával felsorolásjeleket, félkövéreket, dőlteket és hivatkozásokat adhat hozzá.
@@ -134,15 +134,15 @@ A végfelhasználók a billentyűparancsok (gyorssegédek) használatával indí
 
 A következő billentyűparancsok érhetők el a Windows Céges portál alkalmazásban.
 
-| Terület | Leírás | Billentyűparancs |
+| Terület | Description | Billentyűparancs |
 |:------------------:|:--------------:|:-----------------:|
-| Navigációs menü | Navigációs | Alt+M |
-|  | Otthoni | Alt+H |
-|  | Minden alkalmazás | Alt+A |
+| Navigációs menü | Navigációs | ALT + M |
+|  | Otthoni | ALT + H |
+|  | Minden alkalmazás | ALT + A |
 |  | Telepített alkalmazások | Alt+I |
-|  | Visszajelzés küldése | Alt+F |
-|  | Saját profil | Alt+U |
-|  | Beállítások | Alt+T |
+|  | Visszajelzés küldése | ALT + F |
+|  | Saját profil | Alt + U |
+|  | Beállítások | ALT + T |
 | Kezdőlap – Eszköz csempe | Átnevezés | F2 |
 |  | Eltávolítás | Ctrl+D vagy Delete |
 |  | Hozzáférés ellenőrzése | Ctrl+M vagy F9 |
@@ -165,13 +165,13 @@ A felhasználók a helyi vagy távoli eszközökön végezhetnek műveleteket a 
 - **Sync (szinkronizálás** ) – Ez a művelet az Intune szolgáltatással kezdeményezi az eszköz beadását. Ez a Céges portál **ellenőrzési állapotaként** jelenik meg.
 - **Távoli zárolás** – ezzel zárolja az eszközt, és PIN-kódot igényel a zárolás feloldásához.
 - Jelszó **alaphelyzetbe állítása** – ezzel a művelettel alaphelyzetbe állíthatja az eszköz PIN-kódját. IOS-eszközökön a PIN-kód el lesz távolítva, és a végfelhasználónak új kódot kell megadnia a beállításokban. A támogatott androidos eszközökön új PIN-kódot hoz létre az Intune, és ideiglenesen megjelenik a Céges portál.
-- **Kulcs helyreállítása** – ezzel a művelettel lehet helyreállítani a titkosított eszközök titkosítási kulcsát.
+- **Kulcs helyreállítása** – ezzel a művelettel helyreállíthatja a titkosított MacOS-eszközök személyes helyreállítási kulcsát a céges portál webhelyről. 
 
 ### <a name="self-service-actions"></a>Önkiszolgáló műveletek
 
 Egyes platformok és konfigurációk nem engedélyezik az önkiszolgáló eszközök műveleteit. Az alábbi táblázat további részleteket tartalmaz az önkiszolgáló műveletekről:
 
-|     Platform    |    Kivonás    |    Törlés     |    Átnevezés<sup>(4)</sup>    |    Szinkronizálás    |    Távoli zárolás    |    Jelszó alaphelyzetbe állítása    |    Kulcshelyreállítás    |
+|     Platfésm    |    Kivonás    |    Törlés     |    Átnevezés<sup>(4)</sup>    |    Sync    |    Távoli zárolás    |    Jelszó alaphelyzetbe állítása    |    Kulcs helyreállítása    |
 |------------------------|--------------------|--------------------|-----------------|-----------------|--------------------------|--------------------------|--------------------|
 |    Windows 10<sup>(3)</sup>    |    Elérhető<sup>(1)</sup>    |    Elérhető    |    Elérhető    |    Elérhető    |    Csak Windows Phone-telefon    |    Csak Windows Phone-telefon    |    NA    |
 |    iOS<sup>(3)</sup>    |    Elérhető    |    Elérhető    |    Elérhető    |    Elérhető    |    Elérhető    |    Elérhető    |    NA    |
@@ -180,8 +180,7 @@ Egyes platformok és konfigurációk nem engedélyezik az önkiszolgáló eszkö
 
 
 <sup>(1)</sup> a kivonás mindig le van tiltva az Azure ad-hez csatlakoztatott Windows-eszközökön.<br>
-<sup>(2)</sup> a MacOS rendszerhez készült kulcs-helyreállítás csak a webes portálon keresztül érhető el.<br>
-<sup>(3)</sup> az összes távoli művelet le van tiltva, ha egy eszköz beléptetési kezelőt használ.<br>
+<sup>(2)</sup> a MacOS-hez készült személyes kulcs helyreállítása csak a céges portál webhelyén érhető el.<br>@no__t – 0<sup>(3)</sup> az összes távoli művelet le van tiltva, ha az eszközök tanúsítványigénylési kezelőjét használják.<br>
 <sup>(4)</sup> az Átnevezés csak az eszköz nevét módosítja a céges portál alkalmazásban vagy webhelyen, nem az eszközön.<br>
 <sup>(5)</sup> a távoli törlés nem érhető el MacOS-eszközökön.<br>
 <sup>(6)</sup> a PIN-kód alaphelyzetbe állítása néhány Android-és androidos vállalati konfiguráció esetén nem támogatott. További információkért lásd: [eszköz PIN-kód alaphelyzetbe állítása vagy eltávolítása az Intune-ban](../remote-actions/device-passcode-reset.md).<br>

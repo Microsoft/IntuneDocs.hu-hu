@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/13/2018
+ms.date: 10/15/2019
 ms.topic: archived
 ms.service: microsoft-intune
 ms.localizationpriority: medium
@@ -16,16 +16,21 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic-keep
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8f481c17e6cb1285147c7f6361bfff73801b2bba
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 89382f70b0a982c4acc406ff373b02013f75cf7b
+ms.sourcegitcommit: b8127c7a62d9ac4d0f768980fa1424567bb58733
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732075"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72350066"
 ---
 # <a name="manage-windows-pcs-as-computers-via-intune-software-client"></a>Windows rendszerű számítógépek kezelése az Intune-szoftverügyfélen keresztül számítógépként
 
 [!INCLUDE [classic-portal](../../intune-classic/includes/classic-portal.md)]
+
+> [!WARNING]
+> A Microsoft bejelentette, hogy a [Windows 7 támogatása 2020. január 14-én véget ér](https://support.microsoft.com/help/4057281/windows-7-support-will-end-on-january-14-2020). Ezen a napon az Intune visszavonja a Windows 7 operációs rendszerű eszközök támogatását. A Microsoft a szolgáltatási és támogatási kimaradások megelőzése érdekében kifejezetten ajánlja a Windows 10-re való átállást.
+> 
+> További információkért lásd: az [Intune-terv változásának megtervezése, a Windows 7 támogatásának megszűnése](../fundamentals/whats-new.md#intune-plan-for-change-nearing-end-of-support-for-windows-7-).
 
 > [!NOTE]
 > A Microsoft Intune-ban kezelheti a Windows-számítógépeket [mobileszközként a mobileszköz-kezelés (MDM),](../enrollment/windows-enroll.md) vagy számítógépként az Intune szoftverügyfél használatával, a lent ismertetett módon. A Microsoft azonban azt javasolja, hogy az ügyfelek [lehetőség szerint az MDM-megoldást válasszák](../enrollment/windows-enroll.md) a felügyelethez. További információ: a [Windows rendszerű számítógépek számítógépként vagy mobileszközökként való kezelésének összehasonlítása](pc-management-comparison.md) 
@@ -35,7 +40,6 @@ Az Intune átfogó megoldást nyújt a mobileszközök kezelésére a szervezete
 Az Intune-szoftverügyfél a korábbi operációs rendszerrel működő, például a Windows 7 rendszerű számítógépekhez a legalkalmasabb, amelyeket nem lehet mobileszközként kezelni. Az Intune-szoftverügyfél a Csoportházirend és hasonló felügyeleti képességek segítségével kezeli a számítógépeket a felhőből.
 
 Az Intune támogatja a Windows rendszerű számítógépek számítógépként való kezelését a szoftverügyfél használatával – maximum 7000 számítógépig. Ennél is nagyobb méretű környezet esetén mobileszközként kezelheti Windows 10 rendszerű számítógépeit. Az Intune egyes kiadásai és a Windows 10 frissítései a mobileszköz-kezelési architektúrán alapuló felügyeleti funkciókat tartalmaznak. Erősen ajánlott a szervezet áthelyezése a Windows 10 mobileszközként történő kezelésére.
-
 
 > [!NOTE]
 > A Windows 8.1-es vagy újabb rendszerű eszközöket kezelheti számítógépként az Intune-ügyfélszoftverrel, vagy mobileszközként. Mindkét módszert azonban nem használhatja ugyanazon az eszközön. Alaposan mérlegeljen, mielőtt a számítógépeknek az Intune-ügyfélszoftverrel való kezelése mellett döntene. Ez a témakör kizárólag az Intune-szoftverügyféllel PC-ként kezelt eszközökre vonatkozik.
@@ -47,7 +51,7 @@ Az Intune-ügyfélszoftver telepítéséhez a következő minimális hardverköv
 
 |Követelmény|További információ|
 |---------------|--------------------|
-|Network (Hálózat)|Az ügyfél használatához a számítógépnek internetkapcsolattal kell rendelkeznie.|
+|Hálózat|Az ügyfél használatához a számítógépnek internetkapcsolattal kell rendelkeznie.|
 |Processzor és memória|A processzorra és a RAM-ra vonatkozó követelményeket a számítógép operációs rendszere határozza meg.|
 |Lemezterület|200 MB szabad lemezterület az ügyfélszoftver telepítése előtt.|
 
@@ -60,9 +64,6 @@ Az ügyfélszoftver telepítéséhez a következő szoftverek szükségesek:
 |Rendszergazdai engedélyek|Az ügyfélszoftvert telepítő fióknak helyi rendszergazdai engedélyekkel kell rendelkeznie az eszközön.|
 |Windows Installer 3.1|A számítógépnek legalább a Windows Installer 3.1-es verziójával kell rendelkeznie.<br /><br />A Windows Installer verziójának megtekintése egy számítógépen:<br /><br />  A számítógépen kattintson a jobb gombbal a **%windir%\System32\msiexec.exe** fájlra, majd a **Tulajdonságok** menüpontra.<br /><br />A Windows Installer legújabb verzióját letöltheti a Microsoft Developer Network webhelyen található [Windows Installer újraterjeszthető csomagok](http://go.microsoft.com/fwlink/?LinkID=234258) oldalról.|
 |Nem kompatibilis ügyfélszoftver eltávolítása|Az Intune-ügyfélszoftver telepítése előtt távolítson el a számítógépről minden Configuration Manager-, Operations Manager- és Service Manager-ügyfélszoftvert.|
-
-> [!WARNING]
-> A Microsoft bejelentette, hogy a [Windows 7 támogatása 2020. január 14-én véget ér](https://support.microsoft.com/help/4057281/windows-7-support-will-end-on-january-14-2020). Ezen a napon az Intune visszavonja a Windows 7 operációs rendszerű eszközök támogatását. A Microsoft a szolgáltatási és támogatási kimaradások megelőzése érdekében kifejezetten ajánlja a Windows 10-re való átállást. 
 
 ## <a name="deploying-the-intune-software-client"></a>Az Intune-szoftverügyfél üzembe helyezése
 Intune-rendszergazdaként több módon is elérhetővé teheti az Intune-szoftverügyfelet a felhasználók számára. Útmutatásért lásd: [Az Intune-szoftverügyfél telepítése Windows rendszerű számítógépekre](../install-the-windows-pc-client-with-microsoft-intune.md).
@@ -114,7 +115,7 @@ A fenti feladatokról az [általános számítógép-felügyeleti feladatokat](c
 Az Intune-ügyfélszoftverrel felügyelt PC-knél nem használhat bizonyos olyan felügyeleti lehetőségeket, amelyek segítségével PC-ként kezelheti a mobileszközöket:
 
 - Teljes törlés (a szelektív törlés elérhető)
-- Feltételes hozzáférés
+- Conditional Access
 
 Azt is vegye figyelembe, hogy az Intune felügyeleti konzoljának bizonyos részei, mint például az **Updates** (Frissítések), a **Protection** (Védelem) és a **Licenses** (Licencek) csak akkor jelennek meg, ha vannak az Intune-ügyfélszoftverrel regisztrált eszközök.
 

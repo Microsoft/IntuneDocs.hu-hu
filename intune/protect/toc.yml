@@ -210,7 +210,7 @@
     - name: Hibaelhárítás
       items:
         - name: Szabályzatok és profilok problémáinak elhárítása
-          href: ../configuration/troubleshoot-policies-in-microsoft-intune.md?context=./context/pr-context.yml
+          href: ../configuration/troubleshoot-policies-in-microsoft-intune.md?toc=/intune/protect/toc.json&bc=/protect/breadcrumb/toc.json
         - name: A feltételes hozzáférés hibaelhárítása
           href: troubleshoot-conditional-access.md
         - name: A tanúsítvány-összekötő hibaelhárítása
