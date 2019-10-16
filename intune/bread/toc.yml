@@ -1,0 +1,39 @@
+- name: Docs
+  tocHref: /
+  topicHref: /
+  items:
+    - name: Enterprise Mobility + Security
+      tocHref: /enterprise-mobility-security/
+      topicHref: /enterprise-mobility-security/
+      items:
+        - name: Intune
+          tocHref: /intune/
+          topicHref: /intune/
+          items:
+            - name: Oktatási célokra Intune
+              tocHref: /intune-education/
+              topicHref: /intune-education/
+            - name: Intune-felhasználói súgó
+              tocHref: /intune-user-help/
+              topicHref: /intune-user-help/
+            - name: Alkalmazások
+              tocHref: /intune/apps/
+              topicHref: /intune/apps/
+            - name: Alapok
+              tocHref: /intune/fundamentals/
+              topicHref: /intune/fundamentals/
+            - name: Beléptetés
+              tocHref: /intune/enrollment/
+              topicHref: /intune/enrollment/
+            - name: Távoli műveletek
+              tocHref: /intune/remote-actions/
+              topicHref: /intune/remote-actions/
+            - name: Configuration
+              tocHref: /intune/configuration/
+              topicHref: /intune/configuration/
+            - name: Védelem
+              tocHref: /intune/protect/
+              topicHref: /intune/protect/
+            - name: Fejlesztő
+              tocHref: /intune/developer/
+              topicHref: /intune/developer/
