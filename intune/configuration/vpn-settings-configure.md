@@ -8,18 +8,19 @@ manager: dougeby
 ms.date: 09/04/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: high
 ms.technology: ''
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2b96de28e517a989fc1e749176039e6c02ef51e0
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 5628ba39cafe38cc66827d69584d009c15326bd4
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730447"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72491767"
 ---
 # <a name="create-vpn-profiles-to-connect-to-vpn-servers-in-intune"></a>VPN-profilok létrehozása a VPN-kiszolgálókhoz való csatlakozáshoz az Intune-ban
 
@@ -43,22 +44,22 @@ Például az összes iOS-eszközt konfigurálni szeretné a szükséges beállí
 
 A következő kapcsolattípusokkal hozhat létre VPN-profilt:
 
-|Kapcsolat típusa|Platform|
+|Kapcsolat típusa|Platfésm|
 |-|-|
 |Automatikus|Windows 10|
 |Check Point Capsule VPN|– Android<br/>– Androidos vállalati munkahelyi profilok<br/>– iOS<br/>– macOS<br/>– Windows 10<br/>– Windows 8,1<br/>-Windows Phone-telefon 8,1|
 |Cisco AnyConnect|– Android<br/>– Androidos vállalati munkahelyi profilok<br/>– Androidos vállalati eszköz tulajdonosa (teljes mértékben felügyelt)<br/>– iOS<br/>– macOS|
 |Cisco (IPSec)|iOS|
-|Citrix SSO|– Android<br/>– Androidos vállalati munkahelyi profilok: [Alkalmazás-konfigurációs házirend](../apps/app-configuration-policies-use-android.md) használata<br/>– iOS<br/>– Windows 10|
+|Citrix SSO|– Android<br/>– Androidos vállalati munkahelyi profilok: [alkalmazás-konfigurációs házirend](../apps/app-configuration-policies-use-android.md) használata<br/>– iOS<br/>– Windows 10|
 |Egyéni VPN|– iOS<br/>– macOS|
 |F5 Access|– Android<br/>– Androidos vállalati munkahelyi profilok<br/>– Androidos vállalati eszköz tulajdonosa (teljes mértékben felügyelt)<br/>– iOS<br/>– macOS<br/>– Windows 10<br/>– Windows 8,1<br/>-Windows Phone-telefon 8,1|
-|IKEv2|Windows 10|
+|IKEv2| – iOS<br/>– Windows 10|
 |L2TP|Windows 10|
-|Palo Alto Hálózatok GlobalProtect|– Androidos vállalati munkahelyi profilok: [Alkalmazás-konfigurációs házirend](../apps/app-configuration-policies-use-android.md) használata<br/>– iOS<br/>– Windows 10|
+|Palo Alto Hálózatok GlobalProtect|– Androidos vállalati munkahelyi profilok: [alkalmazás-konfigurációs házirend](../apps/app-configuration-policies-use-android.md) használata<br/>– iOS<br/>– Windows 10|
 |PPTP|Windows 10|
 |Pulse Secure|– Android<br/>– Androidos vállalati munkahelyi profilok<br/>– Androidos vállalati eszköz tulajdonosa (teljes mértékben felügyelt)<br/>– iOS<br/>– macOS<br/>– Windows 10<br/>– Windows 8,1<br/>-Windows Phone-telefon 8,1|
 |SonicWall Mobile Connect|– Android<br/>– Androidos vállalati munkahelyi profilok<br/>– iOS<br/>– macOS<br/>– Windows 10<br/>– Windows 8,1<br/>-Windows Phone-telefon 8,1|
-|Zscaler|– Androidos vállalati munkahelyi profilok: [Alkalmazás-konfigurációs házirend](../apps/app-configuration-policies-use-android.md) használata<br/>– iOS|
+|Zscaler|– Androidos vállalati munkahelyi profilok: [alkalmazás-konfigurációs házirend](../apps/app-configuration-policies-use-android.md) használata<br/>– iOS|
 
 > [!IMPORTANT]
 > Az eszközökre alkalmazott VPN-profilok használatához telepíteni kell a megfelelő VPN-alkalmazást a profilhoz. Az alkalmazás Intune-nal történő hozzárendeléséhez [A Microsoft Intune-alkalmazásfelügyelet ismertetése](../apps/app-management.md) című témakörben talál segítséget.  
@@ -67,23 +68,23 @@ Az [Egyéni beállításokkal rendelkező profil létrehozása](custom-settings-
 
 ## <a name="create-a-device-profile"></a>Eszközprofil létrehozása
 
-1. Az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ban válassza az **eszköz konfigurációs** > **profilok** > **profil létrehozása**lehetőséget.
+1. Az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ban válassza az **eszköz konfigurációja** > **profilok** > **profil létrehozása**lehetőséget.
 2. Adja meg a következő tulajdonságokat:
 
-    - **Név**: Adjon meg egy leíró nevet a profilhoz. Nevezze el a profilokat, hogy később könnyen azonosítható legyen. Egy jó profilnév például a **teljes vállalat VPN-profilja**.
-    - **Description** (Leírás): Adja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
-    - **Platform**: Válassza ki az eszközök platformját. A választható lehetőségek:
+    - **Név**: adjon meg egy leíró nevet a profilhoz. Nevezze el a profilokat, hogy később könnyen azonosítható legyen. Egy jó profilnév például a **teljes vállalat VPN-profilja**.
+    - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
+    - **Platform**: válassza ki az eszközök platformját. A választható lehetőségek:
 
-      - **Android**
-      - **Csak androidos vállalati** > **eszköz tulajdonosa**
-      - **Csak androidos vállalati** > **munkahelyi profil**
+      - **Android--**
+      - **Android Enterprise**@no__t – 1**eszköz tulajdonosa**
+      - **Android Enterprise**@no__t – 1**munkahelyi profil**
       - **iOS/iPadOS**
       - **macOS**
       - **Windows Phone 8.1**
-      - **Windows 8.1 és újabb**
+      - **Windows 8.1 és újabb verziók**
       - **Windows 10 és újabb**
 
-    - **Profil típusa**: Válassza a **VPN**lehetőséget.
+    - **Profil típusa**: válassza a **VPN**lehetőséget.
 
 3. A kiválasztott platformtól függően a konfigurálható beállítások eltérőek. Az egyes platformokon az alábbi cikkekben talál részletes beállításokat:
 

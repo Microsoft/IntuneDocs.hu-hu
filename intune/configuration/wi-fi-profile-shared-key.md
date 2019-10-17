@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 06/25/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: c6fd72a6-7dc8-48fc-9df1-db5627a51597
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 175be4d51b034745ce6fab050f68be277f1d4858
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 623c6652964ae5a4f16a9c689dda3aee99c50d31
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730427"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506498"
 ---
 # <a name="use-a-custom-device-profile-to-create-a-wifi-profile-with-a-pre-shared-key---intune"></a>Előmegosztott kulccsal ellátott WiFi-profil létrehozása egyéni eszközprofil segítségével – Intune
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
@@ -59,7 +60,7 @@ Hozhat létre előmegosztott kulcsot tartalmazó egyéni profilt Androidhoz vagy
      > [!NOTE]
      > Ne hagyja ki a karaktersor elején található pontot.
 
-     Az SSID az az SSID, amelyhez létrehozza a házirendet. Ha például a Wi-Fi neve `Hotspot-1`, írja be `./Vendor/MSFT/WiFi/Profile/Hotspot-1/Settings`a következőt:.
+     Az SSID az az SSID, amelyhez létrehozza a házirendet. Ha például a Wi-Fi neve `Hotspot-1`, írja be a következőt: `./Vendor/MSFT/WiFi/Profile/Hotspot-1/Settings`.
 
    e. **Érték mező**: ide illessze be az XML-kódot. Tekintse át a cikkben található példákat. Módosítsa az értékeket a saját hálózati beállításainak megfelelően. A kódban található megjegyzések további információt nyújtanak.
 3. Válassza az **OK** gombot, mentsen, majd társítsa a szabályzatot.
@@ -77,7 +78,7 @@ Az alábbi példában megtalálhatja az Android vagy Windows rendszerhez készü
 
 - A `<protected>false</protected>` tulajdonságot **false** (hamis) értékre kell állítania. Ha **true** (igaz) értékre állítja, előfordulhat, hogy az eszköz titkosított jelszót vár, és a kapott jelszót megpróbálja visszafejteni, melynek következtében a kapcsolódás meghiúsulhat.
 
-- A `<hex>53534944</hex>` helyére a `<name><SSID of wifi profile></name>` paraméter hexadecimális értékét kell beírni. Előfordulhat, hogy a Windows 10-es eszközök `x87D1FDE8 Remediation failed` hamis hibát adnak vissza, de az eszköz továbbra is tartalmazza a profilt.
+- A `<hex>53534944</hex>` helyére a `<name><SSID of wifi profile></name>` paraméter hexadecimális értékét kell beírni. Előfordulhat, hogy a Windows 10-es eszközök hamis `x87D1FDE8 Remediation failed` hibát adnak vissza, de az eszköz továbbra is tartalmazza a profilt.
 
 - Az XML speciális karaktereket tartalmaz, például a `&` (jel) karaktert. A speciális karakterek használata megakadályozhatja, hogy az XML a várt módon működjön. 
 
@@ -127,7 +128,7 @@ xmlns="http://www.microsoft.com/networking/WLAN/profile/v1">
 ```
 
 ## <a name="eap-based-wi-fi-profile-example"></a>EAP-alapú példa Wi-Fi-profil
-Az alábbi példában megtalálhatja az EAP-alapú Wi-Fi-profilhoz használható XML-kódot: A példa a megfelelő formátumot mutatja be, valamint részletesebb információkkal is szolgál. Ez azonban csak egy példa, és nem az Ön környezetéhez ajánlott konfiguráció.
+Az alábbi példa egy EAP-alapú Wi-Fi-profil XML-kódját tartalmazza: A példa a megfelelő formátumot mutatja be, valamint részletesebb információkkal is szolgál. Ez azonban csak egy példa, és nem az Ön környezetéhez ajánlott konfiguráció.
 
 
 ```xml
@@ -215,20 +216,20 @@ Az alábbi példában megtalálhatja az EAP-alapú Wi-Fi-profilhoz használható
 Meglévő Wi-Fi-kapcsolatból is létrehozhat egy XML-fájlt. Windows rendszerű számítógépen hajtsa végre a következő lépéseket:
 
 1. Hozzon létre egy helyi mappát az exportált W-Fi-profilokhoz, például c:\WiFi.
-2. Nyisson meg egy parancssort rendszergazdaként (kattintson a jobb gombbal `cmd`a **Futtatás rendszergazdaként**lehetőségre  > )
-3. Futtassa az `netsh wlan show profiles` parancsot. A rendszer felsorolja az összes profil nevét.
-4. Futtassa az `netsh wlan export profile name="YourProfileName" folder=c:\Wifi` parancsot. Ez a parancs létrehoz egy nevű `Wi-Fi-YourProfileName.xml` fájlt a c:\Wifi.-ben.
+2. Nyisson meg egy parancssort rendszergazdaként (kattintson a jobb gombbal `cmd` @ no__t-1**Futtatás rendszergazdaként**)
+3. Futtassa a `netsh wlan show profiles` parancsot. A rendszer felsorolja az összes profil nevét.
+4. Futtassa a `netsh wlan export profile name="YourProfileName" folder=c:\Wifi` parancsot. Ez a parancs létrehoz egy `Wi-Fi-YourProfileName.xml` nevű fájlt a c:\Wifi.
 
-    - Ha előmegosztott kulcsot tartalmazó Wi-Fi-profilt exportál, adja hozzá `key=clear` a parancsot a következőhöz:
+    - Ha előmegosztott kulcsot tartalmazó Wi-Fi-profilt exportál, adja hozzá a `key=clear` parancsot a következő parancshoz:
   
       `netsh wlan export profile name="YourProfileName" key=clear folder=c:\Wifi`
 
-      `key=clear`a kulcsot egyszerű szövegként exportálja, amely a profil sikeres használatához szükséges.
+      @no__t – 0 a kulcsot egyszerű szövegként exportálja, amely a profil sikeres használatához szükséges.
 
-Az XML-fájl létrehozása után másolja és illessze be az XML-szintaxist az OMA-URI beállítások > **adattípusba**. [Egyéni profil létrehozása](#create-a-custom-profile) (ebben a cikkben) a lépéseket sorolja fel.
+Az XML-fájl létrehozása után másolja és illessze be az XML-szintaxist az OMA-URI beállítások > **adattípusba**. [Hozzon létre egy egyéni profilt](#create-a-custom-profile) (ebben a cikkben) a lépéseket.
 
 > [!TIP]
-> `\ProgramData\Microsoft\Wlansvc\Profiles\Interfaces\{guid}`az XML-formátumú összes profilt is tartalmazza.
+> a `\ProgramData\Microsoft\Wlansvc\Profiles\Interfaces\{guid}` az összes, XML formátumú profilt is tartalmazza.
 
 ## <a name="best-practices"></a>Ajánlott eljárások
 

@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 07/30/2019
 ms.topic: quickstart
 ms.service: microsoft-intune
+ms.subservice: enrollment
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 658a7655-a6df-4dbe-b56c-22c7fc60e706
@@ -16,14 +17,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 93edda33f8adf9a2ff119390ccb21898fac06b81
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 0aeeb55804a2bdd3ef1143bbb88dee968892c5c7
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731751"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72509288"
 ---
-# <a name="quickstart-enroll-your-windows-10-device"></a>QuickStart Windows 10 rendszerű eszköz regisztrálása
+# <a name="quickstart-enroll-your-windows-10-device"></a>Rövid útmutató: Windows 10 rendszerű eszköz regisztrálása
 
 Ebben a rövid útmutatóban először Intune-felhasználói szerepkörben fog tevékenykedni, és regisztrálja a Windows 10 rendszerű eszközét a Microsoft Intune-ban. Ezután térjen vissza az Intune-hoz, és erősítse meg az eszköz regisztrálását.
 
@@ -32,7 +33,7 @@ A vállalati eszközök Microsoft Intune-beli regisztrálása lehetővé teszi, 
 > [!TIP]
 > Tekintse át, hogy mi történik, amikor [regisztrálja az eszközét az Intune-ban](/intune-user-help/what-happens-if-you-install-the-company-portal-app-and-enroll-your-device-in-intune-windows), és mit jelent ez az [eszközön található adatok szempontjából](/intune-user-help/what-info-can-your-company-see-when-you-enroll-your-device-in-intune).
 
-Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon egy ingyenes próbafiókkal](../fundamentals/free-trial-sign-up.md).
+Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon ingyenes próbafiókot](../fundamentals/free-trial-sign-up.md).
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -96,7 +97,7 @@ A Windows 10 asztali verzió regisztrációja előtt erősítse meg a Windows te
 
    ![Képernyőkép az Intune-ban regisztrált eszközökről](./media/quickstart-enroll-windows-device/quickstart-enroll-windows-device-07.png)
 
-## <a name="clean-up-resources"></a>Az erőforrások eltávolítása
+## <a name="clean-up-resources"></a>Erőforrások eltávolítása
 
 A Windows-eszköz regisztrációjának törléséhez tekintse meg a [Windows-eszköz eltávolítása a felügyelet alól](/intune-user-help/unenroll-your-device-from-intune-windows) szakaszt.
 
@@ -107,4 +108,4 @@ Ebből a rövid útmutatóból elsajátíthatta, hogyan regisztrálhat Windows 1
 Kövesse az Intune rövid útmutatóinak sorozatát a következő rövid útmutatóval.
 
 > [!div class="nextstepaction"]
-> [QuickStart Adja meg a jelszó kötelező hosszát az Android-eszközökhöz @ no__t-0
+> [Rövid útmutató: Kötelező jelszóhossz beállítása Android-eszközökhöz](../quickstart-set-password-length-android.md)

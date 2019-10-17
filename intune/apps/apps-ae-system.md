@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 09/16/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: apps
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c07ce82bbc056e1d76abeb5d31bf57e0973fad6e
-ms.sourcegitcommit: bdf948be824cf5390d5166a277f389f3785c81f9
+ms.openlocfilehash: 11618d844fe7c4e190295ad06111ae0944deda95
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71960880"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72507276"
 ---
 # <a name="add-android-enterprise-system-apps-to-microsoft-intune"></a>Android rendszerű nagyvállalati rendszeralkalmazások hozzáadása a Microsoft Intunehoz
 
@@ -36,11 +37,11 @@ Az Intune-ban az alábbi módon adhat hozzá egy androidos nagyvállalati rendsz
 2. Az **Intune** panelen válassza az **Ügyfélalkalmazások** > **Alkalmazások** > **Hozzáadás** elemet.
 3. Az **alkalmazás hozzáadása** panelen, a rendelkezésre álló **egyéb** típusok területen válassza az **Android Enterprise System app**elemet.
 4. Az alkalmazás adatainak konfigurálásához válassza a **Konfigurálás**lehetőséget, majd adja meg a következő adatokat:
-    - **Alkalmazás neve**: Adja meg az alkalmazás nevét.
-    - **Közzétevő**: Itt adhatja meg az alkalmazás kiadójának nevét.  
-    - **Csomag neve**: Adja meg a csomag nevét. Az Intune ellenőrzi, hogy érvényes-e a csomag neve.
-5. Kattintson az **OK** gombra.
-6. Válassza a **Hozzáadás** lehetőséget.
+    - **Alkalmazás neve**: adja meg az alkalmazás nevét.
+    - **Kiadó:** Adja meg az alkalmazás kiadójának nevét.  
+    - **Csomag neve**: adja meg a csomag nevét. Az Intune ellenőrzi, hogy érvényes-e a csomag neve.
+5. Válassza az **OK** gombot.
+6. Válassza a **Hozzáadás** elemet.
 
 > [!NOTE]
 > Az eszköz SZÁMÍTÓGÉPGYÁRTÓjának kell működnie, hogy megkeresse az engedélyezni vagy letiltani kívánt alkalmazás csomagjának nevét.

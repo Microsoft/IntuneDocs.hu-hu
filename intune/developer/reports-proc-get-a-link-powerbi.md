@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 10/07/2019
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: developer
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: 5E5A35D3-88F8-441B-8A0B-C5D7A1E5137B
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9e8fadb625073af2a70d605d3ceabb9ba97906ae
-ms.sourcegitcommit: 46322ca7a92971e18dc0b230f436b9ca892b90c5
+ms.openlocfilehash: 8d7a5f67dfd8f7256559cb54d873ed48205ad751
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72008336"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72490423"
 ---
 # <a name="connect-to-the-data-warehouse-with-power-bi"></a>Kapcsolódás az adattárházhoz a Power BI használatával
 
@@ -82,12 +83,12 @@ Ha az ügyfél hitelesítve van az Azure AD-ben, az OData-URL kapcsolódni tud a
 5. Válassza a **fájl** > **adatlekérdezés**lehetőséget. Válassza az **OData-betöltés** lehetőséget.
 6. Válassza a **Basic** (Egyszerű) lehetőséget.
 7. Írja be vagy másolja be az **OData-URL-t** az URL mezőbe.
-8. Kattintson az **OK** gombra.
+8. Válassza az **OK** gombot.
 9. Ha a Power BI Desktop-ügyfélben nem adta meg az Azure AD-s hitelesítő adatait, most adja meg azokat. Ahhoz, hogy hozzáférjen az adatokhoz, az OAuth 2.0 protokollt használva igazolnia kell, hogy jogosult az Azure Active Directory (Azure AD) használatára.  
     1. Válassza a **Szervezeti fiók** lehetőséget.  
     2. Adja meg felhasználónevét és jelszavát.  
     3. Válassza a **Bejelentkezés** lehetőséget.  
-    4. Kattintson a **Csatlakozás** gombra.  
+    4. Válassza a **kapcsolat**lehetőséget.  
 10. Válassza a **Betöltés** lehetőséget.
 
 ## <a name="next-steps"></a>További lépések

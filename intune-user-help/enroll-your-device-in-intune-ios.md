@@ -9,6 +9,7 @@ ms.date: 09/12/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: 6eeec7aa-1b07-4ce3-894c-13e09b89bdd4
 searchScope:
@@ -18,12 +19,12 @@ ms.reviewer: tisilv
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f207f1f94d34e6aa1768bb5ae0f5179710839c71
-ms.sourcegitcommit: 8934b1abec96e18cee15a77107d37551766f7666
+ms.openlocfilehash: e468042ab81d563c9fa4b272661508a340d61aa9
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71099869"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506245"
 ---
 # <a name="set-up-ios-device-access-to-your-company-resources"></a>A céges erőforrásokhoz iOS-eszközzel történő hozzáférés beállítása  
 
@@ -52,7 +53,7 @@ Eszköze regisztrálása után a Céges portál alkalmazás folyamatosan gondosk
 ### <a name="setting-notifications"></a>Értesítések beállítása  
 Ha a regisztráció után a vállalat új biztonsági követelményt, például többtényezős hitelesítést vezet be, a Céges portál alkalmazás értesíti Önt. Lehetősége lesz módosítani beállításait, hogy továbbra is dolgozhasson az eszközéről.  
 
-További információk a regisztrációval kapcsolatban: [Mi történik a Céges portál alkalmazás telepítésekor és az eszköz regisztrálásakor?](https://docs.microsoft.com//intune-user-help/what-happens-if-you-install-the-company-portal-app-and-enroll-your-device-in-intune-ios)  
+További információk a regisztrációval kapcsolatban: [Mi történik a Céges portál alkalmazás telepítésekor és az eszköz regisztrálásakor?](https://docs.microsoft.com//intune-user-help/what-happens-if-you-install-the-company-portal-app-and-enroll-your-device-in-intune-ios).  
 
 ## <a name="enroll-your-ios-device"></a>IOS-eszköz regisztrálása  
 
@@ -81,20 +82,20 @@ Előfordulhat, hogy a regisztráció során a rendszer több, mint néhány perc
 
 6. A Safari megnyitja a Céges portál webhelyét az eszközön. Amikor a rendszer kéri, hogy töltse le a konfigurációs profilt, koppintson az **Engedélyezés**elemre. Ha olyan eszközt használ, amely a következőket futtatja:  
     * iOS 12,2 és újabb verziók: Ha a letöltés befejeződött, koppintson a **Kész gombra.** Folytassa a cikk 7. lépésével.
-    * iOS 12,1 és korábbi verziók: A rendszer automatikusan átirányítja a beállítások alkalmazásba. Ugorjon a jelen cikk 8. lépésére.  
+    * iOS 12,1 és korábbi verziók: a rendszer automatikusan átirányítja a beállításokat az alkalmazásba. Ugorjon a jelen cikk 8. lépésére.  
  
     Ha véletlenül koppint a **Mellőzés**lehetőségre, frissítse a lapot. A rendszer felszólítja, hogy nyissa meg a Céges portál alkalmazást. Az alkalmazásból koppintson a **Letöltés újra**lehetőségre.
 
   > [!NOTE]
   > A felügyeleti profilt a letöltés után 8 percen belül a következő lépésekben leírtak szerint kell telepítenie. Ha nem, a profil el lesz távolítva, és újra kell indítania a beléptetést.  
 
-7. iOS 12,2 és újabb verziók esetén: Amikor a rendszer rákérdez a Céges portál megnyitására, koppintson a **Megnyitás**gombra. A **felügyeleti profil telepítése** képernyő felsorolja a profil telepítésének lépéseit.
+7. iOS 12,2 és újabb verziók esetén: Ha a rendszer kéri, hogy nyissa meg Céges portál, koppintson a **Megnyitás**gombra. A **felügyeleti profil telepítése** képernyő felsorolja a profil telepítésének lépéseit.
 
     ![Példa a Céges portál képernyőképére, a felügyeleti profil képernyőjének telepítése.](./media/ios-07-cp-enroll-1904.PNG)  
 
 8. Nyissa meg a beállítások alkalmazást, és koppintson a **profil letöltése**elemre.  
 
-    Ha a **profil letöltése** nem jelenik meg lehetőségként, nyissa meg az **általános** > **profilok**lapot. Ha továbbra sem látja a profilt, lehetséges, hogy újra le kell töltenie.  
+    Ha a **profil letöltése** nem jelenik meg lehetőségként, nyissa meg az **általános**@no__t – 2**profilt**. Ha továbbra sem látja a profilt, lehetséges, hogy újra le kell töltenie.  
 
     ![Példa a beállítások alkalmazás, a profil letöltött beállítása képernyőképre.](./media/ios-1904-settings-badge.PNG)  
 

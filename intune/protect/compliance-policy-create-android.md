@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 07/25/2019
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: e1258fe4-0b5c-4485-8bd1-152090df6345
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 80ed21c0831eb92a8e18596e7ab5f09848362b3a
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 4237b54b3ea89fcf75ce5a21f08012f384eed95c
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729803"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72502514"
 ---
 # <a name="android-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>Android-beállítások az eszközök megfelelő vagy nem megfelelőként való megjelöléséhez az Intune-nal
 
@@ -31,7 +32,7 @@ Ez a cikk felsorolja és leírja az Android-eszközökön az Intune-ban konfigur
 
 Ez a funkció az alábbiakra vonatkozik:
 
-- Android
+- Android:
 
 Intune-rendszergazdaként ezeket a megfelelőségi beállításokat használhatja a szervezeti erőforrások védelméhez. Ha többet szeretne megtudni a megfelelőségi szabályzatokról és azokról, tekintse meg [az eszközök megfelelőségének megkezdése](device-compliance-get-started.md)című témakört.
 
@@ -41,24 +42,24 @@ Intune-rendszergazdaként ezeket a megfelelőségi beállításokat használhatj
 
 ## <a name="device-health"></a>Device health
 
-- Feltört **eszközök**: Válassza a **Letiltás** elemet a feltört (feltört) eszközök nem megfelelőként való megjelöléséhez. Ha a **Nincs konfigurálva** (alapértelmezett) lehetőséget választja, a rendszer ezt a beállítást nem veszi figyelembe a megfelelőség, vagy meg nem felelőség megállapításához.
-- **Az eszköz a veszélyforrások szintjén vagy alatt történő bekapcsolásának megkövetelése**: Ezzel a beállítással elvégezheti a kockázatértékelést, amely a megtekintő mobil végpont biztonsági megoldásának a megfelelőségi feltétele. Ha a **Nincs konfigurálva** (alapértelmezett) lehetőséget választja, a rendszer ezt a beállítást nem veszi figyelembe a megfelelőség, vagy meg nem felelőség megállapításához. A beállítás használatához válassza ki a megengedett kockázati szintet:
-  - **Biztonságos**: Ez a lehetőség a legbiztonságosabb, mert az eszköz nem rendelkezhet fenyegetésekkel. Bármilyen szintű fenyegetés észlelésekor az eszközt a rendszer nem megfelelőként fogja értékeli.
+- **Rootolt eszközök**: Válassza a **Letiltás** lehetőséget a rootolt (jailbreakelt) eszközök nem megfelelőként való megjelöléséhez. Ha a **Nincs konfigurálva** (alapértelmezett) lehetőséget választja, a rendszer ezt a beállítást nem veszi figyelembe a megfelelőség, vagy meg nem felelőség megállapításához.
+- Az eszköznek **az eszköz veszélyforrási szintjén való használatának megkövetelése**: ezzel a beállítással a kockázatértékelés feltétele a megfelelőségi feladatnak. Ha a **Nincs konfigurálva** (alapértelmezett) lehetőséget választja, a rendszer ezt a beállítást nem veszi figyelembe a megfelelőség, vagy meg nem felelőség megállapításához. A beállítás használatához válassza ki a megengedett kockázati szintet:
+  - **Védett**: Ez a legbiztonságosabb beállítás, mivel az eszköz esetében semmilyen fenyegetés nem engedélyezett. Bármilyen szintű fenyegetés észlelésekor az eszközt a rendszer nem megfelelőként fogja értékeli.
   - **Alacsony**: Az eszköz csak abban az esetben minősül megfelelőnek, ha kizárólag alacsony szintű fenyegetések állnak fenn. Bármilyen magasabb szintű fenyegetés esetén az eszköz nem megfelelő státuszúnak minősül.
-  - **Közepes**: Az eszköz abban az esetben minősül megfelelőnek, ha az eszközön fennálló fenyegetések alacsony vagy közepes szintűek. Magas szintű fenyegetés észlelésekor a rendszer nem megfelelőként értékeli az eszközt.
-  - **Magas**: Ez a beállítás a legkevésbé biztonságos, és lehetővé teszi az összes veszélyforrás szintjét. Akkor lehet hasznos, ha ezt a megoldást kizárólag jelentéskészítési célokra használja.
+  - **Közepes**: Az eszköz abban az esetben minősül megfelelőnek, ha az eszközön észlelt fenyegetések alacsony vagy közepes szintűek. Magas szintű fenyegetés észlelésekor a rendszer nem megfelelőként értékeli az eszközt.
+  - **Magas**: Ez a legkevésbé biztonságos, minden fenyegetettségi szintet megengedő beállítás. Akkor lehet hasznos, ha ezt a megoldást kizárólag jelentéskészítési célokra használja.
 
 ### <a name="google-play-protect"></a>Google Play Protect
 
-- **A Google Play-szolgáltatások konfigurálva vannak**: **Megkövetelheti** , hogy a Google Play-szolgáltatások alkalmazás telepítve és engedélyezve legyen. A Google Play-szolgáltatások lehetővé teszik a biztonsági frissítéseket, és számos biztonsági funkció előfeltételei a hitelesített Google-eszközökön. Ha a **Nincs konfigurálva** (alapértelmezett) lehetőséget választja, a rendszer ezt a beállítást nem veszi figyelembe a megfelelőség, vagy meg nem felelőség megállapításához.
-- **Naprakész biztonsági szolgáltató**: **Megkövetelheti** , hogy egy naprakész biztonsági szolgáltató képes legyen az ismert biztonsági rések elleni védelemre. Ha a **Nincs konfigurálva** (alapértelmezett) lehetőséget választja, a rendszer ezt a beállítást nem veszi figyelembe a megfelelőség, vagy meg nem felelőség megállapításához.
-- **Veszélyforrások vizsgálata az alkalmazásokban**: Az Android- **alkalmazások ellenőrzése** funkció engedélyezése **kötelező** . Ha a **Nincs konfigurálva** (alapértelmezett) lehetőséget választja, a rendszer ezt a beállítást nem veszi figyelembe a megfelelőség, vagy meg nem felelőség megállapításához.
+- **A Google Play-szolgáltatások be van állítva**: **Kötelező** a Google Play-szolgáltatások alkalmazás telepítése és engedélyezése. A Google Play-szolgáltatások lehetővé teszik a biztonsági frissítéseket, és számos biztonsági funkció előfeltételei a hitelesített Google-eszközökön. Ha a **Nincs konfigurálva** (alapértelmezett) lehetőséget választja, a rendszer ezt a beállítást nem veszi figyelembe a megfelelőség, vagy meg nem felelőség megállapításához.
+- **Naprakész biztonsági szolgáltató**: **Kötelező** egy naprakész biztonsági szolgáltatóval védeni az eszközöket az ismert biztonsági kockázatokkal szemben. Ha a **Nincs konfigurálva** (alapértelmezett) lehetőséget választja, a rendszer ezt a beállítást nem veszi figyelembe a megfelelőség, vagy meg nem felelőség megállapításához.
+- **Alkalmazások fenyegetettségvizsgálata**: **Kötelező** az androidos **Alkalmazások ellenőrzése** szolgáltatás engedélyezése. Ha a **Nincs konfigurálva** (alapértelmezett) lehetőséget választja, a rendszer ezt a beállítást nem veszi figyelembe a megfelelőség, vagy meg nem felelőség megállapításához.
 
   > [!NOTE]
   > A régebbi Android platformon ez a szolgáltatás egy megfelelőségi beállítás. Az Intune csak azt tudja ellenőrizni, hogy eszközszinten engedélyezett-e ez a beállítás.
 
-- **Biztonság-eszköz igazolása**: Adja meg a [biztonság-igazolás](https://developer.android.com/training/safetynet/attestation.html) azon szintjét, amelynek teljesülnie kell. A választható lehetőségek:
-  - **Nincs konfigurálva** (alapértelmezett): A beállítás nincs kiértékelve megfelelőségi vagy meg nem felelés esetén.
+- **SafetyNet eszközigazolás**: Megadható a [SafetyNet igazolás](https://developer.android.com/training/safetynet/attestation.html) elvárt szintje. A választható lehetőségek:
+  - **Nincs konfigurálva** (alapértelmezett): A rendszer nem értékeli a beállítást a megfelelőség vagy meg nem felelőség megállapításához.
   - **Alapvető integritás ellenőrzése**
   - **Alapvető integritás ellenőrzés és tanúsított eszközök**
 
@@ -67,42 +68,42 @@ Intune-rendszergazdaként ezeket a megfelelőségi beállításokat használhatj
 
 ## <a name="device-property-settings"></a>Eszköztulajdonság-beállítások
 
-- **Operációs rendszer minimális verziója**: Ha egy eszköz nem teljesíti az operációs rendszer szükséges minimális verziójára vonatkozó követelményt, nem megfelelőként jelenik meg. Megjelenik egy hivatkozás, amelyen a verziófrissítésre vonatkozó információk érhetők el. A végfelhasználó frissítheti az eszközt, ez után pedig hozzáférést kap a vállalati erőforrásokhoz.
-- **Maximális operációsrendszer-verzió**: Ha egy eszközön a szabályban megadott operációsrendszer-verziónál újabb verziót használ, a vállalati erőforrásokhoz való hozzáférés le lesz tiltva. A felhasználónak ekkor az informatikai rendszergazdához kell fordulnia. Az eszköz csak akkor használható a vállalati erőforrások elérésére, ha a szabályt úgy módosítják, hogy engedélyezze az eszköz operációs rendszerének verzióját is.
+- **Minimális operációsrendszer-verzió**: Ha egy eszköz nem teljesíti az operációs rendszer szükséges minimális verziójára vonatkozó követelményt, nem megfelelőként fog szerepelni. Megjelenik egy hivatkozás, amelyen a verziófrissítésre vonatkozó információk érhetők el. A végfelhasználó frissítheti az eszközt, ez után pedig hozzáférést kap a vállalati erőforrásokhoz.
+- **Maximális operációsrendszer-verzió**: Ha egy eszközön a szabályban megadott operációsrendszer-verziónál újabb fut, a vállalati erőforrásokhoz való hozzáférés le lesz tiltva. A felhasználónak kapcsolatba kell lépnie a rendszergazdával. Amíg egy szabály nem módosul az operációs rendszer verziójának engedélyezésére, az eszköz nem fér hozzá a vállalati erőforrásokhoz.
 
 ## <a name="system-security-settings"></a>A rendszer biztonsági beállításai
 
-### <a name="password"></a>Windows 10
+### <a name="password"></a>Jelszó
 
-- **Jelszó megkövetelése a mobileszközök zárolásának feloldásához**: A **felhasználóknak jelszót kell** megadniuk ahhoz, hogy hozzáférjenek az eszközhöz. Ha a **Nincs konfigurálva** (alapértelmezett) lehetőséget választja, a rendszer ezt a beállítást nem veszi figyelembe a megfelelőség, vagy meg nem felelőség megállapításához.
-- **Jelszó minimális hossza**: Adja meg a felhasználók jelszavában szereplő számjegyek vagy karakterek minimális számát.
-- **Szükséges jelszó típusa**: Válassza ki, hogy a jelszó csak numerikus karaktereket tartalmazzon-e, illetve számok és más karakterek kombinációját. A választható lehetőségek:
-  - **Eszköz alapértelmezett értéke**: A jelszó-megfelelőség kiértékeléséhez ügyeljen arra, hogy az **alapértelmezettnél**más jelszót válasszon.
+- **Jelszó megkövetelése a mobileszköz-zárolás feloldásához**: A felhasználók **kötelesek** jelszót megadni az eszköz eléréséhez. Ha a **Nincs konfigurálva** (alapértelmezett) lehetőséget választja, a rendszer ezt a beállítást nem veszi figyelembe a megfelelőség, vagy meg nem felelőség megállapításához.
+- **Jelszó minimális hossza**: Meghatározhatja a felhasználó jelszavában szereplő számjegyek vagy karakterek minimális számát.
+- **Jelszó megkövetelt típusa**: Megadható, hogy a jelszó csak számjegyeket, vagy számokat és más karaktereket vegyesen tartalmazzon. A választható lehetőségek:
+  - **Eszköz alapértelmezése**: a jelszó megfelelőségének kiértékeléséhez ügyeljen arra, hogy az **alapértelmezettnél**ne válasszon jelszót.
   - **Alacsony biztonságú biometrikus**
   - **Legalább számok** (alapértelmezett)
-  - **Komplex numerikus**: Ismétlődő vagy egymást követő számok (például `1111` vagy `1234`) nem engedélyezettek.
+  - **Komplex numerikus**: Nem lehet ismétlődő vagy egymást követő számokat megadni (például `1111` vagy `1234`).
   - **Legalább betűk** 
   - **Legalább alfanumerikus karakterek**
   - **Legalább alfanumerikus karakterek és szimbólumok**
 
-- **Jelszó kérése legfeljebb ennyi perc inaktivitás után**: Adja meg azt az üresjárati időt, ameddig a felhasználónak újra meg kell adnia a jelszavát. Ha a **Nincs konfigurálva** (alapértelmezett) lehetőséget választja, a rendszer ezt a beállítást nem veszi figyelembe a megfelelőség, vagy meg nem felelőség megállapításához.
-- **Jelszó érvényessége (napokban)** : Válassza ki, hogy hány nap elteltével járjon le a jelszó, és a felhasználónak új jelszót kell létrehoznia.
-- **Az újrafelhasználást megakadályozó korábbi jelszavak száma**: Adja meg a legutóbbi olyan jelszavak számát, amelyeket nem lehet újra felhasználni. Ezzel a beállítással korlátozhatja, hogy a felhasználó korábban használt jelszavakat hozzon létre.
+- **Jelszó kérése legfeljebb ennyi perc inaktivitás után**: Arra a tétlenségi időre vonatkozik, amelynek elteltével a felhasználónak újra meg kell adnia a jelszavát. Ha a **Nincs konfigurálva** (alapértelmezett) lehetőséget választja, a rendszer ezt a beállítást nem veszi figyelembe a megfelelőség, vagy meg nem felelőség megállapításához.
+- **Jelszó érvényessége (napokban)** : Válassza ki, hány nap elteltével járjon le a jelszó, ami után a felhasználónak újat kell létrehoznia.
+- **Újból nem használható jelszavak száma**: Megadhatja, hogy hány legutóbbi jelszó ne legyen újra felhasználható. Ezzel a beállítással korlátozhatja, hogy a felhasználó korábban használt jelszavakat hozzon létre.
 
 ### <a name="encryption"></a>Encryption
 
-- **Az eszközön lévő adattárolás titkosítása** (Android 4,0 és újabb verziók, vagy KNOX 4,0 és újabb verziók): Válassza a **szükséges** lehetőséget az adattárolók titkosításához az eszközökön. Az eszközök **A mobileszközök zárolásának feloldásához jelszó szükséges** beállítás használatával titkosíthatók. Ha a **Nincs konfigurálva** (alapértelmezett) lehetőséget választja, a rendszer ezt a beállítást nem veszi figyelembe a megfelelőség, vagy meg nem felelőség megállapításához.
+- **Adattároló titkosítása az eszközön** (Android 4.0 és újabb, vagy KNOX 4.0 és újabb): A **Kötelező** lehetőséget választva az adattárolók titkosítva lesznek az eszközökön. Az eszközök **A mobileszközök zárolásának feloldásához jelszó szükséges** beállítás használatával titkosíthatók. Ha a **Nincs konfigurálva** (alapértelmezett) lehetőséget választja, a rendszer ezt a beállítást nem veszi figyelembe a megfelelőség, vagy meg nem felelőség megállapításához.
 
 ### <a name="device-security"></a>Eszközbiztonság
 
-- **Ismeretlen forrásból származó alkalmazások letiltása**: A "biztonsági > ismeretlen források" engedélyezett források **letiltását** lehetővé teszi az Android 4,0 – Android 7. x rendszeren, az Android 8,0 és újabb verziók nem támogatják. Ha a **Nincs konfigurálva** (alapértelmezett) lehetőséget választja, a rendszer ezt a beállítást nem veszi figyelembe a megfelelőség, vagy meg nem felelőség megállapításához.
+- **Ismeretlen forrásból származó alkalmazások letiltása**: Választásával **letilthatók** a „Biztonság > Ismeretlen források” alatti forrásokat engedélyező eszközök (támogatott az Android 4.0 – Android 7.x. rendszereken, és nem támogatott az Android 8.0-s és újabb rendszereken). Ha a **Nincs konfigurálva** (alapértelmezett) lehetőséget választja, a rendszer ezt a beállítást nem veszi figyelembe a megfelelőség, vagy meg nem felelőség megállapításához.
 
   Alkalmazások közvetlen telepítéséhez az ismeretlen forrásokat engedélyezni kell. Ha nem telepít közvetlenül Android-alkalmazásokat, akkor a megfelelőségi szabályzat engedélyezéséhez adja meg a **Letiltás** beállítást ehhez a funkcióhoz. 
 
   > [!IMPORTANT]
   > Az alkalmazások közvetlen telepítéséhez engedélyezni kell az **Ismeretlen forrásból származó alkalmazások letiltása** beállítást. Csak akkor szükséges ennek a megfelelőségi szabályzatnak a kényszerítése, ha nem telepít közvetlenül Android-alkalmazásokat az eszközökön.
 
-- **Vállalati portál alkalmazás futtatókörnyezetének integritása**: A **kötelező** gombra kattintva erősítse meg, hogy a céges portál alkalmazás megfelel az alábbi követelményeknek:
+- **A Céges portál alkalmazás futtatókörnyezetének integritása**: Válassza a **Kötelező** lehetőséget annak megerősítéséhez, hogy a Céges portál alkalmazás megfelel az összes alábbi követelménynek:
 
   - Telepítve van hozzá az alapértelmezett futtatókörnyezet
   - Megfelelően alá van írva
@@ -111,9 +112,9 @@ Intune-rendszergazdaként ezeket a megfelelőségi beállításokat használhatj
 
   Ha a **Nincs konfigurálva** (alapértelmezett) lehetőséget választja, a rendszer ezt a beállítást nem veszi figyelembe a megfelelőség, vagy meg nem felelőség megállapításához.
 
-- **USB-hibakeresés letiltása az eszközön** (Android 4,2 vagy újabb): A **Letiltás** lehetőség kiválasztásával megakadályozhatja, hogy az eszközök az USB-hibakeresés funkciót használják. Ha a **Nincs konfigurálva** (alapértelmezett) lehetőséget választja, a rendszer ezt a beállítást nem veszi figyelembe a megfelelőség, vagy meg nem felelőség megállapításához.
-- **Minimális biztonsági javítási szint** (Android 6,0 vagy újabb): Válassza ki a legrégebbi biztonsági javítási szintet, amelyet az eszköz tartalmazhat. Az ennél régebbi javítási verzióval rendelkező eszközök nem megfelelőek. A dátumot `YYYY-MM-DD` formátumban kell megadni.
-- **Korlátozott alkalmazások**: Adja meg az **alkalmazás nevét** és az alkalmazáscsomag **azonosítóját** a korlátozni kívánt alkalmazásokhoz. Válassza a **Hozzáadás** lehetőséget. A legalább egy telepített korlátozott alkalmazással rendelkező eszközök megjelölése nem megfelelő.
+- **USB-hibakeresés letiltása az eszközön** (Android 4.2 vagy újabb): a **Letiltás** választásával megakadályozható az eszközön az USB-hibakeresés funkció használata. Ha a **Nincs konfigurálva** (alapértelmezett) lehetőséget választja, a rendszer ezt a beállítást nem veszi figyelembe a megfelelőség, vagy meg nem felelőség megállapításához.
+- **Minimális biztonsági javítási szint** (Android 6.0 vagy újabb): Megadható a legrégebbi biztonsági javítás, amellyel az eszköz rendelkezhet. Az ennél régebbi javítási verzióval rendelkező eszközök nem megfelelőek. A dátumot `YYYY-MM-DD` formátumban kell megadni.
+- **Korlátozott alkalmazások**: Adja meg az **Alkalmazás neve** és az **Alkalmazásköteg-azonosító** adatot a korlátozni kívánt alkalmazásokhoz. Válassza a **Hozzáadás** lehetőséget. A legalább egy telepített korlátozott alkalmazással rendelkező eszközök megjelölése nem megfelelő.
 
 A módosítások mentéséhez válassza az **OK** > **Létrehozás** lehetőséget.
 
@@ -121,7 +122,7 @@ A módosítások mentéséhez válassza az **OK** > **Létrehozás** lehetőség
 
 A házirendben az eszköz helye alapján kényszerítheti a megfelelőséget. Válasszon a meglévő helyekről. Még nem rendelkezik hellyel? Az Intune-ban a [webhelyek (hálózati kerítés) használatával](use-network-locations.md) biztosítunk útmutatást.
 
-1. Válassza a **helyszínek** > **lehetőséget**.
+1. Válasszon **helyszíneket @no__t-** 1**válasszon helyet**.
 2. A listában jelölje ki a helyet > **válassza a lehetőséget**.
 3. **Mentse** a szabályzatot.
 

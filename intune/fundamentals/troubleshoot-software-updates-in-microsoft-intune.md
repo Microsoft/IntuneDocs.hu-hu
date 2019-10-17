@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 05/29/2019
 ms.topic: troubleshooting
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: d17b70f4-17b4-4d89-88fd-70fa4f34fbea
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f3deb023a7e3683658139c2319945c7c3aaeb8ee
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 8ad8d904f72df169eea136c625a2f44d645cafbc
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731667"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72509757"
 ---
 # <a name="troubleshoot-software-updates-in-microsoft-intune"></a>A Microsoft Intune szoftverfrissítéseinek hibaelhárítása
 
@@ -47,8 +48,8 @@ Ez a probléma akkor fordulhat elő, ha a felülírt frissítéseket (a frissít
 3. Az érintett ügyfelekre telepített összes felülírt frissítés elutasítása a Windows 7 vagy alkalmazásokra, például a Microsoft Officeekre.
 4. Indítsa újra az érintett ügyfeleket.
 
-Ha Windows 7 rendszert futtat, akkor győződjön meg arról, hogy a következő frissítés telepítve van: [3050265 Windows Update ügyfél Windows 7 rendszerhez: 2015. június @ no__t-0.
+Ha Windows 7 rendszert használ, győződjön meg arról, hogy a következő frissítés telepítve van:[3050265 Windows Update ügyfél Windows 7 rendszerhez: június 2015](https://support.microsoft.com/kb/3050265).
 
 ## <a name="next-steps"></a>További lépések
 
-Kérjen [támogatási segítséget](get-support.md)a Microsofttól, vagy használja a [közösségi fórumokat](https://social.technet.microsoft.com/Forums/en-US/home?category=microsoftintune).
+Kérjen [támogatási segítséget a Microsofttól](get-support.md), vagy használja a [közösségi fórumokat](https://social.technet.microsoft.com/Forums/en-US/home?category=microsoftintune).

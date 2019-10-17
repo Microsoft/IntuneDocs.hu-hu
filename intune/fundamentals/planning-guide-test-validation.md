@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 3/22/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 4f82ee0c-4bd6-4623-9b10-9249d316ccf5
@@ -16,12 +17,12 @@ ms.reviewer: jeffbu, cgerth
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6fe203de969f848da92fecfc00787e905d0a946d
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: c2ce184a2dbd0ca4b66740f0687302d1ed007878
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732151"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72505020"
 ---
 # <a name="intune-testing-and-validation"></a>Az Intune tesztelése és ellenőrzése
 
@@ -33,15 +34,15 @@ A tesztelési folyamatba ajánlatos bevonni az informatikai és a támogatási m
 
 Ajánlott dokumentálni a következőket:
 
-- **Tesztelési feltételek:** Határozza meg, hogy milyen teljesítményteszteket kell mérni.
+- **Tesztkritériumok:** a méréshez használt referenciapontokat adja meg.
 
-- **Tervezési összetevők:** Legalább egy tesztelési feltételben léteznie kell.
+- **Szerkezeti összetevők:** legalább egy tesztkritériumban szerepelniük kell.
 
 Ha egy adott szerkezeti összetevő nem szerepel legalább egy olyan tesztkritériumban, amely követelményhez vagy forgatókönyvhöz társul, érdemes megfontolni, valóban szükség van-e rá. Az alábbiak ugyancsak szükségesek:
 
-- **Számlák** Az EMS és az Office 365 licenccel rendelkező fiókok tesztelésével tesztelheti az összes használati esetet.
+- **Fiókok:** ahhoz, hogy az összes használatieset-forgatókönyvet tesztelni lehessen, a tesztfiókoknak EMS- és Office 365-licenccel kell rendelkezniük.
 
-- **Eszközök** Tesztelheti vagy visszaállíthatja azokat az eszközöket, amelyek a gyári alapértékekre vannak korlátozva.
+- **Eszközök:** törölhető vagy a gyári beállításokra visszaállítható teszteszközök.
 
 - **Integrációs összetevők:** Szükség esetén telepíteni és konfigurálni kell az összes integrációs összetevőt (a tanúsítvány-összekötőket és az Intune Exchange helyszíni összekötőt).
 
@@ -63,7 +64,7 @@ A funkcionális ellenőrzési tesztelés során minden egyes összetevő és kon
 
 ## <a name="use-case-validation-testing"></a>Használatieset-ellenőrzési tesztelés
 
-A használatieset-ellenőrzési tesztelés a használati forgatókönyvek teljességének és működőképességének tesztelésére szolgál. Kétféle használati eset létezik: A rendszergazda és a végfelhasználó.
+A használatieset-ellenőrzési tesztelés a használati forgatókönyvek teljességének és működőképességének tesztelésére szolgál. A használatieset-forgatókönyveknek két típusa van: rendszergazdai és végfelhasználói.
 
 ### <a name="it-admin"></a>Rendszergazdai
 

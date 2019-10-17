@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 07/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: remote-actions
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: e71c6bdb-d75c-404f-8e38-24a663be81c2
@@ -15,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e88371ac1ab51340f0f897d835f78562bed7d252
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: a72477351425e9230200995658cc6f73a8565fb7
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732427"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72509490"
 ---
 # <a name="see-device-details-in-intune"></a>Eszközadatok megtekintése az Intune-ban
 
@@ -56,9 +57,9 @@ Az eszközök által használt szolgáltatótól függően az összes adat gyűj
 > [!Note]  
 > A hardver-és a szoftveres leltár 7 naponta frissül az Intune szolgáltatásban.
 
-|Részletek|Leírás|Platform| 
+|Részletes|Description|Platfésm| 
 |--------------|----------------------|----|  
-|Name (Név)|Az eszköz neve.|Windows, iOS|
+|Név|Az eszköz neve.|Windows, iOS|
 |Felügyeleti név|A csak a konzolon használt eszköznév. Ennek a névnek a módosítása nem változtatja meg a nevet az eszközön.|Windows, iOS|
 |UDID|Az eszköz egyedi eszközazonosítója.|Windows, iOS|
 |Intune-eszközazonosító|Az eszközt egyedileg azonosító GUID.|Windows, iOS|
@@ -66,10 +67,10 @@ Az eszközök által használt szolgáltatótól függően az összes adat gyűj
 |Megosztott eszköz|Ha **Igen**, akkor az eszköz több felhasználó között van megosztva.|Windows, iOS|
 |Felhasználó által jóváhagyott regisztráció|Ha **Igen**, akkor az eszköz felhasználó által jóváhagyott regisztrációja lehetővé teszi, hogy a rendszergazdák bizonyos biztonsági beállításokat kezelhesse az eszközön.|Windows, iOS|
 |Operációs rendszer|Az eszközön futó operációs rendszer.|Windows, iOS|
-|Operációs rendszer verziója|Az eszközön futó operációs rendszer verziója.|Windows, iOS|
+|Operációs rendszer verziója|Az eszköz operációs rendszerének verziója.|Windows, iOS|
 |Operációs rendszer nyelve|Az eszközön futó operációs rendszerhez beállított nyelv.|Windows, iOS|
-|Build száma|Az operációs rendszer összeállításának száma.|Android|
-|Biztonsági javítási szint|Az eszköz biztonsági javítási szintje.|Android|
+|Build száma|Az operációs rendszer összeállításának száma.|Android:|
+|Biztonsági javítási szint|Az eszköz biztonsági javítási szintje.|Android:|
 |Teljes tárterület|Az eszközön lévő teljes tárterület (gigabájtban).|Windows, iOS|
 |Szabad tárterület|Az eszközön lévő felhasználatlan tárterület (gigabájtban).|Windows, iOS|
 |IMEI|Az eszköz Nemzetközi mobilkészülék-azonosító (IMEI) száma.|Windows, iOS, Android|

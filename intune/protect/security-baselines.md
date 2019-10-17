@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 09/09/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
@@ -15,12 +16,12 @@ ms.reviewer: joglocke
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4de8a990a3ce5169548e0276fe407f791df55a94
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: b89de9a1eb5f3b9884d20beb6f3582370c4061fb
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731943"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72504181"
 ---
 # <a name="use-security-baselines-to-configure-windows-10-devices-in-intune"></a>Biztonsági alapkonfigurációk használata a Windows 10-es eszközök Intune-ban való konfigurálásához
 
@@ -45,7 +46,7 @@ A biztonsági alapkonfigurációk segítségével teljes körű biztonságos mun
 
 
 
-A [Windows biztonsági](https://docs.microsoft.com/windows/security/threat-protection/windows-security-baselines) alapkonfigurációk egy nagyszerű erőforrás, amellyel többet tudhat meg a szolgáltatásról. [Mobileszköz-kezelés](https://docs.microsoft.com/windows/client-management/mdm/) A (MDM) egy nagyszerű erőforrás a MDM, és a Windows-eszközökön is.
+A [Windows biztonsági](https://docs.microsoft.com/windows/security/threat-protection/windows-security-baselines) alapkonfigurációk egy nagyszerű erőforrás, amellyel többet tudhat meg a szolgáltatásról. A [mobileszköz-felügyelet](https://docs.microsoft.com/windows/client-management/mdm/) (Mdm) egy nagyszerű erőforrás a Mdm, és a Windows-eszközökön is elvégezhető.
 
 ## <a name="about-baseline-versions-and-instances"></a>Az alapverziók és példányok ismertetése
 
@@ -75,14 +76,14 @@ Az Intune-nal az alábbi biztonsági alapkonfigurációk használhatók. A hivat
 
 - **MDM biztonsági alapterv**
   - [MDM biztonsági alapkonfiguráció a május 2019-es verziójához](security-baseline-settings-mdm-all.md?pivots=mdm-may-2019)
-  - [Előnézet MDM biztonsági alapterv október 2018](security-baseline-settings-mdm-all.md?pivots=mdm-preview)
+  - [Előzetes verzió: a MDM biztonsági alapterve október 2018](security-baseline-settings-mdm-all.md?pivots=mdm-preview)
 
 - **A Microsoft Defender ATP alapterve**  
-  (Ennek az alapkonfigurációnak a *használatához a környezetnek meg kell felelnie a [Microsoft Defender komplex veszélyforrások elleni védelem](advanced-threat-protection.md#prerequisites)használatának*előfeltételeinek.
-  - [Előnézet A Microsoft Defender ATP alapterve](security-baseline-settings-defender-atp.md)  
+  (Ennek az alapkonfigurációnak a *használatához a környezetnek meg kell felelnie a [Microsoft Defender komplex veszélyforrások elleni védelem](advanced-threat-protection.md#prerequisites)használatának előfeltételeinek*.
+  - [Előzetes verzió: a Microsoft Defender ATP alapterve](security-baseline-settings-defender-atp.md)  
 
   > [!NOTE]
-  > A Microsoft Defender ATP biztonsági alapterve fizikai eszközökre van optimalizálva, és jelenleg nem ajánlott virtuális gépeken (VM) vagy VDI-végpontokon használni. Bizonyos alapbeállítások befolyásolhatják a távoli interaktív munkameneteket a virtualizált környezetekben.  További információ: a [Microsoft DEFENDER ATP biztonsági](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-machines-security-baseline) alapkonfigurációjának nagyobb megfelelősége a Windows dokumentációjában.
+  > A Microsoft Defender ATP biztonsági alapterve fizikai eszközökre van optimalizálva, és jelenleg nem ajánlott virtuális gépeken (VM) vagy VDI-végpontokon használni. Bizonyos alapbeállítások befolyásolhatják a távoli interaktív munkameneteket a virtualizált környezetekben.  További információ: a [Microsoft DEFENDER ATP biztonsági alapkonfigurációjának nagyobb megfelelősége](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-machines-security-baseline) a Windows dokumentációjában.
 
 Továbbra is használhatja és szerkesztheti a korábban létrehozott profilokat egy előnézeti sablon alapján, még akkor is, ha az előnézeti sablon már nem érhető el új profilok létrehozásához. 
 
@@ -102,7 +103,7 @@ A biztonsági alapkonfigurációkkal végzett munka gyakori feladatai a követke
 
 ### <a name="create-the-profile"></a>A profil létrehozása
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, majd az elérhető alaptervek listájának megtekintéséhez válassza az **eszköz biztonsági** > alapkonfigurációi elemet.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, majd válassza az **eszköz biztonsági**@no__t – 2**biztonsági** alapkonfigurációk lehetőséget az elérhető alaptervek listájának megtekintéséhez.
 
 
     ![Válassza ki a konfigurálni kívánt biztonsági alaptervet](./media/security-baselines/available-baselines.png)
@@ -111,23 +112,23 @@ A biztonsági alapkonfigurációkkal végzett munka gyakori feladatai a követke
 
 3. Az **alapok** lapon a következő tulajdonságokat kell megadnia:
 
-    - **Név**: Adja meg a biztonsági alaptervek profiljának nevét. Adja meg például *a DEFENDER ATP standard profilját*.
+    - **Név**: adja meg a biztonsági alaptervek profiljának nevét. Adja meg például *a DEFENDER ATP standard profilját*.
 
-    - **Description** (Leírás): Adjon meg egy szöveget, amely leírja, hogy mi ez az alapkonfiguráció. A leírás a kívánt szöveg megadására szolgál. Nem kötelező, de ajánlott.  
+    - **Leírás**: adjon meg egy szöveget, amely leírja, hogy mi ez az alapkonfiguráció. A leírás a kívánt szöveg megadására szolgál. Nem kötelező, de ajánlott.  
 
    Kattintson a **tovább** gombra a következő lapra való ugráshoz. Miután új lapot adott meg, kiválaszthatja a lap nevét, hogy visszatérjen egy korábban megtekintett laphoz.  
 
 4. A konfigurációs beállítások lapon tekintse meg a kiválasztott alaptervben elérhető **Beállítások** csoportjait. Egy csoport kibontásával megtekintheti a csoport beállításait, valamint az alapkonfigurációban lévő beállítások alapértelmezett értékeit is. Megadott beállítások keresése:
    - Válassza ki a kibontani kívánt csoportot, és tekintse át a rendelkezésre álló beállításokat.  
-   - A keresősáv használatával olyan kulcsszavakat határozhat meg, amelyek szűrik a nézetet úgy, hogy csak azok a csoportok jelenjenek meg, amelyek tartalmazzák a keresési feltételeket.  
+   - A keresősáv használatával olyan kulcsszavakat határozhat meg, amelyek szűrik a nézetet úgy, hogy csak azok a csoportok jelenjenek meg, amelyek tartalmazzák *a keresési feltételeket* .  
  
    Az alapkonfiguráció mindegyik beállításának alapértelmezett konfigurációja az adott alapverzióhoz tartozik. Konfigurálja újra az alapértelmezett beállításokat az üzleti igények kielégítése érdekében. A különböző alapkonfigurációk ugyanazt a beállítást tartalmazhatják, és a beállítástól függően különböző alapértelmezett értékeket is használhatnak az alaptervnek megfelelően. 
 
     ![Csoport kibontása a csoport beállításainak megtekintéséhez](./media/security-baselines/sample-list-of-settings.png)
 
-5. A hatókör Címkék lapon válassza a **hatókör címkék kiválasztása** lehetőséget a *címkék kiválasztása* panel megnyitásához a hatókör címkék a profilhoz való hozzárendeléséhez. 
+5. A hatókör **Címkék lapon válassza** a **hatókör címkék kiválasztása** lehetőséget a *címkék kiválasztása* panel megnyitásához a hatókör címkék a profilhoz való hozzárendeléséhez. 
 
-6. A **hozzárendelések** lapon válassza a **csoportok kiválasztása** lehetőséget, majd rendelje hozzá az alaptervet egy vagy több csoporthoz. **Válassza ki** a kizárni kívánt csoportokat a hozzárendelés finomhangolásához.  
+6. A **hozzárendelések** lapon válassza a **csoportok kiválasztása** lehetőséget, majd rendelje hozzá az alaptervet egy vagy több csoporthoz. **Válassza ki a kizárni kívánt csoportokat** a hozzárendelés finomhangolásához.  
 
    ![Profil hozzárendelése](./media/security-baselines/assignments.png)
   
@@ -141,7 +142,7 @@ A biztonsági alapkonfigurációkkal végzett munka gyakori feladatai a követke
    ![Az alapterv áttekintése](./media/security-baselines/review.png) 
 
   
-8. Miután létrehozta a profilt, szerkessze az **eszköz biztonsági** > **biztonsági**alapkonfigurációi területen, válassza ki a konfigurált alapkonfigurációt, majd válassza a **profilok**lehetőséget. Válassza ki a profilt az elérhető profilok listájából, majd válassza a **Tulajdonságok**lehetőséget. Az összes elérhető konfigurációs lapon módosíthatja a beállításokat, majd a módosítások elvégzéséhez válassza a **felülvizsgálat + mentés** lehetőséget.  
+8. Miután létrehozta a profilt, az **eszköz biztonsága** > **biztonsági**alapkonfigurációk területen válassza ki a konfigurált alaptípust, majd válassza a **profilok**lehetőséget. Válassza ki a profilt az elérhető profilok listájából, majd válassza a **Tulajdonságok**lehetőséget. Az összes elérhető konfigurációs lapon módosíthatja a beállításokat, majd a módosítások elvégzéséhez válassza a **felülvizsgálat + mentés** lehetőséget.  
 
 ### <a name="change-the-baseline-version-for-a-profile"></a>Profil alapverziójának módosítása  
 
@@ -160,7 +161,7 @@ A mentés után a rendszer azonnal újratelepíti az alaptervet a hozzárendelt 
 
 #### <a name="to-change-the-baseline-version-for-a-profile"></a>Profil alapverziójának módosítása  
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, majd válassza az **eszköz biztonsági** > alapkonfigurációk lehetőséget, majd válassza ki a módosítani kívánt profilt tartalmazó alapkonfiguráció csempéjét.  
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, majd válassza az **eszköz biztonsági**@no__t – 2**biztonsági**alapkonfigurációk lehetőséget, majd válassza ki a módosítani kívánt profilt tartalmazó alapkonfiguráció csempéjét.  
 
 2. Ezután válassza a **profilok**lehetőséget, majd jelölje be a szerkeszteni kívánt profilhoz tartozó jelölőnégyzetet, majd válassza a **verzió módosítása**lehetőséget.  
 
@@ -174,11 +175,11 @@ A mentés után a rendszer azonnal újratelepíti az alaptervet a hozzárendelt 
 
    Ha elkészült, folytassa a következő lépéssel.  
 
-5. A profil frissítéséhez válasszon ki egy **módszert**a két lehetőség közül: 
-   - **Alapkonfiguráció-módosítások elfogadása, de a meglévő beállítások** megtartása – ez a beállítás megőrzi a testreszabásokat az alapprofilban, és alkalmazza azokat a használni kívánt új verzióra.
-   - **Alapkonfiguráció-módosítások elfogadása és a meglévő beállítások** elvetése – ez a lehetőség teljesen felülírja az eredeti profilt. A frissített profil az alapértelmezett értékeket fogja használni az összes beállításhoz.  
+5. A **profil frissítéséhez válasszon ki egy módszert**a két lehetőség közül: 
+   - **Alapkonfiguráció-módosítások elfogadása, de a meglévő beállítások megtartása** – ez a beállítás megőrzi a testreszabásokat az alapprofilban, és alkalmazza azokat a használni kívánt új verzióra.
+   - **Alapkonfiguráció-módosítások elfogadása és a meglévő beállítások elvetése** – ez a lehetőség teljesen felülírja az eredeti profilt. A frissített profil az alapértelmezett értékeket fogja használni az összes beállításhoz.  
 
-6. Válassza ki **elküldése**. A profil frissítése a kiválasztott alapkonfigurációhoz, és az átalakítás befejezése után az alapkonfiguráció azonnal újratelepül a hozzárendelt csoportokba.
+6. Válassza a **Küldés**lehetőséget. A profil frissítése a kiválasztott alapkonfigurációhoz, és az átalakítás befejezése után az alapkonfiguráció azonnal újratelepül a hozzárendelt csoportokba.
 
 ### <a name="remove-a-security-baseline-assignment"></a>Biztonsági alapterv-hozzárendelés eltávolítása
 Ha egy biztonsági alapkonfiguráció már nem érvényes egy eszközre, vagy az alapkonfiguráció beállításai nincsenek *konfigurálva*, az eszközön lévő beállítások nem állíthatók be előre felügyelt konfigurációra. Ehelyett az eszköz korábban felügyelt beállításai megtartják az alapkonfigurációtól kapott utolsó beállításokat, amíg egy másik folyamat nem frissíti ezeket a beállításokat az eszközön.  
@@ -189,7 +190,7 @@ Más folyamatok, amelyek később módosíthatják az eszköz beállításait, t
 
 Az Intune által felügyelt eszközökön a biztonsági alapkonfigurációk hasonlók a közösen felügyelt eszközökhöz Configuration Manager. A közösen felügyelt eszközök a System Center Configuration Manager és a Microsoft Intune használatával kezelik a Windows 10 rendszerű eszközöket egyszerre. Lehetővé teszi, hogy a meglévő Configuration Manager befektetéseit az Intune előnyeihez csatlakoztassa. A [közös felügyelet áttekintése](https://docs.microsoft.com/sccm/comanage/overview) nagyszerű erőforrás, ha Configuration Managert használ, és a felhő előnyeit is szeretné használni.
 
-A közösen felügyelt eszközök használatakor az **eszköz konfigurációs** munkaterhelését (a beállításait) az Intune-ra kell váltania. Az [eszköz konfigurációs](https://docs.microsoft.com/sccm/comanage/workloads#device-configuration) munkaterhelései további információkat biztosítanak.  
+A közösen felügyelt eszközök használatakor az **eszköz konfigurációs** munkaterhelését (a beállításait) az Intune-ra kell váltania. Az [eszköz konfigurációs munkaterhelései](https://docs.microsoft.com/sccm/comanage/workloads#device-configuration) további információkat biztosítanak.  
 
 ## <a name="q--a"></a>Kérdések és válaszok
 
@@ -197,7 +198,7 @@ A közösen felügyelt eszközök használatakor az **eszköz konfigurációs** 
 
 A Microsoft biztonsági csapata több éves tapasztalattal rendelkezik a Windows-fejlesztőknek és a biztonsági Közösségnek a javaslatok létrehozásához. Az ebben az alapkonfigurációban található beállítások a legfontosabb biztonsággal kapcsolatos konfigurációs beállításoknak tekintendők. Az új Windows-buildekben a csapat az újonnan kiadott funkciók alapján módosítja a javaslatait.
 
-### <a name="is-there-a-difference-in-the-recommendations-for-windows-security-baselines-for-group-policy-vs-intune"></a>Van különbség a csoportházirend és a Windows biztonsági alaptervek esetében. Intune?
+### <a name="is-there-a-difference-in-the-recommendations-for-windows-security-baselines-for-group-policy-vs-intune"></a>Van különbség a csoportházirend és az Intune Windows biztonsági alapkonfigurációinak javaslataiban?
 
 Ugyanaz a Microsoft biztonsági csapat választotta ki és szervezte meg az egyes alapkonfigurációk beállításait. Az Intune az Intune biztonsági alapkonfigurációjának összes vonatkozó beállítását tartalmazza. A csoportházirend alapkonfigurációjának néhány beállítása a helyszíni tartományvezérlőre vonatkozik. Ezek a beállítások nem tartoznak az Intune javaslataihoz. Az összes többi beállítás azonos.
 
@@ -218,5 +219,5 @@ Szigorúan szólva, nem. A Microsoft biztonsági csapata a vállalatokat, péld�
   - [MDM biztonsági alapterv](security-baseline-settings-mdm-all.md)  
   - [A Microsoft Defender ATP alapterve](security-baseline-settings-defender-atp.md)  
 
-- Ellenőrizze az állapotot, és figyelje meg az alaptervet [és a profilt](security-baselines-monitor.md)
+- Ellenőrizze az állapotot, és figyelje meg az [alaptervet és a profilt](security-baselines-monitor.md)
 

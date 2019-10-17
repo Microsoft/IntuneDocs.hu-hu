@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 09/17/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: apps
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: dec6f258-ee1b-4824-bf66-29053051a1ae
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 419fd15f747c8b41377f3aca94c4b96d7c4910c1
-ms.sourcegitcommit: b8127c7a62d9ac4d0f768980fa1424567bb58733
+ms.openlocfilehash: 37c2a85162c781db7272b6ead11fbb3320a08343
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72350008"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72498017"
 ---
 # <a name="how-to-configure-the-microsoft-intune-company-portal-app"></a>A Microsoft Intune Céges portál alkalmazásának konfigurálása
 
@@ -174,7 +175,7 @@ Egyes platformok és konfigurációk nem engedélyezik az önkiszolgáló eszkö
 |     Platfésm    |    Kivonás    |    Törlés     |    Átnevezés<sup>(4)</sup>    |    Sync    |    Távoli zárolás    |    Jelszó alaphelyzetbe állítása    |    Kulcs helyreállítása    |
 |------------------------|--------------------|--------------------|-----------------|-----------------|--------------------------|--------------------------|--------------------|
 |    Windows 10<sup>(3)</sup>    |    Elérhető<sup>(1)</sup>    |    Elérhető    |    Elérhető    |    Elérhető    |    Csak Windows Phone-telefon    |    Csak Windows Phone-telefon    |    NA    |
-|    iOS<sup>(3)</sup>    |    Elérhető    |    Elérhető    |    Elérhető    |    Elérhető    |    Elérhető    |    Elérhető    |    NA    |
+|    iOS<sup>(3)</sup>    |    Elérhető    |    Elérhető<sup>(8)</sup>    |    Elérhető    |    Elérhető    |    Elérhető<sup>(8)</sup>    |    Elérhető    |    NA    |
 |    MacOS<sup>(3)</sup><sup>(5)</sup>    |    Elérhető    |    NA    |    Elérhető    |    Elérhető    |    Elérhető    |    NA    |    Elérhető<sup>(2)</sup>    |
 |    Android<sup>(3)</sup>    |    Elérhető<sup>(7)</sup>    |    Elérhető<sup>(7)</sup>    |    Elérhető    |    Elérhető    |    Elérhető    |    Elérhető<sup>(6)</sup>    |    NA    |
 
@@ -185,6 +186,7 @@ Egyes platformok és konfigurációk nem engedélyezik az önkiszolgáló eszkö
 <sup>(5)</sup> a távoli törlés nem érhető el MacOS-eszközökön.<br>
 <sup>(6)</sup> a PIN-kód alaphelyzetbe állítása néhány Android-és androidos vállalati konfiguráció esetén nem támogatott. További információkért lásd: [eszköz PIN-kód alaphelyzetbe állítása vagy eltávolítása az Intune-ban](../remote-actions/device-passcode-reset.md).<br>
 <sup>(7)</sup> a kivonás és a törlés nem érhető el az androidos vállalati eszközök tulajdonosi forgatókönyvei esetében (Cope, COBO, COSU).<br> 
+<sup>(8)</sup> a törlés és az Alaphelyzetbe állítás PIN-kód nem érhető el a felhasználói regisztrációval regisztrált iOS-eszközökön.<br> 
 
 ## <a name="next-steps"></a>További lépések
 

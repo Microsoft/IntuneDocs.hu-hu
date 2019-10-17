@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 07/22/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: apps
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 64e5133d-1e23-4ee6-b556-f5d32c0e95da
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 03c38472a3100ec2d717e802e07e189a53ac0866
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 7836b0d08367d8b021a8ea0c7f0e06311fe972b1
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731203"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72498571"
 ---
 # <a name="monitor-app-information-and-assignments-with-microsoft-intune"></a>Alkalmazásadatok és -hozzárendelések figyelése a Microsoft Intune-ban
 
@@ -42,12 +43,12 @@ Az Intune több módot is kínál a felügyelt alkalmazások jellemzőinek figye
 
 Az alkalmazáshoz tartozó panelen áttekintheti a környezetében lévő alkalmazás részletes állapotadatait.
 
-### <a name="essentials"></a>Alapok
+### <a name="essentials"></a>Essentials
 Az **Alapadatok** szakasz az alábbi információkat nyújtja az alkalmazásról:
 
  | **Alkalmazás részletei**            | **Leírás**                                                      |
 |------------------------|------------------------------------------------------------------|
-| **Publisher**          | Az alkalmazás kiadója.                                            |
+| **Kiadó**          | Az alkalmazás kiadója.                                            |
 | **Operációs rendszer**   | Az alkalmazás operációs rendszere (Windows, iOS, Android és hasonlók). |
 | **Létrehozás dátuma**             | A jelen változat létrehozásának dátuma és ideje. <b>**Megjegyzés**: Ez a DÁTUMÉRTÉK akkor frissül, ha a rendszergazda megváltoztatja az alkalmazás metaadatait, például megváltoztatja az alkalmazás kategóriáját vagy az alkalmazás leírását.                        |
 | **Kiosztott**           | **Igen** vagy **Nem** attól függően, hogy az alkalmazás ki lett-e osztva.                  |
@@ -76,7 +77,7 @@ Az eszközállapot-lista akkor jelenik meg, ha a menü **Figyelés** szakasz **E
 | **Felhasználónév**        | A felhasználó neve.                                                                                                                                                                                                                                      |
 | **Platform**         | Az eszköz operációs rendszere (Windows, iOS, Android és hasonlók.).                                                                                                                                                                                           |
 | **Verzió**          | Az alkalmazás verziószáma. Az üzletági (LOB) alkalmazások és a Microsoft Store for Business alkalmazások esetében az alkalmazás teljes verziószáma jelenik meg. A teljes verziószám az alkalmazás egy adott verzióját azonosítja. A szám az alábbi formátumban jelenik meg: _Verzió_(_Build_). Például 2.2(2.2.17560800). A standard szintű áruházbeli alkalmazások esetében nem jelennek meg verziók. |
-| **Állapot**           | Az alkalmazás állapota.                                                                                                                                                                                                                                     |
+| **Állapota**           | Az alkalmazás állapota.                                                                                                                                                                                                                                     |
 | **Állapot részletei**   | Az állapot részletei.                                                                                                                                                                                                                                     |
 | **Legutóbbi bejelentkezés**    | Az eszköz Intune-nal való utolsó szinkronizálásának dátuma.                                                                                                                                                                                                                  |
 
@@ -87,7 +88,7 @@ A felhasználóállapot-lista akkor jelenik meg, ha a menü **Figyelés** szakas
 
 | **Felhasználóoszlop**     | **Leírás**                           |
 |---------------------|-------------------------------------------|
-| **Name**            | A felhasználó Azure Active Directoryban használt neve.         |
+| **Név**            | A felhasználó Azure Active Directoryban használt neve.         |
 | **Felhasználónév**       | A felhasználó egyedi neve.              |
 | **Telepítések**   | A felhasználó által nem telepített alkalmazások száma. |
 | **Hibák**        | A felhasználó sikertelen alkalmazástelepítéseinek száma.     |

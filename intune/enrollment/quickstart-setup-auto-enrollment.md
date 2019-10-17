@@ -3,7 +3,9 @@ title: Rövid útmutató – Automatikus regisztráció beállítása az Intune-
 description: Rövid útmutató – Windows 10-es eszközök automatikus regisztrációjának beállítása az Intune-ban.
 services: microsoft-intune
 author: ErikjeMS
+manager: dougeby
 ms.service: microsoft-intune
+ms.subservice: enrollment
 ms.localizationpriority: high
 ms.topic: quickstart
 ms.date: 03/26/2019
@@ -13,18 +15,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dbd00f507b4e1587e360c364719cf380759e8081
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 6e64c7d977fef66af0fedf556eea34bef9b9079d
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731851"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72503126"
 ---
-# <a name="quickstart-set-up-automatic-enrollment-for-windows-10-devices"></a>QuickStart Automatikus regisztráció beállítása Windows 10-es eszközökhöz
+# <a name="quickstart-set-up-automatic-enrollment-for-windows-10-devices"></a>Rövid útmutató: Windows 10-es eszközök automatikus regisztrációjának beállítása
 
 Ezt a rövid útmutatót követve beállíthatja, hogy a Microsoft Intune automatikusan regisztrálja az eszközöket, amikor bizonyos felhasználók bejelentkeznek a Windows 10 rendszerű eszközeikkel.
 
-Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon egy ingyenes próbafiókkal](../fundamentals/free-trial-sign-up.md).
+Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon ingyenes próbafiókot](../fundamentals/free-trial-sign-up.md).
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -33,7 +35,7 @@ Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon egy ingyenes próbafi
 
 ## <a name="sign-in-to-intune"></a>Bejelentkezés az Intune-ba
 
-Jelentkezzen be az [Intune-ba](https://aka.ms/intuneportal) globális rendszergazdaként vagy Intune-szolgáltatásadminisztrátorként. Ha létrehozott egy Intune próba-előfizetést, az a fiók lesz a globális rendszergazda, amelyikkel azt létrehozta.
+Jelentkezzen be az [Intune-ba](https://aka.ms/intuneportal) globális rendszergazdaként, vagy Intune-szolgáltatásadminisztrátorként. Ha létrehozott egy Intune próba-előfizetést, az a fiók lesz a globális rendszergazda, amelyikkel azt létrehozta.
 
 ## <a name="set-up-windows-10-automatic-enrollment"></a>Windows 10-es eszközök automatikus regisztrációjának beállítása
 
@@ -65,7 +67,7 @@ Ebben a példában MDM-regisztrációt fogunk használni, hogy a vállalati és 
 8. A hátralévő konfigurációs értékekhez használja az alapértelmezett értékeket.
 9. Válassza a **Mentés** elemet.
 
-## <a name="clean-up-resources"></a>Az erőforrások eltávolítása
+## <a name="clean-up-resources"></a>Erőforrások eltávolítása
 
 Az Intune-beli automatikus regisztráció újrakonfigurálásával kapcsolatban olvassa el a [Windows-eszközök regisztrációjának beállítása](windows-enroll.md) című cikket.
 
@@ -76,4 +78,4 @@ Ebből a rövid útmutatóból megtanulhatta a Windows 10-es eszközök automati
 Kövesse az Intune rövid útmutatóinak sorozatát a következő rövid útmutatóval.
 
 > [!div class="nextstepaction"]
-> [QuickStart Windows 10-es eszköz regisztrálása](../quickstart-enroll-windows-device.md)
+> [Rövid útmutató: Windows 10 rendszerű eszköz regisztrálása](../quickstart-enroll-windows-device.md)

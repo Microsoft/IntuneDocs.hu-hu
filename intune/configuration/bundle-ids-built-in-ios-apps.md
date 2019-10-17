@@ -9,18 +9,19 @@ manager: dougeby
 ms.date: 05/30/2019
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: ''
 ms.technology: ''
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 04cafd2cf69bbd42a35ade3ae180e8af8789c938
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 1eda7fef3ee9c2ca4e4a13d9b6effba2ed121b0e
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730923"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506953"
 ---
 # <a name="bundle-ids-for-built-in-ios-apps-you-can-use-in-intune"></a>Az Intune-ban használható beépített iOS-alkalmazások köteg-azonosítói
 
@@ -33,41 +34,41 @@ Ha iOS-eszközökön konfigurálja a szolgáltatásokat, a beépített alkalmaz�
 | com. Apple. Store             | Alkalmazásáruház    | Apple     |
 | com.apple.calculator        | Számológép   | Apple     |
 | com.apple.mobilecal         | Naptár     | Apple     |
-| com.apple.camera            | Kamera       | Apple     |
+| com.apple.camera            | Fényképezőgép       | Apple     |
 | com.apple.mobiletimer       | Óra        | Apple     |
 | com. Apple. clips             | Klipek        | Apple     |
 | com.apple.compass           | Iránytű      | Apple     |
 | com.apple.MobileAddressBook | Névjegyek     | Apple     |
 | com.apple.facetime          | FaceTime     | Apple     |
-| com.apple.DocumentsApp      | Fájlok        | Apple     |
+| com. Apple. DocumentsApp      | fájlokat        | Apple     |
 | com.apple.mobileme.fmf1     | Barátok keresése | Apple     |
 | com.apple.mobileme.fmip1    | iPhone keresése  | Apple     |
 | com.apple.gamecenter        | Game Center  | Apple     |
 | com.apple.mobilegarageband  | GarageBand   | Apple     |
 | com.apple.Health            | Állapot       | Apple     |
-| com.apple.Home              | Otthoni         | Apple     |
+| com. Apple. Home              | Otthoni         | Apple     |
 | com.apple.iBooks            | iBooks       | Apple     |
-| com.apple.iMovie            | iMovie       | Apple     |
-| com.apple.itunesconnect.mobile | iTunes-kapcsolat | Apple |
+| com. Apple. iMovie            | iMovie       | Apple     |
+| com. Apple. itunesconnect. Mobile | iTunes-kapcsolat | Apple |
 | com.apple.MobileStore       | iTunes Store | Apple     |
 | com.apple.itunesu           | iTunes U     | Apple     |
 | com.apple.Keynote           | Keynote      | Apple     |
 | com.apple.mobilemail        | Mail         | Apple     |
-| com.apple.Maps              | Maps         | Apple     |
+| com.apple.Maps              | Térképek         | Apple     |
 | com.apple.MobileSMS         | Üzenetek     | Apple     |
 | com.apple.Music             | Zene        | Apple     |
 | com.apple.news              | Hírek         | Apple     |
 | com.apple.mobilenotes       | Megjegyzések        | Apple     |
 | com.apple.Numbers           | Számok      | Apple     |
 | com.apple.Pages             | Pages        | Apple     |
-| com.apple.mobilephone       | Phone        | Apple     |
+| com. Apple. mobiltelefon       | Phone        | Apple     |
 | com.apple.Photo-Booth       | Photo Booth  | Apple     |
 | com.apple.mobileslideshow   | Fotók       | Apple     |
 | com.apple.podcasts          | Podcastok     | Apple     |
 | com.apple.reminders         | Emlékeztetők    | Apple     |
 | com.apple.mobilesafari      | Safari       | Apple     |
 | com.apple.Preferences       | Beállítások     | Apple     |
-| com.apple.SiriViewService   | Siri         | Apple     |
+| com. Apple. SiriViewService   | Siri         | Apple     |
 | com.apple.stocks            | Részvények       | Apple     |
 | com.apple.tips              | Tippek         | Apple     |
 | com.apple.tv                | TV           | Apple     |

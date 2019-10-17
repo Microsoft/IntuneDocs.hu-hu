@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 04/22/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ae8b6528-7979-47d8-abe0-58cea1905270
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ad2977597ca9e5b6eef82fb3539917ea15ca2e31
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: f5519429bae69fe277c72b12a2801a1875295824
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730699"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72493786"
 ---
 # <a name="upgrade-windows-10-editions-or-switch-out-of-s-mode-on-devices-using-microsoft-intune"></a>A Windows 10 kiadások frissítése vagy az eszközökön való kikapcsolás Microsoft Intune használatával
 
@@ -29,7 +30,7 @@ ms.locfileid: "71730699"
 
 A mobileszköz-kezelési (MDM) megoldás részeként érdemes lehet frissíteni a Windows 10-es eszközöket. Például a Windows 10 Professional rendszerű eszközöket szeretné frissíteni Windows 10 Enterprise-ra. Vagy ha azt szeretné, hogy az eszköz kikapcsolja az S üzemmódot.
 
-[Windows 10 S üzemmód](https://support.microsoft.com/help/4456067/windows-10-switch-out-of-s-mode) (megnyílik egy másik Microsoft-webhely), amely biztonság és teljesítmény érdekében készült. Az Intune használatával kikapcsolhatja az S üzemmódot. Az S módból való váltás nem vonható vissza. Ha vált az S módból, nem válthat vissza később.
+A [Windows 10 S üzemmód](https://support.microsoft.com/help/4456067/windows-10-switch-out-of-s-mode) (egy másik Microsoft-webhely megnyitása) a biztonság és a teljesítmény érdekében készült. Az Intune használatával kikapcsolhatja az S üzemmódot. Az S módból való váltás nem vonható vissza. Ha vált az S módból, nem válthat vissza később.
 
 Tekintse meg az S móddal kapcsolatos [gyakran ismételt kérdéseket](https://support.microsoft.com/help/4020089/windows-10-in-s-mode-faq) .
 
@@ -60,15 +61,15 @@ A Windows 10-kiadás frissítési profiljának támogatott frissítési útvonal
 
 | Frissítés erről a kiadásról | Frissítés erre a kiadásra |
 |---|---|
-| Windows 10 Pro | Windows 10 Education <br/>Windows 10 Enterprise <br/>Windows 10 Pro Education |
+| Windows 10 Pro | Windows 10 oktatás <br/>Windows 10 Enterprise <br/>Windows 10 Pro Education |
 | Windows 10 Pro N kiadás | Windows 10 Education N kiadás <br/>Windows 10 Enterprise N kiadás <br/>Windows 10 Pro Education N kiadás | 
-| Windows 10 Pro Education | Windows 10 Education | 
+| Windows 10 Pro Education | Windows 10 oktatás | 
 | Windows 10 Pro Education N kiadás | Windows 10 Education N kiadás |
-| Windows 10 Cloud | Windows 10 Education <br/>Windows 10 Enterprise <br/>Windows 10 Pro <br/>Windows 10 Pro Education | 
+| Windows 10 Cloud | Windows 10 oktatás <br/>Windows 10 Enterprise <br/>Windows 10 Pro <br/>Windows 10 Pro Education | 
 | Windows 10 Cloud N kiadás | Windows 10 Education N kiadás <br/>Windows 10 Enterprise N kiadás <br/>Windows 10 Pro N kiadás <br/>Windows 10 Pro Education N kiadás | 
-| Windows 10 Enterprise | Windows 10 Education | 
+| Windows 10 Enterprise | Windows 10 oktatás | 
 | Windows 10 Enterprise N kiadás | Windows 10 Education N kiadás | 
-| Windows 10 Core | Windows 10 Education <br/>Windows 10 Enterprise <br/>Windows 10 Pro Education | 
+| Windows 10 Core | Windows 10 oktatás <br/>Windows 10 Enterprise <br/>Windows 10 Pro Education | 
 | Windows 10 Core N kiadás | Windows 10 Education N kiadás <br/>Windows 10 Enterprise N kiadás <br/>Windows 10 Pro Education N kiadás | 
 | Windows 10 Holographic | Windows 10 Holographic for Business |
 | Windows 10 mobil verzió | Windows 10 Mobile Enterprise |
@@ -99,14 +100,14 @@ A Windows 10-kiadás frissítési profiljának támogatott frissítési útvonal
 2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
 3. Adja meg a következő tulajdonságokat:
 
-    - **Név**: Adjon meg egy leíró nevet az új profilhoz. Adja meg `Windows 10 edition upgrade profile` például a következőt: `Windows 10 switch off S mode`vagy.
-    - **Description** (Leírás): Adja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
-    - **Platform**: Válassza ki a platformot:  
+    - **Név**: Adja meg az új profil leíró nevét. Írja be például a következőt: `Windows 10 edition upgrade profile` vagy `Windows 10 switch off S mode`.
+    - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
+    - **Platform**: válassza ki a platformot:  
 
         - **Windows 10 és újabb**
 
-    - **Profil típusa**: Válassza a **kiadás frissítése**lehetőséget.
-    - **Beállítások**: Adja meg a konfigurálni kívánt beállításokat. Az összes beállítás listáját és a teendőket lásd:
+    - **Profil típusa**: válassza a **kiadás frissítése**lehetőséget.
+    - **Beállítások**: adja meg a konfigurálni kívánt beállításokat. Az összes beállítás listáját és a teendőket lásd:
 
         - [Windows 10 frissítési és S üzemmód](edition-upgrade-windows-settings.md)
         - [Windows Holographic for Business](holographic-upgrade.md)

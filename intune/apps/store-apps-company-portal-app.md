@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 07/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: apps
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: bfe1a2d3-f611-4dbb-adef-c0dff4d7b810
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 31fcc3a47a131ca017e3691cc53a7295b81fe67c
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 32411e513cec9683faf598c8d73d6d803bcddb3d
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731075"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72507108"
 ---
 # <a name="manually-add-the-windows-10-company-portal-app-by-using-microsoft-intune"></a>A Windows 10-es Céges portál alkalmazás manuális hozzáadása a Microsoft Intune-nal
 
@@ -94,7 +95,7 @@ Itt ismertetjük az alkalmazás aláírásának és hozzárendelésének ezt a m
 3. A Windows 10-es Céges portál alkalmazás aláírásához futtassa a parancsfájlt az annak fejlécében található bemeneti paraméterekkel, amint az az alábbi táblázatban látható.  
     A függőségeket nem kell hozzáadni a parancsprogramhoz. Csak akkor van rájuk szükség, amikor éppen folyamatban van az alkalmazás feltöltése az Intune felügyeleti konzolra.
 
-| Paraméter |  Leírás  |
+| Paraméter |  Description  |
 |---|---|
 | InputWin10AppxBundle  |  Az appxbundle forrásfájl elérési útja. |
 | OutputWin10AppxBundle | Az aláírt appxbundle fájl kimeneti útja. 

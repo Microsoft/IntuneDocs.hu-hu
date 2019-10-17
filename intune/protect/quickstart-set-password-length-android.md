@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 08/23/2019
 ms.topic: quickstart
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 81b4fa08-5333-4c54-9f49-8db5f6984ed2
@@ -17,14 +18,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c2969c57a598acbc0239e07d4ed347739c9719c2
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: f73bc84be46252cb99a47966b480e585545dde12
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731983"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72504166"
 ---
-# <a name="quickstart-create-a-password-compliance-policy-for-android-devices"></a>QuickStart Jelszó-megfelelőségi szabályzat létrehozása Android-eszközökhöz
+# <a name="quickstart-create-a-password-compliance-policy-for-android-devices"></a>Rövid útmutató: Jelszó-megfelelőségi szabályzat létrehozása Android rendszerű eszközökhöz
 
 Ebben a rövid útmutatóban a Microsoft Intune-t használjuk annak beállítására, hogy a rendszer az Android-eszközöket használó munkatársaktól adott hosszúságú jelszót kérjen el, mielőtt engedélyezné az eszközökön található információkhoz való hozzáférést. 
 
@@ -33,11 +34,11 @@ Az Intune-eszközmegfelelőségi szabályzatokkal megszabhatja az eszközök meg
 > [!IMPORTANT]
 > Az alkalmazottak tartalmainak védelme érdekében a jelszóbeállítások mellett egyéb rendszerbiztonsági beállításokat használatát is érdemes fontolóra venni. További információkért tekintse meg a [rendszerbiztonsági beállításokat](compliance-policy-create-android-for-work.md) ismertető cikket.
 
-Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon egy ingyenes próbafiókkal](../fundamentals/free-trial-sign-up.md).
+Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon ingyenes próbafiókot](../fundamentals/free-trial-sign-up.md).
 
 ## <a name="sign-in-to-intune"></a>Bejelentkezés az Intune-ba
 
-Jelentkezzen be az [Intune-ba](https://aka.ms/intuneportal) globális rendszergazdaként vagy Intune-szolgáltatásadminisztrátorként. 
+Jelentkezzen be az [Intune-ba](https://aka.ms/intuneportal) globális rendszergazdaként, vagy Intune-szolgáltatásadminisztrátorként. 
 
 ## <a name="create-a-device-compliance-policy"></a>Eszközmegfelelőségi szabályzat létrehozása
 
@@ -51,13 +52,13 @@ Ebben a rövid útmutatóban a Intune-t használja majd annak beállítására, 
 6. Válasszon ki **legalább egy numerikus** **értéket a kötelező jelszó típusa**mellett.
 7. Adja meg a **6** értéket a **Jelszó minimális hossza** mellett. 
 
-    ![Képernyőkép egy csoport létrehozásáról a Microsoft Intune-ban](./media/quickstart-set-password-length-android/quickstart-set-password-length-android-01.png)
+    ![Képernyőkép csoport létrehozásáról a Microsoft Intune-ban](./media/quickstart-set-password-length-android/quickstart-set-password-length-android-01.png)
 
 7. Ha elkészült, a szabályzat létrehozásához kattintson az **OK** > **OK** > **Létrehozás** gombra.
 
 Ha sikeresen létrehozta a szabályzatot, az megjelenik az eszközmegfelelőségi szabályzatok listájában. 
 
-## <a name="clean-up-resources"></a>Az erőforrások eltávolítása
+## <a name="clean-up-resources"></a>Erőforrások eltávolítása
 
 Ha többé nincs szükség a szabályzatra, törölje. Ehhez jelölje ki a megfelelőségi szabályzatot, és kattintson a **Törlés** gombra.
 
@@ -68,4 +69,4 @@ Ebben a rövid útmutatóban az Intune használatával létrehozott egy megfelel
 Kövesse az Intune rövid útmutatóinak sorozatát a következő rövid útmutatóval.
 
 > [!div class="nextstepaction"]
-> [QuickStart Értesítések küldése a nem megfelelő eszközökre @ no__t-0
+> [Rövid útmutató: Értesítések küldése a nem megfelelő eszközökre](../quickstart-send-notification.md)

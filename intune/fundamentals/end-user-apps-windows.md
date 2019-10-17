@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 12/05/2016
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: e471fed8-19f0-4b37-aaa2-65f28a6b4794
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3d67e291a4403ba7a24cfc4451d9344711cbbe10
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: e1cd4dd270d276969d759bc9a9dccef80b281251
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732023"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72502929"
 ---
 # <a name="how-your-windows-users-get-their-apps"></a>Windows-felhasználói alkalmazások letöltése
 
@@ -33,10 +34,10 @@ Ez a témakör ismerteti, hogy felhasználói hol és hogyan juthatnak hozzá a 
 
 **Elérhető alkalmazások** – A Munkahelyi portál alkalmazáslistájában szereplő alkalmazások, amelyeket a felhasználó saját döntése alapján telepíthet.
 
-**Felügyelt alkalmazások** – Az Intune által szabályzatokkal felügyelt és „burkolt”, illetve az Intune App szoftverfejlesztői készlettel (SDK) készített alkalmazások. Ezek az alkalmazások az Intune-nal kezelhetők, és alkalmazásvédelmi szabályzatokkal felügyelhetők.
+**Felügyelt alkalmazások** – Az Intune által szabályzatokkal felügyelt és „burkolt”, illetve az Intune App szoftverfejlesztői készlettel (SDK) készített alkalmazások. Ezek az alkalmazások az Intune-nal felügyelhetők, és azokra alkalmazásvédelmi szabályzatok alkalmazhatók.
 
 **Nem felügyelt alkalmazások** – Azok a szabályzatokkal felügyelhető alkalmazások, amelyeket nem az Intune burkolt be, illetve amelyek nem foglalják magukban az Intune App SDK-t. Ezekre az alkalmazásokra nem alkalmazhatók alkalmazásvédelmi szabályzatok.
 
-## <a name="see-also"></a>Lásd még:
+## <a name="see-also"></a>További információ
 [Android-felhasználói alkalmazások letöltése](end-user-apps-android.md)
 [iOS-felhasználói alkalmazások letöltése](end-user-apps-android.md)

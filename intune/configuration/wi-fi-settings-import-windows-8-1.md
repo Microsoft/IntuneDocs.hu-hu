@@ -8,24 +8,25 @@ manager: dougeby
 ms.date: 07/18/2018
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: medium
 ms.technology: ''
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 841be002cf9ed99142ce95a1f9cafda761d1b856
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 40569af35a812074cc62546e3f85929416202b3b
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730355"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506423"
 ---
 # <a name="import-wi-fi-settings-for-windows-devices-in-intune"></a>Windows-eszközök Wi-Fi-beállításainak importálása az Intune-ba
 
 A Windows rendszert futtató eszközökre importálhatja az előzőleg fájlba exportált Wi-Fi konfigurációs profilt. **Windows 10 és újabb rendszerű eszközökhöz közvetlenül az Intune-ban is [létrehozhat Wi-Fi-profilt](wi-fi-settings-windows.md)** .
 
-Érintett kiadások:  
+A következőkre vonatkozik:  
 - Windows 8.1 és újabb
 - Windows 10 és újabb
 - A Windows 10 asztali vagy mobilverziója
@@ -57,8 +58,8 @@ A szükséges Wi-Fi-profillal már rendelkező Windows-számítógépen kövesse
 4. A **Platform** beállításnál válassza a **Windows 8.1 és újabb** lehetőséget.
 5. A **Profil típusa** beállításnál válassza a **Wi-Fi importálás** lehetőséget.
 6. Adja meg a következő beállításokat:
-    - **Kapcsolatok neve**: Adja meg a Wi-Fi kapcsolat nevét. Ez a név jelenik meg a végfelhasználók számára elérhető Wi-Fi-hálózatok böngészése közben.
-    - **Profil XML-fájlja**: Válassza a Tallózás gombot, és válassza ki azt az XML-fájlt, amely az importálni kívánt Wi-Fi profil beállításait tartalmazza.
+    - **Kapcsolat neve**: Adja meg a Wi-Fi-kapcsolat nevét. Ez a név jelenik meg a végfelhasználók számára elérhető Wi-Fi-hálózatok böngészése közben.
+    - **Profil XML**: A tallózás gombra kattintva válassza ki azt az XML-fájlt, amely az importálni kívánt Wi-Fi-profilbeállításokat tartalmazza.
     - **Fájl tartalma**: Megjeleníti a kiválasztott konfigurációs profil XML-kódját.
 7. Ha elkészült, a módosítások mentéséhez válassza az **OK** > **Létrehozás** lehetőséget. Ekkor létrejön a profil, és megjelenik a profilok listájában.
 

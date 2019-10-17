@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 08/07/2019
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: medium
 ms.technology: ''
 ms.suite: ems
@@ -15,18 +16,18 @@ search.appverid: MET150
 ms.reviewer: maholdaa
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 62fad2a881332470a6c3e95b7cdcab0403ba1839
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 92d81e383a9964aaecbdd151397879236ffcb726
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730671"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72493560"
 ---
 # <a name="android-enterprise-device-settings-to-configure-email-authentication-and-synchronization-in-intune"></a>Az androidos vállalati eszközbeállítások az e-mailek, a hitelesítés és a szinkronizálás konfigurálásához az Intune-ban
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-Ez a cikk felsorolja és leírja az androidos vállalati eszközökön szabályozható különböző e-mail-beállításokat. A mobileszköz-felügyelet (MDM) megoldás részeként használja ezeket a beállításokat állítson be egy e-mail-kiszolgálót, e-mailek és más titkosítása SSL használatával.
+Ez a cikk felsorolja és leírja az androidos vállalati eszközökön szabályozható különböző e-mail-beállításokat. A mobileszköz-kezelési (MDM) megoldás részeként ezekkel a beállításokkal konfigurálhatja az e-mail-kiszolgálókat, az SSL használatával titkosíthatja az e-maileket, és egyéb műveleteket is elvégezheti.
 
 Intune-rendszergazdaként e-mail-beállításokat hozhat létre és rendelhet hozzá az androidos vállalati eszközökhöz a munkahelyi profilban.
 
@@ -38,25 +39,25 @@ Hozzon létre egy [eszköz konfigurációs profilt](email-settings-configure.md#
 
 ## <a name="android-enterprise"></a>Vállalati Android
 
-- **E-mail alkalmazás**: Válassza a **Gmail** vagy a **Nine Work** lehetőséget.
-- **Levelezési kiszolgáló**: Az Exchange-kiszolgáló állomásneve. Például írja be a következőt: `outlook.office365.com`.
-- **Username attribútum a HRE**: Ez a név a Azure Active Directory (Azure AD) által beolvasott Intune-attribútum. A profil által használt felhasználónevet az Intune dinamikusan generálja. A választható lehetőségek:
+- **Levelezőalkalmazás**: Válassza a **Gmail** vagy a **Nine Work** lehetőséget
+- **E-mail-kiszolgáló**: Itt adja meg az Exchange-kiszolgáló állomásnevét. Például írja be a következőt: `outlook.office365.com`.
+- **Felhasználói név attribútum az AAD-ből**: Ez a név az Intune által az Azure Active Directoryből (Azure AD) lekért attribútum. A profil által használt felhasználónevet az Intune dinamikusan generálja. A választható lehetőségek:
 
-  - **Egyszerű felhasználónév**: Lekéri a nevet, például `user1` vagy`user1@contoso.com`
-  - **Felhasználónév**: Csak a nevet kapja, például`user1`
+  - **Egyszerű felhasználónév**: A nevet, például `user1` vagy `user1@contoso.com` kéri le.
+  - **Felhasználónév**: Csak a nevet olvassa be, például `user1`
 
-- **E-mail-cím attribútum a HRE**: Ez a név az Intune által az Azure AD-től kapott e-mail-attribútum. Az Intune dinamikusan létrehozza a profil által használt e-mail-címet. A választható lehetőségek:
-  - **Egyszerű felhasználónév**:  A teljes egyszerű nevet `user1@contoso.com` (például vagy `user1`) használja e-mail-címként.
-  - **Elsődleges SMTP-címe**: Az elsődleges SMTP- `user1@contoso.com`címeket (például) használja az Exchange-be való bejelentkezéshez.
+- E **-mail-cím attribútum a HRE-ből**: Ez a név az Intune által az Azure ad-től kapott e-mail-attribútum. Az Intune dinamikusan létrehozza a profil által használt e-mail-címet. A választható lehetőségek:
+  - **Egyszerű felhasználónév**: a teljes egyszerű nevet (például `user1@contoso.com` vagy `user1`) használja e-mail-címként.
+  - **Elsődleges SMTP-címe**: az elsődleges SMTP-címeket (például `user1@contoso.com`) használja az Exchange-be való bejelentkezéshez.
 
-- **Hitelesítési módszer**: Válassza ki a **felhasználónevet és a jelszót** vagy a **tanúsítványokat** az e-mail-profil által használt hitelesítési módszerként.
+- **Hitelesítési módszer**: válassza a **Felhasználónév és jelszó** vagy a **tanúsítványok** lehetőséget az e-mail profil által használt hitelesítési módszerként.
   - Ha a **Tanúsítványok** lehetőséget választotta, válassza ki az ügyfél korábban létrehozott SCEP- vagy PKCS-tanúsítványát az Exchange-kapcsolat hitelesítéséhez.
-- **SSL**: Az **Engedélyezés** gombra kattintva SSL (SSL) kommunikációt küldhet e-mailek küldésekor, fogadásakor és az Exchange-kiszolgálóval folytatott kommunikációban.
-- **Szinkronizálandó e-mailek mennyisége**: Válassza ki a szinkronizálni kívánt e-mailek időtartamát. Vagy válassza a **korlátlan** lehetőséget az összes elérhető e-mail szinkronizálásához.
-- **Szinkronizálni kívánt tartalom típusa** (Csak kilenc munka): Válassza ki, hogy mely adatokat szeretné szinkronizálni az eszközökön. A választható lehetőségek:
-  - **Névjegyek**: Válassza az **Engedélyezés** lehetőséget, hogy a végfelhasználók szinkronizálják a névjegyeket az eszközeiket.
-  - **Naptár**: Az **Engedélyezés** lehetőség kiválasztásával engedélyezheti a végfelhasználók számára, hogy szinkronizálják a naptárat az eszközeiket.
-  - **Feladatok**: Az **Engedélyezés** lehetőség kiválasztásával engedélyezheti a végfelhasználók számára, hogy bármilyen feladatot szinkronizálnak az eszközeiket.
+- **SSL**: válassza az **Engedélyezés** lehetőséget, ha az e-mailek küldésekor, fogadásakor és az Exchange-kiszolgálóval való kommunikációnál SSL (SSL) kommunikációt szeretne használni.
+- **Szinkronizálandó e-mailek mennyisége**: válassza ki a szinkronizálni kívánt e-mailek időtartamát. Vagy válassza a **korlátlan** lehetőséget az összes elérhető e-mail szinkronizálásához.
+- **Szinkronizálandó tartalomtípus** (csak kilences munka esetén): válassza ki, hogy mely adatokat kívánja szinkronizálni az eszközökön. A választható lehetőségek:
+  - **Névjegyek**: válassza az **Engedélyezés** lehetőséget, hogy a végfelhasználók szinkronizálják a névjegyeket az eszközeiket.
+  - **Naptár**: válassza az **Engedélyezés** lehetőséget, hogy a végfelhasználók szinkronizálják a naptárt az eszközeiket.
+  - **Feladatok**: válassza az **Engedélyezés** lehetőséget, hogy a végfelhasználók bármilyen feladatot szinkronizálják az eszközeiket.
 
 ## <a name="next-steps"></a>További lépések
 

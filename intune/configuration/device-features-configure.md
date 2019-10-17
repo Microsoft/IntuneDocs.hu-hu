@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 09/16/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: high
 ms.technology: ''
 ms.reviewer: ''
@@ -15,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 83328652c366eea6e1a3cbb81ea4979d8844a96b
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 54d7ccabf958c3b8532f1a115724559607783a57
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730839"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72495220"
 ---
 # <a name="add-ios-or-macos-device-feature-settings-in-intune"></a>iOS-es vagy macOS-es eszközfunkció-beállítások megadása az Intune-ban
 
@@ -47,7 +48,7 @@ Az Intune-ban konfigurálható beállítások listáját lásd: [AirPrint iOS](i
 
 További információ a AirPrint-ről: a [AirPrint névjegye](https://support.apple.com/HT201311) az Apple webhelyén.
 
-Érintett kiadások:
+A következőkre vonatkozik:
 
 - iOS 7,0 és újabb verziók
 - iPadOS 13,0 és újabb verziók
@@ -61,14 +62,14 @@ Az Intune-ban konfigurálható beállítások listáját itt tekintheti meg: [al
 
 A szolgáltatással kapcsolatos további információkért lásd: [értesítések](https://developer.apple.com/notifications/) az Apple webhelyén.
 
-Érintett kiadások:
+A következőkre vonatkozik:
 
 - iOS 9,3 és újabb verziók
 - iPadOS 13,0 és újabb verziók
 
 ## <a name="associated-domains"></a>Társított tartományok
 
-A társított tartományok lehetővé teszik a tartományok, például `contoso.com`és az alkalmazások közötti kapcsolat létrehozását. Ez a funkció lehetővé teszi a következőket:
+A társított tartományok lehetővé teszik a tartományok, például a `contoso.com` és az alkalmazások közötti kapcsolat létrehozását. Ez a funkció lehetővé teszi a következőket:
 
 - Megoszthatja az adatokat és bejelentkezési hitelesítő adatokat a szervezet alkalmazásai és webhelyei között.
 - Használja a webhelyén alapuló alkalmazás-szolgáltatásokat, például az egyszeri bejelentkezési alkalmazás bővítményét, az univerzális hivatkozásokat és a jelszó automatikus kitöltését.
@@ -79,7 +80,7 @@ Az Intune-ban konfigurálható beállítások listáját lásd: [társított tar
 
 A szolgáltatással kapcsolatos további információkért lásd: [az alkalmazás társított tartományának beállítása](https://developer.apple.com/documentation/security/password_autofill/setting_up_an_app_s_associated_domains) az Apple webhelyén.
 
-Érintett kiadások:
+A következőkre vonatkozik:
 
 - macOS 10,15 és újabb verziók
 
@@ -92,7 +93,7 @@ Ezekkel a beállításokkal konfigurálhatja az alkalmazások elrendezését és
 
 Az Intune-ban konfigurálható beállítások listáját itt tekintheti meg: [kezdőképernyő elrendezése iOS](ios-device-features-settings.md#home-screen-layout)-en.
 
-Érintett kiadások:
+A következőkre vonatkozik:
 
 - iOS 9,3 és újabb verziók
 - iPadOS 13,0 és újabb verziók
@@ -105,7 +106,7 @@ Az Intune-ban konfigurálható beállítások listáját itt tekintheti meg: a [
 
 A zárolási képernyőn megjelenő üzenetekkel kapcsolatos további információkért lásd: [LockScreenMessage](https://developer.apple.com/documentation/devicemanagement/lockscreenmessage) az Apple webhelyén.
 
-Érintett kiadások:
+A következőkre vonatkozik:
 
 - iOS 9,3 és újabb verziók
 - iPadOS 13,0 és újabb verziók
@@ -116,7 +117,7 @@ Ezzel a szolgáltatással kiválaszthatja azokat az alkalmazásokat, egyéni alk
 
 Az Intune-ban konfigurálható beállítások listáját itt tekintheti meg: a macOS-beli [bejelentkezési elemek](macos-device-features-settings.md#login-items).
 
-Érintett kiadások:
+A következőkre vonatkozik:
 
 - macOS 10,13 és újabb verziók
 
@@ -126,7 +127,7 @@ A bejelentkezési képernyő és a felhasználók számára elérhető függvén
 
 Az Intune-ban konfigurálható beállítások listáját lásd: [bejelentkezési ablak MacOS rendszeren](macos-device-features-settings.md#login-window).
 
-Érintett kiadások:
+A következőkre vonatkozik:
 
 - macOS 10,7 és újabb verziók
 
@@ -143,7 +144,7 @@ Az egyszeri bejelentkezés használatához ellenőrizze, hogy rendelkezik-e az a
 
 Az Intune-ban konfigurálható beállítások listáját lásd: [egyszeri bejelentkezés iOS rendszeren](ios-device-features-settings.md#single-sign-on).
 
-Érintett kiadások:
+A következőkre vonatkozik:
 
 - iOS 7,0 és újabb verziók
 - iPadOS 13,0 és újabb verziók
@@ -169,7 +170,7 @@ Az egyszeri bejelentkezéses alkalmazások kiterjesztésének fejlesztésével k
 >
 > - Fejlesztési szempontból az **egyszeri bejelentkezési alkalmazás bővítménye** bármilyen hitelesítő adatok egyszeri bejelentkezéses hitelesítését képes használni. **Egyszeri bejelentkezés**esetén csak Kerberos SSO-hitelesítést használhat.  
 
-Érintett kiadások:
+A következőkre vonatkozik:
 
 - iOS 13,0 és újabb verziók
 - iPadOS 13,0 és újabb verziók
@@ -181,18 +182,18 @@ Adjon hozzá egy egyéni. png,. jpg vagy. jpeg formátumú rendszerképet a fel�
 
 Az Intune-ban konfigurálható beállítások listáját lásd: [háttérkép az iOS](ios-device-features-settings.md#wallpaper)-ben.
 
-Érintett kiadások:
+A következőkre vonatkozik:
 
 - iOS
 - iPadOS 13,0 és újabb verziók
 
 ## <a name="web-content-filter"></a>Webes tartalom szűrője
 
-Ezek a beállítások a weblapok kiértékeléséhez, valamint a felnőtt tartalmak és a felnőtt nyelv letiltásához használhatják az Apple beépített AutoSzűrő algoritmusát. Létrehozhatja az engedélyezett webhivatkozások és a korlátozott webes hivatkozások listáját is. Engedélyezheti például, hogy csak `contoso` a webhelyek legyenek megnyitva.
+Ezek a beállítások a weblapok kiértékeléséhez, valamint a felnőtt tartalmak és a felnőtt nyelv letiltásához használhatják az Apple beépített AutoSzűrő algoritmusát. Létrehozhatja az engedélyezett webhivatkozások és a korlátozott webes hivatkozások listáját is. Engedélyezheti például, hogy csak `contoso` webhely legyen megnyitva.
 
 Az Intune-ban konfigurálható beállítások listáját itt tekintheti meg: [webes tartalom szűrője iOS rendszeren](ios-device-features-settings.md#web-content-filter).
 
-Érintett kiadások:
+A következőkre vonatkozik:
 
 - iOS 7,0 és újabb verziók
 - iPadOS 13,0 és újabb verziók
@@ -203,12 +204,12 @@ Az Intune-ban konfigurálható beállítások listáját itt tekintheti meg: [we
 2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
 3. Adja meg a következő tulajdonságokat:
 
-    - **Név**: Adjon meg egy leíró nevet a szabályzatnak. Nevezze el a szabályzatokat, hogy később könnyebben azonosítható legyen. Például a helyes szabályzat neve **MacOS: Konfigurálja a bejelentkezési képernyőt**.
-    - **Description** (Leírás): Adja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
-    - **Platform**: Válassza ki az eszközök platformját. A választható lehetőségek:  
+    - **Név**: adjon meg egy leíró nevet a szabályzatnak. Nevezze el a szabályzatokat, hogy később könnyebben azonosítható legyen. Például a megfelelő szabályzat neve **MacOS: konfigurálja a bejelentkezési képernyőt**.
+    - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
+    - **Platform**: válassza ki az eszközök platformját. A választható lehetőségek:  
         - **iOS/iPadOS**
         - **macOS**
-    - **Profil típusa**: Válassza ki az **eszköz funkcióit**.
+    - **Profil típusa**: Válassza az **Eszközfunkciók** lehetőséget.
 
 4. A kiválasztott platformtól függően a konfigurálható beállítások eltérőek. Válassza ki a platformot a részletes beállításokhoz:
 

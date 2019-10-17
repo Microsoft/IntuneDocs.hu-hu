@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 07/01/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: enrollment
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 8518d8fa-a0de-449d-89b6-8a33fad7b3eb
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dfd651550cd0959efc7b1dddc2a018d5346baa8c
-ms.sourcegitcommit: 29b1113dc04534c4c87c33c773c5a0e24266e042
+ms.openlocfilehash: ab90dc9a95e461ad8c5913131a23a0355e9d072c
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "71999365"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72509218"
 ---
 # <a name="deploy-hybrid-azure-ad-joined-devices-by-using-intune-and-windows-autopilot"></a>Hibrid Azure AD-hez csatlakoztatott eszközök üzembe helyezése az Intune és a Windows Autopilot használatával
 Az Intune és a Windows Autopilot használatával hibrid Azure Active Directory (Azure AD) csatlakoztatott eszközöket állíthat be. Ehhez kövesse a cikk lépéseit.
@@ -93,7 +94,7 @@ A számítógépek létrehozásához szükséges jogokat biztosító szervezeti 
 
     ![Az Active Directory objektumtípus panel](./media/windows-autopilot-hybrid/only-following-objects.png)
     
-1. Kattintson a **Tovább** gombra.
+1. Válassza a **Tovább** elemet.
 
 1. Az **engedélyek**területen jelölje be a **teljes hozzáférés** jelölőnégyzetet.  
     Ez a művelet kijelöli az összes többi beállítást.
@@ -142,9 +143,9 @@ Ha a hálózati környezetben van egy webproxyja, győződjön meg arról, hogy 
     - Az Intune csoport címkéje mezője az Azure AD-eszközök Rendeléskód attribútumára mutat. Ha olyan csoportot szeretne létrehozni, amely tartalmazza az összes Autopilot-eszközt egy adott csoport címkével (Rendeléskód), akkor a következőt kell beírnia: `(device.devicePhysicalIds -any _ -eq "[OrderID]:179887111881")`
     - Ha olyan csoportot szeretne létrehozni, amely tartalmazza az összes Autopilot-eszközt egy adott megrendelés-AZONOSÍTÓval, írja be a `(device.devicePhysicalIds -any _ -eq "[PurchaseOrderId]:76222342342")` értéket.
     
-1. Kattintson a **Mentés** gombra.
+1. Válassza a **Mentés** lehetőséget.
 
-1. Kattintson a **Létrehozás** gombra.  
+1. Válassza a **Létrehozás** lehetőséget.  
 
 ## <a name="register-your-autopilot-devices"></a>Az Autopilot-eszközök regisztrálása
 
@@ -185,13 +186,13 @@ Az Autopilot-üzembehelyezési profilokkal Autopilot-eszközeit konfigurálhatja
 1. Az [Intune](https://aka.ms/intuneportal)-ban válassza az **eszközök beléptetése** > **Windows-regisztráció** > **üzembe helyezési profilok** > **Létrehozás profilt**.
 2. Az **alapvető beállítások** lapon adja meg a **nevet** és a **leírást**(nem kötelező).
 3. Ha azt szeretné, hogy a hozzárendelt csoportokban lévő minden eszköz automatikusan átálljon az AutoPilotra, állítsa a **Minden megcélzott eszköz AutoPilot-eszközzé alakítása** beállítást **Igen** értékre. A hozzárendelt csoportokban a vállalat tulajdonában lévő, nem Autopilot-eszközök regisztrálva lesznek az Autopilot Deployment szolgáltatásban. A személyes tulajdonban lévő eszközök nem lesznek átalakítva az Autopilot szolgáltatásba. A regisztráció feldolgozása 48 órát is igénybe vehet. Az eszköz regisztrációjának törlése és alaphelyzetbe állítása után az Autopilot regisztrálja az eszközt. Miután ilyen módon regisztrál egy eszközt, a beállítás letiltása vagy a profil-hozzárendelés eltávolítása nem távolítja el az eszközt az Autopilot üzembehelyezési szolgáltatásból. Ehhez [közvetlenül kell törölnie az eszközt](enrollment-autopilot.md#delete-autopilot-devices).
-4. Kattintson a **Tovább** gombra.
+4. Válassza a **Tovább** elemet.
 5. A beépített felhasználói **élmény (OOBE)** lapon a **telepítési mód**beállításnál válassza a **felhasználó által vezérelt**lehetőséget.
 6. Az **illesztés az Azure ad** -ba mezőben válassza a **hibrid Azure ad-hez csatlakoztatott**lehetőséget.
 7. Szükség szerint konfigurálja a további beállításokat a beépített **élmény (OOBE)** lapon.
-8. Kattintson a **Tovább** gombra.
+8. Válassza a **Tovább** elemet.
 9. A **hatókör címkék** lapon válassza ki a profil [hatókör-címkéi](../fundamentals/scope-tags.md) elemet.
-10. Kattintson a **Tovább** gombra.
+10. Válassza a **Tovább** elemet.
 11. A **hozzárendelések** lapon válassza a **csoportok kiválasztása** lehetőséget > kereséséhez, majd válassza ki az eszközcsoport > **válassza ki**azt.
 12. Válassza a **következő** > **Létrehozás**elemet.
 
@@ -203,16 +204,16 @@ Körülbelül 15 percet vesz igénybe, hogy az eszköz profiljának állapota *n
 1. A **regisztráció állapota lap** ablaktáblán válassza az **alapértelmezett** > **Beállítások**lehetőséget.
 1. Az **alkalmazás és profil telepítési folyamatának megjelenítése** területen válassza az **Igen**lehetőséget.
 1. Igény szerint konfigurálja a többi beállítást.
-1. Kattintson a **Mentés** gombra.
+1. Válassza a **Mentés** lehetőséget.
 
 ## <a name="create-and-assign-a-domain-join-profile"></a>Tartomány-csatlakoztatási profil létrehozása és hozzárendelése
 
 1. Az [Intune](https://aka.ms/intuneportal)-ban válassza az **eszköz konfigurációja** > **profilok** > **profil létrehozása**lehetőséget.
 1. Adja meg a következő tulajdonságokat:
-   - **Név**: Adjon meg egy leíró nevet az új profilhoz.
-   - **Description** (Leírás): Adja meg a profil leírását.
-   - **Platform**: Válassza **a Windows 10 és újabb**lehetőséget.
-   - **Profil típusa**: Válassza a **tartományhoz való csatlakozás (előzetes verzió)** lehetőséget.
+   - **Név**: Adja meg az új profil leíró nevét.
+   - **Leírás:** Itt adhatja meg a profil leírását.
+   - **Platform**: válassza **a Windows 10 és újabb**lehetőséget.
+   - **Profil típusa**: válassza a **tartományhoz való csatlakozás (előzetes verzió)** lehetőséget.
 1. Válassza a **Beállítások**lehetőséget, majd adja meg a **számítógép nevének előtagját**, a **tartománynevet**és a (választható) **szervezeti egységet** [DN formátumban](https://docs.microsoft.com/windows/desktop/ad/object-names-and-identities#distinguished-name). 
    > [!NOTE]
    > Ne használjon idézőjeleket a **szervezeti egységben**lévő érték körül.

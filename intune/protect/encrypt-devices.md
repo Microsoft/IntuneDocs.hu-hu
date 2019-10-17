@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 08/02/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
@@ -16,12 +17,12 @@ ms.reviewer: annovich
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
-ms.openlocfilehash: f885cbddf8ecb984dc6e98db38c9adbc6a07119a
-ms.sourcegitcommit: dd6755383ba89824d1cc128698a65fde6bb2de55
+ms.openlocfilehash: 2fd5f686e837194af2672b4ad864590a49ec0cd1
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72306854"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72502327"
 ---
 # <a name="use-device-encryption-with-intune"></a>Az eszközök titkosításának használata az Intune-nal  
 
@@ -111,7 +112,7 @@ Konfigurálja a BitLockert, ha a Windows 10 vagy újabb rendszerű platformhoz h
 
 Miután az Intune titkosít egy Windows 10-es eszközt a BitLocker használatával, megtekintheti és lekérheti a BitLocker helyreállítási kulcsait az Intune [titkosítási jelentés](encryption-monitor.md)megtekintésekor.  
 
-## <a name="next-steps"></a>Következő lépések  
+## <a name="next-steps"></a>További lépések  
 
 [Eszköz megfelelőségi](compliance-policy-create-windows.md) szabályzatának létrehozása  
 

@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 10/02/2019
 ms.topic: quickstart
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 195931c0-8208-43bd-b0af-b1f8e469a32c
@@ -17,14 +18,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1f1e19822aaf90761e6429b2e91194eacccf467a
-ms.sourcegitcommit: 223d64a72ec85fe222f5bb10639da729368e6d57
+ms.openlocfilehash: b1264f5113ded280ed9d5cb9b9d4ece8e0187fe7
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940508"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72502880"
 ---
-# <a name="quickstart-try-microsoft-intune-for-free"></a>QuickStart Próbálja ki Microsoft Intune ingyen
+# <a name="quickstart-try-microsoft-intune-for-free"></a>Rövid útmutató: A Microsoft Intune ingyenes kipróbálása
 
 A Microsoft Intune lehetővé teszi, hogy az eszközök és alkalmazások kezelésével védje a munkatársak vállalati adatait. Ezt a rövid útmutatót követve létrehoz majd egy ingyenes előfizetést az Intune tesztkörnyezetben történő kipróbálásához.
 
@@ -59,7 +60,7 @@ Az Intune kipróbálása 30 napig ingyenes. Ha már rendelkezik munkahelyi vagy 
 
     ![Fiókadatok képe](./media/free-trial-sign-up/intune-end-of-sign-up-process.png) 
 
-## <a name="sign-in-to-the-azure-portal"></a>Jelentkezzen be az Azure Portalra
+## <a name="sign-in-to-the-azure-portal"></a>Bejelentkezés az Azure Portalon
 
 1. Nyisson meg egy böngészőablakot, és írja be a címsorba a következőt: **https://portal.azure.com** . 
 2. A bejelentkezéshez használja a fenti lépésekben megadott hitelesítő adatokat.
@@ -86,7 +87,7 @@ Az Intune az alábbi lépésekkel állítható be MDM-szolgáltatóként.
 3. Válassza azt a sávot, amely jelzi, hogy nem engedélyezte az eszközkezelést, vagy ha még nem látható a sáv, válassza az **Eszközök beléptetése** lehetőséget. Ha még nem engedélyezte az eszközkezelést meg fog jelenni az **MDM-szolgáltató kiválasztása** panel.
 
     > [!NOTE]
-    > Ha beállította a MDM-szolgáltatót, a MDM-szolgáltatói értéket fogja látni az **eszközök** beléptetése panelen. A narancssárga szalagcím csak akkor jelenik meg, ha még nem állított be az MDM-szolgáltatót. 
+    > Ha beállította a MDM-szolgáltatót, a MDM-szolgáltatói értéket fogja látni az **eszközök beléptetése** panelen. A narancssárga szalagcím csak akkor jelenik meg, ha még nem állított be az MDM-szolgáltatót. 
 
     ![Az MDM-szolgáltató kiválasztása panel képe](./media/free-trial-sign-up/choose-mdm-authority.png) 
 
@@ -101,7 +102,7 @@ Ahogy fent említettük, ha a szervezete rendelkezik a saját egyéni tartománn
 > [!IMPORTANT]
 > A tartománynév *kezdeti* **onmicrosoft.com** része nem nevezhető át és nem távolítható el. Az Intune-nal használt *Egyéni* tartománynevek azonban hozzáadhatók, ellenőrizhetők vagy eltávolíthatók, így az üzleti identitása is megmarad. További információ: [Egyéni tartománynév konfigurálása](custom-domain-name-configure.md).
 
-1. Lépjen a [Microsoft 365 felügyeleti](https://admin.microsoft.com) központba, és jelentkezzen be a rendszergazdai fiókjával.
+1. Lépjen a [Microsoft 365 felügyeleti központba](https://admin.microsoft.com) , és jelentkezzen be a rendszergazdai fiókjával.
 
 2. A navigációs panelen kattintson a **Beállítás** > **Tartományok** > **Tartomány hozzáadása** elemre.
 
@@ -131,4 +132,4 @@ Ezt a rövid útmutatót követve létrehozott egy ingyenes előfizetést az Int
 Kövesse az Intune rövid útmutatóinak sorozatát a következő rövid útmutatóval.
 
 > [!div class="nextstepaction"]
-> [QuickStart Hozzon létre egy felhasználót, és rendeljen hozzá egy licencet](quickstart-create-user.md)
+> [Rövid útmutató – Felhasználó létrehozása és licenc hozzárendelése az Intune-ban](quickstart-create-user.md)

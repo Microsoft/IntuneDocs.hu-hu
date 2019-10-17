@@ -1,7 +1,7 @@
 ---
-title: Adattárolás és feldolgozás az Intune-ban
+title: Adattárolás és -feldolgozás az Intune-ban
 titleSuffix: Microsoft Intune
-description: Megtudhatja, hogyan tárolja és dolgozza fel a személyes információkat az Intune-ban.
+description: Ismertető a személyes adatok Intune-beli tárolásáról és feldolgozásáról.
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: edb07842-6a16-482e-8c1d-541a29e169a8
@@ -17,58 +18,58 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9c9a8bd5888ab0977d1ca553d059c1e96cccda75
-ms.sourcegitcommit: dd6755383ba89824d1cc128698a65fde6bb2de55
+ms.openlocfilehash: 07a9232203c7d93eb1b9e81b962d2369e77b7421
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72306885"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72509046"
 ---
-# <a name="data-storage-and-processing-in-intune"></a>Adattárolás és feldolgozás az Intune-ban
+# <a name="data-storage-and-processing-in-intune"></a>Adattárolás és -feldolgozás az Intune-ban
 
-Miután [az Intune az](privacy-data-collect.md)adatok gyűjtését, tárolását és feldolgozását az alábbiakban részletezett módon folytatja.
+Miután az Intune [összegyűjtötte az adatokat](privacy-data-collect.md), az adatok tárolása és feldolgozása az alábbiak szerint történik.
 
-## <a name="storing-personal-data"></a>Személyes adattárolók tárolása
+## <a name="storing-personal-data"></a>Személyes adatok tárolása
 
-A rendszer az összes összegyűjtött nem telemetria-adatgyűjtést az Intune szolgáltatáson keresztül dolgozza fel, és a következő tárolóhelyek egy vagy több helyén tárolja: 
+Az összegyűjtött nem telemetrikus adatok mindegyike az Intune szolgáltatáson belül lesz feldolgozva, és az alábbi tárolási helyek közül egy vagy több használatával lesz tárolva: 
 
-- Rendszerkarbantartás 
+- SQLAzure 
 - Megbízható gyűjtemények (Service Fabric)  
-- Azure Storage 
+- Azure-tároló 
 
-A telemetria (a szolgáltatási naplók, a Teljesítménynaplók, a hibák stb.), amelyek kulcsfontosságúak a figyeléshez és a stabil szolgáltatás megadásához, a rendszer elküldi a Microsoft telemetria-adattárait.
+Azok a telemetrikus adatok (szolgáltatásnaplók, teljesítménynaplók, hibák stb.), amelyek kulcsfontosságúak a megbízható szolgáltatás nyújtásához, a Microsoft telemetriai adatokat tároló tárhelyére kerülnek.
 
-### <a name="storage-locations"></a>Tárolási helyszínek
+### <a name="storage-locations"></a>Tárolási helyek
 
-A Microsoft világszerte számos régióban kínál és működtet Intune-szolgáltatásokat. Az Intune tiszteletben tartja a rendszergazda által az ügyféladatok számára megadott tárolási helyeket.
+A Microsoft világszerte számos régióban kínál és működtet Intune-szolgáltatásokat. Az Intune az egyéni adatok esetén a rendszergazda által kiválasztott tárolási helyeket használja.
 
 További információ: [Hol találhatók az adatok?](https://www.microsoft.com/trust-center/privacy/data-location)
 
-### <a name="personal-data-retention"></a>Személyes adatok megőrzése
+### <a name="personal-data-retention"></a>Személyes adatok megtartása
 
 A személyes adatok általában a felhasználó Intune-felügyeletből való eltávolítása után 30 nappal maradnak meg az Intune-ban.
 
 Az Intune-használat részeként gyűjtött telemetria-adatok maximális száma 30 nap.
 
-A naplókat legfeljebb egy évig őrzi meg a rendszer.
+Az auditnaplókat legfeljebb egy évig őrizzük meg.
 
-## <a name="processing-personal-data"></a>Személyes adatainak feldolgozása
+## <a name="processing-personal-data"></a>Személyes adatok feldolgozása
 
-Az Intune ISO minősítésű rendszerekkel dolgozza fel a személyes adatbázisokat. További információ: [szolgáltatás megbízhatósági portálja](https://www.microsoft.com/en-us/TrustCenter/stp).
+Az Intune a személyes adatokat ISO-hitelesítéssel rendelkező rendszerben dolgozza fel. További információ a [Szolgáltatásmegbízhatósági portálon](https://www.microsoft.com/en-us/TrustCenter/stp) található.
 
 ### <a name="profiling-and-marketing"></a>Profilkészítés és marketing
 
-Microsoft Intune nem használ a szolgáltatás profilkészítési vagy marketing célú biztosításának részeként gyűjtött személyes adatokat. 
+A Microsoft Intune a szolgáltatás nyújtása során gyűjtött személyes adatok egyikét sem használja fel profilkészítési vagy marketing célokra. 
 
-### <a name="restrict-processing-of-personal-data"></a>Személyes adatainak feldolgozásának korlátozása
+### <a name="restrict-processing-of-personal-data"></a>Személyes adatok feldolgozásának korlátozása
 
-Ha korlátozni szeretné a felhasználó személyes adatainak feldolgozását, a következő lépésekkel törölheti a felhasználói fiókot:
-1. A felhasználó személyes adatmásolatának exportálása, beleértve a következőket is
+Ha korlátozni szeretné egy felhasználó személyes adatainak feldolgozását, a felhasználó fiókját az alábbiak szerint törölheti:
+1. A felhasználó személyes adatainak exportálása elektronikus formában, többek között:
     - fiókok
-    - szolgáltatás-adatértékek
-    - társított naplók
-2. A felhasználó fiókjának és a hozzájuk kapcsolódó adatoknak a törlése az Intune-ból.
+    - szolgáltatásadatok
+    - kapcsolódó naplók
+2. Felhasználó fiókjának és a kapcsolódó adatoknak a törlése az Intune-ból.
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
-Tudjon meg többet arról, hogy az Intune hogyan [védi és osztja](privacy-data-secure-share.md) meg a személyes adatait. 
+További információ arról, ahogyan az Intune a személyes adatokat [védi és megosztja](privacy-data-secure-share.md). 

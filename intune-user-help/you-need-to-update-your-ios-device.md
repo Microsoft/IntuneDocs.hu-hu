@@ -10,6 +10,7 @@ ms.date: 12/06/2018
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: ab3242d9-1063-4356-a3ac-6f0d8fe379e4
 searchScope:
@@ -19,12 +20,12 @@ ms.reviewer: chrisgre
 ms.suite: ems
 ms.custom: intune-enduser; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2b907534ab0f9b75be295d95aab1ab9d8280cdd0
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: 6793c8d4d94eedd6cd65913ca5d074e329e54cef
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61504162"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72500245"
 ---
 # <a name="your-ios-device-doesnt-have-the-required-minimum-operating-system-version"></a>Az IOS-eszköz nem rendelkezik az operációs rendszer minimálisan szükséges verziójával
 

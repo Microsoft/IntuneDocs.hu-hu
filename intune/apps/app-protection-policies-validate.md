@@ -8,6 +8,7 @@ ms.author: erikre
 manager: dougeby
 ms.date: 08/15/2019
 ms.service: microsoft-intune
+ms.subservice: apps
 ms.localizationpriority: high
 ms.topic: conceptual
 ms.technology: ''
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fefc784151b70d85fa0fd49d942c608b64467ef9
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 455f717e0e8ca4337cfef8693d5b71a0902b103f
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731375"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72499219"
 ---
 # <a name="how-to-validate-your-app-protection-policy-setup-in-microsoft-intune"></a>Az alkalmazás-védelmi szabályzat beállításának érvényesítése Microsoft Intune
 
@@ -43,7 +44,7 @@ Ha a tesztelés azt mutatja, hogy az alkalmazás védelmi házirendje nem a vár
 
 ### <a name="user-app-protection-status"></a>A felhasználók alkalmazásvédelmi állapota
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Válassza az **ügyfélalkalmazások** >  **alkalmazás-védelem állapota**lehetőséget, majd válassza a **hozzárendelt felhasználók** csempét. 
+3. Válassza az **ügyfélalkalmazások** >  **alkalmazás védelmi állapota**lehetőséget, majd válassza a **hozzárendelt felhasználók** csempét. 
 4. Az **alkalmazás-jelentéskészítés** lapon válassza a **felhasználó kiválasztása** lehetőséget a felhasználók és csoportok listájának létrehozásához. 
 5. Keresse meg és válassza ki a kívánt felhasználót a listából, majd válassza a **felhasználó kiválasztása**lehetőséget. Az **alkalmazás-jelentési** panel felső részén láthatja, hogy a felhasználó rendelkezik-e licenccel az alkalmazás védelméhez. Azt is megtudhatja, hogy a felhasználó rendelkezik-e licenccel a O365 és az alkalmazás állapotáról az összes felhasználó eszközén.
 
@@ -55,7 +56,7 @@ A felhasználói állapotnak megfelelően az alábbi műveleteket hajthatja vég
 - Ha a felhasználó alkalmazás **nem bejelentkezettként**van felsorolva, ellenőrizze, hogy helyesen konfigurálta-e az alkalmazásra vonatkozó [adatvédelmi szabályzatot](app-protection-policies-validate.md) .
 - Győződjön meg arról, hogy ezek a feltételek minden olyan felhasználóra érvényesek, amelyre alkalmazni szeretné az [alkalmazás-védelmi szabályzatokat](app-protection-policies-monitor.md) .
 
-## <a name="see-also"></a>Lásd még:
+## <a name="see-also"></a>További információ
 
 - [Mi az Intune alkalmazásvédelmi szabályzata?](app-protection-policies.md)
 - [Az Intune-t tartalmazó licencek](../fundamentals/licenses.md)

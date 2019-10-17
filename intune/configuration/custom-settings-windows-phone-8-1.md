@@ -9,18 +9,19 @@ manager: dougeby
 ms.date: 06/25/2019
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: medium
 ms.technology: ''
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6807caad60eb492324f37e0c406b44a4052589e
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: a1362f6c6453569d1c306cd16397cc9a7f83736e
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730851"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72495344"
 ---
 # <a name="use-custom-settings-for-windows-phone-81-devices-in-intune"></a>Egyéni beállítások használata Windows Phone 8.1 rendszerű eszközökhöz az Intune-ban
 
@@ -36,17 +37,17 @@ Ebből a cikkből megtudhatja, hogyan hozhat létre egyéni profilt Windows Phon
 2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
 3. Adja meg a következő beállításokat:
 
-    - **Név**: Adja meg a profil nevét, például `windows phone custom profile`.
-    - **Description** (Leírás): Adja meg a profil leírását.
-    - **Platform**: Válassza a **Windows Phone-telefon 8,1**lehetőséget.
-    - **Profil típusa**: Válassza az **Egyéni**lehetőséget.
+    - **Név**: Adja meg a profil nevét, például: `windows phone custom profile`.
+    - **Leírás:** Itt adhatja meg a profil leírását.
+    - **Platform**: Válassza a **Windows Phone 8.1** lehetőséget.
+    - **Profil típusa**: Válassza az **Egyéni** lehetőséget.
 
 4. Az **Egyéni OMA-URI-beállítások** menüben válassza a **Hozzáadás** lehetőséget. Adja meg a következő beállításokat:
 
-    - **Név**: Adjon meg egy egyedi nevet az OMA-URI beállítás számára, amellyel az egyszerűen azonosítható a beállítások listájában.
-    - **Description** (Leírás): Adjon meg egy leírást, amely áttekintést nyújt a beállításról, valamint a profil megkeresését segítő egyéb releváns információkat.
-    - **OMA-URI** (megkülönbözteti a kis-és nagybetűket): Adja meg a beállításként használni kívánt OMA-URI-t.
-    - **Adattípus**: Válassza ki az OMA-URI beállításhoz használni kívánt adattípust. A választható lehetőségek:
+    - **Név** – Adjon meg egy egyedi nevet az OMA-URI-beállítás számára, amellyel az egyszerűen azonosítható a beállítások listájában.
+    - **Leírás**: Adjon meg egy olyan leírást, amely áttekintést nyújt az adott beállításról, valamint más olyan releváns információkat tartalmaz, amelyek segítenek a profil megkeresésében.
+    - **OMA-URI** (megkülönbözteti a kis- és nagybetűket) – Adja meg azt az OMA-URI azonosítót, amelyet beállításként kíván használni.
+    - **Adattípus**: Adja meg azt az adattípust, amelyet az OMA-URI beállításhoz szeretne használni. A választható lehetőségek:
 
         - Sztring
         - Sztring (XML-fájl)
@@ -56,21 +57,21 @@ Ebből a cikkből megtudhatja, hogyan hozhat létre egyéni profilt Windows Phon
         - Logikai
         - Base64 (fájl)
 
-    - **Érték**: Adja meg azt az adatértéket, amelyet hozzá szeretne rendelni a megadott OMA-URI azonosítóhoz. Az érték a választott adattípustól függ. A **Dátum és idő** típus esetén például a dátumválasztóból választhat értéket.
+    - **Érték** – Adja meg a megadott OMA-URI azonosítóhoz társítandó értéket. Az érték a választott adattípustól függ. A **Dátum és idő** típus esetén például a dátumválasztóból választhat értéket.
 
     Néhány beállítás megadása után válassza az **Exportálás** lehetőséget. Az **Exportálás** a hozzáadott értékek listáját hozza létre egy vesszővel tagolt (.csv) fájlban.
 
-5. Válassza ki **OK** a módosítások mentéséhez. Szükség szerint adjon hozzá további beállításokat.
+5. A módosítások mentéséhez válassza az **OK** gombot. Szükség szerint adjon hozzá további beállításokat.
 6. Ha elkészült, az Intune-profil létrehozásához kattintson az **OK** > **Létrehozás** lehetőségre. Ha a profil elkészült, megjelenik az **Eszközkonfiguráció – Profilok** listában.
 
 ## <a name="example"></a>Példa
 
 A következő példában a Windows 8,1 Phone rendszerű eszközök nem módosíthatják a mobil hálózatokat, ha a szolgáltató lefedettségi területén kívül utaznak.
 
-- **Név**: Mobil adatroaming engedélyezése
-- **Description** (Leírás): A mobil adatroaming engedélyezése vagy letiltása
+- **Név**: mobil adatroaming engedélyezése
+- **Leírás**: a mobil adatroaming engedélyezése vagy letiltása
 - **OMA-URI** (megkülönbözteti a kis-és nagybetűket):./vendor/MSFT/PolicyManager/My/connectivity/AllowCellularDataRoaming
-- **Adattípus**: Integer
+- **Adattípus**: egész szám
 - **Érték**: 0
 
 ## <a name="next-steps"></a>További lépések

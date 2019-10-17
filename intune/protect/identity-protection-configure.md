@@ -8,18 +8,19 @@ manager: dougeby
 ms.date: 01/29/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7d81396dda2cbd8129d9bbcae961435b99946d74
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 333b94bf3226c99ed50c4b433f4b477814b8e4bb
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729243"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72509545"
 ---
 # <a name="use-windows-hello-for-business-on-windows-10-devices-with-microsoft-intune"></a>A Windows Hello for Business használata Windows 10-es eszközökön Microsoft Intune
 
@@ -47,15 +48,15 @@ Ez a cikk bemutatja, hogyan hozhat létre egy eszköz-konfigurációs profilt. A
 2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
 3. Adja meg a következő tulajdonságokat:
 
-    - **Név**: Adjon meg egy leíró nevet az új profilhoz.
-    - **Description** (Leírás): Adja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
-    - **Platform**: Válassza **a Windows 10 és újabb**lehetőséget. A Vállalati Windows Hello csak a Windows 10 vagy újabb rendszerű eszközökön támogatott.
-    - **Profil típusa**: Válassza az **Identity Protection**elemet.
-    - **A vállalati Windows Hello konfigurálása**: Válassza ki, hogyan szeretné konfigurálni a vállalati Windows Hello-t. A választható lehetőségek:
+    - **Név**: Adja meg az új profil leíró nevét.
+    - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
+    - **Platform**: válassza **a Windows 10 és újabb**lehetőséget. A Vállalati Windows Hello csak a Windows 10 vagy újabb rendszerű eszközökön támogatott.
+    - **Profil típusa**: válassza az **Identity Protection**elemet.
+    - **A vállalati Windows Hello konfigurálása**: válassza ki, hogyan szeretné konfigurálni a vállalati Windows Hello-t. A választható lehetőségek:
 
-        - **Nincs konfigurálva**: A [vállalati Windows Hello](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-how-it-works-provisioning) kiépítését az eszközön. Ha csak felhasználókhoz rendel hozzá identitásvédelmi profilokat, az eszközkörnyezet alapértelmezett beállítása a **Nem konfigurált** lesz.
-        - Letiltva: Ha nem szeretné a vállalati Windows Hello-t használni, válassza ezt a lehetőséget. Ez a beállítás letiltja a vállalati Windows Hello-et minden felhasználó számára.
-        - **Engedélyezve**: Válassza [ezt a lehetőséget a vállalati](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-how-it-works-provisioning)Windows Hello beállításainak kiépítéséhez és konfigurálásához az Intune-ban. Adja meg a konfigurálni kívánt beállításokat. Az összes beállítás listáját és a teendőket lásd:
+        - **Nincs konfigurálva**: a [vállalati Windows Hello](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-how-it-works-provisioning) az eszközön. Ha csak felhasználókhoz rendel hozzá identitásvédelmi profilokat, az eszközkörnyezet alapértelmezett beállítása a **Nem konfigurált** lesz.
+        - **Letiltva**: Ha nem szeretné a vállalati Windows Hello-t használni, válassza ezt a lehetőséget. Ez a beállítás letiltja a vállalati Windows Hello-et minden felhasználó számára.
+        - **Engedélyezve**: válassza [ezt a lehetőséget a vállalati](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-how-it-works-provisioning)Windows Hello beállításainak kiépítéséhez és konfigurálásához az Intune-ban. Adja meg a konfigurálni kívánt beállításokat. Az összes beállítás listáját és a teendőket lásd:
 
             - [Windows 10 eszközbeállítások a vállalati Windows Hello engedélyezéséhez](identity-protection-windows-settings.md)
 

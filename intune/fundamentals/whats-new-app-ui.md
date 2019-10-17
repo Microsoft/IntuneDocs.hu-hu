@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 09/09/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: b782e382-8deb-48a7-a437-d7c5a17163f1
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a1257d3bc6ab4c391faa0778e32e041d475ed7fc
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 7517a2b60c4b5a893b90b09be72ddb363f23552a
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731579"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72509981"
 ---
 # <a name="ui-updates-for-intune-end-user-apps"></a>Felhasználói felületi frissítések az Intune végfelhasználói alkalmazásaiban
 
@@ -55,12 +56,12 @@ Az Android rendszerhez készült Microsoft Intune alkalmazás a következő tov�
 ## <a name="week-of-june-24-2019"></a>2019. június 24-i hét  
 
 ### <a name="view-all-installed-apps-from-new-company-portal-web-page----4224326---"></a>Az összes telepített alkalmazás megtekintése új Céges portál weboldalról <!-- 4224326 -->
-A Céges portál webhely új **telepített alkalmazások** lapja felsorolja a felhasználó eszközeire telepített összes felügyelt alkalmazást (mindkettő szükséges és elérhető). A hozzárendelés típusa mellett a felhasználók láthatják az alkalmazás közzétevőjét, a közzététel dátumát és a jelenlegi telepítési állapotot. Ha még nem tette meg a felhasználók számára szükséges vagy elérhető alkalmazásokat, egy üzenet jelenik meg arról, hogy nincs telepítve vállalati alkalmazás. Ha szeretné megtekinteni az új lapot a weben, lépjen a [céges portál](https://portal.manage.microsoft.com) webhelyére, és kattintson a **telepített alkalmazások**elemre.   
+A Céges portál webhely új **telepített alkalmazások** lapja felsorolja a felhasználó eszközeire telepített összes felügyelt alkalmazást (mindkettő szükséges és elérhető). A hozzárendelés típusa mellett a felhasználók láthatják az alkalmazás közzétevőjét, a közzététel dátumát és a jelenlegi telepítési állapotot. Ha még nem tette meg a felhasználók számára szükséges vagy elérhető alkalmazásokat, egy üzenet jelenik meg arról, hogy nincs telepítve vállalati alkalmazás. Ha szeretné megtekinteni az új lapot a weben, lépjen a [céges portál webhelyére](https://portal.manage.microsoft.com) , és kattintson a **telepített alkalmazások**elemre.   
 
 ![Képernyőkép a Céges portál webhely, telepített alkalmazások oldaláról.](./media/whats-new-app-ui/intune-installed-apps-1907.png)     
 
 ### <a name="new-view-lets-app-users-see-all-managed-apps-installed-on-device----2352913---"></a>Az új nézet lehetővé teszi, hogy az alkalmazások felhasználói lássák az eszközre telepített összes felügyelt alkalmazást. <!-- 2352913 -->
-A Windows Céges portál alkalmazás mostantól felsorolja a felhasználó eszközére telepített összes felügyelt alkalmazást (mindkettő kötelező és elérhető). A felhasználók láthatják a megkísérelt és függőben lévő alkalmazás-telepítéseket, valamint a jelenlegi állapotukat is. Ha még nem tette meg a felhasználók számára a szükséges vagy elérhető alkalmazásokat, megjelenik egy üzenet, amely arról tájékoztatja, hogy nincsenek telepítve a vállalati alkalmazások. Az új nézet megjelenítéséhez nyissa meg a céges portál navigációs ablaktáblát, és válassza az **alkalmazások** > **telepített alkalmazások**elemet.   
+A Windows Céges portál alkalmazás mostantól felsorolja a felhasználó eszközére telepített összes felügyelt alkalmazást (mindkettő kötelező és elérhető). A felhasználók láthatják a megkísérelt és függőben lévő alkalmazás-telepítéseket, valamint a jelenlegi állapotukat is. Ha még nem tette meg a felhasználók számára a szükséges vagy elérhető alkalmazásokat, megjelenik egy üzenet, amely arról tájékoztatja, hogy nincsenek telepítve a vállalati alkalmazások. Az új nézet megjelenítéséhez nyissa meg a Céges portál navigációs ablaktáblát, és válassza az **alkalmazások** > **telepített alkalmazások**elemet.   
 
 ![Példa a Windows 10 rendszerhez készült Céges portál alkalmazás képernyőképére, a telepített alkalmazások oldalára. ](./media/whats-new-app-ui/installed-apps-cp-1906.png)  
 
@@ -143,7 +144,7 @@ Többek között a következő frissítéseket fogja látni:
 - Nagy méretű alkalmazáskatalógusok javított teljesítménye
 - Nagyobb hozzáférhetőség minden felhasználó számára  
 
-|Frissített|Előző|
+|Frissített|Korábbi|
 |---|---|
 |![A frissített eszköz oldalán az eszköz pontosan az eszközadatok fölé van igazítva, és nem a teljes lista fölött ugrik fel.](./media/whats-new-app-ui/iwp-device-after-1803.png)|![Az eszközoldal előző verziója.](./media/whats-new-app-ui/iwp-device-before-1803.png)|
 |![A frissített alkalmazástelepítési oldalon az alkalmazás pontosan a leírás és a különböző telepítési adatok, így a közzététel dátuma, a verzió és az alkalmazástípus fölött jelenik meg.](./media/whats-new-app-ui/iwp-app-install-after-1803.png)|![A telepítésoldal előző verziója.](./media/whats-new-app-ui/iwp-app-install-before-1803.png)|  
@@ -151,13 +152,13 @@ Többek között a következő frissítéseket fogja látni:
 ## <a name="week-of-july-16-2018"></a>2018. július 16-ai hét  
 
 ### <a name="more-opportunities-to-sync-in-the-company-portal-app-for-windows"></a>További szinkronizálási lehetőségek a windowsos Céges portál alkalmazásban   
-A Windowsos Céges portál alkalmazás mostantól lehetővé teszi, hogy a szinkronizálási folyamatot közvetlenül a Windows tálcájáról vagy a Start menüből is elindíthassa. Ez a funkció abban az esetben igazán hasznos, ha csak szinkronizálni szeretné eszközeit, hogy utána hozzáférhessen a vállalati erőforrásokhoz. Az új szolgáltatás eléréséhez kattintson a jobb gombbal a tálcán vagy a **Start** menüben rögzített vállalati portál ikonra. A megjelenő menüpontok közül (azaz a gyorslistában) válassza **Az eszköz szinkronizálása** lehetőséget. Megnyílik a Céges portál alkalmazás **Beállítások** lapja, és megkezdődik a szinkronizálás.  
+A Windowsos Céges portál alkalmazás mostantól lehetővé teszi, hogy a szinkronizálási folyamatot közvetlenül a Windows tálcájáról vagy a Start menüből is elindíthassa. Ez a funkció abban az esetben igazán hasznos, ha csak szinkronizálni szeretné eszközeit, hogy utána hozzáférhessen a vállalati erőforrásokhoz. Az új szolgáltatás eléréséhez kattintson a jobb gombbal a tálcán vagy a **Start** menüben rögzített vállalati portál ikonra. A megjelenő menüpontok közül (azaz a gyorslistában) válassza **Az eszköz szinkronizálása** lehetőséget. Megnyílik a Céges portál alkalmazás **Beállítások** lapja és megkezdődik a szinkronizálás.  
 
 ![A Windows tálcájának képernyője egy eszköz asztalán. A Céges portál alkalmazás ikonjára kattintva megjelenik egy menü a Rögzítés a tálcán, az Ablak bezárása és az Eszköz szinkronizálása lehetőségekkel.](./media/whats-new-app-ui/sync-device-from-start-menu-1807.png)  
 
-### <a name="new-browsing-experiences-in-the-company-portal-app-for-windows"></a>Új böngészési élmény a windowsos Céges portál alkalmazásban  
+### <a name="new-browsing-experiences-in-the-company-portal-app-for-windows"></a>Új böngészési élmény a windowsos céges portál alkalmazásban  
 
-Most, amikor a Windows Céges portál alkalmazásban böngészik vagy keres alkalmazásokat, válthat a meglévő csempék nézet és az új **részletek** nézet között. Ez az új nézet felsorolja az alkalmazás részleteit, például a nevet, a közzétevőt, a közzétételi dátumot és a telepítési állapotot.  
+Most, amikor a Windows Céges portál alkalmazásban böngészik vagy keres alkalmazásokat, válthat a meglévő **csempék** nézet és az új **részletek** nézet között. Ez az új nézet felsorolja az alkalmazás részleteit, például a nevet, a közzétevőt, a közzétételi dátumot és a telepítési állapotot.  
 
 Az **Alkalmazások** lapon található egy **Telepítve** nézet is, amely a befejezett és a folyamatban lévő telepítések adatait jeleníti meg.  
 
@@ -233,7 +234,7 @@ Ha engedélyezte az [eszközcsoport-leképezést](../enrollment/device-group-map
 Továbbfejlesztettük az iOS rendszerre készült Céges portál alkalmazás eszközbeállítási munkafolyamatát. Nyelvezete felhasználóbarátabb lett, képernyőit – ahol lehetett – összevontuk. Ezenkívül a nyelvezetet cégéhez igazítottuk, ezért az Ön cégének neve jelenik meg a telepítés során látható szövegekben.
 
 > [!NOTE]
-> Azt a cégnevet használjuk, amelyet az Azure Portal **Microsoft Intune** > **Ügyfélalkalmazások**  > **Céges portál védjegyezése** > **Cég neve** alatt adott meg. Ha nem állította be ezt az értéket, az **Azure Active Directory** > **Tulajdonságok** > **Név** alatt megadott bérlő nevét használjuk. Ha a Céges portál védjegyezése alatt nem állított be cégnevet, és nem kívánja a bérlő nevét megjeleníteni, azt javasoljuk, hogy állítsa be cége nevét a Céges portál védjegyezése alatt. Ha nem szeretné, hogy ez a sztring megjelenjen a Céges portál fejlécén, törölheti a jelölőnégyzetet a “Cég nevének megjelenítése az embléma mellett” feliratnál.
+> Azt a cégnevet használjuk, amelyet az Azure Portal **Microsoft Intune** > **Ügyfélalkalmazások**  > **Céges portál védjegyezése** > **Cég neve** alatt adott meg. Ha nem állította be ezt az értéket, az **Azure Active Directory** > **Tulajdonságok** > **Név** alatt megadott bérlő nevét használjuk. Ha nem állított be vállalat nevét Céges portál védjegyezésben, és nem szeretné megjeleníteni a bérlő nevét, javasoljuk, hogy a vállalat nevét a Céges portál branding (védjegyezés) lapon állítsa be. Ha nem szeretné, hogy ez a karakterlánc megjelenjen a Céges portál fejlécében, akkor törölje a jelet a "cég nevének megjelenítése az embléma mellett" jelölőnégyzetből.
 
 |Előtte|Utána|
 |---|---|
@@ -538,11 +539,11 @@ Márciustól kezdve az Androidhoz készült Céges portál alkalmazásban a [mat
 
 ![A bal oldalon az Androidhoz készült Céges portál alkalmazás képe látható a frissítés előtt. A jobb oldalon az Androidhoz készült Céges portál alkalmazás képe látható a frissítés után. Mindkét képen az Eszközök lap van kijelölve a három elérhető lap közül (Alkalmazások, Eszközök és IT-csoport elérhetősége).](./media/whats-new-app-ui/CP_Android_DevicesTab_BeforeAfter.png)
 
-* __Illesztőfelület__: A __Kiemelt alkalmazások__ és a __minden alkalmazás__ gomb frissült az __alkalmazások__ lapon. A __Keresés__ gomb mostantól lebegő műveletgombként jelenik meg.
+* __Interface__: a __Kiemelt alkalmazások__ és a __minden alkalmazás__ gomb frissült az __alkalmazások__ lapon. A __Keresés__ gomb most egy lebegő művelet gomb.
 
 ![A bal oldalon az Androidhoz készült Céges portál alkalmazás képe látható a frissítés előtt. A jobb oldalon az Androidhoz készült Céges portál alkalmazás képe látható a frissítés után. Mindkét képen az Alkalmazások lap van kijelölve a három elérhető lap közül (Alkalmazások, Eszközök és IT-csoport elérhetősége).](./media/whats-new-app-ui/CP_Android_AppsTab_BeforeAfter.png)
 
-* __Navigáció__: Az összes alkalmazás a __Kiemelt__, az __összes__ és a __kategóriákat__ tartalmazó Többlapos nézetet jeleníti meg a Navigálás megkönnyítésére. Az __IT-csoport elérhetősége__ lapot egyszerűsítettük a jobb olvashatóság érdekében.
+* __Navigáció__: a Minden alkalmazás gomb lapnézetben jeleníti meg a __kiemelt alkalmazásokat__, az __összes alkalmazást__ és a __kategóriákat__, így a navigálás egyszerűbb. Az __IT-csoport elérhetősége__ lapot egyszerűsítettük a jobb olvashatóság érdekében.
 
 <html>
 <body>
@@ -570,7 +571,7 @@ Ezek azok a tervezett megoldások, amelyekkel a felhasználói felület frissít
 > Előfordulhat, hogy az alábbi képek előzetesek, és a bejelentett termék eltérhet a bemutatott verzióktól.  
 
 
-## <a name="see-also"></a>Lásd még:
+## <a name="see-also"></a>További információ
 * [A Microsoft Intune blogja](http://go.microsoft.com/fwlink/?LinkID=273882)
 * [A felhőplatform ütemterve](https://www.microsoft.com/cloud-platform/roadmap)
 * [Az Intune újdonságai](../whats-new.md)

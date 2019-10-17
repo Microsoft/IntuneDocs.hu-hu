@@ -1,5 +1,5 @@
 ---
-title: Örökölt Intune szoftverügyfél és az Intune az Azure-ban
+title: Korábbi Intune PC-ügyfél és Intune az Azure-ban
 description: Szempontok az Azure-beli Intune használatához cége Windows-eszközeinek felügyeletéhez.
 keywords: ''
 author: ErikjeMS
@@ -8,24 +8,24 @@ manager: dougeby
 ms.date: 06/15/2018
 ms.topic: archived
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: medium
-ms.technology: ''
-ms.assetid: ''
+ms.assetid: 1f104923-12df-453c-9c20-942ef65a0945
 ms.reviewer: owenyen
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fe6b5967a5980304ba2f6c9af75491463dae1b4b
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 5ab1be3d34d52e824d1ff06124e28206fb7b07a1
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732051"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72510185"
 ---
-# <a name="intune-on-azure-console-and-legacy-intune-pc-client"></a>Intune az Azure-konzolon és az örökölt Intune szoftverügyfél
+# <a name="intune-on-azure-console-and-legacy-intune-pc-client"></a>Intune az Azure-konzolon és a régi Intune számítógép-ügyfél
 
-Az Intune az Azure-alapú saas alkalmazásszolgáltató architektúrára költözött használ. Az Azure jelentős fejlesztéseket nyújt a méretezés, a kapacitás és a teljesítmény terén. Nyújt a továbbfejlesztett Intune rendszergazdai felügyeletet, és optimalizált munkafolyamatokat az Azure Portalon. 
+Az Intune egy Azure-alapú SaaS Application Service-architektúrát használ. Az Azure jelentős fejlesztéseket nyújt a méretezés, a kapacitás és a teljesítmény terén. Ez fejlett Intune-rendszergazdai élményt és optimalizált munkafolyamatokat kínál a Azure Portalban. 
 
 Ha az Azure-beli Intune-t használja cége Windows-eszközeihez, vegye figyelembe a következő szempontokat:
 
@@ -34,6 +34,8 @@ Ha az Azure-beli Intune-t használja cége Windows-eszközeihez, vegye figyelemb
 Azt javasoljuk, hogy a [Windows 10-eszközök felügyeletéhez a mobileszköz-felügyeletet (MDM) válassza](../configuration/device-restrictions-windows-10.md) az örökölt Intune szoftverügyfél helyett. Az Azure Portal-beli Intune lehetőséget ad a Windows 10 MDM-alapú felügyeletére. A Windows 10-es MDM számos új felügyeleti és biztonsági képességet nyújt, amelyek az örökölt Intune szoftverügyféllel nem elérhetők.
 
 ## <a name="legacy-pc-client-features-are-only-available-in-the-silverlight-console"></a>Az örökölt számítógépügyfelek funkciói csak a Silverlight-konzolon érhetők el
+
+[!INCLUDE [classic-portal](../includes/classic-portal.md)]
 
 Az Intune-számítógépügyfél felügyeleti munkafolyamatai a [Silverlight-alapú Intune felügyeleti konzolt](https://manage.microsoft.com/) használják, ami az alábbi következményekkel jár:
 
@@ -61,7 +63,7 @@ A szoftverügyfél és az MDM képességeinek összehasonlításához lásd: [Wi
 Kövesse az alábbi lépéseket a Windows 10-eszközök felügyeletének áthelyezéséhez az Intune szoftverügyfélről az MDM-re:
 
 1. Végezzen el egy **szelektív törlést** a Silverlight-konzolon, ezzel visszavonja az eszköz regisztrációját a szoftverügyfélről.
-  ![Figyelmeztetés felugró ablak a "kiválasztott eszköz szelektív törlése" választógomb bejelölésével](./media/intune-legacy-pc-client/image02.png)
+  ![Warning felugró ablak a "kiválasztva az eszköz szelektív törlése" választógomb kiválasztott @ no__t-1
 2. Regisztrálja újra az eszközt az [MDM (és/vagy az Azure AD-csatlakozási felület)](../enrollment/windows-enroll.md) használatával.
 
 ## <a name="next-steps"></a>További lépések

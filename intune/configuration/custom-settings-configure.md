@@ -8,18 +8,19 @@ manager: dougeby
 ms.date: 10/23/2018
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: high
 ms.technology: ''
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 18e0edc4a99b8974e6408a7c8776b0c042404210
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 87c35fdaddec591b57b9b7c28f94560ff52a93b0
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730887"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506940"
 ---
 # <a name="create-a-profile-with-custom-settings-in-intune"></a>Egyéni beállításokkal rendelkező profil létrehozása az Intune-ban
 
@@ -37,7 +38,7 @@ Az egyéni beállításokat minden platformra külön-külön kell konfigurálni
 
 Az egyéni profilok a beépített profilokhoz hasonlóan hozhatók létre, és a következő platformokon érhetőek el:
 
-- [Android](../custom-settings-android.md)
+- [Android--](../custom-settings-android.md)
 - [Android Enterprise](../custom-settings-android-for-work.md)
 - [iOS/iPadOS](custom-settings-ios.md)
 - [macOS](custom-settings-macos.md)
@@ -49,7 +50,7 @@ Az egyéni profilok a beépített profilokhoz hasonlóan hozhatók létre, és a
 
 A kezdéshez válassza ki a platformot:
 
-- [Android](../custom-settings-android.md)
+- [Android--](../custom-settings-android.md)
 - [Android Enterprise](../custom-settings-android-for-work.md)
 - [iOS/iPadOS](custom-settings-ios.md)
 - [macOS](custom-settings-macos.md)

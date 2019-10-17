@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 10/04/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: apps
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: efdc196b-38f3-4678-ae16-cdec4303f8d2
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 21192d259de0711ad38fa35b294ea82c7d913292
-ms.sourcegitcommit: fca2670142c083d7562c0a36547a6a451863e315
+ms.openlocfilehash: 8d6fb5a703aad09592bfac3b5a16390389059d33
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72036495"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72498027"
 ---
 # <a name="intune-standalone---win32-app-management"></a>Önálló Intune – Win32-alkalmazások kezelése
 
@@ -98,7 +99,7 @@ Az üzletági (LOB) alkalmazásokhoz hasonlóan Win32-alkalmazást is hozzáadha
 
 Az alábbi lépések útmutatást nyújtanak a Windows-alkalmazások Intune-hoz való hozzáadásához.
 
-### <a name="step-1-specify-the-software-setup-file"></a>1\. lépés: A szoftvertelepítési fájl beállítása
+### <a name="step-1-specify-the-software-setup-file"></a>1\. lépés: A szoftvertelepítő fájl megadása
 
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** panelen válassza az **Ügyfélalkalmazások** > **Alkalmazások** > **Hozzáadás** elemet.
@@ -106,7 +107,7 @@ Az alábbi lépések útmutatást nyújtanak a Windows-alkalmazások Intune-hoz 
 
     ![Képernyőkép az alkalmazás hozzáadása panelről – típus hozzáadása legördülő lista](./media/apps-win32-app-management/apps-win32-app-01.png)
 
-### <a name="step-2-upload-the-app-package-file"></a>2\. lépés: Az alkalmazáscsomag fájljának feltöltése
+### <a name="step-2-upload-the-app-package-file"></a>2\. lépés: Az alkalmazáscsomag-fájl feltöltése
 
 1. Az **Alkalmazás felvétele** panelen válassza az **Alkalmazáscsomag-fájl** lehetőséget egy fájl kiválasztásához. Megjelenik az Alkalmazáscsomag-fájl panel.
 
@@ -119,24 +120,24 @@ Az alábbi lépések útmutatást nyújtanak a Windows-alkalmazások Intune-hoz 
 
 3. Amikor végzett, válassza az **OK** gombot.
 
-### <a name="step-3-configure-app-information"></a>3\. lépés: Az alkalmazásadatok konfigurálása
+### <a name="step-3-configure-app-information"></a>3\. lépés: Az alkalmazás adatainak konfigurálása
 
 1. Az alkalmazás konfigurálásához az **Alkalmazás hozzáadása** panelen válassza az **Alkalmazás adatai** elemet.
 2. Az **Alkalmazás adatai** panelen konfigurálja az alábbi információkat. Lehetséges, hogy ezen a panelen néhány érték automatikusan ki lesz töltve.
-    - **Név**: Adja meg az alkalmazásnak a vállalati portálon megjelenő nevét. Ha ugyanazt az alkalmazásnevet kétszer adja meg, mindkét alkalmazás meg fog jelenni a céges portálon.
-    - **Description** (Leírás): Adja meg az alkalmazás leírását. A leírás megjelenik a Céges portálon.
-    - Az r **közzététele**: Itt adhatja meg az alkalmazás kiadójának nevét.
-    - **Kategória**: Válasszon ki egy vagy több beépített alkalmazás-kategóriát, vagy válasszon ki egy Ön által létrehozott kategóriát. A kategóriákkal megkönnyítheti a felhasználók számára az alkalmazás megkeresését a Céges portálon való böngészés során.
-    - **Megjelenítés Kiemelt alkalmazásként a céges portálban**: Az alkalmazás jól észrevehető módon való megjelenítése a vállalati portál fő lapján, amikor a felhasználók tallózással alkalmazásokat keresnek.
+    - **Név**: Itt adhatja meg az alkalmazás a Céges portálon megjelenő nevét. Ha ugyanazt az alkalmazásnevet kétszer adja meg, mindkét alkalmazás meg fog jelenni a céges portálon.
+    - **Leírás**: Itt adhatja meg az alkalmazás leírását. A leírás megjelenik a Céges portálon.
+    - **Gyártó**: Itt adhatja meg az alkalmazás kiadójának nevét.
+    - **Kategória**: Választhat egyet vagy többet a beépített alkalmazáskategóriák közül, de egyénileg létrehozott kategóriát is megadhat. A kategóriákkal megkönnyítheti a felhasználók számára az alkalmazás megkeresését a Céges portálon való böngészés során.
+    - **Megjelenítés kiemelt alkalmazásként a Céges portálon**: Ezzel a beállítással hangsúlyosan jelenítheti meg az alkalmazást a Céges portál főoldalán alkalmazásokat kereső felhasználók számára.
     - **Információs URL-cím**: Igény szerint megadhatja az alkalmazással kapcsolatos információkat tartalmazó webhely URL-címét. Az URL-cím megjelenik a Céges portálon.
-    - **Adatvédelmi URL-cím**: Igény szerint megadhatja az alkalmazás adatvédelmi információit tartalmazó webhely URL-címét. Az URL-cím megjelenik a Céges portálon.
-    - **Fejlesztő**: Igény szerint megadhatja az alkalmazás-fejlesztő nevét.
-    - **Tulajdonos**: Igény szerint megadhatja az alkalmazás tulajdonosának nevét. Például **HR részleg**.
-    - **Megjegyzések**: Adja meg az alkalmazáshoz hozzárendelni kívánt megjegyzéseket.
-    - **Embléma**: Töltse fel az alkalmazáshoz társított ikont. Ez az ikon jelenik meg az alkalmazásnál a Céges portálon böngésző felhasználók számára.
+    - **Adatvédelmi nyilatkozat URL-címe**: Igény esetén itt adhatja meg az alkalmazás adatvédelmi nyilatkozatát tartalmazó webhely URL-címét. Az URL-cím megjelenik a Céges portálon.
+    - **Fejlesztő**: Igény esetén megadhatja az alkalmazás fejlesztőjének nevét.
+    - **Tulajdonos**: Igény esetén megadhatja az alkalmazás tulajdonosának nevét. Például **HR részleg**.
+    - **Megjegyzések**: Ide írhatja be az alkalmazáshoz társítani kívánt megjegyzéseket.
+    - **Ikon**: Itt töltheti fel az alkalmazáshoz társított ikont. Ez az ikon jelenik meg az alkalmazásnál a Céges portálon böngésző felhasználók számára.
 3. Amikor végzett, válassza az **OK** gombot.
 
-### <a name="step-4-configure-app-installation-details"></a>4\. lépés: Az alkalmazás telepítésére vonatkozó részletek konfigurálása
+### <a name="step-4-configure-app-installation-details"></a>4\. lépés: Az alkalmazás telepítési adatainak konfigurálása
 1. Az alkalmazás telepítési és eltávolítási parancsának konfigurálásához az **Alkalmazás felvétele** panelen válassza a **Program** elemet.
 2. Adja meg az alkalmazás telepítéséhez szükséges teljes telepítési parancssort. 
 
@@ -149,7 +150,7 @@ Az alábbi lépések útmutatást nyújtanak a Windows-alkalmazások Intune-hoz 
 
 3. Adja meg az alkalmazás eltávolításához szükséges teljes eltávolítási parancssort az alkalmazás GUID-értékei alapján. 
 
-    Példa: `msiexec /x “{12345A67-89B0-1234-5678-000001000000}”`
+    Például: `msiexec /x “{12345A67-89B0-1234-5678-000001000000}”`
 
     > [!NOTE]
     > Az adott Win32-alkalmazás telepítését a **Felhasználó** vagy a **Rendszer** környezetben konfigurálhatja. A **Felhasználó** környezet csak az adott felhasználóra vonatkozik. A **Rendszer** környezet az adott, Windows 10-es rendszerű eszköz összes felhasználójára vonatkozik.
@@ -160,37 +161,37 @@ Az alábbi lépések útmutatást nyújtanak a Windows-alkalmazások Intune-hoz 
 
 4. Amikor végzett, válassza az **OK** gombot.
 
-### <a name="step-5-configure-app-requirements"></a>5\. lépés: Alkalmazásokra vonatkozó követelmények konfigurálása
+### <a name="step-5-configure-app-requirements"></a>5\. lépés: Az alkalmazásokra vonatkozó követelmények konfigurálása
 
 1. Az alkalmazás telepítéséhez szükséges rendszerkövetelmények beállításához az **Alkalmazás felvétele** panelen válassza a **Követelmények** elemet.
 2. A **követelmény-szabály hozzáadása** panelen konfigurálja a következő információkat. Lehetséges, hogy ezen a panelen néhány érték automatikusan ki lesz töltve.
-    - **Operációs rendszer architektúrája**: Válassza ki, hogy milyen architektúrára van szükség az alkalmazás telepítéséhez.
-    - **Minimális operációs rendszer**: Válassza ki az alkalmazás telepítéséhez szükséges minimális operációs rendszert.
-    - **Lemezterület szükséges (MB)** : Szükség esetén adja hozzá a rendszermeghajtón a szükséges szabad lemezterületet az alkalmazás telepítéséhez.
-    - **Fizikai memória szükséges (MB)** : Szükség esetén adja hozzá az alkalmazás telepítéséhez szükséges fizikai memóriát (RAM).
-    - **A szükséges logikai processzorok minimális száma**: Szükség esetén adja meg az alkalmazás telepítéséhez szükséges logikai processzorok minimális számát.
-    - **Minimális CPU-sebesség szükséges (MHz)** : Szükség esetén adja meg az alkalmazás telepítéséhez szükséges minimális CPU-sebességet.
+    - **Operációs rendszer architektúrája**: Válassza ki az alkalmazás telepítéséhez szükséges architektúrákat.
+    - **Minimális operációsrendszer-verzió**: Válassza ki az operációs rendszer verziószámát, amely minimumkövetelményként szükséges az alkalmazás telepítéséhez.
+    - **Szükséges lemezterület (MB)** : Opcionálisan megadhatja, hogy a rendszermeghajtón mekkora szabad lemezterületnek kell rendelkezésre állnia az alkalmazás telepítéséhez.
+    - **Szükséges fizikai memória (MB)** : Opcionálisan megadhatja, hogy mekkora fizikai memória (RAM) szükséges az alkalmazás telepítéséhez.
+    - **Logikai processzorok szükséges minimális száma**: Opcionálisan megadhatja az alkalmazás telepítéséhez szükséges logikai processzorok minimális számát.
+    - **Szükséges minimális processzorsebesség (MHz)** : Opcionálisan megadhatja az alkalmazás telepítéséhez szükséges minimális processzorsebességet.
 
 3. A **Hozzáadás** gombra kattintva jelenítse meg a **követelmény hozzáadása szabályt** , és konfigurálja a további követelmények szabályait. Válassza ki a **követelmény típusát** annak a szabálynak a kiválasztásához, amelyet a követelmények érvényesítésének meghatározásához fog használni. A követelmények szabályai a fájlrendszer adatai, a beállításjegyzék értékei vagy a PowerShell-parancsfájlok alapján is alapulhatnak. 
-    - **Fájl**: Ha a **követelmény típusaként**a **fájl** lehetőséget választja, a követelményi szabálynak meg kell állapítania egy fájlt vagy mappát, dátumot, verziót vagy méretet. 
+    - **Fájl**: Ha a **követelmény típusaként**a **fájl** lehetőséget választja, a követelmény szabálynak egy fájlt vagy mappát, dátumot, verziót vagy méretet kell felderíteni. 
         - **Elérési út** – Az észlelendő fájlt vagy mappát tartalmazó mappa teljes elérési útja.
         - **Fájl vagy mappa** – Az észlelendő fájl vagy mappa.
         - **Tulajdonság** – válassza ki az alkalmazás meglétének ellenőrzéséhez használt szabály típusát.
         - **32 bites alkalmazással társítva 64 bites ügyfeleken** – Ha 64 bites ügyfeleken a „path” környezeti változókat 32 bites környezetben szeretné kibontani, válassza az **Igen** lehetőséget. A **Nem** (ez az alapértelmezett beállítás) kiválasztásakor a rendszer minden „path” változót 64 bites környezetben bontja ki a 64 bites ügyfeleken. A 32 bites ügyfelek mindig a 32 bites környezetet használják.
-    - **Beállításjegyzék**: Ha a **követelmény típusaként**a **beállításjegyzéket** választja, a követelményi szabálynak az érték, a karakterlánc, az egész szám vagy a verzió alapján kell megállapítania egy beállításjegyzék-beállítást.
+    - **Beállításjegyzék**: Ha a **beállításjegyzéket** a **követelmény típusaként**választja, a követelmény szabályának az érték, a karakterlánc, az egész szám vagy a verzió alapján kell megállapítania egy beállításjegyzék-beállítást.
         - **Kulcs elérési útja** – Az észlelendő értéket tartalmazó beállításjegyzék-bejegyzés teljes elérési útja.
         - **Érték neve** – Az észlelendő beállításazonosító neve. Ha ez az érték üres, akkor az észlelés a kulcs alapján történik. A rendszer egy kulcs (alapértelmezett) értékét használja észlelési értékként, ha az észlelési módszer nem a fájl vagy a mappa meglétén alapul.
         - **Beállításkulcs követelménye** – válassza ki a beállításkulcs összehasonlításának típusát, amely meghatározza a követelmény szabályának érvényességét.
         - **32 bites alkalmazással társítva 64 bites ügyfeleken** – Ha a 32 bites beállításjegyzékben szeretne keresni a 64 bites ügyfeleken, válassza az **Igen** lehetőséget. A **Nem** (ez az alapértelmezett beállítás) kiválasztásakor a rendszer a 64 bites ügyfeleken a 64 bites beállításjegyzékben fog keresni. A 32 bites ügyfeleknél a keresés mindig a 32 bites beállításjegyzéket érinti.
-    - **Parancsfájl**: A **követelmény típusaként**válassza a **parancsfájlt** , ha a fájl, a beállításjegyzék vagy bármely más, az Intune-konzolon elérhető módszer alapján nem hozható létre követelmény-szabály.
+    - **Parancsfájl**: a **parancsfájlt** a **követelmény típusaként**válassza, ha a fájlon, a beállításjegyzéken vagy az Intune-konzolon elérhető bármely más módszeren alapuló követelmény-szabály nem hozható létre.
         - **Parancsfájl** – a PowerShell parancsfájl-alapú követelményi szabályához (ha létezik kód 0), a rendszer részletesebben felderíti az stdout-ot. Például észlelhető az STDOUT olyan egész számként, amelynek értéke 1.
         - **Parancsfájl futtatása 32 bites folyamatként 64 bites ügyfeleken** – válassza az **Igen** lehetőséget, ha a parancsfájlt 32 bites folyamaton szeretné futtatni 64 bites ügyfeleken. Válassza a **nem** (alapértelmezett) lehetőséget, hogy a parancsfájlt 64 bites folyamaton futtassa a 64 bites ügyfeleken. 32 bites ügyfelek a szkriptet egy 32 bites folyamatban futtatják.
-        - **Futtassa ezt a parancsfájlt a bejelentkezett hitelesítő adatok használatával**: Válassza az **Igen** lehetőséget a szkript futtatásához a bejelentkezett eszköz hitelesítő adatai * * használatával.
+        - **Futtassa ezt a parancsfájlt a bejelentkezett hitelesítő adatok használatával**: válassza az **Igen** lehetőséget a szkript futtatásához a bejelentkezett eszköz hitelesítő adatai * * használatával.
         - **Szkriptaláírás ellenőrzésének kényszerítése** – Az **Igen** lehetőség kiválasztásával ellenőrizheti, hogy a szkriptet egy megbízható gyártó írta-e alá, így a szkript figyelmeztetések és felszólítások megjelenítése nélkül fog futni. A szkript letiltás nélkül fog futni. A **Nem** (ez az alapértelmezett beállítás) kiválasztásakor a szkript végfelhasználói megerősítéssel, az aláírás ellenőrzése nélkül fut.
-        - **Válassza ki a kimeneti adattípust**: Válassza ki a követelmény szabályának meghatározásakor használt adattípust.
+        - **Válassza ki a kimeneti adattípust**: válassza ki a követelményi szabály egyezésének meghatározásakor használt adattípust.
 4. Amikor végzett, válassza az **OK** gombot.
 
-### <a name="step-6-configure-app-detection-rules"></a>6\. lépés: Alkalmazás-észlelési szabályok konfigurálása
+### <a name="step-6-configure-app-detection-rules"></a>6\. lépés: Az alkalmazásészlelési szabályok konfigurálása
 
 1. Az alkalmazás meglétének észleléséhez szükséges szabályok konfigurálásához az **Alkalmazás felvétele** panelen válassza az **Észlelési szabályok** elemet.
 2. A **Szabályok formátuma** mezőben adja meg, hogyan fogja észlelni a rendszer az alkalmazás meglétét. Választhatja az észlelési szabályok manuális konfigurálását, illetve egyéni szkriptet is használhat az alkalmazás meglétének észleléséhez. Legalább egy észlelési szabályt ki kell választani. 
@@ -253,7 +254,7 @@ Az alábbi lépések útmutatást nyújtanak a Windows-alkalmazások Intune-hoz 
 
         4. Miután hozzáadta a szabály(ok)at, válassza ki a **Hozzáadás** > **OK** lehetőséget.
 
-### <a name="step-7-configure-app-return-codes"></a>7\. lépés: Alkalmazás-visszatérési kódok konfigurálása
+### <a name="step-7-configure-app-return-codes"></a>7\. lépés: Az alkalmazások visszatérési kódjainak konfigurálása
 
 1. Az **Alkalmazás felvétele** panelen válassza a **Visszatérési kódok** lehetőséget az alkalmazástelepítés újrapróbálkozási viselkedését vagy a telepítés utáni viselkedést meghatározó visszatérési kódok hozzáadásához. A visszatérési kód bejegyzéseit a rendszer alapértelmezés szerint hozzáadja az alkalmazás létrehozása során. További visszatérési kódokat is megadhat, és a meglévőket is módosíthatja. 
 2. A **Visszatérési kódok** panelen adjon hozzá további visszatérési kódokat, vagy módosítsa a meglévőket.
@@ -269,14 +270,14 @@ Az alábbi lépések útmutatást nyújtanak a Windows-alkalmazások Intune-hoz 
 1. Az **Alkalmazás hozzáadása** panelen ellenőrizze, hogy helyesen konfigurálta-e az alkalmazásadatokat.
 2. Az alkalmazást a **Hozzáadás** elem kiválasztásával töltheti fel az Intune-ba.
 
-### <a name="step-9-assign-the-app"></a>9\. lépés: Az alkalmazás kiosztása
+### <a name="step-9-assign-the-app"></a>9\. lépés: Az alkalmazás hozzárendelése
 
 1. Az alkalmazás panelen válassza a **Hozzárendelések** elemet.
 2. Válassza a **Csoport hozzáadása** lehetőséget az alkalmazáshoz kapcsolódó **Csoport hozzáadása** ablaktábla megnyitásához.
 3. Az adott alkalmazáshoz válasszon egy **hozzárendelés-típust**:
-    - **Regisztrálva lévő eszközökhöz érhető el**: A felhasználók a Céges portál alkalmazásból vagy Céges portál webhelyről telepítik az alkalmazást.
-    - **Kötelező**: Az alkalmazás a kiválasztott csoportokban található eszközökre van telepítve.
-    - **Eltávolítás**: A rendszer eltávolítja az alkalmazást a kiválasztott csoportokból származó eszközökről.
+    - **Regisztrált eszközök esetében elérhető**: A felhasználók a Céges portál alkalmazásban vagy a Céges portál webhelyen telepítik az alkalmazást.
+    - **Szükséges**: A rendszer telepíti az alkalmazást a kiválasztott csoportok eszközeire.
+    - **Eltávolítás**: A rendszer eltávolítja az alkalmazást a kiválasztott csoportok eszközeiről.
 4. Válassza ki a **Tartalmazott csoportok** elemet, és rendelje hozzá a csoportokat, amelyek az alkalmazást fogják használni.
 5. Kattintson a **Hozzárendelés** ablaktáblán az **OK** gombra a belefoglalt csoportok kiválasztásának befejezéséhez.
 6. Ha ki szeretne zárni felhasználói csoportokat az alkalmazás-hozzárendelésből, válassza a **Csoportok kizárása** lehetőséget.
@@ -303,7 +304,7 @@ Ha egy alkalmazás-függőséget szeretne hozzáadni a Win32-alkalmazáshoz, kö
 4. Kattintson a **Hozzáadás** gombra az alkalmazás-függőség hozzáadásához.
 5. Miután hozzáadta a függő alkalmazást (ka) t, kattintson a **kiválasztás**elemre.
 6. Válassza ki, hogy automatikusan szeretné-e telepíteni a függő alkalmazást az **Automatikus telepítés**lehetőségnél az **Igen** vagy a **nem** lehetőség kiválasztásával.
-7. Kattintson a **Save** (Mentés) gombra.
+7. Kattintson a **Mentés**gombra.
 
 A végfelhasználó láthatja, hogy a függő alkalmazások letöltése és telepítése a Win32-alkalmazás telepítési folyamatának részeként történik. Emellett, ha egy függő alkalmazás nincs telepítve, a végfelhasználó általában az alábbi értesítések egyikét fogja látni:
 - 1 vagy több függő alkalmazás telepítése nem sikerült
@@ -346,7 +347,7 @@ Az ügynöknaplók általában a következő helyen érhetők el az ügyfélgép
 > *C:\windows\IMECache*
 >  
 > **X86-os ügyfélszámítógépeken**:<br>
-> *C:\Program Files\Microsoft Intune Management Extension\Content*<br>
+> *C:\Program Files\Microsoft Intune felügyeleti Extension\Content*<br>
 > *C:\windows\IMECache*
 
 ### <a name="detecting-the-win32-app-file-version-using-powershell"></a>A Win32-alkalmazás fájljának verziója a PowerShell használatával

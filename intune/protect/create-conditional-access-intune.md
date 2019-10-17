@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 02/22/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
@@ -16,12 +17,12 @@ ms.reviewer: ''
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e27997b45f0a68f6eb9247c69fafc363787fb457
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 4a66f16ea681ec75a4a3aa7d85a57c4faa555ab9
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729731"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72504522"
 ---
 # <a name="create-a-device-based-conditional-access-policy"></a>Eszköz alapú feltételes hozzáférési szabályzat létrehozása
 
@@ -40,51 +41,51 @@ A feltételes hozzáférési szabályzat meghatározza a védelemmel ellátni k�
  
 2. A **Hozzárendelések** alatt válassza a **Felhasználók és csoportok** lehetőséget. 
 3. A **beágyazás** lapon azonosítsa azokat a felhasználókat vagy csoportokat, akikre alkalmazni kívánja ezt a feltételes hozzáférési szabályzatot. Miután kiválasztotta a belefoglalást, használhatja a **kizárás** lapot, ha vannak olyan felhasználók, szerepkörök vagy csoportok, amelyeket ki szeretne zárni ebből a szabályzatból.  
-    - **Minden felhasználó**: Válassza ezt a lehetőséget, ha a szabályzatot minden felhasználóra és csoportra alkalmazni szeretné, beleértve a belső és a vendég felhasználókat is.
+    - **Minden felhasználó**: válassza ezt a lehetőséget, ha az összes felhasználóra és csoportra alkalmazni szeretné a szabályzatot, beleértve a belső és a vendég felhasználókat is.
   
-    - **Felhasználók és csoportok kiválasztása**: Válassza ezt a lehetőséget, és adjon meg egyet vagy többet az alábbi lehetőségek közül:
+    - **Felhasználók és csoportok kiválasztása**: válassza ezt a lehetőséget, és adjon meg egyet vagy többet az alábbi lehetőségek közül:
   
-      a. **Minden vendég felhasználó**: Válassza ezt a lehetőséget a külső vendég felhasználók (például partnerek, külső közreműködők) belefoglalásához vagy kizárásához.
+      a. **Minden vendég felhasználó**: válassza ezt a lehetőséget a külső vendég felhasználók (például partnerek, külső közreműködők) belefoglalásához vagy kizárásához.
        
-      b. **Címtárbeli szerepkörök**: Válasszon ki egy vagy több Azure AD-szerepkört a szerepkörökhöz hozzárendelt felhasználók belefoglalásához vagy kizárásához.
+      b. **Címtárbeli szerepkörök**: válasszon ki egy vagy több Azure ad-szerepkört a szerepkörökhöz hozzárendelt felhasználók belefoglalásához vagy kizárásához.
       
-      c. **Felhasználók és csoportok**: Ezzel a beállítással megkeresheti és kiválaszthatja azokat az egyes felhasználókat vagy csoportokat, amelyeket szeretne belefoglalni vagy kizárni.
+      c. **Felhasználók és csoportok**: ezzel a beállítással megkeresheti és kiválaszthatja azokat az egyes felhasználókat vagy csoportokat, amelyeket szeretne felvenni vagy kizárni.
      
        > [!TIP]  
        > Tesztelje a házirendet egy kisebb felhasználói csoporttal, hogy biztosan a várt módon működjön.
-4. Válassza a **Done** (Kész) lehetőséget.
+4. Válassza a **Kész** lehetőséget.
 5. A **Hozzárendelések** alatt válassza a **Felhőalkalmazások** lehetőséget. 
 6. A **beágyazás lapon**azonosítsa a feltételes hozzáférési szabályzattal védelemmel ellátni kívánt alkalmazásokat és szolgáltatásokat. Ezt követően használhatja a **kizárás** lapot, ha vannak olyan alkalmazások vagy szolgáltatások, amelyeket ki szeretne zárni ebből a szabályzatból.
-    - **Minden felhőalapú alkalmazás**: Válassza ezt a lehetőséget, ha a szabályzatot minden alkalmazásra alkalmazni szeretné.
+    - **Minden felhőalapú alkalmazás**: válassza ezt a lehetőséget, ha az összes alkalmazásra alkalmazni szeretné a szabályzatot.
       > [!IMPORTANT]  
       > A lista a Azure Portal eléréséhez Microsoft Azure felügyeleti alkalmazást tartalmazza. Ügyeljen arra, hogy a **kizárás** lapot itt vagy a **felhasználók és csoportok** beállításainál ellenőrizze, hogy a (vagy a kijelölt felhasználók vagy csoportok) be tudja-e jelentkezni a Azure Portalba. 
 
-    - **Alkalmazások kiválasztása**: Válassza ezt a lehetőséget, válassza a **kiválasztás**elemet, majd az alkalmazások listával keresse meg és válassza ki a védelemmel ellátni kívánt alkalmazásokat vagy szolgáltatásokat.
+    - **Alkalmazások kiválasztása**: válassza ezt a lehetőséget, válassza a **kiválasztás**elemet, majd az alkalmazások listában keresse meg és válassza ki a védelemmel ellátni kívánt alkalmazásokat vagy szolgáltatásokat.
     
       ![Új feltételes hozzáférési szabályzat létrehozása](./media/create-conditional-access-intune/create-ca-select-apps.png)
 
-7. Válassza a **Done** (Kész) lehetőséget.
+7. Válassza a **Kész** lehetőséget.
 8. A **hozzárendelések**területen válassza a **feltételek**lehetőséget.
-    - **Bejelentkezési kockázat**: Válassza az Igen lehetőséget, ha Azure AD Identity Protection bejelentkezési kockázati észlelést kíván használni a szabályzattal, majd válassza ki a bejelentkezési kockázati szinteket, amelyekre alkalmazni kell a szabályzatot.
-    - **Eszköz platformok**: A **beágyazás** lapon azonosítsa azokat az eszközöket, amelyekre alkalmazni szeretné a feltételes hozzáférési szabályzatot. A **kizárás** lapon kizárhatja a szabályzatok platformját.
-    - **Helyszínek**: A **Belefoglalás** lapon adja meg, hogy a házirend minden helyre vonatkozik-e, az informatikai részleg felügyelete alá eső megbízható hálózati helyeket vagy adott hálózati helyeket. A **kizárás** lapon kizárhatja a házirendből a hálózati telephelyeket. 
-    - **Ügyfélalkalmazások**: Válassza az **Igen** lehetőséget annak megadásához, hogy a szabályzat a böngésző alkalmazásaira, a Mobile apps szolgáltatásra és az asztali ügyfelekre vonatkozzon-e. Kiválaszthatja a **modern hitelesítési ügyfeleket** is (például az Outlook for iOS vagy az Outlook for Android alkalmazást) és az **Exchange ActiveSync-ügyfeleket**.
-    - **Eszköz állapota**: A feltételes hozzáférési szabályzat minden eszköz állapotra érvényes, kivéve, ha az Igen lehetőséget választja, és kifejezetten kizárja az állapotok eszköz hibrid Azure AD-hez csatlakoztatott vagy megfelelőként megjelölt eszközét (vagy mindkettőt).
+    - **Bejelentkezési kockázat**: válassza az Igen lehetőséget, ha Azure ad Identity Protection bejelentkezési kockázati észlelést kíván használni a szabályzattal, majd válassza ki a bejelentkezési kockázati szinteket, amelyekre a házirend vonatkozik.
+    - **Eszköz platformok**: a **beágyazás** lapon azonosítsa azokat az eszközöket, amelyekre alkalmazni kívánja a feltételes hozzáférési szabályzatot. A **kizárás** lapon kizárhatja a szabályzatok platformját.
+    - **Helyek**: a **Belefoglalás** lapon adja meg, hogy a házirend minden helyre, az informatikai részleg felügyelete alá eső megbízható hálózati helyekre vagy adott hálózati helyekre vonatkozik-e. A **kizárás** lapon kizárhatja a házirendből a hálózati telephelyeket. 
+    - **Ügyfélalkalmazások**: válassza az **Igen** lehetőséget annak megadásához, hogy a szabályzat a böngésző alkalmazásaira, a Mobile apps szolgáltatásra és az asztali ügyfelekre vonatkozzon-e. Kiválaszthatja a **modern hitelesítési ügyfeleket** is (például az Outlook for iOS vagy az Outlook for Android alkalmazást) és az **Exchange ActiveSync-ügyfeleket**.
+    - **Eszköz állapota**: a feltételes hozzáférési szabályzat minden eszköz állapotra érvényes, kivéve, ha az Igen lehetőséget választja, és kifejezetten kizárja az állapotok eszköz hibrid Azure ad-hez csatlakoztatott vagy megfelelőként megjelölt eszközét (vagy mindkettőt).
     
       ![Új feltételes hozzáférési szabályzat létrehozása](./media/create-conditional-access-intune/create-ca-device-platforms.png)
 
       > [!TIP]  
       > Ha a **modern hitelesítési** ügyfeleket és az **Exchange ActiveSync-ügyfeleket**egyaránt meg szeretné tenni, hozzon létre két külön feltételes hozzáférési szabályzatot, egyet az egyes ügyfelek típusaihoz. Habár az Exchange ActiveSync támogatja a modern hitelesítést, az Exchange ActiveSync által támogatott egyetlen feltétel a platform. Más feltételek, beleértve a többtényezős hitelesítést, nem támogatottak. Az Exchange Online-hoz az Exchange ActiveSync-hez való hozzáférés hatékony biztosításához hozzon létre egy feltételes hozzáférési szabályzatot, amely meghatározza a Cloud app Office 365 Exchange Online-t és az ügyfélalkalmazás Exchange ActiveSync alkalmazást, és alkalmazza a házirendeket csak a kiválasztott támogatott platformokra.
 
-9. Válassza a **Done** (Kész) lehetőséget.
+9. Válassza a **Kész** lehetőséget.
 10. A **Hozzáférés-vezérlés** alatt válassza ki az **Engedélyezés** elemet. Konfigurálja, hogy mi történjen a beállított feltételek alapján.  A következő lehetőségek közül választhat:
-    - **Hozzáférés letiltása**: Az ebben a házirendben megadott felhasználók megtagadják a hozzáférést az alkalmazásokhoz a megadott feltételek szerint.
-    - **Hozzáférés biztosítása**: A szabályzatban megadott felhasználók hozzáférést kapnak, de a következő műveletek bármelyikét megkövetelheti:
-      - **Többtényezős hitelesítés megkövetelése**: A felhasználónak további biztonsági követelményeket kell végrehajtania, például telefonhívást vagy szöveget.
-      - Az **eszköz megfelelőként való megjelölésének megkövetelése**: Az eszköznek az Intune-nak megfelelőnek kell lennie. Ha az eszköz nem megfelelő, a felhasználónak lehetősége lesz regisztrálni az eszközt az Intune-ban. 
-      - **Hibrid Azure ad-hez csatlakoztatott eszköz megkövetelése**: Az eszközöknek hibrid Azure AD-hez kell csatlakozniuk.
-      - **Jóváhagyott ügyfélalkalmazás megkövetelése**: Az eszköznek jóváhagyott ügyfélalkalmazások használatát kell használnia. 
-      - **Több vezérlő esetén**: Jelölje be **az összes kijelölt vezérlő megkövetelése** jelölőnégyzetet, hogy az eszköz hozzáférjen az alkalmazáshoz.
+    - **Hozzáférés letiltása**: az ebben a házirendben megadott felhasználók megtagadják a hozzáférést az alkalmazásokhoz a megadott feltételek szerint.
+    - **Hozzáférés biztosítása**: a szabályzatban megadott felhasználók hozzáférést kapnak, de a következő műveletek bármelyikét megkövetelheti:
+      - **Többtényezős hitelesítés megkövetelése**: a felhasználónak további biztonsági követelményeket kell végrehajtania, például telefonhívást vagy szöveget.
+      - **Eszköz megfelelőként való megjelölésének megkövetelése**: az eszköznek Intune-kompatibilisnek kell lennie. Ha az eszköz nem megfelelő, a felhasználónak lehetősége lesz regisztrálni az eszközt az Intune-ban. 
+      - **Hibrid Azure ad-hez csatlakoztatott eszköz megkövetelése**: az eszközöknek hibrid Azure ad-hez kell csatlakozniuk.
+      - **Jóváhagyott ügyfélalkalmazás megkövetelése**: az eszköznek jóváhagyott ügyfélalkalmazások használatát kell használnia. 
+      - **Több vezérlő esetén**: válassza az **összes kijelölt vezérlő megkövetelése** lehetőséget, hogy az eszköz hozzáférjen az alkalmazáshoz.
     
       ![Hozzáférés-vezérlési beállítások megadása](./media/create-conditional-access-intune/create-ca-grant-access-settings.png)
  
@@ -92,9 +93,9 @@ A feltételes hozzáférési szabályzat meghatározza a védelemmel ellátni k�
      
      ![Házirend engedélyezése](./media/create-conditional-access-intune/enable-policy.png)
 
-12. Kattintson a **Létrehozás** gombra.
+12. Válassza a **Létrehozás** lehetőséget.
 
-## <a name="see-also"></a>Lásd még:
+## <a name="see-also"></a>További információ
 [Alkalmazás-alapú feltételes hozzáférés az Intune-nal](app-based-conditional-access-intune.md)
 
 [Az Intune feltételes hozzáférésének hibaelhárítása](https://support.microsoft.com/help/4456106)

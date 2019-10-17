@@ -8,16 +8,17 @@ manager: dougeby
 ms.date: 04/04/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 54e6cc0b3df95c74abf4b4ef1b827f8e121e3645
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: c5313cae6aa903af910471cb79f021e30a3263dd
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731879"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72503720"
 ---
 # <a name="add-ios-software-update-policies-in-intune"></a>IOS-szoftverfrissítési szabályzatok hozzáadása az Intune-ban
 
@@ -35,21 +36,21 @@ Az eszköz körülbelül 8 óránként jelentkezik be az Intune-ba. Ha az eszkö
 2. Válassza a **Szoftverfrissítések** > **iOS-frissítési szabályzatok** > **Létrehozás** lehetőséget.
 3. Adja meg a következő beállításokat:
 
-    - **Név**: Adja meg a szoftverfrissítési házirend nevét. Például írja be a következőt: `iOS restricted update times`.
-    - **Description** (Leírás): Adja meg a szabályzat leírását. A beállítás használata nem kötelező, de ajánlott.
+    - **Név**: adja meg a szoftverfrissítési házirend nevét. Például írja be a következőt: `iOS restricted update times`.
+    - **Leírás**: adja meg a szabályzat leírását. A beállítás használata nem kötelező, de ajánlott.
 
 4. Válassza a **beállítások > konfigurálás**lehetőséget. Adja meg a következő beállításokat:
 
-    - **A frissítések telepítésének megakadályozására szolgáló időpontok kiválasztása**: A korlátozott időkeret megadása, ha a frissítések kényszerített telepítése nem történik meg.
+    - A frissítések **telepítésének megakadályozására szolgáló időpontok kiválasztása**: adjon meg egy korlátozott időkeretet, ha a frissítések nincsenek kényszerítve telepítve.
       - Az egynapos blokkok nem támogatottak, és előfordulhat, hogy nem működnek. Tegyük fel például, hogy nem állít be egy szabályzatot 8 PM *kezdő időponttal* , és 6 órakor *befejező* időpontot.
       - Egy olyan szabályzat, amely 12 órakor kezdődik, és 12 ÓRAKOR ér véget, 0 óra, nem pedig 24 óra, ami korlátozás nélkül jár.
 
       A korlátozott időkeret beállításakor adja meg a következő adatokat:
 
-      - **Napok**: Válassza ki a hét napját, amikor a frissítések nincsenek telepítve. Például a hétfő, a szerda és a péntek beállítás megadásával megakadályozhatja, hogy a frissítések ezekben a napokban legyenek telepítve.
-      - **Időzóna**: Válasszon időzónát.
-      - **Kezdés időpontja**: Válassza ki a korlátozott időkeret kezdési idejét. Adja meg például az 5, hogy a frissítések ne legyenek telepítve 5 ÓRAKOR.
-      - **Befejezés időpontja**: Válassza ki a korlátozott időkeret befejezési időpontját. Adja meg például a következőt: 1, így a frissítések telepíthetők a-től kezdődően.
+      - **Nap**: válassza ki a hét azon napját, amikor a frissítések nincsenek telepítve. Például a hétfő, a szerda és a péntek beállítás megadásával megakadályozhatja, hogy a frissítések ezekben a napokban legyenek telepítve.
+      - **Időzóna**: válasszon időzónát.
+      - **Kezdési idő**: válassza ki a korlátozott időtartam kezdő időpontját. Adja meg például az 5, hogy a frissítések ne legyenek telepítve 5 ÓRAKOR.
+      - **Befejezés időpontja**: válassza ki a korlátozott időkeret befejezési időpontját. Adja meg például a következőt: 1, így a frissítések telepíthetők a-től kezdődően.
 
     - **A szoftverfrissítések láthatóságának késleltetése a végfelhasználók számára az ütemezett frissítések módosítása nélkül a szoftverfrissítési házirendben (nap)** : 
 
@@ -58,7 +59,7 @@ Az eszköz körülbelül 8 óránként jelentkezik be az Intune-ba. Ha az eszkö
       > [!IMPORTANT]  
       > A *kezdési időt* és a *befejezési időpontot* a 12-es értékre beállított szabályzat 0 óra, nem pedig 24 óra. Ez az eredmény nem korlátozza a korlátozást.  
 
-5. Kattintson a**Létrehozás** **gombra** > a módosítások mentéséhez és a szabályzat létrehozásához.
+5. A módosítások mentéséhez és a szabályzat létrehozásához kattintson **az OK** > **Létrehozás** gombra.
 
 A szabályzat létrejön, és megjelenik a szabályzatok listájában.
 
@@ -93,7 +94,7 @@ A rendszer ekkor kiértékeli a szabályzat hatókörébe tartozó felhasználó
 
 ## <a name="monitor-device-installation-failures"></a>Eszközök telepítési hibáinak figyelése
 <!-- 1352223 -->
-**A szoftverfrissítések** **telepítési hibái iOS-eszközökön** megjelenítik a frissítési szabályzat által megcélozott felügyelt iOS-eszközök listáját, frissítést próbáltak meg, és nem lehetett frissíteni. >  Minden eszköz mellett látható egy állapotleírás, amelyből kiderül, hogy az adott eszköz miért nem frissült automatikusan. A kifogástalan, naprakész eszközök nem jelennek meg a listában. A naprakész eszközökön telepítve van az a legújabb frissítés, amelyet az eszköz támogatni képes.
+**Szoftverfrissítések** >  az**iOS-eszközök telepítési hibái** megjelenítik a frissítési szabályzat által megcélozott felügyelt iOS-eszközök listáját, frissítést próbáltak meg, és nem lehetett frissíteni. Minden eszköz mellett látható egy állapotleírás, amelyből kiderül, hogy az adott eszköz miért nem frissült automatikusan. A kifogástalan, naprakész eszközök nem jelennek meg a listában. A naprakész eszközökön telepítve van az a legújabb frissítés, amelyet az eszköz támogatni képes.
 
 ## <a name="next-steps"></a>További lépések
 

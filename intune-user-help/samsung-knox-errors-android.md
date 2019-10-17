@@ -1,6 +1,6 @@
 ---
-title: Javítsa ki a felügyelt Samsung Knox gyakori problémáinak eszközök |} A Microsoft Docs
-description: Hárítsa el a Samsung Knox-eszközök.
+title: A felügyelt Samsung Knox-eszközök gyakori problémáinak elhárítása | Microsoft Docs
+description: A Samsung Knox-eszköz hibáinak megoldása.
 keywords: ''
 author: lenewsad
 ms.author: lanewsad
@@ -9,6 +9,7 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: 78c08b30-dc5f-46d9-9ee8-6cc8dee1e404
 searchScope:
@@ -17,16 +18,16 @@ ROBOTS: ''
 ms.reviewer: arnab
 ms.suite: ems
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 37f8b5626802a3000d50eca2fd3142732aafd783
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: 54a8eaafba0705968672275ba67449d9672f5c46
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61490956"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72502083"
 ---
 # <a name="fix-common-issues-with-your-samsung-knox-device"></a>A Samsung Knox-eszközök gyakori problémáinak elhárítása
 
-Felügyelt Samsung Knox-eszközökhöz tartozó gyakori problémák elhárítása. Listán nem szereplő probléma jelentéséhez itt is [a diagnosztikai naplók küldése](send-logs-to-microsoft-android.md) a vagy a Microsoft Intune céges portál alkalmazáson keresztül. A fejlesztők a Microsoft alkalmazás-specifikus naplókat a probléma diagnosztizálása és a egy megoldást találni fog kinézni.    
+A felügyelt Samsung Knox-eszközökhöz kapcsolódó gyakori problémák elhárítása. Ha olyan problémát szeretne jelenteni, amely nem szerepel itt, a [diagnosztikai naplókat](send-logs-to-microsoft-android.md) a Céges portál vagy Microsoft Intune alkalmazáson keresztül küldheti el. A Microsoft fejlesztői megtekintik az alkalmazásra vonatkozó naplókat a probléma diagnosztizálásához és megoldás megkereséséhez.    
 
 ## <a name="network-activation-error"></a>Hálózati aktiválási hiba  
 
@@ -44,12 +45,12 @@ A megjelenő üzenet a következőhöz hasonló lehet:
 |---|---|
 |**Samsung Knox-aktiválási hiba** – Nem sikerült aktiválni a Samsung KNOX-licencet. Ennek az lehet az oka, hogy be van kapcsolva az energiatakarékos üzemmód. Kapcsolja ki az energiatakarékos üzemmódot az eszközbeállításoknál, majd próbálkozzon újra.|Az eszközt olyan okokból nem sikerült aktiválni, melyeket a Microsoftnak meg kell vizsgálnia. Küldjön visszajelzést, és megkeressük a javítás lehetséges módszereit.|
 
-## <a name="power-saving-mode-error"></a>Energiatakarékos üzemmód által okozott hiba
+## <a name="power-saving-mode-error"></a>Energiatakarékos üzemmódú hiba
 
 A megjelenő üzenet a következőhöz hasonló lehet:
 
 |Hibaüzenet|Lehetséges megoldás|
 |---|---|
-|**Samsung Knox-aktiválási hiba** – Nem sikerült aktiválni a Samsung KNOX-licencet. Lehetséges, van-e kapcsolva az energiatakarékos üzemmódot. Kapcsolja ki az energiatakarékos üzemmódot az eszközbeállításoknál, és próbálkozzon újra. |Előfordulhat, hogy az eszköz energiagazdálkodási beállításai nem megfelelőek a céges erőforrások használatához. Ismerje meg, ezzel a beállítással kapcsolatos információkért tekintse meg a [power mentése mód](power-saving-mode-android.md).|  
+|**Samsung Knox-aktiválási hiba** – Nem sikerült aktiválni a Samsung KNOX-licencet. Ennek az lehet az oka, hogy az energiatakarékossági mód be van kapcsolva. Kapcsolja ki a energiatakarékos üzemmódot az eszközbeállítások között, és próbálkozzon újra. |Előfordulhat, hogy az eszköz energiagazdálkodási beállításai nem megfelelőek a céges erőforrások használatához. További információ erről a beállításról: [energiatakarékossági mód](power-saving-mode-android.md).|  
 
 További segítségre van szüksége? Forduljon a cég informatikai támogatásához. Az elérhetőségét keresse meg a [Vállalati portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).

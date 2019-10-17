@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 04/01/2019
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: ''
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 67393f83ecd76250e01deef3eee20aa1206b3f99
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 588b6d39f1e3dc86f76279ef0446d9d58dc3e1df
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730511"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506618"
 ---
 # <a name="windows-10-and-later-settings-to-manage-shared-devices-using-intune"></a>Windows 10 és újabb beállítások a megosztott eszközök Intune-nal történő kezeléséhez
 
@@ -39,24 +40,24 @@ Az Intune ezen funkciójával kapcsolatos további információkért lásd: [hoz
 
 ## <a name="shared-multi-user-device-settings"></a>Megosztott többfelhasználós eszközbeállítások
 
-- **Megosztott számítógép üzemmód**: Válassza az **Engedélyezés** lehetőséget a megosztott számítógép üzemmód bekapcsolásához. Ebben a módban egyszerre csak egy felhasználó jelentkezik be az eszközre. Egy másik felhasználó nem tud bejelentkezni, amíg az első felhasználó kijelentkezik. **Nincs konfigurálva** (alapértelmezés) nem az Intune által felügyelt beállítást hagyja, és nem küld semmilyen szabályzatot az eszközön a beállítás szabályozására.
-- **Vendég fiók**: A bejelentkezési képernyőn hozzon létre egy vendég lehetőséget. A vendég fiókoknak nincs szükségük felhasználói hitelesítő adatokra vagy hitelesítésre. Ez a beállítás minden használatkor új helyi fiókot hoz létre. A választható lehetőségek:
-  - **Vendég**: Helyi fiókot hoz létre az eszközön.
-  - **Tartomány**: Létrehoz egy vendég fiókot Azure Active Directory (AD).
-  - **Vendég és tartomány**: Helyi fiókot hoz létre az eszközön, és Azure Active Directory (AD).
-- **Fiókkezelés**: Az **Engedélyezés** beállítás megadásával automatikusan törölheti a vendégek által létrehozott helyi fiókokat és az ad-és Azure ad-fiókokat. Amikor egy felhasználó kijelentkezik az eszközön, vagy ha a rendszer karbantartását futtatja, ezek a fiókok törlődnek. Ha engedélyezve van, állítsa be a következőket is:
-  - **Fiók törlése**: Válassza ki a fiókok törlésének időpontját: **A tárolóhelyek küszöbértéke**, **a tárolóhelyek küszöbértéke és az inaktív küszöbérték**, vagy közvetlenül a kijelentkezés **után**. Ezt is adja meg:
-    - **Kezdeti törlési küszöb (%)** : Adja meg a lemezterület százalékos arányát (0-100). Ha a teljes lemez/tárterület a megadott érték alá csökken, a rendszer törli a gyorsítótárazott fiókokat. Folyamatosan törli a fiókokat a lemezterület felszabadításához. A rendszer először törli a leghosszabb ideig inaktív fiókokat.
-    - **Törlési küszöb leállítása (%)** : Adja meg a lemezterület százalékos arányát (0-100). Ha a teljes lemez/tárolóhely megfelel a megadott értéknek, a törlés leáll.
+- **Megosztott számítógép üzemmód**: válassza az **Engedélyezés** lehetőséget a megosztott számítógép üzemmód bekapcsolásához. Ebben a módban egyszerre csak egy felhasználó jelentkezik be az eszközre. Egy másik felhasználó nem tud bejelentkezni, amíg az első felhasználó kijelentkezik. **Nincs konfigurálva** (alapértelmezés) nem az Intune által felügyelt beállítást hagyja, és nem küld semmilyen szabályzatot az eszközön a beállítás szabályozására.
+- **Vendég fiók**: válasszon egy vendég lehetőséget a bejelentkezési képernyőn. A vendég fiókoknak nincs szükségük felhasználói hitelesítő adatokra vagy hitelesítésre. Ez a beállítás minden használatkor új helyi fiókot hoz létre. A választható lehetőségek:
+  - **Vendég**: a vendég fiókot helyileg hozza létre az eszközön.
+  - **Tartomány**: vendég fiókot hoz létre Azure Active Directory (ad).
+  - **Vendég és tartomány**: helyi fiók létrehozása az eszközön, valamint Azure Active Directory (ad).
+- **Fiókkezelés**: az **Engedélyezés** beállítás megadásával automatikusan törölheti a vendégek által létrehozott helyi fiókokat és az AD-és Azure ad-fiókokat. Amikor egy felhasználó kijelentkezik az eszközön, vagy ha a rendszer karbantartását futtatja, ezek a fiókok törlődnek. Ha engedélyezve van, állítsa be a következőket is:
+  - **Fiók törlése**: válassza ki, hogy mikor történjen a fiókok törlése: **a tárolóhelyek küszöbértéke**, **a tárolóhelyek küszöbértéke és az inaktív küszöbérték**, vagy közvetlenül a kijelentkezés **után**. Adja meg a következőket is:
+    - **Kezdeti törlési küszöb (%)** : adja meg a lemezterület százalékos arányát (0-100). Ha a teljes lemez/tárterület a megadott érték alá csökken, a rendszer törli a gyorsítótárazott fiókokat. Folyamatosan törli a fiókokat a lemezterület felszabadításához. A rendszer először törli a leghosszabb ideig inaktív fiókokat.
+    - **Törlési küszöb leállítása (%)** : adja meg a lemezterület százalékos arányát (0-100). Ha a teljes lemez/tárolóhely megfelel a megadott értéknek, a törlés leáll.
 
   A **Letiltás** beállítás megadásával megtarthatja a vendégek által létrehozott helyi, ad-és Azure ad-fiókokat.
 
-- **Helyi tárterület**: Válassza az **engedélyezve** lehetőséget, hogy megakadályozza a felhasználók számára a fájlok mentését és megtekintését az eszköz merevlemezén. Válassza a **Letiltva** lehetőséget, hogy a felhasználók a fájlkezelő használatával helyileg lássák és mentsenják a fájlokat. **Nincs konfigurálva** (alapértelmezés) nem az Intune által felügyelt beállítást hagyja, és nem küld semmilyen szabályzatot az eszközön a beállítás szabályozására.
-- **Energiagazdálkodási szabályzatok**: Ha az Engedélyezve értékre **van**állítva, a felhasználók nem kapcsolhatják ki a hibernálást, ezért nem lehet felülbírálni az összes alvó műveletet (például a fedél bezárása), és nem változtathatják meg az energiaellátási beállításokat. Ha a beállítás **Letiltva**értékre van állítva, a felhasználók hibernálják az eszközt, lezárhatók a fedelet az eszköz alvó állapotában, és módosíthatják az energiaellátási beállításokat. **Nincs konfigurálva** (alapértelmezés) nem az Intune által felügyelt beállítást hagyja, és nem küld semmilyen szabályzatot az eszközön a beállítás szabályozására.
-- **Alvó állapot időtúllépése (másodperc)** : Adja meg az inaktív másodpercek számát (0-100), mielőtt az eszköz alvó üzemmódba kerül. Ha nem állít be időpontot, az eszköz 60 perc elteltével alvó állapotba kerül.
-- **Bejelentkezés PC-ébresztés esetén**: Ha a beállítás **engedélyezve** értékre van állítva, akkor a felhasználóknak jelszóval kell bejelentkezniük, ha az eszköz alvó üzemmódba kerül. Válassza a **Letiltva** lehetőséget, hogy a felhasználóknak ne kelljen megadniuk felhasználónevét és jelszavát. **Nincs konfigurálva** (alapértelmezés) nem az Intune által felügyelt beállítást hagyja, és nem küld semmilyen szabályzatot az eszközön a beállítás szabályozására.
-- **Karbantartási kezdési idő (percben éjféltől)** : Adja meg az időt percben (0-1440) az automatikus karbantartási feladatok, például a Windows Update futtatása esetén. Az alapértelmezett indítási idő éjfél vagy nulla (@no__t – 0) perc. A kezdés időpontjának megváltoztatásához adjon meg egy kezdő időpontot percben éjféltől. Ha például azt szeretné, hogy a karbantartás 2 ÓRAKOR kezdődjön, írja be a következőt: `120`. Ha azt szeretné, hogy a karbantartás 8 ÓRAKOR kezdődjön, írja be a következőt: `1200`.
-- **Oktatási szabályzatok**: Válassza az **engedélyezve** lehetőséget az iskolákban használt eszközök ajánlott beállításainak használatához, amelyek szigorúbbak. Válassza a **Letiltva** lehetőséget, hogy az alapértelmezett és az ajánlott oktatási házirendek ne legyenek használatban. **Nincs konfigurálva** (alapértelmezés) nem az Intune által felügyelt beállítást hagyja, és nem küld semmilyen szabályzatot az eszközön a beállítás szabályozására.
+- **Helyi tárterület**: válassza az **engedélyezve** lehetőséget, hogy megakadályozza a felhasználók számára a fájlok mentését és megtekintését az eszköz merevlemezén. Válassza a **Letiltva** lehetőséget, hogy a felhasználók a fájlkezelő használatával helyileg lássák és mentsenják a fájlokat. **Nincs konfigurálva** (alapértelmezés) nem az Intune által felügyelt beállítást hagyja, és nem küld semmilyen szabályzatot az eszközön a beállítás szabályozására.
+- **Energiagazdálkodási házirendek**: Ha az **engedélyezve**értékre van állítva, a felhasználók nem kapcsolhatják ki a hibernált állapotot, az összes alvó műveletet nem lehet felülbírálni (például a fedél bezárása), és nem változtathatják meg az energiaellátási beállításokat. Ha a beállítás **Letiltva**értékre van állítva, a felhasználók hibernálják az eszközt, lezárhatók a fedelet az eszköz alvó állapotában, és módosíthatják az energiaellátási beállításokat. **Nincs konfigurálva** (alapértelmezés) nem az Intune által felügyelt beállítást hagyja, és nem küld semmilyen szabályzatot az eszközön a beállítás szabályozására.
+- **Alvó állapot időtúllépése (másodperc)** : adja meg az inaktív másodpercek számát (0-100), mielőtt az eszköz alvó üzemmódba kerül. Ha nem állít be időpontot, az eszköz 60 perc elteltével alvó állapotba kerül.
+- **Bejelentkezés a számítógép ébresztése esetén**: beállítás **engedélyezve** értékre állításával a felhasználóknak jelszóval kell bejelentkezniük, ha az eszköz alvó üzemmódból származik. Válassza a **Letiltva** lehetőséget, hogy a felhasználóknak ne kelljen megadniuk felhasználónevét és jelszavát. **Nincs konfigurálva** (alapértelmezés) nem az Intune által felügyelt beállítást hagyja, és nem küld semmilyen szabályzatot az eszközön a beállítás szabályozására.
+- **Karbantartási kezdési idő (percben éjféltől)** : adja meg az időt percben (0-1440) az automatikus karbantartási feladatok, például a Windows Update futtatása esetén. Az alapértelmezett indítási idő éjfél vagy nulla (@no__t – 0) perc. A kezdés időpontjának megváltoztatásához adjon meg egy kezdő időpontot percben éjféltől. Ha például azt szeretné, hogy a karbantartás 2 ÓRAKOR kezdődjön, írja be a következőt: `120`. Ha azt szeretné, hogy a karbantartás 8 ÓRAKOR kezdődjön, írja be a következőt: `1200`.
+- **Oktatási szabályzatok**: válassza az **engedélyezve** lehetőséget az iskolákban használt eszközök ajánlott beállításainak használatához, amelyek szigorúbbak. Válassza a **Letiltva** lehetőséget, hogy az alapértelmezett és az ajánlott oktatási házirendek ne legyenek használatban. **Nincs konfigurálva** (alapértelmezés) nem az Intune által felügyelt beállítást hagyja, és nem küld semmilyen szabályzatot az eszközön a beállítás szabályozására.
 
   Az oktatási szabályzatok végrehajtásával kapcsolatos további információkért lásd: [Windows 10 konfigurációs javaslatok oktatási ügyfelek számára](https://docs.microsoft.com/education/windows/configure-windows-for-education).
 

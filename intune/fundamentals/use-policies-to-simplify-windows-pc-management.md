@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 01/01/2018
 ms.topic: archived
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: f0afda7e-f4c3-4bcd-b4bf-4304103cf73e
@@ -17,16 +18,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic-keep
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ccedb68a7226c0d026519cf90c7b278e29678929
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 5f9990d24c97ea4e8b6d0c37fb8225a9df0e47cb
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731619"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72504837"
 ---
 # <a name="use-policies-to-simplify-windows-pc-management"></a>A Windows rendszerű számítógép kezelésének leegyszerűsítése szabályzatok használatával
 
-[!INCLUDE [classic-portal](../../intune-classic/includes/classic-portal.md)]
+[!INCLUDE [classic-portal](../includes/classic-portal.md)]
 
 Ha a Windows rendszerű számítógépeket a rájuk telepített Intune szoftverügyféllel szeretné kezelni, akkor az Intune felügyeleti konzolján csak a **Számítógép-kezelés** területen lévő szabályzatokat használhatja. A felügyeleti konzolon felsorolt összes többi szabályzat csak mobileszközökön léptethető érvénybe. A **Számítógép-kezelés** szabályzatainak használatával konfigurálhatja a Microsoft Intune Center beállításait, irányíthatja a számítógépek frissítését, és konfigurálhatja a számítógépek Windows tűzfalát.
 
@@ -45,12 +46,12 @@ A felhasználók számára az Intune-szoftverügyfél az **Microsoft Intune Cent
 
 A Microsoft Intune Center minden felügyelt számítógépre telepítve van. Az alábbi beállításokat konfigurálhatja egy Intune-szabályzatban, és ezek jelennek meg a felhasználóknak a Microsoft Intune Centerben:
 
-|Házirend-beállítás|Részletek|
+|Házirend-beállítás|Details|
 |------------------|--------------------|
-|**Name**|A számítógépet felügyelő rendszergazda neve.<br />Maximális hossz: 40 karakter|
+|**Név**|A számítógépet felügyelő rendszergazda neve.<br />Maximális hossz: 40 karakter|
 |**Telefonszám**|A számítógépet felügyelő rendszergazda telefonszáma.<br />Maximális hossz: 20 karakter|
 |**E-mail cím**|A számítógépet felügyelő rendszergazda e-mail címe.<br />Maximális hossz: 40 karakter|
-|**Webhely neve**|A felhasználói támogatási webhely neve.<br />> maximális hossz: 40 karakter|
+|**Webhely neve**|A felhasználói támogatási webhely neve.<br />>Maximális hossz: 40 karakter|
 |**Webhely URL-címe**|A támogatási webhely URL-címe.<br />Maximális hossz: 150 karakter|
 |**Megjegyzések**|A felhasználóknak megjelenített megjegyzés.<br />Maximális hossz: 120 karakter|
 
@@ -63,6 +64,6 @@ A Windows rendszerű számítógépekre vonatkozóan konfigurált szabályzatokr
 - [A Windows rendszerű számítógépek védelme Windows tűzfalházirendek használatával a Microsoft Intune-ban](../help-protect-windows-pcs-using-windows-firewall-policies-in-microsoft-intune.md) – Ezek a szabályzatok leegyszerűsítik a Windows tűzfal beállításainak adminisztrációját a felügyelt számítógépeken.
 
 
-## <a name="see-also"></a>Lásd még:
+## <a name="see-also"></a>További információ
 
 [A Windows rendszerű számítógépek Intune-szoftverügyféllel való felügyeletének általános feladatai](common-windows-pc-management-tasks-with-the-microsoft-intune-computer-client.md)

@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 09/19/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: remote-actions
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d3c21e255db1142ec5ab15c99e8da6bc41de01cf
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 002989bd61167d6f0d20e2c5cb3fa80a4051a99c
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732451"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72508676"
 ---
 # <a name="send-custom-notifications-in-intune"></a>Egyéni értesítések küldése az Intune-ban  
 
@@ -44,11 +45,11 @@ Az egyéni értesítési üzenetek közé tartozik egy rövid cím és egy 500 k
 - Az eszköznek regisztrálva kell lennie a MDM.
 
 **Engedélyek**:
-- Ha értesítéseket szeretne küldeni a csoportoknak, a fiókjának a következő RBAC engedéllyel kell rendelkeznie az Intune-ban:Szervezet > **frissítése**.
-- Ha értesítéseket szeretne küldeni egy eszközre, a fiókjának a következő RBAC engedéllyel kell rendelkeznie az Intune-ban: *A távoli feladatok* > **Egyéni értesítéseket küldenek**.
+- Ha értesítéseket szeretne küldeni a csoportoknak, a fiókjának a következő RBAC engedéllyel kell rendelkeznie az Intune-ban: *Organization* > **Update**.
+- Ha értesítéseket szeretne küldeni egy eszközre, a fiókjának a következő RBAC engedéllyel kell rendelkeznie az Intune-ban: *távoli feladatok* > **Egyéni értesítések küldése**.
 
 **Értesítések létrehozása**:  
-- Üzenet létrehozásához használjon egy Intune-szerepkörhöz rendelt fiókot, amely tartalmazza a szervezetre vonatkozó **frissítési** engedélyt. Engedélyek felhasználóhoz rendeléséhez lásd: [szerepkör](../fundamentals/role-based-access-control.md#role-assignments) -hozzárendelések  
+- Üzenet létrehozásához használjon egy Intune-szerepkörhöz rendelt fiókot, amely tartalmazza a **szervezetre**vonatkozó **frissítési** engedélyt. Engedélyek felhasználóhoz rendeléséhez lásd: [szerepkör-hozzárendelések](../fundamentals/role-based-access-control.md#role-assignments)  
 - Az egyéni értesítések 50 karakteres címekre és 500 karakteres üzenetekre korlátozódnak.  
 - Az Intune nem menti az elküldött üzeneteket. Ha újra el szeretné küldeni az üzenetet, újra létre kell hoznia az üzenetet.  
 - Legfeljebb 25 üzenetet küldhet a csoportoknak óránként. Ez a korlátozás a bérlő szintjén van. Ez a korlátozás nem vonatkozik a magánszemélyeknek küldött értesítések küldésére.
@@ -68,7 +69,7 @@ Az egyéni értesítési üzenetek közé tartozik egy rövid cím és egy 500 k
 
 ## <a name="send-a-custom-notification-to-groups"></a>Egyéni értesítés küldése a csoportoknak  
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba egy olyan fiókkal, amely rendelkezik értesítések létrehozásához és küldéséhez szükséges engedélyekkel, majd lépjen az **eszközök** > **Egyéni értesítések küldése**elemre.  
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba egy olyan fiókkal, amely rendelkezik értesítések létrehozásához és küldéséhez szükséges engedélyekkel, majd nyissa meg az **eszközök** > **Egyéni értesítések küldése**lehetőséget.  
 
 2. Az alapvető beállítások lapon adja meg a következőket, majd a folytatáshoz kattintson a **tovább** gombra.  
    - **Title (cím** ) – Itt adhatja meg az értesítés címét. A címek legfeljebb 50 karakterből állhatnak.  
@@ -88,7 +89,7 @@ Az Intune nem követi az Ön által küldött egyéni értesítéseket, és az e
 
 ## <a name="send-a-custom-notification-to-a-single-device"></a>Egyéni értesítés küldése egyetlen eszközre  
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba egy olyan fiókkal, amely rendelkezik értesítések létrehozásához és küldéséhez szükséges engedélyekkel, majd lépjen az **eszközök** > **minden eszköz**elemre.  
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba egy olyan fiókkal, amely rendelkezik értesítések létrehozásához és küldéséhez szükséges engedélyekkel, majd lépjen az **eszközök**@no__t – 2**minden eszköz**elemre.  
 
 2. Válassza ki azt az eszközt, amelyre értesítést szeretne küldeni.  
 

@@ -9,6 +9,7 @@ ms.date: 03/11/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: 4ab630b6-47ff-443b-a2a5-be23388bcea7
 searchScope:
@@ -18,15 +19,15 @@ ms.reviewer: priyar
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bbd4f8f0925aac5aada44277c4d21a71b412e0e7
-ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
+ms.openlocfilehash: bbc251479652079cb33b1ca4dd08103103b91aa9
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67546683"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72508193"
 ---
 # <a name="troubleshoot-your-windows-10-device-enrollment"></a>Windows 10-es eszközök regisztrálásával kapcsolatos problémák elhárítása
-Ha már regisztrálta az eszközt, de továbbra sem tud hozzáférni a munkahelyi vagy iskolai e-mailjeihez és fájljaihoz, próbálja ki ezeket a hibaelhárítási lépéseket.  
+Ha regisztrálta az eszközt, de továbbra sem tud hozzáférni a munkahelyi vagy iskolai e-mailekhez és fájlokhoz, próbálja meg ezeket a hibaelhárítási lépéseket.  
 
 1. A következő két képernyő közül válassza ki azt, amelyen ugyanaz látszik, mint az eszközön. Hajtsa végre a kiválasztott képernyőhöz tartozó lépéseket.
 
@@ -44,22 +45,22 @@ Ha már regisztrálta az eszközt, de továbbra sem tud hozzáférni a munkahely
 
 2. Tegye a következők valamelyikét:
 
-   - Ha olyan kapcsolatot lát, amely hasonlít az alábbi képen láthatóhoz, koppintson rá, és ellenőrizze, hogy megjelenik-e a Kezelés, az Információ és a Leválasztás lehetőség. Ha látja ezeket a beállításokat, még most már regisztrált és csatlakoztatva.
+   - Ha olyan kapcsolatot lát, amely hasonlít az alábbi képen láthatóhoz, koppintson rá, és ellenőrizze, hogy megjelenik-e a Kezelés, az Információ és a Leválasztás lehetőség. Ha ezeket a beállításokat látja, most már regisztrálva van és csatlakoztatva van.
 
      ![validate-successful-enrollment](./media/w10-enroll-rs1-validate-successful-enrollment.png)
 
-   - Ha nem jelenik meg a kapcsolati adatok fenti, vagy azt látja, de hiányzik az opciók egy része, koppintson a **Connect**. Való csatlakozáshoz, majd jelentkezzen be a munkahelyi vagy iskolai hitelesítő adataival.  
+   - Ha nem látja a fent látható kapcsolati adatokat, vagy meglátja, de hiányzik néhány lehetőség, koppintson a **kapcsolat**elemre. Ezután jelentkezzen be a munkahelyi vagy iskolai hitelesítő adataival a kapcsolódáshoz.  
 
 ## <a name="troubleshooting-steps-to-follow-if-you-see-your-account"></a>Hibaelhárítási lépések, ha ezt látja: „Saját fiók”
 
 Ha követte a fenti lépéseket, de továbbra sem tud hozzáférni munkahelyi vagy iskolai e-mailjeihez vagy fájljaihoz, lépjen vissza a **Fiókok** lapra, és koppintson a **Munkahelyi hozzáférés** elemre.
 
-- Tekintse meg a munkahelyi vagy iskolai fiókját, ha csatlakozott.  
+- Ha megjelenik a felsorolt munkahelyi vagy iskolai fiókja, csatlakozik.  
 
 - Ha nem látja saját munkahelyi vagy iskolai fiókját, koppintson a **Csatlakozás** elemre, majd jelentkezzen be munkahelyi vagy iskolai hitelesítő adataival.
 
 ## <a name="troubleshooting-steps-to-follow-if-you-see-set-up-a-work-or-school-account"></a>Hibaelhárítási lépések, ha ezt látja: „Munkahelyi vagy iskolai fiók beállítása”
 
-Ha a következő üzenetet látja:  <strong>Nem találtunk a megadott felhasználónévvel egyező felügyeleti végpontot. Ellenőrizze, hogy helyesen írta-e be a felhasználónevét, és próbálkozzon újra. Ha ismeri a felügyeleti végpontja URL-címét, írja be.</strong>, akkor próbálja ismét beírni a felhasználónevét és a jelszavát. Ha továbbra sem működik, ellenőrizze a cég informatikai támogatási szolgáltatásánál azt a webhelyet, amelyet a <strong>Felügyeleti végpont</strong> szövegmezőben meg kell adnia. Ez a webhely valószínűleg a következőhöz hasonlít: <strong>www.azöncége.onmicrosoft.com</strong>.
+Ha olyan üzenet jelenik meg, amely szerint <strong>nem sikerült automatikusan felderíteni a megadott felhasználónévvel egyező felügyeleti végpontot. Ellenőrizze a felhasználónevet, és próbálkozzon újra. Ha ismeri a felügyeleti végpontjának URL-címét, írja be</strong>a következőt:., próbálja meg újra megadnia felhasználónevét és jelszavát. Ha továbbra sem működik, ellenőrizze a cég informatikai támogatási szolgáltatásánál azt a webhelyet, amelyet a <strong>Felügyeleti végpont</strong> szövegmezőben meg kell adnia. Ez a webhely valószínűleg a következőhöz hasonlít: <strong>www.azöncége.onmicrosoft.com</strong>.
 
 További segítségre van szüksége? Forduljon a cég informatikai támogatásához. Az elérhetőségét keresse meg a [Vállalati portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).

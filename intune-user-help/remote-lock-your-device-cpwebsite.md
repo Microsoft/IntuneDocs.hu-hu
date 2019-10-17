@@ -9,6 +9,7 @@ ms.date: 08/28/2018
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: adc6af23-b22f-42e5-955a-4dffbdb8b42b
 searchScope:
@@ -18,12 +19,12 @@ ms.reviewer: jieyang
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b55368f5c512ff3efd4059d420717321729450ee
-ms.sourcegitcommit: 7c251948811b8b817e9fe590b77f23aed95b2d4e
+ms.openlocfilehash: c81c13d5da8eac1616ab7274b484befaa5685511
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67884061"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72502160"
 ---
 # <a name="remotely-lock-your-device-from-the-company-portal-website"></a>Az eszköz távoli zárolása a Vállalati portál webhelyéről
 
@@ -31,7 +32,7 @@ Elveszett vagy ellopott eszköz távoli zárolása a Céges portál webhelyről.
 
 A távoli zárolás a következőknél működik:
 
-* Android
+* Android:
 * iOS
 * macOS
 * Windows 10
@@ -46,7 +47,7 @@ A távoli zárolás a következőknél működik:
 
 3. Válassza a **Távoli zárolás** lehetőséget. Ha a zárolás lehetőség nem jelenik meg az oldal tetején, válassza az **Egyéb (…)**  > **Távoli zárolás** lehetőséget.  
 
-   ![A kiválasztott eszköz adatai a Céges portál webhelyén, felül az Átnevezés, az Eltávolítás, az Eszköz alaphelyzetbe állítása, a Jelszó alaphelyzetbe állítása és a Távoli zárolás lehetőségekre mutató hivatkozásokkal. ](./media/rename-reset-device-1808.png) 
+   ![A kiválasztott eszközzel kapcsolatos lehetőségek a Céges portál webhelyén, felül az Átnevezés, az Eltávolítás, az Eszköz alaphelyzetbe állítása, a Jelszó alaphelyzetbe állítása és a Távoli zárolás lehetőségekre mutató hivatkozásokkal. ](./media/rename-reset-device-1808.png) 
 
     ![Az Egyéb ikon kinagyított képe egy piros nyíllal kiemelve.](./media/rename-reset-device-step3-more-1808.png)    
 

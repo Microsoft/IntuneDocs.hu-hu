@@ -9,6 +9,7 @@ ms.date: 05/21/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: 812e82df-76df-402b-bfe9-29302838f40e
 searchScope:
@@ -18,12 +19,12 @@ ms.reviewer: jieyang
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2e4def9f0e4e91f7db9e0a81e2ad55852df524f7
-ms.sourcegitcommit: 0d1a02fb3d2a801a95c2244e9ef13ecf22be2eb1
+ms.openlocfilehash: ca8b24a1e8d0da4386ab185533fec38d9b34eb21
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71302459"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506254"
 ---
 # <a name="enroll-windows-10-devices-with-intune-company-portal"></a>Windows 10-es eszközök regisztrálása Intune Céges portál
 
@@ -61,7 +62,7 @@ Ezek a lépések bemutatják, hogyan regisztrálhat olyan eszközt, amely a Wind
 
 7. Minden készen **van!** képernyő, válassza a **Kész** elemet. Ezzel megtörtént az eszköz regisztrálása.  
 
-8. Ha szeretné megtekinteni a kapcsolatot, térjen vissza a **Beállítások** > **fiókok** > **hozzáférés munkahelyi vagy iskolai**rendszerhez elemre.  A fiókjának most már szerepelnie kell.  
+8. Ha szeretné megtekinteni a kapcsolatot, térjen vissza a **beállítások** > **fiókok** > **hozzáférés munkahelyi vagy iskolai**rendszerhez.  A fiókjának most már szerepelnie kell.  
 
 
     ![A kapcsolat megfelelő beállításának ellenőrzése](./media/w10-enroll-rs1-validate-successful-enrollment.png)  
@@ -75,7 +76,7 @@ Ezek a lépések bemutatják, hogyan regisztrálhat olyan eszközt, amely a Wind
 
 2. Nyissa meg a **Beállítások** alkalmazást. Ha az alkalmazás nem érhető el az alkalmazások listájában, ugorjon a keresősáv elemre, és írja be a "Settings" (beállítások) kifejezést.
 
-3. Válassza a **fiókok** > **fiókot**.  
+3. Válassza**a** **fiókok**@no__t – 1 fiókját.  
 
 
     ![Válassza a Saját fiók elemet](./media/W10-enroll-2-accounts-your-account.png)  

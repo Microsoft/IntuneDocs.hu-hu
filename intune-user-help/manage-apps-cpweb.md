@@ -1,6 +1,6 @@
 ---
-title: Alkalmazások kezelése az Intune vállalati portál webhelyről
-description: Kezeléséhez, és megtekintheti az elérhető és telepített alkalmazások
+title: Alkalmazások kezelése Intune Céges portál webhelyről
+description: Elérhető és telepített alkalmazások kezelése és megtekintése
 keywords: ''
 author: lenewsad
 ms.author: lanewsad
@@ -9,6 +9,7 @@ ms.date: 06/27/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: ''
 searchScope:
@@ -18,84 +19,84 @@ ms.reviewer: ''
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9c7b91e63a559c45cbbcbd7056a7f5e259e07481
-ms.sourcegitcommit: 690e680e854b7d707421c5e06f134e493f4f4194
+ms.openlocfilehash: edc45fb3ddab43ef77a3f072c5a1a31f8f88c957
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67416857"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506110"
 ---
-# <a name="manage-apps-from-the-company-portal-website"></a>Alkalmazások kezelése a vállalati portál webhelyről 
-Látogasson el a [céges portál webhely](https://portal.manage.microsoft.com) megtekintheti és kezelheti az alkalmazásokat a szervezet. 
+# <a name="manage-apps-from-the-company-portal-website"></a>Alkalmazások kezelése a Céges portál webhelyről 
+Látogasson el a [céges portál webhelyére](https://portal.manage.microsoft.com) , ahol megtekintheti és kezelheti a szervezete alkalmazásait. 
 
-## <a name="view-all-apps"></a>Minden alkalmazás megtekintése  
-Válassza a menü **alkalmazások** a szervezet által elérhetővé tett összes alkalmazás megjelenítéséhez. 
+## <a name="view-all-apps"></a>Az összes alkalmazás megtekintése  
+A menüben válassza az **alkalmazások** lehetőséget a szervezet által elérhetővé tett összes alkalmazás megtekintéséhez. 
 
-   ![Képernyőkép a céges portál webhely alkalmazások oldaláról, Termékcsoportjával beállításairól.](./media/intune-view-apps-1907.png)  
+   ![Képernyőkép a Céges portál webhely, alkalmazások oldaláról, amely a beállítások pontosítását mutatja.](./media/intune-view-apps-1907.png)  
 
-Ezen a lapon minden alkalmazás a következő információkat tartalmazza:  
+Ezen az oldalon az egyes alkalmazásokról az alábbi információk szerepelnek:  
 
-* Név: Az alkalmazást, az alkalmazás részleteit megjelenítő oldalra mutató hivatkozást tartalmazó neve.
-* Kiadó: A fejlesztői vagy a vállalati, amelyek az alkalmazás neve. A közzétevő általában, a szoftver gyártójához vagy a szervezet.  
-* Közzététel dátuma: A dátum, amely az alkalmazás történt tölthető le. Közzététel dátuma valószínűleg egy alkalmazás kezdeti kiadás vagy az alkalmazás legújabb frissítése.
-* Állapot: Az alkalmazást az eszközön, például a rendelkezésre álló, telepített és telepítése az aktuális állapotát. 
-* Kategória: Az alkalmazás függvény vagy egyéb célra felhasználja, mint például a kiemelt, mérnöki csapathoz, oktatási és termelékenység.  
+* Name (név): az alkalmazás neve, az alkalmazás részletek lapjára mutató hivatkozással.
+* Közzétevő: az alkalmazást terjesztő fejlesztő vagy cég neve. A közzétevő általában szoftvergyártó vagy szervezet.  
+* Közzététel dátuma: az a dátum, amelyet az alkalmazás a letöltéshez elérhetővé tett. A közzétételi dátum egy alkalmazás kezdeti kiadását vagy egy alkalmazás legutóbbi frissítését jelenítheti meg.
+* Status (állapot): az alkalmazás aktuális állapota az eszközön, amely tartalmazza az elérhető, a telepített és a telepítést. 
+* Kategória: az alkalmazás funkciója vagy célja, például Kiemelt, mérnöki, oktatási és termelékenység.  
 
-### <a name="search-and-refine"></a>Keresés pedig finomíthatja a konfigurációt   
+### <a name="search-and-refine"></a>Keresés és pontosítás   
 
-A Keresősáv használatával keresse meg az alkalmazások. Keresési eredményeket a rendszer automatikusan elrendezi a relevancia alapján.  
+A keresősáv használatával kereshet alkalmazásokat. Keresési eredményeket a rendszer automatikusan elrendezi a relevancia alapján.  
 
-   ![Képernyőkép a céges portál webhely alkalmazások oldaláról, Termékcsoportjával beállításairól.](./media/intune-refine-all-apps-1907.png)  
+   ![Képernyőkép a Céges portál webhely, alkalmazások oldaláról, amely a beállítások pontosítását mutatja.](./media/intune-refine-all-apps-1907.png)  
 
-Válassza ki **finomíthatja** , tekintse meg a szűrési és rendezési lehetőségeket. Szűrje a listát az adott feltételeknek, beleértve az alkalmazások megjelenítése **típus**, **rendelkezésre állási**, és **közzétevők**. Válassza ki **rendezési** az alkalmazások által átrendezése:
+Válassza a **pontosítás** elemet a szűrési és rendezési beállítások megtekintéséhez. A lista szűrésével megjelenítheti az alkalmazásokat meghatározott feltételekkel, beleértve a **típust**, a **rendelkezésre állást**és a **közzétevőket**. Válassza a **Rendezés** lehetőséget az alkalmazások átrendezéséhez a következővel:
 
-* Alkalmazás neve, növekvő vagy csökkenő betűrend szerint 
-* Közzétevő neve, növekvő vagy csökkenő betűrend szerint 
-* Közzététel dátuma, a legrégebbi vagy legújabb  
+* Az alkalmazás neve, növekvő vagy csökkenő sorrendben 
+* Közzétevő neve, növekvő vagy csökkenő sorrendben 
+* Közzététel dátuma, legrégebbi vagy legújabb  
 
-## <a name="view-installed-apps"></a>Telepített alkalmazások  
-Válassza a menü **telepített alkalmazások** az eszközön telepített összes alkalmazás listájának megtekintéséhez.  
+## <a name="view-installed-apps"></a>Telepített alkalmazások megtekintése  
+A menüben válassza a **telepített alkalmazások** lehetőséget az eszközre telepített összes alkalmazás listájának megtekintéséhez.  
 
-   ![Képernyőkép a céges portál webhelyen, telepített alkalmazások lapján.](./media/intune-installed-apps-1907.png)  
+   ![Képernyőkép a Céges portál webhely, telepített alkalmazások oldaláról.](./media/intune-installed-apps-1907.png)  
 
 
-Ezen a lapon minden alkalmazás a következő információkat tartalmazza:  
+Ezen az oldalon az egyes alkalmazásokról az alábbi információk szerepelnek:  
 
-* Név: Az alkalmazást, az alkalmazás részleteit megjelenítő oldalra mutató hivatkozást tartalmazó neve.
-* Hozzárendelés típusa: Hogyan az alkalmazás van hozzárendelve, és elérhetővé tett. Elérhető és a kötelező alkalmazásokat, további részletekért tekintse meg. A szervezet vagy elérhetővé teheti egy alkalmazás telepítésére, saját maga, vagy igényelnek, és egy alkalmazás automatikus telepítése az eszközön.  
-* Kiadó: A fejlesztői vagy a vállalati, amelyek az alkalmazás neve. A közzétevő általában, a szoftver gyártójához vagy a szervezet.  
-* Közzététel dátuma: A dátum, amely az alkalmazás történt tölthető le. Közzététel dátuma valószínűleg egy alkalmazás kezdeti kiadás vagy az alkalmazás legújabb frissítése.
-* Állapot: A jelenlegi telepítés állapota az alkalmazást az eszközön. Alkalmazások jeleníti meg telepíteni, mint telepítve, és telepítése nem sikerült. Kötelező alkalmazások a legfrissebb állapot megjelenítéséhez akár 10 percet is igénybe vehet.  
+* Name (név): az alkalmazás neve, az alkalmazás részletek lapjára mutató hivatkozással.
+* Hozzárendelés típusa: Hogyan történik az alkalmazás hozzárendelése és elérhetővé tétele. További részletekért tekintse meg a rendelkezésre álló és a szükséges alkalmazásokat. A szervezete létrehozhat egy alkalmazást saját maga is, vagy igény szerint telepítheti az alkalmazást az eszközön.  
+* Közzétevő: az alkalmazást terjesztő fejlesztő vagy cég neve. A közzétevő általában szoftvergyártó vagy szervezet.  
+* Közzététel dátuma: az a dátum, amelyet az alkalmazás a letöltéshez elérhetővé tett. A közzétételi dátum egy alkalmazás kezdeti kiadását vagy egy alkalmazás legutóbbi frissítését jelenítheti meg.
+* Status (állapot): az alkalmazás aktuális telepítési állapota az eszközön. Az alkalmazások telepítése, telepítése és telepítése nem sikerült. A szükséges alkalmazások akár 10 percet is igénybe vehetnek a naprakész állapot megjelenítéséhez.  
 
-### <a name="search-and-refine"></a>Keresés pedig finomíthatja a konfigurációt  
+### <a name="search-and-refine"></a>Keresés és pontosítás  
 
-A Keresősáv használatával keresse meg az alkalmazások. Keresési eredményeket a rendszer automatikusan elrendezi a relevancia alapján.  
+A keresősáv használatával kereshet alkalmazásokat. Keresési eredményeket a rendszer automatikusan elrendezi a relevancia alapján.  
 
-   ![Képernyőkép a céges portál webhelyen, telepített alkalmazások finomíthatja a beállításokat.](./media/intune-installed-refine-1907.png)  
+   ![Képernyőkép Céges portál webhely, telepített alkalmazások, pontosítási beállítások.](./media/intune-installed-refine-1907.png)  
 
-Válassza ki **finomíthatja** , tekintse meg a szűrési és rendezési lehetőségeket. Szűrje a listát az adott feltételeknek, beleértve az alkalmazások megjelenítése **típusok**, **közzétevők**, és **állapotok**. Válassza ki **rendezési** az alkalmazások által átrendezése:
+Válassza a **pontosítás** elemet a szűrési és rendezési beállítások megtekintéséhez. A lista szűrésével megjelenítheti az alkalmazásokat meghatározott feltételekkel, beleértve a **típusokat**, a **közzétevőket**és az **állapotokat**. Válassza a **Rendezés** lehetőséget az alkalmazások átrendezéséhez a következővel:
 
-* Alkalmazás neve, növekvő vagy csökkenő betűrend szerint  
-* Közzétevő neve, növekvő vagy csökkenő betűrend szerint  
-* Közzététel dátuma, a legrégebbi vagy a legutóbbi  
+* Az alkalmazás neve, növekvő vagy csökkenő sorrendben  
+* Közzétevő neve, növekvő vagy csökkenő sorrendben  
+* Közzététel dátuma, legrégebbi vagy legutóbbi  
 
 További segítségre van szüksége? Forduljon a cég informatikai támogatásához. Az elérhetőségét keresse meg a [Vállalati portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).  
 
-### <a name="available-and-required-apps"></a>Szükséges és elérhető alkalmazások
-Alkalmazások a szervezete által Önhöz rendelt, és elérhető vagy kötelező címkével. A **telepített alkalmazások** lapon látható, mely alkalmazások tartozik a **hozzárendelés-típus** oszlop. 
+### <a name="available-and-required-apps"></a>Elérhető és szükséges alkalmazások
+Az alkalmazásokat a szervezete rendeli hozzá, és a címke elérhetőként vagy kötelezőként van megjelölve. A **telepített alkalmazások** oldalon látható, hogy mely alkalmazások vannak a **hozzárendelés típusa** oszlopban. 
 
 
-* Elérhető alkalmazások: Ezeket az alkalmazásokat a szervezet által ki van jelölve, és megfelelő, és hasznos munkahelyi vagy iskolai fiók. A választható telepítse, és a csak alkalmazások telepítése a céges portálon megtalálhatja. 
+* Elérhető alkalmazások: ezeket az alkalmazásokat a szervezete választja ki, és megfelelő és hasznos lehet a munkához vagy az iskolához. A telepítésük nem kötelező, és az egyetlen alkalmazás, amelyet a telepítés Céges portál talál. 
 
-* Kötelező alkalmazások: A szervezet előfordulhat, hogy közvetlenül üzembe helyezhetők a szükséges munkahelyi és iskolai alkalmazásokhoz az eszközön. Ezek az alkalmazások automatikusan települnek, beavatkozás nélkül. 
+* Szükséges alkalmazások: a szervezet a szükséges munkahelyi és iskolai alkalmazásokat közvetlenül az eszközére helyezheti üzembe. Ezeket az alkalmazásokat a rendszer automatikusan telepíti a beavatkozás nélkül. 
 
-Alkalmazások is elérhető lesz az eszköz típusa alapján. Például ha egy Windows-eszközön a céges portál webhelyet használja, hozzáférhet a Windows-alkalmazás, de nem az iOS-alkalmazások.  
+Az alkalmazásokat az eszköz típusa alapján is elérhetővé teszi. Ha például Windows-eszközön használja a Céges portál webhelyet, akkor hozzáférhet a Windows-alkalmazásokhoz, de nem iOS-alkalmazásokhoz.  
 
 ## <a name="view-app-details"></a>Alkalmazás részleteinek megtekintése  
-Válasszon ki egy alkalmazást a a **alkalmazások** vagy **telepített alkalmazások** lap a részletek megtekintéséhez. Megnyílik a **alkalmazás részleteinek**, ahol megtalálhatja az alkalmazás leírása és követelményei. Ha az alkalmazás még nincs telepítve az eszközön, ezen az oldalon telepítheti. 
+A részletek megtekintéséhez válasszon ki egy alkalmazást az **alkalmazások** vagy a **telepített alkalmazások** oldalon. Ekkor megtekintheti az **alkalmazás részleteit**, ahol megtalálhatja az alkalmazás leírását és követelményeit. Ha egy alkalmazás még nincs telepítve az eszközön, akkor ezt a lapot telepítheti. 
 
 
-   ![Képernyőkép a céges portál webhely, alkalmazás részleteit megjelenítő oldalon.](./media/intune-app-details-1907.png)  
+   ![Képernyőkép a Céges portál webhelyéről, az alkalmazás részleteit tartalmazó oldalról.](./media/intune-app-details-1907.png)  
 
 ## <a name="next-steps"></a>További lépések
 További segítségre van szüksége? Forduljon a cég informatikai támogatásához. Az elérhetőségét keresse meg a [Vállalati portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).  

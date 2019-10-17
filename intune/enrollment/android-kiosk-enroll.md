@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 1/15/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: enrollment
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e07952b6e7147ffa9b84cfbd1988ebb927b411dd
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: d1a1c03dc480ad66de22b4a5ee44a9b8c221980c
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730071"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72503385"
 ---
 # <a name="set-up-intune-enrollment-of-android-enterprise-dedicated-devices"></a>Androidos vállalati dedikált eszközök Intune-regisztrációjának beállítása
 
@@ -34,7 +35,7 @@ Az Intune segítségével alkalmazásokat és beállításokat telepíthet az an
 
 Az ezen a módon felügyelt eszközök felhasználói fiók nélkül vannak regisztrálva az Intune-ban, és egyetlen végfelhasználóhoz sincsenek hozzárendelve. Nem rendeltetésük olyan személyes használatra szánt, vagy sok felhasználóspecifikus adatot igénylő alkalmazások futtatása, mint az Outlook vagy a Gmail.
 
-## <a name="device-requirements"></a>Eszközkövetelmények
+## <a name="device-requirements"></a>Eszközre vonatkozó követelmények
 
 Az eszközöknek meg kell felelniük az alábbi követelményeknek, amelyeket androidos vállalati dedikált eszközként kell kezelni:
 
@@ -54,28 +55,28 @@ Az Android Enterprise dedikált eszközök felügyeletének beállításához k�
 ### <a name="create-an-enrollment-profile"></a>Beléptetési profil létrehozása
 
 > [!NOTE]
-> Ha egy jogkivonat lejárt, a hozzá társított profil nem jelenik meg az **eszközök beléptetése** > **Android-regisztráció** > **vállalat által birtokolt dedikált eszközök**területen. Az aktív és az inaktív tokenekhez kapcsolódó összes profil megjelenítéséhez kattintson a **Filter (szűrő** ) elemre, és jelölje be az "aktív" és az "inaktív" házirend-állapotok jelölőnégyzeteit. 
+> Ha egy jogkivonat lejárt, akkor a hozzá társított profil nem jelenik meg az **eszközök beléptetése** > **Android-regisztráció** > **vállalati tulajdonú eszközök**. Az aktív és az inaktív tokenekhez kapcsolódó összes profil megjelenítéséhez kattintson a **Filter (szűrő** ) elemre, és jelölje be az "aktív" és az "inaktív" házirend-állapotok jelölőnégyzeteit. 
 
-Létre kell hoznia egy regisztrációs profilt, hogy regisztrálni tudja a dedikált eszközöket. A profil a létrehozásakor ad egy regisztrációs jogkivonatot (véletlenszerű karakterlánc) és egy QR-kódot. Az eszköz Android operációs rendszerének és verziójától függően a jogkivonat vagy a QR-kód segítségével [regisztrálhat a dedikált eszközt](#enroll-the-dedicated-devices).
+Létre kell hoznia egy regisztrációs profilt, hogy regisztrálni tudja a dedikált eszközöket. A profil a létrehozásakor ad egy regisztrációs jogkivonatot (véletlenszerű sztring) és egy QR-kódot. Az eszköz Android operációs rendszerének és verziójától függően a jogkivonat vagy a QR-kód segítségével [regisztrálhat a dedikált eszközt](#enroll-the-dedicated-devices).
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és válassza az **eszközök beléptetése** > **Android-regisztráció** > **vállalat által birtokolt dedikált eszközök**elemet.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és válassza az **eszközök beléptetése** > **Android-regisztráció** > **vállalati tulajdonú dedikált eszközök**elemet.
 2. Válassza a **Létrehozás** lehetőséget, és töltse ki a kötelező mezőket.
-    - **Név**: Írjon be egy nevet, amelyet a profil dinamikus eszközcsoport-csoporthoz való hozzárendeléséhez fog használni.
-    - **Jogkivonat lejárati dátuma**: A jogkivonat lejárati dátuma. A Google legfeljebb 90 napos érvényességi időszakot engedélyez.
+    - **Név**: Adjon meg egy nevet, amelyet akkor fog használni, amikor a profilt a dinamikus eszközcsoporthoz rendeli.
+    - **Jogkivonat lejárati dátuma**: Az a dátum, amikor a jogkivonat lejár. A Google legfeljebb 90 napos érvényességi időszakot engedélyez.
 3. Válassza a **Létrehozás** elemet a profil mentéséhez.
 
 ### <a name="create-a-device-group"></a>Eszközcsoport létrehozása
 
 A cél lehet alkalmazás, és hozzárendelt vagy dinamikus eszközcsoportokra vonatkozó szabályzat is. A dinamikus AAD-eszközcsoportokat a következő lépesekkel konfigurálhatja úgy, hogy automatikusan felvegyék a megadott regisztrációs profillal regisztrált eszközöket:
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és válassza a **csoportok** > **minden** > csoport**új csoport**lehetőséget.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és válassza a **csoportok**@no__t – 2**minden csoport**@no__t – 4**új csoportot**.
 2. A **Csoport** panelen töltse ki a kötelező mezőket az alábbiak szerint:
-    - **Csoport típusa**: Biztonság
-    - **Csoport neve**: Írjon be egy intuitív nevet (például Factory 1 eszköz)
-    - **Tagság típusa**: Dinamikus eszköz
+    - **Csoporttípus**: Biztonsági (Security)
+    - **Csoport neve**: Adjon meg egy beszédes nevet (például 1. üzem eszközei)
+    - **Tagság típusa**: Dinamikus eszköz (Dynamic device)
 3. Válassza a **Dinamikus lekérdezés hozzáadása** lehetőséget.
 4. A **Dinamikus tagsági szabályok** panelen töltse ki a mezőket az alábbiak szerint:
-    - **Dinamikus tagsági szabály hozzáadása**: Egyszerű szabály
+    - **Dinamikus tagsági szabály hozzáadása**: Egyszerű szabály (Simple rule)
     - **Eszközök hozzáadásának helye**: enrollmentProfileName
     - A középső mezőben válassza az **Egyezés** (Match) lehetőséget.
     - Az utolsó mezőben adja meg a korábban létrehozott regisztrációs profilt.
@@ -84,14 +85,14 @@ A cél lehet alkalmazás, és hozzárendelt vagy dinamikus eszközcsoportokra vo
 
 ### <a name="replace-or-remove-tokens"></a>Jogkivonatok cseréje vagy eltávolítása
 
-- **Token cseréje**: Létrehozhat egy új tokent vagy QR-kódot, ha az egyik közeljövőben lejár a lecserélés token használatával.
-- **Jogkivonat visszavonása**: A jogkivonat/QR-kód azonnal lejár. Ettől kezdve a jogkivonat/QR-kód többé nem használható. Ez a lehetőség a következő esetekben lehet hasznos:
+- **Jogkivonat cseréje**: A Jogkivonat cseréje lehetőséggel új jogkivonatot/QR-kódot generálhat a hamarosan lejáró helyett.
+- **Jogkivonat visszavonása**: Azonnal lejárttá minősítheti a jogkivonatot/QR-kódot. Ettől kezdve a jogkivonat/QR-kód többé nem használható. Ez a lehetőség a következő esetekben lehet hasznos:
   - a jogkivonat/QR-kód véletlenül meg lett osztva egy jogosulatlan féllel
   - minden regisztráció befejeződött, és a jogkivonatra/QR-kódra többé nincs szükség
 
 Egy jogkivonat/QR-kód cseréje vagy visszavonása a már regisztrált eszközöket nem érinti.
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és válassza az **eszközök beléptetése** > **Android-regisztrációk** > **saját tulajdonú dedikált eszközök**elemet.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és válassza az **eszközök beléptetése** > **Android-regisztráció** >  közösen felügyelt**dedikált eszközök**elemet.
 2. Válassza ki a profilt, amellyel dolgozni kíván.
 3. Válassza a **Jogkivonat** lehetőséget.
 4. A jogkivonat cseréjéhez válassza a **Jogkivonat cseréje** lehetőséget.

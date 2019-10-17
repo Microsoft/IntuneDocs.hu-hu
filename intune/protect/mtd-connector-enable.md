@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 07/22/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: dbb6a37e-ba47-4b69-922c-d25e66c279f6
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ac49edcd4ea71bdbc83cfa093f2bb5e42aefd54
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: e53f50c42e768eeb652a8602bea49c04d29364c7
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729563"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72504422"
 ---
 # <a name="enable-the-mobile-threat-defense-connector-in-intune"></a>A Mobile Threat Defense-összekötő engedélyezése az Intune-ban
 
@@ -40,7 +41,7 @@ Klasszikus feltételes hozzáférési szabályzatok a MTD-alkalmazásokhoz:
 - Nem különböznek a MTD kezeléséhez esetlegesen létrehozott feltételes hozzáférési házirendektől.
 - Alapértelmezés szerint a kiértékeléshez használt egyéb feltételes hozzáférési szabályzatok nem működnek együtt.  
 
-A klasszikus feltételes hozzáférési szabályzatok megjelenítéséhez [Az Azure](https://portal.azure.com/#home)-ban lépjen **Azure Active Directory** > a**feltételes hozzáférés** > **klasszikus házirendjei**elemre.
+A klasszikus feltételes hozzáférési szabályzatok az [Azure](https://portal.azure.com/#home)-ban való megtekintéséhez lépjen a **Azure Active Directory** > **feltételes hozzáférés**@no__t – 4**klasszikus házirend**elemre.
 
 
 ## <a name="to-enable-the-mtd-connector"></a>Az MTD-összekötő engedélyezése
@@ -61,17 +62,17 @@ A klasszikus feltételes hozzáférési szabályzatok megjelenítéséhez [Az Az
 
 A cég igényei alapján eldöntheti, hogy az MTD mely kapcsolós beállításait kell engedélyeznie. További részletek:
 
-- **Android 4.1 + rendszerű eszközök csatlakoztatása a (z) [MTD-partner neve] for Work MTD**: Ha engedélyezi ezt a beállítást, az Android 4.1 + rendszerű eszközök bejelenthetik a biztonsági kockázatokat az Intune-nak.
-  - **Nem megfelelőként való megjelölés, ha nem érkezik ilyen érték**: Ha az Intune nem kap információt a platformon található eszközről az MTD-partnertől, vegye figyelembe, hogy az eszköz nem megfelelő.
+- **Android 4.1+ rendszerű eszközök csatlakoztatása az [MTD-partner neve] for Work MTD-hez**: ezen beállítás engedélyezésével utasíthatja az Android 4.1+ rendszerű eszközöket a biztonsági kockázatok jelentésére az Intune-nak.
+  - **Nem megfelelőnek minősítés, ha nem érkezik adat**: ha az Intune nem kap adatokat egy ilyen platformos eszközről az MTD-partnertől, az eszközt nem megfelelőnek minősíti.
 <br></br>
-- **IOS 8.0 + rendszerű eszközök csatlakoztatása a (z) [MTD partner neve] for Work MTD**: Ha engedélyezi ezt a beállítást, az iOS 8.0 + rendszerű eszközök bejelenthetik a biztonsági kockázatokat az Intune-nak.
-  - **Nem megfelelőként való megjelölés, ha nem érkezik ilyen érték**: Ha az Intune nem kap információt a platformon található eszközről az MTD-partnertől, vegye figyelembe, hogy az eszköz nem megfelelő.
+- **iOS 8.0+ rendszerű eszközök csatlakoztatása az [MTD partner neve] for Work MTD-hez**: ezen beállítás engedélyezésével utasíthatja az iOS 8.0+ rendszerű eszközöket a biztonsági kockázatok jelentésére az Intune-nak.
+  - **Nem megfelelőnek minősítés, ha nem érkezik adat**: ha az Intune nem kap adatokat egy ilyen platformos eszközről az MTD-partnertől, az eszközt nem megfelelőnek minősíti.
 <br></br>
-- **Alkalmazások szinkronizálásának engedélyezése iOS**-eszközökhöz: Lehetővé teszi a Mobile Threat Defense-partner számára, hogy az Intune-ból származó iOS-alkalmazások metaadatait a veszélyforrások elemzése céljából használja.
+- **Alkalmazásszinkronizálás engedélyezése iOS-eszközök számára**: Engedélyezi a Mobile Threat Defense-partner számára, hogy iOS-alkalmazások metaadatait kérje le az Intune-ból fenyegetéselemzés céljából.
 
-- Nem **támogatott operációsrendszer-verziók letiltása**: Letiltja, ha az eszköz a minimális támogatott verziónál kisebb operációs rendszert futtat.
+- **Nem támogatott operációsrendszer-verziók blokkolása**: a legalacsonyabb támogatott verziónál régebbi rendszerű eszközök blokkolva lesznek.
 
-- **A partnernek nem válaszoló napok száma**: Ennyi nap inaktivitás után veszi figyelembe, hogy az Intune nem válaszol a partnernek, mert a kapcsolat megszakad. Az Intune nem veszi figyelembe a nem válaszoló MTD-partnerek megfelelőségi állapotát.
+- **Partner ennyi nap után nem válaszol**: az Intune ennyi napnyi tétlenség után feltételezi, hogy a partner a kapcsolat megszakadása miatt nem válaszol. Az Intune nem veszi figyelembe a nem válaszoló MTD-partnerek megfelelőségi állapotát.
 
 > [!IMPORTANT] 
 > Ha lehetséges, javasoljuk, hogy az eszköz megfelelőségének és a feltételes hozzáférési szabályzat szabályainak létrehozása előtt vegye fel és rendelje hozzá a MTD-alkalmazásokat. Ez segít biztosítani, hogy a MTD alkalmazás készen álljon, és elérhető legyen a végfelhasználók számára az e-mailekhez vagy más vállalati erőforrásokhoz való hozzáféréshez.

@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 09/18/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: apps
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 2f6c06bf-e29a-4715-937b-1d2c7cf663d4
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dbcc777cc6d8b803c502d847114ef7cff04ceb26
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 890dc68afd11862d11effd3e2d3a160815d6ad8c
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731303"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72507340"
 ---
 # <a name="add-managed-google-play-apps-to-android-enterprise-devices-with-intune"></a>Felügyelt Google Play-alkalmazások hozzáadása androidos vállalati eszközökhöz az Intune-nal
 
@@ -62,7 +63,7 @@ A felügyelt Google Play áruházbeli alkalmazások az Intune-nal való tallóz�
 ### <a name="add-a-managed-google-play-store-app-directly-in-the-intune-console"></a>Felügyelt Google Play áruházbeli alkalmazás hozzáadása közvetlenül az Intune-konzolon
 
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Az **Intune** panelen válassza az > ügyfélalkalmazások**alkalmazások**lehetőséget.
+3. Az **Intune** panelen válassza az **ügyfélalkalmazások** > **alkalmazások**elemet.
 5. Az **Alkalmazások** panelen válassza a **Hozzáadás** lehetőséget.
 6. Az **alkalmazás típusa** legördülő listában válassza a **felügyelt Google Play**lehetőséget.
 7. Válassza a **felügyelt Google Play-Megnyitás** lehetőséget a felügyelt Google Play katalógus megnyitásához.
@@ -108,7 +109,7 @@ Az ÜZLETÁGI alkalmazások a felügyelt Google Play szolgáltatással kétféle
 ### <a name="managed-google-play-private-lob-app-publishing-directly-in-the-intune-console"></a>Felügyelt Google Play Private-(LOB-) alkalmazások közzététele közvetlenül az Intune-konzolon
 
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Az **Intune** panelen válassza az > ügyfélalkalmazások**alkalmazások**lehetőséget.
+3. Az **Intune** panelen válassza az **ügyfélalkalmazások** > **alkalmazások**elemet.
 5. Az **Alkalmazások** panelen válassza a **Hozzáadás** lehetőséget.
 6. Az **alkalmazás típusa** legördülő listában válassza a **felügyelt Google Play**lehetőséget.
 7. Válassza a **felügyelt Google Play-Megnyitás** lehetőséget a felügyelt Google Play katalógus megnyitásához.
@@ -151,7 +152,7 @@ A webhivatkozások a Microsoft Edge vagy bármely más, a telepítéshez kivála
 > Ennek a dokumentumnak a közzétételét követően egy ismert Google-hiba található, amely megakadályozza, hogy a webhivatkozások a Chrome-on kívül más böngészőkkel is megnyissák az eszközöket. A Google elkötelezett a hiba kijavítása érdekében.  Ez az értesítés akkor kerül eltávolításra, ha a Microsoft megerősítette, hogy a Google közzétette a javítást.
 
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Az **Intune** panelen válassza az > ügyfélalkalmazások**alkalmazások**lehetőséget.
+3. Az **Intune** panelen válassza az **ügyfélalkalmazások** > **alkalmazások**elemet.
 5. Az **Alkalmazások** panelen válassza a **Hozzáadás** lehetőséget.
 6. Az **alkalmazás típusa** legördülő listában válassza a **felügyelt Google Play**lehetőséget.
 7. Válassza a **felügyelt Google Play-Megnyitás** lehetőséget a felügyelt Google Play katalógus megnyitásához.

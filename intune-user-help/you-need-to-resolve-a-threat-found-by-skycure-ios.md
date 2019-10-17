@@ -9,6 +9,7 @@ ms.date: 10/05/2018
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: b40595f0-a399-4aa1-aa6f-344c2a1cb883
 searchScope:
@@ -16,12 +17,12 @@ searchScope:
 ROBOTS: ''
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f8353b704df7ebdc648e5b223b80e656ca05956a
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: c27cb54f435b01abd1bea0b4bbfe7e15738debfc
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61501327"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72501445"
 ---
 # <a name="resolve-a-threat-found-by-symantec-endpoint-protection-mobile"></a>Symantec Endpoint Protection Mobile által észlelt fenyegetés elhárítása
 
@@ -48,7 +49,7 @@ A cikk leírja, hogyan szerezhet ismét hozzáférést a vállalati erőforráso
 
 ## <a name="troubleshoot-an-app-threat"></a>Alkalmazásfenyegetés hibaelhárítása
 
-Az eszközére nézve fenyegetőnek ítélt alkalmazás telepítésekor értesítést kap az SEP Mobile alkalmazásban. Amíg az érintett alkalmazás az eszközén marad, Ön nem fog hozzáférni a vállalati erőforrásokhoz.  
+Az eszközére nézve fenyegetőnek ítélt alkalmazás telepítésekor értesítést kap az SEP Mobile alkalmazásban. Ha a érintett alkalmazás az eszközén marad, nem fogja tudni elérni a vállalati erőforrásokat.  
 
 A megoldáshoz jelölje ki az alkalmazást az SEP Mobile-ban megjelenő fenyegetések listájában. Ezután kövesse a képernyőn megjelenő utasításokat az alkalmazás eltávolításához.  
 

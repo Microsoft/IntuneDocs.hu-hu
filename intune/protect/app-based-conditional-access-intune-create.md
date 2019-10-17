@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 02/22/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: d1693515-de18-4553-91ef-801976cd3ec7
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d9cbe57d0cf69f036cd36d2c1b95c48b198645e7
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 94e9fcc77f8260c4a63150b5d0aef033677c524a
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729923"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72509673"
 ---
 # <a name="set-up-app-based-conditional-access-policies-with-intune"></a>Alkalmazás-alapú feltételes hozzáférési szabályzatok beállítása az Intune-nal
 
@@ -55,7 +56,7 @@ A feltételes hozzáférés az Azure Active Directory (Azure AD) technológiája
 ## <a name="next-steps"></a>További lépések
 [Modern hitelesítés nélküli alkalmazások blokkolása](app-modern-authentication-block.md)
 
-## <a name="see-also"></a>Lásd még:
+## <a name="see-also"></a>További információ
 
 [Alkalmazásadatok védelme alkalmazásvédelmi szabályzatokkal](../apps/app-protection-policies.md)
 [Feltételes hozzáférés az Azure Active Directory-ban](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access)

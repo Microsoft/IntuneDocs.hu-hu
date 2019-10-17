@@ -1,5 +1,5 @@
 ---
-title: A Microsoft Intune rendelkezésre álló licencek
+title: Microsoft Intune elérhető licencek
 description: Az Intune az alábbi licencekkel érhető el
 keywords: ''
 author: ErikjeMS
@@ -8,20 +8,20 @@ manager: dougeby
 ms.date: 08/05/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
-ms.technology: ''
 ms.assetid: 4a94440c-11cb-11e8-b642-0ed5f89f718b
 ms.reviewer: chmaguir
 ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: def679ec8e530ce94aae6f8884f9ad94bf2cf58d
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 346960d8d1d79afc4494064570d1a03e83b8a302
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731535"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72510150"
 ---
 # <a name="microsoft-intune-licensing"></a>Microsoft Intune licencelés
 A Microsoft Intune a különböző ügyfelek igényeihez és a szervezeti méretekhez érhető el, az iskolák és kisvállalkozások számára egyszerűen használható felügyeleti felülettel, a nagyvállalati ügyfelek által igényelt fejlettebb funkciókhoz. A legtöbb Microsoft Intunet tartalmazó licenc a System Center Configuration Manager használatának jogát is megadja, feltéve, hogy az előfizetés aktív marad. 

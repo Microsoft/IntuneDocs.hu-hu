@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 07/24/2019
 ms.topic: quickstart
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 723f4b4e-3090-4811-84ff-6af652abea5a
@@ -17,18 +18,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ccf0f06993ef0edf06ca60ba4de7973ed878441a
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 09cf321fc04939257090ec8f46139cb16281e250
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732099"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72504977"
 ---
-# <a name="quickstart-create-a-group-to-manage-users"></a>QuickStart Csoport létrehozása a felhasználók kezeléséhez
+# <a name="quickstart-create-a-group-to-manage-users"></a>Rövid útmutató: Csoport létrehozása felhasználók kezeléséhez
 
 Ebben a rövid útmutatóban az Intune használatával fog csoportot létrehozni egy meglévő felhasználó alapján. Csoportokkal kezelheti a felhasználókat, és ellenőrzés alatt tarthatja, hogy a felhasználók milyen céges erőforrásokat érhetnek el. Ezek lehetnek a vállalati intranet részei, vagy olyan külső erőforrások, mint a SharePoint-webhelyek, SaaS-alkalmazások vagy webalkalmazások.
 
-Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon egy ingyenes próbafiókkal](free-trial-sign-up.md).
+Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon ingyenes próbafiókot](free-trial-sign-up.md).
 
 >[!NOTE]
 >Az Intune biztosítja az előre létrehozott **Minden felhasználó** és **Minden eszköz** csoportok beépített optimalizálását a felhasználók kényelme érdekében a konzolon.
@@ -52,7 +53,7 @@ Létre fog hozni egy csoportot, amelyet a későbbiekben fog használni ebben a 
 5. Adja meg a **Tagság típusa** elemhez a **Hozzárendelt** beállítást. 
 6. Kattintson a **tagok** elemre, és válassza ki a csoport egy vagy több tagját a listából.
 
-    ![Képernyőkép egy csoport létrehozásáról a Microsoft Intune-ban](./media/quickstart-create-group/quickstart-use-groups-01.png)
+    ![Képernyőkép csoport létrehozásáról a Microsoft Intune-ban](./media/quickstart-create-group/quickstart-use-groups-01.png)
 
 7. Kattintson a **Kiválasztás** > **Létrehozás** elemre.
 
@@ -65,4 +66,4 @@ Ebben a rövid útmutatóban az Intune használatával hozott létre csoportot e
 Kövesse az Intune rövid útmutatóinak sorozatát a következő rövid útmutatóval.
 
 > [!div class="nextstepaction"]
-> [QuickStart Automatikus regisztráció beállítása a Windows 10-es eszközökhöz @ no__t-0
+> [Rövid útmutató: Windows 10-es eszközök automatikus regisztrációjának beállítása](../enrollment/quickstart-setup-auto-enrollment.md)

@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 09/18/2018
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: remote-actions
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 47181d19-4049-4c7a-a8de-422206c4027e
@@ -15,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 34aea5256ebb7d6577b4e77054dcca63d47bf317
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: d7ca53786d372f53d63388fef1179ca271fdb9d9
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732631"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72508590"
 ---
 # <a name="reset-or-remove-a-device-passcode-in-intune"></a>Eszközök PIN-kódjának visszaállítása vagy eltávolítása az Intune-ban
 
@@ -30,7 +31,7 @@ Ez a dokumentum a PIN-kód alaphelyzetbe állítása és a munkahelyi profil PIN
 
 ## <a name="supported-platforms-for-device-level-passcode-reset"></a>Az eszközszintű PIN-kód alaphelyzetbe állításának támogatott platformjai
 
-| Platform | Támogatott? |
+| Platfésm | Támogatott? |
 | ---- | ---- |
 | 6\.x vagy régebbi verziójú Android-eszközök | Igen |
 | Vállalati Android rendszerű eszközök kioszkmódban | Igen |
@@ -45,7 +46,7 @@ Android-eszközök esetén ez azt jelenti, hogy az eszköz szintű PIN-kód alap
 
 ## <a name="supported-platforms-for-android-enterprise-work-profile-passcode-reset"></a>Azok a platformok, amelyeken alaphelyzetbe állítható a vállalati Android munkahelyi profil PIN-kódja
 
-| Platform | Támogatott? |
+| Platfésm | Támogatott? |
 | ---- | ---- |
 | Munkahelyi profillal regisztrált, 8.0-s vagy újabb verziójú vállalati Android-eszközök | Igen |
 | Munkahelyi profillal regisztrált, 7.x vagy korábbi verziójú vállalati Android-eszközök | Nem |

@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 03/26/2019
 ms.topic: quickstart
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
@@ -17,22 +18,22 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 63ad26077c00bf4ad4350ebd9ee124d61a69b324
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: b4890410f5948cdc9bd1c6e3d85125d8e0713d9b
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730547"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72492314"
 ---
-# <a name="quickstart-create-an-email-device-profile-for-ios"></a>QuickStart E-mail eszköz profil létrehozása iOS rendszerhez
+# <a name="quickstart-create-an-email-device-profile-for-ios"></a>Rövid útmutató: E-mail-eszközprofil létrehozása iOS-hez
 
 Ez a rövid útmutató bemutatja, hogyan hozhat létre e-mail-eszközprofilt iOS-eszközökhöz. Ez a profil meghatározza az iOS-eszközön a beépített e-mail-alkalmazás céges levelező rendszerhez való csatlakozásához szükséges beállításokat. Az e-mail-eszközprofilok segítenek standard beállítások megadásban a különféle eszközökön, valamint saját kötelező beállítások nélkül is lehetővé teszik a végfelhasználók számára, hogy az eszközükön hozzáférjenek a céges postafiókjukhoz. Az e-mailek további védelme érdekében használhat egy e-mail-profilt, amellyel meghatározhatja, hogy az eszközök megfelelőek-e, majd beállíthatja a feltételes hozzáférést, hogy csak a megfelelő eszközök férhessenek hozzá az e-mailekhez. Az e-mail-profilokra vonatkozó részleteket megtekintheti [Az e-mail-beállítások konfigurálása a Microsoft Intune-ban](email-settings-configure.md) című szakaszban.
 
-Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon egy ingyenes próbafiókkal](../fundamentals/free-trial-sign-up.md).
+Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon ingyenes próbafiókot](../fundamentals/free-trial-sign-up.md).
 
 ## <a name="sign-in-to-intune"></a>Bejelentkezés az Intune-ba
 
-Jelentkezzen be az [Intune-ba](https://aka.ms/intuneportal) globális rendszergazdaként vagy Intune-szolgáltatásadminisztrátorként. Ha létrehozott egy Intune próba-előfizetést, az a fiók lesz a globális rendszergazda, amelyikkel azt létrehozta.
+Jelentkezzen be az [Intune-ba](https://aka.ms/intuneportal) globális rendszergazdaként, vagy Intune-szolgáltatásadminisztrátorként. Ha létrehozott egy Intune próba-előfizetést, az a fiók lesz a globális rendszergazda, amelyikkel azt létrehozta.
 
 ## <a name="create-an-ios-email-profile"></a>iOS-es e-mail-profil létrehozása
 1. Az Intune-ban válassza az **Eszközkonfiguráció**, majd a **Profilok** lehetőséget.
@@ -49,21 +50,21 @@ Jelentkezzen be az [Intune-ba](https://aka.ms/intuneportal) globális rendszerga
      ![Az iOS-hez használható e-mail profil létrehozása](./media/quickstart-email-profile/ios-email-profile-name.png)
 
 5. Válassza a **Beállítások** lehetőséget, és adja meg az alábbi beállításokat (hagyja meg az egyéb beállítások alapértelmezett értékét):
-   - **Levelezési kiszolgáló**: Ebben a rövid útmutatóban adja meg a **Outlook.office365.com**. Ez a beállítás határozza meg az iOS levelező alkalmazás által a levelező rendszerhez való csatlakozásra használt levelezési kiszolgáló Exchange-helyét (URL-címét).
-   - **Fiók neve**: Adja meg a **vállalati e-mailt**.
-   - **Username attribútum a HRE**: Ez a név a Azure Active Directory (Azure AD) által beolvasott Intune-attribútum. Az Intune dinamikusan generálja a felhasználónevet ehhez a profilhoz a név felhasználásával. Ebben a rövid útmutatóban azt feltételezzük, hogy az **Egyszerű felhasználónév** értékét szeretnénk a profil felhasználóneveként használni (például user1@contoso.com).
-   - **E-mail-cím attribútum a HRE**: Ez a beállítás az Azure AD e-mail-címe, amely az Exchange-be való bejelentkezéshez lesz használva. Ebben a rövid útmutatóban válassza az **Egyszerű felhasználónév** lehetőséget.
-   - **Hitelesítési módszer**: Ebben a rövid útmutatóban válassza a **Felhasználónév és jelszó**lehetőséget. (A **Tanúsítvány** lehetőséget is választhatja, ha már beállította egy tanúsítványt az Intune-hoz.)
+   - **Levelezési kiszolgáló**: Ehhez a rövid útmutatóhoz adja meg az **outlook.office365.com** címet. Ez a beállítás határozza meg az iOS levelező alkalmazás által a levelező rendszerhez való csatlakozásra használt levelezési kiszolgáló Exchange-helyét (URL-címét).
+   - **Fiók neve**: Adja meg a **vállalati e-mail-címét**.
+   - **Felhasználói név attribútum az AAD-ből**: Ez a név az Intune által az Azure Active Directoryből (Azure AD) lekért attribútum. Az Intune dinamikusan generálja a felhasználónevet ehhez a profilhoz a név felhasználásával. Ebben a rövid útmutatóban azt feltételezzük, hogy az **Egyszerű felhasználónév** értékét szeretnénk a profil felhasználóneveként használni (például user1@contoso.com).
+   - **E-mail-cím attribútuma az AAD-ből**: Ez a beállítás az Azure AD-ből származó e-mail-cím, amelyet az Exchange-be való bejelentkezésre használunk. Ebben a rövid útmutatóban válassza az **Egyszerű felhasználónév** lehetőséget.
+   - **Hitelesítési módszer**: Ehhez a rövid útmutatóhoz válassza **Felhasználónév és jelszó** lehetőséget. (A **Tanúsítvány** lehetőséget is választhatja, ha már beállította egy tanúsítványt az Intune-hoz.)
     
      ![E-mail-profil létrehozása iOS-használatra](./media/quickstart-email-profile/ios-email-profile.png)
 
-6. Kattintson az **OK** gombra.
-7. Kattintson a **Létrehozás** gombra. Az új profil megjelenik a profilok listájában az irányítópulttal együtt, hogy figyelhesse, hogyan rendelték hozzá a profilt iOS-eszközökhöz és iOS-felhasználókhoz.
+6. Válassza az **OK** gombot.
+7. Válassza a **Létrehozás** lehetőséget. Az új profil megjelenik a profilok listájában az irányítópulttal együtt, hogy figyelhesse, hogyan rendelték hozzá a profilt iOS-eszközökhöz és iOS-felhasználókhoz.
 8. Válassza a **Hozzárendelések** lehetőséget.
 9. Válassza a **Belefoglalás** fület, majd a **Minden felhasználó és minden eszköz** lehetőséget. 
-10. Kattintson a **Mentés** gombra.
+10. Válassza a **Mentés** lehetőséget.
 
-## <a name="clean-up-resources"></a>Az erőforrások eltávolítása
+## <a name="clean-up-resources"></a>Erőforrások eltávolítása
 Ha nem kívánja használni a létrehozott profilt további oktatóanyagokhoz vagy tesztelésre, akkor most már törölheti.
 1. Az Intune-ban válassza az **Eszközkonfiguráció**, majd a **Profilok** lehetőséget.
 2. Válassza ki a létrehozott **Az iOS-hez munkahelyi e-mail-cím szükséges** tesztprofilt.
@@ -74,4 +75,4 @@ Ha nem kívánja használni a létrehozott profilt további oktatóanyagokhoz va
 Ezt a rövid útmutató követve létrehozott egy e-mail-profilt az iOS-eszközökhöz. Most használhatja ezt a profilt annak megállapítására, hogy egy iOS-eszköz kompatibilis-e, ehhez létre kell hozni egy megfelelőségi profilt, amely nem megfelelőként jelöl meg minden iOS-eszközt, amely nem egyezik a profillal. A további védelem érdekében létrehozhat egy feltételes hozzáférési szabályzatot, amely letiltja a nem megfelelő iOS-eszközök hozzáférését az e-mailekhez. További információk az eszközmegfelelőségi szabályzatokról: [Az Intune eszközmegfelelőségi szabályzatai – első lépések](../protect/device-compliance-get-started.md).
 
 > [!div class="nextstepaction"]
-> [Oktatóanyag Exchange Online-levelezés biztosítása a felügyelt eszközökön @ no__t-0
+> [Oktatóanyag: Az Exchange Online e-mailjeinek védelme felügyelt eszközökön](../tutorial-protect-email-on-enrolled-devices.md)

@@ -9,26 +9,27 @@ manager: dougeby
 ms.date: 1/4/2018
 ms.topic: archived
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: medium
 ms.technology: ''
-ms.assetid: ''
+ms.assetid: 809d9d76-20f8-4329-9e18-cd7d4946a9af
 ms.reviewer: dagerrit
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f74ed8586bcfca21ea7434ec1c6ad045c8bc1bbd
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 9de5d1550c860d9b160203b47b883550ea4db90e
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731647"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72504925"
 ---
 # <a name="where-did-my-intune-feature-go-in-azure"></a>Hová kerültek az Intune-funkciók az Azure-ban?
 Az Intune Azure Portalra való költöztetésekor éltünk a lehetőséggel, és logikusabban rendeztünk el néhány feladatot. Minden ilyen előrelépés azzal jár, hogy meg kell tanulni az új elrendezést. Ez az útmutató azoknak készült, akik jól ismerik a klasszikus Intune-portált, és szeretnék megtudni, hogyan végezhetik el a feladatokat az Azure Portalbeli Intune-ban. Ha a cikk nem tartalmazza az Ön által keresett információt, írja meg a lap alján hozzászólásban, hogy pótolhassuk.
 ## <a name="quick-reference-guide"></a>Rövid összefoglaló útmutató
 
-|Funkció |Elérési útvonal a klasszikus portálon|Elérési útvonal az Azure Portalbeli Intune-ban|
+|Szolgáltatás |Elérési útvonal a klasszikus portálon|Elérési útvonal az Azure Portalbeli Intune-ban|
 |------------|---------------|---------------|
 |Készülékregisztrációs program (DEP) [csak iOS rendszeren]|Felügyelet > Mobileszköz-kezelés > iOS > Készülékregisztrációs program|[Eszközregisztráció > Apple-regisztráció > Regisztrációs program tokenje](#where-did-apple-dep-go) |
 |Készülékregisztrációs program (DEP) [csak iOS rendszeren]| Felügyelet > Mobileszköz-kezelés > iOS és macOS > Készülékregisztrációs program |[Eszközregisztráció > Apple-regisztráció > Regisztrációs program sorozatszámai](#where-did-apple-dep-go) |
@@ -51,7 +52,7 @@ A klasszikus portálon be lehetett állítani a modern windowsos és macOS-es, v
 
 ![Klasszikus mobileszköz-regisztrációs szabályok képe](./media/ui-changes/01-classic-rules.png)
 
-Ezek a szabályok kivétel nélkül vonatkoztak az Intune-fiók összes felhasználójára. A Azure Portalban ezek a szabályok két különböző típusú házirendben jelennek meg: Az eszközök típusának korlátozásai és az eszközökre vonatkozó korlátozások korlátozása.
+Ezek a szabályok kivétel nélkül vonatkoztak az Intune-fiók összes felhasználójára. Az Azure Portalon ezek a szabályok két szabályzattípusba (eszköztípus szerinti és eszközök száma szerinti korlátozások) lettek szétválasztva.
 
 ![Azure-os mobileszköz-regisztrációs korlátozások képe](./media/ui-changes/02-azure-enroll-restrictions.png)
 

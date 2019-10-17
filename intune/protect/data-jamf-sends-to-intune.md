@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 01/16/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
@@ -17,19 +18,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 449e799dfc0531958c1578179cf07440d348ecf8
-ms.sourcegitcommit: f04e21ec459998922ba9c7091ab5f8efafd8a01c
+ms.openlocfilehash: e4bf6df44335f3375d58d3c2c11da7cb3f982b3e
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71813949"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72502416"
 ---
 # <a name="data-jamf-pro-sends-to-intune"></a>A Jamf Pro által az Intune-ba küldött adatok
 
 Ha a [JAMF Pro](https://www.jamf.com) használatával felügyeli a végfelhasználók Mac számítógépét az Intune-nal, a JAMF Pro rögzíti a felügyelt MacOS-eszközök leltározási adatait. 
 
-## <a name="data"></a>Data  
-Az Intune-nal JAMF Pro-megosztások listáját itt tekintheti meg: [Appendix: A JAMF Pro technikai dokumentációjában a Microsoft Intune @ no__t-0 címen megosztott leltári adatok. 
+## <a name="data"></a>Adat  
+Az Intune-nal JAMF Pro-megosztással rendelkező adatok listájáért lásd a függelék: a JAMF Pro technikai dokumentációjában [Microsoft Intune megosztott leltári információk](https://docs.jamf.com/technical-papers/jamf-pro/microsoft-intune/10.9.0/Appendix__Inventory_Information_Shared_with_Microsoft_Intune.html) című szakaszt. 
 
 <!--  
 Jamf Pro reports the following information to Intune:  
@@ -81,5 +82,5 @@ You can remove a Jamf-managed device from the Intune console by selecting **Dele
 -->
 
 ## <a name="next-steps"></a>További lépések
-[A Jamf által felügyelt eszköz eltávolításáról a Jamf Pro dokumentációjában](https://www.jamf.com/jamf-nation/articles/80/unmanaging-computers-while-preserving-their-inventory-information) olvashat részletesebben. Ha további segítségre van szüksége, támogatási jegyet is küldhet a [Jamf támogatási szolgálatának](https://www.jamf.com/support/). 
+A [JAMF által felügyelt eszközök JAMF Pro docs-beli eltávolításával](https://www.jamf.com/jamf-nation/articles/80/unmanaging-computers-while-preserving-their-inventory-information)kapcsolatos információk. További segítségért a támogatási jegyet is [JAMF-támogatással](https://www.jamf.com/support/) teheti meg. 
 

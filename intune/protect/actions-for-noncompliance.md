@@ -8,36 +8,37 @@ manager: dougeby
 ms.date: 08/22/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7fabc475e1ae05e6ef3fe70e8a507a15bee456cb
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: c432fbd38250212fcba346ec4762cb88a418cbce
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732343"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72509687"
 ---
 # <a name="automate-email-and-add-actions-for-noncompliant-devices-in-intune"></a>E-mailek automatizálása és műveletek hozzáadása a nem megfelelő eszközökhöz az Intune-ban
 
 A megfelelőségi szabályzatoknak vagy szabályoknak nem megfelelő eszközökhöz hozzáadhat nem **megfelelőségi műveleteket**. Ez a funkció egy időben rendezett műveletsort konfigurál, például a végfelhasználói levelezést és egyebeket.
 
-## <a name="overview"></a>Áttekintés
+## <a name="overview"></a>Házirend
 
 Alapértelmezés szerint az Intune a nem megfelelő eszköz észlelése után azonnal nem megfelelőként jelöli meg azt. Az Azure Active Directory (AD) [feltételes hozzáférés](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal) ezt követően blokkolja az eszközt. Ha egy eszköz nem megfelelő, a meg nem **felelés** esetén is rugalmasságot biztosít, hogy eldöntse, mi a teendő. Például nem kell azonnal letiltani az eszközt, hanem türelmi időszakot is meghatározhat az eszköz megfelelőségének visszaállításáig.
 
 Többféle művelet használható:
 
-- **E-mail küldése a végfelhasználónak**: E-mail-értesítések testreszabása, mielőtt elküldené a felhasználónak. Testre szabhatja az e-mail címzettjeit és tárgyát, az üzenet szövegét, a céges emblémát és a kapcsolattartási adatokat.
+- **E-mail küldése a felhasználónak**: Testreszabhatja az értesítő e-mailt, mielőtt elküldené a végfelhasználónak. Testre szabhatja az e-mail címzettjeit és tárgyát, az üzenet szövegét, a céges emblémát és a kapcsolattartási adatokat.
 
     Az Intune a nem megfelelő eszköz adatait is szerepelteti az értesítésben.
 
-- **A nem megfelelő eszköz távoli zárolása**: A nem megfelelő eszközökön távoli zárolást adhat ki. A felhasználótól az eszköz PIN-kódot vagy jelszót fog kérni az eszköz feloldásához. További információ a [Távoli zárolás](../remote-actions/device-remote-lock.md) funkcióról. 
+- **A nem megfelelő eszköz távoli zárolása**: A nem megfelelő eszközök esetén távoli zárolást rendelhet el. A felhasználótól az eszköz PIN-kódot vagy jelszót fog kérni az eszköz feloldásához. További információ a [Távoli zárolás](../remote-actions/device-remote-lock.md) funkcióról. 
 
-- Az **eszköz nem megfelelőként való megjelölése**: Hozzon létre egy ütemtervet (a napok száma szerint), miután az eszköz nem megfelelőként van megjelölve. A műveletet konfigurálhatja azonnali kezdettel, de meghatározhat egy türelmi időszakot is a megfelelőséghez.
+- **Eszköz megjelölése nem megfelelőként**: Megadhatja, hogy hány napon belül legyen nem megfelelőként megjelölve az eszköz. A műveletet konfigurálhatja azonnali kezdettel, de meghatározhat egy türelmi időszakot is a megfelelőséghez.
 
 Ez a cikk a következőkhöz nyújt útmutatást:
 
@@ -49,9 +50,9 @@ Ez a cikk a következőkhöz nyújt útmutatást:
 
 - A meg nem felelés esetén végrehajtandó műveletek beállításához legalább egy eszközmegfelelőségi szabályzatra van szükség. Eszközmegfelelőségi szabályzat létrehozásához tekintse meg a következő platformokat:
 
-  - [Android](compliance-policy-create-android.md)
+  - [Android--](compliance-policy-create-android.md)
   - [Androidos munkahelyi profilok](compliance-policy-create-android-for-work.md)
-  - [iOS](compliance-policy-create-ios.md)
+  - [iOS--](compliance-policy-create-ios.md)
   - [macOS](compliance-policy-create-mac-os.md)
   - [Windows](compliance-policy-create-windows.md)
 
@@ -63,10 +64,10 @@ Ha e-mailt szeretne küldeni a felhasználóknak, hozzon létre egy értesítés
 
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 2. Válassza az **Eszközmegfelelőség** > **Értesítések** lehetőséget.
-3. Válassza az **Értesítés létrehozása** lehetőséget. Adja meg a következő információkat:
+3. Válassza az **Értesítés létrehozása** lehetőséget. Adja meg az alábbi adatokat:
 
-   - **Name**
-   - **Subject**
+   - **Név**
+   - **Tárgy**
    - **Üzenet**
    - **E-mail fejléce – a cég emblémájának megjelenítése**
    - **E-mail lábléce – a cég emblémájának megjelenítése**
@@ -96,14 +97,14 @@ További műveletet akkor vehet fel, ha megfelelőségi szabályzatot hoz létre
 3. Válassza a **Meg nem felelés esetén végrehajtandó műveletek** > **Hozzáadás** lehetőséget.
 4. Válassza ki a **műveletet**: 
 
-    - **E-mail küldése a végfelhasználóknak**: Ha az eszköz nem megfelelő, válassza a felhasználó e-mail-címét. Ezenkívül: 
+    - **E-mail küldése a felhasználóknak**: Az eszköz meg nem felelése esetén e-mailt küldhet a felhasználónak. Ezenkívül: 
     
          - Válassza ki a korábban létrehozott **üzenetsablont**
          - Csoportok kiválasztásával adjon meg esetleges **további címzetteket**
     
-    - **A nem megfelelő eszköz távoli zárolása**: Ha az eszköz nem megfelelő, zárolja az eszközt. Ez a művelet kényszeríti a felhasználót, hogy PIN-kódot vagy jelszót adjon meg az eszköz zárolásának feloldásához. 
+    - **A nem megfelelő eszköz távoli zárolása**: Az eszköz meg nem felelése esetén zárolhatja az eszközt. Ez a művelet kényszeríti a felhasználót, hogy PIN-kódot vagy jelszót adjon meg az eszköz zárolásának feloldásához. 
     
-5. **Ütemterv**konfigurálása: Adja meg a nem megfelelő napok számát (0 – 365) a felhasználói eszközökön a művelet elindításához. A türelmi időszak után kikényszerítheti a [feltételes hozzáférési](conditional-access-intune-common-ways-use.md) szabályzatot. Ha **0** (nulla) értéket ad meg, akkor a feltételes hozzáférés **azonnal**érvénybe lép. Ha például egy eszköz nem megfelelő, a feltételes hozzáférés használatával azonnal letilthatja az e-mailek, a SharePoint és az egyéb szervezeti erőforrások elérését.
+5. **Ütemterv**konfigurálása: Itt adhatja meg, hogy a nem megfelelőség után hány nap (0 – 365) után aktiválja a művelet a felhasználói eszközökön. A türelmi időszak után kikényszerítheti a [feltételes hozzáférési](conditional-access-intune-common-ways-use.md) szabályzatot. Ha **0** (nulla) értéket ad meg, akkor a feltételes hozzáférés **azonnal**érvénybe lép. Ha például egy eszköz nem megfelelő, a feltételes hozzáférés használatával azonnal letilthatja az e-mailek, a SharePoint és az egyéb szervezeti erőforrások elérését.
 
     Megfelelőségi szabályzat létrehozásakor a rendszer automatikusan létrehozza a **megjelölő eszköz nem megfelelő** műveletét, és automatikusan **0** napra (azonnal) állítja be. Ezzel a művelettel, amikor az eszköz bejelentkezik, az eszköz azonnal nem megfelelőként lesz kiértékelve. Ha a feltételes hozzáférést is használja, a feltételes hozzáférés azonnal beindul. Ha engedélyezni szeretné a türelmi időszakot, **módosítsa az** **eszköz megjelölése nem megfelelő** műveletét.
     

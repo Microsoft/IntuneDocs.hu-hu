@@ -9,6 +9,7 @@ ms.date: 09/18/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: d3182a85-328b-45b4-bf7a-9f6249984641
 searchScope:
@@ -18,12 +19,12 @@ ms.reviewer: coferro
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e2a0c408868297375ea39e2c09d70740dc316864
-ms.sourcegitcommit: c19584b36448bbd4c8638d7cab552fe9b3eb3408
+ms.openlocfilehash: 68f67d50c05d2ec6bb819c507f2374eec69a961c
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71163308"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72508433"
 ---
 # <a name="reset-device-from-company-portal-website"></a>Eszköz alaphelyzetbe állítása Céges portál webhelyről
 
@@ -44,7 +45,7 @@ Az eszköz alaphelyzetbe állítása a Céges portálban nem érhető el minden 
 
 3. Válassza az **Alaphelyzetbe állítás** lehetőséget. Ha a visszaállítási lehetőség nem jelenik meg az oldal tetején, válassza az **Egyéb (…)**  > **Alaphelyzet** lehetőséget.  
 
-     ![A kiválasztott eszköz adatai a Céges portál webhelyén, felül az Átnevezés, az Eltávolítás, az Eszköz alaphelyzetbe állítása, a Jelszó alaphelyzetbe állítása és a Távoli zárolás lehetőségekre mutató hivatkozásokkal. ](./media/rename-reset-device-1808.png)  
+     ![A kiválasztott eszközzel kapcsolatos lehetőségek a Céges portál webhelyén, felül az Átnevezés, az Eltávolítás, az Eszköz alaphelyzetbe állítása, a Jelszó alaphelyzetbe állítása és a Távoli zárolás lehetőségekre mutató hivatkozásokkal. ](./media/rename-reset-device-1808.png)  
 
     ![Képernyőkép a további ikonról, amely piros nyíllal van kiemelve.](./media/rename-reset-device-step3-more-1808.png)  
 

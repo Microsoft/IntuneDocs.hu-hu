@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 10/20/2018
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: enrollment
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 4a3a11a8-9c0c-4334-8c6b-6fea4d0a2efb
@@ -17,14 +18,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2ef002b508e484d6967bbdd0908729332d866046
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 0718fae09228b9359b073901f3a344a09a6176e7
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731739"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72509248"
 ---
-# <a name="terms-and-conditions-for-user-access"></a>Felhasználói hozzáférési használati feltételek
+# <a name="terms-and-conditions-for-user-access"></a>Felhasználói hozzáférés használati feltételei
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
@@ -50,24 +51,24 @@ Az alábbi lépések végrehajtásával hozhat létre használati feltételeket.
 3. Válassza a **Létrehozás** lehetőséget.
 4. Az **alapok** lapon a következő információkat kell megadni:
 
-   - **Név**: A Azure Portal feltételeinek neve. A felhasználók nem látják ezt a nevet.
-   - **Description** (Leírás): A Azure Portalban található feltételek azonosítását megkönnyítő további részletek.
+   - **Name (név**): a Azure Portalban szereplő feltételek neve. A felhasználók nem látják ezt a nevet.
+   - **Leírás**: További részletek, amelyek alapján könnyebben felismerhető az adott feltételkészlet az Azure Portalon.
 
     ![A feltételek és kikötések alapismeretek lapját bemutató Azure Portal képernyőképe](./media/terms-and-conditions-create/terms-basics-page.png)
 
 5. A **tovább** gombra kattintva lépjen a **feltételek** lapra, és adja meg a következő információkat:
 
-   - **Cím**: A kifejezések neve, amelyet a felhasználók a Céges portál az **Összefoglalás**fölött látnak.
-   - **Feltételek és kikötések**: A felhasználók által megjelenő feltételek és kikötések elfogadják vagy elutasítja a felhasználókat.
-   - **A feltételek összefoglalása**: Szöveg, amely ismerteti, hogy mit jelent, ha a felhasználók elfogadják a feltételeket. Például: „Az eszköz regisztrálásával Ön elfogadja a Contoso által meghatározott használati feltételeket. Folytatás előtt figyelmesen olvassa el a feltételeket.”
+   - **Cím**: a felhasználóknak ez jelenik meg a Céges portálon az **Összegzés** fölött.
+   - **Használati feltételek**: Azok a használati feltételek, amelyeket a felhasználók látnak, és amelyek elfogadása vagy elutasítása kötelező.
+   - **Feltételek összefoglalása**: Ez a szöveg ismerteti, hogy mi történik, ha a felhasználók elfogadják a feltételeket. Például: „Az eszköz regisztrálásával Ön elfogadja a Contoso által meghatározott használati feltételeket. Folytatás előtt figyelmesen olvassa el a feltételeket.”
 
 6. A **tovább** gombra kattintva nyissa meg a **hatókör címkék** lapot.
 
 7. Válassza a **hatókör címkék kiválasztása**lehetőséget, válassza ki a feltételeket és kikötéseket hozzárendelni kívánt hatóköri címkéket, majd válassza a **kiválasztás**lehetőséget. 
 
 8. A **tovább** gombra kattintva lépjen a **hozzárendelések** lapra, és válassza az alábbi lehetőségek egyikét a **hozzárendeléshez**:
-    - **Minden felhasználó**: Válassza ezt a lehetőséget, ha a feltételeket és a kikötéseket minden felhasználóhoz hozzá szeretné rendelni.
-    - **Csoportok kiválasztása**: Válassza ezt a lehetőséget, ha a feltételeket és a kikötéseket az Ön által azonosított csoportokban mindenki számára szeretné hozzárendelni, ha a **csoportok kiválasztása lehetőséget**választja.
+    - **Minden felhasználó**: válassza ezt a lehetőséget a feltételek és kikötések minden felhasználóhoz való hozzárendeléséhez.
+    - **Csoportok kiválasztása**: válassza ezt a lehetőséget, ha a feltételeket és kikötéseket az Ön által azonosított csoportokban mindenki számára szeretné hozzárendelni, **válassza a csoportok kiválasztása lehetőséget**.
 
 9. Válassza a **következő** > **Létrehozás**elemet.
 

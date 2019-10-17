@@ -9,6 +9,7 @@ ms.date: 01/03/2017
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: 4a120c3d-d520-4d48-ae4c-3338ca4e7bde
 searchScope:
@@ -18,23 +19,23 @@ ms.reviewer: priyar
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dd15e960b3c2802930981271cb6cd9ffea841cee
-ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
+ms.openlocfilehash: 01b03e986cd2540c364f2b6d8d3e20412fd5b82e
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67545491"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506152"
 ---
 # <a name="enroll-your-windows-phone-81-device-in-intune"></a>Windows Phone 8.1-eszköz regisztrálása az Intune-ban  
 
-Regisztrálni az eszközöket a munkahelyi vagy iskolai e-mailek, fájlok és egyéb erőforrások eléréséhez. Ha regisztrálja az eszközeit, azzal a szervezete megóvhatja a vállalati adatokat. További információk a regisztrációval kapcsolatban: [Mi történik a Céges portál alkalmazás telepítésekor és az eszköz Intune-beli regisztrálásakor?](what-happens-if-you-install-the-company-portal-app-and-enroll-your-device-in-intune-windows.md), illetve [Mit láthat a cég informatikai támogatási szolgálata az eszközén, és mit nem?](what-info-can-your-company-see-when-you-enroll-your-device-in-intune.md) témakörben.  
+Az eszközök regisztrálásával hozzáférhet a munkahelyi vagy iskolai e-mailekhez, fájlokhoz és egyéb erőforrásokhoz. Ha regisztrálja az eszközeit, azzal a szervezet megóvhatja a vállalati adatokat. További információk a regisztrációval kapcsolatban: [Mi történik a Céges portál alkalmazás telepítésekor és az eszköz Intune-beli regisztrálásakor?](what-happens-if-you-install-the-company-portal-app-and-enroll-your-device-in-intune-windows.md), illetve [Mit láthat a cég informatikai támogatási szolgálata az eszközén, és mit nem?](what-info-can-your-company-see-when-you-enroll-your-device-in-intune.md) témakörben.  
 
--Eszköz regisztrálása az Intune-ban, kövesse az utasításokat, amelyek egyeznek az engedélyeket vagy az aktuális állapota készletét.
+Az eszköz Intune-beli regisztrálásához kövesse az engedélyeinek megfelelő utasításokat vagy az aktuális fiók állapotát.
 
-## <a name="enroll-through-company-portal"></a>Vállalati portálon keresztül léptethetik be  
-Ha a Microsoft Store áruházából telepíthető a vállalati portál alkalmazást, kövesse az alábbi lépéseket. 
+## <a name="enroll-through-company-portal"></a>Regisztrálás Céges portál  
+Kövesse az alábbi lépéseket, ha a Microsoft Storeból telepítheti a Céges portál alkalmazást. 
 
-1. Koppintson a **Start** > **Store**.  
+1. Koppintson a **Start** > **áruház**elemre.  
 
 2. Koppintson a **Keresés** elemre, majd írja be a **vállalati portál** kifejezést.  
 
@@ -57,7 +58,7 @@ Regisztrálja az eszközt:
 
 3. Pöccintéssel lépjen az **Eszközök** területre.  
 
-4. Válassza ki **koppintva regisztrálhatja vagy azonosíthatja az eszközt**.  
+4. **Az eszköz regisztrálásához vagy azonosításához kattintson a koppintás gombra**.  
 
 
     ![A Koppintson ide az eszköz regisztrálásához vagy azonosításához képernyő](./media/WP81-enroll-1-swipe-my-devices.png)  
@@ -77,8 +78,8 @@ Regisztrálja az eszközt:
 
     ![A Fiók hozzáadva képernyő](./media/WP81-enroll-4-account-added.png)  
 
-## <a name="enroll-through-settings-app"></a>Gépház alkalmazás keresztül léptethetik be  
-Ha nem fér hozzá a Microsoft Store a Windows Phone-eszközön, vagy ha nem rendelkezik Microsoft-Account, kövesse az alábbi lépéseket.
+## <a name="enroll-through-settings-app"></a>Regisztrálás a beállítások alkalmazásban  
+Kövesse az alábbi lépéseket, ha nem fér hozzá a Microsoft Store a Windows Phone-telefon eszközről, vagy ha nincs Microsoft-fiókja.
 
 1. Koppintson a  **Beállítások** &gt; **Munkahely** elemre.  
 

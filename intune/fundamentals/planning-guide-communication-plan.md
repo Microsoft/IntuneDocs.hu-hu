@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 10/30/2017
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 393ebe75-d001-485a-b81c-6361c8b5e6ee
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1882a9d196cd9877cde37e9d7ef280b718b470cb
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 78e13b0db6786612fbfe3cd2d1de5f0dc049abeb
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732215"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72505229"
 ---
 # <a name="develop-a-rollout-communication-plan"></a>Bevezetési kommunikációs terv kidolgozása
 
@@ -85,6 +86,6 @@ Az Intune-projekt kezdeti szakaszában például a kommunikáció kiterjedhet a 
 
 A saját kommunikációs tervének kidolgozásához [letöltheti a fenti táblázat sablonját](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0).
 
-## <a name="next-step"></a>Következő lépés
+## <a name="next-step"></a>További lépések
 
 A következő szakasz a [támogatási terv kidolgozásával](planning-guide-support-plan.md) kapcsolatos útmutatást tartalmaz.

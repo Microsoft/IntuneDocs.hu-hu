@@ -8,18 +8,19 @@ manager: dougeby
 ms.date: 03/12/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: high
 ms.technology: ''
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: kerimh
-ms.openlocfilehash: 4357a3235386d9fd17c1df23004e9bc8ddeb28ca
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 7d94a2c7e47b3cfcc9f4592faf0a4c2a09a24ac4
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730847"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72495245"
 ---
 # <a name="delivery-optimization-settings-in-microsoft-intune"></a>Kézbesítési optimalizálási beállítások a Microsoft Intune
 
@@ -42,16 +43,16 @@ Ha többet szeretne megtudni a Windows 10-es továbbítási optimalizálásáró
 
 3. Adja meg a következő tulajdonságokat:
 
-    - **Név**: Adjon meg egy leíró nevet az új profilhoz.
-    - **Description** (Leírás): Adja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
-    - **Platform**: Válassza ki a platformot:  
+    - **Név**: Adja meg az új profil leíró nevét.
+    - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
+    - **Platform**: válassza ki a platformot:  
 
         - **Windows 10 és újabb**
 
-    - **Profil típusa**: Válassza a **kézbesítési optimalizálás**lehetőséget.
-    - **Beállítások**: Konfigurálja azokat a beállításokat, amelyek meghatározzák, hogyan szeretné letölteni a frissítéseket és az alkalmazásokat. Az elérhető beállításokkal kapcsolatos további információkért lásd: [az Intune kézbesítési optimalizálási beállításai](../delivery-optimization-settings.md).
+    - **Profil típusa**: válassza a **kézbesítési optimalizálás**lehetőséget.
+    - **Beállítások**: konfigurálja azokat a beállításokat, amelyek meghatározzák, hogyan szeretné letölteni a frissítéseket és az alkalmazásokat. Az elérhető beállításokkal kapcsolatos további információkért lásd: [az Intune kézbesítési optimalizálási beállításai](../delivery-optimization-settings.md).
 
-4. Ha elkészült, kattintson **az OK** > **Létrehozás** gombra a módosítások mentéséhez.
+4. Ha elkészült, válassza **az OK** > **Létrehozás** lehetőséget a módosítások mentéséhez.
 
 Ekkor létrejön a profil, és megjelenik a listában. Ezután [rendelje hozzá a profilt](device-profile-assign.md) , majd [Figyelje annak állapotát](device-profile-monitor.md).
 
@@ -64,11 +65,11 @@ A **kézbesítési optimalizálási** beállítások lecserélik a **szoftverfri
     1. Az Intune-ban válassza az **eszköz konfigurációja** > **profilok** > **profil létrehozása**lehetőséget.
     2. Adja meg a következő tulajdonságokat:
 
-        - **Név**: Adjon meg egy leíró nevet az új profilhoz.
-        - **Description** (Leírás): Adja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
-        - **Platform**: Válassza **a Windows 10 és újabb**lehetőséget.
-        - **Profil típusa**: Válassza a **kézbesítési optimalizálás**lehetőséget.
-        - **Beállítások**: A **kézbesítési optimalizálás letöltési módjához**válassza ki ugyanazt a módot, amelyet a meglévő szoftverfrissítési kör használ, kivéve, ha módosítani szeretné az eszközökön alkalmazott beállításokat. A választható lehetőségek:
+        - **Név**: Adja meg az új profil leíró nevét.
+        - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
+        - **Platform**: válassza **a Windows 10 és újabb**lehetőséget.
+        - **Profil típusa**: válassza a **kézbesítési optimalizálás**lehetőséget.
+        - **Beállítások**: a **kézbesítési optimalizálás letöltési módjához**válassza ki ugyanazt a módot, amelyet a meglévő szoftverfrissítési kör használ, hacsak nem szeretné módosítani az eszközökön alkalmazott beállításokat. A választható lehetőségek:
             - **Nincs konfigurálva**
             - **Csak HTTP, nincs társ**
             - **HTTP összekeverve az azonos NAT mögötti egyenrangú hálózattal**

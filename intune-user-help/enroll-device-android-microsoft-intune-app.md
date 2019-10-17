@@ -9,6 +9,7 @@ ms.date: 08/07/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: 0ed3a002-7533-4001-ae24-e10b64b66620
 searchScope:
@@ -18,12 +19,12 @@ ms.reviewer: esmich
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ef7ec650c65206eeab69d8f666dc4fb39052bbdb
-ms.sourcegitcommit: 549352bdea93cc2809e3e0010bfcc10bd44dc728
+ms.openlocfilehash: 81c842eb27b1b9131c164ced5aeed86a78a37353
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68862190"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506293"
 ---
 # <a name="enroll-your-corporate-device-with-the-microsoft-intune-app"></a>Vállalati eszköz regisztrálása a Microsoft Intune alkalmazással
 
@@ -32,7 +33,7 @@ Regisztrálja vállalati tulajdonú Android-eszközét, hogy biztonságos hozzá
 Négyféle módon regisztrálhat. A szervezetnek tudnia kell, hogy melyik lehetőséget kell használni.
  
 * Kis hatótávolságú kommunikáció (NFC)  
-* Jogkivonat  
+* Azonosító  
 * QR-kód   
 * Google Zero Touch  
 
@@ -44,24 +45,24 @@ Az eszköz beállításához és regisztrálásához hajtsa végre az alábbi l�
 
 1. Kapcsolja be az új vagy a gyári beállítások visszaállítására szolgáló eszközt.  
 2. Az **Üdvözlőképernyőn** válasszon nyelvet.   Ha arra utasította, hogy egy QR-kóddal vagy NFC-sel regisztrálja magát, kövesse az alábbi lépéseket, amely megfelel a metódusnak.  
-     * NFC: Koppintson az NFC által támogatott eszközre egy programozó eszközön a szervezet hálózatához való kapcsolódáshoz. Kövesse a képernyőn megjelenő utasításokat. Amikor eléri a Chrome szolgáltatási feltételeinek képernyőjét, folytassa az 5. lépéssel.  
+     * NFC: koppintson az NFC által támogatott eszközre egy programozói eszközön a szervezet hálózatához való kapcsolódáshoz. Kövesse a képernyőn megjelenő utasításokat. Amikor eléri a Chrome szolgáltatási feltételeinek képernyőjét, folytassa az 5. lépéssel.  
 
-     * QR-kód: Hajtsa végre a [QR-kód](#qr-code-enrollment)beléptetésének lépéseit.  
+     * QR-kód: hajtsa végre a [QR-kód beléptetésének](#qr-code-enrollment)lépéseit.  
 
      Ha arra utasította, hogy használjon egy másik módszert, folytassa a 3. lépéssel.    
 
 3. Kapcsolódjon a Wi-Fi-hez, és koppintson a **tovább**gombra. Kövesse a beléptetési módszernek megfelelő lépést. 
 
-    * Jogkivonat A Google bejelentkezési képernyőjének beszerzéséhez hajtsa végre a [jogkivonat-regisztráció](#token-enrollment)lépéseit.  
-    * Google Zero Touch: A Wi-Fi-hez való csatlakozás után az eszközt a szervezet felismeri. Folytassa a 4. lépéssel, és kövesse a képernyőn megjelenő utasításokat, amíg a telepítés be nem fejeződik.    
+    * Jogkivonat: Ha a Google bejelentkezési képernyőjére lép, hajtsa végre a [jogkivonat-regisztráció](#token-enrollment)lépéseit.  
+    * Google Zero Touch: a Wi-Fi-hez való csatlakozás után az eszközt a szervezet felismeri. Folytassa a 4. lépéssel, és kövesse a képernyőn megjelenő utasításokat, amíg a telepítés be nem fejeződik.    
  
        ![Példa a Google-használati feltételek képernyő képére, ha a Google Zero Touch használatát látja, kiemelve az elfogadás & folytatás gombot.](./media/google-zero-touch-intune-app-01.png)   
    
-4. Tekintse át a Google használati feltételeit. Ezután koppintson az **elfogadás &AMP; folytatás**gombra.  
+4. Tekintse át a Google használati feltételeit. Ezután koppintson az **elfogadás & folytatás**gombra.  
 
       ![Példa a Google feltételek képernyőre, és válassza ki az elfogadás & folytatás gombot.](./media/fully-managed-intune-app-04.png)   
 
-6. Tekintse át a Chrome szolgáltatási feltételeit. Ezután koppintson az **elfogadás &AMP; folytatás**gombra.  
+6. Tekintse át a Chrome szolgáltatási feltételeit. Ezután koppintson az **elfogadás & folytatás**gombra.  
 
    ![Példa a Chrome használati feltételeinek képére, és válassza ki az elfogadás & folytatás gombot.](./media/fully-managed-intune-app-06.png)   
 
@@ -118,7 +119,7 @@ Ebben a szakaszban meg kell adnia a vállalat által biztosított tokent. Ha elk
 
 4. Válassza a **kód megadása**lehetőséget.  
 
-5. A **vizsgálat vagy a kód megadása** képernyőn írja be azt a kódot, amelyet a szervezet adott meg.  Ezután kattintson a **Next** (Tovább) gombra.  
+5. A **vizsgálat vagy a kód megadása** képernyőn írja be azt a kódot, amelyet a szervezet adott meg.  Ezután kattintson a **tovább**gombra.  
 
    ![Példa a vizsgálatra vagy a kód beírása képernyőre, majd a Tovább gombra.](./media/token-intune-app-04.png)  
 

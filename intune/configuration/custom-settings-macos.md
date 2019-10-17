@@ -9,18 +9,19 @@ manager: dougeby
 ms.date: 06/26/2019
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: medium
 ms.technology: ''
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3b472d26c9f20cbd678ab118b87746e47a613743
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 5c24c120b033a4db0162e985ef185932dd931eda
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730871"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506924"
 ---
 # <a name="use-custom-settings-for-macos-devices-in-microsoft-intune"></a>macOS-eszközökre vonatkozó egyéni beállítások használata a Microsoft Intune-ban
 
@@ -55,13 +56,13 @@ Ez a cikk útmutatást nyújt az Apple konfigurátor és az Apple-profil kezelő
 
 ## <a name="custom-configuration-profile-settings"></a>Egyéni konfigurációs profil beállításai
 
-- **Egyéni konfigurációs profil neve**: Adja meg a szabályzat nevét. Ez a név megjelenik az eszközön, valamint az Intune állapotában.
-- **Konfigurációs profil fájlja**: Keresse meg a létrehozott konfigurációs profilt az Apple konfigurátor vagy az Apple Profile Manager használatával. Az importált fájl megjelenik a **Fájl tartalma** területen.
+- **Az egyéni konfigurációs profil neve**: Adja meg a szabályzat nevét. Ez a név megjelenik az eszközön, valamint az Intune állapotában.
+- **Konfigurációs profil fájlja**: Tallózással keresse meg az Apple Configuratorrel vagy az Apple Profile Managerrel létrehozott konfigurációs profilt. Az importált fájl megjelenik a **Fájl tartalma** területen.
 
-  Az eszközök jogkivonatait is hozzáadhatja a `.mobileconfig` fájlokhoz. Az eszköz-jogkivonatok az eszközre vonatkozó információk hozzáadására szolgálnak. A sorozatszám megjelenítéséhez például írja be `{{serialnumber}}`a következőt:. Az eszközön a szöveg a következőhöz hasonló `123456789ABC`módon jelenik meg:, amely egyedi az egyes eszközökön. A változók beírásakor ügyeljen arra, hogy kapcsos zárójeleket `{{ }}`használjon. Az [alkalmazás-konfigurációs tokenek](../apps/app-configuration-policies-use-ios.md#tokens-used-in-the-property-list) tartalmazzák a használható változók listáját. Használhatja a `deviceid` vagy bármely más eszközre jellemző értéket is.
+  Az `.mobileconfig` fájlokhoz is hozzáadhat eszköz jogkivonatokat. Az eszköz-jogkivonatok az eszközre vonatkozó információk hozzáadására szolgálnak. A sorozatszám megjelenítéséhez például írja be a következőt: `{{serialnumber}}`. Az eszközön a szöveg a `123456789ABC` értékhez hasonlóan jelenik meg, amely minden eszköz esetében egyedi. Változók beírásakor ügyeljen arra, hogy kapcsos zárójeleket használjon `{{ }}`. Az [alkalmazás-konfigurációs tokenek](../apps/app-configuration-policies-use-ios.md#tokens-used-in-the-property-list) tartalmazzák a használható változók listáját. A `deviceid` vagy bármely más, eszközre jellemző értéket is használhatja.
 
   > [!NOTE]
-  > A rendszer nem érvényesíti a változókat a felhasználói felületen, és megkülönbözteti a kis-és nagybetűket. Ennek eredményeképpen előfordulhat, hogy a profilok helytelen bevitelsel lettek mentve. Ha például a `{{deviceid}}`helyett a értéket `{{DeviceID}}` adja meg, akkor az eszköz egyedi azonosítója helyett a literál sztring jelenik meg. Ügyeljen arra, hogy a helyes adatokat adja meg.
+  > A rendszer nem érvényesíti a változókat a felhasználói felületen, és megkülönbözteti a kis-és nagybetűket. Ennek eredményeképpen előfordulhat, hogy a profilok helytelen bevitelsel lettek mentve. Ha például `{{deviceid}}` helyett a `{{DeviceID}}` értéket adja meg, akkor az eszköz egyedi azonosítója helyett a literál sztring jelenik meg. Ügyeljen arra, hogy a helyes adatokat adja meg.
 
 A módosítások mentéséhez válassza az **OK** > **Létrehozás** lehetőséget. Ekkor létrejön a profil, és megjelenik a profilok listájában.
 

@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 04/25/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: aa7ecff7-8579-4009-8fd6-e17074df67de
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e1d534ed3d631a94296a5f6c76c2a323b00afa4
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 142d24452c401f83322b71a104ed47759eb6179f
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729551"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72509090"
 ---
 # <a name="network-access-control-nac-integration-with-intune"></a>Hálózati hozzáférés-vezérlés (NAC) integrálása az Intune-nal
 
@@ -66,7 +67,7 @@ A követező listában megtalálhatja annak áttekintését, hogyan működik az
 - A NAC a következő VPN-kiszolgálókon érhető el anélkül, hogy engedélyezze a NAC-t a VPN-profilban:
 
   - NAC a Cisco örökölt AnyConnect
-  - F5 Access Legacy
+  - F5-hozzáférés örökölt
   - Citrix VPN
 
 - A NAC Citrix SSO és F5 hozzáférés esetén is elérhető. A NAC engedélyezése Citrix SSO esetén:
@@ -81,7 +82,7 @@ A követező listában megtalálhatja annak áttekintését, hogyan működik az
 - A NAC engedélyezése F5-hozzáféréshez:
 
   - Használja az F5 BIG-IP 13.1.1.5. A BIG-IP 14 nem támogatott.
-  - A BIG-IP integrálása az Intune-nal a NAC-hoz. A [Overview: Az APM konfigurálása eszköz-testtartási ellenőrzésekhez végpont-felügyeleti rendszerekkel: @ no__t-0 F5 útmutató a lépéseket tartalmazza.
+  - A BIG-IP integrálása az Intune-nal a NAC-hoz. Az [áttekintő: az APM konfigurálása eszköz-testhelyzeti ellenőrzésekhez végpont-felügyeleti rendszerekkel](https://support.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-client-configuration-7-1-6/6.html#guid-0bd12e12-8107-40ec-979d-c44779a8cc89) F5 útmutató a lépéseket tartalmazza.
   - A VPN-profilban válassza az **alapbeállítások** >  a**hálózati Access Control (NAC) engedélyezése** > válassza **az Elfogadom lehetőséget.**
 
   Biztonsági okokból a VPN-kapcsolat 24 óránként le van választva. A VPN-t azonnal újra lehet kapcsolni.

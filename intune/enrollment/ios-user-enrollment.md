@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 10/2/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: enrollment
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57162664d6ca3a35696e56088c4e86acadf45371
-ms.sourcegitcommit: 223d64a72ec85fe222f5bb10639da729368e6d57
+ms.openlocfilehash: f201cdac0f881ce03863704dd80d8635de52074a
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71955458"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72505459"
 ---
 # <a name="set-up-ios-and-ipados-user-enrollment-preview"></a>IOS-és iPadOS-felhasználói regisztráció beállítása (előzetes verzió)
 
@@ -48,10 +49,10 @@ A beléptetési profil meghatározza az eszközök egy csoportjára alkalmazott 
 
 2. Az **alapvető beállítások** lapon adja meg a profil **nevét** és **leírását** felügyeleti célból. A felhasználók nem látják ezeket az adatokat. A **Név** mező felhasználásával dinamikus csoportot hozhat létre az Azure Active Directoryban. Használja a profilnevet az enrollmentProfileName paraméter meghatározásához, hogy ezzel a regisztrációs profillal rendelhesse hozzá az eszközöket. További információk az [Azure Active Directory-alapú dinamikus csoportokról](https://docs.microsoft.com/azure/active-directory/active-directory-groups-dynamic-membership-azure-portal#rules-for-devices).
 
-    ![Alapvető beállítások lap](./media/ios-user-enrollment/basics-page.png)
+    ![Alapismeretek lap](./media/ios-user-enrollment/basics-page.png)
 
 
-3. Kattintson a **Tovább** gombra.
+3. Válassza a **Tovább** elemet.
 
 4. A **Beállítások** lapon megadhatja, hogy a felhasználók a kívánt regisztrációs típust használják. Másik lehetőségként beállíthatja az alapértelmezett értéket.
 
@@ -70,13 +71,13 @@ A beléptetési profil meghatározza az eszközök egy csoportjára alkalmazott 
     > "A felhasználói regisztrációt célzó eszközökön való feltételes hozzáféréshez a Azure Authenticator alkalmazást kötelező alkalmazásként kell leküldeni a felhasználói csoport számára az egyszeri bejelentkezés és a Workplace Join engedélyezéséhez."
     > Rendszergazdaként nem kell végrehajtania semmilyen műveletet a hitelesítő alkalmazás felhasználóknak való leküldéséhez. A rendszer arra Céges portál utasítja a felhasználókat, hogy telepítse a hitelesítő alkalmazást a felhasználó beléptetési folyamatának elvégzéséhez, hogy ezek a forgatókönyvek megfelelően működjenek.
 
-5. Kattintson a **Tovább** gombra.
+5. Válassza a **Tovább** elemet.
 
 6. A **hozzárendelések** lapon válassza ki azokat a felhasználói csoportokat, amelyek azokat a felhasználókat tartalmazzák, amelyekhez hozzá szeretné rendelni ezt a profilt. Kiválaszthatja, hogy a profilt az összes felhasználóhoz vagy adott csoporthoz rendeli. A kiválasztott csoportokba tartozó összes felhasználó a fent kiválasztott beléptetési típust fogja használni. Az eszközbeállítások nem támogatottak a felhasználói beléptetési forgatókönyvek esetében, mert a szolgáltatás felhasználói identitásokon alapul, és nem az eszközökön. Kiválaszthatja, hogy a profilt az összes felhasználóhoz vagy adott csoporthoz rendeli.
 
     ![Hozzárendelések lap](./media/ios-user-enrollment/assignments-page.png)
 
-7. Kattintson a **Tovább** gombra.
+7. Válassza a **Tovább** elemet.
 
 8. A **felülvizsgálat és létrehozás** oldalon tekintse át a kívánt beállításokat, majd válassza a **Létrehozás** lehetőséget a profil felhasználókhoz való hozzárendeléséhez.
 

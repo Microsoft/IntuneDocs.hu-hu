@@ -4,27 +4,30 @@ description: Rövid útmutató – Felhasználó létrehozása az Intune-ban.
 services: microsoft-intune
 author: ErikjeMS
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.topic: quickstart
 ms.date: 03/25/2019
 ms.author: erikje
-ms.reviewer: angerobe
+ms.manager: dougeby
+ms.assetid: 820fcb18-0927-4ebd-be79-dce92b51c261
+ms.reviewer: dougeby
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 16d8eb3b3a0117495fe8740160e9ebcec299d764
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 75a875fc3ff11eb1e3befad425c16a710544f781
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732091"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72509883"
 ---
-# <a name="quickstart-create-a-user-in-intune-and-assign-them-a-license"></a>QuickStart Hozzon létre egy felhasználót az Intune-ban, és rendelje hozzá a licencet
+# <a name="quickstart-create-a-user-in-intune-and-assign-them-a-license"></a>Gyors útmutató: felhasználó létrehozása az Intune-ban és licencek kiosztása
 
 Ebben a rövid útmutatóban létrehoz egy felhasználót, majd hozzárendeli egy Intune-licencet. Ha az Intune-t használja, minden személynek saját felhasználói fiókkal kell rendelkeznie a vállalati adataihoz való hozzáféréshez. Az Intune-rendszergazdák később is konfigurálhatják a felhasználókat a hozzáférés-vezérlés kezeléséhez.
 
-Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon egy ingyenes próbafiókkal](free-trial-sign-up.md).
+Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon ingyenes próbafiókot](free-trial-sign-up.md).
 
 ## <a name="sign-in-to-intune"></a>Bejelentkezés az Intune-ba
 
@@ -63,7 +66,7 @@ Intune-licenc kiosztása egy felhasználóhoz:
 
 Az új aktív Intune-felhasználó mostantól azt fogja látni, hogy **Intune** -licencet használ.
 
-## <a name="clean-up-resources"></a>Az erőforrások eltávolítása
+## <a name="clean-up-resources"></a>Erőforrások eltávolítása
 
 Ha már nincs szüksége erre a felhasználóra, törölheti a felhasználót a [Microsoft 365 felügyeleti központba](http://go.microsoft.com/fwlink/p/?LinkId=698854) , és kiválaszthatja a **felhasználók** > **aktív felhasználó** > *válassza ki a felhasználót a listában* > **delete User** >  **Felhasználó törlése**@no__t – 10**erősítse meg a módosításokat**2**Bezárás**.
 
@@ -74,4 +77,4 @@ Ebben a rövid útmutatóban létrehozott egy felhasználót, és hozzárendelt 
 Kövesse az Intune rövid útmutatóinak sorozatát a következő rövid útmutatóval.
 
 > [!div class="nextstepaction"]
-> [QuickStart Csoport létrehozása a felhasználók kezeléséhez @ no__t-0
+> [Rövid útmutató: Csoport létrehozása felhasználók kezeléséhez](../quickstart-create-group.md)

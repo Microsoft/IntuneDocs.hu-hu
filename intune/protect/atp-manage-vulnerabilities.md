@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 07/12/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.reviewer: joglocke
@@ -15,18 +16,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 06fdd8a6b64dfd58457b5d9b92144530aa2856cd
-ms.sourcegitcommit: 223d64a72ec85fe222f5bb10639da729368e6d57
+ms.openlocfilehash: 65213dab28210ad8162a7c18fe0e733ec7964571
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940492"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72502586"
 ---
 # <a name="use-intune-to-remediate-vulnerabilities-identified-by-microsoft-defender-atp"></a>Az Intune használata a Microsoft Defender ATP által azonosított sebezhetőségek javítására  
 
 Ha integrálja az Intune-t a Microsoft Defender komplex veszélyforrások elleni védelemmel (ATP), kihasználhatja a ATPs veszélyforrások elleni & sebezhetőségek felügyeletét (TVM), és az Intune használatával javíthatja a TVM által azonosított végponti gyengeséget. Ez az integráció kockázati alapú megközelítést biztosít a biztonsági rések felderítése és rangsorolása terén, amely javíthatja a Szervizelési válaszidőt a környezetében.  
 
-A veszélyforrások elleni [& biztonsági rések kezelése](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/next-gen-threat-and-vuln-mgt) a [Microsoft Defender komplex veszélyforrások elleni védelem](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/windows-defender-advanced-threat-protection)részét képezi.  
+A [veszélyforrások elleni & biztonsági rések kezelése](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/next-gen-threat-and-vuln-mgt) a [Microsoft Defender komplex veszélyforrások elleni védelem](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/windows-defender-advanced-threat-protection)részét képezi.  
 
 ## <a name="how-integration-works"></a>Az integráció működése  
 
@@ -52,7 +53,7 @@ Példa munkafolyamat:
   ![A biztonsági feladatok listájának megtekintése az Intune-konzolon](./media/atp-manage-vulnerabilities/temp-security-tasks.png)
  
 - Az Intune-rendszergazda kiválasztja a biztonsági feladatot a feladat részleteinek megtekintéséhez.  A rendszergazda ezután kiválasztja az **elfogadás**lehetőséget, amely frissíti az állapotát az Intune-ban, és *elfogadja*az ATP-t.  
-  ![Biztonsági feladat elfogadása vagy elutasítása](./media/atp-manage-vulnerabilities/temp-accept-task.png) 
+  @no__t – 0Accept vagy elutasít egy biztonsági feladatot @ no__t-1 
  
 - A rendszergazda ezután a megadott útmutatás alapján szervizeli a feladatot.  Az útmutató a szükséges szervizelés típusától függően változik. Ha elérhető, a Szervizelési útmutató olyan hivatkozásokat tartalmaz, amelyek a megfelelő ablaktáblákat nyitják meg a konfigurációkhoz az Intune-ban. 
 
@@ -62,7 +63,7 @@ Példa munkafolyamat:
 
 ## <a name="prerequisites"></a>Előfeltételek  
 
-Előfizetések:  
+**Előfizetések**:  
 
 - Microsoft Intune  
 - Microsoft Defender komplex veszélyforrások elleni védelem ([regisztráljon az ingyenes próbaverzióra](https://www.microsoft.com/WindowsForBusiness/windows-atp?ocid=docs-wdatp-main-abovefoldlink).)  
@@ -76,7 +77,7 @@ Előfizetések:
 
 ## <a name="work-with-security-tasks"></a>Biztonsági feladatok használata  
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és nyissa meg az **eszköz biztonsági** > feladatait.  
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és lépjen az **eszközök biztonsága** > **biztonsági feladatok**elemre.  
 2. Válasszon ki egy feladatot a listából egy olyan erőforrás-ablak megnyitásához, amely megjeleníti a biztonsági feladat további részleteit.  
 3. A biztonsági feladat erőforrás-ablakának megtekintése közben további hivatkozásokat is választhat:  
    - FELÜGYELt alkalmazások – megtekintheti a sebezhető alkalmazást. Ha a biztonsági rés több alkalmazásra is vonatkozik, az alkalmazások szűrt listája jelenik meg.  
@@ -96,4 +97,4 @@ A szervizelés sikeres befejezését követően az ATP kockázati expozíciós p
 ## <a name="next-steps"></a>További lépések
 További információ az Intune-ról és a [Microsoft DEFENDER ATP](advanced-threat-protection.md) -ről  
 Az Intune [Mobile Threat Defense](mobile-threat-defense.md) áttekintése  
-Tekintse át a veszélyforrások elleni [& biztonsági rések kezelése irányítópultot](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/tvm-dashboard-insights) a Microsoft Defender ATP-ben
+Tekintse át a [veszélyforrások elleni & biztonsági rések kezelése irányítópultot](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/tvm-dashboard-insights) a Microsoft Defender ATP-ben

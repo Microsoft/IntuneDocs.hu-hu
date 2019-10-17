@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 07/25/2019
 ms.topic: troubleshooting
 ms.service: microsoft-intune
+ms.subservice: enrollment
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: ''
@@ -16,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1a02e403fdba34b576aa90b82062b7a602cbb517
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: e7c7ec23d0408aa4d4cf81baff2d7cdf749fb65e
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731699"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72509230"
 ---
 # <a name="troubleshoot-ios-device-enrollment-problems-in-microsoft-intune"></a>IOS-eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune
 
@@ -46,9 +47,9 @@ Gyűjtse össze a következő információkat a problémával kapcsolatban:
 
 ### <a name="profile-installation-failed-a-network-error-has-occurred"></a>A profil telepítése nem sikerült. Hálózati hiba történt.
 
-**Okozhat** Meghatározatlan probléma van az iOS-sel az eszközön.
+**OK:** Meghatározatlan probléma van az iOS-sel az eszközön.
 
-#### <a name="resolution"></a>Megoldás:
+#### <a name="resolution"></a>Megoldás
 
 1. Ha meg szeretné akadályozni az adatvesztést az alábbi lépésekben (az iOS visszaállítása törli az eszközön lévő összes adatmentést), ügyeljen arra, hogy készítsen biztonsági másolatot az adatairól.
 2. Helyezze az eszközt helyreállítási módba, majd állítsa vissza. Győződjön meg arról, hogy új eszközként állítja be. További információ az iOS-eszközök visszaállításáról: [https://support.apple.com/HT201263](https://support.apple.com/HT201263).
@@ -56,10 +57,10 @@ Gyűjtse össze a következő információkat a problémával kapcsolatban:
 
 ### <a name="profile-installation-failed-connection-to-the-server-could-not-be-established"></a>A profil telepítése nem sikerült. Nem lehet csatlakozni a kiszolgálóhoz.
 
-**Okozhat** Az Intune-bérlő úgy van konfigurálva, hogy csak a vállalat tulajdonában lévő eszközöket engedélyezze. 
+**OK:** Az Intune-bérlő úgy van konfigurálva, hogy csak a vállalat tulajdonában lévő eszközöket engedélyezze. 
 
-#### <a name="resolution"></a>Megoldás:
-1. Jelentkezzen be az Azure portálra.
+#### <a name="resolution"></a>Megoldás
+1. Jelentkezzen be az Azure Portalra.
 2. Válassza a **További szolgáltatások**lehetőséget, keresse meg az Intune-t, majd válassza az **Intune**lehetőséget.
 3. Válassza az **Eszközök regisztrálása** > **Regisztrációs korlátozások** lehetőséget.
 4. Az **eszközök típusának korlátozása**területen válassza ki a > **tulajdonságok**beállításához @no__t – 2 válassza a**platformok** lehetőséget > válassza az **iOS** **engedélyezése lehetőséget** , majd kattintson **az OK**gombra.
@@ -68,27 +69,27 @@ Gyűjtse össze a következő információkat a problémával kapcsolatban:
 
 ### <a name="this-service-is-not-supported-no-enrollment-policy"></a>Ez a szolgáltatás nem támogatott. Nincs beléptetési szabályzat.
 
-**OK**: Az Apple MDM push-tanúsítvány nincs konfigurálva az Intune-ban, vagy a tanúsítvány érvénytelen. 
+**OK**: az Apple Mdm push-tanúsítvány nincs konfigurálva az Intune-ban, vagy a tanúsítvány érvénytelen. 
 
-#### <a name="resolution"></a>Megoldás:
+#### <a name="resolution"></a>Megoldás
 
 - Ha nincs konfigurálva az MDM push-tanúsítvány, kövesse az [Apple Mdm push-tanúsítvány beszerzése](apple-mdm-push-certificate-get.md#steps-to-get-your-certificate)című témakör lépéseit.
 - Ha az MDM push-tanúsítvány érvénytelen, kövesse az [Apple Mdm push-tanúsítvány megújítása](apple-mdm-push-certificate-get.md#renew-apple-mdm-push-certificate)című témakör lépéseit.
 
 ### <a name="company-portal-temporarily-unavailable-the-company-portal-app-encountered-a-problem-if-the-problem-persists-contact-your-system-administrator"></a>Céges portál átmenetileg nem érhető el. A Céges portál alkalmazás hibát észlelt. Ha a probléma továbbra is fennáll, forduljon a rendszergazdához.
 
-**Okozhat** A Céges portál alkalmazás elavult vagy sérült.
+**OK:** A Céges portál alkalmazás elavult vagy sérült.
 
-#### <a name="resolution"></a>Megoldás:
+#### <a name="resolution"></a>Megoldás
 1. Távolítsa el a Céges portál alkalmazást az eszközről.
 2. Töltse le és telepítse a **Microsoft Intune céges portál** alkalmazást az **App Store áruházból**.
 3. Regisztrálja újra az eszközt.
 
 ### <a name="device-cap-reached"></a>Elérte az eszközök maximális száma
 
-**Okozhat** A felhasználó több eszközt próbál regisztrálni az eszköz beléptetési korlátján kívül.
+**OK:** A felhasználó több eszközt próbál regisztrálni az eszköz beléptetési korlátján kívül.
 
-#### <a name="resolution"></a>Megoldás:
+#### <a name="resolution"></a>Megoldás
 1. Nyissa meg az [Intune felügyeleti portált](https://portal.azure.com/?Microsoft_Intune=1&Microsoft_Intune_DeviceSettings=true&Microsoft_Intune_Enrollment=true&Microsoft_Intune_Apps=true&Microsoft_Intune_Devices=true#blade/Microsoft_Intune_DeviceSettings/ExtensionLandingBlade/overview) > **eszköz** > **minden eszköz**, és a felhasználó által regisztrált eszközök számának ellenőrzését.
     > [!NOTE]
     > Az érintett felhasználói bejelentkezést is meg kell adnia az [Intune felhasználói portálon](https://portal.manage.microsoft.com/) , és ellenőriznie kell a regisztrált eszközöket. Előfordulhat, hogy az Intune-beli [felhasználói portálon](https://portal.manage.microsoft.com/) megjelenő eszközök nem az [Intune felügyeleti portálon](https://portal.azure.com/?Microsoft_Intune=1&Microsoft_Intune_DeviceSettings=true&Microsoft_Intune_Enrollment=true&Microsoft_Intune_Apps=true&Microsoft_Intune_Devices=true#blade/Microsoft_Intune_DeviceSettings/ExtensionLandingBlade/overview)jelennek meg, az ilyen eszközök pedig az eszközök regisztrálási korlátját is megszámolják.
@@ -98,18 +99,18 @@ Gyűjtse össze a következő információkat a problémával kapcsolatban:
 
 ### <a name="workplace-join-failed"></a>Workplace Join sikertelen
 
-**Okozhat** A Céges portál alkalmazás elavult vagy sérült.  
+**OK:** A Céges portál alkalmazás elavult vagy sérült.  
 
-#### <a name="resolution"></a>Megoldás:
+#### <a name="resolution"></a>Megoldás
 1. Távolítsa el a Céges portál alkalmazást az eszközről.
 2. Töltse le és telepítse a **Microsoft Intune céges portál** alkalmazást az **App Store áruházból**.
 3. Regisztrálja újra az eszközt.
 
 ### <a name="user-license-type-invalid"></a>A felhasználói licenc típusa érvénytelen
 
-**Okozhat** Az eszközt regisztrálni próbáló felhasználónak nincs érvényes Intune-licence.
+**OK:** Az eszközt regisztrálni próbáló felhasználónak nincs érvényes Intune-licence.
 
-#### <a name="resolution"></a>Megoldás:
+#### <a name="resolution"></a>Megoldás
 1. Lépjen a [Microsoft 365 felügyeleti központba](https://portal.office.com/adminportal/home#/homepage), majd válassza a **felhasználók** > **aktív felhasználók**lehetőséget.
 2. Válassza ki az érintett felhasználói fiókot > **termék-licencek** > **Szerkesztés**elemet.
 3. Ellenőrizze, hogy érvényes Intune-licenc van-e hozzárendelve ehhez a felhasználóhoz.
@@ -117,7 +118,7 @@ Gyűjtse össze a következő információkat a problémával kapcsolatban:
 
 ### <a name="user-name-not-recognized-this-user-account-is-not-authorized-to-use-microsoft-intune-contact-your-system-administrator-if-you-think-you-have-received-this-message-in-error"></a>A Felhasználónév nem ismerhető fel. Ez a felhasználói fiók nem rendelkezik jogosultsággal a Microsoft Intune használatára. Ha úgy gondolja, hogy hiba történt, forduljon a rendszergazdához.
 
-**Okozhat** Az eszközt regisztrálni próbáló felhasználónak nincs érvényes Intune-licence.
+**OK:** Az eszközt regisztrálni próbáló felhasználónak nincs érvényes Intune-licence.
 
 1. Lépjen a [Microsoft 365 felügyeleti központba](https://portal.office.com/adminportal/home#/homepage), majd válassza a **felhasználók** > **aktív felhasználók**lehetőséget.
 2. Válassza ki az érintett felhasználói fiókot, majd válassza a **termék licencek** > **Szerkesztés**lehetőséget.
@@ -126,9 +127,9 @@ Gyűjtse össze a következő információkat a problémával kapcsolatban:
 
 ### <a name="profile-installation-failed-the-new-mdm-payload-does-not-match-the-old-payload"></a>A profil telepítése nem sikerült. Az új MDM-tartalom nem felel meg a régi adattartalomnak.
 
-**Okozhat** Már telepítve van egy felügyeleti profil az eszközön.
+**OK:** Már telepítve van egy felügyeleti profil az eszközön.
 
-#### <a name="resolution"></a>Megoldás:
+#### <a name="resolution"></a>Megoldás
 
 1. Nyissa meg az iOS-eszköz **beállításait** > **általános**@no__t – 2**eszközkezelés**.
 2. Koppintson a meglévő felügyeleti profilra, és koppintson a **felügyelet eltávolítása**elemre.
@@ -136,16 +137,16 @@ Gyűjtse össze a következő információkat a problémával kapcsolatban:
 
 ### <a name="noenrollmentpolicy"></a>NoEnrollmentPolicy
 
-**Okozhat** A Apple Push Notification Service-(APNs-) tanúsítvány hiányzik, érvénytelen vagy lejárt.
+**OK:** A Apple Push Notification Service-(APNs-) tanúsítvány hiányzik, érvénytelen vagy lejárt.
 
-#### <a name="resolution"></a>Megoldás:
+#### <a name="resolution"></a>Megoldás
 Ellenőrizze, hogy hozzá van-e adva érvényes APNs-tanúsítvány az Intune-hoz. További információ: az [iOS-és Mac-eszközök kezelésének beállítása](https://docs.microsoft.com/intune-classic/deploy-use/set-up-ios-and-mac-management-with-microsoft-intune). 
 
 ### <a name="accountnotonboarded"></a>AccountNotOnboarded
 
-**Okozhat** Probléma merült fel az Intune-ban konfigurált Apple push Notification szolgáltatás (APNs) tanúsítványával.
+**OK:** Probléma merült fel az Intune-ban konfigurált Apple push Notification szolgáltatás (APNs) tanúsítványával.
 
-#### <a name="resolution"></a>Megoldás:
+#### <a name="resolution"></a>Megoldás
 Újítsa meg az APNs-tanúsítványt, majd regisztrálja újra az eszközt.
 
 > [!IMPORTANT]
@@ -167,9 +168,9 @@ iPhone com.apple.accessibility.AccessibilityUIServer(MobileAsset)[288] <Notice>:
 iPhone mobileassetd[83] <Notice>: 0x1a49aebc0 Client connection: XPC_TYPE_ERROR Connection invalid <error: 0x1a49aebc0> { count = 1, transaction: 0, voucher = 0x0, contents = "XPCErrorDescription" => <string: 0x1a49aee18> { length = 18, contents = "Connection invalid" }
 ```
 
-**Okozhat** Kapcsolati probléma van az eszköz és az Apple DEP szolgáltatás között.
+**OK:** Kapcsolati probléma van az eszköz és az Apple DEP szolgáltatás között.
 
-#### <a name="resolution"></a>Megoldás:
+#### <a name="resolution"></a>Megoldás
 Javítsa ki a kapcsolódási problémát, vagy használjon másik hálózati kapcsolódást az eszköz regisztrálásához. Előfordulhat, hogy kapcsolatba kell lépnie az Apple-vel, ha a probléma továbbra is fennáll.
 
 
@@ -178,19 +179,19 @@ Javítsa ki a kapcsolódási problémát, vagy használjon másik hálózati kap
 ### <a name="dep-enrollment-doesnt-start"></a>A DEP-regisztráció nem indul el
 Ha bekapcsol egy, a beléptetési profilhoz hozzárendelt DEP által felügyelt eszközt, az Intune regisztrációs folyamata nem indul el.
 
-**Okozhat** A beléptetési profilt a rendszer a DEP-jogkivonat Intune-ba való feltöltése előtt hozza létre.
+**OK:** A beléptetési profilt a rendszer a DEP-jogkivonat Intune-ba való feltöltése előtt hozza létre.
 
-#### <a name="resolution"></a>Megoldás:
+#### <a name="resolution"></a>Megoldás
 
 1. Szerkessze a beléptetési profilt. Bármilyen módosítást végezhet a profilban. A cél a profil módosítási idejének frissítése.
-2. DEP által felügyelt eszközök szinkronizálása: Nyissa meg az Intune-portált > **felügyeleti** > **mobileszköz-kezelés** > **iOS** > **Készülékregisztrációs program** > **szinkronizálás most**. A szolgáltatás elküld egy szinkronizálási kérelmet az Apple-nek.
+2. DEP által felügyelt eszközök szinkronizálása: Nyissa meg az Intune-portált > **rendszergazdai** > **mobileszköz-felügyeleti** > **iOS** > **Készülékregisztrációs program** > **szinkronizálás most**. A szolgáltatás elküld egy szinkronizálási kérelmet az Apple-nek.
 
 ### <a name="dep-enrollment-stuck-at-user-login"></a>DEP-regisztráció megakadt a felhasználói bejelentkezéskor
 Amikor bekapcsol egy beléptetési profilhoz rendelt DEP által felügyelt eszközt, a kezdeti beállítás a hitelesítő adatok megadása után fog megjelenni.
 
-**Okozhat** A többtényezős hitelesítés (MFA) engedélyezve van. Az MFA jelenleg nem működik a DEP-eszközökön való regisztráció során.
+**OK:** A többtényezős hitelesítés (MFA) engedélyezve van. Az MFA jelenleg nem működik a DEP-eszközökön való regisztráció során.
 
-#### <a name="resolution"></a>Megoldás:
+#### <a name="resolution"></a>Megoldás
 Tiltsa le az MFA-t, majd regisztrálja újra az eszközt.
 
 ## <a name="next-steps"></a>További lépések

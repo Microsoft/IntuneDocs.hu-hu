@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 10/02/2019
 ms.topic: troubleshooting
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: ''
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa4dbfb7c13d767df41655b391767fc7aa13d914
-ms.sourcegitcommit: f04e21ec459998922ba9c7091ab5f8efafd8a01c
+ms.openlocfilehash: b30a7e843850d6918abc2e76f84397a1f197516f
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71817540"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72508856"
 ---
 # <a name="resolve-common-errors-for-the-intune-exchange-connector"></a>Az Intune Exchange Connector gyakori hibáinak elhárítása
 
@@ -41,7 +42,7 @@ A Microsoft Intune Exchange Connector konfigurálásakor a következő hibaüzen
 
 Ez a probléma akkor fordulhat elő, ha az internetes proxy beállításai helytelenül vannak konfigurálva.
 
-**Feloldási**:  
+**Megoldás**:  
 Proxybeállítások konfigurálása:
 1. Forduljon a helyi hálózati rendszergazdához, és győződjön meg arról, hogy a proxybeállítások megfelelően vannak konfigurálva. 
 2. A **netsh WinHTTP** parancs használatával konfigurálja a proxykiszolgálót, és adja hozzá a szükséges kizárási listát. Példa:  
@@ -63,7 +64,7 @@ A Microsoft Intune Exchange Connector konfigurálásakor a következő hibaüzen
 ```
 Ez a probléma akkor fordulhat elő, ha az Intune-ba való bejelentkezéshez használt fiók nem egy globális Intune-rendszergazdai fiók.
 
-**Feloldási**:  
+**Megoldás**:  
 Jelentkezzen be az Intune-ba egy globális rendszergazdai fiókkal, vagy vegye fel a fiókját a globális rendszergazdai csoportba. További információ: [szerepköralapú adminisztrációs vezérlés (RBAC) Microsoft Intuneval](../fundamentals/role-based-access-control.md).
 
 ## <a name="configuration-failed-and-returned-error-code-0x0000006"></a>A konfigurálás sikertelen volt, és a 0x0000006 hibakódot adott vissza.
@@ -78,7 +79,7 @@ A Microsoft Intune Exchange Connector konfigurálásakor a következő hibaüzen
 ```  
 Ez a hiba akkor fordulhat elő, ha egy proxykiszolgáló csatlakozik az internethez, és blokkolja az Intune szolgáltatás felé irányuló forgalmat. Annak megállapításához, hogy a proxy használatban van-e, nyissa meg a **vezérlőpult** > **Internetbeállítások**csomópontot, válassza a **kapcsolatok** fület, majd kattintson a **LAN-beállítások**elemre.
 
-**Feloldási**:  
+**Megoldás**:  
 
 - **1. lehetőség** – távolítsa el a proxybeállításokat, hogy a számítógép ne a proxyn keresztül kapcsolódjon az internethez.  
 
@@ -124,7 +125,7 @@ Az iOS-eszközök nem regisztrálhatnak az Intune-ban, és a következő hibaüz
 ```
 Ez a probléma akkor fordulhat elő, ha a **WIEC_User** -fiók nem rendelkezik a helyi házirendben a **Bejelentkezés szolgáltatásként** felhasználói jogosultsággal.
 
-**Feloldási**:  
+**Megoldás**:  
 Az Intune Exchange Connectort futtató számítógépen rendelje hozzá a **Bejelentkezés szolgáltatásként** felhasználói jogosultságot a **WIEC_User** -szolgáltatásfiók számára. Ha a számítógép egy fürt egyik csomópontja, akkor a fürt összes csomópontján ellenőrizze, hogy a *Bejelentkezés szolgáltatásként* felhasználói jogosultsággal van-e hozzárendelve a fürtszolgáltatási fiókhoz.  
 
 Az alábbi lépéseket követve rendelje hozzá a **Bejelentkezés szolgáltatásként** felhasználói jogosultságot a számítógép **WIEC_User** -fiókjához:

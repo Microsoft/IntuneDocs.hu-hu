@@ -8,18 +8,19 @@ manager: dougeby
 ms.date: 09/04/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: high
 ms.technology: ''
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 80e70db4b64770af1a96ee7f24a3cf875269adce
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: a794d724fe162ad7d464760661fecb45bd874431
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730367"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506452"
 ---
 # <a name="add-and-use-wi-fi-settings-on-your-devices-in-microsoft-intune"></a>Wi-Fi-beállítások hozzáadása és használata az eszközökön a Microsoft Intune-ban
 
@@ -48,39 +49,39 @@ A Wi-Fi-profilok a következő eszközplatformokat támogatják:
 
 ## <a name="create-a-device-profile"></a>Eszközprofil létrehozása
 
-1. Az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ban válassza az **eszköz konfigurációs** > **profilok** > **profil létrehozása**lehetőséget.
+1. Az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ban válassza az **eszköz konfigurációja** > **profilok** > **profil létrehozása**lehetőséget.
 2. Adja meg a következő tulajdonságokat:
 
-    - **Név**: Adjon meg egy leíró nevet a profilhoz. Nevezze el a profilokat, hogy később könnyen azonosítható legyen. Egy jó profilnév például a **teljes vállalat Wi-Fi profilja**.
-    - **Description** (Leírás): Adja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
-    - **Platform**: Válassza ki az eszközök platformját. A választható lehetőségek:
+    - **Név**: adjon meg egy leíró nevet a profilhoz. Nevezze el a profilokat, hogy később könnyen azonosítható legyen. Egy jó profilnév például a **teljes vállalat Wi-Fi profilja**.
+    - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
+    - **Platform**: válassza ki az eszközök platformját. A választható lehetőségek:
 
-      - **Android**
+      - **Android--**
       - **Android Enterprise**
       - **iOS/iPadOS**
       - **macOS**
-      - **Windows 8.1 és újabb**
+      - **Windows 8.1 és újabb verziók**
       - **Windows 10 és újabb**
 
-    - **Profil típusa**: Válassza a **Wi-Fi**lehetőséget.
+    - **Profil típusa**: válassza a **Wi-Fi**lehetőséget.
 
       > [!TIP]
       >
-      > - A dedikált eszközként (kioszk) futó **androidos vállalati** eszközök esetében válassza az **eszköz tulajdonosa csak** > **Wi-Fi**lehetőséget.
+      > - A dedikált eszközként (kioszk) futó **androidos vállalati** eszközök esetén válassza az **eszköz tulajdonosa csak** > **Wi-Fi**lehetőséget.
       > - A **Windows 8.1 és újabb** rendszereken a **Wi-Fi-importálás** lehetőséget választhatja. Ez lehetővé teszi, hogy XML-fájlként importálhasson egy másik eszközről korábban exportált Wi-Fi-beállításokat.
 
 3. Egyes Wi-Fi-beállítások minden platformon eltérnek. Egy adott platform beállításainak megtekintéséhez válassza ki a platformot:
 
-    - [Android](wi-fi-settings-android.md)
+    - [Android--](wi-fi-settings-android.md)
     - [Android Enterprise](wi-fi-settings-android-enterprise.md), beleértve a dedikált eszközöket
     - [iOS/iPadOS](wi-fi-settings-ios.md)
     - [macOS](wi-fi-settings-macos.md)
     - [Windows 10 és újabb](wi-fi-settings-windows.md)
     - [Windows 8.1 és újabb](wi-fi-settings-import-windows-8-1.md) (beleértve a Windows Holographic for Businesst is)
 
-4. Ha elkészült, válassza a **profil** > **létrehozása lehetőséget.**
+4. Ha elkészült, válassza a **create profile** > **Létrehozás**elemet.
 
-Ekkor létrejön a profil, és megjelenik a profilok listájában (**eszköz-konfigurációs** > **profilok**).
+Ekkor létrejön a profil, és megjelenik a profilok listában (az**eszköz konfigurációja** > **profilok**).
 
 ## <a name="next-steps"></a>További lépések
 

@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 08/13/2018
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: enrollment
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 46429114-2e26-4ba7-aa21-b2b1a5643e01
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec0e22c55e337d6ffe9b617c3858982859995b77
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: cbdef7cffa76beeb158c47ab3651d438de2d6ccc
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729683"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72503170"
 ---
 # <a name="set-up-enrollment-for-macos-devices-in-intune"></a>Regisztráció beállítása macOS-eszközökhöz az Intune-ban
 
@@ -49,7 +50,7 @@ macOS-eszközök regisztrációjának indítása előtt végezze el az alábbiak
 Azt is engedélyezheti, hogy a felhasználók saját személyes eszközeiket regisztrálják az Intune-felügyelethez. Ez a „saját eszköz használata” vagy BYOD (Bring Your Own Device) néven ismert. Miután teljesítette az előfeltételeket, és kiosztotta a felhasználói licenceket, a felhasználók a következőképp regisztrálhatják az eszközeiket:
 - a [Céges portál](https://portal.manage.microsoft.com) webhelyre lépve, vagy
 - a Céges portál alkalmazás letöltésével.
-Emellett az online regisztráció lépéseire mutató hivatkozást is küldhet: [MacOS-eszköz regisztrálása az Intune-ban](https://docs.microsoft.com/intune-user-help/enroll-your-device-in-intune-macos).
+Hivatkozást is küldhet nekik az online regisztrációhoz: [macOS-eszköz regisztrálása az Intune-ban](https://docs.microsoft.com/intune-user-help/enroll-your-device-in-intune-macos)
 
 Más végfelhasználói feladatokkal kapcsolatos további információkért tanulmányozza a következő cikkeket:
 
@@ -58,8 +59,8 @@ Más végfelhasználói feladatokkal kapcsolatos további információkért tanu
 
 ## <a name="company-owned-macos-devices"></a>Vállalati tulajdonban lévő macOS-eszközök
 A felhasználóknak eszközöket vásárló szervezetek számára az Intune a következő módszereket támogatja a vállalati tulajdonban lévő macOS-eszközök regisztrálásához:
-- [Apple Készülékregisztrációs program (DEP)](device-enrollment-program-enroll-macos.md): A szervezetek macOS-eszközöket vásárolhatnak az Apple Készülékregisztrációs program (DEP) használatával. A DEP vezeték nélkül képes telepíteni egy regisztrációs profilt, amely felügyelet alá helyezi az eszközöket.
-- [Eszköz beléptetési kezelője (DEM)](device-enrollment-manager-enroll.md): A DEM-fiók használatával akár 1 000 eszközt is regisztrálhat.
+- [Az Apple Device Enrollment Program (DEP)](device-enrollment-program-enroll-macos.md): A szervezetek macOS-eszközöket vásárolhatnak az Apple Device Enrollment Programján (DEP) keresztül. A DEP vezeték nélkül képes telepíteni egy regisztrációs profilt, amely felügyelet alá helyezi az eszközöket.
+- [Eszközregisztráció-kezelő (DEM)](device-enrollment-manager-enroll.md): Egy DEM-fiókba akár 1000 eszköz is regisztrálható.
 
 ## <a name="block-macos-enrollment"></a>macOS-regisztráció letiltása
 Alapértelmezés szerint az Intune engedélyezi a macOS-eszközök regisztrálását. A macOS-eszközök regisztrálásának letiltásáról a [Típus szerinti korlátozás beállítása](enrollment-restrictions-set.md) című témakörben olvashat.

@@ -8,18 +8,19 @@ manager: dougeby
 ms.date: 09/04/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: high
 ms.technology: ''
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 61a8815bdbb0121d727c80dda0421922e0531cf7
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: b7b4597106d1fffb65f112feae750aa7c8feefc0
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730783"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72493985"
 ---
 # <a name="configure-device-restriction-settings-in-microsoft-intune"></a>Ezközkorlátozásokra vonatkozó beállítások konfigurálása a Microsoft Intune-ban
 
@@ -43,19 +44,19 @@ Ez a cikk bemutatja, hogyan hozhat létre egy eszköz-korlátozási profilt. A k
 2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
 3. Adja meg a következő tulajdonságokat:
 
-    - **Név**: Adjon meg egy leíró nevet a szabályzatnak. Nevezze el a szabályzatokat, hogy később könnyebben azonosítható legyen. A helyes szabályzat neve **például iOS: A kamera letiltása az**eszközökön.
-    - **Description** (Leírás): Adja meg a szabályzat leírását. A beállítás használata nem kötelező, de ajánlott.
-    - **Platform**: Válassza ki az eszközök platformját. A választható lehetőségek:  
+    - **Név**: adjon meg egy leíró nevet a szabályzatnak. Nevezze el a szabályzatokat, hogy később könnyebben azonosítható legyen. Például egy jó szabályzat neve **iOS: a kamera letiltása az eszközökön**.
+    - **Leírás**: adja meg a szabályzat leírását. A beállítás használata nem kötelező, de ajánlott.
+    - **Platform**: válassza ki az eszközök platformját. A választható lehetőségek:  
 
-        - **Android**
+        - **Android--**
         - **Vállalati Android**
         - **iOS/iPadOS**
         - **macOS**
         - **Windows Phone 8.1**
-        - **Windows 8.1 és újabb**
+        - **Windows 8.1 és újabb verziók**
         - **Windows 10 és újabb**
 
-    - **Profil típusa**: Válassza ki az **eszközök korlátozásait**.
+    - **Profil típusa**: válassza az **eszközök korlátozásait**.
 
         A Windows 10-es Team-eszközökhöz, például a Surface Hubhoz tartozó eszköz-korlátozási profil létrehozásához válassza az eszközök **korlátozásai (Windows 10 Team)** lehetőséget.
 

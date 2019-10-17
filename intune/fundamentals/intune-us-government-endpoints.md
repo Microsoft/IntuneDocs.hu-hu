@@ -9,20 +9,21 @@ manager: dougeby
 ms.date: 05/30/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
-ms.assetid: ''
+ms.assetid: 5f6682cb-5fcd-4018-b7f7-71768ad3152e
 ms.reviewer: kerimh
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 490c939e79659baac655cfd7d3d3a2ee10d98382
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: a5e52d1967ff6f5cf97334c099bc2b5b854ae87c
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731539"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72502681"
 ---
 # <a name="us-government-endpoints-for-microsoft-intune"></a>Az Egyesült Államok kormányzati végpontja Microsoft Intune
 
@@ -41,18 +42,18 @@ A következő táblázat az Intune-ügyfél által elért portokat és szolgált
 
 |**Végpont**|**IP-cím**|
 |---------------------|-----------|
-|*.manage.microsoft.us | 52.243.26.209 <br> 52.247.173.11 <br> 52.227.183.12 <br>52.227.180.205 <br> 52.227.178.107 <br> 13.72.185.168 <br> 52.227.173.179 <br> 52.227.175.242 <br> 13.72.39.209 <br> 52.243.26.209 <br> 52.247.173.11 |
+|*. manage.microsoft.us | 52.243.26.209 <br> 52.247.173.11 <br> 52.227.183.12 <br>52.227.180.205 <br> 52.227.178.107 <br> 13.72.185.168 <br> 52.227.173.179 <br> 52.227.175.242 <br> 13.72.39.209 <br> 52.243.26.209 <br> 52.247.173.11 |
 | enterpriseregistration.microsoftonline.us | 13.72.188.239 <br> 13.72.55.179 |
 
 ## <a name="us-government-customer-designated-endpoints"></a>Az Egyesült Államok kormányzati ügyfelei által kijelölt végpontok:
-- Azure Portal: https:\//Portal.Azure.us/ 
-- Office 365: https:\//Portal.office365.us/ 
-- Intune céges portál: https:\//Portal.Manage.microsoft.us/ 
+- Azure Portal: https: \//Portal. Azure. us/ 
+- Office 365: https: \//Portal. Office 365. us/ 
+- Intune Céges portál: https: \//Portal. Manage. microsoft. USA/ 
 
 ## <a name="partner-service-endpoints-that-intune-depends-on"></a>A partneri szolgáltatási végpontok, amelyeket az Intune a következőktől függ:
-- AAD-szinkronizáló szolgáltatás: https:\//syncservice.gov.us.microsoftonline.com/DirectoryService.SVC
-- Evo STS: https:\//login.microsoftonline.us
-- Directory-proxy: https\/:/directoryproxy.microsoftazure.us/DirectoryProxy.SVC
-- HRE gráf: https:\//Directory.microsoftazure.us és https:\//Graph.microsoftazure.us
-- MS Graph: https:\//Graph.microsoft.us
-- ADRS: https:\//enterpriseregistration.microsoftonline.us
+- AAD-szinkronizáló szolgáltatás: https: \//syncservice. gov. us. microsoftonline. com/DirectoryService. SVC
+- Evo STS: https: \//login. microsoftonline. us
+- Directory proxy: https: \//directoryproxy. microsoftazure. us/DirectoryProxy. SVC
+- HRE gráf: https: \//Directory. microsoftazure. us és https: \//Graph. microsoftazure. us
+- MS gráf: https: \//Graph. microsoft. us
+- ADRS: https: \//enterpriseregistration. microsoftonline. us

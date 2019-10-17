@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 09/19/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.suite: ems
@@ -15,12 +16,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 mr.reviewer: karthib
-ms.openlocfilehash: f8923f3c4e1610be2501dccbd3ac551b9c994c24
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 884e4211a880feb3eb533238a5e7246b2738ce46
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729307"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72502318"
 ---
 # <a name="add-endpoint-protection-settings-in-intune"></a>Endpoint Protection-beállítások hozzáadása az Intune-ban  
 
@@ -41,7 +42,7 @@ A profil létrehozása előtt tekintse át a következő cikkeket, amelyek rész
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.  
 3. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.  
 4. Adja meg az Endpoint Protection-profil **nevét** és **leírását**.  
-5. A **Platform** legördülő listából válassza ki azt az eszközplatformot, amelyre egyéni beállításokat szeretne alkalmazni. Jelenleg az alábbi platformokra vonatkozóan lehet eszközkorlátozási beállításokat megadni:  
+5. A **Platform** legördülő listából válassza ki azt az eszközplatformot, amelyre egyéni beállításokat szeretne alkalmazni. Jelenleg az alábbi platformok egyikét választhatja ki az eszközkorlátozási beállításokhoz:  
    - **macOS**  
    - **Windows 10 és újabb**  
 6. A **Profil típusa** legördülő listából válassza az **Endpoint Protection** lehetőséget.  
@@ -66,7 +67,7 @@ Az Intune által kezelhető tűzfalszabályok részletesen szerepelnek a Windows
 
 ### <a name="to-add-custom-firewall-rules-to-an-endpoint-protection-profile"></a>Egyéni tűzfalszabályok hozzáadása Endpoint Protection-profilhoz  
 
-1. Az Intune-ban válassza az **eszköz konfigurációs** > **profilok** > **Létrehozás profil létrehozása**lehetőséget.  
+1. Az Intune-ban nyissa meg az **eszköz konfigurációja** > **profilok** > **profil létrehozása**lehetőséget.  
 
 2. A *platform*területen válassza a **Windows 10 és újabb**lehetőséget, majd a *Profil típusa* beállításnál válassza az **Endpoint Protection**lehetőséget.  
 

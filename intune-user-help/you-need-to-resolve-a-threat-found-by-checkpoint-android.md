@@ -9,6 +9,7 @@ ms.date: 08/28/2018
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: 449c34ec-2d94-4c7f-8691-a5200efee3cb
 searchScope:
@@ -16,12 +17,12 @@ searchScope:
 ROBOTS: ''
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3fdf06339435d0605c6ac84d82dc2ab6c643b2df
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: 81248206fe406da6ad2d8a031c3f58ec170e18ef
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61490619"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72507834"
 ---
 # <a name="resolve-a-threat-found-by-sandblast-mobile-protect"></a>A SandBlast Mobile Protect által észlelt fenyegetés elhárítása
 
@@ -50,6 +51,6 @@ Mivel az alkalmazás integrálva van a vállalat MDM szolgáltatójával, korlá
 
 Ha egy fenyegetésként észlelt alkalmazást telepít az eszközére, akkor értesítést fog kapni a SandBlast Mobile Protectben. Ha a érintett alkalmazás az eszközén marad, nem fogja tudni elérni a vállalati erőforrásokat.  
 
-A feloldáshoz válassza ki az alkalmazást a fenyegetések listájából a SandBlast Mobile Protectben. Ez után kövesse az utasításokat az alkalmazás eltávolításához.     
+A feloldáshoz válassza ki az alkalmazást a fenyegetések listájából a SandBlast Mobile Protectben. Ezután kövesse az alkalmazás eltávolítására vonatkozó utasításokat.     
 
 További segítségre van szüksége? Forduljon a cég informatikai támogatásához. Az elérhetőségét keresse meg a [Vállalati portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).

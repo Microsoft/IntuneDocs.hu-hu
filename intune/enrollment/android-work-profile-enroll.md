@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 5/13/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: enrollment
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
@@ -17,14 +18,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8c447b6b21021573d95a5ece3297e548f216b7a0
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 4339f98ed133c3426faee8bd4b18024fd2648606
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730059"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72503346"
 ---
-# <a name="set-up-enrollment-of-android-enterprise-work-profile-devices"></a>Androidos vállalati munkahelyi profilú eszközök regisztrálásának beállítása
+# <a name="set-up-enrollment-of-android-enterprise-work-profile-devices"></a>Vállalati androidos munkahelyi profilos eszközök regisztrálásának beállítása
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
@@ -32,10 +33,10 @@ Az Intune segítségével alkalmazásokat és beállításokat telepíthet az An
 
 Az androidos vállalati munkahelyi profilok felügyeletének beállításához kövesse az alábbi lépéseket:
 
-1. Az [Intune-bérlői fiókját az Android Enterprise-fiókjával is](connect-intune-android-enterprise.md)összekapcsolhatjuk.
+1. Az [Intune-bérlői fiókját az Android Enterprise-fiókjával is összekapcsolhatjuk](connect-intune-android-enterprise.md).
 2. Az androidos vállalati munkahelyi profil regisztrálási beállításainak megadása. Az androidos vállalati munkahelyi profilok [csak bizonyos Android-eszközökön támogatottak](https://support.google.com/work/android/answer/6174145?hl=en&ref_topic=6151012%20style=%22target=new_window%22). Az Android Enterprise Work-profilokat támogató bármely eszköz támogatja az Android-eszközök rendszergazdai felügyeletét is. Az Intune segítségével megadhatja, hogy az androidos vállalati munkahelyi profilokat támogató eszközöket a [regisztrációs korlátozásokon](enrollment-restrictions-set.md)belül kell kezelni.
-    - **Letiltás**:  Minden Android-eszköz, beleértve az Android Enterprise Work-profilokat támogató eszközöket, az Android-eszköz rendszergazdai eszközeiként lesz regisztrálva, kivéve, ha az Android-eszközök rendszergazdai regisztrációja is le van tiltva. 
-    - **Engedélyezés (alapértelmezett beállítás)** : Az Android Enterprise munkahelyi profilokat támogató összes eszköz az Android Enterprise Work Profile-eszközökként van regisztrálva. Az androidos vállalati munkahelyi profilokat nem támogató androidos eszközök regisztrálása Android-eszköz rendszergazdai eszközeként történik, kivéve, ha az Android-eszközök rendszergazdai regisztrációja le van tiltva. 
+    - **Blokkolás**: minden Android-eszköz, beleértve az Android Enterprise Work-profilokat támogató eszközöket, az Android-eszköz rendszergazdai eszközeként lesz regisztrálva, kivéve, ha az Android-eszközök rendszergazdai regisztrációja is le van tiltva. 
+    - **Engedélyezés (alapértelmezett beállítás)** : az Android Enterprise munkahelyi profilokat támogató összes eszköz androidos vállalati munkahelyi Profilos eszközökként van regisztrálva. Az androidos vállalati munkahelyi profilokat nem támogató androidos eszközök regisztrálása Android-eszköz rendszergazdai eszközeként történik, kivéve, ha az Android-eszközök rendszergazdai regisztrációja le van tiltva. 
 > [!NOTE]
 > Az alapértelmezett beállítás az új bérlők esetében a **2019-as** számú. Az összes korábbi bérlő nem fogja tudni módosítani a regisztrációs korlátozásokat, és látni fogja azokat a szabályzatokat, amelyeket a regisztrációs korlátozásokban beállítottak. Az olyan korábbi bérlők esetében, amelyekhez még nem történt meg a regisztrációs korlátozás, az androidos vállalati munkahelyi profilok esetében is az alapértelmezett érték lesz a **blokkolás** .
 
@@ -53,6 +54,6 @@ További információ: [Az Intune által a Google-nek küldött adatok](../prote
 - [Androidos vállalati munkahelyi profilbeli alkalmazások telepítése](../apps/apps-add-android-for-work.md)
 - [Androidos vállalati munkahelyi profil konfigurációs házirendjeinek hozzáadása](../configuration/device-profiles.md)
 
-## <a name="see-also"></a>Lásd még:
+## <a name="see-also"></a>További információ
 
 [Androidos vállalati eszközök konfigurálása és hibaelhárítása Microsoft Intune](https://support.microsoft.com/help/4476974)

@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 10/02/2019
 ms.topic: troubleshooting
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: ''
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2d31df7ba639f703c89345440b737c990949ccc9
-ms.sourcegitcommit: a2654f3642b43b29ab0e1cbb2dfa2b56aae18d0e
+ms.openlocfilehash: e9542212e1b75d97c96c024eed20e20e610e2b5d
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72310876"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72503648"
 ---
 # <a name="resolve-common-problems-with-the-intune-exchange-connector"></a>Az Intune Exchange Connector gyakori problémáinak elhárítása
  
@@ -35,7 +36,7 @@ Ha egy Exchange ActiveSync-eszköz nincs felderítve az Exchange-ből, [figyelje
 
 - Győződjön meg arról, hogy a felhasználók Intune-licenccel rendelkeznek. Ha nem, az Exchange Connector nem észleli az eszközeit.  
 
-- Ha a felhasználó elsődleges SMTP-címe eltér az egyszerű felhasználónévtől (UPN) Azure Active Directory (Azure AD), az Exchange Connector nem észleli az adott felhasználó eszközeit. Javítsa ki az elsődleges SMTP-címeket a probléma megoldásához.  
+- Ha a felhasználó elsődleges SMTP-címe eltér az egyszerű felhasználónévtől (UPN) Azure Active Directory (Azure AD), az Exchange Connector nem észleli az adott felhasználó eszközeit. A probléma megoldásához javítsa ki az elsődleges SMTP-címet.  
 
 - Ha az Exchange 2010 és az Exchange 2013 postaláda-kiszolgáló is van a környezetben, javasoljuk, hogy az Exchange Connectort egy Exchange 2013 ügyfél-hozzáférési kiszolgálóra (CAS) mutasson. Ha az Exchange Connector Exchange 2010 HITELESÍTÉSSZOLGÁLTATÓval való kommunikációra van beállítva, az Exchange Connector nem derít fel semmilyen felhasználói eszközt az Exchange 2013-ben.  
 
@@ -91,7 +92,7 @@ Ha az automatikus észlelés sikertelen, próbálkozzon a következő lépésekk
 >[!NOTE]
 > Ebben a konfigurációban az Intune Exchange Connector leáll az automatikus észlelés használatával, és ehelyett közvetlenül a EWS URL-címhez csatlakozik.
 
-## <a name="next-steps"></a>Következő lépések  
+## <a name="next-steps"></a>További lépések  
 
 Az adott hibákkal kapcsolatos segítségért próbálkozzon [az Intune Exchange Connector gyakori hibáinak megoldásával](troubleshoot-exchange-connector-common-errors.md).
 

@@ -7,8 +7,8 @@ ms.author: lanewsad
 manager: dougeby
 ms.date: 01/23/2017
 ms.topic: article
-ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: 0dc35efe-4fd4-4d4a-8569-d649ea704fea
 searchScope:
@@ -18,14 +18,14 @@ ms.reviewer: priyar
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ebc7a9a1e9cc355a06baa4b7134216ecc6cd0da5
-ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
+ms.openlocfilehash: 61825741a5651daa55727c706ba683628e723c8a
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67545286"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72490283"
 ---
-# <a name="installing-the-company-portal-app-for-windows-10"></a>A céges portál alkalmazás telepítése Windows 10-es  
+# <a name="installing-the-company-portal-app-for-windows-10"></a>A Windows 10 Céges portál alkalmazásának telepítése  
 
 Miután telepítette a Vállalati portál alkalmazást, és annak használatával regisztrálta a Windows 10 Enterprise vagy Windows 10 Professional rendszerű eszközét az Intune-ban, a Vállalati portál alkalmazásban lehetősége nyílik a következőkre:
 
@@ -35,9 +35,9 @@ Miután telepítette a Vállalati portál alkalmazást, és annak használatáva
 
 - Automatikusan beállíthatja a vállalati e-mail-fiókját.
 
-- Ha elveszíti a telefonját, visszaállíthatja a gyári beállításait.
+- Ha elveszíti vagy ellopják a telefonját, visszaállíthatja a gyári beállításait.
 
-Ha már készen áll a vállalati portál telepítése és az eszköz regisztrálása, lásd: [Ismerkedés a Windows-regisztráció](windows-enrollment-company-portal.md).  
+Ha készen áll a Céges portál telepítésére és az eszköz regisztrálására, tekintse meg a [Bevezetés a Windows-regisztráció használatába](windows-enrollment-company-portal.md)című témakört.  
 
 Számítógép hozzáadásakor:
 

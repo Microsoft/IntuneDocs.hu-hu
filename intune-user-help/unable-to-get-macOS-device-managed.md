@@ -9,6 +9,7 @@ ms.date: 11/09/2018
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: ''
 searchScope:
@@ -18,20 +19,20 @@ ms.reviewer: ''
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9d39c065dd991fab548cd6050337379746bc28c2
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: 499eb015f38134a8b1ff1c41dd22d26cdd4f7324
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61505539"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72508146"
 ---
 # <a name="unable-to-get-macos-device-managed"></a>A macOS-eszköz nem felügyelhető
 
 Ha a macOS felügyeletének beállításakor a következő üzenetek egyikét kapja, lépjen kapcsolatba céges ügyfélszolgálatával.
 
-**1 üzenet**: *Kiszolgálóhiba történt az eszköz felügyelt. Ezt a problémát okozhatja egy virtuális gép használata, ha korlátozott sorozatszámmal rendelkezik, vagy ha az eszköz már hozzá van rendelve valaki máshoz. Sajátítsa el, hogyan oldhatók meg az ilyen problémák, vagy forduljon a cég ügyfélszolgálatához.*
+**1. üzenet**: *hiba történt az eszköz felügyeletének beszerzése során. Ezt a problémát az okozhatja, ha virtuális gépet használ, korlátozott sorozatszámmal rendelkezik, vagy ha az eszköz már hozzá van rendelve valaki másnak. Megtudhatja, hogyan oldja meg ezeket a problémákat, vagy forduljon a cég informatikai támogatási szolgálatához.*
 
-**2 üzenet**: *Úgy tűnik, hogy egy virtuális gépet használ. Győződjön meg arról, hogy teljesen konfigurálta a virtuális gépet, beleértve a sorozatszámot és a hardvermodellt. Ha ez nem egy virtuális gép, forduljon az ügyfélszolgálathoz.*  
+**2. üzenet**: úgy *tűnik, mintha egy virtuális gépet használ. Győződjön meg arról, hogy teljesen konfigurálta a virtuális gépet, beleértve a sorozatszámot és a hardveres modellt is. Ha ez nem egy virtuális gép, forduljon az ügyfélszolgálathoz.*  
 
 Előfordulhat, hogy az eszköz nem felügyelhető a következők valamelyike miatt: 
 

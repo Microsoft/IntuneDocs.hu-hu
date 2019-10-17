@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 08/12/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: e6a52506-2d29-41f7-a171-5d684a740dd4
@@ -16,26 +17,26 @@ ms.reviewer: dagerrit
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5728b912d5483a62d9469ad6720d3ff9badcae99
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: c4637a4f9f137e9db665d72118fd7a97d7a9f75a
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732291"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72510129"
 ---
 # <a name="plan-communications"></a>A kommunikáció tervezése
 
 A kommunikációs terv az Intune áttelepítésének kulcsfontosságú eleme. A következő eszközök és sablonok nyújtanak segítséget a végfelhasználók nevelésében. Az Intune bevezetési csomagja tartalmazza az e-mail-sablonokat, az Intune-regisztrációs útmutatót, valamint a végfelhasználói beléptetéshez kapcsolódó oktatói videókra mutató hivatkozásokat.  
 
-Letöltés  [Intune bevezetési csomag](https://aka.ms/IntuneAdoptionKit)
+Letöltés: [Intune bevezetési csomag](https://aka.ms/IntuneAdoptionKit)
 
 ## <a name="email-templates"></a>E-mail-sablonok
 
 A következő e-mail-kommunikációs terv követését javasoljuk. Szerkesztheti a szöveget a felhasználók operációs rendszeréhez és környezetéhez való igazításhoz. A következő sablonokat adta meg a kommunikációs tervhez való alkalmazkodáshoz:
 
-- **E-mail #1**: Az előnyök, az elvárások és az ütemterv ismertetése. Használja ki a lehetőséget az Intune által felügyelt eszközökön elérhető új szolgáltatások bemutatására.
+- **E-mail #1**: az előnyök, az elvárások és az ütemterv ismertetése. Használja ki a lehetőséget az Intune által felügyelt eszközökön elérhető új szolgáltatások bemutatására.
 
-- **E-mail #2**: Be kell jelentenie, hogy a szolgáltatások készen állnak az Intune-on keresztül történő hozzáférésre. Szólítsa fel a felhasználókat, hogy most regisztráljanak. Adja meg a felhasználóknak az ütemtervet a hozzáférésük megkezdése előtt. Emlékeztesse a felhasználókat a migrálás előnyeire és stratégiai okaira.
+- **E-mail-#2**: bejelentette, hogy a szolgáltatások készen állnak az Intune-on keresztül történő hozzáférésre. Szólítsa fel a felhasználókat, hogy most regisztráljanak. Adja meg a felhasználóknak az ütemtervet a hozzáférésük megkezdése előtt. Emlékeztesse a felhasználókat a migrálás előnyeire és stratégiai okaira.
 
 Egy adott időszak elteltével megkezdheti a megfelelőség kényszerítését a feltételes hozzáférési házirendeken keresztül, és feltételként használhatja a vállalati adathozzáféréshez, ahogy azt a [végfelhasználói bevezetés a feltételes hozzáféréssel](migration-guide-drive-adoption.md)című részben leírtak szerint.
 

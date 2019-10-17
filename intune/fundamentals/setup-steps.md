@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 01/24/2018
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: d158503c-1276-422b-ab81-5f66c1cd7e7a
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 36f7e2105d27ccb996f4544ec6633babcff032b1
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 7a45160fc0e728b4c53590455a2bd0b5d904ddb1
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729423"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72504898"
 ---
 # <a name="set-up-intune"></a>Az Intune beállítása
 
@@ -36,7 +37,7 @@ Ha jelenleg a Microsoft System Center Configuration Manager használatával fel�
 
 
 
-| Lépések |                                                                                                                       State                                                                                                                       |
+| Lépések |                                                                                                                       Állapot                                                                                                                       |
 |-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   1   |                                        [Támogatott konfigurációk](supported-devices-browsers.md) – Tudnivalók a kezdés előtt. Ez a szakasz tartalmazza a támogatott konfigurációkat és a hálózati követelményeket.                                         |
 |   2   |                                                                 [Bejelentkezés az Intune-ba](account-sign-up.md) – Jelentkezzen be a próba-előfizetésbe, vagy hozzon létre egy új Intune-előfizetést.                                                                  |

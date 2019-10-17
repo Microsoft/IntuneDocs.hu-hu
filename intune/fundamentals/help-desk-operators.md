@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 03/11/2019
 ms.topic: troubleshooting
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: 1f39c02a-8d8a-4911-b4e1-e8d014dbce95
@@ -16,12 +17,12 @@ ms.reviewer: sumitp
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5c766f824f9a76ed4da3084ae81e2dde5656e673
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 0094cdd12b2594cb60260d768daec8c5bed04c9c
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731799"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72510253"
 ---
 # <a name="use-the-troubleshooting-portal-to-help-users-at-your-company"></a>Segítségnyújtás a céges felhasználóknak a hibaelhárítási portál használatával
 
@@ -60,7 +61,7 @@ A **Hibaelhárítás** panel használatával felhasználói információkat teki
 
 ![Hibaelhárítási irányítópult, a következő táblázatban leírt számozott területtel](./media/help-desk-operators/troubleshooting-dash.png)
 
-| Terület | Name (Név) | Leírás |
+| Terület | Név | Description |
 | ---  | ---  | ---         |
 | 1.   | Fiók állapota  | Az aktuális Intune-bérlő állapotát jeleníti meg, amely lehet **Aktív** vagy **Inaktív**.       |
 | 2.   | Felhasználó kiválasztása  | Az aktuálisan kiválasztott felhasználó neve. Új felhasználó kiválasztásához kattintson a **Felhasználó váltása** lehetőségre.       |
@@ -247,10 +248,10 @@ An app protection policy is available to mobile apps that integrate with EMS tec
 
 A Regisztrációs hibák táblázat a sikertelen regisztrációs kísérleteket jeleníti meg. A lenti táblázatban szereplő eszközök esetében előfordulhat, hogy egy újabb próbálkozás során sikerült regisztrálnia. Nem minden sikertelen kísérlet jelenik meg. A kockázatcsökkentési adatok nem érhetők el minden funkcióhoz.
 
-| Táblázatoszlop | Leírás |
+| Táblázatoszlop | Description |
 |-------------|----------|
 | Regisztráció kezdete | A felhasználó első regisztrációjának kezdési időpontja. |
-| OS | Az eszköz operációs rendszere. |
+| Operációs rendszer | Az eszköz operációs rendszere. |
 | Operációs rendszer verziója | Az eszköz operációs rendszerének verziója. |
 | Hiba | A hiba oka. |
 
@@ -258,7 +259,7 @@ A Regisztrációs hibák táblázat a sikertelen regisztrációs kísérleteket 
 
 Egy hibasort kijelölve további adatokat jeleníthet meg.
 
-| `Section` | Leírás |
+| Szakasz | Description |
 |-------------|----------|
 | Hiba részletei | A hiba részletes leírása. |
 | Lehetséges megoldások | Javasolt lépések a hiba megoldásához. Bizonyos hibákat nem lehet javítani. |
@@ -266,7 +267,7 @@ Egy hibasort kijelölve további adatokat jeleníthet meg.
 
 ### <a name="enrollment-errors"></a>Regisztrációs hibák
 
-| Hiba | Részletek |
+| Hiba | Details |
 |-------------|----------|
 | iOS időtúllépés vagy hiba | Időtúllépés az eszköz és az Intune között a felhasználó regisztrációs folyamatának elhúzódása miatt. |
 | Felhasználó nem található vagy nincs licence | A felhasználó nem rendelkezik licenccel, vagy eltávolították a szolgáltatásból. |

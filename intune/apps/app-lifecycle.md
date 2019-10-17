@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 08/22/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: apps
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 60347012-bc3f-4b9a-a4f4-6d3c5021a6e6
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: apps; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3c351c1bef09d559ee6fb07b2c5135b25ca69d9d
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 53425b56985cbafb4033b11df54597959c0b0d59
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731427"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72499720"
 ---
 # <a name="overview-of-the-app-lifecycle-in-microsoft-intune"></a>Az alkalmazások Microsoft Intune-beli életciklusának áttekintése
 
@@ -29,13 +30,13 @@ ms.locfileid: "71731427"
 
 Az alkalmazások Microsoft Intune-beli életciklusa az alkalmazás hozzáadásával kezdődik, majd végighalad a további fázisokon egészen az alkalmazás eltávolításáig. Ezeknek a fázisoknak a megismeréséhez az Intune-ban az alkalmazások felügyeletének megkezdéséhez szükséges részleteket kell megadnia.
 
-![Az alkalmazások életciklusa – Hozzáadás, üzembe helyezés, konfigurálás, védelem és] kivonás. (./media/app-lifecycle/app-lifecycle.png "az Intune-alkalmazás életciklusa")
+![Az alkalmazások életciklusa – Hozzáadás, üzembe helyezés, konfigurálás, védelem és kivonás.](./media/app-lifecycle/app-lifecycle.png "az Intune-alkalmazás életciklusa")
 
 ## <a name="add"></a>Hozzáadás
 
 Az alkalmazások központi telepítésének első lépéseként fel kell vennie az Intune-ba a felügyelni és hozzárendelni kívánt alkalmazásokat. Jóllehet számos különböző típusú alkalmazással dolgozhat, az alapvető eljárás mindegyiknél ugyanaz. Az Intune-nal különböző típusú alkalmazásokat adhat hozzá, beleértve a házon belüli (üzletági), az áruházból származó alkalmazásokat, a beépített alkalmazásokat és a webes alkalmazásokat. Az egyes alkalmazástípusokról az [Alkalmazás felvétele a Microsoft Intune-ba](apps-add.md) című témakörben talál további információt. 
 
-## <a name="deploy"></a>Üzembe helyezés
+## <a name="deploy"></a>telepítése Telepítse a
 
 Miután felvette az alkalmazást az Intune-ba, [azt felhasználókhoz és felügyelt eszközökhöz rendelheti hozzá](apps-deploy.md). Az Intune megkönnyíti ezt a folyamatot, és az alkalmazás üzembe helyezése után nyomon követheti az üzembe helyezés [sikerességét](apps-monitor.md) az Intune-ban a Azure Portalon belül. Egyes alkalmazás-áruházakban, mint az [Apple](vpp-apps-ios.md) vagy a [Windows](windows-store-for-business.md), nagy tételben is vásárolhat alkalmazáslicenceket cége számára. Az Intune képes szinkronizálni az adatokat ezekkel az áruházakkal, így Ön közvetlenül az Intune felügyeleti konzoljából hajthatja végre a központi telepítést és követheti nyomon a licenchasználatot.
 
@@ -45,7 +46,7 @@ Az alkalmazások életciklusa során általában az alkalmazás több új verzi�
 - Az [iOS-alkalmazáskonfigurációs szabályzatok](app-configuration-policies-use-ios.md) segítségével meghatározhatja, hogy a kompatibilis iOS-alkalmazások futása esetén mely beállítások lépjenek érvénybe. Például egyes alkalmazásokhoz szükség lehet bizonyos márkajelzési beállításokra, vagy a célkiszolgáló nevére, amelyhez csatlakoznia kell.
 - A [felügyeltböngésző-szabályzatok](app-configuration-managed-browser.md) segítségével konfigurálhatja az Intune által felügyelt, az eszközök alapértelmezett böngészőjét felváltó böngésző beállításait, illetve korlátozhatja, hogy a felhasználók milyen weboldalakat nyithatnak meg.
 
-## <a name="protect"></a>védelme
+## <a name="protect"></a>Védelem
 
 Az Intune számos módszert kínál az alkalmazásokban tárolt adatok védelmére. A legfontosabb megoldások a következők:
 - [Feltételes hozzáférés](../protect/conditional-access.md), amely az Ön által megadott feltételek alapján szabályozza az e-mailekhez és egyéb szolgáltatásokhoz való hozzáférést. Ilyen feltétel lehet az eszköz típusa, vagy az, hogy megfelel-e a központilag telepített [eszközmegfelelőségi szabályzatnak](../protect/device-compliance-get-started.md).

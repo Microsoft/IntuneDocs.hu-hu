@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 01/02/2018
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: b9428769-4333-4778-b677-f23dea1f74da
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df3add9f49f15dfba8354da056de724e2189e77f
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 34072ed40867691d582a31721fa1a41fc47ceef3
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732163"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72509929"
 ---
 # <a name="develop-a-support-plan"></a>Támogatási terv kidolgozása
 
@@ -90,6 +91,6 @@ Az [Intune dokumentációja](../index.yml) az Intune áttekintését, a funkció
 
 Ha az Intune üzembe helyezésének tervezésekor és a kipróbálási fázisban már a korai szakaszokban bevonja az ügyfélszolgálatot/segélyszolgálatot, azzal jobbá teheti az Intune üzemelő példányát és a végfelhasználók adaptációját. A korai bevonás során a támogatási csapat találkozik az Intune-nal, és már az elejétől értékes tapasztalatokat szerez. Ahhoz is hozzájárul, hogy fel lehessen készíteni az ügyfélszolgálat vagy segélyszolgálat tagjait a teljes bevezetésre.
 
-## <a name="next-step"></a>Következő lépés
+## <a name="next-step"></a>További lépések
 
 A következő szakasz útmutatást nyújt az [Intune tervezéséhez](planning-guide-design.md).

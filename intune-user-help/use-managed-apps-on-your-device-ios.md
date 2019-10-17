@@ -9,6 +9,7 @@ ms.date: 01/09/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: 3232c5c1-cb9f-45ca-806f-7e74eeb3533e
 searchScope:
@@ -18,12 +19,12 @@ ms.reviewer: maxles
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ae4e454a0ca41858cb670790fd5acd4d6bf998a
-ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
+ms.openlocfilehash: 5daa9f6b9f50c561876818e75e56c9a948a8f955
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67546621"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72508081"
 ---
 # <a name="use-managed-apps-on-your-ios-device"></a>Felügyelt alkalmazások használata iOS-eszközön
 
@@ -45,12 +46,12 @@ Különböző módokon szerezhet be felügyelt alkalmazásokat:
 Egyes esetekben előfordulhat, hogy a cég informatikai támogatási szolgálata egy telepített alkalmazáshoz több licencet is vásárol. Ha egy olyan üzenet jelenik meg, amely arra kéri, hogy fogadja el az Apple Volume Purchase Program szerződését, ez teljesen normális, és elfogadhatja. Ha nem fogadja el, nem fogja tudni telepíteni az alkalmazást.
 
 ## <a name="available-apps"></a>Nem kötelező alkalmazások   
- A szervezet választja ki a megfelelő és alkalmazások hasznos az Ön számára a munkahelyi vagy iskolai rendszerhez. Ezeket az alkalmazásokat csak azok a céges portálon megtalálhatja.   
+ A szervezet kiválasztja a megfelelő és hasznos alkalmazásokat a munkahelyi vagy iskolai munkahelyen. Ezek az alkalmazások csak a Céges portálban találhatók meg.   
 
- Alkalmazások is elérhető lesz az eszköz típusa alapján. Például ha az iOS-hez készült céges portál alkalmazás használ, hozzáférhet az iOS-alkalmazások, de nem Android-alkalmazások.   
+ Az alkalmazásokat az eszköz típusa alapján is elérhetővé teszi. Ha például az iOS rendszerhez készült Céges portál alkalmazást használja, akkor iOS-alkalmazásokhoz férhet hozzá, de nem Android-alkalmazásokhoz.   
 
-## <a name="request-an-app-for-work-or-school"></a>A kérelem egy alkalmazást a munkahelyi vagy iskolai fiók   
- Ha szükséges, de nem látható a vállalati portál alkalmazás, kérheti. Keresse meg a kapcsolattartási adatait a **segélyszolgálat** a vállalati portál alkalmazás **támogatási** fülre. Ugyanazokat az adatokat a látni fogja a [céges portál webhelyen](https://go.microsoft.com/fwlink/?linkid=2010980).   
+## <a name="request-an-app-for-work-or-school"></a>Munkahelyi vagy iskolai alkalmazás igénylése   
+ Ha van szüksége egy alkalmazásra, de nem látja a Céges portál, kérheti. A Céges portál alkalmazás **támogatás** lapján megkeresheti a **segélyszolgálat** kapcsolattartási adatait. Ugyanezeket a kapcsolattartási adatokat a [céges portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980)találja.   
  
 
 ## <a name="what-can-my-company-support-manage-in-an-app"></a>Mit felügyelhet a cég informatikai támogatási szolgálata az alkalmazásokban?  

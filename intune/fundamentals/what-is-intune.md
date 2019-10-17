@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 10/14/2019
 ms.topic: overview
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 3b4e778d-ac13-4c23-974f-5122f74626bc
@@ -16,22 +17,22 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 56c76663330cae5cb771358542fd22ff09398118
-ms.sourcegitcommit: 45d7c76e760c5117bf134fb57f7e248e5b6c4ad5
+ms.openlocfilehash: c3c03c67a99b78804c999250f8d1148a4b3d1d97
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72314728"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72504764"
 ---
 # <a name="microsoft-intune-is-an-mdm-and-mam-provider-for-your-devices"></a>Microsoft Intune az eszközök MDM és MAM-szolgáltatója
 
 A Microsoft Intune egy felhőalapú szolgáltatás, amely a mobileszköz-felügyeletre (MDM) és a mobileszköz-felügyeletre (MAM) koncentrál. Az Intune megtalálható a Microsoft [Enterprise Mobility + Security (EMS) csomagjában](https://www.microsoft.com/microsoft-365/enterprise-mobility-security), és lehetővé teszi a felhasználók számára a hatékony munkavégzést a szervezet adatai védelmének megőrzése mellett. Integrálható más szolgáltatásokkal, többek között a Microsoft 365 és az Azure Active Directory (Azure AD), amelyekkel szabályozhatja, hogy ki férhet hozzá, és hogy mire van hozzáférésük, és Azure Information Protection az adatvédelem érdekében. Ha Microsoft 365 használatával használja, lehetővé teheti, hogy a munkaerő minden eszközén hatékony legyen, miközben gondoskodik a szervezet adatainak védelméről.
 
-![Az Intune-architektúra képe](./media/what-is-intune/intunearch_sm.png)
+![Kép az Intune architektúrájáról](./media/what-is-intune/intunearch_sm.png)
 
-Tekintse meg az Intune architektúra-diagramjának [nagyobb verzióját](./media/what-is-intune/intunearchitecture.svg) .
+Az Intune architektúráját szemléltető diagramot [nagyobb méretben](./media/what-is-intune/intunearchitecture.svg) is megnézheti.
 
-Az Intune-nal a következőket teheti:
+Az Intune-nal a következőkre nyílik lehetősége:
 
 - Az Intune-nal a 100%-os felhőt kell választania, vagy a Configuration Manager és az Intune-nal együtt kell [felügyelni](https://docs.microsoft.com/sccm/comanage/overview) .
 - Szabályok beállítása és beállítások konfigurálása a személyes és a szervezet tulajdonában lévő eszközökön az adateléréshez és a hálózatokhoz.
@@ -39,7 +40,7 @@ Az Intune-nal a következőket teheti:
 - Gondoskodjon a vállalati adatok biztonságáról a felhasználók hozzáférésének és megosztásának módjának szabályozásával.
 - Győződjön meg arról, hogy az eszközök és alkalmazások megfelelnek a biztonsági követelményeknek.
 
-## <a name="manage-devices"></a>Eszközök kezelése
+## <a name="manage-devices"></a>Kezelje az eszközöket
 
 Az Intune-ban az eszközöket az Ön számára legmegfelelőbb megközelítéssel kezelheti. A szervezet tulajdonában lévő eszközök esetében teljes hozzáférésre lehet szükség az eszközökön, beleértve a beállításokat, a funkciókat és a biztonságot. Ebben a megközelítésben az eszközök és a felhasználók az Intune-ban regisztrálva vannak. A regisztrációt követően a szabályok és beállítások az Intune-ban konfigurált szabályzatokon keresztül kapják meg a szabályokat és a beállításokat. Beállíthatja például a jelszó-és PIN-követelmények, a VPN-kapcsolat létrehozását, a fenyegetések elleni védelem beállítását és egyebeket.
 
@@ -55,11 +56,11 @@ Az eszközök Intune-beli regisztrálásakor és kezelésekor a rendszergazdák 
 
 **Online erőforrások**:
 
-- [Mi az az eszköz beléptetése?](../enrollment/device-enrollment.md)
+- [Mi az eszközregisztrálás?](../enrollment/device-enrollment.md)
 
 - [Szolgáltatások és beállítások alkalmazása az eszközön az eszközök profiljainak használatával](../configuration/device-profiles.md)
 
-- [Eszközök védelme a Microsoft Intune-nal](../protect/device-protect.md)
+- [Eszközök Microsoft Intune-védelemmel való ellátása](../protect/device-protect.md)
 
 ## <a name="manage-apps"></a>Alkalmazások kezelése
 
@@ -82,11 +83,11 @@ Például egy felhasználó bejelentkezik egy eszközre a szervezeti hitelesít�
 
 Emellett az Intune-t az EMS egyéb szolgáltatásaival is használhatja. Ez a funkció az operációs rendszer és az alkalmazások számára elérhetővé teszi az Ön szervezete számára a mobil alkalmazások biztonságát. Az EMS-szel kezelt alkalmazások hozzáférhetnek a mobil alkalmazások és adatvédelmi funkciók szélesebb köréhez.
 
-![Az App Management adatbiztonságának szintjeit bemutató ábra](./media/what-is-intune/managing-mobile-apps.png)
+![Az alkalmazásfelügyelet adatvédelmi szintjeit bemutató ábra](./media/what-is-intune/managing-mobile-apps.png)
 
 ## <a name="compliance-and-conditional-access"></a>Megfelelőség és feltételes hozzáférés
 
-Az Intune integrálható az Azure AD-vel, és lehetővé teszi a hozzáférés-vezérlési forgatókönyvek széles körét. Például megkövetelheti, hogy a mobileszközök megfeleljenek az Intune-ban definiált szervezeti szabványoknak, mielőtt hozzáférnek a hálózati erőforrásokhoz, például e-mailekhez vagy SharePointhoz. Hasonlóképpen leállíthatja a szolgáltatásokat, hogy azok csak a mobileszközök adott készletén legyenek elérhetők. Zárolhatja például az Exchange Online-t, hogy az csak az Outlook vagy az Outlook Mobile használatával legyen elérhető.
+Az Intune az Azure AD-vel együttműködve a hozzáférés-vezérlési forgatókönyvek széles választékát teszi elérhetővé. Például megkövetelheti, hogy a mobileszközök megfeleljenek az Intune-ban definiált szervezeti szabványoknak, mielőtt hozzáférnek a hálózati erőforrásokhoz, például e-mailekhez vagy SharePointhoz. Hasonlóképpen leállíthatja a szolgáltatásokat, hogy azok csak a mobileszközök adott készletén legyenek elérhetők. Zárolhatja például az Exchange Online-t, hogy az csak az Outlook vagy az Outlook Mobile használatával legyen elérhető.
 
 **Online erőforrások**:
 
@@ -104,7 +105,7 @@ Az Intune elérhető:
 
 Az Intune számos ágazatban használatos, beleértve a [kormányzatot](https://docs.microsoft.com/enterprise-mobility-security/solutions/ems-govt-service-description), az [oktatást](https://www.microsoft.com/en-us/education/intune), a [kioszkot vagy a dedikált eszközt](../configuration/kiosk-settings.md) a gyártáshoz és a kereskedelemhez.
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
 - Olvassa el az [Intune által feloldható gyakori üzleti problémákat](https://docs.microsoft.com/intune/common-scenarios).
 - Kezdje egy [30 napos Intune-próbaverzióval](free-trial-sign-up.md).

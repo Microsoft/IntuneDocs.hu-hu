@@ -4,27 +4,29 @@ description: Rövid útmutató – Egyéni szerepkör létrehozása és hozzáre
 services: microsoft-intune
 author: ErikjeMS
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.topic: quickstart
 ms.date: 03/26/2019
 ms.author: erikje
+ms.assetid: 0b3ac749-4a61-4717-bf08-e0e6a15c3b0a
 ms.reviewer: pjain
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1d84e4d63c16911d83754cf6f70609f830cd709f
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 2c61449e17b96151d2717365e5193fd6c4bdaae3
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732115"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72509893"
 ---
-# <a name="quickstart-create-and-assign-a-custom-role"></a>QuickStart Egyéni szerepkör létrehozása és hozzárendelése
+# <a name="quickstart-create-and-assign-a-custom-role"></a>Rövid útmutató: Egyéni szerepkör létrehozása és hozzárendelése
 
 Ezt a rövid Intune-útmutatót követve létrehozhat egy meghatározott engedélyeket biztosító egyéni szerepkört egy biztonsági üzemeltetési részleg számára. Ez után a szerepkört hozzárendelheti az ezen a területen dolgozók egy csoportjához. Több azonnal használható alapértelmezett szerepkör is létezik. Az ehhez hasonló egyéni szerepkörök létrehozásával azonban mobileszköz-kezelési rendszere minden részletét precízen szabályozhatja.
 
-Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon egy ingyenes próbafiókkal](free-trial-sign-up.md).
+Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon ingyenes próbafiókot](free-trial-sign-up.md).
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -47,7 +49,7 @@ Egyéni szerepkör létrehozásakor a műveletek széles köréhez állíthat be
 5. Válassza az **Eszközmegfelelőségi szabályzatok** > **Olvasás** beállításnál az **Igen** > **OK** elemet.
 6. Válassza az **Eszközkonfigurációk** >  **Olvasás** beállításnál az **Igen** > **OK** elemet.
 7. Válassza a **Vállalat** > **Olvasás** beállításnál az **Igen** > **OK** elemet.
-8. Válassza az **OK** > **Létrehozás** lehetőséget.
+8. Válassza az **OK** > **Létrehozás** lehetőségeket.
 
 ## <a name="assign-the-role-to-a-group"></a>A szerepkör csoporthoz rendelése
 
@@ -75,4 +77,4 @@ Ebben a rövid útmutatóban létrehozta az egyéni Biztonsági üzemeltetés sz
 Kövesse az Intune rövid útmutatóinak sorozatát a következő rövid útmutatóval.
 
 > [!div class="nextstepaction"]
-> [QuickStart E-mail eszköz profil létrehozása iOS rendszerhez](../configuration/quickstart-email-profile.md)
+> [Rövid útmutató: E-mail-eszközprofil létrehozása iOS-hez](../configuration/quickstart-email-profile.md)

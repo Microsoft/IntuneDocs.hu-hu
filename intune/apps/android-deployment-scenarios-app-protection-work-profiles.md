@@ -8,18 +8,19 @@ manager: dougeby
 ms.date: 02/13/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: apps
 ms.localizationpriority: high
 ms.technology: ''
 ms.reviewer: chrisbal
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
-ms.openlocfilehash: 9d078c2e94f775d995e990c7a33e29871819d561
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: a2c71e04cf842fda7b16fb8ad4a05668ccbfaa84
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731487"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72507601"
 ---
 # <a name="application-protection-policies-and-work-profiles-on-android-enterprise-devices-in-intune"></a>Alkalmazás-védelmi szabályzatok és munkahelyi profilok az Android Enterprise-eszközökön az Intune-ban
 
@@ -30,9 +31,9 @@ Számos szervezetnél a rendszergazdáknak a különböző eszközökön lévő 
 
 Az APP-WE és az Android munkahelyi profil üzembe helyezési forgatókönyvei a következő fontos funkciókat tartalmazzák a BYOD-környezetekben:
 
-1. **A szervezet által felügyelt adatmennyiségek védelme és elkülönítése**: Mindkét megoldás védi a szervezeti adatvédelmet a szervezet által felügyelt adatveszteség-megelőzési (DLP) vezérlők betartatásával. Ezek a védelem megakadályozza a védett adatszivárgások véletlen szivárgását, például a végfelhasználók véletlenül személyes alkalmazásba vagy fiókba való megosztását. Azt is biztosítják, hogy az adatokhoz hozzáférő eszköz kifogástalan állapotú legyen, és ne veszélyeztesse azokat.
+1. **A szervezet által felügyelt adatmennyiség védelme és elkülönítése**: mindkét megoldás a szervezet adatainak védelmét a szervezet által felügyelt adatveszteség-megelőzési (DLP) vezérlők betartatásával védi. Ezek a védelem megakadályozza a védett adatszivárgások véletlen szivárgását, például a végfelhasználók véletlenül személyes alkalmazásba vagy fiókba való megosztását. Azt is biztosítják, hogy az adatokhoz hozzáférő eszköz kifogástalan állapotú legyen, és ne veszélyeztesse azokat.
 
-2. **Végfelhasználói adatvédelem**: Az APP-WE és az Android Enterprise Work-profilok a végfelhasználók és a mobileszköz-felügyeleti (MDM) rendszergazdája által felügyelt adatokat is elkülönítik. Mindkét esetben a rendszergazdák kikényszerítik a szabályzatokat, például a csak PIN-kód alapú hitelesítést a szervezet által felügyelt alkalmazásokon vagy identitásokon. A rendszergazdák nem tudják beolvasni, elérni vagy törölni a végfelhasználók tulajdonában lévő vagy azok által vezérelt felhasználókat.
+2. **Végfelhasználói adatvédelem**: az App-We és az Android Enterprise munkahelyi profilok külön végfelhasználói tartalmat biztosítanak az eszközön, valamint a mobileszköz-felügyeleti (Mdm) rendszergazda által felügyelt adatokat. Mindkét esetben a rendszergazdák kikényszerítik a szabályzatokat, például a csak PIN-kód alapú hitelesítést a szervezet által felügyelt alkalmazásokon vagy identitásokon. A rendszergazdák nem tudják beolvasni, elérni vagy törölni a végfelhasználók tulajdonában lévő vagy azok által vezérelt felhasználókat.
 
 Az APP-WE vagy az Android Enterprise munkahelyi profilok kiválasztása a BYOD való üzembe helyezéséhez a követelményektől és az üzleti igényektől függ. A cikk célja, hogy segítséget nyújtson a döntéshez.
 
@@ -42,11 +43,11 @@ Az Intune app Protection-szabályzatok (alkalmazás) a felhasználókra irányul
 
 Az egyes Android-alkalmazások több módon is engedélyezve vannak az ALKALMAZÁShoz:
 
-1. **Natív módon integrálható a Microsoft első féltől származó alkalmazásaiba**: Az androidos alkalmazások Microsoft Office és a többi Microsoft-alkalmazás közül választhat, beépített Intune-ALKALMAZÁSsal. Ezek az Office-alkalmazások, például a Word, a OneDrive, az Outlook stb., nincs szükség további testreszabásra a házirendek alkalmazásához. Ezeket az alkalmazásokat a végfelhasználók közvetlenül Google Play Áruház telepíthetik.
+1. **Natív módon integrálva a Microsoft első féltől származó alkalmazásaiba**: Microsoft Office androidos alkalmazások és más Microsoft-alkalmazások kiválasztása, az INTUNE-alkalmazás beépített része. Ezek az Office-alkalmazások, például a Word, a OneDrive, az Outlook stb., nincs szükség további testreszabásra a házirendek alkalmazásához. Ezeket az alkalmazásokat a végfelhasználók közvetlenül Google Play Áruház telepíthetik.
 
-2. **A fejlesztők az INTUNE SDK-val integrálhatók az alkalmazásba**: Az alkalmazások fejlesztői az Intune SDK-t beépíthetik a forráskódba, és újrafordítják alkalmazásaikat az Intune APP Policy-funkciók támogatásához.
+2. **A fejlesztők az INTUNE SDK-val integrálhatók az alkalmazásba**. az alkalmazások fejlesztői az Intune SDK-t integrálják a forráskódba, és újrafordítják alkalmazásaikat az Intune app Policy funkcióinak támogatásához.
 
-3. **Az Intune app wrapper Tool használatával burkolt**: Egyes ügyfelek Android-alkalmazásokat fordítanak le (. APK-fájl) a forráskódhoz való hozzáférés nélkül. A forráskód nélkül a fejlesztő nem tud integrálni az Intune SDK-val. Az SDK nélkül nem tudják engedélyezni az alkalmazás alkalmazását az alkalmazás-szabályzatokhoz. Az alkalmazás-szabályzatok támogatásához a fejlesztőnek módosítania kell az alkalmazást, vagy újra kell visszaadnia.
+3. **Becsomagolta az Intune alkalmazás-burkoló eszköz használatával**: egyes ügyfelek Android-alkalmazásokat fordítanak le (. APK-fájl) a forráskódhoz való hozzáférés nélkül. A forráskód nélkül a fejlesztő nem tud integrálni az Intune SDK-val. Az SDK nélkül nem tudják engedélyezni az alkalmazás alkalmazását az alkalmazás-szabályzatokhoz. Az alkalmazás-szabályzatok támogatásához a fejlesztőnek módosítania kell az alkalmazást, vagy újra kell visszaadnia.
 
     Az Intune segít az alkalmazás- **burkoló eszközön** a meglévő Android-alkalmazásokhoz (apk), és létrehoz egy alkalmazást, amely felismeri az alkalmazás-szabályzatokat.
 
@@ -54,11 +55,11 @@ Az egyes Android-alkalmazások több módon is engedélyezve vannak az ALKALMAZ�
 
 Az ALKALMAZÁSsal kompatibilis alkalmazások listájának megtekintéséhez tekintse [meg a felügyelt alkalmazások a Mobile Application Protection-szabályzatok gazdag készletét](https://www.microsoft.com/cloud-platform/microsoft-intune-apps).
 
-## <a name="deployment-scenarios"></a>Központi telepítési forgatókönyvek
+## <a name="deployment-scenarios"></a>Üzembe helyezési forgatókönyvek
 
 Ez a szakasz az APP-WE és az Android Enterprise Work Profile telepítési forgatókönyvek fontos jellemzőit ismerteti.
 
-### <a name="app-we"></a>APP-WE
+### <a name="app-we"></a>ALKALMAZÁS – WE
 
 ALKALMAZÁS – a (z) rendszerbe állítást nem igénylő alkalmazások esetében a telepítés szabályzatokat határoz meg az alkalmazásokon, nem pedig az eszközökön. Ebben az esetben az eszközöket általában nem MDM-szolgáltató (például Intune) regisztrálja vagy kezeli. Az alkalmazások védelméhez és a szervezeti információhoz való hozzáféréshez a rendszergazdák az alkalmazás által felügyelhető alkalmazásokat használják, és adatvédelmi szabályzatokat alkalmazhatnak ezekre az alkalmazásokra.
 
@@ -81,9 +82,9 @@ Ez a funkció az alábbiakra vonatkozik:
 
 A munkahelyi profil a következő funkciókat tartalmazza:
 
-- **Hagyományos Mdm funkciók**: A legfontosabb MDM képességek, például az alkalmazások életciklusának kezelése felügyelt Google Play használatával, bármilyen androidos vállalati környezetben elérhető. A felügyelt Google Play robusztus élményt nyújt az alkalmazások felhasználói beavatkozás nélküli telepítéséhez és frissítéséhez. Emellett az alkalmazások konfigurációs beállításait is leküldheti a szervezeti alkalmazásokba. Emellett nem szükséges, hogy a végfelhasználók az ismeretlen forrásból származó telepítéseket is engedélyezzék. Egyéb gyakori MDM tevékenységek, például tanúsítványok központi telepítése, WiFi/VPN-EK beállítása és az eszköz PIN-kód beállítása a munkahelyi profilokkal érhetők el.
+- **Hagyományos Mdm funkciók**: a kulcsfontosságú Mdm képességek, például az alkalmazások életciklus-kezelése felügyelt Google Play használatával, bármilyen androidos vállalati környezetben elérhető. A felügyelt Google Play robusztus élményt nyújt az alkalmazások felhasználói beavatkozás nélküli telepítéséhez és frissítéséhez. Emellett az alkalmazások konfigurációs beállításait is leküldheti a szervezeti alkalmazásokba. Emellett nem szükséges, hogy a végfelhasználók az ismeretlen forrásból származó telepítéseket is engedélyezzék. Egyéb gyakori MDM tevékenységek, például tanúsítványok központi telepítése, WiFi/VPN-EK beállítása és az eszköz PIN-kód beállítása a munkahelyi profilokkal érhetők el.
 
-- **DLP a munkahelyi profil határán**: Az ALKALMAZÁShoz hasonlóan az is kikényszerítheti az adatvédelmi szabályzatokat. Munkahelyi profillal a DLP-szabályzatok a munkahelyi profil szintjén érvényesek, nem az alkalmazás szintjére. A másolási/beillesztési védelmet például egy alkalmazásra alkalmazott Alkalmazásbeállítások, vagy a munkahelyi profil kényszeríti. Ha az alkalmazás munkahelyi profilba van telepítve, a rendszergazdák a szabályzat az alkalmazás szintjén való kikapcsolásával szüneteltetik a védelem másolását és beillesztését a munkahelyi profilba.
+- **DLP a munkahelyi profil határán**: például az App-We is kényszerítheti az adatvédelmi szabályzatok betartatását. Munkahelyi profillal a DLP-szabályzatok a munkahelyi profil szintjén érvényesek, nem az alkalmazás szintjére. A másolási/beillesztési védelmet például egy alkalmazásra alkalmazott Alkalmazásbeállítások, vagy a munkahelyi profil kényszeríti. Ha az alkalmazás munkahelyi profilba van telepítve, a rendszergazdák a szabályzat az alkalmazás szintjén való kikapcsolásával szüneteltetik a védelem másolását és beillesztését a munkahelyi profilba.
 
 ## <a name="tips-to-optimize-the-work-profile-experience"></a>Tippek a munkahelyi profil élményének optimalizálásához
 
@@ -101,7 +102,7 @@ Megkövetelheti például, hogy a végfelhasználók PIN-kódot adjanak meg a mu
 
 ### <a name="control-multi-identity-behavior-in-work-profiles"></a>Többszörös identitás viselkedésének vezérlése a munkahelyi profilokban
 
-Az Office-alkalmazások, például az Outlook és a OneDrive "többszörös identitás" viselkedéssel rendelkeznek. Az alkalmazás egy példányán belül a végfelhasználó több különböző fiókhoz vagy felhőalapú tárolási helyhez is hozzáadhat kapcsolatokat. Az alkalmazásban az ezekről a helyekről beolvasott adatok elkülöníthetők vagy egyesíthetők. És a felhasználó a személyes identitások (user@outlook.com) és a szervezeti identitások (user@contoso.com) közötti helyi váltásra is képes.
+Az Office-alkalmazások, például az Outlook és a OneDrive "többszörös identitás" viselkedéssel rendelkeznek. Az alkalmazás egy példányán belül a végfelhasználó több különböző fiókhoz vagy felhőalapú tárolási helyhez is hozzáadhat kapcsolatokat. Az alkalmazásban az ezekről a helyekről beolvasott adatok elkülöníthetők vagy egyesíthetők. És a felhasználó a személyes identitások (user@outlook.com) és a szervezeti identitások (user@contoso.com) közötti helyi váltást is végezhet.
 
 Munkahelyi profilok használata esetén érdemes lehet letiltani a többszörös identitás működését. Ha letiltja, a munkahelyi profilban az alkalmazás jelvényes példányai csak a szervezet identitásával konfigurálhatók. Az Office Android-alkalmazások támogatásához használja az engedélyezett fiókok alkalmazás konfigurációs beállítását.
 
@@ -128,9 +129,9 @@ Egyes ügyfelek nem szeretnének az eszközök felügyeletének bármilyen form�
 
 A (z) vagy a Kínában lévő felhasználók például nem használhatják az Android-eszközök felügyeletét, mivel a Google szolgáltatások le vannak tiltva. Ebben az esetben használja a DLP-hez készült Intune-alkalmazást.
 
-## <a name="summary"></a>Összegzés
+## <a name="summary"></a>Összefoglalás
 
 Az Intune-nal az androidos BYOD programhoz az APP-WE és az Android Enterprise munkahelyi profilok is elérhetők. Az APP-WE vagy a Work profilok kiválasztása az üzleti és használati követelményektől függ. Az összefoglalás területen használjon munkahelyi profilokat, ha a felügyelt eszközökön, például a MDM, az alkalmazás leküldésekor és így tovább van szüksége a tevékenységekre. ALKALMAZÁS használata – Ha nem szeretné, vagy nem tudja kezelni az eszközöket, és csak az Intune APP-kompatibilis alkalmazásokat használja.
 
 ## <a name="next-steps"></a>További lépések
-Az [alkalmazás-védelmi szabályzatok használatának](app-protection-policy.md)megkezdése vagy [az eszközök regisztrálása](../enrollment/android-enroll.md).
+Az [alkalmazás-védelmi szabályzatok használatának megkezdése](app-protection-policy.md)vagy [az eszközök regisztrálása](../enrollment/android-enroll.md).

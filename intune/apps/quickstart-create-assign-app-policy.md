@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 07/24/2019
 ms.topic: quickstart
 ms.service: microsoft-intune
+ms.subservice: apps
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 2586fce0-5dca-4686-b9c4-791778838401
@@ -17,18 +18,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8642672de048b88f709fef72d2027ec78c3b4327
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: bcda312274e78d327a3a515eb6c95454e38c96f1
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731087"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72507126"
 ---
-# <a name="quickstart-create-and-assign-an-app-protection-policy"></a>QuickStart Alkalmazásvédelmi szabályzat létrehozása és hozzárendelése
+# <a name="quickstart-create-and-assign-an-app-protection-policy"></a>Rövid útmutató: Alkalmazásvédelmi szabályzat létrehozása és hozzárendelése
 
 Ebben a rövid útmutatóban az Intune-nal létrehoz és hozzárendel egy alkalmazásvédelmi szabályzatot egy ügyfélalkalmazáshoz a végfelhasználó eszközén. Az Intune alkalmazásvédelmi szabályzatokkal ellenőrzi, hogy az alkalmazások megfelelnek-e a szervezet adatvédelmi követelményeinek.
 
-Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon egy ingyenes próbafiókkal](../fundamentals/free-trial-sign-up.md).
+Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon ingyenes próbafiókot](../fundamentals/free-trial-sign-up.md).
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -46,9 +47,9 @@ Az alábbi lépések végrehajtásával hozhat létre egy alkalmazás-védelmi s
 2. Adja meg a következő adatokat: 
 
     - **Név**: *Windows 10 tartalomvédelem*
-    - **Description** (Leírás): *Az ehhez a Szabályzathoz társított felhasználók nem tudnak kivágni, másolni vagy beilleszteni bármilyen tartalmat a hozzárendelt alkalmazás és az eszközön nem felügyelt alkalmazások között.*
+    - **Leírás**: *A szabályzathoz társított felhasználók nem vághatnak ki, másolhatnak vagy illeszthetnek be tartalmakat a társított alkalmazás és az eszköz egyéb, nem felügyelt alkalmazásai között.*
     - **Platform**: *Windows 10*
-    - **Beléptetési állapot**: *Regisztrációval*
+    - **Regisztráció állapota**: *Regisztrálva*
 
 3. Válassza a **Védett alkalmazások** lehetőséget a szabályzatnak megfeleltetni kívánt alkalmazások kiválasztásához.
 4. Kattintson az **Alkalmazások hozzáadása** lehetőségre.
@@ -85,4 +86,4 @@ Ebbe a rövid útmutatóban létrehozott és hozzárendelt egy alkalmazásvédel
 Kövesse az Intune rövid útmutatóinak sorozatát a következő rövid útmutatóval.
 
 > [!div class="nextstepaction"]
-> [QuickStart Egyéni szerepkör létrehozása és társítása @ no__t-0
+> [Rövid útmutató: Egyéni szerepkör létrehozása és hozzárendelése](../fundamentals/create-custom-role.md)

@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 02/22/2018
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: enrollment
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 439c33a6-e80c-4da9-ba09-a51fc36f62ad
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c4f3424c0d9712affbbf8ba3929e825b62ce5864
-ms.sourcegitcommit: 223d64a72ec85fe222f5bb10639da729368e6d57
+ms.openlocfilehash: 2fb5208cd7df6dc68bcd20455ae9e06a9dbd7ff5
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940317"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72503146"
 ---
 # <a name="enroll-ios-devices-in-intune"></a>iOS-eszközök regisztrálása az Intune-ban
 
@@ -43,7 +44,7 @@ iOS-eszközök engedélyezése előtt végezze el az alábbi lépéseket:
 Azt is engedélyezheti, hogy a felhasználók saját személyes eszközeiket regisztrálják az Intune-felügyelethez. Ezt „saját eszköz használata” vagy BYOD (Bring Your Own Device) néven ismerjük. A felhasználók regisztrálására három lehetőség áll rendelkezésre:
 - Az alkalmazás-védelmi szabályzatok a legkönnyebb BYOD élményt biztosítják, és csak az alkalmazás szintjén biztosítanak felügyeletet. Ha azonban egy 6 számjegyű, összetett PIN-kóddal rendelkező eszközt is biztonságossá kíván tenni, ezeket a házirendeket a felhasználó beléptetésével együtt is használhatja.
 - Az eszközök regisztrálása a szokásos BYOD-regisztrációnak tekinthető. Számos felügyeleti lehetőséggel látja el a rendszergazdákat.
-- A felhasználó beléptetése egy egyszerűbb regisztrációs folyamat, amely az Eszközkezelő lehetőségeinek egy részhalmazát biztosítja a rendszergazdák számára. Ez a szolgáltatás jelenleg előzetes kiadásban elérhető. 
+- A felhasználó beléptetése egy egyszerűbb regisztrációs folyamat, amely az Eszközkezelő lehetőségeinek egy részhalmazát biztosítja a rendszergazdák számára. Ez a funkció jelenleg előzetes verzióban érhető el. 
 
 Miután végrehajtotta az előfeltételeket és a hozzárendelt felhasználói licenceket, a felhasználók letöltheti az Intune Céges portál alkalmazást az App Store áruházból, és követheti a regisztrációs utasításokat az alkalmazásban. Az iOS-eszközök Céges portál adatvédelmi nyilatkozatát az [adatvédelmi nyilatkozat testreszabása](../apps/company-portal-app.md#privacy-statement-customization)című részben leírtak szerint szabhatja testre.
 
@@ -102,6 +103,6 @@ A felhasználói affinitás nélkül konfigurált eszközök nem támogatják a 
 
 Ha szükség van a felhasználói affinitásra, az eszköz regisztrálása előtt adja meg a **Felhasználói affinitás** beállítást az eszközregisztrációs profilban. Ha egy eszközön módosítani kell az affinitási állapotot, ki kell vonnia az eszközt, majd újból regisztrálnia kell.
 
-## <a name="see-also"></a>Lásd még:
+## <a name="see-also"></a>További információ
 
 [IOS-eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune](https://support.microsoft.com/help/4039809)

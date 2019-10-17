@@ -9,6 +9,7 @@ ms.date: 10/03/2018
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: 3bb659cc-9b57-4d19-8631-2c26749fa71c
 searchScope:
@@ -18,12 +19,12 @@ ms.reviewer: elocholi
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9047dd9bbc55162eae4693d3035cb05ff4becb91
-ms.sourcegitcommit: 8934b1abec96e18cee15a77107d37551766f7666
+ms.openlocfilehash: ee725d118353e18924858569ac861992d19f839a
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71099850"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506188"
 ---
 # <a name="enroll-your-macos-device-in-intune-with-the-company-portal-app"></a>A macOS-eszköz Céges portál alkalmazással való regisztrálása az Intune-ban
 
@@ -60,7 +61,7 @@ A macOS 10,12-es vagy újabb verzióját futtató macOS-eszközök regisztrálá
 
 4. Az __Eszközök__ oldalon vagy a felügyelt eszközök listája, vagy egy szalagcím látható. Hogy mi jelenik meg, az attól függ, hogy rendelkezik-e már felügyelt eszközzel. 
     * A felsoroltak között nem szereplő eszköz hozzáadásához válassza az **Ide koppintva tudathatja velünk, melyik eszközt használja, vagy új eszközt adhat meg.** feliratú szalagcímet.
-    * Ha nem rendelkezik eszközökkel, a szalagcím a következőket olvassa: **Nem rendelkezik felügyelt eszközökkel. Ezt az eszközt ide koppintva adhatja meg.** Az eszköz hozzáadásához kattintson a szalagcímre.  
+    * Ha nem rendelkezik eszközekkel, a szalagcím beolvasása: **nem rendelkezik felügyelt eszközökkel. Ezt a gombra koppintva veheti fel.** Az eszköz hozzáadásához kattintson a szalagcímre.  
 
      ![Képernyőkép az Eszközök oldalról, a kattintás helyét kiemelő piros téglalappal bekeretezett szalagcímmel.](./media/CP-enroll-MACOS-1808.png)  
 5. Hajtsa végre az alábbi lépések közül a Céges portálon éppen megjelenő üzenetnek megfelelőt.  
@@ -76,7 +77,7 @@ A macOS 10,12-es vagy újabb verzióját futtató macOS-eszközök regisztrálá
 
 7. Amikor a telepítés véget ér, lépjen a **Kezdőpanelre**, majd nyissa meg a **Céges portált**.  
 
-8. MacOS-eszköze párbeszédablakban kér megerősítést a Céges portál alkalmazás megnyitásához. Kattintson a **nyílt**.  
+8. MacOS-eszköze párbeszédablakban kér megerősítést a Céges portál alkalmazás megnyitásához. Kattintson a **Megnyitás** gombra.  
 
    > [!TIP]
    > Az Intune-nak hozzá kell férnie a számítógépéhez, enélkül nem tud meggyőződni arról, hogy elég biztonságos-e az eszköz a vállalat erőforrásainak eléréséhez. Ha a számítógép elutasítja a Céges portál alkalmazás megnyitását, [kapcsolja ki a forgalomirányítót](https://support.apple.com/HT202491). Ez után nyissa meg az alkalmazást.

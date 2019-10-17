@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 08/22/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: apps
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 51d45ce2-d81b-4584-8bc4-568c8c62653d
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dac7069e30c173d80f15977ba2f06fcabcb7179b
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: a63bf187d0774b9f50351b45e53095d994720878
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731011"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72496660"
 ---
 # <a name="how-to-manage-ios-and-macos-apps-purchased-through-apple-volume-purchase-program-with-microsoft-intune"></a>A Apple Volume Purchase Program használatával vásárolt iOS-és macOS-alkalmazások kezelése Microsoft Intune
 
@@ -83,7 +84,7 @@ Mielőtt hozzálát, be kell szereznie a VPP-tokent az Apple-től, és fel kell 
 ## <a name="to-get-and-upload-an-apple-vpp-token"></a>Apple VPP-token beszerzése és feltöltése
 
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Az **Intune** panelen válassza az > ügyfélalkalmazások**Apple VPP-tokenek** lehetőséget a **telepítés**alatt.
+3. Az **Intune** panelen válassza az **ügyfélalkalmazások** > **Apple VPP-tokenek** elemet a **beállítás**alatt.
 4. A VPP-tokenek panel listájában válassza a **Létrehozás** elemet.
 5. Az **VPP-token Létrehozása** panelen adja meg az alábbi adatokat:
     - **VPP-jogkivonatfájl** – Ha még nem tette meg, iratkozzon fel a vállalati Volume Purchase Programra vagy az oktatási programra. A regisztrációt követően töltse le a fiókjához tartozó Apple VPP-tokent, és itt jelölje ki.
@@ -123,11 +124,11 @@ A végfelhasználó különféle helyzetekben figyelmeztetést fog kapni VPP-alk
 
 | # | Forgatókönyv                                | Meghívás az Apple VPP-programba                              | Figyelmeztetés alkalmazástelepítésre | Apple ID bekérése |
 |---|--------------------------------------------------|-------------------------------------------------------------------------------------------------|---------------------------------------------|-----------------------------------|
-| 1 | BYOD – licenccel rendelkező felhasználó                             | I                                                                                               | I                                           | I                                 |
-| 2 | Corp (Vállalat) – licenccel rendelkező felhasználó (nem felügyelt eszköz)     | I                                                                                               | I                                           | I                                 |
-| 3 | Corp (Vállalat) – licenccel rendelkező felhasználó (felügyelt eszköz)         | I                                                                                               | N                                           | I                                 |
-| 4 | BYOD – licenccel rendelkező eszköz                           | N                                                                                               | I                                           | N                                 |
-| 5 | CORP (Vállalat) – licenccel rendelkező eszköz (nem felügyelt eszköz)                           | N                                                                                               | I                                           | N                                 |
+| 1 | BYOD – licenccel rendelkező felhasználó                             | Y                                                                                               | Y                                           | Y                                 |
+| 2 | Corp (Vállalat) – licenccel rendelkező felhasználó (nem felügyelt eszköz)     | Y                                                                                               | Y                                           | Y                                 |
+| 3 | Corp (Vállalat) – licenccel rendelkező felhasználó (felügyelt eszköz)         | Y                                                                                               | N                                           | Y                                 |
+| 4 | BYOD – licenccel rendelkező eszköz                           | N                                                                                               | Y                                           | N                                 |
+| 5 | CORP (Vállalat) – licenccel rendelkező eszköz (nem felügyelt eszköz)                           | N                                                                                               | Y                                           | N                                 |
 | 6 | CORP (Vállalat) – licenccel rendelkező eszköz (felügyelt eszköz)                           | N                                                                                               | N                                           | N                                 |
 | 7 | Teljes képernyős mód (felügyelt eszköz) – licenccel rendelkező eszköz | N                                                                                               | N                                           | N                                 |
 | 8 | Teljes képernyős mód (felügyelt eszköz) – licenccel rendelkező felhasználó   | --- | ---                                          | ---                                |
@@ -171,8 +172,8 @@ Jelenleg az iOS VPP-alkalmazások nem törölhetők a Microsoft Intune-ból.
 
 Az Apple VPP-tokenekhez és VPP-alkalmazásokhoz való hozzáférés az Intune-ban egyéni rendszergazdai szerepkörökhöz hozzárendelt engedélyektől függetlenül is szabályozható.
 
-* Ha engedélyezni szeretné az Intune egyéni szerepkörét az Apple VPP-tokenek kezeléséhez az **ügyfélalkalmazások** > **Apple VPP-tokenei**területen, rendeljen engedélyeket a **felügyelt alkalmazásokhoz**.
-* Ha engedélyezni szeretné az Intune egyéni szerepkörét az iOS VPP-tokenekkel vásárolt alkalmazások kezeléséhez az **ügyfélalkalmazások** > **alkalmazásaiban**, rendeljen engedélyeket a **Mobile apps**szolgáltatáshoz. 
+* Ha engedélyezni szeretné, hogy az Intune egyéni szerepköre kezelhesse az Apple VPP-tokeneket az **ügyfélalkalmazások** > **Apple VPP-tokenek**alatt, rendeljen engedélyeket a **felügyelt alkalmazásokhoz**.
+* Ha engedélyezni szeretné az Intune egyéni szerepkörét az iOS VPP-tokenekkel vásárolt alkalmazások kezeléséhez az **ügyfélalkalmazások** > **alkalmazásokban**, rendeljen engedélyeket a **Mobile apps**szolgáltatáshoz. 
 
 ## <a name="additional-information"></a>További információ
 
@@ -191,8 +192,8 @@ A licenc néhány órával az alkalmazások telepítése vagy eltávolítása ut
 Igen. Az Intune rendszergazdája túllépheti az alkalmazáselőfizetéseket. Ha például a rendszergazda 100 licencet vásárol XYZ alkalmazáshoz, majd egy 500 tagú csoporthoz rendeli azt. Az első 100 tag (felhasználó vagy eszköz) megkapja a licencet, a többi taghoz azonban nem lesz hozzárendelve licenc.
 
 ### <a name="how-frequently-does-intune-sync-vpp-tokens-with-apple"></a>Milyen gyakran szinkronizálja az Intune a VPP-tokeneket az Apple-szel?
-Az Intune naponta kétszer szinkronizálja a VPP-tokeneket és-licenceket az Apple-szel. Az Intune rendszergazdája manuális szinkronizálást kezdeményezhet az **ügyfélalkalmazások** > **Apple VPP-tokenek**területén.
+Az Intune naponta kétszer szinkronizálja a VPP-tokeneket és-licenceket az Apple-szel. Az Intune-rendszergazda az **ügyfélalkalmazások** > **Apple VPP-tokenek**alatt manuális szinkronizálást indíthat.
 
 ## <a name="next-steps"></a>További lépések
 
-Az alkalmazás-hozzárendelések figyeléséhez a [How to monitor apps](apps-monitor.md) (Alkalmazások figyelése) című témakörben találhat segítséget.
+Lásd [az alkalmazások figyelésével](apps-monitor.md) foglalkozó útmutatót, amely az alkalmazás-hozzárendelések figyeléséhez nyújt segítséget.

@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 01/09/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dc1fca439f0edf4a5d4caaad4ff4f9e0bae5972b
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: b8dfab31d770c012acf88eb3775313634c3c14cc
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730507"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72492299"
 ---
 # <a name="control-access-accounts-and-power-features-on-shared-pc-or-multi-user-devices-using-intune"></a>A megosztott SZÁMÍTÓGÉPeken és a többfelhasználós eszközökön lévő hozzáférés, fiókok és energiaellátási funkciók vezérlése az Intune-nal
 
@@ -45,10 +46,10 @@ Ha a profilt az Intune-ban hozza létre, a profilját üzembe helyezheti vagy ho
 2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
 3. Adja meg a következő tulajdonságokat:
 
-   - **Név**: Adjon meg egy leíró nevet az új profilhoz.
-   - **Description** (Leírás): Adja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
-   - **Platform**: Válassza **a Windows 10 és újabb**lehetőséget.
-   - **Profil típusa**: Válassza a **megosztott többfelhasználós eszköz**lehetőséget.
+   - **Név**: Adja meg az új profil leíró nevét.
+   - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
+   - **Platform**: válassza **a Windows 10 és újabb**lehetőséget.
+   - **Profil típusa**: válassza a **megosztott többfelhasználós eszköz**lehetőséget.
 
 4. Konfigurálja a [Windows 10 és újabb](shared-user-device-settings-windows.md) vagy a [Windows holografikus for Business](shared-user-device-settings-windows-holographic.md)beállításait.
 

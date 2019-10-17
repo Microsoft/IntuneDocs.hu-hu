@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 09/17/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: high
 ms.technology: ''
 ms.reviewer: ''
@@ -15,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d4bf6a52fd860695433e0020e9ec7390f98eca6
-ms.sourcegitcommit: 45d7c76e760c5117bf134fb57f7e248e5b6c4ad5
+ms.openlocfilehash: a7f5a85896a2e6e7be845b2314c4f837dcaeb7b0
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72314646"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72507018"
 ---
 # <a name="use-windows-10-templates-to-configure-group-policy-settings-in-microsoft-intune"></a>Csoportházirend-beállítások konfigurálása a Windows 10-es sablonokkal Microsoft Intune
 
@@ -34,7 +35,7 @@ A Windows beállításai hasonlóak a csoportházirend (GPO) beállításaihoz A
 
 Ez a cikk a Windows 10-es eszközökhöz készült sablonok létrehozásának lépéseit ismerteti, és bemutatja, hogyan szűrheti az összes elérhető beállítást az Intune-ban. A sablon létrehozásakor létrehoz egy eszköz-konfigurációs profilt. Ezt a profilt ezután hozzárendelheti vagy üzembe helyezheti a szervezet Windows 10-es eszközein.
 
-## <a name="before-you-begin"></a>Előzetes teendők
+## <a name="before-you-begin"></a>Előkészületek
 
 - Ezen beállítások némelyike a Windows 10 1703-es (RS2) verziótól kezdődően érhető el. Bizonyos beállítások nem szerepelnek az összes Windows-kiadásban. A legjobb megoldás az, ha a Windows 10 Enterprise 1903 (19H1) és újabb verzióját használja.
 
@@ -43,15 +44,15 @@ Ez a cikk a Windows 10-es eszközökhöz készült sablonok létrehozásának l�
 ## <a name="create-a-template"></a>Sablon létrehozása
 
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Válassza az **eszköz konfigurációja** > **profilok** > **profil létrehozása**lehetőséget.
+2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
 3. Adja meg a következő tulajdonságokat:
 
     - **Név**: adja meg a profil nevét.
-    - **Leírás**: adja meg a profil leírását. Ez a beállítás nem kötelező, de ajánlott.
+    - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
     - **Platform**: válassza **a Windows 10 és újabb**lehetőséget.
     - **Profil típusa**: válassza a **Felügyeleti sablonok**lehetőséget.
 
-4. Kattintson a **Létrehozás** gombra. Az új ablakban válassza a **Beállítások**lehetőséget. Minden beállítás fel van sorolva, és az előző és a következő nyilak használatával további beállításokat tekinthet meg:
+4. Válassza a **Létrehozás** lehetőséget. Az új ablakban válassza a **Beállítások**lehetőséget. Minden beállítás fel van sorolva, és az előző és a következő nyilak használatával további beállításokat tekinthet meg:
 
     ![Tekintse meg a beállítások listáját, és használja az előző és a tovább gombokat](./media/administrative-templates-windows/administrative-templates-sample-settings-list.png)
 
@@ -71,7 +72,7 @@ Ez a cikk a Windows 10-es eszközökhöz készült sablonok létrehozásának l�
     > - Windows 10 19H1 és újabb, [KB 4512941](https://support.microsoft.com/kb/4512941) -es verzióval
 
 6. Válassza ki a kívánt beállításokat. Például az **Office**-on, és válassza a **korlátozott böngészés aktiválása**lehetőséget. Megjelenik a beállítás részletes leírása. Válassza az **engedélyezve**, **Letiltva**lehetőséget, vagy hagyja meg a beállítást **nincs konfigurálva** (alapértelmezett). A részletes leírás azt is ismerteti, hogy mi történik, ha az **engedélyezve**, a **Letiltva**vagy a **nincs konfigurálva**beállítást választja.
-7. A módosítások mentéséhez kattintson **az OK gombra** .
+7. A módosítások mentéséhez válassza az **OK** gombot.
 
 Folytassa a beállítások listájának átadását, és konfigurálja a kívánt beállításokat a környezetében. Néhány példa:
 
@@ -81,7 +82,7 @@ Folytassa a beállítások listájának átadását, és konfigurálja a kíván
 - Az aláíratlan **ActiveX-vezérlők letöltése** beállítással megakadályozhatja, hogy a felhasználók aláíratlan ActiveX-vezérlőket töltsenek le az Internet Explorerben.
 - A **rendszer-visszaállítás kikapcsolása** beállítás használatával engedélyezheti vagy megakadályozhatja, hogy a felhasználók futtassák a rendszer-visszaállítást az eszközön.
 - A **Kedvencek importálásának engedélyezése** beállítás megadásával engedélyezheti vagy letilthatja a felhasználók számára a Kedvencek importálását egy másik böngészőből a Microsoft Edge-be.
-- és még sok más...
+- És még sok más...
 
 ## <a name="find-some-settings"></a>Néhány beállítás megkeresése
 
@@ -97,6 +98,6 @@ Ezekben a sablonokban több száz beállítás érhető el. A beépített funkci
 
   Egy másik példában keressen rá a `microsoft word` kifejezésre. Megjelenik a Microsoft Word programhoz beállítható összes beállítás. Keressen rá a `explorer` kifejezésre, és tekintse meg a sablonhoz felvehető Internet Explorer-beállításokat.
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
 A sablon létre lett hozva, de még nem csinál semmit. Ezután [rendelje hozzá a sablont, más néven profilt](device-profile-assign.md) , és [Figyelje annak állapotát](device-profile-monitor.md).

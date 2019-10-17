@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 05/07/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: enrollment
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 7ddbf360-0c61-11e8-ba89-0ed5f89f718b
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 19389a21aa28f5fa957f62c988753f46bf1bc731
-ms.sourcegitcommit: 46322ca7a92971e18dc0b230f436b9ca892b90c5
+ms.openlocfilehash: 339f6b9476dae438d898b97abcaf3c1759fe9cfc
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72008343"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72503329"
 ---
 # <a name="automatically-enroll-ios-devices-with-apples-device-enrollment-program"></a>iOS-eszközök automatikus regisztrálása az Apple készülékregisztrációs programjával (DEP)
 
@@ -118,7 +119,7 @@ Az Azure-beli Intune-portálon adja meg az Apple ID azonosítót későbbi felha
 
 A leküldéses tanúsítvány lehetővé teszi, hogy az Intune regisztrálja és felügyelje az iOS-eszközöket a szabályzatoknak a regisztrált mobileszközökre való leküldésével. Az Intune automatikusan szinkronizálja az Apple-lel a regisztrációs programfiók adatait.
 
-## <a name="create-an-apple-enrollment-profile"></a>Apple-regisztrációs profil létrehozása
+## <a name="create-an-apple-enrollment-profile"></a>Az Apple-regisztrációs profil létrehozása
 
 Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt a DEP-eszközökhöz. A regisztrálás során az eszközök csoportjára alkalmazott beállításokat egy készülékregisztrációs profil határozza meg. DEP-tokenként legfeljebb 100 beléptetési profil adható meg.
 
@@ -135,7 +136,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
 
     ![A profil neve és leírása.](./media/device-enrollment-program-enroll-ios/image05.png)
 
-4. @No__t kiválasztása – 0Next: Eszköz-felügyeleti beállítások @ no__t-0.
+4. Válassza a Next (tovább) gombot **: eszközkezelés beállításai**.
 
 5. A **Felhasználói affinitást** aszerint állítsa be, hogy a profilhoz tartozó eszközöket hozzárendelt felhasználóval vagy anélkül szükséges-e regisztrálni.
     - **Regisztráció felhasználói affinitással** – Ezt a lehetőséget olyan eszközökhöz válassza, amelyek a felhasználók tulajdonában vannak, de egyes szolgáltatásokhoz, például alkalmazások telepítéséhez, a Céges portált kívánják használni. Ha ADFS van használatban, és a **Hitelesítés a Céges portállal a Beállítási asszisztens helyett** **Nem** értékre van állítva, akkor a [WS-Trust 1.3 Felhasználónév/Vegyes végpont](https://technet.microsoft.com/library/adfs2-help-endpoints) [További információ](https://technet.microsoft.com/itpro/powershell/windows/adfs/get-adfsendpoint) szükséges.
@@ -167,7 +168,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
 
     A többtényezős hitelesítés nem támogatott egyetlen eszközön, egyetlen alkalmazás módban. Ez a korlátozás azért van, mert az eszköz nem tud másik alkalmazásra váltani, hogy elvégezze a hitelesítés második tényezőjét. Ezért ha a többtényezős hitelesítést egyetlen app Mode-eszközön szeretné használni, a második tényezőnek egy másik eszközön kell lennie.
 
-    Ez a funkció csak akkor támogatott iOS 11.3.1-es és újabb verziók.
+    Ez a funkció csak iOS-11.3.1 és újabb verziók esetén támogatott.
 
    ![Képernyőkép az Egyalkalmazásos módból.](./media/device-enrollment-program-enroll-ios/single-app-mode.png)
 
@@ -179,8 +180,8 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
 
     A rendszer kétféle módon is tudatja a felhasználókkal, hogy az eszközük felügyelet alatt áll:
 
-   - A zárolási képernyő a következőket mondja: "Ezt az iPhone-t a contoso felügyeli."
-   - A **beállítások** > **általános** > **Névjegy** a képernyőn Says: "Ez az iPhone felügyelve van. A Contoso figyelheti az internetes forgalmat és megállapíthatja a készülék helyét.” figyelmeztetés.
+   - A zárolási képernyőn a következő felirat látható: „Ezt az iPhone-t a Contoso kezeli.”
+   - A **Beállítások** > **Általános** > **Névjegy** képernyőn a következő felirat látható: „Ez egy felügyelt iPhone. A Contoso figyelheti az internetes forgalmat és megállapíthatja a készülék helyét.” figyelmeztetés.
 
      > [!NOTE]
      > A felügyelet nélkül regisztrált eszközöket csak az Apple Configurator segítségével tudja átállítani felügyelt eszközzé. Az eszköz ily módon való átállításához csatlakoztatnia kell az iOS-eszközt egy Mac számítógéphez USB-kábellel. Ezzel kapcsolatban az [Apple Configurator dokumentációjában](http://help.apple.com/configurator/mac/2.3) talál további információkat.
@@ -193,12 +194,12 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
 
 13. Megadhat egy elnevezési formátumot a regisztráláskor automatikusan alkalmazott eszközökhöz és az egyes egymást követő beléptetésekhez. A névadási sablon létrehozásához válassza az **Igen** lehetőséget az **eszköznév alkalmazása sablonban**. Ezután az **eszköznév sablon** mezőbe írja be a profilt használó nevekhez használni kívánt sablont. Megadhatja az eszköz típusát és sorozatszámát tartalmazó sablon formátumát. 
 
-14. Válassza a **Next: A beállítási asszisztens testreszabása @ no__t-0.
+14. Válassza a Next (tovább) lehetőséget **: a beállítási asszisztens testreszabása**.
 
-15. A **beállítási asszisztens testreszabása** lapon adja meg a következő Profilbeállítások beállításait: @no__t – 0Setup Assistant testreszabása. ](./media/device-enrollment-program-enroll-ios/setupassistantcustom.png)
+15. A **beállítási asszisztens testreszabása** lapon adja meg a következő Profilbeállítások beállításait: ![Setup Assistant testreszabása. ](./media/device-enrollment-program-enroll-ios/setupassistantcustom.png)
 
 
-    | Részlegbeállítások | Leírás |
+    | Részlegbeállítások | Description |
     |---|---|
     | <strong>Részleg neve</strong> | Akkor jelenik meg, ha a felhasználó az aktiválás során a <strong>Konfiguráció névjegye</strong> elemre koppint. |
     |    <strong>Részleg telefonszáma</strong>     | Akkor jelenik meg, ha a felhasználó az aktiválás során a <strong>Segítségre van szüksége?</strong> gombra kattint. |
@@ -229,7 +230,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
     | <strong>Képernyő időpontja</strong> | Jelenítse meg a képernyő időképernyőjét. |
     | <strong>Szoftverfrissítés</strong> | A kötelező szoftverfrissítés képernyő megjelenítése. |
     | <strong>SIM-telepítés</strong> | Adjon lehetőséget a felhasználónak a mobil terv hozzáadására. |
-    | <strong>Megjelenés</strong> | Jelenítse meg a megjelenés képernyőt a felhasználó számára. |
+    | <strong>Megjelenését</strong> | Jelenítse meg a megjelenés képernyőt a felhasználó számára. |
     | <strong>Expressz nyelv</strong>| Az expressz nyelvi képernyő megjelenítése a felhasználónak. |
     | <strong>Előnyben részesített nyelv</strong> | Adja meg a felhasználó számára a **kívánt nyelv**kiválasztását. |
     | <strong>Eszközről az eszközre való Migrálás</strong> | Adja meg a felhasználónak a régi eszközről az eszközre történő áttelepítési lehetőséget.|
@@ -242,7 +243,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
 ## <a name="sync-managed-devices"></a>Felügyelt eszközök szinkronizálása
 Miután az Intune engedélyt kapott az eszközei felügyeletére, szinkronizálhatja az Intune-t az Apple-lel, hogy megtekinthesse a felügyelt eszközöket az Azure-beli Intune-portálon.
 
-1. Az Azure-beli Intune-portálon válassza az **Eszközök beléptetése** > **Apple-regisztráció** > **Készülékregisztrációs programbeli token** lehetőséget, válasszon egy tokent a listából, majd válassza az **Eszközök** > **Szinkronizálás** lehetőséget. @no__t – a beléptetési program 0Screenshot és a szinkronizálási hivatkozás. ](./media/device-enrollment-program-enroll-ios/image06.png)
+1. A Azure Portal Intune-ban válassza az eszközök **beléptetése @no__t-** 1 **Apple-regisztráció** > **beléptetési program jogkivonatok** elemet > Válassza ki a tokent a listában > **eszközök** > **szinkronizálás**lehetőséget. @no__t – a beléptetési program 8Screenshot és a szinkronizálási hivatkozás. @no__t – 9
 
    Az Apple a beléptetési program forgalmára vonatkozó feltételeinek követéséhez az Intune a következő korlátozásokat írja elő:
    - Teljes szinkronizálás legfeljebb hétnaponta futtatható. A teljes szinkronizálás során az Intune beolvassa az Intune-hoz csatlakoztatott Apple MDM-kiszolgálóhoz rendelt sorozatszámok frissített teljes listáját. Ha egy DEP-eszközt törölnek az Intune-portálról, azt ki kell osztani az Apple MDM-kiszolgálóról a DEP-portálon. Ha nincs kiosztva, a rendszer nem importálja újra az Intune-ba, amíg a teljes szinkronizálás le nem fut.   

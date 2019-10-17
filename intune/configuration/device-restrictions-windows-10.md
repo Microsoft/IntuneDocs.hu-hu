@@ -1,5 +1,5 @@
 ---
-title: Windows 10-es eszközök korlátozási beállításai a Microsoft Intune-Azure-ban | Microsoft Docs
+title: Eszközkorlátozási beállítások Windows 10 rendszerhez az Azure-beli Microsoft Intune-ban | Microsoft Docs
 description: Tekintse meg az összes beállítás listáját, valamint a Windows 10 és újabb rendszerű eszközökön az eszközök korlátozásának létrehozásához szükséges leírást. Ezekkel a beállításokkal konfigurálhatja a képernyőképeket, a jelszavakra vonatkozó követelményeket, a kioszk beállításait, az áruházbeli alkalmazásokat, a Microsoft Edge böngészőt, a Windows Defendert, a felhőhöz való hozzáférést, a Start menüt és egyebeket Microsoft Intune.
 keywords: ''
 author: MandiOhlinger
@@ -8,18 +8,19 @@ manager: dougeby
 ms.date: 10/09/2019
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: medium
 ms.technology: ''
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 149da4c5aafc436156b7b29566bb5d792506de7c
-ms.sourcegitcommit: b1e97211db7cb949eb39be6776b3a11d434fdab0
+ms.openlocfilehash: 164c34f4a46ca11e2788b72dee70bdd40c25e7f3
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72251544"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72493892"
 ---
 # <a name="windows-10-and-newer-device-settings-to-allow-or-restrict-features-using-intune"></a>Windows 10 (és újabb) eszközbeállítások az Intune-t használó szolgáltatások engedélyezéséhez vagy korlátozásához
 
@@ -30,21 +31,21 @@ Ezek a beállítások hozzáadódnak az Intune-ban lévő eszköz konfiguráció
 > [!Note]
 > Nem minden beállítás érhető el a Windows összes kiadásában. A támogatott kiadások megtekintéséhez tekintse meg a [házirend-kriptográfiai](https://docs.microsoft.com/windows/client-management/mdm/policy-configuration-service-provider) (másik Microsoft-webhely megnyitása) című témakört.
 
-## <a name="before-you-begin"></a>Előzetes teendők
+## <a name="before-you-begin"></a>Előkészületek
 
 [Hozzon létre egy eszköz konfigurációs profilt](device-restrictions-configure.md#create-the-profile).
 
-## <a name="app-store"></a>App Store
+## <a name="app-store"></a>Alkalmazásáruház
 
 Ezek a beállítások a [ApplicationManagement házirend CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationmanagement)-t használják, amely a támogatott Windows-kiadásokat is felsorolja.
 
 - **App Store** (csak mobil): **nincs konfigurálva** (alapértelmezés) lehetővé teszi a végfelhasználók számára az alkalmazás-áruház elérését a mobileszközökön. **Letiltja** az alkalmazás-áruház használatát.
 - Az **áruházból származó alkalmazások automatikus frissítése**: **nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a rendszer automatikusan frissítse az alkalmazásokat a Microsoft Storeról. A **Letiltás** megakadályozza a frissítések automatikus telepítését.
-- **Megbízható alkalmazás telepítése**: válassza ki, hogy a nem Microsoft Store alkalmazásokat lehet-e telepíteni, más néven közvetlen telepítési. A közvetlen telepítési telepíti, majd futtatja vagy teszteli az Microsoft Store által nem tanúsított alkalmazást. Például egy olyan alkalmazás, amely csak a vállalaton belül található. A lehetőségek:
+- **Megbízható alkalmazás telepítése**: válassza ki, hogy a nem Microsoft Store alkalmazásokat lehet-e telepíteni, más néven közvetlen telepítési. A közvetlen telepítési telepíti, majd futtatja vagy teszteli az Microsoft Store által nem tanúsított alkalmazást. Például egy olyan alkalmazás, amely csak a vállalaton belül található. A választható lehetőségek:
   - **Nincs konfigurálva** (alapértelmezett): az operációs rendszer alapértelmezését használja.
   - **Letiltás**: megakadályozza a közvetlen telepítési. Nem Microsoft Store alkalmazások nem telepíthetők.
   - **Engedélyezés**: engedélyezi a közvetlen telepítési. Nem Microsoft Store alkalmazások is telepíthetők.
-- **Fejlesztői zárolás feloldása**: engedélyezi a Windows fejlesztői beállításait, például lehetővé teszi a közvetlenül telepített alkalmazások módosítását a végfelhasználók számára. A lehetőségek:
+- **Fejlesztői zárolás feloldása**: engedélyezi a Windows fejlesztői beállításait, például lehetővé teszi a közvetlenül telepített alkalmazások módosítását a végfelhasználók számára. A választható lehetőségek:
   - **Nincs konfigurálva** (alapértelmezett): az operációs rendszer alapértelmezését használja.
   - **Letiltás**: meggátolja a fejlesztői üzemmódot és a közvetlen telepítési alkalmazásokat.
   - **Engedélyezés**: lehetővé teszi a fejlesztői üzemmód és a közvetlen telepítési alkalmazások használatát.
@@ -57,7 +58,7 @@ Ezek a beállítások a [ApplicationManagement házirend CSP](https://docs.micro
 - **Alkalmazásadatok telepítése a rendszerköteten**: a **blokk** leállítja az alkalmazások adattárolását az eszköz rendszerkötetén. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi az alkalmazások számára a rendszerlemez kötetén tárolt adattárolást.
 - **Alkalmazások telepítése a rendszermeghajtón**: a **Letiltás** megakadályozza, hogy az alkalmazások a rendszermeghajtón telepítsenek az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi az alkalmazások telepítését a rendszermeghajtón.
 - **Játék DVR** (csak asztali verzió): a **Letiltás** letiltja a Windows-játékok rögzítését és a szórást. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a játékok rögzítését és közvetítését.
-- **Csak áruházbeli alkalmazások**: Ez a beállítás határozza meg azt a felhasználói élményt, amikor a felhasználók a Microsoft Storetól eltérő helyekről telepítik az alkalmazásokat. A lehetőségek:
+- **Csak áruházbeli alkalmazások**: Ez a beállítás határozza meg azt a felhasználói élményt, amikor a felhasználók a Microsoft Storetól eltérő helyekről telepítik az alkalmazásokat. A választható lehetőségek:
 
   - **Nincs konfigurálva** (alapértelmezett): lehetővé teszi, hogy a végfelhasználók alkalmazásokat telepítsenek a Microsoft Storetól eltérő helyekről, beleértve a más házirend-beállításokban definiált alkalmazásokat is.  
   - **Bárhol**: kikapcsolja az alkalmazások javaslatait, és lehetővé teszi, hogy a felhasználók tetszőleges helyről telepítsenek alkalmazásokat.  
@@ -79,13 +80,13 @@ Ezek a beállítások a [ApplicationManagement házirend CSP](https://docs.micro
 
   [ApplicationManagement/LaunchAppAfterLogOn CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationmanagement#applicationmanagement-launchappafterlogon)
 
-## <a name="cellular-and-connectivity"></a>Mobil és kapcsolat
+## <a name="cellular-and-connectivity"></a>Mobilhálózati és egyéb kapcsolatok
 
 Ezek a beállítások a [kapcsolódási házirendet](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-connectivity) és a [Wi-Fi házirend](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-wifi) -kriptográfiai szolgáltatókat használják, amelyek a támogatott Windows-kiadásokat is felsorolják.
 
 - [Wi-Fi házirend CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-wifi)
 
-- **Mobil adatcsatorna**: válassza ki, hogy a végfelhasználók használhatnak-e olyan adatforrásokat, mint például a webes böngészés, ha a hálózathoz csatlakozik. A lehetőségek:
+- **Mobil adatcsatorna**: válassza ki, hogy a végfelhasználók használhatnak-e olyan adatforrásokat, mint például a webes böngészés, ha a hálózathoz csatlakozik. A választható lehetőségek:
   - **Nincs konfigurálva** (alapértelmezett): az operációs rendszer alapértelmezését használja, ami engedélyezheti a mobil adatcsatornát. A végfelhasználók kikapcsolhatják a felhasználókat.
   - **Letiltás**: ne engedélyezze a mobil adatcsatornát. A végfelhasználók nem kapcsolhatják be.
   - **Engedélyezés (nem szerkeszthető)** : engedélyezi a mobil adatcsatornát. A végfelhasználók nem kapcsolhatják ki.
@@ -125,17 +126,17 @@ Ezek a beállítások a [fiókok házirend CSP](https://docs.microsoft.com/windo
 
 Ezek a beállítások a [EnterpriseCloudPrint házirend CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-enterprisecloudprint)-t használják; amely a támogatott Windows-kiadásokat is felsorolja.
 
-- **Nyomtató-felderítési URL-cím**: adja meg a Felhőbeli nyomtatók keresésének URL-címét. Adja meg például a következőt: `https://cloudprinterdiscovery.contoso.com`.
-- **Nyomtató hozzáférési szolgáltatójának URL-címe**: adja meg a hitelesítési végpont URL-címét az OAuth-tokenek lekéréséhez. Adja meg például a következőt: `https://azuretenant.contoso.com/adfs`.
-- **Natív Azure-ügyfélalkalmazás GUID-azonosítója**: adja meg egy olyan ügyfélalkalmazás GUID azonosítóját, amely a OAuth származó OAuth-tokenek beolvasására jogosult. Adja meg például a következőt: `E1CF1107-FF90-4228-93BF-26052DD2C714`.
-- **Nyomtatási szolgáltatás erőforrás-URI-ja**: adja meg a Azure Portalban konfigurált nyomtatási szolgáltatás OAuth erőforrás-URI-ját. Adja meg például a következőt: `http://MicrosoftEnterpriseCloudPrint/CloudPrint`.
+- **Nyomtató-felderítési URL-cím**: adja meg a Felhőbeli nyomtatók keresésének URL-címét. Például írja be a következőt: `https://cloudprinterdiscovery.contoso.com`.
+- **Nyomtató hozzáférési szolgáltatójának URL-címe**: adja meg a hitelesítési végpont URL-címét az OAuth-tokenek lekéréséhez. Például írja be a következőt: `https://azuretenant.contoso.com/adfs`.
+- **Natív Azure-ügyfélalkalmazás GUID-azonosítója**: adja meg egy olyan ügyfélalkalmazás GUID azonosítóját, amely a OAuth származó OAuth-tokenek beolvasására jogosult. Például írja be a következőt: `E1CF1107-FF90-4228-93BF-26052DD2C714`.
+- **Nyomtatási szolgáltatás erőforrás-URI-ja**: adja meg a Azure Portalban konfigurált nyomtatási szolgáltatás OAuth erőforrás-URI-ját. Például írja be a következőt: `http://MicrosoftEnterpriseCloudPrint/CloudPrint`.
 - **Lekérdezhető nyomtatók maximális**száma: adja meg a lekérdezni kívánt nyomtatók maximális számát. Az alapértelmezett érték `20`.
-- **Nyomtató-felderítési szolgáltatás erőforrás-URI-ja**: adja meg a OAuth-erőforrás URI-ját a Azure Portal konfigurált nyomtató-felderítési szolgáltatáshoz. Adja meg például a következőt: `http://MopriaDiscoveryService/CloudPrint`.
+- **Nyomtató-felderítési szolgáltatás erőforrás-URI-ja**: adja meg a OAuth-erőforrás URI-ját a Azure Portal konfigurált nyomtató-felderítési szolgáltatáshoz. Például írja be a következőt: `http://MopriaDiscoveryService/CloudPrint`.
 
 > [!TIP]
 > A [Windows Server Hybrid Cloud Print](https://docs.microsoft.com/windows-server/administration/hybrid-cloud-print/hybrid-cloud-print-overview)beállítása után megadhatja ezeket a beállításokat, majd üzembe helyezheti a Windows-eszközökön.
 
-## <a name="control-panel-and-settings"></a>Vezérlőpult és beállítások
+## <a name="control-panel-and-settings"></a>Vezérlőpult és Gépház
 
 - **Settings alkalmazás**: a **Letiltás** megakadályozza, hogy a végfelhasználók hozzáférhessenek a Windows beállítások alkalmazáshoz. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára a beállítások alkalmazás megnyitását az eszközön.
   - **System**: a **Block** megakadályozza a hozzáférést a beállítások alkalmazás rendszerterületéhez. **Nincs konfigurálva** (alapértelmezés) engedélyezi a hozzáférést.
@@ -157,17 +158,17 @@ Ezek a beállítások a [EnterpriseCloudPrint házirend CSP](https://docs.micros
   - **Adatvédelem**: a **Letiltás** megakadályozza az eszközön lévő beállítások alkalmazás adatvédelmi területének elérését. **Nincs konfigurálva** (alapértelmezés) engedélyezi a hozzáférést.
   - **Frissítés és biztonság**: a **Letiltás** megakadályozza a hozzáférést a settings alkalmazás Update & Security területéhez az eszközön. **Nincs konfigurálva** (alapértelmezés) engedélyezi a hozzáférést.
 
-## <a name="display"></a>Kijelző
+## <a name="display"></a>Megjelenítés
 
 Ezek a beállítások a [megjelenítési házirend CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-display)-t használják; amely a támogatott Windows-kiadásokat is felsorolja.
 
 A GDI DPI-méretezés lehetővé teszi, hogy a DPI-t nem támogató alkalmazások a figyelő DPI-vel legyenek tisztában.
 
-- A **GDI-méretezés bekapcsolása az alkalmazásokhoz**: **adja hozzá** azokat az örökölt alkalmazásokat, AMELYeken a GDI DPI-méretezés be van kapcsolva. Adja meg például a következőt: `filename.exe` vagy `%ProgramFiles%\Path\Filename.exe`.
+- A **GDI-méretezés bekapcsolása az alkalmazásokhoz**: **adja hozzá** azokat az örökölt alkalmazásokat, AMELYeken a GDI DPI-méretezés be van kapcsolva. Például írja be a következőt: `filename.exe` vagy `%ProgramFiles%\Path\Filename.exe`.
 
   A GDI DPI-méretezés be van kapcsolva a listában szereplő összes örökölt alkalmazáshoz.
 
-- A **GDI-méretezés kikapcsolása az alkalmazásokhoz**: **adja hozzá** azokat az örökölt alkalmazásokat, amelyeket a GDI DPI-méretezés ki szeretne kapcsolni. Adja meg például a következőt: `filename.exe` vagy `%ProgramFiles%\Path\Filename.exe`.
+- A **GDI-méretezés kikapcsolása az alkalmazásokhoz**: **adja hozzá** azokat az örökölt alkalmazásokat, amelyeket a GDI DPI-méretezés ki szeretne kapcsolni. Például írja be a következőt: `filename.exe` vagy `%ProgramFiles%\Path\Filename.exe`.
 
   A GDI DPI-méretezés ki van kapcsolva a listában szereplő összes örökölt alkalmazás esetében.
 
@@ -200,7 +201,7 @@ Ezek a beállítások az [élmény házirend CSP](https://docs.microsoft.com/win
 - **Eszköz felderítése**: a **Letiltás** megakadályozza, hogy az eszköz felderítse a többi eszközt. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót.
 - **Feladat-kapcsoló** (csak mobil): a **Letiltás** megakadályozza a feladat váltását az eszközön. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót.
 - **SIM-kártya hiba párbeszédpanele** (csak mobil): **letiltja** a hibaüzeneteket az eszközön, ha a rendszer nem észlel SIM-kártyát. **Nincs konfigurálva** (az alapértelmezett) megjeleníti a hibaüzeneteket.
-- **Tinta munkaterület**: válassza ki, hogy a felhasználó hogyan fér hozzá a tinta munkaterülethez. A lehetőségek:
+- **Tinta munkaterület**: válassza ki, hogy a felhasználó hogyan fér hozzá a tinta munkaterülethez. A választható lehetőségek:
   - **Nincs konfigurálva** (alapértelmezett): bekapcsolja a tinta munkaterületet, és a felhasználó a zárolási képernyő feletti használatra jogosult.
   - **Letiltva a zárolási képernyőn**: a tinta munkaterület engedélyezve van, és a funkció be van kapcsolva. A felhasználó azonban nem fér hozzá a zárolási képernyő felett.
   - **Letiltva**: a szabadkézi munkaterülethez való hozzáférés le van tiltva. A szolgáltatás ki van kapcsolva.
@@ -218,13 +219,13 @@ Ezek a beállítások az [élmény házirend CSP](https://docs.microsoft.com/win
 
 - **Folyamatok leállítása a Feladatkezelő eszközből**: Ez a beállítás határozza meg, hogy a nem rendszergazdák használhatják-e a Feladatkezelőt a feladatok befejezéséhez. A **Letiltás** megakadályozza, hogy az általános jogú felhasználók (nem rendszergazdák) a Feladatkezelő segítségével fejezzenek be egy folyamatot vagy feladatot az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a normál felhasználók egy folyamatot vagy feladatot fejezzenek be a Feladatkezelő használatával.
 
-## <a name="locked-screen-experience"></a>Zárolt képernyős élmény
+## <a name="locked-screen-experience"></a>Zárolási képernyő felülete
 
 - **Műveletközpont értesítései (csak mobil)** : a **Letiltás** megakadályozza a Műveletközpont értesítéseinek megjelenítését az eszköz zárolási képernyőjén. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy kiválasszák, hogy mely alkalmazások jelenjenek meg értesítések a zárolási képernyőn.
 
   [AboveLock/AllowActionCenterNotifications CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-abovelock#abovelock-allowactioncenternotifications)
 
-- **Zárolt képernyő kép URL-címe (csak asztali verzió)** : adja meg a Windows zárolási képernyőjének hátterében használt jpg, JPEG vagy PNG formátumú kép URL-címét. Adja meg például a következőt: `https://contoso.com/image.png`. Ez a beállítás zárolja a rendszerképet, és ezt követően nem módosítható.
+- **Zárolt képernyő kép URL-címe (csak asztali verzió)** : adja meg a Windows zárolási képernyőjének hátterében használt jpg, JPEG vagy PNG formátumú kép URL-címét. Például írja be a következőt: `https://contoso.com/image.png`. Ez a beállítás zárolja a rendszerképet, és ezt követően nem módosítható.
 - **Felhasználó által konfigurálható képernyő-időkorlát (csak mobil)** : **engedélyezi, hogy** a felhasználók konfigurálja a képernyő időkorlátját. **Nincs konfigurálva** (az alapértelmezett) nem adja meg a felhasználóknak ezt a lehetőséget.
 
   [DeviceLock/AllowScreenTimeoutWhileLockedUserConfig CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-devicelock#devicelock-allowscreentimeoutwhilelockeduserconfig)
@@ -241,7 +242,7 @@ Ezek a beállítások az [élmény házirend CSP](https://docs.microsoft.com/win
 
   [DeviceLock/ScreenTimeoutWhileLocked CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-devicelock#devicelock-screentimeoutwhilelocked)
 
-## <a name="messaging"></a>Üzenetkezelés
+## <a name="messaging"></a>Üzenetkezelési
 
 Ezek a beállítások az [üzenetküldési házirend CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-messaging)-t használják; amely a támogatott Windows-kiadásokat is felsorolja.
 
@@ -255,7 +256,7 @@ Ezek a beállítások a [böngésző házirend CSP](https://docs.microsoft.com/w
 
 ### <a name="use-microsoft-edge-kiosk-mode"></a>A Microsoft Edge kioszk mód használata
 
-Az elérhető beállítások a választott lehetőségtől függően változnak. A lehetőségek:
+Az elérhető beállítások a választott lehetőségtől függően változnak. A választható lehetőségek:
 
 - **Nem** (alapértelmezett): a Microsoft Edge nem kioszk módban fut. A Microsoft Edge összes beállítását módosíthatja és konfigurálhatja.
 - **Digitális/interaktív aláírások (Egyalkalmazásos kioszkok)** : a Microsoft Edge azon beállításainak szűrése, amelyek a digitális/interaktív aláírások Microsoft Edge kioszk módban használhatók csak a Windows 10 single-app kioszkok esetében. Ezzel a beállítással megnyithatja a teljes URL-címet, és csak az adott webhelyen lévő tartalmat jelenítheti meg. A [digitális jelek beállítása](https://docs.microsoft.com/windows/configuration/setup-digital-signage) a szolgáltatással kapcsolatos további információkat tartalmaz.
@@ -280,7 +281,7 @@ Ez az eszköz-korlátozási profil közvetlenül kapcsolódik a [Windows kioszk 
 
 ### <a name="start-experience"></a>Kezdési élmény
 
-- **A Microsoft Edge elindítása**: válassza ki, hogy mely lapok nyílnak meg a Microsoft Edge indításakor. A lehetőségek:
+- **A Microsoft Edge elindítása**: válassza ki, hogy mely lapok nyílnak meg a Microsoft Edge indításakor. A választható lehetőségek:
   - **Egyéni kezdőlapok**: adja meg a kezdő lapokat, például `http://www.contoso.com`. A Microsoft Edge betölti a beírt kezdő lapokat.
   - **Új lap lapja**: a Microsoft Edge betöltése bármi bekerül az **új lap URL-címének** beállítására.
   - **Utolsó munkamenet lapja**: a Microsoft Edge betölti az utolsó munkamenet lapot.
@@ -288,16 +289,16 @@ Ez az eszköz-korlátozási profil közvetlenül kapcsolódik a [Windows kioszk 
 
 - **Kezdőlapok módosításának engedélyezése a felhasználó**számára: **Igen** (alapértelmezés) lehetővé teszi a felhasználók számára a kezdőlapok módosítását. A rendszergazdák a `EdgeHomepageUrls` paranccsal adhatják meg a kezdő lapokat, amelyeket a felhasználók alapértelmezés szerint látnak a Microsoft Edge megnyitásakor. **Nem** blokkolja a felhasználók a kezdőlapok módosítását.
 - **Webtartalom engedélyezése az új lapon**lapon: Ha az **Igen** értékre van állítva, a Microsoft Edge megnyitja az **új lap URL-címében** megadott URL-címet. Ha az **új lap URL-címe** üres, a Microsoft Edge megnyitja az új lap lapot a Microsoft Edge beállításaiban. A felhasználók módosíthatják azt. Ha a **nem**értékre van állítva, a Microsoft Edge új lapot nyit meg egy üres oldallal. A felhasználók nem változtathatják meg.
-- **Új lap URL-címe**: Itt adhatja meg az új lap lapon megnyitható URL-címet. Adja meg például a következőt: `https://www.bing.com` vagy `https://www.contoso.com`.
+- **Új lap URL-címe**: Itt adhatja meg az új lap lapon megnyitható URL-címet. Például írja be a következőt: `https://www.bing.com` vagy `https://www.contoso.com`.
 
-- **Kezdőlap gomb**: válassza ki, hogy mi történjen a Kezdőlap gomb kiválasztásakor. A lehetőségek:
+- **Kezdőlap gomb**: válassza ki, hogy mi történjen a Kezdőlap gomb kiválasztásakor. A választható lehetőségek:
   - **Kezdőlapok**: megnyitja a kiválasztott lehetőséget a **Microsoft Edge** -beli elindítása a beállítással
   - **Új lap**lap: megnyitja az **új lap URL-címében** megadott URL-címet.
-  - **Kezdőlap gomb URL-címe**: adja meg a megnyitni kívánt URL-címet. Adja meg például a következőt: `https://www.bing.com` vagy `https://www.contoso.com`.
+  - **Kezdőlap gomb URL-címe**: adja meg a megnyitni kívánt URL-címet. Például írja be a következőt: `https://www.bing.com` vagy `https://www.contoso.com`.
   - **Kezdőlap gomb elrejtése**: elrejti a Kezdőlap gombot
 - A **Kezdőlap gomb módosításának engedélyezése a felhasználók**számára: **Igen** , lehetővé teszi a felhasználók számára a Kezdőlap gomb módosítását. A felhasználó módosításai felülbírálják a rendszergazdai beállításokat a Home (Kezdőlap) gombra. **Nem** (alapértelmezett) megakadályozza, hogy a felhasználók megváltoztassák, hogyan konfigurálta a rendszergazda a Kezdőlap gombot.
 - **Első futtatási élmény megjelenítése lap (csak mobil)** : **Igen** (alapértelmezés) a Microsoft Edge első használat bemutatása lapján látható. A Microsoft Edge első futtatásakor a bevezető oldal **nem** jelenik meg. Ez a funkció lehetővé teszi, hogy a vállalatok, például a nulla kibocsátási konfigurációkba beléptetett szervezetek regisztrálva legyenek ezen a lapon.
-- **Első futtatási élmény URL-listájának helye** (csak Windows 10 Mobile esetén): adja meg azt az URL-címet, amely az első futtatási oldal URL-címét tartalmazó XML-fájlra mutat. Adja meg például a következőt: `https://www.contoso.com/sites.xml`.
+- **Első futtatási élmény URL-listájának helye** (csak Windows 10 Mobile esetén): adja meg azt az URL-címet, amely az első futtatási oldal URL-címét tartalmazó XML-fájlra mutat. Például írja be a következőt: `https://www.contoso.com/sites.xml`.
 
 - **Böngésző frissítése üresjárati idő után**: adja meg az üresjárati percek számát, amíg a böngésző frissül, 0-1440 percen belül. Az alapértelmezett érték @no__t – 0 perc. Ha `0` (nulla) értékre van állítva, a böngésző nem frissül a tétlenség után.
 
@@ -305,8 +306,8 @@ Ez az eszköz-korlátozási profil közvetlenül kapcsolódik a [Windows kioszk 
 
 - **Előugró ablakok engedélyezése** (csak asztali verzió): **Igen** (alapértelmezés) lehetővé teszi az előugró ablakok használatát a böngészőben. **Nem** akadályozza meg az előugró ablakokat a böngészőben.
 - **Intranetes forgalom küldése az Internet Explorerhez** (csak asztali verzió): **Igen** , lehetővé teszi, hogy a felhasználók a Microsoft Edge helyett az Internet Explorerben nyissák meg az intranetes webhelyeket Ez a beállítás a visszamenőleges kompatibilitáshoz szükséges. **Nem** (alapértelmezett): a felhasználók a Microsoft Edge használatát teszik lehetővé.
-- **Vállalati üzemmód helyének listázási helye** (csak asztali verzió): adja meg az URL-címet, amely a vállalati módban megnyitott webhelyek listáját tartalmazó XML-fájlra mutat. A felhasználók nem változtathatják meg a listát. Adja meg például a következőt: `https://www.contoso.com/sites.xml`.
-- **Üzenet a helyek Internet Explorerben való megnyitásakor**: ezzel a beállítással konfigurálhatja a Microsoft Edge-t, hogy megjelenjen egy értesítés, mielőtt egy webhely megnyílik az Internet Explorer 11 alkalmazásban. A lehetőségek:
+- **Vállalati üzemmód helyének listázási helye** (csak asztali verzió): adja meg az URL-címet, amely a vállalati módban megnyitott webhelyek listáját tartalmazó XML-fájlra mutat. A felhasználók nem változtathatják meg a listát. Például írja be a következőt: `https://www.contoso.com/sites.xml`.
+- **Üzenet a helyek Internet Explorerben való megnyitásakor**: ezzel a beállítással konfigurálhatja a Microsoft Edge-t, hogy megjelenjen egy értesítés, mielőtt egy webhely megnyílik az Internet Explorer 11 alkalmazásban. A választható lehetőségek:
   - **Ne jelenjen meg üzenet**: az operációs rendszer alapértelmezett viselkedését használja, amely nem jelenít meg üzenetet.
   - Az **Internet Explorer 11 böngészőben megnyitott üzenet megjelenítése**: megjeleníti az üzenetet, amikor a webhelyeket nyitják meg az IE-ben. A helyek megnyitva az IE-ben. 
   - A **Microsoft Edge-helyek megnyitására szolgáló lehetőséggel rendelkező üzenet megjelenítése**: az üzenet megjelenítése a helyek Microsoft Edge-ben való megnyitásakor. Az üzenet tartalmaz egy **lépést a Microsoft Edge-** hivatkozásban, hogy a felhasználók az IE helyett a Microsoft Edge-et is kiválaszthatják.
@@ -320,19 +321,19 @@ Ez az eszköz-korlátozási profil közvetlenül kapcsolódik a [Windows kioszk 
 
 ### <a name="favorites-and-search"></a>Kedvencek és keresés
 
-- **Kedvencek sáv megjelenítése**: válassza ki, hogy mi történik a Microsoft Edge-lapokon a Kedvencek sávhoz. A lehetőségek:
+- **Kedvencek sáv megjelenítése**: válassza ki, hogy mi történik a Microsoft Edge-lapokon a Kedvencek sávhoz. A választható lehetőségek:
   - **A Start és az új lap lapokon**: a Kedvencek sáv megjelenítése a Microsoft Edge indításakor és az összes lapon. A végfelhasználók módosíthatják ezt a beállítást.
   - **Minden oldalon**: a Kedvencek sáv megjelenítése az összes oldalon. A végfelhasználók nem változtathatják meg ezt a beállítást.
   - **Rejtett**: elrejti a Kedvencek sávot az összes oldalon. A végfelhasználók nem változtathatják meg ezt a beállítást.
 - A **Kedvencek módosításának engedélyezése**: az **Igen** (alapértelmezett) az operációs rendszer alapértelmezését használja, amely lehetővé teszi a felhasználók számára a lista módosítását. A **nem** teszi lehetővé a végfelhasználók számára a kedvencek listájának hozzáadását, importálását, rendezését és szerkesztését.
-  - **Kedvencek listája**: adja meg a Kedvencek fájl URL-címeinek listáját. Például adja hozzá a következőt: `http://contoso.com/favorites.html`.
+  - **Kedvencek listája**: adja meg a Kedvencek fájl URL-címeinek listáját. Adja meg például a következőt: `http://contoso.com/favorites.html`.
 - **Kedvencek szinkronizálása a Microsoft-böngészők között** (csak asztali verzió): **Igen** kényszeríti a Windowst a Kedvencek szinkronizálására az Internet Explorer és a Microsoft Edge között. A Kedvencek között a hozzáadások, a törlések, a módosítások és a megrendelési módosítások megoszthatók a böngészők között.  **Nem** (alapértelmezett) az operációs rendszer alapértelmezését használja, amely lehetővé teheti a felhasználóknak a Kedvencek szinkronizálását a böngészők között.
-- **Alapértelmezett keresőmotor**: válassza ki az alapértelmezett keresőmotort az eszközön. A végfelhasználók bármikor módosíthatják ezt az értéket. A lehetőségek:
+- **Alapértelmezett keresőmotor**: válassza ki az alapértelmezett keresőmotort az eszközön. A végfelhasználók ezt az értéket bármikor módosíthatják. A választható lehetőségek:
   - Keresőmotor az ügyfél Microsoft Edge-beállításaiban
   - Bing
   - Google
   - Yahoo
-  - Egyéni érték: a **OpenSearch XML URL-címében**adjon meg egy HTTPS URL-címet, amely tartalmazza a keresőmotor rövid nevét és URL-címét (minimum). Adja meg például a következőt: `https://www.contoso.com/opensearch.xml`.
+  - Egyéni érték: a **OpenSearch XML URL-címében**adjon meg egy HTTPS URL-címet, amely tartalmazza a keresőmotor rövid nevét és URL-címét (minimum). Például írja be a következőt: `https://www.contoso.com/opensearch.xml`.
 - **Keresési javaslatok megjelenítése**: **Igen** (alapértelmezés) lehetővé teszi, hogy a keresőmotor a címsorban keresési kifejezések beírásakor javasoljon helyeket. **Nem** akadályozza meg ezt a funkciót.
 - **Keresőmotor-változások engedélyezése**: **Igen** (alapértelmezés) lehetővé teszi, hogy a felhasználók új keresőmotorokat adjanak hozzá, vagy megváltoztassák az alapértelmezett keresőmotort a Microsoft Edge-ben. A **nem** gombra kattintva megakadályozhatja, hogy a felhasználók testreszabják a keresőmotort.
 
@@ -343,7 +344,7 @@ Ez az eszköz-korlátozási profil közvetlenül kapcsolódik a [Windows kioszk 
 - **InPrivate-böngészés engedélyezése**: az **Igen** (alapértelmezés) lehetővé teszi az InPrivate-böngészést a Microsoft Edge-ben. Az összes InPrivate-fül bezárása után a Microsoft Edge törli a böngészési adatait az eszközről. **Nem** akadályozza meg, hogy a végfelhasználók InPrivate-böngészési munkameneteket nyissanak meg.
 - **Böngészési előzmények mentése**: **Igen** (alapértelmezés) lehetővé teszi a böngészési előzmények mentését a Microsoft Edge-ben. **Nem** akadályozza meg a böngészési előzmények mentését.
 - **Böngészési adatokat kihagyhatja a kilépéskor** (csak asztali verzióban): **Igen** törli az előzményeket és a böngészési adatokat, amikor a felhasználó kilép a Microsoft Edge-ből. A **nem** (alapértelmezett) az operációs rendszer alapértelmezett beállítását használja, amely gyorsítótárazhatja a böngészési adatfájlokat.
-- **Böngésző beállításainak szinkronizálása a felhasználók eszközei között**: válassza ki, hogyan szeretné szinkronizálni a böngésző beállításait az eszközök között. A lehetőségek:
+- **Böngésző beállításainak szinkronizálása a felhasználók eszközei között**: válassza ki, hogyan szeretné szinkronizálni a böngésző beállításait az eszközök között. A választható lehetőségek:
   - **Engedélyezés**: a Microsoft Edge böngésző beállításainak szinkronizálásának engedélyezése a felhasználó eszközei között
   - **Felhasználói felülbírálás letiltása és engedélyezése**: a Microsoft Edge böngésző beállításainak szinkronizálásának letiltása a felhasználó eszközei között. A felhasználók felülbírálhatja ezt a beállítást.
   - **Letiltás**: a Microsoft Edge böngésző beállításainak szinkronizálásának letiltása a felhasználók eszközei között. A felhasználók nem írhatják felül ezt a beállítást.
@@ -351,7 +352,7 @@ Ez az eszköz-korlátozási profil közvetlenül kapcsolódik a [Windows kioszk 
 Ha a "felhasználói felülbírálás tiltása és engedélyezése" lehetőség van kiválasztva, a felhasználó felülbírálhatja a rendszergazda megjelölését.
 
 - A **Password Manager engedélyezése**: **Igen** (alapértelmezés) lehetővé teszi a Microsoft Edge számára a Password Manager automatikus használatát, amely lehetővé teszi a felhasználók számára a jelszavak mentését és kezelését az eszközön. **Nem** akadályozza meg a Microsoft Edge használatát a Password Manager használatával.
-- **Cookie-k**: válassza ki, hogyan történjen a cookie-k kezelése a böngészőben. A lehetőségek:
+- **Cookie-k**: válassza ki, hogyan történjen a cookie-k kezelése a böngészőben. A választható lehetőségek:
   - **Engedélyezés**: a cookie-k tárolása az eszközön történik.
   - Az **összes cookie blokkolása**: a cookie-k nem tárolódnak az eszközön.
   - **Csak a harmadik féltől származó cookie-k letiltása**: a harmadik féltől származó vagy partneri cookie-k nem tárolódnak az eszközön.
@@ -387,7 +388,7 @@ Ezek a beállítások a [NetworkProxy házirend CSP](https://docs.microsoft.com/
 - **Manuális proxykiszolgáló használata**: válassza az **Engedélyezés lehetőséget** a proxykiszolgáló nevének vagy IP-címének és TCP-portszámának manuális megadásához. **Nincs konfigurálva** (alapértelmezés) nem teszi lehetővé a proxykiszolgáló adatainak manuális megadását.
   - **Cím**: adja meg a proxykiszolgáló nevét vagy IP-címét.
   - **Portszám**: adja meg a proxykiszolgáló portszámát.
-  - **Proxy-kivételek**: adjon meg olyan URL-címeket, amelyek nem használhatják a proxykiszolgálót. Az egyes elemeket pontosvesszővel válassza el egymástól.
+  - **Proxy-kivételek**: adjon meg olyan URL-címeket, amelyek nem használhatják a proxykiszolgálót. Az egyes címeket pontosvesszővel választhatja el egymástól.
   - **Proxykiszolgáló kihagyása helyi cím esetén**: **nincs konfigurálva** (alapértelmezés) megakadályozza a proxykiszolgáló használatát az intraneten lévő helyi címekhez. **Engedélyezi** a proxykiszolgáló használatát a helyi címekhez.
 
 ## <a name="password"></a>Jelszó
@@ -396,7 +397,7 @@ Ezek a beállítások a [DeviceLock házirend CSP](https://docs.microsoft.com/wi
 
 - **Password (jelszó**): **megköveteli** a végfelhasználótól, hogy jelszót adjon meg az eszköz eléréséhez. **Nincs konfigurálva** (alapértelmezés) jelszó nélkül teszi lehetővé az eszköz elérését. Csak a helyi fiókokra vonatkozik. A tartományi fiókhoz tartozó jelszavakat Active Directory (AD) és az Azure AD is konfigurálja.
 
-  - **Szükséges jelszó típusa**: válassza ki a jelszó típusát. A lehetőségek:
+  - **Szükséges jelszó típusa**: válassza ki a jelszó típusát. A választható lehetőségek:
     - **Nincs konfigurálva**: a jelszó tartalmazhat számokat és betűket.
     - **Numerikus**: a jelszó csak számokból hívható meg.
     - **Alfanumerikus**: a jelszónak számokból és betűkből álló kombinációnak kell lennie.
@@ -413,7 +414,7 @@ Ezek a beállítások a [DeviceLock házirend CSP](https://docs.microsoft.com/wi
   - **Jelszó érvényessége (napokban)** : adja meg az időtartamot napokban, amikor az eszköz jelszavát módosítani kell, a 1-365-ból. Adja meg például a `90` értéket, hogy a jelszót 90 nap után lejárja.
   - **Korábbi jelszavak újbóli használatának tiltása**: Itt adhatja meg a korábban nem használható jelszavak számát 1-24-ről. Adja meg például a következőt: `5`, így a felhasználók nem állíthatnak be új jelszót a jelenlegi jelszavuk vagy az előző négy jelszavuk bármelyike számára.
   - **Jelszó kérése, ha az eszköz visszatér az inaktív állapotból** (mobil és holografikus): válassza a **szükséges** lehetőséget, hogy a felhasználóknak jelszót kell megadniuk az eszköz zárolásának feloldásához. **Nincs konfigurálva** (az alapértelmezett) nem igényel PIN-kódot vagy jelszót, amikor az eszköz visszatér inaktív állapotból.
-  - **Egyszerű jelszavak**: a **Letiltás** beállítás megadásával a felhasználók nem hozhatnak létre egyszerű jelszavakat, például `1234` vagy `1111`. Állítsa be úgy, hogy **ne legyen konfigurálva** (alapértelmezett), hogy a felhasználók olyan jelszavakat hozzanak létre, mint a `1234` vagy a `1111`. Ezzel a beállítással engedélyezheti vagy letilthatja a Windows-képek jelszavainak használatát.
+  - **Egyszerű jelszavak**: a **Letiltás** beállítás megadásával a felhasználók nem hozhatnak létre egyszerű jelszavakat, például `1234` vagy `1111`. Állítsa be úgy, hogy **ne legyen konfigurálva** (alapértelmezett), hogy a felhasználók olyan jelszavakat hozzanak létre, mint a `1234` vagy a `1111`. Ez a beállítás a Windows-képjelszavak használatát is engedélyezi vagy letiltja.
 - **Automatikus titkosítás a AADJ során**: a **blokk** megakadályozza a BitLocker-eszközök automatikus titkosítását az eszköz első használatra való előkészítésekor, amikor az eszköz csatlakozik az Azure ad-hez. **Nincs konfigurálva** (alapértelmezés) az operációs rendszer alapértelmezett alapértékét használja, amely lehetővé teszi a titkosítást. További információ a [BitLocker-eszközök titkosításáról](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-device-encryption-overview-windows-10#bitlocker-device-encryption).
 
   [Biztonság/PreventAutomaticDeviceEncryptionForAzureADJoinedDevices CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-security#security-preventautomaticdeviceencryptionforazureadjoineddevices)
@@ -426,7 +427,7 @@ Ezek a beállítások a [DeviceLock házirend CSP](https://docs.microsoft.com/wi
 
   [Hitelesítés/AllowSecondaryAuthenticationDevice CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-authentication#authentication-allowsecondaryauthenticationdevice)
 
-- **Webes bejelentkezés**: lehetővé teszi a Windows bejelentkezési támogatását a nem ADFS (Active Directory összevonási szolgáltatások (AD FS)) összevont szolgáltatóknál, például Security ASSERTION MARKUP Language (SAML). Az SAML olyan biztonságos jogkivonatokat használ, amelyek egy egyszeri bejelentkezési (SSO) élményt biztosítanak a webböngészőknek. A lehetőségek:
+- **Webes bejelentkezés**: lehetővé teszi a Windows bejelentkezési támogatását a nem ADFS (Active Directory összevonási szolgáltatások (AD FS)) összevont szolgáltatóknál, például Security ASSERTION MARKUP Language (SAML). Az SAML olyan biztonságos jogkivonatokat használ, amelyek egy egyszeri bejelentkezési (SSO) élményt biztosítanak a webböngészőknek. A választható lehetőségek:
 
   - **Nincs konfigurálva** (alapértelmezett): az operációs rendszer alapértelmezett beállításait használja az eszközön.
   - **Engedélyezve**: a webes hitelesítőadat-szolgáltató engedélyezve van a bejelentkezéshez.
@@ -434,11 +435,11 @@ Ezek a beállítások a [DeviceLock házirend CSP](https://docs.microsoft.com/wi
 
   [Hitelesítés/EnableWebSignIn CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-authentication#authentication-enablewebsignin)
 
-- **Előnyben részesített Azure ad-bérlői tartomány**: adjon meg egy meglévő tartománynevet az Azure ad-szervezetben. Ha a tartomány felhasználói bejelentkeznek, nem kell beírniuk a tartománynevet. Adja meg például a következőt: `contoso.com`. A `contoso.com` tartományba tartozó felhasználók a saját felhasználónevével (például `abby`) jelentkezhetnek be a `abby@contoso.com` helyett.
+- **Előnyben részesített Azure ad-bérlői tartomány**: adjon meg egy meglévő tartománynevet az Azure ad-szervezetben. Ha a tartomány felhasználói bejelentkeznek, nem kell beírniuk a tartománynevet. Például írja be a következőt: `contoso.com`. A `contoso.com` tartományba tartozó felhasználók a saját felhasználónevével (például `abby`) jelentkezhetnek be a `abby@contoso.com` helyett.
 
   [Hitelesítés/PreferredAadTenantDomainName CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-authentication#authentication-preferredaadtenantdomainname)
 
-## <a name="per-app-privacy-exceptions"></a>Alkalmazáson belüli adatvédelmi kivételek
+## <a name="per-app-privacy-exceptions"></a>Alkalmazásonkénti adatvédelmi kivételek
 
 Olyan alkalmazásokat adhat hozzá, amelyeknek az "alapértelmezett adatvédelem" beállítástól eltérő adatvédelmi viselkedéssel kell rendelkeznie.
 
@@ -460,7 +461,7 @@ Olyan alkalmazásokat adhat hozzá, amelyeknek az "alapértelmezett adatvédelem
 - **Mozgás**: megadhatja, hogy az alkalmazás hozzáférhet-e az eszköz mozgási adataihoz.
 - **Értesítések**: megadhatja, hogy az alkalmazás hozzáférhet-e az értesítésekhez.
 - **Telefon**: határozza meg, hogy az alkalmazás hozzáférhet-e a telefonhoz.
-- **Rádiók**: egyes alkalmazások rádiókat (például Bluetooth) használnak az eszközön az eszközök küldéséhez és fogadásához, valamint a rádiók be-és kikapcsolásához. Annak megadása, hogy az alkalmazás képes-e szabályozni ezeket a rádiókat.
+- **Rádiók**: egyes alkalmazások rádiókat (például Bluetooth) használnak az eszközön az eszközök küldéséhez és fogadásához, valamint a rádiók be-és kikapcsolásához. Megadhatja, hogy az alkalmazás kezelheti-e ezeket az antennákat.
 - **Feladatok**: megadhatja, hogy az alkalmazás hozzáférhet-e a feladatokhoz.
 - **Megbízható eszközök**: válassza ki, hogy az alkalmazás használhat-e megbízható eszközöket. A megbízható eszközök a már csatlakoztatott hardverek vagy az eszközhöz tartozó hardverek. Használjon például TV-ket, kivetítőket és így tovább, mint a megbízható eszközök.
 - **Visszajelzés és diagnosztika**: megadhatja, hogy az alkalmazás hozzáférhet-e a diagnosztikai adatokhoz.
@@ -470,7 +471,7 @@ Olyan alkalmazásokat adhat hozzá, amelyeknek az "alapértelmezett adatvédelem
 
 Ezek a beállítások a [megszemélyesítési házirend CSP](https://docs.microsoft.com/windows/client-management/mdm/personalization-csp)-t használják, amely a támogatott Windows-kiadásokat is felsorolja.
 
-- **Asztali háttérkép URL-címe (csak asztali**verzióban): adja meg a Windows asztali háttérképként használni kívánt. jpg,. jpeg vagy. png formátumú kép URL-címét. A felhasználók nem változtathatják meg a képet. Adja meg például a következőt: `https://contoso.com/logo.png`.
+- **Asztali háttérkép URL-címe (csak asztali**verzióban): adja meg a Windows asztali háttérképként használni kívánt. jpg,. jpeg vagy. png formátumú kép URL-címét. A felhasználók nem módosíthatják a képet. Például írja be a következőt: `https://contoso.com/logo.png`.
 
 ## <a name="printer"></a>Nyomtató
 
@@ -478,7 +479,7 @@ Ezek a beállítások a [megszemélyesítési házirend CSP](https://docs.micros
 - **Alapértelmezett nyomtató**: állítsa be az alapértelmezett nyomtatót.
 - **Felhasználói hozzáférés új nyomtatók hozzáadásához**: engedélyezi vagy letiltja a helyi nyomtatók használatát.
 
-## <a name="privacy"></a>Adatvédelem
+## <a name="privacy"></a>Személyes adatok védelme
 
 Ezek a beállítások az [adatvédelmi házirend CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-privacy)-t használják, amely a támogatott Windows-kiadásokat is felsorolja.
 
@@ -504,13 +505,13 @@ Beállíthatja, hogy az eszközön található összes alkalmazás hozzáférhes
 - **Mozgás**: megadhatja, hogy az alkalmazás hozzáférhet-e az eszköz mozgási adataihoz.
 - **Értesítések**: megadhatja, hogy az alkalmazás hozzáférhet-e az értesítésekhez.
 - **Telefon**: határozza meg, hogy az alkalmazás hozzáférhet-e a telefonhoz.
-- **Rádiók**: egyes alkalmazások rádiókat (például Bluetooth) használnak az eszközön az eszközök küldéséhez és fogadásához, valamint a rádiók be-és kikapcsolásához. Annak megadása, hogy az alkalmazás képes-e szabályozni ezeket a rádiókat.
+- **Rádiók**: egyes alkalmazások rádiókat (például Bluetooth) használnak az eszközön az eszközök küldéséhez és fogadásához, valamint a rádiók be-és kikapcsolásához. Megadhatja, hogy az alkalmazás kezelheti-e ezeket az antennákat.
 - **Feladatok**: megadhatja, hogy az alkalmazás hozzáférhet-e a feladatokhoz.
 - **Megbízható eszközök**: válassza ki, hogy az alkalmazás használhat-e megbízható eszközöket. A megbízható eszközök a már csatlakoztatott hardverek vagy az eszközhöz tartozó hardverek. Használjon például TV-ket, kivetítőket és így tovább, mint a megbízható eszközök.
 - **Visszajelzés és diagnosztika**: válassza ki, hogy az alkalmazás képes-e hozzáférni a diagnosztikai adatokhoz.
-- **Szinkronizálás eszközökkel** – megadhatja, hogy az alkalmazás képes-e automatikusan megosztani és szinkronizálni az adatokat olyan vezeték nélküli eszközökkel, amelyek nem kifejezetten párosítva vannak ezzel a számítógéppel, táblaszámítógéptel vagy telefonnal.
+- **Szinkronizálás eszközökkel** – Megadhatja, hogy az alkalmazás oszthat-e meg és szinkronizálhat-e adatokat automatikusan olyan vezeték nélküli eszközökkel, amelyek nincsenek kifejezetten párosítva az adott PC-vel, táblagéppel vagy telefonnal.
 
-## <a name="projection"></a>Vetület
+## <a name="projection"></a>Kivetítés
 
 Ezek a beállítások a [WirelessDisplay házirend CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-wirelessdisplay)-t használják, amely a támogatott Windows-kiadásokat is felsorolja.
 
@@ -520,7 +521,7 @@ Ezek a beállítások a [WirelessDisplay házirend CSP](https://docs.microsoft.c
 
 ## <a name="reporting-and-telemetry"></a>Jelentéskészítés és telemetria
 
-- **Használati adatok megosztása**: válassza ki az elküldött diagnosztikai adatok szintjét. A lehetőségek:
+- **Használati adatok megosztása**: válassza ki az elküldött diagnosztikai adatok szintjét. A választható lehetőségek:
   - **Nincs konfigurálva**: a rendszer nem osztja meg az adatmegosztást.
   - **Biztonság**: a Windows biztonságosabbá tételéhez szükséges információk, beleértve a csatlakoztatott felhasználói élményre és telemetria, valamint a kártevő szoftver-eltávolítási eszközre és a Windows defenderre vonatkozó adatokat.
   - **Alapszintű**: alapszintű eszköz adatai, beleértve a minőséggel kapcsolatos adatokat, az alkalmazások kompatibilitását, az alkalmazás használati adatait és a biztonsági szintről származó adatokat.
@@ -529,7 +530,7 @@ Ezek a beállítások a [WirelessDisplay házirend CSP](https://docs.microsoft.c
 
   [System/AllowTelemetry CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-system#system-allowtelemetry)
 
-- **Microsoft Edge-böngészési adatok küldése Microsoft 365 Analyticsnek**: a szolgáltatás használatához a **használati adatok megosztásának** megadásával **bővíteni** vagy **megtelt**értékre kell állítani. Ez a szolgáltatás azt szabályozza, hogy a Microsoft Edge milyen adatokat küldjön a vállalati eszközök Microsoft 365 elemzéséhez egy konfigurált kereskedelmi AZONOSÍTÓval. A lehetőségek:
+- **Microsoft Edge-böngészési adatok küldése Microsoft 365 Analyticsnek**: a szolgáltatás használatához a **használati adatok megosztásának** megadásával **bővíteni** vagy **megtelt**értékre kell állítani. Ez a szolgáltatás azt szabályozza, hogy a Microsoft Edge milyen adatokat küldjön a vállalati eszközök Microsoft 365 elemzéséhez egy konfigurált kereskedelmi AZONOSÍTÓval. A választható lehetőségek:
   - **Nincs konfigurálva**: az operációs rendszer alapértelmezését használja, amely nem küldi el a böngészési előzményeket.
   - **Csak intranetes adatküldés**: lehetővé teszi a rendszergazda számára az intranetes adatelőzmények küldését.
   - **Csak internetes adatküldés**: lehetővé teszi, hogy a rendszergazda internetes adatelőzményeket küldjön
@@ -537,9 +538,9 @@ Ezek a beállítások a [WirelessDisplay házirend CSP](https://docs.microsoft.c
 
   [Böngésző/ConfigureTelemetryForMicrosoft365Analytics CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-configuretelemetryformicrosoft365analytics)
 
-- **Telemetria proxykiszolgáló**: adja meg egy proxykiszolgáló teljes tartománynevét (FQDN) vagy IP-címét a csatlakoztatott felhasználói élmények és telemetria-kérések továbbításához SSL (SSL) kapcsolat használatával. A beállítás formátuma a következő: *kiszolgáló*:*port*. Ha a nevesített proxy nem sikerül, vagy ha a házirend engedélyezésekor nem adta meg a proxyt, a rendszer nem küldi el a csatlakoztatott felhasználói élményt és telemetria, és a helyi eszközön marad.
+- **Telemetria proxykiszolgáló**: adja meg egy proxykiszolgáló teljes tartománynevét (FQDN) vagy IP-címét a csatlakoztatott felhasználói élmények és telemetria-kérések továbbításához SSL (SSL) kapcsolat használatával. a következő formátumban: *kiszolgáló*:*port*. Ha a nevesített proxy nem sikerül, vagy ha a házirend engedélyezésekor nem adta meg a proxyt, a rendszer nem küldi el a csatlakoztatott felhasználói élményt és telemetria, és a helyi eszközön marad.
 
-  Példa formátumok:
+  Példák a formátumra:
 
   ```
   IPv4: 192.246.246.106:100
@@ -549,19 +550,19 @@ Ezek a beállítások a [WirelessDisplay házirend CSP](https://docs.microsoft.c
 
   [System/TelemetryProxy CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-system#system-telemetryproxy)
 
-A módosítások mentéséhez kattintson **az OK gombra** .
+A módosítások mentéséhez válassza az **OK** gombot.
 
-## <a name="search"></a>Search
+## <a name="search"></a>Keresés
 
 Ezek a beállítások a [keresési házirend CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-search)-t használják, amely a támogatott Windows-kiadásokat is felsorolja. 
 
-- **Biztonságos Keresés (csak mobil)** : annak szabályozása, hogy a Cortana hogyan szűri a felnőtt tartalmat a keresési eredmények között. A lehetőségek:
+- **Biztonságos Keresés (csak mobil)** : annak szabályozása, hogy a Cortana hogyan szűri a felnőtt tartalmat a keresési eredmények között. A választható lehetőségek:
   - **Felhasználó által definiált**: a végfelhasználók választhatják ki a saját beállításait.
   - **Szigorú**: a legmagasabb szintű szűrés a felnőtt tartalmakon.
   - **Mérsékelt**: mérsékelt szűrés a felnőtt tartalommal szemben. Az érvényes keresési eredmények nem szűrhetők.
 - **Webes találatok megjelenítése a keresésben**: Ha a **blokk**értékre van állítva, a felhasználók nem kereshetnek, és a webes eredmények nem jelennek meg a keresésben. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználóknak a webes keresést, és az eredmények megjelennek az eszközön.
 
-## <a name="start"></a>Kezdés
+## <a name="start"></a>Indítás
 
 Ezek a beállítások a [Start Policy CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-start)-t használják, amely a támogatott Windows-kiadásokat is felsorolja.  
 
@@ -569,14 +570,14 @@ Ezek a beállítások a [Start Policy CSP](https://docs.microsoft.com/windows/cl
 - **Webhelyek rögzítése a Start menüben**: képek importálása a Microsoft Edge-ből, amelyek hivatkozásként jelennek meg a Windows Start menüjében asztali eszközökhöz.
 - **Alkalmazások rögzítésének feloldása a tálcán**: a Letiltás megakadályozza, hogy a felhasználók **kioldják** az alkalmazásokat a tálcáról. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára az alkalmazások rögzítését a tálcáról.
 - **Gyors felhasználói váltás**: a **Letiltás** megakadályozza, hogy a rendszer kijelentkezés nélkül, egyidejűleg bejelentkezett felhasználók között váltson át. **Nincs konfigurálva** (alapértelmezés) megjeleníti a felhasználói csempén a **kapcsoló felhasználóját** .
-- **Leggyakrabban használt alkalmazások**: a **blokk** elrejti a leggyakrabban használt alkalmazásokat a Start menüben. Emellett letiltja a megfelelő kapcsolót a beállítások alkalmazásban. **Nincs konfigurálva** (alapértelmezés) a leggyakrabban használt alkalmazásokat jeleníti meg.
-- **Nemrég hozzáadott alkalmazások**: **blokkolja** a nemrég hozzáadott alkalmazások elrejtését a Start menüben. Emellett letiltja a megfelelő kapcsolót a beállítások alkalmazásban. **Nincs konfigurálva** (alapértelmezés) megjeleníti a legutóbb hozzáadott alkalmazásokat a Start menüben.
-- Kezdőképernyő **mód**: válassza ki, hogyan jelenjen meg a kezdőképernyő. A lehetőségek:
+- **Leggyakrabban használt alkalmazások**: a **blokk** elrejti a leggyakrabban használt alkalmazásokat a Start menüben. A Gépház alkalmazásban is letiltja a megfelelő váltógombot. **Nincs konfigurálva** (alapértelmezés) a leggyakrabban használt alkalmazásokat jeleníti meg.
+- **Nemrég hozzáadott alkalmazások**: **blokkolja** a nemrég hozzáadott alkalmazások elrejtését a Start menüben. A Gépház alkalmazásban is letiltja a megfelelő váltógombot. **Nincs konfigurálva** (alapértelmezés) megjeleníti a legutóbb hozzáadott alkalmazásokat a Start menüben.
+- Kezdőképernyő **mód**: válassza ki, hogyan jelenjen meg a kezdőképernyő. A választható lehetőségek:
   - **Felhasználó által definiált**: nem kényszeríti az indítás méretét. A felhasználók megadhatják a méretet.
   - **Teljes képernyő**: az indítás teljes teljes méretét kényszeríti.
   - **Nem teljes képernyő**: az indítás nélküli méret kényszerítése.
-- A **legutóbb megnyitott elemek a Jump List menükben**: **letiltja** a legutóbbi Jump List lista elrejtése a Start menüben és a tálcán. Emellett letiltja a megfelelő kapcsolót a beállítások alkalmazásban. **Nincs konfigurálva** (alapértelmezett) a legutóbb megnyitott elemeket mutatja a jumplists-ben.
-- Alkalmazások **listája**: válassza ki, hogyan jelenjenek meg a minden alkalmazás lista. A lehetőségek:
+- A **legutóbb megnyitott elemek a Jump List menükben**: **letiltja** a legutóbbi Jump List lista elrejtése a Start menüben és a tálcán. A Gépház alkalmazásban is letiltja a megfelelő váltógombot. **Nincs konfigurálva** (alapértelmezett) a legutóbb megnyitott elemeket mutatja a jumplists-ben.
+- Alkalmazások **listája**: válassza ki, hogyan jelenjenek meg a minden alkalmazás lista. A választható lehetőségek:
   - **Felhasználó által definiált**: nincs beállítás kényszerítve. A felhasználók kiválaszthatják, hogyan jelenjenek meg az alkalmazások listája az eszközön.
   - **Összecsukás**: az összes alkalmazás listájának elrejtése.
   - **Összecsukhatja és letilthatja a beállítások alkalmazást**: az összes alkalmazás listájának elrejtése és a beállítások alkalmazás **Start menüjében szereplő alkalmazások listájának** letiltása.
@@ -590,48 +591,48 @@ Ezek a beállítások a [Start Policy CSP](https://docs.microsoft.com/windows/cl
 - **Hibernált állapot**: a Start menü főkapcsoló gombján a **Letiltás** elrejti a **hibernálási** beállítást. **Nincs konfigurálva** (alapértelmezés) Ez a beállítás jelenik meg.
 - **Fiók váltása**: a **blokk** elrejti a **kapcsoló fiókot** a Start menü felhasználói csempén. **Nincs konfigurálva** (alapértelmezés) Ez a beállítás jelenik meg.
 - **Újraindítási beállítások**: a **Letiltás** a Start menü főkapcsoló gombjára kattintva elrejti a **frissítési és** újraindítási és **Újraindítási** beállításokat. **Nincs konfigurálva** (alapértelmezés) ezeket a beállításokat jeleníti meg.
-- **Dokumentumok a Start**menüben: a Windows Start menüjének dokumentumok mappájának elrejtése vagy megjelenítése. A lehetőségek:
+- **Dokumentumok a Start**menüben: a Windows Start menüjének dokumentumok mappájának elrejtése vagy megjelenítése. A választható lehetőségek:
   - **Nincs konfigurálva** (alapértelmezett): a rendszer nem kényszeríti a beállítást. A felhasználók a parancsikon megjelenítéséhez vagy elrejtéséhez választanak.
   - **Elrejtés**: a parancsikon rejtett, és letiltja a beállítást a beállítások alkalmazásban.
   - **Megjelenítés**: a parancsikon megjelenik, és letiltja a beállítást a beállítások alkalmazásban.
-- **Letöltések a Start**menüben: a Windows Start menü letöltések mappájának elrejtése vagy megjelenítése. A lehetőségek:
+- **Letöltések a Start**menüben: a Windows Start menü letöltések mappájának elrejtése vagy megjelenítése. A választható lehetőségek:
   - **Nincs konfigurálva** (alapértelmezett): a rendszer nem kényszeríti a beállítást. A felhasználók a parancsikon megjelenítéséhez vagy elrejtéséhez választanak.
   - **Elrejtés**: a parancsikon rejtett, és letiltja a beállítást a beállítások alkalmazásban.
   - **Megjelenítés**: a parancsikon megjelenik, és letiltja a beállítást a beállítások alkalmazásban.
-- **Fájlkezelő a Start**menüben: a Windows Start menüjében található fájlkezelő elrejtése vagy megjelenítése. A lehetőségek:
+- **Fájlkezelő a Start**menüben: a Windows Start menüjében található fájlkezelő elrejtése vagy megjelenítése. A választható lehetőségek:
   - **Nincs konfigurálva** (alapértelmezett): a rendszer nem kényszeríti a beállítást. A felhasználók a parancsikon megjelenítéséhez vagy elrejtéséhez választanak.
   - **Elrejtés**: a parancsikon rejtett, és letiltja a beállítást a beállítások alkalmazásban.
   - **Megjelenítés**: a parancsikon megjelenik, és letiltja a beállítást a beállítások alkalmazásban.
-- **Otthoni csoport a Start**menüben: az otthoni csoport parancsikonjának elrejtése vagy megjelenítése a Windows Start menüjében. A lehetőségek:
+- **Otthoni csoport a Start**menüben: az otthoni csoport parancsikonjának elrejtése vagy megjelenítése a Windows Start menüjében. A választható lehetőségek:
   - **Nincs konfigurálva** (alapértelmezett): a rendszer nem kényszeríti a beállítást. A felhasználók a parancsikon megjelenítéséhez vagy elrejtéséhez választanak.
   - **Elrejtés**: a parancsikon rejtett, és letiltja a beállítást a beállítások alkalmazásban.
   - **Megjelenítés**: a parancsikon megjelenik, és letiltja a beállítást a beállítások alkalmazásban.
-- **Zene a Start**menüben: a Windows Start menü zene mappájának elrejtése vagy megjelenítése. A lehetőségek:
+- **Zene a Start**menüben: a Windows Start menü zene mappájának elrejtése vagy megjelenítése. A választható lehetőségek:
   - **Nincs konfigurálva** (alapértelmezett): a rendszer nem kényszeríti a beállítást. A felhasználók a parancsikon megjelenítéséhez vagy elrejtéséhez választanak.
   - **Elrejtés**: a parancsikon rejtett, és letiltja a beállítást a beállítások alkalmazásban.
   - **Megjelenítés**: a parancsikon megjelenik, és letiltja a beállítást a beállítások alkalmazásban.
-- **Hálózat a Start**menüben: bejövő hálózati forgalom elrejtése vagy megjelenítése a Windows Start menüjében. A lehetőségek:
+- **Hálózat a Start**menüben: bejövő hálózati forgalom elrejtése vagy megjelenítése a Windows Start menüjében. A választható lehetőségek:
   - **Nincs konfigurálva** (alapértelmezett): a rendszer nem kényszeríti a beállítást. A felhasználók a parancsikon megjelenítéséhez vagy elrejtéséhez választanak.
   - **Elrejtés**: a parancsikon rejtett, és letiltja a beállítást a beállítások alkalmazásban.
   - **Megjelenítés**: a parancsikon megjelenik, és letiltja a beállítást a beállítások alkalmazásban.
-- **Személyes mappa a Start**menüben: személyes mappa elrejtése vagy megjelenítése a Windows Start menüjében. A lehetőségek:
+- **Személyes mappa a Start**menüben: személyes mappa elrejtése vagy megjelenítése a Windows Start menüjében. A választható lehetőségek:
   - **Nincs konfigurálva** (alapértelmezett): a rendszer nem kényszeríti a beállítást. A felhasználók a parancsikon megjelenítéséhez vagy elrejtéséhez választanak.
   - **Elrejtés**: a parancsikon rejtett, és letiltja a beállítást a beállítások alkalmazásban.
   - **Megjelenítés**: a parancsikon megjelenik, és letiltja a beállítást a beállítások alkalmazásban.
-- **Képek a Start**menüben: a Windows Start menüjében található képek mappájának elrejtése vagy megjelenítése. A lehetőségek:
+- **Képek a Start**menüben: a Windows Start menüjében található képek mappájának elrejtése vagy megjelenítése. A választható lehetőségek:
   - **Nincs konfigurálva** (alapértelmezett): a rendszer nem kényszeríti a beállítást. A felhasználók a parancsikon megjelenítéséhez vagy elrejtéséhez választanak.
   - **Elrejtés**: a parancsikon rejtett, és letiltja a beállítást a beállítások alkalmazásban.
   - **Megjelenítés**: a parancsikon megjelenik, és letiltja a beállítást a beállítások alkalmazásban.
-- **Beállítások a Start**menüben: elrejtheti vagy megjelenítheti a beállítások parancsikont a Windows Start menüjében. A lehetőségek:
+- **Beállítások a Start**menüben: elrejtheti vagy megjelenítheti a beállítások parancsikont a Windows Start menüjében. A választható lehetőségek:
   - **Nincs konfigurálva** (alapértelmezett): a rendszer nem kényszeríti a beállítást. A felhasználók a parancsikon megjelenítéséhez vagy elrejtéséhez választanak.
   - **Elrejtés**: a parancsikon rejtett, és letiltja a beállítást a beállítások alkalmazásban.
   - **Megjelenítés**: a parancsikon megjelenik, és letiltja a beállítást a beállítások alkalmazásban.
-- **Videók a Start**menüben: a Windows Start menüjében található videók mappájának elrejtése vagy megjelenítése. A lehetőségek:
+- **Videók a Start**menüben: a Windows Start menüjében található videók mappájának elrejtése vagy megjelenítése. A választható lehetőségek:
   - **Nincs konfigurálva** (alapértelmezett): a rendszer nem kényszeríti a beállítást. A felhasználók a parancsikon megjelenítéséhez vagy elrejtéséhez választanak.
   - **Elrejtés**: a parancsikon rejtett, és letiltja a beállítást a beállítások alkalmazásban.
   - **Megjelenítés**: a parancsikon megjelenik, és letiltja a beállítást a beállítások alkalmazásban.
 
-## <a name="windows-defender-smart-screen"></a>Windows Defender intelligens képernyő
+## <a name="windows-defender-smart-screen"></a>Windows Defender SmartScreen
 
 - **SmartScreen a Microsoft Edge-hez**: a **kötelező** beállítás kikapcsolja a Windows Defender SmartScreen szolgáltatást, és megakadályozza, hogy a felhasználók bekapcsolják azt. **Nincs konfigurálva** (alapértelmezett) bekapcsolja a SmartScreen szolgáltatást. Segít megvédeni a felhasználókat az esetleges fenyegetésektől, és megakadályozhatja a felhasználók számára a kikapcsolást.
 
@@ -647,7 +648,7 @@ Ezek a beállítások a [Start Policy CSP](https://docs.microsoft.com/windows/cl
 
   [Böngésző/PreventSmartScreenPromptOverrideForFiles CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverrideforfiles)
 
-## <a name="windows-spotlight"></a>Windows reflektorfény
+## <a name="windows-spotlight"></a>Windows Reflektorfény
 
 Ezek a beállítások az [Experience Policy CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-experience)-t használják, amely a támogatott Windows-kiadásokat is felsorolja.
 
@@ -681,7 +682,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
   [Defender/AllowBehaviorMonitoring CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowbehaviormonitoring)
 
-- **Hálózatvizsgáló rendszer (NIS)** : a NIS segítségével megvédheti az eszközöket a hálózati alapú biztonsági rések ellen. A Microsoft Endpoint Protection központból származó ismert biztonsági rések aláírásait használja a kártékony forgalom észleléséhez és letiltásához.
+- **Hálózatvizsgáló rendszer (NIS)** : a NIS segítségével megvédheti az eszközöket a hálózati alapú biztonsági rések ellen. A Microsoft Endpoint Protection-központból származó ismert sebezhető pontok mintázatai alapján segít észlelni és blokkolni a rosszindulatú hálózati forgalmat.
 
   A hálózati védelem bekapcsolása és a hálózati blokkolás **engedélyezése** . A felhasználók nem kapcsolhatják ki. Ha ez a beállítás engedélyezve van, a felhasználók nem tudnak csatlakozni az ismert biztonsági rések eléréséhez.
 
@@ -713,11 +714,11 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
   Az Intune nem kapcsolja ki ezt a funkciót. A letiltásához használjon egyéni URI-t.
 
-  A beállítás megváltozásakor a rendszer a végfelhasználó SZÁMÍTÓGÉPének következő újraindításakor lép érvénybe.
+  Módosítás esetén a beállítás a felhasználó számítógépének következő újraindításakor lép érvénybe.
 
   [Defender/AllowUserUIAccess CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowuseruiaccess)
 
-- **Biztonsági intelligencia frissítési időköze (órában)** : adja meg azt az időközt, amelyet a Defender az új biztonsági intelligenciát keres, 0-24-ból. A lehetőségek:
+- **Biztonsági intelligencia frissítési időköze (órában)** : adja meg azt az időközt, amelyet a Defender az új biztonsági intelligenciát keres, 0-24-ból. A választható lehetőségek:
 
   - **Nincs konfigurálva** (alapértelmezett): a frissítések keresése 8 óránként.
   - Ne legyen **pipa**: a Defender nem keres új biztonsági intelligenciával kapcsolatos frissítéseket.
@@ -725,7 +726,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
   
   [Defender/SignatureUpdateInterval CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-signatureupdateinterval)
   
-- A **fájl-és program-tevékenység figyelése**: engedélyezi a Defender számára a fájl-és program-tevékenységek figyelését az eszközökön. A lehetőségek:
+- A **fájl-és program-tevékenység figyelése**: engedélyezi a Defender számára a fájl-és program-tevékenységek figyelését az eszközökön. A választható lehetőségek:
 
   - **Nincs konfigurálva** (alapértelmezett): az összes fájl figyelése
   - **Figyelés letiltva**
@@ -792,7 +793,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
   [Defender/AllowCloudProtection CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowcloudprotection)
 
-- A **felhasználók megkérdezése a minta beküldése előtt**: meghatározza, hogy a rendszer automatikusan elküldje-e a további elemzést igénylő potenciálisan kártékony fájlokat a Microsoftnak. A lehetőségek:
+- A **felhasználók megkérdezése a minta beküldése előtt**: meghatározza, hogy a rendszer automatikusan elküldje-e a további elemzést igénylő potenciálisan kártékony fájlokat a Microsoftnak. A választható lehetőségek:
 
   - **Nincs konfigurálva** (alapértelmezett): biztonságos minták automatikus küldése.
   - **Mindig legyen kérdés**
@@ -806,7 +807,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
   [Defender/ScheduleQuickScanTime CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-schedulequickscantime)
 
-- A **végrehajtandó rendszervizsgálat típusa**: rendszervizsgálatot ütemezhet, beleértve a vizsgálat szintjét, valamint az ellenőrzés futtatásának napját és időpontját. A lehetőségek:
+- A **végrehajtandó rendszervizsgálat típusa**: rendszervizsgálatot ütemezhet, beleértve a vizsgálat szintjét, valamint az ellenőrzés futtatásának napját és időpontját. A választható lehetőségek:
   - **Nincs konfigurálva**: a rendszer nem ütemezhet rendszervizsgálatot az eszközön. A végfelhasználók szükség szerint manuálisan futtathatják a vizsgálatokat, vagy az eszközeiket szeretnék.
   - **Letiltás**: letiltja az eszközön a rendszer vizsgálatát. Akkor válassza ezt a lehetőséget, ha olyan partner víruskereső megoldást használ, amely az eszközöket vizsgálja.
   - **Gyors vizsgálat**: megtekinti azokat a közös helyeket, amelyeken kártevők regisztrálhatók, például beállításkulcsok és ismert Windows indítási mappák.
@@ -831,7 +832,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
   [Defender/ScheduleScanDay CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-schedulescanday)  
   [Defender/ScheduleScanTime CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-schedulescantime)
 
-- **Vélhetően nemkívánatos alkalmazások észlelése**: válassza ki a védelem szintjét, ha a Windows vélhetően nemkívánatos alkalmazásokat észlel. A lehetőségek:
+- **Vélhetően nemkívánatos alkalmazások észlelése**: válassza ki a védelem szintjét, ha a Windows vélhetően nemkívánatos alkalmazásokat észlel. A választható lehetőségek:
   - **Nincs konfigurálva** (alapértelmezett): a Windows Defender vélhetően nemkívánatos alkalmazások elleni védelme le van tiltva.
   - **Letiltás**: a Windows Defender észleli a vélhetően nemkívánatos alkalmazásokat, és a rendszer letiltja az észlelt elemeket. Ezek az elemek az előzményekben más fenyegetésekkel együtt jelennek meg.
   - **Naplózás**: a Windows Defender észleli a vélhetően nemkívánatos alkalmazásokat, de nem hajt végre műveletet. Áttekintheti a Windows Defender által az alkalmazásokkal kapcsolatos információkat. Keressen például a Windows Defender által a Eseménynaplóban létrehozott eseményeket.
@@ -840,14 +841,14 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
   [Defender/PUAProtection CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-puaprotection)
 
-- **Észlelt kártevő-fenyegetésekkel kapcsolatos műveletek**: válassza ki, hogyan szeretné kezelni a kártevő-szálakat. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi a Microsoft Defender számára a legjobb lehetőség kiválasztását. Ha az **Engedélyezés**lehetőségre van beállítva, válassza ki azokat a műveleteket, amelyeket az észlelt fenyegetési szinteknél el szeretne végezni: alacsony, közepes, magas és súlyos. A lehetőségek:
+- **Észlelt kártevő-fenyegetésekkel kapcsolatos műveletek**: válassza ki, hogyan szeretné kezelni a kártevő-szálakat. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi a Microsoft Defender számára a legjobb lehetőség kiválasztását. Ha az **Engedélyezés**lehetőségre van beállítva, válassza ki azokat a műveleteket, amelyeket az észlelt fenyegetési szinteknél el szeretne végezni: alacsony, közepes, magas és súlyos. A választható lehetőségek:
   
-  - **Tiszta**
+  - **Tisztítás**
   - **Karantén**
-  - **Eltávolítása**
+  - **Eltávolítás**
   - **Engedélyezés**
   - **Felhasználó által definiált**
-  - **Blokk**
+  - **Tiltás**
 
   Ha a művelet nem lehetséges, a Windows Defender a legjobb lehetőséget választja a fenyegetés szervizelésének biztosítására. 
 
@@ -855,10 +856,10 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
 ### <a name="windows-defender-antivirus-exclusions"></a>Windows Defender víruskereső – kizárások
 
-- A vizsgálatokból **és a valós idejű védelemből kizárandó fájlok és mappák**: egy vagy több fájlt és mappát (például **\ elérésiút** vagy **%ProgramFiles%\Path\filename.exe** ) hoz létre a kizárások listájához. Ezeket a fájlokat és mappákat nem tartalmazza a valós idejű vagy ütemezett vizsgálatok.
+- A vizsgálatokból **és a valós idejű védelemből kizárandó fájlok és mappák**: egy vagy több fájlt és mappát (például **\ elérésiút** vagy **%ProgramFiles%\Path\filename.exe** ) hoz létre a kizárások listájához. A rendszer a valós idejű és ütemezett vizsgálatok során nem vizsgálja ezeket a fájlokat és mappákat.
 - A vizsgálatokból **és a valós idejű védelemből kizárandó**fájlkiterjesztések: adjon hozzá egy vagy több fájlkiterjesztés, például **jpg** vagy **txt** elemet a kizárások listájához. Az ilyen kiterjesztésű fájlok nem szerepelnek a valós idejű vagy ütemezett vizsgálatok során.
 - A vizsgálatokból **és a valós idejű védelemből kizárandó folyamatok**: adjon hozzá egy vagy több **. exe**, **. com**vagy **. scr** típusú folyamatot a kizárások listájához. Ezek a folyamatok nem tartoznak valós idejű vagy ütemezett vizsgálatokba.
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
-Az egyes beállításokkal és a Windows egyes kiadásaival kapcsolatos további technikai részletekért lásd: [Windows 10 Policy CSP – dokumentáció](https://docs.microsoft.com/windows/client-management/mdm/policy-configuration-service-provider)
+További technikai részleteket az egyes beállításokról és a Windows támogatott kiadásairól a [Windows 10 szabályzatkonfigurációs szolgáltatói referenciájában](https://docs.microsoft.com/windows/client-management/mdm/policy-configuration-service-provider) talál.

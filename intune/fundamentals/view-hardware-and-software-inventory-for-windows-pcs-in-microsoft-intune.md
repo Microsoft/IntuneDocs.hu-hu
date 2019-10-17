@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 06/26/2019
 ms.topic: archived
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: 3c10f4c9-520b-4864-92fc-a45a9f640ad4
@@ -17,19 +18,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic-keep
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40d31fa30d784f14eeef6f33d2523909c1391f34
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 1ea74904657ec5457454e4371fb956648c74c422
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731627"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72504794"
 ---
 # <a name="view-hardware-and-software-inventory-for-windows-pcs"></a>Hardver- és szoftverleltár megtekintése Windows rendszerű számítógépeken
 
-[!INCLUDE [classic-portal](../../intune-classic/includes/classic-portal.md)]
+[!INCLUDE [classic-portal](../includes/classic-portal.md)]
 
 > [!NOTE]
-> A jelen témakörben ismertetett információk csak azokra a PC-ként felügyelt Windows-számítógépekre vonatkoznak, amelyeket az Intune szoftverügyfél segítségével felügyel. Ha szeretné megtekinteni a mobileszközökként regisztrált Windows rendszerű számítógépek leltárát, tekintse meg [az eszköz adatainak megtekintése az Intune-ban](../remote-actions/device-inventory.md)című témakört.
+> Az ebben a témakörben ismertetett információk csak az Intune-szoftverügyféllel PC-ként felügyelt Windows-számítógépekre vonatkoznak. Ha szeretné megtekinteni a mobileszközökként regisztrált Windows rendszerű számítógépek leltárát, tekintse meg [az eszköz adatainak megtekintése az Intune-ban](../remote-actions/device-inventory.md)című témakört.
 
 Az Intune részletes információkat gyűjt az olyan asztali számítógépekkel kapcsolatos hardverekről és szoftverekről, amelyeket az Intune-ügyfélszoftver használatával felügyel. Az alábbi eljárásokban lévő információkból megtudhatja:
 
@@ -71,6 +72,6 @@ Az Intune részletes információkat gyűjt az olyan asztali számítógépekkel
 
     A **Feladat állapota** párbeszédpanel megjeleníti az aktuális távoli feladatokat, a feladatok állapotát, az eszköz nevét és minden jelentett hibát, valamint egy hivatkozást kínál a hibaelhárítási információkhoz.
 
-## <a name="see-also"></a>Lásd még:
+## <a name="see-also"></a>További információ
 
 [A Windows rendszerű számítógépek Intune-szoftverügyféllel való felügyeletének általános feladatai](common-windows-pc-management-tasks-with-the-microsoft-intune-computer-client.md)

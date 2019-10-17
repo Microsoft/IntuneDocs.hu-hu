@@ -1,6 +1,6 @@
 ---
-title: Töltse fel, és e-mailek naplófájljaihoz app |} A Microsoft Docs
-description: Az Intune-alkalmazások feltöltése és e-mailek naplók
+title: Alkalmazás-naplók feltöltése és e-mailek | Microsoft Docs
+description: Az Intune-alkalmazások feltöltése és e-mail-naplók
 keywords: ''
 author: lenewsad
 ms.author: lanewsad
@@ -9,6 +9,7 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: 85c868e7-8d63-480c-9770-4e99614a5c94
 searchScope:
@@ -18,48 +19,48 @@ ms.reviewer: esmich
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c03d83e6f1bfbffdc7a43d0b80d0568a44555e32
-ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
+ms.openlocfilehash: 8eef3af9a82e7a61bc5200bf45143657072d6db7
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67546017"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72508371"
 ---
-# <a name="upload-and-email-logs"></a>Fel- és e-mail-naplók  
+# <a name="upload-and-email-logs"></a>Feltöltési és e-mail-naplók  
 
-A vállalati portál vagy a Microsoft Intune app problémát tapasztal, akkor a probléma részleteit is e-mailt a cég támogatási szolgálathoz. Ezeket az adatokat biztosít számukra a problémáról további környezet.  
+Ha problémát tapasztal a Céges portál vagy Microsoft Intune alkalmazásban, e-mailben elküldheti a probléma részleteit a cég informatikai támogatási szolgálatának. Ezek a részletek további kontextust biztosítanak a problémával kapcsolatban.  
 
-A tényleges hiba részletei az eszközön tárolt nevű speciális dokumentumban találhatók tartják a _diagnosztikai napló_. A vállalati portál vagy a Microsoft Intune alkalmazás feltölti a naplókat, az alkalmazás Microsoftos fejlesztőihez először azokat Ön küldeni. Ők a naplók felhasználásával javítják az alkalmazás működését, és előzik meg a további hibákat. Ilyenkor Ön kap egy egyedi incidensazonosítót, amelyet át kell adnia a cég rendszergazdájának, hogy ő hivatkozni tudjon a Microsoft ügyfélszolgálatánál jelentett esetre.  
+A tényleges hibák részleteit a rendszer a _diagnosztikai napló_nevű speciális dokumentumban tárolja az eszközön. Amikor feltölti a naplókat a Céges portálba vagy Microsoft Intune alkalmazásba, először az alkalmazáson dolgozó Microsoft-fejlesztőknek küldik el őket. Ők a naplók felhasználásával javítják az alkalmazás működését, és előzik meg a további hibákat. Ilyenkor Ön kap egy egyedi incidensazonosítót, amelyet át kell adnia a cég rendszergazdájának, hogy ő hivatkozni tudjon a Microsoft ügyfélszolgálatánál jelentett esetre.  
 
 > [!Note]
-> Megkönnyítheti a cég informatikai támogatási keresse meg a probléma okát, kapcsolja be _részletes naplózás_ vállalati portálon. Ha a Microsoft Intune-alkalmazást használ, állítsa be a **részletességi szint jelentkezzen** való **részletes**. A részletes napló a hibák minden részletét rögzíti, és ezeket a jelentésbe is belefoglalja. [Útmutató a részletes naplózás bekapcsolásához](use-verbose-logging-to-help-your-it-administrator-fix-device-issues-android.md)  
+> Annak érdekében, hogy a cég informatikai támogatási szolgálata könnyebben megtalálja a probléma okát, kapcsolja be a _részletes naplózást_ a céges portálban. Ha a Microsoft Intune alkalmazást használja, a **naplózás részletességi szintjét** állítsa **részletesre**. A részletes napló a hibák minden részletét rögzíti, és ezeket a jelentésbe is belefoglalja. [Útmutató a részletes naplózás bekapcsolásához](use-verbose-logging-to-help-your-it-administrator-fix-device-issues-android.md)  
 
-## <a name="upload-and-email-logs-from-company-portal"></a>Fel- és e-mailek naplókat a céges portálról  
+## <a name="upload-and-email-logs-from-company-portal"></a>Naplók feltöltése és e-mailek Céges portál  
 
-1. A céges portál alkalmazásban kétféleképpen kezdeményezni az e-mailes támogatást.
-    * A kezdőképernyőn: Koppintson a **Menü** > **Súgó** > **E-mail küldése a támogatásnak** lehetőségre.  
-    * A hibaüzenet: Koppintson a **SÚGÓ** vagy **adatok KÜLDÉSE**, ha elérhető.  
+1. A Céges portál alkalmazásban kétféle módon indíthat el e-mail-támogatást.
+    * A kezdőképernyőn: koppintson a **menü** > **Súgó** > **e-mail támogatás**elemre.  
+    * Hibaüzenet: koppintson a **Súgó** vagy az **adatok küldése**lehetőségre, ha elérhető.  
 
     > [!NOTE]
     > A felhasználó androidos eszközétől függően a **Menü** elem szoftveres vagy hardveres gomb is lehet.  
 
 3. Koppintson az **E-mail küldése és naplók feltöltése** lehetőségre.  
 4. Miután a feltöltés befejeződött, koppintson a levelező alkalmazásra. 
-5. Megjelenik egy e-mail-üzenet, amelynek tárgya már ki van töltve az incidensazonosítóval. Az e-mail törzsét a probléma különböző tartalomcsomagokból ismerteti.    
+5. Megjelenik egy e-mail-üzenet, amelynek tárgya már ki van töltve az incidensazonosítóval. Az e-mail törzsében írja le a kapott problémát.    
 
 
-## <a name="upload-and-email-logs-from-microsoft-intune-app"></a>A Microsoft Intune-alkalmazás feltöltése és e-mailek naplóinak   
+## <a name="upload-and-email-logs-from-microsoft-intune-app"></a>Microsoft Intune alkalmazásból származó és e-mail-naplók feltöltése   
 
-1. A Microsoft Intune alkalmazás kétféleképpen kezdeményezni az e-mailes támogatást.  
-    * A kezdőképernyőn: Koppintson a **menü** > **súgó** > **támogatás**.  
-    * A hibaüzenet: Koppintson a **SÚGÓ** vagy **adatok KÜLDÉSE**, ha elérhető.  
+1. A Microsoft Intune alkalmazásban kétféle módon indíthat el e-mail-támogatást.  
+    * A kezdőképernyőn: koppintson a **menü** > **Súgó** > **Get támogatás**lehetőségre.  
+    * Hibaüzenet: koppintson a **Súgó** vagy az **adatok küldése**lehetőségre, ha elérhető.  
 
     > [!NOTE]
     > A felhasználó androidos eszközétől függően a **Menü** elem szoftveres vagy hardveres gomb is lehet.
 
-3. Koppintson a **naplók FELTÖLTÉSE**.  
-4. A feltöltés befejeződése után koppintson **E-mail** válassza ki az e-mail alkalmazást.  
-5. Megjelenik egy e-mail-üzenet, amelynek tárgya már ki van töltve az incidensazonosítóval. Az e-mail törzsét a probléma különböző tartalomcsomagokból ismerteti.  
+3. Koppintson a **naplók feltöltése**elemre.  
+4. A feltöltés befejezése után koppintson az **e-mail** elemre, és válassza ki az e-mail-alkalmazást.  
+5. Megjelenik egy e-mail-üzenet, amelynek tárgya már ki van töltve az incidensazonosítóval. Az e-mail törzsében írja le a kapott problémát.  
 
 ## <a name="next-steps"></a>További lépések  
 

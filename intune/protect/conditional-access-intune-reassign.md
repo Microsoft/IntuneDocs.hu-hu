@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 01/02/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 301159ad-5f7e-4fcc-86c7-f72a71701ff4
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a369abd2f3873d970e9efc1ebf3ea814a9295fec
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 03b228795d7601647c57ea86b5adf7576b669c45
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729759"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72504584"
 ---
 # <a name="reassign-conditional-access-policies-from-intune-classic-portal-to-the-azure-portal"></a>Feltételes hozzáférési szabályzatok ismételt társítása az Intune klasszikus portálján a Azure Portal
 
@@ -38,7 +39,7 @@ Ha készen áll a Azure Portalre való áttérésre, kövesse a jelen témakörb
 
 - Miután meggyőződött róla, hogy az új szabályzatok a várt módon működnek az Azure Portalon, tiltsa le a feltételes szabályzatokat az Intune klasszikus portálján.
 <br /><br />
-  - **Mielőtt** letiltotta a feltételes hozzáférési szabályzatokat az Intune klasszikus portálján, tervezze meg, hogyan helyezheti át a felhasználókat az új szabályzatba. Két módszer létezik:
+  - **Mielőtt letiltotta** a feltételes hozzáférési szabályzatokat az Intune klasszikus portálján, tervezze meg, hogyan helyezheti át a felhasználókat az új szabályzatba. Két módszer létezik:
 <br /><br />
     - **Használhatja ugyanazt a belefoglaló csoportot az Azure Portalon létrehozott szabályzatok alkalmazására úgy, hogy létrehoz egy új kizárt csoportot az Intune klasszikus portál által alkalmazott szabályzatokhoz**.
       - A felhasználók egy részét fokozatosan helyezze át a klasszikus portálon megadott kizárt csoportba. Ez megakadályozza az Intune klasszikus portálja által meghatározott szabályzatok alkalmazását. Az ugyanazon felhasználói csoporthoz az Azure Portalon létrehozott szabályzatok az Intune klasszikus portálon alkalmazottak mellett érvényesülnek. 
@@ -95,7 +96,7 @@ Az Azure Portal **Intune App Protection** paneljén a rendszergazdák alkalmazá
 
 8. Válassza ki azt az alkalmazást, amelyre alkalmazni kívánja az új feltételes hozzáférési szabályzatot, majd kattintson a **kiválasztás**elemre.
 
-9. Kattintson a **Done** (Kész) gombra.
+9. Kattintson a **Kész** gombra.
 
     ![A Felhőbeli alkalmazások KEZELŐFELÜLETének összehasonlítása az Intune és az Azure Portalon](./media/conditional-access-intune-reassign/reassign-ca-3.png)
 
@@ -198,7 +199,7 @@ Mivel a MDM el lett távolítva a klasszikus Intune-portálról, a következő h
 
 [https://portal.azure.com/?microsoft_aad_iam_classicPolicyDontHide=true#blade/Microsoft_AAD_IAM/ConditionalAccessBlade/ClassicPolicies](https://portal.azure.com/?microsoft_aad_iam_classicPolicyDontHide=true#blade/Microsoft_AAD_IAM/ConditionalAccessBlade/ClassicPolicies)
 
-## <a name="see-also"></a>Lásd még:
+## <a name="see-also"></a>További információ
 
 - [A feltételes hozzáférés használatának gyakori módjai az Intune-nal](conditional-access-intune-common-ways-use.md)
 - [alkalmazás-alapú feltételes hozzáférés az Intune-nal](app-based-conditional-access-intune.md)

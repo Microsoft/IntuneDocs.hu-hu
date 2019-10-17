@@ -1,5 +1,5 @@
 ---
-title: A Microsoft Intune-terv létrehozása
+title: Microsoft Intune terv létrehozása
 titleSuffix: Microsoft Intune
 description: Ez a cikk segít tervet kidolgozni a kizárólag felhőalapú Microsoft Intune-környezet megtervezéséhez és implementációjához.
 keywords: ''
@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 3/22/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: a8e38e29-f5e3-4a71-a170-d3b1a06e37c6
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 709faf0ec3141e934f8e8c54601303bb5ea5e808
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 24f15cb179dfc2b12b642f5f196d04dce58d4377
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732195"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72505204"
 ---
 # <a name="create-a-design"></a>Terv létrehozása
 
@@ -216,7 +217,7 @@ A saját eszközlistájának kidolgozásához [letöltheti a fenti táblázat sa
 
 Az Intune támogatja a vállalati, illetve a személyes tulajdonban lévő eszközöket is. Azok az eszközök minősülnek vállalati tulajdonúaknak, amelyeket egy eszközregisztráció-kezelő vagy egy készülékregisztrációs program regisztrál. Ilyen lehet például egy, az Apple Készülékregisztrációs programmal regisztrált eszköz, amelyet vállalati tulajdonúként jelölnek meg, és egy olyan eszközcsoportba helyezik, amely célzott vállalati szabályzatokat és alkalmazásokat kap.
 
-Tekintse [meg a 3. szakaszt: A használati esetekre vonatkozó](planning-guide-requirements.md) követelmények meghatározása a vállalati és BYOD használati eseteivel kapcsolatos további információkért.
+A vállalati és a személyes tulajdonban lévő eszközökkel kapcsolatos használati esetekről a [3. szakasz: Használatieset-forgatókönyvek követelményeinek meghatározása](planning-guide-requirements.md) nyújt további tájékoztatást.
 
 ### <a name="bulk-enrollment"></a>Tömeges regisztrálás
 
@@ -232,11 +233,11 @@ Ezekben a szakaszokban a következő, a használatieset-forgatókönyvek követe
 
 - Erőforrás-profilok
 
-- Alkalmazások
+- Apps
 
 - Megfelelőségi szabályzat
 
-- Feltételes hozzáférés
+- Conditional Access
 
 Vizsgáljuk meg ezeket a területeket részletesebben.
 
@@ -262,10 +263,10 @@ Platformonként legalább egy konfigurációs szabályzatot célszerű létrehoz
 
 | **Szabályzat neve** | **Eszközplatform** | **Beállítások** | **Célcsoport** |   
 |:---:|:---:|:---:|:---:|
-| Vállalati – iOS | iOS | PIN-kód szükséges, hossz: 6, a felhő biztonsági mentésének korlátozása | Vállalati eszközök |                                                           
-| Vállalati – Android | Android | PIN-kód szükséges, hossz: 6, a felhő biztonsági mentésének korlátozása | Vállalati eszközök |                                                           
-| BYOD – iOS  | iOS | PIN-kód szükséges, hossz: 4 | BYOD-eszközök |
-| BYOD – Android  | Android | PIN-kód szükséges, hossz: 4 | BYOD-eszközök |
+| Vállalati – iOS | iOS | PIN-kód szükséges, Hossz: 6, Felhőbeli biztonsági mentés korlátozása | Vállalati eszközök |                                                           
+| Vállalati – Android | Android: | PIN-kód szükséges, Hossz: 6, Felhőbeli biztonsági mentés korlátozása | Vállalati eszközök |                                                           
+| BYOD – iOS  | iOS | PIN-kód szükséges. Hossz: 4 | BYOD-eszközök |
+| BYOD – Android  | Android: | PIN-kód szükséges. Hossz: 4 | BYOD-eszközök |
 
 
 A saját konfigurációs szabályzatainak meghatározásához [letöltheti a fenti táblázat sablonját](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0).
@@ -280,7 +281,7 @@ A végfelhasználók profilok segítségével kapcsolódnak a vállalati adatokh
 
 - VPN-profil
 
-- E-mail-profil
+- E-mail profil
 
 Vizsgáljuk meg ezeket a profiltípusokat részletesebben.
 
@@ -328,11 +329,11 @@ Az alábbi példában egy VPN-profil dokumentálását szemléltetjük.
 | **Típus** | **Profilnév** | **Eszközplatform** | **Használati esetek** |
 |:---:|:---:|:---:|:---:|
 | VPN | VPN, Cisco, bármilyen csatlakozási profil | Android, iOS, Windows 10 Mobile | Vállalati, BYOD, Észak-Amerika és Németország|
-| VPN | Pulse Secure | Android | Vállalati, BYOD, ázsiai régió |
+| VPN | Pulse Secure | Android: | Vállalati, BYOD, ázsiai régió |
 
 A saját VPN-profiljainak meghatározásához [letöltheti a fenti táblázat sablonját](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0).
 
-#### <a name="email-profile"></a>E-mail-profil
+#### <a name="email-profile"></a>E-mail profil
 
 Az e-mail-profilokkal automatikusan be lehet állítani a levelezőprogramokban a kapcsolati adatokat és az e-mail-konfigurációt. Az Intune csak bizonyos eszközökön támogatja az e-mail-profilokat. További tudnivalók az [e-mail-profilokról és a támogatott platformokról](../configuration/email-settings-configure.md).
 
@@ -340,13 +341,13 @@ Az alábbi példában az e-mail-profilok dokumentálását szemléltetjük:
 
 | **Típus** | **Profilnév** | **Eszközplatform** | **Használati esetek** |
 |:---:|:---:|:---:|:---:|
-| E-mail-profil | iOS-es e-mail-profil | iOS | Vállalati – Infómunkás BYOD |
-| E-mail-profil | Android Knox e-mail-profil | Android Knox | BYOD |
+| E-mail profil | iOS-es e-mail-profil | iOS | Vállalati – Infómunkás BYOD |
+| E-mail profil | Android Knox e-mail-profil | Android Knox | BYOD |
 
 A saját e-mail-profiljainak meghatározásához [letöltheti a fenti táblázat sablonját](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0).
-### <a name="apps"></a>Alkalmazások
+### <a name="apps"></a>Apps
 
-Az Intune-nal többféleképpen is eljuttathat alkalmazásokat a felhasználókhoz vagy az eszközökre. Az alkalmazás többek között szoftvertelepítő, nyilvános alkalmazás-áruházból származó vagy külső hivatkozással elérhető alkalmazás, illetve felügyelt iOS-alkalmazás lehet. Az egyesével történő alkalmazástelepítésen felül a mennyiségi licencelésű alkalmazásokat az iOS és a Windows mennyiségi licencelési programjai keretében is felügyelheti és telepítheti. További információk:
+Az Intune-nal többféleképpen is eljuttathat alkalmazásokat a felhasználókhoz vagy az eszközökre. Az alkalmazás többek között szoftvertelepítő, nyilvános alkalmazás-áruházból származó vagy külső hivatkozással elérhető alkalmazás, illetve felügyelt iOS-alkalmazás lehet. Az egyesével történő alkalmazástelepítésen felül a mennyiségi licencelésű alkalmazásokat az iOS és a Windows mennyiségi licencelési programjai keretében is felügyelheti és telepítheti. További információk az alábbiakról:
 
 - [Az eljuttatható alkalmazások típusai](../apps/app-management.md)
 

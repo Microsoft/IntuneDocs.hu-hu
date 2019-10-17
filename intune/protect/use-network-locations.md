@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 05/21/2018
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5491e0d2dfb1aa1989fc202203d9a895823b0b73
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: edc1a241d327bd98db8ae50187b1e1aed5e00e71
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732375"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72503552"
 ---
 # <a name="use-locations-network-fence-in-intune"></a>Helyek (hálózati kerítés) használata az Intune-ban
 
@@ -29,7 +30,7 @@ Letilthatja a vállalati hálózathoz való hozzáférést, ha az eszköz elhagy
 
 Létrehozhat egy hálózati helyen alapuló megfelelőségi szabályzatot, amelyet másként hálózati kerítésnek is hívnak. A szabályzat biztosítja, hogy az eszköznek munkahelyi hálózathoz kelljen csatlakoznia a megfelelőséghez. Ez a szabályzat feltételes hozzáférési házirendekkel használható, így az eszközök *csak* akkor férhetnek hozzá a munkahelyi erőforrásokhoz, ha az eszköz csatlakoztatva van a munkahelyi hálózathoz. Ha az eszköz nem csatlakozik a munkahelyi hálózathoz, akkor nem megfelelő lesz, és nem fog tudni hozzáférni a munkahelyi erőforrásokhoz.
 
-Gondolkodjon el az alábbi megoldáson:
+Vegye figyelembe a következő helyzetet:
 
 A gyártási létesítményben néhány alkalmazott Android-eszközöket használ. Az alkalmazott kiviszi az Android-eszközt a létesítményből vagy üzemből. Az illetéktelen hozzáférés megakadályozásáért a következőket teheti:
 
@@ -53,7 +54,7 @@ Helyalapú megfelelőségi szabályzat létrehozásához tegye a következőket:
 
 2. Adja meg a következő tulajdonságokat:  
 
-   - Kötelező. Adja meg a hely **Név** mezejének értékét, például azt, hogy **Gyártási szint** vagy **44-es épület – biztonságos**.
+   - Szükséges. Adja meg a hely **Név** mezejének értékét, például azt, hogy **Gyártási szint** vagy **44-es épület – biztonságos**.
    - Nem kötelező. Adjon meg egy **IPv4-tartományt** CIDR (Classless Interdomain Routing) jelöléssel, például: `aaa.bbb.ccc.ddd/n`.
    - Nem kötelező. Adja meg az **IPv4-átjáró** címét, például: `aaa.bbb.ccc.ddd`.
    - Nem kötelező. Adja meg az **IPv4 DHCP-kiszolgáló** címét, például: `aaa.bbb.ccc.ddd`.

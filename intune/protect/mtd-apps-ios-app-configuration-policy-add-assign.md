@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 06/21/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 00356258-76a8-4a84-9cf5-64ceedb58e72
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08a4b6b4bbb9922395bca7b331fee259cb49fbd8
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: f5ca8b7c94569861ccc5c4235315a7a57de9d838
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729567"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72504407"
 ---
 # <a name="add-and-assign-mobile-threat-defense-mtd-apps-with-intune"></a>Mobile Threat Defense- (MTD) alkalmazások felvétele és hozzárendelése az Intune-nal  
 
@@ -56,14 +57,14 @@ Válassza ki az MTD-szolgáltatójának megfelelő szakaszt:
 - [Pradeo](#configure-pradeo-apps)
 - [Better Mobile](#configure-better-mobile-apps)
 - [Sophos Mobile](#configure-sophos-apps)
-- [Wandera](#configure-wandera-apps)
+- [Bolyongás](#configure-wandera-apps)
 
 ### <a name="configure-lookout-for-work-apps"></a>Lookout for Work-alkalmazások konfigurálása  
-- **Android**  
+- **Android--**  
   - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-android.md). A **7. lépésben** használja a [ Lookout for Work Google alkalmazás-áruházbeli URL-címét](https://play.google.com/store/apps/details?id=com.lookout.enterprise).
 
-- **iOS**
-  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Ezt a [Lookout for Work iOS App Store-URL-címet](https://itunes.apple.com/us/app/lookout-for-work/id997193468?mt=8) használhatja az **AppStore URL-** címének **11** . lépésében.
+- **iOS--**
+  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Ezt a [Lookout for Work iOS App Store-URL-címet](https://itunes.apple.com/us/app/lookout-for-work/id997193468?mt=8) használhatja az **AppStore URL-** címének **11. lépésében** .
 
 - **Lookout for Work alkalmazás az Apple áruházon kívül**  
   - A Lookout for Work iOS-alkalmazást újra alá kell írnia. A Lookout az iOS App Store-on kívül terjeszti a Lookout for Work alkalmazását. Az alkalmazás terjesztése előtt újra alá kell írnia az alkalmazást az iOS vállalati fejlesztői tanúsítványával.  
@@ -73,7 +74,7 @@ Válassza ki az MTD-szolgáltatójának megfelelő szakaszt:
 
     1. Lépjen az [Azure Portalra](https://portal.azure.com), jelentkezzen be a hitelesítő adataival, majd nyissa meg az alkalmazás lapot.
 
-    2. Adja hozzá a **Lookout for Work iOS alkalmazást** **natív ügyfélalkalmazásként**.
+    2. Adja hozzá a **Lookout for Work iOS alkalmazást natív ügyfélalkalmazásként**.
 
     3. Cserélje le a **com.lookout.enterprise.yourcompanyname** sort az IPA aláírásakor választott ügyfélcsomag-azonosítóval.
 
@@ -89,54 +90,54 @@ Válassza ki az MTD-szolgáltatójának megfelelő szakaszt:
     - Töltse fel az újra aláírt. ipa-fájlt az [iOS LOB-alkalmazások hozzáadása az Intune](../apps/lob-apps-ios.md) -nal című cikkben leírtak szerint. Ezenkívül a minimum OS-verziót iOS 8.0-ra vagy újabbra kell állítania.
 
 ### <a name="configure-symantec-endpoint-protection-mobile-apps"></a>A Symantec Endpoint Protection Mobile-alkalmazások konfigurálása  
-- **Android**
+- **Android--**
   - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-android.md). A **7. lépésben** használja ezt a [SEP Mobile alkalmazás-áruházbeli URL-címet](https://play.google.com/store/apps/details?id=com.skycure.skycure).  **Minimális operációs rendszerként** jelölje be az **Android 4.0 (Ice Cream Sandwich)** rendszert.
 
-- **iOS**
-  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Használja ezt a [Sep Mobile App Store-beli URL-címet](https://itunes.apple.com/us/app/skycure/id695620821?mt=8) az **AppStore URL-** címének **11** . lépésében.
+- **iOS--**
+  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Használja ezt a [Sep Mobile App Store-beli URL-címet](https://itunes.apple.com/us/app/skycure/id695620821?mt=8) az **AppStore URL-** címének **11. lépésében** .
 
 ### <a name="configure-check-point-sandblast-mobile-apps"></a>Check Point SandBlast Mobile-alkalmazások konfigurálása  
-- **Android**  
+- **Android--**  
   - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-android.md). Adja meg ezt a [Check Point SandBlast Mobile alkalmazás-áruházbeli URL-címet](https://play.google.com/store/apps/details?id=com.lacoon.security.fox) a  **7. lépésben**.
 
-- **iOS**
-  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Használja ezt a pipát a kihelyezett [mobil alkalmazás áruházbeli URL-címére](https://apps.apple.com/us/app/sandblast-mobile-protect/id1006390797) az **AppStore URL-címének** **11** . lépésében.  
+- **iOS--**
+  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Használja ezt a pipát a kihelyezett [mobil alkalmazás áruházbeli URL-címére](https://apps.apple.com/us/app/sandblast-mobile-protect/id1006390797) az **AppStore URL-címének** **11. lépésében** .  
 
 ### <a name="configure-zimperium-apps"></a>Zimperium-alkalmazások konfigurálása  
-- **Android**
+- **Android--**
   - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-android.md). A **7. lépésben** használja a [ Zimperium alkalmazás-áruházbeli URL-címét](https://play.google.com/store/apps/details?id=com.zimperium.zips&hl=en).
 
-- **iOS**
-  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Használja ezt a [Zimperium alkalmazás-áruházbeli URL-címet](https://itunes.apple.com/us/app/zimperium-zips/id1030924459?mt=8) az **AppStore URL-címének** **11** . lépésében.  
+- **iOS--**
+  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Használja ezt a [Zimperium alkalmazás-áruházbeli URL-címet](https://itunes.apple.com/us/app/zimperium-zips/id1030924459?mt=8) az **AppStore URL-címének** **11. lépésében** .  
  
 ### <a name="configure-pradeo-apps"></a>Pradeo-alkalmazások konfigurálása  
-- **Android**
+- **Android--**
   - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-android.md). A **7. lépésben** használja a [Pradeo alkalmazás-áruházbeli URL-címet](https://play.google.com/store/apps/details?id=net.pradeo.service&hl=en_US).
 
-- **iOS**
-  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Használja ezt a [Pradeo alkalmazás-áruházbeli URL-címet](https://itunes.apple.com/us/app/pradeo-agent/id547979360?mt=8) az **AppStore URL-címének** **11** . lépésében.
+- **iOS--**
+  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Használja ezt a [Pradeo alkalmazás-áruházbeli URL-címet](https://itunes.apple.com/us/app/pradeo-agent/id547979360?mt=8) az **AppStore URL-címének** **11. lépésében** .
 
 ### <a name="configure-better-mobile-apps"></a>Better Mobile-alkalmazások konfigurálása  
-- **Android**
+- **Android--**
   - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-android.md). Használja az [Active Shield ezen alkalmazás-áruházbeli URL-címét](https://play.google.com/store/apps/details?id=com.better.active.shield.enterprise) a **7. lépésben**.
 
-- **iOS**
-  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Használja ezt a [ActiveShield alkalmazás-áruházbeli URL-címet](https://itunes.apple.com/us/app/activeshield/id980234260?mt=8&uo=4) az **AppStore URL-címének** **11** . lépésében.
+- **iOS--**
+  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Használja ezt a [ActiveShield alkalmazás-áruházbeli URL-címet](https://itunes.apple.com/us/app/activeshield/id980234260?mt=8&uo=4) az **AppStore URL-címének** **11. lépésében** .
 
 ### <a name="configure-sophos-apps"></a>A Sophos-alkalmazások konfigurálása  
-- **Android**
+- **Android--**
   - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-android.md). Használja ezt a [Sophos App Store-beli URL-címet](https://play.google.com/store/apps/details?id=com.sophos.smsec) a **7. lépésben**.
 
-- **iOS**
-  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Használja ezt a [ActiveShield alkalmazás-áruházbeli URL-címet](https://itunes.apple.com/us/app/sophos-mobile-security/id1086924662?mt=8) az **AppStore URL-címének** **11** . lépésében.
+- **iOS--**
+  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Használja ezt a [ActiveShield alkalmazás-áruházbeli URL-címet](https://itunes.apple.com/us/app/sophos-mobile-security/id1086924662?mt=8) az **AppStore URL-címének** **11. lépésében** .
 
 ### <a name="configure-wandera-apps"></a>A Wander-alkalmazások konfigurálása  
  
-- **Android**
+- **Android--**
   - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-android.md). Használja a [Wanda Mobile App Store-beli URL-címét](https://play.google.com/store/apps/details?id=com.wandera.android) a **7. lépésben**. A **minimális operációs rendszer**beállításnál válassza az **Android 5,0**lehetőséget.
 
-- **iOS**
-  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Használja a [Wanda Mobile App Store-beli URL-címét](https://itunes.apple.com/app/wandera/id605469330) az **AppStore URL-** címének **11** . lépésében.
+- **iOS--**
+  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Használja a [Wanda Mobile App Store-beli URL-címét](https://itunes.apple.com/app/wandera/id605469330) az **AppStore URL-** címének **11. lépésében** .
 
 ## <a name="configure-your-mtd-apps-with-an-ios-app-configuration-policy"></a>MTD-alkalmazások konfigurálása egy iOS-es alkalmazáskonfigurációs szabályzattal  
 
@@ -204,7 +205,7 @@ Hozza létre az iOS-alkalmazás konfigurációs szabályzatát az [iOS-alkalmaz�
 
 ### <a name="wandera-app-configuration-policy"></a>A Wanda alkalmazás konfigurációs házirendje  
 Tekintse meg az [iOS rendszerhez készült Microsoft Intune alkalmazás-konfigurációs szabályzatok használatának](../apps/app-configuration-policies-use-ios.md) utasításait a Wanda iOS-alkalmazás konfigurációs házirendjének hozzáadásához.
-- A **8**. lépésnél használja az **XML-adatbevitel**lehetőséget. Jelentkezzen be a radar Wanda-portálra, > és keresse meg a Settings, a következőt: az alkalmazásnév**Integration** > **app push** Válassza az **Intune**lehetőséget, majd másolja az alábbi tartalmat, és illessze be a konfigurációs szabályzat törzsébe.  
+- A **8. lépésnél**használja az **XML-adatbevitel**lehetőséget. Jelentkezzen be a RADAR Wanda-portálra, és keresse meg a beállításokat  > **az @no__t-** 3**alkalmazás leküldése** **lehetőséget**. Válassza az **Intune**lehetőséget, majd másolja az alábbi tartalmat, és illessze be a konfigurációs szabályzat törzsébe.  
 
       <dict><key>secretKey</key>
        <string>SeeRADAR</string>

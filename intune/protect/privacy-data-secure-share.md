@@ -1,7 +1,7 @@
 ---
-title: Adatbiztonság és-megosztás az Intune-ban
+title: Adatbiztonság és -megosztás az Intune-ban
 titleSuffix: Microsoft Intune
-description: Ismerje meg, hogy a személyes adatai hogyan biztonságosak és megoszthatók az Intune-ban.
+description: Ismertető a személyes adatok Intune-beli védelméről és megosztásáról.
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 68921fd6-5f50-456c-a3af-83d7bc4b134b
@@ -17,63 +18,63 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 53480b7a2e008af46f4f8929cc6321e10b042b33
-ms.sourcegitcommit: dd6755383ba89824d1cc128698a65fde6bb2de55
+ms.openlocfilehash: b17b87462b2c73e265f062c33a06a810e7c58bf8
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72306748"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72504342"
 ---
-# <a name="data-security-and-sharing-in-intune"></a>Adatbiztonság és-megosztás az Intune-ban
+# <a name="data-security-and-sharing-in-intune"></a>Adatbiztonság és -megosztás az Intune-ban
 
 
 ## <a name="data-security"></a>Adatbiztonság
 
-A Microsoft Intune a Microsoft nagyvállalati mobilitási és biztonsági csomagjának Cloud Service-ajánlatának kulcsfontosságú összetevője. Az [adatirányítási stratégia](https://www.microsoft.com/en-us/TrustCenter/Security/default.aspx)támogatásához minden Microsoft Cloud Services-szolgáltatást a [Microsoft adatvédelmi](https://www.microsoft.com/en-us/trustcenter/privacy) és a [Microsoft biztonsági](https://www.microsoft.com/en-us/trustcenter/security/) módszereivel dolgozunk ki.  
+A Microsoft Intune a Microsoft Enterprise Mobility and Security Suite felhőszolgáltatási ajánlat lényeges része. Az [adatirányítási stratégia](https://www.microsoft.com/en-us/TrustCenter/Security/default.aspx) támogatása érdekében minden Microsoft-felhőszolgáltatást a [Microsoft Privacy](https://www.microsoft.com/en-us/trustcenter/privacy) (adatvédelem) és a [Microsoft Security](https://www.microsoft.com/en-us/trustcenter/security/) (biztonság) módszertan alapján fejlesztünk.  
 
-Microsoft Intune ugyanazokat a technikai és szervezeti mértékeket követi, mint amelyeket az Microsoft Azure Service-csapatok az adatmegsértési folyamatokkal szembeni védelemre szánnak.
+A Microsoft Intune ugyanazokat a technikai és szervezési elveket követi, amelyeket a Microsoft Azure szervizcsapatai alkalmaznak az adatvédelmi incidensek ellen.
 
-További információ: [szolgáltatás megbízhatósági portálja](https://www.microsoft.com/en-us/TrustCenter/stp).
+További információ a [Szolgáltatásmegbízhatósági portálon](https://www.microsoft.com/en-us/TrustCenter/stp) található.
 
-Az Intune az adatminimalizálás módszereit használja, például:
+Az Intune olyan adatmennyiség-csökkentő technikákat használ, mint az
 
-- Összesítési
-- nem kötelező adatgyűjtés egyes funkciókhoz
-- kevésbé pontos vagy bizalmas adatok
+- összesítés
+- feltételes adatgyűjtés bizonyos funkciókhoz
+- adatok pontosságának vagy bizalmasságának csökkentése
 
-Az Intune a támogatási incidensek esetében olyan technikákat is alkalmaz, mint például a RBAC és a JiT Security, hogy alapértelmezés szerint biztosítsa az adatvédelem védelmét. 
+Az Intune ezen kívül olyan technikák használatával is gondoskodik az alapértelmezés szerinti adatvédelemről, mint az RBAC és a JiT. 
 
-### <a name="data-breach-reporting"></a>Adatmegsértési jelentéskészítés
+### <a name="data-breach-reporting"></a>Adatbiztonsági incidens jelentése
 
-A felhasználó által jelentett biztonsági incidens (CRSI) azonosítása esetén az ügyfelek értesítést kapnak. Ez a folyamat a Microsoft O365 csapatával folytatott kommunikációt is magában foglalja a Microsoft O365 ügyfeleinek az Intune-nal való megsértéséről.
+Ügyfél által jelenthető biztonsági incidens (CRSI) észlelésekor az ügyfél értesítést kap. Ennek az eljárásnak része a Microsoft O365 csapatával való együttműködés, hogy az incidensről az Intune-t használó Microsoft O365-ügyfelek mindig tájékoztatást kapjanak.
 
-## <a name="data-sharing"></a>Adatmegosztás
+## <a name="data-sharing"></a>Adatok megosztása
 
-Ha a bérlői rendszergazdák bizonyos funkciókat bekapcsolnak (például az Apple Készülékregisztrációs program), a Microsoft Intune a megfelelő harmadik felekkel megoszthatja az adatmegosztáshoz szükséges rendszergazdai engedélyt. Ilyen esetekben az Intune a következőket oszthatja meg személyes adatként:
+Ha egy bérlői rendszergazda bekapcsol bizonyos funkciókat (például az Apple Készülékregisztrációs programot), a Microsoft Intune a rendszergazda jóváhagyását kéri az adatoknak az érintett külső féllel való megosztásához. Ilyen esetben az Intune a következőkkel oszthat meg személyes adatokat:
 
-- A Microsoft ügynökökként működő harmadik felek.
-- Harmadik felek nem a Microsoft ügynökei, hanem csak akkor, ha a bérlői rendszergazdák explicit módon engedélyezik az Intune-engedélyt.
+- A Microsoft ügynökeként eljáró külső fél.
+- Nem a Microsoft ügynökeként eljáró külső fél, de csak akkor, ha a bérlői rendszergazdák erre egyértelmű engedélyt adnak az Intune-nak.
 
-Az [online szolgáltatások alvállalkozói listájában](https://aka.ms/Online_Serv_Subcontractor_List)minden Microsoft-ügynökként működő harmadik fél szerepel.
+A Microsoft ügynökeként eljáró külső felek mindegyike szerepel az [Online szolgáltatások alvállalkozóinak listáján](https://aka.ms/Online_Serv_Subcontractor_List).
 
-Az ilyen entitásokkal rendelkező adatok megosztása az ügyfelek és a technikai támogatás, a szolgáltatások karbantartása és egyéb műveletek támogatása érdekében történik.
+Az adatok megosztása ilyen entitásokkal mindig az ügyfél érdekében, műszaki támogatás, szolgáltatás-karbantartás és más műveletek céljából történik.
 
-A bérlő a harmadik féllel kötött szerződése szabályozza a harmadik fél szolgáltatásában tárolt Intune személyes adatvédelmet. Emellett engedélyezi az Intune számára, hogy adatokat továbbítson a harmadik féltől származó szolgáltatásnak.  
+A külső fél szolgáltatásában tárolt személyes Intune-adatok körét a bérlő és a külső fél közötti szerződés szabja meg. Ez egyben felhatalmazza az Intune-t, hogy személyes adatokat adjon át a külső fél szolgáltatásának.  
 
-Az egyes harmadik felekkel megosztott adatokkal kapcsolatos információkért tekintse meg a következő cikkeket:
-- [Az Intune által az Apple-nek küldött adatokat](data-intune-sends-to-apple.md)
-- [Az Intune által a Google-nek küldött adatokat](data-intune-sends-to-google.md)
-- [Az Apple által az Intune-nak küldött adatokat](data-apple-sends-to-intune.md)
-- [A Google által az Intune-nak küldött adatokat](data-google-sends-to-intune.md)
+Az egyes külső felekkel megosztott adatokról a következő cikkekből tájékozódhat:
+- [Az Intune által az Apple-nek küldött adatok](data-intune-sends-to-apple.md)
+- [Az Intune által a Google-nek küldött adatok](data-intune-sends-to-google.md)
+- [Az Apple által az Intune-nak küldött adatok](data-apple-sends-to-intune.md)
+- [A Google által az Intune-nak küldött adatok](data-google-sends-to-intune.md)
 - [A JAMF Pro által küldött adatokat az Intune-nak küldi](data-jamf-sends-to-intune.md)
 
-### <a name="system-center-configuration-manager-data-sharing"></a>Adatmegosztás System Center Configuration Manager
+### <a name="system-center-configuration-manager-data-sharing"></a>Adatmegosztás a System Center Configuration Managerben
 
-A Microsoft Intune nem oszt meg semmilyen adatSystem Center Configuration Managert. System Center Configuration Manager az ügyfél által közvetlenül üzembe helyezett, felügyelt és üzemeltetett helyszíni termék. A Configuration Manager által összegyűjtött diagnosztikai és használati adatok csak a telepítési élmény, a minőség és a jövőbeli kiadások biztonságának javításához szükségesek.
+A Microsoft Intune semmilyen adatot sem oszt meg a System Center Configuration Managerrel. A System Center Configuration Manager az ügyfél által üzembe helyezett, felügyelt és működtetett helyszíni termék. A Configuration Manager által gyűjtött diagnosztikai és használati adatokat kizárólag a telepítési élmény, a minőség és a jövőbeli kiadások biztonságának javításához használja fel.
 
-További információ: [diagnosztikai és használati adatok a SCCM](https://docs.microsoft.com/sccm/core/plan-design/diagnostics/diagnostics-and-usage-data). 
+További információ: [Diagnosztikai és használati adatok az SCCM számára](https://docs.microsoft.com/sccm/core/plan-design/diagnostics/diagnostics-and-usage-data). 
 
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
-Ismerje meg, hogyan [tekintheti meg és javítsa](privacy-data-view-correct.md) ki a személyes adatok az Intune-ban.
+Ismertető a személyes adatok Intune-beli [megtekintéséhez és javításához](privacy-data-view-correct.md).

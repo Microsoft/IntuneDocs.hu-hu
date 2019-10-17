@@ -1,5 +1,5 @@
 ---
-title: A Windows 10-es alkalmazásvédelmi szabályzatok konfigurálása
+title: Az alkalmazás-védelmi szabályzatok konfigurálása a Windows 10 rendszerhez
 titleSuffix: Microsoft Intune
 description: Ez a témakör a Windows 10-es eszközökhöz készült alkalmazás-védelmi szabályzatok (APP) konfigurálását ismerteti.
 keywords: ''
@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 08/22/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: apps
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 949fddec-5318-4c9a-957e-ea260e6e05be
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bbb4326f044429dfc633bf7f39787bc18a81fd84
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: e0e1ff8fd39d301bd685e9806c319f49e9189d7f
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731403"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72507422"
 ---
 # <a name="get-ready-to-configure-app-protection-policies-for-windows-10"></a>Felkészülés az alkalmazásvédelmi szabályzatok Windows 10 rendszereken történő konfigurálására 
 
@@ -52,7 +53,7 @@ Windows 10-es rendszerhez mobilalkalmazás-kezelést (MAM) úgy engedélyezhet, 
    **A MAM megfelelőségi URL-címe**  
    A MAM megfelelőségi URL-címének használata a Microsoft Intune-ban nem támogatott. A beviteli mezőt a védelmi szabályzatok alkalmazásához üresen kell hagyni. 
 
-5. Kattintson a **Save** (Mentés) gombra.
+5. Kattintson a **Mentés**gombra.
 
 ## <a name="next-steps"></a>További lépések
 

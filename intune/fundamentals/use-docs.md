@@ -4,18 +4,19 @@ titleSuffix: Microsoft Intune
 description: Megtudhatja, hogyan keresheti meg az Intune-dokumentumokat, hogyan biztosíthat dokumentációt, és Hogyan járulhat hozzá a dokumentumokhoz.
 ms.date: 09/15/2019
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.topic: conceptual
 ms.assetid: e6e44225-cc9e-47c2-913b-1e629ba9a71e
 author: dougeby
 ms.author: dougeby
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6fa3529866b786e75892b495102ca5cab46b09a5
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 42e16be44dba539007967dd921da4c8d4f095ec4
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731635"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72504818"
 ---
 # <a name="using-the-intune-docs"></a>Az Intune-dokumentáció használata
 
@@ -27,15 +28,15 @@ Az Intune általános súgóját és támogatását lásd: az [Intune támogatá
 
  A következő keresési tippek segítenek megtalálni a szükséges információkat:  
 
-- Ha az előnyben részesített keresőmotort használja a Microsoft Intune tartalmának megkereséséhez, adja meg a keresési kulcsszavakat is `Intune` .  
+- Ha az előnyben részesített keresőmotort használja a Microsoft Intune tartalmának megkereséséhez, adja meg a `Intune` értéket a keresési kulcsszavakkal együtt.  
 
   - Keresési eredmények a docs.microsoft.com. A technet.microsoft.com vagy a msdn.microsoft.com eredményei régebbi verziójú termékek.  
 
-  - A keresési eredményeknek a jelenlegi Content Library-re való összpontosítása `site:docs.microsoft.com` a keresőmotor hatókörére is vonatkozik.  
+  - A keresési eredményeknek az aktuális tartalom könyvtárra való összpontosítása érdekében a keresőmotor hatókörének @no__t – 0 értéket kell tartalmaznia.  
 
 - A felhasználói felületen és az online dokumentációban megjelenő kifejezésekkel egyező keresési kifejezéseket használhat. Kerülje a nem hivatalos kifejezéseket és rövidítéseket, amelyeket a közösségi tartalomban láthat.
 
-- Ha egy jelenleg megtekintett cikkben szeretne keresni, használja a böngésző **keresési** funkcióját. A legmodernebb böngészőkben nyomja le a **CTRL**+**F** billentyűkombinációt, majd adja meg a keresési kifejezéseit.  
+- Ha egy jelenleg megtekintett cikkben szeretne keresni, használja a böngésző **keresési** funkcióját. A legtöbb modern webböngésző esetében nyomja le a **Ctrl**+**F** billentyűkombinációt, majd írja be a keresett kifejezést.  
 
 - A docs.microsoft.com minden cikke a következő mezőket tartalmazza a tartalom keresésének segítésére:  
 
@@ -59,13 +60,13 @@ A megcélzott cikkhez a meglévő nyitott vagy lezárt problémák is megjelenne
 
 A GitHub-problémák használatával elküldheti a következő típusú visszajelzéseket:
 
-- Doc-hiba: A tartalom elavult, nem egyértelmű, zavaros vagy hibás.
-- Doc-fejlesztés: Javaslat a cikk javítására.
-- Doc kérdés: Segítségre van szüksége a meglévő dokumentáció megkereséséhez.
-- Doc-ötlet: Új cikkre vonatkozó javaslat. A UserVoice helyett használja ezt a metódust a dokumentációs visszajelzésekhez.
-- Dicsőség Pozitív visszajelzés a hasznos vagy tájékoztató cikkről.
-- Honosítási Visszajelzés a tartalom fordításáról.
-- Keresőmotor-optimalizálás (SEO): Visszajelzés a tartalom keresésével kapcsolatos problémákról. Adja meg a keresőmotort, a kulcsszavakat és a célként megadott cikket a megjegyzésekben.
+- Doc-hiba: a tartalom elavult, nem egyértelmű, zavaros vagy hibás.
+- Doc-fejlesztés: javaslat a cikk javítására.
+- Doc-kérdés: segítségre van szüksége a meglévő dokumentáció megkereséséhez.
+- Doc-ötlet: új cikkre vonatkozó javaslat. A UserVoice helyett használja ezt a metódust a dokumentációs visszajelzésekhez.
+- Dicsőség: pozitív visszajelzés a hasznos vagy tájékoztató cikkről.
+- Honosítás: visszajelzés a tartalom fordításáról.
+- Keresőmotor-optimalizálás (SEO): visszajelzés a tartalom keresésével kapcsolatos problémákról. Adja meg a keresőmotort, a kulcsszavakat és a célként megadott cikket a megjegyzésekben.
 
 Ha problémák merülnek fel a nem doc-hoz kapcsolódó témakörök esetében, például a [termékekkel kapcsolatos visszajelzések](https://microsoftintune.uservoice.com/forums/291681-ideas), a [termékek kérdései](https://social.technet.microsoft.com/Forums/en-US/home?forum=microsoftintuneprod)vagy a [támogatási kérelmek](../get-support.md), a rendszer bezárja ezeket a problémákat, és a felhasználó átirányítja a megfelelő visszajelzési csatornára.
 
@@ -93,7 +94,7 @@ Az írás csapat megkapja a lekéréses kérelmet, hozzárendeli az elemeket a m
 
 Ha szeretne hozzájárulni a részvételhez, de nem tudja, hol kezdjen hozzá, tekintse meg a következő javaslatokat:  
 
-- Tekintse át a pontossággal kapcsolatos cikket. Ezután frissítse az **MS. Date** metaadatokat `mm/dd/yyyy` a format paranccsal. Ez a hozzájárulás segít megőrizni a tartalmat.  
+- Tekintse át a pontossággal kapcsolatos cikket. Ezután frissítse az **MS. Date** metaadatokat `mm/dd/yyyy` formátum használatával. Ez a hozzájárulás segít megőrizni a tartalmat.  
 
 - A tapasztalatok alapján pontosításokat, példákat és útmutatást adhat hozzá. Ez a hozzájárulás a Közösség erejét használja az ismeretek megosztásához.
 

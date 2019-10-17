@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 08/28/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: apps
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 834B4557-80A9-48C0-A72C-C98F6AF79708
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08017be16e4257ef0bd7bfb775197feaa20baf75
-ms.sourcegitcommit: 223d64a72ec85fe222f5bb10639da729368e6d57
+ms.openlocfilehash: 42d17c15a2a32f828c5715dfad51f34c5e531e76
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940352"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72507548"
 ---
 # <a name="app-configuration-policies-for-microsoft-intune"></a>Alkalmazáskonfigurációs szabályzatok a Microsoft Intune-hoz
 
@@ -84,7 +85,7 @@ Az alkalmazás konfigurációs szabályzatát az alábbi három módszer haszná
 
       ![Az eszköz telepítési állapotának második képernyőképe](./media/app-configuration-policies-overview/device-install-status-2.png)
 
-      Emellett az **Intune** -> -**eszközök** -> **minden eszköz** a képernyő bal oldalán az **alkalmazás konfigurációja** lehetőség megjeleníti az összes hozzárendelt szabályzatot és azok állapotát:
+      Emellett az **Intune** -> **eszköz** -> **minden eszköz** a képernyő bal oldalán, az **alkalmazás konfigurációja** beállítás megjeleníti az összes hozzárendelt szabályzatot és azok állapotát:
 
       ![Az alkalmazás konfigurációjának képernyőképe](./media/app-configuration-policies-overview/app-configuration.png)
 
@@ -100,7 +101,7 @@ Az iOS-konfigurációt az **Intune diagnosztikai naplójában** ellenőrizheti a
 4. Kattintson a **megosztási naplók**elemre.
 5. Az Ön által választott levelezési alkalmazás használatával elküldheti a naplót saját magára, hogy megtekinthető legyen a SZÁMÍTÓGÉPén. 
 6. Tekintse át a **IntuneMAMDiagnostics. txt** fájlt a szövegfájl-megjelenítőben.
-7. Keressen a `ApplicationConfiguration` kifejezésre. Az eredmények a következőhöz hasonlóan fognak kinézni:
+7. Keresés a következőre: `ApplicationConfiguration` Az eredmények a következőhöz hasonlóan fognak kinézni:
 
     ``` JSON
         {
@@ -144,7 +145,7 @@ Az iOS-konfigurációt érvényesítheti az **Intune diagnosztikai naplóval** a
 4. Kattintson a **megosztási naplók**elemre.
 5. Az Ön által választott levelezési alkalmazás használatával elküldheti a naplót saját magára, hogy megtekinthető legyen a SZÁMÍTÓGÉPén. 
 6. Tekintse át a **IntuneMAMDiagnostics. txt** fájlt a szövegfájl-megjelenítőben.
-7. Keressen a `AppConfig` kifejezésre. Az eredményeknek meg kell egyezniük a bérlőhöz konfigurált alkalmazás-konfigurációs házirendekkel.
+7. Keresés a következőre: `AppConfig` Az eredményeknek meg kell egyezniük a bérlőhöz konfigurált alkalmazás-konfigurációs házirendekkel.
 
 ### <a name="android-configuration-on-managed-devices"></a>Android-konfiguráció a felügyelt eszközökön
 
@@ -172,7 +173,7 @@ Ha a naplók egy olyan konfigurációs paramétert mutatnak be, amely úgy van m
 
 ### <a name="managed-devices"></a>Felügyelt eszközök
 
-- Megtudhatja, hogyan használhatja az alkalmazáskonfigurációt az iOS-eszközeivel.  Lásd: [alkalmazás-konfigurációs szabályzatok hozzáadása a felügyelt iOS](app-configuration-policies-use-ios.md)-eszközökhöz.
+- Megtudhatja, hogyan használhatja az alkalmazáskonfigurációt az iOS-eszközeivel.  Lásd: [alkalmazás-konfigurációs szabályzatok hozzáadása a felügyelt iOS-eszközökhöz](app-configuration-policies-use-ios.md).
 - Megtudhatja, hogyan használhatja az alkalmazáskonfigurációt az Android-eszközeivel.  Lásd: [Alkalmazáskonfigurációs szabályzatok hozzáadása kezelt Android-eszközökhöz](app-configuration-policies-use-android.md).
 
 ### <a name="managed-apps"></a>Felügyelt alkalmazások

@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 07/25/2019
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: ''
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 52420375ae5ed88ab713a1da3e927e43e433db83
-ms.sourcegitcommit: 884654da8e72a63bfaea6b5def6c7891b065f251
+ms.openlocfilehash: a2cb5d7375ae5b76a24861872d4abf786f199dfd
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72163491"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72508988"
 ---
 # <a name="microsoft-defender-advanced-threat-protection-baseline-settings-for-intune"></a>A Microsoft Defender komplex veszélyforrások elleni védelem alapkonfigurációjának beállításai az Intune-ban
 
@@ -42,15 +43,15 @@ További információ: [WINDOWSDEFENDERAPPLICATIONGUARD CSP](https://docs.micros
 
 A Microsoft Edge használata közben a Microsoft Defender Application Guard védi a környezetet a szervezete által nem megbízható helyekről. Ha a felhasználók olyan helyeket látogatnak meg, amelyek nem szerepelnek az elszigetelt hálózati határon, a helyek egy Hyper-V virtuális böngészési munkamenetben nyílnak meg. A megbízható helyeket a hálózat határa határozza meg.  
 
-- **Application Guard** - *Settings/AllowWindowsDefenderApplicationGuard*  
+- **Application Guard** - *Beállítások/AllowWindowsDefenderApplicationGuard*  
   Válassza az *Igen* lehetőséget a funkció bekapcsolásához, amely nem megbízható helyeket nyit meg egy Hyper-V virtualizált tallózási tárolóban. Ha a *nincs konfigurálva*értékre van állítva, a rendszer minden helyet (megbízható és nem megbízható) nyit meg az eszközön, és nem virtualizált tárolóban.  
 
-  **Alapértelmezett**: Igen
+  **Alapértelmezett**: igen
  
   - **Külső tartalom a vállalati webhelyeken** - *Beállítások/BlockNonEnterpriseContent*  
     Válassza az *Igen* lehetőséget a nem jóváhagyott webhelyekről származó tartalom betöltésének letiltásához. Ha a *nincs konfigurálva*értékre van állítva, a nem vállalati webhelyek megnyithatók az eszközön. 
  
-    **Alapértelmezett**: Igen
+    **Alapértelmezett**: igen
 
   - A **vágólap viselkedése** - *Beállítások/ClipboardSettings*  
     Válassza ki, hogy mely másolási és beillesztési műveletek engedélyezettek a helyi számítógép és az Application Guard virtuális böngésző között.  A lehetőségek a következők:
@@ -60,7 +61,7 @@ A Microsoft Edge használata közben a Microsoft Defender Application Guard véd
     - *Tároló* tárolásának letiltása – az adatok nem vihetők át a virtuális böngészőből a gazdagép számítógépére.
     - *Nincs* – nincs blokkolás a tartalomhoz.  
 
-    **Alapértelmezett**: Mindkettő letiltása  
+    **Alapértelmezett**: letiltás  
 
 - **Windows hálózati elkülönítési házirend – vállalati hálózati tartománynevek**  
   További információ: [Policy CSP-NetworkIsolation](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-networkisolation) a Windows dokumentációjában.
@@ -76,27 +77,27 @@ További információ: [Policy CSP-SmartScreen](https://docs.microsoft.com/windo
 - **Nem ellenőrzött fájlok végrehajtásának letiltása**  
     Nem ellenőrzött fájlok futtatásának letiltása a felhasználó számára. Ha a *nincs konfigurálva*értékre van állítva, az alkalmazottak figyelmen kívül hagyhatják a SmartScreen figyelmeztetéseit, és kártékony fájlokat futtathatnak. Állítsa *Igen* értékre, így az alkalmazottak nem hagyhatják figyelmen kívül a SmartScreen figyelmeztetéseit, és nem futtathatnak rosszindulatú fájlokat.  
   
-    **Alapértelmezett**: Igen
+    **Alapértelmezett**: igen
 
 - **SmartScreen megkövetelése alkalmazások és fájlok esetén**  
   Állítsa az *Igen* értékre a SmartScreen Windows rendszerhez való engedélyezéséhez.  
 
-  **Alapértelmezett**: Igen
+  **Alapértelmezett**: igen
 
 ## <a name="attack-surface-reduction"></a>Támadási felület csökkentése  
 
 - **Az Office-alkalmazások alárendelt folyamatának indítása**  
   [Támadási felület csökkentési szabálya](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – ha *blokkolásra*van beállítva, az Office-alkalmazások nem hozhatnak létre alárendelt folyamatokat. Az Office-alkalmazások közé tartozik a Word, az Excel, a PowerPoint, a OneNote és a hozzáférés. Egy alárendelt folyamat létrehozása tipikus kártevő-viselkedés, különösen olyan makró-alapú támadások esetén, amelyek az Office-alkalmazások használatával kísérlik meg a rosszindulatú végrehajtható fájlok indítását vagy letöltését.  
 
-  **Alapértelmezett**: Letiltás
+  **Alapértelmezett**: letiltás
 
 - **Parancsfájl letöltött adattartalom-végrehajtási típusa**  
   [Defender/PUAProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-puaprotection) – megadhatja az észlelési szintet a letöltött vagy a telepíteni próbált, vélhetően nemkívánatos alkalmazások számára.  
 
-  **Alapértelmezett**: Letiltás 
+  **Alapértelmezett**: letiltás 
 
 - **Hitelesítő adatok ellopási típusának tiltása**  
-  Állítsa az *Engedélyezés* [elemre a származtatott tartományi hitelesítő adatoknak a hitelesítő adatokkal](https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard)való ellátásához. A Windows Defender hitelesítőadat-őr virtualizálás-alapú biztonságot használ a titkok elkülönítésére, így csak a rendszerjogosultságú rendszerszoftverek férhetnek hozzájuk. A titkos kódokhoz való illetéktelen hozzáférés a hitelesítési adatok ellopását okozó (például pass-the-hash vagy pass-the-ticket típusú) támadásokhoz vezethetnek. A Windows Defender hitelesítőadat-őr megakadályozza ezeket a támadásokat az NTLM jelszó-kivonatok, a Kerberos-jegyek és az alkalmazások tartományi hitelesítő adatokként tárolt hitelesítő adatainak védelmével.  
+  Állítsa az *Engedélyezés* [elemre a származtatott tartományi hitelesítő adatoknak a hitelesítő adatokkal](https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard)való ellátásához. A Windows Defender hitelesítőadat-őr virtualizálás-alapú biztonságot használ a titkok elkülönítésére, így csak a rendszerjogosultságú rendszerszoftverek férhetnek hozzájuk. A titkos kulcsokhoz való jogosulatlan hozzáférés a hitelesítő adatok ellopására, például pass-The-hash vagy pass-The-Ticket típusú támadásokra is vezethet. A Windows Defender hitelesítőadat-őr megakadályozza ezeket a támadásokat az NTLM jelszó-kivonatok, a Kerberos-jegyek és az alkalmazások tartományi hitelesítő adatokként tárolt hitelesítő adatainak védelmével.  
 
   **Alapértelmezett**: Engedélyezés
 
@@ -107,7 +108,7 @@ További információ: [Policy CSP-SmartScreen](https://docs.microsoft.com/windo
   - Parancsfájlok (például PowerShell. ps, VisualBasic. vbs vagy JavaScript. js fájl)  
   - Parancsfájl-archiválási fájlok  
 
-  **Alapértelmezett**: Letiltás
+  **Alapértelmezett**: letiltás
 
 - **Adobe Reader indítása alárendelt folyamatban**  
   [Támadási felület csökkentési szabálya](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – ennek a szabálynak az *engedélyezésével* letilthatja az Adobe Reader számára az alárendelt folyamat létrehozását. A közösségi mérnöki vagy biztonsági rések révén a kártevők további hasznos adatokat tölthetnek le és indíthatnak el, és kitörhetnek az Adobe Readerből.  
@@ -117,7 +118,7 @@ További információ: [Policy CSP-SmartScreen](https://docs.microsoft.com/windo
 - **Parancsfájl által eltorzított kód típusa**  
   [Támadási felület csökkentési szabálya](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – a kártevők és egyéb fenyegetések megpróbálják eltorzítani vagy elrejteni a kártékony kódokat bizonyos parancsfájlokban. Ez a szabály akadályozza meg, hogy a rendszer ne futtasson olyan parancsfájlokat, amelyek nem futtathatók.  
     
-  **Alapértelmezett**: Letiltás
+  **Alapértelmezett**: letiltás
 
 - **Nem megbízható USB-folyamat típusa**  
   [Támadási felület csökkentési szabálya](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – ha a *blokkolt*, aláíratlan vagy nem megbízható végrehajtható fájlokat USB cserélhető meghajtókról és SD-kártyákból állítja be, nem futtatható.
@@ -126,17 +127,17 @@ További információ: [Policy CSP-SmartScreen](https://docs.microsoft.com/windo
   - Végrehajtható fájlok (például. exe,. dll vagy. scr)
   - Parancsfájlok (például PowerShell. ps, VisualBasic. vbs vagy JavaScript. js fájl)  
 
-  **Alapértelmezett**: Letiltás
+  **Alapértelmezett**: letiltás
 
 - **Office-alkalmazások egyéb folyamat-injektálási típusa**  
   [Támadási felület csökkentési szabálya](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – ha *blokkolásra*van beállítva, az Office-alkalmazások, például a Word, az Excel, a PowerPoint és a OneNote, nem adhatnak hozzá kódot más folyamatokhoz. A programkódot általában a kártevők használják arra, hogy rosszindulatú kódot futtassanak a tevékenységek víruskeresőből való elrejtésére tett kísérlet során.  
 
-  **Alapértelmezett**: Letiltás
+  **Alapértelmezett**: letiltás
 
 - **Office-makróvédelmi kód engedélyezése Win32 importálási típus**  
   [Támadási felület csökkentési szabálya](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – ha a *blokkolás*értékre van állítva, akkor ez a szabály megkísérli letiltani a Win32 DLL-eket importáló makrókat tartalmazó Office-fájlokat. Az Office-fájlok a következők: Word, Excel, PowerPoint és OneNote. A kártevők az Office-fájlokban lévő makróvírus használatával importálhatók és betölthetők a Win32 DLL-fájlok, amelyek ezután API-hívásokkal teszik lehetővé a további fertőzéseket a rendszeren.  
 
-  **Alapértelmezett**: Letiltás
+  **Alapértelmezett**: letiltás
 
 - **Office kommunikációs alkalmazások indítása alárendelt folyamatban**  
   [Támadási felület csökkentési szabálya](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – ha az *Engedélyezés*beállítás értéke, ez a szabály megakadályozza, hogy az Outlook alárendelt folyamatokat hozzon létre. Ha letiltja egy alárendelt folyamat létrehozását, ez a szabály védelmet biztosít a közösségi mérnöki támadásokkal szemben, és megakadályozza, hogy a programkód felhasználja a biztonsági rést az Outlookban.  
@@ -148,7 +149,7 @@ További információ: [Policy CSP-SmartScreen](https://docs.microsoft.com/windo
 
   Ez a szabály a végrehajtható fájlokat létrehozó vagy indító gyanús és kártékony bővítmények és parancsfájlok (bővítmények) által használt jellemző viselkedéseket célozza meg. Ez egy tipikus kártevő-módszer. Az Office-alkalmazások nem használják a bővítményeket. Ezek a bővítmények általában a Windows Scripting Host (. wsh fájlok) használatával futtatnak bizonyos feladatokat automatizáló vagy felhasználó által létrehozott kiegészítő funkciókat biztosító parancsfájlokat.
 
-  **Alapértelmezett**: Letiltás
+  **Alapértelmezett**: letiltás
 
 ## <a name="bitlocker"></a>BitLocker  
 
@@ -157,7 +158,7 @@ További információ a [BitLocker csoportházirend beállítások](https://docs
 - **Eszközök titkosítása**  
   Válassza az *Igen* lehetőséget a BitLocker-eszközök titkosításának engedélyezéséhez. Az eszköz hardverének és Windows-verziójától függően előfordulhat, hogy az eszköz felhasználóinak meg kell győződnie arról, hogy az eszközön nincs harmadik féltől származó titkosítás. A Windows-titkosítás bekapcsolása, miközben a harmadik féltől származó titkosítás aktív, a rendszer instabillá teszi az eszközt.  
 
-   **Alapértelmezett**: Igen
+   **Alapértelmezett**: igen
 
 - **Bites zárolás cserélhető meghajtó házirendje**  
   A szabályzat értékei határozzák meg a BitLocker által a cserélhető meghajtók titkosításához használt rejtjel erősségét. A vállalatok a fokozott biztonság titkosítási szintjét vezérlik (az AES-256 erősebb, mint az AES-128). Ha az *Igen* lehetőséget választja a beállítás engedélyezéséhez, beállíthatja a titkosítási algoritmust és a kulcs titkosítási erősségét a rögzített adatmeghajtókhoz, az operációsrendszer-meghajtókhoz és a cserélhető adatmeghajtókhoz. A rögzített és az operációsrendszer-meghajtók esetében javasoljuk, hogy használja a XTS-AES algoritmust. A cserélhető meghajtók esetében az AES-CBC 128-bit vagy az AES-CBC 256-bit használatát kell használnia, ha a meghajtót olyan más eszközök használják, amelyeken nem fut a Windows 10, a 1511-es vagy újabb verzió. A titkosítási módszer módosítása nincs hatással, ha a meghajtó már titkosítva van, vagy ha a titkosítás folyamatban van. Ezekben az esetekben a rendszer figyelmen kívül hagyja ezt a házirend-beállítást. 
@@ -165,7 +166,7 @@ További információ a [BitLocker csoportházirend beállítások](https://docs
   A cserélhető meghajtókra vonatkozó biztonsági szabályzatok esetében konfigurálja a következő beállításokat:
 
   - **Titkosítás megkövetelése írási hozzáféréshez**  
-    **Alapértelmezett**: Igen
+    **Alapértelmezett**: igen
 
   - **Titkosítási módszer**  
     **Alapértelmezett**: AES 128bit CBC
@@ -176,10 +177,10 @@ További információ a [BitLocker csoportházirend beállítások](https://docs
   A bit Locker rögzített meghajtó házirendje beállításnál adja meg a következő beállításokat:
 
   - **Titkosítás megkövetelése írási hozzáféréshez**  
-    **Alapértelmezett**: Igen
+    **Alapértelmezett**: igen
 
   - **Titkosítási módszer**  
-    **Alapértelmezett**: AES-128bit XTS
+    **Alapértelmezett**: AES 128bit XTS
 
 - **Bites zárolás rendszermeghajtó-házirendje**  
   A szabályzat értékei határozzák meg a BitLocker által a rendszermeghajtó titkosításához használt rejtjel erősségét. A vállalatok a fokozott biztonság érdekében érdemes szabályozni a titkosítási szintet (az AES-256 erősebb, mint az AES-128). Ha engedélyezi ezt a beállítást, beállíthatja a titkosítási algoritmust és a kulcs titkosítási erősségét a rögzített adatmeghajtókhoz, az operációsrendszer-meghajtókhoz és a cserélhető adatmeghajtókhoz. A rögzített és az operációsrendszer-meghajtók esetében javasoljuk, hogy használja a XTS-AES algoritmust. A cserélhető meghajtók esetében az AES-CBC 128-bit vagy az AES-CBC 256-bit használatát kell használnia, ha a meghajtót olyan más eszközök használják, amelyeken nem fut a Windows 10, a 1511-es vagy újabb verzió. A titkosítási módszer módosítása nincs hatással, ha a meghajtó már titkosítva van, vagy ha a titkosítás folyamatban van. Ezekben az esetekben a rendszer figyelmen kívül hagyja ezt a házirend-beállítást.  
@@ -187,16 +188,16 @@ További információ a [BitLocker csoportházirend beállítások](https://docs
   A következő beállítások megadásával konfigurálhatja a rendszermeghajtó-házirendet:  
 
   - **Titkosítási módszer**  
-    **Alapértelmezett**: AES-128bit XTS
+    **Alapértelmezett**: AES 128bit XTS
 
 ## <a name="device-control"></a>Eszköz vezérlése  
 
 - **Cserélhető meghajtók vizsgálata teljes vizsgálat során**  
   [Defender/AllowFullScanRemovableDriveScanning](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowfullscanremovabledrivescanning) – ha az *Igen*értékre van állítva, a Defender megkeresi a kártékony és nemkívánatos szoftvereket a cserélhető meghajtókon, például a flash meghajtókat a teljes vizsgálat során. A Defender víruskereső az USB-eszközökön lévő összes fájlt megvizsgálja az USB-eszközön lévő fájlok futtatása előtt.
 
-  Kapcsolódó beállítás a listában: *Defender/AllowFullScanOnMappedNetworkDrives*  
+  Kapcsolódó beállítás ebben a listában: *Defender/AllowFullScanOnMappedNetworkDrives*  
 
-  **Alapértelmezett**: Igen
+  **Alapértelmezett**: igen
 
 - **A kernel DMA-védelemmel nem kompatibilis külső eszközök enumerálása**  
    Lásd: *DmaGuard/DeviceEnumerationPolicy* a [szabályzat CSP-DmaGuard](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-dmaguard#dmaguard-deviceenumerationpolicy)
@@ -212,48 +213,48 @@ További információ a [BitLocker csoportházirend beállítások](https://docs
   - *Minden,* az összes külső DMA-kompatibilis PCIe eszköz enumerálása bármikor megtörténik
   - A DMA-újramegfeleltetéssel kompatibilis illesztőprogramokat tartalmazó *összes eszköz letiltását* bármikor megadhatja. A nem kompatibilis illesztőprogramokat a DMA-újramegfeleltetéssel rendelkező eszközök soha nem fogják tudni elindítani és végrehajtani a DMA-t bármikor.
 
-  **Alapértelmezett**: Eszköz alapértelmezése
+  **Alapértelmezett**: eszköz alapértelmezett értéke
 
 - **Hardvereszközök telepítése eszköz-azonosítók alapján**  
   [DeviceInstallation/PreventInstallationOfMatchingDeviceIDs](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-deviceinstallation#deviceinstallation-preventinstallationofmatchingdeviceids) – ezzel a szabályzattal megadhatja Plug and Play hardver-azonosítók és kompatibilis azonosítók listáját azon eszközök esetében, amelyeket a Windows megakadályoz a telepítésben. Ez a házirend-beállítás elsőbbséget élvez minden más olyan házirend-beállítással szemben, amely lehetővé teszi, hogy a Windows telepítsen egy eszközt. Ha engedélyezi ezt a házirend-beállítást (a *hardveres eszközök telepítésének letiltására*van beállítva), a Windows megakadályozza, hogy olyan eszközt telepítsen, amelynek hardver-azonosítója vagy kompatibilis azonosítója megjelenik a létrehozott listában. Ha engedélyezi ezt a házirend-beállítást egy távoli asztali kiszolgálón, a házirend a megadott eszközök távoli asztali ügyfélről a távoli asztali kiszolgálóra való átirányítását befolyásolja. Ha letiltja vagy nem konfigurálja ezt a házirend-beállítást (a *hardveres eszközök telepítésének engedélyezésére*van beállítva), az eszközök az engedélyezett módon telepíthetik és frissíthetik a beállításokat, vagy más házirend-beállítások is megtiltják azokat.  
 
-  **Alapértelmezett**: Hardvereszköz telepítésének letiltása  
+  **Alapértelmezett**: hardvereszközök telepítésének letiltása  
 
   Ha a *hardveres eszköz telepítésének letiltása* lehetőség van kiválasztva, a következő beállítások érhetők el.
   - **A megfelelő hardvereszközök eltávolítása**  
     Ez a beállítás csak akkor érhető el, ha az *eszköz azonosítói alapján* a hardvereszköz telepítése *blokkolja a hardveres eszközök telepítését*.  
 
-    **Alapértelmezett**: *Nincs alapértelmezett konfiguráció*
+    **Alapértelmezett**: *nincs alapértelmezett konfiguráció*
 
   - **A letiltott hardveres eszközök azonosítói**  
     Ez a beállítás csak akkor érhető el, ha az *eszköz azonosítói alapján* a hardvereszköz telepítése *blokkolja a hardveres eszközök telepítését*. A beállítás megadásához bontsa ki a beállítást, válassza a **+ Hozzáadás**lehetőséget, majd adja meg a letiltani kívánt hardvereszköz-azonosítót.  
 
-    **Alapértelmezett**: *Nincsenek blokkolt eszközök*  
+    **Alapértelmezett**: *nincsenek blokkolva eszközök*  
 
 - **Közvetlen memória-hozzáférés letiltása**  
   [DataProtection/AllowDirectMemoryAccess](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-dataprotection#dataprotection-allowdirectmemoryaccess) – ezzel a házirend-beállítással letilthatja a közvetlen memória-hozzáférést (DMA) az eszközön lévő összes melegen csatlakoztatható PCI-porthoz, amíg a felhasználó be nem jelentkezik a Windowsba. Miután a felhasználó bejelentkezik, a Windows feljegyzi a gazdagéphez csatlakozó PCI-portokhoz csatlakozó PCI-eszközöket. Minden alkalommal, amikor a felhasználó zárolja a gépet, a rendszer letiltja a DMA-t a gyermekek nélküli gyors csatlakozású PCI-portok esetében, amíg a felhasználó újra be nem jelentkezik. A gép zárolásának feloldása után már enumerált eszközök továbbra is működni fognak, amíg le nem húzta a gépet. 
 
   Ez a házirend-beállítás csak akkor lép érvénybe, ha a BitLocker vagy az eszköz titkosítása engedélyezve van.  
 
-  **Alapértelmezett**: Igen
+  **Alapértelmezett**: igen
 
 
 - **Hardvereszközök telepítése telepítési osztályok szerint**  
   [DeviceInstallation/AllowInstallationOfMatchingDeviceSetupClasses](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-deviceinstallation#deviceinstallation-allowinstallationofmatchingdevicesetupclasses) – ezzel a szabályzattal megadhatja az eszközök telepítési osztályának globálisan egyedi azonosítókat (GUID azonosítókat) tartalmazó listáját, amely megakadályozza a Windows telepítését. Ez a házirend-beállítás elsőbbséget élvez minden más olyan házirend-beállítással szemben, amely lehetővé teszi, hogy a Windows telepítsen egy eszközt. Ha engedélyezi ezt a házirend-beállítást (a *hardveres eszközök telepítésének letiltására*van beállítva), a Windows nem tudja telepíteni vagy frissíteni azokat az eszközillesztőket, amelyek az eszköz telepítési OSZTÁLYÁNAK GUID azonosítói megjelennek a létrehozott listában. Ha engedélyezi ezt a házirend-beállítást egy távoli asztali kiszolgálón, a házirend-beállítás a megadott eszközök távoli asztali ügyfélről a távoli asztali kiszolgálóra való átirányítását befolyásolja. Ha letiltja vagy nem konfigurálja ezt a házirend-beállítást (a *hardveres eszközök telepítésének engedélyezésére*van beállítva), a Windows telepítheti és frissítheti az eszközöket az engedélyezett módon, illetve megakadályozhatja más házirend-beállítások alapján.  
 
-  **Alapértelmezett**: Hardvereszköz telepítésének letiltása
+  **Alapértelmezett**: hardvereszközök telepítésének letiltása
 
   Ha a *hardveres eszköz telepítésének letiltása* lehetőség van kiválasztva, a következő beállítások érhetők el.  
 
   - **A megfelelő hardvereszközök eltávolítása**  
     Ez a beállítás csak akkor érhető el, ha a *telepítési osztályok által telepített hardvereszközök telepítése* *blokkolja a hardvereszközök telepítését*.  
  
-    **Alapértelmezett**: *Nincs alapértelmezett konfiguráció*  
+    **Alapértelmezett**: *nincs alapértelmezett konfiguráció*  
 
   - **A letiltott hardveres eszközök azonosítói**  
     Ez a beállítás csak akkor érhető el, ha a telepítési osztályok által telepített hardvereszközök telepítése blokkolja a hardvereszközök telepítését. A beállítás megadásához bontsa ki a beállítást, válassza a **+ Hozzáadás**lehetőséget, majd adja meg a letiltani kívánt hardvereszköz-azonosítót.  
  
-    **Alapértelmezett**: *Nincsenek blokkolt eszközök*
+    **Alapértelmezett**: *nincsenek blokkolva eszközök*
 
 ## <a name="endpoint-detection-and-response"></a>Végpontok észlelése és válasza  
 További információ: [WINDOWSADVANCEDTHREATPROTECTION CSP](https://docs.microsoft.com/windows/client-management/mdm/windowsadvancedthreatprotection-csp) a Windows dokumentációjában.  
@@ -262,13 +263,13 @@ További információ: [WINDOWSADVANCEDTHREATPROTECTION CSP](https://docs.micros
 
   A Microsoft Defender komplex veszélyforrások elleni védelem telemetria jelentéskészítési gyakoriságának gyorsítása.  
 
-  **Alapértelmezett**: Igen
+  **Alapértelmezett**: igen
 
 - **Minta megosztása az összes fájlhoz** - *konfiguráció/SampleSharing*  
 
   Visszaadja vagy beállítja a Microsoft Defender komplex veszélyforrások elleni védelem minta-megosztási konfigurációs paraméterét.  
 
-  **Alapértelmezett**: Igen
+  **Alapértelmezett**: igen
 
 ## <a name="exploit-protection"></a>Védelem kiaknázása  
 
@@ -283,14 +284,14 @@ További információ: [WINDOWSADVANCEDTHREATPROTECTION CSP](https://docs.micros
 
 - **Biztonsági rés kiaknázásának felülbírálásának letiltása**  
   [WindowsDefenderSecurityCenter/DisallowExploitProtectionOverride](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-windowsdefendersecuritycenter#windowsdefendersecuritycenter-disallowexploitprotectionoverride) – az *Igen* érték megadásával megakadályozhatja, hogy a felhasználók módosítsák a Windows Defender Security Center a védelmi beállítások kiaknázása területén. Ha letiltja vagy nem konfigurálja ezt a beállítást, a helyi felhasználók módosításokat végezhetnek a védelmi beállítások kiaknázása területen.  
-  **Alapértelmezett**: Igen  
+  **Alapértelmezett**: igen  
 
 - **Vezérelt mappák elérése**  
   Lásd: [Defender/ControlledFolderAccessAllowedApplications](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-controlledfolderaccessallowedapplications) és [Defender/ControlledFolderAccessProtectedFolders](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-controlledfolderaccessprotectedfolders) 
   
    Fájlok és mappák védelme a nemkívánatos alkalmazások által végrehajtott, jogosulatlan módosítások ellen.
 
-  **Alapértelmezett**: Vizsgálati mód
+  **Alapértelmezett**: naplózási mód
 
 ## <a name="web--network-protection"></a>Web & hálózati védelem  
 
@@ -304,22 +305,22 @@ További információ: [WINDOWSADVANCEDTHREATPROTECTION CSP](https://docs.micros
 
   Ha a *felhasználó által definiált*értékre van állítva, a felhasználók és az alkalmazások nem blokkolják a veszélyes tartományokhoz való kapcsolódást, és a kapcsolatok információi nem érhetők el a Windows Defender Security Centerban.  
 
-  **Alapértelmezett**: Vizsgálati mód
+  **Alapértelmezett**: naplózási mód
 
 - **SmartScreen megkövetelése a Microsoft Edge-hez**  
   [Böngésző/AllowSmartScreen](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowsmartscreen) – a Microsoft Edge a Windows Defender SmartScreen (bekapcsolt) használatával védi a felhasználókat a lehetséges adathalászat-csalások és kártevő szoftverek alapértelmezés szerint. Alapértelmezés szerint ez a házirend engedélyezve van (az *Igen*értékre van állítva), és ha engedélyezve van, megakadályozza, hogy a felhasználók kikapcsolják a Windows Defender SmartScreen szolgáltatást.  Ha az eszközre vonatkozó érvényes házirend nincs konfigurálva, a felhasználók kikapcsolhatják a Windows Defender SmartScreen szolgáltatását, amely nem gondoskodik az eszköz védelem nélküli állapotáról.  
 
-  **Alapértelmezett**: Igen
+  **Alapértelmezett**: igen
   
 - **Rosszindulatú hely elérésének letiltása**  
   [Böngésző/PreventSmartScreenPromptOverride](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverride) – alapértelmezés szerint a Microsoft Edge lehetővé teszi, hogy a felhasználók megkerüljék (figyelmen kívül hagyják) a Windows Defender SmartScreen figyelmeztetéseit az esetlegesen kártékony helyekről, így a felhasználók továbbra is elérhetik a webhelyet. Ha ez a szabályzat engedélyezve van (az *Igen*értékre van állítva), a Microsoft Edge megakadályozza, hogy a felhasználók megkerüljék a figyelmeztetéseket, és blokkolja azokat a helyről.  
 
-  **Alapértelmezett**: Igen
+  **Alapértelmezett**: igen
 
 - **Nem ellenőrzött fájlok letöltésének tiltása**  
   [Böngésző/PreventSmartScreenPromptOverrideForFiles](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverrideforfiles) – alapértelmezés szerint a Microsoft Edge lehetővé teszi, hogy a felhasználók megkerüljék (figyelmen kívül hagyják) a Windows Defender SmartScreen figyelmeztetéseit az esetlegesen kártékony fájlokról, így továbbra is letöltheti a nem ellenőrzött fájlokat. Ha ez a szabályzat engedélyezve van (az *Igen*értékre van állítva), a felhasználók nem hagyhatják figyelmen kívül a figyelmeztetéseket, és nem tölthetik le a nem ellenőrzött fájlokat.  
 
-  **Alapértelmezett**: Igen
+  **Alapértelmezett**: igen
 
 ## <a name="windows-defender-anti-virus----settings-review-pending-for-this-section"></a>Windows Defender Anti-Virus [beállítások áttekintése a szakaszra függőben]
 
@@ -328,22 +329,22 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
 - **A Microsoft webböngészőkben betöltött parancsfájlok vizsgálata**  
   [Defender/AllowScriptScanning](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowscriptscanning) – állítsa *Igen* értékre a Windows Defender parancsfájl-ellenőrzési funkciójának engedélyezéséhez.  
 
-  **Alapértelmezett**: Igen
+  **Alapértelmezett**: igen
 
 - **Bejövő üzenetek ellenőrzése**  
   [Defender/AllowEmailScanning](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowemailscanning) – állítsa *Igen* értékre, ha engedélyezni szeretné a Windows Defender számára az e-mailek vizsgálatát.  
 
-  **Alapértelmezett**: Igen
+  **Alapértelmezett**: igen
 
 - **Defender-minta küldésének beleegyező típusa**  
   [Defender/SubmitSamplesConsent](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-submitsamplesconsent) – a Windows Defender felhasználói beleegyezési szintjét ellenőrzi az adatküldés során. Ha a szükséges engedély már meg lett adva, a Windows Defender elküldi azokat. Ha nem (és ha a felhasználónak soha nem kell megadnia a kérést), a felhasználói felület megadását kéri (ha a *felhőbe szállított védelem* az *Igen*értékre van állítva) az adatok elküldése előtt.  
 
-  **Alapértelmezett**: Biztonságos minták automatikus küldése
+  **Alapértelmezett**: biztonságos minták automatikus küldése
 
 - **Hálózatvizsgáló rendszer (NIS)**  
   [Defender/EnableNetworkProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-enablenetworkprotection) – blokkolja a HÁLÓZATVIZSGÁLÓ rendszer (NIS) aláírásával észlelt kártékony forgalmat.  
  
-  **Alapértelmezett**: Igen
+  **Alapértelmezett**: igen
 
 - **Aláírás-frissítési időköz (óra)**  
   [Defender/SignatureUpdateInterval](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-signatureupdateinterval) – Itt adhatja meg órákban, hogy az eszköz milyen gyakran keressen új Defender-aláírási frissítéseket.  
@@ -353,22 +354,22 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
 - **Alacsony CPU-prioritás konfigurálása az ütemezett vizsgálatoknál**  
   [Defender/EnableLowCPUPriority](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-enablelowcpupriority) – ha az *Igen*értékre van állítva, a vizsgálatok CPU-prioritása alacsony értékre van állítva. Ha *nincs konfigurálva*, az ütemezett vizsgálatok esetében nem történik változás a CPU-prioritásban.  
 
-    **Alapértelmezett**: Igen
+    **Alapértelmezett**: igen
 
 - **Defender-letiltás hozzáférés-védelemhez**  
   [Defender/AllowOnAccessProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowonaccessprotection) – ha az *Igen*értékre van állítva, a Windows Defender on hozzáférés-védelem engedélyezve van.  
 
-  **Alapértelmezett**: Igen
+  **Alapértelmezett**: igen
 
 - **A végrehajtandó rendszervizsgálat típusa**  
   [Defender/ScanParameter](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-scanparameter) – Defender-vizsgálat típusa  
 
-  **Alapértelmezett**: Gyors vizsgálat
+  **Alapértelmezett**: gyors vizsgálat
 
 - **Minden letöltés ellenőrzése**  
   [Defender/AllowIOAVProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowioavprotection) – ha az *Igen*értékre van állítva, a Defender a letöltött fájlokat és mellékleteket vizsgálja.  
 
-  **Alapértelmezett**: Igen
+  **Alapértelmezett**: igen
 
 - **Karanténba helyezett kártevők törlése előtti napok**  
   [Defender/DaysToRetainCleanedMalware](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-daystoretaincleanedmalware) – azt határozza meg, hogy a rendszer hány napig tart a karanténba helyezési elemek automatikus törlése előtt. Ha nulla értékre van állítva, a karanténba helyezett elemek soha nem törlődnek automatikusan.  
@@ -378,7 +379,7 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
 - **Ütemezett vizsgálat kezdési ideje**  
   [Defender/ScheduleScanTime](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-schedulescantime) – a Defender által az eszközök vizsgálatára szolgáló napszakot ütemezhet. 
   
-  Kapcsolódó beállítás a listában: *Defender/ScheduleScanDay*   
+  Kapcsolódó beállítás ebben a listában: *Defender/ScheduleScanDay*   
 
   **Alapértelmezett**: 2
 
@@ -387,7 +388,7 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
 
   Ha ezt a házirendet az *Igen*értékre állítja, akkor a *Defender-minta küldésének beleegyező típusával* adhatja meg, hogy a felhasználók vezérelhetik-e az eszközről küldött adatokat.  
 
-  **Alapértelmezett**: Igen
+  **Alapértelmezett**: igen
 
 - **A Defender vélhetően nemkívánatos alkalmazásának művelete**  
   [Defender/PUAProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-puaprotection) – a Windows Defender víruskereső képes azonosítani és letiltani a *vélhetően nemkívánatos alkalmazások* (PUAs) letöltését és telepítését a hálózatban lévő végpontokon. 
@@ -396,7 +397,7 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
   - Ha *naplózásra*van beállítva, a Windows Defender észleli a PUAs, de nem blokkolja őket. A Windows Defender alkalmazással kapcsolatos információk megtalálhatók a Windows Defender által a Eseménynaplóban létrehozott események keresésekor.  
   - Ha az *eszköz alapértelmezett*értékre van állítva, a Pua-védelem ki van kapcsolva.  
  
-  **Alapértelmezett**: Letiltás
+  **Alapértelmezett**: letiltás
 
 - **A Defender Cloud Extended időtúllépése**  
   [Defender/CloudExtendedTimeout](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-cloudextendedtimeout) – Itt adhatja meg azt a maximális időtartamot, ameddig a Windows Defender víruskeresőnek le kell tiltania egy fájlt a felhőből érkező eredményre való várakozás közben. A Windows Defender-várakozások alapszintű mérete 10 másodperc. Az itt megadott további időt (legfeljebb 50 másodperc) adja hozzá a 10 másodperchez. A legtöbb esetben a vizsgálat a maximálisnál kevesebb időt vesz igénybe. Az idő növelésével azonban elegendő időt biztosíthat ahhoz, hogy a felhő alaposan megvizsgálja a gyanús fájlokat.  
@@ -408,24 +409,24 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
 - **Archív fájlok ellenőrzése**  
   [Defender/AllowArchiveScanning](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowarchivescanning) – állítsa *Igen* értékre, hogy a Windows Defender megvizsgálja az archív fájlokat.  
 
-  **Alapértelmezett**: Igen
+  **Alapértelmezett**: igen
 
 - **Defender rendszervizsgálati ütemterve**  
   [Defender/ScheduleScanDay](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-schedulescanday) – az a nap, amikor a Defender megvizsgálja az eszközöket. 
  
-  Kapcsolódó beállítás a listában: *Defender/ScheduleScanTime*
+  Kapcsolódó beállítás ebben a listában: *Defender/ScheduleScanTime*
 
-  **Alapértelmezett**: Felhasználó által definiált
+  **Alapértelmezett**: felhasználó által definiált
 
 - **Viselkedés figyelése**  
   [Defender/AllowBehaviorMonitoring](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowbehaviormonitoring) – állítsa *Igen* értékre a Windows Defender viselkedés-figyelési funkciójának bekapcsolásához. A Windows 10 rendszerbe ágyazott Windows Defender viselkedés-figyelési érzékelők összegyűjtik és feldolgozzák az operációs rendszer viselkedési jeleit, és elküldik az érzékelő adatait a Microsoft Defender ATP privát, elkülönített, Felhőbeli példányának.  
 
-  **Alapértelmezett**: Igen
+  **Alapértelmezett**: igen
 
 - **Hálózati mappákból megnyitott fájlok vizsgálata**  
   [Defender/AllowScanningNetworkFiles](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowscanningnetworkfiles) – állítsa *Igen* értékre, hogy a Windows Defender beolvassa a fájlokat a hálózaton. A felhasználó nem tudja eltávolítani az észlelt kártevőket a csak olvasható fájlokból.  
 
-  **Alapértelmezett**: Igen
+  **Alapértelmezett**: igen
 
 - **Defender Cloud Block-szint**  
   [Defender/CloudBlockLevel](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-cloudblocklevel) – ezzel a házirenddel határozható meg, hogy az agresszív Windows Defender víruskereső Hogyan blokkolja és vizsgálja a gyanús fájlokat. A lehetőségek a következők:
@@ -434,12 +435,12 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
   - Nagy plusz – agresszíven blokkolhatja az ismeretlen fájlokat, és további védelmi intézkedéseket alkalmazhat (az ügyfél teljesítményére is hatással lehet)
   - Zéró tolerancia – az összes ismeretlen végrehajtható fájl letiltása
 
-  **Alapértelmezett**: Nincs konfigurálva
+  **Alapértelmezett**: nincs konfigurálva
 
 - **Valós idejű figyelés**  
   [Defender/AllowRealtimeMonitoring](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowrealtimemonitoring) – állítsa *Igen* értékre a Windows Defender valós idejű figyelésének engedélyezéséhez.  
 
-  **Alapértelmezett**: Igen
+  **Alapértelmezett**: igen
 
 - **CPU-használati korlát a vizsgálat során**  
   [Defender/AvgCPULoadFactor](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-avgcpuloadfactor) – Itt adhatja meg a Windows Defender által a vizsgálat során használható maximális átlagos CPU-használatot.  
@@ -449,14 +450,14 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
 - **Csatlakoztatott hálózati meghajtók vizsgálata teljes vizsgálat során**  
   [Defender/AllowFullScanOnMappedNetworkDrives](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowfullscanonmappednetworkdrives) – állítsa *Igen* értékre, hogy a Windows Defender beolvassa a fájlokat a hálózaton. A felhasználó nem távolíthatja el az észlelt kártevő szoftvereket a csak olvasható fájlokból,
 
-  Kapcsolódó beállítás a listában: *Defender/AllowScanningNetworkFiles*
+  Kapcsolódó beállítás ebben a listában: *Defender/AllowScanningNetworkFiles*
 
-  **Alapértelmezett**: Igen
+  **Alapértelmezett**: igen
 
 - **A Defender végfelhasználói hozzáférésének tiltása**  
   [Defender/AllowUserUIAccess](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowuseruiaccess) – állítsa *Igen* értékre, hogy letiltsa a végfelhasználók számára a Windows Defender felhasználói felületének elérését az eszközön.  
 
-  **Alapértelmezett**: Igen
+  **Alapértelmezett**: igen
 
 - **Gyors vizsgálat kezdési ideje**  
   [Defender/ScheduleQuickScanTime](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-schedulequickscantime) – a Defender egy rövid időpontját ütemezze a gyors vizsgálat futtatásához.  
@@ -472,133 +473,133 @@ További információ: [TŰZFAL CSP](https://docs.microsoft.com/windows/client-m
 
 - **File Transfer Protocol** - *MdmStore/Global/DisableStatefulFtp*   
   Állapot-nyilvántartó File Transfer Protocol (FTP) blokkolása.  
-  **Alapértelmezett**: Igen
+  **Alapértelmezett**: igen
 
 - **Packet queuing** - *MdmStore/Global/EnablePacketQueue*    
   Itt adhatja meg, hogy a fogadási oldalon lévő szoftver skálázása engedélyezve legyen-e az IPsec Tunnel Gateway-forgatókönyvhöz továbbított titkosított fogadás és tiszta szöveg esetében. Ez biztosítja, hogy a rendszer megőrzi a csomagok sorrendjét.  
-  **Alapértelmezett**: Eszköz alapértelmezése
+  **Alapértelmezett**: eszköz alapértelmezett értéke
 
 - **Tűzfal-profil tartománya** - *FirewallRules/FirewallRuleName/profilok*  
-  Meghatározza azokat a profilokat, amelyekre a szabály tartozik: Tartomány, magán, nyilvános. Ez az érték a tartományokhoz csatlakozó hálózatok profilját jelöli.  
+  Meghatározza azokat a profilokat, amelyekhez a szabály tartozik: tartomány, privát, nyilvános. Ez az érték a tartományokhoz csatlakozó hálózatok profilját jelöli.  
 
   Elérhető beállítások:  
   - **Egyedi küldéses válaszok küldése csoportos küldésű szórásra**  
-    **Alapértelmezett**: Igen
+    **Alapértelmezett**: igen
 
   - **A csoportházirend által beolvadt, jóváhagyott alkalmazási szabályok**  
-    **Alapértelmezett**: Igen
+    **Alapértelmezett**: igen
 
   - **Bejövő értesítések blokkolva**  
-    **Alapértelmezett**: Igen
+    **Alapértelmezett**: igen
 
   - **Globális portszabályok a csoportházirendből egyesítve**  
-    **Alapértelmezett**: Igen
+    **Alapértelmezett**: igen
 
   - **Rejtett mód blokkolva**  
-    **Alapértelmezett**: Igen
+    **Alapértelmezett**: igen
 
   - **Tűzfal engedélyezve**  
-    **Alapértelmezett**: Engedélyezett
+    **Alapértelmezés**: engedélyezett
 
   - **Nincs egyesítve a csoportházirendből származó kapcsolatbiztonsági szabályok**  
-    **Alapértelmezett**: Igen
+    **Alapértelmezett**: igen
 
   - **A csoportházirend házirend-szabályai nem lettek egyesítve**  
-    **Alapértelmezett**: Igen
+    **Alapértelmezett**: igen
 
 - **Tűzfal profil nyilvános**@no__t – 1*FirewallRules/FirewallRuleName/profilok*  
-  Meghatározza azokat a profilokat, amelyekre a szabály tartozik: Tartomány, magán, nyilvános. Ez az érték a nyilvános hálózatok profilját jelöli. Ezek a hálózatok a kiszolgáló gazdagépének rendszergazdái. A besorolás akkor történik meg, amikor a gazdagép először csatlakozik a hálózathoz. Ezek a hálózatok általában olyan repülőtereken, kávézókban és más nyilvános helyeken találhatók, ahol a hálózat vagy a hálózat rendszergazdája nem megbízható.  
+  Meghatározza azokat a profilokat, amelyekhez a szabály tartozik: tartomány, privát, nyilvános. Ez az érték a nyilvános hálózatok profilját jelöli. Ezek a hálózatok a kiszolgáló gazdagépének rendszergazdái. A besorolás akkor történik meg, amikor a gazdagép először csatlakozik a hálózathoz. Ezek a hálózatok általában olyan repülőtereken, kávézókban és más nyilvános helyeken találhatók, ahol a hálózat vagy a hálózat rendszergazdája nem megbízható.  
 
   Elérhető beállítások:
 
   - **Bejövő kapcsolatok blokkolva**  
-    **Alapértelmezett**: Igen 
+    **Alapértelmezett**: igen 
 
   - **Egyedi küldéses válaszok küldése csoportos küldésű szórásra**  
-    **Alapértelmezett**: Igen  
+    **Alapértelmezett**: igen  
 
   - **Rejtett mód szükséges**  
-    **Alapértelmezett**: Igen 
+    **Alapértelmezett**: igen 
  
   - **Kimenő kapcsolatok szükségesek**  
-    **Alapértelmezett**: Igen  
+    **Alapértelmezett**: igen  
 
   - **A csoportházirend által beolvadt, jóváhagyott alkalmazási szabályok**  
-    **Alapértelmezett**: Igen  
+    **Alapértelmezett**: igen  
 
   - **Bejövő értesítések blokkolva**  
-    **Alapértelmezett**: Igen  
+    **Alapértelmezett**: igen  
 
   - **Globális portszabályok a csoportházirendből egyesítve**  
-    **Alapértelmezett**: Igen
+    **Alapértelmezett**: igen
 
   - **Rejtett mód blokkolva**  
-    **Alapértelmezett**: Igen
+    **Alapértelmezett**: igen
 
   - **Tűzfal engedélyezve**  
-    **Alapértelmezett**: Engedélyezett  
+    **Alapértelmezés**: engedélyezett  
 
   - **Nincs egyesítve a csoportházirendből származó kapcsolatbiztonsági szabályok**  
-    **Alapértelmezett**: Igen  
+    **Alapértelmezett**: igen  
 
   - **Bejövő forgalom szükséges**  
-    **Alapértelmezett**: Igen
+    **Alapértelmezett**: igen
 
   - **A csoportházirend házirend-szabályai nem lettek egyesítve**  
-    **Alapértelmezett**: Igen  
+    **Alapértelmezett**: igen  
 
 - **Tűzfal-profil private** - *FirewallRules/FirewallRuleName/Profiles*  
-  Meghatározza azokat a profilokat, amelyekre a szabály tartozik: Tartomány, magán, nyilvános. Ez az érték a magánhálózatok profilját jelöli.  
+  Meghatározza azokat a profilokat, amelyekhez a szabály tartozik: tartomány, privát, nyilvános. Ez az érték a magánhálózatok profilját jelöli.  
 
   Elérhető beállítások: 
 
   - **Bejövő kapcsolatok blokkolva**  
-    **Alapértelmezett**: Igen
+    **Alapértelmezett**: igen
 
   - **Egyedi küldéses válaszok küldése csoportos küldésű szórásra**  
-    **Alapértelmezett**: Igen
+    **Alapértelmezett**: igen
 
   - **Rejtett mód szükséges**  
-    **Alapértelmezett**: Igen
+    **Alapértelmezett**: igen
 
   - **Kimenő kapcsolatok szükségesek**  
-    **Alapértelmezett**: Igen
+    **Alapértelmezett**: igen
 
   - **Bejövő értesítések blokkolva**  
-    **Alapértelmezett**: Igen
+    **Alapértelmezett**: igen
 
   - **Globális portszabályok a csoportházirendből egyesítve**  
-    **Alapértelmezett**: Igen
+    **Alapértelmezett**: igen
 
   - **Rejtett mód blokkolva**  
-    **Alapértelmezett**: Igen  
+    **Alapértelmezett**: igen  
 
   - **Tűzfal engedélyezve**  
-    **Alapértelmezett**: Engedélyezett
+    **Alapértelmezés**: engedélyezett
 
   - **A csoportházirendben nem egyesítve lettek a jóváhagyott szabályok**  
-    **Alapértelmezett**: Igen
+    **Alapértelmezett**: igen
 
   - **Nincs egyesítve a csoportházirendből származó kapcsolatbiztonsági szabályok**  
-    **Alapértelmezett**: Igen
+    **Alapértelmezett**: igen
 
   - **Bejövő forgalom szükséges**  
-    **Alapértelmezett**: Igen
+    **Alapértelmezett**: igen
 
   - **A csoportházirend házirend-szabályai nem lettek egyesítve**  
-    **Alapértelmezett**: Igen  
+    **Alapértelmezett**: igen  
 
 - **Tűzfallal előre megosztott kulcs kódolási módszere**  
   **Alapértelmezett**: UTF8
 
 - **Visszavont tanúsítványok listájának ellenőrzése**  
-  **Alapértelmezett**: Eszköz alapértelmezése
+  **Alapértelmezett**: eszköz alapértelmezett értéke
 
 ## <a name="windows-hello-for-business"></a>Vállalati Windows Hello  
 
 További információ: [PASSPORTFORWORK CSP](https://docs.microsoft.com/windows/client-management/mdm/passportforwork-csp) a Windows dokumentációjában.
 
-- **Vállalati Windows Hello** *TenantId/házirendek/UsePassportForWork konfigurálása*  -     
+- **A vállalati Windows Hello** - *TenantId/Policies/UsePassportForWork*    
   A vállalati Windows Hello egy alternatív módszer a Windowsba való bejelentkezéshez jelszavak, intelligens kártyák és virtuális intelligens kártyák helyett.  
 
   - Ha az *Igen*értékre van állítva, akkor engedélyezi ezt a házirendet, és az eszköz kiépíti a vállalati Windows Hello-t.  
@@ -612,14 +613,14 @@ A vállalati Windows Hello egy alternatív módszer a Windowsba való bejelentke
 
   Az Intune nem támogatja a Windows Hello letiltását. Ehelyett beállíthatja, hogy a Windows Hello for Business (igen), vagy nem konfigurálja a Windows Hello (nincs konfigurálva) beállítást. Ha nincs konfigurálva, egy eszköz más házirenddel is fogadhat konfigurációt, ami engedélyezheti vagy letilthatja a funkciót.  
 
-  **Alapértelmezett**: Igen  
+  **Alapértelmezett**: igen  
 
 - **Kisbetűk megkövetelése a PIN**-kódban  - *TenantId/policies/PINComplexity/LowercaseLetters*  
-  **Alapértelmezett**: Engedélyezett  
+  **Alapértelmezés**: engedélyezett  
 
 - **Speciális karakterek megkövetelése a PIN**-kódban  - *TenantId/policies/PINComplexity/SpecialCharacters*  
-  **Alapértelmezett**: Engedélyezett  
+  **Alapértelmezés**: engedélyezett  
 
 - Nagybetűk **megkövetelése a PIN**-kódban  - *TenantId/policies/PINComplexity/UppercaseLetters*   
-  **Alapértelmezett**: Engedélyezett  
+  **Alapértelmezés**: engedélyezett  
 

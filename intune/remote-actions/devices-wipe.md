@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 04/08/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: remote-actions
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 4fdb787e-084f-4507-9c63-c96b13bfcdf9
@@ -15,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f81dcf6a3553b4ff08ec6c2dbffda24bc7946b73
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: dbcc50d275a3d3e6a613640e96b363ce7608da81
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732571"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72508566"
 ---
 # <a name="remove-devices-by-using-wipe-retire-or-manually-unenrolling-the-device"></a>Eszközök eltávolítása összes adatuk törlésével, az eszköz kivonásával vagy regisztrációja manuális törlésével
 
@@ -35,7 +36,7 @@ A **Kivonás** vagy az **Összes adat törlése** művelettel eltávolíthatja a
 
 Az **Összes adat törlése** művelet visszaállítja az eszközön az alapértelmezett gyári beállításokat. A felhasználói adatok attól függően maradnak meg, hogy bejelölte-e a **Regisztrációs állapot és felhasználói fiók megtartása** jelölőnégyzetet. Ellenkező esetben a rendszer eltávolítja az összes adatértéket, alkalmazást és beállítást.
 
-|Az Összes adat törlése művelet|**Regisztrációs állapot és felhasználói fiók megtartása**|Eltávolítva az Intune kezelése alól|Leírás|
+|Az Összes adat törlése művelet|**Regisztrációs állapot és felhasználói fiók megtartása**|Eltávolítva az Intune kezelése alól|Description|
 |:-------------:|:------------:|:------------:|------------|
 |**Törlés**| Nincs bejelölve | Igen | Törli az összes felhasználói fiókot, adatot, MDM-szabályzatot és beállítást. Visszaállítja az operációs rendszert az alapértelmezett állapotra és beállításokra.|
 |**Törlés**| Bejelölve | Nem | Törli az összes MDM-szabályzatot. Megtartja a felhasználói fiókokat és az adatokat. Visszaállítja a felhasználói beállításokat az alapértelmezett értékre. Visszaállítja az operációs rendszert az alapértelmezett állapotra és beállításokra.|
@@ -90,12 +91,12 @@ Az alábbi táblázatok ismertetik, hogy milyen adatokat távolít el a rendszer
 |Wi-Fi és VPN profilbeállításai|Eltávolítva.|
 |Tanúsítvány profilbeállításai|A tanúsítványok törlődnek és visszavonásra kerülnek.|
 |Kezelőügynök|Törlődik a felügyeleti profil.|
-|Email|Törlődnek az Intune-on keresztül telepített e-mail-profilok. Törlődnek az eszközön gyorsítótárazott e-mailek.|
+|E-mail|Törlődnek az Intune-on keresztül telepített e-mail-profilok. Törlődnek az eszközön gyorsítótárazott e-mailek.|
 |Az Azure AD elhagyása|Törlődik az Azure AD rekord.|
 
-### <a name="android"></a>Android
+### <a name="android"></a>Android:
 
-|Adattípus|Android|Android Samsung Knox Standard|
+|Adattípus|Android:|Android Samsung Knox Standard|
 |-------------|-----------|------------------------|
 |Webhivatkozások|Eltávolítva.|Eltávolítva.|
 |Nem felügyelt Google Play-alkalmazások|A telepített alkalmazások és azok adatai megmaradnak. <br /> <br />A rendszer eltávolítja az alkalmazás helyi tárolójában lévő, a Mobile Application Management (MAM) titkosítással védett vállalati alkalmazás-beállításokat. Az alkalmazáson kívüli MAM-titkosítás által védett adatforgalom titkosítva és használhatatlan marad, de nem törlődik. |A telepített alkalmazások és azok adatai megmaradnak. <br /> <br />A rendszer eltávolítja az alkalmazás helyi tárolójában lévő, a Mobile Application Management (MAM) titkosítással védett vállalati alkalmazás-beállításokat. Az alkalmazáson kívüli MAM-titkosítás által védett adatforgalom titkosítva és használhatatlan marad, de nem törlődik.|
@@ -106,7 +107,7 @@ Az alábbi táblázatok ismertetik, hogy milyen adatokat távolít el a rendszer
 |Wi-Fi és VPN profilbeállításai|Eltávolítva.|Eltávolítva.|
 |Tanúsítvány profilbeállításai|A tanúsítványok visszavonódnak, de nem törlődnek.|A tanúsítványok törlődnek és visszavonásra kerülnek.|
 |Kezelőügynök|Visszavonódik az eszköz-rendszergazdai jogosultság.|Visszavonódik az eszköz-rendszergazdai jogosultság.|
-|Email|Nem alkalmazható (az androidos eszközök nem támogatják az e-mail-profilokat)|Törlődnek az Intune-on keresztül telepített e-mail-profilok. Törlődnek az eszközön gyorsítótárazott e-mailek.|
+|E-mail|Nem alkalmazható (az androidos eszközök nem támogatják az e-mail-profilokat)|Törlődnek az Intune-on keresztül telepített e-mail-profilok. Törlődnek az eszközön gyorsítótárazott e-mailek.|
 |Az Azure AD elhagyása|Törlődik az Azure AD rekord.|Törlődik az Azure AD rekord.|
 
 ### <a name="android-work-profile"></a>Androidos munkahelyi profil
@@ -131,13 +132,13 @@ Az összes adat törlése csak kioszkeszközökön lehetséges. Androidos kioszk
 
 ### <a name="windows"></a>Windows
 
-|Adattípus|Windows 8.1 (MDM) és Windows RT 8.1|Windows RT|Windows Phone 8.1 és Windows Phone 8|Windows 10|
+|Adattípus|Windows 8.1 (MDM) és Windows RT 8.1|Windows RT|Windows Phone 8.1 és Windows Phone 8|Windows 10|
 |-------------|----------------------------------------------------------------|--------------|-----------------------------------------|--------|
 |Vállalati alkalmazások és az Intune által telepített egyéb vonatkozó adatok|Az EFS által védett fájloknál a kulcsok visszavonódnak. A felhasználó nem tudja megnyitni a fájlokat.|A vállalati alkalmazásokat a rendszer nem távolítja el.|Törlődnek az eredetileg a Céges portálon keresztül telepített alkalmazások. Törlődnek a vállalati alkalmazásadatok.|Törlődnek az alkalmazások. A közvetlen telepítési kulcsokat a rendszer eltávolítja.<br>A Windows 10 1703-as (alkotói frissítés) és újabb verzióinál a rendszer az Office 365 ProPlus alkalmazásokat nem távolítja el. Az Intune felügyeleti bővítmény telepített Win32-alkalmazásai nem lesznek eltávolítva a nem regisztrált eszközökön. A rendszergazdák kihasználhatják a hozzárendelések kizárását, hogy a Win32-alkalmazások ne BYOD eszközöket.|
 |Beállítások|Az Intune-szabályzat által konfigurált beállítások érvényüket vesztik. A felhasználók megváltoztathatják a beállításokat.|Az Intune-szabályzat által konfigurált beállítások érvényüket vesztik. A felhasználók megváltoztathatják a beállításokat.|Az Intune-szabályzat által konfigurált beállítások érvényüket vesztik. A felhasználók megváltoztathatják a beállításokat.|Az Intune-szabályzat által konfigurált beállítások érvényüket vesztik. A felhasználók megváltoztathatják a beállításokat.|
-|Wi-Fi és VPN profilbeállításai|Eltávolítva.|Eltávolítva.|Nem támogatott.|Eltávolítva.|
-|Tanúsítvány profilbeállításai|A tanúsítványok törlődnek és visszavonásra kerülnek.|A tanúsítványok törlődnek és visszavonásra kerülnek.|Nem támogatott.|A tanúsítványok törlődnek és visszavonásra kerülnek.|
-|Email|Eltávolítja az EFS-kompatibilis e-maileket. Ez magában foglalja a Windows Posta alkalmazásában található e-maileket és mellékleteket.|Nem támogatott.|Törlődnek az Intune-on keresztül telepített e-mail-profilok. Törlődnek az eszközön gyorsítótárazott e-mailek.|Eltávolítja az EFS-kompatibilis e-maileket. Ez magában foglalja a Windows Posta alkalmazásában található e-maileket és mellékleteket. A rendszer eltávolítja az Intune által telepített e-mail-fiókokat.|
+|Wi-Fi és VPN profilbeállításai|Eltávolítva.|Eltávolítva.|Not supported.|Eltávolítva.|
+|Tanúsítvány profilbeállításai|A tanúsítványok törlődnek és visszavonásra kerülnek.|A tanúsítványok törlődnek és visszavonásra kerülnek.|Not supported.|A tanúsítványok törlődnek és visszavonásra kerülnek.|
+|E-mail|Eltávolítja az EFS-kompatibilis e-maileket. Ez magában foglalja a Windows Posta alkalmazásában található e-maileket és mellékleteket.|Not supported.|Törlődnek az Intune-on keresztül telepített e-mail-profilok. Törlődnek az eszközön gyorsítótárazott e-mailek.|Eltávolítja az EFS-kompatibilis e-maileket. Ez magában foglalja a Windows Posta alkalmazásában található e-maileket és mellékleteket. A rendszer eltávolítja az Intune által telepített e-mail-fiókokat.|
 |Az Azure AD elhagyása|Nem.|Nem.|Törlődik az Azure AD rekord.|Törlődik az Azure AD rekord.|
 
 > [!NOTE]

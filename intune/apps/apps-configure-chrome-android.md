@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 10/07/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: apps
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 35f52e80f83426c076ac7925d308daacf4595f88
-ms.sourcegitcommit: b1e97211db7cb949eb39be6776b3a11d434fdab0
+ms.openlocfilehash: 5b80b0dbd8128606db9220178baf0d05af1a3800
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72251508"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72498795"
 ---
 # <a name="configure-google-chrome-for-android-devices-using-intune"></a>A Google Chrome beállítása Android-eszközökhöz az Intune használatával 
 
@@ -73,7 +74,7 @@ A felügyelt Google Play-alkalmazások Intune-hoz való hozzáadásával kapcsol
     A fenti beállítások könyvjelzőket hoznak létre, és engedélyezik a hozzáférést az összes webhelyhez, kivéve `baidu.com`, `yahoo.com` és `chrome://`.
 
 5. Kattintson **az OK gombra** , és adja hozzá a konfigurációs szabályzatot az Intune **-hoz.**
-6. Rendelje hozzá ezt a konfigurációs szabályzatot egy felhasználói csoporthoz. További információ: [alkalmazások társítása csoportokhoz Microsoft Intune használatával](~/apps/apps-deploy.md). 
+6. Rendelje hozzá ezt a konfigurációs szabályzatot egy felhasználói csoporthoz. További információ: [Alkalmazások hozzárendelése csoportokhoz a Microsoft Intune-nal](~/apps/apps-deploy.md). 
 
 ## <a name="verify-the-device-settings"></a>Eszköz beállításainak ellenőrzése
 
@@ -95,7 +96,7 @@ Indítsa el a Google Chrome-t, és megtalálja az alkalmazott beállításokat.
    Inkognitóban lap:<br>
    <img alt="Incognito tab" src="~/apps/media/apps-configure-chrome-android/incognito-tab.png" width="350">
 
-## <a name="troubleshooting"></a>Hibakeresés
+## <a name="troubleshooting"></a>Hibaelhárítás
 
 1. Az Intune-portálon ellenőrizheti a szabályzat központi telepítésének állapotát.
 
@@ -105,11 +106,11 @@ Indítsa el a Google Chrome-t, és megtalálja az alkalmazott beállításokat.
 
     ![A beállítások jóváhagyása sikeresen megtörtént](~/apps/media/apps-configure-chrome-android/confirm.png)
 
-## <a name="additional-information"></a>További információk
+## <a name="additional-information"></a>További információ
 
 - [Alkalmazás-konfigurációs szabályzatok hozzáadása a felügyelt Android Enterprise-eszközökhöz](~/app-configuration-policies-use-android.md)
 - [Chrome vállalati szabályzatok listája](https://cloud.google.com/docs/chrome-enterprise/policies/)
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
 - Az Android Enterprise teljes körűen felügyelt eszközökkel kapcsolatos további információkért lásd: [az Android Enterprise Intune-regisztrációjának beállítása teljes mértékben](~/enrollment/android-fully-managed-enroll.md)felügyelt eszközök.

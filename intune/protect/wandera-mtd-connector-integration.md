@@ -9,31 +9,32 @@ manager: dougeby
 ms.date: 06/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 64a560dc79d3c03f52b8e9389c3e47e3e256ee58
-ms.sourcegitcommit: dd6755383ba89824d1cc128698a65fde6bb2de55
+ms.openlocfilehash: a548b1e1728928ca74ca7207b7e60d91ba5fc8aa
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72306660"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72503593"
 ---
 # <a name="integrate-wandera-mobile-threat-protection-with-intune"></a>A Wander Mobile Threat Protection integrálása az Intune-nal  
 
 A Wanda Mobile Threat Defense megoldás az Intune-nal való integrálásához hajtsa végre az alábbi lépéseket.  
 
-## <a name="before-you-begin"></a>Előzetes teendők  
+## <a name="before-you-begin"></a>Előkészületek  
 
 Mielőtt elkezdené a Wanda integrálását az Intune-nal, ellenőrizze, hogy rendelkezik-e az alábbi előfeltételekkel:
-- Előfizetés Microsoft Intune  
-- Azure Active Directory rendszergazdai hitelesítő adatokat a következő engedélyek megadásához:  
+- Microsoft Intune-előfizetés  
+- Azure Active Directory rendszergazdai hitelesítő adatok a következő engedélyek megadására:  
   - Bejelentkezés és felhasználói profil olvasása  
-  - A címtár elérése bejelentkezett felhasználóként  
+  - A címtár elérése a bejelentkezett felhasználó nevében  
   - Címtáradatok olvasása  
-  - Eszköz adatainak küldése az Intune-nak  
+  - Eszközadatok küldése az Intune-ba  
 
 - Vándor-előfizetés:
   - Egy vagy több olyan bolyongó fiók, amely az 1. kapcsolathoz van licenccel  
@@ -121,6 +122,6 @@ Ismételje meg az alábbi eljárást az iOS-hez és Androidhoz létrehozott Wand
 4. Válassza a **befoglalt csoportok**lehetőséget, majd **válassza ki a felvenni kívánt csoportokat**. Adja meg a Bolyongás szinkronizálásához létrehozott csoportot, majd kattintson a **Select** > **OK** > **OK**gombra. Válassza a **Mentés** lehetőséget a csoport hozzárendelésének befejezéséhez.  
  
 
-## <a name="next-steps"></a>Következő lépések  
+## <a name="next-steps"></a>További lépések  
 Most, hogy konfigurálta az integrációt, megkezdheti a házirendek konfigurálását, a speciális feltételes hozzáférés beállítását és a jelentések megtekintését a Wanda felügyeleti konzolon. A Bolyongás kezelésével és konfigurálásával kapcsolatos további tudnivalókért tekintse meg a következő témakört: [támogatási központ első lépések útmutató](https://radar.wandera.com/?return_to=https://wandera.force.com/Customer/s/getting-started) a Wanda dokumentációjában.  
  

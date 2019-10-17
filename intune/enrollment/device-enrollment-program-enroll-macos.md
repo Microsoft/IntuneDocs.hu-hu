@@ -1,5 +1,5 @@
 ---
-title: MacOS-eszközök regisztrálása – Készülékregisztrációs Program vagy az Apple School Manager
+title: MacOS-eszközök regisztrálása – Készülékregisztrációs program vagy Apple School Manager
 titleSuffix: ''
 description: Céges tulajdonú macOS-es eszközök regisztrálása az Apple készülékregisztrációs programjával (DEP).
 keywords: ''
@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 12/06/2018
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: enrollment
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
@@ -17,22 +18,22 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 351fda03b2a4f05bd1d751b33fef49e029bcab63
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 85f9c4f0049407dd77e532698d03cc0b71d3e3d1
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729987"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72505533"
 ---
-# <a name="automatically-enroll-macos-devices-with-the-device-enrollment-program-or-apple-school-manager"></a>A Készülékregisztrációs Program vagy az Apple School Manager macOS-eszközök automatikus regisztrálása
+# <a name="automatically-enroll-macos-devices-with-the-device-enrollment-program-or-apple-school-manager"></a>macOS-eszközök automatikus regisztrálása a készülékregisztrációs programmal vagy az Apple School Manager használatával
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-Beállíthatja az Apple keretében vásárolt macOS-eszközökhöz az Intune-regisztrációt [Készülékregisztrációs Program (DEP)](https://deploy.apple.com) vagy [Apple School Manager](https://school.apple.com/). Is használhatja ezeket a regisztrációk esetében nagy számú eszközt anélkül, hogy kézbe venné őket. A macOS-eszközöket közvetlenül a felhasználóknak küldheti el. Amikor a felhasználó bekapcsolja az eszközt, a Beállítási asszisztens az előre konfigurált beállítások szerint fut, és regisztrálja az eszközt az Intune felügyeleti szolgáltatásban.
+Az Apple [Készülékregisztrációs program (DEP)](https://deploy.apple.com) vagy az [Apple School Manager](https://school.apple.com/)használatával vásárolt MacOS-eszközökhöz Intune-regisztrációt állíthat be. Ezeket a regisztrációkat nagy számú eszközre használhatja anélkül, hogy azok megérintése megtörténjen. A macOS-eszközöket közvetlenül a felhasználóknak küldheti el. Amikor a felhasználó bekapcsolja az eszközt, a Beállítási asszisztens az előre konfigurált beállítások szerint fut, és regisztrálja az eszközt az Intune felügyeleti szolgáltatásban.
 
-Regisztráció beállítása az Intune és az Apple DEP-portált használja. Regisztrációs profilok, Regisztrálás során az eszközre vonatkozó beállításokat tartalmazó hoz létre.
+A regisztráció beállításához az Intune és az Apple DEP portálok is használhatók. A regisztrálás során az eszközökre alkalmazott beállításokat tartalmazó regisztrációs profilok hozhatók létre.
 
-Sem a DEP-regisztrációt, vagy az Apple School Manager dolgozni a [készülékregisztráció-kezelő](device-enrollment-manager-enroll.md).
+A DEP-regisztráció vagy az Apple School Manager sem működik együtt az [eszköz beléptetési kezelőjével](device-enrollment-manager-enroll.md).
 
 <!--
 **Steps to enable enrollment programs from Apple**
@@ -44,21 +45,21 @@ Sem a DEP-regisztrációt, vagy az Apple School Manager dolgozni a [készülékr
 -->
 ## <a name="prerequisites"></a>Előfeltételek
 
-- Keretében vásárolt eszközök [Apple School Manager](https://school.apple.com/) vagy [az Apple Készülékregisztrációs Program](http://deploy.apple.com)
+- Az [Apple School Managerben](https://school.apple.com/) vagy az [Apple Készülékregisztrációs programban](http://deploy.apple.com) megvásárolt eszközök
 - Sorozatszámok listája vagy vásárlási megrendelési szám.
 - [MDM-szolgáltató ](../fundamentals/mdm-authority-set.md)
 - [Apple MDM Push-tanúsítvány](../enrollment/apple-mdm-push-certificate-get.md)
 
 ## <a name="get-an-apple-dep-token"></a>Apple DEP-token beszerzése
 
-A DEP vagy az Apple School Manager macOS-eszközök regisztrálása előtt kell egy Apple-től származó DEP-jogkivonatot (.p7m) fájl. Ez a token lehetővé teszi, hogy az Intune szinkronizálja az a szervezet tulajdonában lévő eszközök adatait. A token ezenkívül lehetővé teszi, hogy az Intune feltöltse a regisztrációs profilokat az Apple adatbázisába, és eszközöket rendeljen az egyes profilokhoz.
+A macOS-eszközök DEP-vagy Apple School Managerrel való regisztrálása előtt az Apple-től származó DEP-jogkivonat-(. p7m) fájlra van szükség. Ez a jogkivonat lehetővé teszi, hogy az Intune szinkronizálja a szervezete tulajdonában lévő eszközök adatait. A token ezenkívül lehetővé teszi, hogy az Intune feltöltse a regisztrációs profilokat az Apple adatbázisába, és eszközöket rendeljen az egyes profilokhoz.
 
-A token létrehozásához használhatja az Apple portálján. Az Apple portálján az eszközök hozzárendelése kezelés céljából az Intune-hoz is használhatja.
+Az Apple Portal használatával hozhat létre tokent. Az Apple Portal használatával eszközöket rendelhet hozzá az Intune-hoz a felügyelethez.
 
 > [!NOTE]
-> Ha törli a tokent a klasszikus Intune-portálon az Azure-ba való migrálás előtt, az Intune előfordulhat, hogy visszaállít egy törölt Apple-token. A tokent ismét törölheti az Azure Portalról.
+> Ha törli a tokent a klasszikus Intune-portálról az Azure-ba való áttelepítés előtt, az Intune helyreállíthatja a törölt Apple-tokent. A tokent újra törölheti a Azure Portalból.
 
-### <a name="step-1-download-the-intune-public-key-certificate-required-to-create-the-token"></a>1\.lépés Töltse le a jogkivonat létrehozásához szükséges nyilvános kulcsú Intune-tanúsítványt
+### <a name="step-1-download-the-intune-public-key-certificate-required-to-create-the-token"></a>1\. lépés Töltse le a jogkivonat létrehozásához szükséges nyilvános kulcsú Intune-tanúsítványt
 
 1. Az [Azure-beli Intune-portálon](https://aka.ms/intuneportal) válassza az **Eszközök beléptetése** > **Apple-regisztráció** > **Készülékregisztrációs programbeli token** > **Hozzáadás** elemet.
 
@@ -68,13 +69,13 @@ A token létrehozásához használhatja az Apple portálján. Az Apple portálj�
 
    ![Képernyőkép – A Készülékregisztrációs program tokenje panel az Apple tanúsítványok munkaterületen – nyilvános kulcs letöltése.](./media/device-enrollment-program-enroll-macos/add-enrollment-program-token-pane.png)
 
-3. Kattintson a **Nyilvános kulcs letöltése** elemre a titkosításikulcs-fájl (.pem) letöltéséhez és helyi mentéséhez. A PEM-fájllal megbízhatósági kapcsolati tanúsítványt kérhet az Apple portálján szolgál.
+3. Kattintson a **Nyilvános kulcs letöltése** elemre a titkosításikulcs-fájl (.pem) letöltéséhez és helyi mentéséhez. A. PEM-fájl a megbízhatósági kapcsolat tanúsítványának az Apple Portalról való igénylésére szolgál.
 
-### <a name="step-2-use-your-key-to-download-a-token-from-apple"></a>2\.lépés A kulcs használatával letöltheti a tokent az Apple-től
+### <a name="step-2-use-your-key-to-download-a-token-from-apple"></a>2\. lépés A kulcs használatával letöltheti a tokent az Apple-től
 
-1. Válasszon **token létrehozása az Apple Device Enrollment Program** vagy **hozzon létre egy tokent az Apple School Manager programon keresztül** nyissa meg a megfelelő Apple-portált, és jelentkezzen be vállalati Apple ID azonosítójával. Ezt az Apple ID használatával a jogkivonat megújításához.
-2. A DEP, az Apple portálján válassza **Ismerkedés** a **Device Enrollment Program** > **kiszolgálók kezelése** > **MDM hozzáadása Kiszolgáló**.
-3. Az Apple School kezelése, az Apple portálján válassza a **MDM kiszolgálók** > **MDM-kiszolgáló hozzáadása**.
+1. Válassza a **token létrehozása az apple Készülékregisztrációs programhoz** lehetőséget, vagy **hozzon létre egy tokent az Apple School Manager** használatával, és nyissa meg a megfelelő Apple Portalt, és jelentkezzen be a vállalati Apple ID azonosítójával. Ezt az Apple ID-t használhatja a token megújításához.
+2. A DEP esetében az Apple Portalon válassza az első **lépések** lehetőséget **Készülékregisztrációs program** > **KISZOLGÁLÓK kezelése** > **Mdm-kiszolgáló hozzáadása**elemet.
+3. Az Apple School felügyeletéhez az Apple Portalon válassza a **Mdm-kiszolgálók** > **Mdm-kiszolgáló hozzáadása**elemet.
 4. Az **MDM Server Name** (MDM-kiszolgáló neve) mezőben adja meg az MDM-kiszolgáló nevét, majd kattintson a **Next** (Tovább) gombra. A kiszolgálónév Önnek segít a mobileszköz-felügyeleti (MDM-) kiszolgáló azonosításában, nem ez a Microsoft Intune-kiszolgáló URL-címe vagy neve.
 
 5. Megjelenik a **Hozzáadás:&lt;Kiszolgálónév&gt;** párbeszédablak, és kéri **a nyilvános kulcs feltöltését**. Kattintson a **Choose File…** (Fájl kiválasztása…) elemre a .pem-fájl feltöltéséhez, majd válassza a **Next** (Tovább) lehetőséget.
@@ -98,9 +99,9 @@ Az Azure-beli Intune-portálon adja meg az Apple ID azonosítót későbbi felha
 ### <a name="step-4-upload-your-token"></a>4\. lépés. Töltse fel a tokent.
 Az **Apple-token** mezőben keresse meg tallózással a tanúsítványfájlt (.pem), és válassza a **Megnyitás**, majd a **Létrehozás** lehetőséget. A leküldéses tanúsítvány lehetővé teszi, hogy az Intune regisztrálja és felügyelje a macOS-eszközöket a szabályzatoknak a regisztrált eszközökre való leküldésével. Az Intune automatikusan szinkronizálja az Apple-lel a regisztrációs programfiók adatait.
 
-## <a name="create-an-apple-enrollment-profile"></a>Apple-regisztrációs profil létrehozása
+## <a name="create-an-apple-enrollment-profile"></a>Az Apple-regisztrációs profil létrehozása
 
-Most, hogy telepítette a jogkivonatot, létrehozhat egy regisztrációs profilt az eszközökhöz. A regisztrálás során az eszközök csoportjára alkalmazott beállításokat egy készülékregisztrációs profil határozza meg.
+Most, hogy telepítette a tokent, létrehozhat egy regisztrációs profilt az eszközökhöz. A regisztrálás során az eszközök csoportjára alkalmazott beállításokat egy készülékregisztrációs profil határozza meg.
 
 1. Az Azure-beli Intune-portálon válassza az **Eszközök beléptetése** > **Apple-regisztráció** > **Készülékregisztrációs programbeli token** elemet.
 2. Válasszon egy tokent, és válassza a **Profilok**, majd a **Profil létrehozása** lehetőséget.
@@ -118,15 +119,15 @@ Most, hogy telepítette a jogkivonatot, létrehozhat egy regisztrációs profilt
 
     - **Regisztráció felhasználói affinitás nélkül** – Ezt a lehetőséget olyan eszközökhöz válassza, amelyek nincsenek egy adott felhasználóhoz társítva. Olyan eszközökhöz használja, amelyek a helyi felhasználói adatokhoz való hozzáférés nélkül végeznek feladatokat. Egyes alkalmazások, mint például a Céges portál alkalmazás, nem működnek.
 
-6. Válassza az **Eszközkezelési beállításokat**, és válassza ki, hogy zárolt regisztrációt szeretne-e alkalmazni az ezt a profilt használó eszközökhöz. A **Zárolt regisztráció** letiltja azokat a macOS-beállításokat, amelyek segítségével eltávolítható a felügyeleti profil a **Rendszerbeállítások** menü vagy a **Terminál** használatával. Az eszköz regisztrálása után ez a beállítás nem módosítható az eszköz összes adatának törlése nélkül.
+6. Válassza az **Eszközkezelési beállításokat**, és válassza ki, hogy zárolt regisztrációt szeretne-e alkalmazni az ezt a profilt használó eszközökhöz. A **Zárolt regisztráció** letiltja azokat a macOS-beállításokat, amelyek segítségével eltávolítható a felügyeleti profil a **Rendszerbeállítások** menü vagy a **Terminál** használatával. Az eszköz regisztrálása után ez a beállítás nem módosítható az eszköz összes adatának törléséig.
 
     ![Az Eszközkezelési beállítások képernyőképe.](./media/device-enrollment-program-enroll-macos/devicemanagementsettingsblade-macos.png)
 
 7. Válassza az **OK** gombot.
 
-8. Kattintson a **Beállítási asszisztens beállításai** elemre, és konfigurálja az alábbi profilbeállításokat:  ![A beállítási asszisztens testreszabása.](./media/device-enrollment-program-enroll-macos/setupassistantcustom-macos.png)
+8. Válassza a **Beállítási asszisztens beállításai** elemet, és konfigurálja az alábbi profilbeállításokat:  ![A beállítási asszisztens testreszabása.](./media/device-enrollment-program-enroll-macos/setupassistantcustom-macos.png)
 
-    | Részlegbeállítások | Leírás |
+    | Részlegbeállítások | Description |
     |---|---|
     | <strong>Részleg neve</strong> | Akkor jelenik meg, ha a felhasználó az aktiválás során a <strong>Konfiguráció névjegye</strong> elemre koppint. |
     | <strong>Részleg telefonszáma</strong> | Akkor jelenik meg, ha a felhasználó az aktiválás során a <strong>Segítségre van szüksége?</strong> gombra kattint. |
@@ -151,7 +152,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhat egy regisztrációs profilt
     | <strong>iCloud-diagnosztika</strong> | Lehetőséget nyújt a felhasználónak arra, hogy iCloud diagnosztikai adatokat küldhessen az Apple-nek. |
     | <strong>iCloud tároló</strong> | Adjon lehetőséget a felhasználónak az iCloud-tároló használatára. |    
     | <strong>Hangjelzés</strong> | Adja meg a felhasználó számára a megjelenítési hang bekapcsolásának lehetőségét. |
-    | <strong>Megjelenés</strong> | Jelenítse meg a megjelenés képernyőt a felhasználó számára. |
+    | <strong>Megjelenését</strong> | Jelenítse meg a megjelenés képernyőt a felhasználó számára. |
     | <strong>Regisztráció</strong>| Kötelezi a felhasználót az eszköz regisztrálására. |
     | <strong>Adatvédelmi</strong>| Jelenítse meg az adatvédelmi képernyőt a felhasználó számára. |
     | <strong>Képernyő időpontja</strong>| Jelenítse meg a képernyő időképernyőjét a felhasználó számára. |
@@ -164,7 +165,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhat egy regisztrációs profilt
 
 Miután az Intune engedélyt kapott az eszközei felügyeletére, szinkronizálhatja az Intune-t az Apple-lel, hogy megtekinthesse a felügyelt eszközöket az Azure-beli Intune-portálon.
 
-1. Az Azure-beli Intune-portálon válassza az **Eszközök beléptetése** > **Apple-regisztráció** > **Készülékregisztrációs programbeli token** lehetőséget, válasszon egy tokent a listából, majd válassza az **Eszközök** > **Szinkronizálás** lehetőséget. ![Képernyőkép – A Szinkronizálás hivatkozás választása a Készülékregisztrációs programba felvett eszközök mező kijelölése után.](./media/device-enrollment-program-enroll-macos/image06.png)
+1. A Azure Portal Intune-ban válassza az eszközök **beléptetése @no__t-** 1 **Apple-regisztráció** > **beléptetési program jogkivonatok** elemet > Válassza ki a tokent a listában > **eszközök** > **szinkronizálás**lehetőséget. @no__t – a beléptetési program 8Screenshot kiválasztott és a szinkronizálási hivatkozás kiválasztása. @no__t – 9
 
    Az Apple elfogadható regisztrációs programforgalomra vonatkozó feltételeinek teljesítése céljából az Intune az alábbi korlátozásokat írja elő:
    - Teljes szinkronizálás legfeljebb hétnaponta futtatható. A teljes szinkronizálás során az Intune beolvassa az Intune-hoz csatlakoztatott Apple MDM-kiszolgálóhoz rendelt sorozatszámok frissített teljes listáját. Miután egy Készülékregisztrációs programbeli eszközt úgy törölnek az Intune portálról, hogy nem szüntetik meg az Apple MDM-kiszolgálóval való társítását a DEP-portálon, csak a teljes szinkronizálás lefuttatása után lesz újraimportálva az Intune-ba.   
@@ -187,7 +188,7 @@ Választhat egy alapértelmezett macOS- vagy iOS-profilt, amelyet a rendszer az 
 
 ## <a name="distribute-devices"></a>Eszközök terjesztése
 
-Engedélyezte az eszközfelügyeletet és az Apple és az Intune közötti szinkronizálása rendelkezik, és hozzárendelt egy profilt, hogy az eszközök regisztrálásához. Az eszközök ekkor már kioszthatók a felhasználóknak. Felhasználói affinitással rendelkező eszközök esetén minden felhasználóhoz hozzá kell rendelni egy Intune-licencet. A felhasználói affinitás nélküli eszközökhöz licenc szükséges. Regisztrációs profil csak akkor léptethető érvénybe egy aktivált eszközön, ha előtte törli az eszköz összes adatát.
+Engedélyezte a felügyeletet és a szinkronizálást az Apple és az Intune között, és hozzárendelt egy profilt, amely lehetővé teszi az eszközök regisztrálását. Az eszközök ekkor már kioszthatók a felhasználóknak. Felhasználói affinitással rendelkező eszközök esetén minden felhasználóhoz hozzá kell rendelni egy Intune-licencet. A felhasználói affinitás nélküli eszközökhöz licenc szükséges. Regisztrációs profil csak akkor léptethető érvénybe egy aktivált eszközön, ha előtte törli az eszköz összes adatát.
 
 ## <a name="renew-a-dep-token"></a>DEP-token megújítása
 
