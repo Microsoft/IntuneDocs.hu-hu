@@ -9,6 +9,7 @@ ms.date: 07/29/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: f0ba4cbb-ef0a-4335-86bf-f1d006867fa2
 searchScope:
@@ -18,12 +19,12 @@ ms.reviewer: arnab
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 16c6708fb730c459f41fec573a939bfb4fb5ddda
-ms.sourcegitcommit: 549352bdea93cc2809e3e0010bfcc10bd44dc728
+ms.openlocfilehash: 25ec84946aec9562aedce12b4199269f8de06f76
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68862144"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72500013"
 ---
 # <a name="install-missing-certificate-required-by-your-organization"></a>A szervezet által igényelt hiányzó tanúsítvány telepítése  
 
@@ -42,7 +43,7 @@ Végezze el a böngészőalapú hozzáférés engedélyezésének lépéseit. Ez
 A böngésző elérésének engedélyezéséhez hajtsa végre a következő lépéseket. A hozzáférés engedélyezése után Céges portál telepíti a megfelelő tanúsítványt, és folytatja a regisztrálást.    
 
 1. A Céges portál alkalmazásban lépjen a jobb oldali sarokba, és válassza ki a menüt.  
-2. Válassza ki **beállítások**.  
+2. Válassza a **Beállítások** lehetőséget.  
 3. A **böngésző-hozzáférés engedélyezése lehetőség** mellett válassza az **Engedélyezés**lehetőséget.  
 4. Az eszköz rendszergazdája képernyőn válassza az **aktiválás**lehetőséget. 
 

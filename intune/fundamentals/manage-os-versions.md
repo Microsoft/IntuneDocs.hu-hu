@@ -9,17 +9,17 @@ manager: dougeby
 ms.date: 01/02/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
-ms.technology: ''
 ms.assetid: 361ef17b-1ee0-4879-b7b1-d678b0787f5a
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3be329e5b84f307c2683bc3799ff9cd6deafe729
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 681b4f690d03cd21c5a430e02cb0f3584d2e680e
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731523"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72510124"
 ---
 # <a name="manage-operating-system-versions-with-intune"></a>Operációsrendszer-verziók kezelése az Intune-nal
 A korszerű mobil- és asztali platformokon gyors ütemben követik egymást az operációs rendszerek főbb részeit érintő frissítések, javítások és új kiadások. A Windows platform frissítéseinek és javításainak bevezetése teljes mértékben kezelhető központilag. Más platformok, például az iOS és a Android esetében azonban a végfelhasználóknak is részt kell vennie a folyamatban.  A Microsoft Intune-nal könnyedén kialakíthatja a különböző platformokon futó operációsrendszer-verziók felügyeleti rendszerét.
@@ -66,10 +66,10 @@ Az Intune alkalmazásvédelmi szabályzataival és mobilalkalmazás-kezelési (M
  
 Két lehetőség van: 
 - **Figyelmeztetés** – figyelmezteti a végfelhasználót, hogy frissíteniük kell, ha alkalmazás-védelmi szabályzattal vagy MAM hozzáférési beállításokkal nyitnak meg egy alkalmazást egy olyan eszközön, amelyen a megadott verzió alatt az operációs rendszer verziója található. Az alkalmazás adatait és a szervezeti adatokat ettől függetlenül el fogja tudni érni.
-  ![Az Android Update figyelmeztetési párbeszédpanel képe](./media/manage-os-versions/os-version-update-warning.png) 
+  @no__t – az Android Update figyelmeztetési párbeszédpanelének 0Image @ no__t-1 
 
 - A **Block** -Block azt tájékoztatja a végfelhasználót, hogy frissítenie kell, amikor alkalmazás-védelmi szabályzattal vagy MAM hozzáférési beállításokkal nyit meg egy alkalmazást egy olyan eszközön, amelyen a megadott verzió alatt az operációs rendszer verziója található. Az alkalmazásadatokat és a szervezeti adatokat nem fogja tudni elérni.
-  ![Az alkalmazás-hozzáférés letiltott párbeszédpanelének képe](./media/manage-os-versions/os-version-access-blocked.png)
+  @no__t – 0Image blokkolt párbeszédpanel @ no__t-1
 
 ### <a name="in-practice"></a>A gyakorlatban
 Az alkalmazásvédelmi szabályzatokat legtöbbször akkor használják a különböző szervezetek, ha az alkalmazások nyitottak, vagy ha szeretnék elérni, hogy a végfelhasználók mindig az alkalmazások aktuális verzióját használják. Gyakran alkalmazott konfiguráció például, hogy a végfelhasználókat figyelmezteti a rendszer, ha az aktuálisnál eggyel korábbi verziót használnak, és letiltja, ha kettővel korábbi verziót.
@@ -78,13 +78,13 @@ Ha a fentiekkel kapcsolatban további információkra van szüksége, tekintse �
 
 ## <a name="managing-a-new-operating-system-version-rollout"></a>Új operációsrendszer-verzió bevezetésének kezelése
 Az ebben a cikkben bemutatott Intune-funkciók segítséget nyújtanak ahhoz, hogy a szervezet áttérjen az operációs rendszer újabb verziójának használatára megadott időkereten belül. Az alábbi lépések a v1 operációs rendszerről a v2 operációs rendszerre 7 nap alatt történő áttérést modellezik.
-- **1. lépés**: Az eszköz regisztrálásához használja a regisztrációs korlátozásokat az operációs rendszer v2 minimális verziójának megköveteléséhez. Így gondoskodhat arról, hogy az újonnan regisztrált végfelhasználói eszközök megfeleljenek a szabályozásoknak.
-- **2a. lépés**: Az Intune app Protection-szabályzatokkal figyelmeztetheti a felhasználókat, amikor az alkalmazás megnyit vagy folytatja az operációs rendszer v2-es verzióját.
+- **1. lépés**: A regisztrációs korlátozások között adja meg az operációs rendszer v2 verzióját a regisztrációhoz szükséges minimális verzióként. Így gondoskodhat arról, hogy az újonnan regisztrált végfelhasználói eszközök megfeleljenek a szabályozásoknak.
+- **2/a. lépés**: Az Intune alkalmazásvédelmi szabályzatait használva állítsa be, hogy az alkalmazás megnyitásakor illetve újraindításakor a rendszer figyelmeztesse a végfelhasználókat arra, hogy az operációs rendszer v2-es verzióját kell használniuk.
 - **2/b. lépés**. Az eszközmegfelelőségi szabályzatoknál adja meg, hogy az eszközök megfelelőségéhez legalább az operációs rendszer v2-es verziója szükséges. A **Meg nem felelés esetén végrehajtandó műveletek** lehetőségnél adjon meg 7 napos türelmi időszakot, és határozza meg olyan e-mail-értesítés küldését, amely tartalmazza a határidőt és a követelményeket.
   - Ezeknek a szabályzatoknak a megadása esetén a rendszer e-mailben, az Intune céges portálon keresztül, alkalmazásvédelmi szabályzattal védett alkalmazás esetén pedig az alkalmazás megnyitásakor tájékoztatja a végfelhasználókat arról, hogy frissíteniük kell az eszköz operációs rendszerét.
   - A nem megfelelő felhasználók azonosításához kérheti egy megfelelőségi jelentés készítését a rendszertől. 
-- **3a. lépés**: Az Intune app Protection-szabályzatok használatával letilthatja a felhasználókat, amikor egy alkalmazás megnyílik vagy folytatja, ha az eszköz nem fut az operációs rendszer v2-es verziójával.
-- **3b. lépés**: Az eszközmegfelelőségi szabályzatoknál adja meg, hogy az eszközök megfelelőségéhez legalább az operációs rendszer v2-es verziója szükséges.
+- **3/a. lépés**: Intune alkalmazásvédelmi szabályzatait használva határozza meg a felhasználók letiltását arra az esetre, ha olyan eszközzel próbálnak megnyitni vagy újraindítani egy alkalmazást, amelyen nem az operációs rendszer v2 verziója fut.
+- **3/b. lépés**: Eszközmegfelelőségi szabályzatokkal adja meg, hogy az eszközök megfelelőségéhez legalább az operációs rendszer v2-es verziója szükséges.
   - Ezeknek a szabályzatoknak a meghatározása esetén az eszközöket frissíteni kell ahhoz, hogy továbbra is el lehessen róluk érni a szervezeti adatokat. A védett szolgáltatásokat az eszköz feltételes hozzáférése letiltja. Az alkalmazásvédelmi szabályzatokkal védett alkalmazások használatát a rendszer megnyitásukkor vagy akkor tiltja le, amikor azok megpróbálják elérni a szervezeti adatokat.
 
 ## <a name="next-steps"></a>További lépések

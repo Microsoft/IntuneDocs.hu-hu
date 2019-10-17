@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 08/22/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: apps
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: E61C1618-79D0-41A1-B61F-4123FB6672FC
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7716eeb496567eb4e4a35a703b66597ed47e87a6
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 3a31a4777537db6f656dbf9eaf0b30a6e95412a8
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731467"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72499767"
 ---
 # <a name="add-app-configuration-policies-for-managed-apps-without-device-enrollment"></a>Alkalmazáskonfigurációs szabályzatok hozzáadása felügyelt alkalmazásokhoz eszközbeléptetés nélkül
 
@@ -34,10 +35,10 @@ Az alkalmazáskonfigurációs szabályzatokat nem regisztrált eszközökön is 
 > Alkalmazás-konfigurációs szabályzatok fogadásához az alkalmazásoknak Intune App Protection szabályzattal kell rendelkezniük. További információ az Intune App Protection szabályzatainak létrehozásáról: [Mik azok az alkalmazásvédelmi szabályzatok?](app-protection-policy.md)
 
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Válassza az **Ügyfélalkalmazások** tevékenységprofilt.
+3. Válassza az **Ügyfélalkalmazások** területet.
 4. Válassza az **Alkalmazáskonfigurációs szabályzatok** lehetőséget a **Felügyelet** csoportban, majd a **Hozzáadás** lehetőséget.
 5. Adja meg a következő adatokat:
-    - **Name**  
+    - **Név**  
       Az Azure Portalon megjelenő profilnév.
     - **Leírás**  
       Az Azure Portalon megjelenő profilleírás.

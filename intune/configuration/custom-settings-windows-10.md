@@ -8,18 +8,19 @@ manager: dougeby
 ms.date: 10/24/2018
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: medium
 ms.technology: ''
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 51ee389351dd0ccccf69f01e932f7374ca38b03b
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: e8f896f514223cdb5e5faae5f781421d37fffd01
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730879"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72495360"
 ---
 # <a name="use-custom-settings-for-windows-10-devices-in-intune"></a>Egyéni beállítások használata Windows 10 rendszerű eszközökhöz az Intune-ban
 
@@ -43,17 +44,17 @@ Ez a cikk:
 2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
 3. Adja meg a következő beállításokat:
 
-    - **Név**: Adja meg a profil nevét, például `windows 10 custom profile`.
-    - **Description** (Leírás): Adja meg a profil leírását.
-    - **Platform**: Válassza **a Windows 10 és újabb**lehetőséget.
-    - **Profil típusa**: Válassza az **Egyéni**lehetőséget.
+    - **Név**: Adja meg a profil nevét, például: `windows 10 custom profile`.
+    - **Leírás:** Itt adhatja meg a profil leírását.
+    - **Platform**: Válassza a **Windows 10-es vagy újabb verzió** lehetőséget.
+    - **Profil típusa**: Válassza az **Egyéni** lehetőséget.
 
 4. Az **Egyéni OMA-URI-beállítások** menüben válassza a **Hozzáadás** lehetőséget. Adja meg a következő beállításokat:
 
-    - **Név**: Adjon meg egy egyedi nevet az OMA-URI beállítás számára, amellyel az egyszerűen azonosítható a beállítások listájában.
-    - **Description** (Leírás): Adjon meg egy leírást, amely áttekintést nyújt a beállításról, valamint minden egyéb fontos adatot.
-    - **OMA-URI** (megkülönbözteti a kis-és nagybetűket): Adja meg a beállításként használni kívánt OMA-URI-t.
-    - **Adattípus**: Válassza ki az OMA-URI beállításhoz használni kívánt adattípust. A választható lehetőségek:
+    - **Név** – Adjon meg egy egyedi nevet az OMA-URI-beállítás számára, amellyel az egyszerűen azonosítható a beállítások listájában.
+    - **Leírás**: Adjon meg egy olyan leírást, amely áttekintést ad a beállításról és egyéb fontos részleteket tartalmaz.
+    - **OMA-URI** (megkülönbözteti a kis- és nagybetűket) – Adja meg azt az OMA-URI azonosítót, amelyet beállításként kíván használni.
+    - **Adattípus**: Adja meg azt az adattípust, amelyet az OMA-URI beállításhoz szeretne használni. A választható lehetőségek:
 
         - Sztring
         - Sztring (XML-fájl)
@@ -63,11 +64,11 @@ Ez a cikk:
         - Logikai
         - Base64 (fájl)
 
-    - **Érték**: Adja meg azt az adatértéket, amelyet hozzá szeretne rendelni a megadott OMA-URI azonosítóhoz. Az érték a választott adattípustól függ. A **Dátum és idő** típus esetén például a dátumválasztóból választhat értéket.
+    - **Érték** – Adja meg a megadott OMA-URI azonosítóhoz társítandó értéket. Az érték a választott adattípustól függ. A **Dátum és idő** típus esetén például a dátumválasztóból választhat értéket.
 
     Néhány beállítás megadása után válassza az **Exportálás** lehetőséget. Az **Exportálás** a hozzáadott értékek listáját hozza létre egy vesszővel tagolt (.csv) fájlban.
 
-5. Válassza ki **OK** a módosítások mentéséhez. Szükség szerint adjon hozzá további beállításokat.
+5. A módosítások mentéséhez válassza az **OK** gombot. Szükség szerint adjon hozzá további beállításokat.
 6. Ha elkészült, az Intune-profil létrehozásához kattintson az **OK** > **Létrehozás** lehetőségre. Ha a profil elkészült, megjelenik az **Eszközkonfiguráció – Profilok** listában.
 
 ## <a name="example"></a>Példa

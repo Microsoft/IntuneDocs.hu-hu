@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 09/04/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: d98aceff-eb35-4e3e-8e40-5f300e7335cc
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0858eefede678615e5b856fa0e40e48a791e4cce
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: d445263655d3209b900763bf6bd5b62376e0ba85
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730799"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72494731"
 ---
 # <a name="create-a-device-profile-in-microsoft-intune"></a>Eszközprofil létrehozása a Microsoft Intune-ban
 
@@ -42,27 +43,27 @@ Ez a cikk:
 
 2. Válassza az **Eszközök konfigurálása** lehetőséget. A következő lehetőségek közül választhat:
 
-    - **Áttekintés**: Felsorolja a profilok állapotát, és további részleteket biztosít a felhasználókhoz és eszközökhöz rendelt profilokhoz.
-    - **Kezelés**: Hozzon létre eszközöket, töltsön fel egyéni [PowerShell-parancsfájlokat](../apps/intune-management-extension.md) a profilban való futtatáshoz, és adja hozzá az adatterveket az eszközökhöz a [eSIM](esim-device-configuration.md)használatával.
-    - **Figyelő**: Tekintse meg a sikeres vagy sikertelen profilok állapotát, és tekintse meg a profilokban lévő naplókat is.
-    - **Telepítés**: Vegyen fel egy SCEP-vagy PFX-hitelesítésszolgáltatót, vagy engedélyezze a [távközlési költségek kezelését](telecom-expenses-monitor.md) a profilban.
+    - **Áttekintés**: felsorolja a profilok állapotát, és további részleteket biztosít a felhasználókhoz és eszközökhöz rendelt profilokhoz.
+    - **Kezelés**: eszközbeállítások létrehozása, egyéni PowerShell- [szkriptek](../apps/intune-management-extension.md) feltöltése a profilba való futtatáshoz, valamint adattervek hozzáadása az eszközökhöz a [eSIM](esim-device-configuration.md)használatával.
+    - **Figyelő**: Ellenőrizze a profil állapotát a sikerhez vagy a meghibásodáshoz, és tekintse meg a profilok naplóit is.
+    - **Telepítő**: adjon hozzá egy SCEP-vagy pfx-hitelesítésszolgáltatót, vagy engedélyezze a [távközlési költségek kezelését](telecom-expenses-monitor.md) a profilban.
 
 3. Válassza a **profilok** > **profil létrehozása**lehetőséget. Adja meg a következő tulajdonságokat:
 
-   - **Név**: Adjon meg egy leíró nevet a profilhoz. Nevezze el a profilokat, hogy később könnyen azonosítható legyen. Egy jó profil neve például a **WP e-mail-profilja a teljes vállalat számára**.
-   - **Description** (Leírás): Adja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
-   - **Platform**: Válassza ki az eszközök platformját. A választható lehetőségek:  
+   - **Név**: adjon meg egy leíró nevet a profilhoz. Nevezze el a profilokat, hogy később könnyen azonosítható legyen. Egy jó profil neve például a **WP e-mail-profilja a teljes vállalat számára**.
+   - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
+   - **Platform**: válassza ki az eszközök platformját. A választható lehetőségek:  
 
-       - **Android**
+       - **Android--**
        - **Vállalati Android**
        - **iOS/iPadOS**
        - **macOS**
        - **Windows Phone 8.1**
-       - **Windows 8.1 és újabb**
+       - **Windows 8.1 és újabb verziók**
        - **Windows 10 és újabb**
 
-   - **Profil típusa**: Válassza ki a létrehozni kívánt beállítások típusát. A megjelenő lista a választott **platformtól** függ.
-   - **Beállítások**: Az alábbi cikkek ismertetik az egyes profiltípusok beállításait:
+   - **Profil típusa**: válassza ki a létrehozni kívánt beállítások típusát. A megjelenő lista a választott **platformtól** függ.
+   - **Beállítások**: az alábbi cikkek az egyes profilok típusának beállításait írják le:
 
        - [Felügyeleti sablonok](administrative-templates-windows.md)
        - [Egyéni](../custom-settings-configure.md)
@@ -88,7 +89,7 @@ Ez a cikk:
 
      ![IOS-profil létrehozása az Intune-ban](./media/device-profile-create/create-device-profile.png)
 
-4. Ha elkészült, kattintson **az OK** > **Létrehozás** gombra a módosítások mentéséhez. Ekkor létrejön a profil, és megjelenik a listában.
+4. Ha elkészült, válassza **az OK** > **Létrehozás** lehetőséget a módosítások mentéséhez. Ekkor létrejön a profil, és megjelenik a listában.
 
 ## <a name="scope-tags"></a>Hatókörcímkék
 
@@ -100,11 +101,11 @@ További információ a hatóköri címkékről és a műveletekről: [a RBAC é
 
 1. Válassza a **hatókör (címkék)** lehetőséget.
 2. Új hatóköri címke létrehozásához válassza a **Hozzáadás** lehetőséget. Vagy válasszon ki egy meglévő hatókör címkét a listából.
-3. Válassza ki **OK** a módosítások mentéséhez.
+3. A módosítások mentéséhez válassza az **OK** gombot.
 
 ## <a name="applicability-rules"></a>Alkalmazhatósági szabályok
 
-Érintett kiadások:
+A következőkre vonatkozik:
 
 - Windows 10 és újabb
 
@@ -117,7 +118,7 @@ A feladat elvégzéséhez hozzon létre egy **alkalmazhatósági szabályt**. Ez
 
 A forgatókönyvek megközelítéséhez a következőket kell tennie:
 
-- Hozzon létre egy eszközök csoportot, amely tartalmazza az összes eszközt a Harmonikák Főiskoláján. A profilban adjon hozzá egy alkalmazhatósági szabályt, amely akkor érvényes, ha az operációs rendszer `16299` minimális verziója és a maximális `17134`verziószáma. Rendelje hozzá ezt a profilt a fújtató College-eszközök csoportjához.
+- Hozzon létre egy eszközök csoportot, amely tartalmazza az összes eszközt a Harmonikák Főiskoláján. A profilban adjon hozzá egy alkalmazhatósági szabályt, amely akkor érvényes, ha az operációs rendszer minimális verziója `16299`, és a maximális verziószáma `17134`. Rendelje hozzá ezt a profilt a fújtató College-eszközök csoportjához.
 
   A hozzárendelés után a profil a megadott minimális és maximális verziók közötti eszközökre vonatkozik. Azon eszközök esetében, amelyek nem az Ön által megadott minimális és maximális verziók közé tartoztak, az állapotuk **nem alkalmazhatóként**jelenik meg.
 
@@ -141,15 +142,15 @@ Amikor hozzárendeli a profilt a csoportokhoz, az alkalmazhatósági szabályok 
 
 2. A **szabály**mezőben válassza ki, hogy szeretne-e felhasználókat vagy csoportokat bevonni vagy kizárni. A választható lehetőségek:
 
-    - **Profil kiosztása, ha**: Olyan felhasználókat vagy csoportokat tartalmaz, amelyek megfelelnek a megadott feltételeknek.
-    - **Ne rendeljen profilt, ha**: Azokat a felhasználókat vagy csoportokat zárja ki, amelyek megfelelnek a megadott feltételeknek.
+    - **Rendeljen hozzá profilt, ha**: olyan felhasználókat vagy csoportokat tartalmaz, amelyek megfelelnek a megadott feltételeknek.
+    - **Ne rendeljen profilt, ha**: kizárja azokat a felhasználókat vagy csoportokat, amelyek megfelelnek a megadott feltételeknek.
 
 3. A **tulajdonság**mezőben válassza ki a szűrőt. A választható lehetőségek: 
 
-    - **Operációs rendszer verziója**: A listában tekintse meg azokat a Windows 10-es kiadásokat, amelyeket bele szeretne foglalni (vagy ki kell zárni) a szabályba.
-    - **Operációs rendszer verziója**: Adja meg a **minimális** és a **maximális** Windows 10-es verziószámot, amelyet fel szeretne venni (vagy ki kell zárni) a szabályba. Mindkét értéket kötelező megadni.
+    - **Operációs rendszer kiadása**: a listában tekintse meg azokat a Windows 10-es kiadásokat, amelyeket bele szeretne foglalni (vagy ki kell zárni) a szabályba.
+    - **Operációs rendszer verziója**: adja meg a szabályban a **minimális** és a **maximális** Windows 10-es verziószámot, amelyet fel szeretne venni (vagy kizár). Mindkét értéket kötelező megadni.
 
-      Megadhatja például `10.0.16299.0` a (RS3 vagy 1709) értéket a minimális verzióhoz `10.0.17134.0` , és (RS4 vagy 1803) a maximális verzióhoz. Vagy részletesebben `10.0.16299.001` is megadhatja a minimális verziót és `10.0.17134.319` a maximális verziót.
+      Megadhatja például a `10.0.16299.0` (RS3 vagy 1709) értéket a minimális verzióhoz, és a `10.0.17134.0` (RS4 vagy 1803) értéket a maximális verzióhoz. Vagy részletesebben is megadhatja, és a maximális verzióhoz `10.0.16299.001` értéket adhat meg a minimális és a `10.0.17134.319` értékhez.
 
 4. A módosítások mentéséhez válassza a **Hozzáadás** lehetőséget.
 

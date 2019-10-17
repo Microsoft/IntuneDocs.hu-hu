@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 08/01/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 7fc95d17-098e-4da5-8a09-a96476569dd9
@@ -17,18 +18,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8c4d40d3f15fe23511f3f15f7c13181a0fa72f6b
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 26165681195a47da0fcfeb86e4cfdbe2da942ec9
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731835"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72510314"
 ---
 # <a name="how-to-get-support-for-microsoft-intune"></a>Hogyan kérhet támogatást az Intune-hoz  
 
 [!INCLUDE [azure_portal](../../intune-classic/includes/note-for-both-portals.md)]  
   
-A Microsoft Intune-hoz a Microsoft globális műszaki, értékesítés előtti, számlázási és előfizetési támogatást nyújt. A támogatás interneten és telefonon is elérhető mind a fizetős, mind a próbaverziós előfizetésekhez. Az online műszaki támogatás angolul és japánul érhető el. Telefonos és online számlázási támogatás más nyelveken érhetők el.
+A Microsoft Intune-hoz a Microsoft globális műszaki, értékesítés előtti, számlázási és előfizetési támogatást nyújt. A támogatás interneten és telefonon is elérhető mind a fizetős, mind a próbaverziós előfizetésekhez. Az online műszaki támogatás angolul és japánul érhető el. Telefonos támogatás és online számlázási támogatás más nyelveken is elérhető.
 
 Intune-rendszergazdaként használhatja a **Súgó és támogatás** lehetőséget az Intune-hoz készült online támogatási jegy a Azure Portalból való beküldéséhez. A támogatási incidensek létrehozásához és kezeléséhez a fióknak rendelkeznie kell egy Azure Active Directory (Azure AD) szerepkörrel, amely magában foglalja a **Microsoft. Office 365. supportTickets/tickets/Manage** *műveletet* . További információ a támogatási jegy létrehozásához szükséges Azure AD-szerepkörökről és engedélyekről: [rendszergazdai szerepkörök a Azure Active Directoryban](https://docs.microsoft.com/azure/active-directory/active-directory-assign-admin-roles-azure-portal).  
 
@@ -86,11 +87,11 @@ A Súgó és támogatás eléréséhez használja a következő lehetőségeket:
 
 
 A *Súgó és támogatás*megnyitásakor a portálon egy olyan nézet jelenik meg, amely attól függ, hogy aktív támogatási incidensekkel rendelkezik-e, és ha van Premier szintű támogatás, néhány további elem és lehetőség is van:
-- **Nincsenek aktív támogatási incidensek**: Látni fogja a **segítségre van szüksége?** lapot, ahogy az a következő képen látható az Eszközkezelő irányítópultján.  
-- **Aktív támogatási incidensek**: Megjelenik a [támogatási jegyek](#view-support-cases) oldal, amely az aktív incidensek listáját jeleníti meg.  
-- **Premier szintű támogatási szerződés**: A felhasználói élmény ugyanaz, mint az első két lehetőség, de az alábbi további elemek is megjelennek a segítségre van szüksége? oldalala 
+- **Nincsenek aktív támogatási incidensek**: a **segítségre van szüksége?** oldalon láthatja, ahogy az Eszközkezelő irányítópultján az alábbi képen is látható.  
+- **Aktív támogatási incidensek**: a [támogatási jegyek](#view-support-cases) oldal jelenik meg, amely az aktív incidensek listáját jeleníti meg.  
+- **Premier szintű támogatási szerződés**: a felhasználói élmény ugyanaz, mint az első két lehetőség, de az alábbi további elemek is megjelennek a segítségre van szüksége? oldalala 
   - Ha a lap címe **segítségre van szüksége?** , megjelenik a Premier szintű támogatás banner:  
-    ![Premier támogatás banner](./media/get-support/premier-banner.png)
+    ![Premier-támogatás banner @ no__t-1
   - A lap **támogatásának beolvasása** részén megadhatja a kezdeti **súlyossági** szintet, ha telefonon keresztül hoz létre szolgáltatási kérést.
 
 
@@ -119,7 +120,7 @@ A következőkben példákat láthat a beküldhető kérdésekre:
 Miután kiválasztotta a felkínált lehetőségek egyikét, vagy elküldte a saját kérését, a **Megoldások megtekintése** részben környezetfüggő találatok jelennek meg. Ezek a találatok tartalmazzák az Intune-hoz kapcsolódó önsegítő útmutatást, és az internetes keresés után megjelenített, a lekérdezési kritériumokon alapuló további találatokat is.  
 ![Találatok megtekintése](./media/get-support/view-results.png)
 
-### <a name="get-support"></a>Támogatás kérése 
+### <a name="get-support"></a>Támogatás igénylése 
 
 Ha az önsegítő vagy webalapú útmutató nem segít a probléma megoldásában, a konzol használatával nyisson meg egy e-mail-vagy telefonos támogatási problémát.  
 A **Segítségre szorul?** oldalon válassza ki a használni kívánt lehetőséget.  
@@ -191,20 +192,20 @@ Ha az Intune-előfizetést a kormányzati számítási felhő (GCC) üzemelteti,
    ![Az új támogatási kérelem hivatkozásának képe a Súgó és támogatás oldalon](./media/get-support/azure-support-ticket-link.png)
 
 3. Az **alapismeretek** lapon a legtöbb Intune technikai támogatási probléma megoldásához válassza a következő lehetőségeket:
-   - **Probléma típusa**: **Technikai**
+   - **Problématípus**: **Technikai**
    - **Előfizetés**: <*az előfizetését*>
    - **Szolgáltatás**: **Microsoft Intune**
-   - **Probléma típusa**: Válassza ki a probléma típusát a legördülő menüből.
-   - **Probléma altípusa**: Válassza ki a probléma altípust a legördülő menüből.
-   - **Tárgy**: Röviden ismertesse azt a problémát, amelyet segíteni szeretne.
+   - **Probléma típusa**: válassza ki a probléma típusát a legördülő menüből.
+   - **Probléma altípusa**: válassza ki a probléma altípust a legördülő menüből.
+   - **Tárgy**: röviden írja le azt a problémát, amelyet segíteni szeretne.
 
    ![A Súgó + támogatás – új támogatási kérelem oldalon található alapismeretek lap képe](./media/get-support/help-new-support-case-basics.png)
 
-   Válassza **a Next (tovább) lehetőséget: A** folytatáshoz szükséges megoldások.
-4. A **megoldások** lapon tekintse át a javasolt lépéseket, amelyek segíthetnek a probléma megoldásában a jegy bejelentése nélkül. Ha továbbra is szeretné létrehozni a támogatási kérést a lépések megvizsgálása után **, kattintson a Tovább gombra: Részletek**.
+   Válassza a **Tovább: megoldások** a folytatáshoz lehetőséget.
+4. A **megoldások** lapon tekintse át a javasolt lépéseket, amelyek segíthetnek a probléma megoldásában a jegy bejelentése nélkül. Ha a lépések végrehajtása után is létre szeretne hozni egy támogatási kérést, kattintson a **Tovább gombra: részletek**.
 
    ![A Súgó + támogatás – új támogatási kérelem lap megoldások lapjának képe](./media/get-support/help-new-support-case-solutions.png)
-5. A **részletek** lapon adja meg a probléma részleteit, a támogatási módszert, a kapcsolattartási adatokat, majd kattintson a Tovább gombra **: Felülvizsgálat + létrehozás**.
+5. A **részletek** lapon adja meg a probléma részleteit, a támogatási módszert, a kapcsolattartási adatokat, majd kattintson a Tovább gombra **: felülvizsgálat + létrehozás**.
 
    ![A Súgó + támogatás – új támogatási kérelem lap részletek lapjának képe](./media/get-support/help-new-support-case-details.png)
 6. Tekintse át az adatokat, ellenőrizze, hogy helyes-e, majd válassza a **Létrehozás** lehetőséget a támogatási kérelem elküldéséhez.
@@ -225,7 +226,7 @@ A támogatási kéréseket a Azure Portalon belül tekintheti meg. A korlátozot
    > [!IMPORTANT]  
    > A kormányzati számítási felhő ügyfelei csak a 15 számjegyű támogatási eset számát és az incidens állapotát tekinthetik meg. A rendszer e-mailben küldi el a munkahelyi vagy riasztási kommunikációt és nyomon követést, valamint az Intune-konzolon megnyitott támogatási eset tükrözésével létrehozott 8 számjegyű támogatási eset számát.   
 
-## <a name="additional-resources"></a>További források  
+## <a name="additional-resources"></a>További háttéranyagok  
 
 - [Számlázási és előfizetés-kezelési támogatás](https://support.office.com/article/Contact-Office-365-for-business-support-Admin-Help-32a17ca7-6fa0-4870-8a8d-e25ba4ccfd4b)
 - [Mennyiségi licencelés](https://go.microsoft.com/fwlink/p/?LinkID=282015)

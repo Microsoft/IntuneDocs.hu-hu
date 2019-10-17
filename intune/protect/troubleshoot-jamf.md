@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 10/02/2019
 ms.topic: troubleshooting
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: ''
@@ -16,12 +17,12 @@ ms.reviewer: ''
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e92e3442e1347cb1a2cd1c737078912b74f075c9
-ms.sourcegitcommit: f04e21ec459998922ba9c7091ab5f8efafd8a01c
+ms.openlocfilehash: 44733eb369e520d2d5f0ff548d4f1921abcb8758
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71817556"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72503578"
 ---
 # <a name="troubleshoot-integration-of-jamf-pro-with-microsoft-intune"></a>A JAMF Pro és a Microsoft Intune integrációjának megoldása
 
@@ -65,7 +66,7 @@ Az alábbi információk segítséget nyújtanak az eszközök gyakori problém�
 
 ### <a name="devices-are-marked-as-unresponsive-in-jamf-pro"></a>Az eszközök nem válaszoló vannak megjelölve a JAMF Pro-ban  
 
-**OK**: A JAMF Pro által nem *válaszoló* eszközök gyakori okai a következők:
+**OK**: a JAMF Pro nem *válaszoló* eszközeinek gyakori okai a következők:
 
 - Az eszköz nem tud bejelentkezni a JAMF Pro-val.  
   A JAMF Pro 15 percenként várja az eszközök beadását. Az eszközök nem válaszolnak a JAMF, amikor egy 24 órás időszakban nem tudnak bejelentkezni.  
@@ -92,7 +93,7 @@ Például egy, az alábbi példához hasonló szöveget tartalmazó üzenet jele
   To allow this, enter the “login” keychain password 
 ```
 
-**OK**: Ezeket az utasításokat a JAMF Pro hozza létre minden olyan alkalmazáshoz, amely Azure AD-regisztrációt igényel. 
+**OK**: ezeket az utasításokat a JAMF Pro hozza létre minden olyan alkalmazáshoz, amelyhez Azure ad-regisztráció szükséges. 
 
 **Megoldás**@no__t – 1  
 Ha a rendszer kéri, a felhasználónak meg kell adnia az eszköz jelszavát az Azure AD-be való bejelentkezéshez. A lehetőségek a következők:
@@ -106,7 +107,7 @@ Ha a *mindig engedélyezi* , hogy egy alkalmazás csak a jövőbeli bejelentkez�
 
 Számos gyakori oka van annak, hogy a Mac-eszközök nem regisztrálhatnak.  
 
-#### <a name="cause-1"></a>OK: 1  
+#### <a name="cause-1"></a>1\. ok  
 
 **Az Azure-beli JAMF Pro Enterprise-alkalmazás nem rendelkezik megfelelő engedéllyel, vagy egynél több engedéllyel rendelkezik**  
 
@@ -115,7 +116,7 @@ Számos gyakori oka van annak, hogy a Mac-eszközök nem regisztrálhatnak.
   **Felbontás**  
   Tekintse át és ha szükséges, javítsa ki az Azure AD-ben létrehozott JAMF alkalmazás engedélyeit. Tekintse meg az [Azure ad-beli JAMF alkalmazás létrehozásának](conditional-access-integrate-jamf.md#create-an-application-in-azure-active-directory)eljárását. 
 
-#### <a name="cause-2"></a>OK 2  
+#### <a name="cause-2"></a>2\. ok  
 
 **Az **JAMF natív MacOS-összekötő** alkalmazás nem lett létrehozva az Azure ad-bérlőben, vagy az összekötő beleegyezett abba, hogy olyan fiók írta alá, amely nem rendelkezik globális rendszergazdai jogokkal**  
 
@@ -134,8 +135,8 @@ Számos gyakori oka van annak, hogy a Mac-eszközök nem regisztrálhatnak.
   ```  
 
   **Felbontás**
-  - JAMF-licenc: Kérje a JAMF segítségét a JAMF új licencének beszerzéséhez.  
-  - Intune-licenc: Rendelje hozzá a felhasználót egy érvényes licenchez, vagy forduljon a Microsofthoz vagy a partnerhez az aktuális licenc beszerzésével kapcsolatos információkért.
+  - JAMF-licenc: lépjen kapcsolatba a JAMF, és kérjen segítséget a JAMF új licencének beszerzéséhez.  
+  - Intune-licenc: rendelje hozzá a felhasználóhoz egy érvényes licencet, vagy forduljon a Microsofthoz vagy a partnerhez az aktuális licenc beszerzésével kapcsolatos információkért.
 
 #### <a name="cause-4"></a>4\. ok  
 
@@ -221,12 +222,12 @@ Ha egy eszköz regisztrációja megszűnik a JAMF-ból, de nem távolítja el me
    > A nyilvános és a titkos kulcs eltávolítása megszakítja az eszközök regisztrálását.
 
 8. Törölje a következő bejegyzések bármelyikét:  
-   - Típusú Alkalmazás jelszava; Fiók: com. microsoft. workplacejoin. ujjlenyomat
-   - Típusú Alkalmazás jelszava; Fiók: com. microsoft. workplacejoin. registeredUserPrincipalName
-   - Típusú Tanúsítvány Kiállító: MS-Organization-Access
-   - Típusú Identitás-beállítások; Név (ADFS STS URL-címe, ha van): https://adfs\<DNSName>.com/adfs/ls
-   - Típusú Identitás-beállítások; Név: @no__t – 0
-   - Típusú Identitás-beállítások; Név: @no__t – 0  
+   - Fajta: alkalmazás jelszava; Fiók: com. microsoft. workplacejoin. ujjlenyomat
+   - Fajta: alkalmazás jelszava; Fiók: com. microsoft. workplacejoin. registeredUserPrincipalName
+   - Típus: tanúsítvány; Kiállító: MS-Organization-Access
+   - Típus: Identity preferencia; Név (ADFS STS URL-címe, ha van): https://adfs\<DNSName>.com/adfs/ls
+   - Típus: Identity preferencia; Név: @no__t – 0
+   - Típus: Identity preferencia; Név: @no__t – 0  
 9. Indítsa újra a Mac-eszközt.
 10. Céges portál eltávolítása az eszközről.
 11. Nyissa meg a portal.manage.microsoft.com, és törölje a Mac-eszköz összes példányát. Várjon legalább 30 percet, mielőtt a következő lépéshez ugorjon.
@@ -254,7 +255,7 @@ Ez a kérelem hasonló a Mac-eszközökre vonatkozó kérelemhez, amely a jelen 
  
 ### <a name="mac-device-shows-compliant-in-intune-but-noncompliant-in-azure"></a>A Mac-eszköz megfelel az Intune-ban, de nem megfelelő az Azure-ban  
 
-**OK**: Az alábbi feltételek azt okozhatják, hogy az eszköz megfelelőként jelenjen meg az Intune-ban, de nem felel meg az Azure-ban:  
+**OK**: az alábbi feltételek azt okozhatják, hogy az eszköz megfelelőként jelenjen meg az Intune-ban, de nem felel meg az Azure-ban:  
 - Az eszköz nincs megfelelően regisztrálva.  
 - Az eszköz többször is regisztrálva van a szükséges tisztítás nélkül.
 
@@ -264,7 +265,7 @@ A probléma megoldásához kövesse az *eszközök*6. [*okának*](#cause-6) felo
 
 ### <a name="duplicate-entries-appear-in-the-intune-console-for-mac-devices-enrolled-by-using-jamf"></a>Ismétlődő bejegyzések jelennek meg az Intune-konzolon a JAMF használatával beléptetett Mac-eszközökhöz  
  
-**OK**: Egy eszköz többször van regisztrálva az Intune-ban, általában az Intune-ból való eltávolítás után.  
+**OK**: egy eszköz többször van regisztrálva az Intune-ban, az Intune-ból való eltávolítás után általában újra regisztrálva van.  
 
 Ha eltávolítanak egy eszközt az Intune-ból, és JAMF a Pro-integrációt, egyes adatok lemaradnak, ami egymást követő regisztrációkat eredményezhet ismétlődő bejegyzések létrehozásához.  
 
@@ -273,7 +274,7 @@ A probléma megoldásához kövesse az *eszközök*6. [*okának*](#cause-6) felo
 
 ### <a name="compliance-policy-fails-to-evaluate-the-device"></a>A megfelelőségi szabályzat nem tudja kiértékelni az eszközt  
 
-**OK**: A JAMF és az Intune közötti integráció nem támogatja az erőforráscsoportok megkeresésére vonatkozó megfelelőségi szabályzatot. 
+**OK**: a JAMF és az Intune közötti integráció nem támogatja az erőforráscsoportok megkeresésére vonatkozó megfelelőségi szabályzatot. 
 
 **Felbontás**  
 A felhasználói csoportokhoz hozzárendelni kívánt macOS-eszközök megfelelőségi szabályzatának módosítása. 
@@ -300,11 +301,11 @@ Tekintse meg a cikk korábbi, 1. okának feloldását az [eszközök regisztrál
 
 #### <a name="a-license-required-for-jamf-intune-integration-has-expired"></a>A JAMF-Intune-integrációhoz szükséges licenc lejárt
 
-**Feloldási**: Tekintse meg a 3. ok feloldását az [eszközök nem regisztrálhatnak](#devices-fail-to-register). 
+**Megoldás**: Tekintse meg a 3. ok feloldását az [eszközök regisztrálásához](#devices-fail-to-register). 
 
 #### <a name="the-required-ports-arent-open-on-your-network"></a>A szükséges portok nincsenek megnyitva a hálózaton
 
-**Feloldási**: Tekintse át a hálózati portok információit a JAMF Pro Intune-nal való integrálásának [előfeltételei](conditional-access-integrate-jamf.md#prerequisites) között.
+**Megoldás**: Tekintse át a hálózati portok információit a JAMF Pro Intune-nal való integrálásának [előfeltételei](conditional-access-integrate-jamf.md#prerequisites) között.
 
 
 ## <a name="next-steps"></a>További lépések

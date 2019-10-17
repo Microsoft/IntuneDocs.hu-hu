@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 07/18/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.suite: ems
@@ -16,12 +17,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: shpate
-ms.openlocfilehash: 58401a4125d073eb3e4f82230fcd6e53a359ed3c
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: ed3152a6717898aa1f758fb06a5f701048aebed4
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732499"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72508781"
 ---
 # <a name="integrate-windows-hello-for-business-with-microsoft-intune"></a>A Vállalati Windows Hello integrálása a Microsoft Intune-nal  
 
@@ -57,7 +58,7 @@ E cikk segítségével az egész vállalatára vonatkozó alapértelmezett váll
 
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 
-2. Ugrás az **eszközök beléptetése** > Windows-**regisztráció** > Windows**Hello for Business**. Megnyílik a vállalati Windows Hello panel.
+2. Lépjen az **eszközök beléptetése**@no__t – 1**windows-regisztráció**@no__t – 3**Windows Hello for Business**. Megnyílik a vállalati Windows Hello panel.
 
 3. Válasszon a következő lehetőségek közül a **vállalati Windows Hello konfigurálásához**:
 

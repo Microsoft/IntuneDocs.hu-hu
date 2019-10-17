@@ -9,6 +9,7 @@ ms.date: 09/18/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: 4fa3255b-9d1e-42d5-bd8b-70963dcf2d86
 searchScope:
@@ -18,12 +19,12 @@ ms.reviewer: jieyang
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 690fb81350c0c264677c6c75b8942e9cdcd4e8f0
-ms.sourcegitcommit: c19584b36448bbd4c8638d7cab552fe9b3eb3408
+ms.openlocfilehash: 2056d37b00f5e2ae7b36c6e1c02f20dc244eb290
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71163363"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72502127"
 ---
 # <a name="how-to-reset-your-device-passcode-from-the-company-portal-website"></a>Az eszköz jelszavának alaphelyzetbe állítása a Vállalati portál webhelyén
 
@@ -43,11 +44,11 @@ A PIN-kód alaphelyzetbe állítása nem érhető el az Android 7,0 és újabb r
 
 3. Válassza a **Jelszó alaphelyzetbe állítása** lehetőséget. Ha a jelszó lehetőség nem jelenik meg az oldal tetején, válassza az **Egyéb (…)**  > **Jelszó alaphelyzetbe állítása** lehetőséget.   
 
-   ![A kiválasztott eszköz adatai a Céges portál webhelyén, felül az Átnevezés, az Eltávolítás, az Eszköz alaphelyzetbe állítása, a Jelszó alaphelyzetbe állítása és a Távoli zárolás lehetőségekre mutató hivatkozásokkal. ](./media/rename-reset-device-1808.png)   
+   ![A kiválasztott eszközzel kapcsolatos lehetőségek a Céges portál webhelyén, felül az Átnevezés, az Eltávolítás, az Eszköz alaphelyzetbe állítása, a Jelszó alaphelyzetbe állítása és a Távoli zárolás lehetőségekre mutató hivatkozásokkal. ](./media/rename-reset-device-1808.png)   
 
     ![Képernyőkép a további ikonról, amely piros nyíllal van kiemelve.](./media/rename-reset-device-step3-more-1808.png)  
 
-4. Ha a program arra kéri, kattintson a **Kijelentkezés** gombra. Újabb kérés esetén jelentkezzen be ismét. Jelentkezzen be ismét a Céges portál webhelyre öt percen belül, vagy Céges portál nem állítja vissza az eszköz PIN-kódját.  
+4. Ha a rendszer kéri **, kattintson a kijelentkezés gombra**. Ha a rendszer ismét kéri, jelentkezzen be újra. Jelentkezzen be ismét a Céges portál webhelyre öt percen belül, vagy Céges portál nem állítja vissza az eszköz PIN-kódját.  
 
    > [!NOTE]
    > A személyazonossága megerősítéséhez újra be kell jelentkeznie. Ennek a beállításnak az a célja, hogy megakadályozza a jelszó alaphelyzetbe állítására vonatkozó rosszindulatú kísérleteket.
@@ -75,7 +76,7 @@ Ez a szakasz a jelszó alaphelyzetbe állítását és az ideiglenes jelszó vis
 
 **Android**: Eltávolítja a meglévő jelszót, és egy betűkből és számokból álló ideiglenes jelszót hoz létre.
 
-**iOS**: Eltávolítja a meglévő jelszót, és nem hoz létre ideiglenes jelszót. Ha a Touch ID-t használja az eszköz megnyitásához vagy a vásárláshoz, azt újra be kell állítania.  
+**iOS**: eltávolítja a meglévő jelszót, és nem hoz létre ideiglenes jelszót. Ha a Touch ID-t használja az eszköz megnyitásához vagy a vásárláshoz, azt újra be kell állítania.  
 
 **Windows 10 Mobile**: Eltávolítja a meglévő jelszót, és egy betűkből és számokból álló ideiglenes jelszót hoz létre. A beállítás után a Windows Hello arcfelismerő rendszer továbbra is működni fog az eszközön.
 

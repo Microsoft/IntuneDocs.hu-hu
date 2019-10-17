@@ -9,6 +9,7 @@ ms.date: 10/07/2018
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: ''
 searchScope:
@@ -18,18 +19,18 @@ ms.reviewer: ''
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 627cabb14def14494ca258fbc9ac7ebf736b10da
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: 3fab7a0a544a3dafc08ff1e635e49407825fb67d
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61504468"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72502145"
 ---
 # <a name="rename-device-from-the-company-portal-app-for-windows"></a>Eszköz átnevezése a Windows Céges portál alkalmazásból
 Ha átnevez egy eszközt, azt könnyebben felismerik más eszközök. A Windows Céges portál alkalmazással a következő típusú csatlakoztatott eszközöket nevezhet át:  
 * Windows 10
 * iOS
-* Android  
+* Android:  
 
 ## <a name="rename-device-from-device-details-page"></a>Eszköz átnevezése az **Eszközadatok** lapon  
 Az eszköz a Céges portál **Eszközadatok** lapján történő eltávolításához hajtsa végre a következő lépést. 

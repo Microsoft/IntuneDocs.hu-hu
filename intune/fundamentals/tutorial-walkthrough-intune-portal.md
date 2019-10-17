@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 07/24/2019
 ms.topic: tutorial
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: e892d8a3-7f74-498c-98d5-e968a8fbb049
@@ -17,23 +18,23 @@ ms.reviewer: ''
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b3caa2d8d8ac0a9b3ad1590d610618094c1fadcc
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: d6c627f5c9074bf6ce0a391174f5fe74b95b7885
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731671"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72504917"
 ---
-# <a name="tutorial-walkthrough-of-microsoft-intune-in-the-azure-portal"></a>Oktatóanyag A Azure Portal Microsoft Intune áttekintése
+# <a name="tutorial-walkthrough-of-microsoft-intune-in-the-azure-portal"></a>Oktatóanyag: a Microsoft Intune áttekintése a Azure Portal
 
 Az [Azure](https://docs.microsoft.com/learn/modules/welcome-to-azure) több mint 100 szolgáltatást tartalmaz, amelyek segítséget nyújtanak a különböző felhőalapú számítástechnikai forgatókönyvekhez és lehetőségekhez. Microsoft Intune az Azure-ban elérhető számos szolgáltatás egyike. Az Intune segítségével biztosíthatja, hogy a vállalat eszközei, alkalmazásai és adatai megfeleljenek a vállalat biztonsági követelményeinek. A vezérlővel beállíthatja, hogy mely követelményeket kell ellenőrizni, és mi történik, ha ezek a követelmények nem teljesülnek. A Microsoft Intune szolgáltatást az [Azure Portalon](https://portal.azure.com) találhatja meg. Az Intune funkcióinak megismerése segít a különböző mobileszköz-kezelési (MDM) és mobileszköz-kezelési (MAM) feladatok megvalósításában.
 
-Az oktatóanyag során az alábbi lépéseket fogja végrehajtani:
+Ebben az oktatóanyagban a következőket fogja elsajátítani:
 > [!div class="checklist"]
 > * Bemutató Microsoft Intune
 > * A Azure Portal konfigurálása
 
-Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon egy ingyenes próbafiókkal](free-trial-sign-up.md).
+Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon ingyenes próbafiókot](free-trial-sign-up.md).
 
 ## <a name="prerequisites"></a>Előfeltételek
 A Microsoft Intune beállítása előtt tekintse át az alábbi követelményeket:
@@ -52,7 +53,7 @@ Az Intune kipróbálása 30 napig ingyenes. Ha már rendelkezik munkahelyi vagy 
 
 Kövesse az alábbi lépéseket az Intune jobb megismeréséhez a Azure Portalban. A turné befejezése után jobban megismerheti az Intune egyes főbb területeit.
 
-1. Nyisson meg egy böngészőt, és jelentkezzen be az [Intune](https://aka.ms/intuneportal)-portálra. Ha még nem ismeri az Intune-t, használja az ingyenes próbaverziós előfizetését.
+1. Nyisson meg egy böngészőt, és jelentkezzen be az [Intune-portálra](https://aka.ms/intuneportal). Ha még nem ismeri az Intune-t, használja az ingyenes próbaverziós előfizetését.
 
     ![A Microsoft Intune portál képernyőképe](./media/tutorial-walkthrough-intune-portal/tutorial-walkthrough-intune-portal-01.png)
 
@@ -68,7 +69,7 @@ Kövesse az alábbi lépéseket az Intune jobb megismeréséhez a Azure Portalba
 
     Több módszer is van a munkaerő eszközeinek Intune-ba való regisztrálására. Az egyes módszerek az eszköz tulajdonosától (személyes vagy céges), az eszköztípustól (iOS, Windows, Android) és a felügyeleti követelményektől (alaphelyzetbe állítások, affinitás, zárolás) függ. Az eszközök regisztrálásának engedélyezése előtt azonban be kell állítania az Intune-infrastruktúrát. Különösen fontos, hogy az eszközregisztrációhoz szükség van [saját MDM-szolgáltató beállítására](mdm-authority-set.md). Az Intune-környezet (bérlő) készenléti állapotáról további információt az [Intune beállítása](setup-steps.md)című témakörben talál. Ha elkészült az Intune-Bérlővel, regisztrálhat eszközöket. További információt az eszközregisztrációról a [Mi az eszközregisztrálás?](../enrollment/device-enrollment.md) című témakörben találhat
 
-3. Az [](https://aka.ms/intuneportal)Intune-ból válassza az **eszköz megfelelősége** lehetőséget az Intune által felügyelt eszközök megfelelőségi adatainak megjelenítéséhez. A következő képhez hasonló részleteket fog látni.
+3. Az [Intune-ból válassza](https://aka.ms/intuneportal)az **eszköz megfelelősége** lehetőséget az Intune által felügyelt eszközök megfelelőségi adatainak megjelenítéséhez. A következő képhez hasonló részleteket fog látni.
 
     ![Képernyőfelvétel az eszköz megfelelőségi paneljéről](./media/tutorial-walkthrough-intune-portal/tutorial-walkthrough-intune-portal-03.png)
     
@@ -122,7 +123,7 @@ Kövesse az alábbi lépéseket az Intune jobb megismeréséhez a Azure Portalba
 
     ![A Súgó és támogatás panel képernyőképe](./media/tutorial-walkthrough-intune-portal/tutorial-walkthrough-intune-portal-10.png)
 
-    Támogatási jegy létrehozásához a fiókot rendszergazdai szerepkörként kell hozzárendelni a Azure Active Directory-ben. Rendszergazdai szerepkörök: **Intune-rendszergazda**, **globális rendszergazda**és **szolgáltatás-rendszergazda**. További információkért lásd: [a Microsoft Intune támogatásának](../get-support.md)beszerzése.
+    Támogatási jegy létrehozásához a fiókot rendszergazdai szerepkörként kell hozzárendelni a Azure Active Directory-ben. Rendszergazdai szerepkörök: **Intune-rendszergazda**, **globális rendszergazda**és **szolgáltatás-rendszergazda**. További információkért lásd: [a Microsoft Intune támogatásának beszerzése](../get-support.md).
 
 11. Az [Intune](https://aka.ms/intuneportal)-ból válassza a **bérlő állapota** lehetőséget az Intune-bérlő részleteinek megjelenítéséhez.
 
@@ -134,7 +135,7 @@ Kövesse az alábbi lépéseket az Intune jobb megismeréséhez a Azure Portalba
 
     ![Képernyőkép a hibakeresési panelről](./media/tutorial-walkthrough-intune-portal/tutorial-walkthrough-intune-portal-12.png)
 
-További információ az Intune-on belüli hibaelhárításról: [a hibaelhárítási portál használata a felhasználóknak](../help-desk-operators.md)a vállalatnál.
+További információ az Intune-on belüli hibaelhárításról: [a hibaelhárítási portál használata a felhasználóknak a vállalatnál](../help-desk-operators.md).
 
 ## <a name="configure-the-azure-portal"></a>A Azure Portal konfigurálása
 
@@ -170,4 +171,4 @@ Ez a funkció relevánsabb lesz, miután további tartalmakat is hozzáadott az 
 A Microsoft Intune gyors futtatásához lépjen az Intune rövid útmutatói között az ingyenes Intune-fiók beállításával.
 
 > [!div class="nextstepaction"]
-> [QuickStart Próbálja ki Microsoft Intune ingyen](free-trial-sign-up.md)
+> [Rövid útmutató: próbálja ki Microsoft Intune ingyen](free-trial-sign-up.md)

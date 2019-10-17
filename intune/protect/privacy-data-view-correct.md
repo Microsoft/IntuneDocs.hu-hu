@@ -1,7 +1,7 @@
 ---
 title: Személyes adatok megtekintése és javítása
 titleSuffix: Microsoft Intune
-description: Megtudhatja, hogyan tekintheti meg és javítsa ki a személyes adatokkal.
+description: Ismertető a személyes adatok megtekintéséhez és javításához.
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 1ba77bc7-505e-4eca-a49e-dcdaa75d0043
@@ -17,40 +18,40 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9b6ca291f55511be9e88b0ff898d9383691542bf
-ms.sourcegitcommit: a2654f3642b43b29ab0e1cbb2dfa2b56aae18d0e
+ms.openlocfilehash: 913bf3103254abdd73913e0efc81da3a38ca991b
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72310901"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72504249"
 ---
 # <a name="view-and-correct-personal-data"></a>Személyes adatok megtekintése és javítása
 
-Az Intune-rendszergazdák a hozzáférési engedélyeik alapján megtekinthetik a személyes adategységeket, de csak a végfelhasználók módosíthatják az eszköz személyes adatfájljait.
+Az Intune-rendszergazdák hozzáférési engedélyeiktől függően megtekinthetnek bizonyos személyes adatokat, de az eszköz személyes adatait csak a végfelhasználók módosíthatják.
 
 [!INCLUDE [GDPR-related guidance](../includes/gdpr-dsr-and-stp-note.md)]
 
 
-## <a name="view-personal-data"></a>Személyes adattárolás megtekintése
+## <a name="view-personal-data"></a>Személyes adatok megtekintése
 
-A rendszergazdák az Intune felhasználói felületén különböző lapokon láthatják a végfelhasználók személyes adatait. A következő cikkek elmagyarázzák, hogy a rendszergazdák mit tesznek és miért nem férnek hozzá a szolgáltatáshoz:
-- Az [eszköz adatainak megtekintése](../remote-actions/device-inventory.md) az Intune-ban című cikk azt ismerteti, hogyan tekintheti át a végfelhasználó eszközének részleteit.
-- Az alkalmazásadatok [és-hozzárendelések figyelése](../apps/apps-monitor.md) című cikk azt ismerteti, hogyan tekintheti meg a végfelhasználói eszközre telepített alkalmazások részleteit.
-- [Milyen információkat láthatok a vállalatom az eszköz regisztrálása során? cikk](https://docs.microsoft.com/intune-user-help/what-info-can-your-company-see-when-you-enroll-your-device-in-intune) a végfelhasználók számára a vállalat által megjelenített és nem látható adatok listáját adja meg. Érdemes egyértelműen megállapítani a felhasználókat, hogy milyen típusú adatok gyűjtése történik, és miért gyűjti azt. Ez a cikk az átláthatóság első lépése lehet.
+Az Intune kezelőfelületének különböző paneljein a rendszergazdák számára láthatók a végfelhasználók személyes adatai. A következő cikkek a rendszergazdák számára hozzáférhető és nem hozzáférhető információk körét ismertetik:
+- Az [eszköz adatainak megtekintése](../remote-actions/device-inventory.md) az Intune-ban leírja, hogyan tekinthetők át egy végfelhasználó eszközének adatai.
+- Az [Alkalmazásadatok és -hozzárendelések figyelése](../apps/apps-monitor.md) azt ismerteti, hogy hogyan tekinthetők meg az egy végfelhasználó eszközére telepített alkalmazások adatai.
+- A [Milyen adatok láthatók a cég számára, ha regisztrálom az eszközömet?](https://docs.microsoft.com/intune-user-help/what-info-can-your-company-see-when-you-enroll-your-device-in-intune) című cikk felsorolja a végfelhasználók számára a vállalatuk által látható és nem látható adatokat. Célszerű egyértelműen tudatni a felhasználókkal, hogy milyen adatokat gyűjt, és miért. Ez a cikk lehet az első lépés az átláthatóság felé.
 
-### <a name="who-can-view-the-data"></a>Kik tekinthetik meg az adatvédelmet?
+### <a name="who-can-view-the-data"></a>Ki tekintheti meg az adatokat?
 
-A Microsoft szigorú szabályozással szabályozza az ügyféladatok elérését, biztosítva a legfontosabb feladatok végrehajtásához és a hozzáférés visszavonásához szükséges legalacsonyabb szintű hozzáférést, ha már nincs rá szükség. 
+A Microsoft szigorú korlátozásokkal szabályozza az ügyfelek adataihoz való hozzáférést, csak a lényeges feladatok elvégzéséhez szükséges legalacsonyabb szintű hozzáférést megadva, és a hozzáférés visszavonásával, amikor arra már nincs szükség. 
 
-Szerepköralapú adminisztrációs vezérlő (RBAC) használatával biztonságossá teheti és szabályozhatja a végfelhasználók személyes adataihoz való hozzáférést. További információ: [RBAC with Microsoft Intune](../fundamentals/role-based-access-control.md).
+A végfelhasználói adatokhoz való hozzáférés szerepköralapú hozzáférés-vezérlés (RBAC) használatával tehető biztonságossá és szabályozhatóvá. További információ: [Szerepköralapú hozzáférés-vezérlés (RBAC) a Microsoft Intune-nal](../fundamentals/role-based-access-control.md).
 
-A Microsoft adatkezelési gyakorlatával kapcsolatos további információkért olvassa el az online szolgáltatások használati feltételeit és a [Microsoft Online Services adatvédelmi nyilatkozatát](https://go.microsoft.com/fwlink/p/?linkid=131004&clcid=0x409). 
+A Microsoft adatkezelési gyakorlatáról az Online Services feltételeiből és a [Microsoft Online Services Adatvédelmi nyilatkozatából](https://go.microsoft.com/fwlink/p/?linkid=131004&clcid=0x409) tájékozódhat bővebben. 
 
-## <a name="correct-end-user-personal-data"></a>A végfelhasználói személyes adatok helyes javítása
+## <a name="correct-end-user-personal-data"></a>Végfelhasználók személyes adatainak javítása
 
-A rendszergazdák nem frissíthetik az eszközre vagy az alkalmazásra vonatkozó információkat. Ha egy végfelhasználó szeretné kijavítani a személyes adatok (például az eszköz nevét), azt közvetlenül az eszközén kell megtennie. Ezek a változások szinkronizálva lesznek a következő alkalommal, amikor csatlakoznak az Intune-hoz.
+A rendszergazdák nem frissíthetik az eszköz- vagy alkalmazásspecifikus információkat. Ha egy végfelhasználó ki szeretne javítani egy személyes adatot (például az eszköz nevét), akkor ezt közvetlenül az eszközön kell megtennie. Az ilyen módosítások az Intune-hoz való legközelebbi kapcsolódáskor lesznek szinkronizálva.
 
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
-Megtudhatja [, hogyan naplózhatja, exportálhatja vagy törölheti](privacy-data-audit-export-delete.md) a személyes adatvédelmet az Intune-ban.
+Ismertető személyes adatok Intune-beli [naplózásáról, exportálásáról vagy törléséről](privacy-data-audit-export-delete.md).

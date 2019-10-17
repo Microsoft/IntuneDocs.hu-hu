@@ -9,6 +9,7 @@ ms.date: 10/05/2018
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: 5b2a69e7-cc86-4f1b-81d9-35b8b23b937b
 searchScope:
@@ -16,16 +17,16 @@ searchScope:
 ROBOTS: ''
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf812f57a506cf6c8129015fd3e5cb9f36eb6024
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: 7a5c979f19a2761d596cd48cfc7d88e003bfcb99
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61505063"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72500898"
 ---
 # <a name="resolve-a-threat-found-by-sandblast-mobile-protect"></a>A SandBlast Mobile Protect által észlelt fenyegetés elhárítása
 
-A SandBlast Mobile Protect egy mobilfenyegetés elleni védelmi szolgáltatás, amely lehetséges fenyegetéseket azonosít és értékel ki iOS-eszközein. Ez után a Céges portál alkalmazásban megtekinthető jelentést küld a fenyegetésekről. A fenyegetések megoldatlan nem megfelelőségi problémákként jelennek meg az alkalmazásban. Előfordulhat, hogy amíg ezek a fenyegetések jelen vannak, a következők nem lehetségesek:   
+A SandBlast Mobile Protect egy mobilfenyegetés elleni védelmi szolgáltatás, amely lehetséges fenyegetéseket azonosít és értékel ki iOS-eszközein. Ez után a Céges portál alkalmazásban megtekinthető jelentést küld a fenyegetésekről. A fenyegetések megoldatlan nem megfelelőségi problémákként jelennek meg az alkalmazásban. Amíg a fenyegetések jelen vannak, előfordulhat hogy nem lehet végrehajtani a következőket:   
 
 * Hozzáférés a vállalati e-mailekhez
 * Hozzáférés a vállalati Wi-Fi-hez
@@ -49,6 +50,6 @@ Mivel az alkalmazás integrálva van a vállalat MDM szolgáltatójával, korlá
 
 Ha egy fenyegetésként észlelt alkalmazást telepít az eszközére, akkor értesítést fog kapni a SandBlast Mobile Protectben. Ha a érintett alkalmazás az eszközén marad, nem fogja tudni elérni a vállalati erőforrásokat.  
 
-A feloldáshoz válassza ki az alkalmazást a fenyegetések listájából a SandBlast Mobile Protectben. Ez után kövesse az utasításokat az alkalmazás eltávolításához.  
+A feloldáshoz válassza ki az alkalmazást a fenyegetések listájából a SandBlast Mobile Protectben. Ezután kövesse az alkalmazás eltávolítására vonatkozó utasításokat.  
 
 További segítségre van szüksége? Forduljon a cég informatikai támogatási szolgálatához. A kapcsolatfelvételi adatait megtalálja a [Munkahelyi portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).  

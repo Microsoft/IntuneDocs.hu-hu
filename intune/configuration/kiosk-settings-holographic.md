@@ -8,18 +8,19 @@ manager: dougeby
 ms.date: 06/18/2019
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: medium
 ms.technology: ''
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e9318651dabcc93ef194c82b81b43fb25b98fb32
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: e555c62030cede57e98e34034367831c298c0ced
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730583"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72492398"
 ---
 # <a name="windows-holographic-for-business-device-settings-to-run-as-a-kiosk-in-intune"></a>Windows holografikus for Business-eszközbeállítások az Intune-ban való futtatáshoz
 
@@ -39,44 +40,44 @@ Az Intune Windows kioszk szolgáltatásával kapcsolatos további tudnivalókér
 
 Egyalkalmazásos kioszk mód választásakor adja meg a következő beállításokat:
 
-- **Felhasználói bejelentkezés típusa**: Válassza a **helyi felhasználói fiók** lehetőséget, ha meg szeretné adni a helyi (eszköz) felhasználói fiókot vagy a kioszk alkalmazáshoz társított Microsoft-FIÓKOT (MSA-fiókot). Az **Automatikus bejelentkezésű** felhasználói fiókokat a Windows Holographic for Business nem támogatja.
+- **Felhasználói bejelentkezés típusa**: Válassza a **Helyi felhasználói fiók** lehetőséget, és adja meg a kioszkalkalmazáshoz társított helyi (eszközön létező) felhasználói fiókot vagy Microsoft Account (MSA) fiókot. Az **Automatikus bejelentkezésű** felhasználói fiókokat a Windows Holographic for Business nem támogatja.
 
-- **Alkalmazás típusa**: Válassza az **áruházbeli alkalmazás**lehetőséget.
+- **Alkalmazástípus**: Válassza az **Áruházbeli alkalmazás** lehetőséget.
 
-- Teljes **képernyős módban futtatandó alkalmazás**: Válassza az **áruházbeli alkalmazás hozzáadása**lehetőséget, és válasszon egy alkalmazást a listából.
+- **Kioszkmódban futtatni kívánt alkalmazás**: Válassza az **Áruházbeli alkalmazás hozzáadása** lehetőséget, és válasszon alkalmazást a listából.
 
     Nincsenek alkalmazások a listában? Adjon hozzá néhányat az [Ügyfélalkalmazások](../apps/apps-add.md) rész lépéseinek használatával.
 
-    Válassza ki **OK** a módosítások mentéséhez.
+    A módosítások mentéséhez válassza az **OK** gombot.
 
 ## <a name="multi-app-kiosks"></a>Többalkalmazásos kioszk
 
 Az ebben az üzemmódban lévő alkalmazások elérhetők a Start menüben. A felhasználó kizárólag ezeket az alkalmazásokat tudja megnyitni. Többalkalmazásos kioszk mód választásakor adja meg a következő beállításokat:
 
-- **Windows 10 megcélzása S módú eszközökön**: Válassza a **nem**lehetőséget. Az S mód nem támogatott a Windows holografikus vállalatnál.
+- **S módú Windows 10-es eszközök megcélzása**: válassza a **Nem** lehetőséget. Az S mód nem támogatott a Windows holografikus vállalatnál.
 
-- **Felhasználói bejelentkezés típusa**: Vegyen fel legalább egy olyan felhasználói fiókot, amely használhatja a hozzáadott alkalmazásokat. A választható lehetőségek: 
+- **Felhasználói bejelentkezés típusa**: Adjon meg egy vagy több olyan felhasználói fiókot, amely jogosult a társított alkalmazások használatára. A választható lehetőségek: 
 
-  - **Automatikus bejelentkezés**: A Windows holografikus for Business esetében nem támogatott.
-  - **Helyi felhasználói fiókok**: **Adja hozzá** a helyi (eszköz) felhasználói fiókot. A megadott fiókkal történik a bejelentkezés a kioszkba.
-  - **Azure ad-felhasználó vagy-csoport (Windows 10, 1803-es és újabb verziók)** : Felhasználói hitelesítő adatok szükségesek az eszközre való bejelentkezéshez. Válassza a **Hozzáadás** lehetőséget Azure AD-felhasználók vagy -csoportok kiválasztására a listából. Több felhasználót és csoportot is kiválaszthat. A módosítások mentéséhez válassza az **Választ** gombot.
-  - **HoloLens-látogató**: A látogatói fiók egy olyan vendégfiók, amely nem igényel felhasználói hitelesítő adatokat vagy hitelesítést a [megosztott számítógépes üzemmód fogalmai](https://docs.microsoft.com/windows/configuration/set-up-shared-or-guest-pc#shared-pc-mode-concepts)című témakörben leírtak szerint.
+  - **Automatikus bejelentkezés**: A Windows Holographic for Business nem támogatja.
+  - **Helyi felhasználói fiókok**: **Adja hozzá** a helyi (az eszközön létező) felhasználói fiókot. A megadott fiókkal történik a bejelentkezés a kioszkba.
+  - **Azure AD-felhasználó vagy csoport (Windows 10, 1803-as vagy újabb verzió)** : Felhasználói hitelesítő adatok szükségesek az eszközre való bejelentkezéshez. Válassza a **Hozzáadás** lehetőséget Azure AD-felhasználók vagy -csoportok kiválasztására a listából. Több felhasználót és csoportot is kiválaszthat. A módosítások mentéséhez válassza az **Választ** gombot.
+  - **HoloLens vendég**: Ehhez a vendégfiókhoz [A megosztott számítógép üzemmód alapelvei](https://docs.microsoft.com/windows/configuration/set-up-shared-or-guest-pc#shared-pc-mode-concepts) című szakaszban ismertetettek alapján nem szükségesek hitelesítő adatok.
 
-- **Alkalmazások**: Adja hozzá az alkalmazásokat a kioszk eszközön való futtatáshoz. Ne feledje, hogy több alkalmazást is hozzáadhat.
+- **Alkalmazások**: Adja hozzá a kioszkmódú eszközön futtatandó alkalmazásokat. Ne feledje, hogy több alkalmazást is hozzáadhat.
 
-  - **Áruházbeli alkalmazások hozzáadása**: Válasszon ki egy meglévő alkalmazást, amelyet az Intune-ba telepített vagy üzembe [helyezett, például](../apps/apps-add.md)üzletági alkalmazásokat. Ha nem rendelkezik a felsorolt alkalmazásokkal, az Intune számos, az [Intune-ban hozzáadott](../apps/store-apps-windows.md) [típusú alkalmazást](../apps/apps-add.md) támogat.
-  - **Win32-alkalmazás hozzáadása**: A Windows holografikus for Business esetében nem támogatott.
-  - **Hozzáadás AUMID szerint**: Ezzel a beállítással adhat hozzá beérkezett fájlok Windows-alkalmazásokat. Adja meg a következő tulajdonságokat: 
+  - **Áruházbeli alkalmazások hozzáadása**: válasszon ki egy meglévő alkalmazást, amelyet az Intune-ba [, az üzletági alkalmazásokat is](../apps/apps-add.md)beleértve. Ha nem rendelkezik a felsorolt alkalmazásokkal, az Intune számos, az [Intune-ban hozzáadott](../apps/store-apps-windows.md) [típusú alkalmazást](../apps/apps-add.md) támogat.
+  - **Win32-alkalmazás hozzáadása**: a Windows Holographic for Business nem támogatja.
+  - **Hozzáadás AUMID alapján**: használja ezt a beállítást a postaláda Windows-alkalmazások hozzáadásához. Adja meg a következő tulajdonságokat: 
 
     - **Alkalmazás neve**: Kötelező. Adjon nevet az alkalmazásnak.
-    - **Alkalmazás felhasználói modell azonosítója (AUMID)** : Kötelező. Adja meg a Windows-alkalmazás alkalmazásfelhasználói modellben használt azonosítóját. Az azonosító a [Telepített alkalmazás alkalmazásfelhasználói modellben használt azonosítójának megkeresése](https://docs.microsoft.com/windows-hardware/customize/enterprise/find-the-application-user-model-id-of-an-installed-app) című témakörben leírtak alapján kereshető meg.
-    - **Csempe mérete**: Kötelező. Válassza a Kicsi, Közepes, Széles és Nagy alkalmazáscsempe-méretek egyikét.
+    - **Alkalmazás alkalmazásfelhasználói modellben használt azonosítója (AUMID)** : Kötelező. Adja meg a Windows-alkalmazás alkalmazásfelhasználói modellben használt azonosítóját. Az azonosító a [Telepített alkalmazás alkalmazásfelhasználói modellben használt azonosítójának megkeresése](https://docs.microsoft.com/windows-hardware/customize/enterprise/find-the-application-user-model-id-of-an-installed-app) című témakörben leírtak alapján kereshető meg.
+    - **Csempeméret**: Kötelező. Válassza a Kicsi, Közepes, Széles és Nagy alkalmazáscsempe-méretek egyikét.
 
-- Teljes **képernyős böngésző beállításai**: A Windows holografikus for Business esetében nem támogatott.
+- **Teljes képernyős böngésző beállításai**: a Windows Holographic for Business nem támogatja.
 
-- **Alternatív indítási elrendezés használata**: Válassza az **Igen** lehetőséget egy olyan XML-fájl megadásához, amely leírja, hogyan jelennek meg az alkalmazások a Start menüben, beleértve az alkalmazások sorrendjét is. Használja ezt a beállítást, ha több testreszabási lehetőségre van szüksége a Start menüben. A [Start menü elrendezésének testreszabása és exportálása](https://docs.microsoft.com/hololens/hololens-kiosk#start-layout-for-hololens) című cikk nyújt némi útmutatást, és tartalmaz egy kimondottan Windows Holographic for Business rendszerű eszközökhöz készült XML-fájlt.
+- **Start menü alternatív elrendezésének használata**: Válassza az **Igen** lehetőséget egy XML-fájl megadásához, amely meghatározza, hogyan jelenjenek meg az alkalmazások a Start menüben, beleértve azok sorrendjét. Használja ezt a beállítást, ha több testreszabási lehetőségre van szüksége a Start menüben. A [Start menü elrendezésének testreszabása és exportálása](https://docs.microsoft.com/hololens/hololens-kiosk#start-layout-for-hololens) című cikk nyújt némi útmutatást, és tartalmaz egy kimondottan Windows Holographic for Business rendszerű eszközökhöz készült XML-fájlt.
 
-- **Windows tálca**: A Windows holografikus for Business esetében nem támogatott.
+- **Windows Tálca**: a Windows Holographic for Business nem támogatja.
 
 ## <a name="next-steps"></a>További lépések
 

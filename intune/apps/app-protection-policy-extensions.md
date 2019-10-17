@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 08/19/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: apps
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f38f22d7aaf03f278fad86061aa8198c8e37f31f
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 1a94f3d175fe5c036c5e90635a66467263b23122
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731359"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72499115"
 ---
 # <a name="protecting-application-extensions"></a>Az alkalmazások bővítményeinek védelme
 
@@ -63,12 +64,12 @@ Ha a LinkedIn-integráció engedélyezve van a bérlőjében, akkor a LinkedIn-f
 Ha egy felhasználó hozzájárul az adatok fiókok közötti megosztásához, akkor a LinkedIn-integráció – az Office-bővítményekhez hasonlóan – a meglévő Microsoft Graph API-kat használja. A LinkedIn-integráció az Office-bővítmények számára elérhető API-knak csak egy részhalmazát használja, és támogatja a különféle kizárásokat.
 
 
-|Microsoft Graph-engedélyek  |Leírás  |
+|Microsoft Graph-engedélyek  |Description  |
 |---------|---------|
 |[Személyek](https://developer.microsoft.com/graph/docs/concepts/permissions_reference#people-permissions) olvasásának engedélyezése     |Engedélyezi az alkalmazásnak a bejelentkezett felhasználó számára releváns személyek pontozott listájának olvasását. A lista tartalmazhat helyi kapcsolatokat, közösségi hálózati kapcsolatokat, szervezeti címjegyzékbeli kapcsolatokat, illetve olyan személyeket, akikkel a felhasználó nemrég kommunikált (például e-mailben vagy Skype-on).         |
 |[Naptárak](https://developer.microsoft.com/graph/docs/concepts/permissions_reference#calendars-permissions) olvasásának engedélyezése     |Engedélyezi az alkalmazásnak a felhasználó naptáraiban lévő események olvasását. Ideértve például a bejelentkezett felhasználó naptárában lévő értekezleteket, azok időpontjával, helyével és résztvevőivel együtt.         |
 |[Felhasználói profilok](https://developer.microsoft.com/graph/docs/concepts/permissions_reference#user-permissions) olvasásának engedélyezése     |Engedélyezi a felhasználóknak az alkalmazásba való bejelentkezést, és engedélyezi az alkalmazásnak a bejelentkezett felhasználók profiljának olvasását. Emellett engedélyezi az alkalmazásnak a bejelentkezett felhasználók alapvető vállalati adatainak olvasását is.         |
-|Előfizetések     |Ez a hatókör jelenleg nem érhető el, és nincs használatban. Ide tartoznak a felhasználó szervezete által nyújtott előfizetések a különféle Microsoft-alkalmazásokra és -szolgáltatásokra, ideértve például az Office 365-öt is.         |
+|Subscriptions     |Ez a hatókör jelenleg nem érhető el, és nincs használatban. Ide tartoznak a felhasználó szervezete által nyújtott előfizetések a különféle Microsoft-alkalmazásokra és -szolgáltatásokra, ideértve például az Office 365-öt is.         |
 |Insights     |Ez a hatókör jelenleg nem érhető el, és nincs használatban. Ide tartoznak a bejelentkezett felhasználói fiókhoz kapcsolódó érdeklődési körök, melyek a Microsoft-szolgáltatások használati adatain alapulnak.         |
 
 ### <a name="learn-more"></a>További információ

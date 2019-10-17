@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 08/02/2019
 ms.topic: troubleshooting
 ms.service: microsoft-intune
+ms.subservice: remote-actions
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: ''
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e1b3139db8b217dceb495f67e809eae8319eae0c
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 96f6dc3d1a8f8589395cf49b3bb934adadf437a4
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731707"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72508509"
 ---
 # <a name="troubleshoot-device-actions-in-intune"></a>Eszközök műveleteinek hibáinak megoldása az Intune-ban
 
@@ -53,11 +54,11 @@ Nem. És nem kell megadnia a kötőjeleket.
 ## <a name="remove-devices-action"></a>Eszközök eltávolítása művelet
 
 ### <a name="how-do-i-tell-who-started-a-retirewipe"></a>Hogyan eldönteni, ki kezdte kivonni/törölni a kivonást?
-Válassza az **Intune** > -**eszközök** > **eszköz műveletei** > a **kezdeményezett oszlop alapján** lehetőséget.
+Nyissa meg az **Intune** > **eszközt** > **eszköz műveleteit** > a **kezdeményezett oszlop alapján** .
 Ha nem lát bejegyzést, a legvalószínűbb, hogy kezdeményezte a műveletet az eszköz felhasználója. Valószínűleg használták a Céges portál alkalmazást vagy a portal.manage.microsoft.com.
 
 ### <a name="why-wasnt-my-application-uninstalled-after-using-retire"></a>Miért nem távolította el az alkalmazást a kivonást követően?
-Mivel nem tekintették felügyelt alkalmazásnak. Ebben a kontextusban egy felügyelt alkalmazás az Intune szolgáltatással telepített alkalmazás. Az érintett műveletek közé tartoznak az alábbiak:
+Mivel nem tekintették felügyelt alkalmazásnak. Ebben a kontextusban egy felügyelt alkalmazás az Intune szolgáltatással telepített alkalmazás. Ez a következő teendőket foglalja magában:
 - Az alkalmazás központi telepítése kötelező
 - Az alkalmazás elérhetőként lett telepítve, majd a végfelhasználó telepíti a Céges portál alkalmazásból.
 
@@ -68,7 +69,7 @@ Ez a várt viselkedés. A Google nem engedélyezi a munkahelyi Profilos eszköz�
 Mivel az eszköz kivonása nem vonja vissza a hozzáférési jogkivonatokat. A feltételes hozzáférési szabályzatok segítségével csökkentheti ezt a feltételt.
 
 ### <a name="how-can-i-monitor-a-retirewipe-action-after-it-was-issued"></a>Hogyan figyelhető meg a kivonási/törlési művelet a kibocsátás után?
-Nyissa meg az **Intune** > -**eszközök** > **eszköz műveleteit**.
+Nyissa meg az **Intune** > **eszközt** > **eszköz műveleteit**.
 
 ### <a name="why-do-wipes-sometimes-show-as-pending-indefinitely"></a>A törlési műveletek miért nem a határozatlan idejű függőben jelenjenek meg?
 Az eszközök az Alaphelyzetbe állítás elindítása előtt nem jelentik vissza az állapotukat az Intune szolgáltatásnak. Így a művelet függőként jelenik meg. Ha megerősítette a művelet sikerességét, törölje az eszközt a szolgáltatásból.
@@ -94,4 +95,4 @@ Mivel az egyik megfelelőségi szabályzathoz PIN-kód szükséges.
 
 ## <a name="next-steps"></a>További lépések
 
-Kérjen [támogatási segítséget](../fundamentals/get-support.md)a Microsofttól, vagy használja a [közösségi fórumokat](https://social.technet.microsoft.com/Forums/en-US/home?category=microsoftintune).
+Kérjen [támogatási segítséget a Microsofttól](../fundamentals/get-support.md), vagy használja a [közösségi fórumokat](https://social.technet.microsoft.com/Forums/en-US/home?category=microsoftintune).

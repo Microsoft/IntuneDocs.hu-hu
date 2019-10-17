@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 02/04/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: D9958CBF-34BF-41C2-A86C-28F832F87C94
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40abb2adda9602adc372f0c2b6ee9c17fbf5cb87
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 7e3c9e3bbdc65ae3f97e4be871cfaf638f1bafcd
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730495"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506594"
 ---
 # <a name="set-up-per-app-virtual-private-network-vpn-for-ios-devices-in-intune"></a>App virtual private Network (VPN) beállítása iOS-eszközökhöz az Intune-ban
 
@@ -68,12 +69,12 @@ Importálja az Intune-ban létrehozott profilba a VPN-kiszolgáló a CA által k
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
 3. Adja meg a következő tulajdonságokat:
-    - **Name**
+    - **Név**
     - **Leírás**
-    - **Platform**: Válassza az **iOS**lehetőséget.
-    - **Profil típusa**: Válassza a **megbízható tanúsítvány**lehetőséget.
+    - **Platform**: válassza az **iOS**lehetőséget.
+    - **Profil típusa**: válassza a **megbízható tanúsítvány**lehetőséget.
 4. Válassza ki a mappa ikont, és keresse meg a VPN-felügyeleti konzolról exportált VPN-tanúsítványt (. cer fájlt). 
-5. Kattintson **az OK** > **Létrehozás**gombra.
+5. Válassza **az OK** > **Létrehozás**elemet.
 
     ![Megbízható tanúsítvány profil létrehozása iOS-eszközökhöz a Microsoft Intuneban](./media/vpn-setting-configure-per-app/vpn-per-app-create-trusted-cert.png)
 
@@ -94,42 +95,42 @@ Az ügyfél-hitelesítési tanúsítvány konfigurálásához és hozzárendelé
 
 A VPN-profil tartalmazza a SCEP vagy a PKCS-tanúsítványt az ügyfél hitelesítő adataival, a VPN-kapcsolati információkkal és az alkalmazáson belüli VPN-jelzővel, amely lehetővé teszi az iOS-alkalmazás által használt alkalmazások közötti VPN-szolgáltatást.
 
-1. Az **Intune**-ban válassza az **eszköz konfigurációs** > **profilok** > **profil létrehozása**lehetőséget. 
+1. Az **Intune**-ban válassza az **eszköz konfigurációja** > **profilok** > **profil létrehozása**lehetőséget. 
 2. Adja meg a következő tulajdonságokat: 
-    - **Name**
+    - **Név**
     - **Leírás**
-    - **Platform**: Válassza az **iOS**lehetőséget.
-    - **Profil típusa**: Válassza a **VPN**lehetőséget.
+    - **Platform**: válassza az **iOS**lehetőséget.
+    - **Profil típusa**: válassza a **VPN**lehetőséget.
 3. A **kapcsolat típusa**területen válassza ki a VPN-ügyfélalkalmazás elemet.
 4. Válassza az **Alapszintű VPN** lehetőséget. az [iOS-es VPN-beállítások](vpn-settings-ios.md) listája és az összes beállítás leírása. Az alkalmazáson belüli VPN használatakor ügyeljen rá, hogy a következő tulajdonságokat adja meg a listával: 
     
-    - **Hitelesítési módszer**: Válassza a **tanúsítványok**lehetőséget. 
-    - **Hitelesítési tanúsítvány**: Válasszon ki egy meglévő SCEP vagy PKCS-tanúsítványt > **az OK gombra**.      
-    - **Megosztott bújtatás**: A **Letiltás** lehetőség kiválasztásával kényszerítheti az összes FORGALMAT a VPN-alagút használatára, amikor a VPN-kapcsolat aktív. 
+    - **Hitelesítési módszer**: válassza a **tanúsítványok**lehetőséget. 
+    - **Hitelesítési tanúsítvány**: válasszon ki egy meglévő SCEP-vagy PKCS-tanúsítványt > **az OK gombra**.      
+    - **Megosztott bújtatás**: válassza a **Letiltás** lehetőséget, ha a VPN-kapcsolat aktív a VPN-alagút használatára szeretné kényszeríteni az összes forgalmat. 
 
       ![Egy alkalmazáson belüli VPN-profilban adja meg a kapcsolat, az IP-cím vagy a teljes tartománynév, a hitelesítési módszer és a felosztott bújtatás Microsoft Intune](./media/vpn-setting-configure-per-app/vpn-per-app-create-vpn-profile.png)
 
     További információt a további beállításokról az [iOS VPN-beállítások](vpn-settings-ios.md)című témakörben talál.
 
-5. Válassza > kiazautomatikus > VPN-**alapú VPN-** típus automatikus VPN-típusát
+5. Válassza az **automatikus vpn** > **típusú automatikus VPN**- > **alkalmazáson belüli VPN-t**
 
     ![Az Intune-ban állítsa be az automatikus VPN-t az alkalmazáson belüli VPN-re iOS-eszközökön](./media/vpn-setting-configure-per-app/vpn-per-app-automatic.png)
 
-6. Kattintson az **OK** > **OK** > **Létrehozás**gombra.
+6. Válassza **az ok** > **OK** > **Létrehozás**elemet.
 
 ## <a name="associate-an-app-with-the-vpn-profile"></a>Alkalmazás társítása a VPN-profillal
 
 Miután hozzáadta a VPN-profilt, társítsa az alkalmazást és a Microsoft Azure Active Directory-csoportot a profillal.
 
 1. Az **Intune-ban** válassza az **Ügyfélalkalmazások** > **Alkalmazások** elemet.
-2. Válasszon ki egy alkalmazást a listáról > > hozzárendelések**hozzáadása csoportot**.
+2. Válasszon ki egy alkalmazást a listáról > **hozzárendelések** > **Csoport hozzáadása**elemet.
 3. A **hozzárendelés típusa**mezőben válassza a **kötelező** vagy **a regisztrált eszközök számára elérhető**lehetőséget.
-4. Jelölje be a belefoglalt **csoportok** > kiválasztása lehetőséget > Válassza ki a [létrehozott](#create-a-group-for-your-vpn-users) csoportot (ebben a cikkben) > **válassza ki**.
+4. Válassza ki a **belefoglalt csoportok** >  lehetőséget **,** > jelölje ki a [létrehozandó](#create-a-group-for-your-vpn-users) csoportot (ebben a cikkben) > **válassza**ki.
 5. A **VPN**-EK területen válassza ki a [létrehozott](#create-a-per-app-vpn-profile) app VPN-profilt (ebben a cikkben).
 
     ![Alkalmazás társítása az alkalmazáson belüli VPN-profilhoz Microsoft Intune](./media/vpn-setting-configure-per-app/vpn-per-app-app-to-vpn.png)
 
-6. Kattintson **az OK** > **Mentés**gombra.
+6. Válassza **az OK**@no__t – 1**Mentés**lehetőséget.
 
 Az alkalmazás és a profil közötti társítás el lesz távolítva az eszköz következő beadásakor, ha az alábbi feltételek mindegyike teljesül:
 

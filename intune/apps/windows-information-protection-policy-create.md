@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 08/23/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: apps
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 4e3627bd-a9fd-49bc-b95e-9b7532f0ed55
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c28deaccbfcc63c87b7cce8862675e704d5d1a2
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 81a2575c0d4e6cdcfdffe09e37880f56647bc835
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730975"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72496431"
 ---
 # <a name="create-and-deploy-windows-information-protection-wip-app-protection-policy-with-intune"></a>A Windows Information Protection (WIP) alkalmazásvédelmi szabályzatainak létrehozása és bevezetése az Intune használatával
 
@@ -36,15 +37,15 @@ A WIP szabályzatainak hozzáadásához célszerű tisztában lenni néhány fog
 
 ### <a name="list-of-allowed-and-exempt-apps"></a>Az engedélyezett és mentesített alkalmazások listája
 
-- **Védett alkalmazások:** Ezek az alkalmazások azok az alkalmazások, amelyeknek be kell tartaniuk a szabályzatot.
+- **Védett alkalmazások:** ezeknek az alkalmazásoknak meg kell felelniük az adott szabályzatnak.
 
-- **Mentesített alkalmazások:** Ezek az alkalmazások mentesülnek a szabályzat alól, és korlátozás nélkül férhetnek hozzá a vállalati adatokhoz.
+- **Mentesített alkalmazások:** ezek mentesülnek az adott szabályzat alól, és korlátozás nélkül hozzáférnek a céges adatokhoz.
 
 ### <a name="types-of-apps"></a>Alkalmazások típusai
 
-- **Ajánlott alkalmazások:** A szabályzatba egyszerűen importálható (főleg Microsoft Office) alkalmazások előre feltöltött listája.
-- **Áruházbeli alkalmazások:** A Windows áruházból bármilyen alkalmazást hozzáadhat a szabályzathoz.
-- **Asztali Windows-alkalmazások:** Bármilyen hagyományos asztali Windows-alkalmazást hozzáadhat a Szabályzathoz (például. exe,. dll)
+- **Ajánlott alkalmazások:** a szabályzatba egyszerűen importálható (leginkább Microsoft Office-) alkalmazásokból előre összeállított lista.
+- **Áruházbeli alkalmazások:** bármilyen alkalmazást felvehet a szabályzatba a Microsoft Áruházból.
+- **Asztali Windows-alkalmazások:** bármilyen hagyományos asztali Windows-alkalmazást (.exe, .dll stb.) felvehet a szabályzatba.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -70,16 +71,16 @@ Miután cégénél beállította az Intune-t, létrehozhat WIP-specifikus szabá
 > Az Intune-ban a WIP-szabályzatok létrehozásával – beleértve az elérhető beállításokkal és a konfigurálásuk módjával – kapcsolatosan a Windows rendszerbiztonsági dokumentáció gyűjteményében, a [Windows Information Protection (WIP) szabályzatainak MAM használatával, a Microsoft Intune Azure Portaljával való létrehozásáról szóló szakaszban](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/create-wip-policy-using-mam-intune-azure) talál további információt. 
 
 
-1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com).
+1. Jelentkezzen be az [Azure portálra](https://portal.azure.com).
 2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget.
 3. A **Microsoft Intune** panelen válassza az **Ügyfélalkalmazások** lehetőséget.
 4. Az **Ügyfélalkalmazások** panelen válassza az **Alkalmazásvédelmi szabályzatok** lehetőséget.
 5. Válassza a **Szabályzat hozzáadása** lehetőséget a **Szabályzat hozzáadása** panel megjelenítéséhez.
 6. Adja meg a következő értékeket:
-    - **név:** Adja meg az új szabályzat nevét (kötelező).
-    - **Leírás:** Választható Írjon be egy leírást.
-    - **Platform** Válassza a **Windows 10** lehetőséget az alkalmazás védelmi házirendjéhez támogatott platformként.
-    - **Beléptetési állapot:** A szabályzat beléptetési állapotaként válassza a **regisztráció nélkül** lehetőséget.
+    - **Név:** Adja meg az új szabályzat nevét (szükséges).
+    - **Leírás:** Adjon meg egy leírást (nem kötelező).
+    - **Platform:** Az alkalmazásvédelmi szabályzat támogatott platformjának válassza a **Windows 10** lehetőséget.
+    - **Regisztráció állapota:** Válassza a **Regisztráció nélkül** lehetőséget a szabályzat regisztrációs állapotaként.
 7. Válassza a **Létrehozás** lehetőséget. A szabályzat létrejön, és megjelenik az **Alkalmazásvédelmi szabályzatok** panelen található táblázatban.
 
 ## <a name="to-add-recommended-apps-to-your-protected-apps-list"></a>Javasolt alkalmazások hozzáadása a védett alkalmazások listájához
@@ -90,8 +91,8 @@ Miután cégénél beállította az Intune-t, létrehozhat WIP-specifikus szabá
 4. Az **Intune App Protection** panelen válassza a **Védett alkalmazások** lehetőséget. Megnyílik a **Védett alkalmazások** panel, ahol azoknak az alkalmazásoknak a listáját láthatja, amelyekre ez a szabályzat vonatkozik.
 5. Válassza a **Alkalmazások hozzáadása** lehetőséget. Az **Alkalmazások hozzáadása** területen megtekintheti a szűrt alkalmazáslistát. A panel tetején található listával módosíthatja a listaszűrőt.
 6. Válassza ki azokat az alkalmazásokat, amelyeknek hozzáférést kíván adni a céges adatokhoz.
-7. Kattintson az **OK** gombra. A **Védett alkalmazások** panel frissül, és kibővül a kiválasztott alkalmazásokkal.
-8. Kattintson a **Save** (Mentés) gombra.
+7. Kattintson az **OK**gombra. A **Védett alkalmazások** panel frissül, és kibővül a kiválasztott alkalmazásokkal.
+8. Kattintson a **Mentés**gombra.
 
 ## <a name="add-a-store-app-to-your-protected-apps-list"></a>Áruházbeli alkalmazás hozzáadása a védett alkalmazások listájához
 
@@ -103,8 +104,8 @@ Miután cégénél beállította az Intune-t, létrehozhat WIP-specifikus szabá
 5. Válassza a **Alkalmazások hozzáadása** lehetőséget. Az **Alkalmazások hozzáadása** területen megtekintheti a szűrt alkalmazáslistát. A panel tetején található listával módosíthatja a listaszűrőt.
 6. Válassza az **Áruházbeli alkalmazások** lehetőséget a listában.
 7. Adja meg a **Név**, a **Közzétevő**, a **Terméknév** és a **Művelet** értékét. A **Művelet** értéket **Engedélyezésre** állítsa, így az alkalmazás hozzáférhet a vállalati adatokhoz.
-9. Kattintson az **OK** gombra. A **Védett alkalmazások** panel frissül, és kibővül a kiválasztott alkalmazásokkal.
-10. Kattintson a **Save** (Mentés) gombra.
+9. Kattintson az **OK**gombra. A **Védett alkalmazások** panel frissül, és kibővül a kiválasztott alkalmazásokkal.
+10. Kattintson a **Mentés**gombra.
 
 ## <a name="add-a-desktop-app-to-your-protected-apps-list"></a>Asztali alkalmazás hozzáadása az védett alkalmazások listájához
 
@@ -116,8 +117,8 @@ Miután cégénél beállította az Intune-t, létrehozhat WIP-specifikus szabá
 5. Válassza a **Alkalmazások hozzáadása** lehetőséget. Az **Alkalmazások hozzáadása** területen megtekintheti a szűrt alkalmazáslistát. A panel tetején található listával módosíthatja a listaszűrőt.
 6. Válassza az **Asztali alkalmazások** lehetőséget a listában.
 7. Adja meg a **Név**, a **Közzétevő**, a **Terméknév**, a **Fájl**, a **Legalacsonyabb verzió**, a **Maximális verzió** és a **Művelet** értékét. A **Művelet** értéket **Engedélyezésre** állítsa, így az alkalmazás hozzáférhet a vállalati adatokhoz.
-9. Kattintson az **OK** gombra. A **Védett alkalmazások** panel frissül, és kibővül a kiválasztott alkalmazásokkal.
-10. Kattintson a **Save** (Mentés) gombra.
+9. Kattintson az **OK**gombra. A **Védett alkalmazások** panel frissül, és kibővül a kiválasztott alkalmazásokkal.
+10. Kattintson a **Mentés**gombra.
 
 ## <a name="wip-learning"></a>WIP Learning
 A WIP által védeni kívánt alkalmazások hozzáadása után alkalmazni kell azokon az egyik védelmi módot a **WIP Learning** használatával.

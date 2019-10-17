@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 10/02/2019
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: medium
 ms.technology: ''
 ms.reviewer: ''
@@ -15,12 +16,12 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2ae9637e827330fb33c407122450deb014b3725a
-ms.sourcegitcommit: f04e21ec459998922ba9c7091ab5f8efafd8a01c
+ms.openlocfilehash: 17d0baeeb6b193be6acf8d6087c26a66b18642c5
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71816871"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506668"
 ---
 # <a name="macos-device-feature-settings-in-intune"></a>macOS-eszköz funkciójának beállításai az Intune-ban
 
@@ -41,12 +42,12 @@ Ez a cikk felsorolja ezeket a beállításokat, és leírja az egyes beállítá
 
 ## <a name="airprint"></a>AirPrint
 
-### <a name="settings-apply-to-device-enrollment"></a>A beállítások a következőkre vonatkoznak: Eszközök beléptetése
+### <a name="settings-apply-to-device-enrollment"></a>Beállítások a következőkre vonatkoznak: eszköz beléptetése
 
-- **IP-cím**: Adja meg a nyomtató IPv4-vagy IPv6-címeit. Ha állomásneveket használ a nyomtatók azonosítására, akkor az IP-címet a nyomtatónak a terminál alkalmazásban történő pingelésével érheti el. [Az IP-cím és az elérési út lekérése](#get-the-ip-address-and-path) (ebben a cikkben) további részleteket tartalmaz.
-- **Elérési út**: Adja meg a nyomtató elérési útját. Az elérési út `ipp/print` általában a hálózatban lévő nyomtatókhoz van. [Az IP-cím és az elérési út lekérése](#get-the-ip-address-and-path) (ebben a cikkben) további részleteket tartalmaz.
-- **Port** (iOS 11,0 és újabb verziók): Adja meg a AirPrint célhelyének figyelési portját. Ha üresen hagyja ezt a tulajdonságot, a AirPrint az alapértelmezett portot használja.
-- **TLS** (iOS 11,0 és újabb verziók): Válassza az **Engedélyezés** lehetőséget a AirPrint-kapcsolatok TRANSPORT Layer Security (TLS) használatával történő biztonságossá tételéhez.
+- **IP-cím**: adja meg a nyomtató IPv4-vagy IPv6-címét. Ha állomásneveket használ a nyomtatók azonosítására, akkor az IP-címet a nyomtatónak a terminál alkalmazásban történő pingelésével érheti el. [Az IP-cím és az elérési út](#get-the-ip-address-and-path) (ebben a cikkben) beszerzése további részleteket tartalmaz.
+- **Elérési út**: adja meg a nyomtató elérési útját. Az elérési út általában `ipp/print` a hálózatban lévő nyomtatókhoz. [Az IP-cím és az elérési út](#get-the-ip-address-and-path) (ebben a cikkben) beszerzése további részleteket tartalmaz.
+- **Port** (iOS 11,0 és újabb): adja meg a AirPrint célhelyének figyelési portját. Ha üresen hagyja ezt a tulajdonságot, a AirPrint az alapértelmezett portot használja.
+- **TLS** (iOS 11,0 és újabb): válassza az **Engedélyezés** lehetőséget a AirPrint-kapcsolatok Transport Layer Security (TLS) használatával történő biztonságossá tételéhez.
 
 - **Hozzáadás** A AirPrint-kiszolgáló. Több AirPrint-kiszolgálót is hozzáadhat.
 
@@ -56,22 +57,22 @@ Ez a cikk felsorolja ezeket a beállításokat, és leírja az egyes beállítá
 
 AirPrinter-kiszolgálók hozzáadásához szüksége lesz a nyomtató IP-címére, az erőforrás elérési útjára és a portra. Az alábbi lépések bemutatják, hogyan kérheti le ezeket az információkat.
 
-1. Olyan Mac gépen, amely ugyanahhoz a helyi hálózathoz (alhálózat) csatlakozik, mint a AirPrint-nyomtatók, nyissa meg a terminált (a **/Applications/Utilities alatt**).
-2. A terminál alkalmazásban írja be `ippfind`a parancsot, majd kattintson az ENTER (bevitel) gombra.
+1. Olyan Mac gépen, amely ugyanahhoz a helyi hálózathoz (alhálózat) csatlakozik, mint a AirPrint-nyomtatók, nyissa meg a **terminált** (a **/Applications/Utilities alatt**).
+2. A Terminal alkalmazásban írja be a `ippfind` értéket, majd kattintson az ENTER gombra.
 
-    Jegyezze fel a nyomtató adatait. Előfordulhat például, hogy a `ipp://myprinter.local.:631/ipp/port1`következőhöz hasonló értéket ad vissza:. Az első rész a nyomtató neve. Az utolsó rész (`ipp/port1`) az erőforrás elérési útja.
+    Jegyezze fel a nyomtató adatait. Előfordulhat például, hogy a `ipp://myprinter.local.:631/ipp/port1` értékhez hasonló értéket ad vissza. Az első rész a nyomtató neve. Az utolsó rész (`ipp/port1`) az erőforrás elérési útja.
 
-3. A terminálon írja be `ping myprinter.local`a parancsot, majd kattintson az ENTER (bevitel) gombra.
+3. A terminálban írja be a `ping myprinter.local` értéket, majd kattintson az ENTER gombra.
 
-   Jegyezze fel az IP-címet. Előfordulhat például, hogy a `PING myprinter.local (10.50.25.21)`következőhöz hasonló értéket ad vissza:.
+   Jegyezze fel az IP-címet. Előfordulhat például, hogy a `PING myprinter.local (10.50.25.21)` értékhez hasonló értéket ad vissza.
 
-4. Használja az IP-cím és az erőforrás elérési útjának értékét. Ebben a példában az IP-cím `10.50.25.21`, az erőforrás elérési útja pedig. `/ipp/port1`
+4. Használja az IP-cím és az erőforrás elérési útjának értékét. Ebben a példában az IP-cím `10.50.25.21`, az erőforrás elérési útja pedig `/ipp/port1`.
 
 ## <a name="login-items"></a>Bejelentkezési elemek
 
-### <a name="settings-apply-to-all-enrollment-types"></a>A beállítások a következőkre vonatkoznak: Minden regisztrációs típus
+### <a name="settings-apply-to-all-enrollment-types"></a>A beállítások a következőre vonatkoznak: minden regisztrációs típus
 
-- **Fájlok, mappák és egyéni alkalmazások**: **Adja** meg a megnyitni kívánt fájl, mappa, egyéni alkalmazás vagy rendszeralkalmazás elérési útját, amikor egy felhasználó bejelentkezik az eszközre. A szervezete számára létrehozott vagy testre szabott rendszeralkalmazások vagy alkalmazások általában a `Applications` mappában találhatók, a következőhöz `/Applications/AppName.app`hasonló elérési úttal. 
+- **Fájlok, mappák és egyéni alkalmazások**: **adja** meg a megnyitni kívánt fájl, mappa, egyéni alkalmazás vagy rendszeralkalmazás elérési útját, amikor egy felhasználó bejelentkezik az eszközre. A szervezete számára létrehozott vagy testre szabott rendszeralkalmazások vagy alkalmazások jellemzően a `Applications` mappában találhatók, és a `/Applications/AppName.app`-hez hasonló elérési úttal rendelkeznek. 
 
   Számos fájlt, mappát és alkalmazást adhat hozzá. Írja be például a következőt:  
   
@@ -84,41 +85,41 @@ AirPrinter-kiszolgálók hozzáadásához szüksége lesz a nyomtató IP-címér
 
 ## <a name="login-window"></a>Bejelentkezési ablak
 
-### <a name="settings-apply-to-device-enrollment"></a>A beállítások a következőkre vonatkoznak: Eszközök beléptetése
+### <a name="settings-apply-to-device-enrollment"></a>Beállítások a következőkre vonatkoznak: eszköz beléptetése
 
 #### <a name="window-layout"></a>Ablak elrendezése
 
-- **További információk megjelenítése a menüsorban**: Ha a menüsorban az időszak van kiválasztva, az **Engedélyezés** megjeleníti az állomásnév és a MacOS verzióját. **Nincs konfigurálva** (alapértelmezés) nem jeleníti meg ezeket az információkat a menüsávon.
-- **Szalagcím**: Adja meg az eszköz bejelentkezési képernyőjén látható üzenetet. Adja meg például a szervezeti adatokat, egy üdvözlő üzenetet, az elveszett és a talált információkat, és így tovább.
-- **Adja meg a bejelentkezési formátumot**: Válassza ki, hogyan jelentkeznek be a felhasználók az eszközre. A választható lehetőségek:
-  - **Felhasználónév és jelszó kérése** (alapértelmezett): Felhasználónevet és jelszót kell megadnia a felhasználóknak.
-  - **Az összes felhasználó listázása, jelszó kérése**: A felhasználóknak a felhasználónevet a felhasználói listából kell kiválasztaniuk, majd meg kell adniuk a jelszavukat. Konfigurálja a következőket is:
+- **További információk megjelenítése a menüsávban**: Ha a menüsorban az időpont van kiválasztva, az **Engedélyezés** megjeleníti az állomásnév és a MacOS verzióját. **Nincs konfigurálva** (alapértelmezés) nem jeleníti meg ezt az információt a menüsávon.
+- **Banner**: adjon meg egy üzenetet, amely megjelenik az eszköz bejelentkezési képernyőjén. Adja meg például a szervezeti adatokat, egy üdvözlő üzenetet, az elveszett és a talált információkat, és így tovább.
+- **Válassza a bejelentkezési formátum elemet**: válassza ki, hogy a felhasználók hogyan jelentkezzenek be az eszközre. A választható lehetőségek:
+  - **Felhasználónév és jelszó kérése** (alapértelmezett): a felhasználóknak felhasználónevet és jelszót kell megadniuk.
+  - Az **összes felhasználó listázása, jelszó kérése**: a felhasználóknak a felhasználónevet a felhasználói listából kell kiválasztaniuk, majd meg kell adniuk a jelszavukat. Konfigurálja a következőket is:
 
-    - **Helyi felhasználók**: Az **Elrejtés** nem jeleníti meg a felhasználók listájában a helyi felhasználói fiókokat, amelyek magukban foglalhatják a standard és a rendszergazdai fiókokat. Csak a hálózat és a rendszer felhasználói fiókjai jelennek meg. **Nincs konfigurálva** (alapértelmezés) megjeleníti a helyi felhasználói fiókokat a felhasználók listájában.
-    - **Mobile-fiókok**: Az **Elrejtés** nem jeleníti meg a mobil fiókokat a felhasználók listájában. **Nincs konfigurálva** (alapértelmezés) megjeleníti a felhasználói listán szereplő mobil fiókokat. Egyes Mobile-fiókok hálózati felhasználóként jelenhetnek meg.
-    - **Hálózati felhasználók**: Válassza a **Megjelenítés** lehetőséget a felhasználók listájában szereplő hálózati felhasználók listázásához. **Nincs konfigurálva** (alapértelmezés) nem jeleníti meg a hálózati felhasználói fiókokat a felhasználók listájában.
-    - **Rendszergazda felhasználók**: Az **Elrejtés** nem jeleníti meg a rendszergazdai felhasználói fiókokat a felhasználók listájában. **Nincs konfigurálva** (alapértelmezés) a felhasználók listájában a rendszergazdai felhasználói fiókokat jeleníti meg.
-    - **Egyéb felhasználók**: Válassza a **Megjelenítés** elemet a felhasználók listájának **más...** felhasználóinak listázásához. **Nincs konfigurálva** (alapértelmezés) nem jeleníti meg a többi felhasználói fiókot a felhasználók listájában.
+    - **Helyi felhasználók**: az **Elrejtés** nem jeleníti meg a felhasználói listán szereplő helyi felhasználói fiókokat, amelyek magukban foglalhatják a standard és a rendszergazdai fiókokat. Csak a hálózat és a rendszer felhasználói fiókjai jelennek meg. **Nincs konfigurálva** (alapértelmezés) a felhasználók listájában a helyi felhasználói fiókokat jeleníti meg.
+    - **Mobileszközök**: az **Elrejtés** nem jeleníti meg a felhasználói listán szereplő Mobile-fiókokat. **Nincs konfigurálva** (alapértelmezés) a felhasználók listájában látható Mobile-fiókokat jeleníti meg. Egyes Mobile-fiókok hálózati felhasználóként jelenhetnek meg.
+    - **Hálózati felhasználók**: válassza a **Megjelenítés** lehetőséget a felhasználók listájában szereplő hálózati felhasználók listázásához. **Nincs konfigurálva** (az alapértelmezett) nem jeleníti meg a hálózati felhasználói fiókokat a felhasználók listájában.
+    - Rendszergazda **felhasználók**: az **Elrejtés** nem jeleníti meg a rendszergazdai felhasználói fiókokat a felhasználók listájában. **Nincs konfigurálva** (alapértelmezés) a felhasználók listájában a rendszergazdai felhasználói fiókokat jeleníti meg.
+    - **Egyéb felhasználók**: válassza a **Megjelenítés** lehetőséget a felhasználók listájában szereplő **egyéb...** felhasználók listázásához. **Nincs konfigurálva** (az alapértelmezett) nem jeleníti meg a többi felhasználói fiókot a felhasználók listájában.
 
 #### <a name="login-screen-power-settings"></a>Bejelentkezési képernyő energiagazdálkodási beállításai
 
-- **Leállítás gomb**: Az **Elrejtés** gomb nem jelenik meg a bejelentkezési képernyő leállítás gombjával. **Nincs konfigurálva** (alapértelmezés) megjeleníti a Leállítás gombot.
-- **Újraindítás gomb**: Az **Elrejtés** gomb nem jeleníti meg az újraindítás gombot a bejelentkezési képernyőn. **Nincs konfigurálva** (alapértelmezés) az újraindítás gombot jeleníti meg.
-- **Alvó gomb**: Az **Elrejtés** gomb nem jeleníti meg az alvó gombot a bejelentkezési képernyőn. **Nincs konfigurálva** (alapértelmezés) az alvó gomb megjelenítése.
+- **Leállítás gomb**: az **Elrejtés** nem jelenik meg a bejelentkezési képernyőn a Leállítás gomb. **Nincs konfigurálva** (alapértelmezés) a Leállítás gombot jeleníti meg.
+- **Újraindítás gomb**: az **Elrejtés** gomb nem jeleníti meg az újraindítás gombot a bejelentkezési képernyőn. **Nincs konfigurálva** (alapértelmezés) az újraindítás gombot jeleníti meg.
+- **Alvó állapot gomb**: az **Elrejtés** nem jelenik meg a bejelentkezési képernyő alvó állapot gombján. **Nincs konfigurálva** (alapértelmezés) az alvó gomb megjelenítése.
 
-#### <a name="other"></a>Egyéb
+#### <a name="other"></a>Más
 
-- **Felhasználói bejelentkezés letiltása a konzolról**: A **Letiltás letiltja** a bejelentkezéshez használt MacOS-parancssort. A tipikus felhasználók esetében **Tiltsa le** ezt a beállítást. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a haladó felhasználók a macOS parancssor használatával jelentkezzenek be. A konzol mód megadásához a `>console` felhasználók a Felhasználónév mezőbe lépnek be, és a konzol ablakban kell hitelesíteniük magukat.
+- **Felhasználói bejelentkezés letiltása a konzolról**: **letiltja** a bejelentkezéshez használt MacOS-parancssor elrejtése. A tipikus felhasználók esetében **Tiltsa le** ezt a beállítást. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a speciális felhasználók számára a bejelentkezést a MacOS parancssor használatával. A konzol üzemmódjának megadásához a felhasználók a username (Felhasználónév) mezőbe `>console` értéket kell megadniuk, és hitelesíteniük kell magukat a konzol ablakban.
 
 #### <a name="apple-menu"></a>Apple menü
 
 Miután a felhasználók bejelentkeznek az eszközökre, a következő beállítások befolyásolhatják, hogy milyen műveleteket végezhetnek el.
 
-- **Leállítás letiltása**: A **Letiltás** beállítás megadásával megakadályozható, hogy a felhasználók bejelentkeznek a **Leállítás** lehetőséggel. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználóknak az eszköz **Leállítás** menüpontjának kiválasztását.
-- **Újraindítás letiltása**: A **Letiltás** beállítás megadásával megakadályozható, hogy a felhasználók bejelentkeznek az **Újraindítási** lehetőség választásával. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára az **Újraindítási** menüelem kiválasztását az eszközön.
-- Kikapcsolás **letiltása**: A **Letiltás** beállítás megadásával megakadályozható, hogy a felhasználók **bejelentkeznek** a kikapcsolás lehetőséggel. **Nincs konfigurálva** (alapértelmezés) lehetővé **teszi a felhasználók** számára, hogy kiválassza a kikapcsolt menüelemet az eszközön.
-- Kijelentkezés **letiltása** (macOS 10,13 és újabb verziók): A **Letiltás** beállítás megadásával megakadályozható, hogy a felhasználók **bejelentkeznek a kijelentkezés** lehetőséggel. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára a **kijelentkezés** menüpont kiválasztását az eszközön.
-- **Zárolási képernyő letiltása** (macOS 10,13 és újabb verziók): A **Letiltás** beállítás megadásával megakadályozható, hogy a felhasználók bejelentkeznek a **zárolási képernyő** lehetőséggel. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy kiválassza a **zárolási képernyő** menüelemét az eszközön.
+- **Leállítás letiltása**: a **Letiltás** beállítás megadásával megakadályozható, hogy a felhasználók bejelentkeznek a **Leállítás** lehetőséggel. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára az eszköz **Leállítás** menüpontjának kiválasztását.
+- **Újraindítás letiltása**: a **Letiltás** beállítás megadásával megakadályozható, hogy a felhasználók a felhasználó bejelentkezése után kiválasszanak az **Újraindítás** lehetőséget. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára az **Újraindítási** menüelem kiválasztását az eszközön.
+- Kikapcsolás **letiltása**: a **Letiltás** beállítás megadásával megakadályozható, hogy a felhasználók **bejelentkeznek** a kikapcsolás lehetőséggel. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy kiválasszanak a **kikapcsolt menüelemet** az eszközön.
+- Kijelentkezés **letiltása** (MacOS 10,13 és újabb): a **Letiltás** beállítás megadásával megakadályozható, hogy a felhasználók **bejelentkeznek a kijelentkezés** lehetőséggel. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára a **kijelentkezés** menüpont kiválasztását az eszközön.
+- **Zárolási képernyő letiltása** (MacOS 10,13 és újabb): a **Letiltás** beállítás megadásával megakadályozható, hogy a felhasználók bejelentkeznek a **zárolási képernyő** lehetőségre. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy kiválassza a **zárolási képernyő** menüelemét az eszközön.
 
 ## <a name="single-sign-on-app-extension"></a>Egyszeri bejelentkezési alkalmazás bővítménye
 
@@ -126,64 +127,64 @@ Ez a funkció az alábbiakra vonatkozik:
 
 - macOS 10,15 és újabb verziók
 
-### <a name="settings-apply-to-all-enrollment-types"></a>A beállítások a következőkre vonatkoznak: Minden regisztrációs típus 
+### <a name="settings-apply-to-all-enrollment-types"></a>A beállítások a következőre vonatkoznak: minden regisztrációs típus 
 
-- **Egyszeri bejelentkezéses alkalmazás bővítményének típusa**: Válassza ki a hitelesítő adatok SSO-alkalmazásának típusát. Az SSO app Extension-profil mentésekor nem módosítható az egyszeri bejelentkezéses alkalmazás bővítményének típusa. A választható lehetőségek:
+- **Egyszeri bejelentkezéses alkalmazás bővítményének típusa**: válassza ki a hitelesítő adatok egyszeri bejelentkezéses alkalmazás-bővítményének típusát. Az SSO app Extension-profil mentésekor nem módosítható az egyszeri bejelentkezéses alkalmazás bővítményének típusa. A választható lehetőségek:
 
-  - **Nincs konfigurálva**: Nem használják az alkalmazás-bővítményeket. Az egyszeri bejelentkezéses alkalmazások kiterjesztésének letiltásához állítsa át az egyszeri bejelentkezéses alkalmazás kiterjesztésének típusát a **Kerberos** vagy a **hitelesítő adatok** közül a **nincs konfigurálva**értékre
-  - **Hitelesítő adat**: Használjon egy általános, testreszabható hitelesítőadat-alkalmazás-bővítményt az egyszeri bejelentkezés használatához. Győződjön meg róla, hogy ismeri a szervezete SSO-alkalmazásának bővítmény-AZONOSÍTÓját és a csoport AZONOSÍTÓját.  
-  - **Kerberos**: Használja az Apple beépített Kerberos-bővítményét, amely a macOS Catalina 10,15-es és újabb verzióiban található. Ez a beállítás a **hitelesítőadat** -alkalmazás kiterjesztésének Kerberos-specifikus verziója.
+  - **Nincs konfigurálva**: az alkalmazás-bővítmények nem használatosak. Az egyszeri bejelentkezéses alkalmazások kiterjesztésének letiltásához állítsa át az egyszeri bejelentkezéses alkalmazás kiterjesztésének típusát a **Kerberos** vagy a **hitelesítő adatok** közül a **nincs konfigurálva**értékre
+  - **Hitelesítő adatok**: általános, testreszabható hitelesítőadat-alkalmazási bővítmény használata az egyszeri bejelentkezés használatához. Győződjön meg róla, hogy ismeri a szervezete SSO-alkalmazásának bővítmény-AZONOSÍTÓját és a csoport AZONOSÍTÓját.  
+  - **Kerberos**: az Apple beépített Kerberos-bővítményét használja, amely megtalálható a macOS Catalina 10,15-es és újabb verzióiban. Ez a beállítás a **hitelesítőadat** -alkalmazás kiterjesztésének Kerberos-specifikus verziója.
 
   > [!TIP]
   > A **hitelesítő adatok** típusával adja hozzá a saját konfigurációs értékeit, hogy áthaladjon a bővítményen. Ehelyett érdemes lehet az Apple által biztosított beépített konfigurációs beállításokat használni a **Kerberos** -típusban.
 
-- **BŐVÍTMÉNY azonosítója** (Csak hitelesítő adatok): Adja meg az SSO-alkalmazás kiterjesztését azonosító köteg-azonosítót, `com.apple.ssoexample`például:.
-- **Csoport azonosítója** (Csak hitelesítő adatok): Adja meg az egyszeri bejelentkezéses alkalmazás bővítményének csapat-azonosítóját. A csapat azonosítója az Apple által generált, 10 karakterből álló alfanumerikus (számok és betűk) karakterlánc, például `ABCDE12345`:. 
+- **BŐVÍTMÉNY azonosítója** (csak hitelesítő adatok): adja meg az SSO-alkalmazás kiterjesztését azonosító köteg-azonosítót, például `com.apple.ssoexample`.
+- **Csoport azonosítója** (csak hitelesítő adatok): adja meg az egyszeri bejelentkezéses alkalmazás-bővítmény csoportjának azonosítóját. A csapat azonosítója az Apple által generált 10 karakteres alfanumerikus (számok és betűk) karakterlánc, például `ABCDE12345`. 
 
-  [A csoport azonosítójának megkeresése](https://help.apple.com/developer-account/#/dev55c3c710c) (az Apple webhelyének megnyitása) további információkat tartalmaz.
+  [Keresse meg a csoport azonosítóját (az](https://help.apple.com/developer-account/#/dev55c3c710c) Apple webhelyének megnyitása), amely további információkat tartalmaz.
 
-- **Tartomány**: Adja meg a Kerberos-tartomány nevét. A tartománynevet tőkésíteni kell, például `CONTOSO.COM`:. A tartománynév általában megegyezik a DNS-tartománynévvel, de minden nagybetűvel.
-- **Tartományok**: Adja meg az egyszeri bejelentkezéssel hitelesíthető helyek tartomány-vagy állomásnevek nevét. Ha például a webhelye `mysite.contoso.com`, akkor `mysite` az az állomásnév, `contoso.com` a pedig a tartománynév. Ha a felhasználók bármelyik webhelyhez csatlakoznak, az alkalmazás-bővítmény kezeli a hitelesítési kihívást. Ez a hitelesítés lehetővé teszi a felhasználók számára a bejelentkezéshez a Face ID, a Touch ID vagy az Apple pincode/PIN-kód használatát.
+- **Tartomány**: írja be a Kerberos-tartomány nevét. A tartománynevet tőkésíteni kell, például `CONTOSO.COM`. A tartománynév általában megegyezik a DNS-tartománynévvel, de minden nagybetűvel.
+- **Tartományok**: Itt adhatja meg az SSO-n keresztül hitelesíthető helyek tartomány-vagy állomásnevek nevét. Ha például a webhely `mysite.contoso.com`, akkor `mysite` az állomásnév, és a `contoso.com` a tartománynév. Ha a felhasználók bármelyik webhelyhez csatlakoznak, az alkalmazás-bővítmény kezeli a hitelesítési kihívást. Ez a hitelesítés lehetővé teszi a felhasználók számára a bejelentkezéshez a Face ID, a Touch ID vagy az Apple pincode/PIN-kód használatát.
 
   - Az egyszeri bejelentkezési alkalmazás bővítményének Intune-profiljainak minden tartományának egyedinek kell lennie. A tartományokat nem lehet megismételni a Bejelentkezési alkalmazás bővítményeinek egyik profiljában sem, még akkor is, ha különböző típusú egyszeri bejelentkezéses alkalmazás-bővítményeket használ.
   - Ezek a tartományok nem megkülönböztetik a kis-és nagybetűket
 
-- **További konfiguráció** (Csak hitelesítő adatok): Adja meg az egyszeri bejelentkezéses alkalmazás kiterjesztésére vonatkozó további, bővítményekre vonatkozó adatbevitelt:
-  - **Konfigurációs kulcs**: Adja meg a hozzáadni kívánt elem nevét, például `user name`:.
-  - **Érték típusa**: Adja meg az adattípust. A választható lehetőségek:
+- **További konfiguráció** (csak hitelesítő adatok): adja meg az egyszeri bejelentkezéshez szükséges további adatokat, amelyeket át kell adni az SSO-alkalmazás kiterjesztésének:
+  - **Konfigurációs kulcs**: adja meg a hozzáadni kívánt elem nevét, például `user name`.
+  - **Value Type (értéktípus**): adja meg az adattípust. A választható lehetőségek:
 
     - Sztring
-    - Logikai A **konfigurációs érték**mezőben adja `True` meg `False`a vagy a értéket.
-    - Egész A **konfigurációs érték**mezőbe írjon be egy számot.
+    - Boolean: a **konfigurációs érték**mezőben adja meg a `True` vagy a `False` értéket.
+    - Egész szám: a **konfigurációs érték**mezőbe írjon be egy számot.
     
-  - **Konfigurációs érték**: Adja meg az adatbevitelt.
+  - **Konfigurációs érték**: adja meg az adathalmazt.
   
-  - **Hozzáadás**: A konfigurációs kulcsok hozzáadásához válassza a lehetőséget.
+  - **Hozzáadás**: válassza ki a konfigurációs kulcsok hozzáadásához.
 
-- **Kulcstartó használata** (Csak Kerberos esetén): A **blokkolás** gombra kattintva megakadályozhatja a jelszavak mentését és tárolását a kulcstartóban. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a jelszavak mentését és tárolását a kulcstartóban.  
-- **Face ID, Touch ID vagy PIN kód** (Csak Kerberos esetén): **Megkövetelheti** a felhasználóktól, hogy a hozzáadott tartományba való bejelentkezéshez megadják a Face ID, a Touch ID vagy az Apple PIN-kódot. **Nincs konfigurálva** (alapértelmezés) nem igényli, hogy a felhasználók a bejelentkezéshez biometria vagy PIN-kódot használjanak.
-- **Alapértelmezett tartomány** (Csak Kerberos esetén): Válassza az **Engedélyezés** lehetőséget az alapértelmezett tartományként megadott **tartomány** értékének beállításához. **Nincs konfigurálva** (alapértelmezés) nem állítja be az alapértelmezett tartományt.
+- **Kulcstartó használata** (csak Kerberos): válassza a **Letiltás** lehetőséget, hogy megakadályozza a jelszavak mentését és tárolását a kulcstartóban. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a jelszavak mentését és tárolását a kulcstartóban.  
+- **Face ID, Touch ID vagy PIN kód** (csak Kerberos): **megköveteli** , hogy a felhasználók belépjenek a saját Face ID, Touch ID vagy Apple PIN-kóddal a hozzáadott tartományba való bejelentkezéshez. **Nincs konfigurálva** (alapértelmezés) nem igényli, hogy a felhasználók biometrikus vagy PIN-kódot használjanak a bejelentkezéshez.
+- **Alapértelmezett tartomány** (csak Kerberos): válassza az **Engedélyezés** lehetőséget az alapértelmezett tartományként megadott **tartomány** értékének megadásához. **Nincs konfigurálva** (alapértelmezés) nem állítja be az alapértelmezett tartományt.
 
   > [!TIP]
   > - Akkor **engedélyezze** ezt a beállítást, ha több Kerberos SSO-alkalmazás-bővítményt konfigurál a szervezetében.
   > - Ha több birodalmat használ, **engedélyezze** ezt a beállítást. Az alapértelmezett tartományként megadott **tartományi** értéket állítja be.
   > - Ha csak egy tartománya van, hagyja meg, hogy **nincs konfigurálva** (alapértelmezett).
 
-- **Automatikus észlelés** (Csak Kerberos esetén): Ha a **blokkolás**értékre van állítva, a Kerberos-bővítmény nem használja automatikusan az LDAP és a DNS szolgáltatást a Active Directory hely nevének meghatározásához. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a bővítmény automatikusan megkeresse a Active Directory hely nevét.
-- **Jelszó módosítása** (Csak Kerberos esetén): A **Letiltás** beállítás megadásával megakadályozható, hogy a felhasználók megváltoztassák a beírt tartományba való bejelentkezéshez használt jelszavakat. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a jelszó módosítását.  
-- **Jelszó-szinkronizálás** (Csak Kerberos esetén): Az **Engedélyezés** gombra kattintva szinkronizálhatja a felhasználók helyi jelszavait az Azure ad-vel. **Nincs konfigurálva** (alapértelmezés) letiltja a jelszó-szinkronizálást az Azure AD-be. Ezt a beállítást Alternatív megoldásként vagy az SSO-ként történő biztonsági mentésként használhatja. Ez a beállítás nem működik, ha a felhasználók Apple Mobile-fiókkal jelentkeznek be.
-- **Windows Server Active Directory jelszó bonyolultsága** (Csak Kerberos esetén): A **kötelező** beállítás megadásával kényszerítheti a felhasználói jelszavakat, hogy megfeleljenek Active Directory jelszavának összetettségi követelményeinek. További információkért lásd: a [jelszónak meg kell felelnie a bonyolultsági feltételeknek](https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements) . **Nincs konfigurálva** (alapértelmezés) nem igényli, hogy a felhasználók megfeleljenek Active Directory jelszavára vonatkozó követelménynek.
-- **Jelszó minimális hossza** (Csak Kerberos esetén): Adja meg a felhasználó jelszavának kihasználható karakterek minimális számát. **Nincs konfigurálva** (alapértelmezés) nem kényszeríti ki a jelszó minimális hosszát a felhasználóknál.
-- **Jelszó újrafelhasználásának korlátja** (Csak Kerberos esetén): Adja meg a 1-24-ból származó új jelszavak számát, amelyeket addig kell használni, amíg egy korábbi jelszót újra fel nem használ a tartományon. **Nincs konfigurálva** (alapértelmezés) nem érvényesíti a jelszó-újrahasznosítási korlátot.
-- **Jelszó minimális kora** (Csak Kerberos esetén): Adja meg, hogy hány nap elteltével kell használni a jelszót a tartományon, mielőtt a felhasználó módosíthatja azt. **Nincs konfigurálva** (az alapértelmezett érték) nem kényszeríti ki a minimális korhatárt a jelszó megváltozása előtt.
-- **Jelszó lejáratáról szóló értesítés** (Csak Kerberos esetén): Adja meg, hogy hány nap elteltével járjon le a jelszó, ha a felhasználók értesítést kapnak arról, hogy a jelszavuk lejár. **Nincs konfigurálva** (alapértelmezés) napokat használ `15` .
-- **Jelszó lejárata** (Csak Kerberos esetén): Adja meg, hogy hány nap elteltével kell megváltoztatni az eszköz jelszavát. **Nincs konfigurálva** (alapértelmezett): a felhasználói jelszavak soha nem járnak le.
-- **Egyszerű név** (Csak Kerberos esetén): Adja meg a Kerberos-tag felhasználónevét. Nem kell belefoglalni a tartománynevet. Például a-ben `user@contoso.com` `user` a az egyszerű név, a pedigatartományneve.`contoso.com`
-- **Active Directory Helykód** (Csak Kerberos esetén): Adja meg annak a Active Directory helynek a nevét, amelyet a Kerberos-bővítménynek használnia kell. Előfordulhat, hogy nem kell módosítania ezt az értéket, mivel a Kerberos-bővítmény automatikusan megkeresi a Active Directory hely kódját.
-- **Gyorsítótár neve** (Csak Kerberos esetén): Adja meg a Kerberos-gyorsítótár általános biztonsági szolgáltatásainak (GSS) nevét. Valószínűleg nem kell beállítania ezt az értéket.  
-- A **jelszóra vonatkozó követelmények üzenete** (Csak Kerberos esetén): Adja meg a szervezete jelszavának a felhasználók számára megjelenített szöveges verzióját. Az üzenet akkor jelenik meg, ha nincs szükség Active Directory jelszavával kapcsolatos bonyolultsági követelményekre, vagy ne adja meg a jelszó minimális hosszát.  
-- Alkalmazáscsomag- **azonosítók** (Csak Kerberos esetén): **Adja hozzá** azokat az alkalmazáscsomag-azonosítókat, amelyeken egyszeri bejelentkezést kell használnia az eszközökön. Ezek az alkalmazások hozzáférést kapnak a Kerberos-jegy biztosításához, a hitelesítési jegyet, és hitelesítik a felhasználókat a hozzáférésre jogosult szolgáltatásokhoz.
-- **Tartományi tartomány leképezése** (Csak Kerberos esetén): **Adja hozzá** a tartományhoz hozzárendelni kívánt tartományi DNS-utótagokat. Akkor használja ezt a beállítást, ha a gazdagépek DNS-nevei nem egyeznek a tartománynév nevével. Valószínűleg nem kell létrehoznia ezt az egyéni tartomány – tartomány társítást.
+- Automatikus **észlelés** (csak Kerberos esetén): Ha a **blokkolás**értékre van állítva, a Kerberos-bővítmény nem használja automatikusan az LDAP és a DNS szolgáltatást a Active Directory hely nevének meghatározásához. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a bővítmény automatikusan megkeresse a Active Directory hely nevét.
+- **Jelszó módosítása** (csak Kerberos esetén): a **Letiltás** megakadályozza, hogy a felhasználók megváltoztassák a megadott tartományba való bejelentkezéshez használt jelszavakat. **Nincs konfigurálva** (alapértelmezés) a jelszó módosítását teszi lehetővé.  
+- **Jelszó-szinkronizálás** (csak Kerberos): válassza az **Engedélyezés** lehetőséget a felhasználók helyi jelszavainak Azure ad-hez való szinkronizálásához. **Nincs konfigurálva** (az alapértelmezett) letiltja a jelszó-szinkronizálást az Azure ad-be. Ezt a beállítást Alternatív megoldásként vagy az SSO-ként történő biztonsági mentésként használhatja. Ez a beállítás nem működik, ha a felhasználók Apple Mobile-fiókkal jelentkeznek be.
+- **Windows Server Active Directory jelszó bonyolultsága** (csak Kerberos): válassza a **kötelező** lehetőséget a felhasználói jelszavak kényszerítéséhez Active Directory jelszavának bonyolultságára vonatkozó követelmények teljesítéséhez. További információkért lásd: a [jelszónak meg kell felelnie a bonyolultsági feltételeknek](https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements) . **Nincs konfigurálva** (alapértelmezés) nem igényli, hogy a felhasználók megfeleljenek Active Directory jelszavára vonatkozó követelménynek.
+- **Jelszó minimális hossza** (csak Kerberos): Itt adhatja meg, hogy hány karakterből állhatnak a felhasználók jelszava. **Nincs konfigurálva** (alapértelmezés) nem kényszeríti ki a jelszó minimális hosszát a felhasználóknál.
+- **Jelszó újrafelhasználásának korlátja** (csak Kerberos): adja meg, hogy hány új jelszót kell használni a 1-24-től, amelyet csak akkor használhat, ha a tartományon újra fel nem használ egy korábbi jelszót. **Nincs konfigurálva** (az alapértelmezett) nem érvényesíti a jelszó-újrahasznosítási korlátot.
+- **Jelszó minimális kora** (csak Kerberos): Itt adhatja meg, hogy hány nap elteltével kell használni a jelszót a tartományon, mielőtt a felhasználó módosíthatja azt. **Nincs konfigurálva** (az alapértelmezett érték) nem kényszeríti ki a minimális korhatárt a jelszó megváltozása előtt.
+- **Jelszó lejáratáról szóló értesítés** (csak Kerberos): adja meg, hogy hány nap elteltével járjon le a jelszó, hogy a felhasználók értesítést kapjanak a jelszavuk lejáratáról. **Nincs konfigurálva** (alapértelmezés) `15` napot használ.
+- **Jelszó lejárata** (csak Kerberos esetén): adja meg, hogy hány nap elteltével kell megváltoztatni az eszköz jelszavát. **Nincs konfigurálva** (alapértelmezett): a felhasználói jelszavak soha nem járnak le.
+- **Egyszerű név** (csak Kerberos): adja meg a Kerberos-tag felhasználónevét. Nem kell belefoglalni a tartománynevet. Például `user@contoso.com`, `user` az egyszerű név, és a `contoso.com` a tartománynév.
+- **Active Directory Helykód** (csak Kerberos): adja meg annak a Active Directory helynek a nevét, amelyet a Kerberos-bővítménynek használnia kell. Előfordulhat, hogy nem kell módosítania ezt az értéket, mivel a Kerberos-bővítmény automatikusan megkeresi a Active Directory hely kódját.
+- **Gyorsítótár neve** (csak Kerberos): adja meg a Kerberos-gyorsítótár általános biztonsági szolgáltatásainak (GSS) nevét. Valószínűleg nem kell beállítania ezt az értéket.  
+- **Jelszóra vonatkozó követelmények üzenet** (csak Kerberos): adja meg a szervezete jelszavának a felhasználók számára megjelenített szöveges verzióját. Az üzenet akkor jelenik meg, ha nincs szükség Active Directory jelszavával kapcsolatos bonyolultsági követelményekre, vagy ne adja meg a jelszó minimális hosszát.  
+- Alkalmazáscsomag- **azonosítók** (csak Kerberos): **adja hozzá** az App Bundle-azonosítókat, amelyeknek egyszeri bejelentkezést kell használniuk az eszközökön. Ezek az alkalmazások hozzáférést kapnak a Kerberos-jegy biztosításához, a hitelesítési jegyet, és hitelesítik a felhasználókat a hozzáférésre jogosult szolgáltatásokhoz.
+- **Tartományi tartomány leképezése** (csak Kerberos): **adja** meg a tartományhoz HOZZÁRENDELNI kívánt tartományi DNS-utótagokat. Akkor használja ezt a beállítást, ha a gazdagépek DNS-nevei nem egyeznek a tartománynév nevével. Valószínűleg nem kell létrehoznia ezt az egyéni tartomány – tartomány társítást.
 
 ## <a name="associated-domains"></a>Társított tartományok
 
@@ -196,30 +197,30 @@ Ez a funkció az alábbiakra vonatkozik:
 
 - macOS 10,15 és újabb verziók
 
-### <a name="settings-apply-to-all-enrollment-types"></a>A beállítások a következőkre vonatkoznak: Minden regisztrációs típus
+### <a name="settings-apply-to-all-enrollment-types"></a>A beállítások a következőre vonatkoznak: minden regisztrációs típus
 
-- **Alkalmazás azonosítója**: Adja meg annak az alkalmazásnak az azonosítóját, amelyet a webhelyhez szeretne rendelni. Az alkalmazás azonosítója tartalmazza a csoport AZONOSÍTÓját és a köteg AZONOSÍTÓját: `TeamID.BundleID`.
+- **Alkalmazás azonosítója**: adja meg az alkalmazásnak a webhelyhez társítandó alkalmazás-azonosítóját. Az alkalmazás azonosítója tartalmazza a csoport AZONOSÍTÓját és a köteg AZONOSÍTÓját: `TeamID.BundleID`.
 
-  A csoport azonosítója az Apple által az alkalmazások fejlesztői számára generált, 10 karakterből álló alfanumerikus (betűk és számok) karakterlánc, például `ABCDE12345`:. [Keresse meg a csoport azonosítóját](https://help.apple.com/developer-account/#/dev55c3c710c) (az Apple webhelyének megnyitása) további információkat.
+  A csoport azonosítója az Apple által az alkalmazások fejlesztői számára generált, 10 karakterből álló alfanumerikus (betűk és számok) karakterlánc, például `ABCDE12345`. [Keresse meg a csoport azonosítóját](https://help.apple.com/developer-account/#/dev55c3c710c)  (az Apple webhelyének megnyitása), amely további információkat tartalmaz.
 
-  A Bundle-azonosító egyedileg azonosítja az alkalmazást, és általában fordított tartománynév-jelöléssel van formázva. A Finder `com.apple.finder`csomag azonosítója például a következő:. A csomag AZONOSÍTÓjának megkereséséhez használja az AppleScript-t a terminálban:
+  A Bundle-azonosító egyedileg azonosítja az alkalmazást, és általában fordított tartománynév-jelöléssel van formázva. A Finder csomag azonosítója például `com.apple.finder`. A csomag AZONOSÍTÓjának megkereséséhez használja az AppleScript-t a terminálban:
 
   `osascript -e 'id of app "ExampleApp"'`
 
-- **Tartomány**: Adja meg az alkalmazáshoz társítandó webhely-tartományt. A tartomány tartalmaz egy szolgáltatástípus és egy teljes tartománynevet, például `webcredentials:www.contoso.com`a következőt:.
+- **Tartomány**: adja meg az alkalmazáshoz társítandó webhely tartományát. A tartomány tartalmaz egy szolgáltatástípus és egy teljes tartománynevet, például `webcredentials:www.contoso.com`.
 
   A társított tartomány összes altartományával egyeztetheti `*.` (egy csillag helyettesítő karakter és egy pont) megadásával a tartomány elejéig. Az időszakot kötelező megadni. A pontos tartományok magasabb prioritással rendelkeznek, mint a helyettesítő tartományok. Így a fölérendelt tartományokból származó minták egyeztetése akkor történik meg, *Ha* nem található egyezés a teljes altartományban.
 
   A szolgáltatás típusa a következő lehet:
 
-  - **authsrv**: Egyszeri bejelentkezési alkalmazás bővítménye
-  - **applink**: Univerzális hivatkozás
-  - **webhitelesítő adatok**: Jelszó automatikus kitöltése
+  - **authsrv**: egyszeri bejelentkezéses alkalmazás bővítmény
+  - **applink**: univerzális hivatkozás
+  - **webhitelesítő adatok**: jelszó automatikus kitöltése
 
-- **Hozzáadás**: Az alkalmazások és a társított tartományok hozzáadásához válassza a lehetőséget.
+- **Hozzáadás**: válassza ki az alkalmazások és a társított tartományok hozzáadásához.
 
 > [!TIP]
-> A hibakereséshez a MacOS-eszközön nyissa meg a **Rendszerbeállítások** > **profiljait**. Erősítse meg, hogy a létrehozott profil az eszköz profiljai listán található. Ha szerepel a felsorolásban, győződjön meg arról, hogy a **társított tartományok konfigurációja** szerepel a profilban, és tartalmazza a megfelelő alkalmazás-azonosítót és-tartományokat.
+> A hibakereséshez a macOS-eszközön nyissa meg a **System Preferences** > **profilok**elemet. Erősítse meg, hogy a létrehozott profil az eszköz profiljai listán található. Ha szerepel a felsorolásban, győződjön meg arról, hogy a **társított tartományok konfigurációja** szerepel a profilban, és tartalmazza a megfelelő alkalmazás-azonosítót és-tartományokat.
 
 ## <a name="next-steps"></a>További lépések
 

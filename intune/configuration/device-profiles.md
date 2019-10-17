@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 09/04/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3afdb365d0ed88a58028287cc7010bb334e9001e
-ms.sourcegitcommit: fca2670142c083d7562c0a36547a6a451863e315
+ms.openlocfilehash: 31a55f5749b35139368b6c3543fd8ff95db6100d
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72036446"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506838"
 ---
 # <a name="apply-features-and-settings-on-your-devices-using-device-profiles-in-microsoft-intune"></a>Szolgáltatások és beállítások alkalmazása az eszközökön a Microsoft Intune eszköz profiljainak használatával
 
@@ -56,12 +57,12 @@ A [tanúsítványok](../protect/certificates-configure.md) az eszközökhöz ren
 
 Ez a funkció a következőket támogatja: 
 
-- Android
+- Android:
 - Vállalati Android
 - iOS/iPadOS
 - macOS
-- Windows Phone 8.1
-- Windows 8.1
+- WVPN-profilokdows Phone 8.1
+- Windows 8.1
 - Windows 10 és újabb
 
 ## <a name="custom-profile"></a>Egyéni profil
@@ -70,11 +71,11 @@ Az [Egyéni beállítások](../custom-settings-configure.md) lehetővé teszik a
 
 Ez a funkció a következőket támogatja:
 
-- Android
+- Android:
 - Vállalati Android
 - iOS/iPadOS
 - macOS
-- Windows Phone 8.1
+- WVPN-profilokdows Phone 8.1
 
 ## <a name="delivery-optimization"></a>Teljesítésoptimalizálás
 
@@ -101,7 +102,7 @@ Az [eszközkorlátozásokkal](device-restrictions-configure.md) kezelhető a biz
 
 Ez a funkció a következőket támogatja:
 
-- Android
+- Android:
 - Android Enterprise
 - iOS/iPadOS
 - macOS
@@ -122,16 +123,16 @@ Az [Oktatási beállítások – Windows 10](education-settings-configure.md) se
 
 Az [Oktatási beállítások – iOS](../fundamentals/education-settings-configure-ios-shared.md) az iOS-es Osztályterem alkalmazás segítségével lehetővé teszi az oktatási folyamat és a diákok eszközeinek irányítását az osztályteremben. Az iPad eszközöket úgy is konfigurálhatja, hogy sok diák megoszthat egyetlen eszközt.
 
-## <a name="email"></a>Email
+## <a name="email"></a>E-mail
 
 Az [e-mail-beállítások](email-settings-configure.md) az Exchange ActiveSync e-mail beállításait az eszközökön létrehozzák, hozzárendelik és figyelik. Az e-mail-profilok segítenek a konzisztencia, a támogatási hívások csökkentése és a végfelhasználók számára a személyes eszközökön a vállalati e-mailek elérésében, a szükséges beállítások megadása nélkül. 
 
 Ez a funkció a következőket támogatja: 
 
-- Android
+- Android:
 - Vállalati Android
 - iOS/iPadOS
-- Windows Phone 8.1
+- WVPN-profilokdows Phone 8.1
 - Windows 10 és újabb
 
 ## <a name="endpoint-protection"></a>Endpoint Protection
@@ -152,7 +153,7 @@ Ez a funkció a következőket támogatja:
 
 - Windows 10 őszi alkotói frissítés, vagy későbbi verzió
 
-## <a name="extensions"></a>Bővítmények
+## <a name="extensions"></a>Extensions
 
 A [kernel-bővítmények](kernel-extensions-overview-macos.md) lehetővé teszik a rendszergazdák számára, hogy a MacOS-eszközökön a kernel szintjén szolgáltatásokat és programokat adjanak hozzá. Konfigurálja ezeket a beállításokat egy adott fejlesztőtől vagy partnertől származó összes bővítmény megbízhatóságához, vagy engedélyezze a megadott kernel-bővítményeket.
 
@@ -160,7 +161,7 @@ Ez a funkció a következőket támogatja:
 
 - macOS
 
-## <a name="identity-protection"></a>Identitásvédelem
+## <a name="identity-protection"></a>Identity protection
 
 Az [Identity protection](../protect/identity-protection-configure.md) vezérli a vállalati Windows Hello felületet Windows 10 vagy Windows 10 Mobile rendszerű eszközökön. Ezeknek a beállításoknak a konfigurálásával teheti elérhetővé a vállalati Windows Hellót a felhasználók és eszközök számára, és így adhatja meg az eszközök PIN-kódjaira és a kézmozdulatokra vonatkozó követelményeket.  
 
@@ -226,12 +227,12 @@ A virtuális magánhálózatok (VPN) biztonságos távoli hozzáférést biztos�
 
 Ez a funkció a következőket támogatja: 
 
-- Android
+- Android:
 - Vállalati Android
 - iOS/iPadOS
 - macOS
-- Windows Phone 8.1
-- Windows 8.1
+- WVPN-profilokdows Phone 8.1
+- Windows 8.1
 - Windows 10 és újabb
 
 ## <a name="wi-fi"></a>Wi-Fi
@@ -240,7 +241,7 @@ A [Wi-Fi-beállítások](wi-fi-settings-configure.md) a vezeték nélküli hál�
 
 Ez a funkció a következőket támogatja: 
 
-- Android
+- Android:
 - Vállalati Android
 - iOS/iPadOS
 - macOS

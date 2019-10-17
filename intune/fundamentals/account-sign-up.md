@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 01/02/2018
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 0f3ce07a-b718-42a9-bace-f99a8b8abd94
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fe3f856a2faba2c140fa92fa9ab486213c38a1c1
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 2c3cf75c1b5d6984a7f922af8b969458b4e4336e
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729619"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72509172"
 ---
 # <a name="sign-up-or-sign-in-to-microsoft-intune"></a>A Microsoft Intune szolgáltatásba való regisztráció vagy bejelentkezés
 
@@ -64,15 +65,15 @@ Microsoft 365 felügyeleti központ: https://devicemanagement.microsoft.com
 
 Intune Azure Portal: https://portal.azure.com/#blade/Microsoft_Intune_DeviceSettings/ExtensionLandingBlade
 
-Intune for Education: https://intuneeducation.portal.azure.com
+Intune for Education: @no__t – 0
 
-Klasszikus Intune-portál: https://manage.microsoft.com A klasszikus Intune-portált csak az Intune PC szoftver ügyfélprogrammal regisztrált eszközök kezelésére használjuk.
+Klasszikus Intune-portál: https://manage.microsoft.com a klasszikus Intune-portál csak az Intune PC-s szoftverrel regisztrált eszközök felügyeletére használatos.
 
 ### <a name="urls-for-intune-services-provided-by-office-365"></a>Az Office 365 által biztosított Intune-szolgáltatások URL-címei
 
-Microsoft 365 Vállalati verzió: https://portal.microsoft.com/adminportal
+Microsoft 365 Vállalati verzió: @no__t – 0
 
 Office 365 mobileszköz-kezelés: https://portal.office.com/adminportal/home#/MifoDevices
 
-## <a name="see-also"></a>Lásd még:
+## <a name="see-also"></a>További információ
 [Nem lehet bejelentkezni az Office 365-be, az Azure-ba vagy az Intune-ba](https://support.microsoft.com/help/2412085)

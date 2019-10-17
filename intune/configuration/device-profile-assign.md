@@ -1,6 +1,6 @@
 ---
-title: Eszközök profiljainak társítása a Microsoft Intuneban – Azure | Microsoft Docs
-description: Az Azure Portal használatával rendelhet hozzá eszközöket és házirendeket a felhasználókhoz és az eszközökhöz. Megtudhatja, hogyan zárhat ki csoportokat Microsoft Intune-beli profil-hozzárendelésből.
+title: Eszközprofilok hozzárendelése az Azure-beli Microsoft Intune-ban | Microsoft Docs
+description: Az Azure Portal használatával rendelhet hozzá eszközprofilokat és szabályzatokat a felhasználókhoz és eszközökhöz. Megtudhatja, hogyan zárhat ki csoportokat Microsoft Intune-beli profil-hozzárendelésből.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 09/17/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: f6f5414d-0e41-42fc-b6cf-e7ad76e1e06d
@@ -16,14 +17,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: db1f0944a6725d1f361ea20c972d8ffa8f5d9035
-ms.sourcegitcommit: a50a1ca123ecc2c5ac129f112f73838748f56476
+ms.openlocfilehash: 6579ad9eb902bcd5ad43662115f56a10681c32ba
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72237208"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506868"
 ---
-# <a name="assign-user-and-device-profiles-in-microsoft-intune"></a>Felhasználói és eszköz-profilok társítása Microsoft Intune
+# <a name="assign-user-and-device-profiles-in-microsoft-intune"></a>Felhasználói és eszközprofilok hozzárendelése a Microsoft Intune-ban
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
@@ -34,16 +35,16 @@ Ebből a cikkből megtudhatja, hogyan rendelhet hozzá egy profilt, és tartalma
 > [!NOTE]  
 > Ha egy házirendet eltávolítanak vagy már nem rendelnek hozzá egy eszközhöz, a beállítás megtarthatja a meglévő értéket. A beállítás nem tér át alapértelmezett értékre. Ha másik értékre szeretné módosítani a beállítást, hozzon létre egy új szabályzatot, és rendelje hozzá.
 
-## <a name="assign-a-device-profile"></a>Eszköz profiljának kiosztása
+## <a name="assign-a-device-profile"></a>Eszközprofil hozzárendelése
 
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Válassza az **eszköz konfigurációja** > **profilok**lehetőséget. Az összes profil megjelenik.
+2. Válassza az **Eszközkonfiguráció** > **Profilok** lehetőséget. Az összes profil megjelenik.
 3. Válassza ki a profilt, amelyhez > **hozzárendeléseket**szeretne hozzárendelni.
-4. Válassza a csoportok **belefoglalása** vagy a csoportok **kizárása** lehetőséget, majd válassza ki a csoportokat. A csoportok kiválasztásakor egy Azure AD-csoportot választ. Több csoport kijelöléséhez tartsa lenyomva a **CTRL** billentyűt, és válassza ki a csoportokat.
+4. Válassza a csoportok **belefoglalása** vagy a csoportok **kizárása** lehetőséget, majd válassza ki a csoportokat. A csoportok kiválasztásakor egy Azure AD-csoportot is választ. Több csoport kijelöléséhez tartsa lenyomva a **CTRL** billentyűt, és válassza ki a csoportokat.
 
-    ![Képernyőkép a profil-hozzárendelésből származó csoportok felvételéről vagy kizárásáról](./media/device-profile-assign/group-include-exclude.png)
+    ![Képernyőkép profil hozzárendelésekor a csoportok belefoglalásához és kizárásához megadható beállításokról](./media/device-profile-assign/group-include-exclude.png)
 
-5. **Mentse** a módosításokat.
+5. **Mentse** a változtatásokat.
 
 ### <a name="evaluate-how-many-users-are-targeted"></a>Annak kiértékelése, hogy hány felhasználó van megcélozva
 
@@ -62,9 +63,9 @@ A **hatókör címkéi** lehetővé teszik a házirendek hozzárendelését és 
 
 Windows 10-es eszközökön olyan **alkalmazhatósági szabályokat** adhat hozzá, hogy a profil csak egy adott operációsrendszer-verzióra vagy egy adott Windows-kiadásra vonatkozzon. Az [alkalmazhatósági szabályok](device-profile-create.md#applicability-rules) további információval rendelkeznek.
 
-## <a name="exclude-groups-from-a-profile-assignment"></a>Csoportok kizárása profil-hozzárendelésből
+## <a name="exclude-groups-from-a-profile-assignment"></a>Csoportok kizárása profil hozzárendelésekor
 
-Az Intune-eszköz konfigurációs profiljai lehetővé teszik csoportok kizárását a szabályzat-hozzárendelésből.
+Az Intune-beli eszközkonfigurációs profilok lehetővé teszik csoportok kizárását a szabályzat-hozzárendelésből.
 
 Az Intune nem tekinti meg a felhasználók és az eszközök közötti csoportok kapcsolatait. A felhasználói csoportok és az erőforráscsoportok kizárása esetén előfordulhat, hogy nem kapja meg a várt eredményeket. A felhasználói csoport – felhasználó csoport és az eszközök csoport-eszköz csoportjának forgatókönyvei esetében a kizárás elsőbbséget élvez a felvételsel szemben.
 
@@ -72,12 +73,12 @@ Például hozzárendelhet egy eszköz profilt a **minden vállalati felhasznál�
 
 A Belefoglalás elsőbbséget élvez az olyan vegyes csoportok használatakor, mint például a felhasználói csoport – eszköz csoport vagy az eszközök csoport – felhasználó csoport.
 
-Tegyük fel például, hogy az eszköz profilját hozzá szeretné rendelni a szervezet összes felhasználója számára, kivéve a kioszkos eszközöket. Belefoglalja a **minden felhasználó** csoportot, de kizárja a **minden eszköz** csoportot. Ebben az esetben az összes felhasználó és eszköze megkapja a szabályzatot, még akkor is, ha a felhasználó eszköze a **minden eszköz** csoportban van.
+Tegyük fel például, hogy az eszköz profilját hozzá szeretné rendelni a szervezet összes felhasználója számára, kivéve a kioszkos eszközöket. Belefoglalja a **Minden felhasználó** csoportot, de kizárja a **Minden eszköz** csoportot. Ebben az esetben az összes felhasználó és eszköze megkapja a szabályzatot, még akkor is, ha a felhasználó eszköze a **minden eszköz** csoportban van.
 
 A kizárás csak a csoport közvetlen tagjait vizsgálja. Nem tartalmazza a felhasználóhoz társított eszközöket. A felhasználóval nem rendelkező eszközök azonban nem kapják meg a szabályzatot. Ez a viselkedés azért fordul elő, mert a felhasználók nélküli eszközök nem rendelkeznek kapcsolattal a **minden felhasználó** csoporttal.
 
-Ha **minden eszközt**belefoglal, és kizárja az **összes felhasználót**, akkor minden eszköz megkapja a szabályzatot. Ebben a forgatókönyvben az a szándék, hogy kizárják azokat az eszközöket, amelyek a Szabályzathoz társított felhasználóval rendelkeznek. Azonban nem zárja ki az eszközöket, mert a kizárás csak a közvetlen csoporttagokat hasonlítja össze.
+A **Minden eszköz** csoport belefoglalása és a **Minden felhasználó** csoport kizárása esetén minden eszköz megkapja a szabályzatot. A cél ezúttal azoknak az eszközöknek a kizárása, amelyekhez a szabályzat szerint felhasználó van társítva. Ez azonban zárja ki az eszközöket, hiszen a kizárás funkció csak a közvetlen csoporttagokat hasonlítja össze.
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
 A profilok figyelésére, valamint a profilokat futtató eszközökre vonatkozó útmutatásért lásd: [eszközök profiljainak figyelése](device-profile-monitor.md) .

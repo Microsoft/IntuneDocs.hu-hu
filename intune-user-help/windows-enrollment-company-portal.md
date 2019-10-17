@@ -1,6 +1,6 @@
 ---
-title: Windows-eszközök regisztrálása az Intune vállalati portál |} A Microsoft Docs
-description: A vállalati portál egy Windows-eszköz regisztrációjának első lépései
+title: Windows-eszközök regisztrációja Intune Céges portálban | Microsoft Docs
+description: A Windows-eszközök regisztrálásának megkezdése Céges portál
 keywords: ''
 author: lenewsad
 ms.author: lanewsad
@@ -9,6 +9,7 @@ ms.date: 05/24/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: 36250832-c6fd-4e8d-b681-de735023ebc3
 searchScope:
@@ -18,76 +19,76 @@ ms.reviewer: jieyang
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df0afecb006ef8837f888b3b9209d5892d90a228
-ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
+ms.openlocfilehash: 86aeb2b54d45f111864d71e65b8c90fce7205868
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67546376"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72508023"
 ---
-# <a name="windows-device-enrollment-in-intune-company-portal"></a>Windows-eszközök regisztrálása az Intune vállalati portál  
+# <a name="windows-device-enrollment-in-intune-company-portal"></a>Windows-eszközök beléptetése Intune Céges portál  
 
-Munkahelyi és iskolai alkalmazásokhoz, e-mailek és fájlok biztonságos eléréséhez az Intune vállalati portál alkalmazásban a Windows-eszköz regisztrálása. Ha a szervezet igényel, illetve javasolja az egyes alkalmazások, például Office vagy a onedrive vállalati verzió, vagy kap őket regisztráció során, vagy elérhetők legyenek a céges portál regisztrálása után.  
+Regisztrálja Windows-eszközét a Intune Céges portál alkalmazásban, hogy biztonságos hozzáférést kapjon a munkahelyi és iskolai alkalmazásokhoz, e-mailekhez és fájlokhoz. Ha a szervezete bizonyos alkalmazásokat (például Office-vagy OneDrive) igényel, a regisztráció során fogadja őket, vagy Céges portál a regisztráció után elérhetővé válik.  
 
-Windows 10-es eszközöket a vállalati portál webhelyen keresztül lehet regisztrálni *vagy* alkalmazást. Ha regisztrál egy eszközt a Windows korábbi verziójával, regisztrálnia kell az eszközt a céges portál webhelyen keresztül.  
+A Windows 10-es eszközök regisztrálása a Céges portál webhelyről *vagy* alkalmazásból végezhető el. Ha egy korábbi Windows-verzióval rendelkező eszközt regisztrál, regisztrálnia kell az eszközt a Céges portál webhelyén.  
 
-## <a name="install-company-portal-app"></a>Telepítse a vállalati portál alkalmazás  
-Előfordulhat, hogy már rendelkezik a vállalati portál alkalmazás telepítve van az eszközén. Ellenőrizze az alkalmazás a __minden alkalmazás__ listája.  Ha nem látja a céges portált az alkalmazáslistában, a következő lépésekkel telepítheti.  
+## <a name="install-company-portal-app"></a>Céges portál alkalmazás telepítése  
+Lehetséges, hogy már telepítette a Céges portál alkalmazást az eszközére. A __minden alkalmazás__ listában keresse meg az alkalmazást.  Ha nem látja Céges portál az alkalmazások listájában, akkor az alábbi lépéseket követve telepítheti.  
 
-1. Nyissa meg **Microsoft Store** az eszközön.
+1. **Microsoft Store** megnyitása az eszközön.
 
-2. Az a **keresési** mezőbe írja be a **céges portál**.
+2. A **Keresés** mezőbe írja be a következőt: **céges portál**.
 
 3. Az eredménylistában válassza a **Céges portál** > **Telepítés** elemet.
 
-4. Válassza a **Telepítés** vagy az **Ingyenes** lehetőséget. Nincs különbség a két lehetőség; között függ, hogy a szervezet hogyan állította be az alkalmazás megjelenik a szöveg.  
+4. Válassza a **Telepítés** vagy az **Ingyenes** lehetőséget. A két lehetőség között nincs különbség; a szavak annak alapján jelennek meg, hogy a szervezet hogyan állította be az alkalmazást.  
 
-## <a name="find-windows-10-version-number"></a>Keresse meg a Windows 10-es verzió száma  
-Regisztráció lépései a Windows 10-es eszközök különböző verziói esetében eltérőek. Az alábbi lépések bemutatják, hogyan találhatja meg a verziószámot a Windows 10 asztali és mobileszközöket. Ha már tudja, hogy a verzió, továbbra is a javasolt regisztrációs lépéseket.  
+## <a name="find-windows-10-version-number"></a>A Windows 10-es verziószámának megkeresése  
+A regisztrációs lépések eltérnek a Windows 10-es eszközök különböző verzióiban. A következő lépések azt ismertetik, hogyan lehet megkeresni a verziószámot a Windows 10-es asztali és mobil eszközein. Ha ismeri a verzióját, folytassa a javasolt regisztrációs lépésekkel.  
 
 ### <a name="windows-10-desktop-devices"></a>Windows 10 rendszerű asztali eszközök  
 
 1. Lépjen a **Start** menüre.
 
-2. A keresősávba írja be "a gép névjegye." Válassza ki __a gép névjegye__ az eredmények közül.  
+2. A keresősáv mezőbe írja be a "Névjegy a SZÁMÍTÓGÉPéről" kifejezést. Az eredmények közül válassza ki __a számítógép névjegye__ elemet.  
 
 
    ![A gép névjegye – keresés](media/searching_for_about_your_pc.png)  
 
-3. Görgessen le a **Windows-specifikációk** keresése a **verzió** Windows 10-van telepítve a számítógépen.  
+3. Görgessen le a **Windows-specifikációk** között, és keresse meg a számítógépen telepített Windows 10 **verzióját** .  
 
 
    ![Windows 10 asztali verzió – A gép névjegye](media/settings_about_pc.png)  
 
-4. Ha a verzió  
+4. Ha a verziója  
 
-    * __1607-es vagy újabb__: Úton-eszköz regisztrálása a [ **beállítások** > **fiók** > **hozzáférés munkahelyi vagy iskolai** útvonal](enroll-windows-10-device.md#enroll-windows-10-version-1607-and-later-device).   
-    * __1511-es vagy korábbi__: Úton-eszköz regisztrálása a [ **beállítások** > **fiók** > **a fiókok** útvonal](enroll-windows-10-device.md#enroll-windows-10-version-1511-and-earlier-device).  
+    * __1607 vagy újabb__: regisztrálja az eszközt a [ **Beállítások** > **fiók** > **hozzáférési munkahelyi vagy iskolai** útvonalon](enroll-windows-10-device.md#enroll-windows-10-version-1607-and-later-device).   
+    * __1511 vagy korábbi__: regisztrálja az eszközt a [ **Beállítások** > **fiók**@no__t a**fiókok** útvonalán](enroll-windows-10-device.md#enroll-windows-10-version-1511-and-earlier-device).  
 
 ### <a name="windows-10-mobile-devices"></a>Windows 10 Mobile rendszerű eszközök
 
-1. Lépjen a __minden alkalmazás__ , és válassza ki a __beállítások__ alkalmazást.
+1. Lépjen a __minden alkalmazás__ elemre, és válassza ki a __Beállítások__ alkalmazást.
 2. Válassza a __Rendszer__ > __Névjegy__ lehetőséget.
-3. A __eszközadatokat__, keresse meg a __verzió__.  
-4. Ha a verzió  
+3. Az __eszköz adatai__alatt keresse meg a __verziót__.  
+4. Ha a verziója  
 
-    * __1607-es vagy újabb__: Az eszköz segítségével regisztrálja a [ **beállítások** > **hozzáférés munkahelyi vagy iskolai** útvonal](enroll-windows-10-device.md#enroll-windows-10-version-1607-and-later-device).   
-    * __1511-es vagy korábbi__: Az eszköz segítségével regisztrálja a [ **beállítások** > **fiókok** útvonal](enroll-windows-10-device.md#enroll-windows-10-version-1511-and-earlier-device).  
+    * __1607 vagy újabb__: regisztrálja az eszközt a [ > **hozzáférési munkahelyi vagy iskolai** útvonalon](enroll-windows-10-device.md#enroll-windows-10-version-1607-and-later-device).   
+    * __1511 vagy korábbi__: regisztrálja az eszközt a [ > **accounts** Route **Beállítások**](enroll-windows-10-device.md#enroll-windows-10-version-1511-and-earlier-device)használatával.  
 
-## <a name="enroll-non-windows-10-devices"></a>Nem Windows 10-eszközök regisztrálása  
-A céges portál webhelyen keresztül más támogatott Windows-eszközök regisztrálása használja a következő cikkeket:   
-* [Windows 8.1. vagy Windows RT 8.1-eszköz](enroll-your-W81-or-rt81-windows.md)  
-* [Windows Phone 8.1 rendszerű eszköz](enroll-your-wp81-windows.md)    
+## <a name="enroll-non-windows-10-devices"></a>Nem Windows 10-es eszközök regisztrálása  
+A következő cikkek használatával regisztrálhat más támogatott Windows-eszközöket a Céges portál webhelyről:   
+* [Windows 8,1. vagy Windows RT 8,1-eszköz](enroll-your-W81-or-rt81-windows.md)  
+* [Windows Phone-telefon 8,1-eszköz](enroll-your-wp81-windows.md)    
 
-## <a name="it-administrator-support"></a>Informatikai rendszergazdai támogatás  
-Ha egy informatikai rendszergazdája, és futtassa problémák eszközök regisztrálásakor, [eszközregisztrációs problémák hibaelhárítása a Windows Microsoft Intune-ban](https://support.microsoft.com/help/4469913). Ez a cikk felsorolja a gyakori hibák, azok okok, és lépéseket a problémák megoldásához.  
+## <a name="it-administrator-support"></a>INFORMATIKAI rendszergazda támogatása  
+Ha Ön rendszergazda, és az eszközök regisztrálása során problémákba kerül, tekintse meg [a Windows-eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune](https://support.microsoft.com/help/4469913). Ez a cikk a gyakori hibákat, azok okait és a megoldás lépéseit sorolja fel.  
 
 ## <a name="next-steps"></a>További lépések  
-Most, hogy megismerte a támogatott eszközök és a Windows 10-es verzió számát, folytassa az ajánlott regisztrációs cikk.  
+Most, hogy már ismeri a támogatott eszközöket és a Windows 10-es verziószámát, folytassa a javasolt regisztrációs cikkel.  
  
-Eszközök felügyeletével kapcsolatos további információkért a vállalati portálon, és hogyan egyaránt használhatók az iskolák és a munkahelyi, lásd a következő cikkeket:  
-* [Felügyelt eszközök használata munkahelyi vagy iskolai erőforrások elérésére](use-managed-devices-to-get-work-done.md)  
-* [Mi történik, ha regisztrálja eszközét az Intune-ban](what-happens-if-you-install-the-company-portal-app-and-enroll-your-device-in-intune-windows.md)  
-* [Milyen információt szervezetem látható, ha regisztrálom az eszközömet?](what-info-can-your-company-see-when-you-enroll-your-device-in-intune.md)  
+Az eszközkezelés, a Céges portál és a mindkettő használatáról az iskolákban és a munkahelyeken a következő cikkekben talál további információt:  
+* [A felügyelt eszközök használata a munkahelyi vagy iskolai erőforrásokhoz való hozzáféréshez](use-managed-devices-to-get-work-done.md)  
+* [Mi történik, amikor regisztrálja az eszközt az Intune-ban](what-happens-if-you-install-the-company-portal-app-and-enroll-your-device-in-intune-windows.md)  
+* [Milyen információkat tekinthet meg a szervezetem az eszköz regisztrálásakor?](what-info-can-your-company-see-when-you-enroll-your-device-in-intune.md)  
 
-Segítség Forduljon a cég informatikai támogatásához. [Nyissa meg a céges portál webhelyet](https://go.microsoft.com/fwlink/?linkid=2010980) található a szervezet informatikai kapcsolattartási adatait.  
+Segítségre van szüksége? Forduljon a cég informatikai támogatásához. [Lépjen a céges portál webhelyére](https://go.microsoft.com/fwlink/?linkid=2010980) , ahol megkeresheti a szervezet informatikai kapcsolattartási adatait.  

@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 10/03/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: apps
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: f31b2964-e932-4cee-95c4-8d5506966c85
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4958a35f3a83fecffacf26421e4c1d797f45ddaa
-ms.sourcegitcommit: 223d64a72ec85fe222f5bb10639da729368e6d57
+ms.openlocfilehash: 0c8507f98a757f2f80580014eab3589da12f8de8
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940390"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72499203"
 ---
 # <a name="how-to-create-and-assign-app-protection-policies"></a>Alkalmazásvédelmi szabályzatok létrehozása és hozzárendelése
 
@@ -52,10 +53,10 @@ További információk a cég üzletági (LOB) alkalmazásainak a Microsoft Intu
 
 6. A **Szabályzat hozzáadása** panelen válassza a **Kötelező beállítások konfigurálása** lehetőséget a **Beállítások** megnyitásához.
 
-   Három szabályzatbeállítási kategória létezik:
+   A szabályzatra vonatkozó beállítások három kategóriába tartoznak:
    - **Adatvédelem** – ez a csoport tartalmazza az adatveszteség-megelőzési (DLP) vezérlőket, például a kivágási, másolási, beillesztési és mentési korlátozásokat. Ezek a beállítások szabják meg, hogy hogyan kezelhetik a felhasználók az adatokat az alkalmazásokban.
    - **Hozzáférési követelmények** – Ez a csoport tartalmazza a PIN-kód alkalmazásonkénti beállítási lehetőségeit, amelyek meghatározzák, hogyan férnek hozzá a végfelhasználók az alkalmazásokhoz egy munkahelyi környezetben.  
-   - **Feltételes indítás** – Ez a csoport olyan beállításokat tartalmaz, mint a minimális operációsrendszer-követelmények, a függetlenített és feltört eszközök észlelése, és az offline türelmi időszakok.
+   - **Feltételes bevezetés** – Ebbe a csoportba olyan beállítások tartoznak, mint az operációs rendszerre vonatkozó minimális beállítások, a függetlenítésészlelés és a rootolt eszközök felderítése, valamint az offline türelmi időszakok.
 
    Használatuk megkönnyítése érdekében a szabályzatbeállításoknak alapértelmezett értékük van. Ha az alapértelmezett értékek megfelelnek az elvárásainak, nem szükséges változtatnia.
 
@@ -143,16 +144,16 @@ A szabályzatok létrehozásához navigáljon az Intune-konzolon az **Ügyfélal
 
 ### <a name="app-types"></a>Alkalmazástípusok
 
-- Nem **felügyelt eszközökön futó alkalmazások**: A nem felügyelt eszközök olyan eszközök, amelyeken nem észlelhető az Intune MDM-kezelője. Ez magában foglalja a harmadik féltől származó MDM-szállítókat is.
-- **Intune által felügyelt eszközökön futó alkalmazások**: A felügyelt eszközöket az Intune MDM kezeli.
-- **Alkalmazások az Android munkahelyi profilban**: Az Android Enterprise Work Profile-eszközökként regisztrált felügyelt eszközök.
+- Nem **felügyelt eszközökön futó alkalmazások**: a nem felügyelt eszközök olyan eszközök, amelyeken az Intune Mdm-felügyelet nem észlelhető. Ez magában foglalja a harmadik féltől származó MDM-szállítókat is.
+- **Intune által felügyelt eszközökön futó alkalmazások**: a felügyelt eszközöket az Intune Mdm kezeli.
+- **Androidos munkahelyi profilban szereplő alkalmazások**: az Android Enterprise Work Profile-eszközökként regisztrált felügyelt eszközök.
 
 > Megjegyzés androidos eszközök esetén a rendszer felszólítja, hogy telepítse a Intune Céges portál alkalmazást, függetlenül attól, hogy melyik alkalmazás típusa van kiválasztva. Ha például az "alkalmazások az Intune által felügyelt eszközökön" lehetőséget választja, akkor a nem felügyelt Android-eszközökkel rendelkező felhasználók továbbra is megtalálhatók.
 
 IOS esetén további alkalmazás-konfigurációs beállításokra van szükség az alkalmazás-beállítások az Intune-ban regisztrált eszközökön futó alkalmazások számára történő megcélzásához:
 
 - Az **IntuneMAMUPN** beállítást az MDM által felügyelt összes alkalmazáshoz be kell állítani. További információért lásd: [iOS-alkalmazások közti adatátvitel felügyelete a Microsoft Intune-ban](data-transfer-between-apps-manage-ios.md#configure-user-upn-setting-for-microsoft-intune-or-third-party-emm).
-- Az **IntuneMAMDeviceID** beállítást az összes külső féltől származó és az MDM által felügyelt üzletági alkalmazáshoz be kell állítani. Az **IntuneMAMDeviceID** beállítást az eszközazonosító jogkivonatra kell konfigurálni. Például: `key=IntuneMAMDeviceID, value={{deviceID}}`. További információt az [Alkalmazáskonfigurációs szabályzatok hozzáadása felügyelt iOS-eszközökhöz](app-configuration-policies-use-ios.md) című témakörben talál.
+- Az **IntuneMAMDeviceID** beállítást az összes külső féltől származó és az MDM által felügyelt üzletági alkalmazáshoz be kell állítani. Az **IntuneMAMDeviceID** beállítást az eszközazonosító jogkivonatra kell konfigurálni. Például `key=IntuneMAMDeviceID, value={{deviceID}}`. További információt az [Alkalmazáskonfigurációs szabályzatok hozzáadása felügyelt iOS-eszközökhöz](app-configuration-policies-use-ios.md) című témakörben talál.
 - Amennyiben csak az **IntuneMAMDeviceID** van konfigurálva, az Intune APP nem felügyeltnek tekinti az eszközt.
 
 > [!NOTE]
@@ -167,6 +168,6 @@ Az iOS és az Android szabályzatbeállításait tartalmazó lista megtekintés�
 ## <a name="next-steps"></a>További lépések
 [A megfelelőség és a felhasználói állapot figyelése](app-protection-policies-monitor.md)
 
-## <a name="see-also"></a>Lásd még:
+## <a name="see-also"></a>További információ
 * [Milyen hatással vannak az androidos alkalmazásokra az alkalmazásvédelmi szabályzatok?](../fundamentals/end-user-mam-apps-android.md)
 * [Milyen hatással vannak az iOS-es alkalmazásokra az alkalmazásvédelmi szabályzatok?](../fundamentals/end-user-mam-apps-ios.md)

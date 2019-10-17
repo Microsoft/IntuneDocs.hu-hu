@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 10/2/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: enrollment
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: acf1112f96b28b156b3c4857485de30d7ad553ef
-ms.sourcegitcommit: 223d64a72ec85fe222f5bb10639da729368e6d57
+ms.openlocfilehash: 96c802e76aab673aa6a9108dc0a14f553c26b96b
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71955434"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72505415"
 ---
 # <a name="intune-actions-and-options-supported-with-apple-user-enrollment"></a>Az Apple User beléptetésével támogatott Intune-műveletek és-beállítások
 
@@ -34,7 +35,7 @@ Ha a felhasználói beléptetési eszközökön bármilyen jelszót konfigurál,
 
 Például beállíthatja a **jelszó lejárati** beállítását, és leküldheti a szabályzatot a felhasználó által regisztrált eszközökre. Az eszközökön a következők történnek:
 - A **jelszó lejárati** beállítását a rendszer figyelmen kívül hagyja.
-- Az egyszerű jelszavak, például `1111` a `1234`vagy a, nem engedélyezettek.
+- Az egyszerű jelszavak, például a `1111` vagy `1234`, nem engedélyezettek.
 - Egy 6 számjegyű PIN-kód kényszerítve.
 
 ## <a name="administrator-remote-device-actions-and-options"></a>Rendszergazdai távoli eszközök műveletei és beállításai
@@ -42,7 +43,7 @@ A rendszergazdák a következő műveleteket és beállításokat hajthatják v�
 - Kivonás
 - Törlés
 - Távoli zárolás
-- Szinkronizálás
+- Sync
 
 Az összes többi művelet nem támogatott.
 
@@ -57,7 +58,7 @@ A felhasználók beléptetési eszközein a végfelhasználók a Céges portál 
 
 Az alábbi beállítások támogatottak az Intune-ban az Apple User beléptetés használatával beléptetett eszközökhöz:
 - Alkalmazáson belüli VPN. Ez a támogatás kizárja a Safari-tartományokat, mivel a felhasználói regisztráció nem támogatja a Safari-beállítások konfigurálását.
-- Wi-Fi 
+- Fi 
 - Vállalati alkalmazás eltávolítása a regisztráció törlése után
 - Alkalmazás központi telepítése felhasználó által licencelt mennyiségi vásárlási terv (VPP) használatával
 - Jailbreak-észlelés

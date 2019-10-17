@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 08/21/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: apps
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: dc349e22-9e1c-42ba-9e70-fb2ef980ef7a
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f0f00b635a04f4ffe5bc09489b9909e9243ee98
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 99e89db1bbef3d08cd6709b2600c4a684ac618f7
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731247"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72498607"
 ---
 # <a name="assign-apps-to-groups-with-microsoft-intune"></a>Alkalmazások hozzárendelése csoportokhoz a Microsoft Intune-nal
 
@@ -58,22 +59,22 @@ Az alábbi táblázat az alkalmazások felhasználókhoz és eszközökhöz val�
 3. Az **Intune** ablaktáblán válassza az **Ügyfélalkalmazások** lehetőséget.
 4. A menü **Kezelés** szakaszában válassza az **Alkalmazások**. elemet.
 5. Az **Alkalmazások** ablaktáblán jelölje ki a hozzárendelni kívánt alkalmazást.
-6. A menü **Kezelés** szakaszában válassza a **Hozzárendelések** elemet.
+6. A menü **Kezelés** szakaszában válassza a **Hozzárendelések**. elemet.
 7. Válassza a **Csoport hozzáadása** lehetőséget az alkalmazáshoz kapcsolódó **Csoport hozzáadása** ablaktábla megnyitásához.
 8. Az adott alkalmazáshoz válasszon egy **hozzárendelés-típust**:
-   - **Regisztrálva lévő eszközökhöz érhető el**: Rendelje hozzá az alkalmazást azon felhasználók csoportjaihoz, akik telepíthetik az alkalmazást a Céges portál alkalmazásból vagy webhelyről.
-   - **Regisztrációval vagy anélkül is elérhető**: Rendelje hozzá az alkalmazást azon felhasználók csoportjaihoz, akiknek az eszközei nincsenek regisztrálva az Intune-ban. A felhasználóknak Intune-licencet kell rendelniük, lásd: [Intune-licencek](../fundamentals/licenses.md).
-   - **Kötelező**: Az alkalmazás a kiválasztott csoportokban található eszközökre van telepítve. Egyes platformok további kérésekkel rendelkezhetnek arról, hogy a végfelhasználó tudomásul veszi az alkalmazás telepítésének megkezdése előtt.
-   - **Eltávolítás**: Az alkalmazást a kiválasztott csoportok eszközeiből távolítja el, ha az Intune már telepítette az alkalmazást az eszközön a "rendelkezésre álló regisztrált eszközökön" vagy a "szükséges" hozzárendelés használatával ugyanazzal az üzembe helyezéssel. A központi telepítés után nem távolíthatók el a webes hivatkozások.
+   - **Regisztrálva lévő eszközökhöz**: rendelje hozzá az alkalmazást azon felhasználók csoportjaihoz, akik telepíthetik az alkalmazást a céges portál alkalmazásból vagy webhelyről.
+   - **Regisztrációval vagy anélkül is elérhető**: Az alkalmazás hozzárendelése olyan felhasználók csoportjaihoz, akik eszközei nincsenek regisztrálva az Intune-ban. A felhasználóknak Intune-licencet kell rendelniük, lásd: [Intune-licencek](../fundamentals/licenses.md).
+   - **Szükséges**: A rendszer telepíti az alkalmazást a kiválasztott csoportok eszközeire. Egyes platformok további kérésekkel rendelkezhetnek arról, hogy a végfelhasználó tudomásul veszi az alkalmazás telepítésének megkezdése előtt.
+   - **Eltávolítás**: az alkalmazást a kiválasztott csoportok eszközeiből távolítja el, ha az Intune már telepítette az alkalmazást az eszközön a "rendelkezésre álló regisztrált eszközökön" vagy a "kötelező" hozzárendelés használatával ugyanazzal az üzembe helyezéssel. A központi telepítés után nem távolíthatók el a webes hivatkozások.
 
      > [!NOTE]
      > **Csak iOS-alkalmazások esetén**:
      > - Ha azt szeretné beállítani, hogy mi történik a felügyelt alkalmazásokkal, ha az eszközök már nem kezelhetők, kiválaszthatja a kívánt beállítást az Eltávolítás az **eszköz eltávolításakor**lehetőség alatt. További információ: alkalmazás- [eltávolítási beállítás az iOS által felügyelt alkalmazásokhoz](apps-deploy.md#app-uninstall-setting-for-ios-managed-apps).
      > - Ha létrehozott egy iOS-es VPN-profilt, amely az alkalmazáson belüli VPN-beállításokat tartalmazza, akkor a VPN **-profilt**is kiválaszthatja. Az alkalmazás futtatásakor megnyílik a VPN-kapcsolat. További tudnivalókért lásd: [VPN-beállítások iOS-eszközökön](../vpn-settings-ios.md).
      >
-     > **Csak Android-alkalmazások esetén**: Ha olyan Android-alkalmazást telepít, **amely regisztrálva van vagy anélkül is elérhető**, a jelentéskészítési állapot csak a regisztrált eszközökön lesz elérhető.
+     > **Csak Android-alkalmazások esetén**: Ha az Android **-alkalmazást regisztráció nélkül vagy anélkül**telepíti, a jelentéskészítési állapot csak a regisztrált eszközökön lesz elérhető.
      >
-     > A **regisztrált eszközök számára elérhető**: Az alkalmazás csak akkor jelenik meg elérhetőként, ha a felhasználó bejelentkezett a Céges portálbe az az elsődleges felhasználó, aki regisztrálta az eszközt, és az alkalmazás alkalmazható az eszközre.
+     > A **regisztrált eszközök számára elérhető**: az alkalmazás csak akkor jelenik meg elérhetőként, ha a céges portál bejelentkezett felhasználó az eszközt regisztráló elsődleges felhasználó, és az alkalmazás alkalmazható az eszközre.
 
 9. Az alkalmazás-hozzárendelés által érintett felhasználócsoportok kiválasztásához válassza a **Belefoglalt csoportok** lehetőséget.
 10. Miután kiválasztott egy vagy több csoportot a belefoglaláshoz, válassza a **Kiválasztás** lehetőséget.

@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 01/09/2019
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: ''
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 84a4db5639a03720b03da665c9df09fbc39d9df5
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: f9c89712539d4e5bd78cc317af2af396f8ca7006
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730531"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72492219"
 ---
 # <a name="windows-holographic-for-business-settings-to-manage-shared-devices-using-intune"></a>Windows holografikus for Business-beállítások a megosztott eszközök Intune-nal való kezeléséhez
 
@@ -42,10 +43,10 @@ Az Intune ezen funkciójával kapcsolatos további információkért lásd: [hoz
 > [!NOTE]
 > A Windows holografikus for Business rendszert futtató eszközök, beleértve a Microsoft HoloLens, csak a **Fiókkezelés** beállításait támogatják. Ha az Intune-ban megjelenő egyéb beállítások bármelyikét konfigurálja, beleértve a **megosztott számítógépes üzemmódot**, az nem érinti ezeket az eszközöket.
 
-- **Fiókkezelés**: Az **Engedélyezés** beállítás megadásával automatikusan törölheti a vendégek által létrehozott helyi fiókokat és az ad-és Azure ad-fiókokat. Amikor egy felhasználó kijelentkezik az eszközön, vagy ha a rendszer karbantartását futtatja, ezek a fiókok törlődnek. Ha engedélyezve van, állítsa be a következőket is:
-  - **Fiók törlése**: Válassza ki a fiókok törlésének időpontját: **A tárolóhelyek küszöbértéke**, **a tárolóhelyek küszöbértéke és az inaktív küszöbérték**, vagy közvetlenül a kijelentkezés **után**. Ezt is adja meg:
-    - **Kezdeti törlési küszöb (%)** : Adja meg a lemezterület százalékos arányát (0-100). Ha a teljes lemez/tárterület a megadott érték alá csökken, a rendszer törli a gyorsítótárazott fiókokat. Folyamatosan törli a fiókokat a lemezterület felszabadításához. A rendszer először törli a leghosszabb ideig inaktív fiókokat.
-    - **Törlési küszöb leállítása (%)** : Adja meg a lemezterület százalékos arányát (0-100). Ha a teljes lemez/tárolóhely megfelel a megadott értéknek, a törlés leáll.
+- **Fiókkezelés**: az **Engedélyezés** beállítás megadásával automatikusan törölheti a vendégek által létrehozott helyi fiókokat és az AD-és Azure ad-fiókokat. Amikor egy felhasználó kijelentkezik az eszközön, vagy ha a rendszer karbantartását futtatja, ezek a fiókok törlődnek. Ha engedélyezve van, állítsa be a következőket is:
+  - **Fiók törlése**: válassza ki, hogy mikor történjen a fiókok törlése: **a tárolóhelyek küszöbértéke**, **a tárolóhelyek küszöbértéke és az inaktív küszöbérték**, vagy közvetlenül a kijelentkezés **után**. Adja meg a következőket is:
+    - **Kezdeti törlési küszöb (%)** : adja meg a lemezterület százalékos arányát (0-100). Ha a teljes lemez/tárterület a megadott érték alá csökken, a rendszer törli a gyorsítótárazott fiókokat. Folyamatosan törli a fiókokat a lemezterület felszabadításához. A rendszer először törli a leghosszabb ideig inaktív fiókokat.
+    - **Törlési küszöb leállítása (%)** : adja meg a lemezterület százalékos arányát (0-100). Ha a teljes lemez/tárolóhely megfelel a megadott értéknek, a törlés leáll.
 
   A **Letiltás** beállítás megadásával megtarthatja a vendégek által létrehozott helyi, ad-és Azure ad-fiókokat.
 

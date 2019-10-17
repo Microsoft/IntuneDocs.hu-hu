@@ -9,6 +9,7 @@ ms.date: 10/05/2018
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: dd6aec3a-4063-4054-8d0f-d2f2034f0d3d
 searchScope:
@@ -16,16 +17,16 @@ searchScope:
 ROBOTS: ''
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: adc0024549a821b4e9f7ac5f001b8fc17e1fd258
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: 309672805b89275e3a9aef7fae6b20754a923916
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61505105"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72500716"
 ---
 # <a name="resolve-a-threat-found-by-lookout-for-work"></a>A Lookout for Work által azonosított fenyegetés elhárítása  
 
-A Lookout for Work alkalmazás egy mobilfenyegetés elleni védelmi szolgáltatás, amely az iOS-eszközeit fenyegető lehetséges veszélyeket azonosítja. Ezeket a fenyegetéseket a rendszer jelenti a Céges portál alkalmazásnak, ahol megoldatlan nem megfelelőségi problémákként jelennek meg. Amíg a fenyegetések jelen vannak, előfordulhat hogy nem lehet végrehajtani a következőket:
+A Lookout for Work alkalmazás egy mobilfenyegetés elleni védelmi szolgáltatás, amely az iOS-eszközeit fenyegető lehetséges veszélyeket azonosítja. Ezek a fenyegetések a Céges portál alkalmazásnak lesznek jelentve, ahol megoldatlan nem megfelelőségi problémákként jelennek meg. Amíg a fenyegetések jelen vannak, előfordulhat hogy nem lehet végrehajtani a következőket:
 
 * Hozzáférés a vállalati e-mailekhez
 * Hozzáférés a vállalati Wi-Fi-hez
@@ -47,7 +48,7 @@ Ha a Lookout for Work alkalmazás biztonsági vagy alkalmazásfenyegetést észl
 
     ![Példa képernyőkép a Céges portál Eszközök oldaláról, a Lookout for Work figyelmeztetésével.](./media/CP-lookout-virus-banner-1808.png)  
 
-## <a name="troubleshoot-an-app-threat"></a>Alkalmazásfenyegetés elhárítása   
+## <a name="troubleshoot-an-app-threat"></a>Alkalmazásfenyegetés hibaelhárítása   
 A Lookout for Work által fenyegetőnek ítélt alkalmazás telepítésekor az alábbi képernyőképen láthatóhoz hasonló üzenetet kap.  
 
 ![Példa képernyőkép a Lookout for Work által észlelt aktív és elhárított alkalmazásfenyegetések listájáról.](./media/ios-lfw-threat-example.png)    

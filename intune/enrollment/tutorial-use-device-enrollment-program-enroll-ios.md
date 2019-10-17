@@ -9,19 +9,20 @@ manager: dougeby
 ms.date: 04/30/2019
 ms.topic: tutorial
 ms.service: microsoft-intune
+ms.subservice: enrollment
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
 Customer intent: As an Intune admin, I want to set up the Apple's corporate device enrollment features so that corporate devices can automatically enroll in Intune.
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e221e67afa141612d6b565a511866087ce237d25
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 83a9467065bb5c1d1cde2035df936541bb804ddc
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729663"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72503082"
 ---
-# <a name="tutorial-use-apples-corporate-device-enrollment-features-in-apple-business-manager-abm-to-enroll-ios-devices-in-intune"></a>Oktatóanyag IOS-eszközök regisztrálása az Intune-ban az Apple Business Manager (ABM) vállalati eszközökhöz készült beléptetési funkcióinak használatával
+# <a name="tutorial-use-apples-corporate-device-enrollment-features-in-apple-business-manager-abm-to-enroll-ios-devices-in-intune"></a>Oktatóanyag: az Apple Business Manager (ABM) vállalati eszközök beléptetési funkcióinak használata az iOS-eszközök Intune-beli regisztrálásához
 Az Apple Business Manager eszköz-beléptetési funkciói leegyszerűsítik az eszközök regisztrálását. Az Intune támogatja az Apple régebbi Készülékregisztrációs program (DEP) portálját is, de javasoljuk, hogy az Apple Business Managerrel frissen kezdjen. Az Microsoft Intune és az Apple vállalati eszközök regisztrálásával az eszközök automatikusan biztonságosan lesznek regisztrálva, amikor a felhasználó első alkalommal bekapcsolja az eszközt. Az eszközöket tehát számos felhasználónak is kiszállíthatja anélkül, hogy az egyes eszközöket külön kell beállítania. 
 
 Az oktatóanyag segítségével megtanulhatja a következőket:
@@ -31,7 +32,7 @@ Az oktatóanyag segítségével megtanulhatja a következőket:
 > * Beléptetési profil létrehozása
 > * A beléptetési profil kiosztása az eszközökhöz
 
-Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon egy ingyenes próbafiókkal](../fundamentals/free-trial-sign-up.md).
+Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon ingyenes próbafiókot](../fundamentals/free-trial-sign-up.md).
 
 ## <a name="prerequisites"></a>Előfeltételek
 - Az [Apple Business Managerben](https://business.apple.com) vagy az [Apple Készülékregisztrációs programban](http://deploy.apple.com) megvásárolt eszközök
@@ -76,7 +77,7 @@ Az ABM vagy a DEP portál használatával hozzon létre egy eszköz-beléptetés
 
 11. Ha hatókör-címkéket kíván alkalmazni, hogy korlátozza, mely rendszergazdák férhetnek hozzá ehhez a jogkivonathoz, válassza a hatókörök lehetőséget.
 
-## <a name="create-an-apple-enrollment-profile"></a>Apple-regisztrációs profil létrehozása
+## <a name="create-an-apple-enrollment-profile"></a>Az Apple-regisztrációs profil létrehozása
 Most, hogy telepítette a jogkivonatot, létrehozhat egy regisztrációs profilt a vállalat által birtokolt iOS-eszközökhöz. A regisztrálás során az eszközök csoportjára alkalmazott beállításokat egy készülékregisztrációs profil határozza meg.
 
 1. Az Azure-beli Intune-portálon válassza az **Eszközök beléptetése** > **Apple-regisztráció** > **Készülékregisztrációs programbeli token** elemet.

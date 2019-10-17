@@ -8,19 +8,21 @@ manager: dougeby
 ms.date: 08/28/2019
 ms.topic: troubleshooting
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
+ms.assetid: 95191d64-9895-4f2e-8c5b-f0e85be086d8
 ms.reviewer: shpate
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99799f695b9398c455f92220c436c7a6c6d76d56
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 66acf4d8b88097c3262f44493ab72b3900781eed
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729475"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72504961"
 ---
 # <a name="send-log-data-to-storage-event-hubs-or-log-analytics-in-intune-preview"></a>Naplózási adatküldés a Storage, az Event hubok vagy a log Analytics számára az Intune-ban (előzetes verzió)
 
@@ -45,7 +47,7 @@ Ez a cikk bemutatja, hogyan lehet **diagnosztikai beállításokkal** elküldeni
 
 A funkció használatához a következőkre lesz szüksége:
 
-* Azure-előfizetés: Ha nem rendelkezik Azure-előfizetéssel, [regisztrálhat az ingyenes próbaverzióra](https://azure.microsoft.com/free/).
+* Azure-előfizetés: Ha nem rendelkezik Azure-előfizetéssel, [regisztrálhat egy ingyenes próbaverzióra](https://azure.microsoft.com/free/).
 * Microsoft Intune-környezet (bérlő) az Azure-ban
 * Olyan felhasználó, aki **globális rendszergazda** vagy **Intune-szolgáltatás rendszergazdája** az Intune-bérlőhöz.
 
@@ -53,7 +55,7 @@ Attól függően, hogy hová szeretné átirányítani a naplózási naplót, a 
 
 * Egy [Azure Storage](https://docs.microsoft.com/azure/storage/common/storage-account-overview) -fiók *listkeys műveletének beolvasása* -engedélyekkel. Javasoljuk, hogy használjon általános Storage-fiókot, és ne blob Storage-fiókot. A tárolási díjszabással kapcsolatos információkért tekintse meg az [Azure Storage díjszabási számológépét](https://azure.microsoft.com/pricing/calculator/?service=storage). 
 * Egy [Azure Event hub-névtér](https://docs.microsoft.com/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace) , amely integrálható a harmadik féltől származó megoldásokkal.
-* Egy [Azure log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace) -munkaterületet, amely naplókat küld log Analyticsba.
+* Egy [Azure log Analytics-munkaterületet](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace) , amely naplókat küld log Analyticsba.
 
 ## <a name="send-logs-to-azure-monitor"></a>Naplók küldése az Azure monitornak
 
@@ -64,38 +66,38 @@ Attól függően, hogy hová szeretné átirányítani a naplózási naplót, a 
 
 3. Adja meg a következő tulajdonságokat:
 
-    - **Név**: Adja meg a diagnosztikai beállítások nevét. Ez a beállítás tartalmazza a beírt összes tulajdonságot. Például írja be a következőt: `Route audit logs to storage account`.
-    - **Archiválás egy Storage-fiókba**: A naplófájlok mentése egy Azure Storage-fiókba. Akkor használja ezt a lehetőséget, ha menteni vagy archiválni szeretné az adatfájlokat.
+    - **Név**: adja meg a diagnosztikai beállítások nevét. Ez a beállítás tartalmazza a beírt összes tulajdonságot. Például írja be a következőt: `Route audit logs to storage account`.
+    - **Archiválás a Storage-fiókba**: a naplóba mentett adatok mentése egy Azure Storage-fiókba. Akkor használja ezt a lehetőséget, ha menteni vagy archiválni szeretné az adatfájlokat.
 
         1. Válassza ezt a beállítást > a **configure (Konfigurálás**) lehetőséget. 
         2. Válasszon egy meglévő Storage-fiókot a listából > **OK gombra**.
 
-    - **Stream az Event hub-** ba: Továbbítja a naplókat egy Azure Event hub-ba. Ha azt szeretné, hogy a naplózási adatait SIEM-eszközök, például a splunk és a QRadar használja, válassza ezt a lehetőséget.
+    - **Stream az Event hub**-ba: a naplókat egy Azure Event hub-ba továbbítja. Ha azt szeretné, hogy a naplózási adatait SIEM-eszközök, például a splunk és a QRadar használja, válassza ezt a lehetőséget.
 
         1. Válassza ezt a beállítást > a **configure (Konfigurálás**) lehetőséget. 
         2. Válasszon ki egy meglévő Event hub-névteret és-szabályzatot a listáról > **OK gombra**.
 
-    - **Küldés log Analyticsba**: Az adatokat az Azure log Analytics szolgáltatásba küldi. Ha vizualizációkat, figyelést és riasztásokat szeretne használni a naplókhoz, válassza ezt a lehetőséget.
+    - **Küldés log Analyticsba**: az adatokat az Azure log Analytics szolgáltatásba küldi. Ha vizualizációkat, figyelést és riasztásokat szeretne használni a naplókhoz, válassza ezt a lehetőséget.
 
         1. Válassza ezt a beállítást > a **configure (Konfigurálás**) lehetőséget. 
         2. Hozzon létre egy új munkaterületet, és adja meg a munkaterület részleteit. Vagy válasszon ki egy meglévő munkaterületet a listáról > **OK gombra**.
 
             Az [Azure log Analytics-munkaterület](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace) további részleteket tartalmaz ezekről a beállításokról.
 
-    - Napló > **AuditLogs**: Válassza ezt a lehetőséget, ha az [Intune](../monitor-audit-logs.md) -naplókat el szeretné küldeni a Storage-fiókba, az Event hub-ba vagy a log analyticsbe. A naplók az Intune-ban változást okozó feladatok előzményeit jelenítik meg, beleértve azt is, hogy ki és mikor.
+    - **LOG** > **AuditLogs**: ezt a lehetőséget választva elküldheti az [Intune-naplókat](../monitor-audit-logs.md) a Storage-fiókba, az Event hub-ba vagy a log analyticsbe. A naplók az Intune-ban változást okozó feladatok előzményeit jelenítik meg, beleértve azt is, hogy ki és mikor.
 
-      Ha a Storage-fiók használata mellett dönt, adja meg, hogy hány napig szeretné megőrizni az adatok megőrzésének idejét. Az adatok örökre megtartásához állítsa a `0` **megőrzés (nap)** értéket (nulla).
+      Ha a Storage-fiók használata mellett dönt, adja meg, hogy hány napig szeretné megőrizni az adatok megőrzésének idejét. Az adatok örökre megtartásához állítsa a **megőrzés (nap)** értéket `0` (nulla) értékre.
 
-    - Napló > **OperationalLogs**: Az operatív naplók (előzetes verzió) az Intune-ban regisztrált felhasználók és eszközök sikerességét vagy sikertelenségét, valamint a nem megfelelő eszközök részleteit mutatják be. Válassza ezt a lehetőséget, ha a beléptetési naplókat el szeretné küldeni a Storage-fiókba, az Event Hubbe vagy a log analyticsbe.
+    - **LOG** > **OperationalLogs**: az operatív naplók (előzetes verzió) az Intune-ban regisztrált felhasználók és eszközök sikerességét vagy hibáit, valamint a nem megfelelő eszközök részleteit mutatják be. Válassza ezt a lehetőséget, ha a beléptetési naplókat el szeretné küldeni a Storage-fiókba, az Event Hubbe vagy a log analyticsbe.
 
-      Ha a Storage-fiók használata mellett dönt, adja meg, hogy hány napig szeretné megőrizni az adatok megőrzésének idejét. Az adatok örökre megtartásához állítsa a `0` **megőrzés (nap)** értéket (nulla).
+      Ha a Storage-fiók használata mellett dönt, adja meg, hogy hány napig szeretné megőrizni az adatok megőrzésének idejét. Az adatok örökre megtartásához állítsa a **megőrzés (nap)** értéket `0` (nulla) értékre.
 
       > [!NOTE]
       > Az operatív naplók előzetes verzióban érhetők el. A visszajelzések megadásához, beleértve az operatív naplókban található információkat is, ugorjon a [UserVoice](https://microsoftintune.uservoice.com/forums/291681-ideas/suggestions/36613948-diagnostics-settings-feedback).
 
-    - **LOG**@no__t – 1**DeviceComplianceOrg**: Az eszköz megfelelőségi szervezeti naplói (előzetes verzió) az eszköz megfelelőségének szervezeti jelentését mutatják be az Intune-ban, valamint a nem megfelelő eszközök részleteit. Válassza ezt a lehetőséget, ha el szeretné küldeni a megfelelőségi naplókat a Storage-fiókba, az Event hub-ba vagy a log analyticsbe.
+    - **LOG** > **DeviceComplianceOrg**: az eszköz megfelelőségi szervezeti naplói (előzetes verzió) az eszköz megfelelőségének szervezeti jelentését mutatják be az Intune-ban, valamint a nem megfelelő eszközök részleteit. Válassza ezt a lehetőséget, ha el szeretné küldeni a megfelelőségi naplókat a Storage-fiókba, az Event hub-ba vagy a log analyticsbe.
 
-      Ha a Storage-fiók használata mellett dönt, adja meg, hogy hány napig szeretné megőrizni az adatok megőrzésének idejét. Az adatok örökre megtartásához állítsa a `0` **megőrzés (nap)** értéket (nulla).
+      Ha a Storage-fiók használata mellett dönt, adja meg, hogy hány napig szeretné megőrizni az adatok megőrzésének idejét. Az adatok örökre megtartásához állítsa a **megőrzés (nap)** értéket `0` (nulla) értékre.
  
       > [!NOTE]
       > Az eszközök megfelelőségi szervezeti naplói előzetes verzióban érhetők el. Ha visszajelzést szeretne küldeni, beleértve a jelentésben szereplő információkat is, ugorjon a [UserVoice](https://microsoftintune.uservoice.com/forums/291681-ideas/suggestions/36613948-diagnostics-settings-feedback).
@@ -104,7 +106,7 @@ Attól függően, hogy hová szeretné átirányítani a naplózási naplót, a 
 
     ![Az Intune-naplókat egy Azure Storage-fiókba küldő minta képe](./media/review-logs-using-azure-monitor/diagnostics-settings-example.png)
 
-4. **Mentse** a változtatásokat. A beállítás megjelenik a listában. A létrehozást követően a beállítások módosításával módosíthatja a**beállításokat**. > 
+4. **Mentse** a változtatásokat. A beállítás megjelenik a listában. A létrehozást követően módosíthatja a beállításokat, ha a **beállítás**@no__t – 1**Mentés**lehetőségre kattint.
 
 ## <a name="use-audit-logs-throughout-intune"></a>Naplófájlok használata az Intune-ban
 
@@ -113,13 +115,13 @@ A naplókat az Intune más részeiben is exportálhatja, beleértve a regisztrá
 Például a naplók exportálásához az eszköz megfelelőségének használatakor:
 
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. **Eszköz megfelelőségi** > **figyelő** > **naplófájljainak**kiválasztása:
+2. Válassza az **eszköz megfelelősége** > **figyelő** > **naplókat**:
 
     ![Naplók kiválasztása az Intune-beli adatAzure Monitor Storage, Events hubok vagy Analytics szolgáltatásba való átirányításához](./media/review-logs-using-azure-monitor/audit-logs-under-monitor-in-compliance.png)
 
 3. Válassza **az adatbeállítások exportálása**lehetőséget. Ha nincs engedélyezve, bekapcsolhatja a **diagnosztikai beállításokat**. Azt is megadhatja, hogy hová szeretné elküldeni a naplókat a [naplók küldése az Azure monitorba](#send-logs-to-azure-monitor) című cikkben leírtak szerint (ez a cikk).
 
-## <a name="cost-considerations"></a>Költségekkel kapcsolatos szempontok
+## <a name="cost-considerations"></a>A Cost szempontjai
 
 Ha már rendelkezik Microsoft Intune licenccel, a Storage-fiók és az Event hub beállításához Azure-előfizetésre van szükség. Az Azure-előfizetés általában ingyenes. Azonban az Azure-erőforrások használatáért kell fizetnie, beleértve az archiváláshoz használt Storage-fiókot és a streaming Event hub-t. Az adatmennyiség és a költségek a bérlő méretétől függően változnak.
 
@@ -142,7 +144,7 @@ A következő táblázatok a bérlő méretétől függően a költségbecslést
 
 | | |
 |---|---|
-|Esemény/nap| 15,000|
+|Esemény/nap| 15 000|
 |Becsült adatmennyiség havonta| 900 MB|
 |Becsült díj havonta (USD)| $0,02|
 |Becsült díj évente (USD)| $0,24|

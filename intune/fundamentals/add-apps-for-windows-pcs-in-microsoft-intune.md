@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 08/29/2018
 ms.topic: archived
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: bc8c8be9-7f4f-4891-9224-55fc40703f0b
@@ -17,16 +18,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic-keep
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 162a502bbb95adb248d09bb8184ffbbd5c05c465
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 23868303d598be1bc2e45f0852edfd3cf8338ab3
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729631"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72509143"
 ---
 # <a name="add-apps-for-windows-pcs-that-run-the-intune-software-client"></a>Az Intune szoftverügyfelet futtató Windows rendszerű számítógépes alkalmazások hozzáadása
 
-[!INCLUDE [classic-portal](../../intune-classic/includes/classic-portal.md)]
+[!INCLUDE [classic-portal](../includes/classic-portal.md)]
 
 Ebből a témakörből megtudhatja, hogyan adhatja hozzá a kívánt alkalmazásokat az Intune-hoz a központi telepítésük előtt.
 
@@ -52,7 +53,7 @@ Az alábbiakban ismertetett eljárással konfigurálhatja az alkalmazás tulajdo
    - **Adja meg a szoftver telepítőfájljainak helyét**. Adja meg a telepítőfájlok helyét, vagy kattintson a **Tallózás** gombra a kívánt hely listából való kiválasztásához.
    - **Adja meg a mappában található további fájlokat és almappákat is**. A Windows Installert használó szoftverek némelyikéhez támogató fájlokra is szükség van. Ezeknek a telepítőfájllal azonos mappában kell lenniük. Akkor válassza ezt a lehetőséget, ha ezeket a fájlokat is telepíteni kívánja.
 
-   Ha például egy Application.msi nevű alkalmazást szeretne közzétenni az Intune-ban, ilyen lesz a lap: @no__t – a közzétevő @ no__t-1 0Software telepítési lapja
+   Ha például egy Application.msi nevű alkalmazást szeretne közzétenni az Intune-ban, ilyen lesz a lap: ![a kiadó szoftvertelepítési lapja](./media/add-apps-for-windows-pcs-in-microsoft-intune/publisher-for-pc.png)
 
    Ez a telepítési típus némi helykapacitást igényel a felhőbeli tárhelyen.
 
@@ -83,15 +84,15 @@ Az alábbiakban ismertetett eljárással konfigurálhatja az alkalmazás tulajdo
 
    Ha az alkalmazás megfelel a konfigurált szabályok valamelyikének, nem lesz telepítve.
 
-6. Csak **Windows Installer** fájltípus esetén (. msi és. exe): A **parancssori argumentumok** lapon adja meg, hogy szeretne-e parancssori argumentumokat megadni a telepítőhöz.
+6. Csak a **Windows Installer** fájltípusai (.msi és .exe) esetében: a **Parancssori argumentumok** lapon adja meg, hogy szeretne-e opcionális parancssori argumentumokat megadni a telepítőhöz.
    Az Intune automatikusan megadja a következő paramétereket:
    - Az .exe fájlokhoz az **/install** paramétert fűzi.
    - Az .msi fájlokhoz a **/quiet** paramétert fűzi.
    Ne feledje, hogy ezek a paraméterek csak akkor működnek, ha az alkalmazáscsomag készítője engedélyezte a nekik megfelelő funkciókat.
 
-7. Csak **Windows Installer** fájltípus esetén (csak. exe): A **visszatérési kódok** lapon olyan új hibakódokat adhat hozzá, amelyeket az Intune az alkalmazás felügyelt Windows RENDSZERű számítógépekre való telepítésekor értelmez.
+7. Csak a **Windows Installer** fájltípus (.exe) esetében: a **Visszatérési kódok** lapon olyan új hibakódokat vehet fel, amelyeket az Intune az alkalmazás felügyelt Windows-számítógépre való telepítésekor értelmez.
 
-   Alapértelmezés szerint az Intune az iparági szabványnak megfelelő visszatérési kódokat használja az alkalmazáscsomag-telepítés hibájának vagy sikerességének jelentésére: **0** (sikeres) vagy **3010** (sikeres az újraindítás után). Ehhez a listához saját visszatérési kódjait is hozzáadhatja. Ha megad egy visszatérésikód-listát, és az alkalmazás telepítőprogramja olyan kódot ad vissza, amely nem szerepel a listán, a rendszer a kódot hibaként értelmezi.
+   Alapértelmezés szerint az Intune az iparági szabványnak megfelelő visszatérési kódok segítségével jelenti az alkalmazáscsomagok telepítésének sikerességét vagy sikertelenségét: **0** – Sikeres vagy **3010** – Sikeres, újraindítással. Ehhez a listához saját visszatérési kódjait is hozzáadhatja. Ha megad egy visszatérésikód-listát, és az alkalmazás telepítőprogramja olyan kódot ad vissza, amely nem szerepel a listán, a rendszer a kódot hibaként értelmezi.
 
 8. Az **Összefoglalás** lapon ellenőrizze a megadott adatokat. Ha elkészült, válassza a **Feltöltés** elemet.
 
@@ -103,4 +104,4 @@ Az alkalmazás megjelenik az **Alkalmazások** munkaterület **Alkalmazások** c
 
 Ha létrehozta az alkalmazást, a következő lépés a telepítés. További tudnivalók: [Alkalmazások hozzárendelése csoportokhoz a Microsoft Intune-nal](../apps/apps-deploy.md).
 
-Ha további információra van szüksége a szoftverek Windows rendszerű számítógépekre történő központi telepítésével kapcsolatos tippekről és trükkökről, tekintse meg a blogbejegyzés @no__t – 0Support Tipp: Ajánlott eljárások az Intune-szoftverek terjesztéséhez a számítógép @ no__t-0.
+Ha a szoftverek Windows-számítógépekre való telepítésével kapcsolatos tippekről és trükkökről szeretne tájékozódni, [ebből a blogbejegyzésből megismerkedhet a számítógépekre az Intune-nal történő szoftverterjesztés ajánlott eljárásaival](https://support.microsoft.com/en-US/help/2583929).

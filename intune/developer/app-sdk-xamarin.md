@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 08/21/2019
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: developer
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: 275d574b-3560-4992-877c-c6aa480717f4
@@ -16,19 +17,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: de367f28f3f1c7731e5ab67d904aec799925cc03
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 19202d4387635b7cd1f7e4604d755fb8a213d327
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730299"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72503435"
 ---
 # <a name="microsoft-intune-app-sdk-xamarin-bindings"></a>Microsoft Intune App SDK Xamarin Bindings
 
 > [!NOTE]
 > Először célszerű elolvasnia az [Intune App SDK használatának első lépései](app-sdk-get-started.md) című cikket, amely bemutatja az integráció előkészítését a támogatott platformokon.
 
-## <a name="overview"></a>Áttekintés
+## <a name="overview"></a>Házirend
 Az [Intune App SDK Xamarin Bindings](https://github.com/msintuneappsdk/intune-app-sdk-xamarin) lehetővé teszi az [Intune alkalmazásvédelmi szabályzatok](../apps/app-protection-policy.md) használatát a Xamarinnal készített iOS- és Android-alkalmazásokban. A kötések lehetővé teszik a fejlesztők számára, hogy Intune alkalmazásvédelmi funkciókat építsenek be a Xamarin-alapú alkalmazásaikba.
 
 A Microsoft Intune App SDK Xamarin Bindings lehetővé teszi, hogy Intune alkalmazásvédelmi szabályzatokat (vagy más néven alkalmazás- vagy MAM-szabályzatokat) építsen be a Xamarinnal fejlesztett alkalmazásokba. A MAM-kompatibilis alkalmazás az, amelyik integrálva van az Intune App SDK-val. Mindez lehetővé teszi a rendszergazdáknak, hogy alkalmazásvédelmi szabályzatokat telepítsenek a mobilalkalmazásra vonatkozóan, ha az Intune aktívan felügyeli az alkalmazást.
@@ -40,7 +41,7 @@ A Microsoft Intune App SDK Xamarin Bindings lehetővé teszi, hogy Intune alkalm
 * macOS
 
 ### <a name="mobile-app-platforms"></a>Mobilalkalmazás-platformok
-* Android
+* Android:
 * iOS
 
 ### <a name="intune-mobile-application-management-scenarios"></a>Intune mobilalkalmazás-kezelési helyzetek
@@ -64,7 +65,7 @@ Ha az alkalmazás már konfigurálva van a ADAL vagy a MSAL használatára, és 
 ## <a name="enabling-intune-app-protection-polices-in-your-ios-mobile-app"></a>Az Intune alkalmazásvédelmi szabályzatainak engedélyezése az iOS-mobilalkalmazásban
 1. Adja hozzá Xamarin.iOS-projektjéhez a [Microsoft.Intune.MAM.Xamarin.iOS NuGet-csomagot](https://www.nuget.org/packages/Microsoft.Intune.MAM.Xamarin.iOS).
 2. Kövesse az Intune App SDK iOS-mobilalkalmazásokba való integrálásához szükséges általános lépéseket. Kezdhet az [iOS-hez készült Intune App SDK – fejlesztői útmutató](app-sdk-ios.md#build-the-sdk-into-your-mobile-app) című témakör integrálási útmutatásának 3. lépésével. Az IntuneMAMConfigurator futtatásáról szóló szakasz utolsó lépését átugorhatja, mivel az eszköz része a Microsoft.Intune.MAM.Xamarin.iOS csomagnak, és a build időpontjában automatikusan futtatva lesz.
-    **Fontos**: Egy alkalmazás kulcstartó-megosztásának engedélyezése némileg eltér a Visual Studióban a Xcode. Nyissa meg az alkalmazás jogosultságokat tartalmazó plist-fájlját, és győződjön meg arról, hogy az „Enable Keychain” („Kulcslánc engedélyezése”) lehetőség engedélyezve van, és hogy ebben a szakaszban a megfelelő kulcslánc-megosztási csoportok szerepelnek. Ezután győződjön meg arról, hogy a projekt „iOS Bundle Signing” („iOS-kötegaláírási”) beállításai között a konfigurációk és platformok összes megfelelő kombinációjához meg van adva a jogosultságokat tartalmazó plist-fájl a „Custom Entitlements” („Egyéni jogosultságok”) mezőben.
+    **Fontos**: A kulcslánc megosztásának alkalmazások számára való engedélyezése kissé eltérő a Visual Studióban és az Xcode-ban. Nyissa meg az alkalmazás jogosultságokat tartalmazó plist-fájlját, és győződjön meg arról, hogy az „Enable Keychain” („Kulcslánc engedélyezése”) lehetőség engedélyezve van, és hogy ebben a szakaszban a megfelelő kulcslánc-megosztási csoportok szerepelnek. Ezután győződjön meg arról, hogy a projekt „iOS Bundle Signing” („iOS-kötegaláírási”) beállításai között a konfigurációk és platformok összes megfelelő kombinációjához meg van adva a jogosultságokat tartalmazó plist-fájl a „Custom Entitlements” („Egyéni jogosultságok”) mezőben.
 3. Miután hozzáadta a kötéseket, és megfelelően konfigurálta az alkalmazást, az alkalmazás megkezdheti az Intune SDK API-jának használatát. Ehhez a következő névteret kell hozzáadnia:
 
       ```csharp
@@ -139,20 +140,20 @@ Az alkalmazásnak meg kell határoznia egy `Android.App.Application` osztályt. 
 > A MAM Xamarin-kötésekkel kapcsolatos probléma miatt az alkalmazás hibakeresési módban való üzembe helyezésekor összeomlást eredményezhet. Megkerülő megoldásként a `Debuggable=false` attribútumot hozzá kell adni a `Application` osztályhoz, és a `android:debuggable="true"` jelzőt el kell távolítani a jegyzékfájlból, ha az manuálisan be lett állítva.
 
 #### <a name="enable-features-that-require-app-participationapp-sdk-androidmdenable-features-that-require-app-participation"></a>[Alkalmazások részvételét igénylő szolgáltatások engedélyezése](app-sdk-android.md#enable-features-that-require-app-participation)
-Példa: Annak megállapítása, hogy szükséges-e PIN-kód az alkalmazáshoz
+Példa: annak megállapítása, hogy az alkalmazáshoz szükséges-e PIN-kód
 
 ```csharp
 MAMPolicyManager.GetPolicy(currentActivity).IsPinRequired;
 ```
 
-Példa: Az elsődleges Intune-felhasználó meghatározása
+Példa: az elsődleges Intune-felhasználó meghatározása
 
 ```csharp
 IMAMUserInfo info = MAMComponents.Get<IMAMUserInfo>();
 return info?.PrimaryUser;
 ```
 
-Példa: Annak megállapítása, hogy engedélyezett-e a Mentés eszközre vagy Felhőbeli tárhelyre
+Példa: annak megállapítása, hogy engedélyezve van-e az eszközre vagy a felhőbeli tárhelyre való mentés
 
 ```csharp
 MAMPolicyManager.GetPolicy(currentActivity).GetIsSaveToLocationAllowed(SaveLocation service, String username);
@@ -202,7 +203,7 @@ Miután hozzáadta az újraleképezést a projekthez, el kell végeznie a MAM-be
 Ha a cserék nem történnek, akkor a következő fordítási hibák merülhetnek fel, amíg el nem végzi a cseréket:
 * [Fordítói hiba CS0239](https://docs.microsoft.com/dotnet/csharp/misc/cs0239). Ez a hiba általában a következő formában látható: ``'MainActivity.OnCreate(Bundle)': cannot override inherited member 'MAMAppCompatActivityBase.OnCreate(Bundle)' because it is sealed``.
 Ennek az az oka, hogy ha a remapper módosítja a Xamarin osztályok öröklését, bizonyos függvények `sealed` lesz, és a rendszer új MAM-változatot ad hozzá a felülbíráláshoz.
-* [Fordítói hiba CS0507](https://docs.microsoft.com/dotnet/csharp/language-reference/compiler-messages/cs0507): Ez a hiba általában a következő formában látható: ``'MyActivity.OnRequestPermissionsResult()' cannot change access modifiers when overriding 'public' inherited member ...``. Ha a remapper megváltoztatja a Xamarin egyes osztályainak öröklését, a rendszer a `public` értékre módosítja bizonyos tagok funkcióit. Ha felülbírálja ezen függvények bármelyikét, módosítania kell a felülbírálások hozzáférési módosítóit, hogy `public` legyen.
+* [Fordítóprogram-hiba CS0507](https://docs.microsoft.com/dotnet/csharp/language-reference/compiler-messages/cs0507): ezt a hibát általában a következő formában láthatja ``'MyActivity.OnRequestPermissionsResult()' cannot change access modifiers when overriding 'public' inherited member ...``. Ha a remapper megváltoztatja a Xamarin egyes osztályainak öröklését, a rendszer a `public` értékre módosítja bizonyos tagok funkcióit. Ha felülbírálja ezen függvények bármelyikét, módosítania kell a felülbírálások hozzáférési módosítóit, hogy `public` legyen.
 
 > [!NOTE]
 > A remapper újra ír egy függőséget, amelyet a Visual Studio az IntelliSense automatikus kiegészítéséhez használ. Ezért előfordulhat, hogy újra kell töltenie és újra létre kell hoznia a projektet, ha a remapper hozzá van adva az IntelliSensehoz a módosítások megfelelő felismeréséhez.
@@ -222,5 +223,5 @@ Az eszközregisztráció nélküli alkalmazásvédelem esetében a felhasználó
 ### <a name="sample-applications"></a>Példák az alkalmazásokra
 A Xamarin. Android-és Xamarin. Forms-alkalmazások MAM-funkcióit kiemelő példák a [githubon](https://github.com/msintuneappsdk/Taskr-Sample-Intune-Xamarin-Android-Apps)érhetők el.
 
-## <a name="support"></a>Támogatás
+## <a name="support"></a>Support
 Ha a szervezete egy meglévő Intune-ügyfél, forduljon a Microsoft ügyfélszolgálati képviselőjéhez, és nyisson meg egy támogatási jegyet, és hozzon létre egy problémát [a GitHub-problémák oldalon](https://github.com/msintuneappsdk/intune-app-sdk-xamarin/issues). A lehető leghamarabb segíteni fogunk. 

@@ -1,7 +1,7 @@
 ---
 title: Frissítenie kell Windows-eszközét | Microsoft Docs
 titlesuffix: Microsoft Intune
-description: Windows rendszerű mobileszközök esetén szüksége az eszköz frissítéséhez.
+description: A Windows rendszerű mobileszközök esetében frissítenie kell az eszközt.
 keywords: ''
 author: lenewsad
 ms.author: lanewsad
@@ -10,6 +10,7 @@ ms.date: 12/06/2018
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: 2df6fca5-9731-4ea0-a8ee-45b648caa5b4
 searchScope:
@@ -19,12 +20,12 @@ ms.reviewer: chrisgre
 ms.suite: ems
 ms.custom: intune-enduser; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 01edd6fa365a755c87f21ea4b90f348c16b682d9
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: 955b750ae931d3066e1a98a9baa7c989f2142e1b
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61504094"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72500223"
 ---
 # <a name="you-need-to-update-your-windows-device"></a>Frissítenie kell Windows-eszközét
 

@@ -1,5 +1,5 @@
 ---
-title: Eszközök az Intune-ban csoportokba sorolása
+title: Eszközök kategorizálása csoportokba az Intune-ban
 titleSuffix: Microsoft Intune
 description: Információ arról, hogyan lehet az eszközöket csoportokba rendezni a könnyebb kezelhetőség érdekében.
 keywords: ''
@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 02/22/2018
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: enrollment
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 7b668c37-40b9-4c69-8334-5d8344e78c24
@@ -16,18 +17,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 114637478ffecd2cb88176d1d2304706665a3c22
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 8ab720ffee3f468d3700558dfbde460ee8f712ea
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729959"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72505498"
 ---
-# <a name="categorize-devices-into-groups"></a>Eszközök csoportokba sorolása
+# <a name="categorize-devices-into-groups"></a>Eszközök kategorizálása csoportokba
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-Eszközök kezelésének megkönnyítése érdekében a Microsoft Intune eszközkategóriák segítségével automatikusan adja hozzá az eszközök az Ön által meghatározott kategóriák alapján.
+Az eszközök könnyebb kezeléséhez Microsoft Intune eszközök kategóriáit használhatja, hogy az Ön által meghatározott kategóriák alapján automatikusan hozzáadja az eszközöket a csoportokhoz.
 
 Az eszközkategóriák a következő munkafolyamatot használják:
 1. Kategóriák létrehozása, amelyek közül a felhasználók választhatnak az eszközük regisztrálásakor.
@@ -43,7 +44,7 @@ Bármilyen tetszés szerinti eszközkategóriát létrehozhat. Példa:
 
 ## <a name="how-to-configure-device-categories"></a>Az eszközkategóriák konfigurálása
 
-### <a name="step-1-create-device-categories-on-the-intune-blade-of-the-azure-portal"></a>1\. lépés: Eszközök kategóriáinak létrehozása a Azure Portal Intune paneljén
+### <a name="step-1-create-device-categories-on-the-intune-blade-of-the-azure-portal"></a>1\. lépés: Eszközkategóriák létrehozása az Azure Portal Intune panelén
 1. Az [Azure Portalbeli Intune-on](https://aka.ms/intuneportal) válassza az **Eszközök regisztrálása** elemet.
 2. Az **Eszközregisztráció** panelen válassza az **Eszközkategóriák** elemet.
 3. Az **Eszközkategóriák** lapon a **Létrehozás** elemmel hozhat létre új kategóriát.

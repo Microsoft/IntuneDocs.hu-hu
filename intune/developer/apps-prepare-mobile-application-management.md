@@ -1,5 +1,5 @@
 ---
-title: Alkalmazások előkészítése mobilalkalmazás-kezeléshez a Microsoft Intune-nal
+title: Alkalmazások előkészítése a Mobile Application Managementhez Microsoft Intune
 description: Az ebben a témakörben leírtak segítenek eldönteni, mikor használja az Alkalmazásburkoló eszközt és az App SDK-t arra, hogy engedélyezze az egyéni, üzletági alkalmazások számára a mobilalkalmazás-kezelési szabályzatok használatát.
 keywords: ''
 author: Erikre
@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 09/09/2019
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: developer
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: 29e22121-8268-48b5-a671-f940a6be1d24
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 64cd277b2e4c6bf5727dc3caed403ad470bc0156
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: c1750f789cfac98af998ebbd86b10a4e93a1772a
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730287"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72490817"
 ---
 # <a name="prepare-line-of-business-apps-for-app-protection-policies"></a>Üzletági alkalmazások felkészítése az alkalmazásvédelmi szabályzatok használatára
 
@@ -32,7 +33,7 @@ Az Intune alkalmazásburkoló eszközével vagy az Intune App SDK-val engedélye
 ## <a name="intune-app-wrapping-tool"></a>Intune alkalmazásburkoló eszköz
 Az alkalmazásburkoló eszköz főleg **belső** üzletági (LOB) alkalmazásokhoz készült. Az eszköz egy parancssori alkalmazás, amely egy burkolót hoz létre az alkalmazás körül, amely lehetővé teszi az alkalmazás Intune alkalmazásvédelmi szabályzatokkal való kezelését. Egy független szoftverszállító (ISV) által biztosított alkalmazás védelme esetén fontos tisztázni, hogy az ISV támogatja-e a becsomagolt alkalmazást.
 
-Nincs szüksége a forráskódra az eszköz használatához, de aláíró hitelesítő adatokra igen. További információ az aláíró hitelesítő adatokról: [Intune blog](https://blogs.technet.microsoft.com/enterprisemobility/2015/02/25/how-to-obtain-the-prerequisites-for-the-intune-app-wrapping-tool-for-ios/). Az alkalmazás-burkoló eszköz dokumentációjában tekintse meg az [androidos alkalmazás-burkoló eszköz](app-wrapper-prepare-android.md) és az [iOS-alkalmazás burkoló eszközét](app-wrapper-prepare-ios.md).
+Nincs szüksége a forráskódra az eszköz használatához, de aláíró hitelesítő adatokra igen. Az aláíró hitelesítő adatokról további információért lásd: [Intune blog](https://blogs.technet.microsoft.com/enterprisemobility/2015/02/25/how-to-obtain-the-prerequisites-for-the-intune-app-wrapping-tool-for-ios/). Az alkalmazás-burkoló eszköz dokumentációjában tekintse meg az [androidos alkalmazás-burkoló eszköz](app-wrapper-prepare-android.md) és az [iOS-alkalmazás burkoló eszközét](app-wrapper-prepare-ios.md).
 
 Az Alkalmazásburkoló eszköz **nem támogatja** az Apple App Store vagy a Google Play áruházban elérhető alkalmazásokat. Nem támogatja továbbá a szolgáltatásokat, amelyek fejlesztői integrációt igényelnek (lásd a következő szolgáltatás-összehasonlító táblázatot).
 
@@ -50,8 +51,8 @@ Az alkalmazásvédelmi szabályzatok támogatásához készült alkalmazásburko
 
 |**Alkalmazásburkoló eszköz** | **Xamarin** |**Cordova** |
 |------|----|----|
-|**iOS** |Igen|Igen|
-|**Android**|Nem – használja az [Intune App SDK Xamarin-kötéseket](app-sdk-xamarin.md).|Igen|
+|**iOS--** |Igen|Igen|
+|**Android--**|Nem – használja az [Intune App SDK Xamarin-kötéseket](app-sdk-xamarin.md).|Igen|
 
 ## <a name="intune-app-sdk"></a>Intune App SDK
 Az App SDK főleg olyan ügyfeleknek készült, akiknek vannak az Apple App Store vagy a Google Play Store áruházban alkalmazásai, és az Intune-nal szeretnék kezelni az alkalmazásokat. De bármilyen alkalmazás kihasználhatja az SDK integrálásának előnyeit, még üzletági alkalmazások esetében is.
@@ -70,8 +71,8 @@ További információk az SDK-ról: [Áttekintés](app-sdk.md). Az SDK használa
 
 |**Intune App SDK** |**Xamarin** |**Cordova**
 |------|----|----|
-|**iOS**|Igen – használja az [Intune App SDK Xamarin-kötéseket](app-sdk-xamarin.md).|Nem|
-|**Android**| Igen – használja az [Intune App SDK Xamarin-kötéseket](app-sdk-xamarin.md).|Nem|
+|**iOS--**|Igen – használja az [Intune App SDK Xamarin-kötéseket](app-sdk-xamarin.md).|Nem|
+|**Android--**| Igen – használja az [Intune App SDK Xamarin-kötéseket](app-sdk-xamarin.md).|Nem|
 
 ### <a name="not-using-an-app-development-platform-listed-above"></a>Nem használ a fentiekben felsorolt app Development platformot? 
 Az Intune SDK Fejlesztői csapata aktívan teszteli és karbantartja a natív Android, iOS (obj-C, Swift), a Xamarin, a Xamarin. Forms és a Cordova platformmal létrehozott alkalmazásokat. Míg egyes ügyfelek sikerrel jártak az Intune SDK-val más platformokkal, például a natív és a NativeScript reagálva, a támogatott platformoktól eltérő módon nem biztosítunk explicit útmutatást vagy beépülő modult az alkalmazás-fejlesztőknek. 
@@ -82,7 +83,7 @@ Ez a táblázat az App SDK-hoz és az alkalmazásburkoló eszközhöz használha
 > [!NOTE]
 > Az alkalmazásburkoló használható a különálló Intune-nal és a Configuration Managerrel kombinált Intune-nal is.
 
-|Funkció|App SDK|Alkalmazásburkoló eszköz|
+|Szolgáltatás|App SDK|Alkalmazásburkoló eszköz|
 |-----------|---------------------|-----------|
 |A vállalat által kezelt böngészőben megjelenő webtartalom korlátozása|X|X|
 |Android-, iTunes- vagy iCloud-biztonságimentések megakadályozása|X|X|
@@ -103,7 +104,7 @@ Ez a táblázat az App SDK-hoz és az alkalmazásburkoló eszközhöz használha
 |Képernyőrögzítés letiltása (csak Android esetén)|X|X|
 |Eszközregisztráció nélküli MAM támogatása|X|X|
 |Alkalmazás adatainak teljes törlése|X|X|
-|Munkahelyi és iskolai adatok szelektív törlése több identitásos helyzetekben <br><br>**Megjegyzés:** IOS esetén a felügyeleti profil eltávolításakor az alkalmazás is törlődik.|X||
+|Munkahelyi és iskolai adatok szelektív törlése több identitásos helyzetekben <br><br>**Megjegyzés:** iOS esetén a felügyeleti profil törlésekor az alkalmazást is törli.|X||
 |A „Mentés másként” művelet letiltása|X||
 |Célként megadott alkalmazás konfigurációja (vagy az alkalmazás konfigurációja a "MAM Channel" használatával)|X|X|
 |Többszörös identitás támogatása|X||

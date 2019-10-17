@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 10/02/2019
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: developer
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: e9c349c8-51ae-4d73-b74a-6173728a520b
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dfea74c70b81cadfa06c578dc33cdad401fa9e45
-ms.sourcegitcommit: 223d64a72ec85fe222f5bb10639da729368e6d57
+ms.openlocfilehash: 107624ac5d0c5eab423c0d5051ceca45e41de0b9
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940068"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72490754"
 ---
 # <a name="prepare-android-apps-for-app-protection-policies-with-the-intune-app-wrapping-tool"></a>Android-alkalmazások előkészítése alkalmazásvédelmi szabályzatokkal való felügyeletre az Intune alkalmazásburkoló eszközével
 
@@ -53,7 +54,7 @@ Az eszköz futtatása előtt olvassa el a következő cikket: [Az alkalmazásbur
     > [!NOTE]
     > Az Intune alkalmazásburkoló eszköz nem támogatja a Google v2 és hamarosan megjelenő v3 alkalmazás-aláíró sémáit. Miután becsomagolta az .apk fájlt az Intune alkalmazásburkoló eszközzel, javasoljuk, hogy használja a [Google által biztosított Apksigner eszközt]( https://developer.android.com/studio/command-line/apksigner). Ezzel biztosíthatja, hogy miután az alkalmazás eljut a végfelhasználói eszközökre, elindítható legyen az Android szabványoknak megfelelően. 
 
-- Választható Bizonyos esetekben előfordulhat, hogy egy alkalmazás a Dalvik végrehajtható fájl (DEX) korlátját a becsomagolás során hozzáadott Intune MAM SDK-osztályok miatt elérheti. A DEX-fájlok az Android-alkalmazások fordításának részei. Az Intune alkalmazás-burkoló eszköz automatikusan kezeli a Dex-fájl túlcsordulását az alkalmazások csomagolása során a minimális, 21 vagy magasabb szintű API- [val (a v-től). 1.0.2501.1](https://github.com/msintuneappsdk/intune-app-wrapping-tool-android/releases)). A < 21 minimális API-val rendelkező alkalmazások esetében ajánlott eljárás a minimális API-szint megemelése a burkoló `-UseMinAPILevelForNativeMultiDex` jelzője használatával. Ha az ügyfelek nem tudják megemelni az alkalmazás minimális API-szintjét, akkor a következő DEX túlcsordulási megkerülő megoldás érhető el. Bizonyos szervezeteknél előfordulhat, hogy az alkalmazás fordításával (azaz az alkalmazás-Build csapatával) együtt kell működnie:
+- Választható Bizonyos esetekben előfordulhat, hogy egy alkalmazás a Dalvik végrehajtható fájl (DEX) korlátját a becsomagolás során hozzáadott Intune MAM SDK-osztályok miatt elérheti. A DEX-fájlok az Android-alkalmazások fordításának részei. Az Intune alkalmazás-burkoló eszköz automatikusan kezeli a DEX-fájl túlcsordulását az alkalmazások csomagolása során a minimális, 21 vagy magasabb szintű API-val (a [v. 1.0.2501.1](https://github.com/msintuneappsdk/intune-app-wrapping-tool-android/releases)). A < 21 minimális API szintű alkalmazások esetében ajánlott eljárás a minimális API-szint növelésére a burkoló `-UseMinAPILevelForNativeMultiDex` jelzővel. Ha az ügyfelek nem tudják megemelni az alkalmazás minimális API-szintjét, akkor a következő DEX túlcsordulási megkerülő megoldás érhető el. Bizonyos szervezeteknél előfordulhat, hogy az alkalmazás fordításával (azaz az alkalmazás-Build csapatával) együtt kell működnie:
 * Használja a beguard eszközt az alkalmazás elsődleges DEX-fájljából származó nem használt osztályok eltávolításához.
 * Az Android Gradle beépülő modul v 3.1.0 vagy újabb verzióját használó ügyfelek esetén tiltsa le a [D8-dexer](https://android-developers.googleblog.com/2018/04/android-studio-switching-to-d8-dexer.html).  
 
@@ -63,7 +64,7 @@ Az eszköz futtatása előtt olvassa el a következő cikket: [Az alkalmazásbur
 
 2. Fogadja el a licencszerződést, majd fejezze be a telepítést.
 
-Jegyezze fel a mappa nevét, ahová az eszközt telepítette. Az alapértelmezett hely: C:\Program Files (x86) \Microsoft Intune Mobile Application Management\Android\App burkoló eszköz.
+Jegyezze fel a mappa nevét, ahová az eszközt telepítette. Az alapértelmezett hely a következő: C:\Program Files (x86)\Microsoft Intune Mobile Application Management\Android\App Wrapping Tool.
 
 ## <a name="run-the-app-wrapping-tool"></a>Az alkalmazásburkoló eszköz futtatása
 
@@ -84,7 +85,7 @@ Jegyezze fel a mappa nevét, ahová az eszközt telepítette. Az alapértelmezet
 
    Az alábbi táblázat az **invoke-AppWrappingTool** parancs tulajdonságait ismerteti:
 
-|Tulajdonság|Információ|Példa|
+|Tulajdonság|Adatok|Példa|
 |-------------|--------------------|---------|
 |**-InputPath**&lt;String&gt;|Az Android-forrásalkalmazás (.apk) elérési útja.| |
  |**-OutputPath**&lt;String&gt;|A „kimeneti” Android-alkalmazás elérési útja. Ha ez megegyezik az InputPath értékével, a burkolás sikertelen lesz.| |
@@ -153,7 +154,7 @@ A lehetséges hamisítási, információfelfedési és a jogok kiterjesztéséb�
 
 - Tegye biztonságossá a beburkolt alkalmazást tartalmazó kimeneti könyvtárat. Fontolja meg a kimeneti oldal számára egy felhasználói szintű könyvtár használatát.
 
-## <a name="see-also"></a>Lásd még:
+## <a name="see-also"></a>További információ
 - [Annak eldöntése, hogyan készíti elő az alkalmazásokat a mobilalkalmazás-kezeléshez a Microsoft Intune-nal](../developer/apps-prepare-mobile-application-management.md)
 
 - [A Microsoft Intune App SDK Androidon – útmutató fejlesztőknek](../developer/app-sdk-android.md)

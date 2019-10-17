@@ -9,6 +9,7 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: ed10a62c-b026-4ad3-ac41-641933522df2
 searchScope:
@@ -18,12 +19,12 @@ ms.reviewer: chrisbal
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: efcb622681e4f3b3fba7b686551cca7db6bb4c3a
-ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
+ms.openlocfilehash: 24d4193b3e43b7c406a1fb6c9c8d987caa6cbeea
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67546034"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72501893"
 ---
 # <a name="use-managed-apps-on-your-android-device"></a>Felügyelt alkalmazások használata Android-eszközön
 A felügyelt alkalmazások úgy vannak konfigurálva, hogy megfeleljenek a szervezet biztonsági követelményeinek, és a védelmet biztosítsanak a munkahelyi és iskolai adatok számára. Ezek az alkalmazások telepíthetők vagy automatikusan használhatók az eszközén. 
@@ -52,25 +53,25 @@ Példák gyakran szükséges vagy elérhető felügyelt alkalmazásokra az iskol
 - Microsoft Word, Excel és PowerPoint
 
 ## <a name="how-do-i-get-managed-apps"></a>Hogyan szerezhetők be a felügyelt alkalmazások?
-Felügyelt alkalmazások három módja van.  
+A felügyelt alkalmazások háromféle módon szerezhetők be.  
 * A regisztráció során a szervezet automatikusan telepít alkalmazásokat az eszközére.  
 * Telepíthet alkalmazásokat a Google Play Áruházból, majd bejelentkezhet az alkalmazásba munkahelyi vagy iskolai fiókjával.    
-* A szervezet elérhetővé teszi a felügyelt alkalmazásokat a Céges portálon. Nyissa meg a céges portál alkalmazásban vagy webhelyen keresse, megtekintése és kereshessék az alkalmazásokat. Ezek az alkalmazások kapcsolatos további információkért lásd: a következő szakaszban [rendelkezésre álló alkalmazások](#available-apps).  
+* A szervezet elérhetővé teszi a felügyelt alkalmazásokat a Céges portálon. Nyissa meg az Céges portál alkalmazást vagy webhelyét, ahol megkeresheti, megtekintheti és telepítheti az elérhető alkalmazásokat. Az alkalmazásokkal kapcsolatos további információkért tekintse meg az [elérhető alkalmazások](#available-apps)következő szakaszát.  
 
 ### <a name="available-apps"></a>Nem kötelező alkalmazások   
- A szervezet kiválaszthatja a megfelelő és hasznos az Ön számára a munkahelyi vagy iskolai rendszerhez, és elérhetővé tétele, hogy a céges portál alkalmazás.  
+ A szervezet kiválaszthatja azokat az alkalmazásokat, amelyek megfelelőek és hasznosak a munkahelyi vagy iskolai munkához, és azokat elérhetővé teheti a Céges portál.  
 
- Alkalmazások is elérhető lesz az eszköz típusa alapján. Például ha a vállalati portál alkalmazás androidos használ, hozzáférhet az Android-alkalmazások, de nem az iOS-alkalmazások.   
+ Az alkalmazásokat az eszköz típusa alapján is elérhetővé teszi. Ha például az Android rendszerhez készült Céges portál alkalmazást használja, akkor az Android-alkalmazásokhoz, de nem iOS-alkalmazásokhoz is hozzáférhet.   
 
-## <a name="request-an-app-for-work-or-school"></a>A kérelem egy alkalmazást a munkahelyi vagy iskolai fiók   
- Ha szükséges, de nem látható a vállalati portál alkalmazás, kérheti. Keresse meg a kapcsolattartási adatait a **segélyszolgálat** vagy alkalmazás **IT-csoport elérhetősége** fülre. Ugyanazokat az adatokat a látni fogja a [céges portál webhelyen](https://go.microsoft.com/fwlink/?linkid=2010980).   
+## <a name="request-an-app-for-work-or-school"></a>Munkahelyi vagy iskolai alkalmazás igénylése   
+ Ha van szüksége egy alkalmazásra, de nem látja a Céges portál, kérheti. Az **ügyfélszolgálathoz** tartozó kapcsolattartási adatok bármelyikét megkeresheti az alkalmazás **elérhetősége** lapon. Ugyanezeket a kapcsolattartási adatokat a [céges portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980)találja.   
 
 ## <a name="what-can-my-company-support-manage-in-an-app"></a>Mit felügyelhet a cég informatikai támogatási szolgálata az alkalmazásokban?  
 A következőkben szerepelnek azok a beállítások, amelyeket a vállalat informatikai támogatási szolgálata felügyelhet az alkalmazásokban. Ezek a beállítások befolyásolják, hogyan tekintheti meg, hogyan férhet hozzá, és általában hogyan használja a munkahelyi vagy az iskolai adatokat az eszközén:
 
 * Adott webhelyek hozzáférése  
 
-* Belső céges webhelyet a Microsoft Edge és az Azure Active Directory-proxy használatával való hozzáférés  
+* Hozzáférés a belső vállalati webhelyekhez a Microsoft Edge és a Azure Active Directory proxy használatával  
 
 * Az alkalmazás minimálisan szükséges verziója és az operációs rendszer verziója
 

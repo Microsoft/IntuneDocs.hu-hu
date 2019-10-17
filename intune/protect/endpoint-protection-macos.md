@@ -8,22 +8,23 @@ manager: dougeby
 ms.date: 10/02/2019
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: medium
 ms.technology: ''
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6090d329eee6f27da21b6133a2b7ccdc7072feb3
-ms.sourcegitcommit: f04e21ec459998922ba9c7091ab5f8efafd8a01c
+ms.openlocfilehash: 358a396e762f1f20051abadfc2f3df80f37ca8c8
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71814113"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72502295"
 ---
 # <a name="macos-endpoint-protection-settings-in-intune"></a>MacOS Endpoint Protection-beállítások az Intune-ban  
 
-A cikk a macOS rendszerű eszközökhöz konfigurálható, végpontvédelemre vonatkozó beállításokat mutatja be. Ezeket a beállításokat macOS-eszköz konfigurációs profiljának használatával konfigurálhatja [Endpoint Protection](endpoint-protection-configure.md) az Intune-ban.  
+Ez a cikk a macOS-t futtató eszközökhöz konfigurálható Endpoint Protection-beállításokat ismerteti. Ezeket a beállításokat macOS-eszköz konfigurációs profiljának használatával konfigurálhatja [az Intune](endpoint-protection-configure.md) -ban.  
 
 ## <a name="gatekeeper"></a>Forgalomirányító  
 
@@ -35,7 +36,7 @@ A cikk a macOS rendszerű eszközökhöz konfigurálható, végpontvédelemre vo
   - **Mac App Store és ismert fejlesztők**  
   - **Bárhonnan**  
 
-  **Alapértelmezett**: Nincs konfigurálva  
+  **Alapértelmezett**: nincs konfigurálva  
 
 - **A felhasználó felülbírálhatja a forgalomirányítót**  
   Megakadályozza, hogy a felhasználók felülbírálják a forgalomirányító beállítását, és megakadályozza, hogy a felhasználók egy alkalmazás telepítésére rákattintanak. Ha engedélyezve van, akkor a felhasználók bármilyen alkalmazást telepíteni tudnak, ha a Ctrl billentyűt lenyomva rákattintanak.  
@@ -43,7 +44,7 @@ A cikk a macOS rendszerű eszközökhöz konfigurálható, végpontvédelemre vo
   - **Nincs konfigurálva** – a felhasználók vezérelhetik az alkalmazások telepítését.  
   - **Letiltás** – megakadályozza, hogy a felhasználók ne használják a vezérlőt – kattintson az alkalmazások telepítéséhez.  
 
-  **Alapértelmezett**: Nincs konfigurálva  
+  **Alapértelmezett**: nincs konfigurálva  
 
 ## <a name="firewall"></a>Tűzfal  
 
@@ -55,14 +56,14 @@ A tűzfalat inkább a kapcsolatok alkalmazásonkénti, nem pedig portonkénti ko
   - **Nincs konfigurálva**  
   - **Engedélyezése**  
 
-  **Alapértelmezett**: Nincs konfigurálva  
+  **Alapértelmezett**: nincs konfigurálva  
 
 - **Bejövő kapcsolatok**  
   Letiltja az összes bejövő kapcsolatot, kivéve az alapszintű internetes szolgáltatásokhoz szükséges kapcsolatokat, például a DHCP-t, a Bonjour-t és az IPSec-t. Ez a funkció a megosztási szolgáltatásokat, például a fájlmegosztást és a képernyőmegosztást is letiltja. Ha megosztási szolgáltatásokat használ, hagyja ezt a beállítást a *Nincs konfigurálva* értéken.  
   - **Nincs konfigurálva**  
   - **Tiltás**  
 
-  **Alapértelmezett**: Nincs konfigurálva  
+  **Alapértelmezett**: nincs konfigurálva  
 
 **Adott alkalmazások bejövő kapcsolatainak engedélyezése vagy letiltása.**  
 
@@ -77,7 +78,7 @@ A tűzfalat inkább a kapcsolatok alkalmazásonkénti, nem pedig portonkénti ko
     - **Nincs konfigurálva**  
     - **Engedélyezése**  
 
-    **Alapértelmezett**: Nincs konfigurálva  
+    **Alapértelmezett**: nincs konfigurálva  
 
 ## <a name="filevault"></a>FileVault  
 Az Apple FileVault beállításaival kapcsolatos további információkért lásd: [FDEFileVault](https://developer.apple.com/documentation/devicemanagement/fdefilevault) az Apple fejlesztői tartalomban. 
@@ -86,34 +87,34 @@ Az Apple FileVault beállításaival kapcsolatos további információkért lás
 > A macOS 10,15-es verziótól kezdve a FileVault-konfigurációhoz a felhasználó által jóváhagyott MDM-regisztráció szükséges. 
 
 - **FileVault**  
-  A XTS -AES 128 és újabb rendszerű 10,13 eszközökön a FileVault használatával engedélyezheti a teljes lemezes titkosítást.  
+  A XTS-AES 128 és újabb rendszerű 10,13 eszközökön a FileVault használatával *engedélyezheti* a teljes lemezes titkosítást.  
   - **Nincs konfigurálva**  
   - **Engedélyezése**  
 
-  **Alapértelmezett**: Nincs konfigurálva  
+  **Alapértelmezett**: nincs konfigurálva  
 
   - **Helyreállítási kulcs típusa**  
     A rendszer létrehozza a *személyes kulcs* helyreállítási kulcsait az eszközökhöz. Adja meg a következő beállításokat a személyes kulcshoz.  
 
     - **Személyes helyreállítási kulcs helye** – egy rövid üzenetet adhat meg a felhasználónak, amely elmagyarázza, hogyan és hol kérheti le személyes helyreállítási kulcsát. Ezt a szöveget szúrja be a felhasználó által a bejelentkezési képernyőn megjelenő üzenetbe, amikor a rendszer kéri, hogy adja meg a személyes helyreállítási kulcsot, ha elfelejtik a jelszót.  
       
-    - **Személyes helyreállítási kulcs** elforgatása – Itt adhatja meg, hogy az eszköz személyes helyreállítási kulcsa milyen gyakran legyen elforgatva. Kiválaszthatja a **nincs konfigurálva**beállítás alapértelmezett értékét, vagy **1** és **12** hónap közötti értéket is megadhat.  
+    - **Személyes helyreállítási kulcs elforgatása** – Itt adhatja meg, hogy az eszköz személyes helyreállítási kulcsa milyen gyakran legyen elforgatva. Kiválaszthatja a **nincs konfigurálva**beállítás alapértelmezett értékét, vagy **1** és **12** hónap közötti értéket is megadhat.  
 
   - **Figyelmeztetés letiltása a kijelentkezéskor**  
     Megakadályozza, hogy a rendszer felszólítsa a felhasználót, hogy engedélyezze a FileVault a kijelentkezéskor.  Ha a Letiltás értékre van állítva, a rendszer letiltja a kijelentkezéskor megjelenő kérést, és a felhasználó bejelentkezik.  
     - **Nincs konfigurálva**  
     - **Letiltás** – tiltsa le a kijelentkezéskor megjelenő üzenetet.
 
-    **Alapértelmezett**: Nincs konfigurálva  
+    **Alapértelmezett**: nincs konfigurálva  
 
   - **Megkerülő időpontok száma**  
   Állítsa be, hogy a felhasználó hányszor hagyhatja figyelmen kívül a kéréseket, hogy engedélyezze a FileVault, mielőtt FileVault a felhasználónak a bejelentkezéshez. 
 
     - **Nincs konfigurálva** – az eszközön a következő bejelentkezés engedélyezése előtt titkosítás szükséges.  
     - **1** – **10** – lehetővé teszi, hogy a felhasználó 1 – 10 alkalommal figyelmen kívül hagyja a kérést, mielőtt titkosítást kellene megadnia az eszközön.  
-    - **Nincs korlát, mindig** Rákérdezés – a rendszer felszólítja a felhasználót, hogy engedélyezze a FileVault, de a titkosítás soha nem szükséges.  
+    - **Nincs korlát, mindig Rákérdezés** – a rendszer felszólítja a felhasználót, hogy engedélyezze a FileVault, de a titkosítás soha nem szükséges.  
  
-    **Alapértelmezett**: *Változó* – ha a *kijelentkezéskor a Letiltás* beállítás nincs **konfigurálva**értékre van állítva, akkor ez a beállítás alapértelmezés szerint **nincs konfigurálva**. Ha a *kijelentkezéskor a Letiltás* lehetőség van letiltva értékre van **állítva, akkor**a beállítás alapértelmezett értéke **1** , a **nem konfigurált** érték pedig nem.
+    **Alapértelmezett**: *változó* – ha a *Letiltás letiltása* a kijelentkezéskor beállítás nincs **konfigurálva**értékre van állítva, akkor ez a beállítás alapértelmezés szerint **nincs konfigurálva**. Ha a *kijelentkezéskor a Letiltás* lehetőség van letiltva értékre van **állítva, akkor**a beállítás alapértelmezett értéke **1** , a **nem konfigurált** érték pedig nem.
 
 Az Intune-nal történő FileVault kapcsolatos további információkért lásd: [FileVault helyreállítási kulcsok](encryption-monitor.md#filevault-recovery-keys).
 

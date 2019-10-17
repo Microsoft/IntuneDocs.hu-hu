@@ -9,6 +9,7 @@ ms.date: 08/28/2018
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: 5656b3e6-e812-4264-a170-b17c9c03e4d4
 searchScope:
@@ -16,12 +17,12 @@ searchScope:
 ROBOTS: ''
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 03463bebfd9279173179dff56ce8df9d80b1707b
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: 0cc2f84ad73c86a823984e6caa11dad5d4aec8a8
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61490757"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72507824"
 ---
 # <a name="resolve-a-threat-found-by-lookout-for-work"></a>A Lookout for Work által azonosított fenyegetés elhárítása  
 
@@ -47,11 +48,11 @@ Ha a Lookout for Work alkalmazás biztonsági vagy vírusfenyegetést észlel, v
 
     ![Példa képernyőkép a Céges portál Eszközök oldaláról, a Lookout for Work figyelmeztetésével.](./media/CP-lookout-virus-banner-1808.png)  
 
-## <a name="troubleshoot-an-app-threat"></a>Alkalmazásfenyegetés elhárítása  
+## <a name="troubleshoot-an-app-threat"></a>Alkalmazásfenyegetés hibaelhárítása  
 
 A Lookout for Work által fenyegetőnek ítélt alkalmazás telepítésekor az alábbi képernyőképen láthatóhoz hasonló üzenetet kap.  
 
-![Példa képernyőkép a Lookout for Work alkalmazás felületén megjelenő vírusriasztási Lookout-üzenettel. Három gomb látható: "Bezárás" "További információ" és "Eltávolítás".](./media/lookout-virus-alert-android.png)  
+![Példa képernyőkép a Lookout for Work alkalmazás felületén megjelenő vírusriasztási Lookout-üzenettel. Ezen három gomb látható: „Bezárás”, „További információ” és „Eltávolítás”.](./media/lookout-virus-alert-android.png)  
 
 A vállalati e-mailhez és adatokhoz való hozzáférést a kérdéses alkalmazás eltávolításával szerezheti vissza. Amíg az alkalmazás az eszközén van, Ön nem fog hozzáférni a vállalati erőforrásokhoz.    
 

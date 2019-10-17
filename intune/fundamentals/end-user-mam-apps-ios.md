@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 02/15/2018
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: b57e6525-b57c-4cb4-a84c-9f70ba1e8e19
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a4e272a9d3bbe770a17f82bdf367b8394414eb90
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 807b33867d827415165eb65d81b91683830735f5
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729395"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72502858"
 ---
 # <a name="what-to-expect-when-your-ios-app-is-managed-by-app-protection-policies"></a>Milyen hatással vannak az iOS-alkalmazásokra az alkalmazásvédelmi szabályzatok?
 
@@ -60,7 +61,7 @@ Ha felügyelt fiók van jelen az alkalmazásban:
 
 A következő példák részletesen bemutatják, hogy a rendszer hogyan kezeli a további felhasználói fiókokat.
 
-Az A felhasználó két vállalatnak dolgozik: az **X vállalatnak** és az **Y vállalatnak**. Az A felhasználó munkahelyi fiókkal rendelkezik mindként vállalatnál, és mindkettő az Intune-t használja alkalmazásvédelmi szabályzatok telepítéséhez. Az **X vállalat** telepít elsőként alkalmazásvédelmi szabályzatokat, **megelőzve** az **Y vállalatot**. Az **X vállalathoz** tartozó fiók kapja meg először az alkalmazásvédelmi szabályzatot. Ha azt szeretné, hogy az alkalmazásvédelmi szabályzatok az Y vállalathoz tartozó fiókot kezeljék, akkor el kell távolítania az X vállalathoz tartozó fiókot, és hozzá kell adnia az Y vállalathoz tartozó felhasználói fiókot.
+Az A felhasználó két vállalatnak dolgozik: az**X vállalatnak** és az **Y**vállalatnak. Az A felhasználó rendelkezik egy munkahelyi fiókkal az egyes vállalatokhoz, és mindkettő az Intune használatával telepíti az alkalmazás-védelmi szabályzatokat. Az **X vállalat** az **Y vállalat** **előtt** üzembe helyezi az alkalmazás-védelmi szabályzatokat. Az **X vállalathoz** tartozó fiók először az alkalmazás-védelmi szabályzatot kapja meg. Ha azt szeretné, hogy az alkalmazásvédelmi szabályzatok az Y vállalathoz tartozó fiókot kezeljék, akkor el kell távolítania az X vállalathoz tartozó fiókot, és hozzá kell adnia az Y vállalathoz tartozó felhasználói fiókot.
 
 ### <a name="add-a-second-account"></a>Második fiók hozzáadása
 

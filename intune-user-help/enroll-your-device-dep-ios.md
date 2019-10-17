@@ -9,6 +9,7 @@ ms.date: 08/29/2018
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: f4e7d87e-56d1-43e4-8e88-2f62cf0999e2
 searchScope:
@@ -18,12 +19,12 @@ ms.reviewer: japoehlm
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0719aca1dbb84358b0c54fbfac57143d2a77c0de
-ms.sourcegitcommit: 884654da8e72a63bfaea6b5def6c7891b065f251
+ms.openlocfilehash: 6e5ce83d20958f3ba4c818e49b0c226e07851d03
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72163457"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506227"
 ---
 # <a name="enroll-your-organization-provided-ios-device-in-management"></a>A vállalat által biztosított iOS-eszköz felügyeleti regisztrálása
 
@@ -50,7 +51,7 @@ Ha nem a vállalat által biztosított, hanem saját iOS-eszközt használ, köv
 
 4. Miután csatlakozott, megjelenik a **Konfiguráció** képernyő. Ez tudatja Önnel, hogy **[a cége] automatikusan konfigurálja az eszközét.**
 
-   **A konfiguráció lehetővé teszi, hogy [az Ön cége] távolról kezelje ezt az eszközt. A rendszergazdák távolról segíthetnek e-mail- ás hálózati fiókok beállításában, alkalmazások telepítésében és konfigurálásában és a beállítások kezelésében. A rendszergazdák funkciókat tilthatnak le, alkalmazásokat telepíthetnek és távolíthatnak el, megfigyelhetik és korlátozhatják az internetes forgalmat és távolról törölhetik az eszköz tartalmát.**
+   **A konfiguráció lehetővé teszi, hogy [a vállalata] felügyelje az eszközt a levegőben. A rendszergazda segítséget nyújthat az e-mailek és hálózati fiókok beállításában, az alkalmazások telepítésében és konfigurálásában, valamint a beállítások távoli kezelésében. A rendszergazda letilthatja a szolgáltatásokat, alkalmazásokat telepíthet és eltávolíthat, figyelheti és korlátozhatja az internetes forgalmat, és távolról törölheti az eszközt.**
 
    **A konfiguráció beállítója: [Az Ön cége] iOS-csoportja [Cím]**
 

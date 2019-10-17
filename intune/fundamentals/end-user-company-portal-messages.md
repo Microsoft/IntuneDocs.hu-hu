@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 03/09/2017
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 3df993aa-48c5-4799-b68d-c85fe4f7b02c
@@ -16,12 +17,12 @@ ms.reviewer: aanavath
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 686a347273648ce2abac55a0e1990b06c4782d32
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 9a9fb3e006489603a04039e0810684a6fef152dd
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729399"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72510291"
 ---
 # <a name="help-end-users-understand-company-portal-app-messages"></a>A Vállalati portál alkalmazás üzeneteinek ismertetése a végfelhasználókkal
 
@@ -110,7 +111,7 @@ Ha nem adta hozzá a Céges portált az **Engedélyezett alkalmazások** vagy a 
 > **A céges ügyfélszolgálatnak hozzáférést kell nyújtania Önnek a céges erőforrásokhoz**  
 > A cége a Windows Információvédelem szabályzataival védi az eszközt. A céges ügyfélszolgálatnak biztosítania kell, hogy engedélyezze a Céges portálnak a hozzáférést ezekhez az erőforrásokhoz.
 
-### <a name="what-it-means"></a>Mit jelent
+### <a name="what-it-means"></a>Jelentés
 
 Adja hozzá a Céges portál az **engedélyezett alkalmazások** vagy a **mentesített alkalmazások** listájához a Windows Information Protection (folyamatban lévő) alkalmazás-védelmi házirendben. További információ: [A Windows Információvédelem (WIP) alkalmazásvédelmi szabályzatainak létrehozása és bevezetése az Intune használatával](../apps/windows-information-protection-policy-create.md).
 
@@ -121,14 +122,14 @@ a szervezet által fejlesztett, az App Store-ban nem elérhető iOS-alkalmazáso
 
 ![iOS-alkalmazás üzenete – nem megbízható nagyvállalati fejlesztő](./media/end-user-company-portal-messages/end-user-company-portal-messages-01.png)
 
-### <a name="what-it-means"></a>Mit jelent
+### <a name="what-it-means"></a>Jelentés
 Ez az üzenet azt jelenti, hogy módosítania kell az iOS-eszköz beállításait a vállalat által az iOS-eszközön fejlesztett alkalmazások jóváhagyásához és telepítéséhez.
 
 Ha az alkalmazásokat a Céges portál használatával telepíti, és elindítja az alkalmazást, az alábbi lépéseket követve jóváhagyhatja az alkalmazást a letöltés után:
 
 1. A telepített vállalati alkalmazások (üzletági alkalmazások) indításakor a "nem megbízható nagyvállalati fejlesztő" üzenet jelenik meg. <br>
    Nyomja meg a **Mégse**gombot.
-2. Navigáljon a **Beállítások** > **általános** > **eszközök kezelése**elemre.
+2. Navigáljon a **beállítások**@no__t – 1**általános** > **eszközkezelés**elemre.
 
    ![iOS-eszköz felhasználói felülete – eszközkezelés](./media/end-user-company-portal-messages/end-user-company-portal-messages-02.png)
 
@@ -142,5 +143,5 @@ Ha az alkalmazásokat a Céges portál használatával telepíti, és elindítja
     Képesnek kell lennie a vállalati alkalmazás indítására és használatára.
 
 
-## <a name="see-also"></a>Lásd még:
+## <a name="see-also"></a>További információ
 [Mit kell tudniuk a végfelhasználóknak az Intune használatáról?](end-user-educate.md)

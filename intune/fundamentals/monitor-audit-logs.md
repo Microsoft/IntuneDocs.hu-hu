@@ -8,17 +8,18 @@ manager: dougeby
 ms.date: 03/18/2019
 ms.topic: troubleshooting
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: 6ee841cc-5694-4ba1-8f66-1d58edec30a4
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d999603abc539fda4d152d15dd1ab965c465f39e
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: b4be1755a07e6ec304edb7bceba8041d5b58263e
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732263"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72509999"
 ---
 # <a name="use-audit-logs-to-track-and-monitor-events-in-microsoft-intune"></a>Naplók használata a Microsoft Intune eseményeinek nyomon követéséhez és figyeléséhez
 
@@ -53,21 +54,21 @@ További információ erről a szolgáltatásról: [naplófájlok küldése a t�
 
 ## <a name="review-audit-events"></a>Naplózási események áttekintése
 
-![Válassza ki a naplók az Intune-ban lehetőséget, hogy megjelenjenek a műveletek és dátumok, amikor az események](./media/monitor-audit-logs/monitor-audit-logs.png "naplózása") megtörtént
+![Válassza ki a naplók az Intune-ban lehetőséget, hogy megjelenjenek a műveletek és dátumok, amikor események történtek](./media/monitor-audit-logs/monitor-audit-logs.png "Naplók")
 
 Az auditnaplók alapértelmezett listanézete a következő elemeket jeleníti meg:
 
 - Az előfordulás dátuma és időpontja
 - Kezdeményező (szereplő)
-- Alkalmazásnév
+- Alkalmazás neve
 - Tevékenység
 - Cél(ok)
 - Category
-- State
+- Állapot
 
 Ha részletesebb információkat szeretne látni egy eseményről, válasszon egy elemet a listában:
 
-![Részletesebb információk arról, hogy kik voltak a naplók az Intune naplójában –](./media/monitor-audit-logs/monitor-audit-log-detail.png "részletek")
+![Konkrétabb információk az Intune-beli naplókról](./media/monitor-audit-logs/monitor-audit-log-detail.png "Napló részletei")
 
 > [!NOTE]
 > A **kezdeményező (Actor)** információt tartalmaz arról, hogy ki futtatta a feladatot, és hol futott. Ha például az Intune-ban futtatja a tevékenységet a Azure Portalban, az **alkalmazás** mindig listázza **Microsoft Intune portál bővítményt** , és az **alkalmazás-azonosító** mindig ugyanazt a GUID-t használja.

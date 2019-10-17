@@ -9,18 +9,19 @@ manager: dougeby
 ms.date: 3/6/2018
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: medium
 ms.technology: ''
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eb5ffa2fe17c3272cb98c670fa42e69f189e7004
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: bc29a7a5026691371370b167a4445bfd70cc76bd
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730707"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72489803"
 ---
 # <a name="microsoft-intune-windows-phone-81-device-restriction-settings"></a>A Windows Phone 8.1 eszközkorlátozásokra vonatkozó beállításai a Microsoft Intune-ban
 
@@ -40,7 +41,7 @@ A cikk bemutatja a Microsoft Intune olyan eszközkorlátozásokra vonatkozó be�
 - **Diagnosztikai adatok beküldése** – Engedélyezése esetén az eszköz diagnosztikai adatokat küld a Microsoftnak.
 - **Egyéni e-mail fiókok szinkronizálása** – Nem Microsoft e-mail-fiókokhoz való kapcsolódás engedélyezése az eszköz számára.
 
-## <a name="password"></a>Windows 10
+## <a name="password"></a>Jelszó
 
 - **Jelszó** – Megköveteli a végfelhasználótól, hogy jelszót adjon meg az eszköz eléréséhez.
   - **Megkövetelt jelszótípus** – Meghatározza a megkövetelt jelszótípust, például hogy a jelszó számokat és betűket, vagy csak számokat tartalmazhat.
@@ -73,7 +74,7 @@ A [Windows Phone Áruház](https://www.microsoft.com/store/apps/windows-phone) l
 
 Nyissa meg az alkalmazás lapját, és másolja az URL-címet a vágólapra. Ezt a címet az engedélyezett és a tiltott alkalmazások listájában egyaránt használhatja URL-címként.
 
-Példa: Keresse meg az áruházban a Skype alkalmazást. Az Ön által használt URL-cím a következő: `http://www.windowsphone.com/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51`.
+Például: Keressen rá az áruházban a Skype alkalmazásra. Az Ön által használt URL-cím a következő: `http://www.windowsphone.com/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51`.
 
 
 
@@ -82,7 +83,7 @@ Példa: Keresse meg az áruházban a Skype alkalmazást. Az Ön által használt
 Az **Importálás** gombra kattintva feltöltheti a listát egy csv-fájlból <*alkalmazás URL-címének*formátuma >, <*alkalmazás neve*>, <*alkalmazás közzétevője*>, vagy az **Exportálás** gombra kattintva létrehozhat egy CSV-fájlt, amely tartalmazza a korlátozás tartalmát. az alkalmazások listája ugyanabban a formátumban van.
 
 
-## <a name="browser"></a>Browser
+## <a name="browser"></a>Böngésző
 
 - **Webböngésző** – Engedélyezi vagy letiltja az eszköz beépített webböngészőjét.
 

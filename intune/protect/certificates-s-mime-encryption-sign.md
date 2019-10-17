@@ -8,24 +8,25 @@ manager: dougeby
 ms.date: 12/10/2018
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 27c0c9e4aac737c53358354d973fc41ef121f8ad
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 7b16953b3402bf8aa48f0a01e5e11d9f90d56f2d
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729847"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72502501"
 ---
 # <a name="smime-overview-to-sign-and-encrypt-email-in-intune"></a>S/MIME-áttekintés az e-mailek aláírásához és titkosításához az Intune-ban
 
 Az e-mail-tanúsítványok, más néven az S/MIME-tanúsítvány, a titkosítás és a visszafejtés használatával biztosítanak extra biztonságot az e-mailes kommunikációhoz. A Microsoft Intune az S/MIME-tanúsítványokkal aláírhatja és titkosíthatja az e-maileket a következő platformokat futtató mobileszközök számára:
 
-- Android
+- Android:
 - iOS
 - macOS
 - Windows 10 és újabb
@@ -43,13 +44,13 @@ Az aláíráshoz használt tanúsítványok lehetővé teszik, hogy az ügyfél 
 
 Az aláíró tanúsítványok használatához hozzon létre egy sablont az aláírásra fókuszáló hitelesítésszolgáltató (CA) számára. A Microsoft Active Directory hitelesítésszolgáltatóhoz [A kiszolgálói tanúsítvány-sablon konfigurálása](https://docs.microsoft.com/windows-server/networking/core-network-guide/cncg/server-certs/configure-the-server-certificate-template) című cikk ismerteti a tanúsítványsablonok létrehozásának lépéseit.
 
-Az Intune-beli aláíró tanúsítványok PKCS-tanúsítványokat használnak. A [PKCS-tanúsítványok konfigurálása és használata](certficates-pfx-configure.md) című cikk leírja, hogyan telepíthet és használhat PKCS-tanúsítványokat Intune-környezetében. Ezek a lépések az alábbiak:
+Az Intune-beli aláíró tanúsítványok PKCS-tanúsítványokat használnak. A [PKCS-tanúsítványok konfigurálása és használata](certficates-pfx-configure.md) című cikk leírja, hogyan telepíthet és használhat PKCS-tanúsítványokat Intune-környezetében. Ezek a lépések a következők:
 
 - A PKCS-tanúsítványkérelmek támogatásához töltse le és telepítse a Microsoft Intune Tanúsítvány-összekötőt.
 - Hozzon létre egy megbízható főtanúsítvány-profilt eszközeihez. E lépés során megbízható főtanúsítványokat és köztes tanúsítványokat is használni kell a hitelesítésszolgáltatónál, majd üzembe kell helyezni a profilt az eszközökön.
 - Hozzon létre egy PKCS-tanúsítványprofilt az elkészült tanúsítványsablon használatával. Ez a profil adja ki az aláíró tanúsítványokat az eszközöknek, és helyezi üzembe a PKCS-tanúsítványprofilt az eszközökön.
 
-Aláíró tanúsítvány egy adott felhasználó számára is importálható. Az aláíró tanúsítvány minden olyan eszközön telepítve van, amelyet a felhasználó regisztrál. A tanúsítványok Intune-ba való importálásához használja [a GitHubon elérhető PowerShell-parancsmagokat](https://github.com/Microsoft/Intune-Resource-Access). Az Intune-ba importált PKCS-tanúsítványok e-mail-aláíráshoz való üzembe helyezéséhez kövesse a [PKCS-tanúsítványok konfigurálása és használata az Intune-nal](certficates-pfx-configure.md) című témakörben leírt lépéseket. Ezek a lépések az alábbiak:
+Aláíró tanúsítvány egy adott felhasználó számára is importálható. Az aláíró tanúsítvány minden olyan eszközön telepítve van, amelyet a felhasználó regisztrál. A tanúsítványok Intune-ba való importálásához használja [a GitHubon elérhető PowerShell-parancsmagokat](https://github.com/Microsoft/Intune-Resource-Access). Az Intune-ba importált PKCS-tanúsítványok e-mail-aláíráshoz való üzembe helyezéséhez kövesse a [PKCS-tanúsítványok konfigurálása és használata az Intune-nal](certficates-pfx-configure.md) című témakörben leírt lépéseket. Ezek a lépések a következők:
 
 - Töltse le és telepítse a Microsoft Intune-hoz készült PFX tanúsítvány-összekötőt. Ez az összekötő juttatja el az importált PKCS-tanúsítványokat az eszközökre.
 - Importáljon S/MIME e-mail-aláíró tanúsítványokat az Intune-ba.
@@ -65,7 +66,7 @@ Az e-mail-titkosítási tanúsítványokat ajánlott nem az Intune-ban létrehoz
 
 S/MIME-tanúsítványok Intune-nal való üzembe helyezéséhez egy felhasználó összes titkosítási tanúsítványát importálnia kell az Intune-ba. Az Intune ezután telepíti az összes tanúsítványt minden olyan eszközre, amelyet a felhasználó regisztrál. A tanúsítványok Intune-ba való importálásához használja [a GitHubon elérhető PowerShell-parancsmagokat](https://github.com/Microsoft/Intune-Resource-Access).
 
-Az Intune-ba importált PKCS-tanúsítványok e-mail-titkosításhoz való üzembe helyezéséhez kövesse a [PKCS-tanúsítványok konfigurálása és használata az Intune-nal](certficates-pfx-configure.md) című témakörben leírt lépéseket. Ezek a lépések az alábbiak:
+Az Intune-ba importált PKCS-tanúsítványok e-mail-titkosításhoz való üzembe helyezéséhez kövesse a [PKCS-tanúsítványok konfigurálása és használata az Intune-nal](certficates-pfx-configure.md) című témakörben leírt lépéseket. Ezek a lépések a következők:
 
 - Töltse le és telepítse a Microsoft Intune-hoz készült PFX tanúsítvány-összekötőt. Ez az összekötő juttatja el az importált PKCS-tanúsítványokat az eszközökre.
 - Importáljon S/MIME e-mail-titkosítási tanúsítványokat az Intune-ba.

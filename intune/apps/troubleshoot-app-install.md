@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 09/04/2019
 ms.topic: troubleshooting
 ms.service: microsoft-intune
+ms.subservice: apps
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: b613f364-0150-401f-b9b8-2b09470b34f4
@@ -16,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3aadad0b185f72d9137ed0f2d807df6d035a9ba7
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: e1067c8ef23add50c921217b9e4b115346be2951
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731047"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72497049"
 ---
 # <a name="troubleshoot-app-installation-issues"></a>Alkalmazások telepítésével kapcsolatos problémák elhárítása
 
@@ -98,7 +99,7 @@ A naplófájlok összegyűjtéséhez konkrét követelményekre van szükség:
 - Megadhatja a naplózási gyűjtemény környezeti változóit, például a következőket:<br>
   *% PROGRAMFILES%,% PROGRAMDATA%% NYILVÁNOS%,% WINDIR%,% TEMP%,% TMP%*
 - Csak a pontos fájlkiterjesztések engedélyezettek, például:<br>
-  *.log, .txt, .dmp, .cab, .zip, .xml*
+  *. log,. txt,. dmp,. cab,. zip,. XML*
 - A feltölteni kívánt maximális naplófájl 60 MB vagy 25 fájl, amelyik előbb megtörténik. 
 - A Win32-alkalmazás telepítési naplójának gyűjteménye engedélyezve van azon alkalmazások esetében, amelyek megfelelnek a szükséges, elérhető és eltávolított alkalmazás-hozzárendelési szándéknak.
 - A tárolt naplók titkosítva vannak a naplókban tárolt személyes azonosításra alkalmas adatok védelemmel.
@@ -112,7 +113,7 @@ Az alábbi hibaüzenetek és leírások az Androidos és iOS-es telepítési hib
 
 Ez a szakasz az eszköz rendszergazdája (DA) és a Samsung Knox-regisztrációt is említi. További információ: Android-eszközök [rendszergazdai regisztrációja](../enrollment/android-enroll-device-administrator.md) és [automatikus regisztrálása Android-eszközökön a Samsung Knox Mobile-regisztráció használatával](../enrollment/android-samsung-knox-mobile-enroll.md). 
 
-| Hibaüzenet/kód | Leírás |
+| Hibaüzenet/kód | Description |
 |---------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Az alkalmazás telepítése nem sikerült. (0xC7D14FB5) | Ez a hibaüzenet akkor jelenik meg, ha az Intune nem tudja megállapítani az Android-alkalmazás telepítési hibájának okát. A hiba során az Android nem adott semmilyen információt. Ezt a hibát akkor adja vissza a rendszer, amikor az APK letöltése sikeres volt, de az alkalmazás telepítése nem sikerült. Ez a hiba gyakrabban fordulhat elő, mert egy helytelen APK-fájl nem telepíthető az eszközre. Lehetséges ok lehet, ha a Google Play Protect blokkolja az alkalmazás telepítését biztonsági problémák miatt. A hiba másik lehetséges oka az, ha egy eszköz nem támogatja az alkalmazást. Ha például az alkalmazásnak a 21-es és az API-nak kell lennie, és az eszköz jelenleg a 19-ös verziójú. Az Intune a DA és KNOX rendszerű eszközökön ezt a hibát adja vissza, de előfordulhat, hogy a felhasználók az újrapróbálkozásra kattintanak. Ha az alkalmazás egy elérhető alkalmazás, akkor az értesítés elhagyható. Azonban ha az alkalmazás szükséges, az értesítés nem vethető el. |
 | Az alkalmazás telepítése megszakadt, mert a telepítési (APK) fájl törlődött a letöltés után, de még a telepítés előtt. (0xC7D14FBA) | Az APK letöltése sikeres volt, de mielőtt a felhasználó telepítette az alkalmazást, a fájl el lett távolítva az eszközről. Ez akkor fordulhat elő, ha a letöltés és a telepítés között nagy eltérés történt. A felhasználó például megszakította az eredeti telepítést, megvárta, majd rákattintott az értesítésre az újbóli próbálkozáshoz. Ezt a hibaüzenetet a rendszer csak a DA forgatókönyvek esetében adja vissza. KNOX-forgatókönyvek csendesen is elvégezhető. Bemutatunk egy értesítést az újrapróbálkozáshoz, hogy a felhasználó el tudja fogadni a megszakítás helyett. Ha az alkalmazás egy elérhető alkalmazás, akkor az értesítés elhagyható. Azonban ha az alkalmazás szükséges, az értesítés nem vethető el. |
@@ -153,8 +154,8 @@ Ez a szakasz az eszköz rendszergazdája (DA) és a Samsung Knox-regisztrációt
 | A felhasználónak be kell jelentkeznie az App Store-ba (-2016330855). | Az alkalmazás telepítésének megkezdése előtt a felhasználónak be kell jelentkeznie az alkalmazás-áruházba. |
 | Ismeretlen probléma. Próbálkozzon újra (-2016330854). | Az alkalmazás telepítése ismeretlen ok miatt meghiúsult. Próbálkozzon újra később. |
 | Az alkalmazás telepítése nem sikerült. Az Intune újra próbálkozik az eszköz következő szinkronizálásakor (-2016330853). | Az alkalmazás telepítése eszköz hibába ütközött. Az eszköz szinkronizálásával próbálja megismételni az alkalmazás telepítését. |
-| A licenc-hozzárendelés nem sikerült – Apple Error "No VPP-licencek megmaradt" (0x87d13b7e) | Ezt a működésmód szándékos. Ennek megoldásához vásároljon további VPP-licenceket, vagy igényeljen licenceket a felhasználóktól már nem megcélozva. |
-| Az alkalmazás telepítési hibája 12024: Ismeretlen ok. (0x87d13b6e) | Az Apple nem adott nekünk elegendő információt a telepítés okának meghatározásához. Nincs jelentés. |
+| A licenc-hozzárendelés nem sikerült – Apple Error "No VPP-licencek megmaradt" (0x87d13b7e) | Ez a viselkedés a tervezés szerint történik. Ennek megoldásához vásároljon további VPP-licenceket, vagy igényeljen licenceket a felhasználóktól már nem megcélozva. |
+| Az alkalmazás telepítési hibája 12024: ismeretlen ok. (0x87d13b6e) | Az Apple nem adott nekünk elegendő információt a telepítés okának meghatározásához. Nincs jelentés. |
 | A szükséges alkalmazás-konfigurációs házirend nem található, győződjön meg arról, hogy a házirend ugyanahhoz a csoporthoz van rendelve. (0x87d13b7f) | Az alkalmazáshoz az alkalmazás konfigurációja szükséges, de nincs megcélozva az alkalmazás konfigurációja. A rendszergazdának meg kell győződnie arról, hogy az alkalmazáshoz tartozó csoportokat is megcélozta a csoportok számára szükséges alkalmazás-konfiguráció. |
 | Az eszköz VPP-licencelése csak az iOS 9.0 + rendszerű eszközökön használható. (0x87d13b69) | Az érintett iOS-eszközök frissítése az iOS 9.0 + verzióra. |
 | Az alkalmazás telepítve van az eszközön, de nem felügyelt. (0x87d13b8f) | Ez a hiba csak LOB-alkalmazásokban fordul elő. Az alkalmazás az Intune-on kívül lett telepítve. A hiba megoldásához távolítsa el az alkalmazást az eszközről. Amikor legközelebb megtörténik az eszköz szinkronizálása, az eszköznek telepítenie kell az alkalmazást az Intune-ból. |
@@ -165,7 +166,7 @@ Ez a szakasz az eszköz rendszergazdája (DA) és a Samsung Knox-regisztrációt
 
 ### <a name="other-installation-errors"></a>Egyéb telepítési hibák
 
-|  Hibaüzenet/kód  |  Leírás  |
+|  Hibaüzenet/kód  |  Description  |
 |-----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |  0x80073CFF, 0x80CF201C (ügyfél-hiba)  |  Az alkalmazás telepítéséhez közvetlen telepítést lehetővé tevő rendszerrel kell rendelkeznie. Győződjön meg arról, hogy az alkalmazáscsomag megbízható aláírással van aláírva, és telepítve van egy tartományhoz csatlakoztatott eszközön, amelyen engedélyezve van a **AllowAllTrustedApps** szabályzat, vagy olyan eszköz, amely rendelkezik a **AllowAllTrustedApps** házirenddel rendelkező Windows közvetlen telepítési-licenccel. engedélyezve. További információ: [a Windows áruházbeli alkalmazások csomagolásának hibaelhárítása, üzembe helyezése és lekérdezése](https://docs.microsoft.com/windows/desktop/appxpkg/troubleshooting).   |
 |  0x80073CF0  |  A csomag nem nyitható meg. Lehetséges okok:<ul><li> A csomag nincs aláírva.</li><li> A közzétevő neve nem egyezik meg az aláíró tanúsítvány tulajdonosával.</li></ul> További információért olvassa el az **appxpackagingom eseménynaplóban talál** -eseménynaplót. További információ: [a Windows áruházbeli alkalmazások csomagolásának hibaelhárítása, üzembe helyezése és lekérdezése](https://docs.microsoft.com/windows/desktop/appxpkg/troubleshooting).  |

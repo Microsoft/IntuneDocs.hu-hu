@@ -1,6 +1,6 @@
 ---
-title: Az Intune vállalati portál Android-eszköz regisztrálása |} A Microsoft Docs
-description: Az Intune vállalati portál Android-eszköz regisztrálását mutatja
+title: Android-eszköz regisztrálása a Intune Céges portálkal | Microsoft Docs
+description: Útmutató androidos eszközök regisztrálásához Intune Céges portál
 keywords: ''
 author: lenewsad
 ms.author: lanewsad
@@ -9,6 +9,7 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: 0ed3a002-7533-4001-ae24-e10b64b66620
 searchScope:
@@ -18,25 +19,25 @@ ms.reviewer: esmich
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 736b1d891207a19f281aa1127975de1a55889e8b
-ms.sourcegitcommit: d258bcf6716c8a2589d3f8dada819905ee80f233
+ms.openlocfilehash: 1670ddf9299d12312f09d188e4410d14ac40fbe7
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66197032"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506333"
 ---
-# <a name="enroll-your-device-with-company-portal"></a>Regisztrálja az eszközét a vállalati portál  
-Személyes vagy vállalati tulajdonú Android-eszköz regisztrálása a vállalati e-mailekhez, alkalmazásokhoz és adatokhoz való biztonságos eléréséhez. Vállalati portál Android-eszközön támogatja, beleértve a Samsung Knox-, Android 4.4-es vagy újabb rendszerű.  
+# <a name="enroll-your-device-with-company-portal"></a>Az eszköz regisztrálása a Céges portál  
+Regisztrálja személyes vagy vállalati tulajdonú Android-eszközét, hogy biztonságos hozzáférést kapjon a vállalati e-mailekhez, alkalmazásokhoz és adatszolgáltatásokhoz. Céges portál támogatja az Android-eszközöket, beleértve a Samsung Knox-t, az Android 4,4-es vagy újabb verzióját.  
 </br>
 > [!VIDEO https://www.youtube.com/embed/k0Q_sGLSx6o?rel=0]
 
 > [!NOTE]
-> A Samsung Knox olyan biztonsági szolgáltatás, amelyek bizonyos Samsung-eszközöknek további védelem lehetőségeken natív Android nyújtotta. Ha Samsung Knox-eszközzel rendelkezik-e > lépjen a **beállítások** > **eszközről**. Ha nem lát **Knox verzió** felsorolásban, akkor natív Android-eszközzel rendelkezik.
+> A Samsung Knox olyan biztonsági típus, amelyet bizonyos Samsung-eszközök a natív Android által biztosított további védelemhez használnak. Ellenőrizze, hogy Samsung Knox-eszközzel rendelkezik-e, > lépjen az**eszköz** **Beállítások** > . Ha nem jelenik meg a **Knox-verzió** , akkor natív Android-eszközzel rendelkezik.
 
 ## <a name="enroll-device"></a>Eszköz regisztrálása  
-Ügyeljen arra, hogy [telepítése az Intune vállalati portál nevű ingyenes alkalmazást a Google Play áruházból](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal). 
+Győződjön meg arról, hogy [az ingyenes Intune céges portál alkalmazást a Google Play](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal)áruházból telepíti. 
 
-A beléptetés során előfordulhat, hogy megkérdezi, hogy az válasszon egy kategóriát, amely a legjobban ismerteti, hogyan használhatja az eszközt. A cég informatikai támogatási válasz használatával ellenőrizni az alkalmazásokat, amely hozzáféréssel rendelkezik.  
+A regisztráció során előfordulhat, hogy a rendszer arra kéri, hogy válasszon egy kategóriát, amely a legjobban leírja, hogyan használja az eszközt. A cég informatikai támogatási szolgálata a választ használva vizsgálja meg, hogy milyen alkalmazásokhoz férhet hozzá.  
 
 1. Nyissa meg a Vállalati portál alkalmazást.  
 
@@ -44,7 +45,7 @@ A beléptetés során előfordulhat, hogy megkérdezi, hogy az válasszon egy ka
 
    ![Androidos üdvözlőképernyőre készült Céges portál alkalmazás, amely arra kéri a felhasználót, hogy jelentkezzen be a szükséges munkahelyi vagy iskolai fiókjával. Arra is figyelmeztet, hogy a Microsoft-fiókok és egyéb személyes fiókok nincsenek engedélyezve.](./media/and-enroll-0-welcome-screen.png)   
 
-4. Ha a cég használati feltételeinek elfogadására kéri, koppintson **ELFOGADÁS**. Ezen a képernyőn kis mértékben eltérhet az alábbi képernyőképet. 
+4. Ha a rendszer kéri, hogy fogadja el a szervezet használati feltételeit, koppintson az **elfogadás**gombra. Előfordulhat, hogy ez a képernyő némileg eltér az alábbi képernyőképen. 
 
    ![android-company-portal-sign-in](./media/and-enroll-3-accept-terms.png)
 
@@ -76,7 +77,7 @@ A beléptetés során előfordulhat, hogy megkérdezi, hogy az válasszon egy ka
 
    Ha ez az üzenet jelenik meg, koppintson az **ENGEDÉLYEZÉS** elemre. Nyugodtan rákoppinthat az ENGEDÉLYEZÉS elemre, mert **a Microsoft soha nem indít telefonhívásokat, és nem is kezeli az Ön hívásait**! A Google szabályozza az üzenet szövegét, és a Microsoft nem módosíthatja azt. A hozzáférés engedélyezésekor csupán annyi történik, hogy engedélyezi az eszköz számára az eszköz nemzetközi mobilkészülék-azonosító (IMEI) számának elküldését az Intune-nak. A sorozatszámhoz hasonló IMEI szám a mobileszköz egyedi azonosítója.
 
-   Ha megtagadja a hozzáférést, az üzenet jelenik meg újra a legközelebb bejelentkezik a vállalati portálhoz. Kapcsolja ki a további üzeneteket, jelölje be **ne kérdezzen rá ismét**. A hozzáférési engedély fordított, lépjen a **beállítások** > **alkalmazások** > **céges portál** > **engedélyek**   >  **Phone**, majd kapcsolja be az engedélyt.  
+   Ha megtagadja a hozzáférést, az üzenet ismét megjelenik majd, amikor legközelebb bejelentkezik a Céges portálba. A jövőbeli üzenetek kikapcsolásához válassza a **Soha ne Kérdezzen újra**lehetőséget. A hozzáférési engedély megfordításához lépjen a beállítások  > **alkalmazások** > **céges portál** > **engedélyek**@no__t – 7**telefon** **menüpontra**, majd kapcsolja be az engedélyt.  
 
    - **Allow Company Portal to access your contacts? (Engedélyezi, hogy a Munkahelyi portál hozzáférjen a névjegyekhez?)**
 
@@ -124,11 +125,11 @@ A beléptetés során előfordulhat, hogy megkérdezi, hogy az válasszon egy ka
 
 ## <a name="next-steps"></a>További lépések  
 
-Mielőtt vállalati alkalmazások telepítése, Ugrás **beállítások** > **biztonsági**, és kapcsolja be a **ismeretlen források**. Alkalmazások telepítésének megkísérlése előtt nem kapcsolja ezt a beállítást, ha a következő üzenetet láthatja: "A telepítés letiltva. Biztonsági okokból az eszköz blokkolja az ismeretlen forrásból származó alkalmazások telepítését.” A hiba-párbeszédpanelen található **Beállítások** elemre koppintva könnyen az **Ismeretlen források** beállításhoz ugorhat.  
+A vállalati alkalmazások telepítésének megkezdése előtt lépjen a **beállítások** > **Biztonság**elemre, és kapcsolja be az **ismeretlen forrásokat**. Ha az alkalmazások telepítésének megkísérlése előtt nem kapcsolja be ezt a beállítást, a következő üzenet jelenik meg: „A telepítés letiltva. Biztonsági okokból az eszköz blokkolja az ismeretlen forrásból származó alkalmazások telepítését.” A hiba-párbeszédpanelen található **Beállítások** elemre koppintva könnyen az **Ismeretlen források** beállításhoz ugorhat.  
 
 > [!Note]
 > Ha a szervezete távközlésiköltség-kezelő szoftvert használ, az eszköz teljes regisztrálásához még néhány lépést el kell végezni. További információért [kattintson ide](enroll-your-device-with-telecom-expense-management-android.md).
 
-Ha hibaüzenet jelenik meg az Intune-ban az eszköz regisztrálása közben, akkor az [e-mailt a cég informatikai támogatási](send-logs-to-your-it-admin-by-email-android.md).  
+Ha hibaüzenet jelenik meg az eszköz Intune-beli regisztrálásakor, [e-mailt küldhet a cég informatikai támogatási szolgálatának](send-logs-to-your-it-admin-by-email-android.md).  
 
 További segítségre van szüksége? Forduljon a cég informatikai támogatási szolgálatához (a kapcsolattartási adatokat a [céges portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980) találja), vagy írjon a <a href="mailto:wintunedroidfbk@microsoft.com?subject=I'm having trouble with enrolling my Android device&body=Describe the issue you're experiencing here.">Microsoft Android-csapatának</a>.

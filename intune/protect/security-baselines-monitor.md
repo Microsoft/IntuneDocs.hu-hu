@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 06/20/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
@@ -15,12 +16,12 @@ ms.reviewer: joglocke
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b16b4ee95647b3bb182af075bbe7f7aad71351f0
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 1be2ba947a5b92b6982e8c868e935460c4eaa5bb
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731947"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72508945"
 ---
 # <a name="monitor-security-baseline-and-profiles-in-microsoft-intune"></a>Biztonsági alapkonfiguráció és profilok figyelése Microsoft Intune  
 
@@ -52,7 +53,7 @@ Az Áttekintés panel egy diagramon alapuló összegzést jelenít meg arról, h
 
 ![Az eszközök állapotának ellenõrzése](./media/security-baselines-monitor/overview.png)
 
-Ha egy eszköz eltérő állapotú az alapkonfiguráció különböző csoportjaitól, az eszközt egyetlen állapot jelöli. Az eszközt jelképező állapot a következő sorrendtől származik: Helytelenül van konfigurálva, nem **felel**meg az **alapkonfigurációnak**, **nem alkalmazható**, az alapértéknek **felel meg.**  
+Ha egy eszköz eltérő állapotú az alapkonfiguráció különböző csoportjaitól, az eszközt egyetlen állapot jelöli. Az eszközt jelképező állapot a következő elsőbbségi sorrendben történik: helytelenül van konfigurálva, nem **felel**meg az **alapkonfigurációnak**, **nem alkalmazható**, az alapértéknek **felel meg.**  
 
 Ha például egy eszköz *nem megfelelőként*van besorolva, *és egy* vagy több olyan beállítást tartalmaz, amely nem egyezik az alapkonfigurációval, az *eszköz hibásan van besorolva.*  
 

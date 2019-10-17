@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 03/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 83e321e932fa2214612836ec994a9a0aa8174dd7
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: d9e337d47757e3c5507c94433f90d5c2863bc1b0
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729603"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72503008"
 ---
 # <a name="assign-a-role-to-an-intune-user"></a>Szerepkör kiosztása Intune-felhasználóhoz
 
@@ -31,11 +32,11 @@ A szerepkörök létrehozásához, szerkesztéséhez vagy hozzárendeléséhez a
 - **Globális rendszergazda**
 - **Intune-beli szolgáltatás-rendszergazda**
 
-1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com).
+1. Jelentkezzen be az [Azure Portal](https://portal.azure.com) webhelyre.
 
 2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget. Az Intune a **Figyelés + felügyelet** szakaszban található.
 
-3. Az **Intune** panelen válassza a **szerepkörök** > **minden szerepkör**lehetőséget.
+3. Az **Intune** panelen válassza a **szerepkörök**@no__t – 2**minden szerepkör**lehetőséget.
 
 4. Az **Intune-szerepkörök – minden szerepkör** panelen válassza ki a hozzárendelni kívánt beépített szerepkört.
 

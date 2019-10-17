@@ -6,9 +6,9 @@ author: brenduns
 ms.author: brenduns
 manager: dougeby
 ms.date: 09/19/2019
-ms.topic: article
-ms.prod: ''
+ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.reviewer: lacranda
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8e6b9f7d6aeda219af0f0cf3d0f5c34a3f03d258
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 16a6e35fd1d7b60d9abce5e2b3491fee1efb41c3
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729855"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72502532"
 ---
 # <a name="create-and-assign-scep-certificate-profiles-in-intune"></a>SCEP-tanúsítványok létrehozása és társítása az Intune-ban
 
@@ -55,11 +55,11 @@ Miután [konfigurálta az infrastruktúrát](certificates-scep-configure.md) a e
 6. Válassza a **Beállítások**lehetőséget, majd hajtsa végre a következő konfigurációkat:
 
    - **Tanúsítvány típusa**:   
-     *(A következőkre vonatkozik:  Android, Android Enterprise, iOS, macOS, Windows 8,1 és újabb, valamint Windows 10 és újabb verziók.)*  
+     *(A következőkre vonatkozik: Android, Android Enterprise, iOS, macOS, Windows 8,1 és újabb, valamint Windows 10 és újabb verziók.)*  
 
       Válasszon egy típust attól függően, hogy hogyan fogja használni a tanúsítványt:
-      - **Felhasználó**: A *felhasználói* tanúsítványok a tulajdonos és a tanúsítvány Tárolóhálózati felhasználói és eszköz attribútumait is tartalmazhatják.  
-      - **Eszköz**:  Az *eszközök* tanúsítványainak csak a tulajdonos és a tanúsítvány Tárolóhálózati attribútumait tartalmazhatják.  
+      - **Felhasználó**: a *felhasználói* tanúsítványok a tulajdonos és a tanúsítvány Tárolóhálózati felhasználói és eszköz attribútumait is tartalmazhatják.  
+      - **Eszköz**: az *eszközök* tanúsítványainak csak a tulajdonos és a tanúsítvány Tárolóhálózati attribútumait tartalmazhatják.  
       
         **Eszköz** használata olyan forgatókönyvek esetén, mint a felhasználó nélküli eszközök, például kioszkok vagy Windows-eszközök. Windows-eszközökön a tanúsítvány a helyi számítógép tanúsítványtárolóba kerül.  
 
@@ -70,7 +70,7 @@ Miután [konfigurálta az infrastruktúrát](certificates-scep-configure.md) a e
      > [Ismert hiba](#avoid-certificate-signing-requests-with-escaped-special-characters) történt a SCEP használatával a tanúsítványok lekéréséhez, ha az eredményül kapott tanúsítvány-aláírási kérelem (CSR) tulajdonos neve a következő karakterek egyikét tartalmazza Escape-karakterként (fordított perjel \\):
      > - \+
      > - ;
-     > - ;
+     > - ,
      > - =
 
      - **Felhasználói tanúsítványtípus**  
@@ -81,17 +81,17 @@ Miután [konfigurálta az infrastruktúrát](certificates-scep-configure.md) a e
        - **Köznapi név mint e-mail cím**
        - **IMEI (Nemzetközi mobilkészülék-azonosító)**
        - **Sorozatszám**
-       - **Egyéni**: Ha ezt a beállítást választja, egy **Egyéni** szövegmező is megjelenik. Ezt a mezőt egyéni tulajdonosnév-formátumok megadásához használhatja, beleértve a változókat is. Az egyéni formátum két változót támogat: **Köznapi név (CN)** és **e-mail (E)** . Az **Egyszerű név (CN)** az alábbi változók bármelyikére beállítható:
+       - **Egyéni**: Ha ezt a lehetőséget választja, megjelenik egy **Egyéni** szövegmező is. Ezt a mezőt egyéni tulajdonosnév-formátumok megadásához használhatja, beleértve a változókat is. Az egyéni formátum két változót támogat: **Egyszerű név (CN)** és **E-mail (E)** . Az **Egyszerű név (CN)** az alábbi változók bármelyikére beállítható:
 
-         - **CN = {{username}}** : A felhasználó egyszerű felhasználóneve, például janedoe@contoso.com:.
-         - **CN={{AAD_Device_ID}}** : Az eszköz Azure Active Directory (AD) szolgáltatásban való regisztrálásakor hozzárendelt azonosító. Ez az azonosító jellemzően az Azure AD-ben való hitelesítéshez használatos.
-         - **CN = {{SERIALNUMBER}}** : Az egyedi sorozatszámot (SN) általában a gyártó használja az eszköz azonosítására.
-         - **CN = {{IMEINumber}}** : A mobil telefon azonosítására szolgáló nemzetközi mobileszköz-azonosító (IMEI) egyedi szám.
-         - **CN = {{OnPrem_Distinguished_Name}}** : Relatív megkülönböztető nevek sorozata vesszővel elválasztva, például *CN = Jane Doe, OU = UserAccounts, DC = Corp, DC = contoso, DC = com*.
+         - **CN = {{username}}** : a felhasználó egyszerű felhasználóneve, például janedoe@contoso.com.
+         - **CN={{AAD_Device_ID}}** : Egy Azure Active Directoryban való eszközregisztrációkor társított azonosító. Ez az azonosító jellemzően az Azure AD-ben való hitelesítéshez használatos.
+         - **CN = {{SERIALNUMBER}}** : az egyedi sorozatszám (Sn) általában a gyártó által az eszköz azonosítására használatos.
+         - **CN = {{IMEINumber}}** : a mobil telefon azonosítására szolgáló nemzetközi mobileszköz-identitás (IMEI) egyedi szám.
+         - **CN = {{OnPrem_Distinguished_Name}}** : relatív megkülönböztető nevek sorozata vesszővel elválasztva, például *CN = JANE DOE, OU = UserAccounts, DC = Corp, DC = contoso, DC = com*.
 
            A ( *onpremisesdistinguishedname* ) *{{OnPrem_Distinguished_Name}}* változó használatához az Azure AD-vel a [Azure ad Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect) használatával kell szinkronizálnia a felhasználói attribútumot.
 
-         - **CN={{onPremisesSamAccountName}}** : A rendszergazdák a samAccountName attribútumot a Active Directoryról az Azure AD-be szinkronizálva az Azure AD-kapcsolat használatával egy *onPremisesSamAccountName*nevű attribútumba. Az Intune a tanúsítvány kiállításának részeként helyettesítheti be ezt a változót. A samAccountName attribútum a Windows korábbi verziójából származó ügyfelek és kiszolgálók támogatásához használt felhasználói bejelentkezési név (pre-Windows 2000). A felhasználói bejelentkezési név formátuma: *DomainName\testUser*vagy csak *tesztfelhasználó*.
+         - **CN = {{onPremisesSamAccountName}}** : a rendszergazdák a sAMAccountName attribútumot az Azure ad-vel a *onPremisesSamAccountName*nevű attribútumba szinkronizálva Active Directoryról az Azure ad-be. Az Intune a tanúsítvány kiállításának részeként helyettesítheti be ezt a változót. A samAccountName attribútum a Windows korábbi verziójából származó ügyfelek és kiszolgálók támogatásához használt felhasználói bejelentkezési név (pre-Windows 2000). A felhasználói bejelentkezési név formátuma: *DomainName\testUser*, vagy csak *tesztfelhasználó*.
 
             A ( *onPremisesSamAccountName* ) *{{onPremisesSamAccountName}}* változó használatához az Azure AD-vel a [Azure ad Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect) használatával kell szinkronizálnia a felhasználói attribútumot.
 
@@ -111,7 +111,7 @@ Miután [konfigurálta az infrastruktúrát](certificates-scep-configure.md) a e
         - **{{WiFiMacAddress}}**
         - **{{IMEI}}**
         - **{{DeviceName}}**
-        - **{{FullyQualifiedDomainName}}** *(Csak Windows és tartományhoz csatlakoztatott eszközök esetén alkalmazható)*
+        - **{{FullyQualifiedDomainName}}** *(csak Windows és tartományhoz csatlakoztatott eszközök esetén alkalmazható)*
         - **{{MEID}}**
         
         Megadhatja ezeket a változókat, majd a változó szövegét a szövegmezőben. Egy *Device1* nevű eszköz köznapi neve például a következő lehet: **CN = {{DeviceName}} Device1**.
@@ -155,11 +155,11 @@ Miután [konfigurálta az infrastruktúrát](certificates-scep-configure.md) a e
         - **{{FullyQualifiedDomainName}}**
         - **{{MEID}}**
 
-        Egy attribútum értékének megadásához adja meg a változó nevét kapcsos zárójelekkel, majd a változó szövegét. A DNS-attribútum értéke például a következő lehet: **{{AzureADDeviceId}}. domain. com** , ahol a *. domain.com* a szöveg. A *Felhasználó1* nevű felhasználóhoz tartozó e-mail-cím {{FullyQualifiedDomainName}}User1@Contoso.comnéven jelenhet meg.  
+        Egy attribútum értékének megadásához adja meg a változó nevét kapcsos zárójelekkel, majd a változó szövegét. A DNS-attribútum értéke például a következő lehet: **{{AzureADDeviceId}}. domain. com** , ahol a *. domain.com* a szöveg. Egy *Felhasználó1* nevű felhasználó esetén az e-mail-cím {{FullyQualifiedDomainName}} User1@Contoso.com lehet.  
 
         > [!IMPORTANT]  
         > - Az eszköz tanúsítványa változó használatakor a változó neve kapcsos zárójelben {}.  
-        > - Ne használjon kapcsos zárójeleket **{}** , cső szimbólumokat **|** és pontosvesszőket **, a**változót követő szövegben.  
+        > - Ne használjon kapcsos zárójeleket **{}** , a cső szimbólumait **|** , apontosvesszőt pedig a változót követő szövegben.  
         > - Az eszköz *tulajdonosának* vagy *San* -tanúsítványának (például **IMEI**, **serialnumber**és **FullyQualifiedDomainName**) használt tulajdonságai olyan tulajdonságok, amelyek az eszközhöz hozzáféréssel rendelkező személy által meghamisítható.  
         > - Egy eszköznek támogatnia kell az adott profilhoz tartozó tanúsítvány-profilban megadott összes változót az adott eszközre való telepítéshez.  Ha például a **{{IMEI}}** egy SCEP-profil San-ban van használatban, és olyan eszközhöz van rendelve, amely nem rendelkezik IMEI-számmal, akkor a profilt nem lehet telepíteni.
 
@@ -169,7 +169,7 @@ Miután [konfigurálta az infrastruktúrát](certificates-scep-configure.md) a e
      Ha például a tanúsítványsablonban két év van meghatározva a tanúsítvány érvényességi idejeként, akkor egy évet állíthat be értékként, öt évet azonban nem. Az értéknek emellett a kiállító hitelesítésszolgáltató tanúsítványának hátralévő érvényességi időszakánál is kevesebbnek kell lennie.
 
    - **Kulcstároló-szolgáltató (KSP)** :  
-     *(A következőkre vonatkozik:  Windows 8,1 és újabb verziók, valamint Windows 10 és újabb verziók)*  
+     *(A következőkre vonatkozik: Windows 8,1 és újabb, valamint Windows 10 és újabb verziók)*  
      
      Itt adhatja meg, hogy a rendszer hol tárolja a tanúsítvány kulcsát. Válasszon a következő értékek közül:  
      - **Regisztrálás a platformmegbízhatósági modul kulcstároló-szolgáltatójába (ha van ilyen), máskülönben regisztrálás a szoftverkulcstároló-szolgáltatóba**
@@ -180,8 +180,8 @@ Miután [konfigurálta az infrastruktúrát](certificates-scep-configure.md) a e
    - **Kulcshasználat**:  
      Válassza ki a tanúsítvány kulcshasználat beállításait:
 
-     - **Digitális aláírás**: Kulcscsere engedélyezése csak akkor, ha egy digitális aláírás segíti a kulcs megvédését.
-     - **Kulcs titkosítási**: Kulcscsere engedélyezése csak akkor, ha a kulcs titkosítva van.  
+     - **Digitális aláírás**: csak akkor engedélyezi a kulcscsere használatát, ha egy digitális aláírás segíti a kulcs megvédését.
+     - **Key titkosítási**: csak akkor engedélyezi a kulcscsere használatát, ha a kulcs titkosítva van.  
 
    - **Kulcs mérete (BITS)** :  
      Válassza ki a kulcsban található bitek számát.  
@@ -201,7 +201,7 @@ Miután [konfigurálta az infrastruktúrát](certificates-scep-configure.md) a e
      Adja meg a tanúsítvány élettartamának azon hányadát, amely még azelőtt marad, amíg az eszköz kérelmezi a tanúsítvány megújítását. Ha például a 20 értéket adja meg, a rendszer megkísérli a tanúsítvány megújítását, ha a tanúsítvány 80%-ban lejár, és a rendszer továbbra is megkísérli a megújítás sikerességét. A megújítás új tanúsítványt hoz létre, amely új nyilvános/titkos kulcspár bevonását eredményezi.
 
    - **SCEP-kiszolgáló URL-címei**:  
-     Adjon meg egy vagy több URL-címet azon NDES-kiszolgálók esetében, amelyek tanúsítványokat állítanak ki a SCEP használatával. Adja meg például az alábbihoz *https://ndes.contoso.com/certsrv/mscep/mscep.dll* hasonlót:. Szükség szerint további SCEP URL-címeket is hozzáadhat a terheléselosztáshoz, mivel az URL-címeket a rendszer véletlenszerűen leküldi az eszközre a profil használatával. Ha az egyik SCEP-kiszolgáló nem érhető el, a SCEP-kérelem sikertelen lesz, és lehetséges, hogy a későbbi eszköz-bejelentkezések esetében a tanúsítvány kérése ugyanarra a kiszolgálóra kerül.
+     Adjon meg egy vagy több URL-címet azon NDES-kiszolgálók esetében, amelyek tanúsítványokat állítanak ki a SCEP használatával. Írja be például a következőt: *https://ndes.contoso.com/certsrv/mscep/mscep.dll* . Szükség szerint további SCEP URL-címeket is hozzáadhat a terheléselosztáshoz, mivel az URL-címeket a rendszer véletlenszerűen leküldi az eszközre a profil használatával. Ha az egyik SCEP-kiszolgáló nem érhető el, a SCEP-kérelem sikertelen lesz, és lehetséges, hogy a későbbi eszköz-bejelentkezések esetében a tanúsítvány kérése ugyanarra a kiszolgálóra kerül.
 
 7. Válassza **az OK**, majd a **Létrehozás**lehetőséget. Ekkor létrejön a profil, és megjelenik az *eszköz konfigurációja-profilok* listán.
 
@@ -210,7 +210,7 @@ Létezik egy ismert probléma a tulajdonos nevét (CN) tartalmazó SCEP, amely e
 
 A speciális karakterek a következők:
 - \+
-- ;
+- ,
 - ;
 - =
 
@@ -219,11 +219,11 @@ Ha a tulajdonos neve tartalmaz egy speciális karaktert, a következő lehetős�
 - Távolítsa el a speciális karaktert a CN-értékből.  
 
 **Például**van egy tulajdonos neve, amely a *test User (TestCompany, LLC)* néven jelenik meg.  A *TestCompany* és az *LLC* közötti vesszőt tartalmazó CN-t magában foglaló CSR-ben problémát jelent.  A probléma elkerülhető úgy, hogy idézőjeleket helyez a teljes CN-re, vagy eltávolítja a vesszőt a *TestCompany* és az *LLC*-ből:
-- **Idézőjelek hozzáadása**: *CN =* "test User (TESTCOMPANY, LLC)", OU = USERACCOUNTS, DC = Corp, DC = contoso, DC = com *
+- **Idézőjelek hozzáadása**: *CN =* "test User (TestCompany, LLC)", OU = UserAccounts, DC = Corp, DC = contoso, DC = com *
 - **Távolítsa el a vesszőt**: *CN = test User (TestCompany LLC), OU = UserAccounts, DC = Corp, DC = contoso, DC = com*
 
  Ha azonban a vesszőt egy fordított perjel karakterrel próbálja meg elmenekülni, a rendszer hibát jelez a CRP-naplókban:  
-- **Megszökött vessző**: *CN = test User (TestCompany\\, LLC), OU = UserAccounts, DC = Corp, DC = contoso, DC = com*
+- **Megszökött vessző**: *CN = test User (TestCompany @ no__t-2, LLC), OU = UserAccounts, DC = Corp, DC = contoso, DC = com*
 
 A hiba a következő hibához hasonló: 
 

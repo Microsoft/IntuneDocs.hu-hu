@@ -1,5 +1,5 @@
 ---
-title: Alkalmazás típusú entitások referenciája
+title: Alkalmazási entitások referenciája
 titleSuffix: Microsoft Intune
 description: Referencia-témakör az Intune-adattárház API entitásgyűjteményeiben található Alkalmazás kategóriához.
 keywords: Intune-adattárház
@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 10/02/2019
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: developer
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: A92DEF30-5D01-4774-9917-E26F5F0E2E68
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1e737f1cce594b5dd40b2f43048ba37578f5d7c9
-ms.sourcegitcommit: 223d64a72ec85fe222f5bb10639da729368e6d57
+ms.openlocfilehash: ac40be5cf3d0a0a217340b3c745daf740a24e8e7
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940439"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72490378"
 ---
 # <a name="reference-for-application-entities"></a>Alkalmazás-entitások referencia
 
@@ -38,37 +39,37 @@ Az **Alkalmazás** kategória mobileszközökhöz készült entitásokat tartalm
 
 Az **AppRevision** entitás listázza az alkalmazások összes verzióját.
 
-| Tulajdonság  | Leírás | Példa |
+| Tulajdonság  | Description | Példa |
 |---------|------------|--------|
-| AppKey |Az alkalmazás egyedi azonosítója. |123 |
+| appKey |Az alkalmazás egyedi azonosítója. |123 |
 | applicationId |Az alkalmazás egyedi azonosítója – Az AppKey-hez hasonlít, de természetes kulcs. |b66bc706-ffff-7437-0340-032819502773 |
-| Változat |A bináris feltöltése során a rendszergazda által említett verzió. |2 |
+| változat |A bináris feltöltése során a rendszergazda által említett verzió. |2 |
 | title |Az alkalmazás címe. |Excel |
-| publisher |Az alkalmazás kiadója. |Microsoft |
-| UploadState |Az alkalmazás feltöltésének állapota. |1 |
-| AppTypeKey |A következő szakaszban leírt AppType érték hivatkozása. | |
-| VppProgramTypeKey |A következő szakaszban leírt VppProgramType érték hivatkozása. | |
-| CreationTime |A jelen változat létrehozásának ideje. |2016.11.23. 12:00:00 |
-| ModifiedTime |A legutóbbi, jelen változattal kapcsolatos bármilyen módosítás ideje. |2016.11.23. 12:00:00 |
-| size |A bináris mérete. | |
-| startDateInclusiveUTC |A jelen változat adattárházban történő létrehozásának dátuma és időpontja (UTC). |2016.11.23. 12:00:00 |
-| EndDateExclusiveUTC |A jelen változat elavulásának dátuma és időpontja (UTC). |2016.11.23. 12:00:00 |
-| IsCurrent |Jelzi, hogy az alkalmazásverzió aktuális-e az adattárházban. |Igaz/hamis |
-| RowLastModifiedDateTimeUTC |Az alkalmazásverzió legutóbbi módosításának dátuma és időpontja (UTC) az adattárházban. |2016.11.23. 12:00:00 |
+| Publisher |Az alkalmazás kiadója. |Microsoft |
+| uploadState |Az alkalmazás feltöltésének állapota. |1 |
+| appTypeKey |A következő szakaszban leírt AppType érték hivatkozása. | |
+| vppProgramTypeKey |A következő szakaszban leírt VppProgramType érték hivatkozása. | |
+| creationTime |A jelen változat létrehozásának ideje. |2016.11.23 12:00:00 |
+| modifiedTime |A legutóbbi, jelen változattal kapcsolatos bármilyen módosítás ideje. |2016.11.23 12:00:00 |
+| méret |A bináris mérete. | |
+| startDateInclusiveUTC |A jelen változat adattárházban történő létrehozásának dátuma és időpontja (UTC). |2016.11.23 12:00:00 |
+| endDateExclusiveUTC |A jelen változat elavulásának dátuma és időpontja (UTC). |2016.11.23 12:00:00 |
+| isCurrent |Jelzi, hogy az alkalmazásverzió aktuális-e az adattárházban. |Igaz/hamis |
+| rowLastModifiedDateTimeUTC |Az alkalmazásverzió legutóbbi módosításának dátuma és időpontja (UTC) az adattárházban. |2016.11.23 12:00:00 |
 
 ## <a name="apptypes"></a>appTypes
 
 Az **appType** entitás az alkalmazás telepítési forrásait listázza.
 
-| Tulajdonság  | Leírás |
+| Tulajdonság  | Description |
 |---------|------------|
-| AppTypeID |A típus azonosítója |
-| AppTypeKey |A kulcs helyettes kulcsa |
-| AppTypeName |Alkalmazás típusa |
+| appTypeID |A típus azonosítója |
+| appTypeKey |A kulcs helyettes kulcsa |
+| appTypeName |Alkalmazás típusa |
 
 ### <a name="example"></a>Példa
 
-| AppTypeID  | Name (Név) | Leírás |
+| AppTypeID  | Név | Description |
 |---------|------------|--------|
 | 0 |Android store app | Android Áruházbeli alkalmazás. |
 | 1 |Android LOB app | Üzletági Android-alkalmazás. |
@@ -89,15 +90,15 @@ Az **appType** entitás az alkalmazás telepítési forrásait listázza.
 
 A **vppProgramType** entitás az alkalmazás lehetséges VPP-programtípusait listázza.
 
-| Tulajdonság  | Leírás |
+| Tulajdonság  | Description |
 |---------|------------|
-| VppProgramTypeID | A típus azonosítója. |
-| VppProgramTypeKey | A kulcs helyettes kulcsa. |
-| VppProgramTypeName | A VPP program típusa. |
+| vppProgramTypeID | A típus azonosítója. |
+| vppProgramTypeKey | A kulcs helyettes kulcsa. |
+| vppProgramTypeName | A VPP program típusa. |
 
 ### <a name="example"></a>Példa
 
-| VppProgramID  | Name (Név) | Leírás |
+| VppProgramID  | Név | Description |
 |---------|------------|--------|
 | 3DDA2474-470B-4503-9830-2665C21C1945 | Microsoft | A Microsoft VPP-programja. |
 | 00000000-0000-0000-0000-000000000000 | Not Yet Available (Még nem érhető el) | Alapértelmezett érték, nincs VPP. |
@@ -109,23 +110,23 @@ A **vppProgramType** entitás az alkalmazás lehetséges VPP-programtípusait li
 
 A **applicationInventory** entitás felsorolja az eszközön talált alkalmazásokat a leltár gyűjtése során.
 
-| Tulajdonság  | Leírás |
+| Tulajdonság  | Description |
 |---------|------------|
-| DeviceKey | Az Intune-eszközazonosítót tartalmazó eszköztáblára mutató hivatkozás. |
+| deviceKey | Az Intune-eszközazonosítót tartalmazó eszköztáblára mutató hivatkozás. |
 | dateKey | A leltári napot megadó dátumtáblázat-hivatkozás. |
 | applicationName | Az alkalmazás neve. |
-| ApplicationVersion | Az alkalmazás verziója. |
-| BundleSize | Az alkalmazás mérete bájtban. |
+| applicationVersion | Az alkalmazás verziója. |
+| bundleSize | Az alkalmazás mérete bájtban. |
 
 ## <a name="mobileappinstallstates"></a>mobileAppInstallStates
 
 A **mobileAppInstallState** entitás a mobileszköz telepítési állapotát jelöli, miután hozzá lett rendelve egy olyan csoporthoz, amely eszközöket, felhasználókat vagy mindkettőt tartalmaz.
 
-| Tulajdonság | Leírás |
+| Tulajdonság | Description |
 |---|---|
-| AppInstallStateKey | A fiókhoz tartozó alkalmazástelepítési állapot egyedi azonosítója. |
-| AppInstallState | Az alkalmazástelepítési állapot felsorolásértéke. |
-| AppInstallStateName | Az alkalmazástelepítési állapot neve. |
+| appInstallStateKey | A fiókhoz tartozó alkalmazástelepítési állapot egyedi azonosítója. |
+| appInstallState | Az alkalmazástelepítési állapot felsorolásértéke. |
+| appInstallStateName | Az alkalmazástelepítési állapot neve. |
 
 
 

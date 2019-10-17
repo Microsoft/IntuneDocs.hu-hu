@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 08/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: apps
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 1c086943-84a0-4d99-8295-490a2bc5be4b
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, get-started, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ee266d33b247941140569e416c4b43643bcd6a0f
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 31bb0e2ff4379c55829afc65fb99b768c9099a47
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731315"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72498948"
 ---
 # <a name="app-protection-policies-overview"></a>Alkalmazásvédelmi szabályzatok áttekintése
 
@@ -41,9 +42,9 @@ Az Intune alkalmazásvédelmi szabályzatai **a mobileszköz-felügyeleti (MDM) 
 
 Az alkalmazásvédelmi szabályzatok olyan eszközökön futó alkalmazásokhoz konfigurálhatók, amelyek:
 
-- **Regisztrálva van Microsoft Intuneban:** Ezek az eszközök általában a vállalat tulajdonában vannak.
+- **Regisztrálva vannak a Microsoft Intune-ban:** Ezek általában vállalati tulajdonú eszközök.
 
-- **Harmadik féltől származó mobileszköz-kezelési (MDM) megoldásban van regisztrálva:** Ezek az eszközök általában a vállalat tulajdonában vannak.
+- **Regisztrálva vannak egy harmadik fél mobileszköz-felügyeleti (MDM) megoldásában:** Ezek általában vállalati tulajdonú eszközök.
 
   > [!NOTE]
   > A mobilalkalmazás-felügyeleti szabályzatokat nem ajánlott külső mobileszköz-felügyeleti biztonságos tárolómegoldásokkal együtt használni.
@@ -300,7 +301,7 @@ Az Intune alkalmazásvédelmi szabályzatai csak az Intune licencelt felhasznál
 Ennek a folyamatnak a célja, hogy az alkalmazás szintjén biztonságosan és védelemmel lássa el a szervezet adatait az alkalmazáson belül. Ez a funkció csak az iOS-ben érhető el, és a működéséhez szükséges az alkalmazások integrálása az Intune APP SDK for iOS 9.0.1-es vagy újabb verziójával. Az SDK-integráció szükséges a viselkedés kényszeríthetőségéhez a megcélzott alkalmazásoknál. Ez az integráció fokozatosan történik, és az egyes alkalmazáscsapatoktól függ. Néhány alkalmazás, amely ezek között szerepelhet: WXP, Outlook, Managed Browser és Yammer.
   
 ### <a name="ios-share-extension"></a>iOS-megosztási bővítmény
-Az iOS-megosztási bővítmény használatával megnyithatja a nem felügyelt alkalmazások munkahelyi vagy iskolai szolgáltatásait, még akkor is, ha az adatátviteli szabályzat **csak a felügyelt alkalmazásokra** van beállítva, vagy **nem rendelkezik alkalmazásokkal**. Az Intune alkalmazásvédelmi szabályzata nem tudja kezelni az iOS megosztási bővítményt az eszköz felügyelete nélkül. Ezért az _**Intune titkosítja a „céges” adatokat, mielőtt az alkalmazáson kívül megosztaná**_ . Ezt a titkosítási viselkedést a felügyelt alkalmazáson kívüli "céges" fájl megnyitására tett kísérlettel ellenőrizheti. A fájlnak titkosítottnak kell lennie, így a felügyelt alkalmazáson kívül mással nem nyitható meg.
+Az iOS-megosztási bővítmény használatával megnyithatja a nem felügyelt alkalmazások munkahelyi vagy iskolai szolgáltatásait, még akkor is, ha az adatátviteli szabályzat **csak a felügyelt alkalmazásokra** van beállítva, vagy **nem rendelkezik alkalmazásokkal**. Az Intune alkalmazásvédelmi szabályzata nem tudja kezelni az iOS megosztási bővítményt az eszköz felügyelete nélkül. Ezért az _**Intune titkosítja a „céges” adatokat, mielőtt az alkalmazáson kívül megosztaná**_ . Ezt a titkosítási viselkedést a felügyelt alkalmazáson kívüli "céges" fájl megnyitására tett kísérlettel ellenőrizheti. A fájlnak titkosítottnak kell lennie, így nem nyitható meg a felügyelt alkalmazáson kívül mással.
 
 ### <a name="multiple-intune-app-protection-access-settings-for-same-set-of-apps-and-users"></a>Több Intune app Protection-hozzáférési beállítás ugyanazon alkalmazások és felhasználók számára
 Az Intune app Protection-szabályzatok a hozzáféréshez meghatározott sorrendben lesznek alkalmazva a végfelhasználói eszközökön, amikor egy célzott alkalmazást próbálnak elérni a vállalati fiókból. A törlésnek általában elsőbbsége van, ezt követi a letiltás és a bezárható figyelmeztetés. Például az iOS-verzió frissítésére figyelmeztető minimálisan előírt iOS operációsrendszer-beállítás, ha érvényesíthető az adott felhasználóra/alkalmazásra, csak akkor kerül alkalmazásra, ha már életbe lépett a felhasználó hozzáférését letiltó minimálisan előírt iOS operációsrendszer-beállítás. Így tehát ha az informatikai rendszergazda a minimális iOS operációs rendszert 11.0.0.0-ra, a (csak figyelmeztetési) minimális iOS operációs rendszert 11.1.0.0-ra állította be, az alkalmazás elérését megkísérlő eszköz pedig az iOS 10-et használja, a végfelhasználó a minimális iOS operációsrendszer-verzióra vonatkozó szigorúbb beállítás alapján le lesz tiltva, és nem férhet hozzá az alkalmazáshoz.
@@ -321,7 +322,7 @@ Különböző beállítások esetén először a az alkalmazás verziókövetelm
 Az Intune app Protection-szabályzatok lehetővé teszik a rendszergazdák számára, hogy végfelhasználói eszközöket adjanak át a Google biztonság-igazolásának az Android-eszközökhöz. A Google Play szolgáltatás új meghatározása az Intune szolgáltatás által meghatározott időközönként jelentést küld a rendszergazdának. A szolgáltatás hívásának gyakorisága a terhelés miatt szabályozva van, ezért ez az érték belsőleg marad, és nem konfigurálható. A Google biztonság igazolási beállításához a rendszergazda által konfigurált rendszergazdai műveletek a feltételes indításkor az Intune szolgáltatás utolsó jelentett eredményei alapján lesznek elvégezve. Ha nincs adat, a hozzáférés más feltételes indítási ellenőrzéstől függően nem lehetséges, és a Google Play szolgáltatás "oda" helyezése az igazolási eredmények meghatározásához a háttérbe kerül, és aszinkron módon kéri a felhasználót, ha az eszköz meghibásodik. Elavult adatmennyiség esetén a rendszer letiltja vagy engedélyezi a hozzáférést az utolsó jelentett eredménytől függően, és Hasonlóképpen az igazolási eredmények meghatározásához a Google Play szolgáltatás "oda" helyezése is megkezdődik, és aszinkron módon kéri a felhasználót, ha az eszköz sikertelen volt.
 
 ### <a name="intune-app-protection-policies-and-googles-verify-apps-api-for-android-devices"></a>Intune app Protection-szabályzatok és a Google alkalmazások ellenőrzése API Android-eszközökhöz
-A Intune App Protection házirendek lehetővé teszik a rendszergazdák számára, hogy a végfelhasználói eszközökön jeleket küldjenek az Android-eszközökön a Google ellenőrzése alkalmazások API-n keresztül. Az ehhez szükséges útmutatást az eszköz kissé eltérőnek kell lennie. Az általános folyamat magában foglalja a Google Play Áruház, majd a **saját alkalmazások & játékok**elemre kattint, és az utolsó alkalmazás vizsgálatának eredményére kattint, amely a lejátszás elleni védelem menübe kerül. Ellenőrizze, hogy be van-e kapcsolva a **biztonsági fenyegetések keresése** az eszközön.
+A Intune App Protection házirendek lehetővé teszik a rendszergazdák számára, hogy a végfelhasználói eszközökön jeleket küldjenek az Android-eszközökön a Google ellenőrzése alkalmazások API-n keresztül. Az ehhez szükséges útmutatást az eszköz kissé eltérőnek kell lennie. Az általános folyamat magában foglalja a Google Play Áruház, majd a **saját alkalmazások & játékok**elemre kattint, és az utolsó alkalmazás vizsgálatának eredményére kattint, amely a lejátszás elleni védelem menübe kerül. Ellenőrizze, hogy be van-e kapcsolva a **biztonsági fenyegetések keresése az eszközön** .
 
 ### <a name="googles-safetynet-attestation-api"></a>Google biztonság igazolási API 
 Az Intune kihasználja a Google Play Protect biztonság API-kat a nem regisztrált eszközökhöz való meglévő gyökérszintű észlelési ellenőrzésekhez való hozzáadáshoz. A Google fejleszti és karbantartja ezt az API-készletet az Android-alkalmazások számára, ha nem szeretné, hogy az alkalmazások feltört eszközökön fussanak. Az Android Pay-alkalmazás beépítette ezt, például:. Noha a Google nem osztja meg nyilvánosan a legfelső szintű észlelési ellenőrzéseket, az API-k elvárják, hogy észlelje az eszközeit feltört felhasználókat. Ezek a felhasználók ezt követően le lehet tiltani a hozzáférését, vagy a vállalati fiókjaikat a szabályzattal kompatibilis alkalmazásokból törölve. Az **alapvető integritás ellenőrzése** az eszköz általános integritását mutatja be. A feltört eszközök, emulátorok, virtuális eszközök és eszközök, amelyekkel a rendszer nem módosítja az alapszintű integritást. Győződjön meg arról, hogy az **alapszintű integritás & a hitelesített eszközök** közlik az eszköz kompatibilitását a Google szolgáltatásaival. Csak a Google által hitelesített, nem módosított eszközök adhatják át ezt az ellenőrzést. A meghiúsuló eszközök közé tartoznak a következők:
@@ -345,5 +346,5 @@ A Google Play Protect API-kat használó app Protection-házirend beállításai
 
 [Alkalmazásvédelmi szabályzatok létrehozása és telepítése Microsoft Intune-ban](app-protection-policies.md)
 
-## <a name="see-also"></a>Lásd még:
+## <a name="see-also"></a>További információ
 A harmadik féltől származó alkalmazások, például a Salesforce mobilalkalmazás, speciális módon működnek együtt az Intune-nal a vállalati adatok védelme érdekében. Ha szeretne többet megtudni arról, hogy a Salesforce alkalmazás konkrétan hogyan működik együtt az Intune-nal (az MDM alkalmazáskonfigurációs beállításait is beleértve), olvassa el [A Salesforce alkalmazás és a Microsoft Intune](https://gallery.technet.microsoft.com/Salesforce-App-and-Intune-c47d44ee/file/188000/1/Salesforce%20App%20and%20Intune%20for%20external.pdf) című témakört.

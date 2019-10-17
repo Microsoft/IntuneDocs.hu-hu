@@ -9,6 +9,7 @@ ms.author: dougeby
 ms.date: 03/08/2018
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: developer
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: 79A67342-C06D-4D20-A447-678A6CB8D70A
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d8c89a5d39163f33900c326fcab3385772a767ec
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 1a5381d139247424d976b6b510d62681f623203a
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730231"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72490507"
 ---
 # <a name="how-to-use-azure-ad-to-access-the-intune-apis-in-microsoft-graph"></a>Az Azure AD használata az Intune API-k elérésére a Microsoft Graphban
 
@@ -127,7 +128,7 @@ Ezen a ponton lehetősége van:
 
   2. Módosítsa az `availableToOtherTenants` beállítást `true` értékűre.
 
-  3. Mentse a módosításokat.
+  3. Mentse a változtatásokat.
 
 ## <a name="intune-permission-scopes"></a>Intune-engedélyhatókörök
 
@@ -139,7 +140,7 @@ További tudnivalók:
 - [Azure AD-hitelesítés](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-pass-through-authentication)
 - [Alkalmazás-engedélyhatókörök](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-scopes)
 
-Ha engedélyt ad a Microsoft Graph számára, a következő hatóköröket adhatja meg az Intune-funkciókhoz való hozzáférés szabályozásához: Az alábbi táblázat összefoglalja az Intune API engedélyének hatóköreit.  Az első oszlop a funkció nevét tünteti fel abban a formában, ahogy az Azure Portalon megjelenik, a második oszlopban az engedélyhatókör neve látható.
+A Microsoft Graph engedélyezésekor az alábbi táblázatban összefoglalt Intune API-engedélyhatóköröket adhatja meg az Intune-funkciókhoz való hozzáférés szabályozásához.  Az első oszlop a funkció nevét tünteti fel abban a formában, ahogy az Azure Portalon megjelenik, a második oszlopban az engedélyhatókör neve látható.
 
 _Hozzáférés engedélyezése_ beállítás | Hatókör neve
 :--|:--
@@ -147,13 +148,13 @@ __Felhasználót érintő távoli műveletek végzése Microsoft Intune-eszköz�
 __Microsoft Intune-eszközök olvasása és írás rájuk__ | [DeviceManagementManagedDevices.ReadWrite.All](#mgd-rw)
 __Microsoft Intune-eszközök olvasása__ | [DeviceManagementManagedDevices.Read.All](#mgd-ro)
 __Microsoft Intune RBAC beállításainak olvasása és írása__ | [DeviceManagementRBAC.ReadWrite.All](#rac-rw)
-__Microsoft Intune RBAC beállításainak olvasása__ | DeviceManagementRBAC.Read.All
+__Microsoft Intune RBAC beállításainak olvasása__ | DeviceManagementRBAC. Read. All
 __Microsoft Intune-alkalmazások olvasása és írás rájuk__ | [DeviceManagementApps.ReadWrite.All](#app-rw)
 __Microsoft Intune-alkalmazások olvasása__ | [DeviceManagementApps.Read.All](#app-ro)
-__Microsoft Intune-beli eszközkonfiguráció és szabályzatok olvasása és írása__ | DeviceManagementConfiguration.ReadWrite.All
+__Microsoft Intune-beli eszközkonfiguráció és szabályzatok olvasása és írása__ | DeviceManagementConfiguration. ReadWrite. All
 __Microsoft Intune-beli eszközkonfiguráció és szabályzatok olvasása__ | [DeviceManagementConfiguration.Read.All](#cfg-ro)
 __Microsoft Intune-konfiguráció olvasása és írása__ | [DeviceManagementServiceConfig.ReadWrite.All](#svc-rw)
-__Microsoft Intune-konfiguráció olvasása__ | DeviceManagementServiceConfig.Read.All
+__Microsoft Intune-konfiguráció olvasása__ | DeviceManagementServiceConfig. Read. All
 
 A táblázat az Azure Portalon látható sorrendben listázza a beállításokat. Az alábbi szakaszokban a hatókörök betűrendes listája és a hozzájuk tartozó leírás olvasható.
 
@@ -171,7 +172,7 @@ Jelenleg minden Intune-engedélyhatókörhöz rendszergazdai hozzáférés szük
 
 ### <a name="app-rw"></a>DeviceManagementApps.ReadWrite.All
 
-- **Hozzáférés engedélyezése** beállítás: __Microsoft Intune-alkalmazások olvasása és írás rájuk__
+- **Hozzáférés engedélyezés** beállítás: __Microsoft Intune-alkalmazások olvasása és írása__
 
 - Lehetővé teszi ugyanazokat a műveleteket, mint a __DeviceManagementApps.Read.All__
 
@@ -184,7 +185,7 @@ Jelenleg minden Intune-engedélyhatókörhöz rendszergazdai hozzáférés szük
 
 ### <a name="cfg-ro"></a>DeviceManagementConfiguration.Read.All
 
-- **Hozzáférés engedélyezése** beállítás: __Microsoft Intune eszköz konfigurációjának és házirendjeinek beolvasása__
+- **Hozzáférés engedélyezése** beállítás: __Microsoft Intune-eszközkonfiguráció és -szabályzatok olvasása__
 
 - Olvasási hozzáférést biztosít a következő entitástulajdonságokhoz és -állapotokhoz:
   - Eszközkonfiguráció
@@ -193,7 +194,7 @@ Jelenleg minden Intune-engedélyhatókörhöz rendszergazdai hozzáférés szük
 
 ### <a name="cfg-ra"></a>DeviceManagementConfiguration.ReadWrite.All
 
-- **Hozzáférés engedélyezése** beállítás: __Microsoft Intune eszköz konfigurációjának és házirendjeinek olvasása és írása__
+- **Hozzáférés engedélyezése** beállítás: __Microsoft Intune-eszközkonfiguráció és -szabályzatok olvasása és írása__
 
 - Lehetővé teszi ugyanazokat a műveleteket, mint a __DeviceManagementConfiguration.Read.All__
 
@@ -204,7 +205,7 @@ Jelenleg minden Intune-engedélyhatókörhöz rendszergazdai hozzáférés szük
 
 ### <a name="mgd-po"></a>DeviceManagementManagedDevices.PrivilegedOperations.All
 
-- **Hozzáférés engedélyezése** beállítás: __Felhasználót érintő távoli műveletek végzése Microsoft Intune-eszközökön__
+- **Hozzáférés engedélyezése** beállítás: __Felhasználókat érintő távoli műveletek végrehajtása Microsoft Intune-eszközökön__
 
 - Lehetővé teszi a következő távoli műveletek felügyelt eszközön való végrehajtását:
   - Kivonás
@@ -229,7 +230,7 @@ Jelenleg minden Intune-engedélyhatókörhöz rendszergazdai hozzáférés szük
 
 ### <a name="mgd-rw"></a>DeviceManagementManagedDevices.ReadWrite.All
 
-- **Hozzáférés engedélyezése** beállítás: __Microsoft Intune-eszközök olvasása és írás rájuk__
+- **Hozzáférés engedélyezése** beállítás: __Microsoft Intune-eszközök olvasása és írása__
 
 - Lehetővé teszi ugyanazokat a műveleteket,mint a __DeviceManagementManagedDevices.Read.All__
 
@@ -244,7 +245,7 @@ Jelenleg minden Intune-engedélyhatókörhöz rendszergazdai hozzáférés szük
 
 ### <a name="rac-ro"></a>DeviceManagementRBAC.Read.All
 
-- **Hozzáférés engedélyezése** beállítás: __Microsoft Intune RBAC beállításainak olvasása__
+- **Hozzáférés engedélyezése** beállítás: __Microsoft Intune RBAC-beállítások olvasása__
 
 - Olvasási hozzáférést biztosít a következő entitástulajdonságokhoz és -állapotokhoz:
   - Szerepkör-hozzárendelések
@@ -253,7 +254,7 @@ Jelenleg minden Intune-engedélyhatókörhöz rendszergazdai hozzáférés szük
 
 ### <a name="rac-rw"></a>DeviceManagementRBAC.ReadWrite.All
 
-- **Hozzáférés engedélyezése** beállítás: __Microsoft Intune RBAC beállításainak olvasása és írása__
+- **Hozzáférés engedélyezése** beállítás: __Microsoft Intune RBAC-beállítások olvasása és írása__
 
 - Lehetővé teszi ugyanazokat a műveleteket,mint a __DeviceManagementRBAC.Read.All__
 

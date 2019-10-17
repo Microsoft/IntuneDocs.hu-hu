@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 12/21/2017
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 359448d9-2384-42ac-a21c-a25148c20a7b
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a7271937c7675e82d2d3b3f32074ec07431536a2
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: bd33d19ecfe86a67620bf3a3e8a394e36374a625
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731903"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72504120"
 ---
 # <a name="set-up-symantec-endpoint-protection-mobile-integration-with-intune"></a>A Symantec Endpoint Protection Mobile és az Intune közötti integráció beállítása
 
@@ -38,23 +39,23 @@ A Symantec Endpoint Protection Mobile (SEP Mobile) és az Intune közötti integ
 
 Ha meg szeretne győződni róla, hogy a hálózata megfelelően van beállítva a SEP Mobile-integrációhoz, tekintse meg a [hálózati konfiguráció beállításáról szóló](https://portal.skycure.com/articles/Documentation/Setting-up-your-network-configuration-26-8-2016) Symantec-cikket.
 
-### <a name="full-integration-vs-read-only"></a>Teljes integráció vagy írásvédelem
+### <a name="full-integration-vs-read-only"></a>Teljes integráció vagy csak olvasható
 
 A SEP Mobile kétféleképpen integrálható az Intune-nal:
 
-- **Írásvédett integráció (alapszintű beállítás):** Csak a Azure Active Directory és a Symantec Endpoint Protection Mobile Management konzolon feltölthető leltározási eszközök.
+- Az **írásvédett integráció (alapszintű beállítás)** csak kiolvassa az Azure Active Directoryból az eszközöket, és betölti őket a Symantec Endpoint Protection Mobile Management-konzolba.
 <br>
   - Ha az **Eszközök állapotának és kockázatának jelentése az Intune-nak** és **A biztonsági incidensek jelentése az Intune-nak** jelölőnégyzetek nincsenek bejelölve a Symantec Endpoint Protection Mobile Management-konzolon, az integráció írásvédett, ezért nem fogja módosítani az eszközök megfelelőségi állapotát az Intune-ban.
 <br></br>
-- **Teljes integráció:** Lehetővé teszi a SEP Mobile számára a kockázati és biztonsági incidensek adatainak jelentését az Intune-ban, amely kétirányú kommunikációt hoz létre a felhőalapú szolgáltatások között.
+- A **teljes integráció** lehetővé teszi, hogy a SEP Mobile jelentse az eszközökkel kapcsolatos kockázatokat és a biztonsági incidensek részleteit az Intune-nak, amely kétirányú kommunikációt alakít ki a két felhőszolgáltatás között.
 
 ### <a name="how-are-the-sep-mobile-apps-used-with-azure-ad-and-intune"></a>Hogyan használja az Azure AD és az Intune a SEP Mobile-alkalmazásokat?
 
-- **iOS-alkalmazás:** Lehetővé teszi a végfelhasználóknak az Azure AD-be való bejelentkezést iOS-alkalmazás használatával.
+- **iOS-es alkalmazás:** A végfelhasználók iOS-es alkalmazással jelentkezhetnek be az Azure AD-ba.
 
-- **Android-alkalmazás:** Lehetővé teszi a végfelhasználók számára az Azure AD-ba való bejelentkezést Android-alkalmazás használatával.
+- **Androidos alkalmazás:** A végfelhasználók androidos alkalmazással jelentkezhetnek be az Azure AD-ba.
 
-- **Felügyeleti alkalmazás:** Ez a SEP Mobile Azure AD több-bérlős alkalmazás, amely lehetővé teszi a szolgáltatások közötti kommunikációt az Intune-nal.
+- **Felügyeleti alkalmazás:** Ez a SEP Mobile több-bérlős Azure AD-alkalmazása, amely lehetővé teszi a szolgáltatásközi kommunikációt az Intune-nal.
 
 ## <a name="to-set-up-the-read-only-integration-between-intune-and-sep-mobile"></a>Írásvédett integráció beállítása az Intune és a SEP Mobile között
 
@@ -97,7 +98,7 @@ A SEP Mobile a Mobile Threat Defense szolgáltatást futtató eszközöket az Az
 
 ### <a name="retrieve-the-directory-id-in-azure-ad"></a>A címtár-azonosító lekérése az Azure AD-ből
 
-1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com).
+1. Jelentkezzen be az [Azure portálra](https://portal.azure.com).
 
 2. Írja be az „Active Directory” kifejezést a keresőmezőbe, majd válassza az **Azure Active Directory** lehetőséget.
 

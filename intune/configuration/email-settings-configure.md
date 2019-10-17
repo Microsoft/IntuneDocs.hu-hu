@@ -9,18 +9,19 @@ manager: dougeby
 ms.date: 09/04/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: high
 ms.technology: ''
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 41eb282767e6699d9286c6867ff51e4c1a2e00ec
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: e8961614a85992b927e31d590c7abadca75a85a6
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730647"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72492861"
 ---
 # <a name="add-email-settings-to-devices-using-intune"></a>E-mail-beállítások hozzáadása az Intune-t használó eszközökhöz
 
@@ -42,9 +43,9 @@ Ez a cikk azt mutatja be, hogyan hozható létre e-mail-profil a Microsoft Intun
 2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
 3. Adja meg a következő tulajdonságokat:
 
-    - **Név**: Adjon meg egy leíró nevet a szabályzatnak. Nevezze el a szabályzatokat, hogy később könnyebben azonosítható legyen. A megfelelő házirend neve például az **összes Windows-eszköz e-mail-beállításai**.
-    - **Description** (Leírás): Adja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
-    - **Platform**: Válassza ki az eszközök platformját. A választható lehetőségek:
+    - **Név**: adjon meg egy leíró nevet a szabályzatnak. Nevezze el a szabályzatokat, hogy később könnyebben azonosítható legyen. A megfelelő házirend neve például az **összes Windows-eszköz e-mail-beállításai**.
+    - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
+    - **Platform**: válassza ki az eszközök platformját. A választható lehetőségek:
 
         - **Android** (csak Samsung Android Knox Standard esetén)
         - **Vállalati Android**
@@ -52,7 +53,7 @@ Ez a cikk azt mutatja be, hogyan hozható létre e-mail-profil a Microsoft Intun
         - **Windows Phone 8.1**
         - **Windows 10 és újabb**
 
-    - **Profil típusa**: Válassza az **e-mail**lehetőséget.
+    - **Profil típusa**: válassza az **e-mail**lehetőséget.
 
 4. A kiválasztott platformtól függően a konfigurálható beállítások eltérőek. Válassza ki a platformot a részletes beállításokhoz:
 
@@ -70,31 +71,31 @@ A beállítások megadása és a profil létrehozása után a profil megjelenik 
 
 Az e-mail-profilok felhasználói csoportok helyett eszközcsoportokhoz vannak hozzárendelve. Az e-mail-profilokat az eszközről többféle módon lehet eltávolítani, még akkor is, ha az eszközön csak egy e-mail-profil található:
 
-- **1. lehetőség**: Nyissa meg az e-mail profilt (**eszköz-konfigurációs** > **profilok**), és válassza a **hozzárendelések**lehetőséget. A **Belefoglalás** lapon jelennek meg a profilhoz rendelt csoportok. Kattintson a jobb gombbal a csoportra, majd válassza az **Eltávolítás** lehetőséget. Ne felejtse el **menteni** a módosításokat.
+- **1. lehetőség**: Nyissa meg az e-mail-profilt (**Eszközkonfiguráció** > **Profilok**), majd válassza a **Hozzárendelések** lehetőséget. A **Belefoglalás** lapon jelennek meg a profilhoz rendelt csoportok. Kattintson a jobb gombbal a csoportra, majd válassza az **Eltávolítás** lehetőséget. Ne felejtse el **menteni** a módosításokat.
 
-- **2. lehetőség**: [Az eszköz törlése vagy](../remote-actions/devices-wipe.md)kivonása. A következő műveletekkel az összes adatot és beállítást, vagy azok egy részét is eltávolíthatja.
+- **2. lehetőség**: [Eszköz kivonása vagy teljes tartalmának törlése](../remote-actions/devices-wipe.md). A következő műveletekkel az összes adatot és beállítást, vagy azok egy részét is eltávolíthatja.
 
 ## <a name="secure-email-access"></a>Biztonságos e-mail-hozzáférés
 
 Az e-mail-profilok biztonsága az alábbi módszerekkel fokozható:
 
-- **Tanúsítványok**: Az e-mail-profil létrehozásakor ki kell választania egy korábban az Intune-ban létrehozott tanúsítványsablont. Ez a tanúsítvány identitástanúsítványként is ismert. Ez hajtja végre a hitelesítést egy megbízható tanúsítványprofillal vagy főtanúsítvánnyal, így ellenőrizve, hogy a felhasználó eszközének csatlakoztatása engedélyezve van-e. A megbízható tanúsítvány az e-mail-kapcsolatot hitelesítő számítógéphez van rendelve. Ez a számítógép általában a natív levelezési kiszolgáló.
+- **Tanúsítványok** – Az e-mail-profil létrehozásakor válasszon ki egy, korábban az Intune-ban már létrehozott tanúsítványprofilt. Ez a tanúsítvány identitástanúsítványként is ismert. Ez hajtja végre a hitelesítést egy megbízható tanúsítványprofillal vagy főtanúsítvánnyal, így ellenőrizve, hogy a felhasználó eszközének csatlakoztatása engedélyezve van-e. A megbízható tanúsítvány az e-mail-kapcsolatot hitelesítő számítógéphez van rendelve. Ez a számítógép általában a natív levelezési kiszolgáló.
 
   A tanúsítványprofiloknak az Intune-ban történő létrehozásáról és használatáról a következő dokumentumban olvashat bővebben: [Tanúsítványok konfigurálása az Intune-nal](../protect/certificates-configure.md).
 
-- **Felhasználónév és jelszó**: A végfelhasználó hitelesíti magát a natív levelezési kiszolgálón a Felhasználónév és a jelszó megadásával. A jelszó nem szerepel az e-mail-profilban. Így a végfelhasználó az e-mailekhez való csatlakozáskor megadja a jelszót.
+- **Felhasználónév és jelszó**: a végfelhasználó hitelesíti magát a natív levelezési kiszolgálón a Felhasználónév és a jelszó megadásával. A jelszó nem szerepel az e-mail-profilban. Így a végfelhasználó az e-mailekhez való csatlakozáskor megadja a jelszót.
 
 ## <a name="how-intune-handles-existing-email-accounts"></a>Hogyan kezeli az Intune a meglévő e-mail-fiókokat?
 
 Ha a felhasználó már konfigurált e-mail-fiókot, az e-mail-profil a platformtól függően, másként lesz hozzárendelve.
 
-- **iOS**: A rendszer az állomásnév és az e-mail-cím alapján egy már meglévő e-mail-profilt észlel. Az ugyanezeket az adatokat tartalmazó e-mail-profil megakadályozza az Intune-profil hozzárendelését. Ebben az esetben a Céges portál alkalmazás értesíti a felhasználót, hogy nem felel meg a felhasználónak, és felszólítja a felhasználót, hogy manuálisan távolítsa el a konfigurált profilt. A forgatókönyv megelőzése érdekében kérje meg a végfelhasználókat, hogy regisztráljanak az e-mail-profil telepítése *előtt* , amely lehetővé teszi az Intune számára a profil beállítását.
+- **iOS**: A rendszer az állomásnév és az e-mail cím alapján egy meglévő, duplikált e-mail profilt észlelt. Az ugyanezeket az adatokat tartalmazó e-mail-profil megakadályozza az Intune-profil hozzárendelését. Ebben az esetben a Céges portál alkalmazás értesíti a felhasználót, hogy nem felel meg a felhasználónak, és felszólítja a felhasználót, hogy manuálisan távolítsa el a konfigurált profilt. A forgatókönyv megelőzése érdekében kérje meg a végfelhasználókat, hogy regisztráljanak az e-mail-profil telepítése *előtt* , amely lehetővé teszi az Intune számára a profil beállítását.
 
-- **Windows:** A rendszer az állomásnév és az e-mail-cím alapján egy már meglévő e-mail-profilt észlel. Az Intune felülírja a végfelhasználó által létrehozott meglévő e-mail-profilt.
+- **Windows**: A rendszer az állomásnév és az e-mail-cím alapján egy már meglévő e-mail profilt észlel. Az Intune felülírja a végfelhasználó által létrehozott meglévő e-mail-profilt.
 
-- **Android Samsung Knox standard**: A rendszer az e-mail-cím alapján egy már meglévő e-mail-profilt észlel, és felülírja az Intune-profillal. Az Android nem használ állomásnevet a profil azonosításához. Ne hozzon létre több e-mail-profilt ugyanazt az e-mail-címet több állomáson használva. A profilok felülírják egymást.
+- **Android Samsung Knox Standard**: A rendszer az e-mail-cím alapján egy meglévő, duplikált e-mail-profilt észlelt, amelyet felülír az Intune-profillal. Az Android nem használ állomásnevet a profil azonosításához. Ne hozzon létre több e-mail-profilt ugyanazt az e-mail-címet több állomáson használva. A profilok felülírják egymást.
 
-- **Androidos munkahelyi profilok**: Az Intune két androidos munkahelyi e-mail-profilt biztosít: egyet a Gmail-alkalmazáshoz, egyet pedig a Nine Work alkalmazáshoz. Ezek az alkalmazások a Google Play áruházból érhetők el, és telepíthetők az eszköz munkahelyi profiljába. Ezek az alkalmazások nem hoznak létre ismétlődő profilokat. Mindkét alkalmazás támogatja az Exchange-kapcsolatokat. E-mail-kapcsolat használatához helyezze üzembe ezeknek az levelezőalkalmazásoknak az egyikét a felhasználók eszközén. Ezután hozza létre és helyezze üzembe a megfelelő e-mail-profilt. Lehetséges, hogy egyes e-mail-alkalmazások, például a Nine Work, nem ingyenesek. Olvassa el az alkalmazás licencelési információit, vagy kérdés esetén lépjen kapcsolatba az alkalmazás kibocsátójával.
+- **Androidos munkahelyi profilok**: az Intune két androidos munkahelyi e-mail-profilt biztosít: egyet a Gmail-alkalmazáshoz, egyet pedig a kilenc munkahelyi alkalmazáshoz. Ezek az alkalmazások a Google Play áruházból érhetők el, és telepíthetők az eszköz munkahelyi profiljába. Ezek az alkalmazások nem hoznak létre ismétlődő profilokat. Mindkét alkalmazás támogatja az Exchange-kapcsolatokat. E-mail-kapcsolat használatához helyezze üzembe ezeknek az levelezőalkalmazásoknak az egyikét a felhasználók eszközén. Ezután hozza létre és helyezze üzembe a megfelelő e-mail-profilt. Lehetséges, hogy egyes e-mail-alkalmazások, például a Nine Work, nem ingyenesek. Olvassa el az alkalmazás licencelési információit, vagy kérdés esetén lépjen kapcsolatba az alkalmazás kibocsátójával.
 
 ## <a name="changes-to-assigned-email-profiles"></a>Hozzárendelt e-mail-profilok módosításai
 

@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 06/21/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: remote-actions
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 02ad249e-f098-421f-861f-6b2ff733ac7c
@@ -15,17 +16,17 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 173d3e4729b3d620167180fb17fcee6c618604eb
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 86dc2e26e3c4091785cb6462a84e75b770634881
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732575"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72508551"
 ---
 # <a name="sync-devices-to-get-the-latest-policies-and-actions-with-intune"></a>Az eszközök szinkronizálása az Intune-nal a legfrissebb szabályzatok és műveletek beolvasásához
 
 
-A **Szinkronizálás** eszközművelet kikényszeríti a választott eszköz azonnali bejelentkezését az Intune-nál. Bejelentkezéskor az eszköz azonnal fogadja az hozzárendelt összes függőben lévő műveletet vagy szabályzatot. Ez a funkció segíthet a vonatkozó szabályzatok azonnali ellenőrzésében és a hibák elhárításában anélkül, hogy ki kellene várni a következő ütemezett bejelentkezést.
+A **Szinkronizálás** eszközművelet kikényszeríti a választott eszköz azonnali bejelentkezését az Intune-nál. Bejelentkezéskor az eszköz azonnal fogadja az összes hozzárendelt, függőben lévő műveletet vagy szabályzatot. Ez a funkció segíthet a vonatkozó szabályzatok azonnali ellenőrzésében és a hibák elhárításában anélkül, hogy ki kellene várni a következő ütemezett bejelentkezést.
 
 ## <a name="supported-platforms"></a>Támogatott platformok
 
@@ -33,7 +34,7 @@ A **Szinkronizálás** eszközművelet kikényszeríti a választott eszköz azo
 - Windows Phone
 - iOS
 - macOS
-- Android
+- Android:
 
 ## <a name="sync-a-device"></a>Eszköz szinkronizálása
 
@@ -54,7 +55,7 @@ Ha a rendszergazda a **Szinkronizálás** eszközműveletet futtatja, a sikertel
 | Hibakód  | Javasolt leírás | Újrapróbálható |
 |---|---|---|
 | 2016330898 | Ismeretlen hiba történt. | Nem |
-| 2016330897 | Intune-kapcsolata túllépte az időkorlátot. Kapcsolat alaphelyzetbe állítása. | Igen |
+| 2016330897 | Az Intune-nal létesített kapcsolódás időkorlátja lejárt. A kapcsolatok alaphelyzetbe állítása. | Igen |
 | 2016330896 | Megszakadt az internetkapcsolat. Kapcsolat alaphelyzetbe állítása. | Igen |
 | 2016330895 | Megszakadt az internetkapcsolat. Kapcsolat alaphelyzetbe állítása. | Igen |
 | 2016330894 | Megszakadt az internetkapcsolat. Kapcsolat alaphelyzetbe állítása. | Igen |

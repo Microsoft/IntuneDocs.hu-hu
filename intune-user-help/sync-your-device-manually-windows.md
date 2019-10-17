@@ -9,6 +9,7 @@ ms.date: 07/24/2018
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: ''
 searchScope:
@@ -18,16 +19,16 @@ ms.reviewer: priyar
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 328ec3111aae5f8363f2743d423a56eafc47d765
-ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
+ms.openlocfilehash: 289d99603314be7c1097d54d59d4a0e90cae0bed
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67546252"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72508331"
 ---
 # <a name="sync-your-windows-device-manually"></a>Windows-eszköz manuális szinkronizálása
 
-Ha nem elég gyors az alkalmazástelepítés, kezdeményezzen manuális eszközszinkronizálást. A manuális szinkronizálással kényszerítheti az eszközt az Intune-hoz való csatlakozásra és a legújabb frissítések és kommunikáció letöltésére. Az eszközszinkronizálás után felgyorsulhat a telepítés.
+Ha az alkalmazás telepítési sebessége kisebb, mint ideális, kezdeményezzen manuális szinkronizálást. A manuális szinkronizálások kényszerítik az eszközt az Intune-nal való kapcsolódásra a legújabb frissítések és kommunikáció érdekében. Az eszközszinkronizálás után felgyorsulhat a telepítés.
 
 Az Intune a Céges portál alkalmazásból, az asztali tálcáról vagy a Start menüből, valamint az eszköz Beállítások alkalmazásából támogatja a manuális szinkronizálást. A Céges portál alkalmazás csak a Windows 10 alkotói frissítését (1703) vagy újabb verziót futtató eszközökön érhető el. 
 
@@ -104,7 +105,7 @@ A Microsoft HoloLenses, Windows 10 asztali verziós, Windows 10 Mobile-os vagy W
 
     ![A cég nevének kiválasztása az eszközfelügyelethez](./media/win10pc-sync-4-tap-com-name.png)
 
-3. Kattintson a **Szinkronizálás** elemre. A gomb a szinkronizálás végéig le van tiltva.
+3. Kattintson a **szinkronizálás**elemre. A gomb letiltva marad, amíg a szinkronizálás be nem fejeződik.
 
     ![Kattintás a Szinkronizálás gombra](./media/win10pc-sync-5-tap-sync.png)  
 
@@ -133,9 +134,9 @@ Ezek az utasítások a Windows 10 évforduló frissítés (más néven RS1-et) f
 2. Kattintson a **Fiókok** > **Munkahelyi hozzáférés** elemre.  
     ![Képernyőkép a HoloLens beállítások alkalmazásáról, kiemelt Fiókok hivatkozással](./media/RS1_holoLens_SettingsRS1_Accounts_06.png)  
 
-3. Válassza ki a csatlakoztatott fiókot, majd válassza a **Szinkronizálás** lehetőséget.  ![Képernyőkép a HoloLens beállítások alkalmazásáról, kiemelt szinkronizálás gombbal](./media/RS1_holoLens_SyncRS1_Sync_08.png)  
+3. Válassza ki a csatlakoztatott fiókot > **szinkronizálást**.  ![Screenshot HoloLens beállítások alkalmazás, szinkronizálás gomb kiemelve @ no__t-2  
 
-### <a name="windows-phone-81"></a>Windows Phone 8.1
+### <a name="windows-phone-81"></a>WVPN-profilokdows Phone 8.1
 
 1. Lépjen a **Minden alkalmazás** > **Beállítások** > **Munkahely** menüpontra.
 

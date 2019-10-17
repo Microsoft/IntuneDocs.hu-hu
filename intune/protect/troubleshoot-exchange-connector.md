@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 10/02/2019
 ms.topic: troubleshooting
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: a7e3c742-295b-40bb-9afa-17f243062500
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 230ee8c1206a4d091661b51dd239a4cb0b1a1963
-ms.sourcegitcommit: f04e21ec459998922ba9c7091ab5f8efafd8a01c
+ms.openlocfilehash: 962e66a9fdf6d8abcf6855f645775026ee4db850
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71814057"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72508839"
 ---
 # <a name="troubleshoot-the-intune-exchange-connector"></a>Az Intune Exchange Connector hibáinak megoldása
 
@@ -64,10 +65,10 @@ Tekintse át a helyszíni [Exchange Connector követelményeit](exchange-connect
 
 ### <a name="common-issues-for-connector-configurations"></a>Összekötő-konfigurációk gyakori problémái
 
-- **Fiók engedélyei**: Ellenőrizze, hogy a Microsoft Intune Exchange Connector párbeszédablakban megadott felhasználói fiók megfelelő engedélyekkel rendelkezik-e a [szükséges Windows PowerShell Exchange parancsmagok](exchange-connector-install.md#exchange-cmdlet-requirements) végrehajtásához.
-- **Értesítő e-mail üzenetek**: Engedélyezze az értesítéseket, és adjon meg egy értesítési fiókot.
-- **Ügyfél-hozzáférési kiszolgáló szinkronizálása**: Az Exchange Connector konfigurálásakor olyan HITELESÍTÉSSZOLGÁLTATÓT kell megadni, amely a legkisebb hálózati késéssel rendelkezik az Exchange Connectort üzemeltető kiszolgálón. A CAS és az Exchange Connector közötti kommunikációs késés késleltetheti az eszközök felderítését, különösen ha dedikált Exchange Online-t használ.
-- **Szinkronizálási ütemterv**: Az újonnan regisztrált eszközök felhasználói esetleg csak akkor jutnak hozzáféréshez, amikor az Exchange Connector szinkronizál az Exchange CAS-szel. Teljes szinkronizálás naponta egyszer, az eltérések (gyors) szinkronizálása pedig naponta többször történik. A késés minimalizálása érdekében [manuálisan is kikényszeríthet gyors vagy teljes szinkronizálást](exchange-connector-install.md#manually-force-a-quick-sync-or-full-sync).
+- **Fiók engedélyei**: a Microsoft Intune Exchange Connector párbeszédpanelen ellenőrizze, hogy van-e olyan felhasználói fiók, amely rendelkezik a megfelelő engedélyekkel a [szükséges Windows PowerShell Exchange-parancsmagok](exchange-connector-install.md#exchange-cmdlet-requirements)végrehajtásához.
+- **Értesítő e-mail üzenetek**: értesítések engedélyezése és értesítési fiók megadására.
+- **Ügyfél-hozzáférési kiszolgáló szinkronizálása**: az Exchange-összekötő konfigurálásakor olyan hitelesítésszolgáltatókat adhat meg, amelyek az Exchange Connectort futtató kiszolgáló számára a legkisebb hálózati késéssel rendelkeznek. A CAS és az Exchange Connector közötti kommunikációs késés késleltetheti az eszközök felderítését, különösen ha dedikált Exchange Online-t használ.
+- **Szinkronizálási ütemezés**: az újonnan beléptetett eszközzel rendelkező felhasználók csak akkor férhetnek hozzá a hozzáféréshez, ha az Exchange Connector szinkronizálva lett az Exchange-hitelesítésszolgáltatókkal. Teljes szinkronizálás naponta egyszer, az eltérések (gyors) szinkronizálása pedig naponta többször történik. A késés minimalizálása érdekében [manuálisan is kikényszeríthet gyors vagy teljes szinkronizálást](exchange-connector-install.md#manually-force-a-quick-sync-or-full-sync).
 
 ## <a name="next-steps"></a>További lépések
 A következő cikkek segíthetnek a gyakori problémák és a konkrét hibák megoldásában:

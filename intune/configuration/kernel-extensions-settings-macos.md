@@ -9,18 +9,19 @@ manager: dougeby
 ms.date: 09/10/2019
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: medium
 ms.technology: ''
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1306bfea1880061980413d283943e6521c1ac213
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 8632f5b8df0f483de3bb4d06a6823639ba52c604
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730603"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506697"
 ---
 # <a name="macos-device-settings-to-configure-and-use-kernel-extensions-in-intune"></a>macOS-eszközbeállítások a kernel-bővítmények konfigurálásához és használatához az Intune-ban
 
@@ -41,28 +42,28 @@ Ezek a beállítások hozzáadódnak az Intune-ban lévő eszköz konfiguráció
 
 ## <a name="kernel-extensions"></a>Kernel-bővítmények
 
-### <a name="settings-apply-to-user-approved-automated-device-enrollment"></a>A beállítások a következőkre vonatkoznak: Felhasználó által jóváhagyott, automatizált eszközök beléptetése
+### <a name="settings-apply-to-user-approved-automated-device-enrollment"></a>A beállítások a következőkre vonatkoznak: felhasználó által jóváhagyott, automatikus eszköz beléptetése
 
-- **Felhasználói felülbírálások engedélyezése**: **Lehetővé** teszi, hogy a felhasználók jóváhagyják a konfigurációs profilban nem szereplő kernel-bővítményeket. **Nincs konfigurálva** (alapértelmezés) megakadályozza, hogy a felhasználók a konfigurációs profilban nem szereplő bővítményeket engedélyezzenek. Ez azt jelenti, hogy csak a konfigurációs profilban szereplő bővítmények engedélyezettek.
+- **Felhasználói felülbírálások engedélyezése**: lehetővé teszi, **hogy** a felhasználók jóváhagyják a konfigurációs profilban nem szereplő kernel-bővítményeket. **Nincs konfigurálva** (alapértelmezett) megakadályozza, hogy a felhasználók a konfigurációs profilban nem szereplő bővítményeket engedélyezzenek. Ez azt jelenti, hogy csak a konfigurációs profilban szereplő bővítmények engedélyezettek.
 
   A szolgáltatással kapcsolatos további információkért tekintse meg a [felhasználó által jóváhagyott kernel-bővítmény betöltését](https://developer.apple.com/library/archive/technotes/tn2459/_index.html) (az Apple webhelyének megnyitása).
 
-- **Engedélyezett csoport azonosítója**: Ezzel a beállítással egy vagy több csoport azonosítóját engedélyezheti. Az Ön által megadott csoport-azonosítókkal aláírt kernel-bővítmények engedélyezettek és megbízhatók. Más szóval, ezzel a beállítással engedélyezheti az összes kernel-bővítményt ugyanazon a csapat-AZONOSÍTÓn belül, amely lehet egy adott fejlesztő vagy partner.
+- **Engedélyezett csoport azonosítói**: ezzel a beállítással engedélyezheti egy vagy több csoport azonosítójának használatát. Az Ön által megadott csoport-azonosítókkal aláírt kernel-bővítmények engedélyezettek és megbízhatók. Más szóval, ezzel a beállítással engedélyezheti az összes kernel-bővítményt ugyanazon a csapat-AZONOSÍTÓn belül, amely lehet egy adott fejlesztő vagy partner.
 
   **Adja** meg a betölteni kívánt érvényes és aláírt kernel-bővítmények csoportjának azonosítóját. Több csoport azonosítóját is hozzáadhatja. A csoport azonosítójának alfanumerikusnak (betűket és számokat) kell tartalmaznia, és 10 karakterből kell állnia. Például írja be a következőt: `ABCDE12345`.
 
   A csoport azonosítójának hozzáadása után az is törölhető.
 
-  [A csoport azonosítójának megkeresése](https://help.apple.com/developer-account/#/dev55c3c710c) (az Apple webhelyének megnyitása) további információkat tartalmaz.
+  [Keresse meg a csoport azonosítóját (az](https://help.apple.com/developer-account/#/dev55c3c710c) Apple webhelyének megnyitása) további információkat.
 
-- **Engedélyezett kernel-bővítmények**: Ezzel a beállítással engedélyezheti a megadott kernel-bővítményeket. Csak a megadott kernel-bővítmények engedélyezettek vagy megbízhatók. 
+- **Engedélyezett kernel-bővítmények**: ezzel a beállítással engedélyezheti a megadott kernel-bővítményeket. Csak a megadott kernel-bővítmények engedélyezettek vagy megbízhatók. 
 
-  **Adja hozzá** a betölteni kívánt kernel-bővítmény köteg-azonosítóját és csoportjának azonosítóját. Aláíratlan örökölt kernel-bővítmények esetén használjon üres csapat-azonosítót. Több kernel-bővítményt is hozzáadhat. A csoport azonosítójának alfanumerikusnak (betűket és számokat) kell tartalmaznia, és 10 karakterből kell állnia. Adja meg `com.contoso.appname.macos` például a **csomag azonosítóját**és `ABCDE12345` a **csoport azonosítóját**.
+  **Adja hozzá** a betölteni kívánt kernel-bővítmény köteg-azonosítóját és csoportjának azonosítóját. Aláíratlan örökölt kernel-bővítmények esetén használjon üres csapat-azonosítót. Több kernel-bővítményt is hozzáadhat. A csoport azonosítójának alfanumerikusnak (betűket és számokat) kell tartalmaznia, és 10 karakterből kell állnia. Írja be például a következőt: `com.contoso.appname.macos` a **köteg-azonosítóhoz**, és `ABCDE12345` a **csoport azonosítója**.
 
   > [!TIP]
   > Ha egy macOS-eszközön szeretné lekérni a kernel-bővítmény (kext) köteg-AZONOSÍTÓját, a következőket teheti:
   >
-  > 1. A terminálban futtassa a `kextstat | grep -v com.apple`parancsot, és jegyezze fel a kimenetet. Telepítse a kívánt szoftvert vagy kext. Futtassa `kextstat | grep -v com.apple` újra a parancsot, és keresse meg a módosításokat.
+  > 1. A terminálban futtassa a `kextstat | grep -v com.apple` parancsot, és jegyezze fel a kimenetet. Telepítse a kívánt szoftvert vagy kext. Futtassa ismét a `kextstat | grep -v com.apple` értéket, és keresse meg a módosításokat.
   >
   >    A terminálban `kextstat` az operációs rendszer összes kernel-bővítményét listázza. 
   >

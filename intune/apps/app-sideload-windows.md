@@ -9,18 +9,19 @@ manager: dougeby
 ms.date: 09/24/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: apps
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: e44f1756-52e1-4ed5-bf7d-0e80363a8674
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c1d039d5be449d1c1b8cc13e69b84e1bd7f7dd2b
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 4a89392dabe695cf49e989351cef822852676916
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731287"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72507378"
 ---
 # <a name="sign-line-of-business-apps-so-they-can-be-deployed-to-windows-devices-with-intune"></a>Üzleti alkalmazások aláírása, hogy telepíteni lehessen őket Windows-eszközökre az Intune segítségével
 
@@ -35,7 +36,7 @@ Intune-rendszergazdaként üzletági (LOB) univerzális alkalmazásokat telepít
 
 A Windows 10-es verzióban a közvetlen telepítési eltér a Windows korábbi verzióiban:
 
-- A közvetlen telepítési egy vállalati házirend segítségével oldhatja fel az eszköz zárolását. Az Intune egy "megbízható alkalmazás telepítése" nevű eszköz-konfigurációs szabályzatot biztosít. Ha ezt a <allow> beállítást szeretné beállítani, akkor a Appx alkalmazás aláírásához használt tanúsítványban már megbízható eszközökhöz is szükség van.
+- A közvetlen telepítési egy vállalati házirend segítségével oldhatja fel az eszköz zárolását. Az Intune egy "megbízható alkalmazás telepítése" nevű eszköz-konfigurációs szabályzatot biztosít. Ha ezt a beállítást @no__t – 0 értékre állítja, az olyan eszközökhöz szükséges, amelyek már megbíznak a Appx alkalmazás aláírásához használt tanúsítványban.
 
 - A Symantec Phone-tanúsítványok és a közvetlen telepítési-licenc kulcsa nem szükséges. Ha azonban egy helyszíni hitelesítésszolgáltató nem érhető el, előfordulhat, hogy egy kód-aláíró tanúsítványt kell beszereznie egy nyilvános hitelesítésszolgáltatótól. További információ: [Bevezetés a kód aláírására](https://docs.microsoft.com/windows/desktop/SecCrypto/cryptography-tools#introduction-to-code-signing).
 
@@ -67,7 +68,7 @@ A Windows Phone-telefon 8,1 Mobile apps üzembe helyezéséhez használt tanús�
 
 ## <a name="how-to-install-the-updated-certificate-for-line-of-business-lob-apps"></a>A frissített alkalmazások telepítése az üzleti alkalmazások számára
 
-Windows Phone 8.1
+WVPN-profilokdows Phone 8.1
 
 Az Intune szolgáltatás már nem tud LOB-alkalmazásokat telepíteni ehhez a platformhoz, ha a meglévő Symantec Mobile Enterprise-kód-aláíró tanúsítvány lejár. Az aláíratlan XAP/APPX-fájlok Oldalazva társas viszony SD-kártyával vagy a fájlnak az eszközre való letöltésével továbbra is lehetséges. További információ: XAP- [fájlok telepítése Windows Phone-telefonon](https://answers.microsoft.com/en-us/mobiledevices/forum/mdlumia-mdapps/how-to-install-xap-file-in-windows-phone-8/da09ee72-51ae-407c-9b85-bc148df89280).
 
@@ -84,7 +85,7 @@ Ha nem kíván hozzáférést biztosítani a Microsoft Storehoz, manuálisan tel
 1. Jelentkezzen be a fiókjába a [vállalati Microsoft Storeban](https://www.microsoft.com/business-store) , és szerezze be a céges portál alkalmazás **Offline licenccel** rendelkező verzióját.  
 2. Miután beszerezte az alkalmazást, válassza ki a **Készlet** lapon.  
 3. A **Platform** listából válassza ki a **Windows 10 minden eszközre** lehetőséget, majd válassza ki a megfelelő **architektúrát**, és töltse le az alkalmazást. Ehhez az alkalmazáshoz nincs szükség alkalmazás-licencfájlra.
-   ![A Windows 10 x86 csomag részletes adatainak képe a letöltéshez](./media/app-sideload-windows/Win10CP-all-devices.png)
+   @no__t 0Image a Windows 10 x86 csomag részletei a következő letöltéshez: @ no__t-1
 4. Töltse le a „Szükséges keretrendszer” cím alatt található összes csomagot. Ezt az x86, az x64 és az ARM architektúrákkal kell elvégezni, összesen 9 csomaggal, ahogy az alábbi ábrán látható.
 
    ![Kép a letöltendő függőségi fájlokról ](./media/app-sideload-windows/Win10CP-dependent-files.png)
@@ -121,7 +122,7 @@ Itt ismertetjük az alkalmazás aláírásának és telepítésének ezt a módj
 2. Töltse le a Windows 10-es Céges portál alkalmazást a Vállalati Microsoft Áruházból a fenti útmutató szerint.  
 3. Futtassa a parancsfájlt azokkal a bemeneti paraméterekkel, amelyek a Windows 10-es Céges portál alkalmazás aláírásához használt parancsfájl fejlécén találhatók (alább kivonatolva). A függőségeket nem kell hozzáadni a parancsprogramhoz. Csak akkor van rájuk szükség, amikor éppen folyamatban van az alkalmazás feltöltése az Intune felügyeleti konzolra.
 
-|       Paraméter       |                                                                    Leírás                                                                    |
+|       Paraméter       |                                                                    Description                                                                    |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
 | InputWin10AppxBundle  |                                             Az appxbundle forrásfájl elérési útja.                                              |
 | OutputWin10AppxBundle |                                                  Az aláírt appxbundle fájl kimeneti útja.                                                  |

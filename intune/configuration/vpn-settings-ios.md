@@ -8,18 +8,19 @@ manager: dougeby
 ms.date: 09/05/2019
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: medium
 ms.technology: ''
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 274b5a8d45f9fb525010e4d225172a6a1ce22275
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 593184ffcdaf82075eeee9a12d3d41da281c2fbd
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730459"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506564"
 ---
 # <a name="add-vpn-settings-on-ios-devices-in-microsoft-intune"></a>VPN-beállítások hozzáadása iOS-eszközökön Microsoft Intune
 
@@ -29,7 +30,7 @@ A Microsoft Intune számos VPN-beállítást tartalmaz, amelyek telepíthetők a
 
 ## <a name="before-you-begin"></a>Előkészületek
 
-[Eszközkonfigurációs profil létrehozása](vpn-settings-configure.md).
+[Hozzon létre egy eszköz konfigurációs profilt](vpn-settings-configure.md).
 
 > [!NOTE]
 > Ezek a beállítások minden regisztrációs típushoz elérhetők. A regisztrációs típusokkal kapcsolatos további információkért lásd: [iOS-regisztráció](../enrollment/ios-enroll.md).
@@ -39,19 +40,19 @@ A Microsoft Intune számos VPN-beállítást tartalmaz, amelyek telepíthetők a
 Válassza ki a VPN-kapcsolat típusát a következő szállítók listájáról:
 
 - **Check Point Capsule VPN**
-- **Cisco örökölt AnyConnect**: Érvényes a [Cisco Legacy AnyConnect](https://itunes.apple.com/app/cisco-legacy-anyconnect/id392790924) app Version 4.0.5 x vagy korábbi verzióra.
-- **Cisco AnyConnect**: A [Cisco AnyConnect](https://itunes.apple.com/app/cisco-anyconnect/id1135064690) alkalmazás 4.0.7 x vagy újabb verziójára alkalmazható.
+- **Cisco Legacy AnyConnect**: A [Cisco Legacy AnyConnect](https://itunes.apple.com/app/cisco-legacy-anyconnect/id392790924) alkalmazás 4.0.5x és annál korábbi verzióihoz használható.
+- **Cisco AnyConnect**: A [Cisco AnyConnect](https://itunes.apple.com/app/cisco-anyconnect/id1135064690) alkalmazás 4.0.7x és annál újabb verzióihoz használható.
 - **SonicWall Mobile Connect**
-- **F5 hozzáférés örökölt**: Az F5 Access app 2,1-es és korábbi verzióira érvényes.
-- **F5-hozzáférés**: Az F5 Access app 3,0-es és újabb verziójára vonatkozik.
-- **Palo Alto Networks GlobalProtect (örökölt)** : A Palo Alto Networks GlobalProtect alkalmazás 4,1-es és korábbi verzióiban alkalmazható.
-- **Palo Alto hálózatok GlobalProtect**: A Palo Alto Networks GlobalProtect alkalmazás 5,0-es és újabb verzióiban alkalmazható.
+- **F5 Access Legacy**: Az F5 Access alkalmazás 2.1 és annál korábbi verzióihoz használható.
+- **F5 Access**: Az F5 Access alkalmazás 3.0 és annál újabb verzióihoz használható.
+- **Palo Alto Networks GlobalProtect (Legacy)** : A Palo Alto Networks GlobalProtect alkalmazás 4.1 és annál korábbi verzióihoz használható.
+- **Palo Alto Networks GlobalProtect**: A Palo Alto Networks GlobalProtect alkalmazás 5.0 és annál újabb verzióihoz használható.
 - **Pulse Secure**
 - **Cisco (IPsec)**
 - **Citrix VPN**
 - **Citrix SSO**
-- **Zscaler**: Ha feltételes hozzáférést szeretne használni, vagy lehetővé szeretné tenni a felhasználók számára a Zscaler bejelentkezési képernyő megkerülését, akkor az Azure AD-fiókjával integrálnia kell a Zscaler privát hozzáférését (ZPA). A lépések részletezését a [Zscaler dokumentációja](https://help.zscaler.com/zpa/configuration-example-microsoft-azure-ad) tartalmazza. 
-- **IKEv2**: [IKEv2-beállítások](#ikev2-settings) (ebben a cikkben) a tulajdonságokat ismerteti.
+- **Zscaler**: a feltételes hozzáférés használatához, vagy a Zscaler bejelentkezési képernyő megkerülésének engedélyezése a felhasználók számára, az Azure ad-fiókjával integrálnia kell a Zscaler privát hozzáférését (ZPA). A lépések részletezését a [Zscaler dokumentációja](https://help.zscaler.com/zpa/configuration-example-microsoft-azure-ad) tartalmazza. 
+- **IKEv2**: a [IKEv2 beállításai](#ikev2-settings) (ebben a cikkben) a tulajdonságokat ismertetik.
 - **Egyéni VPN**
 
 > [!NOTE]
@@ -61,30 +62,30 @@ Válassza ki a VPN-kapcsolat típusát a következő szállítók listájáról:
 
 Az alábbi listában látható beállításokat a kiválasztott VPN-kapcsolat típusa határozza meg.  
 
-- **Kapcsolatok neve**: A végfelhasználók akkor látják ezt a nevet, amikor megkeresik a rendelkezésre álló VPN-kapcsolatok listáját az eszközükön.
-- **Egyéni tartománynév** (Csak Zscaler): Előre töltse ki a Zscaler alkalmazás bejelentkezési mezőjét azzal a tartománnyal, amelyhez a felhasználók tartoznak. Ha a felhasználónév például `Joe@contoso.net`, akkor az alkalmazás megnyílásakor a mezőben statikusan a `contoso.net` tartomány jelenik meg. Ha nem ír be tartománynevet, akkor az Azure Active Directoryban tárolt egyszerű felhasználónév tartomány-része lesz használva.
-- **IP-cím vagy teljes tartománynév**: Annak a VPN-kiszolgálónak az IP-címe vagy teljesen minősített tartományneve (FQDN), amelyhez az eszközök csatlakoznak. Például írja be a következőt: `192.168.1.1` vagy `vpn.contoso.com`.
-- **Szervezet Felhőbeli neve** (Csak Zscaler): Adja meg a felhő nevét, ahol a szervezet kiépítése megtörténik. A nevet megtalálhatja a Zscalerbe való bejelentkezéshez használt URL-címben.  
-- **Hitelesítési módszer**: Válassza ki, hogy az eszközök hogyan legyenek hitelesítve a VPN-kiszolgálóval. 
-  - **Tanúsítványok**: A **hitelesítési tanúsítvány**területen válasszon ki egy meglévő SCEP-vagy PKCS-tanúsítvány-profilt a kapcsolódás hitelesítéséhez. A [Tanúsítványok konfigurálása](../protect/certificates-configure.md) című témakörben találhat útmutatást a tanúsítványprofilokról.
-  - **Felhasználónév és jelszó**: A végfelhasználóknak felhasználónevet és jelszót kell megadniuk a VPN-kiszolgálóra való bejelentkezéshez.  
+- **Kapcsolat neve**: A végfelhasználók akkor látják ezt a nevet, amikor megkeresik a rendelkezésre álló VPN-kapcsolatok listáját az eszközükön.
+- **Egyéni tartománynév** (csak Zscaler): előre feltölti a Zscaler alkalmazás bejelentkezési mezőjét azzal a tartománnyal, amelyhez a felhasználók tartoznak. Ha a felhasználónév például `Joe@contoso.net`, akkor az alkalmazás megnyílásakor a mezőben statikusan a `contoso.net` tartomány jelenik meg. Ha nem ír be tartománynevet, akkor az Azure Active Directoryban tárolt egyszerű felhasználónév tartomány-része lesz használva.
+- **IP-cím vagy teljes tartománynév**: Annak a VPN-kiszolgálónak az IP-címe vagy teljes tartományneve (FQDN), amelyhez az eszközök csatlakoznak. Például írja be a következőt: `192.168.1.1` vagy `vpn.contoso.com`.
+- **Felhőbeli cégnév** (csak Zscaler): Írja be annak a felhőnek a nevét, amelyben a vállalata ki van építve. A nevet megtalálhatja a Zscalerbe való bejelentkezéshez használt URL-címben.  
+- **Hitelesítési mód**: Válassza ki, hogy miképpen hitelesítik magukat az eszközök a VPN-kiszolgálón. 
+  - **Tanúsítványok**: A **Hitelesítési tanúsítvány** szakaszban válasszon egy meglévő SCEP- vagy PKCS-tanúsítványprofilt a kapcsolat hitelesítéséhez. A [Tanúsítványok konfigurálása](../protect/certificates-configure.md) című témakörben találhat útmutatást a tanúsítványprofilokról.
+  - **Felhasználónév és jelszó**: A végfelhasználóknak felhasználónevet és jelszót kell megadniuk, ha szeretnének bejelentkezni a VPN-kiszolgálóra.  
 
     > [!NOTE]
     > Ha a Cisco IPsec VPN-hez felhasználónevet és jelszót használ hitelesítési módszerként, a titkos kulcsot egy egyéni Apple Configurator-profilon keresztül kell továbbítani.
 
-- **Kizárt URL-címek** (Csak Zscaler): Ha a Zscaler VPN-hez csatlakozik, a felsorolt URL-címek elérhetők a Zscaler-felhőn kívül. 
+- **Kizárt URL-címek** (csak Zscaler): A Zscaler VPN-hez csatlakozva a felsorolt URL-címek érhetők el a Zscaler-felhőn kívülről. 
 
-- **Megosztott bújtatás**: **Engedélyezheti** vagy **letilthatja** , hogy az eszközök a forgalomtól függően döntsenek a használni kívánt kapcsolatok közül. Egy szállodai vendég például a munkahelyi fájlok elérésére a VPN-kapcsolatot, de egyszerű böngészésre a szálloda normál hálózatát használja.
+- **Bújtatás megosztása**: Az **Engedélyezés** vagy a **Letiltás** beállítással szabályozhatja, hogy az eszközök választhatnak-e a forgalomtól függően a kapcsolatok közül. Egy szállodai vendég például a munkahelyi fájlok elérésére a VPN-kapcsolatot, de egyszerű böngészésre a szálloda normál hálózatát használja.
 
-- **VPN-azonosító** (Egyéni VPN, Zscaler és Citrix): A használt VPN-alkalmazás azonosítója, amelyet a VPN-szolgáltató biztosít.
-  - **Adja meg a szervezet egyéni VPN-attribútumaihoz tartozó kulcs/érték párokat**: A VPN-kapcsolat testreszabására szolgáló **kulcsok** és **értékek** hozzáadása vagy importálása. Ne feledje, rendszerint ezeket az értékeket is a VPN-szolgáltató biztosítja.
+- **VPN-azonosító** (egyéni VPN, Zscaler és Citrix): a használt VPN-alkalmazás azonosítója, amelyet a VPN-szolgáltató biztosít.
+  - **Kulcs-érték párok megadása vállalata egyéni VPN attribútumainak konfigurálásához**: **Kulcsok** és **Értékek** hozzáadásával vagy importálásával szabhatja testre a VPN-kapcsolatot. Ne feledje, rendszerint ezeket az értékeket is a VPN-szolgáltató biztosítja.
 
-- **Hálózati hozzáférés-vezérlés (NAC) engedélyezése** (Citrix SSO, F5 hozzáférés): Ha az **Elfogadom**lehetőséget választja, az eszköz azonosítója szerepel a VPN-profilban. Ez az azonosító a VPN hitelesítéséhez használható a hálózati hozzáférés engedélyezéséhez vagy letiltásához.
+- **Hálózati hozzáférés-vezérlés engedélyezése** (Citrix SSO, F5 Access): Ha az **Elfogadom**lehetőséget választja, az eszköz azonosítója szerepel a VPN-profilban. Ez az azonosító a VPN hitelesítéséhez használható a hálózati hozzáférés engedélyezéséhez vagy letiltásához.
 
   **F5-hozzáférés használata esetén**ügyeljen a következőre:
 
   - Erősítse meg, hogy az F5 BIG-IP 13.1.1.5 használja. A BIG-IP 14 nem támogatott.
-  - A BIG-IP integrálása az Intune-nal a NAC-hoz. Tekintse [meg az áttekintést: Az APM konfigurálása eszköz-testtartási ellenőrzésekhez végpont-](https://support.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-client-configuration-7-1-6/6.html#guid-0bd12e12-8107-40ec-979d-c44779a8cc89) felügyeleti rendszerek F5 útmutatóval.
+  - A BIG-IP integrálása az Intune-nal a NAC-hoz. Tekintse [meg az Áttekintés: az APM konfigurálása eszköz-testhelyzeti ellenőrzésekhez az Endpoint Management Systems](https://support.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-client-configuration-7-1-6/6.html#guid-0bd12e12-8107-40ec-979d-c44779a8cc89) F5 útmutatót.
   - Engedélyezze a NAC-t a VPN-profilban.
 
   **Ha a CITRIX SSO-t átjáróval használja**, ügyeljen arra, hogy:
@@ -105,103 +106,103 @@ Az alábbi listában látható beállításokat a kiválasztott VPN-kapcsolat t�
 
 ## <a name="ikev2-settings"></a>IKEv2-beállítások
 
-Ezek a beállítások a**IKEv2** **kapcsolattípus** > kiválasztása esetén érvényesek.
+Ezek a beállítások akkor érvényesek, ha a **kapcsolattípus** > **IKEv2**van kiválasztva.
 
-- **Távoli azonosító**: Adja meg a IKEv2-kiszolgáló hálózati IP-címét, FQDN-jét, UserFQDN vagy ASN1DN. Például írja be a következőt: `10.0.0.3` vagy `vpn.contoso.com`. Általában ugyanazt az értéket adja meg, mint a [**kapcsolatok neve**](#base-vpn-settings) (ebben a cikkben). Ez azonban a IKEv2-kiszolgáló beállításaitól függ.
+- **Távoli azonosító**: adja meg a IKEv2-kiszolgáló hálózati IP-címét, FQDN-jét, USERFQDN vagy ASN1DN. Például írja be a következőt: `10.0.0.3` vagy `vpn.contoso.com`. Általában ugyanazt az értéket adja meg, mint a [**kapcsolatok neve**](#base-vpn-settings) (ebben a cikkben). Ez azonban a IKEv2-kiszolgáló beállításaitól függ.
 
-- **Ügyfél-hitelesítés típusa**: Válassza ki, hogyan hitelesíti a VPN-ügyfelet a VPN-ben. A választható lehetőségek:
-  - **Felhasználói hitelesítés** (alapértelmezett): A felhasználói hitelesítő adatok a VPN-ben hitelesítve vannak.
-  - **Számítógép-hitelesítés**: Az eszköz hitelesítő adatai hitelesítve vannak a VPN-ben.
+- **Ügyfél-hitelesítés típusa**: válassza ki, hogyan hitelesíti a VPN-ügyfelet a VPN-ben. A választható lehetőségek:
+  - **Felhasználói hitelesítés** (alapértelmezett): felhasználói hitelesítő adatok hitelesítése a VPN-ben.
+  - **Számítógép-hitelesítés**: az eszköz hitelesítő adatai hitelesítve vannak a VPN-ben.
 
-- **Hitelesítési módszer**: Válassza ki a kiszolgálónak küldendő ügyfél-hitelesítő adatok típusát. A választható lehetőségek:
-  - **Tanúsítványok**: Egy meglévő tanúsítványsablont használ a VPN-hitelesítéshez. Győződjön meg arról, hogy a tanúsítvány profilja már hozzá van rendelve a felhasználóhoz vagy az eszközhöz. Ellenkező esetben a VPN-kapcsolat meghiúsul.
-    - **Tanúsítvány típusa**: Válassza ki a tanúsítvány által használt titkosítási típust. Győződjön meg arról, hogy a VPN-kiszolgáló úgy van konfigurálva, hogy fogadja el az ilyen típusú tanúsítványokat. A választható lehetőségek:
-      - **RSA** alapértelmezett
+- **Hitelesítési módszer**: válassza ki a kiszolgálónak küldendő ügyfél-hitelesítő adatok típusát. A választható lehetőségek:
+  - **Tanúsítványok**: egy meglévő tanúsítványsablont használ a VPN-hitelesítéshez. Győződjön meg arról, hogy a tanúsítvány profilja már hozzá van rendelve a felhasználóhoz vagy az eszközhöz. Ellenkező esetben a VPN-kapcsolat meghiúsul.
+    - **Tanúsítvány típusa**: válassza ki a tanúsítvány által használt titkosítási típust. Győződjön meg arról, hogy a VPN-kiszolgáló úgy van konfigurálva, hogy fogadja el az ilyen típusú tanúsítványokat. A választható lehetőségek:
+      - **RSA** (alapértelmezett)
       - **ECDSA256**
       - **ECDSA384**
       - **ECDSA521**
 
-  - **Felhasználónév és jelszó** (Csak felhasználói hitelesítés): Amikor a felhasználók csatlakoznak a VPN-hez, a rendszer kéri a felhasználónevet és a jelszót.
-  - **Közös titok** (Csak a gép hitelesítése): Lehetővé teszi a VPN-kiszolgálónak küldendő közös titkos kulcs megadását.
-    - **Közös titok**: Adja meg a közös titkot, más néven előmegosztott kulcsot (PSK). Győződjön meg arról, hogy az érték megegyezik a VPN-kiszolgálón konfigurált közös titokkal.
+  - **Felhasználónév és jelszó** (csak felhasználói hitelesítés esetén): amikor a felhasználók csatlakoznak a VPN-hez, a rendszer kéri a felhasználónevet és a jelszót.
+  - **Közös titok** (csak gépi hitelesítés esetén): lehetővé teszi a VPN-kiszolgálónak küldendő közös titok megadását.
+    - **Közös titkos**kulcs: adja meg a közös titkot, más néven előmegosztott kulcsot (PSK). Győződjön meg arról, hogy az érték megegyezik a VPN-kiszolgálón konfigurált közös titokkal.
 
-- **Kiszolgálói tanúsítvány kiállítójának köznapi neve**: Lehetővé teszi a VPN-kiszolgáló számára a hitelesítést a VPN-ügyfélen. Adja meg az eszköz VPN-ügyfelének eljuttatott VPN-kiszolgálói tanúsítvány tanúsítvány-kiállítói köznapi nevét (CN). Győződjön meg arról, hogy a CN-érték megegyezik a VPN-kiszolgáló konfigurációjával. Ellenkező esetben a VPN-kapcsolat meghiúsul.
-- **Kiszolgálói tanúsítvány köznapi neve**: Adja meg a tanúsítványhoz tartozó CN-t. Ha üresen hagyja, a rendszer a távoli azonosító értékét használja.
+- **Kiszolgálói tanúsítvány kiállítójának köznapi neve**: lehetővé teszi, hogy a VPN-kiszolgáló hitelesítse magát a VPN-ügyfélen. Adja meg az eszköz VPN-ügyfelének eljuttatott VPN-kiszolgálói tanúsítvány tanúsítvány-kiállítói köznapi nevét (CN). Győződjön meg arról, hogy a CN-érték megegyezik a VPN-kiszolgáló konfigurációjával. Ellenkező esetben a VPN-kapcsolat meghiúsul.
+- **Kiszolgálói tanúsítvány köznapi neve**: adja meg a tanúsítványhoz tartozó CN-t. Ha üresen hagyja, a rendszer a távoli azonosító értékét használja.
 
-- **Elhalt társ-észlelési arány**: Válassza ki, hogy a VPN-ügyfél milyen gyakran ellenőrizze, hogy a VPN-alagút aktív-e. A választható lehetőségek:
-  - **Nincs konfigurálva**: A az iOS rendszer alapértelmezett beállítását használja, amely a **közepes**érték kiválasztásával megegyező lehet.
-  - **Nincs**: Letiltja az elhalt társ-észlelést.
-  - **Alacsony**: 30 percenként elküld egy életben tartási üzenetet.
-  - **Közepes méretű** (alapértelmezett): 10 percenként elküld egy életben tartási üzenetet.
-  - **Magas**: Minden 60 másodpercenként elküld egy életben tartási üzenetet.
+- **Elhalt társ-észlelési arány**: válassza ki, hogy a VPN-ügyfél milyen gyakran ellenőrizze, hogy a VPN-alagút aktív-e. A választható lehetőségek:
+  - **Nincs konfigurálva**: az iOS rendszer alapértelmezett beállítását használja, amely a **közepes**érték megadásával megegyező lehet.
+  - **Nincs**: letiltja a kézbesítetlen társ-észlelést.
+  - **Alacsony**: egy életben tartási üzenetet küld 30 percenként.
+  - **Közepes** (alapértelmezett): 10 percenként elküld egy életben tartási üzenetet.
+  - **Magas**: minden 60 másodpercenként elküld egy életben tartási üzenetet.
 
-- **TLS-verzió minimuma**: Adja meg a használandó TLS-verziót. Adja `1.0`meg `1.1`a, `1.2`a vagy a értéket. Ha üresen hagyja, a `1.0` rendszer az alapértelmezett értéket használja.
-- **TLS-verziók maximális**száma: Adja meg a használandó TLS-verziót. Adja `1.0`meg `1.1`a, `1.2`a vagy a értéket. Ha üresen hagyja, a `1.2` rendszer az alapértelmezett értéket használja.
-- **Tökéletes továbbítási titoktartás**: Válassza az **Engedélyezés** lehetőséget a tökéletes továbbítási titoktartás (PFS) bekapcsolásához. A PFS egy olyan IP-biztonsági szolgáltatás, amely csökkenti annak hatását, ha egy munkamenetkulcs biztonsága sérül. **Letiltás** (az alapértelmezett) nem használ PFS-t.
-- **Tanúsítvány visszavonásának ellenőrzése**: Válassza az **Engedélyezés** lehetőséget, hogy a rendszer ne vonja vissza a tanúsítványokat, mielőtt engedélyezné a VPN-kapcsolat sikerességét. Ez az ellenőrzési lehetőség a legjobb megoldás. Ha a VPN-kiszolgáló túllépi az időkorlátot a tanúsítvány visszavonásának meghatározása előtt, akkor a rendszer a hozzáférést is megadja. **Letiltás** (alapértelmezés) nem keres visszavont tanúsítványokat.
+- **TLS-verzió minimális**száma: adja meg a használni kívánt TLS-verziót. Adja meg `1.0`, `1.1`, vagy `1.2` értéket. Ha üresen hagyja, a rendszer a `1.0` alapértelmezett értéket használja.
+- **TLS-verzió maximális**száma: adja meg a használni kívánt TLS-verziót. Adja meg `1.0`, `1.1`, vagy `1.2` értéket. Ha üresen hagyja, a rendszer a `1.2` alapértelmezett értéket használja.
+- **Tökéletes továbbítási titoktartás**: válassza az **Engedélyezés** lehetőséget a tökéletes továbbítási titoktartás (PFS) bekapcsolásához. A PFS egy olyan IP-biztonsági szolgáltatás, amely csökkenti annak hatását, ha egy munkamenetkulcs biztonsága sérül. A **Letiltás** (alapértelmezett) nem használ PFS-t.
+- **Tanúsítvány visszavonásának ellenőrzése**: válassza az **Engedélyezés** lehetőséget, hogy a rendszer ne vonja vissza a tanúsítványokat, mielőtt engedélyezné a VPN-kapcsolat sikerességét. Ez az ellenőrzési lehetőség a legjobb megoldás. Ha a VPN-kiszolgáló túllépi az időkorlátot a tanúsítvány visszavonásának meghatározása előtt, akkor a rendszer a hozzáférést is megadja. A **Letiltás** (alapértelmezett) nem vizsgálja a visszavont tanúsítványokat.
 
-- **Biztonsági társítás paramétereinek konfigurálása**: **Nincs konfigurálva** (alapértelmezés) az iOS rendszer alapértelmezett értékeit használja. Válassza az **Engedélyezés** lehetőséget a biztonsági TÁRSÍTÁSOK VPN-kiszolgálóval való létrehozásakor használt paraméterek megadásához:
-  - **Titkosítási algoritmus**: Válassza ki a kívánt algoritmust:
+- A **biztonsági társítás paramétereinek konfigurálása**: **nincs konfigurálva** (alapértelmezés) az iOS rendszer alapértelmezett értékeit használja. Válassza az **Engedélyezés** lehetőséget a biztonsági TÁRSÍTÁSOK VPN-kiszolgálóval való létrehozásakor használt paraméterek megadásához:
+  - **Titkosítási algoritmus**: válassza ki a kívánt algoritmust:
     - DES
     - 3DES
-    - AES-128
+    - AES – 128
     - AES-256 (alapértelmezett)
     - AES-128 – GCM
     - AES-256 – GCM
-  - **Integritási algoritmus**:  Válassza ki a kívánt algoritmust:
+  - **Integritási algoritmus**: válassza ki a kívánt algoritmust:
     - SHA1 – 96
     - SHA1 – 160
     - SHA2 – 256 (alapértelmezett)
     - SHA2 – 384
     - SHA2 – 512
-  - **Diffie-Hellman csoport**: Válassza ki a kívánt csoportot. Az alapértelmezett érték `2`a csoport.
-  - **Élettartam** (perc): Válassza ki, hogy mennyi ideig marad aktív a biztonsági társítás a kulcsok elforgatása előtt. Adjon meg egy teljes értéket `10` és `1440` (1440 perc 24 óra). Az alapértelmezett szint a `1440`.
+  - **Diffie-Hellman csoport**: válassza ki a kívánt csoportot. Az alapértelmezett érték a Group `2`.
+  - **Élettartam** (perc): válassza ki, hogy mennyi ideig marad aktív a biztonsági társítás a kulcsok elforgatása előtt. @No__t – 0 és `1440` közötti egész értéket adjon meg (1440 perc 24 óra). Az alapértelmezett érték `1440`.
 
 - **Külön paraméterek beállítása a gyermek biztonsági társításokhoz**: az iOS lehetővé teszi, hogy külön paramétereket konfiguráljon az IKE-kapcsolathoz és az alárendelt kapcsolatokhoz. 
 
   **Nincs konfigurálva** (alapértelmezés) az előző **biztonsági társítás paramétereinek** beállítása beállításban megadott értékeket használja. Válassza az **Engedélyezés** lehetőséget a *gyermek* biztonsági társítások VPN-kiszolgálóval való létrehozásakor használt paraméterek megadásához:
-  - **Titkosítási algoritmus**: Válassza ki a kívánt algoritmust:
+  - **Titkosítási algoritmus**: válassza ki a kívánt algoritmust:
     - DES
     - 3DES
-    - AES-128
+    - AES – 128
     - AES-256 (alapértelmezett)
     - AES-128 – GCM
     - AES-256 – GCM
-  - **Integritási algoritmus**:  Válassza ki a kívánt algoritmust:
+  - **Integritási algoritmus**: válassza ki a kívánt algoritmust:
     - SHA1 – 96
     - SHA1 – 160
     - SHA2 – 256 (alapértelmezett)
     - SHA2 – 384
     - SHA2 – 512
-  - **Diffie-Hellman csoport**: Válassza ki a kívánt csoportot. Az alapértelmezett érték `2`a csoport.
-  - **Élettartam** (perc): Válassza ki, hogy mennyi ideig marad aktív a biztonsági társítás a kulcsok elforgatása előtt. Adjon meg egy teljes értéket `10` és `1440` (1440 perc 24 óra). Az alapértelmezett szint a `1440`.
+  - **Diffie-Hellman csoport**: válassza ki a kívánt csoportot. Az alapértelmezett érték a Group `2`.
+  - **Élettartam** (perc): válassza ki, hogy mennyi ideig marad aktív a biztonsági társítás a kulcsok elforgatása előtt. @No__t – 0 és `1440` közötti egész értéket adjon meg (1440 perc 24 óra). Az alapértelmezett érték `1440`.
 
 ## <a name="automatic-vpn-settings"></a>Automatikus VPN-beállítások
 
-- **Alkalmazáson belüli VPN**: Engedélyezi az alkalmazáson belüli VPN-t. Lehetővé teszi a VPN-kapcsolat automatikus aktiválását bizonyos alkalmazások megnyitásakor. Ezenkívül társítja az alkalmazásokat ehhez a VPN-profilhoz. További információért lásd az [alkalmazásonkénti VPN beállítására vonatkozó utasításokat iOS-hez](vpn-setting-configure-per-app.md).
-  - **Szolgáltató típusa**: Csak a Pulse Secure és az egyéni VPN esetében érhető el.
+- **Alkalmazásonkénti VPN**: Engedélyezi az alkalmazásonkénti VPN használatát. Lehetővé teszi a VPN-kapcsolat automatikus aktiválását bizonyos alkalmazások megnyitásakor. Ezenkívül társítja az alkalmazásokat ehhez a VPN-profilhoz. További információért lásd az [alkalmazásonkénti VPN beállítására vonatkozó utasításokat iOS-hez](vpn-setting-configure-per-app.md).
+  - **Szolgáltatótípus**: Csak a Pulse Secure-hoz és az egyéni VPN-hez érhető el.
   - Az iOS-es **alkalmazásonkénti VPN**-profilok Pulse Secure-ral vagy egyéni VPN-nel való használatakor választhat az alkalmazásrétegbeli (alkalmazásproxy) és csomagszintű (csomagalagút) alagútkezelés között. A **Szolgáltatótípus** értékét az alkalmazásrétegbeli alagútkezeléshez állítsa az **alkalmazásproxy** lehetőségre, a csomagrétegbeli alagútkezeléshez pedig állítsa a **csomagalagút** lehetőségre. Ha nem biztos a megfelelő értékben, tekintse meg a VPN-szolgáltató dokumentációját.
-  - **A VPN-t kiváltó Safari URL-címek**: Adjon hozzá egy vagy több webhely URL-címet. Ezeket az URL-címeket az eszköz Safari böngészőjében megnyitva a VPN-kapcsolat automatikusan létrejön.
+  - **A VPN-t aktiváló Safari URL-címek**: Megadhat egy vagy több webhelycímet. Ezeket az URL-címeket az eszköz Safari böngészőjében megnyitva a VPN-kapcsolat automatikusan létrejön.
 
-- **Igény szerinti VPN**: A VPN-kapcsolat indításakor beállítható feltételes szabályok konfigurálása. Létrehozhat például egy olyan feltételt, amelyben a rendszer csak akkor használja a VPN-kapcsolatot, ha az eszköz nem kapcsolódik a vállalati Wi-Fi-hálózathoz. Vagy hozzon létre egy feltételt. Ha például egy eszköz nem fér hozzá egy megadott DNS-keresési tartományhoz, akkor a VPN-kapcsolat nem indul el.
+- **Igény szerinti VPN**: Ezzel a beállítással feltételes szabályokat állíthat be, melyek a VPN-kapcsolat indítását vezérlik. Létrehozhat például egy olyan feltételt, amelyben a rendszer csak akkor használja a VPN-kapcsolatot, ha az eszköz nem kapcsolódik a vállalati Wi-Fi-hálózathoz. Vagy hozzon létre egy feltételt. Ha például egy eszköz nem fér hozzá egy megadott DNS-keresési tartományhoz, akkor a VPN-kapcsolat nem indul el.
 
-  - **SSID-vagy DNS-keresési tartományok**: Válassza ki, hogy a feltétel vezeték nélküli hálózati **SSID**-ket vagy **DNS-keresési tartományokat használ-** e. Válassza a **Hozzáadás** lehetőséget egy vagy több SSID vagy keresési tartomány konfigurálásához.
-  - **URL-karakterlánc-** mintavétel: Nem kötelező. Adjon meg egy URL-címet, amelyet a szabály teszteléshez használhat. Ha az ezzel a profillal rendelkező eszköz átirányítás nélkül fér hozzá ehhez az URL-címhez, akkor a VPN-kapcsolat elindult. És az eszköz csatlakozik a célként megadott URL-címhez. A felhasználó nem látja a teszthez használt URL-célhely sztringjét. URL-sztring tesztelésére példa lehet egy naplózási webkiszolgáló, amely VPN-kapcsolat létrejötte előtt ellenőrzi az eszköz megfelelőségét. Egy másik lehetőség, hogy az URL-cím ellenőrzi a VPN webhelyhez történő kapcsolódási képességét azelőtt, hogy létrejönne a VPN-kapcsolat az eszköz és a célként megadott URL-cím között.
-  - **Tartományi művelet**: Válasszon egyet a következő elemek közül:
+  - **SSID-k vagy DNS-keresési tartományok**: Megadhatja, hogy ez a feltétel vezeték nélküli hálózatok **SSID-it** használja, vagy **DNS-keresési tartományokat**. Válassza a **Hozzáadás** lehetőséget egy vagy több SSID vagy keresési tartomány konfigurálásához.
+  - **Az URL-cím sztringjének vizsgálata**: Nem kötelező. Adjon meg egy URL-címet, amelyet a szabály teszteléshez használhat. Ha az ezzel a profillal rendelkező eszköz átirányítás nélkül fér hozzá ehhez az URL-címhez, akkor a VPN-kapcsolat elindult. És az eszköz csatlakozik a célként megadott URL-címhez. A felhasználó nem látja a teszthez használt URL-célhely sztringjét. URL-sztring tesztelésére példa lehet egy naplózási webkiszolgáló, amely VPN-kapcsolat létrejötte előtt ellenőrzi az eszköz megfelelőségét. Egy másik lehetőség, hogy az URL-cím ellenőrzi a VPN webhelyhez történő kapcsolódási képességét azelőtt, hogy létrejönne a VPN-kapcsolat az eszköz és a célként megadott URL-cím között.
+  - **Tartományi művelet**: Válasszon a következő lehetőségek közül:
     - Szükség esetén kapcsolódás
     - Soha ne legyen kapcsolódás
-  - **Művelet**: Válasszon egyet a következő elemek közül:
+  - **Művelet**: Válasszon a következő lehetőségek közül:
     - Kapcsolódás
     - Kapcsolat kiértékelése
-    - Kihagyás
+    - Figyelmen kívül
     - Szétkapcsol
 
 ## <a name="proxy-settings"></a>Proxybeállítások
 
 Ha proxyt használ, konfigurálja a következő beállításokat. A proxybeállítások Zscaler VPN-kapcsolatokhoz nem érhetők el.  
 
-- **Automatikus konfigurációs parancsfájl**: Egy fájl használatával konfigurálja a proxykiszolgálót. Adja meg a konfigurációs fájlt tartalmazó **proxykiszolgáló URL-címét** (például: `http://proxy.contoso.com`).
-- **Címe**: Adja meg a proxykiszolgáló teljes állomásneve IP-címét.
+- **Automatikus konfigurációs szkript**: A proxykiszolgálót egy konfigurációs fájl segítségével konfigurálja. Adja meg a konfigurációs fájlt tartalmazó **proxykiszolgáló URL-címét** (például: `http://proxy.contoso.com`).
+- **Cím**: Adja meg a proxykiszolgáló IP-címét vagy teljesen minősített állomásnevét.
 - **Portszám**: Adja meg a proxykiszolgálóhoz társított portszámot.
 
 ## <a name="next-steps"></a>További lépések

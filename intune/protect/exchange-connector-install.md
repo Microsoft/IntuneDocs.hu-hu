@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 09/28/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: a0376ea1-eb13-4f13-84da-7fd92d8cd63c
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f4751b77362567ad18f5b775e5bda9c1081dd181
-ms.sourcegitcommit: 78f9750712c254d8b123ef15b74f30ca999aa128
+ms.openlocfilehash: 30b5debc6e1ab113a08d8930f96f6cbc9bf12b48
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71911215"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72509515"
 ---
 # <a name="set-up-the-on-premises-intune-exchange-connector"></a>A helyszíni Intune Exchange Connector beállítása
 Az Exchange-hez való hozzáférés védelmének elősegítése érdekében az Intune a Microsoft Intune Exchange Connector néven ismert helyszíni összetevőre támaszkodik. Ezt az összekötőt a helyszíni *Exchange ActiveSync-összekötőnek* is nevezik az Intune-konzol egyes helyein. 
@@ -52,13 +53,13 @@ A következő táblázat felsorolja azon számítógép követelményeit, amelyr
 
 |  Követelmény  |   További információ     |
 |---------------|------------------------|
-|  Operációs rendszerek        | Az Intune támogatja az Intune Exchange Connectort olyan számítógépen, amelyen a Windows Server 2008 SP2 64-bit, a Windows Server 2008 R2, a Windows Server 2012, a Windows Server 2012 R2 vagy a Windows Server 2016 bármely kiadása fut.<br /><br />Az összekötő nem támogatott a Server Core telepítéseken.  |
+|  Operating systems        | Az Intune támogatja az Intune Exchange Connectort olyan számítógépen, amelyen a Windows Server 2008 SP2 64-bit, a Windows Server 2008 R2, a Windows Server 2012, a Windows Server 2012 R2 vagy a Windows Server 2016 bármely kiadása fut.<br /><br />Az összekötő nem támogatott a Server Core telepítéseken.  |
 | Microsoft Exchange          | A helyszíni összekötőhöz a Microsoft Exchange 2010 SP3 vagy újabb verziójára, vagy régi dedikált Exchange Online-ra van szükség. Lépjen kapcsolatba a fiókkezelővel annak megállapításához, hogy a dedikált Exchange Online-környezet *új* vagy *régi* konfigurációval rendelkezik-e. |
 | Mobileszköz-kezelő szolgáltató           | [Mobileszköz-kezelő szolgáltatóként a Microsoft Intune-t állítsa be](../fundamentals/mdm-authority-set.md). |
 | Hardver              | Azon számítógépnek, amelyre az összekötőt telepíteni kívánja, 1,6 GHz-es processzorral, 2 GB memóriával és legalább 10 GB szabad lemezterülettel kell rendelkeznie. |
 |  Active Directory-szinkronizálás             | Mielőtt a-összekötővel csatlakoztatja az Intune-t az Exchange-kiszolgálóhoz, [állítsa be Active Directory szinkronizálást](../fundamentals/users-add.md). A helyi felhasználókat és biztonsági csoportokat szinkronizálni kell a Azure Active Directory-példányával. |
 | További szoftverek         | Az összekötőt futtató számítógépnek a Microsoft .NET Framework 4,5 és a Windows PowerShell 2,0 teljes telepítése szükséges. |
-| Network (Hálózat)               | Az összekötő telepítéséhez használt számítógépnek olyan tartományhoz kell tartoznia, amely megbízhatósági kapcsolatban áll az Exchange Servert futtató tartománnyal.<br /><br />Konfigurálja úgy a számítógépet, hogy az a 80-es és a 443-es portokon keresztül a tűzfalakon és a proxy kiszolgálókon keresztül hozzáférjen az Intune szolgáltatáshoz. Az Intune ezeket a tartományokat használja: <br> – manage.microsoft.com <br> @no__t -0\*manage.microsoft.com<br> @no__t -0\*.manage.microsoft.com <br><br> Az Intune Exchange Connector a következő szolgáltatásokkal kommunikál: <br> – Intune szolgáltatás: HTTPS-port 443 <br> – Exchange ügyfél-hozzáférési kiszolgáló (CAS): WinRM szolgáltatás 443-es portja<br> – Exchange automatikus észlelés 443<br> -Exchange Web Services (EWS) 443  |
+| Hálózat               | Az összekötő telepítéséhez használt számítógépnek olyan tartományhoz kell tartoznia, amely megbízhatósági kapcsolatban áll az Exchange Servert futtató tartománnyal.<br /><br />Konfigurálja úgy a számítógépet, hogy az a 80-es és a 443-es portokon keresztül a tűzfalakon és a proxy kiszolgálókon keresztül hozzáférjen az Intune szolgáltatáshoz. Az Intune ezeket a tartományokat használja: <br> – manage.microsoft.com <br> @no__t -0\*manage.microsoft.com<br> @no__t -0\*.manage.microsoft.com <br><br> Az Intune Exchange Connector a következő szolgáltatásokkal kommunikál: <br> -Intune szolgáltatás: HTTPS-port 443 <br> – Exchange ügyfél-hozzáférési kiszolgáló (CAS): WinRM Service port 443<br> – Exchange automatikus észlelés 443<br> -Exchange Web Services (EWS) 443  |
 
 ### <a name="exchange-cmdlet-requirements"></a>Exchange-parancsmagokkal kapcsolatos követelmények
 
@@ -134,7 +135,7 @@ Az Intune Exchange Connector telepítéséhez kövesse az alábbi lépéseket. H
 6. A **jelszó** mezőben adja meg a fiók jelszavát, hogy az Intune hozzáférjen az Exchange-kiszolgálóhoz.
 
    > [!NOTE]
-   > A bérlőbe való bejelentkezéshez használt fióknak legalább Intune szolgáltatás-rendszergazdának kell lennie. A rendszergazdai fiók nélkül sikertelenül fog csatlakozni a következő hibával: "a távoli kiszolgáló hibát adott vissza: (400) helytelen kérelem ".
+   > A bérlőbe való bejelentkezéshez használt fióknak legalább Intune szolgáltatás-rendszergazdának kell lennie. A rendszergazdai fiók nélkül sikertelenül fog csatlakozni a következő hibával: "a távoli kiszolgáló hibát adott vissza: (400) hibás kérés".
 
 7. Válassza a **Csatlakozás** elemet.
 
@@ -183,7 +184,7 @@ Az Exchange Connector teljesítményének növelése:
 2. Szerkessze a *OnPremisesExchangeConnectorServiceConfiguration. XML*fájlt.
 3. Keresse meg a **EnableParallelCommandSupport** , és állítsa az **igaz**értéket:  
      
-   \<EnableParallelCommandSupport > True\</EnableParallelCommandSupport >
+   \<EnableParallelCommandSupport > True @ no__t-1/EnableParallelCommandSupport >
 4. Mentse a fájlt, majd indítsa újra a Microsoft Intune Exchange Connector szolgáltatást.
 
 ## <a name="reinstall-the-intune-exchange-connector"></a>Telepítse újra az Intune Exchange Connectort
@@ -191,7 +192,7 @@ Az Exchange Connector teljesítményének növelése:
 Előfordulhat, hogy újra kell telepítenie az Intune Exchange Connectort. Mivel csak egyetlen összekötő tud csatlakozni az egyes Exchange-szervezetekhez, ha egy második összekötőt telepít a szervezet számára, a telepített új összekötő lecseréli az eredeti összekötőt.
 
 1. Az új összekötő telepítéséhez kövesse az [Exchange Connector telepítése és konfigurálása](#install-and-configure-the-intune-exchange-connector) című szakasz lépéseit. 
-2. Ha a rendszer kéri, válassza a Replace ( **Csere** ) lehetőséget az új összekötő telepítéséhez.  
+2. Ha a rendszer kéri, válassza a **replace (csere** ) lehetőséget az új összekötő telepítéséhez.  
    @no__t – 0Configuration figyelmeztetés a @ no__t-1 összekötő cseréjéhez
 
 3. Folytassa az [Intune Exchange Connector telepítése és konfigurálása](#install-and-configure-the-intune-exchange-connector) című szakasz lépéseit, majd jelentkezzen be újra az Intune-ba.

@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 10/02/2019
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: developer
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: 6B4BC650-62F7-4049-9DE4-CDECB579B58F
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bac5ab1152defa543a61d625a8ee560ade9326db
-ms.sourcegitcommit: 223d64a72ec85fe222f5bb10639da729368e6d57
+ms.openlocfilehash: c8fbae6cec25480244ede165ed7b22715d9a602a
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940414"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72490356"
 ---
 # <a name="reference-for-dates-entity"></a>Dátumok entitásra mutató hivatkozás
 
@@ -33,7 +34,7 @@ A **dátumok** kategória tartalmazza az adatmodellben a dátumokra mutató hiva
 A **date** entitás olyan dátumokat jelöl, amelyekre több adattárház-entitás is hivatkozik.
 
 
-|    Tulajdonság     |                      Leírás                       |       Példa        |
+|    Tulajdonság     |                      Description                       |       Példa        |
 |-----------------|--------------------------------------------------------|----------------------|
 |     dateKey     | A dátum egyedi azonosítója az adattárházban. |       20160703       |
 |    fullDate     |    Az adott dátum teljes dátum/idő formátumban kifejezve.     | 2016.3.7. 12:00:00 |
@@ -56,4 +57,4 @@ A **date** entitás olyan dátumokat jelöl, amelyekre több adattárház-entit�
 
 ## <a name="next-steps"></a>További lépések
 
-- További információ az [Intune](../reports-nav-create-intune-reports.md)-adattárházról.
+- További információ az [Intune-Adattárházról](../reports-nav-create-intune-reports.md).

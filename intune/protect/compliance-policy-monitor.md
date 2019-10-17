@@ -8,18 +8,19 @@ manager: dougeby
 ms.date: 08/20/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 05a4b6cac61bf7dc76ba80862d562e93dadbd533
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 131e3e54ae4794ff552daff8f40bf218783a039a
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729347"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72504698"
 ---
 # <a name="monitor-intune-device-compliance-policies"></a>Intune-eszközmegfelelőségi szabályzatok figyelése
 
@@ -57,20 +58,20 @@ A jelentések részletes vizsgálata során láthatja az adott eszközre vonatko
 
 ### <a name="device-compliance-status-report"></a>Eszközmegfelelőségi állapotjelentés
 
-A diagram megmutatja az összes Intune-ban regisztrált eszköz megfelelőségi állapotát. Az eszköz megfelelőségi állapotai két különböző adatbázisban maradnak: Intune és Azure Active Directory. 
+A diagram megmutatja az összes Intune-ban regisztrált eszköz megfelelőségi állapotát. Az eszközmegfelelőségi állapot adatait két külön adatbázis tárolja: az Intune és az Azure Active Directory. 
 
 > [!IMPORTANT]
 > Az Intune az eszköz összes megfelelőségi értékeléséhez az eszköz beadási ütemtervét követi. [További információ az eszköz beadásának ütemtervéről](../configuration/device-profile-troubleshoot.md#how-long-does-it-take-for-devices-to-get-a-policy-profile-or-app-after-they-are-assigned).
 
 A különböző eszközmegfelelőségi szabályzatállapotok leírása:
 
-- **Megfelelő**: Az eszköz sikeresen alkalmazott egy vagy több eszköz megfelelőségi szabályzatának beállításait.
+- **Megfelelő**: az eszköz megfelel egy vagy több eszközmegfelelőségi szabályzat beállításainak.
 
-- **Türelmi időszak:** Az eszköz egy vagy több eszköz megfelelőségi szabályzatának beállításait célozza meg. A felhasználó azonban még nem alkalmazta a szabályzatokat. Ez azt jelenti, hogy az eszköz nem megfelelő, de a rendszergazda által meghatározott türelmi időszakban van.
+- **Türelmi időszak**: Az eszközre egy vagy több eszközmegfelelőségi szabályzat lett beállítva. A felhasználó azonban még nem alkalmazta a szabályzatokat. Ez azt jelenti, hogy az eszköz nem megfelelő, de a rendszergazda által meghatározott türelmi időszakban van.
 
   - További információ a [nem megfelelő eszközökre alkalmazható műveletekről](actions-for-noncompliance.md).
 
-- **Nincs kiértékelve**: Az újonnan beléptetett eszközök kezdeti állapota. Ezen állapot további lehetséges okai a következők:
+- **Nem értékelt**: Az újonnan regisztrált eszközök kiinduló állapota. Ezen állapot további lehetséges okai a következők:
 
   - Azok az eszközök, amelyek nem rendelkeznek megfelelőségi szabályzattal, és nem rendelkeznek a megfelelőség ellenőrzéséhez szükséges triggerrel
   - Azok az eszközök, amelyeket nem ellenőriztek a megfelelőségi szabályzat legutóbbi frissítése óta
@@ -79,13 +80,13 @@ A különböző eszközmegfelelőségi szabályzatállapotok leírása:
     - Androidos kioszk vagy Android Enterprise dedikált eszközök
   - Eszköz beléptetési kezelőjével (DEM) regisztrált eszközök
 
-- **Nem megfelelő:** Az eszköz nem tudott alkalmazni egy vagy több eszköz megfelelőségi szabályzatának beállításait. Lehetséges, hogy a felhasználó nem a szabályzatoknak megfelelően járt el.
+- **Nem megfelelő**: Az eszköz nem felel meg egy vagy több eszközmegfelelőségi szabályzat beállításainak. Lehetséges, hogy a felhasználó nem a szabályzatoknak megfelelően járt el.
 
-- **Az eszköz nincs szinkronizálva:** Az eszköz nem tudta jelenteni az eszköz megfelelőségi szabályzatának állapotát a következő okok egyike miatt:
+- **Az eszköz nincs szinkronizálva:** az eszköz nem jelentette az eszközmegfelelőségi szabályzat állapotát az alábbi okok miatt:
 
-  - **Ismeretlen**: Az eszköz offline állapotban van, vagy más okból nem tud kommunikálni az Intune-nal vagy az Azure AD-vel.
+  - **Ismeretlen**: az eszköz offline állapotban van, vagy valamilyen más okból nem sikerült kapcsolatba lépnie az Intune-nal vagy az Azure AD-vel.
 
-  - **Hiba**: Az eszköz nem tudott kommunikálni az Intune-nal és az Azure AD-vel, ezért hibaüzenetet kapott.
+  - **Hiba**: az eszköznek nem sikerült kapcsolatba lépnie az Intune-nal vagy az Azure AD-vel, és üzenetben megkapta a hiba okát.
 
 > [!IMPORTANT]
 > A jelentésben a **Megfelelő** gyűjtőben szerepelnek azok az eszközök, amelyek regisztrálva vannak az Intune-ban, de nem vonatkozik rájuk eszközmegfelelőségi szabályzat.
@@ -165,11 +166,11 @@ Ezt a funkciót tartalmazza az eszköz állapotjelentése:
 1. Válassza az **Eszközmegfelelőség** > **Szabályzatok** elemet. Megjelenik a szabályzatok listája, amely tartalmazza a platformot, hogy hozzá van-e rendelve a szabályzat, és további részleteket.
 2. Válasszon ki egy szabályzatot > **Áttekintés**. Ebben a nézetben a szabályzat-hozzárendelés a következő állapotokat tartalmazza:
 
-    - Sikerült Házirend alkalmazva
-    - Hiba: Nem sikerült alkalmazni a szabályzatot. Az üzenethez általában egy hibakód is tartozik, amely a hiba ismertetésére hivatkozik. 
-    - Ütközés A rendszer két beállítást alkalmaz ugyanarra az eszközre, és az Intune nem tudja rendezni az ütközést. Rendszergazdai ellenőrzés szükséges.
-    - Függőben Az eszköz még nem jelentkezett be az Intune-nal, hogy megkapja a szabályzatot. 
-    - Nem alkalmazható: Az eszköz nem tudja fogadni a szabályzatot. A szabályzat például egy, az iOS 11.1-re vonatkozó beállítást frissít, az eszköz azonban az iOS 10-et használja. 
+    - Sikeres művelet: Szabályzat alkalmazva
+    - Hiba: A szabályzatot nem sikerült alkalmazni. Az üzenethez általában egy hibakód is tartozik, amely a hiba ismertetésére hivatkozik. 
+    - Ütközés: Két beállítást alkalmaztak ugyanazon eszközre, az Intune pedig nem tudta feloldani az ütközést. Rendszergazdai ellenőrzés szükséges.
+    - Függőben: Az eszköz nem jelentkezett be az Intune-ba, így még nem kapta meg a szabályzatot. 
+    - Nem alkalmazható: Az eszköz nem tudja megkapni a szabályzatot. A szabályzat például egy, az iOS 11.1-re vonatkozó beállítást frissít, az eszköz azonban az iOS 10-et használja. 
 
 3. A szabályzatot használó eszközökön a részletek megtekintéséhez válassza ki a állapotok egyikét. Válassza például a **Sikeres** elemet. A következő ablakban megjelennek az eszköz adatai, például az eszköz neve és az üzembe helyezési állapot.
 

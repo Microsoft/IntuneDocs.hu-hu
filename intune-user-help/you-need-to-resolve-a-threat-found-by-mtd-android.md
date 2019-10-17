@@ -9,6 +9,7 @@ ms.date: 08/28/2018
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: 9e176e10-72fd-42fe-94ef-b41d57a4914f
 searchScope:
@@ -16,12 +17,12 @@ searchScope:
 ROBOTS: ''
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c0357744619f3e1905b97b27b5dbd2ec3ea5e0dc
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: 9df7b5e1386b5731b9c2bc82e70a1bc7c8dfa744
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61490280"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72507794"
 ---
 # <a name="resolve-a-threat-found-by-a-mobile-threat-defense-app"></a>A Mobile Threat Defense alkalmazás által talált fenyegetések elhárítása
 
@@ -42,6 +43,6 @@ Az alábbiakban a cég által beállítható, Android-eszközökhöz készült M
 * [SandBlast Mobile Protect](you-need-to-resolve-a-threat-found-by-checkpoint-android.md)
 * [Zimperium zIPS](you-need-to-resolve-a-threat-found-by-zips-android.md)  
 
-  További segítségre van szüksége? Forduljon a cég informatikai támogatásához. Az elérhetőségét keresse meg a [Vállalati portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980)  
+  További segítségre van szüksége? Forduljon a cég informatikai támogatásához. Az elérhetőségét keresse meg a [Céges portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980)  
 
 

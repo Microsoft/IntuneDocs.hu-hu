@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 10/09/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.reviewer: samyada
@@ -15,46 +16,46 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ec8003264c28ea40d53731c8fb8c3eddef7fded
-ms.sourcegitcommit: dd6755383ba89824d1cc128698a65fde6bb2de55
+ms.openlocfilehash: 15ac42f34d440c32026d39aca577bd8e3b1f62ea
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72306580"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72504537"
 ---
 # <a name="create-a-compliance-policy-in-microsoft-intune"></a>Megfelelőségi szabályzat létrehozása Microsoft Intune
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-Az eszköz megfelelőségi szabályzatai kulcsfontosságú funkció, ha az Intune-nal gondoskodik a szervezet erőforrásainak biztonságáról. Az Intune-ban létrehozhat olyan szabályokat és beállításokat, amelyeknek az eszközöknek meg kell felelniük a megfelelőnek, például a minimális operációsrendszer-verziónak. Ha az eszköz nem megfelelő, a [feltételes hozzáférés](conditional-access.md)használatával letilthatja az adatelérést és az erőforrásokat.
+Az eszközmegfelelőségi szabályzatok használata kiemelten fontos, ha az Intune-t a vállalat erőforrásainak védelmére kívánja használni. Az Intune-ban létrehozhat olyan szabályokat és beállításokat, amelyeknek az eszközöknek meg kell felelniük a megfelelőnek, például a minimális operációsrendszer-verziónak. Ha az eszköz nem megfelelő, a [feltételes hozzáférés](conditional-access.md)használatával letilthatja az adatelérést és az erőforrásokat.
 
 A nem megfelelőséggel kapcsolatos műveleteket is végrehajthat, például értesítő e-mailt küldhet a felhasználónak. A megfelelőségi szabályzatok végrehajtásának és használatuk módjának áttekintését lásd: [az eszközök megfelelőségének megkezdése](device-compliance-get-started.md).
 
-A cikk tartalma:
+Ez a cikk:
 
 - Felsorolja a kompatibilitás szabályzat létrehozásához szükséges előfeltételeket és lépéseket.
 - Bemutatja, hogyan rendelheti hozzá a szabályzatot a felhasználókhoz és az eszközök csoportjaihoz.
 - A további szolgáltatásokat, például a hatóköri címkéket a szabályzatok szűrésére, valamint a nem megfelelő eszközökre vonatkozó lépéseket ismerteti.
 - Felsorolja a beléptetési frissítési ciklus időpontját, amikor az eszközök házirend-frissítéseket fogadnak.
 
-## <a name="before-you-begin"></a>Előzetes teendők
+## <a name="before-you-begin"></a>Előkészületek
 
 Az eszközök megfelelőségi házirendjeinek használatához győződjön meg róla, hogy:
 
-- Használja a következő előfizetéseket:
+- Használja az alábbi előfizetéseket:
 
   - Intune
   - Ha feltételes hozzáférést használ, akkor Azure Active Directory (AD) Premium kiadásra van szüksége. A [Azure Active Directory díjszabása](https://azure.microsoft.com/pricing/details/active-directory/) felsorolja, hogy mit kap a különböző kiadásokban. Az Intune-megfelelőség nem igényli az Azure AD-t.
 
-- Támogatott platform használata:
+- Használjon támogatott platformot:
 
-  - Android
-  - Android Enterprise
+  - Android:
+  - Vállalati Android
   - iOS
   - macOS (előzetes verzió)
   - Windows 10
-  - Windows 8.1
-  - Windows Phone-telefon 8,1
+  - Windows 8.1
+  - WVPN-profilokdows Phone 8.1
 
 - Eszközök regisztrálása az Intune-ban (a megfelelőségi állapot megtekintéséhez szükséges)
 
@@ -63,45 +64,45 @@ Az eszközök megfelelőségi házirendjeinek használatához győződjön meg r
 ## <a name="create-the-policy"></a>A szabályzat létrehozása
 
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Válassza az **eszköz megfelelősége**lehetőséget. A következő lehetőségek közül választhat:
+2. Válassza az **Eszközmegfelelőség** elemet. A következő lehetőségek közül választhat:
 
     - **Áttekintés**: a megfelelő és nem kiértékelt eszközök összegzését és számát jeleníti meg. Emellett felsorolja a szabályzatokat és az egyes beállításokat is. Az [Intune-eszközök megfelelőségi házirendjeinek figyelése](compliance-policy-monitor.md) jó információkat biztosít.
     - **Kezelés**: eszköz-házirendek létrehozása, [értesítések](quickstart-send-notification.md) küldése nem megfelelő eszközökre, valamint a [hálózati kerítés](use-network-locations.md)engedélyezése.
     - **Figyelő**: Ellenőrizze az eszközök megfelelőségi állapotát, és a beállítás és a házirend szintjén. Az [Intune-eszközök megfelelőségi házirendjeinek figyelése](compliance-policy-monitor.md) jó erőforrás. A naplókat is megtekintheti, és megtekintheti az eszközök veszélyforrások ügynökének állapotát.
     - **Beállítás**: használja a [beépített megfelelőségi szabályzatokat](device-compliance-get-started.md#ways-to-deploy-device-compliance-policies), engedélyezze a [Microsoft Defender komplex veszélyforrások elleni védelem (ATP)](advanced-threat-protection.md)szolgáltatást, vegyen fel egy [Mobile Threat Defense-összekötőt](mobile-threat-defense.md), és használja a [JAMF](conditional-access-integrate-jamf.md)-t.
 
-3. Válassza a **szabályzatok** > **házirend létrehozása**lehetőséget. Adja meg a következő tulajdonságokat:
+3. Válassza a **Szabályzatok** > **Szabályzat létrehozása** lehetőséget. Adja meg a következő tulajdonságokat:
 
     - **Név**: adjon meg egy leíró nevet a szabályzatnak. Nevezze el a szabályzatokat, hogy később könnyebben azonosítható legyen. A megfelelő szabályzat neve például **nem megfelelőként jelöli**meg az iOS-es feltört eszközöket.
-    - **Leírás**: adja meg a szabályzat leírását. Ez a beállítás nem kötelező, de ajánlott.
-    - **Platform**: válassza ki az eszközök platformját. A lehetőségek:  
+    - **Leírás**: adja meg a szabályzat leírását. A beállítás használata nem kötelező, de ajánlott.
+    - **Platform**: válassza ki az eszközök platformját. A választható lehetőségek:  
 
-       - **Android**
-       - **Android Enterprise**
-       - **iOS**
+       - **Android--**
+       - **Vállalati Android**
+       - **iOS--**
        - **macOS**
-       - **Windows Phone-telefon 8,1**
-       - **Windows 8,1 és újabb verziók**
-       - **Windows 10 és újabb verziók**
+       - **Windows Phone 8.1**
+       - **Windows 8.1 és újabb verziók**
+       - **Windows 10 és újabb**
 
     - **Beállítások**: az alábbi cikkek felsorolják és leírják az egyes platformok beállításait:
 
-        - [Android](compliance-policy-create-android.md)
+        - [Android--](compliance-policy-create-android.md)
         - [Android Enterprise](compliance-policy-create-android-for-work.md)
-        - [iOS](compliance-policy-create-ios.md)
+        - [iOS--](compliance-policy-create-ios.md)
         - [macOS](compliance-policy-create-mac-os.md)
         - [Windows Phone-telefon 8,1, Windows 8,1 és újabb verziók](compliance-policy-create-windows-8-1.md)
-        - [Windows 10 és újabb verziók](compliance-policy-create-windows.md)
+        - [Windows 10 és újabb](compliance-policy-create-windows.md)
 
 4. Ha elkészült, válassza **az OK** > **Létrehozás** lehetőséget a módosítások mentéséhez. Ekkor létrejön a szabályzat, és megjelenik a listában. Ezután rendelje hozzá a szabályzatot a csoportokhoz.
 
-## <a name="assign-the-policy"></a>A szabályzat kiosztása
+## <a name="assign-the-policy"></a>A szabályzat hozzárendelése
 
 A szabályzat létrehozása után a következő lépés a szabályzat társítása a csoportokhoz:
 
-1. Válassza ki a létrehozott szabályzatot. A meglévő szabályzatok az **eszközök megfelelősége** > **házirendekben**találhatók.
-2. Válassza ki a szabályzatot > **hozzárendeléseket**. Azure Active Directory (AD) biztonsági csoportokat is hozzáadhat vagy kizárhat.
-3. Válassza a **kiválasztott csoportok** lehetőséget az Azure ad biztonsági csoportok megjelenítéséhez. Válassza ki azokat a csoportokat, amelyekre alkalmazni szeretné a szabályzatot > válassza a **Mentés** lehetőséget a szabályzat telepítéséhez.
+1. Válassza ki a létrehozott szabályzatot. A meglévő szabályzatok az **Eszközmegfelelőség** > **Szabályzatok** alatt találhatók.
+2. Válassza ki a szabályzatot > **hozzárendeléseket**. Belefoglalhat vagy kizárhat Azure Active Directory (AD) biztonsági csoportokat.
+3. Azure AD-biztonsági csoportjait a **Kijelölt csoportok** lehetőséget választva tekintheti meg. Válassza ki azokat a csoportokat, amelyekre alkalmazni szeretné a szabályzatot > válassza a **Mentés** lehetőséget a szabályzat telepítéséhez.
 
 A szabályzat által megadott felhasználók vagy eszközök megfelelőségét a rendszer az Intune-ba való bejelentkezéskor értékeli.
 
@@ -116,13 +117,13 @@ Ha a **kiértékelés** gomb szürkén jelenik meg, győződjön meg arról, hog
 
 ## <a name="actions-for-noncompliance"></a>Meg nem felelés esetén végrehajtandó műveletek
 
-Azon eszközök esetében, amelyek nem felelnek meg a megfelelőségi szabályzatoknak, hozzáadhat egy műveletsort az automatikus alkalmazáshoz. Módosíthatja az ütemtervet, ha az eszköz nem megfelelőként van megjelölve, például egy nap után. Beállíthat egy második műveletet is, amely e-mailt küld a felhasználónak, ha az eszköz nem megfelelő.
+Azon eszközök esetében, amelyek nem felelnek meg a megfelelőségi szabályzatoknak, hozzáadhat egy műveletsort az automatikus alkalmazáshoz. Módosíthatja az eszköz nem megfelelőként való megjelölésének ütemezését, megadhatja például, hogy egy nap elteltével jelölje a rendszer nem megfelelőnek az eszközt. Hozzáadhat egy második műveletet is, amely e-mailt küld a felhasználónak, ha az eszköz nem megfelelő.
 
-A nem [megfelelő eszközökhöz tartozó műveletek hozzáadásával](actions-for-noncompliance.md) további információk jelennek meg, például értesítő e-mailek létrehozása a felhasználók számára.
+A [Műveletek hozzáadása nem megfelelő eszközökhöz](actions-for-noncompliance.md) további információval szolgál, többek között arról, hogyan hozhat létre értesítési e-mailt a felhasználók számára.
 
-Tegyük fel például, hogy a helyek funkciót használja, és adjon hozzá egy helyet a megfelelőségi szabályzatban. A meg nem felelés esetén végrehajtandó alapértelmezett művelet akkor érvényes, ha legalább egy helyet választ ki. Ha az eszköz nem kapcsolódik a kiválasztott helyekhez, az azonnal nem megfelelőnek minősül. Türelmi időszakot, például egy napot adhat a felhasználóknak.
+Például, a Helyek funkciót használja, és hozzáad egy helyet egy megfelelőségi szabályzatban. Az alapértelmezett meg nem felelési művelet alkalmazandó, ha kiválaszt legalább egy helyet. Ha az eszköz nem csatlakozik a megadott helyekhez, akkor azonnal nem megfelelőnek számít. Biztosíthat a felhasználóknak egy türelmi időszakot, például egy napot.
 
-## <a name="scope-tags"></a>Hatókör-Címkék
+## <a name="scope-tags"></a>Hatókörcímkék
 
 A hatókör címkéi lehetővé teszik a házirendek hozzárendelését és szűrését adott csoportokra, például értékesítésre, HR-re, az összes US-NC-alkalmazottakra stb. A beállítások hozzáadása után hozzá lehet adni egy hatókör-címkét a megfelelőségi szabályzatokhoz. [Hatókör-címkék használata a házirendek szűréséhez](../fundamentals/scope-tags.md) jó erőforrás.
 
@@ -132,43 +133,43 @@ Az Intune különböző frissítési ciklusokat használ a megfelelőségi szab�
 
 A felhasználók bármikor megnyithatják a Céges portál alkalmazást, és az eszköz szinkronizálásával azonnal ellenőrizhetők a házirendek frissítései.
 
-### <a name="assign-an-ingraceperiod-status"></a>Türelmi időszakban állapotának kiosztása
+### <a name="assign-an-ingraceperiod-status"></a>Türelmi időszakban állapot hozzárendelése
 
-A megfelelőségi szabályzat türelmi időszakban állapota érték. Ezt az értéket az eszköz türelmi időszakának kombinációja határozza meg, és az eszköz tényleges állapota megfelel a megfelelőségi szabályzatnak.
+A megfelelőségi szabályzatok Türelmi időszakban állapota egy érték. Ezt az értéket a rendszer az adott eszköz türelmi időszaka és az eszközre érvényes megfelelőségi szabályzat tényleges állapota alapján határozza meg.
 
-Pontosabban, ha egy eszköz nem megfelelő állapottal rendelkezik egy hozzárendelt megfelelőségi szabályzathoz, és:
+Konkrétan, ha egy eszköz Nem megfelelő állapotú egy hozzárendelt megfelelőségi szabályzatra vonatkozóan, illetve:
 
 - Az eszközhöz nincs hozzárendelve türelmi időszak, a megfelelőségi szabályzathoz hozzárendelt érték nem megfelelő.
 - Az eszköz lejárt türelmi időszakot tartalmaz, a megfelelőségi szabályzathoz hozzárendelt érték nem megfelelő.
 - Az eszköz a jövőben türelmi időszakot tartalmaz, a megfelelőségi szabályzathoz hozzárendelt érték pedig türelmi időszakban
 
-A következő táblázat összefoglalja ezeket a pontokat:
+Az alábbi táblázat összefoglalja ezt részletesen:
 
-|Tényleges megfelelőségi állapot|A megadott türelmi időszak értéke|Érvényes megfelelőségi állapot|
+|Aktuális megfelelőségi állapot|A hozzárendelt türelmi időszak értéke|Tényleges megfelelőségi állapot|
 |---------|---------|---------|
-|Nem |Nincs hozzárendelve türelmi időszak |Nem |
-|Nem |Tegnapi dátum|Nem|
-|Nem |Holnapi dátum|Türelmi időszakban|
+|Nem megfelelő |Nincs hozzárendelve türelmi időszak |Nem megfelelő |
+|Nem megfelelő |Tegnapi dátum|Nem megfelelő|
+|Nem megfelelő |Holnapi dátum|Türelmi időszakban|
 
-További információ az eszközök megfelelőségi házirendjeinek figyeléséről: az [Intune-eszközök megfelelőségi házirendjeinek figyelése](compliance-policy-monitor.md).
+Az eszközmegfelelőségi szabályzatok figyelésével kapcsolatos további információkért lásd: [Intune-eszközmegfelelőségi szabályzatok figyelése](compliance-policy-monitor.md).
 
-### <a name="assign-a-resulting-compliance-policy-status"></a>Eredményül kapott megfelelőségi szabályzat állapotának kiosztása
+### <a name="assign-a-resulting-compliance-policy-status"></a>Megfelelőségi szabályzat eredményül kapott állapotának hozzárendelése
 
-Ha egy eszközhöz több megfelelőségi szabályzat tartozik, és az eszköz megfelelőségi állapota két vagy több hozzárendelt megfelelőségi szabályzat esetében eltérő, akkor egyetlen eredményül kapott megfelelőségi állapot lesz hozzárendelve. Ez a hozzárendelés az egyes megfelelőségi állapotokhoz rendelt fogalmi súlyossági szint alapján történik. Minden megfelelőségi állapot a következő súlyossági szinttel rendelkezik:
+Ha egy eszközhöz több megfelelőségi szabályzat tartozik, és az eszköz megfelelőségi állapota két vagy több hozzárendelt megfelelőségi szabályzat esetében eltérő, akkor egyetlen eredményül kapott megfelelőségi állapot lesz hozzárendelve. A hozzárendelés az egyes megfelelőségi állapotokhoz hozzárendelt fogalmi szintű súlyossági szinten alapul. Az egyes megfelelőségi állapotok a következő súlyossági szinttel rendelkeznek:
 
-|Állapot  |Súlyosság  |
+|Állapot  |Severity  |
 |---------|---------|
 |Ismeretlen     |1|
-|NotApplicable     |2|
-|Megfelelőség|3|
+|Nem alkalmazható     |2|
+|Compliant (Megfelelő)|3|
 |Türelmi időszakban|4|
-|Nem|5|
+|Nem megfelelő|5|
 |Hiba|6|
 
-Ha egy eszközhöz több megfelelőségi szabályzat is tartozik, akkor az összes házirend legmagasabb súlyossági szintje lesz hozzárendelve az eszközhöz.
+Ha egy eszköz több megfelelőségi szabályzattal rendelkezik, akkor az eszközhöz hozzárendelt összes szabályzaté közül a legmagasabb súlyossági szintet rendeli hozzá a rendszer az eszközhöz.
 
 Egy eszközhöz például három megfelelőségi szabályzat van rendelve: egy ismeretlen állapot (súlyosság = 1), egy megfelelő állapot (súlyosság = 3) és egy türelmi időszakban állapot (súlyosság = 4). A türelmi időszakban állapota a legmagasabb súlyossági szinttel rendelkezik. Tehát mindhárom házirend rendelkezik a türelmi időszakban megfelelőségi állapotával.
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
 [A szabályzatok figyelése](compliance-policy-monitor.md).

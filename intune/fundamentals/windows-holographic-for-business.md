@@ -8,20 +8,22 @@ manager: dougeby
 ms.date: 12/18/2018
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
+ms.assetid: 585a2f17-106b-4f02-adf7-05f08a92dbc1
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9e50784529bb3128b08aa36859ca003f7c6f7691
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: cdb3623a61c16f69773703b8acdbb8f7c02b4ac4
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732363"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72504746"
 ---
-# <a name="manage-and-use-different-device-management-features-on-windows-holographic-and-hololens-devices-with-intune"></a>Kezelheti, és használható különböző eszközfelügyeleti funkcióival a Windows holographic operációs rendszert és a HoloLens-eszközök Intune-nal
+# <a name="manage-and-use-different-device-management-features-on-windows-holographic-and-hololens-devices-with-intune"></a>Különböző Eszközkezelő funkciók kezelése és használata Windows holografikus és HoloLens eszközökön az Intune-nal
 
 A Microsoft Intune számos olyan szolgáltatást biztosít, amelyek segítenek a Windows Holographic for Business rendszert futtató eszközök, például a [Microsoft HoloLens](https://docs.microsoft.com/hololens/) felügyeletében. Az Intune használatával ellenőrizhető, hogy az eszközök megfelelnek-e a szervezeti szabályoknak, és az eszközök testreszabása is elvégezhető VPN- vagy Wi-Fi-profilok hozzáadásával. Egy másik fontos funkció az eszközök kioszkként való használata és egy bizonyos alkalmazás vagy alkalmazáskészlet futtatása.
 
@@ -33,11 +35,11 @@ A Windows Holographic rendszerű eszközök Intune-nal való használatához hoz
 
 Az Azure Active Directory (AD) segítségével könnyedén kezelheti és vezérelheti a Windows Holographic for Business rendszerű eszközeit. Az Intune és az Azure AD használatával: 
 
-- **[Eszközök csatlakoztatása a Azure Active Directoryhoz](https://docs.microsoft.com/azure/active-directory/devices/azureadjoin-plan)** : A Azure Active Directory (AD) szolgáltatásban felveheti a saját munkahelyi Windows 10-es eszközeit, beleértve a Windows holografikus for Business rendszert futtató eszközöket is. Ez a funkció lehetővé teszi, hogy az Azure AD vezérelje az eszközt. Ez segít biztosítani, hogy a felhasználói olyan eszközökről érjék el a vállalati erőforrásokat, amelyek megfelelnek a vállalat biztonsági és megfelelőségi szabványainak.
+- **[Eszközök csatlakoztatása a Azure Active Directoryhoz](https://docs.microsoft.com/azure/active-directory/devices/azureadjoin-plan)** : a Azure Active Directory (ad) szolgáltatásban felveheti a munkahelyi Windows 10-es eszközeit, beleértve a Windows holografikus for Business rendszert futtató eszközöket is. Ez a funkció lehetővé teszi, hogy az Azure AD vezérelje az eszközt. Ez segít biztosítani, hogy a felhasználói olyan eszközökről érjék el a vállalati erőforrásokat, amelyek megfelelnek a vállalat biztonsági és megfelelőségi szabványainak.
 
-  [Az Eszközfelügyelet az Azure ad-ben](https://docs.microsoft.com/azure/active-directory/devices/overview) további részleteket.
+  [Az Azure ad-beli eszközkezelés](https://docs.microsoft.com/azure/active-directory/devices/overview) további részleteket tartalmaz.
 
-- **[Csoportos regisztráció Windows](../enrollment/windows-bulk-enroll.md)** -eszközökhöz: Nagyszámú új Windows-eszközt is csatlakoztathat Azure Active Directory (AD) és az Intune-hoz. Ezt a szolgáltatást csoportos regisztrációnak hívják, és kiépítési csomagokat használ. Ezek a csomagok összekötik a Windows Holographic for Business rendszerű eszközöket az Azure AD-bérlővel, és regisztrálják őket az Intune-ban.
+- **[Csoportos regisztráció Windows-eszközök esetében](../enrollment/windows-bulk-enroll.md)** : Egyszerre nagy számú új windowsos eszközt is csatlakoztathat az Azure Active Directoryhoz és az Intune-hoz. Ezt a szolgáltatást csoportos regisztrációnak hívják, és kiépítési csomagokat használ. Ezek a csomagok összekötik a Windows Holographic for Business rendszerű eszközöket az Azure AD-bérlővel, és regisztrálják őket az Intune-ban.
 
 ## <a name="company-portal"></a>Céges portál
 **[A Céges portál alkalmazás konfigurálása](../apps/company-portal-app.md)**
@@ -85,13 +87,13 @@ Az Intune rendelkezik néhány olyan beépített funkcióval, amelyek használat
 
 Windows Holographic for Business rendszert futtató eszközök használata esetén a következő műveletek végezhetők: 
 
-- **[Törlés](../remote-actions/devices-wipe.md#wipe)** : A **Törlés** művelet eltávolítja az eszközt az Intune-ból, és visszaállítja az eszközt a gyári alapértelmezett beállításokra. Ezt a műveletet akkor érdemes használni, mielőtt az eszközt egy új felhasználónak adják, vagy ha az eszköz elveszett, vagy ellopták.
+- **[Összes adat törlése:](../remote-actions/devices-wipe.md#wipe)** Az **Összes adat törlése** művelet eltávolítja az eszközt az Intune-ból, és visszaállítja az eszköz gyári alapértelmezett beállításait. Ezt a műveletet akkor érdemes használni, mielőtt az eszközt egy új felhasználónak adják, vagy ha az eszköz elveszett, vagy ellopták.
 
-- **[Kivonás:](../remote-actions/devices-wipe.md#retire)** A **kivonás művelet eltávolítja** az eszközt az Intune-ból. Az Intune által hozzárendelt felügyelt alkalmazások adait, beállításokat és e-mail-profilokat is eltávolítja. A felhasználó személyes adatai az eszközön maradnak.
+- **[Kivonás:](../remote-actions/devices-wipe.md#retire)** A **Kivonás** művelet eltávolítja az eszközt az Intune-ból. Az Intune által hozzárendelt felügyelt alkalmazások adait, beállításokat és e-mail-profilokat is eltávolítja. A felhasználó személyes adatai az eszközön maradnak.
 
-- **[Eszközök szinkronizálása a legfrissebb szabályzatok és műveletek](../remote-actions/device-sync.md)** beszerzéséhez: A **szinkronizálási** művelet kényszeríti az eszközt, hogy azonnal bejelentkezzen az Intune-ba. Bejelentkezéskor az eszköz azonnal fogadja az hozzárendelt összes függőben lévő műveletet vagy szabályzatot. Ez a funkció segíthet ellenőrizni a vonatkozó szabályzatokat és elhárítani a hibákat anélkül, hogy ki kellene várni a következő ütemezett bejelentkezést.
+- **[Eszköz szinkronizálása a legfrissebb szabályzatok és műveletek hozzáadásához](../remote-actions/device-sync.md)** : A **Szinkronizálás** művelettel kényszeríteni lehet az eszközt, hogy azonnal csatlakozzon az Intune-hoz. Bejelentkezéskor az eszköz azonnal fogadja az hozzárendelt összes függőben lévő műveletet vagy szabályzatot. Ez a funkció segíthet ellenőrizni a vonatkozó szabályzatokat és elhárítani a hibákat anélkül, hogy ki kellene várni a következő ütemezett bejelentkezést.
 
-**[A Microsoft Intune-eszközfelügyelet ismertetése](../remote-actions/device-management.md)** című cikkből további részleteket is megtudhat az Azure Portal használatával történő eszközkezelésről. 
+**[A Microsoft Intune-eszközfelügyelet ismertetése](../remote-actions/device-management.md)**  című cikkből további részleteket is megtudhat az Azure Portal használatával történő eszközkezelésről. 
 
 ## <a name="device-categories-and-groups"></a>Eszközkategóriák és csoportok
 **[Eszközök csoportokba sorolása](../enrollment/device-group-mapping.md)**

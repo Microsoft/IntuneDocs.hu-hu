@@ -1,6 +1,6 @@
 ---
 title: Alkalmazások telepítése a Windowshoz készült Intune Céges portál alkalmazásból
-description: Telepítése és megosztása az alkalmazások a vállalati portál alkalmazásból a Windows
+description: Alkalmazások telepítése és megosztása a Windows Céges portál alkalmazásból
 keywords: ''
 author: lenewsad
 ms.author: lanewsad
@@ -9,6 +9,7 @@ ms.date: 06/27/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: ''
 searchScope:
@@ -18,28 +19,29 @@ ms.reviewer: ''
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f9cb8168075badda65b3cd02f8ae059119769c7c
-ms.sourcegitcommit: 9c06d8071b9affeda32e367bfe85d89bc524ed0b
+ms.openlocfilehash: d8cb6976121f4c5a9ce755e8feb189ea007e7ffd
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67413902"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506131"
 ---
 # <a name="install-and-share-apps-on-your-device"></a>Alkalmazások telepítése és megosztása az eszközön
+
 Alkalmazások telepítése az eszközön Windows Céges portál alkalmazásból.
 
 ## <a name="install-apps"></a>Alkalmazások telepítése
 
 1. Nyissa meg a Céges portál alkalmazást, és jelentkezzen be a munkahelyi vagy iskolai fiókjával.  
 
-    ![A Windows 10-es Céges portál alkalmazás kezdőlapja.](./media/RS1_AppDetailsPage_Installed_03.png)    
+    ![A Windows 10-es Céges portál alkalmazás kezdőlapja.](./media/RS1_AppDetailsPage_Installed_03.png)
 2. A Céges portál alkalmazás következő szakaszain kereshet és telepíthet alkalmazásokat:  
 
-    * **Kezdőlap**: Válassza ki a szervezet kiemelt alkalmazások listájából.  
-    * **Az összes megjelenítése**: Az a **kezdőlap** > **alkalmazások** területén kattintson **az összes megjelenítése** az összes elérhető alkalmazások megtekintéséhez.  
-    * **Minden alkalmazás**: Ezen a lapon válassza ki a navigációs panelen megtekintheti az összes rendelkezésre álló alkalmazások, beleértve a telepítve és kiemelt. Megtekintheti, rendezheti és szűrheti az alkalmazásokat. Keresési eredményeket a rendszer automatikusan elrendezi a relevancia alapján.  
-    * **Alkalmazáskategóriák**: Ezen a lapon válassza a navigációs panelen, típus vagy függvény-alapú alkalmazások kiválasztása. Alkalmazások a rendszer rendezi a kategóriák például **kiemelt**, **oktatási**, és **termelékenység**.  
-    * **Alkalmazások keresése**: Egy statikus keresősáv helyezkedik el, az alkalmazás navigációs ablaktáblán.  Az elérhető alkalmazások megtalálásához keressen rá az alkalmazás nevére vagy a közzétevőre.  
+    * **Kezdőlap**: A szervezet kiemelt alkalmazásai közül választhat.  
+    * **Az összes megjelenítése**: A **Kezdőlap** > **Alkalmazások** területen kattintson **Az összes megjelenítése** elemre az összes elérhető alkalmazás megjelenítéséhez.  
+    * **Minden alkalmazás**: Válassza ezt a lapot a navigációs panelen az összes rendelkezésre álló alkalmazás megtekintéséhez, beleértve a telepítetteket és a kiemelteket. Az alkalmazások megtekintése, rendezése és szűrése. Keresési eredményeket a rendszer automatikusan elrendezi a relevancia alapján.  
+    * **Alkalmazás-kategóriák**: válassza ezt a lapot a navigációs ablaktáblán az alkalmazások típus vagy függvény alapján való kiválasztásához. Az alkalmazások kategóriákba vannak rendezve, például **Kiemelt**, **oktatási**és **termelékenységi**célokra.  
+    * **Alkalmazások keresése**: Az alkalmazás navigációs paneljén található egy statikus keresősáv.  Az elérhető alkalmazások megtalálásához keressen rá az alkalmazás nevére vagy a közzétevőre.  
 
 3. Jelöljön ki egy alkalmazást.   
 4. Az alkalmazás részleteit megjelenítő lapon kattintson a **Telepítés** lehetőségre. A telepítés után a **Telepítve** állapot fog megjelenni.  
@@ -49,7 +51,7 @@ Alkalmazások telepítése az eszközön Windows Céges portál alkalmazásból.
     ![A Windows 10-es Céges portál alkalmazás alkalmazásadatok lapja a Telepítve állapottal az alkalmazás telepítése után. A Telepítés gomb felirata Újratelepítés lesz.](./media/RS1_AppDetailsPage_Installed_01.png)    
 
 > [!IMPORTANT]
-> Ha kötelező alkalmazást nem tudja telepíteni, és a szervezet lehetővé teszi, hogy manuálisan telepíti, válassza ki a **újra**. Frissített állapota akár tíz percet igénybe vehet. Ha **újra** újra ebben az előadásban idő és a hiba, amelynek tagjai nem bánják. Továbbra is a frissített állapotot tíz percet várnia.   
+> Ha egy szükséges alkalmazás telepítése nem sikerül, és a szervezete számára elérhetővé teszi a manuális telepítést, válassza az **újra**lehetőséget. Akár tíz percet is igénybe vehet, hogy megjelenjen a frissített állapot. Ha ebben az időszakban az **újrapróbálkozást** választja, és hibaüzenetet kap, ez rendben van. Várjon a tíz percet a frissített állapotra.   
 
 A cég méretétől függően az Office több verziója is rendelkezésre állhat letöltésre a Céges portálon. További információ a Windows-eszközök számára elérhető Office-csomagról: [Az Office 365 telepítése Windows-eszközön](./install-office-windows.md).
 
@@ -67,34 +69,34 @@ Alkalmazások megosztása és ajánlása a munkahelyi vagy iskolai partnerei sz�
 
 Megosztás után a címzett kapni fog egy hivatkozást és egy üzenetet, hogy tekintse meg az alkalmazás részleteit. A hivatkozás megnyitja a Céges portál **Alkalmazás részletei** lapját. 
 
-## <a name="available-and-required-apps"></a>Szükséges és elérhető alkalmazások
-Alkalmazások a szervezete által Önhöz rendelt és kerülhetnek a céges portál vagy **elérhető** vagy **szükséges**. 
+## <a name="available-and-required-apps"></a>Elérhető és szükséges alkalmazások
+Az alkalmazásokat a szervezete rendeli hozzá, és a Céges portál címkével **elérhetőként** vagy **kötelezőként**címkézi. 
 
-* Elérhető alkalmazások: Ezeket az alkalmazásokat a szervezet által ki van jelölve, és megfelelő, és hasznos munkahelyi vagy iskolai fiók. A választható telepítse, és a csak alkalmazások telepítése a céges portálon megtalálhatja. 
+* Elérhető alkalmazások: ezeket az alkalmazásokat a szervezete választja ki, és megfelelő és hasznos lehet a munkához vagy az iskolához. A telepítésük nem kötelező, és az egyetlen alkalmazás, amelyet a telepítés Céges portál talál. 
 
-* Kötelező alkalmazások: Ezeket az alkalmazásokat munkahelyi és iskolai szükségesek, és közvetlenül az eszközre vannak telepítve. Ezek az alkalmazások automatikusan települnek, beavatkozás nélkül. 
+* Szükséges alkalmazások: ezek az alkalmazások a munkahelyi és iskolai környezetekhez szükségesek, és közvetlenül az eszközön lesznek telepítve. Ezeket az alkalmazásokat a rendszer automatikusan telepíti a beavatkozás nélkül. 
 
-Alkalmazások is elérhető lesz az eszköz típusa alapján. Például ha használja a vállalati portál alkalmazást Windows, hozzáférhet a Windows-alkalmazás, de nem az iOS-alkalmazások.
+Az alkalmazásokat az eszköz típusa alapján is elérhetővé teszi. Ha például a Windows Céges portál alkalmazást használja, akkor hozzáférhet a Windows-alkalmazásokhoz, de nem iOS-alkalmazásokhoz.
 
-## <a name="request-an-app-for-work-or-school"></a>A kérelem egy alkalmazást a munkahelyi vagy iskolai fiók  
-Ha szükséges, de nem látható a vállalati portál alkalmazás, kérelem. Keresse meg a kapcsolattartási adatait a **segélyszolgálat** a céges portál alkalmazásban, a Súgó és támogatás az oldalon. Ugyanazokat az adatokat a látni fogja a [céges portál webhelyen](https://go.microsoft.com/fwlink/?linkid=2010980).    
+## <a name="request-an-app-for-work-or-school"></a>Munkahelyi vagy iskolai alkalmazás igénylése  
+Ha van szüksége egy alkalmazásra, de nem látja a Céges portálban, kérje meg. Az **ügyfélszolgálathoz** tartozó kapcsolattartási adatokat a céges portál alkalmazás Súgó & támogatás lapján találja. Ugyanezeket a kapcsolattartási adatokat a [céges portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980)találja.    
 
-  ![A vállalati portál alkalmazás Windows 10-es, Súgó és támogatás weblapot, kiemelve a segélyszolgálat adatait. ](./media/1812_UCP_Help_Support_helpdesk.png)  
+  ![A Céges portál alkalmazás a Windows 10 rendszerhez, Súgó & támogatási oldal, az ügyfélszolgálat részleteinek kiemelése. ](./media/1812_UCP_Help_Support_helpdesk.png)  
 
-## <a name="view-installed-apps"></a>Telepített alkalmazások  
-Az eszközön telepített összes alkalmazások listájának megtekintéséhez. A **telepített alkalmazások** lap felsorolja azokat az alkalmazásokat a következő információkat:
+## <a name="view-installed-apps"></a>Telepített alkalmazások megtekintése  
+Az eszközön telepített összes alkalmazás listájának megtekintése. A **telepített alkalmazások** lap felsorolja az egyes alkalmazásokra vonatkozó alábbi adatokat:
 
-* Név: Az alkalmazás neve. Rendelkezésre álló alkalmazások tartalmaz egy hivatkozást a **alkalmazás részleteinek** lapot.
-* Hozzárendelés típusa: Hogyan az alkalmazás van hozzárendelve, és elérhetővé tett. 
-* Kiadó: A fejlesztői vagy a vállalati, amelyek az alkalmazás neve. A közzétevő általában, a szoftver gyártójához vagy a szervezet.  
-* Közzététel dátuma: A dátum, amely az alkalmazás történt tölthető le. Közzététel dátuma valószínűleg egy alkalmazás kezdeti kiadás vagy az alkalmazás legújabb frissítése.
-* Állapot: A jelenlegi telepítés állapota az alkalmazást az eszközön. Alkalmazások jeleníti meg telepíteni, mint telepítve, és telepítése nem sikerült. Kötelező alkalmazások a legfrissebb állapot megjelenítéséhez akár 10 percet is igénybe vehet. Tekintse meg az eljárás alatt [telepítik az alkalmazásokat](#install-apps) egy szükséges alkalmazás telepítésével kapcsolatos fontos részleteket. 
+* Name (név): az alkalmazás neve. Az elérhető alkalmazások közé tartozik az **alkalmazás részletei** lapra mutató hivatkozás.
+* Hozzárendelés típusa: Hogyan történik az alkalmazás hozzárendelése és elérhetővé tétele. 
+* Közzétevő: az alkalmazást terjesztő fejlesztő vagy cég neve. A közzétevő általában szoftvergyártó vagy szervezet.  
+* Közzététel dátuma: az a dátum, amelyet az alkalmazás a letöltéshez elérhetővé tett. A közzétételi dátum egy alkalmazás kezdeti kiadását vagy egy alkalmazás legutóbbi frissítését jelenítheti meg.
+* Status (állapot): az alkalmazás aktuális telepítési állapota az eszközön. Az alkalmazások telepítése, telepítése és telepítése nem sikerült. A szükséges alkalmazások akár 10 percet is igénybe vehetnek a naprakész állapot megjelenítéséhez. A szükséges alkalmazások telepítésével kapcsolatos fontos információkért tekintse meg az [alkalmazások telepítése](#install-apps) című témakörben található megjegyzést. 
 
-Ez a lap eléréséhez nyissa meg a navigációs menü, és válassza **telepített alkalmazások**. 
+A lap megnyitásához nyissa meg a navigációs menüt, és válassza a **telepített alkalmazások**lehetőséget. 
 
-  ![Példa a képernyőkép a céges portál alkalmazást a Windows 10, a telepített alkalmazások lapon. ](./media/installed-apps-cp-1906.png)  
+  ![Példa a Windows 10 rendszerhez készült Céges portál alkalmazás képernyőképére, a telepített alkalmazások oldalára. ](./media/installed-apps-cp-1906.png)  
 
 
-Használat **rendezés** név szerint az alkalmazások hozzárendelés-típus, kiadó, átrendezheti, vagy időrendi sorrendben a közzététel dátuma. Használat **szűrés** korlátozhatja az alkalmazások telepítési állapota szerint megjelenik.  Ha az alkalmazás nem érhető el, egy üzenet, hogy megtörtént-e a vállalati alkalmazás nem láthatja.  
+A **Rendezés szempontja** beállítással átrendezheti az alkalmazások hozzárendelési típusát, a közzétevőt, betűrendben név szerint, vagy kronológiailag a közzététel dátuma szerint. A **Filter by** paranccsal szűkítheti a megjelenő alkalmazásokat a telepítési állapot alapján.  Ha egyetlen alkalmazás sem érhető el, egy olyan üzenet jelenik meg, amelyen nincs telepítve vállalati alkalmazás.  
 
 További segítségre van szüksége? Forduljon a cég informatikai támogatásához. Az elérhetőségét keresse meg a [Vállalati portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).  

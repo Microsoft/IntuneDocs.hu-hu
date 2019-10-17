@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 08/26/2019
 ms.topic: troubleshooting
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: e31df2d2-bb1b-491b-9a71-04e0b18829c1
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c2b4e57ba348fcc6e6907159e395e50dbdf35d1f
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: e34e1cb30469593c8ec9e756659ad03589ae38bc
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731659"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72509775"
 ---
 # <a name="endpoint-protection-issues-and-possible-solutions-in-microsoft-intune"></a>Endpoint Protection-problémák és lehetséges megoldások a Microsoft Intune
 
@@ -30,13 +31,13 @@ Ez a cikk a hibák és figyelmeztetések lehetséges okait és megoldásait soro
 
 ## <a name="windows-defender-error-codes"></a>Windows Defender-hibakódok
 
-Tekintse át az eseménynaplókat és a hibakódokat a [Windows DEFENDER AV-vel kapcsolatos](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/troubleshoot-windows-defender-antivirus)hibák elhárításához.
+Tekintse át az eseménynaplókat és a hibakódokat a [Windows DEFENDER AV-vel kapcsolatos hibák elhárításához](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/troubleshoot-windows-defender-antivirus).
 
 ## <a name="common-intune-errors-and-possible-resolutions"></a>Gyakori Intune-hibák és lehetséges megoldások
 
 ### <a name="endpoint-protection-engine-unavailable"></a>Az Endpoint Protection-motor nem érhető el
 
-**Lehetséges ok**: Az Intune végpontvédelmi motorja sérült vagy törölték.
+**Lehetséges ok**: az Intune Endpoint Protection-motor sérült vagy törölték.
 
 **Lehetséges megoldások**:
 
@@ -57,11 +58,11 @@ Előfordulhat, hogy bizonyos funkciók le vannak tiltva. Ezek az üzenetek akkor
 `Script scanning disabled`  
 `Network Inspection System disabled`  
 
-**Lehetséges megoldások**: Engedélyezze ezeket a funkciókat. Útmutatásért lásd:
+**Lehetséges megoldások**: engedélyezze ezeket a funkciókat. Útmutatásért lásd:
 
 - [Endpoint Protection-beállítások hozzáadása](../protect/endpoint-protection-configure.md)
 - [Windows Defender víruskereső](../configuration/device-restrictions-windows-10.md#microsoft-defender-antivirus)
-- [Végfelhasználók: A valós idejű védelem bekapcsolása a vállalati erőforrások eléréséhez](/intune-user-help/turn-on-defender-windows)
+- [Végfelhasználók: a valós idejű védelem bekapcsolása a vállalati erőforrások eléréséhez](/intune-user-help/turn-on-defender-windows)
 
 ### <a name="malware-definitions-out-of-date"></a>A kártevő-definíciók elavultak
 
@@ -83,4 +84,4 @@ Egy másik Endpoint Protection-alkalmazás fut, és az eszköz kifogástalan ál
 
 ## <a name="next-steps"></a>További lépések
 
-Kérjen [támogatási segítséget](get-support.md)a Microsofttól, vagy használja a [közösségi fórumokat](https://social.technet.microsoft.com/Forums/en-US/home?category=microsoftintune).
+Kérjen [támogatási segítséget a Microsofttól](get-support.md), vagy használja a [közösségi fórumokat](https://social.technet.microsoft.com/Forums/en-US/home?category=microsoftintune).

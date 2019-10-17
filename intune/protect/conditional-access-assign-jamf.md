@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 10/02/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: c87fd2bd-7f53-4f1b-b985-c34f2d85a7bc
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 74ee1eaf0581c4500830514fa9ad272f0de09d3b
-ms.sourcegitcommit: f04e21ec459998922ba9c7091ab5f8efafd8a01c
+ms.openlocfilehash: d3552eca925865eb3278b50490a6b70ee5807e2b
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71813978"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72502451"
 ---
 # <a name="enforce-compliance-on-macs-managed-with-jamf-pro"></a>Jamf Pro által felügyelt Mac számítógépek megfelelőségének kikényszerítése
 
@@ -77,7 +78,7 @@ Az alábbi eljárás végrehajtásához hozzáférésre van szüksége egy macOS
 8. Válassza a **telepítés** lehetőséget a **művelet** előugró menüből.
 9. Konfigurálja a csomag beállításait.
 
-10. Válassza ki a **hatókör** lapot annak megadásához, hogy mely számítógépeken kell telepíteni a céges portál alkalmazást. Kattintson a **Mentés** gombra. A házirend hatókörön belüli eszközökön fut, amikor a kiválasztott aktiválás következő lépése a számítógépen történik, és az **általános** adattartalomban szereplő feltételek teljesülnek.
+10. Válassza ki a **hatókör** lapot annak megadásához, hogy mely számítógépeken kell telepíteni a céges portál alkalmazást. Válassza a **Mentés** lehetőséget. A házirend hatókörön belüli eszközökön fut, amikor a kiválasztott aktiválás következő lépése a számítógépen történik, és az **általános** adattartalomban szereplő feltételek teljesülnek.
 
 ## <a name="create-a-policy-in-jamf-pro-to-have-users-register-their-devices-with-azure-active-directory"></a>Szabályzat létrehozása a Jamf Pro szolgáltatásban a felhasználók eszközének Azure Active Directoryban való regisztrálásához  
 
@@ -96,7 +97,7 @@ Az eszközök regisztrálásához az eszköz felhasználójának manuálisan kel
 
 3. Válassza a **hatókör** fület, majd a házirend hatókörét az összes megcélzott eszközre.
 
-4. Válassza az **önkiszolgáló** fület, hogy a szabályzat elérhető legyen a JAMF önkiszolgáló szolgáltatásban. Adja hozzá a szabályzatot az **Eszközmegfelelőség** kategóriához. Kattintson a **Save** (Mentés) gombra.
+4. Válassza az **önkiszolgáló** fület, hogy a szabályzat elérhető legyen a JAMF önkiszolgáló szolgáltatásban. Adja hozzá a szabályzatot az **Eszközmegfelelőség** kategóriához. Kattintson a **Mentés**gombra.
 
 ## <a name="validate-intune-and-jamf-integration"></a>Az Intune és a JAMF integrációjának ellenőrzése  
 
@@ -113,7 +114,7 @@ Ha a JAMF Pro konzolon nem sikerül a kapcsolatok tesztelése, tekintse át a JA
 
 A Jamf által felügyelt eszközöknek az Intune-konzolról történő eltávolításához a **Minden eszköz** nézetben kattintson a **Törlés** elemre. Az eszközök csoportos törlésére is van lehetőség: jelöljön ki több eszközt, és kattintson a **Törlés** elemre.
 
-[A Jamf által felügyelt eszköz eltávolításáról a Jamf Pro dokumentációjában](https://www.jamf.com/jamf-nation/articles/80/unmanaging-computers-while-preserving-their-inventory-information) olvashat részletesebben. Ha további segítségre van szüksége, támogatási jegyet is küldhet a [Jamf támogatási szolgálatának](https://www.jamf.com/support/). 
+A [JAMF által felügyelt eszközök JAMF Pro docs-beli eltávolításával](https://www.jamf.com/jamf-nation/articles/80/unmanaging-computers-while-preserving-their-inventory-information)kapcsolatos információk. További segítségért a támogatási jegyet is [JAMF-támogatással](https://www.jamf.com/support/) teheti meg. 
 
 ## <a name="next-steps"></a>További lépések
 

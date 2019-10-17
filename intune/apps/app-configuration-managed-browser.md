@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 08/27/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: apps
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 1feca24f-9212-4d5d-afa9-7c171c5e8525
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 63e3a02f9df52052f27714403e8f189d089c6690
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 57ae1b5a51533bf14d4299fcf0248564562289f7
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731483"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72507566"
 ---
 # <a name="manage-web-access-using-a-microsoft-intune-policy-protected-browser"></a>Webes hozzáférés kezelése Microsoft Intune szabályzattal védett böngésző használatával
 
@@ -31,7 +32,7 @@ ms.locfileid: "71731483"
 Az Intune-szabályzattal védett (Microsoft Edge vagy Intune Managed Browser) böngésző használatával gondoskodhat róla, hogy a vállalati webhelyek hozzáférésére mindig megfelelő biztonsági előírások vonatkozzanak.  Az Intune-nal konfigurált védett böngészők kihasználják az alábbi megoldások előnyeit:
 
 - Alkalmazás-védelmi házirendek
-- Feltételes hozzáférés
+- Conditional Access
 - Egyszeri bejelentkezés
 - Alkalmazás konfigurációs beállításai
 - Azure-alkalmazásproxy integrációja
@@ -91,7 +92,7 @@ Ha az Azure AD-hez csatlakozó webalkalmazásokat az Intune Managed Browser hasz
 > A feltételes hozzáférés az Azure Active Directory (Azure AD) technológiája. Az *Intune-ból* elérhető feltételes hozzáférési csomópont ugyanaz a csomópont, amelyet az *Azure AD-ből* is el lehet érni.  
 
 
-1. Az Intune-portálon válassza a **feltételes hozzáférés** > **új szabályzat**lehetőséget. 
+1. Az Intune-portálon válassza a **feltételes hozzáférés** > **új házirend**elemet. 
 2. Ezután válassza a panel **Hozzáférés-szabályozási** szakaszában a **Hozzáférés** lehetőséget. 
 3. Kattintson a **Jóváhagyott ügyfélalkalmazás megkövetelése** lehetőségre. 
 4. A **Hozzáférés** panelen kattintson a **Kiválasztás** elemre. Ezt a szabályzatot hozzá kell rendelni azokhoz a felhőalkalmazásokhoz, amelyek esetében azt szeretné, hogy csak az Intune Managed Browser alkalmazásból legyenek elérhetők.
@@ -171,14 +172,14 @@ Ha a beállítás értéke "false" (hamis):
 
 A Microsoft Edge-alkalmazások konfigurációjának létrehozásához használja a fenti eljárást. Adja meg a következő kulcs-érték párokat, amikor kiválasztja a konfigurációs **beállításokat** a **konfiguráció** paneljén (9. lépés):
 
-| Kulcs                              |  Value   |
+| Kulcs                              |  Érték   |
 |----------------------------------|----------|
 | **com. microsoft. Intune. useEdge** | **true** |
 
 > [!NOTE]
 > A Microsoft Edge és az alkalmazás konfigurációjában megadott társított alkalmazások felügyeletére szolgáló app Protection-házirendben győződjön meg arról, hogy a következő adatvédelmi házirend-beállítások vannak beállítva:
-> - Szervezeti adatküldés más alkalmazásokba: **Szabályzattal felügyelt alkalmazások**
-> - Webes tartalom megosztása a szabályzattal felügyelt böngészőkkel: **Igényel**
+> - Szervezeti adatküldés más alkalmazásokba: **szabályzattal felügyelt alkalmazások**
+> - Webes tartalom megosztása a szabályzattal felügyelt böngészőkkel: **kötelező**
 
 ## <a name="how-to-configure-application-proxy-settings-for-protected-browsers"></a>Alkalmazásproxy-beállítások konfigurálása a védett böngészőkhöz
 
@@ -202,12 +203,12 @@ A Microsoft Edge vagy az Intune Managed Browser [Azure AD Alkalmazásproxyval]( 
 #### <a name="step-1-enable-automatic-redirection-to-a-protected-browser-from-outlook"></a>1\. lépés: Automatikus átirányítás engedélyezése az Outlookból egy védett böngészőhöz
 Az Outlookot olyan alkalmazásvédelmi szabályzattal kell konfigurálni, amelyben engedélyezett a **Webes tartalom megjelenítésének korlátozása a Managed Browser alkalmazásra** beállítás.
 
-#### <a name="step-2-assign-an-app-configuration-policy-assigned-for-the-protected-browser"></a>2\. lépés: A védett böngészőhöz hozzárendelt alkalmazás-konfigurációs szabályzat hozzárendelése
+#### <a name="step-2-assign-an-app-configuration-policy-assigned-for-the-protected-browser"></a>2\. lépés: a védett böngészőhöz hozzárendelt alkalmazás-konfigurációs szabályzat hozzárendelése
 Ez az eljárás az Alkalmazásproxy átirányítás használatára konfigurálja a Managed Browser vagy a Microsoft Edge alkalmazást. 
 
 Nyissa meg az **Edge** fület a házirend konfigurációs beállításai között, és válassza az **Engedélyezés** lehetőséget az alkalmazásproxy-átirányítás értékhez. A beállítás engedélyezése lehetővé teszi a felhasználóknak az Azure alkalmazásproxy használatával közzétett vállalati és helyszíni webalkalmazásokhoz való hozzáférést.
 
-További információt a Managed Browser, a Microsoft Edge és az Azure AD Alkalmazásproxy a helyszíni webalkalmazásokhoz való zökkenőmentes (és védett) hozzáféréséhez szükséges együttes használatáról az Enterprise Mobility + Security blog [Együtt jobb: Az Intune és az Azure Active Directory együtt teszi jobbá a felhasználói hozzáférést](https://cloudblogs.microsoft.com/enterprisemobility/2017/07/06/better-together-intune-and-azure-active-directory-team-up-to-improve-user-access) című blogbejegyzésében találhat.
+További információt a Managed Browser, a Microsoft Edge és az Azure AD Alkalmazásproxy a helyszíni webalkalmazásokhoz való zökkenőmentes (és védett) hozzáféréséhez szükséges együttes használatáról az Enterprise Mobility + Security blog [Better together: Intune and Azure Active Directory team up to improve user access](https://cloudblogs.microsoft.com/enterprisemobility/2017/07/06/better-together-intune-and-azure-active-directory-team-up-to-improve-user-access) (Együtt jobb: Az Intune és az Azure Active Directory együtt teszi jobbá a felhasználói hozzáférést) című blogbejegyzésében találhat.
 
 ## <a name="how-to-configure-the-homepage-for-a-protected-browser"></a>Védett böngésző kezdőlapjának beállítása
 
@@ -218,9 +219,9 @@ Ezzel a beállítással adható meg a kezdőlap, amelyet a felhasználók egy v�
 
 A Microsoft Edge vagy a Managed Browser alkalmazás konfigurációjának létrehozására vonatkozó eljárással adja meg az alábbi kulcs-érték párt:
 
-|                                Kulcs                                |                                                           Value                                                            |
+|                                Kulcs                                |                                                           Érték                                                            |
 |-------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
-| <strong>com.microsoft.intune.mam.managedbrowser.homepage</strong> | Adjon meg egy érvényes URL-címet. A helytelen URL-címek biztonsági intézkedésként le vannak tiltva.<br>Például: `https://www.bing.com` |
+| <strong>com.microsoft.intune.mam.managedbrowser.homepage</strong> | Adjon meg egy érvényes URL-címet. A helytelen URL-címek biztonsági intézkedésként le vannak tiltva.<br>Példa: `https://www.bing.com` |
 
 ## <a name="how-to-configure-bookmarks-for-a-protected-browser"></a>Védett böngésző könyvjelzőinek konfigurálása
 
@@ -232,15 +233,15 @@ Ezzel a beállítással konfigurálhatók a Microsoft Edge vagy a Managed Browse
 
 A Microsoft Edge vagy a Managed Browser alkalmazás konfigurációjának létrehozására vonatkozó eljárással adja meg az alábbi kulcs-érték párt:
 
-|                                Kulcs                                 |                                                                                                                                                                                                                                                         Value                                                                                                                                                                                                                                                          |
+|                                Kulcs                                 |                                                                                                                                                                                                                                                         Érték                                                                                                                                                                                                                                                          |
 |--------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <strong>com.microsoft.intune.mam.managedbrowser.bookmarks</strong> | Ennek a konfigurációnak egy könyvjelzőlista az értéke. Minden könyvjelző egy címből és egy URL-címből áll. A címet és az URL-címet a <strong>&#124;</strong> karakter választja el.<br><br>Példa:<br> <code>Microsoft Bing&#124;https://www.bing.com</code><br><br>Több könyvjelző megadásakor az egyes párokat a <strong>&#124;&#124;</strong> karakter választja el.<br><br>Példa:<br> <code>Bing&#124;https://www.bing.com&#124;&#124;Contoso&#124;https://www.contoso.com</code> |
+| <strong>com.microsoft.intune.mam.managedbrowser.bookmarks</strong> | Ennek a konfigurációnak egy könyvjelzőlista az értéke. Minden könyvjelző egy címből és egy URL-címből áll. A címet és az URL-címet a <strong>&#124;</strong> karakter választja el.<br><br>Például:<br> <code>Microsoft Bing&#124;https://www.bing.com</code><br><br>Több könyvjelző megadásakor az egyes párokat a <strong>&#124;&#124;</strong> karakter választja el.<br><br>Például:<br> <code>Bing&#124;https://www.bing.com&#124;&#124;Contoso&#124;https://www.contoso.com</code> |
 
 ## <a name="how-to-specify-allowed-and-blocked-urls-for-a-protected-browser"></a>Engedélyezett és letiltott URL-címek meghatározása egy védett böngésző számára
 
 A Microsoft Edge vagy a Managed Browser alkalmazás konfigurációjának létrehozására vonatkozó eljárással adja meg az alábbi kulcs-érték párt:
 
-|Kulcs|Value|
+|Kulcs|Érték|
 |-|-|
 |A következő lehetőségek közül választhat:<br><ul><li>Engedélyezett URL-címek megadása (csak ezek az URL-címek engedélyezettek, más webhelyek nem érhetők el):<br> **com.microsoft.intune.mam.managedbrowser.AllowListURLs**<br><br></li><li>Tiltott URL-címek megadása (minden más webhely elérhető lesz):<br>**com.microsoft.intune.mam.managedbrowser.BlockListURLs**</li></ul>|A kulcs megfelelő értéke egy URL-címlista. Az engedélyezni vagy letiltani kívánt URL-címeket egyetlen értékként kell megadni, az egyes tételeket függőleges vonal **&#124;** karakterrel elválasztva egymástól.<br><br>Példák:<br><br><code>URL1&#124;URL2&#124;URL3</code><br><code>http://*.contoso.com/*&#124;https://*.bing.com/*&#124;https://expenses.contoso.com</code>|
 
@@ -265,7 +266,7 @@ Az alábbi táblázat azokat az engedélyezett formátumokat és helyettesítő 
 
 - Az alábbi táblázat az URL-címek megadásakor használható mintákat ismerteti:
 
-|                  URL-cím                  |                     Részletek                      |                                                Egyezik                                                |                                Nem egyezik                                 |
+|                  URL-cím                  |                     Details                      |                                                Egyezik                                                |                                Nem egyezik                                 |
 |---------------------------------------|--------------------------------------------------|-------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
 |        `http://www.contoso.com`         |              Egyetlen lapnak felel meg               |                                            `www.contoso.com`                                            |  `host.contoso.com`<br /><br />`www.contoso.com/images`<br /><br />`contoso.com`/   |
 |          `http://contoso.com`           |              Egyetlen lapnak felel meg               |                                             `contoso.com/`                                              | `host.contoso.com`<br /><br />`www.contoso.com/images`<br /><br />`www.contoso.com` |
@@ -306,7 +307,7 @@ A modell egyik előnye, hogy amikor a felhasználók megpróbálnak megnyitni eg
 
 A Microsoft Edge vagy a Managed Browser alkalmazás konfigurációjának létrehozására vonatkozó eljárással adja meg az alábbi kulcs-érték párt:
 
-| Kulcs                                                                | Value                                                 |
+| Kulcs                                                                | Érték                                                 |
 |--------------------------------------------------------------------|-------------------------------------------------------|
 | **com. microsoft. Intune. Mam. managedbrowser. AllowTransitionOnBlock** | **Hamis** blokkok esetén ezek a gyenge átmenetek |
 
@@ -336,7 +337,7 @@ Az alkalmazásnaplókban tárolt beállítások listáját az [Alkalmazásvédel
 
 - A Managed Browser csak akkor képes blokkolni a hozzáférést a webhelyekhez, ha azokat közvetlenül érik el. Nem blokkolja a hozzáférést, ha a felhasználó köztes szolgáltatások (például egy fordítási szolgáltatás) használatával éri el a webhelyet.
 
-- A hitelesítés lehetővé tétele és az Intune-dokumentáció elérése érdekében a **&#42;.microsoft.com** mentesül az engedélyezési és blokkolási beállítások alól, és mindig engedélyezve van.
+- A hitelesítés lehetővé tétele és az Intune-dokumentáció elérése érdekében a **&#42;.microsoft.com** mentesül az engedélyezési és blokkolási beállítások alól, és És mindig engedélyezve van.
 
 ### <a name="turn-off-usage-data"></a>A használatra vonatkozó adatok kikapcsolása
 A Microsoft termék- és szolgáltatásfejlesztési célból automatikus módszerekkel név nélküli adatokat gyűjt a Managed Browser teljesítményéről és használatáról. A felhasználók kikapcsolhatják az adatgyűjtést az eszköz **Használati adatok** beállításával. Nem tudja befolyásolni ezen adatok gyűjtését.

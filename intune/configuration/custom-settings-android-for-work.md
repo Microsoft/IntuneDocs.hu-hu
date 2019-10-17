@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 07/01/2019
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: 4724d6e5-05e5-496c-9af3-b74f083141f8
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: baa202ba5fdb554af56724279456cf43961ff82d
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: d85793dcf0ee6fa0186147606c9fd695a268e529
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730915"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506979"
 ---
 # <a name="use-custom-settings-for-android-enterprise-devices-in-microsoft-intune"></a>Egyéni beállítások használata Android Enterprise-eszközökhöz a Microsoft Intune-ban
 
@@ -31,9 +32,9 @@ Az Android Enterprise rendszer egyéni profiljai az Open Mobile Alliance Uniform
 
 Az Intune korlátozott számú androidos vállalati egyéni profilt támogat, többek között a következőket:
 
-- ./Vendor/MSFT/WiFi/Profile/SSID/Settings: Egy [előmegosztott kulccsal rendelkező Wi-Fi-profil létrehozása](wi-fi-profile-shared-key.md) néhány példát is tartalmaz.
-- ./Vendor/MSFT/VPN/Profile/Name/PackageList: [Az alkalmazáson belüli VPN-profilok létrehozása](android-pulse-secure-per-app-vpn.md) néhány példát is tartalmaz.
-- ./Vendor/MSFT/WorkProfile/DisallowCrossProfileCopyPaste: Tekintse meg a [példát](#example) (ebben a cikkben).
+- ./Vendor/MSFT/WiFi/Profile/SSID/Settings: [egy előmegosztott kulccsal rendelkező Wi-Fi-profil létrehozása](wi-fi-profile-shared-key.md) néhány példát is tartalmaz.
+- ./Vendor/MSFT/VPN/Profile/Name/PackageList: [hozzon létre egy alkalmazáson belüli VPN-profilt](android-pulse-secure-per-app-vpn.md) néhány példát.
+- ./Vendor/MSFT/WorkProfile/DisallowCrossProfileCopyPaste: lásd a [példát](#example) (ebben a cikkben).
 
 Ha további beállításokra van szüksége, tekintse meg [az OEMConfig for Android Enterprise](android-oem-configuration-overview.md)című témakört.
 
@@ -45,17 +46,17 @@ Ebből a cikkből megtudhatja, hogyan hozhat létre egyéni profilt az Android E
 2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
 3. Adja meg a következő beállításokat:
 
-    - **Név**: Adja meg a profil nevét, például `android enterprise custom profile`
-    - **Description** (Leírás): Adja meg a profil leírását
-    - **Platform**: Az **Android Enterprise** kiválasztása
-    - **Profil típusa**: **Egyéni** elem kiválasztása
+    - **Név**: Adja meg a profil nevét, például: `android enterprise custom profile`.
+    - **Leírás**: Itt adhatja meg a profil leírását.
+    - **Platform**: Válassza az **Android Enterprise** lehetőséget.
+    - **Profil típusa**: Válassza az **Egyéni** lehetőséget.
 
 4. Az **Egyéni OMA-URI-beállítások** menüben válassza a **Hozzáadás** lehetőséget. Adja meg a következő beállításokat:
 
-    - **Név**: Adja meg az OMA-URI beállítás egyedi nevét, így könnyen megtalálhatja.
-    - **Description** (Leírás): Adjon meg egy leírást, amely áttekintést nyújt a beállításról, valamint minden egyéb fontos adatot.
-    - **OMA-URI**: Adja meg a beállításként használni kívánt OMA-URI-t.
-    - **Adattípus**: Válassza ki az OMA-URI beállításhoz használni kívánt adattípust. A választható lehetőségek:
+    - **Név**: Adjon meg egyedi nevet az OMA-URI-beállítás számára, hogy könnyen megtalálja.
+    - **Leírás**: Adjon meg egy olyan leírást, amely áttekintést ad a beállításról és egyéb fontos részleteket tartalmaz.
+    - **OMA-URI**: Adja meg azt az OMA-URI azonosítót, amelyet beállításként kíván használni.
+    - **Adattípus**: Adja meg azt az adattípust, amelyet az OMA-URI beállításhoz szeretne használni. A választható lehetőségek:
 
       - Sztring
       - Sztring (XML-fájl)
@@ -65,11 +66,11 @@ Ebből a cikkből megtudhatja, hogyan hozhat létre egyéni profilt az Android E
       - Logikai
       - Base64 (fájl)
 
-    - **Érték**: Adja meg azt az adatértéket, amelyet hozzá szeretne rendelni a megadott OMA-URI azonosítóhoz. Az érték a választott adattípustól függ. A **Dátum és idő** típus esetén például a dátumválasztóból választhat értéket.
+    - **Érték** – Adja meg a megadott OMA-URI azonosítóhoz társítandó értéket. Az érték a választott adattípustól függ. A **Dátum és idő** típus esetén például a dátumválasztóból választhat értéket.
 
     Néhány beállítás megadása után válassza az **Exportálás** lehetőséget. Az **Exportálás** a hozzáadott értékek listáját hozza létre egy vesszővel tagolt (.csv) fájlban.
 
-5. Válassza ki **OK** a módosítások mentéséhez. Szükség szerint adjon hozzá további beállításokat.
+5. A módosítások mentéséhez válassza az **OK** gombot. Szükség szerint adjon hozzá további beállításokat.
 6. Ha elkészült, az Intune-profil létrehozásához kattintson az **OK** > **Létrehozás** lehetőségre. Ha a profil elkészült, megjelenik az **Eszközkonfiguráció – Profilok** listában.
 
 ## <a name="example"></a>Példa
@@ -80,18 +81,18 @@ Ebben a példában egy olyan egyéni profil jön létre, amely nem engedélyezi 
 2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
 3. Adja meg a következő beállításokat:
 
-    - **Név**: Adja meg a profil nevét, például `android ent block copy paste custom profile`.
-    - **Description** (Leírás): Adja meg a profil leírását.
-    - **Platform**: Válassza az **Android Enterprise**lehetőséget.
-    - **Profil típusa**: Válassza az **Egyéni**lehetőséget.
+    - **Név**: Adja meg a profil nevét, például: `android ent block copy paste custom profile`.
+    - **Leírás:** Itt adhatja meg a profil leírását.
+    - **Platform**: Válassza az **Android Enterprise** lehetőséget.
+    - **Profil típusa**: Válassza az **Egyéni** lehetőséget.
 
 4. Az **Egyéni OMA-URI-beállítások** menüben válassza a **Hozzáadás** lehetőséget. Adja meg a következő beállításokat:
 
-    - **Név**: Írjon be valamit, például `Block copy and paste`.
-    - **Description** (Leírás): Írjon be valamit, például `Blocks copy/paste between work and personal apps`.
-    - **OMA-URI**: Adja meg a `./Vendor/MSFT/WorkProfile/DisallowCrossProfileCopyPaste` értéket.
-    - **Adattípus**: Válassza a **Boolean** értéket, hogy az OMA-URI értéke **true** vagy **false**.
-    - **Érték**: Válassza az **igaz**lehetőséget.
+    - **Név**: Adjon meg a következőhöz hasonló nevet: `Block copy and paste`.
+    - **Leírás**: Adjon meg a következőhöz hasonló leírást: `Blocks copy/paste between work and personal apps`.
+    - **OMA-URI**: Írja be a következőt: `./Vendor/MSFT/WorkProfile/DisallowCrossProfileCopyPaste`.
+    - **Adattípus**: Válassza a **Logikai** lehetőséget, hogy az OMA-URI azonosító értéke **Igaz** vagy **Hamis** lehessen.
+    - **Érték**: Válassza az **Igaz** lehetőséget.
 
 5. Miután megadta a beállításokat, a környezetének a képhez hasonlónak kell kinéznie:
 

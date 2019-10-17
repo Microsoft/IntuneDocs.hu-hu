@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 05/07/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 7e3135c1-df26-48c9-aa4c-cdab6168897a
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fd36b0827a2981f404772ee75441573264debfb3
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: cc298691ea3df923d1804005be61217325f52112
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732015"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72510266"
 ---
 # <a name="how-your-ios-users-get-their-apps"></a>iOS-felhasználói alkalmazások letöltése
 
@@ -52,7 +53,7 @@ A regisztrált felhasználók úgy jutnak hozzá az alkalmazásokhoz, hogy a kö
 
 Az alkalmazások hozzáadásáról az [Alkalmazás hozzáadása a Microsoft Intune-hoz](../apps/apps-add.md) című témakörben találhat további információt.
 
-## <a name="see-also"></a>Lásd még:
+## <a name="see-also"></a>További információ
 [Android-felhasználói alkalmazások letöltése](end-user-apps-android.md)
 
 [Windows-felhasználói alkalmazások letöltése](end-user-apps-windows.md)

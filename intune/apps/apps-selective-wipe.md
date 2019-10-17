@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 10/03/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: apps
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 42605e6e-5b84-44ff-b86e-346ea123b53e
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 50ea427f1365285e08b6ad0e5a098b67421f941f
-ms.sourcegitcommit: 223d64a72ec85fe222f5bb10639da729368e6d57
+ms.openlocfilehash: a5bcdf9c3218df91bea85858ea21e88718e81633
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940270"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72498312"
 ---
 # <a name="how-to-wipe-only-corporate-data-from-intune-managed-apps"></a>Csak vállalati adatok törlése az Intune által felügyelt alkalmazásokból
 
@@ -39,11 +40,11 @@ A vállalati alkalmazásadatok szelektív törléséhez hozzon létre törlési 
 > Az alkalmazásból a natív címjegyzékbe közvetlenül szinkronizált névjegyeket a rendszer eltávolítja. A natív címjegyzékből egy másik külső forrásba szinkronizált névjegyek nem törölhetők. Ez jelenleg csak a Microsoft Outlook alkalmazásra érvényes.
 
 ## <a name="deployed-wip-policies-without-user-enrollment"></a>Felhasználói regisztráció nélkül telepített, folyamatban lévő befejező házirendek
-A Windows Information Protection (folyamatban lévő) házirendek telepítése anélkül végezhető el, hogy MDM-felhasználóknak kellene regisztrálniuk Windows 10-es eszközét. Ez a konfiguráció lehetővé teszi, hogy a vállalatok biztosítsák a vállalati dokumentumok védelmét a WIP-konfiguráció alapján, miközben a felhasználó saját maga felügyelheti Windows-eszközeit. Ha a dokumentumok védve vannak WIP-szabályzattal, a védett adatokat az Intune-rendszergazdák szelektív módon törölhetik. Ehhez ki kell választaniuk a felhasználót és az eszközt, majd el kell küldeniük egy adattörlési kérést, amelynek hatására WIP-szabályzat által védett összes adat használhatatlanná válik. A Azure Portal Intune-ban válassza az **ügyfél** > -alkalmazás**szelektív törlés**lehetőséget. További információ: [A Windows Információvédelem (WIP) alkalmazásvédelmi szabályzatainak létrehozása és bevezetése az Intune használatával](windows-information-protection-policy-create.md).
+A Windows Information Protection (folyamatban lévő) házirendek telepítése anélkül végezhető el, hogy MDM-felhasználóknak kellene regisztrálniuk Windows 10-es eszközét. Ez a konfiguráció lehetővé teszi, hogy a vállalatok biztosítsák a vállalati dokumentumok védelmét a WIP-konfiguráció alapján, miközben a felhasználó saját maga felügyelheti Windows-eszközeit. Ha a dokumentumok védve vannak WIP-szabályzattal, a védett adatokat az Intune-rendszergazdák szelektív módon törölhetik. Ehhez ki kell választaniuk a felhasználót és az eszközt, majd el kell küldeniük egy adattörlési kérést, amelynek hatására WIP-szabályzat által védett összes adat használhatatlanná válik. A Azure Portal Intune-ban válassza az **ügyfélalkalmazás** > **alkalmazás szelektív törlés**lehetőséget. További információ: [A Windows Információvédelem (WIP) alkalmazásvédelmi szabályzatainak létrehozása és bevezetése az Intune használatával](windows-information-protection-policy-create.md).
 
 ## <a name="create-a-wipe-request"></a>Törlési kérés
 
-1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com).
+1. Jelentkezzen be az [Azure portálra](https://portal.azure.com).
 
 2. Válassza a **Minden szolgáltatás** lehetőséget, a szűrési szövegmezőbe írja be az **Intune** szót, majd válassza az **Intune** elemet. Amikor megjelenik az Intune panel, válassza az **Ügyfélalkalmazások** panelt.
 
@@ -88,7 +89,7 @@ A felfüggesztett állapotú törlés addig lesz megjelenítve, míg manuálisan
 
 3. Ha a rendszer törlési megerősítést kér, válassza az **Igen** vagy a **Nem** lehetőséget, majd kattintson az **OK** gombra.
 
-## <a name="see-also"></a>Lásd még:
+## <a name="see-also"></a>További információ
 [Mi az alkalmazásvédelmi szabályzat?](app-protection-policy.md)
 
 [Mi az alkalmazáskezelés?](app-management.md)

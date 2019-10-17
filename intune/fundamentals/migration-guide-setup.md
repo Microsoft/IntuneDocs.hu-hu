@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 03/04/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 60cfa440-0723-4ea0-bacf-3c5d26f9a1d3
@@ -15,12 +16,12 @@ ms.reviewer: dagerrit
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 45f3c0c9a561b488f6a972c1ae5048408c2d19c7
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 7ca0983b7b637b7e85bef97cd77e6c870c4e43eb
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732259"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72510012"
 ---
 # <a name="basic-setup"></a>Alapszintű beállítás
 
@@ -71,7 +72,7 @@ Az Intune-ra való migráláshoz Intune-előfizetés szükséges.
 
 - Ha új Azure Active Directory-bérlőt hozott létre, ismerje meg, [hogyan lehet új felhasználókat létrehozni vagy a helyszíni Active Directory (AD) felhasználóit ide szinkronizálni.](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect)
 
-### <a name="task-3-set-your-mdm-authority-to-intune"></a>3\. feladat: A MDM-szolgáltató beállítása az Intune-ra
+### <a name="task-3-set-your-mdm-authority-to-intune"></a>3\. feladat: az Intune beállítása MDM-szolgáltatóként
 
 Az Intune kezelhető az Azure Portalról vagy a Configuration Manager Aktuális ágának konzoljáról. Ha nincs rá szükség, hogy az Intune-t a Configuration Manager Aktuális ágán alapuló környezettel integrálja, ajánlott az Intune-t az [Azure Portalról](https://portal.azure.com) kezelni.
 
@@ -82,6 +83,6 @@ Az Intune Azure-portál aktiválásához állítsa be az **Intune**-t MDM-szolg�
 
 Ismerje meg, [hogyan állíthatja be a mobileszköz-felügyeleti szolgáltatót](mdm-authority-set.md).
 
-## <a name="next-step"></a>Következő lépés
+## <a name="next-step"></a>További lépések
 
 [Eszköz- és alkalmazásszabályzatok](../migration-guide-configure-policies.md) konfigurálása.

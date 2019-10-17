@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 06/21/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ac77b590-a7ec-45a0-9516-ebf5243b6210
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 97efe5c2445263bba11ee083e89d36fde1986dc1
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 16f5be886a1c62ac6743502207e043e1582ce5e7
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71732395"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72504475"
 ---
 # <a name="what-is-mobile-threat-defense-integration-with-intune"></a>Mit jelent a Mobile Threat Defense integrációja az Intune-nal?
 Az Intune a mobil veszélyforrások elleni védelem gyártójától származó adatokat a megfelelőségi szabályzatok és a feltételes hozzáférési szabályok információs forrásaként integrálhatja. Ezekkel az információkkal megvédheti a vállalati erőforrásokat, például az Exchange-et és a SharePointot azáltal, hogy blokkolja a hozzáférést a feltört mobileszközökön.  
@@ -36,7 +37,7 @@ A vállalatok általában proaktív módon védik a számítógépeket a biztons
 
 Az Intune egy Mobile Threat Defense-összekötőt használ az Intune és a kiválasztott Mobile Threat Defense-gyártó közötti kommunikációs csatorna létrehozásához. Az Intune Mobile Threat Defense-partnerek intuitív és könnyen telepíthető alkalmazásokat telepíthetnek a mobileszközök számára. Ezek az alkalmazások aktívan megvizsgálják és elemzik az Intune-nal való megosztásra vonatkozó veszélyforrásokat. Az Intune jelentéskészítési és kényszerítési célból is felhasználhatja az adatgyűjtést.  
 
-Példa: Egy csatlakoztatott Mobile Threat Defense-alkalmazás jelentést küld a Mobile Threat Defense-gyártónak arról, hogy a hálózaton lévő telefon jelenleg csatlakoztatva van egy olyan hálózathoz, amely sebezhető az ember számára a középső támadásokban. Ez az információ az alacsony, közepes vagy magas megfelelő kockázati szintre van kategorizálva. Ezt a kockázati szintet a rendszer az Intune-ban beállított kockázati szintbeli kedvezmények összehasonlításával hasonlítja össze. Ezen összehasonlítás alapján a kiválasztott erőforrásokhoz való hozzáférés visszavonható, miközben az eszköz biztonsága sérül.
+Például: egy csatlakoztatott Mobile Threat Defense-alkalmazás jelentést küld a Mobile Threat Defense-gyártónak arról, hogy a hálózaton lévő telefon jelenleg csatlakoztatva van egy olyan hálózathoz, amely sebezhető az ember számára a középső támadásokban. Ez az információ az alacsony, közepes vagy magas megfelelő kockázati szintre van kategorizálva. Ezt a kockázati szintet a rendszer az Intune-ban beállított kockázati szintbeli kedvezmények összehasonlításával hasonlítja össze. Ezen összehasonlítás alapján a kiválasztott erőforrásokhoz való hozzáférés visszavonható, miközben az eszköz biztonsága sérül.
 
 ## <a name="what-data-does-intune-collect-for-mobile-threat-defense"></a>Milyen adatokat gyűjt az Intune a Mobile Threat Defense szolgáltatás számára?
 

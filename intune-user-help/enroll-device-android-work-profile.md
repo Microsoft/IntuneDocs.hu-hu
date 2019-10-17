@@ -9,6 +9,7 @@ ms.date: 07/18/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: 33ffff16-0280-43bf-87b3-74ddf4439bfa
 searchScope:
@@ -18,12 +19,12 @@ ms.reviewer: arnab
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bff8f2d74b06d1cd4ee7dffe594917b4d0946d5c
-ms.sourcegitcommit: 2bce5e43956b6a5244a518caa618f97f93b4f727
+ms.openlocfilehash: 50e4bde49f671a7f828ddb982fa18a3e68de25f6
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68467319"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506273"
 ---
 # <a name="enroll-device-with-android-work-profile"></a>Eszköz regisztrálása androidos munkahelyi profillal
 
@@ -49,7 +50,7 @@ Többet tudhat meg arról, hogy [mi történik a munkahelyi profil létrehozása
 
     ![Képernyőkép a következő képernyőről](./media/android-wp-04-1908.png)
 
-5. A következő képernyőn a Google használati feltételeit láthatja a munkahelyi profil létrehozásához. Olvassa el a feltételeket, majd koppintson az **elfogadás &AMP; folytatás**elemre. A képernyő megjelenése az eszköz Android-verziójától függően változhat. 
+5. A következő képernyőn a Google használati feltételeit láthatja a munkahelyi profil létrehozásához. Olvassa el a feltételeket, majd koppintson az **elfogadás & folytatás**elemre. A képernyő megjelenése az eszköz Android-verziójától függően változhat. 
 
     ![Képernyőfelvétel a Google munkahelyi profiljának használati feltételeiről](./media/android-wp-05-1908.png)  
 

@@ -1,5 +1,5 @@
 ---
-title: Egyéni - eszközök – Microsoft Intune Windows Holographic for Business beállításai
+title: Egyéni beállítások – Windows holografikus for Business-eszközök – Microsoft Intune
 description: 'Hozzáadhat vagy létrehozhat egy egyéni profilt, amelyet a Microsoft Intune-ban Windows Holographic for Businesst futtató eszközök (például a Microsoft Hololens) OMA-URI-beállításaihoz használhat. Az alábbi beállításokat adhatja meg: AllowFastReconnect, AllowVPN, AllowUpdateService, UpdateServiceURL, RequireUpdatesApproval, ApprovedUpdates, valamint az ApplicationLaunchRestrictions szabályzatkonfigurációs szolgáltató (CSP) beállításait.'
 keywords: ''
 author: MandiOhlinger
@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 12/06/2018
 ms.article: article
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: medium
 ms.topic: reference
 ms.technology: ''
@@ -15,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6547149a7de81b06ed82d308ece0527151225d28
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 54c38bac5ddf9eee1dd5f1dc6d544de3fa2395ab
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730859"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506897"
 ---
 # <a name="use-custom-settings-for-windows-holographic-for-business-devices-in-intune"></a>Egyéni beállítások használata az Intune-ban a Windows Holographic for Business-eszközökhöz
 
@@ -40,17 +41,17 @@ Ebből a cikkből megtudhatja, hogyan hozhat létre egyéni profilt a Windows Ho
 2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
 3. Adja meg a következő beállításokat:
 
-    - **Név**: Adja meg a profil nevét, például `hololens custom profile`.
-    - **Description** (Leírás): Adja meg a profil leírását.
-    - **Platform**: Válassza **a Windows 10 és újabb**lehetőséget.
-    - **Profil típusa**: Válassza az **Egyéni**lehetőséget.
+    - **Név**: Adja meg a profil nevét, például: `hololens custom profile`.
+    - **Leírás:** Itt adhatja meg a profil leírását.
+    - **Platform**: Válassza a **Windows 10-es vagy újabb verzió** lehetőséget.
+    - **Profil típusa**: Válassza az **Egyéni** lehetőséget.
 
 4. Az **Egyéni OMA-URI-beállítások** menüben válassza a **Hozzáadás** lehetőséget. Adja meg a következő beállításokat:
 
-    - **Név**: Adjon meg egy egyedi nevet az OMA-URI beállítás számára, amellyel az egyszerűen azonosítható a beállítások listájában.
-    - **Description** (Leírás): Adjon meg egy leírást, amely áttekintést nyújt a beállításról, valamint minden egyéb fontos adatot.
-    - **OMA-URI** (megkülönbözteti a kis-és nagybetűket): Adja meg a beállításként használni kívánt OMA-URI-t.
-    - **Adattípus**: Válassza ki az OMA-URI beállításhoz használni kívánt adattípust. A választható lehetőségek:
+    - **Név** – Adjon meg egy egyedi nevet az OMA-URI-beállítás számára, amellyel az egyszerűen azonosítható a beállítások listájában.
+    - **Leírás**: Adjon meg egy olyan leírást, amely áttekintést ad a beállításról és egyéb fontos részleteket tartalmaz.
+    - **OMA-URI** (megkülönbözteti a kis- és nagybetűket) – Adja meg azt az OMA-URI azonosítót, amelyet beállításként kíván használni.
+    - **Adattípus**: Adja meg azt az adattípust, amelyet az OMA-URI beállításhoz szeretne használni. A választható lehetőségek:
 
         - Sztring
         - Sztring (XML-fájl)
@@ -60,11 +61,11 @@ Ebből a cikkből megtudhatja, hogyan hozhat létre egyéni profilt a Windows Ho
         - Logikai
         - Base64 (fájl)
 
-    - **Érték**: Adja meg azt az adatértéket, amelyet hozzá szeretne rendelni a megadott OMA-URI azonosítóhoz. Az érték a választott adattípustól függ. A **Dátum és idő** típus esetén például a dátumválasztóból választhat értéket.
+    - **Érték** – Adja meg a megadott OMA-URI azonosítóhoz társítandó értéket. Az érték a választott adattípustól függ. A **Dátum és idő** típus esetén például a dátumválasztóból választhat értéket.
 
     Néhány beállítás megadása után válassza az **Exportálás** lehetőséget. Az **Exportálás** a hozzáadott értékek listáját hozza létre egy vesszővel tagolt (.csv) fájlban.
 
-5. Válassza ki **OK** a módosítások mentéséhez. Szükség szerint adjon hozzá további beállításokat.
+5. A módosítások mentéséhez válassza az **OK** gombot. Szükség szerint adjon hozzá további beállításokat.
 6. Ha elkészült, az Intune-profil létrehozásához kattintson az **OK** > **Létrehozás** lehetőségre. Ha a profil elkészült, megjelenik az **Eszközkonfiguráció – Profilok** listában.
 
 ## <a name="recommended-custom-settings"></a>Ajánlott egyéni beállítások

@@ -6,8 +6,9 @@ author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
 ms.date: 03/26/2019
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: ''
 ms.technology: ''
 ms.assetid: ''
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 324550836cd8e7c8ea2786d15618d5f5010a043f
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: e7ed93c86d3fbe7ed7a6ac5d4b1a3494fb55f2bc
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730955"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72506993"
 ---
 # <a name="troubleshoot-and-see-potential-issues-on-android-zebra-devices-in-microsoft-intune"></a>Az androidos Zebra-eszközök lehetséges problémáinak elhárítása és megjelenítése Microsoft Intune
 
@@ -31,7 +32,7 @@ Microsoft Intune a [Zebra Mobility Extensions (MX) segítségével kezelheti az 
 
 Ez a funkció az alábbiakra vonatkozik:
 
-- Android
+- Android:
 
 Például létrehozhat egy profilt a StageNow-ben egy eszköz konfigurálásához. A StageNow-profil létrehozásakor az utolsó lépés létrehoz egy fájlt a profil teszteléséhez. Ezt a fájlt a StageNow alkalmazással használja az eszközön.
 
@@ -53,14 +54,14 @@ Ha közvetlenül a számítógépen lévő StageNow használatával tesztel egy 
 ### <a name="get-logs-using-android-debug-bridge"></a>Naplók beolvasása az Android hibakeresési híddal
 Ha a profil már telepítve van az Intune-nal, a naplók beszerzéséhez az eszközt az [Android debug Bridge (ADB)](https://developer.android.com/studio/command-line/adb) használatával (az Android webhelyének megnyitásakor) kapcsolja be.
 
-Az eszközön a naplók a következő helyre lesznek mentve:`/sdcard/Android/data/com.microsoft.windowsintune.companyportal/files`
+Az eszközön a naplók a következő helyre lesznek mentve: `/sdcard/Android/data/com.microsoft.windowsintune.companyportal/files`
 
 ### <a name="get-logs-from-email"></a>Naplók beolvasása e-mailben
 A naplók az Intune-nal való üzembe helyezését követően a végfelhasználók e-mailben elérhetik a naplókat az eszközön lévő e-mail-alkalmazás használatával. A zebra eszközön nyissa meg a Céges portál alkalmazást, és [küldje el a naplókat](https://docs.microsoft.com/intune-user-help/send-logs-to-your-it-admin-by-email-android). A naplók küldése funkcióval egy PowerLift-incidens AZONOSÍTÓját is létrehozhatja, amelyet akkor hivatkozhat, ha kapcsolatba lép a Microsoft ügyfélszolgálatával.
 
 ## <a name="read-the-logs"></a>Naplók olvasása
 
-Amikor megtekinti a naplókat, hiba történt, amikor megjelenik a `<characteristic-error>` címke. A hiba részletei a `<parm-error>` címke > `desc` tulajdonságba íródnak.
+Amikor megtekinti a naplókat, hiba történt, amikor megjelenik a `<characteristic-error>` címke. A hiba részletei a `<parm-error>` címkére íródnak > `desc` tulajdonságot.
 
 ## <a name="error-types"></a>Hibák típusai
 
@@ -136,7 +137,7 @@ Ha a régebbi eszközök bejelentkeznek a céges portál alkalmazással, a felha
 
 ### <a name="management-actions-take-a-long-time"></a>A felügyeleti műveletek hosszú ideig tartanak
 
-Ha a Google Play-szolgáltatások nem érhetők el, néhány feladat akár 8 órát is igénybe vehet. [Az Android rendszerhez készült Intune céges portál alkalmazás korlátai](https://support.microsoft.com/help/3211588/limitations-of-intune-company-portal-app-for-android-in-china) (egy másik Microsoft-webhely megnyitása) jó erőforrás lehet.
+Ha a Google Play-szolgáltatások nem érhetők el, néhány feladat akár 8 órát is igénybe vehet. [Az Androidhoz készült Intune céges portál alkalmazás korlátai](https://support.microsoft.com/help/3211588/limitations-of-intune-company-portal-app-for-android-in-china) (egy másik Microsoft-webhely megnyitása) jó erőforrás lehet.
 
 ### <a name="device-spoofing-suspected-shows-in-intune"></a>"Az eszköz hamisításának gyanúja" mutatja az Intune-ban
 

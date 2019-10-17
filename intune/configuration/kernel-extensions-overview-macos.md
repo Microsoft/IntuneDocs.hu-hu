@@ -9,18 +9,19 @@ manager: dougeby
 ms.date: 06/05/2019
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: medium
 ms.technology: ''
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9832089cf73405a9e39795b076e9ead84bc7d7cd
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: abcd7b96de8f5f3984c2d4407abaf11b7b6b7e4f
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730591"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72492485"
 ---
 # <a name="add-macos-kernel-extensions-in-intune"></a>MacOS kernel-bővítmények hozzáadása az Intune-ban
 
@@ -42,7 +43,7 @@ A funkció használatához az eszközöknek a következőket kell tartalmazniuk:
 
   VAGY
 
-- Regisztrálva van az Intune-ban a "felhasználó által jóváhagyott beléptetéssel" (Apple term). [Felkészülés a kernel-bővítmények változásaira a MacOS High Sierra-ban](https://support.apple.com/en-us/HT208019) (az Apple webhelyének megnyitása) további információkat tartalmaz.
+- Regisztrálva van az Intune-ban a "felhasználó által jóváhagyott beléptetéssel" (Apple term). [Felkészülés a kernel-bővítmények a MacOS magas Sierra-ben való változásaira](https://support.apple.com/en-us/HT208019) (az Apple webhelyének megnyitása) további információkat tartalmaz.
 
 Az Intune a "konfigurációs profilok" használatával hozza létre és szabja testre ezeket a beállításokat a szervezet igényeinek megfelelően. Miután hozzáadta ezeket a funkciókat egy profilhoz, leküldheti vagy telepítheti a profilt macOS-eszközökre a szervezetben.
 
@@ -61,8 +62,8 @@ Ez a cikk bemutatja, hogyan hozhat létre az Intune-ban kernel-bővítményeket 
 >
 > A notarization szabályzattal, valamint a frissítésekkel és a változásokkal kapcsolatos további információkért tekintse meg a következő forrásokat:
 >
-> - [Notarizing az alkalmazást a terjesztés előtt](https://developer.apple.com/documentation/security/notarizing_your_app_before_distribution) (az Apple webhelyén nyílik meg) 
-> - [Felkészülés a kernel-bővítmények változásaira a MacOS High Sierra-ban](https://support.apple.com/en-us/HT208019) (az Apple webhelyén nyílik meg)
+> - [Notarizing az alkalmazást a terjesztés előtt (az](https://developer.apple.com/documentation/security/notarizing_your_app_before_distribution) Apple webhelyén nyílik meg) 
+> - [Felkészülés a kernel-bővítmények változásaira a MacOS High Sierra-ben](https://support.apple.com/en-us/HT208019) (az Apple webhelyén nyílik meg)
 
 ## <a name="create-the-profile"></a>A profil létrehozása
 
@@ -70,11 +71,11 @@ Ez a cikk bemutatja, hogyan hozhat létre az Intune-ban kernel-bővítményeket 
 2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
 3. Adja meg a következő tulajdonságokat:
 
-    - **Név**: Adjon meg egy leíró nevet az új profilhoz.
-    - **Description** (Leírás): Adja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
-    - **Platform**: **MacOS** kiválasztása
-    - **Profil típusa**: Válasszaa bővítmények lehetőséget.
-    - **Beállítások**: Adja meg a konfigurálni kívánt beállításokat. Az összes beállítás listáját és a teendőket lásd:
+    - **Név**: Adja meg az új profil leíró nevét.
+    - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
+    - **Platform**: válassza a **MacOS** lehetőséget
+    - **Profil típusa**: válassza a **bővítmények**lehetőséget.
+    - **Beállítások**: adja meg a konfigurálni kívánt beállításokat. Az összes beállítás listáját és a teendőket lásd:
 
         - [macOS](kernel-extensions-settings-macos.md)
 

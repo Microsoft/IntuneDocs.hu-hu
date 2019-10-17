@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 08/05/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: enrollment
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: f94dbc2e-a855-487e-af6e-8d08fabe6c3d
@@ -17,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 24ac01525a0fa1d08187fcb9a96297f2d1094890
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 55147de71d764feb89aa305c7e3282cfb1fff3c1
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71729643"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72503045"
 ---
 # <a name="set-up-enrollment-for-windows-devices"></a>Windowsos eszközök regisztrációjának beállítása
 
@@ -66,12 +67,12 @@ Ha általános jogú felhasználók jelentkeznek be az Azure AD-beli hitelesít�
 ## <a name="simplify-windows-enrollment-without-azure-ad-premium"></a>Windowsos regisztráció egyszerűsítése Prémium szintű Azure AD nélkül
 A regisztráció leegyszerűsítéséhez hozzon létre egy DNS-aliast (CNAME rekordtípust), amely átirányítja a regisztrációs kérelmeket az Intune-kiszolgálókra. Ellenkező esetben az Intune-hoz csatlakozni kívánó felhasználóknak a regisztráció során meg kell adniuk az Intune-kiszolgáló nevét.
 
-**1. lépés: CNAME** létrehozása (nem kötelező)<br>
+**1. lépés: CNAME rekordok létrehozása** (nem kötelező)<br>
 Hozza létre a megfelelő CNAME DNS-erőforrásrekordokat a céges tartományhoz. Ha a munkahelyi webhely címe például contoso.com, akkor olyan CNAME rekordot kell létrehoznia a DNS-ben, amely az EnterpriseEnrollment.contoso.com webhelyről átirányítja a felhasználókat az enterpriseenrollment-s.manage.microsoft.com webhelyre.
 
 A CNAME DNS-bejegyzések létrehozása nem kötelező, viszont a CNAME rekordok létrehozása egyszerűbbé teszi a regisztrációt a felhasználók számára. Ha nem található CNAME rekord, akkor a rendszer kéri a felhasználókat, hogy írják be az MDM-kiszolgáló nevét: enrollment.manage.microsoft.com.
 
-|Típus|Gazdagép neve|A következő helyre mutat|TTL|
+|Típus|Gazdagép neve|A következő helyre mutat|Élettartam|
 |----------|---------------|---------------|---|
 |CNAME|EnterpriseEnrollment.munkahelyi_tartomány.com|EnterpriseEnrollment-s.manage.microsoft.com| 1 óra|
 |CNAME|EnterpriseRegistration.munkahelyi_tartomány.com|EnterpriseRegistration.windows.net|1 óra|
@@ -84,7 +85,7 @@ Ha a cégnek több UPN-utótagja is van, akkor mindegyik tartománynévhez kül�
 
 A Contoso DNS-rendszergazdájának a következő CNAME-elemeket kell létrehoznia:
 
-|Típus|Gazdagép neve|A következő helyre mutat|TTL|  
+|Típus|Gazdagép neve|A következő helyre mutat|Élettartam|  
 |----------|---------------|---------------|---|
 |CNAME|EnterpriseEnrollment.contoso.com|EnterpriseEnrollment-s.manage.microsoft.com|1 óra|
 |CNAME|EnterpriseEnrollment.us.contoso.com|EnterpriseEnrollment-s.manage.microsoft.com|1 óra|
@@ -100,7 +101,7 @@ A EnterpriseEnrollment-s.manage.microsoft.com az előnyben részesített teljes 
 ## <a name="alternate-methods-of-redirection-are-not-supported"></a>Az átirányítás alternatív módszerei nem támogatottak
 A CNAME-konfigurációtól eltérő metódus használata nem támogatott. Ha például egy proxykiszolgálót használ a enterpriseenrollment.contoso.com/EnrollmentServer/Discovery.svc átirányítására a enterpriseenrollment-s.manage.microsoft.com/EnrollmentServer/Discovery.svc vagy a manage.microsoft.com/EnrollmentServer/Discovery.svc-re, nem támogatott.
 
-**2. lépés: CNAME** ellenőrzése (nem kötelező)<br>
+**2. lépés: a CNAME ellenőrzése** (nem kötelező)<br>
 1. Az [Azure Portalbeli Intune-ban](https://aka.ms/intuneportal) válassza az **Eszközök regisztrálása** > **Windows-regisztráció** > **CNAME-ellenőrzés** elemet.
 2. A **tartomány** mezőben adja meg a céges webhelyet, majd válassza a **Teszt** lehetőséget.
 

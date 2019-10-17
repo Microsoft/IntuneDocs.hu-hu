@@ -9,18 +9,19 @@ manager: dougeby
 ms.date: 3/6/2018
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: medium
 ms.technology: ''
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec832e6eb78df9b7ee977705e8b60c5ee2e898fa
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 0df55e79dbc54926c0507889620f2667d7b8bd7b
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730719"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72489833"
 ---
 # <a name="microsoft-intune-windows-81-and-later-device-restriction-settings"></a>A Windows 8.1-es és újabb verzióinak eszközkorlátozásokra vonatkozó beállításai a Microsoft Intune-ban
 
@@ -35,7 +36,7 @@ A cikk bemutatja a Microsoft Intune olyan eszközkorlátozásokra vonatkozó be�
 - **Tűzfal** – Előírja a Windows tűzfal bekapcsolását.
 - **Felhasználói fiókok felügyelete** – Kötelezővé teszi a felhasználói fiókok felügyeletének használatát az eszközökön.
 
-## <a name="password"></a>Windows 10
+## <a name="password"></a>Jelszó
 - **Kötelező jelszó típusa** – Megköveteli a végfelhasználótól, hogy jelszót adjon meg az eszköz eléréséhez.
 - **Jelszó minimális hossza** – Konfigurálja a jelszó minimális hosszát (karakterszámát).
 - **Sikertelen bejelentkezések száma, mielőtt törlődne az eszközön lévő összes adat** – Törli az eszközön lévő adatokat a megadott számú sikertelen bejelentkezési kísérlet után.
@@ -50,7 +51,7 @@ Amikor kényszeríti az eszközön a titkosítást, a helyreállítási kulcs cs
 
 
 
-## <a name="browser"></a>Browser
+## <a name="browser"></a>Böngésző
 - **Automatikus kitöltés** – Engedélyezi a felhasználók számára a böngésző automatikus kiegészítési funkciója beállításainak módosítását.
 - **Csalással kapcsolatos figyelmeztetések** – Engedélyezi vagy letiltja a potenciálisan rosszindulatú webhelyekről szóló figyelmeztetéseket.
 - **SmartScreen** – Engedélyezi vagy letiltja a potenciálisan rosszindulatú webhelyekről szóló figyelmeztetéseket.

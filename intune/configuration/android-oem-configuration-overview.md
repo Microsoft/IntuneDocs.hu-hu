@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 09/18/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: configuration
 ms.localizationpriority: ''
 ms.technology: ''
 ms.assetid: ''
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8c46caf4d1c9f9a32a7f324fc5e1734dbe8043bd
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: 81a5293f0c7ef998b74e59efdfb43a633b780e5c
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730959"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72507011"
 ---
 # <a name="use-and-manage-android-enterprise-devices-with-oemconfig-in-microsoft-intune"></a>Androidos nagyvállalati eszközök használata és kezelése a OEMConfig-ben Microsoft Intune
 
@@ -35,7 +36,7 @@ Ez a funkció az alábbiakra vonatkozik:
 
 Ez a cikk a OEMConfig ismerteti, felsorolja az előfeltételeket, bemutatja, hogyan hozhat létre konfigurációs profilt, és listázza a támogatott OEMConfig-alkalmazásokat az Intune-ban.
 
-## <a name="overview"></a>Áttekintés
+## <a name="overview"></a>Házirend
 
 A OEMConfig szabályzatok az [alkalmazás-konfigurációs házirendhez](../apps/app-configuration-policies-overview.md)hasonló speciális típusú eszköz-konfigurációs házirend. A OEMConfig egy, a Google által meghatározott szabvány, amely az alkalmazások konfigurációját használja az Androidban az eszközök beállításainak az OEM-ek által írt alkalmazásokba való küldéséhez (eredeti berendezésgyártó). Ez a szabvány lehetővé teszi, hogy a számítógépgyártók és a EMMs (nagyvállalati mobilitási felügyelet) szabványosított módon hozzanak létre és támogassák az OEM-specifikus szolgáltatásokat. [További információ a OEMConfig](https://blog.google/products/android-enterprise/oemconfig-supports-enterprise-device-features/).
 
@@ -83,10 +84,10 @@ Győződjön meg arról, hogy az eszköz támogatja a OEMConfig, a megfelelő OE
 2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
 3. Adja meg a következő tulajdonságokat:
 
-    - **Név**: Adjon meg egy leíró nevet az új profilhoz.
-    - **Description** (Leírás): Adja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
-    - **Platform**: Válassza az **Android Enterprise**lehetőséget.
-    - **Profil típusa**: Válassza a **OEMConfig**lehetőséget.
+    - **Név**: Adja meg az új profil leíró nevét.
+    - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
+    - **Platform**: válassza az **Android Enterprise**lehetőséget.
+    - **Profil típusa**: válassza a **OEMConfig**lehetőséget.
 
 4. Válassza a **társított alkalmazás**lehetőséget, válassza ki a korábban hozzáadott meglévő OEMConfig-alkalmazást > **OK gombra**. Ügyeljen arra, hogy a megfelelő OEMConfig-alkalmazást válassza ki azokhoz az eszközökhöz, amelyekre a szabályzatot hozzárendeli.
 
@@ -98,9 +99,9 @@ Győződjön meg arról, hogy az eszköz támogatja a OEMConfig, a megfelelő OE
 5. A **beállítások konfigurálása**a alkalmazásban területen válassza a **Configuration Designer** vagy a **JSON-szerkesztő**használatát:
 
     > [!TIP]
-    > Olvassa el az OEM dokumentációját, és győződjön meg róla, hogy helyesen konfigurálja a tulajdonságokat. Ezeket az alkalmazás-tulajdonságokat az OEM, nem pedig az Intune tartalmazza. Az Intune minimálisan ellenőrzi a tulajdonságokat, vagy a beírt értéket. Ha például egy portszámot ad `abcd` meg, a profil a-ként lesz mentve, és az eszközön a konfigurált értékekkel lesz telepítve. Ügyeljen arra, hogy a helyes adatokat adja meg.
+    > Olvassa el az OEM dokumentációját, és győződjön meg róla, hogy helyesen konfigurálja a tulajdonságokat. Ezeket az alkalmazás-tulajdonságokat az OEM, nem pedig az Intune tartalmazza. Az Intune minimálisan ellenőrzi a tulajdonságokat, vagy a beírt értéket. Ha például a `abcd` értéket adja meg egy portszámhoz, a profil a-ként lesz mentve, és az eszközön a konfigurált értékekkel lesz telepítve. Ügyeljen arra, hogy a helyes adatokat adja meg.
 
-    - **Konfigurációs tervező**: Ha ezt a beállítást választja, az alkalmazás sémáján belül elérhető tulajdonságok is megjelennek a konfiguráláshoz.
+    - **Configuration Designer**: Ha bejelöli ezt a beállítást, az alkalmazás sémáján belül elérhető tulajdonságok is megjelennek a konfiguráláshoz.
 
       - A Configuration Designer helyi menüi azt jelzik, hogy több lehetőség is rendelkezésre áll. A helyi menü például lehetővé teheti a beállítások hozzáadását, törlését és átrendezését. Ezeket a beállításokat a SZÁMÍTÓGÉPGYÁRTÓ is tartalmazza. Olvassa el az OEM-alkalmazás dokumentációját, amelyből megtudhatja, hogyan kell használni ezeket a beállításokat a profilok létrehozásához.
 
@@ -110,7 +111,7 @@ Győződjön meg arról, hogy az eszköz támogatja a OEMConfig, a megfelelő OE
         
       - Ha üres (nem konfigurált) köteget hoz létre a Configuration Designerben, a rendszer törli a JSON-szerkesztőre való áttéréskor.
 
-    - **JSON-szerkesztő**: Ha ezt a beállítást választja, a rendszer egy JSON-szerkesztőt nyit meg az alkalmazásban beágyazott teljes konfigurációs sémához tartozó sablonnal. A szerkesztőben szabja testre a sablont a különböző beállítások értékeivel. Ha a **Configuration Designer** használatával módosítja az értékeket, a JSON-szerkesztő felülírja a sablont a Configuration Designer értékével.
+    - **JSON-szerkesztő**: Ha ezt a beállítást választja, megnyílik egy JSON-szerkesztő, amely az alkalmazásban beágyazott teljes konfigurációs séma sablonját nyitja meg. A szerkesztőben szabja testre a sablont a különböző beállítások értékeivel. Ha a **Configuration Designer** használatával módosítja az értékeket, a JSON-szerkesztő felülírja a sablont a Configuration Designer értékével.
     
       - Ha meglévő profilt frissít, a JSON-szerkesztő megjeleníti azokat a beállításokat, amelyek utoljára mentve lettek a profillal.
 
@@ -140,14 +141,14 @@ A standard szintű alkalmazásokhoz képest a OEMConfig-alkalmazások kibővíti
 
 | OEM | Csomagazonosító | OEM-dokumentáció (ha elérhető) |
 | --- | --- | ---|
-| Samsung | com.samsung.android.knox.kpu | [A Knox szolgáltatás beépülő moduljának rendszergazdai útmutatója](https://docs.samsungknox.com/knox-service-plugin/admin-guide/welcome.htm) |
+| Samsung | com. Samsung. Android. Knox. kpu | [A Knox szolgáltatás beépülő moduljának rendszergazdai útmutatója](https://docs.samsungknox.com/knox-service-plugin/admin-guide/welcome.htm) |
 | Zebra-technológiák | com. zebra. oemconfig. Common | [A zebra OEMConfig áttekintése](http://techdocs.zebra.com/oemconfig ) |
 | Datalogic | com. Datalogic. oemconfig | [A Datalogic OEMConfig felhasználói dokumentációja](https://datalogic.github.io/oemconfig/) |
 | Honeywell | com. Honeywell. oemconfig |  |
 
 -----------------
 
-Ha létezik egy OEMConfig-alkalmazás az eszközhöz, de nem szerepel a fenti táblázatban, vagy nem jelenik meg az Intune-konzolon, küldjön `IntuneOEMConfig@microsoft.com`e-mailt.
+Ha létezik egy OEMConfig-alkalmazás az eszközhöz, de nem szerepel a fenti táblázatban, vagy nem jelenik meg az Intune-konzolon, kérjük, küldjön e-mailt `IntuneOEMConfig@microsoft.com` címre.
 
 > [!NOTE]
 > A OEMConfig-alkalmazásokat az Intune-nak kell bejelentkeznie ahhoz, hogy OEMConfig-profilokkal lehessen konfigurálni őket. Az alkalmazások támogatása után nem kell felvennie a kapcsolatot a Microsofttal a bérlőben való beállításával kapcsolatban. Csak kövesse az ezen az oldalon található utasításokat.

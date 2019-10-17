@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 09/16/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: f33d1684-b1b5-44f7-9aac-c6d5186a5d7c
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5858d7df063ea1387330507bd6e8253e5acc3559
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: fc5362df560d2e93bf5cd7a6cdc32a441d97d05c
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731895"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72505429"
 ---
 # <a name="how-your-android-users-get-their-apps"></a>Android-felhasználói alkalmazások letöltése
 
@@ -38,8 +39,8 @@ Ebből a cikkből megtudhatja, hogyan és hol érheti el az Android-végfelhaszn
 
 A végfelhasználók számára engedélyezni kell az ismeretlen forrásból történő telepítést [LOB-alkalmazások](../apps/lob-apps-android.md)telepítéséhez. Ez a beállítás általában két különböző helyen található:
 
-* **Android 7.1.2 és alacsonyabb**: **Beállítások** > biztonságiismeretlen > **források**
-* **Android 8,0 és újabb**verziók: **Beállítások** >  >  > alkalmazások & értesítések speciális alkalmazás-hozzáférés az ismeretlen alkalmazások telepítésecégesportál > engedélyezés ebből a forrásból > 
+* **Az Android 7.1.2-es és régebbi verzióiban**: **Settings** (Beállítások) > **Security** (Biztonság) > **Unknown sources** (Ismeretlen források)
+* **Az Android 8.0-s és újabb verzióiban**: **Settings** (Beállítások) > **Apps & notifications** (Alkalmazások és értesítések) > **Special app access** (Speciális alkalmazás-hozzáférés) > **Install unknown apps** (Ismeretlen alkalmazások telepítése) > **Company Portal** (Céges portál) > **Allow from this source** (Engedélyezés ebből a forrásból)
 
 Ebben az esetben a Céges portál értesíti a felhasználót, és közvetlenül végigvezeti a megfelelő beállítás megadásán. 
 
@@ -62,7 +63,7 @@ Az Intune a zebra Mobility Extensions (MX) eszközkészlet használatával csend
 
 A zebra-eszközökre telepített ÜZLETÁGI alkalmazásokat az eszköz nyilvános mappájából kell telepíteni. Előfordulhat, hogy az. apk alkalmazáscsomag elérhetővé válik más alkalmazások és szolgáltatások számára is, amelyek hozzáférhetnek a nyilvános tárhelyhez az eszközön. Ez a hozzáférés általában egy kis ablak az alkalmazás letöltésének befejezése és a telepítés elején. Ez az ablak engedélyezheti az időzítési támadást. Egy. apk-csomag például megváltoztatható ebben az ablakban. Az Intune minimálisra csökkentheti azt az időtartamot, ameddig az. apk a nyilvános tárolóban költ, és nem engedélyezi az aláíratlan alkalmazások telepítését. A biztonsági kockázat minimalizálásához győződjön meg arról, hogy a feltöltött. apk fájlok nem tartalmaznak bizalmas adatokat.
 
-## <a name="see-also"></a>Lásd még:
+## <a name="see-also"></a>További információ
 
 [Alkalmazások hozzáadása a Microsoft Intune-nal](../apps/apps-add.md)
 

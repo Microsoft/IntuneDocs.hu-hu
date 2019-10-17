@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 08/27/2019
 ms.topic: reference
 ms.service: microsoft-intune
+ms.subservice: developer
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: d7166563-6bb5-4624-b8c8-6b300a997c3a
@@ -17,18 +18,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2f70ca7d8d85853c38e2e8e88d06bae966431989
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: aa6dacf8b6498175e9e7658689bee3a527e684cc
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71730279"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72490712"
 ---
 # <a name="intune-data-warehouse-application-only-authentication"></a>Alkalmazásalapú hitelesítés az Intune-adattárházban
 
 Beállíthat alkalmazásokat az Azure Active Directory (Azure AD) segítségével úgy, hogy hitelesítsék magukat az Intune-adattárházban. Ez a folyamat olyan webhelyeknél, alkalmazásoknál és háttérfolyamatoknál lehet hasznos, amelyek esetében az alkalmazásnak nem szabad felhasználói hitelesítő adatokkal rendelkeznie. Az alábbi lépésekkel hitelesítheti az alkalmazást az Azure AD-val az OAuth 2.0 protokoll használatával.
 
-## <a name="authorization"></a>Authorization
+## <a name="authorization"></a>Engedélyezés
 
 Az Azure Active Directory (Azure AD) az OAuth 2.0 használatával teszi lehetővé a webalkalmazásokhoz és webes API-khez való hozzáférés engedélyezését az Azure AD-bérlőben. Ebből az útmutatóból megtudhatja, hogy hogyan hitelesítheti az alkalmazását a C# programnyelv használatával. Az OAuth 2.0 engedélyezési kódjának folyamatáról bővebben az OAuth 2.0 ismertetőjének 4.1-es szakaszában olvashat. További információt az [Hozzáférés engedélyezése webes alkalmazásokhoz az OAuth 2.0 és az Azure Active Directory használatával](https://docs.microsoft.com/azure/active-directory/develop/active-directory-protocols-oauth-code) című témakörben talál.
 
@@ -41,7 +42,7 @@ Az alábbi eljárás egy privát metódus segítségével dolgoz fel és konvert
 
 Ebben a szakaszban az Intune-ra irányítani kívánt webalkalmazás adatait fogja megadni. A webalkalmazások ügyfél-kiszolgáló alkalmazások. A kiszolgáló szolgáltatja a webalkalmazást, amely tartalmazza a felhasználói felületet, a tartalmat és a funkciókat. Az ilyen típusú alkalmazásokat külön, a weben kezelik. Az Intune segítségével tud hozzáférést adni a webalkalmazásnak az Intune-hoz. Az adatforgalmat a webalkalmazás kezdeményezi. 
 
-1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com).
+1. Jelentkezzen be az [Azure portálra](https://portal.azure.com).
 2. Az Azure Portal tetején lévő **Erőforrások, szolgáltatások és dokumentumok** mezőben keressen az **Azure Active Directory** kifejezésre.
 3. A legördülő listában válassza a **Szolgáltatások** csoportban látható **Azure Active Directory** lehetőséget.
 4. Válassza az **Alkalmazásregisztrációk** lehetőséget.
@@ -76,7 +77,7 @@ Ebben a szakaszban létre fog hozni egy kulcsértéket az alkalmazáshoz az Azur
 Ebben a szakaszban az alkalmazás engedélyeit fogja megadni.
 
 1. Válassza a **Szükséges engedélyek** lehetőséget a **Beállítások** panelen.
-2. Kattintson a **Hozzáadás**lehetőségre.
+2. Kattintson a **Hozzáadás**gombra.
 3. Válassza az **API hozzáadása** lehetőséget az **API kiválasztása** panel megjelenítéséhez.
 4. Válassza a **Microsoft Intune API (MicrosoftIntuneAPI)** lehetőséget, majd a **Kiválasztás** lehetőséget az **API kiválasztása** panelen. Ekkor az **Engedélyek kiválasztása** lépés lesz kijelölve, és megjelenik a **Hozzáférés engedélyezése** panel.
 5. Válassza a **Get data warehouse information from Microsoft Intune** (Adattárház-információk beolvasása a Microsoft Intune-ból) lehetőséget az **Alkalmazásengedélyek** szakaszban.

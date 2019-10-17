@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 02/15/2018
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 53c8e2ad-f627-425b-9adc-39ca69dbb460
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cffde7e677215d7e25da644bc690c1512762d72a
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.openlocfilehash: fbe0aa4797de32936e2be7def4aeb670c78a4945
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71731847"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72502917"
 ---
 # <a name="what-to-expect-when-your-android-app-is-managed-by-app-protection-policies"></a>Milyen hatással vannak az androidos alkalmazásokra az alkalmazásvédelmi szabályzatok?
 
@@ -54,9 +55,9 @@ Ha felügyelt fiók van jelen az alkalmazásban:
 
 A következő példák részletesen bemutatják, hogy a rendszer hogyan kezeli a további felhasználói fiókokat.
 
-Az A felhasználó két vállalatnak dolgozik: az **X vállalatnak** és az **Y vállalatnak**. Az A felhasználó munkahelyi fiókkal rendelkezik mindként vállalatnál, és mindkettő az Intune-t használja alkalmazásvédelmi szabályzatok telepítéséhez. Az **X vállalat** telepít elsőként alkalmazásvédelmi szabályzatokat, **megelőzve** az **Y vállalatot**. Az **X vállalathoz** tartozó fiók megkapja az alkalmazásvédelmi szabályzatot, de az Y vállalat fiókja nem. Ha azt szeretné, hogy az alkalmazásvédelmi szabályzatok az Y vállalathoz tartozó fiókot kezeljék, akkor el kell távolítania az X vállalathoz tartozó fiókot, és hozzá kell adnia az Y vállalathoz tartozó fiókot.
+Az A felhasználó két vállalatnak dolgozik: az**X vállalatnak** és az **Y**vállalatnak. Az A felhasználó rendelkezik egy munkahelyi fiókkal az egyes vállalatokhoz, és mindkettő az Intune használatával telepíti az alkalmazás-védelmi szabályzatokat. Az **X vállalat** az **Y vállalat** **előtt** üzembe helyezi az alkalmazás-védelmi szabályzatokat. Az **X vállalathoz** tartozó fiók megkapja az alkalmazás-védelmi szabályzatot, de nem az Y vállalathoz tartozó fiókot. Ha azt szeretné, hogy az Y vállalathoz tartozó felhasználói fiók az alkalmazás-védelmi szabályzatok alapján legyen kezelve, akkor el kell távolítania az X vállalathoz tartozó felhasználói fiókot, és hozzá kell adnia az Y vállalathoz társított fiókot.
 ### <a name="add-a-second-account"></a>Második fiók hozzáadása
-#### <a name="android"></a>Android
+#### <a name="android"></a>Android:
 Android-eszközön blokkoló üzenet jelenhet meg, amely ismerteti a meglévő fiók eltávolításának és új fiók felvételének lépéseit.  A meglévő fiók eltávolításához válassza a **Beállítások &gt;Általános &gt; Alkalmazáskezelő &gt;Munkahelyi portál** lehetőséget, majd itt az **Adatok törlése** lehetőséget.
 
 ![Képernyőfelvétel a hibaüzenetről és a fiók eltávolítására vonatkozó utasításokról](./media/end-user-mam-apps-android/Android_SwitchUser.png)
@@ -68,10 +69,10 @@ Ezt az alkalmazást a Google Play Áruházból töltheti le.
 
 A rendszer a következő fájltípusokat támogatja:
 
-* **Hang** AAC LC, it-AACv1 (AAC +), AACv2 (bővített AAC +), AAC-címkézés (bővített, alacsony késleltetésű AAC), AMR-NB, AMR-WB, FLAC, MP3, MIDI, OGG Vorbis, PCM/WAVE
-* **Videóinak** H. 263, H. 264 AVC, MPEG-4 SP, VP8
+* **Hang:** AAC LC, HE-AACv1 (AAC+), HE-AACv2 (kibővített AAC+), AAC ELD (kibővített, alacsony késleltetésű AAC), AMR-NB, AMR-WB, FLAC, MP3, MIDI, Vorbis, PCM/WAVE
+* **Videó:** H.263, H.264 AVC, MPEG-4 SP, VP8
 * **Kép:** jpg, pjpg, png, ppng, bmp, pbmp, gif, pgif, jpeg, pjpeg
-* **Dokumentumok** PDF PPDF
+* **Dokumentumok:** PDF, PPDF
 
 
 |**pfile**|

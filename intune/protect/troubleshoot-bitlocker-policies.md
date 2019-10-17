@@ -8,6 +8,7 @@ manager: dougeby
 ms.date: 10/02/2019
 ms.topic: troubleshooting
 ms.service: microsoft-intune
+ms.subservice: protect
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: ''
@@ -15,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 197ad888dc8a07cc35efbaec538fde93c76c81c3
-ms.sourcegitcommit: f04e21ec459998922ba9c7091ab5f8efafd8a01c
+ms.openlocfilehash: 440eb2d457783ac71b905d064a6d83abaa966cfe
+ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71817552"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72503921"
 ---
 # <a name="troubleshoot-bitlocker-policies-in-microsoft-intune"></a>A Microsoft Intune BitLocker-házirendjeinek hibáinak megoldása
 
@@ -32,7 +33,7 @@ A BitLocker meghajtótitkosítás a Microsoft Windows operációs rendszerek ál
 
 A Microsoft Intune a következő módszerekkel kezelheti a BitLockert Windows 10-es eszközökön:
 
-- **Eszköz-konfigurációs házirendek** – a beépített házirend-beállítások az Intune felügyeleti konzolon érhetők el az **eszköz konfigurációja**@no__t – 2**Endpoint Protection** > **Windows titkosítási házirend**. A rendelkezésre álló kapcsolók és szolgáltatások itt találhatók: [Windows-titkosítás](https://docs.microsoft.com/intune/endpoint-protection-windows-10#windows-encryption).
+- **Eszköz-konfigurációs házirendek** – a beépített házirend-beállítások az Intune felügyeleti konzolon érhetők el az **eszköz konfigurációja**@no__t – 2**Endpoint Protection** > **Windows titkosítási házirend**. A rendelkezésre álló kapcsolók és szolgáltatások itt találhatók: Windows- [titkosítás](https://docs.microsoft.com/intune/endpoint-protection-windows-10#windows-encryption).
 
 - A **biztonsági**alapkonfigurációk  - [biztonsági alaptervek](security-baselines.md) a beállítások és a megfelelő biztonsági csapat által a Windows-eszközök biztonságossá tételéhez javasolt alapértelmezett értékek. A különböző alapforrások, például a *Mdm biztonsági* alapkonfiguráció vagy a *Microsoft Defender ATP* alapkonfigurációja ugyanazokat a beállításokat és különböző beállításokat is képes kezelni, mint az egymástól. Emellett ugyanúgy kezelhetik az eszköz konfigurációs házirendjeivel felügyelt beállításokat is. 
 
@@ -94,7 +95,7 @@ Confirm-SecureBootUEFI
 
 ### <a name="review-the-devices-registry-key-configuration"></a>Az eszközök beállításjegyzék-kulcs konfigurációjának áttekintése   
 
-Miután sikeresen telepítette a BitLocker-házirendet egy eszközre, tekintse meg a következő beállításkulcsot az eszközön, amelyen áttekintheti a BitLocker-beállítások konfigurációját:  *HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\BitLocker*. Például:
+Miután sikeresen telepítette a BitLocker-házirendet egy eszközre, tekintse meg a következő beállításkulcsot az eszközön, amelyen áttekintheti a BitLocker-beállítások konfigurációját: *HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\BitLocker* . Például:
 
 ![BitLocker-beállításkulcs](./media/troubleshooting-bitlocker-policies/registry.png)
 
@@ -177,7 +178,7 @@ A **házirend jelen van, de nem minden beállítás sikeresen konfigurálva** �
 
 
 
-## <a name="summary"></a>Összegzés
+## <a name="summary"></a>Összefoglalás
 
 Ha elhárítja az Intune-nal kapcsolatos BitLocker-házirendekkel kapcsolatos problémákat, és ellenőrizheti, hogy a házirend eléri-e a kívánt eszközt, nyugodtan feltételezheti, hogy a probléma nem kapcsolódik közvetlenül az Intune-hoz. A probléma valószínűleg a Windows operációs rendszer vagy a hardver problémája. Ebben az esetben kezdjen más területeken, például a TPM-konfigurációval vagy az UEFI-vel és a biztonságos rendszerindítással.
 
