@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 07/22/2019
+ms.date: 10/10/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7836b0d08367d8b021a8ea0c7f0e06311fe972b1
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: ee22ee435830137a423423aa692376aabbb6cecb
+ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72498571"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72585417"
 ---
 # <a name="monitor-app-information-and-assignments-with-microsoft-intune"></a>Alkalmazásadatok és -hozzárendelések figyelése a Microsoft Intune-ban
 
@@ -38,6 +38,8 @@ Az Intune több módot is kínál a felügyelt alkalmazások jellemzőinek figye
 
 > [!NOTE]
 > Az **Elérhető** beállítással telepített Androidos áruházbeli alkalmazások nem jelentik a telepítési állapotukat.
+>
+> Az Android Enterprise Work profiling-eszközökre telepített felügyelt Google Play-alkalmazások esetében az Intune használatával megtekintheti az eszközön telepített alkalmazás állapotát és verziószámát. 
 
 ## <a name="app-overview-pane"></a>Alkalmazás áttekintése panel
 

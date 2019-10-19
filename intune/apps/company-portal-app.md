@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 09/17/2019
+ms.date: 10/10/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 37c2a85162c781db7272b6ead11fbb3320a08343
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: dd48eea5ee09562590844e11ac372480c892a7af
+ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72498017"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72585008"
 ---
 # <a name="how-to-configure-the-microsoft-intune-company-portal-app"></a>A Microsoft Intune Céges portál alkalmazásának konfigurálása
 
@@ -129,6 +129,14 @@ A **céges portál testreszabás** > **eszközkezelés és adatvédelmi üzenet*
 - Fogadja el az **alapértelmezett értéket** a lista használatára a következő módon, vagy
 - Az **Egyéni** elem kiválasztásával testreszabhatja azon elemek listáját, amelyeket a szervezet nem láthat vagy végezhet a felügyelt iOS-eszközökön. A [Markdown](https://daringfireball.net/projects/markdown/) használatával felsorolásjeleket, félkövéreket, dőlteket és hivatkozásokat adhat hozzá.
 
+## <a name="company-portal-derived-credentials-for-ios-devices"></a>Céges portál származtatott hitelesítő adatok iOS-eszközökhöz
+Az Intune támogatja a személyes személyazonosság-ellenőrzés (PIV) és a Common Access Card (CAC) származtatott hitelesítő adatait a DISA fajtiszta, a Entrust Datacard és a közbenjáró hitelesítő adatokkal. A végfelhasználók az iOS-eszköz regisztrálását követően további lépéseket hajtanak végre az identitásuk ellenőrzéséhez a Céges portál alkalmazásban. A származtatott hitelesítő adatok lehetővé teszik a felhasználók számára, hogy először állítanak be egy hitelesítő adatot a bérlő számára, majd egy olyan profilt céloznak meg, amely származtatott hitelesítő adatokat használ a felhasználóknak vagy az eszközöknek.
+
+> [!NOTE]
+> A felhasználó az Intune-on keresztül megadott hivatkozás alapján a származtatott hitelesítő adatokra vonatkozó utasításokat fogja látni.
+
+Az iOS-eszközök származtatott hitelesítő adataival kapcsolatos további információkért lásd: [származtatott hitelesítő adatok használata Microsoft Intuneban](~/protect/derived-credentials.md).
+
 ## <a name="windows-company-portal-keyboard-shortcuts"></a>A Windows Céges portálon használható billentyűparancsok
 
 A végfelhasználók a billentyűparancsok (gyorssegédek) használatával indíthatnak navigációs, alkalmazás-és eszköz-műveleteket a Windows Céges portálban.
@@ -172,21 +180,25 @@ A felhasználók a helyi vagy távoli eszközökön végezhetnek műveleteket a 
 
 Egyes platformok és konfigurációk nem engedélyezik az önkiszolgáló eszközök műveleteit. Az alábbi táblázat további részleteket tartalmaz az önkiszolgáló műveletekről:
 
-|     Platfésm    |    Kivonás    |    Törlés     |    Átnevezés<sup>(4)</sup>    |    Sync    |    Távoli zárolás    |    Jelszó alaphelyzetbe állítása    |    Kulcs helyreállítása    |
-|------------------------|--------------------|--------------------|-----------------|-----------------|--------------------------|--------------------------|--------------------|
-|    Windows 10<sup>(3)</sup>    |    Elérhető<sup>(1)</sup>    |    Elérhető    |    Elérhető    |    Elérhető    |    Csak Windows Phone-telefon    |    Csak Windows Phone-telefon    |    NA    |
-|    iOS<sup>(3)</sup>    |    Elérhető    |    Elérhető<sup>(8)</sup>    |    Elérhető    |    Elérhető    |    Elérhető<sup>(8)</sup>    |    Elérhető    |    NA    |
-|    MacOS<sup>(3)</sup><sup>(5)</sup>    |    Elérhető    |    NA    |    Elérhető    |    Elérhető    |    Elérhető    |    NA    |    Elérhető<sup>(2)</sup>    |
-|    Android<sup>(3)</sup>    |    Elérhető<sup>(7)</sup>    |    Elérhető<sup>(7)</sup>    |    Elérhető    |    Elérhető    |    Elérhető    |    Elérhető<sup>(6)</sup>    |    NA    |
+|  | Windows 10<sup>(3)</sup> | iOS/iPadOS<sup>(3)</sup> | MacOS<sup>(3)</sup><sup>(5)</sup> | Android<sup>(3)</sup> |
+|----------------------|--------------------------|-------------------|-----------------------------------|-------------------------|
+| Kivonás | Elérhető<sup>(1)</sup> | Elérhető<sup>(8)</sup> | Elérhető | Elérhető<sup>(7)</sup> |
+| Törlés | Elérhető | Elérhető | NA | Elérhető<sup>(7)</sup> |
+| Átnevezés<sup>(4)</sup> | Elérhető | Elérhető<sup>(8)</sup> | Elérhető | Elérhető |
+| Sync | Elérhető | Elérhető | Elérhető | Elérhető |
+| Távoli zárolás | Csak Windows Phone-telefon | Elérhető | Elérhető | Elérhető |
+| Jelszó alaphelyzetbe állítása | Csak Windows Phone-telefon | Elérhető | NA | Elérhető<sup>(6)</sup> |
+| Kulcs helyreállítása | NA | NA | Elérhető<sup>(2)</sup> | NA |
+| Sötét mód | NA | Elérhető | NA | NA |
 
-
-<sup>(1)</sup> a kivonás mindig le van tiltva az Azure ad-hez csatlakoztatott Windows-eszközökön.<br>
-<sup>(2)</sup> a MacOS-hez készült személyes kulcs helyreállítása csak a céges portál webhelyén érhető el.<br>@no__t – 0<sup>(3)</sup> az összes távoli művelet le van tiltva, ha az eszközök tanúsítványigénylési kezelőjét használják.<br>
-<sup>(4)</sup> az Átnevezés csak az eszköz nevét módosítja a céges portál alkalmazásban vagy webhelyen, nem az eszközön.<br>
-<sup>(5)</sup> a távoli törlés nem érhető el MacOS-eszközökön.<br>
-<sup>(6)</sup> a PIN-kód alaphelyzetbe állítása néhány Android-és androidos vállalati konfiguráció esetén nem támogatott. További információkért lásd: [eszköz PIN-kód alaphelyzetbe állítása vagy eltávolítása az Intune-ban](../remote-actions/device-passcode-reset.md).<br>
-<sup>(7)</sup> a kivonás és a törlés nem érhető el az androidos vállalati eszközök tulajdonosi forgatókönyvei esetében (Cope, COBO, COSU).<br> 
-<sup>(8)</sup> a törlés és az Alaphelyzetbe állítás PIN-kód nem érhető el a felhasználói regisztrációval regisztrált iOS-eszközökön.<br> 
+<sup>(1)</sup> a kivonás mindig **le van tiltva az Azure** ad-hez csatlakoztatott Windows-eszközökön.<br>
+<sup>(2)</sup> a MacOS rendszerhez készült **kulcs-helyreállítás** csak a webes portálon keresztül érhető el.<br>
+<sup>(3)</sup> az összes távoli művelet le van tiltva, ha egy eszköz beléptetési kezelőt használ.<br>
+<sup>(4)</sup> az **Átnevezés** csak az eszköz nevét módosítja a céges portál alkalmazásban vagy webhelyen, nem az eszközön.<br>
+<sup>(5)</sup> a **távoli törlés** nem érhető el MacOS-eszközökön.<br>
+<sup>(6)</sup> a **PIN-kód alaphelyzetbe állítása** néhány Android-és androidos vállalati konfiguráció esetében nem támogatott. További információkért lásd: [eszköz PIN-kód alaphelyzetbe állítása vagy eltávolítása az Intune-ban](../remote-actions/device-passcode-reset.md).<br>
+<sup>(7)</sup> a kivonás **és a** **Törlés** nem érhető el az androidos vállalati eszközök tulajdonosi forgatókönyvei esetében (Cope, COBO, COSU).<br>a  
+<sup>(8)</sup> kivonása **(eszköz eltávolítása) és** **átnevezése** minden típusú regisztrációhoz elérhető. A felhasználók beléptetéséhez más műveletek nem támogatottak.<br> 
 
 ## <a name="next-steps"></a>További lépések
 

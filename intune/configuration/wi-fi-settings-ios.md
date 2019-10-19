@@ -6,7 +6,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 09/05/2019
+ms.date: 10/18/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8139e9b266e6a3d449db29104f737bdf4bb574ae
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: d88705cbce0d5045ba7f45baf80de7b6e5d383d3
+ms.sourcegitcommit: 8c25aeefb7cbc6444a8596af22fccd1c5426877a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72503534"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72593769"
 ---
 # <a name="add-wi-fi-settings-for-ios-devices-in-microsoft-intune"></a>iOS-eszközökre vonatkozó Wi-Fi-beállítások hozzáadása a Microsoft Intune-ban
 
@@ -80,7 +80,13 @@ Ez a cikk ezeket a beállításokat ismerteti.
     - **Kiszolgáló megbízhatósága** - **kiszolgálótanúsítvány neve**: **adjon** meg egy vagy több KÖZNAPI nevet a megbízható hitelesítésszolgáltató (CA) által kiadott tanúsítványokban a vezeték nélküli hálózati hozzáférési kiszolgálókhoz. Adja meg például a következőt: `mywirelessserver.contoso.com` vagy `mywirelessserver`. Ha megadja ezt az információt, elkerülheti azt a dinamikus megbízhatósági ablakot, amely akkor jelenik meg a felhasználók eszközein, amikor ehhez a Wi-Fi-hálózathoz csatlakoznak.
     - **Főtanúsítvány a kiszolgálóérvényesítéshez**: Válasszon egy meglévő megbízható főtanúsítvány-profilt. Ez a tanúsítvány lehetővé teszi az ügyfél számára, hogy megbízzon a vezeték nélküli hálózati hozzáférési kiszolgáló tanúsítványán.
 
-    - **Ügyfél-hitelesítés** - **Ügyféltanúsítvány az ügyfél hitelesítéséhez (identitástanúsítvány)** : Válassza ki azt az SCEP vagy PKCS ügyféltanúsítvány-profilt, amely szintén üzembe lesz helyezve az eszközön. Az eszköz ezt a tanúsítványt adja meg identitásként a kiszolgálónak a kapcsolat hitelesítéséhez.
+    - **Ügyfél-hitelesítés** Válasszon **hitelesítési módszert**. A választható lehetőségek:
+      
+      - **Származtatott hitelesítő adatok**: Ha nincs beállítva származtatott hitelesítőadat-kiállító, az Intune erre kéri.
+      
+      - **Tanúsítványok**: Válassza ki azt az SCEP vagy PKCS ügyféltanúsítvány-profilt, amely szintén üzembe lesz helyezve az eszközön. Az eszköz ezt a tanúsítványt adja meg identitásként a kiszolgálónak a kapcsolat hitelesítéséhez.
+
+    - **Identitásvédelem (külső identitás)** : Adja meg az EAP-identitáskérésre adott válasz szövegét. Ez a szöveg bármilyen érték lehet, például `anonymous`. A hitelesítés során a rendszer először a névtelen identitást küldi el, majd később egy biztonságos csatornán küldi el a valódi azonosítót.
 
   - **EAP-TTLS**: Ezt is adja meg:
 
@@ -89,6 +95,8 @@ Ez a cikk ezeket a beállításokat ismerteti.
 
     - **Ügyfél-hitelesítés** – Válasszon egy **hitelesítési módszert**. A választható lehetőségek:
 
+      - **Származtatott hitelesítő adatok**: Ha nincs beállítva származtatott hitelesítőadat-kiállító, az Intune erre kéri.  
+      
       - **Felhasználónév és jelszó**: Felhasználónév és jelszó kérése a felhasználótól a kapcsolat hitelesítéséhez. Ezt is adja meg:
         - **Nem EAP-módszer (belső identitás)** : Válassza ki a kapcsolat hitelesítési módját. Mindenképpen ugyanazt a protokollt válassza, amely a Wi-Fi-hálózathoz van konfigurálva.
 
@@ -107,6 +115,8 @@ Ez a cikk ezeket a beállításokat ismerteti.
 
     - **Ügyfél-hitelesítés** – Válasszon egy **hitelesítési módszert**. A választható lehetőségek:
 
+      - **Származtatott hitelesítő adatok**: Ha nincs beállítva származtatott hitelesítőadat-kiállító, az Intune erre kéri.  
+      
       - **Felhasználónév és jelszó**: Felhasználónév és jelszó kérése a felhasználótól a kapcsolat hitelesítéséhez. 
 
       - **Tanúsítványok**: Válassza ki azt az SCEP vagy PKCS ügyféltanúsítvány-profilt, amely szintén üzembe lesz helyezve az eszközön. Az eszköz ezt a tanúsítványt adja meg identitásként a kiszolgálónak a kapcsolat hitelesítéséhez.

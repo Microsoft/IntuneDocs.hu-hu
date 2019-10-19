@@ -14,12 +14,12 @@ ms.technology: ''
 ms.assetid: 6ee841cc-5694-4ba1-8f66-1d58edec30a4
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b4be1755a07e6ec304edb7bceba8041d5b58263e
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: fd00a0ae4cb6c3b150fe40cfc6cd7b71cfa973f3
+ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72509999"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72585248"
 ---
 # <a name="use-audit-logs-to-track-and-monitor-events-in-microsoft-intune"></a>Naplók használata a Microsoft Intune eseményeinek nyomon követéséhez és figyeléséhez
 
@@ -50,7 +50,8 @@ A naplók és az operatív naplók is átirányíthatók Azure Monitorba. A **na
 
 ![A naplófájlok exportálása az Azure monitorba az adatbeállítások exportálása az Intune-ban lehetőség kiválasztásával](./media/monitor-audit-logs/audit-logs-export-data-settings.png)
 
-További információ erről a szolgáltatásról: [naplófájlok küldése a tárolóba, az Event hubokba vagy a log analyticsbe](review-logs-using-azure-monitor.md).
+> [!NOTE]
+> További információ erről a szolgáltatásról és az előfeltételek használatáról: [naplózási adatok küldése a Storage-ba, az Event hubokba vagy a log analyticsbe](review-logs-using-azure-monitor.md).
 
 ## <a name="review-audit-events"></a>Naplózási események áttekintése
 
@@ -72,7 +73,7 @@ Ha részletesebb információkat szeretne látni egy eseményről, válasszon eg
 
 > [!NOTE]
 > A **kezdeményező (Actor)** információt tartalmaz arról, hogy ki futtatta a feladatot, és hol futott. Ha például az Intune-ban futtatja a tevékenységet a Azure Portalban, az **alkalmazás** mindig listázza **Microsoft Intune portál bővítményt** , és az **alkalmazás-azonosító** mindig ugyanazt a GUID-t használja.
-> 
+>
 > A **cél (ok)** szakasz több célt és a módosított tulajdonságokat sorolja fel.  
 
 ## <a name="filter-audit-events"></a>A naplózási események áttekintése

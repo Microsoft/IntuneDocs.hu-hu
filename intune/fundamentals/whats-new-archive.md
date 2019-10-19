@@ -19,12 +19,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2c5f089edd63d55f288a606de782448fa3d29b88
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 327e0d56400a2aac545d1bae92279e242aa2006a
+ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72509728"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72585224"
 ---
 # <a name="whats-new-in-the-microsoft-intune---previous-months"></a>A Microsoft Intune újdonságai – korábbi hónapok
 
@@ -69,7 +69,7 @@ Olyan beállítást adunk hozzá, amely lehetővé teszi a felügyelt kezdőkép
 A kioszk beállításainak megtekintéséhez tekintse meg az [androidos vállalati eszközök korlátozásait](../configuration/device-restrictions-android-for-work.md)ismertető témakört.
 
 #### <a name="app-protection-policy-assignment-save-and-apply----3104570---"></a>Alkalmazás-védelmi szabályzat-hozzárendelés mentése és alkalmazása <!-- 3104570 -->
-Most már jobban kézben tarthatja az [alkalmazás-védelmi szabályzat-hozzárendeléseket](../apps/app-protection-policies.md#deploy-a-policy-to-users). Amikor kijelöli a *hozzárendeléseket* egy házirend hozzárendeléseinek beállításához vagy szerkesztéséhez, a módosítás előtt **mentenie** kell a konfigurációt. Az **elvet** lehetőséggel törölheti az összes olyan módosítást, amelyet a belefoglalási vagy kizárási listához tartozó módosítások mentése nélkül el szeretne végezni.  A Mentés vagy az Elvetés megkövetelésével csak a kívánt felhasználók kapnak egy alkalmazás-védelmi szabályzatot.
+Most már jobban kézben tarthatja az [alkalmazás-védelmi szabályzat-hozzárendeléseket](../apps/app-protection-policies.md#assign-a-windows-10-policy-to-users). Amikor kijelöli a *hozzárendeléseket* egy házirend hozzárendeléseinek beállításához vagy szerkesztéséhez, a módosítás előtt **mentenie** kell a konfigurációt. Az **elvet** lehetőséggel törölheti az összes olyan módosítást, amelyet a belefoglalási vagy kizárási listához tartozó módosítások mentése nélkül el szeretne végezni.  A Mentés vagy az Elvetés megkövetelésével csak a kívánt felhasználók kapnak egy alkalmazás-védelmi szabályzatot.
 
 #### <a name="new-microsoft-edge-browser-settings-for-windows-10-and-later----3174639---"></a>Új Microsoft Edge böngésző-beállítások Windows 10 és újabb rendszerekhez <!-- 3174639 -->
 Ez a frissítés új beállításokat tartalmaz, amelyek segítségével szabályozhatja és kezelheti az eszközökön futó Microsoft Edge böngészőt. A beállítások listáját lásd: [eszközök korlátozásai a Windows 10 rendszerhez (és újabb verziók)](../configuration/device-restrictions-windows-10.md#microsoft-edge-browser).
@@ -133,7 +133,7 @@ Ez a funkció néhány napon belül kerül bevezetésre a felhasználók közöt
 Kiválaszthatja, hogy mely alkalmazások legyenek követve a regisztráció állapota lapon. Amíg ezek az alkalmazások nem települnek, a felhasználó nem használhatja az eszközt. További információ: [regisztráció állapotának beállítása lap](../enrollment/windows-enrollment-status.md).
 
 #### <a name="search-for-autopilot-device-by-serial-number---2595788---"></a>Autopilot-eszköz keresése sorozatszám alapján <!--2595788 -->
-Mostantól sorozatszám alapján is megkeresheti az Autopilot-eszközöket. Ehhez válassza az eszközök **beléptetése**@no__t – 1**Windows-regisztráció**@no__t – 3**eszköz** > írja be a sorozatszámot a **Keresés sorozatszám szerint** mezőben > nyomja le az ENTER billentyűt.
+Mostantól sorozatszám alapján is megkeresheti az Autopilot-eszközöket. Ehhez válassza az eszközök **beléptetése**  >  a**Windows-beléptetés**  > **eszközök** > írja be a sorozatszámot a **Keresés sorozatszám szerint** mezőben > nyomja le az ENTER billentyűt.
 
 #### <a name="track-installation-of-office-proplus---2620217---"></a>Az Office-ProPlus telepítésének nyomon követése <!--2620217 -->
 A felhasználók a [regisztráció állapota lapon](../enrollment/windows-enrollment-status.md)követhetik nyomon az [Office-ProPlus](../apps/apps-add-office365.md) telepítési folyamatát. További információ: [regisztráció állapotának beállítása lap](../enrollment/windows-enrollment-status.md).

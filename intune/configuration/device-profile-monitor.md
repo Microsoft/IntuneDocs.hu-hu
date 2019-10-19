@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 06/25/2018
+ms.date: 10/14/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,23 +17,23 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6110cdf76649c2f4e0f06cf14fc892d7156d34b9
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 17057100f9bc762de8c679880145014cf5806432
+ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72506847"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72584862"
 ---
 # <a name="monitor-device-profiles-in-microsoft-intune"></a>Eszközprofilok figyelése a Microsoft Intune-ban
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-Az Intune egyes Azure Portalbeli funkcióival figyelheti és kezelheti az eszközkonfigurációs profilokat. Például ellenőrizheti egy profil állapotát, megtekintheti a hozzárendelt eszközöket, és frissítheti a profiltulajdonságokat.
+Az Intune néhány funkciót is tartalmaz, amelyek segítségével figyelheti és kezelheti az eszköz konfigurációs profiljait. Például ellenőrizheti egy profil állapotát, megtekintheti a hozzárendelt eszközöket, és frissítheti a profiltulajdonságokat.
 
 ## <a name="view-existing-profiles"></a>Meglévő profilok megtekintése
 
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Válassza az **Eszközkonfiguráció** > **Profilok** lehetőséget.
+2. Válassza az **Eszközkonfiguráció** > **Profilok** lehetőséget.
 
 Itt mindegyik meglévő profil megjelenik olyan adatokkal, mint a platform, és megmutatja a profil eszköz-hozzárendelési állapotát is.
 
@@ -44,13 +44,13 @@ Az eszközprofil létrehozása után az Intune grafikus diagramokat nyújt. Ezek
 1. Válasszon ki egy meglévő profilt, például egy macOS-profilt.
 2. Lépjen az **Áttekintés** fülre.
 
-    A felső grafikus diagramon megtekintheti az adott eszközprofilhoz rendelt eszközök számát. Ha például az eszközprofil macOS-eszközökre van alkalmazva, akkor a diagram csak a macOS-eszközök számát jeleníti meg.
+    A felső grafikus diagram az eszköz profiljához rendelt eszközök számát jeleníti meg. Ha például az eszközprofil macOS-eszközökre van alkalmazva, akkor a diagram csak a macOS-eszközök számát jeleníti meg.
 
     Emellett más platformok eszközeinek számát is megjeleníti, ha ezek ugyanahhoz az eszközprofilhoz vannak rendelve. Például megtekintheti a nem macOS-eszközök számát.
 
     ![Az eszközprofilhoz rendelt eszközök számának megtekintése](./media/device-profile-monitor/device-configuration-profile-graphical-chart.png)
 
-    Az alsó grafikus diagramon megtekintheti az adott eszközprofilhoz rendelt felhasználók számát. Ha például az eszközprofil macOS-felhasználókra van alkalmazva, akkor a diagram a macOS-felhasználók számát jeleníti meg.
+    Az alsó grafikus diagram az eszköz profiljához rendelt felhasználók számát jeleníti meg. Ha például az eszközprofil macOS-felhasználókra van alkalmazva, akkor a diagram a macOS-felhasználók számát jeleníti meg.
 
 3. Kattintson a felső grafikus diagramon látható körre. Ekkor megnyílik az **Eszközállapot** menü.
 
@@ -68,12 +68,12 @@ Az eszközprofil létrehozása után az Intune grafikus diagramokat nyújt. Ezek
     - **Tulajdonságok**: Módosíthatja a nevet, vagy frissítheti a meglévő beállításokat.
     - **Hozzárendelések**: Belefoglalhat vagy kizárhat a szabályzat hatálya alá tartozó eszközöket. Adott csoportok kiválasztásához válassza a **Kiválasztott csoportok** lehetőséget.
     - **Eszközállapot**: Itt láthatja a profilhoz rendelt eszközöket, valamint azt, hogy a profilt sikeresen üzembe helyezték-e. Egy adott eszközt kijelölve még több adatot megtekinthet, például a telepített alkalmazásokat.
-    - **Felhasználói állapot**: A profil hatálya alá tartozó eszközök felhasználóinak neveit jeleníti meg, valamint azt, hogy a profilt sikeresen üzembe helyezték-e. Egy adott felhasználót kijelölve még több adatot megtekinthet.
+    - **Felhasználói állapot**: felsorolja a profil által érintett eszközökkel rendelkező felhasználóneveket, valamint a profil sikeres üzembe helyezését. Egy adott felhasználót kijelölve még több adatot megtekinthet.
     - **Állapot beállításonként**: A kimenetet szűri a profil egyes beállításait megjelenítve, valamint megmutatja, hogy a beállítást sikeresen alkalmazták-e.
 
 ## <a name="view-conflicts"></a>Ütközések megtekintése
 
-Az **Eszközök** > **Minden eszköz** területen megtekintheti az ütközést okozó beállításokat. Ütközés esetén az összes olyan profil is látható, amely ezt a beállítást tartalmazza. A rendszergazdák ezzel a funkcióval hibakeresést végezhetnek, és elháríthatják a profilok hibáit is.
+Az **Eszközök** > **Minden eszköz** területen megtekintheti az ütközést okozó beállításokat. Ütközés esetén a beállítást tartalmazó összes konfigurációs profil is megjelenik. A rendszergazdák ezzel a funkcióval hibakeresést végezhetnek, és elháríthatják a profilok hibáit is.
 
 1. Az Intune-ban válassza az **Eszközök** > **Minden eszköz** lehetőséget, majd válasszon ki a listából egy meglévő eszközt. A végfelhasználók a céges portál alkalmazásban nézhetik meg az eszköz nevét.
 2. Válassza az **Eszközök konfigurálása** lehetőséget. Az eszközre alkalmazott összes konfigurációs szabályzat megjelenik.
@@ -82,5 +82,6 @@ Az **Eszközök** > **Minden eszköz** területen megtekintheti az ütközést o
 Miután ismeri az ütközést okozó beállítást, és tudja, hogy mely szabályzatok tartalmazzák ezt a beállítást, az ütközés elhárítása egyszerűbben elvégezhető. 
 
 ## <a name="next-steps"></a>További lépések
-[Felhasználói és eszközprofilok hozzárendelése](../device-profile-assign.md)  
-[Eszközprofilokkal kapcsolatos gyakori problémák és azok megoldása](device-profile-troubleshoot.md)
+
+[Az eszközök profiljaival kapcsolatos gyakori kérdések, problémák és megoldások](device-profile-troubleshoot.md)  
+[Szabályzatok és profilok és az Intune hibáinak megoldása](troubleshoot-policies-in-microsoft-intune.md)

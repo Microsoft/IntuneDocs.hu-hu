@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 09/04/2019
+ms.date: 10/14/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 31a55f5749b35139368b6c3543fd8ff95db6100d
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 2c578cb430bd6c62c274322ea1e46b5d37d2e143
+ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72506838"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72584977"
 ---
 # <a name="apply-features-and-settings-on-your-devices-using-device-profiles-in-microsoft-intune"></a>Szolgáltatások és beállítások alkalmazása az eszközökön a Microsoft Intune eszköz profiljainak használatával
 
@@ -67,7 +67,7 @@ Ez a funkció a következőket támogatja:
 
 ## <a name="custom-profile"></a>Egyéni profil
 
-Az [Egyéni beállítások](../custom-settings-configure.md) lehetővé teszik a rendszergazdák számára az Intune-ba nem beépített eszközbeállítások hozzárendelését. Az androidos eszközökön OMA-URI értékeket adhat meg. iOS-eszközökön importálható egy, az Apple Configuratorban létrehozott konfigurációs fájl.
+Az [Egyéni beállítások](custom-settings-configure.md) lehetővé teszik a rendszergazdák számára az Intune-ba nem beépített eszközbeállítások hozzárendelését. Az androidos eszközökön OMA-URI értékeket adhat meg. iOS-eszközökön importálható egy, az Apple Configuratorban létrehozott konfigurációs fájl.
 
 Ez a funkció a következőket támogatja:
 
@@ -79,7 +79,7 @@ Ez a funkció a következőket támogatja:
 
 ## <a name="delivery-optimization"></a>Teljesítésoptimalizálás
 
-A [kézbesítés optimalizálása](../delivery-optimization-windows.md) jobb élményt nyújt a szoftverfrissítések kézbesítéséhez. Ezek a beállítások a **szoftverfrissítések**@no__t – 1**Windows 10 frissítési kör** beállításait cserélik le.
+A [kézbesítés optimalizálása](delivery-optimization-windows.md) jobb élményt nyújt a szoftverfrissítések kézbesítéséhez. Ezek a beállítások a **szoftverfrissítések**  > **Windows 10-es frissítési kör** beállításait használják.
 
 Ezekkel a beállításokkal szabályozhatja, hogy a rendszer hogyan töltse le a szoftverfrissítéseket a szervezet eszközeire. Megadhatja például, hogy a felhasználók megkapják a saját frissítéseiket, vagy egy eszköz profiljában a kézbesítési optimalizálás Cloud Services használatával frissítéseket szerezzenek be.
 
@@ -89,7 +89,7 @@ Ez a funkció a következőket támogatja:
 
 ## <a name="device-features"></a>Eszközfunkciók
 
-Az [eszköz szolgáltatásai](../device-features-configure.md) vezérlik az iOS-és MacOS-eszközök funkcióit, például a AirPrint, az értesítéseket és a zárolási képernyő üzeneteit.
+Az [eszköz szolgáltatásai](device-features-configure.md) vezérlik az iOS-és MacOS-eszközök funkcióit, például a AirPrint, az értesítéseket és a zárolási képernyő üzeneteit.
 
 Ez a funkció a következőket támogatja:
 
@@ -211,9 +211,9 @@ Ez a funkció a következőket támogatja:
 
 ## <a name="update-policies"></a>Frissítési szabályzatok
 
-Az [iOS-es frissítési szabályzatok](../software-updates-ios.md) az iOS-eszközökön telepítendő szoftverfrissítésekre vonatkozó iOS-es szabályzatok létrehozását és hozzárendelését mutatják be. A telepítés állapotát is áttekintheti.
+Az [iOS-es frissítési szabályzatok](../protect/software-updates-ios.md) az iOS-eszközökön telepítendő szoftverfrissítésekre vonatkozó iOS-es szabályzatok létrehozását és hozzárendelését mutatják be. A telepítés állapotát is áttekintheti.
 
-A Windows-eszközök frissítési házirendjeivel kapcsolatban lásd: [kézbesítési optimalizálás](../delivery-optimization-windows.md). 
+A Windows-eszközök frissítési házirendjeivel kapcsolatban lásd: [kézbesítési optimalizálás](delivery-optimization-windows.md). 
 
 Ez a funkció a következőket támogatja:
 
@@ -266,7 +266,7 @@ Ez a funkció a következőket támogatja:
 
 ## <a name="manage-and-troubleshoot"></a>Felügyelet és hibaelhárítás
 
-[A profilok kezelésével](../device-profile-monitor.md) ellenőrizheti az eszközök állapotát és a hozzárendelt profilokat. Az ütközéseket kiváltó beállítások, valamint az ezeket a beállításokat tartalmazó profilok megtekintésével is segítheti a problémák megoldását. A [gyakori problémák és megoldások](device-profile-troubleshoot.md) segítenek a rendszergazdáknak a profilok működésében. Leírja, hogy mi történik egy profil törlésekor, mi okozza az értesítések küldését az eszközökre, és így tovább.
+[A profilok kezelésével](device-profile-monitor.md) ellenőrizheti az eszközök állapotát és a hozzárendelt profilokat. Az ütközéseket kiváltó beállítások, valamint az ezeket a beállításokat tartalmazó profilok megtekintésével is segítheti a problémák megoldását. A [gyakori problémák és megoldások](device-profile-troubleshoot.md) segítenek a rendszergazdáknak a profilok működésében. Leírja, hogy mi történik egy profil törlésekor, mi okozza az értesítések küldését az eszközökre, és így tovább.
 
 ## <a name="next-steps"></a>További lépések
 

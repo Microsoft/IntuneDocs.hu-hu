@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 08/15/2019
+ms.date: 10/18/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -15,12 +15,12 @@ ms.reviewer: aiwang
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f9882328efa2ddc5a6c5d6924fe15176e50b7837
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 3f3359bc5544b3a353271ea17083c8c3acb49742
+ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72508703"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72584467"
 ---
 # <a name="windows-update-settings-for-intune"></a>Windows Update-beállítások az Intune-hoz  
 
@@ -217,45 +217,9 @@ A felhasználói élmény beállításai vezérlik az eszköz újraindítására
   - **Az összes értesítés kikapcsolása, kivéve az újraindítási figyelmeztetéseket**
   - **Az összes értesítés kikapcsolása, beleértve az újraindítási figyelmeztetéseket is**  
 
-- **A felhasználó újraindításának engedélyezése (lefolytatott újraindítás)**  
-  **Alapértelmezett**: nincs konfigurálva  
-  > [!IMPORTANT]  
-  > Az *Újraindítási* beállítások használata már nem ajánlott. Ehelyett használja az új *határidő* beállításait, amelyek felülírják a *befoglalt újraindítási* beállításokat. Az Intune a későbbi frissítésekben a leendő [ *Újraindítási* beállítások támogatását fogja érvényteleníteni](../fundamentals/whats-new.md#plan-for-change-new-windows-updates-settings-in-intune-) .
-
-  A Windows 10 1803-es és újabb verzióiban a felvállalt újraindítás támogatott. 
-
-  > [!NOTE]  
-  > A Windows 10 1809-es verziója további lefolytatott újraindítási beállításokat tartalmaz, amelyek lehetővé teszik, hogy a funkciók és a minőségi frissítések külön beállításokat alkalmazzanak. Az Intune által felügyelt beállítások azonban nem vonatkoznak külön a különböző frissítési típusokra. Ehelyett az Intune ugyanazokat az értékeket alkalmazza a szolgáltatás és a minőségi frissítések esetében is.  
-  
-  - **Nincs konfigurálva**  
-  - **Kötelező** – a *kötelező* beállítással engedélyezheti a Windows 10 frissítéseinek a kapcsolódó újraindítási lehetőségeinek használatát. Ezekkel a lehetőségekkel az eszköz felhasználója felügyelheti az eszközt, ha olyan frissítést telepít, amely újraindítást igényel.  
-
-  A beállítással kapcsolatos további információkért tekintse meg a Windows 10-es dokumentációjában a frissítések központi telepítésével [foglalkozó](https://docs.microsoft.com/windows/deployment/update/waas-restart#engaged-restart) témakört.  
-
-  A következő beállításokkal szabályozhatja, hogy mikor történjen a művelet újraindítása.  
-
-  - **A felhasználók automatikus újraindítás utáni újraindítása (nap)**  
-    **Alapértelmezett**: nincs KONFIGURÁLVA Windows Update CSP: [Update/EngagedRestartTransitionSchedule](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-update#update-engagedrestarttransitionschedule)  
-    
-    A frissítés telepítése után adja meg a **2** és **30** nap közötti értéket, amíg az eszköz be nem írja a felvállalt újraindítási viselkedést. A beállított napok száma után a felhasználók az eszköz újraindítására vonatkozó kérést kapnak.  
-
-  - **Késleltetett újraindítási emlékeztető (nap)**  
-    **Alapértelmezett**: nincs konfigurálva    
-    Windows Update CSP: [Update/EngagedRestartSnoozeSchedule](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-update#update-engagedrestartsnoozeschedule)  
-    
-    **1** és **3** közötti értéket ad meg, hogy az újraindítási kérések mennyi ideig legyenek késleltetve.  A késleltetési idő után a rendszer újra felajánlja az újraindítási kérést. A felhasználó továbbra is késleltetheti az emlékeztetőt, amíg el nem éri a telepítési határidőt.  
-
-  - **Függőben lévő újraindítások határidejének megadása (nap)**  
-    **Alapértelmezett**: nincs konfigurálva  
-    Windows Update CSP: [Update/EngagedRestartDeadline](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-update#update-engagedrestartdeadline)  
-  
-    A **2** és **30** közötti értéket kell megadni, amely azt határozza meg, hogy legfeljebb hány nap elteltével induljon el az újraindítási viselkedés, mielőtt az eszköz kényszeríti a szükséges újraindítást. Ez az újraindítás arra kéri a felhasználókat, hogy mentse a munkájukat.
-
 - **Használati határidő beállításai**  
   **Alapértelmezett**: nincs konfigurálva  
-  > [!IMPORTANT]  
-  > Az Intune-nal kapcsolatos augusztusi frissítéstől kezdve a következő határidő-beállítások használatát javasoljuk, amelyek felülírják a befoglalt újraindítási beállításokat. Az Intune a későbbi frissítésekben az Intune-ban a [ *lefoglalt újraindítási* beállítások támogatását fogja érvényteleníteni](../fundamentals/whats-new.md#plan-for-change-new-windows-updates-settings-in-intune-) .  
-
+ 
   Lehetővé teszi a felhasználó számára a határidő-beállítások használatát.  
 
   - **Nincs konfigurálva**
@@ -264,21 +228,21 @@ A felhasználói élmény beállításai vezérlik az eszköz újraindítására
   Az *Engedélyezés*beállításnál a következő beállításokat állíthatja be a határidőkhöz:
 
   - **A szolgáltatások frissítéseinek határideje**  
-    **Alapértelmezett**: 7  
+    **Alapértelmezett**: *nincs konfigurálva*  
     Windows Update CSP: [Update/ConfigureDeadlineForFeatureUpdates](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-update#update-configuredeadlineforfeatureupdates)  
 
     Azt adja meg, hogy hány nap elteltével telepítse automatikusan a rendszer a szolgáltatás frissítéseit az eszközön (2-30).
 
   - **Minőségi frissítések határideje**  
-    **Alapértelmezett**: 7  
+    **Alapértelmezett**: *nincs konfigurálva*  
     Windows Update CSP: [Update/ConfigureDeadlineForQualityUpdates](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-update#update-configuredeadlineforqualityupdates)
 
     Azt adja meg, hogy hány nap elteltével kell a felhasználó automatikusan telepíteni a minőségi frissítéseket az eszközökre (2-30).
 
   - **Türelmi időszak**  
-    **Alapértelmezett**: 2 Windows Update CSP: [Update/ConfigureDeadlineGracePeriod]( https://docs.microsoft.com/windows/client-management/mdm/policy-csp-update#update-configuredeadlinegraceperiod)
+    **Alapértelmezett**: *nincs konfigurálva* Windows Update CSP: [Update/ConfigureDeadlineGracePeriod]( https://docs.microsoft.com/windows/client-management/mdm/policy-csp-update#update-configuredeadlinegraceperiod)
 
-    Azt határozza meg, hogy a határidő lejárta után hány nap elteltével induljon el automatikusan a rendszer (0-7).
+    Azt határozza meg, hogy a határidő lejárta után hány nap elteltével induljon el automatikusan a rendszer (2-7).
 
   - **Automatikus újraindítás a határidő lejárta előtt**  
     **Alapértelmezett**: igen Windows Update CSP: [Update/ConfigureDeadlineNoAutoReboot](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-update#update-configuredeadlinenoautoreboot)
@@ -286,9 +250,6 @@ A felhasználói élmény beállításai vezérlik az eszköz újraindítására
     Meghatározza, hogy az eszköz automatikusan újrainduljon-e a határidő lejárta előtt.
     - **igen**
     - **nem**
-
-
-
 
 ### <a name="delivery-optimization-download-mode"></a>Kézbesítési optimalizálás letöltési módja  
 

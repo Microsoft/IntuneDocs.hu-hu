@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 26165681195a47da0fcfeb86e4cfdbe2da942ec9
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 91627a47f9dccfb436e64aaadeeb392648dff821
+ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72510314"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72585301"
 ---
 # <a name="how-to-get-support-for-microsoft-intune"></a>Hogyan kérhet támogatást az Intune-hoz  
 
@@ -83,7 +83,7 @@ A Súgó és támogatás eléréséhez használja a következő lehetőségeket:
   4. Válassza az Intune Súgó és támogatás lapját.
 
 > [!NOTE]  
-> Ha az Intune-példányt a kormányzati számítási felhő (GCC) üzemelteti, más néven szuverén felhő (például Azure Government), tekintse meg a jelen cikk későbbi, az Intune-támogatás a kormányzati számítási felhőhöz című részét. Az Intune *Súgó és támogatás* felülete nem lesz elérhető a GCC-ben az év későbbi részében. 
+> Ha az Intune-példánya a nyilvános felhőben, más néven szuverén felhőben (például Azure Government) található, tekintse meg a jelen cikk későbbi, az [Intune-támogatás a Private Cloud for Government számára](#intune-support-for-private-cloud-for-government)című részét. Az Intune *Súgó és támogatás* szolgáltatás a privát felhőben nem lesz elérhető az év későbbi részében. 
 
 
 A *Súgó és támogatás*megnyitásakor a portálon egy olyan nézet jelenik meg, amely attól függ, hogy aktív támogatási incidensekkel rendelkezik-e, és ha van Premier szintű támogatás, néhány további elem és lehetőség is van:
@@ -91,7 +91,7 @@ A *Súgó és támogatás*megnyitásakor a portálon egy olyan nézet jelenik me
 - **Aktív támogatási incidensek**: a [támogatási jegyek](#view-support-cases) oldal jelenik meg, amely az aktív incidensek listáját jeleníti meg.  
 - **Premier szintű támogatási szerződés**: a felhasználói élmény ugyanaz, mint az első két lehetőség, de az alábbi további elemek is megjelennek a segítségre van szüksége? oldalala 
   - Ha a lap címe **segítségre van szüksége?** , megjelenik a Premier szintű támogatás banner:  
-    ![Premier-támogatás banner @ no__t-1
+    ![Premier támogatási szalagcím ](./media/get-support/premier-banner.png)
   - A lap **támogatásának beolvasása** részén megadhatja a kezdeti **súlyossági** szintet, ha telefonon keresztül hoz létre szolgáltatási kérést.
 
 
@@ -163,20 +163,20 @@ Az Előzmények gombra kattintva megtekintheti az Ön által létrehozott támog
 
 Ha a bal oldali navigációs ablaktábla **Súgó + támogatás**elemét használja, vagy használja a **?** a Azure Portal jobb felső sarkában megnyithatja az Azure Súgó + támogatás felületét, amely különbözik az Intune Súgó és támogatás szolgáltatásával.  
 
-A 2019-es verziótól kezdődően nem férhet hozzá az Azure *Súgó és támogatás* szolgáltatáshoz, hogy segítséget kapjon az Intune-nal, kivéve, ha az előfizetése a kormányzati számítási felhőben (GCC) van.  
+A 2019-es verziótól kezdődően az Azure *Súgó + támogatási* szolgáltatás nem érhető el az Intune-nal való segítségnyújtáshoz, kivéve, ha az előfizetése egy magán-felhőben van a kormányzati szervek számára.  
 
-Ha az Intune-példány nem fut a GCC-n, az Azure *Súgó és támogatás* szolgáltatáson keresztül történő navigálás a támogatási incidensek létrehozásához és kezeléséhez az Intune *súgóját és támogatási* élményét átirányítja.  
+Ha az Intune-példány nem fut a kormányzathoz tartozó privát felhőben, az Azure *Súgó + támogatás* szolgáltatásban való navigálás a támogatási incidensek létrehozásához és kezeléséhez az Intune *súgóját és támogatási* élményét átirányítja.  
 
 
-## <a name="intune-support-for-government-compute-cloud"></a>Intune-támogatás a kormányzati számítási felhőhöz  
+## <a name="intune-support-for-private-cloud-for-government"></a>Intune-támogatás a Private Cloud for Government szolgáltatáshoz  
 
-Ha az Intune-előfizetést a kormányzati számítási felhő (GCC) üzemelteti, amely más néven szuverén felhőként is ismert, mint a Azure Government, akkor még nem fér hozzá az Intune súgójának és támogatásának újabb felhasználói felületéhez.  Ehelyett használja az alábbi információkat az Intune támogatásához. 
+Ha az Intune-előfizetést a privát felhőben üzemelteti a kormányzati szervek számára, amely más néven szuverén felhő, mint a Azure Government, még nem fér hozzá az Intune Súgó és támogatás újabb verziójához.  Ehelyett használja az alábbi információkat az Intune támogatásához. 
 
 
 ### <a name="create-an-online-support-ticket"></a>Online támogatási jegy létrehozása 
 
 >[!IMPORTANT]    
-> A támogatási incidens létrehozásakor a portál olyan támogatási esetet azonosít, amely egy olyan új rendszerre *való áttérést tesz lehetővé,* amely még nem érhető el a GCC-hez. A 15 számjegyű eset létrehozásakor a rendszer az adott eset tükrözését hozza létre Microsoft ügyfélszolgálata általi használatra. Ez a tükrözési eset egy új támogatási rendszerben jön létre, és a 8 jegyű eset AZONOSÍTÓját használja, és a támogatási szolgáltatások a támogatási incidensek összes munkájának és kommunikációjának nyomon követésére használják. Röviddel a 15 jegyű eset létrehozása után egy e-mailt fog kapni, amely a támogatási szolgáltatások által használt tükrözött támogatási eset 8 számjegyű számát azonosítja.  
+> A támogatási incidensek létrehozásakor a portál olyan támogatási esetet *azonosít, amely* egy olyan új rendszerre mutat be, amely még nem érhető el az állami felhőhöz A 15 számjegyű eset létrehozásakor a rendszer az adott eset tükrözését hozza létre Microsoft ügyfélszolgálata általi használatra. Ez a tükrözési eset egy új támogatási rendszerben jön létre, és a 8 jegyű eset AZONOSÍTÓját használja, és a támogatási szolgáltatások a támogatási incidensek összes munkájának és kommunikációjának nyomon követésére használják. Röviddel a 15 jegyű eset létrehozása után egy e-mailt fog kapni, amely a támogatási szolgáltatások által használt tükrözött támogatási eset 8 számjegyű számát azonosítja.  
 > 
 > Támogassa a személyes munkát és a 8 számjegyű támogatási esetet, és csak a 8 számjegyű támogatási esetet használja a kommunikáció naplózásához és az incidensek előrehaladásának nyomon követéséhez. Ezért e-mail-frissítéseket fog kapni ebből a 8 számjegyű támogatási esetről, amely a kis-és nagybetűket tartalmazó rekordként szolgál. A 15 számjegyű támogatási incidens nem naplózza a részleteket. Ha a támogatás kizárult, és a 8 számjegyű támogatási eset bezárul, az állapotot a 15 számjegyű támogatási eset tükrözi, amelyet az Azure Portalon tekinthet meg.  A 15 számjegyű támogatási esethez nem várható más frissítés vagy állapot változása.  
 > 
@@ -224,7 +224,7 @@ A támogatási kéréseket a Azure Portalon belül tekintheti meg. A korlátozot
 2. A **Súgó + támogatás** lapon megtekintheti a **legutóbbi támogatási kérelmek**listáját.
 
    > [!IMPORTANT]  
-   > A kormányzati számítási felhő ügyfelei csak a 15 számjegyű támogatási eset számát és az incidens állapotát tekinthetik meg. A rendszer e-mailben küldi el a munkahelyi vagy riasztási kommunikációt és nyomon követést, valamint az Intune-konzolon megnyitott támogatási eset tükrözésével létrehozott 8 számjegyű támogatási eset számát.   
+   > A kormányzati ügyfelek számára a privát felhő csak a 15 számjegyű támogatási eset számát és az incidens állapotát tekintheti meg. A rendszer e-mailben küldi el a munkahelyi vagy riasztási kommunikációt és nyomon követést, valamint az Intune-konzolon megnyitott támogatási eset tükrözésével létrehozott 8 számjegyű támogatási eset számát.   
 
 ## <a name="additional-resources"></a>További háttéranyagok  
 

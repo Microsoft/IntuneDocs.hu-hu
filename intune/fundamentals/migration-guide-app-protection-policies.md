@@ -17,12 +17,12 @@ ms.reviewer: dagerrit
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4fa95aca680d3aa47906cad2b31695c87964fdb7
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 8fab3ea722e94f2613a0fb1e474a16ecb5971569
+ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72510087"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72585263"
 ---
 # <a name="configure-app-protection-policies-optional"></a>Alkalmazásvédelmi szabályzatok konfigurálása (nem kötelező)
 
@@ -52,9 +52,7 @@ A régi MDM-szolgáltatóban a feltételes hozzáférés letiltásával a felhas
 
 ## <a name="task-list-for-app-protection-policies"></a>Feladatlista az alkalmazásvédelmi szabályzatokhoz
 
-1. [Alkalmazásvédelmi szabályzat létrehozása](../apps/app-protection-policies.md#create-an-app-protection-policy)
-2. [Szabályzat telepítése](../apps/app-protection-policies.md#deploy-a-policy-to-users)
-
+- [Alkalmazásvédelmi szabályzatok létrehozása és hozzárendelése](~/apps/app-protection-policies.md)
 
 ## <a name="next-steps"></a>További lépések
 

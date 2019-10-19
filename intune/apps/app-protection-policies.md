@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 10/03/2019
+ms.date: 10/16/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,18 +18,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c8507f98a757f2f80580014eab3589da12f8de8
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: a8e105dae43c4e7139c8e44a8c6535baebe31cc4
+ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72499203"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72585480"
 ---
 # <a name="how-to-create-and-assign-app-protection-policies"></a>Alkalmazásvédelmi szabályzatok létrehozása és hozzárendelése
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-Az alábbiakban azt ismertetjük, hogyan hozhat létre és rendelhet hozzá a Microsoft Intune-ban alkalmazásvédelmi szabályzatokat a felhasználók számára. A témakör a meglévő szabályzatok módosítását is ismerteti.
+Megtudhatja, hogyan hozhat létre és rendelhet hozzá Microsoft Intune app Protection-házirendeket (alkalmazást) a szervezet felhasználói számára. A témakör a meglévő szabályzatok módosítását is ismerteti.
 
 ## <a name="before-you-begin"></a>Előkészületek
 
@@ -39,19 +39,87 @@ Amennyiben az MAM által támogatott alkalmazások listáját keresi, lásd az [
 
 További információk a cég üzletági (LOB) alkalmazásainak a Microsoft Intune-hoz való hozzáadásáról az alkalmazásvédelmi szabályzatok előkészítése céljából: [Alkalmazások hozzáadása a Microsoft Intune-hoz](apps-add.md).
 
-## <a name="create-an-app-protection-policy"></a>Alkalmazásvédelmi szabályzat létrehozása
-1. Az Intune portálon válassza az **Ügyfélalkalmazások** > **Alkalmazásvédelmi szabályzatok** lehetőséget. Ekkor megnyílik az **Alkalmazásvédelmi szabályzatok** panel, amelyen új szabályzatokat hozhat létre, és szerkesztheti a meglévőket.
-2. Válassza a **Szabályzat létrehozása** lehetőséget.
+Az alkalmazás-védelmi szabályzat létrehozásának folyamata jelenleg a platformtól függően eltérő:
+- Alkalmazás-védelmi szabályzatok iOS/iPadOS és Android-alkalmazásokhoz
+- Alkalmazás-védelmi szabályzatok Windows 10-es alkalmazásokhoz
 
-   ![Képernyőfelvétel a Szabályzat hozzáadása panelről](./media/app-protection-policies/app-protection-add-policy.png)
+## <a name="app-protection-policies-for-iosipados-and-android-apps"></a>Alkalmazás-védelmi szabályzatok iOS/iPadOS és Android-alkalmazásokhoz
 
-3. Adja meg a szabályzat nevét, egy rövid leírást, és válassza ki a szabályzat platformtípusát. Az egyes platformokon egynél több szabályzatot is beállíthat.
+Ha iOS-/iPadOS-és Android-alkalmazásokhoz hoz létre alkalmazás-védelmi szabályzatot, egy új alkalmazás-védelmi házirendet eredményező modern Intune-folyamatot követ.
 
-4. Válassza az **Alkalmazások** elemet az **Alkalmazások** panel megnyitásához, ahol megjelenik a rendelkezésre álló alkalmazások listája. Egy vagy több alkalmazást is kijelölhet a listában a létrehozott szabályzattal való társításra. Jelöljön ki legalább egy alkalmazást a szabályzat létrehozásához.  
+### <a name="create-an-iosipados-or-android-app-protection-policy"></a>IOS-/iPadOS-vagy Android-alkalmazás-védelmi szabályzat létrehozása
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
+2. Az Intune-portálon válassza az **ügyfélalkalmazások**  > **app Protection-házirendek**elemet. Ekkor megnyílik az **Alkalmazásvédelmi szabályzatok** panel, amelyen új szabályzatokat hozhat létre, és szerkesztheti a meglévőket.
+3. Válassza a **házirend létrehozása** lehetőséget, és válassza az **iOS/IPadOS** vagy az **Android**lehetőséget. Megjelenik a **szabályzat létrehozása** panel.
+4. Az **alapvető beállítások** lapon adja hozzá a következő értékeket:
 
-5. Az alkalmazások kijelölése után a mentéshez válassza a **Kiválasztás** lehetőséget.
+    | Érték | Description |
+    |--------------|------------------------------------------------|
+    | Név | Az alkalmazás védelmi szabályzatának neve. |
+    | Description | Választható Az alkalmazás védelmi szabályzatának leírása. |
 
-6. A **Szabályzat hozzáadása** panelen válassza a **Kötelező beállítások konfigurálása** lehetőséget a **Beállítások** megnyitásához.
+
+    A **platform** értéke a fenti választás alapján van beállítva.
+
+    ![Képernyőkép a szabályzat létrehozása panel alapismeretek lapján](~/apps/media/app-protection-policies/app-protection-add-policies-01.png)
+
+5. Az **alkalmazások** lap megjelenítéséhez kattintson a **tovább** gombra.<br>
+    Az **alkalmazások** oldalon kiválaszthatja, hogyan szeretné alkalmazni a szabályzatot különböző eszközökön futó alkalmazásokra. Legalább egy alkalmazást fel kell vennie.<p>
+    
+    | Érték/beállítás | Description |
+    |-------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+    | Az alkalmazások célzása minden eszköz típusán | Ezzel a beállítással a szabályzatot a felügyeleti állapotú eszközökön futó alkalmazásokra is megcélozhatja. Válassza a **nem** lehetőséget az alkalmazások célzásához adott eszközökön. |
+    |     Eszközök típusai | Ezzel a beállítással adhatja meg, hogy a szabályzat a MDM által felügyelt vagy nem felügyelt eszközökre vonatkozzon-e. IOS-ALKALMAZÁSokra vonatkozó szabályzatok esetén válasszon a nem **felügyelt** és **felügyelt** eszközök közül. Android-ALKALMAZÁSokra vonatkozó szabályzatok esetén válassza a nem **felügyelt**, **androidos eszközök rendszergazdája**és az **Android Enterprise**lehetőséget.  |
+    | Nyilvános alkalmazások | Kattintson a **nyilvános alkalmazások kiválasztása** lehetőségre a célként használandó alkalmazások kiválasztásához. |
+    | Egyéni alkalmazások | Az **egyéni alkalmazások kiválasztása** lehetőségre kattintva kiválaszthat egy köteg-azonosító alapján megcélzott egyéni alkalmazásokat. |
+    
+    A kiválasztott alkalmazás (ok) megjelenik a nyilvános és az egyéni alkalmazások listájában. 
+6. Az **Adatvédelem** lap megjelenítéséhez kattintson a **tovább** gombra.<br>
+    Ezen a lapon megtekintheti az adatveszteség-megelőzési (DLP) vezérlők beállításait, beleértve a kivágási, másolási, beillesztési és mentési korlátozásokat is. Ezek a beállítások határozzák meg, hogy a felhasználók hogyan használják az adatvédelmi szabályzat hatálya alá eső alkalmazásokban lévő adatszolgáltatásokat.
+
+    **Adatvédelmi beállítások**:<br>
+    - **iOS/iPadOS adatvédelem** – további információ: [iOS-alkalmazás védelmi szabályzatának beállításai – adatvédelem](~/apps/app-protection-policy-settings-ios.md#data-protection).
+    - **Android-adatvédelem** – további információért lásd: az [Android-alkalmazások védelmi házirendjének beállításai – adatvédelem](~/apps/app-protection-policy-settings-android.md#data-protection).
+
+7. A **hozzáférési követelmények** lap megjelenítéséhez kattintson a **tovább** gombra.<br>
+    Ezen a lapon megadhatja a PIN-kód és a hitelesítő adatok azon követelményeit, amelyeket a felhasználóknak meg kell felelniük az alkalmazások munkahelyi környezetben való eléréséhez. 
+ 
+    **Hozzáférési követelmények beállításai**:<br>
+    - **iOS/iPadOS hozzáférési követelmények** – további információért lásd: az [iOS-alkalmazások védelmi házirendjének beállításai – hozzáférési követelmények](~/apps/app-protection-policy-settings-ios.md#access-requirements).
+    - **Android-hozzáférési követelmények** – további információért lásd: az [Android-alkalmazások védelmi házirendjének beállításai – hozzáférési követelmények](~/apps/app-protection-policy-settings-android.md#access-requirements).
+
+8. Kattintson a **tovább** gombra a **feltételes indítási** oldal megjelenítéséhez.<br>
+    Ezen a lapon adhatók meg az alkalmazás-védelmi szabályzat bejelentkezési biztonsági követelményei. Válasszon egy **Beállítást**, és adjon meg egy **Értéket**, amelynek a felhasználónak meg kell felelnie ahhoz, hogy bejelentkezhessen a vállalati alkalmazásába. Ezután válassza ki azt a **műveletet** , amelyet el szeretne végezni, ha a felhasználók nem felelnek meg a követelményeknek. Bizonyos esetekben egy beállításhoz több művelet is megadható.
+
+    **Feltételes indítási beállítások**:<br>
+    - **iOS/iPadOS feltételes indítás** – további információért lásd: az [iOS-alkalmazások védelmi házirendjének beállításai – feltételes indítás](~/apps/app-protection-policy-settings-ios.md#conditional-launch).
+    - **Android feltételes indítás** – további információért lásd: [Android-alkalmazás védelmi házirendjének beállításai – feltételes indítás](~/apps/app-protection-policy-settings-android.md#conditional-launch).
+
+7. A **hozzárendelések** lap megjelenítéséhez kattintson a **tovább** gombra.<br>
+   A **hozzárendelések** lapon engedélyezheti az alkalmazás-védelmi házirendet a felhasználók csoportjaihoz. 
+8. Kattintson a **Tovább gombra: felülvizsgálat + létrehozás** elemre, és tekintse át az alkalmazás védelmi házirendjéhez megadott értékeket és beállításokat.
+9. Ha elkészült, kattintson a **Létrehozás** gombra az alkalmazás-védelmi szabályzat létrehozásához az Intune-ban. 
+
+## <a name="app-protection-policies-for-windows-10-apps"></a>Alkalmazás-védelmi szabályzatok Windows 10-es alkalmazásokhoz
+
+Ha Windows 10-es alkalmazásokhoz hoz létre alkalmazás-védelmi szabályzatot, az Intune egy klasszikus folyamatát fogja követni.
+
+### <a name="create-a-windows-10-app-protection-policy"></a>Windows 10 app Protection-szabályzat létrehozása
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
+2. Az Intune-portálon válassza az **ügyfélalkalmazások**  > **app Protection-házirendek**elemet. Ekkor megnyílik az **Alkalmazásvédelmi szabályzatok** panel, amelyen új szabályzatokat hozhat létre, és szerkesztheti a meglévőket.
+3. Válassza a **házirend létrehozása**lehetőséget.
+
+    <img alt="Screenshot of the 'Create policy' blade for Windows 10" src="~/apps/media/app-protection-policies/app-protection-add-policy.png" width="350">
+
+4. Adja meg a szabályzat nevét, egy rövid leírást, és válassza ki a szabályzat platformtípusát. Az egyes platformokon egynél több szabályzatot is beállíthat.
+
+4. Dönthet úgy, hogy az **összes típusú alkalmazást Megcélozja**. Ez a beállítás lehetővé teszi, hogy a szabályzatot bármilyen felügyeleti állapotú eszközön lévő alkalmazásokba célozza. A házirend ütközésének feloldása során a rendszer felülírja ezt a beállítást, ha egy felhasználó egy adott felügyeleti állapotra vonatkozó házirendet tartalmaz. További információ: [Eszközkezelési állapottól függő alkalmazásvédelmi szabályzatok](~/apps/app-protection-policies.md#target-app-protection-policies-based-on-device-management-state).
+
+5. Válassza az **Alkalmazások** elemet az **Alkalmazások** panel megnyitásához, ahol megjelenik a rendelkezésre álló alkalmazások listája. Egy vagy több alkalmazást is kijelölhet a listában a létrehozott szabályzattal való társításra. Jelöljön ki legalább egy alkalmazást a szabályzat létrehozásához.  
+
+6. Az alkalmazások kijelölése után a mentéshez válassza a **Kiválasztás** lehetőséget.
+
+7. A **Szabályzat hozzáadása** panelen válassza a **Kötelező beállítások konfigurálása** lehetőséget a **Beállítások** megnyitásához.
 
    A szabályzatra vonatkozó beállítások három kategóriába tartoznak:
    - **Adatvédelem** – ez a csoport tartalmazza az adatveszteség-megelőzési (DLP) vezérlőket, például a kivágási, másolási, beillesztési és mentési korlátozásokat. Ezek a beállítások szabják meg, hogy hogyan kezelhetik a felhasználók az adatokat az alkalmazásokban.
@@ -63,12 +131,12 @@ További információk a cég üzletági (LOB) alkalmazásainak a Microsoft Intu
    > [!TIP]
    > A szabályzat beállításai csak akkor lépnek érvénybe, ha munkahelyi környezetben használják az alkalmazásokat. Ha a végfelhasználók az alkalmazást személyes célra használják, nem vonatkoznak rájuk a ezek szabályzatok. Figyelje meg, hogy a létrehozott új fájlokat személyes fájlként kezeli a rendszer. 
 
-7. A konfiguráció mentéséhez válassza az **OK** gombot. Ekkor visszakerül a **Szabályzat hozzáadása** panelre.
-8. Válassza a **Létrehozás** lehetőséget a szabályzat létrehozásához és a beállítások mentéséhez.
+8. A konfiguráció mentéséhez válassza az **OK** gombot. Ekkor visszakerül a **Szabályzat hozzáadása** panelre.
+9. Válassza a **Létrehozás** lehetőséget a szabályzat létrehozásához és a beállítások mentéséhez.
 
-A létrehozott új szabályzatok egy felhasználóhoz sem lesznek hozzárendelve, amíg ezt Ön explicit módon meg nem teszi. A szabályzatok életbe léptetéséről a [Szabályzat telepítése a felhasználók számára](app-protection-policies.md#deploy-a-policy-to-users) című szakasz nyújt tájékoztatást.
+Az Ön által létrehozott új Windows 10-es házirendek nincsenek hozzárendelve a felhasználókhoz, amíg erre kifejezetten nem kerül sor. Windows 10 házirend hozzárendeléséhez tekintse [meg a Windows 10-es szabályzatok felhasználók számára való hozzárendelését](~/apps/app-protection-policies.md#assign-a-windows-10-policy-to-users) ismertető témakört.
 
-## <a name="deploy-a-policy-to-users"></a>Szabályzat telepítése a felhasználók számára
+### <a name="assign-a-windows-10-policy-to-users"></a>Windows 10-es házirend társítása a felhasználókhoz 
 
 1. Jelöljön ki egy szabályzatot az **Alkalmazásvédelmi szabályzatok** panelen.
 
@@ -95,7 +163,7 @@ A végfelhasználók az App Store-ból vagy a Google Play áruházból töltheti
 * [Milyen hatással vannak az androidos alkalmazásokra az alkalmazásvédelmi szabályzatok?](../fundamentals/end-user-mam-apps-android.md)
 * [Milyen hatással vannak az iOS-es alkalmazásokra az alkalmazásvédelmi szabályzatok?](../fundamentals/end-user-mam-apps-ios.md)
 
-## <a name="change-existing-policies"></a>A meglévő szabályzatok módosítása
+### <a name="change-existing-windows-10-policies"></a>Meglévő Windows 10-es házirendek módosítása
 A meglévő szabályzatokat szerkesztheti, és alkalmazhatja azokat a megcélzott felhasználókra. Ha azonban a meglévő szabályzatok módosításakor a felhasználók már be voltak jelentkezve az alkalmazásokba, csak egy 8 órás időszak elteltével láthatják a változtatásokat.
 
 A változtatások hatásának érzékeléséhez a felhasználónak ki kell jelentkeznie az alkalmazásból, majd újból be kell jelentkeznie.
@@ -108,8 +176,7 @@ A változtatások hatásának érzékeléséhez a felhasználónak ki kell jelen
 
 3. A listában eltávolíthat vagy hozzáadhat alkalmazásokat, majd a **Mentés** ikont választva mentheti a módosításokat.
 
-### <a name="to-change-the-list-of-user-groups"></a>A felhasználói csoportok listájának módosítása
-
+#### <a name="to-change-the-list-of-user-groups"></a>A felhasználói csoportok listájának módosítása
 
 1. Az **Alkalmazásvédelmi szabályzatok** panelen válassza ki a módosítani kívánt szabályzatot.
 
@@ -123,7 +190,7 @@ A változtatások hatásának érzékeléséhez a felhasználónak ki kell jelen
 
 5. A hozzárendelések módosítása után a **Mentés** gombra kattintva mentse a konfigurációt, és telepítse a szabályzatot az új felhasználók csoportba. Ha a konfiguráció mentése előtt kiválasztja az **Elvetés** lehetőséget, a rendszer elveti a *belefoglalási* és *kizárási* lapokon végrehajtott összes módosítást.
 
-### <a name="to-change-policy-settings"></a>A szabályzatbeállítások módosítása
+### <a name="to-change-windows-10-policy-settings"></a>A Windows 10-es házirend beállításainak módosítása
 
 1. Az **Alkalmazásvédelmi szabályzatok** panelen válassza ki a módosítani kívánt szabályzatot.
 
@@ -136,9 +203,9 @@ A változtatások hatásának érzékeléséhez a felhasználónak ki kell jelen
 ## <a name="target-app-protection-policies-based-on-device-management-state"></a>Eszközkezelési állapottól függő alkalmazásvédelmi szabályzatok
 Vállalatoknál gyakori, hogy a felhasználóknak engedélyezett mind az Intune által felügyelt (MDM) eszközök használata, mind pedig a nem felügyelt, csak az Intune alkalmazásvédelmi szabályzatok által védett eszközök használata. A nem felügyelt eszközöket gyakran saját (BYOD-) eszközöknek nevezik.
 
-Mivel az Intune alkalmazásvédelmi szabályzatok a felhasználói identitásra irányulnak, a felhasználók védelmi beállításait a rendszer alkalmazhatja mind a regisztrált (MDM által felügyelt), mind pedig a regisztrálatlan (MDM nélküli) eszközökre. Emiatt lehetősége van megadni, hogy az Intune alkalmazásvédelmi szabályzatot az Intune-ban regisztrált vagy regisztrálatlan iOS- és Android-eszközökre kívánja-e alkalmazni. A nem felügyelt eszközökre vonatkozóan egyetlen védelmi szabályzattal rendelkezhet, amelyben szigorú adatvesztés-megelőzési (DLP) vezérlők találhatók, valamint egy külön védelmi szabályzat a MDM által felügyelt eszközökhöz, ahol a DLP-vezérlők valamivel nyugodtabbak lehetnek. Ha többet szeretne megtudni arról, hogy ez hogyan működik a személyes Android enteprise-eszközökön, tekintse meg az [alkalmazás-védelmi szabályzatok és a munkahelyi profilok](android-deployment-scenarios-app-protection-work-profiles.md)
+Mivel az Intune alkalmazásvédelmi szabályzatok a felhasználói identitásra irányulnak, a felhasználók védelmi beállításait a rendszer alkalmazhatja mind a regisztrált (MDM által felügyelt), mind pedig a regisztrálatlan (MDM nélküli) eszközökre. Emiatt lehetősége van megadni, hogy az Intune alkalmazásvédelmi szabályzatot az Intune-ban regisztrált vagy regisztrálatlan iOS- és Android-eszközökre kívánja-e alkalmazni. A nem felügyelt eszközökre vonatkozóan egyetlen védelmi szabályzattal rendelkezhet, amelyben szigorú adatvesztés-megelőzési (DLP) vezérlők találhatók, valamint egy külön védelmi szabályzat a MDM által felügyelt eszközökhöz, ahol a DLP-vezérlők valamivel nyugodtabbak lehetnek. További információ arról, hogy ez hogyan működik a személyes Android Enterprise-eszközökön: [alkalmazás-védelmi szabályzatok és munkahelyi profilok](android-deployment-scenarios-app-protection-work-profiles.md).
 
-A szabályzatok létrehozásához navigáljon az Intune-konzolon az **Ügyfélalkalmazások** > **Alkalmazásvédelmi szabályzatok** lapra, majd kattintson a **Szabályzat létrehozása** elemre. Másik lehetőségként egy meglévő alkalmazásvédelmi szabályzatot is szerkeszthet. Ahhoz, hogy az alkalmazásvédelmi szabályzat a felügyelt és a nem felügyelt eszközökre egyaránt alkalmazva legyen, győződjön meg róla, hogy az **Alkalmazás minden alkalmazástípusra** beállításnál az alapértelmezett **Igen** érték van beállítva. Ha a szabályzatot az eszközkezelési állapottól függően szeretné alkalmazni, állítsa az **Alkalmazás minden alkalmazástípusra** beállítást a **Nem** értékre. 
+A szabályzatok létrehozásához navigáljon az Intune-konzolon az **Ügyfélalkalmazások** > **Alkalmazásvédelmi szabályzatok** lapra, majd kattintson a **Szabályzat létrehozása** elemre. Másik lehetőségként egy meglévő alkalmazásvédelmi szabályzatot is szerkeszthet. Ahhoz, hogy az alkalmazás védelmi szabályzata a felügyelt és a nem felügyelt eszközökre is vonatkozzon, navigáljon az **alkalmazások** lapra, és győződjön meg róla, hogy az **összes eszközön a cél az alkalmazásokhoz** beállítás értéke **Igen**, az alapértelmezett érték. Ha azt szeretné, hogy a rendszer részletesen hozzárendelje a hozzárendelést a felügyeleti állapot alapján, a **nem**értékre állítsa a **cél alkalmazást az összes eszközön** . 
 
 ![Képernyőfelvétel a szabályzat hozzáadása panel és a cél között az összes alkalmazás típusához](./media/app-protection-policies/app-protection-policies-target-all.png)
 

@@ -6,7 +6,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 09/26/2019
+ms.date: 10/08/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4e39464705b0a3bac70616d49eb80681515db801
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: a26af380ef00c85c681beccdcdf188c343da1b94
+ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72489985"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72584892"
 ---
 # <a name="ios-and-ipados-device-settings-to-allow-or-restrict-features-using-intune"></a>iOS-és iPadOS-eszközök beállításai az Intune-t használó funkciók engedélyezéséhez vagy korlátozásához
 
@@ -268,6 +268,11 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
 
   Az iOS 13,0-es verziótól kezdve a beállításhoz felügyelt eszközök szükségesek.
 
+- **Hozzáférés hálózati meghajtóhoz a Files alkalmazásban**: a kiszolgálói üzenetblokk (SMB) protokoll használatával az eszközök hozzáférhetnek a hálózati kiszolgálón található fájlokhoz vagy egyéb erőforrásokhoz. A **Letiltás** beállítás meggátolja a hálózati SMB-meghajtón lévő fájlok elérését. **Nincs konfigurálva** (alapértelmezés) engedélyezi a hozzáférést.
+
+  Ez a funkció az alábbiakra vonatkozik:  
+  - iOS és iPadOS 13,0 és újabb verziók
+
 ## <a name="built-in-apps"></a>Beépített alkalmazások
 
 ### <a name="settings-apply-to-all-enrollment-types"></a>A beállítások a következőre vonatkoznak: minden regisztrációs típus
@@ -378,7 +383,7 @@ Az iOS 9,3-es vagy újabb verzióját futtató eszközökre vonatkozik.
 
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: automatikus eszközök beléptetése (felügyelt)
 
-- **Az alkalmazások típusa lista**: hozza létre a megjelenítendő vagy elrejteni kívánt alkalmazások listáját. A választható lehetőségek:
+- **Az alkalmazások típusa lista**: hozza létre a megjelenítendő vagy elrejteni kívánt alkalmazások listáját. Megjelenítheti vagy elrejtheti a beépített alkalmazásokat és üzletági alkalmazásokat. Az Apple webhelye tartalmazza a [beépített Apple apps-alkalmazásokat](https://support.apple.com/HT208094). A választható lehetőségek:
 
   - **Rejtett alkalmazások**: megadhatja a felhasználók elől rejtett alkalmazások listáját. A felhasználók nem tekinthetik meg és nem nyitják meg ezeket az alkalmazásokat.
   - **Látható alkalmazások**: megadhatja a felhasználók által megtekinthető és elindítható alkalmazások listáját. Ezeken kívül a felhasználók más alkalmazásokat nem látnak és nem indíthatnak el.
@@ -433,7 +438,12 @@ Alkalmazások hozzáadásához a következőket teheti:
   - iOS 12,2 és újabb verziók
 
 - **Csak a konfigurációs profilokat használó Wi-Fi-hálózatok csatlakoztatása**: **megköveteli** , hogy az eszköz csak az Intune konfigurációs profiljain keresztül beállított Wi-Fi-hálózatokat használja. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy az eszköz más Wi-Fi-hálózatokat használjon.
-- A **Wi-Fi állapot módosítása**: **nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy bekapcsolják vagy kikapcsolják a Wi-Fi-t az eszközön. A **blokk** megakadályozza a Wi-Fi be-és kikapcsolását.
+- **Wi-Fi mindig be van kapcsolva**: Ha a beállítás **kötelező**, a Wi-Fi a beállítások alkalmazásban marad. A beállításokban vagy a vezérlési központban nem kapcsolható ki, még akkor is, ha az eszköz Airplane módban van. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára a Wi-Fi bekapcsolásának vagy kikapcsolásának szabályozását.
+
+  A beállítás konfigurálása nem akadályozza meg, hogy a felhasználók kiválasszák a Wi-Fi hálózatot.
+
+  Ez a funkció az alábbiakra vonatkozik:  
+  - iOS és iPadOS 13,0 és újabb verziók
 
 ## <a name="connected-devices"></a>Csatlakoztatott eszközök
 
@@ -459,6 +469,11 @@ Alkalmazások hozzáadásához a következőket teheti:
 
   Ez a funkció az alábbiakra vonatkozik:  
   - iOS 11,0 és újabb verziók
+
+- **Hozzáférés a fájlokhoz USB-meghajtón**: az eszközök csatlakozhatnak és megnyithatnak egy USB-meghajtón található fájlokat. A **Letiltás** beállítás megadásával megakadályozható, hogy az eszköz HOZZÁFÉRJEN az USB-meghajtóhoz a fájlok alkalmazásban, ha az USB-kapcsolat az eszközhöz csatlakozik. A funkció letiltása azt is megakadályozza, hogy a végfelhasználók fájlokat vigyenek át egy iPadhez csatlakoztatott USB-meghajtóra. **Nincs konfigurálva** (az alapértelmezett érték) a fájlok alkalmazásban található USB-meghajtó elérését teszi lehetővé.
+
+  Ez a funkció az alábbiakra vonatkozik:  
+  - iOS és iPadOS 13,0 és újabb verziók
 
 ## <a name="keyboard-and-dictionary"></a>Billentyűzet és szótár
 

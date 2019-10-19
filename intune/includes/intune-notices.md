@@ -7,12 +7,12 @@ ms.topic: include
 ms.date: 03/28/2019
 ms.author: erikje
 ms.custom: include file
-ms.openlocfilehash: 9e18182ff8cbddff1ae41298120928f2e2cb948a
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 5ebab881a524bc361e271856b6762776974cea20
+ms.sourcegitcommit: 5807f4db4a45a093ce2fd6cb0c480bec384ec1ff
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72502762"
+ms.lasthandoff: 10/19/2019
+ms.locfileid: "72601535"
 ---
 Ezek a hirdetmények olyan fontos információkat tartalmaznak, amelyek segíthetnek a jövőbeli Intune-változások és-funkciók előkészítésében.
 
@@ -71,22 +71,6 @@ Semmilyen műveletet nem kell végrehajtania, de szükség esetén érdemes lehe
 #### <a name="additional-information"></a>További információ 
 https://aka.ms/intune_fullscreen
 
-### <a name="plan-for-change-new-windows-updates-settings-in-intune----4464404---"></a>Tervezze meg a változást: új Windows Update-beállítások az Intune-ban <!-- 4464404 -->
-Az Intune-szolgáltatás vagy a 1908-es verziótól kezdődően az új "határidő-beállításokat" vesszük fel, amelyet a "felhasználó újraindításának engedélyezése (elvégezhető újraindítás)" beállítások helyett konfigurálhat. Azt tervezzük, hogy letiltjuk a bekapcsolt – újraindítási beállításokat a felhasználói felületen a 1909-as vagy a szeptemberi frissítésben, majd az október végéig teljesen eltávolítja őket a-konzolról.
-
-#### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
-Ha Windows 10-es eszközöket kezel a környezetben:
-
-- Az Intune frissítésével vagy 1908-as verziójában az új határidő-beállítások jelennek meg a konzolon a régi, bekapcsolt újraindítási beállítások mellett.
-- Ha a régi és az új beállítások is be vannak állítva, a határidő-beállítási értékek felülbírálják a befoglalt újraindítási beállítások értékeit.
-- A határidő-beállítások a 1910-es frissítésben szereplő "a felhasználó újraindításának engedélyezése (elvégezhető újraindításhoz)" lehetőséget fogják cserélni.
-
-#### <a name="what-can-i-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
-Az 1908-as határidő-beállítások használatával kezdje meg a kívánt értékeket beállítani. Ha ezt megtörtént, beállíthatja a bekapcsolt újraindítási beállítást a "nincs konfigurálva" értékre, hogy előkészítse ezeket a beállításokat a konzolról októberben.
-
-Szükség esetén frissítse a dokumentációt és az Automation-parancsfájlokat.
-
-Továbbra is frissítjük, és egy emlékeztetőt teszünk közzé az üzenetközpont előtt, mielőtt eltávolítjuk a befoglalt-újraindítási beállításokat.
 
 ### <a name="plan-for-change-intune-app-sdk-and-app-protection-policies-for-android-moving-to-support-android-50-and-higher-in-october---4911065---"></a>Tervezze meg a változást: az Intune app SDK és az alkalmazás-védelmi szabályzatok Android rendszerre való áttérés az Android 5,0-es és újabb verzióinak támogatásához <!--4911065 -->
 Az Intune az Android 5. x (nyalóka) és újabb verzióinak támogatására lesz áthelyezve. Frissítheti az összes burkolt alkalmazást a legújabb Intune app SDK-val, és frissítheti az eszközeit.

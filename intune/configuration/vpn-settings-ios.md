@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 09/05/2019
+ms.date: 10/18/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 593184ffcdaf82075eeee9a12d3d41da281c2fbd
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: f6d7b831899a740e722560c509c4b09c31d2a42b
+ms.sourcegitcommit: 8c25aeefb7cbc6444a8596af22fccd1c5426877a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72506564"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72593786"
 ---
 # <a name="add-vpn-settings-on-ios-devices-in-microsoft-intune"></a>VPN-beállítások hozzáadása iOS-eszközökön Microsoft Intune
 
@@ -72,6 +72,8 @@ Az alábbi listában látható beállításokat a kiválasztott VPN-kapcsolat t�
 
     > [!NOTE]
     > Ha a Cisco IPsec VPN-hez felhasználónevet és jelszót használ hitelesítési módszerként, a titkos kulcsot egy egyéni Apple Configurator-profilon keresztül kell továbbítani.
+
+  - **Származtatott hitelesítő adatok**: Ha nincs beállítva származtatott hitelesítőadat-kiállító, az Intune erre kéri.
 
 - **Kizárt URL-címek** (csak Zscaler): A Zscaler VPN-hez csatlakozva a felsorolt URL-címek érhetők el a Zscaler-felhőn kívülről. 
 
@@ -156,7 +158,7 @@ Ezek a beállítások akkor érvényesek, ha a **kapcsolattípus** > **IKEv2**va
     - SHA2 – 384
     - SHA2 – 512
   - **Diffie-Hellman csoport**: válassza ki a kívánt csoportot. Az alapértelmezett érték a Group `2`.
-  - **Élettartam** (perc): válassza ki, hogy mennyi ideig marad aktív a biztonsági társítás a kulcsok elforgatása előtt. @No__t – 0 és `1440` közötti egész értéket adjon meg (1440 perc 24 óra). Az alapértelmezett érték `1440`.
+  - **Élettartam** (perc): válassza ki, hogy mennyi ideig marad aktív a biztonsági társítás a kulcsok elforgatása előtt. @No__t_0 és `1440` közötti egész értéket adjon meg (1440 perc 24 óra). Az alapértelmezett érték `1440`.
 
 - **Külön paraméterek beállítása a gyermek biztonsági társításokhoz**: az iOS lehetővé teszi, hogy külön paramétereket konfiguráljon az IKE-kapcsolathoz és az alárendelt kapcsolatokhoz. 
 
@@ -175,7 +177,7 @@ Ezek a beállítások akkor érvényesek, ha a **kapcsolattípus** > **IKEv2**va
     - SHA2 – 384
     - SHA2 – 512
   - **Diffie-Hellman csoport**: válassza ki a kívánt csoportot. Az alapértelmezett érték a Group `2`.
-  - **Élettartam** (perc): válassza ki, hogy mennyi ideig marad aktív a biztonsági társítás a kulcsok elforgatása előtt. @No__t – 0 és `1440` közötti egész értéket adjon meg (1440 perc 24 óra). Az alapértelmezett érték `1440`.
+  - **Élettartam** (perc): válassza ki, hogy mennyi ideig marad aktív a biztonsági társítás a kulcsok elforgatása előtt. @No__t_0 és `1440` közötti egész értéket adjon meg (1440 perc 24 óra). Az alapértelmezett érték `1440`.
 
 ## <a name="automatic-vpn-settings"></a>Automatikus VPN-beállítások
 

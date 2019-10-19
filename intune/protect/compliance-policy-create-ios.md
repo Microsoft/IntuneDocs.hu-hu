@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a3c9851cee87a19004c44dd2b57f9be9645a55de
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 5f473e376278b454ca2d173c7c147137226a9fc9
+ms.sourcegitcommit: 5807f4db4a45a093ce2fd6cb0c480bec384ec1ff
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72504675"
+ms.lasthandoff: 10/19/2019
+ms.locfileid: "72601512"
 ---
 # <a name="ios-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>iOS-beállítások az eszközök megfelelő vagy nem megfelelőként való megjelöléséhez az Intune-nal
 
@@ -74,13 +74,13 @@ A levelezési profilokkal kapcsolatos további információkért lásd: a [váll
 ### <a name="password"></a>Jelszó
 
 > [!NOTE]
-> Miután megfelelőségi vagy konfigurációs szabályzatot alkalmazott egy iOS-eszközre, a felhasználóktól 15 percenként egy PIN-kódot kér a rendszer. A kérések mindaddig megjelennek, amíg a felhasználó meg nem ad egy PIN-kódot.
+> Miután megfelelőségi vagy konfigurációs szabályzatot alkalmazott egy iOS-eszközre, a felhasználóktól 15 percenként egy PIN-kódot kér a rendszer. A kérések mindaddig megjelennek, amíg a felhasználó meg nem ad egy PIN-kódot. Ha az iOS-eszközhöz PIN-kód van beállítva, a titkosítási folyamat automatikusan elindul. Az eszköz mindaddig titkosítva marad, amíg le nem tiltja a PIN-kódot.
 
 - **Jelszó megkövetelése a mobileszköz-zárolás feloldásához**: A felhasználók **kötelesek** jelszót megadni az eszköz eléréséhez. A jelszót használó iOS-eszközöket titkosítja a rendszer.
 - **Egyszerű jelszavak**: Ha nem szeretné engedélyezni, hogy a felhasználók olyan egyszerű jelszavakat használhassanak, mint az **1234** vagy az **1111**, válassza a **Tiltás** lehetőséget. A **Nincs konfigurálva** beállítással a felhasználók olyan jelszavakat is létrehozhatnak, mint az **1234** vagy az **1111**.
 - **Jelszó minimális hossza**: Meghatározhatja a jelszóban szereplő számjegyek vagy karakterek minimális számát.
 - **Jelszó megkövetelt típusa**: Megadható, hogy a jelszó csak **számjegy** karaktereket vagy számjegy és más (**alfanumerikus**) karaktereket vegyesen tartalmazzon.
-- **Nem alfanumerikus karakterek száma a jelszóban**: Itt adhatja meg a speciális karakterek minimális számát (például `&`, `#`, `%`, `!` stb.), amelynek a jelszónak kell lennie.
+- **Nem alfanumerikus karakterek száma a jelszóban**: megadhatja a speciális karakterek minimális számát (például `&`, `#`, `%`, `!` stb.), amelyeknek a jelszóban kell szerepelniük.
 
     Ha nagyobb értékre állítja, a felhasználóknak összetettebb jelszót kell létrehozniuk.
 

@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 09/19/2019
+ms.date: 10/18/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 16a6e35fd1d7b60d9abce5e2b3491fee1efb41c3
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 4e28db0d24101ae65ff8c5e49febd0ff5dddc6e2
+ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72502532"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72585432"
 ---
 # <a name="create-and-assign-scep-certificate-profiles-in-intune"></a>SCEP-tanúsítványok létrehozása és társítása az Intune-ban
 
@@ -50,7 +50,7 @@ Miután [konfigurálta az infrastruktúrát](certificates-scep-configure.md) a e
 
    2. A figyelés alatt a tanúsítvány-jelentéskészítés nem érhető el az eszköz tulajdonosának SCEP.
    
-   3. Az Intune-ban az SCEP-tanúsítvány profiljai által kiépített tanúsítványok visszavonása nem támogatott, de egy külső folyamaton vagy közvetlenül a hitelesítésszolgáltatón keresztül is kezelhető.
+   3. Az Intune nem használható olyan tanúsítványok visszavonásához, amelyeket a SCEP az eszközök tulajdonosainak kiosztottak. A visszavonást egy külső folyamaton vagy közvetlenül a hitelesítésszolgáltatón keresztül is kezelheti. 
 
 6. Válassza a **Beállítások**lehetőséget, majd hajtsa végre a következő konfigurációkat:
 
@@ -113,15 +113,13 @@ Miután [konfigurálta az infrastruktúrát](certificates-scep-configure.md) a e
         - **{{DeviceName}}**
         - **{{FullyQualifiedDomainName}}** *(csak Windows és tartományhoz csatlakoztatott eszközök esetén alkalmazható)*
         - **{{MEID}}**
-        
+
         Megadhatja ezeket a változókat, majd a változó szövegét a szövegmezőben. Egy *Device1* nevű eszköz köznapi neve például a következő lehet: **CN = {{DeviceName}} Device1**.
 
         > [!IMPORTANT]  
         > - Ha változót ad meg, a hiba elkerüléséhez tegye a változó nevét kapcsos zárójelben ({}) a példában látható módon.  
         > - Az eszköz *tulajdonosának* vagy *San* -tanúsítványának (például **IMEI**, **serialnumber**és **FullyQualifiedDomainName**) használt tulajdonságai olyan tulajdonságok, amelyek az eszközhöz hozzáféréssel rendelkező személy által meghamisítható.
         > - Egy eszköznek támogatnia kell az adott profilhoz tartozó tanúsítvány-profilban megadott összes változót az adott eszközre való telepítéshez.  Ha például a **{{IMEI}}** egy SCEP-profil tulajdonos nevében van használatban, és olyan eszközhöz van rendelve, amely nem rendelkezik IMEI-számmal, akkor a profilt nem lehet telepíteni.  
- 
-
 
    - **Tulajdonos alternatív neve**:  
      Válassza ki, hogy az Intune hogyan hozza létre automatikusan a tulajdonos alternatív nevét (SAN) a tanúsítványkérelem során. A TÁROLÓHÁLÓZATI beállítások a kiválasztott tanúsítvány típusától függenek; vagy **felhasználó** vagy **eszköz**.  
@@ -198,15 +196,15 @@ Miután [konfigurálta az infrastruktúrát](certificates-scep-configure.md) a e
      Adja hozzá az értékeket a tanúsítvány felhasználási céljához. A legtöbb esetben a tanúsítványhoz az *ügyfél-hitelesítés* szükséges, hogy a felhasználó vagy az eszköz hitelesíthető legyen egy kiszolgálóval. Szükség szerint további kulcshasználat hozzáadására is lehetőség van.
 
    - **Megújítási küszöb (%)** :  
-     Adja meg a tanúsítvány élettartamának azon hányadát, amely még azelőtt marad, amíg az eszköz kérelmezi a tanúsítvány megújítását. Ha például a 20 értéket adja meg, a rendszer megkísérli a tanúsítvány megújítását, ha a tanúsítvány 80%-ban lejár, és a rendszer továbbra is megkísérli a megújítás sikerességét. A megújítás új tanúsítványt hoz létre, amely új nyilvános/titkos kulcspár bevonását eredményezi.
+     Adja meg a tanúsítvány élettartamának azon hányadát, amely még azelőtt marad, amíg az eszköz kérelmezi a tanúsítvány megújítását. Ha például a 20 értéket adja meg, a rendszer megkísérli a tanúsítvány megújítását, ha a tanúsítvány 80%-kal lejárt. A megújítási kísérletek a megújítás sikeressége után folytatódnak. A megújítás új tanúsítványt hoz létre, amely új nyilvános/titkos kulcspár bevonását eredményezi.
 
    - **SCEP-kiszolgáló URL-címei**:  
-     Adjon meg egy vagy több URL-címet azon NDES-kiszolgálók esetében, amelyek tanúsítványokat állítanak ki a SCEP használatával. Írja be például a következőt: *https://ndes.contoso.com/certsrv/mscep/mscep.dll* . Szükség szerint további SCEP URL-címeket is hozzáadhat a terheléselosztáshoz, mivel az URL-címeket a rendszer véletlenszerűen leküldi az eszközre a profil használatával. Ha az egyik SCEP-kiszolgáló nem érhető el, a SCEP-kérelem sikertelen lesz, és lehetséges, hogy a későbbi eszköz-bejelentkezések esetében a tanúsítvány kérése ugyanarra a kiszolgálóra kerül.
+     Adjon meg egy vagy több URL-címet azon NDES-kiszolgálók esetében, amelyek tanúsítványokat állítanak ki a SCEP használatával. Írja be például a következőt: *https://ndes.contoso.com/certsrv/mscep/mscep.dll* . Szükség szerint további SCEP URL-címeket is hozzáadhat a terheléselosztáshoz, mivel az URL-címeket a rendszer véletlenszerűen leküldi az eszközre a profil használatával. Ha az egyik SCEP-kiszolgáló nem érhető el, a SCEP-kérelem sikertelen lesz, és lehetséges, hogy a későbbi eszköz-bejelentkezések esetében a tanúsítvány kérése ugyanarra a kiszolgálóra irányul, amely le van hajtva.
 
 7. Válassza **az OK**, majd a **Létrehozás**lehetőséget. Ekkor létrejön a profil, és megjelenik az *eszköz konfigurációja-profilok* listán.
 
 ### <a name="avoid-certificate-signing-requests-with-escaped-special-characters"></a>A tanúsítvány-aláírási kérelmek elhagyása Escape-speciális karakterekkel
-Létezik egy ismert probléma a tulajdonos nevét (CN) tartalmazó SCEP, amely egy vagy több következő speciális karakterből áll Escape-karakterként. Azok a tulajdonosi nevek, amelyek a speciális karakterek egyikét tartalmazzák Escape-karakterként, helytelen tulajdonosi névvel rendelkező CSR-t eredményeznek, ami viszont az Intune SCEP-kérdés ellenőrzésének sikertelenségét eredményezi, és nem állít ki tanúsítványt.  
+Létezik egy ismert probléma a SCEP és a PKCS-tanúsítványkérelmek között, amelyek egy vagy több következő speciális karakterből álló, Escape-karakterrel rendelkeznek. Azok a tulajdonosi nevek, amelyek a speciális karakterek egyikét tartalmazzák Escape-karakterként, helytelen tulajdonosi névvel rendelkező CSR-t eredményeznek. Helytelen tulajdonos neve eredményezi az Intune SCEP Challenge validate utasítását, és nincs kiállítva tanúsítvány.
 
 A speciális karakterek a következők:
 - \+
@@ -223,7 +221,7 @@ Ha a tulajdonos neve tartalmaz egy speciális karaktert, a következő lehetős�
 - **Távolítsa el a vesszőt**: *CN = test User (TestCompany LLC), OU = UserAccounts, DC = Corp, DC = contoso, DC = com*
 
  Ha azonban a vesszőt egy fordított perjel karakterrel próbálja meg elmenekülni, a rendszer hibát jelez a CRP-naplókban:  
-- **Megszökött vessző**: *CN = test User (TestCompany @ no__t-2, LLC), OU = UserAccounts, DC = Corp, DC = contoso, DC = com*
+- **Megszökött vessző**: *CN = test User (TESTCOMPANY \\, LLC), OU = UserAccounts, DC = Corp, DC = contoso, DC = com*
 
 A hiba a következő hibához hasonló: 
 

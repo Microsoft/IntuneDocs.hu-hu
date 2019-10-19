@@ -1,16 +1,18 @@
 ---
-ms.openlocfilehash: b49bd5c795125b48b6afa7a999c2031b9f2bdbfe
-ms.sourcegitcommit: 9a2ddcec73b37a118908b63d8e5252835f257618
-ms.translationtype: HT
+ms.openlocfilehash: 748174ded8e8331c032ffd9f3b70b2c09b724f85
+ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72560430"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72600965"
 ---
 ### <a name="apple"></a>Apple
+
 - Apple iOS és iPadOS 10,0 és újabb verziók
 - Mac OS X 10.9 és újabb verziók
 
 ### <a name="windows"></a>Windows
+
 - Windows 10 (Home, Pro, Education és Enterprise) operációs rendszerű számítógépek
 - Windows 10 mobil verzió
 - Windows 10 IoT Enterprise rendszerű eszközök (x86, x64)
@@ -23,6 +25,7 @@ ms.locfileid: "72560430"
   Windows 7 és újabb rendszerű számítógépek, a Windows 10 Home Edition kivételével, az Intune- [ügyfélszoftverrel](/intune-classic/deploy-use/manage-windows-pcs-with-microsoft-intune)is kezelhetők.
 
 ### <a name="google"></a>Google
+
 - Google Android 4.0 és újabb verziók (beleértve a Samsung KNOX Standard 4.0-s és újabb verzióit is)*
 - Google Android for Work ([követelmények](https://support.google.com/work/android/answer/6174145?hl=en&ref_topic=6151012 style="target=new_window"))
 

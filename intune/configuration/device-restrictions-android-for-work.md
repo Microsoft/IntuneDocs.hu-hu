@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 09/18/2019
+ms.date: 10/17/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a29c5fc03285535565a4db57ea013f72a2936439
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: d1d83a77d8823a05accaf1c88b57f6e380636469
+ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72494061"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72585384"
 ---
 # <a name="android-enterprise-device-settings-to-allow-or-restrict-features-using-intune"></a>Az androidos vállalati eszközbeállítások az Intune-t használó szolgáltatások engedélyezéséhez vagy korlátozásához
 
@@ -68,7 +68,7 @@ Ez a cikk felsorolja és leírja az androidos vállalati eszközökön szabályo
 - **Rendszerfrissítés**: válassza ki azt a lehetőséget, amely meghatározza, hogy az eszköz hogyan kezelje a csatornákon belüli frissítéseket:
   - **Eszköz alapértelmezése**: Az eszköz alapértelmezett beállításának használata.
   - **Automatikus**: A rendszer automatikusan, felhasználói beavatkozás nélkül telepíti a frissítéseket. Ennek a szabályzatnak a beállításakor minden függőben lévő frissítés azonnal települ.
-  - **Elhalasztva**: A frissítések 30 nappal el lesznek halasztva. A 30 nap végén az Android kéri a felhasználót, hogy telepítse a frissítést. Az eszközgyártók vagy a szolgáltatók megakadályozhatják (kivételként) a fontos biztonsági frissítések elhalasztását. A kivételként kezelt frissítések rendszerértesítést jelenítenek meg a felhasználó számára az eszközön. 
+  - **Elhalasztva**: A frissítések 30 nappal el lesznek halasztva. A 30 nap végén az Android kéri a felhasználót, hogy telepítse a frissítést. Az eszközgyártók vagy a szolgáltatók megakadályozhatják (kivételként) a fontos biztonsági frissítések elhalasztását. A kivételként kezelt frissítések rendszerértesítést jelenítenek meg a felhasználó számára az eszközön.
   - **Karbantartási időszak**: Automatikusan telepíti a frissítéseket az Ön által az Intune-ban beállított napi karbantartási időszakban. A telepítés 30 napig naponta próbálkozik, és sikertelen lehet, ha nincs elég hely vagy akkumulátor. 30 nap elteltével az Android felszólítja a felhasználót a telepítésre. Ez az időszak szolgál a Play-alkalmazások frissítéseinek telepítésére is. Ezt a lehetőséget olyan dedikált eszközökhöz használhatja, mint például a kioszkok, az Egyalkalmazásos dedikált eszköz előtérben lévő alkalmazások is frissíthetők.
 
 - **Értesítési ablakok**: Ha **letiltja**a beállítást, a rendszer nem jeleníti meg az eszközön az ablakokra vonatkozó értesítéseket, például a pirítóst, a bejövő hívásokat, a kimenő hívásokat, a rendszerriasztásokat és a rendszerhibákat. Ha a **nincs konfigurálva**értékre van állítva, a rendszer az operációs rendszer alapértelmezett beállításait használja, ami lehet, hogy az értesítéseket jeleníti meg.
@@ -99,8 +99,8 @@ Teljes **képernyős mód**: válassza ki, hogy az eszköz futtat-e egy alkalmaz
   > A többalkalmazásos dedikált eszközök esetében a Google Play által [kezelt kezdőképernyő alkalmazásnak](https://play.google.com/work/apps/details?id=com.microsoft.launcher.enterprise) a következőknek **kell lennie**:
   >   - [Ügyfél-alkalmazásként hozzáadva](../apps/apps-add-android-for-work.md) az Intune-ban
   >   - [Hozzárendelve a](../apps/apps-deploy.md) dedikált eszközökhöz létrehozott eszközcsoport számára
-  > 
-  > A **felügyelt kezdőképernyő** alkalmazásnak nem szükséges a konfigurációs profilban lennie, de az ügyfél-alkalmazásként való hozzáadásra van szükség. Ha a **felügyelt kezdőképernyő** alkalmazást ügyfél-alkalmazásként adja hozzá, a konfigurációs profilban hozzáadott más alkalmazások ikonként jelennek meg a **felügyelt kezdőképernyő** alkalmazásban. 
+  >
+  > A **felügyelt kezdőképernyő** alkalmazásnak nem szükséges a konfigurációs profilban lennie, de az ügyfél-alkalmazásként való hozzáadásra van szükség. Ha a **felügyelt kezdőképernyő** alkalmazást ügyfél-alkalmazásként adja hozzá, a konfigurációs profilban hozzáadott más alkalmazások ikonként jelennek meg a **felügyelt kezdőképernyő** alkalmazásban.
   >
   > Többalkalmazásos kioszk mód használata esetén előfordulhat, hogy a tárcsázó/telefonos alkalmazások nem működnek megfelelően. 
 
@@ -158,8 +158,8 @@ Teljes **képernyős mód**: válassza ki, hogy az eszköz futtat-e egy alkalmaz
 
       Ha nem ad meg URL-címet, a rendszer az eszköz alapértelmezett képét használja, ha van alapértelmezett rendszerkép.
 
-    - Azon **másodpercek száma, ameddig az eszköz képernyőkímélőt jelenít meg a képernyő kikapcsolása előtt**: válassza ki, hogy az eszköz mennyi ideig jelenítse meg a képernyővédőt. 0-9999999 másodperc közötti értéket adjon meg. Az alapértelmezett érték @no__t – 0 másodperc. Ha üresen hagyja, vagy nulla (`0`) értékre van állítva, a képernyőkímélő aktív, amíg a felhasználó nem kommunikál az eszközzel.
-    - Azon **másodpercek száma, ameddig az eszköz inaktív a képernyőkímélő megjelenítése előtt**: válassza ki, hogy az eszköz mennyi ideig tétlen a képernyővédő megjelenítése előtt. 1-9999999 másodperc közötti értéket adjon meg. Az alapértelmezett érték @no__t – 0 másodperc. Nullánál nagyobb számot kell megadnia (`0`).
+    - Azon **másodpercek száma, ameddig az eszköz képernyőkímélőt jelenít meg a képernyő kikapcsolása előtt**: válassza ki, hogy az eszköz mennyi ideig jelenítse meg a képernyővédőt. 0-9999999 másodperc közötti értéket adjon meg. Az alapértelmezett érték `0` másodperc. Ha üresen hagyja, vagy nulla (`0`) értékre van állítva, a képernyőkímélő aktív, amíg a felhasználó nem kommunikál az eszközzel.
+    - Azon **másodpercek száma, ameddig az eszköz inaktív a képernyőkímélő megjelenítése előtt**: válassza ki, hogy az eszköz mennyi ideig tétlen a képernyővédő megjelenítése előtt. 1-9999999 másodperc közötti értéket adjon meg. Az alapértelmezett érték `30` másodperc. Nullánál nagyobb számot kell megadnia (`0`).
     - **Adathordozó észlelése a képernyőkímélő elindítása előtt**: az **Engedélyezés** (alapértelmezett) nem jeleníti meg a képernyővédőt, ha a hang vagy a videó lejátszása az eszközön történik. A **nincs konfigurálva beállítás** megjeleníti a képernyőkímélőt, még akkor is, ha a hang vagy a videó lejátszása megtörténik.
 
 ### <a name="device-password-settings"></a>Eszköz jelszóbeállításai
@@ -185,7 +185,7 @@ Teljes **képernyős mód**: válassza ki, hogy az eszköz futtat-e egy alkalmaz
     - **Szükséges nagybetűk száma**: Itt adhatja meg, hogy hány nagybetűt kell tartalmaznia a jelszónak 0 és 16 karakter között.
     - **Nem szükséges karakterek száma**: Itt adhatja meg, hogy a jelszónak hány karakterből kell állnia (az ábécében szereplő betűk kivételével), 0 és 16 karakter között kell lennie.
     - **Szükséges numerikus karakterek száma**: adja meg a numerikus karakterek számát (`1`, `2`, `3` stb.) a jelszónak 0 és 16 karakter közöttinek kell lennie.
-    - **Szükséges karakterek száma**: adja meg a szimbólum karaktereinek számát (`&`, `#`, `%` stb.) a jelszónak 0 és 16 karakter közöttinek kell lennie.
+    - **Szükséges karakterek száma**: Itt adhatja meg, hogy hány szimbólumot kell megadni (`&`, `#`, `%` stb.) a jelszónak 0 és 16 karakter közöttinek kell lennie.
 
 - A **jelszó lejárati idejét jelző napok száma**: adja meg a napok számát 1-365 között, amíg meg nem változtatja az eszköz jelszavát. Ha például a 60 nap után szeretné módosítani a jelszót, írja be `60` értéket. A jelszó lejáratakor a rendszer a felhasználókat új jelszó létrehozására kéri.
 - A jelszó megadásához **szükséges jelszavak száma**: adja meg, hogy hány legutóbbi jelszó ne legyen újra felhasználható, 1-24 között. Ezzel a beállítással korlátozhatja, hogy a felhasználó korábban használt jelszavakat hozzon létre.
@@ -242,7 +242,22 @@ Teljes **képernyős mód**: válassza ki, hogy az eszköz futtat-e egy alkalmaz
 
   A **Nincs konfigurálva** beállítással a forgalom a VPN-alagúton vagy a mobilhálózaton is áthaladhat.
 
-## <a name="work-profile-only"></a>Csak munkahelyi profil 
+- **Ajánlott globális proxy**: válassza az **Engedélyezés** lehetőséget a globális proxy eszközökhöz való hozzáadásához. Ha engedélyezve van, a HTTP-és HTTPS-forgalom, beleértve az eszközön lévő alkalmazásokat is, használja a megadott proxyt. Ez a proxy csak javaslat. Lehetséges, hogy néhány alkalmazás nem fogja használni a proxyt. **Nincs konfigurálva** (alapértelmezés) nem ad hozzá javasolt globális proxyt.
+
+  A szolgáltatással kapcsolatos további információkért lásd: [setRecommendedGlobalProxy](https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setRecommendedGlobalProxy(android.content.ComponentName,%20android.net.ProxyInfo)) (Android-webhely megnyitása).
+
+  Ha engedélyezve van, adja meg a proxy **típusát** is. A választható lehetőségek:
+
+  - **Közvetlen**: válassza ezt a lehetőséget a proxykiszolgáló adatainak manuális megadásához, beleértve a következőket:
+    - **Gazdagép**: adja meg a proxykiszolgáló állomásnevét vagy IP-címét. Például írja be a következőt: `proxy.contoso.com` vagy `127.0.0.1`.
+    - **Portszám**: adja meg a proxykiszolgáló által használt TCP-portszámot. Például írja be a következőt: `8080`.
+    - **Kizárt gazdagépek**: adja meg a proxyt nem használó állomásnevek vagy IP-címek listáját. Ez a lista tartalmazhatja a csillag (`*`) helyettesítő karaktert, valamint több gazdagépet pontosvesszővel (`;`) elválasztva szóközök nélkül. Például írja be a következőt: `127.0.0.1;web.contoso.com;*.microsoft.com`.
+
+  - **Proxy automatikus**konfiguráció: adja meg a **PAC URL-címét** egy proxy automatikus konfigurációs parancsfájlhoz. Például írja be a következőt: `https://proxy.contoso.com/proxy.pac`.
+
+    A PAC-fájlokkal kapcsolatos további információkért lásd: [proxy automatikus konfigurációs (PAC) fájlja](https://developer.mozilla.org/docs/Web/HTTP/Proxy_servers_and_tunneling/Proxy_Auto-Configuration_(PAC)_file) (egy nem Microsoft-webhely megnyitása).
+
+## <a name="work-profile-only"></a>Csak munkahelyi profil
 
 ### <a name="work-profile-settings"></a>Munkahelyi profil beállításai
 
@@ -250,9 +265,10 @@ Teljes **képernyős mód**: válassza ki, hogy az eszköz futtat-e egy alkalmaz
 
 - **Másolás és beillesztés a munkahelyi és a személyes profilok között**: a **Letiltás** lehetőség kiválasztásával megakadályozhatja a munkahelyi és a személyes alkalmazások közötti másolást és beillesztést. **Nincs konfigurálva** , amely lehetővé teszi a felhasználók számára az adatmegosztást a személyes profilban lévő alkalmazásokkal való másolás és beillesztés használatával 
 - **Munkahelyi és személyes profilok közötti adatmegosztás**: válassza ki, hogy a munkahelyi profilban szereplő alkalmazások megoszthatnak-e a személyes profilban lévő alkalmazásokkal. Például megadhatja az alkalmazásokon belüli megosztási műveleteket, például a **megosztást..** . lehetőséget a Chrome böngészőalkalmazásban). Ez a beállítás nem vonatkozik a másolás/beillesztés vágólapi viselkedésre. A megosztási lehetőségek:
-  - **Alapértelmezett megosztási korlátozások**: Ez az eszköz alapértelmezett megosztási működésmódja, amely az Android-verziótól függően eltérő. Alapértelmezés szerint a személyes profilból lehet a munkahelyi profilba adatokat megosztani, a munkahelyiből a személyesbe viszont nem. A beállítás célja a munkahelyi profilból a személyesbe irányuló adatmegosztás megelőzése. A Google a 6.0-snál újabb verziójú eszközökön nem nyújt lehetőséget a személyesből a munkahelyi profilba irányuló adatmegosztás blokkolására.
+  - **Eszköz alapértelmezése**: az eszköz alapértelmezett megosztási viselkedése, amely az Android-verziótól függően változhat. Alapértelmezés szerint a személyes profilból lehet a munkahelyi profilba adatokat megosztani, a munkahelyiből a személyesbe viszont nem. A beállítás célja a munkahelyi profilból a személyesbe irányuló adatmegosztás megelőzése. A Google a 6.0-snál újabb verziójú eszközökön nem nyújt lehetőséget a személyesből a munkahelyi profilba irányuló adatmegosztás blokkolására.
   - **A munkahelyi profilban lévő alkalmazások kezelhetik a személyes profilból érkező megosztási kérelmeket**: Engedélyezi a személyesből a munkahelyi profilba irányuló adatmegosztásra szolgáló beépített Android-funkciót. Engedélyezéskor a személyes profil alkalmazásaiból származó megosztási kérések kezdeményezhetnek adatmegosztást a munkahelyi profil alkalmazásaival. A 6.0-snál korábbi verziójú androidos eszközökön ez az alapértelmezett beállítás.
-  - **Határokon keresztüli megosztás engedélyezése**: Lehetővé teszi a munkahelyi profil határán kívüli megosztást mindkét irányban. Ilyenkor a munkahelyi profilban szereplő alkalmazások megoszthatnak adatokat a személyes profi jelöletlen alkalmazásaival. A beállítással lehetővé teszi a munkahelyi profil alkalmazásainak az adatmegosztást az eszköz nem felügyelt részével. Így körültekintően használja ezt a lehetőséget.
+  - **A határokon átívelő megosztás megakadályozása**: meggátolja a munkahelyi és a személyes profilok közötti megosztást.
+  - **Nincs korlátozás a megosztáshoz**: lehetővé teszi a munkahelyi profil határán belüli megosztást mindkét irányban. Ilyenkor a munkahelyi profilban szereplő alkalmazások megoszthatnak adatokat a személyes profi jelöletlen alkalmazásaival. A beállítással lehetővé teszi a munkahelyi profil alkalmazásainak az adatmegosztást az eszköz nem felügyelt részével. Így körültekintően használja ezt a lehetőséget.
 
 - **Munkahelyi profil értesítései az eszköz zárolt állapotában**: azt határozza meg, hogy a munkahelyi profilban szereplő alkalmazások megjeleníthetnek-e értesítéseket az eszköz zárolt állapotában. A **blokk** nem jeleníti meg az adathalmazt. A **nincs konfigurálva** érték jelenik meg.
 - **Alapértelmezett alkalmazásengedélyek**: Itt adhatja meg a munkahelyi profilban található összes alkalmazásra vonatkozó alapértelmezett engedélyszabályzatot. Az Android 6-os verziójától kezdve a rendszer alkalmazásindításkor felszólítja a felhasználót az alkalmazás által megkövetelt, konkrét engedélyek megadására. Ezzel a szabályzatbeállítással döntheti el, hogy a felhasználók megadhatják-e a munkahelyi profilban szereplő összes alkalmazás engedélyeit. Hozzárendelhet például egy olyan alkalmazást a munkahelyi profilhoz, amely helyadatokhoz kér hozzáférést. Általában az alkalmazás kéri a felhasználót a helyadatokhoz való hozzáférés megadására vagy elutasítására. Ezzel a szabályzattal kérdés nélkül automatikusan engedélyezhet vagy letilthat minden hozzáférést, vagy átadhatja a döntés jogát a felhasználónak. A következő lehetőségek közül választhat:
@@ -326,6 +342,13 @@ Ezek a jelszó-beállítások a munkahelyi profilt használó eszközök személ
 
    > [!Note]
    > Ez a beállítás csak Android O vagy újabb rendszerű eszközök esetén érvényesül.
+
+- **A személyes profilban szereplő ismeretlen forrásokból származó alkalmazások telepítésének megakadályozása**: az Android Enterprise Work profiling-eszközök nem telepíthetnek alkalmazásokat a Play áruháztól eltérő forrásokból. Természeténél fogva a munkahelyi profil eszközei a következők:
+
+  - A MDM használatával kezelt munkahelyi profil.
+  - A MDM-felügyelettől elkülönített személyes profil.
+
+  Ez a beállítás lehetővé teszi a rendszergazdák számára, hogy az ismeretlen forrásokból származó alkalmazások telepítését jobban szabályozzák. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy az alkalmazások telepítése ismeretlen forrásból történjen a személyes profilban. A **Letiltás** megakadályozza az alkalmazások telepítését a személyes profil Play áruháztól eltérő forrásokból.
 
 ### <a name="connectivity"></a>Connectivity
 

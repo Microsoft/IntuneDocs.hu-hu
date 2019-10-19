@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e245ddffa91941d3b700bf1c698b33395893bb56
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 3ee68392feaa59ef5207edce75250e539407273b
+ms.sourcegitcommit: 8c25aeefb7cbc6444a8596af22fccd1c5426877a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72497742"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72593694"
 ---
 # <a name="manage-web-access-by-using-microsoft-edge-with-microsoft-intune"></a>Webes elérés kezelése a Microsoft Edge és a Microsoft Intune használatával
 
@@ -181,7 +181,7 @@ A Kezdőlap parancsikonjának konfigurálásához használja a következő kulcs
 
 |    Kulcs    |    Érték    |
 |-------------------------------------------------------------------|-------------|
-|    com. microsoft. Intune. Mam. managedbrowser. homepage   |    Adjon meg egy érvényes URL-címet. A helytelen URL-címek biztonsági intézkedésként le vannak tiltva.<br>**Példa:**  < @ no__t-2 @ no__t-3
+|    com. microsoft. Intune. Mam. managedbrowser. homepage   |    Adjon meg egy érvényes URL-címet. A helytelen URL-címek biztonsági intézkedésként le vannak tiltva.<br>**Példa:**  < `https://www.bing.com` >
 
 ## <a name="configure-your-organizations-logo-and-brand-color-for-new-tab-pages-in-microsoft-edge"></a>A szervezet emblémájának és a márka színének konfigurálása új lapokra a Microsoft Edge-ben
 
@@ -205,7 +205,7 @@ A könnyű hozzáférés érdekében beállíthatja, hogy a felhasználók a Mic
 
 Íme néhány részlet:
 
-- Ezek a könyvjelzők csak akkor jelennek meg a felhasználók számára, ha a Microsoft Edge vállalati üzemmódját használják. 
+- Ezek a könyvjelzők csak akkor jelennek meg a felhasználók számára, ha a Microsoft Edge [vállalati üzemmódját](https://docs.microsoft.com/intune/apps/app-configuration-managed-browser#how-to-configure-bookmarks-for-a-protected-browser) használják. 
 - A felhasználók nem törölhetik és nem módosíthatják ezeket a könyvjelzőket.
 - Ezek a könyvjelzők a lista tetején jelennek meg. A felhasználók által létrehozott könyvjelzők a könyvjelzők alatt jelennek meg.
 - Ha engedélyezte az alkalmazásproxy átirányítását, akkor a belső vagy külső URL-cím használatával adhat hozzá alkalmazásproxy-webalkalmazásokat.

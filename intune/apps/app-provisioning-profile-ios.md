@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/15/2019
+ms.date: 10/14/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba51f3eaead4f44d3725f1939a6ece5daec5a7f7
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: c0b5f087494e8033cb9645d0a08edd4e1c481a2c
+ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72507363"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72584931"
 ---
 # <a name="use-ios-app-provisioning-profiles-to-prevent-your-apps-from-expiring"></a>Az iOS-alkalmazáskiépítési profilok segítségével megakadályozhatja, hogy az alkalmazásai lejárjanak
 
@@ -45,14 +45,22 @@ Rendszergazdaként belefoglaló vagy kizáró biztonsági csoportokat hozhat lé
 ## <a name="how-to-create-an-ios-mobile-app-provisioning-profile"></a>iOS-beli mobilalkalmazás-kiépítési profilok létrehozása
 
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Az **Intune** ablaktáblán válassza az **Ügyfélalkalmazások** lehetőséget.
-1. Az **Ügyfélalkalmazások** tevékenységprofilban válassza a **Felügyelet** > **iOS-alkalmazáskiépítési profilok** elemet.
-2. A profilok listáját mutató panelen válassza a **Profil létrehozása** lehetőséget.
-3. A **Profil létrehozása** panelen konfigurálja a következő értékeket:
+2. Az **Intune** panelen válassza az **ügyfélalkalmazások**  >  iOS-**alkalmazás létesítési profiljai**  >  a**profil létrehozása**lehetőséget.
+3. Az **alapvető beállítások** lapon adja hozzá a következő értékeket:
     - **Név** – Adjon egy nevet a mobil kiépítési profilnak.
     - **Leírás** – Lehetősége van a házirend ismertetésének megadására.
     - **Profil feltöltése** – válassza a **Megnyitás** ikon lehetőséget, majd válassza ki az Apple [Developer webhelyéről](https://developer.apple.com/)letöltött, `.mobileprovision` kiterjesztésű Apple Mobile-konfigurációs profilt tartalmazó fájlt.
-4. Ha elkészült, válassza a **Létrehozás** elemet.
+
+   A **lejárati dátum** a fent hozzáadott Apple Mobile konfigurációs profilban szereplő értékből lesz kitöltve.<br>
+
+   <img alt="Create profile - Basics" src="~/apps/media/app-provisioning-profile-ios/app-provisioning-profile-ios-01.png">
+
+4. Kattintson a **Tovább gombra: hatókör címkék**.<br>
+   A **hatókör címkék** lapon opcionálisan konfigurálhatja a hatókör címkéit annak meghatározásához, hogy ki láthatja az iOS-alkalmazások létesítési profilját az Intune-ban. A hatókör-címkékkel kapcsolatos további információkért lásd: [a szerepköralapú hozzáférés-vezérlés és a hatókör-címkék használata a terjesztéshez](../fundamentals/scope-tags.md).
+5. Kattintson a **Tovább: hozzárendelések**elemre.<br>
+   A **hozzárendelések** lapon a profilt hozzárendelheti a felhasználókhoz és az eszközökhöz. Fontos megjegyezni, hogy a profilokat hozzárendelheti egy eszközhöz, függetlenül attól, hogy az eszközt az Intune felügyeli-e.
+6. Kattintson a **Tovább gombra: felülvizsgálat + létrehozás** elemre, és tekintse át a profilhoz megadott értékeket.
+7. Ha elkészült, kattintson a **Létrehozás** gombra az iOS-alkalmazás létesítési profiljának létrehozásához az Intune-ban. 
 
 ## <a name="next-steps"></a>További lépések
 

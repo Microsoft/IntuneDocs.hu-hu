@@ -5,22 +5,22 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 07/03/2019
+ms.date: 10/19/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
-ms.reviewer: coryfe
+ms.reviewer: aiwang
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 56cb65ce91f23c596e9f636f12d1e72f818d9092
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 1d34e44c6e046ddbc9b47bbe90900f5992df9e85
+ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72508791"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72584561"
 ---
 # <a name="manage-software-updates-in-intune"></a>Szoftverfrissítések kezelése az Intune-ban
 
@@ -64,17 +64,30 @@ A Windows 10 rendszerű eszközök Intune-ban való használatához a következ�
 
 ## <a name="create-and-assign-update-rings"></a>Frissítési körök létrehozása és hozzárendelése
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Válassza a **Szoftverfrissítések** > **Windows 10-es frissítési körök** > **Létrehozás** lehetőséget.
-4. Adjon meg egy nevet, egy leírást (nem kötelező), majd válassza a **Konfigurálás** lehetőséget.
-5. A **Beállítások**területen konfigurálja az üzleti igényeknek megfelelő beállításokat. Az elérhető beállításokkal kapcsolatos további információkért lásd: a [Windows Update beállításai](../windows-update-settings.md).  
-6. Ha elkészült, válassza az **OK** lehetőséget. A **Frissítési kör létrehozása** területen válassza a **Létrehozás** lehetőséget. Az új frissítési kör megjelenik a frissítési körök listájában.
-7. A gyűrű hozzárendeléséhez válassza ki a kívánt gyűrűt a frissítési körök listájában, majd a \<ring neve > lapon válassza a **hozzárendelések**lehetőséget.
-8. A **Belefoglalás** és **kizárás** lapok használatával meghatározhatja, hogy mely csoportokhoz legyen hozzárendelve a gyűrű, majd válassza a **Mentés** lehetőséget a hozzárendelés befejezéséhez.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, majd válassza a **szoftverfrissítések**  > **Windows 10 frissítési** körök  > **Létrehozás**lehetőséget.  
+
+2. Az alapvető beállítások lapon adjon meg egy nevet, egy leírást (nem kötelező), majd kattintson a **tovább**gombra.  
+
+   ![Windows 10 frissítési kör munkafolyamat létrehozása](./media/windows-update-for-business-configure/basics-tab.png)
+
+3. A **frissítési kör beállításai** lapon adja meg az üzleti igényeknek megfelelő beállításokat. Az elérhető beállításokkal kapcsolatos további információkért lásd: a [Windows Update beállításai](windows-update-settings.md). A *frissítési* és *felhasználói élmény* beállításainak konfigurálása után kattintson a **Tovább gombra**.  
+
+4. A **hatókör címkék** lapon válassza a **hatókör címkék** kiválasztása lehetőséget a *címkék kiválasztása* ablaktábla megnyitásához, ha alkalmazni szeretné őket a frissítési gyűrűre.  
+
+   - A **címkék kiválasztása** panelen válasszon ki egy vagy több címkét, majd kattintson a **kiválasztás** elemre, és adja hozzá őket a frissítési gyűrűhöz, és térjen vissza a *hatókör címkék* panelre.  
+
+   Ha elkészült, kattintson a **tovább** gombra a *hozzárendelések*folytatásához. 
+
+5. A **hozzárendelések** lapon válassza a **+ csoportok kiválasztása lehetőséget** , majd rendelje hozzá a frissítési kört egy vagy több csoporthoz. **Válassza a + csoportok kiválasztása lehetőséget** a hozzárendelés finomhangolásához. A folytatáshoz kattintson a **tovább** gombra.  
+
+6. A **felülvizsgálat + létrehozás** lapon tekintse át a beállításokat, majd válassza a **Létrehozás** lehetőséget, amikor készen áll a Windows 10-es frissítési kör mentéséhez. Az új frissítési kör megjelenik a frissítési körök listájában.
 
 ## <a name="manage-your-windows-10-update-rings"></a>Windows 10-es frissítési gyűrűk kezelése
-A portálon kiválaszthatja a Windows 10 frissítési gyűrűjét az **Áttekintés** panel megnyitásához. Ebből a panelből megtekintheti a gyűrűk hozzárendelési állapotát, és további műveleteket hajthat végre a gyűrű kezeléséhez. 
+
+A portálon kiválaszthatja a Windows 10 frissítési gyűrűjét az **Áttekintés** panel megnyitásához. Ebből a panelből megtekintheti a gyűrűk hozzárendelési állapotát, és további műveleteket hajthat végre a gyűrű kezeléséhez.
+
 ### <a name="to-view-an-updates-rings-overview-pane"></a>A frissítési körök áttekintése panel megtekintése: 
+
 1. Jelentkezzen be az Azure Portalra.
 2. Navigáljon az **Intune** > **szoftverfrissítések** > **Windows 10 frissítési**körök elemre.
 3. Válassza ki a megtekinteni vagy kezelni kívánt frissítési kört.  
@@ -89,18 +102,22 @@ A hozzárendelési állapot megtekintése mellett a következő műveleteket is 
 ![Elérhető műveletek](./media/windows-update-for-business-configure/overview-actions.png)
 
 ### <a name="delete"></a>Törlés  
+
 A kiválasztott Windows 10-es frissítési kör beállításainak kényszerítéséhez válassza a **Törlés** lehetőséget. A gyűrű törlése eltávolítja annak konfigurációját az Intune-ból, így az Intune már nem érvényes, és nem kényszeríti ki ezeket a beállításokat.  
 
 A gyűrűnek az Intune-ból való törlése nem módosítja a frissítési gyűrűhöz rendelt eszközök beállításait.  Ehelyett az eszköz megtartja a jelenlegi beállításait. Az eszközök nem tartanak fenn korábbi rekordot a korábban megtartott beállításokról. Az eszközök további frissítési köröktől származó beállításokat is fogadhatnak, amelyek aktívak maradnak.  
 
 #### <a name="to-delete-a-ring"></a>Gyűrű törlése  
+
 1. Egy frissítési kör Áttekintés lapjának megtekintésekor válassza a **Törlés**lehetőséget.  
 2. Válassza az **OK** gombot.  
 
 ### <a name="pause"></a>Szünet  
+
 A **pause (szüneteltetés** ) lehetőség kiválasztásával megakadályozhatja, hogy a hozzárendelt eszközök a szolgáltatáshoz tartozó frissítéseket és a minőségi frissítéseket a gyűrű szüneteltetése után akár 35 napig is megkapják. A megadott időtartam után a felfüggesztés automatikusan megszűnik, és az eszköz keresni kezdi az alkalmazható Windows-frissítéseket. A keresés után a frissítések ismét felfüggeszthetők. Ha folytatja a szüneteltetett frissítési kör folytatását, majd újra szünetelteti a gyűrűt, a szüneteltetési időszak 35 napra visszaállítható.  
 
 #### <a name="to-pause-a-ring"></a>Gyűrű szüneteltetése  
+
 1. Egy frissítési kör Áttekintés lapjának megtekintésekor válassza a **szüneteltetés**lehetőséget.  
 2. Válassza a **funkció** vagy a **minőség** lehetőséget a frissítés szüneteltetéséhez, majd kattintson **az OK gombra**.  
 3. Egy frissítési típus felfüggesztése után a másik frissítési típus szüneteltetéséhez válassza a Szüneteltetés újra lehetőséget.  
@@ -111,22 +128,27 @@ Ha a frissítési típus szüneteltetve van, az adott gyűrű áttekintő panelj
 > A szüneteltetési parancs kiadása után az eszközök akkor kapják meg ezt a parancsot, amikor legközelebb bejelentkeznek a szolgáltatásba. Megtörténhet, hogy mielőtt bejelentkeznek, még telepítenek egy ütemezett frissítést. Ha az adott eszköz ki van kapcsolva a felfüggesztési parancs kiadásakor, akkor a bekapcsolása után esetleg letölthet és telepíthet ütemezett frissítéseket, mielőtt bejelentkezik az Intune-ba.
 
 ### <a name="resume"></a>Folytatása  
+
 Amíg a frissítési kör szünetel, a **Folytatás** gombra kattintva visszaállíthatja a szolgáltatás és a minőségi frissítéseket az adott gyűrű aktív működéséhez. A frissítési kör folytatása után újra szüneteltetheti a gyűrűt.  
 
 #### <a name="to-resume-a-ring"></a>Gyűrű folytatása  
+
 1. Ha megtekinti a szüneteltetett frissítési kör áttekintés lapját, válassza a **Folytatás**lehetőséget.  
 2. Válassza ki az elérhető lehetőségek közül a **funkció** vagy a **minőségi** frissítések folytatásához, majd kattintson **az OK gombra**.  
 3. Egy frissítési típus folytatása után a másik frissítés folytatásához válassza a folytatás újra lehetőséget.  
 
 ### <a name="extend"></a>Kiterjesztése  
+
 Amíg a frissítési kör szünetel, a **kiterjesztés** lehetőség kiválasztásával alaphelyzetbe állíthatja a szüneteltetési időszakot a szolgáltatás és a minőségi frissítések esetében az adott frissítési kör 35 napra.  
 
 #### <a name="to-extend-the-pause-period-for-a-ring"></a>A szünet időtartamának meghosszabbítása egy adott gyűrűn  
+
 1. Ha megtekinti a szüneteltetett frissítési kör áttekintés lapját, válassza a **kiterjesztés**lehetőséget. 
 2. Válassza ki az elérhető lehetőségek közül a **funkció** vagy a **minőségi** frissítések folytatásához, majd kattintson **az OK gombra**.  
 3. Miután kiterjesztte az egyik frissítési típus szüneteltetését, kiválaszthatja az újbóli bővítés lehetőséget a másik frissítési típus kiterjesztéséhez.  
 
 ### <a name="uninstall"></a>Eltávolítás  
+
 Az Intune-rendszergazdák az **Eltávolítás** használatával eltávolíthatják (visszaállítják) a legújabb *szolgáltatás* frissítését, vagy egy aktív vagy szüneteltetett frissítési kör legújabb *minőségi* frissítését. Egy típus eltávolítását követően eltávolíthatja a másik típust. Az Intune nem támogatja vagy nem felügyeli, hogy a felhasználók nem tudják eltávolítani a frissítéseket.  
 
 > [!IMPORTANT] 
@@ -149,26 +171,29 @@ Az Eltávolítás használatakor vegye figyelembe a következőket:
 
 - A szolgáltatások frissítéseinek kimondottan a szolgáltatás frissítésének elindításához szükséges idő 2-60 nap, a frissítési körök frissítési beállításának beállítása a **szolgáltatás frissítésének eltávolítási időtartama (2 – 60 nap)** . Az eszközre telepített szolgáltatás frissítése nem állítható vissza, ha a szolgáltatás frissítése a beállított eltávolítási időtartamnál hosszabb ideig van telepítve.  
 
-  Tegyük fel például, hogy egy frissítési gyűrű egy 20 napos szolgáltatás-frissítési eltávolítási időszakmal rendelkezik. 25 nap elteltével állítsa vissza a legújabb funkció frissítését, és használja az Eltávolítás lehetőséget.  Azok az eszközök, amelyek több mint 20 nappal ezelőtt telepítették a szolgáltatást, nem tudják eltávolítani, mert a karbantartásuk részeként eltávolítottak a szükséges biteket. Azonban azok az eszközök, amelyek csak a 19 nappal ezelőtt telepítették a szolgáltatást, eltávolíthatják a frissítést, ha sikeresen bejelentkeznek az eltávolítási parancs fogadására a 20 napos eltávolítási időszak meghaladása előtt.  
+  Tegyük fel például, hogy egy frissítési gyűrű egy 20 napos szolgáltatás-frissítési eltávolítási időszakmal rendelkezik. 25 nap elteltével állítsa vissza a legújabb funkció frissítését, és használja az Eltávolítás lehetőséget.  Azok az eszközök, amelyek több mint 20 nappal ezelőtt telepítették a szolgáltatást, nem tudják eltávolítani, mert a karbantartásuk részeként eltávolítottak a szükséges biteket. Azonban azok az eszközök, amelyek csak a 19 napos frissítést telepítették, eltávolíthatják a frissítést, ha sikeresen bejelentkeznek az eltávolítási parancs fogadására, mielőtt meghaladják a 20 napos eltávolítási időszakot.  
 
 Windows Update házirendekkel kapcsolatos további információkért lásd: a [CSP frissítése](https://docs.microsoft.com/windows/client-management/mdm/update-csp) a Windows ügyfél-felügyeleti dokumentációjában.  
 
 #### <a name="to-uninstall-the-latest-windows-10-update"></a>A Windows 10 legújabb frissítésének eltávolítása  
+
 1. Ha megtekinti a szüneteltetett frissítési kör áttekintés lapját, válassza az **Eltávolítás**lehetőséget.  
 2. Válasszon az elérhető lehetőségek közül a **szolgáltatás** vagy a **minőségi** frissítések eltávolításához, majd kattintson **az OK gombra**.  
 3. Miután elindította az eltávolítást egy frissítési típusra, az Eltávolítás lehetőség kiválasztásával távolítsa el a fennmaradó frissítési típust.  
 
 ## <a name="migrate-update-settings-to-the-azure-portal"></a>Frissítési beállítások áttelepítése a Azure Portalre  
+
 A klasszikus Azure-portál néhány egyéb Windows 10-frissítési beállítást is tartalmaz az eszközkonfigurációs profilban. Ha ezen beállítások bármelyike konfigurálva van a Azure Portalra való áttelepítéskor, javasoljuk, hogy végezze el a következő műveleteket:  
 
-1. Hozzon létre Windows 10 frissítési köröket az Azure Portalon a kívánt beállításokkal. Az **Előzetes funkciók engedélyezése** beállítást az Azure Portal nem támogatja, mert az már nem alkalmazható a legújabb Windows 10 buildekre. A frissítési körök létrehozásakor megadhatja a másik három beállítást és a további Windows 10 frissítési beállításokat is.  
+1. Hozzon létre Windows 10 frissítési köröket az Azure Portalon a kívánt beállításokkal. Az **Előzetes funkciók engedélyezése** beállítást az Azure Portal nem támogatja, mert az már nem alkalmazható a legújabb Windows 10 buildekre. A frissítési körök létrehozásakor a másik három beállítást és a többi Windows 10 frissítési beállítást is konfigurálhatja.  
 
    > [!NOTE]  
    > A klasszikus portálon megadott Windows 10-frissítési beállítások nem jelennek meg az Azure Portalon az áttelepítés után. Ezek a beállítások azonban érvénybe lépnek. Ha a beállítások bármelyikét migrálja, majd módosítja az áttelepített szabályzatot az Azure Portalon, akkor ezek a beállítások törlődnek a szabályzatból.  
 
-2. Törölje a frissítési beállításokat a klasszikus portálon. Az Azure Portalra történő migrálás és az azonos beállításoknak egy frissítési körben történő megadása után az esetleges szabályzat-ütközések elkerülése érdekében a beállításokat a klasszikus portálon törölni kell. Ha például ugyanazt a beállítást különböző értékekkel konfigurálja, ütközés alakul ki. Nem könnyű tudni, mert a klasszikus portálon konfigurált beállítás nem jelenik meg a Azure Portal.  
+2. Törölje a frissítési beállításokat a klasszikus portálon. Az Azure Portalra történő migrálás és az azonos beállításoknak egy frissítési körben történő megadása után az esetleges szabályzat-ütközések elkerülése érdekében a beállításokat a klasszikus portálon törölni kell. Ha például ugyanaz a beállítás eltérő értékekkel van konfigurálva, ütközés van. Nem könnyű tudni, mert a klasszikus portálon konfigurált beállítás nem jelenik meg a Azure Portal.  
 
 ## <a name="next-steps"></a>További lépések
+
 [Az Intune által támogatott Windows Update-beállítások](../windows-update-settings.md)  
 
 [Intune-megfelelőségi jelentések a frissítésekhez](../windows-update-compliance-reports.md)
