@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 09/18/2019
+ms.date: 10/10/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 890dc68afd11862d11effd3e2d3a160815d6ad8c
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 3137db9d1ab82ebb99686f8f98aa768dae222caf
+ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72507340"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72584960"
 ---
 # <a name="add-managed-google-play-apps-to-android-enterprise-devices-with-intune"></a>Felügyelt Google Play-alkalmazások hozzáadása androidos vállalati eszközökhöz az Intune-nal
 
@@ -49,9 +49,9 @@ Ahhoz, hogy az Intune-bérlőt a felügyelt Google Play szolgáltatáshoz csatla
 ## <a name="managed-google-play-app-types"></a>Felügyelt Google Play-alkalmazások típusai
 A felügyelt Google Play szolgáltatásban háromféle alkalmazás érhető el:
 
-* **Felügyelt Google Play áruházbeli alkalmazás** – a Play áruház általánosan elérhető nyilvános alkalmazások. Ezeket az alkalmazásokat az Intune-ban kezelheti, ha megkeresi a felügyelni kívánt alkalmazásokat, jóváhagyja őket, majd szinkronizálja őket az Intune-ban.
-* **Felügyelt Google Play Private-alkalmazás** – ezek azok a LOB-alkalmazások, amelyeket az Intune-rendszergazdák felügyelnek a Google Play szolgáltatásban.  Ezek az alkalmazások magánjellegűek, és csak az Intune-bérlő számára érhetők el. A LOB-alkalmazások felügyelete és üzembe helyezése a felügyelt Google Play és az Android Enterprise platformon történik.
-* **Felügyelt Google Play webes hivatkozás** – a webes hivatkozások az androidos vállalati eszközökre telepíthető, rendszergazda által definiált ikonokkal. Ezek az eszközök alkalmazás-listájában jelennek meg, ugyanúgy, mint a normál alkalmazások.
+- **Felügyelt Google Play áruházbeli alkalmazás** – a Play áruház általánosan elérhető nyilvános alkalmazások. Ezeket az alkalmazásokat az Intune-ban kezelheti, ha megkeresi a felügyelni kívánt alkalmazásokat, jóváhagyja őket, majd szinkronizálja őket az Intune-ban.
+- **Felügyelt Google Play Private-alkalmazás** – ezek azok a LOB-alkalmazások, amelyeket az Intune-rendszergazdák felügyelnek a Google Play szolgáltatásban.  Ezek az alkalmazások magánjellegűek, és csak az Intune-bérlő számára érhetők el. A LOB-alkalmazások felügyelete és üzembe helyezése a felügyelt Google Play és az Android Enterprise platformon történik.
+- **Felügyelt Google Play webes hivatkozás** – a webes hivatkozások az androidos vállalati eszközökre telepíthető, rendszergazda által definiált ikonokkal. Ezek az eszközök alkalmazás-listájában jelennek meg, ugyanúgy, mint a normál alkalmazások.
 
 ## <a name="managed-google-play-store-apps"></a>Felügyelt Google Play áruházbeli alkalmazások
 A felügyelt Google Play áruházbeli alkalmazások az Intune-nal való tallózásának és jóváhagyásának két módja van:
@@ -210,8 +210,7 @@ Alternatív megoldásként beállíthatja, hogy a Google Play alkalmazásalapon 
 
 ## <a name="additional-managed-google-play-app-reporting-for-android-enterprise-work-profile-devices"></a>További felügyelt Google Play-alkalmazások jelentéskészítése androidos vállalati munkahelyi Profilos eszközökhöz
 
-Az Android Enterprise Work profiling-eszközökre telepített felügyelt Google Play-alkalmazások esetében megtekintheti az eszközre telepített alkalmazás adott verziószámát. Ez csak a szükséges alkalmazásokra vonatkozik. 
-
+Az Android Enterprise Work profiling-eszközökre telepített felügyelt Google Play-alkalmazások esetében az Intune használatával megtekintheti az eszközön telepített alkalmazás állapotát és verziószámát. 
 
 ## <a name="delete-managed-google-play-apps"></a>Felügyelt Google Play-alkalmazások törlése
 Ha szükséges, törölheti a felügyelt Google Play-alkalmazásokat Microsoft Intuneról. Felügyelt Google Play-alkalmazás törléséhez nyissa meg Microsoft Intune a Azure Portal, és válassza az **ügyfélalkalmazások** > **alkalmazások**elemet. Az alkalmazás listából válassza a felügyelt Google Play alkalmazás jobb oldalán található három pontot (...), majd válassza a **Törlés** lehetőséget a megjelenített listából. Ha töröl egy felügyelt Google Play-alkalmazást az alkalmazások listájáról, a felügyelt Google Play-alkalmazás automatikusan nem lesz jóváhagyva.
