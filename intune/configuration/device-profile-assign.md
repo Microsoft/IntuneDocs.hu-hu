@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 09/17/2019
+ms.date: 10/17/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6579ad9eb902bcd5ad43662115f56a10681c32ba
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 26ed23e4d9d267e37ba5088fa32234c27e3935b6
+ms.sourcegitcommit: 9a2ddcec73b37a118908b63d8e5252835f257618
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72506868"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72550802"
 ---
 # <a name="assign-user-and-device-profiles-in-microsoft-intune"></a>Felhasználói és eszközprofilok hozzárendelése a Microsoft Intune-ban
 
@@ -34,6 +34,10 @@ Ebből a cikkből megtudhatja, hogyan rendelhet hozzá egy profilt, és tartalma
 
 > [!NOTE]  
 > Ha egy házirendet eltávolítanak vagy már nem rendelnek hozzá egy eszközhöz, a beállítás megtarthatja a meglévő értéket. A beállítás nem tér át alapértelmezett értékre. Ha másik értékre szeretné módosítani a beállítást, hozzon létre egy új szabályzatot, és rendelje hozzá.
+
+## <a name="before-you-begin"></a>Előkészületek
+
+Győződjön meg arról, hogy rendelkezik a megfelelő szerepkörrel a házirendek hozzárendeléséhez. További információ: [szerepköralapú hozzáférés-vezérlés (RBAC) Microsoft Intunesal](../fundamentals/role-based-access-control.md).
 
 ## <a name="assign-a-device-profile"></a>Eszközprofil hozzárendelése
 

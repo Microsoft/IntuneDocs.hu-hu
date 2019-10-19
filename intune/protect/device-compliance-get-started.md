@@ -11,17 +11,17 @@ ms.service: microsoft-intune
 ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
-ms.reviewer: joglocke
+ms.reviewer: samyada
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: abbde2199873b9c3c2a53fef4a2dd85bb955ed43
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
-ms.translationtype: MT
+ms.openlocfilehash: c6ab0fd0220b252fe2361c0721ea026afcc232c0
+ms.sourcegitcommit: 62e264052738fc7fc6f22750589fb4bee7cd9d09
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72504447"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72532007"
 ---
 # <a name="set-rules-on-devices-to-allow-access-to-resources-in-your-organization-using-intune"></a>Szabályok beállítása az eszközökön a szervezet erőforrásaihoz való hozzáférés engedélyezéséhez az Intune használatával
 
@@ -116,13 +116,13 @@ A következő táblázat ismerteti, hogyan történik a nem megfelelő beállít
 
 |**Szabályzat-beállítás**| **Platform** |
 | --- | ----|
-| **PIN-kód vagy jelszó konfigurálása** | @no__t – 0**Android 4,0 és újabb**: karanténba helyezve</br>- **Samsung Knox Standard 4,0 és újabb**: karanténba helyezve</br>@no__t – 0**Android Enterprise**: karanténba helyezve</br></br>- **iOS 8,0 és újabb verziók**: szervizelt</br>@no__t – 0**macOS 10,11 és újabb**: szervizelt</br></br>- **Windows 8,1 és újabb**: szervizelt</br>- **Windows Phone-telefon 8,1 és újabb verziók**: szervizelt|
-| **Eszköztitkosítás** | @no__t – 0**Android 4,0 és újabb**: karanténba helyezve</br>- **Samsung Knox Standard 4,0 és újabb**: karanténba helyezve</br>@no__t – 0**Android Enterprise**: karanténba helyezve</br></br>- **iOS 8,0 és újabb verziók**: szervizelés (PIN-kód beállításával)</br>- **macOS 10,11 és újabb verziók**: szervizelés (PIN-kód beállításával)</br></br>- **Windows 8,1 és újabb verziók**: nem alkalmazható</br>- **Windows Phone-telefon 8,1 és újabb verziók**: szervizelt |
-| **Jailbreakelt vagy rootolt eszköz** | - **Android 4,0 és újabb**: karanténba helyezve (nem beállítás)</br>- **Samsung Knox Standard 4,0 és újabb**: karanténba helyezve (nem beállítás)</br>@no__t – 0**Android Enterprise**: karanténba helyezve (nem beállítás)</br></br>- **iOS 8,0 és újabb verziók**: karanténba helyezve (nem beállítás)</br>@no__t – 0**macOS 10,11 és újabb verziók**: nem alkalmazható</br></br>- **Windows 8,1 és újabb verziók**: nem alkalmazható</br>@no__t – 0**Windows Phone-telefon 8,1 és újabb verziók**: nem alkalmazható |
-| **E-mail profil** | - **Android 4,0 és újabb verziók**: nem alkalmazható</br>- **Samsung Knox Standard 4,0 és újabb verziók**: nem alkalmazható</br>@no__t – 0**Android Enterprise**: nem alkalmazható</br></br>- **iOS 8,0 és újabb verziók**: karanténba helyezve</br>@no__t – 0**macOS 10,11 és újabb**: karanténba helyezve</br></br>- **Windows 8,1 és újabb verziók**: nem alkalmazható</br>@no__t – 0**Windows Phone-telefon 8,1 és újabb verziók**: nem alkalmazható |
-| **Operációs rendszer minimális verziója** | @no__t – 0**Android 4,0 és újabb**: karanténba helyezve</br>- **Samsung Knox Standard 4,0 és újabb**: karanténba helyezve</br>@no__t – 0**Android Enterprise**: karanténba helyezve</br></br>- **iOS 8,0 és újabb verziók**: karanténba helyezve</br>@no__t – 0**macOS 10,11 és újabb**: karanténba helyezve</br></br>@no__t – 0**Windows 8,1 és újabb**: karanténba helyezve</br>@no__t – 0**Windows Phone-telefon 8,1 és újabb**: karanténba helyezve |
-| **Operációs rendszer maximális verziója** | @no__t – 0**Android 4,0 és újabb**: karanténba helyezve</br>- **Samsung Knox Standard 4,0 és újabb**: karanténba helyezve</br>@no__t – 0**Android Enterprise**: karanténba helyezve</br></br>- **iOS 8,0 és újabb verziók**: karanténba helyezve</br>@no__t – 0**macOS 10,11 és újabb**: karanténba helyezve</br></br>@no__t – 0**Windows 8,1 és újabb**: karanténba helyezve</br>@no__t – 0**Windows Phone-telefon 8,1 és újabb**: karanténba helyezve |
-| **Windows-állapotigazolás** | - **Android 4,0 és újabb verziók**: nem alkalmazható</br>- **Samsung Knox Standard 4,0 és újabb verziók**: nem alkalmazható</br>@no__t – 0**Android Enterprise**: nem alkalmazható</br></br>- **iOS 8,0 és újabb verziók**: nem alkalmazható</br>@no__t – 0**macOS 10,11 és újabb verziók**: nem alkalmazható</br></br>@no__t – 0**Windows 10 és Windows 10 Mobile**: karanténba helyezve</br>@no__t – 0**Windows 8,1 és újabb**: karanténba helyezve</br>@no__t – 0**Windows Phone-telefon 8,1 és újabb verziók**: nem alkalmazható |
+| **PIN-kód vagy jelszó konfigurálása** | - **Android 4,0 és újabb verziók**: karanténba helyezve</br>- **Samsung Knox Standard 4,0 és újabb**: karanténba helyezve</br>- **Android Enterprise**: karanténba helyezve</br></br>- **iOS 8,0 és újabb verziók**: szervizelt</br>- **macOS 10,11 és újabb verziók**: szervizelt</br></br>- **Windows 8,1 és újabb**: szervizelt</br>- **Windows Phone-telefon 8,1 és újabb verziók**: szervizelt|
+| **Eszköztitkosítás** | - **Android 4,0 és újabb verziók**: karanténba helyezve</br>- **Samsung Knox Standard 4,0 és újabb**: karanténba helyezve</br>- **Android Enterprise**: karanténba helyezve</br></br>- **iOS 8,0 és újabb verziók**: szervizelés (PIN-kód beállításával)</br>- **macOS 10,11 és újabb verziók**: szervizelés (PIN-kód beállításával)</br></br>- **Windows 8,1 és újabb verziók**: nem alkalmazható</br>- **Windows Phone-telefon 8,1 és újabb verziók**: szervizelt |
+| **Jailbreakelt vagy rootolt eszköz** | - **Android 4,0 és újabb**: karanténba helyezve (nem beállítás)</br>- **Samsung Knox Standard 4,0 és újabb**: karanténba helyezve (nem beállítás)</br>- **Android Enterprise**: karanténba helyezve (nem beállítás)</br></br>- **iOS 8,0 és újabb verziók**: karanténba helyezve (nem beállítás)</br>- **macOS 10,11 és újabb verziók**: nem alkalmazható</br></br>- **Windows 8,1 és újabb verziók**: nem alkalmazható</br>- **Windows Phone-telefon 8,1 és újabb verziók**: nem alkalmazható |
+| **E-mail profil** | - **Android 4,0 és újabb verziók**: nem alkalmazható</br>- **Samsung Knox Standard 4,0 és újabb verziók**: nem alkalmazható</br>- **Android Enterprise**: nem alkalmazható</br></br>- **iOS 8,0 és újabb verziók**: karanténba helyezve</br>- **macOS 10,11 és újabb verziók**: karanténba helyezve</br></br>- **Windows 8,1 és újabb verziók**: nem alkalmazható</br>- **Windows Phone-telefon 8,1 és újabb verziók**: nem alkalmazható |
+| **Operációs rendszer minimális verziója** | - **Android 4,0 és újabb verziók**: karanténba helyezve</br>- **Samsung Knox Standard 4,0 és újabb**: karanténba helyezve</br>- **Android Enterprise**: karanténba helyezve</br></br>- **iOS 8,0 és újabb verziók**: karanténba helyezve</br>- **macOS 10,11 és újabb verziók**: karanténba helyezve</br></br>- **Windows 8,1 és újabb verziók**: karanténba helyezve</br>- **Windows Phone-telefon 8,1 és újabb verziók**: karanténba helyezve |
+| **Operációs rendszer maximális verziója** | - **Android 4,0 és újabb verziók**: karanténba helyezve</br>- **Samsung Knox Standard 4,0 és újabb**: karanténba helyezve</br>- **Android Enterprise**: karanténba helyezve</br></br>- **iOS 8,0 és újabb verziók**: karanténba helyezve</br>- **macOS 10,11 és újabb verziók**: karanténba helyezve</br></br>- **Windows 8,1 és újabb verziók**: karanténba helyezve</br>- **Windows Phone-telefon 8,1 és újabb verziók**: karanténba helyezve |
+| **Windows-állapotigazolás** | - **Android 4,0 és újabb verziók**: nem alkalmazható</br>- **Samsung Knox Standard 4,0 és újabb verziók**: nem alkalmazható</br>- **Android Enterprise**: nem alkalmazható</br></br>- **iOS 8,0 és újabb verziók**: nem alkalmazható</br>- **macOS 10,11 és újabb verziók**: nem alkalmazható</br></br>- **Windows 10 és Windows 10 Mobile**: karanténba helyezve</br>- **Windows 8,1 és újabb verziók**: karanténba helyezve</br>- **Windows Phone-telefon 8,1 és újabb verziók**: nem alkalmazható |
 
 ---------------------------
 
