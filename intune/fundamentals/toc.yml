@@ -41,6 +41,16 @@
       href: device-lifecycle.md
     - name: Alkalmazások életciklusa
       href: ../apps/app-lifecycle.md
+    - name: Interaktív forgatókönyvek
+      items:
+        - name: Az interaktív forgatókönyvek áttekintése
+          href: guided-scenarios-overview.md
+        - name: A Microsoft Edge for Mobile üzembe helyezése
+          href: guided-scenarios-edge.md
+        - name: A felhőben felügyelt modern asztal
+          href: guided-scenarios-cloud-managed-pc.md
+        - name: Microsoft Office Mobile-alkalmazások biztonságossá tétele
+          href: guided-scenarios-office-mobile.md
     - name: Gyakori helyzetek
       href: common-scenarios.md
     - name: Technológiai döntések a hozott eszközök EMS általi felügyeletéhez
@@ -175,6 +185,8 @@
       href: ../protect/index.yml
     - name: Alkalmazások kezelése ás védelme
       href: ../apps/index.yml
+    - name: Szabályzatkészletek használata
+      href: ~/fundamentals/policy-sets.md
     - name: Fejlesztői útmutatás
       href: ../developer/index.yml
     - name: Súgó és támogatás
