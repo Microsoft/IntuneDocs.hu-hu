@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 06/26/2019
+ms.date: 10/21/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -15,16 +15,19 @@ ms.technology: ''
 ms.assetid: ''
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a548b1e1728928ca74ca7207b7e60d91ba5fc8aa
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: f42acb38d84394a6b61fa16072de6320b84a67b5
+ms.sourcegitcommit: 1a5b185acd27954b10b6d59409d82eb80fd71284
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72503593"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72681306"
 ---
 # <a name="integrate-wandera-mobile-threat-protection-with-intune"></a>A Wander Mobile Threat Protection integrálása az Intune-nal  
 
 A Wanda Mobile Threat Defense megoldás az Intune-nal való integrálásához hajtsa végre az alábbi lépéseket.  
+
+> [!NOTE]
+> A Mobile Threat Defense gyártója nem regisztrált eszközök esetén nem támogatott.
 
 ## <a name="before-you-begin"></a>Előkészületek  
 
@@ -59,7 +62,7 @@ Az a Wanderers-hez való *csatlakozási* művelethez egy egyszeri konfiguráció
 
 3. A Mobile Threat Defense panelen válassza a **Wanda** MTD-összekötőt az összekötők listájáról az *összekötő szerkesztése* ablaktábla megnyitásához. Válassza **a Bolyongás felügyeleti konzol megnyitása** lehetőséget a [radar](https://radar.wandera.com/login), a Wanda felügyeleti konzol megnyitásához és a bejelentkezéshez. 
 
-4. A Wanda-konzolon lépjen a **beállítások**@no__t **-1 és** *Microsoft Intune*az az a. *, majd* **az a.**
+4. A Wanda-konzolon lépjen a **beállítások**  > **az** *Microsoft Intune*a következőre:, és **válassza a (**
 
    ![Intune kiválasztása](./media/wandera-mtd-connector-integration/set-up-intune-in-radar.png)
 
@@ -86,7 +89,7 @@ A Bolyongás üzembe helyezéséhez hozzá kell adnia a Wanda Mobile Apps szolg�
 
 A következő fejezetek és eljárások végigvezetik a folyamaton.
 
-További információ erről a folyamatról: Wanda, bejelentkezés a Wanda [radarba](https://radar.wandera.com/login). Lépjen a **beállítások**@no__t – 1., az **alkalmazás leküldése** **lapra, és**válassza a **Microsoft Intune**lehetőséget. Az alkalmazás leküldéses lapja az Intune-ra vonatkozó utasításokkal frissül.  
+További információ erről a folyamatról: Wanda, bejelentkezés a Wanda [radarba](https://radar.wandera.com/login). Nyissa meg a **beállítások**  >  a következőt:, majd válassza az **alkalmazás leküldése** **lapot, majd**a **Microsoft Intune**lehetőséget. Az alkalmazás leküldéses lapja az Intune-ra vonatkozó utasításokkal frissül.  
 
 ### <a name="add-the-wandera-apps"></a>A Wanda-alkalmazások hozzáadása  
 Ügyfélalkalmazások létrehozása az Intune-ban a vándor alkalmazás üzembe helyezéséhez Android és iOS rendszerű eszközökön. Lásd: [MTD-alkalmazások hozzáadása](mtd-apps-ios-app-configuration-policy-add-assign.md) a bolyongó alkalmazásokhoz tartozó eljárásokhoz és egyéni részletekhez.  
@@ -113,7 +116,7 @@ További információ: [alkalmazások telepítése](../apps/apps-deploy.md)
 ### <a name="assign-the-wandera-apps-to-the-synchronization-group"></a>A bolyongó alkalmazások kiosztása a szinkronizálási csoportnak  
 Ismételje meg az alábbi eljárást az iOS-hez és Androidhoz létrehozott Wanda-alkalmazáshoz.
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és lépjen az **ügyfélalkalmazások**@no__t – 2**alkalmazások** elemre, és válassza ki a vándor alkalmazást.  
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és lépjen az **ügyfélalkalmazások**  > **alkalmazások** elemre, és válassza ki a vándor alkalmazást.  
 
 2. Válassza a **hozzárendelések** , majd a **Csoport hozzáadása**lehetőséget.  
 

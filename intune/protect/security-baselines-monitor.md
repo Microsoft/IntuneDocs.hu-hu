@@ -16,12 +16,12 @@ ms.reviewer: joglocke
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1be2ba947a5b92b6982e8c868e935460c4eaa5bb
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 9c4d47a11f07a2099d79f5ce4ce90795a087718b
+ms.sourcegitcommit: 1a5b185acd27954b10b6d59409d82eb80fd71284
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72508945"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72681481"
 ---
 # <a name="monitor-security-baseline-and-profiles-in-microsoft-intune"></a>Biztonsági alapkonfiguráció és profilok figyelése Microsoft Intune  
 
@@ -35,7 +35,7 @@ Az [Intune-beli biztonsági](../security-baselines.md) alapkonfigurációk tová
 
 Az alapkonfiguráció monitorozásakor a Microsoft javaslatai alapján betekintést nyerhet az eszközök biztonsági állapotára. Ezeket az információkat az Intune-konzol biztonsági alapkonfigurációjának áttekintés ablaktábláján tekintheti meg.  Akár 24 órát is igénybe vesz, hogy az egyes alaptervek első kiosztása után megjelenjenek az adathalmazok. A későbbi módosítások akár hat órát is igénybe vesznek.  
 
-Az alaptervhez és az eszközökhöz tartozó figyelési adatmegjelenítéshez jelentkezzen be az [Intune-portálra](https://go.microsoft.com/fwlink/?linkid=2090973). Ezután válassza az **eszköz biztonsági**@no__t – 1**biztonsági**alapkonfigurációk elemet, válasszon ki egy alapkonfigurációt, és tekintse meg az **Áttekintés** panelt.
+Az alaptervhez és az eszközökhöz tartozó figyelési adatmegjelenítéshez jelentkezzen be az [Intune-portálra](https://go.microsoft.com/fwlink/?linkid=2090973). Ezután válassza az **eszköz biztonsági**  > **biztonsági**alapkonfigurációk lehetőséget, válasszon ki egy alapkonfigurációt, és tekintse meg az **Áttekintés** panelt.
 
 Az **Áttekintés** panel két módszert biztosít az állapot figyelésére:
 - **Device View (eszköz nézet** ) – összefoglalás arról, hogy hány eszköz szerepel az alapkonfigurációban az egyes állapotok kategóriájában.  
@@ -60,7 +60,7 @@ Ha például egy eszköz *nem megfelelőként*van besorolva, *és egy* vagy töb
 Kattintson a diagramra a részletezéshez, és tekintse meg a különböző állapotokkal rendelkező eszközök listáját. A listából kiválaszthatja az egyes eszközök adatait, és megtekintheti az egyes eszközök részleteit. Példa:
 - Válassza ki az **eszköz konfigurációját** > válassza ki a profilt hibás állapottal:
 
-  ![Az eszközök állapotának ellenõrzése](./media/security-baselines-monitor/device-configuration-profile-list.png)
+  ![Profil állapotának megtekintése](./media/security-baselines-monitor/device-configuration-profile-list.png)
 
 - Válassza ki a hiba profilt. Megjelenik a profil összes beállításának listája, és az állapotuk látható. Most görgessen a hibát okozó beállítás megkereséséhez:
 
@@ -113,7 +113,7 @@ Most már ismeri a problémás beállítást. A következő lépés annak megál
 
 Windows 10-es eszközökön létezik egy beépített MDM diagnosztikai információs jelentés. Ez a jelentés tartalmazza az alapértelmezett értékeket, a jelenlegi értékeket, felsorolja a szabályzatot, és megjeleníti, hogy az eszközre vagy a felhasználóra van-e telepítve, és így tovább. A jelentés segítségével meghatározhatja, hogy a beállítás miért ütközik vagy hibát okoz.
 
-1. Az eszközön lépjen a **beállítások** > **fiókok**@no__t – 3**hozzáférés munkahelyi vagy iskolai**rendszerhez elemre.
+1. Az eszközön lépjen a **beállítások**  > **fiókok**  > **hozzáférés munkahelyi vagy iskolai**rendszerhez elemre.
 2. Válassza ki a fiókot > **Info** > **speciális diagnosztikai jelentés** > **jelentés létrehozása**lehetőséget.
 3. Válassza az **Exportálás**lehetőséget, majd nyissa meg a létrehozott fájlt.
 4. A jelentésben keresse meg a hiba vagy az ütközés beállítást a jelentés különböző részeiben.
