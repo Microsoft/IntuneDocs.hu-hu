@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 06/27/2018
+ms.date: 10/21/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -15,16 +15,19 @@ ms.technology: ''
 ms.assetid: 82872ba6-80f8-4cc9-adf4-0ccd8ff26dd2
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 193b6693a6d2da4a13731c8356d5041162fc3f2a
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 32e67ac961f2831a881bc160e19cefdb75723ff0
+ms.sourcegitcommit: 1a5b185acd27954b10b6d59409d82eb80fd71284
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72509060"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72681258"
 ---
 # <a name="integrate-pradeo-mobile-threat-defense-with-intune"></a>A Pradeo Mobile Threat Defense integrálása az Intune-nal
 
 A Pradeo Mobile Threat Defense megoldás Intune-beli integrálásához kövesse az alábbi lépéseket.
+
+> [!NOTE]  
+> A Mobile Threat Defense gyártója nem regisztrált eszközök esetén nem támogatott.
 
 ## <a name="before-you-begin"></a>Előkészületek
 
@@ -87,4 +90,4 @@ A Pradeo alkalmazás engedélyezési folyamata a következő:
 
 ## <a name="next-steps"></a>További lépések
 
-- [Pradeo-alkalmazások beállítása](mtd-apps-ios-app-configuration-policy-add-assign.md)
+- [Pradeo-alkalmazások beállítása a regisztrált eszközökhöz](mtd-apps-ios-app-configuration-policy-add-assign.md)

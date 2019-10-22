@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 07/03/2017
+ms.date: 10/21/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,19 +18,23 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f2f3dbafb10b91f221af27f965ffed06cce199fb
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 54d02f46b3296770f1eb24917e7e874e7b3977ac
+ms.sourcegitcommit: 1a5b185acd27954b10b6d59409d82eb80fd71284
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72509559"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72681265"
 ---
 # <a name="integrate-check-point-sandblast-mobile-with-intune"></a>A Check Point SandBlast Mobile integrálása az Intune-nal
 
+A következő lépések végrehajtásával integrálhatja a pipa Mobile Threat Defense megoldását az Intune-nal.
+
+> [!NOTE]
+> A Mobile Threat Defense gyártója nem regisztrált eszközök esetén nem támogatott.
+
 ## <a name="before-you-begin"></a>Előkészületek
 
-> [!NOTE] 
-> Az alábbi lépéseket kell elvégezni a [Check Point SandBlast Mobile MTD konzolján](https://intune-4.eu1.locsec.net/).
+A cikkben szereplő utasítások a következő lépésekben találhatók: a kipróbálható [mobil konzol](https://intune-4.eu1.locsec.net/). 
 
 A Check Point SandBlast Mobile Intune szolgáltatással való integrálásának megkezdése előtt győződjön meg arról, hogy rendelkezik a következőkkel:
 

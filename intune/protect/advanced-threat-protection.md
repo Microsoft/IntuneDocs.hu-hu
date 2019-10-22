@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d5234a8568911de075b1c8ee5d679ae40c6c494a
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: e0ef623fef49fdf43efc80375716af711bdbcb3c
+ms.sourcegitcommit: 1a5b185acd27954b10b6d59409d82eb80fd71284
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72502618"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72681335"
 ---
 # <a name="enforce-compliance-for-microsoft-defender-atp-with-conditional-access-in-intune"></a>A Microsoft Defender ATP megfelelőségének betartatása feltételes hozzáféréssel az Intune-ban  
 
@@ -58,6 +58,9 @@ Ha a Microsoft Defender ATP-t az Intune-nal szeretné használni, győződjön m
 - Microsoft Intune környezet az [Intune-nal felügyelt](../enrollment/windows-enroll.md) Windows 10-es eszközökhöz, amelyek az Azure AD-ba is be vannak léptetve
 - [Microsoft DEFENDER ATP](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) és hozzáférés a microsoft Defender Security Centerhoz (ATP-portál)
 
+> [!NOTE]
+> Az Intune app Protection-szabályzatok nem támogatják a Microsoft Defender ATP használatát.
+
 ## <a name="enable-microsoft-defender-atp-in-intune"></a>A Microsoft Defender ATP engedélyezése az Intune-ban
 
 Az első lépés a szolgáltatás és a szolgáltatás közötti kapcsolat beállítása az Intune és a Microsoft Defender ATP között. Ehhez rendszergazdai hozzáférésre van szükség a Microsoft Defender Security Centerhoz és az Intune-hoz.  
@@ -92,7 +95,7 @@ Ezt a feladatot általában egyszer kell elvégezni. Miután engedélyezte a Mic
 > - Nem különböznek a MTD kezeléséhez esetlegesen létrehozott feltételes hozzáférési házirendektől.
 > - Alapértelmezés szerint a kiértékeléshez használt egyéb feltételes hozzáférési szabályzatok nem működnek együtt.  
 > 
-> A klasszikus feltételes hozzáférési szabályzatok az [Azure](https://portal.azure.com/#home)-ban való megtekintéséhez lépjen a **Azure Active Directory** > **feltételes hozzáférés**@no__t – 4**klasszikus házirend**elemre.
+> A klasszikus feltételes hozzáférési szabályzatok az [Azure](https://portal.azure.com/#home)-ban való megtekintéséhez lépjen a **Azure Active Directory**  > **feltételes hozzáférés**  > **klasszikus házirendek**elemre.
 
 ## <a name="onboard-devices-by-using-a-configuration-profile"></a>Eszközök előkészítése konfigurációs profil használatával
 
@@ -158,7 +161,7 @@ A feltételes hozzáférési szabályzat blokkolja a megfelelőségi szabályzat
 > [!TIP]  
 > A feltételes hozzáférés az Azure Active Directory (Azure AD) technológiája. Az *Intune-ból* elérhető feltételes hozzáférési csomópont ugyanaz a csomópont, amelyet az *Azure AD-ből* is el lehet érni.  
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és válassza a **feltételes hozzáférés**@no__t – 2**új házirend**elemet.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és válassza a **feltételes hozzáférés**  > **új szabályzat**lehetőséget.
 2. Adjon meg **Nevet** a szabályzathoz és válassza a **Felhasználók és csoportok** lehetőséget. A befoglalási vagy kizárási lehetőségek használatával jelölje ki a szabályzathoz rendelendő csoportokat majd válassza a **Kész** lehetőséget.
 3. Válassza a **Felhőalkalmazások** lehetőséget, és válassza ki a védeni kívánt alkalmazásokat. Az **Alkalmazások kijelölése** alatt választhatja például az **Office 365 SharePoint Online** és az **Office 365 Exchange Online** elemeket.
 
@@ -185,7 +188,7 @@ Ezután figyelje a Microsoft Defender ATP-megfelelőségi szabályzattal rendelk
 3. Keresse meg a Microsoft Defender ATP-szabályzatot a listában, és tekintse meg, hogy mely eszközök megfelelőek vagy nem megfelelőek.
 
 ## <a name="view-onboarding-status"></a>Bevezetési állapot megtekintése
-Az Intune által felügyelt Windows 10-es eszközök bevezetési állapotának megtekintéséhez nyissa meg az **eszköz megfelelősége**@no__t – 1**Microsoft Defender ATP**lehetőséget. Ezen a lapon egy eszköz konfigurációs profiljának létrehozását is kezdeményezheti, amellyel több eszközt helyezhet üzembe a Microsoft Defender ATP-ben.
+Az Intune által felügyelt Windows 10-es eszközök bevezetési állapotának megtekintéséhez nyissa meg az **eszköz megfelelősége**  >  a**Microsoft Defender ATP**lehetőséget. Ezen a lapon egy eszköz konfigurációs profiljának létrehozását is kezdeményezheti, amellyel több eszközt helyezhet üzembe a Microsoft Defender ATP-ben.
 
 ## <a name="next-steps"></a>További lépések  
 

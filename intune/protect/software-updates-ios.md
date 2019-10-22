@@ -13,12 +13,12 @@ ms.localizationpriority: high
 ms.technology: ''
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 530439f08906495053a3585235f5f0b67c00b08b
-ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
+ms.openlocfilehash: ada1f6e5292684803fbea40430cdd43d61796746
+ms.sourcegitcommit: 1a5b185acd27954b10b6d59409d82eb80fd71284
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72584495"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72681359"
 ---
 # <a name="add-ios-software-update-policies-in-intune"></a>IOS-szoftverfrissítési szabályzatok hozzáadása az Intune-ban
 
@@ -80,7 +80,7 @@ Szerkeszthet egy meglévő szabályzatot, beleértve a korlátozott időpontok m
 1. A **szoftverfrissítések**területen válassza az **iOS-re vonatkozó szabályzatok frissítése** lehetőséget, majd válassza ki a szerkeszteni kívánt szabályzatot.
 
 2. A szabályzatok **tulajdonságainak**megtekintése közben válassza a **Szerkesztés** lehetőséget a módosítani kívánt szabályzat oldalhoz.  
-   ![Basics lap ](./media/software-updates-ios/edit-policy.png)   
+   ![Edit a rendőri ](./media/software-updates-ios/edit-policy.png)   
 
 3. A módosítás bevezetése után válassza az **Áttekintés + mentés**  > **Mentés** lehetőséget a módosítások mentéséhez, és térjen vissza a házirendek *tulajdonságaihoz*.  
  

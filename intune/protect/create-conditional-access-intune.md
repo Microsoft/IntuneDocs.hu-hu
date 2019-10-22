@@ -17,12 +17,12 @@ ms.reviewer: ''
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4a66f16ea681ec75a4a3aa7d85a57c4faa555ab9
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: b775bb09c289733cdc2837984874b7c1c7e286bc
+ms.sourcegitcommit: 1a5b185acd27954b10b6d59409d82eb80fd71284
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72504522"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72681368"
 ---
 # <a name="create-a-device-based-conditional-access-policy"></a>Eszköz alapú feltételes hozzáférési szabályzat létrehozása
 
@@ -35,7 +35,7 @@ A feltételes hozzáférési szabályzat meghatározza a védelemmel ellátni k�
 
 ## <a name="create-conditional-access-policy"></a>Feltételes hozzáférési szabályzat létrehozása
 
-1. Az Intune-portálon válassza a **feltételes hozzáférés** > **házirendek**@no__t – 3**új házirend**elemet.
+1. Az Intune-portálon válassza a **feltételes hozzáférés**  > **házirendek**  > **új házirend**elemet.
    
     ![Új feltételes hozzáférési szabályzat létrehozása](./media/create-conditional-access-intune/create-ca.png)
  
@@ -62,7 +62,7 @@ A feltételes hozzáférési szabályzat meghatározza a védelemmel ellátni k�
 
     - **Alkalmazások kiválasztása**: válassza ezt a lehetőséget, válassza a **kiválasztás**elemet, majd az alkalmazások listában keresse meg és válassza ki a védelemmel ellátni kívánt alkalmazásokat vagy szolgáltatásokat.
     
-      ![Új feltételes hozzáférési szabályzat létrehozása](./media/create-conditional-access-intune/create-ca-select-apps.png)
+      ![Hozzárendelések konfigurálása feltételes hozzáférési házirendhez](./media/create-conditional-access-intune/create-ca-select-apps.png)
 
 7. Válassza a **Kész** lehetőséget.
 8. A **hozzárendelések**területen válassza a **feltételek**lehetőséget.
@@ -72,7 +72,7 @@ A feltételes hozzáférési szabályzat meghatározza a védelemmel ellátni k�
     - **Ügyfélalkalmazások**: válassza az **Igen** lehetőséget annak megadásához, hogy a szabályzat a böngésző alkalmazásaira, a Mobile apps szolgáltatásra és az asztali ügyfelekre vonatkozzon-e. Kiválaszthatja a **modern hitelesítési ügyfeleket** is (például az Outlook for iOS vagy az Outlook for Android alkalmazást) és az **Exchange ActiveSync-ügyfeleket**.
     - **Eszköz állapota**: a feltételes hozzáférési szabályzat minden eszköz állapotra érvényes, kivéve, ha az Igen lehetőséget választja, és kifejezetten kizárja az állapotok eszköz hibrid Azure ad-hez csatlakoztatott vagy megfelelőként megjelölt eszközét (vagy mindkettőt).
     
-      ![Új feltételes hozzáférési szabályzat létrehozása](./media/create-conditional-access-intune/create-ca-device-platforms.png)
+      ![Feltételes hozzáférési szabályzat feltételeinek beállítása](./media/create-conditional-access-intune/create-ca-device-platforms.png)
 
       > [!TIP]  
       > Ha a **modern hitelesítési** ügyfeleket és az **Exchange ActiveSync-ügyfeleket**egyaránt meg szeretné tenni, hozzon létre két külön feltételes hozzáférési szabályzatot, egyet az egyes ügyfelek típusaihoz. Habár az Exchange ActiveSync támogatja a modern hitelesítést, az Exchange ActiveSync által támogatott egyetlen feltétel a platform. Más feltételek, beleértve a többtényezős hitelesítést, nem támogatottak. Az Exchange Online-hoz az Exchange ActiveSync-hez való hozzáférés hatékony biztosításához hozzon létre egy feltételes hozzáférési szabályzatot, amely meghatározza a Cloud app Office 365 Exchange Online-t és az ügyfélalkalmazás Exchange ActiveSync alkalmazást, és alkalmazza a házirendeket csak a kiválasztott támogatott platformokra.
