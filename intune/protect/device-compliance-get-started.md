@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 05/22/2019
+ms.date: 10/21/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,16 +16,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 86a1822321cb606776b69a8a7328f5a62bd85630
-ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
+ms.openlocfilehash: 967bf9937c71ff3ca7277f43fd969291eb5af6de
+ms.sourcegitcommit: c2e62f1ebdf75599c8e544287123c602f0f15f2b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72585506"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72749176"
 ---
 # <a name="set-rules-on-devices-to-allow-access-to-resources-in-your-organization-using-intune"></a>Szabályok beállítása az eszközökön a szervezet erőforrásaihoz való hozzáférés engedélyezéséhez az Intune használatával
-
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
 Számos mobileszköz-kezelési (MDM) megoldás segíti a szervezeti adatvédelmet azáltal, hogy a felhasználóknak és az eszközöknek bizonyos követelmények teljesítését igénylik. Az Intune-ban ezt a funkciót "megfelelőségi szabályzatoknak" nevezzük. A megfelelőségi szabályzatok határozzák meg azokat a szabályokat és beállításokat, amelyeknek a felhasználóknak és az eszközöknek meg kell felelniük a követelményeknek. A feltételes hozzáféréssel együtt a rendszergazdák letilthatják azokat a felhasználókat és eszközöket, amelyek nem felelnek meg a szabályoknak.
 
@@ -90,7 +88,7 @@ Az Intune a beépített megfelelőségi szabályzatok egy készletét is tartalm
 
 - **Hozzárendelt megfelelőségi szabályzattal nem rendelkező eszköz megjelölése mint**: Ehhez a tulajdonsághoz két érték tartozik:
 
-  - **Megfelelő**(alapértelmezett): biztonsági szolgáltatás kikapcsolva
+  - **Megfelelő** (*alapértelmezett*): biztonsági szolgáltatás kikapcsolva
   - **Nem megfelelő**: biztonsági szolgáltatás bekapcsolva
 
   Ha egy eszközhöz nincs hozzárendelve megfelelőségi szabályzat, az eszköz alapértelmezés szerint megfelelőnek minősül. Ha a feltételes hozzáférést megfelelőségi szabályzatokkal használja, javasoljuk, hogy az alapértelmezett beállítást **ne megfelelőre**módosítsa. Ha egy végfelhasználó nem felel meg a szabályzatnak, akkor a [céges portál alkalmazás](../apps/company-portal-app.md) a `No compliance policies have been assigned`-et jeleníti meg.
@@ -157,8 +155,9 @@ Az Azure Portal eszközmegfelelőséggel kapcsolatos funkcióinak használatáho
   - [Android Enterprise](compliance-policy-create-android-for-work.md)
   - [iOS--](compliance-policy-create-ios.md)
   - [macOS](compliance-policy-create-mac-os.md)
-  - [Windows 10 és újabb](compliance-policy-create-windows.md)
   - [Windows Holographic for Business](compliance-policy-create-windows.md#windows-holographic-for-business)
-  - [Windows 8,1 és Windows Phone-telefon 8,1](compliance-policy-create-windows-8-1.md)
+  - [Windows Phone 8.1](compliance-policy-create-windows-8-1.md)
+  - [Windows 8.1 és újabb verziók](compliance-policy-create-windows-8-1.md)
+  - [Windows 10 és újabb](compliance-policy-create-windows.md)
 
 - A [házirend entitásokra](../reports-ref-policy.md) vonatkozó információk az Intune-adattárház házirend entitásait ismertetik.

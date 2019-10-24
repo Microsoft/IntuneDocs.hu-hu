@@ -96,13 +96,21 @@
         - name: Mobile Threat Defense
           href: mobile-threat-defense.md
           items:
-            - name: Az Intune beállítása az MTD-hez
+            - name: MTD nem regisztrált eszközökön
               items:
-                - name: MTD-alkalmazások hozzáadása
+                - name: MTD-alkalmazások hozzáadása nem regisztrált eszközökhöz
+                  href: mtd-add-apps-unenrolled-devices.md
+                - name: MTD-s alkalmazásvédelmi szabályzat létrehozása
+                  href: mtd-app-protection-policy.md
+                - name: Az MTD engedélyezése nem regisztrált eszközökön
+                  href: mtd-enable-unenrolled-devices.md
+            - name: MTD regisztrált eszközökön
+              items:
+                - name: Az MTD hozzáadása regisztrált eszközökhöz
                   href: mtd-apps-ios-app-configuration-policy-add-assign.md
                 - name: MTD-eszközmegfelelési szabályzat létrehozása
                   href: mtd-device-compliance-policy-create.md
-                - name: MTD engedélyezése az Intune-ban
+                - name: Az MTD engedélyezése regisztrált eszközökön
                   href: mtd-connector-enable.md
             - name: MTD-alkalmazások
               items:

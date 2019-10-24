@@ -6,7 +6,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 10/08/2019
+ms.date: 10/22/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a26af380ef00c85c681beccdcdf188c343da1b94
-ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
+ms.openlocfilehash: 95cf688f3727f97aedd4126e00fa4dc4939ef6bc
+ms.sourcegitcommit: 06a1fe83fd95c9773c011690e8520733e1c031e3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72584892"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72785508"
 ---
 # <a name="ios-and-ipados-device-settings-to-allow-or-restrict-features-using-intune"></a>iOS-és iPadOS-eszközök beállításai az Intune-t használó funkciók engedélyezéséhez vagy korlátozásához
 
@@ -300,6 +300,11 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
 
   Ez a funkció az alábbiakra vonatkozik:  
   - iOS 12,2 és újabb verziók
+
+  > [!NOTE]
+  > A **Siri-parancsok beállításának kiszolgálóoldali naplózását** az Apple elavulta. Egy közelgő kiadásban ez a beállítás el lesz távolítva az Intune-konzolról.
+  >
+  > Jelenleg ez a beállítás nincs hatással az eszközökre, még akkor is, ha a beállítás megjelenik a Managemenet-profilokban. Ha bármelyik házirendből törölni szeretné a beállítást, nyissa meg a házirendet, végezze el a módosítást, majd mentse a szabályzatot. A házirend frissül, és a beállítás törlődik az eszközökről.
 
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: automatikus eszközök beléptetése (felügyelt)
 

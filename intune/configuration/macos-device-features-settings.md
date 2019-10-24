@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 10/02/2019
+ms.date: 10/22/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 17d0baeeb6b193be6acf8d6087c26a66b18642c5
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 48cca2c894067439943bdfff33b953463e513490
+ms.sourcegitcommit: e9cf372711ff186ed468b01a9204631a139bd8e5
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72506668"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72776906"
 ---
 # <a name="macos-device-feature-settings-in-intune"></a>macOS-eszköz funkciójának beállításai az Intune-ban
 
@@ -42,7 +42,7 @@ Ez a cikk felsorolja ezeket a beállításokat, és leírja az egyes beállítá
 
 ## <a name="airprint"></a>AirPrint
 
-### <a name="settings-apply-to-device-enrollment"></a>Beállítások a következőkre vonatkoznak: eszköz beléptetése
+### <a name="settings-apply-to-device-enrollment-and-automated-device-enrollment"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése és automatikus eszközök beléptetése 
 
 - **IP-cím**: adja meg a nyomtató IPv4-vagy IPv6-címét. Ha állomásneveket használ a nyomtatók azonosítására, akkor az IP-címet a nyomtatónak a terminál alkalmazásban történő pingelésével érheti el. [Az IP-cím és az elérési út](#get-the-ip-address-and-path) (ebben a cikkben) beszerzése további részleteket tartalmaz.
 - **Elérési út**: adja meg a nyomtató elérési útját. Az elérési út általában `ipp/print` a hálózatban lévő nyomtatókhoz. [Az IP-cím és az elérési út](#get-the-ip-address-and-path) (ebben a cikkben) beszerzése további részleteket tartalmaz.
@@ -85,7 +85,7 @@ AirPrinter-kiszolgálók hozzáadásához szüksége lesz a nyomtató IP-címér
 
 ## <a name="login-window"></a>Bejelentkezési ablak
 
-### <a name="settings-apply-to-device-enrollment"></a>Beállítások a következőkre vonatkoznak: eszköz beléptetése
+### <a name="settings-apply-to-device-enrollment-and-automated-device-enrollment"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése és automatikus eszközök beléptetése 
 
 #### <a name="window-layout"></a>Ablak elrendezése
 

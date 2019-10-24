@@ -20,6 +20,9 @@
     - name: Eszközbeállítások és -funkciók korlátozása
       href: device-restrictions-configure.md
       displayName: Device restrictions
+    - name: BIOS-beállítások Windows rendszeren
+      href: device-firmware-configuration-interface-windows.md
+      displayName: 'DFCI, firmware'
     - name: Frissítések
       href: delivery-optimization-windows.md
       displayName: delivery optimization; updates

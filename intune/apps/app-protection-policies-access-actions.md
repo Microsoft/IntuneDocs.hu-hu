@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f8d516c0ebb03ce8c8202e1383afb73324305ef1
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 62a3f9ee2cec41f14e450158ab8ad02e1a3a2ea2
+ms.sourcegitcommit: 06a1fe83fd95c9773c011690e8520733e1c031e3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72499512"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72785690"
 ---
 # <a name="selectively-wipe-data-using-app-protection-policy-conditional-launch-actions-in-intune"></a>Adatok szelektív törlése az App Protection-szabályzat feltételes indítási műveleteivel az Intune-ban
 
@@ -60,6 +60,7 @@ iOS rendszeren a következő beállításokhoz konfigurálhat műveleteket a **B
 - Alkalmazás minimális verziója
 - SDK minimális verziója
 - Eszközmodell(ek)
+- Az eszköz maximálisan engedélyezett veszélyforrása
 
 Az **Eszközmodell(ek)** beállítás használatához adjon meg egy iOS-modellazonosítókat tartalmazó, pontosvesszővel tagolt listát. Az iOS-modellazonosítót a [HockeyApp támogatási dokumentációjának](https://support.hockeyapp.net/kb/client-integration-ios-mac-os-x-tvos/ios-device-types) Eszköztípus oszlopában találja.<br>
 Példabemenet: *iPhone5,2; iPhone5,3*
@@ -84,6 +85,7 @@ Android rendszeren a következő beállításokhoz konfigurálhat műveleteket a
 - Eszközgyártó(k)
 - Biztonság-eszköz igazolása
 - Alkalmazások fenyegetettségvizsgálata
+- Az eszköz maximálisan engedélyezett veszélyforrása
 
 Az **Eszközgyártó(k)** beállítás használatához gépelje be az Android-gyártók pontosvesszővel tagolt felsorolását. Az eszköz Android-gyártóját az eszközbeállításokban találja meg.<br>
 Példabemenet: *A gyártó;B gyártó* 

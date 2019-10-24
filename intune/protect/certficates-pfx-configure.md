@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f3f4a8c9be4e22f3bc64288a6e3d2ec708186de6
-ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
+ms.openlocfilehash: b0f31add65063665da5a7961e2caf9eb30a847e2
+ms.sourcegitcommit: 06a1fe83fd95c9773c011690e8520733e1c031e3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72585190"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72787876"
 ---
 # <a name="configure-and-use-pkcs-certificates-with-intune"></a>PKCS-tanúsítványok konfigurálása és használata az Intune-nal
 
@@ -223,7 +223,7 @@ VPN-, WiFi-vagy más erőforrásokkal rendelkező eszköz hitelesítéséhez az 
 MacOS PKCS-tanúsítvány profil létrehozásakor a tulajdonos nevének formátuma a kiválasztott tanúsítvány típusától függ, amely a **felhasználó** vagy az **eszköz**.  
 
 > [!NOTE]  
-> Ismert hiba történt a PCKS használatával olyan tanúsítványok beszerzéséhez, [amelyek ugyanaz a probléma, mint a SCEP esetében,](certificates-profile-scep.md#avoid-certificate-signing-requests-with-escaped-special-characters) amikor az eredményül kapott tanúsítvány-aláírási kérelemben szereplő tulajdonos neve (CSR) a következő karakterek egyikét tartalmazza Escape-karakterként (egy fordított perjel \\):
+> Létezik egy ismert probléma a PKCS használatával olyan tanúsítványok beszerzéséhez, [amelyek ugyanaz a probléma, mint a SCEP esetében,](certificates-profile-scep.md#avoid-certificate-signing-requests-with-escaped-special-characters) ha az eredményül kapott tanúsítvány-aláírási kérelemben szereplő tulajdonos neve a következő karakterek egyikét tartalmazza Escape-karakterként ( fordított perjel \\):
 > - \+
 > - ;
 > - ,
