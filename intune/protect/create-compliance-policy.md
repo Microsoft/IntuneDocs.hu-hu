@@ -2,10 +2,10 @@
 title: Eszköz megfelelőségi szabályzatok létrehozása a Microsoft Intuneban – Azure | Microsoft Docs
 description: Eszköz megfelelőségi szabályzatok létrehozása, az állapot és a súlyossági szintek áttekintése, a türelmi időszakban állapota, a feltételes hozzáférés használata, a hozzárendelt házirend nélküli eszközök kezelése, valamint a Azure Portal és a klasszikus portál megfelelőségének eltérései Microsoft Intune
 keywords: ''
-author: MandiOhlinger
-ms.author: mandia
+author: brenduns
+ms.author: brenduns
 manager: dougeby
-ms.date: 10/09/2019
+ms.date: 10/21/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,16 +16,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 15ac42f34d440c32026d39aca577bd8e3b1f62ea
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 76998c32f09b20e624359cc8a38231e14a70399b
+ms.sourcegitcommit: 06a1fe83fd95c9773c011690e8520733e1c031e3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72504537"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72786073"
 ---
 # <a name="create-a-compliance-policy-in-microsoft-intune"></a>Megfelelőségi szabályzat létrehozása Microsoft Intune
-
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
 Az eszközmegfelelőségi szabályzatok használata kiemelten fontos, ha az Intune-t a vállalat erőforrásainak védelmére kívánja használni. Az Intune-ban létrehozhat olyan szabályokat és beállításokat, amelyeknek az eszközöknek meg kell felelniük a megfelelőnek, például a minimális operációsrendszer-verziónak. Ha az eszköz nem megfelelő, a [feltételes hozzáférés](conditional-access.md)használatával letilthatja az adatelérést és az erőforrásokat.
 
@@ -49,10 +47,10 @@ Az eszközök megfelelőségi házirendjeinek használatához győződjön meg r
 
 - Használjon támogatott platformot:
 
-  - Android:
+  - Android-eszköz rendszergazdája
   - Vállalati Android
   - iOS
-  - macOS (előzetes verzió)
+  - macOS
   - Windows 10
   - Windows 8.1
   - WVPN-profilokdows Phone 8.1
@@ -73,26 +71,40 @@ Az eszközök megfelelőségi házirendjeinek használatához győződjön meg r
 
 3. Válassza a **Szabályzatok** > **Szabályzat létrehozása** lehetőséget. Adja meg a következő tulajdonságokat:
 
-    - **Név**: adjon meg egy leíró nevet a szabályzatnak. Nevezze el a szabályzatokat, hogy később könnyebben azonosítható legyen. A megfelelő szabályzat neve például **nem megfelelőként jelöli**meg az iOS-es feltört eszközöket.
-    - **Leírás**: adja meg a szabályzat leírását. A beállítás használata nem kötelező, de ajánlott.
-    - **Platform**: válassza ki az eszközök platformját. A választható lehetőségek:  
+   - **Név**: adjon meg egy leíró nevet a szabályzatnak. Nevezze el a szabályzatokat, hogy később könnyebben azonosítható legyen. A megfelelő szabályzat neve például **nem megfelelőként jelöli**meg az iOS-es feltört eszközöket.  
 
-       - **Android--**
-       - **Vállalati Android**
-       - **iOS--**
-       - **macOS**
-       - **Windows Phone 8.1**
-       - **Windows 8.1 és újabb verziók**
-       - **Windows 10 és újabb**
+   - **Leírás**: adja meg a szabályzat leírását. A beállítás használata nem kötelező, de ajánlott.  
 
-    - **Beállítások**: az alábbi cikkek felsorolják és leírják az egyes platformok beállításait:
+   - **Platform**: válassza ki az eszközök platformját. A választható lehetőségek:
+     - **Android-eszköz rendszergazdája**
+     - **Android Enterprise**
+     - **iOS/iPadOS**
+     - **macOS**
+     - **Windows Phone 8.1**
+     - **Windows 8.1 és újabb verziók**
+     - **Windows 10 és újabb**
 
-        - [Android--](compliance-policy-create-android.md)
-        - [Android Enterprise](compliance-policy-create-android-for-work.md)
-        - [iOS--](compliance-policy-create-ios.md)
-        - [macOS](compliance-policy-create-mac-os.md)
-        - [Windows Phone-telefon 8,1, Windows 8,1 és újabb verziók](compliance-policy-create-windows-8-1.md)
-        - [Windows 10 és újabb](compliance-policy-create-windows.md)
+     Az *Android Enterprise*esetében ki kell választania egy **profil típusát**:
+     - **Eszköz tulajdonosa**
+     - **Munkahelyi profil**
+
+   - **Beállítások**: az alábbi cikkek felsorolják és leírják az egyes platformok beállításait:
+     - [Android-eszköz rendszergazdája](compliance-policy-create-android.md)
+     - [Android Enterprise](compliance-policy-create-android-for-work.md)
+     - [iOS/iPadOS](compliance-policy-create-ios.md)
+     - [macOS](compliance-policy-create-mac-os.md)
+     - [Windows Phone-telefon 8,1, Windows 8,1 és újabb verziók](compliance-policy-create-windows-8-1.md)
+     - [Windows 10 és újabb](compliance-policy-create-windows.md)  
+
+   - **Helyek** *(Android-eszköz rendszergazdája)* : a szabályzatban az eszköz helye alapján kényszerítheti a megfelelőséget. Válasszon a meglévő helyekről. Még nem rendelkezik hellyel? Az Intune-ban a [webhelyek (hálózati kerítés) használatával](use-network-locations.md) biztosítunk útmutatást.  
+
+   - Nem **megfelelőségi műveletek**: olyan eszközök esetében, amelyek nem felelnek meg a megfelelőségi szabályzatoknak, hozzáadhat egy műveletsort az automatikus alkalmazáshoz. Módosíthatja az eszköz nem megfelelőként való megjelölésének ütemezését, megadhatja például, hogy egy nap elteltével jelölje a rendszer nem megfelelőnek az eszközt. Hozzáadhat egy második műveletet is, amely e-mailt küld a felhasználónak, ha az eszköz nem megfelelő.
+    
+     A [Műveletek hozzáadása nem megfelelő eszközökhöz](actions-for-noncompliance.md) további információval szolgál, többek között arról, hogyan hozhat létre értesítési e-mailt a felhasználók számára.
+
+     Például, a Helyek funkciót használja, és hozzáad egy helyet egy megfelelőségi szabályzatban. Az alapértelmezett meg nem felelési művelet alkalmazandó, ha kiválaszt legalább egy helyet. Ha az eszköz nem csatlakozik a megadott helyekhez, akkor azonnal nem megfelelőnek számít. Biztosíthat a felhasználóknak egy türelmi időszakot, például egy napot.
+
+   - **Hatókör (címkék)** : a hatókör-címkék nagyszerű lehetőséget kapnak házirendek hozzárendelésére és szűrésére meghatározott csoportokra, például értékesítésre, HR-re, az összes US-NC-alkalmazottakra stb. A beállítások hozzáadása után hozzá lehet adni egy hatókör-címkét a megfelelőségi szabályzatokhoz. [Hatókör-címkék használata a házirendek szűréséhez](../fundamentals/scope-tags.md) jó erőforrás.
 
 4. Ha elkészült, válassza **az OK** > **Létrehozás** lehetőséget a módosítások mentéséhez. Ekkor létrejön a szabályzat, és megjelenik a listában. Ezután rendelje hozzá a szabályzatot a csoportokhoz.
 
@@ -115,17 +127,18 @@ A szabályzat hozzárendelésével azt is **kiértékelheti** , hogy hány felha
 
 Ha a **kiértékelés** gomb szürkén jelenik meg, győződjön meg arról, hogy a szabályzat hozzá van rendelve egy vagy több csoporthoz.
 
-## <a name="actions-for-noncompliance"></a>Meg nem felelés esetén végrehajtandó műveletek
+<!-- ## Actions for noncompliance
 
-Azon eszközök esetében, amelyek nem felelnek meg a megfelelőségi szabályzatoknak, hozzáadhat egy műveletsort az automatikus alkalmazáshoz. Módosíthatja az eszköz nem megfelelőként való megjelölésének ütemezését, megadhatja például, hogy egy nap elteltével jelölje a rendszer nem megfelelőnek az eszközt. Hozzáadhat egy második műveletet is, amely e-mailt küld a felhasználónak, ha az eszköz nem megfelelő.
+For devices that don't meet your compliance policies, you can add a sequence of actions to apply automatically. You can change the schedule when the device is marked non-compliant, such as after one day. You can also configure a second action that sends an email to the user when the device isn't compliant.
 
-A [Műveletek hozzáadása nem megfelelő eszközökhöz](actions-for-noncompliance.md) további információval szolgál, többek között arról, hogyan hozhat létre értesítési e-mailt a felhasználók számára.
+[Add actions for noncompliant devices](actions-for-noncompliance.md) provides more information, including creating a notification email to your users.
 
-Például, a Helyek funkciót használja, és hozzáad egy helyet egy megfelelőségi szabályzatban. Az alapértelmezett meg nem felelési művelet alkalmazandó, ha kiválaszt legalább egy helyet. Ha az eszköz nem csatlakozik a megadott helyekhez, akkor azonnal nem megfelelőnek számít. Biztosíthat a felhasználóknak egy türelmi időszakot, például egy napot.
+For example, you're using the Locations feature, and add a location in a compliance policy. The default action for noncompliance applies when you select at least one location. If the device isn't connected to the selected locations, it's immediately considered not compliant. You can give your users a grace period, such as one day.
 
-## <a name="scope-tags"></a>Hatókörcímkék
+## Scope tags
 
-A hatókör címkéi lehetővé teszik a házirendek hozzárendelését és szűrését adott csoportokra, például értékesítésre, HR-re, az összes US-NC-alkalmazottakra stb. A beállítások hozzáadása után hozzá lehet adni egy hatókör-címkét a megfelelőségi szabályzatokhoz. [Hatókör-címkék használata a házirendek szűréséhez](../fundamentals/scope-tags.md) jó erőforrás.
+Scope tags are a great way to assign and filter policies to specific groups, such as Sales, HR, All US-NC employees, and so on. After you add the settings, you can also add a scope tag to your compliance policies. [Use scope tags to filter policies](../fundamentals/scope-tags.md) is a good resource.
+-->
 
 ## <a name="refresh-cycle-times"></a>A ciklus idejének frissítése
 

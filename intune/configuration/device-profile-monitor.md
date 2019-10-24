@@ -5,24 +5,24 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 10/14/2019
+ms.date: 10/21/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 9deaed87-fb4b-4689-ba88-067bc61686d7
-ms.reviewer: heenamac
+ms.reviewer: karthib
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 17057100f9bc762de8c679880145014cf5806432
-ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
+ms.openlocfilehash: a1c68421bf7c5dea0d93d45e0cbb748204d0f66b
+ms.sourcegitcommit: c2e62f1ebdf75599c8e544287123c602f0f15f2b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72584862"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72749397"
 ---
 # <a name="monitor-device-profiles-in-microsoft-intune"></a>Eszközprofilok figyelése a Microsoft Intune-ban
 
@@ -80,6 +80,33 @@ Az **Eszközök** > **Minden eszköz** területen megtekintheti az ütközést o
 3. Válassza ki a szabályzatot. Megjelenik a szabályzat összes olyan beállítása, amely az eszközre vonatkozik. Ha egy eszköz **Ütközés** állapotban van, válassza ki a vonatkozó sort. Az új ablakban megjelenik az összes olyan profil és profilnév, amely az ütközést kiváltó beállítást tartalmazza.
 
 Miután ismeri az ütközést okozó beállítást, és tudja, hogy mely szabályzatok tartalmazzák ezt a beállítást, az ütközés elhárítása egyszerűbben elvégezhető. 
+
+## <a name="device-firmware-configuration-interface-profile-reporting"></a>Eszköz belső vezérlőprogram konfigurációs felületi profiljának jelentése
+
+> [!WARNING]
+> Folyamatban van a DFCI-profilok figyelése. Habár a DFCI nyilvános előzetes verzióban érhető el, előfordulhat, hogy a figyelési adatvesztés vagy hiányos.
+
+A DFCI-profilokat egy beállítás alapján kell jelenteni, ugyanúgy, mint az egyéb eszköz-konfigurációs profilokhoz. A gyártó DFCI függően előfordulhat, hogy egyes beállítások nem érvényesek.
+
+A DFCI-profil beállításaival a következő állapotok jelenhetnek meg:
+
+- **Megfelelő**: ez az állapot akkor jelenik meg, ha a profilban beállított érték megegyezik az eszköz beállításával. Ez az állapot a következő esetekben fordulhat elő:
+
+  - A DFCI-profil sikeresen konfigurálta a beállítást a profilban.
+  - Az eszköz nem rendelkezik a beállítás által vezérelt hardver-szolgáltatással, és a profil beállítása **le van tiltva**.
+  - Az UEFI nem engedélyezi a DFCI számára a funkció letiltását, és a profil beállítása **engedélyezve**van.
+  - Az eszköz nem rendelkezik a funkció letiltásához szükséges hardverrel, és a profil beállítása **engedélyezve**van.
+
+- **Nem alkalmazható**: ez az állapot akkor jelenik meg, ha a profilban a beállítás értéke **engedélyezve**van, és az eszközön nem található a megfelelő beállítás. Ez az állapot akkor fordulhat elő, ha az eszköz hardvere nem rendelkezik a szolgáltatással.
+
+- Nem **megfelelő**: ez az állapot akkor jelenik meg, ha a profilban beállított érték nem egyezik meg az eszköz beállításával. Ez az állapot a következő esetekben fordulhat elő:
+
+  - Az UEFI nem engedélyezi a DFCI számára a beállítások letiltását, és a profil beállítása **le van tiltva**.
+  - Az eszköz nem rendelkezik a funkció letiltásához szükséges hardverrel, és a profil beállítása **le van tiltva**.
+  - Az eszközön nincs a legújabb DFCI belső vezérlőprogram-verziója.
+  - A DFCI le lett tiltva az Intune-ban a helyi "letiltási" vezérlő használatával az UEFI menüjében.
+  - Az eszköz regisztrálva van az Intune-ban az Autopilot-regisztráción kívül.
+  - Az eszköz nincs regisztrálva egy Microsoft CSP-nek, vagy közvetlenül az OEM által regisztrálva.
 
 ## <a name="next-steps"></a>További lépések
 

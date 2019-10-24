@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e5334505c0692a62f7f1025d4c360073bd2d8369
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 24b69b6da846d54d4f45ede47c932574e006f99f
+ms.sourcegitcommit: 06a1fe83fd95c9773c011690e8520733e1c031e3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72498427"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72786015"
 ---
 # <a name="microsoft-intune-protected-apps"></a>Microsoft Intune védett alkalmazások  
 
@@ -72,6 +72,7 @@ A következő táblázatok a támogatott partneri és Microsoft-alkalmazások r�
 | **Microsoft Visio Viewer**<p><img alt="Microsoft app - Microsoft Visio Viewer icon" src="./media/apps-supported-intune-apps/icon-m-microsoft-visio-viewer.png" width="100"> | Az iPhone-on ingyenesen megtekintheti és kezelheti a Visio-diagramokat. Jelentkezzen be Microsoft-fiókjával, vagy nyisson meg egy Visio-mellékletet e-mailben, és tekintse át a Visio-diagramok csodálatos nézetét az iOS 9,0-es vagy újabb verzióját futtató iPhone-okon. A diagramokat bárkivel megoszthatja, akik a Visio-diagramokat megtekinthetik az iPhone-on vagy egy böngészőben, még akkor is, ha a Visio nincs telepítve a Windows asztalon.| [iOS-tároló hivatkozása](https://itunes.apple.com/us/app/microsoft-visio-viewer-flowcharts-and-diagrams/id1139787983?mt=8) |  
 | **Microsoft Word**<p><img alt="Microsoft app - Microsoft Word icon" src="./media/apps-supported-intune-apps/icon-m-microsoft-word.png" width="100"> | A Word-dokumentumok minden eddiginél jobban megnézhetik a tablettát és a telefont. Legyen biztos benne, hogy a dokumentumok szerkesztésekor vagy létrehozásakor pontosan úgy néznek ki, ahogy a számítógépek, Mac számítógépek, tabletták és telefonok esetében szeretné. Az ismerős munkahelyi megjelenéssel és működéssel, valamint intuitív érintőképernyős kezelőfelülettel bármikor üzembe helyezhető.<p><p>Ez az alkalmazás használható több identitást használó alkalmazásként Android és iOS rendszerhez is. | [Android áruházbeli hivatkozás](https://play.google.com/store/apps/details?id=com.microsoft.office.word),<br>[iOS-tároló hivatkozása](https://itunes.apple.com/us/app/microsoft-word/id586447913?mt=8) |  
 | **Microsoft munkahelyi mappák**<p><img alt="Microsoft app - Microsoft Work Folders icon" src="./media/apps-supported-intune-apps/icon-m-microsoft-work-folders.png" width="100"> | Lehetővé teszi, hogy az egyes alkalmazottak a munkahelyi mappák, a Windows Server-szolgáltatás segítségével biztonságosan hozzáférjenek a fájljaihoz a vállalati környezeten belülről és kívülről. | [iOS-tároló hivatkozása](https://itunes.apple.com/us/app/work-folders/id950878067?mt=8) | 
+| **Microsoft faliújság**<p><img alt="Microsoft app - Microsoft Whiteboard icon" src="./media/apps-supported-intune-apps/icon-m-microsoft-whiteboard.png" width="100"> | A Microsoft faliújság alkalmazás egy szabadkézi intelligens vásznat biztosít, ahol a csapatok ideate, létrehozhatják és együttműködhetnek a felhőben.  A csapatmunka azáltal, hogy valós időben lehetővé teszi az összes csapattag számára, hogy közvetlenül a vásznon szerkessze és jegyezze fel a megjegyzéseket, függetlenül attól, hogy hol vannak. És minden munkája biztonságos marad a felhőben, és készen áll arra, hogy bármilyen eszközről biztonsági mentést végezzen. | [iOS-tároló hivatkozása](https://apps.apple.com/us/app/microsoft-whiteboard/id1352499399) |  
 | **Yammer**<p><img alt="Microsoft app - Yammer icon" src="./media/apps-supported-intune-apps/icon-m-microsoft-yammer.png" width="100"> | Bontsa ki a szervezeti silókat, és könnyítse meg a csapatmunkát a Yammer. Kapcsolódhat a szervezet megfelelő tagjaihoz, megoszthatja és megkeresheti az információkat a csapatokban, és megszervezheti a projektek és ötletek körét, így további műveleteket végezhet. | [Android áruházbeli hivatkozás](https://play.google.com/store/apps/details?id=com.yammer.v1),<br>[iOS-tároló hivatkozása](https://itunes.apple.com/us/app/yammer/id289559439?mt=8) |  
 
 ## <a name="partner-apps"></a>Partneri alkalmazások 

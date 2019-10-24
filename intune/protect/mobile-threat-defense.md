@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 06/21/2019
+ms.date: 10/17/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,15 +18,17 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 16f5be886a1c62ac6743502207e043e1582ce5e7
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 4abc35b625b9aa072e38c02d2fc4160faa916fb3
+ms.sourcegitcommit: 06a1fe83fd95c9773c011690e8520733e1c031e3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72504475"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72785738"
 ---
 # <a name="what-is-mobile-threat-defense-integration-with-intune"></a>Mit jelent a Mobile Threat Defense integrációja az Intune-nal?
-Az Intune a mobil veszélyforrások elleni védelem gyártójától származó adatokat a megfelelőségi szabályzatok és a feltételes hozzáférési szabályok információs forrásaként integrálhatja. Ezekkel az információkkal megvédheti a vállalati erőforrásokat, például az Exchange-et és a SharePointot azáltal, hogy blokkolja a hozzáférést a feltört mobileszközökön.  
+Az Intune az eszközök megfelelőségi házirendjeinek és az eszköz feltételes hozzáférési szabályainak információs forrásaként integrálhatja a Mobile Threat Defense gyártójától származó adatokat. Ezekkel az információkkal megvédheti a vállalati erőforrásokat, például az Exchange-et és a SharePointot azáltal, hogy blokkolja a hozzáférést a feltört mobileszközökön.
+
+Az Intune ezeket az adatforrásokat használhatja a nem regisztrált eszközökhöz az Intune app Protection-szabályzatok használatával. A rendszergazdák ezeket az információkat a [Microsoft Intune védett alkalmazáson](~/apps/apps-supported-intune-apps.md)belüli vállalati adatok védelmére, valamint egy blokk vagy szelektív törlés kibocsátására használhatják fel.
 
 ## <a name="what-problem-does-this-solve"></a>Milyen problémára nyújt ez megoldást?
 A Mobile Threat Defense-gyártótól származó információk integrálásával megvédheti a vállalati erőforrásokat a mobil platformokat érintő fenyegetésektől.  
@@ -43,7 +45,7 @@ Például: egy csatlakoztatott Mobile Threat Defense-alkalmazás jelentést kül
 
 Ha engedélyezte ezt a funkciót, az Intune mind a személyes, mind a vállalati tulajdonban lévő eszközökről alkalmazásleltár-adatokat gyűjt, amelyeket elérhetővé tesz a Mobile Threat Defense szolgáltatói, például a Lookout for Work számára. Az alkalmazásleltárt iOS operációs rendszerrel rendelkező felhasználóktól gyűjtheti be.
 
-Ez a szolgáltatás nem kötelező, a leltáradatokat pedig nem osztjuk meg alapértelmezés szerint. Az alkalmazásleltár-adatok megosztása előtt egy Intune-rendszergazdának engedélyeznie kell a szolgáltatásbeállításokban az iOS-eszközök alkalmazásszinkronizációját.
+Ez a szolgáltatás nem kötelező, a leltáradatokat pedig nem osztjuk meg alapértelmezés szerint. Az Intune rendszergazdájának engedélyeznie kell az **alkalmazás-szinkronizálást iOS-eszközökön** a Mobile Threat Defense-összekötő beállításaiban, mielőtt bármely alkalmazás leltári információja meg van osztva.
 
 **Alkalmazásleltár**  
 Ha engedélyezi az iOS-eszközök alkalmazásszinkronizáicóját, az Intune mind a személyes, mind a vállalati tulajdonban lévő, iOS rendszerű eszközöktől alkalmazásleltár-adatokat küld az Ön MTD-szolgáltatójának. Az alkalmazásleltár adatai az alábbiakat tartalmazzák:
@@ -57,7 +59,7 @@ Ha engedélyezi az iOS-eszközök alkalmazásszinkronizáicóját, az Intune min
 - Az alkalmazás ellenőrzött állapota
 - Az alkalmazás felügyelt állapota
 
-## <a name="sample-scenarios"></a>Mintaforgatókönyvek
+## <a name="sample-scenarios-for-enrolled-devices-using-device-compliance-policies"></a>Példák az eszköz megfelelőségi házirendjeit használó regisztrált eszközökre
 
 Ha a Mobile Threat Defense rendszer fertőzöttnek tekint egy eszközt:
 
@@ -67,14 +69,22 @@ Ha az eszközről elhárul a veszély, a hozzáférés újra engedélyezett:
 
 ![Kép: A Mobile Threat Defense megadja a hozzáférést](./media/mobile-threat-defense/MTD-image-2.png)
 
+## <a name="sample-scenarios-for-unenrolled-devices-using-intune-app-protection-policies"></a>Példák a nem regisztrált eszközökre az Intune app Protection-szabályzatok használatával
+
+Ha a Mobile Threat Defense rendszer fertőzöttnek tekint egy eszközt:<br>
+a Mobile Threat Defense fertőzött eszközét megjelenítő ![Image ](./media/mobile-threat-defense/MTD-image-3.png)
+
+Ha az eszközről elhárul a veszély, a hozzáférés újra engedélyezett:<br>
+![Image Mobile Threat Defense-hozzáférés biztosított ](./media/mobile-threat-defense/MTD-image-4.png)
+
 > [!NOTE] 
-> Az Intune nem támogatja egyszerre több Mobile Threat Defense-szolgáltató használatát. Egyszerre több MTD-eszköz engedélyezése minden MTD-alkalmazás telepítését váltja ki, és minden elérhető eszközön elvégzik a fenyegetések keresését.
+> Az Intune nem támogatja egyszerre több Mobile Threat Defense-szolgáltató használatát. Ha több MTD-összekötő is engedélyezve van, akkor az összes MTD-alkalmazást telepíteni kell, és az összes eszközön át kell vizsgálni a fenyegetések ellen.
 
 ## <a name="mobile-threat-defense-partners"></a>Mobile Threat Defense-partnerek
 
 A vállalati erőforrásokhoz való hozzáférés védelme az eszköz-, a hálózati és az alkalmazáskockázat alapján:
 
-- [A Lookout használatával](lookout-mobile-threat-defense-connector.md)
+- [Lookout for Work](lookout-mobile-threat-defense-connector.md)
 - [Symantec Endpoint Protection Mobile](skycure-mobile-threat-defense-connector.md)
 - [Check Point SandBlast Mobile](checkpoint-sandblast-mobile-mobile-threat-defense-connector.md)
 - [Zimperium](zimperium-mobile-threat-defense-connector.md)

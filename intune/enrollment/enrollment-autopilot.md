@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8029c62aeec431c19db080ec444c02565905443f
-ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
+ms.openlocfilehash: f2a1d964f157f33e439f659713fe8c2e02f852b3
+ms.sourcegitcommit: c2e62f1ebdf75599c8e544287123c602f0f15f2b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72585308"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72749404"
 ---
 # <a name="enroll-windows-devices-in-intune-by-using-the-windows-autopilot"></a>Windows-eszközök regisztrálása az Intune-ban a Windows Autopilot használatával  
 A Windows Autopilot leegyszerűsíti az eszközök regisztrálását az Intune-ban. A testre szabott operációsrendszer-lemezképek létrehozása és karbantartása sok időt vesz igénybe. Gyakran ezeknek az egyéni operációsrendszer-lemezképeknek az új eszközökre való alkalmazásával is időt kell töltenie, hogy felkészítse az eszközöket a használatra, mielőtt a végfelhasználóknak adná azokat. A Microsoft Intune és az AutoPilot révén új eszközöket adhat hozzá a végfelhasználók számára anélkül, hogy egyéni operációsrendszer-lemezképek létrehozására, kezelésére és az eszközökre való alkalmazására lenne szükség. Az AutoPilot-eszközök Intune-nal való felügyelete során a regisztráció után szabályzatokat, profilokat, alkalmazásokat és sok mást is kezelni tud. A megoldás előnyeinek, használati eseteinek és előfeltételeinek áttekintéséről lásd [a Windows AutoPilot áttekintését](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot).
@@ -142,18 +142,6 @@ Az AutoPilot üzembehelyezési profil létrehozása után módosíthatja az üze
 
 > [!NOTE]
 > A profil módosításai alkalmazva lesznek a profilhoz társított eszközökön. Azonban a frissített profilt az Intune-ban korábban már regisztrált eszközökre csak azok alaphelyzetbe állítása és megújítása után alkalmazza a rendszer.
-
-## <a name="edit-autopilot-device-attributes"></a>Autopilot-eszköz attribútumainak szerkesztése
-Az Autopilot-eszköz feltöltése után szerkesztheti az eszköz bizonyos attribútumait.
-
-1. A Azure Portal Intune-ban válassza az **eszközök beléptetése**lehetőséget.
-2. A **Windows-regisztráció**területen, a **Windows Autopilot** szakaszban válassza az **eszközök**elemet.
-3. Válassza ki a szerkeszteni kívánt eszközt.
-4. A képernyő jobb oldalán található ablaktáblán szerkesztheti az eszköz nevét, a csoport címkéjét vagy a felhasználóbarát nevet (ha felhasználóhoz rendelt hozzá).
-5. Válassza a **Mentés** lehetőséget.
-
-> [!NOTE]
-> Az eszközök neve minden eszközhöz konfigurálható, de a hibrid Azure AD-hez csatlakoztatott üzemelő példányok figyelmen kívül lesznek hagyva. Az eszköz neve továbbra is a hibrid Azure AD-eszközök tartományhoz tartozó csatlakozási profiljából származik.
 
 ## <a name="alerts-for-windows-autopilot-unassigned-devices-----163236---"></a>Riasztások a Windows Autopilot nem hozzárendelt eszközeihez  <!-- 163236 -->  
 

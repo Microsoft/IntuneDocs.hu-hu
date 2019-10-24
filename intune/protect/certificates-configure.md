@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 67952532a452a91e771a66dd5a5b4229c07ac802
-ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
+ms.openlocfilehash: 65ced1dfb0fe872129b7437e8dda3dde680b5d07
+ms.sourcegitcommit: 06a1fe83fd95c9773c011690e8520733e1c031e3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72584825"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72786815"
 ---
 # <a name="use-certificates-for-authentication-in-microsoft-intune"></a>Tanúsítványok használata a Microsoft Intune történő hitelesítéshez  
 
@@ -44,9 +44,9 @@ Minden egyes létrehozott tanúsítvány egyetlen platformot támogat. Ha péld�
 - Ha a Microsoft Active Directory tanúsítványszolgáltatás használatával SCEP-tanúsítványokat használ, a hálózati eszközök tanúsítványigénylési szolgáltatásának (NDES) kiszolgálóját kell konfigurálnia.
 - Ha a SCEP-t az egyik hitelesítésszolgáltatói partnerrel együtt használja, [integrálnia kell azt az Intune](certificate-authority-add-scep-overview.md#set-up-third-party-ca-integration)-nal.
 - A SCEP-és a PKCS-tanúsítványok profiljaihoz a Microsoft Intune Tanúsítvány-összekötő letöltésére, telepítésére és konfigurálására van szükség. 
-- A PCKS importált tanúsítványokhoz le kell töltenie, telepítenie és konfigurálnia kell a PFX tanúsítvány-összekötőt Microsoft Intune számára.
+- A PKCS importált tanúsítványok megkövetelik a PFX tanúsítvány-összekötő letöltését, telepítését és konfigurálását Microsoft Intune számára.
 - A PKCS importált tanúsítványok megkövetelik, hogy tanúsítványokat exportáljon a hitelesítésszolgáltatótól, és importálja őket Microsoft Intuneba. Lásd [a PFXImport PowerShell-projektet](https://github.com/Microsoft/Intune-Resource-Access/tree/develop/src/PFXImportPowershell)
-- Ahhoz, hogy egy eszköz SCEP-, PCKS-vagy PKCS-alapú tanúsítvány-profilokat használjon, az eszköznek meg kell bíznia a legfelső szintű hitelesítésszolgáltatóban. A megbízható legfelső szintű HITELESÍTÉSSZOLGÁLTATÓI tanúsítvány eszközökre való üzembe helyezéséhez egy *megbízható tanúsítvány-profilt* kell használnia.  
+- Ahhoz, hogy egy eszköz SCEP, PKCS vagy PKCS importált tanúsítvány-profilokat használjon, az eszköznek meg kell bíznia a legfelső szintű hitelesítésszolgáltatóban. A megbízható legfelső szintű HITELESÍTÉSSZOLGÁLTATÓI tanúsítvány eszközökre való üzembe helyezéséhez egy *megbízható tanúsítvány-profilt* kell használnia.  
 
 ## <a name="supported-platforms-and-certificate-profiles"></a>Támogatott platformok és tanúsítványok profiljai  
 | Platfésm              | Megbízható tanúsítvány profilja | PKCS-tanúsítvány profilja | SCEP-tanúsítvány profilja | PKCS importált tanúsítvány profilja  |
@@ -71,7 +71,7 @@ Ezt a. cer fájlt fogja használni, amikor [megbízható tanúsítvány-profilok
 ## <a name="create-trusted-certificate-profiles"></a>Megbízható tanúsítványok profiljainak létrehozása  
 Hozzon létre egy megbízható tanúsítványsablont, mielőtt SCEP, PKCS vagy PKCS importált tanúsítványsablont hozna létre. A megbízható tanúsítvány-profilok üzembe helyezése biztosítja, hogy mindegyik eszköz felismeri a HITELESÍTÉSSZOLGÁLTATÓ legitimitását. A SCEP tanúsítvány-profilok közvetlenül egy megbízható tanúsítvány profiljára hivatkoznak. A PKCS-tanúsítványok profiljai nem hivatkoznak közvetlenül a megbízható tanúsítvány profiljára, de közvetlenül hivatkoznak a HITELESÍTÉSSZOLGÁLTATÓT futtató kiszolgálóra. A PKCS importált tanúsítvány-profilok nem hivatkoznak közvetlenül a megbízható tanúsítvány profiljára, de használhatják azt az eszközön. A megbízható tanúsítvány-profilok eszközökre való telepítése biztosítja ezt a megbízhatósági kapcsolatot. Ha egy eszköz nem bízik meg a legfelső szintű HITELESÍTÉSSZOLGÁLTATÓban, a SCEP-vagy PKCS-tanúsítvány profiljának házirendje sikertelen lesz.  
 
-Hozzon létre külön megbízható tanúsítványt a támogatni kívánt összes platformhoz, ugyanúgy, mint a SCEP, a PCKS és a PKCS importált tanúsítvány-profilok esetében.  
+Hozzon létre egy külön megbízható tanúsítványsablont minden támogatni kívánt eszköz platformhoz, ugyanúgy, mint a SCEP, a PKCS és a PKCS importált tanúsítvány-profilok esetében.  
 
 
 ### <a name="to-create-a-trusted-certificate-profile"></a>Megbízható tanúsítványprofil létrehozásához  
@@ -87,7 +87,7 @@ Hozzon létre külön megbízható tanúsítványt a támogatni kívánt összes
    - **Számítógép tanúsítványtárolója – köztes**
    - **Felhasználói tanúsítványtároló – köztes**
 8. Ha elkészült, válassza az **OK** gombot, lépjen vissza a **Profil létrehozása** panelre, és válassza a **Létrehozás** gombot.
-A profil megjelenik a profilok listájában az *eszköz konfigurációja – profilok* nézet panelen, a **megbízható tanúsítvány**profiljának típusától függően.  Ügyeljen arra, hogy ezt a profilt olyan eszközökhöz rendelje, amelyek SCEP vagy PCKS tanúsítványokat fognak használni. A profil csoportokhoz rendeléséhez lásd: [eszközbeállítások társítása](../configuration/device-profile-assign.md).
+A profil megjelenik a profilok listájában az *eszköz konfigurációja – profilok* nézet panelen, a **megbízható tanúsítvány**profiljának típusától függően.  Ügyeljen arra, hogy ezt a profilt olyan eszközökhöz rendelje, amelyek SCEP-vagy PKCS-tanúsítványokat fognak használni. A profil csoportokhoz rendeléséhez lásd: [eszközbeállítások társítása](../configuration/device-profile-assign.md).
 
 > [!NOTE]  
 > Az Android-eszközökön olyan üzenet jelenhet meg, amely szerint egy harmadik fél megbízható tanúsítványt telepített.  

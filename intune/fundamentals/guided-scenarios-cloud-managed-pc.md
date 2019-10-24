@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df6427f1986cd55755d2375ed00cab057e48d8c3
-ms.sourcegitcommit: 1a5b185acd27954b10b6d59409d82eb80fd71284
-ms.translationtype: HT
+ms.openlocfilehash: b3372fc83e467b08b479490b3707f2be03409156
+ms.sourcegitcommit: c2e62f1ebdf75599c8e544287123c602f0f15f2b
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72681440"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72749332"
 ---
 # <a name="guided-scenario---cloud-managed-modern-desktop"></a>Interaktív forgatókönyv – felhőben felügyelt modern asztal
 
@@ -66,7 +66,7 @@ Ha további felhasználókat vagy eszközöket szeretne hozzáadni ehhez a konfi
 Győződjön meg arról, hogy az eszközön a Windows 10 1903-es vagy újabb verziója fut.  Az elsődleges felhasználónak be kell állítania az eszközt, amikor megkapja. A felhasználó két beállítási lehetőség közül választhat. 
 
 ### <a name="option-a--windows-autopilot"></a>A. lehetőség – Windows Autopilot
-A Windows Autopilot automatizálja az új eszközök konfigurációját, így a felhasználók nem tudnak az IT-támogatás nélkül beállítani őket. Ha az eszköz már regisztrálva van a Windows Autopilot szolgáltatásban, válassza ki a sorozatszám alapján. További információ a Windows Autopilot használatáról: [eszköz regisztrálása a Windows automatikus próbaverziójában (nem kötelező)](~/fundamentals/guided-scenarios-cloud-managed-pc.md#register-device-with-windows-auto-pilot-optional).
+A Windows Autopilot automatizálja az új eszközök konfigurációját, így a felhasználók nem tudnak az IT-támogatás nélkül beállítani őket. Ha az eszköz már regisztrálva van a Windows Autopilot szolgáltatásban, válassza ki a sorozatszám alapján. További információ a Windows Autopilot használatáról: [eszköz regisztrálása a Windows automatikus próbaverziójában (nem kötelező)](~/fundamentals/guided-scenarios-cloud-managed-pc.md#register-device-with-windows-autopilot-optional).
 
 ### <a name="option-b--manual-device-enrollment"></a>B. lehetőség – manuális eszközök beléptetése
 A felhasználók manuálisan fogják beállítani és regisztrálni az új eszközöket a mobileszköz-felügyeletben. A forgatókönyv elvégzése után állítsa alaphelyzetbe az eszközt, és adja meg az elsődleges felhasználónak a Windows-eszközök regisztrálására vonatkozó utasításokat. További információ: [Windows 10-es eszköz csatlakoztatása az Azure ad-hez az első futtatási élményben](https://docs.microsoft.com/azure/active-directory/devices/azuread-joined-devices-frx#joining-a-device).

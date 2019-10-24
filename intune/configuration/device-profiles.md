@@ -5,24 +5,24 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 10/14/2019
+ms.date: 10/21/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
-ms.reviewer: ''
+ms.reviewer: karthib
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2c578cb430bd6c62c274322ea1e46b5d37d2e143
-ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
+ms.openlocfilehash: 7c49445800f5d34fbb6ce0a845d4f29c3e587483
+ms.sourcegitcommit: c2e62f1ebdf75599c8e544287123c602f0f15f2b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72584977"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72749342"
 ---
 # <a name="apply-features-and-settings-on-your-devices-using-device-profiles-in-microsoft-intune"></a>Szolgáltatások és beállítások alkalmazása az eszközökön a Microsoft Intune eszköz profiljainak használatával
 
@@ -49,7 +49,7 @@ Ezek a sablonok a Csoportházirendhez hasonló beállítások egyszerűsített n
 
 Ez a funkció a következőket támogatja:
 
-- Windows 10 és újabb
+- Windows 10 1809 és újabb verziók a támogatott belső vezérlőprogram-on.
 
 ## <a name="certificates"></a>Tanúsítványok
 
@@ -95,6 +95,14 @@ Ez a funkció a következőket támogatja:
 
 - iOS/iPadOS
 - macOS
+
+## <a name="device-firmware-configuration-interface"></a>Eszköz belső vezérlőprogram-konfigurációs felülete
+
+Az [eszköz belső vezérlőprogram-konfigurációs felülete](device-firmware-configuration-interface-windows.md) (DFCI) lehetővé teszi a rendszergazdák számára az UEFI (BIOS) beállítások engedélyezését vagy letiltását az Intune használatával. Ezekkel a beállításokkal fokozhatja a biztonságot a belső vezérlőprogram szintjén, ami általában rugalmasabb a kártékony támadásokkal szemben.
+
+Ez a funkció a következőket támogatja:
+
+- Windows 10 és újabb
 
 ## <a name="device-restrictions"></a>Eszközkorlátozások
 

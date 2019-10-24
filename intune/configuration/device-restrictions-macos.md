@@ -6,7 +6,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 09/10/2019
+ms.date: 10/22/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fb5fe19852ffff30566cb6758e156def3b7d64a5
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 8b2efdc04414d29fc1d8d200525cb3a4a880ec01
+ms.sourcegitcommit: e9cf372711ff186ed468b01a9204631a139bd8e5
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72494027"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72776895"
 ---
 # <a name="macos-device-settings-to-allow-or-restrict-features-using-intune"></a>macOS eszközbeállítások az Intune-t használó funkciók engedélyezéséhez vagy korlátozásához
 
@@ -40,7 +40,7 @@ Ezek a beállítások hozzáadódnak az Intune-ban lévő eszköz konfiguráció
 
 ## <a name="general"></a>Általános
 
-### <a name="settings-apply-to-device-enrollment"></a>Beállítások a következőkre vonatkoznak: eszköz beléptetése
+### <a name="settings-apply-to-device-enrollment-and-automated-device-enrollment"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése és automatikus eszközök beléptetése
 
 - **Definíciók keresése**: a **blokk** megakadályozza, hogy a felhasználó kiemelje a szót, majd megkeresse a definícióját az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a hozzáférését a definíciós keresési szolgáltatáshoz.
 - **Diktálás**: a **Letiltás** megakadályozza, hogy a felhasználó hangbevitelt használjon szöveg megadásához. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára a diktálási bevitel használatát.
@@ -82,7 +82,7 @@ Ezek a beállítások hozzáadódnak az Intune-ban lévő eszköz konfiguráció
 
 ## <a name="password"></a>Jelszó
 
-### <a name="settings-apply-to-device-enrollment"></a>Beállítások a következőkre vonatkoznak: eszköz beléptetése
+### <a name="settings-apply-to-device-enrollment-and-automated-device-enrollment"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése és automatikus eszközök beléptetése
 
 - **Password (jelszó**): **megköveteli** a végfelhasználótól, hogy jelszót adjon meg az eszköz eléréséhez. **Nincs konfigurálva** (az alapértelmezett) nem igényel jelszót. Emellett nem kényszerít semmilyen korlátozást, mint például az egyszerű jelszavak blokkolása vagy a minimális hossz beállítása.
   - **Kötelező jelszó típusa**: adja meg, hogy a jelszó csak numerikus lehet-e, vagy alfanumerikusnak kell lennie (betűket és számokat is tartalmaznia kell).
@@ -114,7 +114,7 @@ Ezek a beállítások hozzáadódnak az Intune-ban lévő eszköz konfiguráció
 
 ## <a name="built-in-apps"></a>Beépített alkalmazások
 
-### <a name="settings-apply-to-device-enrollment"></a>Beállítások a következőkre vonatkoznak: eszköz beléptetése
+### <a name="settings-apply-to-device-enrollment-and-automated-device-enrollment"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése és automatikus eszközök beléptetése
 
 - **Safari automatikus**kitöltésének letiltása: a **Letiltás** letiltja az eszközön található Safari automatikus kitöltés szolgáltatását. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára a webböngésző automatikus kiegészítési beállításainak módosítását.
 - **Kamera letiltása**: válassza a **Letiltás** lehetőséget az eszközön található kamerához való hozzáférés megakadályozása érdekében. **Nincs konfigurálva** (alapértelmezés) engedélyezi az eszköz kamerájának elérését.
@@ -127,7 +127,7 @@ Ezek a beállítások hozzáadódnak az Intune-ban lévő eszköz konfiguráció
 
 ## <a name="restricted-apps"></a>Korlátozott alkalmazások
 
-### <a name="settings-apply-to-device-enrollment"></a>Beállítások a következőkre vonatkoznak: eszköz beléptetése
+### <a name="settings-apply-to-device-enrollment-and-automated-device-enrollment"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése és automatikus eszközök beléptetése
 
 - **A korlátozott alkalmazások listájának típusa**: hozza létre azon alkalmazások listáját, amelyeket a felhasználók nem telepíthetnek és nem használhatnak. A választható lehetőségek:
 
@@ -145,14 +145,14 @@ Ha alkalmazásokat szeretne hozzáadni a listához, a következőket teheti:
 
 ## <a name="connected-devices"></a>Csatlakoztatott eszközök
 
-### <a name="settings-apply-to-device-enrollment"></a>Beállítások a következőkre vonatkoznak: eszköz beléptetése
+### <a name="settings-apply-to-device-enrollment-and-automated-device-enrollment"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése és automatikus eszközök beléptetése
 
 - **AirDrop letiltása**: a **blokk** megakadályozza a AirDrop használatát az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a AirDrop funkció használatát a tartalmak a közeli eszközökkel való cseréjéhez.
 - Az **Apple Watch automatikus feloldásának letiltása**: a **blokk** megakadályozza, hogy a felhasználók a MacOS-eszközeik zárolását az Apple Watch szolgáltatással oldják fel. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy a MacOS-eszközét az Apple Watch használatával oldják fel.
 
 ## <a name="cloud-and-storage"></a>Felhő és tárolás
 
-### <a name="settings-apply-to-device-enrollment"></a>Beállítások a következőkre vonatkoznak: eszköz beléptetése
+### <a name="settings-apply-to-device-enrollment-and-automated-device-enrollment"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése és automatikus eszközök beléptetése
 
 - **ICloud-kulcstartó szinkronizálásának**letiltása: válassza a **Letiltás** lehetőséget a kulcstartóban tárolt hitelesítő adatok icloudba való szinkronizálásának letiltásához. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy szinkronizálják ezeket a hitelesítő adatokat.
 - **ICloud-dokumentumok szinkronizálásának letiltása**: a **Letiltás** megakadályozza az iCloud számára a dokumentumok és adatok szinkronizálását. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a dokumentumok és a kulcs-érték szinkronizálását az iCloud tárhelyére.
@@ -170,7 +170,7 @@ Ha alkalmazásokat szeretne hozzáadni a listához, a következőket teheti:
 
 ## <a name="domains"></a>Domains
 
-### <a name="settings-apply-to-device-enrollment"></a>Beállítások a következőkre vonatkoznak: eszköz beléptetése
+### <a name="settings-apply-to-device-enrollment-and-automated-device-enrollment"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése és automatikus eszközök beléptetése
 
 - **E-mail-tartomány URL-címe**: **adjon hozzá** egy vagy több URL-címet a listához. Ha a felhasználók a konfigurálttól eltérő tartományból kapnak e-mailt, az e-mail-cím nem megbízhatóként van megjelölve a macOS posta alkalmazásban.
 
