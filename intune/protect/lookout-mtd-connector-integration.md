@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b61281b0e82bcb839efdc31726d398eea08c364f
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: b4661b151493eb68cc6f71a5a77bd023ac27b826
+ms.sourcegitcommit: 3ace4cba6e2f6fefa9120be3807387a49b200c9b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72502200"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72810223"
 ---
 # <a name="set-up-lookout-mobile-endpoint-security-integration-with-intune"></a>A mobil végpontok biztonsági integrációjának beállítása az Intune-nal
 Az [előfeltételeknek](lookout-mobile-threat-defense-connector.md#prerequisites)megfelelő környezettel integrálhatja az Intune-nal a kilátó mobil végpontok biztonságát. A cikkben található információk végigvezetik az integráció beállításában és a fontos beállítások konfigurálásában az Intune-nal való használathoz.  
@@ -69,13 +69,16 @@ Ahhoz, hogy a Kitekintő mobil Endpoint Security-előfizetés integrálása az I
    Az információk összegyűjtése után lépjen kapcsolatba a kilátó támogatási szolgálatával (e-mail: enterprisesupport@lookout.com). A megtekintő támogatás az elsődleges kapcsolattartóval együttműködve előkészíti az előfizetést, és létrehozza a kilátó vállalati fiókot az Ön által megadott információk alapján.  
 
 ## <a name="configure-your-lookout-subscription"></a>A kilátó előfizetés konfigurálása  
+
+A következő lépéseket kell végrehajtani a kilátó vállalati felügyeleti konzolon, és lehetővé válik az Intune-ban regisztrált eszközök (az eszköz megfelelőségén keresztüli) **és** a nem regisztrált eszközök (az alkalmazás-védelmi szabályzatok használatával) közötti kapcsolódás.
+
 Miután a kinézeti támogatás létrehozza a kilátó vállalati fiókot, a kisegítő támogatás e-mailt küld a vállalat elsődleges kapcsolattartójának, amely a bejelentkezési URL-címre mutat: https://aad.lookout.com/les?action=consent. 
 
 ### <a name="initial-sign-in"></a>Kezdeti bejelentkezés  
 A megjelenítői MES-konzolra való első bejelentkezéskor megjelenik egy beleegyező lap (https://aad.lookout.com/les?action=consent). Az Azure AD globális rendszergazdája csak bejelentkezik, és **fogadja el**. A következő bejelentkezéshez nem szükséges, hogy a felhasználó ezen szintű Azure AD-jogosultsággal rendelkezzen. 
 
  Egy hozzájárulást kérő lap jelenik meg. A regisztráció befejezéséhez válassza az **elfogad** lehetőséget. 
-   @no__t – a 0screenshot első bejelentkezési oldalának a @ no__t-1
+   ![képernyőkép a kilátó konzol első bejelentkezés lapján](./media/lookout-mtd-connector-integration/lookout_mtp_initial_login.png)
 
 Ha elfogadja és beleegyezik, a rendszer átirányítja a kilátó konzolra.
 
@@ -110,20 +113,7 @@ Az alábbi eljárás azt feltételezi, hogy korábban létrehozott egy felhaszn�
 6. Az összekötő konfigurálásának befejezéséhez válassza az **összekötő létrehozása** lehetőséget. Később, amikor elégedett az eredménnyel, kiterjesztheti a regisztrációt további felhasználói csoportokra.
 
 ## <a name="configure-intune-to-use-lookout-as-a-mobile-threat-defense-provider"></a>Az Intune konfigurálása Mobile Threat Defense-szolgáltatóként való kilátó használatára
-Miután konfigurálta a MES-t, be kell állítania egy kapcsolódást az Intune-beli figyeléshez.  
-
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-
-2. Lépjen az **eszköz megfelelősége** > **Mobile Threat Defense** elemre, és válassza a **Hozzáadás**lehetőséget.
-
-3. Az *összekötő hozzáadása* ablaktáblán használja a legördülő listát, és válassza a **Lookout for Work**lehetőséget.  
-
-4. Válassza a **Létrehozás** lehetőséget. Miután az összekötő kapcsolatot létesít a MES-vel, az *összekötő beállításai* elérhetővé válnak.
-
-5. Állítsa **be az** **alkalmazások szinkronizálásának engedélyezése iOS-eszközökön** beállítását. 
-
-6. A konfiguráció befejezéséhez válassza a **Mentés** lehetőséget.  Az Intune és a megjelenő MES már integrálva van, és használatra kész.
-
+Miután konfigurálta a MES-t, be kell állítania egy kapcsolódást az [Intune-beli figyeléshez](https://docs.microsoft.com/en-us/intune/protect/mtd-connector-enable).  
 
 ## <a name="additional-settings-in-the-lookout-mes-console"></a>További beállítások a kilátó MES-konzolon
 A következő további beállítások konfigurálhatók a kilátó MES-konzolon.  
@@ -146,8 +136,6 @@ Ha e-mailben szeretne riasztásokat kapni a fenyegetésekről, jelentkezzen be a
 
   ![képernyőkép a beállítások lapról a megjelenő felhasználói fiókkal](./media/lookout-mtd-connector-integration/lookout-mtp-email-notifications.png)
 
-
-
 ## <a name="configure-threat-classifications"></a>A veszélyforrások besorolásának konfigurálása  
 A mobil végpontok biztonsági kilátója a különböző típusú mobil fenyegetéseket osztályozza. A kilátó veszélyforrások besorolásának alapértelmezett kockázati szintjei vannak társítva. A kockázati szintek bármikor módosíthatók a vállalat igényeinek megfelelően.
 
@@ -167,4 +155,5 @@ Az eszközre telepített *Lookout for Work* alkalmazás beszerzésével kapcsola
 
 ## <a name="next-steps"></a>További lépések
 
-[Lookout-alkalmazások beállítása](mtd-apps-ios-app-configuration-policy-add-assign.md)
+- [Kilátó alkalmazások beállítása a regisztrált eszközökhöz](mtd-apps-ios-app-configuration-policy-add-assign.md)
+- [Kilátó alkalmazások beállítása a nem regisztrált eszközökhöz](~/protect/mtd-add-apps-unenrolled-devices.md)

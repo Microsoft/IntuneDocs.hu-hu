@@ -2,10 +2,10 @@
 title: Windows 8,1 megfelelőségi beállítások a Microsoft Intuneban – Azure | Microsoft Docs
 description: Tekintse meg a Windows 8,1 és Windows Phone-telefon 8,1 rendszerű eszközök megfelelőségének beállításakor használható beállítások listáját Microsoft Intuneban. Győződjön meg arról, hogy megfelel a minimális és a maximális operációs rendszernek, a jelszó korlátozásának és hosszának beállítása, a titkosítás engedélyezése az adattárolásban és egyebek.
 keywords: ''
-author: MandiOhlinger
-ms.author: mandia
+author: brenduns
+ms.author: brenduns
 manager: dougeby
-ms.date: 04/04/2019
+ms.date: 10/22/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -15,16 +15,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 322d6f1e23464f1f75cc79346d839a9ccdbd7bc7
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 3e074d922078a9772ca67a6ebd99948bc3e64601
+ms.sourcegitcommit: 25acfc88b366d2da71c37d354a0238e4f1168325
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72504638"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72813210"
 ---
 # <a name="windows-81-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>Windows 8,1 beállítások az eszközök megfelelőségi vagy nem megfelelőként való megjelöléséhez az Intune használatával
-
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
 Ez a cikk felsorolja és ismerteti a Windows 8,1-eszközökön az Intune-ban konfigurálható különböző megfelelőségi beállításokat. A mobileszköz-kezelési (MDM) megoldás részeként ezeket a beállításokat használhatja az egyszerű jelszavak letiltásához, az operációs rendszer minimális és maximális verziójának beállításához, és így tovább.
 
@@ -41,8 +39,21 @@ Intune-rendszergazdaként ezeket a megfelelőségi beállításokat használhatj
 
 ## <a name="device-properties"></a>Eszköztulajdonságok
 
-- Az **operációs rendszer szükséges minimális**verziója: adja meg a minimálisan engedélyezett verziót. Ha egy eszköz nem teljesíti az operációs rendszer szükséges minimális verziójára vonatkozó követelményt, nem megfelelőként jelenik meg. Megjelenik egy hivatkozás, amelyen a verziófrissítésre vonatkozó információk érhetők el. A végfelhasználó frissítheti az eszközt, ez után pedig hozzáférést kap a vállalati erőforrásokhoz.
-- **Maximálisan engedélyezett operációsrendszer-verzió**: adja meg a maximálisan engedélyezett verziót. Ha egy eszközön a szabályban megadott operációsrendszer-verziónál újabb operációs rendszer van használatban, a vállalati erőforrásokhoz való hozzáférés le lesz tiltva. A felhasználónak kapcsolatba kell lépnie a rendszergazdával. Az eszköz addig nem fér hozzá a szervezeti erőforrásokhoz, amíg meg nem változtatja a szabályt az operációs rendszer verziójának engedélyezéséhez.
+### <a name="operating-system-version"></a>Operációs rendszer verziója
+
+**Windows Phone 8,1 és újabb verziók**
+- **Mobileszközök minimális operációsrendszer-verziója**:  
+  Adja meg a minimálisan engedélyezett verziót. Ha egy eszköz nem teljesíti az operációs rendszer szükséges minimális verziójára vonatkozó követelményt, nem megfelelőként jelenik meg. Megjelenik egy hivatkozás, amelyen a verziófrissítésre vonatkozó információk érhetők el. Az eszköz a felhasználó dönthet úgy, hogy frissíti az eszközét, majd hozzáférést kap a vállalati erőforrásokhoz.
+
+- **Mobileszközök maximális operációsrendszer-verziója**:  
+  Adja meg a maximálisan engedélyezett verziót. Ha egy eszközön a szabályban megadott operációsrendszer-verziónál újabb operációs rendszer van használatban, a szervezeti erőforrásokhoz való hozzáférés le lesz tiltva. Az eszköz felhasználójának kapcsolatba kell lépnie a rendszergazdával. Az eszköz nem fér hozzá a szervezeti erőforrásokhoz, amíg egy szabály nem változik, hogy az operációs rendszer verziója engedélyezve legyen.
+
+**Windows 8.1 és újabb verziók**
+- **Operációs rendszer minimális verziója**:  
+  Adja meg a minimálisan engedélyezett verziót. Ha egy eszköz nem teljesíti az operációs rendszer szükséges minimális verziójára vonatkozó követelményt, nem megfelelőként jelenik meg. Megjelenik egy hivatkozás, amelyen a verziófrissítésre vonatkozó információk érhetők el. Az eszköz a felhasználó dönthet úgy, hogy frissíti az eszközét, majd hozzáférést kap a vállalati erőforrásokhoz.
+
+- **Maximális operációsrendszer-verzió**:  
+  Adja meg a maximálisan engedélyezett verziót. Ha egy eszközön a szabályban megadott operációsrendszer-verziónál újabb operációs rendszer van használatban, a szervezeti erőforrásokhoz való hozzáférés le lesz tiltva. Az eszköz felhasználójának kapcsolatba kell lépnie a rendszergazdával. Az eszköz nem fér hozzá a szervezeti erőforrásokhoz, amíg egy szabály nem változik, hogy az operációs rendszer verziója engedélyezve legyen.
 
 Windows 8.1-es számítógépek esetén például a visszaadott verzió a **3**-as. Ha az operációs rendszer verziójának szabálya Windows 8,1 for Windows, akkor az eszköz akkor is nem megfelelőként lesz jelezve, ha az eszközön Windows 8,1 van.
 
@@ -50,36 +61,59 @@ Windows 8.1-es számítógépek esetén például a visszaadott verzió a **3**-
 
 ### <a name="password"></a>Jelszó
 
-- **Jelszó megkövetelése a mobileszköz-zárolás feloldásához**: A felhasználók **kötelesek** jelszót megadni az eszköz eléréséhez.
-- **Egyszerű jelszavak**: Ha nem szeretné engedélyezni, hogy a felhasználók olyan egyszerű jelszavakat használhassanak, mint az **1234** vagy az **1111**, válassza a **Tiltás** lehetőséget. A **Nincs konfigurálva** beállítással a felhasználók olyan jelszavakat is létrehozhatnak, mint az **1234** vagy az **1111**.
-- **Jelszó minimális hossza**: Meghatározhatja a jelszóban szereplő számjegyek vagy karakterek minimális számát.
+- **Jelszó megkövetelése a mobileszközök zárolásának feloldásához**:  
+  - **Nincs konfigurálva** (*alapértelmezett*) – a rendszer nem értékeli ki a megfelelőségi és a nem megfelelőségi beállítást.
+  - **Kötelező** – a felhasználóknak jelszót kell megadniuk ahhoz, hogy hozzáférjenek az eszközhöz.
 
-  Windows rendszerű, Microsoft-fiókon keresztül elért eszközök esetén a megfelelőségi szabályzat nem lesz helyesen kiértékelve:
-  - Ha a jelszó minimális hossza nyolc karakternél nagyobb
-  - Vagy ha a karakterkészletek minimális száma kettőnél több
+- **Egyszerű jelszavak**:  
+  - **Nincs konfigurálva** (*alapértelmezett*) – a felhasználók létrehozhatnak olyan egyszerű jelszavakat, mint a **1234** vagy a **1111**.
+  - **Letiltás** – a felhasználók nem hozhatnak létre egyszerű jelszavakat, például **1234** vagy **1111**.  
 
-- **Jelszó típusa**: Megadható, hogy a jelszó csak **számjegy** karaktereket vagy számjegy és más (**Alfanumerikus**) karaktereket vegyesen tartalmazzon.
-  
-  - **Jelszavak nem alfanumerikus karaktereinek száma:** Ha a **Megkövetelt jelszótípus** **alfanumerikus**, ez a beállítás határozza meg a jelszóban használandó karakterkészletek minimális számát. A négy karakterkészlet a következő:
+- **Jelszó minimális hossza**:  
+  Adja meg a jelszóban szereplő számjegyek vagy karakterek minimális számát.
+
+  A Windows rendszerű és a Microsoft-fiókt futtató eszközök esetén a megfelelőségi házirend kiértékelése nem megfelelő, ha a következő feltételek valamelyike teljesül:  
+  - A jelszó minimális hossza nagyobb, mint nyolc karakter.
+  - A karakterkészletek minimális száma meghaladja a kettőt
+
+- **Jelszó típusa**:  
+  Válassza ki, hogy a jelszó csak **numerikus** karakterekből álljon-e, vagy számokból és más karakterből (**alfanumerikus**) kell állnia.
+
+  Ha *alfanumerikus*értékre van állítva, a következő beállítás érhető el.  
+
+  - **Nem alfanumerikus karakterek száma a jelszóban**:  
+    Ha a *jelszó típusa* **alfanumerikus**, adja meg a jelszóban szereplő karakterkészletek minimális számát. A beállítások **0** – **4** készletet tartalmaznak, amelyek alapértelmezett értéke **1**.
+    
+    A négy karakterkészlet a következő:
     - Kisbetűk
     - Nagybetűk
     - Szimbólumok
     - Számok
 
-    Ha nagyobb értékre állítja, a felhasználóknak összetettebb jelszót kell létrehozniuk. A Microsoft-fiókhoz hozzáférő eszközök esetén a megfelelőségi szabályzat kiértékelése nem megfelelő:
+    Ha nagyobb értékre állítja, a felhasználóknak összetettebb jelszót kell létrehozniuk. A Microsoft-fiókkal elért eszközök esetén a megfelelőségi szabályzat nem lesz megfelelően kiértékelve, ha a következő feltételek valamelyike teljesül:
 
-    - Ha a jelszó minimális hossza nyolc karakternél nagyobb
-    - Vagy ha a karakterkészletek minimális száma meghaladja a kettőt
+    - A jelszó minimális hossza nagyobb, mint nyolc karakter.
+    - A karakterkészletek minimális száma meghaladja a kettőt
 
-- **Jelszó kérése legfeljebb ennyi perc inaktivitás után**: Arra a tétlenségi időre vonatkozik, amelynek elteltével a felhasználónak újra meg kell adnia a jelszavát.
-- **Jelszó érvényessége (napokban)** : Válassza ki, hány nap elteltével járjon le a jelszó, ami után újat kell létrehoznia.
-- Az **újrafelhasználást megakadályozó korábbi jelszavak száma**: megadhatja, hogy hány korábban használt jelszót ne lehessen használni.
+- **Jelszó kérése legfeljebb ennyi perc inaktivitás után**:  
+  Adja meg azt az üresjárati időt, ameddig a felhasználónak újra meg kell adnia a jelszavát.
+
+- **Jelszó érvényessége (napokban)** :  
+  Válassza ki, hogy hány nap elteltével járjon le a jelszó, és a felhasználóknak újat kell létrehozniuk.
+
+- **Az újrafelhasználást megakadályozó korábbi jelszavak száma**:  
+  Adja meg a nem használható korábban használt jelszavak számát.
 
 ### <a name="encryption"></a>Encryption
 
-- **Titkosítás megkövetelése mobileszközön:** : **Megkövetelhető**, hogy az eszközök csak titkosítás használata esetén csatlakozhassanak az adattároló erőforrásokhoz.
+- **Az eszközön lévő adattárolás titkosítása**:  
+  - **Nincs konfigurálva** (*alapértelmezett*)
+  - **Kötelező** – az adattárolást az eszközökön *titkosítani kell.*
 
-A módosítások mentéséhez válassza az **OK** > **Létrehozás** lehetőséget.
+
+<!-- not on phone   
+- **Require encryption on mobile device**: **Require** the device to be encrypted to connect to data storage resources.
+--> 
 
 ## <a name="next-steps"></a>További lépések
 

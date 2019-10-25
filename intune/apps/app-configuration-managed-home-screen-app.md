@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 07/24/2019
+ms.date: 10/23/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d47cee2c26960775d268b317845c118e99b85fe9
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: e97e88ad78e1b914543b7fa283f47863dce185fc
+ms.sourcegitcommit: 25acfc88b366d2da71c37d354a0238e4f1168325
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72507592"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72813483"
 ---
 # <a name="configure-the-microsoft-managed-home-screen-app-for-android-enterprise"></a>Az Android Enterprise rendszerhez készült Microsoft Managed Home Screen alkalmazás konfigurálása
 
@@ -60,25 +60,15 @@ A következő táblázat felsorolja a felügyelt kezdőképernyő elérhető kon
 | Konfigurációs kulcs | Érték típusa | Alapértelmezett érték | Description |
 |---------------------------------------------------------------------------------------------------------------------------|-------------|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Rácsvonal méretének beállítása | sztring | Automatikus | Lehetővé teszi az alkalmazások rácsos méretének beállítását a felügyelt kezdőképernyőn. Megadhatja az alkalmazás sorainak és oszlopainak számát a rács méretének meghatározásához a következő formátumban: `columns;rows`. Ha a rács méretét határozza meg, a kezdőképernyő egy sorában megjelenő alkalmazások maximális száma lesz a beállított sorok száma, és a kezdőképernyő egyik oszlopában megjelenő alkalmazások maximális száma a beállított oszlopok száma. |
-| Képernyő fejlécének engedélyezése | bool | IGAZ | Lehetővé teszi a felső fejléc különböző nézeteket, amelyeket a felügyelt kezdőképernyő tartalmaz, például a hírcsatorna vagy a hírcsatorna kártyáit. Ha engedélyezi ezt a beállítást, az eszköz felhasználói látni fogják a fejlécet. |
-| Eszközállapot-sáv engedélyezése | bool | IGAZ | Engedélyezi az állapotsort a kezdőképernyőn (ez a felső sáv, amely az aktuális kapcsolatokat, például a WiFi-t és a-t) jeleníti meg. Ha engedélyezi ezt a konfigurációs kulcsot, a végfelhasználó megtekintheti az állapotjelző sávokon megjelenő ikonokat, amelyek a kapcsolatokat és az aktív alkalmazásokat jelölik. |
 | Értesítések engedélyezése jelvény | bool | HAMIS | Engedélyezi az alkalmazás ikonjainak értesítési jelvényét, amely az alkalmazás új értesítéseinek számát jeleníti meg. Ha engedélyezi ezt a beállítást, a végfelhasználók értesítési jelvényeket fognak látni azokon az alkalmazásokon, amelyek olvasatlan értesítésekkel rendelkeznek. Ha megtartja ezt a konfigurációs kulcsot, a végfelhasználó nem fogja látni az olyan alkalmazásokhoz tartozó értesítéseket, amelyek nem tartalmazhatnak olvasatlan értesítéseket. |
 | Kezdőképernyő zárolása | bool | IGAZ | Megszünteti a végfelhasználók számára az alkalmazás ikonjainak áthelyezését a kezdőképernyőn. Ha engedélyezi ezt a konfigurációs kulcsot, a rendszer zárolja az alkalmazás ikonját a kezdőképernyőn, és a végfelhasználó nem fogja tudni áthúzni a kezdőképernyő különböző rácsvonalait. Ha `false` értékre vált, a végfelhasználók az alkalmazás és a Webhivatkozás ikonjait a felügyelt kezdőképernyőn helyezhetik át.  |
 | Az eszköz falra vonatkozó papírjának beállítása | sztring | Alapértelmezett | Lehetővé teszi, hogy tetszőleges háttérképet állítson be a háttérképként beállítani kívánt rendszerkép URL-címének megadásával. |
 | Alkalmazás ikonjának méretének beállítása | integer | 2 | Ezzel a beállítással beállíthatja a kezdőképernyőn megjelenő alkalmazások ikonjának méretét. A konfigurációban a következő értékeket adhatja meg különböző méreteknél – 0 (legkisebb), 1 (kis), 2 (normál), 3 (nagy) és 4 (legnagyobb). |
 | Az alkalmazás mappájának beállítása ikon | integer | 0 | Lehetővé teszi az alkalmazás-mappák megjelenésének megadását a kezdőképernyőn. Kiválaszthatja a következő értékek megjelenését: Dark Square (0);   Sötét kör (1); Light Square (2); Világos kör (3). |
-| Kézmozdulatok engedélyezése | bool | HAMIS | Lehetővé teheti a végfelhasználók számára a műveletek különböző kézmozdulatokhoz való hozzárendelését, például a letiltást és a lefelé húzást. Ha letiltja ezt a konfigurációs kulcsot, a végfelhasználók csak akkor tudnak elindulni, ha van egy második lap, és vissza a kezdőlapra. |
-| Függőleges görgetés engedélyezése | bool | HAMIS | A felügyelt kezdőképernyő függőleges görgetésének engedélyezése. Ha engedélyezi ezt a konfigurációs kulcsot, a végfelhasználó csak függőlegesen fog tudni navigálni a különböző lapokon, nem pedig vízszintesen. |
-| Kezdőképernyő-téma beállítása | sztring | Theme. Light. Blue | Lehetővé teszi, hogy kiválassza a kezdőképernyő témáját a különböző színekkel rendelkező előre definiált témákból. A következő témákat is kiválaszthatja a karakterlánc értékének a következő formátumban való beírásával.   Theme. Light. Green. Ahol a fény sötét színre cserélhető sötét témához, és a zöld szín a kék, a sárga, a rózsaszín, a piros, a narancssárga és a lila lehet. |
-| Dock engedélyezése | bool | HAMIS | Engedélyezi az alkalmazás Dock szakaszát a kezdőképernyő alján, és az összes telepített alkalmazáshoz belépési pontot jelenít meg állandó alkalmazásokkal. Ha engedélyezi ezt a konfigurációs kulcsot, a végfelhasználó elérheti az alkalmazásokat a Dockban, és a minden alkalmazás szakaszt elérheti az eszközökön lévő összes telepített alkalmazás listájában, függetlenül attól, hogy engedélyezve vannak-e a listában. |
 | Képernyő tájolásának beállítása | integer | 1 | Lehetővé teszi, hogy beállítsa a kezdőképernyő tájolását álló módba, fekvő módba vagy automatikus elforgatást engedélyezzen. A tájolást beállíthatja úgy, hogy az 1 (álló mód), a 2 (fekvő mód), a 3 (az autoforgatás) értéket írja be. |
-| Kezdőképernyő-hírcsatorna engedélyezése | bool | HAMIS | Engedélyezi a kezdőképernyő hírcsatornáját, amelyet a kezdőképernyő bal oldalán lehet megtekinteni. Ez a hírcsatorna különböző típusú tartalmakat, például híreket, naptárat, gyakran felhasználói alkalmazásokat és Cortana, valamint hangsegéd kártyát jelenít meg. Ha engedélyezi ezt a lehetőséget, a végfelhasználó megnyithatja a hírcsatornát a kezdőképernyő bal oldalán. |
-| Áttekintő mód engedélyezése | bool | HAMIS | Lehetővé teszi, hogy a végfelhasználók a kezdőképernyő különböző lapjainak hozzáadásával vagy eltávolításával hozzáférhessenek az alapértelmezett képernyőről. Ha engedélyezi ezt a beállítást, a végfelhasználó a kezdőképernyő alapértelmezett oldalának jobb oldalán is felveheti a lapozható lapot, és az alapértelmezett oldal is megváltoztatható, és a felügyelt kezdőképernyő beállításai is elérhetők lesznek. |
 | Eszköz telemetria engedélyezése | bool | HAMIS | Engedélyezi a felügyelt kezdőképernyő számára rögzített összes telemetria. Ha engedélyezi ezt a lehetőséget, a Microsoft képes lesz rögzíteni az eszköz használati telemetria, például egy adott alkalmazás indításának számát az adott eszközön. |
 | Engedélyezett alkalmazások beállítása | bundleArray | HAMIS | Lehetővé teszi a kezdőképernyőn látható alkalmazások készletének megadását az eszközön telepített alkalmazások közül. Megadhatja az alkalmazásokat a láthatóvá tenni kívánt alkalmazások alkalmazáscsomag-nevének megadásával, például a com. microsoft. emmx a kezdőképernyőn elérhetővé tenné a beállításokat. Az engedélyezett alkalmazások listája már telepítve van az eszközön, hogy láthatóvá váljon a kezdőképernyőn. |
 | Rögzített webes hivatkozások beállítása | bundleArray | HAMIS | Lehetővé teszi a webhelyek gyors indítási ikonként való rögzítését a kezdőképernyőn. Ezzel a konfigurációval megadhatja az URL-címet, és hozzáadhatja azt a kezdőképernyőn, hogy a végfelhasználó egyetlen koppintással induljon el a böngészőben. |
-| Keresősáv engedélyezése | bool | HAMIS | A kezdőképernyő keresési sávjának engedélyezése. Ha engedélyezi ezt a lehetőséget, az eszköz felhasználói láthatják a kezdőlapon a keresősáv helyét, ahol megadhatják, hogy mit szeretne keresni a weben. |
-| Beállítások alkalmazás letiltása | bool | HAMIS | Letiltja a felügyelt kezdőképernyő Beállítások lapját. Ha letiltja ezt a beállítást, az eszköz végfelhasználója nem fogja tudni beolvasni a felügyelt kezdőképernyő beállításait. |
 | Képernyőkímélő engedélyezése | bool | HAMIS | A képernyővédő mód engedélyezése vagy nem. Ha igaz értékre van állítva, konfigurálhatja a **screen_saver_image**, a **screen_saver_show_time**, a **inactive_time_to_show_screen_saver**és a **media_detect_screen_saver**. |
 | Képernyőkímélő képe | sztring |   | Állítsa be a képernyőkímélő rendszerképének URL-címét. Ha nincs beállítva URL-cím, az eszközök megjelenítik az alapértelmezett képernyőkímélő rendszerképet, amikor a képernyővédő aktiválva van. Az alapértelmezett képen a felügyelt kezdőképernyő alkalmazás ikon látható.  |
 | Képernyőkímélő időpontjának megjelenítése | integer | 0 | Megadja azt az időtartamot másodpercben, ameddig az eszköz megjelenítheti a képernyővédőt a képernyővédő módban. Ha a 0 értékre van állítva, a képernyőkímélő határozatlan időre megjelenhet a képernyőkímélőben, amíg az eszköz nem aktiválódik.  |
@@ -116,18 +106,6 @@ A következő példa egy JSON-szkriptet tartalmaz, amely tartalmazza az összes 
     "productId": "com.microsoft.launcher.enterprise",
     "managedProperty": [
         {
-            "key": "keep_page_header",
-            "valueBool": true
-        },
-        {
-            "key": "keep_status_bar",
-            "valueBool": true
-        },
-        {
-            "key": "show_notification_badge",
-            "valueBool": false
-        },
-        {
             "key": "lock_home_screen",
             "valueBool": true
         },
@@ -144,32 +122,8 @@ A következő példa egy JSON-szkriptet tartalmaz, amely tartalmazza az összes 
             "valueInteger": 0
         },
         {
-            "key": "gesture_on",
-            "valueBool": false
-        },
-        {
-            "key": "vertical_scrolling",
-            "valueBool": false
-        },
-        {
-            "key": "theme",
-            "valueString": "Theme.Light.Blue"
-        },
-        {
-            "key": "dock_enable",
-            "valueBool": false
-        },
-        {
             "key": "screen_orientation",
             "valueInteger": 1
-        },
-        {
-            "key": "feed_enable",
-            "valueBool": false
-        },
-        {
-            "key": "allow_overview_mode",
-            "valueBool": false
         },
         {
             "key": "enable_telemetry",
@@ -204,14 +158,6 @@ A következő példa egy JSON-szkriptet tartalmaz, amely tartalmazza az összes 
                     ]
                 }
             ]
-        },
-        {
-            "key": "search_bar",
-            "valueBool": false
-        },
-        {
-            "key": "hide_settings",
-            "valueBool": false
         },
         {
             "key": "show_virtual_home",

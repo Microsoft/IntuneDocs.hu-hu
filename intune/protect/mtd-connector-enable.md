@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 07/22/2019
+ms.date: 10/17/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e53f50c42e768eeb652a8602bea49c04d29364c7
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 4f917167baecc643e045610e86e582957e535978
+ms.sourcegitcommit: 3ace4cba6e2f6fefa9120be3807387a49b200c9b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72504422"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72810284"
 ---
 # <a name="enable-the-mobile-threat-defense-connector-in-intune"></a>A Mobile Threat Defense-összekötő engedélyezése az Intune-ban
 
@@ -41,10 +41,10 @@ Klasszikus feltételes hozzáférési szabályzatok a MTD-alkalmazásokhoz:
 - Nem különböznek a MTD kezeléséhez esetlegesen létrehozott feltételes hozzáférési házirendektől.
 - Alapértelmezés szerint a kiértékeléshez használt egyéb feltételes hozzáférési szabályzatok nem működnek együtt.  
 
-A klasszikus feltételes hozzáférési szabályzatok az [Azure](https://portal.azure.com/#home)-ban való megtekintéséhez lépjen a **Azure Active Directory** > **feltételes hozzáférés**@no__t – 4**klasszikus házirend**elemre.
+A klasszikus feltételes hozzáférési szabályzatok az [Azure](https://portal.azure.com/#home)-ban való megtekintéséhez lépjen a **Azure Active Directory**  > **feltételes hozzáférés**  > **klasszikus házirendek**elemre.
 
 
-## <a name="to-enable-the-mtd-connector"></a>Az MTD-összekötő engedélyezése
+## <a name="to-enable-the-mobile-threat-defense-connector"></a>A Mobile Threat Defense-összekötő engedélyezése
 
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 
@@ -58,20 +58,23 @@ A klasszikus feltételes hozzáférési szabályzatok az [Azure](https://portal.
 
 7. A szervezet igényeinek megfelelően adja meg a kapcsolós beállításokat. Az elérhető kapcsolós megoldások az MTD-partnertől függenek.
 
-## <a name="mtd-toggle-options"></a>Az MTD kapcsolós megoldásai
+## <a name="mobile-threat-defense-toggle-options"></a>Mobile Threat Defense – váltási beállítások
 
-A cég igényei alapján eldöntheti, hogy az MTD mely kapcsolós beállításait kell engedélyeznie. További részletek:
+Eldöntheti, hogy a szervezet igényeinek megfelelően melyik Mobile Threat Defense-kapcsolót kell engedélyeznie. További részletek:
 
-- **Android 4.1+ rendszerű eszközök csatlakoztatása az [MTD-partner neve] for Work MTD-hez**: ezen beállítás engedélyezésével utasíthatja az Android 4.1+ rendszerű eszközöket a biztonsági kockázatok jelentésére az Intune-nak.
-  - **Nem megfelelőnek minősítés, ha nem érkezik adat**: ha az Intune nem kap adatokat egy ilyen platformos eszközről az MTD-partnertől, az eszközt nem megfelelőnek minősíti.
-<br></br>
-- **iOS 8.0+ rendszerű eszközök csatlakoztatása az [MTD partner neve] for Work MTD-hez**: ezen beállítás engedélyezésével utasíthatja az iOS 8.0+ rendszerű eszközöket a biztonsági kockázatok jelentésére az Intune-nak.
-  - **Nem megfelelőnek minősítés, ha nem érkezik adat**: ha az Intune nem kap adatokat egy ilyen platformos eszközről az MTD-partnertől, az eszközt nem megfelelőnek minősíti.
-<br></br>
+**MDM megfelelőségi szabályzatának beállításai**
+- \* * Az Android 4.1 + rendszerű eszközök csatlakoztatása a *\<MTD partner neve > * * *: Ha engedélyezi ezt a beállítást, az Android 4.1 + rendszerű eszközök bejelenthetik a biztonsági kockázatokat az Intune-nak.
+- \* * IOS 8.0 + rendszerű eszközök csatlakoztatása *\<MTD partner neve > * * *: Ha engedélyezi ezt a beállítást, az iOS 8.0 + rendszerű eszközök bejelenthetik a biztonsági kockázatokat az Intune-nak.
 - **Alkalmazásszinkronizálás engedélyezése iOS-eszközök számára**: Engedélyezi a Mobile Threat Defense-partner számára, hogy iOS-alkalmazások metaadatait kérje le az Intune-ból fenyegetéselemzés céljából.
-
 - **Nem támogatott operációsrendszer-verziók blokkolása**: a legalacsonyabb támogatott verziónál régebbi rendszerű eszközök blokkolva lesznek.
 
+**Az alkalmazás védelmi házirendjének beállításai**
+- Az **4,1-es vagy újabb verziójú Android-eszközök csatlakoztatásával *\<MTD partner neve >* for app Protection Policy kiértékelés**: Ha engedélyezi ezt a beállítást, az eszköz veszélyforrások szintjének szabályát használó alkalmazás-védelmi szabályzatok kiértékelik az eszközöket, beleértve a az összekötőből származó adatok.
+- Az **iOS-eszközök 8,0-es vagy újabb verziójának összekapcsolása az alkalmazás-védelmi szabályzat kiértékeléséhez használt *\<MTD partner neve >***  Ez az összekötő.
+
+Ha többet szeretne megtudni a Mobile Threat Defense-összekötők használatáról Intune App Protection szabályzat kiértékeléséhez, tekintse meg a [Mobile Threat Defense beállítása a nem regisztrált eszközökhöz](~/protect/mtd-enable-unenrolled-devices.md)című témakört.
+
+**Közös megosztott beállítások**
 - **Partner ennyi nap után nem válaszol**: az Intune ennyi napnyi tétlenség után feltételezi, hogy a partner a kapcsolat megszakadása miatt nem válaszol. Az Intune nem veszi figyelembe a nem válaszoló MTD-partnerek megfelelőségi állapotát.
 
 > [!IMPORTANT] 

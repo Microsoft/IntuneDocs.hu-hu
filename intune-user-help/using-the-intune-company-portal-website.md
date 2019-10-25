@@ -19,17 +19,19 @@ ms.reviewer: jieyang
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a2c4e26c191f612705a4cc404955b96b4b5982c
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 50eb3495362d4b88071707e25a5faa39b76b6c3b
+ms.sourcegitcommit: 3ace4cba6e2f6fefa9120be3807387a49b200c9b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72501842"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72810361"
 ---
 # <a name="using-the-intune-company-portal-website"></a>Az Intune vállalati portál webhelyének használata
-A [Céges portál webhely](https://portal.manage.microsoft.com) használatával megtekinthet, szerkeszthet, hozzáadhat és eltávolíthat felügyelt eszközöket.
+Az [céges portál webhelye](https://portal.manage.microsoft.com) alkalmazások keresésére, telepítésére és eltávolítására használható az iskolához vagy a munkához; a regisztrált eszközök megtekintéséhez, szerkesztéséhez, hozzáadásához és eltávolításához.  
 
 A Céges portál webhelyéről a következő műveletek bármelyikét végrehajthatja:
+
+- [Alkalmazások kezelése](manage-apps-cpweb.md)  
 
 - [Átnevezheti az eszközét](rename-your-device-cpwebsite.md)
 

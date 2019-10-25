@@ -2,30 +2,28 @@
 title: macOS-eszközök megfelelőségi beállításai a Microsoft Intuneban – Azure | Microsoft Docs
 description: Tekintse meg a macOS-eszközök megfelelőségének beállításakor használható beállítások listáját Microsoft Intuneban. Az Apple rendszerintegritás-védelem megkövetelése, jelszó-korlátozás beállítása, tűzfal megkövetelése, forgalomirányító engedélyezése és még sok más.
 keywords: ''
-author: MandiOhlinger
-ms.author: mandia
+author: brenduns
+ms.author: brenduns
 manager: dougeby
-ms.date: 04/04/2019
+ms.date: 10/22/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
 ms.localizationpriority: medium
 ms.technology: ''
-ms.reviewer: muhosabe
+ms.reviewer: samyada
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cada774003f73f487f87ed8051115dfcaaae6a20
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 518f0b825b71a9773ed66dd480b329e998f919c4
+ms.sourcegitcommit: 25acfc88b366d2da71c37d354a0238e4f1168325
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72502489"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72813500"
 ---
 # <a name="macos-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>macOS-beállítások az eszközök megfelelő vagy nem megfelelőként való megjelöléséhez az Intune-nal
-
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
 Ez a cikk a macOS-eszközökön az Intune-ban konfigurálható különböző megfelelőségi beállításokat sorolja fel és ismerteti. A mobileszköz-kezelési (MDM) megoldás részeként ezekkel a beállításokkal adhatja meg a minimális vagy maximális operációsrendszer-verziót, beállíthatja a jelszavakat, és így tovább.
 
@@ -41,45 +39,78 @@ Intune-rendszergazdaként ezeket a megfelelőségi beállításokat használhatj
 
 ## <a name="device-health"></a>Eszközállapot
 
-- **Rendszerintegritás-védelem megkövetelése** **: a** MacOS-eszközökön engedélyezve kell lennie a [rendszerintegritás-védelemnek](https://support.apple.com/HT204899) (az Apple webhely megnyitásakor). Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), a rendszer nem értékeli ki a megfelelőségi és a nem megfelelőségi beállítást.
+- **Rendszerintegritás-védelem megkövetelése**:  
+  - **Nincs konfigurálva** (*alapértelmezett*) – a rendszer nem értékeli ki a megfelelőségi és a nem megfelelőségi beállítást.
+  - **Szükséges** – a MacOS rendszerű eszközökön engedélyezni kell a [rendszerintegritás-védelmet](https://support.apple.com/HT204899) (az Apple webhelyének megnyitása).  
 
 ## <a name="device-properties"></a>Eszköztulajdonságok
 
-- **Minimális operációsrendszer-verzió**: Ha egy eszköz nem teljesíti az operációs rendszer szükséges minimális verziójára vonatkozó követelményt, nem megfelelőként fog szerepelni. Megjelenik egy hivatkozás, amelyen a verziófrissítésre vonatkozó információk érhetők el. A végfelhasználó frissítheti az eszközt, ez után pedig hozzáférést kap a vállalati erőforrásokhoz.
-- **Maximális operációsrendszer-verzió**: Ha egy eszközön a szabályban megadott operációsrendszer-verziónál újabb fut, a vállalati erőforrásokhoz való hozzáférés le lesz tiltva. A felhasználónak kapcsolatba kell lépnie a rendszergazdával. Az eszköz nem fér hozzá a céges erőforrásokhoz, amíg nincs olyan szabály, amely engedélyezi az operációs rendszer verzióját.
-- **Operációsrendszer-Build minimális verziója**: Ha az Apple közzéteszi a biztonsági frissítéseket, a rendszer általában frissíti a Build számát, nem pedig az operációs rendszer verzióját. Ezzel a szolgáltatással megadhatja az eszközön a minimálisan megengedett Build-számot.
-- **Maximális operációsrendszer-build verziója**: Ha az Apple közzéteszi a biztonsági frissítéseket, a rendszer általában frissíti az összeállítási számot, nem pedig az operációs rendszer verzióját. Ezzel a szolgáltatással adhatja meg az eszközön a maximálisan megengedett Build-számot.
+- Az **operációs rendszer minimuma szükséges**:  
+  Ha egy eszköz nem teljesíti az operációs rendszer szükséges minimális verziójára vonatkozó követelményt, nem megfelelőként jelenik meg. Megjelenik egy hivatkozás, amelyen a verziófrissítésre vonatkozó információk érhetők el. Az eszköz a felhasználó dönthet úgy, hogy frissíti az eszközt. Ezután hozzáférhetnek a szervezeti erőforrásokhoz.
+
+- **Maximálisan engedélyezett operációsrendszer-verzió**:  
+  Ha egy eszköz a szabályban megadott operációsrendszer-verziónál újabb verziót használ, a rendszer letiltja a szervezeti erőforrásokhoz való hozzáférést. Az eszköz felhasználójának kapcsolatba kell lépnie a rendszergazdával. Az eszköz addig nem fér hozzá a szervezeti erőforrásokhoz, amíg egy szabály nem változik, hogy az operációs rendszer verziója engedélyezve legyen.
+
+- **Operációsrendszer-Build minimális verziója**:  
+  Amikor az Apple közzéteszi a biztonsági frissítéseket, a rendszer általában frissíti a Build számát, nem pedig az operációs rendszer verzióját. Ezzel a szolgáltatással megadhatja az eszközön a minimálisan megengedett Build-számot.
+
+- **Operációsrendszer-Build maximális verziója**:  
+  Amikor az Apple közzéteszi a biztonsági frissítéseket, a rendszer általában frissíti a Build számát, nem pedig az operációs rendszer verzióját. Ezzel a szolgáltatással adhatja meg az eszközön a maximálisan megengedett Build-számot.
 
 ## <a name="system-security-settings"></a>A rendszer biztonsági beállításai
 
 ### <a name="password"></a>Jelszó
 
-- **Jelszó megkövetelése a mobileszköz-zárolás feloldásához**: A felhasználók **kötelesek** jelszót megadni az eszköz eléréséhez.
-- **Egyszerű jelszavak**: Ha nem szeretné engedélyezni, hogy a felhasználók olyan egyszerű jelszavakat használhassanak, mint az **1234** vagy az **1111**, válassza a **Tiltás** lehetőséget. A **Nincs konfigurálva** beállítással a felhasználók olyan jelszavakat is létrehozhatnak, mint az **1234** vagy az **1111**.
-- **Jelszó minimális hossza**: Meghatározhatja a jelszóban szereplő számjegyek vagy karakterek minimális számát.
+- **Jelszó megkövetelése a mobileszközök zárolásának feloldásához**:  
+  - **Nincs konfigurálva** (*alapértelmezett*)
+  - **Szükséges** A felhasználóknak jelszót kell megadniuk ahhoz, hogy hozzáférjenek az eszközhöz.
+
+- **Egyszerű jelszavak**:  
+  - **Nincs konfigurálva** (*alapértelmezett*) – a felhasználók olyan egyszerű jelszavakat hozhatnak létre, mint például a **1234** vagy a **1111**.
+  - **Letiltás** – a felhasználók nem hozhatnak létre egyszerű jelszavakat, például **1234** vagy **1111**.
+
+- **Jelszó minimális hossza**:  
+  Adja meg a jelszóban szereplő számjegyek vagy karakterek minimális számát.
+
 - **Jelszó típusa**: Megadható, hogy a jelszó csak **számjegy** karaktereket vagy számjegy és más (**Alfanumerikus**) karaktereket vegyesen tartalmazzon.
-- **Nem alfanumerikus karakterek száma a jelszóban**: Itt adhatja meg a speciális karakterek minimális számát (például `&`, `#`, `%`, `!` stb.), amelynek a jelszónak kell lennie.
 
-    Ha nagyobb értékre állítja, a felhasználóknak összetettebb jelszót kell létrehozniuk.
+- **Nem alfanumerikus karakterek száma a jelszóban**:  
+  Adja meg a speciális karakterek minimális számát (például `&`, `#`, `%`, `!`stb.), amelynek a jelszónak kell lennie.
 
-- **Jelszó kérése legfeljebb ennyi perc inaktivitás után**: Arra a tétlenségi időre vonatkozik, amelynek elteltével a felhasználónak újra meg kell adnia a jelszavát.
-- **Jelszó érvényessége (napokban)** : Válassza ki, hány nap elteltével járjon le a jelszó, ami után újat kell létrehoznia.
-- Az **újrafelhasználást megakadályozó korábbi jelszavak száma**: megadhatja, hogy hány korábban használt jelszót ne lehessen használni.
+  Ha nagyobb értékre állítja, a felhasználóknak összetettebb jelszót kell létrehozniuk.
 
-    > [!IMPORTANT]
-    > Ha macOS-eszközön megváltozik a jelszóra vonatkozó követelmény, akkor az csak akkor lép érvénybe, amikor a felhasználó legközelebb megváltoztatja jelszavát. Ha például a jelszó kötelező minimális hosszát 8 számjegyűre állítja át, és a macOS-eszköz jelenlegi jelszava 6 számjegyű, az eszköz egészen addig megfelelőnek minősül, amíg a felhasználó legközelebb meg nem változtatja az eszköz jelszavát.
+- **Jelszó kérése legfeljebb ennyi perc inaktivitás után**:  
+  Adja meg azt az üresjárati időt, ameddig a felhasználónak újra meg kell adnia a jelszavát.
+
+- **Jelszó érvényessége (napokban)** :  
+  Válassza ki, hogy hány nap elteltével járjon le a jelszó, és egy újat kell létrehoznia.
+
+- **Az újrafelhasználást megakadályozó korábbi jelszavak száma**:  
+  Adja meg a nem használható korábban használt jelszavak számát.
+> [!IMPORTANT]
+> Ha macOS-eszközön megváltozik a jelszóra vonatkozó követelmény, akkor az csak akkor lép érvénybe, amikor a felhasználó legközelebb megváltoztatja jelszavát. Ha például a jelszó kötelező minimális hosszát 8 számjegyűre állítja át, és a macOS-eszköz jelenlegi jelszava 6 számjegyű, az eszköz egészen addig megfelelőnek minősül, amíg a felhasználó legközelebb meg nem változtatja az eszköz jelszavát.
 
 ### <a name="encryption"></a>Encryption
 
-- **Adattároló titkosítása az eszközön**: A **Kötelező** lehetőséget választva az adattárolók titkosítva lesznek az eszközökön.
+- **Az eszközön lévő adattárolás titkosítása**:  
+  - **Nincs konfigurálva** (*alapértelmezett*)
+  - **Kötelező** – az adattárolást az eszközökön *titkosítani kell.*
 
 ### <a name="device-security"></a>Eszközbiztonság
 
 A tűzfal a jogosulatlan hálózati hozzáférés ellen védi az eszközöket. A tűzfal használatával a kapcsolatok alkalmazásonként szabályozhatók. 
 
-- **Tűzfal**: válassza az **Engedélyezés** lehetőséget az eszközök jogosulatlan hozzáférés elleni védelméhez. A funkció engedélyezése után kezelni tudja a bejövő internetes kapcsolatokat, és használhatja a rejtett üzemmódot. Ha **Nincs konfigurálva** (alapértelmezés), akkor a tűzfal kikapcsolva marad, a hálózati forgalom pedig engedélyezve lesz (nem lesz letiltva).
-- **Bejövő kapcsolatok**: **blokkolja** az összes bejövő hálózati kapcsolatot, kivéve az alapszintű internetes szolgáltatásokhoz szükséges kapcsolatokat, például a DHCP-t, a Bonjour-t és az IPSec-t. Ez a beállítás blokkolja az összes megosztó szolgáltatást is, beleértve a képernyő-megosztást, a távelérést, az iTunes Music sharingt és egyebeket. Ha **Nincs konfigurálva** (alapértelmezés), akkor minden bejövő kapcsolat és megosztási szolgáltatás engedélyezve van.
-- **Rejtett mód**: a rejtett üzemmód **engedélyezése** megakadályozza, hogy az eszközök válaszolják a Szondázási kérelmeket, ami elvégezhető a rosszindulatú felhasználóktól. Engedélyezése esetén az eszköz továbbra is válaszol az engedélyezett alkalmazásoktól érkező kérelmekre. Ha **Nincs konfigurálva** (alapértelmezés), akkor a rejtett üzemmód ki van kapcsolva.
+- **Tűzfal**:  
+  - **Nincs konfigurálva** (*alapértelmezett*) – Ez a beállítás elhagyja a tűzfalat, és a hálózati forgalom engedélyezett (nincs letiltva).
+  - **Engedélyezés** – a használata *lehetővé teszi* az eszközök jogosulatlan hozzáférés elleni védelmének elősegítését. A funkció engedélyezése után kezelni tudja a bejövő internetes kapcsolatokat, és használhatja a rejtett üzemmódot. 
+
+- **Bejövő kapcsolatok**:  
+  - **Nincs konfigurálva** (*alapértelmezett*) – engedélyezi a bejövő kapcsolatokat és a megosztási szolgáltatásokat.
+  - **Tiltsa** le az összes bejövő hálózati kapcsolatot, kivéve az alapszintű internetes szolgáltatásokhoz szükséges kapcsolatokat, például a DHCP-t, a Bonjour-t és az IPSec-t. Ez a beállítás blokkolja az összes megosztó szolgáltatást is, beleértve a képernyő-megosztást, a távelérést, az iTunes Music sharingt és egyebeket.  
+
+- **Rejtett mód**:  
+  - **Nincs konfigurálva** (*alapértelmezett*) – ezzel a beállítással a rejtett mód ki van kapcsolva.
+  - **Engedélyezze** a rejtett üzemmód bekapcsolását, hogy megakadályozza, hogy az eszközök válaszolják a Szondázási kérelmeket, ami elvégezhető a rosszindulatú felhasználóktól. Engedélyezése esetén az eszköz továbbra is válaszol az engedélyezett alkalmazásoktól érkező kérelmekre.  
 
 ### <a name="gatekeeper"></a>Forgalomirányító
 
@@ -87,12 +118,11 @@ További információ: [a MacOS-es Porting](https://support.apple.com/HT202491) 
 
 **Alkalmazások ezen helyekről való letöltésének engedélyezése**: Engedélyezi a különböző helyekről származó támogatott alkalmazások telepítését az eszközre. Az Ön helybeállításai:
 
-- **Nincs konfigurálva**: alapértelmezett. A forgalomirányító beállítás nincs hatással a megfelelőségre vagy a meg nem felelés esetén. 
-- **Mac App Store**: Alkalmazások telepítése csak a Mac App Store-ból. Nem lehet harmadik felektől és azonosított fejlesztőktől származó alkalmazásokat telepíteni. Ha egy felhasználó azt választja, hogy a forgalomirányító a Mac App Store-on kívüli alkalmazásokat telepítsen, akkor az eszköz nem megfelelőnek fog számítani.
-- **Mac App Store- és azonosított fejlesztők**: A Mac App Store és az azonosított fejlesztők alkalmazásainak telepítése. A macOS ellenőrzi a fejlesztők identitását, és néhány egyéb ellenőrzést is végez az alkalmazás integritásának igazolásához. Ha egy felhasználó azt választja, hogy a forgalomirányító a megadott beállításokon kívüli alkalmazásokat telepítsen, akkor az eszköz nem megfelelőnek fog számítani.
-- **Bárhol**: Bárhonnan és bármely fejlesztő által telepíthetőek alkalmazások. Ez a beállítás a legkevésbé biztonságos.
-
-A módosítások mentéséhez válassza az **OK** > **Létrehozás** lehetőséget.
+- **Nincs konfigurálva** (*alapértelmezett*) – a forgalomirányító beállítás nincs hatással a megfelelőségre vagy a nem megfelelőségre.  
+- **Mac App Store** – csak a Mac App Store áruházbeli alkalmazások telepítése. Nem lehet harmadik felektől és azonosított fejlesztőktől származó alkalmazásokat telepíteni. Ha egy felhasználó azt választja, hogy a forgalomirányító a Mac App Store-on kívüli alkalmazásokat telepítsen, akkor az eszköz nem megfelelőnek fog számítani.
+- **Mac App Store és azonosított fejlesztők** – alkalmazások telepítése a Mac App Store-hoz és az azonosított fejlesztőktől. A macOS ellenőrzi a fejlesztők identitását, és néhány egyéb ellenőrzést is végez az alkalmazás integritásának igazolásához. Ha egy felhasználó azt választja, hogy a forgalomirányító a megadott beállításokon kívüli alkalmazásokat telepítsen, akkor az eszköz nem megfelelőnek fog számítani.
+- **Bárhol** – az alkalmazások bárhonnan és bármely fejlesztőtől telepíthetők. Ez a beállítás a legkevésbé biztonságos.
+ 
 
 ## <a name="next-steps"></a>További lépések
 
