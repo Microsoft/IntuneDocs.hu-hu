@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a63bf187d0774b9f50351b45e53095d994720878
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 9625243698bffc93ed969a8c2e4b06b4f3093f4d
+ms.sourcegitcommit: 06a1fe83fd95c9773c011690e8520733e1c031e3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72496660"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72785532"
 ---
 # <a name="how-to-manage-ios-and-macos-apps-purchased-through-apple-volume-purchase-program-with-microsoft-intune"></a>A Apple Volume Purchase Program használatával vásárolt iOS-és macOS-alkalmazások kezelése Microsoft Intune
 
@@ -94,7 +94,7 @@ Mielőtt hozzálát, be kell szereznie a VPP-tokent az Apple-től, és fel kell 
         > Az ország/régió módosítása frissíti az alkalmazások metaadatait és az áruházbeli URL-címet a következő szinkronizáláskor a tokenrel létrehozott alkalmazások Apple szolgáltatásával. Az alkalmazás nem frissül, ha nem létezik az új ország/régió tárolóban.
 
     - **VPP-fiók típusa** –A következő lehetőségek közül választhat: **Üzlet** és **Oktatás**.
-    - **Alkalmazások automatikus frissítése** – Az automatikus frissítés engedélyezéséhez válasszon a **Be** és **Ki** érték közül. Engedélyezés esetén az Intune észleli, ha az alkalmazás-áruházban az adott VPP-alkalmazáshoz frissítés érhető el, és az eszköz legközelebbi bejelentkezésekor automatikusan leküldi a frissítéseket az eszközre. Az Apple VPP automatikus alkalmazásfrissítései csak a **Kötelező** telepítési szándékkal üzembe helyezett alkalmazásokat frissítik automatikusan. Az **elérhető** telepítési szándéktal telepített alkalmazások esetében az automatikus frissítés egy értesítést küld a rendszergazdának, amely tájékoztatja, hogy az alkalmazás új verziója érhető el. Emellett a felhasználó a Céges portálon nem telepítettként látja az alkalmazást, annak ellenére, hogy annak régebbi verziója telepítve van. Ebben az esetben a felhasználó újratelepítheti az alkalmazást, ha az alkalmazás újabb verzióját szeretné telepíteni a Céges portál alkalmazás részletek képernyőjén a **telepítés** gombra kattintva.
+    - **Alkalmazások automatikus frissítése** – Az automatikus frissítés engedélyezéséhez válasszon a **Be** és **Ki** érték közül. Engedélyezés esetén az Intune észleli, ha az alkalmazás-áruházban az adott VPP-alkalmazáshoz frissítés érhető el, és az eszköz legközelebbi bejelentkezésekor automatikusan leküldi a frissítéseket az eszközre. Az Apple VPP automatikus alkalmazásfrissítései csak a **Kötelező** telepítési szándékkal üzembe helyezett alkalmazásokat frissítik automatikusan. Az **elérhető** telepítési szándéktal telepített alkalmazások esetében az automatikus frissítés állapotjelző üzenetet hoz létre a rendszergazda számára, amely tájékoztatja, hogy az alkalmazás új verziója érhető el. Az állapotjelző üzenet az alkalmazás kiválasztásával, az eszköz telepítési állapotának kiválasztásával és az állapot részleteinek ellenőrzésével tekinthető meg. Emellett a felhasználó a Céges portálon nem telepítettként látja az alkalmazást, annak ellenére, hogy annak régebbi verziója telepítve van. Ebben az esetben a felhasználó újratelepítheti az alkalmazást, ha az alkalmazás újabb verzióját szeretné telepíteni a Céges portál alkalmazás részletek képernyőjén a **telepítés** gombra kattintva.
 
         > [!NOTE]
         > Az alkalmazások automatikus frissítései mind az eszköz, mind a felhasználó által licencelt, iOS 11,0-es, illetve macOS 10,12-es és újabb verziójú alkalmazások esetében működnek.

@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: edc1a241d327bd98db8ae50187b1e1aed5e00e71
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 648ccd889714c2ee4f7ee1fa04301490ad9fd001
+ms.sourcegitcommit: c2e62f1ebdf75599c8e544287123c602f0f15f2b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72503552"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72749449"
 ---
 # <a name="use-locations-network-fence-in-intune"></a>Helyek (hálózati kerítés) használata az Intune-ban
 
@@ -69,9 +69,8 @@ Helyalapú megfelelőségi szabályzat létrehozásához tegye a következőket:
 
 ## <a name="create-the-location-compliance-policy"></a>A helymegfelelőségi szabályzat létrehozása
 
-A megfelelőségi szabályzat létrehozásakor válassza az **Android** lehetőséget a **Platform** megadásakor. A **Helyek** területen kiválaszthat egy vagy több hozzáadott hálózati helyet. Ezek a helyek az eszközhöz létrehozandó hálózati kerítés részét képezik.
+[A megfelelőségi szabályzat létrehozásakor](create-compliance-policy.md)válassza az **Android** lehetőséget a **platformhoz**. A **Helyek** területen kiválaszthat egy vagy több hozzáadott hálózati helyet. Ezek a helyek az eszközhöz létrehozandó hálózati kerítés részét képezik. 
 
-[A hálózati helyen alapuló megfelelőségi szabályzat létrehozása](compliance-policy-create-android.md#locations) szakasz nyújt némi útmutatást.
 
 ## <a name="configure-the-actions-for-noncompliance"></a>Meg nem felelés esetén végrehajtandó műveletek konfigurálása
 
