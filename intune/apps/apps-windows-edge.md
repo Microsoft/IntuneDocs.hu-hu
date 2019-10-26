@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 10/09/2019
+ms.date: 10/24/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 492feb3f2ef5f5bbbc1537d4c60ac12d5fd6bdcd
-ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
+ms.openlocfilehash: 22a957e6df2c7f9126cbe9f22c4f3a96213551d3
+ms.sourcegitcommit: f12bd2ce10b6241715bae2d2857f33c474287166
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72585860"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72892574"
 ---
 # <a name="add-microsoft-edge-for-windows-10-to-microsoft-intune"></a>A Microsoft Edge for Windows 10 hozzáadása a Microsoft Intunehoz
 
@@ -94,7 +94,7 @@ A létrehozott alkalmazás megjelenik az alkalmazáslistában, ahol hozzárendel
 
 ## <a name="troubleshooting"></a>Hibaelhárítás
 **A Microsoft Edge 77-es és újabb verziói a Windows 10 rendszerhez:**<br>
-Az Intune az Intune felügyeleti bővítmény használatával tölti le és telepíti a Microsoft Edge telepítőjét a Windows 10-es eszközökhöz, majd a Microsoft Edge-böngésző letöltésével és telepítésével továbbítja a központi telepítési beállításokat a Microsoft Edge telepítőjének. közvetlenül a CDN-ből. Az [Intune felügyeleti bővítmény előfeltételei](~/apps/intune-management-extension.md#prerequisites), valamint az Azure Update szolgáltatás és a CDN elérése című cikkben ismertetett ajánlott eljárások, amelyek biztosítják, hogy a hálózati konfiguráció lehetővé tegye, hogy a Windows 10-es eszközök hozzáférjenek ezekhez a helyekhez.
+Az Intune az Intune felügyeleti bővítmény használatával tölti le és telepíti a Microsoft Edge telepítőjét a Windows 10-es eszközökhöz, majd a Microsoft Edge-böngésző letöltésével és telepítésével továbbítja a központi telepítési beállításokat a Microsoft Edge telepítőjének. közvetlenül a CDN-ből. Az [Intune felügyeleti bővítmény előfeltételei](~/apps/intune-management-extension.md#prerequisites), valamint az Azure Update szolgáltatás és a CDN elérése című cikkben ismertetett ajánlott eljárások, amelyek biztosítják, hogy a hálózati konfiguráció lehetővé tegye, hogy a Windows 10-es eszközök hozzáférjenek ezekhez a helyekhez. Továbbá, ha engedélyezni szeretné a CDN-ből származó telepítési fájlok elérését a böngésző telepítéséhez, engedélyezni kell Windows Update végpontokhoz való hozzáférést. További információ: a [Windows 10 1809-es verziójának – Windows Update](https://docs.microsoft.com/windows/privacy/manage-windows-1809-endpoints#windows-update) és [a Microsoft Intune hálózati végpontjának](~/fundamentals/intune-endpoints.md)– a csatlakoztatási végpontok kezelése.
 
 ## <a name="next-steps"></a>További lépések
 - [Alkalmazások hozzárendelése csoportokhoz](~/apps/apps-deploy.md)

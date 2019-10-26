@@ -5,24 +5,24 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 10/17/2019
+ms.date: 10/24/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: f6f5414d-0e41-42fc-b6cf-e7ad76e1e06d
-ms.reviewer: heenamac
+ms.reviewer: altsou
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 26ed23e4d9d267e37ba5088fa32234c27e3935b6
-ms.sourcegitcommit: 9a2ddcec73b37a118908b63d8e5252835f257618
+ms.openlocfilehash: a19515e859f5e78f7611bbd10088aea5f7c44650
+ms.sourcegitcommit: f12bd2ce10b6241715bae2d2857f33c474287166
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72550802"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72892646"
 ---
 # <a name="assign-user-and-device-profiles-in-microsoft-intune"></a>Felhasználói és eszközprofilok hozzárendelése a Microsoft Intune-ban
 
@@ -69,19 +69,28 @@ Windows 10-es eszközökön olyan **alkalmazhatósági szabályokat** adhat hozz
 
 ## <a name="exclude-groups-from-a-profile-assignment"></a>Csoportok kizárása profil hozzárendelésekor
 
-Az Intune-beli eszközkonfigurációs profilok lehetővé teszik csoportok kizárását a szabályzat-hozzárendelésből.
+Az Intune-eszköz konfigurációs profiljai lehetővé teszik csoportok belefoglalását és kizárását a szabályzat-hozzárendelésből.
 
-Az Intune nem tekinti meg a felhasználók és az eszközök közötti csoportok kapcsolatait. A felhasználói csoportok és az erőforráscsoportok kizárása esetén előfordulhat, hogy nem kapja meg a várt eredményeket. A felhasználói csoport – felhasználó csoport és az eszközök csoport-eszköz csoportjának forgatókönyvei esetében a kizárás elsőbbséget élvez a felvételsel szemben.
+Ajánlott eljárásként hozzon létre és rendeljen hozzá házirendeket kifejezetten a felhasználói csoportokhoz. És hozzon létre és rendeljen hozzá különböző szabályzatokat kifejezetten az eszközök csoportjaihoz. A csoportokkal kapcsolatos további információkért lásd: [csoportok hozzáadása a felhasználók és eszközök rendszerezéséhez](../fundamentals/groups-add.md).
 
-Például hozzárendelhet egy eszköz profilt a **minden vállalati felhasználó** felhasználói csoporthoz, de kizárhatja a tagokat a **vezető felügyeleti munkatárs** felhasználói csoportban. Mivel mindkét csoport felhasználói csoport, a **vezető felügyeleti munkatárs** összes tagja ki van zárva a szabályzatból, még akkor is, ha az **összes vállalati felhasználó** tagja a csoportnak.
+A szabályzatok kiosztásakor használja a következő táblázatot a csoportok belefoglalása és kizárása esetén. A pipa azt jelenti, hogy a hozzárendelés támogatott:
 
-A Belefoglalás elsőbbséget élvez az olyan vegyes csoportok használatakor, mint például a felhasználói csoport – eszköz csoport vagy az eszközök csoport – felhasználó csoport.
+![A támogatott beállítások közé tartoznak a profil-hozzárendelésből származó csoportok vagy kizárások](./media/device-profile-assign/include-exclude-user-device-groups.png)
 
-Tegyük fel például, hogy az eszköz profilját hozzá szeretné rendelni a szervezet összes felhasználója számára, kivéve a kioszkos eszközöket. Belefoglalja a **Minden felhasználó** csoportot, de kizárja a **Minden eszköz** csoportot. Ebben az esetben az összes felhasználó és eszköze megkapja a szabályzatot, még akkor is, ha a felhasználó eszköze a **minden eszköz** csoportban van.
+### <a name="what-you-should-know"></a>Tudnivalók
 
-A kizárás csak a csoport közvetlen tagjait vizsgálja. Nem tartalmazza a felhasználóhoz társított eszközöket. A felhasználóval nem rendelkező eszközök azonban nem kapják meg a szabályzatot. Ez a viselkedés azért fordul elő, mert a felhasználók nélküli eszközök nem rendelkeznek kapcsolattal a **minden felhasználó** csoporttal.
+- A kizárás elsőbbséget élvez a következő azonos csoport típusú forgatókönyvek belefoglalásakor:
 
-A **Minden eszköz** csoport belefoglalása és a **Minden felhasználó** csoport kizárása esetén minden eszköz megkapja a szabályzatot. A cél ezúttal azoknak az eszközöknek a kizárása, amelyekhez a szabályzat szerint felhasználó van társítva. Ez azonban zárja ki az eszközöket, hiszen a kizárás funkció csak a közvetlen csoporttagokat hasonlítja össze.
+  - Felhasználói csoportok belefoglalása és felhasználói csoportok kizárása
+  - Eszközcsoport-csoportokkal együtt
+
+  Például hozzárendelhet egy eszköz profilt a **minden vállalati felhasználó** felhasználói csoporthoz, de kizárhatja a tagokat a **vezető felügyeleti munkatárs** felhasználói csoportban. Mivel mindkét csoport felhasználói csoport, az **összes vállalati felhasználó** , kivéve a **vezető felügyeleti személyzetet** , megkapja a szabályzatot.
+
+- Az Intune nem értékeli ki a felhasználók és az eszközök közötti csoportok kapcsolatait. Ha vegyes csoportokba rendeli a szabályzatokat, előfordulhat, hogy az eredmények nem a kívánt vagy várt érték.
+
+  Például hozzárendelhet egy eszköz profilt a **minden felhasználó** felhasználói csoporthoz, de kizárja az **összes személyes** eszköz csoportot. Ebben a vegyes csoportházirend-hozzárendelésben **minden felhasználó** megkapja a szabályzatot. A kizárás nem vonatkozik.
+
+  Ennek eredményeképpen a házirendek vegyes csoportokhoz való társítása nem ajánlott.
 
 ## <a name="next-steps"></a>További lépések
 

@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1089c382a39afb5aad0456e669cb3a2434af73c1
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 5776ebf3241968cca6da537bb58b7ab2a06f00ba
+ms.sourcegitcommit: f12bd2ce10b6241715bae2d2857f33c474287166
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72503094"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72892543"
 ---
 # <a name="troubleshoot-windows-device-enrollment-problems-in-microsoft-intune"></a>A Windows-eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune
 
@@ -71,12 +71,12 @@ A probléma több lehetséges megoldást is kínál:
 > Ez a módszer növeli az eszközök regisztrálási korlátját az összes felhasználó számára, nem csak az érintett felhasználót.
 
 1. Jelentkezzen be az [Azure portálra](https://portal.azure.com/?Microsoft_Intune=1&Microsoft_Intune_DeviceSettings=true&Microsoft_Intune_Enrollment=true&Microsoft_Intune_Apps=true&Microsoft_Intune_Devices=true#blade/Microsoft_Intune_DeviceSettings/ExtensionLandingBlade/overview).
-2. Lépjen az **eszközök Beléptetése**@no__t – 1**regisztrációs korlátozásokhoz**, majd válassza az **eszköz korlátozási korlátozásait**.    
+2. Lépjen az **eszközök Beléptetése** > **beléptetési korlátozások**elemre, majd válassza az eszközök korlátozására **vonatkozó korlátozásokat**.    
 3. Növelje az **eszköz korlátjának**értékét. 
 
 ##### <a name="check-device-type-restrictions"></a>Az eszközök típusára vonatkozó korlátozások keresése
 1. Jelentkezzen be az [Intune-portálra](https://portal.azure.com/?Microsoft_Intune=1&Microsoft_Intune_DeviceSettings=true&Microsoft_Intune_Enrollment=true&Microsoft_Intune_Apps=true&Microsoft_Intune_Devices=true#blade/Microsoft_Intune_DeviceSettings/ExtensionLandingBlade/overview) egy globális rendszergazdai fiókkal.
-2. Lépjen az **eszközök Beléptetése**@no__t – 1**regisztrációs korlátozásokhoz**, majd válassza ki az **alapértelmezett** korlátozást az **eszközök típusának korlátozása**területen.    
+2. Lépjen az **eszközök Beléptetése** > **beléptetési korlátozások**elemre, majd válassza ki az **alapértelmezett** korlátozást az **eszköz típusa korlátozásai**alatt.    
 3. Válassza a **platformok**lehetőséget, majd válassza a **Windows engedélyezése (Mdm)** lehetőséget.
 
     > [!IMPORTANT]
@@ -206,7 +206,7 @@ Hiba: "probléma történt. A szervezet nem támogatja a Windows ezen verziójá
 A probléma önálló Intune-környezetben való kijavításához kövesse az alábbi lépéseket: 
  
 1. Jelentkezzen be rendszergazdaként a [Azure Portalba](https://portal.azure.com/) .    
-2. Válassza az **Intune** lehetőséget a bal oldalon, majd lépjen az **eszközök beléptetése**@no__t – 2**regisztrációs korlátozásokhoz**.    
+2. Válassza az **Intune** lehetőséget a bal oldalon, majd lépjen az **eszközök beléptetése** > **beléptetési korlátozások**elemre.    
 3. Az **eszközök típusának korlátozásai**területen kattintson a **platformok**elemre, majd válassza a Windows **engedélyezése** **(Mdm)** lehetőséget.    
 4. Kattintson a **Mentés**gombra.    
  
@@ -214,7 +214,7 @@ A probléma megoldásához az Intune-nal és a Configuration Managertel rendelke
 1. Nyissa meg a Configuration Manager-konzolt.    
 2. Válassza az **Adminisztráció**, majd a **Cloud Services**lehetőséget.    
 3. Kattintson a jobb gombbal **Microsoft Intune előfizetésre**, majd válassza a **platformok konfigurálása > Windows**lehetőséget.    
-4. Jelölje be a **Windows-regisztráció engedélyezése**@no__t – 1  > **OK** **alkalmazása**elemet.  
+4. Jelölje be a **Windows-regisztráció engedélyezése** ** >  > ** **OK gombra**.  
 
 
 ### <a name="a-setup-failure-has-occurred-during-bulk-enrollment"></a>Telepítési hiba történt a csoportos regisztráció során.
@@ -376,7 +376,7 @@ Ezt a problémát általában a Windows Autopilot-eszközöket létrehozó szerv
 3. A Control Wizard ( **vezérlés delegálása** ) varázslóban válassza a **következő** >   > **típusú objektumok** **hozzáadása**lehetőséget.
 4. Az **Objektumtípusok** ablaktáblán jelölje be a **számítógépek** jelölőnégyzetet, > **az OK gombra**.
 5. A **felhasználók**, **számítógépek**vagy **csoportok** kiválasztása panelen az **adja meg a kijelölendő objektumok nevét** mezőbe írja be annak a számítógépnek a nevét, amelyen az összekötő telepítve van.
-6. Jelölje be a Névellenőrzés **jelölőnégyzetet** a bejegyzés ellenőrzéséhez > OK @no__t – 2**tovább** **gombra**.
+6. Jelölje be a Névellenőrzés **jelölőnégyzetet** a bejegyzés ellenőrzéséhez > OK > a **tovább** **gombra** .
 7. Válassza az **Egyéni feladat létrehozása**lehetőséget  > **következő**delegálásához.
 8. Jelölje be a **csak a következő objektumokat a mappában** jelölőnégyzetből, majd jelölje ki a **számítógép-objektumokat**, **hozzon létre a kijelölt objektumokat**ebben a mappában, és **törölje a kijelölt objektumokat a mappában** jelölőnégyzetből.
 9. Válassza a **Tovább** elemet.
@@ -390,3 +390,4 @@ Ezt a problémát általában a Windows Autopilot-eszközöket létrehozó szerv
 - [A Microsoft Intune támogatási csapatának blogja](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/bg-p/IntuneCustomerSuccess)
 - [A Microsoft nagyvállalati mobilitási és biztonsági blogjának beolvasása](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Announcing-the-public-preview-of-Azure-AD-group-based-license/ba-p/245210)
 - [Támogatás kérése Microsoft Intune](../fundamentals/get-support.md)
+- [Közös felügyelettel kapcsolatos regisztrálási hibák keresése](https://docs.microsoft.com/sccm/comanage/how-to-monitor#enrollment-errors)

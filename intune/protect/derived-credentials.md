@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 10/19/2019
+ms.date: 10/24/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c42e5ef50f8a5a8514bc43670fc743f42b1b2d6
-ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
+ms.openlocfilehash: 1716da820fd0d9a4b6d1bbc5024440cfb141c5a1
+ms.sourcegitcommit: 0d6f323152ec62f7d383891cce12ea0a4289cd8f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72585928"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72889550"
 ---
 # <a name="use-derived-credentials-in-microsoft-intune"></a>Származtatott hitelesítő adatok használata Microsoft Intuneban
 
@@ -64,7 +64,7 @@ Az Intune egyetlen származtatott hitelesítőadat-kiállítót támogat a bérl
 - **Entrust DataCard**: https://www.entrustdatacard.com/
 - **Közbenjárás**: https://www.intercede.com/
 
-A különböző kiállítók használatával kapcsolatos fontos információkért tekintse át az adott kiállítóhoz tartozó útmutatást, beleértve a kibocsátók végfelhasználói munkafolyamatát. További információ: a [származtatott hitelesítő adatok tervezése](#plan-for-derived-credentials) ebben a cikkben.
+A különböző kiállítók használatával kapcsolatos fontos információkért tekintse át a kiállító útmutatását.<!-- , including the issuers end-user workflow-->. További információ: a [származtatott hitelesítő adatok tervezése](#plan-for-derived-credentials) ebben a cikkben.
 
 > [!IMPORTANT]  
 > Ha töröl egy származtatott hitelesítő kiállítót a bérlőtől, a kibocsátón keresztül létrehozott származtatott hitelesítő adatok már nem fognak működni.  
@@ -101,11 +101,14 @@ Hasonlóképpen, egyes származtatott hitelesítőadat-kérelmek munkafolyamatai
 
 ### <a name="2-review-the-end-user-workflow-for-your-chosen-issuer"></a>2.) tekintse át a kiválasztott kiállító végfelhasználói munkafolyamatát
 
-Az alábbiakban az egyes támogatott partnerekkel kapcsolatos legfontosabb szempontokat és a kibocsátók végfelhasználói munkafolyamatára mutató hivatkozásokat talál.  Ismerkedjen meg ezekkel az információkkal, így biztosíthatja, hogy az Intune-szabályzatok és-konfigurációk ne gátolják meg a felhasználókat és az eszközöket abban, hogy a kibocsátótól származó származtatott hitelesítő adatokat bejegyezzenek.
+A következők az egyes támogatott partnerek legfontosabb szempontjai<!--  , and links to that issuers end-user workflow -->.  Ismerkedjen meg ezekkel az információkkal, így biztosíthatja, hogy az Intune-szabályzatok és-konfigurációk ne gátolják meg a felhasználókat és az eszközöket abban, hogy a kibocsátótól származó származtatott hitelesítő adatokat bejegyezzenek.
 
 #### <a name="disa-purebred"></a>DISA fajtatiszta
 
-Tekintse át a [DISA fajtatiszta felhasználói munkafolyamatát](https://docs.microsoft.com/intune-user-help/enroll-ios-device-disa-purebred). A munkafolyamat legfontosabb követelményei a következők:  
+A végfelhasználói munkafolyamat és a legfontosabb követelmények ismertetése:  
+<!-- TEMP EDIT - preceeding line to be replaced with the following once user content is ready. 
+Review the [user workflow for DISA Purebred](https://docs.microsoft.com/intune-user-help/enroll-ios-device-disa-purebred). Key requirements for this workflow include:  
+-->
 
 - A felhasználóknak hozzáférésre van szükségük egy számítógéphez vagy KIOSZKhoz, ahol az intelligens kártyájuk használatával hitelesíthetők a kibocsátóban. 
 
@@ -120,8 +123,11 @@ Tekintse át a [DISA fajtatiszta felhasználói munkafolyamatát](https://docs.m
 A DISA fajtatiszta alkalmazás beszerzésével és konfigurálásával kapcsolatos információkért lásd a jelen cikk későbbi, [a DISA fajtatiszta alkalmazás üzembe helyezésével](#deploy-the-disa-purebred-app) foglalkozó témakörét.  
 
 #### <a name="entrust-datacard"></a>Entrust Datacard  
-Tekintse át [Entrust DataCard felhasználói munkafolyamatát](https://docs.microsoft.com/intune-user-help/enroll-ios-device-entrust). A munkafolyamat legfontosabb követelményei a következők: 
 
+A végfelhasználói munkafolyamat és a legfontosabb követelmények ismertetése:  
+<!-- TEMP EDIT - preceeding line to be replaced with the following once user content is ready. 
+Review the [user workflow for Entrust Datacard](https://docs.microsoft.com/intune-user-help/enroll-ios-device-entrust). Key requirements for this workflow include: 
+--> 
 - A felhasználóknak hozzáférésre van szükségük egy számítógéphez vagy KIOSZKhoz, ahol az intelligens kártyájuk használatával hitelesíthetők a kibocsátóban. 
 
 - A származtatott hitelesítő adatokhoz regisztrálni kívánt eszközöknek telepíteniük kell a Intune Céges portál alkalmazást.
@@ -129,8 +135,11 @@ Tekintse át [Entrust DataCard felhasználói munkafolyamatát](https://docs.mic
 - Egy eszköz kamerájának használata egy QR-kód bevizsgálatára, amely a hitelesítési kérést a mobileszközön lévő származtatott hitelesítőadat-kéréshez csatolja.
 
 #### <a name="intercede"></a>Közbenjárni
-Tekintse át a [felhasználói munkafolyamatot a közbenjáráshoz](https://docs.microsoft.com/intune-user-help/enroll-ios-device-intercede). A munkafolyamat legfontosabb követelményei a következők: 
 
+A végfelhasználói munkafolyamat és a legfontosabb követelmények ismertetése:  
+<!-- TEMP EDIT - preceeding line to be replaced with the following once user content is ready. 
+Review the [user workflow for Intercede](https://docs.microsoft.com/intune-user-help/enroll-ios-device-intercede). Key requirements for this workflow include: 
+-->
 - A felhasználóknak hozzáférésre van szükségük egy számítógéphez vagy KIOSZKhoz, ahol az intelligens kártyájuk használatával hitelesíthetők a kibocsátóban. 
 
 - A származtatott hitelesítő adatokhoz regisztrálni kívánt eszközöknek telepíteniük kell a Intune Céges portál alkalmazást.

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9d82813f1292c99cf248c56a102503413d2cb8fb
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 000b1d04dd3f520b55b1d33545a8803e23bf8965
+ms.sourcegitcommit: 0d6f323152ec62f7d383891cce12ea0a4289cd8f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72507455"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72889591"
 ---
 # <a name="how-to-monitor-app-protection-policies"></a>Az alkalmazásvédelmi szabályzatok figyelése
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
@@ -76,7 +76,7 @@ Itt megkeresheti az adott felhasználókat, és ellenőrizheti a megfelelési á
 - **Utolsó szinkronizálás**: az alkalmazás Intune-nal való legutóbbi szinkronizálásakor. 
 
 >[!NOTE]
-> Az **utolsó szinkronizálási** oszlop ugyanazt az értéket jelöli, mint a konzolon belüli felhasználói állapot jelentés és az alkalmazás-védelmi házirend [exportálható. csv-jelentése](https://docs.microsoft.com/intune/app-protection-policies-monitor#export-app-protection-activities-to-csv). A különbség a két jelentés értéke közötti szinkronizálás kis késleltetése. 
+> Az **utolsó szinkronizálási** oszlop ugyanazt az értéket jelöli, mint a konzolon belüli felhasználói állapot jelentés és az alkalmazás-védelmi házirend [exportálható. csv-jelentése](https://docs.microsoft.com/intune/app-protection-policies-monitor#export-app-protection-activities). A különbség a két jelentés értéke közötti szinkronizálás kis késleltetése. 
 >
 > A legutóbbi szinkronizálásban hivatkozott idő az, amikor az Intune utoljára látta az alkalmazás példányát. Amikor egy felhasználó egy alkalmazást indít el, az a legutóbbi bejelentkezéstől függően értesíti a Intune App Protection szolgáltatást. Tekintse [meg az alkalmazás-védelmi házirend beadásának újrapróbálkozási időpontját](https://docs.microsoft.com/en-us/intune/app-protection-policy-delivery). Ha egy felhasználó nem használta az adott alkalmazást az utolsó beadási időközben (amely általában 30 perc az aktív használat esetén), és elindítja az alkalmazást, akkor:
 >
