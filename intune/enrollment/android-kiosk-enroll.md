@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d1a1c03dc480ad66de22b4a5ee44a9b8c221980c
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: edc884850b70ff7621224c5b01a68d016f27504e
+ms.sourcegitcommit: 5932da3ed8f52c7b0f0d71c1801f81c85952cf0c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72503385"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72923392"
 ---
 # <a name="set-up-intune-enrollment-of-android-enterprise-dedicated-devices"></a>Androidos vállalati dedikált eszközök Intune-regisztrációjának beállítása
 
@@ -69,7 +69,7 @@ Létre kell hoznia egy regisztrációs profilt, hogy regisztrálni tudja a dedik
 
 A cél lehet alkalmazás, és hozzárendelt vagy dinamikus eszközcsoportokra vonatkozó szabályzat is. A dinamikus AAD-eszközcsoportokat a következő lépesekkel konfigurálhatja úgy, hogy automatikusan felvegyék a megadott regisztrációs profillal regisztrált eszközöket:
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és válassza a **csoportok**@no__t – 2**minden csoport**@no__t – 4**új csoportot**.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és válassza a **csoportok** > **az összes csoport** > **új csoport**lehetőséget.
 2. A **Csoport** panelen töltse ki a kötelező mezőket az alábbiak szerint:
     - **Csoporttípus**: Biztonsági (Security)
     - **Csoport neve**: Adjon meg egy beszédes nevet (például 1. üzem eszközei)
@@ -78,7 +78,7 @@ A cél lehet alkalmazás, és hozzárendelt vagy dinamikus eszközcsoportokra vo
 4. A **Dinamikus tagsági szabályok** panelen töltse ki a mezőket az alábbiak szerint:
     - **Dinamikus tagsági szabály hozzáadása**: Egyszerű szabály (Simple rule)
     - **Eszközök hozzáadásának helye**: enrollmentProfileName
-    - A középső mezőben válassza az **Egyezés** (Match) lehetőséget.
+    - A középső mezőben válassza az **egyenlő**lehetőséget.
     - Az utolsó mezőben adja meg a korábban létrehozott regisztrációs profilt.
     A dinamikus tagságra vonatkozó szabályokról bővebben lásd [az AAD-csoportok dinamikus tagsági szabályait](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-dynamic-membership) ismertető témakört. 
 5. Válassza a **Lekérdezés hozzáadása** > **Létrehozás** lehetőséget.

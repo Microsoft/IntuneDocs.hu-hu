@@ -5,24 +5,24 @@ description: Az Intune által támogatott biztonsági alapbeállítások a Micro
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 07/25/2019
+ms.date: 10/25/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: ''
-ms.reviewer: karthib
+ms.reviewer: shpate
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a2cb5d7375ae5b76a24861872d4abf786f199dfd
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: aa3cb3481de6e1fdc3790b7330ac521772e252be
+ms.sourcegitcommit: 5932da3ed8f52c7b0f0d71c1801f81c85952cf0c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72508988"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72923406"
 ---
 # <a name="microsoft-defender-advanced-threat-protection-baseline-settings-for-intune"></a>A Microsoft Defender komplex veszélyforrások elleni védelem alapkonfigurációjának beállításai az Intune-ban
 
@@ -31,12 +31,6 @@ Tekintse meg a Microsoft Defender komplex veszélyforrások elleni védelmet (ko
 A Microsoft Defender komplex veszélyforrások elleni védelem alapterve akkor érhető el, ha a környezet megfelel a [Microsoft Defender komplex veszélyforrások elleni védelem](advanced-threat-protection.md#prerequisites)használatának előfeltételeinek. 
 
 Ez az alapkonfiguráció fizikai eszközökre van optimalizálva, és jelenleg nem ajánlott virtuális gépeken (VM) vagy VDI-végpontokon használni. Bizonyos alapbeállítások befolyásolhatják a távoli interaktív munkameneteket a virtualizált környezetekben. További információ: a [Microsoft DEFENDER ATP biztonsági alapkonfigurációjának nagyobb megfelelősége](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-machines-security-baseline) a Windows dokumentációjában.
-
-
-> [!NOTE]  
-> Az ATP alapkonfigurációjának beállításai **előzetes**verzióban érhetők el. Az előzetes verzióban a rendelkezésre álló beállítások listája és a tartalom megjelenítési sorrendje nem egyezik meg a portálon elérhetővel.  
->
-> Ha az alapkonfiguráció beállításai nem előzetes verziójúak, ez a tartalom frissülni fog az Intune által támogatott biztonsági alapkonfigurációk aktuális listájának megjelenítéséhez.
 
 ## <a name="application-guard"></a>Application Guard  
 További információ: [WINDOWSDEFENDERAPPLICATIONGUARD CSP](https://docs.microsoft.com/windows/client-management/mdm/windowsdefenderapplicationguard-csp) a Windows dokumentációjában.  
@@ -55,13 +49,13 @@ A Microsoft Edge használata közben a Microsoft Defender Application Guard véd
 
   - A **vágólap viselkedése** - *Beállítások/ClipboardSettings*  
     Válassza ki, hogy mely másolási és beillesztési műveletek engedélyezettek a helyi számítógép és az Application Guard virtuális böngésző között.  A lehetőségek a következők:
-    - *Nincs konfigurálva*  
-    - A *both* -adatok nem vihetők át a számítógép és a virtuális böngésző között.  
-    - *Gazdagép tárolóba való letiltása* – az adatok nem vihetők át a számítógépről a virtuális böngészőbe.
-    - *Tároló* tárolásának letiltása – az adatok nem vihetők át a virtuális böngészőből a gazdagép számítógépére.
-    - *Nincs* – nincs blokkolás a tartalomhoz.  
+    - Nincs konfigurálva  
+    - A számítógép és a böngésző közötti másolás és beillesztés tiltása a kettő között. Az adatok nem vihetők át a számítógép és a virtuális böngésző között.  
+    - Másolás és beillesztés engedélyezése a böngészőből csak a számítógépre – az adatok nem vihetők át a SZÁMÍTÓGÉPRŐL a virtuális böngészőbe.
+    - A másolás és beillesztés engedélyezése a SZÁMÍTÓGÉPről csak böngészőbe – az adatok nem vihetők át a virtuális böngészőből a gazdagép SZÁMÍTÓGÉPére.
+    - A számítógép és a böngésző közötti másolás és beillesztés engedélyezése – a tartalom nem tartalmaz blokkot.  
 
-    **Alapértelmezett**: letiltás  
+    **Alapértelmezett**: a számítógép és a böngésző közötti másolás és beillesztés tiltása  
 
 - **Windows hálózati elkülönítési házirend – vállalati hálózati tartománynevek**  
   További információ: [Policy CSP-NetworkIsolation](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-networkisolation) a Windows dokumentációjában.
@@ -101,7 +95,7 @@ További információ: [Policy CSP-SmartScreen](https://docs.microsoft.com/windo
 
   **Alapértelmezett**: Engedélyezés
 
-- **E-mail tartalom végrehajtásának típusa**  
+- **E-mail tartalom végrehajtása**  
   [Támadási felület csökkentési szabálya](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – ha a *blokkolás*értékre van állítva, ez a szabály blokkolja a következő fájltípusokat a Microsoft Outlookban vagy webmailben (például gmail.com vagy Outlook.com) látott e-mailből:  
 
   - Végrehajtható fájlok (például. exe,. dll vagy. scr)  
@@ -115,12 +109,12 @@ További információ: [Policy CSP-SmartScreen](https://docs.microsoft.com/windo
 
   **Alapértelmezett**: Engedélyezés
 
-- **Parancsfájl által eltorzított kód típusa**  
+- **Parancsfájl által eltorzított makróvédelmi kód**  
   [Támadási felület csökkentési szabálya](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – a kártevők és egyéb fenyegetések megpróbálják eltorzítani vagy elrejteni a kártékony kódokat bizonyos parancsfájlokban. Ez a szabály akadályozza meg, hogy a rendszer ne futtasson olyan parancsfájlokat, amelyek nem futtathatók.  
     
   **Alapértelmezett**: letiltás
 
-- **Nem megbízható USB-folyamat típusa**  
+- **Nem megbízható USB-folyamat**  
   [Támadási felület csökkentési szabálya](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – ha a *blokkolt*, aláíratlan vagy nem megbízható végrehajtható fájlokat USB cserélhető meghajtókról és SD-kártyákból állítja be, nem futtatható.
 
   A végrehajtható fájlok a következők:
@@ -129,12 +123,12 @@ További információ: [Policy CSP-SmartScreen](https://docs.microsoft.com/windo
 
   **Alapértelmezett**: letiltás
 
-- **Office-alkalmazások egyéb folyamat-injektálási típusa**  
+- **Office-alkalmazások egyéb folyamat-injektálás**  
   [Támadási felület csökkentési szabálya](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – ha *blokkolásra*van beállítva, az Office-alkalmazások, például a Word, az Excel, a PowerPoint és a OneNote, nem adhatnak hozzá kódot más folyamatokhoz. A programkódot általában a kártevők használják arra, hogy rosszindulatú kódot futtassanak a tevékenységek víruskeresőből való elrejtésére tett kísérlet során.  
 
   **Alapértelmezett**: letiltás
 
-- **Office-makróvédelmi kód engedélyezése Win32 importálási típus**  
+- **Office-makróvédelmi kód engedélyezése Win32-importálások számára**  
   [Támadási felület csökkentési szabálya](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – ha a *blokkolás*értékre van állítva, akkor ez a szabály megkísérli letiltani a Win32 DLL-eket importáló makrókat tartalmazó Office-fájlokat. Az Office-fájlok a következők: Word, Excel, PowerPoint és OneNote. A kártevők az Office-fájlokban lévő makróvírus használatával importálhatók és betölthetők a Win32 DLL-fájlok, amelyek ezután API-hívásokkal teszik lehetővé a további fertőzéseket a rendszeren.  
 
   **Alapértelmezett**: letiltás
@@ -144,7 +138,7 @@ További információ: [Policy CSP-SmartScreen](https://docs.microsoft.com/windo
 
   **Alapértelmezett**: Engedélyezés
 
-- **Office-alkalmazások végrehajtható tartalom létrehozási vagy indítási típusa**  
+- **Office-alkalmazások végrehajtható tartalom létrehozása vagy elindítása**  
   [Támadási felület csökkentési szabálya](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – ha *blokkolásra*van beállítva, az Office-alkalmazások nem hozhatnak létre végrehajtható tartalmat. Az Office-alkalmazások közé tartozik a Word, az Excel, a PowerPoint, a OneNote és a hozzáférés.  
 
   Ez a szabály a végrehajtható fájlokat létrehozó vagy indító gyanús és kártékony bővítmények és parancsfájlok (bővítmények) által használt jellemző viselkedéseket célozza meg. Ez egy tipikus kártevő-módszer. Az Office-alkalmazások nem használják a bővítményeket. Ezek a bővítmények általában a Windows Scripting Host (. wsh fájlok) használatával futtatnak bizonyos feladatokat automatizáló vagy felhasználó által létrehozott kiegészítő funkciókat biztosító parancsfájlokat.
@@ -170,6 +164,10 @@ További információ a [BitLocker csoportházirend beállítások](https://docs
 
   - **Titkosítási módszer**  
     **Alapértelmezett**: AES 128bit CBC
+
+- **Storage-kártya titkosítása (csak mobil)** Ha az *Igen* lehetőséget választja, a rendszer titkosítja a mobileszköz Storage kártyáját.  
+
+   **Alapértelmezett**: igen
 
 - **Bit Locker rögzített meghajtó szabályzata**  
   A szabályzat értékei határozzák meg a BitLocker által a rögzített meghajtók titkosításához használt rejtjel erősségét. A vállalatok vezérelhetik a fokozott biztonság titkosítási szintjét (az AES-256 erősebb, mint az AES-128). Ha engedélyezi ezt a beállítást, beállíthatja a titkosítási algoritmust és a kulcs titkosítási erősségét a rögzített adatmeghajtókhoz, az operációsrendszer-meghajtókhoz és a cserélhető adatmeghajtókhoz. A rögzített és az operációsrendszer-meghajtók esetében javasoljuk, hogy használja a XTS-AES algoritmust. A cserélhető meghajtók esetében az AES-CBC 128-bit vagy az AES-CBC 256-bit használatát kell használnia, ha a meghajtót olyan más eszközök használják, amelyeken nem fut a Windows 10, a 1511-es vagy újabb verzió. A titkosítási módszer módosítása nincs hatással, ha a meghajtó már titkosítva van, vagy ha a titkosítás folyamatban van. Ezekben az esetekben a rendszer figyelmen kívül hagyja ezt a házirend-beállítást.
@@ -224,12 +222,12 @@ További információ a [BitLocker csoportházirend beállítások](https://docs
   - **A megfelelő hardvereszközök eltávolítása**  
     Ez a beállítás csak akkor érhető el, ha az *eszköz azonosítói alapján* a hardvereszköz telepítése *blokkolja a hardveres eszközök telepítését*.  
 
-    **Alapértelmezett**: *nincs alapértelmezett konfiguráció*
+    **Alapértelmezett**: igen
 
   - **A letiltott hardveres eszközök azonosítói**  
     Ez a beállítás csak akkor érhető el, ha az *eszköz azonosítói alapján* a hardvereszköz telepítése *blokkolja a hardveres eszközök telepítését*. A beállítás megadásához bontsa ki a beállítást, válassza a **+ Hozzáadás**lehetőséget, majd adja meg a letiltani kívánt hardvereszköz-azonosítót.  
 
-    **Alapértelmezett**: *nincsenek blokkolva eszközök*  
+    **Alapértelmezett**: PCI\CC_0C0A
 
 - **Közvetlen memória-hozzáférés letiltása**  
   [DataProtection/AllowDirectMemoryAccess](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-dataprotection#dataprotection-allowdirectmemoryaccess) – ezzel a házirend-beállítással letilthatja a közvetlen memória-hozzáférést (DMA) az eszközön lévő összes melegen csatlakoztatható PCI-porthoz, amíg a felhasználó be nem jelentkezik a Windowsba. Miután a felhasználó bejelentkezik, a Windows feljegyzi a gazdagéphez csatlakozó PCI-portokhoz csatlakozó PCI-eszközöket. Minden alkalommal, amikor a felhasználó zárolja a gépet, a rendszer letiltja a DMA-t a gyermekek nélküli gyors csatlakozású PCI-portok esetében, amíg a felhasználó újra be nem jelentkezik. A gép zárolásának feloldása után már enumerált eszközök továbbra is működni fognak, amíg le nem húzta a gépet. 
@@ -249,23 +247,23 @@ További információ a [BitLocker csoportházirend beállítások](https://docs
   - **A megfelelő hardvereszközök eltávolítása**  
     Ez a beállítás csak akkor érhető el, ha a *telepítési osztályok által telepített hardvereszközök telepítése* *blokkolja a hardvereszközök telepítését*.  
  
-    **Alapértelmezett**: *nincs alapértelmezett konfiguráció*  
+    **Alapértelmezett**: igen  
 
   - **A letiltott hardveres eszközök azonosítói**  
     Ez a beállítás csak akkor érhető el, ha a telepítési osztályok által telepített hardvereszközök telepítése blokkolja a hardvereszközök telepítését. A beállítás megadásához bontsa ki a beállítást, válassza a **+ Hozzáadás**lehetőséget, majd adja meg a letiltani kívánt hardvereszköz-azonosítót.  
  
-    **Alapértelmezett**: *nincsenek blokkolva eszközök*
+    **Alapértelmezett**: {d48179be-EC20-11D1-b6b8-00c04fa372a7}
 
 ## <a name="endpoint-detection-and-response"></a>Végpontok észlelése és válasza  
 További információ: [WINDOWSADVANCEDTHREATPROTECTION CSP](https://docs.microsoft.com/windows/client-management/mdm/windowsadvancedthreatprotection-csp) a Windows dokumentációjában.  
 
-- **Gyorsítsa fel a telemetria jelentéskészítési gyakoriságát** - *konfiguráció/TelemetryReportingFrequency*  
+- **Gyorsítsa fel a telemetria jelentéskészítési gyakoriságát** - *konfiguráció/TelemetryReportingFrequency*
 
   A Microsoft Defender komplex veszélyforrások elleni védelem telemetria jelentéskészítési gyakoriságának gyorsítása.  
 
   **Alapértelmezett**: igen
 
-- **Minta megosztása az összes fájlhoz** - *konfiguráció/SampleSharing*  
+- **Minta megosztása az összes fájlhoz** - *konfiguráció/SampleSharing* 
 
   Visszaadja vagy beállítja a Microsoft Defender komplex veszélyforrások elleni védelem minta-megosztási konfigurációs paraméterét.  
 
@@ -286,43 +284,7 @@ További információ: [WINDOWSADVANCEDTHREATPROTECTION CSP](https://docs.micros
   [WindowsDefenderSecurityCenter/DisallowExploitProtectionOverride](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-windowsdefendersecuritycenter#windowsdefendersecuritycenter-disallowexploitprotectionoverride) – az *Igen* érték megadásával megakadályozhatja, hogy a felhasználók módosítsák a Windows Defender Security Center a védelmi beállítások kiaknázása területén. Ha letiltja vagy nem konfigurálja ezt a beállítást, a helyi felhasználók módosításokat végezhetnek a védelmi beállítások kiaknázása területen.  
   **Alapértelmezett**: igen  
 
-- **Vezérelt mappák elérése**  
-  Lásd: [Defender/ControlledFolderAccessAllowedApplications](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-controlledfolderaccessallowedapplications) és [Defender/ControlledFolderAccessProtectedFolders](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-controlledfolderaccessprotectedfolders) 
-  
-   Fájlok és mappák védelme a nemkívánatos alkalmazások által végrehajtott, jogosulatlan módosítások ellen.
-
-  **Alapértelmezett**: naplózási mód
-
-## <a name="web--network-protection"></a>Web & hálózati védelem  
-
-- **Hálózati védelem típusa**  
-  [Defender/EnableNetworkProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-enablenetworkprotection) – ez a szabályzat lehetővé teszi a hálózati védelem be-és kikapcsolását a Windows Defender Exploit Guard-ben. A hálózatvédelem a Windows Defender Exploit Guard egyik funkciója, amely megvédi az alkalmazottakat az adathalászat-csalások, a biztonsági rések és az interneten található kártékony tartalmak elérésére alkalmas bármely alkalmazás használatával. Ez magában foglalja a harmadik féltől származó böngészőknek a veszélyes helyekhez való csatlakozásának megakadályozását.  
-
-  Ha az *Engedélyezés* vagy a *naplózás mód*értékre van állítva, a felhasználók nem kapcsolhatják ki a hálózati védelmet, és a Windows Defender Security Center segítségével megtekinthetik a kapcsolódási kísérletekkel kapcsolatos információkat.  
- 
-  - Az *Engedélyezés* funkció letiltja a felhasználókat és az alkalmazásokat a veszélyes tartományokhoz való csatlakozáshoz.  
-  - A *vizsgálati mód* nem blokkolja a felhasználókat és az alkalmazásokat a veszélyes tartományokhoz való csatlakozáshoz.  
-
-  Ha a *felhasználó által definiált*értékre van állítva, a felhasználók és az alkalmazások nem blokkolják a veszélyes tartományokhoz való kapcsolódást, és a kapcsolatok információi nem érhetők el a Windows Defender Security Centerban.  
-
-  **Alapértelmezett**: naplózási mód
-
-- **SmartScreen megkövetelése a Microsoft Edge-hez**  
-  [Böngésző/AllowSmartScreen](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowsmartscreen) – a Microsoft Edge a Windows Defender SmartScreen (bekapcsolt) használatával védi a felhasználókat a lehetséges adathalászat-csalások és kártevő szoftverek alapértelmezés szerint. Alapértelmezés szerint ez a házirend engedélyezve van (az *Igen*értékre van állítva), és ha engedélyezve van, megakadályozza, hogy a felhasználók kikapcsolják a Windows Defender SmartScreen szolgáltatást.  Ha az eszközre vonatkozó érvényes házirend nincs konfigurálva, a felhasználók kikapcsolhatják a Windows Defender SmartScreen szolgáltatását, amely nem gondoskodik az eszköz védelem nélküli állapotáról.  
-
-  **Alapértelmezett**: igen
-  
-- **Rosszindulatú hely elérésének letiltása**  
-  [Böngésző/PreventSmartScreenPromptOverride](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverride) – alapértelmezés szerint a Microsoft Edge lehetővé teszi, hogy a felhasználók megkerüljék (figyelmen kívül hagyják) a Windows Defender SmartScreen figyelmeztetéseit az esetlegesen kártékony helyekről, így a felhasználók továbbra is elérhetik a webhelyet. Ha ez a szabályzat engedélyezve van (az *Igen*értékre van állítva), a Microsoft Edge megakadályozza, hogy a felhasználók megkerüljék a figyelmeztetéseket, és blokkolja azokat a helyről.  
-
-  **Alapértelmezett**: igen
-
-- **Nem ellenőrzött fájlok letöltésének tiltása**  
-  [Böngésző/PreventSmartScreenPromptOverrideForFiles](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverrideforfiles) – alapértelmezés szerint a Microsoft Edge lehetővé teszi, hogy a felhasználók megkerüljék (figyelmen kívül hagyják) a Windows Defender SmartScreen figyelmeztetéseit az esetlegesen kártékony fájlokról, így továbbra is letöltheti a nem ellenőrzött fájlokat. Ha ez a szabályzat engedélyezve van (az *Igen*értékre van állítva), a felhasználók nem hagyhatják figyelmen kívül a figyelmeztetéseket, és nem tölthetik le a nem ellenőrzött fájlokat.  
-
-  **Alapértelmezett**: igen
-
-## <a name="windows-defender-anti-virus----settings-review-pending-for-this-section"></a>Windows Defender Anti-Virus [beállítások áttekintése a szakaszra függőben]
+## <a name="microsoft-defender-antivirus"></a>Microsoft Defender víruskereső  
 
 További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender) a Windows dokumentációjában.
 
@@ -336,7 +298,7 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
 
   **Alapértelmezett**: igen
 
-- **Defender-minta küldésének beleegyező típusa**  
+- **Defender-minta beküldési engedélye**  
   [Defender/SubmitSamplesConsent](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-submitsamplesconsent) – a Windows Defender felhasználói beleegyezési szintjét ellenőrzi az adatküldés során. Ha a szükséges engedély már meg lett adva, a Windows Defender elküldi azokat. Ha nem (és ha a felhasználónak soha nem kell megadnia a kérést), a felhasználói felület megadását kéri (ha a *felhőbe szállított védelem* az *Igen*értékre van állítva) az adatok elküldése előtt.  
 
   **Alapértelmezett**: biztonságos minták automatikus küldése
@@ -507,7 +469,7 @@ További információ: [TŰZFAL CSP](https://docs.microsoft.com/windows/client-m
   - **A csoportházirend házirend-szabályai nem lettek egyesítve**  
     **Alapértelmezett**: igen
 
-- **Tűzfal profil nyilvános**@no__t – 1*FirewallRules/FirewallRuleName/profilok*  
+- **Tűzfal-profil nyilvános** - *FirewallRules/FirewallRuleName/profilok*  
   Meghatározza azokat a profilokat, amelyekhez a szabály tartozik: tartomány, privát, nyilvános. Ez az érték a nyilvános hálózatok profilját jelöli. Ezek a hálózatok a kiszolgáló gazdagépének rendszergazdái. A besorolás akkor történik meg, amikor a gazdagép először csatlakozik a hálózathoz. Ezek a hálózatok általában olyan repülőtereken, kávézókban és más nyilvános helyeken találhatók, ahol a hálózat vagy a hálózat rendszergazdája nem megbízható.  
 
   Elérhető beállítások:
@@ -594,6 +556,35 @@ További információ: [TŰZFAL CSP](https://docs.microsoft.com/windows/client-m
 
 - **Visszavont tanúsítványok listájának ellenőrzése**  
   **Alapértelmezett**: eszköz alapértelmezett értéke
+
+## <a name="web--network-protection"></a>Web & hálózati védelem  
+
+- **Hálózati védelem típusa**  
+  [Defender/EnableNetworkProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-enablenetworkprotection) – ez a szabályzat lehetővé teszi a hálózati védelem be-és kikapcsolását a Windows Defender Exploit Guard-ben. A hálózatvédelem a Windows Defender Exploit Guard egyik funkciója, amely megvédi az alkalmazottakat az adathalászat-csalások, a biztonsági rések és az interneten található kártékony tartalmak elérésére alkalmas bármely alkalmazás használatával. Ez magában foglalja a harmadik féltől származó böngészőknek a veszélyes helyekhez való csatlakozásának megakadályozását.  
+
+  Ha az *Engedélyezés* vagy a *naplózás mód*értékre van állítva, a felhasználók nem kapcsolhatják ki a hálózati védelmet, és a Windows Defender Security Center segítségével megtekinthetik a kapcsolódási kísérletekkel kapcsolatos információkat.  
+ 
+  - Az *Engedélyezés* funkció letiltja a felhasználókat és az alkalmazásokat a veszélyes tartományokhoz való csatlakozáshoz.  
+  - A *vizsgálati mód* nem blokkolja a felhasználókat és az alkalmazásokat a veszélyes tartományokhoz való csatlakozáshoz.  
+
+  Ha a *felhasználó által definiált*értékre van állítva, a felhasználók és az alkalmazások nem blokkolják a veszélyes tartományokhoz való kapcsolódást, és a kapcsolatok információi nem érhetők el a Windows Defender Security Centerban.  
+
+  **Alapértelmezett**: naplózási mód
+
+- **SmartScreen megkövetelése a Microsoft Edge-hez**  
+  [Böngésző/AllowSmartScreen](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowsmartscreen) – a Microsoft Edge a Windows Defender SmartScreen (bekapcsolt) használatával védi a felhasználókat a lehetséges adathalászat-csalások és kártevő szoftverek alapértelmezés szerint. Alapértelmezés szerint ez a házirend engedélyezve van (az *Igen*értékre van állítva), és ha engedélyezve van, megakadályozza, hogy a felhasználók kikapcsolják a Windows Defender SmartScreen szolgáltatást.  Ha az eszközre vonatkozó érvényes házirend nincs konfigurálva, a felhasználók kikapcsolhatják a Windows Defender SmartScreen szolgáltatását, amely nem gondoskodik az eszköz védelem nélküli állapotáról.  
+
+  **Alapértelmezett**: igen
+  
+- **Rosszindulatú hely elérésének letiltása**  
+  [Böngésző/PreventSmartScreenPromptOverride](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverride) – alapértelmezés szerint a Microsoft Edge lehetővé teszi, hogy a felhasználók megkerüljék (figyelmen kívül hagyják) a Windows Defender SmartScreen figyelmeztetéseit az esetlegesen kártékony helyekről, így a felhasználók továbbra is elérhetik a webhelyet. Ha ez a szabályzat engedélyezve van (az *Igen*értékre van állítva), a Microsoft Edge megakadályozza, hogy a felhasználók megkerüljék a figyelmeztetéseket, és blokkolja azokat a helyről.  
+
+  **Alapértelmezett**: igen
+
+- **Nem ellenőrzött fájlok letöltésének tiltása**  
+  [Böngésző/PreventSmartScreenPromptOverrideForFiles](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverrideforfiles) – alapértelmezés szerint a Microsoft Edge lehetővé teszi, hogy a felhasználók megkerüljék (figyelmen kívül hagyják) a Windows Defender SmartScreen figyelmeztetéseit az esetlegesen kártékony fájlokról, így továbbra is letöltheti a nem ellenőrzött fájlokat. Ha ez a szabályzat engedélyezve van (az *Igen*értékre van állítva), a felhasználók nem hagyhatják figyelmen kívül a figyelmeztetéseket, és nem tölthetik le a nem ellenőrzött fájlokat.  
+
+  **Alapértelmezett**: igen
 
 ## <a name="windows-hello-for-business"></a>Vállalati Windows Hello  
 

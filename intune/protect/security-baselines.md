@@ -16,12 +16,12 @@ ms.reviewer: joglocke
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b89de9a1eb5f3b9884d20beb6f3582370c4061fb
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 9df7f5a34313d55b460bf6d8492b0790b1424d2f
+ms.sourcegitcommit: 5932da3ed8f52c7b0f0d71c1801f81c85952cf0c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72504181"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72923360"
 ---
 # <a name="use-security-baselines-to-configure-windows-10-devices-in-intune"></a>Biztonsági alapkonfigurációk használata a Windows 10-es eszközök Intune-ban való konfigurálásához
 
@@ -80,7 +80,7 @@ Az Intune-nal az alábbi biztonsági alapkonfigurációk használhatók. A hivat
 
 - **A Microsoft Defender ATP alapterve**  
   (Ennek az alapkonfigurációnak a *használatához a környezetnek meg kell felelnie a [Microsoft Defender komplex veszélyforrások elleni védelem](advanced-threat-protection.md#prerequisites)használatának előfeltételeinek*.
-  - [Előzetes verzió: a Microsoft Defender ATP alapterve](security-baseline-settings-defender-atp.md)  
+  - [A Microsoft Defender ATP alapterve](security-baseline-settings-defender-atp.md)  
 
   > [!NOTE]
   > A Microsoft Defender ATP biztonsági alapterve fizikai eszközökre van optimalizálva, és jelenleg nem ajánlott virtuális gépeken (VM) vagy VDI-végpontokon használni. Bizonyos alapbeállítások befolyásolhatják a távoli interaktív munkameneteket a virtualizált környezetekben.  További információ: a [Microsoft DEFENDER ATP biztonsági alapkonfigurációjának nagyobb megfelelősége](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-machines-security-baseline) a Windows dokumentációjában.
@@ -103,7 +103,7 @@ A biztonsági alapkonfigurációkkal végzett munka gyakori feladatai a követke
 
 ### <a name="create-the-profile"></a>A profil létrehozása
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, majd válassza az **eszköz biztonsági**@no__t – 2**biztonsági** alapkonfigurációk lehetőséget az elérhető alaptervek listájának megtekintéséhez.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, majd válassza az **eszköz biztonsági** > **biztonsági** alapkonfigurációk lehetőséget az elérhető alaptervek listájának megtekintéséhez.
 
 
     ![Válassza ki a konfigurálni kívánt biztonsági alaptervet](./media/security-baselines/available-baselines.png)
@@ -161,7 +161,7 @@ A mentés után a rendszer azonnal újratelepíti az alaptervet a hozzárendelt 
 
 #### <a name="to-change-the-baseline-version-for-a-profile"></a>Profil alapverziójának módosítása  
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, majd válassza az **eszköz biztonsági**@no__t – 2**biztonsági**alapkonfigurációk lehetőséget, majd válassza ki a módosítani kívánt profilt tartalmazó alapkonfiguráció csempéjét.  
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, majd válassza az **eszköz biztonsági** > **biztonsági**alapkonfigurációk lehetőséget, majd válassza ki a módosítani kívánt profilt tartalmazó alapkonfiguráció csempéjét.  
 
 2. Ezután válassza a **profilok**lehetőséget, majd jelölje be a szerkeszteni kívánt profilhoz tartozó jelölőnégyzetet, majd válassza a **verzió módosítása**lehetőséget.  
 

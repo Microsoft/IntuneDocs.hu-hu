@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 10/17/2019
+ms.date: 10/24/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d1d83a77d8823a05accaf1c88b57f6e380636469
-ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
+ms.openlocfilehash: ec6009096ac6ed39c8a217f8832661a575d83b78
+ms.sourcegitcommit: 4f979ba7030e72d820113fe23ac8521ddb2433bd
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72585384"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72915705"
 ---
 # <a name="android-enterprise-device-settings-to-allow-or-restrict-features-using-intune"></a>Az androidos vállalati eszközbeállítások az Intune-t használó szolgáltatások engedélyezéséhez vagy korlátozásához
 
@@ -185,7 +185,7 @@ Teljes **képernyős mód**: válassza ki, hogy az eszköz futtat-e egy alkalmaz
     - **Szükséges nagybetűk száma**: Itt adhatja meg, hogy hány nagybetűt kell tartalmaznia a jelszónak 0 és 16 karakter között.
     - **Nem szükséges karakterek száma**: Itt adhatja meg, hogy a jelszónak hány karakterből kell állnia (az ábécében szereplő betűk kivételével), 0 és 16 karakter között kell lennie.
     - **Szükséges numerikus karakterek száma**: adja meg a numerikus karakterek számát (`1`, `2`, `3` stb.) a jelszónak 0 és 16 karakter közöttinek kell lennie.
-    - **Szükséges karakterek száma**: Itt adhatja meg, hogy hány szimbólumot kell megadni (`&`, `#`, `%` stb.) a jelszónak 0 és 16 karakter közöttinek kell lennie.
+    - **Szükséges karakterek száma**: Itt adhatja meg, hogy hány szimbólumot kell megadni (`&`, `#`, `%`stb.) a jelszónak 0 és 16 karakter közöttinek kell lennie.
 
 - A **jelszó lejárati idejét jelző napok száma**: adja meg a napok számát 1-365 között, amíg meg nem változtatja az eszköz jelszavát. Ha például a 60 nap után szeretné módosítani a jelszót, írja be `60` értéket. A jelszó lejáratakor a rendszer a felhasználókat új jelszó létrehozására kéri.
 - A jelszó megadásához **szükséges jelszavak száma**: adja meg, hogy hány legutóbbi jelszó ne legyen újra felhasználható, 1-24 között. Ezzel a beállítással korlátozhatja, hogy a felhasználó korábban használt jelszavakat hozzon létre.
@@ -193,7 +193,8 @@ Teljes **képernyős mód**: válassza ki, hogy az eszköz futtat-e egy alkalmaz
 
 ### <a name="power-settings"></a>Energiaellátási beállítások
 
-- **A képernyő zárolásáig eltelt idő**: Adja meg, mennyi tétlenség után legyen az eszköz zárolva.
+- **Zárolási idő**: Itt adhatja meg, hogy a felhasználó legfeljebb Mikor állíthatja be az eszköz zárolását. Ha például **10 percre**állítja be ezt a beállítást, a felhasználók 15 másodperctől akár 10 percig is megadhatják az időpontot. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem szabályozza ezt a beállítást.
+
 - **Bekapcsolt képernyő, amikor az eszköz áramforráshoz van csatlakoztatva**: Válassza ki, mely áramforrások csatlakoztatásakor maradjon bekapcsolva az eszköz képernyője.
 
 ### <a name="users-and-accounts-settings"></a>Felhasználói és fiókbeállítások

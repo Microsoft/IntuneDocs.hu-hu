@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2be1faa1296792d3d40de5ca0b304a287bae8e6f
-ms.sourcegitcommit: 9a2ddcec73b37a118908b63d8e5252835f257618
+ms.openlocfilehash: eb992747765ea087d5ef536c2da7c444bfa2d987
+ms.sourcegitcommit: 4f979ba7030e72d820113fe23ac8521ddb2433bd
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72550822"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72915727"
 ---
 # <a name="use-and-manage-android-enterprise-devices-with-oemconfig-in-microsoft-intune"></a>Androidos nagyvállalati eszközök használata és kezelése a OEMConfig-ben Microsoft Intune
 
@@ -66,7 +66,7 @@ A OEMConfig eszközön való használatához győződjön meg arról, hogy rende
 
 - Az Intune-ban regisztrált androidos vállalati eszköz.
 - Az OEM által készített OEMConfig-alkalmazás, amelyet a Google Play áruházba töltöttek fel. Ha nem a Google Play áruházban van, további információért forduljon az OEM-hez.
-- Az Intune rendszergazdája szerepköralapú hozzáférés-vezérlési (RBAC) engedélyekkel rendelkezik a **Mobile apps** és a **DeviceConfigurations**számára. Ezek az engedélyek azért szükségesek, mert a OEMConfig-profilok felügyelt alkalmazás-konfigurációkat használnak az eszközök konfigurációjának kezeléséhez.
+- Az Intune rendszergazdája szerepköralapú hozzáférés-vezérlési (RBAC) engedélyekkel rendelkezik a mobileszközök és az **eszközök konfigurálásához**, valamint az **Android for Work** **alkalmazásban**az "olvasás" engedélyre. Ezek az engedélyek azért szükségesek, mert a OEMConfig-profilok felügyelt alkalmazás-konfigurációkat használnak az eszközök konfigurációjának kezeléséhez.
 
 ## <a name="prepare-the-oemconfig-app"></a>A OEMConfig alkalmazás előkészítése
 

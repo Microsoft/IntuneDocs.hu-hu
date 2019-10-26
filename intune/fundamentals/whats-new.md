@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 10/18/2019
+ms.date: 10/23/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a085cbe1337ecfd104d858e78d452e8a4f66105d
-ms.sourcegitcommit: 5807f4db4a45a093ce2fd6cb0c480bec384ec1ff
+ms.openlocfilehash: 5e88aa93e3b3e21f16271049f66bbdc4b927383b
+ms.sourcegitcommit: 4f979ba7030e72d820113fe23ac8521ddb2433bd
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/19/2019
-ms.locfileid: "72601559"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72915801"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -56,6 +56,43 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 
 <!-- ########################## -->
 
+## <a name="week-of-october-21-2019"></a>2019. október 21-i hét
+
+### <a name="microsoft-365-device-management"></a>Eszközkezelés Microsoft 365
+
+#### <a name="improved-administration-experience-in-microsoft-365-device-management"></a>Továbbfejlesztett adminisztrációs élmény az Microsoft 365-eszközök felügyeletében
+
+Mostantól általánosan elérhető a frissített és áramvonalas felügyeleti felület a Microsoft 365 Eszközkezelő Specialist munkaterületen a [https://devicemanagement.microsoft.com on ](https://devicemanagement.microsoft.com), beleértve a következőket:
+
+- **Frissített navigáció**: egy egyszerűsített, első szintű navigációt talál, amely logikailag csoportosítja a szolgáltatásokat.
+- **Új platform szűrők**: egyetlen platformot választhat ki, amely csak a kiválasztott platformhoz tartozó szabályzatokat és alkalmazásokat jeleníti meg az eszközök és alkalmazások oldalain.
+- **Új Kezdőlap**: gyorsan megtekintheti a szolgáltatás állapotát, a bérlőt, a híreket stb. az új kezdőlapon.
+
+További információ ezekről a fejlesztésekről: [Enterprise Mobility + Security blogbejegyzés](https://go.microsoft.com/fwlink/?linkid=2109094) a Microsoft technikai Közösség webhelyén.
+
+### <a name="app-management"></a>Alkalmazáskezelés
+
+#### <a name="add-mobile-threat-defense-apps-to-unenrolled-devices----3005337---"></a>Mobile Threat Defense-alkalmazások hozzáadása a nem regisztrált eszközökhöz <!-- 3005337 -->
+Létrehozhat egy Intune app Protection-szabályzatot, amely letilthatja vagy szelektíven törölheti a felhasználók vállalati adatait az eszköz állapota alapján. Az eszköz állapota a kiválasztott Mobile Threat Defense-(MTD-) megoldás használatával van meghatározva. Ez a funkció ma már az Intune-ban regisztrált eszközökön van, eszköz-megfelelőségi beállításként. Ezzel az új funkcióval kiterjesztjük a fenyegetések észlelését egy Mobile Threat Defense-gyártótól a nem regisztrált eszközökön való működéshez. További információ: [a Mobile Threat Defense-alkalmazás védelmi szabályzatának létrehozása az Intune](~/protect/mtd-app-protection-policy.md)-nal.
+
+### <a name="device-configuration"></a>Eszközök konfigurálása
+
+#### <a name="new-device-firmware-configuration-interface-profile-for-windows-10-and-later-devices----2266073----"></a>Új eszköz belső vezérlőprogram-konfigurációs felületének profilja a Windows 10 és újabb rendszerű eszközökhöz <!-- 2266073  -->
+
+Windows 10 és újabb rendszereken létrehozhat egy eszköz-konfigurációs profilt a beállítások és szolgáltatások vezérléséhez (**eszköz konfigurációja** > **profilok** > **profil létrehozása** > **Windows 10 és újabb verziók** a platformhoz). Ebben a frissítésben egy új, az eszköz belső vezérlőprogram-konfigurációs felületének profilja van, amely lehetővé teszi az Intune számára az UEFI-(BIOS-) beállítások kezelését. Ennek a funkciónak a bevezetési folyamata minden ügyfelünk számára folyamatban van, és a következő hét végére várhatóan elvégezhető.
+
+A szolgáltatással kapcsolatos további információkért lásd: [DFCI-profilok használata Windows-eszközökön Microsoft Intune](../configuration/device-firmware-configuration-interface-windows.md).
+
+A következőkre vonatkozik:
+- Windows 10 RS5 (1809) és újabb támogatott belső vezérlőprogram
+
+### <a name="device-enrollment"></a>Eszközök beléptetése
+
+#### <a name="toggle-to-only-show-enrollment-status-page-on-devices-provisioned-by-out-of-box-experience-oobe---3959566--"></a>Váltás csak a regisztrációs állapot megjelenítése lapra a beépített felhasználói felülettel (OOBE) kiépített eszközökön <!--3959566-->
+Most úgy is dönthet, hogy csak az Autopilot OOBE által kiépített eszközök regisztrációs állapot lapját jeleníti meg.
+
+Az új váltógomb megjelenítéséhez válassza az **Intune** > **eszközök beléptetése** > **Windows** -beléptetés > **regisztráció állapota lap** > **profil létrehozása** > **Beállítások** > **csak a kezdőélmény (OOBE) használatával kiépített lapok megjelenítése az eszközökön**.
+
 ## <a name="week-of-october-14-2019"></a>2019. október 14-i hét
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
@@ -65,7 +102,12 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 Az Android Enterprise munkahelyi profil, dedikált és teljes körűen felügyelt eszközökön elérhető alkalmazások telepítésének megtekintheti az alkalmazások telepítési állapotát, valamint a felügyelt Google Play-alkalmazások telepített verzióját. További információ: [az alkalmazás-védelmi szabályzatok figyelése](~/apps/app-protection-policies-monitor.md), [androidos munkahelyi profilú eszközök kezelése az Intune](~/enrollment/android-enterprise-overview.md) -nal és a [felügyelt Google Play-alkalmazás típusa](~/apps/apps-add-android-for-work.md#managed-google-play-app-types).
 
 #### <a name="microsoft-edge-version-77-and-later-for-windows-10-and-macos-public-preview----3872025-4678761----"></a>A Microsoft Edge 77-es és újabb verziói a Windows 10 és a macOS rendszerhez (nyilvános előzetes verzió) <!-- 3872025, 4678761  -->
-A Microsoft Edge 77-es és újabb verziója már elérhető a Windows 10 és macOS rendszerű számítógépeken való üzembe helyezéshez. A nyilvános előzetes verzió a Windows 10 **fejlesztési** és **bétaverziós** csatornáit, valamint a MacOS-hez készült **bétaverziót** kínálja. A központi telepítés csak angol (EN) nyelven érhető el, de a végfelhasználók a **beállítások**  > **nyelvek**területen módosíthatják a böngésző megjelenítési nyelvét. A Microsoft Edge egy, a rendszerkörnyezetben és hasonló architektúrákban telepített Win32-alkalmazás (x86-OS és x64-es OS-es x64-es alkalmazás). Emellett a böngésző automatikus frissítései alapértelmezés szerint be vannak **kapcsolva** , és a Microsoft Edge nem távolítható el. További információ: a [Microsoft Edge for Windows 10 hozzáadása a Microsoft Intune](~/apps/apps-windows-edge.md) és a [Microsoft Edge dokumentációhoz](https://go.microsoft.com/fwlink/?linkid=2103823).
+A Microsoft Edge 77-es és újabb verziói elérhetők lesznek a Windows 10 és macOS rendszerű számítógépeken való üzembe helyezéshez. 
+
+>[!NOTE]
+>A szolgáltatás bevezetését a hónap későbbi részében késleltették.
+
+A nyilvános előzetes verzió a Windows 10 **fejlesztési** és **bétaverziós** csatornáit, valamint a MacOS-hez készült **bétaverziót** kínálja. A központi telepítés csak angol (EN) nyelven érhető el, de a végfelhasználók a **beállítások**  > **nyelvek**területen módosíthatják a böngésző megjelenítési nyelvét. A Microsoft Edge egy, a rendszerkörnyezetben és hasonló architektúrákban telepített Win32-alkalmazás (x86-OS és x64-es OS-es x64-es alkalmazás). Emellett a böngésző automatikus frissítései alapértelmezés szerint be vannak **kapcsolva** , és a Microsoft Edge nem távolítható el. További információ: a [Microsoft Edge for Windows 10 hozzáadása a Microsoft Intune](~/apps/apps-windows-edge.md) és a [Microsoft Edge dokumentációhoz](https://go.microsoft.com/fwlink/?linkid=2103823).
 
 #### <a name="update-to-app-protection-ui-and-ios-app-provisioning-ui----4102027-4102029-----"></a>Az App Protection felhasználói felületének és az iOS-alkalmazások kiépítési felhasználói felületének frissítése <!-- 4102027, 4102029   -->
 Az alkalmazás-védelmi szabályzatok létrehozásához és szerkesztéséhez, valamint az iOS-alkalmazások létesítési profiljaihoz az Intune-ban frissült a felhasználói felület. A felhasználói felület változásai a következők:
@@ -157,18 +199,12 @@ A következőkre vonatkozik:
 Az Intune-eszközök típusának korlátozásai segítségével megadhatja, hogy mely felhasználói eszközök fogják használni az Android Enterprise munkahelyi profil regisztrációját vagy az Android-eszközök rendszergazdai regisztrációját.  További információkért lásd a [regisztrációs korlátozások beállítása](../enrollment/enrollment-restrictions-set.md)című témakört.
 
 #### <a name="windows-autopilot-deployment-reports----3856172---"></a>A Windows Autopilot üzembe helyezési jelentései <!-- 3856172 -->
-Egy új jelentés a Windows Autopilot szolgáltatáson keresztül üzembe helyezett összes eszközt részletezi. További információ: [Autopilot Deployment Report](../enrollment/enrollment-autopilot.md#autopilot-deployments-report).
+Egy új jelentés a Windows Autopilot szolgáltatáson keresztül üzembe helyezett összes eszközt részletezi. További információ: [Autopilot Deployment Report](../enrollment/enrollment-autopilot.md#autopilot-deployments-report). Ennek a funkciónak a bevezetési folyamata minden ügyfelünk számára folyamatban van, és a következő hét végére várhatóan elvégezhető.
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
 ### <a name="device-management"></a>Eszközkezelés
 
-#### <a name="edit-device-name-value-for-autopilot-devices---4816775----"></a>Az Autopilot-eszközökhöz tartozó eszköznév értékének szerkesztése<!-- 4816775  -->
-Az Azure AD-hez csatlakoztatott Autopilot-eszközök eszköznév értéke szerkeszthető.  További információ: az [Autopilot-eszköz attribútumainak szerkesztése](../enrollment/enrollment-autopilot.md#edit-autopilot-device-attributes).
-
-#### <a name="edit-group-tag-value-for-autopilot-devices---4816775----"></a>Az Autopilot-eszközökhöz tartozó címke értékének szerkesztése<!-- 4816775  -->
-Az Autopilot-eszközöknél szerkesztheti a csoport címke értékét. További információ: az [Autopilot-eszköz attribútumainak szerkesztése](../enrollment/enrollment-autopilot.md#edit-autopilot-device-attributes).
-
-#### <a name="new-restrictions-for-renaming-windows-devices----2640074----"></a>Új korlátozások a Windows-eszközök átnevezéséhez <!-- 2640074  -->
+#### <a name="new-restrictions-for-renaming-windows-devices----3478938----"></a>Új korlátozások a Windows-eszközök átnevezéséhez <!-- 3478938  -->
 Egy Windows-eszköz átnevezése során új szabályokat kell követnie:
 - legfeljebb 15 karakter (63 bájtnál kisebbnek vagy azzal egyenlőnek kell lennie, a záró NULL értékkel nem együtt)
 - Nem null vagy üres karakterlánc
@@ -189,7 +225,7 @@ Az eszközök áttekintése oldal új jelentése megjeleníti, hogy hány Androi
 #### <a name="pkcs-certificates-for-macos-----1333650---------"></a>PKCS-tanúsítványok macOS rendszerhez  <!-- 1333650       -->
 Mostantól [HASZNÁLHAT PKCS-tanúsítványokat MacOS használatával](../protect/certficates-pfx-configure.md#create-a-pkcs-certificate-profile). A PKCS-tanúsítványt a macOS-profil típusaként kiválaszthatja, és olyan felhasználói és eszköz-tanúsítványokat telepíthet, amelyek [testreszabott tulajdonosi és tulajdonosi alternatív név mezőket](../protect/certficates-pfx-configure.md#subject-name-format-for-macos)tartalmazhatnak.  
 
-A macOS-hez készült PCKS-tanúsítvány egy új beállítást is támogat, _lehetővé téve az összes alkalmazás elérését_. Ezzel a beállítással engedélyezheti, hogy az összes társított alkalmazás hozzáférhessen a tanúsítvány titkos kulcsához.  A beállítással kapcsolatos további információkért tekintse meg az Apple dokumentációját https://developer.apple.com/business/documentation/Configuration-Profile-Reference.pdf címen.
+A macOS-hez készült PKCS-tanúsítvány egy új beállítást is támogat, _lehetővé téve az összes alkalmazás elérését_. Ezzel a beállítással engedélyezheti, hogy az összes társított alkalmazás hozzáférhessen a tanúsítvány titkos kulcsához.  A beállítással kapcsolatos további információkért tekintse meg az Apple dokumentációját https://developer.apple.com/business/documentation/Configuration-Profile-Reference.pdf címen.
 
 ####   <a name="derived-credentials-to-provision-ios-mobile-devices-with-certificates----------1736036-1736037-1772050-2777333-----------"></a>Származtatott hitelesítő adatok a tanúsítványokkal rendelkező iOS-mobileszközök kiépítéséhez      <!--  1736036, 1736037, 1772050, 2777333         -->  
 Az Intune támogatja a [származtatott hitelesítő adatok](../protect/derived-credentials.md) hitelesítési módszerként való használatát, valamint az S/MIME-aláírást és az iOS-eszközök titkosítását. A származtatott hitelesítő adatok a *nemzeti szabványügyi és Technológiai Intézet (NIST) 800-157* standard implementációja, amely tanúsítványokat helyez üzembe az eszközökön.  
