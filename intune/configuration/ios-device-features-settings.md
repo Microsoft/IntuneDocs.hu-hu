@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 10/08/2019
+ms.date: 10/28/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3baa1972593c5d836c49905b59e9a28932329fbe
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 3325593eed83781ffcb7059a137210e126b9c175
+ms.sourcegitcommit: 259462591835f3607392aa6b179882dbac830a89
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72506739"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72980344"
 ---
 # <a name="ios-and-ipados-device-settings-to-use-common-ios-features-in-intune"></a>iOS-és iPadOS-eszközök beállításai az Intune közös iOS-funkcióinak használatához
 
@@ -266,7 +266,7 @@ Ez a funkció az alábbiakra vonatkozik:
   - **Csak meghatározott webhelyek** (csak a Safari böngésző esetében): ezek az URL-címek hozzáadódnak a Safari böngésző könyvjelzői közé. A felhasználó számára **csak** a helyek meglátogatása engedélyezett; más helyek nem nyithatók meg. Akkor célszerű ezt a lehetőséget választani, ha a felhasználók által elérhető URL-ek listája pontosan ismert.
 
     - **URL**: adja meg az engedélyezni kívánt webhely URL-címét. Például írja be a következőt: `https://www.contoso.com`.
-    - **Könyvjelző elérési útja**: adja meg a könyvjelző tárolásának elérési útját. Például írja be a következőt: `/Contoso/Business Apps`. Ha nem adja meg az elérési utat, a könyvjelző az eszköz alapértelmezett könyvjelzőmappájába kerül.
+    - **Könyvjelző elérési útja**: az Apple módosította ezt a beállítást. Minden könyvjelző bekerül a **jóváhagyott helyek** mappába. A könyvjelzők nem jelennek meg a beírt könyvjelző elérési útjában.
     - **Title**: adjon meg egy leíró címet a könyvjelző számára.
 
     Ha nem ad meg URL-címet, a végfelhasználók nem férhetnek hozzá a webhelyekhez, kivéve `microsoft.com`, `microsoft.net` és `apple.com`. Az Intune automatikusan engedélyezi ezeket az URL-címeket.

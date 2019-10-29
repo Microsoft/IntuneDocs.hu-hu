@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/27/2019
+ms.date: 10/24/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 62a3f9ee2cec41f14e450158ab8ad02e1a3a2ea2
-ms.sourcegitcommit: 06a1fe83fd95c9773c011690e8520733e1c031e3
+ms.openlocfilehash: 882c542d6a1d981b9924bb33eee40f03b41689f7
+ms.sourcegitcommit: 4bf23327af734a9811d555fbd566c31239e2acd6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72785690"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "72999476"
 ---
 # <a name="selectively-wipe-data-using-app-protection-policy-conditional-launch-actions-in-intune"></a>Adatok szelektív törlése az App Protection-szabályzat feltételes indítási műveleteivel az Intune-ban
 
@@ -84,8 +84,11 @@ Android rendszeren a következő beállításokhoz konfigurálhat műveleteket a
 - Minimális javításverzió
 - Eszközgyártó(k)
 - Biztonság-eszköz igazolása
-- Alkalmazások fenyegetettségvizsgálata
+- Veszélyforrások vizsgálatának megkövetelése az alkalmazásokban
+- Minimális Céges portál verzió
 - Az eszköz maximálisan engedélyezett veszélyforrása
+
+A **minimális céges portál verzió**használatával megadhatja a végfelhasználói eszközön kényszerített céges portál adott minimálisan meghatározott verzióját. Ez a feltételes indítási beállítás lehetővé teszi az értékek megadását a **hozzáférés letiltásához**, az **adatok törléséhez**és a **Figyelmeztetés** lehetséges műveletekhez, ha az egyes értékek nem teljesülnek. Az érték lehetséges formátuma a *[Major] mintázatot követi. [ Minor]* , *[főverzió]. [ Alverzió]. [Build]* vagy *[főverzió]. [ Alverzió]. [Build]. [Változat]* . Mivel előfordulhat, hogy egyes végfelhasználók nem részesítik előnyben az alkalmazások kényszerített frissítését a helyszínen, a "figyelmeztetés" beállítás ideális lehet a beállítás konfigurálásakor. Az Google Play Áruház jó munkát végez, amely csak az alkalmazások frissítéseinek különbözeti bájtjait küldi el, de ez továbbra is nagy mennyiségű adat lehet, amelyet a felhasználó esetleg nem szeretne használni, ha a frissítéskor adatokat használ. A frissítés kényszerítése és a frissített alkalmazások letöltése nem várt adatforgalmi díjat eredményezhet a frissítéskor. Ha be van állítva a **minimális céges portál verziószáma** , az hatással lesz minden olyan végfelhasználóra, aki beolvassa a céges portál és a céges portál jövőbeli verzióinak 5.0.4560.0 verzióját. Ez a beállítás nem lesz hatással a felhasználók olyan Céges portál verzióját használó felhasználóra, amely régebbi, mint a szolgáltatás által kiadott verzió. Az alkalmazás automatikus frissítéseit az eszközön használó végfelhasználók valószínűleg nem fogják látni a szolgáltatásból származó párbeszédpaneleket, mivel azok valószínűleg a legújabb Céges portál-verziót fogják használni. Ez a beállítás csak a regisztrált és a nem regisztrált eszközökön futó alkalmazás-védelemmel rendelkező Android.
 
 Az **Eszközgyártó(k)** beállítás használatához gépelje be az Android-gyártók pontosvesszővel tagolt felsorolását. Az eszköz Android-gyártóját az eszközbeállításokban találja meg.<br>
 Példabemenet: *A gyártó;B gyártó* 

@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 07/29/2019
+ms.date: 10/25/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b9fec08511303c15a7197014fd80834d95948191
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 2bd9fe52bcaa6295d452ade59d6c3c32e1e81a67
+ms.sourcegitcommit: 4bf23327af734a9811d555fbd566c31239e2acd6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72504884"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "72999695"
 ---
 # <a name="supported-operating-systems-and-browsers-in-intune"></a>Az Intune-ban támogatott operációs rendszerek és böngészők
 
@@ -89,6 +89,15 @@ Az alábbi Samsung-modellek nem támogatják a Knoxot. Ezeket az Androidhoz kés
 ### <a name="windows-pc-software-client"></a>Windowsos számítógépeken futó szoftveres ügyfél
 
 A windowsos számítógépekre a regisztráció alternatívájaként telepítheti az [Intune szoftveres ügyfelet](../manage-windows-pcs-with-microsoft-intune.md) is. Ez a funkció csak a klasszikus Intune-portálon érhető el. Az Intune szoftveres ügyfele segítségével a Windows 7 és újabb rendszerű számítógépeket felügyelheti (kivéve a Windows 10 Home verziót).
+
+> [!Note]
+> A Microsoft bejelentette, hogy a Windows 7 támogatása január 14-én 2020-án végződik. Ezen a napon az Intune visszavonja a Windows 7 operációs rendszerű eszközök támogatását.
+
+> További információ [: az Intune-terv változásának megtervezése: a Windows 7 támogatásának megszűnése](https://docs.microsoft.com/en-us/intune/fundamentals/whats-new#intune-plan-for-change-nearing-end-of-support-for-windows-7)
+
+> A Microsoft Intune a Silverlight-alapú Intune-konzol támogatását kivonja a 2020. október 15-én. Ez a nyugdíjazás magában foglalja a Silverlight-konzol konfigurált PC-ügyfélszoftverének (más néven a PC-ügynök) befejezésének támogatását.
+
+> További információ: [a Silverlight-alapú felügyeleti konzol Microsoft Intune befejezésének támogatása](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Take-Action-Microsoft-Intune-ending-support-for-the-Silverlight/ba-p/916249)
 
 <!--  ### Exchange ActiveSync management
 

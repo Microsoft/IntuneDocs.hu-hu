@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 10/23/2019
+ms.date: 10/28/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5e88aa93e3b3e21f16271049f66bbdc4b927383b
-ms.sourcegitcommit: 4f979ba7030e72d820113fe23ac8521ddb2433bd
+ms.openlocfilehash: 8d9bbe916314d5571dccf3c073f735c6448226e6
+ms.sourcegitcommit: 4bf23327af734a9811d555fbd566c31239e2acd6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72915801"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "72999497"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -54,10 +54,33 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 -->  
 
 
-<!-- ########################## -->
+## <a name="week-of-october-28-2019"></a>2019. október 28-i hét
 
+### <a name="app-management"></a>Alkalmazáskezelés 
+
+#### <a name="dark-mode-for-ios-company-portal----4911422---"></a>Sötét mód iOS-Céges portál <!-- 4911422 -->
+A sötét mód elérhető az iOS-Céges portál számára. A felhasználók letölthetik a vállalati alkalmazásokat, kezelhetik az eszközeiket, és az eszköz beállításai alapján választhatják ki a kívánt színsémát. Az iOS-Céges portál automatikusan meg fogja egyezni a végfelhasználói eszközbeállítások sötét vagy világos módban. További információ: [sötét mód bevezetése Microsoft Intune céges portál iOS rendszerhez](https://techcommunity.microsoft.com/t5/Enterprise-Mobility-Security/Introducing-dark-mode-on-Microsoft-Intune-Company-Portal-for-iOS/ba-p/918453). További információ az iOS Céges portálről: [a Microsoft Intune céges portál alkalmazás konfigurálása](~/apps/company-portal-app.md).
+
+#### <a name="android-company-portal-enforced-minimum-app-version----2378776---"></a>Android Céges portál kényszerített alkalmazás minimális verziója <!-- 2378776 -->
+Az alkalmazás-védelmi házirend **minimális céges portál verziójának** beállításával megadhatja a végfelhasználói eszközön kényszerített céges portál adott minimálisan meghatározott verzióját. Ez a feltételes indítási beállítás lehetővé teszi a **hozzáférés letiltását**, az **adatok törlését**vagy a **Figyelmeztetés** lehetséges műveleteit, ha az érték nem teljesül. Az érték lehetséges formátuma a *[Major] mintázatot követi. [ Minor]* , *[főverzió]. [ Alverzió]. [Build]* vagy *[főverzió]. [ Alverzió]. [Build]. [Változat]* . 
+
+Ha be van állítva a **minimális céges portál verziószáma** , az hatással lesz minden olyan végfelhasználóra, aki a céges portál 5.0.4560.0 és a céges portál jövőbeli verzióit lekéri. Ez a beállítás nem lesz hatással a felhasználók olyan Céges portál verzióját használó felhasználóra, amely régebbi, mint a szolgáltatás által kiadott verzió. Az alkalmazás automatikus frissítéseit az eszközön használó végfelhasználók valószínűleg nem fogják látni a szolgáltatásból származó párbeszédpaneleket, mivel azok valószínűleg a legújabb Céges portál-verziót fogják használni. Ez a beállítás csak a regisztrált és a nem regisztrált eszközökön futó alkalmazás-védelemmel rendelkező Android. További információ: [Android-alkalmazás védelmi szabályzatának beállításai – feltételes indítás](~/apps/app-protection-policy-settings-android.md#conditional-launch).
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name="device-management"></a>Eszközkezelés 
+#### <a name="intune-supports-ios-11-and-later----4665324-idready-wnready---"></a>Az Intune támogatja az iOS 11 és újabb verziókat <!-- 4665324 idready wnready -->
+Az Intune-regisztráció és a Céges portál mostantól támogatja az iOS 11-es és újabb verzióit. A régebbi verziók nem támogatottak.
+
+### <a name="monitor-and-troubleshoot"></a>Monitorozás és hibaelhárítás
+
+#### <a name="updated-support-experience------5012398---"></a>Frissített támogatási élmény   <!-- 5012398 -->
+
+Az Intune-nal kapcsolatos [Súgó és támogatás megszerzésének](get-support.md) konzolon belüli élményét a rendszer frissíti és egyszerűsíti.  Továbbfejlesztettük a konzolon belüli keresést és visszajelzést a gyakori problémákkal kapcsolatban, valamint az ügyfélszolgálattal való kapcsolatfelvételhez használt munkafolyamatot. A támogatási problémák megnyitásakor a rendszer valós idejű becsléseket fog kapni a visszahívási vagy e-mail-válaszhoz, és a Premier és az egységes támogatással rendelkező ügyfelek egyszerűen meghatározhatják a probléma súlyosságát, így gyorsabban kaphatnak támogatást.
+
+<!-- ########################## -->
 ## <a name="week-of-october-21-2019"></a>2019. október 21-i hét
 
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
 ### <a name="microsoft-365-device-management"></a>Eszközkezelés Microsoft 365
 
 #### <a name="improved-administration-experience-in-microsoft-365-device-management"></a>Továbbfejlesztett adminisztrációs élmény az Microsoft 365-eszközök felügyeletében
@@ -70,10 +93,11 @@ Mostantól általánosan elérhető a frissített és áramvonalas felügyeleti 
 
 További információ ezekről a fejlesztésekről: [Enterprise Mobility + Security blogbejegyzés](https://go.microsoft.com/fwlink/?linkid=2109094) a Microsoft technikai Közösség webhelyén.
 
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
 ### <a name="app-management"></a>Alkalmazáskezelés
 
 #### <a name="add-mobile-threat-defense-apps-to-unenrolled-devices----3005337---"></a>Mobile Threat Defense-alkalmazások hozzáadása a nem regisztrált eszközökhöz <!-- 3005337 -->
-Létrehozhat egy Intune app Protection-szabályzatot, amely letilthatja vagy szelektíven törölheti a felhasználók vállalati adatait az eszköz állapota alapján. Az eszköz állapota a kiválasztott Mobile Threat Defense-(MTD-) megoldás használatával van meghatározva. Ez a funkció ma már az Intune-ban regisztrált eszközökön van, eszköz-megfelelőségi beállításként. Ezzel az új funkcióval kiterjesztjük a fenyegetések észlelését egy Mobile Threat Defense-gyártótól a nem regisztrált eszközökön való működéshez. További információ: [a Mobile Threat Defense-alkalmazás védelmi szabályzatának létrehozása az Intune](~/protect/mtd-app-protection-policy.md)-nal.
+Létrehozhat egy Intune app Protection-szabályzatot, amely letilthatja vagy szelektíven törölheti a felhasználók vállalati adatait az eszköz állapota alapján. Az eszköz állapota a kiválasztott Mobile Threat Defense-(MTD-) megoldás használatával van meghatározva. Ez a funkció ma már az Intune-ban regisztrált eszközökön van, eszköz-megfelelőségi beállításként. Ezzel az új funkcióval kiterjesztjük a fenyegetések észlelését egy Mobile Threat Defense-gyártótól a nem regisztrált eszközökön való működéshez. Android rendszeren a szolgáltatáshoz a legújabb Céges portál van szükség az eszközön. IOS rendszeren ez a funkció akkor használható, ha az alkalmazások integrálják a legújabb Intune SDK-t (v 12.0.15 +). Frissítjük az Újdonságok témakört, amikor az első alkalmazás elfogadja a legújabb Intune SDK-t. A fennmaradó alkalmazások folyamatosan elérhetővé válnak. További információ: [a Mobile Threat Defense-alkalmazás védelmi szabályzatának létrehozása az Intune](~/protect/mtd-app-protection-policy.md)-nal.
 
 ### <a name="device-configuration"></a>Eszközök konfigurálása
 
@@ -93,6 +117,8 @@ Most úgy is dönthet, hogy csak az Autopilot OOBE által kiépített eszközök
 
 Az új váltógomb megjelenítéséhez válassza az **Intune** > **eszközök beléptetése** > **Windows** -beléptetés > **regisztráció állapota lap** > **profil létrehozása** > **Beállítások** > **csak a kezdőélmény (OOBE) használatával kiépített lapok megjelenítése az eszközökön**.
 
+
+<!-- ########################## -->
 ## <a name="week-of-october-14-2019"></a>2019. október 14-i hét
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->

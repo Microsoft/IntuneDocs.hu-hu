@@ -7,14 +7,28 @@ ms.topic: include
 ms.date: 03/28/2019
 ms.author: erikje
 ms.custom: include file
-ms.openlocfilehash: 9965c6e85173ea9958182be43b6c93d9578d534f
-ms.sourcegitcommit: c2e62f1ebdf75599c8e544287123c602f0f15f2b
+ms.openlocfilehash: 599c92d0fc00f2475bb93cda884b40862eb38575
+ms.sourcegitcommit: 259462591835f3607392aa6b179882dbac830a89
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72749379"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72999454"
 ---
 Ezek a hirdetmények olyan fontos információkat tartalmaznak, amelyek segíthetnek a jövőbeli Intune-változások és-funkciók előkészítésében.
+
+### <a name="plan-for-change-the-server-side-logging-for-siri-commands-setting-will-be-removed-from-the-intune-console----5468501--"></a>Tervezze meg a változást: a "kiszolgálóoldali naplózás a Siri-parancsokhoz" beállítás el lesz távolítva az Intune-konzolról <!-- 5468501-->
+
+Azt tervezzük, hogy a "kiszolgálóoldali naplózás a Siri-parancsokhoz" beállítást az Intune-konzolon az Intune szolgáltatás novemberi frissítésével távolítjuk el. Ez a módosítás úgy igazodik az Apple-hez, hogy már eltávolította a beállítást a saját oldalán.
+
+#### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
+Ha a novemberi frissítés vagy a 1911 november közepétől kikerül, láthatja, hogy ez a beállítás el lett távolítva az iOS-es konfigurációs profilokhoz tartozó eszközök korlátozási menüjéből (beépített alkalmazások) az Intune-konzolon. Ez megjelenhet a szabályzatokban és a célként megadott eszköz felügyeleti profiljában, de a beállítás nincs hatással az eszközre. A funkcionalitást nem vesszük számításba, mivel jelenleg nem működik az eszközökön, még akkor is, ha azt a felügyeleti profilban látja.
+
+A két útvonal egyikét választhatja:
+- Ha törölni szeretné ezt a beállítást a szabályzatokból, lépjen a beállítással rendelkező profilra, végezze el a másodlagos szerkesztést, és mentse a szabályzatot. A házirend újraszámítja a háttérbeli beállításokat, és a rendszer törli a beállítást a szabályzatból.
+- Ha úgy dönt, hogy nem kívánja végrehajtani ezt a műveletet, a végfelhasználók ezt a beállítást fogják látni az eszköz felügyeleti profiljában, de a beállítás nem lesz hatással.
+
+#### <a name="what-can-i-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
+A fenti szakasz vagy a szabályzat megtartása szerint is végrehajthat műveleteket. A változás kidobásakor az Újdonságok oldalát és dokumentációját fogjuk frissíteni.
 
 ### <a name="end-of-support-for-legacy-pc-management"></a>A régi számítógép-felügyelet támogatásának vége
 
