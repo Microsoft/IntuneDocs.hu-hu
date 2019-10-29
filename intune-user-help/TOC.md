@@ -6,7 +6,9 @@
 
 ## [Eszközjelszóra vonatkozó követelmények](password-does-not-meet-it-administrator-requirements.md)
 
-## [Bejelentkezés a céges portálra](sign-in-to-the-company-portal.md)
+## [Bejelentkezés a céges portálra](sign-in-to-the-company-portal.md)  
+
+## [Mobile Threat Defense-alkalmazás telepítése](set-up-mobile-threat-defense.md)  
 
 ## Android-eszköz használata
 ### [Miért kell regisztrálni az Android-eszközt](why-enroll-android-device.md)
