@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aecbcd91eef668ba2a92acfc9b42e6c68df3672a
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 34a4c8adeef7e8b28c90ad38579f0f9ac7c4784d
+ms.sourcegitcommit: 807ab3e35f4d9ffa18655410b7d61e5e772ab348
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72509433"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73057527"
 ---
 # <a name="enable-lost-mode-on-ios-devices-with-intune"></a>Az Elveszett eszköz mód bekapcsolása egy iOS-eszközön az Intune-nal
 
@@ -43,8 +43,10 @@ Ez a funkció nem támogatott a következő rendszereken:
 
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Válassza az **Eszközök**, majd a **Minden eszköz** lehetőséget.
-4. A felügyelt eszközök listájából válasszon ki egy iOS-eszközt, és válassza a **...További** lehetőséget. Majd válassza az **Elveszett eszköz** távoli műveletet.
-5. Az **Elveszett eszköz** területen aktiválja a funkciót. Ezután írja be a megjelenítendő üzenetet, és adjon meg egy kapcsolatfelvételi telefonszámot.
+4. A felügyelt eszközök listájából válassza ki az iOS-eszközt, majd válassza az **elveszett módot (csak felügyelt**eszköz esetén).
+5. Az **elveszett mód**területen válassza az **Engedélyezés**lehetőséget.
+6. A **zárolási képernyőn megjelenítendő üzenetben**írja be az eszköz zárolási képernyőjén megjelenítendő üzenetet.
+7. Szükség esetén megadhat egy telefonszámot a **megjelenítendő** telefonszám mezőben.
 6. A módosítások mentéséhez válassza az **OK** gombot.
 
 Az Elveszett eszköz mód engedélye teljesen letiltja az eszköz használatát. A végfelhasználó az Elveszett eszköz mód kikapcsolásáig nem tud hozzáférni az eszközhöz. Ha az Elveszett eszköz mód engedélyezve van, az [Eszköz megkeresése](device-locate.md) művelettel meghatározhatja az eszköz földrajzi helyét.

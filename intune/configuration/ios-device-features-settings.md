@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3325593eed83781ffcb7059a137210e126b9c175
-ms.sourcegitcommit: 259462591835f3607392aa6b179882dbac830a89
+ms.openlocfilehash: e3e0ea523d71ff036f1f23c9436c65e105328d8b
+ms.sourcegitcommit: 807ab3e35f4d9ffa18655410b7d61e5e772ab348
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72980344"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73057644"
 ---
 # <a name="ios-and-ipados-device-settings-to-use-common-ios-features-in-intune"></a>iOS-és iPadOS-eszközök beállításai az Intune közös iOS-funkcióinak használatához
 
@@ -280,7 +280,7 @@ Ez a funkció az alábbiakra vonatkozik:
 
 ### <a name="settings-apply-to-all-enrollment-types"></a>A beállítások a következőre vonatkoznak: minden regisztrációs típus
 
-- **Egyszeri bejelentkezéses alkalmazás bővítményének típusa**: válassza ki a hitelesítő adatok egyszeri bejelentkezéses alkalmazás-bővítményének típusát. Az SSO app Extension-profil mentésekor nem módosítható az egyszeri bejelentkezéses alkalmazás bővítményének típusa. A választható lehetőségek:
+- **Egyszeri bejelentkezéses alkalmazás bővítményének típusa**: válassza ki a hitelesítő adatok egyszeri bejelentkezéses alkalmazás-bővítményének típusát. A választható lehetőségek:
 
   - **Nincs konfigurálva**: az alkalmazás-bővítmények nem használatosak. Az alkalmazás-bővítmény letiltásához átválthatja az SSO-alkalmazás kiterjesztésének típusát a **Kerberos** vagy a **hitelesítő adatok** között, hogy **ne legyen konfigurálva**.
   - **Hitelesítő adatok**: általános, testreszabható hitelesítőadat-alkalmazási bővítmény használata az egyszeri bejelentkezés végrehajtásához. Győződjön meg arról, hogy ismeri a szervezet SSO-alkalmazásának bővítmény-AZONOSÍTÓját.

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8d9bbe916314d5571dccf3c073f735c6448226e6
-ms.sourcegitcommit: 4bf23327af734a9811d555fbd566c31239e2acd6
+ms.openlocfilehash: 0faa7c7ec70ce7647a6a91ae732d8b15878964b7
+ms.sourcegitcommit: 807ab3e35f4d9ffa18655410b7d61e5e772ab348
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "72999497"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73057623"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -67,8 +67,27 @@ Az alkalmazás-védelmi házirend **minimális céges portál verziójának** be
 Ha be van állítva a **minimális céges portál verziószáma** , az hatással lesz minden olyan végfelhasználóra, aki a céges portál 5.0.4560.0 és a céges portál jövőbeli verzióit lekéri. Ez a beállítás nem lesz hatással a felhasználók olyan Céges portál verzióját használó felhasználóra, amely régebbi, mint a szolgáltatás által kiadott verzió. Az alkalmazás automatikus frissítéseit az eszközön használó végfelhasználók valószínűleg nem fogják látni a szolgáltatásból származó párbeszédpaneleket, mivel azok valószínűleg a legújabb Céges portál-verziót fogják használni. Ez a beállítás csak a regisztrált és a nem regisztrált eszközökön futó alkalmazás-védelemmel rendelkező Android. További információ: [Android-alkalmazás védelmi szabályzatának beállításai – feltételes indítás](~/apps/app-protection-policy-settings-android.md#conditional-launch).
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
-### <a name="device-management"></a>Eszközkezelés 
-#### <a name="intune-supports-ios-11-and-later----4665324-idready-wnready---"></a>Az Intune támogatja az iOS 11 és újabb verziókat <!-- 4665324 idready wnready -->
+
+### <a name="microsoft-365-device-management"></a>Eszközkezelés Microsoft 365
+
+#### <a name="introducing-endpoint-security-node-in-microsoft-365-device-management-------5630102---"></a>A végpont biztonsági csomópontjának bemutatása Microsoft 365-eszközkezelés    <!-- 5630102 -->
+
+A **végponti biztonsági** csomópont mostantól általánosan elérhető Microsoft 365 Eszközkezelő Specialist munkaterületen a https://devicemanagement.microsoft.com , amely a végpontok biztonságossá tételeit csoportosítja, például:
+
+- Biztonsági alapkonfigurációk: előre konfigurált beállítások csoportja, amely segítséget nyújt a Microsoft által javasolt, ismert beállítások és alapértelmezett értékek alkalmazásához.
+
+- Biztonsági feladatok: kihasználhatja a Microsoft Defender ATPs Threat and sebezhetőségi felügyeletét (TVM), és az Intune-nal javíthatja a végpontok gyengeségeit.
+
+- Microsoft Defender ATP: integrált Microsoft Defender komplex veszélyforrások elleni védelem (ATP) a biztonsági rések megelőzése érdekében.
+
+Ezek a beállítások továbbra is elérhetők lesznek a többi érintett csomóponttól, például az eszközöktől, és az aktuálisan konfigurált állapot ugyanaz lesz, függetlenül attól, hogy hol férhet hozzá és engedélyezheti ezeket a funkciókat.
+
+További információ ezekről a fejlesztésekről: [Intune-ügyfél sikerének blogbejegyzése](https://aka.ms/Endpoint_security_node) a Microsoft Tech Community webhelyén.
+
+### <a name="device-management"></a>Eszközkezelés
+
+#### <a name="intune-supports-ios-11-and-later----4665324----"></a>Az Intune támogatja az iOS 11 és újabb verziókat <!-- 4665324  -->
+
 Az Intune-regisztráció és a Céges portál mostantól támogatja az iOS 11-es és újabb verzióit. A régebbi verziók nem támogatottak.
 
 ### <a name="monitor-and-troubleshoot"></a>Monitorozás és hibaelhárítás
