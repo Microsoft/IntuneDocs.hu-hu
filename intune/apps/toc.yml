@@ -78,6 +78,8 @@
               href: lob-apps-macos.md
             - name: Win32-alkalmazások kezelése
               href: apps-win32-app-management.md
+            - name: Win32-alkalmazás S módú eszközök
+              href: apps-win32-s-mode.md
         - name: Meghatározott alkalmazások hozzáadása
           items:
             - name: Vállalati portál alkalmazás
