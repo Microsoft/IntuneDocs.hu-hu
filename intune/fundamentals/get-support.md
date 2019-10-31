@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 10/28/2019
+ms.date: 10/30/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 86ea53ef2def05f622ef49fa37965d3f93d796d9
-ms.sourcegitcommit: 4bf23327af734a9811d555fbd566c31239e2acd6
+ms.openlocfilehash: 186ab336d90bf8f2b21d273dbec1ccde67fb0d87
+ms.sourcegitcommit: c38a856725993a4473ada75e669a57f75ab376f8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "72999702"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73143259"
 ---
 # <a name="how-to-get-support-for-microsoft-intune"></a>Hogyan kérhet támogatást az Intune-hoz
 
@@ -42,9 +42,16 @@ Az Intune Súgó és támogatás szolgáltatását a [Microsoft 365 Eszközkezel
 
 A *Súgó és támogatás* funkció hasonló a [Microsoft 365 felügyeleti központban](https://admin.microsoft.com/)látható élményhez, és lecseréli az előző *Súgó + támogatást*, amely az Azure egyéb szolgáltatásaira is érvényes marad.
 
-A Súgó és támogatás eléréséhez használja a következő lehetőségeket:
+### <a name="options-to-access-help-and-support"></a>A Súgó és támogatás elérésének lehetőségei 
 
-- **Eszközkezelés irányítópultja:**
+- **A Azure Portalban:**
+
+  - Válassza a **Súgó és támogatás** lehetőséget minden Intune-panelen vagy-lapon.
+
+  > [!NOTE]  
+  > Ha az Intune-példánya a nyilvános felhőben, más néven a kormányzati felhőben található, mint például a Azure Government, tekintse meg a jelen cikk későbbi, a [privát felhőhöz készült Intune-támogatás](#intune-support-for-private-cloud-for-government)című részét. Az Intune *Súgó és támogatás* felülete a következő év végéig nem érhető el a kormányzati privát felhőben.
+
+- **Az eszközkezelés irányítópultján:**
   - Miután kiválasztotta az Intune szolgáltatáshoz tartozó szolgáltatási területeket, válassza a **Súgó és támogatás**lehetőséget.
   - Az Eszközkezelő portál bármelyik csomópontján jelölje be a **?** ikonra a portál jobb felső sarkában, majd a legördülő listából válassza ki azt a szolgáltatást, amelyhez segítséget szeretne használni. A **?** az Eszközkezelő portál ikonja több szolgáltatást is támogat, és ki kell választania azt a szolgáltatást, amelyhez segítségre van szüksége.  
 
@@ -56,11 +63,7 @@ A Súgó és támogatás eléréséhez használja a következő lehetőségeket:
 
     ![A szolgáltatás megerősítése](./media/get-support/confirm-your-service-selection.png)
 
-- **A Azure Portalban:**
-  - Válassza a **Súgó és támogatás** lehetőséget minden Intune-panelen vagy-lapon.
-
-  > [!NOTE]  
-  > Ha az Intune-példánya a nyilvános felhőben, más néven a kormányzati felhőben található, mint például a Azure Government, tekintse meg a jelen cikk későbbi, a [privát felhőhöz készült Intune-támogatás](#intune-support-for-private-cloud-for-government)című részét. Az Intune *Súgó és támogatás* szolgáltatás a privát felhőben nem lesz elérhető az év későbbi részében.
+###  <a name="the-support-experience"></a>A támogatási élmény
 
   A Súgó és támogatás megnyitásakor a portálon megjelenik a **segítségre van szüksége?** ablak:
 
@@ -72,7 +75,7 @@ A Súgó és támogatás eléréséhez használja a következő lehetőségeket:
 
   *Segítségre van szüksége?* Megnyílik a *megoldások keresése* ablaktáblán. Ha azonban aktív támogatási esettel rendelkezik, megnyílik az ablak a *szolgáltatási kérelmek* ablaktáblán, ahol megtekintheti az aktív és a lezárt támogatási esetek részleteit.
 
-### <a name="find-solutions"></a>Megoldások keresése
+#### <a name="find-solutions"></a>Megoldások keresése
 
 ![Válassza a megoldások keresése panelt](./media/get-support/find-solutions.png)
 
@@ -84,7 +87,7 @@ Megadhatja például a **jelszó-szinkronizálási hibákat**. A találatok köz
 
 ![Hibaelhárítási ismeretek megtekintése](./media/get-support/troubleshooting-insights.png)
 
-### <a name="contact-support"></a>Kapcsolatfelvétel az ügyfélszolgálattal
+#### <a name="contact-support"></a>Kapcsolatfelvétel az ügyfélszolgálattal
 
 ![A kapcsolatfelvételi támogatás ablaktábla kiválasztása](./media/get-support/contact-support.png)
 
@@ -96,7 +99,7 @@ Ha segítségre van szüksége, a lehető legrészletesebben adja meg a problém
 
 A szükséges információk kitöltése után válassza a **Kapcsolatfelvétel** lehetőséget a kérelem elküldéséhez.
 
-### <a name="service-requests"></a>Szolgáltatási kérelmek
+#### <a name="service-requests"></a>Szolgáltatási kérelmek
 
 ![A szolgáltatási kérelmek panel kiválasztása](./media/get-support/service-requests.png)
 
@@ -108,7 +111,7 @@ Ha aktív támogatási esettel rendelkezik, Itt megadhatja, hogy erre a hibára 
 
 Ha elkészült egy incidens részleteinek megtekintésével, válassza a három segítségre *szoruló* párbeszédpanel ikonján megjelenő bal oldali nyilat a szolgáltatás kérése ablak tetején. A vissza nyíl visszaadja a megjelenített támogatási incidensek listáját.
 
-### <a name="premier-and-unified-support-customers"></a>Premier és Unified support-ügyfelek
+#### <a name="premier-and-unified-support-customers"></a>Premier és Unified support-ügyfelek
 
 **Premier** vagy **Unified** támogatási szerződéssel rendelkező ügyfélként megadhatja a probléma súlyosságát, és egy adott időpontra és napra vonatkozó támogatási visszahívást is ütemezhet. Ezek a beállítások akkor érhetők el, ha új problémát nyit meg vagy küld el, és amikor szerkeszt egy aktív támogatási esetet.
 
@@ -123,11 +126,25 @@ Az " **a** " súlyossági szintű vagy **kritikus fontosságú** probléma kivá
 
 ## <a name="azure-help--support-experience"></a>Azure Súgó + támogatási élmény
 
-Ha a bal oldali navigációs ablaktábla **Súgó + támogatás**elemét használja, vagy használja a **?** a Azure Portal jobb felső sarkában megnyithatja az Azure Súgó + támogatás felületét, amely különbözik az Intune Súgó és támogatás szolgáltatásával.
+A továbbiakban nem használhatja az Azure *Súgó + támogatási szolgáltatást* az Intune-nal való segítségnyújtásra, kivéve, ha az előfizetése egy privát felhőben van a kormányzat számára.
+Ha az Intune-példány nem fut a kormányzathoz tartozó privát felhőben, az Azure *Súgó + támogatás* szolgáltatáson keresztül történő navigálás a támogatási incidensek létrehozásához és kezeléséhez az Intune *súgóját és támogatási* élményét átirányítja:
 
-A 2019-es verziótól kezdődően nem férhet hozzá az Azure *Súgó és támogatás* szolgáltatáshoz, hogy segítséget kapjon az Intune-nal, kivéve, ha az előfizetése egy privát felhőben van a kormányzat számára. 
+Ha a bal oldali navigációs ablaktábla **Súgó + támogatás**elemét használja, vagy használja a **?** lehetőségre kattintva nyissa meg a *Súgó* panelt, majd válassza a **Súgó + támogatás**lehetőséget, majd nyissa meg az Azure *Súgó + támogatás* lapját. 
 
-Ha az Intune-példány nem fut a kormányzathoz tartozó privát felhőben, az Azure *Súgó + támogatás* szolgáltatásban való navigálás a támogatási incidensek létrehozásához és kezeléséhez az Intune *súgóját és támogatási* élményét átirányítja.
+
+Ebből az oldalból válassza az **+ új támogatási kérés** elemet a *Súgó + támogatás + új támogatási kérelem* lap *alapok* lapjának megnyitásához.
+
+![Súgó és támogatás](./media/get-support/help-plus-support.png)
+
+Ezen az oldalon:
+
+- A *probléma típusa*beállításnál válassza a **technikai**lehetőséget.
+- A *szolgáltatás*mezőben válassza a **Microsoft Intune**lehetőséget.
+
+  Ekkor megjelenik egy hivatkozás, amely átirányítja Önt az [Intune Súgó és támogatás oldalára](https://aka.ms/intunehelpsupport).
+  
+  ![Új támogatási kérelem](./media/get-support/new-request.png)
+
 
 ## <a name="intune-support-for-private-cloud-for-government"></a>Intune-támogatás a Private Cloud for Government szolgáltatáshoz
 
@@ -142,7 +159,7 @@ Ha az Intune-előfizetést a privát felhőben üzemelteti a Government számár
 >
 > Ha a támogatási eszközök közötti váltás az év későbbi részében fejeződik be, a kormányzati felhőben üzemeltetett támogatási élmény az Intune-előfizetésekhez jelenleg elérhető alapértelmezett *Súgó-és támogatási* élményhez hasonló lesz. nyilvános felhő.
 
-1. Az Intune rendszergazdai hitelesítő adataival jelentkezzen be az Azure Portalra (<https://portal.azure.com>), majd válassza a **?** lehetőséget ikonra a portál jobb felső sarkában, majd a **Súgó + támogatás** lehetőség kiválasztásával lépjen tovább az [Azure Súgó + támogatás](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) oldalra.
+1. Az Intune rendszergazdai hitelesítő adataival jelentkezzen be az Azure Portalra (<https://portal.azure.us>), majd válassza a **?** lehetőséget ikonra a portál jobb felső sarkában, majd a **Súgó + támogatás** lehetőség kiválasztásával lépjen tovább az [Azure Súgó + támogatás](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) oldalra.
 
    ![A kérdőjel hivatkozás képe a Súgó + támogatás hivatkozás kiemelésével](./media/get-support/azure-get-support.png)
 

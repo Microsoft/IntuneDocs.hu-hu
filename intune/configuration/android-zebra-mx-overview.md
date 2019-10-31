@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 13e5e7d49ec7e808f7cb5ba419dc881717539564
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 3e5804b415d26b07944c500b0158cf84a2d4412c
+ms.sourcegitcommit: d1b36501186e867355843ddd67c795ade800b76a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72496038"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73182859"
 ---
 # <a name="use-and-manage-zebra-devices-with-zebra-mobility-extensions-in-microsoft-intune"></a>Zebra-eszközök használata és kezelése a zebra Mobility Extensions használatával Microsoft Intune
 
@@ -30,7 +30,7 @@ ms.locfileid: "72496038"
 
 Az Intune számos funkciót tartalmaz, többek között az alkalmazások kezelését és az eszközbeállítások konfigurálását. Ezek a beépített funkciók és beállítások a zebra Technologies által gyártott Android-eszközöket, más néven "Zebra-eszközöket" kezelnek.
 
-Android-eszközökön használja a **Mobility Extensions (MX)** profilokat a további Zebra-specifikus beállítások testreszabásához vagy hozzáadásához.
+Androidos eszközökön a Zebra 's **Mobility Extensions (MX)** profilok használatával testreszabhatja vagy hozzáadhatja a zebra-specifikus beállításokat.
 
 Ez a cikk bemutatja, hogyan használható a zebra Mobility Extensions (MX) a zebra-eszközökön a Microsoft Intune.
 
@@ -52,6 +52,7 @@ Az Intune használatával olyan Zebra-eszközöket regisztrálhat, amelyekkel az
 - Győződjön meg arról, hogy a StageNow asztali alkalmazás legújabb verziója található a zebra Technologies-től.
 - Ügyeljen arra, hogy a [Zebra teljes MX-szolgáltatásának mátrixát](http://techdocs.zebra.com/mx/compatibility) (a zebra webhelyének megnyitása) ellenőrizze, hogy az Ön által létrehozott profilok kompatibilisek-e az eszköz MX verziójával, az operációs rendszer verziójával és a modellel.
 - Bizonyos eszközök, például a TC20/25 eszközök, nem támogatják az összes elérhető MX-funkciót a StageNow-ben. Győződjön meg arról, hogy a [Zebra funkciójának mátrixa](http://techdocs.zebra.com/mx/tc2x/) (a zebra webhelyének megnyitása) a frissített támogatási információkra vonatkozik.
+
 
 ## <a name="step-1-install-the-latest-company-portal-app"></a>1\. lépés: a legújabb Céges portál alkalmazás telepítése
 

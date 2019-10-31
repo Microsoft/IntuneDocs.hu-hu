@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4beb9c841cb2f4a5b7198fe031caa67da9e28842
-ms.sourcegitcommit: 4bf23327af734a9811d555fbd566c31239e2acd6
+ms.openlocfilehash: 3720b0b9a67f0c3462993feef4162ef35f7f3f92
+ms.sourcegitcommit: d1b36501186e867355843ddd67c795ade800b76a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "72999440"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73182920"
 ---
 # <a name="in-development-for-microsoft-intune---november-2019"></a>Fejlesztés a Microsoft Intune – november 2019
 
@@ -66,9 +66,6 @@ Az Intune támogatni fogja az egyéni beállításokat, így adott kulcsokat és
 
 ### <a name="assignment-type-value-in-windows-company-portal----5459950----"></a>Hozzárendelés típusa érték a Windows Céges portálban <!-- 5459950  -->
 A Windows Céges portál alkalmazás **telepített alkalmazások** lapja frissülni fog. A **telepített alkalmazások** lap **hozzárendelés típusa** oszlopa úgy lett frissítve, hogy "a szervezet által igényelt" néven kell meghívni. A lehetséges értékek az **Igen** vagy a **nem** értékkel jelölhetők meg a szükséges és az elérhető alkalmazások. Ez a változás a végfelhasználók megtévesztésére reagál. További információ a Windows vállalati portálról: [a Microsoft Intune céges portál alkalmazás konfigurálása](~/apps/company-portal-app.md).
-
-### <a name="apply-dark-mode-in-ios-company-portal----4911422----"></a>Sötét üzemmód alkalmazása iOS-Céges portál <!-- 4911422  -->
-A sötét üzemmódot iOS-Céges portál tervezték. Letöltheti a vállalati alkalmazásokat, kezelheti az eszközöket, és támogatást kaphat a választott színsémában. További információ az iOS Céges portálról: [a Microsoft Intune céges portál alkalmazás konfigurálása](../apps/company-portal-app.md).
 
 ### <a name="run-win32-apps-on-windows-10-s-mode-devices----3747604----"></a>Win32-alkalmazások futtatása Windows 10-es S üzemmódú eszközökön <!-- 3747604  --> 
 A Windows 10 S módban felügyelt eszközökön Win32-alkalmazásokat telepíthet és futtathat. Hozzon létre egy vagy több kiegészítő szabályzatot az S üzemmódhoz a Windows Defender Application Control (WDAC) PowerShell-eszközök használatával. A kiegészítő szabályzatok aláírásához használja az eszköz Guard-aláírási portálját. Ezután töltse fel és terjessze a szabályzatokat az Intune-on keresztül. 

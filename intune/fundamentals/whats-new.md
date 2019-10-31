@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0faa7c7ec70ce7647a6a91ae732d8b15878964b7
-ms.sourcegitcommit: 807ab3e35f4d9ffa18655410b7d61e5e772ab348
+ms.openlocfilehash: 591a9af597fc64509a4a7dd19d83d25948a6118e
+ms.sourcegitcommit: d1b36501186e867355843ddd67c795ade800b76a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73057623"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73182949"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -57,6 +57,15 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 ## <a name="week-of-october-28-2019"></a>2019. október 28-i hét
 
 ### <a name="app-management"></a>Alkalmazáskezelés 
+
+#### <a name="win32-apps-on-windows-10-s-mode-devices----3747604---"></a>Win32-alkalmazások Windows 10 S üzemmódú eszközökön <!-- 3747604 --> 
+Win32-alkalmazásokat telepíthet és futtathat Windows 10 S üzemmódú felügyelt eszközökön. Ehhez a Windows Defender Application Control (WDAC) PowerShell-eszközeivel létrehozhat egy vagy több kiegészítő szabályzatot az S üzemmódhoz. Írja alá a kiegészítő szabályzatokat az Eszközkezelő-aláírási portálon, majd töltse fel és terjessze a szabályzatokat az Intune-on keresztül. Az Intune-ban ezt a képességet az **ügyfélalkalmazások** > **Windows 10 S kiegészítő házirendek**lehetőség kiválasztásával találja meg. További információ: Win32- [alkalmazások engedélyezése az S Mode-eszközökön](~/apps/apps-win32-s-mode.md).
+
+#### <a name="set-win32-app-availability-based-on-a-date-and-time----3510685---"></a>Win32-alkalmazás rendelkezésre állásának beállítása dátum és idő alapján <!-- 3510685 -->
+Rendszergazdaként beállíthatja a szükséges Win32-alkalmazások kezdési és határidő-idejét. A kezdési időpontban az Intune felügyeleti bővítmény elindítja az alkalmazás tartalmának letöltését és gyorsítótárazását. Az alkalmazás a határidő lejártakor lesz telepítve. Az elérhető alkalmazások esetében a kezdési idő akkor fog megjelenni, amikor az alkalmazás látható Céges portálban. További információ: az [Intune win32 app Management](~/apps/apps-win32-app-management.md#set-win32-app-availability-and-notifications).
+
+#### <a name="require-device-restart-based-on-grace-period-after-win32-app-install----3136567---"></a>Eszköz újraindításának megkövetelése türelmi időszak alapján a Win32-alkalmazás telepítése után <!-- 3136567 -->
+Megkövetelheti, hogy az eszköznek újra kell indítania a Win32-alkalmazások sikeres telepítése után. További információ: [win32 app Management – alkalmazás telepítésének részletei](~/apps/apps-win32-app-management.md#step-4-configure-app-installation-details).
 
 #### <a name="dark-mode-for-ios-company-portal----4911422---"></a>Sötét mód iOS-Céges portál <!-- 4911422 -->
 A sötét mód elérhető az iOS-Céges portál számára. A felhasználók letölthetik a vállalati alkalmazásokat, kezelhetik az eszközeiket, és az eszköz beállításai alapján választhatják ki a kívánt színsémát. Az iOS-Céges portál automatikusan meg fogja egyezni a végfelhasználói eszközbeállítások sötét vagy világos módban. További információ: [sötét mód bevezetése Microsoft Intune céges portál iOS rendszerhez](https://techcommunity.microsoft.com/t5/Enterprise-Mobility-Security/Introducing-dark-mode-on-Microsoft-Intune-Company-Portal-for-iOS/ba-p/918453). További információ az iOS Céges portálről: [a Microsoft Intune céges portál alkalmazás konfigurálása](~/apps/company-portal-app.md).
@@ -148,9 +157,6 @@ Az Android Enterprise munkahelyi profil, dedikált és teljes körűen felügyel
 
 #### <a name="microsoft-edge-version-77-and-later-for-windows-10-and-macos-public-preview----3872025-4678761----"></a>A Microsoft Edge 77-es és újabb verziói a Windows 10 és a macOS rendszerhez (nyilvános előzetes verzió) <!-- 3872025, 4678761  -->
 A Microsoft Edge 77-es és újabb verziói elérhetők lesznek a Windows 10 és macOS rendszerű számítógépeken való üzembe helyezéshez. 
-
->[!NOTE]
->A szolgáltatás bevezetését a hónap későbbi részében késleltették.
 
 A nyilvános előzetes verzió a Windows 10 **fejlesztési** és **bétaverziós** csatornáit, valamint a MacOS-hez készült **bétaverziót** kínálja. A központi telepítés csak angol (EN) nyelven érhető el, de a végfelhasználók a **beállítások**  > **nyelvek**területen módosíthatják a böngésző megjelenítési nyelvét. A Microsoft Edge egy, a rendszerkörnyezetben és hasonló architektúrákban telepített Win32-alkalmazás (x86-OS és x64-es OS-es x64-es alkalmazás). Emellett a böngésző automatikus frissítései alapértelmezés szerint be vannak **kapcsolva** , és a Microsoft Edge nem távolítható el. További információ: a [Microsoft Edge for Windows 10 hozzáadása a Microsoft Intune](~/apps/apps-windows-edge.md) és a [Microsoft Edge dokumentációhoz](https://go.microsoft.com/fwlink/?linkid=2103823).
 

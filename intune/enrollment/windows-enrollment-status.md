@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d2a6b427552e545421e329b900833c889e67bf35
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: d69bd040929da08d7d23db764c5b01f6aca6a9ea
+ms.sourcegitcommit: c38a856725993a4473ada75e669a57f75ab376f8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72503022"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73143176"
 ---
 # <a name="set-up-an-enrollment-status-page"></a>Regisztráció állapotának beállítása lap
  
@@ -55,7 +55,8 @@ Az egyes profilok prioritási sorrendjét úgy is beállíthatja, hogy az ütkö
 <tr><td>Eszköz alaphelyzetbe állításának engedélyezése a felhasználók számára telepítési hiba esetén<td>Ha telepítési hiba történik, az <b>eszköz alaphelyzetbe állítása</b> gomb jelenik meg.<td>Az <b>eszköz alaphelyzetbe állítása</b> gomb nem jelenik meg, ha telepítési hiba történt.
 <tr><td>Eszközök használatának engedélyezése a felhasználók számára telepítési hiba esetén<td>Ha a telepítés sikertelen, A <b>Folytatás továbbra</b> is gomb jelenik meg.<td>A <b>Folytatás egyébként</b> gomb nem jelenik meg, ha telepítési hiba történt.
 <tr><td>Időtúllépési hiba megjelenítése, ha a telepítés a megadott számú percnél hosszabb időt vesz igénybe.<td colspan="2">Adja meg, hogy hány percig várjon a telepítés befejezésére. A rendszer 60 perc alapértelmezett értéket ad meg.
-<tr><td>Egyéni üzenet megjelenítése hiba bekövetkezésekor<td>Meg kell adni egy szövegmezőt, ahol megadhatja a telepítési hiba esetén megjelenítendő egyéni üzenetet.<td>Az alapértelmezett üzenet jelenik meg: <br>@no__t – a 0Installation túllépte a szervezet által beállított időkorlátot. Próbálkozzon újra, vagy kérjen segítséget az informatikai támogatási személytől. <b> @ no__t-1<tr><td>Naplók gyűjtésének engedélyezése a felhasználók számára telepítési hibákkal<td>Ha van telepítési hiba, megjelenik a <b>naplók gyűjtése</b> gomb. <br>Ha a felhasználó erre a gombra kattint, a rendszer megkéri, hogy válasszon egy helyet a naplófájl mentéséhez a <b>MDMDiagReport. cab fájlt.</b><td>A <b>naplók gyűjtése</b> gomb nem jelenik meg, ha telepítési hiba történt.
+<tr><td>Egyéni üzenet megjelenítése hiba bekövetkezésekor<td>Meg kell adni egy szövegmezőt, ahol megadhatja a telepítési hiba esetén megjelenítendő egyéni üzenetet.<td>Az alapértelmezett üzenet jelenik meg: <br><b>telepítés túllépte a szervezet által beállított időkorlátot. Próbálkozzon újra, vagy kérjen segítséget az informatikai támogatási személytől.<b>
+<tr><td>Naplók gyűjtésének engedélyezése a felhasználók számára telepítési hibákkal<td>Ha van telepítési hiba, megjelenik a <b>naplók gyűjtése</b> gomb. <br>Ha a felhasználó erre a gombra kattint, a rendszer megkéri, hogy válasszon egy helyet a naplófájl mentéséhez a <b>MDMDiagReport. cab fájlt.</b><td>A <b>naplók gyűjtése</b> gomb nem jelenik meg, ha telepítési hiba történt.
 <tr><td>Az eszköz használatának letiltása, amíg ezek a szükséges alkalmazások telepítve vannak a felhasználóhoz vagy eszközhöz<td colspan="2">Válassza <b>az összes</b> <b>kijelölése</b>lehetőséget. <br><br>Ha ki van <b>választva</b> , az <b>alkalmazások kiválasztása</b> gomb jelenik meg, amellyel kiválaszthatja, hogy mely alkalmazásokat kell telepíteni az eszköz engedélyezése előtt.
 </table>
 
@@ -63,14 +64,14 @@ Az egyes profilok prioritási sorrendjét úgy is beállíthatja, hogy az ütkö
 
 A regisztráció állapota lap bekapcsolásához kövesse az alábbi lépéseket.
  
-1. Az [Intune](https://aka.ms/intuneportal)-ban válassza az **eszközök beléptetése**@no__t – 2**Windows-regisztráció**@no__t – 4**regisztráció állapota lapot**.
+1. Az [Intune](https://aka.ms/intuneportal)-ban válassza az **eszközök beléptetése** > **Windows-beléptetés** > **regisztráció állapota lapot**.
 2. A **Beléptetés állapota oldal** panelen válassza az **Alapértelmezett** > **Beállítások** lehetőséget.
 3. A **Show app and profile installation progress** (Alkalmazások és profilok telepítési állapotának megjelenítése) beállításnál válassza a **Yes** (Igen) lehetőséget.
 4. Adja meg a többi kívánt beállítást, majd válassza a **Mentés** gombot.
 
 ## <a name="create-enrollment-status-page-profile-and-assign-to-a-group"></a>Regisztrációs állapot lap profiljának létrehozása és társítása egy csoporthoz
 
-1. Az [Intune](https://aka.ms/intuneportal)-ban válassza az **eszközök beléptetése**@no__t – 2**Windows-regisztráció**@no__t – 4**regisztráció állapota lapot** > **create Profile**elemet.
+1. Az [Intune](https://aka.ms/intuneportal)-ban válassza az **eszközök beléptetése** > **Windows** -beléptetés > **regisztráció állapota lapot** > a **profil létrehozása**lehetőséget.
 2. Adjon meg egy **nevet** és egy **leírást**.
 3. Válassza a **Létrehozás** lehetőséget.
 4. A **Regisztráció állapota oldal** listájában válassza ki az új profilt.
@@ -81,7 +82,7 @@ A regisztráció állapota lap bekapcsolásához kövesse az alábbi lépéseket
 
 A felhasználók számos csoportba tartozhatnak, és számos regisztrációs állapotú lap profilja lehet. Az ilyen ütközések kezeléséhez beállíthatja az egyes profilok prioritásait. Ha a regisztráció során egynél több regisztrációs állapotú oldal profilja van, akkor a rendszer csak a legmagasabb prioritású profilt alkalmazza a beléptetési eszközre.
 
-1. Az [Intune](https://aka.ms/intuneportal)-ban válassza az **eszközök beléptetése**@no__t – 2**Windows-regisztráció**@no__t – 4**regisztráció állapota lapot**.
+1. Az [Intune](https://aka.ms/intuneportal)-ban válassza az **eszközök beléptetése** > **Windows-beléptetés** > **regisztráció állapota lapot**.
 2. Vigye a kurzort a listában a profilra.
 3. A függőleges három ponttal húzza a profilt a kívánt helyre a listában.
 
@@ -89,12 +90,12 @@ A felhasználók számos csoportba tartozhatnak, és számos regisztrációs ál
 
 Megadhatja, hogy mely alkalmazásokat kell telepíteni, mielőtt a felhasználó el tudja érni az asztalt.
 
-1. Az Intune-ban válassza az **eszközök beléptetése**@no__t – 1**Windows-regisztráció**@no__t – 3**regisztráció állapota lapot**.
+1. Az Intune-ban válassza az **eszközök beléptetése** > **Windows-beléptetés** > **regisztráció állapota lapot**.
 2. Válassza ki a profil > **beállításait**.
 3. Válassza az **Igen** lehetőséget az **alkalmazások és a profilok telepítési folyamatának megjelenítéséhez**.
 4. Válassza az **Igen** lehetőséget az **eszköz használatának tiltása lehetőségre, amíg az összes alkalmazás és profil nincs telepítve**.
 5. Válassza a **kijelölt** lehetőséget a **Letiltás eszköz használatára, amíg ezek a szükséges alkalmazások nem települnek a felhasználóhoz vagy eszközhöz**.
-6. Válassza az **alkalmazások kiválasztása** lehetőséget > Válassza ki az alkalmazásokat > válassza a @no__t – 2**Mentés** **lehetőséget**.
+6. Válassza az **alkalmazások kiválasztása** lehetőséget > Válassza ki az alkalmazásokat > válassza a > **Mentés** **lehetőséget** .
 
 ## <a name="enrollment-status-page-tracking-information"></a>Regisztrációs állapot lap követési adatai
 
@@ -190,7 +191,6 @@ Az alábbiakban ismert problémák merültek fel.
 - Az ESP-profil letiltása nem távolítja el az ESP-házirendet az eszközökről, és a felhasználók még mindig ESP-t kapnak, amikor első alkalommal jelentkeznek be az eszközre A házirendet nem távolítja el a rendszer, ha az ESP-profil le van tiltva. Az ESP letiltásához OMA-URI-t kell telepítenie. A fenti útmutatást követve megtudhatja, hogyan tilthatja le az ESP-t az OMA-URI használatával. 
 - A függőben lévő újraindítás mindig időtúllépést eredményez. Az időtúllépés oka, hogy az eszközt újra kell indítani. Az újraindítás szükséges ahhoz, hogy a beléptetési állapot lapon nyomon kövessék az elem időpontját. Az újraindítás után a regisztrációs állapot lap kilép, és az újraindítás után az eszköz nem fog megjelenni a fiók beállítása során.  Vegye figyelembe, hogy az alkalmazás telepítése nem igényel újraindítást. 
 - Az eszköz telepítése során a rendszer újraindítja a felhasználót, hogy adja meg a hitelesítő adatait, mielőtt átvált a fiók beállítása szakaszra. A felhasználói hitelesítő adatok nem őrződnek meg az újraindítás során. A felhasználónak meg kell adnia a hitelesítő adatait, majd a regisztráció állapota lap továbbra is megadható. 
-- A vállalati Windows Hello-házirendekkel rendelkező SCEP-tanúsítványok időtúllépést okoznak, mivel a felhasználó nem tudja befejezni a Hello PIN-kód konfigurálását, hogy lehetővé tegye a SCEP-tanúsítvány telepítését.  Nincs Áthidaló megoldás. A fix ETA nyári 2019. 
 - A regisztrációs állapot lap mindig időtúllépést mutat a munkahelyi és iskolai fiók beléptetése során a Windows 10 1903-nál kisebb verzióiban. A regisztrációs állapot lap megvárja, amíg az Azure AD-regisztráció befejeződik. A probléma a Windows 10 1903-es és újabb verzióiban van kijavítva.  
 - A hibrid Azure AD Autopilot üzembe helyezése ESP-vel hosszabb időt vesz igénybe, mint az ESP-profilban definiált időtúllépési időtartam. A hibrid Azure AD Autopilot-telepítések esetén az ESP 40 percet vesz igénybe, mint az ESP-profilban beállított érték. Ez a késleltetés időt biztosít a helyszíni AD-összekötő számára az új eszköz rekordjának létrehozására az Azure AD-ben. 
 - A Windows bejelentkezési oldal nincs előre kitöltve a felhasználónévvel az Autopilot-felhasználó által vezérelt módban. Ha a rendszer újraindítást indít az ESP eszköz telepítési fázisában:

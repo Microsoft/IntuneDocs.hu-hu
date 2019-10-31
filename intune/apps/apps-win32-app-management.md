@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 10/04/2019
+ms.date: 10/28/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8d6fb5a703aad09592bfac3b5a16390389059d33
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: cf860056c3918f7ae90e6b9b850a98a37dcfd56e
+ms.sourcegitcommit: c38a856725993a4473ada75e669a57f75ab376f8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72498027"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73143216"
 ---
 # <a name="intune-standalone---win32-app-management"></a>Önálló Intune – Win32-alkalmazások kezelése
 
@@ -139,7 +139,7 @@ Az alábbi lépések útmutatást nyújtanak a Windows-alkalmazások Intune-hoz 
 
 ### <a name="step-4-configure-app-installation-details"></a>4\. lépés: Az alkalmazás telepítési adatainak konfigurálása
 1. Az alkalmazás telepítési és eltávolítási parancsának konfigurálásához az **Alkalmazás felvétele** panelen válassza a **Program** elemet.
-2. Adja meg az alkalmazás telepítéséhez szükséges teljes telepítési parancssort. 
+2. Az **install parancs**konfigurálásához adja hozzá a teljes telepítési parancssort az alkalmazás telepítéséhez. 
 
     Ha például az alkalmazás fájlneve **MyApp123**, adja hozzá a következőt:<br>
     `msiexec /p “MyApp123.msp”`<p>
@@ -148,9 +148,11 @@ Az alábbi lépések útmutatást nyújtanak a Windows-alkalmazások Intune-hoz 
     A fenti parancsban a `ApplicationName.exe` csomag támogatja a `/quiet` parancs argumentumot.<p> 
     Az alkalmazáscsomag által támogatott argumentumok esetében forduljon az alkalmazás forgalmazójához.
 
-3. Adja meg az alkalmazás eltávolításához szükséges teljes eltávolítási parancssort az alkalmazás GUID-értékei alapján. 
+3. Az **eltávolítási parancs**konfigurálásához adja hozzá a teljes eltávolítás parancssort az alkalmazás a GUID azonosító alapján történő eltávolításához. 
 
     Például: `msiexec /x “{12345A67-89B0-1234-5678-000001000000}”`
+
+4. Állítsa be a **telepítési viselkedést** a **rendszer** vagy a **felhasználó**számára.
 
     > [!NOTE]
     > Az adott Win32-alkalmazás telepítését a **Felhasználó** vagy a **Rendszer** környezetben konfigurálhatja. A **Felhasználó** környezet csak az adott felhasználóra vonatkozik. A **Rendszer** környezet az adott, Windows 10-es rendszerű eszköz összes felhasználójára vonatkozik.
@@ -159,7 +161,13 @@ Az alábbi lépések útmutatást nyújtanak a Windows-alkalmazások Intune-hoz 
     > 
     > A Win32-alkalmazás telepítése és eltávolítása a rendszergazdai jogosultságok alatt történik (alapértelmezés szerint), ha az alkalmazás felhasználói környezetben történő telepítésre van beállítva, és az eszköz végfelhasználója rendszergazdai jogosultságokkal rendelkezik.
 
-4. Amikor végzett, válassza az **OK** gombot.
+5. Az **eszköz újraindítási viselkedésének**konfigurálásához válasszon a következő lehetőségek közül:
+    - **Viselkedés meghatározása a visszatérési kódok alapján**: válassza ezt a lehetőséget, ha újra szeretné indítani az eszközt a [visszatérési kódok](~/apps/apps-win32-app-management.md#step-7-configure-app-return-codes) konfigurációs beállításai alapján.
+    - **Nincs konkrét művelet**: válassza ezt a lehetőséget, ha el szeretné tiltani az eszköz újraindítását az MSI-alapú alkalmazások telepítésekor.
+    - Az **alkalmazás telepítése kényszerítheti az eszköz újraindítását**: ezzel a beállítással engedélyezheti, hogy az alkalmazás telepítése az újraindítások mellőzése nélkül befejeződjön.
+    - Az **Intune a kötelező eszköz újraindítását kényszeríti**: válassza ezt a lehetőséget, ha az alkalmazás sikeres telepítése után mindig újraindítja az eszközt.
+
+6. Amikor végzett, válassza az **OK** gombot.
 
 ### <a name="step-5-configure-app-requirements"></a>5\. lépés: Az alkalmazásokra vonatkozó követelmények konfigurálása
 
@@ -279,10 +287,11 @@ Az alábbi lépések útmutatást nyújtanak a Windows-alkalmazások Intune-hoz 
     - **Szükséges**: A rendszer telepíti az alkalmazást a kiválasztott csoportok eszközeire.
     - **Eltávolítás**: A rendszer eltávolítja az alkalmazást a kiválasztott csoportok eszközeiről.
 4. Válassza ki a **Tartalmazott csoportok** elemet, és rendelje hozzá a csoportokat, amelyek az alkalmazást fogják használni.
-5. Kattintson a **Hozzárendelés** ablaktáblán az **OK** gombra a belefoglalt csoportok kiválasztásának befejezéséhez.
-6. Ha ki szeretne zárni felhasználói csoportokat az alkalmazás-hozzárendelésből, válassza a **Csoportok kizárása** lehetőséget.
-7. A **Csoport hozzáadása** panelen kattintson az **OK** gombra.
-8. Az alkalmazás **Hozzárendelések** ablaktábláján kattintson a **Mentés** gombra.
+5. A **hozzárendelés** ablaktáblán válassza a hozzárendelés felhasználók vagy eszközök alapján lehetőséget. A hozzárendelések kiválasztása után kiválaszthatja a **végfelhasználói élményt**is. A **végfelhasználói élmény** lehetővé teszi a **végfelhasználói értesítések**beállítását, a **türelmi idő újraindítását**, a **rendelkezésre állást**és a **telepítési határidőt**. További információ: **Win32-alkalmazás rendelkezésre állásának és értesítéseinek beállítása**.
+6. a befoglalt csoportok kijelölésének befejezéséhez kattintson **az OK gombra** .
+7. Ha ki szeretne zárni felhasználói csoportokat az alkalmazás-hozzárendelésből, válassza a **Csoportok kizárása** lehetőséget.
+8. A **Csoport hozzáadása** panelen kattintson az **OK** gombra.
+9. Az alkalmazás **Hozzárendelések** ablaktábláján kattintson a **Mentés** gombra.
 
 Ekkor elvégezte a Win32-alkalmazások Intune-hoz való hozzáadásának lépéseit. Az alkalmazás-hozzárendeléssel és monitorozással kapcsolatos további információ: [Alkalmazások hozzárendelése csoportokhoz a Microsoft Intune-nal](apps-deploy.md) és [Alkalmazásadatok és -hozzárendelések figyelése a Microsoft Intune-ban](apps-monitor.md).
 
@@ -328,6 +337,36 @@ A végfelhasználó megtekinti a Windows pirítóssal kapcsolatos értesítések
 A következő rendszerkép értesíti a felhasználót, hogy az alkalmazás megváltoztatja az eszközön végrehajtott módosításokat.
 
 ![Képernyőfelvétel a felhasználót arról, hogy az alkalmazás módosításai történnek](./media/apps-win32-app-management/apps-win32-app-09.png)    
+
+## <a name="set-win32-app-availability-and-notifications"></a>Win32-alkalmazás rendelkezésre állásának és értesítéseinek beállítása
+Beállíthatja a Win32-alkalmazás kezdési idejét és határidejét. A kezdési időpontban az Intune felügyeleti bővítmény elindítja az alkalmazás tartalmának letöltését, és gyorsítótárazza azt a szükséges szándék érdekében. Az alkalmazás a határidő lejártakor lesz telepítve. Az elérhető alkalmazások esetében a kezdési idő akkor fog megjelenni, ha az alkalmazás megjelenik a Céges portálban, és a tartalom le lesz töltve, amikor a végfelhasználó a Céges portáltól kéri az alkalmazást. Emellett engedélyezheti az újraindítási türelmi időszakot is. 
+
+Az alkalmazás rendelkezésre állását a szükséges alkalmazások dátum és idő alapján, a következő lépésekkel állíthatja be:
+
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
+2. Az **Intune** panelen válassza az **ügyfélalkalmazások** > **alkalmazások**elemet.
+3. Válasszon ki egy meglévő **Windows-alkalmazást (Win32)** a listából. 
+4. Az alkalmazás panelen válassza a **hozzárendelések** > **Csoport hozzáadása**elemet. 
+5. A **Hozzárendelés típusa** beállítást állítsa **Kötelező** értékre. Vegye figyelembe, hogy az alkalmazás rendelkezésre állása a hozzárendelés típusa alapján állítható be. A **hozzárendelés típusa** **kötelező**, **regisztrált eszközökhöz**vagy **eltávolításhoz**érhető el.
+6. Válassza a **belefoglalt csoportok** lehetőséget, hogy meghatározza, hogy melyik felhasználói csoport lesz hozzárendelve az alkalmazáshoz. Ekkor megjelenik a **hozzárendelés** panel.
+7. Állítsa be **ezt az alkalmazást az összes felhasználó** számára az **Igen**értékre.
+
+    > [!NOTE]
+    > A **hozzárendelési típus** beállításai a következőket foglalják magukban:<br>
+    > - **Kötelező**: megadhatja, hogy **az alkalmazás minden felhasználó számára kötelező legyen** , és/vagy **minden eszközön kötelezővé tegye az alkalmazást**.<br>
+    > - **Regisztrálva lévő eszközökhöz elérhető**: megadhatja, hogy **az alkalmazás elérhető legyen az összes regisztrált eszközzel rendelkező felhasználó**számára.<br>
+    > - **Eltávolítás**: kiválaszthatja, hogy az**alkalmazást eltávolítja-e az összes felhasználó** számára, és/vagy **távolítsa el az alkalmazást minden eszközön**.
+
+8. Ha módosítani szeretné a **végfelhasználói élmény** beállításait, válassza a **Szerkesztés**lehetőséget.
+9. A **hozzárendelés szerkesztése** panelen állítsa be a **Ender felhasználói értesítéseket** az **összes bejelentési értesítés megjelenítéséhez**. Vegye figyelembe, hogy az összes bejelentési **értesítés**megjelenítéséhez beállíthatja a **végfelhasználói értesítéseket** , megtekintheti **a számítógép újraindítására és a** **bejelentések összes értesítését**.
+10. Állítsa be az **alkalmazás rendelkezésre állását** **egy adott dátumra és** időpontra, és válassza ki a dátumot és az időt. Ez a dátum és idő határozza meg, hogy az alkalmazás Mikor töltődik le a végfelhasználói eszközre. 
+11. Állítsa be az **alkalmazás telepítési határidejét** **egy adott dátumra és időpontra** , és válassza ki a dátumot és az időt. Ez a dátum és idő határozza meg, hogy az alkalmazás Mikor van telepítve a végfelhasználói eszközön. Ha ugyanahhoz a felhasználóhoz vagy eszközhöz több hozzárendelés is készül, az alkalmazás telepítési határideje a lehető legkorábbi időpont alapján lesz kiválasztva.
+12. Az **Újraindítási türelmi időszak**mellett kattintson az **engedélyezve** lehetőségre. Az újraindítási türelmi időszak akkor indul el, amikor az alkalmazás telepítése befejeződött az eszközön. Ha le van tiltva, az eszköz figyelmeztetés nélkül indítható újra. <br>A következő beállításokat szabhatja testre:
+    - **Eszköz újraindításának türelmi időszaka (perc)** : a deault értéke 1440 perc (24 óra). Ez az érték legfeljebb 2 hétig lehet.
+    - **Válassza ki, hogy mikor jelenjen meg az újraindítási visszaszámlálás párbeszédpanel az újraindítás megkezdése előtt (perc)** : az alapértelmezett érték 15 perc.
+    - **Az újraindítási értesítés késleltetésének engedélyezése a felhasználó számára: az** **Igen** vagy a **nem**lehetőséget is választhatja.
+        - **Válassza ki a késleltetés időtartamát (perc)** : az alapértelmezett érték 240 perc (4 óra). A késleltetési érték nem lehet nagyobb, mint az újraindítási türelmi időszak.
+13. A hozzárendelés hozzáadásához **kattintson az OK gombra** ** > az OK gombra > ** az **OK** > **Mentés** gombra.
 
 ## <a name="toast-notifications-for-win32-apps"></a>Bejelentési értesítések a Win32-alkalmazásokhoz 
 Ha szükséges, letilthatja az alkalmazás-hozzárendelések végfelhasználói bejelentési értesítéseinek megjelenítését. Az Intune-ból válassza az **ügyfélalkalmazások** > **alkalmazások** lehetőséget > válassza ki az alkalmazást > **hozzárendelések** > **csoportok belefoglalása**. 

@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 10/24/2019
+ms.date: 10/30/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec6009096ac6ed39c8a217f8832661a575d83b78
-ms.sourcegitcommit: 4f979ba7030e72d820113fe23ac8521ddb2433bd
+ms.openlocfilehash: 14fa330b0c158d98c96e0d151f8a4ec7d0c95b97
+ms.sourcegitcommit: c38a856725993a4473ada75e669a57f75ab376f8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72915705"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73143038"
 ---
 # <a name="android-enterprise-device-settings-to-allow-or-restrict-features-using-intune"></a>Az androidos vállalati eszközbeállítások az Intune-t használó szolgáltatások engedélyezéséhez vagy korlátozásához
 
@@ -42,7 +42,7 @@ Ez a cikk felsorolja és leírja az androidos vállalati eszközökön szabályo
   - **Automatikus engedélyezés**: Az engedélyek automatikusan meg lesznek adva.
   - **Automatikus elutasítás**: Az engedélyek automatikusan meg lesznek tagadva.
 - **Dátum-és időváltozások**: a **Letiltás** gombra kattintva megakadályozhatja, hogy a felhasználók manuálisan állítsa be a dátumot és az időt. A **nincs konfigurálva** beállítás lehetővé teszi a felhasználók számára az eszközön beállított dátumot és időt.
-- **Hangerő-módosítás**: A **Tiltás** lehetőség választásával megakadályozza a felhasználókat az eszköz hangerejének módosításában. A **nincs konfigurálva** beállítás lehetővé teszi a kötet beállításainak használatát az eszközön.
+- **Kötetek változásai**: a **blokk** megakadályozza, hogy a felhasználók megváltoztassák az eszköz kötetét, és elnémítani a fő kötetet is. A **nincs konfigurálva** beállítás lehetővé teszi a kötet beállításainak használatát az eszközön.
 - **Gyári beállítások visszaállítása**: a **Letiltás** lehetőség kiválasztásával megakadályozhatja, hogy a felhasználók a gyári beállítások visszaállítása lehetőséget használják az eszköz beállításaiban. A **nincs konfigurálva** beállítás lehetővé teszi, hogy a felhasználók ezt a beállítást használják az eszközön.
 - **Csökkentett üzemmódú indítás**: A **Tiltás** lehetőség választásával megakadályozza a felhasználókat az eszköz csökkentett módban való újraindításában. A **nincs konfigurálva** beállítás lehetővé teszi a felhasználók számára, hogy csökkentett módban újraindítsák az eszközt.
 - **Állapotsor**: a **Letiltás** elemre kattintva megakadályozhatja az állapotsor elérését, beleértve az értesítéseket és a gyors beállításokat is. A **nincs konfigurálva** beállítás lehetővé teszi a felhasználók számára az állapotsor elérését.
