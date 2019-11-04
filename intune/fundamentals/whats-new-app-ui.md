@@ -6,7 +6,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 09/09/2019
+ms.date: 10/31/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7517a2b60c4b5a893b90b09be72ddb363f23552a
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 85f9bb72c6c40c67874326b06ebd41286d2d7220
+ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72509981"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73415210"
 ---
 # <a name="ui-updates-for-intune-end-user-apps"></a>Felhasználói felületi frissítések az Intune végfelhasználói alkalmazásaiban
 
@@ -36,6 +36,23 @@ Ha Ön alkalmazott vagy tanuló, tekintse meg a képernyőképeket, és mutasson
 
 <!---End-user messaging for accounts 1573558, 1712; changes to be made for other platforms for 1801 Users of the Company Portal website, will be blocked from taking actions that require write access to your tenant. They will see appropriate error messaging explaining that their account is under maintenance. Similar changes are coming to the Company Portal apps for Android, iOS, macOS, and Windows soon. ![Error message that occurs during account move](./media/whats-new-app-ui/account-move-rom-iwp-user-1712.png)--->
 
+
+## <a name="week-of-october-28-2019"></a>2019. október 28-i hét  
+
+### <a name="improved-checklist-design-in-company-portal-app-for-android----5550857---"></a>Továbbfejlesztett ellenőrzőlista-kialakítás az androidos Céges portál alkalmazásban <!-- 5550857 -->  
+Az Androidhoz készült Céges portál alkalmazásban található beállítási ellenőrzőlista egy könnyű kialakítással és új ikonokkal frissült. A módosítások összhangban vannak az iOS rendszerhez készült Céges portál alkalmazás legújabb frissítéseivel. Folyamatban van az alkalmazás frissítéseinek kihelyezése az összes ügyfél számára, és a következő hét végére várhatóan elvégezhető. A frissített regisztrációs lépések megtekintéséhez tekintse meg az androidos [munkahelyi Profil regisztrálása](/intune-user-help/enroll-device-android-work-profile) és [az Android-eszköz regisztrálása](/intune-user-help/enroll-device-android-company-portal)című témakört.  
+
+A következő képernyők az Android munkahelyi profil regisztrálásának frissített ellenőrzőlistáját mutatják be:
+
+|Frissített|Korábbi|  
+|---|---|  
+|![Példa a munkahelyi profil beállításának rendszerképére Céges portálban, amely az egyszerűsített ellenőrzőlistát és az új ikonokat mutatja be.](./media/whats-new-app-ui/work-profile-checklist-1911.png)|![Példa a Céges portál korábbi munkahelyi profil beállításának képére, amely egy teendői ellenőrzőlistát mutat be.](./media/whats-new-app-ui/work-profile-checklist-1904.png)|   
+
+A következő képernyők az Android-eszközök rendszergazdai regisztrációjának frissített ellenőrzőlistáját mutatják be:  
+
+|Frissített|Korábbi|  
+|---|---|  
+|![Példa az Android-eszközök rendszergazdai beállításának képe Céges portálban, amely az egyszerűsített ellenőrzőlistát és az új ikonokat mutatja.](./media/whats-new-app-ui/android-checklist-1911.png)|![Példa a korábbi Android-eszköz rendszergazdai beállításának rendszerképére Céges portálban, amely egy teendői ellenőrzőlistát mutat be.](./media/whats-new-app-ui/android-checklist-1904.png)|  
 
 ## <a name="week-of-september-9-2019"></a>2019. szeptember 9. hét
 
@@ -572,6 +589,6 @@ Ezek azok a tervezett megoldások, amelyekkel a felhasználói felület frissít
 
 
 ## <a name="see-also"></a>További információ
-* [A Microsoft Intune blogja](http://go.microsoft.com/fwlink/?LinkID=273882)
+* [A Microsoft Intune blogja](https://go.microsoft.com/fwlink/?LinkID=273882)
 * [A felhőplatform ütemterve](https://www.microsoft.com/cloud-platform/roadmap)
-* [Az Intune újdonságai](../whats-new.md)
+* [Az Intune újdonságai](whats-new.md)

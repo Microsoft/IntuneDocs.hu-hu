@@ -7,12 +7,12 @@ ms.topic: include
 ms.date: 03/28/2019
 ms.author: erikje
 ms.custom: include file
-ms.openlocfilehash: a2675b1b601261e673923ab5e3ac41d0f3d83264
-ms.sourcegitcommit: 71b0cd7b81178e2f9e9f80830fa9a7985781628b
+ms.openlocfilehash: 0aa78ec17aba5deb0c914c3698676219f203b856
+ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73057318"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73415077"
 ---
 Ezek a hirdetmények olyan fontos információkat tartalmaznak, amelyek segíthetnek a jövőbeli Intune-változások és-funkciók előkészítésében.
 
@@ -105,7 +105,7 @@ Az alábbi listában megtalálhatja az Intune-ban regisztrált általános eszk�
 #### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
 Alkalmazások becsomagolása a legújabb Intune app SDK-val. Az "a minimális operációsrendszer-verzió megkövetelése (csak figyelmeztetés)" beállítást is beállíthatja úgy, hogy a végfelhasználók tájékoztassák a felhasználókat a személyes eszközökről a frissítéshez.
 
-### <a name="intune-plan-for-change-nearing-end-of-support-for-windows-7----3042987---"></a>Intune-terv a változáshoz: a Windows 7 támogatásának megszűnése <!-- 3042987 -->
+### <a name="intune-plan-for-change-nearing-end-of-support-for-windows-7---3042987---"></a>Intune-terv a változáshoz: a Windows 7 támogatásának megszűnése<!-- 3042987 -->
 Ahogy a MC148476-ben, az utolsó szeptember 2018-án, a MC176794-ben pedig a 2019-as időszakban ismét megjelent, a Windows 7 a 2020-as január 14-én elérte a kiterjesztett támogatás végét. Ebben az esetben az Intune kivonja a Windows 7 rendszerű eszközök támogatását, így az újabb technológiákat támogató beruházásokra koncentrálhat, és nagyszerű, új végfelhasználói élményt biztosíthat. Ezen dátum után a Windows 7 rendszerű számítógépek védelméhez segítséget nyújtó technikai segítségnyújtás és automatikus frissítések többé nem lesznek elérhetők az Intune-on keresztül. A Microsoft határozottan azt javasolja, hogy a Windows 10 rendszerre való áttérés előtt a 2020-es számú olyan esetet ne telepítsen, ahol a szolgáltatásra vagy támogatásra már nem lesz elérhető. További információk a Windows támogatási életciklusáról [itt](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)olvashat.
 
 #### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?

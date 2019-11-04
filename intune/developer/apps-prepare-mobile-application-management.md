@@ -17,20 +17,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c1750f789cfac98af998ebbd86b10a4e93a1772a
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: ba1ec201cdb7e44570b53ce831b4e5ae26504973
+ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72490817"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73413814"
 ---
 # <a name="prepare-line-of-business-apps-for-app-protection-policies"></a>Üzletági alkalmazások felkészítése az alkalmazásvédelmi szabályzatok használatára
-
-[!INCLUDE[both-portals](../../intune-classic/includes/note-for-both-portals.md)]
 
 Az Intune alkalmazásburkoló eszközével vagy az Intune App SDK-val engedélyezheti, hogy az alkalmazások alkalmazásvédelmi szabályzatokat használjanak. Az alábbi információkkal többet megtudhat erről a két módszerről és arról, mikor érdemes használni azokat.
 
 ## <a name="intune-app-wrapping-tool"></a>Intune alkalmazásburkoló eszköz
+
 Az alkalmazásburkoló eszköz főleg **belső** üzletági (LOB) alkalmazásokhoz készült. Az eszköz egy parancssori alkalmazás, amely egy burkolót hoz létre az alkalmazás körül, amely lehetővé teszi az alkalmazás Intune alkalmazásvédelmi szabályzatokkal való kezelését. Egy független szoftverszállító (ISV) által biztosított alkalmazás védelme esetén fontos tisztázni, hogy az ISV támogatja-e a becsomagolt alkalmazást.
 
 Nincs szüksége a forráskódra az eszköz használatához, de aláíró hitelesítő adatokra igen. Az aláíró hitelesítő adatokról további információért lásd: [Intune blog](https://blogs.technet.microsoft.com/enterprisemobility/2015/02/25/how-to-obtain-the-prerequisites-for-the-intune-app-wrapping-tool-for-ios/). Az alkalmazás-burkoló eszköz dokumentációjában tekintse meg az [androidos alkalmazás-burkoló eszköz](app-wrapper-prepare-android.md) és az [iOS-alkalmazás burkoló eszközét](app-wrapper-prepare-ios.md).
@@ -40,6 +39,7 @@ Az Alkalmazásburkoló eszköz **nem támogatja** az Apple App Store vagy a Goog
 Az alkalmazásvédelmi szabályzatok támogatásához készült alkalmazásburkoló eszköznek az Intune-ban nem regisztrált eszközökön való használatáról [Az üzleti alkalmazások és az adatok védelme a Microsoft Intune-ban nem regisztrált eszközökön](../apps/apps-add.md) című témakor nyújt tájékoztatást.
 
 ### <a name="reasons-to-use-the-app-wrapping-tool"></a>Mikor érdemes használni az Alkalmazásburkoló eszközt?
+
 * Az alkalmazásban nincsenek beépített adatvédelmi funkciók
 * Egyszerű az alkalmazás
 * Az alkalmazás belső telepítésű
@@ -55,11 +55,13 @@ Az alkalmazásvédelmi szabályzatok támogatásához készült alkalmazásburko
 |**Android--**|Nem – használja az [Intune App SDK Xamarin-kötéseket](app-sdk-xamarin.md).|Igen|
 
 ## <a name="intune-app-sdk"></a>Intune App SDK
+
 Az App SDK főleg olyan ügyfeleknek készült, akiknek vannak az Apple App Store vagy a Google Play Store áruházban alkalmazásai, és az Intune-nal szeretnék kezelni az alkalmazásokat. De bármilyen alkalmazás kihasználhatja az SDK integrálásának előnyeit, még üzletági alkalmazások esetében is.
 
 További információk az SDK-ról: [Áttekintés](app-sdk.md). Az SDK használatának megkezdéséhez olvassa el a [Bevezetés a Microsoft Intune App SDK használatába](app-sdk-get-started.md) című szakaszt.
 
 ### <a name="reasons-to-use-the-sdk"></a>Az SDK használatának előnyei
+
 * Az alkalmazásban nincsenek beépített adatvédelmi funkciók
 * Az alkalmazás összetett és számos felületet tartalmaz
 * Az alkalmazás nyilvános alkalmazás-áruházból, például a Google Play vagy az Apple App Store áruházból telepíthető
@@ -74,10 +76,12 @@ További információk az SDK-ról: [Áttekintés](app-sdk.md). Az SDK használa
 |**iOS--**|Igen – használja az [Intune App SDK Xamarin-kötéseket](app-sdk-xamarin.md).|Nem|
 |**Android--**| Igen – használja az [Intune App SDK Xamarin-kötéseket](app-sdk-xamarin.md).|Nem|
 
-### <a name="not-using-an-app-development-platform-listed-above"></a>Nem használ a fentiekben felsorolt app Development platformot? 
+### <a name="not-using-an-app-development-platform-listed-above"></a>Nem használ a fentiekben felsorolt app Development platformot?
+
 Az Intune SDK Fejlesztői csapata aktívan teszteli és karbantartja a natív Android, iOS (obj-C, Swift), a Xamarin, a Xamarin. Forms és a Cordova platformmal létrehozott alkalmazásokat. Míg egyes ügyfelek sikerrel jártak az Intune SDK-val más platformokkal, például a natív és a NativeScript reagálva, a támogatott platformoktól eltérő módon nem biztosítunk explicit útmutatást vagy beépülő modult az alkalmazás-fejlesztőknek. 
 
 ## <a name="feature-comparison"></a>Szolgáltatások összehasonlítása
+
 Ez a táblázat az App SDK-hoz és az alkalmazásburkoló eszközhöz használható beállításokat sorolja fel.
 
 > [!NOTE]

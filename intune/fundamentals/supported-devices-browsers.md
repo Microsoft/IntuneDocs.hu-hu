@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2bd9fe52bcaa6295d452ade59d6c3c32e1e81a67
-ms.sourcegitcommit: 4bf23327af734a9811d555fbd566c31239e2acd6
+ms.openlocfilehash: 2b58cbd0aa07babd36c7a7e5aa3dcc5b8d32d58a
+ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "72999695"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73415034"
 ---
 # <a name="supported-operating-systems-and-browsers-in-intune"></a>Az Intune-ban támogatott operációs rendszerek és böngészők
 
@@ -37,14 +37,14 @@ A konfigurációs szolgáltató támogatásával kapcsolatos további informáci
 
 Az alábbi operációs rendszereket használó eszközöket kezelheti:
 
-[!INCLUDE [mdm-supported-devices](../../intune-classic/includes/mdm-supported-devices.md)]
+[!INCLUDE [mdm-supported-devices](../includes/mdm-supported-devices.md)]
 
 ### <a name="supported-samsung-knox-standard-devices"></a>Támogatott Samsung Knox Standard-eszközök
 
 Az MDM-regisztrálást megakadályozó Knox-aktiválási hibák elkerülése érdekében az MDM-regisztráció során a Céges portál alkalmazás csak akkor kísérli meg a Samsung Knox-aktiválást, ha az eszköz szerepel a [támogatott Knox-eszközök listáján](https://www.samsungknox.com/knox-supported-devices/knox-workspace). Azokat az eszközöket, melyek nem támogatják a Samsung Knox-aktiválást, szabványos Android-eszközként regisztrálja a rendszer. Előfordulhat, hogy egy Samsung eszköz néhány modellje támogatja a Knox platformot, míg mások nem. Samsung-eszközök vásárlása és üzembe helyezése előtt egyeztesse az eszköz viszonteladójával, hogy az eszköz kompatibilis-e a KNOX-szal.
 
 > [!NOTE]
-> Előfordulhat, hogy a Samsung Knox-eszközök regisztrálásához [engedélyeznie kell a Samsung kiszolgálóinak elérését](https://support.samsungknox.com/hc/articles/115013833108-Our-corporate-devices-are-behind-a-firewall-How-do-I-enable-Knox-Workspace-devices-to-contact-Samsung-servers). 
+> Előfordulhat, hogy a Samsung Knox-eszközök regisztrálásához [engedélyeznie kell a Samsung kiszolgálóinak elérését](https://support.samsungknox.com/hc/articles/115013833108-Our-corporate-devices-are-behind-a-firewall-How-do-I-enable-Knox-Workspace-devices-to-contact-Samsung-servers).
 
 Az alábbi Samsung-modellek nem támogatják a Knoxot. Ezeket az Androidhoz készült Céges portál alkalmazás natív Android-eszközként regisztrálja:
 
@@ -85,18 +85,17 @@ Az alábbi Samsung-modellek nem támogatják a Knoxot. Ezeket az Androidhoz kés
 | Galaxy V Plus | SM-G318HZ |
 | Galaxy Young 2 Duos | SM-G130BU |
 
-
 ### <a name="windows-pc-software-client"></a>Windowsos számítógépeken futó szoftveres ügyfél
 
-A windowsos számítógépekre a regisztráció alternatívájaként telepítheti az [Intune szoftveres ügyfelet](../manage-windows-pcs-with-microsoft-intune.md) is. Ez a funkció csak a klasszikus Intune-portálon érhető el. Az Intune szoftveres ügyfele segítségével a Windows 7 és újabb rendszerű számítógépeket felügyelheti (kivéve a Windows 10 Home verziót).
+A windowsos számítógépekre a regisztráció alternatívájaként telepítheti az [Intune szoftveres ügyfelet](manage-windows-pcs-with-microsoft-intune.md) is. Ez a funkció csak a klasszikus Intune-portálon érhető el. Az Intune szoftveres ügyfele segítségével a Windows 7 és újabb rendszerű számítógépeket felügyelheti (kivéve a Windows 10 Home verziót).
 
 > [!Note]
 > A Microsoft bejelentette, hogy a Windows 7 támogatása január 14-én 2020-án végződik. Ezen a napon az Intune visszavonja a Windows 7 operációs rendszerű eszközök támogatását.
-
-> További információ [: az Intune-terv változásának megtervezése: a Windows 7 támogatásának megszűnése](https://docs.microsoft.com/en-us/intune/fundamentals/whats-new#intune-plan-for-change-nearing-end-of-support-for-windows-7)
-
+>
+> További információ [: az Intune-terv változásának megtervezése: a Windows 7 támogatásának megszűnése](https://docs.microsoft.com/intune/fundamentals/whats-new#intune-plan-for-change-nearing-end-of-support-for-windows-7)
+>
 > A Microsoft Intune a Silverlight-alapú Intune-konzol támogatását kivonja a 2020. október 15-én. Ez a nyugdíjazás magában foglalja a Silverlight-konzol konfigurált PC-ügyfélszoftverének (más néven a PC-ügynök) befejezésének támogatását.
-
+>
 > További információ: [a Silverlight-alapú felügyeleti konzol Microsoft Intune befejezésének támogatása](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Take-Action-Microsoft-Intune-ending-support-for-the-Silverlight/ba-p/916249)
 
 <!--  ### Exchange ActiveSync management
@@ -107,24 +106,23 @@ You can manage [Exchange ActiveSync devices](../enrollment/device-enrollment.md#
 
 A különféle felügyeleti tevékenységek elvégzésére a következő két felügyeleti webhely valamelyikét kell használnia.
 
-- [Microsoft 365 felügyeleti központ](http://go.microsoft.com/fwlink/p/?LinkId=698854)
+- [Microsoft 365 felügyeleti központ](https://go.microsoft.com/fwlink/p/?LinkId=698854)
 - [Azure Portal](https://portal.azure.com/)
 
 Ezeken a portálokon jelenleg a következő böngészők támogatottak:
+
 - Microsoft Edge (legújabb verzió)
 - Microsoft Internet Explorer 11
 - Safari (csak Mac, legújabb verzió)
 - Chrome (legújabb verzió)
 - Firefox (legújabb verzió)
 
-
-
-
 ### <a name="intune-classic-portal"></a>Klasszikus Intune-portál
 
 A klasszikus Intune-portált csak az Intune PC szoftverrel rendelkező ügyfélszoftverrel regisztrált eszközök kezelésére használjuk (https://manage.microsoft.com). A klasszikus Intune-portálhoz a böngésző Silverlight-támogatása szükséges.
 
 A klasszikus Intune-portál a következő Silverlight-kompatibilis böngészőkkel használható:
+
 - Internet Explorer 10 vagy újabb
 - Google Chrome (42-es vagy korábbi verziók)
 - Mozilla Firefox – Silverlight engedélyezve (56-es verziónál korábbi verziók)

@@ -249,6 +249,8 @@
               href: security-baseline-settings-mdm-all.md
             - name: A Microsoft Defender ATP alapbeállításai
               href: security-baseline-settings-defender-atp.md
+            - name: A Microsoft Edge alapbeállításai
+              href: security-baseline-settings-edge.md
         - name: Windows-frissítési beállítások
           href: windows-update-settings.md
         - name: Megfelelőségi szabályzat beállításai – Android

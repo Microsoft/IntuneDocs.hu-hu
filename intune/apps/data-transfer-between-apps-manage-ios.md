@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: db583b1fc89edf72f329a605cc86363593eaaa9d
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: cdc849405b7404203faa6e86d3fed1ea8e35ec43
+ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72497912"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73414636"
 ---
 # <a name="how-to-manage-data-transfer-between-ios-apps-in-microsoft-intune"></a>iOS-alkalmazások közti adatátvitel felügyelete a Microsoft Intune-ban
 
@@ -51,7 +51,7 @@ A felhasználó UPN-beállításának konfigurálása az Intune által felügyel
 
 3. Telepítse az alkalmazást a következő alkalmazás-konfigurációs beállításokkal a felügyelt eszközre:
 
-      **kulcs** = IntuneMAMUPN, **érték** =  @ no__t-3
+      **Key** = IntuneMAMUPN, **érték** = <username@company.com>
 
       Példa: [‘IntuneMAMUPN’, ‘janellecraig@contoso.com’]
       
@@ -68,7 +68,7 @@ A felhasználó UPN-beállításának konfigurálása az Intune által felügyel
 
 2. Az alkalmazások konfigurációjának megadására szolgáló szakaszban adja meg a következő beállítást:
 
-   **kulcs** = IntuneMAMUPN, **érték** =  @ no__t-3
+   **Key** = IntuneMAMUPN, **érték** = <username@company.com>
 
    A kulcs-érték pár pontos szintaxisa függ a külső MDM-szolgáltatótól. A következő táblázat példákat mutat be a harmadik féltől származó MDM-szolgáltatókra, valamint a kulcs/érték párokhoz megadott pontos értékekre.
 
@@ -81,7 +81,7 @@ A felhasználó UPN-beállításának konfigurálása az Intune által felügyel
    |ManageEngine Mobile Device Manager | IntuneMAMUPN | Sztring | %upn% |
 
 > [!NOTE]  
-> Az iOS rendszerhez készült Outlook alkalmazás esetén, ha az alkalmazás-konfigurációs szabályzatot "a Configuration Designer használata" beállítással telepíti, a IntuneMAMUPN konfigurációs kulcsát a rendszer automatikusan beállítja a háttérben a házirendhez. További részletek az [iOS-és Android-alkalmazások konfigurációs házirendje – általános alkalmazás-konfiguráció – az új Outlook for iOS és az Android alkalmazás konfigurációs szabályzata –](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/New-Outlook-for-iOS-and-Android-App-Configuration-Policy/ba-p/370481)gyakori kérdések 
+> Az iOS-hez készült Outlook esetében ha a felügyelt eszközök alkalmazás konfigurációs szabályzatát "a Configuration Designer használata" beállítással telepíti, és engedélyezi a **csak munkahelyi vagy iskolai fiókok**engedélyezése beállítást, a rendszer automatikusan konfigurálja a IntuneMAMUPN konfigurációs kulcsot a színfalak mögött. a szabályzathoz. További részleteket az [iOS-és Android-alkalmazások konfigurációs házirendje – általános alkalmazás konfigurálása](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/New-Outlook-for-iOS-and-Android-App-Configuration-Policy/ba-p/370481)című témakör gyakori kérdések szakasza tartalmaz. 
 
 
 ### <a name="example-2-end-user-experience"></a>2\. példa: A végfelhasználó teendői

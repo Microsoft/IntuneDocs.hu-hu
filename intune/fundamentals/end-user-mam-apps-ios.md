@@ -17,16 +17,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 807b33867d827415165eb65d81b91683830735f5
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: a1a3dcd7068a004f94b97b5ec6c43c609662a76d
+ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72502858"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73414562"
 ---
 # <a name="what-to-expect-when-your-ios-app-is-managed-by-app-protection-policies"></a>Milyen hatással vannak az iOS-alkalmazásokra az alkalmazásvédelmi szabályzatok?
-
-[!INCLUDE [both-portals](../../intune-classic/includes/note-for-both-portals.md)]
 
  Ez a témakör ismerteti a felhasználói élményt, amikor alkalmazás-védelmi házirendekkel rendelkező alkalmazásokat használ. Az alkalmazásvédelmi szabályzatokat csak akkor alkalmazza a rendszer, amikor az alkalmazásokat munkahelyi környezetben használják; például ha a felhasználó munkahelyi fiókkal fér hozzá az alkalmazásokhoz, vagy a cég OneDrive Vállalati verzióbeli helyén tárolt fájlokhoz fér hozzá.
 
@@ -35,7 +33,6 @@ ms.locfileid: "72502858"
 Ha az eszköz **nincs regisztrálva az Intune-ban**, a rendszer az alkalmazás első használatakor felkéri a felhasználót, hogy indítsa újra az alkalmazást. Az újraindítás azért szükséges, hogy a rendszer alkalmazni tudja az alkalmazásvédelmi szabályzatokat az alkalmazásra.
 
 <!--- The following screenshot from the Skype app illustrates this restart request: --->
-
 
 <!---  ![Screenshot of the iOS device showing PIN prompt](./media/end-user-mam-apps-ios/iOS_AppPINPrompt.png) --->
 
@@ -56,8 +53,9 @@ Az alkalmazásvédelmi szabályzatokat a rendszer csak a munkahelyi használat e
 A többszörös identitású alkalmazások lehetővé teszik, hogy a felhasználók több fiókot is hozzáadjanak.  Az Intune APP csak egy felügyelt fiókot támogat.  Az Intune APP a felügyelt fiókok számát azonban nem korlátozza.
 
 Ha felügyelt fiók van jelen az alkalmazásban:
-* Ha a felhasználó egy második felügyelt fiókot próbál hozzáadni, akkor meg kell adnia, hogy mely felügyelt fiókot szeretné használni.  A másik fiók el lesz távolítva.
-* Ha a rendszergazda egy második meglévő fiókhoz ad hozzá szabályzatot, a felhasználónak ki kell választania, hogy mely felügyelt fiókot szeretné használni.  A másik fiók el lesz távolítva.
+
+- Ha a felhasználó egy második felügyelt fiókot próbál hozzáadni, akkor meg kell adnia, hogy mely felügyelt fiókot szeretné használni.  A másik fiók el lesz távolítva.
+- Ha a rendszergazda egy második meglévő fiókhoz ad hozzá szabályzatot, a felhasználónak ki kell választania, hogy mely felügyelt fiókot szeretné használni.  A másik fiók el lesz távolítva.
 
 A következő példák részletesen bemutatják, hogy a rendszer hogyan kezeli a további felhasználói fiókokat.
 
@@ -68,4 +66,5 @@ Az A felhasználó két vállalatnak dolgozik: az**X vállalatnak** és az **Y**
 Ha iOS-eszközt használ, és egy második munkahelyi fiókot szeretne felvenni ezen az eszközön, a blokkolásról tájékoztató üzenet jelenhet meg. Megjelennek a fiókok, és Ön kiválaszthatja, hogy melyiket kívánja eltávolítani.
 
 ## <a name="next-steps"></a>További lépések
+
 [Milyen hatással vannak az androidos alkalmazásokra az alkalmazásvédelmi szabályzatok?](end-user-mam-apps-android.md)

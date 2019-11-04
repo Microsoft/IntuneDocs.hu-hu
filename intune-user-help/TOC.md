@@ -64,8 +64,14 @@
 ## [iOS-eszköz használata](using-your-iOS-device-with-intune.md)
 ### [Az iOS-eszközök alaphelyzetbe állításának hatásai](effects-of-device-reset-company-portal-ios.md)
 ### [A Céges portál telepítése, majd bejelentkezés a portálra](install-and-sign-in-to-the-intune-company-portal-app-ios.md)
-### [iOS-eszköz regisztrálása](enroll-your-device-in-intune-ios.md)
-### [A cég által biztosított iOS-eszköz regisztrálása](enroll-your-device-dep-ios.md)
+### Saját eszköz regisztrálása
+#### [iOS-eszköz regisztrálása](enroll-your-device-in-intune-ios.md)
+#### [A cég által biztosított iOS-eszköz regisztrálása](enroll-your-device-dep-ios.md)
+#### Regisztrálás származtatott hitelesítő adatokkal
+##### [Regisztrálás Entrust Datacard használatával](enroll-ios-device-entrust-datacard.md)
+##### [Regisztrálás Intercede használatával](enroll-ios-device-intercede.md)
+##### [Regisztrálás DISA Purebred használatával](enroll-ios-device-disa-purebred.md)
+
 
 ### [Felügyelt alkalmazások használata az eszközön](use-managed-apps-on-your-device-ios.md)
 ### [PIN-kód beállítása vagy módosítása](set-or-change-your-passcode-ios.md)

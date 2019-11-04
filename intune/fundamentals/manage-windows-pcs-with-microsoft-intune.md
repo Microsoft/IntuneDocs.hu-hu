@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic-keep
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fb9fb439bd0bc59ae2c69ec966587d58c8c97bf4
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: fb67cf2cb17b78c4034c3b73e229e160723d975e
+ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72510105"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73414392"
 ---
 # <a name="manage-windows-pcs-as-computers-via-intune-software-client"></a>Windows rendszerű számítógépek kezelése az Intune-szoftverügyfélen keresztül számítógépként
 
@@ -30,7 +30,7 @@ ms.locfileid: "72510105"
 > [!WARNING]
 > A Microsoft bejelentette, hogy a [Windows 7 támogatása 2020. január 14-én véget ér](https://support.microsoft.com/help/4057281/windows-7-support-will-end-on-january-14-2020). Ezen a napon az Intune visszavonja a Windows 7 operációs rendszerű eszközök támogatását. A Microsoft a szolgáltatási és támogatási kimaradások megelőzése érdekében kifejezetten ajánlja a Windows 10-re való átállást.
 > 
-> További információkért lásd: az [Intune-terv változásának megtervezése, a Windows 7 támogatásának megszűnése](../fundamentals/whats-new.md#intune-plan-for-change-nearing-end-of-support-for-windows-7-).
+> További információkért lásd: az [Intune-terv változásának megtervezése, a Windows 7 támogatásának megszűnése](../fundamentals/whats-new.md#intune-plan-for-change-nearing-end-of-support-for-windows-7).
 
 > [!NOTE]
 > A Microsoft Intune-ban kezelheti a Windows-számítógépeket [mobileszközként a mobileszköz-kezelés (MDM),](../enrollment/windows-enroll.md) vagy számítógépként az Intune szoftverügyfél használatával, a lent ismertetett módon. A Microsoft azonban azt javasolja, hogy az ügyfelek [lehetőség szerint az MDM-megoldást válasszák](../enrollment/windows-enroll.md) a felügyelethez. További információ: a [Windows rendszerű számítógépek számítógépként vagy mobileszközökként való kezelésének összehasonlítása](pc-management-comparison.md) 
@@ -62,7 +62,7 @@ Az ügyfélszoftver telepítéséhez a következő szoftverek szükségesek:
 |---------------|--------------------|
 |Operációs rendszer | Windows 7 SP1, Windows 8.1 vagy újabb rendszert futtató eszköz. </br></br>**A Home Edition verziók nem támogatottak.**|
 |Rendszergazdai engedélyek|Az ügyfélszoftvert telepítő fióknak helyi rendszergazdai engedélyekkel kell rendelkeznie az eszközön.|
-|Windows Installer 3.1|A számítógépnek legalább a Windows Installer 3.1-es verziójával kell rendelkeznie.<br /><br />A Windows Installer verziójának megtekintése egy számítógépen:<br /><br />  A számítógépen kattintson a jobb gombbal a **%windir%\System32\msiexec.exe** fájlra, majd a **Tulajdonságok** menüpontra.<br /><br />A Windows Installer legújabb verzióját letöltheti a Microsoft Developer Network webhelyen található [Windows Installer újraterjeszthető csomagok](http://go.microsoft.com/fwlink/?LinkID=234258) oldalról.|
+|Windows Installer 3.1|A számítógépnek legalább a Windows Installer 3.1-es verziójával kell rendelkeznie.<br /><br />A Windows Installer verziójának megtekintése egy számítógépen:<br /><br />  A számítógépen kattintson a jobb gombbal a **%windir%\System32\msiexec.exe** fájlra, majd a **Tulajdonságok** menüpontra.<br /><br />A Windows Installer legújabb verzióját letöltheti a Microsoft Developer Network webhelyen található [Windows Installer újraterjeszthető csomagok](https://go.microsoft.com/fwlink/?LinkID=234258) oldalról.|
 |Nem kompatibilis ügyfélszoftver eltávolítása|Az Intune-ügyfélszoftver telepítése előtt távolítson el a számítógépről minden Configuration Manager-, Operations Manager- és Service Manager-ügyfélszoftvert.|
 
 ## <a name="deploying-the-intune-software-client"></a>Az Intune-szoftverügyfél üzembe helyezése

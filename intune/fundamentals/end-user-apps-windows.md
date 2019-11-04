@@ -17,16 +17,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e1cd4dd270d276969d759bc9a9dccef80b281251
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: da2f080458df360667df235ff10cc8f750b049eb
+ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72502929"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73414580"
 ---
 # <a name="how-your-windows-users-get-their-apps"></a>Windows-felhasználói alkalmazások letöltése
-
-[!INCLUDE [both-portals](../../intune-classic/includes/note-for-both-portals.md)]
 
 Ez a témakör ismerteti, hogy felhasználói hol és hogyan juthatnak hozzá a Microsoft Intune-ban elérhetővé tett alkalmazásokhoz.
 
@@ -39,5 +37,6 @@ Ez a témakör ismerteti, hogy felhasználói hol és hogyan juthatnak hozzá a 
 **Nem felügyelt alkalmazások** – Azok a szabályzatokkal felügyelhető alkalmazások, amelyeket nem az Intune burkolt be, illetve amelyek nem foglalják magukban az Intune App SDK-t. Ezekre az alkalmazásokra nem alkalmazhatók alkalmazásvédelmi szabályzatok.
 
 ## <a name="see-also"></a>További információ
+
 [Android-felhasználói alkalmazások letöltése](end-user-apps-android.md)
 [iOS-felhasználói alkalmazások letöltése](end-user-apps-android.md)

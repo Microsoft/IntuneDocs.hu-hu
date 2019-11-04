@@ -17,16 +17,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8e8d0a38d385e034b948b96a96df2189666362a9
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 04708842373abf296b5350d9f77e02fa08ce48ed
+ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72505443"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73414619"
 ---
 # <a name="configure-a-custom-domain-name"></a>Állítson be egy egyéni tartománynevet
-
-[!INCLUDE [both-portals](../../intune-classic/includes/note-for-both-portals.md)]
 
 Ez a témakör arról tájékoztatja a rendszergazdákat, hogy miképpen szabhatják testre a bejelentkezést egy DNS CNAME rekord létrehozásával a Microsoft Intune-ban.
 
@@ -48,7 +46,7 @@ A kezdeti onmicrosoft.com tartománynév nem nevezhető át és nem távolíthat
 2. A navigációs ablakban kattintson a **Beállítás** &gt; **Tartományok** elemre.
 
 3. Kattintson a **Tartomány felvétele** gombra, és írja be az egyéni tartománynevet. Válassza a **Tovább** elemet.
-   @no__t – a Microsoft 365 felügyeleti központ 0Screenshot a kiválasztott beállításokkal > tartományokat, és új tartománynevet ad hozzá a @ no__t-1 értékhez.
+   ![a Microsoft 365 felügyeleti központ képernyőképe a kiválasztott beállításokkal > tartományokkal és új tartománynév hozzáadásával](./media/custom-domain-name-configure/domain-custom-add.png)
 4. A megnyíló **Tartomány hitelesítése** párbeszédpanelen megtalálhatja a DNS-szolgáltatón létrehozandó TXT-rekord értékeit.
     - **GoDaddy-felhasználók**: Microsoft 365 felügyeleti központ átirányítja Önt a GoDaddy bejelentkezési oldalára. A hitelesítő adatok megadása és a tartományváltást engedélyező megállapodás elfogadása után a TXT-rekord automatikusan létrejön. Alternatív módszerként [a TXT-rekord manuálisan is létrehozható](https://support.office.com/article/Create-DNS-records-at-GoDaddy-for-Office-365-f40a9185-b6d5-4a80-bb31-aa3bb0cab48a).
     - **Register.com-felhasználók:** Kövesse a TXT típusú rekord létrehozására vonatkozó [részletes utasításokat](https://support.office.com/article/Create-DNS-records-at-Register-com-for-Office-365-55bd8c38-3316-48ae-a368-4959b2c1684e#BKMK_verify).

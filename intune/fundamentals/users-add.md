@@ -18,23 +18,23 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 90066bf55f50819ba77babee1e1d4230bdead613
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: b5b469c759ac34a6d8de09163534a580346e48a1
+ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72504865"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73415028"
 ---
 # <a name="add-users-and-grant-administrative-permission-to-intune"></a>Felhasználók hozzáadása és rendszergazdai engedély biztosítása az Intune-hoz
-
-[!INCLUDE [both-portals](../../intune-classic/includes/note-for-both-portals.md)]
 
 A rendszergazdák jogosultak közvetlenül felvenni az új felhasználókat, vagy szinkronizálni a felhasználókat a helyszíni Active Directoryból. Ha felvették a felhasználókat a szolgáltatásba, regisztrálhatják az eszközeiket, és elérhetik a vállalati erőforrásokat. További jogosultságokat is adhat a felhasználóknak, többek között *globális rendszergazdai* és *szolgáltatásadminisztrátori* engedélyeket.
 
 ## <a name="add-users-to-intune"></a>Felhasználók hozzáadása az Intune-hoz
+
 Az Intune-előfizetéshez manuálisan is hozzáadhat felhasználókat a [Microsoft 365 felügyeleti központban](https://admin.microsoft.com) vagy a [Azure Portal](https://portal.azure.com/#blade/Microsoft_Intune_DeviceSettings/ExtensionLandingBlade/overview). A rendszergazda módosíthatja a felhasználói fiókokat az Intune-licencek hozzárendeléséhez. A licenceket a Microsoft 365 felügyeleti központban vagy az Intune-Azure Portal is hozzárendelheti. A Microsoft 365 felügyeleti központ használatával kapcsolatos további információkért lásd: [felhasználók hozzáadása egyénileg vagy tömegesen a Microsoft 365 felügyeleti központban](https://support.office.com/article/Add-users-individually-or-in-bulk-to-Office-365-Admin-Help-1970f7d6-03b5-442f-b385-5880b9c256ec).
 
 ### <a name="add-intune-users-in-the-microsoft-365-admin-center"></a>Intune-felhasználók hozzáadása a Microsoft 365 felügyeleti központban
+
 1. Jelentkezzen be [Microsoft 365 felügyeleti központba](https://admin.microsoft.com) globális rendszergazdai vagy felhasználói felügyeleti rendszergazdai fiókkal.
 2. Az Office 365 menüjében válassza a **Rendszergazda** elemet.
 3. A Felügyeleti központban válassza a **Felhasználó hozzáadása** elemet.
@@ -56,6 +56,7 @@ Az Intune-előfizetéshez manuálisan is hozzáadhat felhasználókat a [Microso
 6. Válassza a **Hozzáadás** gombot az új felhasználó létrehozásához.
 
 ### <a name="add-intune-users-in-the-azure-portal"></a>Intune-felhasználók felvétele az Azure Portalon
+
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 2. Válassza a **Felhasználók** > **Minden felhasználó** lehetőséget.
 3. A Felügyeleti központban válassza az **Új felhasználó** elemet.
@@ -78,6 +79,7 @@ Az Intune-előfizetéshez manuálisan is hozzáadhat felhasználókat a [Microso
 Javasoljuk, hogy a felhasználók Intune-előfizetéshez történő hozzáadása után biztosítson néhány felhasználó számára rendszergazdai engedélyt.  Rendszergazdai jogosultságokat az alábbi lépéseket követve adhat:
 
 ### <a name="give-admin-permissions-in-office-365"></a>Rendszergazdai jogosultságok biztosítása az Office 365-ben
+
 1. Jelentkezzen be a [Microsoft 365 felügyeleti központba](https://admin.microsoft.com) globális rendszergazdai fiókkal.
 2. Az Office 365 menüjében válassza a **Rendszergazda** elemet.
 3. A Felügyeleti központban válassza az **Aktív felhasználók** lehetőséget, majd válassza ki azt a felhasználót, akinek rendszergazdai jogosultságot szeretne adni.
@@ -91,6 +93,7 @@ Javasoljuk, hogy a felhasználók Intune-előfizetéshez történő hozzáadása
 6. Válassza a **Mentés** elemet.
 
 ### <a name="give-admin-permissions-in-the-azure-portal"></a>Rendszergazdai jogosultságok megadása az Azure Portalon
+
 1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com) egy globális rendszergazdai fiókkal.
 2. Az Azure Portalon válassza a **Felhasználó** lehetőséget, majd válassza ki azt a felhasználót, akinek rendszergazdai jogosultságot szeretne adni.
 3. Válassza a **Címtárbeli szerepkör** elemet, majd pedig a kívánt jogosultságot.
@@ -113,9 +116,11 @@ A Microsoft Intune-előfizetés létrehozásához használt fiók globális rend
 A Microsoft 365 felügyeleti központhoz való hozzáféréshez a fióknak **engedélyezett bejelentkezési** készlettel kell rendelkeznie. Az Azure Portalon a **Profil** szakaszban a **Nem** értékre állítsa a **Bejelentkezés blokkolása** beállítást. Ez az állapot nem ugyanaz, mint amikor a fióknak licence van az előfizetéshez. Alapértelmezés szerint az összes felhasználói fiók **Engedélyezett** állapotú. A rendszergazdai jogosultságokkal nem rendelkező felhasználók az Intune-jelszavak alaphelyzetbe állításához a Microsoft 365 felügyeleti központot használhatják.
 
 ## <a name="sync-active-directory-and-add-users-to-intune"></a>Az Active Directory szinkronizálása és felhasználók hozzáadása az Intune szolgáltatáshoz
+
 A címtár-szinkronizálás konfigurálásával importálhatja a helyi Active Directoryban lévő felhasználói fiókokat a Microsoft Azure Active Directory (Azure AD) szolgáltatásba (ide tartoznak az Intune-felhasználók is). A helyi Active Directory szolgáltatás Azure Active Directory-alapú szolgáltatásokkal való összekapcsolásával jóval egyszerűbbé válik az identitásfelügyelet. Az egyszeri bejelentkezési funkciók konfigurálásával ismerőssé és könnyebbé teheti a felhasználók számára a hitelesítést. Ha egy [Azure AD-bérlőt](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect/) egyszerre több szolgáltatáshoz is társít, a korábban már szinkronizált felhasználói fiókok is elérhetővé válnak az összes felhőalapú szolgáltatásban.
 
 ### <a name="how-to-sync-on-premises-users-with-azure-ad"></a>Helyi felhasználók szinkronizálása az Azure AD szolgáltatással
+
 A felhasználói fiókoknak az Azure AD-val való szinkronizálásához kizárólag az [Azure AD Connect varázslóra](https://www.microsoft.com/download/details.aspx?id=47594) van szüksége. Az Azure AD Connect varázsló egyszerűsített és irányított kezelőfelülettel segíti a helyszíni identitási infrastruktúrának a felhőhöz történő csatlakoztatását. Válassza ki a topológiát és a vonatkozó igényeket (egyetlen vagy több címtár, jelszókivonatok szinkronizálása, átmenő hitelesítés vagy összevonás). A varázsló telepíti és konfigurálja a kapcsolat működéséhez szükséges az összes összetevőt. Ilyen összetevők többek között: a szinkronizálási szolgáltatások, az Active Directory összevonási szolgáltatások (AD FS) és az Azure AD PowerShell modul.
 
 > [!TIP]

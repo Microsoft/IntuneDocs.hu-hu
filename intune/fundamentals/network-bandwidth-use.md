@@ -18,20 +18,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4a3ecf2872832af6199620863a05b4275731db5c
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 0507d607bfac6c084f1ce0b1f59d7474810ec8b7
+ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72505245"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73415117"
 ---
 # <a name="intune-network-configuration-requirements-and-bandwidth"></a>Intune – a hálózati konfiguráció követelményei és sávszélessége
-
-[!INCLUDE [both-portals](../../intune-classic/includes/note-for-both-portals.md)]
 
 Ezekkel az információkkal megismerheti az Intune-beli üzemelő példányok sávszélességre vonatkozó követelményeit.
 
 ## <a name="average-network-traffic"></a>Átlagos hálózati forgalom
+
 A táblázat az egyes ügyfelek esetében a hálózaton áthaladó általános tartalmak hozzávetőleges méretét és gyakoriságát tartalmazza.
 
 > [!NOTE]
@@ -53,9 +52,11 @@ A táblázat az egyes ügyfelek esetében a hálózaton áthaladó általános t
 |Szoftverterjesztés|Változó<br /><br />A méret a telepített szoftverektől függ.|**Változó**<br /><br />A szoftverek telepítésének idejétől függ.|
 
 ## <a name="ways-to-reduce-network-bandwidth-use"></a>A hálózatisávszélesség-felhasználás csökkentésének módjai
+
 Az alábbi eljárások közül egynek vagy többnek az alkalmazásával csökkenthető az Intune-ügyfelek által felhasznált hálózati sávszélesség.
 
 ### <a name="use-a-proxy-server-to-cache-content-requests"></a>Proxykiszolgáló használata a tartalomkérelmek gyorsítótárazásához
+
 A proxykiszolgálók képesek gyorsítótárazni a tartalmakat, amivel csökkenthető az ismétlődő letöltések és az internetről származó tartalmakhoz felhasznált hálózati sávszélesség mennyisége.
 
 Az ügyfelek tartalomkéréseit fogadó gyorsítótárazási proxykiszolgálók be tudják olvasni a megfelelő tartalmakat, és képesek gyorsítótárazni a webes válaszokat és a letöltéseket is. A kiszolgáló az ügyfelek későbbi kérelmeire a gyorsítótárazott adatok alapján ad választ.
@@ -74,6 +75,7 @@ Az alábbiakban az Intune-ügyfelek számára tartalmakat gyorsítótárazó pro
 A proxykiszolgálók tartalmak gyorsítótárazására való használatával kapcsolatos további tudnivalókat a proxykiszolgáló-megoldása dokumentációjában találhat.
 
 ### <a name="use-background-intelligent-transfer-service-bits-on-computers"></a>Háttérben futó intelligens átviteli szolgáltatás (BITS) használata a számítógépeken
+
 A konfigurált órákban a Windows rendszerű számítógépek BITS szolgáltatásával csökkentheti a hálózati sávszélességet. A BITS-szabályzatot az Intune-ügynök házirendjének **hálózati sávszélesség** lapján állíthatja be.
 
 > [!NOTE]
@@ -82,14 +84,15 @@ A konfigurált órákban a Windows rendszerű számítógépek BITS szolgáltat�
 A BITS Windows rendszerű számítógépeken való használatáról a TechNet könyvtár a [Háttérben futó intelligens átviteli szolgáltatással foglalkozó témakörében](https://technet.microsoft.com/library/bb968799.aspx) olvashat bővebben.
 
 ### <a name="delivery-optimization"></a>Kézbesítési optimalizálás
+
 A kézbesítés optimalizálása lehetővé teszi, hogy az Intune használatával csökkentse a sávszélesség-használatot, amikor a Windows 10-es eszközök letöltik az alkalmazásokat és a frissítéseket. A saját szervezésű elosztott gyorsítótár használatával a letöltések a hagyományos kiszolgálókról és más forrásokból (például hálózati társokból) tölthetők le.
 
 A kézbesítési optimalizálás által támogatott Windows 10-es verziók és tartalomtípusok teljes listájának megtekintéséhez tekintse meg a [Windows 10-es frissítések kézbesítésének optimalizálásával foglalkozó cikket](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization#requirements).
 
 Az eszköz konfigurációs profiljainak részeként [beállíthatja a kézbesítés optimalizálását](../configuration/delivery-optimization-settings.md) .
 
-
 ### <a name="use-branchcache-on-computers"></a>A BranchCache használata a számítógépeken
+
 Az Intune-ügyfeleken a BranchCache szolgáltatással is csökkenthető a nagykiterjedésű hálózati (WAN) forgalom. A következő operációs rendszerek támogatják a BranchCache használatát:
 
 - Windows 7

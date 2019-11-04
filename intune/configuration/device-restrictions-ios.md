@@ -6,7 +6,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 10/22/2019
+ms.date: 10/31/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 95cf688f3727f97aedd4126e00fa4dc4939ef6bc
-ms.sourcegitcommit: 06a1fe83fd95c9773c011690e8520733e1c031e3
+ms.openlocfilehash: 6dbe26dba4e78e9f5f29a5adedffa3de1df662a6
+ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72785508"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73414678"
 ---
 # <a name="ios-and-ipados-device-settings-to-allow-or-restrict-features-using-intune"></a>iOS-és iPadOS-eszközök beállításai az Intune-t használó funkciók engedélyezéséhez vagy korlátozásához
 
@@ -167,7 +167,33 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
   az iOS beépített biztonságot tartalmaz, amely hatással lehet erre a beállításra. Előfordulhat például, hogy az iOS késlelteti a szabályzat aktiválását a bejelentkezési hibák számától függően. Azt is fontolóra veheti, hogy ismételten ugyanazzal a PIN-kóddal adja meg ugyanazt a jelszót, mint egy kísérletet. Az Apple [IOS-alapú biztonsági útmutatója](https://www.apple.com/business/site/docs/iOS_Security_Guide.pdf) (az Apple webhelyének megnyitása) jó erőforrás, és pontosabb részleteket biztosít a PIN-kódokról.
   
 - A **Képernyő zárolása előtt legfeljebb perccel a jelszó megadása kötelező**<sup>1</sup>: adja meg, hogy az eszköz mennyi ideig maradjon üresjáratban, mielőtt a felhasználónak újra meg kell adnia a jelszavát. Ha a megadott idő hosszabb az eszközön jelenleg beállított értéknél, akkor az eszköz figyelmen kívül hagyja a beírt időt. IOS 8,0 és újabb rendszerű eszközökön támogatott.
-- **Legfeljebb ennyi perc inaktivitás után (képernyő zárolása**<sup>1)</sup>: Itt adhatja meg, hogy legfeljebb hány perc inaktivitás engedélyezett az eszközön a képernyő zárolása előtt. Ha a megadott idő hosszabb az eszközön jelenleg beállított értéknél, akkor az eszköz figyelmen kívül hagyja a beírt időt. Ha a érték **azonnal**be van állítva, a képernyő zárolása az eszköz minimális ideje alapján történik. IPhone-on 30 másodperc. IPaden ez két perc.
+
+- **Legfeljebb ennyi perc inaktivitás után (képernyő zárolása**<sup>1)</sup>: Itt adhatja meg, hogy legfeljebb hány perc inaktivitás engedélyezett az eszközön a képernyő zárolása előtt.
+
+  **iOS-beállítások**:  
+
+  - **Nincs konfigurálva** (alapértelmezett): az Intune nem érinti ezt a beállítást.
+  - **Azonnal**: a képernyő zárolása 30 másodperc inaktivitás után történik.
+  - **1**: a képernyőfelvételek 1 perc inaktivitás után zárolva vannak.
+  - **2**: a képernyő 2 perc inaktivitás után zárolható.
+  - **3**: a képernyő zárolása 3 perc inaktivitás után történik.
+  - **4**: a képernyő zárolása 4 perc inaktivitás után történik.
+  - **5**: a képernyő 5 perc inaktivitás után zárolja.
+    
+  **iPadOS beállítások**:  
+
+  - **Nincs konfigurálva** (alapértelmezett): az Intune nem érinti ezt a beállítást.
+  - **Azonnal**: 2 perc inaktivitás után zárolja a képernyőket.
+  - **2**: a képernyő 2 perc inaktivitás után zárolható.
+  - **5**: a képernyő 5 perc inaktivitás után zárolja.
+  - **10**: a képernyő zárolása 10 perc inaktivitás után történik.
+  - **15**: a képernyőfelvételek 15 perc inaktivitás után zárolva vannak.
+
+  Ha egy érték nem vonatkozik az iOS-re vagy a iPadOS, az Apple a legközelebbi *legalacsonyabb* értéket használja. Ha például `4` percet ad meg, a iPadOS-eszközök `2` percet használnak. Ha `10` percet ad meg, az iOS-eszközök `5` percet használnak. Ez egy Apple-korlátozás.
+  
+  > [!NOTE]
+  > A beállítás Intune KEZELŐFELÜLETe nem választja el az iOS-és a iPadOS által támogatott értékeket. Előfordulhat, hogy a felhasználói felület egy későbbi kiadásban frissül.
+
 - **Jelszó érvényessége (napokban)** : adja meg, hogy hány nap elteltével kell megváltoztatni az eszköz jelszavát.
 - **Korábbi jelszavak újbóli használatának tiltása**: Itt adhatja meg, hogy hány új jelszót kell használni, amíg egy régit nem lehet újra felhasználni.
 - **Touch ID és Face ID feloldása**: válassza a **Letiltás** lehetőséget, nehogy ujjlenyomatot vagy arcot használjon az eszköz zárolásának feloldásához. A **nincs konfigurálva** beállítás lehetővé teszi, hogy a felhasználó ezeket a módszereket használja fel az eszköz zárolásának feloldásához.

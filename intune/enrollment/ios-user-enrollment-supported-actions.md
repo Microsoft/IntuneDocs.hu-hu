@@ -18,16 +18,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 96c802e76aab673aa6a9108dc0a14f553c26b96b
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: fcc5dea1a3f9e6a1f2bec877688962d7be70cc7c
+ms.sourcegitcommit: d2d18eef64bcf16eec1a48fcb67f1362537c0245
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72505415"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73445309"
 ---
 # <a name="intune-actions-and-options-supported-with-apple-user-enrollment"></a>Az Apple User beléptetésével támogatott Intune-műveletek és-beállítások
 
 A felhasználó beléptetése az eszközkezelés lehetőségeinek egy részhalmazát támogatja. Ha egy korábban már meglévő konfigurációs profilt alkalmaz egy felhasználó beléptetési eszközére, a rendszer csak a felhasználói beléptetés által támogatott beállításokat alkalmazza az adott eszközre.
+
+> [!NOTE]
+> Az Apple felhasználói regisztrációjának támogatása az Intune-ban jelenleg előzetes verzióban érhető el.
 
 ## <a name="password-settings"></a>Jelszóbeállítások
 
@@ -97,6 +100,19 @@ A felhasználó beléptetésével regisztrált eszközökön a következő beál
 - A felügyelt APFS-köteten kívüli alkalmazások MDM ellenőrzése.
 - Az alkalmazás-védelmi szabályzatok továbbra is érvényesek lesznek ezekre az alkalmazásokra. Azonban nem fogja tudni átvenni a felügyeletet, vagy felügyelt verziót telepíteni az alkalmazások közül, hacsak a felhasználó nem törli őket az eszközről.
 - A felügyeletet igénylő műveletek, konfigurációk, beállítások és parancsok. 
+
+## <a name="options-not-supported-in-preview"></a>Az előzetes verzióban nem támogatott beállítások
+- A személyes tulajdonban lévő eszközök engedélyezésére/letiltására vonatkozó beléptetési eszközök típusai 
+
+## <a name="known-issues-in-preview"></a>Az előzetes verzióban ismert problémák
+- VPP-licenc visszavonása: a licenc visszavonásáról szóló értesítés nem jelenik meg. A jelenlegi viselkedés az, hogy a visszavonás sikeres, de a végfelhasználó nem kap értesítést. 
+- VPP Application Reporting: az ügyfélalkalmazások > alkalmazások > [alkalmazás neve] > eszköz telepítési állapotában található jelentésben a felhasználó által beléptetett eszközökre telepített VPP-alkalmazások jelentése "sikertelen", még akkor is, ha az alkalmazás sikeresen üzembe helyezte az eszközt. 
+- Application Reporting: a felhasználói regisztrációval nem támogatott alkalmazások típusai esetén a jelentések nem releváns hibaüzeneteket biztosíthatnak. 
+- Céges portál az alkalmazás felhasználói felületén: a felhasználók az összes megcélozt alkalmazást láthatják, függetlenül attól, hogy támogatottak-e a felhasználók által regisztrált eszközök. 
+- Céges portál az alkalmazás felhasználói felületén: a felhasználók ugyanazt a szöveget látják, amely azt jelzi, hogy mely szervezetek láthatják és nem látják a felhasználók és eszközök regisztrálását.
+- Ha a felhasználó a "saját szervezetem az eszköz tulajdonosa" lehetőséget választja a beléptetés során, az eszköz az Intune-ban továbbra is személyesként van megjelölve, kivéve, ha a felügyeleti konzolon vagy gráfon keresztül másképp módosítják 
+- Beléptetési célzás: a iPadOS nem szerepel a platform-választóban. a iPadOS előzetes verzióban érhető el, de explicit módon nem szerepel a felügyeleti konzolon. 
+
 
 ## <a name="next-steps"></a>További lépések
 

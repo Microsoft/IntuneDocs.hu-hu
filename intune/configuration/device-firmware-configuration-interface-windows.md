@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2bfc49f772331113314e45bc49360b8435b88037
-ms.sourcegitcommit: 0d6f323152ec62f7d383891cce12ea0a4289cd8f
-ms.translationtype: MT
+ms.openlocfilehash: 5afe2414db063aad53a89fd8125a68a53457ca49
+ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72889571"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73414654"
 ---
 # <a name="use-device-firmware-configuration-interface-profiles-on-windows-devices-in-microsoft-intune-public-preview"></a>Eszköz belső vezérlőprogram konfigurációs felületi profiljainak használata Microsoft Intune (nyilvános előzetes verzió) esetén Windows-eszközökön
 
@@ -45,7 +45,7 @@ Ez a funkció az alábbiakra vonatkozik:
 
 ## <a name="before-you-begin"></a>Előkészületek
 
-- Az eszköz gyártójának a gyártási folyamatban vagy a telepített belső vezérlőprogram-frissítésnél hozzá kell adnia az UEFI belső vezérlőprogram-DFCI. A DFCI támogató gyártók, illetve a DFCI használatához szükséges belső vezérlőprogram-verzió meghatározásához használja az eszközök gyártóit.
+- Az eszköz gyártójának a gyártási folyamatban vagy a telepített belső vezérlőprogram-frissítésnél hozzá kell adnia az UEFI belső vezérlőprogram-DFCI. A [DFCI támogató gyártók](https://microsoft.github.io/mu/dyn/mu_plus/DfciPkg/Docs/Scenarios/DfciScenarios/#oems-that-support-dfci), illetve a DFCI használatához szükséges belső vezérlőprogram-verzió meghatározásához használja az eszközök gyártóit.
 
 - Az eszközt regisztrálni kell a Windows Autopilot számára egy [Microsoft Cloud megoldás-szolgáltató (CSP) partner](https://partner.microsoft.com/cloud-solution-provider)által, vagy közvetlenül az OEM-nek kell regisztrálnia. 
 

@@ -16,12 +16,12 @@ ms.reviewer: joglocke
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d447f2bf45d1bf3e6355a9d5dcc42b4bc2f3a9f3
-ms.sourcegitcommit: 4bf23327af734a9811d555fbd566c31239e2acd6
+ms.openlocfilehash: 53014376a7e220e975878031ffd759da40db7f6b
+ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "72999759"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73413841"
 ---
 # <a name="use-security-baselines-to-configure-windows-10-devices-in-intune"></a>Biztonsági alapkonfigurációk használata a Windows 10-es eszközök Intune-ban való konfigurálásához
 
@@ -80,6 +80,9 @@ Az Intune-nal az alábbi biztonsági alapkonfigurációk használhatók. A hivat
 
   > [!NOTE]
   > A Microsoft Defender ATP biztonsági alapterve fizikai eszközökre van optimalizálva, és jelenleg nem ajánlott virtuális gépeken (VM) vagy VDI-végpontokon használni. Bizonyos alapbeállítások befolyásolhatják a távoli interaktív munkameneteket a virtualizált környezetekben.  További információ: a [Microsoft DEFENDER ATP biztonsági alapkonfigurációjának nagyobb megfelelősége](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-machines-security-baseline) a Windows dokumentációjában.
+
+- **Microsoft Edge-alapterv** 
+  - [Előzetes verzió: Microsoft Edge Baseline](security-baseline-settings-edge.md)
 
 Továbbra is használhatja és szerkesztheti a korábban létrehozott profilokat egy előnézeti sablon alapján, még akkor is, ha az előnézeti sablon már nem érhető el új profilok létrehozásához.
 

@@ -1,11 +1,11 @@
 ---
-title: Androidos munkahelyi Profil regisztrálása a Intune Céges portálban | Microsoft Docs
-description: Munkahelyi profil létrehozása és eszköz regisztrálása a Intune Céges portálban.
+title: Androidos munkahelyi Profil regisztrálása a Intune Céges portálkal | Microsoft Docs
+description: Munkahelyi profil létrehozása és eszköz regisztrálása a Intune Céges portál.
 keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 07/18/2019
+ms.date: 10/31/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
@@ -19,16 +19,16 @@ ms.reviewer: arnab
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 50e4bde49f671a7f828ddb982fa18a3e68de25f6
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 210eb94cf77ac703076611d2c0c06c60a12cb0ed
+ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72506273"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73414937"
 ---
 # <a name="enroll-device-with-android-work-profile"></a>Eszköz regisztrálása androidos munkahelyi profillal
 
-Személyes Android-eszközének regisztrálásával hozzáférhet a vállalati e-mailekhez, alkalmazásokhoz és egyéb munkahelyi szolgáltatásokhoz. A regisztráció során androidos munkahelyi profilt fog beállítani. Ez a profil elkülöníti az eszközön tárolt személyes adatait a munkahelyi adatoktól. A cég informatikai támogatási szolgálata csak a munkahelyi fájlokból és az adataiból álló munkahelyi profilt kezeli. A cég informatikai támogatási szolgálata nem tudja kezelni az eszközön tárolt személyes adatait.
+Regisztrálja személyes Android-eszközét, hogy hozzáférjen a munkahelyi vagy iskolai e-mailekhez, alkalmazásokhoz és egyéb adataihoz. A regisztráció során androidos munkahelyi profilt fog beállítani. Ez a profil elkülöníti az eszközön tárolt személyes adatait a munkahelyi adatoktól. A munkahely a munkahelyi fájlokból és az adataiból álló munkahelyi profilt kezeli. A cég informatikai támogatási szolgálata nem tudja kezelni az eszközön tárolt személyes adatait.  
 </br>
 > [!VIDEO https://www.youtube.com/embed/9Dl8HsGk4tI]
 
@@ -36,51 +36,51 @@ Többet tudhat meg arról, hogy [mi történik a munkahelyi profil létrehozása
 
 ## <a name="create-work-profile-and-enroll-device"></a>Munkahelyi profil létrehozása és eszköz regisztrálása
 
-1. Jelentkezzen be az Android-alkalmazás Céges portál munkahelyi vagy iskolai fiókjával. Ha még nem telepítette az ingyenes alkalmazást, telepítse a [Google Play](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal)áruházból.  
+1. Nyissa meg a Céges portál alkalmazást, és jelentkezzen be a munkahelyi vagy iskolai fiókjával. Ha még nem telepítette az ingyenes alkalmazást, telepítse a [Google Play](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal)áruházból.  
 
-2. A **Vállalati hozzáférés beállítása** képernyőn koppintson a **FOLYTATÁS** elemre.  
+2. A **Vállalati hozzáférés beállítása** képernyőn koppintson a **KEZDÉS** gombra.  
 
-    ![Képernyőfelvétel a vállalati hozzáférés beállítása képernyőről](./media/android-wp-02-1908.png)  
+    ![Képernyőfelvétel a vállalati hozzáférés beállítása képernyőről](./media/access-setup-work-profile-1911.png)  
 
-3. Olvassa el a cég informatikai támogatási szolgálatának listáját, amely az eszközön nem látható. Ezután koppintson a **Folytatás**gombra.   
+3. Tekintse át a szervezete által megjelenített és nem látható tudnivalókat. Ezután koppintson a **Folytatás**gombra. 
 
-    ![Képernyőfelvétel az adatvédelem képernyőről](./media/android-wp-03-1908.png)  
+    ![Példa Céges portál kép az adatvédelmi képernyőről, a Folytatás gomb kiemelése.](./media/android-privacy-screen-1911.png)  
+4. Tekintse át, hogy mit várhat a közelgő lépésekben. Ezután koppintson a **tovább**gombra.  
 
-4. A **Mi a következő lépés?** képernyőn olvassa el, mi fog történni a regisztráció során. Ezután koppintson a **tovább**gombra.  
+    ![Példa Céges portál képre, a következő képernyőre, majd a Tovább gombra.](./media/android-wp-04-1908.png)  
 
-    ![Képernyőkép a következő képernyőről](./media/android-wp-04-1908.png)
-
-5. A következő képernyőn a Google használati feltételeit láthatja a munkahelyi profil létrehozásához. Olvassa el a feltételeket, majd koppintson az **elfogadás & folytatás**elemre. A képernyő megjelenése az eszköz Android-verziójától függően változhat. 
+5. Tekintse át a Google használati feltételeit a munkahelyi profil létrehozásához. Ezután koppintson az **elfogadás & folytatás**gombra. A képernyő megjelenése az eszköz Android-verziójától függően változhat. 
 
     ![Képernyőfelvétel a Google munkahelyi profiljának használati feltételeiről](./media/android-wp-05-1908.png)  
 
-    A munkahelyi profil megkezdi a telepítést. 
+6. Várjon, amíg a munkahelyi profil be van állítva.  
 
-     ![A munkahelyi profil beállítása képernyő képernyőképe.](./media/android-wp-05a-1908.png) 
+    ![A munkahelyi profil beállítása képernyő képernyőképe.](./media/android-wp-05a-1908.png)  
 
-     Az Android-verziójától függően előfordulhat, hogy egy további képernyő jelenik meg, amely azt jelzi, hogy a telepítő félúton van. Ha ezt a képernyőt látja, várjon néhány percet, amíg át nem irányítja, és bejelentkezett a Céges portál alkalmazásba.  
+   Az Android-verziójától függően előfordulhat, hogy egy további képernyő jelenik meg. Ez azt jelzi, hogy a telepítés során félúton van. Ha ezt a képernyőt látja, várjon néhány percet, amíg át nem irányítja, és bejelentkezett a Céges portál alkalmazásba.  
 
-     ![Képernyőkép a "már félúton van" képernyő átirányítási üzenettel.](./media/android-wp-05b-1908.png) 
+    ![Képernyőkép a "már félúton van" képernyő átirányítási üzenettel.](./media/android-wp-05b-1908.png)  
 
-6. A **vállalati hozzáférés beállítása** képernyőn győződjön meg arról, hogy a munkahelyi profil létrejött. Ezután koppintson a **Folytatás**gombra.  
+7. A **vállalati hozzáférés beállítása** képernyőn győződjön meg arról, hogy a munkahelyi profil létrejött. Ezután koppintson a **Folytatás**gombra.  
 
-    ![Képernyőkép a vállalati hozzáférés beállításáról, amely a munkahelyi profilt hozza létre.](./media/android-wp-06-1908.png)  
+    ![Képernyőkép a vállalati hozzáférés beállításáról, amely a munkahelyi profilt hozza létre.](./media/work-profile-complete-1911.png)  
 
-7. Győződjön meg arról, hogy a munkahelyi profil aktív. Ezután koppintson a **Folytatás**gombra. 
+8. Győződjön meg arról, hogy a munkahelyi profil aktív. Ezután koppintson a **Folytatás**gombra. 
 
-    ![Képernyőkép a vállalati hozzáférés beállításáról, amely a munkahelyi profilt aktívnak mutatja.](./media/android-wp-07-1908.png)  
+    ![Képernyőkép a vállalati hozzáférés beállításáról, amely a munkahelyi profilt aktívnak mutatja.](./media/work-profile-active-1911.png)  
 
-8. Előfordulhat, hogy a szervezetének frissítenie kell az eszköz beállításait, például jelszót kell beállítania. Miután ezt megtette, koppintson a **Folytatás**gombra.  
+9. Előfordulhat, hogy a szervezetnek frissítenie kell az eszköz beállításait. A beállítások módosításához koppintson a **feloldás** elemre. Ha elkészült a beállítások frissítésével, koppintson a **Folytatás**gombra.    
 
-    ![Képernyőkép: az eszközbeállítások képernyő frissítése.](./media/android-wp-08-1908.png) 
-
-9. Ha megjelenik a készen **!** képernyőn koppintson a **kész**gombra.  
-
-    ![A Vállalati hozzáférés beállítása jelzi, hogy a munkahelyi profil beállítása és regisztrálása befejeződött](./media/android-wp-09-1908.png)  
+    ![Példa Céges portál képe, az eszközbeállítások képernyő frissítése, a feloldás és a Folytatás gomb kiemelése.](./media/resolve-settings-1911.png) 
 
 
-Most már telepítheti a vállalati alkalmazásokat az eszközére. A felügyelt Google Play áruházban megkeresheti és telepítheti ezeket az alkalmazásokat. 
+10. Ha a telepítés befejeződött, koppintson a **kész**gombra.  
+
+    ![Példa a Céges portál, a vállalati hozzáférés beállítása képernyőre, amely a befejezett telepítőt és a kész gomb kiemelését jeleníti meg.](./media/work-profile-done-1911.png)  
+
 
 ## <a name="next-steps"></a>További lépések  
+
+Most, hogy regisztrálta az eszközét, telepítheti az iskolai vagy munkahelyi alkalmazásokat az eszközre. A felügyelt Google Play áruházban megkeresheti és telepítheti ezeket az alkalmazásokat. 
 
 További segítségre van szüksége? Forduljon a cég informatikai támogatásához. Az elérhetőségét keresse meg a [Vállalati portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).
