@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 783ae8bf3216c514bac183ed1945c454cbaa1708
-ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
+ms.openlocfilehash: 98672a0f292ffd1e6c43b2b9696c345c0decb41b
+ms.sourcegitcommit: ae6f2e7812e7fd36f2393b8f4b6cd8de63777b2c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73413870"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73592097"
 ---
 # <a name="prepare-ios-apps-for-app-protection-policies-with-the-intune-app-wrapping-tool"></a>iOS-alkalmazások előkészítése alkalmazásvédelmi szabályzatokkal való felügyeletre az Intune alkalmazásburkoló eszközével
 
@@ -289,26 +289,27 @@ Ha az alkalmazásburkoló eszköz nem jár sikerrel, az alábbi hibaüzenetek va
 |A megadott bemeneti alkalmazás már burkolt, és a házirendsablon legújabb verziójában van.|Az alkalmazásburkoló eszköz nem burkol újra egy már meglévő burkolt alkalmazást a szabályzatsablon legújabb verziójával.|
 |Figyelmeztetés: Nem adta meg az SHA1 tanúsítvány kivonatát. Ellenőrizze, hogy a burkolt alkalmazás alá van-e írva a telepítés előtt.|Adjon meg egy érvényes SHA1 kivonatot a –c parancssori kapcsoló után. |
 
-### <a name="log-files-for-the-app-wrapping-tool"></a>Az alkalmazásburkoló eszköz naplófájljai
+### <a name="collecting-logs-for-your-wrapped-applications-from-the-device"></a>Naplók gyűjtése a burkolt alkalmazásokhoz az eszközről
+Hibaelhárítás során az alábbi lépésekkel szerezhet be naplófájlokat a burkolt alkalmazásaihoz.
 
-Az alkalmazásburkoló eszközzel burkolt alkalmazások az iOS-ügyféleszköz konzoljára írt naplófájlokat hoznak létre. Ezek az adatok akkor hasznosak, ha problémát tapasztal az alkalmazással kapcsolatban, és meg kell állapítania, hogy a hiba az alkalmazásburkoló eszközzel kapcsolatos-e. Az adatokat az alábbi lépéseket követve olvashatja be:
+1. Nyissa meg az iOS beállításkezelő alkalmazását az eszközön, és válassza a kívánt LOB-alkalmazást.
+2. Állítsa a **Diagnostics Console** beállítást a **Be** állásba.
+3. Indítsa el a LOB-alkalmazást.
+4. Kattintson az „Első lépések” hivatkozásra.
+5. Most már megoszthatja a naplófájlokat e-mailben, vagy átmásolhatja őket egy OneDrive-helyre.
+
+> [!NOTE]
+> A naplózási funkció engedélyezve van az Intune alkalmazásburkoló eszköz 7.1.13-as vagy újabb verziójával burkolt alkalmazásokban.
+
+### <a name="collecting-crash-logs-from-the-system"></a>Összeomlási naplók gyűjtése a rendszerből
+
+Előfordulhat, hogy az alkalmazás a hasznos információkat naplózza az iOS-ügyfél eszköz konzolján. Ezek az információk akkor hasznosak, ha problémákat tapasztal az alkalmazással kapcsolatban, és meg kell határoznia, hogy a probléma kapcsolódik-e az alkalmazás-burkoló eszközhöz vagy maga az alkalmazáshoz. Az adatokat az alábbi lépéseket követve olvashatja be:
 
 1. Az alkalmazást futtatva reprodukálja a hibát.
 
 2. Gyűjtse össze a konzol kimenetét az Apple [telepített iOS-alkalmazások hibakeresésére](https://developer.apple.com/library/ios/qa/qa1747/_index.html)vonatkozó utasításait követve.
 
-3. A következő szkriptet a konzolon megadva szűrje a mentett naplókat az alkalmazáskorlátozások kimenetre:
-
-    ```bash
-    grep “IntuneAppRestrictions” <text file containing console output> > <required filtered log file name>
-    ```
-
-    A szűrt naplót elküldheti a Microsoftnak.
-
-    > [!NOTE]
-    > A naplófájlban a „buildszám” az Xcode buildszámának felel meg.
-
-    A burkolt alkalmazások lehetőséget biztosítanak a felhasználóknak, hogy az alkalmazás összeomlása után közvetlenül az eszközről küldjenek e-mailt. A felhasználók elküldhetik Önnek a naplót, hogy megvizsgálja, és szükség esetén továbbítsa azt a Microsoftnak.
+A burkolt alkalmazások lehetőséget biztosítanak a felhasználóknak, hogy az alkalmazás összeomlása után közvetlenül az eszközről küldjenek e-mailt. A felhasználók elküldhetik Önnek a naplót, hogy megvizsgálja, és szükség esetén továbbítsa azt a Microsoftnak.
 
 ### <a name="certificate-provisioning-profile-and-authentication-requirements"></a>Tanúsítvány, létesítési profil és hitelesítési követelmények
 
@@ -442,19 +443,6 @@ Egyszerűen futtassa az általános alkalmazásburkoló parancsot, és fűzze ho
 ```bash
 ./IntuneMAMPackager/Contents/MacOS/IntuneMAMPackager -i ~/Desktop/MyApp.ipa -o ~/Desktop/MyApp_Wrapped.ipa -p ~/Desktop/My_Provisioning_Profile_.mobileprovision -c 12A3BC45D67EF8901A2B3CDEF4ABC5D6E7890FAB  -v true -citrix
 ```
-
-## <a name="getting-logs-for-your-wrapped-applications"></a>Naplófájlok beszerzése burkolt alkalmazásokhoz
-
-Hibaelhárítás során az alábbi lépésekkel szerezhet be naplófájlokat a burkolt alkalmazásaihoz.
-
-1. Nyissa meg az iOS beállításkezelő alkalmazását az eszközön, és válassza a kívánt LOB-alkalmazást.
-2. Állítsa a **Diagnostics Console** beállítást a **Be** állásba.
-3. Indítsa el a LOB-alkalmazást.
-4. Kattintson az „Első lépések” hivatkozásra.
-5. Most már megoszthatja a naplófájlokat e-mailben, vagy átmásolhatja őket egy OneDrive-helyre.
-
-> [!NOTE]
-> A naplózási funkció engedélyezve van az Intune alkalmazásburkoló eszköz 7.1.13-as vagy újabb verziójával burkolt alkalmazásokban.
 
 ## <a name="see-also"></a>További információ
 

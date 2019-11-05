@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a6886060cce77004b107dac02ecea57f2090ac8f
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 428da4581e9946b62bd6ee7c5f7d17d69f93ad9b
+ms.sourcegitcommit: ae6f2e7812e7fd36f2393b8f4b6cd8de63777b2c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72503467"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73592023"
 ---
 # <a name="get-started-with-the-microsoft-intune-app-sdk"></a>Bevezetés a Microsoft Intune App SDK használatába
 
@@ -63,7 +63,7 @@ A kérdőívben megadott e-mail-címek egyikén felvesszük Önnel a kapcsolatot
 Ha a jövőben változik az alkalmazás mélyhivatkozása, újra kell regisztrálnia az alkalmazást.
 
 > [!NOTE]
-> Kérjük, értesítsen minket, ha az alkalmazást az Intune App SDK új verziójával frissíti.
+> Ha az alkalmazást az Intune app SDK új verziójával frissíti, tájékoztatnia kell minket.
 
 ## <a name="download-the-sdk-files"></a>Az SDK-fájlok letöltése
 
@@ -72,7 +72,7 @@ A natív iOS-hez, illetve Androidhoz készült Intune App SDK-k egy Microsoft Gi
 * [Intune App SDK iOS rendszerhez](https://github.com/msintuneappsdk/ms-intune-app-sdk-ios)
 * [Intune App SDK Android rendszerhez](https://github.com/msintuneappsdk/ms-intune-app-sdk-android)
 
-Ha Xamarin-alkalmazásról van szó, használja a következő SDK-változatot:
+Ha az alkalmazás egy Xamarin-alkalmazás, használja ezt az SDK-változatot:
 
 * [Intune App SDK Xamarin-kötések](https://github.com/msintuneappsdk/intune-app-sdk-xamarin)
 
@@ -181,6 +181,9 @@ Miután regisztrálta az alkalmazást egy Azure-bérlőn belül, és **minden al
 5. A keresőmezőbe írja be a **Microsoft Mobile Application Management** (Microsoft mobilalkalmazás-kezelés) kifejezést.
 6. A **delegált engedélyek**területen válassza a **DeviceManagementManagedApps. READWRITE: olvassa el és írja be a felhasználó alkalmazás-kezelési adatait*** jelölőnégyzetet.
 7. Kattintson az **engedélyek hozzáadása**lehetőségre.
+
+> [!NOTE]
+> Ha az alkalmazás korlátozza a bejelentkezést a következő erőforráshoz való hozzáférés hibája miatt: https://intunemam.microsoftonline.com, meg kell küldenie egy megjegyzést, hogy msintuneappsdk@microsoft.com az alkalmazás ügyfél-azonosítójával. Ez egy manuális jóváhagyási folyamat jelenleg.
 
 ### <a name="badge-your-app-optional"></a>Az alkalmazás megjelölése jelvénnyel (nem kötelező)
 

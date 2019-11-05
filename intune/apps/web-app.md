@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6678b7c3519328623d9c0035c725af3877a36ba8
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 6600c75ce3e6120143b17fb863670b2eb423a09f
+ms.sourcegitcommit: ae6f2e7812e7fd36f2393b8f4b6cd8de63777b2c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72507053"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73592059"
 ---
 # <a name="add-web-apps-to-microsoft-intune"></a>Webalkalmazások hozzáadása az Intune-hoz
 
@@ -36,7 +36,7 @@ Ahhoz, hogy kezelhesse és felhasználókhoz rendelhesse hozzá az alkalmazások
 Az Intune létrehozza a webes alkalmazás parancsikonját a felhasználó eszközén. IOS-eszközök esetén a rendszer a webalkalmazás parancsikonját adja hozzá a kezdőképernyő számára. Android-eszközök esetén a webalkalmazásra mutató parancsikon kerül az Intune vállalati portál widgetbe, és a widgetet manuálisan kell rögzíteni a felhasználó által. Windows-eszközök esetén a webalkalmazásra mutató parancsikon kerül a Start menübe.
 
 > [!Note]
-> Az androidos munkahelyi profilú eszközökön nem támogatottak a webalkalmazások. A webalkalmazások indításához egy böngészőt kell telepíteni a felhasználó eszközén.
+> A webalkalmazások indításához egy böngészőt kell telepíteni a felhasználó eszközén.
 
 ## <a name="add-a-web-app-to-intune"></a>Webalkalmazás hozzáadása az Intune-hoz
 A következő módon adhat hozzá egy alkalmazást az Intune-hoz egy alkalmazás webes hivatkozásaként:

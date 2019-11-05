@@ -19,12 +19,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fb7f9167602aa3f5b21e1c042aa3a049f02c952c
-ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
+ms.openlocfilehash: 12c070ec9539e3fd1c87b4e61910a5660700e2bb
+ms.sourcegitcommit: ae6f2e7812e7fd36f2393b8f4b6cd8de63777b2c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73414903"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73592032"
 ---
 # <a name="whats-new-in-the-microsoft-intune---previous-months"></a>A Microsoft Intune újdonságai – korábbi hónapok
 
@@ -69,7 +69,7 @@ Olyan beállítást adunk hozzá, amely lehetővé teszi a felügyelt kezdőkép
 A kioszk beállításainak megtekintéséhez tekintse meg az [androidos vállalati eszközök korlátozásait](../configuration/device-restrictions-android-for-work.md)ismertető témakört.
 
 #### <a name="app-protection-policy-assignment-save-and-apply---3104570---"></a>Alkalmazás-védelmi szabályzat-hozzárendelés mentése és alkalmazása<!-- 3104570 -->
-Most már jobban kézben tarthatja az [alkalmazás-védelmi szabályzat-hozzárendeléseket](../apps/app-protection-policies.md#assign-a-windows-10-policy-to-users). Amikor kijelöli a *hozzárendeléseket* egy házirend hozzárendeléseinek beállításához vagy szerkesztéséhez, a módosítás előtt **mentenie** kell a konfigurációt. Az **elvet** lehetőséggel törölheti az összes olyan módosítást, amelyet a belefoglalási vagy kizárási listához tartozó módosítások mentése nélkül el szeretne végezni.  A Mentés vagy az Elvetés megkövetelésével csak a kívánt felhasználók kapnak egy alkalmazás-védelmi szabályzatot.
+Most már jobban kézben tarthatja az [alkalmazás-védelmi szabályzat-hozzárendeléseket](../apps/app-protection-policies.md). Amikor kijelöli a *hozzárendeléseket* egy házirend hozzárendeléseinek beállításához vagy szerkesztéséhez, a módosítás előtt **mentenie** kell a konfigurációt. Az **elvet** lehetőséggel törölheti az összes olyan módosítást, amelyet a belefoglalási vagy kizárási listához tartozó módosítások mentése nélkül el szeretne végezni.  A Mentés vagy az Elvetés megkövetelésével csak a kívánt felhasználók kapnak egy alkalmazás-védelmi szabályzatot.
 
 #### <a name="new-microsoft-edge-browser-settings-for-windows-10-and-later---3174639---"></a>Új Microsoft Edge böngésző-beállítások Windows 10 és újabb rendszerekhez<!-- 3174639 -->
 Ez a frissítés új beállításokat tartalmaz, amelyek segítségével szabályozhatja és kezelheti az eszközökön futó Microsoft Edge böngészőt. A beállítások listáját lásd: [eszközök korlátozásai a Windows 10 rendszerhez (és újabb verziók)](../configuration/device-restrictions-windows-10.md#microsoft-edge-browser).
@@ -320,7 +320,7 @@ E frissítés tartalmazza a macOS rendszerre készült Gatekeeper technológiát
 ### <a name="device-enrollment"></a>Eszközök beléptetése
 
 #### <a name="apply-autopilot-profile-to-enrolled-win-10-devices-not-already-registered-for-autopilot---1558983---"></a>Az Autopilot-profil alkalmazása a regisztrációhoz még nem regisztrált 10 eszközön<!-- 1558983 -->
-AutoPilot-profilokat alkalmazhat a beléptetett Windows 10-es eszközökön, amelyek még nem lettek regisztrálva az AutoPilotba. Az AutoPilot profilban válassza a **Minden megcélzott eszköz átalakítása az AutoPilotra** lehetőséget, amely automatikusan regisztrálja a nem AutoPilot-eszközöket az AutoPilot üzembehelyezési szolgáltatással. Hagyjon 48 órát a regisztráció feldolgozására. A regisztrációjuk törlése és a visszaállításuk után az AutoPilot üzembe helyezi az eszközöket.
+AutoPilot-profilokat alkalmazhat a beléptetett Windows 10-es eszközökön, amelyek még nem lettek regisztrálva az AutoPilotba. Az AutoPilot profilban válassza a **Minden megcélzott eszköz átalakítása az AutoPilotra** lehetőséget, amely automatikusan regisztrálja a nem AutoPilot-eszközöket az AutoPilot üzembehelyezési szolgáltatással. A regisztráció feldolgozása 48 órát is igénybe vehet. A regisztrációjuk törlése és a visszaállításuk után az AutoPilot üzembe helyezi az eszközöket.
 
 #### <a name="create-and-assign-multiple-enrollment-status--page-profiles-to-azure-ad-groups---2526564---"></a>Több regisztrációs állapot lap profil létrehozása és társítása Azure AD-csoportokhoz<!-- 2526564 -->
 Mostantól több regisztrálási állapot oldalprofilt is [létrehozhat és hozzárendelhet](../enrollment/windows-enrollment-status.md) az Azure ADD-csoportokhoz.
@@ -349,10 +349,10 @@ A Samsung Knox Mobile Enrollment esetében az Intune mostantól támogatja az es
 Az Intune mostantól támogatja a Windows rendszerű eszközök korrelátorazonosító alapján történő csoportosítását, ha regisztrációjuk az [Autopilot for existing devices](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/New-Windows-Autopilot-capabilities-and-expanded-partner-support/ba-p/260430) (Autopilot meglévő eszközökön) című cikkben leírtak szerint, a Configuration Manager használatával történt. A korrelátorazonosító az Autopilot konfigurációs fájljának egyik paramétere. Az Intune az [Azure AD-eszközök enrollmentProfileName attribútumát](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-dynamic-membership#rules-for-devices) automatikusan az ezzel megegyező „OfflineAutopilotprofile-<correlator ID>” attribútumra állítja be. Így tetszőleges dinamikus Azure AD-csoportok hozhatók létre korrelátorazonosító alapján az offline Autopilot-regisztrációk enrollmentprofileName attribútuma használatával. További információt a [Windows Autopilot for existing devices](../enrollment/enrollment-autopilot.md#windows-autopilot-for-existing-devices) (Windows Autopilot meglévő eszközökön) című cikkben talál.
 
 #### <a name="intune-app-protection-policies---2984657---"></a>Intune app Protection-szabályzatok<!-- 2984657 -->
-Az Intune alkalmazásvédelemre vonatkozó szabályzatának segítségével többféle adatvédelmi beállítást konfigurálhat az Intune védelemben részesített alkalmazásaira, például a Microsoft Outlookra és a Microsoft Wordre vonatkozóan. E beállítások megjelenését és működését az [iOS](../apps/app-protection-policy-settings-ios.md) és az [Android](../apps/app-protection-policy-settings-android.md) esetében is módosítottuk, így könnyebben találhatja meg az egyes beállításokat. Három szabályzatbeállítási kategória létezik:
+Az Intune alkalmazásvédelemre vonatkozó szabályzatának segítségével többféle adatvédelmi beállítást konfigurálhat az Intune védelemben részesített alkalmazásaira, például a Microsoft Outlookra és a Microsoft Wordre vonatkozóan. E beállítások megjelenését és működését az [iOS](../apps/app-protection-policy-settings-ios.md) és az [Android](../apps/app-protection-policy-settings-android.md) esetében is módosítottuk, így könnyebben találhatja meg az egyes beállításokat. A szabályzatra vonatkozó beállítások három kategóriába tartoznak:
 - **Adatáthelyezés** – Ebbe a csoportba tartoznak az adatszivárgás elleni védelem (DLP) vezérlői, például a kivágás, a másolás, a beillesztés és a mentés másként művelet korlátozásai. Ezek a beállítások szabják meg, hogy hogyan kezelhetik a felhasználók az adatokat az alkalmazásokban.
 - **Hozzáférési követelmények** – Ez a csoport tartalmazza a PIN-kód alkalmazásonkénti beállítási lehetőségeit, amelyek meghatározzák, hogyan férnek hozzá a végfelhasználók az alkalmazásokhoz egy munkahelyi környezetben.  
-- **Feltételes indítás** – Ez a csoport olyan beállításokat tartalmaz, mint a minimális operációsrendszer-követelmények, a függetlenített és feltört eszközök észlelése, és az offline türelmi időszakok.  
+- **Feltételes bevezetés** – Ebbe a csoportba olyan beállítások tartoznak, mint az operációs rendszerre vonatkozó minimális beállítások, a függetlenítésészlelés és a rootolt eszközök felderítése, valamint az offline türelmi időszakok.  
   
 A beállítások funkciói nem módosulnak, de könnyebben találhatók majd meg, ha Ön a szabályzatlétrehozási folyamatban dolgozik.
 
