@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 98672a0f292ffd1e6c43b2b9696c345c0decb41b
-ms.sourcegitcommit: ae6f2e7812e7fd36f2393b8f4b6cd8de63777b2c
+ms.openlocfilehash: c5779bcf6afc0064bce7dbb259a969944187ba1c
+ms.sourcegitcommit: 2c8a41ee95a3fde150667a377770e51b621ead65
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73592097"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73635442"
 ---
 # <a name="prepare-ios-apps-for-app-protection-policies-with-the-intune-app-wrapping-tool"></a>iOS-alkalmazások előkészítése alkalmazásvédelmi szabályzatokkal való felügyeletre az Intune alkalmazásburkoló eszközével
 
@@ -44,7 +44,7 @@ Az alkalmazásburkoló eszköz futtatása előtt bizonyos általános előfelté
 
   * A bemeneti alkalmazásfájlnak **.ipa** vagy **.app** kiterjesztésűnek kell lennie.
 
-  * A bemeneti alkalmazást az iOS 10-es vagy újabb verziójára kell fordítani.
+  * A bemeneti alkalmazást iOS 11 vagy újabb verzióra kell lefordítani.
 
   * A bemeneti alkalmazás nem lehet titkosított.
 

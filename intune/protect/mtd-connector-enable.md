@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f917167baecc643e045610e86e582957e535978
-ms.sourcegitcommit: 3ace4cba6e2f6fefa9120be3807387a49b200c9b
+ms.openlocfilehash: fae163cbcd97feb4f333d8ddfd44f2202dd343d6
+ms.sourcegitcommit: a4c7339ec9ff5b1b846cb3cca887cf91b5cd4baa
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72810284"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73627686"
 ---
 # <a name="enable-the-mobile-threat-defense-connector-in-intune"></a>A Mobile Threat Defense-összekötő engedélyezése az Intune-ban
 
@@ -63,8 +63,8 @@ A klasszikus feltételes hozzáférési szabályzatok az [Azure](https://portal.
 Eldöntheti, hogy a szervezet igényeinek megfelelően melyik Mobile Threat Defense-kapcsolót kell engedélyeznie. További részletek:
 
 **MDM megfelelőségi szabályzatának beállításai**
-- \* * Az Android 4.1 + rendszerű eszközök csatlakoztatása a *\<MTD partner neve > * * *: Ha engedélyezi ezt a beállítást, az Android 4.1 + rendszerű eszközök bejelenthetik a biztonsági kockázatokat az Intune-nak.
-- \* * IOS 8.0 + rendszerű eszközök csatlakoztatása *\<MTD partner neve > * * *: Ha engedélyezi ezt a beállítást, az iOS 8.0 + rendszerű eszközök bejelenthetik a biztonsági kockázatokat az Intune-nak.
+- **Android 4.1 + rendszerű eszközök csatlakoztatása _\<MTD-partner neve >_** : Ha engedélyezi ezt a beállítást, az Android 4.1 + rendszerű eszközök bejelenthetik a biztonsági kockázatokat az Intune-nak.
+- **IOS 8.0 + rendszerű eszközök csatlakoztatása _\<MTD-partner neve >_** : Ha engedélyezi ezt a beállítást, az iOS 8.0 + rendszerű eszközök bejelenthetik a biztonsági kockázatokat az Intune-nak.
 - **Alkalmazásszinkronizálás engedélyezése iOS-eszközök számára**: Engedélyezi a Mobile Threat Defense-partner számára, hogy iOS-alkalmazások metaadatait kérje le az Intune-ból fenyegetéselemzés céljából.
 - **Nem támogatott operációsrendszer-verziók blokkolása**: a legalacsonyabb támogatott verziónál régebbi rendszerű eszközök blokkolva lesznek.
 

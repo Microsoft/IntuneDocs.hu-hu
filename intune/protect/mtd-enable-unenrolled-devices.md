@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 63079757ee3610d825601921da1d33aa94f851b6
-ms.sourcegitcommit: 06a1fe83fd95c9773c011690e8520733e1c031e3
+ms.openlocfilehash: b2744a27a733824bab9d920f4de0b49e951c1c34
+ms.sourcegitcommit: a4c7339ec9ff5b1b846cb3cca887cf91b5cd4baa
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72795306"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73627642"
 ---
 # <a name="enable-the-mobile-threat-defense-connector-in-intune-for-unenrolled-devices"></a>A Mobile Threat Defense-összekötő engedélyezése az Intune-ban a nem regisztrált eszközökön
 
@@ -51,8 +51,8 @@ A Mobile Threat Defense (MTD) telepítésekor beállította a fenyegetések beso
 A cég igényei alapján eldöntheti, hogy az MTD mely kapcsolós beállításait kell engedélyeznie. További részletek:
 
 **Az alkalmazás védelmi házirendjének beállításai**
-- Az **4,1-es vagy újabb verziójú Android-eszközök csatlakoztatásával *\<MTD partner neve >* for app Protection Policy kiértékelés**: Ha engedélyezi ezt a beállítást, az eszköz veszélyforrások szintjének szabályát használó alkalmazás-védelmi szabályzatok kiértékelik az eszközöket, beleértve a az összekötőből származó adatok.
-- Az **iOS-eszközök 8,0-es vagy újabb verziójának összekapcsolása az alkalmazás-védelmi szabályzat kiértékeléséhez használt *\<MTD partner neve >***  Ez az összekötő.
+- Az **4,4-es vagy újabb verziójú Android-eszközök csatlakoztatásával *\<MTD-partner neve >* for app Protection Policy kiértékelés**: Ha engedélyezi ezt a beállítást, az eszköz veszélyforrások szintjének szabályát használó alkalmazás-védelmi szabályzatok kiértékelik az eszközöket, beleértve a az összekötőből származó adatok.
+- Az **iOS-eszközök 11-es vagy újabb verziójának összekapcsolása az alkalmazás-védelmi szabályzat kiértékeléséhez *\<MTD*** : Ha engedélyezi ezt a beállítást, az eszköz veszélyforrások szintjének szabályát használó alkalmazás-védelmi házirendek kiértékelik az eszközöket, beleértve a Ez az összekötő.
 
 **Közös megosztott beállítások**
 - **Partner ennyi nap után nem válaszol**: az Intune ennyi napnyi tétlenség után feltételezi, hogy a partner a kapcsolat megszakadása miatt nem válaszol. Az Intune nem veszi figyelembe a nem válaszoló MTD-partnerek megfelelőségi állapotát.

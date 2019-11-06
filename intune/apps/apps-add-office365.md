@@ -1,12 +1,12 @@
 ---
-title: Office 365-alkalmazások kiosztása Windows 10-es eszközökhöz Microsoft Intune használatával
+title: Office 365-alkalmazások hozzáadása Windows 10-es eszközökhöz Microsoft Intune használatával
 titleSuffix: ''
 description: Útmutató az Office 365-alkalmazások Windows 10-es eszközökön való telepítéséhez a Microsoft Intune használatával.
 keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/15/2019
+ms.date: 11/04/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,14 +18,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 35545d6c01e3acf7e54c3b932a4450c93f3dd4a9
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 2cb247ec25b134fa9810a426be88b7fc90999394
+ms.sourcegitcommit: 2c8a41ee95a3fde150667a377770e51b621ead65
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72507309"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73635410"
 ---
-# <a name="assign-office-365-apps-to-windows-10-devices-with-microsoft-intune"></a>Office 365-alkalmazások hozzárendelése Windows 10-es eszközökhöz a Microsoft Intune-nal
+# <a name="add-office-365-apps-to-windows-10-devices-with-microsoft-intune"></a>Office 365-alkalmazások hozzáadása a Windows 10-es eszközökhöz Microsoft Intune
 
 Az alkalmazások hozzárendelése, figyelése, konfigurálása és védelme előtt hozzá kell adnia őket az Intune-hoz. Az elérhető [alkalmazások](apps-add.md#app-types-in-microsoft-intune) egyike az Office 365 alkalmazások Windows 10-es eszközökhöz. Ha ezt az alkalmazást az Intune-ban kiválasztja, az Office 365-alkalmazásokat hozzárendelheti és telepítheti a Windows 10 rendszert futtató eszközökre. Az alkalmazásokat a Microsoft Project online asztali ügyfeléhez és a Microsoft Visio online 2. csomaghoz is hozzárendelheti és telepítheti, ha Ön rendelkezik saját licencekkel. Az elérhető Office 365-alkalmazások egyetlen bejegyzésként jelennek meg az Azure-beli Intune-konzolon az alkalmazások listájában.
 
@@ -43,7 +43,7 @@ Az alkalmazások hozzárendelése, figyelése, konfigurálása és védelme elő
 - Ez a telepítési módszer nem támogatott Windows Home, Windows Team, Windows holografikus vagy Windows holografikus for Business rendszerű eszközökön.
 - Az Intune nem támogatja az asztali Office 365-programok (más néven az Office Centennial-alkalmazások) Microsoft Áruházból történő telepítését olyan eszközök esetében, amelyekre korábban már telepítettek valamilyen Office 365-alkalmazást az Intune segítségével. Ha ezt a konfigurációt telepíti, az adatvesztést vagy adatsérülést okozhat.
 - Több kötelező vagy elérhető alkalmazás-hozzárendelés nem adódik össze. A későbbi alkalmazás-hozzárendelés felülírja a már meglévő alkalmazás-hozzárendeléseket. Ha például az első Office-alkalmazáscsomag tartalmazta a Wordöt, de az újabb már nem, akkor a Word el lesz távolítva. Ez a feltétel a Visio- és Project-alkalmazásokra nem vonatkozik.
-- A mutiple Office 365 üzemelő példányok jelenleg nem támogatottak. Csak egy központi telepítés lesz továbbítva az eszközre
+- Több Office 365 üzemelő példány jelenleg nem támogatott. Csak egy központi telepítés lesz továbbítva az eszközre
 - **Office-verzió**: - Itt választhatja ki, hogy az Office 32 bites vagy 64 bites verzióját szeretné hozzárendelni. A 32 bites verziót 32 bites és 64 bites eszközökön is, a 64 bites verziót viszont csak 64 bites eszközökön telepítheti.
 - **MSI eltávolítása a végfelhasználói eszközökről** – Itt választhatja ki, hogy eltávolítja-e a már meglévő Office .MSI-alkalmazásokat a végfelhasználói eszközökről. A telepítés nem lesz sikeres, ha a végfelhasználói eszközökön már meglévő .MSI-alkalmazások vannak. Az eltávolítás nem korlátozódik az **Alkalmazáscsomag konfigurálásánál** telepítésre kiválasztott alkalmazásokra, mert minden Office (MSI) alkalmazást eltávolít a végfelhasználói eszközről. További információkért lásd: [Az Office már meglévő MSI-verzióinak eltávolítása az Office 365 ProPlusra való frissítés esetén](https://docs.microsoft.com/deployoffice/upgrade-from-msi-version). Amikor az Intune újratelepíti a végfelhasználói gépekre az Office-t, a végfelhasználók automatikusan ugyanazokat a nyelvi csomagokat kapják meg, mint az előző .MSI-alapú Office-telepítésnél.
 
@@ -142,12 +142,60 @@ Ha az **XML-adatértékek megadása** lehetőséget választotta a **Formátum**
 
 ## <a name="finish-up"></a>Befejezés
 
-Amikor elkészült, válassza az **Alkalmazás hozzáadása** ablaktáblán a **Hozzáadás** lehetőséget. A létrehozott alkalmazás megjelenik az alkalmazáslistában.
+Amikor elkészült, válassza az **Alkalmazás hozzáadása** ablaktáblán a **Hozzáadás** lehetőséget. A létrehozott alkalmazás megjelenik az alkalmazáslistában. A következő lépés az alkalmazások társítása a kiválasztott csoportokhoz. További információ: [Alkalmazások hozzárendelése csoportokhoz](~/apps/apps-deploy.md).
+
+## <a name="deployment-details"></a>Központi telepítés részletei
+
+Ha az Intune-ból származó központi telepítési szabályzatot az Office- [konfigurációs szolgáltató (CSP)](https://docs.microsoft.com/windows/client-management/mdm/office-csp)segítségével rendeli hozzá a cél gépekhez, a befejező eszköz automatikusan letölti a telepítőcsomagot a *officecdn.microsoft.com* helyéről. A *Program Files* könyvtárában két könyvtár jelenik meg:
+
+![Office-telepítési csomagok a program files könyvtárában](./media/apps-add-office365/office-folder.png)
+
+A *Microsoft Office* könyvtár alatt létrejön egy új mappa, ahol a telepítési fájlok tárolódnak:
+
+![Új létrehozott mappa Microsoft Office könyvtár alatt](./media/apps-add-office365/created-folder.png)
+
+A *Microsoft Office 15* könyvtár alatt az Office Kattintásra futtatható telepítési indító fájljai vannak tárolva. A telepítés automatikusan elindul, ha a hozzárendelés típusa kötelező:
+
+![Kattintson ide a telepítési indító fájlok futtatásához](./media/apps-add-office365/clicktorun-files.png)
+
+A telepítés csendes módban lesz, ha a O365 csomag hozzárendelése kötelezőként van konfigurálva. Ha a telepítés sikeres volt, a letöltött telepítőfájlokat a rendszer törli. Ha a hozzárendelés **elérhetőként**van konfigurálva, az Office-alkalmazások a céges portál alkalmazásban jelennek meg, így a végfelhasználók manuálisan indíthatják el a telepítést.
 
 ## <a name="troubleshooting"></a>Hibaelhárítás
 Az Intune az Office 365 ProPlus az Office [365 CDN](https://docs.microsoft.com/office365/enterprise/content-delivery-networks)használatával tölti le és helyezi üzembe az Office- [eszközökön](https://docs.microsoft.com/DeployOffice/overview-of-the-office-2016-deployment-tool) . Az [Office 365-végpontok kezelése](https://docs.microsoft.com/office365/enterprise/managing-office-365-endpoints) című útmutatóban ismertetett ajánlott eljárások alapján biztosíthatja, hogy a hálózati konfiguráció lehetővé tegye az ügyfelek számára a CDN közvetlen elérését a CDN-forgalom központi proxyn keresztüli átirányítása helyett, hogy elkerülje a szükségtelen késleltetés.
 
 Futtassa a [Microsoft ügyfélszolgálata és a helyreállítási asszisztenst az Office 365-hez](https://diagnostics.office.com) egy megcélzó eszközön, ha telepítési vagy futásidejű problémákba ütközik.
+
+### <a name="additional-troubleshooting-details"></a>További hibaelhárítási részletek
+
+Ha nem tudja telepíteni a O365-alkalmazásokat egy eszközre, meg kell határoznia, hogy a probléma az Intune-nal kapcsolatos-e, vagy az operációs rendszer/iroda kapcsolatos-e. Ha megtekintheti a két mappát *Microsoft Office* és *Microsoft Office 15* , amely megjelenik az eszköz *programfájlok* könyvtárában, ellenőrizheti, hogy az Intune sikeresen kezdeményezte-e az üzembe helyezést. Ha nem látja a *programfájlok*alatt megjelenő két mappát, ellenőrizze az alábbi eseteket:
+
+- Az eszköz megfelelően van regisztrálva a Microsoft Intuneba. 
+- Aktív hálózati kapcsolatok találhatók az eszközön. Ha az eszköz repülőgép üzemmódban van, ki van kapcsolva, vagy olyan helyen van, amely nem rendelkezik szolgáltatással, akkor a rendszer nem alkalmazza a házirendet, amíg a hálózati kapcsolat létrejött.
+- Az Intune és az Office 365 hálózati követelményei teljesülnek, és a kapcsolódó IP-címtartományok a következő cikkek alapján érhetők el:
+
+  - [Az Intune hálózati konfigurációs követelményei és sávszélessége](https://docs.microsoft.com/intune/network-bandwidth-use)
+  - [Office 365 URL-címek és IP-címtartományok](https://docs.microsoft.com/office365/enterprise/urls-and-ip-address-ranges)
+
+- A megfelelő csoportok hozzá lettek rendelve a O365 App Suite-hoz. 
+
+Emellett figyelje a *C:\Program Files\Microsoft Office\Updates\Download*könyvtár méretét. Az Intune-felhőből letöltött telepítőcsomag ezen a helyen lesz tárolva. Ha a méret nem növekszik vagy csak nagyon lassan nő, javasoljuk, hogy ellenőrizze a hálózati kapcsolatot és a sávszélességet.
+
+Ha azt állapítja meg, hogy az Intune és a hálózati infrastruktúra is a várt módon működik, akkor a problémát továbbra is az operációs rendszer perspektívájában kell elemezni. Vegye figyelembe a következő feltételeket:
+
+- A célként megadott eszköznek Windows 10 alkotói frissítéssel vagy újabb verzióval kell futnia.
+- Nem nyílik meg meglévő Office-alkalmazás, amíg az Intune üzembe helyezi az alkalmazásokat.
+- Az Office meglévő MSI-verziói megfelelően el lettek távolítva az eszközről. Az Intune az Office MSI-vel nem kompatibilis Office-kattintások futtatását használja. A jelen dokumentumban a következő viselkedést kell megemlíteni:<br>
+  [Az Office Kattintásra futtatva és Windows Installer ugyanazon a számítógépen nem támogatott](https://support.office.com/article/office-installed-with-click-to-run-and-windows-installer-on-same-computer-isn-t-supported-30775ef4-fa77-4f47-98fb-c5826a6926cd)
+- A bejelentkezési felhasználónak engedéllyel kell rendelkeznie az alkalmazások telepítéséhez az eszközön.
+- Ellenőrizze, hogy nincsenek-e problémák a Windows Eseménynapló log **Windows-naplók** -> **alkalmazásokban**.
+- Az Office telepítési részletes naplóinak rögzítése a telepítés során. Ehhez kövesse az alábbi lépéseket:<br>
+    1. Aktiválja a részletes naplózást az Office telepítéséhez a célszámítógépen. Ehhez futtassa a következő parancsot a beállításjegyzék módosításához:<br>
+        `reg add HKLM\SOFTWARE\Microsoft\ClickToRun\OverRide /v LogLevel /t REG_DWORD /d 3`<br>
+    2. Telepítse újra az Office 365-csomagot a megcélzott eszközökre.<br>
+    3. Várjon körülbelül 15 – 20 percet, és nyissa meg a **% temp%** mappát és a **%windir%\Temp** mappát, a rendezés **dátum szerint módosítva**lehetőséget, válassza ki a (z) *{Machine Name} – {timestamp}. naplófájlokat* , amelyeket a Reprodukálási idő szerint módosított.<br>
+    4. Futtassa a következő parancsot a részletes napló letiltásához:<br>
+        `reg delete HKLM\SOFTWARE\Microsoft\ClickToRun\OverRide /v LogLevel /f`<br>
+        A részletes naplók részletesebb információkat biztosítanak a telepítési folyamatról.
 
 ## <a name="errors-during-installation-of-the-app-suite"></a>Hiba történt az alkalmazáscsomag telepítésekor
 
