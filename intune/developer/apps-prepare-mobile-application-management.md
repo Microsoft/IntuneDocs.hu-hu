@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba1ec201cdb7e44570b53ce831b4e5ae26504973
-ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
+ms.openlocfilehash: dbddb0fcecfd5a0b021346a3a20b3c7e4f696a49
+ms.sourcegitcommit: 2c8a41ee95a3fde150667a377770e51b621ead65
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73413814"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73635336"
 ---
 # <a name="prepare-line-of-business-apps-for-app-protection-policies"></a>Üzletági alkalmazások felkészítése az alkalmazásvédelmi szabályzatok használatára
 
@@ -110,7 +110,7 @@ Ez a táblázat az App SDK-hoz és az alkalmazásburkoló eszközhöz használha
 |Alkalmazás adatainak teljes törlése|X|X|
 |Munkahelyi és iskolai adatok szelektív törlése több identitásos helyzetekben <br><br>**Megjegyzés:** iOS esetén a felügyeleti profil törlésekor az alkalmazást is törli.|X||
 |A „Mentés másként” művelet letiltása|X||
-|Célként megadott alkalmazás konfigurációja (vagy az alkalmazás konfigurációja a "MAM Channel" használatával)|X|X|
+|Célként megadott alkalmazás konfigurációja (vagy az alkalmazás konfigurációja a "MAM Channel" használatával)|X||
 |Többszörös identitás támogatása|X||
 |Testreszabható stílus |X|||
 |Igény szerinti VPN-alkalmazáskapcsolatok Citrix mVPN segítségével|X|X| 

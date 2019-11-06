@@ -4,17 +4,32 @@ description: beágyazott fájl
 author: ErikjeMS
 ms.service: microsoft-intune
 ms.topic: include
-ms.date: 03/28/2019
+ms.date: 11/4/2019
 ms.author: erikje
 ms.custom: include file
-ms.openlocfilehash: 0aa78ec17aba5deb0c914c3698676219f203b856
-ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
+ms.openlocfilehash: edef1f43caff97ab75aa3c58034ed4fc2dffd208
+ms.sourcegitcommit: ae6f2e7812e7fd36f2393b8f4b6cd8de63777b2c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73415077"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73612078"
 ---
 Ezek a hirdetmények olyan fontos információkat tartalmaznak, amelyek segíthetnek a jövőbeli Intune-változások és-funkciók előkészítésében.
+
+### <a name="plan-for-change-updated-experience-when-enrolling-android-enterprise-dedicated-devices-in-intune--5198878--"></a>Tervezze meg a változást: az androidos vállalati dedikált eszközök Intune-ban való regisztrálásának frissített felhasználói felülete<!--5198878-->
+Az Intune novemberi vagy 1911-as verziójában a SCEP-eszközök tanúsítvány-telepítésének támogatása a Wi-Fi profilokhoz való tanúsítványalapú hozzáférés engedélyezése érdekében az androidos vállalati dedikált eszközökhöz nyújt támogatást. Ez a módosítás azt is magában foglalja, hogy az androidos vállalati dedikált eszközök regisztrálása során a folyamat néhány kisebb változást is igényel.
+
+#### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
+Ha az androidos vállalati dedikált eszközöket felügyeli az Ön környezetében, akkor az egyes változások novemberben jelennek meg.
+
+- Új Android Enterprise-eszközök regisztrálásához: a végfelhasználók a regisztráció során különböző lépéseket fognak látni az eszközökön. A regisztráció továbbra is megkezdi a mai napig (QR, NFC, Zero Touch vagy Device Identifier), de a novemberi kiadás után a kötelező alkalmazás telepítési lépése lesz.
+- Dedikált eszközként regisztrált meglévő Android-eszközök esetén: az Intune a november elején kezdi meg automatikusan telepíteni a Microsoft Intune alkalmazást az eszközökön. Semmilyen műveletet nem kell elvégeznie. A rendszer automatikusan letölti és telepíti az alkalmazást az eszközökön. 
+
+#### <a name="what-can-i-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
+Javasoljuk, hogy frissítse a végfelhasználói útmutatást, és tájékoztassa az ügyfélszolgálatot erről a változásról. További részletekért és képernyőképekhez kattintson a további információk elemre. A változás megkezdése előtt frissítjük az Újdonságok oldalát.
+
+#### <a name="additional-information"></a>További információ
+[https://aka.ms/Dedicated_devices_enrollment](https://aka.ms/Dedicated_devices_enrollment)
 
 ### <a name="plan-for-change-the-server-side-logging-for-siri-commands-setting-will-be-removed-from-the-intune-console----5468501--"></a>Tervezze meg a változást: a "kiszolgálóoldali naplózás a Siri-parancsokhoz" beállítás el lesz távolítva az Intune-konzolról <!-- 5468501-->
 

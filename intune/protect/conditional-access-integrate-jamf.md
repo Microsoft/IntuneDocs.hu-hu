@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a75b1403e351981d1f6ab827d4c10648430b21fb
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 39d687c8c9b75182ba0e7d4020c6b840c753a231
+ms.sourcegitcommit: a4c7339ec9ff5b1b846cb3cca887cf91b5cd4baa
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72504609"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73627662"
 ---
 # <a name="integrate-jamf-pro-with-intune-for-compliance"></a>A Jamf Pro integrálása az Intune-nal a megfelelőség érdekében
 
@@ -94,7 +94,7 @@ Az Intune és a JAMF Pro összekötése:
 
    Válassza a **Hozzáadás engedély** lehetőséget a konfiguráció mentéséhez.  
 
-8. Az **API-engedélyek** lapon válassza a * * rendszergazdai jóváhagyás megadása * @no__t – 1your bérlő > * * * lehetőséget, majd kattintson az **Igen**gombra.  Az alkalmazás sikeres regisztrálását követően az API-engedélyek a következőképpen jelennek meg: ![Successful engedélyek @ no__t-1
+8. Az **API-engedélyek** lapon jelölje be a **rendszergazdai jóváhagyás megadása a _bérlő >\<ához_** lehetőséget, majd válassza az **Igen**lehetőséget.  Az alkalmazás sikeres regisztrálását követően az API-engedélyek az alábbiak szerint jelennek meg: ![sikeres engedélyek](./media/conditional-access-integrate-jamf/sucessfull-app-registration.png)
 
    Befejeződött az alkalmazás regisztrációs folyamata az Azure AD-ben.
 
@@ -129,7 +129,7 @@ Miután konfigurálta az Intune és a JAMF közötti integrációt, a [JAMF ált
 
 Ha már nem használja a JAMF Pro-t a szervezeten belüli Mac-EK felügyeletéhez, és szeretné, hogy a felhasználók az Intune-nal felügyelhetők legyenek, el kell távolítania a kapcsolatot a JAMF Pro és az Intune között. A JAMF Pro konzol használatával távolítsa el a kapcsolatokat. 
 
-1. A JAMF Pro-ban lépjen a **globális felügyelet**@no__t – 1**feltételes hozzáférés**elemre. A **MacOS Intune-integráció** lapon válassza a **Szerkesztés**lehetőséget.
+1. A JAMF Pro-ban lépjen a **globális felügyelet** > **feltételes hozzáférés**elemre. A **MacOS Intune-integráció** lapon válassza a **Szerkesztés**lehetőséget.
 2. Törölje az **Intune-integráció engedélyezése MacOS-hez** jelölőnégyzet jelölését.
 3. Válassza a **Mentés** lehetőséget. A JAMF Pro elküldi a konfigurációt az Intune-nak, és az integráció leáll.
 4. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba. Lépjen a **Microsoft Intune** > **eszköz megfelelősége** > **partneri eszközök kezelése** lehetőségre, és ellenőrizze, hogy az állapot most **megszakadt**-e. 
