@@ -19,12 +19,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f770db6927ed87786f7806e011cdc6cb9bae6b3f
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 190322392909a14681a4b68a79d9a3537360206b
+ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72509267"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73713490"
 ---
 # <a name="troubleshoot-device-enrollment-in-microsoft-intune"></a>Az eszközök regisztrálásának hibája Microsoft Intune
 
@@ -64,9 +64,9 @@ Ezek a problémák az összes eszközplatformon előfordulhatnak.
 
 Ellenőrizze az alábbi lépések követésével, hogy a felhasználóhoz nincs-e hozzárendelve több eszköz a legfeljebb megengedettnél:
 
-1. Az Intune-ban válassza az **Eszközök beléptetése** > **Regisztrációs korlátozások** > **Eszközszámkorlátok** lehetőséget. Jegyezze fel az **Eszközszámkorlát** oszlopban látható értéket.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök beléptetése** > a **regisztrálási korlátozások** > az eszközök korlátozására **vonatkozó korlátozásokat**. Jegyezze fel az **Eszközszámkorlát** oszlopban látható értéket.
 
-2. Válassza az Intune-ban a **Felhasználók** > **Minden felhasználó** > válassza ki a felhasználót > **Eszközök** lehetőséget. Jegyezze fel a regisztrált eszközök számát.
+2. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza a **felhasználók** > **minden felhasználó** lehetőséget, > válassza ki a felhasználói > **eszközöket**. Jegyezze fel a regisztrált eszközök számát.
 
 3. Ha a felhasználó regisztrált eszközeinek száma már megegyezik az eszközszámkorlát értékével, további eszközöket csak akkor regisztrálhat, ha:
     - [eltávolít meglévő eszközöket](../remote-actions/devices-wipe.md), vagy
@@ -125,7 +125,7 @@ Az eszközszámkorlát elérésének elkerüléséhez mindig távolítsa el a m�
 
         - Az összes felhasználó megjelenítéséhez: `select * from [CM_ DBName].[dbo].[User_DISC]`
 
-        - Adott felhasználók megjelenítéséhez használja a következő lekérdezést, ahol a (z)% testuser1% helyőrző a username@domain.com helyőrzője a keresett felhasználó számára: `select * from [CM_ DBName].[dbo].[User_DISC] where User_Principal_Name0 like '%testuser1%'`
+        - Adott felhasználók megjelenítéséhez használja a következő lekérdezést, ahol a (z)% testuser1% helyőrző a megkeresni kívánt felhasználó username@domain.com számára: `select * from [CM_ DBName].[dbo].[User_DISC] where User_Principal_Name0 like '%testuser1%'`
 
         A lekérdezés megírása után válassza az **!Execute** lehetőséget.
         Az eredmények visszaadása után keresse meg a felhő felhasználójának azonosítóját.  Ha nem található azonosító, a felhasználó nem rendelkezik Intune-licenccel.

@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 10/31/2019
+ms.date: 11/06/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 899d667ca271ae5c3edced18fab8da987c49b2ca
-ms.sourcegitcommit: 85c894cb4df34a5ff558e3b45e28a8b91054d9e6
+ms.openlocfilehash: f6d4b076b508316cdb2d3d5f2814fc5e46a014e7
+ms.sourcegitcommit: 556b7ea2049014c9027f0e44affd3f301fab55fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73432532"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73709515"
 ---
 # <a name="use-device-firmware-configuration-interface-profiles-on-windows-devices-in-microsoft-intune-public-preview"></a>Eszköz belső vezérlőprogram konfigurációs felületi profiljainak használata Microsoft Intune (nyilvános előzetes verzió) esetén Windows-eszközökön
 
@@ -127,9 +127,11 @@ Ez a profil tartalmazza a konfigurált DFCI-beállításokat.
 
 A profilok létrehozása után készen állnak a [hozzárendelésre](../configuration/device-profile-assign.md). Ügyeljen arra, hogy a profilokat a DFCI-eszközöket tartalmazó Azure AD-beli biztonsági csoportokhoz rendelje.
 
-Az eszköz következő szinkronizálásakor vagy az eszköz újraindításakor a rendszer alkalmazza a DFCI-profil beállításait. A házirend alkalmazása után indítsa újra az eszközt.
+Amikor az eszköz futtatja a Windows Autopilot-t, a regisztráció állapota lapon a DFCI újraindítást igényelhet. Ez az első újraindítás az UEFI-t regisztrálja az Intune-ban. 
 
-Amikor az eszköz futtatja a Windows-eszköz telepítését, a DFCI a regisztráció állapota lapon kényszerítheti az újraindítást. A telepítés befejezése után ellenőrizheti, hogy a DFCI-beállítások aktívak-e az eszköz újraindításával. Ezután használja az eszköz gyártójának utasításait az UEFI menü megnyitásához.
+Ha ellenőrizni szeretné, hogy az eszköz regisztrálva van-e, újra lehet indítani az eszközt, de ez nem kötelező. Az eszköz gyártójának utasításait követve nyissa meg az UEFI menüt, és ellenőrizze, hogy az UEFI most már felügyelve van-e.
+
+Amikor az eszköz legközelebb szinkronizál az Intune-nal, a Windows megkapja a DFCI beállításait. Indítsa újra az eszközt. Ez a harmadik újraindítás szükséges ahhoz, hogy az UEFI megkapja a DFCI beállításait a Windows rendszerből.
 
 ## <a name="update-existing-dfci-settings"></a>Meglévő DFCI-beállítások frissítése
 

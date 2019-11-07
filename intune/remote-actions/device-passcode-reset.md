@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d7ca53786d372f53d63388fef1179ca271fdb9d9
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: be6a254360d8e8e9ef1396515d261b6ff9077b87
+ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72508590"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73713118"
 ---
 # <a name="reset-or-remove-a-device-passcode-in-intune"></a>Eszközök PIN-kódjának visszaállítása vagy eltávolítása az Intune-ban
 
@@ -57,10 +57,9 @@ A munkahelyi profilokhoz a PIN-kód alaphelyzetbe állítása művelettel hozhat
 ## <a name="reset-a-passcode"></a>Új PIN-kód kérése
 
 
-1. Jelentkezzen be a [Azure Portalba](https://portal.azure.com) a következő szerepkörök bármelyikével: Azure Active Directory globális rendszergazda, Azure Active Directory Intune-szolgáltatás rendszergazdája, segélyszolgálat-kezelő vagy szerepkör-rendszergazda.
-2. Válassza a **Minden szolgáltatás** lehetőséget, szűrjön az **Intune**-ra, és válassza a **Microsoft Intune** elemet.
-3. Válassza az **Eszközök**, majd a **Minden eszköz** lehetőséget.
-4. Az Ön által kezel eszközök listájáról válasszon ki egy eszközt, majd válassza a **...További** lehetőséget. Majd válassza a **PIN-kód eltávolítása** távoli eszközműveletet.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431) a következő szerepkörök bármelyikével: Azure Active Directory globális rendszergazda, Azure Active Directory Intune szolgáltatás-rendszergazda, segélyszolgálat-kezelő vagy szerepkör-rendszergazda.
+2. Válassza az **Eszközök**, majd a **Minden eszköz** lehetőséget.
+3. Az Ön által kezel eszközök listájáról válasszon ki egy eszközt, majd válassza a **...További** lehetőséget. Majd válassza a **PIN-kód eltávolítása** távoli eszközműveletet.
 
 ## <a name="reset-android-work-profile-passcodes"></a>Androidos munkahelyi profilok PIN-kódjának alaphelyzetbe állítása
 

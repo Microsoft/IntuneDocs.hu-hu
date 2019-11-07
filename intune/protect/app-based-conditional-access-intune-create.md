@@ -6,52 +6,65 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 02/22/2019
+ms.date: 11/06/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: d1693515-de18-4553-91ef-801976cd3ec7
-ms.reviewer: chrisgre
+ms.reviewer: elocholi
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 94e9fcc77f8260c4a63150b5d0aef033677c524a
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 465f8b0001e5e2a049a3ffe12469bdb5057854ec
+ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72509673"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73712845"
 ---
 # <a name="set-up-app-based-conditional-access-policies-with-intune"></a>Alkalmazás-alapú feltételes hozzáférési szabályzatok beállítása az Intune-nal
 
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
-
 Alkalmazás-alapú feltételes hozzáférési szabályzatokat állíthat be a jóváhagyott alkalmazások listájának részét képező alkalmazásokhoz. A jóváhagyott alkalmazások listája a Microsoft által tesztelt alkalmazásokból áll.
+
+Az alkalmazás-alapú feltételes hozzáférési szabályzatok használata előtt rendelkeznie kell az alkalmazásokra alkalmazott [Intune app Protection-szabályzatokkal](../apps/app-protection-policies.md) .
 
 > [!IMPORTANT]
 > Ez a cikk végigvezeti egy alkalmazás-alapú feltételes hozzáférési szabályzat hozzáadásának lépésein. Ugyanezeket a lépéseket használhatja, ha alkalmazásokat ad hozzá, például SharePoint Online, Microsoft Teams és Microsoft Exchange Online, a jóváhagyott alkalmazások listájából.
 
 ## <a name="create-app-based-conditional-access-policies"></a>Alkalmazás-alapú feltételes hozzáférési szabályzatok létrehozása
-A feltételes hozzáférés az Azure Active Directory (Azure AD) technológiája. Az *Intune-ból* elérhető feltételes hozzáférési csomópont ugyanaz a csomópont, amelyet az *Azure AD-ből* is el lehet érni. Ez azt jelenti, hogy nem kell váltania az Intune és az Azure AD között a házirendek konfigurálásához.
 
-> [!IMPORTANT]
-> A feltételes hozzáférési szabályzatok az Intune-portálról történő létrehozásához rendelkeznie kell egy prémium szintű Azure AD licenccel.
+A feltételes hozzáférés az Azure Active Directory (Azure AD) technológiája. Az *Intune* -ból hozzáférő feltételes hozzáférési csomópont ugyanaz a csomópont, amelyet az *Azure ad*-ből is elérhet. Mivel ugyanaz a csomópont, nem kell váltania az Intune és az Azure AD között a házirendek konfigurálásához.
+
+Mielőtt feltételes hozzáférési szabályzatokat hozna létre a Microsoft Endpoint Manager felügyeleti központból, rendelkeznie kell egy prémium szintű Azure AD licenccel.
 
 ### <a name="to-create-an-app-based-conditional-access-policy"></a>Alkalmazás-alapú feltételes hozzáférési szabályzat létrehozása
 
-> [!IMPORTANT]
-> Az alkalmazás-alapú feltételes hozzáférési szabályzatok használata előtt az alkalmazásokra alkalmaznia kell az [Intune app Protection-szabályzatokat](../apps/app-protection-policies.md) .
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431)
 
-1. Az **Intune irányítópultján**válassza a **feltételes hozzáférés**lehetőséget.
+2. Válassza az **Endpoint security** > a **feltételes hozzáférés** > **új szabályzat**lehetőséget.
 
-2. Az új alkalmazás-alapú feltételes hozzáférési szabályzat létrehozásához a **házirendek** ablaktáblán válassza az **új** szabályzat lehetőséget.
+3. Adja meg a szabályzat **nevét**, majd a *hozzárendelések*területen válassza a **felhasználók és csoportok**lehetőséget. A befoglalási vagy kizárási lehetőségek használatával jelölje ki a szabályzathoz rendelendő csoportokat majd válassza a **Kész** lehetőséget.
 
-4. A szabályzatnév megadása, valamint a **Hozzárendelések** szakaszban hozzáférhető beállítások konfigurálása után válassza a **Hozzáférés-szabályozás** szakaszban található **Engedélyezés** elemet.
+4. Válassza a **felhőalapú alkalmazások vagy műveletek**lehetőséget, és válassza ki, hogy mely alkalmazások legyenek védetté. Az **Alkalmazások kijelölése** alatt választhatja például az **Office 365 SharePoint Online** és az **Office 365 Exchange Online** elemeket.
 
-5. Az új szabályzat mentéséhez válassza a **Jóváhagyott ügyfélalkalmazás megkövetelése**, majd a **Kijelölés**, végül pedig a **Létrehozás** lehetőséget.
+   A módosítások mentéséhez válassza a **Kész** gombot.
+
+5. A **Feltételek** > **Ügyfélalkalmazások** választásával a szabályzat alkalmazásokra és böngészőkre is érvényesíthető. Választhatja például az **Igen**, majd a **Böngésző** és a **Mobilalkalmazások és asztali ügyfelek** lehetőségeket.
+
+   A módosítások mentéséhez válassza a **Kész** gombot.
+
+6. A *hozzáférés-vezérlés*területen válassza az **Engedélyezés** lehetőséget, hogy az eszköz Megfelelőségén alapuló feltételes hozzáférést alkalmazzon. Választhatja például a **Hozzáférés engedélyezése** > **Eszköz megfelelőként való megjelölésének megkövetelése** lehetőséget.
+
+   A módosítások mentéséhez válassza az **Választ** gombot.
+
+7. A **házirend engedélyezése**beállításnál válassza **a be**lehetőséget, majd válassza a **Létrehozás** lehetőséget a módosítások mentéséhez.
+
+
+
+
 
 ## <a name="next-steps"></a>További lépések
 [Modern hitelesítés nélküli alkalmazások blokkolása](app-modern-authentication-block.md)

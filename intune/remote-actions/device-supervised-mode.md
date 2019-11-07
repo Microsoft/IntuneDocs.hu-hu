@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99f27992009332a2a5fae0768225d8c69d3ac5ad
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 1e995dbc89321bf844151accd654a2d17d35afd9
+ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72509408"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73713431"
 ---
 # <a name="turn-on-ios-supervised-mode"></a>iOS-es felügyelt mód bekapcsolása
 
@@ -37,7 +37,7 @@ Az Apple [Adattartalom-beállítási referencia](http://help.apple.com/configura
 
 ## <a name="turn-on-supervised-mode-during-enrollment"></a>Felügyelt mód bekapcsolása regisztrálás során
 
-Az Intune-ban bekapcsolható az eszközökhöz felügyelt mód, amikor [Apple-regisztrációs profilokat hoz létre a DEP-beb](../enrollment/device-enrollment-program-enroll-ios.md#create-an-apple-enrollment-profile). Ehhez az **Eszközfelügyeleti beállítások** területen jelölje be a **Felügyelt** jelölőnégyzetet.
+A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)bekapcsolhatja a felügyelt üzemmódot az eszközökön, amikor [létrehoz egy Apple beléptetési profilt a DEP-ben](../enrollment/device-enrollment-program-enroll-ios.md#create-an-apple-enrollment-profile). Ehhez az **Eszközfelügyeleti beállítások** területen jelölje be a **Felügyelt** jelölőnégyzetet.
 
 ## <a name="turn-on-supervised-mode-after-enrollment"></a>Felügyelt mód bekapcsolása regisztrálás után
 

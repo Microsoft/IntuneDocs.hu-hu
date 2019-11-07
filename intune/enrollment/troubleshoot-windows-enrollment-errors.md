@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5776ebf3241968cca6da537bb58b7ab2a06f00ba
-ms.sourcegitcommit: f12bd2ce10b6241715bae2d2857f33c474287166
+ms.openlocfilehash: 348768be4a42667f579df0ccb500434425258db0
+ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72892543"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73712857"
 ---
 # <a name="troubleshoot-windows-device-enrollment-problems-in-microsoft-intune"></a>A Windows-eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune
 
@@ -60,7 +60,7 @@ Hiba 0x801c003: "Ez a felhasználó nem rendelkezik jogosultsággal a regisztrá
 A probléma több lehetséges megoldást is kínál:
 
 ##### <a name="remove-devices-that-were-enrolled"></a>A regisztrált eszközök eltávolítása
-1. Jelentkezzen be az [Azure portálra](https://portal.azure.com/?Microsoft_Intune=1&Microsoft_Intune_DeviceSettings=true&Microsoft_Intune_Enrollment=true&Microsoft_Intune_Apps=true&Microsoft_Intune_Devices=true#blade/Microsoft_Intune_DeviceSettings/ExtensionLandingBlade/overview).    
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).    
 2. Nyissa meg a **felhasználók** > **minden felhasználó**lehetőséget.    
 3. Válassza ki az érintett felhasználói fiókot, majd kattintson az **eszközök**elemre.    
 4. Válassza ki a fel nem használt vagy nemkívánatos eszközöket, majd kattintson a **Törlés**gombra. 
@@ -70,12 +70,12 @@ A probléma több lehetséges megoldást is kínál:
 > [!NOTE]
 > Ez a módszer növeli az eszközök regisztrálási korlátját az összes felhasználó számára, nem csak az érintett felhasználót.
 
-1. Jelentkezzen be az [Azure portálra](https://portal.azure.com/?Microsoft_Intune=1&Microsoft_Intune_DeviceSettings=true&Microsoft_Intune_Enrollment=true&Microsoft_Intune_Apps=true&Microsoft_Intune_Devices=true#blade/Microsoft_Intune_DeviceSettings/ExtensionLandingBlade/overview).
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Lépjen az **eszközök Beléptetése** > **beléptetési korlátozások**elemre, majd válassza az eszközök korlátozására **vonatkozó korlátozásokat**.    
 3. Növelje az **eszköz korlátjának**értékét. 
 
 ##### <a name="check-device-type-restrictions"></a>Az eszközök típusára vonatkozó korlátozások keresése
-1. Jelentkezzen be az [Intune-portálra](https://portal.azure.com/?Microsoft_Intune=1&Microsoft_Intune_DeviceSettings=true&Microsoft_Intune_Enrollment=true&Microsoft_Intune_Apps=true&Microsoft_Intune_Devices=true#blade/Microsoft_Intune_DeviceSettings/ExtensionLandingBlade/overview) egy globális rendszergazdai fiókkal.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431) globális rendszergazdai fiókkal.
 2. Lépjen az **eszközök Beléptetése** > **beléptetési korlátozások**elemre, majd válassza ki az **alapértelmezett** korlátozást az **eszköz típusa korlátozásai**alatt.    
 3. Válassza a **platformok**lehetőséget, majd válassza a **Windows engedélyezése (Mdm)** lehetőséget.
 

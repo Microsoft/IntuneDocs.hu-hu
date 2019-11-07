@@ -19,12 +19,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 39ea8b3859d3d2525433c4cafdf566e7a2c8d2ab
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: f8e319c68abd8965b84323bc3b7a5451dee42bc2
+ms.sourcegitcommit: 556b7ea2049014c9027f0e44affd3f301fab55fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72509197"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73709192"
 ---
 # <a name="tutorial-use-autopilot-to-enroll-windows-devices-in-intune"></a>Oktatóanyag – Windows-eszközök regisztrálása az Intune-ban az AutoPilot használatával
 
@@ -60,7 +60,7 @@ A Windows Autopilot beállításának első lépéseként hozzá kell adnia az I
 
 2. Mentse a CSV-fájlt.
 
-3. Az [Azure Portalbeli Intune-ban](https://aka.ms/intuneportal) válassza az **Eszközök regisztrálása** > **Windows-regisztráció** > **Eszközök** > **Importálás** elemet.
+3. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az eszközök **beléptetése** > **Windows-regisztráció** > **eszközök** > **Importálás**lehetőséget.
 
     ![A Windows AutoPilot-eszközök képernyőképe](./media/tutorial-use-autopilot-enroll-devices/autopilot-import-device.png)
 
@@ -78,7 +78,7 @@ A Windows Autopilot beállításának első lépéseként hozzá kell adnia az I
 
 Ezután létrehoz egy eszközcsoportot, és belehelyezi az előbb betöltött AutoPilot-eszközöket.
 
-1. Az [Azure Portalbeli Intune-ban](https://aka.ms/intuneportal) válassza a **Csoportok** > **Új csoport** elemet.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza a **csoportok** > **új csoport**lehetőséget.
 2. A **Csoport** panelen:
     1. A **Csoport típusa** beállításnál válassza a **Biztonsági** lehetőséget.
     2. A **Csoport neve** mezőbe írja be az *AutoPilot-csoport* nevet. A **Csoport leírása** mezőbe írja be az *AutoPilot-eszközök tesztcsoportja* leírást.
@@ -90,7 +90,7 @@ Ezután létrehoz egy eszközcsoportot, és belehelyezi az előbb betöltött Au
 
 Egy eszközcsoport létrehozása után létre kell hoznia egy Deployment-profilt az AutoPilot-eszközök konfigurálásához.
 
-1. Az [Azure Portalbeli Intune-ban](https://aka.ms/intuneportal) válassza az **Eszközök regisztrálása** > **Windows-regisztráció** > **Telepítési profilok** > **Profil létrehozása** elemet.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök beléptetése** > **Windows-regisztráció** > **üzembe helyezési profilok** > a **profil létrehozása**lehetőséget.
 2. Az **alapbeállítások** lapon a Tor **neve**mezőbe írja be az *Autopilot-profilt*. A **Leírás** mezőbe írja be az *AutoPilot-eszközök tesztprofilja* leírást.
 3. Állítsa a **Minden megcélzott eszköz átalakítása az Autopilotra** beállítást **Igen** értékre. Ez a beállítás biztosítja, hogy a listában lévő összes eszköz regisztrálva legyen az Autopilot üzembehelyezési szolgáltatásban. A regisztráció feldolgozása 48 órát is igénybe vehet.
 4. Válassza a **Tovább** elemet.
@@ -116,7 +116,7 @@ Ha már nem szeretne Autopilot-eszközöket használni, törölheti őket.
 
 1. Ha az eszközök regisztrálva vannak az Intune-ban, akkor először [törölnie kell azokat az Azure Active Directory portálról](../remote-actions/devices-wipe.md#delete-devices-from-the-azure-active-directory-portal).
 
-2. Az [Azure Portalbeli Intune-ban](https://aka.ms/intuneportal) válassza az **Eszközök regisztrálása** > **Windows-regisztráció** > **Eszközök** lehetőséget.
+2. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az eszközök **beléptetése** > **Windows-beléptetés** > **eszközök**elemet.
 
 3. A **Windows AutoPilot-eszközök** területen jelölje ki a törölni kívánt eszközöket, majd válassza a **Törlés** elemet.
 

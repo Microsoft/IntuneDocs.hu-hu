@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 86dc2e26e3c4091785cb6462a84e75b770634881
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 1001a7a3fde9c203fdad3d146ace57736ae7128d
+ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72508551"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73713450"
 ---
 # <a name="sync-devices-to-get-the-latest-policies-and-actions-with-intune"></a>Az eszközök szinkronizálása az Intune-nal a legfrissebb szabályzatok és műveletek beolvasásához
 
@@ -38,8 +38,8 @@ A **Szinkronizálás** eszközművelet kikényszeríti a választott eszköz azo
 
 ## <a name="sync-a-device"></a>Eszköz szinkronizálása
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba. 
-3. Az **Intune**-ban válassza az **Eszközök** > **Minden eszköz** lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431). 
+3. Válassza az **Eszközök** > **Minden eszköz** lehetőséget.
 4. A felügyelt eszközök listájában válasszon ki egy eszközt az *Áttekintés* panel megnyitásához, majd válassza a **szinkronizálás**lehetőséget.
 5. Válassza az **Igen** lehetőséget a megerősítéshez.
 

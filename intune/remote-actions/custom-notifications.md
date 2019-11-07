@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 002989bd61167d6f0d20e2c5cb3fa80a4051a99c
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: a8393bbc012861199bd99d97a62ab3e659c15d15
+ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72508676"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73713238"
 ---
 # <a name="send-custom-notifications-in-intune"></a>Egyéni értesítések küldése az Intune-ban  
 
@@ -69,7 +69,7 @@ Az egyéni értesítési üzenetek közé tartozik egy rövid cím és egy 500 k
 
 ## <a name="send-a-custom-notification-to-groups"></a>Egyéni értesítés küldése a csoportoknak  
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba egy olyan fiókkal, amely rendelkezik értesítések létrehozásához és küldéséhez szükséges engedélyekkel, majd nyissa meg az **eszközök** > **Egyéni értesítések küldése**lehetőséget.  
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431) egy olyan fiókkal, amely jogosult értesítések létrehozására és küldésére, valamint az **eszközök** > **Egyéni értesítések küldése**elemre.  
 
 2. Az alapvető beállítások lapon adja meg a következőket, majd a folytatáshoz kattintson a **tovább** gombra.  
    - **Title (cím** ) – Itt adhatja meg az értesítés címét. A címek legfeljebb 50 karakterből állhatnak.  
@@ -89,7 +89,7 @@ Az Intune nem követi az Ön által küldött egyéni értesítéseket, és az e
 
 ## <a name="send-a-custom-notification-to-a-single-device"></a>Egyéni értesítés küldése egyetlen eszközre  
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba egy olyan fiókkal, amely rendelkezik értesítések létrehozásához és küldéséhez szükséges engedélyekkel, majd lépjen az **eszközök**@no__t – 2**minden eszköz**elemre.  
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431) egy olyan fiókkal, amely jogosult értesítések létrehozására és küldésére, majd lépjen az **eszközök** > **minden eszköz**elemre.  
 
 2. Válassza ki azt az eszközt, amelyre értesítést szeretne küldeni.  
 

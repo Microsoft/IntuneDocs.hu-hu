@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a3ee6240d9efb0d09c41a6a9b1260cd4189927a8
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 8c31bbd8eb9efb2b748163223ce1b8fa555f0dc6
+ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72509414"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73713532"
 ---
 # <a name="what-is-microsoft-intune-device-management"></a>A Microsoft Intune-eszközfelügyelet ismertetése
 
@@ -33,7 +33,7 @@ Az **Eszközök** munkafolyamat áttekintést nyújt a felügyelt eszközökről
 
 ## <a name="get-to-your-devices"></a>Az eszközök elérése
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 3. Válassza az **Eszközök** lehetőséget. Ez a nézet részletes információkat jelenít meg az egyes eszközökről, illetve megjeleníti a velük elvégezhető műveleteket, például:
 
    - Az **Áttekintés** a regisztrált eszközök pillanatképét jeleníti meg, valamint azt, hogy hány eszköz használja a különböző platformokat (Android, iOS és egyebek).

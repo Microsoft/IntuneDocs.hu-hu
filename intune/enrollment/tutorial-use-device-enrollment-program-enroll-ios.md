@@ -15,12 +15,12 @@ ms.technology: ''
 ms.assetid: ''
 Customer intent: As an Intune admin, I want to set up the Apple's corporate device enrollment features so that corporate devices can automatically enroll in Intune.
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 83a9467065bb5c1d1cde2035df936541bb804ddc
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: e3fb99a363bda762ccfb834388f3abb4ab80f81a
+ms.sourcegitcommit: 556b7ea2049014c9027f0e44affd3f301fab55fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72503082"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73709701"
 ---
 # <a name="tutorial-use-apples-corporate-device-enrollment-features-in-apple-business-manager-abm-to-enroll-ios-devices-in-intune"></a>Oktatóanyag: az Apple Business Manager (ABM) vállalati eszközök beléptetési funkcióinak használata az iOS-eszközök Intune-beli regisztrálásához
 Az Apple Business Manager eszköz-beléptetési funkciói leegyszerűsítik az eszközök regisztrálását. Az Intune támogatja az Apple régebbi Készülékregisztrációs program (DEP) portálját is, de javasoljuk, hogy az Apple Business Managerrel frissen kezdjen. Az Microsoft Intune és az Apple vállalati eszközök regisztrálásával az eszközök automatikusan biztonságosan lesznek regisztrálva, amikor a felhasználó első alkalommal bekapcsolja az eszközt. Az eszközöket tehát számos felhasználónak is kiszállíthatja anélkül, hogy az egyes eszközöket külön kell beállítania. 
@@ -44,7 +44,7 @@ Az iOS-eszközöknek az Apple vállalati beléptetési funkcióival való regisz
 
 Az ABM vagy a DEP portál használatával hozzon létre egy eszköz-beléptetési jogkivonatot. A portálok segítségével eszközöket rendelhet hozzá az Intune-hoz a felügyelethez.
 
-1. Az [Azure-beli Intune-portálon](https://aka.ms/intuneportal) válassza az **Eszközök beléptetése** > **Apple-regisztráció** > **Készülékregisztrációs programbeli token** > **Hozzáadás** elemet.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** beléptetése > az **Apple-regisztráció** > a **beléptetési programbeli tokenek** > **Hozzáadás**lehetőséget.
 
 2. Engedélyezze a Microsoftnak az **Elfogadom** lehetőség választásával a felhasználó- és eszközadatok Apple-nek való elküldését.
 
@@ -80,7 +80,7 @@ Az ABM vagy a DEP portál használatával hozzon létre egy eszköz-beléptetés
 ## <a name="create-an-apple-enrollment-profile"></a>Az Apple-regisztrációs profil létrehozása
 Most, hogy telepítette a jogkivonatot, létrehozhat egy regisztrációs profilt a vállalat által birtokolt iOS-eszközökhöz. A regisztrálás során az eszközök csoportjára alkalmazott beállításokat egy készülékregisztrációs profil határozza meg.
 
-1. Az Azure-beli Intune-portálon válassza az **Eszközök beléptetése** > **Apple-regisztráció** > **Készülékregisztrációs programbeli token** elemet.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** beléptetése > az **Apple-regisztráció** > a **beléptetési programbeli jogkivonatok**lehetőséget.
 
 2. Válassza ki az imént telepített jogkivonatot, válassza a **profilok** > **profil létrehozása**lehetőséget.
 
@@ -118,13 +118,13 @@ Most, hogy telepítette a jogkivonatot, létrehozhat egy regisztrációs profilt
 
 Miután beállította az ABM-, ASM-vagy DEP-portálon a beléptetési program tokenjét, és hozzárendelt eszközöket a MDM-kiszolgálóhoz, megvárhatja, hogy ezek az eszközök szinkronizálva legyenek az Intune szolgáltatással, vagy manuálisan is leküldhetik a szinkronizálást. Manuális szinkronizálás nélkül az eszközök akár 24 órát is igénybe vehetnek, hogy megjelenjenek a Azure Portal.
 
-1. A Azure Portal Intune-ban válassza az eszközök **beléptetése @no__t-** 1**Apple-regisztráció** > **beléptetési program jogkivonatok** elemet > Válassza ki a tokent a listában > **eszközök** > **szinkronizálás**lehetőséget.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az eszközök **beléptetése > az** **Apple-regisztráció** > a **beléptetési programbeli jogkivonatok** lehetőséget > Válassza ki a tokent a listában > **eszközök** > **szinkronizálás**lehetőséget.
 
 ## <a name="assign-an-enrollment-profile-to-ios-devices"></a>Regisztrációs profil kiosztása iOS-eszközökhöz
 
 Ahhoz, hogy egy eszközt regisztrálni lehessen, először hozzá kell rendelni egy regisztrációs programprofilt. Ezek az eszközök az Apple-től szinkronizálva vannak az Intune-nal, és hozzá kell rendelni a megfelelő MDM-kiszolgálói jogkivonathoz az ABM, ASM vagy DEP portálon.
 
-1. Az Intune-ban a Azure Portal válassza az **eszközök**beléptetése  > **Apple-regisztráció** > **beléptetési programbeli tokenek** > Válassza ki a tokent a listában.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** beléptetése > az **Apple-regisztráció** > a **beléptetési programbeli jogkivonatok** lehetőséget, > Válassza ki a tokent a listában.
 2. Válassza az **Eszközök** lehetőséget, válasszon eszközöket a listából, majd válassza a **Profil hozzárendelése** elemet.
 3. A **Profil hozzárendelése** területen válasszon egy profilt az eszközökhöz, majd válassza a **Hozzárendelés** lehetőséget.
 

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f201cdac0f881ce03863704dd80d8635de52074a
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: e538204306ce80d6a13739fc981edf2748a622de
+ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72505459"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73713468"
 ---
 # <a name="set-up-ios-and-ipados-user-enrollment-preview"></a>IOS-és iPadOS-felhasználói regisztráció beállítása (előzetes verzió)
 
@@ -43,7 +43,7 @@ További információ a felhasználói regisztrációval elérhető lehetősége
 
 A beléptetési profil meghatározza az eszközök egy csoportjára alkalmazott beállításokat a regisztráció során. 
 
-1. Az Intune-portálon válassza az **eszközök beléptetése** > **Apple-regisztráció** > **regisztrációs típus (előzetes verzió)**  > **létrehozási profil** > **iOS**lehetőséget. Ez a profil határozza meg, hogy az iOS-és iPadOS-végfelhasználók milyen regisztrációs élményt kapnak a vállalati Apple-módszerekkel nem regisztrált eszközökön. Ha módosítani szeretné a módosításokat, ezt a profilt a létrehozása után is szerkesztheti.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök beléptetése** > az **Apple-regisztráció** > a **regisztrációs típusok (előzetes verzió)**  > a **profil létrehozása** > **iOS**lehetőséget. Ez a profil határozza meg, hogy az iOS-és iPadOS-végfelhasználók milyen regisztrációs élményt kapnak a vállalati Apple-módszerekkel nem regisztrált eszközökön. Ha módosítani szeretné a módosításokat, ezt a profilt a létrehozása után is szerkesztheti.
 
     ![Apple beléptetési profil létrehozása](./media/ios-user-enrollment/create-profile.png)
 
@@ -88,7 +88,7 @@ A beléptetési profil meghatározza az eszközök egy csoportjára alkalmazott 
 
 A több regisztrációs típusú profil létrehozása után módosíthatja a prioritási sorrendet, amelyben alkalmazva vannak.
 
-1. Az Intune-ban a Azure Portal válassza az **eszközök beléptetése** > **Apple-regisztráció** > **regisztrációs típus (előzetes verzió)** lehetőséget.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök beléptetése** > az **Apple-regisztráció** > a **beléptetési típusok (előzetes verzió)** lehetőséget.
 2. Húzza a listában szereplő profilokat a kívánt sorrendbe.
 
 Bármely felhasználó profiljai közötti ütközés esetén a rendszer a magasabb prioritású profilt alkalmazza a felhasználó számára.

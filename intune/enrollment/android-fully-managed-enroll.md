@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 755aefb955c2d30652434f2bd2e91981145fc56f
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 44e757be5f109b81772daa6ff59505ccc0f033f8
+ms.sourcegitcommit: 556b7ea2049014c9027f0e44affd3f301fab55fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72505591"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73709440"
 ---
 # <a name="set-up-intune-enrollment-of-android-enterprise-fully-managed-devices"></a>Az Android Enterprise teljes körűen felügyelt eszközök Intune-regisztrációjának beállítása 
 
@@ -56,7 +56,7 @@ Az Android Enterprise teljes körűen felügyelt eszközkezelés beállításáh
 
 ### <a name="enable-corporate-owned-user-devices"></a>Vállalati tulajdonú felhasználói eszközök engedélyezése
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és válassza az **eszközök beléptetése** > **Android-regisztráció** > **vállalat által birtokolt, teljes körűen felügyelt felhasználói eszközöket**.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431) , és válassza az **eszközök beléptetése** > **Android-regisztráció** > **vállalati tulajdonú, teljes körűen felügyelt felhasználói eszközök**lehetőséget.
 2. A **vállalati tulajdonú felhasználói eszközök regisztrálásának engedélyezése a felhasználók**számára területen válassza az **Igen**lehetőséget.
 
 > [!NOTE]

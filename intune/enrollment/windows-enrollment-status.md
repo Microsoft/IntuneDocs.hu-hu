@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d69bd040929da08d7d23db764c5b01f6aca6a9ea
-ms.sourcegitcommit: c38a856725993a4473ada75e669a57f75ab376f8
+ms.openlocfilehash: 5e453002493e95bd5147cca115075a17a6e7a298
+ms.sourcegitcommit: 556b7ea2049014c9027f0e44affd3f301fab55fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73143176"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73709322"
 ---
 # <a name="set-up-an-enrollment-status-page"></a>Regisztráció állapotának beállítása lap
  
@@ -64,14 +64,14 @@ Az egyes profilok prioritási sorrendjét úgy is beállíthatja, hogy az ütkö
 
 A regisztráció állapota lap bekapcsolásához kövesse az alábbi lépéseket.
  
-1. Az [Intune](https://aka.ms/intuneportal)-ban válassza az **eszközök beléptetése** > **Windows-beléptetés** > **regisztráció állapota lapot**.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök beléptetése** > **Windows-beléptetés** > **regisztráció állapota lapot**.
 2. A **Beléptetés állapota oldal** panelen válassza az **Alapértelmezett** > **Beállítások** lehetőséget.
 3. A **Show app and profile installation progress** (Alkalmazások és profilok telepítési állapotának megjelenítése) beállításnál válassza a **Yes** (Igen) lehetőséget.
 4. Adja meg a többi kívánt beállítást, majd válassza a **Mentés** gombot.
 
 ## <a name="create-enrollment-status-page-profile-and-assign-to-a-group"></a>Regisztrációs állapot lap profiljának létrehozása és társítása egy csoporthoz
 
-1. Az [Intune](https://aka.ms/intuneportal)-ban válassza az **eszközök beléptetése** > **Windows** -beléptetés > **regisztráció állapota lapot** > a **profil létrehozása**lehetőséget.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök beléptetése** > **Windows-beléptetés** > **regisztráció állapota lap** > **Létrehozás profil**lehetőséget.
 2. Adjon meg egy **nevet** és egy **leírást**.
 3. Válassza a **Létrehozás** lehetőséget.
 4. A **Regisztráció állapota oldal** listájában válassza ki az új profilt.
@@ -82,7 +82,7 @@ A regisztráció állapota lap bekapcsolásához kövesse az alábbi lépéseket
 
 A felhasználók számos csoportba tartozhatnak, és számos regisztrációs állapotú lap profilja lehet. Az ilyen ütközések kezeléséhez beállíthatja az egyes profilok prioritásait. Ha a regisztráció során egynél több regisztrációs állapotú oldal profilja van, akkor a rendszer csak a legmagasabb prioritású profilt alkalmazza a beléptetési eszközre.
 
-1. Az [Intune](https://aka.ms/intuneportal)-ban válassza az **eszközök beléptetése** > **Windows-beléptetés** > **regisztráció állapota lapot**.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök beléptetése** > **Windows-beléptetés** > **regisztráció állapota lapot**.
 2. Vigye a kurzort a listában a profilra.
 3. A függőleges három ponttal húzza a profilt a kívánt helyre a listában.
 
@@ -90,7 +90,7 @@ A felhasználók számos csoportba tartozhatnak, és számos regisztrációs ál
 
 Megadhatja, hogy mely alkalmazásokat kell telepíteni, mielőtt a felhasználó el tudja érni az asztalt.
 
-1. Az Intune-ban válassza az **eszközök beléptetése** > **Windows-beléptetés** > **regisztráció állapota lapot**.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök beléptetése** > **Windows-beléptetés** > **regisztráció állapota lapot**.
 2. Válassza ki a profil > **beállításait**.
 3. Válassza az **Igen** lehetőséget az **alkalmazások és a profilok telepítési folyamatának megjelenítéséhez**.
 4. Válassza az **Igen** lehetőséget az **eszköz használatának tiltása lehetőségre, amíg az összes alkalmazás és profil nincs telepítve**.

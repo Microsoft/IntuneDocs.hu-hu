@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: edc884850b70ff7621224c5b01a68d016f27504e
-ms.sourcegitcommit: 5932da3ed8f52c7b0f0d71c1801f81c85952cf0c
+ms.openlocfilehash: c06fe931bf17b812def3f22b3d9a5d92d9933e2b
+ms.sourcegitcommit: 556b7ea2049014c9027f0e44affd3f301fab55fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72923392"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73709472"
 ---
 # <a name="set-up-intune-enrollment-of-android-enterprise-dedicated-devices"></a>Androidos vállalati dedikált eszközök Intune-regisztrációjának beállítása
 
@@ -59,7 +59,7 @@ Az Android Enterprise dedikált eszközök felügyeletének beállításához k�
 
 Létre kell hoznia egy regisztrációs profilt, hogy regisztrálni tudja a dedikált eszközöket. A profil a létrehozásakor ad egy regisztrációs jogkivonatot (véletlenszerű sztring) és egy QR-kódot. Az eszköz Android operációs rendszerének és verziójától függően a jogkivonat vagy a QR-kód segítségével [regisztrálhat a dedikált eszközt](#enroll-the-dedicated-devices).
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és válassza az **eszközök beléptetése** > **Android-regisztráció** > **vállalati tulajdonú dedikált eszközök**elemet.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431) , és válassza az **eszközök beléptetése** > **Android-regisztráció** > **vállalati tulajdonú dedikált eszközök**elemet.
 2. Válassza a **Létrehozás** lehetőséget, és töltse ki a kötelező mezőket.
     - **Név**: Adjon meg egy nevet, amelyet akkor fog használni, amikor a profilt a dinamikus eszközcsoporthoz rendeli.
     - **Jogkivonat lejárati dátuma**: Az a dátum, amikor a jogkivonat lejár. A Google legfeljebb 90 napos érvényességi időszakot engedélyez.
@@ -69,7 +69,7 @@ Létre kell hoznia egy regisztrációs profilt, hogy regisztrálni tudja a dedik
 
 A cél lehet alkalmazás, és hozzárendelt vagy dinamikus eszközcsoportokra vonatkozó szabályzat is. A dinamikus AAD-eszközcsoportokat a következő lépesekkel konfigurálhatja úgy, hogy automatikusan felvegyék a megadott regisztrációs profillal regisztrált eszközöket:
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és válassza a **csoportok** > **az összes csoport** > **új csoport**lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431) , és válassza a **csoportok** > **minden** csoport > **új csoport**lehetőséget.
 2. A **Csoport** panelen töltse ki a kötelező mezőket az alábbiak szerint:
     - **Csoporttípus**: Biztonsági (Security)
     - **Csoport neve**: Adjon meg egy beszédes nevet (például 1. üzem eszközei)
@@ -92,7 +92,7 @@ A cél lehet alkalmazás, és hozzárendelt vagy dinamikus eszközcsoportokra vo
 
 Egy jogkivonat/QR-kód cseréje vagy visszavonása a már regisztrált eszközöket nem érinti.
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és válassza az **eszközök beléptetése** > **Android-regisztráció** >  közösen felügyelt**dedikált eszközök**elemet.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431) , és válassza az **eszközök beléptetése** > **Android-regisztráció** > közösen **dedikált eszközök**lehetőséget.
 2. Válassza ki a profilt, amellyel dolgozni kíván.
 3. Válassza a **Jogkivonat** lehetőséget.
 4. A jogkivonat cseréjéhez válassza a **Jogkivonat cseréje** lehetőséget.

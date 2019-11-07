@@ -6,7 +6,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 10/31/2019
+ms.date: 11/06/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6dbe26dba4e78e9f5f29a5adedffa3de1df662a6
-ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
+ms.openlocfilehash: 488794fdce8f6ebb074648c8e399cb2aecc73b25
+ms.sourcegitcommit: 556b7ea2049014c9027f0e44affd3f301fab55fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73414678"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73709744"
 ---
 # <a name="ios-and-ipados-device-settings-to-allow-or-restrict-features-using-intune"></a>iOS-és iPadOS-eszközök beállításai az Intune-t használó funkciók engedélyezéséhez vagy korlátozásához
 
@@ -417,6 +417,9 @@ Az iOS 9,3-es vagy újabb verzióját futtató eszközökre vonatkozik.
 - **Az alkalmazások típusa lista**: hozza létre a megjelenítendő vagy elrejteni kívánt alkalmazások listáját. Megjelenítheti vagy elrejtheti a beépített alkalmazásokat és üzletági alkalmazásokat. Az Apple webhelye tartalmazza a [beépített Apple apps-alkalmazásokat](https://support.apple.com/HT208094). A választható lehetőségek:
 
   - **Rejtett alkalmazások**: megadhatja a felhasználók elől rejtett alkalmazások listáját. A felhasználók nem tekinthetik meg és nem nyitják meg ezeket az alkalmazásokat.
+  
+    Az Apple megakadályozza egyes natív alkalmazások elrejtését. Nem rejtheti el például a **beállításokat** vagy a **mobiltárca** -alkalmazásokat az eszközön. A [beépített Apple-alkalmazások törlésével](https://support.apple.com/HT208094) megtekintheti azokat az alkalmazásokat, amelyek rejtve vannak.
+  
   - **Látható alkalmazások**: megadhatja a felhasználók által megtekinthető és elindítható alkalmazások listáját. Ezeken kívül a felhasználók más alkalmazásokat nem látnak és nem indíthatnak el.
 
 - **Alkalmazás URL-címe**: adja meg a megjeleníteni vagy elrejteni kívánt alkalmazás áruházbeli alkalmazásának URL-címét. Példa:

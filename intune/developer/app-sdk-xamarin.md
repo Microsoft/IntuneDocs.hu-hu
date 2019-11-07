@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 19202d4387635b7cd1f7e4604d755fb8a213d327
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: ec234a3d93127a26af4203a4776545602334858b
+ms.sourcegitcommit: 556b7ea2049014c9027f0e44affd3f301fab55fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72503435"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73709557"
 ---
 # <a name="microsoft-intune-app-sdk-xamarin-bindings"></a>Microsoft Intune App SDK Xamarin Bindings
 
@@ -80,7 +80,7 @@ Ha az alkalmazás már konfigurálva van a ADAL vagy a MSAL használatára, és 
 
       Az alkalmazások üres értékűek is lehetnek, ha a felhasználó egyszerű felhasználóneve ismeretlen a hívás idején. Ebben az esetben a rendszer az e-mail-címet és a jelszót kéri a felhasználóktól.
       
-      Ha az alkalmazás már az ADA vagy az MSAL segítségével hitelesíti a felhasználókat, egyszeri bejelentkezést (SSO) konfigurálhat az alkalmazás és az Intune SDK között. Elsőként konfigurálnia kell az ADAL/MSAL szolgáltatást a tokenek az iOS-es Intune Xamarin-kötések által is használt ugyanazon kulcslánc-hozzáférési csoport használatára (com.microsoft.adalcache). A ADAL ezt a [AuthenticationContext iOSKeychainSecurityGroup tulajdonságának beállításával](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/iOS-Keychain-Access)teheti meg. A MSAL esetében [be kell állítania a PublicClientApplication iOSKeychainSecurityGroup tulajdonságát](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Xamarin-iOS-specifics#enable-keychain-access). Ezután felül kell bírálnia az Intune SDK alapértelmezett AAD-beállításait az alkalmazáséival. Ezt az alkalmazás Info.plist fájljában található IntuneMAMSettings szótárban teheti meg az [iOS-hez készült Intune App SDK – fejlesztői útmutató](app-sdk-ios.md#configure-settings-for-the-intune-app-sdk) című témakörben leírtaknak megfelelően, vagy használhatja az IntuneMAMPolicyManager-példány AAD-felülbírálási tulajdonságait. Az Info.plist fájlt alkalmazó módszer használata ajánlott az olyan alkalmazások esetében, melyek ADAL-beállításai statikusak, míg a felülbírálási tulajdonságok használata ajánlott olyan alkalmazások esetében, melyek futásidőben határozzák meg ezeket az értékeket. Az SSO-beállítások konfigurálása után az alkalmazásnak a sikeresen hitelesítést követően át kell adnia a felhasználó egyszerű felhasználónevét az IntuneMAMEnrollmentManager RegisterAndEnrollAccount metódusának:
+      Ha az alkalmazás már az ADA vagy az MSAL segítségével hitelesíti a felhasználókat, egyszeri bejelentkezést (SSO) konfigurálhat az alkalmazás és az Intune SDK között. Először felül kell bírálnia az Intune SDK által az alkalmazáshoz használt alapértelmezett HRE-beállításokat. Ezt az alkalmazás info. plist fájljának IntuneMAMSettings-szótárán keresztül teheti meg, az [iOS-hez készült Intune app SDK Fejlesztői útmutatójában](app-sdk-ios.md#configure-settings-for-the-intune-app-sdk)leírtak szerint, vagy megteheti a kódban a INTUNEMAMSETTINGS osztály HRE felülbírálás tulajdonságai között. Az Info.plist fájlt alkalmazó módszer használata ajánlott az olyan alkalmazások esetében, melyek ADAL-beállításai statikusak, míg a felülbírálási tulajdonságok használata ajánlott olyan alkalmazások esetében, melyek futásidőben határozzák meg ezeket az értékeket. Az SSO-beállítások konfigurálása után az alkalmazásnak a sikeresen hitelesítést követően át kell adnia a felhasználó egyszerű felhasználónevét az IntuneMAMEnrollmentManager RegisterAndEnrollAccount metódusának:
 
       ```csharp
       IntuneMAMEnrollmentManager.Instance.RegisterAndEnrollAccount(string identity);
@@ -160,7 +160,7 @@ MAMPolicyManager.GetPolicy(currentActivity).GetIsSaveToLocationAllowed(SaveLocat
 ```
 
 #### <a name="register-for-notifications-from-the-sdkapp-sdk-androidmdregister-for-notifications-from-the-sdk"></a>[Regisztráció az SDK értesítéseire](app-sdk-android.md#register-for-notifications-from-the-sdk)
-Az alkalmazásnak regisztrálnia kell az SDK által küldött értesítésekhez egy `MAMNotificationReceiver` létrehozásával, és regisztrálnia kell `MAMNotificationReceiverRegistry`-re. Ezt úgy teheti meg, hogy megadja a fogadó és a kívánt értesítés típusát @no__t – 0, az alábbi példában látható módon:
+Az alkalmazásnak regisztrálnia kell az SDK által küldött értesítésekhez egy `MAMNotificationReceiver` létrehozásával, és regisztrálnia kell `MAMNotificationReceiverRegistry`-re. Ezt úgy teheti meg, hogy megadja a fogadó és a kívánt értesítés típusát `App.OnMAMCreate`ban, az alábbi példában látható módon:
 
 ```csharp
 public override void OnMAMCreate()
@@ -182,7 +182,7 @@ IMAMEnrollmentManager mgr = MAMComponents.Get<IMAMEnrollmentManager>();
 
 ### <a name="xamarinforms-integration"></a>Xamarin.Forms-integráció
 
-@No__t-0 alkalmazások esetén a `Microsoft.Intune.MAM.Remapper` csomag automatikusan végrehajtja a MAM-osztály cseréjét a `MAM` osztályoknak a gyakran használt `Xamarin.Forms` osztályok osztály-hierarchiába való beírásával. 
+`Xamarin.Forms`-alkalmazások esetén a `Microsoft.Intune.MAM.Remapper`-csomag az `MAM` osztályok a gyakran használt `Xamarin.Forms` osztályok osztály-hierarchiába való beírásával automatikusan végrehajtja a MAM-osztály cseréjét. 
 
 > [!NOTE]
 > A Xamarin. Forms integrációt a fentiekben ismertetett Xamarin. Android-integráció mellett kell elvégezni. A remapper másként viselkedik a Xamarin. Forms-alkalmazásoknál, így a kézi MAM-cserék továbbra is szükségesek.

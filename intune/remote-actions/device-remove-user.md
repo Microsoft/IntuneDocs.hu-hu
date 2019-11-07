@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 030d455c366a9c447444c247e9690e5d31613982
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 772cdbe203b0489a9b2312a1cc10ea1b3182b35d
+ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72508611"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73713154"
 ---
 # <a name="remove-a-user-from-a-shared-ios-device"></a>Felhasználó eltávolítása megosztott iOS-eszközről
 
@@ -41,12 +41,11 @@ A **Felhasználó eltávolítása** művelettel törölheti a kiválasztott felh
 
 ## <a name="remove-a-user"></a>Felhasználó eltávolítása
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Az **Intune** panelen válassza az **Eszközök** lehetőséget.
-4. Az **Eszközök** panelen válassza a **Minden eszköz** lehetőséget.
-5. A felügyelt eszközök listájából válasszon ki egy iOS-eszközt.
-6. Az eszköz ablaktábláján válassza a **Felhasználók** lehetőséget.
-7. A listán a jobb gombbal kattintson az eltávolítani kívánt felhasználóra, majd kattintson a **Felhasználó eltávolítása** elemre.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **Eszközök** > **Minden eszköz** lehetőséget.
+3. A felügyelt eszközök listájából válasszon ki egy iOS-eszközt.
+4. Az eszköz ablaktábláján válassza a **Felhasználók** lehetőséget.
+5. A listán a jobb gombbal kattintson az eltávolítani kívánt felhasználóra, majd kattintson a **Felhasználó eltávolítása** elemre.
 
 ## <a name="next-steps"></a>További lépések
 

@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dbcc50d275a3d3e6a613640e96b363ce7608da81
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: ded91d72321257adc30d0321b5d01e74fa1d51a6
+ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72508566"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73712200"
 ---
 # <a name="remove-devices-by-using-wipe-retire-or-manually-unenrolling-the-device"></a>Eszközök eltávolítása összes adatuk törlésével, az eszköz kivonásával vagy regisztrációja manuális törlésével
 
@@ -53,7 +53,7 @@ Az összes adat törlését akkor érdemes használni, ha szeretne alaphelyzetbe
 
 ### <a name="wiping-a-device"></a>Eszköz összes adatának törlése
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 3. Válassza az **Eszközök** > **Minden eszköz** lehetőséget.
 4. Válassza ki az eszköz nevét, amelyen az összes adatot törölni szeretné.
 5. Az eszköz nevét megjelenítő panelen válassza az **Összes adat törlése** lehetőséget.
@@ -146,7 +146,7 @@ Az összes adat törlése csak kioszkeszközökön lehetséges. Androidos kioszk
 
 ### <a name="retire"></a>Kivonás
 
-1. Jelentkezzen be az [Intune-ba az Azure Portalon](https://aka.ms/intuneportal).
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Az **Eszközök** panelen válassza a **Minden eszköz** lehetőséget.
 3. Válassza ki a kivonni kívánt eszköz nevét.
 4. Az eszköz nevét megjelenítő panelen válassza a **Kivonás** lehetőséget. Válassza az **Igen** lehetőséget a megerősítéshez.
@@ -157,12 +157,12 @@ Ha az eszköz be van kapcsolva és csatlakoztatva van, a **Kivonás** műveletne
 
 Ha el szeretne távolítani eszközöket az Intune-portálról, ezt megteheti az adott eszközpanelen. Az eszköz következő bejelentkezésekor minden céges adat el lesz távolítva.
 
-1. Jelentkezzen be az [Intune-ba az Azure Portalon](https://aka.ms/intuneportal).
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Válassza az **Eszközök** > **Minden eszköz** > a törölni kívánt eszközök > **Törlés** lehetőséget.
 
 ### <a name="automatically-delete-devices-with-cleanup-rules"></a>Eszközök automatikus törlése törlési szabályok alkalmazásával
 Az Intune konfigurálható úgy, hogy automatikusan törölje az inaktívnak, elavultnak vagy nem válaszolónak látszó eszközöket. Ezek a törlési szabályok folyamatosan figyelik az eszközleltárt, hogy az eszközrekordok naprakészek maradjanak. Az így törölt eszközök törlődnek az Intune-felügyeletből.
-1. Jelentkezzen be az [Intune-ba az Azure Portalon](https://aka.ms/intuneportal).
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Válassza az **Eszközök** > **Eszköztörlési szabályok** > **Igen** lehetőséget.
 3. A **sok napig nem bejelentkezett eszközök törlése** mezőbe írjon be egy 30 és 270 közötti számot.
 4. Válassza a **Mentés** elemet.
@@ -185,7 +185,7 @@ Előfordulhat, hogy eszközöket kell törölnie az Azure AD-ből kommunikáció
 
 Ha szeretne teljesen kivonni egy Apple DEP-eszközt az Intune általi felügyeletből, kövesse az alábbi lépéseket:
 
-1. Jelentkezzen be az [Intune-ba az Azure Portalon](https://aka.ms/intuneportal).
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Válassza az **Eszközök** > **Minden eszköz** > a törölni kívánt eszköz > **Kivonás** lehetőséget.
 ![Kivonás képernyőképe](./media/devices-wipe/retire.png)
 3. Látogasson el a [deploy.apple.com](http://deploy.apple.com) webhelyre, és keressen rá az eszközre a sorozatszáma alapján.

@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ff1dc2565ef52f81619abe8f14e78c58da0fce7d
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 294f06b078b06cfba9376ba6db0eb42cb884e141
+ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72508616"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73712322"
 ---
 # <a name="use-fresh-start-to-reset-windows-10-devices-with-intune"></a>Intune-t futtató Windows 10 rendszerű eszközök alaphelyzetbe állítása az Újrakezdéssel
 
@@ -30,7 +30,7 @@ ms.locfileid: "72508616"
 
 Az **Újratelepítés** eszközművelet eltávolít minden alkalmazást, amely telepítve van egy Windows 10 rendszerű (1703-as vagy újabb verzió) számítógépen. Ezzel a művelettel eltávolíthatja az olyan előre telepített (OEM) alkalmazásokat, amelyek általában telepítve vannak egy új számítógépen. 
 
-1. Jelentkezzen be az [Azure Portalra](https://portal.azure.com), majd lépjen a **Microsoft Intune** > **Eszközök** > **Minden eszköz** elemre.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431) , és válassza az **eszközök** > **minden eszköz**lehetőséget.
 2. A felügyelt eszközök listájából válasszon ki egy Windows 10-es asztali eszközt.
 3. Kattintson az **Újratelepítés** lehetőségre. 
 4. **Az eszközön található felhasználói adatok megőrzése** beállításnál válassza ki a következőket:

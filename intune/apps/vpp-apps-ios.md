@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/22/2019
+ms.date: 11/06/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9625243698bffc93ed969a8c2e4b06b4f3093f4d
-ms.sourcegitcommit: 06a1fe83fd95c9773c011690e8520733e1c031e3
+ms.openlocfilehash: e76077553d4394366ca3e4403e74f4f3c9d8b996
+ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72785532"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73712868"
 ---
 # <a name="how-to-manage-ios-and-macos-apps-purchased-through-apple-volume-purchase-program-with-microsoft-intune"></a>A Apple Volume Purchase Program használatával vásárolt iOS-és macOS-alkalmazások kezelése Microsoft Intune
 
@@ -89,6 +89,8 @@ Mielőtt hozzálát, be kell szereznie a VPP-tokent az Apple-től, és fel kell 
 5. Az **VPP-token Létrehozása** panelen adja meg az alábbi adatokat:
     - **VPP-jogkivonatfájl** – Ha még nem tette meg, iratkozzon fel a vállalati Volume Purchase Programra vagy az oktatási programra. A regisztrációt követően töltse le a fiókjához tartozó Apple VPP-tokent, és itt jelölje ki.
     - **Apple ID** – Adja meg a mennyiségi vásárlási programhoz kapcsolódó fiók Apple ID-ját.
+    - A **token vezérlése egy másik Mdm** – ez a beállítás **Igen** értékre állítja a token hozzárendelését az Intune-hoz egy másik Mdm.
+    - **Jogkivonat neve** – a jogkivonat nevének beállítására szolgáló felügyeleti mező.    
     - **Ország/régió** – válassza ki a VPP ország/régió tárolót.  Az Intune az adott VPP ország/régió tárolóban lévő összes területi beállításhoz a VPP-alkalmazásokat szinkronizálja.
         > [!WARNING]  
         > Az ország/régió módosítása frissíti az alkalmazások metaadatait és az áruházbeli URL-címet a következő szinkronizáláskor a tokenrel létrehozott alkalmazások Apple szolgáltatásával. Az alkalmazás nem frissül, ha nem létezik az új ország/régió tárolóban.
@@ -98,6 +100,9 @@ Mielőtt hozzálát, be kell szereznie a VPP-tokent az Apple-től, és fel kell 
 
         > [!NOTE]
         > Az alkalmazások automatikus frissítései mind az eszköz, mind a felhasználó által licencelt, iOS 11,0-es, illetve macOS 10,12-es és újabb verziójú alkalmazások esetében működnek.
+
+    - **Engedélyezem a Microsoft számára, hogy a felhasználók és az eszközök adatait is el lehessen küldeni az Apple-nek.** – **Válassza az Elfogadom** lehetőséget a folytatáshoz. Az Apple-nek küldött Microisoft áttekintését lásd: az [Intune által az Apple](~/protect/data-intune-sends-to-apple.md)-nek küldött adatokat.
+
 6. Amikor elkészült, válassza a **Létrehozás** gombot.
 
 A token a jogkivonatok panel listájában jelenik meg.

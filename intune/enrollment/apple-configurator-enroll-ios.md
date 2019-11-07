@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 21ee59af8c6d24a42ce3f8c9fefedd0e5dba7ba7
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: c6a9c6b824f8d6369f7bf2d06b44fa8a20417d1c
+ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72503324"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73713137"
 ---
 # <a name="set-up-ios-device-enrollment-with-apple-configurator"></a>iOS-eszközök regisztrálásának beállítása az Apple Configuratorral
 
@@ -48,7 +48,7 @@ Az Apple Configurator regisztrációs módszerei nem használhatók az [eszközr
 
 Egy eszközregisztrációs profil meghatározza a regisztrálás során alkalmazott beállításokat. Ezek a beállítások csak egyszer kerülnek alkalmazásra. Az iOS-eszközöknek az Apple Configuratorral történő regisztrációjához használt regisztrációs profil létrehozásához kövesse az alábbi lépéseket.
 
-1. Az [Intune](https://aka.ms/intuneportal) portálon válassza az **Eszközök beléptetése** > **Apple-regisztráció** > **Apple Configurator** > **Profilok** > **Létrehozás** lehetőséget.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök beléptetése** > **Apple-regisztráció** > **Apple konfigurátor** > **profilok** > **Létrehozás**lehetőséget.
 
     ![Apple Configurator-profil létrehozása](./media/apple-configurator-enroll-ios/apple-config-create-profile.png)
 
@@ -88,7 +88,7 @@ Egy eszközregisztrációs profil meghatározza a regisztrálás során alkalmaz
     DLXQPCWVGHMJ,eszköz adatai
 
    Ismerje meg, [hogyan találhatja meg egy iOS-eszköz sorozatszámát](https://support.apple.com/HT204073).
-2. Az [Intune](https://aka.ms/intuneportal) portálon válassza az **Eszközök beléptetése** > **Apple-regisztráció** > **Apple Configurator** > **Eszközök** > **Hozzáadás** lehetőséget.
+2. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az eszközök **beléptetése** > **Apple-regisztráció** > **Apple konfigurátor** > **eszközöket** > a **Hozzáadás**lehetőséget.
 
 5. Válassza ki az importált sorozatszámokhoz hozzáadandó **regisztrációs profilt**. Ha azt szeretné, hogy az új sorozatszámadatok felülírják az esetlegesen már meglévő adatokat, válassza a **Meglévő azonosítók adatainak felülírása** lehetőséget.
 6. Az **Eszközök importálása** területen keresse meg a sorozatszámokat tartalmazó .csv-fájlt, és válassza a **Hozzáadás** lehetőséget.
@@ -100,18 +100,18 @@ Az Apple Configurator-regisztrációhoz szükséges iOS-sorozatszámokhoz azok i
 - **AC-profilok**
 
 #### <a name="assign-from-apple-configurator-devices"></a>Hozzárendelés az Apple Configurator-eszközök panelről
-1. Az [Intune](https://aka.ms/intuneportal) portálon válassza az **Eszközök beléptetése** > **Apple-regisztráció** > **Apple Configurator** > **Eszközök** lehetőséget, válassza ki a sorozatszámokat, majd válassza a **Profil hozzárendelése** lehetőséget.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az eszközök **beléptetése** > **Apple-regisztráció** > **Apple konfigurátor** > **eszközöket** > Válassza ki a sorozatszámokat > a **profil hozzárendelését** .
 2. A **Profil hozzárendelése** területen válassza az **Új profil**, majd a **Hozzárendelés** lehetőséget.
 
 #### <a name="assign-from-profiles"></a>Hozzárendelés a profilok közül
-1. Az [Intune](https://aka.ms/intuneportal) portálon válassza az **Eszközök beléptetése** > **Apple-regisztráció** > **Apple Configurator** > **Profilok** lehetőséget, majd válasszon egy profilt.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök beléptetése** > **Apple-regisztráció** > **apple konfigurátor** > - **profilok** lehetőséget, > válasszon egy profilt.
 2. A profilban válassza a **Hozzárendelt eszközök**, majd a **Hozzárendelés** lehetőséget.
 3. Keresse meg a profilhoz hozzárendelni kívánt eszközök sorozatszámait a szűrő segítségével, válassza ki az eszközöket, majd válassza a **Hozzárendelés** lehetőséget.
 
 ### <a name="export-the-profile"></a>Profil exportálása
 Miután létrehozta a profilt és hozzárendelte a sorozatszámokat, egy URL-címként exportálnia kell a profilt az Intune-ból. Ezt követően az eszközökön történő telepítéshez importálja ezt a profilt az Apple Configuratorban egy Mac számítógépen.
 
-1. Az [Intune](https://aka.ms/intuneportal) portálon válassza az **Eszközök beléptetése** > **Apple-regisztráció** > **Apple Configurator** > **Profilok** lehetőséget, majd válassza az exportálni kívánt profilt.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök beléptetése** > **Apple-regisztráció** > **apple konfigurátor** > - **profilok** lehetőséget, > Válassza ki az exportálandó profilt.
 2. A profilban válassza a **Profil exportálása** lehetőséget.
 3. Másolja a **profil URL-címét** a vágólapra. A címet ezután hozzáadhatja az Apple Configuratorban az iOS-eszközök által használt Intune-profil meghatározásához.
 
@@ -147,7 +147,7 @@ Nem telepíthetők a felhasználói kapcsolatot igénylő alkalmazások, többek
 
 ### <a name="export-the-profile-as-mobileconfig-to-ios-devices"></a>A profil exportálása iOS-eszközökre .mobileconfig fájlként
 
-1. Az [Intune](https://aka.ms/intuneportal) portálon válassza az **Eszközök beléptetése** > **Apple-regisztráció** > **Apple Configurator** > **Profilok** lehetőséget, válassza ki az exportálni kívánt profilt, majd válassza a **Profil exportálása** lehetőséget.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök beléptetése** > **Apple-regisztráció** > **apple konfigurátor** > - **profilok** lehetőséget, > válassza ki a profilt, amelybe exportálni szeretné > az **exportálási profilt.** .
 2. A **Közvetlen regisztrálás** területen válassza a **Profil letöltése** lehetőséget, és mentse a fájlt. A regisztrációs profilok csak két hétig érvényesek, ez után újra létre kell hozni őket.
 3. Ha a profilt közvetlenül az iOS-eszközökre szeretné telepíteni felügyeleti profilként, helyezze át a fájlt egy [Apple Configuratort](https://itunes.apple.com/us/app/apple-configurator-2/id1037126344?mt=12) futtató Mac gépre.
 4. Készítse elő az eszközt az Apple Configuratorral az alábbi lépések segítségével:
