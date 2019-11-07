@@ -6,28 +6,26 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 02/11/2019
+ms.date: 11/06/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: b399fba0-5dd4-4777-bc9b-856af038ec41
-ms.reviewer: chrisgre
+ms.reviewer: elocholi
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2d3cae06c3ce763fe8ca94bbed9bf35e8abef52c
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: f0b5e67c433f2d3633219650f48307dccae196e9
+ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72502597"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73713281"
 ---
 # <a name="app-based-conditional-access-with-intune"></a>Alkalmazás-alapú feltételes hozzáférés az Intune-nal
-
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
 Az [Intune alkalmazásvédelmi szabályzataival](../apps/app-protection-policy.md) védheti vállalati adatait az Intune-ban regisztrált eszközökön. Az alkalmazásvédelmi szabályzatokat emellett a munkatársak tulajdonában álló, az Intune-ban felügyeletre nem regisztrált eszközökön is alkalmazhatja. Bár ebben az esetben nem a cég felügyeli az eszközt, mégis fontos, hogy a vállalati adatok és erőforrások védve legyenek.
 
@@ -39,6 +37,7 @@ Az alkalmazás-alapú feltételes hozzáférés és az ügyfélalkalmazások kez
 Azzal, hogy csak a Microsoft Outlook alkalmazásnak engedélyezi az Exchange Online elérését, blokkolhatja az iOS és az Android beépített levelezőalkalmazásait. Ezenfelül blokkolhatja az Intune alkalmazásvédelmi szabályzattal el nem látott alkalmazások SharePoint Online-elérését is.
 
 ## <a name="prerequisites"></a>Előfeltételek
+
 Az alkalmazás-alapú feltételes hozzáférési szabályzat létrehozása előtt a következőket kell tennie:
 
 - **Enterprise Mobility + Security (EMS)** vagy **Prémium szintű Azure Active Directory- (AD-) előfizetés**
@@ -57,7 +56,7 @@ Az alkalmazás-alapú feltételes hozzáférés [is támogatja az üzletági (LO
 Ebben a példában a rendszergazda alkalmazta az alkalmazás-védelmi szabályzatokat az Outlook alkalmazásra, majd egy feltételes hozzáférési szabályt, amely hozzáadja az Outlook alkalmazást a vállalati e-mailek eléréséhez használható alkalmazások jóváhagyott listájához.
 
 > [!NOTE]
-> Az alábbi folyamatábra-struktúra más felügyelt alkalmazásokhoz is használható.
+> A következő folyamatábra más felügyelt alkalmazásokhoz is használható.
 
 ![Az alkalmazás-alapú feltételes hozzáférés folyamata ábrán látható](./media/app-based-conditional-access-intune/ca-intune-common-ways-3.png)
 
