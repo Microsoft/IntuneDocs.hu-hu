@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 03/12/2019
+ms.date: 11/04/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: kerimh
-ms.openlocfilehash: 7d94a2c7e47b3cfcc9f4592faf0a4c2a09a24ac4
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 908319c588fe2a1bf55a376d3f02a03db780a3ad
+ms.sourcegitcommit: 1a7f04c80548e035be82308d2618492f6542d3c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72495245"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73755404"
 ---
 # <a name="delivery-optimization-settings-in-microsoft-intune"></a>Kézbesítési optimalizálási beállítások a Microsoft Intune
 
@@ -32,27 +32,25 @@ Az Intune által támogatott kézbesítési optimalizálási beállítások list
 
 Ha többet szeretne megtudni a Windows 10-es továbbítási optimalizálásáról, tekintse meg a Windows dokumentációjának [kézbesítési optimalizálási frissítései](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization) című témakört.  
 
-
 > [!NOTE]
-> **Szoftverfrissítések – a Windows 10 frissítési gyűrűit** a **kézbesítési optimalizálási** beállítások váltották fel. A meglévő frissítési körök módosíthatók a **kézbesítési optimalizálási** beállítások használatára. [Meglévő frissítési körök áthelyezése a kézbesítési optimalizálásba](#move-existing-update-rings-to-delivery-optimization) (ebben a cikkben) 
+> **Szoftverfrissítések – a Windows 10 frissítési gyűrűit** a **kézbesítési optimalizálási** beállítások váltották fel. A meglévő frissítési körök módosíthatók a **kézbesítési optimalizálási** beállítások használatára. [Meglévő frissítési körök áthelyezése a kézbesítési optimalizálásba](#move-existing-update-rings-to-delivery-optimization) (ebben a cikkben)
+
 ## <a name="create-the-profile"></a>A profil létrehozása
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
+2. Válassza az **eszközök** > **konfigurációs profilok** lehetőséget > a **profil létrehozása**elemet.
 
 3. Adja meg a következő tulajdonságokat:
 
     - **Név**: Adja meg az új profil leíró nevét.
     - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
-    - **Platform**: válassza ki a platformot:  
-
-        - **Windows 10 és újabb**
-
+    - **Platform**: válassza **a Windows 10 és újabb**lehetőséget.
     - **Profil típusa**: válassza a **kézbesítési optimalizálás**lehetőséget.
-    - **Beállítások**: konfigurálja azokat a beállításokat, amelyek meghatározzák, hogyan szeretné letölteni a frissítéseket és az alkalmazásokat. Az elérhető beállításokkal kapcsolatos további információkért lásd: [az Intune kézbesítési optimalizálási beállításai](../delivery-optimization-settings.md).
 
-4. Ha elkészült, válassza **az OK** > **Létrehozás** lehetőséget a módosítások mentéséhez.
+4. Válassza a **beállítások** > a **Konfigurálás**lehetőséget, és adja meg, hogyan szeretné letölteni a frissítéseket és az alkalmazásokat. Az elérhető beállításokkal kapcsolatos további információkért lásd: [az Intune kézbesítési optimalizálási beállításai](../delivery-optimization-settings.md).
+
+5. Ha elkészült, válassza **az OK** > **Létrehozás** lehetőséget a módosítások mentéséhez.
 
 Ekkor létrejön a profil, és megjelenik a listában. Ezután [rendelje hozzá a profilt](device-profile-assign.md) , majd [Figyelje annak állapotát](device-profile-monitor.md).
 
@@ -62,7 +60,7 @@ A **kézbesítési optimalizálási** beállítások lecserélik a **szoftverfri
 
 1. Kézbesítési optimalizálás konfigurációs profiljának létrehozása:
 
-    1. Az Intune-ban válassza az **eszköz konfigurációja** > **profilok** > **profil létrehozása**lehetőséget.
+    1. A Microsoft Endpoint Manager felügyeleti központban válassza az **eszközök** > **konfigurációs profilok** > **profil létrehozása**lehetőséget.
     2. Adja meg a következő tulajdonságokat:
 
         - **Név**: Adja meg az új profil leíró nevét.
@@ -78,13 +76,14 @@ A **kézbesítési optimalizálási** beállítások lecserélik a **szoftverfri
             - **Egyszerű letöltési mód társ nélkül**
             - **Mellőzési mód**
     3. Konfigurálja az esetlegesen felügyelni kívánt további beállításokat.
-1. Rendelje hozzá az új profilt ugyanahhoz az eszközökhöz és felhasználókhoz, mint a meglévő szoftverfrissítési gyűrű. [A profil hozzárendelésével](device-profile-assign.md) felsorolja a lépéseket.
+
+2. Rendelje hozzá az új profilt ugyanahhoz az eszközökhöz és felhasználókhoz, mint a meglévő szoftverfrissítési gyűrű. [A profil hozzárendelésével](device-profile-assign.md) felsorolja a lépéseket.
 
 3. A meglévő szoftveres gyűrű konfigurálásának visszaadása:
-    1. Az Intune-ban lépjen a **szoftverfrissítések** > Windows 10 frissítési körök elemre.
+    1. A Microsoft Endpoint Manager felügyeleti központban lépjen a **szoftverfrissítések** > Windows 10 frissítési körök elemre.
     2. A listában válassza ki a frissítési gyűrűt.
     3. A beállítások területen állítsa be a **kézbesítési optimalizálás letöltési módját** a **nincs konfigurálva**értékre.
-    4. **OK**@no__t – 1**mentse** a módosításokat.
+    4. **Az OK gombra** > **menteni** a módosításokat.
 
 ## <a name="next-steps"></a>További lépések
 

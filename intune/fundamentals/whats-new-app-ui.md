@@ -6,7 +6,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 10/31/2019
+ms.date: 11/07/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 85f9bb72c6c40c67874326b06ebd41286d2d7220
-ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
+ms.openlocfilehash: d75e75dbce2563aaf31edede8eeab7249aad8e19
+ms.sourcegitcommit: b5e719fb507b1bc4774674e76c856c435e69f68c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73415210"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73801781"
 ---
 # <a name="ui-updates-for-intune-end-user-apps"></a>Felhasználói felületi frissítések az Intune végfelhasználói alkalmazásaiban
 
@@ -40,7 +40,7 @@ Ha Ön alkalmazott vagy tanuló, tekintse meg a képernyőképeket, és mutasson
 ## <a name="week-of-october-28-2019"></a>2019. október 28-i hét  
 
 ### <a name="improved-checklist-design-in-company-portal-app-for-android----5550857---"></a>Továbbfejlesztett ellenőrzőlista-kialakítás az androidos Céges portál alkalmazásban <!-- 5550857 -->  
-Az Androidhoz készült Céges portál alkalmazásban található beállítási ellenőrzőlista egy könnyű kialakítással és új ikonokkal frissült. A módosítások összhangban vannak az iOS rendszerhez készült Céges portál alkalmazás legújabb frissítéseivel. Folyamatban van az alkalmazás frissítéseinek kihelyezése az összes ügyfél számára, és a következő hét végére várhatóan elvégezhető. A frissített regisztrációs lépések megtekintéséhez tekintse meg az androidos [munkahelyi Profil regisztrálása](/intune-user-help/enroll-device-android-work-profile) és [az Android-eszköz regisztrálása](/intune-user-help/enroll-device-android-company-portal)című témakört.  
+Az Androidhoz készült Céges portál alkalmazásban található beállítási ellenőrzőlista egy könnyű kialakítással és új ikonokkal frissült. A módosítások összhangban vannak az iOS rendszerhez készült Céges portál alkalmazás legújabb frissítéseivel. A frissített regisztrációs lépések megtekintéséhez tekintse meg az androidos [munkahelyi Profil regisztrálása](/intune-user-help/enroll-device-android-work-profile) és [az Android-eszköz regisztrálása](/intune-user-help/enroll-device-android-company-portal)című témakört.  
 
 A következő képernyők az Android munkahelyi profil regisztrálásának frissített ellenőrzőlistáját mutatják be:
 

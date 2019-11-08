@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3ee68392feaa59ef5207edce75250e539407273b
-ms.sourcegitcommit: 8c25aeefb7cbc6444a8596af22fccd1c5426877a
+ms.openlocfilehash: 890709ccf176f2b0cc6c4a3af986d1bce642572d
+ms.sourcegitcommit: 1a7f04c80548e035be82308d2618492f6542d3c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72593694"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73754410"
 ---
 # <a name="manage-web-access-by-using-microsoft-edge-with-microsoft-intune"></a>Webes elérés kezelése a Microsoft Edge és a Microsoft Intune használatával
 
@@ -106,7 +106,7 @@ Alkalmazás-konfiguráció létrehozása a Microsoft Edge-hez:
 7. Válassza a **Konfigurációs beállítások** lehetőséget. A **konfiguráció** panelen megadhatja a kulcs-érték párokat a Microsoft Edge konfigurációinak megadásához. A jelen cikk későbbi részeiben további információt talál a definiálható kulcs-érték párokról.
 
     > [!NOTE]
-    > A Microsoft Edge ugyanazokat a kulcs-érték párokat használja, mint a Managed Browser. 
+    > A Microsoft Edge ugyanazokat a kulcs-érték párokat használja, mint a Managed Browser. Androidon a Microsoft Edge-nek az alkalmazás-konfigurációs szabályzatok érvénybe léptetéséhez az alkalmazás-védelmi szabályzatokat kell megcéloznia.
 
 8. Ha elkészült, kattintson **az OK gombra**.
 9. A **Konfigurációs szabályzat hozzáadása** panelen válassza a **Hozzáadás** lehetőséget.<br>

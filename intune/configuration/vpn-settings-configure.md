@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 09/04/2019
+ms.date: 11/04/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5628ba39cafe38cc66827d69584d009c15326bd4
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 3804409acadbfc3dfc1c7d6f3372dc939b7b3630
+ms.sourcegitcommit: 1a7f04c80548e035be82308d2618492f6542d3c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72491767"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73755038"
 ---
 # <a name="create-vpn-profiles-to-connect-to-vpn-servers-in-intune"></a>VPN-profilok létrehozása a VPN-kiszolgálókhoz való csatlakozáshoz az Intune-ban
 
@@ -68,16 +68,17 @@ Az [Egyéni beállításokkal rendelkező profil létrehozása](custom-settings-
 
 ## <a name="create-a-device-profile"></a>Eszközprofil létrehozása
 
-1. Az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ban válassza az **eszköz konfigurációja** > **profilok** > **profil létrehozása**lehetőséget.
-2. Adja meg a következő tulajdonságokat:
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **eszközök** > **konfigurációs profilok** lehetőséget > a **profil létrehozása**elemet.
+3. Adja meg a következő tulajdonságokat:
 
     - **Név**: adjon meg egy leíró nevet a profilhoz. Nevezze el a profilokat, hogy később könnyen azonosítható legyen. Egy jó profilnév például a **teljes vállalat VPN-profilja**.
     - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
     - **Platform**: válassza ki az eszközök platformját. A választható lehetőségek:
 
       - **Android--**
-      - **Android Enterprise**@no__t – 1**eszköz tulajdonosa**
-      - **Android Enterprise**@no__t – 1**munkahelyi profil**
+      - **Android Enterprise** > **eszköz tulajdonosa**
+      - Csak **Android Enterprise** > **munkahelyi profil**
       - **iOS/iPadOS**
       - **macOS**
       - **Windows Phone 8.1**
@@ -86,7 +87,7 @@ Az [Egyéni beállításokkal rendelkező profil létrehozása](custom-settings-
 
     - **Profil típusa**: válassza a **VPN**lehetőséget.
 
-3. A kiválasztott platformtól függően a konfigurálható beállítások eltérőek. Az egyes platformokon az alábbi cikkekben talál részletes beállításokat:
+4. A kiválasztott platformtól függően a konfigurálható beállítások eltérőek. Az egyes platformokon az alábbi cikkekben talál részletes beállításokat:
 
     - [Android-beállítások](vpn-settings-android.md)
     - [Androidos vállalati beállítások](vpn-settings-android-enterprise.md)
@@ -96,7 +97,7 @@ Az [Egyéni beállításokkal rendelkező profil létrehozása](custom-settings-
     - [Windows 8.1-beállítások](vpn-settings-windows-8-1.md)
     - [Windows 10-beállítások](vpn-settings-windows-10.md) (beleértve a Windows Holographic for Businesst is)
 
-4. Ha elkészült, **hozza létre** a profilt.
+5. Ha elkészült, a módosítások mentéséhez válassza az **OK** > **Létrehozás** lehetőséget.
 
 Ekkor létrejön a profil, és megjelenik a profilok listájában. Ha csoportokhoz szeretné hozzárendelni a profilt, tekintse meg az [eszközprofilok hozzárendelését](device-profile-assign.md) ismertető cikket.
 

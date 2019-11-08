@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a1c68421bf7c5dea0d93d45e0cbb748204d0f66b
-ms.sourcegitcommit: c2e62f1ebdf75599c8e544287123c602f0f15f2b
+ms.openlocfilehash: 4dc349ef7af2683b4dafeaa1cc09f5b7a727e843
+ms.sourcegitcommit: 1a7f04c80548e035be82308d2618492f6542d3c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72749397"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73755303"
 ---
 # <a name="monitor-device-profiles-in-microsoft-intune"></a>Eszközprofilok figyelése a Microsoft Intune-ban
 
@@ -32,8 +32,8 @@ Az Intune néhány funkciót is tartalmaz, amelyek segítségével figyelheti é
 
 ## <a name="view-existing-profiles"></a>Meglévő profilok megtekintése
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Válassza az **Eszközkonfiguráció** > **Profilok** lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **eszközök** > **konfigurációs profilok**lehetőséget.
 
 Itt mindegyik meglévő profil megjelenik olyan adatokkal, mint a platform, és megmutatja a profil eszköz-hozzárendelési állapotát is.
 

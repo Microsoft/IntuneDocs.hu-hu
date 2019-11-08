@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 10/18/2019
+ms.date: 11/07/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b0f31add65063665da5a7961e2caf9eb30a847e2
-ms.sourcegitcommit: 06a1fe83fd95c9773c011690e8520733e1c031e3
+ms.openlocfilehash: 3db085e6e88f8f57eb0276afa77290df8574568f
+ms.sourcegitcommit: b5e719fb507b1bc4774674e76c856c435e69f68c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72787876"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73801714"
 ---
 # <a name="configure-and-use-pkcs-certificates-with-intune"></a>PKCS-tanúsítványok konfigurálása és használata az Intune-nal
 
@@ -95,7 +95,7 @@ VPN-, WiFi-vagy más erőforrásokkal rendelkező eszköz hitelesítéséhez az 
  
 2. Lépjen a **Start** > **Futtatás**elemre, majd írja be a **cmd** parancsot a parancssor megnyitásához. 
     
-3. A legfelső szintű tanúsítvány *ca_name. cer*nevű fájlként való exportálásához a **Certutil-CA. CERT ca_name. cer** fájlt kell megadni.
+3. A legfelső szintű tanúsítvány *ca_name. cer*nevű fájlként való exportálásához a **Certutil-ca. CERT ca_name. cer** fájlt kell megadnia.
 
 
 
@@ -142,13 +142,14 @@ VPN-, WiFi-vagy más erőforrásokkal rendelkező eszköz hitelesítéséhez az 
 > [!IMPORTANT]  
 > A Microsoft Intune Tanúsítvány-összekötő nem telepíthető a kiállító hitelesítésszolgáltatóra (CA), hanem külön Windows Serverre kell telepíteni.  
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Válassza az **eszköz konfigurációja** > **minősítési összekötők** > **Hozzáadás**lehetőséget.
-3. Töltse le és mentse az összekötő-fájlt egy olyan helyre, amely a-összekötő telepítéséhez használt kiszolgálóról érhető el.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-    ![Microsoft Intune Tanúsítvány-összekötő Letöltés](./media/certficates-pfx-configure/download-ndes-connector.png)
+2. Válassza a **bérlői felügyelet** > **Összekötők és tokenek** > **tanúsítvány-összekötők** >  **+ Hozzáadás**lehetőséget.
+
+3. Kattintson a *tanúsítvány-összekötő szoftver letöltése* a PKCS #12-összekötőhöz elemre, és mentse a fájlt egy olyan helyre, amely az összekötő telepítéséhez használt kiszolgálóról érhető el.
+
+   ![Microsoft Intune Tanúsítvány-összekötő Letöltés](./media/certficates-pfx-configure/download-ndes-connector.png)
  
-
 4. A letöltés befejezése után jelentkezzen be a kiszolgálóra. Ha ez megvan:
 
     1. Győződjön meg róla, hogy telepítve van-e a .NET keretrendszer 4.5 vagy újabb verziója, mivel arra szüksége van az NDES tanúsítvány-összekötőjének. A .NET 4.5-keretrendszer automatikusan részen a Windows Server 2012 R2 és újabb verzióknak.
@@ -166,37 +167,44 @@ VPN-, WiFi-vagy más erőforrásokkal rendelkező eszköz hitelesítéséhez az 
 
 ## <a name="create-a-trusted-certificate-profile"></a>Megbízható tanúsítványprofil létrehozása
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és nyissa meg az **eszköz konfigurációja** > **profilok** > **profil létrehozása**lehetőséget.
-    ![Navigate az Intune-ba, és hozzon létre egy új profilt egy megbízható tanúsítványhoz ](./media/certficates-pfx-configure/certificates-pfx-configure-profile-new.png)
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Adja meg a következő tulajdonságokat:
+2. Válassza az **eszközök** > **konfigurációs profilok** lehetőséget > a **profil létrehozása**elemet.
+
+   ![Navigáljon az Intune-hoz, és hozzon létre egy új profilt egy megbízható tanúsítványhoz](./media/certficates-pfx-configure/certificates-pfx-configure-profile-new.png)
+
+3. Adja meg a következő tulajdonságokat:
 
     - **Név** a profil számára
     - Igény szerint hozzáadhat egy leírást
     - **Platform**, amelyen telepíteni kell a profilt
     - A **Profiltípust** állítsa **Megbízható tanúsítványra**
 
-3. Nyissa meg a **Beállítások** lapot, és adja meg a korábban exportált hitelesítésszolgáltatói főtanúsítvány .cer fájlját.
+4. Válassza a **Beállítások**lehetőséget, majd adja meg a korábban exportált. cer fájl legfelső szintű hitelesítésszolgáltatói tanúsítványát.
 
    > [!NOTE]
    > A **2. lépésben**kiválasztott platformtól függően előfordulhat, hogy nem rendelkezik a tanúsítvány **célhelyének** kiválasztására szolgáló lehetőséggel.
 
-   ![Profil létrehozása és megbízható tanúsítvány feltöltése](./media/certficates-pfx-configure/certificates-pfx-configure-profile-fill.png) 
+   ![Profil létrehozása és megbízható tanúsítvány feltöltése](./media/certficates-pfx-configure/certificates-pfx-configure-profile-fill.png)
 
-4. A profil mentéséhez kattintson az **OK** > **Létrehozás** gombra.
-5. Az új profil egy vagy több eszközhöz történő hozzárendeléséhez lásd: [Microsoft Intune-eszközprofilok hozzárendelése](../configuration/device-profile-assign.md).
+5. A profil mentéséhez kattintson az **OK** > **Létrehozás** gombra.
+
+6. Az új profil egy vagy több eszközhöz történő hozzárendeléséhez lásd: [Microsoft Intune-eszközprofilok hozzárendelése](../configuration/device-profile-assign.md).
 
 ## <a name="create-a-pkcs-certificate-profile"></a>PKCS-tanúsítványprofil létrehozása
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és nyissa meg az **eszköz konfigurációja** > **profilok** > **profil létrehozása**lehetőséget.
-2. Adja meg a következő tulajdonságokat:
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+
+2. Válassza ki, majd lépjen az **eszközök** > **konfigurációs profilok** lehetőségre, > **hozzon létre profilt**.
+
+3. Adja meg a következő tulajdonságokat:
 
     - **Név** a profil számára
     - Igény szerint hozzáadhat egy leírást
     - **Platform**, amelyen telepíteni kell a profilt
     - A **Profiltípust** állítsa **PKCS-tanúsítványra**
 
-3. Lépjen a **Beállítások**elemre, és konfigurálja a kiválasztott platformra érvényes tulajdonságokat:  
+4. Válassza a **Beállítások**lehetőséget, és konfigurálja a kiválasztott platformra vonatkozó tulajdonságokat:
    
    |Beállítás     | Platfésm     | Details   |
    |------------|------------|------------|
@@ -212,8 +220,9 @@ VPN-, WiFi-vagy más erőforrásokkal rendelkező eszköz hitelesítéséhez az 
    |**Minden alkalmazás titkos kulcshoz való hozzáférésének engedélyezése** |macOS  |Az **Engedélyezés** beállítás megadásával biztosíthatja, hogy a rendszer a társított Mac-eszközhöz a PKCS-tanúsítvány titkos kulcsához konfigurált alkalmazásokat adjon. <br><br> A beállítással kapcsolatos további információkért tekintse meg a [konfigurációs profil referenciájának](https://developer.apple.com/business/documentation/Configuration-Profile-Reference.pdf) *AllowAllAppsAccess* című szakaszt az Apple fejlesztői dokumentációjában. |
    |**Főtanúsítvány**             |**-** Android-eszköz rendszergazdája <br> **-** Android Enterprise (*eszköz tulajdonosa*, *munkahelyi profil*) |Válasszon ki egy korábban hozzárendelt legfelső szintű HITELESÍTÉSSZOLGÁLTATÓI tanúsítvány-profilt. |
 
-4. A profil mentéséhez kattintson az **OK** > **Létrehozás** gombra.
-5. Az új profil egy vagy több eszközhöz történő hozzárendeléséhez lásd: [Microsoft Intune-eszközprofilok hozzárendelése](../configuration/device-profile-assign.md).
+5. A profil mentéséhez kattintson az **OK** > **Létrehozás** gombra.
+
+6. Az új profil egy vagy több eszközhöz történő hozzárendeléséhez lásd: [Microsoft Intune-eszközprofilok hozzárendelése](../configuration/device-profile-assign.md).
 
    > [!NOTE]
    > Az androidos vállalati profillal rendelkező eszközökön a PKCS-tanúsítvány profil használatával telepített tanúsítványok nem láthatók az eszközön. A tanúsítvány sikeres központi telepítésének megerősítéséhez ellenőrizze a profil állapotát az Intune-konzolon.
@@ -238,7 +247,7 @@ MacOS PKCS-tanúsítvány profil létrehozásakor a tulajdonos nevének formátu
   - **CN = {{IMEINumber}}** : a mobil telefon azonosítására szolgáló nemzetközi mobileszköz-identitás (IMEI) egyedi szám.
   - **CN = {{OnPrem_Distinguished_Name}}** : relatív megkülönböztető nevek sorozata vesszővel elválasztva, például *CN = JANE DOE, OU = UserAccounts, DC = Corp, DC = contoso, DC = com*.
 
-    A ( *onpremisesdistinguishedname* ) *{{OnPrem_Distinguished_Name}}* változó használatához az Azure AD-vel a [Azure ad Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect) használatával kell szinkronizálnia a felhasználói attribútumot.
+    A *{{OnPrem_Distinguished_Name}}* változó használatához ne felejtse el szinkronizálni a *onpremisesdistinguishedname* User ATTRIBÚTUMot az Azure AD-vel való [Azure ad Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect) használatával.
 
   - **CN = {{onPremisesSamAccountName}}** : a rendszergazdák a sAMAccountName attribútumot az Azure ad-vel a *onPremisesSamAccountName*nevű attribútumba szinkronizálva Active Directoryról az Azure ad-be. Az Intune a tanúsítvány kiállításának részeként helyettesítheti be ezt a változót. A samAccountName attribútum a Windows korábbi verziójából származó ügyfelek és kiszolgálók támogatásához használt felhasználói bejelentkezési név (pre-Windows 2000). A felhasználói bejelentkezési név formátuma: *DomainName\testUser*, vagy csak *tesztfelhasználó*.
 
@@ -262,7 +271,7 @@ MacOS PKCS-tanúsítvány profil létrehozásakor a tulajdonos nevének formátu
   - **{{DeviceName}}**
   - **{{FullyQualifiedDomainName}}** *(csak Windows és tartományhoz csatlakoztatott eszközök esetén alkalmazható)*
   - **{{MEID}}**
-   
+
   Megadhatja ezeket a változókat, majd a változó szövegét a szövegmezőben. Egy *Device1* nevű eszköz köznapi neve például a következő lehet: **CN = {{DeviceName}} Device1**.
 
   > [!IMPORTANT]  
@@ -273,21 +282,25 @@ MacOS PKCS-tanúsítvány profil létrehozásakor a tulajdonos nevének formátu
 
 
 ## <a name="whats-new-for-connectors"></a>Az összekötők újdonságai
-A két tanúsítvány-összekötő frissítései rendszeresen jelennek meg. Amikor frissítünk egy összekötőt, itt olvashat a változásokról. 
+
+A két tanúsítvány-összekötő frissítései rendszeresen jelennek meg. Amikor frissítünk egy összekötőt, itt olvashat a változásokról.
 
 A *pfx-tanúsítványok összekötője Microsoft Intune* [támogatja az automatikus frissítéseket](#requirements), az *Intune tanúsítvány-összekötő* pedig manuálisan frissül.
 
-### <a name="may-17-2019"></a>Május 17., 2019  
+### <a name="may-17-2019"></a>Május 17., 2019
+
 - **PFX-tanúsítványok összekötője Microsoft Intune-Version 6.1905.0.404**  
   Változások ebben a kiadásban:  
   - Kijavítva a probléma, hogy a meglévő PFX-tanúsítványok továbbra is újra fel lesznek dolgozva, ami miatt az összekötő leállítja az új kérések feldolgozását. 
 
-### <a name="may-6-2019"></a>2019. május 6.  
+### <a name="may-6-2019"></a>2019. május 6.
+
 - **PFX-tanúsítványok összekötője Microsoft Intune-Version 6.1905.0.402**  
   Változások ebben a kiadásban:  
   - Az összekötő lekérdezési időköze 5 perctől 30 másodpercre van csökkentve.
  
-### <a name="april-2-2019"></a>2019. április 2.  
+### <a name="april-2-2019"></a>2019. április 2.
+
 - **Intune tanúsítvány-összekötő – verzió 6.1904.1.0**  
   Változások ebben a kiadásban:  
   - Kijavított egy hibát, amely miatt előfordulhat, hogy az összekötő nem tud regisztrálni az Intune-ba, miután bejelentkezett az összekötőbe egy globális rendszergazdai fiókkal.  

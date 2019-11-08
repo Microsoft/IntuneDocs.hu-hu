@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 10/24/2019
+ms.date: 11/05/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a19515e859f5e78f7611bbd10088aea5f7c44650
-ms.sourcegitcommit: f12bd2ce10b6241715bae2d2857f33c474287166
+ms.openlocfilehash: 50b91251572e45669f197df7ac4e5ff94caf47a1
+ms.sourcegitcommit: 1a7f04c80548e035be82308d2618492f6542d3c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72892646"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73755333"
 ---
 # <a name="assign-user-and-device-profiles-in-microsoft-intune"></a>Felhasználói és eszközprofilok hozzárendelése a Microsoft Intune-ban
 
@@ -41,8 +41,8 @@ Győződjön meg arról, hogy rendelkezik a megfelelő szerepkörrel a házirend
 
 ## <a name="assign-a-device-profile"></a>Eszközprofil hozzárendelése
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Válassza az **Eszközkonfiguráció** > **Profilok** lehetőséget. Az összes profil megjelenik.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **eszközök** > **konfigurációs profilok**lehetőséget. Az összes profil megjelenik.
 3. Válassza ki a profilt, amelyhez > **hozzárendeléseket**szeretne hozzárendelni.
 4. Válassza a csoportok **belefoglalása** vagy a csoportok **kizárása** lehetőséget, majd válassza ki a csoportokat. A csoportok kiválasztásakor egy Azure AD-csoportot is választ. Több csoport kijelöléséhez tartsa lenyomva a **CTRL** billentyűt, és válassza ki a csoportokat.
 
@@ -54,7 +54,7 @@ Győződjön meg arról, hogy rendelkezik a megfelelő szerepkörrel a házirend
 
 Ha hozzárendeli a profilt, azt is **kiértékelheti** , hogy hány felhasználót érint a rendszer. Ez a szolgáltatás kiszámítja a felhasználókat; nem számítja ki az eszközöket.
 
-1. Az Intune-ban válassza az **eszköz konfigurációja** > **profilok**lehetőséget.
+1. A felügyeleti központban válassza az **eszközök** > **konfigurációs profilok**lehetőséget.
 2. Válassza ki a profilt > **hozzárendelések** > **kiértékelését**. Egy üzenet azt mutatja, hogy a profil hány felhasználót céloz meg.
 
 Ha a **kiértékelés** gomb szürkén jelenik meg, ellenőrizze, hogy a profil hozzá van-e rendelve egy vagy több csoporthoz.

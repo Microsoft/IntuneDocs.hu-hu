@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 04/22/2019
+ms.date: 11/04/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f5519429bae69fe277c72b12a2801a1875295824
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 4cce3fafa1a8a074ea70692f855be1e032f0462f
+ms.sourcegitcommit: 1a7f04c80548e035be82308d2618492f6542d3c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72493786"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73755244"
 ---
 # <a name="upgrade-windows-10-editions-or-switch-out-of-s-mode-on-devices-using-microsoft-intune"></a>A Windows 10 kiadások frissítése vagy az eszközökön való kikapcsolás Microsoft Intune használatával
 
@@ -96,16 +96,13 @@ A Windows 10-kiadás frissítési profiljának támogatott frissítési útvonal
 
 ## <a name="create-the-profile"></a>A profil létrehozása
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **eszközök** > **konfigurációs profilok** lehetőséget > a **profil létrehozása**elemet.
 3. Adja meg a következő tulajdonságokat:
 
     - **Név**: Adja meg az új profil leíró nevét. Írja be például a következőt: `Windows 10 edition upgrade profile` vagy `Windows 10 switch off S mode`.
     - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
-    - **Platform**: válassza ki a platformot:  
-
-        - **Windows 10 és újabb**
-
+    - **Platform**: válassza **a Windows 10 és újabb**lehetőséget.
     - **Profil típusa**: válassza a **kiadás frissítése**lehetőséget.
     - **Beállítások**: adja meg a konfigurálni kívánt beállításokat. Az összes beállítás listáját és a teendőket lásd:
 

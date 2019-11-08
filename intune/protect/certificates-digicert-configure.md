@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 06/19/2019
+ms.date: 11/07/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,19 +18,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dc0194bfaf1ec5e3120b6bd30eb6b2eb82c6ec2d
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: ca76ffe0c8fa42f1c2cf24fcdefd287140231220
+ms.sourcegitcommit: b5e719fb507b1bc4774674e76c856c435e69f68c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72504729"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73801626"
 ---
-# <a name="set-up-intune-certificate-connector-for-digicert-pki-platform"></a>Az Intune tanúsítvány-összekötő beállítása a DigiCert PKI platformhoz  
+# <a name="set-up-intune-certificate-connector-for-digicert-pki-platform"></a>Az Intune tanúsítvány-összekötő beállítása a DigiCert PKI platformhoz
 
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
+Az Intune Certificate Connector használatával PKCS-tanúsítványokat adhat ki az DigiCert PKI platformról az Intune által felügyelt eszközökre. Az összekötőt csak DigiCert hitelesítésszolgáltatóval (CA), vagy DigiCert-HITELESÍTÉSSZOLGÁLTATÓval és Microsoft-HITELESÍTÉSSZOLGÁLTATÓval is használhatja.
 
-Az Intune Certificate Connector használatával PKCS-tanúsítványokat adhat ki az DigiCert PKI platformról az Intune által felügyelt eszközökre. Az összekötőt csak DigiCert hitelesítésszolgáltatóval (CA), vagy DigiCert-HITELESÍTÉSSZOLGÁLTATÓval és Microsoft-HITELESÍTÉSSZOLGÁLTATÓval is használhatja.  
-> [!TIP]  
+> [!TIP]
 > A DigiCert megszerezte a Symantec webhelyének biztonsági és kapcsolódó PKI-megoldásait. A módosítással kapcsolatos további információkért tekintse meg a [Symantec technikai támogatásáról szóló cikket](https://support.symantec.com/en_US/article.INFO4722.html).
 
 Ha már használja az Intune tanúsítvány-összekötőt a Microsoft HITELESÍTÉSSZOLGÁLTATÓTÓL származó tanúsítványok kiállításához a PKCS vagy a System Center Endpoint Protection használatával, ugyanezt az összekötőt használhatja egy DigiCert HITELESÍTÉSSZOLGÁLTATÓTÓL származó PKCS-tanúsítványok konfigurálásához és kiállításához. Miután elvégezte a konfigurálást a DigiCert CA támogatásához, az Intune Certificate Connector a következő tanúsítványokat tudja kiállítani:
@@ -41,15 +40,16 @@ Ha már használja az Intune tanúsítvány-összekötőt a Microsoft HITELESÍT
 
 Ha még nem telepítette az összekötőt, de azt tervezi, hogy a Microsoft HITELESÍTÉSSZOLGÁLTATÓI és DigiCert is használja, először hajtsa végre a Microsoft HITELESÍTÉSSZOLGÁLTATÓ összekötő-konfigurációját. Ezután térjen vissza ehhez a cikkhez annak konfigurálásához, hogy a DigiCert is támogassa. A tanúsítvány-profilokkal és az összekötővel kapcsolatos további információkért tekintse [meg az eszközökhöz tartozó tanúsítvány profiljának konfigurálása Microsoft Intuneban](certificates-configure.md)című témakört.  
 
-Ha az összekötőt csak a DigiCert HITELESÍTÉSSZOLGÁLTATÓval fogja használni, a cikk utasításait követve telepítheti és konfigurálhatja az összekötőt. 
+Ha az összekötőt csak a DigiCert HITELESÍTÉSSZOLGÁLTATÓval fogja használni, a cikk utasításait követve telepítheti és konfigurálhatja az összekötőt.
 
-## <a name="prerequisites"></a>Előfeltételek  
+## <a name="prerequisites"></a>Előfeltételek
+
 - **Aktív előfizetés a DIGICERT hitelesítésszolgáltatón**: az előfizetés szükséges ahhoz, hogy a DigiCert hitelesítésszolgáltatótól beszerezzen egy regisztrációs szolgáltatói (ra) tanúsítványt.
 
-## <a name="install-the-digicert-ra-certificate"></a>A DigiCert RA-tanúsítvány telepítése  
- 
+## <a name="install-the-digicert-ra-certificate"></a>A DigiCert RA-tanúsítvány telepítése
+
 1. Mentse a következő kódrészletet a **CertReq. ini** nevű fájlba, és frissítse a szükséges módon (például: *tulajdonos neve CN formátumban*).
- 
+
         [Version] 
         Signature="$Windows NT$" 
         
@@ -81,7 +81,6 @@ Ha az összekötőt csak a DigiCert HITELESÍTÉSSZOLGÁLTATÓval fogja használ
 
 3. Nyissa meg a Request. CSR fájlt a Jegyzettömbben, és másolja a CSR-tartalmat a következő formátumban:
 
-
         -----BEGIN NEW CERTIFICATE REQUEST-----
         MIID8TCCAtkCAQAwbTEMMAoGA1UEBhMDVVNBMQswCQYDVQQIDAJXQTEQMA4GA1UE
         …
@@ -92,11 +91,11 @@ Ha az összekötőt csak a DigiCert HITELESÍTÉSSZOLGÁLTATÓval fogja használ
 
 4. Jelentkezzen be a DigiCert HITELESÍTÉSSZOLGÁLTATÓba, és tallózással keresse meg az **ra-tanúsítványt** a feladatokból.
 
-   a. A szövegmezőbe írja be a CSR-tartalmat a 3. lépésben. 
+   a. A szövegmezőbe írja be a CSR-tartalmat a 3. lépésben.
 
    b. Adja meg a tanúsítvány rövid nevét.
 
-   c. Válassza a **Folytatás**lehetőséget. 
+   c. Válassza a **Folytatás**lehetőséget.
 
    d. A megadott hivatkozás használatával töltse le az RA-tanúsítványt a helyi számítógépre.
 
@@ -104,23 +103,23 @@ Ha az összekötőt csak a DigiCert HITELESÍTÉSSZOLGÁLTATÓval fogja használ
 
    a. Nyisson meg egy MMC konzolt.
 
-   b. Válassza a **fájl** > **beépülő modulok hozzáadása vagy eltávolítása** > **tanúsítvány** > **Hozzáadás**elemet. 
+   b. Válassza a **fájl** > **beépülő modulok hozzáadása vagy eltávolítása** > **tanúsítvány** > **Hozzáadás**elemet.
 
-   c. Válassza a **számítógépfiók**@no__t **-1 elemet**.
+   c. Válassza a **számítógépfiók** > a **tovább**lehetőséget.
 
-   d. Válassza a **helyi számítógép**@no__t – 1**Befejezés**lehetőséget. 
+   d. Válassza a **helyi számítógép** > **Befejezés**lehetőséget.
 
-   e. Kattintson az **OK gombra** a **beépülő modul hozzáadása/eltávolítása** ablakban. Bontsa ki a **tanúsítványok (helyi számítógép)**  > **személyes**@no__t – 3**tanúsítványt**.
+   e. Kattintson az **OK gombra** a **beépülő modul hozzáadása/eltávolítása** ablakban. Bontsa ki a **tanúsítványok (helyi számítógép)**  > **személyes** > **tanúsítványok**elemet.
 
-   f. A jobb egérgombbal kattintson a **Tanúsítványok** csomópontra, és válassza a **Minden feladat** > **Importálás** lehetőséget.  
+   f. A jobb egérgombbal kattintson a **Tanúsítványok** csomópontra, és válassza a **Minden feladat** > **Importálás** lehetőséget.
 
    g. Válassza ki a DigiCert HITELESÍTÉSSZOLGÁLTATÓTÓL letöltött RA-tanúsítvány helyét, majd kattintson a **tovább**gombra.
 
-   h. Válassza a **személyes tanúsítványtároló**@no__t **-1 elemet**. 
+   h. Válassza a **személyes tanúsítványtároló** > **tovább**lehetőséget.
 
-   i. Válassza a **Befejezés** lehetőséget az ra tanúsítvány és annak titkos kulcsának a **helyi gép személyes** tárolójába való importálásához.  
+   i. Válassza a **Befejezés** lehetőséget az ra tanúsítvány és annak titkos kulcsának a **helyi gép személyes** tárolójába való importálásához.
 
-6. A titkos kulcsú tanúsítvány exportálása és importálása: 
+6. A titkos kulcsú tanúsítvány exportálása és importálása:
 
    a. Bontsa ki a **Tanúsítványok (Helyi számítógép)**  > **Személyes** > **Tanúsítványok** csomópontot.
 
@@ -134,16 +133,17 @@ Ha az összekötőt csak a DigiCert HITELESÍTÉSSZOLGÁLTATÓval fogja használ
 
    f. Az 5. lépésben leírt eljárást követve importálja a titkos kulcs tanúsítványát a **helyi számítógép személyes** tárolójába.
 
-   g. Rögzítsen egy másolatot az RA-tanúsítvány ujjlenyomatának szóközök nélkül. Az alábbi példa az ujjlenyomatot szemlélteti: 
+   g. Rögzítsen egy másolatot az RA-tanúsítvány ujjlenyomatának szóközök nélkül. Az alábbi példa az ujjlenyomatot szemlélteti:
 
         RA Cert Thumbprint: “EA7A4E0CD1A4F81CF0740527C31A57F6020C17C5”
-    
+
     > [!NOTE]
-    > Az RA-tanúsítvány DigiCert HITELESÍTÉSSZOLGÁLTATÓTÓL való beszerzésével kapcsolatos segítségért forduljon a [DigiCert ügyfélszolgálatához](mailto:enterprise-pkisupport@digicert.com).  
+    > Az RA-tanúsítvány DigiCert HITELESÍTÉSSZOLGÁLTATÓTÓL való beszerzésével kapcsolatos segítségért forduljon a [DigiCert ügyfélszolgálatához](mailto:enterprise-pkisupport@digicert.com).
 
 ## <a name="prepare-to-install-intune-certificate-connector"></a>A Microsoft Intune Tanúsítvány-összekötő telepítésének előkészítése
-> [!TIP]  
-> Ez a szakasz akkor érvényes, ha az Intune Certificate Connectort csak DigiCert HITELESÍTÉSSZOLGÁLTATÓval fogja használni. Ha Intune Certificate Connectort használ egy Microsoft HITELESÍTÉSSZOLGÁLTATÓval, és hozzá kívánja adni a DigiCert CA-támogatását, ugorjon előre az [összekötő konfigurálásához a DigiCert támogatásához](#configure-the-connector-to-support-digicert).  
+
+> [!TIP]
+> Ez a szakasz akkor érvényes, ha az Intune Certificate Connectort csak DigiCert HITELESÍTÉSSZOLGÁLTATÓval fogja használni. Ha Intune Certificate Connectort használ egy Microsoft HITELESÍTÉSSZOLGÁLTATÓval, és hozzá kívánja adni a DigiCert CA-támogatását, ugorjon előre az [összekötő konfigurálásához a DigiCert támogatásához](#configure-the-connector-to-support-digicert).
 
 1. A következő listából válassza ki a Windows operációsrendszer-verzióinak egyikét, és telepítse azt egy számítógépre:
    * Windows Server 2012 R2 Datacenter
@@ -157,33 +157,33 @@ Ha az összekötőt csak a DigiCert HITELESÍTÉSSZOLGÁLTATÓval fogja használ
 
 4. Telepítse a .NET keretrendszer 3.5-ös verzióját:
 
-   a. Nyissa meg a **vezérlőpult** > **programok és szolgáltatások**@no__t**a Windows-szolgáltatások**be-és kikapcsolása lehetőséget.
+   a. Nyissa meg a **vezérlőpultot** > **programok és szolgáltatások** > **a Windows-szolgáltatások be-és kikapcsolása**lehetőséget.
 
-   b. Válassza ki **.NET-keretrendszer 3.5** elemet, és telepítése azt.  
+   b. Válassza ki **.NET-keretrendszer 3.5** elemet, és telepítése azt.
 
-## <a name="install-intune-certificate-connector-for-use-with-digicert"></a>Az Intune tanúsítvány-összekötő telepítése a DigiCert való használathoz  
+## <a name="install-intune-certificate-connector-for-use-with-digicert"></a>Az Intune tanúsítvány-összekötő telepítése a DigiCert való használathoz
 
-> [!TIP]  
-> Ha az Intune Certificate Connectort Microsoft HITELESÍTÉSSZOLGÁLTATÓval szeretné felvenni, és hozzá kívánja adni a DigiCert HITELESÍTÉSSZOLGÁLTATÓI támogatást, ugorjon előre az [összekötő konfigurálásához a DigiCert támogatásához](#configure-the-connector-to-support-digicert).  
+> [!TIP]
+> Ha az Intune Certificate Connectort Microsoft HITELESÍTÉSSZOLGÁLTATÓval szeretné felvenni, és hozzá kívánja adni a DigiCert HITELESÍTÉSSZOLGÁLTATÓI támogatást, ugorjon előre az [összekötő konfigurálásához a DigiCert támogatásához](#configure-the-connector-to-support-digicert).
 
 Töltse le az Intune tanúsítvány-összekötő legújabb verzióját az Intune felügyeleti portálján, és kövesse az alábbi utasításokat.
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.  
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Válassza az **eszköz konfigurációja** > **tanúsítvány-összekötők** >  **+ Hozzáadás**lehetőséget.  
+2. Válassza a **bérlői felügyelet** > **Összekötők és tokenek** > **tanúsítvány-összekötők** >  **+ Hozzáadás**lehetőséget.
 
-3. Válassza **a tanúsítvány-összekötő szoftver letöltése**lehetőséget. Mentse a szoftvert olyan helyre, ahol hozzá tud férni a-kiszolgálóról, ahová telepíteni fogja.  
+3. Kattintson a *tanúsítvány-összekötő szoftver letöltése* a PKCS #12-összekötőhöz elemre, és mentse a fájlt egy olyan helyre, amely az összekötő telepítéséhez használt kiszolgálóról érhető el.
 
    ![Az összekötő szoftver letöltése](./media/certificates-digicert-configure/connector-download.png)
-   
-4. Azon a kiszolgálón, amelyre telepíteni kívánja az összekötőt, futtassa a **NDESConnectorSetup. exe fájlt** emelt szintű jogosultságokkal. 
 
-5. A **telepítési beállítások** lapon válassza a **pfx-eloszlás**lehetőséget.  
-   
+4. Azon a kiszolgálón, amelyre telepíteni kívánja az összekötőt, futtassa a **NDESConnectorSetup. exe fájlt** emelt szintű jogosultságokkal.
+
+5. A **telepítési beállítások** lapon válassza a **pfx-eloszlás**lehetőséget.
+
    ![PFX-eloszlás kiválasztása](./media/certificates-digicert-configure/digicert-ca-connector-install.png)
 
    > [!IMPORTANT]
-   > Ha az Intune Certificate Connector használatával szeretne tanúsítványokat kibocsátani egy Microsoft HITELESÍTÉSSZOLGÁLTATÓTÓL és egy DigiCert-HITELESÍTÉSSZOLGÁLTATÓTÓL, válassza a **SCEP és a pfx-profilok eloszlása**lehetőséget. 
+   > Ha az Intune Certificate Connector használatával szeretne tanúsítványokat kibocsátani egy Microsoft HITELESÍTÉSSZOLGÁLTATÓTÓL és egy DigiCert-HITELESÍTÉSSZOLGÁLTATÓTÓL, válassza a **SCEP és a pfx-profilok eloszlása**lehetőséget.
 
 6. Az összekötő beállításának befejezéséhez használja az alapértelmezett beállításokat.
 
@@ -197,7 +197,7 @@ Alapértelmezés szerint az Intune Certificate Connector telepítve van a **%Pro
 
         <add key="RACertThumbprint"
         value="EA7A4E0CD1A4F81CF0740527C31A57F6020C17C5"/>
-   
+
    b. Mentse és zárjuk be a fájlt.
 
 2. Nyissa meg a **Services. msc fájlt**:
@@ -210,20 +210,18 @@ Alapértelmezés szerint az Intune Certificate Connector telepítve van a **%Pro
 
 ## <a name="set-up-the-intune-administrator-account"></a>Az Intune-beli rendszergazdai fiók beállítása  
 
-> [!TIP]  
-> Ha Intune Certificate Connectort használ egy Microsoft HITELESÍTÉSSZOLGÁLTATÓval, és hozzá kívánja adni a DigiCert CA-támogatását, ugorjon a [megbízható tanúsítvány profiljának létrehozásához](#create-a-trusted-certificate-profile).   
+> [!TIP]
+> Ha Intune Certificate Connectort használ egy Microsoft HITELESÍTÉSSZOLGÁLTATÓval, és hozzá kívánja adni a DigiCert CA-támogatását, ugorjon a [megbízható tanúsítvány profiljának létrehozásához](#create-a-trusted-certificate-profile).
  
-1. Nyissa meg a NDES-összekötő felhasználói felületét az **%ProgramFiles%\Microsoft Intune\NDESConnectorUI\NDESConnectorUI.exe**.  
+1. Nyissa meg a NDES-összekötő felhasználói felületét az **%ProgramFiles%\Microsoft Intune\NDESConnectorUI\NDESConnectorUI.exe**.
 
 2. A **beléptetés** lapon válassza a **Bejelentkezés**lehetőséget.
 
 3. Adja meg az Intune-bérlői rendszergazdai hitelesítő adatait.
 
 4. Válassza a **Bejelentkezés**lehetőséget, majd kattintson **az OK** gombra a sikeres regisztráció megerősítéséhez. Ezután lezárhatja az NDES-összekötő felhasználói felületét.
-   
+
    ![NDES-összekötő felülete a "sikeresen regisztrált" üzenettel](./media/certificates-digicert-configure/certificates-digicert-configure-connector-configure.png)
-
-
 
 ## <a name="create-a-trusted-certificate-profile"></a>Megbízható tanúsítványprofil létrehozása
 
@@ -231,36 +229,37 @@ Az Intune által felügyelt eszközökhöz telepítendő PKCS-tanúsítványokat
 
 1. Megbízható legfelső szintű tanúsítvány beszerzése az DigiCert HITELESÍTÉSSZOLGÁLTATÓTÓL:
 
-    a. Jelentkezzen be a DigiCert HITELESÍTÉSSZOLGÁLTATÓI felügyeleti portálra.
+   a. Jelentkezzen be a DigiCert HITELESÍTÉSSZOLGÁLTATÓI felügyeleti portálra.
 
-    b. Válassza a **hitelesítésszolgáltatók kezelése** a **feladatokból**lehetőséget. 
+   b. Válassza a **hitelesítésszolgáltatók kezelése** a **feladatokból**lehetőséget.
 
-    c. Válassza ki a megfelelő HITELESÍTÉSSZOLGÁLTATÓT a listából.  
+   c. Válassza ki a megfelelő HITELESÍTÉSSZOLGÁLTATÓT a listából.
 
-    d. A megbízható főtanúsítvány letöltéséhez válassza a **Főtanúsítvány letöltése** lehetőséget.
+   d. A megbízható főtanúsítvány letöltéséhez válassza a **Főtanúsítvány letöltése** lehetőséget.
 
 2. Megbízható tanúsítvány profiljának létrehozása az Intune-portálon:
 
-   a. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
+   a. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-   b. Válassza az **Eszközkonfiguráció** > **Kezelés** > **Profilok** > **Profil létrehozása** lehetőséget.
+   b. Válassza az **eszközök** > **konfigurációs profilok** lehetőséget > a **profil létrehozása**elemet.
 
-   c. Adja meg a megbízható tanúsítvány profiljához tartozó **név** és **Leírás** adatait.
+   c. Adja meg a következő tulajdonságokat:
 
-   d. Válassza ki a megbízható tanúsítvány eszközplatformját a **Platform** legördülő listából.
+      - **Név** a profil számára
+      - **Leírás** megadása opcionálisan
+      - **Platform**, amelyen telepíteni kell a profilt
+      - A **Profiltípust** állítsa **Megbízható tanúsítványra**
 
-   e. A **Profil típusa** legördülő listában válassza a **megbízható tanúsítvány**lehetőséget.
+   d. Válassza a **Beállítások**lehetőséget, majd keresse meg a megbízható legfelső szintű hitelesítésszolgáltatói tanúsítvány. cer fájlt, amelyet az adott tanúsítvány-profillal való használatra exportált, majd válassza az **OK**gombot.
 
-   f. Keresse meg az előző lépésben a DigiCert HITELESÍTÉSSZOLGÁLTATÓTÓL beszerzett megbízható legfelső szintű HITELESÍTÉSSZOLGÁLTATÓ. cer fájlt, majd kattintson **az OK gombra**.
+   e. Válassza ki – csak a Windows 8.1- és Windows 10-eszközök esetében – a megbízható tanúsítvány céltárolóját a **Céltároló** mezőben, a következő lehetőségek közül:
+      - **Számítógép tanúsítványtárolója – fő**
+      - **Számítógép tanúsítványtárolója – köztes**
+      - **Felhasználói tanúsítványtároló – köztes**
 
-   g. Csak Windows 8,1 és Windows 10 rendszerű eszközök esetén válassza ki a megbízható tanúsítvány célját tárolót a következő helyről:    
-      - **Számítógép tanúsítványtárolója – fő**  
-      - **Számítógép tanúsítványtárolója – köztes**  
-      - **Felhasználói tanúsítványtároló – köztes** 
+   f. Ha elkészült, válassza az **OK** gombot, lépjen vissza a **Profil létrehozása** panelre, és válassza a **Létrehozás** gombot.  
 
-   h. Ha elkészült, válassza az **OK** gombot, lépjen vissza a **Profil létrehozása** panelre, és válassza a **Létrehozás** gombot.  
- 
-A profil megjelenik a profilok listájában az **eszköz konfigurációja – profilok** ablaktáblán, és a **megbízható tanúsítvány**profiljának típusa jelenik meg.  Ügyeljen arra, hogy ezt a profilt a tanúsítványokat fogadó eszközökhöz rendelje. A profil csoportokhoz rendeléséhez lásd: [eszközbeállítások társítása](../configuration/device-profile-assign.md).
+  A profil megjelenik a profilok listájában az **eszköz konfigurációja – profilok** ablaktáblán, és a **megbízható tanúsítvány**profiljának típusa jelenik meg.  Ügyeljen arra, hogy ezt a profilt a tanúsítványokat fogadó eszközökhöz rendelje. A profil csoportokhoz rendeléséhez lásd: [eszközbeállítások társítása](../configuration/device-profile-assign.md).
 
 
 ## <a name="get-the-certificate-profile-oid"></a>A tanúsítvány-profil OID beszerzése  
@@ -272,40 +271,40 @@ A DigiCert CA-ban található tanúsítványfájl-sablonnal társítva van az OI
 3. Válassza ki a használni kívánt tanúsítványsablont.
 4. Másolja a tanúsítvány-profil OID-t. Az objektumazonosító a következő példához hasonlóan néz ki:
 
- 
        Certificate Profile OID = 2.16.840.1.113733.1.16.1.2.3.1.1.47196109 
- 
 
 > [!NOTE]
 > Ha segítségre van szüksége a tanúsítvány-profil OID beszerzéséhez, forduljon a [DigiCert ügyfélszolgálatához](mailto:enterprise-pkisupport@digicert.com).
 
 ## <a name="create-a-pkcs-certificate-profile"></a>PKCS-tanúsítványprofil létrehozása
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.  
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Lépjen az **eszköz konfigurációja** >  **profilok**elemre, majd válassza a **profil létrehozása**lehetőséget.
+2. Válassza az **eszközök** > **konfigurációs profilok** lehetőséget > a **profil létrehozása**elemet.
 
-3. Adja meg a PKCS-tanúsítvány profiljának **nevét** és **leírását** .  
+3. Adja meg a következő tulajdonságokat:
 
-4. A **platform** legördülő listából válassza ki a támogatott eszköz platformot.
+   - **Név** a profil számára
+   - **Leírás** megadása opcionálisan
+   - **Platform**, amelyen telepíteni kell a profilt
+   - A **Profiltípust** állítsa **PKCS-tanúsítványra**
 
-5. A **Profil típusa** legördülő listában válassza a PKCS- **tanúsítvány**lehetőséget.
- 
-6. A **PKCS-tanúsítvány** ablaktáblán konfigurálja a paramétereket az alábbi táblázat értékeivel. Ezek az értékek szükségesek egy DigiCert HITELESÍTÉSSZOLGÁLTATÓTÓL származó PKCS-tanúsítványok kiállításához az Intune Certificate Connector használatával. 
+4. A **PKCS-tanúsítvány** ablaktáblán konfigurálja a paramétereket az alábbi táblázat értékeivel. Ezek az értékek szükségesek egy DigiCert HITELESÍTÉSSZOLGÁLTATÓTÓL származó PKCS-tanúsítványok kiállításához az Intune Certificate Connector használatával.
 
    |PKCS-tanúsítvány paramétere | Érték | Description |
    | --- | --- | --- |
    | Hitelesítésszolgáltató | pki-ws.symauth.com | Ennek az értéknek a DigiCert CA alapszolgáltatásának teljes tartományneve, záró perjel nélkül kell lennie. Ha nem biztos abban, hogy ez a DigiCert CA-előfizetés megfelelő alapszolgáltatásának teljes tartományneve, forduljon a DigiCert ügyfélszolgálatához. <br><br>*A Symantec és a DigiCert közötti váltás esetén ez az URL-cím változatlan marad*. <br><br> Ha ez a teljes tartománynév helytelen, az Intune tanúsítvány-összekötő nem tudja kiállítani a DigiCert HITELESÍTÉSSZOLGÁLTATÓTÓL származó PKCS-tanúsítványokat.| 
    | Hitelesítésszolgáltató neve | Symantec | Ennek az értéknek a **Symantec** sztringnek kell lennie. <br><br> Ha ez az érték módosul, az Intune tanúsítvány-összekötő nem tudja kiállítani a PKCS-tanúsítványokat a DigiCert HITELESÍTÉSSZOLGÁLTATÓTÓL.|
-   | Tanúsítványsablon neve | A DigiCert HITELESÍTÉSSZOLGÁLTATÓTÓL származó OBJEKTUMAZONOSÍTÓ. Például: **2.16.840.1.113733.1.16.1.2.3.1.1.61904612**| Ennek az értéknek egy, az előző szakaszban a DigiCert HITELESÍTÉSSZOLGÁLTATÓI tanúsítvány profilja sablonból [beszerzett objektumazonosító-](#get-the-certificate-profile-oid) profilnak kell lennie. <br><br> Ha az Intune Certificate Connector nem talál ehhez a DigiCert HITELESÍTÉSSZOLGÁLTATÓhoz társított tanúsítványsablont, a rendszer nem ad ki PKCS-tanúsítványokat a DigiCert HITELESÍTÉSSZOLGÁLTATÓTÓL.|  
+   | Tanúsítványsablon neve | A DigiCert HITELESÍTÉSSZOLGÁLTATÓTÓL származó OBJEKTUMAZONOSÍTÓ. Például: **2.16.840.1.113733.1.16.1.2.3.1.1.61904612**| Ennek az értéknek egy, az előző szakaszban a DigiCert HITELESÍTÉSSZOLGÁLTATÓI tanúsítvány profilja sablonból [beszerzett objektumazonosító-](#get-the-certificate-profile-oid) profilnak kell lennie. <br><br> Ha az Intune Certificate Connector nem talál ehhez a DigiCert HITELESÍTÉSSZOLGÁLTATÓhoz társított tanúsítványsablont, a rendszer nem ad ki PKCS-tanúsítványokat a DigiCert HITELESÍTÉSSZOLGÁLTATÓTÓL.|
 
-   ![HITELESÍTÉSSZOLGÁLTATÓ és tanúsítványsablon kijelölése](./media/certificates-digicert-configure/certificates-digicert-pkcs-example.png)  
+   ![HITELESÍTÉSSZOLGÁLTATÓ és tanúsítványsablon kijelölése](./media/certificates-digicert-configure/certificates-digicert-pkcs-example.png)
 
    > [!NOTE]
    > A Windows platformokhoz készült PKCS-tanúsítvány profiljának nem kell megbízható tanúsítvány-profillal társítva lennie. Nem Windows platformú profilok (pl. Android profilok) esetén azonban szükséges a hozzárendelés.
-7. Fejezze be a profil konfigurálását az üzleti igények kielégítéséhez, majd kattintson az **OK** gombra a profil mentéséhez. 
 
-8. Válassza a **hozzárendelések** lehetőséget, és állítson be egy megfelelő csoportot, amely ezt a profilt fogja kapni. A hozzárendelt csoport legalább egy felhasználót vagy eszközt kell, hogy tartalmazzon.
+5. Fejezze be a profil konfigurációját az üzleti igények kielégítéséhez, majd válassza a **Létrehozás** lehetőséget a profil mentéséhez.
+
+6. Az új profil *Áttekintés* lapján válassza a **hozzárendelések** lehetőséget, és állítson be egy megfelelő csoportot, amely ezt a profilt fogja kapni. A hozzárendelt csoport legalább egy felhasználót vagy eszközt kell, hogy tartalmazzon.
  
 Az előző lépések elvégzése után az Intune Certificate Connector PKCS-tanúsítványokat ad ki a DigiCert HITELESÍTÉSSZOLGÁLTATÓTÓL a hozzárendelt csoportban lévő Intune által felügyelt eszközökre. Ezek a tanúsítványok az Intune által felügyelt eszköz **aktuális felhasználói** tanúsítványtárolójának **személyes** tárolójában lesznek elérhetők.
 
@@ -314,7 +313,7 @@ Az előző lépések elvégzése után az Intune Certificate Connector PKCS-tan�
 |Attribútum | Az Intune által támogatott formátumok | A DigiCert Cloud CA által támogatott formátumok | eredmény |
 | --- | --- | --- | --- |
 | Tulajdonos neve |Az Intune az alábbi három formátumban támogatja a tulajdonos nevének megadását: <br><br> 1. köznapi név <br> 2. köznapi név, amely tartalmazza az e-mailt <br> 3. köznapi név mint e-mail <br><br> Példa: <br><br> `CN = IWUser0 <br><br> E = IWUser0@samplendes.onmicrosoft.com` | A DigiCert CA több attribútumot is támogat.  Ha további attribútumokat szeretne kijelölni, akkor azokat rögzített értékekkel kell definiálni az DigiCert-tanúsítvány profilja sablonban.| A PKCS tanúsítványkérelem köznapi nevét vagy e-mail-címét használja. <br><br> Az Intune-tanúsítvány profilja és a DigiCert sablonja közötti eltérés nem egyezik az DigiCert HITELESÍTÉSSZOLGÁLTATÓTÓL kiállított tanúsítványokkal.|
-| Tulajdonos alternatív neve (SAN) | Az Intune a következő SAN-mezőértékeket támogatja: <br><br> **AltNameTypeEmail** <br> **AltNameTypeUpn** <br> **AltNameTypeOtherName** (kódolt érték) | A DigiCert Cloud CA ezeket a paramétereket is támogatja. Ha további attribútumokat szeretne kijelölni, akkor azokat rögzített értékekkel kell definiálni az DigiCert-tanúsítvány profilja sablonban. <br><br> **AltNameTypeEmail**: Ha ez a típus nem található a San-ben, az Intune Certificate Connector a **AltNameTypeUpn**értéket használja.  Ha a **AltNameTypeUpn** nem található meg a San-ben, akkor az Intune tanúsítvány-összekötő a tulajdonos nevében lévő értéket használja, ha az e-mail-formátuma.  Ha a típus még nem található, az Intune tanúsítvány-összekötő nem tudja kiállítani a tanúsítványokat. <br><br> Példa: `RFC822 Name=IWUser0@ndesvenkatb.onmicrosoft.com`  <br><br> **AltNameTypeUpn**: Ha ez a típus nem található a San-ban, az Intune Certificate Connector a **AltNameTypeEmail**értéket használja. Ha a **AltNameTypeEmail** nem található meg a San-ben, akkor az Intune tanúsítvány-összekötő a tulajdonos neve mező értékét használja, ha az e-mail formátuma. Ha a típus még nem található, az Intune tanúsítvány-összekötő nem tudja kiállítani a tanúsítványokat.  <br><br> Példa: `Other Name: Principal Name=IWUser0@ndesvenkatb.onmicrosoft.com` <br><br> **AltNameTypeOtherName**: Ha ez a típus nem található a San-ben, az Intune tanúsítvány-összekötő nem tudja kiállítani a tanúsítványokat. <br><br> Példa: `Other Name: DS Object Guid=04 12 b8 ba 65 41 f2 d4 07 41 a9 f7 47 08 f3 e4 28 5c ef 2c` <br><br>  Vegye figyelembe, hogy a mező értéke csak kódolt formátumban (hexadecimális érték) támogatott a DigiCert CA által. Ebben a mezőben bármely értéknél az Intune tanúsítvány-összekötő Base64-kódolásra konvertálja, mielőtt elküldi a tanúsítványkérelmet. *Az Intune Tanúsítvány-összekötő nem ellenőrzi, hogy az érték már kódolva van-e.* | Nincsenek |
+| Tulajdonos alternatív neve (SAN) | Az Intune a következő SAN-mezőértékeket támogatja: <br><br> **AltNameTypeEmail** <br> **AltNameTypeUpn** <br> **AltNameTypeOtherName** (kódolt érték) | A DigiCert Cloud CA ezeket a paramétereket is támogatja. Ha további attribútumokat szeretne kijelölni, akkor azokat rögzített értékekkel kell definiálni az DigiCert-tanúsítvány profilja sablonban. <br><br> **AltNameTypeEmail**: Ha ez a típus nem található a San-ben, az Intune Certificate Connector a **AltNameTypeUpn**értéket használja.  Ha a **AltNameTypeUpn** nem található meg a San-ben, akkor az Intune tanúsítvány-összekötő a tulajdonos nevében lévő értéket használja, ha az e-mail-formátuma.  Ha a típus még nem található, az Intune tanúsítvány-összekötő nem tudja kiállítani a tanúsítványokat. <br><br> Példa: `RFC822 Name=IWUser0@ndesvenkatb.onmicrosoft.com`  <br><br> **AltNameTypeUpn**: Ha ez a típus nem található a San-ban, az Intune Certificate Connector a **AltNameTypeEmail**értéket használja. Ha a **AltNameTypeEmail** nem található meg a San-ben, akkor az Intune tanúsítvány-összekötő a tulajdonos neve mező értékét használja, ha az e-mail formátuma. Ha a típus még nem található, az Intune tanúsítvány-összekötő nem tudja kiállítani a tanúsítványokat.  <br><br> Példa: `Other Name: Principal Name=IWUser0@ndesvenkatb.onmicrosoft.com` <br><br> **AltNameTypeOtherName**: Ha ez a típus nem található a San-ben, az Intune tanúsítvány-összekötő nem tudja kiállítani a tanúsítványokat. <br><br> Példa: `Other Name: DS Object Guid=04 12 b8 ba 65 41 f2 d4 07 41 a9 f7 47 08 f3 e4 28 5c ef 2c` <br><br>  A mező értéke csak kódolt formátumban (hexadecimális érték) támogatott a DigiCert CA által. Ebben a mezőben bármely értéknél az Intune tanúsítvány-összekötő Base64-kódolásra konvertálja, mielőtt elküldi a tanúsítványkérelmet. *Az Intune Tanúsítvány-összekötő nem ellenőrzi, hogy az érték már kódolva van-e.* | Nincsenek |
 
 ## <a name="troubleshooting"></a>Hibaelhárítás
 
@@ -322,7 +321,7 @@ Az Intune Certificate Connector szolgáltatás naplói a NDES-összekötő szám
 
 | Probléma/hibaüzenet | Megoldás lépései |
 | --- | --- |
-| Nem lehet bejelentkezni az Intune-bérlői rendszergazdai fiókkal a NDES-összekötő felhasználói felületén. | Ez akkor fordulhat elő, ha a helyszíni tanúsítvány-összekötő nincs engedélyezve az Intune felügyeleti portálján. A probléma megoldásához használja az alábbi eljárások egyikét: <br><br> A Silverlight felhasználói felületéről: <br> 1. Jelentkezzen be az [Intune felügyeleti portálra](https://admin.manage.microsoft.com). <br> 2. Válassza a **rendszergazda**elemet. <br> 3. Válassza a **mobileszköz-kezelés** >  tanúsítvány-**összekötő**lehetőséget. <br> 4. válassza **a helyszíni tanúsítvány-összekötő konfigurálása**lehetőséget. <br> 5. jelölje be a **tanúsítvány-összekötő engedélyezése** jelölőnégyzetet. <br> 6. kattintson **az OK gombra**. <br><br> Az Azure Portal felhasználói felületén: <br> 1. Jelentkezzen be a [Azure Portalba](https://portal.azure.com). <br> 2. lépjen Microsoft Intune. <br> 3. Válassza az **eszköz konfigurációja**@no__t – 1**hitelesítésszolgáltató**lehetőséget. <br> 4. Válassza az **Engedélyezés**lehetőséget. <br><br> Miután elvégezte az előző lépéseket a Silverlight felhasználói felületéről vagy a Azure Portalból, próbáljon meg ugyanazzal az Intune-bérlői rendszergazdai fiókkal bejelentkezni az NDES-összekötő felhasználói felületén. |
+| Nem lehet bejelentkezni az Intune-bérlői rendszergazdai fiókkal a NDES-összekötő felhasználói felületén. | Ez akkor fordulhat elő, ha a helyszíni tanúsítvány-összekötő nincs engedélyezve a Microsoft Endpoint Manager felügyeleti központban. A probléma megoldásához: <br><br> 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431). <br> 2. Válassza a **bérlői felügyelet** > **Összekötők és tokenek** > **tanúsítvány-összekötők**lehetőséget. <br> 3. Keresse meg a tanúsítvány-összekötőt, és győződjön meg róla, hogy engedélyezve van. <br><br> Az előző lépések elvégzése után próbáljon meg ugyanazzal az Intune-bérlői rendszergazdai fiókkal bejelentkezni az NDES-összekötő felhasználói felületén. |
 | Az NDES-összekötő tanúsítványa nem található. <br><br> System. ArgumentNullException: az érték nem lehet null. | Az Intune Tanúsítvány-összekötő akkor jeleníti meg ezt a hibát, ha az Intune-bérlői rendszergazdai fiókkal még sosem jelentkeztek be az NDES-összekötő felhasználói felületére. <br><br> Ha a hiba továbbra is fennáll, indítsa újra az Intune szolgáltatás-összekötőt. <br><br> 1. Nyissa meg a **Services. msc fájlt**. <br> 2. Válassza az **Intune-összekötő szolgáltatás**elemet. <br> 3. kattintson a jobb gombbal, majd válassza az **Újraindítás**lehetőséget.|
 | NDES Connector - IssuePfx -Generic Exception: (NDES-összekötő - IssuePfx - Általános kivétel:) <br> System.NullReferenceException: Object reference not set to an instance of an object. (Az objektumhivatkozás nincs beállítva az objektum egyik példányára.) | Ez a hiba átmeneti. Indítsa újra az Intune szolgáltatás-összekötőt. <br><br> 1. Nyissa meg a **Services. msc fájlt**. <br> 2. Válassza az **Intune-összekötő szolgáltatás**elemet. <br> 3. kattintson a jobb gombbal, majd válassza az **Újraindítás**lehetőséget. |
 | DigiCert-szolgáltató – nem sikerült beolvasni a DigiCert házirendet. <br><br>"A művelet túllépte az időkorlátot." | Az Intune tanúsítvány-összekötő művelet időtúllépési hibát kapott a DigiCert HITELESÍTÉSSZOLGÁLTATÓval való kommunikáció során. Ha a hiba továbbra is fennáll, növelje a kapcsolódás időtúllépési értékét, és próbálkozzon újra. <br><br> A kapcsolódás időkorlátjának növeléséhez: <br> 1. Nyissa meg az NDES-összekötőt futtató számítógépet. <br>2. Nyissa meg a **%ProgramFiles%\Microsoft Intune\NDESConnectorSvc\NDESConnector.exe.config** fájlt a Jegyzettömbben. <br> 3. növelje az időtúllépés értékét a következő paraméterhez: <br><br> `CloudCAConnTimeoutInMilliseconds` <br><br> 4. Indítsa újra az Intune Certificate Connector szolgáltatást. <br><br> Ha a probléma továbbra is fennáll, forduljon a DigiCert ügyfélszolgálatához. |
@@ -330,10 +329,9 @@ Az Intune Certificate Connector szolgáltatás naplói a NDES-összekötő szám
 | DigiCert-szolgáltató – nem sikerült beolvasni a DigiCert házirendet. <br><br>"A kérelem megszakadt: nem hozható létre SSL/TLS biztonságos csatorna." | Ez a hiba a következő esetekben jelentkezhet: <br><br> 1. az Intune Certificate Connector szolgáltatás nem rendelkezik engedéllyel az erőforrás-engedélyezési tanúsítvány és a saját titkos kulcsának beolvasásához a helyi számítógép személyes tanúsítványtárolójában. A probléma megoldásához keresse meg az összekötő szolgáltatás futó környezeti fiókját a Services. msc-ben. Az összekötő szolgáltatásnak az NT AUTHORITY\SYSTEM környezetben kell futnia. <br><br> 2. Előfordulhat, hogy az Intune felügyeleti portálján található PKCS-tanúsítvány profilja érvénytelen alapszolgáltatási FQDN-vel van konfigurálva a DigiCert HITELESÍTÉSSZOLGÁLTATÓhoz. A teljes tartománynév a **PKI-ws.symauth.com**hasonló. A probléma megoldásához forduljon a DigiCert ügyfélszolgálatához, hogy az URL-cím helyes-e az előfizetéséhez. <br><br> 3. az Intune tanúsítvány-összekötő nem tud hitelesíteni a DigiCert HITELESÍTÉSSZOLGÁLTATÓval az erőforrás-engedélyezési tanúsítványon keresztül, mert nem tudja beolvasni a titkos kulcsot. A probléma megoldásához telepítse az erőforrás-engedélyezési tanúsítványt és annak titkos kulcsát a helyi számítógép személyes tanúsítványtárolójában. <br><br> Ha a probléma továbbra is fennáll, forduljon a DigiCert ügyfélszolgálatához. |
 | DigiCert-szolgáltató – nem sikerült beolvasni a DigiCert házirendet. <br><br>"A kérelem elem nem értelmezhető." | Az Intune tanúsítvány-összekötő nem tudta lekérni az DigiCert-sablon sablonját, mert az OBJEKTUMAZONOSÍTÓ nem felel meg az Intune-tanúsítvány profiljának. Egy másik esetben az Intune tanúsítvány-összekötő nem találja a DigiCert CA-ban található ügyfél-profil OID-hez társított tanúsítványsablont. <br><br> A probléma megoldásához szerezze be a megfelelő ügyféloldali profilt OID-t a DigiCert HITELESÍTÉSSZOLGÁLTATÓ DigiCert-tanúsítvány sablonjában. Ezután frissítse a PKCS-tanúsítvány profilját az Intune felügyeleti portálján. <br><br> Szerezze be az ügyfél-profil OID-t a DigiCert HITELESÍTÉSSZOLGÁLTATÓTÓL: <br> 1. Jelentkezzen be a DigiCert HITELESÍTÉSSZOLGÁLTATÓI felügyeleti portálra. <br> 2. Válassza a **tanúsítványok profiljainak kezelése**lehetőséget. <br> 3. Válassza ki a használni kívánt tanúsítványsablont. <br> 4. szerezze be a tanúsítvány-profil OID-t. Az objektumazonosító a következő példához hasonlóan néz ki: <br> `Certificate Profile OID = 2.16.840.1.113733.1.16.1.2.3.1.1.47196109` <br><br> A PKCS-tanúsítvány profiljának frissítése a megfelelő tanúsítványfájl OID-vel: <br>1. Jelentkezzen be az Intune felügyeleti portálra. <br> 2. Lépjen a PKCS-tanúsítvány profiljához, és válassza a **Szerkesztés**lehetőséget. <br> 3. frissítse a tanúsítvány-profil OID-t a tanúsítványsablon neve mezőben. <br> 4. mentse a PKCS-tanúsítvány profilját. |
 | DigiCert-szolgáltató – a házirend ellenőrzése nem sikerült. <br><br> Az attribútum nem tartozik a DigiCert által támogatott tanúsítványsablon-attribútumok listához. | Az DigiCert CA ezt az üzenetet jeleníti meg, ha eltérés van a DigiCert-tanúsítvány profilja és az Intune-tanúsítvány profilja között. Ez a probléma valószínűleg azért történt, mert az attribútum nem egyezik a **SubjectName** vagy a **SubjectAltName**. <br><br> A probléma megoldásához válassza az Intune által támogatott attribútumok elemet a **SubjectName** és a **SubjectAltName** az DigiCert-tanúsítvány profilja sablonban. További információ: az Intune által támogatott attribútumok a **tanúsítvány paramétereinek** szakaszában. |
-| Egyes felhasználói eszközök nem kapnak PKCS-tanúsítványokat a DigiCert HITELESÍTÉSSZOLGÁLTATÓTÓL. | Ez a probléma akkor fordul elő, ha a felhasználó UPN-je speciális karaktereket tartalmaz, például egy aláhúzást (példa: `global_admin@intune.onmicrosoft.com`). <br><br> A DigiCert HITELESÍTÉSSZOLGÁLTATÓ nem támogatja a speciális karaktereket a **mail_firstname** és a **mail_lastname**. <br><br> A problémát az alábbi lépésekkel oldhatja meg: <br><br> 1. Jelentkezzen be a DigiCert HITELESÍTÉSSZOLGÁLTATÓI felügyeleti portálra. <br> 2. Lépjen a **tanúsítvány-profilok kezelése**gombra. <br> 3. Válassza ki az Intune-hoz használt tanúsítványsablont. <br> 4. Válassza a **beállítások testreszabása** hivatkozást. <br> 5. Válassza a **Speciális beállítások** gombot. <br> 6. a **tanúsítvány mezői – tulajdonos DN**, adjon hozzá egy **KÖZNAPI név (CN)** mezőt, és törölje a meglévő **köznapi név (CN)** mezőt. A hozzáadási és törlési műveleteket együtt kell végrehajtani. <br> 7. Válassza a **Mentés**lehetőséget. <br><br> Az előző módosítással a DigiCert-tanúsítvány profilja a **"CN = <upn>"** értéket kéri a **mail_firstname** és a **mail_lastname**helyett. |
+| Egyes felhasználói eszközök nem kapnak PKCS-tanúsítványokat a DigiCert HITELESÍTÉSSZOLGÁLTATÓTÓL. | Ez a probléma akkor fordul elő, ha a felhasználói UPN speciális karaktereket (például aláhúzást) tartalmaz (példa: `global_admin@intune.onmicrosoft.com`). <br><br> A DigiCert HITELESÍTÉSSZOLGÁLTATÓ nem támogatja a speciális karaktereket **mail_firstname** és **mail_lastname**. <br><br> A problémát az alábbi lépésekkel oldhatja meg: <br><br> 1. Jelentkezzen be a DigiCert HITELESÍTÉSSZOLGÁLTATÓI felügyeleti portálra. <br> 2. Lépjen a **tanúsítvány-profilok kezelése**gombra. <br> 3. Válassza ki az Intune-hoz használt tanúsítványsablont. <br> 4. Válassza a **beállítások testreszabása** hivatkozást. <br> 5. Válassza a **Speciális beállítások** gombot. <br> 6. a **tanúsítvány mezői – tulajdonos DN**, adjon hozzá egy **KÖZNAPI név (CN)** mezőt, és törölje a meglévő **köznapi név (CN)** mezőt. A hozzáadási és törlési műveleteket együtt kell végrehajtani. <br> 7. Válassza a **Mentés**lehetőséget. <br><br> Az előző módosítással a DigiCert-tanúsítvány profilja a **"CN =<upn>"** értéket kéri a **mail_firstname** és a **mail_lastname**helyett. |
 | A felhasználó manuálisan törölt egy már telepített tanúsítványt az eszközéről. | Az Intune a következő bejelentkezéskor és a szabályzatok betartatásakor újra üzembe helyezi ugyanazt a tanúsítványt. Ebben az esetben a NDES-összekötő nem kap PKCS-tanúsítványkérelmet. |
 
 ## <a name="next-steps"></a>További lépések
 
 A jelen cikkben található információk mellett a [mi Microsoft Intune-eszköz profilokkal](../configuration/device-profiles.md) kapcsolatos információk is szerepelnek? a szervezet eszközeinek és a hozzájuk tartozó tanúsítványok kezeléséhez.
-

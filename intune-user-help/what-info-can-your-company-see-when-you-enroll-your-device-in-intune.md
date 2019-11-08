@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 12/17/2018
+ms.date: 10/31/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
@@ -18,12 +18,12 @@ ROBOTS: ''
 ms.reviewer: esmich
 ms.suite: ems
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c219b628348f51c2a5601e4977664d2636effb45
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: fc50f48afbd527f3c6d82cc0c71a166b0356ab9e
+ms.sourcegitcommit: b5e719fb507b1bc4774674e76c856c435e69f68c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72505920"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73801482"
 ---
 # <a name="what-information-can-my-organization-see-when-i-enroll-my-device"></a>Milyen adatok láthatók a szervezet számára, ha regisztrálom az eszközömet?
 
@@ -52,8 +52,8 @@ A szervezete számára nem láthatók az Ön személyes adatai, amikor eszközt 
 
 **A szervezet számára esetlegesen látható adatok:**
 
-- Telefonszám: a **céges** eszközök esetében a teljes telefonszám látható. A **személyes** tulajdonú eszközök esetében csak a telefonszám utolsó négy számjegye látható a szervezet számára. Minden egyes eszköz **Tulajdonjogtípusát** megtekintheti az adott eszköz **Eszköz részletei** lapjának megnyitásával.
+- Telefonszám: a vállalat által birtokolt eszközök esetében teljes telefonszáma látható. A személyes tulajdonú eszközök esetében csak a telefonszám utolsó négy számjegye látható a szervezet számára. Az egyes eszközök tulajdonosi típusát az **eszköz részletes** lapján tekintheti meg.
 - Eszköz tárhelye: Ha nem tud telepíteni egy szükséges alkalmazást, a szervezet ellenőrizheti az eszköz tárhelyét, valamint hogy az elegendő-e.  
 - Hely: a szervezet soha nem láthatja az eszköz helyét, hacsak nem kell helyreállítani egy elveszett, felügyelt iOS-eszközt. A felügyelt eszközökről további információért látogasson el az [Apple iOS dokumentációjában](https://go.microsoft.com/fwlink/?linkid=853816) .  
-- Az alkalmazás leltárának részletei: Ha a szervezet a Mobile Threat Defense szolgáltatást használja, megtekintheti az iOS-eszközön lévő alkalmazások adatait. További információk: [Mobile Threat Defense](you-are-prompted-to-install-mtd-ios.md).
+- Az alkalmazás leltárának részletei: Ha a szervezet a Mobile Threat Defense szolgáltatást használja, megtekintheti az iOS-eszközön lévő alkalmazások adatait. További információk: [Mobile Threat Defense](you-are-prompted-to-install-mtd-ios.md). Ha rendelkezik személyes eszközzel, a szervezet csak a felügyelt alkalmazások leltárát látja. Ha rendelkezik vállalati tulajdonú eszközzel, a szervezet láthatja az összes alkalmazás leltárát.
 - Hálózati adatok: az androidos eszközök hálózati kapcsolatairól bizonyos adatok elérhetőek lehetnek a szervezet informatikai részlege számára. Például ha a szervezet egyes eszközeinek egy bizonyos épületen belül kell maradniuk, az eszköz azonosítja a hálózatot, amelyhez csatlakozik. 

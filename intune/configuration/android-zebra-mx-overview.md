@@ -5,24 +5,24 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 09/16/2019
+ms.date: 11/04/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: ''
 ms.technology: ''
 ms.assetid: ''
-ms.reviewer: ''
+ms.reviewer: jieyan
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e5804b415d26b07944c500b0158cf84a2d4412c
-ms.sourcegitcommit: d1b36501186e867355843ddd67c795ade800b76a
+ms.openlocfilehash: 7f343ace48c917e65d9d59cd7c42c53e9b892968
+ms.sourcegitcommit: 1a7f04c80548e035be82308d2618492f6542d3c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73182859"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73756732"
 ---
 # <a name="use-and-manage-zebra-devices-with-zebra-mobility-extensions-in-microsoft-intune"></a>Zebra-eszközök használata és kezelése a zebra Mobility Extensions használatával Microsoft Intune
 
@@ -52,7 +52,6 @@ Az Intune használatával olyan Zebra-eszközöket regisztrálhat, amelyekkel az
 - Győződjön meg arról, hogy a StageNow asztali alkalmazás legújabb verziója található a zebra Technologies-től.
 - Ügyeljen arra, hogy a [Zebra teljes MX-szolgáltatásának mátrixát](http://techdocs.zebra.com/mx/compatibility) (a zebra webhelyének megnyitása) ellenőrizze, hogy az Ön által létrehozott profilok kompatibilisek-e az eszköz MX verziójával, az operációs rendszer verziójával és a modellel.
 - Bizonyos eszközök, például a TC20/25 eszközök, nem támogatják az összes elérhető MX-funkciót a StageNow-ben. Győződjön meg arról, hogy a [Zebra funkciójának mátrixa](http://techdocs.zebra.com/mx/tc2x/) (a zebra webhelyének megnyitása) a frissített támogatási információkra vonatkozik.
-
 
 ## <a name="step-1-install-the-latest-company-portal-app"></a>1\. lépés: a legújabb Céges portál alkalmazás telepítése
 
@@ -134,8 +133,8 @@ A fájl tesztelése után a következő lépés a profil üzembe helyezése az e
 
 Az Intune-ban hozzon létre egy eszköz konfigurációs profilt:
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **eszközök** > **konfigurációs profilok** lehetőséget > a **profil létrehozása**elemet.
 3. Adja meg a következő tulajdonságokat:
 
     - **Név**: Adja meg az új profil leíró nevét.

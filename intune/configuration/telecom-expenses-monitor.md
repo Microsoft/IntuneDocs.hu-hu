@@ -6,24 +6,24 @@ keywords: Saaswedo
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 05/09/2019
+ms.date: 11/05/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: b7bf5802-4b65-4aeb-ac99-8e639dd89c2a
-ms.reviewer: sumitp
+ms.reviewer: davidra
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ce9a6916cc77714a87aeac33555c0be1e59463f5
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 20743d19ba101a9c400cb9f72dca59223254e6de
+ms.sourcegitcommit: 1a7f04c80548e035be82308d2618492f6542d3c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72506629"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73755059"
 ---
 # <a name="set-up-a-telecom-expense-management-service-in-intune"></a>Távközlésiköltség-kezelő szolgáltatás beállítása az Intune-ban
 
@@ -54,7 +54,7 @@ A Datalert szolgáltatás Intune-nal való használatához bizonyos konfiguráci
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-- Microsoft Intune-előfizetés és a [Azure Portalhoz](https://portal.azure.com) való hozzáférés
+- Előfizetés Microsoft Intunera és hozzáférés a [Microsoft Endpoint Manager felügyeleti központjához](https://go.microsoft.com/fwlink/?linkid=2109431)
 - [Datalert](http://www.datalert.biz/) -előfizetés (megnyílik a Datalert webhely)
 
 ## <a name="telecom-expense-management-providers"></a>Távközlési költségek kezelése szolgáltatók
@@ -109,9 +109,9 @@ Az Intune a következő telekommunikációs felügyeleti szolgáltatóval integr
 
 Az 1. lépés elvégzése után a rendszer automatikusan engedélyezi a hozzáférést. Az Intune-ban a kapcsolatok állapota **aktív**. A következő lépések végrehajtásával ellenőrizheti, hogy az állapot aktív-e:
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Válassza az **eszköz konfigurációja**@no__t – 1**távközlési költségek kezelése**lehetőséget. Az **aktív** kapcsolatok állapotának megkeresése:
+2. Válassza a **bérlői felügyelet** > **Összekötők és tokenek** > **távközlési költségek kezelése**lehetőséget. Az **aktív** kapcsolatok állapotának megkeresése:
 
    ![Az Intune oldala, rajta az Aktív állapotú Datalert-kapcsolattal](./media/telecom-expenses-monitor/tem-azure-portal-enable-service.png)
 
@@ -138,7 +138,7 @@ Ezek a kategóriák a felhasználók számára jelennek meg a regisztráció sor
 
 A következő lépésekkel adja hozzá a Datalert alkalmazást. Példaként használja az iOS-t. [Alkalmazások hozzáadása](../apps/apps-add.md) és a [hatókör-címkék használata](../fundamentals/scope-tags.md) részletesebb információkat tartalmaz ezekről a lépésekről.
 
-1. Az **[Intune](https://go.microsoft.com/fwlink/?linkid=2090973)** -ban válassza a **Client apps** > **alkalmazások** > **Hozzáadás**elemet.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**lehetőséget.
 
 2. Válassza ki az **alkalmazás típusát**. IOS esetében például válassza az **áruházbeli alkalmazás-iOS**lehetőséget.
 
@@ -156,7 +156,7 @@ A következő lépésekkel adja hozzá a Datalert alkalmazást. Példaként hasz
 
 #### <a name="assign-the-datalert-app-to-the-corporate-device-group"></a>A Datalert alkalmazás hozzárendelése a vállalati eszközök csoportjához
 
-1. Az **ügyfélalkalmazások – alkalmazások**területen válassza ki az előző lépésben hozzáadott Datalert alkalmazást.
+1. Az **alkalmazások** > **minden alkalmazás**területen válassza ki az előző lépésben hozzáadott Datalert alkalmazást.
 
 2. Válassza a **hozzárendelések** > **Csoport hozzáadása**lehetőséget. Válassza ki az alkalmazás hozzárendelésének módját. Az [alkalmazásoknak az Intune-beli csoportokhoz való hozzárendelésével](../apps/apps-deploy.md) kapcsolatos további részletek a beállításokról.
 
@@ -183,7 +183,7 @@ A végfelhasználói élmény érdekében a következő cikkek segíthetnek:
 
 ## <a name="turn-off-the-datalert-service"></a>A Datalert szolgáltatás kikapcsolása
 
-1. Az **[Intune](https://go.microsoft.com/fwlink/?linkid=2090973)** -ban válassza az **eszköz konfigurációja**@no__t – 3**távközlési költségek kezelése**lehetőséget.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza a **bérlői felügyelet** > **összekötők és tokenek** > **távközlési költségek kezelése**lehetőséget.
 2. Állítsa be **a távközlési költségek kezelése lehetőséget, és tiltsa le a mobil-vagy barangolási adatokat olyan eszközökön, amelyek túllépik** a **letiltani**kívánt használati kvótákat.
 3. **Mentse** a változtatásokat.
 

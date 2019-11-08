@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 10/31/2019
+ms.date: 11/07/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ac6da1b15d482d20340163b0bb79e88d74e8e375
-ms.sourcegitcommit: 2c8a41ee95a3fde150667a377770e51b621ead65
+ms.openlocfilehash: 0d1aeea4d9fb47daeef8e44f501e1a61776b0e94
+ms.sourcegitcommit: b5e719fb507b1bc4774674e76c856c435e69f68c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73635345"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73801767"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -58,7 +58,7 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 ### <a name="app-management"></a>Alkalmazáskezelés
 
 #### <a name="improved-checklist-design-in-company-portal-app-for-android---5550857---"></a>Továbbfejlesztett ellenőrzőlista-kialakítás az androidos Céges portál alkalmazásban<!-- 5550857 -->  
-Az Androidhoz készült Céges portál alkalmazásban található beállítási ellenőrzőlista egy könnyű kialakítással és új ikonokkal frissült. A módosítások összhangban vannak az iOS rendszerhez készült Céges portál alkalmazás legújabb frissítéseivel. Folyamatban van az alkalmazás frissítéseinek kihelyezése az összes ügyfél számára, és a következő hét végére várhatóan elvégezhető. A változások párhuzamos összehasonlítását lásd: Újdonságok az [alkalmazás felhasználói felületén](whats-new-app-ui.md). A frissített regisztrációs lépések megtekintéséhez tekintse meg az androidos [munkahelyi Profil regisztrálása](/intune-user-help/enroll-device-android-work-profile) és [az Android-eszköz regisztrálása](/intune-user-help/enroll-device-android-company-portal)című témakört.  
+Az Androidhoz készült Céges portál alkalmazásban található beállítási ellenőrzőlista egy könnyű kialakítással és új ikonokkal frissült. A módosítások összhangban vannak az iOS rendszerhez készült Céges portál alkalmazás legújabb frissítéseivel. A változások párhuzamos összehasonlítását lásd: Újdonságok az [alkalmazás felhasználói felületén](whats-new-app-ui.md). A frissített regisztrációs lépések megtekintéséhez tekintse meg az androidos [munkahelyi Profil regisztrálása](/intune-user-help/enroll-device-android-work-profile) és [az Android-eszköz regisztrálása](/intune-user-help/enroll-device-android-company-portal)című témakört.  
 
 #### <a name="win32-apps-on-windows-10-s-mode-devices---3747604---"></a>Win32-alkalmazások Windows 10 S üzemmódú eszközökön<!-- 3747604 --> 
 Win32-alkalmazásokat telepíthet és futtathat Windows 10 S üzemmódú felügyelt eszközökön. Ehhez a Windows Defender Application Control (WDAC) PowerShell-eszközeivel létrehozhat egy vagy több kiegészítő szabályzatot az S üzemmódhoz. Írja alá a kiegészítő szabályzatokat az Eszközkezelő-aláírási portálon, majd töltse fel és terjessze a szabályzatokat az Intune-on keresztül. Az Intune-ban ezt a képességet az **ügyfélalkalmazások** > **Windows 10 S kiegészítő házirendek**lehetőség kiválasztásával találja meg. További információ: Win32- [alkalmazások engedélyezése az S Mode-eszközökön](~/apps/apps-win32-s-mode.md).

@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 06/20/2019
+ms.date: 11/05/2019
 ms.topic: troubleshooting
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e2e7dc729879eb6d16a4ab3555d8fe319501a53e
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 687505a3ca2bbdffd26e8870705971aafb4783d2
+ms.sourcegitcommit: 1a7f04c80548e035be82308d2618492f6542d3c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72492136"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73754951"
 ---
 # <a name="troubleshoot-policies-and-profiles-and-in-intune"></a>Szabályzatok és profilok és az Intune hibáinak megoldása
 
@@ -32,11 +32,12 @@ Microsoft Intune tartalmaz néhány beépített hibaelhárítási funkciót. Eze
 Ez a cikk néhány gyakori hibaelhárítási módszert sorol fel, és ismerteti az esetlegesen felmerülő problémákat.
 
 ## <a name="check-tenant-status"></a>Bérlői állapot keresése
+
 Ellenőrizze a [bérlő állapotát](../fundamentals/tenant-status.md) , és ellenőrizze, hogy az előfizetés aktív-e. Megtekintheti azokat az aktív incidenseket és tanácsadókat is, amelyek hatással lehetnek a szabályzatra vagy a profil telepítésére.
 
 ## <a name="use-built-in-troubleshooting"></a>Beépített hibaelhárítás használata
 
-1. Az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ban válassza a **hibakeresés**elemet:
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza a **Hibaelhárítás + támogatás**elemet:
 
     ![Az Intune-ban lépjen a Súgó és támogatás elemre, és válassza a hibakeresés lehetőséget.](./media/troubleshoot-policies-in-microsoft-intune/help-and-support-troubleshoot.png)
 
@@ -102,7 +103,7 @@ Ellenőrizze a [bérlő állapotát](../fundamentals/tenant-status.md) , és ell
 
 ## <a name="youre-unsure-if-a-profile-is-correctly-applied"></a>Nem biztos benne, hogy a profil megfelelően van-e alkalmazva
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Válassza az **eszközök** > **minden eszköz** lehetőséget, > válassza ki az eszköz > **eszköz konfigurációját**. 
 
     Minden eszköz felsorolja a profilokat. Minden profil rendelkezik **állapottal**. Az állapot akkor érvényes, ha az összes hozzárendelt profil, beleértve a hardvert és az operációs rendszer korlátozásait és követelményeit együttesen veszi figyelembe. A lehetséges állapotok a következők:
@@ -141,7 +142,7 @@ Előfordulhat, hogy a Windows 10-es eszközök nem távolítják el a biztonság
 
 Ha a házirendet kevésbé biztonságos értékre szeretné módosítani, előfordulhat, hogy alaphelyzetbe kell állítania a biztonsági szabályzatokat.
 
-Például a Windows 8,1-ben az asztalon, a jobb oldalon a **varázsok** sáv megnyitásához. Válassza a **beállítások**@no__t – 1**Vezérlőpult**@no__t – 3**felhasználói fiók**lehetőséget. A bal oldalon válassza a **Biztonsági szabályzatok alaphelyzetbe állítása** hivatkozást, majd válassza a **Szabályzatok alaphelyzetbe állítása** lehetőséget.
+Például a Windows 8,1-ben az asztalon, a jobb oldalon a **varázsok** sáv megnyitásához. Válassza a **beállítások** > **Vezérlőpult** > **felhasználói fiókok**elemet. A bal oldalon válassza a **Biztonsági szabályzatok alaphelyzetbe állítása** hivatkozást, majd válassza a **Szabályzatok alaphelyzetbe állítása** lehetőséget.
 
 Előfordulhat, hogy más platformokon (például Android, iOS vagy Windows Phone-telefon 8,1) ki kell vonni a rendszert, és újból regisztrálni kell, hogy kevésbé szigorú házirendet alkalmazzon.
 

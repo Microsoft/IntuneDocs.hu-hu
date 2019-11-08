@@ -6,7 +6,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 09/04/2019
+ms.date: 11/07/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e8961614a85992b927e31d590c7abadca75a85a6
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 75644ac4d8ccfb8a63e077f2b6625ac96364f5d7
+ms.sourcegitcommit: 1a7f04c80548e035be82308d2618492f6542d3c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72492861"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73755193"
 ---
 # <a name="add-email-settings-to-devices-using-intune"></a>E-mail-beállítások hozzáadása az Intune-t használó eszközökhöz
 
@@ -39,8 +39,8 @@ Ez a cikk azt mutatja be, hogyan hozható létre e-mail-profil a Microsoft Intun
 
 ## <a name="create-a-device-profile"></a>Eszközprofil létrehozása
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **eszközök** > **konfigurációs profilok** lehetőséget > a **profil létrehozása**elemet.
 3. Adja meg a következő tulajdonságokat:
 
     - **Név**: adjon meg egy leíró nevet a szabályzatnak. Nevezze el a szabályzatokat, hogy később könnyebben azonosítható legyen. A megfelelő házirend neve például az **összes Windows-eszköz e-mail-beállításai**.
@@ -71,7 +71,7 @@ A beállítások megadása és a profil létrehozása után a profil megjelenik 
 
 Az e-mail-profilok felhasználói csoportok helyett eszközcsoportokhoz vannak hozzárendelve. Az e-mail-profilokat az eszközről többféle módon lehet eltávolítani, még akkor is, ha az eszközön csak egy e-mail-profil található:
 
-- **1. lehetőség**: Nyissa meg az e-mail-profilt (**Eszközkonfiguráció** > **Profilok**), majd válassza a **Hozzárendelések** lehetőséget. A **Belefoglalás** lapon jelennek meg a profilhoz rendelt csoportok. Kattintson a jobb gombbal a csoportra, majd válassza az **Eltávolítás** lehetőséget. Ne felejtse el **menteni** a módosításokat.
+- **1. lehetőség**: Nyissa meg az e-mail-profilt (**eszközök** > **konfigurációs profilok** > Válassza ki a profilt), és válassza a **hozzárendelések**lehetőséget. A **Belefoglalás** lapon jelennek meg a profilhoz rendelt csoportok. Kattintson a jobb gombbal a csoportra, majd válassza az **Eltávolítás** lehetőséget. Ne felejtse el **menteni** a módosításokat.
 
 - **2. lehetőség**: [Eszköz kivonása vagy teljes tartalmának törlése](../remote-actions/devices-wipe.md). A következő műveletekkel az összes adatot és beállítást, vagy azok egy részét is eltávolíthatja.
 
@@ -103,4 +103,4 @@ Ha egy már hozzárendelt e-mail-profilt módosít, a végfelhasználókat a ren
 
 ## <a name="next-steps"></a>További lépések
 
-A létrehozott profil egyelőre semmit sem csinál. Ezután [rendelje hozzá a profilt bizonyos eszközökhöz](../device-profile-assign.md).
+A létrehozott profil egyelőre semmit sem csinál. Következő lépésként [végezze el a profil hozzárendelését](../device-profile-assign.md).

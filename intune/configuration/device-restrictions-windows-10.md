@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 164c34f4a46ca11e2788b72dee70bdd40c25e7f3
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 288ff693e7e46b7953cffad3d0a54b8621141373
+ms.sourcegitcommit: 1a7f04c80548e035be82308d2618492f6542d3c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72493892"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73755261"
 ---
 # <a name="windows-10-and-newer-device-settings-to-allow-or-restrict-features-using-intune"></a>Windows 10 (és újabb) eszközbeállítások az Intune-t használó szolgáltatások engedélyezéséhez vagy korlátozásához
 
@@ -223,12 +223,12 @@ Ezek a beállítások az [élmény házirend CSP](https://docs.microsoft.com/win
 
 - **Műveletközpont értesítései (csak mobil)** : a **Letiltás** megakadályozza a Műveletközpont értesítéseinek megjelenítését az eszköz zárolási képernyőjén. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy kiválasszák, hogy mely alkalmazások jelenjenek meg értesítések a zárolási képernyőn.
 
-  [AboveLock/AllowActionCenterNotifications CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-abovelock#abovelock-allowactioncenternotifications)
+  [AboveLock/AllowActionCenterNotifications CSP](https://msdn.microsoft.com/ie/dn904962(v=vs.94)#AboveLock_AllowActionCenterNotifications)
 
 - **Zárolt képernyő kép URL-címe (csak asztali verzió)** : adja meg a Windows zárolási képernyőjének hátterében használt jpg, JPEG vagy PNG formátumú kép URL-címét. Például írja be a következőt: `https://contoso.com/image.png`. Ez a beállítás zárolja a rendszerképet, és ezt követően nem módosítható.
 - **Felhasználó által konfigurálható képernyő-időkorlát (csak mobil)** : **engedélyezi, hogy** a felhasználók konfigurálja a képernyő időkorlátját. **Nincs konfigurálva** (az alapértelmezett) nem adja meg a felhasználóknak ezt a lehetőséget.
 
-  [DeviceLock/AllowScreenTimeoutWhileLockedUserConfig CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-devicelock#devicelock-allowscreentimeoutwhilelockeduserconfig)
+  [DeviceLock/AllowScreenTimeoutWhileLockedUserConfig CSP](https://msdn.microsoft.com/ie/dn904962(v=vs.94)#DeviceLock_AllowScreenTimeoutWhileLockedUserConfig)
 
 - **Cortana zárolt képernyőn** (csak asztali verzióban): a **blokk** megakadályozza, hogy a felhasználók a Cortana használhassák, amikor az eszköz a zárolási képernyőn található. **Nincs konfigurálva** (alapértelmezés) engedélyezi a Cortana való interakciót.
 
@@ -240,7 +240,7 @@ Ezek a beállítások az [élmény házirend CSP](https://docs.microsoft.com/win
 
 - **Képernyő időkorlátja (csak mobil)** : állítsa be a képernyő zárolásának időtartamát (másodpercben) a képernyő kikapcsolásához. A támogatott értékek a 11-1800. Adja meg például a következőt: `300`, ha ezt az időtúllépést 5 percre szeretné beállítani.
 
-  [DeviceLock/ScreenTimeoutWhileLocked CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-devicelock#devicelock-screentimeoutwhilelocked)
+  [DeviceLock/ScreenTimeoutWhileLocked CSP](https://msdn.microsoft.com/ie/dn904962(v=vs.94)#DeviceLock_ScreenTimeoutWhileLocked)
 
 ## <a name="messaging"></a>Üzenetkezelési
 
@@ -300,7 +300,7 @@ Ez az eszköz-korlátozási profil közvetlenül kapcsolódik a [Windows kioszk 
 - **Első futtatási élmény megjelenítése lap (csak mobil)** : **Igen** (alapértelmezés) a Microsoft Edge első használat bemutatása lapján látható. A Microsoft Edge első futtatásakor a bevezető oldal **nem** jelenik meg. Ez a funkció lehetővé teszi, hogy a vállalatok, például a nulla kibocsátási konfigurációkba beléptetett szervezetek regisztrálva legyenek ezen a lapon.
 - **Első futtatási élmény URL-listájának helye** (csak Windows 10 Mobile esetén): adja meg azt az URL-címet, amely az első futtatási oldal URL-címét tartalmazó XML-fájlra mutat. Például írja be a következőt: `https://www.contoso.com/sites.xml`.
 
-- **Böngésző frissítése üresjárati idő után**: adja meg az üresjárati percek számát, amíg a böngésző frissül, 0-1440 percen belül. Az alapértelmezett érték @no__t – 0 perc. Ha `0` (nulla) értékre van állítva, a böngésző nem frissül a tétlenség után.
+- **Böngésző frissítése üresjárati idő után**: adja meg az üresjárati percek számát, amíg a böngésző frissül, 0-1440 percen belül. Az alapértelmezett érték `5` perc. Ha `0` (nulla) értékre van állítva, a böngésző nem frissül a tétlenség után.
 
   Ez a beállítás csak akkor érhető el, ha [InPrivate nyilvános böngészés (Egyalkalmazásos kioszk)](#use-microsoft-edge-kiosk-mode)fut.
 
@@ -406,7 +406,7 @@ Ezek a beállítások a [DeviceLock házirend CSP](https://docs.microsoft.com/wi
     > [!IMPORTANT]
     > Ha a jelszóra vonatkozó követelményt egy Windows asztalon módosítják, a felhasználók a következő bejelentkezéskor jelentkeznek, ahogy az az eszköz tétlenről aktív állapotba kerül. A követelménynek megfelelő jelszóval rendelkező felhasználókat a rendszer továbbra is megkéri a jelszavuk módosítására.
     
-  - **Sikertelen bejelentkezések száma az eszköz törlése előtt**: Itt adhatja meg az eszköz törlése előtt engedélyezett hitelesítési hibák számát, akár 11-re is. A beírt érvényes szám a kiadástól függ. A [DeviceLock/MAXDEVICEPASSWORDFAILEDATTEMPTS CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-devicelock#devicelock-maxdevicepasswordfailedattempts) listázza a támogatott értékeket. @no__t – 0 (nulla) letilthatja az eszköz törlési funkcióját.
+  - **Sikertelen bejelentkezések száma az eszköz törlése előtt**: Itt adhatja meg az eszköz törlése előtt engedélyezett hitelesítési hibák számát, akár 11-re is. A beírt érvényes szám a kiadástól függ. A [DeviceLock/MAXDEVICEPASSWORDFAILEDATTEMPTS CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-devicelock#devicelock-maxdevicepasswordfailedattempts) listázza a támogatott értékeket. `0` (nulla) letilthatja az eszköz törlési funkcióját.
 
     Ez a beállítás a kiadástól függően más hatással is van. A beállítás részletes ismertetését lásd: [DeviceLock/MAXDEVICEPASSWORDFAILEDATTEMPTS CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-devicelock#devicelock-maxdevicepasswordfailedattempts).
 
@@ -722,7 +722,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
   - **Nincs konfigurálva** (alapértelmezett): a frissítések keresése 8 óránként.
   - Ne legyen **pipa**: a Defender nem keres új biztonsági intelligenciával kapcsolatos frissítéseket.
-  - **1-24**: `1` ellenőrzés óránként, `2` ellenőrzés kétóránként, @no__t 3 ellenőrzés naponta, és így tovább.
+  - **1-24**: a `1` óránként ellenőrzi az ellenőrzést, `2` ellenőrzi, hogy naponta, `24`-e az ellenőrzések és így tovább.
   
   [Defender/SignatureUpdateInterval CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-signatureupdateinterval)
   
@@ -740,7 +740,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
   [Defender/DaysToRetainCleanedMalware CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-daystoretaincleanedmalware)
 
-- **CPU-használat korlátozása vizsgálat során**: korlátozza a megvizsgálható CPU mennyiségét, `0` és @no__t – 2 között.
+- **CPU-használat korlátozása vizsgálat során**: korlátozza a megvizsgálható CPU mennyiségét, `0`tól `100`ig.
 - **Archív fájlok vizsgálata**: **engedélyezze** a Defender bekapcsolását, hogy az archivált fájlokat, például zip-vagy cab-fájlokat vizsgálja. A felhasználók nem kapcsolhatják ki ezt a beállítást.
 
   Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem érinti ezt a beállítást. Ha engedélyezi a beállítást, majd visszavált a **nincs konfigurálva**értékre, akkor az Intune a beállítást a korábban konfigurált állapotban hagyja. Alapértelmezés szerint az operációs rendszer bekapcsolja ezt a vizsgálatot, és lehetővé teszi a felhasználók számára a módosítást.

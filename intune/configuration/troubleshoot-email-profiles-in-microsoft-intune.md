@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 06/17/2019
+ms.date: 11/05/2019
 ms.topic: troubleshooting
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 101f414955a3b60d22003f61678854fecc16910d
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 15c78d7e7f602b60b6e9f2cee365c9a02eb904df
+ms.sourcegitcommit: 1a7f04c80548e035be82308d2618492f6542d3c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72506579"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73755007"
 ---
 # <a name="common-issues-and-resolutions-with-email-profiles-in-microsoft-intune"></a>A Microsoft Intune e-mail-profiljaival kapcsolatos gyakori problémák és megoldások
 
@@ -32,7 +32,6 @@ Tekintse át az e-mail-profilokkal kapcsolatos gyakori problémákat, valamint a
 ## <a name="what-you-need-to-know"></a>Amit még tudnia kell
 
 - Az e-mail profilok az eszközt regisztráló felhasználó számára lettek telepítve. Az e-mail-profil konfigurálásához az Intune a felhasználó e-mail-profiljában lévő Azure Active Directory (AD) tulajdonságokat használja a regisztráció során. Az [eszközökhöz tartozó e-mail-beállítások](email-settings-configure.md) megfelelő erőforrást adhatnak hozzá.
-- Az Configuration Manager hibridről az Intune-ba való Migrálás után az e-mail-profilja Configuration Manager Hybrid marad az eszközön 7 napig. Ez a várt viselkedés. Ha előbb el szeretné távolítani az e-mail profilt, forduljon az [Intune támogatási szolgálatához](../fundamentals/get-support.md).
 - Android Enterprise esetén a felügyelt Google Play Áruház használatával telepítse a Gmail vagy a Nine for Work szolgáltatást. A [felügyelt Google Play-alkalmazások hozzáadása](../apps/apps-add-android-for-work.md) a lépéseket sorolja fel.
 - Az iOS és az Android rendszerhez készült Microsoft Outlook nem támogatja az e-mail-profilokat. Ehelyett helyezzen üzembe egy alkalmazás-konfigurációs házirendet. További információ: [Outlook konfigurációs beállítás](../apps/app-configuration-policies-outlook.md).
 - Előfordulhat, hogy az eszközökre irányuló e-mail-profilok (nem felhasználói csoportok) nem lesznek továbbítva az eszközre. Ha az eszköz elsődleges felhasználóval rendelkezik, az eszközök célzásának működnie kell. Ha az e-mail-profil felhasználói tanúsítványokat tartalmaz, ügyeljen arra, hogy a felhasználói csoportokat célozza meg.
@@ -62,22 +61,10 @@ Ellenőrizze a Samsung KNOX EAS-profil és a forrásszabályzat konfigurációj�
 
 Azok a felhasználók, akik automatikusan konfiguráltak e-mail-fiókokat, nem tudnak képeket vagy képeket küldeni az eszközeiket. Ez a forgatókönyv akkor fordulhat elő, ha az **e-mailek küldésének engedélyezése harmadik féltől származó alkalmazásokból** nem engedélyezett.
 
-### <a name="intune-solution"></a>Intune-megoldás
-
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Válassza az **eszköz konfigurációja** > **profilok**lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **eszközök** > **konfigurációs profilok**lehetőséget.
 3. Válassza ki az e-mail-profilt > **tulajdonságok** > **Beállítások**lehetőséget.
 4. Állítsa be az **e-mailek küldésének engedélyezése harmadik féltől származó alkalmazások** számára beállítást az **engedélyezéshez**.
-
-### <a name="configuration-manager-hybrid"></a>Hibrid Configuration Manager
-
-1. Nyissa meg a Configuration Manager konzolt > **eszközök és megfelelőség**.
-
-2. Bontsa ki az **áttekintés** > **megfelelőségi beállítások**@no__t – 3**Vállalati erőforrás-hozzáférés**elemet, és válassza az **e-mail profilok**lehetőséget.
-
-3. Kattintson a jobb gombbal az e-mail-profilra, és nyissa meg a **Tulajdonságok** menüt.
-
-4. A **Szinkronizációs beállítások** lapon válassza a **Harmadik felek alkalmazásaiból is engedélyezett az e-mailek küldése** lehetőséget.
 
 ## <a name="next-steps"></a>További lépések
 

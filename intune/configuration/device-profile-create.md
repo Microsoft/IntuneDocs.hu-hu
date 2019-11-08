@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 09/04/2019
+ms.date: 11/04/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 97227d5ca75b3584cb4e603a16601b2a22deb919
-ms.sourcegitcommit: 1a5b185acd27954b10b6d59409d82eb80fd71284
+ms.openlocfilehash: 51ec328a60ef2737c776bf6cf5d4b8dc1b32460c
+ms.sourcegitcommit: 1a7f04c80548e035be82308d2618492f6542d3c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72681457"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73755308"
 ---
 # <a name="create-a-device-profile-in-microsoft-intune"></a>Eszközprofil létrehozása a Microsoft Intune-ban
 
@@ -39,16 +39,16 @@ Ez a cikk:
 
 ## <a name="create-the-profile"></a>A profil létrehozása
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Válassza az **Eszközök konfigurálása** lehetőséget. A következő lehetőségek közül választhat:
+2. Válassza az **eszközök** > **konfigurációs profilok**lehetőséget. A következő lehetőségek közül választhat:
 
     - **Áttekintés**: felsorolja a profilok állapotát, és további részleteket biztosít a felhasználókhoz és eszközökhöz rendelt profilokhoz.
     - **Kezelés**: eszközbeállítások létrehozása, egyéni PowerShell- [szkriptek](../apps/intune-management-extension.md) feltöltése a profilba való futtatáshoz, valamint adattervek hozzáadása az eszközökhöz a [eSIM](esim-device-configuration.md)használatával.
     - **Figyelő**: Ellenőrizze a profil állapotát a sikerhez vagy a meghibásodáshoz, és tekintse meg a profilok naplóit is.
     - **Telepítő**: adjon hozzá egy SCEP-vagy pfx-hitelesítésszolgáltatót, vagy engedélyezze a [távközlési költségek kezelését](telecom-expenses-monitor.md) a profilban.
 
-3. Válassza a **profilok** > **profil létrehozása**lehetőséget. Adja meg a következő tulajdonságokat:
+3. Válassza a **profil létrehozása**lehetőséget. Adja meg a következő tulajdonságokat:
 
    - **Név**: adjon meg egy leíró nevet a profilhoz. Nevezze el a profilokat, hogy később könnyen azonosítható legyen. Egy jó profil neve például a **WP e-mail-profilja a teljes vállalat számára**.
    - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.

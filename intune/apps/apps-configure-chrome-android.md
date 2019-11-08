@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2f667940cc238fe243b05c7ab6f1459f63f18faa
-ms.sourcegitcommit: 2c8a41ee95a3fde150667a377770e51b621ead65
+ms.openlocfilehash: 14e9aa6e82d7b3e24350de8770f02b0a08695e1a
+ms.sourcegitcommit: b5e719fb507b1bc4774674e76c856c435e69f68c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73635480"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73801668"
 ---
 # <a name="configure-google-chrome-for-android-devices-using-intune"></a>A Google Chrome beállítása Android-eszközökhöz az Intune használatával 
 
@@ -63,7 +63,7 @@ A felügyelt Google Play-alkalmazások Intune-hoz való hozzáadásával kapcsol
 
     Alább látható az általános beállítások példája:
     - **URL-címek listájához való hozzáférés letiltása**: `["*"]`
-    - **URL-címek listájához való hozzáférés engedélyezése**: `["baidu.com", "yahoo.com", "chrome://*"]`
+    - **URL-címek listájához való hozzáférés engedélyezése**: `["baidu.com", "youtube.com", "chromium.org", "chrome://*"]`
     - **Felügyelt könyvjelzők**: `[{"toplevel_name": "My managed bookmarks folder"  },  {"url": "baidu.com",   "name": "Baidu"},  {"url": "youtube.com", "name": "Youtube"},  {"name": "Chrome links",  "children": [{"url": "chromium.org", "name": "Chromium"},    {"url": "dev.chromium.org", "name": "Chromium Developers"}]}]`
     - **Incognito mód elérhetősége**: `Incognito mode disabled`
 
@@ -71,7 +71,7 @@ A felügyelt Google Play-alkalmazások Intune-hoz való hozzáadásával kapcsol
 
     ![Általános beállítások](~/apps/media/apps-configure-chrome-android/common-settings.png)
 
-    A fenti beállítások könyvjelzőket hoznak létre, és engedélyezik a hozzáférést az összes webhelyhez, kivéve `baidu.com`, `yahoo.com` és `chrome://`.
+    A fenti beállítások könyvjelzőket hoznak létre, és letiltják az összes URL-cím elérését `baidu.com`, `yahoo.com`, `chromium.org`és `chrome://`kivételével.
 
 5. Kattintson **az OK gombra** , és adja hozzá a konfigurációs szabályzatot az Intune **-hoz.**
 6. Rendelje hozzá ezt a konfigurációs szabályzatot egy felhasználói csoporthoz. További információ: [Alkalmazások hozzárendelése csoportokhoz a Microsoft Intune-nal](~/apps/apps-deploy.md). 

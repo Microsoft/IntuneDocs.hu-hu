@@ -5,22 +5,23 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 7/31/2018
+ms.date: 11/04/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: high
 ms.technology: ''
+ms.reviewer: ericor
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 84103c6264431773ab5928f1da22c37a80cc9036
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 15af657ec63c664d91c370fa0f18ff8c4f140b47
+ms.sourcegitcommit: 1a7f04c80548e035be82308d2618492f6542d3c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72492710"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73755225"
 ---
 # <a name="configure-esim-cellular-profiles-in-intune---public-preview"></a>eSIM mobilhálózati profilok konfigurálása az Intune-ban – Nyilvános előzetes verzió
 
@@ -69,11 +70,10 @@ A következő eszközök eSIM-kompatibilitását már bejelentették, vagy megta
 
 A mobilhálózati aktiváló kódokat a mobilszolgáltató adja meg egy vesszővel tagolt (csv) fájlban. Miután megkapta a fájlt, vegye fel az Intune-ban a következő lépésekben:
 
-1. Jelentkezzen be az [Azure portálra](https://portal.azure.com/).
-2. Kattintson az **Összes szolgáltatás** lehetőségre, szűrjön az **Intune-ra**, és válassza a **Microsoft Intune** elemet.
-3. Kattintson az **Eszközkonfiguráció** > **eSIM mobilhálózati profilok** > **Hozzáadás** elemre.
-4. Válassza ki az aktiváló kódot tartalmazó CSV-fájlt.
-5. A módosítások mentéséhez válassza az **OK** gombot.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **eszközök** > **eSIM mobil profilok** > **Hozzáadás**lehetőséget.
+3. Válassza ki az aktiváló kódot tartalmazó CSV-fájlt.
+4. A módosítások mentéséhez válassza az **OK** gombot.
 
 ### <a name="csv-file-requirements"></a>A CSV-fájlokhoz kapcsolódó követelmények
 
@@ -111,8 +111,8 @@ Hozzon létre egy eszközcsoportot, amely az eSIM-kompatibilis eszközöket tart
 
 Rendelje hozzá a profilt az eSIM-eszközöket tartalmazó Azure AD-csoporthoz.
 
-1. Az [Azure Portalon](https://portal.azure.com/) kattintson az **Összes szolgáltatás** lehetőségre, szűrjön az **Intune-ra**, és válassza a **Microsoft Intune** elemet.
-2. Kattintson az **Eszközkonfiguráció** > **eSIM mobilhálózat** > **Profilok** elemre.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **eszközök** > **eSIM cellás profilok**lehetőséget.
 3. A profilok listájából válassza ki a hozzárendelendő eSIM mobilhálózati előfizetés-készletet, majd válassza a **Hozzárendelés** lehetőséget.
 4. Adja meg, hogy **belefoglalni** vagy **kizárni** szeretne egyes csoportokat, majd jelölje ki őket.
 
@@ -129,15 +129,15 @@ Az aktiváló kódok csak egyszer használhatók fel. Miután az Intune telepít
 
 A profil hozzárendelése után figyelheti az előfizetési készlet központi telepítésének állapotát.
 
-1. Jelentkezzen be az [Azure portálra](https://portal.azure.com/).
-2. Kattintson az **Összes szolgáltatás** lehetőségre, szűrjön az **Intune-ra**, és válassza a **Microsoft Intune** elemet.
-3. Kattintson az **Eszközkonfiguráció** > **eSIM mobilhálózati profilok** elemre. A megjelenő lista tartalmaz minden meglévő eSIM mobilhálózati előfizetési készletet.
-4. Válasszon ki egy előfizetést, és tekintse át a **központi telepítés állapotát**.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **eszközök** > **eSIM cellás profilok**lehetőséget. A megjelenő lista tartalmaz minden meglévő eSIM mobilhálózati előfizetési készletet.
+3. Válasszon ki egy előfizetést, és tekintse át a **központi telepítés állapotát**.
 
 ### <a name="check-the-profile-status"></a>Profil állapotának ellenőrzése
+
 Az eszközprofil létrehozása után az Intune grafikus diagramokat nyújt. Ezek a diagramok a profilok állapotát jelenik meg, például, hogy hozzá vannak-e rendelve eszközökhöz, vagy tartalmaznak-e ütközéseket.
 
-1. Válassza ki az **Eszközkonfiguráció** > **eSIM mobilhálózati profilok** > Meglévő előfizetés kiválasztása lehetőséget.
+1. Válassza ki az **eszközöket** > **eSIM mobil profilokat** > válasszon ki egy meglévő előfizetést.
 2. Az **Áttekintés** lapon a felső grafikon mutatja az adott eSIM mobilhálózati előfizetés-készlet központi telepítéséhez rendelt eszközök számát.
 
     Emellett más platformok eszközeinek számát is megjeleníti, ha ezek ugyanahhoz az eszközprofilhoz vannak rendelve.
@@ -153,7 +153,7 @@ Az eszközprofil létrehozása után az Intune grafikus diagramokat nyújt. Ezek
 
 Figyelheti és megtekintheti az Eszközállapotban megtekinthető eszközök részletes listáját.**
 
-1. Válassza ki az **Eszközkonfiguráció** > **eSIM mobilhálózati profilok** > Meglévő előfizetés kiválasztása lehetőséget.
+1. Válassza ki az **eszközöket** > **eSIM mobil profilokat** > válasszon ki egy meglévő előfizetést.
 2. Kattintson az **Eszközállapot** elemre. Az Intune megjeleníti az eszköz további adatait:
 
     - **Eszköz neve**: A megcélzott eszköz neve

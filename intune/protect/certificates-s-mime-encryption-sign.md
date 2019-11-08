@@ -2,8 +2,8 @@
 title: E-mail aláírása és titkosítása S/MIME-Microsoft Intune-Azure használatával | Microsoft Docs
 description: Megtudhatja, hogyan használhatja az e-mailek digitális tanúsítványait Microsoft Intune az e-mailek eszközökön való aláírására és titkosítására. Ezeket a tanúsítványokat nevezzük S/MIME-nek, és az eszköz konfigurációs profiljaival vannak konfigurálva. Az aláírási és titkosítási tanúsítványok PKCS vagy privát tanúsítványokat használnak, és a tanúsítványokat egy összekötő használatával importálják.
 keywords: ''
-author: MandiOhlinger
-ms.author: mandia
+author: brenduns
+ms.author: brenduns
 manager: dougeby
 ms.date: 12/10/2018
 ms.topic: conceptual
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b16953b3402bf8aa48f0a01e5e11d9f90d56f2d
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: adea17c0e013d922c0bc3ccf06ed590828bd79dd
+ms.sourcegitcommit: b5e719fb507b1bc4774674e76c856c435e69f68c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72502501"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73801498"
 ---
 # <a name="smime-overview-to-sign-and-encrypt-email-in-intune"></a>S/MIME-áttekintés az e-mailek aláírásához és titkosításához az Intune-ban
 

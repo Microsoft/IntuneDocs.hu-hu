@@ -19,12 +19,12 @@ ms.reviewer: scottduf
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 56982c6ce10f74617471307acd176a0506655398
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 6bde7fc554496b2ecc6f13c7e1b899d7ff05bfa1
+ms.sourcegitcommit: 1a7f04c80548e035be82308d2618492f6542d3c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72501225"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73754998"
 ---
 # <a name="enable-code-integrity"></a>Kód integritásának engedélyezése
 
@@ -36,7 +36,7 @@ Ha speciális eszköz felhasználóként azonosítja magát, és saját maga sze
 
 ## <a name="additional-resources-for-it-administrators"></a>További erőforrások a rendszergazdák számára
 
-Ha Ön Intune-rendszergazda, és szeretne többet megtudni az Intune Eszközállapot-megfelelőségi beállításairól, tekintse meg az [eszköz megfelelőségi szabályzatának hozzáadása Windows 10-es eszközökhöz az Intune-ban](https://docs.microsoft.com/intune/protect/compliance-policy-create-windows.md)című témakört. Az Intune-ban elvégezhető megfelelőségi műveletek részletes ismertetését az [HEALTHATTESTATION CSP](https://docs.microsoft.com/windows/client-management/mdm/healthattestation-csp#step-8-take-appropriate-policy-action-based-on-evaluation-results)-vel foglalkozó témakörben tekintheti meg.  
+Ha Ön Intune-rendszergazda, és szeretne többet megtudni az Intune Eszközállapot-megfelelőségi beállításairól, tekintse meg az [eszköz megfelelőségi szabályzatának hozzáadása Windows 10-es eszközökhöz az Intune-ban](https://docs.microsoft.com/intune/protect/compliance-policy-create-windows)című témakört. Az Intune-ban elvégezhető megfelelőségi műveletek részletes ismertetését az [HEALTHATTESTATION CSP](https://docs.microsoft.com/windows/client-management/mdm/healthattestation-csp#step-8-take-appropriate-policy-action-based-on-evaluation-results)-vel foglalkozó témakörben tekintheti meg.  
 
 ## <a name="next-steps"></a>További lépések
 

@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 09/18/2019
+ms.date: 11/04/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eb992747765ea087d5ef536c2da7c444bfa2d987
-ms.sourcegitcommit: 4f979ba7030e72d820113fe23ac8521ddb2433bd
+ms.openlocfilehash: e8747f3dfa9169a4f1f2de9dcf45db0f5cccadd1
+ms.sourcegitcommit: 1a7f04c80548e035be82308d2618492f6542d3c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72915727"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73756755"
 ---
 # <a name="use-and-manage-android-enterprise-devices-with-oemconfig-in-microsoft-intune"></a>Androidos nagyvállalati eszközök használata és kezelése a OEMConfig-ben Microsoft Intune
 
@@ -80,8 +80,8 @@ Győződjön meg arról, hogy az eszköz támogatja a OEMConfig, a megfelelő OE
 
 ## <a name="create-an-oemconfig-profile"></a>OEMConfig-profil létrehozása
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **eszközök** > **konfigurációs profilok** lehetőséget > a **profil létrehozása**elemet.
 3. Adja meg a következő tulajdonságokat:
 
     - **Név**: Adja meg az új profil leíró nevét.
@@ -108,11 +108,11 @@ Győződjön meg arról, hogy az eszköz támogatja a OEMConfig, a megfelelő OE
       - Számos beállításhoz az OEM által megadott alapértelmezett értékek tartoznak. Ha meg szeretné tekinteni, hogy van-e alapértelmezett érték, vigye a kurzort a beállítás melletti információs ikonra. Az elemleírás az adott beállítás alapértelmezett értékeit (ha alkalmazható) és az OEM által biztosított további részleteket jeleníti meg.
 
       - A **Törlés** gombra kattintva törölheti a beállításokat a profilból. Ha egy beállítás nincs a profilban, az eszköz értéke nem változik a profil alkalmazása után.
-        
+
       - Ha üres (nem konfigurált) köteget hoz létre a Configuration Designerben, a rendszer törli a JSON-szerkesztőre való áttéréskor.
 
     - **JSON-szerkesztő**: Ha ezt a beállítást választja, megnyílik egy JSON-szerkesztő, amely az alkalmazásban beágyazott teljes konfigurációs séma sablonját nyitja meg. A szerkesztőben szabja testre a sablont a különböző beállítások értékeivel. Ha a **Configuration Designer** használatával módosítja az értékeket, a JSON-szerkesztő felülírja a sablont a Configuration Designer értékével.
-    
+
       - Ha meglévő profilt frissít, a JSON-szerkesztő megjeleníti azokat a beállításokat, amelyek utoljára mentve lettek a profillal.
 
       - A OEMConfig sémái nagyok és összetettebbek lehetnek. Ha egy másik szerkesztő használatával szeretné frissíteni ezeket a beállításokat, válassza a **JSON-sablon letöltése** gombot. Az Ön által választott szerkesztővel adhatja hozzá a konfigurációs értékeket a sablonhoz. Ezután másolja és illessze be a frissített JSON-t a **JSON-szerkesztő** tulajdonságba.
