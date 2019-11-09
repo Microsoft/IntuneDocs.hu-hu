@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 19f03ff1dbb91dcd4592f9f5dd9d8fcc7c6a111e
-ms.sourcegitcommit: 25acfc88b366d2da71c37d354a0238e4f1168325
+ms.openlocfilehash: 84ef86a0b3c0ffbfffde572c9759c62645d57dc5
+ms.sourcegitcommit: 8c651a3ed1f358f19b65206a52f7808282de97c3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72813300"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73844819"
 ---
 # <a name="monitor-intune-device-compliance-policies"></a>Intune-eszközmegfelelőségi szabályzatok figyelése
 
@@ -49,8 +49,8 @@ Az irányítópult megnyitásakor átfogó képet kap az összes megfelelőségi
 - Összesített eszközmegfelelőség
 - Szabályzatok szerinti eszközmegfelelőség
 - Beállítások szerinti eszközmegfelelőség
-- Eszközvédelem állapota
 - Fenyegetésfigyelő ügynök állapota
+- Eszközvédelem állapota
 
 ![Irányítópult képe az eszközmegfelelőségi irányítópulttal és a különböző jelentésekkel](./media/compliance-policy-monitor/idc-1.png)
 
@@ -58,7 +58,7 @@ A jelentések részletes vizsgálata során láthatja az adott eszközre vonatko
 
 ### <a name="device-compliance-status-report"></a>Eszközmegfelelőségi állapotjelentés
 
-A diagram megmutatja az összes Intune-ban regisztrált eszköz megfelelőségi állapotát. Az eszközmegfelelőségi állapot adatait két külön adatbázis tárolja: az Intune és az Azure Active Directory. 
+Az **eszköz megfelelőségi állapotának** diagramja az összes Intune-ban regisztrált eszköz megfelelőségi állapotát mutatja. Az eszközmegfelelőségi állapot adatait két külön adatbázis tárolja: az Intune és az Azure Active Directory.
 
 > [!IMPORTANT]
 > Az Intune az eszköz összes megfelelőségi értékeléséhez az eszköz beadási ütemtervét követi. [További információ az eszköz beadásának ütemtervéről](../configuration/device-profile-troubleshoot.md#how-long-does-it-take-for-devices-to-get-a-policy-profile-or-app-after-they-are-assigned).
@@ -97,7 +97,7 @@ Válasszon egy állapotot az **Eszközmegfelelőségi állapot** diagramon. Vál
 
 ![A nem megfelelő állapot kiválasztása](./media/compliance-policy-monitor/select-not-compliant-status.png)
 
-Ezzel további részleteket jelenít meg az ebben az állapotban lévő eszközökről, köztük sok más mellett az operációsrendszer-platformot és az utolsó bejelentkezés időpontját. 
+Ez a művelet megnyitja az **eszköz megfelelőségi** ablakát, és megjeleníti az eszközök **állapotát az eszköz állapotsorában** . A diagram az adott állapotban lévő eszközök további részleteit jeleníti meg, beleértve az operációs rendszer platformját, az utolsó beadás dátumát és egyebeket. 
 
 ![Irányítópult képe az adott állapotú eszközöz további részleteivel](./media/compliance-policy-monitor/drill-down-details.png)
 
@@ -107,20 +107,20 @@ Ha egy adott felhasználó tulajdonában lévő összes eszközt látni szeretn�
 
 ![A diagramon ábrázolt eredmények módosítása a Szűrő és az Oszlopok lehetőség választásával](./media/compliance-policy-monitor/filter-columns.png)
 
-A **Szűrő** gombot választva megnyílik a további lehetőségeket, köztük a megfelelőségi állapotot és a feltört eszközöket tartalmazó beúszó szűrőpanel. Az eredmények frissítéséhez válassza a Szűrő panelen az **Alkalmaz** lehetőséget.
+A **szűrő** gomb kiválasztásakor a szűrő további beállításokkal nyílik meg, beleértve a **megfelelőségi** állapotot, a **feltört eszközöket és** egyebeket. Az eredmények frissítéséhez válassza a Szűrő panelen az **Alkalmaz** lehetőséget.
 
 A diagram-kimenet oszlopainak hozzáadásához és eltávolításához válassza az **Oszlopok** lehetőséget. Az **Egyszerű felhasználónév** például megmutathatja az eszközön regisztrált e-mail-címet. Az eredmények frissítéséhez válassza az Oszlopok panelen az **Alkalmaz** lehetőséget.
 
 #### <a name="device-details"></a>Eszközadatok
 
-Jelöljön ki egy eszközt a diagramon, majd válassza az **Eszközmegfelelőség** lehetőséget:
+Az **eszköz részletei** diagramon válasszon ki egy adott eszközt, majd válassza az **eszköz megfelelősége**elemet:
 
 ![Egy adott eszköz, majd az Eszközmegfelelőség kiválasztása az alkalmazott megfelelőségi szabályzatok megtekintéséhez](./media/compliance-policy-monitor/see-policies-applied-specific-device.png)
 
-Itt további információt talál az adott eszközön alkalmazott eszközmegfelelőségi szabályzat beállításairól. Az adott szabályzat kijelölésével megjelenik a szabályzat összes beállítása.
+Az Intune az eszköz megfelelőségi szabályzatának beállításaival kapcsolatos további részleteket jeleníti meg. Az adott szabályzat kijelölésével megjelenik a szabályzat összes beállítása.
 
 ### <a name="devices-without-compliance-policy"></a>Megfelelőségi szabályzat nélküli eszközök
-Az **Eszközmegfelelőség** > **Áttekintés** alatti jelentés azokat az eszközöket is megmutatja, amelyekhez nincs eszközmegfelelőségi szabályzat rendelve:
+A *megfelelőségi állapot* lapon, a házirend- *megfelelőségi* diagram mellett kiválaszthatja az **eszközök megfelelőségi szabályzat nélkül** lehetőséget, hogy megtekintse azokat az eszközöket, amelyek nem rendelkeznek hozzárendelt megfelelőségi házirendekkel:
 
 ![Megfelelőségi szabályzat nélküli eszközök megtekintése](./media/compliance-policy-monitor/devices-without-policies.png)
 
@@ -130,7 +130,7 @@ Amikor kijelöli a csempét, minden megfelelőségi szabályzat nélküli eszkö
 
 - A **Hozzárendelt megfelelőségi szabályzat nélküli eszközök megjelölése mint...** biztonsági beállítás mellett fontos azonosítani a megfelelőségi szabályzat nélküli eszközöket. Ezt követően hozzájuk rendelhet legalább egy megfelelőségi szabályzatot.
 
-  Ez a biztonsági beállítás az Intune portálon konfigurálható. Válassza az **Eszközmegfelelőség** > **Megfelelőségi szabályzat beállításai** lehetőséget. A **Hozzárendelt megfelelőségi szabályzat nélküli eszközök megjelölése mint...** értékeként **Megfelelő** vagy **Nem megfelelő** állítható be. 
+  Ez a biztonsági beállítás az Intune portálon konfigurálható. Ahhoz, hogy az **eszközök** > **megfelelőségi szabályzatok** > a **megfelelőségi házirend beállításait**. A **Hozzárendelt megfelelőségi szabályzat nélküli eszközök megjelölése mint...** értékeként **Megfelelő** vagy **Nem megfelelő** állítható be. 
 
   Minderről többet olvashat a [Biztonsági fejlesztések az Intune szolgáltatásban](https://blogs.technet.microsoft.com/intunesupport/2018/02/09/updated-upcoming-security-enhancements-in-the-intune-service/) című cikkben.
 
@@ -138,19 +138,15 @@ Amikor kijelöli a csempét, minden megfelelőségi szabályzat nélküli eszkö
 
 ### <a name="per-policy-device-compliance-report"></a>Szabályzatok szerinti eszközmegfelelőségi jelentés
 
-Az **Eszközmegfelelőség** > **Szabályzatoknak való megfelelőség** jelentésben láthatja a szabályzatokat, valamint a megfelelő és nem megfelelő eszközök számát. 
+A szabályzat- **megfelelőségi** diagram megjeleníti a házirendeket, valamint azt, hogy hány eszköz megfelelő és nem megfelelő. 
 
 ![A szabályzatok listája és az egyes szabályzatoknak megfelelő és nem megfelelő eszközök száma](./media/compliance-policy-monitor/idc-8.png)
 
-Egy adott szabályzat kijelölésével megtekinthető a **megfelelőségi állapot**, a **felhasználói e-mail-alias**, az **eszköztípus** és a **hely** minden olyan eszközhöz, amelyre ez a megfelelőségi szabályzat vonatkozik.
-
 ## <a name="setting-compliance-report"></a>Beállításoknak való megfelelőségi jelentés
 
-Az **Eszközmegfelelőség** > **Beállításoknak való megfelelőség** jelentés megfelelőségi beállításonként mutatja meg az egyes megfelelőségi állapotban lévő eszközök összesített számát. Bemutatja az összes megfelelőségi szabályzathoz tartozó eszközmegfelelőségi szabályzatbeállításokat, a platformokat, amelyekre a szabályzatbeállítások alkalmazva lettek és a nem megfelelő eszközök számát.
+A **megfelelőségi diagram beállítása** megjeleníti az összes megfelelőségi szabályzat beállításait, a szabályzatok által alkalmazott platformokat és a nem megfelelő eszközök számát.
 
 ![A különböző szabályzatok összes beállításának listája](./media/compliance-policy-monitor/idc-10.png)
-
-Egy adott beállítás kijelölésével megtekinthető a **megfelelőségi állapot**, a **felhasználói e-mail-alias**, az **eszköztípus** és a **hely** minden olyan eszközhöz, amelyre ez a beállítás vonatkozik.
 
 > [!NOTE]
 > Egy házirend hozzárendelhető egy eszközhöz, és az ugyanazon az eszközön található felhasználó. Bizonyos esetekben előfordulhat, hogy az eszköz a felhasználó bejelentkezése előtt szinkronizál, például az eszköz újraindításakor. A megfelelőség kiértékelheti ezt a felhasználót, és nem megfelelőként jelenítheti meg az eszközt. Ez a viselkedés azt is megteheti, hogy a rendszerfiók nem megfelelő felhasználóként jelenik meg.
@@ -163,14 +159,14 @@ A szabályzatok különböző állapotait platformonként ellenőrizheti. Tegyü
 
 Ezt a funkciót tartalmazza az eszköz állapotjelentése:
 
-1. Válassza az **Eszközmegfelelőség** > **Szabályzatok** elemet. Megjelenik a szabályzatok listája, amely tartalmazza a platformot, hogy hozzá van-e rendelve a szabályzat, és további részleteket.
+1. Válassza az **eszközök** > **megfelelőségi szabályzatok** > **szabályzatok**lehetőséget. Megjelenik a szabályzatok listája, amely tartalmazza a platformot, hogy hozzá van-e rendelve a szabályzat, és további részleteket.
 2. Válasszon ki egy szabályzatot > **Áttekintés**. Ebben a nézetben a szabályzat-hozzárendelés a következő állapotokat tartalmazza:
 
-    - Sikeres művelet: Szabályzat alkalmazva
-    - Hiba: A szabályzatot nem sikerült alkalmazni. Az üzenethez általában egy hibakód is tartozik, amely a hiba ismertetésére hivatkozik. 
-    - Ütközés: Két beállítást alkalmaztak ugyanazon eszközre, az Intune pedig nem tudta feloldani az ütközést. Rendszergazdai ellenőrzés szükséges.
-    - Függőben: Az eszköz nem jelentkezett be az Intune-ba, így még nem kapta meg a szabályzatot. 
-    - Nem alkalmazható: Az eszköz nem tudja megkapni a szabályzatot. A szabályzat például egy, az iOS 11.1-re vonatkozó beállítást frissít, az eszköz azonban az iOS 10-et használja. 
+    - **Sikeres**: a házirend alkalmazása megtörtént
+    - **Hiba**: a szabályzatot nem sikerült alkalmazni. Az üzenethez általában egy hibakód is tartozik, amely a hiba ismertetésére hivatkozik. 
+    - **Ütközés**: a rendszer két beállítást alkalmaz ugyanarra az eszközre, és az Intune nem tudja rendezni az ütközést. Rendszergazdai ellenőrzés szükséges.
+    - **Függőben**: az eszköz még nem jelentkezett be az Intune-nal a szabályzat fogadására. 
+    - **Nem alkalmazható**: az eszköz nem tudja fogadni a szabályzatot. A szabályzat például egy, az iOS 11.1-re vonatkozó beállítást frissít, az eszköz azonban az iOS 10-et használja. 
 
 3. A szabályzatot használó eszközökön a részletek megtekintéséhez válassza ki a állapotok egyikét. Válassza például a **Sikeres** elemet. A következő ablakban megjelennek az eszköz adatai, például az eszköz neve és az üzembe helyezési állapot.
 

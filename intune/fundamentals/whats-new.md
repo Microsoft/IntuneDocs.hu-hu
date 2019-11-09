@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 11/07/2019
+ms.date: 11/08/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d1aeea4d9fb47daeef8e44f501e1a61776b0e94
-ms.sourcegitcommit: b5e719fb507b1bc4774674e76c856c435e69f68c
+ms.openlocfilehash: 37ed7bfd204289c963b8134252d9d76f2379ecba
+ms.sourcegitcommit: 768d581cb8bcc5fdcb8ade95d402b11223ab226c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73801767"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73882500"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -52,6 +52,14 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 ### Monitor and troubleshoot
 ### Role-based access control
 -->  
+
+## <a name="week-of-november-4-2019"></a>2019. november 4. hét
+
+### <a name="device-security"></a>Eszköz biztonsága
+
+#### <a name="security-baselines-are-supported-on-microsoft-azure-government---4062552---"></a>A biztonsági alapkonfigurációkat a Microsoft Azure Government támogatja<!-- 4062552 -->
+
+A *Microsoft Azure Government* futtatott Intune-példányok mostantól [biztonsági](../protect/security-baselines.md) alapkonfigurációkat használhatnak a felhasználók és eszközök védelméhez és védelméhez.
 
 ## <a name="week-of-october-28-2019"></a>2019. október 28-i hét
 
