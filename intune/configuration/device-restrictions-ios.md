@@ -6,7 +6,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/06/2019
+ms.date: 11/12/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 488794fdce8f6ebb074648c8e399cb2aecc73b25
-ms.sourcegitcommit: 556b7ea2049014c9027f0e44affd3f301fab55fc
+ms.openlocfilehash: 391c5ac194d5dc7ddf492fe23907279cc4380d3d
+ms.sourcegitcommit: a7c35efb31c4efd816bd4aba29240013965aee92
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73709744"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "73984126"
 ---
 # <a name="ios-and-ipados-device-settings-to-allow-or-restrict-features-using-intune"></a>iOS-és iPadOS-eszközök beállításai az Intune-t használó funkciók engedélyezéséhez vagy korlátozásához
 
@@ -447,11 +447,20 @@ Alkalmazások hozzáadásához a következőket teheti:
 
 ### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése, automatikus eszközök beléptetése (felügyelt)
 
+Vegye figyelembe, hogy az adatroaminghoz szükséges (tipp vagy fontos megjegyzés): Ez a beállítás nem jelenik meg a célként megadott eszköz felügyeleti profilján. Ennek oka, hogy ez a beállítás távoli eszköz műveletként van kezelve, és minden alkalommal, amikor megváltoznak az adatroaming állapota az eszközön, az Intune szolgáltatás újra letiltja. Annak ellenére, hogy nem szerepel a felügyeleti profilban, akkor is működik, ha a felügyeleti konzolon a jelentéskészítés sikerességét mutatja. 
 - **Adatroaming**: a **Letiltás** elemre kattintva megakadályozhatja az adatbarangolást a mobilhálózat felett. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi az adatroaming használatát, ha az eszköz mobil hálózaton van.
+
+  > [!IMPORTANT]
+  > Ezt a beállítást távoli eszköz műveletként kezeli a rendszer. Így ez a beállítás nem jelenik meg az eszköz felügyeleti profiljában. Minden alkalommal, amikor az adatroaming állapota megváltozik az eszközön, az Intune szolgáltatás letiltja az **adatroamingot** . Az Intune-ban, ha a jelentéskészítési állapot sikert mutat, akkor tudja, hogy működik, még akkor is, ha a beállítás nem jelenik meg az eszköz felügyeleti profiljában.
+
 - **Globális háttérbeli beolvasás barangolás közben**: a **Letiltás** megakadályozza a globális háttér-beolvasási funkció használatát a mobil hálózaton való barangolás közben. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy az eszköz beolvassa az adatfájlokat, például az e-maileket, amikor a barangoló a mobil hálózaton van.
 - **Hangtárcsázás**: válassza a **Letiltás** lehetőséget, hogy a felhasználók ne használják a hangtárcsázás funkciót az eszközön. **Nincs konfigurálva** (alapértelmezés) engedélyezi a hangtárcsázást az eszközön.
 - **Hangroaming**: válassza a **Letiltás** lehetőséget a mobiltelefonon a hangroaming elkerüléséhez. **Nincs konfigurálva** (alapértelmezés) a hangroaming használatát teszi lehetővé, ha az eszköz mobil hálózaton van.
 - **Személyes**elérési pont: a **blokk** minden eszköz szinkronizálásával kikapcsolja a felhasználó eszközén lévő személyes hozzáférési pontokat. Előfordulhat, hogy ez a beállítás nem kompatibilis bizonyos szolgáltatókkal. **Nincs konfigurálva** (alapértelmezés) megtartja a személyes hozzáférési pont konfigurációját a felhasználó alapértelmezett beállításaként.
+
+  > [!IMPORTANT]
+  > Ezt a beállítást távoli eszköz műveletként kezeli a rendszer. Így ez a beállítás nem jelenik meg az eszköz felügyeleti profiljában. Minden alkalommal, amikor a személyes hozzáférési pont állapota megváltozik az eszközön, az Intune szolgáltatás letiltja a **személyes hozzáférési pontokat** . Az Intune-ban, ha a jelentéskészítési állapot sikert mutat, akkor tudja, hogy működik, még akkor is, ha a beállítás nem jelenik meg az eszköz felügyeleti profiljában.
+
 - **Mobil használati szabályok (csak felügyelt alkalmazások esetén)** : adja meg azokat az adattípusokat, amelyeket a felügyelt alkalmazások használhatnak a mobil hálózatokon. A választható lehetőségek:
   - **A mobil adatmennyiség használatának tiltása**: az **összes felügyelt** alkalmazáshoz tartozó mobil adatmennyiség letiltása, vagy **adott alkalmazások kiválasztása**.
   - **A mobil adatátviteli funkció használatának letiltása barangolás közben**: az **összes felügyelt alkalmazáshoz** való barangolás vagy **adott alkalmazások kiválasztása**esetén tiltsa le a mobil adatátvitelt.

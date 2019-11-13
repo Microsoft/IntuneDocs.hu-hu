@@ -1,7 +1,7 @@
 ---
 title: Az adatátviteli szabályzat kivételei alkalmazások esetén
 titleSuffix: Microsoft Intune
-description: Kivételeket hozhat létre az Intune Mobilalkalmazás-kezelés (MAM) adatátviteli szabályzataihoz.
+description: Kivételeket hozhat létre a Intune App Protection házirend (alkalmazás) adatátviteli házirendjében.
 keywords: ''
 author: Erikre
 ms.author: erikre
@@ -18,16 +18,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6453f5b5886c5691383bc81fb76598146e884e0e
-ms.sourcegitcommit: 25acfc88b366d2da71c37d354a0238e4f1168325
+ms.openlocfilehash: 18b1b8feda00f5c669b39bc365c637dcd3968078
+ms.sourcegitcommit: a7c35efb31c4efd816bd4aba29240013965aee92
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72813352"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "73984071"
 ---
-# <a name="how-to-create-exceptions-to-the-intune-mobile-application-management-mam-data-transfer-policy"></a>Kivételek létrehozása az Intune Mobilalkalmazás-kezelés (MAM) adatátviteli szabályzataihoz
+# <a name="how-to-create-exceptions-to-the-intune-app-protection-policy-app-data-transfer-policy"></a>Kivételek létrehozása a Intune App Protection szabályzat (alkalmazás) adatátviteli házirendjében
 
-A rendszergazdák kivételeket hozhatnak létre az Intune Mobilalkalmazás-kezelés (MAM) adatátviteli szabályzataihoz. A kivételekkel meghatározható, hogy mely nem felügyelt alkalmazások végezhetnek felügyelt alkalmazásokból kiinduló és oda irányuló adatátvitelt. Az informatikai szervezetnek meg kell bíznia a kivételek listáján szereplő nem felügyelt alkalmazásokban. 
+Rendszergazdaként kivételeket hozhat létre a Intune App Protection házirend (alkalmazás) adatátviteli házirendjében. A kivételekkel meghatározható, hogy mely nem felügyelt alkalmazások végezhetnek felügyelt alkalmazásokból kiinduló és oda irányuló adatátvitelt. Az informatikai szervezetnek meg kell bíznia a kivételek listáján szereplő nem felügyelt alkalmazásokban. 
 
 >[!WARNING] 
 > Az adatátviteli szabályzat kivételeinek módosítása az Ön felelőssége. A szabályzathoz való hozzáadással engedélyezi, hogy a nem felügyelt alkalmazások (azaz az Intune által nem kezelt alkalmazások) hozzáférjenek a felügyelt alkalmazások által védett adatokhoz. A védett adatokhoz való hozzáférés azonban biztonsági kockázatokkal járhat. Ezért csak olyan alkalmazások esetén hozzon létre adatátviteli kivételeket, amelyeket megbízhatónak tekint a cég, de amelyek nem támogatják az Intune alkalmazásvédelmi szabályzatokat (más néven APP-t). Emellett csakis olyan alkalmazásokhoz ajánlott kivételeket megadni, amelyek nem jelentenek adatszivárgási kockázatot.
@@ -65,6 +65,8 @@ Ha a **Webex** csomagot kivételként hozzáadja a MAM adatátviteli szabályzat
     <code>com.android.mms</code>
     
     <code>com.samsung.android.messaging</code>
+
+- Android- **tanúsítvány telepítője** – példa: Ha a natív **tanúsítvány-telepítő** alkalmazást szeretné felvenni, hogy az Android rendszerhez készült Outlook képes legyen egy e-mail-mellékletként megjelenő S/MIME-tanúsítványt telepíteni az Android-tárolóba, hozzá kell adnia az adatátviteli kivételt a következő sztringhez: <code>com.android.certinstaller</code>. További információ: [érzékenység címkézése és védelme az Outlookban az iOS és az Android rendszerhez](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/sensitive-labeling-and-protection-outlook-for-ios-android).
 
 ## <a name="next-steps"></a>További lépések
 

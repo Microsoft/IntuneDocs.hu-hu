@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3804409acadbfc3dfc1c7d6f3372dc939b7b3630
-ms.sourcegitcommit: 1a7f04c80548e035be82308d2618492f6542d3c0
+ms.openlocfilehash: 59a1b5679b81a8de90e39d6ec13bbe87dac90947
+ms.sourcegitcommit: a7c35efb31c4efd816bd4aba29240013965aee92
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73755038"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "73984172"
 ---
 # <a name="create-vpn-profiles-to-connect-to-vpn-servers-in-intune"></a>VPN-profilok létrehozása a VPN-kiszolgálókhoz való csatlakozáshoz az Intune-ban
 
@@ -50,7 +50,7 @@ A következő kapcsolattípusokkal hozhat létre VPN-profilt:
 |Check Point Capsule VPN|– Android<br/>– Androidos vállalati munkahelyi profilok<br/>– iOS<br/>– macOS<br/>– Windows 10<br/>– Windows 8,1<br/>-Windows Phone-telefon 8,1|
 |Cisco AnyConnect|– Android<br/>– Androidos vállalati munkahelyi profilok<br/>– Androidos vállalati eszköz tulajdonosa (teljes mértékben felügyelt)<br/>– iOS<br/>– macOS|
 |Cisco (IPSec)|iOS|
-|Citrix SSO|– Android<br/>– Androidos vállalati munkahelyi profilok: [alkalmazás-konfigurációs házirend](../apps/app-configuration-policies-use-android.md) használata<br/>– iOS<br/>– Windows 10|
+|Citrix SSO|– Android<br/>– Androidos vállalati munkahelyi profilok: [alkalmazás-konfigurációs házirend](../apps/app-configuration-policies-use-android.md) használata<br/>-Androidos vállalati eszköz tulajdonosa (teljes mértékben felügyelt): [alkalmazás-konfigurációs házirend](../apps/app-configuration-policies-use-android.md) használata<br/>– iOS<br/>– Windows 10|
 |Egyéni VPN|– iOS<br/>– macOS|
 |F5 Access|– Android<br/>– Androidos vállalati munkahelyi profilok<br/>– Androidos vállalati eszköz tulajdonosa (teljes mértékben felügyelt)<br/>– iOS<br/>– macOS<br/>– Windows 10<br/>– Windows 8,1<br/>-Windows Phone-telefon 8,1|
 |IKEv2| – iOS<br/>– Windows 10|

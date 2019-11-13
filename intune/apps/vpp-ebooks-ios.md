@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 022df428658a3c8791a07cbd797145bfe9a392bb
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: ae29d2ee5add475db89f6895b22299793a94ac36
+ms.sourcegitcommit: a7c35efb31c4efd816bd4aba29240013965aee92
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72496465"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "73984086"
 ---
 # <a name="how-to-manage-ios-ebooks-you-purchased-through-a-volume-purchase-program-with-microsoft-intune"></a>Mennyiségi vásárlási program keretében vásárolt iOS-es e-könyvek kezelése a Microsoft Intune-nal
 
@@ -42,7 +42,6 @@ Az [Apple Volume Purchase Program for Business (VPP)](https://www.apple.com/busi
 ## <a name="before-you-start"></a>Előkészületek
 Mielőtt hozzálát, szerezzen be VPP-tokent az Apple-től, és töltse fel az Intune-fiókjába. Egyéb rendelkezések:
 
-* Intune-fiókjához akár 256 VPP-tokent is társíthat.
 * Ha korábban VPP-tokent használt egy másik termékkel, egy újat kell létrehoznia az Intune használatához.
 * A tokenek egy évig érvényesek.
 * Alapértelmezés szerint az Intune naponta kétszer szinkronizál az Apple VPP szolgáltatással. Manuális szinkronizálás bármikor kezdeményezhető.

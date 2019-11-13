@@ -13,12 +13,12 @@ ms.localizationpriority: high
 ms.technology: ''
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ada1f6e5292684803fbea40430cdd43d61796746
-ms.sourcegitcommit: 1a5b185acd27954b10b6d59409d82eb80fd71284
+ms.openlocfilehash: 0f9750603d19d9b19697c7d2660351c4586432f6
+ms.sourcegitcommit: a7c35efb31c4efd816bd4aba29240013965aee92
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72681359"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "73984198"
 ---
 # <a name="add-ios-software-update-policies-in-intune"></a>IOS-szoftverfrissítési szabályzatok hozzáadása az Intune-ban
 
@@ -28,7 +28,7 @@ Ez a funkció az alábbiakra vonatkozik:
 
 - iOS 10,3 és újabb verziók (felügyelt)
 
-Az eszköz körülbelül 8 óránként jelentkezik be az Intune-ba. Ha van elérhető frissítés, az eszköz letölti és telepíti, kivéve a korlátozott időpontokban. Az eszköz frissítéséhez nincs szükség felhasználói beavatkozásra. A szabályzat nem akadályozza meg, hogy a felhasználó manuálisan frissítse az operációs rendszert.
+Az eszköz körülbelül 8 óránként jelentkezik be az Intune-ba. Ha van elérhető frissítés, az eszköz letölti és telepíti, kivéve a korlátozott időpontokban. Bár a frissítési folyamat általában nem tartalmaz felhasználói beavatkozást, ha az eszköz rendelkezik PIN-kóddal, a felhasználónak meg kell adnia azt a szoftverfrissítés elindításához. Ez az iOS 10,3-es és újabb verzióira vonatkozik. A szabályzat nem akadályozza meg, hogy a felhasználó manuálisan frissítse az operációs rendszert.
 
 ## <a name="configure-the-policy"></a>A szabályzat konfigurálása
 
@@ -80,7 +80,7 @@ Szerkeszthet egy meglévő szabályzatot, beleértve a korlátozott időpontok m
 1. A **szoftverfrissítések**területen válassza az **iOS-re vonatkozó szabályzatok frissítése** lehetőséget, majd válassza ki a szerkeszteni kívánt szabályzatot.
 
 2. A szabályzatok **tulajdonságainak**megtekintése közben válassza a **Szerkesztés** lehetőséget a módosítani kívánt szabályzat oldalhoz.  
-   ![Edit a rendőri ](./media/software-updates-ios/edit-policy.png)   
+   ![a rendőri](./media/software-updates-ios/edit-policy.png)   
 
 3. A módosítás bevezetése után válassza az **Áttekintés + mentés**  > **Mentés** lehetőséget a módosítások mentéséhez, és térjen vissza a házirendek *tulajdonságaihoz*.  
  
