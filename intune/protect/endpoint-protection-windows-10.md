@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 10/08/2019
+ms.date: 11/12/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40865dcca0b0109ae36f65b6691672c0035732b5
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: a6cada91cdad6c117fddd143007e2cdf40939119
+ms.sourcegitcommit: a7c35efb31c4efd816bd4aba29240013965aee92
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72502280"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "73984133"
 ---
 # <a name="windows-10-and-later-settings-to-protect-devices-using-intune"></a>Windows 10 (és újabb) beállítások az eszközök az Intune-nal való védelemmel való ellátásához  
 
@@ -315,7 +315,7 @@ Az egyéni tűzfalszabályok a következő beállításokat támogatják:
 
   Adja meg a szabály leírását.  
 
-- **Irány**@no__t – 1  
+- **Irány**   
   **Alapértelmezett**: nincs konfigurálva  
   Tűzfal CSP: [FirewallRules/*FirewallRuleName*/Direction](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#direction)  
   
@@ -354,7 +354,7 @@ Az egyéni tűzfalszabályok a következő beállításokat támogatják:
 
 Itt adhatja meg azokat a helyi és távoli címeket, amelyekre ez a szabály vonatkozik.  
 
-- **Helyi címek**@no__t – 1  
+- **Helyi címek**    
   **Alapértelmezett**: bármely címnek  
   Tűzfal CSP: [FirewallRules/*FirewallRuleName*/LocalPortRanges](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#localportranges)  
 
@@ -443,8 +443,6 @@ A Microsoft Edge-nek telepítve kell lennie az eszközön.
 ## <a name="windows-encryption"></a>Windows-titkosítás  
  
 ### <a name="windows-settings"></a>Windowsos beállítások  
-
-Ezek a titkosítási beállítások a Windows 10 összes verziójára érvényesek.  
 
 - **Eszközök titkosítása**  
   **Alapértelmezett**: nincs konfigurálva  
@@ -981,7 +979,7 @@ Letiltja a kimenő kapcsolatokat bármely alkalmazásból az IP-címekre vagy-ta
 - **XML feltöltése**  
   **Alapértelmezett**: *nincs konfigurálva*  
 
-  Ha a védelem kiaknázásával védelmet kíván biztosítani az [eszközöknek a](https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection)biztonsági rések ellen, hozzon létre egy XML-fájlt, amely tartalmazza a kívánt rendszer-és alkalmazás-kockázatcsökkentő beállításokat. Az XML-fájl létrehozása két módszerrel lehetséges:  
+  Ha a védelem kiaknázásával védelmet kíván biztosítani az [eszközöknek a](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection)biztonsági rések ellen, hozzon létre egy XML-fájlt, amely tartalmazza a kívánt rendszer-és alkalmazás-kockázatcsökkentő beállításokat. Az XML-fájl létrehozása két módszerrel lehetséges:  
 
   - *PowerShell* – a *Get-ProcessMitigation*, a *set-ProcessMitigation*és a *ConvertTo-ProcessMitigationPolicy* PowerShell-parancsmagok közül egyet vagy többet használhat. A parancsmagokkal konfigurálhatja a kockázatcsökkentési beállításokat, és exportálhatja ezek XML-reprezentációját.  
 
@@ -1292,7 +1290,7 @@ Ezekkel a beállításokkal konfigurálhatja a Windows 10-eszközök helyi bizto
   LocalPoliciesSecurityOptions CSP: [InteractiveLogon_MachineInactivityLimit](https://go.microsoft.com/fwlink/?linkid=867891)  
 
 
-  Adja meg az interaktív asztal bejelentkezési képernyőjének maximálisan ennyi perc inaktivitását, amíg a képernyővédő el nem indul. (**0**@no__t – 1**99999**)  
+  Adja meg az interaktív asztal bejelentkezési képernyőjének maximálisan ennyi perc inaktivitását, amíg a képernyővédő el nem indul. (**0** - **99999**)  
 
 - **CTRL + ALT + DEL használatának megkövetelése a bejelentkezéshez**  
   **Alapértelmezett**: nincs konfigurálva  
