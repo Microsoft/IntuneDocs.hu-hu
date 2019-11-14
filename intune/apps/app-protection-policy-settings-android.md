@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d223fb0cac7ad7435366db70bbb5bf4117216aa0
-ms.sourcegitcommit: a7c35efb31c4efd816bd4aba29240013965aee92
+ms.openlocfilehash: b346f41f5198a4aabcb05dcdd4b35a8c56977f53
+ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 11/13/2019
-ms.locfileid: "73983964"
+ms.locfileid: "74059775"
 ---
 # <a name="android-app-protection-policy-settings-in-microsoft-intune"></a>Android-eszközök alkalmazásvédelmi szabályzatainak beállításai a Microsoft Intune-ban
 Ez a cikk az alkalmazásvédelmi szabályzatok Android-eszközökre vonatkozó beállításait ismerteti. Az ismertetett szabályzatbeállításokat az Azure Portal **Beállítások** paneljén lehet [konfigurálni](app-protection-policies.md) az alkalmazásvédelmi szabályzatokhoz.
@@ -45,7 +45,7 @@ A házirend-beállítások három kategóriába sorolhatók: adatvédelmi beáll
 | **Kivágási, másolási és beillesztési műveletek korlátozása más alkalmazások között** | Itt adhatja meg, hogy mikor használhatók a kivágási, másolási és beillesztési műveletek az alkalmazásban. A következő lehetőségek közül választhat: <ul><li>**Letiltva**:  A kivágási, másolási és beillesztési műveletek letiltása az alkalmazás és más alkalmazások között.</li><li>**Szabályzattal felügyelt alkalmazások**: A kivágási, másolási és beillesztési műveletek engedélyezése az alkalmazás és más, szabályzattal felügyelt alkalmazások között.</li><li>**Szabályzattal felügyelt alkalmazások beillesztési lehetőséggel**: A kivágási és másolási műveletek engedélyezése az alkalmazás és más, szabályzattal felügyelt alkalmazások között. Adatok beillesztésének engedélyezése bármely alkalmazásból ebbe az alkalmazásba.</li><li>**Bármely alkalmazás**: Az alkalmazások közötti kivágási, másolási és beillesztési műveletek nem korlátozottak. | **Bármely alkalmazás** |
 | <ul>az**alkalmazásra vonatkozó korlát kivágása és másolása** <ui> | Itt adhatja meg, hogy hány karakterből lehet kivágni vagy másolni a szervezeti adatokból és fiókokból.  Ez lehetővé teszi a megadott számú karakter megosztását bármely alkalmazás számára, a "Kivágás, másolás és beillesztés más alkalmazásokkal" beállítástól függetlenül.<p>Alapértelmezett érték = 0<p>**Megjegyzés**: a Intune céges portál 5.0.4364.0 vagy újabb verzióra van szükség.  | **0** |
 | **Képernyőfelvétel és Google Assistant** | A **Letiltás** lehetőség kiválasztásával letilthatja az eszköz képernyőfelvételét és a **Google segéd** képességeit az alkalmazás használatakor. A **Letiltás** lehetőség kiválasztásával az alkalmazás-kapcsoló előzetes képe is elkerül, ha munkahelyi vagy iskolai fiókkal használja az alkalmazást.| **Engedélyezése** |
-
+| **Szervezeti adatértesítések** | Itt adhatja meg, hogy a szervezeti fiókok milyen mértékben legyenek megosztva az operációs rendszer értesítéseinek használatával. Ezzel a házirend-beállítással a helyi eszköz és a csatlakoztatott eszközök, például a wearables és az intelligens hangszórók is hatással lesznek. Az alkalmazások további vezérlőket biztosíthatnak az értesítési viselkedés testreszabásához, vagy dönthetnek úgy, hogy nem tisztelik az összes értéket. Választási lehetőségek: <ul><li>**Letiltás**: Ne ossza meg az értesítéseket.</li><ul><li>Ha az alkalmazás nem támogatja, az értesítések engedélyezve lesznek.</li></ul><li>**Szervezeti adatblokkok letiltása**: az értesítésekben Ne ossza meg a szervezeti adatszolgáltatásokat. Például: "új levél"; "Értekezlete"</li><UL><li>Ha az alkalmazás nem támogatja, az értesítések le lesznek tiltva.</li></ul><li>**Engedélyezés**: szervezeti adatforgalom megosztása az értesítésekben</li><li>**Bármely alkalmazás**: Az alkalmazások közötti kivágási, másolási és beillesztési műveletek nem korlátozottak.</ul> <p>**Megjegyzés**: *ehhez a beállításhoz az alkalmazás támogatása szükséges. Jelenleg az Outlook for Android 4.75.0 vagy újabb verziója támogatja ezt a beállítást, amelynek várhatóan 2019 december 16-i hetet kell felszabadítani.* | **Engedélyezés**   |
   
 ### <a name="encryption"></a>Encryption
 | Beállítás | Használat | Alapértelmezett érték |

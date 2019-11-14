@@ -5,7 +5,7 @@ description: Az Intune által támogatott biztonsági alapbeállítások a Micro
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 10/25/2019
+ms.date: 11/13/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa3cb3481de6e1fdc3790b7330ac521772e252be
-ms.sourcegitcommit: 5932da3ed8f52c7b0f0d71c1801f81c85952cf0c
+ms.openlocfilehash: b7363682960cff6688e9727d2b6869b6bf357084
+ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72923406"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74060052"
 ---
 # <a name="microsoft-defender-advanced-threat-protection-baseline-settings-for-intune"></a>A Microsoft Defender komplex veszélyforrások elleni védelem alapkonfigurációjának beállításai az Intune-ban
 
@@ -91,7 +91,7 @@ További információ: [Policy CSP-SmartScreen](https://docs.microsoft.com/windo
   **Alapértelmezett**: letiltás 
 
 - **Hitelesítő adatok ellopási típusának tiltása**  
-  Állítsa az *Engedélyezés* [elemre a származtatott tartományi hitelesítő adatoknak a hitelesítő adatokkal](https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard)való ellátásához. A Windows Defender hitelesítőadat-őr virtualizálás-alapú biztonságot használ a titkok elkülönítésére, így csak a rendszerjogosultságú rendszerszoftverek férhetnek hozzájuk. A titkos kulcsokhoz való jogosulatlan hozzáférés a hitelesítő adatok ellopására, például pass-The-hash vagy pass-The-Ticket típusú támadásokra is vezethet. A Windows Defender hitelesítőadat-őr megakadályozza ezeket a támadásokat az NTLM jelszó-kivonatok, a Kerberos-jegyek és az alkalmazások tartományi hitelesítő adatokként tárolt hitelesítő adatainak védelmével.  
+  Állítsa az *Engedélyezés* [elemre a származtatott tartományi hitelesítő adatoknak a hitelesítő adatokkal](https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard)való ellátásához. A Microsoft Defender hitelesítőadat-őr virtualizálás-alapú biztonságot használ a titkok elkülönítésére, így csak a rendszerjogosultságú rendszerszoftverek férhetnek hozzájuk. A titkos kulcsokhoz való jogosulatlan hozzáférés a hitelesítő adatok ellopására, például pass-The-hash vagy pass-The-Ticket típusú támadásokra is vezethet. A Microsoft Defender hitelesítőadat-őr megakadályozza ezeket a támadásokat az NTLM jelszó-kivonatok, a Kerberos-jegyek és az alkalmazások tartományi hitelesítő adatokként tárolt hitelesítő adatainak védelmével.  
 
   **Alapértelmezett**: Engedélyezés
 
@@ -227,7 +227,7 @@ További információ a [BitLocker csoportházirend beállítások](https://docs
   - **A letiltott hardveres eszközök azonosítói**  
     Ez a beállítás csak akkor érhető el, ha az *eszköz azonosítói alapján* a hardvereszköz telepítése *blokkolja a hardveres eszközök telepítését*. A beállítás megadásához bontsa ki a beállítást, válassza a **+ Hozzáadás**lehetőséget, majd adja meg a letiltani kívánt hardvereszköz-azonosítót.  
 
-    **Alapértelmezett**: PCI\CC_0C0A
+    **Alapértelmezett**: PCI \ CC_0C0A
 
 - **Közvetlen memória-hozzáférés letiltása**  
   [DataProtection/AllowDirectMemoryAccess](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-dataprotection#dataprotection-allowdirectmemoryaccess) – ezzel a házirend-beállítással letilthatja a közvetlen memória-hozzáférést (DMA) az eszközön lévő összes melegen csatlakoztatható PCI-porthoz, amíg a felhasználó be nem jelentkezik a Windowsba. Miután a felhasználó bejelentkezik, a Windows feljegyzi a gazdagéphez csatlakozó PCI-portokhoz csatlakozó PCI-eszközöket. Minden alkalommal, amikor a felhasználó zárolja a gépet, a rendszer letiltja a DMA-t a gyermekek nélküli gyors csatlakozású PCI-portok esetében, amíg a felhasználó újra be nem jelentkezik. A gép zárolásának feloldása után már enumerált eszközök továbbra is működni fognak, amíg le nem húzta a gépet. 
@@ -281,7 +281,7 @@ További információ: [WINDOWSADVANCEDTHREATPROTECTION CSP](https://docs.micros
   Egy meglévő EMET konfigurációs XML-fájlt is konvertálhat, és importálhatja a biztonsági rés kiaknázása konfigurációs XML-fájlba.
 
 - **Biztonsági rés kiaknázásának felülbírálásának letiltása**  
-  [WindowsDefenderSecurityCenter/DisallowExploitProtectionOverride](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-windowsdefendersecuritycenter#windowsdefendersecuritycenter-disallowexploitprotectionoverride) – az *Igen* érték megadásával megakadályozhatja, hogy a felhasználók módosítsák a Windows Defender Security Center a védelmi beállítások kiaknázása területén. Ha letiltja vagy nem konfigurálja ezt a beállítást, a helyi felhasználók módosításokat végezhetnek a védelmi beállítások kiaknázása területen.  
+  [WindowsDefenderSecurityCenter/DisallowExploitProtectionOverride](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-windowsdefendersecuritycenter#windowsdefendersecuritycenter-disallowexploitprotectionoverride) – az *Igen* érték megadásával megakadályozhatja, hogy a felhasználók módosítsák a Microsoft Defender Security Center védelmi beállítások kiaknázása területén. Ha letiltja vagy nem konfigurálja ezt a beállítást, a helyi felhasználók módosításokat végezhetnek a védelmi beállítások kiaknázása területen.  
   **Alapértelmezett**: igen  
 
 ## <a name="microsoft-defender-antivirus"></a>Microsoft Defender víruskereső  
@@ -289,17 +289,17 @@ További információ: [WINDOWSADVANCEDTHREATPROTECTION CSP](https://docs.micros
 További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender) a Windows dokumentációjában.
 
 - **A Microsoft webböngészőkben betöltött parancsfájlok vizsgálata**  
-  [Defender/AllowScriptScanning](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowscriptscanning) – állítsa *Igen* értékre a Windows Defender parancsfájl-ellenőrzési funkciójának engedélyezéséhez.  
+  [Defender/AllowScriptScanning](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowscriptscanning) – állítsa *Igen* értékre a Microsoft Defender parancsfájl-ellenőrzési funkciójának engedélyezéséhez.  
 
   **Alapértelmezett**: igen
 
 - **Bejövő üzenetek ellenőrzése**  
-  [Defender/AllowEmailScanning](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowemailscanning) – állítsa *Igen* értékre, ha engedélyezni szeretné a Windows Defender számára az e-mailek vizsgálatát.  
+  [Defender/AllowEmailScanning](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowemailscanning) – állítsa az *Igen* értékre, ha engedélyezni szeretné a Microsoft Defender számára az e-mailek vizsgálatát.  
 
   **Alapértelmezett**: igen
 
 - **Defender-minta beküldési engedélye**  
-  [Defender/SubmitSamplesConsent](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-submitsamplesconsent) – a Windows Defender felhasználói beleegyezési szintjét ellenőrzi az adatküldés során. Ha a szükséges engedély már meg lett adva, a Windows Defender elküldi azokat. Ha nem (és ha a felhasználónak soha nem kell megadnia a kérést), a felhasználói felület megadását kéri (ha a *felhőbe szállított védelem* az *Igen*értékre van állítva) az adatok elküldése előtt.  
+  [Defender/SubmitSamplesConsent](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-submitsamplesconsent) – ellenőrzi a Microsoft Defender felhasználói beleegyezési szintjét az adatküldés során. Ha a szükséges engedély már meg lett adva, a Microsoft Defender beküldi őket. Ha nem (és ha a felhasználónak soha nem kell megadnia a kérést), a felhasználói felület megadását kéri (ha a *felhőbe szállított védelem* az *Igen*értékre van állítva) az adatok elküldése előtt.  
 
   **Alapértelmezett**: biztonságos minták automatikus küldése
 
@@ -319,7 +319,7 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
     **Alapértelmezett**: igen
 
 - **Defender-letiltás hozzáférés-védelemhez**  
-  [Defender/AllowOnAccessProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowonaccessprotection) – ha az *Igen*értékre van állítva, a Windows Defender on hozzáférés-védelem engedélyezve van.  
+  [Defender/AllowOnAccessProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowonaccessprotection) – ha az *Igen*értékre van állítva, a Microsoft Defender on hozzáférés-védelem engedélyezve van.  
 
   **Alapértelmezett**: igen
 
@@ -346,30 +346,30 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
   **Alapértelmezett**: 2
 
 - **Felhőbe szállított védelem**  
-  [Defender/AllowCloudProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowcloudprotection) – ha az *Igen*értékre van állítva, a Windows Defender adatokat küld a Microsoftnak az általa talált problémákról. A Microsoft elemezni fogja ezeket az információkat, többet tudhat meg az Ön és más ügyfelek problémáit érintő problémákról, és továbbfejlesztett megoldásokat kínál.
+  [Defender/AllowCloudProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowcloudprotection) – ha az *Igen*értékre van állítva, a Microsoft Defender adatokat küld a Microsoftnak az általa talált problémákról. A Microsoft elemezni fogja ezeket az információkat, többet tudhat meg az Ön és más ügyfelek problémáit érintő problémákról, és továbbfejlesztett megoldásokat kínál.
 
   Ha ezt a házirendet az *Igen*értékre állítja, akkor a *Defender-minta küldésének beleegyező típusával* adhatja meg, hogy a felhasználók vezérelhetik-e az eszközről küldött adatokat.  
 
   **Alapértelmezett**: igen
 
 - **A Defender vélhetően nemkívánatos alkalmazásának művelete**  
-  [Defender/PUAProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-puaprotection) – a Windows Defender víruskereső képes azonosítani és letiltani a *vélhetően nemkívánatos alkalmazások* (PUAs) letöltését és telepítését a hálózatban lévő végpontokon. 
+  [Defender/PUAProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-puaprotection) – a Microsoft Defender Antivirus képes azonosítani és blokkolni a *vélhetően nemkívánatos alkalmazásokat* (PUAs) a hálózatban lévő végpontokon való letöltés és telepítés során. 
  
-  - Ha a *blokk*értékre van állítva, a Windows Defender blokkolja a PUAs, és felsorolja azokat az előzményekben más fenyegetésekkel együtt.
-  - Ha *naplózásra*van beállítva, a Windows Defender észleli a PUAs, de nem blokkolja őket. A Windows Defender alkalmazással kapcsolatos információk megtalálhatók a Windows Defender által a Eseménynaplóban létrehozott események keresésekor.  
+  - Ha a *blokk*értékre van állítva, a Microsoft Defender blokkolja a PUAs, és felsorolja azokat az előzményekben más fenyegetésekkel együtt.
+  - Ha *naplózásra*van beállítva, a Microsoft Defender észleli a PUAs, de nem blokkolja őket. A Microsoft Defender alkalmazással kapcsolatos információk a Microsoft Defender által a Eseménynaplóban létrehozott események keresése során megtalálhatók.  
   - Ha az *eszköz alapértelmezett*értékre van állítva, a Pua-védelem ki van kapcsolva.  
  
   **Alapértelmezett**: letiltás
 
 - **A Defender Cloud Extended időtúllépése**  
-  [Defender/CloudExtendedTimeout](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-cloudextendedtimeout) – Itt adhatja meg azt a maximális időtartamot, ameddig a Windows Defender víruskeresőnek le kell tiltania egy fájlt a felhőből érkező eredményre való várakozás közben. A Windows Defender-várakozások alapszintű mérete 10 másodperc. Az itt megadott további időt (legfeljebb 50 másodperc) adja hozzá a 10 másodperchez. A legtöbb esetben a vizsgálat a maximálisnál kevesebb időt vesz igénybe. Az idő növelésével azonban elegendő időt biztosíthat ahhoz, hogy a felhő alaposan megvizsgálja a gyanús fájlokat.  
+  [Defender/CloudExtendedTimeout](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-cloudextendedtimeout) – Itt adhatja meg azt a maximális időtartamot, ameddig a Microsoft Defender víruskeresőnek le kell tiltania egy fájlt a felhőből érkező eredményre való várakozás közben. A Microsoft Defender várakozási ideje 10 másodperc. Az itt megadott további időt (legfeljebb 50 másodperc) adja hozzá a 10 másodperchez. A legtöbb esetben a vizsgálat a maximálisnál kevesebb időt vesz igénybe. Az idő növelésével azonban elegendő időt biztosíthat ahhoz, hogy a felhő alaposan megvizsgálja a gyanús fájlokat.  
 
   Alapértelmezés szerint a kibontott idő értéke 0 (letiltva). Az Intune javasolja, hogy engedélyezze ezt a beállítást, és legalább 20 másodpercet határozzon meg.  
  
   **Alapértelmezett**: 0
 
 - **Archív fájlok ellenőrzése**  
-  [Defender/AllowArchiveScanning](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowarchivescanning) – állítsa *Igen* értékre, hogy a Windows Defender megvizsgálja az archív fájlokat.  
+  [Defender/AllowArchiveScanning](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowarchivescanning) – állítsa *Igen* értékre, hogy a Microsoft Defender megvizsgálja az archív fájlokat.  
 
   **Alapértelmezett**: igen
 
@@ -381,17 +381,17 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
   **Alapértelmezett**: felhasználó által definiált
 
 - **Viselkedés figyelése**  
-  [Defender/AllowBehaviorMonitoring](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowbehaviormonitoring) – állítsa *Igen* értékre a Windows Defender viselkedés-figyelési funkciójának bekapcsolásához. A Windows 10 rendszerbe ágyazott Windows Defender viselkedés-figyelési érzékelők összegyűjtik és feldolgozzák az operációs rendszer viselkedési jeleit, és elküldik az érzékelő adatait a Microsoft Defender ATP privát, elkülönített, Felhőbeli példányának.  
+  [Defender/AllowBehaviorMonitoring](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowbehaviormonitoring) – állítsa *Igen* értékre a Microsoft Defender viselkedés-figyelési funkciójának bekapcsolásához. A Windows 10 rendszerben beágyazva a Microsoft Defender viselkedés-figyelési érzékelők gyűjtik és dolgozzák fel az operációs rendszer viselkedési jeleit, és elküldik az érzékelő adatait a Microsoft Defender ATP privát, elkülönített, Felhőbeli példányának.  
 
   **Alapértelmezett**: igen
 
 - **Hálózati mappákból megnyitott fájlok vizsgálata**  
-  [Defender/AllowScanningNetworkFiles](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowscanningnetworkfiles) – állítsa *Igen* értékre, hogy a Windows Defender beolvassa a fájlokat a hálózaton. A felhasználó nem tudja eltávolítani az észlelt kártevőket a csak olvasható fájlokból.  
+  [Defender/AllowScanningNetworkFiles](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowscanningnetworkfiles) – állítsa *Igen* értékre, hogy a Microsoft Defender ellenőrizze a fájlokat a hálózaton. A felhasználó nem tudja eltávolítani az észlelt kártevőket a csak olvasható fájlokból.  
 
   **Alapértelmezett**: igen
 
 - **Defender Cloud Block-szint**  
-  [Defender/CloudBlockLevel](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-cloudblocklevel) – ezzel a házirenddel határozható meg, hogy az agresszív Windows Defender víruskereső Hogyan blokkolja és vizsgálja a gyanús fájlokat. A lehetőségek a következők:
+  [Defender/CloudBlockLevel](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-cloudblocklevel) – ennek a szabályzatnak a segítségével meghatározhatja, hogy az agresszív Microsoft Defender víruskereső blokkolja a gyanús fájlokat, és vizsgálja azokat. A lehetőségek a következők:
 
   - Agresszíven blokkolt ismeretlen fájlok az ügyfél teljesítményének optimalizálása közben (a hamis pozitívok nagyobb eséllyel)
   - Nagy plusz – agresszíven blokkolhatja az ismeretlen fájlokat, és további védelmi intézkedéseket alkalmazhat (az ügyfél teljesítményére is hatással lehet)
@@ -400,24 +400,24 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
   **Alapértelmezett**: nincs konfigurálva
 
 - **Valós idejű figyelés**  
-  [Defender/AllowRealtimeMonitoring](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowrealtimemonitoring) – állítsa *Igen* értékre a Windows Defender valós idejű figyelésének engedélyezéséhez.  
+  [Defender/AllowRealtimeMonitoring](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowrealtimemonitoring) – állítsa *Igen* értékre a Microsoft Defender valós idejű figyelésének engedélyezéséhez.  
 
   **Alapértelmezett**: igen
 
 - **CPU-használati korlát a vizsgálat során**  
-  [Defender/AvgCPULoadFactor](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-avgcpuloadfactor) – Itt adhatja meg a Windows Defender által a vizsgálat során használható maximális átlagos CPU-használatot.  
+  [Defender/AvgCPULoadFactor](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-avgcpuloadfactor) – Itt adhatja meg a Microsoft Defender által a vizsgálat során használható maximális átlagos CPU-használatot.  
 
   **Alapértelmezett**: 50
 
 - **Csatlakoztatott hálózati meghajtók vizsgálata teljes vizsgálat során**  
-  [Defender/AllowFullScanOnMappedNetworkDrives](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowfullscanonmappednetworkdrives) – állítsa *Igen* értékre, hogy a Windows Defender beolvassa a fájlokat a hálózaton. A felhasználó nem távolíthatja el az észlelt kártevő szoftvereket a csak olvasható fájlokból,
+  [Defender/AllowFullScanOnMappedNetworkDrives](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowfullscanonmappednetworkdrives) – állítsa *Igen* értékre, hogy a Microsoft Defender beolvassa a fájlokat a hálózaton. A felhasználó nem távolíthatja el az észlelt kártevő szoftvereket a csak olvasható fájlokból,
 
   Kapcsolódó beállítás ebben a listában: *Defender/AllowScanningNetworkFiles*
 
   **Alapértelmezett**: igen
 
 - **A Defender végfelhasználói hozzáférésének tiltása**  
-  [Defender/AllowUserUIAccess](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowuseruiaccess) – állítsa *Igen* értékre, hogy letiltsa a végfelhasználók számára a Windows Defender felhasználói felületének elérését az eszközön.  
+  [Defender/AllowUserUIAccess](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowuseruiaccess) – állítsa *Igen* értékre, hogy letiltsa a végfelhasználók számára a Microsoft Defender felhasználói felületének elérését az eszközön.  
 
   **Alapértelmezett**: igen
 
@@ -426,7 +426,7 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
 
   **Alapértelmezett**: 2
 
-## <a name="windows-defender-firewall"></a>Windows Defender-tűzfal
+## <a name="microsoft-defender-firewall"></a>Microsoft Defender-tűzfal
 További információ: [TŰZFAL CSP](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp) a Windows dokumentációjában.
 
 - **Biztonsági társítás üresjárati ideje törlés előtt** - *MdmStore/Global/SaIdleTime*   
@@ -560,29 +560,29 @@ További információ: [TŰZFAL CSP](https://docs.microsoft.com/windows/client-m
 ## <a name="web--network-protection"></a>Web & hálózati védelem  
 
 - **Hálózati védelem típusa**  
-  [Defender/EnableNetworkProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-enablenetworkprotection) – ez a szabályzat lehetővé teszi a hálózati védelem be-és kikapcsolását a Windows Defender Exploit Guard-ben. A hálózatvédelem a Windows Defender Exploit Guard egyik funkciója, amely megvédi az alkalmazottakat az adathalászat-csalások, a biztonsági rések és az interneten található kártékony tartalmak elérésére alkalmas bármely alkalmazás használatával. Ez magában foglalja a harmadik féltől származó böngészőknek a veszélyes helyekhez való csatlakozásának megakadályozását.  
+  [Defender/EnableNetworkProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-enablenetworkprotection) – ez a szabályzat lehetővé teszi a hálózati védelem be-és kikapcsolását a Microsoft Defender Exploit Guard-ben. A hálózatvédelem a Microsoft Defender kiaknázási őr szolgáltatása, amely megvédi az alkalmazottakat az adathalászat-csalások, a biztonsági rések és a rosszindulatú tartalmak interneten való elérésének bármely alkalmazásával. Ez magában foglalja a harmadik féltől származó böngészőknek a veszélyes helyekhez való csatlakozásának megakadályozását.  
 
-  Ha az *Engedélyezés* vagy a *naplózás mód*értékre van állítva, a felhasználók nem kapcsolhatják ki a hálózati védelmet, és a Windows Defender Security Center segítségével megtekinthetik a kapcsolódási kísérletekkel kapcsolatos információkat.  
+  Ha az *Engedélyezés* vagy a *naplózás mód*értékre van állítva, a felhasználók nem kapcsolhatják ki a hálózati védelmet, és a Microsoft Defender Security Center segítségével megtekinthetik a kapcsolódási kísérletekkel kapcsolatos információkat.  
  
   - Az *Engedélyezés* funkció letiltja a felhasználókat és az alkalmazásokat a veszélyes tartományokhoz való csatlakozáshoz.  
   - A *vizsgálati mód* nem blokkolja a felhasználókat és az alkalmazásokat a veszélyes tartományokhoz való csatlakozáshoz.  
 
-  Ha a *felhasználó által definiált*értékre van állítva, a felhasználók és az alkalmazások nem blokkolják a veszélyes tartományokhoz való kapcsolódást, és a kapcsolatok információi nem érhetők el a Windows Defender Security Centerban.  
+  Ha a *felhasználó által definiált*értékre van állítva, a felhasználók és az alkalmazások nem blokkolják a veszélyes tartományokhoz való kapcsolódást, és a kapcsolatokra vonatkozó információk nem érhetők el a Microsoft Defender Security Center.  
 
   **Alapértelmezett**: naplózási mód
 
 - **SmartScreen megkövetelése a Microsoft Edge-hez**  
-  [Böngésző/AllowSmartScreen](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowsmartscreen) – a Microsoft Edge a Windows Defender SmartScreen (bekapcsolt) használatával védi a felhasználókat a lehetséges adathalászat-csalások és kártevő szoftverek alapértelmezés szerint. Alapértelmezés szerint ez a házirend engedélyezve van (az *Igen*értékre van állítva), és ha engedélyezve van, megakadályozza, hogy a felhasználók kikapcsolják a Windows Defender SmartScreen szolgáltatást.  Ha az eszközre vonatkozó érvényes házirend nincs konfigurálva, a felhasználók kikapcsolhatják a Windows Defender SmartScreen szolgáltatását, amely nem gondoskodik az eszköz védelem nélküli állapotáról.  
+  [Browser/AllowSmartScreen](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowsmartscreen) – a Microsoft Edge a Microsoft Defender SmartScreen (bekapcsolva) használatával védi a felhasználókat a lehetséges adathalászat-csalások és kártevő szoftverek alapértelmezés szerint. Alapértelmezés szerint ez a házirend engedélyezve van (az *Igen*értékre van állítva), és ha engedélyezve van, megakadályozza, hogy a felhasználók kikapcsolják a Microsoft Defender SmartScreen szolgáltatást.  Ha az eszközre vonatkozó érvényes házirend nincs konfigurálva, a felhasználók kikapcsolhatják a Microsoft Defender SmartScreen szolgáltatását, amely nem gondoskodik az eszköz védelem nélküli állapotáról.  
 
   **Alapértelmezett**: igen
   
 - **Rosszindulatú hely elérésének letiltása**  
-  [Böngésző/PreventSmartScreenPromptOverride](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverride) – alapértelmezés szerint a Microsoft Edge lehetővé teszi, hogy a felhasználók megkerüljék (figyelmen kívül hagyják) a Windows Defender SmartScreen figyelmeztetéseit az esetlegesen kártékony helyekről, így a felhasználók továbbra is elérhetik a webhelyet. Ha ez a szabályzat engedélyezve van (az *Igen*értékre van állítva), a Microsoft Edge megakadályozza, hogy a felhasználók megkerüljék a figyelmeztetéseket, és blokkolja azokat a helyről.  
+  [Böngésző/PreventSmartScreenPromptOverride](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverride) – alapértelmezés szerint a Microsoft Edge lehetővé teszi a felhasználók számára, hogy megkerüljék (figyelmen kívül hagyják) a Microsoft Defender SmartScreen figyelmeztetéseit a potenciálisan kártékony helyekről, így a felhasználók továbbra is elérhetik a webhelyet. Ha ez a szabályzat engedélyezve van (az *Igen*értékre van állítva), a Microsoft Edge megakadályozza, hogy a felhasználók megkerüljék a figyelmeztetéseket, és blokkolja azokat a helyről.  
 
   **Alapértelmezett**: igen
 
 - **Nem ellenőrzött fájlok letöltésének tiltása**  
-  [Böngésző/PreventSmartScreenPromptOverrideForFiles](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverrideforfiles) – alapértelmezés szerint a Microsoft Edge lehetővé teszi, hogy a felhasználók megkerüljék (figyelmen kívül hagyják) a Windows Defender SmartScreen figyelmeztetéseit az esetlegesen kártékony fájlokról, így továbbra is letöltheti a nem ellenőrzött fájlokat. Ha ez a szabályzat engedélyezve van (az *Igen*értékre van állítva), a felhasználók nem hagyhatják figyelmen kívül a figyelmeztetéseket, és nem tölthetik le a nem ellenőrzött fájlokat.  
+  [Böngésző/PreventSmartScreenPromptOverrideForFiles](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverrideforfiles) – alapértelmezés szerint a Microsoft Edge lehetővé teszi, hogy a felhasználók megkerüljék (figyelmen kívül hagyják) a Microsoft Defender SmartScreen figyelmeztetéseit az esetlegesen kártékony fájlokról, így továbbra is letöltheti a nem ellenőrzött fájlokat. Ha ez a szabályzat engedélyezve van (az *Igen*értékre van állítva), a felhasználók nem hagyhatják figyelmen kívül a figyelmeztetéseket, és nem tölthetik le a nem ellenőrzött fájlokat.  
 
   **Alapértelmezett**: igen
 

@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 10/18/2019
+ms.date: 11/13/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,16 +15,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f6d7b831899a740e722560c509c4b09c31d2a42b
-ms.sourcegitcommit: 8c25aeefb7cbc6444a8596af22fccd1c5426877a
+ms.openlocfilehash: 52fb1ea5077b424a1d3cf10812d8d9b5f79e4752
+ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72593786"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74059818"
 ---
 # <a name="add-vpn-settings-on-ios-devices-in-microsoft-intune"></a>VPN-beállítások hozzáadása iOS-eszközökön Microsoft Intune
-
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
 A Microsoft Intune számos VPN-beállítást tartalmaz, amelyek telepíthetők az iOS-eszközére. Ezek a beállítások VPN-kapcsolatok létrehozására és konfigurálására használhatók a szervezet hálózatához. Ez a cikk ezeket a beállításokat ismerteti. Egyes beállítások csak egyes VPN-ügyfelekhez állnak rendelkezésre, például a Citrix, Zscaler és másokhoz.
 
@@ -73,7 +71,7 @@ Az alábbi listában látható beállításokat a kiválasztott VPN-kapcsolat t�
     > [!NOTE]
     > Ha a Cisco IPsec VPN-hez felhasználónevet és jelszót használ hitelesítési módszerként, a titkos kulcsot egy egyéni Apple Configurator-profilon keresztül kell továbbítani.
 
-  - **Származtatott hitelesítő adatok**: Ha nincs beállítva származtatott hitelesítőadat-kiállító, az Intune erre kéri.
+  - **Származtatott hitelesítő adatok**: a felhasználó intelligens kártyáján származtatott tanúsítvány használata. Ha nincs beállítva származtatott hitelesítő adat kiállítója, az Intune kérni fogja, hogy adjon hozzá egyet. További információ: [származtatott hitelesítő adatok használata Microsoft Intuneban](../protect/derived-credentials.md).
 
 - **Kizárt URL-címek** (csak Zscaler): A Zscaler VPN-hez csatlakozva a felsorolt URL-címek érhetők el a Zscaler-felhőn kívülről. 
 
@@ -102,7 +100,7 @@ Az alábbi listában látható beállításokat a kiválasztott VPN-kapcsolat t�
   - Ha a NAC engedélyezve van, a VPN-kapcsolat 24 óránként megszakad. A VPN-t azonnal újra lehet kapcsolni.
   - Az eszköz azonosítója a profil része, de nem jelenik meg az Intune-ban. Ezt az azonosítót a Microsoft sehol sem tárolja és nem osztja meg.
 
-  Ha a VPN-partnerek támogatják az eszköz AZONOSÍTÓját, a VPN-ügyfél (például a Citrix SSO) lekérheti az azonosítót. Ezután lekérdezheti az Intune-t az eszköz regisztrálásának megerősítéséhez, és ha a VPN-profil megfelelő vagy nem megfelelő.
+  Az eszköz AZONOSÍTÓját támogató VPN-partnerek esetében a VPN-ügyfél (például a Citrix SSO) lekérheti az azonosítót. Ezután lekérdezheti az Intune-t az eszköz regisztrálásának megerősítéséhez, és ha a VPN-profil megfelelő vagy nem megfelelő.
 
   - A beállítás eltávolításához hozza létre újra a profilt, és ne válassza ki az **Elfogadom** lehetőséget. Ezt követően végezze el a profil újbóli hozzárendelését.
 
@@ -158,7 +156,7 @@ Ezek a beállítások akkor érvényesek, ha a **kapcsolattípus** > **IKEv2**va
     - SHA2 – 384
     - SHA2 – 512
   - **Diffie-Hellman csoport**: válassza ki a kívánt csoportot. Az alapértelmezett érték a Group `2`.
-  - **Élettartam** (perc): válassza ki, hogy mennyi ideig marad aktív a biztonsági társítás a kulcsok elforgatása előtt. @No__t_0 és `1440` közötti egész értéket adjon meg (1440 perc 24 óra). Az alapértelmezett érték `1440`.
+  - **Élettartam** (perc): válassza ki, hogy mennyi ideig marad aktív a biztonsági társítás a kulcsok elforgatása előtt. `10` és `1440` közötti egész értéket adjon meg (1440 perc 24 óra). Az alapértelmezett érték `1440`.
 
 - **Külön paraméterek beállítása a gyermek biztonsági társításokhoz**: az iOS lehetővé teszi, hogy külön paramétereket konfiguráljon az IKE-kapcsolathoz és az alárendelt kapcsolatokhoz. 
 
@@ -177,7 +175,7 @@ Ezek a beállítások akkor érvényesek, ha a **kapcsolattípus** > **IKEv2**va
     - SHA2 – 384
     - SHA2 – 512
   - **Diffie-Hellman csoport**: válassza ki a kívánt csoportot. Az alapértelmezett érték a Group `2`.
-  - **Élettartam** (perc): válassza ki, hogy mennyi ideig marad aktív a biztonsági társítás a kulcsok elforgatása előtt. @No__t_0 és `1440` közötti egész értéket adjon meg (1440 perc 24 óra). Az alapértelmezett érték `1440`.
+  - **Élettartam** (perc): válassza ki, hogy mennyi ideig marad aktív a biztonsági társítás a kulcsok elforgatása előtt. `10` és `1440` közötti egész értéket adjon meg (1440 perc 24 óra). Az alapértelmezett érték `1440`.
 
 ## <a name="automatic-vpn-settings"></a>Automatikus VPN-beállítások
 
@@ -189,7 +187,10 @@ Ezek a beállítások akkor érvényesek, ha a **kapcsolattípus** > **IKEv2**va
 - **Igény szerinti VPN**: Ezzel a beállítással feltételes szabályokat állíthat be, melyek a VPN-kapcsolat indítását vezérlik. Létrehozhat például egy olyan feltételt, amelyben a rendszer csak akkor használja a VPN-kapcsolatot, ha az eszköz nem kapcsolódik a vállalati Wi-Fi-hálózathoz. Vagy hozzon létre egy feltételt. Ha például egy eszköz nem fér hozzá egy megadott DNS-keresési tartományhoz, akkor a VPN-kapcsolat nem indul el.
 
   - **SSID-k vagy DNS-keresési tartományok**: Megadhatja, hogy ez a feltétel vezeték nélküli hálózatok **SSID-it** használja, vagy **DNS-keresési tartományokat**. Válassza a **Hozzáadás** lehetőséget egy vagy több SSID vagy keresési tartomány konfigurálásához.
-  - **Az URL-cím sztringjének vizsgálata**: Nem kötelező. Adjon meg egy URL-címet, amelyet a szabály teszteléshez használhat. Ha az ezzel a profillal rendelkező eszköz átirányítás nélkül fér hozzá ehhez az URL-címhez, akkor a VPN-kapcsolat elindult. És az eszköz csatlakozik a célként megadott URL-címhez. A felhasználó nem látja a teszthez használt URL-célhely sztringjét. URL-sztring tesztelésére példa lehet egy naplózási webkiszolgáló, amely VPN-kapcsolat létrejötte előtt ellenőrzi az eszköz megfelelőségét. Egy másik lehetőség, hogy az URL-cím ellenőrzi a VPN webhelyhez történő kapcsolódási képességét azelőtt, hogy létrejönne a VPN-kapcsolat az eszköz és a célként megadott URL-cím között.
+  - **Az URL-cím sztringjének vizsgálata**: Nem kötelező. Adjon meg egy URL-címet, amelyet a szabály teszteléshez használhat. Ha az eszköz átirányítás nélkül fér hozzá az URL-címhez, akkor a VPN-kapcsolat elindult. És az eszköz csatlakozik a célként megadott URL-címhez. A felhasználó nem látja a teszthez használt URL-célhely sztringjét.
+
+    Egy URL-karakterlánc-mintavétel például egy olyan webes naplózási webkiszolgáló URL-címe, amely a VPN csatlakoztatása előtt ellenőrzi az eszköz megfelelőségét. Az URL-cím azt is ellenőrzi, hogy a VPN képes-e csatlakozni a helyhez, mielőtt a VPN-en keresztül csatlakoztatná az eszközt a célként megadott URL-címhez.
+.
   - **Tartományi művelet**: Válasszon a következő lehetőségek közül:
     - Szükség esetén kapcsolódás
     - Soha ne legyen kapcsolódás

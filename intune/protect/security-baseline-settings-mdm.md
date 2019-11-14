@@ -5,7 +5,7 @@ description: Tekintse át az Intune-nal felügyelt Windows 10-es eszközök Wind
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 07/25/2019
+ms.date: 11/13/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 21d70bb0322ec05ceb091844827151ce746cda6f
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 0d673650a26f3917fa32babba42e5e2054c87e59
+ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72508957"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74060028"
 ---
 # <a name="mdm-security-baseline-settings-for-intune"></a>MDM biztonsági alapkonfigurációjának beállításai az Intune-ban  
 
@@ -126,19 +126,19 @@ További információ: [Policy CSP-BitLocker](https://docs.microsoft.com/windows
 További információ: [szabályzat CSP-böngésző](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser) a Windows dokumentációjában.  
 
 - **SmartScreen megkövetelése a Microsoft Edge-hez**  
-  A Microsoft Edge a Windows Defender SmartScreen (bekapcsolva) használatával védi a felhasználókat a lehetséges adathalászat-csalások és kártevő szoftverek alapértelmezés szerint. Alapértelmezés szerint a felhasználók nem letilthatják (kikapcsolják) a Windows Defender SmartScreen szolgáltatását. A házirend engedélyezése kikapcsolja a Windows Defender SmartScreen szolgáltatást, és megakadályozza, hogy a felhasználók bekapcsolják azt. Ne konfigurálja ezt a házirendet úgy, hogy a felhasználók a Windows Defender SmartScreen be-vagy kikapcsolását választják.  
+  A Microsoft Edge a Microsoft Defender SmartScreen (bekapcsolt) használatával védi a felhasználókat a lehetséges adathalászat-csalások és kártevő szoftverek alapértelmezés szerint. Emellett a felhasználók alapértelmezés szerint nem letilthatják (kikapcsolják) a Microsoft Defender SmartScreen szolgáltatását. A házirend engedélyezése kikapcsolja a Microsoft Defender SmartScreen szolgáltatást, és megakadályozza, hogy a felhasználók bekapcsolják azt. Ezt a házirendet ne konfigurálja úgy, hogy a felhasználók a Microsoft Defender SmartScreen szolgáltatást be-vagy kikapcsolják.  
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067029)   
   
   **Alapértelmezett**: igen  
   
 - **Rosszindulatú hely elérésének letiltása**  
-  Alapértelmezés szerint a Microsoft Edge lehetővé teszi, hogy a felhasználók megkerüljék (figyelmen kívül hagyják) a Windows Defender SmartScreen figyelmeztetéseit a potenciálisan kártékony webhelyekről, így azok továbbra is a webhelyre léphetnek. Ezzel a házirenddel azonban beállíthatja a Microsoft Edge-t, hogy megakadályozza a felhasználók számára a figyelmeztetések megkerülését, és blokkolja őket a helyről.  
+  Alapértelmezés szerint a Microsoft Edge lehetővé teszi, hogy a felhasználók megkerüljék (figyelmen kívül hagyják) a Microsoft Defender SmartScreen-figyelmeztetéseit a potenciálisan kártékony helyekről, így azok továbbra is a webhelyre léphetnek. Ezzel a házirenddel azonban beállíthatja a Microsoft Edge-t, hogy megakadályozza a felhasználók számára a figyelmeztetések megkerülését, és blokkolja őket a helyről.  
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067040)   
   
   **Alapértelmezett**: igen  
   
 - **Nem ellenőrzött fájlok letöltésének tiltása**  
-  Alapértelmezés szerint a Microsoft Edge lehetővé teszi, hogy a felhasználók megkerüljék (figyelmen kívül hagyják) a Windows Defender SmartScreen figyelmeztetéseit a potenciálisan kártékony fájlokról, így továbbra is letöltheti a nem ellenőrzött fájlokat. A szabályzat engedélyezése megakadályozza, hogy a felhasználók megkerüljék a figyelmeztetéseket, és blokkolja a nem ellenőrzött fájlok letöltését.  
+  Alapértelmezés szerint a Microsoft Edge lehetővé teszi, hogy a felhasználók megkerüljék (figyelmen kívül hagyják) a Microsoft Defender SmartScreen-figyelmeztetéseit a potenciálisan kártékony fájlokról, így továbbra is letöltheti a nem ellenőrzött fájlokat. A szabályzat engedélyezése megakadályozza, hogy a felhasználók megkerüljék a figyelmeztetéseket, és blokkolja a nem ellenőrzött fájlok letöltését.  
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067023)  
   
   **Alapértelmezett**: igen  
@@ -219,14 +219,14 @@ További információ: [Policy CSP-DeviceGuard](https://docs.microsoft.com/windo
    
   **Alapértelmezett**: Engedélyezés UEFI-zárral 
 
-- **Virtualizációs alapú biztonsági @no__t engedélyezése**– 1  
+- **Virtualizációs alapú biztonsági  engedélyezése**  
   A virtualizálás-alapú biztonság (VBS) bekapcsolása a következő újraindításkor. A virtualizálás-alapú biztonság a Windows hipervizorral nyújt támogatást biztonsági szolgáltatásokhoz.  
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067066)  
   
   **Alapértelmezett**: igen  
 
 
-- **Rendszerőr elindítása**@no__t – 1  
+- **Rendszerőr elindítása**    
   **Alapértelmezett**: engedélyezve  
 
 ## <a name="device-installation"></a>Eszköz telepítése  
@@ -434,7 +434,7 @@ További információ: [Policy CSP-InternetExplorer](https://docs.microsoft.com/
 
   **Alapértelmezett**: letiltás
 
-- Az **Internet Explorer korlátozott zóna .net-keretrendszerének függő összetevői**@no__t – 1  
+- Az **Internet Explorer korlátozott zóna .net-keretrendszerének függő összetevői**    
   Ezzel a házirend-beállítással felügyelheti, hogy az Authenticode-ban nem aláírt .NET-keretrendszer-összetevők az Internet Explorerben futtathatók-e. Ezen összetevők közé tartoznak az Object tag által hivatkozott felügyelt vezérlők, valamint a hivatkozásokból hivatkozott felügyelt végrehajtható fájlok. Ha engedélyezi ezt a házirend-beállítást, az Internet Explorer aláíratlan felügyelt összetevőket fog végrehajtani. Ha a legördülő listában a kérdés gombra kattint, az Internet Explorer megkéri a felhasználót, hogy döntse el, hogy aláíratlan felügyelt összetevőket kíván-e végrehajtani. Ha letiltja ezt a házirend-beállítást, az Internet Explorer nem hajtja végre az aláíratlan felügyelt összetevőket. Ha nem konfigurálja ezt a házirend-beállítást, az Internet Explorer nem hajtja végre az aláíratlan felügyelt összetevőket.  
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067077)
 
@@ -820,7 +820,7 @@ További információ: [Policy CSP-InternetExplorer](https://docs.microsoft.com/
   
   **Alapértelmezett**: magas biztonság 
   
-- Az **Internet Explorer elavult aktív X vezérlőket blokkol**@no__t – 1  
+- Az **Internet Explorer elavult aktív X vezérlőket blokkol**   
   Ez a házirend-beállítás határozza meg, hogy az Internet Explorer blokkolja-e az elavult ActiveX-vezérlőket. Az intranetes zónában soha nem blokkolja az elavult ActiveX-vezérlőket. Ha engedélyezi ezt a házirend-beállítást, az Internet Explorer leállítja az elavult ActiveX-vezérlők blokkolását. Ha letiltja vagy nem konfigurálja ezt a házirend-beállítást, az Internet Explorer továbbra is blokkol bizonyos elavult ActiveX-vezérlőket. További információ: "elavult ActiveX-vezérlők" az Internet Explorer TechNet könyvtárában.  
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067203)  
   
@@ -850,7 +850,7 @@ További információ: [Policy CSP-InternetExplorer](https://docs.microsoft.com/
   
   **Alapértelmezett**: letiltás  
   
-- Az **Internet Explorer a korlátozott zóna Java-engedélyeit zárolta**   
+- Az **Internet Explorer zárolta a korlátozott zóna Java-engedélyeit**   
   Ezzel a házirend-beállítással kezelheti a Java-kisalkalmazások engedélyeit. Ha engedélyezi ezt a házirend-beállítást, a legördülő listából választhatja ki a kívánt beállításokat. Egyéni, az engedélyek beállításainak külön történő vezérléséhez. Az alacsony biztonság lehetővé teszi a kisalkalmazások számára az összes művelet elvégzését. A közepes biztonság lehetővé teszi, hogy a kisalkalmazások a homokozóban fussanak (egy olyan terület a memóriában, amelyen kívül a program nem tud hívásokat kezdeményezni), valamint olyan funkciókkal, mint például a kaparós terület (biztonságos és biztonságos tárterület az ügyfélszámítógépen) és a felhasználó által vezérelt fájl I/O. A magas biztonság lehetővé teszi, hogy a kisalkalmazások a homokozóban fussanak. A Java letiltásával megakadályozhatja, hogy bármely kisalkalmazás fusson. Ha letiltja ezt a házirend-beállítást, a Java-kisalkalmazások nem futtathatók. Ha nem konfigurálja ezt a házirend-beállítást, a Java-kisalkalmazások le vannak tiltva.  
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067181)  
   
@@ -880,7 +880,7 @@ További információ: [Policy CSP-InternetExplorer](https://docs.microsoft.com/
   
   **Alapértelmezett**: letiltás 
   
-- Az **Internet Explorer lezárta a tiltott zónák intelligens képernyőjét**   
+- Az **Internet Explorer zárolta a korlátozott zóna intelligens képernyőjét**   
   Ezzel a házirend-beállítással szabályozható, hogy a SmartScreen szűrő megvizsgálja-e a zónában található oldalakat a kártékony tartalomhoz. Ha engedélyezi ezt a házirend-beállítást, a SmartScreen szűrő kártékony tartalmat keres az ebben a zónában lévő lapokon. Ha letiltja ezt a házirend-beállítást, a SmartScreen szűrő nem vizsgálja meg a zónában lévő lapokat a kártékony tartalomhoz. Ha nem konfigurálja ezt a házirend-beállítást, a felhasználó megadhatja, hogy a SmartScreen szűrő megvizsgálja-e a zónában lévő lapokat a kártékony tartalomhoz. Megjegyzés: az Internet Explorer 7 böngészőben ez a házirend-beállítás határozza meg, hogy az adathalászat-szűrő megvizsgálja-e a zónában lévő lapokat a kártékony tartalomhoz  
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067092)  
   
@@ -910,7 +910,7 @@ További információ: [Policy CSP-InternetExplorer](https://docs.microsoft.com/
   
   **Alapértelmezett**: kérés  
   
-- **Az Internet Explorer korlátozott zónája lehetővé teszi, hogy a VBScript fusson**   
+- **Az Internet Explorer korlátozott zónája lehetővé teszi a VBScript futtatását**   
   Ezzel a házirend-beállítással felügyelheti, hogy a VBScript futtatható-e az Internet Explorerben megadott zónán lévő lapokon. Ha a legördülő listában az Engedélyezés lehetőséget választotta, a VBScript felhasználói beavatkozás nélkül futtatható. Ha a legördülő listában a kérdés lehetőséget választotta, a felhasználóknak meg kell választaniuk, hogy engedélyezik-e a VBScript futtatását. Ha a legördülő listában a Letiltás lehetőséget választotta, a VBScript nem fut. Ha nem konfigurálja vagy letiltja ezt a házirend-beállítást, a VBScript megakadályozza a futtatását.  
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067173)  
   
@@ -946,7 +946,7 @@ További információ: [Policy CSP-InternetExplorer](https://docs.microsoft.com/
   
   **Alapértelmezett**: letiltva  
   
-- Az **Internet Explorer folyamatai korlátozzák az aktív X install**   
+- Az **Internet Explorer folyamatai korlátozzák az aktív X telepítési**   
   Ezzel a házirend-beállítással engedélyezheti, hogy a webböngésző vezérlőt futtató alkalmazások blokkolják az ActiveX-vezérlő telepítésének automatikus megadását. Ha engedélyezi ezt a házirend-beállítást, a webböngésző vezérlő letiltja az ActiveX-vezérlő telepítésének automatikus megadását minden folyamat esetében. Ha letiltja vagy nem konfigurálja ezt a házirend-beállítást, a webböngésző vezérlő nem blokkolja az ActiveX-vezérlő telepítésének automatikus megadását az összes folyamat esetében.  
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067250)  
   
@@ -1072,7 +1072,7 @@ További információ: [Policy CSP-InternetExplorer](https://docs.microsoft.com/
   
   **Alapértelmezett**: letiltva  
   
-- Az **Internet Explorer folyamatai korlátozzák a fájl letöltését**   
+- Az **Internet Explorer folyamatai korlátozzák a fájlok letöltését**   
   Ezzel a házirend-beállítással a webböngésző vezérlőt futtató alkalmazások letilthatják a felhasználók által kezdeményezett fájlok letöltésének automatikus megadását. Ha engedélyezi ezt a házirend-beállítást, a webböngésző vezérlő letiltja azon fájlok letöltésének automatikus megadását, amelyek nem minden folyamat esetében kezdeményezték a felhasználót. Ha letiltja ezt a házirend-beállítást, a webböngésző vezérlő nem fogja blokkolni az olyan fájlok letöltésének automatikus megadását, amelyek nem minden folyamat esetében kezdeményezték a felhasználót.  
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067164)  
   
@@ -1439,7 +1439,7 @@ További információ: [Policy CSP-RemoteDesktopServices](https://docs.microsoft
   **Alapértelmezett**: engedélyezve
   
 - **Meghajtó átirányításának tiltása**  
-  Ezzel a házirend-beállítással megadható, hogy meg kell-e akadályozni az ügyfélmeghajtók hozzárendelését egy Távoli asztali szolgáltatások-munkamenetben (meghajtó-átirányítás). Alapértelmezés szerint a távoli asztali munkamenetgazda-kiszolgáló automatikusan leképezi az ügyféloldali meghajtókat a kapcsolaton keresztül. A leképezett meghajtók a Fájlkezelőben vagy a számítógépen, a következő formátumban jelennek meg: *\<driveletter >* *\<computername >* . Ezt a házirend-beállítást használhatja a viselkedés felülbírálásához. Ha engedélyezi ezt a házirend-beállítást, az ügyfélmeghajtók átirányítása Távoli asztali szolgáltatások munkamenetekben nem engedélyezett, és a vágólap-fájlmásolás átirányítása nem engedélyezett a Windows Server 2003, Windows 8 és Windows XP rendszerű számítógépeken. Ha letiltja ezt a házirend-beállítást, a rendszer mindig engedélyezi az ügyfél-meghajtó átirányítását. A vágólap-másolási átirányítás is mindig engedélyezett, ha a vágólap átirányítása engedélyezve van. Ha nem konfigurálja ezt a házirend-beállítást, az ügyfél-meghajtó átirányítása és a vágólap-fájlmásolás átirányítása nincs megadva a Csoportházirend szinten.  
+  Ezzel a házirend-beállítással megadható, hogy meg kell-e akadályozni az ügyfélmeghajtók hozzárendelését egy Távoli asztali szolgáltatások-munkamenetben (meghajtó-átirányítás). Alapértelmezés szerint a távoli asztali munkamenetgazda-kiszolgáló automatikusan leképezi az ügyféloldali meghajtókat a kapcsolaton keresztül. A csatlakoztatott meghajtók a Fájlkezelőben vagy a számítógépen *\<meghajtóbetűjel >* *\<számítógépnév >* formátumban jelennek meg. Ezt a házirend-beállítást használhatja a viselkedés felülbírálásához. Ha engedélyezi ezt a házirend-beállítást, az ügyfélmeghajtók átirányítása Távoli asztali szolgáltatások munkamenetekben nem engedélyezett, és a vágólap-fájlmásolás átirányítása nem engedélyezett a Windows Server 2003, Windows 8 és Windows XP rendszerű számítógépeken. Ha letiltja ezt a házirend-beállítást, a rendszer mindig engedélyezi az ügyfél-meghajtó átirányítását. A vágólap-másolási átirányítás is mindig engedélyezett, ha a vágólap átirányítása engedélyezve van. Ha nem konfigurálja ezt a házirend-beállítást, az ügyfél-meghajtó átirányítása és a vágólap-fájlmásolás átirányítása nincs megadva a Csoportházirend szinten.  
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067197)  
   
   **Alapértelmezett**: engedélyezve
@@ -1584,7 +1584,7 @@ További információ: [Policy CSP-WindowsConnectionManager](https://docs.micros
 
   **Alapértelmezett**: engedélyezve
   
-## <a name="windows-defender"></a>Windows Defender  
+## <a name="microsoft-defender"></a>Microsoft Defender  
 További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender) a Windows dokumentációjában.  
 
 - **Bejövő üzenetek ellenőrzése**  
@@ -1600,7 +1600,7 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
   **Alapértelmezett**: letiltás
   
 - **Defender-minta küldésének beleegyező típusa**  
-  A Windows Defender felhasználói beleegyezési szintjét ellenőrzi az adatküldés során. Ha a szükséges engedély már meg lett adva, a Windows Defender elküldi azokat. Ha nem, (és ha a felhasználónak soha nem kell megadnia a kérdést), a felhasználói felület megadását kéri (ha a Defender/AllowCloudProtection engedélyezett) az adatok elküldése előtt.  
+  A Microsoft Defender felhasználói beleegyezési szintjének ellenőrzése az adatküldéshez. Ha a szükséges engedély már meg lett adva, a Microsoft Defender beküldi őket. Ha nem, (és ha a felhasználónak soha nem kell megadnia a kérdést), a felhasználói felület megadását kéri (ha a Defender/AllowCloudProtection engedélyezett) az adatok elküldése előtt.  
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067131)  
   
   **Alapértelmezett**: biztonságos minták automatikus küldése 
@@ -1616,7 +1616,7 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
   **Alapértelmezett**: letiltás
   
 - **Hitelesítő adatok ellopási típusának tiltása**  
-  A Windows Defender hitelesítőadat-őr virtualizálás-alapú biztonságot használ a titkok elkülönítésére, így csak a rendszerjogosultságú rendszerszoftverek férhetnek hozzájuk. A titkos kulcsokhoz való jogosulatlan hozzáférés a hitelesítő adatok ellopására, például pass-The-hash vagy pass-The-Ticket típusú támadásokra is vezethet. A Windows Defender hitelesítőadat-őr megakadályozza ezeket a támadásokat az NTLM jelszó-kivonatok, a Kerberos-jegyek és az alkalmazások tartományi hitelesítő adatokként tárolt hitelesítő adatainak védelmével.  
+  A Microsoft Defender hitelesítőadat-őr virtualizálás-alapú biztonságot használ a titkok elkülönítésére, így csak a rendszerjogosultságú rendszerszoftverek férhetnek hozzájuk. A titkos kulcsokhoz való jogosulatlan hozzáférés a hitelesítő adatok ellopására, például pass-The-hash vagy pass-The-Ticket típusú támadásokra is vezethet. A Microsoft Defender hitelesítőadat-őr megakadályozza ezeket a támadásokat az NTLM jelszó-kivonatok, a Kerberos-jegyek és az alkalmazások tartományi hitelesítő adatokként tárolt hitelesítő adatainak védelmével.  
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067065)  
   
   **Alapértelmezett**: Engedélyezés
@@ -1632,7 +1632,7 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
   **Alapértelmezett**: Engedélyezés
 
 - **Hálózati védelem típusa**  
-  Ez a szabályzat lehetővé teszi a hálózati védelem (Letiltás/naplózás) bekapcsolását a Windows Defender Exploit Guardben. A hálózatvédelem a Windows Defender Exploit Guard egyik funkciója, amely megvédi az alkalmazottakat az adathalászat-csalások, a biztonsági rések és az interneten található kártékony tartalmak elérésére alkalmas bármely alkalmazás használatával. Ez magában foglalja a harmadik féltől származó böngészőknek a veszélyes helyekhez való csatlakozásának megakadályozását. Az érték típusa egész szám. Ha engedélyezi ezt a beállítást, a hálózati védelem be van kapcsolva, és az alkalmazottak nem kapcsolhatják ki. A viselkedését a következő beállítások szabályozzák: letiltás és naplózás. Ha engedélyezi ezt a házirendet a "letiltás" beállítással, a felhasználók és az alkalmazások le vannak tiltva a veszélyes tartományokhoz való csatlakozáskor. Ezt a tevékenységet a Windows Defender Security Centerban tekintheti meg. Ha engedélyezi ezt a házirendet a "naplózás" beállítással, a felhasználók/alkalmazások nem lesznek letiltva a veszélyes tartományokhoz való csatlakozáskor. Ezt a tevékenységet azonban továbbra is láthatja a Windows Defender Security Centerban. Ha letiltja ezt a házirendet, a felhasználók/alkalmazások nem lesznek letiltva a veszélyes tartományokhoz való csatlakozáskor. A Windows Defender Security Centerban semmilyen hálózati tevékenység nem jelenik meg. Ha nem konfigurálja ezt a házirendet, a hálózati blokkolás alapértelmezés szerint le van tiltva.  
+  Ez a szabályzat lehetővé teszi a hálózati védelem (Letiltás/naplózás) bekapcsolását a Microsoft Defender Exploit Guard-ben. A hálózatvédelem a Microsoft Defender kiaknázási őr szolgáltatása, amely megvédi az alkalmazottakat az adathalászat-csalások, a biztonsági rések és a rosszindulatú tartalmak interneten való elérésének bármely alkalmazásával. Ez magában foglalja a harmadik féltől származó böngészőknek a veszélyes helyekhez való csatlakozásának megakadályozását. Az érték típusa egész szám. Ha engedélyezi ezt a beállítást, a hálózati védelem be van kapcsolva, és az alkalmazottak nem kapcsolhatják ki. A viselkedését a következő beállítások szabályozzák: letiltás és naplózás. Ha engedélyezi ezt a házirendet a "letiltás" beállítással, a felhasználók és az alkalmazások le vannak tiltva a veszélyes tartományokhoz való csatlakozáskor. Ezt a tevékenységet a Microsoft Defender Security Centerban tekintheti meg. Ha engedélyezi ezt a házirendet a "naplózás" beállítással, a felhasználók/alkalmazások nem lesznek letiltva a veszélyes tartományokhoz való csatlakozáskor. Ezt a tevékenységet azonban továbbra is megtekintheti a Microsoft Defender Security Centerban. Ha letiltja ezt a házirendet, a felhasználók/alkalmazások nem lesznek letiltva a veszélyes tartományokhoz való csatlakozáskor. A Microsoft Defender Security Centerban semmilyen hálózati tevékenység nem jelenik meg. Ha nem konfigurálja ezt a házirendet, a hálózati blokkolás alapértelmezés szerint le van tiltva.  
   [További információ](/windows/security/threat-protection/microsoft-defender-atp/enable-network-protection)  
   
   **Alapértelmezett**: Engedélyezés
@@ -1643,13 +1643,13 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
   **Alapértelmezett**: mindennapi
   
 - **Felhőbe szállított védelem**  
-  A számítógép legjobb védelméhez a Windows Defender adatokat küld a Microsoftnak a talált problémákról. A Microsoft elemezni fogja ezeket az információkat, többet tudhat meg az Ön és más ügyfelek problémáit érintő problémákról, és továbbfejlesztett megoldásokat kínál.  
+  A számítógép legjobb védelméhez a Microsoft Defender adatokat küld a Microsoftnak a talált problémákról. A Microsoft elemezni fogja ezeket az információkat, többet tudhat meg az Ön és más ügyfelek problémáit érintő problémákról, és továbbfejlesztett megoldásokat kínál.  
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067039)
   
   **Alapértelmezett**: igen  
 
 - **A Defender vélhetően nemkívánatos alkalmazásának művelete**  
-  A Windows Defender víruskereső vélhetően nemkívánatos alkalmazás-(PUA-) védelmi funkciója képes azonosítani és letiltani a PUAs a hálózaton lévő végpontokon való letöltés és telepítés során. Ezek az alkalmazások nem tekintendők vírusok, kártevők vagy más típusú fenyegetéseknek, de olyan végpontokon is végezhetnek műveleteket, amelyek hátrányosan befolyásolják a teljesítményüket vagy a használatukat. A PUA olyan alkalmazásokra is hivatkozhat, amelyeknek a megítélése szerint rossz hírnevük van. A tipikus PUA-viselkedés többek között az alábbiakat tartalmazza: különböző típusú szoftver-árukapcsolás ad-befecskendezés a böngészők és a beállításjegyzék-optimalizálók számára, amelyek a hibákat észlelik, a hibák kijavításához, de a végponton maradva nem módosítanak vagy optimalizálást (más néven " Rogue Antivirus "programok". Ezek az alkalmazások növelhetik a kártevő szoftverrel fertőzött hálózat kockázatát, így a rosszindulatú fertőzések nehezebben azonosíthatók, és az informatikai erőforrások az alkalmazások tisztításával is felhasználhatók.  
+  A Microsoft Defender Antivirus vélhetően nemkívánatos alkalmazás-(PUA-) védelmi funkciója képes azonosítani és letiltani a PUAs a hálózaton lévő végpontokon való letöltés és telepítés során. Ezek az alkalmazások nem tekintendők vírusok, kártevők vagy más típusú fenyegetéseknek, de olyan végpontokon is végezhetnek műveleteket, amelyek hátrányosan befolyásolják a teljesítményüket vagy a használatukat. A PUA olyan alkalmazásokra is hivatkozhat, amelyeknek a megítélése szerint rossz hírnevük van. A tipikus PUA-viselkedés többek között az alábbiakat tartalmazza: különböző típusú szoftver-árukapcsolás ad-befecskendezés a böngészők és a beállításjegyzék-optimalizálók számára, amelyek a hibákat észlelik, a hibák kijavításához, de a végponton maradva nem módosítanak vagy optimalizálást (más néven " Rogue Antivirus "programok". Ezek az alkalmazások növelhetik a kártevő szoftverrel fertőzött hálózat kockázatát, így a rosszindulatú fertőzések nehezebben azonosíthatók, és az informatikai erőforrások az alkalmazások tisztításával is felhasználhatók.  
   [További információ](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-puaprotection)    
   
   **Alapértelmezett**: letiltás  
@@ -1661,7 +1661,7 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
   **Alapértelmezett**: letiltás
   
 - **Cserélhető meghajtók vizsgálata teljes vizsgálat során**  
-  Lehetővé teszi a Windows Defender számára a kártékony és nemkívánatos szoftverek keresését a cserélhető meghajtókon (például flash meghajtókon) a teljes vizsgálat során. A Windows Defender víruskereső a végrehajtás előtt megkeresi az USB-eszközökön található összes fájlt.  
+  Lehetővé teszi a Microsoft Defender számára, hogy a teljes vizsgálat során kártékony és nemkívánatos szoftvereket keressen a cserélhető meghajtókon (például flash-meghajtókon). A Microsoft Defender víruskereső a végrehajtás előtt megkeresi az USB-eszközökön lévő összes fájlt.  
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067036)  
   
   **Alapértelmezett**: igen  
@@ -1672,7 +1672,7 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
   **Alapértelmezett**: igen
   
 - **Viselkedés figyelése**  
-  Engedélyezi vagy engedélyezi a Windows Defender viselkedésének figyelését. A Windows 10 rendszerbe ágyazott érzékelők begyűjtik és feldolgozzák az operációs rendszer viselkedési jeleit, és elküldik az érzékelő adatait a Microsoft Defender ATP privát, elkülönített, Felhőbeli példányának.  
+  Engedélyezi vagy engedélyezi a Microsoft Defender viselkedésének figyelését. A Windows 10 rendszerbe ágyazott érzékelők begyűjtik és feldolgozzák az operációs rendszer viselkedési jeleit, és elküldik az érzékelő adatait a Microsoft Defender ATP privát, elkülönített, Felhőbeli példányának.  
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067111)  
   
   **Alapértelmezett**: igen
@@ -1720,7 +1720,7 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
   
   **Alapértelmezett**: letiltás
 
-## <a name="windows-defender-firewall"></a>Windows Defender-tűzfal  
+## <a name="microsoft-defender-firewall"></a>Microsoft Defender-tűzfal  
 További információ: [2.2.2 FW_PROFILE_TYPOE]( https://docs.microsoft.com/openspecs/windows_protocols/ms-fasp/7704e238-174d-4a5e-b809-5f3787dd8acc) a Windows-protokollok dokumentációjában.  
 
 - **Tűzfal-profil tartománya**  
@@ -1784,7 +1784,7 @@ További információ: [2.2.2 FW_PROFILE_TYPOE]( https://docs.microsoft.com/open
 
   **Alapértelmezett**: igen
 
-- **Vállalati Windows Hello**-@no__t konfigurálása – 1  
+- **Vállalati Windows Hello** -  konfigurálása  
     A vállalati Windows Hello egy alternatív módszer a Windowsba való bejelentkezéshez jelszavak, intelligens kártyák és virtuális intelligens kártyák helyett.  
 
   - Ha az *Igen*értékre van állítva, akkor engedélyezi ezt a házirendet, és az eszköz kiépíti a vállalati Windows Hello-t.  
@@ -1885,11 +1885,11 @@ A következő beállítások egyike:
   - **E-Mail Meghívási módszere**
 
 
-*[Új]* [**WIndows Defender**](#windows-defender):
+*[Új]* [**Microsoft Defender**](#microsoft-defender):
 - **Adobe Reader indítása alárendelt folyamatban**  
 - **Office kommunikációs alkalmazások indítása alárendelt folyamatban** 
 
-*[Új]* [ **Windows Defender-tűzfal**](#windows-defender-firewall)
+*[Új]* [ **Microsoft Defender-tűzfal**](#microsoft-defender-firewall)
 - **Tűzfal-profil tartománya**  
   - **Bejövő kapcsolatok blokkolva**  
   - **Kimenő kapcsolatok szükségesek**  
@@ -1997,17 +1997,17 @@ For more information, see [Policy CSP - Bitlocker](https://docs.microsoft.com/wi
 For more information, see [Policy CSP - Browser](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser) in the Windows documentation.  
 
 - **Require SmartScreen for Microsoft Edge**  
-  Microsoft Edge uses Windows Defender SmartScreen (turned on) to protect users from potential phishing scams and malicious software by default. Also, by default, users can't disable (turn off) Windows Defender SmartScreen. Enabling this policy turns off Windows Defender SmartScreen and prevent users from turning it on. Don’t configure this policy to let users choose to turn Windows defender SmartScreen on or off.  
+  Microsoft Edge uses Microsoft Defender SmartScreen (turned on) to protect users from potential phishing scams and malicious software by default. Also, by default, users can't disable (turn off) Microsoft Defender SmartScreen. Enabling this policy turns off Microsoft Defender SmartScreen and prevent users from turning it on. Don’t configure this policy to let users choose to turn Microsoft defender SmartScreen on or off.  
   
   **Default**: Yes  
   
 - **Block malicious site access**  
-  By default, Microsoft Edge allows users to bypass (ignore) the Windows Defender SmartScreen warnings about potentially malicious sites, allowing them to continue to the site. With this policy though, you can configure Microsoft Edge to prevent users from bypassing the warnings, blocking them from continuing to the site.
+  By default, Microsoft Edge allows users to bypass (ignore) the Microsoft Defender SmartScreen warnings about potentially malicious sites, allowing them to continue to the site. With this policy though, you can configure Microsoft Edge to prevent users from bypassing the warnings, blocking them from continuing to the site.
   
   **Default**: Yes  
   
 - **Block unverified file download**
-  By default, Microsoft Edge allows users to bypass (ignore) the Windows Defender SmartScreen warnings about potentially malicious files, allowing them to continue downloading the unverified file(s). Enabling this policy prevents users from bypassing the warnings, blocking them from downloading of the unverified file(s).
+  By default, Microsoft Edge allows users to bypass (ignore) the Microsoft Defender SmartScreen warnings about potentially malicious files, allowing them to continue downloading the unverified file(s). Enabling this policy prevents users from bypassing the warnings, blocking them from downloading of the unverified file(s).
   
   **Default**: Yes  
   
@@ -3159,7 +3159,7 @@ For more information, see [Policy CSP - WindowsConnectionManager](https://docs.m
 
   **Default**: Enabled
   
-## Windows Defender  
+## Microsoft Defender  
 For more information, see [Policy CSP - Defender](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender) in the Windows documentation.  
 
 - **Scan incoming mail messages**  
@@ -3173,7 +3173,7 @@ For more information, see [Policy CSP - Defender](https://docs.microsoft.com/win
   **Default**: Block
   
 - **Defender sample submission consent type**  
-  Checks for the user consent level in Windows Defender to send data. If the required consent has already been granted, Windows Defender submits them. If not, (and if the user has specified never to ask), the UI is launched to ask for user consent (when Defender/AllowCloudProtection is allowed) before sending data.
+  Checks for the user consent level in WinMMicrosofticrosoftdows Defender to send data. If the required consent has already been granted, Microsoft Defender submits them. If not, (and if the user has specified never to ask), the UI is launched to ask for user consent (when Defender/AllowCloudProtection is allowed) before sending data.
   
   **Default**: Send safe samples automatically 
   
@@ -3188,7 +3188,7 @@ For more information, see [Policy CSP - Defender](https://docs.microsoft.com/win
   **Default**: Block
   
 - **Prevent credential stealing type**  
-  Windows Defender Credential Guard uses virtualization-based security to isolate secrets so that only privileged system software can access them. Unauthorized access to these secrets can lead to credential theft attacks, such as Pass-the-Hash or Pass-The-Ticket. Windows Defender Credential Guard prevents these attacks by protecting NTLM password hashes, Kerberos Ticket Granting Tickets, and credentials stored by applications as domain credentials.
+  Microsoft Defender Credential Guard uses virtualization-based security to isolate secrets so that only privileged system software can access them. Unauthorized access to these secrets can lead to credential theft attacks, such as Pass-the-Hash or Pass-The-Ticket. Microsoft Defender Credential Guard prevents these attacks by protecting NTLM password hashes, Kerberos Ticket Granting Tickets, and credentials stored by applications as domain credentials.
   
   **Default**: Enable
 
@@ -3198,7 +3198,7 @@ For more information, see [Policy CSP - Defender](https://docs.microsoft.com/win
   **Default**: Block
   
 - **Network protection type**  
-  This policy allows you to turn on network protection (block/audit) or off in Windows Defender Exploit Guard. Network protection is a feature of Windows Defender Exploit Guard that protects employees using any app from accessing phishing scams, exploit-hosting sites, and malicious content on the Internet. This includes preventing third-party browsers from connecting to dangerous sites. Value type is integer. If you enable this setting, network protection is turned on and employees can't turn it off. Its behavior can be controlled by the following options: Block and Audit. If you enable this policy with the "Block" option, users and apps are blocked from connecting to dangerous domains. You can see this activity in Windows Defender Security Center. If you enable this policy with the "Audit" option, users/apps won't be blocked from connecting to dangerous domains. However, you'll still see this activity in Windows Defender Security Center. If you disable this policy, users/apps won't be blocked from connecting to dangerous domains. You'll not see any network activity in Windows Defender Security Center. If you don't configure this policy, network blocking is disabled by default.
+  This policy allows you to turn on network protection (block/audit) or off in Microsoft Defender Exploit Guard. Network protection is a feature of Microsoft Defender Exploit Guard that protects employees using any app from accessing phishing scams, exploit-hosting sites, and malicious content on the Internet. This includes preventing third-party browsers from connecting to dangerous sites. Value type is integer. If you enable this setting, network protection is turned on and employees can't turn it off. Its behavior can be controlled by the following options: Block and Audit. If you enable this policy with the "Block" option, users and apps are blocked from connecting to dangerous domains. You can see this activity in Microsoft Defender Security Center. If you enable this policy with the "Audit" option, users/apps won't be blocked from connecting to dangerous domains. However, you'll still see this activity in Microsoft Defender Security Center. If you disable this policy, users/apps won't be blocked from connecting to dangerous domains. You'll not see any network activity in Microsoft Defender Security Center. If you don't configure this policy, network blocking is disabled by default.
   
   **Default**: Enable
   
@@ -3208,12 +3208,12 @@ For more information, see [Policy CSP - Defender](https://docs.microsoft.com/win
   **Default**: Everyday
   
 - **Cloud-delivered protection**  
-  To best protect your PC, Windows Defender will send information to Microsoft about any problems it finds. Microsoft will analyze that information, learn more about problems affecting you and other customers, and offer improved solutions.
+  To best protect your PC, Microsoft Defender will send information to Microsoft about any problems it finds. Microsoft will analyze that information, learn more about problems affecting you and other customers, and offer improved solutions.
   
   **Default**:  Yes  
 
 - **Defender potentially unwanted app action**  
-  The potentially unwanted application (PUA) protection feature in Windows Defender Antivirus can identify and block PUAs from downloading and installing on endpoints in your network. These applications aren't considered viruses, malware, or other types of threats, but might perform actions on endpoints that adversely affect their performance or use. PUA can also refer to applications that are considered to have a poor reputation. Typical PUA behavior includes: Various types of software bundling Ad injection into web browsers Driver and registry optimizers that detect issues, request payment to fix the errors, but remain on the endpoint and make no changes or optimizations (also known as "rogue antivirus" programs). These applications can increase the risk of your network being infected with malware, cause malware infections to be harder to identify, and can waste IT resources in cleaning up the applications.  
+  The potentially unwanted application (PUA) protection feature in Microsoft Defender Antivirus can identify and block PUAs from downloading and installing on endpoints in your network. These applications aren't considered viruses, malware, or other types of threats, but might perform actions on endpoints that adversely affect their performance or use. PUA can also refer to applications that are considered to have a poor reputation. Typical PUA behavior includes: Various types of software bundling Ad injection into web browsers Driver and registry optimizers that detect issues, request payment to fix the errors, but remain on the endpoint and make no changes or optimizations (also known as "rogue antivirus" programs). These applications can increase the risk of your network being infected with malware, cause malware infections to be harder to identify, and can waste IT resources in cleaning up the applications.  
   
   **Default**: Block  
 
@@ -3223,7 +3223,7 @@ For more information, see [Policy CSP - Defender](https://docs.microsoft.com/win
   **Default**: Block
   
 - **Scan removable drives during a full scan**  
-  Allows Windows Defender to scan for malicious and unwanted software in removable drives (for example, flash drives) during a full scan. Windows Defender Antivirus scans all files on USB devices before execution.
+  Allows Microsoft Defender to scan for malicious and unwanted software in removable drives (for example, flash drives) during a full scan. Microsoft Defender Antivirus scans all files on USB devices before execution.
   
   **Default**: Yes  
   
@@ -3233,7 +3233,7 @@ For more information, see [Policy CSP - Defender](https://docs.microsoft.com/win
   **Default**: Yes
   
 - **Behavior monitoring**  
-  Allows or disallows Windows Defender Behavior Monitoring functionality.Embedded in Windows 10, these sensors collect and process behavioral signals from the operating system and sends this sensor data to your private, isolated, cloud instance of Microsoft Defender ATP.
+  Allows or disallows Microsoft Defender Behavior Monitoring functionality.Embedded in Windows 10, these sensors collect and process behavioral signals from the operating system and sends this sensor data to your private, isolated, cloud instance of Microsoft Defender ATP.
   
   **Default**: Yes
 

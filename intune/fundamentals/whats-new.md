@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 37ed7bfd204289c963b8134252d9d76f2379ecba
-ms.sourcegitcommit: 768d581cb8bcc5fdcb8ade95d402b11223ab226c
+ms.openlocfilehash: a1bbf085cc5d3ffd3b37bd2c475f015be6418f6d
+ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73882500"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74058554"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -52,6 +52,13 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 ### Monitor and troubleshoot
 ### Role-based access control
 -->  
+
+## <a name="week-of-november-11-2019"></a>November 11-i hét, 2019
+
+### <a name="app-management"></a>Alkalmazáskezelés
+
+#### <a name="web-apps-launched-from-the-windows-company-portal-app---5030972---"></a>A Windows Céges portál alkalmazásból indított webalkalmazások<!-- 5030972 -->
+A végfelhasználók mostantól közvetlenül a Windows Céges portál alkalmazásból is elindíthatják a webalkalmazásokat. A végfelhasználók kiválaszthatják a webalkalmazást, majd kiválaszthatják a **Megnyitás böngészőben**lehetőséget. A közzétett webes URL-cím közvetlenül egy böngészőben nyílik meg. Ez a funkció a következő héten lesz bevezetve. A Web Apps szolgáltatással kapcsolatos további információkért lásd: [webalkalmazások hozzáadása Microsoft Intunehoz](~/apps/web-app.md).
 
 ## <a name="week-of-november-4-2019"></a>2019. november 4. hét
 
@@ -516,7 +523,7 @@ Az Intune-Endpoint Protection beállítások segítségével konfigurálhatja az
 Ez a beállítás egy, az operációsrendszer-meghajtó helyreállítása után (a Csizmadia vagy a WinRE használatával) és a helyreállítási jelszó zárolásának feloldása után kezdeményezi az ügyfél által vezérelt helyreállítási jelszó frissítését egy rögzített adatmeghajtón. Ez a beállítás frissíti a használt helyreállítási jelszót, és a köteten található egyéb nem használt jelszavak változatlanok maradnak. További információ: a BitLocker CSP dokumentációja a [ConfigureRecoveryPasswordRotation](https://docs.microsoft.com/windows/client-management/mdm/bitlocker-csp).
 
 #### <a name="tamper-protection-for-windows-defender-antivirus---4705448----------"></a>Illetéktelen védelem a Windows Defender Víruskeresőben<!-- 4705448        -->
-Az Intune használatával kezelheti a Windows Defender víruskereső *illetéktelen hozzáférést biztosító védelmét* . Az [illetéktelen hozzáférést biztosító védelem beállítását](../protect/endpoint-protection-windows-10.md#windows-defender-security-center) a Microsoft Defender Security Center csoportjában találja, ha a Windows 10-es végpontok védelméhez eszköz-konfigurációs profilokat használ. Beállíthatja, hogy az illetéktelen hozzáférést *engedélyező* védelem bekapcsolja a Temper Protection-korlátozásokat, *Letiltva* a kikapcsolását, vagy beállíthatja, hogy a rendszer*ne* állítsa be az eszközök aktuális konfigurációját.  
+Az Intune használatával kezelheti a Windows Defender víruskereső *illetéktelen hozzáférést biztosító védelmét* . Az [illetéktelen hozzáférést biztosító védelem beállítását](../protect/endpoint-protection-windows-10.md#microsoft-defender-security-center) a Microsoft Defender Security Center csoportjában találja, ha a Windows 10-es végpontok védelméhez eszköz-konfigurációs profilokat használ. Beállíthatja, hogy az illetéktelen hozzáférést *engedélyező* védelem bekapcsolja a Temper Protection-korlátozásokat, *Letiltva* a kikapcsolását, vagy beállíthatja, hogy a rendszer*ne* állítsa be az eszközök aktuális konfigurációját.  
 
 További információ az illetéktelen hozzáférést biztosító védelemről: a [biztonsági beállítások módosításának megakadályozása](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/prevent-changes-to-security-settings-with-tamper-protection) a Windows dokumentációjában.
 

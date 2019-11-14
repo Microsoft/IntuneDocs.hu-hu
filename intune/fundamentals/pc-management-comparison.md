@@ -6,7 +6,7 @@ keywords: ''
 author: dougeby
 ms.author: dougeby
 manager: dougeby
-ms.date: 01/01/2018
+ms.date: 11/13/2018
 ms.topic: archived
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic-keep
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3ab16d79549a7fe7b0249c0c4af79ed56817ecec
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: d8fd53e9d12dd38639d204e214aea03d733e584b
+ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72510045"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74059202"
 ---
 # <a name="compare-managing-windows-pcs-as-computers-or-mobile-devices"></a>Windows-számítógépek számítógépként és mobileszközként való felügyeletének összehasonlítása
 
@@ -42,8 +42,8 @@ A vállalatok a Microsoft Intune-ban kezelhetik a Windows-számítógépeket mob
 |**Szoftverfrissítések kezelése**| Windows-frissítések és a Microsoft-alkalmazások frissítése<br>[Windows rendszerű számítógépek naprakészen tartása szoftverfrissítésekkel](../keep-windows-pcs-up-to-date-with-software-updates-in-microsoft-intune.md)|Vállalati Microsoft Áruház a Windows 10-hez és a Microsoft-alkalmazások frissítéséhez<br> [A Vállalati Windows Update beállításainak konfigurálása](../protect/windows-update-for-business-configure.md) |
 |**Szoftverlicencek kezelése**|Elérhető <br>[Windows-számítógépes szoftverek licencszerződéseinek kezelése](../manage-license-agreements-for-windows-pc-software-in-microsoft-intune.md)|Vállalat Microsoft Áruház (csak .appx-alkalmazások)<br>[A Vállalati Microsoft Áruházban vásárolt alkalmazások kezelése](../apps/windows-store-for-business.md)|
 |**Leltár**|Elérhető <br>[Hardver- és szoftverleltár megtekintése Windows rendszerű számítógépeken](view-hardware-and-software-inventory-for-windows-pcs-in-microsoft-intune.md)|Elérhető <br>[Alkalmazás-hozzárendelések figyelése](../apps/apps-monitor.md)<br>[Mi az eszközkezelés?](../remote-actions/device-management.md)|
-|**Windows tűzfalszabályzat**|Elérhető <br>[A Windows rendszerű számítógépek védelme Windows tűzfalházirendek használatával](../help-protect-windows-pcs-using-windows-firewall-policies-in-microsoft-intune.md) |Elérhető <br>[Windows Defender-tűzfal](../protect/endpoint-protection-windows-10.md#windows-defender-firewall)|
-|**Kártevők elleni védelem**|Endpoint Protection<br>[Windows rendszerű számítógépek biztonságossá tétele az Endpoint Protection szolgáltatással](../help-secure-windows-pcs-with-endpoint-protection-for-microsoft-intune.md)|Windows Defender<br>[A Windows Defender engedélyezése](../protect/advanced-threat-protection.md)|
+|**Windows tűzfalszabályzat**|Elérhető <br>[A Windows rendszerű számítógépek védelme Windows tűzfalházirendek használatával](../help-protect-windows-pcs-using-windows-firewall-policies-in-microsoft-intune.md) |Elérhető <br>[Microsoft Defender-tűzfal](../protect/endpoint-protection-windows-10.md#microsoft-defender-firewall)|
+|**Kártevők elleni védelem**|Endpoint Protection<br>[Windows rendszerű számítógépek biztonságossá tétele az Endpoint Protection szolgáltatással](../help-secure-windows-pcs-with-endpoint-protection-for-microsoft-intune.md)|Microsoft Defender<br>[A Microsoft Defender engedélyezése](../protect/advanced-threat-protection.md)|
 |**Távsegítség** |TeamViewer<br>[Távsegítség kérése és nyújtása Windows rendszerű számítógépekhez](request-and-provide-remote-assistance-for-windows-pcs-in-microsoft-intune.md)|TeamViewer<br> [A TeamViewer használata Intune-eszközök távoli felügyeletéhez](../remote-actions/teamviewer-support.md) |
 |**Alkalmazástelepítés** | Nem érhető el a Vállalati Microsoft Áruházhoz,<br>.exe, .appx, és csak a több fájlból álló .msi<br>[Az Intune szoftverügyfelet futtató Windows rendszerű számítógépes alkalmazások hozzáadása](add-apps-for-windows-pcs-in-microsoft-intune.md)|Elérhető a Microsoft Áruház alkalmazásaihoz és az üzletági alkalmazásokhoz<br>[Windows áruházbeli alkalmazások hozzáadása](../apps/store-apps-windows.md)<br>[Windowsos üzletági (LOB) alkalmazások hozzáadása](../apps/lob-apps-windows.md)|
 |**Alkalmazásvédelem**|Nem érhető el|Elérhető <br>[Mik azok az alkalmazásvédelmi szabályzatok?](../apps/app-protection-policy.md)|

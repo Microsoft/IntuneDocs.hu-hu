@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 10/16/2019
+ms.date: 11/13/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -16,16 +16,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b3372fc83e467b08b479490b3707f2be03409156
-ms.sourcegitcommit: c2e62f1ebdf75599c8e544287123c602f0f15f2b
+ms.openlocfilehash: 4a757da6cf4f4a2a3bde907f0025d4a08a52131b
+ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72749332"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74059658"
 ---
 # <a name="guided-scenario---cloud-managed-modern-desktop"></a>Interaktív forgatókönyv – felhőben felügyelt modern asztal
 
-A modern asztali környezet a legkorszerűbb hatékonyságnövelő platform, amely az Information Worker számára készült. Az Office 365 ProPlus és a Windows 10 a modern asztal alapvető összetevői, valamint a Windows 10 és a Windows Defender komplex veszélyforrások elleni védelem legújabb biztonsági alapkonfigurációi. 
+A modern asztali környezet a legkorszerűbb hatékonyságnövelő platform, amely az Information Worker számára készült. Az Office 365 ProPlus és a Windows 10 a modern asztal alapvető összetevői, valamint a Windows 10 és a Microsoft Defender komplex veszélyforrások elleni védelem legújabb biztonsági alapkonfigurációi. 
 
 A modern asztal felhőből való kezelése az internetes szintű távoli műveletek előnyeit élvezheti. A Cloud Management a beépített Windows mobileszköz-kezelési házirendeket használja, és eltávolítja a függőségeket a helyi Active Directory csoportházirenden. 
 
@@ -118,5 +118,5 @@ Miután a felhasználó csatlakoztatta az eszközt a Azure Active Directoryhoz, 
 
 ## <a name="next-steps"></a>További lépések
 
-- Ha a Windows Defender komplex veszélyforrások észlelését használja, hozzon létre egy [Intune-megfelelőségi szabályzatot](~/protect/advanced-threat-protection.md#create-and-assign-the-compliance-policy) , amely megköveteli a Defender-fenyegetések elemzését a megfelelőség teljesítése érdekében.
+- Ha a Microsoft Defender komplex veszélyforrások észlelését használja, hozzon létre egy Intune-beli [megfelelőségi szabályzatot](~/protect/advanced-threat-protection.md#create-and-assign-the-compliance-policy) , amely a megfelelőség szempontjából a Defender Threat Analysis használatát igényli.
 - Hozzon létre egy [eszközön alapuló feltételes hozzáférési szabályzatot](~/protect/advanced-threat-protection.md#create-a-conditional-access-policy) , amely letiltja a hozzáférést, ha az eszköz nem felel meg az Intune megfelelőségi követelményeinek.

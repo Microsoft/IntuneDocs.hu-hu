@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 08/15/2019
+ms.date: 11/13/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 17dce8f7c5aa55a2044e663f724a5784cee8b375
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 42ccb1d1654ba45b63672eebf00acd10fdc56a67
+ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72506677"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74059350"
 ---
 # <a name="windows-10-and-later-device-settings-to-run-as-a-kiosk-in-intune"></a>Windows 10 és újabb eszközbeállítások az Intune-ban való futtatáshoz
 
@@ -40,6 +40,8 @@ Az Intune Windows kioszk szolgáltatásával kapcsolatos további tudnivalókér
 
   1. Hozza létre ezt a kioszk-profilt az eszköz kioszk módban való futtatásához.
   2. Hozza létre az [eszköz korlátozási profilját](device-restrictions-windows-10.md#microsoft-edge-browser), és konfigurálja a Microsoft Edge-ben engedélyezett egyes szolgáltatásokat és beállításokat.
+
+- Ügyeljen arra, hogy a fájlok, parancsfájlok és parancsikonok a helyi rendszeren legyenek. További információ, beleértve a Windows egyéb követelményeit is: a [Start elrendezés testreszabása és exportálása](https://docs.microsoft.com/windows/configuration/customize-and-export-start-layout).
 
 > [!IMPORTANT]
 > Ügyeljen arra, hogy ezt a kioszk-profilt ugyanahhoz az eszközökhöz rendelje, mint a [Microsoft Edge-profilja](device-restrictions-windows-10.md#microsoft-edge-browser).
@@ -194,3 +196,5 @@ Az ebben az üzemmódban lévő alkalmazások elérhetők a Start menüben. A fe
 [Rendelje hozzá a profilt](device-profile-assign.md), és [kövesse nyomon az állapotát](device-profile-monitor.md).
 
 Az [Android](device-restrictions-android.md#kiosk), az [Android Enterprise](device-restrictions-android-for-work.md#dedicated-device-settings)és [a Windows holografikus for Business](kiosk-settings-holographic.md) rendszerű eszközökhöz is létrehozhat kioszk profilokat.
+
+Lásd még: [egy Egyalkalmazásos kioszk beállítása](https://docs.microsoft.com/windows/configuration/kiosk-single-app) vagy [többalkalmazásos kioszk beállítása](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps) a Windows-útmutatóban.

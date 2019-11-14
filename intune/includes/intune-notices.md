@@ -7,14 +7,36 @@ ms.topic: include
 ms.date: 11/4/2019
 ms.author: erikje
 ms.custom: include file
-ms.openlocfilehash: edef1f43caff97ab75aa3c58034ed4fc2dffd208
-ms.sourcegitcommit: ae6f2e7812e7fd36f2393b8f4b6cd8de63777b2c
+ms.openlocfilehash: fb9b19490d3f2b55a9375af05025b44a0c7e29d1
+ms.sourcegitcommit: f46df983b66845bea24a90aaa2ac6cace16b9b0b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73612078"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74058545"
 ---
 Ezek a hirdetmények olyan fontos információkat tartalmaznak, amelyek segíthetnek a jövőbeli Intune-változások és-funkciók előkészítésében.
+
+
+### <a name="take-action-use-microsoft-edge-for-your-protected-intune-browser-experience--5728447--"></a>Művelet: a Microsoft Edge használata a védett Intune-böngésző felhasználói felületén<!--5728447-->
+Ahogy az elmúlt évben osztozunk, a Microsoft Edge Mobile ugyanazokat a felügyeleti funkciókat támogatja, mint a Managed Browser, miközben sokkal fejlettebb felhasználói élményt biztosít. A Microsoft Edge által biztosított robusztus élmény érdekében a Intune Managed Browser kivonására kerül sor. A 2020. januártól kezdődően az Intune már nem fogja támogatni a Intune Managed Browser.  
+
+#### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem? 
+A 2020. február 1-től kezdődően a Intune Managed Browser többé nem lesz elérhető a Google Play Áruházban vagy az iOS App Store-ban. Ezen a ponton továbbra is megcélozhatja az új alkalmazás-védelmi szabályzatokat a Intune Managed Browserra, bár az új felhasználók nem tudják letölteni a Intune Managed Browser alkalmazást. Emellett az iOS-en a MDM által beléptetett új webklipek is a Microsoft Edge-ben nyílnak meg a Intune Managed Browser helyett.  
+
+Március 31 2020-én a Intune Managed Browser el lesz távolítva az Azure-konzolról. Ez azt jelenti, hogy többé nem fog tudni új szabályzatokat létrehozni a Intune Managed Browser számára. Ha meglévő Intune Managed Browser szabályzatok vannak érvényben, a rendszer nem érinti őket. A Intune Managed Browser ikon nélkül fog megjelenni a konzolon, és a meglévő szabályzatok még mindig az alkalmazásnak megfelelően jelennek meg. Ezen a ponton eltávolítjuk a webes tartalom átirányításának lehetőségét is a Intune Managed Browser az adatvédelmi szabályzatok adatvédelem szakaszán belül.  
+
+#### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra? 
+A Intune Managed Browserról a Microsoft Edge-re való zökkenőmentes áttérés érdekében javasoljuk, hogy proaktív módon végezze el a következő lépéseket: 
+
+1. Célozza meg a Microsoft Edge-t iOS-re és Androidra az App Protection-szabályzattal (más néven MAM) és az alkalmazás konfigurációs beállításaival. A Microsoft Edge-hez készült Intune Managed Browser szabályzatait egyszerűen a meglévő szabályzatok Microsoft Edge-re való megcélzásával is felhasználhatja.  
+2. Győződjön meg arról, hogy az Ön környezetében található összes MAM-védelemmel ellátott alkalmazás rendelkezik "a webes tartalmak átvitelének korlátozása más alkalmazásokkal" beállítással "szabályzat által felügyelt böngészők" értékre. 
+3. A "com. microsoft. Intune. useEdge" nevű felügyelt alkalmazás-konfigurációs beállítással megcélzott összes MAM-védelemmel ellátott érték értéke TRUE (igaz). A következő hónapban a 1911-es kiadással megkezdheti a 2. és a 3. lépést a "webtartalom átvitelének korlátozása más alkalmazásokkal" beállítással, hogy a "Microsoft Edge" legyen kiválasztva az alkalmazás-védelmi szabályzatok adatvédelem szakaszában. . 
+
+Az iOS-és Android-alapú webklipek támogatása hamarosan elérhető lesz. Ha ez a támogatás megjelent, újra meg kell céloznia a már meglévő webklipeket, hogy azok a Managed Browser helyett a Microsoft Edge-ben legyenek megnyitva. 
+
+#### <a name="additional-information"></a>További információ
+További információért látogasson el a [Microsoft Edge és az alkalmazás-védelmi szabályzatok használatával](../apps/manage-microsoft-edge.md) foglalkozó dokumentumokra, vagy tekintse meg a [támogatási blogbejegyzését](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Use-Microsoft-Edge-for-your-Protected-Intune-Browser-Experience/ba-p/1004269).
+
 
 ### <a name="plan-for-change-updated-experience-when-enrolling-android-enterprise-dedicated-devices-in-intune--5198878--"></a>Tervezze meg a változást: az androidos vállalati dedikált eszközök Intune-ban való regisztrálásának frissített felhasználói felülete<!--5198878-->
 Az Intune novemberi vagy 1911-as verziójában a SCEP-eszközök tanúsítvány-telepítésének támogatása a Wi-Fi profilokhoz való tanúsítványalapú hozzáférés engedélyezése érdekében az androidos vállalati dedikált eszközökhöz nyújt támogatást. Ez a módosítás azt is magában foglalja, hogy az androidos vállalati dedikált eszközök regisztrálása során a folyamat néhány kisebb változást is igényel.

@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 10/02/2019
+ms.date: 11/13/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6600c75ce3e6120143b17fb863670b2eb423a09f
-ms.sourcegitcommit: ae6f2e7812e7fd36f2393b8f4b6cd8de63777b2c
+ms.openlocfilehash: 997cf043f8ea61133d6e61f4584ad9349aedbf73
+ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73592059"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74060045"
 ---
 # <a name="add-web-apps-to-microsoft-intune"></a>Webalkalmazások hozzáadása az Intune-hoz
 
@@ -36,7 +36,7 @@ Ahhoz, hogy kezelhesse és felhasználókhoz rendelhesse hozzá az alkalmazások
 Az Intune létrehozza a webes alkalmazás parancsikonját a felhasználó eszközén. IOS-eszközök esetén a rendszer a webalkalmazás parancsikonját adja hozzá a kezdőképernyő számára. Android-eszközök esetén a webalkalmazásra mutató parancsikon kerül az Intune vállalati portál widgetbe, és a widgetet manuálisan kell rögzíteni a felhasználó által. Windows-eszközök esetén a webalkalmazásra mutató parancsikon kerül a Start menübe.
 
 > [!Note]
-> A webalkalmazások indításához egy böngészőt kell telepíteni a felhasználó eszközén.
+> A webalkalmazások indításához egy böngészőt kell telepíteni a felhasználó eszközén. 
 
 ## <a name="add-a-web-app-to-intune"></a>Webalkalmazás hozzáadása az Intune-hoz
 A következő módon adhat hozzá egy alkalmazást az Intune-hoz egy alkalmazás webes hivatkozásaként:
@@ -67,6 +67,8 @@ A következő módon adhat hozzá egy alkalmazást az Intune-hoz egy alkalmazás
 > Az Android-eszközökhöz rendelt webalkalmazások megjelenítéséhez a felhasználóknak hozzá kell adniuk az Intune widgetet a kezdőképernyőjükhöz.
 >
 > Az Intune-webalkalmazások iOS-eszközökön való üzembe helyezése jelenleg a felügyeleti profillal van társítva, így manuálisan nem távolíthatók el. Az Intune portálon **Eltávolítás** értékre módosíthatja az üzembehelyezési típust, hogy a webalkalmazás automatikusan eltávolítható legyen. Ha azonban azelőtt távolítja el az üzemelő példányt, hogy az alkalmazás-hozzárendelési szándékot **Eltávolítás** értékre módosítaná, a webalkalmazás végleg az eszközön marad, amíg meg nem szűnik az eszköz regisztrációja az Intune-ban.
+
+A végfelhasználók közvetlenül a Windows Céges portál alkalmazásból indíthatnak webalkalmazásokat a webalkalmazás kiválasztásával, majd a **Megnyitás böngészőben**lehetőség kiválasztásával. A közzétett webes URL-cím közvetlenül a böngészőben nyílik meg. 
 
 ## <a name="next-steps"></a>További lépések
 

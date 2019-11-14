@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 06/28/2019
+ms.date: 11/13/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: enrollment
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5e453002493e95bd5147cca115075a17a6e7a298
-ms.sourcegitcommit: 556b7ea2049014c9027f0e44affd3f301fab55fc
+ms.openlocfilehash: 6f9c09105ab7286eb315c6bf0f04f1801706bfa8
+ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73709322"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74059705"
 ---
 # <a name="set-up-an-enrollment-status-page"></a>Regisztráció állapotának beállítása lap
  
@@ -197,7 +197,7 @@ Az alábbiakban ismert problémák merültek fel.
     - a felhasználói hitelesítő adatok nem őrződnek meg
     - a felhasználónak újra meg kell adnia a hitelesítő adatokat, mielőtt továbblép az eszköz telepítési fázisáról a fiók telepítési szakaszába
 - Az ESP hosszú ideig beragadt, vagy soha nem fejezi be az "azonosítás" fázist. Az Intune kiszámítja az ESP-házirendeket az azonosítási fázisban. Az eszköz nem végezheti el a számítástechnikai ESP-házirendeket, ha az aktuális felhasználónak nincs hozzárendelt Intune-licenccel.  
-- A Windows Defender-alkalmazás vezérlésének konfigurálásakor a rendszer felszólítja az újraindításra az Autopilot során. A Windows Defender alkalmazás (AppLocker CSP) konfigurálása újraindítást igényel. Ha ez a házirend be van állítva, akkor az eszköz újraindítását okozhatja az Autopilot során. Jelenleg nem lehet letiltani vagy elhalasztani az újraindítást.
+- A Microsoft Defender-alkalmazás vezérlésének konfigurálásakor a rendszer felszólítja az újraindításra az Autopilot során. A Microsoft Defender alkalmazás (AppLocker CSP) konfigurálása újraindítást igényel. Ha ez a házirend be van állítva, akkor az eszköz újraindítását okozhatja az Autopilot során. Jelenleg nem lehet letiltani vagy elhalasztani az újraindítást.
 - Ha a DeviceLock-házirend (https://docs.microsoft.com/windows/client-management/mdm/policy-csp-devicelock) egy ESP-profil részeként van engedélyezve, az OOBE vagy a felhasználói asztal automatikus bejelentkezés két okból meghiúsulhat a unexpectantly.
   - Ha az eszköz nem lett újraindítva az ESP-eszköz telepítési fázisának bezárása előtt, a rendszer kérni fogja a felhasználótól, hogy adja meg az Azure AD-beli hitelesítő adatait. Ez a kérdés a sikeres automatikus bejelentkezés helyett akkor fordul elő, ha a felhasználó a Windows első bejelentkezési animációját látja.
   - A autologn sikertelen lesz, ha az eszköz újraindul, miután a felhasználó megadta az Azure AD-beli hitelesítő adatait, de az ESP-eszköz telepítési fázisának bezárása előtt. Ez a hiba azért fordul elő, mert az ESP-eszköz beállítási fázisa soha nem fejeződött be. A megkerülő megoldás az eszköz alaphelyzetbe állítása.

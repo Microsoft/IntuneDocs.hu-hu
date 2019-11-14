@@ -1,11 +1,11 @@
 ---
 title: Windows holografikus üzleti eszköz beállításai – Microsoft Intune – Azure | Microsoft Docs
-description: Az Azure-ban elolvashatja és konfigurálhatja a Microsoft Intune a Windows Holographic for Business-eszközökre vonatkozó eszközkorlátozási beállításait, így a regisztrációtörléssel, a földrajzi hellyel, a jelszavakkal, az áruházból telepített alkalmazásokkal, a Microsoft Edge sütijeivel és felugró ablakaival, a Windows Defenderrel, a kereséssel, a felhőtárhellyel, a Bluetooth-kapcsolattal, a rendszeridővel és a használati adatokkal kapcsolatos beállításokat.
+description: Az eszközök korlátozási beállításainak áttekintése és konfigurálása a Windows holografikus for Business rendszerhez Microsoft Intuneban, beleértve a regisztráció megszüntetését, a földrajzi elhelyezkedést, a jelszavakat, az App Store-ból származó alkalmazások telepítését, a cookie-kat és a Microsoft Edge felugró ablakait, a Microsoft Defender a felhő és a tárolás, a Bluetooth-kapcsolat, a rendszeridő és a használati adatok az Azure-ban.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 01/22/2019
+ms.date: 11/13/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e28a697b841d8b264a19d97059d272b7119bc7f4
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 1f90a5a13859ff19765e22444a84b9c11405af73
+ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72493918"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74059505"
 ---
 # <a name="windows-holographic-for-business-device-settings-to-allow-or-restrict-features-using-intune"></a>Windows holografikus for Business-eszköz beállításai az Intune-t használó szolgáltatások engedélyezéséhez vagy korlátozásához
 
@@ -57,7 +57,7 @@ Ez a cikk felsorolja és ismerteti a Windows holografikus for Business-eszközö
 - **Password Manager**: engedélyezheti vagy letilthatja a Microsoft Edge Password Manager szolgáltatást.
 - Nem **nyomon követett fejlécek küldése**: a Microsoft Edge böngészőt úgy konfigurálja, hogy ne kövesse nyomon a fejléceket a felhasználók által felkeresett webhelyeken.
 
-## <a name="windows-defender-smart-screen"></a>Windows Defender SmartScreen
+## <a name="microsoft-defender-smart-screen"></a>Microsoft Defender intelligens képernyő
 
 - **SmartScreen a Microsoft Edge**-hez: a Microsoft Edge SmartScreen engedélyezése a hely-és fájlletöltés eléréséhez.
 

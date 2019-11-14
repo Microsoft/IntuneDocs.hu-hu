@@ -2,8 +2,8 @@
 title: PowerShell-parancsfájlok hozzáadása a Windows 10-es eszközökhöz a Microsoft Intune-Azure-ban | Microsoft Docs
 description: Hozzon létre és futtasson PowerShell-parancsfájlokat, rendelje hozzá a Azure Active Directory csoportokhoz a parancsfájl-szabályzatot, a jelentések segítségével figyelje a parancsfájlokat, és tekintse meg a Windows 10-es eszközökön a Microsoft Intuneban hozzáadott parancsfájlok törlésének lépéseit. Tekintse meg a gyakori problémákat és a megoldásokat is.
 keywords: ''
-author: MandiOhlinger
-ms.author: mandia
+author: Erikre
+ms.author: erikre
 manager: dougeby
 ms.date: 09/16/2019
 ms.topic: conceptual
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 94653c51bccc59fde93fdacc16f2b83e7860346b
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 1d73d28f34258bce99199731579969604c0a3d97
+ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72497794"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74059728"
 ---
 # <a name="use-powershell-scripts-on-windows-10-devices-in-intune"></a>PowerShell-parancsfájlok használata Windows 10-es eszközökön az Intune-ban
 
@@ -177,7 +177,7 @@ A [Windows 10 automatikus regisztrációjának engedélyezése](../enrollment/wi
 
 - Győződjön [meg arról, hogy az eszközök csatlakoznak az Azure ad-hez](https://docs.microsoft.com/azure/active-directory/user-help/user-help-join-device-on-network). Azok az eszközök, amelyek csak a munkahelyhez vagy szervezethez csatlakoznak (az Azure AD-ben[regisztrálva](https://docs.microsoft.com/azure/active-directory/user-help/user-help-register-device-on-network) vannak), nem kapják meg a parancsfájlokat.
 - Az Intune felügyeleti bővítmény ügyfél óránként egyszer ellenőrzi a parancsfájl vagy a szabályzat Intune-ban történt változásait.
-- Ellenőrizze, hogy az Intune felügyeleti bővítmény le van-e töltve `%ProgramFiles(x86)%\Microsoft Intune Management Extension`-ra.
+- Győződjön meg arról, hogy az Intune felügyeleti bővítmény le van töltve `%ProgramFiles(x86)%\Microsoft Intune Management Extension`ra.
 - A parancsfájlok nem futnak a Surface hubokon vagy a Windows 10-es módban.
 - Tekintse át a hibákat a naplókban. Lásd: az [Intune felügyeleti bővítmény naplófájljai](#intune-management-extension-logs) (ebben a cikkben).
 - A lehetséges engedélyekkel kapcsolatos problémák esetén győződjön meg arról, hogy a PowerShell-parancsfájl tulajdonságai `Run this script using the logged on credentials` értékre vannak beállítva. Győződjön meg arról is, hogy a bejelentkezett felhasználó rendelkezik a megfelelő engedélyekkel a parancsfájl futtatásához.

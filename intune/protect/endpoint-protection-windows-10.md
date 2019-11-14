@@ -1,11 +1,11 @@
 ---
 title: Védelmi beállítások Windows 10-es eszközökhöz a Microsoft Intune-ban – Azure | Microsoft Docs
-description: Windows 10-es eszközökön használja vagy konfigurálja az Endpoint Protection beállításait a Windows Defender szolgáltatásainak engedélyezéséhez, beleértve az Application Guard, a tűzfal, a SmartScreen, a titkosítás és a BitLocker, az őr, az alkalmazás-vezérlés, a Security Center és a biztonság beállítást helyi eszközök Microsoft Intuneban.
+description: Windows 10 rendszerű eszközökön az Endpoint Protection beállításainak használata vagy konfigurálása a Microsoft Defender funkcióinak engedélyezéséhez, beleértve az Application Guard, a tűzfal, a SmartScreen, a titkosítás és a BitLocker, az őr, az alkalmazás-vezérlés, a Security Center és a biztonság beállítást helyi eszközök Microsoft Intuneban.
 keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/12/2019
+ms.date: 11/13/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,20 +17,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a6cada91cdad6c117fddd143007e2cdf40939119
-ms.sourcegitcommit: a7c35efb31c4efd816bd4aba29240013965aee92
+ms.openlocfilehash: e2909e7ad1ced9483a6cec58f1f3009f56946f5f
+ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 11/13/2019
-ms.locfileid: "73984133"
+ms.locfileid: "74058431"
 ---
-# <a name="windows-10-and-later-settings-to-protect-devices-using-intune"></a>Windows 10 (és újabb) beállítások az eszközök az Intune-nal való védelemmel való ellátásához  
+# <a name="windows-10-and-later-settings-to-protect-devices-using-intune"></a>Windows 10 (és újabb) beállítások az eszközök az Intune-nal való védelemmel való ellátásához
 
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]  
+Microsoft Intune számos olyan beállítást tartalmaz, amelyek segítenek az eszközök védelmében. Ez a cikk a Windows 10 és újabb rendszerű eszközökön engedélyezhető és konfigurálható beállításokat ismerteti. Ezek a beállítások az Intune-ban egy Endpoint Protection-konfigurációs profilban jönnek létre a biztonság szabályozására, beleértve a BitLockert és a Microsoft Defendert is.  
 
-Microsoft Intune számos olyan beállítást tartalmaz, amelyek segítenek az eszközök védelmében. Ez a cikk a Windows 10 és újabb rendszerű eszközökön engedélyezhető és konfigurálható beállításokat ismerteti. Ezek a beállítások az Intune-beli Endpoint Protection-konfigurációs profilban jönnek létre a biztonság szabályozásához, beleértve a BitLockert és a Windows Defendert is.  
-
-A Windows Defender víruskereső konfigurálásához tekintse meg a [Windows 10-es eszközök korlátozásait](../configuration/device-restrictions-windows-10.md#microsoft-defender-antivirus)ismertető témakört.  
+A Microsoft Defender Antivirus konfigurálásához tekintse meg a [Windows 10-es eszközök korlátozásait](../configuration/device-restrictions-windows-10.md#microsoft-defender-antivirus)ismertető témakört.  
 
 ## <a name="before-you-begin"></a>Előkészületek  
 
@@ -38,9 +36,9 @@ A Windows Defender víruskereső konfigurálásához tekintse meg a [Windows 10-
 
 További információ a konfigurációs szolgáltatókról (CSP): a [Configuration Service Provider referenciája](https://docs.microsoft.com/windows/client-management/mdm/configuration-service-provider-reference).  
 
-## <a name="windows-defender-application-guard"></a>Windows Defender alkalmazásőr  
+## <a name="microsoft-defender-application-guard"></a>Microsoft Defender Application Guard  
 
-A Microsoft Edge használata közben a Windows Defender alkalmazásőr megvédi a környezetét az olyan webhelyektől, amelyek nincsenek megbízhatóként meghatározva a szervezetében. Ha a felhasználók olyan helyeket látogatnak meg, amelyek nem szerepelnek az elszigetelt hálózati határon, a helyek egy Hyper-V virtuális böngészési munkamenetben nyílnak meg. A megbízható helyeket egy hálózati határ definiálja, amely az eszköz konfigurációjában van konfigurálva.  
+A Microsoft Edge használata közben a Microsoft Defender Application Guard védi a környezetet a szervezete által nem megbízható helyekről. Ha a felhasználók olyan helyeket látogatnak meg, amelyek nem szerepelnek az elszigetelt hálózati határon, a helyek egy Hyper-V virtuális böngészési munkamenetben nyílnak meg. A megbízható helyeket egy hálózati határ definiálja, amely az eszköz konfigurációjában van konfigurálva.  
 
 Az Alkalmazásőr csak a 64 bites Windows 10-eszközöknél érhető el. Ennek a profilnak a használatával telepítve lesz az Alkalmazásőr aktiválásához szükséges Win32-összetevő.  
 
@@ -122,7 +120,7 @@ Az Alkalmazásőr csak a 64 bites Windows 10-eszközöknél érhető el. Ennek a
   - **Engedélyezés** – a felhasználók fájlokat tölthetnek le a virtualizált böngészőből a gazda operációs rendszerre.  
   - **Nincs konfigurálva** – megtartja a fájlok helyi beállításait az eszközön, és nem tölti le a fájlokat a gazdagép fájlrendszerére.  
 
-## <a name="windows-defender-firewall"></a>Windows Defender-tűzfal  
+## <a name="microsoft-defender-firewall"></a>Microsoft Defender-tűzfal  
  
 ### <a name="global-settings"></a>Globális beállítások  
 
@@ -196,7 +194,7 @@ Ebben a cikkben a következő beállítások jelennek meg egyetlen alkalommal, d
 
 #### <a name="general-settings"></a>Általános beállítások  
 
-- **Windows Defender-tűzfal**  
+- **Microsoft Defender-tűzfal**  
   **Alapértelmezett**: nincs konfigurálva  
   Tűzfal CSP: [EnableFirewall](https://go.microsoft.com/fwlink/?linkid=872558)  
   
@@ -224,7 +222,7 @@ Ebben a cikkben a következő beállítások jelennek meg egyetlen alkalommal, d
   **Alapértelmezett**: nincs konfigurálva  
   Tűzfal CSP: [védett](https://go.microsoft.com/fwlink/?linkid=872561)  
     - **Nincs konfigurálva**  
-    - **Letiltás** – ha a Windows Defender-tűzfal be van kapcsolva, és ez a beállítás *blokkolásra*van beállítva, az összes bejövő forgalom le lesz tiltva, az egyéb házirend-beállításoktól függetlenül. 
+    - **Letiltás** – ha a Microsoft Defender-tűzfal be van kapcsolva, és ez a beállítás *blokkolásra*van beállítva, az összes bejövő forgalom le lesz tiltva, az egyéb házirend-beállításoktól függetlenül. 
     - **Engedélyezés** – ha engedélyezve értékre van *állítva, ez*a beállítás ki van kapcsolva, és a bejövő forgalom más házirend-beállítások alapján engedélyezett.
 
 - **Egyedi küldéses válaszok a csoportos küldésű szórásokra**  
@@ -264,7 +262,7 @@ Ebben a cikkben a következő beállítások jelennek meg egyetlen alkalommal, d
 
 #### <a name="rule-merging"></a>Szabályegyesítés  
 
-- **Engedélyezve van az alkalmazás Windows Defender-tűzfalszabályok a helyi tárolóból**  
+- **A Microsoft Defender által jóváhagyott tűzfalszabályok a helyi tárolóban**  
   **Alapértelmezett**: nincs konfigurálva  
   Tűzfal CSP: [AuthAppsAllowUserPrefMerge](https://go.microsoft.com/fwlink/?linkid=872565)  
 
@@ -273,7 +271,7 @@ Ebben a cikkben a következő beállítások jelennek meg egyetlen alkalommal, d
   - Engedélyezi, hogy a -
    Choose **engedélyezze** a helyi tárolóban a tűzfalszabályok **használatát** , hogy azok felismerhetők és érvénybe lépjenek.  
 
-- **Globális port a Windows Defender tűzfalszabályok a helyi tárolóból**  
+- **Globális port a Microsoft Defender tűzfalszabályok a helyi tárolóból**  
   **Alapértelmezett**: nincs konfigurálva  
   Tűzfal CSP: [GlobalPortsAllowUserPrefMerge](https://go.microsoft.com/fwlink/?linkid=872566)  
 
@@ -281,7 +279,7 @@ Ebben a cikkben a következő beállítások jelennek meg egyetlen alkalommal, d
   - **Letiltás** – a helyi tárolóban a globális porthoz tartozó tűzfalszabályok figyelmen kívül lesznek hagyva, és nincsenek kikényszerítve.  
   - **Engedélyezés** – a globális port tűzfalszabályok alkalmazása a helyi tárolóban felismerhető és érvényesíthető.  
 
-- **Windows Defender-tűzfalszabályok a helyi tárolóban**  
+- **A Microsoft Defender-tűzfalszabályok helyi tárolóból származó szabályai**  
   **Alapértelmezett**: nincs konfigurálva  
   Tűzfal CSP: [AllowLocalPolicyMerge](https://go.microsoft.com/fwlink/?linkid=872567)  
 
@@ -422,7 +420,7 @@ Itt adhatja meg azokat a helyi és távoli portokat, amelyekre ez a szabály von
   A szabályhoz tartozó helyi felhasználók listájának megadása. Nem lehet megadni a jogosultsággal rendelkező felhasználók listáját, ha ez a szabály egy Windows-szolgáltatásra vonatkozik.  
 
 
-## <a name="windows-defender-smartscreen-settings"></a>A Windows Defender SmartScreen beállításai  
+## <a name="microsoft-defender-smartscreen-settings"></a>Microsoft Defender SmartScreen-beállítások  
  
 A Microsoft Edge-nek telepítve kell lennie az eszközön.  
 
@@ -477,7 +475,7 @@ Az alapbeállítások minden típusú adatmeghajtóra vonatkozó univerzális Bi
   Ha a *blokkolás*értékre van állítva, akkor a következő beállítást állíthatja be:  
 
   - **Titkosítás engedélyezése az általános jogú felhasználók számára az Azure AD JOIN szolgáltatásban**  
-    *Ez a beállítás csak Azure Active Directory csatlakoztatott (Azure ADJ) eszközökre vonatkozik, és az előző, `Warning for other disk encryption` beállítástól függ.*  
+    *Ez a beállítás csak Azure Active Directory csatlakoztatott (Azure ADJ) eszközökre vonatkozik, és az előző beállítástól függ, `Warning for other disk encryption`.*  
     **Alapértelmezett**: nincs konfigurálva  
     BitLocker CSP: [AllowStandardUserEncryption](https://docs.microsoft.com/windows/client-management/mdm/bitlocker-csp#allowstandarduserencryption)
 
@@ -773,7 +771,7 @@ Ezek a beállítások kifejezetten a cserélhető adatmeghajtókra érvényesek.
     - Az írási **hozzáférés letiltása más** szervezetekben konfigurált eszközökhöz.  
     - **Nincs konfigurálva** – írási hozzáférés megtagadása.  
  
-## <a name="windows-defender-exploit-guard"></a>Windows Defender – biztonsági rés kiaknázása elleni védelem  
+## <a name="microsoft-defender-exploit-guard"></a>Microsoft Defender kiaknázása Guard  
 
 A [védelem kiaknázásával](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/exploit-protection) kezelheti és csökkentheti az alkalmazottak által használt alkalmazások támadási felületét.  
 
@@ -969,12 +967,11 @@ Letiltja a kimenő kapcsolatokat bármely alkalmazásból az IP-címekre vagy-ta
 
   Ennek a beállításnak a célja, hogy megvédje a végfelhasználókat az adathalászatgal kapcsolatos csalások, a kiaknázást biztosító webhelyek és az interneten található kártékony tartalmak hozzáférésével. Azt is megakadályozza, hogy a harmadik féltől származó böngészők csatlakozzanak a veszélyes helyekhez.  
 
-  - **Nincs konfigurálva** – tiltsa le ezt a funkciót. A felhasználók és az alkalmazások nem blokkolják a veszélyes tartományokhoz való kapcsolódást. A rendszergazdák nem látják ezt a tevékenységet a Windows Defender Security Centerban.  
-  - **Engedélyezze** a hálózati védelem bekapcsolását, és tiltsa le a felhasználókat és az alkalmazásokat a veszélyes tartományokhoz való csatlakozáshoz. A rendszergazdák láthatják ezt a tevékenységet a Windows Defender Security Centerban.  
-  - **Csak naplózás**: – a felhasználók és az alkalmazások nem blokkolják a veszélyes tartományokhoz való kapcsolódást. A rendszergazdák láthatják ezt a tevékenységet a Windows Defender Security Centerban.  
+  - **Nincs konfigurálva** – tiltsa le ezt a funkciót. A felhasználók és az alkalmazások nem blokkolják a veszélyes tartományokhoz való kapcsolódást. A rendszergazdák nem látják ezt a tevékenységet a Microsoft Defender Security Centerban.  
+  - **Engedélyezze** a hálózati védelem bekapcsolását, és tiltsa le a felhasználókat és az alkalmazásokat a veszélyes tartományokhoz való csatlakozáshoz. A rendszergazdák láthatják ezt a tevékenységet a Microsoft Defender Security Centerban.  
+  - **Csak naplózás**: – a felhasználók és az alkalmazások nem blokkolják a veszélyes tartományokhoz való kapcsolódást. A rendszergazdák láthatják ezt a tevékenységet a Microsoft Defender Security Centerban.  
 
 ### <a name="exploit-protection"></a>Biztonsági rés kiaknázása elleni védelem  
- 
 
 - **XML feltöltése**  
   **Alapértelmezett**: *nincs konfigurálva*  
@@ -983,7 +980,7 @@ Letiltja a kimenő kapcsolatokat bármely alkalmazásból az IP-címekre vagy-ta
 
   - *PowerShell* – a *Get-ProcessMitigation*, a *set-ProcessMitigation*és a *ConvertTo-ProcessMitigationPolicy* PowerShell-parancsmagok közül egyet vagy többet használhat. A parancsmagokkal konfigurálhatja a kockázatcsökkentési beállításokat, és exportálhatja ezek XML-reprezentációját.  
 
-  - *Windows defender Security Center felhasználói felület* – a windows Defender Security Center kattintson az App & Browser Control elemre, majd görgessen az eredményül kapott képernyő aljára, és keresse meg a kihasználatlan védelmet. Először a Rendszerbeállítások és a Programbeállítások lap használatával konfigurálja a kockázatcsökkentési beállításokat. Ha végzett, a képernyő alján keresse meg az Exportálási beállítások hivatkozást, amellyel exportálhatja ezek XML-reprezentációját.  
+  - *Microsoft defender Security Center felhasználói felület* – a microsoft Defender Security Center kattintson az App & Browser Control elemre, majd görgessen az eredményül kapott képernyő aljára, és keresse meg a kihasználatlan védelmet. Először a Rendszerbeállítások és a Programbeállítások lap használatával konfigurálja a kockázatcsökkentési beállításokat. Ha végzett, a képernyő alján keresse meg az Exportálási beállítások hivatkozást, amellyel exportálhatja ezek XML-reprezentációját.  
 
 - **A védelem kiaknázása felület felhasználó általi szerkesztése**  
   **Alapértelmezett**: nincs konfigurálva  
@@ -993,9 +990,9 @@ Letiltja a kimenő kapcsolatokat bármely alkalmazásból az IP-címekre vagy-ta
   - **Blokk** – olyan XML-fájl feltöltése, amely lehetővé teszi a memória, a vezérlési folyamat és a házirendek korlátozásának konfigurálását. Az XML-fájlban található beállításokkal megvédheti az alkalmazást a biztonsági rések ellen.  
   - **Nincs konfigurálva** – egyéni konfiguráció nincs használatban.  
 
-## <a name="windows-defender-application-control"></a>Windows Defender Alkalmazásvezérlés  
+## <a name="microsoft-defender-application-control"></a>Microsoft Defender-alkalmazás vezérlése  
 
-Válassza ki azokat a további alkalmazásokat, amelyeket naplózni kell, vagy megbízhatónak kell lennie a Windows Defender alkalmazás-vezérlő futtatásához. A Windows-összetevők és a Windows Áruházból származó alkalmazások automatikusan biztonságosan futtathatóként lesznek besorolva.  
+Válassza ki azokat a további alkalmazásokat, amelyeket naplózni kell, vagy megbízhatónak kell lennie a Microsoft Defender alkalmazás-vezérlő futtatásához. A Windows-összetevők és a Windows Áruházból származó alkalmazások automatikusan biztonságosan futtathatóként lesznek besorolva.  
 
 
 - **Alkalmazás-felügyeleti kód integritási házirendjei**  
@@ -1010,9 +1007,9 @@ Válassza ki azokat a további alkalmazásokat, amelyeket naplózni kell, vagy m
  
   - **Csak naplózás** – az alkalmazások nincsenek letiltva. Az összes esemény a helyi ügyfél naplóiban van naplózva.  
 
-## <a name="windows-defender-credential-guard"></a>Windows Defender Credential Guard  
+## <a name="microsoft-defender-credential-guard"></a>Microsoft Defender hitelesítőadat-őr  
 
-A Windows Defender Credential Guard a hitelesítő adatok ellopása ellen nyújt védelmet. Úgy különíti el a titkos kulcsokat, hogy csak a jogosult rendszerszoftverek férjenek hozzájuk.  
+A Microsoft Defender hitelesítő adatai megvédik a hitelesítő adatok lopás elleni támadásait. Úgy különíti el a titkos kulcsokat, hogy csak a jogosult rendszerszoftverek férjenek hozzájuk.  
 
 - **Hitelesítőadat-őr**  
   **Alapértelmezett**: letiltás  
@@ -1034,19 +1031,19 @@ A Windows Defender Credential Guard a hitelesítő adatok ellopása ellen nyújt
   - **Biztonságos rendszerindítás a címtár memóriájának elérésével**  
     Bekapcsolja a VBS-et a biztonságos rendszerindítási és a közvetlen memória-hozzáférés (DMA) elleni védelemmel. A DMA-védelemhez hardveres támogatás szükséges, és csak a megfelelően konfigurált eszközökön alkalmazható.  
 
-## <a name="windows-defender-security-center"></a>Windows Defender biztonsági központ  
+## <a name="microsoft-defender-security-center"></a>Microsoft Defender Security Center  
 
-A Windows Defender biztonsági központ az egyes funkcióktól elkülönített alkalmazásként működik. Az értesítéseket a Műveletközponton keresztül jeleníti meg. Gyűjtőként vagy egyetlen helyen működik az állapot megtekintéséhez és az egyes funkciókhoz tartozó konfiguráció futtatásához. További információt a [Windows Defender](https://docs.microsoft.com/windows/threat-protection/windows-defender-security-center/windows-defender-security-center) dokumentációjában talál.  
+A Microsoft Defender Security Center az egyes funkciókból külön alkalmazásként vagy folyamatként működik. Az értesítéseket a Műveletközponton keresztül jeleníti meg. Gyűjtőként vagy egyetlen helyen működik az állapot megtekintéséhez és az egyes funkciókhoz tartozó konfiguráció futtatásához. További információ a [Microsoft Defender](https://docs.microsoft.com/windows/threat-protection/windows-defender-security-center/windows-defender-security-center) dokumentációjában található.  
 
-### <a name="windows-defender-security-center-app-and-notifications"></a>A Windows Defender biztonsági központ alkalmazás és az értesítések  
+### <a name="microsoft-defender-security-center-app-and-notifications"></a>Microsoft Defender Security Center alkalmazás és értesítések  
 
-Letilthatja a felhasználói hozzáférést a Windows Defender biztonsági központ alkalmazás különböző területeihez. Egy szakasz elrejtése a kapcsolódó értesítéseket is letiltja.  
+A Microsoft Defender Security Center alkalmazás különböző területeihez való végfelhasználói hozzáférés letiltása. Egy szakasz elrejtése a kapcsolódó értesítéseket is letiltja.  
 
 - **Vírusok és veszélyforrások elleni védelem**  
   **Alapértelmezett**: nincs konfigurálva  
   WindowsDefenderSecurityCenter CSP: [DisableVirusUI](https://go.microsoft.com/fwlink/?linkid=873662)  
 
-  Annak megadása, hogy a végfelhasználók megtekinthetik-e a vírus-és veszélyforrások elleni védelem területén a Windows Defender Security Center. A szakasz elrejtésével a vírus-és veszélyforrások elleni védelemmel kapcsolatos összes értesítés is blokkolva lesz.  
+  Annak megadása, hogy a végfelhasználók megtekinthetik-e a vírus-és veszélyforrások elleni védelem területén a Microsoft Defender Security Center. A szakasz elrejtésével a vírus-és veszélyforrások elleni védelemmel kapcsolatos összes értesítés is blokkolva lesz.  
 
   - **Nincs konfigurálva**  
   - **Elrejtése**  
@@ -1055,7 +1052,7 @@ Letilthatja a felhasználói hozzáférést a Windows Defender biztonsági közp
   **Alapértelmezett**: nincs konfigurálva  
   WindowsDefenderSecurityCenter CSP: [HideRansomwareDataRecovery](https://go.microsoft.com/fwlink/?linkid=873664)  
 
-  Annak megadása, hogy a végfelhasználók megtekinthetik-e a Windows Defender Security Center ransomware-védelmi felületét. A szakasz elrejtésével a ransomware-védelemmel kapcsolatos összes értesítés is blokkolva lesz.  
+  Annak megadása, hogy a végfelhasználók megtekinthetik-e a ransomware védelmi területeket a Microsoft Defender Security Centerban. A szakasz elrejtésével a ransomware-védelemmel kapcsolatos összes értesítés is blokkolva lesz.  
 
   - **Nincs konfigurálva**  
   - **Elrejtése**  
@@ -1064,7 +1061,7 @@ Letilthatja a felhasználói hozzáférést a Windows Defender biztonsági közp
   **Alapértelmezett**: nincs konfigurálva  
   WindowsDefenderSecurityCenter CSP: [DisableAccountProtectionUI](https://go.microsoft.com/fwlink/?linkid=873666)  
 
-  Annak megadása, hogy a végfelhasználók megtekinthetik-e a Windows Defender Security Center fiók védelme területén. A szakasz elrejtésével a fiókok védelmével kapcsolatos összes értesítés is blokkolva lesz.  
+  Annak megadása, hogy a végfelhasználók megtekinthetik-e a fiók védelmét a Microsoft Defender Security Centerban. A szakasz elrejtésével a fiókok védelmével kapcsolatos összes értesítés is blokkolva lesz.  
 
   - **Nincs konfigurálva**  
   - **Elrejtése**  
@@ -1073,7 +1070,7 @@ Letilthatja a felhasználói hozzáférést a Windows Defender biztonsági közp
   **Alapértelmezett**: nincs konfigurálva  
   WindowsDefenderSecurityCenter CSP: [DisableNetworkUI](https://go.microsoft.com/fwlink/?linkid=873668)  
 
-  Annak megadása, hogy a végfelhasználók megtekinthetik-e a tűzfal és a hálózat védelmét a Windows Defender biztonsági központban. A szakasz elrejtésével a tűzfal és a hálózat védelmével kapcsolatos összes értesítés is blokkolva lesz.  
+  Annak megadása, hogy a végfelhasználók megtekinthetik-e a tűzfal és a hálózat védelmét a Microsoft Defender biztonsági központban. A szakasz elrejtésével a tűzfal és a hálózat védelmével kapcsolatos összes értesítés is blokkolva lesz.  
 
   - **Nincs konfigurálva**  
   - **Elrejtése**  
@@ -1082,7 +1079,7 @@ Letilthatja a felhasználói hozzáférést a Windows Defender biztonsági közp
   **Alapértelmezett**: nincs konfigurálva  
   WindowsDefenderSecurityCenter CSP: [DisableAppBrowserUI](https://go.microsoft.com/fwlink/?linkid=873669)  
 
-  Annak megadása, hogy a végfelhasználók megtekinthetik-e az alkalmazás és a böngésző vezérlőelem területén a Windows Defender biztonsági központban. A szakasz elrejtésével az alkalmazás-és böngésző-vezérlőkkel kapcsolatos összes értesítés is blokkolva lesz.  
+  Annak megadása, hogy a végfelhasználók megtekinthetik-e az alkalmazás és a böngésző vezérlési területén a Microsoft Defender Security Centerben. A szakasz elrejtésével az alkalmazás-és böngésző-vezérlőkkel kapcsolatos összes értesítés is blokkolva lesz.  
 
   - **Nincs konfigurálva**  
   - **Elrejtése**  
@@ -1091,7 +1088,7 @@ Letilthatja a felhasználói hozzáférést a Windows Defender biztonsági közp
   **Alapértelmezett**: nincs konfigurálva  
   WindowsDefenderSecurityCenter CSP: [DisableDeviceSecurityUI](https://go.microsoft.com/fwlink/?linkid=873670)  
 
-  Annak megadása, hogy a végfelhasználók megtekinthetik-e a Windows Defender Security Center a hardveres védelem részét. A szakasz elrejtésével a hardveres védelemmel kapcsolatos összes értesítés is blokkolva lesz.  
+  Annak megadása, hogy a végfelhasználók megtekinthetik-e a hardveres védelem területén a Microsoft Defender Security Center. A szakasz elrejtésével a hardveres védelemmel kapcsolatos összes értesítés is blokkolva lesz.  
 
   - **Nincs konfigurálva**  
   - **Elrejtése**  
@@ -1100,7 +1097,7 @@ Letilthatja a felhasználói hozzáférést a Windows Defender biztonsági közp
   **Alapértelmezett**: nincs konfigurálva  
   WindowsDefenderSecurityCenter CSP: [DisableHealthUI](https://go.microsoft.com/fwlink/?linkid=873671)  
 
-  Annak megadása, hogy a végfelhasználók megtekinthetik-e az eszköz teljesítményét és állapotát a Windows Defender biztonsági központban. A szakasz elrejtésével az eszköz teljesítményével és állapotával kapcsolatos összes értesítés is blokkolva lesz.  
+  Annak megadása, hogy a végfelhasználók megtekinthetik-e az eszköz teljesítményét és állapotát a Microsoft Defender Security Centerben. A szakasz elrejtésével az eszköz teljesítményével és állapotával kapcsolatos összes értesítés is blokkolva lesz.  
   
   - **Nincs konfigurálva**  
   - **Elrejtése**  
@@ -1109,7 +1106,7 @@ Letilthatja a felhasználói hozzáférést a Windows Defender biztonsági közp
   **Alapértelmezett**: nincs konfigurálva  
   WindowsDefenderSecurityCenter CSP: [DisableFamilyUI](https://go.microsoft.com/fwlink/?linkid=873673)  
 
-  Annak megadása, hogy a végfelhasználók megtekinthetik-e a család beállításait a Windows Defender biztonsági központban. A szakasz elrejtésével az összes, a családra vonatkozó beállítással kapcsolatos értesítés is blokkolva lesz.  
+  Annak megadása, hogy a végfelhasználók megtekinthetik-e a család beállításait a Microsoft Defender Security Centerben. A szakasz elrejtésével az összes, a családra vonatkozó beállítással kapcsolatos értesítés is blokkolva lesz.  
   
   - **Nincs konfigurálva**  
   - **Elrejtése**  
@@ -1118,7 +1115,7 @@ Letilthatja a felhasználói hozzáférést a Windows Defender biztonsági közp
   **Alapértelmezett**: nincs konfigurálva  
   WindowsDefenderSecurityCenter CSP: [DisableNotifications](https://go.microsoft.com/fwlink/?linkid=873675)  
 
-  Válassza ki, hogy mely értesítések jelenjenek meg a végfelhasználók számára. A nem kritikus értesítések közé tartoznak a Windows Defender víruskereső összefoglalói, például a vizsgálatok befejezését jelző értesítések. Minden más értesítés kritikusnak minősül.  
+  Válassza ki, hogy mely értesítések jelenjenek meg a végfelhasználók számára. A nem kritikus értesítések közé tartoznak a Microsoft Defender víruskereső tevékenységének összegzései, beleértve a vizsgálatok befejezését jelző értesítéseket is. Minden más értesítés kritikusnak minősül.  
 
   - **Nincs konfigurálva**  
   - **Nem kritikus értesítések letiltása**  
@@ -1158,7 +1155,7 @@ Letilthatja a felhasználói hozzáférést a Windows Defender biztonsági közp
 
 ### <a name="it-contact-information"></a>Az informatikai szolgálat kapcsolattartási adatai  
 
-Adja meg az informatikai szolgálat azon elérhetőségeit, amelyek megjelennek majd a Windows Defender biztonsági központ alkalmazásban és az alkalmazásértesítésekben.  
+Adja meg a kapcsolattartási adatokat, hogy megjelenjenek a Microsoft Defender Security Center alkalmazásban és az alkalmazás értesítéseiben.  
 
 Az alábbi lehetőségek közül választhat: **Az alkalmazásban és az értesítésekben is jelenjen meg**, **Csak az alkalmazásban jelenjen meg**, **Csak az értesítésekben jelenjen meg** és **Ne jelenjen meg**. Adja meg az **IT-szervezet nevét**, és az alábbi kapcsolatfelvételi lehetőségek közül legalább egyet:  
 
@@ -1637,6 +1634,240 @@ Ezekkel a beállításokkal konfigurálhatja a Windows 10-eszközök helyi bizto
   - **Kézi**
   - **Automatikus**
   - **Tiltva**
+
+## <a name="user-rights"></a>Felhasználói jogosultságok
+
+- **Hozzáférés a hitelesítőadat-kezelőhöz megbízható hívóként**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/AccessCredentialManagerAsTrustedCaller](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-accesscredentialmanagerastrustedcaller)
+
+  Ezt a felhasználói jogot a Hitelesítőadat-kezelő használja a biztonsági mentési és visszaállítási műveletek során. Előfordulhat, hogy a felhasználók mentett hitelesítő adatai biztonságban vannak, ha a jogosultságot más entitások kapják meg.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+
+- **Helyi bejelentkezés engedélyezése**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/AllowLocalLogOn](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-allowlocallogon)
+
+  Ez a felhasználói jogosultság határozza meg, hogy mely felhasználók jelentkezhetnek be a számítógépre.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+
+- **Hozzáférés engedélyezése a hálózatról**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/AccessFromNetwork](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-accessfromnetwork)
+
+  Ez a felhasználói jogosultság határozza meg, hogy mely felhasználók és csoportok csatlakozhatnak a számítógéphez a hálózaton keresztül.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+
+- **Az operációs rendszer részeként járjon el**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/ActAsPartOfTheOperatingSystem](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-actaspartoftheoperatingsystem)
+
+  Az operációs rendszer részeként járjon el
+  - **Nincs konfigurálva**
+  - **Engedélyezés**  
+
+- **Biztonságimásolat-fájlok és-könyvtárak**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/BackupFilesAndDirectories](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-backupfilesanddirectories)
+
+  Ez a felhasználói jogosultság határozza meg, hogy mely felhasználók tudják megkerülni a fájlok és könyvtárak biztonsági mentésekor a fájl-, könyvtár-, beállításjegyzék-és egyéb állandó objektumok engedélyeit.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+
+- **A rendszeridő módosítása**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/ChangeSystemTime](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-changesystemtime)
+
+  Ez a felhasználói jogosultság határozza meg, hogy mely felhasználók és csoportok módosíthatják a számítógép belső órájában megjelenő időt és időpontot.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+
+- **Globális objektumok létrehozása**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/CreateGlobalObjects](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-createglobalobjects)
+
+  Ez a biztonsági beállítás határozza meg, hogy a felhasználók létrehozhatnak-e az összes munkamenet számára elérhető globális objektumokat. Azok a felhasználók, akik létrehozhatnak globális objektumokat, befolyásolhatják a más felhasználói munkamenetek alatt futó folyamatokat, ami az alkalmazás meghibásodása vagy adatsérülése miatt lehet.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+
+- **Lapozófájl létrehozása**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/CreatePageFile](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-createpagefile)
+
+  Ez a felhasználói jogosultság határozza meg, hogy mely felhasználók és csoportok hívhatnak meg egy belső API-t egy lapozófájl méretének létrehozásához és módosításához.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+
+- **Állandó megosztott objektumok létrehozása**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/CreatePermanentSharedObjects](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-createpermanentsharedobjects)
+
+  Ez a felhasználói jogosultság határozza meg, hogy mely fiókok használhatják a folyamatokat egy Directory-objektum létrehozásához az Object Manager használatával.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+
+- **Szimbolikus hivatkozások létrehozása**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/CreateSymbolicLinks](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-createsymboliclinks)
+
+  Ez a felhasználói jogosultság határozza meg, hogy a felhasználó létrehozhat-e szimbolikus hivatkozást arról a számítógépről, amelyre bejelentkezett.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+
+- **Tokenek létrehozása**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/okta](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-createtoken)
+
+  Ez a felhasználói jogosultság határozza meg, hogy mely felhasználók/csoportok használhatók a folyamatok számára olyan jogkivonat létrehozásához, amely a helyi erőforrásokhoz való hozzáféréshez használható, amikor a folyamat belső API-t használ a hozzáférési jogkivonat létrehozásához.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+
+- **Hibakeresési programok**  
+  **Alapértelmezett**: nincs konfigurálva  
+    CSP: [UserRights/DebugPrograms](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-debugprograms)
+
+  Ez a felhasználói jogosultság határozza meg, hogy mely felhasználók csatolhatnak hibakeresőt bármely folyamathoz vagy a kernelhez.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+
+- **Hozzáférés megtagadása a hálózatról**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/DenyAccessFromNetwork](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-denyaccessfromnetwork)
+
+  Ez a felhasználói jogosultság határozza meg, hogy mely felhasználók ne férhessenek hozzá a számítógéphez a hálózaton keresztül.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+
+- **Szolgáltatásként való bejelentkezés megtagadása**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/DenyLocalLogOn](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-denylocallogon)
+
+  Ez a biztonsági beállítás határozza meg, hogy mely szolgáltatásfiókok akadályozzák meg a folyamat szolgáltatásként való regisztrálását.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+
+- **Bejelentkezés megtagadása Távoli asztali szolgáltatásokon keresztül**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/DenyRemoteDesktopServicesLogOn](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-denyremotedesktopserviceslogon)
+
+  Ez a felhasználói jogosultság határozza meg, hogy mely felhasználók és csoportok számára tiltott a bejelentkezés Távoli asztali szolgáltatások ügyfélként.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+
+- **Delegálás engedélyezése**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/EnableDelegation](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-enabledelegation)
+
+ Ez a felhasználói jogosultság határozza meg, hogy mely felhasználók állíthatják be a megbízható delegálási beállítást egy felhasználói vagy számítógép-objektumon.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+
+- **Biztonsági naplózás előállítása**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/GenerateSecurityAudits](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-generatesecurityaudits)
+
+  Ez a felhasználói jogosultság határozza meg, hogy a folyamat mely fiókokat használhatja a biztonsági napló bejegyzéseinek hozzáadásához. A biztonsági napló a nem engedélyezett rendszer-hozzáférés nyomon követésére szolgál.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+
+- **Ügyfél megszemélyesítése**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/ImpersonateClient](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-impersonateclient)
+
+  A felhasználó jogosultságának felhasználóhoz rendelése lehetővé teszi, hogy a felhasználó nevében futó programok megszemélyesítsék az ügyfelet. Ha ezt a felhasználói jogosultságot szeretné megkövetelni az ilyen megszemélyesítéshez, meggátolja, hogy egy jogosulatlan felhasználó meggyőzze az ügyfelet egy olyan szolgáltatáshoz való csatlakozáshoz, amelyet létrehozott, majd megszemélyesíti az ügyfelet, amely megemelheti a jogosulatlan felhasználó engedélyeit felügyeleti vagy rendszerszintű beállítások.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+
+- **Ütemezés prioritásának emelése**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/IncreaseSchedulingPriority](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-increaseschedulingpriority)
+
+  Ez a felhasználói jogosultság határozza meg, hogy mely fiókok használhatnak írási tulajdonsággal rendelkező folyamatot egy másik folyamathoz, hogy megnövelje a másik folyamathoz rendelt végrehajtási prioritást.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+
+- **Eszközillesztők betöltése és eltávolítása**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/LoadUnloadDeviceDrivers](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-loadunloaddevicedrivers)
+
+  Ez a felhasználói jogosultság határozza meg, hogy mely felhasználók tudják dinamikusan betölteni és eltávolítani az eszközillesztőket vagy más kódokat a kernel módba.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+
+- **Lapok zárolása a memóriában**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/LockMemory](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-lockmemory)
+
+  Ez a felhasználói jogosultság határozza meg, hogy mely fiókok használhatnak egy folyamatot az adatok fizikai memóriában való megőrzéséhez, ami megakadályozza, hogy a rendszer a lemez virtuális memóriájába lapozza az adatait.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+
+- **A naplózás és a biztonsági napló kezelése**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/ManageAuditingAndSecurityLog](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-manageauditingandsecuritylog)
+
+  Ez a felhasználói jogosultság határozza meg, hogy mely felhasználók adhatják meg az objektum-hozzáférés naplózási beállításait az egyes erőforrásokhoz, például fájlokhoz, Active Directory objektumokhoz és beállításkulcsokhoz.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+
+- **Kötet-karbantartási feladatok végrehajtása**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/ManageVolume](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-managevolume)
+
+  Ez a felhasználói jogosultság határozza meg, hogy mely felhasználók és csoportok futtathatnak karbantartási feladatokat egy köteten, például távoli töredezettségmentesítéssel.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+
+- **Belső vezérlőprogram környezeti értékeinek módosítása**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/ModifyFirmwareEnvironment](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-modifyfirmwareenvironment)
+
+  Ez a felhasználói jogosultság határozza meg, hogy ki módosíthatja a belső vezérlőprogram környezeti értékeit.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+
+- **Objektum címkéének módosítása**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/ModifyObjectLabel](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-modifyobjectlabel)
+
+  Ez a felhasználói jogosultság határozza meg, hogy mely felhasználói fiókok módosíthatják az objektumok integritási címkéjét, például a fájlokat, a beállításkulcsokat vagy más felhasználók tulajdonában lévő folyamatokat.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+
+- **Profil egyetlen folyamata**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/ProfileSingleProcess](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-profilesingleprocess)
+
+  Ez a felhasználói jogosultság határozza meg, hogy mely felhasználók használhatják a teljesítményfigyelő eszközöket a rendszerfolyamatok teljesítményének figyelésére.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+
+- **Távoli leállítás**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/RemoteShutdown](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-remoteshutdown)
+
+  Ez a felhasználói jogosultság határozza meg, hogy mely felhasználók számára engedélyezett a számítógép távoli helyről történő leállítása a hálózaton. A felhasználói jogosultsággal való visszaélés a szolgáltatás megtagadását eredményezheti.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+  
+- **Fájlok és könyvtárak visszaállítása**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/RestoreFilesAndDirectories](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-restorefilesanddirectories)
+  
+  Ez a felhasználói jogosultság határozza meg, hogy mely felhasználók hagyhatják figyelmen kívül a fájlokat, a címtárat, a beállításjegyzéket és az egyéb állandó objektumok engedélyeit a fájlok és könyvtárak biztonsági mentésekor, és meghatározza, hogy mely felhasználók állíthatnak be egy adott objektum tulajdonosaként érvényes rendszerbiztonsági tag értéket.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
+  
+- **Fájlok vagy objektumok tulajdonjogának átvétele**  
+  **Alapértelmezett**: nincs konfigurálva  
+  CSP: [UserRights/TakeOwnerShip](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-userrights#userrights-takeownership)
+
+  Ez a felhasználói jogosultság határozza meg, hogy mely felhasználók vehetik igénybe a rendszer bármely biztonságos objektumát, többek között Active Directory objektumokat, fájlokat és mappákat, nyomtatókat, beállításkulcsokat, folyamatokat és szálakat.
+  - **Nincs konfigurálva**
+  - **Engedélyezés**
 
 ## <a name="next-steps"></a>További lépések
 

@@ -3,8 +3,8 @@ title: Harmadik féltől származó hitelesítésszolgáltatók bevezetésére s
 titleSuffix: Microsoft Intune
 description: Felveheti vagy integrálhatja a külső hitelesítésszolgáltatókhoz (CA) készült SCEP GitHub megoldást SCEP-tanúsítványok kibocsátásához a Microsoft Intune-ban lévő eszközökhöz. Ez a megoldás Java és C# API-kat tartalmaz, amelyek érvényesítést végeznek, sikeres és sikertelen üzeneteket küldenek az Intune-nak, és SSL szoftvercsatornát használnak az Intune-nal folytatott kommunikációhoz. Az SCEP CA konfigurációjának teszteléséhez szükséges lépések is áttekintők.
 keywords: ''
-author: MandiOhlinger
-ms.author: mandia
+author: Brenduns
+ms.author: brenduns
 manager: dougeby
 ms.date: 12/06/2018
 ms.topic: reference
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cadadcb8379d2de73b166d863c0b471747f5f6c7
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 0a888e2087b98eeec82aeeb555677dddcb3eff4e
+ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72504092"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74058239"
 ---
 # <a name="use-apis-to-add-third-party-cas-for-scep-to-intune"></a>API-k használata az SCEP külső tanúsítványszolgáltatóinak Intune-ba való felvételére
 

@@ -2,10 +2,10 @@
 title: Android-eszközök kötése hálózati hely szerint a Microsoft Intune-ban – Azure | Microsoft Docs
 description: Hozzon létre vagy konfiguráljon hálózati helyeket a Microsoft Intune-ban az Android-eszközökhöz. Az eszközök hálózati helye alapján jelölheti meg azokat nem megfelelőként. Ha az eszköz a hálózati helyen kívülre kerül, blokkolhatja a vállalati erőforrásokhoz való hozzáférést.
 keywords: ''
-author: MandiOhlinger
-ms.author: mandia
+author: Brenduns
+ms.author: brenduns
 manager: dougeby
-ms.date: 05/21/2018
+ms.date: 11/13/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 648ccd889714c2ee4f7ee1fa04301490ad9fd001
-ms.sourcegitcommit: c2e62f1ebdf75599c8e544287123c602f0f15f2b
+ms.openlocfilehash: 847ab759b697d402acb07d9c8d83d3a3ef9aaef2
+ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72749449"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74058156"
 ---
 # <a name="use-locations-network-fence-in-intune"></a>Helyek (hálózati kerítés) használata az Intune-ban
 
@@ -50,7 +50,7 @@ Helyalapú megfelelőségi szabályzat létrehozásához tegye a következőket:
 
 ## <a name="create-a-location"></a>Hely létrehozása
 
-1. Az Intune-ban válassza az **Eszközmegfelelőség** > **Helyek** > **Létrehozás** lehetőséget.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **megfelelőségi szabályzatok** > **hely** > **Létrehozás**lehetőséget.
 
 2. Adja meg a következő tulajdonságokat:  
 
@@ -69,8 +69,7 @@ Helyalapú megfelelőségi szabályzat létrehozásához tegye a következőket:
 
 ## <a name="create-the-location-compliance-policy"></a>A helymegfelelőségi szabályzat létrehozása
 
-[A megfelelőségi szabályzat létrehozásakor](create-compliance-policy.md)válassza az **Android** lehetőséget a **platformhoz**. A **Helyek** területen kiválaszthat egy vagy több hozzáadott hálózati helyet. Ezek a helyek az eszközhöz létrehozandó hálózati kerítés részét képezik. 
-
+[A megfelelőségi szabályzat létrehozásakor](create-compliance-policy.md)válassza az **Android** lehetőséget a **platformhoz**. A **Helyek** területen kiválaszthat egy vagy több hozzáadott hálózati helyet. Ezek a helyek az eszközhöz létrehozandó hálózati kerítés részét képezik.
 
 ## <a name="configure-the-actions-for-noncompliance"></a>Meg nem felelés esetén végrehajtandó műveletek konfigurálása
 
@@ -83,5 +82,6 @@ A [Meg nem felelés esetén végrehajtandó műveletek hozzáadása](actions-for
 Amikor az eszköz kapcsolódik a megadott helyekhez, az eszköz megfelelőként jelenik meg a Céges portál alkalmazásban. Ha az eszköz nem kapcsolódik valamelyik helyhez, az eszköz nem megfelelőként jelenik meg.
 
 ## <a name="next-steps"></a>További lépések
+
 [Eszközmegfelelőségi szabályzatok figyelése](compliance-policy-monitor.md)  
 [Első lépések a megfelelőségi szabályzatokkal](device-compliance-get-started.md)

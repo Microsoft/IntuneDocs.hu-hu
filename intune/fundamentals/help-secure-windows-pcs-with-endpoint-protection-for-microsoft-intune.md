@@ -6,7 +6,7 @@ keywords: ''
 author: dougeby
 ms.author: dougeby
 manager: dougeby
-ms.date: 01/01/2018
+ms.date: 11/12/2019
 ms.topic: archived
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic-keep
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 535ae4dd986940da17d247136b37185cfaa58b57
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: f00a680d8d7799e0307021926677d1e0ed1e9a12
+ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72510222"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74059687"
 ---
 # <a name="help-secure-windows-pcs-with-endpoint-protection-for-microsoft-intune"></a>Windows rendszerű számítógépek biztonságossá tétele a Microsoft Intune-hoz készült Endpoint Protection szolgáltatással
 
@@ -189,7 +189,7 @@ Az Intune az eszközökön észlelt 10 legutóbbi kártevőpéldány elérési �
 4. Kattintson jobb gombbal az oszlopfejlécre. Megjelenik az elérhető oszlopok listája. Jelölje be a lista **Legutóbbi észlelési útvonalak** jelölőnégyzetét. Megjelenik a **Legutóbbi észlelési útvonalak** oszlop és megjeleníti az eszközön észlelt legfeljebb 10 legutóbbi kártevőpéldányt.
 
 ## <a name="run-a-malware-scan-or-update-malware-definitions-on-a-computer"></a>Kártevő-ellenőrzés futtatása vagy a számítógép kártevőszoftver-leírásainak frissítése
-Az Intune az Endpoint Protection vagy a Windows Defender használatával teljes vagy gyors kártevő-ellenőrzést is képes futtatni azokon a távoli felügyelt számítógépeken, amelyeken az Intune-ügyfél telepítve van.
+Az Intune teljes vagy gyors kártevő-ellenőrzést futtathat Endpoint Protection vagy a Microsoft Defender használatával olyan távolról felügyelt számítógépen, amelyen telepítve van az Intune-ügyfél.
 
 1. A [Microsoft Intune felügyeleti konzolján](https://manage.microsoft.com/) lépjen a **Csoportok** > **Áttekintés** > **Minden eszköz** > **Minden számítógép** elemre, és jelölje ki a célozni kívánt számítógépet.
 

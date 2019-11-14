@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 10/30/2019
+ms.date: 11/13/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,16 +18,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a3a9eb45898102e9d5fcde88f69026467255c513
-ms.sourcegitcommit: d2d18eef64bcf16eec1a48fcb67f1362537c0245
+ms.openlocfilehash: d2ab21321b171c8fe8f5f9dab3032507c0e740cf
+ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73445267"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74059758"
 ---
 # <a name="enable-win32-apps-on-s-mode-devices"></a>Win32-alkalmazások engedélyezése S módú eszközökön
 
-A [Windows 10 S Mode](https://docs.microsoft.com/windows/deployment/s-mode) egy zárolt operációs rendszer, amely csak az áruházbeli alkalmazásokat futtatja. Alapértelmezés szerint a Windows S Mode-eszközök nem engedélyezik a Win32-alkalmazások telepítését és végrehajtását. Ezek az eszközök egyetlen *Win 10-es alapházirenddel*rendelkeznek, amely az S Mode-eszközt zárolja az összes Win32-alkalmazás futtatásával. Ha azonban az Intune-ban létrehoz és használ egy S-alapú **kiegészítő szabályzatot** , akkor a Win32-alkalmazásokat telepítheti és futtathatja a Windows 10 S üzemmódú felügyelt eszközökön. A [Windows Defender Application Control (WDAC)](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control) PowerShell-eszközök használatával létrehozhat egy vagy több kiegészítő szabályzatot a Windows S üzemmódhoz. A kiegészítő szabályzatokat az [Eszközkezelő-aláírási szolgáltatással (betétbiztosítási rendszerek)](https://go.microsoft.com/fwlink/?linkid=2095629) vagy a [SignTool. exe](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/signing-policies-with-signtool) fájllal kell aláírnia, majd fel kell töltenie és terjesztenie kell a szabályzatokat az Intune-on keresztül. Alternatív megoldásként aláírhatja a kiegészítő szabályzatokat a szervezete egy kiépítési tanúsítvánnyal, azonban az előnyben részesített módszer a betétbiztosítási rendszerek használata. Abban a példányban, amelyet a szervezete által használt összekapcsolási tanúsítvány használatával használ, az eszközön jelen kell lennie az olyan főtanúsítványnak, amelyet az összekapcsolási tanúsítványnak, amely a szervezeti egységnek van kialakítva.
+A [Windows 10 S Mode](https://docs.microsoft.com/windows/deployment/s-mode) egy zárolt operációs rendszer, amely csak az áruházbeli alkalmazásokat futtatja. Alapértelmezés szerint a Windows S Mode-eszközök nem engedélyezik a Win32-alkalmazások telepítését és végrehajtását. Ezek az eszközök egyetlen *Win 10-es alapházirenddel*rendelkeznek, amely az S Mode-eszközt zárolja az összes Win32-alkalmazás futtatásával. Ha azonban az Intune-ban létrehoz és használ egy S-alapú **kiegészítő szabályzatot** , akkor a Win32-alkalmazásokat telepítheti és futtathatja a Windows 10 S üzemmódú felügyelt eszközökön. A [Microsoft Defender Application Control (WDAC)](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control) PowerShell-eszközök használatával egy vagy több kiegészítő szabályzatot hozhat létre a Windows S üzemmódhoz. A kiegészítő szabályzatokat az [Eszközkezelő-aláírási szolgáltatással (betétbiztosítási rendszerek)](https://go.microsoft.com/fwlink/?linkid=2095629) vagy a [SignTool. exe](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/signing-policies-with-signtool) fájllal kell aláírnia, majd fel kell töltenie és terjesztenie kell a szabályzatokat az Intune-on keresztül. Alternatív megoldásként aláírhatja a kiegészítő szabályzatokat a szervezete egy kiépítési tanúsítvánnyal, azonban az előnyben részesített módszer a betétbiztosítási rendszerek használata. Abban a példányban, amelyet a szervezete által használt összekapcsolási tanúsítvány használatával használ, az eszközön jelen kell lennie az olyan főtanúsítványnak, amelyet az összekapcsolási tanúsítványnak, amely a szervezeti egységnek van kialakítva.
 
 Az S módú kiegészítő szabályzat az Intune-ban való hozzárendelésével engedélyezheti, hogy az eszköz kivételt hozzon az eszköz meglévő üzemmód-házirendjéhez, amely lehetővé teszi a feltöltött kapcsolódó aláírt alkalmazás-katalógus használatát. A szabályzat az S Mode-eszközön használható alkalmazások engedélyezési listáját (az alkalmazás katalógusát) állítja be.
 
@@ -40,7 +40,7 @@ A Win32-alkalmazások Windows 10-es eszközökön való futtatásának engedély
 
 1. Az S Mode-eszközök Intune-on keresztüli engedélyezése a Windows 10 S beléptetési folyamatának részeként.
 2. Hozzon létre egy kiegészítő szabályzatot a Win32-alkalmazások engedélyezéséhez:
-   - Kiegészítő szabályzat létrehozásához használhatja a [Windows Defender Application Control (WDAC)](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control) eszközöket. A házirendben lévő alapházirend-azonosítónak meg kell egyeznie az S módú alapházirend-azonosítóval (amely a-ügyfélen rögzített kód). Győződjön meg arról is, hogy a házirend verziója magasabb, mint az előző verzió.
+   - Kiegészítő szabályzat létrehozásához használhatja a [Microsoft Defender Application Control (WDAC)](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control) eszközöket. A házirendben lévő alapházirend-azonosítónak meg kell egyeznie az S módú alapházirend-azonosítóval (amely a-ügyfélen rögzített kód). Győződjön meg arról is, hogy a házirend verziója magasabb, mint az előző verzió.
    - A betétbiztosítási rendszerek használatával aláírhatja a kiegészítő szabályzatot. További információ: [kód integritási szabályzatának aláírása az Eszközkezelő aláírásával](https://docs.microsoft.com/microsoft-store/sign-code-integrity-policy-with-device-guard-signing).
    - Az aláírt kiegészítő szabályzatot az Intune-ba feltöltve egy Windows 10 S módú kiegészítő szabályzat létrehozásával (lásd alább).
 3. A Win32-alkalmazások katalógusait az Intune-on keresztül engedélyezheti:

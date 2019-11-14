@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e8747f3dfa9169a4f1f2de9dcf45db0f5cccadd1
-ms.sourcegitcommit: 1a7f04c80548e035be82308d2618492f6542d3c0
+ms.openlocfilehash: bacb7e26df8a5b0d6c7500b24a5e749a85ca62f2
+ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73756755"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74059633"
 ---
 # <a name="use-and-manage-android-enterprise-devices-with-oemconfig-in-microsoft-intune"></a>Androidos nagyvállalati eszközök használata és kezelése a OEMConfig-ben Microsoft Intune
 
@@ -141,7 +141,7 @@ A standard szintű alkalmazásokhoz képest a OEMConfig-alkalmazások kibővíti
 
 | OEM | Csomagazonosító | OEM-dokumentáció (ha elérhető) |
 | --- | --- | ---|
-| Samsung | com. Samsung. Android. Knox. kpu | [A Knox szolgáltatás beépülő moduljának rendszergazdai útmutatója](https://docs.samsungknox.com/knox-service-plugin/admin-guide/welcome.htm) |
+| Samsung | com. Samsung. Android. Knox. kpu | [A Knox szolgáltatás beépülő moduljának rendszergazdai útmutatója](https://docs.samsungknox.com/knox-service-plugin/admin-guide/index.htm) |
 | Zebra-technológiák | com. zebra. oemconfig. Common | [A zebra OEMConfig áttekintése](http://techdocs.zebra.com/oemconfig ) |
 | Datalogic | com. Datalogic. oemconfig | [A Datalogic OEMConfig felhasználói dokumentációja](https://datalogic.github.io/oemconfig/) |
 | Honeywell | com. Honeywell. oemconfig |  |

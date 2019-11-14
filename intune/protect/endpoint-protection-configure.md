@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 09/19/2019
+ms.date: 11/13/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 mr.reviewer: karthib
-ms.openlocfilehash: 884e4211a880feb3eb533238a5e7246b2738ce46
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: d17f5a749252cd8e0e0e5e5ae8babf164f8b9836
+ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72502318"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74058459"
 ---
 # <a name="add-endpoint-protection-settings-in-intune"></a>Endpoint Protection-beállítások hozzáadása az Intune-ban  
 
@@ -29,7 +29,7 @@ Az Intune-nal az eszköz konfigurációs profiljaival kezelheti az Endpoint Prot
 - Tűzfal   
 - BitLocker  
 - Alkalmazások engedélyezése és letiltása  
-- Windows Defender és titkosítás  
+- Microsoft Defender és titkosítás  
 
 Létrehozhat például egy olyan Endpoint Protection-profilt, amely csak a Maces App Store áruházból származó alkalmazásokat engedélyezi telepíteni a macOS felhasználók számára. Vagy engedélyezheti a Windows SmartScreent a Windows 10-eszközök alkalmazásain.  
 
@@ -56,7 +56,7 @@ A profil létrehozása előtt tekintse át a következő cikkeket, amelyek rész
 
 ## <a name="add-custom-firewall-rules-for-windows-10-devices"></a>Egyéni tűzfalszabályok hozzáadása Windows 10-es eszközökhöz  
 
-Ha a Windows Defender-tűzfalat olyan profil részeként konfigurálja, amely a Windows 10 Endpoint Protection-szabályait tartalmazza, a tűzfalakra vonatkozó egyéni szabályokat is konfigurálhat. Az egyéni szabályok lehetővé teszik a Windows 10 által támogatott tűzfalszabályok előre definiált készletének kibontását.  
+Ha a Microsoft Defender-tűzfalat olyan profil részeként konfigurálja, amely a Windows 10 Endpoint Protection-szabályait tartalmazza, a tűzfalakra vonatkozó egyéni szabályokat is konfigurálhat. Az egyéni szabályok lehetővé teszik a Windows 10 által támogatott tűzfalszabályok előre definiált készletének kibontását.  
 
 Ha egyéni tűzfalszabályok alapján tervez profilt, vegye figyelembe a következő információkat, amelyek befolyásolhatják a tűzfalszabályok csoportosítási módját a profilokban:  
 - Az egyes profilok legfeljebb 150 tűzfalszabályok használatát támogatják. Ha több mint 150 szabályt használ, hozzon létre további profilokat, amelyek mindegyike 150 szabályra korlátozódik.  
@@ -71,11 +71,11 @@ Az Intune által kezelhető tűzfalszabályok részletesen szerepelnek a Windows
 
 2. A *platform*területen válassza a **Windows 10 és újabb**lehetőséget, majd a *Profil típusa* beállításnál válassza az **Endpoint Protection**lehetőséget.  
 
-3. Válassza a **Windows Defender-tűzfal** lehetőséget a konfiguráció lap megnyitásához, majd a *Tűzfalszabályok* kiválasztásához kattintson a **Hozzáadás** elemre a **szabály létrehozása** lap megnyitásához.  
+3. Válassza a **Microsoft Defender-tűzfal** lehetőséget a konfiguráció lap megnyitásához, majd a *Tűzfalszabályok* kiválasztásához válassza a **Hozzáadás** lehetőséget a **szabály létrehozása** lap megnyitásához.  
 
 4. Adja meg a tűzfalszabály beállításait, majd kattintson **az OK gombra** a mentéshez. A dokumentációban elérhető egyéni tűzfalszabályok beállításainak áttekintését lásd: [Egyéni tűzfalszabályok](endpoint-protection-windows-10.md#firewall-rules).  
 
-5. A szabály mentése után az megjelenik a *Windows Defender-tűzfal* lapon a szabályok listájában.  
+5. A szabály mentése után az megjelenik a *Microsoft Defender-tűzfal* lapon a szabályok listájában.  
 
 6. Egy szabály módosításához válassza ki a szabályt a listából, és nyissa meg a **szabály szerkesztése** lapot.  
 

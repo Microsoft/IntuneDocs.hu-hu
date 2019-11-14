@@ -1,11 +1,11 @@
 ---
 title: Eszközkorlátozási beállítások Windows 10 rendszerhez az Azure-beli Microsoft Intune-ban | Microsoft Docs
-description: Tekintse meg az összes beállítás listáját, valamint a Windows 10 és újabb rendszerű eszközökön az eszközök korlátozásának létrehozásához szükséges leírást. Ezekkel a beállításokkal konfigurálhatja a képernyőképeket, a jelszavakra vonatkozó követelményeket, a kioszk beállításait, az áruházbeli alkalmazásokat, a Microsoft Edge böngészőt, a Windows Defendert, a felhőhöz való hozzáférést, a Start menüt és egyebeket Microsoft Intune.
+description: Tekintse meg az összes beállítás listáját, valamint a Windows 10 és újabb rendszerű eszközökön az eszközök korlátozásának létrehozásához szükséges leírást. Ezekkel a beállításokkal konfigurálhatja a képernyőképeket, a jelszavakra vonatkozó követelményeket, a kioszk beállításait, az áruházbeli alkalmazásokat, a Microsoft Edge böngészőt, a Microsoft Defendert, a felhőhöz való hozzáférést, a Start menüt és egyebeket Microsoft Intune.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 10/09/2019
+ms.date: 11/13/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 288ff693e7e46b7953cffad3d0a54b8621141373
-ms.sourcegitcommit: 1a7f04c80548e035be82308d2618492f6542d3c0
+ms.openlocfilehash: f0cf7d6f18b0d345a8c491984987b9ffa234d66e
+ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73755261"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74059484"
 ---
 # <a name="windows-10-and-newer-device-settings-to-allow-or-restrict-features-using-intune"></a>Windows 10 (és újabb) eszközbeállítások az Intune-t használó szolgáltatások engedélyezéséhez vagy korlátozásához
 
@@ -68,7 +68,7 @@ Ezek a beállítások a [ApplicationManagement házirend CSP](https://docs.micro
 
   [SmartScreen/EnableAppInstallControl CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-smartscreen#smartscreen-enableappinstallcontrol)
 
-- **Felhasználói vezérlés a telepítésekben**: Ha **nincs konfigurálva** (alapértelmezett), Windows Installer megakadályozhatja, hogy a felhasználók a rendszergazdák számára fenntartott telepítési beállításokat módosíthassák, például a fájlok telepítéséhez a címtárat. . A **Letiltás** lehetővé teszi a felhasználók számára, hogy megváltoztassák ezeket a telepítési beállításokat, és néhány Windows Installer biztonsági funkciót kihagynak.
+- **Felhasználói vezérlés a telepítésekben**: Ha **nincs konfigurálva** (alapértelmezett), Windows Installer megakadályozhatja, hogy a felhasználók a rendszergazdák számára fenntartott telepítési beállításokat módosíthassák, például a fájlok telepítéséhez a címtárat. A **Letiltás** lehetővé teszi a felhasználók számára, hogy megváltoztassák ezeket a telepítési beállításokat, és néhány Windows Installer biztonsági funkciót kihagynak.
 
   [ApplicationManagement/MSIAllowUserControlOverInstall CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationmanagement#applicationmanagement-msiallowusercontroloverinstall)
 
@@ -238,7 +238,7 @@ Ezek a beállítások az [élmény házirend CSP](https://docs.microsoft.com/win
 
   [AboveLock/AllowToasts CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-abovelock#abovelock-allowtoasts)
 
-- **Képernyő időkorlátja (csak mobil)** : állítsa be a képernyő zárolásának időtartamát (másodpercben) a képernyő kikapcsolásához. A támogatott értékek a 11-1800. Adja meg például a következőt: `300`, ha ezt az időtúllépést 5 percre szeretné beállítani.
+- **Képernyő időkorlátja (csak mobil)** : állítsa be a képernyő zárolásának időtartamát (másodpercben) a képernyő kikapcsolásához. A támogatott értékek a 11-1800. Adja meg például a `300` értéket az időtúllépés 5 percre való beállításához.
 
   [DeviceLock/ScreenTimeoutWhileLocked CSP](https://msdn.microsoft.com/ie/dn904962(v=vs.94)#DeviceLock_ScreenTimeoutWhileLocked)
 
@@ -287,7 +287,7 @@ Ez az eszköz-korlátozási profil közvetlenül kapcsolódik a [Windows kioszk 
   - **Utolsó munkamenet lapja**: a Microsoft Edge betölti az utolsó munkamenet lapot.
   - Kezdőlapok **a helyi alkalmazás beállításaiban**: a Microsoft Edge az operációs rendszer által meghatározott alapértelmezett kezdőlaptal kezdődik.
 
-- **Kezdőlapok módosításának engedélyezése a felhasználó**számára: **Igen** (alapértelmezés) lehetővé teszi a felhasználók számára a kezdőlapok módosítását. A rendszergazdák a `EdgeHomepageUrls` paranccsal adhatják meg a kezdő lapokat, amelyeket a felhasználók alapértelmezés szerint látnak a Microsoft Edge megnyitásakor. **Nem** blokkolja a felhasználók a kezdőlapok módosítását.
+- **Kezdőlapok módosításának engedélyezése a felhasználó**számára: **Igen** (alapértelmezés) lehetővé teszi a felhasználók számára a kezdőlapok módosítását. A rendszergazdák a `EdgeHomepageUrls` segítségével megadhatják a kezdő lapokat, amelyeket a felhasználók alapértelmezés szerint látnak a Microsoft Edge megnyitásakor. **Nem** blokkolja a felhasználók a kezdőlapok módosítását.
 - **Webtartalom engedélyezése az új lapon**lapon: Ha az **Igen** értékre van állítva, a Microsoft Edge megnyitja az **új lap URL-címében** megadott URL-címet. Ha az **új lap URL-címe** üres, a Microsoft Edge megnyitja az új lap lapot a Microsoft Edge beállításaiban. A felhasználók módosíthatják azt. Ha a **nem**értékre van állítva, a Microsoft Edge új lapot nyit meg egy üres oldallal. A felhasználók nem változtathatják meg.
 - **Új lap URL-címe**: Itt adhatja meg az új lap lapon megnyitható URL-címet. Például írja be a következőt: `https://www.bing.com` vagy `https://www.contoso.com`.
 
@@ -300,7 +300,7 @@ Ez az eszköz-korlátozási profil közvetlenül kapcsolódik a [Windows kioszk 
 - **Első futtatási élmény megjelenítése lap (csak mobil)** : **Igen** (alapértelmezés) a Microsoft Edge első használat bemutatása lapján látható. A Microsoft Edge első futtatásakor a bevezető oldal **nem** jelenik meg. Ez a funkció lehetővé teszi, hogy a vállalatok, például a nulla kibocsátási konfigurációkba beléptetett szervezetek regisztrálva legyenek ezen a lapon.
 - **Első futtatási élmény URL-listájának helye** (csak Windows 10 Mobile esetén): adja meg azt az URL-címet, amely az első futtatási oldal URL-címét tartalmazó XML-fájlra mutat. Például írja be a következőt: `https://www.contoso.com/sites.xml`.
 
-- **Böngésző frissítése üresjárati idő után**: adja meg az üresjárati percek számát, amíg a böngésző frissül, 0-1440 percen belül. Az alapértelmezett érték `5` perc. Ha `0` (nulla) értékre van állítva, a böngésző nem frissül a tétlenség után.
+- **Böngésző frissítése üresjárati idő után**: adja meg az üresjárati percek számát, amíg a böngésző frissül, 0-1440 percen belül. Az alapértelmezett érték `5` perc. Ha `0` (nulla) értékre van állítva, a böngésző üresjárat után nem frissül.
 
   Ez a beállítás csak akkor érhető el, ha [InPrivate nyilvános böngészés (Egyalkalmazásos kioszk)](#use-microsoft-edge-kiosk-mode)fut.
 
@@ -369,7 +369,7 @@ Ha a "felhasználói felülbírálás tiltása és engedélyezése" lehetőség 
   - A Microsoft Edge és a Microsoft-szolgáltatások közötti hálózati sávszélesség csökkentése.
   - Tiltsa le a **Keresés és a webhely javaslatainak beírása** a Microsoft Edge-> beállításainál.
 - **Teljes képernyős mód engedélyezése**: az **Igen** (alapértelmezett) lehetővé teszi a Microsoft Edge számára, hogy teljes képernyős módot használjon, amely csak a webes tartalmat jeleníti meg, és elrejti a Microsoft Edge felhasználói felületet. A teljes képernyős mód **nem** akadályozza meg a Microsoft Edge-ben.
-- Az **About Flags lap engedélyezése**: az **Igen** (alapértelmezett) az operációs rendszer alapértelmezését használja, amely lehetővé teheti a `about:flags` oldal elérését. A `about:flags` lap lehetővé teszi a felhasználóknak a fejlesztői beállítások módosítását és a kísérleti funkciók engedélyezését. **Nem** akadályozza meg, hogy a végfelhasználók hozzáférhessenek a `about:flags` laphoz a Microsoft Edge-ben.
+- Az **About Flags lap engedélyezése**: az **Igen** (alapértelmezett) az operációs rendszer alapértelmezését használja, ami engedélyezheti a `about:flags` oldal elérését. A `about:flags` lap lehetővé teszi a felhasználóknak a fejlesztői beállítások módosítását és a kísérleti funkciók engedélyezését. **Nem** akadályozza meg, hogy a végfelhasználók hozzáférhessenek a `about:flags` lapjához a Microsoft Edge-ben.
 - **Fejlesztői eszközök engedélyezése**: az **Igen** (alapértelmezett) lehetővé teszi, hogy a felhasználók az F12 fejlesztői eszközöket használják a weblapok létrehozásához és hibakereséséhez alapértelmezés szerint. **Nem** akadályozza meg, hogy a végfelhasználók az F12 fejlesztői eszközöket használják.
 - **JavaScript engedélyezése**: az **Igen** (alapértelmezett) lehetővé teszi a parancsfájlok (például a JavaScript) futtatását a Microsoft Edge böngészőben. **Nem** akadályozza meg, hogy a böngészőben a Java-parancsfájlok fussanak.
 - A **felhasználók telepíthetik a bővítményeket**: **Igen** (alapértelmezés) lehetővé teszi a végfelhasználók számára a Microsoft Edge-bővítmények telepítését az eszközön. **Nem** akadályozza meg a telepítést.
@@ -401,7 +401,7 @@ Ezek a beállítások a [DeviceLock házirend CSP](https://docs.microsoft.com/wi
     - **Nincs konfigurálva**: a jelszó tartalmazhat számokat és betűket.
     - **Numerikus**: a jelszó csak számokból hívható meg.
     - **Alfanumerikus**: a jelszónak számokból és betűkből álló kombinációnak kell lennie.
-  - **Jelszó minimális hossza**: Itt adhatja meg a minimálisan szükséges számot vagy karaktereket (4-16). Adja meg például a `6` értéket, hogy a jelszó hosszában legalább hat karakter legyen szükséges.
+  - **Jelszó minimális hossza**: Itt adhatja meg a minimálisan szükséges számot vagy karaktereket (4-16). Adja meg például a `6` értéket, ha legalább hat karaktert szeretne megadni a jelszó hosszában.
   
     > [!IMPORTANT]
     > Ha a jelszóra vonatkozó követelményt egy Windows asztalon módosítják, a felhasználók a következő bejelentkezéskor jelentkeznek, ahogy az az eszköz tétlenről aktív állapotba kerül. A követelménynek megfelelő jelszóval rendelkező felhasználókat a rendszer továbbra is megkéri a jelszavuk módosítására.
@@ -411,10 +411,10 @@ Ezek a beállítások a [DeviceLock házirend CSP](https://docs.microsoft.com/wi
     Ez a beállítás a kiadástól függően más hatással is van. A beállítás részletes ismertetését lásd: [DeviceLock/MAXDEVICEPASSWORDFAILEDATTEMPTS CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-devicelock#devicelock-maxdevicepasswordfailedattempts).
 
   - A **Képernyő zárolása legfeljebb ennyi perc inaktivitás**után: adja meg, hogy az eszköznek mennyi ideig kell tétlennek lennie a képernyő zárolása előtt.
-  - **Jelszó érvényessége (napokban)** : adja meg az időtartamot napokban, amikor az eszköz jelszavát módosítani kell, a 1-365-ból. Adja meg például a `90` értéket, hogy a jelszót 90 nap után lejárja.
-  - **Korábbi jelszavak újbóli használatának tiltása**: Itt adhatja meg a korábban nem használható jelszavak számát 1-24-ről. Adja meg például a következőt: `5`, így a felhasználók nem állíthatnak be új jelszót a jelenlegi jelszavuk vagy az előző négy jelszavuk bármelyike számára.
+  - **Jelszó érvényessége (napokban)** : adja meg az időtartamot napokban, amikor az eszköz jelszavát módosítani kell, a 1-365-ból. Írja be például, hogy `90`, hogy a jelszót 90 nap után lejárja.
+  - **Korábbi jelszavak újbóli használatának tiltása**: Itt adhatja meg a korábban nem használható jelszavak számát 1-24-ről. Írja be például, hogy `5`, hogy a felhasználók nem állíthatnak be új jelszót a jelenlegi jelszavuk vagy az előző négy jelszavuk bármelyike számára.
   - **Jelszó kérése, ha az eszköz visszatér az inaktív állapotból** (mobil és holografikus): válassza a **szükséges** lehetőséget, hogy a felhasználóknak jelszót kell megadniuk az eszköz zárolásának feloldásához. **Nincs konfigurálva** (az alapértelmezett) nem igényel PIN-kódot vagy jelszót, amikor az eszköz visszatér inaktív állapotból.
-  - **Egyszerű jelszavak**: a **Letiltás** beállítás megadásával a felhasználók nem hozhatnak létre egyszerű jelszavakat, például `1234` vagy `1111`. Állítsa be úgy, hogy **ne legyen konfigurálva** (alapértelmezett), hogy a felhasználók olyan jelszavakat hozzanak létre, mint a `1234` vagy a `1111`. Ez a beállítás a Windows-képjelszavak használatát is engedélyezi vagy letiltja.
+  - **Egyszerű jelszavak**: a **Letiltás** beállítás megadásával a felhasználók nem hozhatnak létre egyszerű jelszavakat, például `1234` vagy `1111`. Állítsa be úgy, hogy **ne legyen konfigurálva** (alapértelmezett), hogy a felhasználók jelszavakat hozzanak létre, például `1234` vagy `1111`. Ez a beállítás a Windows-képjelszavak használatát is engedélyezi vagy letiltja.
 - **Automatikus titkosítás a AADJ során**: a **blokk** megakadályozza a BitLocker-eszközök automatikus titkosítását az eszköz első használatra való előkészítésekor, amikor az eszköz csatlakozik az Azure ad-hez. **Nincs konfigurálva** (alapértelmezés) az operációs rendszer alapértelmezett alapértékét használja, amely lehetővé teszi a titkosítást. További információ a [BitLocker-eszközök titkosításáról](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-device-encryption-overview-windows-10#bitlocker-device-encryption).
 
   [Biztonság/PreventAutomaticDeviceEncryptionForAzureADJoinedDevices CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-security#security-preventautomaticdeviceencryptionforazureadjoineddevices)
@@ -435,7 +435,7 @@ Ezek a beállítások a [DeviceLock házirend CSP](https://docs.microsoft.com/wi
 
   [Hitelesítés/EnableWebSignIn CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-authentication#authentication-enablewebsignin)
 
-- **Előnyben részesített Azure ad-bérlői tartomány**: adjon meg egy meglévő tartománynevet az Azure ad-szervezetben. Ha a tartomány felhasználói bejelentkeznek, nem kell beírniuk a tartománynevet. Például írja be a következőt: `contoso.com`. A `contoso.com` tartományba tartozó felhasználók a saját felhasználónevével (például `abby`) jelentkezhetnek be a `abby@contoso.com` helyett.
+- **Előnyben részesített Azure ad-bérlői tartomány**: adjon meg egy meglévő tartománynevet az Azure ad-szervezetben. Ha a tartomány felhasználói bejelentkeznek, nem kell beírniuk a tartománynevet. Például írja be a következőt: `contoso.com`. A `contoso.com` tartományba tartozó felhasználók a saját felhasználónevével (például `abby`) jelentkezhetnek be `abby@contoso.com`helyett.
 
   [Hitelesítés/PreferredAadTenantDomainName CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-authentication#authentication-preferredaadtenantdomainname)
 
@@ -523,7 +523,7 @@ Ezek a beállítások a [WirelessDisplay házirend CSP](https://docs.microsoft.c
 
 - **Használati adatok megosztása**: válassza ki az elküldött diagnosztikai adatok szintjét. A választható lehetőségek:
   - **Nincs konfigurálva**: a rendszer nem osztja meg az adatmegosztást.
-  - **Biztonság**: a Windows biztonságosabbá tételéhez szükséges információk, beleértve a csatlakoztatott felhasználói élményre és telemetria, valamint a kártevő szoftver-eltávolítási eszközre és a Windows defenderre vonatkozó adatokat.
+  - **Biztonság**: a Windows biztonságosabbá tételéhez szükséges információk, beleértve a csatlakoztatott felhasználói élményre és telemetria, valamint a kártevő szoftver-eltávolítási eszközre és a Microsoft defenderre vonatkozó adatokat.
   - **Alapszintű**: alapszintű eszköz adatai, beleértve a minőséggel kapcsolatos adatokat, az alkalmazások kompatibilitását, az alkalmazás használati adatait és a biztonsági szintről származó adatokat.
   - **Bővített**: további elemzések, többek között a következők: hogyan használhatók a Windows, a Windows Server, a System Center és az alkalmazások, hogyan működnek, és milyen speciális megbízhatósági adatok, valamint az alapszintű és a biztonsági szintek adatai.
   - **Teljes**: minden olyan adat, amely a problémák azonosításához és javításához, valamint a biztonsági, alapszintű és továbbfejlesztett szintekről származó adatokhoz szükséges.
@@ -632,19 +632,19 @@ Ezek a beállítások a [Start Policy CSP](https://docs.microsoft.com/windows/cl
   - **Elrejtés**: a parancsikon rejtett, és letiltja a beállítást a beállítások alkalmazásban.
   - **Megjelenítés**: a parancsikon megjelenik, és letiltja a beállítást a beállítások alkalmazásban.
 
-## <a name="windows-defender-smart-screen"></a>Windows Defender SmartScreen
+## <a name="microsoft-defender-smart-screen"></a>Microsoft Defender intelligens képernyő
 
-- **SmartScreen a Microsoft Edge-hez**: a **kötelező** beállítás kikapcsolja a Windows Defender SmartScreen szolgáltatást, és megakadályozza, hogy a felhasználók bekapcsolják azt. **Nincs konfigurálva** (alapértelmezett) bekapcsolja a SmartScreen szolgáltatást. Segít megvédeni a felhasználókat az esetleges fenyegetésektől, és megakadályozhatja a felhasználók számára a kikapcsolást.
+- **SmartScreen a Microsoft Edge-hez**: a **kötelező** kikapcsolja a Microsoft Defender SmartScreen szolgáltatást, és megakadályozza, hogy a felhasználók bekapcsolják azt. **Nincs konfigurálva** (alapértelmezett) bekapcsolja a SmartScreen szolgáltatást. Segít megvédeni a felhasználókat az esetleges fenyegetésektől, és megakadályozhatja a felhasználók számára a kikapcsolást.
 
-  A Microsoft Edge a Windows Defender SmartScreen (bekapcsolva) használatával gondoskodik a felhasználók számára a lehetséges adatlopó csalások és a kártevő szoftverek elleni védelemről.
+  A Microsoft Edge a Microsoft Defender SmartScreen (bekapcsolt) használatával gondoskodik a felhasználók számára az esetleges adatlopó csalások és kártevő szoftverek elleni védelemről.
 
   [Böngésző/AllowSmartScreen CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowsmartscreen)
 
-- **Rosszindulatú hely elérése**: a **Letiltás** megakadályozza, hogy a felhasználók figyelmen kívül hagyják a Windows Defender SmartScreen szűrő figyelmeztetéseit, és blokkolja őket a helynek. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy figyelmen kívül hagyják a figyelmeztetéseket, és folytassa a webhelyet.
+- **Rosszindulatú hely elérése**: a **Letiltás** megakadályozza, hogy a felhasználók figyelmen kívül hagyják a Microsoft Defender SmartScreen szűrő figyelmeztetéseit, és blokkolja azokat a helyről. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy figyelmen kívül hagyják a figyelmeztetéseket, és folytassa a webhelyet.
 
   [Böngésző/PreventSmartScreenPromptOverride CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverride)
 
-- Nem **ellenőrzött fájlok letöltése**: a **Letiltás** megakadályozza, hogy a felhasználók figyelmen kívül hagyják a Windows Defender SmartScreen szűrő figyelmeztetéseit, és letiltsák a nem ellenőrzött fájlok letöltését. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a felhasználók figyelmen kívül hagyják a figyelmeztetéseket, és folytassa a nem ellenőrzött fájlok letöltését.
+- Nem **ellenőrzött fájlok letöltése**: a **Letiltás** megakadályozza, hogy a felhasználók figyelmen kívül hagyják a Microsoft Defender SmartScreen szűrő figyelmeztetéseit, és letiltja a nem ellenőrzött fájlok letöltését. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a felhasználók figyelmen kívül hagyják a figyelmeztetéseket, és folytassa a nem ellenőrzött fájlok letöltését.
 
   [Böngésző/PreventSmartScreenPromptOverrideForFiles CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverrideforfiles)
 
@@ -736,7 +736,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
   [Defender/RealTimeScanDirection CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-realtimescandirection)
 
-- **Karanténba helyezett kártevők törlése előtt**: a megoldott kártevő szoftverek nyomon követése a megadott napok számával, így manuálisan is ellenőrizhetők a korábban érintett eszközök. Ha a napok számát állítja be `0` értékre, a kártevő a karanténban marad, és a rendszer nem távolítja el automatikusan. Ha `90` értékre van állítva, a rendszer a karanténba helyezi az elemeket a rendszeren 90 napig, majd eltávolítja azt.
+- **Karanténba helyezett kártevők törlése előtt**: a megoldott kártevő szoftverek nyomon követése a megadott napok számával, így manuálisan is ellenőrizhetők a korábban érintett eszközök. Ha a `0`napok számát állítja be, a kártevő a karantén mappában marad, és a rendszer nem távolítja el automatikusan. Ha `90`re van állítva, a karanténba helyezett elemek a rendszeren 90 napig tárolódnak, majd el lesznek távolítva.
 
   [Defender/DaysToRetainCleanedMalware CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-daystoretaincleanedmalware)
 
@@ -833,9 +833,9 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
   [Defender/ScheduleScanTime CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-schedulescantime)
 
 - **Vélhetően nemkívánatos alkalmazások észlelése**: válassza ki a védelem szintjét, ha a Windows vélhetően nemkívánatos alkalmazásokat észlel. A választható lehetőségek:
-  - **Nincs konfigurálva** (alapértelmezett): a Windows Defender vélhetően nemkívánatos alkalmazások elleni védelme le van tiltva.
-  - **Letiltás**: a Windows Defender észleli a vélhetően nemkívánatos alkalmazásokat, és a rendszer letiltja az észlelt elemeket. Ezek az elemek az előzményekben más fenyegetésekkel együtt jelennek meg.
-  - **Naplózás**: a Windows Defender észleli a vélhetően nemkívánatos alkalmazásokat, de nem hajt végre műveletet. Áttekintheti a Windows Defender által az alkalmazásokkal kapcsolatos információkat. Keressen például a Windows Defender által a Eseménynaplóban létrehozott eseményeket.
+  - **Nincs konfigurálva** (alapértelmezett): a Microsoft Defender vélhetően nemkívánatos alkalmazások elleni védelme le van tiltva.
+  - **Letiltás**: a Microsoft Defender észleli a vélhetően nemkívánatos alkalmazásokat, és a rendszer letiltja az észlelt elemeket. Ezek az elemek az előzményekben más fenyegetésekkel együtt jelennek meg.
+  - **Naplózás**: a Microsoft Defender vélhetően nemkívánatos alkalmazásokat észlel, de nem hajt végre műveletet. Áttekintheti a Microsoft Defender által az alkalmazásokkal kapcsolatos információkat. Keressen például a Microsoft Defender által a Eseménynaplóban létrehozott eseményekre.
 
   A vélhetően nemkívánatos alkalmazásokról további információt a [vélhetően nemkívánatos alkalmazások észlelése és blokkolása](https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/detect-block-potentially-unwanted-apps-windows-defender-antivirus)című témakörben talál.
 
@@ -850,11 +850,11 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
   - **Felhasználó által definiált**
   - **Tiltás**
 
-  Ha a művelet nem lehetséges, a Windows Defender a legjobb lehetőséget választja a fenyegetés szervizelésének biztosítására. 
+  Ha a művelet nem lehetséges, a Microsoft Defender a legjobb lehetőséget választja a fenyegetés szervizelésének biztosítására. 
 
   [Defender/ThreatSeverityDefaultAction CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-threatseveritydefaultaction)
 
-### <a name="windows-defender-antivirus-exclusions"></a>Windows Defender víruskereső – kizárások
+### <a name="microsoft-defender-antivirus-exclusions"></a>Microsoft Defender Antivirus-kizárások
 
 - A vizsgálatokból **és a valós idejű védelemből kizárandó fájlok és mappák**: egy vagy több fájlt és mappát (például **\ elérésiút** vagy **%ProgramFiles%\Path\filename.exe** ) hoz létre a kizárások listájához. A rendszer a valós idejű és ütemezett vizsgálatok során nem vizsgálja ezeket a fájlokat és mappákat.
 - A vizsgálatokból **és a valós idejű védelemből kizárandó**fájlkiterjesztések: adjon hozzá egy vagy több fájlkiterjesztés, például **jpg** vagy **txt** elemet a kizárások listájához. Az ilyen kiterjesztésű fájlok nem szerepelnek a valós idejű vagy ütemezett vizsgálatok során.

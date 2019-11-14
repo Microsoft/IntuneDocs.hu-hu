@@ -3,8 +3,8 @@ title: Az ügyfélszolgálati költségek csökkentése
 titleSuffix: Microsoft Intune
 description: Az ügyfélszolgálati költségek önkiszolgáló jelszóváltoztatással való csökkentése
 keywords: Azure Active Directory SSPR – jelszó alaphelyzetbe állítása
-author: MandiOhlinger
-ms.author: mandia
+author: ErikjeMS
+ms.author: erikje
 manager: dougeby
 ms.date: 3/6/2018
 ms.topic: archived
@@ -15,16 +15,17 @@ ms.technology: ''
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1da1758dcc1743087191f69bd4d57bc113774d81
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 08dc14a3abed634721b39fedaae840e2b18c151b
+ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72509297"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74058115"
 ---
 # <a name="reduce-help-desk-costs-with-self-service-password-reset"></a>Az ügyfélszolgálati költségek önkiszolgáló jelszóváltoztatással való csökkentése
 
 Engedélyezheti, hogy az alkalmazottak az ügyfélszolgálat közreműködése nélkül állítsák alaphelyzetbe a munkahelyi és az iskolai fiókhoz tartozó jelszavakat. Az ilyen típusú önkiszolgáló jelszóváltoztatást a következő helyzetekben célszerű használni:
+
 * A vállalat vagy az iskola Azure Active Directoryt használ a munkahelyi vagy iskolai fiókokhoz.
 * Az alkalmazottak és a tanulók rendelkeznek internet-hozzáféréssel.
 * Csökkenteni szeretné az ügyfélszolgálati költségeket.
@@ -39,6 +40,7 @@ Engedélyezheti, hogy az alkalmazottak az ügyfélszolgálat közreműködése n
 ## <a name="next-steps"></a>További lépések
 
 További információ a következő cikkekről:
+
 * [A jelszavakra vonatkozó gyakorlati tanácsok](https://docs.microsoft.com/azure/active-directory/active-directory-secure-passwords) 
 * [Az önkiszolgáló jelszóváltoztatáshoz tartozó licencek](https://docs.microsoft.com/azure/active-directory/active-directory-secure-passwords)
 
