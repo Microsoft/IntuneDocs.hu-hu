@@ -1,11 +1,11 @@
 ---
-title: macOS-eszköz Céges portálon való regisztrálása az Intune-ban | Microsoft Docs
-description: A cikk azt mutatja be, hogyan regisztrálhatók macOS-eszközök az Intune-ban a Céges portál alkalmazással
+title: Mac regisztrálása a Intune Céges portál | Microsoft Docs
+description: Ismerje meg, hogyan regisztrálhat Mac-et az Intune-ban a Céges portál alkalmazással.
 keywords: Mac OS X, macOS, OS X
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 10/03/2018
+ms.date: 11/14/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
@@ -15,93 +15,94 @@ ms.assetid: 3bb659cc-9b57-4d19-8631-2c26749fa71c
 searchScope:
 - User help
 ROBOTS: ''
-ms.reviewer: elocholi
+ms.reviewer: kakyker
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ee725d118353e18924858569ac861992d19f839a
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: ba285fc9de58b3fb739a16722e0e05e36e840e87
+ms.sourcegitcommit: 76ae5aea5deee7a590e24c3b2bb52f88125943e5
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72506188"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74098133"
 ---
-# <a name="enroll-your-macos-device-in-intune-with-the-company-portal-app"></a>A macOS-eszköz Céges portál alkalmazással való regisztrálása az Intune-ban
+# <a name="enroll-your-macos-device-using-the-company-portal-app"></a>MacOS-eszköz regisztrálása a Céges portál alkalmazás használatával  
 
-Regisztrálja macOS-eszközét az Intune Céges portál alkalmazással, hogy biztonságos hozzáférést kapjon vállalata levelezéséhez, fájljaihoz és alkalmazásaihoz.
+A macOS-eszköz regisztrálása a Intune Céges portál alkalmazással biztonságos hozzáférést biztosít a munkahelyi vagy iskolai e-mailekhez, fájlokhoz és alkalmazásokhoz.
 
-A vállalatok gyakran megkövetelik az eszközök felügyelet alá vonását, mielőtt engedélyeznék azok hozzáférését a védett adatokhoz. A már felügyelt eszközökre a vállalat szabályzatokat és alkalmazásokat küldhet le a mobileszköz-felügyeleti szolgáltatón keresztül. Ahhoz, hogy eszközéről folyamatosan hozzáférjen a munkahelyi vagy iskolai információkhoz, eszközét a szabályzatbeállításoknak megfelelően kell konfigurálnia.  
+A szervezetek általában az eszköz regisztrálásához szükségesek ahhoz, hogy hozzáférjenek a tulajdonosi adataihoz. Az eszköz regisztrálása után a rendszer *felügyeli*. A szervezet a mobileszköz-felügyeleti (MDM-) szolgáltatón (például az Intune-on) keresztül rendelhet szabályzatokat és alkalmazásokat az eszközhöz. Az eszközön a munkahelyi vagy iskolai adatok folyamatos eléréséhez úgy kell beállítania az eszközt, hogy az megfeleljen a szervezet házirend-beállításainak.  
 
-Ez a cikk azt írja le, hogyan segít a macOS-hez készült Intune Céges portál alkalmazás az eszközök vállalati követelményeknek megfelelő regisztrálásában, konfigurálásában és karbantartásában.  
-</br>
-> [!VIDEO https://www.youtube.com/embed/Pa2pfhwq_yk?rel=0]
+Ez a cikk azt ismerteti, hogyan használható a macOS rendszerhez készült Céges portál alkalmazás az eszköz regisztrálására, konfigurálására és karbantartására, hogy megfeleljen a szervezet igényeinek.  
+
 
 ## <a name="what-to-expect-from-the-company-portal-app"></a>Ami a Céges portál alkalmazástól elvárható
 
-Első beállítása során az alkalmazás megköveteli, hogy hitelesítse magát vállalatánál. Ez után tájékoztatja az összes szükséges eszközbeállításról. A vállalatok gyakran megadják például a jelszavak minimális vagy maximális karakterszámát, és ezt Önnek be kell tartania.    
+A kezdeti beállítás során a Céges portál alkalmazásnak be kell jelentkeznie, és hitelesítenie kell magát a szervezetében. A Céges portál ezután tájékoztatja a szervezet követelményeinek teljesítéséhez konfigurálni kívánt eszközökről. A vállalatok gyakran megadják például a jelszavak minimális vagy maximális karakterszámát, és ezt Önnek be kell tartania.    
 
-Eszköze regisztrálása után a Céges portál alkalmazás folyamatosan gondoskodik az eszköz védelméről. Ha például nem megbízható forrásból telepít valamit, az alkalmazás riasztást küld Önnek, és olykor meg is vonja a vállalati adatokhoz való hozzáférést. A vállalatok gyakran használnak ilyen alkalmazásvédelmi szabályzatokat, amelyek többnyire megkövetelik a nem megbízható alkalmazások eltávolítását a hozzáférés visszaadása előtt.
+Az eszköz regisztrálása után a Céges portál mindig ellenőrzi, hogy az eszköz védett-e a szervezet követelményeinek megfelelően. Ha például egy alkalmazást nem megbízható forrásból telepít, Céges portál riasztást küld, és a szervezet erőforrásaihoz való hozzáférést is korlátozhatja. Ilyenek például az alkalmazás-védelmi szabályzatok. A hozzáférés helyreállításához valószínűleg el kell távolítania a nem megbízható alkalmazást. 
 
-Ha a regisztráció után a vállalat új biztonsági követelményt, például többtényezős hitelesítést vezet be, a Céges portál alkalmazás értesíti Önt. Lehetősége lesz módosítani beállításait, hogy továbbra is dolgozhasson az eszközéről.  
+Ha a regisztrációt követően a szervezet új biztonsági követelményt (például többtényezős hitelesítést) érvényesít, Céges portál értesíti Önt. Lehetősége lesz módosítani beállításait, hogy továbbra is dolgozhasson az eszközéről.  
 
 További információk a regisztrációval kapcsolatban: [Mi történik a Céges portál alkalmazás telepítésekor és az eszköz regisztrálásakor?](what-happens-if-you-install-the-Company-Portal-app-and-enroll-your-device-in-intune-macos.md).  
 
-## <a name="get-your-device-managed"></a>Eszköz felügyelet alá vonása  
-A macOS 10,12-es vagy újabb verzióját futtató macOS-eszközök regisztrálásához kövesse az alábbi lépéseket.   
+## <a name="get-your-macos-device-managed"></a>MacOS-eszköz felügyeletének beolvasása  
+A következő lépésekkel regisztrálja macOS-eszközét a szervezetében. Az eszközön macOS 10,12 vagy újabb rendszernek kell futnia.   
+
+> [!NOTE]
+> A folyamat során előfordulhat, hogy a rendszer arra kéri, hogy Céges portál a kulcstartóban tárolt bizalmas információk használatára. Ezek a kérések az Apple Security részét képezik. A kérdés beírásakor írja be a bejelentkezési kulcstartó jelszavát, és válassza a **mindig Engedélyezés lehetőséget**. Ha megnyomja az **ENTER** billentyűt vagy a **visszatérést** a billentyűzeten, a kérés Ehelyett az **Engedélyezés lehetőséget**választja, ami további kéréseket eredményezhet.  
+
+### <a name="install-company-portal-app"></a>Céges portál alkalmazás telepítése  
+1. Nyissa meg a [Mac-regisztrációt](https://go.microsoft.com/fwlink/?linkid=853070).  
+2. A rendszer letölti a Céges portál Installer. pkg fájlt. Nyissa meg a telepítőt, és folytassa a lépéseket. 
+3. Fogadja el a szoftverlicenc-szerződést. 
+4. Adja meg az eszköz jelszavát vagy a regisztrált ujjlenyomatot a szoftver telepítéséhez.  
+5. Nyissa meg Céges portál. 
+
+> [!IMPORTANT]
+> Előfordulhat, hogy a Microsoft AutoUpdate megnyitotta a Microsoft-szoftverek frissítését. Az összes frissítés telepítése után nyissa meg a Céges portál alkalmazást. A legjobb telepítési élmény érdekében telepítse a Microsoft AutoUpdate és a Céges portál legújabb verzióit.  
 
 
-1. A Céges portál webhelyének eléréséhez nyisson új ablakot a __Safariban__, és lépjen a https://portal.manage.microsoft.com URL-címre.  
-
-2. Jelentkezzen be a Céges portál webhelyére munkahelyi vagy iskolai fiókjával.
-
-   [!INCLUDE [wit_nextref](includes/end-user-password-guidance.md)]
+### <a name="enroll-your-mac"></a>Mac-regisztráció  
 
 
-3. Kattintson az oldal bal felső sarkában lévő **Menü** > **Eszközök** lehetőségre.  
+1. Jelentkezzen be Céges portálra munkahelyi vagy iskolai fiókjával.  
+2. Az alkalmazás megnyitásakor válassza az **Indítás**lehetőséget.  
+3. Tekintse át, hogy a cége [mit láthat és mit nem láthat](what-info-can-your-company-see-when-you-enroll-your-device-in-intune.md) a regisztrált eszközön. Ezután válassza a **Continue** (Folytatás) gombot.  
+4. A **felügyeleti profil telepítése** képernyőn válassza a **profil letöltése**lehetőséget.   
 
-4. Az __Eszközök__ oldalon vagy a felügyelt eszközök listája, vagy egy szalagcím látható. Hogy mi jelenik meg, az attól függ, hogy rendelkezik-e már felügyelt eszközzel. 
-    * A felsoroltak között nem szereplő eszköz hozzáadásához válassza az **Ide koppintva tudathatja velünk, melyik eszközt használja, vagy új eszközt adhat meg.** feliratú szalagcímet.
-    * Ha nem rendelkezik eszközekkel, a szalagcím beolvasása: **nem rendelkezik felügyelt eszközökkel. Ezt a gombra koppintva veheti fel.** Az eszköz hozzáadásához kattintson a szalagcímre.  
+    ![Példa a Céges portálre, a felügyeleti profil telepítése képernyőre, és a "profil letöltése" gombra.](./media/install-mgmt-profile-mac-1911.PNG)   
+5. Ekkor megnyílik az eszköz rendszerbeállításai. Válassza a **telepítés** lehetőséget, majd válassza a **telepítés** újra lehetőséget. Ha a rendszer kéri, adja meg az eszköz jelszavát.  
 
-     ![Képernyőkép az Eszközök oldalról, a kattintás helyét kiemelő piros téglalappal bekeretezett szalagcímmel.](./media/CP-enroll-MACOS-1808.png)  
-5. Hajtsa végre az alábbi lépések közül a Céges portálon éppen megjelenő üzenetnek megfelelőt.  
-    * Ha először ad hozzá egy eszközt, akkor a rendszer felkéri, hogy töltse le a Céges portál alkalmazást az eszközére. A folytatásához kattintson a **Letöltés** lehetőségre.  
+    ![Példa a macOS rendszer beállításairól, a telepítési kérésről, a "telepítés" gombra.](./media/system-preference-install-1911.PNG)  
+6. A profil telepítése után a rendszer a **felügyeleti profilban** megjelenik a profilok listájában.  
 
-         ![Példa képernyőkép a macOS-es Céges portál alkalmazás letöltését kérő képernyőről. A felhasználó választhat, hogy a bal alsó, kék Letöltés gombra, vagy a jobb alsó, szürke Mégse gombra kattint a párbeszédablakban.](./media/CP-enroll-download-macOS-1808.png)  
+   ![Példa a macOS rendszer beállításai, profilok képernyő, a telepített felügyeleti profil kiemelése képernyőképre.](./media/system-preference-verify-1911.PNG)   
+7. Vissza Céges portál.   
+8. Előfordulhat, hogy a szervezetnek frissítenie kell az eszköz beállításait. Ha elkészült a beállítások frissítésével, válassza a **Beállítások ellenőrzése**lehetőséget.  
 
-    * Ha már rendelkezik felügyelt macOS-eszközzel, akkor a jelenleg felügyelt macOS-eszközei listája jelenik meg egy párbeszédablakban. **Az eszközöm nincs a listán** > **Letöltés** lehetőség választásával töltse le a Céges portál alkalmazást az éppen hozzáadott eszközre.  
+    ![Példa a Céges portál képernyőképére, az eszközbeállítások képernyő frissítésére, és a "beállítások ellenõrzése" gombra.](./media/update-settings-mac-1911.PNG)  
+9. Ha a telepítés befejeződött, válassza a **kész**gombot.  
 
-         ![Példa képernyőkép a macOS-es Céges portál alkalmazás letöltését kérő képernyőről. A felhasználó választhatja *Az eszközöm nincs a listán* lehetőséget, vagy egy eszközt az oldal közepéről. A párbeszédablak bal alsó sarkában megjelenik egy kék Letöltés gomb, a jobb alsó sarokban pedig egy szürke Mégse gomb](./media/cp-mac-os-device-isnt-here-1808.png)  
 
-6. Eszköze ellenőrzi, hogy a **CompanyPortal.pkg** telepítőfájl megnyitása biztonságos-e. Miután ez befejeződött, nyissa meg a telepítőt, és végezze el a telepítést.  
+ ## <a name="troubleshooting-and-feedback"></a>Hibaelhárítás és visszajelzés   
 
-7. Amikor a telepítés véget ér, lépjen a **Kezdőpanelre**, majd nyissa meg a **Céges portált**.  
+Ha a regisztráció során problémákba ütközik, lépjen a **súgó** > **diagnosztikai jelentés küldése** elemre, hogy jelentse a problémát a Microsoft-alkalmazások fejlesztőinek. Ezek az információk segítenek az alkalmazás tökéletesítésében. Ezeket az információkat is felhasználhatják a probléma megoldásához, ha az informatikai támogatási személy a segítségére jut.  
 
-8. MacOS-eszköze párbeszédablakban kér megerősítést a Céges portál alkalmazás megnyitásához. Kattintson a **Megnyitás** gombra.  
+Miután bejelentette a problémát a Microsoftnak, elküldheti a felhasználói élmény részleteit az informatikai támogatási személynek. Válassza ki az **e-mailek adatait**. Írja be, hogy mit tapasztalt az e-mail törzsében. A támogatási személy e-mail-címének megkereséséhez nyissa meg a Céges portál alkalmazás > **Névjegy**lehetőséget. Vagy keresse meg a [céges portál webhelyet](https://go.microsoft.com/fwlink/?linkid=2010980).  
+ 
 
-   > [!TIP]
-   > Az Intune-nak hozzá kell férnie a számítógépéhez, enélkül nem tud meggyőződni arról, hogy elég biztonságos-e az eszköz a vállalat erőforrásainak eléréséhez. Ha a számítógép elutasítja a Céges portál alkalmazás megnyitását, [kapcsolja ki a forgalomirányítót](https://support.apple.com/HT202491). Ez után nyissa meg az alkalmazást.
+Emellett a Microsoft Intune Céges portál csapata szívesen hallja a visszajelzését. Lépjen a **súgó** > **visszajelzés küldése** gombra a gondolatok és ötletek megosztásához.  
 
-9. A Céges portál alkalmazás első megjelenő képernyője felszólítja, hogy **jelentkezzen be**. Használja ugyanazt a munkahelyi vagy iskolai fiókot, amellyel a Céges portál webhelyre jelentkezett be.
+## <a name="unverified-profiles"></a>Ellenőrizetlen profilok  
+Ha megtekinti a telepített mobileszköz-kezelési (MDM) profilokat a **Rendszerbeállítások** > a **profilok**között, egyes profilok nem ellenőrzött állapotot jelezhetnek. Ha a felügyeleti profil ellenőrzött állapotot mutat, nem kell foglalkoznia.  
 
-10. A Céges portál megerősíti a fiókadatokat, majd megjeleníti az **Eszközregisztráció** és az **Eszközmegfelelőség** állapotát. Sárga háromszögek hívják fel a figyelmet a macOS-eszköz iskolai vagy munkahelyi használatának biztonságossá tételéhez szükséges lépéseket. A regisztráció megkezdéséhez kattintson az **Indítás** lehetőségre. 
-
-11. Ha a rendszer kéri, írja be a számítógép bejelentkezési adatait.  
-
-Az eszköz felügyeleti regisztrálása eltarthat néhány percig. Ezalatt végezhet egyéb műveleteket az eszközén. A vállalati hozzáférés beállításának befejezése után megjelenő üzenet a folyamat lezárásáról tájékoztatja.  
-
-## <a name="unverified-profiles"></a>Ellenőrizetlen profilok
-A macOS-eszköz telepített mobileszköz-kezelési (MDM-) profiljainak megtekintésekor előfordulhat, hogy egyes profilok **Ellenőrizetlen** állapotot jeleznek. Amíg a **Felügyeleti profil** **Ellenőrzött** állapotot jelez, nincs ok az aggodalomra.  
-
-A felügyeleti profil határozza meg az MDM-csatorna kapcsolatát. Amíg a felügyeleti profil ellenőrizve van, a többi, ezen a csatornán keresztül a gépre érkező profil a felügyeleti profil biztonság tulajdonságait örökli.
-
-Mivel ezeket a profilokat nem kell egyenként ellenőrizni, gyorsabban létrejönnek és eljutnak az eszközökre. 
+A felügyeleti profil határozza meg az MDM-csatorna kapcsolatát. Ha a felügyeleti profil ellenőrzése megtörtént, az adott csatornán keresztül a gépre küldött egyéb profilok öröklik a felügyeleti profil biztonsági sajátosságait.  
 
 ## <a name="updating-the-company-portal-app"></a>A Céges portál alkalmazás frissítése
 
-A Céges portál alkalmazás frissítése bármely más Office-alkalmazáséhoz hasonlóan a Microsoft AutoUpdate for Mac használatával történik. További tudnivalók a [macOS rendszerhez készült Microsoft-alkalmazások frissítéséről](https://support.office.com/article/Check-for-Office-for-Mac-updates-automatically-bfd1e497-c24d-4754-92ab-910a4074d7c1).  
+A Céges portál alkalmazás frissítése ugyanúgy történik, mint bármely más Office-alkalmazáshoz a macOS rendszerhez készült Microsoft autoupdaten keresztül. Tudjon meg többet a [MacOS-hez készült Microsoft-alkalmazások frissítéséről](https://support.office.com/article/Check-for-Office-for-Mac-updates-automatically-bfd1e497-c24d-4754-92ab-910a4074d7c1).  
 
 ## <a name="next-steps"></a>További lépések  
-További segítségre van szüksége? Forduljon a cég informatikai támogatási szolgálatához. A kapcsolatfelvételi adatait megtalálja a [Munkahelyi portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).  
+További segítségre van szüksége? Forduljon a cég informatikai támogatásához. Az elérhetőségét keresse meg a [Vállalati portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).  
 
 

@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 08/13/2018
+ms.date: 11/14/2018
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: enrollment
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cbdef7cffa76beeb158c47ab3651d438de2d6ccc
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 684e9602e66842e26a7f8e233a8cee6db73f132d
+ms.sourcegitcommit: 76ae5aea5deee7a590e24c3b2bb52f88125943e5
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72503170"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74098201"
 ---
 # <a name="set-up-enrollment-for-macos-devices-in-intune"></a>Regisztráció beállítása macOS-eszközökhöz az Intune-ban
 
@@ -42,15 +42,16 @@ macOS-eszközök regisztrációjának indítása előtt végezze el az alábbiak
 - [Az MDM-szolgáltató beállítása](../fundamentals/mdm-authority-set.md)
 - [Csoportok létrehozása](../fundamentals/groups-add.md)
 - [A Céges portál konfigurálása](../apps/company-portal-app.md)
-- Felhasználói licencek kiosztása a [Microsoft 365 felügyeleti központban](http://go.microsoft.com/fwlink/p/?LinkId=698854)
+- Felhasználói licencek kiosztása a [Microsoft 365 felügyeleti központban](https://go.microsoft.com/fwlink/p/?LinkId=698854)
 - [Apple MDM push-tanúsítvány beszerzése](../enrollment/apple-mdm-push-certificate-get.md)
 
 ## <a name="user-owned-macos-devices-byod"></a>A felhasználó tulajdonában macOS-eszközök (BYOD)
 
-Azt is engedélyezheti, hogy a felhasználók saját személyes eszközeiket regisztrálják az Intune-felügyelethez. Ez a „saját eszköz használata” vagy BYOD (Bring Your Own Device) néven ismert. Miután teljesítette az előfeltételeket, és kiosztotta a felhasználói licenceket, a felhasználók a következőképp regisztrálhatják az eszközeiket:
+Lehetővé teheti a felhasználók számára, hogy regisztrálják saját eszközeiket az Intune-felügyeletbe. Ez az úgynevezett "saját eszköz használata" vagy BYOD. Az előfeltételek és a hozzárendelt felhasználói licencek elvégzése után a felhasználók a következő módon regisztrálhatják az eszközeiket:
 - a [Céges portál](https://portal.manage.microsoft.com) webhelyre lépve, vagy
-- a Céges portál alkalmazás letöltésével.
-Hivatkozást is küldhet nekik az online regisztrációhoz: [macOS-eszköz regisztrálása az Intune-ban](https://docs.microsoft.com/intune-user-help/enroll-your-device-in-intune-macos)
+- Töltse le a Mac Céges portál alkalmazást a következő címen: [aka.MS/EnrollMyMac](https://aka.ms/EnrollMyMac).
+
+A felhasználók az online regisztráció lépéseire mutató hivatkozást is küldhetnek: [MacOS-eszköz regisztrálása az Intune-ban](https://docs.microsoft.com/intune-user-help/enroll-your-device-in-intune-macos).
 
 Más végfelhasználói feladatokkal kapcsolatos további információkért tanulmányozza a következő cikkeket:
 
@@ -77,12 +78,17 @@ A Parallels Desktophoz meg kell adnia a virtuális gépek hardvertípusát és s
 A VMware Fusion esetében [szerkesztenie kell a .vmx-fájlt](https://kb.vmware.com/s/article/1014782) a virtuális gép hardvermodelljének és sorozatszámának megadásához. Azt javasoljuk, hogy a virtuális gépeket futtató eszközök hardvertípusa egyezzen meg a létrehozandó virtuális gépek hardvertípusával. A hardvertípust az **Apple menü** > **A Mac névjegye** > **Rendszerjelentés** > **Modellazonosító** területen találhatja meg. 
 
 ## <a name="user-approved-enrollment"></a>Felhasználó által jóváhagyott regisztráció
-
 A felhasználói jóváhagyott MDM-regisztráció egy olyan macOS-regisztrációs típus, amellyel bizonyos biztonsági szempontból kényes beállításokat kezelhet. További információt az [Apple támogatási dokumentumában találhat](https://support.apple.com/HT208019).
 
-A felhasználó általi jóváhagyáshoz a végfelhasználónak manuális jóváhagyást kell adnia a rendszerbeállítások használatával a macOS Céges portállal való regisztráció után. Ehhez útmutatást a macOS 10.13.2 vagy újabb rendszert használó felhasználók a macOS Céges portálon találhatnak.
+November 2019-től kezdődően az összes új felhasználó által birtokolt macOS-regisztráció a felhasználó számára lesz jóváhagyva, mivel a felhasználónak manuálisan kell telepítenie a felügyeleti profilt a sikeres regisztráláshoz. A [beléptetési folyamat](https://docs.microsoft.com/intune-user-help/enroll-your-device-in-intune-macos-cp)során a felhasználó a **Rendszerbeállítások** > **profilokban**telepíti az Apple felügyeleti profilt.  A felügyeleti profil telepítéséhez szükséges utasítások a macOS Céges portál alkalmazásban érhetők el.
 
-Annak megállapításához, hogy az eszköz jóvá van-e hagyva a felhasználó által, lépjen az Intune-portálra, majd válassza az **Eszközök** > **Minden eszköz**> kívánt eszköz > **Hardver** lehetőséget. Jelölje be a **Felhasználó által jóváhagyott** mezőt.
+Előfordulhat, hogy a 2019 november előtt regisztrált eszközök nem lesznek felhasználó által jóváhagyva, ha a felhasználó nem hagyta jóvá manuálisan a felügyeleti profilt. A felhasználók azonban visszatérhetnek a felügyeleti profilhoz, és a **Rendszerbeállítások** > **profiljaiban** > kiválaszthatják a **felügyeleti profilt** , > a **jóváhagyás**lehetőségre.
+
+### <a name="find-out-if-a-device-is-user-approved"></a>Annak megállapítása, hogy az eszköz felhasználó által jóváhagyva
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **eszközök** > **minden eszköz**lehetőséget, > válassza ki az eszközt > **hardvert**.
+3. Keresse meg a **felhasználó által jóváhagyott beléptetés** mezőt.
+
 
 ## <a name="next-steps"></a>További lépések
 

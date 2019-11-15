@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5eb5a8f462846afd97ae4ea84b7431ae147d918c
-ms.sourcegitcommit: 556b7ea2049014c9027f0e44affd3f301fab55fc
+ms.openlocfilehash: 30a1c9b1fddaa59d633c8dc969063b26b25097de
+ms.sourcegitcommit: 76ae5aea5deee7a590e24c3b2bb52f88125943e5
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73709178"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74098181"
 ---
 # <a name="set-up-enrollment-for-windows-devices"></a>Windowsos eszközök regisztrációjának beállítása
 
@@ -117,6 +117,15 @@ A végfelhasználói regisztrációra vonatkozó utasításokért lásd: [Window
 > Ha nem engedélyezte az automatikus MDM-et, azonban olyan Windows 10-eszközökkel rendelkezik, amelyek az Azure AD-hez csatlakoznak, a regisztráció után két rekord jelenik meg az Intune-konzolban. Ezt megakadályozhatja úgy, ha az Azure AD-hez csatlakozó eszközökkel rendelkező felhasználók a **Fiókok** > **Hozzáférés munkahelyi vagy iskolai rendszerhez** területen **csatlakoznak** ugyanazzal a fiókkal. 
 
 A végfelhasználói feladatokkal kapcsolatban lásd: [Információk végfelhasználóknak a Microsoft Intune használatáról](../fundamentals/end-user-educate.md).
+
+## <a name="registration-and-enrollment-cnames"></a>Regisztráció és regisztrálási CNAME-rekordok
+Azure Active Directory eltérő CNAME-t használ az iOS-, Android-és Windows-eszközökön az eszközök regisztrálásához. Az Intune feltételes hozzáféréséhez regisztrálni kell az eszközöket, más néven a munkahelyi csatlakozást. Ha feltételes hozzáférést szeretne használni, a EnterpriseRegistration CNAME-t is konfigurálnia kell minden egyes vállalat neveként.
+
+| Típus | Gazdagép neve | A következő helyre mutat | Élettartam |
+| --- | --- | --- | --- |
+| név | EnterpriseRegistration. company_domain. com | EnterpriseRegistration.windows.net | 1 óra|
+
+További információ az eszközök regisztrálásáról: [az eszközök identitásának kezelése a Azure Portal használatával](https://docs.microsoft.com/azure/active-directory/devices/device-management-azure-portal)
 
 ## <a name="next-steps"></a>További lépések
 

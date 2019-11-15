@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 11/08/2019
+ms.date: 11/14/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a1bbf085cc5d3ffd3b37bd2c475f015be6418f6d
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.openlocfilehash: ace59f4bfad70eece9e693d4ca74094a6d5af460
+ms.sourcegitcommit: 76ae5aea5deee7a590e24c3b2bb52f88125943e5
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74058554"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74098082"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -53,12 +53,22 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 ### Role-based access control
 -->  
 
-## <a name="week-of-november-11-2019"></a>November 11-i hét, 2019
 
-### <a name="app-management"></a>Alkalmazáskezelés
+## <a name="week-of-november-11-2019"></a>November 11-i hét, 2019  
+
+### <a name="app-management"></a>Alkalmazáskezelés  
+
+#### <a name="improved-macos-enrollment-experience-in-company-portal----5074349-wnready---"></a>Továbbfejlesztett macOS-regisztrációs élmény Céges portál <!-- 5074349 WNready -->  
+A macOS-regisztrálási élmény Céges portál egyszerűbb regisztrációs folyamattal rendelkezik, amely szorosabban igazodik a Céges portál iOS-es regisztrálási élményhez. Az eszköz felhasználói mostantól a következőket látják:  
+
+* Egy fényesebb felhasználói felület.  
+* Továbbfejlesztett regisztrációs ellenőrzőlista.  
+* Az eszközök regisztrálásával kapcsolatos tudnivalók.  
+* Továbbfejlesztett hibaelhárítási beállítások.  
 
 #### <a name="web-apps-launched-from-the-windows-company-portal-app---5030972---"></a>A Windows Céges portál alkalmazásból indított webalkalmazások<!-- 5030972 -->
 A végfelhasználók mostantól közvetlenül a Windows Céges portál alkalmazásból is elindíthatják a webalkalmazásokat. A végfelhasználók kiválaszthatják a webalkalmazást, majd kiválaszthatják a **Megnyitás böngészőben**lehetőséget. A közzétett webes URL-cím közvetlenül egy böngészőben nyílik meg. Ez a funkció a következő héten lesz bevezetve. A Web Apps szolgáltatással kapcsolatos további információkért lásd: [webalkalmazások hozzáadása Microsoft Intunehoz](~/apps/web-app.md).
+
 
 ## <a name="week-of-november-4-2019"></a>2019. november 4. hét
 
@@ -146,7 +156,7 @@ Létrehozhat egy Intune app Protection-szabályzatot, amely letilthatja vagy sze
 
 ### <a name="device-configuration"></a>Eszközök konfigurálása
 
-#### <a name="new-device-firmware-configuration-interface-profile-for-windows-10-and-later-devices---2266073----"></a>Új eszköz belső vezérlőprogram-konfigurációs felületének profilja a Windows 10 és újabb rendszerű eszközökhöz<!-- 2266073  -->
+#### <a name="new-device-firmware-configuration-interface-profile-for-windows-10-and-later-devices-public-preview---2266073----"></a>Új eszköz belső vezérlőprogram-konfigurációs felületének profilja a Windows 10 és újabb rendszerű eszközökhöz (nyilvános előzetes verzió)<!-- 2266073  -->
 
 Windows 10 és újabb rendszereken létrehozhat egy eszköz-konfigurációs profilt a beállítások és szolgáltatások vezérléséhez (**eszköz konfigurációja** > **profilok** > **profil létrehozása** > **Windows 10 és újabb verziók** a platformhoz). Ebben a frissítésben egy új, az eszköz belső vezérlőprogram-konfigurációs felületének profilja van, amely lehetővé teszi az Intune számára az UEFI-(BIOS-) beállítások kezelését.
 

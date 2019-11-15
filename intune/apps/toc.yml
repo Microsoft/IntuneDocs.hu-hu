@@ -5,7 +5,7 @@
   items:
     - name: Az alkalmazáskezelés áttekintése
       href: app-management.md
-- name: Gyorsútmutatók
+- name: Rövid útmutatók
   items:
     - name: Alkalmazás hozzáadása és hozzárendelése
       href: quickstart-add-assign-app.md
@@ -26,7 +26,7 @@
       displayName: app-we; without; without enrollment
     - name: MAM – GYAKORI KÉRDÉSEK
       href: mam-faq.md
-- name: Használati útmutatók
+- name: Útmutatók
   items:
     - name: Alkalmazások hozzáadása
       items:
@@ -185,14 +185,14 @@
     - name: Hibaelhárítás
       items:
         - name: Segítség a felhasználóknak a problémák elhárításában
-          href: ../fundamentals/help-desk-operators.md?toc=/intune/apps/toc.json&bc=/apps/breadcrumb/toc.json
+          href: ../fundamentals/help-desk-operators.md?toc=/intune/apps/toc.json&bc=/intune/apps/breadcrumb/toc.json
         - name: Alkalmazások telepítésével kapcsolatos problémák elhárítása
           href: troubleshoot-app-install.md
         - name: Mobilalkalmazás-kezelési hibaelhárítás
           href: troubleshoot-mam.md
         - name: Alkalmazásvédelmi naplók áttekintése
           href: app-protection-policy-settings-log.md
-- name: Hivatkozás
+- name: Referencia
   items:
     - name: Alkalmazások védelme az Intune App SDK-val
       href: ../developer/app-sdk.md

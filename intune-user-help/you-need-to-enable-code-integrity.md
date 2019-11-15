@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 02/19/2019
+ms.date: 11/14/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
@@ -19,18 +19,18 @@ ms.reviewer: scottduf
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6bde7fc554496b2ecc6f13c7e1b899d7ff05bfa1
-ms.sourcegitcommit: 1a7f04c80548e035be82308d2618492f6542d3c0
+ms.openlocfilehash: 2b26717e2e8beed2e92f47dca17cbea0ec47a82b
+ms.sourcegitcommit: 244a75622f9cebaaaf5b33aadd8931407a2e2e48
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73754998"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74096746"
 ---
 # <a name="enable-code-integrity"></a>Kód integritásának engedélyezése
 
 A szervezetnek szüksége lehet arra, hogy a SZÁMÍTÓGÉPe engedélyezve legyen a *kód integritása*nevű veszélyforrások elleni védelmi szolgáltatással. A kód integritása ellenőrzi az eszközön lévő illesztőprogramokat és rendszerfájlokat a sérülés vagy a kártevő szoftverek jeleinek ellenőrzéséhez. Ahhoz, hogy a kód integritása működjön az eszközön, a [*biztonságos rendszerindítás*](https://docs.microsoft.com/windows/security/information-protection/secure-the-windows-10-boot-process#secure-boot) nevű másik biztonsági funkciót is engedélyezni kell.
 
-Ha a számítógép nem megfelelő, mert a kód integritása le van tiltva, lépjen kapcsolatba a szervezet informatikai támogatási csapatával. Segítenek a biztonságos rendszerindítás engedélyezésében, amely a kód integritását aktiválja az eszköz következő indításakor.
+Ha a számítógép nem megfelelő, mert a kód integritása le van tiltva, forduljon a szervezet informatikai támogatási szolgálatához. A támogatási személy segítséget nyújt a biztonságos rendszerindítás engedélyezésében, amely a kód integritásának kiváltására szolgál a következő alkalommal, amikor elindítja az eszközt. 
 
 Ha speciális eszköz felhasználóként azonosítja magát, és saját maga szeretné kipróbálni a lépéseket, tekintse meg a [biztonságos rendszerindítás ismételt engedélyezése](https://docs.microsoft.com/windows-hardware/manufacture/desktop/disabling-secure-boot#re-enable-secure-boot)című témakört.
 

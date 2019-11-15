@@ -10,9 +10,6 @@
           tocHref: /intune/
           topicHref: /intune/
           items:
-            - name: Alkalmazások
-              tocHref: /intune/fundamentals/
-              topicHref: /intune/apps/
-            - name: Alkalmazások
+            - name: Konfiguráció
               tocHref: /intune/protect/
-              topicHref: /intune/apps/
+              topicHref: /intune/configuration/
