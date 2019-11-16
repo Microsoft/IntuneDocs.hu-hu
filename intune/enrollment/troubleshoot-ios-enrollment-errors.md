@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7c7ec23d0408aa4d4cf81baff2d7cdf749fb65e
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 03ceaf5493f544dbb815146eb67c3fae8856d29e
+ms.sourcegitcommit: 5c52879f3653e22bfeba4eef65e2c86025534dab
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72509230"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74126150"
 ---
 # <a name="troubleshoot-ios-device-enrollment-problems-in-microsoft-intune"></a>IOS-eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune
 
@@ -63,7 +63,7 @@ Gyűjtse össze a következő információkat a problémával kapcsolatban:
 1. Jelentkezzen be az Azure Portalra.
 2. Válassza a **További szolgáltatások**lehetőséget, keresse meg az Intune-t, majd válassza az **Intune**lehetőséget.
 3. Válassza az **Eszközök regisztrálása** > **Regisztrációs korlátozások** lehetőséget.
-4. Az **eszközök típusának korlátozása**területen válassza ki a > **tulajdonságok**beállításához @no__t – 2 válassza a**platformok** lehetőséget > válassza az **iOS** **engedélyezése lehetőséget** , majd kattintson **az OK**gombra.
+4. Az **eszközök típusának korlátozása**területen válassza ki a > **tulajdonságokat** beállítani kívánt korlátozást > **válassza a platformok** lehetőséget > válassza az **iOS** **engedélyezése lehetőséget** , majd kattintson **az OK**gombra.
 5. Válassza a **platformok konfigurálása**lehetőséget, válassza a személyes tulajdonú iOS-eszközök **engedélyezése** lehetőséget, majd kattintson **az OK**gombra.
 6. Regisztrálja újra az eszközt.
 
@@ -84,6 +84,8 @@ Gyűjtse össze a következő információkat a problémával kapcsolatban:
 1. Távolítsa el a Céges portál alkalmazást az eszközről.
 2. Töltse le és telepítse a **Microsoft Intune céges portál** alkalmazást az **App Store áruházból**.
 3. Regisztrálja újra az eszközt.
+ > [!NOTE]
+    > Ez a hiba akkor is megjelenhet, ha a felhasználó több eszközt próbál regisztrálni, mint amennyit az eszköz regisztrálása engedélyez. Ha ezek a lépések nem oldják meg a problémát, kövesse az **eszközök maximális** száma című cikkben ismertetett lépéseket.
 
 ### <a name="device-cap-reached"></a>Elérte az eszközök maximális száma
 
@@ -93,7 +95,7 @@ Gyűjtse össze a következő információkat a problémával kapcsolatban:
 1. Nyissa meg az [Intune felügyeleti portált](https://portal.azure.com/?Microsoft_Intune=1&Microsoft_Intune_DeviceSettings=true&Microsoft_Intune_Enrollment=true&Microsoft_Intune_Apps=true&Microsoft_Intune_Devices=true#blade/Microsoft_Intune_DeviceSettings/ExtensionLandingBlade/overview) > **eszköz** > **minden eszköz**, és a felhasználó által regisztrált eszközök számának ellenőrzését.
     > [!NOTE]
     > Az érintett felhasználói bejelentkezést is meg kell adnia az [Intune felhasználói portálon](https://portal.manage.microsoft.com/) , és ellenőriznie kell a regisztrált eszközöket. Előfordulhat, hogy az Intune-beli [felhasználói portálon](https://portal.manage.microsoft.com/) megjelenő eszközök nem az [Intune felügyeleti portálon](https://portal.azure.com/?Microsoft_Intune=1&Microsoft_Intune_DeviceSettings=true&Microsoft_Intune_Enrollment=true&Microsoft_Intune_Apps=true&Microsoft_Intune_Devices=true#blade/Microsoft_Intune_DeviceSettings/ExtensionLandingBlade/overview)jelennek meg, az ilyen eszközök pedig az eszközök regisztrálási korlátját is megszámolják.
-2. Lépjen a felügyelet **@no__t-** 1**mobileszköz-kezelés**@no__t – 3**regisztrációs szabályra** > az eszközök regisztrálási korlátjának vizsgálatához. Alapértelmezés szerint a korlát értéke 15. 
+2. Nyissa meg a **felügyeleti** > **mobileszköz-felügyeleti** > **beléptetési szabályok** > az eszközök regisztrálási korlátját. Alapértelmezés szerint a korlát értéke 15. 
 3. Ha a regisztrált eszközök száma elérte a korlátot, távolítsa el a szükségtelen eszközöket, vagy növelje az eszköz beléptetési korlátját. Mivel minden regisztrált eszköz Intune-licencet használ, javasoljuk, hogy először mindig távolítsa el a szükségtelen eszközöket.
 4. Regisztrálja újra az eszközt.
 
@@ -131,7 +133,7 @@ Gyűjtse össze a következő információkat a problémával kapcsolatban:
 
 #### <a name="resolution"></a>Megoldás
 
-1. Nyissa meg az iOS-eszköz **beállításait** > **általános**@no__t – 2**eszközkezelés**.
+1. Az iOS-eszköz **beállításainak** megnyitása > **általános** > **eszközkezelés**.
 2. Koppintson a meglévő felügyeleti profilra, és koppintson a **felügyelet eltávolítása**elemre.
 3. Regisztrálja újra az eszközt.
 
@@ -156,7 +158,7 @@ Ellenőrizze, hogy hozzá van-e adva érvényes APNs-tanúsítvány az Intune-ho
 - A APNs-tanúsítvány megújításához az Intune Hybrid with Configuration Manager használatával: az [iOS-es hibrid eszközkezelés beállítása System Center Configuration Manager és Microsoft Intune](https://docs.microsoft.com/sccm/mdm/deploy-use/enroll-hybrid-ios-mac).
 - A APNs-tanúsítvány megújításához az Office 365-ben lásd: [APNs-tanúsítvány létrehozása iOS-eszközökhöz](https://support.office.com/article/Create-an-APNs-Certificate-for-iOS-devices-522b43f4-a2ff-46f6-962a-dd4f47e546a7).
 
-### <a name="xpc_type_error-connection-invalid"></a>A XPC_TYPE_ERROR-kapcsolatok érvénytelenek
+### <a name="xpc_type_error-connection-invalid"></a>XPC_TYPE_ERROR a kapcsolatok érvénytelenek
 
 Ha bekapcsol egy, a beléptetési profilhoz hozzárendelt DEP által felügyelt eszközt, a regisztráció meghiúsul, és a következő hibaüzenet jelenik meg:
 

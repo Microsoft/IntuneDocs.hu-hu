@@ -15,12 +15,12 @@ ms.technology: ''
 ms.assetid: ''
 Customer intent: As an Intune admin, I want to set up the Apple's corporate device enrollment features so that corporate devices can automatically enroll in Intune.
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e3fb99a363bda762ccfb834388f3abb4ab80f81a
-ms.sourcegitcommit: 556b7ea2049014c9027f0e44affd3f301fab55fc
+ms.openlocfilehash: cc950f9e60f5549a7a74c2963f33c36369d3ebd3
+ms.sourcegitcommit: 5c52879f3653e22bfeba4eef65e2c86025534dab
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73709701"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74126172"
 ---
 # <a name="tutorial-use-apples-corporate-device-enrollment-features-in-apple-business-manager-abm-to-enroll-ios-devices-in-intune"></a>Oktatóanyag: az Apple Business Manager (ABM) vállalati eszközök beléptetési funkcióinak használata az iOS-eszközök Intune-beli regisztrálásához
 Az Apple Business Manager eszköz-beléptetési funkciói leegyszerűsítik az eszközök regisztrálását. Az Intune támogatja az Apple régebbi Készülékregisztrációs program (DEP) portálját is, de javasoljuk, hogy az Apple Business Managerrel frissen kezdjen. Az Microsoft Intune és az Apple vállalati eszközök regisztrálásával az eszközök automatikusan biztonságosan lesznek regisztrálva, amikor a felhasználó első alkalommal bekapcsolja az eszközt. Az eszközöket tehát számos felhasználónak is kiszállíthatja anélkül, hogy az egyes eszközöket külön kell beállítania. 
@@ -90,7 +90,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhat egy regisztrációs profilt
 
 5. Döntse el, hogy az eszközöket **felhasználói affinitással**vagy anélkül szeretné-e regisztrálni. A felhasználói affinitás olyan eszközökhöz lett tervezve, amelyeket az adott felhasználók használni fognak. Ha a felhasználók a Céges portál szeretnék használni olyan szolgáltatásokhoz, mint például az alkalmazások telepítése, válassza a **regisztráció felhasználói affinitással**lehetőséget. Ha a felhasználóknak nincs szükségük a Céges portálre, vagy sok felhasználó számára szeretné kiépíteni az eszközt, válassza a **regisztráció felhasználói affinitás nélkül**lehetőséget.
 
-6. Ha a felhasználói affinitással való regisztrációt választotta, állapítsa meg, hogy szeretné-e hitelesíteni a Céges portál vagy az Apple beállítási asszisztensét. Ha a Multi-Factor Authenticationt szeretné használni, engedélyezze a felhasználók számára az első bejelentkezéskor a jelszavak módosítását, vagy kérje meg a felhasználókat, hogy a regisztráció során visszaállítsák a lejárt jelszavukat, és válassza az **Igen** lehetőséget **a hitelesítés az céges portál helyett beállításnál Asszisztens**. Ha az Apple beállítási asszisztense révén kényelmes, alapszintű HTTP-hitelesítést használ, válassza a **nem**lehetőséget.
+6. Ha a felhasználói affinitással való regisztrációt választotta, állapítsa meg, hogy szeretné-e hitelesíteni a Céges portál vagy az Apple beállítási asszisztensét. Ha a Multi-Factor Authenticationt szeretné használni, engedélyezze a felhasználók számára az első bejelentkezéskor a jelszavak módosítását, vagy kérje meg a felhasználókat, hogy a regisztráció során visszaállítsák a lejárt jelszavukat, és válassza az **Igen** lehetőséget **a hitelesítés az céges portál helyett beállításnál Asszisztens**. Ha az Apple beállítási asszisztense révén kényelmes, alapszintű HTTP-hitelesítést használ, válassza a **nem**lehetőséget. Ha az **Igen** lehetőséget választja, és szeretné, hogy a céges portál alkalmazás automatikusan frissítse a végfelhasználói eszközökön, külön kell telepítenie a céges portált kötelező alkalmazásként a felhasználóknak az Apple mennyiségi vásárlási programján (VPP) keresztül.
 
 7. Ha a felhasználói affinitással való regisztrációt és a Céges portál hitelesítését választotta, állapítsa meg, hogy szeretné-e telepíteni a Céges portált az Apple Volume Purchase program (VPP) használatával. Ha VPP-tokenrel telepíti a Céges portál, a felhasználónak nem kell megadnia az Apple ID azonosítót és a jelszót, hogy a regisztráció során letöltse a Céges portál az App Store áruházból. Válassza a **token használata:** a **céges portál a VPP** használatával lehetőséget, és válassza ki azt a VPP-tokent, amely ingyenes licenccel rendelkezik a céges portál elérhető. Ha nem szeretné a VPP-t használni a Céges portál üzembe helyezéséhez, válassza a **ne használja** a VPP-t a **VPP céges portál telepítése**alatt. 
 

@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 11/14/2019
+ms.date: 11/15/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ace59f4bfad70eece9e693d4ca74094a6d5af460
-ms.sourcegitcommit: 76ae5aea5deee7a590e24c3b2bb52f88125943e5
+ms.openlocfilehash: 223d82a1718b785d426660adbe78940f706ef319
+ms.sourcegitcommit: 5c52879f3653e22bfeba4eef65e2c86025534dab
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74098082"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74126216"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -67,7 +67,11 @@ A macOS-regisztrálási élmény Céges portál egyszerűbb regisztrációs foly
 * Továbbfejlesztett hibaelhárítási beállítások.  
 
 #### <a name="web-apps-launched-from-the-windows-company-portal-app---5030972---"></a>A Windows Céges portál alkalmazásból indított webalkalmazások<!-- 5030972 -->
-A végfelhasználók mostantól közvetlenül a Windows Céges portál alkalmazásból is elindíthatják a webalkalmazásokat. A végfelhasználók kiválaszthatják a webalkalmazást, majd kiválaszthatják a **Megnyitás böngészőben**lehetőséget. A közzétett webes URL-cím közvetlenül egy böngészőben nyílik meg. Ez a funkció a következő héten lesz bevezetve. A Web Apps szolgáltatással kapcsolatos további információkért lásd: [webalkalmazások hozzáadása Microsoft Intunehoz](~/apps/web-app.md).
+A végfelhasználók mostantól közvetlenül a Windows Céges portál alkalmazásból is elindíthatják a webalkalmazásokat. A végfelhasználók kiválaszthatják a webalkalmazást, majd kiválaszthatják a **Megnyitás böngészőben**lehetőséget. A közzétett webes URL-cím közvetlenül egy böngészőben nyílik meg. Ez a funkció a következő héten lesz bevezetve. A Web Apps szolgáltatással kapcsolatos további információkért lásd: [webalkalmazások hozzáadása Microsoft Intunehoz](~/apps/web-app.md).  
+
+
+#### <a name="new-assignment-type-column-in-company-portal-for-windows-10----5459950-wnready---"></a>Új hozzárendelési típus oszlop a Windows 10-es Céges portál <!-- 5459950 WNready -->
+A Céges portál > **telepített alkalmazások** > **hozzárendelés típusa** oszlop átnevezve lett a **szervezet**számára.  Az oszlop alatt a felhasználók **Igen** vagy nem értékkel látják, hogy az alkalmazás a szervezet által kötelező vagy **nem** kötelezően elérhetővé válik. Ezek a módosítások azért történtek, mert az eszköz felhasználói zavarosak voltak az elérhető alkalmazások fogalmával kapcsolatban. A felhasználók további információkat találhatnak az alkalmazások telepítéséről Céges portálről az [alkalmazás telepítése és megosztása eszközön](/intune-user-help/install-apps-cpapp-windows). A Céges portál alkalmazásnak a felhasználók számára történő konfigurálásával kapcsolatos további információkért lásd: [a Microsoft Intune céges portál alkalmazás konfigurálása](~/apps/company-portal-app.md).  
 
 
 ## <a name="week-of-november-4-2019"></a>2019. november 4. hét

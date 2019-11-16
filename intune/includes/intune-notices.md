@@ -7,14 +7,26 @@ ms.topic: include
 ms.date: 11/4/2019
 ms.author: erikje
 ms.custom: include file
-ms.openlocfilehash: fb9b19490d3f2b55a9375af05025b44a0c7e29d1
-ms.sourcegitcommit: f46df983b66845bea24a90aaa2ac6cace16b9b0b
+ms.openlocfilehash: 3d49d31ed08683508d3d231521e578688dd21bac
+ms.sourcegitcommit: 737ad6c675deedfc6009f792023ff95981b06582
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74058545"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74125498"
 ---
 Ezek a hirdetmények olyan fontos információkat tartalmaznak, amelyek segíthetnek a jövőbeli Intune-változások és-funkciók előkészítésében.
+
+### <a name="intune-plan-for-change-windows-10-version-1703-company-portal-moving-out-of-support--5026679--"></a>Az Intune terve a változáshoz: a Windows 10 1703-es verziójának támogatása Céges portál<!--5026679-->
+A Windows 10 1703-es verziója (más néven Windows 10, RS2) a 2019-es verzión kívülről a nagyvállalati és az EDU-kiadások esetében kikerült a szolgáltatásból. Az Intune a RS2/RS1 megfelelő Céges portál alkalmazásának támogatását a 2019. december 26-án kezdődően teszi lehetővé.
+
+#### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
+A továbbiakban nem jelenik meg a Céges portál alkalmazás adott verziójának új funkciói, de továbbra is támogatjuk a Céges portál alkalmazás ezen verzióját 2019-ig, beleértve az Céges portál alkalmazás biztonsági frissítéseit is. szükséges. Mivel azonban a Windows 10 1703-es verziója nem kap biztonsági frissítéseket, ha a szolgáltatás kikerül a karbantartásból, javasoljuk, hogy frissítse Windows-eszközeit egy újabb Windows-verzióra, és győződjön meg arról, hogy a legújabb Céges portál alkalmazást használja, hogy továbbra is megkapja új funkciók és további funkciók.
+
+#### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
+A végrehajtott lépések a környezet konfigurációjától függenek. Általánosságban azonban érdemes megállapítani azokat az eszközöket, amelyek az operációs rendszer és/vagy a Céges portál régebbi verzióját használják az eszközön, és frissítik. Windows 10-es frissítési körök beállításához jelentkezzen be az Intune-> szoftverfrissítések – Windows 10 frissítési körökbe. A Céges portál legújabb verziója a 10.3.5601.0 verzió. A jövőbeli kiadásokkal naprakész maradhat a felhasználóktól, hogy beszerezze a Microsoft Store. Az Intune-nal is telepítheti a legújabb Windows-eszközökön a [Microsoft Store for Business](https://docs.microsoft.com/intune/windows-store-for-business)használatával.
+
+#### <a name="additional-information"></a>További információ
+[A Windows 10-es céges portál alkalmazás manuális hozzáadása a Microsoft Intune-nal](https://docs.microsoft.com/intune/store-apps-company-portal-app)
 
 
 ### <a name="take-action-use-microsoft-edge-for-your-protected-intune-browser-experience--5728447--"></a>Művelet: a Microsoft Edge használata a védett Intune-böngésző felhasználói felületén<!--5728447-->

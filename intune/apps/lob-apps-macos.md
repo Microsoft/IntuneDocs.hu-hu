@@ -18,18 +18,21 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b9802b85a9674535cea62ae28f135153352ef76c
-ms.sourcegitcommit: 25acfc88b366d2da71c37d354a0238e4f1168325
+ms.openlocfilehash: aeae231e07ceeee6a54f8f60ec5d53cc96d55be0
+ms.sourcegitcommit: 737ad6c675deedfc6009f792023ff95981b06582
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72813263"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117877"
 ---
 # <a name="how-to-add-macos-line-of-business-lob-apps-to-microsoft-intune"></a>MacOS-es üzletági (LOB) alkalmazások hozzáadása a Microsoft Intune-hoz
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
 A cikkben található információ segítségével macOS rendszerű üzletági alkalmazásokat adhat hozzá a Microsoft Intune-hoz. Le kell töltenie egy külső eszközt a *.pkg*-fájlok előzetes feldolgozásához, mielőtt feltölthetné üzletági fájlját a Microsoft Intune-ba. A *.pkg*-fájlok előzetes feldolgozását macOS-eszközön kell elvégezni.
+
+> [!NOTE]
+> A macOS Catalina 10,15 kiadásával kezdődően az alkalmazások Intune-nal való hozzáadása előtt ellenőrizze, hogy a macOS LOB-alkalmazások hitelesítettek-e. Ha a LOB-alkalmazások fejlesztői nem notarize az alkalmazásaikat, az alkalmazások nem fognak futni a felhasználók macOS-eszközein. Ha további információt szeretne arról, hogyan ellenőrizhető, hogy egy alkalmazás hitelesített-e, látogasson el [a MacOS-alkalmazások Notarize a MacOS catalinare való felkészüléshez](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-Tip-Notarizing-your-macOS-apps-to-prepare-for-macOS/ba-p/808579).
 
 > [!NOTE]
 > Bár az macOS-eszközök felhasználói eltávolíthatnak néhányat a beépített macOS-alkalmazások közül – például a Részvények vagy a Térképek alkalmazást –, az Intune nem használható ezek újratelepítésére. Amennyiben a végfelhasználó törölte ezeket az alkalmazásokat, manuálisan telepítheti újra őket az App Store áruházból.

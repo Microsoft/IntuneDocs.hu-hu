@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3d0cff4ad624d35843f3388535b60549d1893eeb
-ms.sourcegitcommit: c38a856725993a4473ada75e669a57f75ab376f8
+ms.openlocfilehash: 54995b54d7810c02c5a8b24e5ddff3fa1f08cb05
+ms.sourcegitcommit: 737ad6c675deedfc6009f792023ff95981b06582
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73143157"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117863"
 ---
 # <a name="macos-device-feature-settings-in-intune"></a>macOS-eszköz funkciójának beállításai az Intune-ban
 
@@ -107,7 +107,7 @@ AirPrinter-kiszolgálók hozzáadásához szüksége lesz a nyomtató IP-címér
 - **Újraindítás gomb**: az **Elrejtés** gomb nem jeleníti meg az újraindítás gombot a bejelentkezési képernyőn. **Nincs konfigurálva** (alapértelmezés) az újraindítás gombot jeleníti meg.
 - **Alvó állapot gomb**: az **Elrejtés** nem jelenik meg a bejelentkezési képernyő alvó állapot gombján. **Nincs konfigurálva** (alapértelmezés) az alvó gomb megjelenítése.
 
-#### <a name="other"></a>Más
+#### <a name="other"></a>más
 
 - **Felhasználói bejelentkezés letiltása a konzolról**: **letiltja** a bejelentkezéshez használt MacOS-parancssor elrejtése. A tipikus felhasználók esetében **Tiltsa le** ezt a beállítást. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a speciális felhasználók számára a bejelentkezést a MacOS parancssor használatával. A konzol üzemmódjának megadásához a felhasználók a username (Felhasználónév) mezőbe `>console` értéket kell megadniuk, és hitelesíteniük kell magukat a konzol ablakban.
 
@@ -185,6 +185,7 @@ Ez a funkció az alábbiakra vonatkozik:
 - **Jelszóra vonatkozó követelmények üzenet** (csak Kerberos): adja meg a szervezete jelszavának a felhasználók számára megjelenített szöveges verzióját. Az üzenet akkor jelenik meg, ha nincs szükség Active Directory jelszavával kapcsolatos bonyolultsági követelményekre, vagy ne adja meg a jelszó minimális hosszát.  
 - Alkalmazáscsomag- **azonosítók** (csak Kerberos): **adja hozzá** az App Bundle-azonosítókat, amelyeknek egyszeri bejelentkezést kell használniuk az eszközökön. Ezek az alkalmazások hozzáférést kapnak a Kerberos-jegy biztosításához, a hitelesítési jegyet, és hitelesítik a felhasználókat a hozzáférésre jogosult szolgáltatásokhoz.
 - **Tartományi tartomány leképezése** (csak Kerberos): **adja** meg a tartományhoz HOZZÁRENDELNI kívánt tartományi DNS-utótagokat. Akkor használja ezt a beállítást, ha a gazdagépek DNS-nevei nem egyeznek a tartománynév nevével. Valószínűleg nem kell létrehoznia ezt az egyéni tartomány – tartomány társítást.
+- **PKINIT-tanúsítvány** (csak Kerberos): **válassza ki** a nyilvános kulcsú titkosítást a kezdeti hitelesítési (PKINIT) tanúsítványhoz, amely a Kerberos hitelesítő adatok felhasználói beavatkozás nélküli megújítására használható. A tanúsítványnak olyan PKCS vagy SCEP tanúsítványnak kell lennie, amelyet korábban az Intune-ba adott hozzá.
 
 ## <a name="associated-domains"></a>Társított tartományok
 

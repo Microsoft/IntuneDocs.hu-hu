@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e3e0ea523d71ff036f1f23c9436c65e105328d8b
-ms.sourcegitcommit: 807ab3e35f4d9ffa18655410b7d61e5e772ab348
+ms.openlocfilehash: 381ceea979dedf9b33cb7ef9c47291e3ac6ce20c
+ms.sourcegitcommit: 737ad6c675deedfc6009f792023ff95981b06582
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73057644"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117896"
 ---
 # <a name="ios-and-ipados-device-settings-to-use-common-ios-features-in-intune"></a>iOS-és iPadOS-eszközök beállításai az Intune közös iOS-funkcióinak használatához
 
@@ -327,6 +327,7 @@ Ez a funkció az alábbiakra vonatkozik:
 - **Gyorsítótár neve** (csak Kerberos): adja meg a Kerberos-gyorsítótár általános biztonsági szolgáltatásainak (GSS) nevét. Valószínűleg nem kell beállítania ezt az értéket.
 - Alkalmazáscsomag- **azonosítók** (csak Kerberos): **adja hozzá** az App Bundle-azonosítókat, amelyeknek egyszeri bejelentkezést kell használniuk az eszközökön. Ezek az alkalmazások hozzáférést kapnak a Kerberos-jegy biztosításához, a hitelesítési jegyet, és hitelesítik a felhasználókat a hozzáférésre jogosult szolgáltatásokhoz.
 - **Tartományi tartomány leképezése** (csak Kerberos): **adja** meg a tartományhoz HOZZÁRENDELNI kívánt tartományi DNS-utótagokat. Akkor használja ezt a beállítást, ha a gazdagépek DNS-nevei nem egyeznek a tartománynév nevével. Valószínűleg nem kell létrehoznia ezt az egyéni tartomány – tartomány társítást.
+- **PKINIT-tanúsítvány** (csak Kerberos): **válassza ki** a nyilvános kulcsú titkosítást a kezdeti hitelesítési (PKINIT) tanúsítványhoz, amely a Kerberos hitelesítő adatok felhasználói beavatkozás nélküli megújítására használható. A tanúsítványnak olyan PKCS vagy SCEP tanúsítványnak kell lennie, amelyet korábban az Intune-ba adott hozzá.
 
 ## <a name="wallpaper"></a>Háttérkép
 

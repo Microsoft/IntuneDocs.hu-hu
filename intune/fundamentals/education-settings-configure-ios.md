@@ -6,7 +6,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 05/9/2018
+ms.date: 11/14/2019
 ms.topic: archived
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,17 +18,17 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 893c663902f4b33ba9082550c22031fc9ab4229a
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 0dd9a97fdafff784bab2eae1d466855082fd397a
+ms.sourcegitcommit: 737ad6c675deedfc6009f792023ff95981b06582
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72510310"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117839"
 ---
 # <a name="how-to-configure-intune-settings-for-the-ios-classroom-app"></a>Az iOS-beli Osztályterem alkalmazás Intune-beállításainak konfigurálása
 
 > [!NOTE]
-> Az osztályterem alkalmazás Intune-beállításai elavultak az Intune-ban. Ez a cikk csak azokra a felhasználókra vonatkozik, akiknek már van meglévő oktatási profiljuk az Intune-ban.
+> Az Intune jelenleg nem támogatja az osztályterem alkalmazás konfigurálását. Ez a cikk csak az Intune-ban meglévő iOS-es oktatási profilokkal rendelkező felhasználókra érvényes.  
 
 ## <a name="introduction"></a>Bevezetés
 Az [Osztályterem](https://itunes.apple.com/app/id1085319084) egy olyan alkalmazás, amely lehetővé teszi az oktatóknak a tanulási folyamat és a diákok eszközeinek irányítását az osztályteremben. Néhány példa a tanároknak az alkalmazás által elérhető lehetőségeire:

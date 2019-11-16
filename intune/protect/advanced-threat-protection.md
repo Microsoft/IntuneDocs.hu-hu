@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/06/2019
+ms.date: 11/14/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f6026cf3ef8d044c92680cf4c4c88ba55c9777e0
-ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
+ms.openlocfilehash: a70a05e537ad10306e382e215da757822e26d43b
+ms.sourcegitcommit: 737ad6c675deedfc6009f792023ff95981b06582
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73713267"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117849"
 ---
 # <a name="enforce-compliance-for-microsoft-defender-atp-with-conditional-access-in-intune"></a>A Microsoft Defender ATP megfelelőségének betartatása feltételes hozzáféréssel az Intune-ban
 
@@ -31,7 +31,7 @@ A sikeres végrehajtáshoz használja a következő konfigurációkat a koncerte
 
 - **Szolgáltatások közötti kapcsolat létesítése az Intune és a Microsoft DEFENDER ATP között**. Ez a szolgáltatás lehetővé teszi, hogy a Microsoft Defender ATP adatokat gyűjtsön a számítógép kockázatáról az Intune-nal felügyelt Windows 10-es eszközökről.
 - **Eszköz-konfigurációs profil használata az eszközök bevezetéséhez a Microsoft DEFENDER ATP használatával**. A Microsoft Defender ATP szolgáltatással való kommunikációhoz és a kockázati szint felmérését segítő információk biztosításához az eszközök bevezetésével konfigurálhatja azokat.
-- **Az eszköz megfelelőségi szabályzatával állíthatja be az engedélyezni kívánt kockázati szintet**. A kockázati szinteket a Microsoft Defender ATP szolgáltatja.  Azok az eszközök, amelyek túllépik az engedélyezett kockázati szintet, nem megfelelőként vannak azonosítva.
+- **Az eszköz megfelelőségi szabályzatával állíthatja be az engedélyezni kívánt kockázati szintet**. A kockázati szinteket a Microsoft Defender ATP szolgáltatja. Azok az eszközök, amelyek túllépik az engedélyezett kockázati szintet, nem megfelelőként vannak azonosítva.
 - **Feltételes hozzáférési szabályzattal** megakadályozhatja, hogy a felhasználók hozzáférjenek a vállalati erőforrásokhoz a nem megfelelő eszközökről.
 
 Ha integrálja az Intune-t a Microsoft Defender ATP szolgáltatással, kihasználhatja a ATPs veszélyforrások elleni & sebezhetőségek kezelését (TVM), és az Intune-nal javíthatja a [TVM által azonosított végponti gyengeséget](atp-manage-vulnerabilities.md).
@@ -62,7 +62,7 @@ Ha a Microsoft Defender ATP-t az Intune-nal szeretné használni, győződjön m
 - [Microsoft DEFENDER ATP](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) és hozzáférés a microsoft Defender Security Centerhoz (ATP-portál)
 
 > [!NOTE]
-> Az Intune app Protection-szabályzatok nem támogatják a Microsoft Defender ATP használatát.
+> Az iOS és az Android Intune app Protection-szabályzatok nem támogatják a Microsoft Defender ATP használatát.
 
 ## <a name="enable-microsoft-defender-atp-in-intune"></a>A Microsoft Defender ATP engedélyezése az Intune-ban
 
@@ -70,7 +70,7 @@ Az első lépés a szolgáltatás és a szolgáltatás közötti kapcsolat beál
 
 ### <a name="to-enable-defender-atp"></a>A Defender ATP engedélyezése
 
-A Defender ATP-t csak egyetlen alkalommal kell engedélyeznie a bérlők számára. 
+A Defender ATP-t csak egyetlen alkalommal kell engedélyeznie a bérlők számára.
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
@@ -130,7 +130,7 @@ Miután bevezet egy eszközt a konfigurációs csomag használatával, nem kell 
      A [Windows 10-es gépek System Center Configuration Manager használatával történő](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-endpoints-sccm) előkészítése további részleteket tartalmaz ezekről a Microsoft Defender ATP-beállításokról.
 
 7. Válassza az **OK**, majd a **Létrehozás** lehetőséget a változások mentéséhez. Ezzel létrejön a profil.
-8. [Rendelje hozzá az eszköz konfigurációs profilját](../configuration/device-profile-assign.md) a Microsoft Defender ATP-vel felmérni kívánt eszközökhöz.  
+8. [Rendelje hozzá az eszköz konfigurációs profilját](../configuration/device-profile-assign.md) a Microsoft Defender ATP-vel felmérni kívánt eszközökhöz.
 
 ## <a name="create-and-assign-the-compliance-policy"></a>A megfelelőségi szabályzat létrehozása és kiosztása
 
