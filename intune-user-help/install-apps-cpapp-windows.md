@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 06/27/2019
+ms.date: 11/11/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
@@ -19,12 +19,12 @@ ms.reviewer: ''
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d8cb6976121f4c5a9ce755e8feb189ea007e7ffd
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 80fd2d54a99bc3f4ab47f48f94eb14aa1a7f630c
+ms.sourcegitcommit: 5c52879f3653e22bfeba4eef65e2c86025534dab
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72506131"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74126191"
 ---
 # <a name="install-and-share-apps-on-your-device"></a>Alkalmazások telepítése és megosztása az eszközön
 
@@ -41,7 +41,7 @@ Alkalmazások telepítése az eszközön Windows Céges portál alkalmazásból.
     * **Az összes megjelenítése**: A **Kezdőlap** > **Alkalmazások** területen kattintson **Az összes megjelenítése** elemre az összes elérhető alkalmazás megjelenítéséhez.  
     * **Minden alkalmazás**: Válassza ezt a lapot a navigációs panelen az összes rendelkezésre álló alkalmazás megtekintéséhez, beleértve a telepítetteket és a kiemelteket. Az alkalmazások megtekintése, rendezése és szűrése. Keresési eredményeket a rendszer automatikusan elrendezi a relevancia alapján.  
     * **Alkalmazás-kategóriák**: válassza ezt a lapot a navigációs ablaktáblán az alkalmazások típus vagy függvény alapján való kiválasztásához. Az alkalmazások kategóriákba vannak rendezve, például **Kiemelt**, **oktatási**és **termelékenységi**célokra.  
-    * **Alkalmazások keresése**: Az alkalmazás navigációs paneljén található egy statikus keresősáv.  Az elérhető alkalmazások megtalálásához keressen rá az alkalmazás nevére vagy a közzétevőre.  
+    * **Alkalmazások keresése**: Az alkalmazás navigációs paneljén található egy statikus keresősáv. Az elérhető alkalmazások megtalálásához keressen rá az alkalmazás nevére vagy a közzétevőre.  
 
 3. Jelöljön ki egy alkalmazást.   
 4. Az alkalmazás részleteit megjelenítő lapon kattintson a **Telepítés** lehetőségre. A telepítés után a **Telepítve** állapot fog megjelenni.  
@@ -69,10 +69,10 @@ Alkalmazások megosztása és ajánlása a munkahelyi vagy iskolai partnerei sz�
 
 Megosztás után a címzett kapni fog egy hivatkozást és egy üzenetet, hogy tekintse meg az alkalmazás részleteit. A hivatkozás megnyitja a Céges portál **Alkalmazás részletei** lapját. 
 
-## <a name="available-and-required-apps"></a>Elérhető és szükséges alkalmazások
-Az alkalmazásokat a szervezete rendeli hozzá, és a Céges portál címkével **elérhetőként** vagy **kötelezőként**címkézi. 
+## <a name="optional-and-required-apps"></a>Választható és szükséges alkalmazások
+Az alkalmazásokat a szervezete rendeli hozzá. A szervezetnek szüksége van néhány alkalmazásra, és más alkalmazásokat is el kell végeznie. Ha szeretné megtudni, hogy mely alkalmazások szükségesek és választhatók, lépjen a **telepített alkalmazásokhoz** , és nézze meg a **szervezete által megkövetelt**oszlop alatt.  
 
-* Elérhető alkalmazások: ezeket az alkalmazásokat a szervezete választja ki, és megfelelő és hasznos lehet a munkához vagy az iskolához. A telepítésük nem kötelező, és az egyetlen alkalmazás, amelyet a telepítés Céges portál talál. 
+* Választható alkalmazások: ezeket az alkalmazásokat a szervezete választja ki, és megfelelő és hasznos lehet a munkahelyi vagy iskolai környezet számára. Ezek elérhetővé válnak az Ön számára, de az Ön rendelkezésére áll, hogy telepíteni kívánja-e őket. Ez az egyetlen olyan alkalmazás, amelyet a telepítés Céges portál talál. 
 
 * Szükséges alkalmazások: ezek az alkalmazások a munkahelyi és iskolai környezetekhez szükségesek, és közvetlenül az eszközön lesznek telepítve. Ezeket az alkalmazásokat a rendszer automatikusan telepíti a beavatkozás nélkül. 
 
@@ -86,15 +86,13 @@ Ha van szüksége egy alkalmazásra, de nem látja a Céges portálban, kérje m
 ## <a name="view-installed-apps"></a>Telepített alkalmazások megtekintése  
 Az eszközön telepített összes alkalmazás listájának megtekintése. A **telepített alkalmazások** lap felsorolja az egyes alkalmazásokra vonatkozó alábbi adatokat:
 
-* Name (név): az alkalmazás neve. Az elérhető alkalmazások közé tartozik az **alkalmazás részletei** lapra mutató hivatkozás.
+* Name (név): az alkalmazás neve. A választható alkalmazások közé tartozik az **alkalmazás részletei** lapra mutató hivatkozás.
 * Hozzárendelés típusa: Hogyan történik az alkalmazás hozzárendelése és elérhetővé tétele. 
 * Közzétevő: az alkalmazást terjesztő fejlesztő vagy cég neve. A közzétevő általában szoftvergyártó vagy szervezet.  
 * Közzététel dátuma: az a dátum, amelyet az alkalmazás a letöltéshez elérhetővé tett. A közzétételi dátum egy alkalmazás kezdeti kiadását vagy egy alkalmazás legutóbbi frissítését jelenítheti meg.
 * Status (állapot): az alkalmazás aktuális telepítési állapota az eszközön. Az alkalmazások telepítése, telepítése és telepítése nem sikerült. A szükséges alkalmazások akár 10 percet is igénybe vehetnek a naprakész állapot megjelenítéséhez. A szükséges alkalmazások telepítésével kapcsolatos fontos információkért tekintse meg az [alkalmazások telepítése](#install-apps) című témakörben található megjegyzést. 
 
-A lap megnyitásához nyissa meg a navigációs menüt, és válassza a **telepített alkalmazások**lehetőséget. 
-
-  ![Példa a Windows 10 rendszerhez készült Céges portál alkalmazás képernyőképére, a telepített alkalmazások oldalára. ](./media/installed-apps-cp-1906.png)  
+A lap megnyitásához nyissa meg a navigációs menüt, és válassza a **telepített alkalmazások**lehetőséget.  
 
 
 A **Rendezés szempontja** beállítással átrendezheti az alkalmazások hozzárendelési típusát, a közzétevőt, betűrendben név szerint, vagy kronológiailag a közzététel dátuma szerint. A **Filter by** paranccsal szűkítheti a megjelenő alkalmazásokat a telepítési állapot alapján.  Ha egyetlen alkalmazás sem érhető el, egy olyan üzenet jelenik meg, amelyen nincs telepítve vállalati alkalmazás.  
