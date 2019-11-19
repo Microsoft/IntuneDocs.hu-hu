@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 07/25/2019
+ms.date: 11/18/2019
 ms.topic: troubleshooting
 ms.service: microsoft-intune
 ms.subservice: enrollment
@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 03ceaf5493f544dbb815146eb67c3fae8856d29e
-ms.sourcegitcommit: 5c52879f3653e22bfeba4eef65e2c86025534dab
+ms.openlocfilehash: ca0702744e19c8d09533c1c0ac38356233c1d314
+ms.sourcegitcommit: 15e099a9a1e18296580bb345610aee7cc4acd126
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74126150"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74164590"
 ---
 # <a name="troubleshoot-ios-device-enrollment-problems-in-microsoft-intune"></a>IOS-eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune
 
@@ -67,6 +67,50 @@ Gyűjtse össze a következő információkat a problémával kapcsolatban:
 5. Válassza a **platformok konfigurálása**lehetőséget, válassza a személyes tulajdonú iOS-eszközök **engedélyezése** lehetőséget, majd kattintson **az OK**gombra.
 6. Regisztrálja újra az eszközt.
 
+**OK:** A DNS-ben a szükséges CNAME rekordok nem léteznek.
+
+#### <a name="resolution"></a>Megoldás
+Hozza létre a megfelelő CNAME DNS-erőforrásrekordokat a céges tartományhoz. Ha például a vállalat tartománya contoso.com, hozzon létre egy CNAME-t a DNS-ben, amely átirányítja a EnterpriseEnrollment.contoso.com a EnterpriseEnrollment-s.manage.microsoft.com.
+
+A CNAME DNS-bejegyzések létrehozása nem kötelező, viszont a CNAME rekordok létrehozása egyszerűbbé teszi a regisztrációt a felhasználók számára. Ha nem található CNAME rekord, akkor a rendszer kéri a felhasználókat, hogy írják be az MDM-kiszolgáló nevét: enrollment.manage.microsoft.com.
+
+Ha egynél több ellenőrzött tartomány található, hozzon létre egy CNAME rekordot minden tartományhoz. A CNAME erőforrásrekordoknak a következő adatokat kell tartalmazniuk:
+
+|TÍPUS|Gazdagép neve|A következő helyre mutat|Élettartam|
+|------|------|------|------|
+|CNAME|EnterpriseEnrollment.munkahelyi_tartomány.com|EnterpriseEnrollment-s.manage.microsoft.com|1 HR|
+|CNAME|EnterpriseRegistration.munkahelyi_tartomány.com|EnterpriseRegistration.windows.net|1 HR|
+
+Ha a vállalat több tartományt használ a felhasználók hitelesítő adataihoz, akkor minden egyes tartományhoz hozzon létre CNAME rekordot.
+
+> [!NOTE]
+> A DNS-rekord módosításának terjesztése akár 72 órát is igénybe vehet. Az Intune-ban nem ellenőrizhető a DNS-módosítás, amíg a DNS-rekord propagálása zajlik.
+
+**OK:** Olyan eszközt regisztrál, amely korábban már regisztrálva van egy másik felhasználói fiókkal, és az előző felhasználó nem lett megfelelően eltávolítva az Intune-ból.
+
+#### <a name="resolution"></a>Megoldás
+1. A profil aktuális telepítésének megszakítása.
+2. [https://portal.manage.microsoft.com](https://portal.manage.microsoft.com) megnyitása a Safari böngészőben.
+3. Regisztrálja újra az eszközt.
+
+> [!NOTE]
+> Ha a regisztráció még nem sikerül, távolítsa el a cookie-kat a Safariban (ne blokkolja a cookie-kat), majd regisztrálja újra az eszközt.
+
+**OK:** Az eszköz már regisztrálva van egy másik MDM-szolgáltatóval.
+
+#### <a name="resolution"></a>Megoldás
+1. Nyissa meg az iOS-eszköz **beállításait** , lépjen az **Általános > eszközkezelés**elemre.
+2. Távolítsa el a meglévő felügyeleti profilt.
+3. Regisztrálja újra az eszközt.
+
+**OK:** Az eszközt regisztrálni próbáló felhasználónak nincs Microsoft Intune licence.
+
+#### <a name="resolution"></a>Megoldás
+1. Nyissa meg az [Office 365 felügyeleti központot](https://portal.office.com/adminportal/home#/homepage), majd válassza a **Felhasználók > aktív felhasználók**lehetőséget.
+2. Válassza ki azt a felhasználói fiókot, amelyhez Intune felhasználói licencet kíván hozzárendelni, majd válassza a **termék licencek > szerkesztés**lehetőséget.
+3. Váltson át a bekapcsolás **pozícióra a** felhasználóhoz hozzárendelni kívánt licenchez, majd válassza a **Mentés**lehetőséget.
+4. e-regisztrálja az eszközt.
+
 ### <a name="this-service-is-not-supported-no-enrollment-policy"></a>Ez a szolgáltatás nem támogatott. Nincs beléptetési szabályzat.
 
 **OK**: az Apple Mdm push-tanúsítvány nincs konfigurálva az Intune-ban, vagy a tanúsítvány érvénytelen. 
@@ -92,7 +136,7 @@ Gyűjtse össze a következő információkat a problémával kapcsolatban:
 **OK:** A felhasználó több eszközt próbál regisztrálni az eszköz beléptetési korlátján kívül.
 
 #### <a name="resolution"></a>Megoldás
-1. Nyissa meg az [Intune felügyeleti portált](https://portal.azure.com/?Microsoft_Intune=1&Microsoft_Intune_DeviceSettings=true&Microsoft_Intune_Enrollment=true&Microsoft_Intune_Apps=true&Microsoft_Intune_Devices=true#blade/Microsoft_Intune_DeviceSettings/ExtensionLandingBlade/overview) > **eszköz** > **minden eszköz**, és a felhasználó által regisztrált eszközök számának ellenőrzését.
+1. Nyissa meg az [Intune felügyeleti portált](https://portal.azure.com/?Microsoft_Intune=1&Microsoft_Intune_DeviceSettings=true&Microsoft_Intune_Enrollment=true&Microsoft_Intune_Apps=true&Microsoft_Intune_Devices=true#blade/Microsoft_Intune_DeviceSettings/ExtensionLandingBlade/overview) > **eszközök** > **minden eszköz**elemre, és keresse meg a felhasználó által regisztrált eszközök számát.
     > [!NOTE]
     > Az érintett felhasználói bejelentkezést is meg kell adnia az [Intune felhasználói portálon](https://portal.manage.microsoft.com/) , és ellenőriznie kell a regisztrált eszközöket. Előfordulhat, hogy az Intune-beli [felhasználói portálon](https://portal.manage.microsoft.com/) megjelenő eszközök nem az [Intune felügyeleti portálon](https://portal.azure.com/?Microsoft_Intune=1&Microsoft_Intune_DeviceSettings=true&Microsoft_Intune_Enrollment=true&Microsoft_Intune_Apps=true&Microsoft_Intune_Devices=true#blade/Microsoft_Intune_DeviceSettings/ExtensionLandingBlade/overview)jelennek meg, az ilyen eszközök pedig az eszközök regisztrálási korlátját is megszámolják.
 2. Nyissa meg a **felügyeleti** > **mobileszköz-felügyeleti** > **beléptetési szabályok** > az eszközök regisztrálási korlátját. Alapértelmezés szerint a korlát értéke 15. 
@@ -114,7 +158,7 @@ Gyűjtse össze a következő információkat a problémával kapcsolatban:
 
 #### <a name="resolution"></a>Megoldás
 1. Lépjen a [Microsoft 365 felügyeleti központba](https://portal.office.com/adminportal/home#/homepage), majd válassza a **felhasználók** > **aktív felhasználók**lehetőséget.
-2. Válassza ki az érintett felhasználói fiókot > **termék-licencek** > **Szerkesztés**elemet.
+2. Válassza ki az érintett felhasználói fiókot > a **licencek** > a **Szerkesztés**elemet.
 3. Ellenőrizze, hogy érvényes Intune-licenc van-e hozzárendelve ehhez a felhasználóhoz.
 4. Regisztrálja újra az eszközt.
 
@@ -186,7 +230,7 @@ Ha bekapcsol egy, a beléptetési profilhoz hozzárendelt DEP által felügyelt 
 #### <a name="resolution"></a>Megoldás
 
 1. Szerkessze a beléptetési profilt. Bármilyen módosítást végezhet a profilban. A cél a profil módosítási idejének frissítése.
-2. DEP által felügyelt eszközök szinkronizálása: Nyissa meg az Intune-portált > **rendszergazdai** > **mobileszköz-felügyeleti** > **iOS** > **Készülékregisztrációs program** > **szinkronizálás most**. A szolgáltatás elküld egy szinkronizálási kérelmet az Apple-nek.
+2. DEP által felügyelt eszközök szinkronizálása: Nyissa meg az Intune-portált > **rendszergazda** > **mobileszköz-kezelés** > **iOS** > **Készülékregisztrációs program** > **szinkronizálás most**. A szolgáltatás elküld egy szinkronizálási kérelmet az Apple-nek.
 
 ### <a name="dep-enrollment-stuck-at-user-login"></a>DEP-regisztráció megakadt a felhasználói bejelentkezéskor
 Amikor bekapcsol egy beléptetési profilhoz rendelt DEP által felügyelt eszközt, a kezdeti beállítás a hitelesítő adatok megadása után fog megjelenni.

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b553c89704ca68ab6be261e74f1cc62ad58476ed
-ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
+ms.openlocfilehash: 99d946366724b03ecdf5c47d8ba7b1d820ed3055
+ms.sourcegitcommit: 15e099a9a1e18296580bb345610aee7cc4acd126
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73713002"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74164729"
 ---
 # <a name="automatically-enroll-ios-devices-with-apples-device-enrollment-program"></a>iOS-eszközök automatikus regisztrálása az Apple készülékregisztrációs programjával (DEP)
 
@@ -128,7 +128,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
  
 
 1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** beléptetése > az **Apple-regisztráció** > a **beléptetési programbeli jogkivonatok**lehetőséget.
-2. Válasszon ki egy jogkivonatot, válassza a **profilok** > **Create Profile** > **iOS**lehetőséget.
+2. Válasszon ki egy jogkivonatot, válassza a **profilok** > **profil létrehozása** > **iOS**lehetőséget.
 
     ![Készítsen egy képernyőképet a profilról.](./media/device-enrollment-program-enroll-ios/image04.png)
 
@@ -155,7 +155,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
     >
     > Ezek nem támogatottak az Apple beállítási asszisztenssel való hitelesítéskor.
 
-6. Ha a **céges portál** lehetőséget választotta, **ahol a felhasználóknak hitelesíteniük kell a HITELESÍTÉST**, a VPP-token használatával automatikusan telepítheti a céges portál az eszközre. Ebben az esetben a felhasználónak nem kell megadnia egy Apple ID azonosítót. A Céges portál VPP-jogkivonattal való telepítéséhez válasszon egy jogkivonatot a **Céges portál telepítése a VPP-vel** résznél. Ehhez a Céges portál már hozzá lett adva a VPP-tokenhez. Ne konfiguráljon olyan házirendet, amely megköveteli az alkalmazás használatát a felhasználók számára, az Intune automatikusan telepíti a Céges portált az ezzel a beléptetési profillal alkalmazott eszközökön. Fontos, hogy a jogkivonat ne járjon le, és hogy elég eszközlicenccel rendelkezzen a Céges portál alkalmazáshoz. Ha a jogkivonat lejár vagy lejár a licencek közül, az Intune telepíti az App Store-Céges portált, és felszólítja az Apple ID azonosítóra. 
+6. Ha a **céges portál** lehetőséget választotta, **ahol a felhasználóknak hitelesíteniük kell a HITELESÍTÉST**, a VPP-token használatával automatikusan telepítheti a céges portál az eszközre. Ebben az esetben a felhasználónak nem kell megadnia egy Apple ID azonosítót. A Céges portál VPP-jogkivonattal való telepítéséhez válasszon egy jogkivonatot a **Céges portál telepítése a VPP-vel** résznél. Ehhez a Céges portál már hozzá lett adva a VPP-tokenhez. Győződjön meg arról, hogy a Céges portál alkalmazás továbbra is frissül a regisztráció után, és ellenőrizze, hogy konfigurálta-e az alkalmazás telepítését az Intune-ban (Intune > Client apps). Annak érdekében, hogy a felhasználói beavatkozás nem szükséges, valószínűleg szeretné, hogy a Céges portál iOS VPP-alkalmazásként legyen elérhető, szükség esetén végezze el a szükséges alkalmazást, és használja az eszköz licencelését a hozzárendeléshez. Fontos, hogy a jogkivonat ne járjon le, és hogy elég eszközlicenccel rendelkezzen a Céges portál alkalmazáshoz. Ha a jogkivonat lejár vagy lejár a licencek közül, az Intune telepíti az App Store-Céges portált, és felszólítja az Apple ID azonosítóra. 
 
     > [!NOTE]
     > Ha **kijelöli, hogy a felhasználóknak hogyan kell céges portál hitelesíteniük** a szolgáltatást, akkor győződjön meg arról, hogy az eszköz beléptetési folyamata a vállalati portál DEP-eszközre való letöltésének első 24 óráján belül történik. Ellenkező esetben előfordulhat, hogy a regisztráció meghiúsul, és a gyári beállítások visszaállítására lesz szükség az eszköz regisztrálásához.

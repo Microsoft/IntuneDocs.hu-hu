@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 14fa330b0c158d98c96e0d151f8a4ec7d0c95b97
-ms.sourcegitcommit: c38a856725993a4473ada75e669a57f75ab376f8
+ms.openlocfilehash: 33f7c2aa6d6575dd4ebf4d3cd772bb7f02472578
+ms.sourcegitcommit: 15e099a9a1e18296580bb345610aee7cc4acd126
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73143038"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74164543"
 ---
 # <a name="android-enterprise-device-settings-to-allow-or-restrict-features-using-intune"></a>Az androidos vállalati eszközbeállítások az Intune-t használó szolgáltatások engedélyezéséhez vagy korlátozásához
 
@@ -173,7 +173,7 @@ Teljes **képernyős mód**: válassza ki, hogy az eszköz futtat-e egy alkalmaz
   - **Eszköz alapértelmezése**
   - **Jelszó szükséges, nincs korlátozás**
   - **Gyenge biometrikus**: [erős és gyenge biometria](https://android-developers.googleblog.com/2018/06/better-biometrics-in-android-p.html) (az Android webhely megnyitása)
-  - **Numerikus**: a jelszó csak számok, például `123456789` lehet. Adja meg a **jelszó minimális hosszát** , amelyet a felhasználónak 4 és 16 karakter között kell megadnia.
+  - **Numerikus**: a jelszó csak számok, például `123456789`lehet. Adja meg a **jelszó minimális hosszát** , amelyet a felhasználónak 4 és 16 karakter között kell megadnia.
   - **Komplex numerikus**: ismétlődő vagy egymást követő számok, például "1111" vagy "1234", nem engedélyezettek. Adja meg a **jelszó minimális hosszát** , amelyet a felhasználónak 4 és 16 karakter között kell megadnia.
   - **ABC**: az ábécében szereplő betűket kötelező megadni. A számok és szimbólumok nem szükségesek. Adja meg a **jelszó minimális hosszát** , amelyet a felhasználónak 4 és 16 karakter között kell megadnia.
   - **Alfanumerikus**: nagybetűket, kisbetűket és numerikus karaktereket tartalmaz. Adja meg a **jelszó minimális hosszát** , amelyet a felhasználónak 4 és 16 karakter között kell megadnia.
@@ -184,10 +184,10 @@ Teljes **képernyős mód**: válassza ki, hogy az eszköz futtat-e egy alkalmaz
     - **Szükséges kisbetűs karakterek száma**: adja meg, hogy hány kisbetűs karakterből kell állnia a jelszónak 0 és 16 karakter között kell lennie.
     - **Szükséges nagybetűk száma**: Itt adhatja meg, hogy hány nagybetűt kell tartalmaznia a jelszónak 0 és 16 karakter között.
     - **Nem szükséges karakterek száma**: Itt adhatja meg, hogy a jelszónak hány karakterből kell állnia (az ábécében szereplő betűk kivételével), 0 és 16 karakter között kell lennie.
-    - **Szükséges numerikus karakterek száma**: adja meg a numerikus karakterek számát (`1`, `2`, `3` stb.) a jelszónak 0 és 16 karakter közöttinek kell lennie.
+    - **Megkövetelt numerikus karakterek száma**: megadhatja, hogy a jelszónak 0 és 16 karakter közöttinek kell lennie (`1`, `2`, `3`stb.).
     - **Szükséges karakterek száma**: Itt adhatja meg, hogy hány szimbólumot kell megadni (`&`, `#`, `%`stb.) a jelszónak 0 és 16 karakter közöttinek kell lennie.
 
-- A **jelszó lejárati idejét jelző napok száma**: adja meg a napok számát 1-365 között, amíg meg nem változtatja az eszköz jelszavát. Ha például a 60 nap után szeretné módosítani a jelszót, írja be `60` értéket. A jelszó lejáratakor a rendszer a felhasználókat új jelszó létrehozására kéri.
+- A **jelszó lejárati idejét jelző napok száma**: adja meg a napok számát 1-365 között, amíg meg nem változtatja az eszköz jelszavát. Ha például a 60 nap után szeretné módosítani a jelszót, írja be `60`. A jelszó lejáratakor a rendszer a felhasználókat új jelszó létrehozására kéri.
 - A jelszó megadásához **szükséges jelszavak száma**: adja meg, hogy hány legutóbbi jelszó ne legyen újra felhasználható, 1-24 között. Ezzel a beállítással korlátozhatja, hogy a felhasználó korábban használt jelszavakat hozzon létre.
 - Sikertelen **bejelentkezések száma az eszköz törlése előtt**: Itt adhatja meg, hogy a rendszer hány%-ot adjon meg az eszköz törlése előtt a sikertelen bejelentkezések 4-11 között.
 
@@ -342,7 +342,7 @@ Ezek a jelszó-beállítások a munkahelyi profilt használó eszközök személ
 - **Veszélyforrások vizsgálata az alkalmazásokban**: **megkövetelheti** , hogy az **alkalmazások ellenőrzése** beállítás engedélyezve legyen a munkahelyi és a személyes profilokhoz.
 
    > [!Note]
-   > Ez a beállítás csak Android O vagy újabb rendszerű eszközök esetén érvényesül.
+   > Ez a beállítás csak az Android 8 (Oreo) és újabb rendszerű eszközök esetében működik.
 
 - **A személyes profilban szereplő ismeretlen forrásokból származó alkalmazások telepítésének megakadályozása**: az Android Enterprise Work profiling-eszközök nem telepíthetnek alkalmazásokat a Play áruháztól eltérő forrásokból. Természeténél fogva a munkahelyi profil eszközei a következők:
 

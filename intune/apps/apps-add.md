@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/23/2019
+ms.date: 11/18/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8e61be086323a16a6220573874ed80ce4e9bd32
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: ecde59d81ebeba7de64f2693eecb576faac6e722
+ms.sourcegitcommit: 15e099a9a1e18296580bb345610aee7cc4acd126
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72498991"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74164719"
 ---
 # <a name="add-apps-to-microsoft-intune"></a>Alkalmazások hozzáadása a Microsoft Intune-hoz 
 
@@ -151,7 +151,7 @@ A felhőtárhelyre vonatkozó követelmények az alábbiak:
 - A feltöltött fájlok legfeljebb 8 GB méretűek lehetnek.
 
   > [!NOTE]
-  > A Windows rendszerű üzletági (LOB) alkalmazások esetében az alkalmazás legfeljebb 8 GB méretű lehet. az iOS LOB-alkalmazások esetében az alkalmazás legfeljebb 4 GB méretű lehet.
+  > A Windows rendszerű üzletági (LOB) alkalmazások, például a Win32, a Windows Universal AppX, a Windows Universal AppX Bundle, a Windows Universal MSI X és a Windows Universal MSI X Bundle, legfeljebb 8 GB méretűek lehetnek. Minden más LOB-alkalmazás, többek között az iOS LOB-alkalmazások, legfeljebb 2 GB-os mérethatárt tartalmazhat.
 
 ## <a name="create-and-edit-categories-for-apps"></a>Alkalmazáskategóriák létrehozása és szerkesztése
 

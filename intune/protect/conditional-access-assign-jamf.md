@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 10/02/2019
+ms.date: 11/18/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d3552eca925865eb3278b50490a6b70ee5807e2b
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: b09b30fd32caace9ed3259350c01548d5e5fae15
+ms.sourcegitcommit: 93265c2491058afde7168134075bed77031b9311
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72502451"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74161593"
 ---
 # <a name="enforce-compliance-on-macs-managed-with-jamf-pro"></a>Jamf Pro által felügyelt Mac számítógépek megfelelőségének kikényszerítése
 
@@ -37,12 +37,11 @@ A cikkben ismertetett eljárásokhoz az Intune és a JAMF Pro konzolokhoz is hoz
 
 ## <a name="set-up-device-compliance-policies-in-intune"></a>Eszközmegfelelőségi szabályzatok beállítása az Intune-ban
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és lépjen az **eszköz megfelelősége**@no__t – 2**szabályzatra**. 
-2. Ha korábban létrehozott házirendet használ, válassza ki ezt a házirendet a konzolon, majd folytassa az eljárás következő lépésével.  
-   
-   Válassza a **házirend létrehozása** lehetőséget, majd adja meg a szabályzat részleteit a **MacOS** *platformmal* . Konfigurálja a nem megfelelőség *beállításait* és *műveleteit* a szervezeti követelmények teljesítéséhez, majd válassza a **Létrehozás** lehetőséget a szabályzat mentéséhez.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-3. A házirendek *Áttekintés* ablaktáblán válassza a **hozzárendelések**lehetőséget. Az elérhető beállítások segítségével konfigurálhatja, hogy mely Azure Active Directory (Azure AD) felhasználók és biztonsági csoportok kapják meg ezt a házirendet. A JAMF és az Intune közötti integráció nem támogatja az erőforráscsoportok megkeresésére vonatkozó megfelelőségi szabályzatot. 
+2. Válassza az **eszközök** > **megfelelőségi szabályzatok**lehetőséget. Ha korábban létrehozott házirendet használ, válassza ki ezt a házirendet a konzolon, majd folytassa az eljárás következő lépésével. Új szabályzat létrehozásához válassza a **házirend létrehozása** lehetőséget, majd adja meg a szabályzat részleteit a **MacOS** *platformmal* . Konfigurálja a nem megfelelőség *beállításait* és *műveleteit* a szervezeti követelmények teljesítéséhez, majd válassza a **Létrehozás** lehetőséget a szabályzat mentéséhez.
+
+3. A házirendek *Áttekintés* ablaktáblán válassza a **hozzárendelések**lehetőséget. Az elérhető beállítások segítségével konfigurálhatja, hogy mely Azure Active Directory (Azure AD) felhasználók és biztonsági csoportok kapják meg ezt a házirendet. A JAMF és az Intune közötti integráció nem támogatja az erőforráscsoportok megkeresésére vonatkozó megfelelőségi szabályzatot.
 
 4. A **Mentés**gombra kattintva a házirend a felhasználók számára települ.  
 
@@ -61,7 +60,7 @@ Az alábbi eljárás végrehajtásához hozzáférésre van szüksége egy macOS
 
 1. MacOS-eszközön töltse le, de ne telepítse a [MacOS rendszerhez készült céges portál alkalmazás](https://go.microsoft.com/fwlink/?linkid=862280)aktuális verzióját. Csak az alkalmazás egy példányát kell használnia, hogy feltöltse az alkalmazást a JAMF Pro-ba.  
 
-2. Nyissa meg a JAMF Pro-t, és lépjen a **Számítógép-kezelés** > **csomagra**.
+2. Nyissa meg a JAMF Pro-t, és válassza a **Számítógép-kezelés** > **csomagokat**.
 
 3. Hozzon létre egy új csomagot a macOS rendszerhez készült Céges portál alkalmazással, majd válassza a **Mentés**lehetőséget.
 
@@ -103,7 +102,7 @@ Az eszközök regisztrálásához az eszköz felhasználójának manuálisan kel
 
 A JAMF Pro konzollal ellenőrizze, hogy a JAMF Pro és a Microsoft Intune közötti kommunikáció sikeres-e. 
 
-- A JAMF Pro-ban lépjen a **beállítások** > **globális felügyelet** > **Microsoft Intune integráció**elemre, majd válassza a **teszt**elemet. 
+- A JAMF Pro-ban lépjen a **beállítások** > **globális felügyelet** > **Microsoft Intune integráció**, majd a **teszt**elemre.
 
     A konzolon megjelenik egy üzenet, amely a kapcsolatok sikerességét vagy hibáját jelzi.  
 
@@ -112,7 +111,7 @@ Ha a JAMF Pro konzolon nem sikerül a kapcsolatok tesztelése, tekintse át a JA
 
 ## <a name="removing-a-jamf-managed-device-from-intune"></a>Jamf által felügyelt eszköz eltávolítása az Intune-ból
 
-A Jamf által felügyelt eszközöknek az Intune-konzolról történő eltávolításához a **Minden eszköz** nézetben kattintson a **Törlés** elemre. Az eszközök csoportos törlésére is van lehetőség: jelöljön ki több eszközt, és kattintson a **Törlés** elemre.
+JAMF által felügyelt eszköz eltávolításához nyissa meg a Microsoft Endpoint Manager felügyeleti központot, és válassza az **eszközök** > **minden eszköz**lehetőséget, válassza ki az eszközt, majd válassza a **Törlés**lehetőséget.  Az eszközök csoportos törlésére is van lehetőség: jelöljön ki több eszközt, és kattintson a **Törlés** elemre.
 
 A [JAMF által felügyelt eszközök JAMF Pro docs-beli eltávolításával](https://www.jamf.com/jamf-nation/articles/80/unmanaging-computers-while-preserving-their-inventory-information)kapcsolatos információk. További segítségért a támogatási jegyet is [JAMF-támogatással](https://www.jamf.com/support/) teheti meg. 
 

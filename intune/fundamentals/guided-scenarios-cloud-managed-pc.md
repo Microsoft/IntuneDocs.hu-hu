@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/13/2019
+ms.date: 11/18/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4a757da6cf4f4a2a3bde907f0025d4a08a52131b
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.openlocfilehash: f78f3696827ebd50084f0e4b012c5f94427eeb35
+ms.sourcegitcommit: 15e099a9a1e18296580bb345610aee7cc4acd126
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74059658"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74164566"
 ---
 # <a name="guided-scenario---cloud-managed-modern-desktop"></a>Interaktív forgatókönyv – felhőben felügyelt modern asztal
 
@@ -33,7 +33,7 @@ Ha szeretné kiértékelni a felhőben felügyelt modern asztalt a saját szerve
 
 ## <a name="prerequisites"></a>Előfeltételek
 - [Az Mdm-szolgáltató beállítása az Intune](~/fundamentals/mdm-authority-set.md#set-mdm-authority-to-intune) -ra – a mobileszköz-kezelési (Mdm) szolgáltatói beállítás határozza meg az eszközök felügyeletének módját. Ahhoz, hogy a felhasználók felügyeletre tudják regisztrálni eszközeiket, a rendszergazdának be kell állítania egy MDM-szolgáltatót.
-- M356 E3 minimum (vagy M365 E5 a legjobb biztonság érdekében)
+- M365 E3 minimum (vagy M365 E5 a legjobb biztonság érdekében)
 - Windows 10 1903 rendszerű eszköz (a Windows Autopilot szolgáltatásban regisztrált legjobb végfelhasználói élmény)
 - Az interaktív forgatókönyv végrehajtásához szükséges Intune rendszergazdai engedélyek:
   - Eszköz konfigurációja olvasás, létrehozás, törlés, hozzárendelés és frissítés
