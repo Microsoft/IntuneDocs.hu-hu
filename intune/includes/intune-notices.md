@@ -4,170 +4,152 @@ description: beágyazott fájl
 author: ErikjeMS
 ms.service: microsoft-intune
 ms.topic: include
-ms.date: 11/4/2019
+ms.date: 11/19/2019
 ms.author: erikje
 ms.custom: include file
-ms.openlocfilehash: 3d49d31ed08683508d3d231521e578688dd21bac
-ms.sourcegitcommit: 737ad6c675deedfc6009f792023ff95981b06582
+ms.openlocfilehash: b59419be9f381a1c646a7778b73ed172526f6ef6
+ms.sourcegitcommit: 13fa1a4a478cb0e03c7f751958bc17d9dc70010d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74125498"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74188414"
 ---
-Ezek a hirdetmények olyan fontos információkat tartalmaznak, amelyek segíthetnek a jövőbeli Intune-változások és-funkciók előkészítésében.
+These notices provide important information that can help you prepare for future Intune changes and features.
 
-### <a name="intune-plan-for-change-windows-10-version-1703-company-portal-moving-out-of-support--5026679--"></a>Az Intune terve a változáshoz: a Windows 10 1703-es verziójának támogatása Céges portál<!--5026679-->
-A Windows 10 1703-es verziója (más néven Windows 10, RS2) a 2019-es verzión kívülről a nagyvállalati és az EDU-kiadások esetében kikerült a szolgáltatásból. Az Intune a RS2/RS1 megfelelő Céges portál alkalmazásának támogatását a 2019. december 26-án kezdődően teszi lehetővé.
+### <a name="update-your-intune-outlook-app-protection-policies-app--2576686--"></a>Update your Intune Outlook App protection policies (APP)<!--2576686-->
+You may need to take action if you received MC195618 In your Message Center. As shared in Microsoft 365 roadmap feature IDs: 56325 and 56326, Intune and Outlook for iOS and Android are rolling out support for limiting sensitive data in mail notifications and calendar reminders. As a result of these improvements, Outlook for iOS and Android will be removing support for several data protection app configuration keys you are currently leveraging to manage notifications.
 
 #### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
-A továbbiakban nem jelenik meg a Céges portál alkalmazás adott verziójának új funkciói, de továbbra is támogatjuk a Céges portál alkalmazás ezen verzióját 2019-ig, beleértve az Céges portál alkalmazás biztonsági frissítéseit is. szükséges. Mivel azonban a Windows 10 1703-es verziója nem kap biztonsági frissítéseket, ha a szolgáltatás kikerül a karbantartásból, javasoljuk, hogy frissítse Windows-eszközeit egy újabb Windows-verzióra, és győződjön meg arról, hogy a legújabb Céges portál alkalmazást használja, hogy továbbra is megkapja új funkciók és további funkciók.
+While the new features have not shipped, when they do, the following app configuration keys will no longer function in Outlook for iOS and Android:
+- com.microsoft.outlook.Mail.NotificationsEnabled
+- com.microsoft.outlook.Mail.NotificationsEnabled.UserChangeAllowed
+- com.microsoft.outlook.Calendar.NotificationsEnabled
+- com.microsoft.outlook.Calendar.NotificationsEnabled.UserChangeAllowed
 
 #### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
-A végrehajtott lépések a környezet konfigurációjától függenek. Általánosságban azonban érdemes megállapítani azokat az eszközöket, amelyek az operációs rendszer és/vagy a Céges portál régebbi verzióját használják az eszközön, és frissítik. Windows 10-es frissítési körök beállításához jelentkezzen be az Intune-> szoftverfrissítések – Windows 10 frissítési körökbe. A Céges portál legújabb verziója a 10.3.5601.0 verzió. A jövőbeli kiadásokkal naprakész maradhat a felhasználóktól, hogy beszerezze a Microsoft Store. Az Intune-nal is telepítheti a legújabb Windows-eszközökön a [Microsoft Store for Business](https://docs.microsoft.com/intune/windows-store-for-business)használatával.
+We recommend you configure the Intune App Protection Policy data protection setting “Org data notifications” with a value of “Block Org Data” in preparation for this new feature. Beginning on December 16, 2019, Outlook for iOS and Android will honor the “Org data notifications” data protection setting and no longer support the aforementioned keys. Configuring this new setting will ensure sensitive data is not leaked when the above configuration keys are no longer supported. Additionally, Outlook is providing additional granularity when the data protection setting “Org data notifications” is set to “Block Org Data” with an additional app configuration setting, “Calendar notifications”. The combination of the App Protection Policy setting and this app configuration setting limits sensitive information in mail notifications, while exposing sensitive information in calendar notifications, so that users can get to their meetings by glancing quickly at the notification or notification center.
+
+#### <a name="additional-information"></a>További információ
+For more information on APP settings and Outlook’s settings, see:
+- [App protection policy settings, Android](../apps/app-protection-policy-settings-android.md)
+- [App protection policy settings, iOS](../apps/app-protection-policy-settings-ios.md)
+- [Deploying Outlook for iOS and Android app configuration settings](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune)
+
+
+### <a name="intune-plan-for-change-windows-10-version-1703-company-portal-moving-out-of-support--5026679--"></a>Intune Plan for Change: Windows 10, version 1703 Company Portal moving out of Support<!--5026679-->
+Windows 10, version 1703 (also known as Windows 10, RS2) has moved out of service on October 8, 2019 for enterprise and EDU editions. Intune will end support for the corresponding Company Portal app for RS2/RS1 starting on December 26, 2019.
+
+#### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
+Moving forward, you will not see new features in the specific version of the Company Portal app, although we will continue to support this version of the Company Portal app through December 26, 2019, including providing any security updates to the Company Portal app as needed. However, since Windows 10, version 1703 will not receive any security updates once it moves out of servicing, we highly recommend you update your Windows devices to a more recent Windows version and make sure you’re on the latest Company Portal app so you continue to get new features and additional functionality.
+
+#### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
+The steps you take depends on how your environment is configured. In general though, you should identify the devices that have the older version of the OS and/or the Company Portal on their device, and update. To set your Windows 10 update rings, log into Intune -> Software updates – Windows 10 update rings. The latest version of the Company Portal is version 10.3.5601.0. Please direct your users to acquire it from the Microsoft Store to stay up to date with future releases. You can also use Intune to install the latest on your Windows devices through the [Microsoft Store for Business](https://docs.microsoft.com/intune/windows-store-for-business).
 
 #### <a name="additional-information"></a>További információ
 [A Windows 10-es céges portál alkalmazás manuális hozzáadása a Microsoft Intune-nal](https://docs.microsoft.com/intune/store-apps-company-portal-app)
 
 
-### <a name="take-action-use-microsoft-edge-for-your-protected-intune-browser-experience--5728447--"></a>Művelet: a Microsoft Edge használata a védett Intune-böngésző felhasználói felületén<!--5728447-->
-Ahogy az elmúlt évben osztozunk, a Microsoft Edge Mobile ugyanazokat a felügyeleti funkciókat támogatja, mint a Managed Browser, miközben sokkal fejlettebb felhasználói élményt biztosít. A Microsoft Edge által biztosított robusztus élmény érdekében a Intune Managed Browser kivonására kerül sor. A 2020. januártól kezdődően az Intune már nem fogja támogatni a Intune Managed Browser.  
+### <a name="take-action-use-microsoft-edge-for-your-protected-intune-browser-experience--5728447--"></a>Take Action: Use Microsoft Edge for your Protected Intune Browser Experience<!--5728447-->
+As we have been sharing over the past year, Microsoft Edge mobile supports the same set of management features as the Managed Browser, while providing a much-improved end user experience. To make way for the robust experiences provided in Microsoft Edge, we will be retiring the Intune Managed Browser. Starting on January, 27, 2020, Intune will no longer support the Intune Managed Browser.  
 
 #### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem? 
-A 2020. február 1-től kezdődően a Intune Managed Browser többé nem lesz elérhető a Google Play Áruházban vagy az iOS App Store-ban. Ezen a ponton továbbra is megcélozhatja az új alkalmazás-védelmi szabályzatokat a Intune Managed Browserra, bár az új felhasználók nem tudják letölteni a Intune Managed Browser alkalmazást. Emellett az iOS-en a MDM által beléptetett új webklipek is a Microsoft Edge-ben nyílnak meg a Intune Managed Browser helyett.  
+Starting on February 1, 2020, the Intune Managed Browser will no longer be available in the Google Play Store or the iOS App Store. At this point, you will still be able to target new app protection policies to the Intune Managed Browser, though new users won't be able to download the Intune Managed Browser app. In addition, on iOS, new web clips that are pushed down to MDM-enrolled device will open in Microsoft Edge instead of the Intune Managed Browser.  
 
-Március 31 2020-én a Intune Managed Browser el lesz távolítva az Azure-konzolról. Ez azt jelenti, hogy többé nem fog tudni új szabályzatokat létrehozni a Intune Managed Browser számára. Ha meglévő Intune Managed Browser szabályzatok vannak érvényben, a rendszer nem érinti őket. A Intune Managed Browser ikon nélkül fog megjelenni a konzolon, és a meglévő szabályzatok még mindig az alkalmazásnak megfelelően jelennek meg. Ezen a ponton eltávolítjuk a webes tartalom átirányításának lehetőségét is a Intune Managed Browser az adatvédelmi szabályzatok adatvédelem szakaszán belül.  
+On March, 31 2020, the Intune Managed Browser will be removed from the Azure console. This means you will no longer be able to create new policies for the Intune Managed Browser. If you have existing Intune Managed Browser policies in place, they won't be affected. The Intune Managed Browser will show up in the console as an LOB app with no icon, and existing policies will show as targeted to the app still. At this point, we will also remove the option to redirect web content to the Intune Managed Browser within the Data Protection section of App protection policies.  
 
 #### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra? 
-A Intune Managed Browserról a Microsoft Edge-re való zökkenőmentes áttérés érdekében javasoljuk, hogy proaktív módon végezze el a következő lépéseket: 
+To ensure a smooth transition from the Intune Managed Browser to Microsoft Edge, we recommend you take the following steps proactively: 
 
-1. Célozza meg a Microsoft Edge-t iOS-re és Androidra az App Protection-szabályzattal (más néven MAM) és az alkalmazás konfigurációs beállításaival. A Microsoft Edge-hez készült Intune Managed Browser szabályzatait egyszerűen a meglévő szabályzatok Microsoft Edge-re való megcélzásával is felhasználhatja.  
-2. Győződjön meg arról, hogy az Ön környezetében található összes MAM-védelemmel ellátott alkalmazás rendelkezik "a webes tartalmak átvitelének korlátozása más alkalmazásokkal" beállítással "szabályzat által felügyelt böngészők" értékre. 
-3. A "com. microsoft. Intune. useEdge" nevű felügyelt alkalmazás-konfigurációs beállítással megcélzott összes MAM-védelemmel ellátott érték értéke TRUE (igaz). A következő hónapban a 1911-es kiadással megkezdheti a 2. és a 3. lépést a "webtartalom átvitelének korlátozása más alkalmazásokkal" beállítással, hogy a "Microsoft Edge" legyen kiválasztva az alkalmazás-védelmi szabályzatok adatvédelem szakaszában. . 
+1. Target Microsoft Edge for iOS and Android with app protection policy (also referred to as MAM)  and app config settings. You can reuse your Intune Managed Browser policies for Microsoft Edge by targeting those existing policies to Microsoft Edge as well.  
+2. Ensure all MAM-protected apps in your environment have the app protection policy setting "Restrict web content transfer with other apps" set to "Policy managed browsers". 
+3. Target all the MAM-protected with the managed app configuration setting "com.microsoft.intune.useEdge" set to true. Starting next month with the release of 1911, you will be able to accomplish steps 2 and 3 simply by configuring the setting "Restrict web content transfer with other apps" to have "Microsoft Edge" selected in the Data Protection section of your app protection policies. 
 
-Az iOS-és Android-alapú webklipek támogatása hamarosan elérhető lesz. Ha ez a támogatás megjelent, újra meg kell céloznia a már meglévő webklipeket, hogy azok a Managed Browser helyett a Microsoft Edge-ben legyenek megnyitva. 
+Support for web clips on iOS and Android is coming. When this support is released, you will need to retarget pre-existing web clips to ensure they open in in Microsoft Edge instead of the Managed Browser. 
 
 #### <a name="additional-information"></a>További információ
-További információért látogasson el a [Microsoft Edge és az alkalmazás-védelmi szabályzatok használatával](../apps/manage-microsoft-edge.md) foglalkozó dokumentumokra, vagy tekintse meg a [támogatási blogbejegyzését](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Use-Microsoft-Edge-for-your-Protected-Intune-Browser-Experience/ba-p/1004269).
+Please visit our docs on [using Microsoft Edge with app protection policies](../apps/manage-microsoft-edge.md) for more info, or view our [support blog post](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Use-Microsoft-Edge-for-your-Protected-Intune-Browser-Experience/ba-p/1004269).
 
-
-### <a name="plan-for-change-updated-experience-when-enrolling-android-enterprise-dedicated-devices-in-intune--5198878--"></a>Tervezze meg a változást: az androidos vállalati dedikált eszközök Intune-ban való regisztrálásának frissített felhasználói felülete<!--5198878-->
-Az Intune novemberi vagy 1911-as verziójában a SCEP-eszközök tanúsítvány-telepítésének támogatása a Wi-Fi profilokhoz való tanúsítványalapú hozzáférés engedélyezése érdekében az androidos vállalati dedikált eszközökhöz nyújt támogatást. Ez a módosítás azt is magában foglalja, hogy az androidos vállalati dedikált eszközök regisztrálása során a folyamat néhány kisebb változást is igényel.
+### <a name="plan-for-change-updated-experience-when-enrolling-android-enterprise-dedicated-devices-in-intune--5198878--"></a>Plan for Change: Updated experience when enrolling Android Enterprise dedicated devices in Intune<!--5198878-->
+With the November or 1911 release to Intune, we’re adding support for SCEP device certificate deployment to Android Enterprise dedicated devices to enable certificate-based access to Wi-Fi profiles. This change also involves some minor changes the flow when enrolling Android Enterprise dedicated devices.
 
 #### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
-Ha az androidos vállalati dedikált eszközöket felügyeli az Ön környezetében, akkor az egyes változások novemberben jelennek meg.
+If you manage Android Enterprise dedicated devices in your environment, you will start to see some changes roll out in November.
 
-- Új Android Enterprise-eszközök regisztrálásához: a végfelhasználók a regisztráció során különböző lépéseket fognak látni az eszközökön. A regisztráció továbbra is megkezdi a mai napig (QR, NFC, Zero Touch vagy Device Identifier), de a novemberi kiadás után a kötelező alkalmazás telepítési lépése lesz.
-- Dedikált eszközként regisztrált meglévő Android-eszközök esetén: az Intune a november elején kezdi meg automatikusan telepíteni a Microsoft Intune alkalmazást az eszközökön. Semmilyen műveletet nem kell elvégeznie. A rendszer automatikusan letölti és telepíti az alkalmazást az eszközökön. 
+- For new Android Enterprise dedicated device enrollments: End users will see a different set of steps on devices during enrollment. Enrollment will still start the way it does today (with QR, NFC, Zero-touch, or device identifier) but after the November service release, there will be a mandatory app install step.
+- For existing Android devices enrolled as dedicated devices: Intune will start to automatically install the Microsoft Intune app on devices starting in early November. You don't need to take any action. The app will automatically download and install on devices. 
 
 #### <a name="what-can-i-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
-Javasoljuk, hogy frissítse a végfelhasználói útmutatást, és tájékoztassa az ügyfélszolgálatot erről a változásról. További részletekért és képernyőképekhez kattintson a további információk elemre. A változás megkezdése előtt frissítjük az Újdonságok oldalát.
+You should plan to update your end user guidance and let your helpdesk know of this change. Click Additional Information for more details and screenshots. We’ll update our What’s New page when this change starts to roll out.
 
 #### <a name="additional-information"></a>További információ
 [https://aka.ms/Dedicated_devices_enrollment](https://aka.ms/Dedicated_devices_enrollment)
 
-### <a name="plan-for-change-the-server-side-logging-for-siri-commands-setting-will-be-removed-from-the-intune-console----5468501--"></a>Tervezze meg a változást: a "kiszolgálóoldali naplózás a Siri-parancsokhoz" beállítás el lesz távolítva az Intune-konzolról <!-- 5468501-->
+### <a name="end-of-support-for-legacy-pc-management"></a>End of support for legacy PC management
 
-Azt tervezzük, hogy a "kiszolgálóoldali naplózás a Siri-parancsokhoz" beállítást az Intune-konzolon az Intune szolgáltatás novemberi frissítésével távolítjuk el. Ez a módosítás úgy igazodik az Apple-hez, hogy már eltávolította a beállítást a saját oldalán.
-
-#### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
-Ha a novemberi frissítés vagy a 1911 november közepétől kikerül, láthatja, hogy ez a beállítás el lett távolítva az iOS-es konfigurációs profilokhoz tartozó eszközök korlátozási menüjéből (beépített alkalmazások) az Intune-konzolon. Ez megjelenhet a szabályzatokban és a célként megadott eszköz felügyeleti profiljában, de a beállítás nincs hatással az eszközre. A funkcionalitást nem vesszük számításba, mivel jelenleg nem működik az eszközökön, még akkor is, ha azt a felügyeleti profilban látja.
-
-A két útvonal egyikét választhatja:
-- Ha törölni szeretné ezt a beállítást a szabályzatokból, lépjen a beállítással rendelkező profilra, végezze el a másodlagos szerkesztést, és mentse a szabályzatot. A házirend újraszámítja a háttérbeli beállításokat, és a rendszer törli a beállítást a szabályzatból.
-- Ha úgy dönt, hogy nem kívánja végrehajtani ezt a műveletet, a végfelhasználók ezt a beállítást fogják látni az eszköz felügyeleti profiljában, de a beállítás nem lesz hatással.
-
-#### <a name="what-can-i-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
-A fenti szakasz vagy a szabályzat megtartása szerint is végrehajthat műveleteket. A változás kidobásakor az Újdonságok oldalát és dokumentációját fogjuk frissíteni.
-
-### <a name="end-of-support-for-legacy-pc-management"></a>A régi számítógép-felügyelet támogatásának vége
-
-Az örökölt számítógépek felügyelete 2020. október 15-én megszűnik. Frissítse az eszközöket a Windows 10-es verzióra, és regisztrálja újra őket MDM-eszközként, hogy az Intune kezelje őket.
+Legacy PC management is going out of support on October 15, 2020. Upgrade devices to Windows 10 and reenroll them as Mobile Device Management (MDM) devices to keep them managed by Intune.
 
 [További információ](https://go.microsoft.com/fwlink/?linkid=2107122)
 
-### <a name="decreasing-support-for-android-device-administrator"></a>Az Android-eszközök rendszergazdai támogatásának csökkentése 
-Android-eszköz rendszergazdája (más néven a "régi" Android-kezelés és az Android 2,2 kiadásban megjelent) az androidos eszközök felügyeletének módja. A továbbfejlesztett felügyeleti funkciók azonban mostantól elérhetők az [Android Enterprise](../enrollment/connect-intune-android-enterprise.md) (Android 5,0) verzióban. A modern, gazdagabb és biztonságosabb eszközkezelés érdekében a Google az új Android-kiadásokban csökkenti az eszköz-rendszergazda támogatását.
+### <a name="decreasing-support-for-android-device-administrator"></a>Decreasing support for Android device administrator 
+Android device administrator (sometimes referred to "legacy" Android management and released with Android 2.2) is a way to manage Android devices. However, improved management functionality is now available with [Android Enterprise](../enrollment/connect-intune-android-enterprise.md) (released with Android 5.0). In an effort to move to modern, richer, and more secure device management, Google is decreasing device administrator support in new Android releases.
 
 #### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
-A Google által végzett módosítások miatt az Intune-felhasználók a következő módokon lesznek hatással:  
-- Az Intune csak az Android 10 vagy újabb rendszerű Android-eszközök (más néven Android Q) futtatásával támogatja az eszköz rendszergazdája által felügyelt Android-eszközöket a 2020-as nyaran. Ez a dátum akkor jelenik meg, ha az Android következő fő verziója várhatóan fel lesz szabadítva.   
-- Az Android 10 vagy újabb rendszerű, 2020-es nyarat futtató eszközök rendszergazdája által felügyelt eszközök többé nem lesznek teljes mértékben felügyelve.       
-- Az Android 10 alatti Android-verziókban továbbra is az eszköz rendszergazdája által felügyelt Android-eszközök nem lesznek hatással, és továbbra is teljes mértékben kezelhetők az eszköz rendszergazdájával.    
-- Az Android 10 vagy újabb rendszerű eszközökön a Google az eszköz-rendszergazdai felügyeleti ügynökök (például Céges portál) számára korlátozta az eszköz-azonosító információk elérését. Ez hatással van az Intune alábbi szolgáltatásaira az Android 10 vagy újabb rendszerű eszközök frissítése után:  
-    - A VPN hálózati hozzáférés-vezérlése már nem fog működni.   
-    - Az eszközök vállalati tulajdonú IMEI-vagy sorozatszámmal való azonosítása nem fogja automatikusan megjelölni az eszközöket vállalati tulajdonban.  
-    - Az IMEI-azonosító és a sorozatszám többé nem lesz látható a rendszergazdák számára az Intune-ban. 
+Because of these changes by Google, Intune users will be impacted in the following ways:  
+- Intune will only be able to provide support for device administrator-managed Android devices running Android 10 and later (also known as Android Q) through the summer of 2020. This date is when the next major version of Android is expected to be released.   
+- Device administrator-managed devices that are running Android 10 or later after the summer of 2020 will no longer be able to be entirely managed.       
+- Device administrator-managed Android devices that remain on Android versions below Android 10 won't be impacted and can continue to be entirely managed with device administrator.    
+- For all devices running Android 10 and later, Google has restricted the ability for device administrator management agents like Company Portal to access device identifier information. This restriction impacts the following Intune features after a device updates to Android 10 or later:  
+    - Network access control for VPN will no longer work.   
+    - Identifying devices as corporate-owned with an IMEI or serial number won't automatically mark devices as corporate-owned.  
+    - The IMEI and serial number will no longer be visible to IT admins in Intune. 
         > [!NOTE]
-        > Ez csak az eszköz rendszergazdája által felügyelt Android 10 és újabb rendszerű eszközökre vonatkozik, és nem érinti az Android Enterprise-ként kezelt eszközöket. 
+        > This only impacts device administrator-managed devices on Android 10 and later and does not affect devices being managed as Android Enterprise. 
 
 #### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
-A 2020 nyarán elérhető funkciók csökkenésének elkerüléséhez a következőket javasoljuk:
-- Ne helyezze be az új eszközöket az eszköz-rendszergazda felügyeletbe.
-- Ha egy eszköznek az Android 10-es verzióra kell frissítenie az eszközt, telepítse azt az eszköz rendszergazdai felügyelete alól az Android Enterprise Management és/vagy az App Protection szabályzatok segítségével.
+To avoid the reduction in functionality coming in the summer of 2020, we recommend the following:
+- Don't onboard new devices into device administrator management.
+- If a device is expected to receive an update to Android 10, migrate it off of device administrator management to Android Enterprise management and/or app protection policies.
 
 #### <a name="additional-information"></a>További információ
-- [A Google útmutatója az eszköz-rendszergazdától az Android Enterprise rendszerre való áttelepítéshez](http://static.googleusercontent.com/media/android.com/en/enterprise/static/2016/pdfs/enterprise/Android-Enterprise-Migration-Bluebook_2019.pdf)
-- [A Google dokumentációja az eszköz rendszergazdai API-jával való érvénytelenítésének tervéről](https://developers.google.com/android/work/device-admin-deprecation)
+- [Google's guidance for migration from device administrator to Android Enterprise](http://static.googleusercontent.com/media/android.com/en/enterprise/static/2016/pdfs/enterprise/Android-Enterprise-Migration-Bluebook_2019.pdf)
+- [Google's documentation on the plan to deprecate the device administrator API](https://developers.google.com/android/work/device-admin-deprecation)
 
-### <a name="update-your-android-company-portal-app-to-the-latest-version---4536963--"></a>Android Céges portál-alkalmazás frissítése a legújabb verzióra <!--4536963-->
-Az Intune rendszeres időközönként frissítéseket szabadít fel az Android Céges portál alkalmazásban. November 2018-én közzétettünk egy vállalati portál frissítést, amely tartalmaz egy back-end kapcsolót, amely felkészíti a Google-t a meglévő értesítési platformról a Google Firebase Cloud Messaging (FCM) szolgáltatásba való váltásra. Ha a Google kihasználja a meglévő értesítési platformot, és áthelyezi az FCM-re, a végfelhasználóknak frissíteniük kell Céges portál alkalmazást legalább a november 2018-as kiadásra, hogy továbbra is kommunikáljanak a Google Play áruházral.
-
-#### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
-A telemetria azt jelzi, hogy a 5.0.4269.0-nál korábbi Céges portál verzióval rendelkező eszközök vannak. Ha a Céges portál alkalmazás ezen vagy újabb verziója nincs telepítve, akkor a rendszer az általa támogatott, az eszköz által kezdeményezett műveleteket, például a törlést, a jelszó alaphelyzetbe állítását, az elérhető és a szükséges alkalmazások telepítését, és a tanúsítványigénylés nem a várt módon működik. Ha az eszközök regisztrálva vannak az Intune-ban, akkor a Céges portál-verziók és a felhasználók az ügyfélalkalmazások által felderített alkalmazások MDM jelennek meg. A Céges portál alkalmazás korábbi verzióinak kiválasztásával megtekintheti, hogy mely végfelhasználók rendelkeznek olyan eszközökkel, amelyek nem frissítették a Céges portál alkalmazást.
-
-#### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
-Kérje meg az Android-eszközök végfelhasználóit, amelyek nem frissültek a Céges portál alkalmazás frissítéséhez a Google Play használatával. Értesítse az ügyfélszolgálatot arra az esetre, ha egy felhasználó nem tartotta meg automatikusan a Céges portál alkalmazás automatikus frissítését. További információ a Google FCM platformról és a változásról: további *információk* a hivatkozáson.
-
-#### <a name="additional-information"></a>További információ
-https://firebase.google.com/docs/cloud-messaging/
-
-
-### <a name="new-full-screen-experience-coming-to-intune---4593669--"></a>Új teljes képernyős élmény az Intune-hoz <!--4593669-->
-Folyamatban van a felhasználói felületi tapasztalatok létrehozása és szerkesztése az Intune-ban a Azure Portal. Ez az új felhasználói élmény leegyszerűsíti a meglévő munkafolyamatokat egy olyan varázsló stílusú formátum használatával, amely egy panelen van tömörítve. Ez a frissítés elvégezhető a "panel terjeszkedésével", vagy olyan létrehozási és szerkesztési folyamatokkal, amelyekkel részletesen lehatolhat a Deep Blade-útvonalak. A munkafolyamatok létrehozása is frissül, hogy tartalmazza a hozzárendeléseket (kivéve az alkalmazás-hozzárendelést).
+### <a name="plan-for-change-intune-app-sdk-and-app-protection-policies-for-android-moving-to-support-android-50-and-higher-in-an-upcoming-release---4911065---"></a>Plan for change: Intune App SDK and app protection policies for Android moving to support Android 5.0 and higher in an upcoming release <!--4911065 -->
+Intune will be moving to support Android 5.x (Lollipop) and higher in an upcoming release. Update any wrapped apps with the latest Intune App SDK and update your devices.
 
 #### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
-A teljes képernyős élmény a következő néhány hónapban a portal.azure.com és a devicemanagement.microsoft.com szolgáltatásban is elérhető az Intune-ban. A felhasználói felület ezen frissítése nem befolyásolja a meglévő szabályzatok és profilok funkcióit, de egy kissé módosított munkafolyamatot fog látni. Új szabályzatok létrehozásakor például beállíthatja, hogy a folyamat részeként bizonyos hozzárendeléseket a szabályzat létrehozása után is be lehessen állítani. Tekintse meg a blogbejegyzés *további információit* , amelyekkel az új felhasználói élmény a-konzolon fog kinézni.
+If you're not using or plan to use either the SDK or APP for Android, this change won't affect you. If you are using the Intune App SDK, be sure to update to the latest version and also update your devices to Android 5.x and higher. If you don't update, apps won't receive updates, and the quality of their experience will diminish over time.
 
-#### <a name="what-can-i-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
-Semmilyen műveletet nem kell végrehajtania, de szükség esetén érdemes lehet frissíteni az IT-Pro-útmutatást. Frissítjük a dokumentációt, mivel ez a folyamat a Azure Portalban az Intune-ban lévő különböző lapokra mutat.
+Below find a list of common devices enrolled in Intune that run Android version 4.x. If you have one of these devices, take the appropriate steps to make sure that this device will support Android version 5.0 or higher or that it will be replaced with a device that supports Android version 5.0 or higher. This list is not exhaustive of all devices that may need to be evaluated:
 
-#### <a name="additional-information"></a>További információ 
-https://aka.ms/intune_fullscreen
-
-### <a name="plan-for-change-intune-app-sdk-and-app-protection-policies-for-android-moving-to-support-android-50-and-higher-in-an-upcoming-release---4911065---"></a>Tervezze meg a változást: az Intune app SDK és az alkalmazás-védelmi szabályzatok Android rendszerre való áttérés az Android 5,0 és újabb verzióinak támogatásához egy közelgő kiadásban <!--4911065 -->
-Az Intune egy közelgő kiadásban az Android 5. x (nyalóka) és újabb verzióinak támogatására lesz áthelyezve. Frissítheti az összes burkolt alkalmazást a legújabb Intune app SDK-val, és frissítheti az eszközeit.
-
-#### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
-Ha nem használja az SDK-t vagy az alkalmazást az Androidhoz, akkor ez a változás nem érinti Önt. Ha az Intune app SDK-t használja, frissítsen a legújabb verzióra, és frissítse az eszközeit az Android 5. x vagy újabb verziójára. Ha nem frissíti, az alkalmazások nem kapják meg a frissítéseket, és a tapasztalatok minősége idővel csökken.
-
-Az alábbi listában megtalálhatja az Intune-ban regisztrált általános eszközök listáját, amelyek az Android 4. x verzióját futtatják. Ha rendelkezik ezekkel az eszközökkel, hajtsa végre a megfelelő lépéseket annak biztosításához, hogy az eszköz támogassa az Android 5,0-es vagy újabb verzióját, vagy hogy a rendszer az Android 5,0-es vagy újabb verzióját támogató eszközre cserélje. Ez a lista nem teljes körű a kiértékeléshez szükséges összes eszközről:
-
-- Samsung SM – T561  
-- Samsung SM – T365
-- Samsung GT – I9195
-- Samsung SM – G800F
-- Samsung SM – G357FZ
+- Samsung SM-T561  
+- Samsung SM-T365
+- Samsung GT-I9195
+- Samsung SM-G800F
+- Samsung SM-G357FZ
 - Motorola XT1080
-- Samsung GT – I9305
-- Samsung SM – T231
+- Samsung GT-I9305
+- Samsung SM-T231
 
 #### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
-Alkalmazások becsomagolása a legújabb Intune app SDK-val. Az "a minimális operációsrendszer-verzió megkövetelése (csak figyelmeztetés)" beállítást is beállíthatja úgy, hogy a végfelhasználók tájékoztassák a felhasználókat a személyes eszközökről a frissítéshez.
+Wrap your apps with the latest Intune App SDK. You may also set the "Require minimum OS version (Warning only)" conditional launch setting to notify end users on personal devices to upgrade.
 
-### <a name="intune-plan-for-change-nearing-end-of-support-for-windows-7---3042987---"></a>Intune-terv a változáshoz: a Windows 7 támogatásának megszűnése<!-- 3042987 -->
-Ahogy a MC148476-ben, az utolsó szeptember 2018-án, a MC176794-ben pedig a 2019-as időszakban ismét megjelent, a Windows 7 a 2020-as január 14-én elérte a kiterjesztett támogatás végét. Ebben az esetben az Intune kivonja a Windows 7 rendszerű eszközök támogatását, így az újabb technológiákat támogató beruházásokra koncentrálhat, és nagyszerű, új végfelhasználói élményt biztosíthat. Ezen dátum után a Windows 7 rendszerű számítógépek védelméhez segítséget nyújtó technikai segítségnyújtás és automatikus frissítések többé nem lesznek elérhetők az Intune-on keresztül. A Microsoft határozottan azt javasolja, hogy a Windows 10 rendszerre való áttérés előtt a 2020-es számú olyan esetet ne telepítsen, ahol a szolgáltatásra vagy támogatásra már nem lesz elérhető. További információk a Windows támogatási életciklusáról [itt](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)olvashat.
+### <a name="intune-plan-for-change-nearing-end-of-support-for-windows-7---3042987---"></a>Intune plan for change: Nearing end of support for Windows 7<!-- 3042987 -->
+As we messaged in MC148476, posted last September 2018, and again in MC176794 back in March 2019, Windows 7 reaches its end of extended support on January 14, 2020. At that time, Intune will retire support for devices running Windows 7 so we can focus our investment on supporting newer technologies and providing great new end-user experiences. After that date, technical assistance and automatic updates that help protect your Windows 7 PC will no longer be available through Intune. Microsoft strongly recommends that you move to Windows 10 before January 2020 to avoid a scenario where you need service or support that is no longer available. Read more about the Windows support lifecycle [here](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet).
 
 #### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
-Azért kapta ezt az üzenetet, mert jelenleg a Windows 7 rendszerű számítógépeket kezeli az örökölt Intune PC-s szoftveres ügynök használatával. Mivel a Windows 7 meghosszabbított támogatásának vége előtt kevesebb mint egy éve marad, nyomatékosan javasoljuk, hogy a lehető leghamarabb megkezdhesse a Windows 10-es verzióra való frissítést.  
+You are receiving this message because you are currently managing Windows 7 PCs using the legacy Intune PC software agent. Because less than a year remains before the end of Windows 7 extended support, we strongly encourage your organization to begin upgrading to Windows 10 as soon as possible.  
 
-A számítógép-felügyeleti funkciók közvetlenül a Windows 10-es operációs rendszerbe vannak építve, és már nem kell telepítenie az ügyfél-ügynököt, például a Windows 7 rendszerhez készült Intune-ügyfélszoftvert. A Windows 8,1-től kezdve a Microsoft a mobileszköz-kezelési (MDM) architektúrát használja a Windows rendszerű számítógépek kiépítéséhez, konfigurálásához, frissítéséhez és felügyeletéhez. Miután beállította az Intune-t, a Windows 10 rendszerű [számítógépek Intune-ba való regisztrálásával](..\windows-enroll.md) egyszerűsítheti a Windows-regisztrációt a Mdm-csatornán keresztül. Javasoljuk, hogy a Windows 10 rendszerű számítógépek kezeléséhez használja ezt az "ügynök nélküli" MDM-kezelési megoldást.
+PC management capabilities are built directly into the Windows 10 operating system, and you no longer need to install a client agent such as the Intune software client for Windows 7. Starting with Windows 8.1, Microsoft uses the Mobile Device Management (MDM) architecture to provision, configure, update, and manage Windows PCs. When you have set up Intune, you can simplify Windows enrollment by [enrolling Windows 10 PCs into Intune](..\windows-enroll.md) through the MDM channel. We recommend that you use this "agentless" MDM management solution to manage your Windows 10 PCs.
 
 #### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
-Javasoljuk, hogy a szervezet azonnal vegye fontolóra ezt a műveleti tervet:
+We encourage your organization to immediately consider this action plan:
 
-- Tervezze meg és frissítse a Windows 7 flottáját a Windows 10-es verzióra 2020. január 14. előtt.
-- Ismerkedjen meg a [Windows 10-es üzembe helyezési támogatással](https://docs.microsoft.com/windows/deployment/) , és tudjon meg többet arról, hogyan frissítheti meglévő Windows 7 rendszerű számítógépeit a Windows 10-es verzióra.
-- Tekintse át az [asztali alkalmazást](https://www.microsoft.com/fasttrack/microsoft-365/desktop-app-assure?rtc=1) az FastTrack-on keresztül, amely segítséget nyújt a Microsoft-alkalmazások kompatibilitási ígéretéhez.
-- Meglévő örökölt Intune szoftveres ügyfél által felügyelt eszközök átváltása a Microsoft által ajánlott megoldásra a Windows 10 felügyeletéhez a MDM-kezelés használatával. Regisztrálja az összes új Windows 10-es számítógépet az Intune-hoz készült MDM-felügyelettel a Azure Portal.
+- Plan and upgrade the Windows 7 fleet to Windows 10 before January 14, 2020.
+- Explore [Windows 10 deployment support](https://docs.microsoft.com/windows/deployment/) to learn more about how to upgrade your existing fleet of Windows 7 PCs to Windows 10.
+- Review the [Desktop App Assure](https://www.microsoft.com/fasttrack/microsoft-365/desktop-app-assure?rtc=1) offer through FastTrack, which will assist with the Microsoft application compatibility promise.
+- Transition existing legacy Intune software client managed devices to the Microsoft-recommended solution to manage Windows 10 using MDM management. Enroll all new Windows 10 PCs using MDM management for Intune in the Azure portal.
 
-További információért tekintse meg a [blogbejegyzésben](https://aka.ms/Windows7_Intune) .
+See the [blog post here](https://aka.ms/Windows7_Intune) for more information.
+
+

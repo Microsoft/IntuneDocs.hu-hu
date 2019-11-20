@@ -6,238 +6,205 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 10/30/2019
+ms.date: 11/18/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 7fc95d17-098e-4da5-8a09-a96476569dd9
-ms.reviewer: cacamp
+ms.reviewer: srik
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1049bfeaf3840e1e6a711fd4df10b0a29a88b6b8
-ms.sourcegitcommit: 85c894cb4df34a5ff558e3b45e28a8b91054d9e6
+ms.openlocfilehash: 14ff8ad2d41a6f2235c18f155e3a5b865e3a32e4
+ms.sourcegitcommit: 01fb3d844958a0e66c7b87623160982868e675b0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73432544"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74199313"
 ---
-# <a name="how-to-get-support-for-microsoft-intune"></a>Hogyan kérhet támogatást az Intune-hoz  
-  
+# <a name="how-to-get-support-for-microsoft-intune"></a>Hogyan kérhet támogatást az Intune-hoz
+
 A Microsoft Intune-hoz a Microsoft globális műszaki, értékesítés előtti, számlázási és előfizetési támogatást nyújt. A támogatás interneten és telefonon is elérhető mind a fizetős, mind a próbaverziós előfizetésekhez. Az online műszaki támogatás angolul és japánul érhető el. Telefonos támogatás és online számlázási támogatás más nyelveken is elérhető.
 
-Intune-rendszergazdaként használhatja a **Súgó és támogatás** lehetőséget az Intune-hoz készült online támogatási jegy a Azure Portalból való beküldéséhez. A támogatási incidensek létrehozásához és kezeléséhez a fióknak rendelkeznie kell egy Azure Active Directory (Azure AD) szerepkörrel, amely tartalmazza a **Microsoft. Office 365. supportTickets** *műveletet* . További információ a támogatási jegy létrehozásához szükséges Azure AD-szerepkörökről és engedélyekről: [rendszergazdai szerepkörök a Azure Active Directoryban](https://docs.microsoft.com/azure/active-directory/active-directory-assign-admin-roles-azure-portal).  
+As an Intune admin, you can use the **Help and Support** option to file an on-line support ticket for Intune from the Azure portal. To create and manage a support incident, your account must have an Azure Active Directory (Azure AD) role that includes the *action* **microsoft.office365.supportTickets**. For information about Azure AD roles and permissions that are required to create a support ticket, see [administrator roles in Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-assign-admin-roles-azure-portal).
 
->[!IMPORTANT]  
+>[!IMPORTANT]
 > Ha olyan külső termékekhez szeretne műszaki támogatást igénybe venni, amelyek együttműködnek az Intune-nal (például a Saaswedo, a Cisco vagy a Lookout), akkor először forduljon ezeknek a termékeknek a szállítójához. Mielőtt megnyitja az Intune-nal kapcsolatos támogatási kérelmet, győződjön meg róla, hogy a másik terméket megfelelően konfigurálta.
 >
 > A Microsoft Intune hibaelhárítási problémáiról további információt az Intune dokumentációjának [hibaelhárítási szakaszában](help-desk-operators.md) találhat.
 
-## <a name="known-issues-for-creating-support-incidents"></a>Támogatási incidensek létrehozásával kapcsolatos ismert problémák
 
-Ha a fiókja rendelkezik a szükséges engedélyekkel, de nem tud sikeresen hozzáférni a súgóhoz és támogatáshoz, vagy támogatási incidenst szeretne létrehozni vagy kezelni, tekintse át a következő ismert problémákat és megoldásokat:
+## <a name="help-and-support-experience"></a>Help and support experience
 
-- A fiók elavult felhasználói jogkivonata. A probléma megoldásához jelentkezzen ki az összes aktív konzol-munkamenetből, jelentkezzen be újra, majd próbálkozzon egy támogatási incidens létrehozásával vagy kezelésével.
-- Több aktív munkamenet. Ha egynél több felhasználóval vagy munkamenettel jelentkezett be, jelentkezzen ki az összes, de egyetlen konzolon. Ezt követően egyetlen aktív munkamenettel próbálkozhat a támogatási incidensek létrehozásával vagy kezelésével.
+The Help and support experience for Intune is available from the [Microsoft 365 Device Management portal](https://devicemanagement.microsoft.com) and from all of the blades (or pages) under Intune in the Azure portal.
 
-A hozzáférési problémák megoldásához szükséges további műveletek:
+The *Help and support* experience is similar to the experience seen in the [Microsoft 365 admin center](https://admin.microsoft.com/), and replaces the previous *Help + support*, which remains in place for other services in Azure.
 
-- Törölje az összes cookie-t az aktív böngésző-munkamenethez, majd próbálkozzon újra a támogatási incidens létrehozásával vagy kezelésével.
-- InPrivate-böngészési munkamenet használatával jelentkezzen be az Intune-ba, és próbálkozzon egy támogatási incidens létrehozásával vagy kezelésével.
+> [!TIP]
+> Starting November 18, 2019, an updated and streamlined in-console experience for getting help and support is rolling out to tenants. If this new experience isn't available for you yet, it will be soon.
 
-Ha az előző megkerülő megoldások nem segítenek, lépjen [Microsoft 365 felügyeleti központba](https://admin.microsoft.com) , és hozzon létre egy támogatási jegyet. Jelenleg olyan javításon dolgozunk, amely a nyár végén lesz elérhető.
+### <a name="options-to-access-help-and-support"></a>Options to access Help and support
 
-## <a name="help-and-support-experience"></a>Súgó és támogatás  
+- **In the Azure portal:**
 
-Az Intune Súgó és támogatás szolgáltatását a [Microsoft 365 Eszközkezelő portálról](https://devicemanagement.microsoft.com) , valamint az Intune-ban található összes panelről (vagy lapokról) elérhető a Azure Portal. 
+  - Select **Help and support** from any Intune blade or page.
 
-![Intune-lapok](./media/get-support/intune-blades.png)
+  > [!NOTE]  
+  > If your instance of Intune is hosted on the private cloud for government, also known as a sovereign cloud like Azure Government, see [Intune support for private cloud for government](#intune-support-for-private-cloud-for-government), later in this article. The Intune *Help and support* experience won’t be available on the private cloud for government until next year.
+
+- **From the Device Management Dashboard:**
+  - After you've selected a feature area for Intune, select the option for **Help and support**.
+  - From any node in the Device Management portal, select the **?** icon in the upper-right corner of the portal, and then use the drop-down to select the service you want help with. The **?** icon in the Device Management portal supports multiple services, and you must select the specific service you want assistance for.  
+
+    ![Select your service](./media/get-support/select-a-service.png)
+
+    After you select a service, you'll see the *Help and support* page for that service where you can specify details to [find solutions](#find-solutions) for a specific problem.
+
+    When the results of your search don't seem to match expectations for your service, check to ensure the correct service was selected. The service selection appears just after *Help and support*.  If the right service wasn't selected, click on *Select a service* to return to the service selection drop-down.
+
+    ![Confirm your service](./media/get-support/confirm-your-service-selection.png)
+
+###  <a name="the-support-experience"></a>The support experience
+
+  When you open Help and Support, the portal displays the **Need help?** window:
+
+  ![View the need help window](./media/get-support/need-help.png)
+
+  In the left top corner there are three icons that you can select to open different panes of the *Need Help?* window. The pane your viewing is identified by the underline.
+
+  Customers with a **Premier** or **Unified** support contract have [additional options](#premier-and-unified-support-customers) for support, and see a banner in *Need help?* that resembles the following image: ![Premier banner](./media/get-support/premier-banner.png)
+
+  *Need Help?* opens to the *Find Solutions* pane. However, if you have an active support case the window opens to the *Service requests* pane where you can view details about your active and closed support cases.
+
+#### <a name="find-solutions"></a>Find solutions
+
+![Select the find solutions pane](./media/get-support/find-solutions.png)
+
+On the *Find solutions* pane, specify a few details about an issue in the provided text box. Based on the text you provide about an issue, the pane populates with insights that are potential matches. You'll also get links to recommended articles that might help you resolve the issue.
+
+When a strong match is found for the details you describe, troubleshooting tips can appear right in the *Need help?* window.
+
+For example, you might enter **Password synchronization errors**. The results include troubleshooting guidance directly in the pane, and links to recommended articles from our documentation library.
+
+![View troubleshooting insights](./media/get-support/troubleshooting-insights.png)
+
+#### <a name="contact-support"></a>Contact support
+
+![Select the contact support pane](./media/get-support/contact-support.png)
+
+From the *contact support* pane, you can submit a request for assistance. This pane is available after you provide some basic keywords on the *find solutions* pane.
+
+When requesting assistance, provide a description of the problem with as much detail as needed.  After confirming your phone and email contact information, select the method of contact you prefer. The window displays a response time for each contact method, which gives you an expectation of when you'll be contacted. Before submitting your request, attach files like logs or screenshots that can help fill in details about the issue.
+
+![Contact support form](./media/get-support/contact-support-form.png)
+
+After you fill in the required information, select **Contact me** to submit the request.
+
+#### <a name="service-requests"></a>Service requests
+
+![Select the service requests pane](./media/get-support/service-requests.png)
+
+The *Service requests* pane displays your case history. Active cases are at the top of the list, with closed issues also available for review.
+
+![View your service request list](./media/get-support/service-requests-pane.png)
+
+If you have an active support case number, you can enter it here to jump to that issue, or you can select any incident from the list of active and closed incidents to view more information about it.
+
+When you’re done viewing details for an incident, select the left arrow that appears at the top of the service request window just above the icons for the three *Need Help?* pane icons. The back arrow returns the display to the list of support incidents you’ve opened.
+
+#### <a name="premier-and-unified-support-customers"></a>Premier and Unified support customers
+
+As a customer with a **Premier** or **Unified** support contract, you can specify a severity for your issue, and schedule a support callback for a specific time and day. These options are available when you open or submit a new issue and when you edit an active support case.
+
+**Severity** - The options to specify the severity of an issue depend on your support contract:
+
+- *Premier*: Severity of A, B, or C
+- *Unified*: Critical, or non-critical
+
+Selecting either a severity **A** or **Critical** issue limits you to a phone support case, which provides the fastest option to get support.
+
+**Callback schedule** - You can request a callback on a specific day and time.
+
+## <a name="azure-help--support-experience"></a>Azure Help + support experience
+
+You can no longer use the Azure *Help + support* experience to get assistance with Intune, unless your subscription is on a private cloud for government.
+If your instance of Intune doesn't run on a private cloud for government, navigating through Azure *Help + support* redirects you to the Intune *Help and support* experience to create and manage support incidents:
+
+When you use the left navigation pane **Help + support**, or use the **?** option to open the *Help* pane and then select **Help + support**, you open the Azure *Help + support* page. 
 
 
-A *Súgó és támogatás* funkció hasonló a [Microsoft 365 felügyeleti központban](https://admin.microsoft.com/)látható élményhez, és lecseréli az előző *Súgó + támogatást*, amely az Azure egyéb szolgáltatásaira is érvényes marad. 
+From this page select **+ New support request** to open the *Basics* tab of the *Help + support + New support request* page.
 
-A Súgó és támogatás eléréséhez használja a következő lehetőségeket:  
-- **Eszközkezelés irányítópultja:**
-  - Miután kiválasztotta az Intune szolgáltatáshoz tartozó szolgáltatási területeket, válassza a **Súgó és támogatás**lehetőséget.
-  - Az Eszközkezelő portál bármelyik csomópontján jelölje be a **?** ikonra a portál jobb felső sarkában, majd a legördülő listából válassza ki azt a szolgáltatást, amelyhez segítséget szeretne használni. A **?** az Eszközkezelő portál ikonja több szolgáltatást is támogat, és ki kell választania azt a szolgáltatást, amelyhez segítségre van szüksége.  
+![Help + support](./media/get-support/help-plus-support.png)
 
-    ![Válassza ki a szolgáltatást](./media/get-support/select-a-service.png)
+On this page:
 
-    A szolgáltatás kiválasztása után megjelenik a szolgáltatás *Súgó és támogatás* lapja, ahol [megadhatja](#specify-details-about-an-issue) a súgóhoz segítséget nyújtó konkrét probléma részleteit.  
+- For *Issue type*, select  **Technical**.
+- For *Service*, select **Microsoft Intune**.
 
-    Ha a keresés eredményei úgy tűnik, hogy nem felelnek meg a szolgáltatás elvárásainak, ellenőrizze, hogy a helyes szolgáltatást választotta-e ki. A szolgáltatás kiválasztása csak a *Súgó és támogatás*után jelenik meg.  Ha a megfelelő szolgáltatás nem lett kiválasztva, kattintson a *válasszon ki egy szolgáltatást* , hogy visszatérjen a szolgáltatás kiválasztása legördülő listához.   
-
-    ![A szolgáltatás megerősítése](./media/get-support/confirm-your-service-selection.png) 
-
-
-- **A Azure Portalban:**
-  - A **Súgó és támogatás** lehetőség kiválasztása bármely Intune-panelen vagy-lapon
-
-  Ha a Azure Portal kiválasztja a **?** ikon a jobb felső sarokban, vagy a bal oldali navigációs ablaktáblán a **Súgó + támogatás** lehetőségre kattintva megnyithatja az Azure *Súgó + támogatás* szolgáltatását. Az Azure *Súgó és támogatás*szolgáltatásból nem nyithat meg közvetlenül Intune-támogatási incidenst, de az Intune *Súgó és támogatás* lapján az alábbi műveletek végrehajtásával érheti el: 
-  1. Válassza az új támogatási kérelem lehetőséget.
-  2. A probléma típusa mezőben adja meg a technikai értéket.
-  3. A szolgáltatás mezőben válassza a Microsoft Intune.
-  4. Válassza az Intune Súgó és támogatás lapját.
-
-> [!NOTE]  
-> Ha az Intune-példánya a nyilvános felhőben, más néven a kormányzati felhőben található, mint például a Azure Government, tekintse meg a jelen cikk későbbi, a [privát felhőhöz készült Intune-támogatás](#intune-support-for-private-cloud-for-government)című részét. Az Intune *Súgó és támogatás* felülete a következő év végéig nem érhető el a kormányzati privát felhőben. 
-
-
-A *Súgó és támogatás*megnyitásakor a portálon egy olyan nézet jelenik meg, amely attól függ, hogy aktív támogatási incidensekkel rendelkezik-e, és ha van Premier szintű támogatás, néhány további elem és lehetőség is van:
-- **Nincsenek aktív támogatási incidensek**: a **segítségre van szüksége?** oldalon láthatja, ahogy az Eszközkezelő irányítópultján az alábbi képen is látható.  
-- **Aktív támogatási incidensek**: a [támogatási jegyek](#view-support-cases) oldal jelenik meg, amely az aktív incidensek listáját jeleníti meg.  
-- **Premier szintű támogatási szerződés**: a felhasználói élmény ugyanaz, mint az első két lehetőség, de az alábbi további elemek is megjelennek a segítségre van szüksége? oldalala 
-  - Ha a lap címe **segítségre van szüksége?** , megjelenik a Premier szintű támogatás banner:  
-    ![Premier support banner](./media/get-support/premier-banner.png)
-  - A lap **támogatásának beolvasása** részén megadhatja a kezdeti **súlyossági** szintet, ha telefonon keresztül hoz létre szolgáltatási kérést.
-
-
-![Az eszközkezelés irányítópultja és a segítségre van szüksége? oldalala](./media/get-support/help-support-dashboard.png)
-
-Ebben a nézetben a következő műveleteket végezheti el:
-
-1. [Részletezheti](#specify-details-about-an-issue) az adott problémát, amellyel kapcsolatban segítségre szorul  
-2. [Megtekintheti a környezetfüggő súgót](#view-context-sensitive-help) és azon kapcsolódó megoldásokat, amelyek az Ön által megadott részleteken alapulnak  
-3. [Támogatást kérhet](#get-support) e-mailen vagy telefonon keresztül  
-4. [Olyan támogatási eseteket tekinthet meg](#view-support-cases), amelyeket Ön nyitott korábban ezen új munkafolyam segítségével  
-
-### <a name="specify-details-about-an-issue"></a>Adott probléma részletezése 
-
-Ha a Súgó és támogatás szolgáltatást az új felület által támogatott helyről nyitja meg, akkor a segítségre **van szüksége?** lap nyílik meg. Ezen az oldalon részletesen kifejtheti az adott problémát. Amikor elkezdi beírni a részleteket, a konzol olyan általános témákat dob fel, amelyek az Ön által használt kulcsszavakon alapulnak. Válasszon ki egy kínált lehetőséget, vagy fejezze be a saját probléma leírását. Ha az Önt érintő problémát írja be, akkor kérdését a **Támogatás kérése** lehetőséget választva küldheti el. A lekérdezés elküldése után a konzol olyan környezetfüggő adatokat ad vissza, amelyek segíthetnek a probléma megoldásában.
-
-A következőkben példákat láthat a beküldhető kérdésekre:
+  You are then presented with a link that redirects you to the [Intune Help and Support page](https://aka.ms/intunehelpsupport).
   
-- *Nem lehet visszaállítani az iOS eszközt*  
-- *Nem hozható létre feltételes hozzáférési szabályzat*  
-
-![Probléma kifejtése a Segítségre szorul? oldalon](./media/get-support/describe-the-issue.png)
-
-### <a name="view-context-sensitive-help"></a>Környezetfüggő súgó megtekintése 
-
-Miután kiválasztotta a felkínált lehetőségek egyikét, vagy elküldte a saját kérését, a **Megoldások megtekintése** részben környezetfüggő találatok jelennek meg. Ezek a találatok tartalmazzák az Intune-hoz kapcsolódó önsegítő útmutatást, és az internetes keresés után megjelenített, a lekérdezési kritériumokon alapuló további találatokat is.  
-![Találatok megtekintése](./media/get-support/view-results.png)
-
-### <a name="get-support"></a>Támogatás igénylése 
-
-Ha az önsegítő vagy webalapú útmutató nem segít a probléma megoldásában, a konzol használatával nyisson meg egy e-mail-vagy telefonos támogatási problémát.  
-A **Segítségre szorul?** oldalon válassza ki a használni kívánt lehetőséget.  
-
-  > [!NOTE] 
-  > A támogatási e-mail-kérések nem érhetők el az összes bérlő számára.  
-
-- E-mailes kérés esetén adja meg e-mail-címét, és tetszőlegesen csatolmányokat is küldhet levelében. A kérés megnyitásához válassza a **Küldés** elemet. 
-
-  ![E-mailes kérés](./media/get-support/email-support.png)
-  
-- Telefonos kéréshez adja meg telefonszámát. Esetlegesen megadhatja e-mail-címét is, és csatolmányokat fűzhet a levélhez. A kérés küldéséhez válassza a Visszahívás elemet.  
+  ![New support request](./media/get-support/new-request.png)
 
 
+## <a name="intune-support-for-private-cloud-for-government"></a>Intune support for private cloud for government
 
-   ![Telefonos kérés](./media/get-support/phone-support.png)
+When your Intune subscription hosted on the private cloud for government, which is also known as a sovereign cloud like Azure Government, you don’t yet have access to the newer Intune Help and support experience.  Instead, use the following information go get support for Intune.
 
-**Premier szintű támogatás**:  
-Premier szintű támogatási szerződéssel a telefonos támogatási incidensek is létrehozhatók. Megadhatja a támogatási visszahívás **súlyosságát** is, és választhatja a támogatási jegy létrehozását a feladat kritikus szerződése alapján.  
+### <a name="create-an-online-support-ticket"></a>Online támogatási jegy létrehozása
 
-![Premier szintű támogatási lehetőségek](./media/get-support/premier-phone-support-options.png)
-
-
-### <a name="view-support-cases"></a>Támogatási esetek megtekintése  
-
-Az Előzmények gombra kattintva megtekintheti az Ön által létrehozott támogatási eseteket.  
-
-![Támogatási esetek megtekintése](./media/get-support/view-support-tickets.png)
-
-- Kizárólag az új munkafolyam használatával megnyitott támogatási esetek jeleníthetők meg e munkafolyamon belül. A megtekintéshez használja a Súgó és támogatás nézetet az Eszközkezelő konzolon vagy a Azure Portal Intune paneljén. Ezeket az eseteket nyolcjegyű számok jelölik. A Microsoft 365 felügyeleti központjában is megtekinthetők az esetek.  
-
-- Az Intune Súgó és támogatás felületének használatakor megnyíló esetek nem változnak. A megtekintéshez olyan Súgó és támogatás nézetet kell használnia, amely nem része az Intune-élménynek vagy az eszközkezelés irányítópultjának. Ezek az esetek **117**-tel vagy **118**-cal kezdődő, 15 jegyű számokkal vannak ellátva. Megtekintheti őket:
-
-    1. Az Intune rendszergazdai hitelesítő adataival jelentkezzen be az Azure-ba (<https://portal.azure.com>), majd válassza a *?* lehetőséget ikonra a portál jobb felső sarkában, majd a *Súgó + támogatás* lehetőség kiválasztásával lépjen tovább az [Azure Súgó + támogatás](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) oldalra.
-
-    2. A **Súgó és támogatás** lapon megtekintheti a **legutóbbi támogatási kérelmek** listáját, és az egyes elemeket kijelölve további információt kaphat róluk.
- 
-
-## <a name="azure-help--support-experience"></a>Azure Súgó + támogatási élmény 
-
-A továbbiakban nem használhatja az Azure *Súgó + támogatási szolgáltatást* az Intune-nal való segítségnyújtásra, kivéve, ha az előfizetése egy privát felhőben van a kormányzat számára.
-Ha az Intune-példány nem fut a kormányzathoz tartozó privát felhőben, az Azure *Súgó + támogatás* szolgáltatáson keresztül történő navigálás a támogatási incidensek létrehozásához és kezeléséhez az Intune *súgóját és támogatási* élményét átirányítja:
-
-Ha a bal oldali navigációs ablaktábla **Súgó + támogatás**elemét használja, vagy használja a **?** lehetőségre kattintva nyissa meg a *Súgó* panelt, majd válassza a **Súgó + támogatás**lehetőséget, majd nyissa meg az Azure *Súgó + támogatás* lapját. 
-
-
-Ebből az oldalból válassza az **+ új támogatási kérés** elemet a *Súgó + támogatás + új támogatási kérelem* lap *alapok* lapjának megnyitásához.
-
-![Súgó és támogatás](./media/get-support/help-plus-support.png)
-
-Ezen az oldalon:
-
-- A *probléma típusa*beállításnál válassza a **technikai**lehetőséget.
-- A *szolgáltatás*mezőben válassza a **Microsoft Intune**lehetőséget.
-
-  Ekkor megjelenik egy hivatkozás, amely átirányítja Önt az [Intune Súgó és támogatás oldalára](https://aka.ms/intunehelpsupport).
-  
-  ![Új támogatási kérelem](./media/get-support/new-request.png)
-
-
-## <a name="intune-support-for-private-cloud-for-government"></a>Intune-támogatás a Private Cloud for Government szolgáltatáshoz  
-
-Ha az Intune-előfizetést a privát felhőben üzemelteti a Government számára, amely más néven szuverén felhő, mint a Azure Government, még nem fér hozzá az Intune súgójának és támogatásának újabb felhasználói felületéhez.  Ehelyett használja az alábbi információkat az Intune támogatásához.
-
-
-### <a name="create-an-online-support-ticket"></a>Online támogatási jegy létrehozása 
-
->[!IMPORTANT]    
-> A támogatási incidensek létrehozásakor a portál olyan támogatási esetet *azonosít, amely* egy olyan új rendszerre mutat be, amely még nem érhető el az állami felhőhöz A 15 számjegyű eset létrehozásakor a rendszer az adott eset tükrözését hozza létre Microsoft ügyfélszolgálata általi használatra. Ez a tükrözési eset egy új támogatási rendszerben jön létre, és a 8 jegyű eset AZONOSÍTÓját használja, és a támogatási szolgáltatások a támogatási incidensek összes munkájának és kommunikációjának nyomon követésére használják. Röviddel a 15 jegyű eset létrehozása után egy e-mailt fog kapni, amely a támogatási szolgáltatások által használt tükrözött támogatási eset 8 számjegyű számát azonosítja.  
-> 
-> Támogassa a személyes munkát és a 8 számjegyű támogatási esetet, és csak a 8 számjegyű támogatási esetet használja a kommunikáció naplózásához és az incidensek előrehaladásának nyomon követéséhez. Ezért e-mail-frissítéseket fog kapni ebből a 8 számjegyű támogatási esetről, amely a kis-és nagybetűket tartalmazó rekordként szolgál. A 15 számjegyű támogatási incidens nem naplózza a részleteket. Ha a támogatás kizárult, és a 8 számjegyű támogatási eset bezárul, az állapotot a 15 számjegyű támogatási eset tükrözi, amelyet az Azure Portalon tekinthet meg.  A 15 számjegyű támogatási esethez nem várható más frissítés vagy állapot változása.  
-> 
-> Ha a támogatási eszközök közötti váltás az év későbbi részében fejeződik be, a kormányzati felhőben üzemeltetett támogatási élmény az Intune-előfizetésekhez jelenleg elérhető alapértelmezett *Súgó-és támogatási* élményhez hasonló lesz. nyilvános felhő.  
-
+>[!IMPORTANT]
+> As *Help and support* transitions to a new system which is not yet available for the private cloud for government, when you create a support incident, the portal identifies a support case that uses a 15 digit identification number. When the 15-digit case is created, a mirror of that case is created for use by Microsoft Support. This mirror case is created in a new support system, uses an 8-digit case ID, and is used by support services to track all work and communications for your support incident. Shortly after your 15-digit case is created, you’ll receive an email that identifies the 8-digit number of the mirrored support case that is used by support services.
+>
+> Support personal work and communicate from the 8-digit support case, and only use the 8-digit support case to log communications and track incident progress. Therefore, you’ll receive email updates from that 8-digit support case that serve as your case-work track record. No details are logged into the 15-digit support incident. When support concludes and the 8-digit support case closes, that status is reflected in by the 15-digit support case that you can view from within the azure portal.  No other updates or status changes should be expected for the 15-digit support case.
+>
+> When transitions between support tools completes later this year, the support experience Intune hosted on the government cloud will resemble the default *Help and support* experience that’s currently available for Intune subscriptions hosted on the public cloud.
 
 1. Az Intune rendszergazdai hitelesítő adataival jelentkezzen be az Azure Portalra (<https://portal.azure.us>), majd válassza a **?** lehetőséget ikonra a portál jobb felső sarkában, majd a **Súgó + támogatás** lehetőség kiválasztásával lépjen tovább az [Azure Súgó + támogatás](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) oldalra.
 
-   ![A kérdőjel hivatkozás képe a Súgó + támogatás hivatkozás kiemelésével](./media/get-support/azure-get-support.png)
+   ![Image of the question mark link with the Help + support link highlighted](./media/get-support/azure-get-support.png)
 
-2. Az Azure **Súgó + támogatás** lapon válassza az **új támogatási kérelem**lehetőséget.
+2. On the Azure **Help + support** page, select **New support request**.
 
-   ![Az új támogatási kérelem hivatkozásának képe a Súgó és támogatás oldalon](./media/get-support/azure-support-ticket-link.png)
+   ![Image of New support request link highlighted on the help and support page](./media/get-support/azure-support-ticket-link.png)
 
-3. Az **alapismeretek** lapon a legtöbb Intune technikai támogatási probléma megoldásához válassza a következő lehetőségeket:
+3. On the **Basics** tab, for most Intune technical support issues, choose the following options:
    - **Problématípus**: **Technikai**
-   - **Előfizetés**: <*az előfizetését*>
+   - **Subscription**: <*your subscription*>
    - **Szolgáltatás**: **Microsoft Intune**
-   - **Probléma típusa**: válassza ki a probléma típusát a legördülő menüből.
-   - **Probléma altípusa**: válassza ki a probléma altípust a legördülő menüből.
-   - **Tárgy**: röviden írja le azt a problémát, amelyet segíteni szeretne.
+   - **Problem type**: Choose your problem type from the drop-down menu.
+   - **Problem subtype**: Choose the problem subtype from the drop-down menu.
+   - **Subject**: Briefly describe the issue you want help with.
 
-   ![A Súgó + támogatás – új támogatási kérelem oldalon található alapismeretek lap képe](./media/get-support/help-new-support-case-basics.png)
+   ![Image of the basics tab on the Help + support - New support request page](./media/get-support/help-new-support-case-basics.png)
 
-   Válassza a **Tovább: megoldások** a folytatáshoz lehetőséget.
-4. A **megoldások** lapon tekintse át a javasolt lépéseket, amelyek segíthetnek a probléma megoldásában a jegy bejelentése nélkül. Ha a lépések végrehajtása után is létre szeretne hozni egy támogatási kérést, kattintson a **Tovább gombra: részletek**.
+   Choose **Next: Solutions** to continue.
+4. On the **Solutions** tab, review the recommended steps that might help you solve your problem without filing a ticket. If you still want to create a support request after looking through the steps, click **Next: Details**.
 
-   ![A Súgó + támogatás – új támogatási kérelem lap megoldások lapjának képe](./media/get-support/help-new-support-case-solutions.png)
-5. A **részletek** lapon adja meg a probléma részleteit, a támogatási módszert, a kapcsolattartási adatokat, majd kattintson a Tovább gombra **: felülvizsgálat + létrehozás**.
+   ![Image of the solutions tab on the Help + support - New support request page](./media/get-support/help-new-support-case-solutions.png)
+5. On the **Details** tab, fill out the details for your problem, the support method, your contact information, and then click **Next: Review + create**.
 
-   ![A Súgó + támogatás – új támogatási kérelem lap részletek lapjának képe](./media/get-support/help-new-support-case-details.png)
-6. Tekintse át az adatokat, ellenőrizze, hogy helyes-e, majd válassza a **Létrehozás** lehetőséget a támogatási kérelem elküldéséhez.
+   ![Image of the details tab on the Help + support - New support request page](./media/get-support/help-new-support-case-details.png)
+6. Review the information, verify that it's correct, and then choose **Create** to submit your support request.
 
-   ![Az új támogatási kérelem oldalon található felülvizsgálat + Létrehozás lap képe](./media/get-support/help-new-support-case-create.png)
+   ![Image of the review + create tab on the New support request page](./media/get-support/help-new-support-case-create.png)
 
 >[!IMPORTANT]
->Ha számlázással vagy előfizetéssel kapcsolatos kérdése van, megnyithat egy esetet, hogy támogatást kapjon a [Microsoft 365 felügyeleti központban](https://admin.microsoft.com/Support/SupportEntry.aspx).
+>If you have a billing or subscription question, you can open a case to get support through the [Microsoft 365 admin center](https://admin.microsoft.com/Support/SupportEntry.aspx).
 
 ### <a name="view-support-requests"></a>Támogatási kérelmek megtekintése  
 
-A támogatási kéréseket a Azure Portalon belül tekintheti meg. A korlátozott információk azonban rendelkezésre állnak.  Az incidensek megtekintéséhez: 
+You can view your support requests from within the Azure portal. However, limited information is available.  To view your incidents:
 
 1. Az Intune rendszergazdai hitelesítő adataival jelentkezzen be az Azure-ba (<https://portal.azure.com>), majd válassza a **?** lehetőséget ikonra a portál jobb felső sarkában, majd a **Súgó + támogatás** lehetőség kiválasztásával lépjen tovább az [Azure Súgó + támogatás](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) oldalra.
 
-2. A **Súgó + támogatás** lapon megtekintheti a **legutóbbi támogatási kérelmek**listáját.
+2. On the **Help + support** page, you can view the list of **Recent support requests**.
 
    > [!IMPORTANT]  
-   > A kormányzati számítási felhő ügyfelei csak a 15 számjegyű támogatási eset számát és az incidens állapotát tekinthetik meg. A rendszer e-mailben küldi el a munkahelyi vagy riasztási kommunikációt és nyomon követést, valamint az Intune-konzolon megnyitott támogatási eset tükrözésével létrehozott 8 számjegyű támogatási eset számát.   
+   > Private cloud for government customers can only view the 15-digit support case number, and the incident status. All case communications and tracking of work or alerts are sent by email and reference the 8-digit support case number that is created as a mirror of the support case opened from within the Intune console.
 
 ## <a name="additional-resources"></a>További háttéranyagok  
 

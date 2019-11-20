@@ -1,12 +1,12 @@
 ---
-title: Mobile Threat Defense (MTD) alkalmazás-védelmi szabályzat létrehozása az Intune-nal
+title: Create Mobile Threat Defense (MTD) app protection policy with Intune
 titleSuffix: Microsoft Intune
-description: Hozzon létre egy Mobile Threat Defense-(MTD-) alkalmazás-védelmi szabályzatot Microsoft Intuneokkal.
+description: Create Mobile Threat Defense (MTD) app protection policy with Microsoft Intune.
 keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 10/21/2019
+ms.date: 11/18/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,63 +18,55 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 15d986bc5017a44571c6194f9c6b53167b671349
-ms.sourcegitcommit: 06a1fe83fd95c9773c011690e8520733e1c031e3
+ms.openlocfilehash: 48dc7de86965741d8ed42bd5a5f29f72ae66d4f3
+ms.sourcegitcommit: 13fa1a4a478cb0e03c7f751958bc17d9dc70010d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72795310"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74188498"
 ---
-# <a name="create-mobile-threat-defense-app-protection-policy-with-intune"></a>Mobile Threat Defense-alkalmazás védelmi szabályzatának létrehozása az Intune-nal
+# <a name="create-mobile-threat-defense-app-protection-policy-with-intune"></a>Create Mobile Threat Defense app protection policy with Intune
 
-> [!NOTE] 
-> Ez a cikk az alkalmazás-védelmi házirendeket támogató összes Mobile Threat Defense-(MTD-) partnerre vonatkozik: Better Mobile (Android), Zimperium (iOS), Lookout for Work (Android/iOS).
+Intune with Mobile Threat Defense (MTD) helps you detect threats and assess risk on mobile devices. You can create an Intune app protection policy that assesses risk to determine if the device is allowed to access corporate data or not.
 
-Az Intune és az MTD együttes használata segíti a mobileszközökön megjelenő fenyegetések észlelését és a kockázat felmérését. Létrehozhat egy Intune app Protection-szabályzatot, amely felméri a kockázatot annak megállapítására, hogy az eszköz hozzáférhet-e a vállalati adatszolgáltatáshoz. 
+
+> [!NOTE]
+> This article applies to all Mobile Threat Defense partners that support app protection policies:
+>
+> - Better Mobile (Android)
+> - Zimperium (iOS)
+> - Lookout for Work (Android, iOS).
 
 ## <a name="before-you-begin"></a>Előkészületek
 
-Az MTD beállítása során az MTD-partnerkonzolon már létrehozott egy szabályzatot, amely a fenyegetéseket magas, közepes és alacsony szintű csoportba sorolja. Most be kell állítania a Mobile Threat Defense szintjét az Intune app Protection-szabályzatban.
+Az MTD beállítása során az MTD-partnerkonzolon már létrehozott egy szabályzatot, amely a fenyegetéseket magas, közepes és alacsony szintű csoportba sorolja. You now need to set the Mobile Threat Defense level in the Intune app protection policy.
 
-Az alkalmazás-védelmi szabályzat MTD való használatának előfeltételei:
+Prerequisites for app protection policy with MTD:
 
-- MTD-integráció beállítása az Intune-nal. Ezen integráció nélkül a MTD-alkalmazás védelmi szabályzata nem lesz hatással.
+- Set up MTD integration with Intune. Without this integration, the MTD app protection policy will have no effect.
 
-## <a name="to-create-an-mtd-app-protection-policy"></a>MTD-szabályzat létrehozása
+## <a name="to-create-an-mtd-app-protection-policy"></a>To create an MTD app protection policy
 
-1. Az [Azure Portalon](https://portal.azure.com/) jelentkezzen be az Intune-os hitelesítő adataival.
+Use the procedure to [create an Application protection policy for either iOS/iPadOS or Android](../apps/app-protection-policies.md#app-protection-policies-for-iosipados-and-android-apps), and use the following information on the *Apps*, *Conditional launch*, and *Assignments* pages:
 
-2. Az **Azure-irányítópulton** válassza a bal oldali menü **Minden szolgáltatás** pontját, majd írja be a szűrő szövegmezőbe az **Intune** nevet.
+- **Apps**: Select the app for the Mobile Threat Defense partner you use.
+- **Conditional launch**:  Below *Device conditions*, use the drop-down box to select **Max allowed device threat level**.
 
-3. Ha az **Intune** elemre kattint, megnyílik az **Intune irányítópultja**.
+  Options for the threat level **Value**:
 
-4. Az **Intune irányítópultján**válassza az **ügyfélalkalmazások**lehetőséget, majd a **kezelés** szakaszban válassza az **alkalmazás-védelmi házirendek** elemet.
+  - **Védett**: Ez a szint a legbiztonságosabb. The device can't have any threats present and still access company resources. Ha bármilyen veszélyforrás észlelhető, az eszköz nem megfelelőnek minősül.
+  - **Alacsony**: Az eszköz csak abban az esetben minősül megfelelőnek, ha kizárólag alacsony szintű veszélyforrások állnak fenn. Bármilyen magasabb szintű fenyegetés esetén az eszköz nem megfelelő státuszúnak minősül.
+  - **Közepes**: Az eszköz abban az esetben minősül megfelelőnek, ha az eszközön észlelt veszélyforrások alacsony vagy közepes szintűek. Magas szintű fenyegetések észlelése esetén az eszköz nem megfelelőnek minősül.
+  - **Magas**: Ez a szint a legkevésbé biztonságos. This allows all threat levels and uses Mobile Threat Defense for reporting purposes only. Ennek a beállításnak a megadása esetén az eszközökön aktiválni kell az MTD alkalmazást.
 
-5. Válassza a **házirend létrehozása**lehetőséget, adja meg a **nevet**, a **leírást**, majd válassza ki a **platformot**. 
+  Options for **Action**:
 
-6. A **feltételes indítás** ablaktáblán, az **eszköz feltételei** táblázatban válassza ki a Mobile Threat (mobil veszélyforrás) szintet a **maximálisan engedélyezett veszélyforrások szintjének**legördülő listából.
+  - **Block access**
+  - **Wipe data**
 
-    a.  **Védett**: Ez a szint a legbiztonságosabb. Az eszköz csak akkor fér hozzá a céges erőforrásokhoz, ha semmilyen veszélyforrás nincs rajta. Ha bármilyen veszélyforrás észlelhető, az eszköz nem megfelelőnek minősül.
+- **Assignments**: Assign the policy to groups of users.  The devices used by the group’s members are evaluated for access to corporate data on targeted apps via Intune app protection.
 
-    b.  **Alacsony**: Az eszköz csak abban az esetben minősül megfelelőnek, ha kizárólag alacsony szintű veszélyforrások állnak fenn. Bármilyen magasabb szintű fenyegetés esetén az eszköz nem megfelelő státuszúnak minősül.
-
-    c.  **Közepes**: Az eszköz abban az esetben minősül megfelelőnek, ha az eszközön észlelt veszélyforrások alacsony vagy közepes szintűek. Magas szintű fenyegetések észlelése esetén az eszköz nem megfelelőnek minősül.
-
-    d.  **Magas**: Ez a szint a legkevésbé biztonságos. Megadása esetén a rendszer semelyik fenyegetettségi szint mellett nem korlátozza az eszközt, a Mobile Threat Defense szolgáltatást csak jelentéskészítésre használja. Ennek a beállításnak a megadása esetén az eszközökön aktiválni kell az MTD alkalmazást.
-
-7. Kattintson kétszer a **Mentés** gombra, majd válassza a **Létrehozás**lehetőséget.
-
-## <a name="to-assign-an-mtd-app-protection-policy"></a>MTD-szabályzatok kiosztása
-
-Ha a felhasználókhoz eszközmegfelelőségi szabályzatot kíván rendelni, olyan szabályzatot válasszon, amelyet előzőleg már konfigurált. A meglévő szabályzatokat az **Eszközmegfelelőségi szabályzatok** panelen tekintheti meg.
-
-1. Válassza ki a felhasználókhoz hozzárendelni kívánt szabályzatot, és válassza a **Hozzárendelések** lehetőséget. Ez a művelet megnyitja a panelt, amelyen kiválaszthatja **Azure Active Directory biztonsági csoportokat** , és hozzárendelheti azokat a szabályzathoz.
-
-2. Válassza ki azokat a **csoportokat** , amelyeket fel szeretne venni az Azure ad biztonsági csoportjait megjelenítő ablaktábla megnyitásához. A **Select** (kiválasztás) gombra kattintva telepítheti a szabályzatot a felhasználók számára.
-
-> [!NOTE] 
-> Ezzel érvénybe léptette a szabályzatot a felhasználók számára. A szabályzat által megcélozott felhasználók által használt eszközök az Intune app Protection használatával kiértékelésre kerülnek a vállalati adathozzáféréshez a megcélozott alkalmazásokban.
 
 ## <a name="next-steps"></a>További lépések  
 
-- További tudnivalók a [Mobile Threat Defense](~/protect/mobile-threat-defense.md) szolgáltatásról Microsoft Intune.
+- Learn more about [Mobile Threat Defense](~/protect/mobile-threat-defense.md) in Microsoft Intune.
