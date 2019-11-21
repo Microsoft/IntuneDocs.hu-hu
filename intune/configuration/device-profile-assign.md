@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/05/2019
+ms.date: 11/20/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,27 +17,25 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ae8bc7d5797a2ba6404331166e9d955bbb2fadf9
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.openlocfilehash: 275b3961e87f0d0eda8299337fe3fb7ac89ef03b
+ms.sourcegitcommit: 1a22b8b31424847d3c86590f00f56c5bc3de2eb5
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74059582"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74261693"
 ---
 # <a name="assign-user-and-device-profiles-in-microsoft-intune"></a>Felhasználói és eszközprofilok hozzárendelése a Microsoft Intune-ban
-
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
 Létrehoz egy profilt, és tartalmazza a megadott beállításokat. A következő lépés a profil üzembe helyezése vagy "kiosztása" a Azure Active Directory (Azure AD) felhasználóhoz vagy eszköz csoporthoz. Ha hozzá van rendelve, a felhasználók és az eszközök megkapják a profilt, és a rendszer alkalmazza a megadott beállításokat.
 
 Ebből a cikkből megtudhatja, hogyan rendelhet hozzá egy profilt, és tartalmaz néhány információt a hatókör-címkék használatáról a profilokban.
 
 > [!NOTE]  
-> Ha egy házirendet eltávolítanak vagy már nem rendelnek hozzá egy eszközhöz, a beállítás megtarthatja a meglévő értéket. A beállítás nem tér át alapértelmezett értékre. Ha másik értékre szeretné módosítani a beállítást, hozzon létre egy új szabályzatot, és rendelje hozzá.
+> Ha eltávolítanak egy profilt, vagy már nincs hozzárendelve egy eszközhöz, a beállítás megtarthatja a meglévő értéket. A beállítás nem tér át alapértelmezett értékre. Ha másik értékre szeretné módosítani a beállítást, hozzon létre egy új profilt, és rendelje hozzá.
 
 ## <a name="before-you-begin"></a>Előkészületek
 
-Győződjön meg arról, hogy rendelkezik a megfelelő szerepkörrel a házirendek hozzárendeléséhez. További információ: [szerepköralapú hozzáférés-vezérlés (RBAC) Microsoft Intunesal](../fundamentals/role-based-access-control.md).
+Ellenőrizze, hogy rendelkezik-e a megfelelő szerepkörrel a profilok hozzárendeléséhez. További információ: [szerepköralapú hozzáférés-vezérlés (RBAC) Microsoft Intunesal](../fundamentals/role-based-access-control.md).
 
 ## <a name="assign-a-device-profile"></a>Eszközprofil hozzárendelése
 
@@ -63,34 +61,66 @@ Ha a **kiértékelés** gomb szürkén jelenik meg, ellenőrizze, hogy a profil 
 
 A profilok létrehozásakor vagy frissítésekor hozzáadhat hatókör-címkéket és alkalmazhatósági szabályokat is a profilhoz.
 
-A **hatókör címkéi** lehetővé teszik a házirendek hozzárendelését és szűrését adott csoportokra, például az emberi erőforrásokra vagy az összes US-NC-alkalmazottakra. [A RBAC és a hatókör címkéi a terjesztéshez](../fundamentals/scope-tags.md) további információkat is használhatnak.
+A **hatókör címkéi** lehetővé teszik profilok hozzárendelését és szűrését adott csoportokhoz, például emberi erőforrásokhoz vagy az összes US-NC-alkalmazotthoz. [A RBAC és a hatókör címkéi a terjesztéshez](../fundamentals/scope-tags.md) további információkat is használhatnak.
 
 Windows 10-es eszközökön olyan **alkalmazhatósági szabályokat** adhat hozzá, hogy a profil csak egy adott operációsrendszer-verzióra vagy egy adott Windows-kiadásra vonatkozzon. Az [alkalmazhatósági szabályok](device-profile-create.md#applicability-rules) további információval rendelkeznek.
 
+## <a name="user-groups-vs-device-groups"></a>Felhasználói csoportok és eszközök csoportjai
+
+Sok felhasználó kérdezi, hogy mikor kell felhasználói csoportokat használni, és mikor kell használni az eszközök csoportjait. A válasz a céltól függ. Íme néhány útmutató az első lépésekhez.
+
+### <a name="device-groups"></a>Device groups
+
+Ha egy eszközön szeretné alkalmazni a beállításokat, függetlenül attól, hogy ki jelentkezett be, majd rendelje hozzá a profilokat az eszközök csoportjához. Az eszközök csoportjaira alkalmazott beállítások mindig az eszközön mennek, nem a felhasználó.
+
+Példa:
+
+- Az eszközcsoport olyan eszközök felügyeletéhez hasznos, amelyek nem rendelkeznek dedikált felhasználóval. Például vannak olyan eszközök, amelyek a jegyek, a beolvasási leltár, a kihelyezett munkavégzők megosztva vannak, egy adott raktárhoz vannak rendelve, és így tovább. Helyezze ezeket az eszközöket egy eszköz csoportba, és rendelje hozzá a profilokat az eszközök csoportjához.
+
+- Létre kell hoznia egy [eszköz belső vezérlőprogram-konfigurációs felületének (DFCI) Intune-profilját](device-firmware-configuration-interface-windows.md) , amely frissíti a beállításokat a BIOS-ban. Ezt a profilt például úgy állíthatja be, hogy letiltsa az eszköz kameráját, vagy zárolja a rendszerindítási beállításokat annak megakadályozása érdekében, hogy a felhasználók egy másik operációs rendszert indítsanak. Ez a profil jó példa az eszközök csoportjához való hozzárendelésre.
+
+- Bizonyos Windows-eszközökön mindig a Microsoft Edge bizonyos beállításait szeretné vezérelni, függetlenül attól, hogy ki használja az eszközt. Például letilthatja az összes letöltést, korlátozhatja az összes cookie-t az aktuális böngészési munkamenetre, és törölheti a böngészési előzményeket. Ebben a forgatókönyvben ezeket az adott Windows-eszközöket egy eszközök csoportba helyezi. Ezután hozzon létre egy [felügyeleti sablont az Intune-ban](administrative-templates-windows.md), adja hozzá ezeket az eszközbeállítások, majd rendelje hozzá ezt a profilt az eszközök csoporthoz.
+
+Ha szeretne összefoglalni, akkor használja az erőforráscsoportok használatát, ha nem érdekli, hogy ki jelentkezett be az eszközön, vagy ha valaki bejelentkezett. Azt szeretné, hogy a beállítások mindig az eszközön legyenek.
+
+### <a name="user-groups"></a>Felhasználói csoportok
+
+A felhasználói csoportokra alkalmazott Profilbeállítások mindig a felhasználóval mennek át, és a felhasználó a sok eszközre való bejelentkezéskor. Normális, hogy a felhasználóknak sok eszközük van, például a Surface Pro for Work és egy személyes iOS-eszköz. Emellett normális, hogy valaki hozzáfér az e-mailekhez és más szervezeti erőforrásokhoz az eszközökről.
+
+Példa:
+
+- Egy ügyfélszolgálati ikont szeretne elhelyezni az összes felhasználó számára az összes eszközön. Ebben a forgatókönyvben ezeket a felhasználókat egy felhasználói csoportba helyezheti, és az ügyfélszolgálat ikonjának profilját hozzárendelheti ehhez a felhasználói csoporthoz.
+- A felhasználók új szervezet által birtokolt eszközt kapnak. A felhasználó tartományi fiókkal jelentkezik be az eszközre. Az eszköz automatikusan regisztrálva van az Azure AD-ben, és automatikusan az Intune kezeli. Ez a profil jó példa a felhasználók csoportjához való hozzárendelésre.
+- Amikor egy felhasználó bejelentkezik egy eszközre, az alkalmazások, például a OneDrive vagy az Office funkcióit szeretné vezérelni. Ebben a forgatókönyvben rendelje hozzá a OneDrive vagy az Office-profil beállításait egy felhasználói csoporthoz.
+
+  Például letilthatja a nem megbízható ActiveX-vezérlőket az Office-alkalmazásokban. Létrehozhat egy [felügyeleti sablont az Intune-ban](administrative-templates-windows.md), megadhatja ezt a beállítást, majd hozzárendelheti a profilt egy felhasználói csoporthoz.
+
+Az összegzéshez használjon felhasználói csoportokat, ha azt szeretné, hogy a beállítások és szabályok mindig a felhasználóval lépjenek fel, függetlenül attól, hogy melyik eszközt használják.
+
 ## <a name="exclude-groups-from-a-profile-assignment"></a>Csoportok kizárása profil hozzárendelésekor
 
-Az Intune-eszköz konfigurációs profiljai lehetővé teszik csoportok belefoglalását és kizárását a szabályzat-hozzárendelésből.
+Az Intune-eszköz konfigurációs profiljai lehetővé teszik csoportok hozzáadását és kizárását a profil-hozzárendelésből.
 
-Ajánlott eljárásként hozzon létre és rendeljen hozzá házirendeket kifejezetten a felhasználói csoportokhoz. És hozzon létre és rendeljen hozzá különböző szabályzatokat kifejezetten az eszközök csoportjaihoz. A csoportokkal kapcsolatos további információkért lásd: [csoportok hozzáadása a felhasználók és eszközök rendszerezéséhez](../fundamentals/groups-add.md).
+Ajánlott eljárásként hozzon létre és rendeljen hozzá profilokat kifejezetten a felhasználói csoportokhoz. És hozzon létre és rendeljen hozzá különböző profilokat kifejezetten az eszközök csoportjaihoz. A csoportokkal kapcsolatos további információkért lásd: [csoportok hozzáadása a felhasználók és eszközök rendszerezéséhez](../fundamentals/groups-add.md).
 
-A szabályzatok kiosztásakor használja a következő táblázatot a csoportok belefoglalása és kizárása esetén. A pipa azt jelenti, hogy a hozzárendelés támogatott:
+A profilok kiosztásakor használja a következő táblázatot a csoportok belefoglalása és kizárása esetén. A pipa azt jelenti, hogy a hozzárendelés támogatott:
 
 ![A támogatott beállítások közé tartoznak a profil-hozzárendelésből származó csoportok vagy kizárások](./media/device-profile-assign/include-exclude-user-device-groups.png)
 
-### <a name="what-you-should-know"></a>Tudnivalók
+### <a name="what-you-should-know"></a>Alapismeretek
 
 - A kizárás elsőbbséget élvez a következő azonos csoport típusú forgatókönyvek belefoglalásakor:
 
   - Felhasználói csoportok belefoglalása és felhasználói csoportok kizárása
   - Eszközcsoport-csoportokkal együtt
 
-  Például hozzárendelhet egy eszköz profilt a **minden vállalati felhasználó** felhasználói csoporthoz, de kizárhatja a tagokat a **vezető felügyeleti munkatárs** felhasználói csoportban. Mivel mindkét csoport felhasználói csoport, az **összes vállalati felhasználó** , kivéve a **vezető felügyeleti személyzetet** , megkapja a szabályzatot.
+  Például hozzárendelhet egy eszköz profilt a **minden vállalati felhasználó** felhasználói csoporthoz, de kizárhatja a tagokat a **vezető felügyeleti munkatárs** felhasználói csoportban. Mivel mindkét csoport felhasználói csoport, az **összes vállalati felhasználó** , kivéve a **vezető felügyeleti személyzetet** , megkapja a profilt.
 
-- Az Intune nem értékeli ki a felhasználók és az eszközök közötti csoportok kapcsolatait. Ha vegyes csoportokba rendeli a szabályzatokat, előfordulhat, hogy az eredmények nem a kívánt vagy várt érték.
+- Az Intune nem értékeli ki a felhasználók és az eszközök közötti csoportok kapcsolatait. Ha vegyes csoportokba rendeli a profilokat, előfordulhat, hogy az eredmények nem a kívánt vagy várt érték.
 
-  Például hozzárendelhet egy eszköz profilt a **minden felhasználó** felhasználói csoporthoz, de kizárja az **összes személyes** eszköz csoportot. Ebben a vegyes csoportházirend-hozzárendelésben **minden felhasználó** megkapja a szabályzatot. A kizárás nem vonatkozik.
+  Például hozzárendelhet egy eszköz profilt a **minden felhasználó** felhasználói csoporthoz, de kizárja az **összes személyes** eszköz csoportot. Ebben a vegyes csoportbeli profil-hozzárendelésben **minden felhasználó** megkapja a profilt. A kizárás nem vonatkozik.
 
-  Ennek eredményeképpen a házirendek vegyes csoportokhoz való társítása nem ajánlott.
+  Ennek eredményeképpen a profilok vegyes csoportokba való társítása nem ajánlott.
 
 ## <a name="next-steps"></a>További lépések
 

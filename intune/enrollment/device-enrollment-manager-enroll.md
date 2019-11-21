@@ -18,14 +18,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2b3c82faab08248640e19573582ccbd232e0587d
-ms.sourcegitcommit: 5932da3ed8f52c7b0f0d71c1801f81c85952cf0c
+ms.openlocfilehash: 0012a80f0e9ea60b41c94a582e42d5f647c6bbc2
+ms.sourcegitcommit: cdb2a484b059bd8d8c3985cde1e883c24a4c1cad
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72923348"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74239217"
 ---
-# <a name="enroll-devices-in-intune-by-using-a-device-enrollment-manager-account"></a>Eszközök regisztrálása az Intune-ban egy eszköz beléptetési kezelői fiók használatával
+# <a name="enroll-devices-in-intune-by-using-a-device-enrollment-manager-account"></a>Eszközök regisztrálása az Intune-ban egy eszközregisztráció-kezelői fiók használatával
 
 Készülékregisztráció-kezelői (DEM) fiók használatával akár 1000 mobileszközt is regisztrálhat egyetlen Azure Active Directory-fiókkal. A DEM egy Intune-engedély, amelyet AAD felhasználói fiókokra lehet alkalmazni, és lehetővé teszi, hogy a felhasználó akár 1000 eszközt is regisztráljon. A DEM-fiók olyan forgatókönyvek esetén hasznos, ahol az eszközöket regisztrálják és előkészítik, mielőtt kiadnák azokat a felhasználóknak. A tervezés szerint a Microsoft Intuneban legfeljebb 150 Device beléptetési kezelő (DEM) fiók található.
 
@@ -36,9 +36,10 @@ A DEM-fiókokra és a DEM-fiókokkal regisztrált eszközökre a következő kor
 - A DEM-fiókhoz tartozó felhasználónak Intune-licenccel kell rendelkeznie.
 - Nem végezhető el az összes adat törlése a Céges portálról. A DEM felhasználói fiókkal regisztrált eszközök összes adatának törlése a Azure Portalon az Intune-ból végezhető el.
 - A Vállalati portál alkalmazásban vagy a webhelyén csak a helyi eszköz jelenik meg.
-- A DEM felhasználói fiókok nem használhatnak az Apple Volume Purchase Program (VPP) keretében vásárolt alkalmazásokat az Apple VPP felhasználói licencekkel, mivel az alkalmazások kezeléséhez felhasználói Apple ID azonosítóra van szükség.
+- A DEM felhasználói fiókjai nem használhatják az Apple VPP felhasználói licenccel rendelkező Apple Volume Purchase Program (VPP) alkalmazásokat az alkalmazások felügyeletére vonatkozó felhasználónkénti Apple ID-követelmények miatt.
+- A DEM-fiókok nem használhatók az Apple Készülékregisztrációs programon (DEP) keresztüli eszközök regisztrálásakor.
 - Az eszközök akkor telepíthetnek VPP-alkalmazásokat, ha rendelkeznek Apple VPP-eszközlicenccel.
-- Az eszközök feltételes hozzáféréssel való letiltása a Windows 10 1803 + kivételével
+- Eszközei le lettek tiltva a feltételes hozzáférés Windows 10 1803 + kivételével
 - A DEM-fiókkal regisztrált összes eszköznek megfelelő licenccel kell rendelkeznie ahhoz, hogy az Intune kezelje őket. A licenc lehet Intune-beli felhasználói licenc vagy Intune-eszköz licence.
 - Ha egy DEM-fiók használatával [regisztrálja az androidos vállalati munkahelyi profilokat](android-work-profile-enroll.md) , akkor a fiókhoz legfeljebb 10 eszköz regisztrálható.
 

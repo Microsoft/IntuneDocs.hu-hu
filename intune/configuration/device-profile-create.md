@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/13/2019
+ms.date: 11/20/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,16 +17,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 02603651587837211d9a67d7e4bbeb90cb358dc5
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.openlocfilehash: 694e2ae67ef2bf7795dcf63a03480fdaed8cfbc4
+ms.sourcegitcommit: 1a22b8b31424847d3c86590f00f56c5bc3de2eb5
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74059560"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74261642"
 ---
 # <a name="create-a-device-profile-in-microsoft-intune"></a>Eszközprofil létrehozása a Microsoft Intune-ban
-
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
 Az eszközök profiljaival beállításokat adhat hozzá és konfigurálhat, majd leküldheti ezeket a beállításokat a szervezet eszközeire. [Az eszközön található szolgáltatások és beállítások alkalmazása az eszközök profiljaival](device-profiles.md) részletesebben, beleértve a teendőket is.
 
@@ -54,7 +52,7 @@ Ez a cikk:
    - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
    - **Platform**: válassza ki az eszközök platformját. A választható lehetőségek:  
 
-       - **Android--**
+       - **Android**
        - **Vállalati Android**
        - **iOS/iPadOS**
        - **macOS**
@@ -102,11 +100,11 @@ További információ a hatóköri címkékről és a műveletekről: [a RBAC é
 
 1. Válassza a **hatókör (címkék)** lehetőséget.
 2. Új hatóköri címke létrehozásához válassza a **Hozzáadás** lehetőséget. Vagy válasszon ki egy meglévő hatókör címkét a listából.
-3. A módosítások mentéséhez válassza az **OK** gombot.
+3. A módosítások mentéséhez kattintson az **OK** gombra.
 
 ## <a name="applicability-rules"></a>Alkalmazhatósági szabályok
 
-A következőkre vonatkozik:
+Érintett kiadások:
 
 - Windows 10 és újabb
 
@@ -119,7 +117,7 @@ A feladat elvégzéséhez hozzon létre egy **alkalmazhatósági szabályt**. Ez
 
 A forgatókönyvek megközelítéséhez a következőket kell tennie:
 
-- Hozzon létre egy eszközök csoportot, amely tartalmazza az összes eszközt a Harmonikák Főiskoláján. A profilban adjon hozzá egy alkalmazhatósági szabályt, amely akkor érvényes, ha az operációs rendszer minimális verziója `16299`, és a maximális verziószáma `17134`. Rendelje hozzá ezt a profilt a fújtató College-eszközök csoportjához.
+- Hozzon létre egy eszközök csoportot, amely tartalmazza az összes eszközt a Harmonikák Főiskoláján. A profilban adjon hozzá egy alkalmazhatósági szabályt, amely akkor érvényes, ha az operációs rendszer minimális verziója `16299`, és a maximális verziószám `17134`. Rendelje hozzá ezt a profilt a fújtató College-eszközök csoportjához.
 
   A hozzárendelés után a profil a megadott minimális és maximális verziók közötti eszközökre vonatkozik. Azon eszközök esetében, amelyek nem az Ön által megadott minimális és maximális verziók közé tartoztak, az állapotuk **nem alkalmazhatóként**jelenik meg.
 
@@ -151,7 +149,7 @@ Amikor hozzárendeli a profilt a csoportokhoz, az alkalmazhatósági szabályok 
     - **Operációs rendszer kiadása**: a listában tekintse meg azokat a Windows 10-es kiadásokat, amelyeket bele szeretne foglalni (vagy ki kell zárni) a szabályba.
     - **Operációs rendszer verziója**: adja meg a szabályban a **minimális** és a **maximális** Windows 10-es verziószámot, amelyet fel szeretne venni (vagy kizár). Mindkét értéket kötelező megadni.
 
-      Megadhatja például a `10.0.16299.0` (RS3 vagy 1709) értéket a minimális verzióhoz, és a `10.0.17134.0` (RS4 vagy 1803) értéket a maximális verzióhoz. Vagy részletesebben is megadhatja, és a maximális verzióhoz `10.0.16299.001` értéket adhat meg a minimális és a `10.0.17134.319` értékhez.
+      Megadhatja például `10.0.16299.0` (RS3 vagy 1709) a minimális verzióhoz, és `10.0.17134.0` (RS4 vagy 1803) a maximális verzióhoz. Vagy részletesebben is megadhatja, és megadhatja `10.0.16299.001` a minimális verzióhoz, és `10.0.17134.319` a maximális verzióhoz.
 
 4. A módosítások mentéséhez válassza a **Hozzáadás** lehetőséget.
 
@@ -160,6 +158,32 @@ Amikor hozzárendeli a profilt a csoportokhoz, az alkalmazhatósági szabályok 
 Az Intune különböző frissítési ciklusokat használ a konfigurációs profilok frissítéseinek kereséséhez. Ha az eszköz nemrég lett regisztrálva, a bejelentkezés gyakrabban fut. A [házirend-és profil-frissítési ciklusok](device-profile-troubleshoot.md#how-long-does-it-take-for-devices-to-get-a-policy-profile-or-app-after-they-are-assigned) a becsült frissítési időpontokat listázza.
 
 A felhasználók bármikor megnyithatja a Céges portál alkalmazást, és az eszköz szinkronizálásával azonnal megkeresheti a profil frissítéseit.
+
+## <a name="recommendations"></a>Javaslatok
+
+Profilok létrehozásakor vegye figyelembe az alábbi javaslatokat:
+
+- Nevezze el a szabályzatokat, hogy tudja, mit, és mit csinálnak. A [megfelelőségi szabályzatok](../protect/create-compliance-policy.md) és a [konfigurációs profilok](../configuration/device-profile-create.md) nem kötelező **leírási** tulajdonsággal rendelkeznek. A **leírásban**adjon meg konkrét információkat, és adja meg, hogy mások is tudják, mi a házirend.
+
+  Néhány konfigurációs profil például az alábbiakat tartalmazza:
+
+  **Profilnév**: felügyeleti sablon – OneDrive konfigurációs profil az összes Windows 10 felhasználóhoz  
+  **Profil leírása**: a OneDrive felügyeleti sablon profilja, amely tartalmazza a minimális és alapbeállításokat minden Windows 10 felhasználóhoz. A user@contoso.com hozta létre, hogy megakadályozza a felhasználók számára a szervezeti adatok személyes OneDrive-fiókokhoz való megosztását.
+
+  **Profil neve**: VPN-profil az összes iOS-felhasználóhoz  
+  **Profil leírása**: VPN-profil, amely tartalmazza az iOS-felhasználók minimális és alapszintű beállításait a contoso VPN-hez való csatlakozáshoz. Létrehozta user@contoso.com így a felhasználók automatikusan hitelesítik magukat a VPN-en ahelyett, hogy a felhasználók felhasználónevét és jelszavát kérik.
+
+- Hozza létre a profilt a feladatával, például a Microsoft Edge beállításainak konfigurálása, a Microsoft Defender víruskereső beállításainak engedélyezése, az iOS-es jailbroken-eszközök letiltása stb.
+
+- Olyan profilok hozhatók létre, amelyek adott csoportokra, például marketingre, értékesítésre, rendszergazdákra vagy hely vagy iskolai rendszerre vonatkoznak.
+
+- Különálló felhasználói szabályzatok az eszközök házirendjéből.
+
+  Például [Felügyeleti sablonok az Intune-ban](administrative-templates-windows.md) több száz ADMX-beállítás van. A sablon azt mutatja, hogy a beállítások a felhasználókra vagy az eszközökre vonatkoznak-e. Felügyeleti sablonok létrehozásakor rendelje hozzá a felhasználók beállításait egy felhasználói csoporthoz, és rendelje hozzá az eszköz beállításait az eszközök csoportjához.
+
+  Az alábbi képen egy olyan beállítás látható, amely a felhasználókra és/vagy az eszközökre alkalmazható:
+
+  ![A felhasználóra és az eszközökre vonatkozó Intune felügyeleti sablon](./media/device-profile-create/setting-applies-to-user-and-device.png)
 
 ## <a name="next-steps"></a>További lépések
 

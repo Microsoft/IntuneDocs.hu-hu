@@ -18,20 +18,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99d946366724b03ecdf5c47d8ba7b1d820ed3055
-ms.sourcegitcommit: 15e099a9a1e18296580bb345610aee7cc4acd126
+ms.openlocfilehash: 55fc7149d23336519af76c423862bd81f065b88f
+ms.sourcegitcommit: cdb2a484b059bd8d8c3985cde1e883c24a4c1cad
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74164729"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74239230"
 ---
 # <a name="automatically-enroll-ios-devices-with-apples-device-enrollment-program"></a>iOS-eszközök automatikus regisztrálása az Apple készülékregisztrációs programjával (DEP)
 
 Beállíthatja az Intune-t az Apple [Készülékregisztrációs programon (DEP)](https://deploy.apple.com)keresztül vásárolt iOS-eszközök regisztrálásához. A DEP lehetővé teszi, hogy nagy számú eszközt regisztráljon anélkül, hogy megérintse őket. Az olyan eszközök, mint az iPhone és az iPad, közvetlenül a felhasználók számára is elhelyezhetők. Amikor a felhasználó bekapcsolja az eszközt, a Beállítási asszisztens az előre konfigurált beállítások szerint fut, és regisztrálja az eszközt a felügyeleti szolgáltatásban.
 
-DEP-regisztráció engedélyezéséhez az Intune- és az Apple DEP-portált is használnia kell. Ahhoz, hogy az eszközök felügyeletét az Intune-hoz rendelhesse, szükség van a sorozatszámok vagy a beszerzési rendelésszámok listájára. Olyan DEP-regisztrációs profilokat hoz létre, amelyek tartalmazzák a regisztráció során az eszközre vonatkozó beállításokat.
-
-A DEP-regisztráció így nem működik az [eszköz beléptetési kezelőjével](device-enrollment-manager-enroll.md).
+DEP-regisztráció engedélyezéséhez az Intune- és az Apple DEP-portált is használnia kell. Ahhoz, hogy az eszközök felügyeletét az Intune-hoz rendelhesse, szükség van a sorozatszámok vagy a beszerzési rendelésszámok listájára. Olyan DEP-regisztrációs profilokat hoz létre, amelyek tartalmazzák a regisztráció során az eszközre vonatkozó beállításokat. Vegye figyelembe, hogy a DEP-regisztráció nem használható az [eszköz beléptetési kezelőjének](device-enrollment-manager-enroll.md) fiókjával.
 
 > [!NOTE]
 > A DEP olyan eszközök konfigurációját állítja be, amelyeket a végfelhasználó nem távolíthat el. Ezért a DEP-re való [Migrálás](../fundamentals/migration-guide-considerations.md)előtt az eszközt törölni kell, hogy vissza lehessen állítani egy beépített (új) állapotba.
@@ -168,7 +166,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
 
     A többtényezős hitelesítés nem támogatott egyetlen eszközön, egyetlen alkalmazás módban. Ez a korlátozás azért van, mert az eszköz nem tud másik alkalmazásra váltani, hogy elvégezze a hitelesítés második tényezőjét. Ezért ha a többtényezős hitelesítést egyetlen app Mode-eszközön szeretné használni, a második tényezőnek egy másik eszközön kell lennie.
 
-    Ez a funkció csak iOS-11.3.1 és újabb verziók esetén támogatott.
+    Ez a funkció csak akkor támogatott iOS 11.3.1-es és újabb verziók.
 
    ![Képernyőkép az Egyalkalmazásos módból.](./media/device-enrollment-program-enroll-ios/single-app-mode.png)
 
@@ -199,7 +197,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
 15. A **beállítási asszisztens testreszabása** lapon adja meg a következő Profilbeállítások beállításait: ![beállítási asszisztens testreszabása.](./media/device-enrollment-program-enroll-ios/setupassistantcustom.png)
 
 
-    | Részlegbeállítások | Description |
+    | Részlegbeállítások | Leírás |
     |---|---|
     | <strong>Részleg neve</strong> | Akkor jelenik meg, ha a felhasználó az aktiválás során a <strong>Konfiguráció névjegye</strong> elemre koppint. |
     |    <strong>Részleg telefonszáma</strong>     | Akkor jelenik meg, ha a felhasználó az aktiválás során a <strong>Segítségre van szüksége?</strong> gombra kattint. |
@@ -222,7 +220,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
     | <strong>Siri</strong> | Lehetőséget nyújt a felhasználónak a Siri beállítására. |
     | <strong>Diagnosztikai adatok</strong> | Jelenítse meg a diagnosztika képernyőt a felhasználó számára. Ezen a képernyőn a felhasználó diagnosztikai adatokat küldhet az Apple-nek. |
     | <strong>Hangjelzés</strong> | Adja meg a felhasználó számára a megjelenítési hang bekapcsolásának lehetőségét. |
-    | <strong>Adatvédelmi</strong> | Jelenítse meg az adatvédelmi képernyőt a felhasználó számára. |
+    | <strong>Adatvédelem</strong> | Jelenítse meg az adatvédelmi képernyőt a felhasználó számára. |
     | <strong>Android-áttelepítés</strong> | Adja meg a felhasználónak a dátum áttelepítését egy Android-eszközről. |
     | <strong>iMessage és FaceTime</strong> | Adja meg a felhasználónak a iMessage és a FaceTime beállítását. |
     | <strong>Bevezetési</strong> | Bevezetési információs képernyők megjelenítése a felhasználói oktatáshoz, mint például a fedőlap és a többfeladatos felügyelet és a vezérlési központ. |
@@ -230,7 +228,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
     | <strong>Képernyő időpontja</strong> | Jelenítse meg a képernyő időképernyőjét. |
     | <strong>Szoftverfrissítés</strong> | A kötelező szoftverfrissítés képernyő megjelenítése. |
     | <strong>SIM-telepítés</strong> | Adjon lehetőséget a felhasználónak a mobil terv hozzáadására. |
-    | <strong>Megjelenését</strong> | Jelenítse meg a megjelenés képernyőt a felhasználó számára. |
+    | <strong>Megjelenés</strong> | Jelenítse meg a megjelenés képernyőt a felhasználó számára. |
     | <strong>Expressz nyelv</strong>| Az expressz nyelvi képernyő megjelenítése a felhasználónak. |
     | <strong>Előnyben részesített nyelv</strong> | Adja meg a felhasználó számára a **kívánt nyelv**kiválasztását. |
     | <strong>Eszközről az eszközre való Migrálás</strong> | Adja meg a felhasználónak a régi eszközről az eszközre történő áttelepítési lehetőséget.|
