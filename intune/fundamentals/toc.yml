@@ -145,6 +145,8 @@
           items:
             - name: Hálózati konfiguráció
               href: network-bandwidth-use.md
+            - name: Windows 10 rendszerű virtuális gépek használata az Intune-nal
+              href: windows-10-virtual-machines.md
             - name: Intune-végpontok
               href: intune-endpoints.md
             - name: Intune US Government-végpontok
