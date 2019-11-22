@@ -1,12 +1,12 @@
 ---
-title: Alkalmazási entitások referenciája
+title: Reference for Application entities
 titleSuffix: Microsoft Intune
 description: Referencia-témakör az Intune-adattárház API entitásgyűjteményeiben található Alkalmazás kategóriához.
 keywords: Intune-adattárház
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 10/02/2019
+ms.date: 11/21/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: developer
@@ -18,16 +18,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ac40be5cf3d0a0a217340b3c745daf740a24e8e7
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: a4a8fa34673340e4adca7b64707d8c79d4808460
+ms.sourcegitcommit: 1cf063c98e1caae00a6e6fab821cc3254562bca9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72490378"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74290948"
 ---
 # <a name="reference-for-application-entities"></a>Alkalmazás-entitások referencia
 
-Az **Alkalmazás** kategória mobileszközökhöz készült entitásokat tartalmaz, amelyek többek között az alábbi információkat követik nyomon:
+The **Application** category contains entities for devices that track information such as:
 
 - Az alkalmazás verziói
 - Az alkalmazás telepítési forrása
@@ -43,9 +43,9 @@ Az **AppRevision** entitás listázza az alkalmazások összes verzióját.
 |---------|------------|--------|
 | appKey |Az alkalmazás egyedi azonosítója. |123 |
 | applicationId |Az alkalmazás egyedi azonosítója – Az AppKey-hez hasonlít, de természetes kulcs. |b66bc706-ffff-7437-0340-032819502773 |
-| változat |A bináris feltöltése során a rendszergazda által említett verzió. |2 |
+| revision |A bináris feltöltése során a rendszergazda által említett verzió. |2 |
 | title |Az alkalmazás címe. |Excel |
-| Publisher |Az alkalmazás kiadója. |Microsoft |
+| publisher |Az alkalmazás kiadója. |Microsoft |
 | uploadState |Az alkalmazás feltöltésének állapota. |1 |
 | appTypeKey |A következő szakaszban leírt AppType érték hivatkozása. | |
 | vppProgramTypeKey |A következő szakaszban leírt VppProgramType érték hivatkozása. | |
@@ -108,7 +108,7 @@ A **vppProgramType** entitás az alkalmazás lehetséges VPP-programtípusait li
 
 ## <a name="applicationinventories"></a>applicationInventories
 
-A **applicationInventory** entitás felsorolja az eszközön talált alkalmazásokat a leltár gyűjtése során.
+The **applicationInventory** entity lists the applications found on the device at the time of inventory collection.
 
 | Tulajdonság  | Description |
 |---------|------------|
@@ -120,7 +120,7 @@ A **applicationInventory** entitás felsorolja az eszközön talált alkalmazás
 
 ## <a name="mobileappinstallstates"></a>mobileAppInstallStates
 
-A **mobileAppInstallState** entitás a mobileszköz telepítési állapotát jelöli, miután hozzá lett rendelve egy olyan csoporthoz, amely eszközöket, felhasználókat vagy mindkettőt tartalmaz.
+The **mobileAppInstallState** entity represents the install state for a mobile application after it has been assigned to a group containing devices, users or both.
 
 | Tulajdonság | Description |
 |---|---|
