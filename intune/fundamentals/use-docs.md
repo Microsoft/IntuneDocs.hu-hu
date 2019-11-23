@@ -28,15 +28,15 @@ Az Intune általános súgóját és támogatását lásd: az [Intune támogatá
 
  A következő keresési tippek segítenek megtalálni a szükséges információkat:  
 
-- Ha az előnyben részesített keresőmotort használja a Microsoft Intune tartalmának megkereséséhez, adja meg a `Intune` értéket a keresési kulcsszavakkal együtt.  
+- Ha az előnyben részesített keresőmotort használja a Microsoft Intune tartalmának megkereséséhez, a keresési kulcsszavakkal együtt `Intune` is.  
 
   - Keresési eredmények a docs.microsoft.com. A technet.microsoft.com vagy a msdn.microsoft.com eredményei régebbi verziójú termékek.  
 
-  - A keresési eredményeknek az aktuális tartalom könyvtárra való összpontosítása érdekében a keresőmotor hatókörének @no__t – 0 értéket kell tartalmaznia.  
+  - Ahhoz, hogy a keresési eredményeket továbbra is a jelenlegi Content Library-re koncentrálja, a `site:docs.microsoft.com` a keresőmotor hatókörét.  
 
 - A felhasználói felületen és az online dokumentációban megjelenő kifejezésekkel egyező keresési kifejezéseket használhat. Kerülje a nem hivatalos kifejezéseket és rövidítéseket, amelyeket a közösségi tartalomban láthat.
 
-- Ha egy jelenleg megtekintett cikkben szeretne keresni, használja a böngésző **keresési** funkcióját. A legtöbb modern webböngésző esetében nyomja le a **Ctrl**+**F** billentyűkombinációt, majd írja be a keresett kifejezést.  
+- Ha egy jelenleg megtekintett cikkben szeretne keresni, használja a böngésző **keresési** funkcióját. A legmodernebb böngészőkben nyomja le a **Ctrl**+**F** billentyűkombinációt, majd adja meg a keresési kifejezéseit.  
 
 - A docs.microsoft.com minden cikke a következő mezőket tartalmazza a tartalom keresésének segítésére:  
 

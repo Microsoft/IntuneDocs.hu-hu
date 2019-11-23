@@ -58,7 +58,7 @@ E cikk segítségével az egész vállalatára vonatkozó alapértelmezett váll
 
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 
-2. Lépjen az **eszközök beléptetése**@no__t – 1**windows-regisztráció**@no__t – 3**Windows Hello for Business**. Megnyílik a vállalati Windows Hello panel.
+2. Válassza az **eszközök beléptetése** > **windows-regisztráció** > **a vállalati Windows Hello**lehetőséget. Megnyílik a vállalati Windows Hello panel.
 
 3. Válasszon a következő lehetőségek közül a **vállalati Windows Hello konfigurálásához**:
 

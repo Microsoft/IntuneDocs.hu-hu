@@ -1,5 +1,5 @@
 ---
-title: Korábbi Intune PC-ügyfél és Intune az Azure-ban
+title: Örökölt Intune szoftverügyfél és az Intune az Azure-ban
 description: Szempontok az Azure-beli Intune használatához cége Windows-eszközeinek felügyeletéhez.
 keywords: ''
 author: ErikjeMS
@@ -23,9 +23,9 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 10/16/2019
 ms.locfileid: "72510185"
 ---
-# <a name="intune-on-azure-console-and-legacy-intune-pc-client"></a>Intune az Azure-konzolon és a régi Intune számítógép-ügyfél
+# <a name="intune-on-azure-console-and-legacy-intune-pc-client"></a>Intune az Azure-konzolon és az örökölt Intune szoftverügyfél
 
-Az Intune egy Azure-alapú SaaS Application Service-architektúrát használ. Az Azure jelentős fejlesztéseket nyújt a méretezés, a kapacitás és a teljesítmény terén. Ez fejlett Intune-rendszergazdai élményt és optimalizált munkafolyamatokat kínál a Azure Portalban. 
+Az Intune az Azure-alapú saas alkalmazásszolgáltató architektúrára költözött használ. Az Azure jelentős fejlesztéseket nyújt a méretezés, a kapacitás és a teljesítmény terén. Nyújt a továbbfejlesztett Intune rendszergazdai felügyeletet, és optimalizált munkafolyamatokat az Azure Portalon. 
 
 Ha az Azure-beli Intune-t használja cége Windows-eszközeihez, vegye figyelembe a következő szempontokat:
 
@@ -63,7 +63,7 @@ A szoftverügyfél és az MDM képességeinek összehasonlításához lásd: [Wi
 Kövesse az alábbi lépéseket a Windows 10-eszközök felügyeletének áthelyezéséhez az Intune szoftverügyfélről az MDM-re:
 
 1. Végezzen el egy **szelektív törlést** a Silverlight-konzolon, ezzel visszavonja az eszköz regisztrációját a szoftverügyfélről.
-  ![Warning felugró ablak a "kiválasztva az eszköz szelektív törlése" választógomb kiválasztott @ no__t-1
+  ![figyelmeztetés előugró ablakban válassza ki a "kiválasztott eszköz szelektív törlése" választógombot](./media/intune-legacy-pc-client/image02.png)
 2. Regisztrálja újra az eszközt az [MDM (és/vagy az Azure AD-csatlakozási felület)](../enrollment/windows-enroll.md) használatával.
 
 ## <a name="next-steps"></a>További lépések

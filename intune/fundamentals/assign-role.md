@@ -36,7 +36,7 @@ A szerepkörök létrehozásához, szerkesztéséhez vagy hozzárendeléséhez a
 
 2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget. Az Intune a **Figyelés + felügyelet** szakaszban található.
 
-3. Az **Intune** panelen válassza a **szerepkörök**@no__t – 2**minden szerepkör**lehetőséget.
+3. Az **Intune** panelen válassza a **szerepkörök** > **minden szerepkör**lehetőséget.
 
 4. Az **Intune-szerepkörök – minden szerepkör** panelen válassza ki a hozzárendelni kívánt beépített szerepkört.
 

@@ -91,7 +91,7 @@ Ha többet szeretne megtudni a vállalati Windows Hello-profilokról az Intune-b
 
     **Alapértelmezett**: nincs konfigurálva  
 
-  - **PIN-kód helyreállításának engedélyezése**@no__t – 1  
+  - **PIN-kód helyreállításának engedélyezése**   
     Lehetővé teszi a felhasználó számára a vállalati Windows Hello PIN-kód helyreállítási szolgáltatás használatát. 
     
     - **Engedélyezve** – a PIN-kód helyreállítási titkát a rendszer az eszközön tárolja, és szükség esetén a felhasználó módosíthatja a PIN-kódját.  
@@ -99,7 +99,7 @@ Ha többet szeretne megtudni a vállalati Windows Hello-profilokról az Intune-b
 
     **Alapértelmezett**: nincs konfigurálva
 
-  - **Platformmegbízhatósági modul (TPM)**   használata  
+  - **Platformmegbízhatósági modul (TPM)  használata**  
     A TPM lapka használata további adatbiztonsági réteget biztosít.  
 
     - Csak az elérhető TPM modullal rendelkező eszközök telepíthetik a vállalati Windows Hello **szolgáltatást** .
@@ -115,7 +115,7 @@ Ha többet szeretne megtudni a vállalati Windows Hello-profilokról az Intune-b
 
     **Alapértelmezett**: nincs konfigurálva
 
-  - **Fokozott hamisítás elleni javítás használata, ha elérhető**  
+  - **Kibővített hamisításszűrés használata, ha elérhető**  
     Konfigurálható, hogy a Windows Hello hamisításszűrési funkcióit használják-e az azt támogató eszközök (például egy valós arc helyett egy arcról készült fénykép észlelése).  
     - **Engedélyezés** – a Windows megköveteli, hogy a rendszer minden felhasználó számára az arc-funkciók elleni hamisítást használja a támogatott esetekben.
     - **Nincs konfigurálva** – a Windows tiszteletben tartja a hamisítási konfigurációkat az eszközön.

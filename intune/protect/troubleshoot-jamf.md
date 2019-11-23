@@ -57,11 +57,11 @@ Az alábbi információk segítséget nyújtanak az eszközök gyakori problém�
 |-----------------|--------------------------|
 | **Az eszközök nem válaszoló vannak megjelölve a JAMF Pro-ban**  | [Az eszközök nem tudnak bejelentkezni a JAMF Pro vagy az Azure AD használatával](#devices-are-marked-as-unresponsive-in-jamf-pro) |
 | **A Mac-eszközök akkor jelentkeznek, ha az alkalmazások megnyitásakor nem sikerül regisztrálni a kulcstartót**  | A [rendszer megkéri a felhasználókat a jelszavuk megadására, hogy lehetővé tegyék az alkalmazások számára az Azure ad-regisztrációt](#mac-devices-prompt-for-keychain-sign-in-when-you-open-an-app). |
-| **Nem sikerült regisztrálni az eszközöket**  | A következő okokat lehet alkalmazni: <br> 1\. **@no__t – 1** [ ***OK*** – a JAMF Pro alkalmazás az Azure-ban helytelen engedélyekkel rendelkezik](#cause-1) <br> **@no__t – 1** [ ***OK 2*** – probléma van a *JAMF natív MacOS-összekötővel* az Azure ad-ben](#cause-2) <br> **@no__t – 1** [ ***OK 3*** – a felhasználónak nincs érvényes Intune-vagy JAMF-licence](#cause-3) <br> **@no__t – 1** [ ***OK 4*** – a felhasználó nem használja a JAMF önkiszolgáló szolgáltatást a céges portál alkalmazás elindításához](#cause-4) <br> **@no__t – 1** [ ***OK 5*** – az Intune-integráció ki van kapcsolva](#cause-5) <br> **@no__t – 1** [ ***OK 6*** – az eszköz korábban regisztrálva van az Intune-ban, vagy a felhasználó többször próbálta regisztrálni az eszközt](#cause-6) <br> **@no__t – 1** [ ***OK 7*** – a JamfAAD a felhasználók kulcstartójában hozzáférést kér a "Microsoft Workplace JOIN kulcshoz"](#cause-7) |
+| **Nem sikerült regisztrálni az eszközöket**  | A következő okokat lehet alkalmazni: <br> **-** [ ***1. ok*** – a JAMF Pro alkalmazás az Azure-ban helytelen engedélyekkel rendelkezik](#cause-1) <br> **-** [ ***2. ok*** – probléma van a *natív MacOS-összekötő JAMF* az Azure ad-ben](#cause-2) <br> **-** [ ***3. ok*** – a felhasználónak nincs érvényes Intune-vagy JAMF-licence](#cause-3) <br> **-** [ ***4. ok*** – a felhasználó nem használja a JAMF önkiszolgáló szolgáltatást a céges portál alkalmazás elindításához](#cause-4) <br> **-** [ ***5. ok*** – az Intune-integráció ki van kapcsolva](#cause-5) <br> **-** [ ***6. ok*** – az eszköz korábban már regisztrálva van az Intune-ban, vagy a felhasználó többször próbálta regisztrálni az eszközt](#cause-6) <br> **-** [ ***7*** – JamfAAD a "Microsoft Workplace JOIN kulcs" elérését kéri a felhasználók kulcstartójában](#cause-7) |
 |  **A Mac-eszköz megfelel az Intune-ban, de nem megfelelő az Azure-ban** | [Eszközök regisztrálásával kapcsolatos problémák](#mac-device-shows-compliant-in-intune-but-noncompliant-in-azure) |
 | **Ismétlődő bejegyzések jelennek meg az Intune-konzolon a JAMF használatával beléptetett Mac-eszközökhöz** | [Több regisztráció ugyanarra az eszközre](#duplicate-entries-appear-in-the-intune-console-for-mac-devices-enrolled-by-using-jamf) |
 | **A megfelelőségi szabályzat nem tudja kiértékelni az eszközt** | [Házirend céljaként szolgáló eszközök csoportjai](#compliance-policy-fails-to-evaluate-the-device) |
-| **Nem sikerült beolvasni Microsoft Graph API hozzáférési jogkivonatát** | A következő okokat lehet alkalmazni: <br> @no__t – 0[engedély a JAMF Pro-alkalmazáshoz az Azure-ban](#theres-a-permission-issue-with-the-jamf-pro-application-in-azure) <br> @no__t – 0[lejárt licenc a JAMF vagy az Intune](#a-license-required-for-jamf-intune-integration-has-expired) -hoz <br> a **-** [portok nincsenek megnyitva](#the-required-ports-arent-open-on-your-network)|
+| **Nem sikerült beolvasni Microsoft Graph API hozzáférési jogkivonatát** | A következő okokat lehet alkalmazni: <br> [a JAMF Pro alkalmazás -engedélyei az Azure-ban](#theres-a-permission-issue-with-the-jamf-pro-application-in-azure) <br> - [lejárt licenc a JAMF vagy az Intune-](#a-license-required-for-jamf-intune-integration-has-expired) hoz <br> **-** [portok nincsenek megnyitva](#the-required-ports-arent-open-on-your-network)|
  
 
 ### <a name="devices-are-marked-as-unresponsive-in-jamf-pro"></a>Az eszközök nem válaszoló vannak megjelölve a JAMF Pro-ban  
@@ -95,7 +95,7 @@ Például egy, az alábbi példához hasonló szöveget tartalmazó üzenet jele
 
 **OK**: ezeket az utasításokat a JAMF Pro hozza létre minden olyan alkalmazáshoz, amelyhez Azure ad-regisztráció szükséges. 
 
-**Megoldás**@no__t – 1  
+**Megoldás**   
 Ha a rendszer kéri, a felhasználónak meg kell adnia az eszköz jelszavát az Azure AD-be való bejelentkezéshez. A lehetőségek a következők:
 - **Megtagadás** – ne jelentkezzen be, és ne használja az alkalmazást.
 - **Engedélyezés** – egyszeri bejelentkezés. Amikor az alkalmazás legközelebb megnyílik, megkéri a bejelentkezést.
@@ -107,16 +107,16 @@ Ha a *mindig engedélyezi* , hogy egy alkalmazás csak a jövőbeli bejelentkez�
 
 Számos gyakori oka van annak, hogy a Mac-eszközök nem regisztrálhatnak.  
 
-#### <a name="cause-1"></a>1\. ok  
+#### <a name="cause-1"></a>OK: 1  
 
 **Az Azure-beli JAMF Pro Enterprise-alkalmazás nem rendelkezik megfelelő engedéllyel, vagy egynél több engedéllyel rendelkezik**  
 
-  Amikor létrehoz egy alkalmazást az Azure-ban, el kell távolítania az összes alapértelmezett API-engedélyt, majd hozzá kell rendelnie az Intune-t a *update_device_attributes*-hez. 
+  Ha az Azure-ban hozza létre az alkalmazást, el kell távolítania az összes alapértelmezett API-engedélyt, majd az Intune-t egyetlen *update_device_attributes*-engedélyhez kell rendelnie. 
 
   **Felbontás**  
   Tekintse át és ha szükséges, javítsa ki az Azure AD-ben létrehozott JAMF alkalmazás engedélyeit. Tekintse meg az [Azure ad-beli JAMF alkalmazás létrehozásának](conditional-access-integrate-jamf.md#create-an-application-in-azure-active-directory)eljárását. 
 
-#### <a name="cause-2"></a>2\. ok  
+#### <a name="cause-2"></a>OK 2  
 
 **Az **JAMF natív MacOS-összekötő** alkalmazás nem lett létrehozva az Azure ad-bérlőben, vagy az összekötő beleegyezett abba, hogy olyan fiók írta alá, amely nem rendelkezik globális rendszergazdai jogokkal**  
 
@@ -146,7 +146,7 @@ Ahhoz, hogy egy eszköz sikeresen regisztrálja és regisztrálja az Intune-t a 
 
 Annak megállapításához, hogy az eszköz regisztrálása és regisztrálása milyen szolgáltatást használ, tekintse meg a Céges portál alkalmazást az eszközön. A JAMF-on keresztüli regisztráláskor értesítést kell kapnia az önkiszolgáló alkalmazás megnyitásához a módosítások elvégzéséhez.
 
-A Céges portál alkalmazásban előfordulhat, hogy a felhasználó **`Not registered`** , és az alábbi példához hasonló bejegyzés jelenhet meg a céges portál naplókban:  
+A Céges portál alkalmazásban előfordulhat, hogy a felhasználó **`Not registered`** jelenik meg, és az alábbi példához hasonló bejegyzés jelenhet meg a céges portál naplókban:  
 
 ```
    Line 7783: <DATE> <IP ADDRESS> INFO com.microsoft.ssp.application TID=1  
@@ -208,8 +208,8 @@ Ha egy eszköz regisztrációja megszűnik a JAMF-ból, de nem távolítja el me
    - /Library/Preferences/com.microsoft.CompanyPortal.plist
    - /Library/Preferences/com.jamfsoftware.selfservice.mac.plist
    - /Library/Preferences/com.jamfsoftware.management.jamfAAD.plist
-   - /Users/<username>/Library/cookie-k/com. microsoft. CompanyPortal. binarycookies
-   - /Users/<username>/Library/cookie-k/com. JAMF. Management. jamfAAD. binarycookies
+   - /Users/<username>/Library/Cookies/com.microsoft.CompanyPortal.binarycookies
+   - /Users/<username>/Library/Cookies/com.jamf.management.jamfAAD.binarycookies
    - com. microsoft. CompanyPortal
    - com. microsoft. CompanyPortal. HockeySDK
    - enterpriseregistration.windows.net
@@ -226,8 +226,8 @@ Ha egy eszköz regisztrációja megszűnik a JAMF-ból, de nem távolítja el me
    - Fajta: alkalmazás jelszava; Fiók: com. microsoft. workplacejoin. registeredUserPrincipalName
    - Típus: tanúsítvány; Kiállító: MS-Organization-Access
    - Típus: Identity preferencia; Név (ADFS STS URL-címe, ha van): https://adfs\<DNSName>.com/adfs/ls
-   - Típus: Identity preferencia; Név: @no__t – 0
-   - Típus: Identity preferencia; Név: @no__t – 0  
+   - Típus: Identity preferencia; Név: https://enterpriseregistration.windows.net
+   - Típus: Identity preferencia; Név: https://enterpriseregistration.windows.net/  
 9. Indítsa újra a Mac-eszközt.
 10. Céges portál eltávolítása az eszközről.
 11. Nyissa meg a portal.manage.microsoft.com, és törölje a Mac-eszköz összes példányát. Várjon legalább 30 percet, mielőtt a következő lépéshez ugorjon.
@@ -294,7 +294,7 @@ A hiba forrása a következő okok egyike lehet:
 
 A JAMF Pro-alkalmazás Azure-ban való regisztrálásakor a következő feltételek egyike történt:  
 - Az alkalmazás egynél több engedélyt kapott.
-- A **rendszergazdai jóváhagyás megadása *@no__t – 2your vállalati >***  beállítás nem lett kiválasztva.  
+- A **rendszergazdai jóváhagyás megadása *\<a vállalati >***  lehetőség nincs kiválasztva.  
 
 **Felbontás**  
 Tekintse meg a cikk korábbi, 1. okának feloldását az [eszközök regisztrálásához](#devices-fail-to-register).

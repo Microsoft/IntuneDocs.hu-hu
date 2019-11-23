@@ -69,7 +69,7 @@ Mielőtt feltételes hozzáférési szabályzatokat hozna létre a Microsoft End
 ## <a name="next-steps"></a>További lépések
 [Modern hitelesítés nélküli alkalmazások blokkolása](app-modern-authentication-block.md)
 
-## <a name="see-also"></a>További információ
+## <a name="see-also"></a>Lásd még:
 
 [Alkalmazásadatok védelme alkalmazásvédelmi szabályzatokkal](../apps/app-protection-policies.md)
 [Feltételes hozzáférés az Azure Active Directory-ban](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access)

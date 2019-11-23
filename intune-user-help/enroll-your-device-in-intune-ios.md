@@ -53,7 +53,7 @@ Eszköze regisztrálása után a Céges portál alkalmazás folyamatosan gondosk
 ### <a name="setting-notifications"></a>Értesítések beállítása  
 Ha a regisztráció után a vállalat új biztonsági követelményt, például többtényezős hitelesítést vezet be, a Céges portál alkalmazás értesíti Önt. Lehetősége lesz módosítani beállításait, hogy továbbra is dolgozhasson az eszközéről.  
 
-További információk a regisztrációval kapcsolatban: [Mi történik a Céges portál alkalmazás telepítésekor és az eszköz regisztrálásakor?](https://docs.microsoft.com//intune-user-help/what-happens-if-you-install-the-company-portal-app-and-enroll-your-device-in-intune-ios).  
+További információk a regisztrációval kapcsolatban: [Mi történik a Céges portál alkalmazás telepítésekor és az eszköz regisztrálásakor?](https://docs.microsoft.com//intune-user-help/what-happens-if-you-install-the-company-portal-app-and-enroll-your-device-in-intune-ios)  
 
 ## <a name="enroll-your-ios-device"></a>IOS-eszköz regisztrálása  
 
@@ -95,7 +95,7 @@ Előfordulhat, hogy a regisztráció során a rendszer több, mint néhány perc
 
 8. Nyissa meg a beállítások alkalmazást, és koppintson a **profil letöltése**elemre.  
 
-    Ha a **profil letöltése** nem jelenik meg lehetőségként, nyissa meg az **általános**@no__t – 2**profilt**. Ha továbbra sem látja a profilt, lehetséges, hogy újra le kell töltenie.  
+    Ha a **profil letöltése** nem jelenik meg lehetőségként, lépjen az **általános** > **profilok**elemre. Ha továbbra sem látja a profilt, lehetséges, hogy újra le kell töltenie.  
 
     ![Példa a beállítások alkalmazás, a profil letöltött beállítása képernyőképre.](./media/ios-1904-settings-badge.PNG)  
 
@@ -131,4 +131,4 @@ Ha Ön rendszergazda, és az eszközök regisztrálása során problémákba ker
 ## <a name="next-steps"></a>További lépések  
 Olyan alkalmazásokat kereshet, amelyek segítséget nyújtanak a munkahelyi vagy iskolai munkához. Ismerje meg, [Hogyan érhetők el az alkalmazások](use-managed-apps-on-your-device-ios.md) céges portálon keresztül.  
 
-További segítségre van szüksége? Forduljon a cég informatikai támogatási szolgálatához. A kapcsolatfelvételi adatait megtalálja a [Munkahelyi portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).  
+További segítségre van szüksége? Forduljon a cég informatikai támogatásához. A kapcsolatfelvételi adatait megtalálja a [Munkahelyi portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).  

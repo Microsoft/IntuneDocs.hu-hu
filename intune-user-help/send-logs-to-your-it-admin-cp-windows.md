@@ -1,5 +1,5 @@
 ---
-title: Windows 10-eszközök naplóinak küldése a cég informatikai támogatási szolgálatának | Microsoft Docs
+title: Windows 10-eszközök naplóinak küldése a cég informatikai támogató szolgálatának | Microsoft Docs
 description: E-mail-hiba és a napló részletei, hogy segítsen a vállalatnak az alkalmazással kapcsolatos problémák megoldásában
 keywords: ''
 author: lenewsad
@@ -46,7 +46,7 @@ A Céges portál alkalmazásban előforduló eseményeket és hibákat a rendsze
 ## <a name="steps-to-get-help"></a>A Súgó beszerzésének lépései  
 
 1. Nyissa meg a **Munkahelyi portál** alkalmazást.
-2. Válassza a **súgó & támogatás**@no__t – 1**Segítség kérése**lehetőséget.  
+2. Válassza a **súgó & támogatás** > segítség **kérése**lehetőséget.  
 
    ![Képernyőfelvétel a Súgó & támogatás oldaláról, a bal oldali navigációs sáv kiemelése és a Súgó beolvasása szakasz.](./media/1812_UCP_Help_Support_Get_Help_Logs.png)    
 

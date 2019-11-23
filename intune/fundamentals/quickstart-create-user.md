@@ -27,7 +27,7 @@ ms.locfileid: "72509883"
 
 Ebben a rövid útmutatóban létrehoz egy felhasználót, majd hozzárendeli egy Intune-licencet. Ha az Intune-t használja, minden személynek saját felhasználói fiókkal kell rendelkeznie a vállalati adataihoz való hozzáféréshez. Az Intune-rendszergazdák később is konfigurálhatják a felhasználókat a hozzáférés-vezérlés kezeléséhez.
 
-Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon ingyenes próbafiókot](free-trial-sign-up.md).
+Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon egy ingyenes próbafiókkal](free-trial-sign-up.md).
 
 ## <a name="sign-in-to-intune"></a>Bejelentkezés az Intune-ba
 
@@ -55,7 +55,7 @@ Miután létrehozott egy felhasználót, a [Microsoft 365 felügyeleti központo
 Intune-licenc kiosztása egy felhasználóhoz:
 
 1. Jelentkezzen be a [Microsoft 365 felügyeleti központba](http://go.microsoft.com/fwlink/p/?LinkId=698854) ugyanazzal a hitelesítő adatokkal, amelyeket az Intune-ba való bejelentkezéshez használt.
-2. Válassza a **felhasználók** > **aktív felhasználók** > lehetőséget, majd válassza ki az imént létrehozott felhasználót.
+2. Válassza a **felhasználók** > **aktív felhasználók** > lehetőséget, és válassza ki az imént létrehozott felhasználót.
 3. Válassza a **Terméklicencek** melletti **Szerkesztés** lehetőséget.
 4. A **Hely** listában válassza ki a felhasználó helyét.
 5. Kattintson **az** Intune-licenc melletti (vagy egy másik, az Intune-t tartalmazó licenc) elemre. A megjelenített [terméknév](https://docs.microsoft.com/azure/active-directory/users-groups-roles/licensing-service-plan-reference)** lesz szolgáltatáscsomagként használva az Azure-felügyeletben. 
@@ -68,7 +68,7 @@ Az új aktív Intune-felhasználó mostantól azt fogja látni, hogy **Intune** 
 
 ## <a name="clean-up-resources"></a>Erőforrások eltávolítása
 
-Ha már nincs szüksége erre a felhasználóra, törölheti a felhasználót a [Microsoft 365 felügyeleti központba](http://go.microsoft.com/fwlink/p/?LinkId=698854) , és kiválaszthatja a **felhasználók** > **aktív felhasználó** > *válassza ki a felhasználót a listában* > **delete User** >  **Felhasználó törlése**@no__t – 10**erősítse meg a módosításokat**2**Bezárás**.
+Ha már nincs szüksége erre a felhasználóra, törölheti a felhasználót a [Microsoft 365 felügyeleti központba](http://go.microsoft.com/fwlink/p/?LinkId=698854) , és kiválaszthatja a **felhasználók** > **aktív felhasználók** > *válassza ki a felhasználót a listában* > **Törlés** felhasználó > **Törlés felhasználó** > a **módosítások jóváhagyása** > **Bezárás gombra**.
 
 ## <a name="next-steps"></a>További lépések
 

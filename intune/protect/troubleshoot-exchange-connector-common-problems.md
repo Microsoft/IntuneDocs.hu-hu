@@ -70,9 +70,10 @@ Az értesítő e-mailek problémáinak elhárításához tekintse át a követke
    1. A parancssorba írja be az *nslookup*parancsot.  
 
    2. Adja meg a *autodiscover.SMTPdomain.com*. A kimenetnek az alábbi képhez hasonlónak kell lennie:  
-      @no__t 0Nslookup-eredmények @ no__t-1
+      ![nslookup eredményei](./media/troubleshoot-exchange-connector-common-problems/nslookup-results.png
+)
 
-   Az automatikus észlelési szolgáltatást az internetről is tesztelheti https://testconnectivity.microsoft.com címen. Vagy tesztelje egy helyi tartományból a Microsoft connectivity Analyzer eszköz használatával. További információ: [Microsoft connectivity Analyzer eszköz](https://docs.microsoft.com/en-us/previous-versions/office/exchange-remote-connectivity/jj851141(v=exchg.80)). Ha szükséges, [töltse le a Microsoft connectivity Analyzer eszközt](https://go.microsoft.com/fwlink/?LinkID=313782).
+   Az automatikus észlelési szolgáltatást az internetről is tesztelheti https://testconnectivity.microsoft.comcímen. Vagy tesztelje egy helyi tartományból a Microsoft connectivity Analyzer eszköz használatával. További információ: [Microsoft connectivity Analyzer eszköz](https://docs.microsoft.com/en-us/previous-versions/office/exchange-remote-connectivity/jj851141(v=exchg.80)). Ha szükséges, [töltse le a Microsoft connectivity Analyzer eszközt](https://go.microsoft.com/fwlink/?LinkID=313782).
 
 
 ### <a name="check-autodiscovery"></a>Automatikus észlelés keresése  
@@ -82,7 +83,7 @@ Ha az automatikus észlelés sikertelen, próbálkozzon a következő lépésekk
 
 2. Az Intune Exchange Connector konfigurációs fájljában a EWS URL-címének kódolása:
 
-   1. Határozza meg a EWS URL-címét. Az Exchange alapértelmezett EWS URL-címe @no__t – 0, de az URL-cím eltérő lehet. Forduljon az Exchange-rendszergazdához, és ellenőrizze a környezetének megfelelő URL-címet.
+   1. Határozza meg a EWS URL-címét. Az Exchange alapértelmezett EWS URL-címe `https://<mailServerFQDN>/ews/exchange.asmx`, de az URL-cím eltérő lehet. Forduljon az Exchange-rendszergazdához, és ellenőrizze a környezetének megfelelő URL-címet.
 
    2. Szerkessze a *OnPremisesExchangeConnectorServiceConfiguration. XML* fájlt. Alapértelmezés szerint a fájl a *%ProgramData%\Microsoft\Windows Intune Exchange connectorban* található az Exchange Connectort futtató számítógépen. Nyissa meg a fájlt egy szövegszerkesztőben, majd módosítsa a következő sort a környezet EWS URL-címének megjelenítéséhez: `<ExchangeWebServiceURL> https://<YourExchangeHOST>/EWS/Exchange.asmx</ExchangeWebServiceURL>`
     

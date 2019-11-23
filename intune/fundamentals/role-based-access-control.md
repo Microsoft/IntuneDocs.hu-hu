@@ -67,7 +67,7 @@ Egyéni engedélyekkel saját szerepköröket is létrehozhat. További informá
 | Biztonsági olvasó | Csak olvasható | Csak olvasható |
 | Megfelelőségi rendszergazda | Nincsenek | Csak olvasható |
 | Megfelelőségi adatkezelő | Nincsenek | Csak olvasható |
-| Globális olvasó | Csak olvasható | Csak olvasható |
+| Globális olvasó | Csak olvasás | Csak olvasás |
 
 > [!TIP]
 > Az Intune három Azure AD-bővítményt is megjelenít: **felhasználók**, **csoportok**és **feltételes hozzáférés**, amelyek az Azure ad RBAC vannak szabályozva. A **Felhasználóifiók-adminisztrátori** szerepkör csak az Azure AD-felhasználói vagy -csoporttevékenységek végrehajtására jogosít fel, és nem biztosít teljes körű engedélyt az összes Intune-beli tevékenységhez. További információ: [RBAC az Azure ad-vel](https://docs.microsoft.com/azure/active-directory/active-directory-assign-admin-roles).
@@ -84,7 +84,7 @@ A szerepkör-hozzárendelések A következőket határozzák meg:
 - milyen erőforrásokat módosíthatnak.
 
 Egyéni és beépített szerepköröket is hozzárendelhet a felhasználókhoz. Intune-szerepkör hozzárendeléséhez a felhasználónak Intune-licenccel kell rendelkeznie.
-A szerepkör-hozzárendelés megjelenítéséhez válassza az **Intune** > **szerepkörök**@no__t – 3**minden szerepkör** lehetőséget, > válasszon egy szerepkört > válasszon ki egy hozzárendelést. A következő lapokat fogja látni:
+A szerepkör-hozzárendelés megjelenítéséhez válassza az **Intune** > **szerepkörök** > **minden szerepkör** lehetőséget, > válasszon ki egy szerepkört > válasszon ki egy hozzárendelést. A következő lapokat fogja látni:
 
 - **Tulajdonságok**: a hozzárendelés neve, leírása, szerepköre, tagjai, hatóköre és címkéje.
 - **Tagok**: a felsorolt Azure-beli biztonsági csoportok minden felhasználója jogosult a hatókörben (csoportok) felsorolt felhasználók vagy eszközök kezelésére.

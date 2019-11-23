@@ -40,7 +40,7 @@ A **súgó & támogatásához** a következőket teheti:
 
 ## <a name="get-help-with-app-problems"></a>Segítség kérése az alkalmazással kapcsolatos problémák megoldásához
 
-Küldjön e-mailt a szervezetnek a Céges portálon észlelt problémákról. A probléma leírásának megkezdéséhez kattintson a **Súgó beolvasása** elemre. A szervezet a megadott adatokat fogja használni a probléma elhárításához. Ha további segítségre van szükség a probléma meghatározásához, akkor a szervezet az e-mail @ no__t-1to által tartalmazott diagnosztikai azonosító @ no__t-0automatically fogja használni a Microsoft támogatási csapatának.  
+Küldjön e-mailt a szervezetnek a Céges portálon észlelt problémákról. A probléma leírásának megkezdéséhez kattintson a **Súgó beolvasása** elemre. A szervezet a megadott adatokat fogja használni a probléma elhárításához. Ha további segítségre van szükség a probléma meghatározásához, akkor a szervezet az e-mail-&ndash;automatikusan felvett diagnosztikai azonosító&ndash;fogja használni a Microsoft támogatási csapatának eléréséhez.  
 
 A lépésenkénti eljáráshoz lásd: [naplók küldése a cég informatikai támogatási szolgálatának a Windows 10-es céges portál alkalmazásból](send-logs-to-your-it-admin-cp-windows.md).  
 

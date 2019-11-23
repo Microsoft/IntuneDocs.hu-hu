@@ -55,7 +55,7 @@ PIN-kód megkövetelése a vállalati erőforrások eléréséhez. Emellett a v�
 2. Erősítse meg a következő feltételeket:
     - Az alkalmazás elindítása előtt szerepelnie kell egy, a PIN-kód bevitelére vonatkozó kérésnek, vagy a Céges portál való regisztráció során használt üzemi felhasználónak.
     - Az érvényes bejelentkezési Rákérdezés oka az lehet, hogy egy nem megfelelően konfigurált Android-jegyzékfájl, pontosabban a Azure Active Directory Authentication Library (ADAL) integráció (SkipBroker, ClientID és Authority) értékeit okozza.
-    - A promptot nem sikerült bemutatni, mert egy helytelenül integrált @no__t – 0 érték lehet. További információ a `MAMActivity`-ról: [Microsoft Intune app SDK Androidhoz – fejlesztői útmutató](app-sdk-android.md).
+    - A promptot nem sikerült bemutatni, mert egy helytelenül integrált `MAMActivity` érték lehet. További információ a `MAMActivity`ről: [Microsoft Intune app SDK for Android fejlesztői útmutató](app-sdk-android.md).
 
 > [!NOTE] 
 > Ha az előző teszt nem működik, az alábbi tesztek valószínűleg sikertelenek lesznek. Az [SDK](app-sdk-android.md##sdk-integration) és a [ADAL](app-sdk-android.md#configure-azure-active-directory-authentication-library-adal) integráció áttekintése.
@@ -104,7 +104,7 @@ Távolról törölheti a felügyelt alkalmazásokat a vállalati e-mailek és do
 1. A Azure Portal [kiadja a törlést](../apps/apps-selective-wipe.md).
 2. Ha az alkalmazás nem regisztrálja az összes törlési kezelőt, erősítse meg a következő feltételeket:
     - Az alkalmazás teljes törlése történik.
-3. Ha az alkalmazás regisztrálva van a `WIPE_USER_DATA` vagy `WIPE_USER_AUXILARY_DATA` számára, erősítse meg a következő feltételeket:
+3. Ha az alkalmazás regisztrálva van `WIPE_USER_DATA` vagy `WIPE_USER_AUXILARY_DATA`, erősítse meg a következő feltételeket:
     - A felügyelt tartalom el lesz távolítva az alkalmazásból. További információ: [az Androidhoz készült Intune app SDK Fejlesztői útmutatója – szelektív törlés](app-sdk-android.md#selective-wipe).
 
 ### <a name="multi-identity-support"></a>Többszörös identitás támogatása

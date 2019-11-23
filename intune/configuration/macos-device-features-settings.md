@@ -45,7 +45,7 @@ Ez a cikk felsorolja ezeket a beállításokat, és leírja az egyes beállítá
 ### <a name="settings-apply-to-device-enrollment-and-automated-device-enrollment"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése és automatikus eszközök beléptetése 
 
 - **IP-cím**: adja meg a nyomtató IPv4-vagy IPv6-címét. Ha állomásneveket használ a nyomtatók azonosítására, akkor az IP-címet a nyomtatónak a terminál alkalmazásban történő pingelésével érheti el. [Az IP-cím és az elérési út](#get-the-ip-address-and-path) (ebben a cikkben) beszerzése további részleteket tartalmaz.
-- **Elérési út**: adja meg a nyomtató elérési útját. Az elérési út általában `ipp/print` a hálózatban lévő nyomtatókhoz. [Az IP-cím és az elérési út](#get-the-ip-address-and-path) (ebben a cikkben) beszerzése további részleteket tartalmaz.
+- **Elérési út**: adja meg a nyomtató elérési útját. Az elérési út általában a hálózatban lévő nyomtatókhoz `ipp/print`. [Az IP-cím és az elérési út](#get-the-ip-address-and-path) (ebben a cikkben) beszerzése további részleteket tartalmaz.
 - **Port** (iOS 11,0 és újabb): adja meg a AirPrint célhelyének figyelési portját. Ha üresen hagyja ezt a tulajdonságot, a AirPrint az alapértelmezett portot használja.
 - **TLS** (iOS 11,0 és újabb): válassza az **Engedélyezés** lehetőséget a AirPrint-kapcsolatok Transport Layer Security (TLS) használatával történő biztonságossá tételéhez.
 
@@ -58,21 +58,21 @@ Ez a cikk felsorolja ezeket a beállításokat, és leírja az egyes beállítá
 AirPrinter-kiszolgálók hozzáadásához szüksége lesz a nyomtató IP-címére, az erőforrás elérési útjára és a portra. Az alábbi lépések bemutatják, hogyan kérheti le ezeket az információkat.
 
 1. Olyan Mac gépen, amely ugyanahhoz a helyi hálózathoz (alhálózat) csatlakozik, mint a AirPrint-nyomtatók, nyissa meg a **terminált** (a **/Applications/Utilities alatt**).
-2. A Terminal alkalmazásban írja be a `ippfind` értéket, majd kattintson az ENTER gombra.
+2. A terminál alkalmazásban írja be a `ippfind`értéket, majd kattintson az ENTER gombra.
 
-    Jegyezze fel a nyomtató adatait. Előfordulhat például, hogy a `ipp://myprinter.local.:631/ipp/port1` értékhez hasonló értéket ad vissza. Az első rész a nyomtató neve. Az utolsó rész (`ipp/port1`) az erőforrás elérési útja.
+    Jegyezze fel a nyomtató adatait. Előfordulhat például, hogy a `ipp://myprinter.local.:631/ipp/port1`hoz hasonló értéket ad vissza. Az első rész a nyomtató neve. Az utolsó rész (`ipp/port1`) az erőforrás elérési útja.
 
-3. A terminálban írja be a `ping myprinter.local` értéket, majd kattintson az ENTER gombra.
+3. A terminálon írja be `ping myprinter.local`, majd válassza az ENTER billentyűt.
 
-   Jegyezze fel az IP-címet. Előfordulhat például, hogy a `PING myprinter.local (10.50.25.21)` értékhez hasonló értéket ad vissza.
+   Jegyezze fel az IP-címet. Előfordulhat például, hogy a `PING myprinter.local (10.50.25.21)`hoz hasonló értéket ad vissza.
 
-4. Használja az IP-cím és az erőforrás elérési útjának értékét. Ebben a példában az IP-cím `10.50.25.21`, az erőforrás elérési útja pedig `/ipp/port1`.
+4. Használja az IP-cím és az erőforrás elérési útjának értékét. Ebben a példában az IP-cím `10.50.25.21`, és az erőforrás elérési útja `/ipp/port1`.
 
 ## <a name="login-items"></a>Bejelentkezési elemek
 
 ### <a name="settings-apply-to-all-enrollment-types"></a>A beállítások a következőre vonatkoznak: minden regisztrációs típus
 
-- **Fájlok, mappák és egyéni alkalmazások**: **adja** meg a megnyitni kívánt fájl, mappa, egyéni alkalmazás vagy rendszeralkalmazás elérési útját, amikor egy felhasználó bejelentkezik az eszközre. A szervezete számára létrehozott vagy testre szabott rendszeralkalmazások vagy alkalmazások jellemzően a `Applications` mappában találhatók, és a `/Applications/AppName.app`-hez hasonló elérési úttal rendelkeznek. 
+- **Fájlok, mappák és egyéni alkalmazások**: **adja** meg a megnyitni kívánt fájl, mappa, egyéni alkalmazás vagy rendszeralkalmazás elérési útját, amikor egy felhasználó bejelentkezik az eszközre. A szervezete számára létrehozott vagy testre szabott rendszeralkalmazások vagy alkalmazások általában a `Applications` mappában találhatók, és a `/Applications/AppName.app`hoz hasonló elérési úttal rendelkeznek. 
 
   Számos fájlt, mappát és alkalmazást adhat hozzá. Írja be például a következőt:  
   
@@ -107,9 +107,9 @@ AirPrinter-kiszolgálók hozzáadásához szüksége lesz a nyomtató IP-címér
 - **Újraindítás gomb**: az **Elrejtés** gomb nem jeleníti meg az újraindítás gombot a bejelentkezési képernyőn. **Nincs konfigurálva** (alapértelmezés) az újraindítás gombot jeleníti meg.
 - **Alvó állapot gomb**: az **Elrejtés** nem jelenik meg a bejelentkezési képernyő alvó állapot gombján. **Nincs konfigurálva** (alapértelmezés) az alvó gomb megjelenítése.
 
-#### <a name="other"></a>más
+#### <a name="other"></a>Egyéb
 
-- **Felhasználói bejelentkezés letiltása a konzolról**: **letiltja** a bejelentkezéshez használt MacOS-parancssor elrejtése. A tipikus felhasználók esetében **Tiltsa le** ezt a beállítást. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a speciális felhasználók számára a bejelentkezést a MacOS parancssor használatával. A konzol üzemmódjának megadásához a felhasználók a username (Felhasználónév) mezőbe `>console` értéket kell megadniuk, és hitelesíteniük kell magukat a konzol ablakban.
+- **Felhasználói bejelentkezés letiltása a konzolról**: **letiltja** a bejelentkezéshez használt MacOS-parancssor elrejtése. A tipikus felhasználók esetében **Tiltsa le** ezt a beállítást. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a speciális felhasználók számára a bejelentkezést a MacOS parancssor használatával. A konzol mód megadásához a felhasználók a Felhasználónév mezőbe beírhatják `>console`, és a konzol ablakban kell hitelesíteniük.
 
 #### <a name="apple-menu"></a>Apple menü
 
@@ -138,8 +138,8 @@ Ez a funkció az alábbiakra vonatkozik:
   > [!TIP]
   > A **hitelesítő adatok** típusával adja hozzá a saját konfigurációs értékeit, hogy áthaladjon a bővítményen. Ehelyett érdemes lehet az Apple által biztosított beépített konfigurációs beállításokat használni a **Kerberos** -típusban.
 
-- **BŐVÍTMÉNY azonosítója** (csak hitelesítő adatok): adja meg az SSO-alkalmazás kiterjesztését azonosító köteg-azonosítót, például `com.apple.ssoexample`.
-- **Csoport azonosítója** (csak hitelesítő adatok): adja meg az egyszeri bejelentkezéses alkalmazás-bővítmény csoportjának azonosítóját. A csapat azonosítója az Apple által generált 10 karakteres alfanumerikus (számok és betűk) karakterlánc, például `ABCDE12345`. 
+- **BŐVÍTMÉNY azonosítója** (csak hitelesítő adatok): adja meg az egyszeri bejelentkezéses alkalmazás kiterjesztését azonosító köteg azonosítóját, például `com.apple.ssoexample`.
+- **Csoport azonosítója** (csak hitelesítő adatok): adja meg az egyszeri bejelentkezéses alkalmazás-bővítmény csoportjának azonosítóját. A csoport azonosítója az Apple által generált 10 karakteres alfanumerikus (számok és betűk) karakterlánc, például `ABCDE12345`. 
 
   [Keresse meg a csoport azonosítóját (az](https://help.apple.com/developer-account/#/dev55c3c710c) Apple webhelyének megnyitása), amely további információkat tartalmaz.
 
@@ -154,7 +154,7 @@ Ez a funkció az alábbiakra vonatkozik:
   - **Value Type (értéktípus**): adja meg az adattípust. A választható lehetőségek:
 
     - Sztring
-    - Boolean: a **konfigurációs érték**mezőben adja meg a `True` vagy a `False` értéket.
+    - Boolean: a **konfigurációs érték**mezőben adja meg `True` vagy `False`.
     - Egész szám: a **konfigurációs érték**mezőbe írjon be egy számot.
     
   - **Konfigurációs érték**: adja meg az adathalmazt.
@@ -179,7 +179,7 @@ Ez a funkció az alábbiakra vonatkozik:
 - **Jelszó minimális kora** (csak Kerberos): Itt adhatja meg, hogy hány nap elteltével kell használni a jelszót a tartományon, mielőtt a felhasználó módosíthatja azt. **Nincs konfigurálva** (az alapértelmezett érték) nem kényszeríti ki a minimális korhatárt a jelszó megváltozása előtt.
 - **Jelszó lejáratáról szóló értesítés** (csak Kerberos): adja meg, hogy hány nap elteltével járjon le a jelszó, hogy a felhasználók értesítést kapjanak a jelszavuk lejáratáról. **Nincs konfigurálva** (alapértelmezés) `15` napot használ.
 - **Jelszó lejárata** (csak Kerberos esetén): adja meg, hogy hány nap elteltével kell megváltoztatni az eszköz jelszavát. **Nincs konfigurálva** (alapértelmezett): a felhasználói jelszavak soha nem járnak le.
-- **Egyszerű név** (csak Kerberos): adja meg a Kerberos-tag felhasználónevét. Nem kell belefoglalni a tartománynevet. Például `user@contoso.com`, `user` az egyszerű név, és a `contoso.com` a tartománynév.
+- **Egyszerű név** (csak Kerberos): adja meg a Kerberos-tag felhasználónevét. Nem kell belefoglalni a tartománynevet. `user@contoso.com`például `user` az egyszerű név, a `contoso.com` pedig a tartomány neve.
 - **Active Directory Helykód** (csak Kerberos): adja meg annak a Active Directory helynek a nevét, amelyet a Kerberos-bővítménynek használnia kell. Előfordulhat, hogy nem kell módosítania ezt az értéket, mivel a Kerberos-bővítmény automatikusan megkeresi a Active Directory hely kódját.
 - **Gyorsítótár neve** (csak Kerberos): adja meg a Kerberos-gyorsítótár általános biztonsági szolgáltatásainak (GSS) nevét. Valószínűleg nem kell beállítania ezt az értéket.  
 - **Jelszóra vonatkozó követelmények üzenet** (csak Kerberos): adja meg a szervezete jelszavának a felhasználók számára megjelenített szöveges verzióját. Az üzenet akkor jelenik meg, ha nincs szükség Active Directory jelszavával kapcsolatos bonyolultsági követelményekre, vagy ne adja meg a jelszó minimális hosszát.  
@@ -202,15 +202,15 @@ Ez a funkció az alábbiakra vonatkozik:
 
 - **Alkalmazás azonosítója**: adja meg az alkalmazásnak a webhelyhez társítandó alkalmazás-azonosítóját. Az alkalmazás azonosítója tartalmazza a csoport AZONOSÍTÓját és a köteg AZONOSÍTÓját: `TeamID.BundleID`.
 
-  A csoport azonosítója az Apple által az alkalmazások fejlesztői számára generált, 10 karakterből álló alfanumerikus (betűk és számok) karakterlánc, például `ABCDE12345`. [Keresse meg a csoport azonosítóját](https://help.apple.com/developer-account/#/dev55c3c710c)  (az Apple webhelyének megnyitása), amely további információkat tartalmaz.
+  A csoport azonosítója az Apple által az alkalmazás-fejlesztők számára generált 10 karakteres alfanumerikus (betűk és számok) karakterlánc, például `ABCDE12345`. [Keresse meg a csoport azonosítóját](https://help.apple.com/developer-account/#/dev55c3c710c) (az Apple webhelyének megnyitása) további információkat talál.
 
   A Bundle-azonosító egyedileg azonosítja az alkalmazást, és általában fordított tartománynév-jelöléssel van formázva. A Finder csomag azonosítója például `com.apple.finder`. A csomag AZONOSÍTÓjának megkereséséhez használja az AppleScript-t a terminálban:
 
   `osascript -e 'id of app "ExampleApp"'`
 
-- **Tartomány**: adja meg az alkalmazáshoz társítandó webhely tartományát. A tartomány tartalmaz egy szolgáltatástípus és egy teljes tartománynevet, például `webcredentials:www.contoso.com`.
+- **Tartomány**: adja meg az alkalmazáshoz társítandó webhely tartományát. A tartomány tartalmaz egy szolgáltatástípus és egy teljes tartománynevet (például `webcredentials:www.contoso.com`).
 
-  A társított tartomány összes altartományával egyeztetheti `*.` (egy csillag helyettesítő karakter és egy pont) megadásával a tartomány elejéig. Az időszakot kötelező megadni. A pontos tartományok magasabb prioritással rendelkeznek, mint a helyettesítő tartományok. Így a fölérendelt tartományokból származó minták egyeztetése akkor történik meg, *Ha* nem található egyezés a teljes altartományban.
+  A társított tartomány összes altartományával egyeztetheti `*.` (egy csillag helyettesítő karakter és egy pont) megadásával a tartomány kezdete előtt. Az időszakot kötelező megadni. A pontos tartományok magasabb prioritással rendelkeznek, mint a helyettesítő tartományok. Így a fölérendelt tartományokból származó minták egyeztetése akkor történik meg, *Ha* nem található egyezés a teljes altartományban.
 
   A szolgáltatás típusa a következő lehet:
 
@@ -221,7 +221,7 @@ Ez a funkció az alábbiakra vonatkozik:
 - **Hozzáadás**: válassza ki az alkalmazások és a társított tartományok hozzáadásához.
 
 > [!TIP]
-> A hibakereséshez a macOS-eszközön nyissa meg a **System Preferences** > **profilok**elemet. Erősítse meg, hogy a létrehozott profil az eszköz profiljai listán található. Ha szerepel a felsorolásban, győződjön meg arról, hogy a **társított tartományok konfigurációja** szerepel a profilban, és tartalmazza a megfelelő alkalmazás-azonosítót és-tartományokat.
+> A hibakereséshez a macOS-eszközön nyissa meg a **Rendszerbeállítások** > a **profilok**elemet. Erősítse meg, hogy a létrehozott profil az eszköz profiljai listán található. Ha szerepel a felsorolásban, győződjön meg arról, hogy a **társított tartományok konfigurációja** szerepel a profilban, és tartalmazza a megfelelő alkalmazás-azonosítót és-tartományokat.
 
 ## <a name="next-steps"></a>További lépések
 

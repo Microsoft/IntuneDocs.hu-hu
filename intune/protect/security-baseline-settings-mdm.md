@@ -155,7 +155,7 @@ További információ: [szabályzat CSP-böngésző](https://docs.microsoft.com/
   
   **Alapértelmezett**: igen  
 
-## <a name="connectivity"></a>Connectivity  
+## <a name="connectivity"></a>Kapcsolat  
 További információ: [Policy CSP – kapcsolat](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-connectivity) a Windows dokumentációjában.  
 
 - **Internetes letöltés letiltása a webes közzététel és az online rendezési varázslók számára**  
@@ -285,7 +285,7 @@ További információ: [Policy CSP-DeviceLock](https://docs.microsoft.com/window
   Ha a *jelszó megkövetelése* *Igen*értékre van állítva, a következő beállítások érhetők el.
 
   - **Jelszó minimális karakterkészletének száma**  
-    Az erős PIN-kódokhoz vagy jelszóhoz szükséges összetett elemek (kis-és nagybetűk, számok és írásjelek) száma. A PIN-kód kikényszeríti a következő viselkedést az asztali és a mobileszközök esetében: 1 – 2 számjegyből és kisbetűkből álló karakterek esetén 3 számjegyű, kisbetűket és nagybetűket kell megadni. Asztali Microsoft-fiókok és tartományi fiókok esetében nem támogatott. 4 számjegyű, kisbetűket, nagybetűket és speciális karaktereket kell megadni. Az asztali verzióban nem támogatott. Az alapértelmezett érték 1.  
+    Az erős PIN-kódokhoz vagy jelszóhoz szükséges összetett elemek (kis-és nagybetűk, számok és írásjelek) száma. A PIN-kód kikényszeríti a következő viselkedést az asztali és a mobileszközök esetében: 1 – 2 számjegyből és kisbetűkből álló karakterek esetén 3 számjegyű, kisbetűket és nagybetűket kell megadni. Asztali Microsoft-fiókok és tartományi fiókok esetében nem támogatott. 4 számjegyű, kisbetűket, nagybetűket és speciális karaktereket kell megadni. Az asztali verzióban nem támogatott. Az alapértelmezett érték az 1.  
     [További információ](https://go.microsoft.com/fwlink/?linkid=2067055)  
     
     **Alapértelmezett**: 3  
@@ -296,7 +296,7 @@ További információ: [Policy CSP-DeviceLock](https://docs.microsoft.com/window
       
     **Alapértelmezett**: 10  
 
-  - **Jelszó lejárata (nap)**  
+  - **Jelszó érvényessége (nap)**  
     A jelszó maximális élettartama házirend-beállítás határozza meg, hogy mennyi ideig használható a jelszó, mielőtt a rendszer megköveteli a felhasználótól, hogy módosítsa azt. Beállíthatja, hogy a jelszavak egy 1 és 999 közötti számú nap elteltével lejárnak, vagy megadhatja, hogy a jelszavak soha ne járjanak le, ha a napok számát 0-ra állítja. Ha a jelszó maximális kora 1 és 999 nap közé esik, a jelszó minimális élettartama nem lehet kisebb, mint a jelszó maximális kora. Ha a jelszó maximális élettartama 0, akkor a jelszó minimális kora 0 és 998 nap közötti érték lehet.  
     [További információ](https://go.microsoft.com/fwlink/?linkid=2067028)  
     
@@ -1161,7 +1161,7 @@ További információ: [Policy CSP-LocalPoliciesSecurityOptions](https://docs.mi
   **Alapértelmezett**: NTLM V2 és 128 bites titkosítás szükséges  
   
 - **A zárolási képernyő inaktivitásának percben, amíg a képernyőkímélő be nem kapcsol**  
-  A Windows a bejelentkezési munkamenetek inaktivitását észleli, és ha az inaktív idő mennyisége meghaladja az inaktivitási korlátot, a képernyőkímélő futni fog, és zárolja a munkamenetet.  
+  A Windows észleli a bejelentkezési munkamenetek tétlenségét, és ha a tétlenség ideje túllépi a tétlenségi korlátot, a rendszer futtatja a képernyőkímélőt és lezárja a munkamenetet.  
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067210)  
   
   **Alapértelmezett**: 15
@@ -1197,7 +1197,7 @@ További információ: [Policy CSP-LocalPoliciesSecurityOptions](https://docs.mi
   **Alapértelmezett**: igen
   
 - **Rendszergazdai jogosultságszint-emelési kérések viselkedése**  
-  Ezzel a házirend-beállítással szabályozható a rendszergazdák jogosultságszint-emelési kérésének viselkedése. Az alábbi lehetőségek állnak rendelkezésére: 
+  Ezzel a házirend-beállítással szabályozható a rendszergazdák jogosultságszint-emelési kérésének viselkedése. A választható beállítások: 
   - *Jogosultságszint-emelés kérés nélkül* – lehetővé teszi az emelt szintű fiókok számára a jogosultságszint-emelést a beleegyezés vagy a hitelesítő adatok megkövetelése nélkül. Megjegyzés: ezt a beállítást csak a legszigorúbban korlátozott környezetekben használhatja. 
   - *Hitelesítő adatok kérése a biztonságos asztalon* – ha egy művelethez jogosultságszint-emelési jogosultságra van szükség, a rendszer felszólítja a felhasználót a biztonságos asztalra, hogy adjon meg egy kiemelt felhasználónevet és jelszót. Ha a felhasználó érvényes hitelesítő adatokat ír be, a művelet a felhasználó legmagasabb rendelkezésre állási jogosultságával folytatódik. 
   - *Beleegyezés kérése a biztonságos asztalon* – ha egy művelethez jogosultságszint-emelésre van szükség, a felhasználónak meg kell adnia a biztonságos asztalt az engedélyezés vagy a Megtagadás lehetőség kiválasztásához. Ha a felhasználó az Engedélyezés lehetőséget választja, a művelet a felhasználó legmagasabb rendelkezésre állási jogosultságával folytatódik. 
@@ -1210,7 +1210,7 @@ További információ: [Policy CSP-LocalPoliciesSecurityOptions](https://docs.mi
   **Alapértelmezett**: beleegyezés kérése a biztonságos asztalon
   
 - **Minimális munkamenet-biztonság az NTLM SSP-alapú ügyfelek számára**  
-  Ez a biztonsági beállítás lehetővé teszi az ügyfél számára, hogy megkövetelje a 128 bites titkosítás és/vagy az NTLMv2 munkamenet-biztonság egyeztetését. Ezek az értékek a LAN Manager hitelesítési szintjének biztonsági beállításának értékétől függenek. Az alábbi lehetőségek állnak rendelkezésére:
+  Ez a biztonsági beállítás lehetővé teszi az ügyfél számára, hogy megkövetelje a 128 bites titkosítás és/vagy az NTLMv2 munkamenet-biztonság egyeztetését. Ezek az értékek a LAN Manager hitelesítési szintjének biztonsági beállításának értékétől függenek. A választható beállítások:
   - *NTLMv2-munkamenet biztonságának megkövetelése* – a kapcsolat sikertelen lesz, ha az NTLMv2 protokoll nincs egyeztetve. 
   - *128 bites titkosítás megkövetelése* – ha erős titkosítás (128 bites) nincs egyeztetve, a rendszer nem fogja tudni a kapcsolatokat.
   - *NTLMv2 és 128 bites titkosítás megkövetelése*.  
@@ -1220,7 +1220,7 @@ További információ: [Policy CSP-LocalPoliciesSecurityOptions](https://docs.mi
   **Alapértelmezett**: NTLM v2 128 titkosítás szükséges
   
 - **Intelligens kártya eltávolításának viselkedése**  
-  Ez a biztonsági beállítás határozza meg, hogy mi történjen, ha a bejelentkezett felhasználó intelligens kártyáját eltávolítja az intelligenskártya-olvasóból. Az alábbi lehetőségek állnak rendelkezésére:
+  Ez a biztonsági beállítás határozza meg, hogy mi történjen, ha a bejelentkezett felhasználó intelligens kártyáját eltávolítja az intelligenskártya-olvasóból. A választható beállítások:
   - *Nincs művelet*. 
   - *Munkaállomás zárolása* – a munkaállomás az intelligens kártya eltávolításakor zárolva van, így a felhasználók elhagyhatják a területeket, saját intelligens kártyájuk is megtarthatják őket, és továbbra is fenntartják a védett munkamenetet.
   - *Kijelentkezés kényszerítése* – a rendszer automatikusan kijelentkezik a felhasználót az intelligens kártya eltávolításakor.
@@ -1257,7 +1257,7 @@ További információ: [Policy CSP-LocalPoliciesSecurityOptions](https://docs.mi
   **Alapértelmezett**: jogosultságszint-emelési kérések automatikus megtagadása
   
 - **Rendszergazdai engedélyezési mód szükséges a rendszergazdák számára**  
-  Ezzel a házirend-beállítással szabályozható a számítógépen a felhasználói fiókok felügyelete (UAC) összes házirend-beállításának viselkedése. Ha módosítja ezt a házirend-beállítást, újra kell indítania a számítógépet. Az alábbi lehetőségek állnak rendelkezésére:   
+  Ezzel a házirend-beállítással szabályozható a számítógépen a felhasználói fiókok felügyelete (UAC) összes házirend-beállításának viselkedése. Ha módosítja ezt a házirend-beállítást, újra kell indítania a számítógépet. A választható beállítások:   
   - *Nincs konfigurálva* – a rendszergazdai engedélyezési mód és az összes kapcsolódó UAC-házirend-beállítás le van tiltva. Megjegyzés: Ha ez a házirend-beállítás le van tiltva, a Security Center értesíti arról, hogy az operációs rendszer általános biztonsága csökkent. 
   - *Igen* – a rendszergazdai jóváhagyási mód engedélyezve van. Ezt a házirendet engedélyezni kell, és a kapcsolódó UAC-házirend beállításait megfelelően be kell állítani ahhoz, hogy a beépített rendszergazdai fiók és az összes többi olyan felhasználó, aki tagja a rendszergazdák csoportnak, rendszergazdai engedélyezéses módban fusson.  
 
@@ -1281,7 +1281,7 @@ További információ: [Policy CSP-LocalPoliciesSecurityOptions](https://docs.mi
   **Alapértelmezett**: *O:Bag: rossz: (A;; RC;;; BA)*
 
 - **Rendszergazdai jóváhagyási mód használata**  
-  Ezzel a házirend-beállítással szabályozható a rendszergazdai engedélyezési mód működése a beépített rendszergazda fiókhoz. Az alábbi lehetőségek állnak rendelkezésére: 
+  Ezzel a házirend-beállítással szabályozható a rendszergazdai engedélyezési mód működése a beépített rendszergazda fiókhoz. A választható beállítások: 
   - *Igen* – a beépített rendszergazdai fiók rendszergazdai jóváhagyási módot használ. Alapértelmezés szerint a jogosultságszint-emelést igénylő műveletek megkérik a felhasználót, hogy hagyja jóvá a műveletet. 
   - *Nincs konfigurálva* – a beépített rendszergazdai fiók minden olyan alkalmazást futtat, amely teljes körű rendszergazdai jogosultságokkal rendelkezik. 
 
@@ -1299,7 +1299,7 @@ További információ: [Policy CSP-LocalPoliciesSecurityOptions](https://docs.mi
   **Alapértelmezett**: igen
 
 - **Alkalmazások telepítésének észlelése és Jogosultságszint-emelés kérése**  
-  Ezzel a házirend-beállítással szabályozható a számítógép alkalmazás-telepítési észlelésének viselkedése. Az alábbi lehetőségek állnak rendelkezésére: 
+  Ezzel a házirend-beállítással szabályozható a számítógép alkalmazás-telepítési észlelésének viselkedése. A választható beállítások: 
   - *Engedélyezve* – ha olyan alkalmazás-telepítési csomagot észlel, amely jogosultságszint-emelést igényel, a rendszer megkéri a felhasználót, hogy adjon meg egy rendszergazdai felhasználónevet és jelszót. Ha a felhasználó érvényes hitelesítő adatokat ad meg, a művelet folytatódik a megfelelő jogosultsággal. 
   - *Letiltott* – az alkalmazás telepítési csomagjai nem észlelhetők, és a rendszer kéri a jogosultságszint-emelést. Az általános jogú felhasználói asztalokat futtató és a delegált telepítési technológiákat (például Csoportházirend-alapú szoftvertelepítés vagy System Management Server (SMS)) használó vállalatoknak le kell tiltaniuk ezt a házirend-beállítást. Ebben az esetben a telepítő észlelése szükségtelen.  
   
@@ -1616,7 +1616,7 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
   **Alapértelmezett**: letiltás
   
 - **Hitelesítő adatok ellopási típusának tiltása**  
-  A Microsoft Defender hitelesítőadat-őr virtualizálás-alapú biztonságot használ a titkok elkülönítésére, így csak a rendszerjogosultságú rendszerszoftverek férhetnek hozzájuk. A titkos kulcsokhoz való jogosulatlan hozzáférés a hitelesítő adatok ellopására, például pass-The-hash vagy pass-The-Ticket típusú támadásokra is vezethet. A Microsoft Defender hitelesítőadat-őr megakadályozza ezeket a támadásokat az NTLM jelszó-kivonatok, a Kerberos-jegyek és az alkalmazások tartományi hitelesítő adatokként tárolt hitelesítő adatainak védelmével.  
+  A Microsoft Defender hitelesítőadat-őr virtualizálás-alapú biztonságot használ a titkok elkülönítésére, így csak a rendszerjogosultságú rendszerszoftverek férhetnek hozzájuk. A titkos kódokhoz való illetéktelen hozzáférés a hitelesítési adatok ellopását okozó (például pass-the-hash vagy pass-the-ticket típusú) támadásokhoz vezethetnek. A Microsoft Defender hitelesítőadat-őr megakadályozza ezeket a támadásokat az NTLM jelszó-kivonatok, a Kerberos-jegyek és az alkalmazások tartományi hitelesítő adatokként tárolt hitelesítő adatainak védelmével.  
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067065)  
   
   **Alapértelmezett**: Engedélyezés

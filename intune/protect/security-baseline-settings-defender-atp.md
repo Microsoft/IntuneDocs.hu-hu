@@ -37,17 +37,17 @@ További információ: [WINDOWSDEFENDERAPPLICATIONGUARD CSP](https://docs.micros
 
 A Microsoft Edge használata közben a Microsoft Defender Application Guard védi a környezetet a szervezete által nem megbízható helyekről. Ha a felhasználók olyan helyeket látogatnak meg, amelyek nem szerepelnek az elszigetelt hálózati határon, a helyek egy Hyper-V virtuális böngészési munkamenetben nyílnak meg. A megbízható helyeket a hálózat határa határozza meg.  
 
-- **Application Guard** - *Beállítások/AllowWindowsDefenderApplicationGuard*  
+- **Application Guard** - *Settings/AllowWindowsDefenderApplicationGuard*  
   Válassza az *Igen* lehetőséget a funkció bekapcsolásához, amely nem megbízható helyeket nyit meg egy Hyper-V virtualizált tallózási tárolóban. Ha a *nincs konfigurálva*értékre van állítva, a rendszer minden helyet (megbízható és nem megbízható) nyit meg az eszközön, és nem virtualizált tárolóban.  
 
   **Alapértelmezett**: igen
  
-  - **Külső tartalom a vállalati webhelyeken** - *Beállítások/BlockNonEnterpriseContent*  
+  - **Külső tartalom a vállalati helyeken** - *Beállítások/BlockNonEnterpriseContent*  
     Válassza az *Igen* lehetőséget a nem jóváhagyott webhelyekről származó tartalom betöltésének letiltásához. Ha a *nincs konfigurálva*értékre van állítva, a nem vállalati webhelyek megnyithatók az eszközön. 
  
     **Alapértelmezett**: igen
 
-  - A **vágólap viselkedése** - *Beállítások/ClipboardSettings*  
+  - A **vágólap működése** - *Beállítások/ClipboardSettings*  
     Válassza ki, hogy mely másolási és beillesztési műveletek engedélyezettek a helyi számítógép és az Application Guard virtuális böngésző között.  A lehetőségek a következők:
     - Nincs konfigurálva  
     - A számítógép és a böngésző közötti másolás és beillesztés tiltása a kettő között. Az adatok nem vihetők át a számítógép és a virtuális böngésző között.  
@@ -91,7 +91,7 @@ További információ: [Policy CSP-SmartScreen](https://docs.microsoft.com/windo
   **Alapértelmezett**: letiltás 
 
 - **Hitelesítő adatok ellopási típusának tiltása**  
-  Állítsa az *Engedélyezés* [elemre a származtatott tartományi hitelesítő adatoknak a hitelesítő adatokkal](https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard)való ellátásához. A Microsoft Defender hitelesítőadat-őr virtualizálás-alapú biztonságot használ a titkok elkülönítésére, így csak a rendszerjogosultságú rendszerszoftverek férhetnek hozzájuk. A titkos kulcsokhoz való jogosulatlan hozzáférés a hitelesítő adatok ellopására, például pass-The-hash vagy pass-The-Ticket típusú támadásokra is vezethet. A Microsoft Defender hitelesítőadat-őr megakadályozza ezeket a támadásokat az NTLM jelszó-kivonatok, a Kerberos-jegyek és az alkalmazások tartományi hitelesítő adatokként tárolt hitelesítő adatainak védelmével.  
+  Állítsa az *Engedélyezés* [elemre a származtatott tartományi hitelesítő adatoknak a hitelesítő adatokkal](https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard)való ellátásához. A Microsoft Defender hitelesítőadat-őr virtualizálás-alapú biztonságot használ a titkok elkülönítésére, így csak a rendszerjogosultságú rendszerszoftverek férhetnek hozzájuk. A titkos kódokhoz való illetéktelen hozzáférés a hitelesítési adatok ellopását okozó (például pass-the-hash vagy pass-the-ticket típusú) támadásokhoz vezethetnek. A Microsoft Defender hitelesítőadat-őr megakadályozza ezeket a támadásokat az NTLM jelszó-kivonatok, a Kerberos-jegyek és az alkalmazások tartományi hitelesítő adatokként tárolt hitelesítő adatainak védelmével.  
 
   **Alapértelmezett**: Engedélyezés
 
@@ -257,13 +257,13 @@ További információ a [BitLocker csoportházirend beállítások](https://docs
 ## <a name="endpoint-detection-and-response"></a>Végpontok észlelése és válasza  
 További információ: [WINDOWSADVANCEDTHREATPROTECTION CSP](https://docs.microsoft.com/windows/client-management/mdm/windowsadvancedthreatprotection-csp) a Windows dokumentációjában.  
 
-- **Gyorsítsa fel a telemetria jelentéskészítési gyakoriságát** - *konfiguráció/TelemetryReportingFrequency*
+- **Telemetria jelentéskészítés gyakoriságának gyorsítása** - *konfiguráció/TelemetryReportingFrequency*
 
   A Microsoft Defender komplex veszélyforrások elleni védelem telemetria jelentéskészítési gyakoriságának gyorsítása.  
 
   **Alapértelmezett**: igen
 
-- **Minta megosztása az összes fájlhoz** - *konfiguráció/SampleSharing* 
+- **Minta megosztása minden fájlhoz** - *konfiguráció/SampleSharing* 
 
   Visszaadja vagy beállítja a Microsoft Defender komplex veszélyforrások elleni védelem minta-megosztási konfigurációs paraméterét.  
 
@@ -429,7 +429,7 @@ További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/
 ## <a name="microsoft-defender-firewall"></a>Microsoft Defender-tűzfal
 További információ: [TŰZFAL CSP](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp) a Windows dokumentációjában.
 
-- **Biztonsági társítás üresjárati ideje törlés előtt** - *MdmStore/Global/SaIdleTime*   
+- **Biztonsági társítás tétlenségi ideje a törlés előtt** - *MdmStore/Global/SaIdleTime*   
   A biztonsági társítások akkor törlődnek, ha a hálózati forgalom nem látható az adott számú másodpercnél.  
   **Alapértelmezett**: 300
 
@@ -441,7 +441,7 @@ További információ: [TŰZFAL CSP](https://docs.microsoft.com/windows/client-m
   Itt adhatja meg, hogy a fogadási oldalon lévő szoftver skálázása engedélyezve legyen-e az IPsec Tunnel Gateway-forgatókönyvhöz továbbított titkosított fogadás és tiszta szöveg esetében. Ez biztosítja, hogy a rendszer megőrzi a csomagok sorrendjét.  
   **Alapértelmezett**: eszköz alapértelmezett értéke
 
-- **Tűzfal-profil tartománya** - *FirewallRules/FirewallRuleName/profilok*  
+- **Tűzfal-profil tartomány** - *FirewallRules/FirewallRuleName/profilok*  
   Meghatározza azokat a profilokat, amelyekhez a szabály tartozik: tartomány, privát, nyilvános. Ez az érték a tartományokhoz csatlakozó hálózatok profilját jelöli.  
 
   Elérhető beállítások:  
@@ -510,7 +510,7 @@ További információ: [TŰZFAL CSP](https://docs.microsoft.com/windows/client-m
   - **A csoportházirend házirend-szabályai nem lettek egyesítve**  
     **Alapértelmezett**: igen  
 
-- **Tűzfal-profil private** - *FirewallRules/FirewallRuleName/Profiles*  
+- **Tűzfal-profil magánhálózati** - *FirewallRules/FirewallRuleName/profilok*  
   Meghatározza azokat a profilokat, amelyekhez a szabály tartozik: tartomány, privát, nyilvános. Ez az érték a magánhálózatok profilját jelöli.  
 
   Elérhető beállítások: 
@@ -590,7 +590,7 @@ További információ: [TŰZFAL CSP](https://docs.microsoft.com/windows/client-m
 
 További információ: [PASSPORTFORWORK CSP](https://docs.microsoft.com/windows/client-management/mdm/passportforwork-csp) a Windows dokumentációjában.
 
-- **A vállalati Windows Hello** - *TenantId/Policies/UsePassportForWork*    
+- **Vállalati Windows Hello**  - TenantId/házirendek/UsePassportForWork konfigurálása    
   A vállalati Windows Hello egy alternatív módszer a Windowsba való bejelentkezéshez jelszavak, intelligens kártyák és virtuális intelligens kártyák helyett.  
 
   - Ha az *Igen*értékre van állítva, akkor engedélyezi ezt a házirendet, és az eszköz kiépíti a vállalati Windows Hello-t.  
@@ -606,12 +606,12 @@ A vállalati Windows Hello egy alternatív módszer a Windowsba való bejelentke
 
   **Alapértelmezett**: igen  
 
-- **Kisbetűk megkövetelése a PIN**-kódban  - *TenantId/policies/PINComplexity/LowercaseLetters*  
+- **Kisbetűk megkövetelése a PIN** -kódban - *TenantId/policies/PINComplexity/LowercaseLetters*  
   **Alapértelmezés**: engedélyezett  
 
-- **Speciális karakterek megkövetelése a PIN**-kódban  - *TenantId/policies/PINComplexity/SpecialCharacters*  
+- **Speciális karakterek megkövetelése a PIN** -kódban - *TenantId/policies/PINComplexity/SpecialCharacters*  
   **Alapértelmezés**: engedélyezett  
 
-- Nagybetűk **megkövetelése a PIN**-kódban  - *TenantId/policies/PINComplexity/UppercaseLetters*   
+- **Nagybetűk megkövetelése a PIN** -kódban - *TenantId/policies/PINComplexity/UppercaseLetters*   
   **Alapértelmezés**: engedélyezett  
 

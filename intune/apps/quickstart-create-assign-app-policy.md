@@ -29,7 +29,7 @@ ms.locfileid: "72507126"
 
 Ebben a rövid útmutatóban az Intune-nal létrehoz és hozzárendel egy alkalmazásvédelmi szabályzatot egy ügyfélalkalmazáshoz a végfelhasználó eszközén. Az Intune alkalmazásvédelmi szabályzatokkal ellenőrzi, hogy az alkalmazások megfelelnek-e a szervezet adatvédelmi követelményeinek.
 
-Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon ingyenes próbafiókot](../fundamentals/free-trial-sign-up.md).
+Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon egy ingyenes próbafiókkal](../fundamentals/free-trial-sign-up.md).
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -37,9 +37,9 @@ Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon ingyenes próbafióko
 
 ## <a name="sign-in-to-intune"></a>Bejelentkezés az Intune-ba
 
-Jelentkezzen be az [Intune-ba](https://aka.ms/intuneportal) [globális rendszergazdaként vagy Intune-szolgáltatásadminisztrátorként](../fundamentals/users-add.md#types-of-administrators). Ha létrehozott egy Intune próba-előfizetést, az a fiók lesz a globális rendszergazda, amelyikkel azt létrehozta.
+Jelentkezzen be az [Intune-ba](https://aka.ms/intuneportal) [globális rendszergazdaként vagy Intune-szolgáltatásadminisztrátorként](../fundamentals/users-add.md#types-of-administrators). Ha létrehozott egy Intune próba-előfizetést, az a fiók lesz a globális rendszergazda, amelyikkel létrehozta azt.
 
-## <a name="create-an-app-protection-policy"></a>Alkalmazásvédelmi szabályzat létrehozása
+## <a name="create-an-app-protection-policy"></a>Alkalmazás védelmi szabályzat létrehozása
 
 Az alábbi lépések végrehajtásával hozhat létre egy alkalmazás-védelmi szabályzatot:
 
@@ -72,7 +72,7 @@ Alkalmazásvédelmi szabályzat hozzárendeléséhez kövesse az alábbi lépés
 3. Válassza a **Hozzárendelések** lehetőséget.
 4. A **Befoglalás** lapon válassza a **Belefoglalandó csoportok kijelölése** lehetőséget.
 5. Válassza a **Contoso tesztelők** elemet a belefoglalandó csoportként.
-6. Kattintson a **kijelölés**@no__t – 1**Mentés**gombra. 
+6. Kattintson a **kijelölés** > **Mentés**gombra. 
 
 Ezzel hozzárendelte az alkalmazásvédelmi szabályzatot.
 

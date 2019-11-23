@@ -43,25 +43,25 @@ Ha az eszközön rosszindulatú alkalmazásokat, például kártevőket észlel 
 ![Kártékony alkalmazások fogalmi képe](./media/sophos-mtd-connector/sophos_malicious_apps_blocked.png)  
 
 **A hozzáférés szervizelésen keresztüli**engedélyezése:  
-@no__t – a 0Conceptual a szervizelés után megadott elérési képe a @ no__t-1
+![szervizelési](./media/sophos-mtd-connector/sophos_malicious_apps_unblocked.png) után kiadott fogalmi rendszerkép
 
 ### <a name="control-access-based-on-threat-to-network"></a>Hozzáférés vezérlése hálózati fenyegetés alapján  
 Észlelheti a hálózatra irányuló fenyegetéseket, például a személyes támadásokat, és az eszköz kockázata alapján biztosíthatja a Wi-Fi-hálózatokhoz való hozzáférést.  
 
 **Hálózati hozzáférés letiltása Wi-Fi-n keresztül**:  
-@no__t 0Block hálózati hozzáférés Wi-Fi @ no__t-1 használatával
+![hálózati hozzáférés letiltása Wi-Fi-](./media/sophos-mtd-connector/sophos_network_wifi_blocked.png)
 
 **A hozzáférés szervizelésen keresztüli**engedélyezése:   
-![Access a Szervizelési @ no__t-1  
+a szervizelés](./media/sophos-mtd-connector/sophos_network_wifi_unblocked.png) ![hozzáférés engedélyezett  
 
 ### <a name="control-access-to-sharepoint-online-based-on-threat-to-network"></a>Hozzáférés vezérlése a SharePoint Online-hoz hálózati fenyegetés alapján  
 Észlelheti a hálózatra irányuló fenyegetéseket, például az ember által a középső támadásokat, és megakadályozhatja a vállalati fájlok szinkronizálását az eszköz kockázata alapján.  
 
 **A SharePoint Online letiltása hálózati fenyegetések észlelése esetén**:   
-@no__t – a SharePoint Online 0Block a hálózati fenyegetések észlelése esetén @ no__t-1  
+a SharePoint Online ![letiltása hálózati fenyegetések észlelésekor](./media/sophos-mtd-connector/sophos_network_spo_blocked.png)  
 
 **A hozzáférés szervizelésen keresztüli**engedélyezése:  
-@no__t – 0Access a Sharepointhoz – példa: @ no__t-1  
+a SharePoint-példa szervizeléséhez ![hozzáférés biztosított](./media/sophos-mtd-connector/sophos_network_spo_unblocked.png)  
 
 ## <a name="supported-platforms"></a>Támogatott platformok  
 - Android 5,0 és újabb verziók

@@ -134,9 +134,9 @@ Ezek az utasítások a Windows 10 évforduló frissítés (más néven RS1-et) f
 2. Kattintson a **Fiókok** > **Munkahelyi hozzáférés** elemre.  
     ![Képernyőkép a HoloLens beállítások alkalmazásáról, kiemelt Fiókok hivatkozással](./media/RS1_holoLens_SettingsRS1_Accounts_06.png)  
 
-3. Válassza ki a csatlakoztatott fiókot > **szinkronizálást**.  ![Screenshot HoloLens beállítások alkalmazás, szinkronizálás gomb kiemelve @ no__t-2  
+3. Válassza ki a csatlakoztatott fiókot > **szinkronizálást**.  ![képernyőkép a HoloLens-beállítások alkalmazásról, Kiemelt szinkronizációs gomb](./media/RS1_holoLens_SyncRS1_Sync_08.png)  
 
-### <a name="windows-phone-81"></a>WVPN-profilokdows Phone 8.1
+### <a name="windows-phone-81"></a>Windows Phone 8.1
 
 1. Lépjen a **Minden alkalmazás** > **Beállítások** > **Munkahely** menüpontra.
 

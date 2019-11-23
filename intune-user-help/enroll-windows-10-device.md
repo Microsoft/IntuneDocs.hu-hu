@@ -76,7 +76,7 @@ Ezek a lépések bemutatják, hogyan regisztrálhat olyan eszközt, amely a Wind
 
 2. Nyissa meg a **Beállítások** alkalmazást. Ha az alkalmazás nem érhető el az alkalmazások listájában, ugorjon a keresősáv elemre, és írja be a "Settings" (beállítások) kifejezést.
 
-3. Válassza**a** **fiókok**@no__t – 1 fiókját.  
+3. Válassza a **fiókok** > **a fiókját**.  
 
 
     ![Válassza a Saját fiók elemet](./media/W10-enroll-2-accounts-your-account.png)  

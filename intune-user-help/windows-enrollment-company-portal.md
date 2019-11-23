@@ -62,8 +62,8 @@ A regisztrációs lépések eltérnek a Windows 10-es eszközök különböző v
 
 4. Ha a verziója  
 
-    * __1607 vagy újabb__: regisztrálja az eszközt a [ **Beállítások** > **fiók** > **hozzáférési munkahelyi vagy iskolai** útvonalon](enroll-windows-10-device.md#enroll-windows-10-version-1607-and-later-device).   
-    * __1511 vagy korábbi__: regisztrálja az eszközt a [ **Beállítások** > **fiók**@no__t a**fiókok** útvonalán](enroll-windows-10-device.md#enroll-windows-10-version-1511-and-earlier-device).  
+    * __1607 vagy újabb__: regisztrálja az eszközt a [ **Beállítások** > **fiók** > a **munkahelyi vagy iskolai útvonalhoz való hozzáféréshez** ](enroll-windows-10-device.md#enroll-windows-10-version-1607-and-later-device).   
+    * __1511 vagy korábbi__: regisztrálja az eszközt a [ **fiókok** útvonalán > **Beállítások** > **fiókkal** ](enroll-windows-10-device.md#enroll-windows-10-version-1511-and-earlier-device).  
 
 ### <a name="windows-10-mobile-devices"></a>Windows 10 Mobile rendszerű eszközök
 
@@ -72,8 +72,8 @@ A regisztrációs lépések eltérnek a Windows 10-es eszközök különböző v
 3. Az __eszköz adatai__alatt keresse meg a __verziót__.  
 4. Ha a verziója  
 
-    * __1607 vagy újabb__: regisztrálja az eszközt a [ > **hozzáférési munkahelyi vagy iskolai** útvonalon](enroll-windows-10-device.md#enroll-windows-10-version-1607-and-later-device).   
-    * __1511 vagy korábbi__: regisztrálja az eszközt a [ > **accounts** Route **Beállítások**](enroll-windows-10-device.md#enroll-windows-10-version-1511-and-earlier-device)használatával.  
+    * __1607 vagy újabb__: regisztrálja az eszközt a [ **beállításokkal** > **hozzáférés munkahelyi vagy iskolai** útvonalhoz](enroll-windows-10-device.md#enroll-windows-10-version-1607-and-later-device).   
+    * __1511 vagy korábbi__: regisztrálja az eszközt a [ **Beállítások** > **accounts** Route](enroll-windows-10-device.md#enroll-windows-10-version-1511-and-earlier-device)használatával.  
 
 ## <a name="enroll-non-windows-10-devices"></a>Nem Windows 10-es eszközök regisztrálása  
 A következő cikkek használatával regisztrálhat más támogatott Windows-eszközöket a Céges portál webhelyről:   
@@ -91,4 +91,4 @@ Az eszközkezelés, a Céges portál és a mindkettő használatáról az iskol�
 * [Mi történik, amikor regisztrálja az eszközt az Intune-ban](what-happens-if-you-install-the-company-portal-app-and-enroll-your-device-in-intune-windows.md)  
 * [Milyen információkat tekinthet meg a szervezetem az eszköz regisztrálásakor?](what-info-can-your-company-see-when-you-enroll-your-device-in-intune.md)  
 
-Segítségre van szüksége? Forduljon a cég informatikai támogatásához. [Lépjen a céges portál webhelyére](https://go.microsoft.com/fwlink/?linkid=2010980) , ahol megkeresheti a szervezet informatikai kapcsolattartási adatait.  
+Segítség Forduljon a cég informatikai támogatásához. [Lépjen a céges portál webhelyére](https://go.microsoft.com/fwlink/?linkid=2010980) , ahol megkeresheti a szervezet informatikai kapcsolattartási adatait.  

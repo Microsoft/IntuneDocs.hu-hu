@@ -84,11 +84,11 @@ Attól függően, hogy hová szeretné átirányítani a naplózási naplót, a 
 
             Az [Azure log Analytics-munkaterület](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace) további részleteket tartalmaz ezekről a beállításokról.
 
-    - **LOG** > **AuditLogs**: ezt a lehetőséget választva elküldheti az [Intune-naplókat](../monitor-audit-logs.md) a Storage-fiókba, az Event hub-ba vagy a log analyticsbe. A naplók az Intune-ban változást okozó feladatok előzményeit jelenítik meg, beleértve azt is, hogy ki és mikor.
+    - **LOG** > **AuditLogs**: válassza ezt a lehetőséget, ha el szeretné küldeni az [Intune-naplókat](../monitor-audit-logs.md) a Storage-fiókba, az Event hub-ba vagy a log analyticsbe. A naplók az Intune-ban változást okozó feladatok előzményeit jelenítik meg, beleértve azt is, hogy ki és mikor.
 
       Ha a Storage-fiók használata mellett dönt, adja meg, hogy hány napig szeretné megőrizni az adatok megőrzésének idejét. Az adatok örökre megtartásához állítsa a **megőrzés (nap)** értéket `0` (nulla) értékre.
 
-    - **LOG** > **OperationalLogs**: az operatív naplók (előzetes verzió) az Intune-ban regisztrált felhasználók és eszközök sikerességét vagy hibáit, valamint a nem megfelelő eszközök részleteit mutatják be. Válassza ezt a lehetőséget, ha a beléptetési naplókat el szeretné küldeni a Storage-fiókba, az Event Hubbe vagy a log analyticsbe.
+    - **LOG** > **OperationalLogs**: a működési naplók (előzetes verzió) az Intune-ban regisztrált felhasználók és eszközök sikerességét vagy hibáit, valamint a nem megfelelő eszközök részleteit mutatják be. Válassza ezt a lehetőséget, ha a beléptetési naplókat el szeretné küldeni a Storage-fiókba, az Event Hubbe vagy a log analyticsbe.
 
       Ha a Storage-fiók használata mellett dönt, adja meg, hogy hány napig szeretné megőrizni az adatok megőrzésének idejét. Az adatok örökre megtartásához állítsa a **megőrzés (nap)** értéket `0` (nulla) értékre.
 
@@ -106,7 +106,7 @@ Attól függően, hogy hová szeretné átirányítani a naplózási naplót, a 
 
     ![Az Intune-naplókat egy Azure Storage-fiókba küldő minta képe](./media/review-logs-using-azure-monitor/diagnostics-settings-example.png)
 
-4. **Mentse** a változtatásokat. A beállítás megjelenik a listában. A létrehozást követően módosíthatja a beállításokat, ha a **beállítás**@no__t – 1**Mentés**lehetőségre kattint.
+4. **Mentse** a változtatásokat. A beállítás megjelenik a listában. A létrehozást követően módosíthatja a beállításokat, ha a beállítások **szerkesztése** > **Mentés**lehetőségre kattint.
 
 ## <a name="use-audit-logs-throughout-intune"></a>Naplófájlok használata az Intune-ban
 
@@ -115,13 +115,13 @@ A naplókat az Intune más részeiben is exportálhatja, beleértve a regisztrá
 Például a naplók exportálásához az eszköz megfelelőségének használatakor:
 
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Válassza az **eszköz megfelelősége** > **figyelő** > **naplókat**:
+2. Válassza az **eszköz megfelelősége** > **figyelő** > **naplózási naplók**elemet:
 
     ![Naplók kiválasztása az Intune-beli adatAzure Monitor Storage, Events hubok vagy Analytics szolgáltatásba való átirányításához](./media/review-logs-using-azure-monitor/audit-logs-under-monitor-in-compliance.png)
 
 3. Válassza **az adatbeállítások exportálása**lehetőséget. Ha nincs engedélyezve, bekapcsolhatja a **diagnosztikai beállításokat**. Azt is megadhatja, hogy hová szeretné elküldeni a naplókat a [naplók küldése az Azure monitorba](#send-logs-to-azure-monitor) című cikkben leírtak szerint (ez a cikk).
 
-## <a name="cost-considerations"></a>A Cost szempontjai
+## <a name="cost-considerations"></a>Költségekkel kapcsolatos szempontok
 
 Ha már rendelkezik Microsoft Intune licenccel, a Storage-fiók és az Event hub beállításához Azure-előfizetésre van szükség. Az Azure-előfizetés általában ingyenes. Azonban az Azure-erőforrások használatáért kell fizetnie, beleértve az archiváláshoz használt Storage-fiókot és a streaming Event hub-t. Az adatmennyiség és a költségek a bérlő méretétől függően változnak.
 
@@ -144,7 +144,7 @@ A következő táblázatok a bérlő méretétől függően a költségbecslést
 
 | | |
 |---|---|
-|Esemény/nap| 15 000|
+|Esemény/nap| 15,000|
 |Becsült adatmennyiség havonta| 900 MB|
 |Becsült díj havonta (USD)| $0,02|
 |Becsült díj évente (USD)| $0,24|

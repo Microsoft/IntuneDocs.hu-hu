@@ -84,7 +84,7 @@ Amikor kijelöl egy eszközt a titkosítási jelentésből, az Intune megjelení
 
 - **Profilok** – az eszközre érvényes, az eszközhöz tartozó *konfigurációs* profilok listája, és a következő értékekkel vannak konfigurálva:
 
-  - MacOS
+  - macOS:
     - Profil típusa = *Endpoint Protection*
     - Beállítások > FileVault > FileVault = *enable*
 

@@ -32,11 +32,11 @@ Ez a témakör ismerteti, hogy felhasználói hol és hogyan juthatnak hozzá a 
 
 **Elérhető alkalmazások** – A Munkahelyi portál alkalmazáslistájában szereplő alkalmazások, amelyeket a felhasználó saját döntése alapján telepíthet.
 
-**Felügyelt alkalmazások** – Az Intune által szabályzatokkal felügyelt és „burkolt”, illetve az Intune App szoftverfejlesztői készlettel (SDK) készített alkalmazások. Ezek az alkalmazások az Intune-nal felügyelhetők, és azokra alkalmazásvédelmi szabályzatok alkalmazhatók.
+**Felügyelt alkalmazások** – Az Intune által szabályzatokkal felügyelt és „burkolt”, illetve az Intune App szoftverfejlesztői készlettel (SDK) készített alkalmazások. Ezek az alkalmazások az Intune-nal kezelhetők, és alkalmazásvédelmi szabályzatokkal felügyelhetők.
 
 **Nem felügyelt alkalmazások** – Azok a szabályzatokkal felügyelhető alkalmazások, amelyeket nem az Intune burkolt be, illetve amelyek nem foglalják magukban az Intune App SDK-t. Ezekre az alkalmazásokra nem alkalmazhatók alkalmazásvédelmi szabályzatok.
 
-## <a name="see-also"></a>További információ
+## <a name="see-also"></a>Lásd még:
 
 [Android-felhasználói alkalmazások letöltése](end-user-apps-android.md)
 [iOS-felhasználói alkalmazások letöltése](end-user-apps-android.md)

@@ -32,9 +32,9 @@ Ha Céges portál vagy a Microsoft Intune alkalmazás azt mondja, hogy az eszkö
 
 ## <a name="add-a-startup-pin"></a>Indítási PIN-kód hozzáadása
 
-Egyes Android-eszközök indítási PIN-kód létrehozását teszik kötelezővé az eszköz biztonsága érdekében. A beállítás helye az eszköz **Settings (beállítások** ) alkalmazásában lesz. A beállítás neve és helye eltérő lehet. A Samsung Galaxy S7 esetében például a beállítást **biztonságos indításnak**nevezzük. A **beállítás**engedélyezéséhez és a PIN-kód létrehozásához lépjen a beállítások  > **zárolási képernyő és a biztonsági**@no__t – 3**biztonságos indítás**elemre.  
+Egyes Android-eszközök indítási PIN-kód létrehozását teszik kötelezővé az eszköz biztonsága érdekében. A beállítás helye az eszköz **Settings (beállítások** ) alkalmazásában lesz. A beállítás neve és helye eltérő lehet. A Samsung Galaxy S7 esetében például a beállítást **biztonságos indításnak**nevezzük. A beállítás engedélyezéséhez és a PIN-kód létrehozásához lépjen a **beállítások** > **zárolási képernyő és biztonság** > **biztonságos indítás**elemre.  
 
-## <a name="encrypt-the-entire-device"></a>Titkosítsa a teljes eszközt
+## <a name="encrypt-the-entire-device"></a>A teljes eszköz titkosítása
 
 Ez a szakasz csak a Céges portál alkalmazásra vonatkozik. Egyes eszközök esetében választható a teljes eszköz titkosítása vagy csak a használatban lévő tárterület titkosítása. Válassza a teljes eszköz titkosítása lehetőséget. Ha a csak a felhasznált terület titkosítását választotta:
 
@@ -62,4 +62,4 @@ Ha még nem frissítette az eszközt az Android legújabb verziójára, nyissa m
 
 ## <a name="next-steps"></a>További lépések
 
-További segítségre van szüksége? Forduljon a cég informatikai támogatási szolgálatához (a kapcsolattartási adatokat a [céges portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980) találja), vagy írjon a <a href="mailto:wintunedroidfbk@microsoft.com?subject=I'm having trouble with enrolling my Android device&body=Describe the issue you're experiencing here.">Microsoft Android-csapatának</a>.  
+További segítségre van szüksége? Forduljon a cég informatikai támogatási szolgálatához (a kapcsolattartási adatokat a [Céges portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980) találja), vagy írjon a <a href="mailto:wintunedroidfbk@microsoft.com?subject=I'm having trouble with enrolling my Android device&body=Describe the issue you're experiencing here.">Microsoft Android-csapatának</a>.  

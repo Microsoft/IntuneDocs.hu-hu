@@ -67,7 +67,7 @@ Az Alkalmazásőr csak a 64 bites Windows 10-eszközöknél érhető el. Ennek a
 
   Válassza ki az engedélyezett vágólap tartalmát.  
   - **Nincs konfigurálva**  
-  - **Szöveg**  
+  - **Text**  
   - **Képek**  
   - **Szöveg és képek**  
 
@@ -268,8 +268,8 @@ Ebben a cikkben a következő beállítások jelennek meg egyetlen alkalommal, d
 
   - **Nincs konfigurálva**  
   - **Letiltás** – a rendszer figyelmen kívül hagyja a helyi tárolóban lévő, a jogosult alkalmazás tűzfalszabályok szabályait, és nem kényszeríti ki őket.  
-  - Engedélyezi, hogy a -
-   Choose **engedélyezze** a helyi tárolóban a tűzfalszabályok **használatát** , hogy azok felismerhetők és érvénybe lépjenek.  
+  - Az engedélyezés -
+   válassza az **Engedélyezés** tűzfalszabályok alkalmazása a helyi tárolóban **lehetőséget** , hogy azok felismerhetők és kikényszerítve legyenek.  
 
 - **Globális port a Microsoft Defender tűzfalszabályok a helyi tárolóból**  
   **Alapértelmezett**: nincs konfigurálva  
@@ -440,7 +440,7 @@ A Microsoft Edge-nek telepítve kell lennie az eszközön.
 
 ## <a name="windows-encryption"></a>Windows-titkosítás  
  
-### <a name="windows-settings"></a>Windowsos beállítások  
+### <a name="windows-settings"></a>Windows Gépház  
 
 - **Eszközök titkosítása**  
   **Alapértelmezett**: nincs konfigurálva  
@@ -584,7 +584,7 @@ Ezek a beállítások kifejezetten az operációsrendszer-adatmeghajtókra érv�
   - **Minimális karakterek**  
     **Alapértelmezett**: *nincs KONFIGURÁLVA* a BitLocker CSP: [SystemDrivesMinimumPINLength](https://go.microsoft.com/fwlink/?linkid=872528)  
 
-    Adja meg az indítási PIN-kódhoz szükséges karakterek számát **4**-**20**értékkel.  
+    Adja meg az indítási PIN-kódhoz szükséges karakterek számát **4**-**20**.  
 
 - **OPERÁCIÓSRENDSZER-meghajtó helyreállítása**  
   **Alapértelmezett**: nincs konfigurálva   
@@ -925,7 +925,7 @@ Az alábbiak letiltásával megakadályozhatja az e-mail-fenyegetéseket:
 > *C:\windows\IMECache*  
 >  
 > **X86-os ügyfélszámítógépeken**:  
-> *C:\Program Files\Microsoft Intune felügyeleti Extension\Content*  
+> *C:\Program Files\Microsoft Intune Management Extension\Content*  
 > *C:\windows\IMECache*  
 
 ### <a name="controlled-folder-access"></a>Mappahozzáférés felügyelete  
@@ -939,7 +939,7 @@ Segít megvédeni a kártékony alkalmazásokból és fenyegetésekből származ
   Fájlok és mappák védelme a nemkívánatos alkalmazások által végrehajtott, jogosulatlan módosítások ellen.  
 
   - **Nincs konfigurálva**  
-  - **Engedélyezése**  
+  - **Engedélyezés**  
   - **Csak naplózás**  
   - **Lemez módosításának letiltása**  
   - **Lemez módosításának naplózása**  
@@ -1211,7 +1211,7 @@ Ezekkel a beállításokkal konfigurálhatja a Windows 10-eszközök helyi bizto
    - **Letiltás** – csak az üres jelszavakkal rendelkező helyi fiókok bejelentkezésének engedélyezése az eszköz billentyűzetén keresztül.  
    - **Nincs konfigurálva** – engedélyezi a helyi fiókok számára az üres jelszavakat a fizikai eszköztől eltérő helyről való bejelentkezéshez.  
 
-#### <a name="admin"></a>Felügyelet  
+#### <a name="admin"></a>Rendszergazda  
 
 - **Helyi rendszergazdai fiók**  
   **Alapértelmezett**: nincs konfigurálva  
@@ -1329,7 +1329,7 @@ Ezekkel a beállításokkal konfigurálhatja a Windows 10-eszközök helyi bizto
   - **Engedélyezés** – a Felhasználónév elrejtése.  
   - **Nincs konfigurálva** – az utolsó felhasználónevet jeleníti meg.  
 
-- **Felhasználónév elrejtése a bejelentkezés**
+- **Felhasználónév elrejtése bejelentkezéskor**
   **alapértelmezett**: nincs konfigurálva  
   LocalPoliciesSecurityOptions CSP: [InteractiveLogon_DoNotDisplayUsernameAtSignIn](https://go.microsoft.com/fwlink/?linkid=867959)  
 
@@ -1606,7 +1606,7 @@ Ezekkel a beállításokkal konfigurálhatja a Windows 10-eszközök helyi bizto
   Ez a beállítás határozza meg a tartozék-felügyeleti szolgáltatás indítási típusát.  
   - **Kézi**
   - **Automatikus**
-  - **Tiltva**
+  - **Letiltva**
 
 - **Xbox Live Auth Manager szolgáltatás**  
   **Alapértelmezett**: manuális  
@@ -1615,7 +1615,7 @@ Ezekkel a beállításokkal konfigurálhatja a Windows 10-eszközök helyi bizto
   Ez a beállítás határozza meg az élő Auth Manager szolgáltatás indítási típusát.  
   - **Kézi**
   - **Automatikus**
-  - **Tiltva**
+  - **Letiltva**
  
 - **Xbox Live game Save szolgáltatás**  
   **Alapértelmezett**: manuális  
@@ -1624,7 +1624,7 @@ Ezekkel a beállításokkal konfigurálhatja a Windows 10-eszközök helyi bizto
   Ez a beállítás határozza meg az élő játékok mentési szolgáltatásának indítási típusát.  
   - **Kézi**
   - **Automatikus**
-  - **Tiltva**
+  - **Letiltva**
 
 - **Xbox Live hálózatkezelési szolgáltatás**  
   **Alapértelmezett**: manuális  
@@ -1633,7 +1633,7 @@ Ezekkel a beállításokkal konfigurálhatja a Windows 10-eszközök helyi bizto
   Ez a beállítás határozza meg a hálózati szolgáltatás indítási típusát.  
   - **Kézi**
   - **Automatikus**
-  - **Tiltva**
+  - **Letiltva**
 
 ## <a name="user-rights"></a>Felhasználói jogosultságok
 

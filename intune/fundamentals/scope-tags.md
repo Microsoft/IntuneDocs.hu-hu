@@ -43,7 +43,7 @@ Az alapértelmezett hatókör címke funkció a System Center Configuration Mana
 
 ## <a name="to-create-a-scope-tag"></a>Hatókörcímke létrehozása
 
-1. Az Intune-ban válassza a **szerepkörök** > **hatókör (címkék)**  > **Létrehozás**elemet.
+1. Az Intune-ban válassza a **szerepkörök** > **hatókör (címkék)**  > **Létrehozás**lehetőséget.
 
     ![Képernyőkép a hatókör-címke létrehozásáról.](./media/scope-tags/create-scope-tag.png)
 
@@ -54,16 +54,16 @@ Az alapértelmezett hatókör címke funkció a System Center Configuration Mana
 
 ## <a name="to-assign-a-scope-tag-to-a-role"></a>Hatókörcímke hozzárendelése egy szerepkörhöz
 
-1. Az Intune-ban válassza a **szerepkörök**@no__t – 1**minden szerepkör** lehetőséget > válasszon egy szerepkört > **hozzárendelések** > **hozzárendelés**lehetőséget.
+1. Az Intune-ban válassza a **szerepkörök** > **minden szerepkör** lehetőséget, > válasszon egy szerepkört > **hozzárendelések** ** > hozzárendelés**lehetőséget.
 
     ![Képernyőfelvétel a hatókör hozzárendeléséről egy szerepkörhöz.](./media/scope-tags/assign-scope-to-role.png)
 
 2. Adja meg a **hozzárendelés nevét** és **leírását**.
-3. Válassza ki a **Tagok (csoportok)**  > **Hozzáadás** > Válassza ki a kívánt csoportokat a hozzárendelés részeként > **válassza**a  > **OK**elemet. A csoport felhasználói jogosultak lesznek a hatókör (csoportok) felhasználói/eszközeinek kezelésére.
+3. Válassza a **Tagok (csoportok)**  > **Hozzáadás** > Válassza ki a hozzárendelés részeként használni kívánt csoportokat > válassza a > **OK** **lehetőséget** . A csoport felhasználói jogosultak lesznek a hatókör (csoportok) felhasználói/eszközeinek kezelésére.
 
     ![Képernyőfelvétel a csoporttag kiválasztásáról.](./media/scope-tags/select-member-groups.png)
 
-4. Ha egy adott csoportba tartozó felhasználókat vagy eszközöket szeretne felügyelni, válassza a **hatókör (csoportok)**  > **kiválasztott csoportok**elemet  > **válassza ki** a csoportokat, > válassza ki a csoportokat > válassza a  > **OK** **elemet**. A csoport összes felhasználóját/eszközét a tagok (csoport) rendszergazdái fogják kezelni.
+4. Ha egy adott csoportba tartozó felhasználókat vagy eszközöket szeretne felügyelni, válassza a **hatókör (csoportok)**  > **kijelölt csoportok** > **lehetőséget, majd válassza ki** a csoportokat a csoportok kiválasztásához > Válassza ki a csoportokat > **válassza** > az **OK** gombot. A csoport összes felhasználóját/eszközét a tagok (csoport) rendszergazdái fogják kezelni.
 
     ![Képernyőkép a hatókör-csoportok kiválasztásáról.](./media/scope-tags/select-scope-groups.png)
 
@@ -71,7 +71,7 @@ Az alapértelmezett hatókör címke funkció a System Center Configuration Mana
 
     ![Képernyőkép a hatókör-csoportok kiválasztásának egyéb lehetőségeiről.](./media/scope-tags/scope-group-other-options.png)
     
-5. Válassza a **hatókör (címkék)** @no__t – 1**Hozzáadás** > Válassza ki a szerepkörhöz hozzáadni kívánt címkéket > válassza a  > **OK** **elemet**. A tagok (csoportok) felhasználói hozzáférhetnek az olyan Intune-objektumokhoz, amelyek szintén rendelkeznek ugyanazzal a hatóköri címkével.
+5. Válassza a **hatókör (címkék)**  > **Hozzáadás** > Válassza ki a szerepkörhöz hozzáadni kívánt címkéket > válassza a > **OK** **lehetőséget** . A tagok (csoportok) felhasználói hozzáférhetnek az olyan Intune-objektumokhoz, amelyek szintén rendelkeznek ugyanazzal a hatóköri címkével.
 
     ![Képernyőkép a hatóköri címkék kiválasztásáról.](./media/scope-tags/select-scope-tags.png)
 
@@ -81,7 +81,7 @@ Az alapértelmezett hatókör címke funkció a System Center Configuration Mana
 
 A hatókör címkéit támogató objektumok esetében a hatókör címkéi általában a **Tulajdonságok**területen jelennek meg. Ha például hatókör-címkét szeretne hozzárendelni egy konfigurációs profilhoz, kövesse az alábbi lépéseket:
 
-1. Az Intune-ban válassza az **eszköz konfigurációja** > **profilok** lehetőséget > válasszon egy profilt.
+1. Az Intune-ban válassza az **eszköz konfigurációja** > **profilok** lehetőséget, > válasszon egy profilt.
 
     ![Képernyőkép a profil kiválasztása lehetőségről.](./media/scope-tags/choose-profile.png)
 
@@ -90,7 +90,7 @@ A hatókör címkéit támogató objektumok esetében a hatókör címkéi álta
     ![Képernyőkép a hatókör-címkék hozzáadásáról.](./media/scope-tags/add-scope-tags.png)
 
 3. A **címkék kiválasztása**területen válassza ki azokat a címkéket, amelyeket hozzá szeretne adni a profilhoz.
-4. Válassza a **kijelölés**@no__t – 1**OK**@no__t – 3**Mentés**lehetőséget.
+4. Válassza a **kijelölés** > **OK** > **Mentés**lehetőséget.
 
 
 ## <a name="scope-tag-details"></a>Hatóköri címke részletei

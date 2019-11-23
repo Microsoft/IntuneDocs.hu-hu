@@ -52,7 +52,7 @@ Az üzleti alkalmazások Microsoft Store a Microsoft Store for Business felügye
 A Microsoft Store for Business alkalmazások kategorizálása: 
 
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Válassza az **ügyfélalkalmazások** > **alkalmazások**elemet. Válasszon egy Microsoft Store vállalati alkalmazáshoz. Ezután válassza az **alkalmazásadatok @no__t-** 1**kategóriát**. 
+2. Válassza az **ügyfélalkalmazások** > **alkalmazások**elemet. Válasszon egy Microsoft Store vállalati alkalmazáshoz. Ezután válassza az **alkalmazás adatai** > **kategóriát**. 
 3. Válasszon ki egy kategóriát.
 
 ## <a name="install-apps-on-windows-10-devices"></a>Alkalmazások telepítése Windows 10-es eszközökre
@@ -83,7 +83,7 @@ Ha egyetlen felhasználó vagy eszköz házirendje ütközik, a következő prio
 - Az eszközkörnyezetek szabályzatai magasabb prioritásúak a felhasználói környezetekéinél. 
 - A telepítési szabályzatok magasabb prioritásúak az eltávolításiaknál.
 
-További információ: [Alkalmazás-hozzárendelések belefoglalása vagy kizárása a Microsoft Intune-ban](apps-inc-exl-assignments.md). Az Intune-beli alkalmazástípusokat az [Alkalmazások hozzáadása a Microsoft Intune-hoz](apps-add.md) című cikk ismerteti.
+További információért lásd: [Alkalmazás-hozzárendelések belefoglalása vagy kizárása a Microsoft Intune-ban](apps-inc-exl-assignments.md). Az Intune-beli alkalmazástípusokat az [Alkalmazások hozzáadása a Microsoft Intune-hoz](apps-add.md) című cikk ismerteti.
 
 ## <a name="next-steps"></a>További lépések
 

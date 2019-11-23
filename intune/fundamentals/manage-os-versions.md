@@ -66,10 +66,10 @@ Az Intune alkalmazásvédelmi szabályzataival és mobilalkalmazás-kezelési (M
  
 Két lehetőség van: 
 - **Figyelmeztetés** – figyelmezteti a végfelhasználót, hogy frissíteniük kell, ha alkalmazás-védelmi szabályzattal vagy MAM hozzáférési beállításokkal nyitnak meg egy alkalmazást egy olyan eszközön, amelyen a megadott verzió alatt az operációs rendszer verziója található. Az alkalmazás adatait és a szervezeti adatokat ettől függetlenül el fogja tudni érni.
-  @no__t – az Android Update figyelmeztetési párbeszédpanelének 0Image @ no__t-1 
+  az Android Update figyelmeztetési párbeszédpanel ![képe](./media/manage-os-versions/os-version-update-warning.png) 
 
 - A **Block** -Block azt tájékoztatja a végfelhasználót, hogy frissítenie kell, amikor alkalmazás-védelmi szabályzattal vagy MAM hozzáférési beállításokkal nyit meg egy alkalmazást egy olyan eszközön, amelyen a megadott verzió alatt az operációs rendszer verziója található. Az alkalmazásadatokat és a szervezeti adatokat nem fogja tudni elérni.
-  @no__t – 0Image blokkolt párbeszédpanel @ no__t-1
+  az alkalmazás-hozzáférés letiltott párbeszédpanelének ![képe](./media/manage-os-versions/os-version-access-blocked.png)
 
 ### <a name="in-practice"></a>A gyakorlatban
 Az alkalmazásvédelmi szabályzatokat legtöbbször akkor használják a különböző szervezetek, ha az alkalmazások nyitottak, vagy ha szeretnék elérni, hogy a végfelhasználók mindig az alkalmazások aktuális verzióját használják. Gyakran alkalmazott konfiguráció például, hogy a végfelhasználókat figyelmezteti a rendszer, ha az aktuálisnál eggyel korábbi verziót használnak, és letiltja, ha kettővel korábbi verziót.

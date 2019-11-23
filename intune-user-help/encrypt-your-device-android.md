@@ -40,12 +40,12 @@ Ha Céges portál vagy a Microsoft Intune alkalmazás az eszköz titkosításár
 > A Huawei, vivo és ellenfél bizonyos androidos eszközei nem titkosíthatók. További információért [kattintson ide](your-device-appears-encrypted-but-cp-says-otherwise-android.md).  
 
 1. Állítsa be az eszköz képernyő-zárolását.  
-    a. Válassza a **beállítások**@no__t – 1**zárolási képernyő és a biztonsági**@no__t – 3**képernyő zárolási típust**.  
+    a. Válassza a **beállítások** > a **zárolási képernyő és a biztonság** > **képernyő zárolási típusa**lehetőséget.  
     b. Válassza a **PIN-kód**, a **jelszó**vagy a **minta**lehetőséget.  
     c. A képernyő zárolásának konfigurálásához kövesse a képernyőn megjelenő utasításokat.  
 
 2. Lépjen vissza a **zárolási képernyő és a biztonság** elemre, és válassza a **biztonságos indítás**lehetőséget.
-3. Válassza **a PIN-kód megkövetelése, ha az eszköz bekapcsolja** **az** >  elemet.
+3. Válassza **a PIN-kód megkövetelése, ha az eszköz bekapcsolja** > **OK gombot**
 4. Az eszköz megerősítéséhez és titkosításához adja meg a PIN-kódját.
 5. Nyissa meg Céges portál vagy Microsoft Intune alkalmazást.
     * Céges portál felhasználók: válassza ki az eszközt, és koppintson az **eszközbeállítások ellenõrzése**lehetőségre. 
@@ -53,9 +53,9 @@ Ha Céges portál vagy a Microsoft Intune alkalmazás az eszköz titkosításár
 
 Az Android 4,4 és korábbi rendszerű eszközökön nem lehet **biztonságos indítási** lehetőség. Ebben az esetben végezze el az alábbi lépéseket az eszköz titkosításához.
 
-1. Válassza a **beállítások** > **biztonsági**@no__t – 3**eszköz titkosítása**lehetőséget. A képernyőn megjelenő címkék az Android-eszközök között változnak. Ha nem jelenik meg az **eszköz titkosítása** beállítás, akkor jelentkezzen be:
-    * **Storage**@no__t – 1**tároló titkosítása**
-    * **Storage** > **zárolási képernyő és biztonsági**@no__t – 3**egyéb biztonsági beállítás** 
+1. Lépjen a **beállítások** > **biztonsági** > az **eszköz titkosítása**gombra. A képernyőn megjelenő címkék az Android-eszközök között változnak. Ha nem jelenik meg az **eszköz titkosítása** beállítás, akkor jelentkezzen be:
+    * **Storage** > **Storage-titkosítás**
+    * A **Storage** > **a zárolási képernyő és a biztonság** > **egyéb biztonsági beállítások** 
 
 2. Kövesse a képernyőn megjelenő utasításokat. A titkosítás során az eszköz többször is újraindulhat.
 3. Nyissa meg Céges portál vagy Microsoft Intune alkalmazást.
@@ -74,4 +74,4 @@ Az Android 4,4 és korábbi rendszerű eszközökön nem lehet **biztonságos in
 - Ellenőrizze, hogy az eszköz fel van-e töltve és csatlakoztatva van-e.  
 - Ellenőrizze, hogy beállított-e PIN-kódot vagy jelszót az eszközön.  
 
-További segítségre van szüksége? Forduljon a cég informatikai támogatási szolgálatához (a kapcsolattartási adatokat a [céges portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980) találja), vagy írjon a <a href="mailto:wintunedroidfbk@microsoft.com?subject=I'm having trouble with encryption on my Android device&body=Describe the issue you're experiencing here.">Microsoft Android-csapatának</a>.  
+További segítségre van szüksége? Forduljon a cég informatikai támogatási szolgálatához (a kapcsolattartási adatokat a [Céges portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980) találja), vagy írjon a <a href="mailto:wintunedroidfbk@microsoft.com?subject=I'm having trouble with encryption on my Android device&body=Describe the issue you're experiencing here.">Microsoft Android-csapatának</a>.  

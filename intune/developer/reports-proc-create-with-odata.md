@@ -57,8 +57,8 @@ Telepítse a Power BI Desktop legújabb verzióját. Ezt a [PowerBI.microsoft.co
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 2. Nyissa meg az **Intune-adattárház** panelt az adatraktár hivatkozásának kiválasztásával az **Microsoft Intune – áttekintés** panel jobb oldalán található **egyéb feladatok** területen.
 3. Másolja az egyéni URL-címet. Például így: `https://fef.tenant.manage.microsoft.com/ReportingService/DataWarehouseFEService?api-version=beta`
-4. Nyissa meg a Power BI Desktopot.
-5. A menüsávon válassza a **fájl** > **adatok lekérése** > **OData-hírcsatorna**lehetőséget.
+4. Nyissa meg a Power BI Desktop alkalmazást.
+5. A menüsávon válassza a **fájl** > **adatok beolvasása** > **OData-csatorna**lehetőséget.
 6. Illessze be az egyéni hírcsatorna URL-címét, amelyet a korábbi lépésből másolt be a OData- **hírcsatorna** ablakának URL mezőjébe.
 7. Válassza az **Egyszerű** lehetőséget.
 
@@ -69,7 +69,7 @@ Telepítse a Power BI Desktop legújabb verzióját. Ezt a [PowerBI.microsoft.co
 
     ![Szervezeti fiók hitelesítő adatai](./media/reports-proc-create-with-odata/reports-create-02-org-account.png)
 
-10. Válassza a **kapcsolat**lehetőséget. Ekkor megnyílik a Navigátor, és megjelenik rajta az Intune-adattárházban található táblák listája.
+10. Kattintson a **Csatlakozás** gombra. Ekkor megnyílik a Navigátor, és megjelenik rajta az Intune-adattárházban található táblák listája.
 
     ![Képernyőfelvétel a Navigátorról – az adatraktár tábláinak listája](./media/reports-proc-create-with-odata/reports-create-02-loadentities.png)
 
@@ -94,9 +94,9 @@ A fatérkép diagramon a hierarchikus adatmezők a mezőkön belül találhatók
 
 1. A **vizualizációk** ablaktáblán keresse meg és válassza ki a **fatérkép**. A **fatérkép** diagramot a rendszer hozzáadja a jelentés vászonhoz.
 2. A **mezők** ablaktáblán keresse meg a `devices` táblát.
-3. Bontsa ki a `devices` táblát, és válassza ki a `manufacturer` adatmezőt.
+3. Bontsa ki a `devices` táblát, és válassza a `manufacturer` adatmezőt.
 4. Húzza a `manufacturer` adatmezőt a jelentés vászonra, és dobja el a **fatérkép** diagramon.
-5. Húzza a `deviceKey` adatmezőt a `devices` táblából a **vizualizációk** panelre, és az **értékek** szakaszban adja meg az **adatmezők hozzáadása mezőt**.  
+5. Húzza a `deviceKey` adatmezőt a `devices` táblázatból a **vizualizációk** ablaktáblára, és az **értékek** szakaszban adja meg az **adatmezők hozzáadása mezőt**.  
 
 Ezzel elkészített egy olyan vizualizációt, amely megmutatja, hogy milyen a szervezetben az eszközök gyártók szerinti eloszlása.
 
@@ -106,12 +106,12 @@ Ezzel elkészített egy olyan vizualizációt, amely megmutatja, hogy milyen a s
 
 A fatérkép-diagramhoz szűrőt is hozzáadhat, hogy az további kérdésekre is választ tudjon adni az alkalmazással.
 
-1. Szűrő hozzáadásához jelölje ki a jelentés vászonját, majd válassza a **szeletelő ikont** (![Treemap adatmodellel és támogatott kapcsolatok @ no__t-2) a **vizualizációk**alatt. Ekkor megjelenik az üres **szeletelő** vizualizációja a vásznon.
+1. Szűrő hozzáadásához jelölje ki a jelentés vászonját, majd válassza a **szeletelő ikont** (![fatérkép adatmodellel és támogatott kapcsolatokkal](./media/reports-proc-create-with-odata/reports-create-slicer.png)) a **vizualizációk**alatt. Ekkor megjelenik az üres **szeletelő** vizualizációja a vásznon.
 2. A **mezők** ablaktáblán keresse meg a `ownerTypes` táblát.
-3. Bontsa ki a `ownerTypes` táblát, és válassza ki a `ownerTypeName` adatmezőt.
-4. Húzza a `onwerTypeName` adatmezőt a `ownerTypes` táblából a **szűrők** panelre, majd a **szűrők** lapon az **adatmezők hozzáadása**feliratú mezőben adja meg azt.  
+3. Bontsa ki a `ownerTypes` táblát, és válassza a `ownerTypeName` adatmezőt.
+4. Húzza a `onwerTypeName` adatmezőt a `ownerTypes` táblázatból a **szűrők** panelre, és a szűrők lapon válassza el az **adatmezők hozzáadása**feliratú jelölőnégyzetet a **lap szűrők** területén.  
 
-   A `OwnerTypes` táblában található egy @no__t-ügyfélcsoportból nevű adatmező, amely azt jelzi, hogy az eszköz vállalati tulajdonú vagy személyes. Mivel ebben a szűrőben szeretné megjeleníteni a felhasználóbarát neveket, keresse meg a `ownerTypes` táblát, és húzza a **ownerTypeName** a szeletelőbe. Ebből a példából láthatja, hogyan támogatja az adatmodell a táblák közötti kapcsolatokat.
+   A `OwnerTypes` táblában található egy `OwnerTypeKey`nevű adatmező, amely az adott eszköz vállalati tulajdonú vagy személyes adatát tartalmazza. Mivel ebben a szűrőben szeretné megjeleníteni a felhasználóbarát neveket, keresse meg a `ownerTypes` táblát, és húzza a **ownerTypeName** a szeletelőbe. Ebből a példából láthatja, hogyan támogatja az adatmodell a táblák közötti kapcsolatokat.
 
 ![Fatérkép szűrővel – a táblák közötti kapcsolatok támogatása](./media/reports-proc-create-with-odata/reports-create-08_ownertype.png)
 

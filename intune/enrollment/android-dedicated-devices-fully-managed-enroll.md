@@ -32,11 +32,11 @@ Miután beállította az [androidos vállalati dedikált eszközöket](android-k
 | Regisztráció módszere | Az Android operációs rendszer minimális verziója dedikált és teljes mértékben felügyelt eszközökhöz |
 | ----- | ----- |
 | Kis hatótávolságú kommunikáció | 5.1 |
-| Biztonsági jogkivonat | 6,0 |
-| QR-kód | 7,0 |
-| Zero Touch  | 8.0 @ no__t – 0 |
+| Biztonsági jogkivonat | 6.0 |
+| QR-kód | 7.0 |
+| Zero Touch  | 8,0\* |
 
-@no__t – 0 a résztvevő gyártóknál.
+\* a résztvevő gyártókon.
 
 ## <a name="enroll-by-using-near-field-communication-nfc"></a>Regisztráció kis hatótávolságú kommunikáció (NFC) használatával
 

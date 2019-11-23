@@ -45,7 +45,7 @@ A konfigurált Windows 10-es frissítési körök telepítési állapotára vona
       - **Felhasználó állapota**  
 
 ## <a name="use-update-compliance"></a>Update Compliance használata
-A Windows 10-es frissítések bevezetését a Windows Analytics megoldás [Update Compliance](https://technet.microsoft.com/itpro/windows/manage/update-compliance-monitor)használatával figyelheti. Update Compliance a Azure Portal keresztül érhető el, és az [előfeltételeknek](https://docs.microsoft.com/windows/deployment/update/update-compliance-get-started#update-compliance-prerequisites)megfelelő eszközök számára ingyenesen elérhető.  
+A Windows 10-es frissítések bevezetését a Windows Analytics megoldás [Update Compliance](https://technet.microsoft.com/itpro/windows/manage/update-compliance-monitor)használatával figyelheti. Update Compliance a Azure Portal keresztül érhető el, és az megfelelő eszközök számára [előfeltételeknek](https://docs.microsoft.com/windows/deployment/update/update-compliance-get-started#update-compliance-prerequisites)ingyenesen elérhető.  
 
 Ha ezt a megoldást használja, egy kereskedelmi azonosítót kell központilag telepítenie az Intune által kezelt Windows 10 rendszerű eszközökre, amelyekről jelentést szeretne készíteni a frissítés megfelelőségéről.  
 
@@ -58,7 +58,7 @@ Az **OMA-URI beállítások hozzáadása vagy módosítása** alatt például a 
 - **Beállítás leírása**: Kereskedelmi azonosító konfigurálása Windows Analytics megoldásokhoz
 - **OMA-URI** (megkülönbözteti a kis-és nagybetűket): *./vendor/MSFT/DMClient/Provider/MS DM Server/CommercialID*
 - **Adattípus:** Sztring
-- **Value**: @no__t – a OMS-munkaterület Windows telemetria lapján megjelenő GUID 1Use >
+- **Érték**: \<használja a OMS munkaterület Windows telemetria lapján látható GUID azonosítót >
  
 > [!NOTE]  
 > További információ az MS DM-kiszolgálóról: [DMClient konfigurációs szolgáltató (CSP)]( https://docs.microsoft.com/windows/client-management/mdm/dmclient-csp).
