@@ -1,7 +1,7 @@
 ---
-title: Oktatóanyag – Exchange Online e-mail küldése nem felügyelt eszközökön
+title: Tutorial - Protect Exchange Online email on unmanaged devices
 titleSuffix: Microsoft Intune
-description: Ismerje meg, hogyan védheti meg az Office 365 Exchange Online-t az Intune app Protection-szabályzatokkal és az Azure AD feltételes hozzáférésével.
+description: Learn to secure Office 365 Exchange Online with Intune app protection policies and Azure AD Conditional Access.
 keywords: ''
 author: brenduns
 ms.author: brenduns
@@ -17,177 +17,227 @@ ms.reviewer: ''
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d3b903c8d21b678bb86d9e6474dbe52a9caaaf74
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 3cc997bfb11ebcfe58a6d44705c34a7077a4f787
+ms.sourcegitcommit: a7b479c84b3af5b85528db676594bdb3a1ff6ec6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72503614"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74410304"
 ---
-# <a name="tutorial-protect-exchange-online-email-on-unmanaged-devices"></a>Oktatóanyag: az Exchange Online e-mailek felügyelete nem felügyelt eszközökön
+# <a name="tutorial-protect-exchange-online-email-on-unmanaged-devices"></a>Tutorial: Protect Exchange Online email on unmanaged devices
 
-Ismerje meg, hogyan használhatja az alkalmazás-védelmi szabályzatokat feltételes hozzáféréssel az Exchange Online védelméhez, még akkor is, ha az eszközök nincsenek regisztrálva az Intune-ban. Az oktatóanyag segítségével megtanulhatja a következőket: 
+Learn about using app protection policies with Conditional Access to protect Exchange Online, even when devices aren't enrolled in a device management solution like Intune. Az oktatóanyag segítségével megtanulhatja a következőket:
 
 > [!div class="checklist"]
-> * Hozzon létre egy Intune app Protection-szabályzatot az Outlook alkalmazáshoz. A "Mentés másként" lehetőséggel és a kivágási, másolási és beillesztési műveletek korlátozásával korlátozhatja, hogy a felhasználó mit tehet az alkalmazásban. 
-> * Hozzon létre Azure Active Directory (Azure AD) feltételes hozzáférési szabályzatokat, amelyekkel csak az Outlook alkalmazás férhet hozzá a vállalati e-mailekhez az Exchange Online-ban. A többtényezős hitelesítés (MFA) is szükséges a modern hitelesítési ügyfelekhez, például az iOS-hez és az Androidhoz készült Outlookhoz.
+> * Create an Intune app protection policy for the Outlook app. You'll limit what the user can do with app data by preventing "Save As" and restrict cut, copy, and paste actions.
+> * Create Azure Active Directory (Azure AD) Conditional Access policies that allow only the Outlook app to access company email in Exchange Online. You'll also require multi-factor authentication (MFA) for Modern authentication clients, like Outlook for iOS and Android.
 
 ## <a name="prerequisites"></a>Előfeltételek
-- Az oktatóanyag végrehajtásához szüksége lesz egy tesztelési bérlőre a következő előfizetésekkel:
-  - Prémium szintű Azure Active Directory ([ingyenes próbaverzió](https://azure.microsoft.com/free/?WT.mc_id=A261C142F))
-  - Intune-előfizetés ([ingyenes próbaverzió](../fundamentals/free-trial-sign-up.md))
-  - Office 365 Vállalati előfizetés, ami magában foglalja az Exchange-et ([ingyenes próbaverzió](https://go.microsoft.com/fwlink/p/?LinkID=510938))
+
+Az oktatóanyag végrehajtásához szüksége lesz egy tesztelési bérlőre a következő előfizetésekkel:
+
+- Prémium szintű Azure Active Directory ([ingyenes próbaverzió](https://azure.microsoft.com/free/?WT.mc_id=A261C142F))
+- Intune subscription ([free trial](../fundamentals/free-trial-sign-up.md))
+- Office 365 Vállalati előfizetés, ami magában foglalja az Exchange-et ([ingyenes próbaverzió](https://go.microsoft.com/fwlink/p/?LinkID=510938))
 
 ## <a name="sign-in-to-intune"></a>Bejelentkezés az Intune-ba
 
-Jelentkezzen be az [Intune-ba](https://go.microsoft.com/fwlink/?linkid=2090973) globális rendszergazdaként vagy Intune-beli szolgáltatásadminisztrátorként. Az Intune az Azure Portalon a **Minden szolgáltatás** > **Intune** lehetőség választásával található meg.
+For this tutorial, when you sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431), sign in as a [Global administrator](../fundamentals/users-add.md#types-of-administrators) or an Intune [Service administrator](../fundamentals/users-add.md#types-of-administrators). If you've created an Intune Trial subscription, the account you created the subscription with is the Global administrator.
 
-## <a name="create-the-app-protection-policy"></a>Az alkalmazás-védelmi szabályzat létrehozása
-Ebben az oktatóanyagban egy Intune app Protection-szabályzatot hozunk létre az Outlook alkalmazáshoz, amely az alkalmazás szintjén helyezi el a védelmet. Az alkalmazás munkahelyi környezetben való megnyitásához PIN-kód szükséges. Emellett korlátozza az alkalmazások közötti adatmegosztást, és megakadályozhatja, hogy a vállalati adatok személyes helyre legyenek mentve.
+## <a name="create-the-app-protection-policy"></a>Create the app protection policy
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és lépjen az **ügyfélalkalmazások** > **App Protection-szabályzatok** > **házirend létrehozása**elemre.  
-2. Adja meg a következő beállítást:  
-   - **Név**: adja meg az **Outlook app Policy tesztet**.  
-   - **Leírás**: adja meg az **Outlook-alkalmazás szabályzatának tesztelését**.  
-   - **Platform**: válassza az **iOS**lehetőséget.  
-   - Az **összes alkalmazás típusának megcélzása**: válassza a nem lehetőséget, majd az **alkalmazás típusa**mezőben jelölje be a **nem** **felügyelt eszközökön lévő alkalmazások**jelölőnégyzetét.  
-3. Válassza az **alkalmazások**lehetőséget. Az alkalmazások listában válassza az **Outlook**lehetőséget, majd válassza a **kiválasztás**lehetőséget.
-4. A beállítások panel megnyitásához válassza a **Beállítások** lehetőséget. 
-5. A beállítások ablaktáblán válassza az **Adatvédelem**lehetőséget. A *adatátvitel*alatt az adatvédelem ablaktáblán adja meg a következő beállításokat az oktatóanyaghoz:
+In this tutorial, we’ll set up an Intune app protection policy for iOS for the Outlook app to put protections in place at the app level. We'll require a PIN to open the app in a work context. We'll also limit data sharing between apps and prevent company data from being saved to a personal location.
 
-   - Ha **más alkalmazásokba szeretné elküldeni a szervezeti adatküldést**, válassza a **nincs**lehetőséget.  
-   - **Más alkalmazásoktól érkező adatok fogadásához**válassza a **nincs**lehetőséget.  
-   - A **szervezeti adatmásolatok mentéséhez**válassza a **Letiltás**lehetőséget.  
-   - A **kivágási, másolási és beillesztési műveletek korlátozása más alkalmazások között**válassza a **Letiltva**lehetőséget. 
-   - Hagyja meg az összes többi beállítást az alapértelmezett értékeken. 
-   
-   ![Válassza ki az Outlook-alkalmazás védelmi házirendjének adatáthelyezési beállításait.](./media/tutorial-protect-email-on-unmanaged-devices/data-protection-settings.png)
+1. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-   A beállítások panelre való visszatéréshez kattintson **az OK gombra** .  
+2. Select **Apps** > **App protection policies** > **Create policy**, and select **iOS/iPadOS** for the platform.
 
-6. Válassza a **hozzáférési követelmények** lehetőséget, majd adja meg a következő beállításokat:  
+3. On the **Basics** page, configure the following settings:
 
-   - A **PIN-kód eléréséhez**válassza a **kötelező**lehetőséget.
-   - A **hozzáféréshez használt munkahelyi vagy iskolai fiók hitelesítő adatai**területen válassza a **kötelező**lehetőséget.
-   - Hagyja meg az összes többi beállítást az alapértelmezett értékeken.
- 
-    ![Válassza ki az Outlook-alkalmazás védelmi házirendjének hozzáférési műveleteit.](./media/tutorial-protect-email-on-unmanaged-devices/access-requirements-settings.png)
+   - **Name**: Enter **Outlook app policy test**.
+   - **Description**: Enter **Outlook app policy test**.
 
-    A beállítások panelre való visszatéréshez kattintson **az OK gombra** .  
+   The **Platform** value is set to your previous choice.
 
-7. A beállítások ablaktáblán kattintson az **OK gombra**, majd a házirend létrehozása panelen válassza a **Létrehozás**lehetőséget.
+   A folytatáshoz kattintson a **Tovább** gombra.
 
-Létrejön az Outlook alkalmazás-védelmi szabályzata. Ezután beállíthatja a feltételes hozzáférést, hogy az eszközök az Outlook alkalmazást használják.
+4. The **Apps** page allows you to choose how you want to apply this policy to apps on different devices. Configure the following options:
 
-## <a name="create-conditional-access-policies"></a>Feltételes hozzáférési szabályzatok létrehozása
-Most hozzunk létre két feltételes hozzáférési szabályzatot az összes eszköz platformjának lefedéséhez.  
+   - For **Target to all app types**: Select **No**, and then for **App types**, select the checkbox for **Apps on unmanaged devices**.
+   - Click **Select public apps**. In the Apps list, select **Outlook**, and then choose **Select**.  Outlook now appears under *Public apps*.
 
-- Az első szabályzat megköveteli, hogy a modern hitelesítési ügyfelek a jóváhagyott Outlook alkalmazást és multi-Factor Authentication (MFA) hitelesítést használják. A modern hitelesítési ügyfelek közé tartoznak az iOS és az Android rendszerhez készült Outlook.  
+   A folytatáshoz kattintson a **Tovább** gombra.
 
-- A második szabályzat megköveteli, hogy az Exchange ActiveSync-ügyfelek a jóváhagyott Outlook alkalmazást használják. (A Exchange Active Sync jelenleg nem támogatja az eszköz platformján kívüli feltételeket). A feltételes hozzáférési szabályzatokat az Azure AD-portálon vagy az Intune-portálon is konfigurálhatja. Mivel már az Intune portálon vagyunk, itt fogjuk létrehozni a szabályzatot.  
+5. The **Data protection** page provides settings that determine how users interact with data in the apps that this app protection policy applies. Configure the following options:
 
-### <a name="create-an-mfa-policy-for-modern-authentication-clients"></a>MFA-szabályzat létrehozása modern hitelesítési ügyfelek számára  
+   Below *Data Transfer*, configure the following settings, leaving all other settings at their default values:
 
-1. Az Intune-ban válassza a **feltételes hozzáférés** > **házirendek**@no__t – 3**új házirend**elemet.  
+   - For **Send org data to other apps**, select **None**.  
+   - For **Receive data from other apps**, select **None**.  
+   - For **Save copies of org data**, select **Block**.  
+   - For **Restrict cut, copy and paste between other apps**, select **Blocked**. 
 
-2. A **név**mezőben adja meg **a modern hitelesítési ügyfelekhez tartozó tesztelési házirendet**.  
+   ![Select the Outlook app protection policy data relocation settings](./media/tutorial-protect-email-on-unmanaged-devices/data-protection-settings.png)
 
-3. A **Hozzárendelések** alatt válassza a **Felhasználók és csoportok** lehetőséget. A **Belefoglalás** lapon válassza a **Minden felhasználó** lehetőséget, majd a **Kész** elemet.
+   Select **Next** to continue.
 
-4. A **hozzárendelések**területen válassza a **felhőalapú alkalmazások vagy műveletek**elemet. Mivel az Office 365 Exchange Online e-mailjeit szeretnénk megvédeni, a következő lépések segítségével választhatjuk ki:  
-     
-   1. A **Belefoglalás** lapon válassza az **Alkalmazások kiválasztása** elemet.  
-   2. Válassza a **Kijelölés** elemet.  
-   3. Az alkalmazások listában válassza az **Office 365 Exchange Online**lehetőséget, majd válassza a **kiválasztás**lehetőséget.  
-   4. Kattintson a **kész** gombra az új házirend panelre való visszatéréshez.  
-  
+6. The **Access requirements** page provides settings to allow you to configure the PIN and credential requirements that users must meet to access apps in a work context. Configure the following settings, leaving all other settings at their default values:
+
+   - For **PIN for access**, select **Require**.
+   - For **Work or school account credentials for access**, select **Require**.
+
+   ![Select the Outlook app protection policy access actions](./media/tutorial-protect-email-on-unmanaged-devices/access-requirements-settings.png)
+
+   Select **Next** to continue.
+
+7. The **Conditional launch** page provides settings to set the sign-in security requirements for your app protection policy. For this tutorial, you don't need to configure these settings.
+
+   A folytatáshoz kattintson a **Tovább** gombra.
+
+8. Use the **Assignments** page to assign the app protection policy to groups of users. For this tutorial, you won't assign this policy to a group.  
+ don't need to configure these settings.
+
+   A folytatáshoz kattintson a **Tovább** gombra.
+
+9. On the **Next: Review + create** page, review the values and settings you entered for this app protection policy. Click **Create** to create the app protection policy in Intune.
+
+The app protection policy for Outlook is created. Next, you'll set up Conditional Access to require devices to use the Outlook app.
+
+## <a name="create-conditional-access-policies"></a>Create Conditional Access policies
+
+Now we’ll create two Conditional Access policies to cover all device platforms.  
+
+- The first policy will require that Modern Authentication clients use the approved Outlook app and multi-factor authentication (MFA). Modern Authentication clients include Outlook for iOS and Outlook for Android.  
+
+- The second policy will require that Exchange ActiveSync clients use the approved Outlook app. (Currently, Exchange Active Sync doesn't support conditions other than device platform). You can configure Conditional Access policies in either the Azure AD portal or the Intune portal. Mivel már az Intune portálon vagyunk, itt fogjuk létrehozni a szabályzatot.  
+
+### <a name="create-an-mfa-policy-for-modern-authentication-clients"></a>Create an MFA policy for Modern Authentication clients  
+
+1. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431).
+
+2. Select **Endpoint security** >  **Conditional access** > **New policy**.  
+
+3. For **Name**, enter **Test policy for modern auth clients**.  
+
+4. A **Hozzárendelések** alatt válassza a **Felhasználók és csoportok** lehetőséget. A **Belefoglalás** lapon válassza a **Minden felhasználó** lehetőséget, majd a **Kész** elemet.
+
+5. Under **Assignments**, select **Cloud apps or actions**. Mivel az Office 365 Exchange Online e-mailjeit szeretnénk megvédeni, a következő lépések segítségével választhatjuk ki:
+
+   1. A **Belefoglalás** lapon válassza az **Alkalmazások kiválasztása** elemet.
+   2. Válassza a **Kijelölés** elemet.
+   3. In the Applications list, select **Office 365 Exchange Online**, and then choose **Select**.
+   4. Select **Done** to return to the New policy pane.
+
    ![Az Office 365 Exchange Online alkalmazás kiválasztása](./media/tutorial-protect-email-on-unmanaged-devices/modern-auth-policy-cloud-apps.png)
 
-5. A **Hozzárendelések** alatt válassza a **Feltételek** > **Eszközplatformok** lehetőséget.  
-   1. A **Konfigurálás** alatt válassza az **Igen** lehetőséget.  
-   2. A **beágyazás** lapon válassza a **bármely eszköz**elemet.  
-   3. Válassza a **Kész** lehetőséget.  
-   
-6. A **feltételek** ablaktáblán válassza az **ügyfélalkalmazások**elemet.  
-   1. A **Konfigurálás** alatt válassza az **Igen** lehetőséget.  
-   2. Válassza a **Mobile apps és az asztali ügyfelek** és a **modern hitelesítési ügyfelek**lehetőséget.  
-   3. Törölje a jelet a többi jelölőnégyzetből.  
-   4. Az új házirend panelre való visszatéréshez válassza a **kész**@no__t – 1**kész** elemet.  
+6. A **Hozzárendelések** alatt válassza a **Feltételek** > **Eszközplatformok** lehetőséget.
 
-   ![Mobil alkalmazások és ügyfelek kiválasztása](./media/tutorial-protect-email-on-unmanaged-devices/modern-auth-policy-client-apps.png)
+   1. A **Konfigurálás** alatt válassza az **Igen** lehetőséget.
+   2. On the **Include** tab, select **Any device**.
+   3. Válassza a **Kész** lehetőséget.
 
-7. A **Hozzáférés-vezérlés** alatt válassza ki az **Engedélyezés** elemet. 
-     
+7. On the **Conditions** pane, select **Client apps**.
+
+   1. A **Konfigurálás** alatt válassza az **Igen** lehetőséget.
+   2. Select **Mobile apps and desktop clients** and **Modern authentication clients**.
+   3. Clear the other check boxes.
+   4. Select **Done** > **Done** to return to the New policy pane.
+
+   ![Select Mobile apps and clients](./media/tutorial-protect-email-on-unmanaged-devices/modern-auth-policy-client-apps.png)
+
+8. A **Hozzáférés-vezérlés** alatt válassza ki az **Engedélyezés** elemet.
+
    1. Az **Engedélyezés** lapon válassza az **Engedélyek megadása** lehetőséget.
-   2. Válassza a **többtényezős hitelesítés megkövetelése**lehetőséget.
+   2. Select **Require multi-factor authentication**.
    3. Válassza ki a **Jóváhagyott ügyfélalkalmazás megkövetelése** elemet.
    4. A **Több vezérlő esetén** elem alatt válassza a **minden kiválasztott vezérlő megkövetelésére** szolgáló lehetőséget. Ez a beállítás biztosítja, hogy mindkét kiválasztott követelmény érvényben legyen, amikor egy eszköz hozzá próbál férni az e-mailekhez.
    5. Válassza a **Kijelölés** elemet.
-     
-   ![Vezérlők kijelölése](./media/tutorial-protect-email-on-unmanaged-devices/modern-auth-policy-mfa.png)
 
-7. A **házirend engedélyezése**területen válassza **a**be lehetőséget, majd válassza a **Létrehozás**lehetőséget.  
-     
-    ![Házirend létrehozása](./media/tutorial-protect-email-on-unmanaged-devices/enable-policy.png)  
+   ![Select access controls](./media/tutorial-protect-email-on-unmanaged-devices/modern-auth-policy-mfa.png)
 
-Létrejön a modern hitelesítési ügyfelek feltételes hozzáférési szabályzata. Most létrehozhat egy házirendet Exchange Active Sync-ügyfelek számára.
+9. Under **Enable policy**, select **On**, and then select **Create**.
 
-### <a name="create-a-policy-for-exchange-active-sync-clients"></a>Szabályzat létrehozása Exchange Active Sync ügyfelek számára  
-1. Az Intune-ban válassza a **feltételes hozzáférés** > **házirendek**@no__t – 3**új házirend**elemet.  
-2. A **név**mezőben adja meg **az EAS-ügyfelekhez tartozó tesztelési**szabályzatot.  
-3. A **Hozzárendelések** alatt válassza a **Felhasználók és csoportok** lehetőséget.  
-4. A *Belefoglalás* lapon válassza a **Minden felhasználó** lehetőséget, majd a **Kész** elemet.  
+   ![Create policy](./media/tutorial-protect-email-on-unmanaged-devices/enable-policy.png)  
 
-5. A **hozzárendelések**területen válassza a **felhőalapú alkalmazások vagy műveletek**elemet. Válassza az Office 365 Exchange Online e-mailek elemet a következő lépésekkel:  
-   1. A *Belefoglalás* lapon válassza az **Alkalmazások kiválasztása** elemet.  
-   2. Válassza a **Kijelölés** elemet.  
-   3. Az *alkalmazások*listájából válassza ki az **Office 365 Exchange Online**elemet, majd válassza a **kiválasztás**, majd a **kész**lehetőséget.  
+The Conditional Access policy for Modern Authentication clients is created. Now you can create a policy for Exchange Active Sync clients.
+
+### <a name="create-a-policy-for-exchange-active-sync-clients"></a>Create a policy for Exchange Active Sync clients
+
+1. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431).
+
+2. Select **Endpoint security** > **Conditional Access** > **New policy**.
+
+3. For **Name**, enter **Test policy for EAS clients**.
+
+4. A **Hozzárendelések** alatt válassza a **Felhasználók és csoportok** lehetőséget. A *Belefoglalás* lapon válassza a **Minden felhasználó** lehetőséget, majd a **Kész** elemet.
+
+5. Under **Assignments**, select **Cloud apps or actions**. Select Office 365 Exchange Online email with these steps:
+
+   1. A *Belefoglalás* lapon válassza az **Alkalmazások kiválasztása** elemet.
+   2. Válassza a **Kijelölés** elemet.
+   3. From the list of *Applications*, select **Office 365 Exchange Online**, and then choose **Select**, and then **Done**.
   
-6. A **Hozzárendelések** alatt válassza a **Feltételek** > **Eszközplatformok** lehetőséget.  
-   1. A **Konfigurálás** alatt válassza az **Igen** lehetőséget.  
-   2. A **beágyazás** lapon válassza ki a kívánt **eszközt**, majd kattintson a **kész**gombra.  
+6. A **Hozzárendelések** alatt válassza a **Feltételek** > **Eszközplatformok** lehetőséget.
 
-7. A **feltételek** ablaktáblán válassza az **ügyfélalkalmazások**elemet.  
-   1. A **Konfigurálás** alatt válassza az **Igen** lehetőséget.  
-   2. Válassza **a Mobile apps és az asztali ügyfelek**lehetőséget.  
-   3. Válassza az **Exchange ActiveSync-ügyfelek** lehetőséget, és **alkalmazza a házirendet csak a támogatott platformokra**.  
+   1. A **Konfigurálás** alatt válassza az **Igen** lehetőséget.
+   2. On the **Include** tab, select **Any device**, and then select **Done**.
+
+7. On the **Conditions** pane, select **Client apps**.
+
+   1. A **Konfigurálás** alatt válassza az **Igen** lehetőséget.
+   2. Select **Mobile apps and desktop clients**.
+   3. Select **Exchange ActiveSync clients** and **Apply policy only to supported platforms**.  
    4. Az összes többi jelölőnégyzet jelölését törölje.  
    5. Kattintson a **Kész**, majd ismét a **Kész** gombra.  
-    
-   ![Alkalmazás a támogatott platformokra](./media/tutorial-protect-email-on-unmanaged-devices/eas-client-apps.png)  
 
-7. A **Hozzáférés-vezérlés** alatt válassza ki az **Engedélyezés** elemet.  
-   1. Az **Engedélyezés** lapon válassza az **Engedélyek megadása** lehetőséget.  
-   2. Válassza ki a **Jóváhagyott ügyfélalkalmazás megkövetelése** elemet. Az összes többi jelölőnégyzet jelölését törölje.  
-   3. Válassza a **Kijelölés** elemet.  
-     
-   ![Jóváhagyott ügyfélalkalmazás megkövetelése](./media/tutorial-protect-email-on-unmanaged-devices/eas-grant-access.png)  
+   ![Apply to supported platforms](./media/tutorial-protect-email-on-unmanaged-devices/eas-client-apps.png)  
 
-8. A **Szabályzat engedélyezése** alatt válassza a **Bekapcsolás** elemet.  
+8. A **Hozzáférés-vezérlés** alatt válassza ki az **Engedélyezés** elemet.
 
-9. Válassza a **Létrehozás** lehetőséget.  
+   1. Az **Engedélyezés** lapon válassza az **Engedélyek megadása** lehetőséget.
+   2. Válassza ki a **Jóváhagyott ügyfélalkalmazás megkövetelése** elemet. Az összes többi jelölőnégyzet jelölését törölje.
+   3. Válassza a **Kijelölés** elemet.
 
-Az alkalmazás-védelmi szabályzatok és a feltételes hozzáférés már érvényben van, és készen áll a tesztelésre.  
+   ![Require approved client app](./media/tutorial-protect-email-on-unmanaged-devices/eas-grant-access.png)
 
-## <a name="try-it-out"></a>Próbálja ki!  
-A létrehozott házirendekkel az eszközöknek regisztrálniuk kell az Intune-ban, és az Outlook Mobile alkalmazást kell használniuk az Office 365 e-mail eléréséhez. A forgatókönyv teszteléséhez egy iOS-eszközön próbáljon meg a tesztelési bérlő egyik felhasználójának hitelesítő adataival bejelentkezni az Exchange Online-ra.  
-1. iPhone-on történő teszteléshez válassza a **Beállítások** > **Jelszavak és fiókok** > **Fiók hozzáadása** > **Exchange** elemet.  
+9. Under **Enable policy**, select **On**, and then select **Create**.
+
+Your app protection policies and Conditional Access are now in place and ready to test.
+
+## <a name="try-it-out"></a>Próbálja ki!
+
+With the policies you’ve created, devices will need to enroll in Intune and use the Outlook mobile app to access Office 365 email. A forgatókönyv teszteléséhez egy iOS-eszközön próbáljon meg a tesztelési bérlő egyik felhasználójának hitelesítő adataival bejelentkezni az Exchange Online-ra.
+
+1. iPhone-on történő teszteléshez válassza a **Beállítások** > **Jelszavak és fiókok** > **Fiók hozzáadása** > **Exchange** elemet.
+
 2. Adja meg a tesztelési bérlő felhasználójának e-mail-címét, és válassza a **Tovább** gombot.  
-3. Válassza a **Bejelentkezés** elemet.  
-4. Adja meg a tesztfelhasználó jelszavát, és válassza a **Bejelentkezés** gombot.  
-5. Az üzenetnek **további információra van szüksége** , ami azt jelenti, hogy a rendszer felszólítja az MFA beállítására. Folytassa a további ellenőrzési módszer megadásával.  
-6. Ezután megjelenik egy üzenet, amely szerint az erőforrást az informatikai részleg által nem jóváhagyott alkalmazással próbálja megnyitni. Az üzenet azt jelenti, hogy a natív posta alkalmazás használatával blokkolva van. A bejelentkezés megszakítása.  
-7. Nyissa meg az Outlook alkalmazást, és válassza a **beállítások** > **fiók hozzáadása** > **e-mail fiók hozzáadása**lehetőséget.  
-8. Adja meg a tesztelési bérlő felhasználójának e-mail-címét, és válassza a **Tovább** gombot.  
-9. Nyomja meg **az Office 365-vel való bejelentkezést**. A rendszer további hitelesítést és regisztrációt kér. Miután bejelentkezett, tesztelheti az olyan műveleteket, mint például a Kivágás, a másolás, a Beillesztés és a Mentés másként lehetőség.  
+3. Válassza a **Bejelentkezés** elemet.
 
-## <a name="clean-up-resources"></a>Erőforrások eltávolítása  
-Ha már nincs szükség a tesztszabályzatokra, eltávolíthatja őket.  
-1. Jelentkezzen be az [Intune-ba](https://go.microsoft.com/fwlink/?linkid=2090973) globális rendszergazdaként vagy Intune-beli szolgáltatásadminisztrátorként.  
-2. Válassza az **Eszközmegfelelőség** > **Szabályzatok** elemet.  
-3. A **Szabályzat neve** listában válassza a tesztszabályzat helyi menüjét ( **...** ), majd válassza a **Törlés** elemet. Válassza az **OK** lehetőséget a megerősítéshez.  
-4. Válassza a **Feltételes hozzáférés** > **Szabályzatok** elemet.  
-5. A **szabályzat neve** listában válassza a helyi menüt ( **..** .) minden egyes tesztelési házirendhez, majd válassza a **Törlés**lehetőséget. A megerősítéshez válassza az **Igen** lehetőséget.  
+4. Adja meg a tesztfelhasználó jelszavát, és válassza a **Bejelentkezés** gombot.
 
-## <a name="next-steps"></a>További lépések  
-Ebben az oktatóanyagban létrehozott egy alkalmazás-védelmi szabályzatot, amely korlátozza, hogy a felhasználó mit tehet az Outlook alkalmazással, és feltételes hozzáférési szabályzatokat hozott létre az Outlook alkalmazás megköveteléséhez, valamint az MFA használatát a modern hitelesítési ügyfelek számára. További információ az Intune és a feltételes hozzáférés használatáról más alkalmazások és szolgáltatások elleni védelemhez: [feltételes hozzáférés beállítása](conditional-access.md).
+5. The message **More information is required** appears, which means you're being prompted to set up MFA. Go ahead and set up an additional verification method.
+
+6. Next you'll see a message that says you're trying to open this resource with an app that isn't approved by your IT department. The message means you're being blocked from using the native mail app. Cancel the sign-in.
+
+7. Open the Outlook app and select **Settings** > **Add Account** > **Add Email Account**.
+
+8. Adja meg a tesztelési bérlő felhasználójának e-mail-címét, és válassza a **Tovább** gombot.
+
+9. Press **Sign in with Office 365**. You'll be prompted for additional authentication and registration. Once you've signed in, you can test actions such as cut, copy, paste, and "Save As".
+
+## <a name="clean-up-resources"></a>Erőforrások eltávolítása
+
+Ha már nincs szükség a tesztszabályzatokra, eltávolíthatja őket.
+
+1. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431).
+
+2. Select **Devices** **Compliance policies**.
+
+3. A **Szabályzat neve** listában válassza a tesztszabályzat helyi menüjét ( **...** ), majd válassza a **Törlés** elemet. Válassza az **OK** lehetőséget a megerősítéshez.
+
+4. Select **Endpoint security** > **Conditional access**.
+
+5. In the **Policy Name** list, select the context menu ( **...** ) for each of your test policies, and then select **Delete**. Select **Yes** to confirm.
+
+## <a name="next-steps"></a>További lépések
+In this tutorial, you created app protection policies to limit what the user can do with the Outlook app, and you created Conditional Access policies to require the Outlook app and require MFA for Modern Authentication clients. To learn about using Intune with Conditional Access to protect other apps and services, see [Set up Conditional Access](conditional-access.md).

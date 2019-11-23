@@ -1,11 +1,11 @@
 ---
 title: Eszközprofilok létrehozása az Azure-beli Microsoft Intune-ban | Microsoft Docs
-description: Eszköz konfigurációs profiljának hozzáadása vagy konfigurálása Microsoft Intuneban. Válassza ki a platform típusát, konfigurálja a beállításokat, majd adjon hozzá egy hatókör címkét.
+description: Add or configure a device configuration profile in Microsoft Intune. Select the platform type, configure the settings, add a scope tag.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/20/2019
+ms.date: 11/21/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,42 +17,42 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 694e2ae67ef2bf7795dcf63a03480fdaed8cfbc4
-ms.sourcegitcommit: 1a22b8b31424847d3c86590f00f56c5bc3de2eb5
+ms.openlocfilehash: 0c4c995322234a4a2486d8e6c5e9efd88f78dd63
+ms.sourcegitcommit: 2fddb293d37453736ffa54692d03eca642f3ab58
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74261642"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74390874"
 ---
 # <a name="create-a-device-profile-in-microsoft-intune"></a>Eszközprofil létrehozása a Microsoft Intune-ban
 
-Az eszközök profiljaival beállításokat adhat hozzá és konfigurálhat, majd leküldheti ezeket a beállításokat a szervezet eszközeire. [Az eszközön található szolgáltatások és beállítások alkalmazása az eszközök profiljaival](device-profiles.md) részletesebben, beleértve a teendőket is.
+Devices profiles allow you to add and configure settings, and then push these settings to devices in your organization. [Apply features and settings on your devices using device profiles](device-profiles.md) goes into more detail, including what you can do.
 
 Ez a cikk:
 
-- A profil létrehozásának lépéseit sorolja fel.
-- Azt mutatja be, hogyan adhat hozzá hatókör-címkét a profil "filter" eleméhez.
-- A Windows 10-es eszközökre vonatkozó alkalmazhatósági szabályokat ismerteti, és bemutatja, hogyan hozhat létre szabályt.
-- Felsorolja a bejelentkezések frissítési ciklusának időpontját, amikor az eszközök profilokat és bármely profil-frissítést fogadnak.
+- Lists the steps to create a profile.
+- Shows you how to add a scope tag to "filter" the profile.
+- Describes applicability rules on Windows 10 devices, and shows you how to create a rule.
+- Lists the check-in refresh cycle times when devices receive profiles and any profile updates.
 
 ## <a name="create-the-profile"></a>A profil létrehozása
 
-1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+1. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Válassza az **eszközök** > **konfigurációs profilok**lehetőséget. A következő lehetőségek közül választhat:
+2. Select **Devices** > **Configuration profiles**. You have the following options:
 
-    - **Áttekintés**: felsorolja a profilok állapotát, és további részleteket biztosít a felhasználókhoz és eszközökhöz rendelt profilokhoz.
-    - **Kezelés**: eszközbeállítások létrehozása, egyéni PowerShell- [szkriptek](../apps/intune-management-extension.md) feltöltése a profilba való futtatáshoz, valamint adattervek hozzáadása az eszközökhöz a [eSIM](esim-device-configuration.md)használatával.
-    - **Figyelő**: Ellenőrizze a profil állapotát a sikerhez vagy a meghibásodáshoz, és tekintse meg a profilok naplóit is.
-    - **Telepítő**: adjon hozzá egy SCEP-vagy pfx-hitelesítésszolgáltatót, vagy engedélyezze a [távközlési költségek kezelését](telecom-expenses-monitor.md) a profilban.
+    - **Overview**: Lists the status of your profiles, and provides additional details on the profiles you assigned to users and devices.
+    - **Manage**: Create device profiles, upload custom [PowerShell scripts](../apps/intune-management-extension.md) to run within the profile, and add data plans to devices using [eSIM](esim-device-configuration.md).
+    - **Monitor**: Check the status of a profile for success or failure, and also view logs on your profiles.
+    - **Setup**: Add a SCEP or PFX certificate authority, or enable [Telecom Expense Management](telecom-expenses-monitor.md) in the profile.
 
-3. Válassza a **profil létrehozása**lehetőséget. Adja meg a következő tulajdonságokat:
+3. Select **Create profile**. Adja meg a következő tulajdonságokat:
 
-   - **Név**: adjon meg egy leíró nevet a profilhoz. Nevezze el a profilokat, hogy később könnyen azonosítható legyen. Egy jó profil neve például a **WP e-mail-profilja a teljes vállalat számára**.
+   - **Name**: Enter a descriptive name for the profile. Name your profiles so you can easily identify them later. For example, a good profile name is **WP email profile for entire company**.
    - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
-   - **Platform**: válassza ki az eszközök platformját. A választható lehetőségek:  
+   - **Platform**: Choose the platform of your devices. A választható lehetőségek:  
 
-       - **Android**
+       - **Android--**
        - **Vállalati Android**
        - **iOS/iPadOS**
        - **macOS**
@@ -60,130 +60,131 @@ Ez a cikk:
        - **Windows 8.1 és újabb verziók**
        - **Windows 10 és újabb**
 
-   - **Profil típusa**: válassza ki a létrehozni kívánt beállítások típusát. A megjelenő lista a választott **platformtól** függ.
-   - **Beállítások**: az alábbi cikkek az egyes profilok típusának beállításait írják le:
+   - **Profile type**: Select the type of settings you want to create. The list shown depends on the **platform** you choose.
+   - **Settings**: The following articles describe the settings for each profile type:
 
-       - [Felügyeleti sablonok](administrative-templates-windows.md)
+       - [Administrative templates](administrative-templates-windows.md)
        - [Egyéni](../custom-settings-configure.md)
-       - [Kézbesítési optimalizálás](../delivery-optimization-windows.md)
+       - [Delivery optimization](../delivery-optimization-windows.md)
        - [Eszközfunkciók](../device-features-configure.md)
        - [Eszközkorlátozások](device-restrictions-configure.md)
-       - [Kiadás verziófrissítése és üzemmód kapcsolója](edition-upgrade-configure-windows-10.md)
-       - [Oktatás](education-settings-configure.md)
-       - [E-mail](email-settings-configure.md)
+       - [Edition upgrade and mode switch](edition-upgrade-configure-windows-10.md)
+       - [Education](education-settings-configure.md)
+       - [Email](email-settings-configure.md)
        - [Endpoint Protection](../protect/endpoint-protection-configure.md)
        - [Identity protection](../protect/identity-protection-configure.md)  
        - [Kioszkmód](kiosk-settings.md)
-       - [PKCS-tanúsítvány](../protect/certficates-pfx-configure.md)
-       - [PKCS importált tanúsítvány](../protect/certificates-imported-pfx-configure.md)
-       - [SCEP-tanúsítvány](../protect/certificates-scep-configure.md)
-       - [Megbízható tanúsítvány](../protect/certificates-configure.md)
-       - [Szabályzatok frissítése](../software-updates-ios.md)
+       - [PKCS certificate](../protect/certficates-pfx-configure.md)
+       - [PKCS imported certificate](../protect/certificates-imported-pfx-configure.md)
+       - [Preference file](preference-file-settings-macos.md)
+       - [SCEP certificate](../protect/certificates-scep-configure.md)
+       - [Trusted certificate](../protect/certificates-configure.md)
+       - [Update policies](../software-updates-ios.md)
        - [VPN](vpn-settings-configure.md)
        - [Wi-Fi](wi-fi-settings-configure.md)
        - [Microsoft Defender ATP](../protect/advanced-threat-protection.md)
        - [Windows Információvédelem](../protect/windows-information-protection-configure.md)
 
-     Ha például az **iOS/iPadOS** lehetőséget választja a platformhoz, a profil típusa beállítás a következő profilhoz hasonlóan néz ki:
+     For example, if you select **iOS/iPadOS** for the platform, your profile type options look similar to the following profile:
 
-     ![IOS-profil létrehozása az Intune-ban](./media/device-profile-create/create-device-profile.png)
+     ![Create iOS profile in Intune](./media/device-profile-create/create-device-profile.png)
 
-4. Ha elkészült, válassza **az OK** > **Létrehozás** lehetőséget a módosítások mentéséhez. Ekkor létrejön a profil, és megjelenik a listában.
+4. When finished, select **OK** > **Create** to save your changes. The profile is created, and shown in the list.
 
 ## <a name="scope-tags"></a>Hatókörcímkék
 
-A beállítások hozzáadása után hozzáadhat egy hatókör-címkét is a profilhoz. A hatókör-címkék meghatározott csoportokra, például HR-re vagy az összes US-NC-alkalmazottakra vonatkozó házirendeket oszthatnak ki és szűrhetik.
+After you add the settings, you can also add a scope tag to the profile. Scope tags assign and filter policies to specific groups, such as HR or All US-NC employees.
 
-További információ a hatóköri címkékről és a műveletekről: [a RBAC és a hatókör-címkék használata a terjesztéshez](../fundamentals/scope-tags.md).
+For more information about scope tags, and what you can do, see [Use RBAC and scope tags for distributed IT](../fundamentals/scope-tags.md).
 
-### <a name="add-a-scope-tag"></a>Hatókör címke hozzáadása
+### <a name="add-a-scope-tag"></a>Add a scope tag
 
-1. Válassza a **hatókör (címkék)** lehetőséget.
-2. Új hatóköri címke létrehozásához válassza a **Hozzáadás** lehetőséget. Vagy válasszon ki egy meglévő hatókör címkét a listából.
-3. A módosítások mentéséhez kattintson az **OK** gombra.
+1. Select **Scope (Tags)** .
+2. Select **Add** to create a new scope tag. Or, select an existing scope tag from the list.
+3. A módosítások mentéséhez válassza az **OK** gombot.
 
-## <a name="applicability-rules"></a>Alkalmazhatósági szabályok
+## <a name="applicability-rules"></a>Applicability rules
 
-Érintett kiadások:
+Applies to:
 
 - Windows 10 és újabb
 
-Az alkalmazhatósági szabályok lehetővé teszik a rendszergazdák számára, hogy egy adott feltételnek megfelelő csoportban célozzák meg az eszközöket. Létrehozhat például egy eszköz-korlátozási profilt, amely a **minden Windows 10 rendszerű eszköz** csoportra vonatkozik. És csak azt szeretné, hogy a profil a Windows 10 Enterprise rendszerű eszközökhöz legyen hozzárendelve.
+Applicability rules allow administrators to target devices in a group that meet specific criteria. For example, you create a device restrictions profile that applies to the **All Windows 10 devices** group. And, you only want the profile assigned to devices running Windows 10 Enterprise.
 
-A feladat elvégzéséhez hozzon létre egy **alkalmazhatósági szabályt**. Ezek a szabályok nagyszerűek a következő esetekben:
+To do this task, create an **applicability rule**. These rules are great for the following scenarios:
 
-- Windows 10 Education (EDU) rendszert használ. A fújtató College-ban minden Windows 10 EDU-eszközt meg kíván célozni a RS3 és a RS4 között.
-- Az emberi erőforrások minden felhasználóját meg szeretné célozni a contoso-on, de csak a Windows 10 Professional vagy a Enterprise rendszerű eszközöket szeretné használni.
+- You use Windows 10 Education (EDU). At Bellows College, you want to target all Windows 10 EDU devices between RS3 and RS4.
+- You want to target all users in Human Resources at Contoso, but only want Windows 10 Professional or Enterprise devices.
 
-A forgatókönyvek megközelítéséhez a következőket kell tennie:
+To approach these scenarios, you:
 
-- Hozzon létre egy eszközök csoportot, amely tartalmazza az összes eszközt a Harmonikák Főiskoláján. A profilban adjon hozzá egy alkalmazhatósági szabályt, amely akkor érvényes, ha az operációs rendszer minimális verziója `16299`, és a maximális verziószám `17134`. Rendelje hozzá ezt a profilt a fújtató College-eszközök csoportjához.
+- Create a devices group that includes all devices at Bellows College. In the profile, add an applicability rule so it applies if the OS minimum version is `16299` and the maximum version is `17134`. Assign this profile to the Bellows College devices group.
 
-  A hozzárendelés után a profil a megadott minimális és maximális verziók közötti eszközökre vonatkozik. Azon eszközök esetében, amelyek nem az Ön által megadott minimális és maximális verziók közé tartoztak, az állapotuk **nem alkalmazhatóként**jelenik meg.
+  When it's assigned, the profile applies to devices between the minimum and maximum versions you enter. For devices that aren't between the minimum and maximum versions you enter, their status shows as **Not applicable**.
 
-- Hozzon létre egy felhasználói csoportot, amely tartalmazza az emberi erőforrások (HR) összes felhasználóját a contoso-on. A profilban adjon hozzá egy alkalmazhatósági szabályt, hogy a Windows 10 Professional vagy Enterprise rendszert futtató eszközökre vonatkozzon. Rendelje hozzá ezt a profilt a HR-felhasználók csoportjához.
+- Create a users group that includes all users in Human Resources (HR) at Contoso. In the profile, add an applicability rule so it applies to devices running Windows 10 Professional or Enterprise. Assign this profile to the HR users group.
 
-  A hozzárendelés után a profil a Windows 10 Professional vagy Enterprise rendszert futtató eszközökre vonatkozik. Azon eszközök esetében, amelyek nem futtatják ezeket a kiadásokat, az állapotuk **nem alkalmazhatóként**jelenik meg.
+  When it's assigned, the profile applies to devices running Windows 10 Professional or Enterprise. For devices that aren't running these editions, their status shows as **Not applicable**.
 
-- Ha két profil pontosan ugyanazokkal a beállításokkal rendelkezik, akkor a rendszer az alkalmazhatósági szabály nélkül alkalmazza a profilt. 
+- If there are two profiles with the exact same settings, then the profile without an applicability rule is applied. 
 
-  Például a Microsoft Windows 10-es eszközök csoportjának célja a BitLocker engedélyezése, és nem rendelkezik alkalmazhatósági szabállyal. A ProfileB ugyanazt a Windows 10-es eszközök csoportot célozza meg, lehetővé teszi a BitLocker használatát, és az alkalmazhatósági szabállyal csak a profilt alkalmazza a Windows 10 Enterprise rendszerre.
+  For example, ProfileA targets the Windows 10 devices group, enables BitLocker, and doesn’t have an applicability rule. ProfileB targets the same Windows 10 devices group, enables BitLocker, and has an applicability rule to only apply the profile to Windows 10 Enterprise.
 
-  Ha mindkét profil hozzá van rendelve, a rendszer alkalmazza a profilt, mert nem rendelkezik alkalmazhatósági szabállyal. 
+  When both profiles are assigned, ProfileA is applied because it doesn’t have an applicability rule. 
 
-Amikor hozzárendeli a profilt a csoportokhoz, az alkalmazhatósági szabályok szűrőként működnek, és csak azokat az eszközöket célozzák meg, amelyek megfelelnek a feltételeknek.
+When you assign the profile to the groups, the applicability rules act as a filter, and only target the devices that meet your criteria.
 
-### <a name="add-a-rule"></a>Szabály hozzáadása
+### <a name="add-a-rule"></a>Add a rule
 
-1. Válassza ki az **alkalmazhatósági szabályokat**. Megadhatja a **szabályt**, a **tulajdonságot**és az **operációs rendszer kiadását**:
+1. Select **Applicability Rules**. You can choose the **Rule**, **Property**, and **OS edition**:
 
-    ![Alkalmazhatósági szabály hozzáadása az eszköz konfigurációs profiljához Microsoft Intune](./media/device-profile-create/applicability-rules.png)
+    ![Add an applicability rule to a device configuration profile in Microsoft Intune](./media/device-profile-create/applicability-rules.png)
 
-2. A **szabály**mezőben válassza ki, hogy szeretne-e felhasználókat vagy csoportokat bevonni vagy kizárni. A választható lehetőségek:
+2. In **Rule**, choose if you want to include or exclude users or groups. A választható lehetőségek:
 
-    - **Rendeljen hozzá profilt, ha**: olyan felhasználókat vagy csoportokat tartalmaz, amelyek megfelelnek a megadott feltételeknek.
-    - **Ne rendeljen profilt, ha**: kizárja azokat a felhasználókat vagy csoportokat, amelyek megfelelnek a megadott feltételeknek.
+    - **Assign profile if**: Includes users or groups that meet the criteria you enter.
+    - **Don't assign profile if**: Excludes users or groups that meet the criteria you enter.
 
-3. A **tulajdonság**mezőben válassza ki a szűrőt. A választható lehetőségek: 
+3. In **Property**, choose your filter. A választható lehetőségek: 
 
-    - **Operációs rendszer kiadása**: a listában tekintse meg azokat a Windows 10-es kiadásokat, amelyeket bele szeretne foglalni (vagy ki kell zárni) a szabályba.
-    - **Operációs rendszer verziója**: adja meg a szabályban a **minimális** és a **maximális** Windows 10-es verziószámot, amelyet fel szeretne venni (vagy kizár). Mindkét értéket kötelező megadni.
+    - **OS edition**: In the list, check the Windows 10 editions you want to include (or exclude) in your rule.
+    - **OS version**: Enter the **min** and **max** Windows 10 version numbers of you want to include (or exclude) in your rule. Both values are required.
 
-      Megadhatja például `10.0.16299.0` (RS3 vagy 1709) a minimális verzióhoz, és `10.0.17134.0` (RS4 vagy 1803) a maximális verzióhoz. Vagy részletesebben is megadhatja, és megadhatja `10.0.16299.001` a minimális verzióhoz, és `10.0.17134.319` a maximális verzióhoz.
+      For example, you can enter `10.0.16299.0` (RS3 or 1709) for minimum version and `10.0.17134.0` (RS4 or 1803) for maximum version. Or, you can be more granular and enter `10.0.16299.001` for minimum version and `10.0.17134.319` for maximum version.
 
-4. A módosítások mentéséhez válassza a **Hozzáadás** lehetőséget.
+4. Select **Add** to save your changes.
 
-## <a name="refresh-cycle-times"></a>A ciklus idejének frissítése
+## <a name="refresh-cycle-times"></a>Refresh cycle times
 
-Az Intune különböző frissítési ciklusokat használ a konfigurációs profilok frissítéseinek kereséséhez. Ha az eszköz nemrég lett regisztrálva, a bejelentkezés gyakrabban fut. A [házirend-és profil-frissítési ciklusok](device-profile-troubleshoot.md#how-long-does-it-take-for-devices-to-get-a-policy-profile-or-app-after-they-are-assigned) a becsült frissítési időpontokat listázza.
+Intune uses different refresh cycles to check for updates to configuration profiles. If the device recently enrolled, the check-in runs more frequently. [Policy and profile refresh cycles](device-profile-troubleshoot.md#how-long-does-it-take-for-devices-to-get-a-policy-profile-or-app-after-they-are-assigned) lists the estimated refresh times.
 
-A felhasználók bármikor megnyithatja a Céges portál alkalmazást, és az eszköz szinkronizálásával azonnal megkeresheti a profil frissítéseit.
+At any time, users can open the Company Portal app, and sync the device to immediately check for profile updates.
 
 ## <a name="recommendations"></a>Javaslatok
 
-Profilok létrehozásakor vegye figyelembe az alábbi javaslatokat:
+When creating profiles, consider the following recommendations:
 
-- Nevezze el a szabályzatokat, hogy tudja, mit, és mit csinálnak. A [megfelelőségi szabályzatok](../protect/create-compliance-policy.md) és a [konfigurációs profilok](../configuration/device-profile-create.md) nem kötelező **leírási** tulajdonsággal rendelkeznek. A **leírásban**adjon meg konkrét információkat, és adja meg, hogy mások is tudják, mi a házirend.
+- Name your policies so you know what they are, and what they do. All [compliance policies](../protect/create-compliance-policy.md) and [configuration profiles](../configuration/device-profile-create.md) have an optional **Description** property. In **Description**, be specific and include information so others know what the policy does.
 
-  Néhány konfigurációs profil például az alábbiakat tartalmazza:
+  Some configuration profile examples include:
 
-  **Profilnév**: felügyeleti sablon – OneDrive konfigurációs profil az összes Windows 10 felhasználóhoz  
-  **Profil leírása**: a OneDrive felügyeleti sablon profilja, amely tartalmazza a minimális és alapbeállításokat minden Windows 10 felhasználóhoz. A user@contoso.com hozta létre, hogy megakadályozza a felhasználók számára a szervezeti adatok személyes OneDrive-fiókokhoz való megosztását.
+  **Profile name**: Admin template - OneDrive configuration profile for all Windows 10 users  
+  **Profile description**: OneDrive admin template profile that includes the minimum and base settings for all Windows 10 users. Created by user@contoso.com to prevent users from sharing organizational data to personal OneDrive accounts.
 
-  **Profil neve**: VPN-profil az összes iOS-felhasználóhoz  
-  **Profil leírása**: VPN-profil, amely tartalmazza az iOS-felhasználók minimális és alapszintű beállításait a contoso VPN-hez való csatlakozáshoz. Létrehozta user@contoso.com így a felhasználók automatikusan hitelesítik magukat a VPN-en ahelyett, hogy a felhasználók felhasználónevét és jelszavát kérik.
+  **Profile name**: VPN profile for all iOS users  
+  **Profile description**: VPN profile that includes the minimum and base settings for all iOS users to connect to Contoso VPN. Created by user@contoso.com so users automatically authenticate to VPN, instead of prompting users for their username and password.
 
-- Hozza létre a profilt a feladatával, például a Microsoft Edge beállításainak konfigurálása, a Microsoft Defender víruskereső beállításainak engedélyezése, az iOS-es jailbroken-eszközök letiltása stb.
+- Create your profile by its task, such as configure Microsoft Edge settings, enable Microsoft Defender anti-virus settings, block iOS jailbroken devices, and so on.
 
-- Olyan profilok hozhatók létre, amelyek adott csoportokra, például marketingre, értékesítésre, rendszergazdákra vagy hely vagy iskolai rendszerre vonatkoznak.
+- Create profiles that apply to specific groups, such as Marketing, Sales, IT Administrators, or by location or school system.
 
-- Különálló felhasználói szabályzatok az eszközök házirendjéből.
+- Separate user policies from device policies.
 
-  Például [Felügyeleti sablonok az Intune-ban](administrative-templates-windows.md) több száz ADMX-beállítás van. A sablon azt mutatja, hogy a beállítások a felhasználókra vagy az eszközökre vonatkoznak-e. Felügyeleti sablonok létrehozásakor rendelje hozzá a felhasználók beállításait egy felhasználói csoporthoz, és rendelje hozzá az eszköz beállításait az eszközök csoportjához.
+  For example, [Administrative Templates in Intune](administrative-templates-windows.md) have hundreds of ADMX settings. These template shows if a settings applies to users or devices. When creating admin templates, assign your users settings to a users group, and assign your device settings to a devices group.
 
-  Az alábbi képen egy olyan beállítás látható, amely a felhasználókra és/vagy az eszközökre alkalmazható:
+  The following image shows an example of a setting that can apply to users and/or apply to devices:
 
-  ![A felhasználóra és az eszközökre vonatkozó Intune felügyeleti sablon](./media/device-profile-create/setting-applies-to-user-and-device.png)
+  ![Intune admin template that applies to user and devices](./media/device-profile-create/setting-applies-to-user-and-device.png)
 
 ## <a name="next-steps"></a>További lépések
 

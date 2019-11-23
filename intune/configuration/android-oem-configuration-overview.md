@@ -1,6 +1,6 @@
 ---
-title: A OEMConfig használata androidos vállalati eszközökön Microsoft Intune-Azure-ban | Microsoft Docs
-description: Az OEMConfig használatával az Android Enterprise rendszert futtató eszközöket a Microsoft Intune segítségével kezelheti és használhatja. Tekintse meg az összes lépést, beleértve az áttekintést, az előfeltételek, a konfigurációs profil létrehozása az Intune-ban című témakört, és tekintse meg a támogatott OEMConfig-alkalmazások listáját.
+title: Use OEMConfig on Android Enterprise devices in Microsoft Intune - Azure | Microsoft Docs
+description: Use Microsoft Intune to manage and use devices running Android Enterprise with OEMConfig. See all the steps, including an overview, see the prerequisites, create the configuration profile in Intune, and see a list of supported OEMConfig apps.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
@@ -17,142 +17,147 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bacb7e26df8a5b0d6c7500b24a5e749a85ca62f2
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.openlocfilehash: 075e7a99f72de30e83447a2869154859e33356b9
+ms.sourcegitcommit: 2fddb293d37453736ffa54692d03eca642f3ab58
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74059633"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74390839"
 ---
-# <a name="use-and-manage-android-enterprise-devices-with-oemconfig-in-microsoft-intune"></a>Androidos nagyvállalati eszközök használata és kezelése a OEMConfig-ben Microsoft Intune
+# <a name="use-and-manage-android-enterprise-devices-with-oemconfig-in-microsoft-intune"></a>Use and manage Android Enterprise devices with OEMConfig in Microsoft Intune
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-A Microsoft Intune a OEMConfig használatával adhat hozzá, hozhat létre és szabhat testre OEM-specifikus beállításokat az androidos vállalati eszközökhöz. A OEMConfig általában az Intune-ban nem beépített beállítások konfigurálására szolgálnak. Az eredeti berendezésgyártó (OEM) különböző beállításokat tartalmaz. Az elérhető beállítások attól függnek, hogy az OEM milyen tartalmakat tartalmaz a OEMConfig alkalmazásban.
+In Microsoft Intune, you can use OEMConfig to add, create, and customize OEM-specific settings for Android Enterprise devices. OEMConfig is typically used to configure settings that aren't built in to Intune. Different original equipment manufacturers (OEM) include different settings. The available settings depend on what the OEM includes in their OEMConfig app.
 
 Ez a funkció az alábbiakra vonatkozik:  
 
 - Vállalati Android
 
-Ez a cikk a OEMConfig ismerteti, felsorolja az előfeltételeket, bemutatja, hogyan hozhat létre konfigurációs profilt, és listázza a támogatott OEMConfig-alkalmazásokat az Intune-ban.
+This article describes OEMConfig, lists the prerequisites, shows how to create a configuration profile, and lists the supported OEMConfig apps in Intune.
 
 ## <a name="overview"></a>Házirend
 
-A OEMConfig szabályzatok az [alkalmazás-konfigurációs házirendhez](../apps/app-configuration-policies-overview.md)hasonló speciális típusú eszköz-konfigurációs házirend. A OEMConfig egy, a Google által meghatározott szabvány, amely az alkalmazások konfigurációját használja az Androidban az eszközök beállításainak az OEM-ek által írt alkalmazásokba való küldéséhez (eredeti berendezésgyártó). Ez a szabvány lehetővé teszi, hogy a számítógépgyártók és a EMMs (nagyvállalati mobilitási felügyelet) szabványosított módon hozzanak létre és támogassák az OEM-specifikus szolgáltatásokat. [További információ a OEMConfig](https://blog.google/products/android-enterprise/oemconfig-supports-enterprise-device-features/).
+OEMConfig policies are a special type of device configuration policy similar to [app configuration policy](../apps/app-configuration-policies-overview.md). OEMConfig is a standard defined by Google that leverages app configuration in Android to send device settings to apps written by OEMs (original equipment manufacturers). This standard allows OEMs and EMMs (enterprise mobility management) to build and support OEM-specific features in a standardized way. [Learn more about OEMConfig](https://blog.google/products/android-enterprise/oemconfig-supports-enterprise-device-features/).
 
-A EMMs, például az Intune, az OEM-specifikus funkciók támogatását manuálisan is kiépítheti, miután a számítógépgyártó bevezette őket. Ez a megközelítés ismétlődő erőfeszítéseket és lassú bevezetést eredményez.
+Historically, EMMs, such as Intune, manually build support for OEM-specific features after they're introduced by the OEM. This approach leads to duplicated efforts and slow adoption.
 
-A OEMConfig esetében az OEM egy olyan sémát hoz létre, amely az OEM-specifikus felügyeleti funkciókat definiálja. Az OEM beágyazza a sémát egy alkalmazásba, majd ezt az alkalmazást a Google Play webhelyen helyezi el. Az az alkalmazásból beolvassa a sémát, és elérhetővé teszi a sémát a az a-ben lévő, a (az A konzol lehetővé teszi az Intune-rendszergazdák számára a séma beállításainak konfigurálását.
+With OEMConfig, an OEM creates a schema that defines OEM-specific management features. The OEM embeds the schema into an app, and then puts this app on Google Play. The EMM reads the schema from the app, and exposes the schema in the EMM administrator console. The console allows Intune administrators to configure the settings in the schema.
 
-Amikor a OEMConfig alkalmazást telepíti egy eszközre, az a következő beállításokkal kezeli az eszközt: Az eszköz beállításait a OEMConfig alkalmazás hajtja végre, nem pedig az MDM-ügynök által készített,
+When the OEMConfig app installs on a device, it uses the settings configured in the EMM administrator console to manage the device. Settings on the device are executed by the OEMConfig app, instead of an MDM agent built by the EMM.
 
-Ha az OEM hozzáadja és javítja a felügyeleti funkciókat, az OEM az alkalmazást a Google Play áruházban is frissíti. Rendszergazdaként ezeket az új szolgáltatásokat és frissítéseket (beleértve a javításokat is) úgy érheti el, hogy a EMMs-re való várakozás nélkül is felveszi ezeket a frissítéseket.
+When the OEM adds and improves management features, the OEM also updates the app in Google Play. As an administrator, you get these new features and updates (including fixes) without waiting for EMMs to include these updates.
 
 > [!TIP]
-> A OEMConfig csak olyan eszközökkel használható, amelyek támogatják ezt a funkciót, és rendelkeznek egy megfelelő OEMConfig-alkalmazással. További részletekért forduljon az OEM-hez.
+> You can only use OEMConfig with devices that support this feature and have a corresponding OEMConfig app. Consult your OEM for specific details.
 
 ## <a name="before-you-begin"></a>Előkészületek
 
-A OEMConfig használatakor vegye figyelembe a következő információkat:
+When using OEMConfig, be aware of the following information:
 
-- Az Intune elérhetővé teszi a OEMConfig alkalmazás sémáját, hogy beállítsa. Az Intune nem ellenőrzi vagy nem módosítja az alkalmazás által biztosított sémát. Így ha a séma helytelen, vagy pontatlan adatmennyiséggel rendelkezik, ezeket az adatait a rendszer továbbra is elküldi az eszközöknek. Ha olyan problémát talál, amely a sémából származik, forduljon az OEM-hez útmutatásért.
-- Az Intune nem befolyásolja vagy szabályozza az alkalmazás sémájának tartalmát. Az Intune például nem rendelkezik a karakterláncok, a nyelv, az engedélyezett műveletek és így tovább. Javasoljuk, hogy vegye fel a kapcsolatot az OEM-vel az eszközök OEMConfig-vel való kezelésével kapcsolatos részletekért és ajánlott eljárásokhoz.
-- A számítógépgyártók bármikor frissíthetik a támogatott szolgáltatásokat és sémákat, és új alkalmazást tölthetnek fel a Google Play áruházba. Az Intune mindig szinkronizálja a OEMConfig alkalmazás legújabb verzióját a Google Play áruházból. Az Intune nem tartja karban a séma vagy az alkalmazás régebbi verzióit. Ha a verziószáma ütközik, javasoljuk, hogy további információért forduljon az OEM-hez.
-- Rendeljen egy OEMConfig-profilt egy eszközhöz. Ha ugyanahhoz az eszközhöz több profil is hozzá van rendelve, akkor inkonzisztens viselkedést tapasztalhat. A OEMConfig-modell csak egyetlen házirendet támogat eszközönként.
+- Intune exposes the OEMConfig app's schema so you can configure it. Intune doesn't validate or change the schema provided by the app. So if the schema is incorrect, or has inaccurate data, then this data is still sent to devices. If you find a problem that originates in the schema, contact the OEM for guidance.
+- Intune doesn't influence or control the content of the app schema. For example, Intune doesn't have any control over strings, language, the actions allowed, and so on. We recommend contacting the OEM for details and best practices for managing their devices with OEMConfig.
+- At any time, OEMs can update their supported features and schemas, and upload a new app to Google Play. Intune always syncs the latest version of the OEMConfig app from Google Play. Intune doesn't maintain older versions of the schema or the app. If you run into version conflicts, we recommend contacting the OEM for more information.
+- Assign one OEMConfig profile to a device. If multiple profiles are assigned to the same device, you may see inconsistent behavior. The OEMConfig model only supports a single policy per device.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-A OEMConfig eszközön való használatához győződjön meg arról, hogy rendelkezik a következő követelményekkel:
+To use OEMConfig on your devices, be sure you have the following requirements:
 
-- Az Intune-ban regisztrált androidos vállalati eszköz.
-- Az OEM által készített OEMConfig-alkalmazás, amelyet a Google Play áruházba töltöttek fel. Ha nem a Google Play áruházban van, további információért forduljon az OEM-hez.
-- Az Intune rendszergazdája szerepköralapú hozzáférés-vezérlési (RBAC) engedélyekkel rendelkezik a mobileszközök és az **eszközök konfigurálásához**, valamint az **Android for Work** **alkalmazásban**az "olvasás" engedélyre. Ezek az engedélyek azért szükségesek, mert a OEMConfig-profilok felügyelt alkalmazás-konfigurációkat használnak az eszközök konfigurációjának kezeléséhez.
+- An Android Enterprise device enrolled in Intune.
+- An OEMConfig app built by the OEM, and uploaded to Google Play. If it's not on Google Play, contact the OEM for more information.
+- The Intune administrator has role-based access control (RBAC) permissions for **Mobile apps**, **Device Configurations**, and the "read" permission under **Android for Work**. These permissions are required because OEMConfig profiles use managed app configurations to manage device configurations.
 
-## <a name="prepare-the-oemconfig-app"></a>A OEMConfig alkalmazás előkészítése
+## <a name="prepare-the-oemconfig-app"></a>Prepare the OEMConfig app
 
-Győződjön meg arról, hogy az eszköz támogatja a OEMConfig, a megfelelő OEMConfig-alkalmazást adja hozzá az Intune-hoz, és az alkalmazás telepítve van az eszközön. Ehhez az információhoz forduljon az OEM-hez.
+Be sure the device supports OEMConfig, the correct OEMConfig app is added to Intune, and the app is installed on the device. Contact the OEM for this information.
 
 > [!TIP] 
-> A OEMConfig-alkalmazások az OEM-re jellemzőek. Egy Zebra Technologies-eszközre telepített Sony OEMConfig-alkalmazás például nem csinál semmit.
+> OEMConfig apps are specific to the OEM. For example, a Sony OEMConfig app installed on a Zebra Technologies device doesn't do anything.
 
-1. Szerezze be a OEMConfig alkalmazást a felügyelt Google Play Áruház. [Felügyelt Google Play-alkalmazások hozzáadása Android Enterprise-eszközökhöz](../apps/apps-add-android-for-work.md) a lépések felsorolása.
-2. Egyes számítógépgyártók előre telepített OEMConfig-alkalmazással is eldönthetik az eszközök szállítását. Ha az alkalmazás nincs előtelepítve, az Intune használatával [adhatja hozzá és helyezheti üzembe az alkalmazást az eszközökön](../apps/apps-deploy.md).
+1. Get the OEMConfig app from the Managed Google Play Store. [Add Managed Google Play apps to Android enterprise devices](../apps/apps-add-android-for-work.md) lists the steps.
+2. Some OEMs may ship devices with the OEMConfig app pre-installed. If the app isn't preinstalled, use Intune to [add and deploy the app to devices](../apps/apps-deploy.md).
 
-## <a name="create-an-oemconfig-profile"></a>OEMConfig-profil létrehozása
+## <a name="create-an-oemconfig-profile"></a>Create an OEMConfig profile
 
-1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
-2. Válassza az **eszközök** > **konfigurációs profilok** lehetőséget > a **profil létrehozása**elemet.
+1. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Devices** > **Configuration profiles** > **Create profile**.
 3. Adja meg a következő tulajdonságokat:
 
     - **Név**: Adja meg az új profil leíró nevét.
     - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
-    - **Platform**: válassza az **Android Enterprise**lehetőséget.
-    - **Profil típusa**: válassza a **OEMConfig**lehetőséget.
+    - **Platform**: Select **Android enterprise**.
+    - **Profile type**: Select **OEMConfig**.
 
-4. Válassza a **társított alkalmazás**lehetőséget, válassza ki a korábban hozzáadott meglévő OEMConfig-alkalmazást > **OK gombra**. Ügyeljen arra, hogy a megfelelő OEMConfig-alkalmazást válassza ki azokhoz az eszközökhöz, amelyekre a szabályzatot hozzárendeli.
+4. Select **Associated app**, select an existing OEMConfig app you previously added > **OK**. Be sure to choose the correct OEMConfig app for the devices you're assigning the policy to.
 
-    Ha nem látja a felsorolt alkalmazásokat, akkor állítsa be a felügyelt Google Play áruházat, és szerezze be az alkalmazásokat a felügyelt Google Play áruházból. [Felügyelt Google Play-alkalmazások hozzáadása Android Enterprise-eszközökhöz](../apps/apps-add-android-for-work.md) a lépések felsorolása.
+    If you don't see any apps listed, then set up Managed Google Play, and get apps from the Managed Google Play store. [Add Managed Google Play apps to Android enterprise devices](../apps/apps-add-android-for-work.md) lists the steps.
 
     > [!IMPORTANT]
-    > Ha egy OEMConfig-alkalmazást adott hozzá, és szinkronizálta azt a Google Play-be, de nem szerepel a **társított alkalmazásban**, akkor előfordulhat, hogy kapcsolatba kell lépnie az Intune-nal az alkalmazás bevezetéséhez. Lásd: [új alkalmazás hozzáadása](#supported-oemconfig-apps) (ebben a cikkben).
+    > If you added an OEMConfig app and synced it to Google Play, but it's not listed as an **Associated app**, you may have to contact Intune to onboard the app. See [adding a new app](#supported-oemconfig-apps) (in this article).
 
-5. A **beállítások konfigurálása**a alkalmazásban területen válassza a **Configuration Designer** vagy a **JSON-szerkesztő**használatát:
+5. In **Configure settings with**, choose to use the **Configuration designer** or **JSON editor**:
 
     > [!TIP]
-    > Olvassa el az OEM dokumentációját, és győződjön meg róla, hogy helyesen konfigurálja a tulajdonságokat. Ezeket az alkalmazás-tulajdonságokat az OEM, nem pedig az Intune tartalmazza. Az Intune minimálisan ellenőrzi a tulajdonságokat, vagy a beírt értéket. Ha például a `abcd` értéket adja meg egy portszámhoz, a profil a-ként lesz mentve, és az eszközön a konfigurált értékekkel lesz telepítve. Ügyeljen arra, hogy a helyes adatokat adja meg.
+    > Read the OEM documentation to make sure you're configuring the properties correctly. These app properties are included by the OEM, not Intune. Intune does minimal validation of the properties, or what you enter. For example, if you enter `abcd` for a port number, the profile saves as-is, and is deployed to your devices with the values you configure. Be sure you enter the correct information.
 
-    - **Configuration Designer**: Ha bejelöli ezt a beállítást, az alkalmazás sémáján belül elérhető tulajdonságok is megjelennek a konfiguráláshoz.
+    - **Configuration designer**: When you select this option, the properties available within the app schema are shown for you to configure.
 
-      - A Configuration Designer helyi menüi azt jelzik, hogy több lehetőség is rendelkezésre áll. A helyi menü például lehetővé teheti a beállítások hozzáadását, törlését és átrendezését. Ezeket a beállításokat a SZÁMÍTÓGÉPGYÁRTÓ is tartalmazza. Olvassa el az OEM-alkalmazás dokumentációját, amelyből megtudhatja, hogyan kell használni ezeket a beállításokat a profilok létrehozásához.
+      - Context menus in the configuration designer indicate that more options are available. For example, the context menu might let you add, delete, and reorder settings. These options are included by the OEM. Be sure to read the OEM app documentation to learn how these options should be used to create profiles.
 
-      - Számos beállításhoz az OEM által megadott alapértelmezett értékek tartoznak. Ha meg szeretné tekinteni, hogy van-e alapértelmezett érték, vigye a kurzort a beállítás melletti információs ikonra. Az elemleírás az adott beállítás alapértelmezett értékeit (ha alkalmazható) és az OEM által biztosított további részleteket jeleníti meg.
+      - Many settings have default values supplied by the OEM. To see if there's a default value, hover over the info icon next to the setting. A tooltip shows the default values for that setting (if applicable), and more details provided by the OEM.
 
-      - A **Törlés** gombra kattintva törölheti a beállításokat a profilból. Ha egy beállítás nincs a profilban, az eszköz értéke nem változik a profil alkalmazása után.
+      - Clicking **Clear** deletes a setting from the profile. If a setting isn't in the profile, its value on the device won't change when the profile is applied.
 
-      - Ha üres (nem konfigurált) köteget hoz létre a Configuration Designerben, a rendszer törli a JSON-szerkesztőre való áttéréskor.
+      - If you create an empty (unconfigured) bundle in the configuration designer, it's deleted when switching to the JSON editor.
 
-    - **JSON-szerkesztő**: Ha ezt a beállítást választja, megnyílik egy JSON-szerkesztő, amely az alkalmazásban beágyazott teljes konfigurációs séma sablonját nyitja meg. A szerkesztőben szabja testre a sablont a különböző beállítások értékeivel. Ha a **Configuration Designer** használatával módosítja az értékeket, a JSON-szerkesztő felülírja a sablont a Configuration Designer értékével.
+    - **JSON editor**: When you select this option, a JSON editor opens with a template for the full configuration schema embedded in the app. In the editor, customize the template with values for the different settings. If you use the **Configuration designer** to change your values, the JSON editor overwrites the template with values from the configuration designer.
 
-      - Ha meglévő profilt frissít, a JSON-szerkesztő megjeleníti azokat a beállításokat, amelyek utoljára mentve lettek a profillal.
+      - If you're updating an existing profile, the JSON editor shows the settings that were last saved with the profile.
 
-      - A OEMConfig sémái nagyok és összetettebbek lehetnek. Ha egy másik szerkesztő használatával szeretné frissíteni ezeket a beállításokat, válassza a **JSON-sablon letöltése** gombot. Az Ön által választott szerkesztővel adhatja hozzá a konfigurációs értékeket a sablonhoz. Ezután másolja és illessze be a frissített JSON-t a **JSON-szerkesztő** tulajdonságba.
+      - OEMConfig schemas can be large and complex. If you prefer to update these settings using a different editor, select the **Download JSON template** button. Use an editor of your choice to add your configuration values to the template. Then, copy and paste your updated JSON in to the **JSON editor** property.
 
-      - A JSON-szerkesztő segítségével biztonsági másolatot készíthet a konfigurációról. Miután konfigurálta a beállításokat, ezzel a funkcióval lekérheti a JSON-beállításokat az értékekkel. Másolja és illessze be a JSON-fájlt egy fájlba, és mentse. Most már van egy biztonságimásolat-fájlja.
+      - You can use the JSON editor to create a backup of your configuration. After you configure your settings, use this feature to get the JSON settings with your values. Copy and paste the JSON to a file, and save it. Now you have a backup file.
 
-    A Configuration Designerben végrehajtott módosítások a JSON-szerkesztőben is automatikusan megtörténik. Hasonlóképpen, a JSON-szerkesztőben végrehajtott módosítások automatikusan a Configuration Designerben történnek. Ha a bemenet érvénytelen értékeket tartalmaz, nem válthat a Configuration Designer és a JSON-szerkesztő között, amíg ki nem javítja a problémákat.
+    Any changes made in the configuration designer are also made automatically in the JSON editor. Likewise, any changes made in the JSON editor are automatically made in the configuration designer. If your input contains invalid values, you can't switch between the configuration designer and JSON editor until you fix the issues.
 
-6. A módosítások mentéséhez kattintson **az OK** > **Hozzáadás** gombra. Ekkor létrejön a szabályzat, és megjelenik a listában.
+6. Select **OK** > **Add** to save your changes. The policy is created and shown in the list.
 
-Ügyeljen arra, hogy [hozzárendelje a profilt](device-profile-assign.md) , és [Figyelje annak állapotát](device-profile-monitor.md).
+Be sure to [assign the profile](device-profile-assign.md) and [monitor its status](device-profile-monitor.md).
 
  > [!NOTE]
- > Rendeljen hozzá egy profilt az egyes eszközökhöz. A OEMConfig-modell csak egy házirendet támogat eszközönként.
+ > Assign one profile to each device. The OEMConfig model only supports one policy per device.
 
-Amikor az eszköz legközelebb megkeresi a konfigurációs frissítéseket, a rendszer a OEMConfig alkalmazásra alkalmazza a beállított SZÁMÍTÓGÉPGYÁRTÓi beállításokat.
+The next time the device checks for configuration updates, the OEM-specific settings you configured are applied to the OEMConfig app.
 
 > [!NOTE]
-> A OEMConfig standard jelenleg nem tartalmazza az állapotjelentések bejelentését. A profilok alapértelmezés szerint **függő** állapotot jelenítenek meg.
+> The OEMConfig standard doesn't currently include status reporting. So, by default, profiles show a **Pending** status.
 
-## <a name="supported-oemconfig-apps"></a>Támogatott OEMConfig-alkalmazások
+## <a name="supported-oemconfig-apps"></a>Supported OEMConfig apps
 
-A standard szintű alkalmazásokhoz képest a OEMConfig-alkalmazások kibővítik a Google által az összetettebb sémák támogatásához biztosított felügyelt konfigurációkra vonatkozó jogosultságokat. Az Intune jelenleg a következő OEMConfig-alkalmazásokat támogatja:
+Compared to standard apps, OEMConfig apps expand the managed configurations privileges granted by Google to support more complex schemas. Intune currently supports the following OEMConfig apps:
 
 -----------------
 
-| OEM | Csomagazonosító | OEM-dokumentáció (ha elérhető) |
+| OEM | Csomagazonosító | OEM Documentation (if available) |
 | --- | --- | ---|
-| Samsung | com. Samsung. Android. Knox. kpu | [A Knox szolgáltatás beépülő moduljának rendszergazdai útmutatója](https://docs.samsungknox.com/knox-service-plugin/admin-guide/index.htm) |
-| Zebra-technológiák | com. zebra. oemconfig. Common | [A zebra OEMConfig áttekintése](http://techdocs.zebra.com/oemconfig ) |
-| Datalogic | com. Datalogic. oemconfig | [A Datalogic OEMConfig felhasználói dokumentációja](https://datalogic.github.io/oemconfig/) |
-| Honeywell | com. Honeywell. oemconfig |  |
-| Kyocera | JP. Kyocera. enterprisedeviceconfig |  |
+| Samsung | com.samsung.android.knox.kpu | [Knox Service Plugin Admin Guide](https://docs.samsungknox.com/knox-service-plugin/admin-guide/index.htm) |
+| Zebra Technologies | com.zebra.oemconfig.common | [Zebra OEMConfig overview](http://techdocs.zebra.com/oemconfig ) |
+| Datalogic | com.datalogic.oemconfig | [User Documentation for Datalogic OEMConfig](https://datalogic.github.io/oemconfig/) |
+| Honeywell | com.honeywell.oemconfig |  |
+| Kyocera | jp.kyocera.enterprisedeviceconfig |  |
+| Spectralink - Barcodes | com.spectralink.barcode.service |  |
+| Spectralink - Buttons | com.spectralink.buttons |  |
+| Spectralink - Device | com.spectralink.slnkdevicesettings  |  |
+| Spectralink - Logging | com.spectralink.slnklogger |  |
+| Spectralink - VQO | com.spectralink.slnkvqo |  |
 
 -----------------
 
-Ha létezik egy OEMConfig-alkalmazás az eszközhöz, de nem szerepel a fenti táblázatban, vagy nem jelenik meg az Intune-konzolon, kérjük, küldjön e-mailt `IntuneOEMConfig@microsoft.com` címre.
+If an OEMConfig application exists for your device, but it isn’t in the table above, or isn't showing up in the Intune console, please email `IntuneOEMConfig@microsoft.com`.
 
 > [!NOTE]
-> A OEMConfig-alkalmazásokat az Intune-nak kell bejelentkeznie ahhoz, hogy OEMConfig-profilokkal lehessen konfigurálni őket. Az alkalmazások támogatása után nem kell felvennie a kapcsolatot a Microsofttal a bérlőben való beállításával kapcsolatban. Csak kövesse az ezen az oldalon található utasításokat.
+> OEMConfig apps must on-boarded by Intune before they can be configured with OEMConfig profiles. Once an app is supported, you don't need to contact Microsoft about setting it up in your tenant. Just follow the instructions on this page.
 
 ## <a name="next-steps"></a>További lépések
 

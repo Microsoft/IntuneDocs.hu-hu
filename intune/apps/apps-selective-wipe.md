@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0fafe7c17c698a5eb4e5ad6825bee0ae3fe874c2
-ms.sourcegitcommit: 01fb3d844958a0e66c7b87623160982868e675b0
+ms.openlocfilehash: 4e827075b56d1751e837c25d85c304201bcafa01
+ms.sourcegitcommit: 2fddb293d37453736ffa54692d03eca642f3ab58
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74199234"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74390438"
 ---
 # <a name="how-to-wipe-only-corporate-data-from-intune-managed-apps"></a>Csak vállalati adatok törlése az Intune által felügyelt alkalmazásokból
 
@@ -47,17 +47,25 @@ Windows Information Protection (WIP) policies can be deployed without requiring 
 1. Sign in to [Intune](https://go.microsoft.com/fwlink/?linkid=2090973).
 2. In the Intune pane, select **Client apps** > **App selective wipe** > **Create wipe request**.<br>
    The **Create wipe request** pane is displayed.
-3. Click **Select the user**, choose the user whose app data you want to wipe, and click **Select** at the bottom of the **User** pane.
+3. Click **Select user**, choose the user whose app data you want to wipe, and click **Select** at the bottom of the **Select user** pane.
+
+    ![Screenshot of the 'Select user' pane](./media/apps-selective-wipe/apps-selective-wipe-01.png)
+
 4. Click **Select the device**, choose the device, and click **Select** at the bottom of the **Select Device** pane.
+
+    ![Screenshot of 'Create wipe request' pane where device is selected](./media/apps-selective-wipe/apps-selective-wipe-02.png)
+
 5. Click **Create** to make a wipe request.
 
 A szolgáltatás külön törlési kéréseket hoz létre az egyes védett alkalmazásokhoz az eszközön és a törlési kéréshez társított felhasználóhoz, és nyomon követi azokat.
+
+   ![Screenshot of 'Client apps - App selective wipe' pane](./media/apps-selective-wipe/apps-selective-wipe-03.png)
 
 ## <a name="monitor-your-wipe-requests"></a>A törlési kérelmek figyelése
 
 Elérhető egy összesítő jelentés is, amely a törlési kérelem összesített állapotát jeleníti meg, és tartalmazza a függőben lévő kérések és a hibák számát. Ha további részleteket szeretne megismerni, kövesse az alábbi lépéseket:
 
-1. Az **Ügyfélalkalmazások – Alkalmazás szelektív törlése** panelen felhasználók szerint csoportosítva látható a kérések listája. A rendszer minden, az eszközön futó védett alkalmazáshoz külön törlési kérést hoz létre, ezért több kérés jelenhet meg ugyanannál a felhasználónál. Az állapot mutatja, hogy a törlési kérés **függőben van**, **sikertelen**, vagy **sikeres**.
+1. On the **Client Apps** > **App selective wipe** pane, you can see the list of your requests grouped by users. A rendszer minden, az eszközön futó védett alkalmazáshoz külön törlési kérést hoz létre, ezért több kérés jelenhet meg ugyanannál a felhasználónál. Az állapot mutatja, hogy a törlési kérés **függőben van**, **sikertelen**, vagy **sikeres**.
 
     ![Képernyőkép a törlési kérés állapotáról az Alkalmazások szelektív törlése panelen](./media/apps-selective-wipe/wipe-request-status-1.png)
 
