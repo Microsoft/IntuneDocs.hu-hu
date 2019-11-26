@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b2b1cd79db8757995518e5622b5320077c7c4864
-ms.sourcegitcommit: a7b479c84b3af5b85528db676594bdb3a1ff6ec6
+ms.openlocfilehash: 6114d994a9b7944f0020719197b1ed956c3423b8
+ms.sourcegitcommit: 960ffb2214c35d75ad219fa2571a999529a0abd4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74409799"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74478949"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -54,7 +54,7 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. You can also
 -->  
 
 <!-- ########################## -->
-## <a name="week-of-november-18-2019"></a>Week of November 18, 2019  
+## <a name="week-of-november-18-2019-1911-service-release"></a>Week of November 18, 2019 (1911 Service release)
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
 ### <a name="app-management"></a>Alkalmazáskezelés
@@ -129,12 +129,6 @@ For more information on this feature, see [Add a property list file to macOS dev
 
 Applies to:
 - macOS devices running 10.7 and newer
-
-<!-- vvvvvvvvvvvvvvvvvvvvvv -->
-### <a name="device-enrollment"></a>Eszközök beléptetése
-
-#### <a name="windows-autopilot-deployment-reports---3856172---"></a>Windows Autopilot deployment reports<!-- 3856172 -->
-A new report details each device deployed through Windows Autopilot. For more information, see [Autopilot deployment report](../enrollment/enrollment-autopilot.md#autopilot-deployments-report). 
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
 ### <a name="device-management"></a>Eszközkezelés
@@ -274,7 +268,7 @@ Intune enrollment and Company Portal now support iOS versions 11 and later. Olde
 We've added a security baseline Preview for [Microsoft Edge settings](../protect/security-baseline-settings-edge.md). 
 
 <!-- ########################## -->
-## <a name="week-of-october-21-2019"></a>Week of October 21, 2019
+## <a name="week-of-october-21-2019-1910-service-release"></a>Week of October 21, 2019 (1910 Service release)
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
 ### <a name="microsoft-365-device-management"></a>Microsoft 365 Device Management
@@ -482,7 +476,7 @@ Intune now supports managing both iPadOS and iOS 13.1 devices. További informá
 
 <!-- ########################## -->
 
-## <a name="week-of-september-16-2019"></a>Week of September 16, 2019
+## <a name="week-of-september-16-2019-1909-service-release"></a>Week of September 16, 2019 (1909 Service release)
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
 ### <a name="app-management"></a>Alkalmazáskezelés 
@@ -718,7 +712,7 @@ Applies to:
 
 - Windows 10 and newer (Windows RS4+)
 
-## <a name="week-of-august-12-2019"></a>Week of August 12, 2019
+## <a name="week-of-august-12-2019-1908-service-release"></a>Week of August 12, 2019 (1908 Service release)
 
 ### <a name="app-management"></a>Alkalmazáskezelés
 
@@ -890,7 +884,7 @@ Applies to:
 
 <!-- ########################## -->
 
-## <a name="week-of-july-22-2019"></a>Week of July 22, 2019 
+## <a name="week-of-july-22-2019-1907-service-release"></a>Week of July 22, 2019 (1907 Service release)
 
 ### <a name="app-management"></a>Alkalmazáskezelés
 
@@ -1031,7 +1025,7 @@ When onboarding fully managed Android Enterprise devices, users will now registe
 
 In addition to the AAD updates, Intune app protection policies (APP) are now supported on fully managed Android Enterprise devices. This functionality will become available as we roll it out. For more information, see [Add Managed Google Play apps to Android Enterprise devices with Intune](../apps/apps-add-android-for-work.md).
 
-## <a name="week-of-june-24-2019"></a>Week of June 24, 2019
+## <a name="week-of-june-24-2019-1906-service-release"></a>Week of June 24, 2019 (1906 Service release)
 
 ### <a name="app-management"></a>Alkalmazáskezelés
 
@@ -1191,7 +1185,7 @@ The Windows Company Portal app will now have a new page labeled **Devices**. The
 
 To make it more intuitive, the **OrderID** attribute name on Autopilot devices has been changed to **Group Tag**. When using CSVs to upload Autopilot device information, you must use Group Tag as the column header, not OrderID.  
 
-## <a name="week-of-may-13-2019"></a>Week of May 13, 2019
+## <a name="week-of-may-13-2019-1905-service-release"></a>Week of May 13, 2019 (1905 Service release)
 
 ### <a name="app-management"></a>Alkalmazáskezelés
 

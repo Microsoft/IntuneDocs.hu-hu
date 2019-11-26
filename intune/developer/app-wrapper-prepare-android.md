@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 107624ac5d0c5eab423c0d5051ceca45e41de0b9
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 8fa63540afa18450f731180da3c2cee729010a65
+ms.sourcegitcommit: ce518a5dfe62c546a77f32ef372f36efbaad473f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72490754"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74465699"
 ---
 # <a name="prepare-android-apps-for-app-protection-policies-with-the-intune-app-wrapping-tool"></a>Android-alkalmazások előkészítése alkalmazásvédelmi szabályzatokkal való felügyeletre az Intune alkalmazásburkoló eszközével
 
@@ -54,9 +54,10 @@ Az eszköz futtatása előtt olvassa el a következő cikket: [Az alkalmazásbur
     > [!NOTE]
     > Az Intune alkalmazásburkoló eszköz nem támogatja a Google v2 és hamarosan megjelenő v3 alkalmazás-aláíró sémáit. Miután becsomagolta az .apk fájlt az Intune alkalmazásburkoló eszközzel, javasoljuk, hogy használja a [Google által biztosított Apksigner eszközt]( https://developer.android.com/studio/command-line/apksigner). Ezzel biztosíthatja, hogy miután az alkalmazás eljut a végfelhasználói eszközökre, elindítható legyen az Android szabványoknak megfelelően. 
 
-- Választható Bizonyos esetekben előfordulhat, hogy egy alkalmazás a Dalvik végrehajtható fájl (DEX) korlátját a becsomagolás során hozzáadott Intune MAM SDK-osztályok miatt elérheti. A DEX-fájlok az Android-alkalmazások fordításának részei. Az Intune alkalmazás-burkoló eszköz automatikusan kezeli a DEX-fájl túlcsordulását az alkalmazások csomagolása során a minimális, 21 vagy magasabb szintű API-val (a [v. 1.0.2501.1](https://github.com/msintuneappsdk/intune-app-wrapping-tool-android/releases)). A < 21 minimális API szintű alkalmazások esetében ajánlott eljárás a minimális API-szint növelésére a burkoló `-UseMinAPILevelForNativeMultiDex` jelzővel. Ha az ügyfelek nem tudják megemelni az alkalmazás minimális API-szintjét, akkor a következő DEX túlcsordulási megkerülő megoldás érhető el. Bizonyos szervezeteknél előfordulhat, hogy az alkalmazás fordításával (azaz az alkalmazás-Build csapatával) együtt kell működnie:
-* Használja a beguard eszközt az alkalmazás elsődleges DEX-fájljából származó nem használt osztályok eltávolításához.
-* Az Android Gradle beépülő modul v 3.1.0 vagy újabb verzióját használó ügyfelek esetén tiltsa le a [D8-dexer](https://android-developers.googleblog.com/2018/04/android-studio-switching-to-d8-dexer.html).  
+- (Optional) Sometimes an app may hit the Dalvik Executable (DEX) size limit due to the Intune MAM SDK classes that are added during wrapping. A DEX-fájlok az Android-alkalmazások fordításának részei. The Intune App Wrapping Tool automatically handles DEX file overflow during wrapping for apps with a min API level of 21 or higher (as of [v. 1.0.2501.1](https://github.com/msintuneappsdk/intune-app-wrapping-tool-android/releases)). For apps with a min API level of < 21, best practice would be to increase the min API level using the wrapper's `-UseMinAPILevelForNativeMultiDex` flag. For customers unable to increase the app’s minimum API level, the following DEX overflow workarounds are available. In certain organizations, this may require working with whoever compiles the app (ie. the app build team):
+
+  - Use ProGuard to eliminate unused class references from the app’s primary DEX file.
+  - For customers using v3.1.0 or higher of the Android Gradle plugin, disable the [D8 dexer](https://android-developers.googleblog.com/2018/04/android-studio-switching-to-d8-dexer.html).  
 
 ## <a name="install-the-app-wrapping-tool"></a>Az alkalmazásburkoló eszköz telepítése
 
@@ -94,7 +95,7 @@ Jegyezze fel a mappa nevét, ahová az eszközt telepítette. Az alapértelmezet
 |**-KeyAlias**&lt;String&gt;|Az aláíráshoz használt kulcs neve.| |
 |**-KeyPassword**&lt;SecureString&gt;|Az aláíráshoz használt titkos kulcs visszafejtésére szolgáló jelszó.| |
 |**-SigAlg**&lt;SecureString&gt;| (Nem kötelező) Az aláíráshoz használandó aláírási algoritmus neve. Az algoritmusnak kompatibilisnek kell lennie a titkos kulccsal.|Példák: SHA256withRSA, SHA1withRSA|
-|**-UseMinAPILevelForNativeMultiDex**| Választható Ezzel a jelzővel növelheti a forrás Android-alkalmazás minimális API-szintjét 21-re. Ez a jelző megkéri a megerősítést, mert korlátozza, hogy ki és milyen módon telepítheti az alkalmazást. A felhasználók a "-Confirm: $false" paraméternek a PowerShell-parancshoz való hozzáfűzésével hagyhatják el a megerősítő párbeszédpanelt. A jelzőt csak olyan alkalmazások ügyfelei használhatják, amelyek minimális API-val < 21-et használnak, és a DEX túlcsordulási hibái miatt nem sikerült becsomagolni azokat. | |
+|**-UseMinAPILevelForNativeMultiDex**| (Optional) Use this flag to increase the source Android app’s minimum API level to 21. This flag will prompt for confirmation as it will limit who may install this app. Users can skip the confirmation dialog by appending the parameter “-Confirm:$false” to their PowerShell command. The flag should only be used by customers on apps with min API < 21 that fail to wrap successfully due to DEX overflow errors. | |
 | **&lt;CommonParameters&gt;** | (Nem kötelező) A parancs támogatja gyakran használt PowerShell-paramétereket, mint például a verbose, a debug stb. |
 
 
