@@ -5,11 +5,11 @@
   items:
     - name: Eszközök konfigurálása – áttekintés
       href: device-profiles.md
-- name: Rövid útmutatók
+- name: Gyorsútmutatók
   items:
     - name: E-mail-eszközprofil létrehozása
       href: quickstart-email-profile.md
-- name: Útmutatók
+- name: Használati útmutatók
   items:
     - name: Profil létrehozása
       href: device-profile-create.md
@@ -76,7 +76,7 @@
           href: android-zebra-mx-logs-troubleshoot.md
         - name: Gyakori kérdések és válaszok
           href: device-profile-troubleshoot.md
-- name: Referencia
+- name: Hivatkozás
   items:
     - name: Konfigurációs profil beállításai
       items:
@@ -131,12 +131,14 @@
               href: device-restrictions-macos.md
             - name: Endpoint Protection
               href: ../protect/endpoint-protection-macos.md?toc=/intune/configuration/toc.json&bc=/intune/configuration/breadcrumb/toc.json
+            - name: Bővítmények
+              href: kernel-extensions-settings-macos.md
+            - name: Preferenciafájl
+              href: preference-file-settings-macos.md
             - name: VPN
               href: vpn-settings-macos.md
             - name: Wi-Fi
               href: wi-fi-settings-macos.md
-            - name: Kiterjesztések
-              href: kernel-extensions-settings-macos.md
             - name: Egyéni
               href: custom-settings-macos.md
         - name: Windows 10 és újabb

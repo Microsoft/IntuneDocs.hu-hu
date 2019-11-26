@@ -5,7 +5,7 @@
   items:
     - name: Az alkalmazáskezelés áttekintése
       href: app-management.md
-- name: Rövid útmutatók
+- name: Gyorsútmutatók
   items:
     - name: Alkalmazás hozzáadása és hozzárendelése
       href: quickstart-add-assign-app.md
@@ -26,7 +26,7 @@
       displayName: app-we; without; without enrollment
     - name: MAM – GYAKORI KÉRDÉSEK
       href: mam-faq.md
-- name: Útmutatók
+- name: Használati útmutatók
   items:
     - name: Alkalmazások hozzáadása
       items:
@@ -133,6 +133,8 @@
               href: manage-microsoft-edge.md
             - name: Az Outlook konfigurálása
               href: app-configuration-policies-outlook.md
+            - name: Az S/MIME konfigurálása az Outlookhoz
+              href: app-configuration-policies-outlook-smime.md
             - name: A Google Chrome konfigurálása Androidhoz
               href: apps-configure-chrome-android.md
         - name: Mennyiségi licencszerződés keretében vásárolt alkalmazások és könyvek
@@ -192,7 +194,7 @@
           href: troubleshoot-mam.md
         - name: Alkalmazásvédelmi naplók áttekintése
           href: app-protection-policy-settings-log.md
-- name: Referencia
+- name: Hivatkozás
   items:
     - name: Alkalmazások védelme az Intune App SDK-val
       href: ../developer/app-sdk.md

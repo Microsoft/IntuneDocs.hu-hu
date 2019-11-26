@@ -205,6 +205,10 @@
           href: use-docs.md
         - name: Támogatás kérése
           href: get-support.md
+    - name: Reports
+      items:
+        - name: Intune-jelentések
+          href: reports.md
 - name: Hivatkozás
   items:
     - name: Hibakódok és leírások
