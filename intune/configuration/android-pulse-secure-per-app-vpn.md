@@ -30,7 +30,7 @@ ms.locfileid: "74319844"
 Az Intune által felügyelt Android 5.0-s és újabb rendszerű eszközökhöz alkalmazásonkénti VPN-profilt hozhat létre. Először hozzon létre egy olyan VPN-profit, amely a Pulse Secure vagy a Citrix kapcsolattípust használja. Ezután hozzon létre egy olyan egyéni szabályzatot, amely a VPN-profilt meghatározott alkalmazásokkal társítja.
 
 > [!NOTE]
-> To use per-app VPN on Android Enterprise devices, you can also use these steps. But, it's recommended to use an [app configuration policy](../apps/app-configuration-policies-use-android.md) for your VPN client app.
+> Ha az alkalmazáson belüli VPN-t androidos vállalati eszközökön szeretné használni, ezeket a lépéseket is használhatja. A VPN-ügyfélalkalmazás [alkalmazás-konfigurációs szabályzatát](../apps/app-configuration-policies-use-android.md) azonban ajánlott használni.
 
 Miután hozzárendeli a szabályzatot az Android rendszerű eszközhöz vagy felhasználócsoportokhoz, a felhasználóknak el kell indítaniuk a PulseSecure vagy a Citrix VPN-ügyfelet. A VPN-ügyfél ezután csak a megadott alkalmazások adatforgalma számára engedélyezi a nyitott VPN-kapcsolat használatát.
 
@@ -40,50 +40,50 @@ Miután hozzárendeli a szabályzatot az Android rendszerű eszközhöz vagy fel
 
 ## <a name="step-1-create-a-vpn-profile"></a>1\. lépés: VPN-profil létrehozása
 
-1. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431).
-2. Select **Devices** > **Configuration profiles** > **Create profile**.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **eszközök** > **konfigurációs profilok** lehetőséget > a **profil létrehozása**elemet.
 3. Adja meg a következő tulajdonságokat:
 
-    - **Name**: Enter a descriptive name for the profile. Name your profiles so you can easily identify them later. For example, a good profile name is **Android per-app VPN profile for entire company**.
+    - **Név**: adjon meg egy leíró nevet a profilhoz. Nevezze el a profilokat, hogy később könnyen azonosítható legyen. Egy jó profilnév például a **teljes vállalat androidos/app VPN-profilja**.
     - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
-    - **Platform**: Select **Android**.
-    - **Profile type**: Select **VPN**.
+    - **Platform**: válassza az **Android**lehetőséget.
+    - **Profil típusa**: válassza a **VPN**lehetőséget.
 
-4. Válassza a **Beállítások** > **Konfigurálás** lehetőséget. Then, configure the VPN profile. For more information, see [How to configure VPN settings](vpn-settings-configure.md) and [Intune VPN settings for Android devices](vpn-settings-android.md).
+4. Válassza a **Beállítások** > **Konfigurálás** lehetőséget. Ezután konfigurálja a VPN-profilt. További információ: [VPN-beállítások konfigurálása](vpn-settings-configure.md) és [Intune VPN-beállítások Android-eszközökhöz](vpn-settings-android.md).
 
 Jegyezze le a VPN-profil létrehozásakor megadott **Kapcsolat neve** értéket. Erre szükség lesz a következő lépésben. Például: **AlkVpnProfil**.
 
 ## <a name="step-2-create-a-custom-configuration-policy"></a>2\. lépés: Egyéni konfigurációs szabályzat létrehozása
 
-1. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431).
-2. Select **Devices** > **Configuration profiles** > **Create profile**.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **eszközök** > **konfigurációs profilok** lehetőséget > a **profil létrehozása**elemet.
 3. Adja meg a következő tulajdonságokat:
 
-    - **Name**: Enter a descriptive name for the custom profile. Name your profiles so you can easily identify them later. For example, a good profile name is **Custom OMA-URI Android VPN profile for entire company**.
+    - **Név**: adjon meg egy leíró nevet az egyéni profilhoz. Nevezze el a profilokat, hogy később könnyen azonosítható legyen. Egy jó profilnév például **Egyéni OMA-URI Android VPN-profil a teljes vállalat számára**.
     - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
-    - **Platform**: Select **Android**.
-    - **Profile type**: Select **Custom**.
+    - **Platform**: válassza az **Android**lehetőséget.
+    - **Profil típusa**: válassza az **Egyéni**lehetőséget.
 
 4. Válassza a **Beállítások** > **Konfigurálás** lehetőséget.
 5. Az **Egyéni OMA-URI beállítások** panelen válassza a **Hozzáadás** lehetőséget.
-    - **Name**: Enter a name for your setting.
+    - **Név**: adja meg a beállítás nevét.
     - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
-    - **OMA-URI**: Enter `./Vendor/MSFT/VPN/Profile/*Name*/PackageList`, where *Name* is the connection name you noted in Step 1. In this example, the string is `./Vendor/MSFT/VPN/Profile/MyAppVpnProfile/PackageList`.
-    - **Data type**: Enter **String**.
-    - **Value**: Enter a semicolon-separated list of packages to associate with the profile. For example, if you want Excel and the Google Chrome browser to use the VPN connection, enter `com.microsoft.office.excel;com.android.chrome`.
+    - **OMA-URI**: írja be `./Vendor/MSFT/VPN/Profile/*Name*/PackageList`, ahol a *név* az 1. lépésben feljegyzett név. Ebben a példában a sztring `./Vendor/MSFT/VPN/Profile/MyAppVpnProfile/PackageList`.
+    - **Adattípus**: írja be a **karakterláncot**.
+    - **Érték**: adja meg a profilhoz társítandó csomagok pontosvesszővel tagolt listáját. Ha például azt szeretné, hogy az Excel és a Google Chrome böngésző használhassa a VPN-kapcsolat használatát, írja be `com.microsoft.office.excel;com.android.chrome`.
 
 ![Példa Android rendszerű, alkalmazásonkénti VPN-hez létrehozott egyéni szabályzatra](./media/android-pulse-secure-per-app-vpn/android_per_app_vpn_oma_uri.png)
 
 ### <a name="set-your-app-list-to-blacklist-or-whitelist-optional"></a>Az alkalmazáslista Blacklist (Letiltott) vagy Whitelist (Engedélyezett) értékre állítása (nem kötelező)
 
-Use the **BLACKLIST** value to enter a list of apps that *cannot* use the VPN connection. Minden más alkalmazás VPN-kapcsolaton keresztül fog csatlakozni az internethez. Or, use the **WHITELIST** value to enter a list of apps that *can* use the VPN connection. Apps that aren't on the list don't connect through the VPN.
+A **feketelistás** érték használatával megadhatja azon alkalmazások listáját, amelyek *nem* használhatják a VPN-kapcsolatokat. Minden más alkalmazás VPN-kapcsolaton keresztül fog csatlakozni az internethez. Vagy használja a **WHITELIST** értéket a VPN-kapcsolat használatára *képes* alkalmazások listájának megadásához. A listán nem szereplő alkalmazások nem csatlakoznak a VPN-en keresztül.
 
 1. Az **Egyéni OMA-URI beállítások** panelen válassza a **Hozzáadás** lehetőséget.
 2. Adja meg a beállítás nevét.
-3. In **OMA-URI**, enter `./Vendor/MSFT/VPN/Profile/*Name*/Mode`, where *Name* is the VPN profile name you noted in Step 1. In our example, the string is `./Vendor/MSFT/VPN/Profile/MyAppVpnProfile/Mode`.
-4. In **Data type**, enter **String**.
+3. Az **OMA-URI**mezőbe írja be a `./Vendor/MSFT/VPN/Profile/*Name*/Mode`*nevet* , ahol a név az 1. lépésben feljegyzett VPN-profil neve. A példánkban a sztring `./Vendor/MSFT/VPN/Profile/MyAppVpnProfile/Mode`.
+4. Az **adattípus**mezőben adja meg a **karakterlánc**értéket.
 5. Az **Érték** mezőbe írja be a **BLACKLIST** (LETILTOTT) vagy a **WHITELIST** (ENGEDÉLYEZETT) értéket.
 
 ## <a name="step-3-assign-both-policies"></a>3\. lépés: Mindkét szabályzat hozzárendelése
 
-[Assign both device profiles](device-profile-assign.md) to the required users or devices.
+[Rendeljen mindkét eszközt](device-profile-assign.md) a szükséges felhasználókhoz vagy eszközökhöz.

@@ -1,12 +1,12 @@
 ---
-title: iOS device settings in Microsoft Intune - Azure | Microsoft Docs
+title: iOS-eszközbeállítások a Microsoft Intuneban – Azure | Microsoft Docs
 titleSuffix: ''
-description: Add, configure, or create settings on iOS devices to restrict features, including setting password requirements, control the locked screen, use built-in apps, add restricted or approved apps, handle bluetooth devices, connect to the cloud for backup and storage, enable kiosk mode, add domains, and control how users interact with the Safari web browser in Microsoft Intune.
+description: IOS-eszközökön lévő beállítások hozzáadása, konfigurálása vagy létrehozása a funkciók korlátozásához, beleértve a jelszóval kapcsolatos követelmények beállítását, a zárolt képernyő használatát, a beépített alkalmazásokat, a korlátozott vagy jóváhagyott alkalmazások hozzáadását, a Bluetooth-eszközök kezelését, a felhőhöz való kapcsolódást a biztonsági mentéshez és tároláshoz. a kioszk mód engedélyezése, tartományok hozzáadása és annak szabályozása, hogy a felhasználók hogyan használják a Safari böngészőt Microsoft Intuneban.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/12/2019
+ms.date: 11/25/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,614 +16,618 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 751ddfae96ebcd190d4d9ce2ca93bfccba972df5
-ms.sourcegitcommit: 2fddb293d37453736ffa54692d03eca642f3ab58
+ms.openlocfilehash: 6fde277e16043662420864adcc0458e3dccad308
+ms.sourcegitcommit: ce518a5dfe62c546a77f32ef372f36efbaad473f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74390859"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74465653"
 ---
-# <a name="ios-and-ipados-device-settings-to-allow-or-restrict-features-using-intune"></a>iOS and iPadOS device settings to allow or restrict features using Intune
+# <a name="ios-and-ipados-device-settings-to-allow-or-restrict-features-using-intune"></a>iOS-és iPadOS-eszközök beállításai az Intune-t használó funkciók engedélyezéséhez vagy korlátozásához
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-This article lists and describes the different settings you can control on iOS and iPadOS devices. As part of your mobile device management (MDM) solution, use these settings to allow or disable features, set password rules, allow or restrict specific apps, and more.
+Ez a cikk az iOS-és iPadOS-eszközökön szabályozható különböző beállításokat sorolja fel és ismerteti. A mobileszköz-kezelési (MDM) megoldás részeként ezekkel a beállításokkal engedélyezheti vagy letilthatja a szolgáltatásokat, beállíthatja a jelszavas szabályokat, engedélyezheti vagy korlátozhatja az egyes alkalmazásokat, és így tovább.
 
-These settings are added to a device configuration profile in Intune, and then assigned or deployed to your iOS devices.
+Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs profiljához, majd az iOS-eszközökhöz vannak rendelve vagy telepítve.
 
 > [!TIP]
-> These settings use Apple's MDM settings. For more information on these settings, see [Apple's mobile device management settings](https://support.apple.com/guide/mdm/welcome/web) (opens Apple's web site).
+> Ezek a beállítások az Apple MDM beállításait használják. További információ ezekről a beállításokról: az [Apple mobileszköz-kezelési beállításai](https://support.apple.com/guide/mdm/welcome/web) (az Apple webhelyén nyílik meg).
 
 ## <a name="before-you-begin"></a>Előkészületek
 
-[Create a device restrictions configuration profile](../device-restrictions-configure.md).
+[Hozzon létre egy eszköz-korlátozási konfigurációs profilt](../device-restrictions-configure.md).
 
 > [!NOTE]
-> These settings apply to different enrollment types, with some settings applying to all enrollment options. For more information on the different enrollment types, see [iOS enrollment](../ios-enroll.md).
+> Ezek a beállítások a különböző regisztrációs típusokra vonatkoznak, és egyes beállítások az összes regisztrációs lehetőségre érvényesek. A különböző regisztrációs típusokkal kapcsolatos további információkért lásd: [iOS-regisztráció](../ios-enroll.md).
 
-## <a name="general"></a>Általános
+## <a name="general"></a>Általános kérdések
 
-### <a name="settings-apply-to-all-enrollment-types"></a>Settings apply to: All enrollment types
+### <a name="settings-apply-to-all-enrollment-types"></a>A beállítások a következőre vonatkoznak: minden regisztrációs típus
 
-- **Share usage data**: Choose **Block** to prevent the device from sending diagnostic and usage data to Apple. **Not configured** (default) allows this data to be sent.
+- **Használati adatok megosztása**: a **Letiltás** elem kiválasztásával megakadályozhatja, hogy az eszköz diagnosztikai és használati adatokat küldjön az Apple-nek. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt az adatküldés.
 
-- **Screen capture**: Choose **Block** to prevent screenshots or screen captures on the device. In iOS 9.0 and newer, it also blocks screen recordings. **Not configured** (default) lets the user capture the screen contents as an image or as a video.
+- **Képernyőfelvétel**: a **Letiltás** elem kiválasztásával megakadályozhatja a képernyőképek vagy képernyőfelvételek készítését az eszközön. Az iOS 9,0-es és újabb verzióiban blokkolja a képernyőfelvételeket is. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára, hogy képként vagy videóként rögzítse a képernyő tartalmát.
 
-### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>Settings apply to: Device enrollment, Automated device enrollment (supervised)
+### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése, automatikus eszközök beléptetése (felügyelt)
 
-- **Untrusted TLS certificates**: Choose **Block** to prevent untrusted Transport Layer Security (TLS) certificates on the device. **Not configured** (default) allows TLS certificates.
-- **Allow over-the-air PKI updates**: **Allow** lets your users  receive software updates without connecting their devices to a computer.
-- **Limit ad tracking**: Choose **Limit** to disable the device advertising identifier. **Not configured** (default) keeps it enabled.
+- Nem **megbízható TLS-tanúsítványok**: a **Letiltás** elem kiválasztásával megakadályozhatja a nem megbízható Transport Layer Security (TLS) tanúsítványait az eszközön. **Nincs konfigurálva** (alapértelmezés) engedélyezi a TLS-tanúsítványokat.
+- **Nyilvános PKI-frissítések engedélyezése**: **lehetővé** teszi, hogy a felhasználók szoftverfrissítéseket kapjanak anélkül, hogy az eszközeiket csatlakoztatják a számítógéphez.
+- **Ad-követés korlátozása**: válassza a **korlát** lehetőséget az eszköz hirdetési azonosítójának letiltásához. **Nincs konfigurálva** (az alapértelmezett) megtartja a használatát.
 
-### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Settings apply to: Automated device enrollment (supervised)
+### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: automatikus eszközök beléptetése (felügyelt)
 
-- **Diagnostics submission settings modification**: **Block** prevents the user from changing the diagnostic submission and app analytics settings in **Diagnostics and Usage** (device Settings). **Not configured** (default) allows the user to change these device settings.
+- **Diagnosztikai beküldési beállítások módosítása**: a **Letiltás** megakadályozza, hogy a felhasználó a **diagnosztika és a használat** (eszközbeállítások) során megváltoztassa a diagnosztikai beküldést és az alkalmazás-elemzési beállításokat. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára ezen eszközbeállítások módosítását.
 
-  To use this setting, set the **Share usage data** setting to **Block**.
-
-  Ez a funkció az alábbiakra vonatkozik:  
-  - iOS 9.3.2 and newer
-
-- **Remote screen observation by Classroom app**: Choose **Block** to prevent the Classroom app from remotely viewing the screen on the device. **Not configured** (default) allows the Apple Classroom app to view the screen.
-
-  To use this setting, set the **Screen capture** setting to **Block**.
+  Ha ezt a beállítást szeretné használni, állítsa a **megosztás használati adatok** beállítást a **blokkolás**értékre.
 
   Ez a funkció az alábbiakra vonatkozik:  
-  - iOS 9.3 and newer
+  - iOS-9.3.2 és újabb verziók
 
-- **Unprompted screen observation by Classroom app**: If set to **Allow**, teachers can silently observe the screen of students iOS devices using the Classroom app without the students' knowledge. Student devices enrolled in a class using the Classroom app automatically give permission to that course’s teacher. **Not configured** (default) prevents this feature.
+- A **távoli képernyő megfigyelése az osztályterem alkalmazásban**: válassza a **Letiltás** lehetőséget, hogy megakadályozza, hogy az osztályterem alkalmazás távolról megtekintse a képernyőt az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi az Apple tanterem alkalmazás számára a képernyő megtekintését.
 
-  To use this setting, set the **Screen capture** setting to **Block**.
+  Ha ezt a beállítást szeretné használni, állítsa a **képernyőfelvétel** beállítást a **blokkolás**értékre.
 
-- **Enterprise app trust**: Choose **Block** to remove the **Trust Enterprise Developer** button in Settings > General > Profiles & Device Management on the device. **Not configured** (default) lets the user choose to trust apps that aren't downloaded from the app store.
-- **Account modification**: When set to **Block**, the user can't update the device-specific settings from the iOS settings app. For example, the user can't create new device accounts, or change the user name or password. **Not configured** (default) allows users to change these settings.
+  Ez a funkció az alábbiakra vonatkozik:  
+  - iOS 9,3 és újabb verziók
 
-  This feature also applies to settings accessible from the iOS settings app, such as Mail, Contacts, Calendar, Twitter, and more. This feature doesn't apply to apps with account settings that aren't configurable from the iOS settings app, such as the Microsoft Outlook app.
+- Nem megfigyelt képernyő-figyelés az **osztályterembeli alkalmazásban**: Ha a beállítás **engedélyezésre**van állítva, a tanárok a tanulók ismeretei nélkül, az osztályterem alkalmazással csendben láthatják a tanulók számára készült iOS-eszközök képernyőjét. Az osztályterem alkalmazással az osztályban regisztrált tanulói eszközök automatikusan engedélyt adnak a tanfolyam oktatójának. **Nincs konfigurálva** (alapértelmezés) megakadályozza ezt a funkciót.
 
-- **Screen time**: Choose **Block** to prevent users from setting their own restrictions in Screen Time (device settings). **Not configured** allows the user to configure device restrictions (such as parental controls or content, and privacy restrictions) on the device.
+  Ha ezt a beállítást szeretné használni, állítsa a **képernyőfelvétel** beállítást a **blokkolás**értékre.
 
-  This setting was renamed from **Enabling restrictions in the device settings**. Impact of this change:  
+- **Nagyvállalati alkalmazás megbízhatósága**: a **Letiltás** elem kiválasztásával távolítsa el a **megbízható vállalati fejlesztő** gombot a beállítások > Általános > profilok & eszközkezelés az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára az alkalmazás-áruházból letöltött alkalmazások megbízhatóságának megválasztását.
+- **Fiók módosítása**: Ha a **blokkolás**értékre van állítva, a felhasználó nem tudja frissíteni az eszközre vonatkozó beállításokat az iOS-beállítások alkalmazásból. A felhasználó például nem tud új fiókokat létrehozni, vagy módosítani a felhasználónevet vagy a jelszót. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy megváltoztassák ezeket a beállításokat.
+
+  Ez a funkció az iOS-beállítások alkalmazásból elérhető beállításokra is vonatkozik, például a levelezés, a névjegyek, a naptár, a Twitter stb. Ez a funkció nem vonatkozik azokra az alkalmazásokra, amelyek olyan Fiókbeállítások, amelyek nem konfigurálhatók az iOS-beállítások alkalmazásból, például a Microsoft Outlook alkalmazásból.
+
+- **Képernyő időpontja**: a **Letiltás** gombra kattintva megakadályozhatja, hogy a felhasználók a saját korlátozásokat állítsanak be a képernyőn megadott időben (eszközbeállítások). A **nincs konfigurálva** beállítás lehetővé teszi, hogy a felhasználó az eszközön korlátozásokat (például szülői vezérlőket, tartalmakat és adatvédelmi korlátozásokat) konfiguráljon az eszközön.
+
+  A rendszer átnevezte ezt a beállítást, mert **engedélyezte a korlátozásokat az eszközbeállítások között**. A változás hatása:  
   
-  - iOS 11.4.1 and earlier: **Block** prevents end users from setting their own restrictions in the device settings. The behavior is the same; and there are no changes for end users.
-  - iOS 12.0 and newer: **Block** prevents end users from setting their own **Screen Time** in the device settings (Settings > General > Screen Time), including content and privacy restrictions. Devices upgraded to iOS 12.0 won't see the restrictions tab in the device settings anymore (Settings > General > Device Management > Management Profile > Restrictions). These settings are in **Screen Time**.
+  - iOS-11.4.1 és korábbi verziók: a **Letiltás** megakadályozza, hogy a végfelhasználók saját korlátozásokat állítsanak be az eszközbeállítások között. A viselkedés ugyanaz; és nincsenek változások a végfelhasználók számára.
+  - iOS 12,0 és újabb verziók: a **Letiltás** megakadályozza, hogy a végfelhasználók saját **képernyős időt** állítsanak be az eszközbeállítások során (beállítások > általános > képernyő idő), beleértve a tartalom-és adatvédelmi korlátozásokat. Az iOS 12,0-re frissített eszközök többé nem látják a korlátozások lapot az eszközbeállítások esetében (Beállítások > Általános > eszközkezelés > felügyeleti profil > korlátozásai). Ezek a beállítások a **képernyőn**jelennek meg.
   
-- **Use of the erase all content and settings option on the device**: Choose **Block** so users can't use the erase all content and settings option on the device. **Not configured** (default) gives users access to these settings.
-- **Device name modification**: Choose **Block** so the device name can't be changed. **Not configured** (default) allows the user to change the name of the device.
-- **Notification settings modification**: Choose **Block** so the notification settings can't be changed. **Not configured** (default) allows the user to change the device notification settings.
-- **Wallpaper modification**: **Block** prevents the wallpaper from being changed. **Not configured** (default) allows the user to change the wallpaper on the device.
-- **Enterprise app trust settings modification**: **Block** prevents the user from changing the enterprise app trust settings on supervised devices. **Not configured** (default) allows the user to trust apps that aren't downloaded from the app store.
-- **Configuration profile changes**: **Block** prevents configuration profile changes on the device. **Not configured** (default) allows the user to install configuration profiles.
-- **Activation Lock**: Choose **Allow** to enable Activation Lock on supervised iOS devices. Activation Lock makes it harder for a lost or stolen device to be reactivated.
-- **Block app removal**: Choose **Block** to prevent users from removing apps. **Not configured** (default) allows users to remove apps from the device.
-- **Blocks USB Restricted mode**: Choose **Block** to disable USB Restricted mode on supervised devices. USB Restricted mode prevents USB accessories from exchanging data with a device that's locked for over an hour. **Not configured** (default) allows USB Restricted mode.
-- **Force automatic date and time**: **Require** forces supervised devices to set the Date & Time automatically. The device's time zone is updated when the device has cellular connections or has Wi-Fi with location services enabled.
-- **Require students to request permission to leave Classroom course**: **Require** forces students enrolled in an unmanaged course using the Classroom app to request permission from the teacher to leave the course. **Not configured** (default) doesn't force the student to ask for permission.
+- Az **összes tartalom és beállítás törlésére szolgáló beállítás használata az eszközön**: válassza a **Letiltás** lehetőséget, hogy a felhasználók ne tudják használni az összes tartalom és beállítás törlése lehetőséget az eszközön. **Nincs konfigurálva** (alapértelmezés) hozzáférést biztosít a felhasználóknak a beállításokhoz.
+- **Eszköznév módosítása**: válassza a **Letiltás** lehetőséget, hogy az eszköz neve nem módosítható. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a felhasználó módosítsa az eszköz nevét.
+- **Értesítési beállítások módosítása**: válassza a **Letiltás** lehetőséget, hogy az értesítési beállítások ne legyenek módosítva. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a felhasználó módosítsa az eszköz értesítési beállításait.
+- **Háttérkép módosítása**: a **blokk** megakadályozza a háttérkép módosítását. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a felhasználó módosítsa a háttérképet az eszközön.
+- **Vállalati alkalmazások megbízhatósági beállításainak módosítása**: a **Letiltás** megakadályozza, hogy a felhasználó módosítsa a vállalati alkalmazás megbízhatósági beállításait a felügyelt eszközökön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára az alkalmazás-áruházból letöltött alkalmazások megmegbízhatóságát.
+- **Konfigurációs profil módosítása**: a **blokk** megakadályozza a konfigurációs profil módosítását az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára a konfigurációs profilok telepítését.
+- **Aktiválási zár**: válassza az **Engedélyezés lehetőséget** aktiválási zár felügyelt iOS-eszközökön való engedélyezéséhez. A Aktiválási zár megnehezíti az elveszett vagy ellopott eszközök újraaktiválását.
+- **Alkalmazás eltávolításának tiltása**: válassza a **Letiltás** lehetőséget a felhasználók alkalmazások eltávolításának megakadályozásához. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára az alkalmazások eltávolítását az eszközről.
+- **Blokkolja az USB-korlátozott üzemmódot**: válassza a **Letiltás** lehetőséget a felügyelt eszközökön az USB-korlátozott mód letiltásához. Az USB-Korlátozásos mód megakadályozza, hogy az USB-kiegészítők az adatok cseréjét egy órán át zárolt eszközre korlátozzák. **Nincs konfigurálva** (alapértelmezett) engedélyezi az USB-korlátozott üzemmódot.
+- **Automatikus dátum és idő kényszerítése**: a felügyelt eszközök **megkövetelése** a dátum & idő automatikus beállításához. Az eszköz időzónája frissül, amikor az eszköz mobil kapcsolattal rendelkezik, vagy engedélyezve van a Wi-Fi és a Location Services.
+- A **tanulóknak engedélyt kell kérniük az osztályteremből való távozásra**: az osztályterem alkalmazással egy nem felügyelt tanfolyamot **kell** bekapcsolni a tanulótól, hogy elhagyják a tanfolyamot. **Nincs konfigurálva** (alapértelmezés) nem kényszeríti a tanulót, hogy kérjen engedélyt.
 
   Ez a funkció az alábbiakra vonatkozik:  
-  - iOS 11.3 and newer
+  - iOS 11,3 és újabb verziók
 
-- **Allow Classroom to lock to an app and lock the device without prompting**: **Enable** allows teacher to lock apps or lock the device using the Classroom app without prompting the student. Locking apps means the device can only access teacher specified apps. **Not configured** (default) prevents teachers from locking apps or devices using the Classroom app without prompting the student.
-
-  Ez a funkció az alábbiakra vonatkozik:  
-  - iOS 11.0 and newer
-
-- **Automatically join Classroom classes without prompting**: **Enable** automatically allows students to join a class that is in the Classroom app without prompting the teacher. **Not configured** (default) prompts the teacher that students want to join a class that is in the Classroom app.
+- Alkalmazások **zárolásának engedélyezése az alkalmazáshoz és az eszköz zárolása az értesítés nélkül**: az **Engedélyezés** lehetővé teszi, hogy a tanár zárolja az alkalmazásokat, vagy zárolja az eszközt az osztályterem alkalmazással anélkül, hogy a tanulót kellene kérnie. Az alkalmazások zárolása azt jelenti, hogy az eszköz csak a tanár által megadott alkalmazásokat fér hozzá. **Nincs konfigurálva** (alapértelmezés) megakadályozza, hogy a tanárok az osztályterem alkalmazással zárolják az alkalmazásokat és az eszközöket anélkül, hogy a tanulót kellene kérniük.
 
   Ez a funkció az alábbiakra vonatkozik:  
-  - iOS 11.0 and newer
+  - iOS 11,0 és újabb verziók
 
-- **Block VPN creation**: **Block** prevents users from creating VPN configuration settings. **Not configured** (default) lets users create VPNs on the device.
-- **Modifying eSIM settings**: **Block** prevents users from removing or adding a cellular plan to the eSIM on the device. **Not configured** (default) allows users to change these settings.
+- **Tantermi osztályok automatikus csatlakoztatása rákérdezés nélkül**: az **Engedélyezés** automatikusan lehetővé teszi a tanulók számára az osztályterem alkalmazásban található osztályhoz való csatlakozást a tanár megkérdezése nélkül. **Nincs konfigurálva** (alapértelmezés) arra kéri a tanárt, hogy a tanulók az osztályterem alkalmazásban lévő osztályhoz csatlakozzanak.
 
   Ez a funkció az alábbiakra vonatkozik:  
-  - iOS 12.1 and newer
+  - iOS 11,0 és újabb verziók
 
-- **Defer software updates**: When set to **Not configured** (default), software updates are shown on the device as Apple releases them. For example, if an iOS update gets released by Apple on a specific date, then that update naturally shows up on the device around the release date.
+- **VPN-létrehozás letiltása**: a **blokk** megakadályozza, hogy a felhasználók VPN-konfigurációs beállításokat hozzanak létre. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a felhasználók VPN-eket hozzanak létre az eszközön.
+- A **eSIM beállításainak módosítása**: a **Letiltás** megakadályozza, hogy a felhasználók eltávolítsák vagy felvesznek egy mobil csomagot az eszköz eSIM. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy megváltoztassák ezeket a beállításokat.
 
-  **Enable** allows you to delay when software updates are shown on devices, from 0-90 days. This setting doesn't control when updates are or aren't installed. 
+  Ez a funkció az alábbiakra vonatkozik:  
+  - iOS 12,1 és újabb verziók
 
-  - **Delay visibility of software updates**: Enter a value from 0-90 days. When the delay expires, users get a notification to update to the earliest version of the OS available when the delay was triggered.
+- **Szoftverfrissítések késleltetése**: Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), a szoftverfrissítések az eszközön jelennek meg, ahogy az Apple felszabadítja őket. Ha például egy iOS-es frissítést az Apple adott időpontban szabadít fel, akkor ez a frissítés természetesen az eszközön jelenik meg a kiadási dátum körül.
 
-    For example, if iOS 12.a is available on **January 1**, and **Delay visibility** is set to **5 days**, then iOS 12.a isn't shown as an available update on end user devices. On the **sixth day** following the release, that update is available, and end users can install it.
+  Az **Engedélyezés** beállítás megadásával késleltetheti, hogy a szoftverfrissítések mikor jelenjenek meg az eszközökön, 0-90 nap múlva. Ez a beállítás nem szabályozza, hogy a frissítések Mikor vagy nincsenek telepítve. 
 
-    This setting applies to:  
-    - iOS 11.3 and newer
+  - **Szoftverfrissítések láthatóságának késleltetése**: adjon meg egy 0-90 napos értéket. Ha a késleltetés lejár, a felhasználók értesítést kapnak, hogy az operációs rendszer legkorábbi verziójára frissítsen a késleltetés elindításakor.
+
+    Ha például az iOS 12. a a **január 1-jén**érhető el, és a **késleltetési láthatóság** értéke **5 nap**, akkor az iOS 12. a nem jelenik meg elérhető frissítésként a végfelhasználói eszközökön. A kiadást követő **hatodik napon** a frissítés elérhető lesz, és a végfelhasználók is telepíthetik azt.
+
+    Ez a beállítás a következőkre vonatkozik:  
+    - iOS 11,3 és újabb verziók
 
 ## <a name="password"></a>Jelszó
 
-### <a name="settings-apply-to-all-enrollment-types"></a>Settings apply to: All enrollment types
+### <a name="settings-apply-to-all-enrollment-types"></a>A beállítások a következőre vonatkoznak: minden regisztrációs típus
 
-- **Password**: **Require** the end user to enter a password to access the device. **Not configured** (default) allows users to access the device without entering a password.
+- **Password (jelszó**): **megköveteli** a végfelhasználótól, hogy jelszót adjon meg az eszköz eléréséhez. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a felhasználók jelszó megadása nélkül férhessenek hozzá az eszközhöz.
 
-### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>Settings apply to: Device enrollment, Automated device enrollment (supervised)
+### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése, automatikus eszközök beléptetése (felügyelt)
 
 > [!IMPORTANT]
-> On user-enrolled devices, if you configure any password setting, then the **Simple passwords** settings is automatically set to **Block**, and a 6 digit PIN is enforced.
+> A felhasználó által beléptetett eszközökön a jelszó beállításának beállításakor a rendszer automatikusan **letiltja**az **egyszerű jelszavak** beállításait, és egy 6 számjegyű PIN-kódot kényszerít ki.
 >
-> For example, you configure the **Password expiration** setting, and push this policy to user-enrolled devices. On the devices, the following happens:
+> Például beállíthatja a **jelszó lejárati** beállítását, és leküldheti a szabályzatot a felhasználó által regisztrált eszközökre. Az eszközökön a következők történnek:
 >
-> - The **Password expiration** setting is ignored.
-> - Simple passwords, such as `1111` or `1234`, aren't allowed.
-> - A 6 digit pin is enforced.
+> - A **jelszó lejárati** beállítását a rendszer figyelmen kívül hagyja.
+> - Az egyszerű jelszavak (például `1111` vagy `1234`) nem engedélyezettek.
+> - Egy 6 számjegyű PIN-kód kényszerítve.
 
-- **Simple passwords**: Choose **Block** to require more complex passwords. **Not configured** allows simple passwords, such as `0000` and `1234`.
+- **Egyszerű jelszavak**: a **Letiltás** elem kiválasztásával összetettebb jelszavakat igényelhet. A **nincs konfigurálva** beállítás lehetővé teszi az egyszerű jelszavak használatát, például `0000` és `1234`.
 
-- **Required password type**: Choose the type of password your organization require. A választható lehetőségek:
+- **Szükséges jelszó típusa**: válassza ki a szervezet által igényelt jelszó típusát. A választható lehetőségek:
   - **Eszköz alapértelmezése**
-  - **Numeric**
-  - **Alphanumeric**
-- **Number of non-alphanumeric characters in password**: Enter the number of symbol characters, such as `#` or `@`, that must be included in the password.
+  - **Numerikus**
+  - **Alfanumerikus**
+- **Nem alfanumerikus karakterek száma a jelszóban**: Itt adhatja meg, hogy hány karakterből (például `#` vagy `@`) kell szerepelnie a jelszóban.
 
-- **Minimum password length**: Enter the minimum length a user must enter, between 4 and 14 characters. On user enrolled devices, enter a length between 4 and 6 characters.
+- **Jelszó minimális hossza**: Itt adhatja meg azt a minimális hosszt, amelyet a felhasználónak meg kell adnia 4 – 14 karakter között. A felhasználó által regisztrált eszközökön adjon meg egy 4 és 6 karakter közötti hosszúságot.
   
   > [!NOTE]
-  > For devices that are user enrolled, users can set a PIN greater than 6 digits. But, no more than 6 digits are enforced on the device. For example, an administrator sets the minimum length to `8`. On user-enrolled devices, users are only required to set a 6 digit PIN. Intune doesn't force a PIN greater than 6 digits on user-enrolled devices.
+  > A felhasználó által beléptetett eszközök esetében a felhasználók 6 számjegynél nagyobb PIN-kódot állíthatnak be. Azonban az eszközön legfeljebb 6 számjegy kényszeríthető ki. A rendszergazda például a `8`minimális hosszát állítja be. A felhasználó által regisztrált eszközökön a felhasználóknak csak 6 számjegyű PIN-kódot kell megadniuk. Az Intune nem kényszeríti a 6 számjegynél nagyobb PIN-kód megadását a felhasználó által regisztrált eszközökön.
 
-- **Number of sign-in failures before wiping device**: Enter the number of failed sign-ins to allow before the device is wiped (between 4-11).
+- Sikertelen **bejelentkezések száma az eszköz törlése előtt**: Itt adhatja meg, hogy hány sikertelen bejelentkezés után kerüljön sor az eszköz törlésére (4-11).
   
-  iOS has built-in security that can impact this setting. For example, iOS may delay triggering the policy depending on the number of sign in failures. It may also consider repeatedly entering the same passcode as one attempt. Apple's [iOS security guide](https://www.apple.com/business/site/docs/iOS_Security_Guide.pdf) (opens Apple's web site) is a good resource, and provides more specific details on passcodes.
+  az iOS beépített biztonságot tartalmaz, amely hatással lehet erre a beállításra. Előfordulhat például, hogy az iOS késlelteti a szabályzat aktiválását a bejelentkezési hibák számától függően. Azt is fontolóra veheti, hogy ismételten ugyanazzal a PIN-kóddal adja meg ugyanazt a jelszót, mint egy kísérletet. Az Apple [IOS-alapú biztonsági útmutatója](https://www.apple.com/business/site/docs/iOS_Security_Guide.pdf) (az Apple webhelyének megnyitása) jó erőforrás, és pontosabb részleteket biztosít a PIN-kódokról.
   
-- **Maximum minutes after screen lock before password is required**<sup>1</sup>: Enter how long the device stays idle before the user must reenter their password. If the time you enter is longer than what's currently set on the device, then the device ignores the time you enter. Supported on iOS 8.0 and newer devices.
+- A **Képernyő zárolása előtt legfeljebb perccel a jelszó megadása kötelező**<sup>1</sup>: adja meg, hogy az eszköz mennyi ideig maradjon üresjáratban, mielőtt a felhasználónak újra meg kell adnia a jelszavát. Ha a megadott idő hosszabb az eszközön jelenleg beállított értéknél, akkor az eszköz figyelmen kívül hagyja a beírt időt. IOS 8,0 és újabb rendszerű eszközökön támogatott.
 
-- **Maximum minutes of inactivity until screen locks**<sup>1</sup>: Enter the maximum number of minutes of inactivity allowed on the device until the screen locks.
+- **Legfeljebb ennyi perc inaktivitás után (képernyő zárolása**<sup>1)</sup>: Itt adhatja meg, hogy legfeljebb hány perc inaktivitás engedélyezett az eszközön a képernyő zárolása előtt.
 
-  **iOS options**:  
+  **iOS-beállítások**:  
 
-  - **Not configured** (Default): Intune doesn't touch this setting.
-  - **Immediately**: Screen locks after 30 seconds of inactivity.
-  - **1**: Screen locks after 1 minute of inactivity.
-  - **2**: Screen locks after 2 minutes of inactivity.
-  - **3**: Screen locks after 3 minutes of inactivity.
-  - **4**: Screen locks after 4 minutes of inactivity.
-  - **5**: Screen locks after 5 minutes of inactivity.
+  - **Nincs konfigurálva** (alapértelmezett): az Intune nem érinti ezt a beállítást.
+  - **Azonnal**: a képernyő zárolása 30 másodperc inaktivitás után történik.
+  - **1**: a képernyőfelvételek 1 perc inaktivitás után zárolva vannak.
+  - **2**: a képernyő 2 perc inaktivitás után zárolható.
+  - **3**: a képernyő zárolása 3 perc inaktivitás után történik.
+  - **4**: a képernyő zárolása 4 perc inaktivitás után történik.
+  - **5**: a képernyő 5 perc inaktivitás után zárolja.
     
-  **iPadOS options**:  
+  **iPadOS beállítások**:  
 
-  - **Not configured** (Default): Intune doesn't touch this setting.
-  - **Immediately**: Screen locks after 2 minutes of inactivity.
-  - **2**: Screen locks after 2 minutes of inactivity.
-  - **5**: Screen locks after 5 minutes of inactivity.
-  - **10**: Screen locks after 10 minutes of inactivity.
-  - **15**: Screen locks after 15 minutes of inactivity.
+  - **Nincs konfigurálva** (alapértelmezett): az Intune nem érinti ezt a beállítást.
+  - **Azonnal**: 2 perc inaktivitás után zárolja a képernyőket.
+  - **2**: a képernyő 2 perc inaktivitás után zárolható.
+  - **5**: a képernyő 5 perc inaktivitás után zárolja.
+  - **10**: a képernyő zárolása 10 perc inaktivitás után történik.
+  - **15**: a képernyőfelvételek 15 perc inaktivitás után zárolva vannak.
 
-  If a value doesn't apply to iOS or iPadOS, then Apple uses the closest *lowest* value. For example, if you enter `4` minutes, then iPadOS devices use `2` minutes. If you enter `10` minutes, then iOS devices use `5` minutes. This is an Apple limitation.
+  Ha egy érték nem vonatkozik az iOS-re vagy a iPadOS, az Apple a legközelebbi *legalacsonyabb* értéket használja. Ha például `4` percet ad meg, a iPadOS-eszközök `2` percet használnak. Ha `10` percet ad meg, az iOS-eszközök `5` percet használnak. Ez egy Apple-korlátozás.
   
   > [!NOTE]
-  > The Intune UI for this setting doesn't separate the iOS and iPadOS supported values. The UI might be updated in a future release.
+  > A beállítás Intune KEZELŐFELÜLETe nem választja el az iOS-és a iPadOS által támogatott értékeket. Előfordulhat, hogy a felhasználói felület egy későbbi kiadásban frissül.
 
-- **Password expiration (days)** : Enter the number of days before the device password must be changed.
-- **Prevent reuse of previous passwords**: Enter the number of new passwords that must be used until an old one can be reused.
-- **Touch ID and Face ID unlock**: Choose **Block** to prevent using a fingerprint or face to unlock the device. **Not configured** allows the user to unlock the device using these methods.
+- **Jelszó érvényessége (napokban)** : adja meg, hogy hány nap elteltével kell megváltoztatni az eszköz jelszavát.
+- **Korábbi jelszavak újbóli használatának tiltása**: Itt adhatja meg, hogy hány új jelszót kell használni, amíg egy régit nem lehet újra felhasználni.
+- **Touch ID és Face ID feloldása**: válassza a **Letiltás** lehetőséget, nehogy ujjlenyomatot vagy arcot használjon az eszköz zárolásának feloldásához. A **nincs konfigurálva** beállítás lehetővé teszi, hogy a felhasználó ezeket a módszereket használja fel az eszköz zárolásának feloldásához.
 
-  Blocking this setting also prevents using FaceID authentication to unlock the device.
+  A beállítás letiltása azt is megakadályozza, hogy a FaceID hitelesítést használja az eszköz zárolásának feloldásához.
 
-  Face ID applies to:  
-  - iOS 11.0 and newer
+  A Face ID a következőkre vonatkozik:  
+  - iOS 11,0 és újabb verziók
 
-### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Settings apply to: Automated device enrollment (supervised)
+### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: automatikus eszközök beléptetése (felügyelt)
 
-- **Passcode modification**: Choose **Block** to stop the passcode from being changed, added, or removed. Changes to passcode restrictions are ignored on supervised devices after blocking this feature. **Not configured** (default) allows passcodes to be added, changed, or removed.
+- **PIN-kód módosítása**: válassza a **Letiltás** lehetőséget a PIN-kód módosításának, hozzáadásának vagy eltávolításának leállításához. A PIN-kódokra vonatkozó korlátozások módosításait a rendszer figyelmen kívül hagyja a felügyelt eszközökön a funkció letiltása után. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a PIN-kódok hozzáadását, módosítását vagy eltávolítását.
 
-  - **Touch ID and Face ID modification**: **Block** stops the user from changing, adding, or removing TouchID fingerprints and Face ID. **Not configured** (default) allows the user to update the TouchID fingerprints and Face ID on the device.
+  - **Touch ID és Face ID módosítása**: a **blokk** leállítja a felhasználót a Touch ID ujjlenyomatok és a Face ID módosításának, hozzáadásának vagy eltávolításának megváltoztatásával. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a felhasználó frissítse a Touch ID ujjlenyomatait és a Face ID-t az eszközön.
 
-    Blocking this setting also stops the user from changing, adding, or removing FaceID authentication.
+    Ha letiltja ezt a beállítást, a felhasználó FaceID-hitelesítés módosítását, hozzáadását vagy eltávolítását is megakadályozza.
 
-    Face ID applies to:  
-    - iOS 11.0 and newer
+    A Face ID a következőkre vonatkozik:  
+    - iOS 11,0 és újabb verziók
 
-- **Block password AutoFill**: Choose **Block** to prevent using the AutoFill Passwords feature on iOS. Choosing **Block** also has the following impact:
+- **Jelszó automatikus**kitöltésének tiltása: válassza a **Letiltás** lehetőséget, hogy ne használja az automatikus kitöltés jelszava funkciót iOS rendszeren. A **blokk** kiválasztása a következő hatással is van:
 
-  - Users aren't prompted to use a saved password in Safari or in any apps.
-  - Automatic Strong Passwords are disabled, and strong passwords aren't suggested to users.
+  - A felhasználók nem kérik a mentett jelszavak használatát a Safariban vagy bármely alkalmazásban.
+  - Az automatikus erős jelszavak le vannak tiltva, és az erős jelszavakat nem javasoljuk a felhasználók számára.
 
-  **Not configured** (default) allows these features.
+  **Nincs konfigurálva** (alapértelmezés) engedélyezi ezeket a funkciókat.
 
-- **Block password proximity requests**: Choose **Block** so a user’s device doesn't request passwords from nearby devices. **Not configured** (default) allows these password requests.
-- **Block password sharing**: **Block** prevents sharing passwords between devices using AirDrop. **Not configured** (default) allows passwords to be shared.
-- **Require Touch ID or Face ID authentication for password or credit card information AutoFill**: When set to **Require**, users must authenticate using TouchID or FaceID before passwords or credit card information can be auto filled in Safari and other apps. **Not configured** (default) allows users to control this feature in the device settings.
+- **Jelszó-közelségi kérelmek letiltása**: válassza a **Letiltás** lehetőséget, hogy a felhasználó eszköze ne kérjen jelszavakat a közeli eszközökről. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezeket a jelszavakat.
+- **Jelszó-megosztás letiltása**: a **blokk** megakadályozza a jelszavak megosztását az eszközök között a AirDrop használatával. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a jelszavak megosztását.
+- **A jelszó-vagy hitelkártya-adatok automatikus kitöltéséhez érintse meg a Touch ID-t vagy a Face ID hitelesítést**: Ha a beállítás **kötelező**, a felhasználóknak a Touch ID vagy a FaceID használatával kell hitelesíteniük magukat, mielőtt a jelszavak vagy a hitelkártya-információk automatikusan kitölthetők a Safari és más alkalmazások **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára a funkció vezérlését az eszközbeállítások között.
 
   Ez a funkció az alábbiakra vonatkozik:  
-  - iOS 11.0 and newer
+  - iOS 11,0 és újabb verziók
   
-<sup>1</sup>When you configure the **Maximum minutes of inactivity until screen locks** and **Maximum minutes after screen lock before password is required** settings, they're applied in sequence. For example, if you set the value for both settings to **5** minutes, the screen turns off automatically after five minutes, and the device is locked after an additional five minutes. Ha azonban a felhasználó manuálisan kapcsolja ki a képernyőt, azonnal a második beállítás lesz alkalmazva. In the same example, after the user turns off the screen, the device locks five minutes later.
+<sup>1</sup> Ha a képernyő zárolása ennyi **perc inaktivitás** után és a **Képernyő zárolása után legfeljebb perccel a jelszó megadása után beállítás van** beállítva, akkor azokat a rendszer sorrend szerint alkalmazza. Ha például mindkét beállítás értékét **5** percre állítja be, a képernyő öt perc elteltével automatikusan kikapcsol, és az eszköz további öt perc múlva zárolva lesz. Ha azonban a felhasználó manuálisan kapcsolja ki a képernyőt, azonnal a második beállítás lesz alkalmazva. Ugyanebben a példában azt követően, hogy a felhasználó kikapcsolta a képernyőt, öt perccel később zárolja az eszközt.
 
 ## <a name="locked-screen-experience"></a>Zárolási képernyő felülete
 
-### <a name="settings-apply-to-all-enrollment-types"></a>Settings apply to: All enrollment types
+### <a name="settings-apply-to-all-enrollment-types"></a>A beállítások a következőre vonatkoznak: minden regisztrációs típus
 
-- **Control Center access while device locked**: Choose **Block** to prevent access to the Control Center app while device is locked. **Not configured** (default) allows users access to the Control Center app when the device is locked.
-- **Notifications while device locked**: **Block** prevents access to notifications when the device is locked. **Not configured** (default) allows the user to access the notifications without unlocking the device.
-- **Today view while device locked**: **Block** prevents access to the Today view when the device is locked. **Not configured** (default) allows the user to see the Today view when the device is locked.
+- **Vezérlési központ hozzáférése az eszköz zárolt állapotában**: válassza a **Letiltás** lehetőséget a vezérlési központ alkalmazás elérésének megakadályozásához az eszköz zárolt állapotában. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a felhasználók hozzáférjenek a Control Center alkalmazáshoz, amikor az eszköz zárolva van.
+- **Értesítések az eszköz zárolt állapotában**: a **blokk** megakadályozza az értesítések elérését az eszköz zárolt állapotában. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára az értesítések elérését az eszköz zárolásának feloldása nélkül.
+- **Ma nézet az eszköz zárolt állapotában**: a **blokk** megakadályozza a ma nézethez való hozzáférést, ha az eszköz zárolva van. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára, hogy megtekintse a mai nézetet, amikor az eszköz zárolva van.
 
-### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>Settings apply to: Device enrollment, Automated device enrollment (supervised)
+### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése, automatikus eszközök beléptetése (felügyelt)
 
-- **Wallet notifications while device locked**: **Block** prevents access to the Wallet app when the device is locked. **Not configured** (default) allows the user to access the Wallet app while the device is locked.
+- **Mobiltárca-értesítések az eszköz zárolt állapotában**: a **blokk** megakadályozza a hozzáférését a mobiltárca alkalmazáshoz, ha az eszköz zárolva van. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a felhasználó hozzáférjen a mobiltárca alkalmazáshoz, amíg az eszköz zárolva van.
 
 ## <a name="app-store-doc-viewing-gaming"></a>Alkalmazás-áruház, dokumentumok megtekintése, játékok
 
-### <a name="settings-apply-to-all-enrollment-types"></a>Settings apply to: All enrollment types
+### <a name="settings-apply-to-all-enrollment-types"></a>A beállítások a következőre vonatkoznak: minden regisztrációs típus
 
-- **Viewing corporate documents in unmanaged apps**: **Block** prevents viewing corporate documents in unmanaged apps. **Not configured** (default) allows corporate documents to be viewed in any app. For example, you want to prevent users from saving files from the OneDrive app to Dropbox. Configure this setting as **Block**. After the device receives the policy (for example, after a restart), it no longer allows saving.
+- **Vállalati dokumentumok megtekintése a nem felügyelt alkalmazásokban**: a **blokk** megakadályozza a vállalati dokumentumok megtekintését a nem felügyelt alkalmazásokban. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a vállalati dokumentumok megtekintését bármely alkalmazásban. Tegyük fel például, hogy meg szeretné akadályozni, hogy a felhasználók fájlokat mentsenek a OneDrive alkalmazásból a Dropboxba. Állítsa be ezt a beállítást **blokkként**. Miután az eszköz megkapja a házirendet (például újraindítás után), az már nem teszi lehetővé a mentést.
 
-  - **Allow unmanaged apps to read from managed contacts accounts**: When set to **Allow**, unmanaged apps, such as the built-in iOS Contacts app, can read and access contact information from managed apps, including the Outlook mobile app. **Not configured** (default) prevents reading, including removing duplicates, from the built-in Contacts app on the device.  
+
+  > [!NOTE]
+  > Ha ez a beállítás le van tiltva, az alkalmazás-áruházból telepített külső gyártótól származó billentyűzetek is le vannak tiltva.
+
+  - Nem **felügyelt alkalmazások beolvasásának engedélyezése a felügyelt névjegyek fiókjaiból**: Ha **engedélyezi**, a nem felügyelt alkalmazások, például a beépített iOS-névjegyek alkalmazás, a felügyelt alkalmazásokból származó kapcsolattartási adatokat, például az Outlook Mobile alkalmazást is beolvashatja és elérheti. **Nincs konfigurálva** (alapértelmezés) megakadályozza az olvasást, beleértve az ismétlődések eltávolítását is az eszköz beépített névjegyek alkalmazásában.  
   
-    This setting allows or prevents reading contact information. It doesn't control syncing contacts between the apps.
+    Ez a beállítás engedélyezi vagy megakadályozza a kapcsolattartási adatok olvasását. Nem szabályozza a kapcsolatok szinkronizálását az alkalmazások között.
   
-    To use this setting, set the **Viewing corporate documents in unmanaged apps** setting to **Block**.
+    Ha ezt a beállítást szeretné használni, állítsa be a **vállalati dokumentumok megtekintése a nem felügyelt alkalmazásokban** beállítást a **blokkoláshoz**.
 
-  For more information about these two settings, and their impact on Outlook for iOS contact export synchronization, see [Support Tip: Use Intune custom profile settings with the iOS Native Contacts App](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-Tip-Use-Intune-custom-profile-settings-with-the-iOS/ba-p/298453).
+  További információ erről a két beállításról, valamint azok hatása az Outlook for iOS-kapcsolat exportálási szinkronizálására [: támogatási Tipp: az egyéni Intune-profil beállításainak használata az iOS Native Contacts alkalmazással](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-Tip-Use-Intune-custom-profile-settings-with-the-iOS/ba-p/298453).
 
-- **Treat AirDrop as an unmanaged destination**: **Require** forces AirDrop to be considered an unmanaged drop target. It stops managed apps from sending data using Airdrop. 
-- **Viewing non-corporate documents in corporate apps**: **Block** prevents viewing non-corporate documents in corporate apps. **Not configured** (default) allows any document to be viewed in corporate managed apps.
+- **AirDrop kezelése nem felügyelt célként**: a kényszerített AirDrop nem felügyelt eldobási **célként kell tekinteni** . Leállítja a felügyelt alkalmazások számára az adatok küldését a AirDrop használatával. 
+- **Nem vállalati dokumentumok megtekintése a vállalati alkalmazásokban: a** **blokk** megakadályozza a nem vállalati dokumentumok megtekintését a vállalati alkalmazásokban. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a dokumentumok megtekinthetők legyenek a vállalat által felügyelt alkalmazásokban.
 
-  Setting to **Block** also prevents contact export synchronization in Outlook for iOS. For more information, see [Support Tip: Enabling Outlook iOS Contact Sync with iOS12 MDM Controls](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-Tip-Enabling-Outlook-iOS-Contact-Sync-with-iOS12-MDM/ba-p/298453).
+  A **Letiltás** beállítás meggátolja a kapcsolatfelvételt az iOS-ben az Outlookban. További információ [: támogatási Tipp: az Outlook iOS Contact Sync engedélyezése a IOS12 Mdm-vezérlőkkel](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-Tip-Enabling-Outlook-iOS-Contact-Sync-with-iOS12-MDM/ba-p/298453).
 
-### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>Settings apply to: Device enrollment, Automated device enrollment (supervised)
+### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése, automatikus eszközök beléptetése (felügyelt)
 
-- **Require iTunes Store password for all purchases**: **Require** the user to enter the Apple ID password for each in-app or ITunes purchase. **Not configured** (default) allows purchases without prompting for a password every time.
-- **In-app purchases**: Choose **Block** to prevent in-app purchases from the store. **Not configured** (default) allows store purchases within a running app.
-- **Download content from iBook store flagged as 'Erotica'** : Choose **Block** to prevent stops users from downloading media from the iBook store that's tagged as erotica. **Not configured** (default) allows the user to download books with the "Erotica" category.
-- **Allow managed apps to write contacts to unmanaged contacts accounts**: When set to **Allow**, managed apps, such as the Outlook mobile app, can save or sync contact information, including business and corporate contacts, to the built-in iOS Contacts app. When set to **Not configured** (default), managed apps can't save or sync contact information to the built-in iOS Contacts app on the device.
+- **ITunes Store-jelszó megkövetelése az összes vásárláshoz**: a felhasználónak meg kell **adnia az Apple** ID jelszót az egyes alkalmazásokhoz vagy az iTunes-vásárlásokhoz. **Nincs konfigurálva** (az alapértelmezett) lehetővé teszi a vásárlásokat anélkül, hogy minden alkalommal jelszót kellene kérnie.
+- **Alkalmazáson belüli vásárlások**: a **Letiltás** elem kiválasztásával megakadályozhatja az alkalmazáson belüli vásárlásokat az áruházból. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi az áruházban való vásárlást egy futó alkalmazáson belül.
+- A **"Erotika" címkével megjelölt tartalmak letöltése az iBooks áruházból**: a **Letiltás** beállítás megtiltásával megakadályozhatja, hogy a felhasználók ne töltsenek le olyan adathordozókat az iBooks áruházból, amely az erotika. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára a könyvek letöltését az "Erotika" kategóriával.
+- A **felügyelt alkalmazások számára lehetővé teszi a névjegyek írását a nem felügyelt névjegyalbumba**: Ha az **Engedélyezés**, a felügyelt alkalmazások, például az Outlook Mobile alkalmazás, a beépített iOS Contacts alkalmazásba mentheti vagy szinkronizálhatja a kapcsolattartási adatokat, beleértve az üzleti és vállalati kapcsolatokat is. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), a felügyelt alkalmazások nem tudják menteni vagy szinkronizálni a kapcsolattartási adatokat az eszköz beépített iOS Contacts alkalmazásával.
   
-  To use this setting, set the **Viewing corporate documents in unmanaged apps** setting to **Block**.
+  Ha ezt a beállítást szeretné használni, állítsa be a **vállalati dokumentumok megtekintése a nem felügyelt alkalmazásokban** beállítást a **blokkoláshoz**.
 
-- **Ratings region**: Choose the ratings region you want to use for allowed downloads. And then choose the allowed ratings for **Movies**, **TV Shows**, and **Apps**.
+- **Minősítési régió**: válassza ki az engedélyezett letöltésekhez használni kívánt minősítési régiót. Majd válassza ki a **filmek**, **tévéműsorok**és **alkalmazások**engedélyezett minősítéseit.
 
-### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Settings apply to: Automated device enrollment (supervised)
+### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: automatikus eszközök beléptetése (felügyelt)
 
-- **App store**: **Block** prevents access to the app store on supervised devices. **Not configured** (default) allows access.
+- **App Store**: **letiltja** az alkalmazás-áruházhoz való hozzáférést a felügyelt eszközökön. **Nincs konfigurálva** (alapértelmezés) engedélyezi a hozzáférést.
 
-  Starting with iOS 13.0, this setting requires supervised devices.
+  Az iOS 13,0-es verziótól kezdve a beállításhoz felügyelt eszközök szükségesek.
 
-  - **Installing apps from App Store**: Choose **Block** to block the app store from the device home screen. A végfelhasználók továbbra is használhatják az iTunest vagy az Apple Configurator eszközt alkalmazások telepítésére. **Not configured** (default) allows the app store on the home screen.
-  - **Automatic app downloads**: Choose **Block** to prevent automatic downloading of apps bought on other devices. It doesn't affect updates to existing apps. **Not configured** (default) allows apps bought on other iOS devices to download on the device.
+  - **Alkalmazások telepítése az App Store-ból**: válassza a **Letiltás** lehetőséget az alkalmazás-áruház az eszköz kezdőlapjára való blokkolásához. A végfelhasználók továbbra is használhatják az iTunest vagy az Apple Configurator eszközt alkalmazások telepítésére. **Nincs konfigurálva** (alapértelmezés) engedélyezi az App Store-t a kezdőképernyőn.
+  - Alkalmazások **automatikus**letöltése: válassza a **Letiltás** lehetőséget, hogy megakadályozza a más eszközökön vásárolt alkalmazások automatikus letöltését. Nem érinti a meglévő alkalmazások frissítéseit. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi más iOS-eszközökön vásárolt alkalmazások letöltését az eszközön.
 
-- **Explicit iTunes music, podcast, or news content**: Choose **Block** to prevent explicit iTunes music, podcast, or news content. **Not configured** (default) allows the device to access content rated as adult from the store. iOS 13 and newer may require supervised only devices. 
+- **Kifejezetten iTunes zene, podcast vagy Hírek tartalma**: a **Letiltás** elemre kattintva megakadályozhatja az iTunes-zene, podcast vagy Hírek tartalmát. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy az eszköz hozzáférjen az áruházból származó felnőttként használt tartalomhoz. az iOS 13 és újabb verziókhoz csak felügyelt eszközökre lehet szükség. 
 
-  Starting with iOS 13.0, this setting requires supervised devices.
+  Az iOS 13,0-es verziótól kezdve a beállításhoz felügyelt eszközök szükségesek.
 
-- **Adding Game Center friends**: **Block** prevents users from adding Game Center friends. **Not configured** (default) allows the user to add friends in Game Center.
+- **Game Center ismerősök hozzáadása**: a **Letiltás** megakadályozza, hogy a felhasználók Game Center barátokat adjanak hozzá. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára a barátok hozzáadását Game Center.
 
-  Starting with iOS 13.0, this setting requires supervised devices.
+  Az iOS 13,0-es verziótól kezdve a beállításhoz felügyelt eszközök szükségesek.
 
-- **Game Center**: **Block** the use of the Game Center app. **Not configured** (default) allows using the Game Center app on the device.
-- **Multiplayer gaming**: Choose **Block** to prevent multiplayer gaming. **Not configured** (default) allows the user to play multiplayer games on the device.
+- **Game Center**: a Game Center alkalmazás használatának **tiltása** . **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a Game Center alkalmazás használatát az eszközön.
+- **Többrésztvevős játék**: válassza a **Letiltás** lehetőséget a többrésztvevős játékok elkerüléséhez. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára, hogy többrésztvevős játékokat játsszon az eszközön.
 
-  Starting with iOS 13.0, this setting requires supervised devices.
+  Az iOS 13,0-es verziótól kezdve a beállításhoz felügyelt eszközök szükségesek.
 
-- **Access to network drive in Files app**: Using the Server Message Block (SMB) protocol, devices can access files or other resources on a network server. **Disable** prevents accessing files on a network SMB drive. **Not configured** (default) allows access.
+- **Hozzáférés hálózati meghajtóhoz a Files alkalmazásban**: a kiszolgálói üzenetblokk (SMB) protokoll használatával az eszközök hozzáférhetnek a hálózati kiszolgálón található fájlokhoz vagy egyéb erőforrásokhoz. A **Letiltás** beállítás meggátolja a hálózati SMB-meghajtón lévő fájlok elérését. **Nincs konfigurálva** (alapértelmezés) engedélyezi a hozzáférést.
 
   Ez a funkció az alábbiakra vonatkozik:  
-  - iOS and iPadOS 13.0 and newer
+  - iOS és iPadOS 13,0 és újabb verziók
 
 ## <a name="built-in-apps"></a>Beépített alkalmazások
 
-### <a name="settings-apply-to-all-enrollment-types"></a>Settings apply to: All enrollment types
+### <a name="settings-apply-to-all-enrollment-types"></a>A beállítások a következőre vonatkoznak: minden regisztrációs típus
 
-- **Siri**: **Block** prevents access to Siri. **Not configured** (default) allows using the Siri voice assistant on the device.
-  - **Siri while device is locked**: Choose **Block** to prevent access to Siri when the device is locked. **Not configured** (default) allows using the Siri voice assistant on the device when it's locked.
+- **Siri**: a **blokk** megakadályozza a hozzáférést a sirihoz. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi az eszközön a Siri Voice Assistant használatát.
+  - Siri, ha az **eszköz zárolva van**: válassza a **Letiltás** lehetőséget a Siri elérésének megakadályozásához, ha az eszköz zárolva van. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi az eszközön a Siri Voice Assistant használatát, ha zárolva van.
 
-- **Safari fraud warnings**: **Require** fraud warnings to be shown in the web browser on the device. A **Nincs konfigurálva** (alapértelmezett) érték letiltja a funkciót.
+- A **Safari csalások elleni figyelmeztetések**: az eszközön található webböngészőben megjelenő csalási figyelmeztetések **megkövetelése** . A **Nincs konfigurálva** (alapértelmezett) érték letiltja a funkciót.
 
-### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>Settings apply to: Device enrollment, Automated device enrollment (supervised)
+### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése, automatikus eszközök beléptetése (felügyelt)
 
-- **Spotlight search to return results from internet**: **Block** stops Spotlight from returning any results from an Internet search. **Not configured** (default) allows Spotlight search connect to the Internet to provide search results.
+- **Spotlight-keresés az internetről származó eredmények visszaadásához**: a leállítási **funkció** nem tér vissza az internetes keresés eredményeiből. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a Spotlight-keresés kapcsolódását az internethez a keresési eredmények biztosítása érdekében.
 
-- **Safari cookies**: Choose how cookies are handled on the device. A választható lehetőségek:
+- **Safari cookie-k**: válassza ki, hogyan történjen a cookie-k kezelése az eszközön. A választható lehetőségek:
   - Allow
-  - Block all cookies
-  - Allow cookies from visited web sites
-  - Allow cookies from current web site
+  - Az összes cookie letiltása
+  - Cookie-k engedélyezése a felkeresett webhelyekről
+  - Cookie-k engedélyezése a jelenlegi webhelyről
 
-- **Safari JavaScript**: **Block** prevents Java scripts in the browser from running on the device. **Not configured** (default) allows Java scripts.
+- **Safari JavaScript**: a **blokk** megakadályozza a Java-parancsfájlok futtatását a böngészőben az eszközön. **Nincs konfigurálva** (alapértelmezés) engedélyezi a Java-parancsfájlokat.
 
-- **Safari Pop-ups**: **Block** to disable the pop-up blocker in the web browser. **Not configured** (default) allows the pop-up blocker.
+- **Safari előugró ablakok**: **letiltja** az előugró ablakok blokkoló funkcióját a böngészőben. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi az előugró ablak blokkolását.
 
-### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Settings apply to: Automated device enrollment (supervised)
+### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: automatikus eszközök beléptetése (felügyelt)
 
-- **Camera**: Choose **Block** to prevent access to the camera on the device. **Not configured** (default) allows access to the device's camera.
+- **Kamera**: válassza a **Letiltás** lehetőséget a kamera elérésének megakadályozásához az eszközön. **Nincs konfigurálva** (alapértelmezés) engedélyezi az eszköz kamerájának elérését.
 
-  Starting with iOS 13.0, this setting requires supervised devices.
+  Az iOS 13,0-es verziótól kezdve a beállításhoz felügyelt eszközök szükségesek.
 
-  - **FaceTime**: **Block** to prevent access to the FaceTime app. **Not configured** (default) allows access to the FaceTime app on the device.
+  - **FaceTime**: **blokkolás** a FaceTime-alkalmazáshoz való hozzáférés megakadályozása érdekében. **Nincs konfigurálva** (alapértelmezés) engedélyezi a FaceTime alkalmazás elérését az eszközön.
 
-    Starting with iOS 13.0, this setting requires supervised devices.
+    Az iOS 13,0-es verziótól kezdve a beállításhoz felügyelt eszközök szükségesek.
 
-- **Siri profanity filter**: **Require** prevents Siri from dictating, or speaking profane language.
+- **Siri káromkodás szűrő**: **megkövetelő** , hogy a Siri ne diktáljon vagy beszélje meg a káromkodás nyelvét.
 
-  To use this setting, set the **Siri** setting to **Block**.
+  Ha ezt a beállítást szeretné használni, állítsa a **Siri** beállítást a **Letiltás**értékre.
 
-- **Siri to query user-generated content from the internet**: **Block** prevents Siri from accessing websites to answer questions. **Not configured** (default) allows Siri to access user-generated content from the internet.
+- **A felhasználó által létrehozott tartalom lekérése az internetről**: **Block** megakadályozza, hogy a Siri hozzáférjen a webhelyekhez a kérdések megválaszolásához. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a Siri számára a felhasználó által létrehozott tartalmak elérését az internetről.
 
-  To use this setting, set the **Siri** setting to **Block**.
+  Ha ezt a beállítást szeretné használni, állítsa a **Siri** beállítást a **Letiltás**értékre.
 
-- **Apple News**: Choose **Block** to prevent access to the Apple News app on the device. **Not configured** (default) allows using the Apple News app.
-- **iBooks store**: **Block** prevents access to the iBooks store. **Not configured** (default) allows users to browse and buy books from the iBooks store.
-- **Messages app on the device**: **Block** prevents users from using the Messages app for iMessage. If the device supports text messaging, the user can still send and receive text messages using SMS. **Not configured** (default) allows using the Messages app to send and read messages over the internet.
-- **Podcasts**: **Block** prevents users using the Podcasts app. **Not configured** (default) allows using the Podcasts app.
-- **Music service**: **Block** reverts the Music app to classic mode and disables the Music service. **Not configured** (default) allows using the Apple Music app.
-- **iTunes Radio service**: **Block** prevents users from using the iTunes Radio app. **Not configured** (default) allows using the iTunes Radio app.
-- **iTunes store**: **Not configured** (default) allows iTunes on the devices. **Block** prevents users from using iTunes on the device. 
-
-  Ez a funkció az alábbiakra vonatkozik:  
-  - iOS 4.0 and newer
-
-- **Find my iPhone**: **Not configured** (default) allows using this Find My app feature to get the approximate location of the device. **Block** prevents this feature in the Find My app. 
+- **Apple News**: válassza a **letiltás** lehetőséget a Apple News alkalmazás elérésének megakadályozásához az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a Apple News alkalmazás használatát.
+- **iBooks Store**: a **blokk** megakadályozza az iBooks tároló elérését. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára az iBooks áruházból származó könyvek tallózását és megvásárlását.
+- **Üzenetek alkalmazás az eszközön**: a **Letiltás** megakadályozza, hogy a felhasználók a iMessage üzenetek alkalmazást használják. Ha az eszköz támogatja a szöveges üzenetküldést, akkor a felhasználó SMS-sel továbbra is küldhet és fogadhat szöveges üzeneteket. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi az üzenetek alkalmazás számára az üzenetek küldését és olvasását az interneten keresztül.
+- **Podcasts**: a **blokk** megakadályozza, hogy a felhasználók a Podcasts alkalmazást használják. **Nincs konfigurálva** (alapértelmezett) a Podcasts alkalmazás használatát teszi lehetővé.
+- **Music szolgáltatás**: a **Block** a Music alkalmazást klasszikus módra vált, és letiltja a Music szolgáltatást. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a Apple Music alkalmazás használatát.
+- **iTunes Radio szolgáltatás**: a **Letiltás** megakadályozza, hogy a felhasználók az iTunes Radio alkalmazást használják. **Nincs konfigurálva** (alapértelmezett) az iTunes Radio alkalmazás használatát teszi lehetővé.
+- **iTunes Store**: **nincs konfigurálva** (alapértelmezett) engedélyezi az iTunes használatát az eszközökön. A **Letiltás** megakadályozza, hogy a felhasználók az iTunes-ot használják az eszközön. 
 
   Ez a funkció az alábbiakra vonatkozik:  
-  - iOS 13.0 and iPadOS 13.0 and newer
+  - iOS 4,0 és újabb verziók
 
-- **Find my Friends**: **Not configured** (default) allows using this Find My app feature to find family and friends from an Apple device or iCloud.com. **Block** prevents this feature in the Find My app.
+- Az **iPhone**: **nincs konfigurálva** (alapértelmezett) funkció lehetővé teszi, hogy a Find My app (az alkalmazás megkeresése) funkciót használja az eszköz hozzávetőleges helyének lekéréséhez. A **Letiltás** megakadályozza a funkció megkeresését a saját alkalmazásban. 
 
   Ez a funkció az alábbiakra vonatkozik:  
-  - iOS 13.0 and iPadOS 13.0 and newer
+  - iOS 13,0 és iPadOS 13,0 és újabb
 
-- **Changes to the Find My Friends app settings**: **Block** prevents changes to the Find My Friends app settings. **Not configured** (default) allows the user to change settings for the Find My Friends app.
+- **Ismerősök megkeresése**: **nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy az alkalmazás megkeresése funkcióval megkeresse a családot és a barátokat egy Apple-eszközről vagy iCloud.com. A **Letiltás** megakadályozza a funkció megkeresését a saját alkalmazásban.
 
-- **Spotlight search to return results from internet**: **Block** stops Spotlight from returning any results from an Internet search. **Not configured** (default) allows Spotlight search connect to the Internet to provide search results.
+  Ez a funkció az alábbiakra vonatkozik:  
+  - iOS 13,0 és iPadOS 13,0 és újabb
 
-- **Block removal of system apps from device**: Choosing **Block** disables the ability to remove system apps from the device. **Not configured** (default) allows users to remove system apps.
+- **A barátok keresése alkalmazás beállításainak módosítása**: a **Letiltás** megakadályozza a barátok alkalmazás beállításainak módosítását. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára a barátok keresése alkalmazás beállításainak módosítását.
 
-- **Safari**: **Block** using the Safari browser on the device. **Not configured** (default) allows users to use the Safari browser.
+- **Spotlight-keresés az internetről származó eredmények visszaadásához**: a leállítási **funkció** nem tér vissza az internetes keresés eredményeiből. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a Spotlight-keresés kapcsolódását az internethez a keresési eredmények biztosítása érdekében.
 
-  Starting with iOS 13.0, this setting requires supervised devices.
+- **Rendszeralkalmazások eszközről való eltávolításának tiltása**: a **Letiltás** beállítás megadásával letiltható a rendszeralkalmazások eltávolítása az eszközről. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára a rendszeralkalmazások eltávolítását.
 
-- **Safari Autofill**: **Block** disables the autofill feature in Safari on the device. **Not configured** (default) allows users to change autocomplete settings in the web browser.
+- **Safari**: **Letiltás** a Safari böngésző használatával az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára a Safari böngésző használatát.
 
-  Starting with iOS 13.0, this setting requires supervised devices.
+  Az iOS 13,0-es verziótól kezdve a beállításhoz felügyelt eszközök szükségesek.
+
+- **Safari automatikus kitöltés**: a **Letiltás** letiltja az eszközön található Safari automatikus kitöltés szolgáltatását. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára a webböngésző automatikus kiegészítési beállításainak módosítását.
+
+  Az iOS 13,0-es verziótól kezdve a beállításhoz felügyelt eszközök szükségesek.
 
 ## <a name="restricted-apps"></a>Korlátozott alkalmazások
 
-### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>Settings apply to: Device enrollment, Automated device enrollment (supervised)
+### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése, automatikus eszközök beléptetése (felügyelt)
 
-- **Type of restricted apps list**: Create a list of apps that users aren't allowed to install or use. A választható lehetőségek:
+- **A korlátozott alkalmazások listájának típusa**: hozza létre azon alkalmazások listáját, amelyeket a felhasználók nem telepíthetnek és nem használhatnak. A választható lehetőségek:
 
-  - **Not configured** (default): There are no restrictions from Intune. Users have access to apps you assign, and built-in apps.
-  - **Prohibited apps**: Apps not managed by Intune that you don't want installed on the device. Users aren't prevented from installing a prohibited app. But if a user installs an app from this list, it's reported in Intune.
-  - **Approved apps**: Apps that users are allowed to install. Users must not install apps that aren't listed. Az Intune által kezelt alkalmazások automatikusan engedélyezettek. Users aren't prevented from installing an app that isn't on the approved list. But if they do, it's reported in Intune.
+  - **Nincs konfigurálva** (alapértelmezett): nincsenek korlátozások az Intune-ban. A felhasználók hozzáférhetnek a hozzárendelt alkalmazásokhoz és a beépített alkalmazásokhoz.
+  - **Tiltott alkalmazások**: az Intune által nem felügyelt alkalmazások, amelyeket nem kíván telepíteni az eszközre. A felhasználók nem akadályozzák meg a tiltott alkalmazások telepítését. Ha azonban a felhasználó a listából telepít egy alkalmazást, az az Intune-ban szerepel.
+  - **Jóváhagyott alkalmazások**: azok az alkalmazások, amelyeket a felhasználók telepíthetnek. A felhasználók nem telepíthetnek olyan alkalmazásokat, amelyek nem szerepelnek a felsorolásban. Az Intune által kezelt alkalmazások automatikusan engedélyezettek. A felhasználók nem akadályozzák meg a jóváhagyott listán nem szereplő alkalmazások telepítését. De ha igen, az Intune-ban jelentett jelentés.
 
-To add apps to these lists, you can:
+Ha alkalmazásokat szeretne hozzáadni a listához, a következőket teheti:
 
-- **Add** the iTunes App store URL of the app you want. For example, to add the Microsoft Work Folders app, enter `https://itunes.apple.com/us/app/work-folders/id950878067?mt=8` or `https://apps.apple.com/us/app/work-folders/id950878067?mt=8`.
+- **Adja hozzá** a kívánt alkalmazás iTunes App Store áruházbeli URL-címét. A Microsoft munkahelyi mappák alkalmazás hozzáadásához például adja meg `https://itunes.apple.com/us/app/work-folders/id950878067?mt=8` vagy `https://apps.apple.com/us/app/work-folders/id950878067?mt=8`.
 
-  To find the URL of an app, open the iTunes App Store, and search for the app. For example, search for `Microsoft Remote Desktop` or `Microsoft Word`. Select the app, and copy the URL.
+  Az alkalmazás URL-címének megkereséséhez nyissa meg az iTunes App Store áruházat, és keresse meg az alkalmazást. Keressen például `Microsoft Remote Desktop` vagy `Microsoft Word`. Válassza ki az alkalmazást, és másolja az URL-címet.
 
-  You can also use iTunes to find the app, and then use the **Copy Link** task to get the app URL.
+  Az iTunes használatával is megkeresheti az alkalmazást, majd a **hivatkozás másolása** feladat használatával beolvashatja az alkalmazás URL-címét.
 
-- **Import** a CSV file with details about the app, including the URL. Használja a következő formátumot: `<app url>, <app name>, <app publisher>`. Or, **Export** an existing list that includes the restricted apps list in the same format.
+- **Importáljon** egy CSV-fájlt az alkalmazás részleteivel, beleértve az URL-címet is. Használja a következő formátumot: `<app url>, <app name>, <app publisher>`. Vagy **exportáljon** egy meglévő listát, amely tartalmazza a korlátozott alkalmazások listáját ugyanabban a formátumban.
 
 > [!IMPORTANT]
-> Device profiles that use the restricted app settings must be assigned to groups of users.
+> A korlátozott alkalmazás-beállításokat használó eszközöket felhasználói csoportokhoz kell rendelni.
 
 ## <a name="show-or-hide-apps"></a>Alkalmazások megjelenítése vagy elrejtése
 
-Applies to devices running iOS 9.3 or newer.
+Az iOS 9,3-es vagy újabb verzióját futtató eszközökre vonatkozik.
 
-### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Settings apply to: Automated device enrollment (supervised)
+### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: automatikus eszközök beléptetése (felügyelt)
 
-- **Type of apps list**: Create a list of apps to show or hide. You can show or hide built-in apps and line-of-business apps. Apple's web site has a list of [built-in Apple apps](https://support.apple.com/HT208094). A választható lehetőségek:
+- **Az alkalmazások típusa lista**: hozza létre a megjelenítendő vagy elrejteni kívánt alkalmazások listáját. Megjelenítheti vagy elrejtheti a beépített alkalmazásokat és üzletági alkalmazásokat. Az Apple webhelye tartalmazza a [beépített Apple apps-alkalmazásokat](https://support.apple.com/HT208094). A választható lehetőségek:
 
-  - **Hidden apps**: Enter a list of apps that are hidden from users. Users can't view, or open these apps.
+  - **Rejtett alkalmazások**: megadhatja a felhasználók elől rejtett alkalmazások listáját. A felhasználók nem tekinthetik meg és nem nyitják meg ezeket az alkalmazásokat.
   
-    Apple prevents hiding some native apps. For example, you can't hide the **Settings** or **Wallet** apps on the device. [Delete built-in Apple apps](https://support.apple.com/HT208094) lists the apps that can be hidden.
+    Az Apple megakadályozza egyes natív alkalmazások elrejtését. Nem rejtheti el például a **beállításokat** vagy a **mobiltárca** -alkalmazásokat az eszközön. A [beépített Apple-alkalmazások törlésével](https://support.apple.com/HT208094) megtekintheti azokat az alkalmazásokat, amelyek rejtve vannak.
   
-  - **Visible apps**: Enter a list of apps that users can view and launch. Ezeken kívül a felhasználók más alkalmazásokat nem látnak és nem indíthatnak el.
+  - **Látható alkalmazások**: megadhatja a felhasználók által megtekinthető és elindítható alkalmazások listáját. Ezeken kívül a felhasználók más alkalmazásokat nem látnak és nem indíthatnak el.
 
-- **App URL**: Enter the store app URL of the app you want to show or hide. Példa:
+- **Alkalmazás URL-címe**: adja meg a megjeleníteni vagy elrejteni kívánt alkalmazás áruházbeli alkalmazásának URL-címét. Például:
 
-  - To add the Microsoft Work Folders app, enter `https://itunes.apple.com/us/app/work-folders/id950878067?mt=8` or `https://apps.apple.com/us/app/work-folders/id950878067?mt=8`. 
+  - A Microsoft munkahelyi mappák alkalmazás hozzáadásához írja be `https://itunes.apple.com/us/app/work-folders/id950878067?mt=8` vagy `https://apps.apple.com/us/app/work-folders/id950878067?mt=8`. 
 
-  - To add the Microsoft Word app, enter `https://itunes.apple.com/de/app/microsoft-word/id586447913` or `https://apps.apple.com/de/app/microsoft-word/id586447913`.
+  - A Microsoft Word alkalmazás hozzáadásához írja be `https://itunes.apple.com/de/app/microsoft-word/id586447913` vagy `https://apps.apple.com/de/app/microsoft-word/id586447913`.
 
-  To find the URL of an app, open the iTunes App Store, and search for the app. For example, search for `Microsoft Remote Desktop` or `Microsoft Word`. Select the app, and copy the URL.
+  Az alkalmazás URL-címének megkereséséhez nyissa meg az iTunes App Store áruházat, és keresse meg az alkalmazást. Keressen például `Microsoft Remote Desktop` vagy `Microsoft Word`. Válassza ki az alkalmazást, és másolja az URL-címet.
 
-  You can also use iTunes to find the app, and then use the **Copy Link** task to get the app URL.
+  Az iTunes használatával is megkeresheti az alkalmazást, majd a **hivatkozás másolása** feladat használatával beolvashatja az alkalmazás URL-címét.
   
-  For more information about locating a Bundle ID, see [How to find the bundle ID for an iOS app](https://support.microsoft.com/help/4294074/how-to-find-the-bundle-id-for-an-ios-app).
+  A csomagok AZONOSÍTÓjának megkeresésével kapcsolatos további információkért lásd: [az iOS-alkalmazások csomag-azonosítójának megkeresése](https://support.microsoft.com/help/4294074/how-to-find-the-bundle-id-for-an-ios-app).
 
-- **App Bundle ID**: Enter the app [bundle ID](bundle-ids-built-in-ios-apps.md) of the app you want. You can show or hide built-in apps and line-of-business apps. Apple's web site has a list of [built-in Apple apps](https://support.apple.com/HT208094).
-- **App name**: Enter the app name of the app you want. You can show or hide built-in apps and line-of-business apps. Apple's web site has a list of [built-in Apple apps](https://support.apple.com/HT208094).
-- **Publisher**: Enter the publisher of the app you want.
+- Alkalmazáscsomag- **azonosító**: adja meg a kívánt alkalmazás ALKALMAZÁSCSOMAG- [azonosítóját](bundle-ids-built-in-ios-apps.md) . Megjelenítheti vagy elrejtheti a beépített alkalmazásokat és üzletági alkalmazásokat. Az Apple webhelye tartalmazza a [beépített Apple apps-alkalmazásokat](https://support.apple.com/HT208094).
+- **Alkalmazás neve**: adja meg a kívánt alkalmazás nevét. Megjelenítheti vagy elrejtheti a beépített alkalmazásokat és üzletági alkalmazásokat. Az Apple webhelye tartalmazza a [beépített Apple apps-alkalmazásokat](https://support.apple.com/HT208094).
+- **Kiadó**: adja meg a kívánt alkalmazás közzétevőjét.
 
-To add apps, you can:
+Alkalmazások hozzáadásához a következőket teheti:
 
-- **Add**: Select to create your list of apps.
-- **Import** a CSV file with details about the app, including the URL. Használja a következő formátumot: `<app url>, <app name>, <app publisher>`. Or, **Export** to create a list of the restricted apps you added, in the same format.
+- **Hozzáadás**: válassza a lehetőséget az alkalmazások listájának létrehozásához.
+- **Importáljon** egy CSV-fájlt az alkalmazás részleteivel, beleértve az URL-címet is. Használja a következő formátumot: `<app url>, <app name>, <app publisher>`. Vagy az **Exportálás** gombra kattintva hozzon létre egy listát a hozzáadott korlátozott alkalmazások listájáról, ugyanebben a formátumban.
 
 ## <a name="wireless"></a>Vezeték nélküli
 
-### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>Settings apply to: Device enrollment, Automated device enrollment (supervised)
+### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése, automatikus eszközök beléptetése (felügyelt)
 
-Note needed for Data Roaming (Tip or important note to help with customer confusion): This setting will not show up on the targeted device's management profile. That is because this setting is treated as a remote device action, and every time the state of data roaming is changed on the device, it will become blocked again by the Intune service. Even though it is not in the management profile, it is working if it showing as a success from the reporting in the admin console. 
-- **Data roaming**: Choose **Block** to prevent data roaming over the cellular network. **Not configured** (default) allows data roaming when the device is on a cellular network.
-
-  > [!IMPORTANT]
-  > This setting is treated as a remote device action. So, this setting isn't shown in the management profile on the device. Every time the data roaming status changes on the device, **Data roaming** is blocked by the Intune service. In Intune, if the reporting status shows a success, then know that it's working, even though the setting isn't shown in the management profile on the device.
-
-- **Global background fetch while roaming**: **Block** prevents using the global background fetch feature when roaming over the cellular network. **Not configured** (default) allows the device to fetch data, such as email, when it's roaming on a cellular network.
-- **Voice dialing**: Choose **Block** to prevent users from using the voice dialing feature on the device. **Not configured** (default) allows voice dialing on the device.
-- **Voice roaming**: Choose **Block** to prevent voice roaming over the cellular network. **Not configured** (default) allows voice roaming when the device is on a cellular network.
-- **Personal Hotspot**: **Block** turns off the personal hotspot on the users' device with every device sync. This setting might not be compatible with some carriers. **Not configured** (default) keeps the personal hotspot configuration as the default set by the user.
+Vegye figyelembe, hogy az adatroaminghoz szükséges (tipp vagy fontos megjegyzés): Ez a beállítás nem jelenik meg a célként megadott eszköz felügyeleti profilján. Ennek oka, hogy ez a beállítás távoli eszköz műveletként van kezelve, és minden alkalommal, amikor megváltoznak az adatroaming állapota az eszközön, az Intune szolgáltatás újra letiltja. Annak ellenére, hogy nem szerepel a felügyeleti profilban, akkor is működik, ha a felügyeleti konzolon a jelentéskészítés sikerességét mutatja. 
+- **Adatroaming**: a **Letiltás** elemre kattintva megakadályozhatja az adatbarangolást a mobilhálózat felett. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi az adatroaming használatát, ha az eszköz mobil hálózaton van.
 
   > [!IMPORTANT]
-  > This setting is treated as a remote device action. So, this setting isn't shown in the management profile on the device. Every time the personal hotspot status changes on the device, **Personal Hotspot** is blocked by the Intune service. In Intune, if the reporting status shows a success, then know that it's working, even though the setting isn't shown in the management profile on the device.
+  > Ezt a beállítást távoli eszköz műveletként kezeli a rendszer. Így ez a beállítás nem jelenik meg az eszköz felügyeleti profiljában. Minden alkalommal, amikor az adatroaming állapota megváltozik az eszközön, az Intune szolgáltatás letiltja az **adatroamingot** . Az Intune-ban, ha a jelentéskészítési állapot sikert mutat, akkor tudja, hogy működik, még akkor is, ha a beállítás nem jelenik meg az eszköz felügyeleti profiljában.
 
-- **Cellular usage rules (managed apps only)** : Define the data types that managed apps can use when on cellular networks. A választható lehetőségek:
-  - **Block use of cellular data**: Block using cellular data for **All managed apps** or **Choose specific apps**.
-  - **Block use of cellular data when roaming**: Block using cellular data when roaming for **All managed apps** or **Choose specific apps**.
+- **Globális háttérbeli beolvasás barangolás közben**: a **Letiltás** megakadályozza a globális háttér-beolvasási funkció használatát a mobil hálózaton való barangolás közben. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy az eszköz beolvassa az adatfájlokat, például az e-maileket, amikor a barangoló a mobil hálózaton van.
+- **Hangtárcsázás**: válassza a **Letiltás** lehetőséget, hogy a felhasználók ne használják a hangtárcsázás funkciót az eszközön. **Nincs konfigurálva** (alapértelmezés) engedélyezi a hangtárcsázást az eszközön.
+- **Hangroaming**: válassza a **Letiltás** lehetőséget a mobiltelefonon a hangroaming elkerüléséhez. **Nincs konfigurálva** (alapértelmezés) a hangroaming használatát teszi lehetővé, ha az eszköz mobil hálózaton van.
+- **Személyes**elérési pont: a **blokk** minden eszköz szinkronizálásával kikapcsolja a felhasználó eszközén lévő személyes hozzáférési pontokat. Előfordulhat, hogy ez a beállítás nem kompatibilis bizonyos szolgáltatókkal. **Nincs konfigurálva** (alapértelmezés) megtartja a személyes hozzáférési pont konfigurációját a felhasználó alapértelmezett beállításaként.
 
-### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Settings apply to: Automated device enrollment (supervised)
+  > [!IMPORTANT]
+  > Ezt a beállítást távoli eszköz műveletként kezeli a rendszer. Így ez a beállítás nem jelenik meg az eszköz felügyeleti profiljában. Minden alkalommal, amikor a személyes hozzáférési pont állapota megváltozik az eszközön, az Intune szolgáltatás letiltja a **személyes hozzáférési pontokat** . Az Intune-ban, ha a jelentéskészítési állapot sikert mutat, akkor tudja, hogy működik, még akkor is, ha a beállítás nem jelenik meg az eszköz felügyeleti profiljában.
 
-- **Changes to app cellular data usage settings**: Choose **Block** to prevent changes to the app cellular data usage settings. **Not configured** (default) allows the user to control which apps are allowed to use cellular data.
-- **Changes to cellular plan settings**: **Block** prevents users from changing any settings in the cellular plan. **Not configured** (default) allows users to make changes.
+- **Mobil használati szabályok (csak felügyelt alkalmazások esetén)** : adja meg azokat az adattípusokat, amelyeket a felügyelt alkalmazások használhatnak a mobil hálózatokon. A választható lehetőségek:
+  - **A mobil adatmennyiség használatának tiltása**: az **összes felügyelt** alkalmazáshoz tartozó mobil adatmennyiség letiltása, vagy **adott alkalmazások kiválasztása**.
+  - **A mobil adatátviteli funkció használatának letiltása barangolás közben**: az **összes felügyelt alkalmazáshoz** való barangolás vagy **adott alkalmazások kiválasztása**esetén tiltsa le a mobil adatátvitelt.
 
-  Ez a funkció az alábbiakra vonatkozik:  
-  - iOS 11.0 and newer
+### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: automatikus eszközök beléptetése (felügyelt)
 
-- **User modification of Personal Hotspot**: When set to **Block**, the user can't change the personal hotspot setting. **Not configured** (default) allows end users to enable or disable their personal hotspot.
-
-  If you block this setting and block the **Personal Hotspot** setting, the personal hotspot is turned off.
-
-  Ez a funkció az alábbiakra vonatkozik:  
-  - iOS 12.2 and newer
-
-- **Join Wi-Fi networks only using configuration profiles**: **Require** forces the device to use only Wi-Fi networks set up through Intune configuration profiles. **Not configured** (default) allows the device to use other Wi-Fi networks.
-- **Wi-Fi always turned on**: When set to **Require**, Wi-Fi stays on in the Settings app. It can't be turned off in Settings or in the Control Center, even when the device is in airplane mode. **Not configured** (default) allows the user to control turning on or turning off Wi-Fi.
-
-  Configuring this setting doesn't prevent users from selecting a Wi-Fi network.
+- Az **alkalmazás mobil adatfelhasználási beállításainak módosítása**: válassza a **Letiltás** lehetőséget az alkalmazás mobil adatfelhasználási beállításainak módosításainak elkerüléséhez. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára, hogy szabályozza, mely alkalmazások használhatják a mobil-adatszolgáltatásokat.
+- A **mobil csomag beállításainak módosítása**: a **Letiltás** megakadályozza, hogy a felhasználók módosíthassák a mobil csomag beállításait. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára a módosítások elvégzését.
 
   Ez a funkció az alábbiakra vonatkozik:  
-  - iOS and iPadOS 13.0 and newer
+  - iOS 11,0 és újabb verziók
+
+- **Személyes elérési pont felhasználói módosítása**: Ha **blokkolásra**van beállítva, a felhasználó nem módosíthatja a személyes hozzáférési pont beállítását. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a végfelhasználók számára, hogy engedélyezzék vagy letiltsák a személyes hozzáférési pontját.
+
+  Ha letiltja ezt a beállítást, és letiltja a **személyes hozzáférési** pont beállítását, a személyes elérési pont ki van kapcsolva.
+
+  Ez a funkció az alábbiakra vonatkozik:  
+  - iOS 12,2 és újabb verziók
+
+- **Csak a konfigurációs profilokat használó Wi-Fi-hálózatok csatlakoztatása**: **megköveteli** , hogy az eszköz csak az Intune konfigurációs profiljain keresztül beállított Wi-Fi-hálózatokat használja. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy az eszköz más Wi-Fi-hálózatokat használjon.
+- **Wi-Fi mindig be van kapcsolva**: Ha a beállítás **kötelező**, a Wi-Fi a beállítások alkalmazásban marad. A beállításokban vagy a vezérlési központban nem kapcsolható ki, még akkor is, ha az eszköz Airplane módban van. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára a Wi-Fi bekapcsolásának vagy kikapcsolásának szabályozását.
+
+  A beállítás konfigurálása nem akadályozza meg, hogy a felhasználók kiválasszák a Wi-Fi hálózatot.
+
+  Ez a funkció az alábbiakra vonatkozik:  
+  - iOS és iPadOS 13,0 és újabb verziók
 
 ## <a name="connected-devices"></a>Csatlakoztatott eszközök
 
-### <a name="settings-apply-to-all-enrollment-types"></a>Settings apply to: All enrollment types
+### <a name="settings-apply-to-all-enrollment-types"></a>A beállítások a következőre vonatkoznak: minden regisztrációs típus
 
-- **Wrist detection for paired Apple watch**: **Require** forces a paired Apple watch to use wrist detection. When required, the Apple Watch won't display notifications when it's not being worn. 
+- **Párosított Apple Watch – csukló-észlelés**: a párosított Apple Watch használatának **megkövetelése** a csukló észleléséhez. Ha szükséges, az Apple Watch nem jelenít meg értesítéseket, amikor nem kopott. 
 
-### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>Settings apply to: Device enrollment, Automated device enrollment (supervised)
+### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése, automatikus eszközök beléptetése (felügyelt)
 
-- **Require AirPlay outgoing requests pairing password**: **Require** a pairing password when the user uses AirPlay to stream content to other Apple devices. **Not configured** (default) allows the user to stream content using AirPlay without entering a password.
+- Lejátszást **kérő kimenő kérelmek párosítása jelszavának**megkövetelése: párosítási jelszó **megkövetelése** , ha a felhasználó a közvetített tartalmat más Apple-eszközökre továbbítja. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára, hogy jelszó megadása nélkül közvetítse a tartalmat a lejátszási lista használatával.
 
-### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Settings apply to: Automated device enrollment (supervised)
+### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: automatikus eszközök beléptetése (felügyelt)
 
-- **AirDrop**: **Block** prevents using AirDrop on the device. **Not configured** (default) allows using the AirDrop feature to exchange content with nearby devices.
-- **Apple Watch pairing**: **Block** prevents pairing with an Apple Watch. **Not configured** (default) allows the device to pair with an Apple Watch.
-- **Bluetooth modification**: **Block** stops the end user from changing Bluetooth settings on the device. **Not configured** (default) allows the user to change these settings.
-- **Host pairing to control the devices an iOS device can pair with**: **Not configured** (default) allows host pairing to let the administrator control which devices an iOS device can pair with. **Block** prevents host pairing.
-- **Block AirPrint**: Choose **Block** to prevent using the AirPrint feature on the device. **Not configured** (default) allows the user to use AirPrint.
-  - **Block storage of AirPrint credentials in Keychain**: **Block** prevents using Keychain storage for username and password on the device. **Not configured** (default) allows storing the AirPrint username and password in the Keychain app.
-  - **Require a trusted TLS certificate for AirPrint**: **Require** forces the device to use trusted certificates for TLS printing communication.
-  - **Block iBeacon discovery of AirPrint printers**: **Block** prevents malicious AirPrint Bluetooth beacons from phishing for network traffic. **Not configured** (default) allows advertising AirPrint printers on the device.
-- **Block setting up new nearby devices**: **Block** disables the prompt to set up new devices that are nearby. **Not configured** (default) allows prompts for users to connect to other nearby Apple devices.
-
-  Ez a funkció az alábbiakra vonatkozik:  
-  - iOS 11.0 and newer
-
-- **Access to files on USB drive**: Devices can connect and open files on a USB drive. **Disable** prevents device access to the USB drive in the Files app when a USB is connected to the device. Disabling this feature also blocks end users from transferring files onto a USB drive connected to an iPad. **Not configured** (default) allows access to a USB drive in the Files app.
+- **AirDrop**: **letiltja** a AirDrop használatát az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a AirDrop funkció használatát a tartalmak a közeli eszközökkel való cseréjéhez.
+- **Apple Watch-párosítás**: a **blokk** megakadályozza az Apple Watch párosítását. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy az eszköz párosítva legyen egy Apple Watch használatával.
+- **Bluetooth-módosítás**: a **Letiltás** leállítja a végfelhasználók számára a Bluetooth-beállítások módosítását az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a felhasználó módosítsa ezeket a beállításokat.
+- **Az IOS-eszköz által párosítható eszközök vezérlése**a következővel: **nincs konfigurálva** (alapértelmezés) – a gazdagép párosítása lehetővé teszi a rendszergazda számára, hogy az IOS-eszköz által párosítható eszközöket biztosítson a rendszergazdának. A **blokk** megakadályozza a gazdagép párosítását.
+- **AirPrint letiltása**: a **Letiltás** lehetőség kiválasztásával megakadályozhatja a AirPrint funkció használatát az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára a AirPrint használatát.
+  - **AirPrint hitelesítő adatok tárolásának letiltása a kulcstartóban**: a **blokkolás** megakadályozza a kulcstartó tárolását a Felhasználónév és a jelszó használatával az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a AirPrint-Felhasználónév és-jelszó tárolását a kulcstartó alkalmazásban.
+  - **Megbízható TLS-tanúsítvány megkövetelése a AirPrint**: **megköveteli** , hogy az eszköz megbízható tanúsítványokat használjon a TLS-nyomtatással való kommunikációhoz.
+  - **A AirPrint-nyomtatók iBeacon-felderítésének letiltása**: a **blokk** megakadályozza a rosszindulatú AirPrint Bluetooth-figyelőket a hálózati forgalom számára. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a AirPrint-nyomtatók reklámozását az eszközön.
+- **Új közeli eszközök beállításának letiltása**: a **Letiltás** letiltja a megjelenő új eszközök beállítását. **Nincs konfigurálva** (az alapértelmezett beállítás) a felhasználók számára a többi közeli Apple-eszközhöz való kapcsolódásra vonatkozó kéréseket tesz lehetővé.
 
   Ez a funkció az alábbiakra vonatkozik:  
-  - iOS and iPadOS 13.0 and newer
+  - iOS 11,0 és újabb verziók
+
+- **Hozzáférés a fájlokhoz USB-meghajtón**: az eszközök csatlakozhatnak és megnyithatnak egy USB-meghajtón található fájlokat. A **Letiltás** beállítás megadásával megakadályozható, hogy az eszköz HOZZÁFÉRJEN az USB-meghajtóhoz a fájlok alkalmazásban, ha az USB-kapcsolat az eszközhöz csatlakozik. A funkció letiltása azt is megakadályozza, hogy a végfelhasználók fájlokat vigyenek át egy iPadhez csatlakoztatott USB-meghajtóra. **Nincs konfigurálva** (az alapértelmezett érték) a fájlok alkalmazásban található USB-meghajtó elérését teszi lehetővé.
+
+  Ez a funkció az alábbiakra vonatkozik:  
+  - iOS és iPadOS 13,0 és újabb verziók
 
 ## <a name="keyboard-and-dictionary"></a>Billentyűzet és szótár
 
-### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Settings apply to: Automated device enrollment (supervised)
+### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: automatikus eszközök beléptetése (felügyelt)
 
-- **Word definition lookup**: **Block** prevents user from highlighting a word, and then looking up its definition on the device. **Not configured** (default) allows access to the definition lookup feature.
-- **Predictive keyboards**: **Not configured** (default) allows using predictive keyboards to suggest words the user might want. **Block** prevents this feature.
-- **Auto-correction**: **Not configured** (default) allows the device to automatically correct misspelled words. **Block** prevents using autocorrection.
-- **Keyboard spell-check**: **Not configured** (default) allows using spellchecker on the device. **Block** allows spell checker.
-- **Keyboard shortcuts**: **Not configured** (default) allows using keyboard shortcuts on the device. **Block** stops the user from using keyboard shortcuts.
-- **Dictation**: **Block** stops the user from using voice input to enter text. **Not configured** (default) allows the user to use dictation input.
-- **QuickPath**: **Not configured** (default) allows users to use QuickPath, which allows a continuous input on the device's keyboard. Users can type by swiping across the keys to create words. **Block** prevents users from using QuickPath. 
+- **Word-definíciók keresése**: a **Letiltás** megakadályozza, hogy a felhasználó kiemelje a szót, majd megkeresse a definícióját az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a hozzáférését a definíciós keresési szolgáltatáshoz.
+- **Prediktív billentyűzetek**: **nincs konfigurálva** (alapértelmezés) lehetővé teszi a prediktív billentyűzetek használatát arra, hogy a felhasználó által kívánt szavakat javasolják. A **Letiltás** megakadályozza ezt a funkciót.
+- **Automatikus javítás**: **nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy az eszköz automatikusan kijavítsa a hibásan írt szavakat. A **tiltás** megakadályozza az automatikus javítást.
+- **Billentyűzet helyesírás-ellenőrzés**: **nincs konfigurálva** (alapértelmezés) lehetővé teszi a helyesírás-ellenőrző használatát az eszközön. A **Letiltás** lehetővé teszi a helyesírás-ellenőrzőt.
+- **Billentyűparancsok**: **nincs konfigurálva** (alapértelmezés) lehetővé teszi billentyűparancsok használatát az eszközön. A **Letiltás** megakadályozza, hogy a felhasználó billentyűparancsokat használjon.
+- **Diktálás**: a **Letiltás** megakadályozza, hogy a felhasználó hangbevitelt használjon szöveg megadásához. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára a diktálási bevitel használatát.
+- **QuickPath**: **nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára a QuickPath használatát, amely lehetővé teszi a folyamatos bevitelt az eszköz billentyűzetén. A felhasználók a kulcsok szövegének megírásával írhatják be a szavakat. A **Letiltás** megakadályozza, hogy a felhasználók a QuickPath használják. 
 
   Ez a funkció az alábbiakra vonatkozik:  
-  - iOS 13.0 and iPadOS 13.0 and newer
+  - iOS 13,0 és iPadOS 13,0 és újabb
 
 ## <a name="cloud-and-storage"></a>Felhő és tárolás
 
-### <a name="settings-apply-to-all-enrollment-types"></a>Settings apply to: All enrollment types
+### <a name="settings-apply-to-all-enrollment-types"></a>A beállítások a következőre vonatkoznak: minden regisztrációs típus
 
-- **Encrypted backup**: **Require** so device backups must be encrypted.
-- **Managed apps sync to cloud**: **Not configured** (default) allows your Intune-manages apps to sync data to the user's iCloud account. **Block** prevents this data sync to iCloud.
-- **Block Enterprise Book Backup**: Choose **Block** to prevent users from backing up enterprise books. **Not configured** (default) allows users to back up these books.
-- **Block enterprise book metadata sync (notes and highlights)** : **Block** prevents syncing notes and highlights in enterprise books. **Not configured** (default) allows the syncing.
+- **Titkosított biztonsági mentés**: az eszközök biztonsági mentéseit titkosítva **kell megadni.**
+- **Felügyelt alkalmazások szinkronizálása a felhővel**: **nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy az Intune-ban az alkalmazások szinkronizálják az adatait a felhasználó iCloud-fiókjával. A **blokk** megakadályozza az adatszinkronizálást az icloudba.
+- **Vállalati könyv biztonsági mentésének letiltása**: a **Letiltás** gombra kattintva megakadályozhatja, hogy a felhasználók biztonsági mentést készítsenek a vállalati könyvekből. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználóknak a könyvek biztonsági mentését.
+- A **vállalati könyv metaadatainak szinkronizálásának letiltása (megjegyzések és csúcsfények)** : a **blokk** megakadályozza a jegyzetek és a kiemelések szinkronizálását a nagyvállalati könyvekben. **Nincs konfigurálva** (alapértelmezés) engedélyezi a szinkronizálást.
 
-### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>Settings apply to: Device enrollment, Automated device enrollment (supervised)
+### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése, automatikus eszközök beléptetése (felügyelt)
 
-- **Photo stream syncing to iCloud**: **Not configured** (default) lets users enable **My Photo Stream** on their device to sync to iCloud, and have photos available on all the user's devices. **Block** prevents photo stream syncing to iCloud. Blocking this feature may cause data loss. 
-- **iCloud Photo Library**: Set to **Block** to disable using iCloud photo library to store photos and videos in the cloud. Any photos not fully downloaded from iCloud Photo Library to the device are removed from the device. **Not configured** (default) allows using the iCloud photo library.
-- **Shared photo stream**: Choose **Block** to disable **iCloud Photo Sharing** on the device. **Not configured** (default) allows shared photo streaming.
-- **Handoff**: **Not configured** (default) allows users to start work on an iOS device, and then continue the work they started on another iOS or macOS device. **Block** prevents this handoff.
+- **A Photo Stream szinkronizálása iCloud**-ba: **nincs konfigurálva** (alapértelmezett) lehetővé teszi a felhasználók számára, hogy az eszközön lévő **Photo streamet** szinkronizálják az icloudba, és az összes felhasználó eszközén elérhetővé tegyék a fényképeket. A **blokk** megakadályozza, hogy a Photo Stream szinkronizáljon az icloudba. A funkció blokkolása adatvesztést eredményezhet. 
+- **iCloud Photo Library**: a **Letiltás** beállítás megadásával letilthatja a fényképek és videók felhőben való tárolását az iCloud Photo Library használatával. A rendszer eltávolít minden olyan fényképet, amely nincs teljesen letöltve az iCloud Photo Library-ből az eszközre. **Nincs konfigurálva** (az alapértelmezett beállítás) az iCloud Photo Library használatát teszi lehetővé.
+- **Megosztott Photo Stream**: válassza a **Letiltás** lehetőséget az **iCloud Photo Sharing** eszközön való letiltásához. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a megosztott fényképek folyamatos átvitelét.
+- **Handoff**: **nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy megkezdsék a munkát egy IOS-eszközön, majd folytatják az elindított munkát egy másik iOS-vagy MacOS-eszközön. A **blokk** megakadályozza ezt a handoff.
 
-### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Settings apply to: Automated device enrollment (supervised)
+### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: automatikus eszközök beléptetése (felügyelt)
 
-- **Backup to iCloud**: **Not configured** (default) allows the user to back up the device to iCloud. **Block** stops the user from backing up the device to iCloud.
+- **Biztonsági mentés az icloudba**: **nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára az eszköz icloudba történő biztonsági mentését. A **Letiltás** leállítja a felhasználótól, hogy biztonsági másolatot készít az eszközről az icloudba.
 
-  Starting with iOS 13.0, this setting requires supervised devices.
+  Az iOS 13,0-es verziótól kezdve a beállításhoz felügyelt eszközök szükségesek.
 
-- **Block iCloud Document sync**: **Not configured** (default) allows document and key-value synchronization to your iCloud storage space. **Block** prevents iCloud from syncing documents and data.
+- **ICloud-dokumentum szinkronizálásának letiltása**: **nincs konfigurálva** (alapértelmezés) lehetővé teszi a dokumentumok és a kulcs-érték szinkronizálását az iCloud tárhelyére. A **blokk** megakadályozza, hogy az iCloud szinkronizálja a dokumentumokat és az adatokkal.
 
-  Starting with iOS 13.0, this setting requires supervised devices.
+  Az iOS 13,0-es verziótól kezdve a beállításhoz felügyelt eszközök szükségesek.
 
-- **Block iCloud Keychain sync**: Choose **Block** to disable syncing credentials stored in the Keychain to iCloud. **Not configured** (default) allows users to sync these credentials.
+- **ICloud-kulcstartó szinkronizálásának**letiltása: válassza a **Letiltás** lehetőséget a kulcstartóban tárolt hitelesítő adatok icloudba való szinkronizálásának letiltásához. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy szinkronizálják ezeket a hitelesítő adatokat.
 
-  Starting with iOS 13.0, this setting requires supervised devices.
+  Az iOS 13,0-es verziótól kezdve a beállításhoz felügyelt eszközök szükségesek.
 
-## <a name="autonomous-single-app-mode"></a>Autonomous single app mode
+## <a name="autonomous-single-app-mode"></a>Autonóm Egyalkalmazásos mód
 
-Use these settings to configure iOS devices to run specific apps in autonomous single app mode. When this mode is configured, and the app is run, the device is locked. It can only run that app. For example, add an app that lets users take a test on the device. Az alkalmazás használatának befejezésekor vagy a szabályzat eltávolításakor az eszköz visszatér a szokásos állapotába.
+Ezekkel a beállításokkal konfigurálhatja az iOS-es eszközöket adott alkalmazások autonóm Egyalkalmazásos módban való futtatására. Ha ez a mód be van állítva, és az alkalmazás fut, az eszköz zárolva van. Csak ezt az alkalmazást futtathatja. Például hozzáadhat egy olyan alkalmazást, amely lehetővé teszi a felhasználók számára, hogy tesztelje az eszközt. Az alkalmazás használatának befejezésekor vagy a szabályzat eltávolításakor az eszköz visszatér a szokásos állapotába.
 
-### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Settings apply to: Automated device enrollment (supervised)
+### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: automatikus eszközök beléptetése (felügyelt)
 
-- **App name**: Enter the name of the app you want.
-- **App Bundle ID**: Enter the [bundle ID](bundle-ids-built-in-ios-apps.md) of the app you want.
-- **Add**: Select to create your list of apps.
+- **Alkalmazás neve**: írja be a kívánt alkalmazás nevét.
+- Alkalmazáscsomag- **azonosító**: adja meg a kívánt alkalmazás [köteg-azonosítóját](bundle-ids-built-in-ios-apps.md) .
+- **Hozzáadás**: válassza a lehetőséget az alkalmazások listájának létrehozásához.
 
-You can also **Import** a CSV file with the list of app names and their bundle IDs. Or, **Export** an existing list that includes the apps.
+Egy CSV-fájlt is **importálhat** az alkalmazások neveinek és a Kötegük azonosítóinak listájával. Vagy **exportáljon** egy meglévő listát, amely tartalmazza az alkalmazásokat.
 
 ## <a name="kiosk"></a>Kioszkmód
 
-### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Settings apply to: Automated device enrollment (supervised)
+### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: automatikus eszközök beléptetése (felügyelt)
 
-- **App to run in kiosk mode**: Choose the type of apps you want to run in kiosk mode. A választható lehetőségek:
-  - **Not configured** (default): Kiosk settings aren't applied. The device doesn't run in kiosk-mode.
-  - **Store App**: Enter the URL to an app in the iTunes App store.
-  - **Managed App**: Choose an app you added to Intune.
-  - **Built-In App**: Enter the [bundle ID](bundle-ids-built-in-ios-apps.md) of the built-in app.
+- Teljes **képernyős módban futtatandó alkalmazás**: válassza ki a kioszk módban futtatni kívánt alkalmazások típusát. A választható lehetőségek:
+  - **Nincs konfigurálva** (alapértelmezett): a teljes képernyős beállítások nincsenek alkalmazva. Az eszköz nem fut kioszk módban.
+  - **Áruházbeli alkalmazás**: adja meg egy alkalmazás URL-címét az iTunes App Store áruházban.
+  - **Felügyelt alkalmazás**: válassza ki az Intune-ba felvett alkalmazást.
+  - **Beépített alkalmazás**: Itt adhatja meg a beépített alkalmazás [köteg-azonosítóját](bundle-ids-built-in-ios-apps.md) .
 
-- **Assistive touch**: **Require** the Assistive Touch accessibility setting be on the device. This feature helps users with on-screen gestures that might be difficult for them. **Not configured** doesn't run or enable this feature in kiosk mode.
-- **Invert colors**: **Require** the Invert Colors accessibility setting so users with visual impairments can change the display screen. **Not configured** doesn't run or enable this feature in kiosk mode.
-- **Mono audio**: **Require** the Mono audio accessibility setting be on the device. **Not configured** doesn't run or enable this feature in kiosk mode.
-- **Voice control**: **Require** enables voice control on the device, and allows users to fully control the OS using Siri commands. **Not configured** disables voice control on the device.
+- **Kisegítő érintés**: a kisegítő érintés kisegítő lehetőségének **megkövetelése** az eszközön. Ez a funkció segíti a felhasználók számára, hogy a képernyőn megjelenő kézmozdulatokat nehéz lehet megállapítani. **Nincs konfigurálva** , vagy nem engedélyezi a szolgáltatást kioszk módban.
+- **Színek invertálása**: a színek megfordításának **megkövetelése** beállítás megadásával a vizualizációt használó felhasználók módosíthatják a megjelenítési képernyőt. **Nincs konfigurálva** , vagy nem engedélyezi a szolgáltatást kioszk módban.
+- **Monó hang**: a MONO hang kisegítő lehetőségének **megkövetelése** az eszközön. **Nincs konfigurálva** , vagy nem engedélyezi a szolgáltatást kioszk módban.
+- **Hangvezérlés**: a **megkövetelése** lehetővé teszi a hangvezérlést az eszközön, és lehetővé teszi a felhasználóknak az operációs rendszer teljes körű vezérlését a Siri parancsokkal. A **nincs konfigurálva beállítás** letiltja a hangvezérlést az eszközön.
 
-  This setting applies to:  
-  - iOS 13.0 and newer
-  - iPadOS 13.0 and newer
+  Ez a beállítás a következőkre vonatkozik:  
+  - iOS 13,0 és újabb verziók
+  - iPadOS 13,0 és újabb verziók
   
   > [!TIP]
-  > If you have LOB apps available for your organization, and they're not **Voice Control** ready on day 0 when iOS 13.0 releases, then we recommend you leave this setting as **Not configured**.
+  > Ha a szervezete számára elérhető LOB-alkalmazások állnak rendelkezésre, és az iOS 13,0-as verzióban nem állnak készen a **Hangvezérlésre** , akkor azt javasoljuk, hogy **ne konfigurálja**ezt a beállítást.
 
-- **VoiceOver**: **Require** the VoiceOver accessibility setting be on the device to read text on the screen out loud. **Not configured** doesn't run or enable this feature in kiosk mode.
-- **Zoom**: **Require** the Zoom setting be on the device to let users use touch to zoom in on the screen. **Not configured** doesn't run or enable this feature in kiosk mode.
-- **Auto lock**: **Block** prevents automatic locking of the device. **Not configured** allows this feature.
-- **Ringer switch**: **Block** disables the ringer (mute) switch on the device. **Not configured** allows this feature.
-- **Screen rotation**: **Block** prevents changing the screen orientation when the user rotates the device. **Not configured** allows this feature.
-- **Screen sleep button**: Choose **Block** to disable the screen sleep wake button on the device. **Not configured** allows this feature.
-- **Touch**: **Block** disables the touchscreen on the device. **Not configured** allows the user to use the touchscreen.
-- **Volume buttons**: **Block** prevents using the volume buttons on the device. **Not configured** allows the volume buttons.
-- **Assistive touch control**: **Allow** let users use the assistive touch function. **Not configured** disables this feature.
-- **Invert colors control**: **Allow** invert color changes to let users adjust the invert colors function. **Not configured** disables this feature.
-- **Speak on selected text**: **Allow** the Speak Selection accessibility settings be on the device. This feature reads text that the user selects out loud. **Not configured** disables this feature.
-- **Voice control modification**: **Allow** users to change the state of voice control on their devices. **Not configured** blocks users from changing the state of voice control on their devices.
+- **Kommentár**: a kommentár kisegítő lehetőségének **megkövetelése** az eszközön, hogy a képernyőn hangosan lehessen olvasni a szöveget. **Nincs konfigurálva** , vagy nem engedélyezi a szolgáltatást kioszk módban.
+- **Nagyítás**: a nagyítás beállításának **megkövetelése** az eszközön, hogy a felhasználók érintsen a nagyításhoz a képernyőn. **Nincs konfigurálva** , vagy nem engedélyezi a szolgáltatást kioszk módban.
+- **Automatikus zárolás**: a **blokk** megakadályozza az eszköz automatikus zárolását. A **nincs konfigurálva** beállítás engedélyezi ezt a funkciót.
+- **Csengés kapcsolója**: a **blokk** letiltja a csengetési (Mute) kapcsolót az eszközön. A **nincs konfigurálva** beállítás engedélyezi ezt a funkciót.
+- **Képernyő-elforgatás**: a **blokk** megakadályozza a képernyő tájolásának módosítását, amikor a felhasználó elforgatja az eszközt. A **nincs konfigurálva** beállítás engedélyezi ezt a funkciót.
+- **Alvó állapot gombja**: válassza a **Letiltás** lehetőséget a képernyő alvó állapotának letiltásához az eszközön. A **nincs konfigurálva** beállítás engedélyezi ezt a funkciót.
+- **Érintés**: a **Letiltás** letiltja az érintőképernyőt az eszközön. A **nincs konfigurálva** beállítás lehetővé teszi a felhasználó számára az érintőképernyő használatát.
+- **Hangerő gombok**: a **Letiltás** megakadályozza az eszközön a hangerő-szabályozó gombok használatát. A **nincs konfigurálva** beállítás engedélyezi a hangerő-szabályozó gombok használatát.
+- **Kisegítő érintéses vezérlés**: **lehetővé teszi, hogy** a felhasználók a kisegítő érintés funkciót használják. A **nincs konfigurálva beállítás** letiltja ezt a funkciót.
+- **Színinvertálás vezérlő**: **lehetővé teszi** a színek megfordítását, így a felhasználók módosíthatják a színek invertálása funkciót. A **nincs konfigurálva beállítás** letiltja ezt a funkciót.
+- **Beszéljen a kijelölt szövegről**: engedélyezze a kisegítő lehetőségek **használatát** az eszközön. Ez a funkció olyan szöveget olvas be, amelyet a felhasználó hangosan választ ki. A **nincs konfigurálva beállítás** letiltja ezt a funkciót.
+- **Hangvezérlés módosítása**: **lehetővé teszi** a felhasználók számára, hogy megváltoztassák a hangvezérelt vezérlés állapotát az eszközökön. A **nincs konfigurálva beállítás** megakadályozza, hogy a felhasználók megváltoztassák a hangvezérlés állapotát az eszközökön.
 
-  This setting applies to:  
-  - iOS 13.0 and newer
-  - iPadOS 13.0 and newer
+  Ez a beállítás a következőkre vonatkozik:  
+  - iOS 13,0 és újabb verziók
+  - iPadOS 13,0 és újabb verziók
 
-- **VoiceOver control**: **Allow** voiceover changes to let users update the VoiceOver function, such as how fast on-screen text is read out loud. **Not configured** prevents voiceover changes.
-- **Zoom control**: **Allow** zoom changes by the user. **Not configured** prevents zoom changes.
+- A kommentárok **szabályozása**: a kommentárok módosításának **engedélyezése lehetővé teszi** a felhasználóknak a kommentár-funkció frissítését, például hogy a képernyőn megjelenő szöveg milyen gyorsan legyen hangosan kiolvasva. A **nincs konfigurálva beállítás** megakadályozza a kommentárok módosítását.
+- **Nagyítás-vezérlés**: a felhasználó által végrehajtott nagyítási módosítások **engedélyezése** . A **nincs konfigurálva beállítás** megakadályozza a nagyítás módosítását.
 
 > [!NOTE]
-> Az iOS-eszközök Kioszk módra való konfigurálása előtt felügyelt módba kell állítania az eszközt az Apple Configurator eszközzel vagy az Apple Device Enrollment Program készülékregisztráció-kezelővel. See Apple's guide on using the Apple Configurator tool.
-> If the iOS app you enter is installed after you assign the profile, then the device doesn't enter kiosk mode until the device is restarted.
+> Az iOS-eszközök Kioszk módra való konfigurálása előtt felügyelt módba kell állítania az eszközt az Apple Configurator eszközzel vagy az Apple Device Enrollment Program készülékregisztráció-kezelővel. Tekintse meg az Apple konfiguráló eszközének használatát ismertető témakört.
+> Ha a megadott iOS-alkalmazás a profil hozzárendelését követően települ, az eszköz mindaddig nem lép kioszk módba, amíg az eszköz újra nem indul.
 
-## <a name="domains"></a>Domains
+## <a name="domains"></a>Tartományok
 
-### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>Settings apply to: Device enrollment, Automated device enrollment (supervised)
+### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése, automatikus eszközök beléptetése (felügyelt)
 
-- **Unmarked email domains** > **Email Domain URL**: Add one or more URLs to the list. When end users receive an email from a domain other than the domains you enter, the email is marked as untrusted in the iOS Mail app.
+- **Jelöletlen e-mail-tartományok** > **e-mail-tartomány URL-címe**: adjon hozzá egy vagy több URL-címet a listához. Ha a végfelhasználók a megadott tartománytól eltérő tartományból kapnak e-mailt, az iOS-es mail alkalmazásban az e-mail nem megbízhatóként van megjelölve.
 
-- **Managed web domains** > **Web Domain URL**; Add one or more URLs to the list. When documents are downloaded from the domains you enter, they're considered managed. Ez a beállítás csak a Safari böngészővel letöltött dokumentumokra vonatkozik.
+- **Felügyelt webtartományok** > **webes tartomány URL-címe**; Adjon hozzá egy vagy több URL-címet a listához. Ha a rendszer letölti a dokumentumokat a megadott tartományokból, felügyelt tekintendők. Ez a beállítás csak a Safari böngészővel letöltött dokumentumokra vonatkozik.
 
-### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Settings apply to: Automated device enrollment (supervised)
+### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: automatikus eszközök beléptetése (felügyelt)
 
-- **Safari password autofill domains** > **Domain URL**: Add one or more URLs to the list. A felhasználók csak a listában szereplő URL-címekhez tartozó webes jelszavakat menthetnek. This setting applies only to the Safari browser, and devices in supervised mode. If you don't enter any URLs, then passwords can be saved from all web sites.
+- **Safari-jelszó automatikus kitöltés tartomány** > **tartomány URL-címe**: adjon hozzá egy vagy több URL-címet a listához. A felhasználók csak a listában szereplő URL-címekhez tartozó webes jelszavakat menthetnek. Ez a beállítás csak a Safari böngészőre és a felügyelt módban lévő eszközökre vonatkozik. Ha nem ad meg URL-címet, a jelszavakat az összes webhelyről mentheti.
 
-  This setting applies to:  
-  - iOS 9.3 and newer
+  Ez a beállítás a következőkre vonatkozik:  
+  - iOS 9,3 és újabb verziók
 
-## <a name="settings-that-require-supervised-mode"></a>Settings that require supervised mode
+## <a name="settings-that-require-supervised-mode"></a>Felügyelt üzemmódot igénylő beállítások
 
 Az iOS Supervised (Felügyelt) módja csak a kezdeti eszközbeállítás során, az Apple Készülékregisztrációs programján keresztül vagy az Apple Configuratorral engedélyezhető. A Supervised (Felügyelt) mód engedélyezése után az Intune az alábbi funkciókkal konfigurálhatja az eszközöket:
 
@@ -649,7 +653,7 @@ Az iOS Supervised (Felügyelt) módja csak a kezdeti eszközbeállítás során,
 - Korlátozások felhasználói felülete 
 - Konfigurációs profilok telepítése a felhasználói felület használatával 
 - Hírek 
-- Keyboard shortcuts 
+- Billentyűparancsok 
 - PIN-kód módosítása 
 - Eszköznév módosítása 
 - Alkalmazások automatikus letöltése 
@@ -659,7 +663,7 @@ Az iOS Supervised (Felügyelt) módja csak a kezdeti eszközbeállítás során,
 - Párosítás Apple Watch órával 
 
 > [!NOTE]
-> Apple confirmed that certain settings move to supervised-only in 2019. We recommend taking this into consideration when using these settings, instead of waiting for Apple to migrate them to supervised-only:
+> Az Apple megerősítette, hogy bizonyos beállítások csak a 2019-ben kerülnek felügyelet alá. Javasoljuk, hogy ezt a beállítások használatakor vegye figyelembe, ahelyett, hogy az Apple-t csak felügyelt eszközökre telepítse át:
 >
 > - Végfelhasználók által végzett alkalmazástelepítés
 > - Alkalmazás eltávolítása
@@ -668,12 +672,12 @@ Az iOS Supervised (Felügyelt) módja csak a kezdeti eszközbeállítás során,
 > - iTunes
 > - Durva tartalom
 > - iCloud dokumentumok és adatok
-> - Multiplayer gaming
-> - Add Game Center friends
+> - Többrésztvevős játékok
+> - Game Center ismerősök hozzáadása
 > - Siri
 
 ## <a name="next-steps"></a>További lépések
 
 [Rendelje hozzá a profilt](../device-profile-assign.md), és [kövesse nyomon az állapotát](../device-profile-monitor.md).
 
-You can also restrict device features and settings on [macOS](device-restrictions-macos.md) devices.
+A [MacOS](device-restrictions-macos.md) -eszközökön is korlátozhatja az eszközök funkcióit és beállításait.

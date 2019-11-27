@@ -1,7 +1,7 @@
 ---
 title: A Jamf Pro integrálása a Microsoft Intune-nal a megfelelőség érdekében
 titleSuffix: Microsoft Intune
-description: Use Microsoft Intune compliance policies with Azure Active Directory Conditional Access to help integrate and secure Jamf-managed devices.
+description: A JAMF által felügyelt eszközök integrálásához és védelméhez Azure Active Directory feltételes hozzáféréssel Microsoft Intune megfelelőségi szabályzatokat használhat.
 keywords: ''
 author: brenduns
 ms.author: brenduns
@@ -27,143 +27,143 @@ ms.locfileid: "74390464"
 ---
 # <a name="integrate-jamf-pro-with-intune-for-compliance"></a>A Jamf Pro integrálása az Intune-nal a megfelelőség érdekében
 
-When your organization uses [Jamf Pro](https://www.jamf.com) to manage macOS devices, you can use Microsoft Intune compliance policies with Azure Active Directory (Azure AD) Conditional Access to ensure devices in your organization are compliant before they can access company resources. This article will help you configure Jamf integration with Intune.
+Ha a szervezete a [JAMF Pro](https://www.jamf.com) -t használja a MacOS-eszközök kezeléséhez, Microsoft Intune megfelelőségi szabályzatokat használhat Azure Active Directory (Azure ad) feltételes hozzáféréssel annak biztosításához, hogy a szervezetben lévő eszközök megfeleljenek a vállalati erőforrásokhoz való hozzáféréshez. Ez a cikk segítséget nyújt a JAMF-integráció konfigurálásához az Intune-nal.
 
-When Jamf Pro integrates with Intune, you can sync the inventory data from macOS devices with Intune, through Azure AD. Intune's compliance engine then analyzes the inventory data to generate a report. Intune's analysis is combined with intelligence about the device user’s Azure AD identity to drive enforcement through Conditional Access. Devices that are compliant with the Conditional Access policies can gain access to protected company resources.
+Ha a JAMF Pro integrálva van az Intune-nal, az Azure AD-n keresztül szinkronizálhatja a macOS-eszközök leltári adatait az Intune használatával. Az Intune megfelelőségi motorja ezután elemzi a leltári adatkészletet a jelentések létrehozásához. Az Intune elemzése az eszköz felhasználójának Azure AD-identitásával kapcsolatos intelligenciával együtt a kényszerítést a feltételes hozzáférés használatával hajtja. A feltételes hozzáférési szabályzatoknak megfelelő eszközök hozzáférést kaphatnak a védett vállalati erőforrásokhoz.
 
-After you configure integration, you'll then [configure Jamf and Intune to enforce compliance with Conditional Access](conditional-access-assign-jamf.md) on devices managed by Jamf.
+Az integráció konfigurálása után [konfigurálja a JAMF és az Intune-t úgy, hogy](conditional-access-assign-jamf.md) a JAMF által felügyelt eszközökön feltételes hozzáféréssel kényszerítse ki a megfelelőséget.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-### <a name="products-and-services"></a>Products and services
+### <a name="products-and-services"></a>Termékek és szolgáltatások
 
-You need the following to configure Conditional Access with Jamf Pro:
+A JAMF Pro-val való feltételes hozzáférés konfigurálásához a következőkre van szükség:
 
 - A Jamf Pro 10.1.0-ás vagy későbbi verziója
 - [macOS-hez készült Céges portál alkalmazás](https://aka.ms/macoscompanyportal)
-- macOS devices with OS X 10.12 Yosemite or later
+- macOS-eszközök OS X 10,12 Yosemite vagy újabb verzióval
 
-### <a name="network-ports"></a>Network ports
+### <a name="network-ports"></a>Hálózati portok
 
 <!-- source: https://support.microsoft.com/en-us/help/4519171/troubleshoot-problems-when-integrating-jamf-with-microsoft-intune -->
-The following ports should be accessible for Jamf and Intune to integrate correctly:
+A következő portoknak elérhetőknek kell lenniük a JAMF és az Intune megfelelő integrálásához:
 
-- **Intune**: Port 443
-- **Apple**: Ports 2195, 2196, and 5223 (push notifications to Intune)
-- **Jamf**: Ports 80 and 5223
+- **Intune**: 443-es port
+- **Apple**: portok 2195, 2196 és 5223 (leküldéses értesítések az Intune-ba)
+- **JAMF**: 80-es és 5223-es portok
 
-To allow APNS to function correctly on the network, you must also enable outgoing connections to, and redirects from:
+Ahhoz, hogy a APNS megfelelően működjön a hálózaton, engedélyeznie kell a kimenő kapcsolatokat is a következőhöz:
 
-- the Apple 17.0.0.0/8 block over TCP ports 5223 and 443 from all client networks.
-- ports 2195 and 2196 from Jamf Pro servers.  
+- az Apple 17.0.0.0/8 blokkolja a 5223-es és a 443-es TCP-portokat az összes ügyfél-hálózatról.
+- a JAMF Pro-kiszolgálók 2195-es és 2196-es portjai.  
 
-For more information about these ports, see the following articles:
+További információt ezekről a portokról a következő cikkekben talál:
 
-- [Intune network configuration requirements and bandwidth](../fundamentals/network-bandwidth-use.md).
-- [Network Ports Used by Jamf Pro](https://www.jamf.com/jamf-nation/articles/34/network-ports-used-by-jamf-pro) on jamf.com.
-- [TCP and UDP ports used by Apple software products](https://support.apple.com/HT202944) on support.apple.com
+- [Az Intune hálózati konfigurációs követelményei és sávszélessége](../fundamentals/network-bandwidth-use.md).
+- A JAMF Pro által a jamf.com-on [használt hálózati portok](https://www.jamf.com/jamf-nation/articles/34/network-ports-used-by-jamf-pro) .
+- Az [Apple Software Products által használt TCP-és UDP-portok](https://support.apple.com/HT202944) a support.Apple.com-on
 
-## <a name="connect-intune-to-jamf-pro"></a>Connect Intune to Jamf Pro
+## <a name="connect-intune-to-jamf-pro"></a>Az Intune és a JAMF Pro összekötése
 
-To connect Intune with Jamf Pro:
+Az Intune és a JAMF Pro összekötése:
 
-1. Create a new application in Azure.
-2. Enable Intune to integrate with Jamf Pro.
-3. Configure Conditional Access in Jamf Pro.
+1. Hozzon létre egy új alkalmazást az Azure-ban.
+2. A JAMF Pro-val való integráció engedélyezése az Intune-nal.
+3. Feltételes hozzáférés konfigurálása a JAMF Pro-ban.
 
-### <a name="create-an-application-in-azure-active-directory"></a>Create an application in Azure Active Directory
+### <a name="create-an-application-in-azure-active-directory"></a>Alkalmazás létrehozása Azure Active Directory
 
-1. In the [Azure portal](https://portal.azure.com), go to **Azure Active Directory** > **App Registrations**, and then select **New registration**.
+1. A [Azure Portal](https://portal.azure.com)lépjen a **Azure Active Directory** > alkalmazás- **regisztrációk**elemre, majd válassza az **új regisztráció**lehetőséget.
 
-2. On the **Register an application** page, specify the following details:
+2. Az **alkalmazás regisztrálása** lapon a következő részleteket kell megadnia:
 
-   - In the **Name** section, enter a meaningful application name, for example **Jamf Conditional Access**.
-   - For the **Supported account types** section, select **Accounts in any organizational directory**.
-   - For **Redirect URI**, leave the default of Web, and then specify the URL for your Jamf Pro instance.
+   - A **név** szakaszban adjon meg egy értelmes alkalmazásnév nevet, például **JAMF feltételes hozzáférés**.
+   - A **támogatott fióktípus** szakaszban válassza a fiókok lehetőséget **bármely szervezeti címtárban**.
+   - Az **átirányítási URI**esetében hagyja meg az alapértelmezett webes beállítást, majd adja meg a JAMF Pro-példány URL-címét.
 
-3. Select **Register** to create the application and to open the **Overview** page for the new app.
+3. Válassza a **regisztráció** lehetőséget az alkalmazás létrehozásához és az új alkalmazás **Áttekintés** lapjának megnyitásához.
 
-4. On the app **Overview** page, copy the **Application (client) ID** value and record it for later use. You'll need this value in later procedures.
+4. Az alkalmazás **áttekintése** lapon másolja az **alkalmazás (ügyfél) azonosító** értékét, és jegyezze fel későbbi használatra. Ezt az értéket későbbi eljárásokban kell megadnia.
 
-5. Select **Certificates & secrets** under **Manage**. Select the **New client secret** button. Enter a value in **Description**, select any option for **Expires** and choose **Add**.
+5. Válassza a **tanúsítványok & a titkok** elemet a **kezelés**alatt. Válassza az **új ügyfél titka** gombot. Adjon meg egy értéket a **Leírás**mezőben, válassza a **lejárat** lehetőséget, majd válassza a **Hozzáadás**elemet.
 
    > [!IMPORTANT]
-   > Before you leave this page, copy the value for the client secret and record it for later use. You will need this value in later procedures. This value isn’t available again, without recreating the app registration.
+   > Mielőtt elhagyja ezt a lapot, másolja ki az ügyfél titkos kulcsának értékét, és jegyezze fel későbbi használatra. Erre az értékre szüksége lesz a későbbi eljárásokban. Ez az érték nem érhető el újra az alkalmazás regisztrációjának újbóli létrehozása nélkül.
 
-6. Select **API permissions** under **Manage**. Select the existing permissions and then select **Remove permission** to delete those permissions. Removal of all existing permissions is necessary as you’ll add a new permission, and the application only works if it has the single required permission.
+6. Válassza az **API-engedélyek** elemet a **kezelés**alatt. Válassza ki a meglévő engedélyeket, majd válassza az **engedély eltávolítása** lehetőséget az engedélyek törléséhez. Az összes meglévő engedély eltávolítására akkor van szükség, amikor új engedélyt ad hozzá, és az alkalmazás csak akkor működik, ha az egyetlen szükséges engedéllyel rendelkezik.
 
-7. To assign a new permission, select **Add a permission**. On the **Request API permissions** page, select **Intune**, and then select **Application permissions**. Select only the check box for **update_device_attributes**.
+7. Új engedély hozzárendeléséhez válassza az **engedély hozzáadása**lehetőséget. Az **API-engedélyek kérése** lapon válassza az **Intune**lehetőséget, majd válassza az **alkalmazás engedélyei**lehetőséget. Jelölje be a csak **update_device_attributes**jelölőnégyzetet.
 
-   Select **Add permission** to save this configuration.
+   Válassza a **Hozzáadás engedély** lehetőséget a konfiguráció mentéséhez.
 
-8. On the **API permissions** page, select **Grant admin consent for _\<your tenant>_** , and then select **Yes**.  After the app is registered successfully, the API permissions should appear as follows:
+8. Az **API-engedélyek** lapon jelölje be a **rendszergazdai jóváhagyás megadása a _bérlő >\<ához_** lehetőséget, majd válassza az **Igen**lehetőséget.  Az alkalmazás sikeres regisztrálását követően az API-engedélyek az alábbiak szerint jelennek meg:
 
-   ![Successful permissions](./media/conditional-access-integrate-jamf/sucessfull-app-registration.png)
+   ![Sikeres engedélyek](./media/conditional-access-integrate-jamf/sucessfull-app-registration.png)
 
-   The app registration process in Azure AD is complete.
+   Befejeződött az alkalmazás regisztrációs folyamata az Azure AD-ben.
 
     > [!NOTE]
-    > If the client secret expires, you must create a new client secret in Azure and then update the Conditional Access data in Jamf Pro. Azure allows you to have both the old secret and new key active to prevent service disruptions.
+    > Ha az ügyfél titkos kulcsa lejár, létre kell hoznia egy új ügyfél-titkos kulcsot az Azure-ban, majd frissítenie kell a feltételes hozzáférési adatot a JAMF Pro-ban. Az Azure lehetővé teszi, hogy a régi titok és az új kulcs aktív legyen a szolgáltatás megszakadásának megelőzése érdekében.
 
 ### <a name="enable-intune-to-integrate-with-jamf-pro"></a>Az Intune engedélyezése a Jamf Pro-val történő integrációra
 
-1. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431).
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Select **Tenant administration** > **Connectors and tokens** > **Partner device management**.
+2. Válassza a **bérlői felügyelet** > **Összekötők és tokenek** lehetőséget > **partner-eszközök kezelése**lehetőségre.
 
-3. Enable the *Compliance Connector for Jamf* by pasting the Application ID you saved during the previous procedure into the **Specify the Azure Active Directory App ID for Jamf** field.
+3. Engedélyezze a *megfelelőségi összekötőt a JAMF* , ha beillesztette az előző eljárás során mentett alkalmazás azonosítóját az **Azure Active Directory alkalmazás azonosítójának megadása a JAMF** mezőben.
 
 4. Válassza a **Mentés** lehetőséget.
 
 ### <a name="configure-microsoft-intune-integration-in-jamf-pro"></a>A Microsoft Intune-integráció konfigurálása a Jamf Pro szolgáltatásban
 
-1. Activate the connection in the Jamf Pro console:
+1. Aktiválja a JAMF Pro-konzolon található kapcsolatokat:
 
-   1. Open the Jamf Pro console and navigate to **Global Management** > **Conditional Access**. Click the **Edit** button on the **macOS Intune Integration** tab.
-   2. Select the check box for **Enable Intune Integration for macOS**.
-   3. Provide the required information about your Azure tenant, including **Location**, **Domain name**, the **Application ID**, and the value for the *client secret* that you saved when you created the app in Azure AD.
-   4. Válassza a **Mentés** lehetőséget. Jamf Pro tests your settings and verifies your success.
+   1. Nyissa meg a JAMF Pro konzolt, és navigáljon a **globális felügyelet** > a **feltételes hozzáférés**elemre. Kattintson a **Szerkesztés** gombra a **MacOS Intune-integráció** lapon.
+   2. Jelölje be az Intune- **integráció engedélyezése MacOS-hez**jelölőnégyzetet.
+   3. Adja meg az Azure-bérlőre vonatkozó szükséges információkat, beleértve a **helyet**, a **tartománynevet**, az **alkalmazás azonosítóját**, valamint az alkalmazás Azure ad-ben történő létrehozásakor mentett *ügyfél titkos kulcs* értékét.
+   4. Válassza a **Mentés** lehetőséget. A JAMF Pro teszteli a beállításokat, és ellenőrzi a sikerességet.
 
-   Return to the **Partner device management** page in Intune to complete the configuration.
+   Térjen vissza az Intune-beli **partner** -eszközkezelés lapra a konfiguráció befejezéséhez.
 
-2. In Intune, go to the **Partner device management** page. Under **Connector Settings** configure groups for assignment:
+2. Az Intune-ban nyissa meg a **partneri eszközök kezelése** lapot. Az **összekötő beállításai** területen adja meg a hozzárendelési csoportokat:
 
-   - Select **Include** and specify which User groups you want to target for macOS enrollment with Jamf.
-   - Use **Exclude** to select groups of Users that won’t enroll with Jamf and instead will enroll their Macs directly with Intune.
+   - Válassza a **Belefoglalás** lehetőséget, és adja meg, hogy mely felhasználói csoportok számára kívánja használni a MacOS-regisztrációt a JAMF.
+   - A **kizárás** használatával válassza ki azokat a felhasználókat, akik nem tudnak regisztrálni a JAMF, hanem közvetlenül az Intune-ban regisztrálják a Mac-et.
 
-   *Exclude* overrides *Include*, which means any device that is in both groups is excluded from Jamf and directed to enroll with Intune.
+   A felülbírálások *kizárása* , ami azt jelenti, hogy a mindkét csoportban lévő összes eszköz ki van zárva a JAMF- *ből, és*az Intune-nal való regisztrálásra van leképezve.
 
    >[!NOTE]
-   > This method of including and excluding user groups affects the enrollment experience of the user. Any user with a Mac thats already enrolled in either Jamf or Intune who is then targeted to enroll with the other MDM must unenroll their device and then re-enroll it with the new MDM before management of the device works properly.
+   > A felhasználói csoportok belefoglalásának és kizárásának módszere befolyásolja a felhasználó regisztrációs élményét. Bármely olyan Mac-felhasználó, amely már regisztrálva van a JAMF vagy az Intune-ban, és a másik MDM való regisztrálásra irányul, meg kell adnia az eszköz regisztrációját, majd újra regisztrálnia kell az új MDM az eszköz megfelelő működésének felügyelete előtt.
 
-3. Select **Evaluate** to determine how many devices will be enrolled with Jamf, based on your group configurations.
+3. A **kiértékelés** lehetőség kiválasztásával meghatározhatja, hogy hány eszköz lesz regisztrálva az JAMF-ben a csoport beállításai alapján.
 
-4. Select **Save** when you’re ready to apply the configuration.
+4. Válassza a **Mentés** lehetőséget, ha készen áll a konfiguráció alkalmazására.
 
-5. To proceed, you will next need to use [Jamf to deploy the Company Portal for Mac](conditional-access-assign-jamf.md#deploy-the-company-portal-app-for-macos-in-jamf-pro) so that users can register their devices to Intune.
+5. A folytatáshoz a JAMF-t kell használnia [a Mac-céges portál telepítéséhez](conditional-access-assign-jamf.md#deploy-the-company-portal-app-for-macos-in-jamf-pro) , hogy a felhasználók regisztrálni tudják az eszközeiket az Intune-ban.
 
 ## <a name="set-up-compliance-policies-and-register-devices"></a>Megfelelőségi szabályzatok beállítása és eszközök regisztrálása
 
-After you configure integration between Intune and Jamf, you need to [apply compliance policies to Jamf-managed devices](conditional-access-assign-jamf.md).
+Miután konfigurálta az Intune és a JAMF közötti integrációt, a [JAMF által felügyelt eszközökre vonatkozó megfelelőségi szabályzatokat kell alkalmaznia](conditional-access-assign-jamf.md).
 
-## <a name="disconnect-jamf-pro-and-intune"></a>Disconnect Jamf Pro and Intune
+## <a name="disconnect-jamf-pro-and-intune"></a>A JAMF Pro és az Intune leválasztása
 
-If you no longer use Jamf Pro to manage Macs in your organization and want users to be managed by Intune, you must remove the connection between Jamf Pro and Intune. Remove the connection by using the Jamf Pro console.
+Ha már nem használja a JAMF Pro-t a szervezeten belüli Mac-EK felügyeletéhez, és szeretné, hogy a felhasználók az Intune-nal felügyelhetők legyenek, el kell távolítania a kapcsolatot a JAMF Pro és az Intune között. A JAMF Pro konzol használatával távolítsa el a kapcsolatokat.
 
-1. In Jamf Pro, go to **Global Management** > **Conditional Access**. On the **macOS Intune Integration** tab, select **Edit**.
+1. A JAMF Pro-ban lépjen a **globális felügyelet** > **feltételes hozzáférés**elemre. A **MacOS Intune-integráció** lapon válassza a **Szerkesztés**lehetőséget.
 
-2. Clear the **Enable Intune Integration for macOS** check box.
+2. Törölje az **Intune-integráció engedélyezése MacOS-hez** jelölőnégyzet jelölését.
 
-3. Válassza a **Mentés** lehetőséget. Jamf Pro sends your configuration to Intune and the integration will be terminated.
+3. Válassza a **Mentés** lehetőséget. A JAMF Pro elküldi a konfigurációt az Intune-nak, és az integráció leáll.
 
-4. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431).
+4. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-5. Select **Tenant administration** > **Connectors and tokens** > **Partner device management** to verify that the status is now **Terminated**.
+5. Válassza a **bérlői felügyelet** > **Összekötők és jogkivonatok** lehetőséget > **partneri eszközök kezelése** lehetőségre, és ellenőrizze, hogy az állapot most **leállt**-e.
 
    > [!NOTE]
-   > Your organization's Mac devices will be removed at the date (3 months) shown in your console.
+   > A szervezet Mac-eszközei a konzolján látható (3 hónap) időpontban lesznek eltávolítva.
 
 ## <a name="next-steps"></a>További lépések
 
 - [Megfelelőségi szabályzatok alkalmazása Jamf által felügyelt eszközökön](conditional-access-assign-jamf.md)
-- [Data Jamf sends to Intune](data-jamf-sends-to-intune.md)
+- [A JAMF által küldött adatokat az Intune-nak küldi](data-jamf-sends-to-intune.md)

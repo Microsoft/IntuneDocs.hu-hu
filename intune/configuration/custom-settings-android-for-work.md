@@ -26,23 +26,23 @@ ms.locfileid: "74319830"
 ---
 # <a name="use-custom-settings-for-android-enterprise-devices-in-microsoft-intune"></a>Egyéni beállítások használata Android Enterprise-eszközökhöz a Microsoft Intune-ban
 
-Using Microsoft Intune, you can add or create custom settings for your Android Enterprise Work Profile devices using a "custom profile". Az egyéni profilok az Intune részét képezik. Akkor hasznosak, ha olyan eszközbeállításokat és funkciókat szeretne használni, amelyek nem érhetők el beépítetten az Intune-ban.
+A Microsoft Intune használatával egyéni beállításokat adhat hozzá az Android Enterprise Work Profiles eszközökhöz, vagy létrehozhat egyéni profilt. Az egyéni profilok az Intune részét képezik. Akkor hasznosak, ha olyan eszközbeállításokat és funkciókat szeretne használni, amelyek nem érhetők el beépítetten az Intune-ban.
 
 Az Android Enterprise rendszer egyéni profiljai az Open Mobile Alliance Uniform Resource Identifier (OMA-URI) beállításokat használják a különböző funkciók vezérléséhez Android Enterprise-eszközökön. Ezekkel a beállításokkal általában a mobileszközgyártók vezérlik ezeket a funkciókat.
 
-Intune supports the following limited number of Android Enterprise custom profiles:
+Az Intune a következő korlátozott számú androidos vállalati egyéni profilt támogatja:
 
-- ./Vendor/MSFT/WiFi/Profile/SSID/Settings: [Create a Wi-Fi profile with a pre-shared key](wi-fi-profile-shared-key.md) has some examples.
-- ./Vendor/MSFT/VPN/Profile/Name/PackageList: [Create a per-app VPN profile](android-pulse-secure-per-app-vpn.md) has some examples.
-- ./Vendor/MSFT/WorkProfile/DisallowCrossProfileCopyPaste: See the [example](#example) in this article. This setting is also available in the user interface. For more information, see [Android Enterprise device settings to allow or restrict features](device-restrictions-android-for-work.md).
+- ./Vendor/MSFT/WiFi/Profile/SSID/Settings: [egy előmegosztott kulccsal rendelkező Wi-Fi-profil létrehozása](wi-fi-profile-shared-key.md) néhány példát is tartalmaz.
+- ./Vendor/MSFT/VPN/Profile/Name/PackageList: [hozzon létre egy alkalmazáson belüli VPN-profilt](android-pulse-secure-per-app-vpn.md) néhány példát.
+- ./Vendor/MSFT/WorkProfile/DisallowCrossProfileCopyPaste: Tekintse meg a jelen cikkben szereplő [példát](#example) . Ez a beállítás a felhasználói felületen is elérhető. További információ: [androidos vállalati eszközbeállítások a funkciók engedélyezéséhez vagy korlátozásához](device-restrictions-android-for-work.md).
 
-If you need additional settings, see [OEMConfig for Android Enterprise](android-oem-configuration-overview.md).
+Ha további beállításokra van szüksége, tekintse meg [az OEMConfig for Android Enterprise](android-oem-configuration-overview.md)című témakört.
 
 Ebből a cikkből megtudhatja, hogyan hozhat létre egyéni profilt az Android Enterprise-eszközök számára. Emellett egy olyan egyéni profilra is mutat példát, amely nem engedélyezi a másolást és a beillesztést.
 
 ## <a name="create-the-profile"></a>A profil létrehozása
 
-1. Sign in to [Intune](https://go.microsoft.com/fwlink/?linkid=2090973).
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
 3. Adja meg a következő beállításokat:
 
@@ -54,9 +54,9 @@ Ebből a cikkből megtudhatja, hogyan hozhat létre egyéni profilt az Android E
 4. Az **Egyéni OMA-URI-beállítások** menüben válassza a **Hozzáadás** lehetőséget. Adja meg a következő beállításokat:
 
     - **Név**: Adjon meg egyedi nevet az OMA-URI-beállítás számára, hogy könnyen megtalálja.
-    - **Leírás**: Adjon meg egy olyan leírást, amely áttekintést ad a beállításról és egyéb fontos részleteket tartalmaz.
+    - **Leírás** – Adjon meg egy olyan leírást, amely ismerteti a beállítást, és minden fontos részletet tartalmaz.
     - **OMA-URI**: Adja meg azt az OMA-URI azonosítót, amelyet beállításként kíván használni.
-    - **Adattípus**: Adja meg azt az adattípust, amelyet az OMA-URI beállításhoz szeretne használni. A választható lehetőségek:
+    - **Adattípus** – Adja meg azt az adattípust, amelyet az OMA-URI beállításhoz szeretne használni. A választható lehetőségek:
 
       - Sztring
       - Sztring (XML-fájl)
@@ -70,14 +70,14 @@ Ebből a cikkből megtudhatja, hogyan hozhat létre egyéni profilt az Android E
 
     Néhány beállítás megadása után válassza az **Exportálás** lehetőséget. Az **Exportálás** a hozzáadott értékek listáját hozza létre egy vesszővel tagolt (.csv) fájlban.
 
-5. A módosítások mentéséhez válassza az **OK** gombot. Szükség szerint adjon hozzá további beállításokat.
+5. A módosítások mentéséhez kattintson az **OK** gombra. Szükség szerint adjon hozzá további beállításokat.
 6. Ha elkészült, az Intune-profil létrehozásához kattintson az **OK** > **Létrehozás** lehetőségre. Ha a profil elkészült, megjelenik az **Eszközkonfiguráció – Profilok** listában.
 
 ## <a name="example"></a>Példa
 
 Ebben a példában egy olyan egyéni profil jön létre, amely nem engedélyezi a másolási és a beillesztési műveleteket a munkahelyi és a személyes alkalmazások között Android Enterprise-eszközökön.
 
-1. Sign in to [Intune](https://go.microsoft.com/fwlink/?linkid=2090973).
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
 3. Adja meg a következő beállításokat:
 

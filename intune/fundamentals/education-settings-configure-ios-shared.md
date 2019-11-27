@@ -25,12 +25,12 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 11/19/2019
 ms.locfileid: "74188455"
 ---
-# <a name="configure-intune-education-settings-for-shared-ipad-devices"></a>Configure Intune education settings for shared iPad devices
+# <a name="configure-intune-education-settings-for-shared-ipad-devices"></a>Megosztott iPad-eszközökhöz az Intune oktatási beállításainak konfigurálása
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
 > [!NOTE]
-> Intune doesn't currently support configuring the Classroom app. This article is only applicable for users with existing iOS Education profiles in Intune.
+> Az Intune jelenleg nem támogatja az osztályterem alkalmazás konfigurálását. Ez a cikk csak az Intune-ban meglévő iOS-es oktatási profilokkal rendelkező felhasználókra érvényes.
 
 Az Intune támogatja az iOS-es Osztályterem alkalmazást, amely lehetővé teszi az oktatóknak a tanulási folyamat és a diákok eszközeinek irányítását az osztályteremben. Az Osztályterem alkalmazás mellett az Apple támogatja a diákok iPad eszközeinek olyan konfigurációját, amely egyetlen eszköz több diák általi használatát teszi lehetővé. Ebből a dokumentumból megtudhatja, hogy ezt hogyan valósíthatja meg az Intune-nal.
 
@@ -68,7 +68,7 @@ Az SDS-be a következő módszerek valamelyikével importálhat adatokat:
 
 ### <a name="configure-general-settings"></a>Általános beállítások konfigurálása
 
-1. Sign in to [Intune](https://go.microsoft.com/fwlink/?linkid=2090973).
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** panelen válassza az **Eszközkonfiguráció** lehetőséget.
 2. Az **Eszközkonfiguráció** panel **Kezelés** területén válassza a **Profilok** lehetőséget.
 5. A profilok paneljén válassza a **Profil létrehozása** lehetőséget.
@@ -138,7 +138,7 @@ Ekkor létrejön a profil, és megjelenik a profilok listáját tartalmazó pane
 
 ## <a name="step-3---create-a-device-category"></a>3\. lépés – eszközkategória létrehozása
 
-1. Sign in to [Intune](https://go.microsoft.com/fwlink/?linkid=2090973).
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** panelen válassza az **Eszközregisztráció** lehetőséget.
 4. Az **Eszközregisztráció – Áttekintés** panelen válassza az **Eszközkategóriák** elemet.
 5. Az **Eszközregisztráció – Eszközkategóriák** panelen válassza a **Létrehozás** lehetőséget.
@@ -149,7 +149,7 @@ Az eszközkategória ekkor létrejön a **Regisztráció – Eszközkategóriák
 
 ## <a name="step-4--create-a-dynamic-group"></a>4\. lépés – dinamikus csoport létrehozása
 
-1. Sign in to [Intune](https://go.microsoft.com/fwlink/?linkid=2090973).
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** panelen válassza az **Csoportok** lehetőséget.
 4. A **Felhasználók és csoportok – Minden csoport** panelen válassza az **Új csoport** lehetőséget.
 5. A **Csoport** panelen válasszon **Csoporttípust**, majd adja meg a csoport **Nevét** és **Leírását**.
@@ -166,7 +166,7 @@ A dinamikus csoport ekkor létrejön a **Felhasználók és csoportok – Minden
 
 ## <a name="step-5--assign-a-device-to-a-category-carts"></a>5\. lépés – eszközök hozzárendelése egy kategóriához (kocsik)
 
-1. Sign in to [Intune](https://go.microsoft.com/fwlink/?linkid=2090973).
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** panelen válassza az **Eszközök** lehetőséget.
 4. Az **Eszközök** panelen válassza a **Minden eszköz** lehetőséget.
 5. Az **Eszközök – Minden eszköz** panelen válasszon ki egy eszközt.
@@ -178,7 +178,7 @@ Az eszköz mostantól hozzá van rendelve az eszközkategóriához. Ismételje m
 
 ## <a name="step-6--create-classroom-profiles"></a>6\. lépés – Osztályterem-profilok létrehozása
 
-1. Sign in to [Intune](https://go.microsoft.com/fwlink/?linkid=2090973).
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** panelen válassza az **Eszközkonfiguráció** lehetőséget.
 4. Az **Eszközkonfiguráció** panelen válassza a **Felügyelet** > **Kocsiprofilok** lehetőséget.
 5. A profilok paneljén válassza a **Profil létrehozása** lehetőséget.
@@ -193,7 +193,7 @@ Ekkor létrejön a profil, és megjelenik a profilok listáját tartalmazó pane
 
 ## <a name="step-7---assign-the-cart-profile-to-classes"></a>7\. lépés – a kocsiprofil hozzárendelése az osztályokhoz
 
-1. Sign in to [Intune](https://go.microsoft.com/fwlink/?linkid=2090973).
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 3. Az **Intune** panelen válassza az **Eszközkonfiguráció** lehetőséget.
 4. Az **Eszközkonfiguráció** panelen válassza a **Figyelés** > **Hozzárendelés állapota** lehetőséget.
 5. A **Hozzárendelés állapota** panelen jelölje ki a létrehozott **kocsiprofilt**.

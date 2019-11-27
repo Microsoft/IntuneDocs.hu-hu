@@ -1,6 +1,6 @@
 ---
-title: Use security baselines in Microsoft Intune - Azure | Microsoft Docs
-description: Use the recommended windows security settings to protect user and data on devices with Microsoft Intune for mobile device management. Enable encryption, configure Microsoft Defender Advanced Threat Protection, control Internet Explorer, set local security policies, require a password, block internet downloads, and more.
+title: Biztonsági alapkonfigurációk használata a Microsoft Intuneban – Azure | Microsoft Docs
+description: Az ajánlott Windows biztonsági beállításokkal biztosíthatja, hogy a felhasználók és az eszközök megfeleljenek a mobileszköz-felügyelettel Microsoft Intune eszközön. Titkosítás engedélyezése, a Microsoft Defender komplex veszélyforrások elleni védelem konfigurálása, az Internet Explorer vezérlése, helyi biztonsági házirendek beállítása, jelszó megkövetelése, internetes letöltések letiltása stb.
 keywords: ''
 author: brenduns
 ms.author: brenduns
@@ -23,205 +23,205 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74409961"
 ---
-# <a name="use-security-baselines-to-configure-windows-10-devices-in-intune"></a>Use security baselines to configure Windows 10 devices in Intune
+# <a name="use-security-baselines-to-configure-windows-10-devices-in-intune"></a>Biztonsági alapkonfigurációk használata a Windows 10-es eszközök Intune-ban való konfigurálásához
 
-Use Intune's security baselines to help you secure and protect your users and devices. Security baselines are pre-configured groups of Windows settings that help you apply a known group of settings and default values that are recommended by the relevant security teams. When you create a security baseline profile in Intune, you're creating a template that consists of multiple *device configuration* profiles.
+Az Intune biztonsági alapkonfigurációi segítségével biztonságossá teheti és megvédheti a felhasználókat és az eszközöket. A biztonsági alapkonfigurációk a Windows beállításai előre konfigurált csoportjai, amelyek segítségével a megfelelő biztonsági csapatok által javasolt, ismert beállításokat és alapértelmezett értékeket alkalmazhat. Amikor létrehoz egy biztonsági *alapkonfiguráció* -profilt az Intune-ban, több eszköz-konfigurációs profilból álló sablont hoz létre.
 
 Ez a funkció az alábbiakra vonatkozik:
 
-- Windows 10 version 1809 and later
+- Windows 10 1809-es és újabb verziók
 
-You deploy security baselines to groups of users or devices in Intune, and the settings apply to devices that run Windows 10 or later. For example, the *MDM Security Baseline* automatically enables BitLocker for removable drives, automatically requires a password to unlock a device, automatically disables basic authentication, and more. When a default value doesn’t work for your environment, customize the baseline to apply the settings you need.
+A biztonsági alapkonfigurációkat az Intune-ban lévő felhasználók vagy eszközök csoportjaira telepíti, és a beállítások a Windows 10 vagy újabb rendszerű eszközökre vonatkoznak. Ha például a *Mdm biztonsági* alapkonfiguráció automatikusan engedélyezi a BitLockert a cserélhető meghajtókon, a automatikusan jelszót kér az eszköz zárolásának feloldásához, automatikusan letiltja az alapszintű hitelesítést, és így tovább. Ha egy alapértelmezett érték nem működik a környezetében, a szükséges beállítások alkalmazásához szabja testre az alaptervet.
 
-Separate baseline types can include the same settings but use different default values for those settings. It's important to understand the defaults in the baselines you choose to use, and to then modify each baseline to fit your organizational needs.
+A különálló alaptípusok tartalmazhatják ugyanazokat a beállításokat, de a beállításokhoz eltérő alapértelmezett értékeket is használhatnak. Fontos megérteni a használni kívánt alapkonfigurációk alapértelmezett értékeit, majd módosítani az egyes alapterveket, hogy azok megfeleljenek a szervezeti igényeknek.
 
 > [!NOTE]
-> Microsoft doesn't recommend using preview versions of security baselines in a production environment. The settings in a preview baseline might change over the course of the preview.
+> A Microsoft nem javasolja, hogy éles környezetben a biztonsági alapkonfigurációk előzetes verzióit használják. Az előzetes verziójú alapkonfiguráció beállításai az előzetes verzió során változhatnak.
 
-Security baselines can help you to have an end-to-end secure workflow when working with Microsoft 365. Some of the benefits include:
+A biztonsági alapkonfigurációk segítségével teljes körű biztonságos munkafolyamattal rendelkezhet Microsoft 365 használatakor. Az előnyök többek között a következők:
 
-- A security baseline includes the best practices and recommendations on settings that impact security. Intune partners with the same Windows security team that creates group policy security baselines. These recommendations are based on guidance and extensive experience.
-- If you're new to Intune, and not sure where to start, then security baselines gives you an advantage. You can quickly create and deploy a secure profile, knowing that you're helping protect your organization's resources and data.
-- If you currently use group policy, migrating to Intune for management is much easier with these baselines. These baselines are natively built in to Intune, and include a modern management experience.
+- A biztonsági alapkonfiguráció a biztonságot befolyásoló beállításokkal kapcsolatos ajánlott eljárásokat és javaslatokat tartalmazza. Az Intune-partnerek ugyanazzal a Windows biztonsági csoporttal rendelkeznek, amely csoportházirend biztonsági alapterveket hoz létre. Ezek az ajánlások az útmutató és a széleskörű tapasztalatok alapján érhetők el.
+- Ha még nem ismeri az Intune-t, és nem tudja, hol kezdjen hozzá, akkor a biztonsági alaptervek előnyt biztosítanak. Gyorsan létrehozhat és üzembe helyezhet egy biztonságos profilt, tudván, hogy segít megvédeni a szervezet erőforrásait és adatait.
+- Ha jelenleg a csoportházirendet használja, az Intune-ba való Migrálás sokkal egyszerűbb, mint az alaptervek. Ezek az alapkonfigurációk natív módon vannak beépítve az Intune-ba, és modern felügyeleti felülettel rendelkeznek.
 
-[Windows security baselines](https://docs.microsoft.com/windows/security/threat-protection/windows-security-baselines) is a great resource to learn more about this feature. [Mobile device management](https://docs.microsoft.com/windows/client-management/mdm/) (MDM) is a great resource about MDM, and what you can do on Windows devices.
+A [Windows biztonsági](https://docs.microsoft.com/windows/security/threat-protection/windows-security-baselines) alapkonfigurációk egy nagyszerű erőforrás, amellyel többet tudhat meg a szolgáltatásról. A [mobileszköz-felügyelet](https://docs.microsoft.com/windows/client-management/mdm/) (Mdm) egy nagyszerű erőforrás a Mdm, és a Windows-eszközökön is elvégezhető.
 
-## <a name="about-baseline-versions-and-instances"></a>About baseline versions and instances
+## <a name="about-baseline-versions-and-instances"></a>Az alapverziók és példányok ismertetése
 
-Each new version instance of a baseline can add or remove settings or introduce other changes. For example, as new Windows 10 settings become available with new versions of Windows 10, the MDM Security Baseline might receive a new version instance that includes the newest settings.
+Az alapkonfiguráció minden új verziójának példánya hozzáadhat vagy eltávolíthat beállításokat, vagy egyéb módosításokat is bevezethet. Például, mivel az új Windows 10 beállítások elérhetővé válnak a Windows 10 új verzióival, a MDM biztonsági alapterve egy új verzió-példányt kaphat, amely tartalmazza a legújabb beállításokat.
 
-In the Intune console, the tile for each baseline displays the baseline template name and basic information about that baseline. The information includes how many profiles you have that use that baseline type, how many separate instances (versions) of the baseline type are available, and a *Last Published* date that identifies when that baseline template was added to your tenant. The following example shows the tile for a well-used MDM Security Baseline:
+Az Intune-konzolon az egyes alaptervek csempéje az alapkonfiguráció sablonjának nevét és alapinformációit jeleníti meg. Az információ azt is tartalmazza, hogy hány profilt használ, amelyek az alapkonfiguráció típusát használják, hogy hány különálló példány (verzió) legyen elérhető, és az *utolsó közzétett* dátum, amely meghatározza, hogy az alapsablon mikor lett hozzáadva a bérlőhöz. Az alábbi példa egy jól használt MDM biztonsági alapterv csempéjét mutatja be:
 
-![Baseline tile](./media/security-baselines/baseline-tile.png)
+![Alapkonfiguráció csempe](./media/security-baselines/baseline-tile.png)
 
-To view more information about the baseline versions you use, select a baseline tile to open its *Overview* pane, and then select **Versions**. Intune displays details about the versions of that baseline that are in use by your profiles. On the Versions pane, you can select a single version to view deeper details about the profiles that use that version. You can also select two different versions and then choose **Compare baselines** to download a CSV file that details those differences.
+A használt alapverziókkal kapcsolatos további információk megtekintéséhez válasszon ki egy alapkonfiguráció csempét az *Áttekintés* panel megnyitásához, majd válassza a **verziók**lehetőséget. Az Intune megjeleníti a profilok által használt alapkonfiguráció verzióinak részleteit. A verziók panelen egyetlen verzió kiválasztásával megtekintheti az adott verziót használó profilok mélyebb részleteit. Kiválaszthat két különböző verziót is, majd az alapkonfigurációk **összehasonlítása** lehetőségre kattintva letöltheti azokat a CSV-fájlokat, amelyek részletezik ezeket a különbségeket.
 
-![Compare baselines](./media/security-baselines/compare-baselines.png)
+![Alaptervek összehasonlítása](./media/security-baselines/compare-baselines.png)
 
-When you create a security baseline *profile*, the profile automatically uses the most recently released security baseline instance.  You can continue to use and edit profiles that you previously created that use an earlier baseline version instance, including baselines created using a Preview version.
+Amikor létrehoz egy biztonsági alapkonfiguráció- *profilt*, a profil automatikusan a legutóbb kiadott biztonsági alapkonfiguráció-példányt használja.  Továbbra is használhatja és szerkesztheti azokat a profilokat, amelyeket korábban az alapkonfiguráció korábbi verziójának használatával hozott létre, beleértve az előzetes verzió használatával létrehozott alapterveket is.
 
-You can choose to [change of the version](#change-the-baseline-version-for-a-profile) of a baseline that’s in use with a given profile. This means when a new version comes out, you don’t have to create a new baseline profile to take advantage of it. Instead, when you’re ready, you can select a baseline profile and then use the built-in option to change the instance version for that profile to a new one.
+Dönthet úgy, hogy egy adott profilhoz használt alapkonfiguráció [verzióját módosítja](#change-the-baseline-version-for-a-profile) . Ez azt jelenti, hogy amikor egy új verzió jön létre, nem kell létrehoznia új alapkonfigurációt, hogy kihasználhassa. Ehelyett, ha elkészült, kiválaszthat egy alapkonfigurációt, majd a beépített lehetőség használatával módosíthatja a profil példányának verzióját egy újat.
 
-## <a name="available-security-baselines"></a>Available security baselines
+## <a name="available-security-baselines"></a>Elérhető biztonsági alaptervek
 
- You can use one or more of the available baselines in your Intune environment at the same time. You can also use multiple instances of the same security baselines that have different customizations.
+ Az Intune-környezet egy vagy több elérhető alaptervét egyszerre használhatja. Ugyanazon biztonsági alapkonfigurációk több példányát is használhatja, amelyek eltérő testreszabási lehetőségekkel rendelkeznek.
 
-When you use multiple security baselines, review the settings in each one to identify when different baselines introduce conflicting values for the same setting. Because you can deploy security baselines that are designed for different intents, and deploy multiple instances of the same baseline that includes customized settings, you might create configuration [conflicts for devices that must be investigated and resolved](security-baselines-monitor.md#troubleshoot-using-per-setting-status).  Also be aware of your [device configuration profiles](../configuration/device-profiles.md), which can configure many of the same settings as security baselines.
+Ha több biztonsági alapkonfigurációt használ, tekintse át az egyes beállításokban található beállításokat annak azonosításához, hogy a különböző alaptervek hogyan vezessenek egymással ütköző értékeket ugyanahhoz a beállításhoz. Mivel a különböző szándékokhoz tervezett biztonsági alapkonfigurációkat telepítheti, és ugyanazon alapterv több példányát is üzembe helyezheti, amely testreszabott beállításokat tartalmaz, létrehozhat konfigurációs [ütközéseket a vizsgálni és feloldani kívánt eszközökhöz](security-baselines-monitor.md#troubleshoot-using-per-setting-status).  Vegye figyelembe az [eszköz konfigurációs profiljait](../configuration/device-profiles.md)is, amelyek számos, a biztonsági alapkonfigurációhoz hasonló beállítást konfigurálnak.
 
-The following security baseline instances are available for use with Intune. Use the links to view the settings for the most recent instance of each baseline.
+Az Intune-nal az alábbi biztonsági alapkonfigurációk használhatók. A hivatkozások használatával megtekintheti az egyes alaptervek legutóbbi példányának beállításait.
 
-- **MDM Security Baseline**
-  - [MDM Security Baseline for May 2019](security-baseline-settings-mdm-all.md?pivots=mdm-may-2019)
-  - [Preview: MDM Security Baseline for October 2018](security-baseline-settings-mdm-all.md?pivots=mdm-preview)
+- **MDM biztonsági alapterv**
+  - [MDM biztonsági alapkonfiguráció a május 2019-es verziójához](security-baseline-settings-mdm-all.md?pivots=mdm-may-2019)
+  - [Előzetes verzió: a MDM biztonsági alapterve október 2018](security-baseline-settings-mdm-all.md?pivots=mdm-preview)
 
-- **Microsoft Defender ATP baseline**
-   *(To use this baseline your environment must meet the prerequisites for using [Microsoft Defender Advanced Threat Protection](advanced-threat-protection.md#prerequisites))* .
-  - [Microsoft Defender ATP baseline](security-baseline-settings-defender-atp.md)
+- **Microsoft DEFENDER ATP** alapkonfiguráció
+   *(az alapkonfiguráció használatához a környezetnek meg kell felelnie a [Microsoft Defender komplex veszélyforrások elleni védelem](advanced-threat-protection.md#prerequisites)használatára vonatkozó előfeltételeknek)* .
+  - [A Microsoft Defender ATP alapterve](security-baseline-settings-defender-atp.md)
 
   > [!NOTE]
-  > The Microsoft Defender ATP security baseline has been optimized for physical devices and is currently not recommended for use on virtual machines (VMs) or VDI endpoints. Certain baseline settings can impact remote interactive sessions on virtualized environments.  For more information, see [Increase compliance to the Microsoft Defender ATP security baseline](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-machines-security-baseline) in the Windows documentation.
+  > A Microsoft Defender ATP biztonsági alapterve fizikai eszközökre van optimalizálva, és jelenleg nem ajánlott virtuális gépeken (VM) vagy VDI-végpontokon használni. Bizonyos alapbeállítások befolyásolhatják a távoli interaktív munkameneteket a virtualizált környezetekben.  További információ: a [Microsoft DEFENDER ATP biztonsági alapkonfigurációjának nagyobb megfelelősége](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-machines-security-baseline) a Windows dokumentációjában.
 
-- **Microsoft Edge Baseline**
-  - [Preview: Microsoft Edge baseline](security-baseline-settings-edge.md)
+- **Microsoft Edge-alapterv**
+  - [Előzetes verzió: Microsoft Edge Baseline](security-baseline-settings-edge.md)
 
-You can continue to use and edit profiles that you previously created based on a preview template, even when that preview template is no longer available for creating new profiles.
+Továbbra is használhatja és szerkesztheti a korábban létrehozott profilokat egy előnézeti sablon alapján, még akkor is, ha az előnézeti sablon már nem érhető el új profilok létrehozásához.
 
-## <a name="manage-baselines"></a>Manage baselines
+## <a name="manage-baselines"></a>Alaptervek kezelése
 
-Common tasks when you work with security baselines include:
+A biztonsági alapkonfigurációkkal végzett munka gyakori feladatai a következők:
 
-- [Create a profile](#create-the-profile) – Configure the settings you want to use and assign the baseline to groups.
-- [Change the version](#change-the-baseline-version-for-a-profile) – Change the baseline version in use by a profile.
-- [Remove a baseline assignment](#remove-a-security-baseline-assignment) - Learn what happens when you stop managing settings with a security baseline.
+- [Profil létrehozása](#create-the-profile) – konfigurálja a használni kívánt beállításokat, és rendelje hozzá az alaptervet a csoportokhoz.
+- [A verzió módosítása](#change-the-baseline-version-for-a-profile) – módosítsa az alapkonfigurációt a profil által használt verzióra.
+- [Alapterv-hozzárendelés eltávolítása](#remove-a-security-baseline-assignment) – megtudhatja, mi történik, ha leállítja a beállítások kezelését egy biztonsági alapkonfigurációval.
 
 
 ### <a name="prerequisites"></a>Előfeltételek
 
-- To manage baselines in Intune, your account must have the [Policy and Profile Manager](../fundamentals/role-based-access-control.md#built-in-roles) built-in role.
+- Az alapkonfigurációk az Intune-ban való kezeléséhez a fióknak beépített szerepkörrel kell rendelkeznie a [házirend és a profil kezelőjében](../fundamentals/role-based-access-control.md#built-in-roles) .
 
-- Use of some baselines might require you to have an active subscription to additional services, like Microsoft Defender ATP.
+- Egyes alapkonfigurációk használata esetén előfordulhat, hogy aktív előfizetéssel kell rendelkeznie a további szolgáltatásokhoz, például a Microsoft Defender ATP-hez.
 
 ### <a name="create-the-profile"></a>A profil létrehozása
 
-1. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431).
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Select **Endpoint security** > **Security baselines** to view the list of available baselines.
+2. A rendelkezésre álló alaptervek listájának megtekintéséhez válassza a **Endpoint security** > **biztonsági** alapkonfigurációk lehetőséget.
 
-   ![Select a security baseline to configure](./media/security-baselines/available-baselines.png)
+   ![Válassza ki a konfigurálni kívánt biztonsági alaptervet](./media/security-baselines/available-baselines.png)
 
-3. Select the baseline you'd like to use, and then select **Create profile**.
+3. Válassza ki a használni kívánt alaptervet, majd válassza a **profil létrehozása**lehetőséget.
 
-4. On the **Basics** tab, specify the following properties:
+4. Az **alapok** lapon a következő tulajdonságokat kell megadnia:
 
-   - **Name**: Enter a name for your security baselines profile. For example, enter *Standard profile for Defender ATP*.
+   - **Név**: adja meg a biztonsági alaptervek profiljának nevét. Adja meg például *a DEFENDER ATP standard profilját*.
 
-   - **Description**: Enter some text that describes what this baseline does. The description is for you to enter any text you want. It's optional, but recommended.
+   - **Leírás**: adjon meg egy szöveget, amely leírja, hogy mi ez az alapkonfiguráció. A leírás a kívánt szöveg megadására szolgál. Nem kötelező, de ajánlott.
 
-   Select **Next** to go to the next tab. After you advanced to a new tab, you can select the tab name to return to a previously viewed tab.
+   Kattintson a **tovább** gombra a következő lapra való ugráshoz. Miután új lapot adott meg, kiválaszthatja a lap nevét, hogy visszatérjen egy korábban megtekintett laphoz.
 
-5. On the Configuration settings tab, view the groups of **Settings** that are available in the baseline you selected. You can expand a group to view the settings in that group, and the default values for those settings in the baseline. To find specific settings:
-   - Select a group to expand and review the available settings.
-   - Use the *Search* bar and specify keywords that filter the view to display only those groups that contain your search criteria.
+5. A konfigurációs beállítások lapon tekintse meg a kiválasztott alaptervben elérhető **Beállítások** csoportjait. Egy csoport kibontásával megtekintheti a csoport beállításait, valamint az alapkonfigurációban lévő beállítások alapértelmezett értékeit is. Megadott beállítások keresése:
+   - Válassza ki a kibontani kívánt csoportot, és tekintse át a rendelkezésre álló beállításokat.
+   - A keresősáv használatával olyan kulcsszavakat határozhat meg, amelyek szűrik a nézetet úgy, hogy csak azok a csoportok jelenjenek meg, amelyek tartalmazzák *a keresési feltételeket* .
 
-   Each setting in a baseline has a default configuration for that baseline version. Reconfigure the default settings to meet your business needs. Different baselines might contain the same setting, and use different default values for the setting, depending on the intent of the baseline.
+   Az alapkonfiguráció mindegyik beállításának alapértelmezett konfigurációja az adott alapverzióhoz tartozik. Konfigurálja újra az alapértelmezett beállításokat az üzleti igények kielégítése érdekében. A különböző alapkonfigurációk ugyanazt a beállítást tartalmazhatják, és a beállítástól függően különböző alapértelmezett értékeket is használhatnak az alaptervnek megfelelően.
 
-   ![Expand a group to view the settings for that group](./media/security-baselines/sample-list-of-settings.png)
+   ![Csoport kibontása a csoport beállításainak megtekintéséhez](./media/security-baselines/sample-list-of-settings.png)
 
-6. On the **Scope tags** tab, select **Select scope tags** to open the *Select tags* pane to assign scope tags to the profile.
+6. A hatókör **Címkék lapon válassza** a **hatókör címkék kiválasztása** lehetőséget a *címkék kiválasztása* panel megnyitásához a hatókör címkék a profilhoz való hozzárendeléséhez.
 
-7. On the **Assignments** tab, select **Select groups to include** and then  assign the baseline to one or more groups. Use **Select groups to exclude** to fine-tune the assignment.
+7. A **hozzárendelések** lapon válassza a **csoportok kiválasztása** lehetőséget, majd rendelje hozzá az alaptervet egy vagy több csoporthoz. **Válassza ki a kizárni kívánt csoportokat** a hozzárendelés finomhangolásához.
 
    ![Profil hozzárendelése](./media/security-baselines/assignments.png)
 
-8. When you're ready to deploy the baseline, advance to the **Review + create** tab and review the details for the baseline. Select **Create** to save and deploy the profile.
+8. Amikor készen áll az alapkonfiguráció üzembe helyezésére, folytassa a **felülvizsgálat + létrehozás** lapra, és tekintse át az alapterv részleteit. A profil mentéséhez és telepítéséhez válassza a **Létrehozás** lehetőséget.
 
-   As soon as you create the profile, it's pushed to the assigned group and might apply immediately.
+   Amint létrehozza a profilt, a rendszer leküldi a hozzárendelt csoportba, és azonnal alkalmazhatja.
 
    > [!TIP]
-   > If you save a profile without first assigning it to groups, you can later edit the profile to do so.
+   > Ha a profilt a csoportokhoz való első hozzárendelés nélkül menti, később is szerkesztheti a profilt.
 
-   ![Review the baseline](./media/security-baselines/review.png)
+   ![Az alapterv áttekintése](./media/security-baselines/review.png)
 
-9. After you create a profile, edit it by going to **Device security** > **Security baselines**, select the baseline type that you configured, and then select **Profiles**. Select the profile from the list of available profiles, and then select **Properties**. You can edit settings from all the available configuration tabs, and select **Review + save** to commit your changes.
+9. Miután létrehozta a profilt, szerkessze az **eszköz biztonsági** > **biztonsági**alapkonfigurációi területen, válassza ki a konfigurált alaptípust, majd válassza a **profilok**lehetőséget. Válassza ki a profilt az elérhető profilok listájából, majd válassza a **Tulajdonságok**lehetőséget. Az összes elérhető konfigurációs lapon módosíthatja a beállításokat, majd a módosítások elvégzéséhez válassza a **felülvizsgálat + mentés** lehetőséget.
 
-### <a name="change-the-baseline-version-for-a-profile"></a>Change the baseline version for a profile
+### <a name="change-the-baseline-version-for-a-profile"></a>Profil alapverziójának módosítása
 
-You can change the version of the baseline instance that in use with a profile.  When you change the version, you select an available instance of the same baseline. You can’t change between two different baseline types, such as changing a profile from using a baseline for Defender ATP to using the MDM security baseline.
+Módosíthatja a profilhoz használt alapkonfiguráció-példány verzióját.  A verzió módosításakor ki kell választania egy azonos alapterv elérhető példányát. Két eltérő alaptípus között nem módosítható, például a profil módosítása a Defender ATP alapkonfigurációjának használatával, hogy az MDM biztonsági alaptervet használja.
 
-While configuring a change of the baseline version, you can download a CSV file that lists the changes between the two baseline versions involved. You also have the choice to keep all your customizations from the original baseline version, or implement the new version using all of its default values. You don't have the option to make changes to individual settings when you change the version of a baseline for a profile.
+Az alapkonfiguráció módosításának konfigurálása közben letöltheti a CSV-fájlt, amely felsorolja a két érintett alapverzió közötti változásokat. Azt is megteheti, hogy megtartja az összes testreszabást az eredeti alapverzióból, vagy az új verziót az összes alapértelmezett értékével implementálja. A profilok alapkonfigurációjának verziójának módosításakor nem lehet módosítani az egyes beállításokat.
 
-Upon saving, after the conversion is complete, the baseline is immediately redeployed to assigned groups.
+A mentés után a rendszer azonnal újratelepíti az alaptervet a hozzárendelt csoportokba.
 
-**During conversion**:
+**Átalakítás során**:
 
-- New settings that weren't in the original version you were using are added and set to use the default values.
+- Új, a használt eredeti verzióban nem szereplő beállítások lettek hozzáadva, és az alapértelmezett értékek használatára vannak beállítva.
 
-- Settings that aren't in the new baseline version you select are removed and no longer enforced by this security baseline profile.
+- A rendszer eltávolítja az új alapverzióban nem szereplő beállításokat, és ezt a biztonsági alapkonfigurációt már nem kényszeríti ki.
 
-  When a setting is no longer managed by a baseline profile, that setting isn’t reset on the device. Instead, the setting on the device remains set to its last configuration until some other process manages the setting to change it. Examples of processes that can change a setting after you stop managing it include a different baseline profile, a group policy setting, or manual configuration that’s made on the device.
+  Ha egy beállítást már nem felügyel egy alapkonfiguráció-profil, akkor ez a beállítás nem áll alaphelyzetbe az eszközön. Ehelyett az eszközön beállított beállítás az utolsó konfigurációra lesz állítva, amíg egy másik folyamat nem kezeli a beállítást a módosításra. Példák olyan folyamatokra, amelyek megváltoztathatják a beállításokat a kezelés leállítása után, egy másik alapkonfigurációt, egy csoportházirend-beállítást vagy az eszközön végzett manuális konfigurálást is tartalmazhatnak.
 
-#### <a name="to-change-the-baseline-version-for-a-profile"></a>To change the baseline version for a profile
+#### <a name="to-change-the-baseline-version-for-a-profile"></a>Profil alapverziójának módosítása
 
-1. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431). 
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431). 
 
-2. Select **Endpoint security** > **Security baselines**, and then select the tile for the baseline type that has the profile you want to change.
+2. Válassza a **végpontok biztonsági** > **biztonsági**alapkonfigurációk lehetőséget, majd válassza ki a módosítani kívánt profilt tartalmazó alapkonfiguráció csempéjét.
 
-3. Next, select **Profiles**, and then select the check box for the profile you want to edit, and then select **Change Version**.
+3. Ezután válassza a **profilok**lehetőséget, majd jelölje be a szerkeszteni kívánt profilhoz tartozó jelölőnégyzetet, majd válassza a **verzió módosítása**lehetőséget.
 
-   ![select a baseline](./media/security-baselines/select-baseline.png)
+   ![alapterv kiválasztása](./media/security-baselines/select-baseline.png)
 
-4. On the **Change Version** pane, use the **Select a security baseline to update to** dropdown, and select the version instance you want to use.
+4. A **verzió módosítása** panelen a **válassza ki** a legördülő menüben frissíteni kívánt biztonsági alapkonfigurációt, majd válassza ki a használni kívánt verziót.
 
-   ![select a version](./media/security-baselines/select-instance.png)
+   ![Válasszon verziót](./media/security-baselines/select-instance.png)
 
-5. Select **Review update** to download a CSV file that displays the difference between the profiles current instance version and the new version you’ve selected. Review this file so that you understand which settings are new or removed, and what the default values for these settings are in the updated profile.
+5. Válassza a **frissítés áttekintése** lehetőséget egy olyan CSV-fájl letöltéséhez, amely az aktuális példány verziójának és a kiválasztott új verziónak a különbségét jeleníti meg. Tekintse át ezt a fájlt, és Ismerje meg, hogy mely beállítások vannak új vagy eltávolítva, valamint hogy a beállítások alapértelmezett értékei a frissített profilban legyenek.
 
-   When ready, continue to the next step.
+   Ha elkészült, folytassa a következő lépéssel.
 
-6. Choose one of the two options for **Select a method to update the profile**:
-   - **Accept baseline changes but keep my existing setting customizations** - This option keeps the customizations you made to the baseline profile and applies them to the new version you've selected to use.
-   - **Accept baseline changes and discard existing setting customizations** - This option overwrites your original profile completely. The updated profile will use the default values for all settings.
+6. A **profil frissítéséhez válasszon ki egy módszert**a két lehetőség közül:
+   - **Alapkonfiguráció-módosítások elfogadása, de a meglévő beállítások megtartása** – ez a beállítás megőrzi a testreszabásokat az alapprofilban, és alkalmazza azokat a használni kívánt új verzióra.
+   - **Alapkonfiguráció-módosítások elfogadása és a meglévő beállítások elvetése** – ez a lehetőség teljesen felülírja az eredeti profilt. A frissített profil az alapértelmezett értékeket fogja használni az összes beállításhoz.
 
-7. Select **Submit**. The profile updates to the selected baseline version and after the conversion is complete, the baseline immediately redeploys to assigned groups.
+7. Válassza a **Küldés**lehetőséget. A profil frissítése a kiválasztott alapkonfigurációhoz, és az átalakítás befejezése után az alapkonfiguráció azonnal újratelepül a hozzárendelt csoportokba.
 
-### <a name="remove-a-security-baseline-assignment"></a>Remove a security baseline assignment
+### <a name="remove-a-security-baseline-assignment"></a>Biztonsági alapterv-hozzárendelés eltávolítása
 
-When a security baseline setting no longer applies to a device, or settings in a baseline are set to *Not configured*, those settings on a device don’t revert to a pre-managed configuration. Instead, the previously managed settings on the device keep their last configurations as received from the baseline until some other process updates those settings on the device.
+Ha egy biztonsági alapkonfiguráció már nem érvényes egy eszközre, vagy az alapkonfiguráció beállításai nincsenek *konfigurálva*, az eszközön lévő beállítások nem állíthatók be előre felügyelt konfigurációra. Ehelyett az eszköz korábban felügyelt beállításai megtartják az alapkonfigurációtól kapott utolsó beállításokat, amíg egy másik folyamat nem frissíti ezeket a beállításokat az eszközön.
 
-Other processes that might later change settings on the device include a different or new security baseline, device configuration profile, Group Policy configurations, or manual edit of the setting on the device.
+Más folyamatok, amelyek később módosíthatják az eszköz beállításait, tartalmazhatnak egy másik vagy új biztonsági alapkonfigurációt, az eszköz konfigurációs profilját, Csoportházirend konfigurációját vagy a beállítás manuális szerkesztését az eszközön.
 
-## <a name="co-managed-devices"></a>Co-managed devices
+## <a name="co-managed-devices"></a>Közösen felügyelt eszközök
 
-Security baselines on Intune-managed devices are similar to co-managed devices with Configuration Manager. Co-managed devices use System Center Configuration Manager and Microsoft Intune to manage the Windows 10 devices simultaneously. It lets you cloud-attach your existing Configuration Manager investment to the benefits of Intune. [Co-management overview](https://docs.microsoft.com/sccm/comanage/overview) is a great resource if you use Configuration Manager, and also want the benefits of the cloud.
+Az Intune által felügyelt eszközökön a biztonsági alapkonfigurációk hasonlók a közösen felügyelt eszközökhöz Configuration Manager. A közösen felügyelt eszközök a System Center Configuration Manager és a Microsoft Intune használatával kezelik a Windows 10 rendszerű eszközöket egyszerre. Lehetővé teszi, hogy a meglévő Configuration Manager befektetéseit az Intune előnyeihez csatlakoztassa. A [közös felügyelet áttekintése](https://docs.microsoft.com/sccm/comanage/overview) nagyszerű erőforrás, ha Configuration Managert használ, és a felhő előnyeit is szeretné használni.
 
-When using co-managed devices, you must switch the **Device configuration** workload (its settings) to Intune. [Device configuration workloads](https://docs.microsoft.com/sccm/comanage/workloads#device-configuration) provides more information.
+A közösen felügyelt eszközök használatakor az **eszköz konfigurációs** munkaterhelését (a beállításait) az Intune-ra kell váltania. Az [eszköz konfigurációs munkaterhelései](https://docs.microsoft.com/sccm/comanage/workloads#device-configuration) további információkat biztosítanak.
 
 ## <a name="q--a"></a>Kérdések és válaszok
 
-### <a name="why-these-settings"></a>Why these settings?
+### <a name="why-these-settings"></a>Miért ezek a beállítások?
 
-The Microsoft security team has years of experience working directly with Windows developers and the security community to create these recommendations. The settings in this baseline are considered the most relevant security-related configuration options. In each new build of Windows, the team adjusts its recommendations based on newly released features.
+A Microsoft biztonsági csapata több éves tapasztalattal rendelkezik a Windows-fejlesztőknek és a biztonsági Közösségnek a javaslatok létrehozásához. Az ebben az alapkonfigurációban található beállítások a legfontosabb biztonsággal kapcsolatos konfigurációs beállításoknak tekintendők. Az új Windows-buildekben a csapat az újonnan kiadott funkciók alapján módosítja a javaslatait.
 
-### <a name="is-there-a-difference-in-the-recommendations-for-windows-security-baselines-for-group-policy-vs-intune"></a>Is there a difference in the recommendations for Windows security baselines for group policy vs. Intune?
+### <a name="is-there-a-difference-in-the-recommendations-for-windows-security-baselines-for-group-policy-vs-intune"></a>Van különbség a csoportházirend és az Intune Windows biztonsági alapkonfigurációinak javaslataiban?
 
-The same Microsoft security team chose and organized the settings for each baseline. Intune includes all the relevant settings in the Intune security baseline. There are some settings in the group policy baseline that are specific to an on-premises domain controller. These settings are excluded from Intune's recommendations. All the other settings are the same.
+Ugyanaz a Microsoft biztonsági csapat választotta ki és szervezte meg az egyes alapkonfigurációk beállításait. Az Intune az Intune biztonsági alapkonfigurációjának összes vonatkozó beállítását tartalmazza. A csoportházirend alapkonfigurációjának néhány beállítása a helyszíni tartományvezérlőre vonatkozik. Ezek a beállítások nem tartoznak az Intune javaslataihoz. Az összes többi beállítás azonos.
 
-### <a name="are-the-intune-security-baselines-cis-or-nsit-compliant"></a>Are the Intune security baselines CIS or NSIT compliant?
+### <a name="are-the-intune-security-baselines-cis-or-nsit-compliant"></a>Megfelelőek-e az Intune biztonsági alapkonfigurációi a CIS vagy a NSIT?
 
-Strictly speaking, no. The Microsoft security team consults organizations, such as CIS, to compile its recommendations. But, there isn't a one-to-one mapping between “CIS-compliant” and Microsoft baselines.
+Szigorúan szólva, nem. A Microsoft biztonsági csapata a vállalatokat, például a CIS-t a javaslatok fordítására kéri. A "CIS-kompatibilis" és a Microsoft alapkonfigurációk között azonban nincs egy az egyhez típusú hozzárendelés.
 
-### <a name="what-certifications-does-microsofts-security-baselines-have"></a>What certifications does Microsoft’s security baselines have? 
+### <a name="what-certifications-does-microsofts-security-baselines-have"></a>Milyen minősítésekkel rendelkezik a Microsoft biztonsági alapkonfigurációi? 
 
-- Microsoft continues to publish security baselines for group policies (GPOs) and the [Security Compliance Toolkit](https://docs.microsoft.com/windows/security/threat-protection/security-compliance-toolkit-10), as it has for many years. These baselines are used by many organizations. The recommendations in these baselines are from the Microsoft security team’s engagement with enterprise customers and external agencies, including the Department of Defense (DoD), National Institute of Standards and Technology (NIST), and more. We share our recommendations and baselines with these organizations. These organizations also have their own recommendations that closely mirror Microsoft's recommendations. As mobile device management (MDM) continues to grow into the cloud, Microsoft created equivalent MDM recommendations of these group policy baselines. These additional baselines are built in to Microsoft Intune, and include compliance reports on users, groups, and devices that follow (or don't follow) the baseline.
+- A Microsoft továbbra is közzéteszi a csoportházirend-objektumok (GPO-k) és a [biztonsági megfelelőségi eszközkészlet](https://docs.microsoft.com/windows/security/threat-protection/security-compliance-toolkit-10)biztonsági alapkonfigurációit, mivel azok sok évig tartanak. Ezeket az alapterveket számos szervezet használja. Az alapkonfigurációk javaslatai a Microsoft Security csapatának a nagyvállalati ügyfelekkel és külső ügynökségekkel való összevonása, beleértve a védelmi minisztériumot (DoD), a National Institute of Standards and Technology (NIST) és egyebeket. Ezekkel a szervezetekkel megoszthatjuk javaslatait és alapterveit. Ezeknek a szervezeteknek saját javaslatai is vannak, amelyek szorosan tükrözik a Microsoft javaslatait. Ahogy a mobileszköz-felügyelet (MDM) továbbra is a felhőbe növekszik, a Microsoft ezzel egyenértékű MDM-ajánlásokat hozott létre ezekről a csoportházirend-alaptervekről. Ezek a további alapkonfigurációk a Microsoft Intunera épülnek, és megfelelőségi jelentéseket tartalmaznak a felhasználók, csoportok és eszközök számára, amelyek követik az alaptervet (vagy nem követik).
 
-- Many customers are using the Intune baseline recommendations as a starting point, and then customizing it to meet their IT and security demands. Microsoft’s Windows 10 RS5 **MDM Security Baseline** is the first baseline to release. This baseline is built as a generic infrastructure that allows customers to eventually import other security baselines based on CIS, NIST, and other standards. Currently, it's available for Windows and will eventually include iOS and Android.
+- Számos ügyfél kiindulási pontként használja az Intune alapkonfigurációjának javaslatait, majd testreszabja azt az informatikai és biztonsági igények kielégítése érdekében. A Microsoft Windows 10-es RS5 **Mdm biztonsági** alapkonfigurációja a kiadás első alapterve. Ez az alapkonfiguráció általános infrastruktúraként készült, amely lehetővé teszi, hogy az ügyfelek később más biztonsági alapterveket is importálnak a CIS, a NIST és más szabványok alapján. Jelenleg a Windowshoz érhető el, és végül az iOS és az Android rendszerre is kiterjed.
 
-- Migrating from on-premises Active Directory group policies to a pure cloud solution using Azure Active Directory (AD) with Microsoft Intune is a journey. To help, there are group policy templates included in the [Security Compliance Toolkit](https://docs.microsoft.com/windows/security/threat-protection/security-compliance-toolkit-10) that can help manage hybrid AD and Azure AD-joined devices. These devices can get MDM settings from the cloud (Intune) and group policy settings from on-premises domain controllers as needed.
+- Áttelepítés a helyszíni Active Directory csoportházirendből egy tiszta felhőalapú megoldásba Azure Active Directory (AD) használatával, Microsoft Intune egy utazás. A [biztonsági megfelelőségi eszközkészlet](https://docs.microsoft.com/windows/security/threat-protection/security-compliance-toolkit-10) olyan csoportházirend-sablonokat is tartalmaz, amelyek segíthetnek a hibrid ad és az Azure ad-hez csatlakoztatott eszközök kezelésében. Ezek az eszközök igény szerint lekérhetik a felhő (Intune) és a csoportházirend-beállítások MDM beállításait a helyszíni tartományvezérlőkön.
 
 ## <a name="next-steps"></a>További lépések
 
-- View the settings in the latest versions of the available baselines:
-  - [MDM security baseline](security-baseline-settings-mdm-all.md)
-  - [Microsoft Defender ATP baseline](security-baseline-settings-defender-atp.md)
+- Tekintse meg a beállításokat az elérhető alaptervek legújabb verzióiban:
+  - [MDM biztonsági alapterv](security-baseline-settings-mdm-all.md)
+  - [A Microsoft Defender ATP alapterve](security-baseline-settings-defender-atp.md)
 
-- Check the status and monitor the [baseline and profile](security-baselines-monitor.md)
+- Ellenőrizze az állapotot, és figyelje meg az [alaptervet és a profilt](security-baselines-monitor.md)

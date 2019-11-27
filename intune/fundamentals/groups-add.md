@@ -103,7 +103,7 @@ A szervezet alapvető megfelelőségi követelményeinek létrehozásához létr
 
 A konfigurációs profilokkal kapcsolatos ajánlások és útmutatás: [házirendek társítása felhasználói csoportokhoz vagy](../configuration/device-profile-assign.md#user-groups-vs-device-groups) eszközcsoport- [javaslatokhoz](../configuration/device-profile-create.md#recommendations).
 
-## <a name="see-also"></a>Lásd még:
+## <a name="see-also"></a>Lásd még
 
 - [Szerepköralapú hozzáférés-vezérlés (RBAC) Microsoft Intune](role-based-access-control.md)
 - [Az erőforrásokhoz való hozzáférés kezelése az Azure AD-csoportokkal](https://docs.microsoft.com/azure/active-directory/active-directory-manage-groups)

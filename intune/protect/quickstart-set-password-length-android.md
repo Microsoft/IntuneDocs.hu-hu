@@ -1,7 +1,7 @@
 ---
-title: Quickstart - Password compliance policy for Android devices
+title: Gyors útmutató – jelszó-megfelelőségi szabályzat Android-eszközökhöz
 titleSuffix: Microsoft Intune
-description: In this quickstart, you will use Microsoft Intune to set the length of the password required for Android devices.
+description: Ebben a rövid útmutatóban az Android-eszközökhöz szükséges jelszó hosszának beállításához Microsoft Intune fog használni.
 keywords: ''
 author: Erikre
 ms.author: erikre
@@ -27,46 +27,46 @@ ms.locfileid: "74409789"
 ---
 # <a name="quickstart-create-a-password-compliance-policy-for-android-devices"></a>Rövid útmutató: Jelszó-megfelelőségi szabályzat létrehozása Android rendszerű eszközökhöz
 
-In this quickstart, you'll use Microsoft Intune to require your workforce's Android users to enter a password of a specific length before access is granted to information on their Android devices.
+Ebben a rövid útmutatóban a Microsoft Intune segítségével megkövetelheti a munkaerő Android-felhasználóinak, hogy egy adott hosszúságú jelszót adjanak meg, mielőtt az Android-eszközökön lévő információkhoz hozzáférjenek.
 
-Az Intune-eszközmegfelelőségi szabályzatokkal megszabhatja az eszközök megfelelőségéhez kötelezően szükséges szabályokat és beállításokat. You can use compliance policies with Conditional Access to allow or block access to company resources. Emellett lekérhet eszközjelentéseket, és különböző műveleteket hajthat végre meg nem felelés esetén.
+Az Intune-eszközmegfelelőségi szabályzatokkal megszabhatja az eszközök megfelelőségéhez kötelezően szükséges szabályokat és beállításokat. A megfelelőségi szabályzatokat feltételes hozzáféréssel használhatja a vállalati erőforrásokhoz való hozzáférés engedélyezéséhez vagy letiltásához. Emellett lekérhet eszközjelentéseket, és különböző műveleteket hajthat végre meg nem felelés esetén.
 
 > [!IMPORTANT]
 > Az alkalmazottak tartalmainak védelme érdekében a jelszóbeállítások mellett egyéb rendszerbiztonsági beállításokat használatát is érdemes fontolóra venni. További információkért tekintse meg a [rendszerbiztonsági beállításokat](compliance-policy-create-android-for-work.md) ismertető cikket.
 
-Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon ingyenes próbafiókot](../fundamentals/free-trial-sign-up.md).
+Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon egy ingyenes próbafiókkal](../fundamentals/free-trial-sign-up.md).
 
 ## <a name="sign-in-to-intune"></a>Bejelentkezés az Intune-ba
 
-Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431) as a [Global administrator](../fundamentals/users-add.md#types-of-administrators) or an Intune [Service administrator](../fundamentals/users-add.md#types-of-administrators).
+Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központba](https://go.microsoft.com/fwlink/?linkid=2109431) [globális rendszergazdaként](../fundamentals/users-add.md#types-of-administrators) vagy Intune [szolgáltatás-rendszergazdaként](../fundamentals/users-add.md#types-of-administrators).
 
 ## <a name="create-a-device-compliance-policy"></a>Eszközmegfelelőségi szabályzat létrehozása
 
-Create a device compliance policy to require your workforce's Android users to enter a password of a specific length before access is granted to information on their Android devices.
+Hozzon létre egy eszköz-megfelelőségi szabályzatot, amely megköveteli, hogy a munkaerő Android-felhasználói egy adott hosszúságú jelszót adjanak meg, mielőtt az Android-eszközökön lévő információkhoz hozzáférjenek.
 
-1. In Intune, select **Devices** > **Compliance Policies** > **Create Policy**.
+1. Az Intune-ban válassza az **eszközök** > **megfelelőségi szabályzatok** > **házirend létrehozása**lehetőséget.
 
 2. A **Név** mezőben adja meg az **Android compliance** (Android-megfelelőség) nevet. Egy **leírást** is adjon meg.
 
-3. For **Platform**, select **Android Enterprise**.
+3. A **platform**területen válassza az **Android Enterprise**lehetőséget.
 
-4. For **Profile type**, select **Work profile**.
+4. A **Profil típusa**beállításnál válassza a **munkahelyi profil**lehetőséget.
 
 5. Kattintson a **Beállítások** > **Rendszerbiztonság** elemre az Android **Rendszerbiztonság** paneljének megjelenítéséhez.
 
 6. A **Jelszó szükséges a mobileszközök feloldásához** elemnél válassza a **Kötelező** lehetőséget.
 
-7. For **Required password type**, select **At least numeric**.
+7. A **kötelező jelszó típusa**mezőben válasszon ki **legalább numerikus**értéket.
 
-8. For **Minimum password length**, enter **6**.
+8. A **jelszó minimális hosszához**írja be a **6**értéket.
 
-    ![Képernyőkép csoport létrehozásáról a Microsoft Intune-ban](./media/quickstart-set-password-length-android/quickstart-set-password-length-android-01.png)
+    ![Képernyőkép egy csoport létrehozásáról a Microsoft Intune-ban](./media/quickstart-set-password-length-android/quickstart-set-password-length-android-01.png)
 
-9. When done, select **OK** > **OK** > **Create** to create the policy.
+9. Ha elkészült, kattintson az **OK gombra** >  > **Létrehozás** **gombra** a szabályzat létrehozásához.
 
-When you've successfully created the policy, it appears in your list of device complice policies.
+Ha sikeresen létrehozta a szabályzatot, az megjelenik az eszköz Complice szabályzatok listájában.
 
-## <a name="clean-up-resources"></a>Erőforrások eltávolítása
+## <a name="clean-up-resources"></a>Az erőforrások eltávolítása
 
 Ha többé nincs szükség a szabályzatra, törölje. Ehhez jelölje ki a megfelelőségi szabályzatot, és kattintson a **Törlés** gombra.
 

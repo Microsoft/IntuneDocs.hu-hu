@@ -1,6 +1,6 @@
 ---
-title: Create device compliance policies in Microsoft Intune - Azure | Microsoft Docs
-description: Create device compliance policies, overview of status and severity levels, using the InGracePeriod status, working with Conditional Access, handling devices without an assigned policy, and the differences in compliance in the Azure portal and classic portal in Microsoft Intune
+title: Eszköz megfelelőségi szabályzatok létrehozása a Microsoft Intuneban – Azure | Microsoft Docs
+description: Eszköz megfelelőségi szabályzatok létrehozása, az állapot és a súlyossági szintek áttekintése, a türelmi időszakban állapota, a feltételes hozzáférés használata, a hozzárendelt házirend nélküli eszközök kezelése, valamint a Azure Portal és a klasszikus portál megfelelőségének eltérései Microsoft Intune
 keywords: ''
 author: brenduns
 ms.author: brenduns
@@ -23,56 +23,56 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 11/19/2019
 ms.locfileid: "74188265"
 ---
-# <a name="create-a-compliance-policy-in-microsoft-intune"></a>Create a compliance policy in Microsoft Intune
+# <a name="create-a-compliance-policy-in-microsoft-intune"></a>Megfelelőségi szabályzat létrehozása Microsoft Intune
 
-Az eszközmegfelelőségi szabályzatok használata kiemelten fontos, ha az Intune-t a vállalat erőforrásainak védelmére kívánja használni. In Intune, you can create rules and settings that devices must meet to be considered compliant, such as a minimum OS version. If the device isn't compliant, you can then block access to data and resources using [Conditional Access](conditional-access.md).
+Az eszközmegfelelőségi szabályzatok használata kiemelten fontos, ha az Intune-t a vállalat erőforrásainak védelmére kívánja használni. Az Intune-ban létrehozhat olyan szabályokat és beállításokat, amelyeknek az eszközöknek meg kell felelniük a megfelelőnek, például a minimális operációsrendszer-verziónak. Ha az eszköz nem megfelelő, a [feltételes hozzáférés](conditional-access.md)használatával letilthatja az adatelérést és az erőforrásokat.
 
-You can also take actions for non-compliance, such as sending a notification email to the user. For an overview of what compliance policies do, and how they're used, see [get started with device compliance](device-compliance-get-started.md).
+A nem megfelelőséggel kapcsolatos műveleteket is végrehajthat, például értesítő e-mailt küldhet a felhasználónak. A megfelelőségi szabályzatok végrehajtásának és használatuk módjának áttekintését lásd: [az eszközök megfelelőségének megkezdése](device-compliance-get-started.md).
 
 Ez a cikk:
 
-- Lists the prerequisites and steps to create a compliancy policy.
-- Shows you how to assign the policy to your user and device groups.
-- Describes additional features, including scope tags to "filter" your policies, and steps you can take on devices that aren't compliant.
-- Lists the check-in refresh cycle times when devices receive policy updates.
+- Felsorolja a kompatibilitás szabályzat létrehozásához szükséges előfeltételeket és lépéseket.
+- Bemutatja, hogyan rendelheti hozzá a szabályzatot a felhasználókhoz és az eszközök csoportjaihoz.
+- A további szolgáltatásokat, például a hatóköri címkéket a szabályzatok szűrésére, valamint a nem megfelelő eszközökre vonatkozó lépéseket ismerteti.
+- Felsorolja a beléptetési frissítési ciklus időpontját, amikor az eszközök házirend-frissítéseket fogadnak.
 
 ## <a name="before-you-begin"></a>Előkészületek
 
-To use device compliance policies, be sure you:
+Az eszközök megfelelőségi házirendjeinek használatához győződjön meg róla, hogy:
 
 - Használja az alábbi előfizetéseket:
 
   - Intune
-  - If you use Conditional Access, then you need Azure Active Directory (AD) Premium edition. [Azure Active Directory pricing](https://azure.microsoft.com/pricing/details/active-directory/) lists what you get with the different editions. Intune compliance doesn't require Azure AD.
+  - Ha feltételes hozzáférést használ, akkor Azure Active Directory (AD) Premium kiadásra van szüksége. A [Azure Active Directory díjszabása](https://azure.microsoft.com/pricing/details/active-directory/) felsorolja, hogy mit kap a különböző kiadásokban. Az Intune-megfelelőség nem igényli az Azure AD-t.
 
 - Használjon támogatott platformot:
 
-  - Android device administrator
+  - Android-eszköz rendszergazdája
   - Vállalati Android
   - iOS
   - macOS
   - Windows 10
-  - Windows 8.1
-  - WVPN-profilokdows Phone 8.1
+  - Windows 8.1
+  - Windows Phone 8.1
 
-- Enroll devices in Intune (required to see the compliance status)
+- Eszközök regisztrálása az Intune-ban (a megfelelőségi állapot megtekintéséhez szükséges)
 
-- Enroll devices to one user, or enroll without a primary user. Devices enrolled to multiple users aren't supported.
+- Eszközök regisztrálása egy felhasználónak, vagy elsődleges felhasználó nélkül regisztrálhat. A több felhasználóhoz regisztrált eszközök nem támogatottak.
 
-## <a name="create-the-policy"></a>Create the policy
+## <a name="create-the-policy"></a>A szabályzat létrehozása
 
-1. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431).
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Select **Devices** > **Compliance policies** > **Create Policy**.
+2. Válassza az **eszközök** > **megfelelőségi szabályzatok** > **házirend létrehozása**lehetőséget.
 
-3. Specify the following properties:
+3. A következő tulajdonságokat kell megadnia:
 
-   - **Name**: Enter a descriptive name for the policy. Name your policies so you can easily identify them later. For example, a good policy name is **Mark iOS jailbroken devices as not compliant**.
+   - **Név**: adjon meg egy leíró nevet a szabályzatnak. Nevezze el a szabályzatokat, hogy később könnyebben azonosítható legyen. A megfelelő szabályzat neve például **nem megfelelőként jelöli**meg az iOS-es feltört eszközöket.
 
-   - **Description**: Enter a description for the policy. A beállítás használata nem kötelező, de ajánlott.
+   - **Leírás**: adja meg a szabályzat leírását. A beállítás használata nem kötelező, de ajánlott.
 
-   - **Platform**: Choose the platform of your devices. A választható lehetőségek:
-     - **Android device administrator**
+   - **Platform**: válassza ki az eszközök platformját. A választható lehetőségek:
+     - **Android-eszköz rendszergazdája**
      - **Android Enterprise**
      - **iOS/iPadOS**
      - **macOS**
@@ -80,51 +80,51 @@ To use device compliance policies, be sure you:
      - **Windows 8.1 és újabb verziók**
      - **Windows 10 és újabb**
 
-     For *Android Enterprise*, you must then select a **Profile type**:
-     - **Device owner**
-     - **Work Profile**
+     Az *Android Enterprise*esetében ki kell választania egy **profil típusát**:
+     - **Eszköz tulajdonosa**
+     - **Munkahelyi profil**
 
-   - **Settings**: The following articles list and describe the settings for each platform:
-     - [Android device administrator](compliance-policy-create-android.md)
+   - **Beállítások**: az alábbi cikkek felsorolják és leírják az egyes platformok beállításait:
+     - [Android-eszköz rendszergazdája](compliance-policy-create-android.md)
      - [Android Enterprise](compliance-policy-create-android-for-work.md)
      - [iOS/iPadOS](compliance-policy-create-ios.md)
      - [macOS](compliance-policy-create-mac-os.md)
-     - [Windows Phone 8.1, Windows 8.1 and later](compliance-policy-create-windows-8-1.md)
+     - [Windows Phone-telefon 8,1, Windows 8,1 és újabb verziók](compliance-policy-create-windows-8-1.md)
      - [Windows 10 és újabb](compliance-policy-create-windows.md)  
 
-   - **Locations** *(Android device administrator)* : In your policy, you can force compliance by the location of the device. Choose from existing locations. Még nem rendelkezik hellyel? [Use Locations (network fence)](use-network-locations.md) in Intune provides some guidance.  
+   - **Helyek** *(Android-eszköz rendszergazdája)* : a szabályzatban az eszköz helye alapján kényszerítheti a megfelelőséget. Válasszon a meglévő helyekről. Még nem rendelkezik hellyel? Az Intune-ban a [webhelyek (hálózati kerítés) használatával](use-network-locations.md) biztosítunk útmutatást.  
 
-   - **Actions for noncompliance**: For devices that don't meet your compliance policies, you can add a sequence of actions to apply automatically. Módosíthatja az eszköz nem megfelelőként való megjelölésének ütemezését, megadhatja például, hogy egy nap elteltével jelölje a rendszer nem megfelelőnek az eszközt. Hozzáadhat egy második műveletet is, amely e-mailt küld a felhasználónak, ha az eszköz nem megfelelő.
+   - Nem **megfelelőségi műveletek**: olyan eszközök esetében, amelyek nem felelnek meg a megfelelőségi szabályzatoknak, hozzáadhat egy műveletsort az automatikus alkalmazáshoz. Módosíthatja az eszköz nem megfelelőként való megjelölésének ütemezését, megadhatja például, hogy egy nap elteltével. Hozzáadhat egy második műveletet is, amely e-mailt küld a felhasználónak, ha az eszköz nem megfelelő.
 
-     A [Műveletek hozzáadása nem megfelelő eszközökhöz](actions-for-noncompliance.md) további információval szolgál, többek között arról, hogyan hozhat létre értesítési e-mailt a felhasználók számára.
+     A [Műveletek hozzáadása nem megfelelő eszközökhöz](actions-for-noncompliance.md) további információval szolgál, többek között értesítési e-mailt hozhat létre a felhasználók számára.
 
      Például, a Helyek funkciót használja, és hozzáad egy helyet egy megfelelőségi szabályzatban. Az alapértelmezett meg nem felelési művelet alkalmazandó, ha kiválaszt legalább egy helyet. Ha az eszköz nem csatlakozik a megadott helyekhez, akkor azonnal nem megfelelőnek számít. Biztosíthat a felhasználóknak egy türelmi időszakot, például egy napot.
 
-   - **Scope (Tags)** : Scope tags are a great way to assign and filter policies to specific groups, such as Sales, HR, All US-NC employees, and so on. After you add the settings, you can also add a scope tag to your compliance policies. [Use scope tags to filter policies](../fundamentals/scope-tags.md) is a good resource.
+   - **Hatókör (címkék)** : a hatókör-címkék nagyszerű lehetőséget kapnak házirendek hozzárendelésére és szűrésére meghatározott csoportokra, például értékesítésre, HR-re, az összes US-NC-alkalmazottakra stb. A beállítások hozzáadása után hozzá lehet adni egy hatókör-címkét a megfelelőségi szabályzatokhoz. [Hatókör-címkék használata a házirendek szűréséhez](../fundamentals/scope-tags.md) jó erőforrás.
 
-4. When finished, select **OK** > **Create** to save your changes. The policy is created, and shown in the list. Next, assign the policy to your groups.
+4. Ha elkészült, válassza **az OK** > **Létrehozás** lehetőséget a módosítások mentéséhez. Ekkor létrejön a szabályzat, és megjelenik a listában. Ezután rendelje hozzá a szabályzatot a csoportokhoz.
 
 ## <a name="assign-the-policy"></a>A szabályzat hozzárendelése
 
-Once a policy is created, the next step is to assign the policy to your groups:
+A szabályzat létrehozása után a következő lépés a szabályzat társítása a csoportokhoz:
 
-1. Choose a policy you created. Existing policies are in **Devices** > **Compliance policies** > **Policies**.
+1. Válassza ki a létrehozott szabályzatot. A meglévő szabályzatok az **eszközök** > **megfelelőségi szabályzatok** > **szabályzatok**.
 
-2. Select the *policy* > **Assignments**. Belefoglalhat vagy kizárhat Azure Active Directory (AD) biztonsági csoportokat.
+2. Válassza ki a *szabályzatot* > **hozzárendeléseket**. Belefoglalhat vagy kizárhat Azure Active Directory (AD) biztonsági csoportokat.
 
-3. Azure AD-biztonsági csoportjait a **Kijelölt csoportok** lehetőséget választva tekintheti meg. Select the groups you want this policy to apply > Choose **Save** to deploy the policy.
+3. Azure AD-biztonsági csoportjait a **Kijelölt csoportok** lehetőséget választva tekintheti meg. Válassza ki azokat a csoportokat, amelyekre alkalmazni szeretné a szabályzatot > válassza a **Mentés** lehetőséget a szabályzat telepítéséhez.
 
-The users or devices targeted by your policy are evaluated for compliance when they check-in with Intune.
+A szabályzat által megadott felhasználók vagy eszközök megfelelőségét a rendszer az Intune-ba való bejelentkezéskor értékeli.
 
-### <a name="evaluate-how-many-users-are-targeted"></a>Evaluate how many users are targeted
+### <a name="evaluate-how-many-users-are-targeted"></a>Annak kiértékelése, hogy hány felhasználó van megcélozva
 
-When you assign the policy, you can also **Evaluate** how many users are affected. This feature calculates users; it doesn't calculate devices.
+A szabályzat hozzárendelésével azt is **kiértékelheti** , hogy hány felhasználót érint a rendszer. Ez a szolgáltatás kiszámítja a felhasználókat; nem számítja ki az eszközöket.
 
-1. In Intune, select **Devices** > **Compliance policies** > **Policies**.
+1. Az Intune-ban válassza az **eszközök** > **megfelelőségi szabályzatok** > **szabályzatok**lehetőséget.
 
-2. Select a *policy* > **Assignments** > **Evaluate**. A message shows you how many users are targeted by this policy.
+2. Válasszon ki egy *házirendet* > **hozzárendelések** > **kiértékelése**. Egy üzenet mutatja, hogy a szabályzat hány felhasználót céloz meg.
 
-If the **Evaluate** button is grayed out, make sure the policy is assigned to one or more groups.
+Ha a **kiértékelés** gomb szürkén jelenik meg, győződjön meg arról, hogy a szabályzat hozzá van rendelve egy vagy több csoporthoz.
 
 <!-- ## Actions for noncompliance
 
@@ -139,11 +139,11 @@ For example, you're using the Locations feature, and add a location in a complia
 Scope tags are a great way to assign and filter policies to specific groups, such as Sales, HR, All US-NC employees, and so on. After you add the settings, you can also add a scope tag to your compliance policies. [Use scope tags to filter policies](../fundamentals/scope-tags.md) is a good resource.
 -->
 
-## <a name="refresh-cycle-times"></a>Refresh cycle times
+## <a name="refresh-cycle-times"></a>A ciklus idejének frissítése
 
-Intune uses different refresh cycles to check for updates to compliance policies. If the device recently enrolled, the check-in runs more frequently. [Policy and profile refresh cycles](../configuration/device-profile-troubleshoot.md#how-long-does-it-take-for-devices-to-get-a-policy-profile-or-app-after-they-are-assigned) lists the estimated refresh times.
+Az Intune különböző frissítési ciklusokat használ a megfelelőségi szabályzatok frissítéseinek kereséséhez. Ha az eszköz nemrég lett regisztrálva, a bejelentkezés gyakrabban fut. A [házirend-és profil-frissítési ciklusok](../configuration/device-profile-troubleshoot.md#how-long-does-it-take-for-devices-to-get-a-policy-profile-or-app-after-they-are-assigned) a becsült frissítési időpontokat listázza.
 
-At any time, users can open the Company Portal app, and sync the device to immediately check for policy updates.
+A felhasználók bármikor megnyithatják a Céges portál alkalmazást, és az eszköz szinkronizálásával azonnal ellenőrizhetők a házirendek frissítései.
 
 ### <a name="assign-an-ingraceperiod-status"></a>Türelmi időszakban állapot hozzárendelése
 
@@ -151,9 +151,9 @@ A megfelelőségi szabályzatok Türelmi időszakban állapota egy érték. Ezt 
 
 Konkrétan, ha egy eszköz Nem megfelelő állapotú egy hozzárendelt megfelelőségi szabályzatra vonatkozóan, illetve:
 
-- The device has no grace period assigned to it, then the assigned value for the compliance policy is NonCompliant
-- The device has a grace period that's expired, then the assigned value for the compliance policy is NonCompliant
-- The device has a grace period that's in the future, then the assigned value for the compliance policy is InGracePeriod
+- Az eszközhöz nincs hozzárendelve türelmi időszak, a megfelelőségi szabályzathoz hozzárendelt érték nem megfelelő.
+- Az eszköz lejárt türelmi időszakot tartalmaz, a megfelelőségi szabályzathoz hozzárendelt érték nem megfelelő.
+- Az eszköz a jövőben türelmi időszakot tartalmaz, a megfelelőségi szabályzathoz hozzárendelt érték pedig türelmi időszakban
 
 Az alábbi táblázat összefoglalja ezt részletesen:
 
@@ -173,15 +173,15 @@ Ha egy eszközhöz több megfelelőségi szabályzat tartozik, és az eszköz me
 |---------|---------|
 |Ismeretlen     |1|
 |Nem alkalmazható     |2|
-|Compliant (Megfelelő)|3|
+|Megfelelő|3|
 |Türelmi időszakban|4|
 |Nem megfelelő|5|
 |Hiba|6|
 
 Ha egy eszköz több megfelelőségi szabályzattal rendelkezik, akkor az eszközhöz hozzárendelt összes szabályzaté közül a legmagasabb súlyossági szintet rendeli hozzá a rendszer az eszközhöz.
 
-For example, a device has three compliance policies assigned to it: one Unknown status (severity = 1), one Compliant status (severity = 3), and one InGracePeriod status (severity = 4). The InGracePeriod status has the highest severity level. So, all three policies have the InGracePeriod compliance status.
+Egy eszközhöz például három megfelelőségi szabályzat van rendelve: egy ismeretlen állapot (súlyosság = 1), egy megfelelő állapot (súlyosság = 3) és egy türelmi időszakban állapot (súlyosság = 4). A türelmi időszakban állapota a legmagasabb súlyossági szinttel rendelkezik. Tehát mindhárom házirend rendelkezik a türelmi időszakban megfelelőségi állapotával.
 
 ## <a name="next-steps"></a>További lépések
 
-[Monitor your policies](compliance-policy-monitor.md).
+[A szabályzatok figyelése](compliance-policy-monitor.md).

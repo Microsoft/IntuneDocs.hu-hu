@@ -1,7 +1,7 @@
 ---
 title: 'Rövid útmutató: Értesítések küldése a nem megfelelő eszközökre'
 titleSuffix: Microsoft Intune
-description: In this quickstart, you use Microsoft Intune to send email notifications to noncompliant devices.
+description: Ebben a rövid útmutatóban a Microsoft Intune használatával küld e-mail-értesítéseket a nem megfelelő eszközökre.
 keywords: ''
 author: Erikre
 ms.author: erikre
@@ -27,58 +27,58 @@ ms.locfileid: "74410261"
 ---
 # <a name="quickstart-send-notifications-to-noncompliant-devices"></a>Rövid útmutató: Értesítések küldése a nem megfelelő eszközökre
 
-In this quickstart, you'll use Microsoft Intune to send an email notification to the members of your workforce that have noncompliant devices.
+Ebben a rövid útmutatóban a Microsoft Intune segítségével küldhet e-mailes értesítést a munkaerőnek nem megfelelő eszközökkel rendelkező tagjainak.
 
-Alapértelmezés szerint az Intune a nem megfelelő eszköz észlelése után azonnal nem megfelelőként jelöli meg azt. Azure Active Directory (Azure AD) [Conditional Access](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal) then blocks the device. When a device isn't compliant, Intune allows you to add actions for noncompliance, which gives you flexibility to decide what to do. Például türelmi időszakot adhat az ügyfeleknek a megfelelőséghez mielőtt letiltaná az eszközöket.
+Alapértelmezés szerint az Intune a nem megfelelő eszköz észlelése után azonnal nem megfelelőként jelöli meg azt. Az Azure Active Directory (Azure AD) [feltételes hozzáférése](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal) ezt követően blokkolja az eszközt. Ha egy eszköz nem felel meg az előírásoknak, az Intune lehetővé teszi a meg nem felelés esetén végrehajtandó műveletek hozzáadását, ami rugalmasságot biztosít a teendők eldöntéséhez. Például türelmi időszakot adhat az ügyfeleknek a megfelelőséghez mielőtt letiltaná az eszközöket.
 
-One action to take when a device doesn't meet compliance is to send email to the devices user. You can also customize an email notification before sending it. Így pontosan megadhatja az e-mail címzettjeit és tárgyát, az üzenet szövegét, a céges emblémát és a kapcsolattartási adatokat. Intune also includes details about the noncompliant device in the email notification.
+Egy művelet, amely akkor végezhető el, ha egy eszköz nem felel meg a megfelelőségnek, hogy e-mailt küldjön az eszközök felhasználójának. Az e-mailes értesítéseket a küldés előtt testre is szabhatja. Így pontosan megadhatja az e-mail címzettjeit és tárgyát, az üzenet szövegét, a céges emblémát és a kapcsolattartási adatokat. Az Intune a nem megfelelő eszközről is tartalmaz adatokat az e-mailes értesítésben.
 
-Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon ingyenes próbafiókot](../fundamentals/free-trial-sign-up.md).
+Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon egy ingyenes próbafiókkal](../fundamentals/free-trial-sign-up.md).
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-When using device compliance policies to block devices from corporate resources, Azure AD Conditional Access must be set up. If you've completed the [Create a device compliance policy](quickstart-set-password-length-android.md) quickstart, you're using Azure Active Directory. For more information about Azure AD, see [Conditional Access in Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal) and [common ways to use Conditional Access with Intune](../protect/conditional-access-intune-common-ways-use.md).
+Ha eszköz-megfelelőségi szabályzatok segítségével tiltja le az eszközöket a vállalati erőforrásokból, be kell állítania az Azure AD feltételes hozzáférését. Ha végrehajtotta az [eszköz megfelelőségi szabályzatának létrehozása](quickstart-set-password-length-android.md) című rövid útmutatót, Azure Active Directory használ. Az Azure AD-vel kapcsolatos további információkért tekintse meg [a feltételes hozzáférés Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal) és a [feltételes hozzáférés az Intune-nal való használatának gyakori módjai](../protect/conditional-access-intune-common-ways-use.md)című témakört.
 
 ## <a name="sign-in-to-intune"></a>Bejelentkezés az Intune-ba
 
-Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431) as a [Global administrator](../fundamentals/users-add.md#types-of-administrators) or an Intune [Service administrator](../fundamentals/users-add.md#types-of-administrators). If you've created an Intune Trial subscription, the account you created the subscription with is the Global administrator.
+Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központba](https://go.microsoft.com/fwlink/?linkid=2109431) [globális rendszergazdaként](../fundamentals/users-add.md#types-of-administrators) vagy Intune [szolgáltatás-rendszergazdaként](../fundamentals/users-add.md#types-of-administrators). Ha létrehozott egy Intune próbaverziós előfizetést, akkor az előfizetést létrehozó fiók a globális rendszergazda.
 
 ## <a name="create-a-notification-message-template"></a>Értesítési üzenetsablon létrehozása
 
 Ha e-mailt szeretne küldeni a felhasználóknak, hozzon létre egy értesítési üzenetsablont. Ha egy eszköz nem megfelelő, a sablonban megadott adatok a felhasználóknak küldött e-mail tetején jelennek meg.
 
-1. In Intune, select **Devices** > **Compliance policies** > **Notifications** > **Create notification**.
-2. Adja meg az alábbi adatokat:
+1. Az Intune-ban válassza az **eszközök** > **megfelelőségi szabályzatok** > **értesítések** **Értesítés létrehozása** > .
+2. Adja meg a következő információkat:
 
    - **Név**: *Contoso rendszergazda*
    - **Tárgy**: *Eszközmegfelelőség*
-   - **Message**: *Your device is currently not meeting our organization's compliance requirements.*
+   - **Üzenet**: *az eszköz jelenleg nem felel meg a szervezet megfelelőségi követelményeinek.*
    - **E-mail fejléce – a cég emblémájának megjelenítése**: **Engedélyezze** a cég emblémájának megjelenítéséhez.
    - **E-mail fejléce – a cég nevének megjelenítése**: **Engedélyezze** a cég nevének megjelenítéséhez.
    - **E-mail lábléce – a kapcsolatfelvételi adatok megjelenítése**: **Engedélyezze** a cég kapcsolatfelvételi adataink megjelenítéséhez.
 
    ![Megfelelőségről szóló értesítési üzenetminta az Intune-ban](./media/quickstart-send-notification/quickstart-send-notification-01.png)
 
-3. Select **Next** and review your notification. Select **Create** and the notification message template is ready to use.
+3. Kattintson a **Tovább gombra** , és tekintse át az értesítést. Válassza a **Létrehozás** lehetőséget, és az értesítési üzenet sablonja készen áll a használatra.
 
    > [!NOTE]
    > A korábban létrehozott értesítési sablonokat szerkesztheti is.
 
-For details about setting your company name, company contact information, and company logo, see the following articles:
+A vállalat neve, a vállalati kapcsolattartási adatok és a vállalati embléma beállításával kapcsolatos részletekért tekintse meg a következő cikkeket:
 
-- [Company information and privacy statement](../apps/company-portal-app.md#company-information-and-privacy-statement)
-- [Support information](../apps/company-portal-app.md#support-information)
-- [Company identity branding customization](../apps/company-portal-app.md#company-identity-branding-customization).
+- [Vállalati információk és adatvédelmi nyilatkozat](../apps/company-portal-app.md#company-information-and-privacy-statement)
+- [Támogatási információk](../apps/company-portal-app.md#support-information)
+- A [vállalati identitás arculatának testreszabása](../apps/company-portal-app.md#company-identity-branding-customization).
 
 ## <a name="add-a-noncompliance-policy"></a>Nem megfelelőségi szabályzat hozzáadása
 
-Eszközmegfelelőségi szabályzat létrehozásakor az Intune automatikusan létrehoz egy meg nem felelés esetén végrehajtandó műveletet. Intune then marks devices as noncompliant when they fail to meet your compliance policy. Testreszabhatja, hogy az eszköz meddig maradjon nem megfelelőként megjelölve. További műveletet akkor vehet fel, ha megfelelőségi szabályzatot hoz létre, vagy frissít egy meglévő szabályzatot.
+Eszközmegfelelőségi szabályzat létrehozásakor az Intune automatikusan létrehoz egy meg nem felelés esetén végrehajtandó műveletet. Az Intune ezután nem megfelelőként jelöli meg az eszközöket, ha nem felelnek meg a megfelelőségi szabályzatnak. Testreszabhatja, hogy az eszköz meddig maradjon nem megfelelőként megjelölve. További műveletet akkor vehet fel, ha megfelelőségi szabályzatot hoz létre, vagy frissít egy meglévő szabályzatot.
 
 A következő lépésekkel létrehozhat egy megfelelőségi szabályzatot Windows 10-eszközökhöz.
 
-1. In Intune, select **Devices** > **Compliance Policies** > **Create Policy**.
+1. Az Intune-ban válassza az **eszközök** > **megfelelőségi szabályzatok** > **házirend létrehozása**lehetőséget.
 
-2. Adja meg az alábbi adatokat:
+2. Adja meg a következő információkat:
 
    - **Név**: *Windows 10-megfelelőség*
    - **Leírás**: *A Windows 10-re vonatkozó megfelelőségi szabályzat*
@@ -86,7 +86,7 @@ A következő lépésekkel létrehozhat egy megfelelőségi szabályzatot Window
 
 3. Kattintson a **Beállítások** > **Rendszerbiztonság** elemre a biztonsági beállítások megjelenítéséhez.
 
-4. Configure the following options:
+4. Adja meg az alábbi lehetőségeket:
 
    - A **Jelszó szükséges a mobileszközök feloldásához** elemnél válassza a **Kötelező** lehetőséget. Ez a beállítás határozza meg, hogy a felhasználók csak jelszó beírása után férhessenek-e hozzá a mobileszközeiken lévő információkhoz.
 
@@ -94,21 +94,21 @@ A következő lépésekkel létrehozhat egy megfelelőségi szabályzatot Window
 
    ![Rendszerbiztonsági beállítások új eszközmegfelelőségi szabályzathoz](./media/quickstart-send-notification/system-security-settings-01.png)
 
-5. Select **OK** > **OK** > **Create** to create your compliance policy.
+5. A megfelelőségi szabályzat létrehozásához kattintson **az OK** gombra >  > **Létrehozás** **gombra** .
 
 6. Válassza a **Tulajdonságok** > **Meg nem felelés esetén végrehajtandó műveletek** > **Hozzáadás**. lehetőséget.
 
 7. A **Művelet** legördülő menüben ellenőrizze, hogy az **E-mail küldése a végfelhasználóknak** lehetőség van kiválasztva.
 
-8. Select **Message template**,  the template you created earlier in this article, and then **Select** to select the message template.
+8. Válassza ki az **üzenőfal**elemet, a cikkben korábban létrehozott sablont, majd **válassza** ki az üzenet sablonját.
 
-9. Select **ADD** > **OK** > **Save** to save your changes.
+9. A módosítások mentéséhez kattintson a **hozzáadás** > ok > **Mentés** **gombra** .
 
 ## <a name="assign-the-policy"></a>A szabályzat hozzárendelése
 
-Megfelelőségi szabályzatot adott felhasználói csoportokhoz vagy minden felhasználóhoz hozzárendelhet. When Intune recognizes that a device is noncompliant, the user is notified that they must update their device to meet the compliance policy. Use the following steps to assign the policy.
+Megfelelőségi szabályzatot adott felhasználói csoportokhoz vagy minden felhasználóhoz hozzárendelhet. Ha az Intune felismeri, hogy az eszköz nem megfelelő, a felhasználó értesítést kap arról, hogy frissítenie kell az eszközét a megfelelőségi szabályzat teljesítéséhez. A szabályzat hozzárendeléséhez kövesse az alábbi lépéseket.
 
-1. In Intune go to **Devices** > **Compliance Policies** and select the **Windows 10 compliance** policy that you created earlier.
+1. Az Intune-ban lépjen az **eszközök** > **megfelelőségi házirendek** elemre, és válassza ki a korábban létrehozott **Windows 10-es megfelelőségi** szabályzatot.
 
 2. Válassza a **Hozzárendelések** lehetőséget.
 
@@ -119,7 +119,7 @@ Megfelelőségi szabályzatot adott felhasználói csoportokhoz vagy minden felh
 
 4. Kattintson a **Mentés**gombra.
 
-When you've successfully created and saved the policy, it will appear in the list of **Compliance policies - Policies**. A lista **Hozzárendelve** eleme **Igen** értékre van állítva.
+Amikor sikeresen létrehozta és mentette a szabályzatot, az megjelenik a **megfelelőségi szabályzatok**listájában. A lista **Hozzárendelve** eleme **Igen** értékre van állítva.
 
 ## <a name="next-steps"></a>További lépések
 

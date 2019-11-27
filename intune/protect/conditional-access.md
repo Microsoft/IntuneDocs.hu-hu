@@ -1,7 +1,7 @@
 ---
-title: Conditional Access with Microsoft Intune
+title: Feltételes hozzáférés Microsoft Intune
 titleSuffix: Microsoft Intune
-description: Learn how to define the conditions that users, devices, and apps must meet to access company resources in Microsoft Intune.
+description: Megtudhatja, hogyan határozhatja meg, hogy a felhasználók, eszközök és alkalmazások milyen feltételekkel férhetnek hozzá a vállalati erőforrásokhoz Microsoft Intuneban.
 keywords: ''
 author: brenduns
 ms.author: brenduns
@@ -24,43 +24,43 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 11/19/2019
 ms.locfileid: "74188279"
 ---
-# <a name="learn-about-conditional-access-and-intune"></a>Learn about Conditional Access and Intune
+# <a name="learn-about-conditional-access-and-intune"></a>Tudnivalók a feltételes hozzáférésről és az Intune-ról
 
-With Conditional Access, you can control the devices and apps that can connect to your email and company resources. 
+A feltételes hozzáférés segítségével szabályozhatja az e-mailekhez és a vállalati erőforrásokhoz való kapcsolódáshoz használható eszközöket és alkalmazásokat. 
 
-Enterprise Mobility + Security (EMS)  is not a standalone product. It's a solution that takes part on all services and products that are part of EMS. Conditional Access provides granular access control to keep your corporate data secure, while giving users an experience that allows them to do their best work from any device, and from any location.
+A Enterprise Mobility + Security (EMS) nem önálló termék. Ez egy olyan megoldás, amely az EMS részét képező összes szolgáltatáson és terméken részt vesz. A feltételes hozzáférés részletes hozzáférés-vezérlést biztosít a vállalati adatok biztonságának megőrzéséhez, miközben a felhasználók számára lehetővé teszi, hogy bármely eszközről és bármely helyről elvégezzék a legjobb munkát.
 
 Olyan feltételeket adhat meg, amelyek a vállalati adatokhoz való hozzáférést helyszín, eszköz, felhasználói állapot vagy az alkalmazás bizalmassági szintje alapján korlátozzák.
 
 > [!NOTE]
 > A feltételes hozzáférési funkciók kiterjednek az [Office 365-szolgáltatásokra](https://docs.microsoft.com/office365/enterprise/office-365-client-support-conditional-access) is.
 
-![Conditional Access diagram](./media/conditional-access/ca-diagram-1.png)
+![Feltételes hozzáférési diagram](./media/conditional-access/ca-diagram-1.png)
 
-## <a name="use-conditional-access-with-intune"></a>Use Conditional Access with Intune
+## <a name="use-conditional-access-with-intune"></a>Feltételes hozzáférés használata az Intune-nal
 
-Conditional Access is an Azure Active Directory capability that is included with an Azure Active Directory Premium license. Az Intune ezt a lehetőséget mobileszköz-megfelelőségi és mobilalkalmazás-felügyeleti megoldások hozzáadásával bővíti tovább. 
+A feltételes hozzáférés egy prémium szintű Azure Active Directory-licenc részét képező Azure Active Directory képesség. Az Intune ezt a lehetőséget mobileszköz-megfelelőségi és mobilalkalmazás-felügyeleti megoldások hozzáadásával bővíti tovább. 
 
-![Intune and Conditional Access when using EMS](./media/conditional-access/intune-with-ca-1.png)
+![Az Intune és a feltételes hozzáférés az EMS használatakor](./media/conditional-access/intune-with-ca-1.png)
 
-Ways to use Conditional Access with Intune:
+A feltételes hozzáférés Intune-nal való használatának módjai:
 
-- **Device-based Conditional Access**
+- **Eszköz alapú feltételes hozzáférés**
 
-  - Conditional Access for Exchange on-premises
+  - Feltételes hozzáférés a helyszíni Exchange-hez
 
-  - Conditional Access based on network access control
+  - A hálózati hozzáférés-vezérlésen alapuló feltételes hozzáférés
 
-  - Conditional Access based on device risk
+  - Az eszköz kockázatán alapuló feltételes hozzáférés
 
-  - Conditional Access for Windows PCs
+  - Feltételes hozzáférés Windows rendszerű számítógépekhez
 
     - Céges tulajdonú eszközök
 
-    - Saját eszközök használata (Bring Your Own Device, BYOD)
+    - Saját eszközök használata (BYOD)
 
-- **App-based Conditional Access**
+- **Alkalmazás-alapú feltételes hozzáférés**
 
 ## <a name="next-steps"></a>További lépések
 
-[Common ways to use Conditional Access with Intune](conditional-access-intune-common-ways-use.md)
+[A feltételes hozzáférés használatának gyakori módjai az Intune-nal](conditional-access-intune-common-ways-use.md)

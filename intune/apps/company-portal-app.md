@@ -62,7 +62,7 @@ Adja meg a vállalat támogatási információit, hogy az alkalmazottak számár
 |---|---|---|
 |**Kapcsolattartó neve** | 40 | Ez a név jelenik meg a **Súgó és támogatás** lapon. |
 |**Telefonszám** | 20 | Ez a telefonszám jelenik meg a **Súgó és támogatás** lapon, hogy az alkalmazottak kapcsolatba lépjenek Önnel a támogatási szolgálattal. |
-|**E-mail-cím**| 40 | Ez a kapcsolattartási e-mail a **Súgó és támogatás** oldalon jelenik meg. Meg kell adnia egy érvényes e-mail-címet a következő formátumban: `alias@domainname.com`. |
+|**E-mail cím**| 40 | Ez a kapcsolattartási e-mail a **Súgó és támogatás** oldalon jelenik meg. Meg kell adnia egy érvényes e-mail-címet a következő formátumban: `alias@domainname.com`. |
 |**Webhely neve**| 40 | Ez a név a támogatási webhely URL-címének rövid neveként jelenik meg. Ha a támogatási webhely URL-címét és a név nélküli nevet adja meg, akkor az IT-webhely a Céges portál **Súgó és támogatás** lapján jelenik meg. |
 |**Webhely URL-címe**| 150 | Ha rendelkezik saját felhasználóinak szánt támogatási webhellyel, ide írja be az URL-címét. Az URL-cím formátumának a következőnek kell lennie: `https://www.contoso.com`. Ha nem ad meg URL-címet, semmi nem jelenik meg a támogatási webhelyhez a Céges portál **Súgó és támogatás** lapján. |
 | **További információ**| 120 | Megjelenik a **Súgó és támogatás** oldalon. |

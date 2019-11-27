@@ -1,6 +1,6 @@
 ---
-title: Use Microsoft Defender ATP in Microsoft Intune - Azure | Microsoft Docs
-description: Use Microsoft Defender Advanced Threat Protection (Microsoft Defender ATP) with Intune, including setup and configuration, onboarding of your Intune devices with ATP, and then use a devices ATP risk assessment with your Intune device compliance and conditional access policies to protect network resources.
+title: A Microsoft Defender ATP használata a Microsoft Intune-Azure-ban | Microsoft Docs
+description: A Microsoft Defender komplex veszélyforrások elleni védelem (Microsoft Defender ATP) használata az Intune-nal, beleértve a telepítést és a konfigurálást, az Intune-eszközök előkészítését az ATP használatával, majd az Intune-nal való megfelelőség és a feltételes feltételek alapján hozzáférési szabályzatok a hálózati erőforrások megóvásához.
 keywords: ''
 author: brenduns
 ms.author: brenduns
@@ -23,62 +23,62 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74410214"
 ---
-# <a name="enforce-compliance-for-microsoft-defender-atp-with-conditional-access-in-intune"></a>Enforce compliance for Microsoft Defender ATP with Conditional Access in Intune
+# <a name="enforce-compliance-for-microsoft-defender-atp-with-conditional-access-in-intune"></a>A Microsoft Defender ATP megfelelőségének betartatása feltételes hozzáféréssel az Intune-ban
 
-You can integrate Microsoft Defender Advanced Threat Protection (Microsoft Defender ATP) with Microsoft Intune as a Mobile Threat Defense solution. Integration can help you prevent security breaches and limit the impact of breaches within an organization. Microsoft Defender ATP works with devices that run Windows 10 or later.
+A Microsoft Defender komplex veszélyforrások elleni védelem (Microsoft Defender ATP) integrálható a Microsoft Intune Mobile Threat Defense megoldással. Az integráció segítségével megakadályozható a biztonság megsértése, és korlátozható a szervezeten belüli szabálysértések hatása. A Microsoft Defender ATP a Windows 10 vagy újabb rendszert futtató eszközökön működik.
 
-To be successful, you use the following configurations in concert:
+A sikeres végrehajtáshoz használja a következő konfigurációkat a koncerten:
 
-- **Establish a service-to-service connection between Intune and Microsoft Defender ATP**. This connection lets Microsoft Defender ATP collect data about machine risk from Windows 10 devices you manage with Intune.
-- **Use a device configuration profile to onboard devices with Microsoft Defender ATP**. You onboard devices to configure them to communicate with Microsoft Defender ATP and to provide data that helps assess their risk level.
-- **Use a device compliance policy to set the level of risk you want to allow**. Risk levels are reported by Microsoft Defender ATP. Devices that exceed the allowed risk level are identified as non-compliant.
-- **Use a conditional access policy** to block users from accessing corporate resources from devices that are non-compliant.
+- **Szolgáltatások közötti kapcsolat létesítése az Intune és a Microsoft DEFENDER ATP között**. Ez a szolgáltatás lehetővé teszi, hogy a Microsoft Defender ATP adatokat gyűjtsön a számítógép kockázatáról az Intune-nal felügyelt Windows 10-es eszközökről.
+- **Eszköz-konfigurációs profil használata az eszközök bevezetéséhez a Microsoft DEFENDER ATP használatával**. A Microsoft Defender ATP szolgáltatással való kommunikációhoz és a kockázati szint felmérését segítő információk biztosításához az eszközök bevezetésével konfigurálhatja azokat.
+- **Az eszköz megfelelőségi szabályzatával állíthatja be az engedélyezni kívánt kockázati szintet**. A kockázati szinteket a Microsoft Defender ATP szolgáltatja. Azok az eszközök, amelyek túllépik az engedélyezett kockázati szintet, nem megfelelőként vannak azonosítva.
+- **Feltételes hozzáférési szabályzattal** megakadályozhatja, hogy a felhasználók hozzáférjenek a vállalati erőforrásokhoz a nem megfelelő eszközökről.
 
-When you integrate Intune with Microsoft Defender ATP, you can take advantage of ATPs Threat & Vulnerability Management (TVM) and [use Intune to remediate endpoint weakness identified by TVM](atp-manage-vulnerabilities.md).
+Ha integrálja az Intune-t a Microsoft Defender ATP szolgáltatással, kihasználhatja a ATPs veszélyforrások elleni & sebezhetőségek kezelését (TVM), és az Intune-nal javíthatja a [TVM által azonosított végponti gyengeséget](atp-manage-vulnerabilities.md).
 
-## <a name="example-of-using-microsoft-defender-atp-with-intune"></a>Example of using Microsoft Defender ATP with Intune
+## <a name="example-of-using-microsoft-defender-atp-with-intune"></a>Példa a Microsoft Defender ATP használatára az Intune-nal
 
-The following example helps explain how these solutions work together to help protect your organization. For this example, Microsoft Defender ATP and Intune are already integrated.
+A következő példa segít megmagyarázni, hogyan működnek együtt a megoldások a szervezet védelmének elősegítése érdekében. Ebben a példában a Microsoft Defender ATP és az Intune már integrálva van.
 
-Consider an event where someone sends a Word attachment with embedded malicious code to a user within your organization.
+Vegye fontolóra egy olyan eseményt, amelyben valaki beágyazott kártékony kóddal rendelkező Word-mellékletet küld a szervezeten belüli felhasználó számára.
 
 - A felhasználó megnyitja a mellékletet, és engedélyezi annak tartalmát.
 - Megemelt jogosultsági szintű támadás kezdődik, és a támadó egy távoli számítógépről rendszergazdai jogosultságot szerez az áldozat eszközén.
 - A támadó ezután távolról hozzáfér a felhasználó többi eszközéhez is. A biztonsági incidens a teljes vállalatot is érintheti.
 
-Microsoft Defender ATP can help resolve security events like this scenario.
+A Microsoft Defender ATP segítséget nyújt az ilyen forgatókönyvhöz hasonló biztonsági események megoldásához.
 
-- In our example, Microsoft Defender ATP detects that the device executed abnormal code, experienced a process privilege escalation, injected malicious code, and issued a suspicious remote shell.
-- Based on these actions from the device, Microsoft Defender ATP [classifies the device as high-risk](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/alerts-queue#severity) and includes a detailed report of suspicious activity in the Microsoft Defender Security Center portal.
+- A példánkban a Microsoft Defender ATP azt észleli, hogy az eszköz rendellenes kódot hajtott végre, a folyamat jogosultság-eszkalációját, a rosszindulatú kód beadását és a gyanús távoli rendszerhéj kiosztását.
+- Az eszközről érkező műveletek alapján a Microsoft Defender ATP [magas kockázatnak minősíti az eszközt](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/alerts-queue#severity) , és részletes jelentést készít a gyanús tevékenységekről a Microsoft Defender Security Center portálon.
 
-Because you have an Intune device compliance policy to classify devices with a *Medium* or *High* level of risk as non-compliant, the compromised device is classified as non-compliant. This classification allows your conditional access policy to kick in and block access from that device to your corporate resources.
+Mivel az Intune-eszköz megfelelőségi szabályzata olyan eszközöket tartalmaz, amelyek *közepes* vagy *magas* szintű kockázatot jelentenek nem megfelelőként, a feltört eszköz nem megfelelőnek minősül. Ez a besorolás lehetővé teszi, hogy a feltételes hozzáférési szabályzata beindítson és letiltsa az eszközről a vállalati erőforrásokhoz való hozzáférést.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-To use Microsoft Defender ATP with Intune, be sure you have the following configured, and ready for use:
+Ha a Microsoft Defender ATP-t az Intune-nal szeretné használni, győződjön meg róla, hogy a következő konfigurálva van, és készen áll a használatra:
 
 - Licenccel rendelkező bérlő az Enterprise Mobility + Security E3 és Windows E5 (vagy Microsoft 365 Enterprise E5) csomaghoz
 - Microsoft Intune környezet az [Intune-nal felügyelt](../enrollment/windows-enroll.md) Windows 10-es eszközökhöz, amelyek az Azure AD-ba is be vannak léptetve
-- [Microsoft Defender ATP](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) and access to the Microsoft Defender Security Center (ATP portal)
+- [Microsoft DEFENDER ATP](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) és hozzáférés a microsoft Defender Security Centerhoz (ATP-portál)
 
 > [!NOTE]
-> Microsoft Defender ATP is not supported with iOS and Android Intune app protection policies.
+> Az iOS és az Android Intune app Protection-szabályzatok nem támogatják a Microsoft Defender ATP használatát.
 
-## <a name="enable-microsoft-defender-atp-in-intune"></a>Enable Microsoft Defender ATP in Intune
+## <a name="enable-microsoft-defender-atp-in-intune"></a>A Microsoft Defender ATP engedélyezése az Intune-ban
 
-The first step you take is to set up the service-to-service connection between Intune and Microsoft Defender ATP. This requires administrative access to both the Microsoft Defender Security Center, and to Intune.
+Az első lépés a szolgáltatás és a szolgáltatás közötti kapcsolat beállítása az Intune és a Microsoft Defender ATP között. Ehhez rendszergazdai hozzáférésre van szükség a Microsoft Defender Security Centerhoz és az Intune-hoz.
 
-### <a name="to-enable-defender-atp"></a>To enable Defender ATP
+### <a name="to-enable-defender-atp"></a>A Defender ATP engedélyezése
 
-You only need to enable Defender ATP a single time per tenant.
+A Defender ATP-t csak egyetlen alkalommal kell engedélyeznie a bérlők számára.
 
-1. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431).
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Select **Endpoint security** > **Microsoft Defender ATP**, and then select **Open the Microsoft Defender Security Center**.
+2. Válassza a **Endpoint security** > a **Microsoft Defender ATP**lehetőséget, majd válassza **a Microsoft Defender-Security Center megnyitása**lehetőséget.
 
-   ![Select to open the Microsoft Defender Security Center](./media/advanced-threat-protection/atp-device-compliance-open-microsoft-defender.png)
+   ![Válassza ki a Microsoft Defender Security Center megnyitásához](./media/advanced-threat-protection/atp-device-compliance-open-microsoft-defender.png)
 
-4. In **Microsoft Defender Security Center**:
+4. A **Microsoft Defender Security Centerban**:
     1. Válassza a **Beállítások** > **Speciális funkciók** lehetőséget.
     2. A **Microsoft Intune kapcsolathoz** válassza a **Be** lehetőséget:
 
@@ -86,87 +86,87 @@ You only need to enable Defender ATP a single time per tenant.
 
     3. Válassza a **Beállítások mentése** lehetőséget.
 
-4. Return to **Microsoft Defender ATP** in the Microsoft Endpoint Manager Admin Center. Under **MDM Compliance Policy Settings**, set **Connect Windows devices version 10.0.15063 and above to Microsoft Defender ATP** to **On**.
+4. Térjen vissza a **Microsoft DEFENDER ATP** szolgáltatáshoz a Microsoft Endpoint Manager felügyeleti központjában. A **Mdm megfelelőségi szabályzatának beállításai**alatt állítsa be **a** **Windows-eszközök 10.0.15063 és újabb verzióinak CSATLAKOZTATÁSa a Microsoft Defender ATP** -be a következőre:.
 
 5. Válassza a **Mentés** lehetőséget.
 
 > [!TIP]
-> When you integrate a new application to Intune Mobile Threat Defense and enable the connection to Intune, Intune creates a classic conditional access policy in Azure Active Directory. Each MTD app you integrate, including [Defender ATP](advanced-threat-protection.md) or any of our additional [MTD partners](mobile-threat-defense.md#mobile-threat-defense-partners), creates a new classic conditional access policy. These policies can be ignored, but should not be edited, deleted, or disabled.
+> Amikor új alkalmazást integrál az Intune Mobile Threat Defense-be, és engedélyezi az Intune-nal való kapcsolatot, az Intune egy klasszikus feltételes hozzáférési szabályzatot hoz létre Azure Active Directoryban. Minden olyan MTD-alkalmazás, amelyet integrál, beleértve a [DEFENDER ATP](advanced-threat-protection.md) -t vagy bármely további [MTD-partnert](mobile-threat-defense.md#mobile-threat-defense-partners), új klasszikus feltételes hozzáférési szabályzatot hoz létre. Ezek a szabályzatok figyelmen kívül hagyhatók, de nem szerkeszthetők, nem törölhetők és nem tilthatók le.
 >
-> If the classic policy is deleted, you will need to delete the connection to Intune that was responsible for its creation, and then set it up again. This recreates the classic policy. Its not supported to migrate classic policies for MTD apps to the new policy type for conditional access.
+> Ha a klasszikus házirendet törli, törölnie kell a létrehozásért felelős Intune-nal, majd újra be kell állítania a kapcsolatát. Ezzel újra létrehozza a klasszikus szabályzatot. A rendszer nem támogatja a klasszikus szabályzatok áttelepítését a MTD-alkalmazásokhoz az új házirend-típusra a feltételes hozzáféréshez.
 >
-> Classic conditional access policies for MTD apps:
+> Klasszikus feltételes hozzáférési szabályzatok a MTD-alkalmazásokhoz:
 >
-> - Are used by Intune MTD to require that devices are registered in Azure AD so that they have a device ID before communicating to MTD partners. The ID is required so that devices and can successfully report their status to Intune.
-> - Have no effect on any other Cloud apps or Resources.
-> - Are distinct from conditional access policies you might create to help manage MTD.
-> - By default, don’t interact with other conditional access policies you use for evaluation.
+> - Az Intune-MTD arra használják, hogy az eszközök regisztrálva legyenek az Azure AD-ben, hogy a MTD-partnerekkel való kommunikáció előtt rendelkezzenek az eszköz azonosítójával. Az azonosító megadása kötelező, hogy az eszközök és az állapotuk sikeresen jelentse az Intune-nak.
+> - Semmilyen más felhőalapú alkalmazásra vagy erőforrásra nincs hatással.
+> - Nem különböznek a MTD kezeléséhez esetlegesen létrehozott feltételes hozzáférési házirendektől.
+> - Alapértelmezés szerint a kiértékeléshez használt egyéb feltételes hozzáférési szabályzatok nem működnek együtt.
 >
-> To view classic conditional access policies, in [Azure](https://portal.azure.com/#home), go to **Azure Active Directory** > **Conditional Access** > **Classic policies**.
+> A klasszikus feltételes hozzáférési szabályzatok az [Azure](https://portal.azure.com/#home)-ban való megtekintéséhez lépjen a **Azure Active Directory** > **feltételes hozzáférés** > **klasszikus házirendek**elemre.
 
-## <a name="onboard-devices-by-using-a-configuration-profile"></a>Onboard devices by using a configuration profile
+## <a name="onboard-devices-by-using-a-configuration-profile"></a>Eszközök előkészítése konfigurációs profil használatával
 
-After you establish the service-to-service connection between Intune and Microsoft Defender ATP, you onboard your Intune managed devices to ATP so that data about their risk level can be collected and used. To onboard devices, you use a device configuration profile for Microsoft Defender ATP.
+Miután létrehozta a szolgáltatások közötti kapcsolatot az Intune és a Microsoft Defender ATP között, az Intune által felügyelt eszközöket az ATP-be irányítja, így a kockázati szintjére vonatkozó adatokat összegyűjtheti és felhasználhatja. Az eszközök előkészítéséhez a Microsoft Defender ATP eszköz konfigurációs profilját használhatja.
 
-When you established the connection to Microsoft Defender ATP, Intune received a Microsoft Defender ATP onboarding configuration package from Microsoft Defender ATP. This package is deployed to devices with the device configuration profile. The configuration package configures devices to communicate with [Microsoft Defender ATP services](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) to scan files, detect threats, and report the risk to Microsoft Defender ATP.
+A Microsoft Defender ATP-vel létesített kapcsolatok létrehozásakor az Intune a Microsoft Defender ATP bevezetési konfigurációs csomagját kapta. Ez a csomag az eszköz konfigurációs profiljával rendelkező eszközökre van telepítve. A konfigurációs csomag úgy konfigurálja az eszközöket, hogy a [Microsoft DEFENDER ATP-szolgáltatásokkal](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) kommunikáljanak a fájlok vizsgálatához, a fenyegetések észleléséhez, és jelentse a kockázatot a Microsoft Defender ATP-nek.
 
-After you onboard a device using configuration package, you don't need to do it again. Eszközöket [csoportszabályzat vagy a System Center Configuration Manager (SCCM)](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-endpoints) használatával is bevonhat.
+Miután bevezet egy eszközt a konfigurációs csomag használatával, nem kell újra végrehajtania. Eszközöket [csoportszabályzat vagy a System Center Configuration Manager (SCCM)](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-endpoints) használatával is bevonhat.
 
-### <a name="create-the-device-configuration-profile"></a>Create the device configuration profile
+### <a name="create-the-device-configuration-profile"></a>Az eszköz konfigurációs profiljának létrehozása
 
-1. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431).
-2. Select **Devices** > **Configuration profiles** > **Create profile**.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **eszközök** > **konfigurációs profilok** lehetőséget > a **profil létrehozása**elemet.
 3. Adjon meg **Nevet** és **Leírást**.
 4. A **Platform** beállításnál válassza a **Windows 10 és újabb** lehetőséget.
-5. For **Profile type**, select **Microsoft Defender ATP (Windows 10 Desktop)** .
+5. A **Profil típusa**beállításnál válassza a **Microsoft Defender ATP (Windows 10 asztali verzió)** lehetőséget.
 6. A beállítások konfigurálása:
 
-   - **Microsoft Defender ATP client configuration package type**: Select **Onboard** to add the configuration package to the profile. A **Regisztráció megszüntetése** lehetőséget választva eltávolíthatja profilból a konfigurációs csomagot.
+   - **Microsoft DEFENDER ATP-ügyfél konfigurációs csomagjának típusa** **: válassza a** bevezetést, hogy hozzáadja a konfigurációs csomagot a profilhoz. A **Regisztráció megszüntetése** lehetőséget választva eltávolíthatja profilból a konfigurációs csomagot.
   
      > [!NOTE]
-     > If you've properly established a connection with Microsoft Defender ATP, Intune will automatically **Onboard** the configuration profile for you, and the **Microsoft Defender ATP client configuration package type** setting will not be available.
+     > Ha megfelelően létesített egy, a Microsoft Defender ATP-sel létesített kapcsolatokat **, az Intune automatikusan** előkészíti a konfigurációs profilt, és a **Microsoft Defender ATP-ügyfél konfigurációs csomagjának típusa** beállítás nem lesz elérhető.
   
-   - **Sample sharing for all files**: **Enable** allows samples to be collected, and shared with Microsoft Defender ATP. For example, if you see a suspicious file, you can submit it to Microsoft Defender ATP for deep analysis. **Not configured** doesn't share any samples to Microsoft Defender ATP.
-   - **Expedite telemetry reporting frequency**: For devices that are at high risk, **Enable** this setting so it reports telemetry to the Microsoft Defender ATP service more frequently.
+   - **Minta megosztása az összes fájlhoz: az** **Engedélyezés** lehetővé teszi a minták gyűjtését és a Microsoft Defender ATP-vel való megosztását. Ha például egy gyanús fájlt lát, beküldheti azt a Microsoft Defender ATP-be a Deep Analysis használatával. **Nincs konfigurálva, nem** oszt meg egyetlen mintát sem a Microsoft Defender ATP-ben.
+   - A **telemetria jelentéskészítési gyakoriságának gyorsítása**: a nagy kockázatú eszközök esetében **engedélyezze** ezt a beállítást, hogy az a Microsoft Defender ATP szolgáltatáshoz gyakrabban telemetria jelentéseket.
 
-     [Onboard Windows 10 machines using System Center Configuration Manager](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-endpoints-sccm) has more details on these Microsoft Defender ATP settings.
+     A [Windows 10-es gépek System Center Configuration Manager használatával történő](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-endpoints-sccm) előkészítése további részleteket tartalmaz ezekről a Microsoft Defender ATP-beállításokról.
 
 7. Válassza az **OK**, majd a **Létrehozás** lehetőséget a változások mentéséhez. Ezzel létrejön a profil.
-8. [Assign the device configuration profile](../configuration/device-profile-assign.md) to devices you want to assess with Microsoft Defender ATP.
+8. [Rendelje hozzá az eszköz konfigurációs profilját](../configuration/device-profile-assign.md) a Microsoft Defender ATP-vel felmérni kívánt eszközökhöz.
 
-## <a name="create-and-assign-the-compliance-policy"></a>Create and assign the compliance policy
+## <a name="create-and-assign-the-compliance-policy"></a>A megfelelőségi szabályzat létrehozása és kiosztása
 
-The compliance policy determines the level of risk that you consider as acceptable for a device.
+A megfelelőségi szabályzat meghatározza, hogy milyen kockázati szintet kell figyelembe venni az eszköz számára.
 
 ### <a name="create-the-compliance-policy"></a>A megfelelőségi szabályzat létrehozása
 
-1. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431).
-2. Select **Devices** > **Compliance policies** > **Create policy**.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **eszközök** > **megfelelőségi szabályzatok** > **házirend létrehozása**lehetőséget.
 3. Adjon meg **Nevet** és **Leírást**.
 4. A **Platform** beállításnál válassza a **Windows 10 és újabb** lehetőséget.
-5. Under **Settings**, select **Microsoft Defender ATP**.
-6. Set **Require the device to be at or under the machine risk score** to your preferred level.
+5. A **Beállítások**területen válassza a **Microsoft Defender ATP**lehetőséget.
+6. Állítsa be, hogy **az eszköz a gép kockázati pontszáma alatt vagy alatt legyen** az előnyben részesített szint.
 
-   Threat level classifications are [determined by Microsoft Defender ATP](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/alerts-queue).
+   A fenyegetések szintjének besorolását a [Microsoft DEFENDER ATP határozza meg](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/alerts-queue).
 
-   - **Tiszta**: Ez a szint a legbiztonságosabb. The device can't have any existing threats and still access company resources. Ha bármilyen veszélyforrás észlelhető, az eszköz nem megfelelőnek minősül. (Microsoft Defender ATP users the value *Secure*.)
-   - **Alacsony**: Az eszköz csak abban az esetben minősül megfelelőnek, ha kizárólag alacsony szintű veszélyforrások állnak fenn. Devices with medium or high threat levels aren't compliant.
+   - **Tiszta**: Ez a szint a legbiztonságosabb. Az eszközön nem lehetnek meglévő fenyegetések, és továbbra is hozzáférhetnek a vállalati erőforrásokhoz. Ha bármilyen veszélyforrás észlelhető, az eszköz nem megfelelőnek minősül. (A Microsoft Defender ATP-felhasználók a *biztonságos értéket biztosítják*.)
+   - **Alacsony**: Az eszköz csak abban az esetben minősül megfelelőnek, ha kizárólag alacsony szintű veszélyforrások állnak fenn. A közepes vagy magas veszélyforrású eszközök nem megfelelőek.
    - **Közepes**: Az eszköz abban az esetben minősül megfelelőnek, ha az eszközön észlelt veszélyforrások alacsony vagy közepes szintűek. Magas szintű fenyegetések észlelése esetén az eszköz nem megfelelőnek minősül.
-   - **High**: This level is the least secure and allows all threat levels. So devices that with high, medium, or low threat levels are considered compliant.
+   - **Magas**: Ez a szint a legkevésbé biztonságos, és lehetővé teszi az összes veszélyforrás szintjét. A magas, közepes vagy alacsony veszélyforrású eszközök megfelelőnek minősülnek.
 
 7. Válassza az **OK**, majd a **Létrehozás** lehetőséget a változások mentéséhez (ezzel létrejön a szabályzat).
-8. [Assign the device compliance policy](create-compliance-policy.md#assign-the-policy) to applicable groups.
+8. [Rendelje hozzá az eszköz megfelelőségi szabályzatát](create-compliance-policy.md#assign-the-policy) a megfelelő csoportokhoz.
 
-## <a name="create-a-conditional-access-policy"></a>Create a Conditional Access policy
+## <a name="create-a-conditional-access-policy"></a>Feltételes hozzáférési szabályzat létrehozása
 
-The Conditional Access policy blocks access to resources for devices that exceed the threat level you set in your compliance policy. You can block access from the device to corporate resources, such as SharePoint or Exchange Online.
+A feltételes hozzáférési szabályzat blokkolja a megfelelőségi szabályzatban beállított fenyegetési szintet túllépő eszközök erőforrásokhoz való hozzáférését. Letilthatja az eszköz hozzáférését a vállalati erőforrásokhoz, például a SharePointhoz vagy az Exchange Online-hoz.
 
 > [!TIP]
-> A feltételes hozzáférés az Azure Active Directory (Azure AD) technológiája. The Conditional Access node accessed from the Microsoft Endpoint Manager Admin Center is the same node as accessed from *Azure AD*.
+> A feltételes hozzáférés az Azure Active Directory (Azure AD) technológiája. A Microsoft Endpoint Manager felügyeleti központból elért feltételes hozzáférés csomópont ugyanaz a csomópont, mint az *Azure ad*-től.
 
-1. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431).
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Select **Endpoint security** > **Conditional Access** > **New policy**.
+2. Válassza az **Endpoint security** > a **feltételes hozzáférés** > **új szabályzat**lehetőséget.
 
 3. Adjon meg **Nevet** a szabályzathoz és válassza a **Felhasználók és csoportok** lehetőséget. A befoglalási vagy kizárási lehetőségek használatával jelölje ki a szabályzathoz rendelendő csoportokat majd válassza a **Kész** lehetőséget.
 
@@ -178,7 +178,7 @@ The Conditional Access policy blocks access to resources for devices that exceed
 
    A módosítások mentéséhez válassza a **Kész** gombot.
 
-6. Select **Grant** to apply Conditional Access based on device compliance. Választhatja például a **Hozzáférés engedélyezése** > **Eszköz megfelelőként való megjelölésének megkövetelése** lehetőséget.
+6. Válassza az **Engedélyezés** lehetőséget, ha feltételes hozzáférést szeretne alkalmazni az eszköz megfelelősége alapján. Választhatja például a **Hozzáférés engedélyezése** > **Eszköz megfelelőként való megjelölésének megkövetelése** lehetőséget.
 
     A módosítások mentéséhez válassza az **Választ** gombot.
 
@@ -186,30 +186,30 @@ The Conditional Access policy blocks access to resources for devices that exceed
 
 ## <a name="monitor-device-compliance"></a>Az eszközmegfelelőség figyelése
 
-Next, monitor the state of devices that have the Microsoft Defender ATP compliance policy.
+Ezután figyelje a Microsoft Defender ATP-megfelelőségi szabályzattal rendelkező eszközök állapotát.
 
-1. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431).
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Select **Devices** > **Monitor** > **Policy compliance**.
+2. Válassza ki az **eszközök** >  > **szabályzat megfelelőségének** **figyelése** lehetőséget.
 
-3. Find your Microsoft Defender ATP policy in the list, and see which devices are compliant or noncompliant.
+3. Keresse meg a Microsoft Defender ATP-szabályzatot a listában, és tekintse meg, hogy mely eszközök megfelelőek vagy nem megfelelőek.
 
-You can also use the *operational* report for noncompliant devices from the same location:
+A nem megfelelő eszközök *működési* jelentését is használhatja ugyanazon a helyen:
 
-1. Select **Devices** > **Monitor** > **Noncompliant devices**.
+1. Válassza ki az **eszközök** > a **figyelő** > nem **megfelelő eszközöket**.
 
-For more information about reports, see [Intune reports](../fundamentals/reports.md).
+További információ a jelentésekről: [Intune-jelentések](../fundamentals/reports.md).
 
-## <a name="view-onboarding-status"></a>View onboarding status
+## <a name="view-onboarding-status"></a>Bevezetési állapot megtekintése
 
-To view the onboarding status of all Intune-managed Windows 10 devices, you can go to **Device compliance** > **Microsoft Defender ATP**. From this page, you can also initiate the creation of a device configuration profile for onboarding more devices to Microsoft Defender ATP.
+Az Intune által felügyelt Windows 10-es eszközök bevezetési állapotának megtekintéséhez nyissa meg az **eszköz megfelelősége** > a **Microsoft Defender ATP**lehetőséget. Ezen a lapon egy eszköz konfigurációs profiljának létrehozását is kezdeményezheti, amellyel több eszközt helyezhet üzembe a Microsoft Defender ATP-ben.
 
 ## <a name="next-steps"></a>További lépések
 
-[Microsoft Defender ATP Conditional Access](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/conditional-access)
+[Microsoft Defender ATP feltételes hozzáférés](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/conditional-access)
 
-[Microsoft Defender ATP risk dashboard](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/security-operations-dashboard)
+[A Microsoft Defender ATP kockázati irányítópultja](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/security-operations-dashboard)
 
-[Use security tasks with ATPs Vulnerability Management to remediate issues on devices](atp-manage-vulnerabilities.md).
+Az [eszközökön felmerülő problémák megoldásához használjon biztonsági feladatokat a ATPs sebezhetőségi kezelésével](atp-manage-vulnerabilities.md).
 
 [Eszközmegfelelőségi szabályzatok – első lépések](device-compliance-get-started.md)

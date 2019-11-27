@@ -1,6 +1,6 @@
 ---
 title: Tanúsítványprofil létrehozása az Azure-beli Microsoft Intune-ban | Microsoft Docs
-description: Learn about using Simple Certificate Enrollment Protocol (SCEP) or Public Key Cryptography Standards (PKCS) certificates and certificate profiles with Microsoft Intune.
+description: Ismerje meg, hogyan használhatja a Egyszerű tanúsítványigénylési protokoll (SCEP) vagy a nyilvános kulcsú titkosítási szabványok (PKCS) tanúsítványait és a tanúsítvány-profilokat Microsoft Intune.
 keywords: ''
 author: brenduns
 ms.author: brenduns
@@ -24,101 +24,101 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74410186"
 ---
-# <a name="use-certificates-for-authentication-in-microsoft-intune"></a>Use certificates for authentication in Microsoft Intune
+# <a name="use-certificates-for-authentication-in-microsoft-intune"></a>Tanúsítványok használata a Microsoft Intune történő hitelesítéshez
 
-Use certificates with Intune to authenticate your users to applications and corporate resources through VPN, Wi-Fi, or email profiles. When you use certificates to authenticate these connections, your end users won't need to enter usernames and passwords, which can make their access seamless. Certificates are also used for signing and encryption of email using S/MIME.
+A tanúsítványokat az Intune-nal használva hitelesítheti a felhasználókat a VPN-, Wi-Fi-vagy e-mail-profilokon keresztül az alkalmazásokban és a vállalati erőforrásokban. Ha tanúsítványokat használ a kapcsolatok hitelesítéséhez, a végfelhasználóknak nem kell megadniuk a felhasználóneveket és a jelszavakat, ami zökkenőmentesvé teheti a hozzáférést. A tanúsítványokat az e-mailek S/MIME használatával történő aláírására és titkosítására is használják.
 
-## <a name="intune-supported-certificates-and-usage"></a>Intune supported certificates and usage
+## <a name="intune-supported-certificates-and-usage"></a>Intune által támogatott tanúsítványok és használat
 
-| Típus              | Hitelesítés | S/MIME Signing | S/MIME encryption  |
+| Típus              | Hitelesítés | S/MIME-aláírás | S/MIME-titkosítás  |
 |--|--|--|--|
-| Public Key Cryptography Standards (PKCS) imported certificate |  | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png)|
+| Nyilvános kulcsú titkosítási szabványok (PKCS) importált tanúsítvány |  | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png)|
 | PKCS#12 (vagy PFX)    | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) |  |
 | SCEP protokoll  | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | |
 
-To deploy these certificates, you’ll create and assign certificate profiles to devices.
+A tanúsítványok telepítéséhez hozzon létre és rendeljen tanúsítvány-profilokat az eszközökhöz.
 
-Each individual certificate profile you create supports a single platform. For example, if you use PKCS certificates, you’ll create PKCS certificate profile for Android and a separate PKCS certificate profile for iOS. If you also use SCEP certificates for those two platforms, you’ll create a SCEP certificate profile for Android, and another for iOS.
+Minden egyes létrehozott tanúsítvány egyetlen platformot támogat. Ha például PKCS-tanúsítványokat használ, hozzon létre PKCS-tanúsítványt az Androidhoz, és egy különálló PKCS-tanúsítvány-profilt iOS-hez. Ha a két platformhoz is SCEP-tanúsítványokat használ, hozzon létre egy SCEP-tanúsítványt az Androidhoz, és egy másikat az iOS-hez.
 
-### <a name="general-considerations-when-you-use-a-microsoft-certification-authority"></a>General considerations when you use a Microsoft Certification Authority
+### <a name="general-considerations-when-you-use-a-microsoft-certification-authority"></a>Általános szempontok Microsoft hitelesítésszolgáltató használata esetén
 
-When you use a Microsoft Certification Authority (CA):
+Microsoft hitelesítésszolgáltató (CA) használata esetén:
 
-- To use SCEP certificate profiles, you must [set up a Network Device Enrollment Service (NDES) server](certificates-scep-configure.md#set-up-ndes) for use with Intune.
-- To use the following certificate profile types, you must [install the Microsoft Intune Certificate Connector](certificates-scep-configure.md#install-the-intune-certificate-connector):
-  - SCEP certification profile
-  - PKCS certificate profile
+- A SCEP-tanúsítványok használatához [be kell állítania egy hálózati eszközök tanúsítványigénylési szolgáltatásának (NDES) kiszolgálóját](certificates-scep-configure.md#set-up-ndes) az Intune-nal való használatra.
+- A következő típusú tanúsítvány-profilok használatához [telepítenie kell a Microsoft Intune tanúsítvány-összekötő](certificates-scep-configure.md#install-the-intune-certificate-connector):
+  - SCEP-hitelesítési profil
+  - PKCS-tanúsítvány profilja
 
-- To use PKCS imported certificates:
-  - [Install the PFX Certificate Connector for Microsoft Intune](certificates-imported-pfx-configure.md#download-install-and-configure-the-pfx-certificate-connector-for-microsoft-intune).
-  - Export certificates from the certification authority and then import them to Microsoft Intune. See [the PFXImport PowerShell project](https://github.com/Microsoft/Intune-Resource-Access/tree/develop/src/PFXImportPowershell).
+- A PKCS importált tanúsítványok használata:
+  - [Telepítse a pfx tanúsítvány-összekötőt a Microsoft Intunehoz](certificates-imported-pfx-configure.md#download-install-and-configure-the-pfx-certificate-connector-for-microsoft-intune).
+  - Exportálja a tanúsítványokat a hitelesítésszolgáltatótól, majd importálja őket a Microsoft Intuneba. Tekintse meg [a PFXImport PowerShell-projektet](https://github.com/Microsoft/Intune-Resource-Access/tree/develop/src/PFXImportPowershell).
 
-- Deploy certificates by using the following mechanisms:
-  - [Trusted certificate profiles](certificates-configure.md#create-trusted-certificate-profiles) to deploy the Trusted Root CA certificate from your root or intermediate (issuing) CA to devices
+- Tanúsítványok központi telepítése a következő mechanizmusok használatával:
+  - [Megbízható tanúsítványok profiljai](certificates-configure.md#create-trusted-certificate-profiles) a megbízható legfelső szintű hitelesítésszolgáltatói tanúsítvány üzembe helyezéséhez a legfelső szintű vagy köztes (kiállító) hitelesítésszolgáltatótól az eszközökre
   - SCEP-tanúsítványprofilok
   - PKCS-tanúsítványprofilok
-  - PKCS imported certificate profiles
+  - PKCS importált tanúsítvány-profilok
 
-### <a name="general-considerations-when-you-use-a-third-party-certification-authority"></a>General considerations when you use a third-party Certification Authority
+### <a name="general-considerations-when-you-use-a-third-party-certification-authority"></a>Harmadik féltől származó hitelesítésszolgáltató használata esetén felmerülő általános szempontok
 
-When you use a third-party (non-Microsoft) Certification Authority (CA):
+Harmadik féltől származó (nem a Microsofttól származó) hitelesítésszolgáltató (CA) használata esetén:
 
-- To use SCEP certificate profiles:
-  - Set up integration with a third-party CA from [one of our supported partners](certificate-authority-add-scep-overview.md#third-party-certification-authority-partners). Set up includes following the instructions from the third-party CA to complete integration of their CA with Intune.
-  - [Create an application in Azure AD](certificate-authority-add-scep-overview.md#set-up-third-party-ca-integration) that delegates rights to Intune to do SCEP certificate challenge validation.
+- SCEP-tanúsítványok használata:
+  - Egy harmadik féltől származó HITELESÍTÉSSZOLGÁLTATÓval való integráció beállítása [támogatott partnereink közül](certificate-authority-add-scep-overview.md#third-party-certification-authority-partners). A beállítás a külső HITELESÍTÉSSZOLGÁLTATÓ utasításait követi a HITELESÍTÉSSZOLGÁLTATÓ és az Intune integrálásának befejezéséhez.
+  - [Hozzon létre egy alkalmazást az Azure ad-ben](certificate-authority-add-scep-overview.md#set-up-third-party-ca-integration) , amely jogosultságokat delegál az Intune-nak az SCEP Certificate Challenge érvényesítéséhez.
 
-- PKCS imported certificates require you to [install the PFX Certificate Connector for Microsoft Intune](certificates-imported-pfx-configure.md#download-install-and-configure-the-pfx-certificate-connector-for-microsoft-intune).
+- A PKCS importált tanúsítványokhoz [telepíteni kell a pfx tanúsítvány-összekötőt a Microsoft Intunehoz](certificates-imported-pfx-configure.md#download-install-and-configure-the-pfx-certificate-connector-for-microsoft-intune).
 
-- Deploy certificates by using the following mechanisms:
-  - [Trusted certificate profiles](certificates-configure.md#create-trusted-certificate-profiles) to deploy the Trusted Root CA certificate from your root or intermediate (issuing) CA to devices
+- Tanúsítványok központi telepítése a következő mechanizmusok használatával:
+  - [Megbízható tanúsítványok profiljai](certificates-configure.md#create-trusted-certificate-profiles) a megbízható legfelső szintű hitelesítésszolgáltatói tanúsítvány üzembe helyezéséhez a legfelső szintű vagy köztes (kiállító) hitelesítésszolgáltatótól az eszközökre
   - SCEP-tanúsítványprofilok
-  - PKCS certificate profiles *(only supported with the [Digicert PKI Platform](certificates-digicert-configure.md))*
-  - PKCS imported certificate profiles
+  - PKCS-tanúsítványok profiljai *(csak a [Digicert PKI platformmal](certificates-digicert-configure.md)támogatott)*
+  - PKCS importált tanúsítvány-profilok
 
-## <a name="supported-platforms-and-certificate-profiles"></a>Supported platforms and certificate profiles
+## <a name="supported-platforms-and-certificate-profiles"></a>Támogatott platformok és tanúsítványok profiljai
 
-| Platfésm              | Trusted certificate profile | PKCS certificate profile | SCEP certificate profile | PKCS imported certificate profile  |
+| Platform              | Megbízható tanúsítvány profilja | PKCS-tanúsítvány profilja | SCEP-tanúsítvány profilja | PKCS importált tanúsítvány profilja  |
 |--|--|--|--|---|
-| Android device administrator | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png)|  ![Támogatott](./media/certificates-configure/green-check.png) |
-| Vállalati Android <br> - Fully Managed (Device Owner)   | ![Támogatott](./media/certificates-configure/green-check.png) |   | ![Támogatott](./media/certificates-configure/green-check.png) |   |
-| Vállalati Android <br> - Dedicated (Device Owner)   | ![Támogatott](./media/certificates-configure/green-check.png)  |   | ![Támogatott](./media/certificates-configure/green-check.png)  |   |
-| Vállalati Android <br> - Work Profile    | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) |
+| Android-eszköz rendszergazdája | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png)|  ![Támogatott](./media/certificates-configure/green-check.png) |
+| Vállalati Android <br> -Teljes körűen felügyelt (eszköz tulajdonosa)   | ![Támogatott](./media/certificates-configure/green-check.png) |   | ![Támogatott](./media/certificates-configure/green-check.png) |   |
+| Vállalati Android <br> -Dedikált (eszköz tulajdonosa)   | ![Támogatott](./media/certificates-configure/green-check.png)  |   | ![Támogatott](./media/certificates-configure/green-check.png)  |   |
+| Vállalati Android <br> -Munkahelyi profil    | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) |
 | iOS                   | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) |
 | macOS                 | ![Támogatott](./media/certificates-configure/green-check.png) |  ![Támogatott](./media/certificates-configure/green-check.png) |![Támogatott](./media/certificates-configure/green-check.png)|![Támogatott](./media/certificates-configure/green-check.png)|
-| WVPN-profilokdows Phone 8.1     |![Támogatott](./media/certificates-configure/green-check.png)  |  | ![Támogatott](./media/certificates-configure/green-check.png)| ![Támogatott](./media/certificates-configure/green-check.png) |
+| Windows Phone 8.1     |![Támogatott](./media/certificates-configure/green-check.png)  |  | ![Támogatott](./media/certificates-configure/green-check.png)| ![Támogatott](./media/certificates-configure/green-check.png) |
 | Windows 8.1 és újabb |![Támogatott](./media/certificates-configure/green-check.png)  |  |![Támogatott](./media/certificates-configure/green-check.png) |   |
 | Windows 10 és újabb  | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) |
 
-## <a name="export-the-trusted-root-ca-certificate"></a>Export the trusted root CA certificate
+## <a name="export-the-trusted-root-ca-certificate"></a>A megbízható legfelső szintű HITELESÍTÉSSZOLGÁLTATÓI tanúsítvány exportálása
 
-To use PKCS,  SCEP, and PKCS imported certificates, devices must trust your root Certification Authority. To establish trust, export the Trusted Root CA certificate, and any intermediate or issuing Certification Authority certificates, as a public certificate (.cer). You can get these certificates from the issuing CA, or from any device that trusts your issuing CA.
+A PKCS, a SCEP és a PKCS importált tanúsítványok használatához az eszközöknek meg kell bízniuk a legfelső szintű hitelesítésszolgáltatóban. A megbízhatósági kapcsolat létrehozásához exportálja a megbízható legfelső szintű HITELESÍTÉSSZOLGÁLTATÓI tanúsítványt, valamint a közbenső vagy kiállító hitelesítésszolgáltató tanúsítványait nyilvános tanúsítványként (. cer). Ezeket a tanúsítványokat a kiállító HITELESÍTÉSSZOLGÁLTATÓTÓL vagy bármely olyan eszközről szerezheti be, amely megbízik a kiállító HITELESÍTÉSSZOLGÁLTATÓban.
 
-To export the certificate, refer to the documentation for your Certification Authority. You’ll need to export the public certificate as a .cer file.  Don't export the private key, a .pfx file.
+A tanúsítvány exportálásához tekintse meg a hitelesítésszolgáltató dokumentációját. A nyilvános tanúsítványt. cer fájlként kell exportálnia.  Ne exportálja a titkos kulcsot, a. pfx-fájlt.
 
-You’ll use this .cer file when you [create trusted certificate profiles](#create-trusted-certificate-profiles) to deploy that certificate to your devices.
+Ezt a. cer fájlt fogja használni, amikor [megbízható tanúsítvány-profilokat hoz létre](#create-trusted-certificate-profiles) a tanúsítvány eszközökön való telepítéséhez.
 
-## <a name="create-trusted-certificate-profiles"></a>Create trusted certificate profiles
+## <a name="create-trusted-certificate-profiles"></a>Megbízható tanúsítványok profiljainak létrehozása
 
-Create a trusted certificate profile before you can create a SCEP, PKCS, or PKCS imported certificate profile. Deploying a trusted certificate profile ensures each device recognizes the legitimacy of your CA. SCEP certificate profiles directly reference a trusted certificate profile. PKCS certificate profiles don’t directly reference the trusted certificate profile but do directly reference the server that hosts your CA. PKCS imported certificate profiles don't directly reference the trusted certificate profile but can use it on the device. Deploying a trusted certificate profile to devices ensures this trust is established. When a device doesn’t trust the root CA, the SCEP or PKCS certificate profile policy will fail.
+Hozzon létre egy megbízható tanúsítványsablont, mielőtt SCEP, PKCS vagy PKCS importált tanúsítványsablont hozna létre. A megbízható tanúsítvány-profilok üzembe helyezése biztosítja, hogy mindegyik eszköz felismeri a HITELESÍTÉSSZOLGÁLTATÓ legitimitását. A SCEP tanúsítvány-profilok közvetlenül egy megbízható tanúsítvány profiljára hivatkoznak. A PKCS-tanúsítványok profiljai nem hivatkoznak közvetlenül a megbízható tanúsítvány profiljára, de közvetlenül hivatkoznak a HITELESÍTÉSSZOLGÁLTATÓT futtató kiszolgálóra. A PKCS importált tanúsítvány-profilok nem hivatkoznak közvetlenül a megbízható tanúsítvány profiljára, de használhatják azt az eszközön. A megbízható tanúsítvány-profilok eszközökre való telepítése biztosítja ezt a megbízhatósági kapcsolatot. Ha egy eszköz nem bízik meg a legfelső szintű HITELESÍTÉSSZOLGÁLTATÓban, a SCEP-vagy PKCS-tanúsítvány profiljának házirendje sikertelen lesz.
 
-Create a separate trusted certificate profile for each device platform you want to support, just as you'll do for SCEP, PKCS, and PKCS imported certificate profiles.
+Hozzon létre egy külön megbízható tanúsítványsablont minden támogatni kívánt eszköz platformhoz, ugyanúgy, mint a SCEP, a PKCS és a PKCS importált tanúsítvány-profilok esetében.
 
 ### <a name="to-create-a-trusted-certificate-profile"></a>Megbízható tanúsítványprofil létrehozásához
 
-1. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431).
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Select **Devices** > **Configuration profiles** > **Create profile**.
+2. Válassza az **eszközök** > **konfigurációs profilok** lehetőséget > a **profil létrehozása**elemet.
 
-   ![Navigate to Intune and create a new profile for a trusted certificate](./media/certficates-pfx-configure/certificates-pfx-configure-profile-new.png)
+   ![Navigáljon az Intune-hoz, és hozzon létre egy új profilt egy megbízható tanúsítványhoz](./media/certficates-pfx-configure/certificates-pfx-configure-profile-new.png)
 
 3. Adja meg a következő tulajdonságokat:
 
    - **Név** a profil számára
-   - Optionally set a **Description**
+   - **Leírás** megadása opcionálisan
    - **Platform**, amelyen telepíteni kell a profilt
    - A **Profiltípust** állítsa **Megbízható tanúsítványra**
 
-4. Select **Settings**, and then browse to the trusted root CA certificate .cer file you exported for use with this certificate profile, and then select **OK**.
+4. Válassza a **Beállítások**lehetőséget, majd keresse meg a megbízható legfelső szintű hitelesítésszolgáltatói tanúsítvány. cer fájlt, amelyet az adott tanúsítvány-profillal való használatra exportált, majd válassza az **OK**gombot.
 
 5. Válassza ki – csak a Windows 8.1- és Windows 10-eszközök esetében – a megbízható tanúsítvány céltárolóját a **Céltároló** mezőben, a következő lehetőségek közül:
 
@@ -128,21 +128,21 @@ Create a separate trusted certificate profile for each device platform you want 
 
 6. Ha elkészült, válassza az **OK** gombot, lépjen vissza a **Profil létrehozása** panelre, és válassza a **Létrehozás** gombot.
 
-The profile appears in the list of profiles on the *Devices - Configuration profiles* window, with a profile type of **Trusted certificate**. Be sure to assign this profile to devices that will use SCEP or PKCS certificates. To assign the profile to groups, see [assign device profiles](../configuration/device-profile-assign.md).
+A profil az *eszközök – konfigurációs profilok* ablak profilok listájában jelenik meg, a **megbízható tanúsítvány**profiljának típusától függően. Ügyeljen arra, hogy ezt a profilt olyan eszközökhöz rendelje, amelyek SCEP-vagy PKCS-tanúsítványokat fognak használni. A profil csoportokhoz rendeléséhez lásd: [eszközbeállítások társítása](../configuration/device-profile-assign.md).
 
 > [!NOTE]
-> Android devices might display a message that a third party has installed a trusted certificate.
+> Az Android-eszközökön olyan üzenet jelenhet meg, amely szerint egy harmadik fél megbízható tanúsítványt telepített.
 
-## <a name="additional-resources"></a>További háttéranyagok
+## <a name="additional-resources"></a>További források
 
 - [Eszközprofilok hozzárendelése](../configuration/device-profile-assign.md)  
 - [S/MIME használata e-mailek aláírásához és titkosításához](certificates-s-mime-encryption-sign.md)  
-- [Use third-party certification authority](certificate-authority-add-scep-overview.md)  
+- [Harmadik féltől származó hitelesítésszolgáltató használata](certificate-authority-add-scep-overview.md)  
 
 ## <a name="next-steps"></a>További lépések
 
-Create SCEP, PKCS, or PKCS imported certificate profiles for each platform you want to use. To continue, see the following articles:
+Hozzon létre SCEP, PKCS vagy PKCS importálású tanúsítvány-profilokat a használni kívánt platformokhoz. A folytatáshoz tekintse meg a következő cikkeket:
 
-- [Configure infrastructure to support SCEP certificates with Intune](certificates-scep-configure.md)  
+- [Infrastruktúra konfigurálása az SCEP-tanúsítványok támogatásához az Intune-nal](certificates-scep-configure.md)  
 - [PKCS-tanúsítványok konfigurálása és kezelése az Intune-nal](certficates-pfx-configure.md)  
-- [Create a PKCS imported certificate profile](certificates-imported-pfx-configure.md#create-a-pkcs-imported-certificate-profile)
+- [PKCS importált tanúsítvány-profil létrehozása](certificates-imported-pfx-configure.md#create-a-pkcs-imported-certificate-profile)

@@ -117,7 +117,7 @@ A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com
 
 A leküldéses tanúsítvány lehetővé teszi, hogy az Intune regisztrálja és felügyelje az iOS-eszközöket a szabályzatoknak a regisztrált mobileszközökre való leküldésével. Az Intune automatikusan szinkronizálja az Apple-lel a regisztrációs programfiók adatait.
 
-## <a name="create-an-apple-enrollment-profile"></a>Az Apple-regisztrációs profil létrehozása
+## <a name="create-an-apple-enrollment-profile"></a>Apple-regisztrációs profil létrehozása
 
 Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt a DEP-eszközökhöz. A regisztrálás során az eszközök csoportjára alkalmazott beállításokat egy készülékregisztrációs profil határozza meg. DEP-tokenként legfeljebb 100 beléptetési profil adható meg.
 
@@ -130,7 +130,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
 
     ![Készítsen egy képernyőképet a profilról.](./media/device-enrollment-program-enroll-ios/image04.png)
 
-3. Az **alapvető beállítások** lapon adja meg a profil **nevét** és **leírását** felügyeleti célból. A felhasználók nem látják ezeket az adatokat. A **Név** mező felhasználásával dinamikus csoportot hozhat létre az Azure Active Directoryban. Használja a profilnevet az enrollmentProfileName paraméter meghatározásához, hogy ezzel a regisztrációs profillal rendelhesse hozzá az eszközöket. További információk az [Azure Active Directory-alapú dinamikus csoportokról](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-dynamic-membership#rules-for-devices).
+3. Az **alapvető beállítások** lapon adja meg a profil **nevét** és **leírását** felügyeleti célból. A felhasználók nem látják ezeket az adatokat. A **Név** mező felhasználásával dinamikus csoportot hozhat létre az Azure Active Directoryban. Használja a profilnevet az enrollmentProfileName paraméter meghatározásához, hogy ezt a regisztrációs profilt rendelhesse hozzá az eszközökhöz. További információk az [Azure Active Directory-alapú dinamikus csoportokról](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-dynamic-membership#rules-for-devices).
 
     ![A profil neve és leírása.](./media/device-enrollment-program-enroll-ios/image05.png)
 
@@ -228,7 +228,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
     | <strong>Képernyő időpontja</strong> | Jelenítse meg a képernyő időképernyőjét. |
     | <strong>Szoftverfrissítés</strong> | A kötelező szoftverfrissítés képernyő megjelenítése. |
     | <strong>SIM-telepítés</strong> | Adjon lehetőséget a felhasználónak a mobil terv hozzáadására. |
-    | <strong>Megjelenés</strong> | Jelenítse meg a megjelenés képernyőt a felhasználó számára. |
+    | <strong>Megjelenését</strong> | Jelenítse meg a megjelenés képernyőt a felhasználó számára. |
     | <strong>Expressz nyelv</strong>| Az expressz nyelvi képernyő megjelenítése a felhasználónak. |
     | <strong>Előnyben részesített nyelv</strong> | Adja meg a felhasználó számára a **kívánt nyelv**kiválasztását. |
     | <strong>Eszközről az eszközre való Migrálás</strong> | Adja meg a felhasználónak a régi eszközről az eszközre történő áttelepítési lehetőséget.|

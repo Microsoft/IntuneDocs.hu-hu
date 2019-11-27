@@ -1,7 +1,7 @@
 ---
-title: iOS bundle IDs for built-in apps in Microsoft Intune - Azure | Microsoft Docs
+title: iOS-csomagok azonosítói a Microsoft Intune-Azure beépített alkalmazásaihoz | Microsoft Docs
 titleSuffix: ''
-description: See a list of the bundle IDs for the built-in iOS apps. Use these bundle IDs to explicitly allow apps in device configuration profiles and policies in Microsoft Intune.
+description: Tekintse meg a beépített iOS-alkalmazások köteg-azonosítóinak listáját. Ezekkel a köteg-azonosítókkal explicit módon engedélyezheti az alkalmazások számára az eszközök konfigurációs profiljaiban és házirendjeiben Microsoft Intune.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
@@ -23,24 +23,24 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 11/25/2019
 ms.locfileid: "74465630"
 ---
-# <a name="bundle-ids-for-built-in-ios-apps-you-can-use-in-intune"></a>Bundle IDs for built-in iOS apps you can use in Intune
+# <a name="bundle-ids-for-built-in-ios-apps-you-can-use-in-intune"></a>Az Intune-ban használható beépített iOS-alkalmazások köteg-azonosítói
 
-When you configure features on iOS devices, you can also add the built-in apps on iOS devices. This article lists the bundle IDs of some common built-in iOS apps. Ha más alkalmazás csomagazonosítóját szeretné megismerni, lépjen kapcsolatba a szoftver gyártójával. See Apple's list of [iOS bundle IDs](https://support.apple.com/guide/mdm/ios-bundle-ids-mdm90f60c1ce/web) (opens Apple's web site).
+Ha iOS-eszközökön konfigurálja a szolgáltatásokat, a beépített alkalmazásokat is hozzáadhatja az iOS-eszközökhöz. Ez a cikk a gyakori beépített iOS-alkalmazások köteg-azonosítóit sorolja fel. Ha más alkalmazás csomagazonosítóját szeretné megismerni, lépjen kapcsolatba a szoftver gyártójával. Tekintse meg az Apple [iOS-csomagok azonosítóinak](https://support.apple.com/guide/mdm/ios-bundle-ids-mdm90f60c1ce/web) listáját (az Apple webhelyének megnyitása).
 
-## <a name="bundle-ids"></a>Bundle IDs
+## <a name="bundle-ids"></a>Köteg-azonosítók
 
 | Csomagazonosító                   | Alkalmazásnév     | Kiadó |
 |-----------------------------|--------------|-----------|
-| com.apple.store             | Alkalmazásáruház    | Apple     |
+| com. Apple. Store             | Alkalmazásáruház    | Apple     |
 | com.apple.calculator        | Számológép   | Apple     |
 | com.apple.mobilecal         | Naptár     | Apple     |
-| com.apple.camera            | Fényképezőgép       | Apple     |
+| com.apple.camera            | Kamera       | Apple     |
 | com.apple.mobiletimer       | Óra        | Apple     |
-| com.apple.clips             | Clips        | Apple     |
+| com. Apple. clips             | Klipek        | Apple     |
 | com.apple.compass           | Iránytű      | Apple     |
-| com.apple.MobileAddressBook | Névjegyek     | Apple     |
+| com.apple.MobileAddressBook | Kapcsolatok     | Apple     |
 | com.apple.facetime          | FaceTime     | Apple     |
-| com.apple.DocumentsApp      | Files        | Apple     |
+| com.apple.DocumentsApp      | Fájlok        | Apple     |
 | com.apple.mobileme.fmf1     | Barátok keresése | Apple     |
 | com.apple.mobileme.fmip1    | iPhone keresése  | Apple     |
 | com.apple.gamecenter        | Game Center  | Apple     |
@@ -49,13 +49,13 @@ When you configure features on iOS devices, you can also add the built-in apps o
 | com.apple.Home              | Otthoni         | Apple     |
 | com.apple.iBooks            | iBooks       | Apple     |
 | com.apple.iMovie            | iMovie       | Apple     |
-| com.apple.itunesconnect.mobile | iTunes Connect | Apple |
+| com.apple.itunesconnect.mobile | iTunes-kapcsolat | Apple |
 | com.apple.MobileStore       | iTunes Store | Apple     |
 | com.apple.itunesu           | iTunes U     | Apple     |
 | com.apple.Keynote           | Keynote      | Apple     |
 | com.apple.mobilemail        | Mail         | Apple     |
-| com.apple.Maps              | Térképek         | Apple     |
-| com.apple.measure           | Measure      | Apple     |
+| com.apple.Maps              | Maps         | Apple     |
+| com. Apple. mérték           | Kategória      | Apple     |
 | com.apple.MobileSMS         | Üzenetek     | Apple     |
 | com.apple.Music             | Zene        | Apple     |
 | com.apple.news              | Hírek         | Apple     |
@@ -69,7 +69,7 @@ When you configure features on iOS devices, you can also add the built-in apps o
 | com.apple.reminders         | Emlékeztetők    | Apple     |
 | com.apple.mobilesafari      | Safari       | Apple     |
 | com.apple.Preferences       | Beállítások     | Apple     |
-| com.apple.shortcuts         | Shortcuts    | Apple     |
+| com. Apple. Shortcuts         | Billentyűparancsok    | Apple     |
 | com.apple.SiriViewService   | Siri         | Apple     |
 | com.apple.stocks            | Részvények       | Apple     |
 | com.apple.tips              | Tippek         | Apple     |
@@ -82,4 +82,4 @@ When you configure features on iOS devices, you can also add the built-in apps o
 
 ## <a name="next-steps"></a>További lépések
 
-Use these bundle IDs to configure [device features](ios-device-features-settings.md) and to [allow or restrict some settings](device-restrictions-ios.md) on iOS devices.
+Ezekkel a köteg-azonosítókkal konfigurálhatja az [eszköz funkcióit](ios-device-features-settings.md) , és [engedélyezheti vagy korlátozhatja az iOS-eszközök egyes beállításait](device-restrictions-ios.md) .

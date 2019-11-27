@@ -1,6 +1,6 @@
 ---
-title: Use a PIN to sign in to Windows 10 devices using Microsoft Intune - Azure | Microsoft Docs
-description: Use Windows Hello for Business to allow users to sign in to devices using a PIN, a fingerprint, and more. Create an identity protection configuration profile in Intune for Windows 10 devices with these settings, and assign the profile to user groups and device groups.
+title: PIN-kód használata a Windows 10-es eszközökre való bejelentkezéshez Microsoft Intune-Azure használatával | Microsoft Docs
+description: A Windows Hello for Business használatával lehetővé teheti a felhasználók számára, hogy PIN-kódot, ujjlenyomatot és egyebeket használva jelentkezzenek be az eszközökre. Hozzon létre egy Identity Protection konfigurációs profilt az Intune-ban a Windows 10-es eszközökhöz ezekkel a beállításokkal, és rendelje hozzá a profilt a felhasználói csoportokhoz és az eszközök csoportjaihoz.
 keywords: ''
 author: brenduns
 ms.author: brenduns
@@ -22,13 +22,13 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 11/19/2019
 ms.locfileid: "74188250"
 ---
-# <a name="use-windows-hello-for-business-on-windows-10-devices-with-microsoft-intune"></a>Use Windows Hello for Business on Windows 10 devices with Microsoft Intune
+# <a name="use-windows-hello-for-business-on-windows-10-devices-with-microsoft-intune"></a>A Windows Hello for Business használata Windows 10-es eszközökön Microsoft Intune
 
-Windows Hello for Business is a method for signing in to Windows devices by replacing passwords, smart cards, and virtual smart cards. Intune includes built-in settings so Administrators can configure and use Windows Hello for Business. For example, you can use these settings to:
+A vállalati Windows Hello szolgáltatás a jelszavak, intelligens kártyák és virtuális intelligens kártyák cseréjével a Windows-eszközökre való bejelentkezéshez használható módszer. Az Intune beépített beállításokat tartalmaz, amelyek segítségével a rendszergazdák konfigurálhatják és használhatják a vállalati Windows Hello-t. Például a következő beállításokkal végezheti el a használatát:
 
-- Enable Windows Hello for Business for devices and users
-- Set device PIN requirements, including a minimum or maximum PIN length
-- Allow gestures, such as a fingerprint, that users can (or can't use) to sign in to devices
+- A vállalati Windows Hello engedélyezése az eszközök és a felhasználók számára
+- Az eszköz PIN-követelményeinek beállítása, beleértve a PIN-kód minimális vagy maximális hosszát
+- Kézmozdulatok, például ujjlenyomatok engedélyezése, hogy a felhasználók (vagy nem használhatják) bejelentkezhetnek az eszközökre
 
 Ez a funkció a következő rendszerű eszközökre vonatkozik:
 
@@ -36,41 +36,41 @@ Ez a funkció a következő rendszerű eszközökre vonatkozik:
 - Windows 10 mobil verzió
 - Windows Holographic for Business
 
-Intune uses "configuration profiles" to create and customize these settings for your organization's needs. After you add these features in a profile, push or deploy these settings to user and device groups in your organization.
+Az Intune a "konfigurációs profilok" használatával hozza létre és szabja testre ezeket a beállításokat a szervezet igényeinek megfelelően. Miután hozzáadta ezeket a szolgáltatásokat egy profilhoz, leküldheti vagy telepítheti ezeket a beállításokat a szervezetében lévő felhasználói és eszközök csoportjaira.
 
-This article shows you how to create a device configuration profile. For a list of all the settings, and what they do, see [Windows 10 device settings to enable Windows Hello for Business](identity-protection-windows-settings.md).
+Ez a cikk bemutatja, hogyan hozhat létre egy eszköz-konfigurációs profilt. Az összes beállítás listáját és azok leírását lásd: [Windows 10 eszközbeállítások a vállalati Windows Hello engedélyezéséhez](identity-protection-windows-settings.md).
 
-## <a name="create-the-device-profile"></a>Create the device profile
+## <a name="create-the-device-profile"></a>Az eszköz profiljának létrehozása
 
-1. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431).
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Select **Devices** > **Configuration profiles** > **Create profile**.
+2. Válassza az **eszközök** > **konfigurációs profilok** lehetőséget > a **profil létrehozása**elemet.
 
 3. Adja meg a következő tulajdonságokat:
 
    - **Név**: Adja meg az új profil leíró nevét.
    - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
-   - **Platform**: Select **Windows 10 and later**. A Vállalati Windows Hello csak a Windows 10 vagy újabb rendszerű eszközökön támogatott.
-   - **Profile type**: Select **Identity protection**.
+   - **Platform**: válassza **a Windows 10 és újabb**lehetőséget. A Vállalati Windows Hello csak a Windows 10 vagy újabb rendszerű eszközökön támogatott.
+   - **Profil típusa**: válassza az **Identity Protection**elemet.
 
-4. On the *Windows Hello for Business* pane, configure the following options:
+4. A *vállalati Windows Hello* panelen konfigurálja a következő beállításokat:
 
-   - **Configure Windows Hello for Business**: Choose how you want to configure Windows Hello for Business:
+   - **A vállalati Windows Hello konfigurálása**: válassza ki, hogyan szeretné konfigurálni a vállalati Windows Hello-t:
 
-     - **Not configured** (default): [Provisions Windows Hello for Business](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-how-it-works-provisioning) on the device. Ha csak felhasználókhoz rendel hozzá identitásvédelmi profilokat, az eszközkörnyezet alapértelmezett beállítása a **Nem konfigurált** lesz.
+     - **Nincs konfigurálva** (alapértelmezett): a [vállalati Windows Hello szolgáltatásra vonatkozó rendelkezések](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-how-it-works-provisioning) az eszközön. Ha csak felhasználókhoz rendel hozzá identitásvédelmi profilokat, az eszközkörnyezet alapértelmezett beállítása a **Nem konfigurált** lesz.
 
-     - **Disabled**: If you don't want to use Windows Hello for Business, select this option. This option disables Windows Hello for Business for all users.
+     - **Letiltva**: Ha nem szeretné a vállalati Windows Hello-t használni, válassza ezt a lehetőséget. Ez a beállítás letiltja a vállalati Windows Hello-et minden felhasználó számára.
 
-     - **Enabled**: Choose this option to [provision](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-how-it-works-provisioning), and configure Windows Hello for Business settings in Intune. Enter the settings you want to configure. For a list of all settings, and what they do, see - [Windows 10 device settings to enable Windows Hello for Business](identity-protection-windows-settings.md).
+     - **Engedélyezve**: válassza [ezt a lehetőséget a vállalati](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-how-it-works-provisioning)Windows Hello beállításainak kiépítéséhez és konfigurálásához az Intune-ban. Adja meg a konfigurálni kívánt beállításokat. Az összes beállítás listáját és azok leírását lásd: – [Windows 10 eszközbeállítások a vállalati Windows Hello engedélyezéséhez](identity-protection-windows-settings.md).
 
-   - **Use security keys for sign-in**: Enable Windows Hello security key as a logon credential for all PCs in the tenant.
+   - **Bejelentkezéshez használható biztonsági kulcsok használata**: a Windows Hello biztonsági kulcs engedélyezése bejelentkezési hitelesítő adatként a bérlő összes számítógépe számára.
 
-     - **Enable**
-     - **Not configured**  (default)
+     - **Engedélyezés**
+     - **Nincs konfigurálva** (alapértelmezett)
 
 5. Ha elkészült, a módosítások mentéséhez válassza az **OK** > **Létrehozás** lehetőséget.
 
-The profile is created and appears in the profiles list. Next, [assign](../configuration/device-profile-assign.md) this profile to user and device groups to meet your needs.
+Ekkor létrejön a profil, és megjelenik a profilok listájában. Ezután [rendelje hozzá](../configuration/device-profile-assign.md) ezt a profilt a felhasználókhoz és az eszközökhöz, hogy megfeleljen az igényeinek.
 
 <!--  Removing image as part of design review; retaining source until we known the disposition.
 
@@ -84,5 +84,5 @@ In this high-level example, you'll create a device restriction policy that block
 
 ## <a name="next-steps"></a>További lépések
 
-- See a list of all [the settings, and what they do](identity-protection-windows-settings.md).
+- Tekintse meg az összes [beállítás listáját, és hogy mit csinálnak](identity-protection-windows-settings.md).
 - [Rendelje hozzá a profilt](../configuration/device-profile-assign.md), és [kövesse nyomon az állapotát](../configuration/device-profile-monitor.md).

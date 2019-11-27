@@ -73,7 +73,7 @@ Sok felhasználó kérdezi, hogy mikor kell felhasználói csoportokat használn
 
 Ha egy eszközön szeretné alkalmazni a beállításokat, függetlenül attól, hogy ki jelentkezett be, majd rendelje hozzá a profilokat az eszközök csoportjához. Az eszközök csoportjaira alkalmazott beállítások mindig az eszközön mennek, nem a felhasználó.
 
-Példa:
+Például:
 
 - Az eszközcsoport olyan eszközök felügyeletéhez hasznos, amelyek nem rendelkeznek dedikált felhasználóval. Például vannak olyan eszközök, amelyek a jegyek, a beolvasási leltár, a kihelyezett munkavégzők megosztva vannak, egy adott raktárhoz vannak rendelve, és így tovább. Helyezze ezeket az eszközöket egy eszköz csoportba, és rendelje hozzá a profilokat az eszközök csoportjához.
 
@@ -87,7 +87,7 @@ Ha szeretne összefoglalni, akkor használja az erőforráscsoportok használat�
 
 A felhasználói csoportokra alkalmazott Profilbeállítások mindig a felhasználóval mennek át, és a felhasználó a sok eszközre való bejelentkezéskor. Normális, hogy a felhasználóknak sok eszközük van, például a Surface Pro for Work és egy személyes iOS-eszköz. Emellett normális, hogy valaki hozzáfér az e-mailekhez és más szervezeti erőforrásokhoz az eszközökről.
 
-Példa:
+Például:
 
 - Egy ügyfélszolgálati ikont szeretne elhelyezni az összes felhasználó számára az összes eszközön. Ebben a forgatókönyvben ezeket a felhasználókat egy felhasználói csoportba helyezheti, és az ügyfélszolgálat ikonjának profilját hozzárendelheti ehhez a felhasználói csoporthoz.
 - A felhasználók új szervezet által birtokolt eszközt kapnak. A felhasználó tartományi fiókkal jelentkezik be az eszközre. Az eszköz automatikusan regisztrálva van az Azure AD-ben, és automatikusan az Intune kezeli. Ez a profil jó példa a felhasználók csoportjához való hozzárendelésre.

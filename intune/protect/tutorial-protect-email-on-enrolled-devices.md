@@ -1,7 +1,7 @@
 ---
-title: Tutorial - Protect Exchange Online email on managed devices
+title: Oktatóanyag – Exchange Online-levelezés biztosítása a felügyelt eszközökön
 titleSuffix: Microsoft Intune
-description: Learn to secure Exchange Online with iOS Intune compliance policies and Azure AD Conditional Access to require managed devices and the Outlook app.
+description: Ismerje meg, hogyan védheti meg az Exchange Online-t az iOS Intune megfelelőségi szabályzatokkal és az Azure AD feltételes hozzáféréssel a felügyelt eszközök és az Outlook alkalmazás megköveteléséhez.
 keywords: ''
 author: brenduns
 ms.author: brenduns
@@ -27,15 +27,15 @@ ms.locfileid: "74409823"
 ---
 # <a name="tutorial-protect-exchange-online-email-on-managed-devices"></a>Oktatóanyag: Az Exchange Online e-mailjeinek védelme felügyelt eszközökön
 
-Learn about using device compliance policies with Conditional Access to make sure that iOS devices can access Exchange Online email only if they're managed by Intune and using an approved email app.
+Ismerje meg, hogyan használhatók az eszközök megfelelőségi szabályzatai feltételes hozzáféréssel annak biztosításához, hogy az iOS-eszközök csak akkor férhessenek hozzá az Exchange Online e-mailekhez, ha azokat az Intune felügyeli, és egy jóváhagyott e-mail alkalmazás használatával
 
 Az oktatóanyag segítségével megtanulhatja a következőket:
 
 > [!div class="checklist"]
 > * Egy Intune iOS eszközmegfelelőségi szabályzat létrehozása, ahol megadja, hogy milyen feltételeknek kell teljesülnie ahhoz, hogy az eszköz megfelelő legyen.
-> * Create an Azure Active Directory (Azure AD) Conditional Access policy that requires iOS devices to enroll in Intune, comply with Intune policies, and use the approved Outlook mobile app to access Exchange Online email.
+> * Hozzon létre egy Azure Active Directory (Azure AD) feltételes hozzáférési szabályzatot, amely megköveteli az iOS-eszközök regisztrálását az Intune-ban, teljesíti az Intune-szabályzatokat, és a jóváhagyott Outlook Mobile App használatával fér hozzá az Exchange Online-hoz.
 
-Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon ingyenes próbafiókot](../fundamentals/free-trial-sign-up.md).
+Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon egy ingyenes próbafiókkal](../fundamentals/free-trial-sign-up.md).
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -49,19 +49,19 @@ Mielőtt elkezdené, hozzon létre az iOS eszközök számára egy teszteszközp
 
 ## <a name="sign-in-to-intune"></a>Bejelentkezés az Intune-ba
 
-Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431) as a [Global administrator](../fundamentals/users-add.md#types-of-administrators) or an Intune [Service administrator](../fundamentals/users-add.md#types-of-administrators). Ha létrehozott egy Intune próba-előfizetést, az a fiók lesz a globális rendszergazda, amelyikkel azt létrehozta.
+Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központba](https://go.microsoft.com/fwlink/?linkid=2109431) [globális rendszergazdaként](../fundamentals/users-add.md#types-of-administrators) vagy Intune [szolgáltatás-rendszergazdaként](../fundamentals/users-add.md#types-of-administrators). Ha létrehozott egy Intune próba-előfizetést, az a fiók lesz a globális rendszergazda, amelyikkel létrehozta azt.
 
 ## <a name="create-the-ios-device-compliance-policy"></a>Az iOS eszközmegfelelőségi szabályzat létrehozása
 
 Hozzon létre egy Intune eszközmegfelelőségi szabályzatot, ahol megadja, hogy milyen feltételeknek kell teljesülnie ahhoz, hogy az eszköz megfelelő legyen. Ebben az oktatóanyagban iOS-eszközökhöz hozunk létre eszközmegfelelőségi szabályzatot. A megfelelőségi szabályzatok platformspecifikusak, így külön megfelelőségi szabályzatot kell létrehoznia minden értékelni kívánt eszközplatformhoz.
 
-1. In Intune, select **Devices** > **Compliance policies** > **Create policy**.
+1. Az Intune-ban válassza az **eszközök** > **megfelelőségi szabályzatok** > **házirend létrehozása**lehetőséget.
 
-2. For **Name**, enter **iOS compliance policy test**.
+2. A **név**mezőben adja meg az iOS-es **megfelelőségi szabályzatok tesztelését**.
 
-3. For **Description**, enter **iOS compliance policy test**.
+3. A **Leírás**mezőben adja meg az iOS-es **megfelelőségi szabályzatok tesztelését**.
 
-4. For **Platform**, select **iOS/iPadOS**.
+4. A **platform**területen válassza az **iOS/iPadOS**lehetőséget.
 
 5. Kattintson a **Beállítások** > **E-mail** elemre.
 
@@ -82,7 +82,7 @@ Hozzon létre egy Intune eszközmegfelelőségi szabályzatot, ahol megadja, hog
    - A **jelszó minimális hosszához** adja meg a **4** értéket.
 
      > [!TIP]
-     > Default values that are grayed out and italicized are only recommendations. You must replace values that are recommendations to configure a setting.
+     > A szürke és a dőlt alapértelmezett értékek csak javaslatok. A beállítások konfigurálásához javasolt értékeket kell cserélnie.
 
    - A **Kötelező jelszótípus** elemnél válassza ki az **Alfanumerikus** lehetőséget.
 
@@ -98,17 +98,17 @@ Hozzon létre egy Intune eszközmegfelelőségi szabályzatot, ahol megadja, hog
 
 9. Válassza a **Létrehozás** lehetőséget.
 
-## <a name="create-the-conditional-access-policy"></a>Create the Conditional Access policy
+## <a name="create-the-conditional-access-policy"></a>A feltételes hozzáférési szabályzat létrehozása
 
-Now we’ll create a Conditional Access policy that requires all device platforms to enroll in Intune and comply with our Intune compliance policy before they can access Exchange Online. Ezenkívül az Outlook alkalmazásra is szükség lesz az e-mailek eléréséhez. Conditional Access policies are configurable in either the Azure AD portal or the Intune portal. Mivel már az Intune portálon vagyunk, itt fogjuk létrehozni a szabályzatot.
+Most létrehozunk egy feltételes hozzáférési szabályzatot, amelyhez minden eszköz platformjának regisztrálnia kell az Intune-ban, és meg kell felelnie az Intune megfelelőségi szabályzatának az Exchange Online-hoz való hozzáféréshez. Ezenkívül az Outlook alkalmazásra is szükség lesz az e-mailek eléréséhez. A feltételes hozzáférési szabályzatok az Azure AD-portálon vagy az Intune-portálon konfigurálhatók. Mivel már az Intune portálon vagyunk, itt fogjuk létrehozni a szabályzatot.
 
-1. In Intune, select **Endpoint security** > **Conditional Access** > **New policy**.
+1. Az Intune-ban válassza az **Endpoint security** > a **feltételes hozzáférés** > **új szabályzat**lehetőséget.
 
-2. For **Name**, enter **Test policy for Office 365 email**.
+2. A **név**mezőben adja meg **az Office 365-e-mailek tesztelési szabályzatát**.
 
 3. A **Hozzárendelések** alatt válassza a **Felhasználók és csoportok** lehetőséget. A **Belefoglalás** lapon válassza a **Minden felhasználó** lehetőséget, majd a **Kész** elemet.
 
-4. Under **Assignments**, select **Cloud apps or actions**. Mivel az Office 365 Exchange Online e-mailjeit szeretnénk megvédeni, a következő lépések segítségével választhatjuk ki:
+4. A **hozzárendelések**területen válassza a **felhőalapú alkalmazások vagy műveletek**elemet. Mivel az Office 365 Exchange Online e-mailjeit szeretnénk megvédeni, a következő lépések segítségével választhatjuk ki:
 
    1. A **Belefoglalás** lapon válassza az **Alkalmazások kiválasztása** elemet.
 
@@ -124,11 +124,11 @@ Now we’ll create a Conditional Access policy that requires all device platform
 
    1. A **Konfigurálás** alatt válassza az **Igen** lehetőséget.
 
-   2. On the **Include** tab, select **Any device**, and then select **Done**. 
+   2. A **beágyazás** lapon válassza ki a kívánt **eszközt**, majd kattintson a **kész**gombra. 
 
    3. Ismét válassza a **Kész** gombot.
 
-   ![Include any device](./media/tutorial-protect-email-on-enrolled-devices/ios-ca-policy-cloud-device-platforms.png)
+   ![Bármilyen eszköz belefoglalása](./media/tutorial-protect-email-on-enrolled-devices/ios-ca-policy-cloud-device-platforms.png)
 
 6. A **Hozzárendelések** alatt válassza a **Feltételek** > **Ügyfélalkalmazások** lehetőséget.
 
@@ -138,7 +138,7 @@ Now we’ll create a Conditional Access policy that requires all device platform
 
    3. Kattintson a **Kész**, majd ismét a **Kész** gombra.
 
-   ![Select apps and clients](./media/tutorial-protect-email-on-enrolled-devices/ios-ca-policy-client-apps.png)
+   ![Alkalmazások és ügyfelek kiválasztása](./media/tutorial-protect-email-on-enrolled-devices/ios-ca-policy-client-apps.png)
 
 7. A **Hozzáférés-vezérlés** alatt válassza ki az **Engedélyezés** elemet.
 
@@ -152,11 +152,11 @@ Now we’ll create a Conditional Access policy that requires all device platform
 
    5. Válassza a **Kijelölés** elemet.
 
-   ![Select conrols](./media/tutorial-protect-email-on-enrolled-devices/ios-ca-policy-grant-access.png)
+   ![Conrols kiválasztása](./media/tutorial-protect-email-on-enrolled-devices/ios-ca-policy-grant-access.png)
 
 8. A **Szabályzat engedélyezése** alatt válassza a **Bekapcsolás** elemet.
 
-   ![Enable policy](./media/tutorial-protect-email-on-enrolled-devices/ios-ca-policy-enable-policy.png)
+   ![Szabályzat engedélyezése](./media/tutorial-protect-email-on-enrolled-devices/ios-ca-policy-enable-policy.png)
 
 9. Válassza a **Létrehozás** lehetőséget.
 
@@ -174,19 +174,19 @@ A létrehozott szabályzat megköveteli, hogy az Office 365 e-mail-alkalmazásá
 
 5. Megjelenik egy üzenet, amely figyelmezteti, hogy az eszköznek felügyeltnek kell lennie az erőforráshoz történő hozzáféréshez, és felkínálja a regisztráció lehetőségét.
 
-## <a name="clean-up-resources"></a>Erőforrások eltávolítása
+## <a name="clean-up-resources"></a>Az erőforrások eltávolítása
 
 Ha már nincs szükség a tesztszabályzatokra, eltávolíthatja őket.
-1. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431) as a Global Administrator or an Intune Service Administrator.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központba](https://go.microsoft.com/fwlink/?linkid=2109431) globális rendszergazdaként vagy Intune szolgáltatás-rendszergazdaként.
 
-2. Select **Devices** > **Compliance policies**.
+2. Válassza az **eszközök** > **megfelelőségi szabályzatok**lehetőséget.
 
 3. A **Szabályzat neve** listában válassza a tesztszabályzat helyi menüjét ( **...** ), majd válassza a **Törlés** elemet. Válassza az **OK** lehetőséget a megerősítéshez.
 
-4. Select **Endpoint security** > **Conditional access**.
+4. Válassza a **végpontok biztonsága** > **feltételes hozzáférés**lehetőséget.
 
-5. A **Szabályzat neve** listában válassza a tesztszabályzat helyi menüjét ( **...** ), majd válassza a **Törlés** elemet. Select **Yes** to confirm.
+5. A **Szabályzat neve** listában válassza a tesztszabályzat helyi menüjét ( **...** ), majd válassza a **Törlés** elemet. A megerősítéshez válassza az **Igen** lehetőséget.
 
 ## <a name="next-steps"></a>További lépések
 
-Az oktatóanyag során olyan szabályzatokat hozott létre, amelyek megkövetelik, hogy az Exchange Online e-mail-alkalmazásába belépni kívánó iOS-eszközök regisztráljanak az Intune-ban és az Outlook alkalmazást használják. To learn about using Intune with Conditional Access to protect other apps and services, including Exchange ActiveSync clients for Office 365 Exchange Online, see [Set up Conditional Access](conditional-access.md).
+Az oktatóanyag során olyan szabályzatokat hozott létre, amelyek megkövetelik, hogy az Exchange Online e-mail-alkalmazásába belépni kívánó iOS-eszközök regisztráljanak az Intune-ban és az Outlook alkalmazást használják. Ha szeretné megtudni, hogyan használhatja az Intune-t feltételes hozzáféréssel más alkalmazások és szolgáltatások, például az Office 365 Exchange ActiveSync-ügyfelek számára az Exchange Online-hoz, tekintse [meg a feltételes hozzáférés beállítása](conditional-access.md)című témakört.

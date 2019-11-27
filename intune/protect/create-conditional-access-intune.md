@@ -1,7 +1,7 @@
 ---
-title: Set up device-based Conditional Access with Intune
+title: Eszköz alapú feltételes hozzáférés beállítása az Intune-nal
 titleSuffix: Microsoft Intune
-description: Learn how to create a device-based Conditional Access policy based on Microsoft Intune device compliance and mobile app management.
+description: Megtudhatja, hogyan hozhat létre egy eszköz-alapú feltételes hozzáférési szabályzatot az eszközök megfelelőségének és a mobileszközök felügyeletének Microsoft Intune alapján.
 keywords: ''
 author: brenduns
 ms.author: brenduns
@@ -24,86 +24,86 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 11/19/2019
 ms.locfileid: "74188356"
 ---
-# <a name="create-a-device-based-conditional-access-policy"></a>Create a device-based Conditional Access policy
+# <a name="create-a-device-based-conditional-access-policy"></a>Eszköz alapú feltételes hozzáférési szabályzat létrehozása
 
-With Intune, enhance Conditional Access in Azure Active Directory by adding mobile device compliance to the access controls. With Intune compliance policy that defines requirements for devices to be compliant, you can use a device’s compliance status to either allow or block access to your apps and services. You can do this by creating a Conditional Access policy that uses the setting **Require device to be marked as compliant**.
+Az Intune-nal a feltételes hozzáférés növelése Azure Active Directory a mobileszköz-megfelelőség a hozzáférés-vezérléshez való hozzáadásával. Az Intune megfelelőségi szabályzata, amely meghatározza, hogy milyen követelmények vonatkoznak a megfelelőségre, az eszköz megfelelőségi állapota alapján engedélyezheti vagy letilthatja az alkalmazásokhoz és szolgáltatásokhoz való hozzáférést. Ezt úgy teheti meg, hogy létrehoz egy feltételes hozzáférési szabályzatot, amely az **eszköz megfelelőként való megjelölésének megkövetelése**beállítást használja.
 
-A Conditional Access policy specifies the app or services you want to protect, the conditions under which the apps or services can be accessed, and the users the policy applies to. Although Conditional Access is an Azure AD premium feature, the Conditional Access node you access from *Intune* is the same node as accessed from *Azure AD*.
+A feltételes hozzáférési szabályzat meghatározza a védelemmel ellátni kívánt alkalmazást vagy szolgáltatásokat, az alkalmazások vagy szolgáltatások elérésének feltételeit, valamint azokat a felhasználókat, amelyekre a szabályzat vonatkozik. Habár a feltételes hozzáférés egy prémium szintű Azure AD-szolgáltatás, az *Intune* -ból hozzáférő feltételes hozzáférési csomópont ugyanaz a csomópont, mint az *Azure ad*-ben.
 
 > [!IMPORTANT]
-> Before you set up Conditional Access, you'll need to set up Intune device compliance policies to evaluate devices based on whether they meet specific requirements. See [Get started with device compliance policies in Intune](device-compliance-get-started.md).
+> A feltételes hozzáférés beállítása előtt be kell állítania az Intune-eszközök megfelelőségi szabályzatait az eszközök kiértékeléséhez, attól függően, hogy megfelelnek-e az adott követelményeknek. Lásd: [az eszközök megfelelőségi szabályzatának első lépései az Intune-ban](device-compliance-get-started.md).
 
-## <a name="create-conditional-access-policy"></a>Create Conditional Access policy
+## <a name="create-conditional-access-policy"></a>Feltételes hozzáférési szabályzat létrehozása
 
-1. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431).
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Select **Devices** > **Conditional Access** > **Policies** > **New policy**.
-  ![Create a new Conditional Access policy](./media/create-conditional-access-intune/create-ca.png)
+2. Válassza az **eszközök** > **feltételes hozzáférés** > **házirendek** > **új házirend**elemet.
+  ![hozzon létre egy új feltételes hozzáférési szabályzatot](./media/create-conditional-access-intune/create-ca.png)
 
 3. A **Hozzárendelések** alatt válassza a **Felhasználók és csoportok** lehetőséget.
 
-4. On the **Include** tab, identify the users or groups that this Conditional Access policy applies to. Once you’ve chosen groups or users to include, use the **Exclude** tab if there are any users, roles, or groups you want to exclude from this policy.
+4. A **beágyazás** lapon azonosítsa azokat a felhasználókat vagy csoportokat, amelyekre ez a feltételes hozzáférési szabályzat vonatkozik. Miután kiválasztotta a csoportok vagy felhasználók belefoglalását, használja a **kizárás** lapot, ha vannak olyan felhasználók, szerepkörök vagy csoportok, amelyeket ki szeretne zárni ebből a szabályzatból.
 
-   - **All users**: Select this option to apply the policy to all users and groups, including internal and guest users.
+   - **Minden felhasználó**: válassza ezt a lehetőséget, ha az összes felhasználóra és csoportra alkalmazni szeretné a szabályzatot, beleértve a belső és a vendég felhasználókat is.
 
-   - **Select users and groups**: Select this option and specify one or more of the following options:
+   - **Felhasználók és csoportok kiválasztása**: válassza ezt a lehetőséget, és adjon meg egyet vagy többet az alábbi lehetőségek közül:
   
-     1. **All guest users**: Select this option to include or exclude external guest users (for example, partners, external collaborators)
+     1. **Minden vendég felhasználó**: válassza ezt a lehetőséget a külső vendég felhasználók (például partnerek, külső közreműködők) belefoglalásához vagy kizárásához.
 
-     2. **Directory roles**: Select one or more Azure AD roles to include or exclude users who are assigned these roles.
+     2. **Címtárbeli szerepkörök**: válasszon ki egy vagy több Azure ad-szerepkört a szerepkörökhöz hozzárendelt felhasználók belefoglalásához vagy kizárásához.
 
-     3. **Users and groups**: Select this option to search for and select individual users or groups you want include or exclude.
+     3. **Felhasználók és csoportok**: ezzel a beállítással megkeresheti és kiválaszthatja azokat az egyes felhasználókat vagy csoportokat, amelyeket szeretne felvenni vagy kizárni.
 
         > [!TIP]
-        > Test the policy against a smaller group of users to make sure it works as expected.
+        > Tesztelje a házirendet egy kisebb felhasználói csoporttal, hogy biztosan a várt módon működjön.
 
 5. Válassza a **Kész** lehetőséget.
 
-6. Under **Assignments**, select **Cloud apps or actions**.
+6. A **hozzárendelések**területen válassza a **felhőalapú alkalmazások vagy műveletek**elemet.
 
-7. On the **Include** tab, use available options to identify the apps and services you want to protect with this Conditional Access policy. Then you can use the **Exclude** tab if there are any apps or services you want to exclude from this policy.
+7. A **beágyazás** lapon az elérhető beállítások használatával azonosíthatja azokat az alkalmazásokat és szolgáltatásokat, amelyeket a feltételes hozzáférési szabályzattal szeretne védelemmel ellátni. Ezt követően használhatja a **kizárás** lapot, ha vannak olyan alkalmazások vagy szolgáltatások, amelyeket ki szeretne zárni ebből a szabályzatból.
 
-   - **All cloud apps**: Select this option to apply the policy to all apps.
+   - **Minden felhőalapú alkalmazás**: válassza ezt a lehetőséget, ha az összes alkalmazásra alkalmazni szeretné a szabályzatot.
      > [!IMPORTANT]
-     > The Microsoft Azure Management app for access to the Azure portal is included in this list. Be sure to use the **Exclude** tab either here or in the **Users and groups** options to make sure you (or the users or groups you designate) will be able to sign in to the Azure portal. 
+     > A lista a Azure Portal eléréséhez Microsoft Azure felügyeleti alkalmazást tartalmazza. Ügyeljen arra, hogy a **kizárás** lapot itt vagy a **felhasználók és csoportok** beállításainál ellenőrizze, hogy a (vagy a kijelölt felhasználók vagy csoportok) be tudja-e jelentkezni a Azure Portalba. 
 
-   - **Select apps**: Select this option, choose **Select**, and then use the applications list to search for and select the apps or services you want to protect.
+   - **Alkalmazások kiválasztása**: válassza ezt a lehetőséget, válassza a **kiválasztás**elemet, majd az alkalmazások listában keresse meg és válassza ki a védelemmel ellátni kívánt alkalmazásokat vagy szolgáltatásokat.
 
-   When ready, select **Done**.
+   Ha elkészült, válassza a **kész**lehetőséget.
 
-8. Under **Assignments**, select **Conditions**.
+8. A **hozzárendelések**területen válassza a **feltételek**lehetőséget.
 
-   - **Sign-in risk**: Select *Yes* to use Azure AD Identity Protection sign-in risk detection with this policy, and then choose the sign-in risk levels the policy should apply to.
+   - **Bejelentkezési kockázat**: válassza az *Igen* lehetőséget, ha Azure ad Identity Protection bejelentkezési kockázati észlelést kíván használni a szabályzattal, majd válassza ki a bejelentkezési kockázati szinteket, amelyekre alkalmazni kell a szabályzatot.
 
-   - **Device platforms**: On the **Include** tab, identify the device platforms you want to this Conditional Access policy to apply to. Use the **Exclude** tab to exclude platforms from this policy.
+   - **Eszköz platformok**: a **beágyazás** lapon azonosítsa azokat az eszközöket, amelyekre alkalmazni kívánja a feltételes hozzáférési szabályzatot. A **kizárás** lapon kizárhatja a szabályzatok platformját.
 
-   - **Locations**: On the **Include** tab, specify whether the policy applies to:
-     - Any location
-     - Trusted network locations that are under the control of your IT department
-     - Specific network locations.
+   - **Helyszínek**: a **Belefoglalás** lapon adja meg, hogy a házirend a következőre vonatkozik-e:
+     - Bármely hely
+     - Az informatikai részleg felügyelete alá tartozó megbízható hálózati helyek
+     - Adott hálózati telephelyek.
 
-     Use the **Exclude** tab to exclude network locations from this policy.
+     A **kizárás** lapon kizárhatja a házirendből a hálózati telephelyeket.
 
-   - **Client apps**: Select *Yes* to specify if the policy should apply to browser apps, mobile apps, and desktop clients.
+   - **Ügyfélalkalmazások**: válassza az *Igen* lehetőséget annak megadásához, hogy a szabályzat a böngésző alkalmazásaira, a Mobile apps szolgáltatásra és az asztali ügyfelekre vonatkozzon-e.
 
-   - **Device state**: The Conditional Access policy will apply to all device states unless you choose Yes and specifically exclude the states Device Hybrid Azure AD joined or Device marked as compliant (or both).
+   - **Eszköz állapota**: a feltételes hozzáférési szabályzat minden eszköz állapotra érvényes, kivéve, ha az Igen lehetőséget választja, és kifejezetten kizárja az állapotok eszköz hibrid Azure ad-hez csatlakoztatott vagy megfelelőként megjelölt eszközét (vagy mindkettőt).
 
      > [!TIP]
-     > If you want to protect both **Modern authentication** clients and **Exchange ActiveSync clients**, create two separate Conditional Access policies, one for each client type. Although Exchange ActiveSync supports modern authentication, the only condition that is supported by Exchange ActiveSync is platform. Other conditions, including multi-factor authentication, are not supported. To effectively protect access to Exchange Online from Exchange ActiveSync, create a Conditional Access policy that specifies the cloud app Office 365 Exchange Online and the client app Exchange ActiveSync with Apply policy only to supported platforms selected.
+     > Ha a **modern hitelesítési** ügyfeleket és az **Exchange ActiveSync-ügyfeleket**egyaránt meg szeretné tenni, hozzon létre két külön feltételes hozzáférési szabályzatot, egyet az egyes ügyfelek típusaihoz. Habár az Exchange ActiveSync támogatja a modern hitelesítést, az Exchange ActiveSync által támogatott egyetlen feltétel a platform. Más feltételek, beleértve a többtényezős hitelesítést, nem támogatottak. Az Exchange Online-hoz az Exchange ActiveSync-hez való hozzáférés hatékony biztosításához hozzon létre egy feltételes hozzáférési szabályzatot, amely meghatározza a Cloud app Office 365 Exchange Online-t és az ügyfélalkalmazás Exchange ActiveSync alkalmazást, és alkalmazza a házirendeket csak a kiválasztott támogatott platformokra.
 
 9. Válassza a **Kész** lehetőséget.
 
-10. A **Hozzáférés-vezérlés** alatt válassza ki az **Engedélyezés** elemet. Configure what happens based on the conditions you’ve set up.  You can select from the following options:
+10. A **Hozzáférés-vezérlés** alatt válassza ki az **Engedélyezés** elemet. Konfigurálja, hogy mi történjen a beállított feltételek alapján.  A következő lehetőségek közül választhat:
 
-    - **Block access**: The users specified in this policy will be denied access to the apps under the conditions you’ve specified.
-    - **Grant access**: The users specified in this policy will be granted access, but you can require any of the following further actions:
-      - **Require multi-factor authentication**: The user will need to complete additional security requirements, like a phone call or text.
-      - **Require device to be marked as compliant**: The device must be Intune compliant. If the device is noncompliant, the user will be given the option to enroll the device in Intune.
-      - **Require Hybrid Azure AD joined device**: Devices must be Hybrid Azure AD joined.
-      - **Require approved client app**: The device must use approved client apps. 
-      - **For multiple controls**: Select **Require all the selected controls** so that all of the requirements are enforced when a device attempts to access the app.
+    - **Hozzáférés letiltása**: az ebben a házirendben megadott felhasználók megtagadják a hozzáférést az alkalmazásokhoz a megadott feltételek szerint.
+    - **Hozzáférés biztosítása**: a szabályzatban megadott felhasználók hozzáférést kapnak, de a következő műveletek bármelyikét megkövetelheti:
+      - **Többtényezős hitelesítés megkövetelése**: a felhasználónak további biztonsági követelményeket kell végrehajtania, például telefonhívást vagy szöveget.
+      - **Eszköz megfelelőként való megjelölésének megkövetelése**: az eszköznek Intune-kompatibilisnek kell lennie. Ha az eszköz nem megfelelő, a felhasználónak lehetősége lesz regisztrálni az eszközt az Intune-ban.
+      - **Hibrid Azure ad-hez csatlakoztatott eszköz megkövetelése**: az eszközöknek hibrid Azure ad-hez kell csatlakozniuk.
+      - **Jóváhagyott ügyfélalkalmazás megkövetelése**: az eszköznek jóváhagyott ügyfélalkalmazások használatát kell használnia. 
+      - **Több vezérlő esetén**: válassza az **összes kijelölt vezérlő megkövetelése** lehetőséget, hogy minden követelmény kényszerítve legyen, amikor egy eszköz megpróbál hozzáférni az alkalmazáshoz.
 
-      ![Access controls Grant settings](./media/create-conditional-access-intune/create-ca-grant-access-settings.png)
+      ![Hozzáférés-vezérlési beállítások megadása](./media/create-conditional-access-intune/create-ca-grant-access-settings.png)
 
 11. A **Szabályzat engedélyezése** alatt válassza a **Bekapcsolás** elemet.
 
@@ -111,6 +111,6 @@ A Conditional Access policy specifies the app or services you want to protect, t
 
 ## <a name="next-steps"></a>További lépések
 
-[App-based Conditional Access with Intune](app-based-conditional-access-intune.md)
+[Alkalmazás-alapú feltételes hozzáférés az Intune-nal](app-based-conditional-access-intune.md)
 
-[Troubleshooting Intune Conditional Access](https://support.microsoft.com/help/4456106)
+[Az Intune feltételes hozzáférésének hibaelhárítása](https://support.microsoft.com/help/4456106)

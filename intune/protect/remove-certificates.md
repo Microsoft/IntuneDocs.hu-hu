@@ -26,21 +26,21 @@ ms.locfileid: "74410177"
 ---
 # <a name="remove-scep-and-pkcs-certificates-in-microsoft-intune"></a>SCEP- vagy PKCS-tanúsítványok eltávolítása a Microsoft Intune-ban
 
-In Microsoft Intune, you can use Simple Certificate Enrollment Protocol (SCEP) and Public Key Cryptography Standards (PKCS) certificate profiles to add certificates to devices.
+Microsoft Intune a tanúsítványok eszközökhöz való hozzáadásához használhatja a Egyszerű tanúsítványigénylési protokoll (SCEP) és a nyilvános kulcsú titkosítási szabvány (PKCS) tanúsítvány-profilokat.
 
-These certificates can be removed when you [wipe](../remote-actions/devices-wipe.md#wipe) or [retire](../remote-actions/devices-wipe.md#retire) the device. There are also scenarios where certificates are automatically removed, and scenarios where certificates stay on the device. Ez a cikk néhány gyakori forgatókönyvet és azok PKCS- és SCEP-tanúsítványokra gyakorolt hatását mutatja be.
+Ezek a tanúsítványok [eltávolíthatók az eszköz](../remote-actions/devices-wipe.md#retire) kivonásakor [vagy](../remote-actions/devices-wipe.md#wipe) kivonásakor. Vannak olyan forgatókönyvek is, ahol a rendszer automatikusan eltávolítja a tanúsítványokat, és olyan forgatókönyveket, amelyekben a tanúsítványok az eszközön maradnak. Ez a cikk néhány gyakori forgatókönyvet és azok PKCS- és SCEP-tanúsítványokra gyakorolt hatását mutatja be.
 
 > [!NOTE]
-> To remove and revoke certificates for a user who's being removed from on-premises Active Directory or Azure Active Directory (Azure AD), follow these steps in order:
+> A helyszíni Active Directory vagy Azure Active Directory (Azure AD) által eltávolított felhasználó tanúsítványainak eltávolításához és visszavonásához hajtsa végre az alábbi lépéseket a sorrendben:
 >
-> 1. Wipe or retire the user's device.
-> 2. Remove the user from on-premises Active Directory or Azure AD.
+> 1. A felhasználó eszközének törlése vagy kivonása.
+> 2. Távolítsa el a felhasználót a helyszíni Active Directory vagy az Azure AD-ből.
 
-## <a name="manually-deleted-certificates"></a>Manually deleted certificates
+## <a name="manually-deleted-certificates"></a>Tanúsítványok manuális törlése
 
-Manual deletion of a certificate is a scenario that applies across platforms and certificates provisioned by SCEP or PKCS certificate profiles. For example, a user might delete a certificate from a device, when the device remains targeted by a certificate policy.
+A tanúsítványok manuális törlése olyan forgatókönyv, amely az SCEP-vagy PKCS-tanúsítvány-profilok által kiosztott platformok és tanúsítványok esetében érvényes. Előfordulhat például, hogy egy felhasználó töröl egy tanúsítványt egy eszközről, ha az eszközt egy tanúsítvány-házirend is megcélozta.
 
-In this scenario, after the certificate is deleted, the next time the device checks in with Intune it's found to be out of compliance as it is missing the expected certificate. Intune then issues a new certificate to restore the device to compliance. No additional action is needed to restore the certificate.
+Ebben a forgatókönyvben a tanúsítvány törlését követően az eszköz következő bejelentkezésekor a rendszer nem felel meg az Intune-nak, mert hiányzik a várt tanúsítvány. Az Intune ezután kiad egy új tanúsítványt az eszköz megfelelőségének visszaállításához. A tanúsítvány visszaállításához nincs szükség további műveletre.
 
 ## <a name="windows-devices"></a>Windows-eszközök
 
@@ -48,103 +48,103 @@ In this scenario, after the certificate is deleted, the next time the device che
 
 Az SCEP-tanúsítvány visszavonására *és* eltávolítására a következő esetekben kerül sor:
 
-- A user unenrolls.
-- An administrator runs the [wipe](../remote-actions/devices-wipe.md#wipe) action.
-- An administrator runs the [retire](../remote-actions/devices-wipe.md#retire) action.
-- The device is removed from an Azure AD group.
-- A certificate profile is removed from the group assignment.
+- A felhasználó törli A regisztrációt.
+- Egy rendszergazda futtatja a [törlési](../remote-actions/devices-wipe.md#wipe) műveletet.
+- A rendszergazda futtatja [a](../remote-actions/devices-wipe.md#retire) kivonási műveletet.
+- Az eszköz el lett távolítva egy Azure AD-csoportból.
+- A rendszer eltávolítja a tanúsítvány-profilt a csoport-hozzárendelésből.
 
 Az SCEP-tanúsítvány visszavonására a következő esetekben kerül sor:
 
-- An administrator changes or updates the SCEP profile.
+- A rendszergazda módosítja vagy frissíti a SCEP-profilt.
 
-A root certificate is removed when:
+A főtanúsítvány törlődik, ha:
 
-- A user unenrolls.
-- An administrator runs the [wipe](../remote-actions/devices-wipe.md#wipe) action.
-- An administrator runs the [retire](../remote-actions/devices-wipe.md#retire) action.
+- A felhasználó törli A regisztrációt.
+- Egy rendszergazda futtatja a [törlési](../remote-actions/devices-wipe.md#wipe) műveletet.
+- A rendszergazda futtatja [a](../remote-actions/devices-wipe.md#retire) kivonási műveletet.
 
-SCEP certificates *stay* on the device (certificates aren't revoked or removed) when:
+A SCEP-tanúsítványok az eszközön *maradnak* (a tanúsítványok nem vonhatók vissza vagy nem törlődnek), ha:
 
-- A user loses the Intune license.
-- An administrator withdraws the Intune license.
-- An administrator removes the user or group from Azure AD.
+- A felhasználó elveszíti az Intune-licencet.
+- A rendszergazda visszavonja az Intune-licencet.
+- A rendszergazda eltávolítja a felhasználót vagy csoportot az Azure AD-ből.
 
 ### <a name="pkcs-certificates"></a>PKCS-tanúsítványok
 
 A PKCS-tanúsítvány visszavonására *és* eltávolítására a következő esetekben kerül sor:
 
-- A user unenrolls.
-- An administrator runs the [wipe](../remote-actions/devices-wipe.md#wipe) action.
-- An administrator runs the [retire](../remote-actions/devices-wipe.md#retire) action.
+- A felhasználó törli A regisztrációt.
+- Egy rendszergazda futtatja a [törlési](../remote-actions/devices-wipe.md#wipe) műveletet.
+- A rendszergazda futtatja [a](../remote-actions/devices-wipe.md#retire) kivonási műveletet.
 
-A root certificate is removed when:
+A főtanúsítvány törlődik, ha:
 
-- A user unenrolls.
-- An administrator runs the [wipe](../remote-actions/devices-wipe.md#wipe) action.
-- An administrator runs the [retire](../remote-actions/devices-wipe.md#retire) action.
+- A felhasználó törli A regisztrációt.
+- Egy rendszergazda futtatja a [törlési](../remote-actions/devices-wipe.md#wipe) műveletet.
+- A rendszergazda futtatja [a](../remote-actions/devices-wipe.md#retire) kivonási műveletet.
 
-PKCS certificates *stay* on the device (certificates aren't revoked or removed) when:
+A PKCS-tanúsítványok az eszközön *maradnak* (a tanúsítványok nem vonhatók vissza és nem távolíthatók el), ha:
 
-- A user loses the Intune license.
-- An administrator withdraws the Intune license.
-- An administrator removes the user or group from Azure AD.
-- An administrator changes or updates the PKCS profile.
-- A certificate profile is removed from the group assignment.
+- A felhasználó elveszíti az Intune-licencet.
+- A rendszergazda visszavonja az Intune-licencet.
+- A rendszergazda eltávolítja a felhasználót vagy csoportot az Azure AD-ből.
+- A rendszergazda módosítja vagy frissíti a PKCS-profilt.
+- A rendszer eltávolítja a tanúsítvány-profilt a csoport-hozzárendelésből.
 
 
-## <a name="ios-devices"></a>iOS devices
+## <a name="ios-devices"></a>iOS-eszközök
 
 ### <a name="scep-certificates"></a>SCEP-tanúsítványok
 
 Az SCEP-tanúsítvány visszavonására *és* eltávolítására a következő esetekben kerül sor:
 
-- A user unenrolls.
-- An administrator runs the [wipe](../remote-actions/devices-wipe.md#wipe) action.
-- An administrator runs the [retire](../remote-actions/devices-wipe.md#retire) action.
-- The device is removed from the Azure AD group.
-- A certificate profile is removed from the group assignment.
+- A felhasználó törli A regisztrációt.
+- Egy rendszergazda futtatja a [törlési](../remote-actions/devices-wipe.md#wipe) műveletet.
+- A rendszergazda futtatja [a](../remote-actions/devices-wipe.md#retire) kivonási műveletet.
+- Az eszköz el lesz távolítva az Azure AD-csoportból.
+- A rendszer eltávolítja a tanúsítvány-profilt a csoport-hozzárendelésből.
 
 Az SCEP-tanúsítvány visszavonására a következő esetekben kerül sor:
 
-- An administrator changes or updates the SCEP profile.
+- A rendszergazda módosítja vagy frissíti a SCEP-profilt.
 
-A root certificate is removed when:
+A főtanúsítvány törlődik, ha:
 
-- A user unenrolls.
-- An administrator runs the [wipe](../remote-actions/devices-wipe.md#wipe) action.
-- An administrator runs the [retire](../remote-actions/devices-wipe.md#retire) action.
+- A felhasználó törli A regisztrációt.
+- Egy rendszergazda futtatja a [törlési](../remote-actions/devices-wipe.md#wipe) műveletet.
+- A rendszergazda futtatja [a](../remote-actions/devices-wipe.md#retire) kivonási műveletet.
 
-SCEP certificates *stay* on the device (certificates aren't revoked or removed) when:
+A SCEP-tanúsítványok az eszközön *maradnak* (a tanúsítványok nem vonhatók vissza vagy nem törlődnek), ha:
 
-- A user loses the Intune license.
-- An administrator withdraws the Intune license.
-- An administrator removes the user or group from Azure AD.
+- A felhasználó elveszíti az Intune-licencet.
+- A rendszergazda visszavonja az Intune-licencet.
+- A rendszergazda eltávolítja a felhasználót vagy csoportot az Azure AD-ből.
 
 ### <a name="pkcs-certificates"></a>PKCS-tanúsítványok
 
 A PKCS-tanúsítvány visszavonására *és* eltávolítására a következő esetekben kerül sor:
 
-- A user unenrolls.
-- An administrator runs the [wipe](../remote-actions/devices-wipe.md#wipe) action.
-- An administrator runs the [retire](../remote-actions/devices-wipe.md#retire) action.
+- A felhasználó törli A regisztrációt.
+- Egy rendszergazda futtatja a [törlési](../remote-actions/devices-wipe.md#wipe) műveletet.
+- A rendszergazda futtatja [a](../remote-actions/devices-wipe.md#retire) kivonási műveletet.
 
 A PKCS-tanúsítvány eltávolítására a következő esetekben kerül sor:
 
-- A certificate profile is removed from the group assignment.
+- A rendszer eltávolítja a tanúsítvány-profilt a csoport-hozzárendelésből.
 
-A root certificate is removed when:
+A főtanúsítvány törlődik, ha:
 
-- A user unenrolls.
-- An administrator runs the [wipe](../remote-actions/devices-wipe.md#wipe) action.
-- An administrator runs the [retire](../remote-actions/devices-wipe.md#retire) action.
+- A felhasználó törli A regisztrációt.
+- Egy rendszergazda futtatja a [törlési](../remote-actions/devices-wipe.md#wipe) műveletet.
+- A rendszergazda futtatja [a](../remote-actions/devices-wipe.md#retire) kivonási műveletet.
 
-PKCS certificates *stay* on the device (certificates aren't revoked or removed) when:
+A PKCS-tanúsítványok az eszközön *maradnak* (a tanúsítványok nem vonhatók vissza és nem távolíthatók el), ha:
 
-- A user loses the Intune license.
-- An administrator withdraws the Intune license.
-- An administrator removes the user or group from Azure AD.
-- An administrator changes or updates the PKCS profile.
+- A felhasználó elveszíti az Intune-licencet.
+- A rendszergazda visszavonja az Intune-licencet.
+- A rendszergazda eltávolítja a felhasználót vagy csoportot az Azure AD-ből.
+- A rendszergazda módosítja vagy frissíti a PKCS-profilt.
 
 ## <a name="android-knox-devices"></a>Android Knox-eszközök
 
@@ -152,55 +152,55 @@ PKCS certificates *stay* on the device (certificates aren't revoked or removed) 
 
 Az SCEP-tanúsítvány visszavonására *és* eltávolítására a következő esetekben kerül sor:
 
-- A user unenrolls.
-- An administrator runs the [wipe](../remote-actions/devices-wipe.md#wipe) action.
+- A felhasználó törli A regisztrációt.
+- Egy rendszergazda futtatja a [törlési](../remote-actions/devices-wipe.md#wipe) műveletet.
 
 Az SCEP-tanúsítvány visszavonására a következő esetekben kerül sor:
 
-- An administrator runs the [retire](../remote-actions/devices-wipe.md#retire) action.
-- The device is removed from an Azure AD group.
-- A certificate profile is removed from the group assignment.
-- An administrator removes the user or group from Azure AD.
-- An administrator changes or updates the SCEP profile.
+- A rendszergazda futtatja [a](../remote-actions/devices-wipe.md#retire) kivonási műveletet.
+- Az eszköz el lett távolítva egy Azure AD-csoportból.
+- A rendszer eltávolítja a tanúsítvány-profilt a csoport-hozzárendelésből.
+- A rendszergazda eltávolítja a felhasználót vagy csoportot az Azure AD-ből.
+- A rendszergazda módosítja vagy frissíti a SCEP-profilt.
 
-A root certificate is removed when:
+A főtanúsítvány törlődik, ha:
 
-- A user unenrolls.
-- An administrator runs the [wipe](../remote-actions/devices-wipe.md#wipe) action.
-- An administrator runs the [retire](../remote-actions/devices-wipe.md#retire) action.
+- A felhasználó törli A regisztrációt.
+- Egy rendszergazda futtatja a [törlési](../remote-actions/devices-wipe.md#wipe) műveletet.
+- A rendszergazda futtatja [a](../remote-actions/devices-wipe.md#retire) kivonási műveletet.
 
-SCEP certificates *stay* on the device (certificates aren't revoked or removed) when:
+A SCEP-tanúsítványok az eszközön *maradnak* (a tanúsítványok nem vonhatók vissza vagy nem törlődnek), ha:
 
-- A user loses the Intune license.
-- An administrator withdraws the Intune license.
-- An administrator removes the user or group from Azure AD.
+- A felhasználó elveszíti az Intune-licencet.
+- A rendszergazda visszavonja az Intune-licencet.
+- A rendszergazda eltávolítja a felhasználót vagy csoportot az Azure AD-ből.
 
 ### <a name="pkcs-certificates"></a>PKCS-tanúsítványok
 
 A PKCS-tanúsítvány visszavonására *és* eltávolítására a következő esetekben kerül sor:
 
-- A user unenrolls.
-- An administrator runs the [wipe](../remote-actions/devices-wipe.md#wipe) action.
-- An administrator runs the [retire](../remote-actions/devices-wipe.md#retire) action.
+- A felhasználó törli A regisztrációt.
+- Egy rendszergazda futtatja a [törlési](../remote-actions/devices-wipe.md#wipe) műveletet.
+- A rendszergazda futtatja [a](../remote-actions/devices-wipe.md#retire) kivonási műveletet.
 
-A root certificate is removed when:
+A főtanúsítvány törlődik, ha:
 
-- A user unenrolls.
-- An administrator runs the [wipe](../remote-actions/devices-wipe.md#wipe) action.
-- An administrator runs the [retire](../remote-actions/devices-wipe.md#retire) action.
+- A felhasználó törli A regisztrációt.
+- Egy rendszergazda futtatja a [törlési](../remote-actions/devices-wipe.md#wipe) műveletet.
+- A rendszergazda futtatja [a](../remote-actions/devices-wipe.md#retire) kivonási műveletet.
 
-PKCS certificates *stay* on the device (certificates aren't revoked or removed) when:
-- A user loses the Intune license.
+A PKCS-tanúsítványok az eszközön *maradnak* (a tanúsítványok nem vonhatók vissza és nem távolíthatók el), ha:
+- A felhasználó elveszíti az Intune-licencet.
 
-- An administrator withdraws the Intune license.
-- An administrator removes the user or group from Azure AD.
-- An administrator changes or updates the PKCS profile.
-- A certificate profile is removed from the group assignment.
+- A rendszergazda visszavonja az Intune-licencet.
+- A rendszergazda eltávolítja a felhasználót vagy csoportot az Azure AD-ből.
+- A rendszergazda módosítja vagy frissíti a PKCS-profilt.
+- A rendszer eltávolítja a tanúsítvány-profilt a csoport-hozzárendelésből.
 
 
 > [!NOTE]
-> Android for Work devices are not validated for the preceding scenarios.
-> Android legacy devices (any non-Samsung, non-work profile devices) are not enabled for certificate removal.
+> Az előző forgatókönyvek esetében a rendszer nem érvényesíti az Android for Work-eszközöket.
+> Az Android örökölt eszközök (a nem Samsung, nem munkahelyi profilok eszközei) nincsenek engedélyezve a tanúsítványok eltávolításához.
 
 ## <a name="macos-certificates"></a>macOS-tanúsítványok
 
@@ -208,28 +208,28 @@ PKCS certificates *stay* on the device (certificates aren't revoked or removed) 
 
 Az SCEP-tanúsítvány visszavonására *és* eltávolítására a következő esetekben kerül sor:
 
-- A user unenrolls.
-- An administrator runs a [retire](../remote-actions/devices-wipe.md#retire) action.
-- The device is removed from an Azure AD group.
-- A certificate profile is removed from the group assignment.
+- A felhasználó törli A regisztrációt.
+- A rendszergazda kivonási [műveletet futtat](../remote-actions/devices-wipe.md#retire) .
+- Az eszköz el lett távolítva egy Azure AD-csoportból.
+- A rendszer eltávolítja a tanúsítvány-profilt a csoport-hozzárendelésből.
 
 Az SCEP-tanúsítvány visszavonására a következő esetekben kerül sor:
 
-- An administrator changes or updates the SCEP profile.
+- A rendszergazda módosítja vagy frissíti a SCEP-profilt.
 
-SCEP certificates *stay* on the device (certificates aren't revoked or removed) when:
+A SCEP-tanúsítványok az eszközön *maradnak* (a tanúsítványok nem vonhatók vissza vagy nem törlődnek), ha:
 
-- A user loses the Intune license.
-- An administrator withdraws the Intune license.
-- An administrator removes the user or group from Azure AD.
+- A felhasználó elveszíti az Intune-licencet.
+- A rendszergazda visszavonja az Intune-licencet.
+- A rendszergazda eltávolítja a felhasználót vagy csoportot az Azure AD-ből.
 
 > [!NOTE]
 > Az [összes adatot törlő](../remote-actions/devices-wipe.md#wipe) műveletet nem lehet használni a macOS-eszközök gyári beállításainak visszaállításához.
 
 ### <a name="pkcs-certificates"></a>PKCS-tanúsítványok
 
-PKCS certificates aren't supported on macOS.
+A PKCS-tanúsítványok nem támogatottak macOS rendszeren.
 
 ## <a name="next-steps"></a>További lépések
 
-[Use certificates for authentication](certificates-configure.md)
+[Tanúsítványok használata a hitelesítéshez](certificates-configure.md)

@@ -1,6 +1,6 @@
 ---
-title: Configure Email settings for iOS devices in Microsoft Intune - Azure | Microsoft Docs
-description: See a list of all the email settings you can configure and add to iOS devices in Microsoft Intune, including using Exchange servers, and getting attributes from Azure Active Directory. You can also enable SSL, authenticate users with certificates or username/password, and synchronize email on iOS devices using device configuration profiles in Microsoft Intune.
+title: Az iOS-eszközök e-mail-beállításainak konfigurálása a Microsoft Intune-Azure-ban | Microsoft Docs
+description: Tekintse meg az összes olyan e-mail-beállítást, amelyet konfigurálhat és hozzáadhat az iOS-eszközökhöz a Microsoft Intuneban, beleértve az Exchange-kiszolgálók használatát és az attribútumok Azure Active Directoryból való beszerzését. Emellett engedélyezheti az SSL használatát, hitelesítheti a tanúsítványokkal vagy felhasználónévvel/jelszóval rendelkező felhasználókat, és az iOS-eszközökön szinkronizálhatja az e-maileket a Microsoft Intune eszköz konfigurációs profiljaival.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
@@ -22,20 +22,20 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74390820"
 ---
-# <a name="add-e-mail-settings-for-ios-devices-in-microsoft-intune"></a>Add e-mail settings for iOS devices in Microsoft Intune
+# <a name="add-e-mail-settings-for-ios-devices-in-microsoft-intune"></a>Az iOS-eszközök e-mail beállításainak hozzáadása a Microsoft Intune
 
-In Microsoft Intune, you can create and configure email to connect to an email server, choose how users authenticate, use S/MIME for encryption, and more.
+Microsoft Intune az e-mail-kiszolgálóhoz való kapcsolódáshoz hozzon létre és konfiguráljon e-mailt, válassza ki a felhasználók hitelesítésének módját, az S/MIME titkosítást és egyebeket.
 
-This article lists and describes all the email settings available for devices running iOS. You can create a device configuration profile to push or deploy these email settings to your iOS devices.
+Ez a cikk felsorolja és leírja az iOS rendszerű eszközökön elérhető összes e-mail-beállítást. Létrehozhat egy eszköz-konfigurációs profilt, amellyel leküldheti vagy telepítheti ezeket az e-mail-beállításokat iOS-eszközeire.
 
 ## <a name="before-you-begin"></a>Előkészületek
 
-[Create a device configuration profile](../email-settings-configure.md).
+[Hozzon létre egy eszköz konfigurációs profilt](../email-settings-configure.md).
 
 > [!NOTE]
-> These settings are available for all enrollment types. For more information on the enrollment types, see [iOS enrollment](../ios-enroll.md).
+> Ezek a beállítások minden regisztrációs típushoz elérhetők. A regisztrációs típusokkal kapcsolatos további információkért lásd: [iOS-regisztráció](../ios-enroll.md).
 
-## <a name="exchange-activesync-account-settings"></a>Exchange ActiveSync account settings
+## <a name="exchange-activesync-account-settings"></a>Exchange ActiveSync-fiók beállításai
 
 - **E-mail-kiszolgáló**: Itt adja meg az Exchange-kiszolgáló állomásnevét.
 - **Fiók neve**: Adja meg az e-mail-fiók megjelenítendő nevét. Ez a név jelenik meg az eszközön a felhasználók számára.
@@ -44,19 +44,19 @@ This article lists and describes all the email settings available for devices ru
   - **Elsődleges SMTP-cím**: E-mail-cím formátumban kéri le a nevet, például `user1@contoso.com`
   - **SAM-fiók neve**: Tartomány szükséges hozzá, például `domain\user1`. Ezt is adja meg:  
     - **Felhasználói tartománynév forrása**: Válassza az **AAD** (Azure Active Directory) vagy az **Egyéni** lehetőséget.
-      - **AAD**: Get the attributes from Azure AD. Ezt is adja meg:
-        - **User domain name attribute from AAD**: Choose to get the **Full domain name** (`contoso.com`) or the **NetBIOS name** (`contoso`) attribute of the user.
+      - **HRE**: az attribútumok lekérése az Azure ad-ből. Ezt is adja meg:
+        - **Felhasználói tartománynév attribútuma a HRE-ből**: válassza a felhasználó **teljes tartománynevét** (`contoso.com`) vagy a **NetBIOS-név** (`contoso`) attribútumának beolvasását.
 
-      - **Custom**: Get the attributes from a custom domain name. Ezt is adja meg:
-        - **Custom domain name to use**: Enter a value that Intune uses for the domain name, such as `contoso.com` or `contoso`.
+      - **Egyéni**: az attribútumok beolvasása egy egyéni tartománynévből. Ezt is adja meg:
+        - **Használandó egyéni tartománynév**: adjon meg egy értéket, amelyet az Intune a tartománynévhez használ, például `contoso.com` vagy `contoso`.
 
 - **E-mail-cím attribútuma az AAD-ből**: Válassza ki, hogyan jöjjön létre a felhasználói e-mail-cím. A választható lehetőségek:
-  - **User principal name**: Use the full principal name as the email address, such as `user1@contoso.com` or `user1`.
-  - **Primary SMTP address**: Use the primary SMTP address to sign in to Exchange, such as `user1@contoso.com`.
-- **Authentication method**: Choose how users to authenticate to the email server. A választható lehetőségek:
-  - **Certificate**: Select a client SCEP or PKCS certificate profile you previously created to authenticate the Exchange connection. This option provides the most secure and seamless experience for your users.
-  - **Username and Password**: Users are prompted to enter their user name and password.
-  - **Derived credential**: Use a certificate that’s derived from a user’s smart card. For more information, see [Use derived credentials in Microsoft Intune](../protect/derived-credentials.md).
+  - **Egyszerű felhasználónév**: használja a teljes egyszerű nevet e-mail-címként, például `user1@contoso.com` vagy `user1`.
+  - **Elsődleges SMTP-címe**: használja az elsődleges SMTP-címeket, hogy bejelentkezzen az Exchange-be, például `user1@contoso.com`.
+- **Hitelesítési módszer**: válassza ki, hogyan szeretné hitelesíteni a felhasználókat az e-mail-kiszolgálón. A választható lehetőségek:
+  - **Tanúsítvány**: válasszon ki egy, az Exchange-kapcsolatok hitelesítéséhez korábban létrehozott SCEP-vagy PKCS-tanúsítvány-profilt. Ez a beállítás biztosítja a legbiztonságosabb és zökkenőmentes felhasználói élményt.
+  - **Felhasználónév és jelszó**: a rendszer a felhasználókat kéri a Felhasználónév és a jelszó megadására.
+  - **Származtatott hitelesítő adatok**: a felhasználó intelligens kártyáján származtatott tanúsítvány használata. További információ: [származtatott hitelesítő adatok használata Microsoft Intuneban](../protect/derived-credentials.md).
 
   >[!NOTE]
   > Az Azure-alapú többtényezős hitelesítés nincs támogatva.
@@ -79,87 +79,87 @@ This article lists and describes all the email settings available for devices ru
   > 1. A már célzott eszközök új profilt kapnak.
   > 2. A rendszer újra kéri a végfelhasználók hitelesítő adatainak megadását.
 
-## <a name="exchange-activesync-profile-configuration"></a>Exchange ActiveSync profile configuration
+## <a name="exchange-activesync-profile-configuration"></a>Exchange ActiveSync-profil konfigurálása
 
 > [!IMPORTANT]
-> Configuring these settings deploys a new profile to the device, even when an existing email profile is updated to include these settings. Users are prompted to enter their Exchange ActiveSync account password. These settings take affect when the password is entered.
+> Ezen beállítások konfigurálásakor a rendszer egy új profilt helyez üzembe az eszközön, még akkor is, ha a meglévő e-mail-profil frissül, hogy tartalmazza ezeket a beállításokat. A rendszer felszólítja a felhasználókat az Exchange ActiveSync-fiók jelszavának megadására. Ezek a beállítások a jelszó megadásakor lépnek érvénybe.
 
-- **Exchange data to sync**: When using Exchange ActiveSync, choose the Exchange services that are synced on the device: Calendar, Contacts, Reminders, Notes, and Email. A választható lehetőségek:
-  - **All data** (default): Sync is enabled for all services.
-  - **Email only**: Sync is enabled for Email only. Sync is disabled for the other services.
-  - **Calendar only**: Sync is enabled for Calendar only. Sync is disabled for the other services.
-  - **Calendar and Contacts only**: Sync is enabled for Calendar and Contacts only. Sync is disabled for the other services.
-  - **Contacts only**: Sync is enabled for Contacts only. Sync is disabled for the other services.
+- **Szinkronizálni kívánt Exchange-információk**: az Exchange ActiveSync használata esetén válassza ki az eszközön szinkronizált Exchange-szolgáltatásokat: naptár, névjegyek, emlékeztetők, megjegyzések és e-mailek. A választható lehetőségek:
+  - **Minden adatérték** (alapértelmezett): a szinkronizálás minden szolgáltatás esetében engedélyezve van.
+  - **Csak e-mail-cím**: a szinkronizálás csak az e-mailek esetében engedélyezett. A többi szolgáltatás szinkronizálása le van tiltva.
+  - **Csak naptár**: a szinkronizálás csak a naptár esetében engedélyezett. A többi szolgáltatás szinkronizálása le van tiltva.
+  - **Csak naptár és névjegyek**: a szinkronizálás csak naptár és névjegyek esetében engedélyezett. A többi szolgáltatás szinkronizálása le van tiltva.
+  - **Csak névjegyek**: a szinkronizálás csak a névjegyek esetében engedélyezett. A többi szolgáltatás szinkronizálása le van tiltva.
 
   Ez a funkció az alábbiakra vonatkozik:  
-  - iOS 13.0 and newer
-  - iPadOS 13.0 and newer
+  - iOS 13,0 és újabb verziók
+  - iPadOS 13,0 és újabb verziók
 
-- **Allow users to change sync settings**: Choose if users can change the Exchange ActiveSync settings for the Exchange services on the device: Calendar, Contacts, Reminders, Notes, and Email. A választható lehetőségek:
+- A **szinkronizálási beállítások módosításának engedélyezése a felhasználók**számára: válassza ki, hogy a felhasználók módosíthatják-e az Exchange-szolgáltatások Exchange ActiveSync-beállításait az eszközön: naptár, névjegyek, emlékeztetők, megjegyzések és e-mailek. A választható lehetőségek:
 
-  - **Yes** (default): Users can change the sync behavior of all services. Choosing **Yes** allows changes to *all* services.
-  - **No**: Users can't change the sync settings of all the services. Choosing **No** blocks changes to *all* services.
+  - **Igen** (alapértelmezett): a felhasználók módosíthatják az összes szolgáltatás szinkronizálási viselkedését. Ha az **Igen** lehetőséget választja, az *összes* szolgáltatás módosítható.
+  - **Nem**: a felhasználók nem változtathatják meg az összes szolgáltatás szinkronizálási beállításait. A **nem** blokkolja az *összes* szolgáltatás módosításait.
 
   > [!TIP]
-  > If you configured the **Exchange data to sync** setting to sync only some services, we recommend selecting **No** for this setting. Choosing **No** prevents users from changing the Exchange service that's synced.
+  > Ha úgy konfigurálta az **Exchange-adatszinkronizálási** beállítást, hogy csak bizonyos szolgáltatásokat szinkronizáljon, javasoljuk, hogy válassza a **nem** lehetőséget ehhez a beállításhoz. A **nem** beállítás megadásával megakadályozható, hogy a felhasználók módosítsák a szinkronizált Exchange-szolgáltatást.
 
   Ez a funkció az alábbiakra vonatkozik:  
-  - iOS 13.0 and newer
-  - iPadOS 13.0 and newer
+  - iOS 13,0 és újabb verziók
+  - iPadOS 13,0 és újabb verziók
 
-## <a name="exchange-activesync-email-settings"></a>Exchange ActiveSync email settings
+## <a name="exchange-activesync-email-settings"></a>Exchange ActiveSync e-mail beállítások
 
-- **S/MIME**: S/MIME uses email certificates that provide extra security to your email communications by signing, encrypting, and decrypting. When you use S/MIME with an email message, you confirm the authenticity of the sender, and the integrity and confidentiality of the message.
+- Az **s/MIME**: s/MIME olyan e-mail-tanúsítványokat használ, amelyek további biztonságot nyújtanak az e-mail-kommunikációhoz aláírással, titkosítással és visszafejtéssel. Ha e-mail-üzenettel használja az S/MIME-t, erősítse meg a küldő hitelességét, valamint az üzenet sértetlenségét és titkosságát.
 
   A választható lehetőségek:
 
-  - **Disable S/MIME** (default): Doesn't use an S/MIME email certificate to sign, encrypt, or decrypt emails.
-  - **Enable S/MIME**: Allows users to sign and/or encrypt email in the iOS native mail application. Ezt is adja meg:
+  - **S/MIME letiltása** (alapértelmezett): nem használ s/MIME e-mail tanúsítványokat az e-mailek aláírásához, titkosításához és visszafejtéséhez.
+  - **S/MIME engedélyezése**: lehetővé teszi a felhasználóknak az e-mailek aláírását és/vagy titkosítását az iOS Native mail alkalmazásban. Ezt is adja meg:
 
-    - **S/MIME signing enabled**: **Disable** (default) doesn't allow users to digitally sign the message. **Enable** allows users to digitally sign outgoing email for the account you entered. Signing helps users who receive messages be certain that the message came from the specific sender, and not from someone pretending to be the sender.
-      - **Allow user to change setting**: **Enable** allows users to change the signing options. **Disable** (default) prevents users from changing the signing, and forces users to use the signing you configured.
-      - **Signing certificate type**: Your options:
-        - **Not configured**: Intune doesn't update or change this setting.
-        - **None**: As an administrator, you don't force a specific certificate. Select this option so users can choose their own certificate.
-        - **Derived credential**: Use a certificate that’s derived from a user’s smart card. For more information, see [Use derived credentials in Microsoft Intune](../protect/derived-credentials.md).
-        - **Certificates**: Select an existing PKCS or SCEP certificate profile that's used for signing email messages.
-      - **Allow user to change setting**: **Enable** allows users to change the signing certificate. **Disable** (default) prevents users from changing the signing certificate, and forces users to use the certificate you configured.
-
-        Ez a funkció az alábbiakra vonatkozik:  
-        - iOS 12 and newer
-        - iPadOS 12 and newer
-
-    - **Encrypt by default**: **Enable** encrypts all messages as the default behavior. **Disable** (default) doesn't encrypt all messages as the default behavior.
-      - **Allow user to change setting**: **Enable** allows users to change the default encryption behavior. **Disable** prevents users from changing the encryption default behavior, and forces users to use the encryption you configured.
+    - **S/MIME-aláírás engedélyezve**: a **Letiltás** (alapértelmezett) nem teszi lehetővé a felhasználók számára az üzenet digitális aláírását. Az **Engedélyezés** beállítás megadása esetén a felhasználók digitálisan aláírják a kimenő e-maileket a megadott fiókhoz. Az aláírás segítségével az üzenetek fogadására jogosult felhasználók biztosak lehetnek abban, hogy az üzenet az adott feladótól származik, és nem a feladótól érkező személynek.
+      - A **felhasználó módosíthatja a beállítást**: az **Engedélyezés** beállítás megadásával engedélyezhető a felhasználók számára az aláírási beállítások módosítása. **Letiltás** (alapértelmezett) megakadályozza, hogy a felhasználók megváltoztassák az aláírást, és kényszerítse a felhasználókat, hogy a konfigurált aláírást használják.
+      - **Aláíró tanúsítvány típusa**: az Ön beállításai:
+        - **Nincs konfigurálva**: az Intune nem frissíti vagy nem módosítja ezt a beállítást.
+        - **Nincs**: rendszergazdaként nem kényszeríti ki egy adott tanúsítvány megadását. Válassza ezt a lehetőséget, hogy a felhasználók kiválaszthatják a saját tanúsítványát.
+        - **Származtatott hitelesítő adatok**: a felhasználó intelligens kártyáján származtatott tanúsítvány használata. További információ: [származtatott hitelesítő adatok használata Microsoft Intuneban](../protect/derived-credentials.md).
+        - **Tanúsítványok**: válasszon ki egy meglévő PKCS-vagy SCEP-tanúsítványt, amelyet az e-mail üzenetek aláírásához használ.
+      - A felhasználó módosíthatja a beállítást: az **Engedélyezés** **beállítás megadásával**engedélyezhető a felhasználók számára az aláíró tanúsítvány módosítása. **Letiltás** (alapértelmezett) megakadályozza, hogy a felhasználók megváltoztassák az aláíró tanúsítványt, és kényszerítse a felhasználókat a konfigurált tanúsítvány használatára.
 
         Ez a funkció az alábbiakra vonatkozik:  
-        - iOS 12 and newer
-        - iPadOS 12 and newer
+        - iOS 12 és újabb verziók
+        - iPadOS 12 és újabb
 
-    - **Force per-message encryption**: Per-message encryption allows users to choose which emails are encrypted before being sent.
-
-      **Enable** shows the per-message encryption option when creating a new email. Users can then choose to opt-in or opt-out of per-message encryption. If the **Encrypt by default** setting is also enabled, enabling per-message encryption allows users to opt out of encryption per message.
-
-      **Disable** (default) prevents the per-message encryption option from showing. If the **Encrypt by default** setting is also disabled, enabling per-message encryption allows users to opt in to encryption per message.
-
-      - **Encryption certificate type**: Your options:
-        - **Not configured**: Intune doesn't update or change this setting.
-        - **None**: As an administrator, you don't force a specific certificate. Select this option so users can choose their own certificate.
-        - **Derived credential**: Use a certificate that’s derived from a user’s smart card. For more information, see [Use derived credentials in Microsoft Intune](../protect/derived-credentials.md).
-        - **Certificates**: Select an existing PKCS or SCEP certificate profile that's used for signing email messages.
-      - **Allow user to change setting**: **Enable** allow users to change the encryption certificate. **Disable** (default) prevents users from changing the encryption certificate, and forces users to use the certificate you configured.
+    - **Titkosítás alapértelmezés**szerint: az **Engedélyezés** az összes üzenetet titkosítja alapértelmezett viselkedésként. **Letiltás** (alapértelmezés) – az összes üzenet titkosítása alapértelmezett viselkedésként nem történik meg.
+      - A felhasználó módosíthatja a beállítást: az **Engedélyezés** **beállítás megadásával**engedélyezhető a felhasználók számára az alapértelmezett titkosítási viselkedés módosítása. A **Letiltás** beállítás megadásával megakadályozható, hogy a felhasználók megváltoztassák a titkosítás alapértelmezett viselkedését, és kényszerítse a felhasználókat a konfigurált titkosítás használatára.
 
         Ez a funkció az alábbiakra vonatkozik:  
-        - iOS 12 and newer
-        - iPadOS 12 and newer
+        - iOS 12 és újabb verziók
+        - iPadOS 12 és újabb
+
+    - Az üzenetek titkosításának **kényszerítése**: az üzenetek titkosítása lehetővé teszi a felhasználók számára, hogy a küldés előtt kiválasszák a titkosított e-maileket.
+
+      Az **Engedélyezés** beállítás megjeleníti az üzeneten belüli titkosítási lehetőséget, amikor új e-mailt hoz létre. A felhasználók ezután dönthetnek úgy, hogy kiválaszthatják az üzenetek titkosítását, vagy letiltják azt. Ha a **titkosítás alapértelmezés szerint** beállítás is engedélyezve van, az üzenetek titkosításának engedélyezése lehetővé teszi a felhasználók számára, hogy üzenetként letiltsák a titkosítást.
+
+      **Letiltás** (alapértelmezett) megakadályozza, hogy az üzeneten belüli titkosítási beállítás látható legyen. Ha a **titkosítás alapértelmezés** szerint beállítás le van tiltva, az üzenetek titkosításának engedélyezése lehetővé teszi a felhasználók számára, hogy üzenetként engedélyezzék a titkosítást.
+
+      - **Titkosítási tanúsítvány típusa**: az Ön beállításai:
+        - **Nincs konfigurálva**: az Intune nem frissíti vagy nem módosítja ezt a beállítást.
+        - **Nincs**: rendszergazdaként nem kényszeríti ki egy adott tanúsítvány megadását. Válassza ezt a lehetőséget, hogy a felhasználók kiválaszthatják a saját tanúsítványát.
+        - **Származtatott hitelesítő adatok**: a felhasználó intelligens kártyáján származtatott tanúsítvány használata. További információ: [származtatott hitelesítő adatok használata Microsoft Intuneban](../protect/derived-credentials.md).
+        - **Tanúsítványok**: válasszon ki egy meglévő PKCS-vagy SCEP-tanúsítványt, amelyet az e-mail üzenetek aláírásához használ.
+      - A **felhasználó módosíthatja a beállítást**: **lehetővé teszi a** felhasználók számára a titkosítási tanúsítvány módosítását. **Letiltás** (alapértelmezett) megakadályozza, hogy a felhasználók megváltoztassák a titkosítási tanúsítványt, és kényszerítse a felhasználókat a konfigurált tanúsítvány használatára.
+
+        Ez a funkció az alábbiakra vonatkozik:  
+        - iOS 12 és újabb verziók
+        - iPadOS 12 és újabb
 
 - **Szinkronizálandó e-mailek mennyisége**: Válassza ki, hogy hány napra visszamenőleg szeretné szinkronizálni az e-maileket. Vagy válassza a **Korlátlan** lehetőséget az összes elérhető e-mail szinkronizálása.
-- **Allow messages to be moved to other email accounts**: **Enable** (default) allows users to move email messages between different accounts the users configured on their devices.
-- **Allow email to be sent from third-party applications**: **Enable** (default) allows users to select this profile as the default account for sending email. Engedélyezi a külső alkalmazásoknak az e-mailek natív levelezőalkalmazásban történő megnyitását, például fájlok e-mailhez való csatolásakor.
-- **Synchronize recently used email addresses**: **Enable** (default) allows users to synchronize the list of email addresses that have been recently used on the device with the server.
+- **Üzenetek más e-mail-fiókba**való áthelyezésének engedélyezése: az **Engedélyezés** (alapértelmezés) lehetővé teszi a felhasználóknak, hogy az eszközökön konfigurált felhasználóktól eltérő fiókokba helyezzenek el e-mail-üzeneteket.
+- E **-mailek küldésének engedélyezése harmadik féltől származó alkalmazásokból**: az **Engedélyezés** (alapértelmezett) lehetővé teszi, hogy a felhasználók a profilt alapértelmezett fiókként válasszanak e-mailek küldéséhez. Engedélyezi a külső alkalmazásoknak az e-mailek natív levelezőalkalmazásban történő megnyitását, például fájlok e-mailhez való csatolásakor.
+- **Legutóbb használt e-mail-címek szinkronizálása**: az **Engedélyezés** (alapértelmezett) lehetővé teszi a felhasználók számára, hogy szinkronizálják az eszközön a kiszolgálón nemrég használt e-mail-címek listáját.
 
 ## <a name="next-steps"></a>További lépések
 
-A profil létrejött, de egyelőre nem csinál semmit. Next, [assign the profile](../device-profile-assign.md) and [monitor its status](../device-profile-monitor.md).
+A profil létrejött, de egyelőre nem csinál semmit. Ezután [rendelje hozzá a profilt](../device-profile-assign.md) , és [Figyelje annak állapotát](../device-profile-monitor.md).
 
-Configure email settings on [Android](../email-settings-android.md), [Android Enterprise](../email-settings-android-enterprise.md), [Windows 10](email-settings-windows-10.md), and [Windows Phone 8.1](email-settings-windows-phone-8-1.md) devices.
+Az e-mail-beállítások konfigurálása az [Android](../email-settings-android.md), az [Android Enterprise](../email-settings-android-enterprise.md), a [Windows 10](email-settings-windows-10.md)és a [Windows Phone-telefon 8,1](email-settings-windows-phone-8-1.md) rendszerű eszközökön.

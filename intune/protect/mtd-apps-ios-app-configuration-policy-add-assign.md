@@ -27,27 +27,27 @@ ms.locfileid: "74188487"
 ---
 # <a name="add-and-assign-mobile-threat-defense-mtd-apps-with-intune"></a>Mobile Threat Defense- (MTD) alkalmazások felvétele és hozzárendelése az Intune-nal
 
-You can use Intune to add and deploy Mobile Threat Defense (MTD) apps so that end users can receive notifications when a threat is identified in their mobile devices, and to receive guidance to remediate the threats.
+A Mobile Threat Defense-(MTD-) alkalmazások hozzáadásához és üzembe helyezéséhez használhatja az Intune-t, hogy a végfelhasználók értesítéseket kapjanak a mobileszközök által észlelt fenyegetésekről, és útmutatást kapjanak a fenyegetések elhárításához.
 
 > [!NOTE]
-> This article applies to all Mobile Threat Defense partners.
+> Ez a cikk az összes Mobile Threat Defense-partnerre vonatkozik.
 
 ## <a name="before-you-begin"></a>Előkészületek
 
-Complete the following steps in Intune. Előzőleg ismerkedjen meg a következő eljárásokkal:
+Hajtsa végre az alábbi lépéseket az Intune-ban. Előzőleg ismerkedjen meg a következő eljárásokkal:
 
 - [Alkalmazás felvétele az Intune-ba](../apps/apps-add.md)
 - [iOS-es alkalmazáskonfigurációs szabályzat felvétele az Intune-ba](../apps/app-configuration-policies-use-ios.md)
 - [Alkalmazás hozzárendelése az Intune-hoz](../apps/apps-deploy.md).
 
 > [!TIP]
-> The Intune Company Portal works as the broker on Android devices so users can have their identities checked by Azure AD.
+> A Intune Céges portál az Android-eszközökön működő közvetítőként működik, így a felhasználók az Azure AD-ben is megadhatják az identitásuk ellenőrzését.
 
 ## <a name="configure-microsoft-authenticator-for-ios"></a>Az iOS-hez készült Microsoft Authenticator alkalmazás konfigurálása
 
-iOS-eszközök esetén a [Microsoft Authenticator](https://docs.microsoft.com/azure/multi-factor-authentication/end-user/microsoft-authenticator-app-how-to) használatára van szükség, hogy az Azure AD ellenőrizhesse a felhasználók identitását. Additionally, you need an iOS app configuration policy that sets the MTD iOS app you use with Intune.
+iOS-eszközök esetén a [Microsoft Authenticator](https://docs.microsoft.com/azure/multi-factor-authentication/end-user/microsoft-authenticator-app-how-to) használatára van szükség, hogy az Azure AD ellenőrizhesse a felhasználók identitását. Emellett szüksége lesz egy iOS-alkalmazás konfigurációs szabályzatára is, amely az Intune-nal használt MTD iOS-alkalmazást állítja be.
 
-Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Use this [Microsoft Authenticator app store URL](https://itunes.apple.com/us/app/microsoft-authenticator/id983156458?mt=8) when you configure **App information**.
+Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Az alkalmazás **adatainak**konfigurálásakor használja ezt a [Microsoft Authenticator App Store-URL-címet](https://itunes.apple.com/us/app/microsoft-authenticator/id983156458?mt=8) .
 
 ## <a name="configure-mtd-applications"></a>MTD-alkalmazások konfigurálása
 
@@ -60,25 +60,25 @@ Válassza ki az MTD-szolgáltatójának megfelelő szakaszt:
 - [Pradeo](#configure-pradeo-apps)
 - [Better Mobile](#configure-better-mobile-apps)
 - [Sophos Mobile](#configure-sophos-apps)
-- [Wandera](#configure-wandera-apps)
+- [Bolyongás](#configure-wandera-apps)
 
 ### <a name="configure-lookout-for-work-apps"></a>Lookout for Work-alkalmazások konfigurálása
 
-- **Android--**
-  - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-android.md). Use this [Lookout for work Google app store URL](https://play.google.com/store/apps/details?id=com.lookout.enterprise) for the **Appstore URL**.
+- **Android**
+  - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-android.md). Használja ezt a [kilátó for Work Google App Store-beli URL-címét](https://play.google.com/store/apps/details?id=com.lookout.enterprise) az **AppStore URL-** címéhez.
 
-- **iOS--**
-  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Use this [Lookout for Work iOS app store URL](https://itunes.apple.com/us/app/lookout-for-work/id997193468?mt=8) for the **Appstore URL**.
+- **iOS**
+  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Használja ezt a [Lookout for Work iOS App Store-URL-címét](https://itunes.apple.com/us/app/lookout-for-work/id997193468?mt=8) az **AppStore URL-** címéhez.
 
 - **Lookout for Work alkalmazás az Apple áruházon kívül**
-  - You must re-sign the Lookout for Work iOS app. A Lookout az iOS App Store-on kívül terjeszti a Lookout for Work alkalmazását. Az alkalmazás terjesztése előtt újra alá kell írnia az alkalmazást az iOS vállalati fejlesztői tanúsítványával.  
+  - Újra alá kell írnia a Lookout for Work iOS-alkalmazást. A Lookout az iOS App Store-on kívül terjeszti a Lookout for Work alkalmazását. Az alkalmazás terjesztése előtt újra alá kell írnia az alkalmazást az iOS vállalati fejlesztői tanúsítványával.  
   - A részletes leírást a Lookout for Work iOS-alkalmazás újbóli aláírásáról lásd: [Lookout for Work iOS-alkalmazás újbóli aláírásának folyamata](https://personal.support.lookout.com/hc/articles/114094038714) a Lookout oldalán.
 
   - **Azure AD-hitelesítés engedélyezése a Lookout for Work iOS-alkalmazás felhasználói számára**
 
     1. Lépjen az [Azure Portalra](https://portal.azure.com), jelentkezzen be a hitelesítő adataival, majd nyissa meg az alkalmazás lapot.
 
-    2. Adja hozzá a **Lookout for Work iOS alkalmazást natív ügyfélalkalmazásként**.
+    2. Adja hozzá a **Lookout for Work iOS alkalmazást** **natív ügyfélalkalmazásként**.
 
     3. Cserélje le a **com.lookout.enterprise.yourcompanyname** sort az IPA aláírásakor választott ügyfélcsomag-azonosítóval.
 
@@ -91,75 +91,75 @@ Válassza ki az MTD-szolgáltatójának megfelelő szakaszt:
 
   - **Adja hozzá a Lookout for Work ipa-fájlt.**
 
-    - Upload the re-signed .ipa file as described in the [Add iOS LOB apps with Intune](../apps/lob-apps-ios.md) article. Ezenkívül a minimum OS-verziót iOS 8.0-ra vagy újabbra kell állítania.
+    - Töltse fel az újra aláírt. ipa-fájlt az [iOS LOB-alkalmazások hozzáadása az Intune](../apps/lob-apps-ios.md) -nal című cikkben leírtak szerint. Ezenkívül a minimum OS-verziót iOS 8.0-ra vagy újabbra kell állítania.
 
 ### <a name="configure-symantec-endpoint-protection-mobile-apps"></a>A Symantec Endpoint Protection Mobile-alkalmazások konfigurálása
 
-- **Android--**
-  - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-android.md). Use this [SEP Mobile app store URL](https://play.google.com/store/apps/details?id=com.skycure.skycure) for the **Appstore URL**.  **Minimális operációs rendszerként** jelölje be az **Android 4.0 (Ice Cream Sandwich)** rendszert.
+- **Android**
+  - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-android.md). Használja ezt a [Sep Mobile App Store-beli URL-címet](https://play.google.com/store/apps/details?id=com.skycure.skycure) az **AppStore URL-** címéhez.  **Minimális operációs rendszerként** jelölje be az **Android 4.0 (Ice Cream Sandwich)** rendszert.
 
-- **iOS--**
-  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Use this [SEP Mobile app store URL](https://itunes.apple.com/us/app/skycure/id695620821?mt=8) for the **Appstore URL**.
+- **iOS**
+  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Használja ezt a [Sep Mobile App Store-beli URL-címet](https://itunes.apple.com/us/app/skycure/id695620821?mt=8) az **AppStore URL-** címéhez.
 
 ### <a name="configure-check-point-sandblast-mobile-apps"></a>Check Point SandBlast Mobile-alkalmazások konfigurálása
 
-- **Android--**  
-  - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-android.md). Use this [Check Point SandBlast Mobile app store URL](https://play.google.com/store/apps/details?id=com.lacoon.security.fox) for the **Appstore URL**.
+- **Android**  
+  - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-android.md). Használja ezt a pipát a kihelyezett [Mobile App Store áruházbeli URL-címére](https://play.google.com/store/apps/details?id=com.lacoon.security.fox) az **AppStore URL-címéhez**.
 
-- **iOS--**
-  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Use this [Check Point SandBlast Mobile app store URL](https://apps.apple.com/us/app/sandblast-mobile-protect/id1006390797) for the **Appstore URL**.  
+- **iOS**
+  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Használja ezt a pipát a kihelyezett [Mobile App Store áruházbeli URL-címére](https://apps.apple.com/us/app/sandblast-mobile-protect/id1006390797) az **AppStore URL-címéhez**.  
 
 ### <a name="configure-zimperium-apps"></a>Zimperium-alkalmazások konfigurálása
 
-- **Android--**
-  - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-android.md). Use this [Zimperium app store URL](https://play.google.com/store/apps/details?id=com.zimperium.zips&hl=en) for the **Appstore URL**.
+- **Android**
+  - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-android.md). Használja ezt a [Zimperium App Store-URL-címet](https://play.google.com/store/apps/details?id=com.zimperium.zips&hl=en) az **AppStore URL-** címéhez.
 
-- **iOS--**
-  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Use this [Zimperium app store URL](https://itunes.apple.com/us/app/zimperium-zips/id1030924459?mt=8) for the **Appstore URL**.  
+- **iOS**
+  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Használja ezt a [Zimperium App Store-URL-címet](https://itunes.apple.com/us/app/zimperium-zips/id1030924459?mt=8) az **AppStore URL-** címéhez.  
  
 ### <a name="configure-pradeo-apps"></a>Pradeo-alkalmazások konfigurálása
 
-- **Android--**
-  - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-android.md). Use this [Pradeo app store URL](https://play.google.com/store/apps/details?id=net.pradeo.service&hl=en_US) for the **Appstore URL**.
+- **Android**
+  - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-android.md). Használja ezt a [Pradeo App Store-URL-címet](https://play.google.com/store/apps/details?id=net.pradeo.service&hl=en_US) az **AppStore URL-** címéhez.
 
-- **iOS--**
-  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Use this [Pradeo app store URL](https://itunes.apple.com/us/app/pradeo-agent/id547979360?mt=8) for the **Appstore URL**.
+- **iOS**
+  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Használja ezt a [Pradeo App Store-URL-címet](https://itunes.apple.com/us/app/pradeo-agent/id547979360?mt=8) az **AppStore URL-** címéhez.
 
 ### <a name="configure-better-mobile-apps"></a>Better Mobile-alkalmazások konfigurálása
 
-- **Android--**
-  - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-android.md). Use this [Active Shield app store URL](https://play.google.com/store/apps/details?id=com.better.active.shield.enterprise) for the **Appstore URL**.
+- **Android**
+  - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-android.md). Használja ezt az [aktív pajzs App Store-beli URL-címét](https://play.google.com/store/apps/details?id=com.better.active.shield.enterprise) az **AppStore URL-címéhez**.
 
-- **iOS--**
-  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Use this [ActiveShield app store URL](https://itunes.apple.com/us/app/activeshield/id980234260?mt=8&uo=4) for the **Appstore URL**.
+- **iOS**
+  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Használja ezt a [ActiveShield App Store-URL-címet](https://itunes.apple.com/us/app/activeshield/id980234260?mt=8&uo=4) az **AppStore URL-** címéhez.
 
-### <a name="configure-sophos-apps"></a>Configure Sophos apps
+### <a name="configure-sophos-apps"></a>A Sophos-alkalmazások konfigurálása
 
-- **Android--**
-  - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-android.md). Use this [Sophos app store URL](https://play.google.com/store/apps/details?id=com.sophos.smsec) for the **Appstore URL**.
+- **Android**
+  - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-android.md). Használja ezt a [Sophos App Store-beli URL-címét](https://play.google.com/store/apps/details?id=com.sophos.smsec) az **AppStore URL-** címéhez.
 
-- **iOS--**
-  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Use this [ActiveShield app store URL](https://itunes.apple.com/us/app/sophos-mobile-security/id1086924662?mt=8) for the **Appstore URL**.
+- **iOS**
+  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Használja ezt a [ActiveShield App Store-URL-címet](https://itunes.apple.com/us/app/sophos-mobile-security/id1086924662?mt=8) az **AppStore URL-** címéhez.
 
-### <a name="configure-wandera-apps"></a>Configure Wandera apps
+### <a name="configure-wandera-apps"></a>A Wander-alkalmazások konfigurálása
 
-- **Android--**
-  - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-android.md). Use this [Wandera Mobile app store URL](https://play.google.com/store/apps/details?id=com.wandera.android) for the **Appstore URL**. For **Minimum operating system**, select **Android 5.0**.
+- **Android**
+  - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-android.md). Használja a [Wanda Mobile App Store áruházbeli URL-címét](https://play.google.com/store/apps/details?id=com.wandera.android) az **AppStore URL-** címéhez. A **minimális operációs rendszer**beállításnál válassza az **Android 5,0**lehetőséget.
 
-- **iOS--**
-  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Use this [Wandera Mobile app store URL](https://itunes.apple.com/app/wandera/id605469330) for the **Appstore URL**.
+- **iOS**
+  - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Használja a [Wanda Mobile App Store áruházbeli URL-címét](https://itunes.apple.com/app/wandera/id605469330) az **AppStore URL-** címéhez.
 
 ## <a name="configure-your-mtd-apps-with-an-ios-app-configuration-policy"></a>MTD-alkalmazások konfigurálása egy iOS-es alkalmazáskonfigurációs szabályzattal
 
 ### <a name="lookout-for-work-app-configuration-policy"></a>Konfigurációs szabályzat az Lookout for Workhöz
 
-Create the iOS app configuration policy as described in the [using iOS app configuration policy](../apps/app-configuration-policies-use-ios.md) article.
+Hozza létre az iOS-alkalmazás konfigurációs szabályzatát az [iOS-alkalmazás konfigurációs házirendjének használata](../apps/app-configuration-policies-use-ios.md) című cikkben leírtak szerint.
 
 ### <a name="sep-mobile-app-configuration-policy"></a>SEP Mobile-alkalmazások konfigurációs szabályzata
 
-Use the same Azure AD account previously configured in the [Symantec Endpoint Protection Management console](https://aad.skycure.com), which should be the same account used to sign in to the Intune.
+Használja ugyanazt az Azure AD-fiókot, amelyet korábban a [Symantec Endpoint Protection felügyeleti konzolján](https://aad.skycure.com)konfiguráltak, és az Intune-ba való bejelentkezéshez használt fióknak kell lennie.
 
-- **Download** the iOS app configuration policy file:
+- **Töltse le** az iOS-alkalmazás konfigurációs szabályzatának fájlját:
   - Lépjen a [Symantec Endpoint Protection Management konzolra](https://aad.skycure.com), és jelentkezzen be rendszergazdai azonosító adataival.
 
   - Lépjen a **Settings** (Beállítások) lapra, majd az **Integrations** (Integrációk) alatt válassza az **Intune** lehetőséget. Válassza az **EMM Integration Selection** (EMM-integráció kiválasztása) lehetőséget. Válassza a **Microsoft** lehetőséget, majd mentse a kijelölés.
@@ -168,7 +168,7 @@ Use the same Azure AD account previously configured in the [Symantec Endpoint Pr
 
   - A SEP Mobile iOS-es alkalmazáskonfigurációs szabályzat felvételéhez lásd a következő útmutatót:[A Microsoft Intune alkalmazáskonfigurációs szabályzatának használata iOS-hez](../apps/app-configuration-policies-use-ios.md).
 
-    - For **Configuration settings format**, select **Enter XML data**, copy the content from the * **.plist** file, and paste its content into the configuration policy body.
+    - A **konfigurációs beállítások formátuma**beállításnál válassza az **XML-adatok megadása**lehetőséget, másolja a tartalmat a * **. plist** fájlból, és illessze be a tartalmát a konfigurációs szabályzat törzsébe.
 
 > [!NOTE]
 > Ha nem sikerült beolvasni a fájlokat, lépjen kapcsolatba a [Symantec Endpoint Protection Mobile nagyvállalati támogatási szolgálatával](https://support.symantec.com/en_US/contact-support.html).
@@ -177,7 +177,7 @@ Use the same Azure AD account previously configured in the [Symantec Endpoint Pr
 
 A Check Point SandBlast Mobile iOS-es alkalmazáskonfigurációs szabályzat felvételéhez tekintse át a következő útmutatót: [A Microsoft Intune alkalmazáskonfigurációs szabályzatának használata iOS-hez](../apps/app-configuration-policies-use-ios.md).
 
-- For **Configuration settings format**, select **Enter XML data**, copy the following content and paste it into the configuration policy body.
+- A **konfigurációs beállítások formátuma**beállításnál válassza az **XML-adatértékek megadása**lehetőséget, másolja az alábbi tartalmat, és illessze be a konfigurációs szabályzat törzsébe.
 
   `<dict><key>MDM</key><string>INTUNE</string></dict>`
 
@@ -186,7 +186,7 @@ A Check Point SandBlast Mobile iOS-es alkalmazáskonfigurációs szabályzat fel
 
 A Zimperium iOS-es alkalmazáskonfigurációs szabályzat felvételéhez kövesse [A Microsoft Intune alkalmazáskonfigurációs szabályzatának használata iOS-hez](../apps/app-configuration-policies-use-ios.md) című útmutatót.
 
-- For **Configuration settings format**, select **Enter XML data**, copy the following content and paste it into the configuration policy body.
+- A **konfigurációs beállítások formátuma**beállításnál válassza az **XML-adatértékek megadása**lehetőséget, másolja az alábbi tartalmat, és illessze be a konfigurációs szabályzat törzsébe.
 
    ```
    <dict>
@@ -201,15 +201,15 @@ A Zimperium iOS-es alkalmazáskonfigurációs szabályzat felvételéhez kövess
    </dict>
    ```
 
-### <a name="pradeo-app-configuration-policy"></a>Pradeo app configuration policy
+### <a name="pradeo-app-configuration-policy"></a>Pradeo-alkalmazás konfigurációs szabályzata
 
-Pradeo doesn't support application configuration policy on iOS.  Instead, to get a configured app, work with Pradeo to implement custom IPA or APK files that are preconfigured with the settings you want.
+A Pradeo nem támogatja az alkalmazás-konfigurációs szabályzatot iOS rendszeren.  Ehelyett egy konfigurált alkalmazás beszerzéséhez a Pradeo együtt kell működnie a kívánt beállításokkal előre konfigurált egyéni IPA-vagy APK-fájlok megvalósításához.
 
 ### <a name="better-mobile-app-configuration-policy"></a>Better Mobile-alkalmazások konfigurációs szabályzata
 
 A Better Mobile iOS-es alkalmazáskonfigurációs szabályzat megadásához lásd [a Microsoft Intune alkalmazáskonfigurációs szabályzatainak iOS-hez történő használatával](../apps/app-configuration-policies-use-ios.md) foglalkozó útmutatót.
 
-- For **Configuration settings format**, select **Enter XML data**, copy the following content and paste it into the configuration policy body. Cserélje le a `https://client.bmobi.net` URL-címet a konzol URL-címére.
+- A **konfigurációs beállítások formátuma**beállításnál válassza az **XML-adatértékek megadása**lehetőséget, másolja az alábbi tartalmat, és illessze be a konfigurációs szabályzat törzsébe. Cserélje le a `https://client.bmobi.net` URL-címet a konzol URL-címére.
 
    ```
     <dict>
@@ -222,17 +222,17 @@ A Better Mobile iOS-es alkalmazáskonfigurációs szabályzat megadásához lás
    </dict>
    ```
 
-### <a name="sophos-mobile-app-configuration-policy"></a>Sophos Mobile app configuration policy
+### <a name="sophos-mobile-app-configuration-policy"></a>A Sophos Mobile App konfigurációs szabályzata
 
-Create the iOS app configuration policy as described in the [using iOS app configuration policy](../apps/app-configuration-policies-use-ios.md) article.
+Hozza létre az iOS-alkalmazás konfigurációs szabályzatát az [iOS-alkalmazás konfigurációs házirendjének használata](../apps/app-configuration-policies-use-ios.md) című cikkben leírtak szerint.
 
-### <a name="wandera-app-configuration-policy"></a>Wandera app configuration policy
+### <a name="wandera-app-configuration-policy"></a>A Wanda alkalmazás konfigurációs házirendje
 
-See the instructions for [using Microsoft Intune app configuration policies for iOS](../apps/app-configuration-policies-use-ios.md) to add the Wandera iOS app configuration policy.
+Tekintse meg az [iOS rendszerhez készült Microsoft Intune alkalmazás-konfigurációs szabályzatok használatának](../apps/app-configuration-policies-use-ios.md) utasításait a Wanda iOS-alkalmazás konfigurációs házirendjének hozzáadásához.
 
-- For **Configuration settings format**, select **Enter XML data**.
+- A **konfigurációs beállítások formátuma**beállításnál válassza az **XML-adatértékek megadása**lehetőséget.
 
-Sign in to your RADAR Wandera portal and browse to **Settings** > **EMM Integration** > **App Push**. Select **Intune**, and then copy the content below and paste it into the configuration policy body.  
+Jelentkezzen be a RADAR Wanda-portálra, és keresse meg a **beállítások** > a következőt: > **app push**- **integráció** . Válassza az **Intune**lehetőséget, majd másolja az alábbi tartalmat, és illessze be a konfigurációs szabályzat törzsébe.  
 
   ```
   <dict><key>secretKey</key>

@@ -38,7 +38,7 @@ Windows 10 rendszerű virtuális gépek Intune-nal való kezelésekor tartsa sze
     - A Windows Autopilot és a kereskedelmi OOBE nem támogatott.
     - A regisztrációs állapot lapja nem támogatott az eszköz-környezeti házirendek esetében.
 
-## <a name="configuration"></a>Configuration
+## <a name="configuration"></a>Konfiguráció
 Az Intune nem támogat olyan konfigurációt, amely platformmegbízhatósági modul vagy hardveres kezelést használ, beleértve a következőket:
 - [BitLocker-beállítások](../configuration/device-profiles.md#endpoint-protection)
 - [Eszköz belső vezérlőprogram konfigurációs felületének beállításai](../configuration/device-profiles.md#device-firmware-configuration-interface)

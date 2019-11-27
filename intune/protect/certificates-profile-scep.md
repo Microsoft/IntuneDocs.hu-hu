@@ -1,6 +1,6 @@
 ---
-title: Use SCEP certificate profiles with Microsoft Intune - Azure | Microsoft Docs
-description: Create and assign Simple Certificate Enrollment Protocol (SCEP) certificate profiles with Microsoft Intune.
+title: SCEP-tanúsítványok profiljainak használata az Microsoft Intune-Azure-ban | Microsoft Docs
+description: Hozzon létre és rendeljen Egyszerű tanúsítványigénylési protokoll-(SCEP-) tanúsítvány-profilokat Microsoft Intune.
 keywords: ''
 author: brenduns
 ms.author: brenduns
@@ -23,58 +23,58 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74390289"
 ---
-# <a name="create-and-assign-scep-certificate-profiles-in-intune"></a>Create and assign SCEP certificate profiles in Intune
+# <a name="create-and-assign-scep-certificate-profiles-in-intune"></a>SCEP-tanúsítványok létrehozása és társítása az Intune-ban
 
-After you [configure your infrastructure](certificates-scep-configure.md) to support Simple Certificate Enrollment Protocol (SCEP) certificates, you can create and then assign SCEP certificate profiles to users and devices in Intune.
+Miután [konfigurálta az infrastruktúrát](certificates-scep-configure.md) a egyszerű tanúsítványigénylési protokoll-(SCEP-) tanúsítványok támogatásához, létrehozhat és hozzárendelhet SCEP-tanúsítványokat a felhasználók és az eszközök számára az Intune-ban.
 
 > [!IMPORTANT]  
-> Before you create SCEP certificate profiles, devices that will use a SCEP certificate profile must trust your Trusted Root Certification Authority (CA). Use a *trusted certificate profile* in Intune to provision the Trusted Root CA certificate to users and devices For information about the trusted certificate profile, see [Export the trusted root CA certificate](certificates-configure.md#export-the-trusted-root-ca-certificate) and [Create trusted certificate profiles](certificates-configure.md#create-trusted-certificate-profiles) in *Use certificates for authentication in Intune*.
+> A SCEP létrehozása előtt a SCEP-tanúsítványt használó eszközöknek megbízható legfelső szintű hitelesítésszolgáltatót (CA) kell megbízniuk. Az Intune *megbízható tanúsítvány-profiljának* használatával kiépítheti a megbízható legfelső szintű hitelesítésszolgáltatói tanúsítványt a felhasználóknak és az eszközöknek a megbízható tanúsítvány profiljával kapcsolatos információkért lásd: [a megbízható legfelső szintű hitelesítésszolgáltatói tanúsítvány exportálása](certificates-configure.md#export-the-trusted-root-ca-certificate) és [megbízható tanúsítványok profiljának létrehozása](certificates-configure.md#create-trusted-certificate-profiles) a *tanúsítványok használata a hitelesítéshez az Intune-ban*.
 
 
 ## <a name="create-a-scep-certificate-profile"></a>SCEP-tanúsítványprofil létrehozása
 
-1. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431).
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Select **Devices** > **Configuration profile** > **Create profile**.
+2. Válassza az **eszközök** > **konfigurációs profil** > **létrehozási profil**lehetőséget.
 
 3. Adja meg a következő tulajdonságokat:
 
 4. Adja meg az SCEP-tanúsítványprofil **nevét** és **leírását**.
 
-5. From the **Platform** drop-down list, select a [supported device platform](certificates-configure.md#supported-platforms-and-certificate-profiles) for this SCEP certificate.
+5. A **platform** legördülő listából válassza ki a SCEP-tanúsítvány [támogatott eszköz-platformját](certificates-configure.md#supported-platforms-and-certificate-profiles) .
 
-6. From the **Profile type** drop-down list, select **SCEP certificate**.  
+6. A **Profil típusa** legördülő listában válassza az SCEP- **tanúsítvány**lehetőséget.  
 
-   For the **Android Enterprise** platform, *Profile type* is divided into two categories, *Device Owner Only* and *Work Profile Only*. Be sure to select the correct SCEP certificate profile for the devices you manage.  
+   Az **Android Enterprise** platform esetében a *Profil típusa* két kategóriára oszlik, csak az *eszköz tulajdonosára* és a *munkahelyi profilra*. Ügyeljen arra, hogy a felügyelt eszközökhöz a megfelelő SCEP-tanúsítványt adja meg.  
 
-   SCEP certificate profiles for the *Device Owner Only* profile have the following limitations:
+   Az *eszköz tulajdonosi* profiljához tartozó SCEP a következő korlátozások vonatkoznak:
 
-   1. Under Monitoring, certificate reporting isn't available for Device Owner SCEP certificate profiles.
+   1. A figyelés alatt a tanúsítvány-jelentéskészítés nem érhető el az eszköz tulajdonosának SCEP.
 
-   2. You can't use Intune to revoke certificates that were provisioned by SCEP certificate profiles for Device Owners. You can manage revocation through an external process or directly with the certification authority. 
+   2. Az Intune nem használható olyan tanúsítványok visszavonásához, amelyeket a SCEP az eszközök tulajdonosainak kiosztottak. A visszavonást egy külső folyamaton vagy közvetlenül a hitelesítésszolgáltatón keresztül is kezelheti. 
 
-   4. For Android Enterprise dedicated devices, SCEP certificate profiles are supported for Wi-Fi network configuration and authentication only.  SCEP certificate profiles on Android Enterprise dedicated devices are not supported for VPN or app authentication.   
+   4. Az androidos vállalati dedikált eszközök esetében a SCEP-tanúsítvány profiljai a Wi-Fi hálózati konfiguráció és a hitelesítés esetében támogatottak.  A SCEP az androidos vállalati dedikált eszközökön nem támogatottak a VPN-vagy az alkalmazás-hitelesítéshez.   
 
    
-7. Select **Settings**, and then complete the following configurations:
+7. Válassza a **Beállítások**lehetőséget, majd hajtsa végre a következő konfigurációkat:
 
-   - **Certificate type**:
+   - **Tanúsítvány típusa**:
 
-     *(Applies to:  Android, Android Enterprise, iOS, macOS, Windows 8.1 and later, and Windows 10 and later.)*
+     *(A következőkre vonatkozik: Android, Android Enterprise, iOS, macOS, Windows 8,1 és újabb, valamint Windows 10 és újabb verziók.)*
 
-     Select a type depending on how you'll use the certificate profile:
+     Válasszon egy típust attól függően, hogy hogyan fogja használni a tanúsítványt:
 
-     - **User**: *User* certificates can contain both user and device attributes in the subject and SAN of the certificate.  
-     - **Device**:  *Device* certificates can only contain device attributes in the subject and SAN of the certificate.
+     - **Felhasználó**: a *felhasználói* tanúsítványok a tulajdonos és a tanúsítvány Tárolóhálózati felhasználói és eszköz attribútumait is tartalmazhatják.  
+     - **Eszköz**: az *eszközök* tanúsítványainak csak a tulajdonos és a tanúsítvány Tárolóhálózati attribútumait tartalmazhatják.
 
-       Use **Device** for scenarios such as user-less devices, like kiosks, or for Windows devices. On Windows devices, the certificate is placed in the Local Computer certificate store.
+       **Eszköz** használata olyan forgatókönyvek esetén, mint a felhasználó nélküli eszközök, például kioszkok vagy Windows-eszközök. Windows-eszközökön a tanúsítvány a helyi számítógép tanúsítványtárolóba kerül.
 
-   - **Subject name format**:
+   - **Tulajdonos nevének formátuma**:
 
-     Select how Intune automatically creates the subject name in the certificate request. Options for the subject name format depend on the Certificate type you select, either **User** or **Device**.
+     Válassza ki, hogy az Intune hogyan hozza létre automatikusan a tulajdonos nevét a tanúsítványkérelmet. A tulajdonos nevének formátumára vonatkozó beállítások a kiválasztott tanúsítvány típusától függenek, a **felhasználótól** vagy az **eszköztől**.
 
      > [!NOTE]
-     > There is a [known issue](#avoid-certificate-signing-requests-with-escaped-special-characters) for using SCEP to get certificates when the subject name in the resulting Certificate Signing Request (CSR) includes one of the following characters as an escaped character (proceeded by a backslash \\):
+     > [Ismert hiba](#avoid-certificate-signing-requests-with-escaped-special-characters) történt a SCEP használatával a tanúsítványok lekéréséhez, ha az eredményül kapott tanúsítvány-aláírási kérelem (CSR) tulajdonos neve a következő karakterek egyikét tartalmazza Escape-karakterként (fordított perjel \\):
      > - \+
      > - ;
      > - ,
@@ -82,7 +82,7 @@ After you [configure your infrastructure](certificates-scep-configure.md) to sup
 
      - **Felhasználói tanúsítványtípus**
 
-       Format options for the *Subject name format* include:
+       A *tulajdonos nevének formátumára* vonatkozó beállítások a következők:
 
        - **Nincs konfigurálva**
        - **Köznapi név**
@@ -92,28 +92,28 @@ After you [configure your infrastructure](certificates-scep-configure.md) to sup
        - **Sorozatszám**
        - **Egyéni**: Ha ezt a lehetőséget választja, megjelenik egy **Egyéni** szövegmező is. Ezt a mezőt egyéni tulajdonosnév-formátumok megadásához használhatja, beleértve a változókat is. Az egyéni formátum két változót támogat: **Egyszerű név (CN)** és **E-mail (E)** . Az **Egyszerű név (CN)** az alábbi változók bármelyikére beállítható:
 
-         - **CN={{UserName}}** : The user principal name of the user, such as janedoe@contoso.com.
+         - **CN = {{username}}** : a felhasználó egyszerű felhasználóneve, például janedoe@contoso.com.
          - **CN={{AAD_Device_ID}}** : Egy Azure Active Directoryban való eszközregisztrációkor társított azonosító. Ez az azonosító jellemzően az Azure AD-ben való hitelesítéshez használatos.
-         - **CN={{SERIALNUMBER}}** : The unique serial number (SN) typically used by the manufacturer to identify a device.
-         - **CN={{IMEINumber}}** : The International Mobile Equipment Identity (IMEI) unique number used to identify a mobile phone.
-         - **CN={{OnPrem_Distinguished_Name}}** : A sequence of relative distinguished names separated by comma, such as *CN=Jane Doe,OU=UserAccounts,DC=corp,DC=contoso,DC=com*.
+         - **CN = {{SERIALNUMBER}}** : az egyedi sorozatszám (Sn) általában a gyártó által az eszköz azonosítására használatos.
+         - **CN = {{IMEINumber}}** : a mobil telefon azonosítására szolgáló nemzetközi mobileszköz-identitás (IMEI) egyedi szám.
+         - **CN = {{OnPrem_Distinguished_Name}}** : relatív megkülönböztető nevek sorozata vesszővel elválasztva, például *CN = JANE DOE, OU = UserAccounts, DC = Corp, DC = contoso, DC = com*.
 
-           To use the *{{OnPrem_Distinguished_Name}}* variable, be sure to sync the *onpremisesdistinguishedname* user attribute using [Azure AD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect) to your Azure AD.
+           A *{{OnPrem_Distinguished_Name}}* változó használatához ne felejtse el szinkronizálni a *onpremisesdistinguishedname* User ATTRIBÚTUMot az Azure AD-vel való [Azure ad Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect) használatával.
 
-         - **CN={{onPremisesSamAccountName}}** : Admins can sync the samAccountName attribute from Active Directory to Azure AD using Azure AD connect into an attribute called *onPremisesSamAccountName*. Intune can substitute that variable as part of a certificate issuance request in the subject of a certificate. The samAccountName attribute is the user sign-in name used to support clients and servers from a previous version of Windows (pre-Windows 2000). The user sign in name format is: *DomainName\testUser*, or only *testUser*.
+         - **CN = {{onPremisesSamAccountName}}** : a rendszergazdák a sAMAccountName attribútumot az Azure ad-vel a *onPremisesSamAccountName*nevű attribútumba szinkronizálva Active Directoryról az Azure ad-be. Az Intune a tanúsítvány kiállításának részeként helyettesítheti be ezt a változót. A samAccountName attribútum a Windows korábbi verziójából származó ügyfelek és kiszolgálók támogatásához használt felhasználói bejelentkezési név (pre-Windows 2000). A felhasználói bejelentkezési név formátuma: *DomainName\testUser*, vagy csak *tesztfelhasználó*.
 
-            To use the *{{onPremisesSamAccountName}}* variable, be sure to sync the *onPremisesSamAccountName* user attribute using [Azure AD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect) to your Azure AD.
+            A ( *onPremisesSamAccountName* ) *{{onPremisesSamAccountName}}* változó használatához az Azure AD-vel a [Azure ad Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect) használatával kell szinkronizálnia a felhasználói attribútumot.
 
          Egy vagy több változó és statikus sztringek együttes használatával létrehozhat egyéni tulajdonosnév-formátumokat, például a következőhöz hasonlót:  
          - **CN={{UserName}},E={{EmailAddress}},OU=Mobile,O=Finance Group,L=Redmond,ST=Washington,C=US**
 
-         That example includes a subject name format that uses the CN and E variables, and strings for Organizational Unit, Organization, Location, State, and Country values. A függvény leírását és a támogatott sztringeket a [CertStrToName függvény](https://msdn.microsoft.com/library/windows/desktop/aa377160.aspx) című cikkben találhatja meg.
+         Ez a példa egy tulajdonos nevének formátumát tartalmazza, amely a CN és az E változókat, valamint a szervezeti egység, szervezet, hely, állam és ország értékek karakterláncait használja. A függvény leírását és a támogatott sztringeket a [CertStrToName függvény](https://msdn.microsoft.com/library/windows/desktop/aa377160.aspx) című cikkben találhatja meg.
 
       - **Eszköz tanúsítványtípus**
 
-        Format options for the Subject name format include the following variables:
+        A tulajdonos nevének formátumára vonatkozó beállítások a következő változókat tartalmazzák:
 
-        - **{{AAD_Device_ID}}** or **{{AzureADDeviceId}}** - Either variable can be used to identify a device by its Azure AD ID.
+        - **{{AAD_Device_ID}}** vagy **{{AzureADDeviceId}}** – bármelyik változó használatával azonosítható egy eszköz az Azure ad-azonosító alapján.
         - **{{Device_Serial}}**
         - **{{Device_IMEI}}**
         - **{{SerialNumber}}**
@@ -121,40 +121,40 @@ After you [configure your infrastructure](certificates-scep-configure.md) to sup
         - **{{WiFiMacAddress}}**
         - **{{IMEI}}**
         - **{{DeviceName}}**
-        - **{{FullyQualifiedDomainName}}** *(Only applicable for Windows and domain-joined devices)*
+        - **{{FullyQualifiedDomainName}}** *(csak Windows és tartományhoz csatlakoztatott eszközök esetén alkalmazható)*
         - **{{MEID}}**
 
-        You can specify these variables, followed by the text for the variable, in the textbox. For example, the common name for a device named *Device1* can be added as **CN={{DeviceName}}Device1**.
+        Megadhatja ezeket a változókat, majd a változó szövegét a szövegmezőben. Egy *Device1* nevű eszköz köznapi neve például a következő lehet: **CN = {{DeviceName}} Device1**.
 
         > [!IMPORTANT]
-        > - When you specify a variable, enclose the variable name in curly brackets { } as seen in the example, to avoid an error.  
-        > - Device properties used in the *subject* or *SAN* of a device certificate, like **IMEI**, **SerialNumber**, and **FullyQualifiedDomainName**, are properties that could be spoofed by a person with access to the device.
-        > - A device must support all variables specified in a certificate profile for that profile to install on that device.  For example, if **{{IMEI}}** is used in the subject name of a SCEP profile and is assigned to a device that doesn’t have an IMEI number, the profile fails to install.
+        > - Ha változót ad meg, a hiba elkerüléséhez tegye a változó nevét kapcsos zárójelben ({}) a példában látható módon.  
+        > - Az eszköz *tulajdonosának* vagy *San* -tanúsítványának (például **IMEI**, **serialnumber**és **FullyQualifiedDomainName**) használt tulajdonságai olyan tulajdonságok, amelyek az eszközhöz hozzáféréssel rendelkező személy által meghamisítható.
+        > - Egy eszköznek támogatnia kell az adott profilhoz tartozó tanúsítvány-profilban megadott összes változót az adott eszközre való telepítéshez.  Ha például a **{{IMEI}}** egy SCEP-profil tulajdonos nevében van használatban, és olyan eszközhöz van rendelve, amely nem rendelkezik IMEI-számmal, akkor a profilt nem lehet telepíteni.
 
-   - **Subject alternative name**: Select how Intune automatically creates the subject alternative name (SAN) in the certificate request. Options for the SAN depend on the Certificate type you selected; either **User** or **Device**.
+   - **Tulajdonos alternatív neve**: válassza ki, hogy az Intune hogyan hozza létre automatikusan a tulajdonos alternatív nevét (San) a tanúsítványkérelem során. A TÁROLÓHÁLÓZATI beállítások a kiválasztott tanúsítvány típusától függenek; vagy **felhasználó** vagy **eszköz**.
 
       - **Felhasználói tanúsítványtípus**
 
-        Select from the available attributes:
+        Válasszon az elérhető attribútumok közül:
 
         - **E-mail cím**
-        - **User principal name (UPN)**
+        - **Egyszerű felhasználónév (UPN)**
 
-        For example, user certificate types can include the user principal name (UPN) in the subject alternative name. Ha az ügyféltanúsítványt egy hálózati házirend-kiszolgálón történő hitelesítésre használja, a tulajdonos alternatív neveként az egyszerű felhasználónevet (UPN) állítsa be.
+        A felhasználói tanúsítványok típusai például tartalmazhatják az egyszerű felhasználónevet (UPN) a tulajdonos alternatív neve mezőben. Ha az ügyféltanúsítványt egy hálózati házirend-kiszolgálón történő hitelesítésre használja, a tulajdonos alternatív neveként az egyszerű felhasználónevet (UPN) állítsa be.
 
       - **Eszköz tanúsítványtípus**
 
-        Use the **Attribute** dropdown and select an attribute, assign a **Value**, and **Add** that to the certificate profile. You can add multiple values by selecting additional attributes.
+        Használja az **attribútum** legördülő menüt, válasszon ki egy attribútumot, rendeljen hozzá egy **értéket**, és **vegye fel** azt a tanúsítvány profiljába. További attribútumok kiválasztásával több értéket is hozzáadhat.
 
-        Available attributes include:
+        Az elérhető attribútumok a következők:
 
         - **E-mail cím**
-        - **User principal name (UPN)**
+        - **Egyszerű felhasználónév (UPN)**
         - **DNS**
 
         Az *Eszköz* tanúsítványtípusnál a következő eszköztanúsítvány-változókat használhatja az értékhez:
 
-        - **{{AAD_Device_ID}}** or **{{AzureADDeviceId}}** - Either variable can be used to identify a device by its Azure AD ID.
+        - **{{AAD_Device_ID}}** vagy **{{AzureADDeviceId}}** – bármelyik változó használatával azonosítható egy eszköz az Azure ad-azonosító alapján.
         - **{{Device_Serial}}**
         - **{{Device_IMEI}}**
         - **{{SerialNumber}}**
@@ -165,91 +165,91 @@ After you [configure your infrastructure](certificates-scep-configure.md) to sup
         - **{{FullyQualifiedDomainName}}**
         - **{{MEID}}**
 
-        To specify a value for an attribute, include the variable name with curly brackets, followed by the text for that variable. For example, a value for the DNS attribute can be added **{{AzureADDeviceId}}.domain.com** where *.domain.com* is the text. For a user named *User1* an Email address might appear as {{FullyQualifiedDomainName}}User1@Contoso.com.
+        Egy attribútum értékének megadásához adja meg a változó nevét kapcsos zárójelekkel, majd a változó szövegét. A DNS-attribútum értéke például a következő lehet: **{{AzureADDeviceId}}. domain. com** , ahol a *. domain.com* a szöveg. A *Felhasználó1* nevű felhasználóhoz tartozó e-mail cím {{FullyQualifiedDomainName}}User1@Contoso.comjelenhet meg.
 
         > [!IMPORTANT]
-        > - When using a device certificate variable, enclose the variable name in curly brackets { }.
-        > - Don’t use curly brackets **{ }** , pipe symbols **|** , and semicolons **;** , in the text that follows the variable.
-        > - Device properties used in the *subject* or *SAN* of a device certificate, like **IMEI**, **SerialNumber**, and **FullyQualifiedDomainName**, are properties that could be spoofed by a person with access to the device.
-        > - A device must support all variables specified in a certificate profile for that profile to install on that device.  For example, if **{{IMEI}}** is used in the SAN of a SCEP profile and is assigned to a device that doesn’t have an IMEI number, the profile fails to install.
+        > - Az eszköz tanúsítványa változó használatakor a változó neve kapcsos zárójelben {}.
+        > - A változót követő szövegben ne használjon kapcsos zárójeleket **{}** , pipe-szimbólumok **|** és pontosvesszők **.**
+        > - Az eszköz *tulajdonosának* vagy *San* -tanúsítványának (például **IMEI**, **serialnumber**és **FullyQualifiedDomainName**) használt tulajdonságai olyan tulajdonságok, amelyek az eszközhöz hozzáféréssel rendelkező személy által meghamisítható.
+        > - Egy eszköznek támogatnia kell az adott profilhoz tartozó tanúsítvány-profilban megadott összes változót az adott eszközre való telepítéshez.  Ha például a **{{IMEI}}** egy SCEP-profil San-ban van használatban, és olyan eszközhöz van rendelve, amely nem rendelkezik IMEI-számmal, akkor a profilt nem lehet telepíteni.
 
-   - **Certificate validity period**:
+   - **Tanúsítvány érvényességi időtartama**:
 
-     A tanúsítványsablonban megadott érvényességi időtartamnál rövidebb értéket is beállíthat, hosszabbat azonban nem. If you configured the certificate template to [support a custom value that can be set from within the Intune console](certificates-scep-configure.md#modify-the-validity-period-of-the-certificate-template), use this setting to specify the amount of remaining time before the certificate expires.
+     A tanúsítványsablonban megadott érvényességi időtartamnál rövidebb értéket is beállíthat, hosszabbat azonban nem. Ha úgy konfigurálta a tanúsítványsablont, hogy [támogassa az Intune-konzolon belül beállítható egyéni értéket](certificates-scep-configure.md#modify-the-validity-period-of-the-certificate-template), ezzel a beállítással megadhatja a tanúsítvány lejárata előtt hátralévő idő mennyiségét.
 
      Ha például a tanúsítványsablonban két év van meghatározva a tanúsítvány érvényességi idejeként, akkor egy évet állíthat be értékként, öt évet azonban nem. Az értéknek emellett a kiállító hitelesítésszolgáltató tanúsítványának hátralévő érvényességi időszakánál is kevesebbnek kell lennie.
 
-   - **Key storage provider (KSP)** :
+   - **Kulcstároló-szolgáltató (KSP)** :
 
-     *(Applies to:  Windows 8.1 and later, and Windows 10 and later)*
+     *(A következőkre vonatkozik: Windows 8,1 és újabb, valamint Windows 10 és újabb verziók)*
 
-     Specify where the key to the certificate is stored. Choose from the following values:
+     Itt adhatja meg, hogy a rendszer hol tárolja a tanúsítvány kulcsát. Válasszon a következő értékek közül:
 
      - **Regisztrálás a platformmegbízhatósági modul kulcstároló-szolgáltatójába (ha van ilyen), máskülönben regisztrálás a szoftverkulcstároló-szolgáltatóba**
      - **Regisztrálás a platformmegbízhatósági modul kulcstároló-szolgáltatójába, máskülönben a művelet sikertelen**
      - **Regisztrálás a Passportba, máskülönben a művelet sikertelen (Windows 10 és újabb verzió)**
      - **Regisztrálás szoftverkulcstároló-szolgáltatóba**
 
-   - **Key usage**:
+   - **Kulcshasználat**:
 
-     Select key usage options for the certificate:
+     Válassza ki a tanúsítvány kulcshasználat beállításait:
 
-     - **Digital signature**: Allow key exchange only when a digital signature helps protect the key.
-     - **Key encipherment**: Allow key exchange only when the key is encrypted.
+     - **Digitális aláírás**: csak akkor engedélyezi a kulcscsere használatát, ha egy digitális aláírás segíti a kulcs megvédését.
+     - **Key titkosítási**: csak akkor engedélyezi a kulcscsere használatát, ha a kulcs titkosítva van.
 
-   - **Key size (bits)** :
+   - **Kulcs mérete (BITS)** :
 
-     Select the number of bits contained in the key.
+     Válassza ki a kulcsban található bitek számát.
 
-   - **Hash algorithm**:
+   - **Kivonatoló algoritmus**:
 
-     *(Applies to Android, Android enterprise, Windows Phone 8.1, Windows 8.1 and later, and Windows 10 and later)*
+     *(Az Android, az Android Enterprise, a Windows Phone-telefon 8,1, a Windows 8,1 és az újabb verziók, valamint a Windows 10 és újabb verziókra vonatkozik)*
 
      Jelölje ki a tanúsítvánnyal használni kívánt kivonatoló algoritmust a rendelkezésre álló típusok közül. Válassza a kapcsolódó eszközöknél használható legerősebb biztonsági szintet.
 
-   - **Root Certificate**:
+   - **Főtanúsítvány**:
 
-     Select the *trusted certificate profile* you previously configured and assigned to applicable users and devices for this SCEP certificate profile. The trusted certificate profile is used to provision users and devices with the Trusted Root CA certificate. For information about the trusted certificate profile, see [Export your trusted root CA certificate](certificates-configure.md#export-the-trusted-root-ca-certificate) and [Create trusted certificate profiles](certificates-configure.md#create-trusted-certificate-profiles) in *Use certificates for authentication in Intune*. If you have a root Certification Authority and an issuing Certification Authority, select the Trusted Root certificate profile that is associated with the issuing Certification Authority.
+     Válassza ki a korábban konfigurált és a megfelelő felhasználókhoz és eszközökhöz hozzárendelt *megbízható tanúsítvány-profilt* ehhez a SCEP-profilhoz. A megbízható tanúsítvány profilja a felhasználók és az eszközök kiépítésére szolgál a megbízható legfelső szintű HITELESÍTÉSSZOLGÁLTATÓI tanúsítvánnyal. A megbízható tanúsítvány profiljával kapcsolatos információkért lásd: [a megbízható legfelső szintű hitelesítésszolgáltatói tanúsítvány exportálása](certificates-configure.md#export-the-trusted-root-ca-certificate) és [megbízható tanúsítvány-profilok létrehozása](certificates-configure.md#create-trusted-certificate-profiles) a *tanúsítványok használata a hitelesítéshez az Intune-ban*. Ha rendelkezik legfelső szintű hitelesítésszolgáltatóval és egy kiállító hitelesítésszolgáltatóval, válassza ki a kiállító hitelesítésszolgáltatóhoz társított megbízható főtanúsítvány-profilt.
 
-   - **Extended key usage**:
+   - **Kibővített kulcshasználat**:
 
-     Add values for the certificate's intended purpose. In most cases, the certificate requires *client authentication* so that the user or device can authenticate to a server. You can add additional key usages as required.
+     Adja hozzá az értékeket a tanúsítvány felhasználási céljához. A legtöbb esetben a tanúsítványhoz az *ügyfél-hitelesítés* szükséges, hogy a felhasználó vagy az eszköz hitelesíthető legyen egy kiszolgálóval. Szükség szerint további kulcshasználat hozzáadására is lehetőség van.
 
-   - **Renewal threshold (%)** :
+   - **Megújítási küszöb (%)** :
 
-     Enter the percentage of the certificate lifetime that remains before the device requests renewal of the certificate. For example, if you enter 20, the renewal of the certificate will be attempted when the certificate is 80% expired. Renewal attempts continue until renewal is successful. Renewal generates a new certificate, which results in a new public/private key pair.
+     Adja meg a tanúsítvány élettartamának azon hányadát, amely még azelőtt marad, amíg az eszköz kérelmezi a tanúsítvány megújítását. Ha például a 20 értéket adja meg, a rendszer megkísérli a tanúsítvány megújítását, ha a tanúsítvány 80%-kal lejárt. A megújítási kísérletek a megújítás sikeressége után folytatódnak. A megújítás új tanúsítványt hoz létre, amely új nyilvános/titkos kulcspár bevonását eredményezi.
 
-   - **SCEP Server URLs**:
+   - **SCEP-kiszolgáló URL-címei**:
 
-     Enter one or more URLs for the NDES Servers that issue certificates via SCEP. For example, enter something like *https://ndes.contoso.com/certsrv/mscep/mscep.dll* . You can add additional SCEP URLs for load balancing as needed as URLs are randomly pushed to the device with the profile. If one of the SCEP servers isn't available, the SCEP request will fail and it's possible that on later device check-ins, the cert request could be made against the same server that is down.
+     Adjon meg egy vagy több URL-címet azon NDES-kiszolgálók esetében, amelyek tanúsítványokat állítanak ki a SCEP használatával. Írja be például a következőt: *https://ndes.contoso.com/certsrv/mscep/mscep.dll* . Szükség szerint további SCEP URL-címeket is hozzáadhat a terheléselosztáshoz, mivel az URL-címeket a rendszer véletlenszerűen leküldi az eszközre a profil használatával. Ha az egyik SCEP-kiszolgáló nem érhető el, a SCEP-kérelem sikertelen lesz, és lehetséges, hogy a későbbi eszköz-bejelentkezések esetében a tanúsítvány kérése ugyanarra a kiszolgálóra irányul, amely le van hajtva.
 
-8. Select **OK**, and then select **Create**. The profile is created and appears on the *Device configuration - Profiles* list.
+8. Válassza **az OK**, majd a **Létrehozás**lehetőséget. Ekkor létrejön a profil, és megjelenik az *eszköz konfigurációja-profilok* listán.
 
-### <a name="avoid-certificate-signing-requests-with-escaped-special-characters"></a>Avoid certificate signing requests with escaped special characters
+### <a name="avoid-certificate-signing-requests-with-escaped-special-characters"></a>A tanúsítvány-aláírási kérelmek elhagyása Escape-speciális karakterekkel
 
-There's a known issue for SCEP and PKCS certificate requests that include a Subject Name (CN) with one or more of the following special characters as an escaped character. Subject names that include one of the special characters as an escaped character result in a CSR with an incorrect subject name. An incorrect subject name results in the Intune SCEP challenge validation failing and no certificate issued.
+Létezik egy ismert probléma a SCEP és a PKCS-tanúsítványkérelmek között, amelyek egy vagy több következő speciális karakterből álló, Escape-karakterrel rendelkeznek. Azok a tulajdonosi nevek, amelyek a speciális karakterek egyikét tartalmazzák Escape-karakterként, helytelen tulajdonosi névvel rendelkező CSR-t eredményeznek. Helytelen tulajdonos neve eredményezi az Intune SCEP Challenge validate utasítását, és nincs kiállítva tanúsítvány.
 
-The special characters are:
+A speciális karakterek a következők:
 - \+
 - ,
 - ;
 - =
 
-When your subject name includes one of the special characters, use one of the following options to work around this limitation:
+Ha a tulajdonos neve tartalmaz egy speciális karaktert, a következő lehetőségek közül választhat a korlátozás megkerüléséhez:
 
-- Encapsulate the CN value that contains the special character with quotes.  
-- Remove the special character from the CN value.
+- A speciális karaktert idézőjelekkel tartalmazó CN-érték beágyazása.  
+- Távolítsa el a speciális karaktert a CN-értékből.
 
-**For example**, you have a Subject Name that appears as *Test user (TestCompany, LLC)* .  A CSR that includes a CN that has the comma between *TestCompany* and *LLC* presents a problem.  The problem can be avoided by placing quotes around the entire CN, or by removing of the comma from between *TestCompany* and *LLC*:
+**Például**van egy tulajdonos neve, amely a *test User (TestCompany, LLC)* néven jelenik meg.  A *TestCompany* és az *LLC* közötti vesszőt tartalmazó CN-t magában foglaló CSR-ben problémát jelent.  A probléma elkerülhető úgy, hogy idézőjeleket helyez a teljes CN-re, vagy eltávolítja a vesszőt a *TestCompany* és az *LLC*-ből:
 
-- **Add quotes**: *CN=* ”Test User (TestCompany, LLC)”,OU=UserAccounts,DC=corp,DC=contoso,DC=com*
-- **Remove the comma**: *CN=Test User (TestCompany LLC),OU=UserAccounts,DC=corp,DC=contoso,DC=com*
+- **Idézőjelek hozzáadása**: *CN =* "test User (TestCompany, LLC)", OU = UserAccounts, DC = Corp, DC = contoso, DC = com *
+- **Távolítsa el a vesszőt**: *CN = test User (TestCompany LLC), OU = UserAccounts, DC = Corp, DC = contoso, DC = com*
 
- However, attempts to escape the comma by using a backslash character will fail with an error in the CRP logs:
+ Ha azonban a vesszőt egy fordított perjel karakterrel próbálja meg elmenekülni, a rendszer hibát jelez a CRP-naplókban:
  
-- **Escaped comma**: *CN=Test User (TestCompany\\, LLC),OU=UserAccounts,DC=corp,DC=contoso,DC=com*
+- **Megszökött vessző**: *CN = test User (TESTCOMPANY\\, LLC), OU = UserAccounts, DC = Corp, DC = contoso, DC = com*
 
-The error is similar to the following error:
+A hiba a következő hibához hasonló:
 
 ```
 Subject Name in CSR CN="Test User (TESTCOMPANY\, LLC),OU=UserAccounts,DC=corp,DC=contoso,DC=com" and challenge CN=Test User (TESTCOMPANY\, LLC),OU=UserAccounts,DC=corp,DC=contoso,DC=com do not match  
@@ -265,22 +265,22 @@ Exception:    at Microsoft.ConfigurationManager.CertRegPoint.ChallengeValidation
 
 ## <a name="assign-the-certificate-profile"></a>A tanúsítványprofil eszközökhöz rendelése
 
-Assign SCEP certificate profiles the same way you [deploy device profiles](../configuration/device-profile-assign.md) for other purposes. However, consider the following before you continue:
+A SCEP-profilokat ugyanúgy rendelheti hozzá, mint az [eszközök profiljait](../configuration/device-profile-assign.md) más célokra. A folytatás előtt azonban vegye figyelembe a következőket:
 
-- When you assign SCEP certificate profiles to groups, the Trusted Root CA certificate file (as specified in the *trusted certificate profile*) is installed on the device. The device uses the SCEP certificate profile to create a certificate request for that Trusted Root CA certificate.
+- Amikor SCEP rendel a csoportokhoz, a megbízható legfelső szintű HITELESÍTÉSSZOLGÁLTATÓI tanúsítvány fájlja (a *megbízható tanúsítvány profiljában*megadott) telepítve van az eszközön. Az eszköz a SCEP tanúsítvány-profilt használja a megbízható legfelső szintű HITELESÍTÉSSZOLGÁLTATÓI tanúsítványhoz tartozó tanúsítványkérelem létrehozásához.
 
-- The SCEP certificate profile installs only on devices that run the platform you specified when you created the certificate profile.
+- Az SCEP-tanúsítvány profilja csak a tanúsítvány profiljának létrehozásakor megadott platformot futtató eszközökre telepíthető.
 
 - Tanúsítványprofilokat rendelhet felhasználógyűjteményekhez és eszközgyűjteményekhez is.
 
-- Ha azt szeretné, hogy a tanúsítványok gyorsan megjelenjenek az eszközökön a regisztráció után, a tanúsítványprofilt felhasználócsoporthoz és ne eszközcsoporthoz rendelje hozzá. Ha eszközcsoporthoz rendel hozzá, akkor teljes eszközregisztráció szükséges, mielőtt az eszköz megkaphatná a szabályzatokat.
+- Ha azt szeretné, hogy a tanúsítványok gyorsan megjelenjenek az eszközökön a regisztráció után, a tanúsítványprofilt felhasználócsoporthoz és ne eszközcsoporthoz rendelje hozzá. Ha eszközcsoporthoz rendeli, akkor teljes eszközregisztráció szükséges, mielőtt az eszköz megkaphatná a szabályzatokat.
 
-- If you use co-management for Intune and Configuration Manager, in Configuration Manager [set the workload slider](https://docs.microsoft.com/sccm/comanage/how-to-switch-workloads) for Resource Access Policy to **Intune** or **Pilot Intune**. This setting allows Windows 10 clients to start the process of requesting the certificate.
+- Ha az Intune és a Configuration Manager együttes felügyeletét használja, akkor a Configuration Manager az **Intune** - **hoz vagy az Intune-hoz**tartozó erőforrás-hozzáférési szabályzat [munkaterhelésének csúszkáját állítsa be](https://docs.microsoft.com/sccm/comanage/how-to-switch-workloads) . Ez a beállítás lehetővé teszi, hogy a Windows 10-ügyfelek elindítsák a tanúsítvány kérelmezésének folyamatát.
 
-- Although you create and assign the trusted certificate profile and the SCEP certificate profile separately, both must be assigned. Without both installed on a device, the SCEP certificate policy fails. Ensure that any trusted root certificate profiles are also deployed to the same groups as the SCEP profile.
+- Bár a megbízható tanúsítvány profilját és a SCEP-tanúsítvány profilját külön hozza létre és rendeli hozzá, mindkettőt hozzá kell rendelni. Az SCEP-tanúsítvány házirendje nem működik együtt az eszközön. Győződjön meg arról, hogy a megbízható főtanúsítvány-profilok is ugyanarra a csoportra vannak telepítve, mint a SCEP-profil.
 
 > [!NOTE]
-> On iOS devices, when a SCEP certificate profile is associated with an additional profile, like a Wi-Fi or VPN profile, the device receives a certificate for each of those additional profiles. This results in the iOS device having multiple certificates delivered by the SCEP certificate request.  If a single certificate is desired, you must use PKCS certificates instead of SCEP certificates.  This is due to differences in how SCEP and PKCS certificates are delivered to devices.
+> IOS-eszközökön, amikor egy SCEP-tanúsítvány profilja egy további profillal van társítva, például Wi-Fi-vagy VPN-profilhoz, az eszköz megkapja a további profilok tanúsítványát. Ez azt eredményezi, hogy az iOS-eszközön több tanúsítvány is érkezik az SCEP-tanúsítványkérelem által.  Ha egyetlen tanúsítványra van szükség, a SCEP-tanúsítványok helyett PKCS-tanúsítványokat kell használnia.  Ennek az az oka, hogy a SCEP és a PKCS-tanúsítványok eszközökre való kézbesítésének eltérései a következők:
 
 ## <a name="next-steps"></a>További lépések
 

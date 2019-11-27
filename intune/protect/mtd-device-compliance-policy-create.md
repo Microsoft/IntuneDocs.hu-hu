@@ -27,7 +27,7 @@ ms.locfileid: "74409696"
 ---
 # <a name="create-mobile-threat-defense-mtd-device-compliance-policy-with-intune"></a>A Mobile Threat Defense (MTD) eszközmegfelelőségi szabályzatának létrehozása az Intune-nal
 
-Az Intune és az MTD együttes használata segíti a mobileszközökön megjelenő fenyegetések észlelését és a kockázat felmérését. Az Intune eszközmegfelelési szabályzaton belül létrehozhat egy szabályt, amely kockázatfelméréssel állapítja meg az eszköz megfelelőségét. You can then use a [Conditional Access policy](create-conditional-access-intune.md) to block access to services based on device compliance.
+Az Intune és az MTD együttes használata segíti a mobileszközökön megjelenő fenyegetések észlelését és a kockázat felmérését. Az Intune eszközmegfelelési szabályzaton belül létrehozhat egy szabályt, amely kockázatfelméréssel állapítja meg az eszköz megfelelőségét. Ezután [feltételes hozzáférési szabályzattal](create-conditional-access-intune.md) blokkolhatja a szolgáltatásokhoz való hozzáférést az eszköz megfelelősége alapján.
 
 > [!NOTE]
 > Ezek az információk minden Mobile Threat Defense-partnerre vonatkoznak.
@@ -42,15 +42,15 @@ Az MTD-eszközmegfelelési szabályzat előfeltételei:
 
 ## <a name="to-create-an-mtd-device-compliance-policy"></a>MTD-eszközmegfelelési szabályzat létrehozása
 
-1. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431).
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Select **Device** > **Compliance policies** > **Create policy**.
+2. Válassza az **eszköz** > **megfelelőségi szabályzatok** > **házirend létrehozása**lehetőséget.
 
-3. Specify a device compliance policy **Name**, **Description**, select the **Platform**, then select **Configure** under the **Settings** section.
+3. Adja meg az eszköz megfelelőségi szabályzatának **nevét**, **leírását**, válassza ki a **platformot**, majd válassza a **Konfigurálás** lehetőséget a **Beállítások** szakaszban.
 
 4. A **Megfelelőségi szabályzat** panelen kattintson az **Eszközállapot** lehetőségre.
 
-5. On the **Device Health** pane, choose the Mobile Threat Level from the drop-down list for **Require the device to be at or under the Device Threat Level**.
+5. A **Eszközállapot** ablaktáblán válassza ki a Mobile Threat (mobil veszélyforrás) szintet a legördülő listából, hogy **az eszköz a veszélyforrások szintjén legyen**.
 
    - **Védett**: Ez a szint a legbiztonságosabb. Az eszköz csak akkor fér hozzá a céges erőforrásokhoz, ha semmilyen veszélyforrás nincs rajta. Ha bármilyen veszélyforrás észlelhető, az eszköz nem megfelelőnek minősül.
 
@@ -60,22 +60,22 @@ Az MTD-eszközmegfelelési szabályzat előfeltételei:
 
    - **Magas**: Ez a szint a legkevésbé biztonságos. Megadása esetén a rendszer semelyik fenyegetettségi szint mellett nem korlátozza az eszközt, a Mobile Threat Defense szolgáltatást csak jelentéskészítésre használja. Ennek a beállításnak a megadása esetén az eszközökön aktiválni kell az MTD alkalmazást.
 
-6. Select **OK** twice, then select **Create** to create the policy.
+6. Kattintson kétszer **az OK** , majd a **Létrehozás** elemre a szabályzat létrehozásához.
 
 > [!IMPORTANT]
-> If you create Conditional Access policies for Office 365 or other services, the device compliance evaluation is assessed and noncompliant devices are blocked from accessing corporate resources until the threat is resolved in the device.
+> Ha feltételes hozzáférési szabályzatokat hoz létre az Office 365-hez vagy más szolgáltatásokhoz, az eszköz megfelelőségének kiértékelését a rendszer kiértékeli, és a nem megfelelő eszközök nem férnek hozzá a vállalati erőforrásokhoz, amíg a fenyegetés fel nem oldódik az eszközön.
 
 ## <a name="to-assign-an-mtd-device-compliance-policy"></a>MTD-eszközmegfelelési szabályzat hozzárendelése
 
-To assign a device compliance policy to users:
+Eszköz megfelelőségi szabályzatának kiosztása a felhasználók számára:
 
-1. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431).
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Select **Device** > **Compliance policies**.
+2. Válassza az **eszköz** > **megfelelőségi szabályzatok**lehetőséget.
 
-3. Select the policy you want to assign to users, and then select **Assignments**. Use the available options to *Include* and *Exclude* groups to receive this policy.  
+3. Válassza ki a felhasználókhoz hozzárendelni kívánt szabályzatot, majd válassza a **hozzárendelések**lehetőséget. Az elérhető beállításokkal csoportok *belefoglalásához* és *kizárásához* használhatja a szabályzatot.  
 
-4. Select Save to complete the assignment. When you save the assignment, the policy deploys to your selected users and their devices are evaluated for compliance.
+4. A hozzárendelés befejezéséhez válassza a mentés lehetőséget. A hozzárendelés mentésekor a szabályzatot a rendszer a kiválasztott felhasználókra telepíti, és az eszköz megfelelőségét kiértékeli.
 
 ## <a name="next-steps"></a>További lépések
 

@@ -27,18 +27,18 @@ ms.locfileid: "74199151"
 
 Az iOS- és Android-eszközökön futó Microsoft Outlook beállításainak elvégzéséhez konfigurációs szabályzatot is használhat. 
 
-For enrolled devices:
+Regisztrált eszközök esetén:
 - Alkalmazáskonfigurációs szabályzat felügyelt iOS-eszközökhöz történő létrehozásával kapcsolatban lásd: [Alkalmazáskonfigurációs szabályzatok hozzáadása felügyelt iOS-eszközökhöz](app-configuration-policies-use-ios.md). 
 - Alkalmazáskonfigurációs szabályzat felügyelt androidos eszközökhöz történő létrehozásával kapcsolatban lásd: [Alkalmazáskonfigurációs szabályzatok hozzáadása felügyelt Android-eszközökhöz](app-configuration-policies-use-android.md). 
 
-For unenrolled devices, see [Add app configuration policies for managed apps without device enrollment](app-configuration-policies-managed-app.md) to create an app configuration policy for Outlook for iOS and Android.
+A nem regisztrált eszközök esetében lásd: [alkalmazás-konfigurációs szabályzatok hozzáadása a felügyelt alkalmazásokhoz eszközök regisztrációja nélkül](app-configuration-policies-managed-app.md) az iOS és az Android rendszerhez készült alkalmazás-konfigurációs házirend létrehozásához az Outlookhoz.
 
 ## <a name="configuration-settings"></a>Konfigurációs beállítások
 
-When adding a configuration policy in Intune, you can specify settings to configure Microsoft Outlook for iOS and Android. In the Configuration settings pane, you can specify the email account configuration and configure app-specific settings.
+Ha konfigurációs szabályzatot ad hozzá az Intune-ban, megadhatja a Microsoft Outlook iOS és Android rendszerre való konfigurálásának beállításait. A konfigurációs beállítások panelen megadhatja az e-mail-fiók konfigurációját, és konfigurálhatja az alkalmazásra vonatkozó beállításokat.
 
-For specific procedural steps and detailed documentation on the app configuration settings Outlook for iOS and Android supports, see [Deploying Outlook for iOS and Android app configuration settings](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune).
+Az iOS és az Android rendszerhez készült alkalmazás-konfigurációs beállításokkal kapcsolatos konkrét eljárási lépések és részletes dokumentáció: az [Outlook telepítése iOS-és Android-alkalmazásokhoz konfigurációs beállítások](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune).
 
 ## <a name="next-steps"></a>További lépések
 
-- For more information, see [App configuration policies for Microsoft Intune](app-configuration-policies-overview.md)
+- További információ: [Microsoft Intune alkalmazás-konfigurációs szabályzatai](app-configuration-policies-overview.md)

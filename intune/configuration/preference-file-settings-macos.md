@@ -1,7 +1,7 @@
 ---
-title: Add preference file settings to macOS devices in Microsoft Intune - Azure | Microsoft Docs
+title: Preferencia-fájl beállításainak hozzáadása macOS-eszközökhöz a Microsoft Intune-Azure-ban | Microsoft Docs
 titleSuffix: ''
-description: Add an xml or plist file that includes key information about your app. Use a preference file device configuration profile to change key information in the property list file, and assign it to your macOS devices.
+description: Adjon hozzá egy XML-vagy plist-fájlt, amely az alkalmazással kapcsolatos legfontosabb információkat tartalmazza. A konfigurációs profilban megváltoztathatja a legfontosabb információkat a tulajdonságok listájának fájljában, és hozzárendelheti a macOS-eszközökhöz.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
@@ -23,39 +23,39 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74390974"
 ---
-# <a name="add-a-property-list-file-to-macos-devices-using-microsoft-intune"></a>Add a property list file to macOS devices using Microsoft Intune
+# <a name="add-a-property-list-file-to-macos-devices-using-microsoft-intune"></a>Tulajdonság-listaelem hozzáadása macOS-eszközökhöz Microsoft Intune használatával
 
-Using Microsoft Intune, you can add a property list file (.plist) for macOS devices, or apps on macOS devices.
+A Microsoft Intune használatával a MacOS-eszközökhöz, illetve macOS-eszközökön lévő alkalmazásokhoz (. plist) adhat hozzá.
 
 Ez a funkció az alábbiakra vonatkozik:
 
-- macOS devices running 10.7 and newer
+- 10,7 és újabb rendszerű macOS-eszközök
 
-Property list files typically include information about macOS applications. For more information, see [About Information Property List Files](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AboutInformationPropertyListFiles.html) (Apple's website) and [Custom payload settings](https://support.apple.com/guide/mdm/custom-mdm9abbdbe7/1/web/1).
+A tulajdonságok listázása általában a macOS-alkalmazásokkal kapcsolatos információkat tartalmaz. További információ: információk [a fájlok listázásáról](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AboutInformationPropertyListFiles.html) (Apple webhelye) és az [Egyéni adattartalom-beállításokról](https://support.apple.com/guide/mdm/custom-mdm9abbdbe7/1/web/1).
 
-This article lists and describes the different property list file settings you can add to macOS devices. As part of your mobile device management (MDM) solution, use these settings to add the app bundle ID (`com.company.application`), and add its .plist file.
+Ez a cikk felsorolja és ismerteti a macOS-eszközökhöz hozzáadható különböző tulajdonságokat felsoroló fájlok beállításait. A mobileszköz-kezelési (MDM) megoldás részeként ezeket a beállításokat használhatja az alkalmazáscsomag-azonosító (`com.company.application`) hozzáadásához és a. plist fájl hozzáadásához.
 
-These settings are added to a device configuration profile in Intune, and then assigned or deployed to your macOS devices.
+Ezek a beállítások hozzáadódnak az Intune-ban lévő eszköz konfigurációs profiljához, majd a macOS-eszközökhöz vannak rendelve vagy telepítve.
 
 ## <a name="before-you-begin"></a>Előkészületek
 
-[Create the profile](device-profile-create.md).
+[Hozza létre a profilt](device-profile-create.md).
 
 ## <a name="what-you-need-to-know"></a>Amit még tudnia kell
 
-- These settings aren't validated. Be sure to test your changes before assigning the profile to your devices.
-- If you’re not sure how to enter an app key, change the setting within the app. Then, review the app's preference file using [Xcode](https://developer.apple.com/xcode/) to see how the setting is configured. Apple recommends removing non-manageable settings using Xcode before importing the file.
-- Only some apps work with managed preferences, and might not allow you to manage all settings.
-- Be sure you upload property list files that target device channel settings, not user channel settings. Property list files target the entire device.
+- Ezek a beállítások nincsenek érvényesítve. Győződjön meg arról, hogy teszteli a módosításokat, mielőtt hozzárendeli a profilt az eszközökhöz.
+- Ha nem tudja, hogyan kell megadnia az alkalmazás kulcsát, módosítsa a beállítást az alkalmazáson belül. Ezt követően tekintse át az alkalmazás preferencia-fájlját a [Xcode](https://developer.apple.com/xcode/) használatával, hogy megtekintse a beállítás konfigurációját. Az Apple javasolja a nem felügyelhető beállítások eltávolítását a Xcode használatával a fájl importálása előtt.
+- Csak néhány alkalmazás felügyelt beállításokkal működik, és előfordulhat, hogy nem teszi lehetővé az összes beállítás kezelését.
+- Ügyeljen arra, hogy feltöltse azokat a tulajdonságlap-fájlokat, amelyek az eszköz csatornájának beállításait célozzák meg, nem pedig a felhasználói csatornák beállításait. A tulajdonságmezők fájljai a teljes eszközt célozzák meg.
 
-## <a name="preference-file"></a>Preference file
+## <a name="preference-file"></a>Preferencia fájl
 
-- **Preference domain name**: Property list files are typically used for web browsers (Microsoft Edge), [Microsoft Defender Advanced Threat Protection](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-atp-mac), and custom apps. When you create a preference domain, a bundle ID is also created. Enter the bundle ID, such as `com.company.application`. For example, enter `com.Contoso.applicationName`, `com.Microsoft.Edge` or `com.microsoft.wdav`.
-- **Property list file**: Select the property list file associated with your app. Be sure it's a `.plist` or `.xml` file. For example, upload a `YourApp-Manifest.plist` or `YourApp-Manifest.xml` file.
-- **File contents**: The key information in the property list file is shown. If you need to change the key information, open the list file in another editor, and then reupload the file in Intune.
+- **Preferencia tartomány neve**: a rendszer általában a webböngészők (Microsoft Edge), a [Microsoft Defender komplex veszélyforrások elleni védelem](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-atp-mac)és az egyéni alkalmazások számára használják a tulajdonságok listáját. A preferencia tartomány létrehozásakor létrejön egy köteg-azonosító is. Adja meg a csomag AZONOSÍTÓját, például `com.company.application`. Adja meg például a következőt: `com.Contoso.applicationName`, `com.Microsoft.Edge` vagy `com.microsoft.wdav`.
+- **Tulajdonságlap fájlja**: válassza ki az alkalmazáshoz társított tulajdonságlap-fájlt. Győződjön meg róla, hogy `.plist` vagy `.xml` fájl. Töltse fel például `YourApp-Manifest.plist` vagy `YourApp-Manifest.xml` fájlt.
+- **Fájl tartalma**: a tulajdonság-lista fájljának legfontosabb adatai láthatók. Ha módosítania kell a legfontosabb adatokat, nyissa meg a fájlt egy másik szerkesztőben, majd töltse fel újra a fájlt az Intune-ban.
 
-A módosítások mentéséhez válassza az **OK** > **Létrehozás** lehetőséget. The profile is created and shown in the profiles list.
+A módosítások mentéséhez válassza az **OK** > **Létrehozás** lehetőséget. Ekkor létrejön a profil, és megjelenik a profilok listájában.
 
 ## <a name="next-steps"></a>További lépések
 
-A profil létrejött, de egyelőre nem csinál semmit. Next, [assign the profile](device-profile-assign.md) and [monitor its status](device-profile-monitor.md).
+A profil létrejött, de egyelőre nem csinál semmit. Ezután [rendelje hozzá a profilt](device-profile-assign.md) , és [Figyelje annak állapotát](device-profile-monitor.md).

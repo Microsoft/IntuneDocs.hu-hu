@@ -1,7 +1,7 @@
 ---
-title: Create Exchange Conditional Access policy
+title: Exchange feltételes hozzáférési szabályzat létrehozása
 titleSuffix: Microsoft Intune
-description: Configure Conditional Access for Exchange on-premises and legacy Exchange Online Dedicated in Intune.
+description: Feltételes hozzáférés konfigurálása a helyszíni Exchange-hez és az örökölt dedikált Exchange Online-hoz az Intune-ban.
 keywords: ''
 author: brenduns
 ms.author: brenduns
@@ -25,99 +25,99 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 11/19/2019
 ms.locfileid: "74188470"
 ---
-# <a name="create-a-conditional-access-policy-for-exchange-on-premises-and-legacy-exchange-online-dedicated"></a>Create a Conditional Access policy for Exchange on-premises and legacy Exchange Online Dedicated
+# <a name="create-a-conditional-access-policy-for-exchange-on-premises-and-legacy-exchange-online-dedicated"></a>Feltételes hozzáférési szabályzat létrehozása a helyszíni Exchange-hez és az örökölt dedikált Exchange Online-hoz
 
-This article shows you how to configure Conditional Access for Exchange on-premises based on device compliance.
+Ez a cikk bemutatja, hogyan konfigurálhatja a feltételes hozzáférést a helyszíni Exchange-hez az eszközök megfelelősége alapján.
 
-Ha dedikált Exchange Online-környezettel rendelkezik, és szeretné tudni, hogy az új vagy az örökölt konfiguráció tartozik-e hozzá, lépjen kapcsolatba a fiókkezelővel. To control email access to Exchange on-premises or to your legacy Exchange Online Dedicated environment, configure Conditional Access to Exchange on-premises in Intune.
+Ha dedikált Exchange Online-környezettel rendelkezik, és szeretné tudni, hogy az új vagy az örökölt konfiguráció tartozik-e hozzá, lépjen kapcsolatba a fiókkezelővel. A helyszíni Exchange-hez vagy az örökölt dedikált Exchange Online-környezethez való e-mail-hozzáférés szabályozásához konfigurálja a feltételes hozzáférést a helyszíni Exchange-hez az Intune-ban.
 
 ## <a name="before-you-begin"></a>Előkészületek
 
-Before you can configure Conditional Access, verify the following configurations exist:
+A feltételes hozzáférés konfigurálása előtt ellenőrizze, hogy a következő konfigurációk léteznek-e:
 
-- Your Exchange version is **Exchange 2010 SP1 or later**. Az Exchange-kiszolgáló ügyfél-hozzáférési kiszolgálótömbje (CAS) nem támogatott.
+- Exchange-verziója: **exchange 2010 SP1 vagy újabb**. Az Exchange-kiszolgáló ügyfél-hozzáférési kiszolgálótömbje (CAS) nem támogatott.
 
-- You have installed and use the [Exchange Active Sync on-premises Exchange connector](exchange-connector-install.md), which connects Intune to on-premises Exchange.
+- Telepítette és használja a [Exchange Active Sync helyszíni Exchange Connectort](exchange-connector-install.md), amely összeköti az Intune-t a helyszíni Exchange-hez.
 
     >[!IMPORTANT]  
-    >Az Intune egy előfizetésben több helyszíni Exchange-összekötőt is támogat.  However, each on-premises Exchange connector is specific to a single Intune tenant and cannot be used with any other tenant.  Ha a cége egynél több helyszíni Exchange-összekötővel rendelkezik, minden Exchange-szervezet részére külön összekötőt építhet ki.
+    >Az Intune egy előfizetésben több helyszíni Exchange-összekötőt is támogat.  A helyszíni Exchange Connector azonban egyetlen Intune-bérlőre vonatkozik, és más Bérlővel nem használható.  Ha a cége egynél több helyszíni Exchange-összekötővel rendelkezik, minden Exchange-szervezet részére külön összekötőt építhet ki.
 
-- The connector for an on-premises Exchange organization can install on any machine as long as that machine can communicate with the Exchange server.
+- A helyszíni Exchange-szervezet összekötője bármely gépen telepíthető, feltéve, hogy a gép kommunikálni tud az Exchange-kiszolgálóval.
 
-- Ez az összekötő támogatja az **Exchange CAS-környezetet**. Intune supports installing the connector on the Exchange CAS server directly. We recommend you install it on a separate computer because of the additional load the connector puts on the server. Az összekötőt úgy kell konfigurálni, hogy az kommunikáljon az Exchange CAS-kiszolgálók valamelyikével.
+- Ez az összekötő támogatja az **Exchange CAS-környezetet**. Az Intune támogatja az összekötők közvetlen telepítését az Exchange CAS-kiszolgálóra. Azt javasoljuk, hogy külön számítógépre telepítse azt, mert az összekötő további terhelést helyez el a kiszolgálón. Az összekötőt úgy kell konfigurálni, hogy az kommunikáljon az Exchange CAS-kiszolgálók valamelyikével.
 
 - Az **Exchange ActiveSync** tanúsítványalapú hitelesítéssel vagy felhasználó által megadott hitelesítő adatokkal konfigurálandó.
 
-- When Conditional Access policies are configured and targeted to a user, before a user can connect to their email, the **device** they use must be:
+- Ha a feltételes hozzáférési szabályzatok konfigurálva vannak és egy felhasználóhoz vannak rendelve, mielőtt egy felhasználó csatlakozni tud az e-mailhez, az általa használt **eszköznek** a következőnek kell lennie:
   - **Regisztrálva** van az Intune-ban, vagy olyan számítógép, amely csatlakoztatva van egy tartományhoz.
   - **Regisztrálva van az Azure Active Directoryban**. Ezenkívül az ügyfél Exchange ActiveSync-azonosítójának regisztrálva kell lennie az Azure Active Directoryban.
 
-- Az Azure AD eszközregisztrációs szolgáltatása (DRS) automatikusan aktiválódik az Intune-t és az Office 365-öt használó ügyfelek számára. Customers who have already deployed the ADFS Device Registration Service don't see registered devices in their on-premises Active Directory. **Ez nem érvényes a Windows rendszerű számítógépekre és a Windows Phone-eszközökre**.
+- Az Azure AD eszközregisztrációs szolgáltatása (DRS) automatikusan aktiválódik az Intune-t és az Office 365-öt használó ügyfelek számára. Azok az ügyfelek, akik már telepítették az ADFS-eszköz regisztrációs szolgáltatását, nem látják a regisztrált eszközöket a helyszíni Active Directoryban. **Ez nem érvényes a Windows rendszerű számítógépekre és a Windows Phone-eszközökre**.
 
 - **Meg kell felelnie** az eszközre telepített összes megfelelőségi szabályzatnak.
 
-- If the device doesn't meet Conditional Access settings, the user is presented with one of the following messages when they sign in:
-  - If the device isn't enrolled with Intune, or isn't registered in Azure Active Directory, a message displays with instructions about how to install the Company Portal app, enroll the device, and activate email. Ez a folyamat hozzárendeli az eszköz Exchange ActiveSync-azonosítóját is az Azure Active Directoryban lévő eszközrekordhoz.
-  - If the device isn't compliant, a message displays that directs the user to the Intune Company Portal website, or the Company Portal app. From the company portal, they can find information about the problem and how to remediate it.
+- Ha az eszköz nem felel meg a feltételes hozzáférési beállításoknak, a felhasználó a következő üzenetek egyikével jelenik meg a bejelentkezéskor:
+  - Ha az eszköz nincs regisztrálva az Intune-ban, vagy nincs regisztrálva a Azure Active Directoryban, egy üzenet jelenik meg, amely bemutatja, hogyan kell telepíteni a Céges portál alkalmazást, regisztrálni az eszközt és aktiválni az e-mailt. Ez a folyamat hozzárendeli az eszköz Exchange ActiveSync-azonosítóját is az Azure Active Directoryban lévő eszközrekordhoz.
+  - Ha az eszköz nem megfelelő, egy üzenet jelenik meg, amely a felhasználót a Intune Céges portál webhelyére vagy a Céges portál alkalmazásra irányítja. A vállalati portálról információt talál a problémáról és annak megoldásáról.
 
 ### <a name="support-for-mobile-devices"></a>A mobileszközök támogatása
 
 - Windows Phone 8.1 és újabb verziók
 - Natív e-mail alkalmazás iOS rendszerű eszközökön.
 - EAS levelezési ügyfélprogramok, mint például a Gmail az Android 4-es vagy újabb verzióiban.
-- EAS levelezési ügyfélprogramok **Androidos munkahelyi profilos eszközökön:** A **munkahelyi profilban** csak a **Gmail** és **Nine Work for Android Enterprise** alkalmazások támogatottak az androidos munkahelyi profilos eszközökön. For Conditional Access to work with Android work profiles, you must deploy an email profile for the Gmail or Nine Work for Android Enterprise app, and also deploy those apps as a required installation.
+- EAS levelezési ügyfélprogramok **Androidos munkahelyi profilos eszközökön:** A **munkahelyi profilban** csak a **Gmail** és **Nine Work for Android Enterprise** alkalmazások támogatottak az androidos munkahelyi profilos eszközökön. Az androidos munkahelyi profilokkal végzett feltételes hozzáféréshez telepítenie kell egy e-mail-profilt a Gmail vagy a Nine work for Android Enterprise alkalmazáshoz, és ezeket az alkalmazásokat kötelező telepítésként is telepítenie kell.
 
 > [!NOTE]
-> Microsoft Outlook for Android and iOS is not supported via the Exchange on-premises connector. If you want to leverage Azure Active Directory Conditional Access policies and Intune App Protection Policies with Outlook for iOS and Android for your on-premises mailboxes, please see [Using hybrid Modern Authentication with Outlook for iOS and Android](https://docs.microsoft.com/Exchange/clients/outlook-for-ios-and-android/use-hybrid-modern-auth).
+> Az Android és az iOS rendszerhez készült Microsoft Outlook nem támogatott a helyszíni Exchange-összekötőn keresztül. Ha szeretné kihasználni Azure Active Directory feltételes hozzáférési szabályzatokat, és Intune App Protection szabályzatokat az iOS-hez és az Androidhoz készült Outlook használatával a helyszíni postaládákhoz, tekintse meg a [hibrid modern hitelesítés használata az Outlookban iOS és Android](https://docs.microsoft.com/Exchange/clients/outlook-for-ios-and-android/use-hybrid-modern-auth)rendszerhez című témakört.
 
 ### <a name="support-for-pcs"></a>Számítógépek támogatása
 
-The native **Mail** application on Windows 8.1 and later (when enrolled into MDM with Intune)
+A natív **posta** alkalmazás a Windows 8,1-es és újabb verzióiban (ha a Mdm-be az Intune-nal regisztrálták)
 
 ## <a name="configure-exchange-on-premises-access"></a>A helyszíni Exchange-hozzáférés konfigurálása
 
-Before you can use the following procedure to set up Exchange on-premises access control, you must install and configure at least one [Intune on-premises Exchange connector](exchange-connector-install.md) for Exchange on-premises.
+Mielőtt az alábbi eljárást használja a helyszíni Exchange-hozzáférés beállításához, telepítenie és konfigurálnia kell legalább egy Intune helyszíni Exchange [Connectort](exchange-connector-install.md) a helyszíni Exchange-hez.
 
-1. Sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431).
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Go to **Tenant administration** > **Exchange access**, and then select **Exchange On-premises access**.
+2. Lépjen a **bérlői felügyelet** > **Exchange-hozzáférés**elemre, majd válassza **a helyszíni Exchange-hozzáférés**lehetőséget.
 
-3. On the **Exchange on-premises access** pane, choose **Yes** to *Enable Exchange on-premises access control*.
+3. A helyszíni Exchange- **hozzáférés** panel **Igen** elemét választva engedélyezheti a helyszíni *Exchange-hozzáférés-vezérlést*.
 
-4. Under **Assignment**, choose **Select groups to include**, and then select one or more groups to configure access.
+4. A **hozzárendelés**területen válassza **a csoportok kiválasztása a belefoglaláshoz**lehetőséget, majd válasszon ki egy vagy több csoportot a hozzáférés konfigurálásához.
 
-   Members of the groups you select have the Conditional Access policy for Exchange on-premises access applied to them. Users who receive this policy must enroll their devices in Intune and be compliant with the compliance profiles before they can access Exchange on-premises.
+   A kiválasztott csoportok tagjai a feltételes hozzáférési szabályzattal rendelkeznek a helyszíni Exchange-hozzáféréshez. A szabályzatot fogadó felhasználóknak regisztrálniuk kell az eszközeiket az Intune-ban, és meg kell felelniük a megfelelőségi profiloknak ahhoz, hogy hozzáférhessenek a helyszíni Exchange-hez.
 
-5. To exclude groups, choose **Select groups to exclude**, and then select one or more groups that are exempt from requirements to enroll devices and to be compliant with the compliance profiles before accessing Exchange on-premises. 
+5. A csoportok kizárásához válassza a **kizárni kívánt csoportok kiválasztása**lehetőséget, majd válasszon ki egy vagy több olyan csoportot, amely mentesül az eszközök regisztrálására és a megfelelőségi profiloknak való megfelelésre a helyszíni Exchange elérése előtt. 
 
-6. Next, configure settings for the Intune on-premises Exchange connector.  Under **Setup** on the *Exchange on-premises access* window, select **Exchange ActiveSync on-premises connector** and then select the connector for the Exchange organization that you want to configure.
+6. Ezután konfigurálja a helyszíni Intune Exchange Connector beállításait.  A *helyszíni Exchange-hozzáférés* **beállítása** ablakban válassza az **Exchange ActiveSync helyszíni összekötő** lehetőséget, majd válassza ki a konfigurálni kívánt Exchange-szervezet összekötőjét.
 
-7. Under **Settings**, choose **User notifications** to modify the default email message that’s sent to users if their device isn't compliant and they want to access Exchange on-premises. Az üzenetsablon egy jelölőnyelvet használ.  Amint beírja az üzenetet, azt is követheti, hogy mit fog látni a címzett.
+7. A **Beállítások**területen válassza a **felhasználói értesítések** lehetőséget a felhasználóknak küldött alapértelmezett e-mail-üzenet módosításához, ha az eszköz nem megfelelő, és szeretné elérni a helyszíni Exchange-t. Az üzenetsablon egy jelölőnyelvet használ.  Amint beírja az üzenetet, azt is követheti, hogy mit fog látni a címzett.
    > [!TIP]
    > A jelölőnyelvekről ez a [Wikipedia-cikk](https://en.wikipedia.org/wiki/Markup_language) nyújt tájékoztatást.
  
-   Select **OK** to save your edits to complete configuration of Exchange on-premises access.
+   A módosítások mentéséhez kattintson **az OK gombra** , hogy elvégezze a helyszíni Exchange-hozzáférés konfigurálását.
 
-8. Next, select **Advanced Exchange Active Sync access settings** to open the *Advanced Exchange ActiveSync access settings* pane where you configure device access rules:  
+8. Ezután válassza a **speciális Exchange Active Sync hozzáférési beállítások** elemet a *speciális Exchange ActiveSync hozzáférési beállítások* panel megnyitásához, ahol az eszköz-hozzáférési szabályokat konfigurálhatja:  
 
-   - For **Unmanaged device access**, set the global default rule for access from devices that are not affected by Conditional Access or other rules:
+   - A nem **felügyelt eszközök hozzáféréséhez**állítsa be a globális alapértelmezett szabályt a hozzáféréshez a feltételes hozzáférés vagy más szabályok által nem érintett eszközökről:
 
-     - **Allow access** - All devices can access Exchange on-premises immediately. Devices that belong to the users in the groups you configured as included in the previous procedure are blocked if they're later evaluated as not compliant with the compliant policies or not enrolled in Intune.
+     - **Hozzáférés engedélyezése** – az összes eszköz azonnal hozzáférhet a helyszíni Exchange-hez. Azok az eszközök, amelyek az előző eljárásban megadott csoportokba tartozó felhasználókhoz tartoznak, le vannak tiltva, ha később kiértékelik azokat, amelyek nem felelnek meg a megfelelő szabályzatoknak, vagy nincsenek regisztrálva az Intune-ban.
 
-     - **Block access** and **Quarantine** – All devices are immediately blocked from accessing Exchange on-premises initially. Devices that belong to users in the groups you configured as included in the previous procedure get access after the device enrolls in Intune and is evaluated as compliant. 
+     - **Hozzáférés letiltása** és **karanténba helyezése** – az összes eszköz azonnal le lesz tiltva a helyszíni Exchange-hez való hozzáféréshez. Azok az eszközök, amelyek az előző eljárás részeként konfigurált csoportokban lévő felhasználókhoz tartoznak, hozzáférhetnek az Intune-ban az eszköz regisztrálása után, és megfelelőnek értékelik azokat. 
 
-       Android devices that *do not* run Samsung Knox standard don’t support this setting and are always blocked.
+       A Samsung Knox standard-t *nem* futtató Android-eszközök nem támogatják ezt a beállítást, és mindig le vannak tiltva.
 
-   -  For **Device platform exceptions**, select **Add**, and then specify platform details as needed for your environment. 
+   -  Az **eszközök platformjának kivételei**esetében válassza a **Hozzáadás**lehetőséget, majd adja meg a környezethez szükséges platform részleteit. 
    
-      If the **Unmanaged device access** setting is set to **Blocked**, devices that are enrolled and compliant are allowed even if there's a platform exception to block them.  
+      Ha a nem **felügyelt eszköz hozzáférésének** beállítása **blokkolva**értékre van állítva, a regisztrált és megfelelő eszközök akkor is engedélyezettek, ha a platform kivételt okoz.  
    
-   Select **OK** to save your edits.
+   A módosítások mentéséhez kattintson **az OK gombra** .
 
-9. Select **Save** to save the Exchange Conditional Access policy.
+9. Válassza a **Mentés** lehetőséget az Exchange feltételes hozzáférési szabályzatának mentéséhez.
 
-Next, create a compliance policy and assign it to the users for Intune to evaluate their mobile devices, See [Get started with device compliance](device-compliance-get-started.md).
+Ezután hozzon létre egy megfelelőségi szabályzatot, és rendelje hozzá a felhasználókhoz az Intune-nal a mobileszközök kiértékeléséhez lásd: [az eszközök megfelelőségének megkezdése](device-compliance-get-started.md).
 
 ## <a name="next-steps"></a>További lépések
 
-[Troubleshooting Intune on-premises Exchange connector in Microsoft Intune](https://support.microsoft.com/help/4471887)
+[A helyszíni Intune Exchange Connector hibaelhárítása Microsoft Intune](https://support.microsoft.com/help/4471887)

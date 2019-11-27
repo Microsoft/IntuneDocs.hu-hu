@@ -1,6 +1,6 @@
 ---
-title: Configure proxy settings for the Intune Connector for Active Directory
-description: Covers how to configure the Intune Connector for Active Directory to work with existing on-premises proxy servers.
+title: Proxybeállítások konfigurálása a Active Directory Intune-összekötőhöz
+description: Ismerteti, hogyan konfigurálható az Intune-összekötő a Active Directory számára a meglévő helyszíni proxykiszolgálók használata esetén.
 keywords: ''
 author: master11218
 ms.author: erikje
@@ -24,21 +24,21 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 11/25/2019
 ms.locfileid: "74465760"
 ---
-# <a name="work-with-existing-on-premises-proxy-servers"></a>Work with existing on-premises proxy servers
+# <a name="work-with-existing-on-premises-proxy-servers"></a>Meglévő helyszíni proxykiszolgálók használata
 
-This article explains how to configure the Intune Connector for Active Directory to work with outbound proxy servers. It is intended for customers with network environments that have existing proxies.
+Ez a cikk azt ismerteti, hogyan konfigurálható az Intune-összekötő a Active Directory számára a kimenő proxykiszolgálók használatához. Olyan hálózati környezetű ügyfelek számára készült, amelyek meglévő proxykkal rendelkeznek.
 
-For more information about how connectors work, see [Understand Azure AD Application Proxy connectors](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-connectors).
+További információ az összekötők működéséről: az [Azure ad Application proxy-összekötők ismertetése](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-connectors).
 
-## <a name="bypass-outbound-proxies"></a>Bypass outbound proxies
+## <a name="bypass-outbound-proxies"></a>Kimenő proxyk megkerülése
 
-Connectors have underlying OS components that make outbound requests. These components automatically attempt to locate a proxy server on the network using Web Proxy Auto-Discovery (WPAD).
+Az összekötők olyan operációsrendszer-összetevőkkel rendelkeznek, amelyek kimenő kérelmeket hajtanak végre. Ezek az összetevők automatikusan megpróbálnak megkeresni egy proxykiszolgálót a hálózaton a webproxy automatikus felderítése (WPAD) használatával.
 
-The OS components attempt to locate a proxy server by carrying out a DNS lookup for wpad.domainsuffix. If the lookup resolves in DNS, an HTTP request is then made to the IP address for wpad.dat. This request becomes the proxy configuration script in your environment. The connector uses this script to select an outbound proxy server. However, connector traffic might still not go through, because of additional configuration settings needed on the proxy.
+Az operációs rendszer összetevői a WPAD. domainsuffix DNS-címkeresés végrehajtásával kísérlik meg a proxykiszolgáló megkeresését. Ha a keresés a DNS-ben oldódik fel, akkor a WPAD. dat IP-címére kell HTTP-kérelmet készíteni. Ez a kérelem a proxy konfigurációs parancsfájlja lesz a környezetben. Az összekötő ezt a parancsfájlt használja a kimenő proxykiszolgáló kiválasztásához. Előfordulhat azonban, hogy az összekötői forgalom továbbra sem halad át a proxyn szükséges további konfigurációs beállítások miatt.
 
-You can configure the connector to bypass your on-premises proxy to ensure that it uses direct connectivity to the Azure services. We recommend this approach, as long as your network policy allows for it, because it means that you have one less configuration to maintain.
+Az összekötőt úgy is beállíthatja, hogy megkerülje a helyszíni proxyt, hogy az az Azure-szolgáltatásokhoz közvetlen kapcsolatot használjon. Ezt a megközelítést javasoljuk, ha a hálózati házirend lehetővé teszi a számára, mert az azt jelenti, hogy egy kisebb konfigurációt kell fenntartania.
 
-To disable outbound proxy usage for the connector, edit the :\Program Files\Microsoft Intune\ODJConnector\ODJConnectorUI\ODJConnectorUI.exe.config file and add the proxy address and proxy port in the section shown in this code sample:
+Az összekötőhöz tartozó kimenő proxyk használatának letiltásához szerkessze a: \Program Files\Microsoft Intune\ODJConnector\ODJConnectorUI\ODJConnectorUI.exe.config fájlt, és adja hozzá a proxy címe és a proxy portját a következő példában látható szakaszban:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -66,7 +66,7 @@ To disable outbound proxy usage for the connector, edit the :\Program Files\Micr
 </configuration>
 ```
 
-To ensure that the Connector Updater service also bypasses the proxy, make a similar change to C:\Program Files\Microsoft Intune\ODJConnector\ODJConnectorSvc\ODJConnectorSvc.exe.config.
+Annak biztosítása érdekében, hogy a Connector Updater szolgáltatás a proxyt is megkerüljék, hasonló változást kell végeznie a C:\Program Files\Microsoft Intune\ODJConnector\ODJConnectorSvc\ODJConnectorSvc.exe.config.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -85,17 +85,17 @@ To ensure that the Connector Updater service also bypasses the proxy, make a sim
 </configuration>
 ```
 
-Be sure to make copies of the original files, in case you need to revert to the default .config files.
+Készítsen másolatot az eredeti fájlokról, ha az alapértelmezett. config fájlokra kell visszaállítania.
 
-Once the configuration files have been modified, you will need to restart the Intune Connector service. 
+A konfigurációs fájlok módosítása után újra kell indítania az Intune Connector szolgáltatást. 
 
-1. Open **services.msc**.
-2. Find and select the **Intune ODJConnector Service**.
-3. Select **Restart**.
+1. Nyissa meg a **Services. msc fájlt**.
+2. Keresse meg és válassza ki az **Intune ODJConnector szolgáltatást**.
+3. Válassza az **Újraindítás**lehetőséget.
 
-![Screenshot of service restart](./media/autopilot-hybrid-connector-proxy/service-restart.png)
+![Képernyőfelvétel a szolgáltatás újraindításáról](./media/autopilot-hybrid-connector-proxy/service-restart.png)
 
 
 ## <a name="next-steps"></a>További lépések
 
-[Manage your devices](../remote-actions/device-management.md)
+[Az eszközök kezelése](../remote-actions/device-management.md)

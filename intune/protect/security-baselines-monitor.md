@@ -1,6 +1,6 @@
 ---
-title: Check the success or failure of security baselines in Microsoft Intune - Azure | Microsoft Docs
-description: Check the error, conflict, and success status when deploying security baselines to users and devices in Microsoft Intune MDM. See how to troubleshoot using client logs, and the report features in Intune.
+title: A biztonsági alapkonfigurációk sikeres vagy sikertelen állapotának megtekintése a Microsoft Intune-Azure-ban | Microsoft Docs
+description: 'A biztonsági alapkonfigurációk a Microsoft Intune MDM lévő felhasználók és eszközök számára történő telepítésekor a hiba, az ütközés és a sikeres állapot ellenőrzése. Lásd: az ügyfél naplófájljaival kapcsolatos hibák és az Intune jelentéskészítési funkcióinak használata.'
 keywords: ''
 author: brenduns
 ms.author: brenduns
@@ -23,117 +23,117 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74410137"
 ---
-# <a name="monitor-security-baseline-and-profiles-in-microsoft-intune"></a>Monitor security baseline and profiles in Microsoft Intune
+# <a name="monitor-security-baseline-and-profiles-in-microsoft-intune"></a>Biztonsági alapkonfiguráció és profilok figyelése Microsoft Intune
 
-Intune provides several options to monitor your security baselines. You can monitor the security baselines profile that applies to your users and devices. You can also monitor the actual baseline, and any devices that match (or don't match) the recommended values.
+Az Intune számos lehetőséget kínál a biztonsági alapkonfigurációk figyelésére. Nyomon követheti a felhasználókra és eszközökre vonatkozó biztonsági alapkonfigurációk profilt. Figyelemmel kísérheti a tényleges alapkonfigurációt, valamint az összes olyan eszközt, amely megfelel az ajánlott értékeknek (vagy nem egyeznek).
 
-This article walks you through both monitoring options.
+Ez a cikk végigvezeti mindkét figyelési lehetőségen.
 
-[Security baselines in Intune](../security-baselines.md) provides more details on the security baselines feature in Microsoft Intune.
+Az [Intune-beli biztonsági](../security-baselines.md) alapkonfigurációk további részleteket tartalmaznak a Microsoft Intune biztonsági alapkonfigurációk szolgáltatásával kapcsolatban.
 
-## <a name="monitor-the-baseline-and-your-devices"></a>Monitor the baseline and your devices
+## <a name="monitor-the-baseline-and-your-devices"></a>Az alapkonfiguráció és az eszközök figyelése
 
-When you monitor a baseline, you get insight into the security state of your devices based on Microsoft's recommendations. You can view these insights from the Overview pane of the security baseline in the Intune console.  It takes up to 24 hours for data to appear after you first assign a baseline. Later changes take up to six hours to appear.
+Az alapkonfiguráció monitorozásakor a Microsoft javaslatai alapján betekintést nyerhet az eszközök biztonsági állapotára. Ezeket az információkat az Intune-konzol biztonsági alapkonfigurációjának áttekintés ablaktábláján tekintheti meg.  Akár 24 órát is igénybe vesz, hogy az egyes alaptervek első kiosztása után megjelenjenek az adathalmazok. A későbbi módosítások akár hat órát is igénybe vesznek.
 
-To view monitoring data for the baseline and devices, sign in to the [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431). Next, select **Endpoint security** > **Security Baselines**, select a baseline, and view the **Overview** pane.
+Az alaptervhez és az eszközökhöz tartozó figyelési adatmegjelenítéshez jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431). Ezután válassza az **Endpoint security** > **biztonsági**alapkonfigurációk lehetőséget, válasszon ki egy alapkonfigurációt, és tekintse meg az **Áttekintés** panelt.
 
-The **Overview** pane provides two methods to monitor status:
+Az **Áttekintés** panel két módszert biztosít az állapot figyelésére:
 
-- **Device view** – A summary of how many devices are in each status category for the baseline.
-- **Per-category** - A view that displays each category in the baseline and includes the percentage of devices for each status group for each baseline category.
+- **Device View (eszköz nézet** ) – összefoglalás arról, hogy hány eszköz szerepel az alapkonfigurációban az egyes állapotok kategóriájában.
+- **Kategóriánként** – egy nézet, amely megjeleníti az alapkonfiguráció egyes kategóriáit, és az egyes alapértékekhez tartozó egyes állapotüzenetek esetében az eszközök százalékos arányát tartalmazza.
 
-Each device is represented by one of the following statuses, which are used in both the *device* view, and the *per-category* views:
+Minden eszközt a következő állapotok egyike képvisel, amelyek az *eszköz* nézetben és a *kategóriánkénti* nézetekben is szerepelnek:
 
-- **Matches baseline** - All the settings in the baseline match the recommended settings.
-- **Does not match baseline** - At least one setting in the baseline doesn't match the recommended settings.
-- **Misconfigured** - At least one setting isn't properly configured. This status means the setting is in a conflict, error, or a pending state.
-- **Not applicable** - At least one setting isn't applicable, and isn't applied.
+- Alapértékek – az alapkonfigurációban lévő összes **beállítás megegyezik az** ajánlott beállításokkal.
+- **Nem felel** meg az alapkonfigurációnak – az alapterv legalább egy beállítása nem felel meg az ajánlott beállításoknak.
+- **Helytelenül konfigurált – legalább** egy beállítás nincs megfelelően konfigurálva. Ez az állapot azt jelenti, hogy a beállítás ütközés, hiba vagy függő állapotú.
+- **Nem alkalmazható** – legalább egy beállítás nem alkalmazható, és nincs alkalmazva.
 
-### <a name="device-view"></a>Device view
+### <a name="device-view"></a>Eszköz nézet
 
-The Overview pane displays a chart-based summary of how many devices have a specific status for the baseline; **Security baseline posture for assigned Windows 10 devices**.
+Az Áttekintés panel egy diagramon alapuló összegzést jelenít meg arról, hogy hány eszköz rendelkezik az alapterv adott állapotával. Biztonsági alaphelyzetek **a hozzárendelt Windows 10-es eszközökhöz**.
 
-![Check the status of the devices](./media/security-baselines-monitor/overview.png)
+![Az eszközök állapotának ellenõrzése](./media/security-baselines-monitor/overview.png)
 
-When a device has different status from different categories in the baseline, the device is represented by a single status. The status that represents the device is taken from the following order of precedence: **Misconfigured**, **Does not match baseline**, **Not applicable**, **Matches baseline**.
+Ha egy eszköz eltérő állapotú az alapkonfiguráció különböző csoportjaitól, az eszközt egyetlen állapot jelöli. Az eszközt jelképező állapot a következő elsőbbségi sorrendben történik: helytelenül van konfigurálva, nem **felel**meg az **alapkonfigurációnak**, **nem alkalmazható**, az alapértéknek **felel meg.**
 
-For example, if a device has a setting classified as *misconfigured* and one or more settings classified as *Does not match baseline*, the device is classified as *Misconfigured*.
+Ha például egy eszköz *nem megfelelőként*van besorolva, *és egy* vagy több olyan beállítást tartalmaz, amely nem egyezik az alapkonfigurációval, az *eszköz hibásan van besorolva.*
 
-You can click on the chart to drill through and view a list of devices with various statuses. You can then select individual devices from that list to view details about individual devices. Példa:
+Kattintson a diagramra a részletezéshez, és tekintse meg a különböző állapotokkal rendelkező eszközök listáját. A listából kiválaszthatja az egyes eszközök adatait, és megtekintheti az egyes eszközök részleteit. Például:
 
-- Select **Device configuration** > Select the profile with an Error state:
+- Válassza ki az **eszköz konfigurációját** > válassza ki a profilt hibás állapottal:
 
-  ![View the status of a profile](./media/security-baselines-monitor/device-configuration-profile-list.png)
+  ![Profil állapotának megtekintése](./media/security-baselines-monitor/device-configuration-profile-list.png)
 
-- Select the Error profile. A list of all settings in the profile, and their state is shown. Now, you can scroll to find the setting causing the error:
+- Válassza ki a hiba profilt. Megjelenik a profil összes beállításának listája, és az állapotuk látható. Most görgessen a hibát okozó beállítás megkereséséhez:
 
-  ![See the setting causing the error](./media/security-baselines-monitor/profile-with-error-status.png)
+  ![Tekintse meg a hibát okozó beállítást](./media/security-baselines-monitor/profile-with-error-status.png)
 
-Use this reporting to see any settings in a profile that are causing an issue. Also get more details of policies and profiles deployed to devices.
+Ezzel a jelentéssel megtekintheti a profilban a problémát okozó beállításokat. Az eszközökön üzembe helyezett szabályzatok és profilok további részleteit is megismerheti.
 
 > [!NOTE]
-> When a property is set to **Not configured** in the baseline, the setting is ignored, and no restrictions are enforced. The property isn't shown in any reporting.
+> Ha egy tulajdonság úgy van beállítva, hogy az alapterv **ne legyen konfigurálva** , a rendszer figyelmen kívül hagyja a beállítást, és nem kényszeríti ki a korlátozásokat. A tulajdonság nem jelenik meg egyetlen jelentésben sem.
 
-### <a name="per-category-view"></a>Per category view
+### <a name="per-category-view"></a>Kategóriánkénti nézet
 
-The Overview pane displays a per-category chart for the baseline; **Security baseline posture by category**.  This view displays each category from the baseline and identifies the percentage of devices that fall into a status classification for each of those categories.
+Az Áttekintés panel az alapkonfigurációhoz tartozó kategóriánkénti diagramot jeleníti meg. Biztonsági alaphelyzetek **kategória szerint**.  Ez a nézet az alaptervből származó kategóriákat jeleníti meg, és az egyes kategóriákhoz tartozó állapot besorolású eszközök százalékos arányát azonosítja.
 
-![Per-Category view of status](./media/security-baselines-monitor/monitor-baseline-per-category.png)
+![Az állapot kategória szerinti nézete](./media/security-baselines-monitor/monitor-baseline-per-category.png)
 
-Status for **Matches baseline** does not display until 100% of devices report that status for the category.
+Az alapkonfiguráció **állapota nem jelenik** meg, amíg az eszközök 100%-a nem jelenti a kategória állapotát.
 
-You can sort the by-category view by each column, by selecting up-down arrow icon at the top of the column.
+A kategóriánkénti nézetet minden oszlop szerint rendezheti az oszlop tetején található felfelé mutató nyíl ikon kiválasztásával.
 
-## <a name="monitor-the-profile"></a>Monitor the profile
+## <a name="monitor-the-profile"></a>A profil figyelése
 
-Monitoring the profile gives you insight into the deployment state of your devices, but not the security state based on the baseline recommendations.
+A profil figyelése betekintést nyújt az eszközök központi telepítési állapotára, de az alapkövetelmények alapján nem a biztonsági állapotot.
 
-1. In Intune, select **Security Baselines** > select a baseline > **Profiles created**.
+1. Az Intune-ban válassza a **biztonsági** alapkonfigurációk > a **létrehozott**alapkonfiguráció > profilok lehetőséget.
 
-2. Select a profile. In **Overview**, the image shows how many devices and users have this profile assigned:
+2. Válasszon egy profilt. Az **Áttekintés**területen a rendszerkép azt mutatja, hogy hány eszközt és felhasználót rendelt hozzá ehhez a profilhoz:
 
-   ![See how many devices and users are assigned the security baselines profile](./media/security-baselines-monitor/existing-profile-overview.png)
+   ![Megtekintheti, hogy hány eszköz és felhasználó van hozzárendelve a biztonsági alapkonfigurációk profiljához](./media/security-baselines-monitor/existing-profile-overview.png)
 
-3. Under **Manage** > **Properties**, a list of all the settings in the baseline are shown. You can also change any of these settings:
+3. A > **Tulajdonságok** **kezelése** területen megjelenik az alapkonfiguráció összes beállításának listája. A következő beállításokat is módosíthatja:
 
-   ![See and update settings in the security baselines profile](./media/security-baselines-monitor/manage-settings.png)
+   ![A biztonsági alapkonfigurációk profiljában megtekintheti és frissítheti a beállításokat](./media/security-baselines-monitor/manage-settings.png)
 
-4. In **Monitor**, you can see the deployment status of the profile on individual devices, the status for each user, and the status for each setting in the baseline:
+4. A **figyelőben**megtekintheti a profil telepítési állapotát az egyes eszközökön, az egyes felhasználók állapotát, valamint az alapkonfiguráció minden beállításának állapotát:
 
-   ![See the different monitor options for a security baselines profile](./media/security-baselines-monitor/monitor-status-options.png)
+   ![Tekintse meg a biztonsági alapkonfigurációk profiljának különböző figyelési lehetőségeit.](./media/security-baselines-monitor/monitor-status-options.png)
 
-## <a name="troubleshoot-using-per-setting-status"></a>Troubleshoot using per-setting status
+## <a name="troubleshoot-using-per-setting-status"></a>Hibakeresési állapot használata – problémamegoldás
 
-You deployed a security baseline, but the deployment status shows an error. The following steps give you some guidance on troubleshooting the error.
+Központilag telepített egy biztonsági alapkonfigurációt, de a telepítés állapota hibát jelez. A következő lépések útmutatást nyújtanak a hiba elhárításához.
 
-1. In Intune, select **Security Baselines** > select a baseline > **Profiles created**.
+1. Az Intune-ban válassza a **biztonsági** alapkonfigurációk > a **létrehozott**alapkonfiguráció > profilok lehetőséget.
 
-2. Select a profile > Under **Monitor** > **Per-setting status**.
+2. Válasszon egy profilt > a **figyelés** > a **beállítás állapota**területen.
 
-3. The table shows all the settings, and the status of each setting. Select the **Error** column or the **Conflict** column to see the setting causing the error.
+3. A tábla megjeleníti az összes beállítást, valamint az egyes beállítások állapotát. Válassza ki a **hiba** oszlopot vagy az **ütközés** oszlopot a hibát okozó beállítás megtekintéséhez.
 
-### <a name="mdm-diagnostic-information"></a>MDM diagnostic information
+### <a name="mdm-diagnostic-information"></a>Diagnosztikai információk MDM
 
-Now you know the problematic setting. The next step is to find out why this setting is causing an error or conflict.
+Most már ismeri a problémás beállítást. A következő lépés annak megállapítása, hogy a beállítás Miért okoz hibát vagy ütközést.
 
-On Windows 10 devices, there's a built-in MDM diagnostic information report. This report includes default values, current values, lists the policy, shows if it's deployed to the device or the user, and more. Use this report to help determine why the setting is causing a conflict or error.
+Windows 10-es eszközökön létezik egy beépített MDM diagnosztikai információs jelentés. Ez a jelentés tartalmazza az alapértelmezett értékeket, a jelenlegi értékeket, felsorolja a szabályzatot, és megjeleníti, hogy az eszközre vagy a felhasználóra van-e telepítve, és így tovább. A jelentés segítségével meghatározhatja, hogy a beállítás miért ütközik vagy hibát okoz.
 
-1. On the device, go to **Settings** > **Accounts** > **Access work or school**.
+1. Az eszközön lépjen a **beállítások** > **fiókok** > **hozzáférés munkahelyi vagy iskolai**rendszerhez elemre.
 
-2. Select the account > **Info** > **Advanced Diagnostic Report** > **Create report**.
+2. Válassza ki a fiókot > **Info** > **speciális diagnosztikai jelentés** > **jelentés létrehozása**elemre.
 
-3. Choose **Export**, and open the generated file.
+3. Válassza az **Exportálás**lehetőséget, majd nyissa meg a létrehozott fájlt.
 
-4. In the report, look for the error or conflict setting in the different sections of the report.
+4. A jelentésben keresse meg a hiba vagy az ütközés beállítást a jelentés különböző részeiben.
 
-  For example, look in the **Enrolled configuration sources and target resources** section or the **Unmanaged policies** section. You may get an idea of why it's causing an error or conflict.
+  Tekintse meg például a **regisztrált konfigurációs források és a célként megadott erőforrások** szakaszt, illetve a nem **felügyelt házirendek** szakaszt. Azt is megteheti, hogy miért okoz hibát vagy ütközést.
 
-[Diagnose MDM failures in Windows 10](https://docs.microsoft.com/windows/client-management/mdm/diagnose-mdm-failures-in-windows-10) provides more information on this built-in report.
+A [Mdm hibák diagnosztizálása a Windows 10](https://docs.microsoft.com/windows/client-management/mdm/diagnose-mdm-failures-in-windows-10) rendszerben további információt nyújt erről a beépített jelentésről.
 
 > [!TIP]
-> - Some settings also list the GUID. You can search for this GUID in the local registry (regedit) for any set values.
-> - The Event Viewer logs may also include some error information on the problematic setting (**Event viewer** > **Applications and Services Logs** > **Microsoft** > **Windows** > **DeviceManagement-Enterprise-Diagnostics-Provider** > **Admin**).
+> - Egyes beállítások a GUID azonosítót is felsorolják. Ezt a globálisan egyedi azonosítót a beállított értékekhez tartozó helyi beállításjegyzékben (Regedit) is megkeresheti.
+> - A Eseménynapló naplók tartalmazhatnak bizonyos hibákat a problémás beállításról (**eseménynapló** > **alkalmazások és szolgáltatások naplói** > **Microsoft** > **Windows** > **DeviceManagement-Enterprise-Diagnostics-Provider** > **Admin**).
 
 ## <a name="next-steps"></a>További lépések
 
-[Monitor device profiles](../configuration/device-profile-monitor.md) and [see some common issues and resolutions](../configuration/device-profile-troubleshoot.md).
+[Figyelje az eszközök profiljait](../configuration/device-profile-monitor.md) , és [tekintse meg a gyakori problémákat és a megoldásokat](../configuration/device-profile-troubleshoot.md).

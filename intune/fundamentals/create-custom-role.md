@@ -1,6 +1,6 @@
 ---
-title: Create a custom role in Intune
-description: Learn how to create a custom role in Microsoft Intune.
+title: Egyéni szerepkör létrehozása az Intune-ban
+description: Ismerje meg, hogyan hozhat létre egyéni szerepkört a Microsoft Intuneban.
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
@@ -24,9 +24,9 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74390708"
 ---
-# <a name="create-a-custom-role-in-intune"></a>Create a custom role in Intune
+# <a name="create-a-custom-role-in-intune"></a>Egyéni szerepkör létrehozása az Intune-ban
 
-You can create a custom Intune role that includes any permissions required for a specific job function. Például ha egy IT-részleg alkalmazásokat, szabályzatokat, és konfigurációs profilokat kezel, mindezeket az engedélyeket együtt adhatja meg egy egyéni szerepkör segítségével. After creating a custom role, you can [assign](assign-role.md) it to any users that need those permissions.
+Létrehozhat egy egyéni Intune-szerepkört, amely tartalmazza az adott feladat függvényéhez szükséges engedélyeket is. Például ha egy IT-részleg alkalmazásokat, szabályzatokat, és konfigurációs profilokat kezel, mindezeket az engedélyeket együtt adhatja meg egy egyéni szerepkör segítségével. Egyéni szerepkör létrehozása után [hozzárendelheti](assign-role.md) azt bármely olyan felhasználóhoz, akinek szüksége van rájuk.
 
 A szerepkörök létrehozásához, szerkesztéséhez vagy hozzárendeléséhez a fióknak rendelkeznie kell a következő jogosultságok egyikével az Azure AD-ben:
 - **Globális rendszergazda**
@@ -38,33 +38,33 @@ A szerepkörök létrehozásához, szerkesztéséhez vagy hozzárendeléséhez a
 
 2. Válassza a bal oldali menü **Minden szolgáltatás** pontját, majd írja be a szűrő szövegmezőbe az **Intune** nevet.
 
-3. Choose **Intune** > **Roles** > **All roles** > **Add**.
+3. Válassza az **Intune** > **szerepkörök** > **minden szerepkör** > **Hozzáadás**lehetőséget.
 
 4. Az **Egyéni szerepkör hozzáadása** panelen adja meg az új szerepkör nevét és leírását, majd kattintson az **Engedélyek** elemre.
 
 5. Az **Engedélyek** panelen válassza ki az ehhez a szerepkörhöz használni kívánt engedélyeket.
 
-6. On the **Scope (Tags)** blade, choose the tags for this role. This role can access resources that also have these tags.
+6. A **hatókör (címkék)** panelen válassza ki a szerepkörhöz tartozó címkéket. Ez a szerepkör hozzáférhet a címkével ellátható erőforrásokhoz is.
 
 7. Ha elkészült, válassza az **OK** gombot.
 
-8. Az **Egyéni szerepkör hozzáadása** panelen kattintson a **Létrehozás** elemre. The new role is displayed in the list on the **Intune roles - All roles** blade.
+8. Az **Egyéni szerepkör hozzáadása** panelen kattintson a **Létrehozás** elemre. Az új szerepkör megjelenik az **Intune-szerepkörök – minden szerepkör** panel listájában.
 
 
-## <a name="copy-a-role"></a>Copy a role
+## <a name="copy-a-role"></a>Szerepkör másolása
 
-You can also copy an existing role.
+Egy meglévő szerepkört is másolhat.
 
-1. Sign into the [Azure portal](https://portal.azure.com) with your Intune credentials and select **Intune**.
+1. Jelentkezzen be az [Azure Portal](https://portal.azure.com) az Intune-beli hitelesítő adataival, és válassza az **Intune**lehetőséget.
 
-2. Select **Roles** > **All roles** > select a role in the list > **Duplicate**.
+2. Válassza ki a **szerepköröket** > **minden szerepkört** > válasszon ki egy szerepkört a listában > **duplikált**.
 
-3. Under **Duplicate role**, enter a name. Make sure to use a unique name.
+3. Az **ismétlődő szerepkör**területen adjon meg egy nevet. Ügyeljen arra, hogy egyedi nevet használjon.
 
-4. All the permissions and scope tags from the original role will already be selected. You can subsequently change the duplicate role's **Name**, **Description**, **Permissions**, and **Scope (Tags)** .
+4. Az eredeti szerepkör összes engedélye és hatókör-címkéje már ki lesz választva. Ezt követően módosíthatja az ismétlődő szerepkör **nevét**, **leírását**, **engedélyeit**és **hatókörét (címkéket)** .
 
 5. Válassza a **Létrehozás** lehetőséget. 
 
 ## <a name="next-steps"></a>További lépések
-- [Assign a role to a user](assign-role.md)
-- [Learn more about role-based access control in Intune](role-based-access-control.md)
+- [Szerepkör társítása felhasználóhoz](assign-role.md)
+- [További információ az Intune-beli szerepköralapú hozzáférés-vezérlésről](role-based-access-control.md)

@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 07/18/2019
+ms.date: 11/25/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,21 +17,18 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: shpate
-ms.openlocfilehash: ed3152a6717898aa1f758fb06a5f701048aebed4
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 7ce6def40c6c0fff3a28f884c458220283979234
+ms.sourcegitcommit: ce518a5dfe62c546a77f32ef372f36efbaad473f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72508781"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74465775"
 ---
 # <a name="integrate-windows-hello-for-business-with-microsoft-intune"></a>A Vállalati Windows Hello integrálása a Microsoft Intune-nal  
 
-
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
-
 A Vállalati Windows Hello (korábbi nevén Microsoft Passport for Work) integrálható a Microsoft Intune-nal.
 
- A Vállalati Windows Hello egy alternatív bejelentkezési módszer, amely Active Directoryt vagy egy Azure Active Directory-fiókot használ jelszó, intelligens kártya vagy virtuális intelligens kártya helyett. Ez lehetővé teszi jelszó helyett *felhasználói kézmozdulatok* használatát a bejelentkezéshez. A felhasználói hitelesítési mód lehet egy egyszerű PIN-kód, biometrikus hitelesítés, mint például a Windows Hello, vagy egy külső eszköz, például egy ujjlenyomat-olvasó.
+ A Vállalati Windows Hello egy alternatív bejelentkezési módszer, amely Active Directoryt vagy egy Azure Active Directory-fiókot használ jelszó, intelligens kártya vagy virtuális intelligens kártya helyett. Ez lehetővé teszi jelszó helyett *felhasználói kézmozdulatok* használatát a bejelentkezéshez. A felhasználói kézmozdulat lehet PIN-kód, biometrikus hitelesítés, mint például a Windows Hello, vagy egy külső eszköz, például egy ujjlenyomat-olvasó.
 
 Az Intune kétféleképpen integrálható a Vállalati Hello szolgáltatással:
 
@@ -56,61 +53,69 @@ E cikk segítségével az egész vállalatára vonatkozó alapértelmezett váll
 
 ## <a name="create-a-windows-hello-for-business-policy"></a>Vállalati Windows Hello-házirend létrehozása
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központba] (https://go.microsoft.com/fwlink/?linkid=2109431.
 
-2. Válassza az **eszközök beléptetése** > **windows-regisztráció** > **a vállalati Windows Hello**lehetőséget. Megnyílik a vállalati Windows Hello panel.
+2. Lépjen az **eszközök** > beléptetés * * > **eszközök regisztrálása** > **a Windows Hello for Business**- **regisztráció** > . Megnyílik a vállalati Windows Hello panel.
 
 3. Válasszon a következő lehetőségek közül a **vállalati Windows Hello konfigurálásához**:
 
     - **Letiltva**. Ha nem szeretné használni a Vállalati Windows Hello szolgáltatást, válassza ezt a beállítást. Ha le van tiltva, a felhasználók nem tudják kiépíteni a vállalati Windows Hello szolgáltatást, kivéve Azure Active Directory csatlakoztatott mobiltelefonokon, ahol szükség lehet az üzembe helyezésre.
-    - **Engedélyezve**. Vállalati Windows Hello beállításainak konfigurálásához válassza ezt a beállítást.  Ha az *engedélyezve*lehetőséget választja, a WIndows Hello további beállításai láthatóvá válnak. 
-    - **Nincs konfigurálva**. Ha nem szeretné, hogy az Intune vezérelje a Vállalati Windows Hello beállításait, válassza ezt a beállítást. A Windows 10-eszközökön meglévő Vállalati Windows Hello-beállítások nem módosulnak. A panelen a többi beállítás nem elérhető.
+    - **Engedélyezve**. Vállalati Windows Hello beállításainak konfigurálásához válassza ezt a beállítást.  Ha az *engedélyezve*lehetőséget választja, a WIndows Hello további beállításai láthatóvá válnak.
+    - **Nincs konfigurálva**. Ha nem szeretné, hogy az Intune vezérelje a Vállalati Windows Hello beállításait, válassza ezt a beállítást. A Windows 10-es eszközök meglévő vállalati Windows Hello-beállításai nem változnak. A panelen a többi beállítás nem elérhető.
 
 4. Ha az előző lépésben az **Engedélyezve** lehetőséget választotta, akkor konfigurálja a szükséges beállításokat. A rendszer az összes regisztrált Windows 10 és Windows 10 Mobile rendszerű eszközre alkalmazni fogja őket. Miután konfigurálta ezeket a beállításokat, válassza a **Mentés**lehetőséget.
 
-   - **Platformmegbízhatósági modul (TPM) használata**:  
+   - **Platformmegbízhatósági modul (TPM) használata**:
+
      A TPM lapka használata további adatbiztonsági réteget biztosít. Válasszon egyet az alábbi lehetőségek közül:
 
      - **Kötelező** (alapértelmezett). A Vállalati Windows Hello csak az elérhető TPM modullal rendelkező eszközökön építhető ki.
-     - **Elsődleges**. Az eszközök először a TPM használatára tesznek kísérletet. Ha az nem érhető el, használhatnak szoftveralapú titkosítást.
+     - **Elsődleges**. Az eszközök először a TPM használatára tesznek kísérletet. Ha ez a lehetőség nem érhető el, akkor a szoftver titkosítását is használhatja.
 
-   - **PIN-kód minimális hossza** és a **PIN-kód maximális hossza**:  
+   - **PIN-kód minimális hossza** és a **PIN-kód maximális hossza**:
+
      Beállítja az eszközöket a megadott minimális és maximális hosszúságú PIN-kód használatára, a biztonságos bejelentkezés érdekében. A PIN-kód alapértelmezett hossza 6 karakter, de előírható, hogy legalább 4 karakterből kell állnia. A PIN-kód legfeljebb 127 karakter hosszú lehet.
 
-   - **Kisbetűk a**PIN-kódban, nagybetűk **a PIN**-kódban és **a PIN-kódban szereplő speciális karakterek**.  
+   - **Kisbetűk a**PIN-kódban, nagybetűk **a PIN**-kódban és **a PIN-kódban szereplő speciális karakterek**.
+
      Erősebb PIN-kód használata is előírható kis- és nagybetűk, illetve speciális karakterek PIN-kódon belüli használatának együttes megkövetelésével. Mindegyikhez válasszon a következő közül:
 
-     - **Engedélyezett**. A felhasználók használhatják a karaktertípust a PIN-kódban, de ez nem kötelező.
+     - **Engedélyezett**. A felhasználók a PIN-kód karakter típusát is használhatják, de nem kötelező.
 
      - **Kötelező**. A felhasználóknak a karaktertípusból legalább egyet használniuk kell a PIN-kódjukban. Például általános gyakorlat legalább egy nagybetű és egy speciális karakter megkövetelése.
 
-     - **Nem engedélyezett** (alapértelmezés). A felhasználók nem használhatják ezeket a karaktertípusokat a PIN-kódjukban. (Ugyanez a viselkedés jellemző, ha a beállítás nincs konfigurálva.)   
+     - **Nem engedélyezett** (alapértelmezés). A felhasználók nem használhatják ezeket a karaktertípusokat a PIN-kódjukban. (Ez akkor is a viselkedés, ha a beállítás nincs konfigurálva.)
 
        A speciális karakterek a következők: **! " # $ % &amp; ' ( ) &#42; + , - . / : ; &lt; = &gt; ? @ [ \ ] ^ _ &#96; { &#124; } ~**
 
-   - **PIN-kód lejárata (nap)** :  
+   - **PIN-kód lejárata (nap)** :
+
      A PIN-kódhoz célszerű lejárati időt megadni, amelynek eltelte után a felhasználóknak módosítaniuk kell a PIN-kódot. Az alapértelmezett érték 41 nap.
 
-   - **PIN-előzmények megjegyzése**:  
-     Korlátozza a korábban használt PIN-kódok ismételt használatát. Alapértelmezés szerint az 5 legutóbb használt PIN-kód nem használható újra.
+   - **PIN-előzmények megjegyzése**:
 
-   - **Biometrikus hitelesítés engedélyezése**:  
+     Korlátozza a korábban használt PIN-kódok ismételt használatát. Alapértelmezés szerint az utolsó 5 PIN-kód nem használható újra.
+
+   - **Biometrikus hitelesítés engedélyezése**:
+
      Lehetővé teszi a biometrikus hitelesítést, például az arcfelismerést vagy az ujjlenyomat használatát a PIN-kód alternatívájaként a Vállalati Windows Hello szolgáltatásban. A felhasználóknak ekkor is be kell állítaniuk egy PIN-kódot arra az esetre, ha a biometrikus hitelesítés nem sikerül. A következő lehetőségek közül választhat:
 
      - **Igen**. A Vállalati Windows Hello lehetővé teszi a biometrikus hitelesítést.
      - **Nem**. A Vállalati Windows Hello meggátolja a biometrikus hitelesítést (minden fióktípus esetében).
 
-   - **Fokozott hamisítás elleni javítás használata, ha elérhető**:  
-     Konfigurálható, hogy a Windows Hello hamisításszűrési funkcióit használják-e az azt támogató eszközök (például egy valós arc helyett egy arcról készült fénykép észlelése).  
+   - **Fokozott hamisítás elleni javítás használata, ha elérhető**:
+
+     Annak konfigurálása, hogy a Windows Hello hamisítási funkcióit használják-e az azt támogató eszközökön. Például az arc fényképének észlelése valódi arc helyett.
 
      Ha az **Igen**értékre van állítva, a Windows minden felhasználó számára lehetővé teszi az arc-funkciók hamisításának használatát a támogatott esetekben.
 
-   - **Telefonos bejelentkezés engedélyezése**:  
+   - **Telefonos bejelentkezés engedélyezése**:
+
      Ha a beállítás az **Igen** értékre van beállítva, a felhasználók egy Remote Passport eszközt használhatnak hordozható társeszközként az asztali hitelesítéshez. Az asztali gépnek csatlakoztatva kell lennie az Azure Active Directoryhoz, és a társeszköznek rendelkeznie kell a Vállalati Windows Hello PIN-kódjával.
 
 ## <a name="windows-holographic-for-business-support"></a>Windows Holographic for Business-támogatás
 
-A Windows Holographic for Business az alábbi Vállalati Windows Hello-beállításokat támogatja:
+A Windows holografikus for Business a következő beállításokat támogatja a vállalati Windows Hello szolgáltatáshoz:
 
 - Platformmegbízhatósági modul (TPM) használata
 - PIN-kód minimális hossza
@@ -121,5 +126,6 @@ A Windows Holographic for Business az alábbi Vállalati Windows Hello-beállít
 - PIN lejárata (nap)
 - PIN-előzmények megjegyzése
 
-## <a name="further-information"></a>További információ
+## <a name="next-steps"></a>További lépések
+
 A vállalati Windows Hello szolgáltatással kapcsolatos további információkért tekintse meg a Windows 10 dokumentációjának [útmutatóját](https://technet.microsoft.com/library/mt589441.aspx) .
