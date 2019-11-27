@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 796439581ca0ae91e788a91ab0bc2ef8f6019626
-ms.sourcegitcommit: 01fb3d844958a0e66c7b87623160982868e675b0
-ms.translationtype: HT
+ms.openlocfilehash: 04b284a62076122cec70b6b455151a0377470521
+ms.sourcegitcommit: 16a9109b4028589c17695d41271ca4fee8b1d697
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74199343"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74540742"
 ---
 # <a name="in-development-for-microsoft-intune---december-2019"></a>Fejlesztés a Microsoft Intune – december 2019
 
@@ -91,13 +91,13 @@ Az androidos vállalati eszközök tulajdonosi eszközein új beállítás jelen
 
 Az aktuális beállítások megtekintéséhez lépjen az [Android Enterprise Device Settings elemre az Intune-t használó funkciók engedélyezéséhez vagy korlátozásához](../configuration/device-restrictions-android-for-work.md).
 
-Érintett kiadások:
+A következőkre vonatkozik:
 - Androidos vállalati eszköz tulajdonosa, beleértve a dedikált és teljes mértékben felügyelt eszközöket
 
 ### <a name="wired-network-device-configuration-profiles-for-macos-devices---3508686-idready---"></a>Vezetékes hálózati eszközök konfigurációs profiljai macOS-eszközökhöz<!-- 3508686 idready -->
 MacOS-eszközökön a jövőbeli frissítés tartalmazni fog egy új konfigurációs profilt, amely a vezetékes hálózatokat (az**eszköz konfigurációját** > **profilokat** > a **profil létrehozása** > **MacOS** platformon > **vezetékes hálózat** profil típusa) beállítására. Ezzel a szolgáltatással 802.1 x-profilokat hozhat létre a vezetékes hálózatok kezeléséhez, és ezeket a vezetékes hálózatokat a macOS-eszközökre is üzembe helyezheti.
 
-Érintett kiadások:
+A következőkre vonatkozik:
 - macOS
 
 ### <a name="add-automatic-proxy-settings-to-wi-fi-profiles-for-android-enterprise-work-profiles---4490822-idready---"></a>Automatikus proxybeállítások hozzáadása Wi-Fi profilokhoz androidos vállalati munkahelyi profilokhoz<!-- 4490822 idready -->
@@ -107,7 +107,7 @@ Egy jövőbeli frissítés esetében, ha a vállalat típusát választja, megad
 
 A konfigurálható aktuális Wi-Fi beállítások megjelenítéséhez nyissa meg a [Wi-Fi beállítások hozzáadása az Android Enterprise és az Android kioszkot futtató eszközökhöz Microsoft Intune](../configuration/wi-fi-settings-android-enterprise.md).
 
-Érintett kiadások:
+A következőkre vonatkozik:
 - Androidos vállalati munkahelyi profil
 
 ### <a name="enable-network-access-control-nac-with-cisco-anyconnect-vpn-on-ios-devices---4860111-idready---"></a>A hálózati hozzáférés-vezérlés (NAC) engedélyezése a Cisco AnyConnect VPN-sel iOS-eszközökön<!-- 4860111 idready -->
@@ -120,7 +120,7 @@ A jövőbeli frissítésekben engedélyezheti a hálózati hozzáférés-vezérl
 
 Az összes rendelkezésre álló VPN-beállítás megjelenítéséhez nyissa [meg a VPN-beállítások konfigurálása iOS-eszközökön](../configuration/vpn-settings-ios.md)című témakört.
 
-Érintett kiadások:
+A következőkre vonatkozik:
 - iOS
 
 ### <a name="updated-single-sign-on-experience-for-apps-and-websites-on-your-ios-ipados-and-macos-devices---4999578-idready---"></a>Az iOS-, iPadOS-és macOS-eszközökön futó alkalmazásokhoz és webhelyekhez készült egyszeri bejelentkezések frissítése<!-- 4999578 idready -->
@@ -130,7 +130,7 @@ Ezekkel a beállításokkal zökkenőmentes egyszeri bejelentkezést állíthat 
 
 Az egyszeri bejelentkezéses alkalmazás kiterjesztésére vonatkozó beállítások megjelenítéséhez nyissa meg az SSO-t [iOS](../configuration/ios-device-features-settings.md#single-sign-on-app-extension) -en és [SSO-on MacOS](../configuration/macos-device-features-settings.md#single-sign-on-app-extension)rendszeren.
 
-Érintett kiadások:
+A következőkre vonatkozik:
 - iOS/iPadOS
 - macOS
 
@@ -138,15 +138,15 @@ Az egyszeri bejelentkezéses alkalmazás kiterjesztésére vonatkozó beállít�
 Megadhatja a felügyelt Android-alkalmazásokban használható jóváhagyott billentyűzetek listáját. A felügyelt alkalmazásból a rendszer kérni fogja a felhasználótól, hogy váltson az eszközön már telepített jóváhagyott billentyűzetekre, vagy ha szükséges, a rendszer a jóváhagyott billentyűzetek egyikének letöltéséhez és beállításához irányítja a Google Play Áruház. A felhasználó csak akkor szerkesztheti a szövegmezőket egy felügyelt alkalmazásban, ha az aktív billentyűzet a jóváhagyott billentyűzetek egyike.
 
 ### <a name="use-pkcs-certificates-with-wi-fi-profiles-on-windows-10-and-later-devices---3246388----"></a>PKCS-tanúsítványok használata Wi-Fi profilokkal Windows 10 és újabb rendszerű eszközökön<!-- 3246388  -->
-Jelenleg a SCEP-tanúsítványokkal rendelkező Windows Wi-Fi-profilokat hitelesítheti (az**eszköz konfigurációjának** > **profiljai** > a **profil létrehozása** > **Windows 10 és újabb verziók** a platform > **Wi-Fi** profil típusa > **Enterprise** > **EAP-típus**). A PKCS-tanúsítványokat használhatja a Windows Wi-Fi profiljaival. Ez a funkció lehetővé teszi a felhasználók számára a Wi-Fi profilok hitelesítését a bérlő új vagy meglévő PKCS-tanúsítványainak használatával. 
+Jelenleg a SCEP-tanúsítványokkal rendelkező Windows Wi-Fi-profilokat hitelesítheti (**eszköz-konfiguráció** > **profilok** > **profil létrehozása** > **Windows 10 és újabb verziók** a platformhoz > **Wi-Fi** Profil típusa > **Enterprise** > **EAP-típus**). A PKCS-tanúsítványokat használhatja a Windows Wi-Fi profiljaival. Ez a funkció lehetővé teszi a felhasználók számára a Wi-Fi profilok hitelesítését a bérlő új vagy meglévő PKCS-tanúsítványainak használatával. 
 
 A Wi-Fi profilokkal kapcsolatos további információkért lásd: [Wi-Fi beállítások hozzáadása a Windows 10-es és újabb rendszerű eszközökhöz az Intune-ban](../configuration/wi-fi-settings-windows.md).
 
-Érintett kiadások:
+A következőkre vonatkozik:
 - Windows 10 és újabb
 
 ### <a name="new-exchangeactivesync-settings-when-creating-an-email-device-configuration-profile-on-ios-devices---4892824----"></a>Új ExchangeActiveSync-beállítások az e-mail-eszköz konfigurációs profiljának létrehozásakor iOS-eszközökön<!-- 4892824  --> 
-IOS-/iPadOS-eszközökön konfigurálhatja az e-mailek kapcsolatát egy eszköz konfigurációs profiljában (**eszköz konfigurációja** > **profilok** > **profil létrehozása** > **iOS/IPadOS** a platform > **e-mail-** profil típusa). 
+IOS/iPadOS-eszközökön konfigurálhatja az e-mailek kapcsolatát egy eszköz konfigurációs profiljában (**eszköz konfigurációja** > **profilok** > **profil létrehozása** > **iOS/iPadOS** platform > **e-mailben** a profil típusa). 
 
 Új ExchangeActiveSync-beállítások lesznek elérhetők, beleértve a következőket:
 - Válassza ki a szinkronizálni kívánt szolgáltatásokat (vagy tiltsa le a szinkronizálást), például az e-maileket, a naptárat és a névjegyeket.
@@ -154,61 +154,39 @@ IOS-/iPadOS-eszközökön konfigurálhatja az e-mailek kapcsolatát egy eszköz 
 
 Az aktuális beállítások megjelenítéséhez nyissa meg az [iOS-eszközök e-mail profiljának beállításait az Intune-ban](../configuration/email-settings-ios.md).
 
-Érintett kiadások:
+A következőkre vonatkozik:
 - iOS 13,0 és újabb verziók
 - iPadOS 13,0 és újabb verziók
 
 ### <a name="prevent-users-from-adding-personal-google-accounts-to-android-enterprise-device-owner-and-dedicated-devices---5353228----"></a>Személyes Google-fiókok hozzáadásának megakadályozása az Android Enterprise-eszközök tulajdonosa és dedikált eszközei számára<!-- 5353228  -->
-Megakadályozhatja, hogy a felhasználók személyes Google-fiókokat hozzanak létre az androidos vállalati eszköz tulajdonosának és dedikált eszközeinek (az**eszköz konfigurációjának** > **profiljai** > **profil létrehozása** > **Android enterprise** for platform > **eszköz tulajdonosa csak > eszközök korlátozásai** a profil típusa > **felhasználók és fiókok beállításai**).
+Megakadályozhatja, hogy a felhasználók személyes Google-fiókokat hozzanak létre az Android Enterprise-eszköz tulajdonosán és dedikált eszközein (**eszköz konfigurációja** > **profilok** > **profil létrehozása** > **Android Enterprise** a platform > **eszköz tulajdonosa csak > eszköz korlátozásait** > **felhasználók és fiókok beállításait**) adja meg.
 
 Az aktuálisan konfigurálható beállítások megjelenítéséhez nyissa meg az [androidos vállalati eszköz beállításait, hogy engedélyezze vagy korlátozza a szolgáltatásokat az Intune használatával](../configuration/device-restrictions-android-for-work.md).
 
-Érintett kiadások:
+A következőkre vonatkozik:
 - Androidos vállalati eszköz tulajdonosa
 - Androidos vállalati dedikált eszközök
 
 ### <a name="server-side-logging-for-siri-commands-setting-is-removed-in-ios-device-restrictions-profile---5468501----"></a>A Siri-parancsok beállításának kiszolgálóoldali naplózása el lesz távolítva az iOS-eszköz korlátozási profiljában<!-- 5468501  -->
-IOS-eszközökön létrehozhat egy eszköz-korlátozási profilt, amely a Siri-parancsok kiszolgálóoldali naplózását konfigurálja (**eszköz-konfiguráció** > **profilok** > **profil létrehozása** > **iOS/iPadOS** for platform > **eszközre vonatkozó korlátozások** a profil típusa > **beépített alkalmazások**). A **Siri-parancsok beállításának kiszolgálóoldali naplózása** el lesz távolítva.
+Az iOS-eszközökön létrehozhat egy eszköz-korlátozási profilt, amely konfigurál egy kiszolgálóoldali naplózást a Siri-parancsokhoz (**eszköz konfigurációja** > **profilok** > **profil létrehozása** > **iOS/iPadOS** for platform > **Eszközök korlátozásai** a profil típusa > **beépített alkalmazások**). A **Siri-parancsok beállításának kiszolgálóoldali naplózása** el lesz távolítva.
 
 Ez a beállítás el lesz távolítva az Intune felügyeleti konzolról. Ez a beállítás nincs hatással az eszközre annak ellenére, hogy a konfigurált beállításokkal rendelkező meglévő házirendek továbbra is megjelenítik a beállítást. Ha el szeretné távolítani a beállítást a meglévő szabályzatok közül, lépjen a szabályzatra, végezze el a másodlagos szerkesztést, mentse, és a szabályzat frissülni fog.
 
 A konfigurálható beállítások megtekintéséhez tekintse meg az [iOS-és iPadOS-eszközök beállításait, hogy engedélyezze vagy korlátozza a szolgáltatásokat az Intune használatával](../configuration/device-restrictions-ios.md).
 
-Érintett kiadások:
+A következőkre vonatkozik:
 - iOS
 
 <!-- ***********************************************-->
 <!--## Device enrollment-->
 
 <!-- ***********************************************-->
-## <a name="device-management"></a>Eszközkezelés
+<!--## Device management-->
 
-
-
-### <a name="edit-device-name-value-for-autopilot-devices---2640074----"></a>Az Autopilot-eszközökhöz tartozó eszköznév értékének szerkesztése<!-- 2640074  -->
-Szerkesztheti az Azure AD-hez csatlakoztatott Autopilot-eszközökhöz tartozó eszköznév értékét. Ehhez nyissa meg az **Intune** > **eszközök beléptetése** > **Windows-regisztráció** > **Windows Autopilot** > **eszközöket** > Válassza ki az eszközt, > a jobb oldali ablaktáblában módosítsa az **eszköznév** értékét > **Mentés**gombra.
-
-### <a name="edit-the-group-tag-value-for-autopilot-devices---4816775---"></a>A csoport címke értékének szerkesztése az Autopilot-eszközökhöz<!-- 4816775 -->
-Az Autopilot-eszközökhöz a **Group címke** értékét is szerkesztheti:
-
-1. Válassza az **Intune** > eszközök **beléptetése** > **Windows-regisztráció** > **Windows Autopilot** > **eszközöket**.
-1. Válassza ki az eszközt.
-1. A jobb oldali ablaktáblán módosítsa a **csoport címke** értékét.
-1. Válassza a **Mentés** lehetőséget.
-
-### <a name="target-macos-user-groups-to-require-jamf-management---4061739---"></a>JAMF-felügyeletet igénylő macOS-felhasználói csoportok célzása<!-- 4061739 -->
-A felhasználók meghatározott csoportjait megcélozhatja, hogy a macOS-eszközöket a JAMF kezelje. Ez a célzás lehetővé teszi, hogy a JAMF-megfelelőségi integrációt a macOS-eszközök egy részhalmazára alkalmazza, míg más eszközöket továbbra is az Intune kezel. A célzás azt is lehetővé teszi, hogy fokozatosan áttelepítse a felhasználók eszközeit egy mobileszköz-felügyeleti (MDM) rendszerről a másikra.
 
 <!-- ***********************************************-->
-## <a name="intune-apps"></a>Intune-alkalmazások
-
-### <a name="improved-macos-enrollment-experience-in-company-portal---5074349----"></a>Továbbfejlesztett macOS-regisztrációs élmény Céges portál<!-- 5074349  -->
-A macOS-regisztrálási élmény Céges portál egyszerűbb regisztrációs folyamattal fog rendelkezni, amely szorosabban igazodik a Céges portál iOS-es regisztrálási élményhez. Az eszköz felhasználói a következőket fogják látni:  
-
-* Egy fényesebb felhasználói felület.  
-* Továbbfejlesztett regisztrációs ellenőrzőlista.  
-* Az eszközök regisztrálásával kapcsolatos tudnivalók.  
-* Továbbfejlesztett hibaelhárítási beállítások.  
+<!--## Intune apps-->
+ 
 
 <!-- ***********************************************-->
 ## <a name="monitoring-and-troubleshooting"></a>Figyelés és hibaelhárítás
@@ -217,10 +195,8 @@ A macOS-regisztrálási élmény Céges portál egyszerűbb regisztrációs foly
 Az új központosított naplózási felület az összes kategória naplóit egyetlen lapra gyűjti. A you'l képesnek kell lennie szűrni a naplókat, hogy megkapják a keresett adatgyűjtést. A naplók megtekintéséhez lépjen a **bérlői adminisztráció** > **naplók**elemre. További információ: a [naplók jövőbeli változása az Intune-ban](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Upcoming-change-to-Audit-logs-in-Intune/ba-p/1015858).
 
 <!-- ***********************************************-->
-## <a name="role-based-access-control"></a>Szerepköralapú hozzáférés-vezérlés
+<!--## Role-based access control-->
 
-### <a name="duplicate-custom-or-built-in-roles---1081938---"></a>Ismétlődő egyéni vagy beépített szerepkörök<!-- 1081938 -->
-Lehetőség van a beépített és az egyéni szerepkörök másolására. Ehhez nyissa meg az **Intune** > **szerepkörök** > az **összes szerepkört** > válasszon egy szerepkört a listáról > **duplikálása**. Ügyeljen arra, hogy új nevet adjon meg, amely egyedi.
 
 <!-- ***********************************************-->
 
@@ -234,7 +210,7 @@ A PKCS-tanúsítvány profil használatával tanúsítványokat állíthat ki az
 
 [!INCLUDE [Intune notices](../includes/intune-notices.md)]
 
-## <a name="see-also"></a>Lásd még
+## <a name="see-also"></a>További információ
 A legutóbbi fejleményekről a [Microsoft Intune újdonságai](whats-new.md)című témakörben olvashat bővebben.
 
 

@@ -19,12 +19,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f8e319c68abd8965b84323bc3b7a5451dee42bc2
-ms.sourcegitcommit: 556b7ea2049014c9027f0e44affd3f301fab55fc
+ms.openlocfilehash: bc781ea72b54468b21fb70e60e334f1c8d8832ea
+ms.sourcegitcommit: 23e9c48348a6eba494d072a2665b7481e5b5c84e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73709192"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74547953"
 ---
 # <a name="tutorial-use-autopilot-to-enroll-windows-devices-in-intune"></a>Oktatóanyag – Windows-eszközök regisztrálása az Intune-ban az AutoPilot használatával
 
@@ -60,9 +60,9 @@ A Windows Autopilot beállításának első lépéseként hozzá kell adnia az I
 
 2. Mentse a CSV-fájlt.
 
-3. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az eszközök **beléptetése** > **Windows-regisztráció** > **eszközök** > **Importálás**lehetőséget.
+3. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **Windows** > **eszközök** elemet (a **Windows Autopilot Deployment program** > **Importálás**elemnél.
 
-    ![A Windows AutoPilot-eszközök képernyőképe](./media/tutorial-use-autopilot-enroll-devices/autopilot-import-device.png)
+    ![A Windows AutoPilot-eszközök képernyőképe](./media/enrollment-autopilot/autopilot-import-device.png)
 
 4. A **Windows AutoPilot-eszközök hozzáadása** területen keresse meg a mentett CSV-fájlt.
 
@@ -70,7 +70,7 @@ A Windows Autopilot beállításának első lépéseként hozzá kell adnia az I
 
 5. Válassza az **Importálás** lehetőséget az eszközadatok importálásának elindításához. Az importálás több percig is eltarthat.
 
-4. Az importálás befejezése után válassza az **eszközök beléptetése** > **windows-regisztráció** > **Windows**Autopilot  > **eszközök** > **szinkronizálás**lehetőséget. Egy üzenet jelenik meg, hogy a szinkronizálás folyamatban van. Nagyszámú eszköz szinkronizálása esetén előfordulhat, hogy várnia kell pár percet, amíg a folyamat befejeződik.
+4. Az importálás befejezése után válassza az **eszközök** > **Windows** > **windows-beléptetési** > **eszközök** lehetőséget (a **Windows Autopilot Deployment program** > **Sync**elemnél. Egy üzenet jelenik meg, hogy a szinkronizálás folyamatban van. Nagyszámú eszköz szinkronizálása esetén előfordulhat, hogy várnia kell pár percet, amíg a folyamat befejeződik.
 
 5. Frissítse a nézetet az új eszközök megjelenítéséhez.
 
@@ -90,7 +90,7 @@ Ezután létrehoz egy eszközcsoportot, és belehelyezi az előbb betöltött Au
 
 Egy eszközcsoport létrehozása után létre kell hoznia egy Deployment-profilt az AutoPilot-eszközök konfigurálásához.
 
-1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök beléptetése** > **Windows-regisztráció** > **üzembe helyezési profilok** > a **profil létrehozása**lehetőséget.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **windows** > **windows-regisztráció** > **központi telepítési profilok** > **profil létrehozása**lehetőséget.
 2. Az **alapbeállítások** lapon a Tor **neve**mezőbe írja be az *Autopilot-profilt*. A **Leírás** mezőbe írja be az *AutoPilot-eszközök tesztprofilja* leírást.
 3. Állítsa a **Minden megcélzott eszköz átalakítása az Autopilotra** beállítást **Igen** értékre. Ez a beállítás biztosítja, hogy a listában lévő összes eszköz regisztrálva legyen az Autopilot üzembehelyezési szolgáltatásban. A regisztráció feldolgozása 48 órát is igénybe vehet.
 4. Válassza a **Tovább** elemet.
@@ -116,9 +116,9 @@ Ha már nem szeretne Autopilot-eszközöket használni, törölheti őket.
 
 1. Ha az eszközök regisztrálva vannak az Intune-ban, akkor először [törölnie kell azokat az Azure Active Directory portálról](../remote-actions/devices-wipe.md#delete-devices-from-the-azure-active-directory-portal).
 
-2. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az eszközök **beléptetése** > **Windows-beléptetés** > **eszközök**elemet.
+2. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **Windows** > **Windows-beléptetési** > **eszközök** elemet (a **Windows Autopilot Deployment program**alatt).
 
-3. A **Windows AutoPilot-eszközök** területen jelölje ki a törölni kívánt eszközöket, majd válassza a **Törlés** elemet.
+3. Válassza ki a törölni kívánt eszközöket, majd válassza a **Törlés**lehetőséget.
 
 4. Hagyja jóvá a törlést az **Igen** választásával. A törlés eltarthat néhány percig.
 

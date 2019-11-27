@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/23/2019
+ms.date: 11/25/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b47ecc2363244634cb355fdeaeb51074417322e4
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: f073c8ad7a8e087a791ee756683011fac6947162
+ms.sourcegitcommit: 23e9c48348a6eba494d072a2665b7481e5b5c84e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72507295"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74547968"
 ---
 # <a name="include-and-exclude-app-assignments-in-microsoft-intune"></a>Alkalmazás-hozzárendelések belefoglalása vagy kizárása a Microsoft Intune-ban
 
@@ -31,9 +31,20 @@ Az Intune-ban úgy határozhatja meg, hogy ki férhet hozzá az alkalmazáshoz, 
 
 Egy alkalmazás elérhetőségének megadásakor az alkalmazás-hozzárendeléseket felhasználók vagy eszközök csoportjaira vonatkozóan végezheti el csoport-hozzárendelések belefoglalásával vagy kizárásával. Ez a funkció akkor különösen hasznos, ha nagyobb csoportok számára szeretné elérhetővé tenni az alkalmazást, majd pedig szűkíteni szeretné a felhasználók körét, miközben egy kisebb csoportot is kizárhat. A kisebb csoport lehet például tesztcsoport, vagy egy vezetői csoport. 
 
-Amikor csoportot zár ki egy alkalmazás-hozzárendelésből, akkor vagy csak felhasználói vagy csak eszközcsoportot kell kizárnia. Nem zárhat ki vegyes, felhasználói és eszközcsoportokat is. 
+Ajánlott eljárásként hozzon létre és rendeljen hozzá alkalmazásokat kifejezetten a felhasználói csoportokhoz, és az eszközök csoportjaihoz külön-külön. A csoportokkal kapcsolatos további információkért lásd: [csoportok hozzáadása a felhasználók és eszközök rendszerezéséhez](~/fundamentals/groups-add.md).  
 
-Az Intune nem veszi számításba a felhasználók és eszközök közötti társításokat a csoportok kizárásánál. Felhasználói csoportok belefoglalása és eszközcsoportok egyidejű kizárása minden bizonnyal nem éri el a kívánt eredményt. A belefoglalás elsőbbséget élvez a kizárással szemben. Ha például egy iOS-alkalmazást **Minden felhasználóra** céloz, és kizárja a **Minden iPad** csoportot, az eredmény az lesz, hogy minden iPadet használó felhasználó továbbra is hozzáfér az alkalmazáshoz. Ha azonban az iOS-alkalmazás célzása **Minden eszköz**, és kizárja a **Minden iPad** csoportot, akkor a beállítás sikeres lesz.  
+Az alkalmazás-hozzárendelések belefoglalása vagy kizárása esetén fontos forgatókönyvek találhatók:
+
+- A kizárás elsőbbséget élvez a következő azonos csoport típusú forgatókönyvek belefoglalásakor:
+    - Felhasználói csoportok belefoglalása és felhasználói csoportok kizárása az alkalmazások kiosztásakor
+    - Az eszközök csoportjai és az eszközcsoport kizárása az alkalmazások hozzárendeléséhez
+
+    Ha például a **minden vállalati felhasználó felhasználói** csoporthoz rendel hozzá egy eszközcsoport-csoportot, de kizárja a tagokat a **vezető felügyeleti munkatárs** felhasználói csoportban, akkor a **vezető felügyeleti személyzet** kivételével **minden vállalati felhasználó** megkapja a hozzárendelést, mivel mindkét csoport felhasználói csoport.
+- Az Intune nem értékeli ki a felhasználók és az eszközök közötti csoportok kapcsolatait. Ha az alkalmazásokat vegyes csoportokhoz rendeli, előfordulhat, hogy az eredmények nem a kívánt vagy várt érték.
+
+    Ha például hozzárendel egy eszközt a **minden felhasználó** felhasználói csoporthoz, de kizárja az **összes személyes** eszköz csoportot. Ebben a vegyes csoportbeli alkalmazás-hozzárendelésben **minden felhasználó** megkapja az alkalmazást. A kizárás nem vonatkozik.
+
+Ennek eredményeképpen az alkalmazások vegyes csoportokhoz való társítása nem ajánlott.
 
 > [!NOTE]
 > Alkalmazások csoport-hozzárendelésénél a **Nem alkalmazható** típus nem használható többé, helyette a csoport kizárása lehetőség használható. 
@@ -41,7 +52,6 @@ Az Intune nem veszi számításba a felhasználók és eszközök közötti tár
 > Az Intune előre létrehozott, **Minden felhasználó** és **Minden eszköz** csoportokat biztosít a konzolon. A csoportok beépített optimalizációkkal bírnak a felhasználók kényelme érdekében. Mindenképpen ajánlott ezeket a csoportokat használni az összes felhasználó és az összes eszköz megcélzására az Ön által létrehozott „Minden felhasználó” vagy „Minden eszköz” csoport helyett.  
 >
 > A vállalati Android támogatja a csoportok belefoglalását és kizárását. Kihasználhatja a beépített **Minden felhasználó** és **Minden eszköz** csoportot a Vállalati Android-alapú alkalmazástársításokhoz. 
-
 
 ## <a name="include-and-exclude-groups-when-assigning-apps"></a>Csoportok belefoglalása és kizárása alkalmazások hozzárendelésénél 
 Ha csoportokhoz szeretne alkalmazást hozzárendelni a belefoglalás és kizárás használatával, tegye a következőket:

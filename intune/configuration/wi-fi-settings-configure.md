@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/04/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 61957140fa8d942be0f3dca2543da2aed6183535
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.openlocfilehash: 7fe0bed94c66a1b82ed26bdbd43f68073223101e
+ms.sourcegitcommit: 16a9109b4028589c17695d41271ca4fee8b1d697
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74059257"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74540682"
 ---
 # <a name="add-and-use-wi-fi-settings-on-your-devices-in-microsoft-intune"></a>Wi-Fi-beállítások hozzáadása és használata az eszközökön a Microsoft Intune-ban
 
@@ -62,14 +62,14 @@ A Wi-Fi-profilok a következő eszközplatformokat támogatják:
       - **Android Enterprise**
       - **iOS/iPadOS**
       - **macOS**
-      - **Windows 8.1 és újabb verziók**
+      - **Windows 8.1 és újabb**
       - **Windows 10 és újabb**
 
     - **Profil típusa**: válassza a **Wi-Fi**lehetőséget.
 
       > [!TIP]
       >
-      > - A dedikált eszközként (kioszk) futó **androidos vállalati** eszközök esetén válassza az **eszköz tulajdonosa csak** > **Wi-Fi**lehetőséget.
+      > - A dedikált eszközként (kioszk) futó **androidos vállalati** eszközök esetében válassza az **eszköz tulajdonosa csak** > **Wi-Fi**lehetőséget.
       > - A **Windows 8.1 és újabb** rendszereken a **Wi-Fi-importálás** lehetőséget választhatja. Ez lehetővé teszi, hogy XML-fájlként importálhasson egy másik eszközről korábban exportált Wi-Fi-beállításokat.
 
 4. Egyes Wi-Fi-beállítások minden platformon eltérnek. Egy adott platform beállításainak megtekintéséhez válassza ki a platformot:
@@ -81,10 +81,12 @@ A Wi-Fi-profilok a következő eszközplatformokat támogatják:
     - [Windows 10 és újabb](wi-fi-settings-windows.md)
     - [Windows 8.1 és újabb](wi-fi-settings-import-windows-8-1.md) (beleértve a Windows Holographic for Businesst is)
 
-5. Ha elkészült, válassza a **create profile** > **Létrehozás**elemet.
+5. Ha elkészült, válassza a Create **profile** > **Létrehozás**elemet.
 
-Ekkor létrejön a profil, és megjelenik a profilok listában (az**eszköz konfigurációja** > **profilok**).
+Ekkor létrejön a profil, és megjelenik a profilok listában (**eszköz konfigurációja** > **profilok**).
 
 ## <a name="next-steps"></a>További lépések
 
 A profil létrejön, de egyelőre nem csinál semmit. Ezután [rendelje hozzá ezt a profilt](device-profile-assign.md) , és [Figyelje annak állapotát.](device-profile-monitor.md)
+
+[Az Intune-ban található Wi-Fi-profilok problémáinak](troubleshoot-wi-fi-profiles.md)elhárítása.

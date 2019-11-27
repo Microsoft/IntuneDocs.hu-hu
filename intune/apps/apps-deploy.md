@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99e89db1bbef3d08cd6709b2600c4a684ac618f7
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: c1e8e37a784ea39fbf1154321933673ed02eee33
+ms.sourcegitcommit: 16a9109b4028589c17695d41271ca4fee8b1d697
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72498607"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74540748"
 ---
 # <a name="assign-apps-to-groups-with-microsoft-intune"></a>Alkalmazások hozzárendelése csoportokhoz a Microsoft Intune-nal
 
@@ -94,35 +94,23 @@ Az alábbi táblázatban található információk segítenek megérteni az ered
 | 1\. csoport hozzárendelési szándéka | 2\. csoport hozzárendelési szándéka | Eredmény |
 |-----------------------------------|-----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |A felhasználó kötelező|A felhasználó elérhető|Kötelező és elérhető|
-|A felhasználó kötelező|A felhasználható nem érhető el|Kötelező|
 |A felhasználó kötelező|Felhasználó eltávolítása|Kötelező|
-|A felhasználó elérhető|A felhasználható nem érhető el|Nem érhető el|
 |A felhasználó elérhető|Felhasználó eltávolítása|Eltávolítás|
-|A felhasználható nem érhető el|Felhasználó eltávolítása|Eltávolítás
 |A felhasználó kötelező|Az eszköz kötelező|Mind a két szándék létezik, az Intune Kötelező szándékként kezeli
 |A felhasználó kötelező|Eszköz eltávolítása|Mind a két szándék létezik, az Intune a Kötelezőt oldja fel
 |A felhasználó elérhető|Az eszköz kötelező|Mind a két szándék létezik, az Intune a Kötelezőt oldja fel (kötelező és elérhető)
 |A felhasználó elérhető|Eszköz eltávolítása|Mind a két szándék létezik, az Intune az Elérhetőt oldja fel.<br><br>Az alkalmazás megjelenik az Intune Céges portálon.<br><br>Ha az alkalmazás már telepítve van (korábbi szándékkal kötelezőként) a rendszer eltávolítja az alkalmazást.<br><br>Ha a felhasználó a **Telepítés a céges portálról** lehetőséget választja, az alkalmazás telepítve lesz, és a rendszer az eltávolítás szándékát veti el.|
-|A felhasználható nem érhető el|Az eszköz kötelező|Kötelező|
-|A felhasználható nem érhető el|Eszköz eltávolítása|Eltávolítás|
 |Felhasználó eltávolítása|Az eszköz kötelező|Mind a két szándék létezik, az Intune a Kötelezőt oldja fel|
 |Felhasználó eltávolítása|Eszköz eltávolítása|Mind a két szándék létezik, az Intune az Eltávolítást oldja fel|
 |Az eszköz kötelező|Eszköz eltávolítása|Kötelező|
 |A felhasználó kötelező és elérhető|A felhasználó elérhető|Kötelező és elérhető|
 |A felhasználó kötelező és elérhető|Felhasználó eltávolítása|Kötelező és elérhető|
-|A felhasználó kötelező és elérhető|A felhasználható nem érhető el|Kötelező és elérhető|
 |A felhasználó kötelező és elérhető|Az eszköz kötelező|Mind a két szándék, a Kötelező és az Elérhető egyaránt létezik
-|A felhasználó kötelező és elérhető|Az eszköz nem érhető el|Kötelező és elérhető|
 |A felhasználó kötelező és elérhető|Eszköz eltávolítása|Mind a két szándék létezik, az Intune a Kötelezőt oldja fel (kötelező és elérhető)
-|A felhasználható nem érhető el|Az eszköz nem érhető el|Nem érhető el|
-|A felhasználó elérhető|Az eszköz nem érhető el|Elérhető|
-|A felhasználó kötelező|Az eszköz nem érhető el|Kötelező|
 |A felhasználó regisztráció nélkül elérhető|A felhasználó kötelező és elérhető|Kötelező és elérhető
 |A felhasználó regisztráció nélkül elérhető|A felhasználó kötelező|Kötelező
-|A felhasználó regisztráció nélkül elérhető|A felhasználható nem érhető el|Nem érhető el
 |A felhasználó regisztráció nélkül elérhető|A felhasználó elérhető|Elérhető|
 |A felhasználó regisztráció nélkül elérhető|Az eszköz kötelező|Kötelező és Regisztráció nélkül elérhető|
-|A felhasználó regisztráció nélkül elérhető|Az eszköz nem érhető el|Regisztráció nélkül elérhető|
 |A felhasználó regisztráció nélkül elérhető|Eszköz eltávolítása|Eltávolítás és Regisztráció nélkül elérhető.<br><br>Ha a felhasználó nem az Intune Céges portálról telepítette az alkalmazást, akkor a rendszer az eltávolítást veszi figyelembe.<br><br>Ha a felhasználó az Intune Céges portálról telepíti az alkalmazást, akkor a rendszer a telepítést részesíti előnyben az eltávolítással szemben.|
 
 > [!NOTE]

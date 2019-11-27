@@ -1,26 +1,41 @@
 ---
-title: fájl belefoglalása
-description: fájl belefoglalása
+title: beágyazott fájl
+description: beágyazott fájl
 author: ErikjeMS
 ms.service: microsoft-intune
 ms.topic: include
 ms.date: 11/19/2019
 ms.author: erikje
 ms.custom: include file
-ms.openlocfilehash: fa2b1c5c9d267b9f860da2268d03c928ebf7693b
-ms.sourcegitcommit: 1cf063c98e1caae00a6e6fab821cc3254562bca9
-ms.translationtype: HT
+ms.openlocfilehash: 8db05399c4a880d72d24cde885976309bf9a4fa7
+ms.sourcegitcommit: 23e9c48348a6eba494d072a2665b7481e5b5c84e
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74309809"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74549430"
 ---
 Ezek a hirdetmények olyan fontos információkat tartalmaznak, amelyek segíthetnek a jövőbeli Intune-változások és-funkciók előkészítésében.
+
+### <a name="updated-support-statement-for-adobe-acrobat-reader-for-intune-mobile-app--5746776--"></a>Frissítettük az "Adobe Acrobat Reader for Intune" Mobile App támogatási utasítását<!--5746776-->
+A MC188653 augusztus végén megosztjuk az Adobe Acrobat Reader for Intune Mobile App-t, amely a 2019. december 1-én ért véget, az Adobe pedig az Intune app Protection-házirendjeinek támogatását tervezte a fő Acrobat Reader-alkalmazásban. Azóta megkaptuk a vásárlói visszajelzéseket, hogy több időt kellene biztosítani a rendszergazdák számára a cél eléréséhez, és a végfelhasználók számára az Adobe Acrobat Reader for Intune használatának megkezdéséhez. Az Adobe Acrobat Reader az Intune-nal való magas kihasználtsága miatt a végfelhasználói eszközökön, valamint a nagyvállalati forgatókönyvek szempontjából fontos, hogy minden tapasztalat megfelel a szervezete által biztosított alkalmazások védelmének. 
+
+Noha továbbra is ajánlott az általános Acrobat Reader Mobile alkalmazás megcélzása a szabályzatokban, mivel az Acrobat Reader Mobile alkalmazás támogatja az alkalmazás-védelmi házirendeket, és integrálta az Intune SDK-t, az Adobe Acrobat Reader for Intune alkalmazás továbbra is támogatott lesz. 2020. március 31-ig. 
+
+#### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
+Azért kapta ezt az üzenetet, mert a jelentés egy vagy több olyan házirendet jelez a szervezetben, amely az Intune-hoz készült Adobe Acrobat Reader alkalmazást és/vagy a korábbi EOL-kommunikációt is megkapta. 
+
+#### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
+Tájékoztassa a végfelhasználókat és a helpdesket erről a változásról. Az Intune-nal kapcsolatos kérdésekért a [céges portál támogatási információ funkcióját](../apps/company-portal-app.md#support-information) használhatja.
+
+#### <a name="additional-information"></a>További információ
+https://helpx.adobe.com/acrobat/kb/intune-app-end-of-life.html
+
 
 ### <a name="end-support-for-windows-phone-81--3544909--"></a>Windows Phone-telefon 8,1-es végpont-támogatás<!--3544909-->
 A Microsoft mainstream Windows Phone-telefon 8,1-es verziójának támogatása 2017 júliusában fejeződött be, és a meghosszabbított támogatás az 2019-as év végén fejeződött be. A Windows Phone-telefon 8,1-es Céges portál alkalmazás a 2017 októbere óta tart fenn fenntartási módban. A Microsoft Intune mostantól a Windows Phone-telefon 8,1 2020. február 20-án megszűnik a támogatás.
 
 #### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
-Február 2020 20. után ezek az eszközök nem kapják meg a biztonsági frissítéseket, és nem fog tudni új eszközöket regisztrálni. A meglévő Windows Phone-telefon 8,1 rendszerű eszközök regisztrálva maradnak (házirend, alkalmazások, jelentéskészítés), de Megjegyzés: a meglévő regisztrációk hibaelhárítása ezen dátum után nem támogatott, mivel számos összetevő, például a harmadik féltől származó tanúsítványok már befejezték a támogatását platform. Az Intune leállítja a kompatibilitási tesztelést az Intune-nal és a Windows Phone-telefon 8,1-mel.
+Február 2020 20. után ezek az eszközök nem kapják meg a biztonsági frissítéseket, és nem regisztrálhat új eszközöket. A meglévő Windows Phone-telefon 8,1 rendszerű eszközök regisztrálva maradnak (házirend, alkalmazások, jelentéskészítés), de Megjegyzés: a meglévő regisztrációk hibaelhárítása ezen dátum után nem támogatott, mivel számos összetevő, például a harmadik féltől származó tanúsítványok már befejezték a támogatását platform. Az Intune leállítja a kompatibilitási tesztelést az Intune-nal és a Windows Phone-telefon 8,1-mel.
 
 #### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
 Az Intune-jelentéskészítéssel megtekintheti, hogy mely eszközökre vagy felhasználókra van hatással. Lépjen az Eszközök > Minden eszköz menüpontra, és szűrje a találatokat operációs rendszer alapján. További oszlopokat is hozzáadhat, amelyekkel azonosítható, hogy a szervezeten belül kik rendelkeznek a Windows Phone-telefon 8,1 rendszerű eszközökkel. Kérje meg, hogy a végfelhasználók a támogatott operációsrendszer-verzióra frissítse eszközeit.
@@ -36,7 +51,7 @@ Noha az új funkciók nem voltak elérhetők, a következő alkalmazás-konfigur
 - com. microsoft. Outlook. Calendar. NotificationsEnabled. UserChangeAllowed
 
 #### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
-Javasoljuk, hogy az új funkció előkészítéséhez konfigurálja az "org-adatértesítések" értéket a "szervezeti adatblokkok" értékkel rendelkező Intune App Protection szabályzat-adatvédelmi beállításban. Az iOS és az Android rendszerhez készült Outlook december 16 2019-án kezdődően a "szervezeti adatértesítések" adatvédelmi beállítást is tiszteletben tartja, és már nem támogatja a fent említett kulcsokat. Az új beállítás konfigurálása biztosítja, hogy a bizalmas adatok ne legyenek kiszivárgott, ha a fenti konfigurációs kulcsok már nem támogatottak. Emellett az Outlook további részletességet biztosít, ha az "org-adatértesítések" adatvédelmi beállítás "szervezeti adatokat blokkol" értékre van állítva egy további alkalmazás-konfigurációs beállítással, a "Calendar Notifications". Az alkalmazás-védelmi házirend-beállítás és az alkalmazás konfigurációs beállításának kombinációja korlátozza a bizalmas adatokat a levelek értesítéseiben, miközben bizalmas adatokat helyez el a naptári értesítésekben, így a felhasználók megkaphatják az értekezleteket gyorsan megtalálhatja az értesítési vagy az értesítési központot.
+Javasoljuk, hogy az új funkció előkészítéséhez konfigurálja az "org-adatértesítések" értéket a "szervezeti adatblokkok" értékkel rendelkező Intune App Protection szabályzat-adatvédelmi beállításban. Az iOS és az Android rendszerhez készült Outlook december 16 2019-án kezdődően a "szervezeti adatértesítések" adatvédelmi beállítást is tiszteletben tartja, és már nem támogatja a fent említett kulcsokat. Az új beállítás konfigurálása lehetővé teszi, hogy a bizalmas adatok ne legyenek kiszivárgott, ha a fenti konfigurációs kulcsok már nem támogatottak. Emellett az Outlook további részletességet biztosít, ha az "org-adatértesítések" adatvédelmi beállítás "szervezeti adatokat blokkol" értékre van állítva egy további alkalmazás-konfigurációs beállítással, a "Calendar Notifications". Az alkalmazás-védelmi házirend-beállítás és az alkalmazás konfigurációs beállításának kombinációja korlátozza a bizalmas adatokat a levelek értesítéseiben, miközben bizalmas adatokat helyez el a naptári értesítésekben, így a felhasználók megkaphatják az értekezleteket gyorsan megtalálhatja az értesítési vagy az értesítési központot.
 
 #### <a name="additional-information"></a>További információ
 Az Alkalmazásbeállítások és az Outlook beállításairól további információt a következő témakörben talál:
@@ -49,7 +64,7 @@ Az Alkalmazásbeállítások és az Outlook beállításairól további informá
 A Windows 10 1703-es verziója (más néven Windows 10, RS2) a 2019-es verzión kívülről a nagyvállalati és az EDU-kiadások esetében kikerült a szolgáltatásból. Az Intune a RS2/RS1 megfelelő Céges portál alkalmazásának támogatását a 2019. december 26-án kezdődően teszi lehetővé.
 
 #### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
-A továbbiakban nem jelenik meg a Céges portál alkalmazás adott verziójának új funkciói, de továbbra is támogatjuk a Céges portál alkalmazás ezen verzióját 2019-ig, beleértve az Céges portál alkalmazás biztonsági frissítéseit is. szükséges. Mivel azonban a Windows 10 1703-es verziója nem kap biztonsági frissítéseket, ha a szolgáltatás kikerül a karbantartásból, javasoljuk, hogy frissítse Windows-eszközeit egy újabb Windows-verzióra, és győződjön meg arról, hogy a legújabb Céges portál alkalmazást használja, hogy továbbra is megkapja új funkciók és további funkciók.
+A továbbiakban nem jelenik meg új funkciók a Céges portál alkalmazás adott verziójában, de továbbra is támogatjuk a Céges portál alkalmazás ezen verzióját 2019-ig, beleértve a Céges portál alkalmazás biztonsági frissítéseit is. szükséges. Mivel azonban a Windows 10 1703-es verziója nem kap semmilyen biztonsági frissítést, ha a szolgáltatás kikerül a karbantartásból, javasoljuk, hogy frissítse Windows-eszközeit egy újabb Windows-verzióra, és győződjön meg arról, hogy a legújabb Céges portál alkalmazást használja, hogy továbbra is megkapja új funkciók és további funkciók.
 
 #### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
 A végrehajtott lépések a környezet konfigurációjától függenek. Általánosságban azonban érdemes megállapítani azokat az eszközöket, amelyek az operációs rendszer és/vagy a Céges portál régebbi verzióját használják az eszközön, és frissítik. Windows 10-es frissítési körök beállításához jelentkezzen be az Intune-> szoftverfrissítések – Windows 10 frissítési körökbe. A Céges portál legújabb verziója a 10.3.5601.0 verzió. A jövőbeli kiadásokkal naprakész maradhat a felhasználóktól, hogy beszerezze a Microsoft Store. Az Intune-nal is telepítheti a legújabb Windows-eszközökön a [Microsoft Store for Business](https://docs.microsoft.com/intune/windows-store-for-business)használatával.
@@ -129,7 +144,7 @@ Az Intune egy közelgő kiadásban az Android 5. x (nyalóka) és újabb verzió
 #### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
 Ha nem használja az SDK-t vagy az alkalmazást az Androidhoz, akkor ez a változás nem érinti Önt. Ha az Intune app SDK-t használja, frissítsen a legújabb verzióra, és frissítse az eszközeit az Android 5. x vagy újabb verziójára. Ha nem frissíti, az alkalmazások nem kapják meg a frissítéseket, és a tapasztalatok minősége idővel csökken.
 
-Az alábbi listában megtalálhatja az Intune-ban regisztrált általános eszközök listáját, amelyek az Android 4. x verzióját futtatják. Ha rendelkezik ezekkel az eszközökkel, hajtsa végre a megfelelő lépéseket annak biztosításához, hogy az eszköz támogassa az Android 5,0-es vagy újabb verzióját, vagy hogy a rendszer az Android 5,0-es vagy újabb verzióját támogató eszközre cserélje. Ez a lista nem teljes körű a kiértékeléshez szükséges összes eszközről:
+Az alábbi listában megtalálhatja az Intune-ban regisztrált általános eszközök listáját, amelyek az Android 4. x verzióját futtatják. Ha rendelkezik ezekkel az eszközökkel, hajtsa végre a megfelelő lépéseket annak biztosításához, hogy az eszköz támogassa az Android 5,0-es vagy újabb verzióját, vagy hogy a rendszer az Android 5,0-es vagy újabb verzióját támogató eszközre cserélje. Ez a lista nem minden olyan eszköz teljes, amelyet ki kell értékelni:
 
 - Samsung SM – T561  
 - Samsung SM – T365

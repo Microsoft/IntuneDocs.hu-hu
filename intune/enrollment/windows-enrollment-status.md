@@ -1,12 +1,12 @@
 ---
 title: Regisztráció állapotának beállítása lap
 titleSuffix: Microsoft Intune
-description: Állítsa be a felhasználók számára a Windows 10 rendszerű üdvözlő oldal.
+description: Üdvözlő lap beállítása a Windows 10-es eszközök regisztrálására szolgáló felhasználók számára.
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 11/13/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: enrollment
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f9c09105ab7286eb315c6bf0f04f1801706bfa8
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.openlocfilehash: e81b8dc4938ea080018efae97093bb5e70dbcde8
+ms.sourcegitcommit: 23e9c48348a6eba494d072a2665b7481e5b5c84e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74059705"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74548019"
 ---
 # <a name="set-up-an-enrollment-status-page"></a>Regisztráció állapotának beállítása lap
  
@@ -64,14 +64,14 @@ Az egyes profilok prioritási sorrendjét úgy is beállíthatja, hogy az ütkö
 
 A regisztráció állapota lap bekapcsolásához kövesse az alábbi lépéseket.
  
-1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök beléptetése** > **Windows-beléptetés** > **regisztráció állapota lapot**.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **windows** > **Windows-regisztráció** > **regisztráció állapota lapot**.
 2. A **Beléptetés állapota oldal** panelen válassza az **Alapértelmezett** > **Beállítások** lehetőséget.
 3. A **Show app and profile installation progress** (Alkalmazások és profilok telepítési állapotának megjelenítése) beállításnál válassza a **Yes** (Igen) lehetőséget.
 4. Adja meg a többi kívánt beállítást, majd válassza a **Mentés** gombot.
 
 ## <a name="create-enrollment-status-page-profile-and-assign-to-a-group"></a>Regisztrációs állapot lap profiljának létrehozása és társítása egy csoporthoz
 
-1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök beléptetése** > **Windows-beléptetés** > **regisztráció állapota lap** > **Létrehozás profil**lehetőséget.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **windows** > **windows-regisztráció** > **regisztráció állapota lap** > **profil létrehozása**lehetőséget.
 2. Adjon meg egy **nevet** és egy **leírást**.
 3. Válassza a **Létrehozás** lehetőséget.
 4. A **Regisztráció állapota oldal** listájában válassza ki az új profilt.
@@ -82,20 +82,20 @@ A regisztráció állapota lap bekapcsolásához kövesse az alábbi lépéseket
 
 A felhasználók számos csoportba tartozhatnak, és számos regisztrációs állapotú lap profilja lehet. Az ilyen ütközések kezeléséhez beállíthatja az egyes profilok prioritásait. Ha a regisztráció során egynél több regisztrációs állapotú oldal profilja van, akkor a rendszer csak a legmagasabb prioritású profilt alkalmazza a beléptetési eszközre.
 
-1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök beléptetése** > **Windows-beléptetés** > **regisztráció állapota lapot**.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **windows** > **Windows-regisztráció** > **regisztráció állapota lapot**.
 2. Vigye a kurzort a listában a profilra.
 3. A függőleges három ponttal húzza a profilt a kívánt helyre a listában.
 
-## <a name="block-access-to-a-device-until-a-specific-application-is-installed"></a>Hozzáférés letiltása egy eszközhöz csak egy adott alkalmazás telepítve van
+## <a name="block-access-to-a-device-until-a-specific-application-is-installed"></a>Eszköz hozzáférésének letiltása egy adott alkalmazás telepítése előtt
 
-Megadhatja, hogy mely alkalmazásokat kell telepíteni, mielőtt a felhasználó számára elérhető az asztalon.
+Megadhatja, hogy mely alkalmazásokat kell telepíteni, mielőtt a felhasználó el tudja érni az asztalt.
 
-1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök beléptetése** > **Windows-beléptetés** > **regisztráció állapota lapot**.
-2. Válasszon egy profilt > **beállítások**.
-3. Válasszon **Igen** a **alkalmazás és a profil telepítés állapotának megjelenítése**.
-4. Válasszon **Igen** a **letiltja az eszköz használatát, alkalmazások és a profilok telepítéséig**.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **windows** > **Windows-regisztráció** > **regisztráció állapota lapot**.
+2. Válassza ki a profil > **beállításait**.
+3. Válassza az **Igen** lehetőséget az **alkalmazások és a profilok telepítési folyamatának megjelenítéséhez**.
+4. Válassza az **Igen** lehetőséget az **eszköz használatának tiltása lehetőségre, amíg az összes alkalmazás és profil nincs telepítve**.
 5. Válassza a **kijelölt** lehetőséget a **Letiltás eszköz használatára, amíg ezek a szükséges alkalmazások nem települnek a felhasználóhoz vagy eszközhöz**.
-6. Válasszon **alkalmazások kiválasztása** > Válassza ki az alkalmazások > **kiválasztása** > **mentése**.
+6. Válassza az **alkalmazások kiválasztása** lehetőséget > Válassza ki az alkalmazásokat > válassza a > **Mentés** **lehetőséget** .
 
 ## <a name="enrollment-status-page-tracking-information"></a>Regisztrációs állapot lap követési adatai
 
@@ -134,7 +134,7 @@ A fiók beállításakor a regisztráció állapota lap a következő elemeket k
   - Gépenkénti LoB MSI-alkalmazások, melyek társítása „Minden felhasználó” vagy egy olyan felhasználói csoport, amelynek az eszközt beléptető felhasználó a tagja.
   - Üzletági áruházbeli alkalmazások, online áruházbeli alkalmazások és offline tár alkalmazások, amelyek a következő objektumok bármelyikéhez vannak rendelve:
     - Minden eszköz
-    - Minden felhasználó
+    - All Users
     - Egy felhasználói csoport, amelyben az eszköz regisztrálására szolgáló felhasználó tagja, a telepítési környezet felhasználói értékre van állítva.
   - Win32-alkalmazások (csak Windows 10 1903-es és újabb verziók) 
 - Csatlakozási profilok

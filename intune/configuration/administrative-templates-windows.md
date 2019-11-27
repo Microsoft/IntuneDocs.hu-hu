@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f9cec7395fc766f6a937e6c43ef3a32fb21610be
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.openlocfilehash: ca087ec67542102a0cd3111d27a860500b23d3c4
+ms.sourcegitcommit: 23e9c48348a6eba494d072a2665b7481e5b5c84e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74059992"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74547984"
 ---
 # <a name="use-windows-10-templates-to-configure-group-policy-settings-in-microsoft-intune"></a>Csoportházirend-beállítások konfigurálása a Windows 10-es sablonokkal Microsoft Intune
 
@@ -88,16 +88,18 @@ Folytassa a beállítások listájának átadását, és konfigurálja a kíván
 
 Ezekben a sablonokban több száz beállítás érhető el. A beépített funkciókkal könnyebben megtalálhatja a konkrét beállításokat:
 
-- A sablonban válassza a **Beállítások**, az **állapot**, a **beállítás típusa**vagy az **elérési út** oszlopok elemet a lista rendezéséhez. Válassza ki például az **elérési út** oszlopot az `Microsoft Excel` elérési út összes beállításának megtekintéséhez:
+- A sablonban válassza a **Beállítások**, az **állapot**, a **beállítás típusa**vagy az **elérési út** oszlopok elemet a lista rendezéséhez. Például a **path (elérési** út) oszlopra kattintva megtekintheti az `Microsoft Excel` útvonal összes beállítását:
 
   ![Kattintson a Path (elérési út) elemre a csoportházirend vagy az ADMX elérési útja szerint csoportosított összes beállítás megjelenítéséhez az Intune-ban.](./media/administrative-templates-windows/path-filter-shows-excel-options.png)
 
-- A sablonban a **keresőmező** segítségével megtalálhatja a kívánt beállításokat. A kereséshez állítsa be a címet vagy az elérési utat. Keressen például a `copy` kifejezésre. A `copy` összes beállítása látható:
+- A sablonban a **keresőmező** segítségével megtalálhatja a kívánt beállításokat. A kereséshez állítsa be a címet vagy az elérési utat. Keressen például `copy`. A `copy` összes beállítása látható:
 
   ![Az Intune-beli felügyeleti sablonokban található összes Windows-és Office-beállítás megjelenítésének keresése a másolásban](./media/administrative-templates-windows/search-copy-settings.png) 
 
-  Egy másik példában keressen rá a `microsoft word` kifejezésre. Megjelenik a Microsoft Word programhoz beállítható összes beállítás. Keressen rá a `explorer` kifejezésre, és tekintse meg a sablonhoz felvehető Internet Explorer-beállításokat.
+  Egy másik példában keressen rá `microsoft word`. Megjelenik a Microsoft Word programhoz beállítható összes beállítás. A `explorer` megkeresve megtekintheti az összes olyan Internet Explorer-beállítást, amelyet hozzá tud adni a sablonhoz.
 
 ## <a name="next-steps"></a>További lépések
 
 A sablon létre lett hozva, de még nem csinál semmit. Ezután [rendelje hozzá a sablont, más néven profilt](device-profile-assign.md) , és [Figyelje annak állapotát](device-profile-monitor.md).
+
+[Az Office 365 frissítése felügyeleti sablonok használatával](administrative-templates-update-office.md).
