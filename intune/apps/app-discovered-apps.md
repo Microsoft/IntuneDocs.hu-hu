@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 10/22/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8519ad00024be43371cd118e3f37ae2fbc57898b
-ms.sourcegitcommit: 25acfc88b366d2da71c37d354a0238e4f1168325
+ms.openlocfilehash: eff4ccdc8b40da4d72394001b88446653ff71bd0
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72813367"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74564246"
 ---
 # <a name="intune-discovered-apps"></a>Intune által felderített alkalmazások
 
@@ -33,18 +33,18 @@ Az Intune által **felderített alkalmazások** az észlelt alkalmazások listá
 
 Az Intune az észlelt alkalmazások összesített listáját jeleníti meg az Intune-ban regisztrált eszközökön a bérlőben.
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Az **Intune** panelen válassza az **ügyfélalkalmazások** > **felderített alkalmazások**elemet.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **alkalmazások** > **figyelő** > **felderített alkalmazások**elemet.
 
 >[!NOTE]
->Exportálhatja a felderített alkalmazások listáját egy. csv-fájlba, ha kiválasztja az **Exportálás** lehetőséget a **felderített alkalmazások** panelen.
+>A felderített alkalmazások listáját exportálhatja egy. csv-fájlba a **felderített alkalmazások** ablaktáblán az **Exportálás** lehetőség kiválasztásával.
 >
 >A felderített Win32-alkalmazások esetében jelenleg nincsenek összesített darabszámok. Az ilyen típusú adattípusokat csak eszközönként lehet megtekinteni.
 
 Az Intune a bérlőben lévő egyes eszközök felderített alkalmazásainak listáját is megjeleníti.
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Az Intune panelen válassza az **eszközök** > **minden eszköz**lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **eszközök** > **minden eszköz**lehetőséget.
 3. Válassza ki az eszközt.
 4. Ha meg szeretné tekinteni az eszköz észlelt alkalmazásait, válassza a **figyelő** szakaszban a **felderített alkalmazások** elemet.
 
@@ -69,7 +69,7 @@ Az alábbi lista tartalmazza az alkalmazás platformjának típusát, a személy
 
 A felderített alkalmazások száma nem feltétlenül egyezik a telepített állapotú alkalmazások számával. A lehetséges eltérések a következők:
 
-- Egy telepített felügyelt alkalmazás céljának módosítása miatt csökkenhet a telepítések száma az állapotpanelen, de az alkalmazás továbbra is szerepel az észlelt alkalmazások paneljén.
+- Egy telepített felügyelt alkalmazás célzási változása miatt előfordulhat, hogy a telepítés száma az állapot ablaktáblán csökken, de az észlelt alkalmazásokban továbbra is jelenteni kell.
 - Egy bérlőn belül egyazon alkalmazás több példányának megjelölése esetén a felhasználók és eszközök esetleges átfedései miatt eltérés léphet fel a számok között. Az alkalmazás minden példánya számolja az átfedésben lévő felhasználókat, a felderített alkalmazások esetében azonban a felhasználók többszörösen lesznek számolva.
 - A felderített alkalmazásokat és az alkalmazások állapotát a rendszer különböző időközönként gyűjti be, így emiatt is eltérések alakulhatnak ki az alkalmazások számát illetően.
 

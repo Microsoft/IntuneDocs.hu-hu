@@ -5,7 +5,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/22/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a4c1f3d8b6b7edbf51ca2aaa681909e6c220de3c
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 7567f0ee8c2bac5c3cf3c4e0fae027bdec35e27e
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72507230"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74563553"
 ---
 # <a name="add-an-android-line-of-business-app-to-microsoft-intune"></a>Androidos üzletági alkalmazások hozzáadása a Microsoft Intune-hoz
 
@@ -38,11 +38,9 @@ Az üzletági (LOB) alkalmazásokat egy alkalmazástelepítő fájlból adja hoz
 
 ## <a name="step-1-specify-the-software-setup-file"></a>1\. lépés: A szoftvertelepítő fájl megadása
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Az **Intune** ablaktáblán válassza az **Ügyfélalkalmazások** lehetőséget.
-3. Az **Ügyfélalkalmazások** területen válassza a **Kezelés** > **Alkalmazások** elemet.
-4. Az alkalmazások listája fölött válassza a **Hozzáadás** lehetőséget.
-5. Az **Alkalmazás hozzáadása** panelen válassza az **Üzletági alkalmazás** lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**lehetőséget.
+3. Az **alkalmazás hozzáadása** panelen válassza az **üzletági alkalmazás** lehetőséget az **alkalmazás típusaként**.
 
 ## <a name="step-2-configure-the-app-package-file"></a>2\. lépés: Az alkalmazáscsomag-fájl konfigurálása
 

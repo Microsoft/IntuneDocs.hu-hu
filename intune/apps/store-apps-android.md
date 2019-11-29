@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/27/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3153a470649e86bbafc9e8295a1c68532fc27c63
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: ec800064d109cca42878c79ade6777de9b782015
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72497697"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74563507"
 ---
 # <a name="add-android-store-apps-to-microsoft-intune"></a>Androidos áruházbeli alkalmazások hozzáadása a Microsoft Intune-hoz
 
@@ -35,12 +35,10 @@ Mielőtt az alkalmazást hozzárendelné egy eszközhöz vagy felhasználói cso
 
 A következő módon adhat hozzá Android-áruházból származó alkalmazást az Intune-hoz az Azure Portalon:
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Az **Intune** ablaktáblán válassza az **Ügyfélalkalmazások** lehetőséget.
-4. Az **Ügyfélalkalmazások** tevékenységprofil panelén a **Kezelés** szakaszban válassza az **Alkalmazások** lehetőséget.
-5. Válassza a **Hozzáadás** elemet.
-6. Az **Alkalmazás hozzáadása** panelen az elérhető **Áruházbeli alkalmazások** típusai közül válassza az **Android** lehetőséget.
-7. Az alkalmazás adatainak megadásához válassza a **Konfigurálás** lehetőséget, majd adja meg a következő adatokat. Android-alkalmazások esetén keresse fel a [Google Play áruházat](https://play.google.com/store), és keresse meg az üzembe helyezni kívánt alkalmazást. Válassza ki az alkalmazást, és jegyezze fel az alkalmazás adatait. A választott alkalmazástól függően előfordulhat, hogy egyes értékek automatikusan ki vannak töltve a panelen:
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**lehetőséget.
+3. Az **Alkalmazás hozzáadása** panelen az elérhető **Áruházbeli alkalmazások** típusai közül válassza az **Android** lehetőséget.
+4. Az alkalmazás adatainak megadásához válassza a **Konfigurálás** lehetőséget, majd adja meg a következő adatokat. Android-alkalmazások esetén keresse fel a [Google Play áruházat](https://play.google.com/store), és keresse meg az üzembe helyezni kívánt alkalmazást. Válassza ki az alkalmazást, és jegyezze fel az alkalmazás adatait. A választott alkalmazástól függően előfordulhat, hogy egyes értékek automatikusan ki vannak töltve a panelen:
     - **Név**: Itt adhatja meg az alkalmazás céges portálon megjelenítendő nevét. Gondoskodjon róla, hogy az alkalmazás neve egyedi legyen. Ha két alkalmazás neve megegyezik, a felhasználók csak az egyik alkalmazást fogják látni a céges portálon.
     - **Leírás**: Itt adhatja meg az alkalmazás leírását. A leírás a céges portálon jelenik meg a felhasználók számára.
     - **Kiadó:** Adja meg az alkalmazás kiadójának nevét.
@@ -54,8 +52,8 @@ A következő módon adhat hozzá Android-áruházból származó alkalmazást a
     - **Tulajdonos**: Igény esetén megadhatja az alkalmazás tulajdonosának nevét (például *HR-osztály*).
     - **Megjegyzések:** : Ide írhatja be igény szerint az alkalmazáshoz társítani kívánt megjegyzéseket.
     - **Ikon** (nem kötelező): Itt töltheti fel az alkalmazáshoz hozzárendelni kívánt ikont. Ez az alkalmazásikon jelenik meg a céges portálon böngésző felhasználók számára.
-8. Válassza az **OK** gombot.
-9. Válassza a **Hozzáadás** elemet.
+5. Válassza az **OK** gombot.
+6. Válassza a **Hozzáadás** elemet.
 
 A létrehozott alkalmazás megjelenik az alkalmazáslistában, ahol hozzárendelheti a kiválasztott csoportokhoz. 
 

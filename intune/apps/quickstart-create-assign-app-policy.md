@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 07/24/2019
+ms.date: 11/26/2019
 ms.topic: quickstart
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,18 +18,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bcda312274e78d327a3a515eb6c95454e38c96f1
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 1800fa91ed5650fd57a31d24fdb3767a60dc5816
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72507126"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74563795"
 ---
 # <a name="quickstart-create-and-assign-an-app-protection-policy"></a>Rövid útmutató: Alkalmazásvédelmi szabályzat létrehozása és hozzárendelése
 
 Ebben a rövid útmutatóban az Intune-nal létrehoz és hozzárendel egy alkalmazásvédelmi szabályzatot egy ügyfélalkalmazáshoz a végfelhasználó eszközén. Az Intune alkalmazásvédelmi szabályzatokkal ellenőrzi, hogy az alkalmazások megfelelnek-e a szervezet adatvédelmi követelményeinek.
 
-Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon egy ingyenes próbafiókkal](../fundamentals/free-trial-sign-up.md).
+Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon ingyenes próbafiókot](../fundamentals/free-trial-sign-up.md).
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -37,13 +37,13 @@ Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon egy ingyenes próbafi
 
 ## <a name="sign-in-to-intune"></a>Bejelentkezés az Intune-ba
 
-Jelentkezzen be az [Intune-ba](https://aka.ms/intuneportal) [globális rendszergazdaként vagy Intune-szolgáltatásadminisztrátorként](../fundamentals/users-add.md#types-of-administrators). Ha létrehozott egy Intune próba-előfizetést, az a fiók lesz a globális rendszergazda, amelyikkel létrehozta azt.
+Jelentkezzen be az [Intune-ba](https://aka.ms/intuneportal) [globális rendszergazdaként vagy Intune-szolgáltatásadminisztrátorként](../fundamentals/users-add.md#types-of-administrators). Ha létrehozott egy Intune próba-előfizetést, az a fiók lesz a globális rendszergazda, amelyikkel azt létrehozta.
 
-## <a name="create-an-app-protection-policy"></a>Alkalmazás védelmi szabályzat létrehozása
+## <a name="create-an-app-protection-policy"></a>Alkalmazásvédelmi szabályzat létrehozása
 
 Az alábbi lépések végrehajtásával hozhat létre egy alkalmazás-védelmi szabályzatot:
 
-1. Az [Intune-ban](https://aka.ms/intuneportal) válassza az **Ügyfélalkalmazások** > **Alkalmazásvédelmi szabályzatok** > **Szabályzat létrehozása** lehetőséget. 
+1. Az [Intune](https://aka.ms/intuneportal)-ban válassza az **alkalmazások** > **alkalmazás-védelmi házirendek** > **házirend létrehozása**lehetőséget. 
 2. Adja meg a következő adatokat: 
 
     - **Név**: *Windows 10 tartalomvédelem*
@@ -67,7 +67,7 @@ Miután létrehozott egy alkalmazásvédelmi szabályzatot az Intune-ban, azt ho
 
 Alkalmazásvédelmi szabályzat hozzárendeléséhez kövesse az alábbi lépéseket:
 
-1. Az [Intune-ban](https://aka.ms/intuneportal) válassza az **Intune** > **Ügyfélalkalmazások** > **Alkalmazásvédelmi szabályzatok**. 
+1. Az [Intune](https://aka.ms/intuneportal)-ban válassza az **intune** > **alkalmazások** > **alkalmazás-védelmi szabályzatok**lehetőséget. 
 2. Jelölje ki a korábban létrehozott alkalmazásvédelmi szabályzatot. Ebben a rövid útmutatóban a szabályzat a **Windows 10 tartalomvédelem**.
 3. Válassza a **Hozzárendelések** lehetőséget.
 4. A **Befoglalás** lapon válassza a **Belefoglalandó csoportok kijelölése** lehetőséget.

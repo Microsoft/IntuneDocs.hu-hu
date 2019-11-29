@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/23/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 81a2575c0d4e6cdcfdffe09e37880f56647bc835
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 8d1a8ee3f6d5eb190fb2ee252dfb5f6c23a1cf16
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72496431"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74563771"
 ---
 # <a name="create-and-deploy-windows-information-protection-wip-app-protection-policy-with-intune"></a>A Windows Information Protection (WIP) alkalmazásvédelmi szabályzatainak létrehozása és bevezetése az Intune használatával
 
@@ -71,53 +71,51 @@ Miután cégénél beállította az Intune-t, létrehozhat WIP-specifikus szabá
 > Az Intune-ban a WIP-szabályzatok létrehozásával – beleértve az elérhető beállításokkal és a konfigurálásuk módjával – kapcsolatosan a Windows rendszerbiztonsági dokumentáció gyűjteményében, a [Windows Information Protection (WIP) szabályzatainak MAM használatával, a Microsoft Intune Azure Portaljával való létrehozásáról szóló szakaszban](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/create-wip-policy-using-mam-intune-azure) talál további információt. 
 
 
-1. Jelentkezzen be az [Azure portálra](https://portal.azure.com).
-2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget.
-3. A **Microsoft Intune** panelen válassza az **Ügyfélalkalmazások** lehetőséget.
-4. Az **Ügyfélalkalmazások** panelen válassza az **Alkalmazásvédelmi szabályzatok** lehetőséget.
-5. Válassza a **Szabályzat hozzáadása** lehetőséget a **Szabályzat hozzáadása** panel megjelenítéséhez.
-6. Adja meg a következő értékeket:
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **alkalmazások** > az **alkalmazás-védelmi házirendek** > **házirend létrehozása**lehetőséget.
+3. Adja meg a következő értékeket:
     - **Név:** Adja meg az új szabályzat nevét (szükséges).
     - **Leírás:** Adjon meg egy leírást (nem kötelező).
     - **Platform:** Az alkalmazásvédelmi szabályzat támogatott platformjának válassza a **Windows 10** lehetőséget.
     - **Regisztráció állapota:** Válassza a **Regisztráció nélkül** lehetőséget a szabályzat regisztrációs állapotaként.
-7. Válassza a **Létrehozás** lehetőséget. A szabályzat létrejön, és megjelenik az **Alkalmazásvédelmi szabályzatok** panelen található táblázatban.
+4. Válassza a **Létrehozás** lehetőséget. Ekkor létrejön a szabályzat, és megjelenik az **alkalmazás-védelmi házirendek** ablaktábla táblázatban.
 
 ## <a name="to-add-recommended-apps-to-your-protected-apps-list"></a>Javasolt alkalmazások hozzáadása a védett alkalmazások listájához
 
-1. A **Microsoft Intune** panelen válassza az **Ügyfélalkalmazások** lehetőséget.
-2. Az **Ügyfélalkalmazások** panelen válassza az **Alkalmazásvédelmi szabályzatok** lehetőséget.
-3. Az **Alkalmazásvédelmi szabályzatok** panelen válassza ki a módosítani kívánt szabályzatot. Megjelenik az **Intune App Protection** panel.
-4. Az **Intune App Protection** panelen válassza a **Védett alkalmazások** lehetőséget. Megnyílik a **Védett alkalmazások** panel, ahol azoknak az alkalmazásoknak a listáját láthatja, amelyekre ez a szabályzat vonatkozik.
-5. Válassza a **Alkalmazások hozzáadása** lehetőséget. Az **Alkalmazások hozzáadása** területen megtekintheti a szűrt alkalmazáslistát. A panel tetején található listával módosíthatja a listaszűrőt.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **alkalmazások** > **alkalmazás-védelmi szabályzatok**lehetőséget.
+3. Az **alkalmazás-védelmi szabályzatok** panelen válassza ki a módosítani kívánt szabályzatot. Megjelenik a **Intune app Protection** panel.
+4. A **Intune app Protection** ablaktáblán válassza a **védett alkalmazások** lehetőséget. Megnyílik a **Protected apps (védett alkalmazások** ) panel, amely megjeleníti az összes olyan alkalmazást, amely már szerepel az alkalmazás-védelmi házirend listáján.
+5. Válassza a **Alkalmazások hozzáadása** lehetőséget. Az **Alkalmazások hozzáadása** területen megtekintheti a szűrt alkalmazáslistát. A panel tetején található lista lehetővé teszi a lista szűrő módosítását.
 6. Válassza ki azokat az alkalmazásokat, amelyeknek hozzáférést kíván adni a céges adatokhoz.
-7. Kattintson az **OK**gombra. A **Védett alkalmazások** panel frissül, és kibővül a kiválasztott alkalmazásokkal.
+7. Kattintson az **OK**gombra. A **védett alkalmazások** panel frissül, és az összes kiválasztott alkalmazást megjeleníti.
 8. Kattintson a **Mentés**gombra.
 
 ## <a name="add-a-store-app-to-your-protected-apps-list"></a>Áruházbeli alkalmazás hozzáadása a védett alkalmazások listájához
 
 **Áruházbeli alkalmazás hozzáadása**
-1. A **Microsoft Intune** panelen válassza az **Ügyfélalkalmazások** lehetőséget.
-2. Az **Ügyfélalkalmazások** panelen válassza az **Alkalmazásvédelmi szabályzatok** lehetőséget.
-3. Az **Alkalmazásvédelmi szabályzatok** panelen válassza ki a módosítani kívánt szabályzatot. Megjelenik az **Intune App Protection** panel.
-4. Az **Intune App Protection** panelen válassza a **Védett alkalmazások** lehetőséget. Megnyílik a **Védett alkalmazások** panel, ahol azoknak az alkalmazásoknak a listáját láthatja, amelyekre ez a szabályzat vonatkozik.
-5. Válassza a **Alkalmazások hozzáadása** lehetőséget. Az **Alkalmazások hozzáadása** területen megtekintheti a szűrt alkalmazáslistát. A panel tetején található listával módosíthatja a listaszűrőt.
+
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **alkalmazások** > **alkalmazás-védelmi szabályzatok**lehetőséget.
+3. Az **alkalmazás-védelmi szabályzatok** panelen válassza ki a módosítani kívánt szabályzatot. Megjelenik a **Intune app Protection** panel.
+4. A **Intune app Protection** ablaktáblán válassza a **védett alkalmazások** lehetőséget. Megnyílik a **Protected apps (védett alkalmazások** ) panel, amely megjeleníti az összes olyan alkalmazást, amely már szerepel az alkalmazás-védelmi házirend listáján.
+5. Válassza a **Alkalmazások hozzáadása** lehetőséget. Az **Alkalmazások hozzáadása** területen megtekintheti a szűrt alkalmazáslistát. A panel tetején található lista lehetővé teszi a lista szűrő módosítását.
 6. Válassza az **Áruházbeli alkalmazások** lehetőséget a listában.
 7. Adja meg a **Név**, a **Közzétevő**, a **Terméknév** és a **Művelet** értékét. A **Művelet** értéket **Engedélyezésre** állítsa, így az alkalmazás hozzáférhet a vállalati adatokhoz.
-9. Kattintson az **OK**gombra. A **Védett alkalmazások** panel frissül, és kibővül a kiválasztott alkalmazásokkal.
+9. Kattintson az **OK**gombra. A **védett alkalmazások** panel frissül, és az összes kiválasztott alkalmazást megjeleníti.
 10. Kattintson a **Mentés**gombra.
 
 ## <a name="add-a-desktop-app-to-your-protected-apps-list"></a>Asztali alkalmazás hozzáadása az védett alkalmazások listájához
 
 **Asztali alkalmazás hozzáadása**
-1. A **Microsoft Intune** panelen válassza az **Ügyfélalkalmazások** lehetőséget.
-2. Az **Ügyfélalkalmazások** panelen válassza az **Alkalmazásvédelmi szabályzatok** lehetőséget.
-3. Az **Alkalmazásvédelmi szabályzatok** panelen válassza ki a módosítani kívánt szabályzatot. Megjelenik az **Intune App Protection** panel.
-4. Az **Intune App Protection** panelen válassza a **Védett alkalmazások** lehetőséget. Megnyílik a **Védett alkalmazások** panel, ahol azoknak az alkalmazásoknak a listáját láthatja, amelyekre ez a szabályzat vonatkozik.
-5. Válassza a **Alkalmazások hozzáadása** lehetőséget. Az **Alkalmazások hozzáadása** területen megtekintheti a szűrt alkalmazáslistát. A panel tetején található listával módosíthatja a listaszűrőt.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **alkalmazások** > **alkalmazás-védelmi szabályzatok**lehetőséget.
+3. Az **alkalmazás-védelmi szabályzatok** panelen válassza ki a módosítani kívánt szabályzatot. Megjelenik a **Intune app Protection** panel.
+4. A **Intune app Protection** ablaktáblán válassza a **védett alkalmazások** lehetőséget. Megnyílik a **Protected apps (védett alkalmazások** ) panel, amely megjeleníti az összes olyan alkalmazást, amely már szerepel az alkalmazás-védelmi házirend listáján.
+5. Válassza a **Alkalmazások hozzáadása** lehetőséget. Az **Alkalmazások hozzáadása** területen megtekintheti a szűrt alkalmazáslistát. A panel tetején található lista lehetővé teszi a lista szűrő módosítását.
 6. Válassza az **Asztali alkalmazások** lehetőséget a listában.
 7. Adja meg a **Név**, a **Közzétevő**, a **Terméknév**, a **Fájl**, a **Legalacsonyabb verzió**, a **Maximális verzió** és a **Művelet** értékét. A **Művelet** értéket **Engedélyezésre** állítsa, így az alkalmazás hozzáférhet a vállalati adatokhoz.
-9. Kattintson az **OK**gombra. A **Védett alkalmazások** panel frissül, és kibővül a kiválasztott alkalmazásokkal.
+9. Kattintson az **OK**gombra. A **védett alkalmazások** panel frissül, és az összes kiválasztott alkalmazást megjeleníti.
 10. Kattintson a **Mentés**gombra.
 
 ## <a name="wip-learning"></a>WIP Learning
@@ -150,7 +148,7 @@ A WIP kikapcsolása után a rendszer megkísérli visszafejteni a WIP-címkével
 
 ### <a name="add-a-protection-mode"></a>Védelmi mód hozzáadása
 
-1. Az **Alkalmazásszabályzat** panelen válassza ki a kívánt szabályzat nevét, majd válassza a **Kötelező beállítások** lehetőséget.
+1. Az **alkalmazás-házirend** ablaktáblán válassza ki a házirend nevét, majd válassza a **szükséges beállítások**lehetőséget.
 
     ![Képernyőfelvétel a tanulási mód panelről](./media/windows-information-protection-policy-create/learning-mode-sc1.png)
 
@@ -160,7 +158,7 @@ A WIP kikapcsolása után a rendszer megkísérli visszafejteni a WIP-címkével
 
 1. Nyissa meg az [Azure Portalt](https://portal.azure.com). Válassza a **Minden szolgáltatás** lehetőséget. A szövegmezőbe írja be az **Intune** szót.
 
-3. Válassza az **Intune** > **Ügyfélalkalmazások** lehetőséget.
+3. Válassza az **Intune** > **alkalmazások**lehetőséget.
 
 4. Válassza az **Alkalmazásvédelem állapota** > **Jelentések** > **Windows Information Protection Learning** elemet.  
 
@@ -188,9 +186,9 @@ A **Titkosított elemek keresésének engedélyezése a Windows Search szolgált
 
 A WIP alkalmazásvédelmi szabályzat létrehozása után a MAM használatával kell bevezetnie azt a cégnél.
 
-1. Az **Alkalmazásszabályzat** panelen válassza ki az újonnan létrehozott alkalmazásvédelmi szabályzatot, majd válassza a **Felhasználói csoportok** > **Felhasználói csoport hozzáadása** elemet.
+1. Az **alkalmazás-házirend** ablaktáblán válassza ki az újonnan létrehozott alkalmazás-védelmi szabályzatot, válassza a **felhasználói csoportok** > **felhasználói csoport hozzáadása**lehetőséget.
 
-    A **Felhasználói csoport hozzáadása** panelen megjelenik az Azure Active Directoryban elérhető összes felhasználói csoport listája.
+    Az Azure Active Directoryban található összes biztonsági csoportból álló felhasználói csoportok listája a **felhasználói csoport hozzáadása** panelen nyílik meg.
 
 2. Válassza ki azt a csoportot, amelyre alkalmazni szeretné a szabályzatot, majd válassza a **Kiválasztás** lehetőséget a szabályzat üzembe helyezéséhez.
 

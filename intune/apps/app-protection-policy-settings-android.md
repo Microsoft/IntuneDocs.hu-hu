@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 10/24/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,15 +18,15 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c420446d9293ae2a2d1905dcff218056e8e6c875
-ms.sourcegitcommit: 16a9109b4028589c17695d41271ca4fee8b1d697
+ms.openlocfilehash: 9005d501effd79a9fb7fc0f99e325f339a21a7b2
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74540717"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74564111"
 ---
 # <a name="android-app-protection-policy-settings-in-microsoft-intune"></a>Android-eszközök alkalmazásvédelmi szabályzatainak beállításai a Microsoft Intune-ban
-Ez a cikk az alkalmazásvédelmi szabályzatok Android-eszközökre vonatkozó beállításait ismerteti. Az ismertetett szabályzatbeállításokat az Azure Portal **Beállítások** paneljén lehet [konfigurálni](app-protection-policies.md) az alkalmazásvédelmi szabályzatokhoz.
+Ez a cikk az alkalmazásvédelmi szabályzatok Android-eszközökre vonatkozó beállításait ismerteti. A leírt házirend-beállítások a Azure Portal **Beállítások** paneljén [konfigurálhatók](app-protection-policies.md) az alkalmazás védelmi házirendjéhez.
 A házirend-beállítások három kategóriába sorolhatók: adatvédelmi beállítások, hozzáférési követelmények és feltételes indítás. Ebben a cikkben a *szabályzattal felügyelt alkalmazások* kifejezés olyan alkalmazásokra utal, amelyekhez alkalmazásvédelmi szabályzatot állítottak be.
 
 > [!IMPORTANT]

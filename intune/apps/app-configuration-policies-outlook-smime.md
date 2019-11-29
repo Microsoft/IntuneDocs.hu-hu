@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1b2f483415d050486ae9979899d9308154a9b131
-ms.sourcegitcommit: a7b479c84b3af5b85528db676594bdb3a1ff6ec6
+ms.openlocfilehash: 348d1fe2fd236a2af11f7e58dc11530a5ce397bc
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74412016"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74564194"
 ---
 # <a name="configure-smime-with-outlook-for-ios"></a>S/MIME konfigurálása iOS-hez készült Outlookkal
 
@@ -62,14 +62,14 @@ Az iOS-hez készült Outlook két módszert támogat a tanúsítványok eszköz�
 Az Outlook for iOS S/MIME konfigurálásához a Endpoint Managerben, beleértve az iOS-hez használható Outlook által használható S/MIME-tanúsítványok automatikus kézbesítését, az alábbi lépéseket követve:
 
 ### <a name="add-the-microsoft-outlook-app"></a>A Microsoft Outlook alkalmazás hozzáadása
-1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 2. Adja hozzá a Microsoft Outlook iOS-alkalmazást az App Store-ból a Endpoint Managerbe, vagy az iOS-hez készült Outlookot a Apple Volume Purchase Program. További információ: iOS-es [áruházbeli alkalmazások hozzáadása a Microsoft Intunehoz](~/apps/store-apps-ios.md) , vagy [a Apple Volume Purchase Program által a Microsoft Intune használatával vásárolt iOS-és MacOS-alkalmazások kezelése](~/apps/vpp-apps-ios.md).
 
 ### <a name="create-the-outlook-for-ios-smime-configuration-policy"></a>Az Outlook for iOS S/MIME-konfigurációs szabályzat létrehozása
 
 A következő lépésekkel hozhatja létre és konfigurálhatja az Outlook for iOS S/MIME-szabályzatot a Endpoint Managerben. Ezek a beállítások biztosítják az aláírási és titkosítási tanúsítványok automatikus kézbesítését.
 
-1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **alkalmazások** > **alkalmazások konfigurációs szabályzatok** > **Hozzáadás**elemet.<br>
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és válassza az **alkalmazások** > **alkalmazások konfigurációs szabályzatok** > **Hozzáadás**elemet.<br>
 Ekkor megjelenik a **konfigurációs szabályzat hozzáadása** panel.
 2. Adja meg a konfigurációs szabályzat **nevét** és **leírását** .
 3. Válassza a **felügyelt eszközök** lehetőséget az **eszköz beléptetési típusaként**.

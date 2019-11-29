@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 10/22/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ee3ecd64254c0e212ffc86155d677bf18ba647a
-ms.sourcegitcommit: f6b82c62af81a2643a1aaec774afa42d02eef352
+ms.openlocfilehash: a104b4d41a364c552a8ebac73ff3341af71d6d21
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73566177"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74564165"
 ---
 # <a name="add-app-configuration-policies-for-managed-ios-devices"></a>Alkalmazáskonfigurációs szabályzatok hozzáadása felügyelt iOS-eszközökhöz
 
@@ -51,8 +51,7 @@ Miután kiválasztotta a belefoglalt csoportokat az alkalmazáskonfigurálási s
 ## <a name="create-an-app-configuration-policy"></a>Alkalmazáskonfigurációs szabályzat konfigurálása
 
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Válassza az **Ügyfélalkalmazások** területet.
-4. Válassza az **Alkalmazáskonfigurációs szabályzatok** lehetőséget a **Felügyelet** csoportban, majd a **Hozzáadás** lehetőséget.
+3. Válassza ki az **alkalmazások** > **alkalmazás-konfigurációs házirendek** > **Hozzáadás**elemet.
 5. Adja meg a következő adatokat:
     - **Név** – Az Azure Portalon megjelenítendő profilnév.
     - **Leírás** – Az Azure Portalon megjelenítendő profilleírás.
@@ -74,7 +73,7 @@ Miután kiválasztotta a belefoglalt csoportokat az alkalmazáskonfigurálási s
 13. Válassza a **Kizárás** lapot. 
 14. Kattintson a **Válassza ki a kizárandó csoportokat** lehetőségre a kapcsolódó panel megjelenítéséhez.
 
-    ![Képernyőkép a szabályzat-hozzárendelések Válassza ki a kizárandó csoportokat paneljéről](./media/app-configuration-policies-use-ios/app-config-policy03.png)
+    ![Képernyőkép a szabályzat-hozzárendelésekről – válassza ki a kizárni kívánt csoportokat](./media/app-configuration-policies-use-ios/app-config-policy03.png)
 15. Válassza ki azokat a csoportokat, amelyeket ki szeretne zárni, majd kattintson a **Kijelölés** lehetőségre.
 
     >[!NOTE]
@@ -181,10 +180,9 @@ Ezenkívül az Intune a következő tokentípusokat támogatja a tulajdonságlis
 
 A DEP (Apple Készülékregisztrációs program) regisztrációi nem kompatibilisek a Céges portál alkalmazás App Store-verziójával. A következő lépésekkel azonban konfigurálhatja a Céges portál alkalmazást az iOS DEP-eszközök támogatásához.
 
-1. A Azure Portal Intune-ban:
-    - Szükség esetén adja hozzá a Intune Céges portált az **Intune** > **Client apps** > **apps** > **hozzáadásához**.
-    - A Céges portál alkalmazáshoz tartozó alkalmazás-konfigurációs szabályzat létrehozásához nyissa meg az **ügyfélalkalmazások** > **alkalmazás-konfigurációs**házirendeket.
-2. Hozzon létre egy alkalmazás-konfigurációs szabályzatot az alábbi XML-sel. Az alkalmazás-konfigurációs házirend létrehozásával és az XML-adatok megadásával kapcsolatos további információkért tekintse meg az [alkalmazás-konfigurációs szabályzatok hozzáadása a felügyelt iOS-eszközökhöz](app-configuration-policies-use-ios.md) vagy a hibrid Mdm, [Beállítások alkalmazása iOS-alkalmazásokra a System Center alkalmazás konfigurációs házirendjeivel című témakört. Configuration Manager](https://docs.microsoft.com/sccm/mdm/deploy-use/configure-ios-apps-with-app-configuration-policies).
+1. Az Intune-ban szükség esetén adja hozzá a Intune Céges portál alkalmazást az **intune** > **apps** > **minden alkalmazás** > **Hozzáadás**lehetőséggel.
+2. Lépjen az **alkalmazások** > **alkalmazás-konfigurációs házirendek**elemre, és hozzon létre egy alkalmazás-konfigurációs házirendet a céges portál alkalmazáshoz.
+3. Hozzon létre egy alkalmazás-konfigurációs szabályzatot az alábbi XML-sel. Az alkalmazás-konfigurációs szabályzat létrehozásával és az XML-adatok megadásával kapcsolatos további információkért tekintse meg a [felügyelt iOS-eszközökhöz](app-configuration-policies-use-ios.md) vagy a hibrid Mdm tartozó alkalmazás-konfigurációs házirendek hozzáadása című témakört, és [alkalmazza a beállításokat iOS-alkalmazásokra System Center Configuration Manager alkalmazás-konfigurációs házirendekkel](https://docs.microsoft.com/sccm/mdm/deploy-use/configure-ios-apps-with-app-configuration-policies).
 
     ``` xml
     <dict>
@@ -202,7 +200,7 @@ A DEP (Apple Készülékregisztrációs program) regisztrációi nem kompatibili
 4. Kérje meg a végfelhasználókat, hogy jelentkezzenek be a Céges portál alkalmazásba, amikor az automatikusan települ.
 
 ## <a name="monitor-ios--app-configuration-status-per-device"></a>Az iOS-alkalmazáskonfigurációk figyelése minden egyes eszközön 
-Konfigurációs szabályzat hozzárendelése után figyelheti az iOS-alkalmazások konfigurációs állapotát az egyes felügyelt eszközökön. Az Azure Portal **Microsoft Intune** oldalán kattintson az **Eszközök** > **Minden eszköz** lehetőségre. A felügyelt eszközök listáján az egyik eszközre kattintva nyissa meg a hozzá tartozó panelt. Az eszköz paneljén kattintson az **Alkalmazáskonfiguráció** elemre.  
+Konfigurációs szabályzat hozzárendelése után figyelheti az iOS-alkalmazások konfigurációs állapotát az egyes felügyelt eszközökön. Az Azure Portal **Microsoft Intune** oldalán kattintson az **Eszközök** > **Minden eszköz** lehetőségre. A felügyelt eszközök listájából válasszon ki egy adott eszközt az eszközhöz tartozó ablaktábla megjelenítéséhez. Az eszköz ablaktáblán válassza az **alkalmazás konfigurációja**lehetőséget.  
 
 ## <a name="additional-information"></a>További információ
 

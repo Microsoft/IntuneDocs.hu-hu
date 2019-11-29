@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 10/24/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -17,24 +17,24 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af24b5fe33bc1e794529ef5a5ab6975eed4fb9cc
-ms.sourcegitcommit: 556b7ea2049014c9027f0e44affd3f301fab55fc
+ms.openlocfilehash: b4839340ba1f3bad6f28a1120d882d0f600b1d44
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73709913"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74563566"
 ---
 # <a name="add-microsoft-edge-for-windows-10-to-microsoft-intune"></a>A Microsoft Edge for Windows 10 hozzáadása a Microsoft Intunehoz
 
 Az alkalmazások üzembe helyezése, konfigurálása, monitorozása vagy védelemmel való ellátása előtt hozzá kell adnia őket az Intune-hoz. Az elérhető [alkalmazások](~/apps/apps-add.md#app-types-in-microsoft-intune) egyike a Microsoft Edge *77-es és újabb verziója*. Ha ezt az alkalmazást az Intune-ban kiválasztja, a Microsoft Edge *77-es vagy újabb verzióját* a Windows 10 rendszert futtató eszközökhöz rendelheti hozzá és telepítheti.
 
 > [!IMPORTANT]
-> Az alkalmazás típusa **nyilvános előzetes** verzióban érhető el, és fejlesztői és bétaverziós csatornákat kínál a Windows 10 rendszerhez. A központi telepítés csak angol (EN) nyelven érhető el, de a végfelhasználók a **beállítások**  > **nyelvek**területen módosíthatják a böngésző megjelenítési nyelvét. A Microsoft Edge egy, a rendszerkörnyezetben és hasonló architektúrákban telepített Win32-alkalmazás (x86-OS és x64-es OS-es x64-es alkalmazás). Az Intune észlelni fogja a Microsoft Edge összes meglévő telepítését. Ha a felhasználói környezetben van telepítve, a rendszer telepítése felülírja azt. Ha a rendszerkörnyezetbe van telepítve, a rendszer a telepítés sikerességét jelenti. Emellett a Microsoft Edge automatikus frissítései alapértelmezés szerint **be vannak kapcsolva** , és a Microsoft Edge nem távolítható el.
+> Az alkalmazás típusa **nyilvános előzetes** verzióban érhető el, és fejlesztői és bétaverziós csatornákat kínál a Windows 10 rendszerhez. A központi telepítés csak angol (EN) nyelven érhető el, de a végfelhasználók a **beállítások** > **nyelvek**területen módosíthatják a böngésző megjelenítési nyelvét. A Microsoft Edge egy, a rendszerkörnyezetben és hasonló architektúrákban telepített Win32-alkalmazás (x86-OS és x64-es OS-es x64-es alkalmazás). Az Intune észlelni fogja a Microsoft Edge összes meglévő telepítését. Ha a felhasználói környezetben van telepítve, a rendszer telepítése felülírja azt. Ha a rendszerkörnyezetbe van telepítve, a rendszer a telepítés sikerességét jelenti. Emellett a Microsoft Edge automatikus frissítései alapértelmezés szerint **be vannak kapcsolva** , és a Microsoft Edge nem távolítható el.
 
 > [!NOTE]
 > A Microsoft Edge *77-es és újabb* verziói a MacOS-re is elérhetők.
 > 
-> A munkahelyi csatlakoztatási számítógépeken a Microsoft Edge beépített alkalmazás-telepítése nem használható. A beépített alkalmazás üzembe helyezéséhez az Intune felügyeleti bővítmény szükséges, amely csak a HRE-hez csatlakoztatott eszközökhöz létezik. Továbbra is telepítheti a Microsoft Edge *77-es vagy újabb verzióját* az **ügyfélalkalmazások**számára feltöltött *. msi* használatával: [Windowsos üzletági alkalmazások hozzáadása a Microsoft Intunehoz](~/apps/lob-apps-windows.md).
+> A munkahelyi csatlakoztatási számítógépeken a Microsoft Edge beépített alkalmazás-telepítése nem használható. A beépített alkalmazás üzembe helyezéséhez az Intune felügyeleti bővítmény szükséges, amely csak a HRE-hez csatlakoztatott eszközökhöz létezik. Továbbra is telepítheti a Microsoft Edge *77-es vagy újabb verzióját* az **alkalmazásba**feltöltött *. msi* használatával: [Windowsos üzletági alkalmazások hozzáadása a Microsoft Intunehoz](~/apps/lob-apps-windows.md).
 
 ## <a name="prerequisites"></a>Előfeltételek
 - A Windows 10 RS2 és újabb verziójának megadása kötelező.
@@ -43,14 +43,14 @@ Az alkalmazások üzembe helyezése, konfigurálása, monitorozása vagy védele
 ## <a name="configure-the-app-in-intune"></a>Az alkalmazás konfigurálása az Intune-ban
 A Microsoft Edge 77-es vagy újabb verzióját a következő lépésekkel adhatja hozzá az Intune-hoz:
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Az **Intune** panelen válassza az **Ügyfélalkalmazások** > **Alkalmazások** > **Hozzáadás** elemet.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**lehetőséget.
 3. Az **alkalmazás típusa** listában a **Microsoft Edge 77-es és újabb verziójában**válassza a **Windows 10**lehetőséget.
 
 ## <a name="configure-app-information"></a>Az alkalmazásadatok konfigurálása
 Ebben a lépésben az alkalmazás telepítésével kapcsolatos információkat nyújt. Ez az információ segít azonosítani az alkalmazást az Intune-ban, és segít a felhasználóknak megkeresni az alkalmazást a vállalati portálon.
 
-1. **Az alkalmazásadatok** panel megjelenítéséhez kattintson az **alkalmazás adatai** elemre.
+1. Az **alkalmazásadatok ablaktábla** megjelenítéséhez kattintson az **alkalmazás adatai** elemre.
 2. Az **alkalmazás adatai** panelen megadhatja az alkalmazás telepítésével kapcsolatos információkat. Ez az információ segít azonosítani az alkalmazást az Intune-ban, és segít a felhasználóknak megkeresni az alkalmazást a vállalati portálon.
     - **Név**: Itt adhatja meg az alkalmazásnak a vállalati portálon megjelenő nevét. Ügyeljen arra, hogy minden név egyedi legyen. Ha ugyanazt az alkalmazásnevet kétszer adja meg, csak az egyik alkalmazás fog megjelenni a felhasználók számára a céges portálon.
     - **Leírás**: Itt adhatja meg az alkalmazás leírását. Megadhatja például, hogy a leírásban megjelenő felhasználók is fel legyenek listázva.
@@ -68,7 +68,7 @@ Ebben a lépésben az alkalmazás telepítésével kapcsolatos információkat n
 Ebben a lépésben konfigurálja az alkalmazás telepítési beállításait.
 
 1. Az **alkalmazás hozzáadása** panelen válassza az **Alkalmazásbeállítások**lehetőséget.
-2. Az **Alkalmazásbeállítások** panelen válassza a **csatorna** listából a **Beta** vagy a **dev** lehetőséget annak meghatározásához, hogy melyik peremhálózati csatornát fogja telepíteni az alkalmazásból.
+2. Az **Alkalmazásbeállítások** ablaktáblán válassza a **béta** vagy a **dev** lehetőséget a **csatorna** listából annak meghatározásához, hogy melyik peremhálózati csatornát fogja telepíteni az alkalmazásból.
     - **Bétaverzió** A Channel a Microsoft Edge legstabilabb előzetes verziója, és a legjobb választás a teljes pilóta számára a szervezeten belül. A főbb frissítések 6 hetente minden kiadásban a fejlesztői csatorna megismeréseit és fejlesztéseit is magában foglalja.
     - **Fejlesztői** A Channel készen áll a vállalati visszajelzésekre Windows, Windows Server és macOS rendszereken. Minden héten frissül, és tartalmazza a legújabb javításokat és javításokat.
 
@@ -82,10 +82,10 @@ A hatókör-címkék használatával meghatározhatja, hogy ki láthatja az ügy
 1.  Válassza a **hatókör (címkék)**  > **Hozzáadás**elemet.
 2.  A **Select (kijelölés** ) mező használatával keresheti meg a hatókör címkéit.
 3.  Jelölje be a jelölőnégyzetet az alkalmazáshoz hozzárendelni kívánt hatókör-címkék mellett.
-4.  Kattintson a **kijelölés**  > **OK gombra**.
+4.  Kattintson a **kijelölés** > **OK gombra**.
 
 ## <a name="add-the-app"></a>Az alkalmazás hozzáadása
-Ha befejezte az alkalmazás konfigurálását, válassza a **Hozzáadás** lehetőséget az **alkalmazás-alkalmazás** paneljén. 
+Ha befejezte az alkalmazás konfigurálását, válassza a **Hozzáadás** lehetőséget az **alkalmazás-alkalmazás** ablaktáblán. 
 
 A létrehozott alkalmazás megjelenik az alkalmazáslistában, ahol hozzárendelheti a kiválasztott csoportokhoz. 
 

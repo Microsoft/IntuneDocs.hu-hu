@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fcc5dea1a3f9e6a1f2bec877688962d7be70cc7c
-ms.sourcegitcommit: d2d18eef64bcf16eec1a48fcb67f1362537c0245
+ms.openlocfilehash: ffabcace189efd60e9d532172ecd1f2a048eec2c
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73445309"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74562411"
 ---
 # <a name="intune-actions-and-options-supported-with-apple-user-enrollment"></a>Az Apple User beléptetésével támogatott Intune-műveletek és-beállítások
 
@@ -38,7 +38,7 @@ Ha a felhasználói beléptetési eszközökön bármilyen jelszót konfigurál,
 
 Például beállíthatja a **jelszó lejárati** beállítását, és leküldheti a szabályzatot a felhasználó által regisztrált eszközökre. Az eszközökön a következők történnek:
 - A **jelszó lejárati** beállítását a rendszer figyelmen kívül hagyja.
-- Az egyszerű jelszavak, például a `1111` vagy `1234`, nem engedélyezettek.
+- Az egyszerű jelszavak (például `1111` vagy `1234`) nem engedélyezettek.
 - Egy 6 számjegyű PIN-kód kényszerítve.
 
 ## <a name="administrator-remote-device-actions-and-options"></a>Rendszergazdai távoli eszközök műveletei és beállításai
@@ -57,13 +57,18 @@ A felhasználók beléptetési eszközein a végfelhasználók a Céges portál 
 - Távoli zárolás
 - Állapot ellenõrzése
 
+## <a name="app-deployment-options"></a>Alkalmazás központi telepítési beállításai
+A következő típusú alkalmazások telepíthetők a felhasználó beléptetési eszközeire:
+- Felhasználói licenccel rendelkező mennyiségi vásárlási terv (VPP) alkalmazások, beleértve az egyéni alkalmazásokat
+- Üzletági (LOB) alkalmazások
+- Webalkalmazások
+
 ## <a name="other-supported-options"></a>Egyéb támogatott beállítások
 
 Az alábbi beállítások támogatottak az Intune-ban az Apple User beléptetés használatával beléptetett eszközökhöz:
 - Alkalmazáson belüli VPN. Ez a támogatás kizárja a Safari-tartományokat, mivel a felhasználói regisztráció nem támogatja a Safari-beállítások konfigurálását.
 - Fi 
 - Vállalati alkalmazás eltávolítása a regisztráció törlése után
-- Alkalmazás központi telepítése felhasználó által licencelt mennyiségi vásárlási terv (VPP) használatával
 - Jailbreak-észlelés
 
 A következő korlátozások támogatottak:
@@ -94,9 +99,10 @@ A felhasználó beléptetésével regisztrált eszközökön a következő beál
 - UDID és egyéb állandó eszköz-azonosítók gyűjtése.
 - A felhasználói regisztráció minden regisztrált eszköz egyedi regisztrációs AZONOSÍTÓját támogatja, de ez az azonosító nem marad meg a regisztráció törlése után.
 - A következő Intune-funkciók nem támogatottak a korlátozás miatt:
-- A SCEP felhasználói profiljainak neve a soros numbe. r formátuma
+- A SCEP felhasználói profiljainak sorozatszáma a tulajdonos nevének formátuma.
 - Eszköz szintű VPN.
 - Eszköz licenccel rendelkező VPP-alkalmazás üzembe helyezése.
+- Az App Store-alkalmazások telepítése felügyelt alkalmazásként.
 - A felügyelt APFS-köteten kívüli alkalmazások MDM ellenőrzése.
 - Az alkalmazás-védelmi szabályzatok továbbra is érvényesek lesznek ezekre az alkalmazásokra. Azonban nem fogja tudni átvenni a felügyeletet, vagy felügyelt verziót telepíteni az alkalmazások közül, hacsak a felhasználó nem törli őket az eszközről.
 - A felügyeletet igénylő műveletek, konfigurációk, beállítások és parancsok. 

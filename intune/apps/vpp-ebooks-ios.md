@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/22/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ae29d2ee5add475db89f6895b22299793a94ac36
-ms.sourcegitcommit: a7c35efb31c4efd816bd4aba29240013965aee92
+ms.openlocfilehash: 08275e2573fe8aae8c59ea25c85cdd8f7a3246ee
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "73984086"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74563750"
 ---
 # <a name="how-to-manage-ios-ebooks-you-purchased-through-a-volume-purchase-program-with-microsoft-intune"></a>Mennyiségi vásárlási program keretében vásárolt iOS-es e-könyvek kezelése a Microsoft Intune-nal
 
@@ -57,15 +57,14 @@ Mielőtt hozzálát, szerezzen be VPP-tokent az Apple-től, és töltse fel az I
 
 ## <a name="to-get-and-upload-an-apple-vpp-token"></a>Apple VPP-token beszerzése és feltöltése
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Az **Intune** ablaktáblán válassza az **Ügyfélalkalmazások** lehetőséget.
-1. Az **Ügyfélalkalmazások** területen válassza a **Telepítés** > **iOS VPP-jogkivonatok** elemet.
-2. A VPP-tokenek panel listájában kattintson a **Létrehozás** elemre.
-3. Az **Új VPP-token** panelen adja meg az alábbi adatokat:
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza a **bérlői felügyelet** > **Összekötők és tokenek** > **Apple VPP-tokenek**elemet.
+3. A VPP-tokenek panel listájában kattintson a **Létrehozás** elemre.
+5. Az **Új VPP-token** panelen adja meg az alábbi adatokat:
     - **VPP-jogkivonatfájl** – Ha még nem tette meg, iratkozzon fel a Volume Purchase Program for Business vagy a Volume Purchase Program for Education programra. Ezután töltse le a fiókjához tartozó Apple VPP-tokent, és itt jelölje ki.
     - **Apple ID** – Adja meg a mennyiségi vásárlási programhoz kapcsolódó fiók Apple ID-ját.
     - **VPP-fiók típusa** –A következő lehetőségek közül választhat: **Üzlet** és **Oktatás**.
-4. Ha végzett, kattintson a **Létrehozás** gombra.
+5. Ha végzett, kattintson a **Létrehozás** gombra.
 
 A token a jogkivonatok panel listájában jelenik meg.
 
@@ -74,8 +73,7 @@ Az Apple által tárolt adatok bármikor szinkronizálhatók az Intune-nal a **S
 
 ## <a name="to-assign-a-volume-purchased-app"></a>Mennyiségi programban vásárolt alkalmazás hozzárendelése
 
-3. Az **Intune** panelen válassza az **e-könyvek** lehetőséget.
-1. Az **e-könyvek** munkaterhelésben válassza a **Felügyelet** > **Összes e-könyv** lehetőséget.
+1. Válassza az **alkalmazások** > **eBooks** > **az összes ebook**elemet.
 2. A könyvlista paneljén válassza ki a hozzárendelni kívánt könyvet, és válassza a **...** > **Csoportok hozzárendelése** lehetőséget.
 3. A <*könyv neve*> – **Hozzárendelt csoportok** panelen válassza a **Felügyelet** > **Hozzárendelt csoportok** lehetőséget.
 4. Válassza a **Hozzárendelt csoportok**, majd a **Csoportok kiválasztása** panelt, és jelölje ki azon Azure AD felhasználói csoportokat, amelyekhez hozzá szeretné rendelni a könyvet. Az eszközcsoportok jelenleg nem támogatottak.

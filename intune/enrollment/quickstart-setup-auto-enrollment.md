@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78620818bfd13f0292e159c6a3670b5e3af53dab
-ms.sourcegitcommit: 556b7ea2049014c9027f0e44affd3f301fab55fc
+ms.openlocfilehash: e9649a84650a555e964cd9200ed2295fee5efb9a
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73709494"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74562309"
 ---
 # <a name="quickstart-set-up-automatic-enrollment-for-windows-10-devices"></a>Rövid útmutató: Windows 10-es eszközök automatikus regisztrációjának beállítása
 
@@ -41,7 +41,7 @@ Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központba](https://g
 
 Ebben a példában MDM-regisztrációt fogunk használni, hogy a vállalati és saját tulajdonban lévő eszközök is automatikusan regisztrálhatók legyenek. Egy ingyenes Azure Active Directory Premium-előfizetésre regisztrál.
 
-1. Az Azure-ban válassza az **Azure Active Directory** > **Mobilitás (MDM és MAM)** lehetőséget.
+1. A [Azure Portal](https://portal.azure.com)válassza a **Azure Active Directory** > **Mobility (Mdm és MAM)** lehetőséget.
 2. Válassza **A szolgáltatás használatához szerezze be az ingyenes Prémium szintű próbaverziót** lehetőséget. Ezt a lehetőséget választva engedélyezi az Azure Active Directory ingyenes Premium-próbaverziójával történő automatikus regisztrációt. 
 
     ![Az Azure Active Directory ingyenes Premium-próbaverziójának kiválasztása](./media/quickstart-setup-auto-enrollment/quickstart-setup-auto-enrollment-01.png)

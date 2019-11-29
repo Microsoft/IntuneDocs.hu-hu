@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 10/07/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 14e9aa6e82d7b3e24350de8770f02b0a08695e1a
-ms.sourcegitcommit: b5e719fb507b1bc4774674e76c856c435e69f68c
+ms.openlocfilehash: c344a518890a2309a7805d61a5675e2646029bbb
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73801668"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74564043"
 ---
 # <a name="configure-google-chrome-for-android-devices-using-intune"></a>A Google Chrome beállítása Android-eszközökhöz az Intune használatával 
 
@@ -36,8 +36,8 @@ A Google Chrome Android-eszközökhöz való konfigurálásához Intune-alkalmaz
 
 ## <a name="add-the-google-chrome-app-to-intune"></a>A Google Chrome alkalmazás hozzáadása az Intune-hoz
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Az **Intune** panelen válassza az **ügyfélalkalmazások** > az **alkalmazások** > **Hozzáadás** majd a **felügyelt Google Play** -alkalmazás hozzáadása lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **alkalmazások** > **minden alkalmazás** > **Hozzáadás** majd a **felügyelt Google Play** -alkalmazás hozzáadása lehetőséget.
 3. Lépjen a felügyelt Google Play áruházba, keresse meg a **Google Chrome** -t, és hagyja jóvá.
 
     ![Google Chrome keresése és jóváhagyása](~/apps/media/apps-configure-chrome-android/search.png)
@@ -65,7 +65,7 @@ A felügyelt Google Play-alkalmazások Intune-hoz való hozzáadásával kapcsol
     - **URL-címek listájához való hozzáférés letiltása**: `["*"]`
     - **URL-címek listájához való hozzáférés engedélyezése**: `["baidu.com", "youtube.com", "chromium.org", "chrome://*"]`
     - **Felügyelt könyvjelzők**: `[{"toplevel_name": "My managed bookmarks folder"  },  {"url": "baidu.com",   "name": "Baidu"},  {"url": "youtube.com", "name": "Youtube"},  {"name": "Chrome links",  "children": [{"url": "chromium.org", "name": "Chromium"},    {"url": "dev.chromium.org", "name": "Chromium Developers"}]}]`
-    - **Incognito mód elérhetősége**: `Incognito mode disabled`
+    - **Incognito mód rendelkezésre állása**: `Incognito mode disabled`
 
     Miután hozzáadta a konfigurációs beállításokat a Configuration Designer használatával, a rendszer egy táblázatban sorolja fel őket. 
 

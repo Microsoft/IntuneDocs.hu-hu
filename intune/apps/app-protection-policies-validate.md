@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/06/2019
+ms.date: 11/26/2019
 ms.service: microsoft-intune
 ms.subservice: apps
 ms.localizationpriority: high
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0b9dda9a1aa1e81b46533c1c15d996807984193d
-ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
+ms.openlocfilehash: e9c3e775773ab08721cb3a65858f3d8c8402104f
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73712949"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74563736"
 ---
 # <a name="how-to-validate-your-app-protection-policy-setup-in-microsoft-intune"></a>Az alkalmazás-védelmi szabályzat beállításának érvényesítése Microsoft Intune
 
@@ -43,8 +43,8 @@ Ha a tesztelés azt mutatja, hogy az alkalmazás védelmi házirendje nem a vár
 - A felhasználók app Protection-alkalmazásainak állapota az elvárt módon. Az alkalmazások lehetséges állapotai: **Bejelentkezett** és **Nem bejelentkezett**.
 
 ### <a name="user-app-protection-status"></a>A felhasználók alkalmazásvédelmi állapota
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Válassza az **ügyfélalkalmazások** >  **alkalmazás védelmi állapota**lehetőséget, majd válassza a **hozzárendelt felhasználók** csempét. 
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+3. Válassza az **alkalmazások** >  az **app Protection állapota**lehetőséget, majd válassza a **hozzárendelt felhasználók** csempét. 
 4. Az **alkalmazás-jelentéskészítés** lapon válassza a **felhasználó kiválasztása** lehetőséget a felhasználók és csoportok listájának létrehozásához. 
 5. Keresse meg és válassza ki a kívánt felhasználót a listából, majd válassza a **felhasználó kiválasztása**lehetőséget. Az **alkalmazás-jelentési** panel felső részén láthatja, hogy a felhasználó rendelkezik-e licenccel az alkalmazás védelméhez. Azt is megtudhatja, hogy a felhasználó rendelkezik-e licenccel a O365 és az alkalmazás állapotáról az összes felhasználó eszközén.
 

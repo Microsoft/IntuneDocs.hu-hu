@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/06/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 04bc1fac8d3362a173c4777cdf5228fed6b6349d
-ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
+ms.openlocfilehash: 3c1627ba89ad50b2053187a20fee6cbc7a9064e8
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73712534"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74562493"
 ---
 # <a name="how-to-manage-volume-purchased-apps-from-the-microsoft-store-for-business-with-microsoft-intune"></a>Mennyiségi programban vásárolt alkalmazások felügyelete a Microsoft Store for Business és a Microsoft Intune használatával
 
@@ -51,7 +51,7 @@ Mielőtt elkezdené a Vállalati Microsoft Áruházból származó alkalmazások
 - Az eszközök akkor használhatják ezt a lehetőséget, ha csatlakoztatva vannak az Active Directory Domain Services szolgáltatáshoz vagy egy munkahelyhez.
 - A regisztrált eszközöknek a Windows 10 1511-es vagy újabb verzióját kell használniuk.
 
-Emellett a kapcsolódó készletek és a Vállalati Microsoft Áruházból szinkronizált offline licencelt alkalmazások mostantól egyetlen alkalmazásbejegyzésben jelennek meg a felhasználói felületen. A különálló csomagok üzembe helyezési adatait szintén egyetlen bejegyzésben összesítjük. Ha meg szeretné tekinteni a kapcsolódó készleteket az Azure Portalon, válassza az **Ügyfélalkalmazások** panel **Alkalmazáslicencek** lehetőségét.
+Emellett a kapcsolódó készletek és a Vállalati Microsoft Áruházból szinkronizált offline licencelt alkalmazások mostantól egyetlen alkalmazásbejegyzésben jelennek meg a felhasználói felületen. A különálló csomagok üzembe helyezési adatait szintén egyetlen bejegyzésben összesítjük. Ha a Azure Portal kapcsolódó készleteit szeretné megtekinteni, válassza az **alkalmazások** panel **alkalmazás-licencek** elemét.
 
 ## <a name="associate-your-microsoft-store-for-business-account-with-intune"></a>A Vállalati Microsoft Áruházbeli fiók összekapcsolása az Intune-nal
 Mielőtt engedélyezné a szinkronizálást az Intune-konzolon, konfigurálnia kell az áruházbeli fiókját az Intune használatára felügyeleti eszközként:
@@ -66,17 +66,16 @@ Most már folytathatja a műveletet, és beállíthatja a szinkronizálást az I
 
 ## <a name="configure-synchronization"></a>A szinkronizálás konfigurálása
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Az **Intune** ablaktáblán válassza az **Ügyfélalkalmazások** lehetőséget.
-1. Az **Ügyfélalkalmazások** panelen válassza a **Beállítás** > **Vállalati Microsoft Áruház** lehetőséget.
-2. Kattintson az **Engedélyezés** lehetőségre.
-3. Ha még nem tette meg, kattintson a Vállalati Microsoft Áruházban való regisztrálás hivatkozására, és a fent leírtaknak megfelelően társítsa a fiókját.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza a **bérlői felügyelet** > **Összekötők és jogkivonatok** > **Microsoft Store vállalatoknak**lehetőséget.
+3. Kattintson az **Engedélyezés** lehetőségre.
+4. Ha még nem tette meg, kattintson a Vállalati Microsoft Áruházban való regisztrálás hivatkozására, és a fent leírtaknak megfelelően társítsa a fiókját.
 5. A **Nyelv** legördülő listából válassza ki, hogy milyen nyelven jelenjenek meg a Vállalati Microsoft Áruházból származó alkalmazások az Azure Portalon. Az alkalmazások a megjelenítés nyelvétől függetlenül a végfelhasználó nyelvén lesznek telepítve (ha elérhető).
 6. Kattintson a **Szinkronizálás** lehetőségre a Microsoft Áruházból megvásárolt alkalmazások Intune-ba való felvételéhez.
 
 ## <a name="synchronize-apps"></a>Az alkalmazások szinkronizálása
 
-1. Az **Ügyfélalkalmazások** panelen válassza a **Beállítás** > **Vállalati Microsoft Áruház** lehetőséget.
+1. Válassza a **bérlői felügyelet** > **Összekötők és jogkivonatok** > **Microsoft Store vállalatoknak**lehetőséget.
 2. Kattintson a **Szinkronizálás** lehetőségre a Microsoft Áruházból megvásárolt alkalmazások Intune-ba való felvételéhez.
 
 > [!NOTE]

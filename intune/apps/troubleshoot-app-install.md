@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 09/04/2019
+ms.date: 11/26/2019
 ms.topic: troubleshooting
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e1067c8ef23add50c921217b9e4b115346be2951
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 4783d24e3fc25583a61f88c2e7375d4eed673186
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72497049"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74563486"
 ---
 # <a name="troubleshoot-app-installation-issues"></a>Alkalmazások telepítésével kapcsolatos problémák elhárítása
 
@@ -32,8 +32,8 @@ A Microsoft Intune MDM által felügyelt eszközökön néha sikertelenek lehetn
 
 Az Intune az adott felhasználók eszközein telepített alkalmazások alapján szolgáltat hibaelhárítási információkat.
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Az **Intune** panelen válassza a **Hibaelhárítás** lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+3. Válassza a **hibakeresés + támogatás**lehetőséget.
 4. A felhasználó kiválasztásához kattintson a **Felhasználó kijelölése** lehetőségre. Ekkor megjelenik a **Felhasználók kijelölése** panel.
 5. Jelöljön ki egy felhasználót a megfelelő név vagy e-mail cím beírásával. Kattintson a **Kijelölés** gombra a lap alján. A felhasználóval kapcsolatos hibaelhárítási információ a **Hibaelhárítás** panelen jelenik meg. 
 6. Az **Eszközök** listában jelölje ki azt az eszközt, amelyen hibaelhárítást szeretne végezni.
@@ -57,9 +57,9 @@ Az alkalmazások telepítésekor a következő műveleteket kell figyelembe venn
 - Ha az alkalmazás nem jelenik meg a Céges portálban, győződjön meg arról, hogy az alkalmazás **elérhető** szándékkal van telepítve, és hogy a felhasználó a céges portálhoz fér hozzá az alkalmazás által támogatott típusú eszközhöz.
 - A Windows BYOD eszközökhöz a felhasználónak munkahelyi fiókot kell hozzáadnia az eszközhöz.
 - Ellenőrizze, hogy a felhasználó meghaladja-e a HRE-eszköz korlátját:
-  1. Navigáljon [Azure Active Directory eszköz beállításaihoz](https://portal.azure.com/#blade/Microsoft_AAD_IAM/DevicesMenuBlade/DeviceSettings/menuId).
+  1. Navigáljon [Azure Active Directory eszköz beállításaihoz](https://portal.azure.com/#pane/Microsoft_AAD_IAM/DevicesMenupane/DeviceSettings/menuId).
   2. Jegyezze fel a **maximális eszközök felhasználónként**való beállításának értékét.
-  3. Navigáljon [Azure Active Directory felhasználóhoz](https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/AllUsers).
+  3. Navigáljon [Azure Active Directory felhasználóhoz](https://portal.azure.com/#pane/Microsoft_AAD_IAM/UsersManagementMenupane/AllUsers).
   4. Válassza ki az érintett felhasználót, és kattintson az **eszközök**elemre.
   5. Ha a felhasználó túllépi a beállított korlátot, törölje azokat az elavult rekordokat, amelyekre már nincs szükség.
 - IOS DEP-eszközök esetén győződjön meg arról, hogy a felhasználó **regisztrálva van a felhasználó által** az Intune-eszköz áttekintés paneljén. Ha a NA-t jeleníti meg, akkor telepítsen egy konfigurációs házirendet a Intune Céges portálhoz. További információ: [a céges portál alkalmazás konfigurálása](app-configuration-policies-use-ios.md#configure-the-company-portal-app-to-support-ios-dep-devices).
@@ -75,7 +75,7 @@ Válassza ki az Intune felügyeleti bővítmény használatával üzembe helyeze
 
 A Win32-alkalmazás telepítési naplóinak összegyűjtéséhez kövesse az [alkalmazás hibaelhárítási részletei](troubleshoot-app-install.md#app-troubleshooting-details)című szakasz lépéseit. Ezután folytassa a következő lépésekkel:
 
-1. Kattintson a **naplók összegyűjtése** lehetőségre a **telepítés részletei** panelen.
+1. Kattintson a **naplók összegyűjtése** lehetőségre a **telepítés részletei** ablaktáblán.
 
     <image alt="Win32 app installation details - Collect log option" src="./media/troubleshoot-app-install/troubleshoot-app-install-04.png" width="500" />
 
@@ -168,7 +168,7 @@ Ez a szakasz az eszköz rendszergazdája (DA) és a Samsung Knox-regisztrációt
 
 |  Hibaüzenet/kód  |  Description  |
 |-----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  0x80073CFF, 0x80CF201C (ügyfél-hiba)  |  Az alkalmazás telepítéséhez közvetlen telepítést lehetővé tevő rendszerrel kell rendelkeznie. Győződjön meg arról, hogy az alkalmazáscsomag megbízható aláírással van aláírva, és telepítve van egy tartományhoz csatlakoztatott eszközön, amelyen engedélyezve van a **AllowAllTrustedApps** szabályzat, vagy olyan eszköz, amely rendelkezik a **AllowAllTrustedApps** házirenddel rendelkező Windows közvetlen telepítési-licenccel. engedélyezve. További információ: [a Windows áruházbeli alkalmazások csomagolásának hibaelhárítása, üzembe helyezése és lekérdezése](https://docs.microsoft.com/windows/desktop/appxpkg/troubleshooting).   |
+|  0x80073CFF, 0x80CF201C (ügyfél-hiba)  |  Az alkalmazás telepítéséhez közvetlen telepítést lehetővé tevő rendszerrel kell rendelkeznie. Győződjön meg arról, hogy az alkalmazáscsomag megbízható aláírással van aláírva, és telepítve van egy tartományhoz csatlakoztatott eszközön, amelyen engedélyezve van a **AllowAllTrustedApps** házirend, vagy egy olyan eszköz, amelyen engedélyezve van a **AllowAllTrustedApps** szabályzat, és amely rendelkezik Windows közvetlen telepítési-licenccel. További információ: [a Windows áruházbeli alkalmazások csomagolásának hibaelhárítása, üzembe helyezése és lekérdezése](https://docs.microsoft.com/windows/desktop/appxpkg/troubleshooting).   |
 |  0x80073CF0  |  A csomag nem nyitható meg. Lehetséges okok:<ul><li> A csomag nincs aláírva.</li><li> A közzétevő neve nem egyezik meg az aláíró tanúsítvány tulajdonosával.</li></ul> További információért olvassa el az **appxpackagingom eseménynaplóban talál** -eseménynaplót. További információ: [a Windows áruházbeli alkalmazások csomagolásának hibaelhárítása, üzembe helyezése és lekérdezése](https://docs.microsoft.com/windows/desktop/appxpkg/troubleshooting).  |
 |  0x80073CF3  |  A csomag nem tudta frissíteni, függőséget vagy ütközést érvényesíteni. Lehetséges okok:<ul><li> A bejövő csomag ütközik egy telepített csomaggal.</li><li> A megadott csomag-függőség nem található.</li><li> A csomag nem támogatja a megfelelő processzor-architektúrát.</li></ul> További információért olvassa el a **AppXDeployment-Server** eseménynaplóját. További információ: [a Windows áruházbeli alkalmazások csomagolásának hibaelhárítása, üzembe helyezése és lekérdezése](https://docs.microsoft.com/windows/desktop/appxpkg/troubleshooting).  |
 |  0x80073CFB  |  A megadott csomag már telepítve van, és a csomag újratelepítése le van tiltva. Ez a hiba akkor jelenhet meg, ha olyan csomagot telepít, amely nem azonos a már telepített csomaggal. Ellenőrizze, hogy a csomag tartalmaz-e digitális aláírást. Ha újraépít vagy újra aláír egy csomagot, a csomag nem lesz bitenként azonos az előzőleg telepített csomaggal. Ez a hiba kétféleképpen javítható ki:<ul><li> Növelje az alkalmazás verziószámát, majd építse újra, majd írja alá újra a csomagot.</li><li> Az új csomag telepítése előtt távolítsa el a régi csomagot a rendszer minden felhasználója számára.</li></ul> További információ: [a Windows áruházbeli alkalmazások csomagolásának hibaelhárítása, üzembe helyezése és lekérdezése](https://docs.microsoft.com/windows/desktop/appxpkg/troubleshooting).  |

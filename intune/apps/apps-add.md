@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/18/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ecde59d81ebeba7de64f2693eecb576faac6e722
-ms.sourcegitcommit: 15e099a9a1e18296580bb345610aee7cc4acd126
+ms.openlocfilehash: def975bc646a96a77646ac9103079b1f008f9c28
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74164719"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74564059"
 ---
 # <a name="add-apps-to-microsoft-intune"></a>Alkalmazások hozzáadása a Microsoft Intune-hoz 
 
@@ -72,7 +72,7 @@ A következő táblázatban megtekintheti a konkrét alkalmazástípusokat és a
 
 <sup>1</sup> az Android Enterprise és Android rendszerű munkahelyi profilokkal kapcsolatos további információkért lásd az alábbi [licencelt alkalmazások ismertetése](apps-add.md#understanding-licensed-apps) című témakört.
 
-Az alkalmazásokat az **Ügyfélalkalmazások** > **Alkalmazások** > **Hozzáadás** lehetőséggel adhatja hozzá a Microsoft Intune-hoz. Megjelenik az **Alkalmazás hozzáadása** panel, ahol kiválaszthatja az **alkalmazás típusát**. 
+Microsoft Intune az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**elem kiválasztásával adhat hozzá egy alkalmazást. Megjelenik az **Alkalmazás hozzáadása** panel, ahol kiválaszthatja az **alkalmazás típusát**. 
 
 >[!TIP]
 > Az üzletági (LOB) alkalmazásokat egy alkalmazástelepítő fájlból adja hozzá. Egy iOS LOB-alkalmazás telepítéséhez például az **Alkalmazás hozzáadása** panel **Alkalmazás típusa** részén az **Üzletági alkalmazás** beállítás megadásával adhatja hozzá az alkalmazást. Ezután válassza ki az alkalmazáscsomag (.ipa kiterjesztésű) fájlját. Az ilyen típusú alkalmazások általában belső fejlesztésűek.
@@ -159,9 +159,8 @@ Az alkalmazáskategóriák segítségével úgy rendezheti az alkalmazásokat, h
 
 Amikor hozzáad egy alkalmazást az Intune-hoz, kiválaszthatja a kívánt kategóriát. Az alkalmazások felvételéről és a kategóriák hozzárendeléséről az egyes platformokra vonatkozó témakörökből tájékozódhat. Saját kategóriáit a következő eljárással hozhatja létre és szerkesztheti:
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Az **Intune** ablaktáblán válassza az **Ügyfélalkalmazások** lehetőséget.
-4. Az **Ügyfélalkalmazások** területen a **Beállítások** alatt válassza az **Alkalmazáskategóriák** lehetőséget.  
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+3. Válassza az **alkalmazások** > az **alkalmazás-kategóriák**lehetőséget.  
     Az **Alkalmazáskategóriák** panel megjeleníti az aktuális kategóriák listáját. 
 5. A következő lehetőségek közül választhat:
     - Új kategória megadásához válassza a **Kategória létrehozása** panel **Hozzáadás** elemét, majd adja meg a kategória nevét.  

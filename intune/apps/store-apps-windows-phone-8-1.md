@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/23/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 12218ec20f8cc00ebcf2294387f711ea39d79256
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 3168d517ebbb59dc9d6fe5a9c262ad8e1c909619
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72507078"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74563806"
 ---
 # <a name="add-windows-phone-81-store-apps-to-microsoft-intune"></a>Windows Phone 8.1-es áruházbeli alkalmazások hozzáadása a Microsoft Intune-hoz
 
@@ -34,12 +34,10 @@ Mielőtt az alkalmazást hozzárendelné egy eszközhöz vagy felhasználói cso
 ## <a name="add-an-app-to-intune"></a>Alkalmazás hozzáadása az Intune-hoz
 A következő módon adhat hozzá Windows Phone 8.1-áruházbeli alkalmazást az Intune-hoz az Azure Portalon:
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Az **Intune** ablaktáblán válassza az **Ügyfélalkalmazások** lehetőséget.
-4. Az **Ügyfélalkalmazások** tevékenységprofil panelén a **Kezelés** szakaszban válassza az **Alkalmazások** lehetőséget.
-5. Az **Alkalmazások** panelen válassza a **Hozzáadás** lehetőséget.
-6. Az **Alkalmazás hozzáadása** panelen válassza a **Windows Phone 8.1** lehetőséget az **Alkalmazás típusa** területen, majd válassza az **Alkalmazásadatok** lehetőséget.
-7. Az **Alkalmazásadatok** panelen adja meg az alkalmazás adatait. A választott alkalmazástól függően előfordulhat, hogy egyes értékek automatikusan ki vannak töltve a panelen:
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**lehetőséget.
+3. Az **Alkalmazás hozzáadása** panelen válassza a **Windows Phone 8.1** lehetőséget az **Alkalmazás típusa** területen, majd válassza az **Alkalmazásadatok** lehetőséget.
+4. Az **Alkalmazásadatok** panelen adja meg az alkalmazás adatait. A választott alkalmazástól függően előfordulhat, hogy egyes értékek automatikusan ki vannak töltve a panelen:
     - **Név**: Itt adhatja meg az alkalmazás céges portálon megjelenítendő nevét. Gondoskodjon róla, hogy az alkalmazás neve egyedi legyen. Ha két alkalmazás neve megegyezik, a felhasználók csak az egyik alkalmazást fogják látni a céges portálon.
     - **Leírás**: Itt adhatja meg az alkalmazás leírását. A leírás a céges portálon jelenik meg a felhasználók számára.
     - **Kiadó:** Adja meg az alkalmazás kiadójának nevét.
@@ -52,8 +50,8 @@ A következő módon adhat hozzá Windows Phone 8.1-áruházbeli alkalmazást az
     - **Tulajdonos**: Igény esetén megadhatja az alkalmazás tulajdonosának nevét (például *HR-osztály*).
     - **Megjegyzések:** : Ide írhatja be igény szerint az alkalmazáshoz társítani kívánt megjegyzéseket.
     - **Ikon** (nem kötelező): Itt töltheti fel az alkalmazáshoz hozzárendelni kívánt ikont. Ez az alkalmazásikon jelenik meg a céges portálon böngésző felhasználók számára.
-8. Válassza az **OK** gombot.
-9. Válassza a **Hozzáadás** elemet.
+5. Válassza az **OK** gombot.
+6. Válassza a **Hozzáadás** elemet.
 
 A létrehozott alkalmazás megjelenik az alkalmazáslistában, ahol hozzárendelheti a kiválasztott csoportokhoz.
 

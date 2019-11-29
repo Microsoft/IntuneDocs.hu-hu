@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/22/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e0e1ff8fd39d301bd685e9806c319f49e9189d7f
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 41c08d1912bf9c79507c2a6627205979504f340d
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72507422"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74564226"
 ---
 # <a name="get-ready-to-configure-app-protection-policies-for-windows-10"></a>Felkészülés az alkalmazásvédelmi szabályzatok Windows 10 rendszereken történő konfigurálására 
 
@@ -33,13 +33,12 @@ Windows 10-es rendszerhez mobilalkalmazás-kezelést (MAM) úgy engedélyezhet, 
 
 ## <a name="to-configure-the-mam-provider"></a>MAM-szolgáltató konfigurálása
 
-1. Jelentkezzen be az Azure Portalon, majd válassza az **Azure Active Directory** elemet.
-
-2. A **Kezelés** csoportban válassza a **Mobilitás (MDM és MAM)** elemet.
-
-3. Kattintson a **Microsoft Intune** elemre.
-
-4. A **Konfigurálás** panel **Alapértelmezett MAM URL-címek** csoportjában végezze el a konfigurációs beállításokat.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza a **minden szolgáltatás** lehetőséget, és válassza az **M365 Azure Active Directory** lehetőséget az irányítópultok váltásához.
+3. Válassza a **Azure Active Directory**lehetőséget.
+4. A **Kezelés** csoportban válassza a **Mobilitás (MDM és MAM)** elemet.
+5. Kattintson a **Microsoft Intune** elemre.
+6. Konfigurálja a beállításokat az **alapértelmezett MAM URL-címek visszaállítása** csoportban a **Konfigurálás** ablaktáblán.
 
    **MAM-felhasználói hatókör**  
    Az automatikus MAM-regisztrációval a felhasználók Windows-eszközein található vállalati adatok kezelhetők. Az automatikus MAM-regisztráció a saját eszközök használatának esetén lesz konfigurálva.<ul><li>**Nincsenek**<br>Ezt akkor válassza, ha egy felhasználó sem regisztrálható a MAM-ban.</li><li>**Néhány**<br>Kiválaszthatja azokat az Azure AD-csoportokat, amelyekbe a MAM-ban regisztrálandó felhasználók tartoznak.</li><li>**Összes**<br>Ezt akkor válassza, ha minden felhasználó regisztrálható a MAM-ban.</li></ul>
@@ -53,7 +52,7 @@ Windows 10-es rendszerhez mobilalkalmazás-kezelést (MAM) úgy engedélyezhet, 
    **A MAM megfelelőségi URL-címe**  
    A MAM megfelelőségi URL-címének használata a Microsoft Intune-ban nem támogatott. A beviteli mezőt a védelmi szabályzatok alkalmazásához üresen kell hagyni. 
 
-5. Kattintson a **Mentés**gombra.
+7. Kattintson a **Mentés**gombra.
 
 ## <a name="next-steps"></a>További lépések
 

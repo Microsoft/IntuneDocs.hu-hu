@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d4ff9126fec182d1e0d2f3eb75297ede8a632e2e
-ms.sourcegitcommit: 2fddb293d37453736ffa54692d03eca642f3ab58
+ms.openlocfilehash: 83f0d980bc4fa1bfd0b48f87839fd6efa130aa70
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74390720"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74563873"
 ---
 # <a name="set-up-intune-enrollment-of-android-enterprise-dedicated-devices"></a>Androidos vállalati dedikált eszközök Intune-regisztrációjának beállítása
 
@@ -35,7 +35,7 @@ Az Intune segítségével alkalmazásokat és beállításokat telepíthet az an
 
 Az ezen a módon felügyelt eszközök felhasználói fiók nélkül vannak regisztrálva az Intune-ban, és egyetlen végfelhasználóhoz sincsenek hozzárendelve. Nem rendeltetésük olyan személyes használatra szánt, vagy sok felhasználóspecifikus adatot igénylő alkalmazások futtatása, mint az Outlook vagy a Gmail.
 
-## <a name="device-requirements"></a>Eszközkövetelmények
+## <a name="device-requirements"></a>Eszközre vonatkozó követelmények
 
 Az eszközöknek meg kell felelniük az alábbi követelményeknek, amelyeket androidos vállalati dedikált eszközként kell kezelni:
 
@@ -57,9 +57,9 @@ Az Android Enterprise dedikált eszközök felügyeletének beállításához k�
 > [!NOTE]
 > Ha egy jogkivonat lejárt, akkor a hozzá társított profil nem jelenik meg az **eszközök beléptetése** > **Android-regisztráció** > **vállalati tulajdonú dedikált eszközök**területen. Az aktív és az inaktív tokenekhez kapcsolódó összes profil megjelenítéséhez kattintson a **Filter (szűrő** ) elemre, és jelölje be az "aktív" és az "inaktív" házirend-állapotok jelölőnégyzeteit. 
 
-Létre kell hoznia egy regisztrációs profilt, hogy regisztrálni tudja a dedikált eszközöket. A profil a létrehozásakor ad egy regisztrációs jogkivonatot (véletlenszerű karakterlánc) és egy QR-kódot. Az eszköz Android operációs rendszerének és verziójától függően a jogkivonat vagy a QR-kód segítségével [regisztrálhat a dedikált eszközt](#enroll-the-dedicated-devices).
+Létre kell hoznia egy regisztrációs profilt, hogy regisztrálni tudja a dedikált eszközöket. A profil a létrehozásakor ad egy regisztrációs jogkivonatot (véletlenszerű sztring) és egy QR-kódot. Az eszköz Android operációs rendszerének és verziójától függően a jogkivonat vagy a QR-kód segítségével [regisztrálhat a dedikált eszközt](#enroll-the-dedicated-devices).
 
-1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431) , és válassza az **eszközök beléptetése** > **Android-regisztráció** > **vállalati tulajdonú dedikált eszközök**elemet.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431) , és válassza az **eszközök** > **android** > **Android-regisztráció** > **vállalati tulajdonú dedikált eszközök**elemet.
 2. Válassza a **Létrehozás** lehetőséget, és töltse ki a kötelező mezőket.
     - **Név**: Adjon meg egy nevet, amelyet akkor fog használni, amikor a profilt a dinamikus eszközcsoporthoz rendeli.
     - **Jogkivonat lejárati dátuma**: Az a dátum, amikor a jogkivonat lejár. A Google legfeljebb 90 napos érvényességi időszakot engedélyez.
@@ -92,7 +92,7 @@ A cél lehet alkalmazás, és hozzárendelt vagy dinamikus eszközcsoportokra vo
 
 Egy jogkivonat/QR-kód cseréje vagy visszavonása a már regisztrált eszközöket nem érinti.
 
-1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431) , és válassza az **eszközök beléptetése** > **Android-regisztráció** > közösen **dedikált eszközök**lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431) , és válassza az **eszközök** > **android** > **Android-regisztráció** > a **dedikált eszközök**elemet.
 2. Válassza ki a profilt, amellyel dolgozni kíván.
 3. Válassza a **Jogkivonat** lehetőséget.
 4. A jogkivonat cseréjéhez válassza a **Jogkivonat cseréje** lehetőséget.

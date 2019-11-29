@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 10/16/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 98976403d58c33f22f7ceeabec1d38f076f9bbe7
-ms.sourcegitcommit: ae6f2e7812e7fd36f2393b8f4b6cd8de63777b2c
+ms.openlocfilehash: 8657b6fa8110b4ea4bbf8ec0841d69197624dd9f
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73592071"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74563727"
 ---
 # <a name="how-to-create-and-assign-app-protection-policies"></a>Alkalmazásvédelmi szabályzatok létrehozása és hozzárendelése
 
@@ -44,9 +44,9 @@ További információk a cég üzletági (LOB) alkalmazásainak a Microsoft Intu
 Ha iOS-/iPadOS-és Android-alkalmazásokhoz hoz létre alkalmazás-védelmi szabályzatot, egy új alkalmazás-védelmi házirendet eredményező modern Intune-folyamatot követ.
 
 ### <a name="create-an-iosipados-or-android-app-protection-policy"></a>IOS-/iPadOS-vagy Android-alkalmazás-védelmi szabályzat létrehozása
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Az Intune-portálon válassza az **ügyfélalkalmazások**  > **app Protection-házirendek**elemet. Ekkor megnyílik az **Alkalmazásvédelmi szabályzatok** panel, amelyen új szabályzatokat hozhat létre, és szerkesztheti a meglévőket.
-3. Válassza a **házirend létrehozása** lehetőséget, és válassza az **iOS/IPadOS** vagy az **Android**lehetőséget. Megjelenik a **szabályzat létrehozása** panel.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Az Intune-portálon válassza az **alkalmazások** > **alkalmazás-védelmi szabályzatok**lehetőséget. Ekkor megnyílik az **Alkalmazásvédelmi szabályzatok** panel, amelyen új szabályzatokat hozhat létre, és szerkesztheti a meglévőket.
+3. Válassza a **házirend létrehozása** lehetőséget, és válassza az **iOS/IPadOS** vagy az **Android**lehetőséget. Megjelenik a **házirend létrehozása** panel.
 4. Az **alapvető beállítások** lapon adja hozzá a következő értékeket:
 
     | Érték | Description |
@@ -171,7 +171,7 @@ Vállalatoknál gyakori, hogy a felhasználóknak engedélyezett mind az Intune 
 
 Mivel az Intune alkalmazásvédelmi szabályzatok a felhasználói identitásra irányulnak, a felhasználók védelmi beállításait a rendszer alkalmazhatja mind a regisztrált (MDM által felügyelt), mind pedig a regisztrálatlan (MDM nélküli) eszközökre. Emiatt lehetősége van megadni, hogy az Intune alkalmazásvédelmi szabályzatot az Intune-ban regisztrált vagy regisztrálatlan iOS- és Android-eszközökre kívánja-e alkalmazni. A nem felügyelt eszközökre vonatkozóan egyetlen védelmi szabályzattal rendelkezhet, amelyben szigorú adatvesztés-megelőzési (DLP) vezérlők találhatók, valamint egy külön védelmi szabályzat a MDM által felügyelt eszközökhöz, ahol a DLP-vezérlők valamivel nyugodtabbak lehetnek. További információ arról, hogy ez hogyan működik a személyes Android Enterprise-eszközökön: [alkalmazás-védelmi szabályzatok és munkahelyi profilok](android-deployment-scenarios-app-protection-work-profiles.md).
 
-Ezen szabályzatok létrehozásához tallózással keresse meg az **ügyfélalkalmazások** > **alkalmazás-védelmi szabályzatokat** az Intune-konzolon, majd válassza a **házirend létrehozása**lehetőséget. Másik lehetőségként egy meglévő alkalmazásvédelmi szabályzatot is szerkeszthet. Ahhoz, hogy az alkalmazás védelmi szabályzata a felügyelt és a nem felügyelt eszközökre is vonatkozzon, navigáljon az **alkalmazások** lapra, és győződjön meg róla, hogy az **összes eszközön a cél az alkalmazásokhoz** beállítás értéke **Igen**, az alapértelmezett érték. Ha azt szeretné, hogy a rendszer részletesen hozzárendelje a hozzárendelést a felügyeleti állapot alapján, a **nem**értékre állítsa a **cél alkalmazást az összes eszközön** . 
+Ezen szabályzatok létrehozásához keresse meg az **alkalmazások** > **alkalmazás-védelmi házirendek** elemet az Intune-konzolon, majd válassza a **házirend létrehozása**lehetőséget. Másik lehetőségként egy meglévő alkalmazásvédelmi szabályzatot is szerkeszthet. Ahhoz, hogy az alkalmazás védelmi szabályzata a felügyelt és a nem felügyelt eszközökre is vonatkozzon, navigáljon az **alkalmazások** lapra, és győződjön meg róla, hogy az **összes eszközön a cél az alkalmazásokhoz** beállítás értéke **Igen**, az alapértelmezett érték. Ha azt szeretné, hogy a rendszer részletesen hozzárendelje a hozzárendelést a felügyeleti állapot alapján, a **nem**értékre állítsa a **cél alkalmazást az összes eszközön** . 
 
 ### <a name="device-types"></a>Eszközök típusai
 

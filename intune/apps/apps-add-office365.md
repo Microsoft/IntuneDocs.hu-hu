@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/04/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2cb247ec25b134fa9810a426be88b7fc90999394
-ms.sourcegitcommit: 2c8a41ee95a3fde150667a377770e51b621ead65
+ms.openlocfilehash: 73848ee8301362f14fe2866a57329425d5e5cfbe
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73635410"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74563665"
 ---
 # <a name="add-office-365-apps-to-windows-10-devices-with-microsoft-intune"></a>Office 365-alkalmazások hozzáadása a Windows 10-es eszközökhöz Microsoft Intune
 
@@ -49,11 +49,9 @@ Az alkalmazások hozzárendelése, figyelése, konfigurálása és védelme elő
 
 ## <a name="get-started"></a>Első lépések
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Az **Intune** ablaktáblán válassza az **Ügyfélalkalmazások** lehetőséget.
-4. Az **Ügyfélalkalmazások** tevékenységprofil panelén a **Kezelés** szakaszban válassza az **Alkalmazások** lehetőséget.
-5. Válassza a **Hozzáadás** elemet.
-6. Az **Alkalmazások hozzáadása** ablaktáblán, az **Alkalmazástípus** listában, az **Office 365 csomag** alatt válassza a **Windows 10** lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**lehetőséget.
+3. Az **Alkalmazások hozzáadása** ablaktáblán, az **Alkalmazástípus** listában, az **Office 365 csomag** alatt válassza a **Windows 10** lehetőséget.
 
 ## <a name="select-settings-format"></a>Beállítások formátumának kiválasztása
 
@@ -61,13 +59,13 @@ Kiválaszthat egy módszert az Alkalmazásbeállítások konfigurálásához a *
 - Configuration Designer
 - XML-adatok megadása
 
-Ha a **Configuration Designer** lehetőséget választja, az **alkalmazás hozzáadása** panel két további beállítási lehetőség közül választhat:
+Ha kiválasztja a **Configuration Designer** alkalmazást, az **alkalmazás hozzáadása** panel két további beállítási lehetőséget is kínál:
 - App Suite konfigurálása
 - App Suite-beállítások
 
 <img alt="Add Office 365 - Configuration designer" src="./media/apps-add-office365/apps-add-office365-02.png" width="700">
 
-Ha az **XML-adatértékek megadása** lehetőséget választja, az **alkalmazás hozzáadása** panelen JELENÍTSE meg az **XML-adatbevitel** beállítást. Válassza ki ezt a **konfigurációs fájl** panel megjelenítéséhez. 
+Ha az **XML-adatértékek megadása** lehetőséget választja, az **alkalmazás hozzáadása** panelen JELENÍTSE meg az **XML-adatbevitel** beállítást. Válassza ezt a **konfigurációs fájl** ablaktábla megjelenítéséhez. 
 
 ![Office 365 Configuration Designer hozzáadása](./media/apps-add-office365/apps-add-office365-01.png)
     
@@ -126,7 +124,7 @@ Ha a **konfigurációs tervező** lehetőséget választotta a Formátum legörd
     - **Alkalmazás végfelhasználói licencszerződésének automatikus elfogadása**: Ezt a beállítást akkor jelölje be, ha nem követeli meg a végfelhasználóktól, hogy elfogadják a licencszerződést. Ebben az esetben az Intune automatikusan elfogadja a szerződést.
     - **Megosztott aktiválás használata**: A megosztott aktiválás akkor használatos, amikor több felhasználó használja ugyanazt a számítógépet. További információ: [Az Office 365 megosztott aktiválásának áttekintése](https://docs.microsoft.com/DeployOffice/overview-of-shared-computer-activation-for-office-365-proplus).
     - **Nyelvek**: Az Office automatikusan telepít minden olyan támogatott nyelvet, amely telepítve van a Windowsban a végfelhasználói eszközön. Ezt a beállítást akkor jelölje be, ha az alkalmazáscsomaghoz további nyelveket szeretne telepíteni. <p></p>
-    További nyelveket helyezhet üzembe az Intune által felügyelt Office 365 Pro Plus-alkalmazások számára. Az elérhető nyelvek listája tartalmazza a nyelvi csomag **Típusát** (alap, részleges vagy nyelvi ellenőrzési) is. Az Azure Portalon válassza a **Microsoft Intune** > **Ügyfélalkalmazások** > **Alkalmazások** > **Hozzáadás** lehetőséget. Az **Alkalmazás hozzáadása** panelen, az **Alkalmazástípusok** listáján, válassza az **Office 365 csomag** alatti **Windows 10** lehetőséget. Az **Alkalmazáscsomag beállításai** panelen válassza a **Nyelvek** lehetőséget. További információkért lásd [a nyelvek az Office 365 ProPlusban történő üzembe helyezésének áttekintését](https://docs.microsoft.com/deployoffice/overview-of-deploying-languages-in-office-365-proplus).
+    További nyelveket helyezhet üzembe az Intune által felügyelt Office 365 Pro Plus-alkalmazások számára. Az elérhető nyelvek listája tartalmazza a nyelvi csomag **Típusát** (alap, részleges vagy nyelvi ellenőrzési) is. A Azure Portal válassza a **Microsoft Intune** > az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**lehetőséget. Az **alkalmazás hozzáadása** panel **alkalmazás típusa** listájában válassza a **Windows 10** az **Office 365 Suite**elemet. Válassza a **nyelvek** lehetőséget az **App Suite beállítások** ablaktábláján. További információkért lásd [a nyelvek az Office 365 ProPlusban történő üzembe helyezésének áttekintését](https://docs.microsoft.com/deployoffice/overview-of-deploying-languages-in-office-365-proplus).
 
 ## <a name="select-scope-tags-optional"></a>Hatóköri címkék kiválasztása (nem kötelező)
 A hatókör-címkék használatával meghatározhatja, hogy ki láthatja az ügyfélalkalmazások adatait az Intune-ban. A hatókör-címkék részletes ismertetését lásd: [a szerepköralapú hozzáférés-vezérlés és a hatókör-címkék használata a terjesztéshez](../fundamentals/scope-tags.md).
@@ -161,7 +159,7 @@ A *Microsoft Office 15* könyvtár alatt az Office Kattintásra futtatható tele
 A telepítés csendes módban lesz, ha a O365 csomag hozzárendelése kötelezőként van konfigurálva. Ha a telepítés sikeres volt, a letöltött telepítőfájlokat a rendszer törli. Ha a hozzárendelés **elérhetőként**van konfigurálva, az Office-alkalmazások a céges portál alkalmazásban jelennek meg, így a végfelhasználók manuálisan indíthatják el a telepítést.
 
 ## <a name="troubleshooting"></a>Hibaelhárítás
-Az Intune az Office 365 ProPlus az Office [365 CDN](https://docs.microsoft.com/office365/enterprise/content-delivery-networks)használatával tölti le és helyezi üzembe az Office- [eszközökön](https://docs.microsoft.com/DeployOffice/overview-of-the-office-2016-deployment-tool) . Az [Office 365-végpontok kezelése](https://docs.microsoft.com/office365/enterprise/managing-office-365-endpoints) című útmutatóban ismertetett ajánlott eljárások alapján biztosíthatja, hogy a hálózati konfiguráció lehetővé tegye az ügyfelek számára a CDN közvetlen elérését a CDN-forgalom központi proxyn keresztüli átirányítása helyett, hogy elkerülje a szükségtelen késleltetés.
+Az Intune az Office 365 ProPlus az Office [365 CDN](https://docs.microsoft.com/office365/enterprise/content-delivery-networks)használatával tölti le és helyezi üzembe az Office- [eszközökön](https://docs.microsoft.com/DeployOffice/overview-of-the-office-2016-deployment-tool) . Az [Office 365-végpontok kezelése](https://docs.microsoft.com/office365/enterprise/managing-office-365-endpoints) című útmutatóban ismertetett ajánlott eljárások alapján biztosíthatja, hogy a hálózati konfiguráció lehetővé tegye az ügyfelek számára a CDN közvetlen elérését a CDN-forgalom központi proxyn keresztüli átirányítása helyett, hogy elkerülje a szükségtelen késést.
 
 Futtassa a [Microsoft ügyfélszolgálata és a helyreállítási asszisztenst az Office 365-hez](https://diagnostics.office.com) egy megcélzó eszközön, ha telepítési vagy futásidejű problémákba ütközik.
 

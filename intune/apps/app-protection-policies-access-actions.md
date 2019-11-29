@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 10/24/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b5983742043dca9d07242315d4aaa97de2ead8d6
-ms.sourcegitcommit: a7c35efb31c4efd816bd4aba29240013965aee92
+ms.openlocfilehash: a0440e2d6f5890b20ccf020c40bb1037bcfcae38
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "73984021"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74564124"
 ---
 # <a name="selectively-wipe-data-using-app-protection-policy-conditional-launch-actions-in-intune"></a>Adatok szelektív törlése az App Protection-szabályzat feltételes indítási műveleteivel az Intune-ban
 
@@ -33,16 +33,16 @@ Ezekkel a beállításokkal egyértelműen megadható az összes vállalati adat
 
 ## <a name="create-an-app-protection-policy-using-conditional-launch-actions"></a>Alkalmazás-védelmi szabályzat létrehozása feltételes indítási műveletek használatával
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Az **Intune** panelen válassza az **Ügyfélalkalmazások** > **Alkalmazásvédelmi szabályzatok** lehetőséget.
-4. Kattintson a **Szabályzat hozzáadása** lehetőségre (a meglévő szabályzatok is módosíthatók). 
-5. Kattintson a **Kötelező beállítások konfigurálása** lehetőségre a szabályzathoz konfigurálható beállítások listájának megjelenítéséhez. 
-6. A Settings (beállítások) ablaktáblán lefelé görgetve megtekintheti a **feltételes indítás** nevű szakaszt egy szerkeszthető táblával.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **alkalmazások** > **alkalmazás-védelmi szabályzatok**lehetőséget.
+3. Kattintson a **házirend létrehozása** elemre, és válassza ki az eszköz platformját a szabályzathoz. 
+4. Kattintson a **Kötelező beállítások konfigurálása** lehetőségre a szabályzathoz konfigurálható beállítások listájának megjelenítéséhez. 
+5. A Settings (beállítások) ablaktáblán lefelé görgetve megtekintheti a **feltételes indítás** nevű szakaszt egy szerkeszthető táblával.
 
     ![Képernyőkép az Intune alkalmazásvédelmi hozzáférési műveleteiről](./media/app-protection-policies-access-actions/apps-selective-wipe-access-actions01.png)
 
-7. Válasszon egy **Beállítást**, és adjon meg egy **Értéket**, amelynek a felhasználónak meg kell felelnie ahhoz, hogy bejelentkezhessen a vállalati alkalmazásába. 
-8. Válassza ki a **Műveletet**, amelyet akkor kell végrehajtani, ha a felhasználó nem felel meg a követelményeknek. Bizonyos esetekben egy beállításhoz több művelet is megadható. További információt az [Alkalmazásvédelmi szabályzatok létrehozása és hozzárendelése](app-protection-policies.md) című cikkben talál.
+6. Válasszon egy **Beállítást**, és adjon meg egy **Értéket**, amelynek a felhasználónak meg kell felelnie ahhoz, hogy bejelentkezhessen a vállalati alkalmazásába. 
+7. Válassza ki a **Műveletet**, amelyet akkor kell végrehajtani, ha a felhasználó nem felel meg a követelményeknek. Bizonyos esetekben egy beállításhoz több művelet is megadható. További információt az [Alkalmazásvédelmi szabályzatok létrehozása és hozzárendelése](app-protection-policies.md) című cikkben talál.
 
 ## <a name="policy-settings"></a>Szabályzatbeállítások 
 

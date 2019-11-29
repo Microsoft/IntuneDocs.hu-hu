@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08193aa329a1bee4e66638de5c0d7518d15db2a4
-ms.sourcegitcommit: 23e9c48348a6eba494d072a2665b7481e5b5c84e
+ms.openlocfilehash: 678eb92bb6f5f23756092cd5d9cc1a645e1e8db3
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74547912"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74562353"
 ---
 # <a name="android-device-administrator-enrollment"></a>Android-eszköz rendszergazdai regisztrációja
 
@@ -49,7 +49,7 @@ A Google androidos vállalati funkcióival kapcsolatos további információkér
 ## <a name="set-up-device-administrator-enrollment"></a>Az eszköz rendszergazdai regisztrációjának beállítása
 
 1. A mobileszközök kezelésének előkészítéseként a **Microsoft Intune**-t kell beállítani mobileszköz-kezelő (MDM) szolgáltatóként. Erről [Az MDM-szolgáltató beállítása](../fundamentals/mdm-authority-set.md) című cikk nyújt útmutatást. Ezt a beállítást csak egyszer, az Intune-nak a mobileszközök kezelésére való kezdeti beállítása során kell megadni.
-2. Nyissa meg az **Intune** > eszközök **beléptetése** > **Android-regisztráció** > **személyes és vállalati tulajdonú eszközök eszköz-felügyeleti jogosultságokkal** > az eszköz **rendszergazdája által felügyelt eszközöket**.
+2. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431) , és válassza a > **eszközök** lehetőséget > **android** > **Android-regisztráció** > **személyes és vállalati tulajdonú eszközök eszköz-felügyeleti jogosultságokkal > az** eszköz **rendszergazdája az eszközök**felügyeletéhez.
 3. [A felhasználók tájékoztatása arról, hogy miképpen regisztrálhatják az eszközeiket](/intune-user-help/enroll-your-device-in-intune-android).  
 
 Miután a felhasználó elvégezte a regisztrálást, elkezdheti az eszközeik felügyeletét az Intune-ban, így többek között [megfelelőségi szabályzatokat rendelhet hozzájuk](../protect/compliance-policy-create-android.md) vagy [felügyelheti az alkalmazásokat](../apps/app-management.md).

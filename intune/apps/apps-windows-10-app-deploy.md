@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 10/02/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8ce24081eae1808d3db0c5078026b306fd209d5
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: c9d792bd07ae8d7d712748874d64314dd258c5e8
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72507237"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74563946"
 ---
 # <a name="windows-10-app-deployment-by-using-microsoft-intune"></a>Windows 10-es alkalmazások központi telepítése Microsoft Intune használatával 
 
@@ -51,9 +51,10 @@ Az üzleti alkalmazások Microsoft Store a Microsoft Store for Business felügye
 ### <a name="categorize-microsoft-store-for-business-apps"></a>Üzleti alkalmazások kategorizálása Microsoft Store 
 A Microsoft Store for Business alkalmazások kategorizálása: 
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Válassza az **ügyfélalkalmazások** > **alkalmazások**elemet. Válasszon egy Microsoft Store vállalati alkalmazáshoz. Ezután válassza az **alkalmazás adatai** > **kategóriát**. 
-3. Válasszon ki egy kategóriát.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **alkalmazások** > **minden alkalmazás**lehetőséget. 
+3. Válasszon egy Microsoft Store vállalati alkalmazáshoz. Ezután válassza a **tulajdonságok** > az **alkalmazás adatai** > **kategóriát**. 
+4. Válasszon ki egy kategóriát.
 
 ## <a name="install-apps-on-windows-10-devices"></a>Alkalmazások telepítése Windows 10-es eszközökre
 Az alkalmazás típusától függően a következő két módszer egyikével telepítheti az alkalmazást egy Windows 10-es eszközre:
@@ -83,7 +84,7 @@ Ha egyetlen felhasználó vagy eszköz házirendje ütközik, a következő prio
 - Az eszközkörnyezetek szabályzatai magasabb prioritásúak a felhasználói környezetekéinél. 
 - A telepítési szabályzatok magasabb prioritásúak az eltávolításiaknál.
 
-További információért lásd: [Alkalmazás-hozzárendelések belefoglalása vagy kizárása a Microsoft Intune-ban](apps-inc-exl-assignments.md). Az Intune-beli alkalmazástípusokat az [Alkalmazások hozzáadása a Microsoft Intune-hoz](apps-add.md) című cikk ismerteti.
+További információ: [Alkalmazás-hozzárendelések belefoglalása vagy kizárása a Microsoft Intune-ban](apps-inc-exl-assignments.md). Az Intune-beli alkalmazástípusokat az [Alkalmazások hozzáadása a Microsoft Intune-hoz](apps-add.md) című cikk ismerteti.
 
 ## <a name="next-steps"></a>További lépések
 

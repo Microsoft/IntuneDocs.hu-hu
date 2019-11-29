@@ -14,7 +14,11 @@
     - name: Profil létrehozása
       href: device-profile-create.md
     - name: Felügyeleti sablonok Windowson
-      href: administrative-templates-windows.md
+      items:
+        - name: Felügyeleti sablonok Windowson
+          href: administrative-templates-windows.md
+        - name: Az Office frissítése felügyeleti sablonokkal
+          href: administrative-templates-update-office.md
     - name: Eszközfunkciók iOS-en és macOS-en
       href: device-features-configure.md
     - name: Eszközbeállítások és -funkciók korlátozása
@@ -47,6 +51,8 @@
       items:
         - name: Wi-Fi előmegosztott kulccsal
           href: wi-fi-profile-shared-key.md
+        - name: Wi-Fi-hibaelhárítás
+          href: troubleshoot-wi-fi-profiles.md
     - name: Bővítmények macOS rendszeren
       href: kernel-extensions-overview-macos.md
     - name: Education – Vizsgaalkalmazás

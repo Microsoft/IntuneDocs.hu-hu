@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/06/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 82a2414e7458d1eb0ce48c5afb8ac1bc9bddb636
-ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
+ms.openlocfilehash: a92699ccce4f0b2590e526b3442cd45bfda6407c
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73712924"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74563603"
 ---
 # <a name="add-built-in-apps-to-microsoft-intune"></a>Beépített alkalmazások hozzáadása a Microsoft Intune-hoz
 
@@ -37,24 +37,20 @@ Az Intune-konzol korábbi verzióiban az Intune több alapértelmezett felügyel
 ## <a name="add-a-built-in-app"></a>Beépített alkalmazás hozzáadása
 
 Beépített alkalmazást a következő módon adhat hozzá az elérhető alkalmazásokhoz a Microsoft Intune-ban:
-1. Jelentkezzen be az Azure Portalra.
-2. A Microsoft Intune panel megjelenítéséhez válassza a **További szolgáltatások** > **Figyelés és felügyelet** > **Intune** lehetőséget.
-3. Az **Intune** ablaktáblán válassza az **Ügyfélalkalmazások** lehetőséget.
-4. Az **Ügyfélalkalmazások** panelen a **Kezelés** szakaszban válassza az **Alkalmazások** lehetőséget.
-5. Válassza a **Hozzáadás** elemet.
-6. Az **Alkalmazás hozzáadása** panelen az **Alkalmazástípus**-listából válassza a **Beépített alkalmazás** lehetőséget.
-7. Válassza az **Alkalmazás kiválasztása** lehetőséget.
-8. A **Beépített alkalmazás** panelen jelölje ki a belefoglalni kívánt alkalmazásokat.
-9. Az **Alkalmazás hozzáadása** panelen válassza a **Hozzáadás** lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**lehetőséget.
+3. Az **Alkalmazás hozzáadása** panelen az **Alkalmazástípus**-listából válassza a **Beépített alkalmazás** lehetőséget.
+4. Válassza az **Alkalmazás kiválasztása** lehetőséget.
+5. A **Beépített alkalmazás** panelen jelölje ki a belefoglalni kívánt alkalmazásokat.
+6. Az **Alkalmazás hozzáadása** panelen válassza a **Hozzáadás** lehetőséget.
 
 
 ## <a name="configure-app-information"></a>Az alkalmazásadatok konfigurálása
 
 Módosíthatja a beépített alkalmazással kapcsolatos információkat. Ezek révén azonosíthatja az alkalmazást az Intune-ban, és segítségükkel a felhasználók is könnyebben megtalálhatják azt a Céges portál alkalmazásban.
-1. Az **ügyfélalkalmazások – alkalmazások** panelen válassza ki a módosítani kívánt beépített alkalmazást.  
-    Megjelenik a beépített alkalmazás panelje.
-2. A **Kezelés** alatt válassza a **Tulajdonságok** lehetőséget.
-3. A beépített alkalmazás adatainak módosításához válassza a **Konfigurálás** lehetőséget.
+1. Válassza az **alkalmazások** > **minden alkalmazás** lehetőséget, majd válassza ki a módosítani kívánt beépített alkalmazást.  
+   Megjelenik a beépített alkalmazás panelje.
+2. Válassza ki a **tulajdonságokat** > a **konfiguráláshoz**.
 4. Az **Alkalmazásadatok** panelen adja meg az alábbi információkat:
     - **Név**: Itt adhatja meg a beépített alkalmazásnak a céges portálon megjelenő nevét. Ügyeljen arra, hogy csak egyedi neveket használjon. Ha ugyanazt az alkalmazásnevet kétszer adja meg, csak az egyik alkalmazás fog megjelenni a felhasználók számára a céges portálon.
     - **Leírás**: Itt adhatja meg az alkalmazás leírását. 

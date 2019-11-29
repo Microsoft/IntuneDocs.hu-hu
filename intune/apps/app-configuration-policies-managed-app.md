@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/22/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ddb9ec795b9cc8842cbc6c9d33897b5e0f45e88
-ms.sourcegitcommit: 23e9c48348a6eba494d072a2665b7481e5b5c84e
+ms.openlocfilehash: 68032f47be043e8c49b6ad922392d14549293c35
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74547993"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74564274"
 ---
 # <a name="add-app-configuration-policies-for-managed-apps-without-device-enrollment"></a>Alkalmazáskonfigurációs szabályzatok hozzáadása felügyelt alkalmazásokhoz eszközbeléptetés nélkül
 
@@ -31,18 +31,15 @@ ms.locfileid: "74547993"
 
 Az alkalmazáskonfigurációs szabályzatokat nem regisztrált eszközökön is használhatja az olyan felügyelt alkalmazásokkal, amelyek támogatják az Intune App SDK-t. 
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Válassza az **Ügyfélalkalmazások** területet.
-4. Válassza az **Alkalmazáskonfigurációs szabályzatok** lehetőséget a **Felügyelet** csoportban, majd a **Hozzáadás** lehetőséget.
-5. Adja meg a következő adatokat:
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza ki az **alkalmazások** > **alkalmazás-konfigurációs szabályzatok** >  > **felügyelt alkalmazások** **hozzáadása** lehetőséget.
+3. Adja meg a következő adatokat:
     - **Név**  
       Az Azure Portalon megjelenő profilnév.
     - **Leírás**  
       Az Azure Portalon megjelenő profilleírás.
-    - **Eszközbeléptetés típusa**  
-      Válassza az **Alkalmazások kezelése** lehetőséget.
-6. A konfigurálni kívánt alkalmazás kiválasztásához válassza a **Társított alkalmazás** lehetőséget. Válassza ki a listából azon alkalmazásokat, amelyeket jóváhagyott az Intune-nal való szinkronizáláshoz.
-7. Az alkalmazás által támogatott konfigurációs beállítások mindegyikéhez írja be a **Nevet** és az **Értéket**, majd válassza a három pontot ( **…** ).  
+4. Válassza a **nyilvános alkalmazások kiválasztása** lehetőséget, vagy **válassza az egyéni alkalmazások** lehetőséget a konfigurálni kívánt alkalmazás kiválasztásához. Válassza ki a listából azon alkalmazásokat, amelyeket jóváhagyott az Intune-nal való szinkronizáláshoz.
+5. Az alkalmazás által támogatott konfigurációs beállításokhoz írja be a **nevet** és az **értéket**.  
     Egy konfiguráció törléséhez válassza a három pontot ( **...** ), majd a **Törlés** lehetőséget.  
     
 Az Intune App SDK-val kompatibilis alkalmazások támogatják a kulcs-érték párokban megadott konfigurációkat. Ha többet szeretne megtudni a támogatott kulcs-érték párokban megadott konfigurációkról, tekintse meg az egyes alkalmazások dokumentációját. Fontos megjegyezni, hogy használhat olyan tokeneket, amelyek dinamikusan töltődnek fel az alkalmazás által generált adatokkal. Az iOS Outlook alkalmazás konfigurációs szabályzatának beállításairól [Az iOS Outlook alkalmazás konfigurációjának kezelése a Microsoft Intune-nal](https://technet.microsoft.com/library/mt813789(v=exchg.150).aspx) című témakörben tájékozódhat.

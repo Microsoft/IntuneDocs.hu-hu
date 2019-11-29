@@ -5,7 +5,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 09/16/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1d73d28f34258bce99199731579969604c0a3d97
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.openlocfilehash: cef30238a4470395ccf58cf4d0619db78dd85b5a
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74059728"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74563464"
 ---
 # <a name="use-powershell-scripts-on-windows-10-devices-in-intune"></a>PowerShell-parancsfájlok használata Windows 10-es eszközökön az Intune-ban
 
@@ -62,7 +62,7 @@ Az Intune felügyeleti bővítmény a következő előfeltételekkel rendelkezik
     
     - A felhasználó az Azure AD-fiókjával bejelentkezik az eszközre, majd regisztrálja magát az Intune-ban.
 
-  - Configuration Manager és Intune-t használó közösen felügyelt eszközök. Győződjön meg arról, hogy az **ügyfélalkalmazások** számítási feladatait az Intune vagy az **Intune** **teszteli** . A következő cikkekben talál útmutatást: 
+  - Configuration Manager és Intune-t használó közösen felügyelt eszközök. Győződjön meg arról, hogy az **alkalmazások** számítási feladatai az Intune vagy az **Intune** **kipróbálására** vannak beállítva. A következő cikkekben talál útmutatást: 
   
     - [A közös felügyelet ismertetése](https://docs.microsoft.com/sccm/comanage/overview) 
     - [Ügyfélalkalmazások munkaterhelése](https://docs.microsoft.com/sccm/comanage/workloads#client-apps)
@@ -73,8 +73,8 @@ Az Intune felügyeleti bővítmény a következő előfeltételekkel rendelkezik
 
 ## <a name="create-a-script-policy-and-assign-it"></a>Hozzon létre egy parancsfájl-szabályzatot, és rendelje hozzá
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Válassza az **Eszközkonfiguráció** > **PowerShell-parancsfájlok** > **Hozzáadás** lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **eszközök** > **PowerShell-parancsfájlok** > **Hozzáadás**lehetőséget.
 
     ![PowerShell-parancsfájlok hozzáadása és használata Microsoft Intune](./media/intune-management-extension/mgmt-extension-add-script.png)
 
@@ -102,7 +102,7 @@ Az Intune felügyeleti bővítmény a következő előfeltételekkel rendelkezik
 
     2. Ha elkészült, kattintson a **Tovább gombra**.
 
-6. Válassza ki a **hozzárendelések** > **elemet a felvenni kívánt csoportok**közül. Megjelenik az Azure AD-csoportok meglévő listája.
+6. Válassza a **hozzárendelések** lehetőséget > **válassza ki a csoportokat**. Megjelenik az Azure AD-csoportok meglévő listája.
 
     1. Válasszon ki egy vagy több olyan csoportot, amely tartalmazza azokat a felhasználókat, akiknek az eszközei megkapják a parancsfájlt. Válassza a **Kijelölés** elemet. A kiválasztott csoportok megjelennek a listában, és megkapják a szabályzatot.
 
@@ -134,7 +134,7 @@ A **PowerShell-parancsfájlok** panelen válassza ki a megfigyelendő parancsfá
 
 ## <a name="intune-management-extension-logs"></a>Intune felügyeleti bővítmény naplófájljai
 
-Az ügynök naplói az ügyfélszámítógépen általában `\ProgramData\Microsoft\IntuneManagementExtension\Logs`. A naplófájlok megtekintéséhez használhatja a [CMTrace. exe](https://docs.microsoft.com/sccm/core/support/tools) fájlt. 
+Az ügyfélgépen lévő ügynökök naplói jellemzően `\ProgramData\Microsoft\IntuneManagementExtension\Logs`. A naplófájlok megtekintéséhez használhatja a [CMTrace. exe](https://docs.microsoft.com/sccm/core/support/tools) fájlt. 
 
 ![Képernyőkép vagy minta cmtrace-ügynök naplói Microsoft Intune](./media/apps-win32-app-management/apps-win32-app-10.png)  
 
@@ -158,7 +158,7 @@ Ha szeretné megtudni, hogy az eszköz automatikusan regisztrálva van-e, a köv
   1. Lépjen a **beállítások** > **fiókok** > **hozzáférés munkahelyi vagy iskolai rendszerhez elemre**.
   2. Válassza ki az összekapcsolt fiók > **adatokat**.
   3. A **speciális diagnosztikai jelentés**területen válassza a **jelentés létrehozása**lehetőséget.
-  4. Nyissa meg a `MDMDiagReport` webböngészőben.
+  4. Nyissa meg a `MDMDiagReport`t egy böngészőben.
   5. Keresse meg a **MDMDeviceWithAAD** tulajdonságot. Ha a tulajdonság létezik, a rendszer automatikusan regisztrálja az eszközt. Ha ez a tulajdonság nem létezik, akkor az eszköz nincs automatikusan regisztrálva.
 
 A [Windows 10 automatikus regisztrációjának engedélyezése](../enrollment/windows-enroll.md#enable-windows-10-automatic-enrollment) az automatikus regisztráció konfigurálásának lépéseit tartalmazza az Intune-ban.
@@ -180,12 +180,12 @@ A [Windows 10 automatikus regisztrációjának engedélyezése](../enrollment/wi
 - Győződjön meg arról, hogy az Intune felügyeleti bővítmény le van töltve `%ProgramFiles(x86)%\Microsoft Intune Management Extension`ra.
 - A parancsfájlok nem futnak a Surface hubokon vagy a Windows 10-es módban.
 - Tekintse át a hibákat a naplókban. Lásd: az [Intune felügyeleti bővítmény naplófájljai](#intune-management-extension-logs) (ebben a cikkben).
-- A lehetséges engedélyekkel kapcsolatos problémák esetén győződjön meg arról, hogy a PowerShell-parancsfájl tulajdonságai `Run this script using the logged on credentials` értékre vannak beállítva. Győződjön meg arról is, hogy a bejelentkezett felhasználó rendelkezik a megfelelő engedélyekkel a parancsfájl futtatásához.
+- A lehetséges engedélyekkel kapcsolatos problémák esetén győződjön meg arról, hogy a PowerShell-parancsfájl tulajdonságai `Run this script using the logged on credentials`értékre vannak beállítva. Győződjön meg arról is, hogy a bejelentkezett felhasználó rendelkezik a megfelelő engedélyekkel a parancsfájl futtatásához.
 
 - A parancsfájlokkal kapcsolatos problémák elkülönítéséhez a következőket teheti:
 
   - Tekintse át a PowerShell-végrehajtási konfigurációt az eszközökön. Útmutatásért tekintse meg a [PowerShell végrehajtási szabályzatát](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6) .
-  - Futtasson egy minta parancsfájlt az Intune felügyeleti bővítmény használatával. Hozza létre például a `C:\Scripts` könyvtárat, és adjon meg mindenki számára teljes hozzáférést. Futtassa a következő parancsfájlt:
+  - Futtasson egy minta parancsfájlt az Intune felügyeleti bővítmény használatával. Hozza létre például a `C:\Scripts` könyvtárat, és adja meg mindenki számára a teljes hozzáférést. Futtassa a következő parancsfájlt:
 
     ```powershell
     write-output "Script worked" | out-file c:\Scripts\output.txt
@@ -205,7 +205,7 @@ A [Windows 10 automatikus regisztrációjának engedélyezése](../enrollment/wi
     echo "Forced Fail" | out-file c:\temp\Fail.txt
     ```
 
-    Ha a parancsfájl sikert jelez, tekintse meg a `AgentExecutor.log` értéket a hiba kimenetének megerősítéséhez. Ha a szkript végrehajtja a parancsot, a hossznak > 2 értéknek kell lennie.
+    Ha a parancsfájl sikert jelez, tekintse meg a `AgentExecutor.log` a hiba kimenetének megerősítéséhez. Ha a szkript végrehajtja a parancsot, a hossznak > 2 értéknek kell lennie.
 
   - A. Error és a. output fájlok rögzítéséhez a következő kódrészlet a AgentExecutor és a PSx86 (`C:\Windows\SysWOW64\WindowsPowerShell\v1.0`) használatával hajtja végre a parancsfájlt. Megtartja a naplókat a felülvizsgálathoz. Ne feledje, hogy az Intune felügyeleti bővítmény a szkript végrehajtása után törli a naplókat:
   

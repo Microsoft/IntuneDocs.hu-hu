@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 10/08/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9561c50e21a9667ccec3f9de3627e7a933cf0736
-ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
+ms.openlocfilehash: 80d6068a17e1d278f9226e26c9efab24d597e52e
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72584996"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74564268"
 ---
 # <a name="add-app-configuration-policies-for-managed-android-enterprise-devices"></a>Alkalmazás-konfigurációs szabályzatok hozzáadása a felügyelt Android Enterprise-eszközökhöz
 
@@ -34,7 +34,7 @@ Az alkalmazás-konfigurációs szabályzatok a Microsoft Intune a Google Play-al
 > [!NOTE]  
 > Az alkalmazáskonfigurációt nem minden alkalmazás támogatja. Ellenőrizze, hogy az alkalmazás támogatja-e az alkalmazás-konfigurációs házirendeket az alkalmazás fejlesztőivel kapcsolatban.
 
-1. Az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ban válassza az **ügyfélalkalmazások** > **alkalmazás-konfigurációs szabályzatok** >  **Hozzáadás**lehetőséget.
+1. Az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ban válassza az **alkalmazások** > **alkalmazás-konfigurációs házirendek** >  **Hozzáadás**elemet.
 2. Adja meg a következő tulajdonságokat:
 
     - **Név**: adjon meg egy leíró nevet a szabályzatnak. Nevezze el a szabályzatokat, hogy később könnyebben azonosítható legyen. A helyes szabályzat neve például az **Android Enterprise Nine Work app Policy a teljes vállalat**számára.
@@ -72,7 +72,7 @@ Ha változót szeretne megadni értéktípusnak, az alábbi lehetőségek közü
 | HRE-eszköz azonosítója | dc0dc142-11d8-4b12-bfea-cae2a8514c82 |
 | Fiókazonosító | fc0dc142-71d8-4B12-bbea-bae2a8514c81 |
 | Intune-eszközazonosító | b9841cd9-9843-405f-be28-b2265c59ef97 |
-| Domain | Contoso.com |
+| Domain | contoso.com |
 | Mail | john@contoso.com |
 | Részleges UPN | John |
 | Felhasználói azonosító | 3ec2c00f-b125-4519-acf0-302ac3761822 |
@@ -110,7 +110,7 @@ Az Android-eszközök funkcióinak eléréséhez előre konfigurálhatja az alka
 
 Egy alkalmazás például az eszköz mikrofonját használja. A rendszer felszólítja a felhasználót, hogy engedélyezze az alkalmazás számára a mikrofon használatára vonatkozó engedélyt.
 
-1. Az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ban válassza az **ügyfélalkalmazások** > **alkalmazás-konfigurációs szabályzatok** >  **Hozzáadás**lehetőséget.
+1. Az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ban válassza az **alkalmazások** > **alkalmazás-konfigurációs házirendek** >  **Hozzáadás**elemet.
 2. Adja meg a következő tulajdonságokat:
 
     - **Név**: adjon meg egy leíró nevet a szabályzatnak. Nevezze el a szabályzatokat, hogy később könnyebben azonosítható legyen. Például egy jó szabályzat neve az **Android Enterprise prompt engedélyek alkalmazás-házirend a teljes vállalat**számára.
@@ -124,7 +124,7 @@ Egy alkalmazás például az eszköz mikrofonját használja. A rendszer felszó
     - **Rákérdezés**. A felhasználó elfogadásra vagy elutasításra való felszólítása.
     - **Automatikus engedélyezés**. Automatikus jóváhagyás a felhasználó értesítése nélkül.
     - **Automatikus elutasítás**. Automatikus elutasítás a felhasználó értesítése nélkül.
-6. Az alkalmazás-konfigurációs házirend hozzárendeléséhez válassza ki az alkalmazás-konfigurációs házirendet > **hozzárendelés** > **csoport kiválasztása lehetőséget**. Válassza ki a hozzárendelni kívánt felhasználói csoportokat > **válassza a lehetőséget**.
+6. Az alkalmazás-konfigurációs házirend hozzárendeléséhez válassza ki az alkalmazás-konfigurációs házirendet > **hozzárendelés** > **válassza a csoportok lehetőséget**. Válassza ki a hozzárendelni kívánt felhasználói csoportokat > **válassza a lehetőséget**.
 7. A szabályzat hozzárendeléséhez kattintson a **Mentés** gombra.
 
 ## <a name="additional-information"></a>További információ

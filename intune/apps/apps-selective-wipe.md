@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/19/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4e827075b56d1751e837c25d85c304201bcafa01
-ms.sourcegitcommit: 2fddb293d37453736ffa54692d03eca642f3ab58
+ms.openlocfilehash: 9c0ca82b434b83937c7962b2676ce3c2a12c1424
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74390438"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74564005"
 ---
 # <a name="how-to-wipe-only-corporate-data-from-intune-managed-apps"></a>Csak vállalati adatok törlése az Intune által felügyelt alkalmazásokból
 
@@ -44,8 +44,8 @@ A Windows Information Protection (folyamatban lévő) házirendek telepítése a
 
 ## <a name="create-a-wipe-request"></a>Törlési kérés
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Az Intune panelen válassza az **ügyfélalkalmazások** > **alkalmazás szelektív törlés** > **törlési kérelem létrehozása**lehetőséget.<br>
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **alkalmazások** > **alkalmazás szelektív törlés** > **törlési kérelem létrehozása**lehetőséget.<br>
    Megjelenik a **törlési kérelem létrehozása** panel.
 3. Kattintson a **felhasználó kiválasztása**lehetőségre, válassza ki azt a felhasználót, akinek az alkalmazási adatát törölni szeretné, **majd kattintson a Kiválasztás gombra** a **felhasználó kiválasztása** ablaktábla alján.
 
@@ -65,7 +65,7 @@ A szolgáltatás külön törlési kéréseket hoz létre az egyes védett alkal
 
 Elérhető egy összesítő jelentés is, amely a törlési kérelem összesített állapotát jeleníti meg, és tartalmazza a függőben lévő kérések és a hibák számát. Ha további részleteket szeretne megismerni, kövesse az alábbi lépéseket:
 
-1. Az **ügyfélalkalmazások** > **alkalmazás szelektív törlés** paneljén megtekintheti a kérelmek felhasználók szerint csoportosított listáját. A rendszer minden, az eszközön futó védett alkalmazáshoz külön törlési kérést hoz létre, ezért több kérés jelenhet meg ugyanannál a felhasználónál. Az állapot mutatja, hogy a törlési kérés **függőben van**, **sikertelen**, vagy **sikeres**.
+1. Az **alkalmazások** > **alkalmazás szelektív törlés** paneljén megtekintheti a kérelmek felhasználók szerint csoportosított listáját. A rendszer minden, az eszközön futó védett alkalmazáshoz külön törlési kérést hoz létre, ezért több kérés jelenhet meg ugyanannál a felhasználónál. Az állapot mutatja, hogy a törlési kérés **függőben van**, **sikertelen**, vagy **sikeres**.
 
     ![Képernyőkép a törlési kérés állapotáról az Alkalmazások szelektív törlése panelen](./media/apps-selective-wipe/wipe-request-status-1.png)
 
@@ -86,7 +86,7 @@ A felfüggesztett állapotú törlés addig lesz megjelenítve, míg manuálisan
 
 3. Ha a rendszer törlési megerősítést kér, válassza az **Igen** vagy a **Nem** lehetőséget, majd kattintson az **OK** gombra.
 
-## <a name="see-also"></a>Lásd még
+## <a name="see-also"></a>További információ
 [Mi az alkalmazásvédelmi szabályzat?](app-protection-policy.md)
 
 [Mi az alkalmazáskezelés?](app-management.md)

@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/21/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c1e8e37a784ea39fbf1154321933673ed02eee33
-ms.sourcegitcommit: 16a9109b4028589c17695d41271ca4fee8b1d697
+ms.openlocfilehash: e990cd94c0f8622d07e59b4130566a1dc2953a1c
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74540748"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74563997"
 ---
 # <a name="assign-apps-to-groups-with-microsoft-intune"></a>Alkalmazások hozzárendelése csoportokhoz a Microsoft Intune-nal
 
@@ -55,13 +55,12 @@ Az alábbi táblázat az alkalmazások felhasználókhoz és eszközökhöz val�
 
 ## <a name="assign-an-app"></a>Alkalmazás kiosztása
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Az **Intune** ablaktáblán válassza az **Ügyfélalkalmazások** lehetőséget.
-4. A menü **Kezelés** szakaszában válassza az **Alkalmazások**. elemet.
-5. Az **Alkalmazások** ablaktáblán jelölje ki a hozzárendelni kívánt alkalmazást.
-6. A menü **Kezelés** szakaszában válassza a **Hozzárendelések**. elemet.
-7. Válassza a **Csoport hozzáadása** lehetőséget az alkalmazáshoz kapcsolódó **Csoport hozzáadása** ablaktábla megnyitásához.
-8. Az adott alkalmazáshoz válasszon egy **hozzárendelés-típust**:
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **alkalmazások** > **minden alkalmazás**lehetőséget.
+3. Az **Alkalmazások** ablaktáblán jelölje ki a hozzárendelni kívánt alkalmazást.
+4. A menü **Kezelés** szakaszában válassza a **Hozzárendelések**. elemet.
+5. Válassza a **Csoport hozzáadása** lehetőséget az alkalmazáshoz kapcsolódó **Csoport hozzáadása** ablaktábla megnyitásához.
+6. Az adott alkalmazáshoz válasszon egy **hozzárendelés-típust**:
    - **Regisztrálva lévő eszközökhöz**: rendelje hozzá az alkalmazást azon felhasználók csoportjaihoz, akik telepíthetik az alkalmazást a céges portál alkalmazásból vagy webhelyről.
    - **Regisztrációval vagy anélkül is elérhető**: Az alkalmazás hozzárendelése olyan felhasználók csoportjaihoz, akik eszközei nincsenek regisztrálva az Intune-ban. A felhasználóknak Intune-licencet kell rendelniük, lásd: [Intune-licencek](../fundamentals/licenses.md).
    - **Szükséges**: A rendszer telepíti az alkalmazást a kiválasztott csoportok eszközeire. Egyes platformok további kérésekkel rendelkezhetnek arról, hogy a végfelhasználó tudomásul veszi az alkalmazás telepítésének megkezdése előtt.
@@ -76,19 +75,19 @@ Az alábbi táblázat az alkalmazások felhasználókhoz és eszközökhöz val�
      >
      > A **regisztrált eszközök számára elérhető**: az alkalmazás csak akkor jelenik meg elérhetőként, ha a céges portál bejelentkezett felhasználó az eszközt regisztráló elsődleges felhasználó, és az alkalmazás alkalmazható az eszközre.
 
-9. Az alkalmazás-hozzárendelés által érintett felhasználócsoportok kiválasztásához válassza a **Belefoglalt csoportok** lehetőséget.
-10. Miután kiválasztott egy vagy több csoportot a belefoglaláshoz, válassza a **Kiválasztás** lehetőséget.
-11. Kattintson a **Hozzárendelés** ablaktáblán az **OK** gombra a belefoglalt csoportok kiválasztásának befejezéséhez.
-12. Ha ki szeretne zárni felhasználói csoportokat az alkalmazás-hozzárendelésből, válassza a **Csoportok kizárása** lehetőséget.
-13. Ha valamilyen csoport kizárása mellett döntött, válassza a **Csoportok kiválasztása** ablaktáblán a **Kiválasztás** lehetőséget.
-14. A **Csoport hozzáadása** panelen kattintson az **OK** gombra.
-15. Az alkalmazás **Hozzárendelések** ablaktábláján kattintson a **Mentés** gombra.
+7. Az alkalmazás-hozzárendelés által érintett felhasználócsoportok kiválasztásához válassza a **Belefoglalt csoportok** lehetőséget.
+8. Miután kiválasztott egy vagy több csoportot a belefoglaláshoz, válassza a **Kiválasztás** lehetőséget.
+9. Kattintson a **Hozzárendelés** ablaktáblán az **OK** gombra a belefoglalt csoportok kiválasztásának befejezéséhez.
+10. Ha ki szeretne zárni felhasználói csoportokat az alkalmazás-hozzárendelésből, válassza a **Csoportok kizárása** lehetőséget.
+11. Ha valamilyen csoport kizárása mellett döntött, válassza a **Csoportok kiválasztása** ablaktáblán a **Kiválasztás** lehetőséget.
+12. A **Csoport hozzáadása** panelen kattintson az **OK** gombra.
+13. Az alkalmazás **Hozzárendelések** ablaktábláján kattintson a **Mentés** gombra.
 
 Ezzel az alkalmazást hozzárendelte a kiválasztott csoportokhoz. További információt az alkalmazás-hozzárendelések belefoglalásához és kizárásához az [Alkalmazás-hozzárendelések belefoglalása és kizárása](apps-inc-exl-assignments.md) részben talál.
 
 ## <a name="how-conflicts-between-app-intents-are-resolved"></a>Alkalmazások hozzárendelési ütközéseinek feloldása
 
-Egyetlen csoportot sem lehet megtervezni több alkalmazás-hozzárendelési cél megcélzására, azonban ha egy felhasználó vagy egy eszköz több olyan csoport tagja, amely különböző leképezésekkel van társítva, akkor ütközést eredményezhet. Nem ajánlott hozzárendelési ütközéseket létrehozni az alkalmazásokhoz.
+Egyetlen csoportot sem lehet több alkalmazás-hozzárendelési szándéknak megcélozni, azonban ha egy felhasználó vagy egy eszköz több olyan csoport tagja, amely különböző leképezésekkel van társítva, ütközést eredményezhet. Nem ajánlott hozzárendelési ütközéseket létrehozni az alkalmazásokhoz.
 Az alábbi táblázatban található információk segítenek megérteni az eredményül kapott szándékot ütközés esetén:
 
 | 1\. csoport hozzárendelési szándéka | 2\. csoport hozzárendelési szándéka | Eredmény |
@@ -142,7 +141,7 @@ A beállítás alapértelmezett értékei az új hozzárendelésekhez az alábbi
 | Üzletági alkalmazás | Igen |
 | Áruházbeli alkalmazás | Nem |
 | VPP-alkalmazás | Nem |
-| Buit-alkalmazás | Nem |
+| Beépített alkalmazás | Nem |
 
 >[!NOTE]
 >**"Elérhető" hozzárendelési típusok:** Ha ezt a beállítást "elérhető regisztrált eszközökhöz" vagy "a regisztráció nélkül vagy anélkül elérhető" csoportok esetében frissíti, akkor a felügyelt alkalmazással már rendelkező felhasználók nem kapják meg a frissített beállítást, amíg nem szinkronizálják az eszközt az Intune-nal, és nem telepítik újra az alkalmazást. 

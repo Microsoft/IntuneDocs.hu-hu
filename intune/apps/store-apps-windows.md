@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/27/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c19d14b2f2cfa838d79af1c6fbb3c3500004e56e
-ms.sourcegitcommit: 23e9c48348a6eba494d072a2665b7481e5b5c84e
+ms.openlocfilehash: 3c13d7960c0bb5c73908a0a574ab7d6c169d6460
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74548025"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74563439"
 ---
 # <a name="add-microsoft-store-apps-to-microsoft-intune"></a>Microsoft Store-alkalmazások hozzáadása a Microsoft Intune-hoz
 
@@ -34,12 +34,10 @@ Az alkalmazások hozzárendelése, figyelése, konfigurálása és védelme elő
 ## <a name="add-an-app-to-intune"></a>Alkalmazás hozzáadása az Intune-hoz
 A következő módon adhat hozzá Microsoft Store-beli alkalmazást az Intune-hoz:
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Az **Intune** ablaktáblán válassza az **Ügyfélalkalmazások** lehetőséget.
-4. Az **Ügyfélalkalmazások** tevékenységprofil panelén a **Kezelés** szakaszban válassza az **Alkalmazások** lehetőséget.
-5. Az **Alkalmazások** panelen válassza a **Hozzáadás** lehetőséget.
-6. Az **Alkalmazás hozzáadása** panelen válassza a **Windows** lehetőséget az **Alkalmazás típusa** területen, majd válassza az **Alkalmazásadatok** lehetőséget.
-7. Az **Alkalmazásadatok** panelen adja meg az alkalmazás adatait. A választott alkalmazástól függően előfordulhat, hogy egyes értékek automatikusan ki vannak töltve a panelen:
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**lehetőséget.
+3. Az **Alkalmazás hozzáadása** panelen válassza a **Windows** lehetőséget az **Alkalmazás típusa** területen, majd válassza az **Alkalmazásadatok** lehetőséget.
+4. Az **Alkalmazásadatok** panelen adja meg az alkalmazás adatait. A választott alkalmazástól függően előfordulhat, hogy egyes értékek automatikusan ki vannak töltve a panelen:
     - **Név**: Itt adhatja meg az alkalmazás céges portálon megjelenítendő nevét. Gondoskodjon róla, hogy az alkalmazás neve egyedi legyen. Ha két alkalmazás neve megegyezik, a felhasználók csak az egyik alkalmazást fogják látni a céges portálon.
     - **Leírás**: Itt adhatja meg az alkalmazás leírását. A leírás a céges portálon jelenik meg a felhasználók számára.
     - **Kiadó:** Adja meg az alkalmazás kiadójának nevét.
@@ -52,8 +50,8 @@ A következő módon adhat hozzá Microsoft Store-beli alkalmazást az Intune-ho
     - **Tulajdonos**: Igény esetén megadhatja az alkalmazás tulajdonosának nevét (például *HR-osztály*).
     - **Megjegyzések:** : Ide írhatja be igény szerint az alkalmazáshoz társítani kívánt megjegyzéseket.
     - **Ikon** (nem kötelező): Itt töltheti fel az alkalmazáshoz hozzárendelni kívánt ikont. Ez az alkalmazásikon jelenik meg a céges portálon böngésző felhasználók számára.
-8. Válassza az **OK** gombot.
-9. Válassza a **Hozzáadás** elemet.
+5. Válassza az **OK** gombot.
+6. Válassza a **Hozzáadás** elemet.
 
 A létrehozott alkalmazás megjelenik az alkalmazáslistában, ahol hozzárendelheti a kiválasztott csoportokhoz. A Microsoft Store-beli alkalmazásokat csak a **Regisztrált eszközök esetében elérhető** hozzárendelési típusú csoportokhoz lehet hozzárendelni (a felhasználók a Céges portál alkalmazásból vagy a webhelyről telepítik az alkalmazást).
 

@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/06/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ff9a37a1dd815b6ec9d7522604796310e7f0b5ce
-ms.sourcegitcommit: a7c35efb31c4efd816bd4aba29240013965aee92
+ms.openlocfilehash: eed0b8a74e69bc1552ae3e2badf485364ba37e94
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "73984106"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74563828"
 ---
 # <a name="how-to-manage-ios-and-macos-apps-purchased-through-apple-volume-purchase-program-with-microsoft-intune"></a>A Apple Volume Purchase Program használatával vásárolt iOS-és macOS-alkalmazások kezelése Microsoft Intune
 
@@ -82,8 +82,8 @@ Mielőtt hozzálát, be kell szereznie a VPP-tokent az Apple-től, és fel kell 
 
 ## <a name="to-get-and-upload-an-apple-vpp-token"></a>Apple VPP-token beszerzése és feltöltése
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Az **Intune** panelen válassza az **ügyfélalkalmazások** > **Apple VPP-tokenek** elemet a **beállítás**alatt.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+3. Válassza a **bérlői felügyelet** > **Összekötők és tokenek** > **Apple VPP-tokenek**elemet.
 4. A VPP-tokenek panel listájában válassza a **Létrehozás** elemet.
 5. Az **VPP-token Létrehozása** panelen adja meg az alábbi adatokat:
     - **VPP-jogkivonatfájl** – Ha még nem tette meg, iratkozzon fel a vállalati Volume Purchase Programra vagy az oktatási programra. A regisztrációt követően töltse le a fiókjához tartozó Apple VPP-tokent, és itt jelölje ki.
@@ -110,7 +110,7 @@ Az Apple által tárolt adatok bármikor szinkronizálhatók az Intune-nal a **S
 
 ## <a name="to-assign-a-volume-purchased-app"></a>Mennyiségi programban vásárolt alkalmazás hozzárendelése
 
-1. Az **Intune** ablaktáblán válassza az **Eszközalkalmazások** > **Alkalmazások** elemet a **Kezelés** lehetőség alatt.
+1. Válassza az **alkalmazások** > **minden alkalmazás**lehetőséget.
 2. Az alkalmazáslista paneljén válassza ki a hozzárendelni kívánt alkalmazást, és válassza a **Hozzárendelés** lehetőséget.
 3. Az ***Alkalmazás neve*** - **Hozzárendelések** panelen kattintson a **Csoport hozzáadása** elemre, majd a **Csoport hozzáadása** panelen válasszon egy **hozzárendelés-típust** és azokat az Azure AD-beli felhasználói vagy eszközcsoportokat, amelyekhez hozzá kívánja rendelni az alkalmazást.
 5. Minden kijelölt csoporthoz válassza ki az alábbi beállításokat:
@@ -176,8 +176,8 @@ Jelenleg az iOS VPP-alkalmazások nem törölhetők a Microsoft Intune-ból.
 
 Az Apple VPP-tokenekhez és VPP-alkalmazásokhoz való hozzáférés az Intune-ban egyéni rendszergazdai szerepkörökhöz hozzárendelt engedélyektől függetlenül is szabályozható.
 
-* Ha engedélyezni szeretné, hogy az Intune egyéni szerepköre kezelhesse az Apple VPP-tokeneket az **ügyfélalkalmazások** > **Apple VPP-tokenek**alatt, rendeljen engedélyeket a **felügyelt alkalmazásokhoz**.
-* Ha engedélyezni szeretné az Intune egyéni szerepkörét az iOS VPP-tokenekkel vásárolt alkalmazások kezeléséhez az **ügyfélalkalmazások** > **alkalmazásokban**, rendeljen engedélyeket a **Mobile apps**szolgáltatáshoz. 
+* Ha engedélyezni szeretné az Intune egyéni szerepkörének az Apple VPP-tokenek kezelését az **alkalmazások** > **Apple VPP-tokenek**területen, rendeljen engedélyeket a **felügyelt alkalmazásokhoz**.
+* Ha engedélyezni szeretné az Intune egyéni szerepkörét az iOS VPP-tokenekkel vásárolt alkalmazások kezeléséhez az **alkalmazások** > az **összes alkalmazás**területen, rendeljen engedélyeket a **Mobile apps**szolgáltatáshoz. 
 
 ## <a name="additional-information"></a>További információ
 
@@ -196,7 +196,7 @@ A licenc néhány órával az alkalmazások telepítése vagy eltávolítása ut
 Igen. Az Intune rendszergazdája túllépheti az alkalmazáselőfizetéseket. Ha például a rendszergazda 100 licencet vásárol XYZ alkalmazáshoz, majd egy 500 tagú csoporthoz rendeli azt. Az első 100 tag (felhasználó vagy eszköz) megkapja a licencet, a többi taghoz azonban nem lesz hozzárendelve licenc.
 
 ### <a name="how-frequently-does-intune-sync-vpp-tokens-with-apple"></a>Milyen gyakran szinkronizálja az Intune a VPP-tokeneket az Apple-szel?
-Az Intune naponta kétszer szinkronizálja a VPP-tokeneket és-licenceket az Apple-szel. Az Intune-rendszergazda az **ügyfélalkalmazások** > **Apple VPP-tokenek**alatt manuális szinkronizálást indíthat.
+Az Intune naponta kétszer szinkronizálja a VPP-tokeneket és-licenceket az Apple-szel. Az Intune-rendszergazda manuális szinkronizálást kezdeményezhet az **alkalmazások** > **Apple VPP-tokenek**területen.
 
 ## <a name="next-steps"></a>További lépések
 

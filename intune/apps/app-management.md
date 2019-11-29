@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/23/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 56814550cae814bd89d55a6f72df98dd24df4caf
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 09b4cfad0490f35a85e4c72b937b2ba5c0472030
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72507461"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74564370"
 ---
 # <a name="what-is-microsoft-intune-app-management"></a>A Microsoft Intune-alkalmazásfelügyelet ismertetése
 
@@ -76,14 +76,14 @@ Az Intune számos szolgáltatással segít a szükséges alkalmazások üzembe h
 
 ## <a name="get-started"></a>Első lépések
 
-Az alkalmazáshoz kapcsolódó legtöbb információ az **Ügyfélalkalmazások** területen található, amely a következőképpen érhető el:
+Az alkalmazásokkal kapcsolatos legtöbb információt megtalálhatja az **alkalmazások** munkaterhelésében, amelyet a következő módon érhet el:
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. A **Microsoft Intune** ablaktáblán válassza az **Ügyfélalkalmazások** lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+3. Válassza az **alkalmazások**lehetőséget.
 
-    ![Az Ügyfélalkalmazások tevékenységprofil](./media/app-management/apps-workload.png)
+    ![Az alkalmazások munkaterhelése panel](./media/app-management/apps-workload.png)
 
-A következő négy szakasz az **Ügyfélalkalmazások** ablaktáblán elérhető lehetőségeket ismerteti.
+A következő négy szakasz az **alkalmazások** ablaktáblán elérhető beállításokat ismerteti.
 
 ### <a name="manage"></a>A számítógépeken futó
 - **Alkalmazások**: Ezzel a beállítással a munkaerő által használt alkalmazásokat adhatja hozzá, tekintheti meg, rendelheti hozzá és figyelheti. További információkért lásd:

@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 10/14/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c0b5f087494e8033cb9645d0a08edd4e1c481a2c
-ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
+ms.openlocfilehash: 31bad59c33a34d0b92d93979b20b58f70fd042ef
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72584931"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74564100"
 ---
 # <a name="use-ios-app-provisioning-profiles-to-prevent-your-apps-from-expiring"></a>Az iOS-alkalmazáskiépítési profilok segítségével megakadályozhatja, hogy az alkalmazásai lejárjanak
 
@@ -44,12 +44,12 @@ Rendszergazdaként belefoglaló vagy kizáró biztonsági csoportokat hozhat lé
 
 ## <a name="how-to-create-an-ios-mobile-app-provisioning-profile"></a>iOS-beli mobilalkalmazás-kiépítési profilok létrehozása
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Az **Intune** panelen válassza az **ügyfélalkalmazások**  >  iOS-**alkalmazás létesítési profiljai**  >  a**profil létrehozása**lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **alkalmazások** > iOS-alkalmazások **létesítési profiljait** > a **profil létrehozása**lehetőséget.
 3. Az **alapvető beállítások** lapon adja hozzá a következő értékeket:
     - **Név** – Adjon egy nevet a mobil kiépítési profilnak.
     - **Leírás** – Lehetősége van a házirend ismertetésének megadására.
-    - **Profil feltöltése** – válassza a **Megnyitás** ikon lehetőséget, majd válassza ki az Apple [Developer webhelyéről](https://developer.apple.com/)letöltött, `.mobileprovision` kiterjesztésű Apple Mobile-konfigurációs profilt tartalmazó fájlt.
+    - **Profil feltöltése** – válassza a **Megnyitás** ikon lehetőséget, majd válassza ki az Apple [Developer webhelyéről](https://developer.apple.com/)letöltött, `.mobileprovision`t tartalmazó Apple Mobile konfigurációs profilt.
 
    A **lejárati dátum** a fent hozzáadott Apple Mobile konfigurációs profilban szereplő értékből lesz kitöltve.<br>
 

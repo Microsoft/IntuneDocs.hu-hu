@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 44e757be5f109b81772daa6ff59505ccc0f033f8
-ms.sourcegitcommit: 556b7ea2049014c9027f0e44affd3f301fab55fc
+ms.openlocfilehash: c5cd8c1a1d17ca38c42b6ed6821d20367b147ad6
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73709440"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74562384"
 ---
 # <a name="set-up-intune-enrollment-of-android-enterprise-fully-managed-devices"></a>Az Android Enterprise teljes körűen felügyelt eszközök Intune-regisztrációjának beállítása 
 
@@ -56,11 +56,11 @@ Az Android Enterprise teljes körűen felügyelt eszközkezelés beállításáh
 
 ### <a name="enable-corporate-owned-user-devices"></a>Vállalati tulajdonú felhasználói eszközök engedélyezése
 
-1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431) , és válassza az **eszközök beléptetése** > **Android-regisztráció** > **vállalati tulajdonú, teljes körűen felügyelt felhasználói eszközök**lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431) , és válassza az **eszközök** > **android** > **Android-regisztráció**  > **vállalat által birtokolt, teljes körűen felügyelt felhasználói eszközök**elemet.
 2. A **vállalati tulajdonú felhasználói eszközök regisztrálásának engedélyezése a felhasználók**számára területen válassza az **Igen**lehetőséget.
 
 > [!NOTE]
-> Ha rendelkezik egy olyan Azure AD-beli feltételes hozzáférési szabályzattal, amely az *eszköz megfelelőségi vezérlőként való megjelölését* használja, és **minden felhőalapú alkalmazásra**, **Androidra** és **böngészőre** vonatkozik, ki kell zárnia a **Microsoft Intune** a Felhőbeli alkalmazás a szabályzatból. Ennek az az oka, hogy az Android telepítési folyamatai egy Chrome-lappal hitelesítik a felhasználókat a regisztráció során. További információt az [Azure ad feltételes hozzáférési dokumentációjában](https://docs.microsoft.com/azure/active-directory/conditional-access/)talál.
+> Ha rendelkezik egy olyan Azure AD-beli feltételes hozzáférési szabályzattal, amely az *eszköz megfelelőségi vezérlőként való megjelölését* használja, és **minden felhőalapú alkalmazásra**, **Androidra** és **böngészőre** vonatkozik, ki kell zárnia a **Microsoft Intune** Cloud alkalmazást ebből a szabályzatból. Ennek az az oka, hogy az Android telepítési folyamatai egy Chrome-lappal hitelesítik a felhasználókat a regisztráció során. További információt az [Azure ad feltételes hozzáférési dokumentációjában](https://docs.microsoft.com/azure/active-directory/conditional-access/)talál.
 
 Ha a beállítás értéke **Igen**, akkor egy beléptetési tokent (egy véletlenszerű karakterláncot) és egy QR-kódot biztosít az Intune-bérlőhöz. Ez az egyszeri beléptetési jogkivonat minden felhasználó számára érvényes, és nem jár le. Az eszköz Android operációs rendszertől és verziójától függően az eszköz regisztrálása a jogkivonat vagy a QR-kód használatával végezhető el.
 

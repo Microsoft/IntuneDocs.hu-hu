@@ -6,7 +6,7 @@ keywords: Intune
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/27/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c53166b6e6dc6ab3f780ccdfd4f11eb4c6a9d730
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: c5616b27b97d5623958ec872390e2a6de79db3c5
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72497558"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74563451"
 ---
 # <a name="add-ios-store-apps-to-microsoft-intune"></a>iOS-es áruházbeli alkalmazások hozzáadása a Microsoft Intune-hoz
 
@@ -41,18 +41,16 @@ Ezzel az eljárással csak az áruházban ingyenesen elérhető alkalmazások ho
 >[!NOTE]
 >A Microsoft Intune használatához javasoljuk, hogy a Microsoft Edge vagy a Google Chrome böngészőt használja.
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Az **Intune** ablaktáblán válassza az **Ügyfélalkalmazások** lehetőséget.
-4. Az **Ügyfélalkalmazások** tevékenységprofil panelén a **Kezelés** szakaszban válassza az **Alkalmazások** lehetőséget.
-5. Az **Alkalmazások** panelen válassza a **Hozzáadás** lehetőséget.
-6. Az **Alkalmazás típusa** lista **Áruházbeli alkalmazás** területén válassza az **iOS** lehetőséget.
-7. Válassza a **Keresés az App Store-ban** lehetőséget.
-8. A **Keresés az App Store** -ban panelen válassza ki az App Store ország/régió területi beállítást.
-9. Írja be a **Keresés** mezőbe az alkalmazás nevét (vagy a név egy részét).  
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**lehetőséget.
+3. Az **Alkalmazás típusa** lista **Áruházbeli alkalmazás** területén válassza az **iOS** lehetőséget.
+4. Válassza a **Keresés az App Store-ban** lehetőséget.
+5. A **Keresés az App Store** -ban panelen válassza ki az App Store ország/régió területi beállítást.
+6. Írja be a **Keresés** mezőbe az alkalmazás nevét (vagy a név egy részét).  
     Az Intune ekkor rákeres arra az áruházban, és a kapott eredmények listáját adja vissza.
-10. Az eredmények listájában válassza ki a kívánt alkalmazást, majd válassza a **Kiválasztás** lehetőséget.
-11. Az alkalmazás konfigurálásához az **Alkalmazás hozzáadása** panelen válassza az **Alkalmazás adatai** elemet.
-12. Az **Alkalmazásadatok** panelen adja meg az alkalmazás adatait. A választott alkalmazástól függően előfordulhat, hogy egyes értékek automatikusan ki vannak töltve a panelen:
+7. Az eredmények listájában válassza ki a kívánt alkalmazást, majd válassza a **Kiválasztás** lehetőséget.
+8. Az alkalmazás konfigurálásához az **Alkalmazás hozzáadása** panelen válassza az **Alkalmazás adatai** elemet.
+9. Az **Alkalmazásadatok** panelen adja meg az alkalmazás adatait. A választott alkalmazástól függően előfordulhat, hogy egyes értékek automatikusan ki vannak töltve a panelen:
     - **Név**: Itt adhatja meg az alkalmazás céges portálon megjelenítendő nevét. Gondoskodjon róla, hogy az alkalmazás neve egyedi legyen. Ha két alkalmazás neve megegyezik, a felhasználók csak az egyik alkalmazást fogják látni a céges portálon.
     - **Leírás**: Itt adhatja meg az alkalmazás leírását. A leírás a céges portálon jelenik meg a felhasználók számára.
     - **Kiadó:** Adja meg az alkalmazás kiadójának nevét.
@@ -67,8 +65,8 @@ Ezzel az eljárással csak az áruházban ingyenesen elérhető alkalmazások ho
     - **Tulajdonos**: Igény esetén megadhatja az alkalmazás tulajdonosának nevét (például *HR-osztály*). Ez a mező csak a rendszergazdák számára látható, a felhasználók számára nem.
     - **Megjegyzések:** : Ide írhatja be igény szerint az alkalmazáshoz társítani kívánt megjegyzéseket. Ez a mező csak rendszergazdáknak jelenik meg, a végfelhasználók nem láthatják.
     - **Ikon** (nem kötelező): Itt töltheti fel az alkalmazáshoz hozzárendelni kívánt ikont. Ez az alkalmazásikon jelenik meg a céges portálon böngésző felhasználók számára.
-13. Válassza az **OK** gombot.
-14. Válassza a **Hozzáadás** elemet.
+10. Válassza az **OK** gombot.
+11. Válassza a **Hozzáadás** elemet.
 
 A létrehozott alkalmazás megjelenik az alkalmazáslistában, ahol hozzárendelheti a kiválasztott csoportokhoz.
 

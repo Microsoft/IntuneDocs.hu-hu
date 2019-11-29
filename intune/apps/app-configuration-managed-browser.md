@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/27/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a3fab0b14f8ed68d13021a0e141d5997532df2ec
-ms.sourcegitcommit: ae6f2e7812e7fd36f2393b8f4b6cd8de63777b2c
+ms.openlocfilehash: 52f907b8762322684ec9e21910745a197c3dbe4e
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73592094"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74564331"
 ---
 # <a name="manage-web-access-using-a-microsoft-intune-policy-protected-browser"></a>Webes hozzáférés kezelése Microsoft Intune szabályzattal védett böngésző használatával
 
@@ -91,29 +91,28 @@ Ha az Azure AD-hez csatlakozó webalkalmazásokat az Intune Managed Browser hasz
 > [!TIP]  
 > A feltételes hozzáférés az Azure Active Directory (Azure AD) technológiája. Az *Intune-ból* elérhető feltételes hozzáférési csomópont ugyanaz a csomópont, amelyet az *Azure AD-ből* is el lehet érni.  
 
-
-1. Az Intune-portálon válassza a **feltételes hozzáférés** > **új házirend**elemet. 
-2. Ezután válassza a panel **Hozzáférés-szabályozási** szakaszában a **Hozzáférés** lehetőséget. 
-3. Kattintson a **Jóváhagyott ügyfélalkalmazás megkövetelése** lehetőségre. 
-4. A **Hozzáférés** panelen kattintson a **Kiválasztás** elemre. Ezt a szabályzatot hozzá kell rendelni azokhoz a felhőalkalmazásokhoz, amelyek esetében azt szeretné, hogy csak az Intune Managed Browser alkalmazásból legyenek elérhetők.
-
-    ![Azure AD – Managed Browser feltételes hozzáférési szabályzat](./media/app-configuration-managed-browser/managed-browser-conditional-access-01.png)
-
-5. A **Hozzárendelések** szakaszban válassza a **Feltételek** > **Ügyfélalkalmazások** lehetőséget. Megjelenik az **Ügyfélalkalmazások** panel.
-6. A **Konfigurálás** területen kattintson az **Igen** lehetőségre a szabályzat adott ügyfélalkalmazásokra való érvényesítéséhez.
-7. Ellenőrizze, hogy a **Browser** van-e kiválasztva ügyfélalkalmazásként.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **eszközök** > **feltételes hozzáférés** > **új szabályzat**lehetőséget.
+3. Adja hozzá a szabályzat **nevét**. 
+4. A **Hozzárendelések** szakaszban válassza a **Feltételek** > **Ügyfélalkalmazások** lehetőséget. Megjelenik az **ügyfélalkalmazások** ablaktábla.
+5. A **Konfigurálás** területen kattintson az **Igen** lehetőségre a szabályzat adott ügyfélalkalmazásokra való érvényesítéséhez.
+6. Ellenőrizze, hogy a **Browser** van-e kiválasztva ügyfélalkalmazásként.
 
     ![Azure AD – Managed Browser – Ügyfélalkalmazások kiválasztása](./media/app-configuration-managed-browser/managed-browser-conditional-access-02.png)
 
     > [!NOTE]
     > Ha korlátozni szeretné, hogy mely natív (nem böngészőbeli) alkalmazások férhetnek hozzá ezekhez a felhőalkalmazásokhoz, válassza a **Mobilalkalmazások és asztali ügyfelek** lehetőséget.
 
-8. A **Hozzárendelések** szakaszban válassza a **Felhasználók és csoportok** lehetőséget, majd válassza ki azokat a felhasználókat és csoportokat, akikhez hozzá szeretné rendelni ezt a szabályzatot. 
+7. Kattintson a **kész** > **kész**gombra.
+8. A **hozzárendelések** szakaszban válassza a **felhasználók és csoportok** lehetőséget, majd válassza ki azokat a felhasználókat vagy csoportokat, akikkel hozzá szeretné rendelni a szabályzatot. A panel bezárásához kattintson a **kész** gombra.
+9. A **hozzárendelések** szakaszban válassza ki a **felhőalapú alkalmazások vagy műveletek** lehetőséget, hogy kiválassza, mely alkalmazásokat kívánja védelemmel ellátni a szabályzattal. A panel bezárásához kattintson a **kész** gombra.
+10. A panel hozzáférés- **vezérlések** szakaszában válassza a **támogatás** lehetőséget. 
+11. Kattintson a **hozzáférés engedélyezése** elemre, majd kattintson a **jóváhagyott ügyfélalkalmazás megkövetelése**lehetőségre. 
+12. Kattintson a **kiválasztás** elemre a **támogatás** ablaktáblán. Ezt a szabályzatot hozzá kell rendelni azokhoz a felhőalkalmazásokhoz, amelyek esetében azt szeretné, hogy csak az Intune Managed Browser alkalmazásból legyenek elérhetők.
 
-    > [!NOTE]
-    > Az alkalmazáskonfigurációs szabályzatok fogadása érdekében a felhasználókat Intune App Protection-szabályzattal kell megcélozni. További információ az Intune App Protection szabályzatainak létrehozásáról: [Mik azok az alkalmazásvédelmi szabályzatok?](app-protection-policy.md)
+    ![Azure AD – Managed Browser feltételes hozzáférési szabályzat](./media/app-configuration-managed-browser/managed-browser-conditional-access-01.png)
 
-9. A szabályzat védelme alá tartozó alkalmazások megadásához a **Hozzárendelések** szakaszban válassza a **Felhőalkalmazások** lehetőséget.
+
 
 Miután konfigurálta a fenti szabályzatot, a felhasználók csak az Intune Managed Browserrel férhetnek hozzá az Azure AD-hez kapcsolódó, a szabályzat védelme alá tartozó webalkalmazásokhoz. Ha a felhasználók egy nem kezelt böngészőt próbálnak meg használni ehhez, egy értesítés jelenik meg az eszközükön, amely tudatja velük, hogy csak az Intune Managed Browsert használhatják.
 
@@ -133,27 +132,28 @@ Az SSO megköveteli az eszközöktől, hogy regisztrálva legyenek a Microsoft A
 >[!IMPORTANT]
 >Az alkalmazáskonfigurációk érvényre jutásához az szükséges, hogy a felhasználó védelemmel ellátott böngészőjét vagy az eszközön lévő alkalmazások egyikét már az [Intune alkalmazásvédelmi szabályzata]( ../app-protection-policy.md) felügyelje.
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. A felügyeleti lista **Ügyfélalkalmazások** paneljén válassza az **Alkalmazáskonfigurációs szabályzatok** lehetőséget.
-4. Az **Alkalmazáskonfiguráció** panelen válassza a **Hozzáadás** lehetőséget.
-5. A **Konfigurációs szabályzat hozzáadása** panelen az alkalmazáskonfigurációs beállításokhoz írja be a **Nevet** és a **Leírást** (ez utóbbi nem kötelező).
-6. Az **Eszközregisztráció** típusaként válassza a **Felügyelt alkalmazások** lehetőséget.
-7. Válassza a **Kötelező alkalmazás kiválasztása** elemet, majd a **Célalkalmazások** panelen válassza a **Managed Browser** vagy a **Microsoft Edge** lehetőséget iOS-hez, Androidhoz vagy igény szerint mindkettőhöz.
-8. Az **OK** kiválasztásával visszatérhet a **Konfigurációs szabályzat hozzáadása** panelre.
-9. Kattintson a **Konfigurációs beállítások** elemre. A **Konfigurálás** panelen kulcs-érték párok definiálásával adhatja meg a Managed Browserhez szükséges konfigurációkat. A jelen cikk későbbi részeiben további információt talál a definiálható kulcs-érték párokról.
-10. Ha elkészült, válassza az **OK** elemet.
-11. A **Konfigurációs szabályzat hozzáadása** panelen válassza a **Hozzáadás** lehetőséget.
-12. Ezzel létrejön az új konfiguráció, és megjelenik az **Alkalmazáskonfiguráció** panelen.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **alkalmazások** > **alkalmazás-konfigurációs házirendek** >  > **felügyelt alkalmazások** **hozzáadása** lehetőséget.
+3. Az **alkalmazás-konfigurációs házirend létrehozása** panel **alapismeretek** lapján adja meg az alkalmazás konfigurációs beállításainak **nevét** és opcionális **leírását** .
+4. Válassza **a nyilvános alkalmazás kiválasztása** lehetőséget, és válassza az iOS-hez, az Androidhoz vagy a mindkettőhöz tartozó **Managed Browser** és/vagy **Edge** elemet.
+5. Kattintson a **kiválasztás** gombra az **alkalmazás-konfigurációs házirend létrehozása** panelre való visszatéréshez.
+6. A **Beállítások** lap megjelenítéséhez kattintson a **tovább** gombra.
+7. A **Beállítások** lapon megadhatja a kulcs-érték párokat az alkalmazás konfigurációinak megadásához. A jelen cikk későbbi részeiben további információt talál a definiálható kulcs-érték párokról.
+8. Kattintson a **tovább** gombra a **hozzárendelés** lap megjelenítéséhez, majd kattintson a **csoportok kiválasztása** elemre, és/vagy **válassza ki a kizárni kívánt csoportokat**.
+9. Kattintson a **tovább** gombra a **felülvizsgálat + létrehozás** lap megjelenítéséhez.
+10. Az alkalmazás konfigurációs házirendjének áttekintése után kattintson a **Létrehozás** gombra.
+
+Ekkor létrejön az új konfiguráció, és megjelenik az **alkalmazás-konfigurációs házirend** ablaktáblán.
 
 
 ## <a name="assign-the-configuration-settings-you-created"></a>A létrehozott konfigurációs beállítások hozzárendelése
 
 A beállításokat Azure AD-beli felhasználói csoportokhoz lehet hozzárendelni. Ha az illető felhasználó rendelkezik a célzott védett böngésző telepített példányával, akkor az alkalmazás felügyelete a megadott beállításokkal történik.
 
-1. Az Intune mobilalkalmazás-kezelési irányítópult **Ügyfélalkalmazások** paneljén válassza az **Alkalmazáskonfigurációs szabályzatok** lehetőséget.
+1. Az Intune Mobile Application Management irányítópult **alkalmazások** paneljén válassza az alkalmazás- **konfigurációs szabályzatok**lehetőséget.
 2. A listából válassza ki a hozzárendelni kívánt alkalmazáskonfigurációt.
-3. Válassza ki a következő panelen a **Hozzárendelések** elemet.
-4. A **Hozzárendelések** panelen válassza ki azt az Azure AD-csoportot, amelyhez az alkalmazáskonfigurációt hozzá szeretné rendelni, majd válassza az **OK** elemet.
+3. A következő ablaktáblán válassza a **hozzárendelések**lehetőséget.
+4. A **hozzárendelések** ablaktáblán válassza ki azt az Azure ad-csoportot, amelyhez hozzá szeretné rendelni az alkalmazás konfigurációját, majd kattintson az **OK gombra**.
 
 ## <a name="how-to-set-microsoft-edge-as-the-protected-browser-for-your-organization"></a>A Microsoft Edge beállítása védett böngészőként a szervezet számára
 
@@ -170,7 +170,7 @@ Ha a beállítás értéke "false" (hamis):
 - Ha a felhasználók vagy **a Managed Browser** **vagy** a Microsoft Edge le van töltve, a böngésző alkalmazás elindul. 
 - Ha a felhasználók nem töltik le a böngésző alkalmazást, a rendszer kérni fogja a Managed Browser letöltésére.
 
-A Microsoft Edge-alkalmazások konfigurációjának létrehozásához használja a fenti eljárást. Adja meg a következő kulcs-érték párokat, amikor kiválasztja a konfigurációs **beállításokat** a **konfiguráció** paneljén (9. lépés):
+A Microsoft Edge-alkalmazások konfigurációjának létrehozásához használja a fenti eljárást. Adja meg a következő kulcs-érték párokat, amikor kiválasztja a konfigurációs **beállításokat** a **konfigurációs** ablaktáblán (9. lépés):
 
 | Kulcs                              |  Érték   |
 |----------------------------------|----------|

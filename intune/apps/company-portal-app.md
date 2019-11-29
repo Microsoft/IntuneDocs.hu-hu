@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 10/21/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b750c09207b1950aa27a5f2cae1267503537b6e7
-ms.sourcegitcommit: 01fb3d844958a0e66c7b87623160982868e675b0
+ms.openlocfilehash: 7a4d6db4f61dea1b073ccce7c4c3f727a91402c1
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74199197"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74563637"
 ---
 # <a name="how-to-configure-the-microsoft-intune-company-portal-app"></a>A Microsoft Intune Céges portál alkalmazásának konfigurálása
 
@@ -37,7 +37,7 @@ A felhasználók a Microsoft Intune Céges portálon férhetnek hozzá a vállal
 > [!Tip]
 > A vállalati portál testreszabása a vállalati portál webhelyére és a vállalati portál alkalmazásaira egyaránt hatással van. Vegye figyelembe, hogy a felhasználóknak Intune-licenccel kell rendelkezniük a Céges portál webhely eléréséhez.
 
-A Céges portál személyre szabásával segítséget nyújt a végfelhasználók számára ismerős és hasznos felhasználói élményben. Ehhez az Intune-portálon válassza az **ügyfélalkalmazások** > a **branding és a Testreszabás**lehetőséget, majd konfigurálja a szükséges beállításokat.
+A Céges portál személyre szabásával segítséget nyújt a végfelhasználók számára ismerős és hasznos felhasználói élményben. Ehhez az Intune-portálon válassza az **alkalmazások** > a **branding és a Testreszabás**lehetőséget, majd adja meg a szükséges beállításokat.
 
 Amikor egy felhasználó egy iOS-alkalmazást telepít a Céges portál, a rendszer kérni fogja a kérést. Ez akkor fordul elő, ha az iOS-alkalmazás az alkalmazás-áruházhoz van csatolva, egy mennyiségi vásárlási programhoz (VPP) vagy egy üzletági (LOB) alkalmazáshoz csatolva. A prompt lehetővé teszi, hogy a felhasználók elfogadják a műveletet, vagy engedélyezzék az alkalmazás felügyeletét. A prompt megjeleníti a vállalat nevét, vagy ha a cég neve nem érhető el, **céges portál** jelenik meg. 
 
@@ -92,7 +92,7 @@ Válasszon olyan emblémát, amely fehér vagy világos háttéren mutat a legjo
 
 ### <a name="brand-image-for-company-portal"></a>Márkakép a Céges portálhoz
 
-Márkakép feltöltése, amely tükrözi a vállalati márkát. A módosítások mentése után az Intune-webportálon a panel tetején található **Beállítások előnézetének megtekintése** lehetőséget választva megtekintheti, hogyan fog kinézni a konfigurációja. Vegye figyelembe, hogy a márkakép előnézetét csak egy iOS-eszközön lehet megtekinteni, az Intune webes portálján nem. 
+Márkakép feltöltése, amely tükrözi a vállalati márkát. A módosítások mentése után kiválaszthatja a **Beállítások előnézetét** a panel tetején található Intune webes portálon, hogy megtudja, hogyan fog kinézni a konfigurációk. Vegye figyelembe, hogy a márkakép előnézetét csak egy iOS-eszközön lehet megtekinteni, az Intune webes portálján nem. 
 
 |Mező neve|További információ|
 |---|---|
@@ -147,15 +147,15 @@ A végfelhasználók a billentyűparancsok (gyorssegédek) használatával indí
 
 A következő billentyűparancsok érhetők el a Windows Céges portál alkalmazásban.
 
-| Terület | Leírás | Billentyűparancs |
+| Terület | Description | Billentyűparancs |
 |:------------------:|:--------------:|:-----------------:|
-| Navigációs menü | Navigációs | Alt+M |
-|  | Otthoni | Alt+H |
-|  | Minden alkalmazás | Alt+A |
+| Navigációs menü | Navigációs | ALT + M |
+|  | Otthoni | ALT + H |
+|  | Minden alkalmazás | ALT + A |
 |  | Telepített alkalmazások | Alt+I |
-|  | Visszajelzés küldése | Alt+F |
-|  | Saját profil | Alt+U |
-|  | Beállítások | Alt+T |
+|  | Visszajelzés küldése | ALT + F |
+|  | Saját profil | Alt + U |
+|  | Beállítások | ALT + T |
 | Kezdőlap – Eszköz csempe | Átnevezés | F2 |
 |  | Eltávolítás | Ctrl+D vagy Delete |
 |  | Hozzáférés ellenőrzése | Ctrl+M vagy F9 |
@@ -192,7 +192,7 @@ Egyes platformok és konfigurációk nem engedélyezik az önkiszolgáló eszkö
 | Sync | Elérhető | Elérhető | Elérhető | Elérhető |
 | Távoli zárolás | Csak Windows Phone-telefon | Elérhető | Elérhető | Elérhető |
 | Jelszó alaphelyzetbe állítása | Csak Windows Phone-telefon | Elérhető<sup>(8)</sup> | NA | Elérhető<sup>(6)</sup> |
-| Kulcshelyreállítás | NA | NA | Elérhető<sup>(2)</sup> | NA |
+| Kulcs helyreállítása | NA | NA | Elérhető<sup>(2)</sup> | NA |
 
 <sup>(1)</sup> a kivonás mindig **le van tiltva az Azure** ad-hez csatlakoztatott Windows-eszközökön.<br>
 <sup>(2)</sup> a MacOS rendszerhez készült **kulcs-helyreállítás** csak a webes portálon keresztül érhető el.<br>

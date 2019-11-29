@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 10/22/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aeae231e07ceeee6a54f8f60ec5d53cc96d55be0
-ms.sourcegitcommit: 737ad6c675deedfc6009f792023ff95981b06582
+ms.openlocfilehash: 81a084528fdc500bf9b6de0ca5fa847c2e0b3797
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74117877"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74563922"
 ---
 # <a name="how-to-add-macos-line-of-business-lob-apps-to-microsoft-intune"></a>MacOS-es üzletági (LOB) alkalmazások hozzáadása a Microsoft Intune-hoz
 
@@ -71,11 +71,9 @@ Le kell töltenie egy külső eszközt, meg kell jelölnie a letöltött eszköz
 
 ## <a name="step-1---specify-the-software-setup-file"></a>1\. lépés – A szoftvertelepítő fájl megadása
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Az **Intune** ablaktáblán válassza az **Ügyfélalkalmazások** lehetőséget.
-4. Az **Ügyfélalkalmazások** munkaterületen válassza a **Kezelés** > **Alkalmazások** elemet.
-5. Az alkalmazások listája fölött válassza a **Hozzáadás** lehetőséget.
-6. Az **Alkalmazás hozzáadása** panelen válassza az **Üzletági alkalmazás** lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**lehetőséget.
+3. Az **alkalmazás hozzáadása** panelen válassza az **üzletági alkalmazás** lehetőséget az **alkalmazás típusaként**.
 
 ## <a name="step-2---configure-the-app-package-file"></a>2\. lépés – az alkalmazáscsomag-fájl konfigurálása
 

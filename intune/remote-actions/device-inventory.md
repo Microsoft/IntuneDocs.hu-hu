@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 918468bf8948ce54082f3fccc0325db07e116966
-ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
+ms.openlocfilehash: 5a3081ece10bb25c6381f4a8f891152433bc9661
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73713200"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74564384"
 ---
 # <a name="see-device-details-in-intune"></a>Eszközadatok megtekintése az Intune-ban
 
@@ -57,7 +57,7 @@ Az eszközök által használt szolgáltatótól függően az összes adat gyűj
 > [!Note]  
 > A hardver-és a szoftveres leltár 7 naponta frissül az Intune szolgáltatásban.
 
-|Részletes|Description|Platfésm| 
+|részletes|Description|Platfésm| 
 |--------------|----------------------|----|  
 |Név|Az eszköz neve.|Windows, iOS|
 |Felügyeleti név|A csak a konzolon használt eszköznév. Ennek a névnek a módosítása nem változtatja meg a nevet az eszközön.|Windows, iOS|
@@ -84,7 +84,7 @@ Az eszközök által használt szolgáltatótól függően az összes adat gyűj
 |ICCID|Az integrált áramköri kártya (ICC) azonosítója, amely a SIM-kártya egyedi azonosítószáma.|Windows, iOS, Android|
 |Regisztrálás dátuma|Az eszköz Intune-ban történt regisztrálásának dátuma és időpontja.|Windows, iOS, Android|
 |Utolsó kapcsolat|Az eszköz Intune-hoz való utolsó kapcsolódásának dátuma és időpontja.|Windows, iOS, Android|
-|Kód az aktiválási zár megkerüléséhez|Az aktiválási zár megkerüléséhez használható kód.|Windows, iOS, Android|
+|Kód az aktiválási zár megkerüléséhez|Az aktiválási zár megkerüléséhez használható kód.|iOS|
 |Az Azure AD-ban regisztrálva|Ha **Igen**, akkor az eszköz regisztrálva van az Azure Active Directoryban.|Windows, iOS, Android|
 |Intune regisztrálva|Ha **Igen**, az eszköz regisztrálva van az Intune-ban|Windows, iOS, Android|
 |Megfelelőség|Az eszköz megfelelőségi állapota.|Windows, iOS, Android|

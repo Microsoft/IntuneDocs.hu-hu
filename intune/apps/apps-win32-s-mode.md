@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/13/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d2ab21321b171c8fe8f5f9dab3032507c0e740cf
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.openlocfilehash: 7e17972a3a87bd9c42db54753d4da3bb81703377
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74059758"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74563625"
 ---
 # <a name="enable-win32-apps-on-s-mode-devices"></a>Win32-alkalmazások engedélyezése S módú eszközökön
 
@@ -58,7 +58,7 @@ A Win32-alkalmazások Windows 10-es eszközökön való futtatásának engedély
 Windows 10 S módú kiegészítő szabályzat létrehozásához kövesse az alábbi lépéseket:
 
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Az **Intune** panelen válassza az **ügyfélalkalmazások** > **S módú kiegészítő házirendek** elemet > a **házirend létrehozása**lehetőséget.
+2. Válassza az **alkalmazások** > **S módú kiegészítő házirendek** elemet > a **házirend létrehozása**lehetőséget.
 3. A házirendfájl hozzáadása előtt létre kell hoznia és alá kell írnia a **fájlt**. További információkért lásd:
     - [WDAC-szabályzat létrehozása PowerShell-eszközök használatával és bináris formátumba konvertálása](https://go.microsoft.com/fwlink/?linkid=2095387)
     - [Bejelentkezés az Eszközkezelő-aláírási szolgáltatás használatával](https://go.microsoft.com/fwlink/?linkid=2095629) **(ajánlott)**

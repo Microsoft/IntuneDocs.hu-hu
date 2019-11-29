@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/25/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f073c8ad7a8e087a791ee756683011fac6947162
-ms.sourcegitcommit: 23e9c48348a6eba494d072a2665b7481e5b5c84e
+ms.openlocfilehash: 40cbb62a620d6e174ab8acb76798ba53080b78cf
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74547968"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74563974"
 ---
 # <a name="include-and-exclude-app-assignments-in-microsoft-intune"></a>Alkalmazás-hozzárendelések belefoglalása vagy kizárása a Microsoft Intune-ban
 
@@ -55,34 +55,34 @@ Ennek eredményeképpen az alkalmazások vegyes csoportokhoz való társítása 
 
 ## <a name="include-and-exclude-groups-when-assigning-apps"></a>Csoportok belefoglalása és kizárása alkalmazások hozzárendelésénél 
 Ha csoportokhoz szeretne alkalmazást hozzárendelni a belefoglalás és kizárás használatával, tegye a következőket:
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Az **Intune** ablaktáblán válassza az **Ügyfélalkalmazások** lehetőséget.
-4. Az **Ügyfélalkalmazások** panelen válassza az **Alkalmazások** lehetőséget. Megjelenik a hozzáadott alkalmazások listája.
-5. Válassza ki a hozzárendelni kívánt alkalmazást. Megjelennek az alkalmazás adatai egy irányítópulton. 
-6. A menü **Kezelés** szakaszában válassza a **Hozzárendelések**. elemet. 
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **alkalmazások** > **minden alkalmazás**lehetőséget. Megjelenik a hozzáadott alkalmazások listája.
+3. Válassza ki a hozzárendelni kívánt alkalmazást. Megjelennek az alkalmazás adatai egy irányítópulton. 
+4. A menü **Kezelés** szakaszában válassza a **Hozzárendelések**. elemet. 
 
     ![Alkalmazás-hozzárendelések belefoglalása alkalmazások hozzárendelésekor](./media/apps-inc-exl-assignments/apps-inc-exl-01.png)
-7. Az alkalmazáshoz hozzárendelt felhasználói csoportok hozzáadásához válassza a **Csoport hozzáadása** lehetőséget. 
-8. A **Csoport hozzáadása** panelen válasszon egy **Hozzárendelési típust** az elérhető típusok közül.
-9. Hozzárendelési típusként válassza ki az **Elérhető regisztrációval és anélkül** lehetőséget.
+
+5. Az alkalmazáshoz hozzárendelt felhasználói csoportok hozzáadásához válassza a **Csoport hozzáadása** lehetőséget. 
+6. A **Csoport hozzáadása** panelen válasszon egy **Hozzárendelési típust** az elérhető típusok közül.
+7. Hozzárendelési típusként válassza ki az **Elérhető regisztrációval és anélkül** lehetőséget.
 
     ![Alkalmazás-hozzárendelések az Intune-ban – Csoport hozzáadása](./media/apps-inc-exl-assignments/apps-inc-exl-02.png)
-10. A **Belefoglalt csoportok** lehetőséggel választhatja ki azokat a felhasználói csoportokat, amelyek számára elérhetővé szeretné tenni az alkalmazást.
+8. A **Belefoglalt csoportok** lehetőséggel választhatja ki azokat a felhasználói csoportokat, amelyek számára elérhetővé szeretné tenni az alkalmazást.
 
     > [!NOTE]
     > Csoportok hozzáadásakor, ha bármely más csoport már bele lett foglalva egy adott hozzárendelés-típus esetében, az alkalmazás előre ki van jelölve, és nem módosítható más belefoglalási hozzárendelés-típusok esetében. Az használatba vett csoport nem használható belefoglalt csoportként.
 
-11. Az **Igen** választásával teheti elérhetővé az alkalmazást minden felhasználó számára.
+9. Az **Igen** választásával teheti elérhetővé az alkalmazást minden felhasználó számára.
 
     ![Alkalmazás-hozzárendelések az Intune-ban – Csoportok belefoglalása](./media/apps-inc-exl-assignments/apps-inc-exl-03.png)
-12. Kattintson az **OK** gombra a csoport belefoglalásához.
-13. A **Kizárt csoportok** lehetőséggel válassza ki azokat a felhasználói csoportokat, amelyek számára nem szeretné elérhetővé tenni az alkalmazást. 
-14. Válassza ki a kizárni kívánt csoportokat. Így az alkalmazás nem érhető el ezekhez a csoportokhoz.
+10. Kattintson az **OK** gombra a csoport belefoglalásához.
+11. A **Kizárt csoportok** lehetőséggel válassza ki azokat a felhasználói csoportokat, amelyek számára nem szeretné elérhetővé tenni az alkalmazást. 
+12. Válassza ki a kizárni kívánt csoportokat. Így az alkalmazás nem érhető el ezekhez a csoportokhoz.
 
     ![Alkalmazás-hozzárendelések az Intune-ban – Csoportok kizárása](./media/apps-inc-exl-assignments/apps-inc-exl-04.png)
-15. A csoportkiválasztás befejezéséhez kattintson a **Kiválasztás** lehetőségre.
-16. A **Csoport hozzáadása** panelen kattintson az **OK** gombra. Megjelenik az alkalmazáshoz tartozó **Hozzárendelések** listája.
-17. A **Mentés** lehetőségre kattintva aktiválhatja az alkalmazásra vonatkozó csoport-hozzárendeléseket.
+13. A csoportkiválasztás befejezéséhez kattintson a **Kiválasztás** lehetőségre.
+14. A **Csoport hozzáadása** panelen kattintson az **OK** gombra. Megjelenik az alkalmazáshoz tartozó **Hozzárendelések** listája.
+15. A **Mentés** lehetőségre kattintva aktiválhatja az alkalmazásra vonatkozó csoport-hozzárendeléseket.
 
 Csoport-hozzárendelések esetén a már hozzárendelt csoportok nem módosíthatók. Ha jelenleg nem elérhető csoportot szeretne kiválasztani, akkor először távolítsa el az alkalmazást az alkalmazás hozzárendelési listájából. 
 

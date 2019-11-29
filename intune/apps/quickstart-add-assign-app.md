@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 10/22/2019
+ms.date: 11/26/2019
 ms.topic: quickstart
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3afd51fe27feb0c058ba703ed11e4a15a5ea2f0d
-ms.sourcegitcommit: 25acfc88b366d2da71c37d354a0238e4f1168325
+ms.openlocfilehash: d09857c4e5b63947a6e3b3140f673f0887f7f920
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72813422"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74563407"
 ---
 # <a name="quickstart-add-and-assign-a-client-app"></a>Rövid útmutató: Ügyfélalkalmazás hozzáadása és hozzárendelése
 
@@ -44,7 +44,7 @@ Jelentkezzen be az [Intune](https://aka.ms/intuneportal) -ba [globális rendszer
 Az alkalmazás belefoglalásával az Intune kezelheti annak részleteit. 
 
 A következő lépéseket követve adjon hozzá egy alkalmazást az Intune-hoz:
-1. Az [Intune-ban](https://aka.ms/intuneportal) válassza az **Ügyfélalkalmazások** > **Alkalmazások** > **Hozzáadás** elemet. 
+1. Az [Intune](https://aka.ms/intuneportal)-ban válassza az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**lehetőséget. 
 2. Válassza a **Windows 10** lehetőséget az **Alkalmazástípus** legördülő mező **Office 365 csomag** szakaszában.
 3. A hozzárendelni kívánt Office-alkalmazások kiválasztásához válassza az **Alkalmazáscsomag konfigurálása** lehetőséget.
 4. Az alapértelmezett alkalmazások elfogadásához kattintson az **OK** gombra.
@@ -68,9 +68,9 @@ Miután hozzáadott egy alkalmazást a Microsoft Intune-hoz, azt felhasználói 
 > Ez a rövid útmutató a sorozat előző rövid útmutatókra épül. Részletekért tekintse meg az útmutató [előfeltételeit](quickstart-add-assign-app.md#prerequisites).
 
 Egy alkalmazás egy csoporthoz rendeléséhez használja a következő lépéseket:
-1. Az [Intune-ban](https://aka.ms/intuneportal) válassza az **Ügyfélalkalmazások** > **Alkalmazások** elemet. 
+1. Az [Intune](https://aka.ms/intuneportal)-ban válassza az **alkalmazások** > **minden alkalmazás**lehetőséget. 
 2. Válassza ki a hozzárendelni kívánt alkalmazást.
-3. Kattintson a **Hozzárendelések** > **Csoport hozzáadása** lehetőségre a **Csoport hozzáadása** panel megjelenítéséhez.
+3. Kattintson a **hozzárendelések** > **Csoport hozzáadása** elemre a **Csoport hozzáadása** panel megjelenítéséhez.
 4. Válassza a **Regisztrált eszközökhöz elérhető** lehetőséget a **Hozzárendelés típusa** legördülő menüben. 
 5. Kattintson a **Tartalmazott csoportok** > **Befoglalandó csoportok kijelölése** > **Contoso tesztelők** lehetőséget.
 6. Kattintson a **Kiválasztás** > **OK** > **OK** > **Mentés** lehetőségre a csoporthoz való hozzárendeléshez.

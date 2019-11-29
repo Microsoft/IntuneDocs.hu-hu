@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 30a1c9b1fddaa59d633c8dc969063b26b25097de
-ms.sourcegitcommit: 76ae5aea5deee7a590e24c3b2bb52f88125943e5
+ms.openlocfilehash: 5f12feca6d43a4194e7c60639a93747c7f389f93
+ms.sourcegitcommit: fc4b38660129d615068f34ad4b96b900d73f7b53
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74098181"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74558198"
 ---
 # <a name="set-up-enrollment-for-windows-devices"></a>Windowsos eszközök regisztrációjának beállítása
 
@@ -102,7 +102,7 @@ A EnterpriseEnrollment-s.manage.microsoft.com az előnyben részesített teljes 
 A CNAME-konfigurációtól eltérő metódus használata nem támogatott. Ha például egy proxykiszolgálót használ a enterpriseenrollment.contoso.com/EnrollmentServer/Discovery.svc átirányítására a enterpriseenrollment-s.manage.microsoft.com/EnrollmentServer/Discovery.svc vagy a manage.microsoft.com/EnrollmentServer/Discovery.svc-re, nem támogatott.
 
 **2. lépés: a CNAME ellenőrzése** (nem kötelező)<br>
-1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök beléptetése** > **Windows-regisztráció** > CNAME- **ellenőrzés**lehetőséget.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **windows** > **Windows-regisztráció** > **CNAME-ellenőrzés**lehetőséget.
 2. A **tartomány** mezőben adja meg a céges webhelyet, majd válassza a **Teszt** lehetőséget.
 
 ## <a name="tell-users-how-to-enroll-windows-devices"></a>A felhasználók tájékoztatása a windowsos eszközök regisztrálásáról

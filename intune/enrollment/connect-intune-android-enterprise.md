@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a89b94f098292bf44122d6d2d144c7f35967cd32
-ms.sourcegitcommit: 556b7ea2049014c9027f0e44affd3f301fab55fc
+ms.openlocfilehash: b2c6463ddce7d04168e1929414faf441ae415837
+ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73709443"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74563848"
 ---
 # <a name="connect-your-intune-account-to-your-managed-google-play-account"></a>Az Intune-fiók összekötése a felügyelt Google Play-fiókkal
 
@@ -42,7 +42,7 @@ Ahhoz, hogy egyszerűbb legyen az Android Enterprise Management konfigurálása 
 > A Google- és a Microsoft-tartományok közötti interakció miatt ennél a lépésnél előfordulhat, hogy módosítania kell a böngésző beállításait.  Ügyeljen rá, hogy a „portal.azure.com” és a „play.google.com” tartomány azonos biztonsági zónában legyen található a böngészőben.
 
 1. Ha még nem tette meg, készítse elő a mobileszköz-kezelést úgy, hogy a **Microsoft Intune-t** állítja be [mobileszköz-kezelői szolgáltatóként](../fundamentals/mdm-authority-set.md).
-2. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431), válassza az **eszközök beléptetése** > **Android-regisztráció** > **felügyelt Google Play**lehetőséget.  Ha egyéni Intune-rendszergazdai szerepkört használ, akkor ennek eléréséhez szervezeti olvasási és frissítési engedély szükséges.
+2. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431), válassza az **eszközök** > **android** > **Android-regisztráció** > **felügyelt Google Play**lehetőséget.  Ha egyéni Intune-rendszergazdai szerepkört használ, akkor ennek eléréséhez szervezeti olvasási és frissítési engedély szükséges.
    
    ![Vállalati Android regisztrációs képernyő](./media/connect-intune-android-enterprise/android-work-bind.png)
 
@@ -64,7 +64,7 @@ Ahhoz, hogy egyszerűbb legyen az Android Enterprise Management konfigurálása 
 Kikapcsolhatja az Android vállalati regisztrációját és felügyeletét. Ehhez először ki kell vonnia a regisztrált androidos vállalati eszközöket, beleértve a munkahelyi Profilos eszközöket, a dedikált eszközöket és a teljes körűen felügyelt eszközöket. Ezután az Intune felügyeleti konzolján válassza a **Leválasztás** lehetőséget az összes regisztrált Android vállalati munkahelyi profil eszköz, a dedikált eszközök és a teljes körűen felügyelt eszközök regisztrációból való eltávolításához. Ezzel eltávolítja a felügyelt Google Play-fiók és az Intune közötti kapcsolatot is.
 
 1. Intune-rendszergazdaként jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
-2. Válassza az **Eszközregisztráció** > **Android-regisztráció** > **Felügyelt Google Play** > **Leválasztás** lehetőséget.
+2. Válassza az **eszközök** > **Android** > **Android-regisztráció** > **felügyelt Google Play** > **Leválasztás**lehetőséget.
 3. Válassza az **Igen** választ az összes vállalati androidos eszköz leválasztásához és az Intune-beli regisztrációjuk megszüntetéséhez.
 
 ## <a name="next-steps"></a>További lépések
