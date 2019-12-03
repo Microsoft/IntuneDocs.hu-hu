@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/13/2019
+ms.date: 12/02/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 42ccb1d1654ba45b63672eebf00acd10fdc56a67
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.openlocfilehash: 80da0e6952c5aaab6fa8146b2d91d32259966d5d
+ms.sourcegitcommit: f26039d674eb4d61ab68264dd1a10b2e5e1d842c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74059350"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74691726"
 ---
 # <a name="windows-10-and-later-device-settings-to-run-as-a-kiosk-in-intune"></a>Windows 10 és újabb eszközbeállítások az Intune-ban való futtatáshoz
 
@@ -67,7 +67,7 @@ Csak egy alkalmazást futtat az eszközön.
     További információ ezekről a lehetőségekről: a [Microsoft Edge kioszk mód üzembe helyezése](https://docs.microsoft.com/microsoft-edge/deploy/microsoft-edge-kiosk-mode-deploy#supported-configuration-types).
 
     > [!NOTE]
-    > Ezzel a beállítással engedélyezheti a Microsoft Edge böngészőt az eszközön. A Microsoft Edge-specifikus beállításainak konfigurálásához hozzon létre egy eszköz konfigurációs profilt (**eszköz konfigurációja** > **profilok** > **profil létrehozása** > **Windows 10** platformra > **eszköz korlátozásai**  >  **Microsoft Edge böngésző**). A [Microsoft Edge böngésző](device-restrictions-windows-10.md#microsoft-edge-browser) felsorolja és ismerteti a rendelkezésre álló beállításokat.
+    > Ezzel a beállítással engedélyezheti a Microsoft Edge böngészőt az eszközön. A Microsoft Edge-specifikus beállításainak konfigurálásához hozzon létre egy eszköz konfigurációs profilt (az**eszköz konfigurációjának** > **profiljait** , > **hozzon létre profilt** > **Windows 10-es** platform > **eszköz korlátozásai** >  **Microsoft Edge Browser**). A [Microsoft Edge böngésző](device-restrictions-windows-10.md#microsoft-edge-browser) felsorolja és ismerteti a rendelkezésre álló beállításokat.
 
   - **Kioszk böngésző hozzáadása**: válassza ki a **kioszk böngésző beállításait**. Ezek a beállítások vezérlik a böngészőalkalmazást kioszkmódban. Győződjön meg arról, hogy az áruházból beolvassa a [kioszk böngésző alkalmazást](https://businessstore.microsoft.com/store/details/kiosk-browser/9NGB5S5XG2KP) , és adja hozzá az Intune-hoz [ügyfélalkalmazásként](../apps/apps-add.md). Ezután rendelje hozzá az alkalmazást a kioszk-eszközökhöz.
 
@@ -83,16 +83,17 @@ Csak egy alkalmazást futtat az eszközön.
 
     - **A böngésző frissítése üresjárati idő után**: Adja meg az üresjárati időt (1-1440 perc), amelynek elteltével a teljes képernyős böngésző friss állapotban újraindul. Az üresjárati idő az utolsó felhasználói beavatkozás óta eltelt percek száma. Alapértelmezés szerint az érték üres, ami azt jelenti, hogy a nincs üresjárati időkorlát.
 
-    - **Engedélyezett webhelyek**: használja ezt a beállítást adott webhelyek megnyitásának engedélyezéséhez. Más szóval, ezzel a beállítással korlátozhatja vagy megakadályozhatja a webhelyek megjelenítését az eszközön. Például engedélyezheti a `http://contoso.com*` összes webhelyének megnyitását. Alapértelmezés szerint az összes webhely engedélyezett.
+    - **Engedélyezett webhelyek**: használja ezt a beállítást adott webhelyek megnyitásának engedélyezéséhez. Más szóval, ezzel a beállítással korlátozhatja vagy megakadályozhatja a webhelyek megjelenítését az eszközön. Például engedélyezheti a `http://contoso.com` összes webhelyének megnyitását. Alapértelmezés szerint az összes webhely engedélyezett.
 
-      Adott webhelyek engedélyezéséhez töltse fel az engedélyezett webhelyek listáját különböző sorokban tartalmazó fájlt. Ha nem ad hozzá fájlt, az összes webhely használata engedélyezve lesz. Az Intune helyettesítő karakterként támogatja a `*` (csillag) karaktert.
+      Adott webhelyek engedélyezéséhez töltse fel az engedélyezett webhelyek listáját különböző sorokban tartalmazó fájlt. Ha nem ad hozzá fájlt, az összes webhely használata engedélyezve lesz. Alapértelmezés szerint az Intune támogatja a helyettesítő kártyát. Így ha megadja a tartományt, például a `sharepoint.com`t, az altartományok engedélyezése automatikusan engedélyezett, például `contoso.sharepoint.com`, `my.sharepoint.com`stb.
 
       Az mintafájlnak a következő listához hasonlóan kell kinéznie:
 
       `http://bing.com`  
       `https://bing.com`  
-      `http://contoso.com/*`  
-      `https://contoso.com/*`
+      `http://contoso.com`  
+      `https://contoso.com`  
+      `office.com`
 
     > [!NOTE]
     > A Microsoft kioszk böngészővel engedélyezett automatikus bejelentkezéssel rendelkező Windows 10-es Kioszkoknak offline licencet kell használniuk a vállalati Microsoft Store. Ennek a követelménynek az az oka, hogy az automatikus bejelentkezés Azure Active Directory (AD) hitelesítő adatokkal nem rendelkező helyi felhasználói fiókot használ. Így az online licenceket nem lehet kiértékelni. További információ: [Offline alkalmazások terjesztése](https://docs.microsoft.com/microsoft-store/distribute-offline-apps).
@@ -141,7 +142,7 @@ Az ebben az üzemmódban lévő alkalmazások elérhetők a Start menüben. A fe
       További információ ezekről a lehetőségekről: a [Microsoft Edge kioszk mód üzembe helyezése](https://docs.microsoft.com/microsoft-edge/deploy/microsoft-edge-kiosk-mode-deploy#supported-configuration-types).
 
       > [!NOTE]
-      > Ezzel a beállítással engedélyezheti a Microsoft Edge böngészőt az eszközön. A Microsoft Edge-specifikus beállításainak konfigurálásához hozzon létre egy eszköz konfigurációs profilt (**eszköz konfigurációja** > **profilok** > **profil létrehozása** > **Windows 10** platformra > **eszköz korlátozásai**  >  **Microsoft Edge böngésző**). A [Microsoft Edge böngésző](device-restrictions-windows-10.md#microsoft-edge-browser) felsorolja és ismerteti a rendelkezésre álló beállításokat.
+      > Ezzel a beállítással engedélyezheti a Microsoft Edge böngészőt az eszközön. A Microsoft Edge-specifikus beállításainak konfigurálásához hozzon létre egy eszköz konfigurációs profilt (az**eszköz konfigurációjának** > **profiljait** , > **hozzon létre profilt** > **Windows 10-es** platform > **eszköz korlátozásai** >  **Microsoft Edge Browser**). A [Microsoft Edge böngésző](device-restrictions-windows-10.md#microsoft-edge-browser) felsorolja és ismerteti a rendelkezésre álló beállításokat.
 
     - **Kioszk böngésző hozzáadása**: ezek a beállítások vezérlik a webböngésző alkalmazást a kioszkon. Böngészőalkalmazást a kioszkmódban lévő eszközökön az [ügyfélalkalmazások](../apps/apps-add.md) használatával kell üzembe helyeznie.
 

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3a62a048ebb15bac620ad9aad57ed3903e9568cf
-ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
+ms.openlocfilehash: 1c574714b4bd4f748c2dbe898555de35b0e03190
+ms.sourcegitcommit: f26039d674eb4d61ab68264dd1a10b2e5e1d842c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73712972"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74691824"
 ---
 # <a name="set-up-ios-device-enrollment-with-apple-school-manager"></a>iOS-eszközök regisztrálásának beállítása az Apple School Manager programban
 
@@ -48,9 +48,9 @@ A céges tulajdonú iOS-eszközök regisztrálását csak akkor végezheti el az
 
 ### <a name="step-1-download-the-intune-public-key-certificate-required-to-create-an-apple-token"></a>1\. lépés Töltse le a nyilvános kulcsú Intune-tanúsítványt, amelyre szüksége lesz az Apple-token létrehozásához.
 
-1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** beléptetése > az **Apple-regisztráció** > a **beléptetési programbeli tokenek** > **Hozzáadás**lehetőséget.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **ios** > **iOS-regisztráció** > a **beléptetési program jogkivonatai** > **Hozzáadás**elemet.
 
-   ![Szerezzen be egy készülékregisztrációs programbeli tokent.](./media/apple-school-manager-set-up-ios/image01.png)
+   ![Szerezzen be egy készülékregisztrációs programbeli tokent.](./media/device-enrollment-program-enroll-ios/image01.png)
 
 2. A **Készülékregisztrációs programbeli token** panelen válassza a **Nyilvános kulcs letöltése** lehetőséget a titkosításikulcs-fájl (.pem) letöltéséhez és helyi mentéséhez. A .pem-fájllal megbízhatósági kapcsolati tanúsítványt kérhet az Apple School Manager portálról.
      ![Készülékregisztrációs programbeli token panel.](./media/apple-school-manager-set-up-ios/image02.png)
@@ -81,7 +81,7 @@ Az **Apple-token** mezőben keresse meg tallózással a tanúsítványfájlt (.p
 ## <a name="create-an-apple-enrollment-profile"></a>Az Apple-regisztrációs profil létrehozása
 Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt az Apple School-eszközökhöz. A regisztrálás során az eszközök csoportjára alkalmazott beállításokat egy készülékregisztrációs profil határozza meg.
 
-1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** beléptetése > az **Apple-regisztráció** > a **beléptetési programbeli jogkivonatok**lehetőséget.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **ios** > **iOS-regisztráció** > a **beléptetési program jogkivonatok**lehetőséget.
 2. Válasszon egy tokent, és válassza a **Profilok**, majd a **Profil létrehozása** lehetőséget.
 
 3. A **Profil létrehozása** panelen adminisztrációs célból adja meg a profil **Nevét** és **Leírását**. A felhasználók nem látják ezeket az adatokat. A **Név** mező felhasználásával dinamikus csoportot hozhat létre az Azure Active Directoryban. Használja a profilnevet az enrollmentProfileName paraméter meghatározásához, hogy ezzel a regisztrációs profillal rendelhesse hozzá az eszközöket. További információk az [Azure Active Directory-alapú dinamikus csoportokról](https://docs.microsoft.com/azure/active-directory/active-directory-groups-dynamic-membership-azure-portal#rules-for-devices).
@@ -155,7 +155,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
 ## <a name="connect-school-data-sync"></a>A School Data Sync csatlakoztatása
 (Nem kötelező) Az Apple School Manager támogatja az osztálynévsorok Microsoft School Data Sync (SDS) használatával történő szinkronizálását az Azure Active Directoryba (AD). Az SDS segítségével csak egy tokent tud szinkronizálni. Ha beállítja egy másik tokenhez a School Data Syncet, az SDS el lesz távolítva a korábbi tokenből. Ekkor egy új kapcsolat veszi át a jelenlegi token szerepét. Az alábbi lépések végrehajtásával használhatja az SDS-t az iskolai adatok szinkronizálására.
 
-1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** beléptetése > az **Apple-regisztráció** > a **beléptetési programbeli jogkivonatok**lehetőséget.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **ios** > **iOS-regisztráció** > a **beléptetési program jogkivonatok**lehetőséget.
 2. Válasszon egy Apple School Manager-tokent, majd válassza a **School Data Sync** lehetőséget.
 3. A **School Data Sync** területen válassza az **Engedélyezés** lehetőséget. Ez a beállítás teszi lehetővé az Intune csatlakoztatását az Office 365-beli SDS szolgáltatáshoz.
 4. Az Apple School Manager és az Azure AD közötti kapcsolat engedélyezéséhez kattintson a **Microsoft School adatszinkronizálás beállítása**elemre. További információ a [School-adatszinkronizálás beállításáról](https://support.office.com/article/Install-the-School-Data-Sync-Toolkit-8e27426c-8c46-416e-b0df-c29b5f3f62e1).
@@ -165,7 +165,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
 
 Miután az Intune engedélyt kapott az Apple School Manager-eszközök felügyeletére, szinkronizálja az Intune-t az Apple szolgáltatással, hogy a felügyelt eszközök megjelenjenek az Intune-ban.
 
-A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az eszközök **beléptetése > az** **Apple-regisztráció** > a **beléptetési programbeli jogkivonatok** lehetőséget > Válassza ki a tokent a listában > **eszközök** > **szinkronizálás**lehetőséget. ![képernyőkép a beléptetési program-eszközök csomópontról és a szinkronizálási hivatkozásról.](./media/apple-school-manager-set-up-ios/image06.png)
+A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **ios** > iOS- **regisztráció** > a **beléptetési program jogkivonatok** elemet > Válassza ki a tokent a listában > **eszközök** > **szinkronizálás**lehetőséget. ![képernyőkép a beléptetési program-eszközök csomópontról és a szinkronizálási hivatkozásról.](./media/apple-school-manager-set-up-ios/image06.png)
 
 Az Apple a beléptetési program forgalmára vonatkozó feltételeinek követéséhez az Intune a következő korlátozásokat írja elő:
 - Teljes szinkronizálás legfeljebb hétnaponta futtatható. A teljes szinkronizálás során az Intune minden Intune-hoz rendelt Apple-sorozatszámot frissít. Ha a teljes szinkronizálást az előző teljes szinkronizálástól számított hét napon belül kísérli meg, az Intune csak az Intune-ban már nem szereplő sorozatszámokat frissíti.
@@ -178,7 +178,7 @@ Az Apple a beléptetési program forgalmára vonatkozó feltételeinek követés
 ## <a name="assign-a-profile-to-devices"></a>Profil hozzárendelése az eszközökhöz
 Az Intune-nal felügyelt Apple School Manager-eszközöket a regisztrálás előtt hozzá kell rendelni a beléptetési profilhoz.
 
-1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** beléptetése > az **Apple-regisztráció** > a **beléptetési programbeli jogkivonatok** lehetőséget, > válasszon ki egy jogkivonatot a listában.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **ios** > **iOS-regisztráció** > a **beléptetési program jogkivonatok** lehetőséget, > válasszon egy jogkivonatot a listában.
 2. Válassza az **Eszközök** lehetőséget, válasszon eszközöket a listából, majd válassza a **Profil hozzárendelése** elemet.
 3. A **Profil hozzárendelése** területen válasszon egy profilt az eszközökhöz, majd válassza a **Hozzárendelés** lehetőséget.
 

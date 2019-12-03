@@ -6,7 +6,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/21/2019
+ms.date: 12/02/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9acad2e8539da7210c349ffb254af62f370af5f6
-ms.sourcegitcommit: 2fddb293d37453736ffa54692d03eca642f3ab58
+ms.openlocfilehash: 6ed04c1bf135793da9cece9debc2c7cdd481601a
+ms.sourcegitcommit: f26039d674eb4d61ab68264dd1a10b2e5e1d842c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74390974"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74691696"
 ---
 # <a name="add-a-property-list-file-to-macos-devices-using-microsoft-intune"></a>Tulajdonság-listaelem hozzáadása macOS-eszközökhöz Microsoft Intune használatával
 
@@ -48,7 +48,7 @@ Ezek a beállítások hozzáadódnak az Intune-ban lévő eszköz konfiguráció
 - Csak néhány alkalmazás felügyelt beállításokkal működik, és előfordulhat, hogy nem teszi lehetővé az összes beállítás kezelését.
 - Ügyeljen arra, hogy feltöltse azokat a tulajdonságlap-fájlokat, amelyek az eszköz csatornájának beállításait célozzák meg, nem pedig a felhasználói csatornák beállításait. A tulajdonságmezők fájljai a teljes eszközt célozzák meg.
 
-## <a name="preference-file"></a>Preferencia fájl
+## <a name="preference-file"></a>Preferenciafájl
 
 - **Preferencia tartomány neve**: a rendszer általában a webböngészők (Microsoft Edge), a [Microsoft Defender komplex veszélyforrások elleni védelem](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-atp-mac)és az egyéni alkalmazások számára használják a tulajdonságok listáját. A preferencia tartomány létrehozásakor létrejön egy köteg-azonosító is. Adja meg a csomag AZONOSÍTÓját, például `com.company.application`. Adja meg például a következőt: `com.Contoso.applicationName`, `com.Microsoft.Edge` vagy `com.microsoft.wdav`.
 - **Tulajdonságlap fájlja**: válassza ki az alkalmazáshoz társított tulajdonságlap-fájlt. Győződjön meg róla, hogy `.plist` vagy `.xml` fájl. Töltse fel például `YourApp-Manifest.plist` vagy `YourApp-Manifest.xml` fájlt.
@@ -59,3 +59,5 @@ A módosítások mentéséhez válassza az **OK** > **Létrehozás** lehetőség
 ## <a name="next-steps"></a>További lépések
 
 A profil létrejött, de egyelőre nem csinál semmit. Ezután [rendelje hozzá a profilt](device-profile-assign.md) , és [Figyelje annak állapotát](device-profile-monitor.md).
+
+A Microsoft Edge-hez készült preferencia-fájlokkal kapcsolatos további információkért lásd: [a Microsoft Edge Policy beállításainak konfigurálása MacOS rendszeren](https://docs.microsoft.com/deployedge/configure-microsoft-edge-on-mac).
