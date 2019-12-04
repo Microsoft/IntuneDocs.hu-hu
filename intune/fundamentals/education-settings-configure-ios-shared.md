@@ -18,14 +18,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 86b61f628dc559bf0520dbe16ef58644bd360269
-ms.sourcegitcommit: 13fa1a4a478cb0e03c7f751958bc17d9dc70010d
+ms.openlocfilehash: 0edfd9b8ee8b45952d9c22d5365d09d125ea7710
+ms.sourcegitcommit: 78faf608510fbaca09bc410d63df1aa5254dee45
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74188455"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74784255"
 ---
-# <a name="configure-intune-education-settings-for-shared-ipad-devices"></a>Megosztott iPad-eszközökhöz az Intune oktatási beállításainak konfigurálása
+# <a name="configure-intune-education-settings-for-shared-ipad-devices"></a>Az Intune oktatási beállításainak konfigurálása megosztott iPad eszközökhöz
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 

@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e5e1e1de0c8ec80a390f76f5e8de3965d4f800a9
-ms.sourcegitcommit: 13fa1a4a478cb0e03c7f751958bc17d9dc70010d
+ms.openlocfilehash: 6fb025e6b698eba3deeabbda788fcd990a19105f
+ms.sourcegitcommit: b752acefec077c719e169e665c955adb944e85c6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74188159"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74781175"
 ---
 # <a name="windows-10-and-newer-device-settings-to-allow-or-restrict-features-using-intune"></a>Windows 10 (és újabb) eszközbeállítások az Intune-t használó szolgáltatások engedélyezéséhez vagy korlátozásához
 
@@ -130,7 +130,7 @@ Ezek a beállítások a [EnterpriseCloudPrint házirend CSP](https://docs.micros
 - **Nyomtató hozzáférési szolgáltatójának URL-címe**: adja meg a hitelesítési végpont URL-címét az OAuth-tokenek lekéréséhez. Például írja be a következőt: `https://azuretenant.contoso.com/adfs`.
 - **Natív Azure-ügyfélalkalmazás GUID-azonosítója**: adja meg egy olyan ügyfélalkalmazás GUID azonosítóját, amely a OAuth származó OAuth-tokenek beolvasására jogosult. Például írja be a következőt: `E1CF1107-FF90-4228-93BF-26052DD2C714`.
 - **Nyomtatási szolgáltatás erőforrás-URI-ja**: adja meg a Azure Portalban konfigurált nyomtatási szolgáltatás OAuth erőforrás-URI-ját. Például írja be a következőt: `http://MicrosoftEnterpriseCloudPrint/CloudPrint`.
-- **Lekérdezhető nyomtatók maximális**száma: adja meg a lekérdezni kívánt nyomtatók maximális számát. Az alapértelmezett érték: `20`.
+- **Lekérdezhető nyomtatók maximális**száma: adja meg a lekérdezni kívánt nyomtatók maximális számát. Az alapértelmezett érték `20`.
 - **Nyomtató-felderítési szolgáltatás erőforrás-URI-ja**: adja meg a OAuth-erőforrás URI-ját a Azure Portal konfigurált nyomtató-felderítési szolgáltatáshoz. Például írja be a következőt: `http://MopriaDiscoveryService/CloudPrint`.
 
 > [!TIP]
@@ -174,7 +174,7 @@ A GDI DPI-méretezés lehetővé teszi, hogy a DPI-t nem támogató alkalmazáso
 
 Egy. csv-fájlt is **importálhat** az alkalmazások listájával.
 
-## <a name="general"></a>Általános kérdések
+## <a name="general"></a>Általános
 
 Ezek a beállítások az [élmény házirend CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-experience)-t használják; amely a támogatott Windows-kiadásokat is felsorolja. 
 
@@ -186,6 +186,9 @@ Ezek a beállítások az [élmény házirend CSP](https://docs.microsoft.com/win
 
 - **Főtanúsítvány manuális telepítése** (csak mobileszköz esetén): a **Letiltás** megakadályozza a végfelhasználók számára a főtanúsítványok és a köztes Cap-tanúsítványok manuális telepítését. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót.
 - **Kamera**: a **Letiltás** megakadályozza, hogy a végfelhasználók a kamerát használják az eszközön. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót.
+
+  [Kamera CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-camera)
+
 - **OneDrive fájl szinkronizálása**: a **Letiltás** megakadályozza, hogy a végfelhasználók szinkronizálják a fájlokat az eszközről a OneDrive. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót.
 - **Cserélhető tároló**: a **blokk** megakadályozza, hogy a végfelhasználók külső tárolóeszközöket használjanak, például SD-kártyákat az eszközzel. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót.
 - Földrajzi **hely: a** **Letiltás** megakadályozza, hogy a végfelhasználók bekapcsolják a Location Servicest az eszközön. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót.
@@ -364,7 +367,7 @@ Ha a "felhasználói felülbírálás tiltása és engedélyezése" lehetőség 
 - **Élő csempe adatgyűjtésének engedélyezése**: **Igen** (alapértelmezés) lehetővé teszi a Microsoft Edge számára a Start menübe rögzített élő csempék adatainak gyűjtését. **Nem** akadályozza meg az adatok gyűjtését, ami korlátozott felhasználói élményt biztosíthat a felhasználóknak.
 - A **felhasználó felülbírálhatja a tanúsítvány hibáit**: az **Igen** (alapértelmezett) lehetővé teszi, hogy a felhasználók hozzáférhessenek SSL/TRANSPORT Layer Security (SSL/TLS) hibákat tartalmazó webhelyekhez. **Nem** (a fokozott biztonsághoz ajánlott) megakadályozza, hogy a felhasználók SSL-vagy TLS-hibákkal férhessenek hozzá a webhelyekhez.
 
-### <a name="additional"></a>Továbbiak
+### <a name="additional"></a>További
 
 - **Microsoft Edge böngésző engedélyezése** (csak mobil): **Igen** (alapértelmezés) lehetővé teszi a Microsoft Edge webböngésző használatát a mobileszközön. **Nem** akadályozza meg a Microsoft Edge használatát az eszközön. Ha a **nem**lehetőséget választja, a többi egyéni beállítás csak az asztalra vonatkozik.
 - **Címsor legördülő menüjének engedélyezése**: **Igen** (alapértelmezés) lehetővé teszi a Microsoft Edge számára, hogy megjelenjen a címsor legördülő lista a javaslatok listájával. A **nem** állítja le a Microsoft Edge-t a legördülő listában szereplő javaslatok listájának megjelenítéséhez a beíráskor. Ha a **nem**értékre van állítva, akkor:
@@ -552,7 +555,7 @@ Ezek a beállítások a [WirelessDisplay házirend CSP](https://docs.microsoft.c
 
   [System/TelemetryProxy CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-system#system-telemetryproxy)
 
-A módosítások mentéséhez kattintson az **OK** gombra.
+A módosítások mentéséhez válassza az **OK** gombot.
 
 ## <a name="search"></a>Keresés
 
@@ -732,7 +735,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
   - **Nincs konfigurálva** (alapértelmezett): az összes fájl figyelése
   - **Figyelés letiltva**
-  - **Minden fájl figyelése**
+  - **Az összes fájl figyelése**
   - **Csak a bejövő fájlok figyelése**
   - **Csak a kimenő fájlok figyelése**
 

@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 12/03/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: def975bc646a96a77646ac9103079b1f008f9c28
-ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
+ms.openlocfilehash: ef9548a77a3a745eda24b927118d1447d5afd1f0
+ms.sourcegitcommit: 78faf608510fbaca09bc410d63df1aa5254dee45
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74564059"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74784238"
 ---
 # <a name="add-apps-to-microsoft-intune"></a>Alkalmazások hozzáadása a Microsoft Intune-hoz 
 
@@ -56,8 +56,10 @@ A következő táblázatban megtekintheti a konkrét alkalmazástípusokat és a
 | Windows Phone 8.1-es áruházbeli alkalmazások  | Áruházbeli alkalmazás  | Válassza a **Windows Phone 8.1** lehetőséget az **alkalmazás típusa** területen, majd adja meg a Microsoft Store alkalmazáshoz tartozó URL-címét. |
 | Microsoft Store-beli alkalmazások  | Áruházbeli alkalmazás  | Válassza a **Windows** lehetőséget az **alkalmazás típusa** területen, majd adja meg a Microsoft Store alkalmazáshoz tartozó URL-címét. |
 | Felügyelt Google Play-alkalmazások | Áruházbeli alkalmazás  | Válassza a **felügyelt Google Play** lehetőséget az **alkalmazás típusa**területen, keresse meg az alkalmazást, és válassza ki az alkalmazást az Intune-ban. |
-| Windows 10-es Office 365-alkalmazások  | Áruházbeli alkalmazás (Office 365) | Válassza a **Windows 10** lehetőséget az **Office 365 csomag** területen, az **alkalmazás típusa** részen, majd válassza ki a telepíteni kívánt Office 365-alkalmazást.  |
-| macOS-es Office 365-alkalmazások | Áruházbeli alkalmazás (Office 365) | Válassza a **macOS** lehetőséget az **Office 365 csomag** területen, az **alkalmazás típusa** részen, majd válassza ki az Office 365 csomagot. |
+| Windows 10-es Office 365-alkalmazások  | Áruházbeli alkalmazás (Office 365) | Válassza az **office 365 Suite** lehetőséget az **alkalmazás típusa**területen, majd **válassza ki a** telepíteni kívánt Office 365 alkalmazást.  |
+| macOS-es Office 365-alkalmazások | Áruházbeli alkalmazás (Office 365) | Válassza a **MacOS** lehetőséget az **Office 365 Suite** alatt az **alkalmazás típusa**területen, majd válassza ki az Office 365 App Suite-t. |
+| Microsoft Edge, 77-es és újabb verziók a Windows 10 rendszerhez | Áruházbeli alkalmazás | Válassza a **Windows 10** lehetőséget a **Microsoft Edge, a 77-es és újabb verzióban** az **alkalmazás típusa**területen. |
+| Microsoft Edge, 77-es és újabb verziók macOS-re | Áruházbeli alkalmazás | Válassza a **MacOS** lehetőséget a **Microsoft Edge, a 77-es és újabb verzióban** az **alkalmazás típusaként**. |
 | Androidos üzletági (LOB) alkalmazások | Üzletági (LOB) alkalmazás | Válassza az **Üzletági alkalmazás** lehetőséget az **alkalmazás típusa** területen, válassza az **Alkalmazáscsomag-fájl** elemet, majd adjon meg egy **.apk** kiterjesztésű Androidos telepítőfájlt.  |
 | iOS-es üzletági alkalmazások | Üzletági (LOB) alkalmazás | Válassza az **Üzletági alkalmazás** lehetőséget az **alkalmazás típusa** területen, válassza az **Alkalmazáscsomag-fájl** elemet, majd adjon meg egy **.ipa** kiterjesztésű iOS-es telepítőfájlt.  |
 | Windows Phone LOB-alkalmazások | Üzletági (LOB) alkalmazás | Válassza az **Üzletági alkalmazás** lehetőséget az **alkalmazás típusa** területen, válassza az **Alkalmazáscsomag-fájl** elemet, majd adjon meg egy **.xap** kiterjesztésű Windows Phone-telepítőfájlt.  |
@@ -205,6 +207,8 @@ Az alkalmazások Intune-hoz adásáról a különböző platformokon az alábbi 
 - [Windows LOB-alkalmazás](lob-apps-windows.md)
 - [Windows 10-es Office 365-alkalmazások](apps-add-office365.md)
 - [macOS-es Office 365-alkalmazások](apps-add-office365-macos.md)
+- [Microsoft Edge Windows 10 rendszerhez](apps-windows-edge.md)
+- [Microsoft Edge macOS rendszerhez](apps-edge-macos.md)
 - [Beépített alkalmazások](apps-add-built-in.md)
 - [Android Enterprise System-alkalmazás](apps-ae-system.md)
 - [Win32-alkalmazások](app-management.md)

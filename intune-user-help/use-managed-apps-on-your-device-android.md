@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 04/19/2019
+ms.date: 12/03/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
@@ -19,12 +19,12 @@ ms.reviewer: chrisbal
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 24d4193b3e43b7c406a1fb6c9c8d987caa6cbeea
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 28ba1d2d50f366e5e34fae06ae188293dd0fb8b5
+ms.sourcegitcommit: b752acefec077c719e169e665c955adb944e85c6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72501893"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74781209"
 ---
 # <a name="use-managed-apps-on-your-android-device"></a>Felügyelt alkalmazások használata Android-eszközön
 A felügyelt alkalmazások úgy vannak konfigurálva, hogy megfeleljenek a szervezet biztonsági követelményeinek, és a védelmet biztosítsanak a munkahelyi és iskolai adatok számára. Ezek az alkalmazások telepíthetők vagy automatikusan használhatók az eszközén. 
@@ -39,9 +39,7 @@ A maximális adatvédelem érdekében a szervezet több felügyelt alkalmazást 
 A szervezetek megkövetelhetik egy adott felügyelt alkalmazás használatát egy művelet elvégzéséhez, például egy munkafájl megnyitásához, vagy egy webes hivatkozáshoz való hozzáféréshez. Ha nem rendelkezik az alkalmazással, lehet, hogy nem tudja folytatni a feladatát. Bizonyos felügyelt alkalmazások telepíthetők, azonban nem szükségesek.
 
 ## <a name="how-do-i-know-im-using-a-managed-app"></a>Honnan tudhatom, felügyelt alkalmazást használok-e?
-Amikor először fér hozzá munkahelyi vagy iskolai adatokhoz egy felügyelt alkalmazásban, a képernyőképen láthatóhoz hasonló üzenetet kap. Az üzenet felszólítja, hogy a folytatáshoz indítsa újra az alkalmazást.
-
-![Képernyőkép arról az üzenetről, amely akkor jelenik meg, amikor egy felhasználó megnyit egy felügyelt alkalmazást az eszközén. Az üzenet a következő: „A szervezet nem védi az adatokat ebben az alkalmazásban. A folytatáshoz indítsa újra az alkalmazást.” Ezután egy OK gomb szerepel.](./media/managed-apps-message.png)
+Amikor egy felügyelt alkalmazásban próbál hozzáférni munkahelyi vagy iskolai adataihoz, egy üzenet jelenik meg arról, hogy az alkalmazást a szervezet védi. 
 
 ## <a name="commonly-managed-apps"></a>Gyakori felügyelt alkalmazások  
 Példák gyakran szükséges vagy elérhető felügyelt alkalmazásokra az iskolában vagy a munkahelyen:

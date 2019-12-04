@@ -6,7 +6,7 @@ keywords: Intune-adattárház
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/15/2019
+ms.date: 12/03/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: developer
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d00ae284ff4ea911cecb571cfe765eafe32fac02
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 18815fb671e853bc0463fed750d40b80ccb285fb
+ms.sourcegitcommit: 78faf608510fbaca09bc410d63df1aa5254dee45
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72490472"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74784272"
 ---
 # <a name="create-an-intune-report-from-the-odata-feed-with-power-bi"></a>Intune-jelentés létrehozása az OData-adatcsatornából a Power BI-jal
 
@@ -57,7 +57,7 @@ Telepítse a Power BI Desktop legújabb verzióját. Ezt a [PowerBI.microsoft.co
 1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
 2. Nyissa meg az **Intune-adattárház** panelt az adatraktár hivatkozásának kiválasztásával az **Microsoft Intune – áttekintés** panel jobb oldalán található **egyéb feladatok** területen.
 3. Másolja az egyéni URL-címet. Például így: `https://fef.tenant.manage.microsoft.com/ReportingService/DataWarehouseFEService?api-version=beta`
-4. Nyissa meg a Power BI Desktop alkalmazást.
+4. Nyissa meg a Power BI Desktopot.
 5. A menüsávon válassza a **fájl** > **adatok beolvasása** > **OData-csatorna**lehetőséget.
 6. Illessze be az egyéni hírcsatorna URL-címét, amelyet a korábbi lépésből másolt be a OData- **hírcsatorna** ablakának URL mezőjébe.
 7. Válassza az **Egyszerű** lehetőséget.
@@ -69,7 +69,7 @@ Telepítse a Power BI Desktop legújabb verzióját. Ezt a [PowerBI.microsoft.co
 
     ![Szervezeti fiók hitelesítő adatai](./media/reports-proc-create-with-odata/reports-create-02-org-account.png)
 
-10. Kattintson a **Csatlakozás** gombra. Ekkor megnyílik a Navigátor, és megjelenik rajta az Intune-adattárházban található táblák listája.
+10. Válassza a **kapcsolat**lehetőséget. Ekkor megnyílik a Navigátor, és megjelenik rajta az Intune-adattárházban található táblák listája.
 
     ![Képernyőfelvétel a Navigátorról – az adatraktár tábláinak listája](./media/reports-proc-create-with-odata/reports-create-02-loadentities.png)
 

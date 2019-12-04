@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f0dd9eddd986e6717e6bf706b02a7b06f712a032
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.openlocfilehash: b74cdf29999bccdefaa94c84673b9ea89c335537
+ms.sourcegitcommit: 7001dc5a9cffeb2e161748f9e6dba126bf1cb06f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74059900"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74694947"
 ---
 # <a name="apply-features-and-settings-on-your-devices-using-device-profiles-in-microsoft-intune"></a>Szolgáltatások és beállítások alkalmazása az eszközökön a Microsoft Intune eszköz profiljainak használatával
 
@@ -49,7 +49,7 @@ Ezek a sablonok a Csoportházirendhez hasonló beállítások egyszerűsített n
 
 Ez a funkció a következőket támogatja:
 
-- Windows 10 1809 és újabb verziók a támogatott belső vezérlőprogram-on.
+- Windows 10 és újabb
 
 ## <a name="certificates"></a>Tanúsítványok
 
@@ -79,7 +79,7 @@ Ez a funkció a következőket támogatja:
 
 ## <a name="delivery-optimization"></a>Teljesítésoptimalizálás
 
-A [kézbesítés optimalizálása](delivery-optimization-windows.md) jobb élményt nyújt a szoftverfrissítések kézbesítéséhez. Ezek a beállítások a **szoftverfrissítések**  > **Windows 10-es frissítési kör** beállításait használják.
+A [kézbesítés optimalizálása](delivery-optimization-windows.md) jobb élményt nyújt a szoftverfrissítések kézbesítéséhez. Ezek a beállítások a **szoftverfrissítések** > **Windows 10-es frissítési kör** beállításait használják.
 
 Ezekkel a beállításokkal szabályozhatja, hogy a rendszer hogyan töltse le a szoftverfrissítéseket a szervezet eszközeire. Megadhatja például, hogy a felhasználók megkapják a saját frissítéseiket, vagy egy eszköz profiljában a kézbesítési optimalizálás Cloud Services használatával frissítéseket szerezzenek be.
 
@@ -102,7 +102,7 @@ Az [eszköz belső vezérlőprogram-konfigurációs felülete](device-firmware-c
 
 Ez a funkció a következőket támogatja:
 
-- Windows 10 és újabb
+- Windows 10 1809 és újabb verziók a támogatott belső vezérlőprogram-on
 
 ## <a name="device-restrictions"></a>Eszközkorlátozások
 

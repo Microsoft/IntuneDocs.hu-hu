@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 36039334f7e93b66735e10d0ac2c5d80602e2b83
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.openlocfilehash: f0cd3dd71a5999b69e3f5c34ef4cc73fb3d6a938
+ms.sourcegitcommit: b752acefec077c719e169e665c955adb944e85c6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74059857"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74781158"
 ---
 # <a name="set-up-per-app-virtual-private-network-vpn-for-ios-devices-in-intune"></a>App virtual private Network (VPN) beállítása iOS-eszközökhöz az Intune-ban
 
@@ -37,6 +37,9 @@ A VPN-szolgáltató dokumentációjában megtekintheti, hogy a VPN támogatja-e 
 Ebből a cikkből megtudhatja, hogyan hozhat létre egy alkalmazáson belüli VPN-profilt, és hogyan rendelheti hozzá a profilt az alkalmazásaihoz. Ezekkel a lépésekkel zökkenőmentes, alkalmazáson belüli VPN-élményt hozhat létre a végfelhasználók számára. Az App VPN-t támogató legtöbb VPN esetén a felhasználó megnyit egy alkalmazást, és automatikusan csatlakozik a VPN-hez.
 
 Egyes VPN-EK lehetővé teszik a Felhasználónév és jelszó hitelesítését az alkalmazáson belüli VPN-sel. Azt jelenti, hogy a felhasználóknak felhasználónevet és jelszót kell megadniuk a VPN-hez való csatlakozáshoz.
+
+> [!IMPORTANT]
+> Az alkalmazáson belüli VPN nem támogatott az iOS rendszerhez készült IKEv2 VPN-profilokban.
 
 ## <a name="per-app-vpn-with-zscaler"></a>Alkalmazáson belüli VPN és Zscaler
 
@@ -112,20 +115,20 @@ A VPN-profil tartalmazza a SCEP vagy a PKCS-tanúsítványt az ügyfél hiteles�
 
     További információt a további beállításokról az [iOS VPN-beállítások](vpn-settings-ios.md)című témakörben talál.
 
-5. Válassza az **automatikus vpn** > **típusú automatikus VPN**- > **alkalmazáson belüli VPN-t**
+5. Válassza az **automatikus vpn** > **az automatikus VPN** - > az **alkalmazáson belüli VPN-t**
 
     ![Az Intune-ban állítsa be az automatikus VPN-t az alkalmazáson belüli VPN-re iOS-eszközökön](./media/vpn-setting-configure-per-app/vpn-per-app-automatic.png)
 
-6. Válassza **az ok** > **OK** > **Létrehozás**elemet.
+6. Kattintson **az OK gombra** >  > **Létrehozás** **gombra** .
 
 ## <a name="associate-an-app-with-the-vpn-profile"></a>Alkalmazás társítása a VPN-profillal
 
 Miután hozzáadta a VPN-profilt, társítsa az alkalmazást és a Microsoft Azure Active Directory-csoportot a profillal.
 
 1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **alkalmazások** > **minden alkalmazás**lehetőséget.
-2. Válasszon ki egy alkalmazást a listáról > **hozzárendelések** > **Csoport hozzáadása**elemet.
+2. Válasszon ki egy alkalmazást a listáról > **hozzárendelések** > **Csoport hozzáadása**lehetőséget.
 3. A **hozzárendelés típusa**mezőben válassza a **kötelező** vagy **a regisztrált eszközök számára elérhető**lehetőséget.
-4. Válassza ki a **belefoglalt csoportok** >  lehetőséget **,** > jelölje ki a [létrehozandó](#create-a-group-for-your-vpn-users) csoportot (ebben a cikkben) > **válassza**ki.
+4. Válassza ki a belefoglalt **csoportok** lehetőséget > **válassza** ki a csoportokat, > Válassza ki a [létrehozott](#create-a-group-for-your-vpn-users) csoportot (ebben a cikkben) > **válassza ki**.
 5. A **VPN**-EK területen válassza ki a [létrehozott](#create-a-per-app-vpn-profile) app VPN-profilt (ebben a cikkben).
 
     ![Alkalmazás társítása az alkalmazáson belüli VPN-profilhoz Microsoft Intune](./media/vpn-setting-configure-per-app/vpn-per-app-app-to-vpn.png)

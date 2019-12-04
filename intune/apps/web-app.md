@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 514977be976c83f5cd8dcb8d56ab5c232ff0d193
-ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
+ms.openlocfilehash: 68e2e768067a88b8ae58adeb38c17d90ac995a30
+ms.sourcegitcommit: b752acefec077c719e169e665c955adb944e85c6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74562482"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74781226"
 ---
 # <a name="add-web-apps-to-microsoft-intune"></a>Webalkalmazások hozzáadása az Intune-hoz
 
@@ -33,10 +33,13 @@ Az Intune számos különböző alkalmazástípust támogat, beleértve a webalk
 
 Ahhoz, hogy kezelhesse és felhasználókhoz rendelhesse hozzá az alkalmazásokat, hozzá kell adnia őket az Intune-hoz. 
 
-Az Intune létrehozza a webes alkalmazás parancsikonját a felhasználó eszközén. IOS-eszközök esetén a rendszer a webalkalmazás parancsikonját adja hozzá a kezdőképernyő számára. Android-eszközök esetén a webalkalmazásra mutató parancsikon kerül az Intune vállalati portál widgetbe, és a widgetet manuálisan kell rögzíteni a felhasználó által. Windows-eszközök esetén a webalkalmazásra mutató parancsikon kerül a Start menübe.
+Az Intune létrehozza a webes alkalmazás parancsikonját a felhasználó eszközén. IOS-eszközök esetén a rendszer a webalkalmazás parancsikonját adja hozzá a kezdőképernyő számára. Androidos eszközök rendszergazdai eszközei esetén a webalkalmazásra mutató parancsikon kerül az Intune vállalati portál widgetbe, és a widgetet manuálisan kell rögzíteni a felhasználó által. Windows-eszközök esetén a webalkalmazásra mutató parancsikon kerül a Start menübe.
 
 > [!Note]
 > A webalkalmazások indításához egy böngészőt kell telepíteni a felhasználó eszközén. 
+
+> [!Note]
+> Android rendszerű vállalati eszközök esetén lásd: [felügyelt Google Play web Links](apps-add-android-for-work.md#managed-google-play-web-links)
 
 ## <a name="add-a-web-app-to-intune"></a>Webalkalmazás hozzáadása az Intune-hoz
 A következő módon adhat hozzá egy alkalmazást az Intune-hoz egy alkalmazás webes hivatkozásaként:
@@ -62,8 +65,6 @@ A következő módon adhat hozzá egy alkalmazást az Intune-hoz egy alkalmazás
 7. Az **Alkalmazás hozzáadása** panelen válassza a **Hozzáadás** lehetőséget.
 
 > [!Note]
-> Az Android-eszközökhöz rendelt webalkalmazások megjelenítéséhez a felhasználóknak hozzá kell adniuk az Intune widgetet a kezdőképernyőjükhöz.
->
 > Az Intune-webalkalmazások iOS-eszközökön való üzembe helyezése jelenleg a felügyeleti profillal van társítva, így manuálisan nem távolíthatók el. Az Intune portálon **Eltávolítás** értékre módosíthatja az üzembehelyezési típust, hogy a webalkalmazás automatikusan eltávolítható legyen. Ha azonban azelőtt távolítja el az üzemelő példányt, hogy az alkalmazás-hozzárendelési szándékot **Eltávolítás** értékre módosítaná, a webalkalmazás végleg az eszközön marad, amíg meg nem szűnik az eszköz regisztrációja az Intune-ban.
 
 A végfelhasználók közvetlenül a Windows Céges portál alkalmazásból indíthatnak webalkalmazásokat a webalkalmazás kiválasztásával, majd a **Megnyitás böngészőben**lehetőség kiválasztásával. A közzétett webes URL-cím közvetlenül a böngészőben nyílik meg. 

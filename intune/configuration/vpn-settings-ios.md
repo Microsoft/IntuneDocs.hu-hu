@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 52fb1ea5077b424a1d3cf10812d8d9b5f79e4752
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.openlocfilehash: e45d51feb91e0e188971133185ac0f0f13e5b1f4
+ms.sourcegitcommit: b752acefec077c719e169e665c955adb944e85c6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74059818"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74781141"
 ---
 # <a name="add-vpn-settings-on-ios-devices-in-microsoft-intune"></a>VPN-beállítások hozzáadása iOS-eszközökön Microsoft Intune
 
@@ -106,7 +106,7 @@ Az alábbi listában látható beállításokat a kiválasztott VPN-kapcsolat t�
 
 ## <a name="ikev2-settings"></a>IKEv2-beállítások
 
-Ezek a beállítások akkor érvényesek, ha a **kapcsolattípus** > **IKEv2**van kiválasztva.
+Ezek a beállítások akkor érvényesek, ha a **kapcsolattípus** > **IKEv2**lehetőséget választja.
 
 - **Távoli azonosító**: adja meg a IKEv2-kiszolgáló hálózati IP-címét, FQDN-jét, USERFQDN vagy ASN1DN. Például írja be a következőt: `10.0.0.3` vagy `vpn.contoso.com`. Általában ugyanazt az értéket adja meg, mint a [**kapcsolatok neve**](#base-vpn-settings) (ebben a cikkben). Ez azonban a IKEv2-kiszolgáló beállításaitól függ.
 
@@ -136,8 +136,8 @@ Ezek a beállítások akkor érvényesek, ha a **kapcsolattípus** > **IKEv2**va
   - **Közepes** (alapértelmezett): 10 percenként elküld egy életben tartási üzenetet.
   - **Magas**: minden 60 másodpercenként elküld egy életben tartási üzenetet.
 
-- **TLS-verzió minimális**száma: adja meg a használni kívánt TLS-verziót. Adja meg `1.0`, `1.1`, vagy `1.2` értéket. Ha üresen hagyja, a rendszer a `1.0` alapértelmezett értéket használja.
-- **TLS-verzió maximális**száma: adja meg a használni kívánt TLS-verziót. Adja meg `1.0`, `1.1`, vagy `1.2` értéket. Ha üresen hagyja, a rendszer a `1.2` alapértelmezett értéket használja.
+- **TLS-verzió minimális**száma: adja meg a használni kívánt TLS-verziót. Adja meg `1.0`, `1.1`vagy `1.2`. Ha üresen hagyja, a rendszer a `1.0` alapértelmezett értékét használja.
+- **TLS-verzió maximális**száma: adja meg a használni kívánt TLS-verziót. Adja meg `1.0`, `1.1`vagy `1.2`. Ha üresen hagyja, a rendszer a `1.2` alapértelmezett értékét használja.
 - **Tökéletes továbbítási titoktartás**: válassza az **Engedélyezés** lehetőséget a tökéletes továbbítási titoktartás (PFS) bekapcsolásához. A PFS egy olyan IP-biztonsági szolgáltatás, amely csökkenti annak hatását, ha egy munkamenetkulcs biztonsága sérül. A **Letiltás** (alapértelmezett) nem használ PFS-t.
 - **Tanúsítvány visszavonásának ellenőrzése**: válassza az **Engedélyezés** lehetőséget, hogy a rendszer ne vonja vissza a tanúsítványokat, mielőtt engedélyezné a VPN-kapcsolat sikerességét. Ez az ellenőrzési lehetőség a legjobb megoldás. Ha a VPN-kiszolgáló túllépi az időkorlátot a tanúsítvány visszavonásának meghatározása előtt, akkor a rendszer a hozzáférést is megadja. A **Letiltás** (alapértelmezett) nem vizsgálja a visszavont tanúsítványokat.
 
@@ -179,7 +179,7 @@ Ezek a beállítások akkor érvényesek, ha a **kapcsolattípus** > **IKEv2**va
 
 ## <a name="automatic-vpn-settings"></a>Automatikus VPN-beállítások
 
-- **Alkalmazásonkénti VPN**: Engedélyezi az alkalmazásonkénti VPN használatát. Lehetővé teszi a VPN-kapcsolat automatikus aktiválását bizonyos alkalmazások megnyitásakor. Ezenkívül társítja az alkalmazásokat ehhez a VPN-profilhoz. További információért lásd az [alkalmazásonkénti VPN beállítására vonatkozó utasításokat iOS-hez](vpn-setting-configure-per-app.md).
+- **Alkalmazásonkénti VPN**: Engedélyezi az alkalmazásonkénti VPN használatát. Lehetővé teszi a VPN-kapcsolat automatikus aktiválását bizonyos alkalmazások megnyitásakor. Ezenkívül társítja az alkalmazásokat ehhez a VPN-profilhoz. Az alkalmazáson belüli VPN használata nem támogatott a IKEv2 esetében. További információért lásd az [alkalmazásonkénti VPN beállítására vonatkozó utasításokat iOS-hez](vpn-setting-configure-per-app.md). 
   - **Szolgáltatótípus**: Csak a Pulse Secure-hoz és az egyéni VPN-hez érhető el.
   - Az iOS-es **alkalmazásonkénti VPN**-profilok Pulse Secure-ral vagy egyéni VPN-nel való használatakor választhat az alkalmazásrétegbeli (alkalmazásproxy) és csomagszintű (csomagalagút) alagútkezelés között. A **Szolgáltatótípus** értékét az alkalmazásrétegbeli alagútkezeléshez állítsa az **alkalmazásproxy** lehetőségre, a csomagrétegbeli alagútkezeléshez pedig állítsa a **csomagalagút** lehetőségre. Ha nem biztos a megfelelő értékben, tekintse meg a VPN-szolgáltató dokumentációját.
   - **A VPN-t aktiváló Safari URL-címek**: Megadhat egy vagy több webhelycímet. Ezeket az URL-címeket az eszköz Safari böngészőjében megnyitva a VPN-kapcsolat automatikusan létrejön.

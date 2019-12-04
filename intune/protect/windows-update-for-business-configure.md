@@ -15,12 +15,12 @@ ms.reviewer: mghadial
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 01866bba0ef47ac807b24a66f773e212c76ff7df
-ms.sourcegitcommit: 1cf063c98e1caae00a6e6fab821cc3254562bca9
+ms.openlocfilehash: a7c3398f28d7c396c873dd29f3e3fdd719c1a7c6
+ms.sourcegitcommit: f26039d674eb4d61ab68264dd1a10b2e5e1d842c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74291098"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74691774"
 ---
 # <a name="manage-windows-10-software-updates-in-intune"></a>Windows 10 rendszerű szoftverfrissítések kezelése az Intune-ban
 
@@ -138,7 +138,7 @@ Ha a frissítési típus szüneteltetve van, az adott gyűrű áttekintő panelj
 > [!IMPORTANT]
 > A szüneteltetési parancs kiadása után az eszközök akkor kapják meg ezt a parancsot, amikor legközelebb bejelentkeznek a szolgáltatásba. Megtörténhet, hogy mielőtt bejelentkeznek, még telepítenek egy ütemezett frissítést. Ha az adott eszköz ki van kapcsolva a felfüggesztési parancs kiadásakor, akkor a bekapcsolása után esetleg letölthet és telepíthet ütemezett frissítéseket, mielőtt bejelentkezik az Intune-ba.
 
-#### <a name="resume"></a>Folytatás
+#### <a name="resume"></a>Folytatása
 
 Amíg a frissítési kör szünetel, a **Folytatás** gombra kattintva visszaállíthatja a szolgáltatás és a minőségi frissítéseket az adott gyűrű aktív működéséhez. A frissítési kör folytatása után újra szüneteltetheti a gyűrűt.
 
@@ -214,9 +214,7 @@ Ha egy eszköz megkapja a Windows 10-es szolgáltatáshoz tartozó frissítési 
   - A **frissítési késleltetési időszak (nap)** értékének **0**értékűnek kell lennie.
   - A frissítési gyűrű szolgáltatás frissítéseinek *futniuk*kell. Nem szabad szüneteltetni őket.
 
-- A *Windows 10-es szolgáltatások frissítési* szabályzata nem támogatott az Autopilot-ben. Az Intune nem fogja telepíteni a szabályzatot a következőre:
-  - Az Autopilot által kiépített eszközök.
-  - Azok az eszközök, amelyek korábban az Autopilot-sel lettek kiépítve.
+- A Windows 10 szolgáltatás frissítési házirendjei nem alkalmazhatók a kezdőélmény (OOBE) alatt, és csak az első Windows Update vizsgálat után lépnek érvénybe, miután egy eszköz befejezte a kiépítési folyamatot (amely általában egy nap). Emellett az Autopilot-sel kiépített eszközök nem kapják meg a szabályzatot.
 
   Ez a korlátozás azt vizsgálja, hogy a későbbiekben támogatni lehet-e.
 

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b32893c231ae15591aa331bcf7699d9e624efd88
-ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
+ms.openlocfilehash: ba3b145c3a48992b1e8a01ad2cee4be60646df6f
+ms.sourcegitcommit: b752acefec077c719e169e665c955adb944e85c6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74563684"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74781243"
 ---
 # <a name="ios-app-protection-policy-settings"></a>iOS-es alkalmazásvédelmi szabályzat-beállításai
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
@@ -88,7 +88,7 @@ Egyes alkalmazások és platformszolgáltatások kivételt képeznek, és az Int
 | <ul><ui> a **PIN-kód minimális hosszának kiválasztása** | Meghatározza a számjegyek minimális számát a PIN-kód sorrendjében.  | **4**  |
 | <ul><ui> **Touch ID PIN-kód helyett hozzáféréshez (iOS 8 +)** | Az **Engedélyezés** lehetőség kiválasztásával engedélyezheti, hogy a felhasználó PIN- [kódot használjon az](https://support.apple.com/HT201371) alkalmazás eléréséhez.    | **Engedélyezés**  |
 |<ul><ui><ul><ui>**felülbírálja a Touch ID PIN-kódot az időtúllépést követően**|  Ha ezt a beállítást szeretné használni, válassza a **kötelező** lehetőséget, majd adja meg az inaktivitás időtúllépését.  |**Igényel**  |
-| <ul><ui><ul><ui><ul><ui> **időkorlát (perc inaktivitás)** |  Adjon meg egy időpontot percben, amely után a PIN-kód vagy a numerikus (konfigurált) PIN-kód felülbírálja az ujjlenyomatok használatát. Az időtúllépési értéknek nagyobbnak kell lennie, mint a "hozzáférési követelmények újravizsgálása ennyi perc inaktivitás után" szakaszban megadott értéknél.  |**30**  |
+| <ul><ui><ul><ui><ul><ui> **időkorlát (perc inaktivitás)** |  Adjon meg egy időpontot percben, amely után a PIN-kód vagy a numerikus (konfigurált) PIN-kód felülbírálja az ujjlenyomat vagy az arc elérési módjaként való használatát. Az időtúllépési értéknek nagyobbnak kell lennie, mint a "hozzáférési követelmények újravizsgálása ennyi perc inaktivitás után" szakaszban megadott értéknél.  |**30**  |
 | <ul><ui><ul>a **hozzáférési PIN-kód helyett <ui>Arcfelismerés (iOS 11 +)** | Az **Engedélyezés** lehetőség kiválasztásával engedélyezheti, hogy a felhasználó a Arcfelismerés technológia használatával hitelesítse a felhasználókat iOS-eszközökön. Ha engedélyezve van, a Face ID-t kell használni az alkalmazás eléréséhez egy arc-AZONOSÍTÓra képes eszközön.    | **Engedélyezés**  |
 | <ul><ui>**PIN-kód alaphelyzetbe állítása napok száma után** | Válassza az **Igen** lehetőséget, ha meg szeretné követelni, hogy a felhasználók az alkalmazás PIN-kódját egy adott időtartam (nap) elteltével módosítsák.  <br><br>Ha az *Igen*értékre van állítva, akkor a PIN-kód alaphelyzetbe állításához szükséges napok számát kell beállítania. |**nem**  |  
 | <ul><ui><ul><ui> **napok száma** | Adja meg, hogy hány nap elteltével szükséges a PIN-kód alaphelyzetbe állítása.  |**90**  |
