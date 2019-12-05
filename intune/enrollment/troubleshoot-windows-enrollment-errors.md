@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 348768be4a42667f579df0ccb500434425258db0
-ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
+ms.openlocfilehash: 0e4f8768129ab035b4a935a900f62ab6f3379edd
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73712857"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74832640"
 ---
 # <a name="troubleshoot-windows-device-enrollment-problems-in-microsoft-intune"></a>A Windows-eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune
 
@@ -34,9 +34,9 @@ Mielőtt elkezdené a hibaelhárítást, fontos, hogy gyűjtsön néhány alapve
 Gyűjtse össze a következő információkat a problémával kapcsolatban:
 - Érvényes Intune-licenc van hozzárendelve a felhasználóhoz? Ahhoz, hogy a felhasználók regisztrálni tudják eszközeiket, hozzá kell rendelni a szükséges licencet.
 - A legújabb frissítés telepítve van a Windows-eszközön? Az Intune egyes funkciói csak a Windows legújabb verziójával működnek. A Windows Updateon keresztül elérhető ismert problémák számos javítást biztosítanak. A legújabb frissítések alkalmazása gyakran javít egy Windows-eszköz regisztrálásával kapcsolatos problémát. 
-- Pontosan milyen hibaüzenet jelenik meg?
+- Mi a pontos hibaüzenet?
 - Hol látja a hibaüzenetet?
-- Mikor indult el a probléma? Valaha is működött a regisztráció? 
+- Mikor jelentkezett először a probléma? Valaha is működött a regisztráció? 
 - Milyen platformon (Android, iOS, Windows) van probléma?
 - Hány felhasználót érint a rendszer? Az összes érintett felhasználó vagy csak néhány?
 - Hány eszközt érint a rendszer? Minden eszköz érintett vagy csak néhány?
@@ -61,7 +61,7 @@ A probléma több lehetséges megoldást is kínál:
 
 ##### <a name="remove-devices-that-were-enrolled"></a>A regisztrált eszközök eltávolítása
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).    
-2. Nyissa meg a **felhasználók** > **minden felhasználó**lehetőséget.    
+2. Lépjen a **felhasználók** > **az összes felhasználóra**.    
 3. Válassza ki az érintett felhasználói fiókot, majd kattintson az **eszközök**elemre.    
 4. Válassza ki a fel nem használt vagy nemkívánatos eszközöket, majd kattintson a **Törlés**gombra. 
 
@@ -71,12 +71,12 @@ A probléma több lehetséges megoldást is kínál:
 > Ez a módszer növeli az eszközök regisztrálási korlátját az összes felhasználó számára, nem csak az érintett felhasználót.
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
-2. Lépjen az **eszközök Beléptetése** > **beléptetési korlátozások**elemre, majd válassza az eszközök korlátozására **vonatkozó korlátozásokat**.    
-3. Növelje az **eszköz korlátjának**értékét. 
+2. Válassza az **eszközök** > **a regisztrációs korlátozások** > az **alapértelmezett** (az eszközök **korlátja**alatt) > **tulajdonságok** > **Szerkesztés** (az **eszköz korlátja**) > növelje az **eszköz korlátját** (legfeljebb 15) > **felülvizsgálat + mentés**lehetőséget.    
+ 
 
 ##### <a name="check-device-type-restrictions"></a>Az eszközök típusára vonatkozó korlátozások keresése
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431) globális rendszergazdai fiókkal.
-2. Lépjen az **eszközök Beléptetése** > **beléptetési korlátozások**elemre, majd válassza ki az **alapértelmezett** korlátozást az **eszköz típusa korlátozásai**alatt.    
+2. Lépjen az **eszközök** > a **regisztrációs korlátozások**elemre, majd válassza ki az **alapértelmezett** korlátozást az **eszközök típusának korlátozása**területen.    
 3. Válassza a **platformok**lehetőséget, majd válassza a **Windows engedélyezése (Mdm)** lehetőséget.
 
     > [!IMPORTANT]
@@ -97,7 +97,7 @@ Hiba 0x801c0003: "Ez a felhasználó nem regisztrálható. Próbálkozzon újra,
 
 #### <a name="resolution"></a>Megoldás
 1. Jelentkezzen be rendszergazdaként a [Azure Portalba](https://portal.azure.com/) .    
-2. Nyissa meg a **Azure Active Directory** > **eszköz** > **eszközbeállítások lehetőséget**.    
+2. Lépjen **Azure Active Directory** > **eszközök** > **eszközbeállítások menüpontra**.    
 3. A felhasználók beállíthatja, **hogy az**eszközök az **Azure ad** -hez csatlakozzanak.    
 4. Regisztrálja újra az eszközt.   
 
@@ -150,7 +150,7 @@ Lépjen a [Microsoft 365 felügyeleti központba](https://portal.office.com/admi
 ##### <a name="correct-the-mdm-terms-of-use-url"></a>Javítsa ki a MDM használati feltételeinek URL-címét
   1. Jelentkezzen be a [Azure Portalba](https://portal.azure.com/), majd válassza a **Azure Active Directory**lehetőséget.    
   2. Válassza a **mobilitás (Mdm és MAM)** lehetőséget, majd kattintson a **Microsoft Intune**elemre.    
-  3. Válassza az **alapértelmezett Mdm-URL-címek visszaállítása**lehetőséget, és győződjön meg arról, hogy a **Mdm URL-címe** **https://portal.manage.microsoft.com/TermsofUse.aspx** értékre van beállítva.    
+  3. Válassza az **alapértelmezett Mdm-URL-címek visszaállítása**lehetőséget, és győződjön meg arról, hogy a **Mdm URL-címének** beállítása **https://portal.manage.microsoft.com/TermsofUse.aspx** .    
   4. Válassza a **Mentés** elemet.    
 
 
@@ -167,7 +167,7 @@ A probléma megoldásához használja az alábbi módszerek egyikét:
 
 ##### <a name="disable-mdm-automatic-enrollment-in-azure"></a>Tiltsa le a MDM automatikus regisztrációját az Azure-ban.
 1. Jelentkezzen be az [Azure portálra](https://portal.azure.com/).    
-2. Lépjen a **Azure Active Directory** > **mobilitás (Mdm és MAM)**  > **Microsoft Intune**.    
+2. Nyissa meg a **Azure Active Directory** > **Mobility (Mdm és MAM)**  > **Microsoft Intune**.    
 3. Állítsa a **Mdm felhasználói hatókörét** **none**értékre, majd kattintson a **Mentés**gombra.    
      
 ##### <a name="uninstall"></a>Eltávolítás
@@ -180,7 +180,7 @@ Hiba: "a szoftver nem telepíthető, 0x80cf4017."
 **OK:** Az ügyfélszoftver elavult.
 
 #### <a name="resolution"></a>Megoldás
-1. Jelentkezzen be [https://admin.manage.microsoft.com -](https://admin.manage.microsoft.com)re.    
+1. Jelentkezzen be itt: [https://admin.manage.microsoft.com](https://admin.manage.microsoft.com).    
 2. Nyissa meg a **felügyeleti** > **ügyfélszoftver letöltése**lehetőséget, majd kattintson az **ügyfélszoftver letöltése**elemre.    
 3. Mentse a telepítőcsomagot, majd telepítse az ügyfélszoftvert. 
 
@@ -192,7 +192,7 @@ Hiba: "a fiók tanúsítványa nem érvényes, és lehet, hogy lejárt, 0x80cf40
 **OK:** Az ügyfélszoftver elavult.
 
 #### <a name="resolution"></a>Megoldás
-1. Jelentkezzen be [https://admin.manage.microsoft.com -](https://admin.manage.microsoft.com)re.    
+1. Jelentkezzen be itt: [https://admin.manage.microsoft.com](https://admin.manage.microsoft.com).    
 2. Nyissa meg a **felügyeleti** > **ügyfélszoftver letöltése**lehetőséget, majd kattintson az **ügyfélszoftver letöltése**elemre.    
 3. Mentse a telepítőcsomagot, majd telepítse az ügyfélszoftvert.    
 
@@ -205,10 +205,9 @@ Hiba: "probléma történt. A szervezet nem támogatja a Windows ezen verziójá
 #### <a name="resolution"></a>Megoldás
 A probléma önálló Intune-környezetben való kijavításához kövesse az alábbi lépéseket: 
  
-1. Jelentkezzen be rendszergazdaként a [Azure Portalba](https://portal.azure.com/) .    
-2. Válassza az **Intune** lehetőséget a bal oldalon, majd lépjen az **eszközök beléptetése** > **beléptetési korlátozások**elemre.    
-3. Az **eszközök típusának korlátozásai**területen kattintson a **platformok**elemre, majd válassza a Windows **engedélyezése** **(Mdm)** lehetőséget.    
-4. Kattintson a **Mentés**gombra.    
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza ki az **eszközök** > a **regisztrációs korlátozásokat** > válasszon egy eszköz típus eszközkorlátozási.    
+2. Válassza a **tulajdonságok** > **Szerkesztés** (a **platform beállításai**mellett) > a **Windows (Mdm)** **engedélyezése lehetőséget** .    
+3. Kattintson a **felülvizsgálat + mentés**gombra.    
  
 A probléma megoldásához az Intune-nal és a Configuration Managertel rendelkező hibrid MDM hajtsa végre az alábbi lépéseket: 
 1. Nyissa meg a Configuration Manager-konzolt.    
@@ -219,7 +218,7 @@ A probléma megoldásához az Intune-nal és a Configuration Managertel rendelke
 
 ### <a name="a-setup-failure-has-occurred-during-bulk-enrollment"></a>Telepítési hiba történt a csoportos regisztráció során.
 
-**OK:** A megfelelő kiépítési csomaghoz tartozó Account Package (Package_GUID) Azure AD felhasználói fiókjai nem jogosultak eszközök csatlakoztatására az Azure AD-hez. Ezek az Azure AD-fiókok automatikusan létrejönnek a Windows Configuration Designerrel (WCD) rendelkező kiépítési csomag vagy az iskolai PC-alkalmazás beállítása során, és ezeket a fiókokat az eszközök Azure AD-hez való csatlakoztatására használják.
+**OK:** A megfelelő kiépítési csomaghoz tartozó fiók csomagjában (Package_GUID) lévő Azure AD felhasználói fiókjai nem jogosultak eszközök csatlakoztatására az Azure AD-hez. Ezek az Azure AD-fiókok automatikusan létrejönnek a Windows Configuration Designerrel (WCD) rendelkező kiépítési csomag vagy az iskolai PC-alkalmazás beállítása során, és ezeket a fiókokat az eszközök Azure AD-hez való csatlakoztatására használják.
 
 #### <a name="resolution"></a>Megoldás
 1. Jelentkezzen be rendszergazdaként a [Azure Portalba](https://portal.azure.com/) .    
@@ -236,7 +235,7 @@ További információ az iskolai számítógépek alkalmazásának beállítás�
 ### <a name="auto-mdm-enroll-failed"></a>Automatikus MDM-regisztráció: sikertelen 
 
 Ha Csoportházirend használatával próbál automatikusan regisztrálni egy Windows 10-es eszközt, a következő problémákat tapasztalhatja: 
-- A Feladatütemezőben a **Microsoft** > **Windows** > **EnterpriseMgmt**alatt a **beléptetési ügyfél által a HRE feladatból való automatikus regisztráláshoz létrehozott ütemezés** utolsó futtatásának eredménye a következő: 76-as **esemény Automatikus MDM-regisztráció: sikertelen (ismeretlen Win32-hibakód: 0x8018002b)**       
+- A Feladatütemezőben, a **Microsoft** > **Windows** > **EnterpriseMgmt**alatt a **beléptetési ügyfél által a HRE feladatba való automatikus regisztráláshoz létrehozott ütemezés** utolsó futtatásának eredménye a következő: **Event 76 Auto Mdm regisztrációja: failed (ismeretlen Win32 hibakód: 0x8018002b)**       
 - Eseménynapló a következő eseményt naplózza az **Applications and Services logs/Microsoft/Windows/DeviceManagement-Enterprise-Diagnostics-Provider/admin**területen:   
     ```asciidoc
     Log Name: Microsoft-Windows-DeviceManagement-Enterprise-Diagnostics-Provider/Admin
@@ -336,7 +335,7 @@ Ez a probléma általában akkor fordul elő, ha az eszköz újraindul egy hibri
 
 #### <a name="resolution"></a>Megoldás
 
-1. Nyissa meg az **Intune** >  **eszközök beléptetése** > **Windows-regisztráció** > **eszközt**.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza > **eszközök** > **Windows** > Windows- **eszközök**elemet.
 2. Válassza ki a problémát észlelő eszközt > kattintson a három pontra (...) a jobb oldali oldalon.
 3. Válassza a **felhasználó hozzárendelésének** megszüntetése lehetőséget, és várjon, amíg a folyamat befejeződik.
 4. Ellenőrizze, hogy a hibrid Azure AD Autopilot-profil hozzá van-e rendelve az OOBE ismételt megkísérlése előtt.
@@ -373,15 +372,15 @@ Ezt a problémát általában a Windows Autopilot-eszközöket létrehozó szerv
 
 1. Nyissa meg **Active Directory felhasználókat és számítógépeket (DSA. msc)** .
 2. Kattintson a jobb gombbal arra a szervezeti egységre, amelyet hibrid Azure AD-hez csatlakoztatott számítógépek létrehozásához fog használni, > **delegálja a vezérlést**.
-3. A Control Wizard ( **vezérlés delegálása** ) varázslóban válassza a **következő** >   > **típusú objektumok** **hozzáadása**lehetőséget.
+3. A **vezérlés delegálása** varázslóban válassza a **következő** >  > **objektumtípus** **hozzáadása** elemet.
 4. Az **Objektumtípusok** ablaktáblán jelölje be a **számítógépek** jelölőnégyzetet, > **az OK gombra**.
 5. A **felhasználók**, **számítógépek**vagy **csoportok** kiválasztása panelen az **adja meg a kijelölendő objektumok nevét** mezőbe írja be annak a számítógépnek a nevét, amelyen az összekötő telepítve van.
 6. Jelölje be a Névellenőrzés **jelölőnégyzetet** a bejegyzés ellenőrzéséhez > OK > a **tovább** **gombra** .
-7. Válassza az **Egyéni feladat létrehozása**lehetőséget  > **következő**delegálásához.
+7. Válassza az **Egyéni feladat létrehozása** lehetőséget > **következő**delegálásához.
 8. Jelölje be a **csak a következő objektumokat a mappában** jelölőnégyzetből, majd jelölje ki a **számítógép-objektumokat**, **hozzon létre a kijelölt objektumokat**ebben a mappában, és **törölje a kijelölt objektumokat a mappában** jelölőnégyzetből.
 9. Válassza a **Tovább** elemet.
 10. Az **engedélyek**területen jelölje be a **teljes hozzáférés** jelölőnégyzetet. Ez a művelet kijelöli az összes többi beállítást.
-11. Válassza a **következő** > **Befejezés**lehetőséget.
+11. Válassza a **Tovább** > **Befejezés** lehetőséget.
 
 ## <a name="next-steps"></a>További lépések
 

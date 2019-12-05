@@ -19,12 +19,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 190322392909a14681a4b68a79d9a3537360206b
-ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
+ms.openlocfilehash: 79e1ba2441baa6773632c27f204bef01b015b990
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73713490"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74832727"
 ---
 # <a name="troubleshoot-device-enrollment-in-microsoft-intune"></a>Az eszközök regisztrálásának hibája Microsoft Intune
 
@@ -64,7 +64,7 @@ Ezek a problémák az összes eszközplatformon előfordulhatnak.
 
 Ellenőrizze az alábbi lépések követésével, hogy a felhasználóhoz nincs-e hozzárendelve több eszköz a legfeljebb megengedettnél:
 
-1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök beléptetése** > a **regisztrálási korlátozások** > az eszközök korlátozására **vonatkozó korlátozásokat**. Jegyezze fel az **Eszközszámkorlát** oszlopban látható értéket.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > a **regisztrálási korlátozások** > az eszközök korlátozására **vonatkozó korlátozásokat**. Jegyezze fel az **Eszközszámkorlát** oszlopban látható értéket.
 
 2. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza a **felhasználók** > **minden felhasználó** lehetőséget, > válassza ki a felhasználói > **eszközöket**. Jegyezze fel a regisztrált eszközök számát.
 
@@ -374,7 +374,7 @@ A probléma a következő esetekben jelentkezhet:
 4. Kérje meg a felhasználót, hogy kezdje újra a regisztrációs folyamatot.
 
 #### <a name="determine-if-theres-something-wrong-with-the-vpp-token"></a>Annak meghatározása, hogy hibás-e a VPP-token
-1. Válassza az **Intune** > **Eszközök regisztrálása** > **Apple-regisztráció** > **Regisztrációs programbeli token** > token neve > **Profilok** > profil neve > **Kezelés** > **Tulajdonságok** lehetőséget.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **ios** > **iOS-regisztráció** > a **beléptetési program jogkivonatok** > token neve > **profilok** > profil neve > > **Tulajdonságok** **kezelése** lehetőséget.
 2. Tekintse át a tulajdonságokat, és ellenőrizze, hogy találhatók-e a következőhöz hasonló hibák:
     - A token lejárt.
     - A token a Céges portál licenceinek hatókörén kívülre esik.
@@ -384,13 +384,13 @@ A probléma a következő esetekben jelentkezhet:
 3. Hárítsa el a token problémáit.
 
 #### <a name="identify-which-devices-are-blocked-by-the-vpp-token"></a>A VPP-token által letiltott eszközök azonosítása
-1. Lépjen az **Intune** > **Eszközök regisztrálása** > **Apple-regisztráció** > **Regisztrációs programbeli tokenek** > token neve > **Eszközök** területre.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **iOS**k > **iOS-regisztráció** > a **beléptetési program jogkivonatok** > token neve > **eszközök**elemet.
 2. Szűrje a **Profil állapota** oszlopot **Letiltva** állapot szerint.
 3. Jegyezze fel a **letiltott** eszközök sorozatszámait.
 
 #### <a name="remotely-wipe-the-blocked-devices"></a>A letiltott eszközök adatainak távoli törlése
 Miután kijavította a VPP-token problémáit, törölnie kell a letiltott eszközök adatait.
-1. Lépjen az **Intune** > **Eszközök** > **Minden eszköz** > **Oszlopok** > **Sorozatszám** > **Alkalmaz** területre. 
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **minden eszköz** > **oszlopok** > **sorozatszám** > **alkalmaz**lehetőséget. 
 2. A letiltott eszközök esetén válassza ki őket a **Minden eszköz** listában, majd válassza a **Törlés** > **Igen** lehetőséget.
 
 #### <a name="tell-the-users-to-restart-the-enrollment-process"></a>A felhasználók megkérése a regisztrációs folyamat újrakezdésére
@@ -414,8 +414,8 @@ A letiltott eszközök törlését követően megkérheti a felhasználókat, ho
 - Ha a szervezet olyan regisztrációs korlátozásokat vezetett be, amelyek letiltják a személyes macOS-eszközöket, akkor manuálisan kell [hozzáadnia a személyes eszköz sorozatszámát](corporate-identifiers-add.md#manually-enter-corporate-identifiers) az Intune-hoz.  
 - Ha az eszköz még hozzá van rendelve egy másik felhasználóhoz az Intune-ban, akkor a korábbi tulajdonosa nem használta a Céges portál alkalmazást az eltávolításához vagy alaphelyzetbe állításához. A elavult eszközrekord törlése az Intune-ból:  
 
-    1. Lépjen az [Intune-ba az Azure Portalon](https://portal.manage.microsoft.com), és jelentkezzen be a rendszergazdai hitelesítő adataival.
-    2. Lépjen az **Intune** > Eszközök**Minden eszköz** lapra.  
+    1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)jelentkezzen be rendszergazdai hitelesítő adataival.
+    2. Válassza az **eszközök** > **minden eszköz**lehetőséget.  
     3. Keresse meg a regisztrációs problémával rendelkező eszközt. Az eredmények szűkítéséhez keressen az eszköz neve vagy a MAC-/hardvercím alapján.
     4. Válassza ki az eszközt > **Törlés**. Törölje az eszközhöz társított összes többi bejegyzést.  
 

@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/21/2019
+ms.date: 12/04/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c4c995322234a4a2486d8e6c5e9efd88f78dd63
-ms.sourcegitcommit: 2fddb293d37453736ffa54692d03eca642f3ab58
+ms.openlocfilehash: b1d6b88b2ff6404f6c60a1c27c167c0721fa82bf
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74390874"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74832596"
 ---
 # <a name="create-a-device-profile-in-microsoft-intune"></a>Eszközprofil létrehozása a Microsoft Intune-ban
 
@@ -39,7 +39,7 @@ Ez a cikk:
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Válassza az **eszközök** > **konfigurációs profilok**lehetőséget. A következő lehetőségek közül választhat:
+2. Válassza az **eszközök** > **konfigurációs profilok**lehetőséget. Az alábbi lehetőségek állnak rendelkezésére:
 
     - **Áttekintés**: felsorolja a profilok állapotát, és további részleteket biztosít a felhasználókhoz és eszközökhöz rendelt profilokhoz.
     - **Kezelés**: eszközbeállítások létrehozása, egyéni PowerShell- [szkriptek](../apps/intune-management-extension.md) feltöltése a profilba való futtatáshoz, valamint adattervek hozzáadása az eszközökhöz a [eSIM](esim-device-configuration.md)használatával.
@@ -52,12 +52,12 @@ Ez a cikk:
    - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
    - **Platform**: válassza ki az eszközök platformját. A választható lehetőségek:  
 
-       - **Android**
+       - **Android--**
        - **Vállalati Android**
        - **iOS/iPadOS**
        - **macOS**
        - **Windows Phone 8.1**
-       - **Windows 8.1 és újabb verziók**
+       - **Windows 8.1 és újabb**
        - **Windows 10 és újabb**
 
    - **Profil típusa**: válassza ki a létrehozni kívánt beállítások típusát. A megjelenő lista a választott **platformtól** függ.
@@ -70,7 +70,7 @@ Ez a cikk:
        - [Eszközkorlátozások](device-restrictions-configure.md)
        - [Kiadás verziófrissítése és üzemmód kapcsolója](edition-upgrade-configure-windows-10.md)
        - [Oktatás](education-settings-configure.md)
-       - [E-mail](email-settings-configure.md)
+       - [Email](email-settings-configure.md)
        - [Endpoint Protection](../protect/endpoint-protection-configure.md)
        - [Identity protection](../protect/identity-protection-configure.md)  
        - [Kioszkmód](kiosk-settings.md)
@@ -101,11 +101,11 @@ További információ a hatóköri címkékről és a műveletekről: [a RBAC é
 
 1. Válassza a **hatókör (címkék)** lehetőséget.
 2. Új hatóköri címke létrehozásához válassza a **Hozzáadás** lehetőséget. Vagy válasszon ki egy meglévő hatókör címkét a listából.
-3. A módosítások mentéséhez kattintson az **OK** gombra.
+3. A módosítások mentéséhez válassza az **OK** gombot.
 
 ## <a name="applicability-rules"></a>Alkalmazhatósági szabályok
 
-Érintett kiadások:
+A következőre érvényes
 
 - Windows 10 és újabb
 
@@ -180,11 +180,13 @@ Profilok létrehozásakor vegye figyelembe az alábbi javaslatokat:
 
 - Különálló felhasználói szabályzatok az eszközök házirendjéből.
 
-  Például [Felügyeleti sablonok az Intune-ban](administrative-templates-windows.md) több száz ADMX-beállítás van. A sablon azt mutatja, hogy a beállítások a felhasználókra vagy az eszközökre vonatkoznak-e. Felügyeleti sablonok létrehozásakor rendelje hozzá a felhasználók beállításait egy felhasználói csoporthoz, és rendelje hozzá az eszköz beállításait az eszközök csoportjához.
+  Például [Felügyeleti sablonok az Intune-ban](administrative-templates-windows.md) több száz ADMX-beállítás van. Ezek a sablonok megmutatják, hogy a beállítások a felhasználókra vagy az eszközökre vonatkoznak-e. Felügyeleti sablonok létrehozásakor rendelje hozzá a felhasználók beállításait egy felhasználói csoporthoz, és rendelje hozzá az eszköz beállításait az eszközök csoportjához.
 
   Az alábbi képen egy olyan beállítás látható, amely a felhasználókra és/vagy az eszközökre alkalmazható:
 
   ![A felhasználóra és az eszközökre vonatkozó Intune felügyeleti sablon](./media/device-profile-create/setting-applies-to-user-and-device.png)
+
+- Minden alkalommal, amikor korlátozó szabályzatot hoz létre, ezt a módosítást továbbíthatja a felhasználókhoz. Ha például 4 karakterből 6 karakterre módosítja a PIN-kód követelményét, tudassa a felhasználókkal, hogy a szabályzatot rendeli hozzá.
 
 ## <a name="next-steps"></a>További lépések
 

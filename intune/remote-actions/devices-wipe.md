@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ded91d72321257adc30d0321b5d01e74fa1d51a6
-ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
+ms.openlocfilehash: 5a7e58fc0ceafe428646b631c55c42a6d2b119e4
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73712200"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74832658"
 ---
 # <a name="remove-devices-by-using-wipe-retire-or-manually-unenrolling-the-device"></a>Eszközök eltávolítása összes adatuk törlésével, az eszköz kivonásával vagy regisztrációja manuális törlésével
 
@@ -46,6 +46,8 @@ Az **Összes adat törlése** művelet visszaállítja az eszközön az alapért
 > A törlési művelet nem érhető el a felhasználó beléptetésével regisztrált iOS-eszközökön.
 
 A **Regisztrációs állapot és felhasználói fiók megtartása** lehetőség csak a Windows 10 1709-es vagy újabb verziók esetében érhető el.
+
+A **védett törlés végrehajtása** beállítás megadásával gondoskodhat arról, hogy az eszköz kikapcsolásával ne legyen kijátszható a törlési művelet. A védett adatok törlésével a rendszer addig próbálkozik az eszköz alaphelyzetbe állításával. Bizonyos konfigurációk esetében ez a művelet nem tud újraindítani a thedevice.
 
 A rendszer újra alkalmazza az MDM-szabályzatokat az eszköz következő Intune-csatlakozásakor.
 
@@ -195,7 +197,7 @@ Ha szeretne teljesen kivonni egy Apple DEP-eszközt az Intune általi felügyele
 
     ![Képernyőkép az újbóli hozzárendelésről az Apple esetében](./media/devices-wipe/apple-reassign.png)
 
-## <a name="fresh-start"></a>Új kezdés
+## <a name="fresh-start"></a>Új kezdet
 
 Alkalmazható a Windows 10-es eszközökre. További információ az [új kezdésről](device-fresh-start.md).
 

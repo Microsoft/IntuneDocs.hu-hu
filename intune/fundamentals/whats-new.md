@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ad5c26770537ce6a285989f8ca3804277616419
-ms.sourcegitcommit: 16a9109b4028589c17695d41271ca4fee8b1d697
+ms.openlocfilehash: 72aa710e5997593cca6a18f7c3cd421f792985bd
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74540790"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74832713"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -54,6 +54,16 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 -->  
 
 <!-- ########################## -->
+## <a name="week-of-decmeber-2-2019"></a>Decmeber hét 2, 2019
+
+#### <a name="new-system-center-configuration-manager-co-management-licensing--5027281--"></a>Új System Center Configuration Manager közös kezelési licencelés<!--5027281-->
+Mostantól elérhető egy új licenc, amely lehetővé teszi, hogy a frissítési garanciával rendelkező ügyfelek az Intune-os számítógép-felügyeleti jogosultságokat a közös felügyelethez szükséges további Intune-licenc vásárlása nélkül System Center Configuration Manager. Az ügyfeleknek többé nem kell egyéni Intune-/EMS-licenceket rendelniük a végfelhasználók számára.
+- A System Center Configuration Manager által felügyelt és a közös felügyeletbe beléptetett eszközök szinte azonos jogosultságokkal rendelkeznek, mint az Intune önálló felügyelt SZÁMÍTÓGÉPe. Az alaphelyzetbe állítást követően azonban nem lehet újra kiépíteni az Autopilot használatával.
+- Az Intune-ba beléptetett Windows 10-es eszközök más módon teljes Intune-licencet igényelnek.
+- A más platformokon lévő eszközök továbbra is teljes Intune-licenceket igényelnek.
+
+
+<!-- ########################## -->
 ## <a name="week-of-november-18-2019-1911-service-release"></a>November 18. és 2019. hét (1911 szolgáltatás kiadása)
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
@@ -82,7 +92,7 @@ Ennek a házirend-beállításnak a viselkedése némileg eltér az előző impl
 A [JAMF által felügyelt MacOS-eszközökre](../protect/conditional-access-integrate-jamf.md)vonatkozó konkrét felhasználói csoportokat is megcélozhat. Ez lehetővé teszi, hogy a JAMF-megfelelőségi integrációt a macOS-eszközök egy részhalmazára alkalmazza, míg más eszközöket az Intune kezel. Ha már használja a JAMF-integrációt, a rendszer alapértelmezés szerint minden felhasználót megcéloz az integrációra.
 
 #### <a name="new-exchange-activesync-settings-when-creating-an-email-device-configuration-profile-on-ios-devices---4892824-----"></a>Új Exchange ActiveSync-beállítások az e-mail-eszköz konfigurációs profiljának létrehozásakor iOS-eszközökön<!-- 4892824   --> 
-IOS/iPadOS-eszközökön konfigurálhatja az e-mailek kapcsolatát egy eszköz konfigurációs profiljában (**eszköz konfigurációja** > **profilok** > **profil létrehozása** > **iOS/iPadOS** platform > **e-mailben** a profil típusa). 
+IOS-/iPadOS-eszközökön konfigurálhatja az e-mailek kapcsolatát egy eszköz konfigurációs profiljában (**eszköz konfigurációja** > **profilok** > **profil létrehozása** > **iOS/IPadOS** a platform > **e-mail-** profil típusa). 
 
 Új Exchange ActiveSync-beállítások érhetők el, beleértve a következőket:
 - **Szinkronizálni kívánt Exchange-információk**: válassza ki a naptár, a névjegyek, a emlékeztetők, a megjegyzések és az e-mailek szinkronizálására szolgáló Exchange-szolgáltatásokat.
@@ -90,7 +100,7 @@ IOS/iPadOS-eszközökön konfigurálhatja az e-mailek kapcsolatát egy eszköz k
 
 A beállítással kapcsolatos további információkért nyissa meg az [iOS-eszközök e-mail profiljának beállításait az Intune-ban](../configuration/email-settings-ios.md). 
 
-A következőkre vonatkozik:
+A következőre érvényes
 - iOS 13,0 és újabb verziók
 - iPadOS 13,0 és újabb verziók
 
@@ -99,7 +109,7 @@ Az Android Enterprise teljes körűen felügyelt és dedikált eszközökön van
 
 A konfigurálható beállítások megjelenítéséhez nyissa meg az [androidos vállalati eszköz beállításait, hogy engedélyezze vagy korlátozza a szolgáltatásokat az Intune használatával](../configuration/device-restrictions-android-for-work.md).
 
-A következőkre vonatkozik:
+A következőre érvényes
 - Android Enterprise teljes körűen felügyelt eszközök
 - Androidos vállalati dedikált eszközök
 
@@ -110,7 +120,7 @@ Ez a beállítás nincs hatással az eszközökre. Ha el szeretné távolítani 
 
 Az összes konfigurálható beállítás megjelenítéséhez tekintse meg az [iOS-és iPadOS-eszközök beállításait, amelyekkel engedélyezheti vagy korlátozhatja a szolgáltatásokat az Intune használatával](../configuration/device-restrictions-ios.md).
 
-A következőkre vonatkozik:
+A következőre érvényes
 - iOS/iPadOS
 
 #### <a name="windows-10-feature-updates-public-preview---2384877---"></a>Windows 10 szolgáltatás frissítései (nyilvános előzetes verzió)<!-- 2384877 -->
@@ -127,7 +137,7 @@ Csak néhány alkalmazás támogatja a felügyelt beállításokat, és előford
 
 A szolgáltatással kapcsolatos további információkért lásd: [Tulajdonságok listájának hozzáadása MacOS-eszközökhöz Microsoft Intune használatával](../configuration/preference-file-settings-macos.md).
 
-A következőkre vonatkozik:
+A következőre érvényes
 - 10,7 és újabb rendszerű macOS-eszközök
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
@@ -298,7 +308,7 @@ Windows 10 és újabb rendszereken létrehozhat egy eszköz-konfigurációs prof
 
 A szolgáltatással kapcsolatos további információkért lásd: [DFCI-profilok használata Windows-eszközökön Microsoft Intune](../configuration/device-firmware-configuration-interface-windows.md).
 
-A következőkre vonatkozik:
+A következőre érvényes
 - Windows 10 RS5 (1809) és újabb támogatott belső vezérlőprogram
 
 ### <a name="device-enrollment"></a>Eszközök beléptetése
@@ -371,7 +381,7 @@ Az Android Enterprise Work Profile eszközein a felhasználók soha nem telepít
 
 A konfigurálható beállítás megjelenítéséhez nyissa meg az [Android Enterprise Device Settings lehetőséget az Intune-nal való funkciók engedélyezéséhez vagy korlátozásához](../configuration/device-restrictions-android-for-work.md).
 
-A következőkre vonatkozik:
+A következőre érvényes
 - Androidos vállalati munkahelyi profil
 
 #### <a name="create-a-global-http-proxy-on-android-enterprise-device-owner-devices---4816339-----"></a>Globális HTTP-proxy létrehozása androidos vállalati eszköz tulajdonosi eszközein<!-- 4816339   -->
@@ -379,7 +389,7 @@ Az Android Enterprise rendszerű eszközökön konfigurálhat egy globális HTTP
 
 A szolgáltatás konfigurálásához és az összes konfigurált beállítás megjelenítéséhez nyissa meg az [androidos vállalati eszköz beállításait, és engedélyezze vagy korlátozza a szolgáltatásokat az Intune használatával](../configuration/device-restrictions-android-for-work.md).
 
-A következőkre vonatkozik:
+A következőre érvényes
 - Androidos vállalati eszköz tulajdonosa
 
 #### <a name="connect-automatically-setting-is-removed-in-wi-fi-profiles-on-android-device-administrator-and-android-enterprise---5021055-----"></a>Az Automatikus csatlakozás beállítás el lesz távolítva a Wi-Fi profilokban az Android-eszköz rendszergazdája és az Android Enterprise<!-- 5021055   -->
@@ -389,7 +399,7 @@ Ha ezt a beállítást egy Wi-Fi profilban használja, előfordulhat, hogy észr
 
 Az aktuális beállítások megtekintéséhez lépjen az [Android Wi-Fi beállítások](../configuration/wi-fi-settings-android.md) vagy az [Android Enterprise Wi-Fi beállítások](../configuration/wi-fi-settings-android-enterprise.md)elemre.
 
-A következőkre vonatkozik:
+A következőre érvényes
 - Android-eszköz rendszergazdája 
 - Vállalati Android
 
@@ -402,7 +412,7 @@ Az iOS-és iPadOS-eszközökön létrehozhat egy profilt, amellyel korlátozhatj
 
 A beállítások megtekintéséhez lépjen az iOS- [eszközbeállítások elemre az Intune-t használó funkciók engedélyezéséhez vagy korlátozásához](../configuration/device-restrictions-ios.md).
 
-A következőkre vonatkozik:
+A következőre érvényes
 - iOS 13,0 és újabb verziók
 - iPadOS 13,0 és újabb verziók
 
@@ -468,7 +478,7 @@ Az Apple iOS 13,1 kiadásában a felhasználók beléptetése, valamint az iOS-e
 - Lehetővé teszi a végfelhasználók számára, hogy az eszközük regisztrálásakor a könnyebb felhasználói regisztráció vagy erősebb eszközök beléptetése között választhatnak.
 
 Az iOS 13,1-es verziójától kezdődően a 9/24/2019-es verziótól kezdve a frissítések minden ügyfelünk számára elérhetők lesznek, és a következő hét végére várhatóan befejeződtek.
-A következőkre vonatkozik:
+A következőre érvényes
 
 iOS 13,1 és újabb verziók
 
@@ -524,7 +534,7 @@ Ezek a VPN-profilok a natív VPN-ügyfelet konfigurálja, így a rendszer nem te
 
 Az aktuálisan konfigurálható VPN-beállítások megjelenítéséhez nyissa [meg a VPN-beállítások konfigurálása iOS-eszközökön](../configuration/vpn-settings-ios.md)című témakört.
 
-A következőkre vonatkozik:
+A következőre érvényes
 - iOS
 
 #### <a name="device-features-device-restrictions-and-extension-profiles-for-ios-and-macos-settings-are-shown-by-enrollment-type---4886161-----"></a>A regisztrációs típus megjeleníti az eszközök funkcióit, az eszközök korlátozásait és a bővítményi profilokat az iOS-és macOS-beállításokhoz.<!-- 4886161   -->
@@ -534,7 +544,7 @@ Az Intune-ban létrehozhat profilokat az iOS-és macOS-eszközökhöz (**eszköz
 Ebben a frissítésben az Intune-portálon elérhető beállítások a beléptetési típus szerint vannak kategorizálva:
 
 - iOS
-  - Felhasználó beléptetése
+  - Felhasználói regisztráció
   - Eszközök beléptetése
   - Automatikus eszközök beléptetése (felügyelt)
   - Minden regisztrációs típus
@@ -545,7 +555,7 @@ Ebben a frissítésben az Intune-portálon elérhető beállítások a beléptet
   - Automatikus eszközök beléptetése
   - Minden regisztrációs típus
 
-A következőkre vonatkozik:
+A következőre érvényes
 - iOS
 
 #### <a name="new-voice-control-settings-for-supervised-ios-devices-running-in-kiosk-mode---4892835-----"></a>A teljes képernyős módban futó, felügyelt iOS-eszközök új hang-vezérlési beállításai<!-- 4892835   -->
@@ -557,7 +567,7 @@ Ebben a frissítésben új beállítások vezérelhetők:
 
 Az aktuális beállítások megjelenítéséhez nyissa meg az [iOS kioszk beállításait](../configuration/device-restrictions-ios.md#kiosk).
 
-A következőkre vonatkozik:
+A következőre érvényes
 - iOS 13,0 és újabb verziók
 
 #### <a name="use-single-sign-on-for-apps-and-websites-on-your-ios-and-macos-devices---4893175-----"></a>Egyszeri bejelentkezés használata az iOS-és macOS-eszközökön futó alkalmazásokhoz és webhelyekhez<!-- 4893175   -->
@@ -567,7 +577,7 @@ Ezekkel a beállításokkal konfigurálhatja az egyszeri bejelentkezési élmén
 
 Az eszköz aktuálisan konfigurálható szolgáltatásainak megtekintéséhez nyissa meg az [iOS-eszközök funkcióit](../configuration/ios-device-features-settings.md) és a [MacOS-eszközök funkcióit](../configuration/macos-device-features-settings.md).
 
-A következőkre vonatkozik:
+A következőre érvényes
 - iOS 13,0 és újabb verziók
 - macOS 10,15 és újabb verziók
 
@@ -576,7 +586,7 @@ MacOS-eszközökön különböző funkciókat konfigurálhat, és leküldheti ez
 
 Az aktuálisan konfigurálható szolgáltatások megjelenítéséhez nyissa meg a [MacOS-eszköz szolgáltatás beállításait az Intune-ban](../configuration/macos-device-features-settings.md).
 
-A következőkre vonatkozik:
+A következőre érvényes
 - macOS 10,15 és újabb verziók
 
 #### <a name="use-itunes-and-apps-in-the-itunes-app-store-url-when-showing-or-hiding-apps-on-ios-supervised-devices---4928474-----"></a>Az iOS-es felügyelt eszközökön lévő alkalmazások megjelenítéséhez vagy elrejtéséhez használja az iTunes alkalmazás-áruház URL-címe "iTunes" és "alkalmazások" elemét.<!-- 4928474   --> 
@@ -588,7 +598,7 @@ Megadhatja az iTunes App Store-beli URL-címét, például `https://itunes.apple
 
 További információ ezekről a beállításokról: [alkalmazások megjelenítése vagy elrejtése](../configuration/device-restrictions-ios.md#show-or-hide-apps).
 
-A következőkre vonatkozik:
+A következőre érvényes
 - iOS
 
 #### <a name="windows-10-compliance-policy-password-type-values-are-clearer-and-match-csp---5138985---"></a>A Windows 10-es megfelelőségi szabályzat jelszavának típusa világosabb és egyező CSP<!-- 5138985 -->
@@ -598,7 +608,7 @@ Windows 10 rendszerű eszközökön létrehozhat olyan megfelelőségi szabályz
 
 A Windows 10 megfelelőségi beállításaival kapcsolatos további információkért lásd: [Windows 10 és újabb beállítások az eszközök megfelelő vagy nem megfelelőként való megjelöléséhez](../protect/compliance-policy-create-windows.md). 
 
-A következőkre vonatkozik:
+A következőre érvényes
 - Windows 10 és újabb
 
  #### <a name="updated-ui-for-configuring-microsoft-exchange-on-premises-access---4092920---"></a>Frissített felhasználói felület a Microsoft Exchange helyszíni hozzáférésének konfigurálásához<!-- 4092920 -->  
@@ -609,7 +619,7 @@ Az Android Enterprise rendszerű eszközökön a munkahelyi profil funkcióit (*
 
 A konfigurálható beállítások megjelenítéséhez nyissa meg az [androidos vállalati eszköz beállításait, hogy engedélyezze vagy korlátozza a szolgáltatásokat az Intune használatával](../configuration/device-restrictions-android-for-work.md).
 
-A következőkre vonatkozik:
+A következőre érvényes
 - Androidos vállalati munkahelyi profil
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
@@ -643,7 +653,7 @@ Az Android teljes körűen felügyelt eszközeihez a következő támogatást ad
 
 Ezzel a frissítéssel örömmel jelentjük be, hogy az Android Enterprise teljes körűen felügyelt Intune-támogatás már általánosan elérhető.
 
-A következőkre vonatkozik:
+A következőre érvényes
 
 - Android Enterprise teljes körűen felügyelt eszközök
 
@@ -709,7 +719,7 @@ Windows 10 és újabb rendszerű eszközökön felügyeleti sablonokat hozhat l�
 
 A felügyeleti sablonokkal kapcsolatos további információkért lásd: [Windows 10 sablonok használata a csoportházirend-beállítások konfigurálásához az Intune-ban](../configuration/administrative-templates-windows.md).
 
-A következőkre vonatkozik:
+A következőre érvényes
 
 - Windows 10 és újabb (Windows RS4 +)
 
@@ -741,7 +751,7 @@ Ebben a frissítésben a következő szolgáltatások lesznek hozzáadva:
 
 Az aktuális beállítások megtekintéséhez lépjen az [Android Enterprise Device Settings elemre az Intune-t használó funkciók engedélyezéséhez vagy korlátozásához](../configuration/device-restrictions-android-for-work.md#dedicated-device-settings).
 
-A következőkre vonatkozik:
+A következőre érvényes
 
 - Androidos vállalati dedikált eszközök
 
@@ -755,7 +765,7 @@ A profilok használatával olyan beállításokat konfigurálhat, amelyek a VPN-
 > [!IMPORTANT]
 > Ezzel a funkcióval a felhasználók a VPN-, Wi-Fi-és e-mail-profilokhoz tartozó felhasználónevével és jelszavával hitelesítik magukat. A tanúsítvány alapú hitelesítés jelenleg nem érhető el.
 
-A következőkre vonatkozik:  
+A következőre érvényes  
 - Androidos vállalati eszköz tulajdonosa (teljes mértékben felügyelt)
 
 #### <a name="control-the-apps-files-documents-and-folders-that-open-when-users-sign-in-to-macos-devices--3914202-----"></a>A macOS-eszközökre való bejelentkezéskor megnyíló alkalmazások, fájlok, dokumentumok és mappák szabályozása<!--3914202   -->
@@ -765,7 +775,7 @@ Ebben a frissítésben új bejelentkezési elemek beállításával szabályozha
 
 Az aktuális beállítások megtekintéséhez válassza a [MacOS-eszköz szolgáltatás beállításai az Intune-ban](../configuration/macos-device-features-settings.md)lehetőséget.
 
-A következőkre vonatkozik:  
+A következőre érvényes  
 - macOS
 
 #### <a name="deadlines-replace-engaged-restart-settings-for-windows-update-rings---4464404----------"></a>A határidők lecserélik a Windows Update gyűrűk lefoglalt újraindítási beállításait<!-- 4464404        -->
@@ -797,7 +807,7 @@ Létrehozhat olyan profilokat, amelyekkel korlátozhatja az iOS és macOS rendsz
 
   Az aktuális beállítások megjelenítéséhez nyissa meg az [IOS-eszköz beállításait, és engedélyezze vagy korlátozza a szolgáltatásokat az Intune használatával](../configuration/device-restrictions-ios.md).
 
-A következőkre vonatkozik:  
+A következőre érvényes  
 - macOS 10,15 és újabb verziók
 - iOS 13 és újabb verziók
 
@@ -810,12 +820,12 @@ Ezek a beállítások a következők:
   - Alkalmazás-áruház
   - Explicit iTunes, zene, podcast vagy Hírek tartalma
   - Game Center ismerősök hozzáadása
-  - Többrésztvevős játékok
+  - Több résztvevős játék
 - Beépített alkalmazások
   - Fényképezőgép
     - FaceTime
   - Safari
-    - Autofill
+    - Automatikus kitöltés
 - Felhő és tárolás
   - Biztonsági mentés az iCloudba
   - ICloud-dokumentumok szinkronizálásának letiltása
@@ -823,7 +833,7 @@ Ezek a beállítások a következők:
 
 Az aktuális beállítások megjelenítéséhez nyissa meg az [IOS-eszköz beállításait, és engedélyezze vagy korlátozza a szolgáltatásokat az Intune használatával](../configuration/device-restrictions-ios.md).
 
-A következőkre vonatkozik:  
+A következőre érvényes  
 - iOS 13,0 és újabb verziók
 
 #### <a name="improved-device-status-for-macos-filevault-encryption---4944983-----------"></a>Továbbfejlesztett eszköz állapota macOS FileVault titkosításhoz<!-- 4944983         -->
@@ -880,7 +890,7 @@ Az Intune-ban létrehozhat eszköz-konfigurációs profilokat, és beállításo
 
 Ebben a frissítésben a zebra Technologies a OEMConfig által támogatott eredeti berendezésgyártó (OEM). További információ a OEMConfig-ről: [androidos vállalati eszközök használata és kezelése a OEMConfig](../configuration/android-oem-configuration-overview.md)-mel.
 
-A következőkre vonatkozik:  
+A következőre érvényes  
 - Android Enterprise
 
 <!-- ########################## -->
@@ -913,7 +923,7 @@ Az iOS-és macOS-eszközökön az egyéni profilok használatával konfigurálha
 
 Egyéni profil létrehozásához tekintse meg az [Egyéni iOS-beállítások](../configuration/custom-settings-ios.md) vagy a MacOS-es [Egyéni beállítások](../configuration/custom-settings-macos.md)című témakört.
 
-A következőkre vonatkozik:
+A következőre érvényes
 - iOS
 - macOS
 

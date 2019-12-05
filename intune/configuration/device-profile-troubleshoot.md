@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 10/15/2019
+ms.date: 12/04/2019
 ms.topic: troubleshooting
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4a1177a37ddbfa7f760339c4ad0cd7773d670540
-ms.sourcegitcommit: 01fb3d844958a0e66c7b87623160982868e675b0
+ms.openlocfilehash: d445b86359b2c5cde7b56a52a0cc6ee72a34c0ea
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74199191"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74832601"
 ---
 # <a name="common-questions-issues-and-resolutions-with-device-policies-and-profiles-in-microsoft-intune"></a>Gyakori kérdések, problémák és megoldások az eszközök házirendjével és profiljaival Microsoft Intune
 
@@ -50,27 +50,29 @@ Néhány további javaslat:
 
 Az Intune értesíti az eszközt, hogy jelentkezzen be az Intune szolgáltatásba. Az értesítési időpontok változhatnak, beleértve az azonnal akár néhány órát is. Ezek az értesítési időpontok a platformok között is változnak.
 
-Ha egy eszköz nem ellenőrzi, hogy az első értesítés után beolvassa-e a szabályzatot vagy a profilt, az Intune három további próbálkozást tesz lehetővé. Előfordulhat, hogy egy offline eszköz (például ki van kapcsolva vagy nem csatlakozik a hálózathoz) nem kapja meg az értesítéseket. Ebben az esetben az eszköz az Intune szolgáltatással a következő ütemezett bejelentkezéskor beolvassa a szabályzatot vagy a profilt, amelynek a **becsült** értéke:
+Ha egy eszköz nem ellenőrzi, hogy az első értesítés után beolvassa-e a szabályzatot vagy a profilt, az Intune három további próbálkozást tesz lehetővé. Előfordulhat, hogy egy offline eszköz (például ki van kapcsolva vagy nem csatlakozik a hálózathoz) nem kapja meg az értesítéseket. Ebben az esetben az eszköz megkapja a házirendet vagy a profilt a következő ütemezett bejelentkezéskor az Intune szolgáltatással. Ugyanez vonatkozik a meg nem felelés ellenőrzésére is, beleértve azokat az eszközöket is, amelyek a megfelelőségtől a nem megfelelő állapotba vannak áthelyezve.
 
-| Platform | Frissítési ciklus|
+**Becsült** gyakoriságok:
+
+| Platfésm | Frissítési ciklus|
 | --- | --- |
 | iOS | Körülbelül 8 óránként |
 | macOS | Körülbelül 8 óránként |
-| Android | Körülbelül 8 óránként |
+| Android: | Körülbelül 8 óránként |
 | Eszközként regisztrált Windows 10 számítógépek | Körülbelül 8 óránként |
 | Windows Phone | Körülbelül 8 óránként |
-| Windows 8.1 | Körülbelül 8 óránként |
+| Windows 8.1 | Körülbelül 8 óránként |
 
-Ha az eszköz nemrég lett regisztrálva, a megfelelőség és a konfiguráció ellenőrzése gyakrabban fut, ami **a következő:**
+Ha az eszköz nemrég lett regisztrálva, a megfelelőség, a nem megfelelőség és a konfiguráció-ellenőrzés gyakrabban fut le, ami a **következő:**
 
-| Platform | Gyakoriság |
+| Platfésm | Gyakoriság |
 | --- | --- |
 | iOS | 1 órán át 15 percenként, majd 8 óránként |  
 | macOS | 1 órán át 15 percenként, majd 8 óránként | 
-| Android | 15 percen át 3 percenként, majd 2 órán át 15 percenként, majd körülbelül 8 óránként | 
+| Android: | 15 percen át 3 percenként, majd 2 órán át 15 percenként, majd körülbelül 8 óránként | 
 | Eszközként regisztrált Windows 10 számítógépek | 15 percen át 3 percenként, majd 2 órán át 15 percenként, majd körülbelül 8 óránként | 
 | Windows Phone | 15 percen át 5 percenként, majd 2 órán át 15 percenként, majd körülbelül 8 óránként | 
-| Windows 8.1 | 15 percen át 5 percenként, majd 2 órán át 15 percenként, majd körülbelül 8 óránként | 
+| Windows 8.1 | 15 percen át 5 percenként, majd 2 órán át 15 percenként, majd körülbelül 8 óránként | 
 
 A felhasználók bármikor megnyithatja a Céges portál alkalmazást, a **beállítások** > a **szinkronizálás** segítségével azonnal megkeresheti a házirend-vagy profil-frissítéseket.
 
@@ -120,7 +122,7 @@ Amikor töröl egy profilt, vagy eltávolít egy olyan eszközt a csoportból, a
     - Egyszerű jelszavak engedélyezése
     - Jelszó minimális hossza
     - Kötelező jelszótípus
-    - Jelszó lejárta (napokban)
+    - Jelszó lejárata (nap)
     - Jelszóelőzmények megjegyzése
     - Sikertelen bejelentkezések engedélyezett száma az eszköz törlése előtt
     - Tétlen percek száma, mielőtt az eszköz újból kéri a jelszót
@@ -144,8 +146,8 @@ Amikor töröl egy profilt, vagy eltávolít egy olyan eszközt a csoportból, a
 
   - **iOS**: Az összes beállítás törlődik, kivéve a következőket:
   
-    - Hangroaming használatának engedélyezése
-    - Adatroaming használatának engedélyezése
+    - Hangroaming engedélyezése
+    - Adatroaming engedélyezése
     - Automatikus szinkronizálás engedélyezése roaming közben
 
 ## <a name="i-changed-a-device-restriction-profile-but-the-changes-havent-taken-effect"></a>Módosítottam egy eszközkorlátozási profilt, de a módosítások még nem léptek érvénybe

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a5e52d1967ff6f5cf97334c099bc2b5b854ae87c
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: c83b47e70a6ef7f5eedb032846398dd669379c5c
+ms.sourcegitcommit: d8bcf1a427035138f7dfe1e4f8b3c971c773dcd8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72502681"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74819728"
 ---
 # <a name="us-government-endpoints-for-microsoft-intune"></a>Az Egyesült Államok kormányzati végpontja Microsoft Intune
 
@@ -46,14 +46,34 @@ A következő táblázat az Intune-ügyfél által elért portokat és szolgált
 | enterpriseregistration.microsoftonline.us | 13.72.188.239 <br> 13.72.55.179 |
 
 ## <a name="us-government-customer-designated-endpoints"></a>Az Egyesült Államok kormányzati ügyfelei által kijelölt végpontok:
-- Azure Portal: https: \//Portal. Azure. us/ 
-- Office 365: https: \//Portal. Office 365. us/ 
-- Intune Céges portál: https: \//Portal. Manage. microsoft. USA/ 
+- Azure Portal: https:\//portal.azure.us/ 
+- Office 365: https:\//portal.office365.us/ 
+- Intune Céges portál: https:\//portal.manage.microsoft.us/ 
 
 ## <a name="partner-service-endpoints-that-intune-depends-on"></a>A partneri szolgáltatási végpontok, amelyeket az Intune a következőktől függ:
-- AAD-szinkronizáló szolgáltatás: https: \//syncservice. gov. us. microsoftonline. com/DirectoryService. SVC
-- Evo STS: https: \//login. microsoftonline. us
-- Directory proxy: https: \//directoryproxy. microsoftazure. us/DirectoryProxy. SVC
-- HRE gráf: https: \//Directory. microsoftazure. us és https: \//Graph. microsoftazure. us
-- MS gráf: https: \//Graph. microsoft. us
-- ADRS: https: \//enterpriseregistration. microsoftonline. us
+- AAD-szinkronizáló szolgáltatás: https:\//syncservice.gov.us.microsoftonline.com/DirectoryService.svc
+- Evo STS: https:\//login.microsoftonline.us
+- Directory-proxy: https:\//directoryproxy.microsoftazure.us/DirectoryProxy.svc
+- HRE gráf: https:\//directory.microsoftazure.us és https:\//graph.microsoftazure.us
+- MS Graph: https:\//graph.microsoft.us
+- ADRS: https:\//enterpriseregistration.microsoftonline.us
+
+## <a name="windows-push-notification-services"></a>Windows leküldéses Notification Services
+A mobileszköz-kezelés (MDM) használatával kezelt Intune által felügyelt eszközökön a Windows leküldéses Notification Services (WNS) szükséges az eszközök műveleteihez és más azonnali tevékenységekhez. További információ: [vállalati tűzfal és proxy konfigurációk a WNS-forgalom támogatásához](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/firewall-allowlist-config)
+
+## <a name="apple-device-network-information"></a>Apple-eszközhálózati információ
+
+|**Használatban**|**Állomásnév (IP-cím/alhálózat)**|**Protokoll**|**Port**|
+|------------|-----------|------------|-----------|
+|Apple-kiszolgálók tartalmának beolvasása és megjelenítése|itunes.apple.com<br>\*. itunes.apple.com<br>\*. mzstatic.com<br>\*. phobos.apple.com<br>\*. phobos.itunes-apple.com.akadns.net|HTTP|80|
+|Kommunikáció a APNS-kiszolgálókkal|#-courier.push.apple.com<br>a "#" a 0 és 50 közötti véletlenszerű szám.|TCP|5223 és 443|
+|Különböző függvények, például az Internet, az iTunes Store, a macOS App Store, az iCloud, az üzenetküldés stb.|phobos.apple.com<br>ocsp.apple.com<br>ax.itunes.apple.com<br>ax.itunes.apple.com.edgesuite.net|HTTP/HTTPS|80 vagy 443|
+
+További információkért lásd:
+
+- [Apple-szoftvertermékek által használt TCP-és UDP-portok](https://support.apple.com/HT202944)
+- [A macOS, az iOS és az iTunes Server Host Connections és az iTunes háttér-folyamatai](https://support.apple.com/HT201999)
+- [Ha a macOS-és iOS-ügyfelek nem kapnak Apple leküldéses értesítéseket](https://support.apple.com/HT203609)
+
+## <a name="next-steps"></a>További lépések
+[Microsoft Intune hálózati végpontok](intune-endpoints.md)

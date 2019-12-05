@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2f41caddc7ab9cc09c8d5403f67b6112d58c3ffd
-ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
+ms.openlocfilehash: 697e950c881a0c4233358d8363aa6cc7ec0006b2
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73713539"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74832673"
 ---
 # <a name="automatically-enroll-macos-devices-with-the-device-enrollment-program-or-apple-school-manager"></a>macOS-eszközök automatikus regisztrálása a készülékregisztrációs programmal vagy az Apple School Manager használatával
 
@@ -61,7 +61,7 @@ Az Apple Portal használatával hozhat létre tokent. Az Apple Portal használat
 
 ### <a name="step-1-download-the-intune-public-key-certificate-required-to-create-the-token"></a>1\. lépés Töltse le a jogkivonat létrehozásához szükséges nyilvános kulcsú Intune-tanúsítványt
 
-1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** beléptetése > az **Apple-regisztráció** > a **beléptetési programbeli tokenek** > **Hozzáadás**lehetőséget.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **macos** > **MacOS-regisztráció** > **beléptetési program jogkivonatok** > **Hozzáadás**elemet.
 
     ![Szerezzen be egy készülékregisztrációs programbeli tokent.](./media/device-enrollment-program-enroll-macos/image01.png)
 
@@ -74,7 +74,7 @@ Az Apple Portal használatával hozhat létre tokent. Az Apple Portal használat
 ### <a name="step-2-use-your-key-to-download-a-token-from-apple"></a>2\. lépés A kulcs használatával letöltheti a tokent az Apple-től
 
 1. Válassza a **token létrehozása az apple Készülékregisztrációs programhoz** lehetőséget, vagy **hozzon létre egy tokent az Apple School Manager** használatával, és nyissa meg a megfelelő Apple Portalt, és jelentkezzen be a vállalati Apple ID azonosítójával. Ezt az Apple ID-t használhatja a token megújításához.
-2. A DEP esetében az Apple Portalon válassza az első **lépések** lehetőséget **Készülékregisztrációs program** > **KISZOLGÁLÓK kezelése** > **Mdm-kiszolgáló hozzáadása**elemet.
+2. A DEP esetében az Apple Portalon válassza az első **lépések** lehetőséget **Készülékregisztrációs program** > a **kiszolgálók kezelése** > **Mdm-kiszolgáló hozzáadása**elemet.
 3. Az Apple School felügyeletéhez az Apple Portalon válassza a **Mdm-kiszolgálók** > **Mdm-kiszolgáló hozzáadása**elemet.
 4. Az **MDM Server Name** (MDM-kiszolgáló neve) mezőben adja meg az MDM-kiszolgáló nevét, majd kattintson a **Next** (Tovább) gombra. A kiszolgálónév Önnek segít a mobileszköz-felügyeleti (MDM-) kiszolgáló azonosításában, nem ez a Microsoft Intune-kiszolgáló URL-címe vagy neve.
 
@@ -103,7 +103,7 @@ Az **Apple-token** mezőben keresse meg tallózással a tanúsítványfájlt (.p
 
 Most, hogy telepítette a tokent, létrehozhat egy regisztrációs profilt az eszközökhöz. A regisztrálás során az eszközök csoportjára alkalmazott beállításokat egy készülékregisztrációs profil határozza meg.
 
-1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** beléptetése > az **Apple-regisztráció** > a **beléptetési programbeli jogkivonatok**lehetőséget.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **macos** > **MacOS-regisztráció** > **beléptetési program jogkivonatok**lehetőséget.
 2. Válasszon egy tokent, és válassza a **Profilok**, majd a **Profil létrehozása** lehetőséget.
 
     ![Készítsen egy képernyőképet a profilról.](./media/device-enrollment-program-enroll-macos/image04.png)
@@ -165,7 +165,7 @@ Most, hogy telepítette a tokent, létrehozhat egy regisztrációs profilt az es
 
 Miután az Intune engedélyt kapott az eszközei felügyeletére, szinkronizálhatja az Intune-t az Apple-lel, hogy megtekinthesse a felügyelt eszközöket az Azure-beli Intune-portálon.
 
-1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az eszközök **beléptetése > az** **Apple-regisztráció** > a **beléptetési programbeli jogkivonatok** lehetőséget > Válassza ki a tokent a listában > **eszközök** > **szinkronizálás**lehetőséget. ![képernyőfelvétel a beléptetési program eszközei közül a kiválasztott elemre, és a szinkronizálási hivatkozás van kiválasztva.](./media/device-enrollment-program-enroll-macos/image06.png)
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **macos** > **MacOS-regisztráció** > a **beléptetési program jogkivonatok** elemet > Válassza ki a tokent a listában > **eszközök** > **szinkronizálás**lehetőséget. ![képernyőfelvétel a beléptetési program eszközei közül a kiválasztott elemre, és a szinkronizálási hivatkozás van kiválasztva.](./media/device-enrollment-program-enroll-macos/image06.png)
 
    Az Apple elfogadható regisztrációs programforgalomra vonatkozó feltételeinek teljesítése céljából az Intune az alábbi korlátozásokat írja elő:
    - Teljes szinkronizálás legfeljebb hétnaponta futtatható. A teljes szinkronizálás során az Intune beolvassa az Intune-hoz csatlakoztatott Apple MDM-kiszolgálóhoz rendelt sorozatszámok frissített teljes listáját. Miután egy Készülékregisztrációs programbeli eszközt úgy törölnek az Intune portálról, hogy nem szüntetik meg az Apple MDM-kiszolgálóval való társítását a DEP-portálon, csak a teljes szinkronizálás lefuttatása után lesz újraimportálva az Intune-ba.   
@@ -175,7 +175,7 @@ Miután az Intune engedélyt kapott az eszközei felügyeletére, szinkronizálh
 
 Ahhoz, hogy egy eszközt regisztrálni lehessen, először hozzá kell rendelni egy regisztrációs programprofilt.
 
-1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** beléptetése > az **Apple-regisztráció** > a **beléptetési programbeli jogkivonatok** lehetőséget, > válasszon ki egy jogkivonatot a listában.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **macos** > **MacOS-regisztráció** > a **beléptetési program jogkivonatok** lehetőséget, > válasszon egy jogkivonatot a listában.
 2. Válassza az **Eszközök** lehetőséget, válasszon eszközöket a listából, majd válassza a **Profil hozzárendelése** elemet.
 3. A **Profil hozzárendelése** területen válasszon egy profilt az eszközökhöz, majd válassza a **Hozzárendelés** lehetőséget.
 
@@ -183,7 +183,7 @@ Ahhoz, hogy egy eszközt regisztrálni lehessen, először hozzá kell rendelni 
 
 Választhat egy alapértelmezett macOS- vagy iOS-profilt, amelyet a rendszer az adott tokennel regisztráló összes eszközre alkalmaz. 
 
-1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** beléptetése > az **Apple-regisztráció** > a **beléptetési programbeli jogkivonatok** lehetőséget, > válasszon ki egy jogkivonatot a listában.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **macos** > **MacOS-regisztráció** > a **beléptetési program jogkivonatok** lehetőséget, > válasszon egy jogkivonatot a listában.
 2. Válassza az **Alapértelmezett profil beállítása** lehetőséget, válasszon egy profilt a legördülő listából, majd válassza a **Mentés** lehetőséget. A választott profil alkalmazva lesz az adott tokennel regisztráló összes eszközre.
 
 ## <a name="distribute-devices"></a>Eszközök terjesztése

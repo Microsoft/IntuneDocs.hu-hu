@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5a3081ece10bb25c6381f4a8f891152433bc9661
-ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
+ms.openlocfilehash: 94c38aaf28440511720280a3c5a1ebda5b9f2ab1
+ms.sourcegitcommit: d8bcf1a427035138f7dfe1e4f8b3c971c773dcd8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74564384"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74819780"
 ---
 # <a name="see-device-details-in-intune"></a>Eszközadatok megtekintése az Intune-ban
 
@@ -57,7 +57,7 @@ Az eszközök által használt szolgáltatótól függően az összes adat gyűj
 > [!Note]  
 > A hardver-és a szoftveres leltár 7 naponta frissül az Intune szolgáltatásban.
 
-|részletes|Description|Platfésm| 
+|Adat|Description|Platfésm| 
 |--------------|----------------------|----|  
 |Név|Az eszköz neve.|Windows, iOS|
 |Felügyeleti név|A csak a konzolon használt eszköznév. Ennek a névnek a módosítása nem változtatja meg a nevet az eszközön.|Windows, iOS|
@@ -67,9 +67,9 @@ Az eszközök által használt szolgáltatótól függően az összes adat gyűj
 |Megosztott eszköz|Ha **Igen**, akkor az eszköz több felhasználó között van megosztva.|Windows, iOS|
 |Felhasználó által jóváhagyott regisztráció|Ha **Igen**, akkor az eszköz felhasználó által jóváhagyott regisztrációja lehetővé teszi, hogy a rendszergazdák bizonyos biztonsági beállításokat kezelhesse az eszközön.|Windows, iOS|
 |Operációs rendszer|Az eszközön futó operációs rendszer.|Windows, iOS|
-|Operációs rendszer verziója|Az eszköz operációs rendszerének verziója.|Windows, iOS|
+|Operációs rendszer verziója|Az eszközön futó operációs rendszer verziója.|Windows, iOS|
 |Operációs rendszer nyelve|Az eszközön futó operációs rendszerhez beállított nyelv.|Windows, iOS|
-|Build száma|Az operációs rendszer összeállításának száma.|Android:|
+|Buildszám|Az operációs rendszer összeállításának száma.|Android:|
 |Biztonsági javítási szint|Az eszköz biztonsági javítási szintje.|Android:|
 |Teljes tárterület|Az eszközön lévő teljes tárterület (gigabájtban).|Windows, iOS|
 |Szabad tárterület|Az eszközön lévő felhasználatlan tárterület (gigabájtban).|Windows, iOS|
@@ -77,7 +77,7 @@ Az eszközök által használt szolgáltatótól függően az összes adat gyűj
 |MEID|Az eszköz mobilkészülék-azonosító száma.|Windows, iOS, Android|
 |Gyártó|Az eszköz gyártója.|Windows, iOS, Android|
 |Modell|Az eszköz típusa.|Windows, iOS, Android|
-|Telefonszám|Az eszközhöz rendelt telefonszám.|Windows, iOS, Android|
+|Telefonszám|Az eszközhöz rendelt telefonszám.|Windows, iOS, Android *|
 |Előfizetés-szolgáltató|Az eszköz vezeték nélküli szolgáltatója.|Windows, iOS, Android|
 |Mobiltechnológia|Az eszköz által használt rádiórendszer.|Windows, iOS, Android|
 |Wi-Fi MAC|Az eszköz MAC-címe.|Windows, iOS, Android|
@@ -93,7 +93,7 @@ Az eszközök által használt szolgáltatótól függően az összes adat gyűj
 |Felügyelt|Ha **Igen**, akkor a rendszergazdák fokozott felügyelettel rendelkeznek az eszköz felett.|Windows, iOS, Android|
 |Titkosítva|Ha **Igen**, akkor az eszközön tárolt adatok titkosítva vannak.|Windows, iOS, Android|
 
-
+a \* nem érhető el az Androidban a Google Policy Managerrel, például a teljes körűen felügyelt és a dedikált eszközökkel
 
 ## <a name="next-steps"></a>További lépések
 Ismerje meg az Intune-beli [eszközkezelés](device-management.md) további funkcióit.

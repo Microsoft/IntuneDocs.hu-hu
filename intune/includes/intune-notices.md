@@ -7,12 +7,12 @@ ms.topic: include
 ms.date: 11/19/2019
 ms.author: erikje
 ms.custom: include file
-ms.openlocfilehash: 8db05399c4a880d72d24cde885976309bf9a4fa7
-ms.sourcegitcommit: 23e9c48348a6eba494d072a2665b7481e5b5c84e
+ms.openlocfilehash: 7373ca24c1ae1f439096d9bedcb8e81979c95586
+ms.sourcegitcommit: d8bcf1a427035138f7dfe1e4f8b3c971c773dcd8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74549430"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74829056"
 ---
 Ezek a hirdetmények olyan fontos információkat tartalmaznak, amelyek segíthetnek a jövőbeli Intune-változások és-funkciók előkészítésében.
 
@@ -119,8 +119,8 @@ Android-eszköz rendszergazdája (más néven a "régi" Android-kezelés és az 
 
 #### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
 A Google által végzett módosítások miatt az Intune-felhasználók a következő módokon lesznek hatással:  
-- Az Intune csak az Android 10 vagy újabb rendszerű Android-eszközök (más néven Android Q) futtatásával támogatja az eszköz rendszergazdája által felügyelt Android-eszközöket a 2020-as nyaran. Ez a dátum akkor jelenik meg, ha az Android következő fő verziója várhatóan fel lesz szabadítva.   
-- Az Android 10 vagy újabb rendszerű, 2020-es nyarat futtató eszközök rendszergazdája által felügyelt eszközök többé nem lesznek teljes mértékben felügyelve.       
+- Az Intune csak az Android 10 vagy újabb rendszerű, a Q2 CY2020-t futtató Android-eszközök teljes támogatását teszi lehetővé. Az Android 10 vagy újabb rendszerű eszközökön futó rendszergazda által felügyelt eszközök nem lesznek teljesen felügyelve. Különösen az érintett eszközök nem kapják meg az új jelszóra vonatkozó követelményeket.
+    - Ebben az időkeretben nem kerül sor a Samsung Knox-eszközökre, mert az Intune a Knox platformmal való integrációja révén kiterjesztett támogatást biztosít. Ez több időt biztosít az eszköz rendszergazdai felügyeletének megtervezésére.    
 - Az Android 10 alatti Android-verziókban továbbra is az eszköz rendszergazdája által felügyelt Android-eszközöket nem érinti a rendszer, és továbbra is teljes körűen felügyelhető az eszköz rendszergazdájával.    
 - Az Android 10 vagy újabb rendszerű eszközökön a Google az eszköz-rendszergazdai felügyeleti ügynökök (például Céges portál) számára korlátozta az eszköz-azonosító információk elérését. Ez a korlátozás a következő Intune-funkciókat érinti az Android 10 vagy újabb rendszerű eszközök frissítése után:  
     - A VPN hálózati hozzáférés-vezérlése már nem fog működni.   
@@ -130,7 +130,7 @@ A Google által végzett módosítások miatt az Intune-felhasználók a követk
         > Ez csak az eszköz rendszergazdája által felügyelt Android 10 és újabb rendszerű eszközökre vonatkozik, és nem érinti az Android Enterprise-ként kezelt eszközöket. 
 
 #### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
-A 2020 nyarán elérhető funkciók csökkenésének elkerüléséhez a következőket javasoljuk:
+Ha el szeretné kerülni a Q3-CY2020 érkező funkciók csökkentését, javasoljuk a következőket:
 - Ne helyezze be az új eszközöket az eszköz-rendszergazda felügyeletbe.
 - Ha egy eszköznek az Android 10-es verzióra kell frissítenie az eszközt, telepítse azt az eszköz rendszergazdai felügyelete alól az Android Enterprise Management és/vagy az App Protection szabályzatok segítségével.
 
