@@ -31,6 +31,8 @@
       href: quickstart-create-custom-role.md
 - name: Oktatóanyagok
   items:
+    - name: Útmutató az Intune-hoz a Microsoft Endpoint Managerben
+      href: tutorial-walkthrough-endpoint-manager.md
     - name: Az Intune az Azure Portalon
       href: tutorial-walkthrough-intune-portal.md
 - name: Fogalmak
