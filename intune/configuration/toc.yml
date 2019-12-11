@@ -145,6 +145,8 @@
               href: vpn-settings-macos.md
             - name: Wi-Fi
               href: wi-fi-settings-macos.md
+            - name: Vezetékes hálózat
+              href: wired-network-settings-macos.md
             - name: Egyéni
               href: custom-settings-macos.md
         - name: Windows 10 és újabb
