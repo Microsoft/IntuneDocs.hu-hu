@@ -17,10 +17,10 @@ search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f0e2e2101706b9b9afa77553244a438a2299903b
-ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/01/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73414028"
 ---
 # <a name="common-ways-to-use-microsoft-intune"></a>A Microsoft Intune használatának gyakori módjai
@@ -53,13 +53,13 @@ Ezekben az esetekben a céges adatok kizárólag az eszköz felügyeletre való 
 
 Az Office 365-ben a vállalati adatok (e-mail, dokumentumok, azonnali üzenetek, névjegyek) védelme nem is lehetne egyszerűbb az Ön számára és zökkenőmentesebb a felhasználók számára.
 
-Az Intune és a Microsoft Enterprise Mobility + Security olyan egyedi, integrált feltételes hozzáférési megoldást biztosít, amely biztosítja, hogy egyetlen felhasználó, alkalmazás vagy eszköz se férhessen hozzá az Office 365 adataihoz, kivéve, ha megfelelnek a vállalat megfelelőségi követelményeinek (elvégezte [ Multi-Factor Authentication](../enrollment/multi-factor-authentication.md), az Intune-nal regisztrálva, felügyelt alkalmazás, támogatott operációsrendszer-verzió, eszköz PIN-kódja, alacsony felhasználói kockázati profil stb.).
+Az Intune és a Microsoft Enterprise Mobility + Security olyan egyedi, integrált feltételes hozzáférési megoldást biztosít, amely biztosítja, hogy a felhasználók, az alkalmazások és az eszközök ne férhessenek hozzá az Office 365 adataihoz, kivéve, ha megfelelnek a vállalat megfelelőségi követelményeinek (a [többtényezős hitelesítés](../enrollment/multi-factor-authentication.md)végrehajtása, az Intune-nal való regisztráció, a felügyelt alkalmazás, a támogatott operációs rendszer verziója, az eszköz PIN-kódja, az alacsony
 
 A megfelelő alkalmazás-áruházakban elérhető Office-mobilalkalmazások fel vannak készítve az Intune-nal konfigurálható adattárolási szabályzatokra. Ez lehetővé teszi, hogy megakadályozza az adatok megosztását azokkal az alkalmazásokkal (például a natív e-mail alkalmazással) és tárolóhelyekkel (például a Dropboxszal), amelyeket az informatikai részleg nem felügyel. Az Office 365 és az EMS beépítve tartalmazza mindezeket a szolgáltatásokat. A használatukhoz nem kell telepítenie további elemeket az infrastruktúrába.
 
 Az Office 365 gyakran alkalmazott telepítési módszere, hogy ha mindent, a vállalati alkalmazásokat és tanúsítványokat, valamint a Wi-Fi és a VPN konfigurációját is telepíteni kell az eszközökre, akkor kötelező regisztrálni őket felügyeletre. Ez gyakorta előfordul a vállalati tulajdonú eszközök esetében.  
 
-Ha azonban a felhasználónak egyszerűen hozzá kell férnie a vállalati e-mailekhez és dokumentumokhoz, ami gyakran előfordul a személyes tulajdonú eszközök esetében is, akkor a felhasználónak az Office Mobile apps használatát kell megkövetelni (amelyre alkalmazta az [alkalmazás-védelmi szabályzatokat](../apps/app-protection-policies.md) , és kihagyhatja a regisztrálást. az eszköz teljes egészében.  
+Ha azonban a felhasználónak egyszerűen hozzá kell férnie a vállalati e-mailekhez és dokumentumokhoz, ami gyakran előfordul a személyes tulajdonban lévő eszközök esetében, akkor a felhasználónak az Office Mobile apps használatát kell megkövetelni (amelyre alkalmazta az [alkalmazás-védelmi szabályzatokat](../apps/app-protection-policies.md) , és kihagyhatja az eszköz regisztrálását.  
 
 Mindkét esetben a definiált szabályzatok biztosítják az Office 365-adatok megfelelő védelmét.
 

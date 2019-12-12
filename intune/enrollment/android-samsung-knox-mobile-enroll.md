@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5f290370dd6ec05677a7073d9ca3edd854c9aa5e
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72505586"
 ---
 # <a name="automatically-enroll-android-devices-by-using-samsungs-knox-mobile-enrollment"></a>Eszközök automatikus regisztrációja a Samsung Knox Mobile Enrollmenttel
@@ -122,7 +122,7 @@ További segítségre van szüksége? Tekintse meg a teljes [KME felhasználói 
 
 ## <a name="frequently-asked-questions"></a>Gyakori kérdések
 
-- **Eszköz tulajdonosának támogatása:**  - **eszköz tulajdonosának támogatása:** az Intune támogatja a dedikált és teljes mértékben felügyelt eszközök regisztrálását a KME-portál használatával. Egyéb Android Enterprise eszköztulajdonosi módok támogatására is sor kerül, amint elérhetővé válnak az Intune-ban.
+- **Eszköz tulajdonosának támogatása:** - **eszköz tulajdonosának támogatása:** az Intune támogatja a dedikált és teljes mértékben felügyelt eszközök regisztrálását a KME-portál használatával. Egyéb Android Enterprise eszköztulajdonosi módok támogatására is sor kerül, amint elérhetővé válnak az Intune-ban.
 
 - A **munkahelyi profil nem támogatott:** A KME a vállalati eszközök regisztrálási módszere és az Android munkahelyi profilban regisztrált eszközök biztosítják, hogy a munkahelyi és a személyes adatmennyiség külön legyen a személyes eszközökön. Így az eszközök a KME használatával történő beléptetése nem támogatott forgatókönyv az Intune-ban.
 

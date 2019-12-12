@@ -17,10 +17,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8632f5b8df0f483de3bb4d06a6823639ba52c604
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72506697"
 ---
 # <a name="macos-device-settings-to-configure-and-use-kernel-extensions-in-intune"></a>macOS-eszközbeállítások a kernel-bővítmények konfigurálásához és használatához az Intune-ban
@@ -58,12 +58,12 @@ Ezek a beállítások hozzáadódnak az Intune-ban lévő eszköz konfiguráció
 
 - **Engedélyezett kernel-bővítmények**: ezzel a beállítással engedélyezheti a megadott kernel-bővítményeket. Csak a megadott kernel-bővítmények engedélyezettek vagy megbízhatók. 
 
-  **Adja hozzá** a betölteni kívánt kernel-bővítmény köteg-azonosítóját és csoportjának azonosítóját. Aláíratlan örökölt kernel-bővítmények esetén használjon üres csapat-azonosítót. Több kernel-bővítményt is hozzáadhat. A csoport azonosítójának alfanumerikusnak (betűket és számokat) kell tartalmaznia, és 10 karakterből kell állnia. Írja be például a következőt: `com.contoso.appname.macos` a **köteg-azonosítóhoz**, és `ABCDE12345` a **csoport azonosítója**.
+  **Adja hozzá** a betölteni kívánt kernel-bővítmény köteg-azonosítóját és csoportjának azonosítóját. Aláíratlan örökölt kernel-bővítmények esetén használjon üres csapat-azonosítót. Több kernel-bővítményt is hozzáadhat. A csoport azonosítójának alfanumerikusnak (betűket és számokat) kell tartalmaznia, és 10 karakterből kell állnia. Adja meg például a **csomag azonosítójának**`com.contoso.appname.macos`ét, és `ABCDE12345` a **csoport azonosítóját**.
 
   > [!TIP]
   > Ha egy macOS-eszközön szeretné lekérni a kernel-bővítmény (kext) köteg-AZONOSÍTÓját, a következőket teheti:
   >
-  > 1. A terminálban futtassa a `kextstat | grep -v com.apple` parancsot, és jegyezze fel a kimenetet. Telepítse a kívánt szoftvert vagy kext. Futtassa ismét a `kextstat | grep -v com.apple` értéket, és keresse meg a módosításokat.
+  > 1. A terminálon futtassa `kextstat | grep -v com.apple`parancsot, és jegyezze fel a kimenetet. Telepítse a kívánt szoftvert vagy kext. Futtassa újra `kextstat | grep -v com.apple`, és keresse meg a módosításokat.
   >
   >    A terminálban `kextstat` az operációs rendszer összes kernel-bővítményét listázza. 
   >

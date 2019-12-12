@@ -17,10 +17,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: bd02e2b7f9582308109d1e6986d7e6a8014e5af7
-ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/18/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72585892"
 ---
 # <a name="guided-scenario---secure-microsoft-office-mobile-apps"></a>Interaktív forgatókönyv – biztonságos Microsoft Office Mobile apps 
@@ -112,7 +112,7 @@ Ebben a lépésben konfigurálnia kell a vállalati fájlok és e-mailek ezen al
 | A hozzáférési követelmények ismételt ellenőrzési művelete (perc inaktivitás után) | Ha a házirend által felügyelt alkalmazás a megadott ennyi percnél hosszabb ideig inaktív, az alkalmazás kérni fogja a hozzáférési követelményeket (azaz PIN-kód, feltételes indítási beállítások) az alkalmazás elindítása után az ismételt vizsgálathoz. | 30 |
 | Szervezeti adattárolók nyomtatása | Ha le van tiltva, az alkalmazás nem tudja kinyomtatni a védett adatforrásokat. | Letiltás |
 | Szabályzat által felügyelt alkalmazások hivatkozásainak megnyitása nem felügyelt böngészőkben | Ha le van tiltva, a szabályzattal felügyelt alkalmazás hivatkozásait felügyelt böngészővel kell megnyitni. | Letiltás |
-| Az Adatmásolás nem felügyelt alkalmazásokba | Ha le van tiltva, a felügyelt alkalmazások továbbra is a felügyelt alkalmazásokban maradnak. | Lehetővé |
+| Az Adatmásolás nem felügyelt alkalmazásokba | Ha le van tiltva, a felügyelt alkalmazások továbbra is a felügyelt alkalmazásokban maradnak. | Engedélyezés |
 
 ## <a name="step-5---assignments"></a>5\. lépés – hozzárendelések
 

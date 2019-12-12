@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4a9bd1691b7943f02c9577e962fb1bcd5d9cf40a
-ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/18/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72585332"
 ---
 # <a name="add-wi-fi-settings-for-devices-running-android-in-microsoft-intune"></a>Android rendszerű eszközökre vonatkozó Wi-Fi-beállítások hozzáadása a Microsoft Intune-ban
@@ -36,7 +36,7 @@ Ez a cikk ezeket a beállításokat ismerteti.
 
 [Eszközprofil létrehozása](device-profile-create.md).
 
-## <a name="basic"></a>Alapvető
+## <a name="basic"></a>Alapszintű
 
 - **Wi-Fi típusa**: válassza az **Alapszintű** lehetőséget.
 - **SSID**: adja meg a szolgáltatáskészlet **azonosítóját**, amely annak a vezeték nélküli hálózatnak a valódi neve, amelyhez az eszközök csatlakoznak. A felhasználók azonban csak a konfigurált **hálózatnevet** látják, amikor kiválasztják a kapcsolatot.
@@ -95,7 +95,7 @@ Ez a cikk ezeket a beállításokat ismerteti.
 
 A profil létrejön, de egyelőre nem csinál semmit. A következő lépés a [profil hozzárendelése](device-profile-assign.md).
 
-## <a name="more-resources"></a>További források
+## <a name="more-resources"></a>További forrásanyagok
 
 - [Wi-Fi-beállítások áttekintése](wi-fi-settings-configure.md), beleértve a többi platformot is.
 

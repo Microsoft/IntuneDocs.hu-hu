@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cdc849405b7404203faa6e86d3fed1ea8e35ec43
-ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/01/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73414636"
 ---
 # <a name="how-to-manage-data-transfer-between-ios-apps-in-microsoft-intune"></a>iOS-alkalmazások közti adatátvitel felügyelete a Microsoft Intune-ban
@@ -40,7 +40,7 @@ Az iOS- **es Open-in Management** szolgáltatással az alábbi módokon biztosí
 
 - **Egyetlen Mdm-megoldás által nem kezelt eszközök:** Az alkalmazás védelmi házirendjének beállításait beállíthatja úgy, hogy az adatmegosztást más alkalmazásokkal is megtekintse *megnyitási* vagy *megosztási bővítmények*használatával.  Ehhez konfigurálja a **szervezeti adatküldés más alkalmazásra** beállítást a szabályzat által **felügyelt alkalmazások számára a Megnyitás/megosztás szűrési** értékkel.  A *házirend által felügyelt alkalmazás* *megnyitási és megosztási* viselkedése csak más *szabályzat által felügyelt alkalmazásokat* jelenít meg megosztási lehetőségként. 
 
-- Az **Mdm-megoldások által felügyelt eszközök**: az Intune-ban vagy harmadik féltől származó Mdm-megoldásokban regisztrált eszközökön az alkalmazások közötti adatmegosztás az alkalmazás-védelmi szabályzatokkal és a Mdm által központilag telepített egyéb felügyelt iOS-alkalmazásokkal az Intune app Policy és az iOS **Open a felügyeleti** szolgáltatásban. Annak biztosításához, hogy a MDM-megoldással telepített alkalmazások is társítva legyenek az Intune app Protection-szabályzatokhoz, konfigurálja a felhasználói UPN-beállítást a következő szakaszban leírtak szerint, [konfigurálja a felhasználói UPN-beállítást](data-transfer-between-apps-manage-ios.md#configure-user-upn-setting-for-microsoft-intune-or-third-party-emm). Annak megadásához, hogy hogyan kívánja engedélyezni a más alkalmazásoknak való adatátvitelt, engedélyezze a **szervezeti adatok más alkalmazásokba való küldését** , majd válassza ki az előnyben részesített megosztási szintet. Annak megadásához, hogy az alkalmazások hogyan fogadhatnak más alkalmazásokból származó adatfogadást, engedélyezze a **más alkalmazásokból érkező adatok fogadását** , majd válassza ki az adatok fogadásának kívánt szintjét. Az alkalmazásadatok fogadására és megosztására vonatkozó további információért lásd az [Adatáthelyezési beállítások](app-protection-policy-settings-ios.md#data-protection) szakaszt.
+- Az **Mdm-megoldások által felügyelt eszközök**: az Intune-ban vagy harmadik féltől származó Mdm-megoldásokban regisztrált eszközökön az alkalmazások közötti adatmegosztás az alkalmazás-védelmi szabályzatokkal és a Mdm-en keresztül telepített egyéb felügyelt iOS-alkalmazásokkal az Intune-alkalmazások szabályzatai és az iOS **megnyitási** funkciójának felügyelete alatt. Annak biztosításához, hogy a MDM-megoldással telepített alkalmazások is társítva legyenek az Intune app Protection-szabályzatokhoz, konfigurálja a felhasználói UPN-beállítást a következő szakaszban leírtak szerint, [konfigurálja a felhasználói UPN-beállítást](data-transfer-between-apps-manage-ios.md#configure-user-upn-setting-for-microsoft-intune-or-third-party-emm). Annak megadásához, hogy hogyan kívánja engedélyezni a más alkalmazásoknak való adatátvitelt, engedélyezze a **szervezeti adatok más alkalmazásokba való küldését** , majd válassza ki az előnyben részesített megosztási szintet. Annak megadásához, hogy az alkalmazások hogyan fogadhatnak más alkalmazásokból származó adatfogadást, engedélyezze a **más alkalmazásokból érkező adatok fogadását** , majd válassza ki az adatok fogadásának kívánt szintjét. Az alkalmazásadatok fogadására és megosztására vonatkozó további információért lásd az [Adatáthelyezési beállítások](app-protection-policy-settings-ios.md#data-protection) szakaszt.
 
 ## <a name="configure-user-upn-setting-for-microsoft-intune-or-third-party-emm"></a>Az egyszerű felhasználónév beállításának konfigurálása a Microsoft Intune-hoz vagy külső EMM-megoldáshoz
 A felhasználó UPN-beállításának konfigurálása az Intune által felügyelt eszközökön, vagy egy harmadik féltől származó, a regisztrált felhasználói fiók azonosítására **szolgáló más** gyártótól származó Az UPN-konfiguráció az Intune-ból üzembe helyezett alkalmazás-védelmi házirendekkel működik. Az alábbi eljárás az UPN-beállítás és az eredményül kapott felhasználói élmény konfigurálásának általános folyamata:
@@ -62,7 +62,7 @@ A felhasználó UPN-beállításának konfigurálása az Intune által felügyel
 4. Telepítse a regisztrált eszközökre a **Megnyitási engedélyek felügyelete** szabályzatot a az Intune vagy külső MDM-szolgáltató segítségével.
 
 
-### <a name="example-1-admin-experience-in-intune-or-third-party-mdm-console"></a>1\. példa: A rendszergazda teendői az Intune- vagy a külső MDM-konzolon
+### <a name="example-1-admin-experience-in-intune-or-third-party-mdm-console"></a>1. példa: A rendszergazda teendői az Intune- vagy a külső MDM-konzolon
 
 1. Nyissa meg az Intune vagy a külső MDM-szolgáltató felügyeleti konzolját. Nyissa meg a konzolnak azt a szakaszát, ahol a regisztrált iOS-eszközökre érvényes alkalmazáskonfigurációs beállításokat adja meg.
 
@@ -81,10 +81,10 @@ A felhasználó UPN-beállításának konfigurálása az Intune által felügyel
    |ManageEngine Mobile Device Manager | IntuneMAMUPN | Sztring | %upn% |
 
 > [!NOTE]  
-> Az iOS-hez készült Outlook esetében ha a felügyelt eszközök alkalmazás konfigurációs szabályzatát "a Configuration Designer használata" beállítással telepíti, és engedélyezi a **csak munkahelyi vagy iskolai fiókok**engedélyezése beállítást, a rendszer automatikusan konfigurálja a IntuneMAMUPN konfigurációs kulcsot a színfalak mögött. a szabályzathoz. További részleteket az [iOS-és Android-alkalmazások konfigurációs házirendje – általános alkalmazás konfigurálása](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/New-Outlook-for-iOS-and-Android-App-Configuration-Policy/ba-p/370481)című témakör gyakori kérdések szakasza tartalmaz. 
+> Az iOS-hez készült Outlook esetében ha a felügyelt eszközök alkalmazás konfigurációs szabályzatát "a Configuration Designer használata" beállítással telepíti, és engedélyezi a **csak munkahelyi vagy iskolai fiókok**engedélyezése beállítást, a rendszer automatikusan konfigurálja a IntuneMAMUPN konfigurációs kulcsot a Szabályzathoz tartozó jelenetek mögött. További részleteket az [iOS-és Android-alkalmazások konfigurációs házirendje – általános alkalmazás konfigurálása](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/New-Outlook-for-iOS-and-Android-App-Configuration-Policy/ba-p/370481)című témakör gyakori kérdések szakasza tartalmaz. 
 
 
-### <a name="example-2-end-user-experience"></a>2\. példa: A végfelhasználó teendői
+### <a name="example-2-end-user-experience"></a>2. példa: A végfelhasználó teendői
 
 Házirend *által* felügyelt alkalmazás megosztása *más ALKALMAZÁSOKKAL az operációs rendszer megosztásával*
 

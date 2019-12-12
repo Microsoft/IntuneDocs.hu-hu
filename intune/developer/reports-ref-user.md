@@ -19,17 +19,17 @@ search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 996e28f9dceff88637c93e667597e3364215b965
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72505629"
 ---
 # <a name="reference-for-user-entity"></a>Felhasználói entitás referenciája
 
 A **felhasználók** kategória tartalmazza azt a **felhasználói** entitást, amely a felhasználói tulajdonságokat definiálja az adatmodellben.
 
-## <a name="users"></a>Felhasználók
+## <a name="users"></a>felhasználók
 
 A **user** entitás a vállalaton belül hozzárendelt licenccel rendelkező összes Azure Active Directory- (Azure AD-) felhasználót kilistázza.
 
@@ -40,7 +40,7 @@ A **user** entitásgyűjtemény felhasználói adatokat tartalmaz. A rekordok k�
 | userKey                    | A felhasználó egyedi azonosítója az adattárházban – helyettes kulcs.                                                                                                                                                         | 123                                  |
 | userId                     | A felhasználó egyedi azonosítója – a UserKey-hez hasonló, de természetes kulcs.                                                                                                                                                    | b66bc706-ffff-7437-0340-032819502773 |
 | Felhasználói                  | A felhasználó e-mail címe.                                                                                                                                                                                                     | John@constoso.com                    |
-| UserPrincipalName                        | A felhasználó egyszerű felhasználóneve.                                                                                                                                                                                               | John@constoso.com                    |
+| userPrincipalName                        | A felhasználó egyszerű felhasználóneve.                                                                                                                                                                                               | John@constoso.com                    |
 | displayName                | A felhasználó megjelenítendő neve.                                                                                                                                                                                                      | István                                 |
 | intuneLicensed             | Megadja, hogy a felhasználó rendelkezik-e Intune-licenccel.                                                                                                                                                                              | Igaz/hamis                           |
 | isDeleted                  | Azt jelzi, hogy a felhasználó összes engedélye lejárt-e, és a felhasználót emiatt eltávolították-e az Intune-ból. Egyetlen rekord esetén ez a jelölő nem változik. Ehelyett új rekord jön létre egy új felhasználói állapothoz. | Igaz/hamis                           |

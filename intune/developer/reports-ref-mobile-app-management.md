@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: eb1833a6a54fe0a7f78958e653468921df952b4d
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72505693"
 ---
 # <a name="reference-for-mobile-app-management-mam-entities"></a>Mobilalkalmazás-felügyelet (MAM) típusú entitások referenciája
@@ -65,7 +65,7 @@ A **mamApplicationInstance** entitás a felügyelt mobileszköz-felügyeleti (MA
 | mamApplicationId | Annak a MAM-alkalmazásnak az azonosítója, amelyhez a MAM-alkalmazás példánya létrejött.   | 2016.11.23 12:00:00   |
 |     applicationVersion     |                                                                                     A MAM-alkalmazás verziószáma.                                                                                      |                  2                   |
 |        createdDate         |                                                                 A MAM-alkalmazáspéldány rekordjának létrehozási dátuma. Az érték lehet null is.                                                                 |        2016.11.23 12:00:00        |
-|          Platform          |                                                                          Az eszköz platformja, amelyen ez a MAM-alkalmazás telepítve van.                                                                           |                  2                   |
+|          platform          |                                                                          Az eszköz platformja, amelyen ez a MAM-alkalmazás telepítve van.                                                                           |                  2                   |
 |      platformVersion       |                                                                      Az eszköz platformjának verziója, amelyen ez a MAM-alkalmazás telepítve van.                                                                       |                 2.2                  |
 |         sdkVersion         |                                                                            A MAM-SDK verziója, amellyel az adott MAM-alkalmazást becsomagolták.                                                                            |                 3.2                  |
 | mamDeviceId | Annak az eszköznek az azonosítója, amelyhez a MAM-alkalmazás példánya társítva van.   | 2016.11.23 12:00:00   |
@@ -125,7 +125,7 @@ A **mamPlatform** entitás felsorolja azokat a platformokat és típusokat, amel
 |          Tulajdonság          |                                    Description                                    |                         Példa                         |
 |----------------------------|-----------------------------------------------------------------------------------|---------------------------------------------------------|
 |        platformKey         |     A platform egyedi azonosítója az adattárházban – helyettes kulcs.      |                           123                           |
-|          Platform          | A platform egyedi azonosítója – a PlatformKey-hez hasonló, de természetes kulcs. |                           123                           |
+|          platform          | A platform egyedi azonosítója – a PlatformKey-hez hasonló, de természetes kulcs. |                           123                           |
 |        platformName        |                                   A platform neve                                   | Nem érhető el <br>Nincsenek <br>Windows <br>iOS <br>Android. |
 | rowLastModifiedDateTimeUtc | A platform adattárházban történt utolsó módosításának dátuma és időpontja (UTC).  |                 2016.11.23 12:00:00                  |
 

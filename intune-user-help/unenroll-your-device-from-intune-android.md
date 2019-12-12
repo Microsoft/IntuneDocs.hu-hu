@@ -20,10 +20,10 @@ ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: bb1538d484590a19eb7525a1451b5082ebab245d
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72506030"
 ---
 # <a name="unenroll-your-android-device-from-management"></a>Android-eszköz regisztrációjának törlése  
@@ -52,14 +52,14 @@ Regisztrált Android-eszköz eltávolítása a szervezet által felügyelt eszk�
 
 Az Android-eszközhöz készült Céges portál alkalmazás által az eszközön tárolt adatok törlésének módja a következő:
 
-- Az alkalmazásadatok törléséhez koppintson az **alkalmazások** > **[*alkalmazás neve*]**  > **adattörlés elemre**.
+- Az alkalmazásadatok törléséhez koppintson az **alkalmazások** > **[*az alkalmazás neve*]** elemre > **az adattörlést**.
 - Törölje a következő mappát: \storage\internal storage\Android\data\com.microsoft.windowsintune.companyportal.
 
 ## <a name="uninstall-the-company-portal-app"></a>A Céges portál alkalmazás eltávolítása
 
 Céges portál egy Eszközkezelő alkalmazás. Nem távolítható el, amíg nem törli az eszköz regisztrációját a felügyelet alól. Miután ezt megtette, koppintson a Céges portál alkalmazás ikonjára, és tartsa nyomva addig, amíg az **Eltávolítás** lehetőség meg nem jelenik. Koppintson az **Eltávolítás** lehetőségre az alkalmazás eszközről való eltávolításához.  
 
-Vagy koppintson a **beállítások** > **alkalmazások** > **céges portál** > **Eltávolítás**elemre.  
+Másik lehetőségként koppintson a **beállítások** > **alkalmazások** > **céges portál** > **Eltávolítás**elemre.  
 
 ### <a name="remove-the-company-portal-app-as-a-device-administrator"></a>Az Céges portál alkalmazás eltávolítása eszköz-rendszergazdaként
 
@@ -71,7 +71,7 @@ A következőképpen tilthatja le a Céges portál eszközt rendszergazdaként. 
 
 **1. lehetőség**:  
 
-1. Válassza a **beállítások** > **biztonsági** > **további biztonsági beállítások** > **eszköz-rendszergazdák**elemet.  
+1. Válassza a **beállítások** > **biztonsági** > **további biztonsági beállítások** > az **eszközök rendszergazdái**.  
 2. Törölje a **céges portál** kijelölését.  
 
 **2. lehetőség**:

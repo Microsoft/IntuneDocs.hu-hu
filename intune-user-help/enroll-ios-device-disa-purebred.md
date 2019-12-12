@@ -19,10 +19,10 @@ ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5c484b98466c1418016f4ebc6cc805e412d7891e
-ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/01/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73415597"
 ---
 # <a name="set-up-ios-or-ipados-device-with-company-portal-and-disa-purebred"></a>IOS-vagy iPadOS-eszköz beállítása Céges portál és DISA fajtiszta eszközzel  
@@ -36,7 +36,7 @@ Ha intelligens kártyát használ a következőhöz, akkor valószínűleg szár
 * Bejelentkezés az iskolai vagy munkahelyi alkalmazásokhoz, Wi-Fi-és virtuális magánhálózatok (VPN)
 * Iskolai vagy munkahelyi e-mailek aláírása és titkosítása S/MIME-tanúsítványok használatával  
 
-Ebben a cikkben a következőket fogja megtekinteni:  
+Ebben a cikkben:  
 
    * Mobil iOS-vagy iPadOS-eszköz regisztrálása a Intune Céges portál.  
    * Származtatott hitelesítő adatok beszerzése a szervezet származtatott hitelesítőadat-szolgáltatójából, a [DISA fajtatiszta](https://cyber.mil/pki-pke/purebred/).  

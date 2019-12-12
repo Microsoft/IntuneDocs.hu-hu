@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9f6ab8a4e8e46373a536949c13ceaebb267f34cd
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72504451"
 ---
 # <a name="data-intune-sends-to-google"></a>Az Intune által a Google-nek küldött adatok
@@ -34,7 +34,7 @@ Ha az Android Enterprise eszközkezelése engedélyezve van egy eszközön, a Mi
 Az alábbi táblázat felsorolja az adatokat, amelyeket az eszközkezelés engedélyezése esetén a Microsoft Intune küld a Google-nek:
 
 
-| A Google-nek küldött adat | Details | Használatban | Példa |
+| A Google-nek küldött adat | Details | Felhasználási mód: | Példa |
 |:---:|:---:|:---:|:---:|
 | EnterpriseId | A Google adja meg a Gmail-fiók és az Intune összekapcsolásakor. | Az Intune és a Google közötti kommunikáció során használt elsődleges azonosító.  Ehhez a kommunikációhoz tartozik a szabályzatok beállítása, az eszközök kezelése és az Android Enterprise és az Intune közötti kapcsolat létrehozása és bontása. | Egyedi azonosító. Példa a formátumra: LC04eik8a6 |
 | Szabályzattörzs | Az Intune adja meg új alkalmazás- vagy konfigurációs szabályzat mentésekor. | Szabályzatok alkalmazása az eszközökre. | Ez az egy alkalmazás- vagy konfigurációs szabályzathoz konfigurált összes beállítás gyűjteménye. Ha azok egy szabályzatban meg vannak adva, akkor tartalmazhat olyan ügyféladatokat is, mint a hálózati nevek, alkalmazásnevek és alkalmazás-specifikus beállítások. |

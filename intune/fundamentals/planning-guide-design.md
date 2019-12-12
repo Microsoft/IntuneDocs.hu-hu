@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 24f15cb179dfc2b12b642f5f196d04dce58d4377
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72505204"
 ---
 # <a name="create-a-design"></a>Terv létrehozása
@@ -316,7 +316,7 @@ A Wi-Fi-profilok révén a mobileszközök automatikusan csatlakozhatnak a vezet
 
 Az alábbi példa a Wi-Fi-profilok tervezését szemlélteti:
 
-| **típusú** | **profilnév** | **eszköz platform** | **használati esetek** | | Wi-Fi | Ázsia Wi-Fi profilja | Android | Vállalat, BYOD Asia-régió | | Wi-Fi | Wi-Fi profil Észak-Amerika | Android, iOS, Windows 10 Mobile | Vállalat, BYOD Észak-Amerika régió |
+| **típus** | **profil neve** | **eszköz platform** | **használati esetek** | | Wi-Fi | Ázsia Wi-Fi profilja | Android | Vállalat, BYOD Asia-régió | | Wi-Fi | Wi-Fi profil Észak-Amerika | Android, iOS, Windows 10 Mobile | Vállalat, BYOD Észak-Amerika régió |
 
 A saját Wi-Fi-profiljainak meghatározásához [letöltheti a fenti táblázat sablonját](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0).
 

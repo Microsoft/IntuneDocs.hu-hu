@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e93e69b5cce2c54ae07410309b33870dd828f563
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72509088"
 ---
 # <a name="data-collection-in-intune"></a>Adatgyűjtés az Intune-ban
@@ -61,10 +61,10 @@ Az Intune által gyűjtött azonosított adatok többek között az alábbiak le
   - Telefonszám
 - Az auditnapló adatai, többek között az alábbi tevékenységekhez kapcsolódó adatok
   - A számítógépeken futó
-  - Létrehozása
+  - Létrehozás
   - Frissítés (szerkesztés)
   - Törlés
-  - Hozzárendelése
+  - Hozzárendelés
   - Távoli feladatok
 - Támogatási információk
   - Kapcsolattartási adatok (név, telefonszám, e-mail-cím)

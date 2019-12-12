@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b4661b151493eb68cc6f71a5a77bd023ac27b826
-ms.sourcegitcommit: 3ace4cba6e2f6fefa9120be3807387a49b200c9b
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72810223"
 ---
 # <a name="set-up-lookout-mobile-endpoint-security-integration-with-intune"></a>A mobil végpontok biztonsági integrációjának beállítása az Intune-nal
@@ -51,12 +51,12 @@ Ahhoz, hogy a Kitekintő mobil Endpoint Security-előfizetés integrálása az I
 
 1. Jelentkezzen be a [Azure Portal](https://portal.azure.com) globális rendszergazdai fiókkal.
 
-2. Nyissa meg a **Azure Active Directory** > **tulajdonságokat** , és keresse meg a **címtár-azonosítót**. A *Másolás* gombbal másolja a CÍMTÁR-azonosítót, majd mentse egy szövegfájlba.
+2. Nyissa meg **Azure Active Directory** > **tulajdonságokat** , és keresse meg a **címtár-azonosítót**. A *Másolás* gombbal másolja a CÍMTÁR-azonosítót, majd mentse egy szövegfájlba.
 
    ![Azure AD-tulajdonságok](./media/lookout-mtd-connector-integration/azure-ad-properties.png)  
 
 3. Ezután keresse meg az Azure ad-csoport AZONOSÍTÓját azon fiókok esetében, amelyeket az Azure AD-felhasználók számára a kilátó konzolhoz való hozzáférés biztosításához használ. Egy csoport a *teljes hozzáféréshez*, a második pedig a *korlátozott hozzáféréshez* nem kötelező. Az *objektumazonosító*beszerzése az egyes fiókokhoz:  
-   1. A *csoportok – minden csoport* ablaktábla megnyitásához lépjen **Azure Active Directory** > **csoportok** elemre.  
+   1. Lépjen **Azure Active Directory** > **csoportok** elemre a *csoportok – minden csoport* ablaktábla megnyitásához.  
 
    2. Válassza ki a *teljes hozzáféréshez* létrehozott csoportot az *Áttekintés* panel megnyitásához.  
 
@@ -75,19 +75,19 @@ A következő lépéseket kell végrehajtani a kilátó vállalati felügyeleti 
 Miután a kinézeti támogatás létrehozza a kilátó vállalati fiókot, a kisegítő támogatás e-mailt küld a vállalat elsődleges kapcsolattartójának, amely a bejelentkezési URL-címre mutat: https://aad.lookout.com/les?action=consent. 
 
 ### <a name="initial-sign-in"></a>Kezdeti bejelentkezés  
-A megjelenítői MES-konzolra való első bejelentkezéskor megjelenik egy beleegyező lap (https://aad.lookout.com/les?action=consent). Az Azure AD globális rendszergazdája csak bejelentkezik, és **fogadja el**. A következő bejelentkezéshez nem szükséges, hogy a felhasználó ezen szintű Azure AD-jogosultsággal rendelkezzen. 
+A kinézeti MES-konzolra való első bejelentkezés megjeleníti a beleegyező lapot (https://aad.lookout.com/les?action=consent). Az Azure AD globális rendszergazdája csak bejelentkezik, és **fogadja el**. A következő bejelentkezéshez nem szükséges, hogy a felhasználó ezen szintű Azure AD-jogosultsággal rendelkezzen. 
 
  Egy hozzájárulást kérő lap jelenik meg. A regisztráció befejezéséhez válassza az **elfogad** lehetőséget. 
    ![képernyőkép a kilátó konzol első bejelentkezés lapján](./media/lookout-mtd-connector-integration/lookout_mtp_initial_login.png)
 
 Ha elfogadja és beleegyezik, a rendszer átirányítja a kilátó konzolra.
 
-A kezdeti bejelentkezés és a belefoglalt engedély befejezése után a https://aad.lookout.com webhelyről bejelentkező felhasználók átirányítva lesznek a MES-konzolra. Ha a beleegyezikés még nem lett megadva, az összes bejelentkezési kísérlet helytelen bejelentkezési hibát eredményez.
+A kezdeti bejelentkezés és a belefoglalt engedély befejezése után a https://aad.lookout.com ból bejelentkező felhasználók átirányítva lesznek a MES-konzolra. Ha a beleegyezikés még nem lett megadva, az összes bejelentkezési kísérlet helytelen bejelentkezési hibát eredményez.
 
 ### <a name="configure-the-intune-connector"></a>Az Intune-összekötő konfigurálása  
 Az alábbi eljárás azt feltételezi, hogy korábban létrehozott egy felhasználói csoportot az Azure AD-ben a kilátó üzembe helyezésének teszteléséhez. Az ajánlott eljárás a felhasználók egy kis csoportja, hogy a kilátó és az Intune-rendszergazdák megismerjék a termék integrációját. Miután ismerősek voltak, kiterjesztheti a beléptetést a felhasználók további csoportjaira.
 
-1. Jelentkezzen be a [kilátó MES-konzolra](https://aad.lookout.com) , és nyissa meg a **System** > **összekötőket**, majd válassza az **összekötő hozzáadása**elemet.  Válassza az **Intune**lehetőséget.
+1. Jelentkezzen be a [kilátó MES-konzolra](https://aad.lookout.com) , és lépjen a **System** > - **Összekötők**elemre, majd válassza az **összekötő hozzáadása**elemet.  Válassza az **Intune**lehetőséget.
 
    ![A kilátó konzoljának képe az Intune lehetőséggel az összekötők lapon](./media/lookout-mtd-connector-integration/lookout_mtp_setup-intune-connector.png)
 
@@ -95,7 +95,7 @@ Az alábbi eljárás azt feltételezi, hogy korábban létrehozott egy felhaszn�
 
    ![A kapcsolatbiztonsági beállítások lap és a beállított szívverési gyakoriság képe](./media/lookout-mtd-connector-integration/lookout-mtp-connection-settings.png)
 
-3. Válassza a **beléptetések kezelése**lehetőséget, és **a következő Azure ad biztonsági csoportok használatával azonosítsa a Lookout for Workban regisztrálni kívánt eszközöket**, adja meg a kilátóhoz használni kívánt Azure ad-csoport *nevét* , majd kattintson a Save (Mentés) gombra.  **változások**.
+3. Válassza a **beléptetések kezelése**lehetőséget, és **a következő Azure ad biztonsági csoportok használatával azonosítsa a Lookout for Workban regisztrálni kívánt eszközöket**, adja meg a kilátóhoz használni kívánt Azure ad-csoport *nevét* , majd kattintson a **módosítások mentése**gombra.
 
     ![képernyőkép az Intune-összekötő regisztrálási oldaláról](./media/lookout-mtd-connector-integration/lookout-mtp-enrollment.png)  
 
@@ -119,7 +119,7 @@ Miután konfigurálta a MES-t, be kell állítania egy kapcsolódást az [Intune
 A következő további beállítások konfigurálhatók a kilátó MES-konzolon.  
 
 ### <a name="configure-enrollment-settings"></a>Regisztrációs beállítások konfigurálása
-A kilátó MES-konzolon válassza a **System** >  a**Beléptetés** > **regisztrációs beállítások**kezelése lehetőséget.  
+A kilátó MES-konzolon **válassza a** rendszer > a **beléptetési** > **beléptetési beállítások**kezelése lehetőséget.  
 
 - A leválasztott **állapot**mezőben határozza meg, hogy hány nap elteltével legyen leválasztva a nem csatlakoztatott eszköz.  
 

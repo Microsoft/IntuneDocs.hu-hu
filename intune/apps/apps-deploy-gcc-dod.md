@@ -19,15 +19,15 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8a6c430ab15c40166e8c3afbccd6fcc7c2c5976d
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72507268"
 ---
 # <a name="deploying-apps-using-intune-on-the-gcc-high-and-dod-environments"></a>Alkalmazások üzembe helyezése az Intune-nal a GCC magas és DoD környezetekben 
 
-A bérlői rendszergazdák a Microsoft Intune használhatják alkalmazások kiosztását a munkahelyükön. A munkaerő a vállalat alkalmazottja, az alkalmazások felhasználói. Számos különböző típusú alkalmazás telepíthető az Intune-ból a GCC magas vagy DoD környezetekben. Ha a rendszergazdának fel kell töltenie és terjesztenie kell egy olyan Windows-alkalmazást, amely egy egyéni készítésű, harmadik féltől származó gyártó által létrehozott, vagy a [Microsoft Store for Business](https://businessstore.microsoft.com/store)szolgáltatásból letöltött offline alkalmazás, akkor a rendszergazda dönthet úgy, hogy terjesszen üzletági [alkalmazásként](apps-add.md#app-types-in-microsoft-intune).  
+A bérlői rendszergazdák a Microsoft Intune használhatják alkalmazások kiosztását a munkahelyükön. A munkaerő a vállalat alkalmazottja, az alkalmazások felhasználói. Számos különböző típusú alkalmazás telepíthető az Intune-ból a GCC magas vagy DoD környezetekben. Ha a rendszergazdának fel kell töltenie és el kell terjesztenie egy olyan Windows-alkalmazást, amely egy egyéni készítésű, harmadik féltől származó gyártó által létrehozott, vagy a [Microsoft Store for Business](https://businessstore.microsoft.com/store)szolgáltatásból letöltött offline alkalmazás, akkor a rendszergazda dönthet úgy, hogy üzletági [alkalmazásként](apps-add.md#app-types-in-microsoft-intune)van-e kiterjesztve.  
 
 > [!NOTE]
 > Kereskedelmi környezetekben a bérlői rendszergazda szinkronizálhatja az üzletét az Intune-nal, azonban a GCC magas és a DoD környezetek esetében ez a szolgáltatás nem érhető el. Ebben a helyzetben a rendszergazdáknak közvetlenül az Intune-ba való feltöltéssel kell központilag telepíteniük az alkalmazást.  
@@ -44,7 +44,7 @@ Ha [le kell töltenie egy offline licenccel rendelkező alkalmazást](https://do
 2. Válassza a **kezelés** > **Beállítások**lehetőséget.
 3. A **vásárlási élmény**területen állítsa az **Offline alkalmazások megjelenítése a következőre** :.
 
-Ha az alkalmazások vásárlásakor offline verzió érhető el, dönthet úgy, hogy a licenc típusát offline értékre módosítja. Az alkalmazás beszerzése után felügyelheti azt a  >  termékek **kezelése**a [vállalati áruházban](https://businessstore.microsoft.com/) **& szolgáltatások** lehetőség választásával. Emellett letöltheti az alkalmazást és annak függőségeit is. Ezt követően a letöltött alkalmazást (és annak függőségeit) is telepítheti a felhasználók számára az Intune használatával.  
+Ha az alkalmazások vásárlásakor offline verzió érhető el, dönthet úgy, hogy a licenc típusát offline értékre módosítja. Az alkalmazás beszerzése után felügyelheti azt, ha a [vállalati áruházban](https://businessstore.microsoft.com/) **& Services > termékek** **kezelése** lehetőségre kattint. Emellett letöltheti az alkalmazást és annak függőségeit is. Ezt követően a letöltött alkalmazást (és annak függőségeit) is telepítheti a felhasználók számára az Intune használatával.  
 
 ## <a name="syncing-intune-to-the-store-for-business"></a>Az Intune szinkronizálása a vállalati áruházba 
 

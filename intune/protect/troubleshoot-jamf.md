@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 44733eb369e520d2d5f0ff548d4f1921abcb8758
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72503578"
 ---
 # <a name="troubleshoot-integration-of-jamf-pro-with-microsoft-intune"></a>A JAMF Pro és a Microsoft Intune integrációjának megoldása
@@ -42,9 +42,9 @@ A hibaelhárítás megkezdése előtt gyűjtsön össze néhány alapvető infor
 
 
 Az Intune-nal való JAMF Pro-integráció kivizsgálása során vegye figyelembe a következő információkat: 
-- Pontosan milyen hibaüzenet jelenik meg?
+- Mi a pontos hibaüzenet?
 - Hol található a hibaüzenet?
-- Mikor indult el a probléma?  Működött a JAMF Pro integrációja az Intune-nal?
+- Mikor jelentkezett először a probléma?  Működött a JAMF Pro integrációja az Intune-nal?
 - Hány felhasználót érint a rendszer? Az összes érintett felhasználó vagy csak néhány?
 - Hány eszközt érint a rendszer? Minden eszköz érintett vagy csak néhány?
  
@@ -107,7 +107,7 @@ Ha a *mindig engedélyezi* , hogy egy alkalmazás csak a jövőbeli bejelentkez�
 
 Számos gyakori oka van annak, hogy a Mac-eszközök nem regisztrálhatnak.  
 
-#### <a name="cause-1"></a>OK: 1  
+#### <a name="cause-1"></a>1\. ok  
 
 **Az Azure-beli JAMF Pro Enterprise-alkalmazás nem rendelkezik megfelelő engedéllyel, vagy egynél több engedéllyel rendelkezik**  
 
@@ -116,7 +116,7 @@ Számos gyakori oka van annak, hogy a Mac-eszközök nem regisztrálhatnak.
   **Felbontás**  
   Tekintse át és ha szükséges, javítsa ki az Azure AD-ben létrehozott JAMF alkalmazás engedélyeit. Tekintse meg az [Azure ad-beli JAMF alkalmazás létrehozásának](conditional-access-integrate-jamf.md#create-an-application-in-azure-active-directory)eljárását. 
 
-#### <a name="cause-2"></a>OK 2  
+#### <a name="cause-2"></a>2\. ok  
 
 **Az **JAMF natív MacOS-összekötő** alkalmazás nem lett létrehozva az Azure ad-bérlőben, vagy az összekötő beleegyezett abba, hogy olyan fiók írta alá, amely nem rendelkezik globális rendszergazdai jogokkal**  
 

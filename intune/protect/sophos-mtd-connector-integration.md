@@ -16,10 +16,10 @@ ms.assetid: ''
 search.appverid: MET150
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: aad6268606dfcf69c304bb5c5b270c8c4795e4b2
-ms.sourcegitcommit: 1a5b185acd27954b10b6d59409d82eb80fd71284
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72681280"
 ---
 # <a name="integrate-sophos-mobile-with-intune"></a>A Sophos Mobile integrálása az Intune-nal  
@@ -52,20 +52,20 @@ A Sophos Mobile App engedélyezési folyamata a következő:
 
 ## <a name="to-set-up-sophos-mobile-integration"></a>A Sophos Mobile Integration beállítása  
 
-1. Jelentkezzen be a [Azure Portalba]( https://portal.azure.com/), nyissa meg az **Intune**  > **eszköz megfelelősége**  > **Mobile Threat Defense** >, és válassza a **Hozzáadás**lehetőséget.  
+1. Jelentkezzen be a [Azure Portalba]( https://portal.azure.com/), nyissa meg az **Intune** > **eszköz megfelelősége** > **Mobile Threat Defense** >, és válassza a **Hozzáadás**lehetőséget.  
 2. Az **összekötő hozzáadása** lapon használja a legördülő menüt, és válassza a **Sophos**lehetőséget. Majd válassza a **Létrehozás**lehetőséget.  
 3. Kattintson a hivatkozásra a *Sophos felügyeleti konzol megnyitásához*.  
 4. Jelentkezzen be a [Sophos felügyeleti konzolra](https://central.sophos.com/) a Sophos hitelesítő adataival.  
-5. Nyissa meg a **Mobile** > **Beállítások** > **Setup** > **Sophos telepítőjét**.  
+5. Válassza a **mobil** > **beállítások** > **telepítő** > a **Sophos Setup**lehetőséget.  
 6. A **Sophos telepítője** lapon válassza az **Intune MTD** lapot.  
-   ![Sophos telepítő ](./media/sophos-mtd-connector-integration/sophos-setup.png) 
+   ![Sophos telepítője](./media/sophos-mtd-connector-integration/sophos-setup.png) 
  
 7. Válassza a **kötés**lehetőséget, majd válassza az **Igen**lehetőséget. A Sophos csatlakozik az Intune-hoz, és bejelentkezik az Intune-előfizetésbe. 
 8. A Microsoft Intune hitelesítés ablakban adja meg az Intune hitelesítő adatait, és **fogadja el** a *Sophos Mobile Thread Defense*engedélyezési kérelmét.  
-   ![Intune hitelesítési ](./media/sophos-mtd-connector-integration/intune-authentication.png)
+   ![Intune-alapú hitelesítési](./media/sophos-mtd-connector-integration/intune-authentication.png)
 
 9. A **Sophos beállítása** lapon válassza a **Mentés** lehetőséget az Intune konfigurációjának befejezéséhez:  
-   ![Save Sophos telepítője ](./media/sophos-mtd-connector-integration/save-sophos-configuration.png)  
+   a Sophos telepítőjének ![mentése](./media/sophos-mtd-connector-integration/save-sophos-configuration.png)  
 
 1. A **sikeres integrációt** jelző ablak megjelenésekor az integráció befejeződött.  
 1. Az Intune-konzolon a Sophos már elérhető.  

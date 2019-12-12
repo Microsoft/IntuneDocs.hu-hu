@@ -16,10 +16,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 358a396e762f1f20051abadfc2f3df80f37ca8c8
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72502295"
 ---
 # <a name="macos-endpoint-protection-settings-in-intune"></a>MacOS Endpoint Protection-beállítások az Intune-ban  
@@ -54,7 +54,7 @@ A tűzfalat inkább a kapcsolatok alkalmazásonkénti, nem pedig portonkénti ko
 - **Tűzfal**  
   Engedélyezze a tűzfalat annak konfigurálásához, hogy a rendszer hogyan kezelje a bejövő kapcsolatokat a környezetben.  
   - **Nincs konfigurálva**  
-  - **Engedélyezése**  
+  - **Engedélyezés**  
 
   **Alapértelmezett**: nincs konfigurálva  
 
@@ -76,7 +76,7 @@ A tűzfalat inkább a kapcsolatok alkalmazásonkénti, nem pedig portonkénti ko
   - **Rejtett üzemmód**  
     Ha meg szeretné akadályozni, hogy a számítógép válaszoljon a Szondázási kérelmekre, engedélyezze a rejtett üzemmódot. Az eszköz továbbra is válaszol az engedélyezett alkalmazásoktól érkező kérelmekre. Az olyan váratlan kérelmeket, mint az ICMP (ping), a rendszer figyelmen kívül hagyja.  
     - **Nincs konfigurálva**  
-    - **Engedélyezése**  
+    - **Engedélyezés**  
 
     **Alapértelmezett**: nincs konfigurálva  
 
@@ -89,7 +89,7 @@ Az Apple FileVault beállításaival kapcsolatos további információkért lás
 - **FileVault**  
   A XTS-AES 128 és újabb rendszerű 10,13 eszközökön a FileVault használatával *engedélyezheti* a teljes lemezes titkosítást.  
   - **Nincs konfigurálva**  
-  - **Engedélyezése**  
+  - **Engedélyezés**  
 
   **Alapértelmezett**: nincs konfigurálva  
 

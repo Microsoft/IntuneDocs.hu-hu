@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 43fd8207a07f64fd293eb9c90bbfc2a8dadd9157
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72489936"
 ---
 # <a name="troubleshoot-mobile-application-management"></a>Mobilalkalmazás-kezelési hibaelhárítás
@@ -112,7 +112,7 @@ Párbeszédpanel/hibaüzenet | Ok | Kockázatcsökkentés |
 ## <a name="next-steps"></a>További lépések
 
 - [A mobilalkalmazás-kezelés beállításának ellenőrzése](app-protection-policies-validate.md)
-- Ismerje meg, hogyan használhatók a naplófájlok Intune App Protection szabályzattal kapcsolatos hibák megoldásához: [https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-Tip-Troubleshooting-Intune-app-protection-policy-using/ba-p/330372](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-Tip-Troubleshooting-Intune-app-protection-policy-using/ba-p/330372)
+- Megtudhatja, hogyan használhatja a naplófájlokat Intune App Protection szabályzatok hibakereséséhez: [https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-Tip-Troubleshooting-Intune-app-protection-policy-using/ba-p/330372](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-Tip-Troubleshooting-Intune-app-protection-policy-using/ba-p/330372)
 - További információt az Intune hibaelhárításáról a [Segítségnyújtás a céges felhasználóknak a hibaelhárítási portál használatával](../fundamentals/help-desk-operators.md) című témakörben talál. 
 - Ismertető a Microsoft Intune esetleges ismert problémáiról. További információt [Az Intune ismert problémái](../known-issues.md) című témakörben talál.
 - További segítségre van szüksége? Ismerje meg, [hogyan kérhet támogatást az Intune-hoz](../fundamentals/get-support.md).

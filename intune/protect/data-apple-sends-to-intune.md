@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 383469c848726eb2cfbcd7d863931f1e84f2275a
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72504511"
 ---
 # <a name="data-apple-sends-to-intune"></a>Az Apple által az Intune-nak küldött adatok
@@ -43,7 +43,7 @@ Mielőtt a Microsoft Intune létrehozhatná a kapcsolatot, Önnek létre kell ho
 
 A következő táblázat az Apple-eszközök által az Intune-nak küldött adatokat sorolja fel. [Az Intune is küld adatokat az Apple-nek](data-intune-sends-to-apple.md). 
 
-| Szolgáltatás | Üzenet | Az Intune-nak küldött adat | Használatban |
+| Szolgáltatás | Üzenet | Az Intune-nak küldött adat | Felhasználási mód: |
 |:---:|:---:|:---:| ---|
 | [APNs](https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/MobileDeviceManagementProtocolRef/3-MDM_Protocol/MDM_Protocol.html#//apple_ref/doc/uid/TP40017387-CH3-SW2) | Hitelesítés | MessageType | Az üzenet típusa: hitelesítés. |
 | [APNs](https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/MobileDeviceManagementProtocolRef/3-MDM_Protocol/MDM_Protocol.html#//apple_ref/doc/uid/TP40017387-CH3-SW2) | Hitelesítés | Témakör | A témakör, amelyet az eszköz fogadni fog. |
@@ -88,7 +88,7 @@ A következő táblázat az Apple-eszközök által az Intune-nak küldött adat
 | [VPP](https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/MobileDeviceManagementProtocolRef/5-Web_Service_Protocol_VPP/webservice.html#//apple_ref/doc/uid/TP40017387-CH8-SW1) | Apple VPP-token | assignedCount | Az egy alkalmazáshoz rendelt licencek száma. |
 | [VPP](https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/MobileDeviceManagementProtocolRef/5-Web_Service_Protocol_VPP/webservice.html#//apple_ref/doc/uid/TP40017387-CH8-SW1) | Apple VPP-token | availableCount | Az alkalmazáshoz hozzá nem rendelt licencek száma. |
 | [VPP](https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/MobileDeviceManagementProtocolRef/5-Web_Service_Protocol_VPP/webservice.html#//apple_ref/doc/uid/TP40017387-CH8-SW1) | Apple VPP-token | bundleId | Alkalmazás csomagazonosítója. |
-| [VPP](https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/MobileDeviceManagementProtocolRef/5-Web_Service_Protocol_VPP/webservice.html#//apple_ref/doc/uid/TP40017387-CH8-SW1) | Apple VPP-token | Copyright | Alkalmazás szerzői jogi információi. |
+| [VPP](https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/MobileDeviceManagementProtocolRef/5-Web_Service_Protocol_VPP/webservice.html#//apple_ref/doc/uid/TP40017387-CH8-SW1) | Apple VPP-token | szerzői jogi nyilatkozatát, | Alkalmazás szerzői jogi információi. |
 | [VPP](https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/MobileDeviceManagementProtocolRef/5-Web_Service_Protocol_VPP/webservice.html#//apple_ref/doc/uid/TP40017387-CH8-SW1) | Apple VPP-token | CountryCode | VPP-program országkódja. |
 | [VPP](https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/MobileDeviceManagementProtocolRef/5-Web_Service_Protocol_VPP/webservice.html#//apple_ref/doc/uid/TP40017387-CH8-SW1) | Apple VPP-token | deviceAssignable | Az Apple „igaz” értéket ad vissza, ha a rendszergazda eszközlicencet rendelhet egy alkalmazáshoz. Ha nem, akkor a visszatérési érték „hamis”. |
 | [VPP](https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/MobileDeviceManagementProtocolRef/5-Web_Service_Protocol_VPP/webservice.html#//apple_ref/doc/uid/TP40017387-CH8-SW1) | Apple VPP-token | facilitatorMemberId | VPP-fiók egyeztető tagazonosítója.  |

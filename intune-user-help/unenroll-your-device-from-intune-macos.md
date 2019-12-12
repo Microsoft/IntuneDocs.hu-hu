@@ -20,10 +20,10 @@ ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d4d6ecdc84371c0f485fc1cf26065ed681f29804
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72501921"
 ---
 # <a name="unenroll-your-macos-device-from-company-portal"></a>MacOS-eszköz regisztrációjának törlése a Céges portál
@@ -36,7 +36,7 @@ Kövesse az alábbi lépéseket a macOS-eszköz felügyelet alól való kivonás
 2. Lépjen az **eszközök** elemre, és válassza ki azt az eszközt, amelynek regisztrációját törölni szeretné.
 
 3. Válassza az ellipszisek menü ikont > az **Eltávolítás**lehetőséget.
-4. Megjelenik egy megerősítő üzenet. Az eszköz regisztrációjának **törléséhez** válassza az Eltávolítás lehetőséget. 
+4. Ekkor megjelenik egy megerősítő üzenet. Az eszköz regisztrációjának **törléséhez** válassza az Eltávolítás lehetőséget. 
 
 Az eszköz regisztrációjának Intune-ból való törlésekor a következők történnek:
 

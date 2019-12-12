@@ -18,10 +18,10 @@ ROBOTS: ''
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f8aa54c5ed2a5121246f917a5b5306fab5d89edc
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72508421"
 ---
 # <a name="resolve-access-point-restrictions"></a>Hozzáférésipont-korlátozások feloldása
@@ -38,19 +38,19 @@ Ha egy fel nem ismert vagy nem engedélyezett hálózathoz próbál kapcsolódni
  Az alábbi táblázatokban megtalálható mindegyik üzenet, azok jelentése, és az, hogyan érhetők el ismét a munkahelyi erőforrásokhoz.
 
 ## <a name="access-point-restrictions-not-set-up"></a>Nincsenek beállítva hozzáférésipont-korlátozások  
-| Üzenet a Céges portálon | Az üzenet jelentése | Teendők                                                               
+| Üzenet a Céges portálon | Az üzenet jelentése | Tennivalók                                                               
 |------------------------|--------------------------|--------------------------|
 | **A hozzáférésipont-korlátozások nincsenek beállítva – a hozzáférésipont-korlátozások aktívak, és be kell állítani őket.** | A vállalata hozzáférésipont-korlátozásokat alkalmazott az eszközön. Ez a beállítás megköveteli, hogy a Céges portál alkalmazás ellenőrizzen néhány hálózati beállítást az eszközén. | Koppintson a **Feloldás** elemre. A Céges portál alkalmazás ellenőrzi, hogy az eszköz a vállalat által engedélyezett hálózathoz kapcsolódik-e. |
 
 ## <a name="not-connected-to-an-approved-network"></a>Nem kapcsolódik jóváhagyott hálózathoz  
 
-| Üzenet a Céges portálon | Az üzenet jelentése | Teendők                                                                   
+| Üzenet a Céges portálon | Az üzenet jelentése | Tennivalók                                                                   
 |------------------------|-----------------------------------|--------------------------|
 | **Az eszköz nem kapcsolódik jóváhagyott hálózathoz – Kapcsolódjon egy jóváhagyott vezeték nélküli hálózathoz.** | Egy olyan hálózathoz kapcsolódik, amely nincs munkahelyi hozzáféréshez jóváhagyva. Amíg ehhez a hálózathoz kapcsolódik, nem fogja tudni elérni a munkahelyi e-maileket, alkalmazásokat és más védett vállalati erőforrásokat. | Kapcsolódjon egy, a vállalat által jóváhagyott hálózathoz. Ez után koppintson a **Feloldás** elemre az újbóli próbálkozáshoz. |
 
 ## <a name="restrictions-couldnt-be-enforced"></a>Nem lehetett kényszeríteni a korlátozásokat  
 
-| Üzenet a Céges portálon | Az üzenet jelentése | Teendők                                                                      
+| Üzenet a Céges portálon | Az üzenet jelentése | Tennivalók                                                                      
 |------------------------|-----------------------------------|--------------------------|
 | **Nem lehetett kényszeríteni a hozzáférésipont-korlátozásokat – A Céges portál hibát észlelt.** | Az Intune nem tudja megállapítani, hogy egy jóváhagyott hálózathoz kapcsolódik-e. Ez a hiba lehet gyenge hálózati kapcsolat, alacsony töltöttségű akkumulátor, akkumulátortakarékos üzemmód vagy a Céges portál hibájának következménye. | Ellenőrizze, hogy nagy-e a hálózati térerő. Kapcsolja ki a akkumulátortakarékos üzemmódot, és győződjön meg róla, hogy az akkumulátor töltöttsége legalább 30%-os. Ez után koppintson a **Feloldás** elemre az újbóli próbálkozáshoz. 
 

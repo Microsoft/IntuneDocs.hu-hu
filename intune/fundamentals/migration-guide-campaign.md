@@ -18,13 +18,13 @@ ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 490f2c538a9fd5c10f9812679c9f72fd78fefed5
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72505352"
 ---
-# <a name="phase-2-migration-campaign"></a>2\. fázis: migrációs kampány
+# <a name="phase-2-migration-campaign"></a>2. fázis: migrációs kampány
 
 Válassza ki a cége igényeiknek leginkább megfelelő migrációs megközelítést, és igazítsa az adott követelményekhez a bevezetési taktikát. A jelen útmutató fennmaradó részében ismertetjük azon eszközöket, amelyekre szüksége lesz a felhasználók eszközeinek az Intune-ban való sikeres regisztrálásához.
 

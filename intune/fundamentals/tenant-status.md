@@ -16,10 +16,10 @@ ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c79f24d44ad0aed78ed0ae6fce0873a080b2904d
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72504841"
 ---
 # <a name="use-the-intune-tenant-status-page"></a>Az Intune-bérlő állapotának használata lap
@@ -49,7 +49,7 @@ Ha több, mint egyetlen összekötő egyetlen típusból áll, az állapot az ö
 - **Sérült**
   - A tanúsítvány vagy a hitelesítő adat Lejárt
   - A legutóbbi szinkronizálás három nappal ezelőtt történt
-- **Figyelmeztetés**
+- **Figyelmeztetés:**
   - A tanúsítvány vagy a hitelesítő adat érvényessége hét napon belül lejár
   - A legutóbbi szinkronizálás több mint egy nappal ezelőtt történt
 - **Kifogástalan**
@@ -60,7 +60,7 @@ Amikor kiválaszt egy összekötőt a listából, a portál az adott összeköt�
 
 Ha például a **VPP lejárati dátum** összekötőt választja, megnyílik az **iOS Volume-purchased program-jogkivonatok** lap, ahol megtekintheti az összekötő további részleteit. Létrehozhat egy új konfigurációt is, vagy szerkesztheti és kijavíthatja a meglévő problémákat.
 
-## <a name="service-health-dashboard"></a>Szolgáltatás állapotának irányítópultja  
+## <a name="service-health-dashboard"></a>Üzemállapot-jelző pult  
 A szolgáltatás állapota irányítópulton megtekintheti a bérlőt befolyásoló *szolgáltatási incidensek* részleteit, valamint az *Intune-híreket* , amelyek a frissítésekkel és a tervezett módosításokkal kapcsolatos információkat biztosítanak.
 
 ### <a name="intune-service-health"></a>Intune Service Health

@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2b58cbd0aa07babd36c7a7e5aa3dcc5b8d32d58a
-ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/01/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73415034"
 ---
 # <a name="supported-operating-systems-and-browsers-in-intune"></a>Az Intune-ban támogatott operációs rendszerek és böngészők
@@ -106,7 +106,7 @@ You can manage [Exchange ActiveSync devices](../enrollment/device-enrollment.md#
 
 A különféle felügyeleti tevékenységek elvégzésére a következő két felügyeleti webhely valamelyikét kell használnia.
 
-- [Microsoft 365 felügyeleti központ](https://go.microsoft.com/fwlink/p/?LinkId=698854)
+- [Microsoft 365 Felügyeleti központ](https://go.microsoft.com/fwlink/p/?LinkId=698854)
 - [Azure Portal](https://portal.azure.com/)
 
 Ezeken a portálokon jelenleg a következő böngészők támogatottak:

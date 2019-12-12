@@ -16,17 +16,17 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 40569af35a812074cc62546e3f85929416202b3b
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72506423"
 ---
 # <a name="import-wi-fi-settings-for-windows-devices-in-intune"></a>Windows-eszközök Wi-Fi-beállításainak importálása az Intune-ba
 
 A Windows rendszert futtató eszközökre importálhatja az előzőleg fájlba exportált Wi-Fi konfigurációs profilt. **Windows 10 és újabb rendszerű eszközökhöz közvetlenül az Intune-ban is [létrehozhat Wi-Fi-profilt](wi-fi-settings-windows.md)** .
 
-A következőkre vonatkozik:  
+A következőre érvényes  
 - Windows 8.1 és újabb
 - Windows 10 és újabb
 - A Windows 10 asztali vagy mobilverziója
@@ -41,7 +41,7 @@ A szükséges Wi-Fi-profillal már rendelkező Windows-számítógépen kövesse
 1. Hozzon létre egy helyi mappát az exportált W-Fi-profilokhoz, például a **c:\WiFi** mappát.
 2. Nyisson meg egy parancssort rendszergazdaként.
 3. Futtassa a `netsh wlan show profiles` parancsot, és jegyezze fel az exportálni kívánt profil nevét. Ebben a példában a profil neve: **WiFiName**.
-4. Futtassa a `netsh wlan export profile name="ProfileName" folder=c:\Wifi` parancsot. Ezzel létrehozza a **Wi-Fi-WiFiName.xml** nevű Wi-Fi-profilfájlt a célmappában.
+4. Futtassa a következő parancsot: `netsh wlan export profile name="ProfileName" folder=c:\Wifi`. Ezzel létrehozza a **Wi-Fi-WiFiName.xml** nevű Wi-Fi-profilfájlt a célmappában.
 
 ## <a name="import-the-wi-fi-settings-into-intune"></a>Wi-Fi-beállítások importálása az Intune-ba
 
@@ -67,6 +67,6 @@ A szükséges Wi-Fi-profillal már rendelkező Windows-számítógépen kövesse
 
 A profil létrejön, de egyelőre nem csinál semmit. A következő lépés a [profil hozzárendelése](device-profile-assign.md).
 
-## <a name="more-resources"></a>További források
+## <a name="more-resources"></a>További forrásanyagok
 
 [Wi-Fi-beállítások áttekintése](wi-fi-settings-configure.md), beleértve a többi rendelkezésre álló platformot is.

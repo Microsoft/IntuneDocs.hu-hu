@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 36407bda1f74d0c4601f78cedc2af5426e944fee
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72503416"
 ---
 # <a name="reference-for-devices-entities"></a>Eszközök típusú entitások referenciája
@@ -85,7 +85,7 @@ Az **enrollmentActivity** entitás az eszközök regisztrálásának tevékenys�
 | enrollmentFailureCategoryKey  | A beléptetési hiba kategóriájának kulcsa (ha a regisztráció sikertelen volt).        |
 | enrollmentFailureReasonKey    | A beléptetési hiba okának kulcsa (ha a regisztráció sikertelen volt).          |
 | osVersion                     | Az eszköz operációs rendszerének verziója.                               |
-| Száma                         | A fenti besorolásoknak megfelelő beléptetési tevékenységek teljes száma.  |
+| darabszám                         | A fenti besorolásoknak megfelelő beléptetési tevékenységek teljes száma.  |
 
 ## <a name="enrollmenteventstatuses"></a>enrollmentEventStatuses 
 Az **enrollmentEventStatus** entitás az eszközök regisztrálásának eredményét jelzi.
@@ -93,7 +93,7 @@ Az **enrollmentEventStatus** entitás az eszközök regisztrálásának eredmén
 | Tulajdonság                   | Description                                                                       |
 |----------------------------|-----------------------------------------------------------------------------------|
 | enrollmentEventStatusKey   | A regisztrációs állapot egyedi azonosítója az adattárházban (helyettes kulcs)  |
-| enrollmentEventStatusName  | A beléptetési állapot neve. Lásd az alábbi példákat.                            |
+| enrollmentEventStatusName  | A beléptetési állapot neve. Ez az alábbi példákon látható.                            |
 
 ### <a name="example"></a>Példa
 
@@ -109,7 +109,7 @@ A **EnrollmentFailureCategory** entitás jelzi, hogy az eszközök regisztrálá
 | Tulajdonság                       | Description                                                                                 |
 |--------------------------------|---------------------------------------------------------------------------------------------|
 | enrollmentFailureCategoryKey   | A beléptetési hiba kategóriájának egyedi azonosítója az adattárházban (helyettes kulcs)  |
-| enrollmentFailureCategoryName  | A beléptetési hiba kategóriájának neve. Lásd az alábbi példákat.                            |
+| enrollmentFailureCategoryName  | A beléptetési hiba kategóriájának neve. Ez az alábbi példákon látható.                            |
 
 ### <a name="example"></a>Példa
 
@@ -136,7 +136,7 @@ A **EnrollmentFailureReason** entitás egy adott meghibásodási kategórián be
 | Tulajdonság                     | Description                                                                               |
 |------------------------------|-------------------------------------------------------------------------------------------|
 | enrollmentFailureReasonKey   | A beléptetési hiba okának egyedi azonosítója az adattárházban (helyettes kulcs)  |
-| enrollmentFailureReasonName  | A beléptetési hiba okának neve. Lásd az alábbi példákat.                            |
+| enrollmentFailureReasonName  | A beléptetési hiba okának neve. Ez az alábbi példákon látható.                            |
 
 ### <a name="example"></a>Példa
 
@@ -170,7 +170,7 @@ A **enrollmentType** entitás azt jelzi, hogy az eszköz vállalati, személyes 
 | ownerTypeName |Az eszközök tulajdonosának típusát jelzi:  <br>Vállalati – az eszköz vállalati tulajdonban van. <br>Personal – az eszköz saját tulajdonban van (BYOD).  <br>Unknown – nincs információ az eszközről. |Vállalati személyes ismeretlen |
 
 > [!Note]  
-> Ahhoz, hogy az eszközökhöz dinamikus csoportokat hozzon létre, a AzureAD `ownerTypeName` értékének a következőnek kell megadnia: `deviceOwnership`. `Company`. További információ: [eszközök szabályai](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-dynamic-membership#rules-for-devices). 
+> Ahhoz, hogy az eszközökhöz dinamikus csoportokat hozzon létre a AzureAD `ownerTypeName`, a szűrő értékét `Company`ként kell beállítania `deviceOwnership`. További információ: [eszközök szabályai](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-dynamic-membership#rules-for-devices). 
 
 ## <a name="managementstates"></a>managementStates
 
@@ -242,7 +242,7 @@ Az **eszközök** entitás felsorolja a felügyelet alatt álló összes regiszt
 | deviceCategoryKey          | Az eszközhöz társított kategória kulcsa.                                                                                                                                     |
 | deviceEnrollmentType       | Az eszközhöz társított, a regisztráció módját jelző regisztrációtípus kulcsa.                                                                                             |
 | complianceStateKey         | Az eszközhöz társított megfelelőségi állapot kulcsa.                                                                                                                             |
-| osVersion                  | Az eszköz operációs rendszerének verziója.                                                                                                                                                |
+| osVersion                  | Az eszközön futó operációs rendszer verziószáma.                                                                                                                                                |
 | easDeviceId                | Az eszköz Exchange ActiveSync-azonosítója.                                                                                                                                                  |
 | serialNumber               | Sorozatszám                                                                                                                                                                           |
 | userId                     | Az eszközhöz társított felhasználó egyedi azonosítója.                                                                                                                           |

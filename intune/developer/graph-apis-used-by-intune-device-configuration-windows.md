@@ -17,15 +17,15 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c99c166713b9e3d8614ebe8f2756a586356c5b3b
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72490728"
 ---
 # <a name="graph-apis-and-matching-windows-10-csps-used-in-intune"></a>Az Intune-ban használt Graph API-k és a megfelelő Windows 10 CSP-k
 
-A Microsoft Intune a [Graph API entitásokat](https://docs.microsoft.com/graph/api/resources/intune-graph-overview) használja (egy másik docs-webhelyet nyit meg) a Windows 10 és újabb rendszerű eszközök (**Intune** > **eszköz konfigurációja**) konfigurálásához. A Graph API konfigurációs szolgáltatókat (CSP-ket) használ az eszközök konfigurációs beállításainak olvasására, beállítására, módosítására és/vagy törlésére.
+A Microsoft Intune a [Graph API entitásokat](https://docs.microsoft.com/graph/api/resources/intune-graph-overview) használja (megnyílik egy másik docs-hely) a Windows 10 vagy újabb rendszerű eszközök (**Intune** > - **eszköz konfiguráció**) konfigurálásához. A Graph API konfigurációs szolgáltatókat (CSP-ket) használ az eszközök konfigurációs beállításainak olvasására, beállítására, módosítására és/vagy törlésére.
 
 A lista a következőkre vonatkozik:
 
@@ -258,7 +258,7 @@ A következő API-k Windows 10-es verziójának megjelenítéséhez használja a
 
 ### <a name="windows10endpointprotectionconfigurationdefenderemailcontentexecutiontype"></a>Windows10EndpointProtectionConfiguration.DefenderEmailContentExecutionType 
 **CSP**:./Device/vendor/MSFT/Policy  
-**ELTOLÁS URI**:/config/DEFENDER/ATTACKSURFACEREDUCTIONRULES (CSP/Configuration szükséges gráf tulajdonságai: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, windows10endpointprotection/ Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType , windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Configuration. defenderUntrustedUSBProcessType
+**ELTOLÁS URI**:/config/DEFENDER/ATTACKSURFACEREDUCTIONRULES (CSP/Configuration szükséges gráf tulajdonságai: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Configuration. defenderUntrustedUSBProcessType
 
 ### <a name="windows10endpointprotectionconfigurationdefenderexploitprotectionxml"></a>Windows10EndpointProtectionConfiguration.DefenderExploitProtectionXml 
 **CSP**:./Device/vendor/MSFT/Policy **eltolási URI**:/config/ExploitGuard/ExploitProtectionSettings
@@ -283,7 +283,7 @@ A következő API-k Windows 10-es verziójának megjelenítéséhez használja a
 
 ### <a name="windows10endpointprotectionconfigurationdefenderofficeappsexecutablecontentcreationorlaunchtype"></a>Windows10EndpointProtectionConfiguration.DefenderOfficeAppsExecutableContentCreationOrLaunchType
 **CSP**:./Device/vendor/MSFT/Policy  
-**ELTOLÁS URI**:/config/DEFENDER/ATTACKSURFACEREDUCTIONRULES (CSP/Configuration szükséges gráf tulajdonságai: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, windows10endpointprotection/ Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType , windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Configuration. defenderUntrustedUSBProcessType
+**ELTOLÁS URI**:/config/DEFENDER/ATTACKSURFACEREDUCTIONRULES (CSP/Configuration szükséges gráf tulajdonságai: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Configuration. defenderUntrustedUSBProcessType
 
 ### <a name="windows10endpointprotectionconfigurationdefenderofficeappslaunchchildprocess"></a>Windows10EndpointProtectionConfiguration.DefenderOfficeAppsLaunchChildProcess 
 **CSP**:./Device/vendor/MSFT/Policy  
@@ -291,7 +291,7 @@ A következő API-k Windows 10-es verziójának megjelenítéséhez használja a
 
 ### <a name="windows10endpointprotectionconfigurationdefenderofficeappslaunchchildprocesstype"></a>Windows10EndpointProtectionConfiguration.DefenderOfficeAppsLaunchChildProcessType 
 **CSP**:./Device/vendor/MSFT/Policy  
-**ELTOLÁS URI**:/config/DEFENDER/ATTACKSURFACEREDUCTIONRULES (CSP/Configuration szükséges gráf tulajdonságai: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, windows10endpointprotection/ Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType , windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Configuration. defenderUntrustedUSBProcessType
+**ELTOLÁS URI**:/config/DEFENDER/ATTACKSURFACEREDUCTIONRULES (CSP/Configuration szükséges gráf tulajdonságai: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Configuration. defenderUntrustedUSBProcessType
 
 ### <a name="windows10endpointprotectionconfigurationdefenderofficeappsotherprocessinjection"></a>Windows10EndpointProtectionConfiguration.DefenderOfficeAppsOtherProcessInjection 
 **CSP**:./Device/vendor/MSFT/Policy  
@@ -299,7 +299,7 @@ A következő API-k Windows 10-es verziójának megjelenítéséhez használja a
 
 ### <a name="windows10endpointprotectionconfigurationdefenderofficeappsotherprocessinjectiontype"></a>Windows10EndpointProtectionConfiguration.DefenderOfficeAppsOtherProcessInjectionType 
 **CSP**:./Device/vendor/MSFT/Policy  
-**ELTOLÁS URI**:/config/DEFENDER/ATTACKSURFACEREDUCTIONRULES (CSP/Configuration szükséges gráf tulajdonságai: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, windows10endpointprotection/ Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType , windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Configuration. defenderUntrustedUSBProcessType 
+**ELTOLÁS URI**:/config/DEFENDER/ATTACKSURFACEREDUCTIONRULES (CSP/Configuration szükséges gráf tulajdonságai: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Configuration. defenderUntrustedUSBProcessType 
 
 ### <a name="windows10endpointprotectionconfigurationdefenderofficemacrocodeallowwin32imports"></a>Windows10EndpointProtectionConfiguration.DefenderOfficeMacroCodeAllowWin32Imports 
 **CSP**:./Device/vendor/MSFT/Policy  
@@ -307,11 +307,11 @@ A következő API-k Windows 10-es verziójának megjelenítéséhez használja a
 
 ### <a name="windows10endpointprotectionconfigurationdefenderofficemacrocodeallowwin32importstype"></a>Windows10EndpointProtectionConfiguration.DefenderOfficeMacroCodeAllowWin32ImportsType 
 **CSP**:./Device/vendor/MSFT/Policy  
-**ELTOLÁS URI**:/config/DEFENDER/ATTACKSURFACEREDUCTIONRULES (CSP/Configuration szükséges gráf tulajdonságai: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, windows10endpointprotection/ Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType , windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Configuration. defenderUntrustedUSBProcessType
+**ELTOLÁS URI**:/config/DEFENDER/ATTACKSURFACEREDUCTIONRULES (CSP/Configuration szükséges gráf tulajdonságai: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Configuration. defenderUntrustedUSBProcessType
 
 ### <a name="windows10endpointprotectionconfigurationdefenderpreventcredentialstealingtype"></a>Windows10EndpointProtectionConfiguration.DefenderPreventCredentialStealingType 
 **CSP**:./Device/vendor/MSFT/Policy  
-**ELTOLÁS URI**:/config/DEFENDER/ATTACKSURFACEREDUCTIONRULES (CSP/Configuration szükséges gráf tulajdonságai: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, windows10endpointprotection/ Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType , windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Configuration. defenderUntrustedUSBProcessType
+**ELTOLÁS URI**:/config/DEFENDER/ATTACKSURFACEREDUCTIONRULES (CSP/Configuration szükséges gráf tulajdonságai: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Configuration. defenderUntrustedUSBProcessType
 
 ### <a name="windows10endpointprotectionconfigurationdefenderprocesscreation"></a>Windows10EndpointProtectionConfiguration.DefenderProcessCreation 
 **CSP**:./Device/vendor/MSFT/Policy  
@@ -331,7 +331,7 @@ A következő API-k Windows 10-es verziójának megjelenítéséhez használja a
 
 ### <a name="windows10endpointprotectionconfigurationdefenderscriptdownloadedpayloadexecutiontype"></a>Windows10EndpointProtectionConfiguration.DefenderScriptDownloadedPayloadExecutionType 
 **CSP**:./Device/vendor/MSFT/Policy  
-**ELTOLÁS URI**:/config/DEFENDER/ATTACKSURFACEREDUCTIONRULES (CSP/Configuration szükséges gráf tulajdonságai: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, windows10endpointprotection/ Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType , windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Configuration. defenderUntrustedUSBProcessType
+**ELTOLÁS URI**:/config/DEFENDER/ATTACKSURFACEREDUCTIONRULES (CSP/Configuration szükséges gráf tulajdonságai: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Configuration. defenderUntrustedUSBProcessType
 
 ### <a name="windows10endpointprotectionconfigurationdefenderscriptobfuscatedmacrocode"></a>Windows10EndpointProtectionConfiguration.DefenderScriptObfuscatedMacroCode 
 **CSP**:./Device/vendor/MSFT/Policy  
@@ -339,7 +339,7 @@ A következő API-k Windows 10-es verziójának megjelenítéséhez használja a
 
 ### <a name="windows10endpointprotectionconfigurationdefenderscriptobfuscatedmacrocodetype"></a>Windows10EndpointProtectionConfiguration.DefenderScriptObfuscatedMacroCodeType 
 **CSP**:./Device/vendor/MSFT/Policy  
-**ELTOLÁS URI**:/config/DEFENDER/ATTACKSURFACEREDUCTIONRULES (CSP/Configuration szükséges gráf tulajdonságai: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, windows10endpointprotection/ Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType , windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Configuration. defenderUntrustedUSBProcessType
+**ELTOLÁS URI**:/config/DEFENDER/ATTACKSURFACEREDUCTIONRULES (CSP/Configuration szükséges gráf tulajdonságai: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Configuration. defenderUntrustedUSBProcessType
 
 ### <a name="windows10endpointprotectionconfigurationdefendersecuritycenterblockexploitprotectionoverride"></a>Windows10EndpointProtectionConfiguration.DefenderSecurityCenterBlockExploitProtectionOverride 
 **CSP**:./Device/vendor/MSFT/Policy **eltolási URI**:/config/WindowsDefenderSecurityCenter/DisallowExploitProtectionOverride
@@ -414,7 +414,7 @@ A következő API-k Windows 10-es verziójának megjelenítéséhez használja a
 
 ### <a name="windows10endpointprotectionconfigurationdefenderuntrustedusbprocesstype"></a>Windows10EndpointProtectionConfiguration.DefenderUntrustedUSBProcessType 
 **CSP**:./Device/vendor/MSFT/Policy  
-**ELTOLÁS URI**:/config/DEFENDER/ATTACKSURFACEREDUCTIONRULES (CSP/Configuration szükséges gráf tulajdonságai: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, windows10endpointprotection/ Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType , windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Configuration. defenderUntrustedUSBProcessType
+**ELTOLÁS URI**:/config/DEFENDER/ATTACKSURFACEREDUCTIONRULES (CSP/Configuration szükséges gráf tulajdonságai: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Configuration. defenderUntrustedUSBProcessType
 
 ### <a name="windows10endpointprotectionconfigurationdeviceguardenablesecurebootwithdma"></a>Windows10EndpointProtectionConfiguration.DeviceGuardEnableSecureBootWithDMA 
 **CSP**:./Device/vendor/MSFT/Policy  
@@ -497,7 +497,7 @@ A következő API-k Windows 10-es verziójának megjelenítéséhez használja a
 
 ### <a name="windows10endpointprotectionconfigurationfirewallprofiledomain"></a>Windows10EndpointProtectionConfiguration.FirewallProfileDomain 
 **CSP**:./vendor/MSFT/Firewall  
-**Eltolás URI-ja**:/EnableFirewall,/DisableStealthMode,/Shielded,/DisableUnicastResponsesToMulticastBroadcast,/DisableInboundNotifications,/AuthAppsAllowUserPrefMerge,/GlobalPortsAllowUserPrefMerge,/AllowLocalPolicyMerge,/ DefaultOutboundAction, /DefaultInboundAction, /DisableStealthModeIpsecSecuredPacketExemption, /AllowLocalIpsecPolicyMerge
+**Eltolás URI-ja**:/EnableFirewall,/DisableStealthMode,/Shielded,/DisableUnicastResponsesToMulticastBroadcast,/DisableInboundNotifications,/AuthAppsAllowUserPrefMerge,/GlobalPortsAllowUserPrefMerge,/AllowLocalPolicyMerge,/DefaultOutboundAction,/DefaultInboundAction,/DisableStealthModeIpsecSecuredPacketExemption,/AllowLocalIpsecPolicyMerge
 
 ### <a name="windows10endpointprotectionconfigurationfirewallprofiledomaininboundconnectionsblocked"></a>windows10endpointprotectionconfiguration.firewallProfileDomain.inboundConnectionsBlocked 
 **CSP**:./Device/vendor/MSFT/Firewall  
@@ -517,7 +517,7 @@ A következő API-k Windows 10-es verziójának megjelenítéséhez használja a
 
 ### <a name="windows10endpointprotectionconfigurationfirewallprofileprivate"></a>Windows10EndpointProtectionConfiguration.FirewallProfilePrivate 
 **CSP**:./vendor/MSFT/Firewall  
-**Eltolás URI-ja**:/EnableFirewall,/DisableStealthMode,/Shielded,/DisableUnicastResponsesToMulticastBroadcast,/DisableInboundNotifications,/AuthAppsAllowUserPrefMerge,/GlobalPortsAllowUserPrefMerge,/AllowLocalPolicyMerge,/ DefaultOutboundAction, /DefaultInboundAction, /DisableStealthModeIpsecSecuredPacketExemption, /AllowLocalIpsecPolicyMerge
+**Eltolás URI-ja**:/EnableFirewall,/DisableStealthMode,/Shielded,/DisableUnicastResponsesToMulticastBroadcast,/DisableInboundNotifications,/AuthAppsAllowUserPrefMerge,/GlobalPortsAllowUserPrefMerge,/AllowLocalPolicyMerge,/DefaultOutboundAction,/DefaultInboundAction,/DisableStealthModeIpsecSecuredPacketExemption,/AllowLocalIpsecPolicyMerge
 
 ### <a name="windows10endpointprotectionconfigurationfirewallprofileprivatefirewallenabled"></a>windows10endpointprotectionconfiguration.firewallProfilePrivate.firewallEnabled 
 **CSP**:./Device/vendor/MSFT/Firewall  
@@ -537,7 +537,7 @@ A következő API-k Windows 10-es verziójának megjelenítéséhez használja a
 
 ### <a name="windows10endpointprotectionconfigurationfirewallprofilepublic"></a>Windows10EndpointProtectionConfiguration.FirewallProfilePublic 
 **CSP**:./vendor/MSFT/Firewall  
-**Eltolás URI-ja**:/EnableFirewall,/DisableStealthMode,/Shielded,/DisableUnicastResponsesToMulticastBroadcast,/DisableInboundNotifications,/AuthAppsAllowUserPrefMerge,/GlobalPortsAllowUserPrefMerge,/AllowLocalPolicyMerge,/ DefaultOutboundAction, /DefaultInboundAction, /DisableStealthModeIpsecSecuredPacketExemption, /AllowLocalIpsecPolicyMerge
+**Eltolás URI-ja**:/EnableFirewall,/DisableStealthMode,/Shielded,/DisableUnicastResponsesToMulticastBroadcast,/DisableInboundNotifications,/AuthAppsAllowUserPrefMerge,/GlobalPortsAllowUserPrefMerge,/AllowLocalPolicyMerge,/DefaultOutboundAction,/DefaultInboundAction,/DisableStealthModeIpsecSecuredPacketExemption,/AllowLocalIpsecPolicyMerge
 
 ### <a name="windows10endpointprotectionconfigurationfirewallprofilepublicconnectionsecurityrulesfromgrouppolicymerged"></a>windows10endpointprotectionconfiguration.firewallProfilePublic.connectionSecurityRulesFromGroupPolicyMerged 
 **CSP**:./Device/vendor/MSFT/Firewall  
@@ -565,7 +565,7 @@ A következő API-k Windows 10-es verziójának megjelenítéséhez használja a
 
 ### <a name="windows10endpointprotectionconfigurationlanmanagerauthenticationlevel"></a>Windows10EndpointProtectionConfiguration.LanManagerAuthenticationLevel 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/NetworkSecurity @ No__t-1LANManagerAuthenticationLevel
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/NetworkSecurity\_LANManagerAuthenticationLevel
 
 ### <a name="windows10endpointprotectionconfigurationlanmanagerworkstationdisableinsecureguestlogons"></a>Windows10EndpointProtectionConfiguration.LanManagerWorkstationDisableInsecureGuestLogons 
 **CSP**:./Device/vendor/MSFT/Policy  
@@ -577,195 +577,195 @@ A következő API-k Windows 10-es verziójának megjelenítéséhez használja a
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsadministratoraccountname"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsAdministratorAccountName 
 **CSP**:./Device/vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/accounts @ No__t-1RenameAdministratorAccount
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/accounts\_RenameAdministratorAccount
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsadministratorelevationpromptbehavior"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsAdministratorElevationPromptBehavior
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/UserAccountControl @ No__t-1BehaviorOfTheElevationPromptForAdministrators
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/UserAccountControl\_BehaviorOfTheElevationPromptForAdministrators
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsallowanonymousenumerationofsamaccountsandshares"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsAllowAnonymousEnumerationOfSAMAccountsAndShares 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/NetworkAccess @ No__t-1DoNotAllowAnonymousEnumerationOfSamAccountsAndShares
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/NetworkAccess\_DoNotAllowAnonymousEnumerationOfSamAccountsAndShares
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsallowpku2uauthenticationrequests"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsAllowPKU2UAuthenticationRequests 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/NetworkSecurity @ No__t-1AllowPKU2UAuthenticationRequests
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/NetworkSecurity\_AllowPKU2UAuthenticationRequests
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsallowremotecallstosecurityaccountsmanager"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManager 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/NetworkAccess @ No__t-1RestrictClientsAllowedToMakeRemoteCallsToSAM
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/NetworkAccess\_RestrictClientsAllowedToMakeRemoteCallsToSAM
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsallowremotecallstosecurityaccountsmanagerhelperbool"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManagerHelperBool 
 **CSP**:./Device/vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/NetworkAccess @ No__t-1RestrictClientsAllowedToMakeRemoteCallsToSAM
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/NetworkAccess\_RestrictClientsAllowedToMakeRemoteCallsToSAM
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsallowsystemtobeshutdownwithouthavingtologon"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsAllowSystemToBeShutDownWithoutHavingToLogOn 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/shutdown @ No__t-1AllowSystemToBeShutDownWithoutHavingToLogOn
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/shutdown\_AllowSystemToBeShutDownWithoutHavingToLogOn
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsallowuiaccessapplicationelevation"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsAllowUIAccessApplicationElevation 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/UserAccountControl @ No__t-1AllowUIAccessApplicationsToPromptForElevation
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/UserAccountControl\_AllowUIAccessApplicationsToPromptForElevation
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsallowuiaccessapplicationsforsecurelocations"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsAllowUIAccessApplicationsForSecureLocations 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/UserAccountControl @ No__t-1OnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/UserAccountControl\_OnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsallowundockwithouthavingtologon"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsAllowUndockWithoutHavingToLogon 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/Devices @ No__t-1AllowUndockWithoutHavingToLogon
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/Devices\_AllowUndockWithoutHavingToLogon
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsblockmicrosoftaccounts"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsBlockMicrosoftAccounts 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/accounts @ No__t-1BlockMicrosoftAccounts
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/accounts\_BlockMicrosoftAccounts
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsblockremotelogonwithblankpassword"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsBlockRemoteLogonWithBlankPassword 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/accounts @ No__t-1LimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/accounts\_LimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsblockremoteopticaldriveaccess"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsBlockRemoteOpticalDriveAccess 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/Devices @ No__t-1RestrictCDROMAccessToLocallyLoggedOnUserOnly
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/Devices\_RestrictCDROMAccessToLocallyLoggedOnUserOnly
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsblockusersinstallingprinterdrivers"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsBlockUsersInstallingPrinterDrivers 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/Devices @ No__t-1PreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/Devices\_PreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsclearvirtualmemorypagefile"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsClearVirtualMemoryPageFile 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/shutdown @ No__t-1ClearVirtualMemoryPageFile
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/shutdown\_ClearVirtualMemoryPageFile
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsclientdigitallysigncommunicationsalways"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsClientDigitallySignCommunicationsAlways 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/MicrosoftNetworkClient @ No__t-1DigitallySignCommunicationsAlways
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/MicrosoftNetworkClient\_DigitallySignCommunicationsAlways
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsclientsendunencryptedpasswordtothirdpartysmbservers"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsClientSendUnencryptedPasswordToThirdPartySMBServers 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/MicrosoftNetworkClient @ No__t-1SendUnencryptedPasswordToThirdPartySMBServers
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/MicrosoftNetworkClient\_SendUnencryptedPasswordToThirdPartySMBServers
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsdetectapplicationinstallationsandpromptforelevation"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsDetectApplicationInstallationsAndPromptForElevation 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/UserAccountControl @ No__t-1DetectApplicationInstallationsAndPromptForElevation
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/UserAccountControl\_DetectApplicationInstallationsAndPromptForElevation
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsdisableadministratoraccount"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsDisableAdministratorAccount 
 **CSP**:./Device/vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/accounts @ No__t-1EnableAdministratorAccountStatus
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/accounts\_EnableAdministratorAccountStatus
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsdisableclientdigitallysigncommunicationsifserveragrees"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsDisableClientDigitallySignCommunicationsIfServerAgrees 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/MicrosoftNetworkClient @ No__t-1DigitallySignCommunicationsIfServerAgrees
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/MicrosoftNetworkClient\_DigitallySignCommunicationsIfServerAgrees
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsdisableguestaccount"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsDisableGuestAccount 
 **CSP**:./Device/vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/accounts @ No__t-1EnableGuestAccountStatus
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/accounts\_EnableGuestAccountStatus
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsdisableserverdigitallysigncommunicationsalways"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsDisableServerDigitallySignCommunicationsAlways 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/MicrosoftNetworkServer @ No__t-1DigitallySignCommunicationsAlways
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/MicrosoftNetworkServer\_DigitallySignCommunicationsAlways
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsdisableserverdigitallysigncommunicationsifclientagrees"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsDisableServerDigitallySignCommunicationsIfClientAgrees 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/MicrosoftNetworkServer @ No__t-1DigitallySignCommunicationsIfClientAgrees
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/MicrosoftNetworkServer\_DigitallySignCommunicationsIfClientAgrees
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsdonotallowanonymousenumerationofsamaccounts"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsDoNotAllowAnonymousEnumerationOfSAMAccounts 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/NetworkAccess @ No__t-1DoNotAllowAnonymousEnumerationOfSAMAccounts
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/NetworkAccess\_DoNotAllowAnonymousEnumerationOfSAMAccounts
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsdonotrequirectrlaltdel"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsDoNotRequireCtrlAltDel 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/InteractiveLogon @ No__t-1DoNotRequireCTRLALTDEL
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/InteractiveLogon\_DoNotRequireCTRLALTDEL
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsdonotstorelanmanagerhashvalueonnextpasswordchange"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsDoNotStoreLANManagerHashValueOnNextPasswordChange 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/NetworkSecurity @ No__t-1DoNotStoreLANManagerHashValueOnNextPasswordChange
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/NetworkSecurity\_DoNotStoreLANManagerHashValueOnNextPasswordChange
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsenableadministratoraccount"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsEnableAdministratorAccount 
 **CSP**:./Device/vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/accounts @ No__t-1EnableAdministratorAccountStatus
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/accounts\_EnableAdministratorAccountStatus
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsenableguestaccount"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsEnableGuestAccount 
 **CSP**:./Device/vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/accounts @ No__t-1EnableGuestAccountStatus
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/accounts\_EnableGuestAccountStatus
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsformatandejectofremovablemediaalloweduser"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/Devices @ No__t-1AllowedToFormatAndEjectRemovableMedia
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/Devices\_AllowedToFormatAndEjectRemovableMedia
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsguestaccountname"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsGuestAccountName 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/accounts @ No__t-1RenameGuestAccount
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/accounts\_RenameGuestAccount
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionshidelastsignedinuser"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsHideLastSignedInUser 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/InteractiveLogon @ No__t-1DoNotDisplayLastSignedIn
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/InteractiveLogon\_DoNotDisplayLastSignedIn
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionshideusernameatsignin"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsHideUsernameAtSignIn 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/InteractiveLogon @ No__t-1DoNotDisplayUsernameAtSignIn
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/InteractiveLogon\_DoNotDisplayUsernameAtSignIn
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsinformationdisplayedonlockscreen"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsInformationDisplayedOnLockScreen 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/InteractiveLogon @ No__t-1DisplayUserInformationWhenTheSessionIsLocked
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/InteractiveLogon\_DisplayUserInformationWhenTheSessionIsLocked
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsinformationshownonlockscreen"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsInformationShownOnLockScreen 
 **CSP**:./Device/vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/InteractiveLogon @ No__t-1DisplayUserInformationWhenTheSessionIsLocked
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/InteractiveLogon\_DisplayUserInformationWhenTheSessionIsLocked
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionslogonmessagetext"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsLogOnMessageText 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/InteractiveLogon @ No__t-1MessageTextForUsersAttemptingToLogOn
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/InteractiveLogon\_MessageTextForUsersAttemptingToLogOn
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionslogonmessagetitle"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsLogOnMessageTitle 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/InteractiveLogon @ No__t-1MessageTitleForUsersAttemptingToLogOn
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/InteractiveLogon\_MessageTitleForUsersAttemptingToLogOn
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsmachineinactivitylimit"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsMachineInactivityLimit 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/InteractiveLogon @ No__t-1MachineInactivityLimit
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/InteractiveLogon\_MachineInactivityLimit
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsmachineinactivitylimitinminutes"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsMachineInactivityLimitInMinutes 
 **CSP**:./Device/vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/InteractiveLogon @ No__t-1MachineInactivityLimit
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/InteractiveLogon\_MachineInactivityLimit
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsminimumsessionsecurityforntlmsspbasedclients"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/NetworkSecurity @ No__t-1MinimumSessionSecurityForNTLMSSPBasedClients
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/NetworkSecurity\_MinimumSessionSecurityForNTLMSSPBasedClients
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsminimumsessionsecurityforntlmsspbasedservers"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/NetworkSecurity @ No__t-1MinimumSessionSecurityForNTLMSSPBasedServers
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/NetworkSecurity\_MinimumSessionSecurityForNTLMSSPBasedServers
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsonlyelevatesignedexecutables"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsOnlyElevateSignedExecutables 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/UserAccountControl @ No__t-1OnlyElevateExecutableFilesThatAreSignedAndValidated
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/UserAccountControl\_OnlyElevateExecutableFilesThatAreSignedAndValidated
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsrestrictanonymousaccesstonamedpipesandshares"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsRestrictAnonymousAccessToNamedPipesAndShares 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/NetworkAccess @ No__t-1RestrictAnonymousAccessToNamedPipesAndShares
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/NetworkAccess\_RestrictAnonymousAccessToNamedPipesAndShares
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionssmartcardremovalbehavior"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsSmartCardRemovalBehavior 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/InteractiveLogon @ No__t-1SmartCardRemovalBehavior
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/InteractiveLogon\_SmartCardRemovalBehavior
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsstandarduserelevationpromptbehavior"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsStandardUserElevationPromptBehavior 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/UserAccountControl @ No__t-1BehaviorOfTheElevationPromptForStandardUsers
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/UserAccountControl\_BehaviorOfTheElevationPromptForStandardUsers
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsswitchtosecuredesktopwhenpromptingforelevation"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsSwitchToSecureDesktopWhenPromptingForElevation 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/UserAccountControl @ No__t-1SwitchToTheSecureDesktopWhenPromptingForElevation
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/UserAccountControl\_SwitchToTheSecureDesktopWhenPromptingForElevation
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsuseadminapprovalmode"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsUseAdminApprovalMode 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/UserAccountControl @ No__t-1UseAdminApprovalMode
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/UserAccountControl\_UseAdminApprovalMode
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsuseadminapprovalmodeforadministrators"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsUseAdminApprovalModeForAdministrators 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/UserAccountControl @ No__t-1RunAllAdministratorsInAdminApprovalMode
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/UserAccountControl\_RunAllAdministratorsInAdminApprovalMode
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsvirtualizefileandregistrywritefailurestoperuserlocations"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsVirtualizeFileAndRegistryWriteFailuresToPerUserLocations 
 **CSP**:./vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/UserAccountControl @ No__t-1VirtualizeFileAndRegistryWriteFailuresToPerUserLocations
+**Eltolás URI-ja**:/config/LocalPoliciesSecurityOptions/UserAccountControl\_VirtualizeFileAndRegistryWriteFailuresToPerUserLocations
 
 ### <a name="windows10endpointprotectionconfigurationnetworkicmpredirectsoverrideospfgeneratedroutes"></a>Windows10EndpointProtectionConfiguration.NetworkIcmpRedirectsOverrideOspfGeneratedRoutes 
 **CSP**:./Device/vendor/MSFT/Policy  
@@ -821,7 +821,7 @@ A következő API-k Windows 10-es verziójának megjelenítéséhez használja a
 
 ### <a name="windows10endpointprotectionconfigurationremotemanagementclientbasicauthentication"></a>Windows10EndpointProtectionConfiguration.RemoteManagementClientBasicAuthentication 
 **CSP**:./Device/vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/RemoteManagement/AllowBasicAuthentication @ No__t-1Client
+**ELTOLÁS URI**:/config/RemoteManagement/AllowBasicAuthentication\_-ügyfél
 
 ### <a name="windows10endpointprotectionconfigurationremotemanagementclientdigestauthentication"></a>Windows10EndpointProtectionConfiguration.RemoteManagementClientDigestAuthentication 
 **CSP**:./Device/vendor/MSFT/Policy  
@@ -829,11 +829,11 @@ A következő API-k Windows 10-es verziójának megjelenítéséhez használja a
 
 ### <a name="windows10endpointprotectionconfigurationremotemanagementclientunencryptedtraffic"></a>Windows10EndpointProtectionConfiguration.RemoteManagementClientUnencryptedTraffic 
 **CSP**:./Device/vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/RemoteManagement/AllowUnencryptedTraffic @ No__t-1Client
+**ELTOLÁS URI**:/config/RemoteManagement/AllowUnencryptedTraffic\_-ügyfél
 
 ### <a name="windows10endpointprotectionconfigurationremotemanagementservicebasicauthentication"></a>Windows10EndpointProtectionConfiguration.RemoteManagementServiceBasicAuthentication 
 **CSP**:./Device/vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/RemoteManagement/AllowBasicAuthentication @ No__t-1Service
+**ELTOLÁS URI**:/config/RemoteManagement/AllowBasicAuthentication\_szolgáltatás
 
 ### <a name="windows10endpointprotectionconfigurationremotemanagementservicestoringrunascredentials"></a>Windows10EndpointProtectionConfiguration.RemoteManagementServiceStoringRunAsCredentials 
 **CSP**:./Device/vendor/MSFT/Policy  
@@ -841,7 +841,7 @@ A következő API-k Windows 10-es verziójának megjelenítéséhez használja a
 
 ### <a name="windows10endpointprotectionconfigurationremotemanagementserviceunencryptedtraffic"></a>Windows10EndpointProtectionConfiguration.RemoteManagementServiceUnencryptedTraffic 
 **CSP**:./Device/vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/RemoteManagement/AllowUnencryptedTraffic @ No__t-1Service
+**ELTOLÁS URI**:/config/RemoteManagement/AllowUnencryptedTraffic\_szolgáltatás
 
 ### <a name="windows10endpointprotectionconfigurationrpcunauthenticatedclientoptions"></a>Windows10EndpointProtectionConfiguration.RpcUnauthenticatedClientOptions 
 **CSP**:./Device/vendor/MSFT/Policy  
@@ -2623,7 +2623,7 @@ A következő API-k Windows 10-es verziójának megjelenítéséhez használja a
 
 ### <a name="windows10networkboundaryconfigurationwindowsnetworkisolationpolicy"></a>Windows10NetworkBoundaryConfiguration.WindowsNetworkIsolationPolicy 
 **CSP**:./Device/vendor/MSFT/Policy  
-**Eltolás URI-ja**:/config/NetworkIsolation/EnterpriseCloudResources,/config/NetworkIsolation/EnterpriseIPRange,/config/NetworkIsolation/EnterpriseIPRangesAreAuthoritative,/config/NetworkIsolation/ EnterpriseInternalProxyServers, /Config/NetworkIsolation/EnterpriseNetworkDomainNames, /Config/NetworkIsolation/EnterpriseProxyServers, /Config/NetworkIsolation/EnterpriseProxyServersAreAuthoritative, /Config/NetworkIsolation/ NeutralResources
+**Eltolás URI-ja**:/config/NetworkIsolation/EnterpriseCloudResources,/config/NetworkIsolation/EnterpriseIPRange,/config/NetworkIsolation/EnterpriseIPRangesAreAuthoritative,/config/NetworkIsolation/EnterpriseInternalProxyServers,/config/NetworkIsolation/EnterpriseNetworkDomainNames,/config/NetworkIsolation/EnterpriseProxyServers,/config/NetworkIsolation/EnterpriseProxyServersAreAuthoritative,/config/NetworkIsolation/NeutralResources
 
 ### <a name="windows10policyoverrideconfigurationprefermdmovergrouppolicy"></a>Windows10PolicyOverrideConfiguration.PreferMdmOverGroupPolicy 
 **CSP**:./Device/vendor/MSFT/Policy  

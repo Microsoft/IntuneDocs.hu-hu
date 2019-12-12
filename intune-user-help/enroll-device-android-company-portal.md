@@ -20,10 +20,10 @@ ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5baf0e9079cc148101a68e5cd2d3a4ed500f567f
-ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/01/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73414863"
 ---
 # <a name="enroll-your-device-with-company-portal"></a>Az eszköz regisztrálása a Céges portál  
@@ -32,7 +32,7 @@ Regisztrálja személyes vagy vállalati tulajdonú Android-eszközét, hogy biz
 > [!VIDEO https://www.youtube.com/embed/k0Q_sGLSx6o?rel=0]
 
 > [!NOTE]
-> A Samsung Knox olyan biztonsági típus, amelyet bizonyos Samsung-eszközök a natív Android által biztosított további védelemhez használnak. Ellenőrizze, hogy Samsung Knox-eszközzel rendelkezik-e, > lépjen az**eszköz** **Beállítások** > . Ha nem jelenik meg a **Knox-verzió** , akkor natív Android-eszközzel rendelkezik.
+> A Samsung Knox olyan biztonsági típus, amelyet bizonyos Samsung-eszközök a natív Android által biztosított további védelemhez használnak. Ellenőrizze, hogy rendelkezik-e Samsung Knox-eszközzel, > lépjen a **beállítások** > **az eszköz névjegye**elemre. Ha nem jelenik meg a **Knox-verzió** , akkor natív Android-eszközzel rendelkezik.
 
 ## <a name="enroll-device"></a>Eszköz regisztrálása  
 Győződjön meg arról, hogy [az ingyenes Intune céges portál alkalmazást a Google Play](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal)áruházból telepíti. 

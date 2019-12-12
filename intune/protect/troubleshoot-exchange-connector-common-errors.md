@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b30a7e843850d6918abc2e76f84397a1f197516f
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72508856"
 ---
 # <a name="resolve-common-errors-for-the-intune-exchange-connector"></a>Az Intune Exchange Connector gyakori hibáinak elhárítása
@@ -77,7 +77,7 @@ A Microsoft Intune Exchange Connector konfigurálásakor a következő hibaüzen
    Verify that you are connected to the Internet, check the Microsoft Intune Service Status, and try to connect again.  
    Error code: 0x00000006  
 ```  
-Ez a hiba akkor fordulhat elő, ha egy proxykiszolgáló csatlakozik az internethez, és blokkolja az Intune szolgáltatás felé irányuló forgalmat. Annak megállapításához, hogy a proxy használatban van-e, nyissa meg a **vezérlőpult** > **Internetbeállítások**csomópontot, válassza a **kapcsolatok** fület, majd kattintson a **LAN-beállítások**elemre.
+Ez a hiba akkor fordulhat elő, ha egy proxykiszolgáló csatlakozik az internethez, és blokkolja az Intune szolgáltatás felé irányuló forgalmat. Annak megállapításához, hogy a proxy használatban van-e, nyissa meg a **vezérlőpult** > **internetes beállítások**elemét, válassza a **Csatlakozás** lapot, majd kattintson a **LAN-beállítások**elemre.
 
 **Megoldás**:  
 
@@ -123,20 +123,20 @@ Az iOS-eszközök nem regisztrálhatnak az Intune-ban, és a következő hibaüz
    Domain and account: .\WIEC_USER
    This service account does not have the required user right "Log on as a service."  
 ```
-Ez a probléma akkor fordulhat elő, ha a **WIEC_User** -fiók nem rendelkezik a helyi házirendben a **Bejelentkezés szolgáltatásként** felhasználói jogosultsággal.
+Ez a probléma akkor fordulhat elő, ha az **WIEC_User** -fiók nem rendelkezik a helyi házirendben a **Bejelentkezés szolgáltatásként** felhasználói jogosultsággal.
 
 **Megoldás**:  
 Az Intune Exchange Connectort futtató számítógépen rendelje hozzá a **Bejelentkezés szolgáltatásként** felhasználói jogosultságot a **WIEC_User** -szolgáltatásfiók számára. Ha a számítógép egy fürt egyik csomópontja, akkor a fürt összes csomópontján ellenőrizze, hogy a *Bejelentkezés szolgáltatásként* felhasználói jogosultsággal van-e hozzárendelve a fürtszolgáltatási fiókhoz.  
 
-Az alábbi lépéseket követve rendelje hozzá a **Bejelentkezés szolgáltatásként** felhasználói jogosultságot a számítógép **WIEC_User** -fiókjához:
+Az alábbi lépéseket követve rendelje hozzá a **Bejelentkezés szolgáltatásként** felhasználói jogosultságot a számítógépen lévő **WIEC_User** -szolgáltatásfiók számára:
 
 1. Jelentkezzen be a számítógépre rendszergazdaként vagy a rendszergazdák csoport tagjaként.
 2. Futtassa a **secpol. msc fájlt** a helyi biztonsági házirend megnyitásához.
 3. Lépjen a **biztonsági beállítások** > **helyi házirendek**elemre, majd válassza a **felhasználói jogok kiosztása**elemet.
 4. A jobb oldali ablaktáblán kattintson duplán a **Bejelentkezés szolgáltatásként**lehetőségre.
-5. Válassza a **felhasználó vagy csoport hozzáadása**lehetőséget, adja hozzá a **WIEC_USER** a Szabályzathoz, majd kattintson kétszer **az OK gombra** .
+5. Válassza a **felhasználó vagy csoport hozzáadása**lehetőséget, adja hozzá **WIEC_USER** a Szabályzathoz, majd kattintson kétszer **az OK gombra** .
 
-Ha a **bejelentkezési szolgáltatás** felhasználói jogosultsága hozzá lett rendelve a **WIEC_User** -hez, de később el lett távolítva, forduljon a tartományi rendszergazdához annak megállapításához, hogy egy csoportházirend-beállítás felülírja-e.  
+Ha a **Bejelentkezés szolgáltatásként** felhasználói jogosultság **WIEC_User** , de később el lett távolítva, vegye fel a kapcsolatot a tartományi rendszergazdával, és állapítsa meg, hogy egy csoportházirend-beállítás felülírja-e.  
 
 ## <a name="next-steps"></a>További lépések  
 

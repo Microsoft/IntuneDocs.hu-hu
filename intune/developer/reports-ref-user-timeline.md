@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b94be3e1454c60f16ff40e73ce37f8c4e349126d
-ms.sourcegitcommit: 25acfc88b366d2da71c37d354a0238e4f1168325
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72813342"
 ---
 # <a name="user-lifetime-representation-in-the-microsoft-intune-data-warehouse"></a>A felhasználói élettartam reprezentációja a Microsoft Intune-adattárházban
@@ -39,14 +39,14 @@ Tegyük fel, hogy egy **Kovács János** nevű felhasználóhoz 2017. június 1-
  
 | DisplayName | IsDeleted | StartDateInclusiveUTC | EndDateExclusiveUTC | IsCurrent 
 | -- | -- | -- | -- | -- |
-| Kovács János | HAMIS | 06/01/2017 | 12/31/9999 | IGAZ
+| Kovács János | HAMIS | 06/01/2017 | 12/31/9999 | TRUE
  
 Kovács János 2017. július 25-én visszaadja a licencét. A **Felhasználó** táblán a következő bejegyzések jelennek meg. A meglévő rekordok változásai `marked`. 
 
 | DisplayName | IsDeleted | StartDateInclusiveUTC | EndDateExclusiveUTC | IsCurrent 
 | -- | -- | -- | -- | -- |
 | Kovács János | HAMIS | 06/01/2017 | `07/26/2017` | `FALSE` 
-| Kovács János | IGAZ | 07/26/2017 | 12/31/9999 | IGAZ 
+| Kovács János | TRUE | 07/26/2017 | 12/31/9999 | TRUE 
 
 Az első sor azt jelzi, hogy Kovács János 2017/06/01-től 2017/07/25-ig létezett az Intune rendszerében. A második rekord azt jelzi, hogy a felhasználót 2017/07/25-én törölték, és már nincs jelen az Intune rendszerében.
 
@@ -55,8 +55,8 @@ Most tegyük fel, hogy Kovács János 2017. augusztus 31-én új licencet kap. E
 | DisplayName | IsDeleted | StartDateInclusiveUTC | EndDateExclusiveUTC | IsCurrent 
 | -- | -- | -- | -- | -- |
 | Kovács János | HAMIS | 06/01/2017 | 07/26/2017 | HAMIS 
-| Kovács János | IGAZ | 07/26/2017 | `08/31/2017` | `FALSE` 
-| Kovács János | HAMIS | 08/31/2017 | 12/31/9999 | IGAZ 
+| Kovács János | TRUE | 07/26/2017 | `08/31/2017` | `FALSE` 
+| Kovács János | HAMIS | 08/31/2017 | 12/31/9999 | TRUE 
  
 Ha az összes felhasználó jelenlegi állapotát szeretné látni, olyan szűrőt érdemes alkalmaznia, ahol `IsCurrent = TRUE`. 
  

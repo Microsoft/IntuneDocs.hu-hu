@@ -18,10 +18,10 @@ ROBOTS: ''
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 50b5db465b79e3309375a34078c645a52f0427f0
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72508276"
 ---
 # <a name="set-or-change-your-passcode"></a>PIN-kód beállítása vagy módosítása
@@ -35,13 +35,13 @@ Ha problémája van a PIN-kód létrehozásával vagy módosításával, lépjen
 
 ## <a name="set-your-passcode"></a>A PIN-kód beállítása
 
-1. Koppintson a **Settings (Beállítások)**  > **Touch ID & Passcode** (Touch ID és PIN-kód) pontra.
+1. Koppintson a **Settings (Beállítások)** > **Touch ID & Passcode** (Touch ID és PIN-kód) pontra.
 2. A **Touch ID & Passcode** (Touch ID és PIN-kód) menüben koppintson a **Turn Passcode On** (PIN-kód bekapcsolása) pontra.
 3. Adjon meg egy új PIN-kódot, amely megfelel a cég informatikai támogató szolgálata által meghatározott követelményeknek, majd a megerősítéshez írja be még egyszer.
 
 ## <a name="change-your-passcode"></a>PIN-kód módosítása
 
-1. Koppintson a **Settings (Beállítások)**  > **Touch ID & Passcode** (Touch ID és PIN-kód) pontra.
+1. Koppintson a **Settings (Beállítások)** > **Touch ID & Passcode** (Touch ID és PIN-kód) pontra.
 2. Adja meg a jelenlegi PIN-kódot. Megnyílik a **Touch ID & Passcode** (Touch ID és PIN-kód) menü.
 2. Koppintson a **Change Passcode** (PIN-kód módosítása) elemre, és adja meg a régi PIN-kódját.
 3. Adjon meg egy új PIN-kódot, amely megfelel a cég informatikai támogató szolgálata által meghatározott követelményeknek, majd a megerősítéshez írja be még egyszer.

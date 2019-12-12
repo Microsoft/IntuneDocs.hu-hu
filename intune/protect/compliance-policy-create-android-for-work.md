@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: be1fbb72821b61566da84d6f98094c9a2f6ffef2
-ms.sourcegitcommit: 3ace4cba6e2f6fefa9120be3807387a49b200c9b
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72810257"
 ---
 # <a name="android-enterprise-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>Androidos vállalati beállítások az eszközök megfelelő vagy nem megfelelőként való megjelöléséhez az Intune-nal
@@ -115,13 +115,13 @@ Intune-rendszergazdaként ezeket a megfelelőségi beállításokat használhatj
 
     - **Nem szükséges karakterek száma**: Itt adhatja meg, hogy a jelszónak hány karakterből kell állnia (az ábécében szereplő betűk kivételével), 0 és 16 karakter között kell lennie.
 
-    - **Szükséges numerikus karakterek száma**: adja meg a numerikus karakterek számát (`1`, `2`, `3` stb.) a jelszónak 0 és 16 karakter közöttinek kell lennie.
+    - **Megkövetelt numerikus karakterek száma**: megadhatja, hogy a jelszónak 0 és 16 karakter közöttinek kell lennie (`1`, `2`, `3`stb.).
     
     - **Szükséges karakterek száma**: Itt adhatja meg, hogy hány szimbólumot kell megadni (`&`, `#`, `%`stb.) a jelszónak 0 és 16 karakter közöttinek kell lennie.
  
 - **Jelszó kérése legfeljebb ennyi perc inaktivitás után**: Arra a tétlenségi időre vonatkozik, amelynek elteltével a felhasználónak újra meg kell adnia a jelszavát. A beállítások közé tartozik a *nem konfigurált*alapértelmezett érték, valamint *1 perc* és *8 óra*között.
 
-- A **jelszó lejárati idejét jelző napok száma**: adja meg a napok számát 1-365 között, amíg meg nem változtatja az eszköz jelszavát. Ha például a 60 nap után szeretné módosítani a jelszót, írja be `60` értéket. A jelszó lejáratakor a rendszer a felhasználókat új jelszó létrehozására kéri.
+- A **jelszó lejárati idejét jelző napok száma**: adja meg a napok számát 1-365 között, amíg meg nem változtatja az eszköz jelszavát. Ha például a 60 nap után szeretné módosítani a jelszót, írja be `60`. A jelszó lejáratakor a rendszer a felhasználókat új jelszó létrehozására kéri.
 
    *Alapértelmezés szerint nincs beállítva érték*.
 
@@ -203,7 +203,7 @@ Intune-rendszergazdaként ezeket a megfelelőségi beállításokat használhatj
   A választott *jelszó* típusától függően a következő beállítások érhetők el:  
   - **Jelszó kérése legfeljebb ennyi perc inaktivitás után**: Arra a tétlenségi időre vonatkozik, amelynek elteltével a felhasználónak újra meg kell adnia a jelszavát. A beállítások közé tartozik a *nem konfigurált*alapértelmezett érték, valamint *1 perc* és *8 óra*között.
 
-  - A **jelszó lejárati idejét jelző napok száma**: adja meg a napok számát 1-365 között, amíg meg nem változtatja az eszköz jelszavát. Ha például a 60 nap után szeretné módosítani a jelszót, írja be `60` értéket. A jelszó lejáratakor a rendszer a felhasználókat új jelszó létrehozására kéri.
+  - A **jelszó lejárati idejét jelző napok száma**: adja meg a napok számát 1-365 között, amíg meg nem változtatja az eszköz jelszavát. Ha például a 60 nap után szeretné módosítani a jelszót, írja be `60`. A jelszó lejáratakor a rendszer a felhasználókat új jelszó létrehozására kéri.
 
   - **Jelszó minimális hossza**: Itt adhatja meg a jelszó minimális hosszát 4 és 16 karakter között. 
   

@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 64fc1bab596715be80fd3a91c003cac1176fe787
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72490276"
 ---
 # <a name="reference-for-policy-entities"></a>Házirend entitások referenciája
@@ -40,7 +40,7 @@ A **házirend** entitás felsorolja az eszköz konfigurációs profiljait, az al
 | Tulajdonság  | Description | Példa |
 |---------|------------|--------|
 | policyKey |A szabályzat adattárházban való jelölésére szolgáló egyedi kulcs. |123 |
-| PolicyId |A szabályzat egyedi azonosítója az adattárházban. |b66bc706-ffff-7437-0340-032819502773 |
+| policyId |A szabályzat egyedi azonosítója az adattárházban. |b66bc706-ffff-7437-0340-032819502773 |
 | policyName |A szabályzat neve. |„Windows 10 Baseline” |
 | policyVersion |A szabályzat verziója. A szabályzat szerkesztésekor vagy módosításakor új verzió jön létre. |1, 2, 3 |
 | isDeleted |Jelzi, hogy frissítve lett-e a szabályzatrekord.  <br>Igaz – a szabályzat új, frissített mezőkkel ellátott rekorddal rendelkezik. <br>Hamis – a szabályzat legújabb rekordja. |Igaz/hamis |
@@ -65,7 +65,7 @@ A **deviceConfigurationProfileDeviceActivity** entitás naponta listázza a sike
 | Tulajdonság  | Description | Példa |
 |---------|------------|--------|
 | dateKey |A dátumkulcs azt jelzi, hogy az adattárházban mikor lett rögzítve az eszközkonfigurációs profil bejelentkezése. |20160703 |
-| Függőben |A függő állapotú egyedi eszközök száma. |123 |
+| függőben |A függő állapotú egyedi eszközök száma. |123 |
 | Sikerült |A sikeres állapotú egyedi eszközök száma. |12 |
 | Hiba |A hibás állapotú egyedi eszközök száma. |10 |
 | sikertelen |A sikertelen állapotú egyedi eszközök száma. |2 |
@@ -75,7 +75,7 @@ A **deviceConfigurationProfileUserActivity** entitás naponta listázza a sikere
 | Tulajdonság  | Description | Példa |
 |---------|------------|--------|
 | dateKey |A dátumkulcs azt jelzi, hogy az adattárházban mikor lett rögzítve az eszközkonfigurációs profil bejelentkezése. |20160703 |
-| Függőben |A függő állapotú egyedi felhasználók száma. |123 |
+| függőben |A függő állapotú egyedi felhasználók száma. |123 |
 | Sikerült |A sikeres állapotú egyedi felhasználók száma. |12 |
 | Hiba |A hibás állapotú egyedi felhasználók száma. |10 |
 | sikertelen |A sikertelen állapotú egyedi felhasználók száma. |2 |
@@ -89,7 +89,7 @@ A **policyTypeActivity** entitás a sikeres, függő, sikertelen vagy hibás ál
 | dateKey |dateKey, amikor az eszköz konfigurációs profiljának beadását rögzítették az adattárházban. |20160703 |
 | policyKey |a policyKey a policyName lekéréséhez csatlakozhat a szabályzathoz. |Windows 10 baseline |
 | policyTypeKey |Szabályzatkulcs típusa, amely összekapcsolható a szabályzattípussal a szabályzattípus nevének lekérése érdekében. |Windows 10-es megfelelőségi szabályzat |
-| Függőben |A függő állapotú egyedi eszközök száma. |123 |
+| függőben |A függő állapotú egyedi eszközök száma. |123 |
 | Sikerült |A sikeres állapotú egyedi eszközök száma. |12 |
 | Hiba |A hibás állapotú egyedi eszközök száma. |10 |
 | sikertelen |A sikertelen állapotú egyedi eszközök száma. |2 |
@@ -106,8 +106,8 @@ Az alábbi táblázatban foglaltuk össze az eszközökhöz rendelt megfelelős�
 |Tulajdonság     |Description  |Példa  |
 |---------|---------|---------|
 |dateKey  |A megfelelőségi szabályzat összefoglalójának létrehozási dátumkulcsa.|20161204 |
-|Ismeretlen  |Azoknak az eszközöknek a száma, amelyek offline állapotban vannak, vagy valamilyen más okból nem sikerült kapcsolatba lépniük az Intune-nal vagy az Azure AD-vel. |5|
-|NotApplicable      |Azoknak az eszközöknek a száma, amelyeknél a rendszergazda által meghatározott eszközmegfelelőségi szabályzatok nem alkalmazhatók.|201 |
+|ismeretlen  |Azoknak az eszközöknek a száma, amelyek offline állapotban vannak, vagy valamilyen más okból nem sikerült kapcsolatba lépniük az Intune-nal vagy az Azure AD-vel. |5|
+|notApplicable      |Azoknak az eszközöknek a száma, amelyeknél a rendszergazda által meghatározott eszközmegfelelőségi szabályzatok nem alkalmazhatók.|201 |
 |megfelelő      |Azoknak az eszközöknek a száma, amelyek megfelelnek a rendszergazda által meghatározott egy vagy több eszközmegfelelőségi szabályzatnak. |4083 |
 |Türelmi időszakban      |Azoknak az eszközöknek a száma, amelyek nem megfelelőek, de a rendszergazda által meghatározott türelmi időszakban vannak. |57|
 |Nem      |Azoknak az eszköznek a száma, amelyek nem felelnek meg a rendszergazda által meghatározott egy vagy több eszközmegfelelőségi szabályzatnak, vagy a felhasználó nem a rendszergazda által meghatározott szabályzatoknak megfelelően járt el.|43 |
@@ -124,8 +124,8 @@ Az alábbi táblázatban foglaltuk össze az eszközökhöz rendelt megfelelős�
 |dateKey  |A megfelelőségi szabályzat összefoglalójának létrehozási dátumkulcsa.|20161219|
 |policyKey     |Annak a megfelelőségi szabályzatnak a kulcsa, amelyhez az összefoglalás készült. |10178 |
 |policyPlatformKey      |Annak a megfelelőségi szabályzathoz tartozó platformnak a kulcsa, amelyhez az összefoglalás készült.|5|
-|Ismeretlen     |Azoknak az eszközöknek a száma, amelyek offline állapotban vannak, vagy valamilyen más okból nem sikerült kapcsolatba lépniük az Intune-nal vagy az Azure AD-vel.|13|
-|NotApplicable     |Azoknak az eszközöknek a száma, amelyeknél a rendszergazda által meghatározott eszközmegfelelőségi szabályzatok nem alkalmazhatók.|3|
+|ismeretlen     |Azoknak az eszközöknek a száma, amelyek offline állapotban vannak, vagy valamilyen más okból nem sikerült kapcsolatba lépniük az Intune-nal vagy az Azure AD-vel.|13|
+|notApplicable     |Azoknak az eszközöknek a száma, amelyeknél a rendszergazda által meghatározott eszközmegfelelőségi szabályzatok nem alkalmazhatók.|3|
 |megfelelő      |Azoknak az eszközöknek a száma, amelyek megfelelnek a rendszergazda által meghatározott egy vagy több eszközmegfelelőségi szabályzatnak. |45|
 |Türelmi időszakban      |Azoknak az eszközöknek a száma, amelyek nem megfelelőek, de a rendszergazda által meghatározott türelmi időszakban vannak. |3|
 |Nem      |Azoknak az eszköznek a száma, amelyek nem felelnek meg a rendszergazda által meghatározott egy vagy több eszközmegfelelőségi szabályzatnak, vagy a felhasználó nem a rendszergazda által meghatározott szabályzatoknak megfelelően járt el.|7|
@@ -149,7 +149,7 @@ Az alábbi táblázat a sikeres, függő, sikertelen vagy hibás állapotú eszk
 |Tulajdonság  |Description  |Példa  |
 |---------|---------|---------|
 |dateKey|A dátumkulcs azt jelzi, hogy az adattárházban mikor lett rögzítve az eszközkonfigurációs profil bejelentkezése.|20160703|
-|Függőben|A függő állapotú egyedi eszközök száma.|123|
+|függőben|A függő állapotú egyedi eszközök száma.|123|
 |Sikerült|A sikeres állapotú egyedi eszközök száma.|12|
 |policyKey|a policyKey a policyName lekéréséhez csatlakozhat a szabályzathoz.|Windows 10 baseline|
 |Hiba|A hibás állapotú egyedi eszközök száma.|10|
@@ -163,7 +163,7 @@ Az alábbi táblázat a sikeres, függő, sikertelen vagy hibás állapotú felh
 | Tulajdonság  |                                         Description                                         |       Példa       |
 |-----------|---------------------------------------------------------------------------------------------|---------------------|
 |  dateKey  | A dátumkulcs azt jelzi, hogy az adattárházban mikor lett rögzítve az eszközkonfigurációs profil bejelentkezése. |      20160703       |
-|  Függőben  |                         A függő állapotú egyedi eszközök száma.                          |         123         |
+|  függőben  |                         A függő állapotú egyedi eszközök száma.                          |         123         |
 | Sikerült |                         A sikeres állapotú egyedi eszközök száma.                          |         12          |
 | policyKey |                 a policyKey a policyName lekéréséhez csatlakozhat a szabályzathoz.                 | Windows 10 baseline |
 |   Hiba   |                          A hibás állapotú egyedi eszközök száma.                           |         10          |

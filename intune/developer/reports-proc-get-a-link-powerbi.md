@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8d7a5f67dfd8f7256559cb54d873ed48205ad751
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72490423"
 ---
 # <a name="connect-to-the-data-warehouse-with-power-bi"></a>Kapcsolódás az adattárházhoz a Power BI használatával
@@ -80,7 +80,7 @@ Ha az ügyfél hitelesítve van az Azure AD-ben, az OData-URL kapcsolódni tud a
 3. Az egyéni hírcsatorna URL-címének beolvasása a jelentéskészítési panelről, például:<br>
     `https://fef.{yourinfo}.manage.microsoft.com/ReportingService/DataWarehouseFEService/dates?api-version=v1.0`
 4. Nyissa meg a **Power BI Desktopot**.
-5. Válassza a **fájl** > **adatlekérdezés**lehetőséget. Válassza az **OData-betöltés** lehetőséget.
+5. Válassza a **fájl** > **az adatlekérdezés**lehetőséget. Válassza az **OData-betöltés** lehetőséget.
 6. Válassza a **Basic** (Egyszerű) lehetőséget.
 7. Írja be vagy másolja be az **OData-URL-t** az URL mezőbe.
 8. Válassza az **OK** gombot.
@@ -88,7 +88,7 @@ Ha az ügyfél hitelesítve van az Azure AD-ben, az OData-URL kapcsolódni tud a
     1. Válassza a **Szervezeti fiók** lehetőséget.  
     2. Adja meg felhasználónevét és jelszavát.  
     3. Válassza a **Bejelentkezés** lehetőséget.  
-    4. Válassza a **kapcsolat**lehetőséget.  
+    4. Válassza a **Csatlakozás** lehetőséget.  
 10. Válassza a **Betöltés** lehetőséget.
 
 ## <a name="next-steps"></a>További lépések

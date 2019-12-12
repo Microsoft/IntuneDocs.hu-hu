@@ -18,10 +18,10 @@ ROBOTS: ''
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7f395a9cedc72a8184cfe3e29d6fcd3117a1473d
-ms.sourcegitcommit: 259462591835f3607392aa6b179882dbac830a89
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/28/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72987449"
 ---
 # <a name="install-mobile-threat-defense"></a>Mobile Threat Defense telepítése   
@@ -43,7 +43,7 @@ A szervezet nem láthat semmilyen olyan információt, mint a szövegek, az e-ma
 * Alkalmazáscsomag és dinamikus méret: az alkalmazás által az eszközön használt terület nagysága. 
 
 
-## <a name="install-app"></a>Alkalmazás telepítése    
+## <a name="install-app"></a>Az alkalmazás telepítése    
 Ha egy védett alkalmazásba jelentkezik be, a rendszer automatikusan kéri, hogy telepítsen egy MTD alkalmazást. A telepítés befejezéséhez kövesse a képernyőn megjelenő lépéseket. További segítségért kövesse az ebben a szakaszban található lépéseket.  
  
 A rendszer kérheti az eszköz regisztrálását is. A regisztrációhoz meg kell erősítenie az identitását, és össze kell kapcsolnia az eszközét vagy munkahelyi fiókját. Ha nincs regisztrálva, a MTD alkalmazás telepítése előtt automatikusan végigvezeti az adott beállításon. A **hozzáférés beolvasása** képernyő elindításával elindíthatja a telepítési lépéseket.  
@@ -74,7 +74,7 @@ További információ az eszközök regisztrálásáról: [személyes eszköz re
     * A **hozzáférés lekérése** képernyőn válassza az ismételt **vizsgálat**lehetőséget.  
     * Nyissa meg a MTD alkalmazást, és keresse meg a meglévő fenyegetéseket. A fenyegetés feloldásához és a hozzáférés visszaszerzéséhez hajtsa végre a javasolt lépéseket.  
 
-### <a name="installation-failed"></a>A telepítés nem sikerült  
+### <a name="installation-failed"></a>Sikertelen telepítés  
 
 Ha a telepítés sikertelen, lépjen kapcsolatba az informatikai támogatási személlyel. Lépjen a [céges portál webhelyére](https://go.microsoft.com/fwlink/?linkid=2010980) , ahol megkeresheti a szervezet kapcsolattartási adatait.  
 

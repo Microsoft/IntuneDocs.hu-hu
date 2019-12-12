@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e7ed93c86d3fbe7ed7a6ac5d4b1a3494fb55f2bc
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72506993"
 ---
 # <a name="troubleshoot-and-see-potential-issues-on-android-zebra-devices-in-microsoft-intune"></a>Az androidos Zebra-eszközök lehetséges problémáinak elhárítása és megjelenítése Microsoft Intune
@@ -54,14 +54,14 @@ Ha közvetlenül a számítógépen lévő StageNow használatával tesztel egy 
 ### <a name="get-logs-using-android-debug-bridge"></a>Naplók beolvasása az Android hibakeresési híddal
 Ha a profil már telepítve van az Intune-nal, a naplók beszerzéséhez az eszközt az [Android debug Bridge (ADB)](https://developer.android.com/studio/command-line/adb) használatával (az Android webhelyének megnyitásakor) kapcsolja be.
 
-Az eszközön a naplók a következő helyre lesznek mentve: `/sdcard/Android/data/com.microsoft.windowsintune.companyportal/files`
+Az eszközön a rendszer menti a naplókat `/sdcard/Android/data/com.microsoft.windowsintune.companyportal/files`
 
 ### <a name="get-logs-from-email"></a>Naplók beolvasása e-mailben
 A naplók az Intune-nal való üzembe helyezését követően a végfelhasználók e-mailben elérhetik a naplókat az eszközön lévő e-mail-alkalmazás használatával. A zebra eszközön nyissa meg a Céges portál alkalmazást, és [küldje el a naplókat](https://docs.microsoft.com/intune-user-help/send-logs-to-your-it-admin-by-email-android). A naplók küldése funkcióval egy PowerLift-incidens AZONOSÍTÓját is létrehozhatja, amelyet akkor hivatkozhat, ha kapcsolatba lép a Microsoft ügyfélszolgálatával.
 
 ## <a name="read-the-logs"></a>Naplók olvasása
 
-Amikor megtekinti a naplókat, hiba történt, amikor megjelenik a `<characteristic-error>` címke. A hiba részletei a `<parm-error>` címkére íródnak > `desc` tulajdonságot.
+Amikor megtekinti a naplókat, hiba történt, amikor megjelenik a `<characteristic-error>` címkéje. A hiba részletei a `<parm-error>` címkére > `desc` tulajdonságra íródnak.
 
 ## <a name="error-types"></a>Hibák típusai
 

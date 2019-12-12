@@ -19,10 +19,10 @@ ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: bfafa4f35d0b8f1255d66a70c3f7cd0acf01a889
-ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/01/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73415589"
 ---
 # <a name="set-up-ios-or-ipados-device-with-company-portal-and-entrust-datacard"></a>IOS-vagy iPadOS-eszköz beállítása Céges portál és Entrust Datacard
@@ -36,7 +36,7 @@ Ha intelligens kártyát használ a következőhöz, akkor valószínűleg szár
 * Bejelentkezés az iskolai vagy munkahelyi alkalmazásokhoz, Wi-Fi-és virtuális magánhálózatok (VPN)
 * Iskolai vagy munkahelyi e-mailek aláírása és titkosítása S/MIME-tanúsítványok használatával  
 
-Ebben a cikkben a következőket fogja megtekinteni:  
+Ebben a cikkben:  
 
    * Mobil iOS-vagy iPadOS-eszköz regisztrálása a Intune Céges portál.  
    * Származtatott hitelesítő adatok beszerzése a szervezet származtatott hitelesítőadat-szolgáltatójából, [Entrust DataCard](https://www.entrustdatacard.com/).  
@@ -86,7 +86,7 @@ A származtatott hitelesítő adatok a National Institute of Standards and Techn
 
 9. Váltson az intelligens kártya használatára képes eszközre, és nyissa meg a IdentityGuard. 
 10. Keresse meg az intelligens hitelesítő adatok bejelentkezési felületét, és válassza a bejelentkezés gombot.  
-11. Amikor a rendszer rákérdez a tanúsítvány kiválasztására, válassza ki az intelligens kártya hitelesítő adatait. Ezután kattintson **az OK gombra**. 
+11. Amikor a rendszer rákérdez a tanúsítvány kiválasztására, válassza ki az intelligens kártya hitelesítő adatait. Ez után válassza az **OK** gombot. 
 12. Adja meg az intelligens kártya PIN-kódját.  
 13. A rendszer arra kéri, hogy válasszon a műveletek listájáról. Válassza ki azt a lehetőséget, amely lehetővé teszi egy származtatott mobil intelligens hitelesítő adat regisztrálását. Előfordulhat, hogy a hivatkozás vagy a gomb azt jelenti, **hogy egy származtatott mobil intelligens kártya hitelesítő adatait szeretnék regisztrálni.**  
 14. Válassza ki, hogy sikeresen letöltötte és telepítette az intelligens hitelesítőadat-kompatibilis alkalmazást. Ezután folytassa a következő képernyővel.   

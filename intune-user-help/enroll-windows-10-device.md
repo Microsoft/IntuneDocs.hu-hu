@@ -20,10 +20,10 @@ ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ca8b24a1e8d0da4386ab185533fec38d9b34eb21
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72506254"
 ---
 # <a name="enroll-windows-10-devices-with-intune-company-portal"></a>Windows 10-es eszközök regisztrálása Intune Céges portál
@@ -39,14 +39,14 @@ Ezek a lépések bemutatják, hogyan regisztrálhat olyan eszközt, amely a Wind
 
 1. Lépjen a **Start** menüre. Ha Windows 10 Mobile rendszerű eszközön van, folytassa a **minden alkalmazás** listával.
 
-2. Nyissa meg a **Beállítások** alkalmazást. Ha az alkalmazás nem érhető el az alkalmazások listájában, ugorjon a keresősáv elemre, és írja be a "Settings" (beállítások) kifejezést.
+2. Nyissa meg a **Gépházat**. Ha az alkalmazás nem érhető el az alkalmazások listájában, ugorjon a keresősáv elemre, és írja be a "Settings" (beállítások) kifejezést.
 
 3. Válassza a **Fiókok** > **Hozzáférés munkahelyi vagy iskolai rendszerhez** > **Csatlakozás** elemet.  
 
 
     ![Válassza a Hozzáférés munkahelyi vagy iskolai fiókhoz lehetőséget](./media/w10-enroll-rs1-connect-to-work-or-school.png)  
 
-4. A szervezet Intune bejelentkezési oldalának beszerzéséhez adja meg a munkahelyi vagy iskolai e-mail-címét. Ezután válassza a **tovább**lehetőséget.  
+4. A szervezet Intune bejelentkezési oldalának beszerzéséhez adja meg a munkahelyi vagy iskolai e-mail-címét. Ezután kattintson a **Tovább** gombra.  
 
 
    ![Adja meg a munkahelyi vagy iskolai fiókját](./media/w10-enroll-rs1-set-up-work-or-school-account.png)  
@@ -74,7 +74,7 @@ Ezek a lépések bemutatják, hogyan regisztrálhat olyan eszközt, amely a Wind
 
 1. Lépjen a **Start** menüre. Ha Windows 10 Mobile rendszerű eszközön van, folytassa a **minden alkalmazás** listával.
 
-2. Nyissa meg a **Beállítások** alkalmazást. Ha az alkalmazás nem érhető el az alkalmazások listájában, ugorjon a keresősáv elemre, és írja be a "Settings" (beállítások) kifejezést.
+2. Nyissa meg a **Gépházat**. Ha az alkalmazás nem érhető el az alkalmazások listájában, ugorjon a keresősáv elemre, és írja be a "Settings" (beállítások) kifejezést.
 
 3. Válassza a **fiókok** > **a fiókját**.  
 

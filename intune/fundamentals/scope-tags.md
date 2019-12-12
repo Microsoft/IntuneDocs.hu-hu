@@ -16,10 +16,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6b92dca399afeb035bf58d998efdd469318de389
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72504957"
 ---
 # <a name="use-role-based-access-control-rbac-and-scope-tags-for-distributed-it"></a>A szerepköralapú hozzáférés-vezérlés (RBAC) és a hatókör-címkék használata a terjesztéshez
@@ -63,7 +63,7 @@ Az alapértelmezett hatókör címke funkció a System Center Configuration Mana
 
     ![Képernyőfelvétel a csoporttag kiválasztásáról.](./media/scope-tags/select-member-groups.png)
 
-4. Ha egy adott csoportba tartozó felhasználókat vagy eszközöket szeretne felügyelni, válassza a **hatókör (csoportok)**  > **kijelölt csoportok** > **lehetőséget, majd válassza ki** a csoportokat a csoportok kiválasztásához > Válassza ki a csoportokat > **válassza** > az **OK** gombot. A csoport összes felhasználóját/eszközét a tagok (csoport) rendszergazdái fogják kezelni.
+4. Ha egy adott csoportba tartozó felhasználókat vagy eszközöket szeretne felügyelni, válassza a **hatókör (csoportok)** lehetőséget > **kiválasztott csoportok** > **válassza** ki a csoportokat, > válassza ki a csoportokat > válassza a > **OK** **elemet** . A csoport összes felhasználóját/eszközét a tagok (csoport) rendszergazdái fogják kezelni.
 
     ![Képernyőkép a hatókör-csoportok kiválasztásáról.](./media/scope-tags/select-scope-groups.png)
 

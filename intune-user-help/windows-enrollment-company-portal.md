@@ -20,10 +20,10 @@ ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 86aeb2b54d45f111864d71e65b8c90fce7205868
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72508023"
 ---
 # <a name="windows-device-enrollment-in-intune-company-portal"></a>Windows-eszközök beléptetése Intune Céges portál  
@@ -91,4 +91,4 @@ Az eszközkezelés, a Céges portál és a mindkettő használatáról az iskol�
 * [Mi történik, amikor regisztrálja az eszközt az Intune-ban](what-happens-if-you-install-the-company-portal-app-and-enroll-your-device-in-intune-windows.md)  
 * [Milyen információkat tekinthet meg a szervezetem az eszköz regisztrálásakor?](what-info-can-your-company-see-when-you-enroll-your-device-in-intune.md)  
 
-Segítség Forduljon a cég informatikai támogatásához. [Lépjen a céges portál webhelyére](https://go.microsoft.com/fwlink/?linkid=2010980) , ahol megkeresheti a szervezet informatikai kapcsolattartási adatait.  
+Segítségre van szüksége? Forduljon a cég informatikai támogatásához. [Lépjen a céges portál webhelyére](https://go.microsoft.com/fwlink/?linkid=2010980) , ahol megkeresheti a szervezet informatikai kapcsolattartási adatait.  

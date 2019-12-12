@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: get-started
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c3c03c67a99b78804c999250f8d1148a4b3d1d97
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72504764"
 ---
 # <a name="microsoft-intune-is-an-mdm-and-mam-provider-for-your-devices"></a>Microsoft Intune az eszközök MDM és MAM-szolgáltatója
@@ -60,7 +60,7 @@ Az eszközök Intune-beli regisztrálásakor és kezelésekor a rendszergazdák 
 
 - [Szolgáltatások és beállítások alkalmazása az eszközön az eszközök profiljainak használatával](../configuration/device-profiles.md)
 
-- [Eszközök Microsoft Intune-védelemmel való ellátása](../protect/device-protect.md)
+- [Eszközök védelme a Microsoft Intune-nal](../protect/device-protect.md)
 
 ## <a name="manage-apps"></a>Alkalmazások kezelése
 

@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 962e66a9fdf6d8abcf6855f645775026ee4db850
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72508839"
 ---
 # <a name="troubleshoot-the-intune-exchange-connector"></a>Az Intune Exchange Connector hibáinak megoldása
@@ -45,9 +45,9 @@ Mielőtt elkezdené az Exchange Connector hibáinak elhárítását az Intune-ba
 
 ### <a name="use-powershell-to-get-more-data-on-exchange-connector-issues"></a>További információ az Exchange Connectorral kapcsolatos problémákról a PowerShell használatával
 
-- Egy postaládához tartozó összes mobileszköz listájának lekéréséhez használja a `Get-ActiveSyncDeviceStatistics -mailbox mbx` értéket.
-- A postaláda SMTP-címeinek listájának lekéréséhez használja a következőt: `Get-Mailbox -Identity user | select emailaddresses | fl`
-- Az eszköz hozzáférési állapotával kapcsolatos részletes információkért használja `Get-CASMailbox <upn> | fl`
+- Egy postaládához tartozó összes mobileszköz listájának lekéréséhez használja a `Get-ActiveSyncDeviceStatistics -mailbox mbx`
+- A postaláda SMTP-címeinek listájának lekéréséhez használja a `Get-Mailbox -Identity user | select emailaddresses | fl`
+- Az eszköz hozzáférési állapotával kapcsolatos részletes információkért használja a `Get-CASMailbox <upn> | fl`
 
 ## <a name="review-the-connector-configuration"></a>Az összekötő konfigurációjának áttekintése
 

@@ -20,10 +20,10 @@ ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 68f67d50c05d2ec6bb819c507f2374eec69a961c
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72508433"
 ---
 # <a name="reset-device-from-company-portal-website"></a>Eszköz alaphelyzetbe állítása Céges portál webhelyről
@@ -43,7 +43,7 @@ Az eszköz alaphelyzetbe állítása a Céges portálban nem érhető el minden 
 
     ![Az eszközök lap képernyőképe, amelyen két csempe azonosítatlan, általános névvel ellátott eszközök láthatók. A szürke szalagcím közvetlenül az eszközök alatt található, és felszólítja a felhasználót, hogy azonosítsa az Ön által használt eszközt, vagy újat adjon hozzá.](./media/rename-reset-device-step2-1808.png)  
 
-3. Válassza az **Alaphelyzetbe állítás** lehetőséget. Ha a visszaállítási lehetőség nem jelenik meg az oldal tetején, válassza az **Egyéb (…)**  > **Alaphelyzet** lehetőséget.  
+3. Válassza az **Alaphelyzetbe állítás** lehetőséget. Ha a visszaállítási lehetőség nem jelenik meg az oldal tetején, válassza az **Egyéb (…)** > **Alaphelyzet** lehetőséget.  
 
      ![A kiválasztott eszközzel kapcsolatos lehetőségek a Céges portál webhelyén, felül az Átnevezés, az Eltávolítás, az Eszköz alaphelyzetbe állítása, a Jelszó alaphelyzetbe állítása és a Távoli zárolás lehetőségekre mutató hivatkozásokkal. ](./media/rename-reset-device-1808.png)  
 

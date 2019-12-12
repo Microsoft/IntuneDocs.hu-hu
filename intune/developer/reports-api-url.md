@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 170ed2fbf300299796401b10a906d875b6f50bf5
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72490457"
 ---
 # <a name="intune-data-warehouse-api-endpoint"></a>Intune-adattárház API-végpontja
@@ -64,7 +64,7 @@ A bétaverzió használatával kipróbálhatja az adattárház legújabb funkci�
 
 ## <a name="odata-query-options"></a>Az OData-lekérdezés beállításai
 
-A jelenlegi verzió a következő OData-lekérdezési paramétereket támogatja: `$filter`, `$select`, `$skip,` és `$top`. @No__t – 0 esetében csak a `DateKey` vagy a `RowLastModifiedDateTimeUTC` lehet támogatott, ha az oszlopok alkalmazhatók, és más tulajdonságok helytelen kérést indítanak.
+A jelenlegi verzió a következő OData-lekérdezési paramétereket támogatja: `$filter`, `$select`, `$skip,` és `$top`. `$filter`csak akkor használhatók `DateKey` vagy `RowLastModifiedDateTimeUTC`, ha az oszlopok alkalmazhatók, és más tulajdonságok helytelen kérést indítanak.
 
 ## <a name="datekey-range-filters"></a>DateKey típusú tartományszűrők
 
@@ -84,4 +84,4 @@ A `DateKey` tartományszűrők az adatletöltés korlátozására használhatók
 |    `$filter=DateKey eq 20180214`                                 |    Teljes                                      |    Olyan adatokat ad vissza, amelyekben a `DateKey` értéke megegyezik a 20180214 értékkel.                                                    |
 |    `$filter=DateKey ge 20180214 and DateKey lt 20180221`         |    Teljes                                      |    Olyan adatokat ad vissza, amelyekben a `DateKey` értéke 20180214 és 20180220 között van.                                     |
 |    `maxhistorydays=7&$filter=DateKey eq 20180214`                |    Teljes                                      |    Olyan adatokat ad vissza, amelyekben a `DateKey` értéke megegyezik a 20180214 értékkel. A rendszer mellőzi a `maxhistorydays` értékét.                            |
-|    `$filter=RowLastModifiedDateTimeUTC ge 2018-02-21T23:18:51.3277273Z`                                |    Teljes                                       |    Az `RowLastModifiedDateTimeUTC` értékkel rendelkező adatvisszaadás nagyobb vagy egyenlő, mint `2018-02-21T23:18:51.3277273Z`                             |
+|    `$filter=RowLastModifiedDateTimeUTC ge 2018-02-21T23:18:51.3277273Z`                                |    Teljes                                       |    Az `RowLastModifiedDateTimeUTC` értékkel rendelkező adatvisszaadás nagyobb vagy egyenlő `2018-02-21T23:18:51.3277273Z`                             |

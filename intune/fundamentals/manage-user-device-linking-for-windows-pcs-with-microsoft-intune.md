@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-classic-keep
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b21ee66139cb37aba80d6f1b2e3f40b5ab3c77a3
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72502672"
 ---
 # <a name="manage-user-device-linking-for-windows-pcs"></a>Felhasználók és eszközök összekapcsolásának felügyelete Windows rendszerű számítógépekhez
@@ -46,13 +46,13 @@ Felhasználók kapcsolása számítógépekhez:
 
    - Ha azt szeretné, hogy a számítógép továbbra is az aktuális felhasználóhoz legyen kapcsolva (ha van ilyen), válassza a **Mégse** lehetőséget.
 
-   - Ha el szeretné távolítani az aktuális felhasználóra mutató hivatkozást, ha van ilyen, válassza a <strong>kapcsolat eltávolítása **&gt;** ok</strong>lehetőséget.
+   - Ha el szeretné távolítani az aktuális felhasználóra mutató hivatkozást, ha van ilyen, válassza a <strong>hivatkozás eltávolítása **&gt;** az OK gombot</strong>.
 
    - Ha a számítógépet egy új felhasználóhoz szeretné kapcsolni, válasszon ki egy felhasználót a **Minden felhasználó** listában. Erősítse meg, hogy a felhasználói adatok helyesek, majd kattintson az **OK** gombra.
 
 > [!TIP]
 > Ha korlátozni szeretné végfelhasználókat abban, hogy önmagukat számítógépekkel kapcsolják össze, engedélyezze **A felhasználók korlátozása abban, hogy önmagukat számítógépekhez csatolhassák** beállítást a **Microsoft Intune-ügynök beállításai** szabályzatban.
 
-## <a name="see-also"></a>Lásd még:
+## <a name="see-also"></a>További információ
 
 [A Windows rendszerű számítógépek Intune-szoftverügyféllel való felügyeletének általános feladatai](common-windows-pc-management-tasks-with-the-microsoft-intune-computer-client.md)

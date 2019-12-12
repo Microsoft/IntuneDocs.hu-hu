@@ -19,17 +19,17 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9de5d1550c860d9b160203b47b883550ea4db90e
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72504925"
 ---
 # <a name="where-did-my-intune-feature-go-in-azure"></a>Hová kerültek az Intune-funkciók az Azure-ban?
 Az Intune Azure Portalra való költöztetésekor éltünk a lehetőséggel, és logikusabban rendeztünk el néhány feladatot. Minden ilyen előrelépés azzal jár, hogy meg kell tanulni az új elrendezést. Ez az útmutató azoknak készült, akik jól ismerik a klasszikus Intune-portált, és szeretnék megtudni, hogyan végezhetik el a feladatokat az Azure Portalbeli Intune-ban. Ha a cikk nem tartalmazza az Ön által keresett információt, írja meg a lap alján hozzászólásban, hogy pótolhassuk.
 ## <a name="quick-reference-guide"></a>Rövid összefoglaló útmutató
 
-|Funkció |Elérési útvonal a klasszikus portálon|Elérési útvonal az Azure Portalbeli Intune-ban|
+|Szolgáltatás |Elérési útvonal a klasszikus portálon|Elérési útvonal az Azure Portalbeli Intune-ban|
 |------------|---------------|---------------|
 |Készülékregisztrációs program (DEP) [csak iOS rendszeren]|Felügyelet > Mobileszköz-kezelés > iOS > Készülékregisztrációs program|[Eszközregisztráció > Apple-regisztráció > Regisztrációs program tokenje](#where-did-apple-dep-go) |
 |Készülékregisztrációs program (DEP) [csak iOS rendszeren]| Felügyelet > Mobileszköz-kezelés > iOS és macOS > Készülékregisztrációs program |[Eszközregisztráció > Apple-regisztráció > Regisztrációs program sorozatszámai](#where-did-apple-dep-go) |

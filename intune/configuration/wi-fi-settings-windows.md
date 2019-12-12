@@ -17,10 +17,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 68601d8ccf06cebf668c75857d23536e2c9e6553
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72503519"
 ---
 # <a name="add-wi-fi-settings-for-windows-10-and-later-devices-in-intune"></a>Wi-Fi-beállítások hozzáadása Windows 10 és újabb rendszerű eszközökhöz az Intune-ban
@@ -55,7 +55,7 @@ Ez a cikk ezeket a beállításokat ismerteti.
   - **Rögzített**: Ezt a lehetőséget használja, ha a hálózathoz rögzített hálózati forgalomkorlát van beállítva. A korlát elérése után a hálózati hozzáférés le van tiltva.
   - **Változó**: Ezt a lehetőséget használja, ha a hálózati forgalom számlázása bájtonként (bájtonkénti költség) történik.
 
-- **Vezeték nélküli biztonság típusa**: Adja meg a hálózatán az eszközök hitelesítésére használt biztonsági protokollt. A lehetőségek a következők:
+- **Vezeték nélküli biztonság típusa**: Adja meg a hálózatán az eszközök hitelesítésére használt biztonsági protokollt. Az alábbi lehetőségek állnak rendelkezésére:
   - **Nyitott (nincs hitelesítés)** : Csak akkor válassza ezt a lehetőséget, ha a hálózat nem védett.
   - **WPA/WPA2 (személyes)** : Egy biztonságosabb beállítás, amelyet gyakran hasznának Wi-Fi-csatlakozáshoz. A további biztonság érdekében előre megosztott kulcsot vagy hálózati kulcsot is megadhat.
 
@@ -94,7 +94,7 @@ A módosítások mentéséhez válassza az **OK** > **Létrehozás** lehetőség
   - **Rögzített**: Ezt a lehetőséget használja, ha a hálózathoz rögzített hálózati forgalomkorlát van beállítva. A korlát elérése után a hálózati hozzáférés le van tiltva.
   - **Változó**: Ezt a lehetőséget használja, ha a hálózati forgalom számlázása bájtonként történik.
 
-- **Egyszeri bejelentkezés (SSO)** : Lehetővé teszi az egyszeri bejelentkezés (SSO) konfigurálását. Ekkor ugyanazok a hitelesítő adatok szolgálnak a számítógépre és a Wi-Fi-hálózatba való bejelentkezésre. A lehetőségek a következők:
+- **Egyszeri bejelentkezés (SSO)** : Lehetővé teszi az egyszeri bejelentkezés (SSO) konfigurálását. Ekkor ugyanazok a hitelesítő adatok szolgálnak a számítógépre és a Wi-Fi-hálózatba való bejelentkezésre. Az alábbi lehetőségek állnak rendelkezésére:
   - **Letiltás** Letiltja az SSO viselkedést. A felhasználónak külön kell hitelesítenie magát a hálózaton.
   - **Engedélyezés mielőtt a felhasználó bejelentkezik az eszközre**: Az SSO használata a hálózaton való hitelesítésre közvetlenül a felhasználói bejelentkezés előtt.
   - **Engedélyezés miután a felhasználó bejelentkezik az eszközre**: Az SSO használata a hálózaton való hitelesítésre közvetlenül azután, hogy a felhasználói bejelentkezés befejeződik.
@@ -163,7 +163,7 @@ Az Intune-ban nem elérhető összes beállításhoz exportálhatja a Wi-Fi-beá
 
 A profil létrejön, de egyelőre nem csinál semmit. A következő lépés a [profil hozzárendelése](device-profile-assign.md).
 
-## <a name="more-resources"></a>További források
+## <a name="more-resources"></a>További forrásanyagok
 
 - A [Windows 8.1](wi-fi-settings-import-windows-8-1.md) rendszerhez rendelkezésre álló beállítások megtekintése.
 - [Wi-Fi-beállítások áttekintése](wi-fi-settings-configure.md), beleértve a többi platformot is.

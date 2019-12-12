@@ -20,10 +20,10 @@ ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 81c842eb27b1b9131c164ced5aeed86a78a37353
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72506293"
 ---
 # <a name="enroll-your-corporate-device-with-the-microsoft-intune-app"></a>Vállalati eszköz regisztrálása a Microsoft Intune alkalmazással
@@ -119,7 +119,7 @@ Ebben a szakaszban meg kell adnia a vállalat által biztosított tokent. Ha elk
 
 4. Válassza a **kód megadása**lehetőséget.  
 
-5. A **vizsgálat vagy a kód megadása** képernyőn írja be azt a kódot, amelyet a szervezet adott meg.  Ezután kattintson a **tovább**gombra.  
+5. A **vizsgálat vagy a kód megadása** képernyőn írja be azt a kódot, amelyet a szervezet adott meg.  Ezután kattintson a **Tovább**gombra.  
 
    ![Példa a vizsgálatra vagy a kód beírása képernyőre, majd a Tovább gombra.](./media/token-intune-app-04.png)  
 

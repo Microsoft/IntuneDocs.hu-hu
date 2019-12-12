@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 42d17c15a2a32f828c5715dfad51f34c5e531e76
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72507548"
 ---
 # <a name="app-configuration-policies-for-microsoft-intune"></a>Alkalmazáskonfigurációs szabályzatok a Microsoft Intune-hoz
@@ -66,7 +66,7 @@ Alkalmazás-konfigurációs házirendeket használhat az azt támogató alkalmaz
 ### <a name="managed-apps"></a>Felügyelt alkalmazások
 Előkészítheti az üzletági alkalmazásokat az [Intune app SDK](../developer/app-sdk.md) -nak az alkalmazásba való beépítésével, vagy az alkalmazásnak az [Intune alkalmazás-burkoló eszköz](../developer/apps-prepare-mobile-application-management.md)használatával történő becsomagolásával. Az Intune app SDK arra törekszik, hogy minimálisra csökkentse az alkalmazás fejlesztője által igényelt kód módosításának mértékét. További információ: [Az Intune App SDK áttekintése](../developer/app-sdk.md). Az Intune app SDK és az Intune alkalmazás-burkoló eszköz közötti összehasonlításért lásd: [üzletági alkalmazások előkészítése az App Protection-szabályzatokhoz](../developer/apps-prepare-mobile-application-management.md#feature-comparison).
 
-A **felügyelt alkalmazások** kiválasztása az **eszköz beléptetési típusaként** kifejezetten az Intune konfigurációs házirendjei által konfigurált, az Eszközkezelőben nem regisztrált eszközökre vonatkozik, míg a **felügyelt eszközök** az üzembe helyezett alkalmazásokra vonatkoznak. az MDM-csatornán keresztül, így az Intune kezeli. Válassza ki a megfelelő választást a leírások alapján. 
+A **felügyelt alkalmazások** kiválasztása az eszköz **beléptetési típusaként** kifejezetten az Intune konfigurációs házirendjei által konfigurált, az Eszközkezelőben nem regisztrált alkalmazásokra vonatkozik, míg a **felügyelt eszközök** a Mdm csatornán keresztül üzembe helyezett alkalmazásokra vonatkoznak, így azokat az Intune kezeli. Válassza ki a megfelelő választást a leírások alapján. 
 
 ![Eszköz beléptetésének típusa](./media/app-configuration-policies-overview/device-enrollment-type.png)
 
@@ -85,7 +85,7 @@ Az alkalmazás konfigurációs szabályzatát az alábbi három módszer haszná
 
       ![Az eszköz telepítési állapotának második képernyőképe](./media/app-configuration-policies-overview/device-install-status-2.png)
 
-      Emellett az **Intune** -> **eszköz** -> **minden eszköz** a képernyő bal oldalán, az **alkalmazás konfigurációja** beállítás megjeleníti az összes hozzárendelt szabályzatot és azok állapotát:
+      Emellett az **Intune** -> - **eszközök** -> a képernyő bal oldalán lévő **összes eszközön** megjelenik az **alkalmazás konfigurálása** lehetőség, amely az összes hozzárendelt szabályzatot és azok állapotát megjeleníti:
 
       ![Az alkalmazás konfigurációjának képernyőképe](./media/app-configuration-policies-overview/app-configuration.png)
 
@@ -96,8 +96,8 @@ Az alkalmazás konfigurációs szabályzatát az alábbi három módszer haszná
 Az iOS-konfigurációt az **Intune diagnosztikai naplójában** ellenőrizheti a felügyelt alkalmazások konfigurációjának nem felügyelt eszközein.
 
 1. Ha még nincs telepítve az eszközön, töltse le és telepítse a **Intune Managed Browsert** az App Store áruházból. További információ: [Microsoft Intune védett alkalmazások](apps-supported-intune-apps.md).
-2. Indítsa el a **Intune Managed Browser** , majd a navigációs sávon válassza a  > **intunehelp** **névjegye**elemet.
-3. Kattintson az első **lépések**elemre.
+2. Indítsa el a **Intune Managed Browser** , és válassza a **Névjegy** > **intunehelp** elemet a navigációs sávon.
+3. Kattintson az **Első lépések** lehetőségre.
 4. Kattintson a **megosztási naplók**elemre.
 5. Az Ön által választott levelezési alkalmazás használatával elküldheti a naplót saját magára, hogy megtekinthető legyen a SZÁMÍTÓGÉPén. 
 6. Tekintse át a **IntuneMAMDiagnostics. txt** fájlt a szövegfájl-megjelenítőben.
@@ -140,8 +140,8 @@ Az alkalmazás konfigurációjának részleteinek meg kell egyezniük a bérlőh
 Az iOS-konfigurációt érvényesítheti az **Intune diagnosztikai naplóval** a felügyelt eszközökön a felügyelt alkalmazások konfigurálásához.
 
 1. Ha még nincs telepítve az eszközön, töltse le és telepítse a **Intune Managed Browsert** az App Store áruházból. További információ: [Microsoft Intune védett alkalmazások](apps-supported-intune-apps.md).
-2. Indítsa el a **Intune Managed Browser** , majd a navigációs sávon válassza a  > **intunehelp** **névjegye**elemet.
-3. Kattintson az első **lépések**elemre.
+2. Indítsa el a **Intune Managed Browser** , és válassza a **Névjegy** > **intunehelp** elemet a navigációs sávon.
+3. Kattintson az **Első lépések** lehetőségre.
 4. Kattintson a **megosztási naplók**elemre.
 5. Az Ön által választott levelezési alkalmazás használatával elküldheti a naplót saját magára, hogy megtekinthető legyen a SZÁMÍTÓGÉPén. 
 6. Tekintse át a **IntuneMAMDiagnostics. txt** fájlt a szövegfájl-megjelenítőben.
@@ -154,9 +154,9 @@ Az iOS-konfigurációt érvényesítheti az **Intune diagnosztikai naplóval** a
 Ha androidos eszközről szeretne naplókat gyűjteni, Önnek vagy a felhasználónak USB-kapcsolaton keresztül le kell töltenie a naplókat az eszközről (vagy az eszközön található **fájlkezelővel** egyenértékű). A lépések a következők:
 
 1. Csatlakoztassa az Android-eszközt a számítógéphez az USB-kábellel.
-2. A számítógépen keresse meg az eszköz nevével megegyező nevű könyvtárt. Ebben a könyvtárban keresse meg a `Android Device\Phone\Android\data\com.microsoft.windowsintune.companyportal` értéket.
-3. A `com.microsoft.windowsintune.companyportal` mappában Nyissa meg a Files mappát, és nyissa meg a `OMADMLog_0` fájlt.
-3. Keresse meg a `AppConfigHelper` értéket az alkalmazás-konfigurációval kapcsolatos üzenetek kereséséhez. Az eredmények a következő adatblokkhoz hasonlóan jelennek meg:
+2. A számítógépen keresse meg az eszköz nevével megegyező nevű könyvtárt. Ebben a könyvtárban keresse meg `Android Device\Phone\Android\data\com.microsoft.windowsintune.companyportal`.
+3. A `com.microsoft.windowsintune.companyportal` mappában Nyissa meg a Files mappát, és nyissa meg `OMADMLog_0`.
+3. `AppConfigHelper` keresése az alkalmazás-konfigurációval kapcsolatos üzenetek kereséséhez. Az eredmények a következő adatblokkhoz hasonlóan jelennek meg:
 
     `2019-06-17T20:09:29.1970000       INFO   AppConfigHelper     10888  02256  Returning app config JSON [{"ApplicationConfiguration":[{"Name":"com.microsoft.intune.mam.managedbrowser.BlockListURLs","Value":"https:\/\/www.aol.com"},{"Name":"com.microsoft.intune.mam.managedbrowser.bookmarks","Value":"Outlook Web|https:\/\/outlook.office.com||Bing|https:\/\/www.bing.com"},{"Name":"com.microsoft.intune.mam.managedbrowser.homepage","Value":"https:\/\/www.arstechnica.com"}]},{"ApplicationConfiguration":[{"Name":"IntuneMAMUPN","Value":"AdeleV@M365x935807.OnMicrosoft.com"},{"Name":"com.microsoft.outlook.Mail.NotificationsEnabled","Value":"false"},{"Name":"com.microsoft.outlook.Mail.NotificationsEnabled.UserChangeAllowed","Value":"false"}]}] for user User-875363642`
     

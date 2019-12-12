@@ -20,10 +20,10 @@ ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 289d99603314be7c1097d54d59d4a0e90cae0bed
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72508331"
 ---
 # <a name="sync-your-windows-device-manually"></a>Windows-eszköz manuális szinkronizálása
@@ -136,7 +136,7 @@ Ezek az utasítások a Windows 10 évforduló frissítés (más néven RS1-et) f
 
 3. Válassza ki a csatlakoztatott fiókot > **szinkronizálást**.  ![képernyőkép a HoloLens-beállítások alkalmazásról, Kiemelt szinkronizációs gomb](./media/RS1_holoLens_SyncRS1_Sync_08.png)  
 
-### <a name="windows-phone-81"></a>Windows Phone 8.1
+### <a name="windows-phone-81"></a>WVPN-profilokdows Phone 8.1
 
 1. Lépjen a **Minden alkalmazás** > **Beállítások** > **Munkahely** menüpontra.
 

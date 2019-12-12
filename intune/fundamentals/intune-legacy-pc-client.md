@@ -1,5 +1,5 @@
 ---
-title: Örökölt Intune szoftverügyfél és az Intune az Azure-ban
+title: Korábbi Intune PC-ügyfél és Intune az Azure-ban
 description: Szempontok az Azure-beli Intune használatához cége Windows-eszközeinek felügyeletéhez.
 keywords: ''
 author: ErikjeMS
@@ -17,15 +17,15 @@ search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5ab1be3d34d52e824d1ff06124e28206fb7b07a1
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72510185"
 ---
-# <a name="intune-on-azure-console-and-legacy-intune-pc-client"></a>Intune az Azure-konzolon és az örökölt Intune szoftverügyfél
+# <a name="intune-on-azure-console-and-legacy-intune-pc-client"></a>Intune az Azure-konzolon és a régi Intune számítógép-ügyfél
 
-Az Intune az Azure-alapú saas alkalmazásszolgáltató architektúrára költözött használ. Az Azure jelentős fejlesztéseket nyújt a méretezés, a kapacitás és a teljesítmény terén. Nyújt a továbbfejlesztett Intune rendszergazdai felügyeletet, és optimalizált munkafolyamatokat az Azure Portalon. 
+Az Intune egy Azure-alapú SaaS Application Service-architektúrát használ. Az Azure jelentős fejlesztéseket nyújt a méretezés, a kapacitás és a teljesítmény terén. Ez fejlett Intune-rendszergazdai élményt és optimalizált munkafolyamatokat kínál a Azure Portalban. 
 
 Ha az Azure-beli Intune-t használja cége Windows-eszközeihez, vegye figyelembe a következő szempontokat:
 

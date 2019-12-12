@@ -17,10 +17,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: dfc791450eec9f17be68228bb291ca89fd7d88ce
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72506826"
 ---
 # <a name="android-and-samsung-knox-standard-device-restriction-settings-lists-in-intune"></a>Android-és Samsung Knox standard-eszközök korlátozási beállításainak listája az Intune-ban
@@ -95,7 +95,7 @@ Ezekkel a beállításokkal engedélyezheti vagy megakadályozhatja az adott alk
 
 Ha alkalmazást szeretne hozzáadni a listához, a következőket teheti:
 
-- **Adja hozzá** a kívánt alkalmazás Google Play áruház URL-címét. Például az Androidhoz készült Microsoft Távoli asztal alkalmazás hozzáadásához írja be a következőt: `https://play.google.com/store/apps/details?id=com.microsoft.rdc.android`. Az alkalmazás URL-címének megkereséséhez nyissa meg a [Google Play áruházat](https://play.google.com/store/apps), és keressen rá az alkalmazásra. Keressen például a `Microsoft Remote Desktop Play Store` vagy a `Microsoft Planner` kifejezésre. Válassza ki az alkalmazást, és másolja az URL-címet.
+- **Adja hozzá** a kívánt alkalmazás Google Play áruház URL-címét. Például az Androidhoz készült Microsoft Távoli asztal alkalmazás hozzáadásához írja be a `https://play.google.com/store/apps/details?id=com.microsoft.rdc.android`értéket. Az alkalmazás URL-címének megkereséséhez nyissa meg a [Google Play áruházat](https://play.google.com/store/apps), és keressen rá az alkalmazásra. Keressen például `Microsoft Remote Desktop Play Store` vagy `Microsoft Planner`. Válassza ki az alkalmazást, és másolja az URL-címet.
 - Importáljon egy CSV-fájlt az alkalmazás részleteivel, beleértve az URL-címet is. Használja a <*alkalmazás URL-címét*>, <*alkalmazás neve*>, <*app Publisher*> formátumban. Vagy **exportáljon** egy meglévő listát, amely tartalmazza a korlátozott alkalmazások listáját ugyanabban a formátumban.
 
 > [!IMPORTANT]
@@ -106,8 +106,8 @@ Ha alkalmazást szeretne hozzáadni a listához, a következőket teheti:
 - **Webböngésző (csak Samsung Knox esetén)** : válassza a **Letiltás** lehetőséget, hogy megakadályozza az alapértelmezett böngésző használatát az eszközön. A **nincs konfigurálva** beállítás lehetővé teszi az eszköz alapértelmezett webböngészőjének használatát.
 - **Automatikus kitöltés (csak Samsung Knox esetén)** : a **Letiltás** gombra kattintva megakadályozhatja a szöveg automatikus kitöltését a böngészőben. A **nincs konfigurálva** beállítás lehetővé teszi a webböngésző automatikus kitöltés funkciójának használatát.
 - **Cookie-k (csak Samsung Knox esetén)** : válassza ki, hogyan szeretné kezelni a cookie-kat az eszköz webhelyeiről. A választható lehetőségek:
-  - Lehetővé
-  - Az összes cookie letiltása
+  - Engedélyezés
+  - Az összes cookie blokkolása:
   - Cookie-k engedélyezése a felkeresett webhelyekről
   - Cookie-k engedélyezése a jelenlegi webhelyről
 - **JavaScript (csak Samsung Knox esetén)** : válassza a **Letiltás** lehetőséget a webböngésző Java-parancsfájlok futtatásának megakadályozásához. A **nincs konfigurálva** beállítás lehetővé teszi, hogy az eszköz webböngészője Java-parancsfájlokat futtasson.

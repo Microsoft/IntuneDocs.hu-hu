@@ -16,10 +16,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3e074d922078a9772ca67a6ebd99948bc3e64601
-ms.sourcegitcommit: 25acfc88b366d2da71c37d354a0238e4f1168325
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72813210"
 ---
 # <a name="windows-81-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>Windows 8,1 beállítások az eszközök megfelelőségi vagy nem megfelelőként való megjelöléséhez az Intune használatával
@@ -48,7 +48,7 @@ Intune-rendszergazdaként ezeket a megfelelőségi beállításokat használhatj
 - **Mobileszközök maximális operációsrendszer-verziója**:  
   Adja meg a maximálisan engedélyezett verziót. Ha egy eszközön a szabályban megadott operációsrendszer-verziónál újabb operációs rendszer van használatban, a szervezeti erőforrásokhoz való hozzáférés le lesz tiltva. Az eszköz felhasználójának kapcsolatba kell lépnie a rendszergazdával. Az eszköz nem fér hozzá a szervezeti erőforrásokhoz, amíg egy szabály nem változik, hogy az operációs rendszer verziója engedélyezve legyen.
 
-**Windows 8.1 és újabb verziók**
+**Windows 8.1 és újabb**
 - **Operációs rendszer minimális verziója**:  
   Adja meg a minimálisan engedélyezett verziót. Ha egy eszköz nem teljesíti az operációs rendszer szükséges minimális verziójára vonatkozó követelményt, nem megfelelőként jelenik meg. Megjelenik egy hivatkozás, amelyen a verziófrissítésre vonatkozó információk érhetők el. Az eszköz a felhasználó dönthet úgy, hogy frissíti az eszközét, majd hozzáférést kap a vállalati erőforrásokhoz.
 

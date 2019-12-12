@@ -16,10 +16,10 @@ ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3f3359bc5544b3a353271ea17083c8c3acb49742
-ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/18/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72584467"
 ---
 # <a name="windows-update-settings-for-intune"></a>Windows Update-beállítások az Intune-hoz  
@@ -248,8 +248,8 @@ A felhasználói élmény beállításai vezérlik az eszköz újraindítására
     **Alapértelmezett**: igen Windows Update CSP: [Update/ConfigureDeadlineNoAutoReboot](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-update#update-configuredeadlinenoautoreboot)
 
     Meghatározza, hogy az eszköz automatikusan újrainduljon-e a határidő lejárta előtt.
-    - **igen**
-    - **nem**
+    - **Igen**
+    - **Nem**
 
 ### <a name="delivery-optimization-download-mode"></a>Kézbesítési optimalizálás letöltési módja  
 

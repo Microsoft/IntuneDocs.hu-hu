@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2fb5208cd7df6dc68bcd20455ae9e06a9dbd7ff5
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72503146"
 ---
 # <a name="enroll-ios-devices-in-intune"></a>iOS-eszközök regisztrálása az Intune-ban
@@ -44,7 +44,7 @@ iOS-eszközök engedélyezése előtt végezze el az alábbi lépéseket:
 Azt is engedélyezheti, hogy a felhasználók saját személyes eszközeiket regisztrálják az Intune-felügyelethez. Ezt „saját eszköz használata” vagy BYOD (Bring Your Own Device) néven ismerjük. A felhasználók regisztrálására három lehetőség áll rendelkezésre:
 - Az alkalmazás-védelmi szabályzatok a legkönnyebb BYOD élményt biztosítják, és csak az alkalmazás szintjén biztosítanak felügyeletet. Ha azonban egy 6 számjegyű, összetett PIN-kóddal rendelkező eszközt is biztonságossá kíván tenni, ezeket a házirendeket a felhasználó beléptetésével együtt is használhatja.
 - Az eszközök regisztrálása a szokásos BYOD-regisztrációnak tekinthető. Számos felügyeleti lehetőséggel látja el a rendszergazdákat.
-- A felhasználó beléptetése egy egyszerűbb regisztrációs folyamat, amely az Eszközkezelő lehetőségeinek egy részhalmazát biztosítja a rendszergazdák számára. Ez a funkció jelenleg előzetes verzióban érhető el. 
+- A felhasználó beléptetése egy egyszerűbb regisztrációs folyamat, amely az Eszközkezelő lehetőségeinek egy részhalmazát biztosítja a rendszergazdák számára. Ez a szolgáltatás jelenleg előzetes kiadásban elérhető. 
 
 Miután végrehajtotta az előfeltételeket és a hozzárendelt felhasználói licenceket, a felhasználók letöltheti az Intune Céges portál alkalmazást az App Store áruházból, és követheti a regisztrációs utasításokat az alkalmazásban. Az iOS-eszközök Céges portál adatvédelmi nyilatkozatát az [adatvédelmi nyilatkozat testreszabása](../apps/company-portal-app.md#privacy-statement-customization)című részben leírtak szerint szabhatja testre.
 
@@ -63,7 +63,7 @@ A vállalati tulajdonban lévő iOS-eszközök [készülékregisztráció-kezel�
 
 A szervezetek az Apple Device Enrollment készülékregisztrációs programján keresztül vásárolhatnak iOS-eszközöket. A DEP vezeték nélkül képes telepíteni egy regisztrációs profilt, amely felügyelet alá helyezi az eszközöket. További információ: [Készülékregisztrációs program](device-enrollment-program-enroll-ios.md).
 
-## <a name="user-enrollment"></a>Felhasználó beléptetése
+## <a name="user-enrollment"></a>Felhasználói regisztráció
 A felhasználó regisztrálása a rendszergazdák számára a felügyeleti lehetőségek egy részhalmazát adja meg a többi regisztrációs módszerhez képest. További információ: a [felhasználói regisztráció által támogatott műveletek, jelszavak és egyéb beállítások](ios-user-enrollment-supported-actions.md) , valamint az [iOS és a iPadOS felhasználói regisztrációjának beállítása](ios-user-enrollment.md).
 
 ## <a name="apple-school-manager"></a>Apple School Manager

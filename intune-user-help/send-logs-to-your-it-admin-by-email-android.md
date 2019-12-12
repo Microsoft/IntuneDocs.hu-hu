@@ -20,10 +20,10 @@ ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8eef3af9a82e7a61bc5200bf45143657072d6db7
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72508371"
 ---
 # <a name="upload-and-email-logs"></a>Feltöltési és e-mail-naplók  
@@ -38,7 +38,7 @@ A tényleges hibák részleteit a rendszer a _diagnosztikai napló_nevű speciá
 ## <a name="upload-and-email-logs-from-company-portal"></a>Naplók feltöltése és e-mailek Céges portál  
 
 1. A Céges portál alkalmazásban kétféle módon indíthat el e-mail-támogatást.
-    * A kezdőképernyőn: koppintson a **menü** > **Súgó** > **e-mail támogatás**elemre.  
+    * A kezdőképernyőn: koppintson a **menü** > **Súgó** > **e-mail-támogatás**elemre.  
     * Hibaüzenet: koppintson a **Súgó** vagy az **adatok küldése**lehetőségre, ha elérhető.  
 
     > [!NOTE]
@@ -52,7 +52,7 @@ A tényleges hibák részleteit a rendszer a _diagnosztikai napló_nevű speciá
 ## <a name="upload-and-email-logs-from-microsoft-intune-app"></a>Microsoft Intune alkalmazásból származó és e-mail-naplók feltöltése   
 
 1. A Microsoft Intune alkalmazásban kétféle módon indíthat el e-mail-támogatást.  
-    * A kezdőképernyőn: koppintson a **menü** > **Súgó** > **Get támogatás**lehetőségre.  
+    * A kezdőképernyőn: koppintson a **menüre** , > a **Súgó** > a **támogatás kérése**lehetőségre.  
     * Hibaüzenet: koppintson a **Súgó** vagy az **adatok küldése**lehetőségre, ha elérhető.  
 
     > [!NOTE]

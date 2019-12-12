@@ -17,10 +17,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: bc29a7a5026691371370b167a4445bfd70cc76bd
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72489803"
 ---
 # <a name="microsoft-intune-windows-phone-81-device-restriction-settings"></a>A Windows Phone 8.1 eszközkorlátozásokra vonatkozó beállításai a Microsoft Intune-ban
@@ -80,7 +80,7 @@ Például: Keressen rá az áruházban a Skype alkalmazásra. Az Ön által hasz
 
 ### <a name="additional-options"></a>További beállítások
 
-Az **Importálás** gombra kattintva feltöltheti a listát egy csv-fájlból <*alkalmazás URL-címének*formátuma >, <*alkalmazás neve*>, <*alkalmazás közzétevője*>, vagy az **Exportálás** gombra kattintva létrehozhat egy CSV-fájlt, amely tartalmazza a korlátozás tartalmát. az alkalmazások listája ugyanabban a formátumban van.
+Az **Importálás** gombra kattintva feltöltheti a listát egy csv-fájlból <*alkalmazás URL-címének*formátuma >, <*alkalmazás neve*>, <*alkalmazás közzétevője*>, vagy az **Exportálás** gombra kattintva létrehozhat egy CSV-fájlt, amely ugyanabban a formátumban tartalmazza a korlátozott alkalmazások listájának tartalmát.
 
 
 ## <a name="browser"></a>Böngésző

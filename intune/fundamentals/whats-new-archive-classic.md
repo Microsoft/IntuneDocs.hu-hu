@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e88741609dc1a351d1971c907cd2e442cfd4b905
-ms.sourcegitcommit: 4bf23327af734a9811d555fbd566c31239e2acd6
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72999523"
 ---
 # <a name="whats-new-in-the-intune-classic-portal---previous-months"></a>A klasszikus Intune-portál újdonságai – korábbi hónapok
@@ -60,7 +60,7 @@ Az iOS-es Céges portál alkalmazásban mostantól új, konkrétabb hibaüzenete
 
 #### <a name="improved-app-install-status-for-the-windows-10-company-portal-app---676495--"></a>Továbbfejlesztett alkalmazások telepítési állapota a Windows 10-es Céges portál alkalmazáshoz <!--676495-->
 
-Az alkalmazás telepítése elindult a Windows 10-es céges portál alkalmazást az új fejlesztések az alábbiak:
+Az alkalmazások telepítésének új fejlesztése a Windows 10-es Céges portál alkalmazásban:
 - Gyorsabb jelentéskészítés az MSI-csomagok folyamatban lévő telepítéséhez
 - Gyorsabb jelentéskészítés a Windows 10 évfordulós frissítését és újabb kiadásait futtató eszközök modern alkalmazásainak folyamatban lévő telepítéséhez
 - Új folyamatjelző sáv a Windows 10 évfordulós frissítését és újabb kiadásait futtató eszközök modern alkalmazásainak telepítéséhez
@@ -69,7 +69,7 @@ Az új folyamatjelző sávot megnézheti az [Újdonságok az Intune-alkalmazás 
 
 #### <a name="bulk-enroll-windows-10-devices----747607---"></a>Windows 10-es eszközök tömeges regisztrálása <!-- 747607 -->
 
-Mostantól a Windows Configuration Designer (WCD) használatával a Windows 10 alkotói frissítéssel rendelkező nagy számú eszközt csatlakoztathat az Azure Active Directoryhez és az Intune-hoz. Ha Azure AD-bérlőhöz be szeretné kapcsolni a [tömeges MDM-regisztrálást](../enrollment/windows-bulk-enroll.md), a Windows Configuration Designerrel hozzon létre olyan kiépítési csomagot, amely csatlakoztatja az eszközöket az Azure AD-bérlőhöz, majd alkalmazza a csomagot a csoportosan regisztrálni és felügyelni kívánt vállalati tulajdonú eszközökre. A csomagok alkalmazását követően az eszközök csatlakoznak az Azure AD-hez, regisztrálnak az Intune-ban, és készen állnak az Azure AD-felhasználók bejelentkezésére.  Az Azure AD-felhasználók általános jogú felhasználók ezeken az eszközökön, akik megkapják majd a kijelölt szabályzatokat és a kötelező alkalmazásokat. Az önkiszolgáló és a Céges portált használó forgatókönyvek jelenleg nem támogatottak.
+Mostantól a Windows Configuration Designer (WCD) használatával a Windows 10 alkotói frissítéssel rendelkező nagy számú eszközt csatlakoztathat az Azure Active Directoryhez és az Intune-hoz. Ha Azure AD-bérlőhöz be szeretné kapcsolni a [tömeges MDM-regisztrálást](../enrollment/windows-bulk-enroll.md), a Windows Configuration Designerrel hozzon létre olyan kiépítési csomagot, amely csatlakoztatja az eszközöket az Azure AD-bérlőhöz, majd alkalmazza a csomagot a csoportosan regisztrálni és felügyelni kívánt vállalati tulajdonú eszközökre. A csomagok alkalmazását követően az eszközök csatlakoznak az Azure AD-hez, regisztrálnak az Intune-ban, és készen állnak az Azure AD-felhasználók bejelentkezésére.  Az Azure AD-felhasználók általános jogú felhasználók ezeken az eszközökön, akik megkapják majd a kijelölt szabályzatokat és a kötelező alkalmazásokat. Az önkiszolgáló és a Céges portált használó módszer jelenleg nincs támogatva.
 
 ### <a name="whats-new-in-the-public-preview-of-intune-in-the-azure-portal--736542--"></a>Az Intune nyilvános előzetes verziójának újdonságai a Azure Portal<!--736542-->
 
@@ -143,7 +143,7 @@ Mostantól szabályozhatja a mobileszköz-hozzáférést a vállalati erőforrá
 - Alkalmazásvédelem
 - Biztonsági rések elleni védelem
 
-Az EMS feltételes hozzáférési szabályzatok az Intune-eszközök megfelelőségi házirendjein keresztül engedélyezett Symantec Endpoint Protection Mobile (Skycure) kockázatfelmérés alapján konfigurálhatók. Ezen szabályzatok használatával engedélyezheti vagy letilthatja a nem megfelelő eszközök hozzáférését a vállalati erőforrásokhoz az észlelt fenyegetések alapján. További információkért lásd: [összekötő a Symantec Endpoint Protection Mobile](../protect/skycure-mobile-threat-defense-connector.md).
+Az EMS feltételes hozzáférési szabályzatok az Intune-eszközök megfelelőségi házirendjein keresztül engedélyezett Symantec Endpoint Protection Mobile (Skycure) kockázatfelmérés alapján konfigurálhatók. Ezen szabályzatok használatával engedélyezheti vagy letilthatja a nem megfelelő eszközök hozzáférését a vállalati erőforrásokhoz az észlelt fenyegetések alapján. További információ: [Symantec Endpoint Protection Mobile Connector](../protect/skycure-mobile-threat-defense-connector.md).
 
 #### <a name="new-user-experience-for-the-company-portal-app-for-android---621622--"></a>Új felhasználói élmény az Android rendszerhez készült Céges portál alkalmazáshoz <!--621622-->
 
@@ -236,7 +236,7 @@ Márciustól kezdve az Androidhoz készült Céges portál alkalmazásban a [mat
 A frissítés előtti és utáni képek a [felhasználói felület frissítéseit tartalmazó lapon](whats-new-app-ui.md) érhetők el.
 
 ### <a name="associate-multiple-management-tools-with-the-microsoft-store-for-business---926135--"></a>Több felügyeleti eszköz hozzárendelése a vállalati Microsoft Storehoz <!--926135-->
-Ha több felügyeleti eszközt is használ a Vállalati Microsoft Áruházbeli alkalmazások telepítésére, akkor korábban ezek közül csak egyet társíthatott a Vállalati Microsoft Áruházhoz. Mostantól több felügyeleti eszközzel is megteheti ezt (például az Intune-nal és a Configuration Managerrel). A részleteket lásd: [A Vállalati Microsoft Áruházban vásárolt alkalmazások kezelése a Microsoft Intune-nal](../apps/windows-store-for-business.md).
+Ha több felügyeleti eszközt is használ a Vállalati Microsoft Áruházbeli alkalmazások üzembe helyezésére, akkor korábban ezek közül csak egyet társíthatott a Vállalati Microsoft Áruházhoz. Mostantól több felügyeleti eszközzel is megteheti ezt (például az Intune-nal és a Configuration Managerrel). A részleteket lásd: [A Vállalati Microsoft Áruházban vásárolt alkalmazások kezelése a Microsoft Intune-nal](../apps/windows-store-for-business.md).
 
 ## <a name="whats-new-in-the-public-preview-of-intune-in-the-azure-portal---736542--"></a>Az Intune nyilvános előzetes verziójának újdonságai a Azure Portal <!--736542-->
 
@@ -253,7 +253,7 @@ Az Intune Azure-beli előzetes verziójának újdonságait [Ide kattintva](whats
 ### <a name="new-capabilities"></a>Új képességek
 
 #### <a name="in-console-reports-for-mam-without-enrollment---677961--"></a>A MAM-konzolon belüli jelentések regisztráció nélkül <!--677961-->
-Új alkalmazásvédelmi jelentések érhetők el mind a regisztrált, mind a nem regisztrált eszközökkel kapcsolatban. További információ arról, hogyan lehet [az Intune mobilalkalmazás-felügyeleti szabályzatok figyelése](../apps/app-protection-policies-monitor.md).
+Új alkalmazásvédelmi jelentések érhetők el mind a regisztrált, mind a nem regisztrált eszközökkel kapcsolatban. Tudjon meg többet arról, hogyan [figyelhetők meg a Mobile App Management-szabályzatok az Intune](../apps/app-protection-policies-monitor.md)-nal.
 
 #### <a name="android-711-support---694397--"></a>Android 7.1.1-támogatás <!--694397-->
 Az Intune mostantól teljes mértékben támogatja és képes felügyelni az Android 7.1.1-es verzióját.
@@ -374,5 +374,5 @@ __A Symantec aláíró tanúsítványának feltöltéséhez most már nincs szü
 __A Windows Phone 8 Munkahelyi portál támogatása__ A Windows Phone 8 Munkahelyi portál támogatását kivezetjük. A Windows Phone 8 és WinRT platform támogatását 2016 októberében kivezettük. Egyúttal a Windows 8 vállalati portál támogatását is elavulttá minősítettük 2016 októberével.
 
 
-## <a name="see-also"></a>Lásd még:
+## <a name="see-also"></a>További információ
 A közelmúltbeli fejlesztésekkel kapcsolatban lásd: [Újdonságok a Microsoft Intune-ban](whats-new.md).

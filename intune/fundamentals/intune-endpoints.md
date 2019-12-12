@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2503013e6ca0d907a05c81f895b44878784dbbd4
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72502721"
 ---
 # <a name="network-endpoints-for-microsoft-intune"></a>Microsoft Intune hálózati végpontok  
@@ -47,7 +47,7 @@ A felügyelt eszközöket úgy kell beállítani, hogy **Minden felhasználó** 
 
 A következő táblázat az Intune-ügyfél által elért portokat és szolgáltatásokat tartalmazza:
 
-|Tartományok    |IP-cím      |
+|Domains    |IP-cím      |
 |-----------|----------------|
 |login.microsoftonline.com <br> *. officeconfig.msocdn.com <br> config.office.com <br> graph.windows.net| További információ: [Office 365-ös URL-címek és IP-címtartományok](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2) |
 |portal.manage.microsoft.com<br> m.manage.microsoft.com |52.175.12.209<br>20.188.107.228<br>52.138.193.149<br>51.144.161.187<br>52.160.70.20<br>52.168.54.64 <br>13.72.226.202<br>52.189.220.232|
@@ -93,7 +93,7 @@ A következő táblázat az Intune-ügyfél által elért portokat és szolgált
 
 Ha az Intune-t használja PowerShell-parancsfájlok vagy Win32-alkalmazások üzembe helyezéséhez, hozzáférést kell biztosítania azokhoz a végpontokhoz is, amelyekben a bérlő jelenleg található.
 
-|ASU | Tároló neve | Tartalomkézbesítési hálózat (CDN) |
+|ASU | Tároló neve | CDN |
 | --- | --- |--- |
 | AMSUA0601 | prodmsua06data | https:\//prodmsua06data.azureedge.net |
 | AMSUA0602 | prodamsua0602data | https:\//prodamsua0602data.azureedge.net |
@@ -143,9 +143,9 @@ Kézbesítési optimalizálási metaadatok:
 
 ## <a name="apple-device-network-information"></a>Apple-eszközhálózati információ  
 
-|Használatban|Hostname (IP address/subnet)|Protokoll|Port|
+|Felhasználási mód:|Állomásnév (IP-cím/alhálózat)|Protokoll|Port|
 |-----|--------|------|-------|
-|Apple-kiszolgálók tartalmának beolvasása és megjelenítése|itunes.apple.com<br>\*. itunes.apple.com<br>\*.mzstatic.com<br>\*.phobos.apple.com<br> \*.phobos.itunes-apple.com.akadns.net |    HTTP    |      80      |
+|Apple-kiszolgálók tartalmának beolvasása és megjelenítése|itunes.apple.com<br>\*. itunes.apple.com<br>\*. mzstatic.com<br>\*. phobos.apple.com<br> \*. phobos.itunes-apple.com.akadns.net |    HTTP    |      80      |
 |Kommunikáció a APNS-kiszolgálókkal|#-courier.push.apple.com<br>a "#" a 0 és 50 közötti véletlenszerű szám.|    TCP     |  5223 és 443  |
 |Különböző funkciók, többek között a World Wide Web, az iTunes Store, a macOS App Store, az iCloud, az üzenetküldés stb. |phobos.apple.com<br>ocsp.apple.com<br>ax.itunes.apple.com<br>ax.itunes.apple.com.edgesuite.net| HTTP/HTTPS |  80 vagy 443   |
 

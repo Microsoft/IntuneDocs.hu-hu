@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 78d38b72c9853a9eadaf71fcdff7567fc66d35ca
-ms.sourcegitcommit: 60f0ff6d2efbae0f2ce14b9a9f3f9267309e209b
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/01/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73414675"
 ---
 # <a name="sign-up-or-sign-in-to-microsoft-intune"></a>A Microsoft Intune szolgáltatásba való regisztráció vagy bejelentkezés
@@ -68,7 +68,7 @@ Intune Azure Portal: https://portal.azure.com/#blade/Microsoft_Intune_DeviceSett
 
 Intune for Education: https://intuneeducation.portal.azure.com
 
-Klasszikus Intune-portál: https://manage.microsoft.com a klasszikus Intune-portál csak az Intune PC-s szoftverrel regisztrált eszközök felügyeletére használatos.
+Klasszikus Intune-portál: https://manage.microsoft.com a klasszikus Intune-portált csak az Intune PC-s szoftveres ügyfélprogrammal regisztrált eszközök kezelésére használjuk.
 
 ### <a name="urls-for-intune-services-provided-by-office-365"></a>Az Office 365 által biztosított Intune-szolgáltatások URL-címei
 

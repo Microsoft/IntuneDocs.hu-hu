@@ -16,10 +16,10 @@ ms.assetid: ''
 search.appverid: MET150
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f42acb38d84394a6b61fa16072de6320b84a67b5
-ms.sourcegitcommit: 1a5b185acd27954b10b6d59409d82eb80fd71284
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72681306"
 ---
 # <a name="integrate-wandera-mobile-threat-protection-with-intune"></a>A Wander Mobile Threat Protection integrálása az Intune-nal  
@@ -56,13 +56,13 @@ A Wanda Mobile Threat Defense alkalmazás engedélyezési folyamata:
 Az a Wanderers-hez való *csatlakozási* művelethez egy egyszeri konfigurációs folyamat szükséges, amelyet az Intune és a Wanda konzolon is végre kell hajtani. A konfigurációs folyamat körülbelül 15 percet vesz igénybe. A konfigurálást a vándor technikai fiókjával vagy a támogatási képviselővel való koordináció nélkül végezheti el.  
 
 ### <a name="enable-support-for-wandera-in-intune"></a>A Bolyongás támogatásának engedélyezése az Intune-ban
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és lépjen az **eszköz megfelelősége** > **Mobile Threat Defense** >, és válassza a **Hozzáadás**lehetőséget.
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és lépjen az **eszköz megfelelősége** > **Mobile Threat Defense** > elemre, és válassza a **Hozzáadás**lehetőséget.
 
 2. Az **összekötő hozzáadása** lapon használja a legördülő menüt, és válassza a **Bolyongás**lehetőséget. Majd válassza a **Létrehozás**lehetőséget.  
 
 3. A Mobile Threat Defense panelen válassza a **Wanda** MTD-összekötőt az összekötők listájáról az *összekötő szerkesztése* ablaktábla megnyitásához. Válassza **a Bolyongás felügyeleti konzol megnyitása** lehetőséget a [radar](https://radar.wandera.com/login), a Wanda felügyeleti konzol megnyitásához és a bejelentkezéshez. 
 
-4. A Wanda-konzolon lépjen a **beállítások**  > **az** *Microsoft Intune*a következőre:, és **válassza a (**
+4. A Wanda-konzolon lépjen a **beállítások** > **az** *Microsoft Intune*a következőre:, és **válassza a (**
 
    ![Intune kiválasztása](./media/wandera-mtd-connector-integration/set-up-intune-in-radar.png)
 
@@ -89,7 +89,7 @@ A Bolyongás üzembe helyezéséhez hozzá kell adnia a Wanda Mobile Apps szolg�
 
 A következő fejezetek és eljárások végigvezetik a folyamaton.
 
-További információ erről a folyamatról: Wanda, bejelentkezés a Wanda [radarba](https://radar.wandera.com/login). Nyissa meg a **beállítások**  >  a következőt:, majd válassza az **alkalmazás leküldése** **lapot, majd**a **Microsoft Intune**lehetőséget. Az alkalmazás leküldéses lapja az Intune-ra vonatkozó utasításokkal frissül.  
+További információ erről a folyamatról: Wanda, bejelentkezés a Wanda [radarba](https://radar.wandera.com/login). Nyissa meg a **beállítások** > a következőt:, majd válassza az **alkalmazás leküldése** **lapot, majd**a **Microsoft Intune**lehetőséget. Az alkalmazás leküldéses lapja az Intune-ra vonatkozó utasításokkal frissül.  
 
 ### <a name="add-the-wandera-apps"></a>A Wanda-alkalmazások hozzáadása  
 Ügyfélalkalmazások létrehozása az Intune-ban a vándor alkalmazás üzembe helyezéséhez Android és iOS rendszerű eszközökön. Lásd: [MTD-alkalmazások hozzáadása](mtd-apps-ios-app-configuration-policy-add-assign.md) a bolyongó alkalmazásokhoz tartozó eljárásokhoz és egyéni részletekhez.  
@@ -116,13 +116,13 @@ További információ: [alkalmazások telepítése](../apps/apps-deploy.md)
 ### <a name="assign-the-wandera-apps-to-the-synchronization-group"></a>A bolyongó alkalmazások kiosztása a szinkronizálási csoportnak  
 Ismételje meg az alábbi eljárást az iOS-hez és Androidhoz létrehozott Wanda-alkalmazáshoz.
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és lépjen az **ügyfélalkalmazások**  > **alkalmazások** elemre, és válassza ki a vándor alkalmazást.  
+1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és lépjen az **ügyfélalkalmazások** > **alkalmazások** elemre, és válassza ki a vándor alkalmazást.  
 
 2. Válassza a **hozzárendelések** , majd a **Csoport hozzáadása**lehetőséget.  
 
 3. A *Csoport hozzáadása* panelen a *hozzárendelés típusa* beállításnál válassza a **kötelező**lehetőséget.
 
-4. Válassza a **befoglalt csoportok**lehetőséget, majd **válassza ki a felvenni kívánt csoportokat**. Adja meg a Bolyongás szinkronizálásához létrehozott csoportot, majd kattintson a **Select** > **OK** > **OK**gombra. Válassza a **Mentés** lehetőséget a csoport hozzárendelésének befejezéséhez.  
+4. Válassza a **befoglalt csoportok**lehetőséget, majd **válassza ki a felvenni kívánt csoportokat**. Adja meg a Wanda-szinkronizáláshoz létrehozott csoportot, majd kattintson **az OK** **gombra >  > OK gombra.** Válassza a **Mentés** lehetőséget a csoport hozzárendelésének befejezéséhez.  
  
 
 ## <a name="next-steps"></a>További lépések  

@@ -12,10 +12,10 @@ ms.author: dougeby
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 42e16be44dba539007967dd921da4c8d4f095ec4
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72504818"
 ---
 # <a name="using-the-intune-docs"></a>Az Intune-dokumentáció használata
@@ -26,7 +26,7 @@ Az Intune általános súgóját és támogatását lásd: az [Intune támogatá
 
 ## <a name="search-the-docs"></a>Keresés a docs-ban
 
- A következő keresési tippek segítenek megtalálni a szükséges információkat:  
+ A következő keresési tippek segíthetnek, hogy pontosan azt az információt találja meg, amire szüksége van:  
 
 - Ha az előnyben részesített keresőmotort használja a Microsoft Intune tartalmának megkereséséhez, a keresési kulcsszavakkal együtt `Intune` is.  
 
@@ -86,7 +86,7 @@ Az Intune-dokumentumok, például a docs.microsoft.com a legtöbb tartalom, nyí
 
 4. A fájl módosítása szakaszban adja meg a nyilvános véglegesítés megjegyzését, amely leírja, hogy *mi* változott. Ezután kattintson a **javaslat fájl módosítása**elemre.  
 
-5. Görgessen lefelé, és ellenőrizze az elvégzett módosításokat. Kattintson a **pull-kérelem létrehozása** elemre az űrlap megnyitásához. Írja le, *Miért* hajtotta végre ezt a módosítást. Kattintson a **pull-kérelem létrehozása**lehetőségre.
+5. Görgessen lefelé, és ellenőrizze az elvégzett módosításokat. Kattintson a **pull-kérelem létrehozása** elemre az űrlap megnyitásához. Írja le, *Miért* hajtotta végre ezt a módosítást. Kattintson a **Create pull request** (Lekéréses kérelem létrehozása) parancsra.
 
 Az írás csapat megkapja a lekéréses kérelmet, hozzárendeli az elemeket a megfelelő íróval, áttekinti a szöveget, és elvégzi a gyors szerkesztést, valamint jóváhagyja és egyesíti a módosításokat, vagy kapcsolatba lép Önnel a frissítéssel kapcsolatos további információkért.  
 
