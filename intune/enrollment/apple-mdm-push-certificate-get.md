@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d15fd73a608c799745c92c4b07df4b9705d00106
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 178e1a3d0f58eb925c4d48be10bfa46e68c6b2c6
+ms.sourcegitcommit: e75718ee6cf93c0e6c915f2776b785fe8db9f7e0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72490321"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74955456"
 ---
 # <a name="get-an-apple-mdm-push-certificate"></a>Apple MDM push-tanúsítvány beszerzése
 
@@ -41,7 +41,7 @@ Amikor a leküldéses tanúsítvány lejár, meg kell újítani. Megújításkor
 
 
 ## <a name="steps-to-get-your-certificate"></a>A tanúsítvány beszerzésének lépései
-Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba, válassza az **eszközök beléptetése** > **Apple-regisztráció** > **Apple Mdm push-tanúsítvány**lehetőséget, majd kövesse az alábbi lépéseket az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ban.
+Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431), válassza az **eszközök** > az **eszközök regisztrálása** > az **Apple-regisztráció** > **Apple Mdm push-tanúsítvány**lehetőséget, majd kövesse az alábbi lépéseket.
 
 ### <a name="step-1-grant-microsoft-permission-to-send-user-and-device-information-to-apple"></a>1\. lépés Engedélyezze a Microsoftnak a felhasználó- és eszközadatok Apple-nek való elküldését
 Válassza az **Elfogadom.** lehetőséget az engedély megadásához.
@@ -68,7 +68,7 @@ Az Apple MDM push-tanúsítvány egy évig érvényes, és az iOS és macOS eszk
 
 A tanúsítványt a rendszer ahhoz az Apple-azonosítóhoz társítja, amely létrehozta azt. Az MDM push-tanúsítványt ugyanazzal az Apple-azonosítóval kell megújítani, amellyel létrehozták.
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba, válassza az **eszközök beléptetése** > **Apple-regisztráció**lehetőséget, majd a Részletek területen válassza a **Apple Mdm push-tanúsítvány** csempét.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431), válassza az **eszközök** > eszközök **regisztrálása** > **Apple-regisztráció** > **Apple Mdm push-tanúsítvány**.
 2. Válassza a **CSR letöltése** lehetőséget a kérelemfájl letöltéséhez és helyi mentéséhez. A fájl a megbízhatósági kapcsolat tanúsítványának Apple Push Certificates portálról való beszerzésére szolgál.
 3. Válassza az **MDM push-tanúsítvány létrehozása** lehetőséget az Apple Push Certificates Portal webhely megnyitásához. Keresse meg a megújítani kívánt tanúsítványt, és kattintson a **Megújítás** elemre.
 4. A **Push-tanúsítvány megújítása** képernyőn adjon meg jegyzeteket a tanúsítvány későbbi azonosításának megkönnyítése érdekében, majd a **Fájl kiválasztása** elemet választva keresse meg a letöltött új kérelemfájlt, és válassza a **Feltöltés** lehetőséget.

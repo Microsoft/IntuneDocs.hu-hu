@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ca76ffe0c8fa42f1c2cf24fcdefd287140231220
-ms.sourcegitcommit: b5e719fb507b1bc4774674e76c856c435e69f68c
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73801626"
 ---
 # <a name="set-up-intune-certificate-connector-for-digicert-pki-platform"></a>Az Intune tanúsítvány-összekötő beállítása a DigiCert PKI platformhoz
@@ -95,7 +95,7 @@ Ha az összekötőt csak a DigiCert HITELESÍTÉSSZOLGÁLTATÓval fogja használ
 
    b. Adja meg a tanúsítvány rövid nevét.
 
-   c. Válassza a **Folytatás**lehetőséget.
+   c. Válassza a **Folytatás** lehetőséget.
 
    d. A megadott hivatkozás használatával töltse le az RA-tanúsítványt a helyi számítógépre.
 
@@ -103,7 +103,7 @@ Ha az összekötőt csak a DigiCert HITELESÍTÉSSZOLGÁLTATÓval fogja használ
 
    a. Nyisson meg egy MMC konzolt.
 
-   b. Válassza a **fájl** > **beépülő modulok hozzáadása vagy eltávolítása** > **tanúsítvány** > **Hozzáadás**elemet.
+   b. Válassza a **fájl** > **beépülő modulok hozzáadása vagy eltávolítása** > **tanúsítvány** > **Hozzáadás**lehetőséget.
 
    c. Válassza a **számítógépfiók** > a **tovább**lehetőséget.
 
@@ -198,7 +198,7 @@ Alapértelmezés szerint az Intune Certificate Connector telepítve van a **%Pro
         <add key="RACertThumbprint"
         value="EA7A4E0CD1A4F81CF0740527C31A57F6020C17C5"/>
 
-   b. Mentse és zárjuk be a fájlt.
+   b. Mentse, majd zárja be a fájlt.
 
 2. Nyissa meg a **Services. msc fájlt**:
 
@@ -319,9 +319,9 @@ Az előző lépések elvégzése után az Intune Certificate Connector PKCS-tan�
 
 Az Intune Certificate Connector szolgáltatás naplói a NDES-összekötő számítógép **%ProgramFiles%\Microsoft Intune\NDESConnectorSvc\Logs\Logs** érhetők el. Nyissa meg a naplókat a [SvcTraceViewer](https://docs.microsoft.com/dotnet/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe) , és keressen kivételeket vagy hibaüzeneteket.
 
-| Probléma/hibaüzenet | Megoldás lépései |
+| Probléma/hibaüzenet | Megoldási lépések |
 | --- | --- |
-| Nem lehet bejelentkezni az Intune-bérlői rendszergazdai fiókkal a NDES-összekötő felhasználói felületén. | Ez akkor fordulhat elő, ha a helyszíni tanúsítvány-összekötő nincs engedélyezve a Microsoft Endpoint Manager felügyeleti központban. A probléma megoldásához: <br><br> 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431). <br> 2. Válassza a **bérlői felügyelet** > **Összekötők és tokenek** > **tanúsítvány-összekötők**lehetőséget. <br> 3. Keresse meg a tanúsítvány-összekötőt, és győződjön meg róla, hogy engedélyezve van. <br><br> Az előző lépések elvégzése után próbáljon meg ugyanazzal az Intune-bérlői rendszergazdai fiókkal bejelentkezni az NDES-összekötő felhasználói felületén. |
+| Nem lehet bejelentkezni az Intune-bérlői rendszergazdai fiókkal a NDES-összekötő felhasználói felületén. | Ez akkor fordulhat elő, ha a helyszíni tanúsítvány-összekötő nincs engedélyezve a Microsoft Endpoint Manager felügyeleti központban. A probléma megoldása: <br><br> 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431). <br> 2. Válassza a **bérlői felügyelet** > **Összekötők és tokenek** > **tanúsítvány-összekötők**lehetőséget. <br> 3. Keresse meg a tanúsítvány-összekötőt, és győződjön meg róla, hogy engedélyezve van. <br><br> Az előző lépések elvégzése után próbáljon meg ugyanazzal az Intune-bérlői rendszergazdai fiókkal bejelentkezni az NDES-összekötő felhasználói felületén. |
 | Az NDES-összekötő tanúsítványa nem található. <br><br> System. ArgumentNullException: az érték nem lehet null. | Az Intune Tanúsítvány-összekötő akkor jeleníti meg ezt a hibát, ha az Intune-bérlői rendszergazdai fiókkal még sosem jelentkeztek be az NDES-összekötő felhasználói felületére. <br><br> Ha a hiba továbbra is fennáll, indítsa újra az Intune szolgáltatás-összekötőt. <br><br> 1. Nyissa meg a **Services. msc fájlt**. <br> 2. Válassza az **Intune-összekötő szolgáltatás**elemet. <br> 3. kattintson a jobb gombbal, majd válassza az **Újraindítás**lehetőséget.|
 | NDES Connector - IssuePfx -Generic Exception: (NDES-összekötő - IssuePfx - Általános kivétel:) <br> System.NullReferenceException: Object reference not set to an instance of an object. (Az objektumhivatkozás nincs beállítva az objektum egyik példányára.) | Ez a hiba átmeneti. Indítsa újra az Intune szolgáltatás-összekötőt. <br><br> 1. Nyissa meg a **Services. msc fájlt**. <br> 2. Válassza az **Intune-összekötő szolgáltatás**elemet. <br> 3. kattintson a jobb gombbal, majd válassza az **Újraindítás**lehetőséget. |
 | DigiCert-szolgáltató – nem sikerült beolvasni a DigiCert házirendet. <br><br>"A művelet túllépte az időkorlátot." | Az Intune tanúsítvány-összekötő művelet időtúllépési hibát kapott a DigiCert HITELESÍTÉSSZOLGÁLTATÓval való kommunikáció során. Ha a hiba továbbra is fennáll, növelje a kapcsolódás időtúllépési értékét, és próbálkozzon újra. <br><br> A kapcsolódás időkorlátjának növeléséhez: <br> 1. Nyissa meg az NDES-összekötőt futtató számítógépet. <br>2. Nyissa meg a **%ProgramFiles%\Microsoft Intune\NDESConnectorSvc\NDESConnector.exe.config** fájlt a Jegyzettömbben. <br> 3. növelje az időtúllépés értékét a következő paraméterhez: <br><br> `CloudCAConnTimeoutInMilliseconds` <br><br> 4. Indítsa újra az Intune Certificate Connector szolgáltatást. <br><br> Ha a probléma továbbra is fennáll, forduljon a DigiCert ügyfélszolgálatához. |

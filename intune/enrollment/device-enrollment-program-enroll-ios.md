@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 39775f3acf1a1c3da7c836afe1699958560d509a
-ms.sourcegitcommit: f26039d674eb4d61ab68264dd1a10b2e5e1d842c
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/02/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74691837"
 ---
 # <a name="automatically-enroll-ios-devices-with-apples-device-enrollment-program"></a>iOS-eszközök automatikus regisztrálása az Apple készülékregisztrációs programjával (DEP)
@@ -223,7 +223,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
     | <strong>Adatvédelmi</strong> | Jelenítse meg az adatvédelmi képernyőt a felhasználó számára. |
     | <strong>Android-áttelepítés</strong> | Adja meg a felhasználónak a dátum áttelepítését egy Android-eszközről. |
     | <strong>iMessage és FaceTime</strong> | Adja meg a felhasználónak a iMessage és a FaceTime beállítását. |
-    | <strong>Bevezetési</strong> | Bevezetési információs képernyők megjelenítése a felhasználói oktatáshoz, mint például a fedőlap és a többfeladatos felügyelet és a vezérlési központ. |
+    | <strong>Előkészítés</strong> | Bevezetési információs képernyők megjelenítése a felhasználói oktatáshoz, mint például a fedőlap és a többfeladatos felügyelet és a vezérlési központ. |
     | <strong>Áttelepítés megtekintése</strong> | A felhasználó számára lehetővé teszi az adatok áttelepítését egy figyelési eszközről. |
     | <strong>Képernyő időpontja</strong> | Jelenítse meg a képernyő időképernyőjét. |
     | <strong>Szoftverfrissítés</strong> | A kötelező szoftverfrissítés képernyő megjelenítése. |

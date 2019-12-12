@@ -16,10 +16,10 @@ ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 05258c5363b43398dee1815bb91c50878803e426
-ms.sourcegitcommit: 2fddb293d37453736ffa54692d03eca642f3ab58
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74390934"
 ---
 # <a name="intune-reports"></a>Intune-jelentések
@@ -45,7 +45,7 @@ A jelentéskészítési keretrendszer egységes és átfogóbb jelentéskészít
 A következő engedélyekkel rendelkező felhasználók áttekinthetik a naplókat:
 
 - Globális rendszergazda
-- Intune szolgáltatás rendszergazdája
+- Intune-szolgáltatásadminisztrátor
 - **Olvasási** engedélyekkel rendelkező Intune-szerepkörhöz rendelt rendszergazdák
 
 ## <a name="non-compliant-devices-report-operational"></a>Nem megfelelő eszközök jelentés (működési)
@@ -148,7 +148,7 @@ A munkafüzetek szöveg-, elemzési és Azure-metrikákat és-paramétereket egy
 További információ az alábbi technológiákról:
 - [Blog – Microsoft Intune jelentési keretrendszer](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/New-Reporting-Framework-Coming-to-Intune/ba-p/1009553)
 - [Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-activity-logs-azure-monitor)
-- [Mi az Log Analytics?](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview#what-is-log-analytics)
+- [Mi az a Log Analytics?](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview#what-is-log-analytics)
 - [Lekérdezések naplózása](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview)
 - [Ismerkedés a Log Analyticsával Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal)
 - [Munkafüzetek Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/app/usage-workbooks)

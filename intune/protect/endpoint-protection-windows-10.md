@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e2909e7ad1ced9483a6cec58f1f3009f56946f5f
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74058431"
 ---
 # <a name="windows-10-and-later-settings-to-protect-devices-using-intune"></a>Windows 10 (és újabb) beállítások az eszközök az Intune-nal való védelemmel való ellátásához
@@ -67,7 +67,7 @@ Az Alkalmazásőr csak a 64 bites Windows 10-eszközöknél érhető el. Ennek a
 
   Válassza ki az engedélyezett vágólap tartalmát.  
   - **Nincs konfigurálva**  
-  - **Text**  
+  - **Szöveg**  
   - **Képek**  
   - **Szöveg és képek**  
 
@@ -92,7 +92,7 @@ Az Alkalmazásőr csak a 64 bites Windows 10-eszközöknél érhető el. Ennek a
     - Helyi nyomtatók
     - Hálózati nyomtatók  
 
-- **Naplók összegyűjtése**  
+- **Naplók gyűjtése**  
   **Alapértelmezett**: nincs konfigurálva  
   Application Guard CSP: [audit/AuditApplicationGuard](https://go.microsoft.com/fwlink/?linkid=872418)  
 
@@ -440,7 +440,7 @@ A Microsoft Edge-nek telepítve kell lennie az eszközön.
 
 ## <a name="windows-encryption"></a>Windows-titkosítás  
  
-### <a name="windows-settings"></a>Windows Gépház  
+### <a name="windows-settings"></a>Windowsos beállítások  
 
 - **Eszközök titkosítása**  
   **Alapértelmezett**: nincs konfigurálva  
@@ -925,7 +925,7 @@ Az alábbiak letiltásával megakadályozhatja az e-mail-fenyegetéseket:
 > *C:\windows\IMECache*  
 >  
 > **X86-os ügyfélszámítógépeken**:  
-> *C:\Program Files\Microsoft Intune Management Extension\Content*  
+> *C:\Program Files\Microsoft Intune felügyeleti Extension\Content*  
 > *C:\windows\IMECache*  
 
 ### <a name="controlled-folder-access"></a>Mappahozzáférés felügyelete  
@@ -1135,7 +1135,7 @@ A Microsoft Defender Security Center alkalmazás különböző területeihez val
   Konfigurálja a TPM törlése gomb megjelenítését.  
   
   - **Nincs konfigurálva**  
-  - **Megbénít**  
+  - **Letiltás**  
 
 - **Figyelmeztetés a TPM belső vezérlőprogram frissítésére**  
   **Alapértelmezett**: nincs konfigurálva  
@@ -1211,7 +1211,7 @@ Ezekkel a beállításokkal konfigurálhatja a Windows 10-eszközök helyi bizto
    - **Letiltás** – csak az üres jelszavakkal rendelkező helyi fiókok bejelentkezésének engedélyezése az eszköz billentyűzetén keresztül.  
    - **Nincs konfigurálva** – engedélyezi a helyi fiókok számára az üres jelszavakat a fizikai eszköztől eltérő helyről való bejelentkezéshez.  
 
-#### <a name="admin"></a>Rendszergazda  
+#### <a name="admin"></a>Felügyelet  
 
 - **Helyi rendszergazdai fiók**  
   **Alapértelmezett**: nincs konfigurálva  

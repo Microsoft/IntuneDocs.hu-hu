@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 38e8998d1720434b0fe866fc5cd41a0b733fc49b
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74059847"
 ---
 # <a name="common-issues-and-resolutions-with-email-profiles-in-microsoft-intune"></a>A Microsoft Intune e-mail-profiljaival kapcsolatos gyakori problémák és megoldások
@@ -63,7 +63,7 @@ Azok a felhasználók, akik automatikusan konfiguráltak e-mail-fiókokat, nem t
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Válassza az **eszközök** > **konfigurációs profilok**lehetőséget.
-3. Válassza ki az e-mail-profilt > **tulajdonságok** > **Beállítások**lehetőséget.
+3. Válassza ki az e-mail-profil > a **tulajdonságok** > **beállításokat**.
 4. Állítsa be az **e-mailek küldésének engedélyezése harmadik féltől származó alkalmazások** számára beállítást az **engedélyezéshez**.
 
 ## <a name="next-steps"></a>További lépések

@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 12/04/2019
+ms.date: 12/09/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7d9c385ff8c08f9f1df00a081bca1f61a2a5015a
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 904c3d2267decdfa3929bf29376c05a995c77eb8
+ms.sourcegitcommit: f5108039f0ade52e95ea3ac1da1aa16d02224af3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74832553"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74946653"
 ---
 # <a name="android-enterprise-device-settings-to-allow-or-restrict-features-using-intune"></a>Az androidos vállalati eszközbeállítások az Intune-t használó szolgáltatások engedélyezéséhez vagy korlátozásához
 
@@ -231,7 +231,7 @@ Teljes **képernyős mód**: válassza ki, hogy az eszköz futtat-e egy alkalmaz
   A mindig bekapcsolt VPN beállítás az összes VPN-ügyfél számára való letiltásához válassza a **Nincs konfigurálva** lehetőséget.
 
   > [!IMPORTANT]
-  > Egy eszközön egyszerre csak egy mindig bekapcsolt VPN-szabályzatot helyezzen üzembe. Több ilyen szabályzat üzembe helyezése egyetlen eszközön nem támogatott.
+  > Ügyeljen arra, hogy csak egy always-on VPN-házirendet helyezzen üzembe egyetlen eszközre. A több always-on VPN-házirendek egyetlen eszközre történő telepítése nem támogatott.
 
 - **VPN-ügyfél**: Válasszon egy Mindig bekapcsolt állapotot támogató VPN-ügyfelet. A választható lehetőségek:
   - Cisco AnyConnect
@@ -244,6 +244,7 @@ Teljes **képernyős mód**: válassza ki, hogy az eszköz futtat-e egy alkalmaz
   > [!IMPORTANT]
   > - A kiválasztott VPN-ügyfelet az eszközön kell telepíteni, és támogatnia kell az alkalmazásonkénti VPN-t a munkahelyi profilokban. Ellenkező esetben hiba történik. 
   > - A VPN-ügyfélalkalmazást jóvá kell hagynia a **felügyelt Google Play Áruházban**, szinkronizálnia kell az alkalmazást az Intune-nal, majd üzembe helyeznie az eszközön. Ezt követően az alkalmazás telepítve lesz a felhasználó munkahelyi profiljában.
+  > - Továbbra is konfigurálnia kell a VPN-ügyfelet [VPN-profillal](vpn-settings-android-enterprise.md)vagy egy [alkalmazás konfigurációs profiljával](../apps/app-configuration-policies-use-android.md).
   > - Ismert problémák merülhetnek fel az alkalmazáson belüli VPN és az F5 Access for Android 3.0.4 használatával. További információért lásd a [F5's kibocsátási megjegyzéseit az F5 Access for Android 3.0.4](https://support.f5.com/kb/en-us/products/big-ip_apm/releasenotes/related/relnote-f5access-android-3-0-4.html#relnotes_known_issues_f5_access_android) számára című témakört.
 
 - **Zárolási mód**: válassza az **Engedélyezés** lehetőséget az összes hálózati forgalom kényszerítéséhez a VPN-alagút használatára. Ha a VPN-kapcsolat nincs kiépítve, az eszköznek nem lesz hálózati hozzáférése.

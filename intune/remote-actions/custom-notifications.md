@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a8393bbc012861199bd99d97a62ab3e659c15d15
-ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
+ms.openlocfilehash: 443e1e2fff2a0c4641d3446bf72e455cc92ce784
+ms.sourcegitcommit: ec69e7ccc6e6183862a48c1b03ca6a3bf573f354
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73713238"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74907287"
 ---
 # <a name="send-custom-notifications-in-intune"></a>Egyéni értesítések küldése az Intune-ban  
 
@@ -69,7 +69,7 @@ Az egyéni értesítési üzenetek közé tartozik egy rövid cím és egy 500 k
 
 ## <a name="send-a-custom-notification-to-groups"></a>Egyéni értesítés küldése a csoportoknak  
 
-1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431) egy olyan fiókkal, amely jogosult értesítések létrehozására és küldésére, valamint az **eszközök** > **Egyéni értesítések küldése**elemre.  
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431) egy olyan fiókkal, amely jogosult értesítések létrehozására és küldésére, valamint a **bérlői felügyelet** > **Egyéni értesítések**elemre.  
 
 2. Az alapvető beállítások lapon adja meg a következőket, majd a folytatáshoz kattintson a **tovább** gombra.  
    - **Title (cím** ) – Itt adhatja meg az értesítés címét. A címek legfeljebb 50 karakterből állhatnak.  
@@ -93,7 +93,7 @@ Az Intune nem követi az Ön által küldött egyéni értesítéseket, és az e
 
 2. Válassza ki azt az eszközt, amelyre értesítést szeretne küldeni.  
 
-3. Az eszközök **áttekintése** lapon válassza a **... lehetőséget. További** lehetőségek az oldal bal felső részén.  
+3. Az eszközök **áttekintése** lapon válassza a **...** (ellipszisek) lehetőséget az oldal jobb felső részén.  
 
 4. Az egyéni **értesítési eszköz küldése** művelet kiválasztásával nyissa meg az *Egyéni értesítés küldése* panelt, ahol a következő üzenet részleteit adja meg:  
 

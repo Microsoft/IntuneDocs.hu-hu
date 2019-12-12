@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ec800064d109cca42878c79ade6777de9b782015
-ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74563507"
 ---
 # <a name="add-android-store-apps-to-microsoft-intune"></a>Androidos áruházbeli alkalmazások hozzáadása a Microsoft Intune-hoz
@@ -31,7 +31,7 @@ ms.locfileid: "74563507"
 
 Mielőtt az alkalmazást hozzárendelné egy eszközhöz vagy felhasználói csoporthoz, az eszközt először hozzá kell adnia a Microsoft Intune-hoz. 
 
-## <a name="add-an-app"></a>Alkalmazás hozzáadása
+## <a name="add-an-app"></a>Alkalmazás felvétele
 
 A következő módon adhat hozzá Android-áruházból származó alkalmazást az Intune-hoz az Azure Portalon:
 

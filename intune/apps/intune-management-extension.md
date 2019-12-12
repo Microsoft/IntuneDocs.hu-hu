@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cef30238a4470395ccf58cf4d0619db78dd85b5a
-ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74563464"
 ---
 # <a name="use-powershell-scripts-on-windows-10-devices-in-intune"></a>PowerShell-parancsfájlok használata Windows 10-es eszközökön az Intune-ban
@@ -66,7 +66,7 @@ Az Intune felügyeleti bővítmény a következő előfeltételekkel rendelkezik
   
     - [A közös felügyelet ismertetése](https://docs.microsoft.com/sccm/comanage/overview) 
     - [Ügyfélalkalmazások munkaterhelése](https://docs.microsoft.com/sccm/comanage/workloads#client-apps)
-    - [Configuration Manager számítási feladatok átváltása az Intune-ba](https://docs.microsoft.com/sccm/comanage/how-to-switch-workloads)
+    - [Configuration Manager számításai feladatainak átvitele az Intune-ba](https://docs.microsoft.com/sccm/comanage/how-to-switch-workloads)
   
 > [!TIP]
 > Győződjön meg arról, hogy az eszközök [csatlakoznak](https://docs.microsoft.com/azure/active-directory/user-help/user-help-join-device-on-network) az Azure ad-hez. Azok az eszközök, amelyek csak az Azure AD-ben vannak [regisztrálva](https://docs.microsoft.com/azure/active-directory/user-help/user-help-register-device-on-network) , nem kapják meg a parancsfájlokat.
@@ -142,7 +142,7 @@ Az ügyfélgépen lévő ügynökök naplói jellemzően `\ProgramData\Microsoft
 
 A **PowerShell-parancsfájlok** panelen kattintson a jobb gombbal a parancsfájlra, és válassza a **Törlés** lehetőséget.
 
-## <a name="common-issues-and-resolutions"></a>Gyakori problémák és megoldások
+## <a name="common-issues-and-resolutions"></a>A leggyakoribb problémák és megoldásaik
 
 ### <a name="issue-intune-management-extension-doesnt-download"></a>Probléma: az Intune felügyeleti bővítmény nem tölthető le
 
@@ -185,7 +185,7 @@ A [Windows 10 automatikus regisztrációjának engedélyezése](../enrollment/wi
 - A parancsfájlokkal kapcsolatos problémák elkülönítéséhez a következőket teheti:
 
   - Tekintse át a PowerShell-végrehajtási konfigurációt az eszközökön. Útmutatásért tekintse meg a [PowerShell végrehajtási szabályzatát](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6) .
-  - Futtasson egy minta parancsfájlt az Intune felügyeleti bővítmény használatával. Hozza létre például a `C:\Scripts` könyvtárat, és adja meg mindenki számára a teljes hozzáférést. Futtassa a következő parancsfájlt:
+  - Futtasson egy minta parancsfájlt az Intune felügyeleti bővítmény használatával. Hozza létre például a `C:\Scripts` könyvtárat, és adja meg mindenki számára a teljes hozzáférést. Futtassa az alábbi parancsprogramot:
 
     ```powershell
     write-output "Script worked" | out-file c:\Scripts\output.txt

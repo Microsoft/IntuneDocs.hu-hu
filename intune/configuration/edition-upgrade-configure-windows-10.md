@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3595e75a73868378c9c366de6c751c21a9151ae3
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74059519"
 ---
 # <a name="upgrade-windows-10-editions-or-switch-out-of-s-mode-on-devices-using-microsoft-intune"></a>A Windows 10 kiadások frissítése vagy az eszközökön való kikapcsolás Microsoft Intune használatával
@@ -61,15 +61,15 @@ A Windows 10-kiadás frissítési profiljának támogatott frissítési útvonal
 
 | Frissítés erről a kiadásról | Frissítés erre a kiadásra |
 |---|---|
-| Windows 10 Pro | Windows 10 oktatás <br/>Windows 10 Enterprise <br/>Windows 10 Pro Education |
+| Windows 10 Pro | Windows 10 Education <br/>Windows 10 Enterprise <br/>Windows 10 Pro Education |
 | Windows 10 Pro N kiadás | Windows 10 Education N kiadás <br/>Windows 10 Enterprise N kiadás <br/>Windows 10 Pro Education N kiadás | 
-| Windows 10 Pro Education | Windows 10 oktatás | 
+| Windows 10 Pro Education | Windows 10 Education | 
 | Windows 10 Pro Education N kiadás | Windows 10 Education N kiadás |
-| Windows 10 Cloud | Windows 10 oktatás <br/>Windows 10 Enterprise <br/>Windows 10 Pro <br/>Windows 10 Pro Education | 
+| Windows 10 Cloud | Windows 10 Education <br/>Windows 10 Enterprise <br/>Windows 10 Pro <br/>Windows 10 Pro Education | 
 | Windows 10 Cloud N kiadás | Windows 10 Education N kiadás <br/>Windows 10 Enterprise N kiadás <br/>Windows 10 Pro N kiadás <br/>Windows 10 Pro Education N kiadás | 
-| Windows 10 Enterprise | Windows 10 oktatás | 
+| Windows 10 Enterprise | Windows 10 Education | 
 | Windows 10 Enterprise N kiadás | Windows 10 Education N kiadás | 
-| Windows 10 Core | Windows 10 oktatás <br/>Windows 10 Enterprise <br/>Windows 10 Pro Education | 
+| Windows 10 Core | Windows 10 Education <br/>Windows 10 Enterprise <br/>Windows 10 Pro Education | 
 | Windows 10 Core N kiadás | Windows 10 Education N kiadás <br/>Windows 10 Enterprise N kiadás <br/>Windows 10 Pro Education N kiadás | 
 | Windows 10 Holographic | Windows 10 Holographic for Business |
 | Windows 10 mobil verzió | Windows 10 Mobile Enterprise |

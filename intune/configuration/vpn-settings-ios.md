@@ -16,10 +16,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e45d51feb91e0e188971133185ac0f0f13e5b1f4
-ms.sourcegitcommit: b752acefec077c719e169e665c955adb944e85c6
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74781141"
 ---
 # <a name="add-vpn-settings-on-ios-devices-in-microsoft-intune"></a>VPN-beállítások hozzáadása iOS-eszközökön Microsoft Intune
@@ -145,7 +145,7 @@ Ezek a beállítások akkor érvényesek, ha a **kapcsolattípus** > **IKEv2**le
   - **Titkosítási algoritmus**: válassza ki a kívánt algoritmust:
     - DES
     - 3DES
-    - AES – 128
+    - AES-128
     - AES-256 (alapértelmezett)
     - AES-128 – GCM
     - AES-256 – GCM
@@ -156,7 +156,7 @@ Ezek a beállítások akkor érvényesek, ha a **kapcsolattípus** > **IKEv2**le
     - SHA2 – 384
     - SHA2 – 512
   - **Diffie-Hellman csoport**: válassza ki a kívánt csoportot. Az alapértelmezett érték a Group `2`.
-  - **Élettartam** (perc): válassza ki, hogy mennyi ideig marad aktív a biztonsági társítás a kulcsok elforgatása előtt. `10` és `1440` közötti egész értéket adjon meg (1440 perc 24 óra). Az alapértelmezett érték `1440`.
+  - **Élettartam** (perc): válassza ki, hogy mennyi ideig marad aktív a biztonsági társítás a kulcsok elforgatása előtt. `10` és `1440` közötti egész értéket adjon meg (1440 perc 24 óra). Az alapértelmezett érték a `1440`.
 
 - **Külön paraméterek beállítása a gyermek biztonsági társításokhoz**: az iOS lehetővé teszi, hogy külön paramétereket konfiguráljon az IKE-kapcsolathoz és az alárendelt kapcsolatokhoz. 
 
@@ -164,7 +164,7 @@ Ezek a beállítások akkor érvényesek, ha a **kapcsolattípus** > **IKEv2**le
   - **Titkosítási algoritmus**: válassza ki a kívánt algoritmust:
     - DES
     - 3DES
-    - AES – 128
+    - AES-128
     - AES-256 (alapértelmezett)
     - AES-128 – GCM
     - AES-256 – GCM
@@ -175,7 +175,7 @@ Ezek a beállítások akkor érvényesek, ha a **kapcsolattípus** > **IKEv2**le
     - SHA2 – 384
     - SHA2 – 512
   - **Diffie-Hellman csoport**: válassza ki a kívánt csoportot. Az alapértelmezett érték a Group `2`.
-  - **Élettartam** (perc): válassza ki, hogy mennyi ideig marad aktív a biztonsági társítás a kulcsok elforgatása előtt. `10` és `1440` közötti egész értéket adjon meg (1440 perc 24 óra). Az alapértelmezett érték `1440`.
+  - **Élettartam** (perc): válassza ki, hogy mennyi ideig marad aktív a biztonsági társítás a kulcsok elforgatása előtt. `10` és `1440` közötti egész értéket adjon meg (1440 perc 24 óra). Az alapértelmezett érték a `1440`.
 
 ## <a name="automatic-vpn-settings"></a>Automatikus VPN-beállítások
 
@@ -197,8 +197,8 @@ Ezek a beállítások akkor érvényesek, ha a **kapcsolattípus** > **IKEv2**le
   - **Művelet**: Válasszon a következő lehetőségek közül:
     - Kapcsolódás
     - Kapcsolat kiértékelése
-    - Figyelmen kívül
-    - Szétkapcsol
+    - Mellőzés
+    - Kapcsolat bontása
 
 ## <a name="proxy-settings"></a>Proxybeállítások
 

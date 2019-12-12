@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 80d6068a17e1d278f9226e26c9efab24d597e52e
-ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74564268"
 ---
 # <a name="add-app-configuration-policies-for-managed-android-enterprise-devices"></a>Alkalmazás-konfigurációs szabályzatok hozzáadása a felügyelt Android Enterprise-eszközökhöz
@@ -75,9 +75,9 @@ Ha változót szeretne megadni értéktípusnak, az alábbi lehetőségek közü
 | Domain | contoso.com |
 | Mail | john@contoso.com |
 | Részleges UPN | John |
-| Felhasználói azonosító | 3ec2c00f-b125-4519-acf0-302ac3761822 |
+| Felhasználó azonosítója | 3ec2c00f-b125-4519-acf0-302ac3761822 |
 | Felhasználónév | John Doe |
-| Egyszerű Felhasználónév | john@contoso.com |
+| Egyszerű felhasználónév | john@contoso.com |
 
 
 ### <a name="allow-only-configured-organization-accounts-in-multi-identity-apps"></a>Csak a konfigurált szervezeti fiókok engedélyezése a többidentitásos alkalmazásokban 

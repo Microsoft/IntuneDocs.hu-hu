@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 72e1f95e2bd81d974d900acbcb0f785bb7966eaa
-ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74563699"
 ---
 # <a name="monitor-app-information-and-assignments-with-microsoft-intune"></a>Alkalmazásadatok és -hozzárendelések figyelése a Microsoft Intune-ban
@@ -44,7 +44,7 @@ Az Intune több módot is kínál a felügyelt alkalmazások jellemzőinek figye
 
 Az alkalmazáshoz tartozó panelen áttekintheti a környezetében lévő alkalmazás részletes állapotadatait.
 
-### <a name="essentials"></a>Essentials
+### <a name="essentials"></a>Alapvető erőforrások
 Az **Alapadatok** szakasz az alábbi információkat nyújtja az alkalmazásról:
 
  | **Alkalmazás részletei**            | **Leírás**                                                      |
@@ -78,7 +78,7 @@ Az eszközállapot-lista akkor jelenik meg, ha a menü **Figyelés** szakasz **E
 | **Felhasználónév**        | A felhasználó neve.                                                                                                                                                                                                                                      |
 | **Platform**         | Az eszköz operációs rendszere (Windows, iOS, Android és hasonlók.).                                                                                                                                                                                           |
 | **Verzió**          | Az alkalmazás verziószáma. Az üzletági (LOB) alkalmazások és a Microsoft Store for Business alkalmazások esetében az alkalmazás teljes verziószáma jelenik meg. A teljes verziószám az alkalmazás egy adott verzióját azonosítja. A szám az alábbi formátumban jelenik meg: _Verzió_(_Build_). Például 2.2(2.2.17560800). A standard szintű áruházbeli alkalmazások esetében nem jelennek meg verziók. |
-| **Állapota**           | Az alkalmazás állapota.                                                                                                                                                                                                                                     |
+| **Status** (Állapot)           | Az alkalmazás állapota.                                                                                                                                                                                                                                     |
 | **Állapot részletei**   | Az állapot részletei.                                                                                                                                                                                                                                     |
 | **Legutóbbi bejelentkezés**    | Az eszköz Intune-nal való utolsó szinkronizálásának dátuma.                                                                                                                                                                                                                  |
 

@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3db085e6e88f8f57eb0276afa77290df8574568f
-ms.sourcegitcommit: b5e719fb507b1bc4774674e76c856c435e69f68c
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73801714"
 ---
 # <a name="configure-and-use-pkcs-certificates-with-intune"></a>PKCS-tanúsítványok konfigurálása és használata az Intune-nal
@@ -57,7 +57,7 @@ A PKCS-tanúsítványok Intune-nal való használatához a következő infrastru
   Vállalati hitelesítésszolgáltatótól származó főtanúsítvány exportált másolata.
 
 - **Microsoft Intune tanúsítvány-összekötő** (más néven az *NDES Certificate Connector*):  
-  Az Intune-portálon válassza az **eszköz konfigurációja** > **tanúsítvány-összekötők** > **Hozzáadás**lehetőséget, majd kövesse a *lépéseket az összekötő PKCS-#12 telepítéséhez*. Az **NDESConnectorSetup. exe**tanúsítvány-összekötő telepítőjének letöltéséhez használja a portál letöltési hivatkozását.  
+  Az Intune-portálon válassza az **eszköz konfigurációja** > **tanúsítvány-összekötők** > **Hozzáadás**lehetőséget, és kövesse a *lépéseket az összekötő PKCS #12 telepítéséhez*. Az **NDESConnectorSetup. exe**tanúsítvány-összekötő telepítőjének letöltéséhez használja a portál letöltési hivatkozását.  
 
   Az Intune legfeljebb 100 példányt támogat a bérlők számára. A összekötő minden példányának külön Windows-kiszolgálón kell lennie. Az összekötő egy példányát telepítheti ugyanarra a kiszolgálóra, mint a PFX tanúsítvány-összekötő példánya Microsoft Intune. Több összekötő használata esetén az összekötő-infrastruktúra támogatja a magas rendelkezésre állást és a terheléselosztást, mivel bármely elérhető összekötő-példány feldolgozhatja a PKCS-tanúsítványkérelmek kérelmeit. 
 
@@ -66,7 +66,7 @@ A PKCS-tanúsítványok Intune-nal való használatához a következő infrastru
   A Microsoft Intune Tanúsítvány-összekötő támogatja a Federal Information Processing standard (FIPS) üzemmódot is. A FIPS nem szükséges, de ha engedélyezve van, akkor lehetőség van tanúsítványok kibocsátására és visszavonására.
 
 - **Pfx tanúsítvány-összekötő a Microsoft Intunehoz**:  
-  Ha az S/MIME e-mailek titkosítását tervezi használni, az Intune-portálon töltheti le a pfx-tanúsítványok importálását támogató *pfx tanúsítvány-összekötőt* .  Lépjen az **eszköz konfigurációja** > **tanúsítvány-összekötők** > **Hozzáadás**elemre, és kövesse a *lépéseket az importált pfx-tanúsítványokhoz tartozó összekötő telepítéséhez*. Az **PfxCertificateConnectorBootstrapper. exe**telepítőjének letöltéséhez használja a portál letöltési hivatkozását. 
+  Ha az S/MIME e-mailek titkosítását tervezi használni, az Intune-portálon töltheti le a pfx-tanúsítványok importálását támogató *pfx tanúsítvány-összekötőt* .  Nyissa meg az **eszköz konfigurációja** > **tanúsítvány-összekötők** > **Hozzáadás**lehetőséget, majd kövesse a *lépéseket az importált pfx-tanúsítványokhoz tartozó összekötő telepítéséhez*. Az **PfxCertificateConnectorBootstrapper. exe**telepítőjének letöltéséhez használja a portál letöltési hivatkozását. 
 
   Minden Intune-bérlő támogatja az összekötő egyetlen példányát. Ezt az összekötőt telepítheti ugyanarra a kiszolgálóra, mint az Microsoft Intune Certificate Connector példánya.
 
@@ -159,7 +159,7 @@ VPN-, WiFi-vagy más erőforrásokkal rendelkező eszköz hitelesítéséhez az 
 5. A Microsoft Intune Tanúsítvány-összekötő megnyitja a **beléptetés** lapot. Az Intune-nal való kapcsolódás engedélyezéséhez **Jelentkezzen**be, és adjon meg egy globális rendszergazdai jogosultságokkal rendelkező fiókot.
 6. Javasoljuk, hogy a **Speciális** lapon hagyja kijelölve az **E számítógép SYSTEM fiókjának a használata (alapértelmezett)** beállítást.
 7. **Alkalmaz** > **Bezárás**
-8. Térjen vissza az Intune-portálra (**intune** > **eszköz konfigurációja** > **tanúsítvány-összekötő**). Néhány pillanat múlva megjelenik egy zöld pipa jel, és a **kapcsolatok állapota** **aktív**. Az összekötő kiszolgáló mostantól kapcsolatba tud lépni az Intune-nal.
+8. Lépjen vissza az Intune-portálra (**intune** > **eszköz konfigurációja** > **tanúsítási összekötők**). Néhány pillanat múlva megjelenik egy zöld pipa jel, és a **kapcsolatok állapota** **aktív**. Az összekötő kiszolgáló mostantól kapcsolatba tud lépni az Intune-nal.
 9. Ha a hálózati környezetben van webproxyja, további konfigurációkra lehet szükség az összekötő működésének engedélyezéséhez. További információ: a [meglévő helyszíni proxykiszolgálók használata](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-connectors-with-proxy-servers) az Azure Active Directory dokumentációjában.
 
 > [!NOTE]  
@@ -232,7 +232,7 @@ VPN-, WiFi-vagy más erőforrásokkal rendelkező eszköz hitelesítéséhez az 
 MacOS PKCS-tanúsítvány profil létrehozásakor a tulajdonos nevének formátuma a kiválasztott tanúsítvány típusától függ, amely a **felhasználó** vagy az **eszköz**.  
 
 > [!NOTE]  
-> Létezik egy ismert probléma a PKCS használatával olyan tanúsítványok beszerzéséhez, [amelyek ugyanaz a probléma, mint a SCEP esetében,](certificates-profile-scep.md#avoid-certificate-signing-requests-with-escaped-special-characters) ha az eredményül kapott tanúsítvány-aláírási kérelemben szereplő tulajdonos neve a következő karakterek egyikét tartalmazza Escape-karakterként ( fordított perjel \\):
+> Létezik egy ismert probléma a PKCS használatával olyan tanúsítványok beszerzéséhez, [amelyek ugyanaz a probléma, mint a SCEP esetében,](certificates-profile-scep.md#avoid-certificate-signing-requests-with-escaped-special-characters) ha az eredményül kapott tanúsítvány-aláírási kérelemben szereplő tulajdonos neve (CSR) a következő karakterek egyikét tartalmazza Escape-karakterként (fordított perjel \\):
 > - \+
 > - ;
 > - ,
@@ -299,7 +299,7 @@ A *pfx-tanúsítványok összekötője Microsoft Intune* [támogatja az automati
   Változások ebben a kiadásban:  
   - Az összekötő lekérdezési időköze 5 perctől 30 másodpercre van csökkentve.
  
-### <a name="april-2-2019"></a>2019. április 2.
+### <a name="april-2-2019"></a>2019. április 02.
 
 - **Intune tanúsítvány-összekötő – verzió 6.1904.1.0**  
   Változások ebben a kiadásban:  

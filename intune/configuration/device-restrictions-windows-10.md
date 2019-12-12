@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/19/2019
+ms.date: 12/04/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6fb025e6b698eba3deeabbda788fcd990a19105f
-ms.sourcegitcommit: b752acefec077c719e169e665c955adb944e85c6
+ms.openlocfilehash: 78daf56f7e1d22b88d7134ac6cea86f1d999f0c6
+ms.sourcegitcommit: 66e284fe092e19c1da72b4b770e45bf25ac7910c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74781175"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74860247"
 ---
 # <a name="windows-10-and-newer-device-settings-to-allow-or-restrict-features-using-intune"></a>Windows 10 (és újabb) eszközbeállítások az Intune-t használó szolgáltatások engedélyezéséhez vagy korlátozásához
 
@@ -42,11 +42,11 @@ Ezek a beállítások a [ApplicationManagement házirend CSP](https://docs.micro
 - **App Store** (csak mobil): **nincs konfigurálva** (alapértelmezés) lehetővé teszi a végfelhasználók számára az alkalmazás-áruház elérését a mobileszközökön. **Letiltja** az alkalmazás-áruház használatát.
 - Az **áruházból származó alkalmazások automatikus frissítése**: **nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a rendszer automatikusan frissítse az alkalmazásokat a Microsoft Storeról. A **Letiltás** megakadályozza a frissítések automatikus telepítését.
 - **Megbízható alkalmazás telepítése**: válassza ki, hogy a nem Microsoft Store alkalmazásokat lehet-e telepíteni, más néven közvetlen telepítési. A közvetlen telepítési telepíti, majd futtatja vagy teszteli az Microsoft Store által nem tanúsított alkalmazást. Például egy olyan alkalmazás, amely csak a vállalaton belül található. A választható lehetőségek:
-  - **Nincs konfigurálva** (alapértelmezett): az operációs rendszer alapértelmezését használja.
+  - **Nincs konfigurálva** (alapértelmezett): az Intune nem módosítja vagy nem frissíti ezt a beállítást.
   - **Letiltás**: megakadályozza a közvetlen telepítési. Nem Microsoft Store alkalmazások nem telepíthetők.
   - **Engedélyezés**: engedélyezi a közvetlen telepítési. Nem Microsoft Store alkalmazások is telepíthetők.
 - **Fejlesztői zárolás feloldása**: engedélyezi a Windows fejlesztői beállításait, például lehetővé teszi a közvetlenül telepített alkalmazások módosítását a végfelhasználók számára. A választható lehetőségek:
-  - **Nincs konfigurálva** (alapértelmezett): az operációs rendszer alapértelmezését használja.
+  - **Nincs konfigurálva** (alapértelmezett): az Intune nem módosítja vagy nem frissíti ezt a beállítást.
   - **Letiltás**: meggátolja a fejlesztői üzemmódot és a közvetlen telepítési alkalmazásokat.
   - **Engedélyezés**: lehetővé teszi a fejlesztői üzemmód és a közvetlen telepítési alkalmazások használatát.
 
@@ -87,7 +87,7 @@ Ezek a beállítások a [kapcsolódási házirendet](https://docs.microsoft.com/
 - [Wi-Fi házirend CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-wifi)
 
 - **Mobil adatcsatorna**: válassza ki, hogy a végfelhasználók használhatnak-e olyan adatforrásokat, mint például a webes böngészés, ha a hálózathoz csatlakozik. A választható lehetőségek:
-  - **Nincs konfigurálva** (alapértelmezett): az operációs rendszer alapértelmezését használja, ami engedélyezheti a mobil adatcsatornát. A végfelhasználók kikapcsolhatják a felhasználókat.
+  - **Nincs konfigurálva** (alapértelmezett): az Intune nem módosítja vagy nem frissíti ezt a beállítást. A végfelhasználók kikapcsolhatják a felhasználókat.
   - **Letiltás**: ne engedélyezze a mobil adatcsatornát. A végfelhasználók nem kapcsolhatják be.
   - **Engedélyezés (nem szerkeszthető)** : engedélyezi a mobil adatcsatornát. A végfelhasználók nem kapcsolhatják ki.
 
@@ -130,7 +130,7 @@ Ezek a beállítások a [EnterpriseCloudPrint házirend CSP](https://docs.micros
 - **Nyomtató hozzáférési szolgáltatójának URL-címe**: adja meg a hitelesítési végpont URL-címét az OAuth-tokenek lekéréséhez. Például írja be a következőt: `https://azuretenant.contoso.com/adfs`.
 - **Natív Azure-ügyfélalkalmazás GUID-azonosítója**: adja meg egy olyan ügyfélalkalmazás GUID azonosítóját, amely a OAuth származó OAuth-tokenek beolvasására jogosult. Például írja be a következőt: `E1CF1107-FF90-4228-93BF-26052DD2C714`.
 - **Nyomtatási szolgáltatás erőforrás-URI-ja**: adja meg a Azure Portalban konfigurált nyomtatási szolgáltatás OAuth erőforrás-URI-ját. Például írja be a következőt: `http://MicrosoftEnterpriseCloudPrint/CloudPrint`.
-- **Lekérdezhető nyomtatók maximális**száma: adja meg a lekérdezni kívánt nyomtatók maximális számát. Az alapértelmezett érték `20`.
+- **Lekérdezhető nyomtatók maximális**száma: adja meg a lekérdezni kívánt nyomtatók maximális számát. Az alapértelmezett érték 0.`20`
 - **Nyomtató-felderítési szolgáltatás erőforrás-URI-ja**: adja meg a OAuth-erőforrás URI-ját a Azure Portal konfigurált nyomtató-felderítési szolgáltatáshoz. Például írja be a következőt: `http://MopriaDiscoveryService/CloudPrint`.
 
 > [!TIP]
@@ -139,24 +139,24 @@ Ezek a beállítások a [EnterpriseCloudPrint házirend CSP](https://docs.micros
 ## <a name="control-panel-and-settings"></a>Vezérlőpult és Gépház
 
 - **Settings alkalmazás**: a **Letiltás** megakadályozza, hogy a végfelhasználók hozzáférhessenek a Windows beállítások alkalmazáshoz. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára a beállítások alkalmazás megnyitását az eszközön.
-  - **System**: a **Block** megakadályozza a hozzáférést a beállítások alkalmazás rendszerterületéhez. **Nincs konfigurálva** (alapértelmezés) engedélyezi a hozzáférést.
+  - **System**: a **Block** megakadályozza a hozzáférést a beállítások alkalmazás rendszerterületéhez. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
     - **Energiagazdálkodási és alvási beállítások módosítása** (csak asztali verzióban): a **blokk** megakadályozza, hogy a végfelhasználók megváltoztassák az eszköz energiagazdálkodási és alvási beállításait. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára az energiagazdálkodási beállítások módosítását.
-  - **Eszközök**: a **Letiltás** megakadályozza az eszközön a beállítások alkalmazás eszközök területének elérését. **Nincs konfigurálva** (alapértelmezés) engedélyezi a hozzáférést.
-  - **Hálózati Internet**: a **Letiltás** megakadályozza a hozzáférést az eszközön lévő beállítások alkalmazás hálózati & Internet területéhez. **Nincs konfigurálva** (alapértelmezés) engedélyezi a hozzáférést.
-  - **Személyre szabás**: a **Letiltás** megakadályozza a hozzáférést az eszközön lévő beállítások alkalmazás személyre szabott területéhez. **Nincs konfigurálva** (alapértelmezés) engedélyezi a hozzáférést.
-  - **Alkalmazások**: a **Letiltás** megakadályozza az eszközön a beállítások alkalmazás alkalmazások területének elérését. **Nincs konfigurálva** (alapértelmezés) engedélyezi a hozzáférést.
-  - **Fiókok**: a **Letiltás** megakadályozza az eszközön lévő beállítások alkalmazás fiókok területének elérését. **Nincs konfigurálva** (alapértelmezés) engedélyezi a hozzáférést.
-  - **Idő és nyelv**: a **Letiltás** megakadályozza az eszközön lévő beállítások alkalmazás idő& nyelvi területének elérését. **Nincs konfigurálva** (alapértelmezés) engedélyezi a hozzáférést.
-    - **Rendszeridő módosítása**: a **blokk** megakadályozza, hogy a végfelhasználók módosíthassák a dátum-és időbeállításokat az eszközön. A **nincs konfigurálva** beállítás megadása esetén a felhasználók módosíthatják ezeket a beállításokat.
-    - **Területi beállítások módosítása** (csak asztali verzióban): a **blokk** megakadályozza, hogy a végfelhasználók módosíthassák a régió beállításait az eszközön. A **nincs konfigurálva** beállítás megadása esetén a felhasználók módosíthatják ezeket a beállításokat.
-    - **Nyelvi beállítások módosítása (csak asztali**verzióban): a **blokk** megakadályozza, hogy a végfelhasználók módosíthassák a nyelvi beállításokat az eszközön. A **nincs konfigurálva** beállítás megadása esetén a felhasználók módosíthatják ezeket a beállításokat.
+  - **Eszközök**: a **Letiltás** megakadályozza az eszközön a beállítások alkalmazás eszközök területének elérését. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+  - **Hálózati Internet**: a **Letiltás** megakadályozza a hozzáférést az eszközön lévő beállítások alkalmazás hálózati & Internet területéhez. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+  - **Személyre szabás**: a **Letiltás** megakadályozza a hozzáférést az eszközön lévő beállítások alkalmazás személyre szabott területéhez. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+  - **Alkalmazások**: a **Letiltás** megakadályozza az eszközön a beállítások alkalmazás alkalmazások területének elérését. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+  - **Fiókok**: a **Letiltás** megakadályozza az eszközön lévő beállítások alkalmazás fiókok területének elérését. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+  - **Idő és nyelv**: a **Letiltás** megakadályozza az eszközön lévő beállítások alkalmazás idő& nyelvi területének elérését. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+    - **Rendszeridő módosítása**: a **blokk** megakadályozza, hogy a végfelhasználók módosíthassák a dátum-és időbeállításokat az eszközön. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. A felhasználók módosíthatják ezeket a beállításokat.
+    - **Területi beállítások módosítása** (csak asztali verzióban): a **blokk** megakadályozza, hogy a végfelhasználók módosíthassák a régió beállításait az eszközön. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. A felhasználók módosíthatják ezeket a beállításokat.
+    - **Nyelvi beállítások módosítása (csak asztali**verzióban): a **blokk** megakadályozza, hogy a végfelhasználók módosíthassák a nyelvi beállításokat az eszközön. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. A felhasználók módosíthatják ezeket a beállításokat.
 
       [Beállítások házirend CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-settings)
 
-  - **Gaming**: a **Block** megakadályozza a hozzáférést az eszközön lévő beállítások alkalmazás játék területéhez. **Nincs konfigurálva** (alapértelmezés) engedélyezi a hozzáférést.
-  - **Könnyű hozzáférés**: a **blokk** megakadályozza az eszközön a beállítások alkalmazás egyszerű hozzáférés területének elérését. **Nincs konfigurálva** (alapértelmezés) engedélyezi a hozzáférést.
-  - **Adatvédelem**: a **Letiltás** megakadályozza az eszközön lévő beállítások alkalmazás adatvédelmi területének elérését. **Nincs konfigurálva** (alapértelmezés) engedélyezi a hozzáférést.
-  - **Frissítés és biztonság**: a **Letiltás** megakadályozza a hozzáférést a settings alkalmazás Update & Security területéhez az eszközön. **Nincs konfigurálva** (alapértelmezés) engedélyezi a hozzáférést.
+  - **Gaming**: a **Block** megakadályozza a hozzáférést az eszközön lévő beállítások alkalmazás játék területéhez. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+  - **Könnyű hozzáférés**: a **blokk** megakadályozza az eszközön a beállítások alkalmazás egyszerű hozzáférés területének elérését. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+  - **Adatvédelem**: a **Letiltás** megakadályozza az eszközön lévő beállítások alkalmazás adatvédelmi területének elérését. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+  - **Frissítés és biztonság**: a **Letiltás** megakadályozza a hozzáférést a settings alkalmazás Update & Security területéhez az eszközön. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
 
 ## <a name="display"></a>Megjelenítés
 
@@ -178,31 +178,31 @@ Egy. csv-fájlt is **importálhat** az alkalmazások listájával.
 
 Ezek a beállítások az [élmény házirend CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-experience)-t használják; amely a támogatott Windows-kiadásokat is felsorolja. 
 
-- **Képernyőfelvétel** (csak mobileszköz esetén): a **blokk** megakadályozza, hogy a végfelhasználók képernyőképeket kapjanak az eszközön. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót.
-- **Másolás és beillesztés (csak mobileszköz esetén)** : a **blokk** megakadályozza, hogy a végfelhasználók az eszközön lévő alkalmazások között másolást és beillesztést használjanak. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót.
-- **Regisztráció manuális**törlése: a **blokk** megakadályozza a végfelhasználók számára a munkahelyi fiók törlését az eszköz munkahelyi Vezérlőpultjának használatával. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót.
+- **Képernyőfelvétel** (csak mobileszköz esetén): a **blokk** megakadályozza, hogy a végfelhasználók képernyőképeket kapjanak az eszközön. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+- **Másolás és beillesztés (csak mobileszköz esetén)** : a **blokk** megakadályozza, hogy a végfelhasználók az eszközön lévő alkalmazások között másolást és beillesztést használjanak. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+- **Regisztráció manuális**törlése: a **blokk** megakadályozza a végfelhasználók számára a munkahelyi fiók törlését az eszköz munkahelyi Vezérlőpultjának használatával. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
 
   Ez a házirend-beállítás nem vonatkozik arra az esetre, ha a számítógép Azure AD-hez csatlakozik, és engedélyezve van az automatikus regisztráció.
 
-- **Főtanúsítvány manuális telepítése** (csak mobileszköz esetén): a **Letiltás** megakadályozza a végfelhasználók számára a főtanúsítványok és a köztes Cap-tanúsítványok manuális telepítését. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót.
-- **Kamera**: a **Letiltás** megakadályozza, hogy a végfelhasználók a kamerát használják az eszközön. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót.
+- **Főtanúsítvány manuális telepítése** (csak mobileszköz esetén): a **Letiltás** megakadályozza a végfelhasználók számára a főtanúsítványok és a köztes Cap-tanúsítványok manuális telepítését. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+- **Kamera**: a **Letiltás** megakadályozza, hogy a végfelhasználók a kamerát használják az eszközön. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
 
   [Kamera CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-camera)
 
-- **OneDrive fájl szinkronizálása**: a **Letiltás** megakadályozza, hogy a végfelhasználók szinkronizálják a fájlokat az eszközről a OneDrive. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót.
-- **Cserélhető tároló**: a **blokk** megakadályozza, hogy a végfelhasználók külső tárolóeszközöket használjanak, például SD-kártyákat az eszközzel. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót.
-- Földrajzi **hely: a** **Letiltás** megakadályozza, hogy a végfelhasználók bekapcsolják a Location Servicest az eszközön. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót.
-- **Internetkapcsolat**megosztása: a **blokk** megakadályozza az internetkapcsolat megosztását az eszközön. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót.
-- **Telefon alaphelyzetbe állítása**: a **blokk** megakadályozza, hogy a végfelhasználók törölve legyenek, vagy a gyári beállítások visszaállítása az eszközön. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót.
-- **USB-kapcsolat**: a **blokk** megakadályozza a külső tárolóeszközök elérését az eszközön található USB-kapcsolaton keresztül. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót. Ez a beállítás nem érinti az USB-töltést.
-- **Lopásgátló üzemmód** (csak mobil): a **Letiltás** megakadályozza, hogy a végfelhasználók lopásgátló üzemmódot válasszanak az eszközön. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót.
+- **OneDrive fájl szinkronizálása**: a **Letiltás** megakadályozza, hogy a végfelhasználók szinkronizálják a fájlokat az eszközről a OneDrive. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+- **Cserélhető tároló**: a **blokk** megakadályozza, hogy a végfelhasználók külső tárolóeszközöket használjanak, például SD-kártyákat az eszközzel. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+- Földrajzi **hely: a** **Letiltás** megakadályozza, hogy a végfelhasználók bekapcsolják a Location Servicest az eszközön. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+- **Internetkapcsolat**megosztása: a **blokk** megakadályozza az internetkapcsolat megosztását az eszközön. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+- **Telefon alaphelyzetbe állítása**: a **blokk** megakadályozza, hogy a végfelhasználók törölve legyenek, vagy a gyári beállítások visszaállítása az eszközön. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+- **USB-kapcsolat**: a **blokk** megakadályozza a külső tárolóeszközök elérését az eszközön található USB-kapcsolaton keresztül. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Ez a beállítás nem érinti az USB-töltést.
+- **Lopásgátló üzemmód** (csak mobil): a **Letiltás** megakadályozza, hogy a végfelhasználók lopásgátló üzemmódot válasszanak az eszközön. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
 - **Cortana**: letiltja a Cortana hangsegéd **letiltását** az eszközön. Ha a Cortana ki van kapcsolva, a felhasználók továbbra is kereshetik az eszközön található elemeket. **Nincs konfigurálva** (alapértelmezés) engedélyezi a Cortana.
 - **Hangrögzítés** (csak mobileszköz esetén): a **blokk** megakadályozza, hogy a végfelhasználók az eszközön lévő Hangrögzítőt használják. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a hangrögzítést az alkalmazásokhoz.
-- **Eszköz nevének módosítása** (csak mobileszköz esetén): a **blokk** megakadályozza, hogy a végfelhasználók módosíthassák az eszköz nevét. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót.
-- **Kiépítési csomagok hozzáadása**: a **Letiltás** megakadályozza, hogy a futásidejű konfigurációs ügynök üzembe helyezési csomagokat telepítsen az eszközön. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót.
-- **Kiépítési csomagok eltávolítása**: a **blokk** megakadályozza, hogy a futásidejű konfigurációs ügynök eltávolítja az eszközről a kiépítési csomagokat. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót.
-- **Eszköz felderítése**: a **Letiltás** megakadályozza, hogy az eszköz felderítse a többi eszközt. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót.
-- **Feladat-kapcsoló** (csak mobil): a **Letiltás** megakadályozza a feladat váltását az eszközön. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót.
+- **Eszköz nevének módosítása** (csak mobileszköz esetén): a **blokk** megakadályozza, hogy a végfelhasználók módosíthassák az eszköz nevét. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+- **Kiépítési csomagok hozzáadása**: a **Letiltás** megakadályozza, hogy a futásidejű konfigurációs ügynök üzembe helyezési csomagokat telepítsen az eszközön. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+- **Kiépítési csomagok eltávolítása**: a **blokk** megakadályozza, hogy a futásidejű konfigurációs ügynök eltávolítja az eszközről a kiépítési csomagokat. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+- **Eszköz felderítése**: a **Letiltás** megakadályozza, hogy az eszköz felderítse a többi eszközt. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+- **Feladat-kapcsoló** (csak mobil): a **Letiltás** megakadályozza a feladat váltását az eszközön. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
 - **SIM-kártya hiba párbeszédpanele** (csak mobil): **letiltja** a hibaüzeneteket az eszközön, ha a rendszer nem észlel SIM-kártyát. **Nincs konfigurálva** (az alapértelmezett) megjeleníti a hibaüzeneteket.
 - **Tinta munkaterület**: válassza ki, hogy a felhasználó hogyan fér hozzá a tinta munkaterülethez. A választható lehetőségek:
   - **Nincs konfigurálva** (alapértelmezett): bekapcsolja a tinta munkaterületet, és a felhasználó a zárolási képernyő feletti használatra jogosult.
@@ -247,7 +247,7 @@ Ezek a beállítások az [élmény házirend CSP](https://docs.microsoft.com/win
 
   [DeviceLock/ScreenTimeoutWhileLocked CSP](https://msdn.microsoft.com/ie/dn904962(v=vs.94)#DeviceLock_ScreenTimeoutWhileLocked)
 
-## <a name="messaging"></a>Üzenetkezelési
+## <a name="messaging"></a>Üzenetkezelés
 
 Ezek a beállítások az [üzenetküldési házirend CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-messaging)-t használják; amely a támogatott Windows-kiadásokat is felsorolja.
 
@@ -272,7 +272,7 @@ Az elérhető beállítások a választott lehetőségtől függően változnak.
 > [!TIP]
 > A beállításokkal kapcsolatos további információkért lásd a [Microsoft Edge kioszk mód konfigurációs típusait](https://docs.microsoft.com/microsoft-edge/deploy/microsoft-edge-kiosk-mode-deploy#supported-configuration-types).
 
-Ez az eszköz-korlátozási profil közvetlenül kapcsolódik a [Windows kioszk beállításainak](kiosk-settings-windows.md)használatával létrehozott kioszk-profilhoz. Összefoglalás:
+Ez az eszköz-korlátozási profil közvetlenül kapcsolódik a [Windows kioszk beállításainak](kiosk-settings-windows.md)használatával létrehozott kioszk-profilhoz. Összefoglalásképpen:
 
 1. Hozza létre a [Windows kioszk beállítási](kiosk-settings-windows.md) profilt az eszköz teljes képernyős módban való futtatásához. Válassza ki a Microsoft Edge alkalmazást, és állítsa be a Microsoft Edge kioszk üzemmódot a kioszk profilban.
 2. Hozza létre a jelen cikkben ismertetett eszköz-korlátozási profilt, és konfigurálja a Microsoft Edge-ben engedélyezett bizonyos szolgáltatásokat és beállításokat. Ügyeljen arra, hogy ugyanazt a Microsoft Edge kioszk Mode-típust válassza, mint a kioszk-profilban ([Windows kioszk beállításai](kiosk-settings-windows.md)). 
@@ -331,7 +331,7 @@ Ez az eszköz-korlátozási profil közvetlenül kapcsolódik a [Windows kioszk 
   - **Minden oldalon**: a Kedvencek sáv megjelenítése az összes oldalon. A végfelhasználók nem változtathatják meg ezt a beállítást.
   - **Rejtett**: elrejti a Kedvencek sávot az összes oldalon. A végfelhasználók nem változtathatják meg ezt a beállítást.
 - A **Kedvencek módosításának engedélyezése**: az **Igen** (alapértelmezett) az operációs rendszer alapértelmezését használja, amely lehetővé teszi a felhasználók számára a lista módosítását. A **nem** teszi lehetővé a végfelhasználók számára a kedvencek listájának hozzáadását, importálását, rendezését és szerkesztését.
-  - **Kedvencek listája**: adja meg a Kedvencek fájl URL-címeinek listáját. Adja meg például `http://contoso.com/favorites.html`.
+  - **Kedvencek listája**: adja meg a Kedvencek fájl URL-címeinek listáját. Például adja hozzá a következőt: `http://contoso.com/favorites.html`.
 - **Kedvencek szinkronizálása a Microsoft-böngészők között** (csak asztali verzió): **Igen** kényszeríti a Windowst a Kedvencek szinkronizálására az Internet Explorer és a Microsoft Edge között. A Kedvencek között a hozzáadások, a törlések, a módosítások és a megrendelési módosítások megoszthatók a böngészők között.  **Nem** (alapértelmezett) az operációs rendszer alapértelmezését használja, amely lehetővé teheti a felhasználóknak a Kedvencek szinkronizálását a böngészők között.
 - **Alapértelmezett keresőmotor**: válassza ki az alapértelmezett keresőmotort az eszközön. A végfelhasználók ezt az értéket bármikor módosíthatják. A választható lehetőségek:
   - Keresőmotor az ügyfél Microsoft Edge-beállításaiban
@@ -367,7 +367,7 @@ Ha a "felhasználói felülbírálás tiltása és engedélyezése" lehetőség 
 - **Élő csempe adatgyűjtésének engedélyezése**: **Igen** (alapértelmezés) lehetővé teszi a Microsoft Edge számára a Start menübe rögzített élő csempék adatainak gyűjtését. **Nem** akadályozza meg az adatok gyűjtését, ami korlátozott felhasználói élményt biztosíthat a felhasználóknak.
 - A **felhasználó felülbírálhatja a tanúsítvány hibáit**: az **Igen** (alapértelmezett) lehetővé teszi, hogy a felhasználók hozzáférhessenek SSL/TRANSPORT Layer Security (SSL/TLS) hibákat tartalmazó webhelyekhez. **Nem** (a fokozott biztonsághoz ajánlott) megakadályozza, hogy a felhasználók SSL-vagy TLS-hibákkal férhessenek hozzá a webhelyekhez.
 
-### <a name="additional"></a>További
+### <a name="additional"></a>Továbbiak
 
 - **Microsoft Edge böngésző engedélyezése** (csak mobil): **Igen** (alapértelmezés) lehetővé teszi a Microsoft Edge webböngésző használatát a mobileszközön. **Nem** akadályozza meg a Microsoft Edge használatát az eszközön. Ha a **nem**lehetőséget választja, a többi egyéni beállítás csak az asztalra vonatkozik.
 - **Címsor legördülő menüjének engedélyezése**: **Igen** (alapértelmezés) lehetővé teszi a Microsoft Edge számára, hogy megjelenjen a címsor legördülő lista a javaslatok listájával. A **nem** állítja le a Microsoft Edge-t a legördülő listában szereplő javaslatok listájának megjelenítéséhez a beíráskor. Ha a **nem**értékre van állítva, akkor:
@@ -420,21 +420,21 @@ Ezek a beállítások a [DeviceLock házirend CSP](https://docs.microsoft.com/wi
   - **Korábbi jelszavak újbóli használatának tiltása**: Itt adhatja meg a korábban nem használható jelszavak számát 1-24-ről. Írja be például, hogy `5`, hogy a felhasználók nem állíthatnak be új jelszót a jelenlegi jelszavuk vagy az előző négy jelszavuk bármelyike számára.
   - **Jelszó kérése, ha az eszköz visszatér az inaktív állapotból** (mobil és holografikus): válassza a **szükséges** lehetőséget, hogy a felhasználóknak jelszót kell megadniuk az eszköz zárolásának feloldásához. **Nincs konfigurálva** (az alapértelmezett) nem igényel PIN-kódot vagy jelszót, amikor az eszköz visszatér inaktív állapotból.
   - **Egyszerű jelszavak**: a **Letiltás** beállítás megadásával a felhasználók nem hozhatnak létre egyszerű jelszavakat, például `1234` vagy `1111`. Állítsa be úgy, hogy **ne legyen konfigurálva** (alapértelmezett), hogy a felhasználók jelszavakat hozzanak létre, például `1234` vagy `1111`. Ez a beállítás a Windows-képjelszavak használatát is engedélyezi vagy letiltja.
-- **Automatikus titkosítás a AADJ során**: a **blokk** megakadályozza a BitLocker-eszközök automatikus titkosítását az eszköz első használatra való előkészítésekor, amikor az eszköz csatlakozik az Azure ad-hez. **Nincs konfigurálva** (alapértelmezés) az operációs rendszer alapértelmezett alapértékét használja, amely lehetővé teszi a titkosítást. További információ a [BitLocker-eszközök titkosításáról](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-device-encryption-overview-windows-10#bitlocker-device-encryption).
+- **Automatikus titkosítás a AADJ során**: a **blokk** megakadályozza a BitLocker-eszközök automatikus titkosítását az eszköz első használatra való előkészítésekor, amikor az eszköz csatlakozik az Azure ad-hez. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. További információ a [BitLocker-eszközök titkosításáról](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-device-encryption-overview-windows-10#bitlocker-device-encryption).
 
   [Biztonság/PreventAutomaticDeviceEncryptionForAzureADJoinedDevices CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-security#security-preventautomaticdeviceencryptionforazureadjoineddevices)
 
-- **Federal Information Processing standard (FIPS) szabályzat**: az **Engedélyezés** a Federal Information Processing standard (FIPS) szabályzatot használja, amely az Egyesült államokbeli kormányzati szabvány a titkosításhoz, a kivonatoláshoz és az aláíráshoz. **Nincs konfigurálva** (alapértelmezés) az operációs rendszer alapértelmezett alapértékét használja, amely nem használ FIPS-t.
+- **Federal Information Processing standard (FIPS) szabályzat**: az **Engedélyezés** a Federal Information Processing standard (FIPS) szabályzatot használja, amely az Egyesült államokbeli kormányzati szabvány a titkosításhoz, a kivonatoláshoz és az aláíráshoz. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Az operációs rendszer alapértelmezett értéke nem lehet FIPS.
 
   [Kriptográfia/AllowFipsAlgorithmPolicy CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-cryptography#cryptography-allowfipsalgorithmpolicy)
 
-- **Windows Hello eszköz hitelesítése**: **lehetővé teszi** a felhasználóknak a Windows Hello Companion-eszközök, például a telefon, a fitness-sáv vagy a IoT-eszköz használatát a Windows 10 rendszerű számítógépekre való bejelentkezéshez. **Nincs konfigurálva** (alapértelmezés) az operációs rendszer alapértelmezését használja, ami megakadályozhatja, hogy a Windows Hello Companion-eszközök a Windows rendszerrel hitelesítsék magukat.
+- **Windows Hello eszköz hitelesítése**: **lehetővé teszi** a felhasználóknak a Windows Hello Companion-eszközök, például a telefon, a fitness-sáv vagy a IoT-eszköz használatát a Windows 10 rendszerű számítógépekre való bejelentkezéshez. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Az operációs rendszer alapértelmezett értéke miatt előfordulhat, hogy a Windows Hello Companion-eszközök nem tudnak hitelesíteni a Windows rendszerrel.
 
   [Hitelesítés/AllowSecondaryAuthenticationDevice CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-authentication#authentication-allowsecondaryauthenticationdevice)
 
 - **Webes bejelentkezés**: lehetővé teszi a Windows bejelentkezési támogatását a nem ADFS (Active Directory összevonási szolgáltatások (AD FS)) összevont szolgáltatóknál, például Security ASSERTION MARKUP Language (SAML). Az SAML olyan biztonságos jogkivonatokat használ, amelyek egy egyszeri bejelentkezési (SSO) élményt biztosítanak a webböngészőknek. A választható lehetőségek:
 
-  - **Nincs konfigurálva** (alapértelmezett): az operációs rendszer alapértelmezett beállításait használja az eszközön.
+  - **Nincs konfigurálva** (alapértelmezett): az Intune nem módosítja vagy nem frissíti ezt a beállítást.
   - **Engedélyezve**: a webes hitelesítőadat-szolgáltató engedélyezve van a bejelentkezéshez.
   - **Letiltva**: a webes hitelesítőadat-szolgáltató le van tiltva a bejelentkezéshez.
 
@@ -491,7 +491,7 @@ Ezek a beállítások az [adatvédelmi házirend CSP](https://docs.microsoft.com
 - **Bevitel személyre szabása**: a **Letiltás** megakadályozza a hang használatát a diktáláshoz, valamint a Cortana és más, a Microsoft felhőalapú beszédfelismerést használó alkalmazásokkal való kommunikációhoz. A szolgáltatás le van tiltva, és a felhasználók a beállítások használatával nem engedélyezhetik online beszédfelismerést. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára a választást. Ha engedélyezi ezeket a szolgáltatásokat, a Microsoft hangadatokat gyűjthet a szolgáltatás fejlesztéséhez.
 - **A párosítási és adatvédelmi felhasználói beleegyezési kérések automatikus elfogadása**: válassza az **Engedélyezés lehetőséget** , hogy a Windows automatikusan fogadja a párosítási és adatvédelmi hozzájárulási üzeneteket az alkalmazások futtatásakor. **Nincs konfigurálva** (alapértelmezés) megakadályozza a párosítási és adatvédelmi felhasználói beleegyezési ablak automatikus elfogadását az alkalmazások megnyitásakor.
 - **Felhasználói tevékenységek közzététele**: a **blokk** megakadályozza a tevékenységek hírcsatornájában a legutóbb használt erőforrások közös élményét és felderítését. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót, így az alkalmazások közzé tehetik a végfelhasználói tevékenységeket.
-- **Csak helyi tevékenységek**: a **blokk** megakadályozza, hogy a csak a helyi tevékenységeken alapuló, a feladat-visszakapcsolásban lévő, a közelmúltban felhasznált erőforrások felderítését, valamint a feladat **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót.
+- **Csak helyi tevékenységek**: a **blokk** megakadályozza, hogy a csak a helyi tevékenységeken alapuló, a feladat-visszakapcsolásban lévő, a közelmúltban felhasznált erőforrások felderítését, valamint a feladat Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
 
 Beállíthatja, hogy az eszközön található összes alkalmazás hozzáférhessen. A kivételeket az alkalmazáson belüli **adatvédelmi kivételek**használatával is meghatározhatja az alkalmazások alapján.
 
@@ -536,7 +536,7 @@ Ezek a beállítások a [WirelessDisplay házirend CSP](https://docs.microsoft.c
   [System/AllowTelemetry CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-system#system-allowtelemetry)
 
 - **Microsoft Edge-böngészési adatok küldése Microsoft 365 Analyticsnek**: a szolgáltatás használatához a **használati adatok megosztásának** megadásával **bővíteni** vagy **megtelt**értékre kell állítani. Ez a szolgáltatás azt szabályozza, hogy a Microsoft Edge milyen adatokat küldjön a vállalati eszközök Microsoft 365 elemzéséhez egy konfigurált kereskedelmi AZONOSÍTÓval. A választható lehetőségek:
-  - **Nincs konfigurálva**: az operációs rendszer alapértelmezését használja, amely nem küldi el a böngészési előzményeket.
+  - **Nincs konfigurálva**: az Intune nem módosítja vagy nem frissíti ezt a beállítást. Előfordulhat, hogy az operációs rendszer alapértelmezés szerint nem küldi el a böngészési előzményeket.
   - **Csak intranetes adatküldés**: lehetővé teszi a rendszergazda számára az intranetes adatelőzmények küldését.
   - **Csak internetes adatküldés**: lehetővé teszi, hogy a rendszergazda internetes adatelőzményeket küldjön
   - **Intranetes és internetes adatküldés**: lehetővé teszi a rendszergazda számára az intranetes és az internetes adatelőzmények küldését
@@ -591,11 +591,11 @@ Ezek a beállítások a [Start Policy CSP](https://docs.microsoft.com/windows/cl
 - **Felhasználói csempe**: a **blokk** elrejti a felhasználói csempét a Start menüben. **Nincs konfigurálva** (alapértelmezett) a felhasználói csempét jeleníti meg, és az alábbi beállításokat is megadja:
   - **Zárolás**: a **blokk** elrejti a **zárolási** lehetőséget a Start menü felhasználói csempén. **Nincs konfigurálva** (alapértelmezett) a **zárolási** beállítást mutatja.
   - **Kijelentkezés**: a **blokk** elrejti a kijelentkezési **lehetőséget a** Start menü felhasználói csempén. **Nincs konfigurálva** (alapértelmezés) megjeleníti a **kijelentkezési** lehetőséget.
-- **Leállítás**: a Start menü főkapcsoló gombján a **Letiltás** elrejti a **frissítést, és** leállítja és **leállítja** a beállításokat. **Nincs konfigurálva** (alapértelmezés) ezeket a beállításokat jeleníti meg.
-- **Alvó állapot**: a **Letiltás megakadályozza** , hogy a Start menü főkapcsoló gombján megjelenítse az **alvó üzemmódot** . **Nincs konfigurálva** (alapértelmezés) Ez a beállítás jelenik meg.
-- **Hibernált állapot**: a Start menü főkapcsoló gombján a **Letiltás** elrejti a **hibernálási** beállítást. **Nincs konfigurálva** (alapértelmezés) Ez a beállítás jelenik meg.
-- **Fiók váltása**: a **blokk** elrejti a **kapcsoló fiókot** a Start menü felhasználói csempén. **Nincs konfigurálva** (alapértelmezés) Ez a beállítás jelenik meg.
-- **Újraindítási beállítások**: a **Letiltás** a Start menü főkapcsoló gombjára kattintva elrejti a **frissítési és** újraindítási és **Újraindítási** beállításokat. **Nincs konfigurálva** (alapértelmezés) ezeket a beállításokat jeleníti meg.
+- **Leállítás**: a Start menü főkapcsoló gombján a **Letiltás** elrejti a **frissítést, és** leállítja és **leállítja** a beállításokat. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+- **Alvó állapot**: a **Letiltás megakadályozza** , hogy a Start menü főkapcsoló gombján megjelenítse az **alvó üzemmódot** . Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+- **Hibernált állapot**: a Start menü főkapcsoló gombján a **Letiltás** elrejti a **hibernálási** beállítást. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+- **Fiók váltása**: a **blokk** elrejti a **kapcsoló fiókot** a Start menü felhasználói csempén. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+- **Újraindítási beállítások**: a **Letiltás** a Start menü főkapcsoló gombjára kattintva elrejti a **frissítési és** újraindítási és **Újraindítási** beállításokat. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
 - **Dokumentumok a Start**menüben: a Windows Start menüjének dokumentumok mappájának elrejtése vagy megjelenítése. A választható lehetőségek:
   - **Nincs konfigurálva** (alapértelmezett): a rendszer nem kényszeríti a beállítást. A felhasználók a parancsikon megjelenítéséhez vagy elrejtéséhez választanak.
   - **Elrejtés**: a parancsikon rejtett, és letiltja a beállítást a beállítások alkalmazásban.
@@ -659,9 +659,9 @@ Ezek a beállítások az [Experience Policy CSP](https://docs.microsoft.com/wind
 
 - **Windows Spotlight**: a **Letiltás** kikapcsolja a Windows reflektorfényt a zárolási képernyőn, a Windows-tippeket, a Microsoft fogyasztói funkcióit és az egyéb kapcsolódó funkciókat. Ha a cél az, hogy csökkentse a hálózati forgalmat az eszközökről, állítsa ezt a **blokkra**. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a Windows reflektorfény funkcióinak használatát, és a végfelhasználók is vezérelhetik. Ha engedélyezve van, a következő beállításokat is engedélyezheti vagy letilthatja:
 
-  - **Windows reflektorfény a zárolási képernyőn**: a **Letiltás** megakadályozza a Windows reflektorfényben az eszköz zárolási képernyőjén található információk megjelenítését. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt a funkciót.
+  - **Windows reflektorfény a zárolási képernyőn**: a **Letiltás** megakadályozza a Windows reflektorfényben az eszköz zárolási képernyőjén található információk megjelenítését. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
   - **Harmadik féltől származó javaslatok a Windows reflektorfényben**: a **Letiltás** megakadályozza a Windows Reflektorfényben a nem a Microsoft által közzétett tartalmakat. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi az alkalmazás-és tartalmi javaslatok használatát a Windows reflektorfényben lévő partnerek szoftvergyártói számára, például a zárolási képernyő Spotlight, a javasolt alkalmazások a Start menüben és a Windows-tippek.
-  - **Fogyasztói funkciók**: a **Letiltás** kikapcsolja az általában csak a fogyasztóknak szóló tapasztalatokat, például az indítási javaslatokat, a tagsági értesítéseket, az alkalmazások telepítés utáni telepítését és a csempék átirányítását. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezeket a funkciókat.
+  - **Fogyasztói funkciók**: a **Letiltás** kikapcsolja az általában csak a fogyasztóknak szóló tapasztalatokat, például az indítási javaslatokat, a tagsági értesítéseket, az alkalmazások telepítés utáni telepítését és a csempék átirányítását. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
   - **Windows-tippek**: a **Letiltás** letiltja az előugró ablakokra vonatkozó tippeket. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a Windows-tippek megjelenítését.
   - **Windows reflektorfény a műveletközpontben**: a **Letiltás** megakadályozza a Windows reflektorfény értesítéseinek megjelenítését a műveleti központban. **Nincs konfigurálva** (alapértelmezés) a műveleti központban olyan értesítéseket jeleníthet meg, amelyek az alkalmazásokat és szolgáltatásokat javasolva segítik a felhasználókat a Windowsban.
   - **Windows reflektorfény személyre szabása**: a **Letiltás** megakadályozza, hogy a Windows a diagnosztikai adatok használatával testreszabott felhasználói élményt nyújtson. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a Microsoft számára a diagnosztikai adatgyűjtés használatát, hogy személyre szabott ajánlásokat, tippeket és ajánlatokat biztosítson a felhasználók igényeinek kielégítésére.
@@ -673,7 +673,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
 - **Valós idejű figyelés**: az **Engedélyezés** bekapcsolja a kártevők, kémprogramok és más nemkívánatos szoftverek valós idejű vizsgálatát. A felhasználók nem kapcsolhatják ki. 
 
-  Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem érinti ezt a beállítást. Ha engedélyezi a beállítást, majd visszavált a **nincs konfigurálva**értékre, akkor az Intune a beállítást a korábban konfigurált állapotban hagyja. Alapértelmezés szerint az operációs rendszer bekapcsolja ezt a funkciót, és lehetővé teszi a felhasználók számára a módosítását.
+  Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Ha engedélyezi a beállítást, majd visszavált a **nincs konfigurálva**értékre, akkor az Intune a beállítást a korábban konfigurált állapotban hagyja. Alapértelmezés szerint az operációs rendszer bekapcsolja ezt a funkciót, és lehetővé teszi a felhasználók számára a módosítását.
 
   Az Intune nem kapcsolja ki ezt a funkciót. A letiltásához használjon egyéni URI-t.
 
@@ -681,7 +681,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
 - **Viselkedés figyelése**: **engedélyezze** a működés közbeni figyelést, és ellenőrzi, hogy vannak-e gyanús tevékenységekre utaló ismert mintázatok az eszközökön. A felhasználók nem kapcsolhatják ki a viselkedés figyelését. 
 
-  Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem érinti ezt a beállítást. Ha engedélyezi a beállítást, majd visszavált a **nincs konfigurálva**értékre, akkor az Intune a beállítást a korábban konfigurált állapotban hagyja. Alapértelmezés szerint az operációs rendszer bekapcsolja a viselkedés figyelését, és lehetővé teszi a felhasználók számára a módosítását.
+  Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Ha engedélyezi a beállítást, majd visszavált a **nincs konfigurálva**értékre, akkor az Intune a beállítást a korábban konfigurált állapotban hagyja. Alapértelmezés szerint az operációs rendszer bekapcsolja a viselkedés figyelését, és lehetővé teszi a felhasználók számára a módosítását.
 
   Az Intune nem kapcsolja ki ezt a funkciót. A letiltásához használjon egyéni URI-t.
 
@@ -691,7 +691,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
   A hálózati védelem bekapcsolása és a hálózati blokkolás **engedélyezése** . A felhasználók nem kapcsolhatják ki. Ha ez a beállítás engedélyezve van, a felhasználók nem tudnak csatlakozni az ismert biztonsági rések eléréséhez.
 
-  Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem érinti ezt a beállítást. Ha engedélyezi a beállítást, majd visszavált a **nincs konfigurálva**értékre, akkor az Intune a beállítást a korábban konfigurált állapotban hagyja. Alapértelmezés szerint az operációs rendszer bekapcsolja a NIS-t, és lehetővé teszi a felhasználók számára a módosítását.
+  Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Ha engedélyezi a beállítást, majd visszavált a **nincs konfigurálva**értékre, akkor az Intune a beállítást a korábban konfigurált állapotban hagyja. Alapértelmezés szerint az operációs rendszer bekapcsolja a NIS-t, és lehetővé teszi a felhasználók számára a módosítását.
 
   Az Intune nem kapcsolja ki ezt a funkciót. A letiltásához használjon egyéni URI-t.
 
@@ -699,7 +699,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
 - **Összes Letöltés ellenőrzése**: **engedélyezze** a beállítás bekapcsolása beállítást, és a Defender az internetről letöltött összes fájlt megvizsgálja. A felhasználók nem kapcsolhatják ki ezt a beállítást. 
 
-  Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem érinti ezt a beállítást. Ha engedélyezi a beállítást, majd visszavált a **nincs konfigurálva**értékre, akkor az Intune a beállítást a korábban konfigurált állapotban hagyja. Alapértelmezés szerint az operációs rendszer bekapcsolja ezt a beállítást, és lehetővé teszi a felhasználók számára a módosítását.
+  Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Ha engedélyezi a beállítást, majd visszavált a **nincs konfigurálva**értékre, akkor az Intune a beállítást a korábban konfigurált állapotban hagyja. Alapértelmezés szerint az operációs rendszer bekapcsolja ezt a beállítást, és lehetővé teszi a felhasználók számára a módosítását.
 
   Az Intune nem kapcsolja ki ezt a funkciót. A letiltásához használjon egyéni URI-t.
 
@@ -707,7 +707,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
 - **A Microsoft webböngészőkben betöltött parancsfájlok vizsgálata**: **engedélyezze** a Defender számára az Internet Explorerben használt parancsfájlok vizsgálatát. A felhasználók nem kapcsolhatják ki ezt a beállítást. 
 
-  Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem érinti ezt a beállítást. Ha engedélyezi a beállítást, majd visszavált a **nincs konfigurálva**értékre, akkor az Intune a beállítást a korábban konfigurált állapotban hagyja. Alapértelmezés szerint az operációs rendszer bekapcsolja ezt a beállítást, és lehetővé teszi a felhasználók számára a módosítását.
+  Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Ha engedélyezi a beállítást, majd visszavált a **nincs konfigurálva**értékre, akkor az Intune a beállítást a korábban konfigurált állapotban hagyja. Alapértelmezés szerint az operációs rendszer bekapcsolja ezt a beállítást, és lehetővé teszi a felhasználók számára a módosítását.
 
   Az Intune nem kapcsolja ki ezt a funkciót. A letiltásához használjon egyéni URI-t.
 
@@ -715,7 +715,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
 - **Végfelhasználói hozzáférés a defenderhez**: a **blokk** elrejti a Microsoft Defender felhasználói felületét a végfelhasználók számára. A Microsoft Defender összes értesítése is le van tiltva.
 
-  Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem érinti ezt a beállítást. Ha letiltja a beállítást, majd visszavált a **nincs konfigurálva**értékre, akkor az Intune a beállítást a korábban konfigurált állapotban hagyja. Alapértelmezés szerint az operációs rendszer lehetővé teszi a felhasználóknak a Microsoft Defender felhasználói felületének felhasználói hozzáférését, és lehetővé teszik a felhasználók számára a módosítását.
+  Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Ha letiltja a beállítást, majd visszavált a **nincs konfigurálva**értékre, akkor az Intune a beállítást a korábban konfigurált állapotban hagyja. Alapértelmezés szerint az operációs rendszer lehetővé teszi a felhasználóknak a Microsoft Defender felhasználói felületének felhasználói hozzáférését, és lehetővé teszik a felhasználók számára a módosítását.
 
   Az Intune nem kapcsolja ki ezt a funkciót. A letiltásához használjon egyéni URI-t.
 
@@ -725,7 +725,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
 - **Biztonsági intelligencia frissítési időköze (órában)** : adja meg azt az időközt, amelyet a Defender az új biztonsági intelligenciát keres, 0-24-ból. A választható lehetőségek:
 
-  - **Nincs konfigurálva** (alapértelmezett): a frissítések keresése 8 óránként.
+  - **Nincs konfigurálva** (alapértelmezett): az Intune nem módosítja vagy nem frissíti ezt a beállítást. Az operációs rendszer alapértelmezés szerint 8 óránként is megkeresi a frissítéseket.
   - Ne legyen **pipa**: a Defender nem keres új biztonsági intelligenciával kapcsolatos frissítéseket.
   - **1-24**: a `1` óránként ellenőrzi az ellenőrzést, `2` ellenőrzi, hogy naponta, `24`-e az ellenőrzések és így tovább.
   
@@ -733,7 +733,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
   
 - A **fájl-és program-tevékenység figyelése**: engedélyezi a Defender számára a fájl-és program-tevékenységek figyelését az eszközökön. A választható lehetőségek:
 
-  - **Nincs konfigurálva** (alapértelmezett): az összes fájl figyelése
+  - **Nincs konfigurálva** (alapértelmezett): az Intune nem módosítja vagy nem frissíti ezt a beállítást. Az operációs rendszer alapértelmezett értéke az összes fájl figyelésére használható.
   - **Figyelés letiltva**
   - **Az összes fájl figyelése**
   - **Csak a bejövő fájlok figyelése**
@@ -748,7 +748,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 - **CPU-használat korlátozása vizsgálat során**: korlátozza a megvizsgálható CPU mennyiségét, `0`tól `100`ig.
 - **Archív fájlok vizsgálata**: **engedélyezze** a Defender bekapcsolását, hogy az archivált fájlokat, például zip-vagy cab-fájlokat vizsgálja. A felhasználók nem kapcsolhatják ki ezt a beállítást.
 
-  Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem érinti ezt a beállítást. Ha engedélyezi a beállítást, majd visszavált a **nincs konfigurálva**értékre, akkor az Intune a beállítást a korábban konfigurált állapotban hagyja. Alapértelmezés szerint az operációs rendszer bekapcsolja ezt a vizsgálatot, és lehetővé teszi a felhasználók számára a módosítást.
+  Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Ha engedélyezi a beállítást, majd visszavált a **nincs konfigurálva**értékre, akkor az Intune a beállítást a korábban konfigurált állapotban hagyja. Alapértelmezés szerint az operációs rendszer bekapcsolja ezt a vizsgálatot, és lehetővé teszi a felhasználók számára a módosítást.
 
   Az Intune nem kapcsolja ki ezt a funkciót. A letiltásához használjon egyéni URI-t.
 
@@ -756,7 +756,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
 - **Beérkező levelek ellenőrzése**: **engedélyezheti** , hogy a Defender az eszközre érkező e-mail-üzeneteket vizsgálja. Ha engedélyezve van, a motor elemzi a postaládát és a levelezési fájlokat, hogy elemezze a levél törzsét és a mellékleteket. A. pst (Outlook), a. dbx, a. MBX, a MIME (Outlook Express) és a BinHex (Mac) formátumok is beolvashatók.
 
-  Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem érinti ezt a beállítást. Ha engedélyezi a beállítást, majd visszavált a **nincs konfigurálva**értékre, akkor az Intune a beállítást a korábban konfigurált állapotban hagyja. Alapértelmezés szerint az operációs rendszer kikapcsolja ezt a vizsgálatot, és lehetővé teszi a felhasználók számára a módosítást.
+  Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Ha engedélyezi a beállítást, majd visszavált a **nincs konfigurálva**értékre, akkor az Intune a beállítást a korábban konfigurált állapotban hagyja. Alapértelmezés szerint az operációs rendszer kikapcsolja ezt a vizsgálatot, és lehetővé teszi a felhasználók számára a módosítást.
 
   Az Intune nem kapcsolja ki ezt a funkciót. A letiltásához használjon egyéni URI-t.
 
@@ -764,7 +764,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
 - **Cserélhető meghajtók vizsgálata teljes vizsgálat során**: a teljes vizsgálat során a bekapcsolja a Defender cserélhető meghajtókon való vizsgálatának **bekapcsolását** . A felhasználók nem kapcsolhatják ki ezt a beállítást.
 
-  Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem érinti ezt a beállítást. Ha engedélyezi a beállítást, majd visszavált a **nincs konfigurálva**értékre, akkor az Intune a beállítást a korábban konfigurált állapotban hagyja. Alapértelmezés szerint az operációs rendszer lehetővé teszi a Defender számára a cserélhető meghajtók, például az USB-stickek vizsgálatát, és lehetővé teszi a felhasználók számára a beállítás módosítását.
+  Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Ha engedélyezi a beállítást, majd visszavált a **nincs konfigurálva**értékre, akkor az Intune a beállítást a korábban konfigurált állapotban hagyja. Alapértelmezés szerint az operációs rendszer lehetővé teszi a Defender számára a cserélhető meghajtók, például az USB-stickek vizsgálatát, és lehetővé teszi a felhasználók számára a beállítás módosítását.
 
   A gyors vizsgálat során előfordulhat, hogy a cserélhető meghajtók továbbra is megtekinthetők.
 
@@ -774,7 +774,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
 - **Leképezett hálózati meghajtók ellenőrzése teljes vizsgálat során**: az engedélyezés a Defender által leképezett hálózati meghajtókon lévő fájlok vizsgálatát is **lehetővé teszi** . Ha a meghajtón található fájlok írásvédettek, a Defender nem tudja eltávolítani a bennük talált kártevőket. A felhasználók nem kapcsolhatják ki ezt a beállítást.
 
-  Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem érinti ezt a beállítást. Ha engedélyezi a beállítást, majd visszavált a **nincs konfigurálva**értékre, akkor az Intune a beállítást a korábban konfigurált állapotban hagyja. Alapértelmezés szerint az operációs rendszer bekapcsolja ezt a funkciót, és lehetővé teszi a felhasználók számára a módosítását.
+  Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Ha engedélyezi a beállítást, majd visszavált a **nincs konfigurálva**értékre, akkor az Intune a beállítást a korábban konfigurált állapotban hagyja. Alapértelmezés szerint az operációs rendszer bekapcsolja ezt a funkciót, és lehetővé teszi a felhasználók számára a módosítását.
 
   A gyors vizsgálat során a csatlakoztatott hálózati meghajtók továbbra is megtekinthetők.
 
@@ -784,7 +784,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
 - **Hálózati mappákból megnyitott fájlok vizsgálata**: az engedélyezés a (z) **lehetővé teszi** , hogy a Defender megvizsgálja a hálózati mappákból vagy megosztott hálózati meghajtókról megnyitott fájlokat, például az UNC elérési útról elérhető fájlokat. A felhasználók nem kapcsolhatják ki ezt a beállítást. Ha a meghajtón található fájlok írásvédettek, a Defender nem tudja eltávolítani a bennük talált kártevőket.
 
-  Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem érinti ezt a beállítást. Ha engedélyezi a beállítást, majd visszavált a **nincs konfigurálva**értékre, akkor az Intune a beállítást a korábban konfigurált állapotban hagyja. Alapértelmezés szerint az operációs rendszer megvizsgálja a hálózati mappákból megnyitott fájlokat, és lehetővé teszi a felhasználók számára a módosítását.
+  Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Ha engedélyezi a beállítást, majd visszavált a **nincs konfigurálva**értékre, akkor az Intune a beállítást a korábban konfigurált állapotban hagyja. Alapértelmezés szerint az operációs rendszer megvizsgálja a hálózati mappákból megnyitott fájlokat, és lehetővé teszi a felhasználók számára a módosítását.
 
   Az Intune nem kapcsolja ki ezt a funkciót. A letiltásához használjon egyéni URI-t.
 
@@ -792,7 +792,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
 - **Cloud Protection**: **az** Microsoft Active Protection Service bekapcsolja az eszközt, hogy a felügyelt eszközökről információkat kapjon a kártevők tevékenységéről. A felhasználók nem változtathatják meg ezt a beállítást. 
 
-  Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem érinti ezt a beállítást. Ha engedélyezi a beállítást, majd visszavált a **nincs konfigurálva**értékre, akkor az Intune a beállítást a korábban konfigurált állapotban hagyja. Alapértelmezés szerint az operációs rendszer lehetővé teszi az Microsoft Active Protection Service számára az információk fogadását, és lehetővé teszi a felhasználók számára a beállítás módosítását.
+  Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Ha engedélyezi a beállítást, majd visszavált a **nincs konfigurálva**értékre, akkor az Intune a beállítást a korábban konfigurált állapotban hagyja. Alapértelmezés szerint az operációs rendszer lehetővé teszi az Microsoft Active Protection Service számára az információk fogadását, és lehetővé teszi a felhasználók számára a beállítás módosítását.
 
   Az Intune nem kapcsolja ki ezt a funkciót. A letiltásához használjon egyéni URI-t.
 
@@ -800,7 +800,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
 - A **felhasználók megkérdezése a minta beküldése előtt**: meghatározza, hogy a rendszer automatikusan elküldje-e a további elemzést igénylő potenciálisan kártékony fájlokat a Microsoftnak. A választható lehetőségek:
 
-  - **Nincs konfigurálva** (alapértelmezett): biztonságos minták automatikus küldése.
+  - **Nincs konfigurálva** (alapértelmezett): az Intune nem módosítja vagy nem frissíti ezt a beállítást. Az operációs rendszer alapértelmezés szerint automatikusan biztonságos mintákat küldhet.
   - **Mindig legyen kérdés**
   - **Rákérdezés a személyes adatok elküldése előtt**
   - **Soha ne küldjön adatküldést**
@@ -864,6 +864,88 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 - A vizsgálatokból **és a valós idejű védelemből kizárandó fájlok és mappák**: egy vagy több fájlt és mappát (például **\ elérésiút** vagy **%ProgramFiles%\Path\filename.exe** ) hoz létre a kizárások listájához. A rendszer a valós idejű és ütemezett vizsgálatok során nem vizsgálja ezeket a fájlokat és mappákat.
 - A vizsgálatokból **és a valós idejű védelemből kizárandó**fájlkiterjesztések: adjon hozzá egy vagy több fájlkiterjesztés, például **jpg** vagy **txt** elemet a kizárások listájához. Az ilyen kiterjesztésű fájlok nem szerepelnek a valós idejű vagy ütemezett vizsgálatok során.
 - A vizsgálatokból **és a valós idejű védelemből kizárandó folyamatok**: adjon hozzá egy vagy több **. exe**, **. com**vagy **. scr** típusú folyamatot a kizárások listájához. Ezek a folyamatok nem tartoznak valós idejű vagy ütemezett vizsgálatokba.
+
+## <a name="power-settings"></a>Energiaellátási beállítások
+
+### <a name="battery"></a>Akkumulátor
+
+- **Energiatakarékos üzemmód bekapcsolásához**: Ha az eszköz akkumulátort használ, adja meg az akkumulátor töltöttségi szintjét, hogy az energiatakarékos üzemmódot a 0-100-es értékre állítsa be. Adja meg az akkumulátor töltöttségi szintjét jelző százalékos értéket. Az alapértelmezett érték 70%. Ha 70%-ra van állítva, az energiatakarékos üzemmód akkor fordul elő, ha az akkumulátor 70%-os vagy kevesebb rendelkezésre állású.
+
+  [Power/EnergySaverBatteryThresholdOnBattery CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-power#power-energysaverbatterythresholdonbattery)
+
+- **Fedél zárása (csak mobil)** : Ha az eszköz akkumulátor töltöttségét használja, válassza ki, hogy mi történjen a fedél bezárásakor. A választható lehetőségek:
+
+  - **Nincs konfigurálva** (alapértelmezett): az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+  - **Nincs művelet**: az eszköz marad, és továbbra is az akkumulátor töltöttségét használja.
+  - **Alvó állapot**: az eszköz alvó üzemmódba kerül, és kis mennyiségű akkumulátort használ fel. A számítógép továbbra is be van kapcsolva, és a megnyitott alkalmazások és fájlok véletlenszerű elérésű memóriában (RAM) vannak tárolva.
+  - **Hibernálás**: az eszköz hibernált üzemmódba kerül. A megnyitott alkalmazások és fájlok a merevlemezen tárolódnak, és az eszköz kikapcsol.
+  - **Leállítás**: az eszköz leáll. A megnyitott alkalmazások és fájlok mentés nélkül le vannak zárva.
+
+  [Power/SelectLidCloseActionOnBattery CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-power#power-selectlidcloseactiononbattery)
+
+- **Főkapcsoló gomb**: Ha az eszköz akkumulátor töltöttségét használja, válassza ki, hogy mi történik a főkapcsoló gomb kiválasztásakor. A választható lehetőségek:
+
+  - **Nincs konfigurálva** (alapértelmezett): az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+  - **Nincs művelet**: az eszköz marad, és továbbra is az akkumulátor töltöttségét használja.
+  - **Alvó állapot**: az eszköz alvó üzemmódba kerül, és kis mennyiségű akkumulátort használ fel. A számítógép továbbra is be van kapcsolva, és a megnyitott alkalmazások és fájlok véletlenszerű elérésű memóriában (RAM) vannak tárolva.
+  - **Hibernálás**: az eszköz hibernált üzemmódba kerül. A megnyitott alkalmazások és fájlok a merevlemezen tárolódnak, és az eszköz kikapcsol.
+  - **Leállítás**: az eszköz leáll. A megnyitott alkalmazások és fájlok mentés nélkül le vannak zárva.
+
+  [Power/SelectPowerButtonActionOnBattery CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-power#power-selectpowerbuttonactiononbattery)
+
+- **Alvó gomb**: Ha az eszköz akkumulátor töltöttségét használja, válassza ki, hogy mi történik az alvó gomb kiválasztásakor. A választható lehetőségek:
+
+  - **Nincs konfigurálva** (alapértelmezett): az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+  - **Nincs művelet**: az eszköz marad, és továbbra is az akkumulátor töltöttségét használja.
+  - **Alvó állapot**: az eszköz alvó üzemmódba kerül, és kis mennyiségű akkumulátort használ fel. A számítógép továbbra is be van kapcsolva, és a megnyitott alkalmazások és fájlok véletlenszerű elérésű memóriában (RAM) vannak tárolva.
+  - **Hibernálás**: az eszköz hibernált üzemmódba kerül. A megnyitott alkalmazások és fájlok a merevlemezen tárolódnak, és az eszköz kikapcsol.
+  - **Leállítás**: az eszköz leáll. A megnyitott alkalmazások és fájlok mentés nélkül le vannak zárva.
+
+  [Power/SelectSleepButtonActionOnBattery CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-power#power-selectsleepbuttonactiononbattery)
+
+- **Hibrid alvás**: Ha az eszköz akkumulátor-használatot használ, a **Letiltás** megakadályozza, hogy az eszköz hibrid alvó üzemmódba kerüljön. Hibrid alvó üzemmódban a megnyitott alkalmazásokat és fájlokat a rendszer a RAM-ban és a merevlemezen tárolja. Kis mennyiségű akkumulátort használ. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+
+  [Power/TurnOffHybridSleepOnBattery CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-power#power-turnoffhybridsleeponbattery)
+
+### <a name="pluggedin"></a>PluggedIn
+
+- **Energiamegtakarítás bekapcsolásához**: Ha az eszköz csatlakoztatva van, adja meg az akkumulátor töltöttségi szintjét, hogy bekapcsolja az energiamegtakarítást az 0-100-ból. Adja meg az akkumulátor töltöttségi szintjét jelző százalékos értéket. Az alapértelmezett érték 70%. Ha 70%-ra van állítva, az energiatakarékos üzemmód akkor fordul elő, ha az akkumulátor 70%-os vagy kevesebb rendelkezésre állású.
+
+  [Power/EnergySaverBatteryThresholdPluggedIn CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-power#power-energysaverbatterythresholdpluggedin)
+
+- **Fedél zárása (csak mobil)** : Ha az eszköz csatlakoztatva van, válassza ki, hogy mi történjen a fedél bezárásakor. A választható lehetőségek:
+
+  - **Nincs konfigurálva** (alapértelmezett): az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+  - **Nincs művelet**: az eszköz marad.
+  - **Alvó állapot**: az eszköz alvó üzemmódba kerül. A számítógép továbbra is be van kapcsolva, és a megnyitott alkalmazások és fájlok véletlenszerű elérésű memóriában (RAM) vannak tárolva.
+  - **Hibernálás**: az eszköz hibernált üzemmódba kerül. A megnyitott alkalmazások és fájlok a merevlemezen tárolódnak, és az eszköz kikapcsol.
+  - **Leállítás**: az eszköz leáll. A megnyitott alkalmazások és fájlok mentés nélkül le vannak zárva.
+  
+    [Power/SelectLidCloseActionPluggedIn CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-power#power-selectlidcloseactionpluggedin)
+  
+- **Főkapcsoló gomb**: Ha az eszköz csatlakoztatva van, válassza ki, hogy mi történjen a főkapcsoló gomb kiválasztásakor. A választható lehetőségek:
+
+  - **Nincs konfigurálva** (alapértelmezett): az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+  - **Nincs művelet**: az eszköz marad.
+  - **Alvó állapot**: az eszköz alvó üzemmódba kerül. A számítógép továbbra is be van kapcsolva, és a megnyitott alkalmazások és fájlok véletlenszerű elérésű memóriában (RAM) vannak tárolva.
+  - **Hibernálás**: az eszköz hibernált üzemmódba kerül. A megnyitott alkalmazások és fájlok a merevlemezen tárolódnak, és az eszköz kikapcsol.
+  - **Leállítás**: az eszköz leáll. A megnyitott alkalmazások és fájlok mentés nélkül le vannak zárva.
+
+  [Power/SelectPowerButtonActionPluggedIn CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-power#power-selectpowerbuttonactionpluggedin)
+
+- **Alvó gomb**: Ha az eszköz csatlakoztatva van, válassza ki, hogy mi történjen az alvó gomb kiválasztásakor. A választható lehetőségek:
+
+  - **Nincs konfigurálva** (alapértelmezett): az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+  - **Nincs művelet**: az eszköz marad.
+  - **Alvó állapot**: az eszköz alvó üzemmódba kerül. A számítógép továbbra is be van kapcsolva, és a megnyitott alkalmazások és fájlok véletlenszerű elérésű memóriában (RAM) vannak tárolva.
+  - **Hibernálás**: az eszköz hibernált üzemmódba kerül. A megnyitott alkalmazások és fájlok a merevlemezen tárolódnak, és az eszköz kikapcsol.
+  - **Leállítás**: az eszköz leáll. A megnyitott alkalmazások és fájlok mentés nélkül le vannak zárva.
+
+  [Power/SelectSleepButtonActionPluggedIn CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-power#power-selectsleepbuttonactionpluggedin)
+
+- **Hibrid alvás**: Ha az eszköz csatlakoztatva van, a **Letiltás** beállítás megadásával megakadályozható, hogy az eszköz hibrid alvó üzemmódba kerüljön. Hibrid alvó üzemmódban a megnyitott alkalmazásokat és fájlokat a rendszer a RAM-ban és a merevlemezen tárolja. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+
+  [Power/TurnOffHybridSleepPluggedIn CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-power#power-turnoffhybridsleeppluggedin)
 
 ## <a name="next-steps"></a>További lépések
 

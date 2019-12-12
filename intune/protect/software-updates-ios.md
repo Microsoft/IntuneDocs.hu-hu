@@ -14,10 +14,10 @@ ms.technology: ''
 search.appverid: MET150
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0f9750603d19d9b19697c7d2660351c4586432f6
-ms.sourcegitcommit: a7c35efb31c4efd816bd4aba29240013965aee92
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73984198"
 ---
 # <a name="add-ios-software-update-policies-in-intune"></a>IOS-szoftverfrissítési szabályzatok hozzáadása az Intune-ban
@@ -82,7 +82,7 @@ Szerkeszthet egy meglévő szabályzatot, beleértve a korlátozott időpontok m
 2. A szabályzatok **tulajdonságainak**megtekintése közben válassza a **Szerkesztés** lehetőséget a módosítani kívánt szabályzat oldalhoz.  
    ![a rendőri](./media/software-updates-ios/edit-policy.png)   
 
-3. A módosítás bevezetése után válassza az **Áttekintés + mentés**  > **Mentés** lehetőséget a módosítások mentéséhez, és térjen vissza a házirendek *tulajdonságaihoz*.  
+3. A módosítás bevezetése után válassza az **Áttekintés + mentés** > **Mentés** lehetőséget a módosítások mentéséhez, és térjen vissza a házirendek *tulajdonságaihoz*.  
  
 > [!NOTE]
 > Ha a **kezdési** és a **befejezési időpont** is 12 értékre van állítva, akkor az Intune nem keres korlátozásokat a frissítések telepítésének idejére. Ez azt jelenti, **hogy a frissítési telepítések** figyelmen kívül hagyása, és a frissítések telepítése bármikor megtörténik, ha az összes konfigurációt meg szeretné akadályozni.  
@@ -90,7 +90,7 @@ Szerkeszthet egy meglévő szabályzatot, beleértve a korlátozott időpontok m
 
 ## <a name="monitor-device-installation-failures"></a>Eszközök telepítési hibáinak figyelése
 <!-- 1352223 -->
-**Szoftverfrissítések** >  az**iOS-eszközök telepítési hibái** megjelenítik a frissítési szabályzat által megcélozott felügyelt iOS-eszközök listáját, frissítést próbáltak meg, és nem lehetett frissíteni. Minden eszköz mellett látható egy állapotleírás, amelyből kiderül, hogy az adott eszköz miért nem frissült automatikusan. A kifogástalan, naprakész eszközök nem jelennek meg a listában. A naprakész eszközökön telepítve van az a legújabb frissítés, amelyet az eszköz támogatni képes.
+A **szoftverfrissítések** > az **iOS-eszközök telepítési hibái** megjelenítik a frissítési szabályzat által megcélozott felügyelt iOS-eszközök listáját, frissítést próbáltak meg, és nem lehetett frissíteni. Minden eszköz mellett látható egy állapotleírás, amelyből kiderül, hogy az adott eszköz miért nem frissült automatikusan. A kifogástalan, naprakész eszközök nem jelennek meg a listában. A naprakész eszközökön telepítve van az a legújabb frissítés, amelyet az eszköz támogatni képes.
 
 ## <a name="next-steps"></a>További lépések
 

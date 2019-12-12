@@ -16,16 +16,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 348d1fe2fd236a2af11f7e58dc11530a5ce397bc
-ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
+ms.openlocfilehash: c9572f4accb1be232d4667d99b98beff90d81379
+ms.sourcegitcommit: edd06a494a241d198ca9b0d3030c92195976e0d3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74564194"
+ms.lasthandoff: 12/11/2019
+ms.locfileid: "75000414"
 ---
 # <a name="configure-smime-with-outlook-for-ios"></a>S/MIME konfigurálása iOS-hez készült Outlookkal
 
 A Secure/Multipurpose Internet Mail Extensions (S/MIME) kiegészítő biztonsági réteget biztosít az Exchange ActiveSync-(EAS-) fiókba küldött e-mailekhez. A [Microsoft Outlook](https://aka.ms/omsmime) az S/MIME használatával lehetővé teszi, hogy a felhasználók titkosítsák a kimenő üzeneteket és a mellékleteket, így biztosítható, hogy csak a címzett tudja olvasni és elérni az üzenet tartalmát az Office 365-fiókok használatakor. A felhasználók digitálisan is aláírnak egy üzenetet, így a címzettek is ellenőrizhetik a küldő identitását, és ellenőrizhetik, hogy az üzenet nem lett-e illetéktelenül módosítva. Ez a képesség a tanúsítványok használatával lehetséges. További információ: az [S/MIME ismertetése](https://docs.microsoft.com/previous-versions/tn-archive/aa995740(v=exchg.65)?redirectedfrom=MSDN).
+
+> [!NOTE]
+> Ez a szolgáltatás késleltetve lett, de hamarosan megjelent.
 
 > [!NOTE]
 > Ez a témakör a megbízható főtanúsítványok [Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431)használatával történő központi telepítését ismerteti. A Microsoft Endpoint Manager egyetlen, integrált végpont-felügyeleti platform az összes végpont kezeléséhez. Ez a Microsoft Endpoint Manager felügyeleti központ integrálja a ConfigMgr és a Microsoft Intune.
@@ -78,9 +81,6 @@ Ekkor megjelenik a **konfigurációs szabályzat hozzáadása** panel.
 6. A konfigurációs beállítások hozzáadásához kattintson a **konfigurációs beállítások** elemre. 
     - Válassza a Configuration **Designer használata** a **konfigurációs beállítások formátuma** mellett lehetőséget, és fogadja el az alapértelmezett beállításokat. További információ: [Microsoft Outlook konfigurációs beállítások](~/apps/app-configuration-policies-outlook.md).
 7. Kattintson az **s/MIME** elemre az **Outlook s/MIME beállításainak**megjelenítéséhez.
-
-    ![Képernyőkép az Outlookról az iOS S/MIME-beállításokhoz](./media/app-configuration-policies-outlook-smime/app-configuration-policies-outlook-smime-01.png)
-
 8. Az **S/MIME engedélyezése** beállítást állítsa **Igen**értékre.
 9. Állítsa **az S/MIME-tanúsítványok telepítése az Intune-ból** **Igen értéket**.
 10. A **tanúsítvány-profil típusa**melletti **tanúsítványok aláírása** területen válasszon az alábbi lehetőségek közül:

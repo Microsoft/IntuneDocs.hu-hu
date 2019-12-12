@@ -17,10 +17,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0f5ee9a0fe27c3cf9de758fd7155dbd127fb1e5e
-ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73712221"
 ---
 # <a name="rename-a-device-in-intune"></a>Eszköz átnevezése az Intune-ban
@@ -37,7 +37,7 @@ Ez a funkció jelenleg nem támogatja a hibrid Azure AD Windows-eszközök átne
 ## <a name="rename-a-device"></a>Eszköz átnevezése
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
-3. Válassza az **eszközök**  > **minden eszköz** lehetőséget > válasszon ki egy eszközt > **további**  > **átnevezése eszköz**.
+3. Válassza az **eszközök** > **minden eszköz** lehetőséget > válasszon ki egy eszközt > **további** > **átnevezése eszköz**.
 4. Az **eszköz átnevezése** panelen írja be az új nevet a szövegmezőbe. Betűket, számokat és kötőjeleket is használhat. A névnek legalább egy betűt vagy kötőjelet tartalmaznia kell.
 5. Ha az Átnevezés után újra szeretné indítani az eszközt, az újraindítás után az **Igen** gombra kattintva **indítsa újra**a rendszert.
 6. Válassza az **Átnevezés**lehetőséget.

@@ -16,10 +16,10 @@ search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 80da0e6952c5aaab6fa8146b2d91d32259966d5d
-ms.sourcegitcommit: f26039d674eb4d61ab68264dd1a10b2e5e1d842c
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/02/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74691726"
 ---
 # <a name="windows-10-and-later-device-settings-to-run-as-a-kiosk-in-intune"></a>Windows 10 és újabb eszközbeállítások az Intune-ban való futtatáshoz
@@ -36,7 +36,7 @@ Az Intune Windows kioszk szolgáltatásával kapcsolatos további tudnivalókér
 
 - [Hozza létre a profilt](kiosk-settings.md#create-the-profile).
 
-- Ez a kioszk-profil közvetlenül kapcsolódik a [Microsoft Edge kioszk beállításainak](device-restrictions-windows-10.md#microsoft-edge-browser)használatával létrehozott eszköz-korlátozási profilhoz. Összefoglalás:
+- Ez a kioszk-profil közvetlenül kapcsolódik a [Microsoft Edge kioszk beállításainak](device-restrictions-windows-10.md#microsoft-edge-browser)használatával létrehozott eszköz-korlátozási profilhoz. Összefoglalásképpen:
 
   1. Hozza létre ezt a kioszk-profilt az eszköz kioszk módban való futtatásához.
   2. Hozza létre az [eszköz korlátozási profilját](device-restrictions-windows-10.md#microsoft-edge-browser), és konfigurálja a Microsoft Edge-ben engedélyezett egyes szolgáltatásokat és beállításokat.

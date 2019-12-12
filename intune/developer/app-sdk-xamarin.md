@@ -5,7 +5,7 @@ keywords: sdk, Xamarin, intune
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/21/2019
+ms.date: 12/04/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: developer
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec234a3d93127a26af4203a4776545602334858b
-ms.sourcegitcommit: 556b7ea2049014c9027f0e44affd3f301fab55fc
+ms.openlocfilehash: aa8d4fd8dabd862899cab116c61d4ae4584d398c
+ms.sourcegitcommit: 7cc45ef52dda08479bc6bdff7d11d2f6c0e7b93b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73709557"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74899378"
 ---
 # <a name="microsoft-intune-app-sdk-xamarin-bindings"></a>Microsoft Intune App SDK Xamarin Bindings
 
@@ -111,7 +111,7 @@ Az Intune app SDK integrálásának teljes áttekintése a [Microsoft Intune app
 #### <a name="remapper"></a>Remapper
 A 1.4428.1-kiadástól kezdve a `Microsoft.Intune.MAM.Remapper` csomag hozzáadható egy Xamarin. Android-alkalmazáshoz, mint a MAM-osztály, a metódus és a rendszerszolgáltatások cseréjének elvégzéséhez használható [Build-eszközként](app-sdk-android.md#build-tooling) . Ha a remappert is tartalmazza, a rendszer automatikusan elvégzi az átnevezett módszerek és a MAM-alkalmazási csoportok MAM-helyettesítési részeit az alkalmazás létrehozásakor.
 
-Ha ki szeretne zárni egy osztályt a MAM-ification a remapper használatával, a következő tulajdonság hozzáadható a projektekhez `.csproj` fájlban.
+Ha ki szeretne zárni egy osztályt a MAM-ification a remapper használatával, a következő tulajdonság hozzáadható a projektek `.csproj` fájlhoz.
 
 ```xml
   <PropertyGroup>
@@ -126,7 +126,7 @@ Ha ki szeretne zárni egy osztályt a MAM-ification a remapper használatával, 
 Sok esetben az androidos osztályban rendelkezésre álló metódus végsőként van megjelölve a helyettesítő MAM-osztályban. Ebben az esetben a helyettesítő MAM-osztály egy hasonlóan elnevezett metódust biztosít (a `MAM` utótaggal), amelyet felül kell írni. Így például a `MAMActivity` származtatásakor az `OnCreate()` felülírása, illetve a `base.OnCreate()` metódus hívása helyett az `Activity` tevékenységnek felül kell írnia az `OnMAMCreate()` metódust, és meg kell hívnia a `base.OnMAMCreate()` metódust.
 
 #### <a name="mam-applicationapp-sdk-androidmdmamapplication"></a>[MAM-alkalmazás](app-sdk-android.md#mamapplication)
-Az alkalmazásnak meg kell határoznia egy `Android.App.Application` osztályt. Ha manuálisan integrálja a MAM-t, a `MAMApplication` értékről kell örökölni. Ügyeljen rá, hogy az alosztály megfelelően jelölve legyen a `[Application]` attribútummal, és felülbírálja a `(IntPtr, JniHandleOwnership)` konstruktort.
+Az alkalmazásnak meg kell határoznia egy `Android.App.Application` osztályt. Ha manuálisan integrálja a MAM-t, a `MAMApplication`tól örökölni kell. Ügyeljen rá, hogy az alosztály megfelelően jelölve legyen a `[Application]` attribútummal, és felülbírálja a `(IntPtr, JniHandleOwnership)` konstruktort.
 
 ```csharp
     [Application]
@@ -160,7 +160,7 @@ MAMPolicyManager.GetPolicy(currentActivity).GetIsSaveToLocationAllowed(SaveLocat
 ```
 
 #### <a name="register-for-notifications-from-the-sdkapp-sdk-androidmdregister-for-notifications-from-the-sdk"></a>[Regisztráció az SDK értesítéseire](app-sdk-android.md#register-for-notifications-from-the-sdk)
-Az alkalmazásnak regisztrálnia kell az SDK által küldött értesítésekhez egy `MAMNotificationReceiver` létrehozásával, és regisztrálnia kell `MAMNotificationReceiverRegistry`-re. Ezt úgy teheti meg, hogy megadja a fogadó és a kívánt értesítés típusát `App.OnMAMCreate`ban, az alábbi példában látható módon:
+Az alkalmazásnak regisztrálnia kell az SDK által küldött értesítésekhez egy `MAMNotificationReceiver` létrehozásával és a `MAMNotificationReceiverRegistry`val való regisztrálásával. Ezt úgy teheti meg, hogy megadja a fogadó és a kívánt értesítés típusát `App.OnMAMCreate`ban, az alábbi példában látható módon:
 
 ```csharp
 public override void OnMAMCreate()
@@ -187,7 +187,7 @@ IMAMEnrollmentManager mgr = MAMComponents.Get<IMAMEnrollmentManager>();
 > [!NOTE]
 > A Xamarin. Forms integrációt a fentiekben ismertetett Xamarin. Android-integráció mellett kell elvégezni. A remapper másként viselkedik a Xamarin. Forms-alkalmazásoknál, így a kézi MAM-cserék továbbra is szükségesek.
 
-Miután hozzáadta az újraleképezést a projekthez, el kell végeznie a MAM-beli egyenértékű visszahelyezést. Például a `FormsAppCompatActivity` és a `FormsApplicationActivity` továbbra is használható az alkalmazásban, ha a `OnCreate` és `OnResume` értékhez tartozó felülbírálásokat a rendszer a MAM megfelelő `OnMAMCreate` és `OnMAMResume` értékre váltja.
+Miután hozzáadta az újraleképezést a projekthez, el kell végeznie a MAM-beli egyenértékű visszahelyezést. Például a `FormsAppCompatActivity` és a `FormsApplicationActivity` továbbra is használható az alkalmazásban, ha a felülbírálások `OnCreate` és `OnResume` a MAM-ekvivalens `OnMAMCreate` és `OnMAMResume`.
 
 ```csharp
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
@@ -201,9 +201,9 @@ Miután hozzáadta az újraleképezést a projekthez, el kell végeznie a MAM-be
 ```
 
 Ha a cserék nem történnek, akkor a következő fordítási hibák merülhetnek fel, amíg el nem végzi a cseréket:
-* [Fordítói hiba CS0239](https://docs.microsoft.com/dotnet/csharp/misc/cs0239). Ez a hiba általában a következő formában látható: ``'MainActivity.OnCreate(Bundle)': cannot override inherited member 'MAMAppCompatActivityBase.OnCreate(Bundle)' because it is sealed``.
-Ennek az az oka, hogy ha a remapper módosítja a Xamarin osztályok öröklését, bizonyos függvények `sealed` lesz, és a rendszer új MAM-változatot ad hozzá a felülbíráláshoz.
-* [Fordítóprogram-hiba CS0507](https://docs.microsoft.com/dotnet/csharp/language-reference/compiler-messages/cs0507): ezt a hibát általában a következő formában láthatja ``'MyActivity.OnRequestPermissionsResult()' cannot change access modifiers when overriding 'public' inherited member ...``. Ha a remapper megváltoztatja a Xamarin egyes osztályainak öröklését, a rendszer a `public` értékre módosítja bizonyos tagok funkcióit. Ha felülbírálja ezen függvények bármelyikét, módosítania kell a felülbírálások hozzáférési módosítóit, hogy `public` legyen.
+* [Fordítói hiba CS0239](https://docs.microsoft.com/dotnet/csharp/misc/cs0239). Ezt a hibát általában a következő formában tekinti ``'MainActivity.OnCreate(Bundle)': cannot override inherited member 'MAMAppCompatActivityBase.OnCreate(Bundle)' because it is sealed``.
+Ennek az az oka, hogy ha a remapper módosítja a Xamarin osztályok öröklését, a rendszer bizonyos függvényeket fog `sealed`, és egy új MAM-változatot ad hozzá a felülbíráláshoz.
+* [Fordítóprogram-hiba CS0507](https://docs.microsoft.com/dotnet/csharp/language-reference/compiler-messages/cs0507): Ez a hiba általában a következő formában látható ``'MyActivity.OnRequestPermissionsResult()' cannot change access modifiers when overriding 'public' inherited member ...``. Ha a remapper megváltoztatja a Xamarin egyes osztályainak öröklését, a rendszer bizonyos tag-függvényeket `public`re fog módosítani. Ha felülbírálja ezeket a függvényeket, módosítania kell a felülbírálások hozzáférési módosítóit, hogy `public` is legyenek.
 
 > [!NOTE]
 > A remapper újra ír egy függőséget, amelyet a Visual Studio az IntelliSense automatikus kiegészítéséhez használ. Ezért előfordulhat, hogy újra kell töltenie és újra létre kell hoznia a projektet, ha a remapper hozzá van adva az IntelliSensehoz a módosítások megfelelő felismeréséhez.

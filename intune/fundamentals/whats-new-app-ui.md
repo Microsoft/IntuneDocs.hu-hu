@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a3b391bb4ab064c080083e2c31dc28483f6d419a
-ms.sourcegitcommit: 76ae5aea5deee7a590e24c3b2bb52f88125943e5
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74098221"
 ---
 # <a name="ui-updates-for-intune-end-user-apps"></a>Felhasználói felületi frissítések az Intune végfelhasználói alkalmazásaiban
@@ -58,13 +58,13 @@ Az Androidhoz készült Céges portál alkalmazásban található beállítási 
 
 A következő képernyők az Android munkahelyi profil regisztrálásának frissített ellenőrzőlistáját mutatják be:
 
-|Frissített|Korábbi|  
+|Frissítve|Előző|  
 |---|---|  
 |![Példa a munkahelyi profil beállításának rendszerképére Céges portálban, amely az egyszerűsített ellenőrzőlistát és az új ikonokat mutatja be.](./media/whats-new-app-ui/work-profile-checklist-1911.png)|![Példa a Céges portál korábbi munkahelyi profil beállításának képére, amely egy teendői ellenőrzőlistát mutat be.](./media/whats-new-app-ui/work-profile-checklist-1904.png)|   
 
 A következő képernyők az Android-eszközök rendszergazdai regisztrációjának frissített ellenőrzőlistáját mutatják be:  
 
-|Frissített|Korábbi|  
+|Frissítve|Előző|  
 |---|---|  
 |![Példa az Android-eszközök rendszergazdai beállításának képe Céges portálban, amely az egyszerűsített ellenőrzőlistát és az új ikonokat mutatja.](./media/whats-new-app-ui/android-checklist-1911.png)|![Példa a korábbi Android-eszköz rendszergazdai beállításának rendszerképére Céges portálban, amely egy teendői ellenőrzőlistát mutat be.](./media/whats-new-app-ui/android-checklist-1904.png)|  
 
@@ -175,7 +175,7 @@ Többek között a következő frissítéseket fogja látni:
 - Nagy méretű alkalmazáskatalógusok javított teljesítménye
 - Nagyobb hozzáférhetőség minden felhasználó számára  
 
-|Frissített|Korábbi|
+|Frissítve|Előző|
 |---|---|
 |![A frissített eszköz oldalán az eszköz pontosan az eszközadatok fölé van igazítva, és nem a teljes lista fölött ugrik fel.](./media/whats-new-app-ui/iwp-device-after-1803.png)|![Az eszközoldal előző verziója.](./media/whats-new-app-ui/iwp-device-before-1803.png)|
 |![A frissített alkalmazástelepítési oldalon az alkalmazás pontosan a leírás és a különböző telepítési adatok, így a közzététel dátuma, a verzió és az alkalmazástípus fölött jelenik meg.](./media/whats-new-app-ui/iwp-app-install-after-1803.png)|![A telepítésoldal előző verziója.](./media/whats-new-app-ui/iwp-app-install-before-1803.png)|  

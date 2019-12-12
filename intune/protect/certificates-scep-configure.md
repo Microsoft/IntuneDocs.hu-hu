@@ -17,10 +17,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 86640c831e8836a72ad5a0a7d5023ff7d836a43a
-ms.sourcegitcommit: b5e719fb507b1bc4774674e76c856c435e69f68c
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73801579"
 ---
 # <a name="configure-infrastructure-to-support-scep-with-intune"></a>Infrastruktúra konfigurálása az Intune-nal való SCEP támogatásához
@@ -178,8 +178,8 @@ A következő részekben a Windows Server 2012 R2 vagy újabb, valamint a Active
 
 Az Intune tanúsítvány-összekötőhöz az ügyfél- *hitelesítés* Kibővített kulcshasználat és a tulajdonos neve értéknek kell megegyeznie annak a GÉPNEK a teljes tartománynevével, amelyen az összekötő telepítve van. A következő tulajdonságokkal rendelkező sablon szükséges:
 
-- A **bővítmények** > **alkalmazás-házirendnek** tartalmaznia kell az **ügyfél-hitelesítést**
-- **A kérelemben szereplő** **tulajdonos neve** > .
+- **Bővítmények** > az **alkalmazás-szabályzatoknak** **ügyfél-hitelesítést** kell tartalmazniuk
+- A **tulajdonos neve** > **a kérésben szereplő adatforrást**.
 
 Ha már van olyan sablonja, amely tartalmazza ezeket a tulajdonságokat, újra felhasználhatja, vagy létrehozhat egy új sablont a meglévő példányok másolásával vagy egyéni sablon létrehozásával.
 
@@ -187,8 +187,8 @@ Ha már van olyan sablonja, amely tartalmazza ezeket a tulajdonságokat, újra f
 
 A felügyelt eszközök és az IIS közötti kommunikáció a NDES-kiszolgálón HTTPS protokollt használ, amelyhez tanúsítvány használata szükséges. Ezt a tanúsítványt a **webkiszolgáló** -tanúsítvány sablonnal is kiállíthatja. Ha inkább egy dedikált sablonnal szeretne rendelkezni, a következő tulajdonságokkal kell rendelkeznie:
 
-- **Bővítmények** >  az**alkalmazás-szabályzatoknak** **kiszolgálói hitelesítést** kell tartalmazniuk
-- **A kérelemben szereplő** **tulajdonos neve** > .
+- **Bővítmények** > az **alkalmazás-szabályzatoknak** **kiszolgálói hitelesítést** kell tartalmazniuk
+- A **tulajdonos neve** > **a kérésben szereplő adatforrást**.
 
 > [!NOTE]
 > Ha olyan tanúsítvánnyal rendelkezik, amely megfelel az ügyfél és a kiszolgálói tanúsítvány sablonjainak, egyetlen tanúsítványt is használhat az IIS-hez és az Intune tanúsítvány-összekötőhöz.
@@ -298,7 +298,7 @@ Az alábbi eljárások segítségével konfigurálhatja a hálózati eszközök 
 
 3. Konfigurálja az IIS-kérelmek szűrését az NDES szolgáltatás által fogadott hosszú URL-címek (lekérdezések) támogatásához az IIS-ben.
 
-   1. Az IIS-kezelőben válassza az **alapértelmezett**webhely  > **kérések szűrése** >  a**szolgáltatás beállításainak szerkesztése** lehetőséget a **kérelmek szűrési beállításainak szerkesztése** lap megnyitásához.
+   1. Az IIS-kezelőben válassza az **alapértelmezett** webhely > a **kérelmek szűrése** > a **szolgáltatás beállításainak szerkesztése** lehetőséget a **kérelmek szűrési beállításainak szerkesztése** lap megnyitásához.
 
    2. Adja meg a következő beállításokat:
 
@@ -376,7 +376,7 @@ A Microsoft Intune Tanúsítvány-összekötő a NDES szolgáltatást futtató k
       - Ha önálló Intune-hoz telepíti az NDES-t, akkor a CRP szolgáltatás automatikusan települ a tanúsítvány-összekötővel együtt.
       - Az Intune és a Configuration Manager használatával a tanúsítvány regisztrációs pontját Configuration Manager helyrendszer-szerepkörként kell telepíteni.
 
-5. Amikor a rendszer kéri a tanúsítvány-összekötő ügyféltanúsítványt, válassza a **kiválasztás**lehetőséget, majd válassza ki a NDES-kiszolgálóra telepített **ügyfél-hitelesítési** tanúsítványt a [telepítés és a tanúsítványok kötésének lépésein #3 ](#install-and-bind-certificates-on-the-server-that-hosts-ndes)a jelen cikk korábbi részében NDES futtató kiszolgáló.
+5. Amikor a rendszer kéri a tanúsítvány-összekötő ügyféltanúsítványt, válassza a **kiválasztás**lehetőséget, majd válassza ki a NDES-#3 kiszolgálóra telepített **ügyfél-hitelesítési** tanúsítványt a NDES-t [futtató kiszolgálón, amely](#install-and-bind-certificates-on-the-server-that-hosts-ndes) a jelen cikk korábbi részében található.
 
    Miután kiválasztotta az ügyfél-hitelesítési tanúsítványt, a rendszer visszaküldi az **ügyféltanúsítványt Microsoft Intune tanúsítvány-összekötő** Surface-re. Bár a kiválasztott tanúsítvány nem látható, kattintson a **tovább** gombra a tanúsítvány tulajdonságainak megtekintéséhez. Válassza a **Tovább**, majd a **Telepítés** lehetőséget.
 

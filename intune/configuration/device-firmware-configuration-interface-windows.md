@@ -16,10 +16,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 38f02d694f1935e4732805f3ae7c66fd9718057a
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74059608"
 ---
 # <a name="use-device-firmware-configuration-interface-profiles-on-windows-devices-in-microsoft-intune-public-preview"></a>Eszköz belső vezérlőprogram konfigurációs felületi profiljainak használata Microsoft Intune (nyilvános előzetes verzió) esetén Windows-eszközökön
@@ -54,7 +54,7 @@ Ez a funkció az alábbiakra vonatkozik:
 
 ## <a name="create-your-azure-ad-security-groups"></a>Azure AD-beli biztonsági csoportok létrehozása
 
-Az Autopilot Deployment-profilok az Azure AD biztonsági csoportokhoz vannak rendelve. Ügyeljen arra, hogy olyan csoportokat hozzon létre, amelyek tartalmazzák a DFCI által támogatott eszközöket. A DFCI-eszközök esetében a legtöbb szervezet felhasználói csoportok helyett létrehozhat eszközcsoport-csoportokat. Vegye figyelembe a következő forgatókönyveket:
+Az Autopilot Deployment-profilok az Azure AD biztonsági csoportokhoz vannak rendelve. Ügyeljen arra, hogy olyan csoportokat hozzon létre, amelyek tartalmazzák a DFCI által támogatott eszközöket. A DFCI-eszközök esetében a legtöbb szervezet felhasználói csoportok helyett létrehozhat eszközcsoport-csoportokat. Vegyük példaként a következő eseteket:
 
 - Az emberi erőforrások (HR) különböző Windows-eszközökkel rendelkeznek. Biztonsági okokból nem szeretné, hogy a csoport minden felhasználója használhassa a kamerát az eszközökön. Ebben a forgatókönyvben létrehozhat egy HR biztonsági felhasználói csoportot, így a szabályzat a HR-csoportban lévő felhasználókra is vonatkozik, függetlenül az eszköz típusától.
 - A gyártási emeleten 10 eszköz van. Az összes eszközön meg szeretné akadályozni, hogy az eszközök USB-eszközről induljon el. Ebben az esetben létrehozhat egy biztonsági eszközök csoportot, és hozzáadhatja a 10 eszközt a csoporthoz.
@@ -148,7 +148,7 @@ Megadhatja a [bejelentkező eszközöket](../remote-actions/device-sync.md)is. S
 
 ## <a name="reuse-retire-or-recover-the-device"></a>Az eszköz újbóli felhasználása, kivonása vagy helyreállítása
 
-### <a name="reuse"></a>Újbóli használatának
+### <a name="reuse"></a>Újrafelhasználás
 
 Ha azt tervezi, hogy alaphelyzetbe állítja a Windowst az eszköz újrafelhasználásához, [törölje az eszközt](../remote-actions/devices-wipe.md). Ne **távolítsa** el az Autopilot-eszköz rekordját.
 
@@ -167,7 +167,7 @@ Ezekkel a lépésekkel feloldható az eszköz UEFI-(BIOS-) menüinek feloldása.
 
 Most már készen áll az eszköz törlésére. Az eszköz törlését követően törölje az Autopilot-rekordot. A rekord törlése megakadályozza, hogy az eszköz automatikusan újra regisztrálja az újraindítást.
 
-### <a name="recover"></a>Visszaszerez
+### <a name="recover"></a>Helyreállítás
 
 Ha töröl egy eszközt, és törli az Autopilot-rekordot az UEFI (BIOS) menük zárolásának feloldása előtt, akkor a menük zárolva maradnak. Az Intune nem tudja elküldeni a profilok frissítését a zárolás feloldásához.
 

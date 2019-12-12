@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 12/02/2019
+ms.date: 12/09/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 11cad62f0fd997610feba51a2d28dcfed5658806
-ms.sourcegitcommit: f26039d674eb4d61ab68264dd1a10b2e5e1d842c
+ms.openlocfilehash: 60a87340c1a275b8fb878ef2f3891cca23fc9c85
+ms.sourcegitcommit: f5108039f0ade52e95ea3ac1da1aa16d02224af3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74691705"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74946659"
 ---
 # <a name="windows-10-and-later-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>Windows 10 és újabb beállítások az eszközök megfelelőségi vagy nem megfelelőként való megjelöléséhez az Intune használatával
 
@@ -199,7 +199,7 @@ Csak a Windows 10 és újabb rendszerű, közösen felügyelt eszközökre vonat
 
 - **Microsoft Defender antimalware**:  
   - **Nincs konfigurálva** (*alapértelmezett*) – az Intune nem szabályozza a szolgáltatást, és nem változtatja meg a meglévő beállításokat.
-  - A Microsoft Defender **kártevő-** elhárító szolgáltatásának bekapcsolása, valamint a felhasználók kikapcsolásának megakadályozása. 
+  - A Microsoft Defender **kártevő-** elhárító szolgáltatásának bekapcsolása, valamint a felhasználók kikapcsolásának megakadályozása.
 
 - **Microsoft Defender antimalware minimális verziója**:  
   Adja meg a Microsoft Defender kártevő-elhárító szolgáltatásának minimálisan engedélyezett verzióját. Például írja be a következőt: `4.11.0.0`. Ha üresen hagyja, a Microsoft Defender anti-malware szolgáltatás bármely verzióját használhatja.  
@@ -207,10 +207,12 @@ Csak a Windows 10 és újabb rendszerű, közösen felügyelt eszközökre vonat
   *Alapértelmezés szerint nincs konfigurálva a verzió*.
 
 - **Microsoft Defender antimalware biztonsági intelligencia naprakész**:  
-  A Windows biztonsági vírus-és veszélyforrások elleni védelem frissítéseit szabályozza az eszközökön.  
+  A Windows biztonsági vírus-és veszélyforrások elleni védelem frissítéseit szabályozza az eszközökön.
   - **Nincs konfigurálva** (*alapértelmezett*) – az Intune nem kényszeríti ki a követelményeket.
-  - **Kötelező** – kényszerítse a Microsoft Defender biztonsági intelligencia naprakészen. 
+  - **Kötelező** – kényszerítse a Microsoft Defender biztonsági intelligencia naprakészen.
 
+  [Defender/Health/SignatureOutOfDate CSP](https://docs.microsoft.com/windows/client-management/mdm/defender-csp)
+  
   További információ: [biztonsági intelligencia frissítései a Microsoft Defender Antivirus és más Microsoft antimalware](https://www.microsoft.com/en-us/wdsi/defenderupdates).
 
 - **Valós idejű védelem**:  

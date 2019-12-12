@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, get-started, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 31bb0e2ff4379c55829afc65fb99b768c9099a47
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 1b712922824fa9d54f33fb43114e852fbeb52a81
+ms.sourcegitcommit: 7cc45ef52dda08479bc6bdff7d11d2f6c0e7b93b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72498948"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74899432"
 ---
 # <a name="app-protection-policies-overview"></a>Alkalmazásvédelmi szabályzatok áttekintése
 
@@ -62,7 +62,7 @@ Az alkalmazás-védelmi szabályzatok használatának fontos előnyei a követke
 
 - **Nem érinti a végfelhasználói hatékonyságot, és a szabályzatok nem érvényesek, ha személyes környezetben használják az alkalmazást.** A szabályzatok kizárólag munkahelyi környezetben vannak alkalmazva, így a vállalati adatok védelmét a személyes adatok érintése nélkül biztosíthatja.
 
-- **Az alkalmazás-védelmi szabályzatok gondoskodnak arról, hogy az alkalmazás-réteg védelme érvényben legyen.** Például a következőket teheti:
+- **Az alkalmazás-védelmi szabályzatok gondoskodnak arról, hogy az alkalmazás-réteg védelme érvényben legyen.** Lehetősége van például a következőkre:
   - PIN-kódot kérhet egy alkalmazás vállalati környezetben való megnyitásához 
   - Szabályozhatja az adatok megosztását az alkalmazások között 
   - Megakadályozhatja az alkalmazásadatok személyes tárhelyre való mentését
@@ -177,7 +177,7 @@ A [Word, Excel és PowerPoint](https://products.office.com/business/office) alka
   > Az Office-mobilalkalmazások jelenleg csak a SharePoint Online verziót támogatják, a helyszíni SharePoint rendszert nem.
 
 ### <a name="managed-location-needed-for-office"></a>Az Office-hoz szükséges felügyelt hely
-Az Office számára szükséges felügyelt hely (például OneDrive). Az Intune az alkalmazásban lévő összes olyan adattípust megjelöli, mint a "céges" vagy a "személyes". „Cégesnek” azok az adatok számítanak, amelyek vállalati forrásból származnak. Az Office-alkalmazásokat illetően az Intune a következőket tekinti vállalati forrásnak: e-mailek (Exchange) vagy felhőbeli tárhely (OneDrive alkalmazás Vállalati OneDrive-fiókkal).
+Felügyelt hely (például OneDrive) szükséges az Office-hoz. Az Intune az alkalmazásban lévő összes olyan adattípust megjelöli, mint a "céges" vagy a "személyes". „Cégesnek” azok az adatok számítanak, amelyek vállalati forrásból származnak. Az Office-alkalmazásokat illetően az Intune a következőket tekinti vállalati forrásnak: e-mailek (Exchange) vagy felhőbeli tárhely (OneDrive alkalmazás Vállalati OneDrive-fiókkal).
 
 ### <a name="skype-for-business"></a>Skype Vállalati verzió
 A Skype vállalati verziójának használatára további követelmények vonatkoznak. A licenckövetelményekért lásd: [Skype Vállalati verzió](https://products.office.com/skype-for-business/it-pros). A Skype Vállalati verzió (SfB) helyszíni és hibrid konfigurációival kapcsolatban lásd: [Az SfB és Exchange hibrid modern hitelesítése általánosan elérhető](https://techcommunity.microsoft.com/t5/Skype-for-Business-Blog/Hybrid-Modern-Auth-for-SfB-and-Exchange-goes-GA/ba-p/134756), illetve [Modern hitelesítés az AAD-vel az SfB-hez](https://techcommunity.microsoft.com/t5/Skype-for-Business-Blog/Modern-Auth-for-SfB-OnPrem-with-AAD/ba-p/180910).
@@ -215,12 +215,12 @@ A személyes azonosítószám (PIN-kód) egy olyan kód, amellyel ellenőrizni l
 **PIN-kód kérése**<br>
 Az Intune kéri a felhasználó PIN-kódját az alkalmazáshoz, amikor a felhasználó „céges” adatokhoz kísérel meg hozzáférni. A többszörös identitású alkalmazásokban (például Word, Excel vagy PowerPoint) a rendszer a felhasználót a PIN-kód megadására kéri, amikor megpróbál megnyitni egy "céges" dokumentumot vagy fájlt. Az egyidentitású alkalmazások, például az [Intune app wrapper Tool](../developer/apps-prepare-mobile-application-management.md)használatával kezelt üzletági alkalmazások esetében a PIN-kód megadását kéri a rendszer, mivel az [Intune app SDK](../developer/app-sdk.md) tudja, hogy a felhasználó az alkalmazásban mindig a "céges" felhasználói élményt használja.
 
-**PIN-kód kérésének gyakorisága**<br>
-A rendszergazda megadhatja az Intune app Protection házirend-beállítást az Intune felügyeleti konzolján **(perc)** . Ez a beállítás azt határozza meg, hogy mennyi idő után ellenőrzi a rendszer a hozzáférési követelményeket az eszközön, és jelenik meg újból az alkalmazás PIN-kódot bekérő képernyője. Ugyanakkor a PIN-kóddal kapcsolatos alábbi fontos információk is befolyásolják, hogy a rendszer milyen gyakran kér felhasználói bevitelt:
+**PIN-kód kérése vagy vállalati hitelesítő adatok kérése, gyakoriság**<br>
+A rendszergazda megadhatja az Intune app Protection házirend-beállítást az Intune felügyeleti konzolján **(perc)** . Ez a beállítás határozza meg, hogy mennyi idő elteltével jelenjen meg a hozzáférési követelmények ellenőrzése az eszközön, és az alkalmazás PIN-kódjának képernyője vagy a vállalati hitelesítő adatok kérése megtörténjen. Ugyanakkor a PIN-kóddal kapcsolatos alábbi fontos információk is befolyásolják, hogy a rendszer milyen gyakran kér felhasználói bevitelt:
 
-- **A PIN-kód azonos közzétevő alkalmazásai között van megosztva a használhatóság javítása érdekében:**<br> IOS rendszeren egyetlen alkalmazás-PIN-kód van megosztva **az azonos alkalmazás-közzétevőhöz**tartozó alkalmazások között. Androidon minden alkalmazás egyetlen közös alkalmazásszintű PIN-kódot használ.
-  - **Az eszköz újraindítása utáni *(perc) viselkedés utáni újraellenőrzési követelmények* :**<br> A "PIN-kód időzítő" érték azt jelzi, hogy hány perc inaktivitás után kell megállapítani, hogy mikor jelenjen meg az Intune-alkalmazás PIN-kódja. iOS rendszeren a PIN-kód-számlálót nem érinti az eszköz-újraindítás. Az eszközök újraindítása így nincs hatással arra, hogy a felhasználó hány percig inaktív egy Intune-os PIN-kód-szabályzattal ellátott iOS-alkalmazásban. Android rendszeren a PIN-kód-számláló újraindul az eszköz újraindításakor. Ennek köszönhetően az Intune-os PIN-kód-szabályzattal ellátott Android-alkalmazások **az eszköz újra indítása után** valószínűleg kérni fogják az alkalmazás PIN-kódját „A hozzáférési követelmények ismételt ellenőrzése ennyi idő után (perc)” beállítás értékének függetlenül.  
-  - **A PIN-kóddal társított időzítő működés közbeni jellege:**<br> Miután megadta a PIN-kódot egy alkalmazás eléréséhez (A alkalmazáshoz), és az alkalmazás elhagyja az előtért (a fő bemeneti fókuszt) az eszközön, a PIN-kód időzítője visszaáll az adott PIN-kódra. Egy olyan alkalmazás (B alkalmazás) sem fogja bekérni a PIN-kódot a felhasználótól, amely szintén ezt a PIN-kódot használja, mivel a számláló alaphelyzetbe állt. Az adatkérés akkor jelenik meg újra, amikor a rendszer ismét eléri a „Hozzáférési követelmények újbóli ellenőrzése ennyi idő után (perc)” beállítás értékét.
+- **A PIN-kód azonos közzétevő alkalmazásai között van megosztva a használhatóság javítása érdekében:**<br> IOS rendszeren egyetlen alkalmazás-PIN-kód van megosztva **az azonos alkalmazás-közzétevőhöz**tartozó alkalmazások között. Az összes Microsoft-alkalmazás például ugyanazt a PIN-kódot használja. Androidon minden alkalmazás egyetlen közös alkalmazásszintű PIN-kódot használ.
+- **Az eszköz újraindítása utáni *(perc) viselkedés utáni újraellenőrzési követelmények* :**<br> Az időzítő nyomon követi, hogy a rendszer hány perc inaktivitás után jelenítse meg az Intune-alkalmazás PIN-kódját, vagy a vállalati hitelesítő adatok megadását. IOS rendszeren az eszköz újraindítása nem érinti az időzítőt. Így az eszköz újraindítása nem befolyásolja azon percek számát, ameddig a felhasználó inaktív volt egy olyan iOS-alkalmazásból, amely az Intune PIN-kódját (vagy a vállalati hitelesítő adatokkal) megcélozta. Androidon az időzítő visszaáll az eszköz újraindítására. Ilyenkor az Intune PIN-kódját (vagy vállalati hitelesítő adatokkal) tartalmazó Android-alkalmazások valószínűleg rákérdeznek az alkalmazás PIN-kódjára vagy a vállalati hitelesítő adatokra, függetlenül attól, hogy az **eszköz újraindítása után**megtörtént-e a hozzáférési követelmények ismételt ellenőrzésének (perc) beállítása.  
+- **A PIN-kóddal társított időzítő működés közbeni jellege:**<br> Miután megadta a PIN-kódot egy alkalmazás eléréséhez (A alkalmazáshoz), és az alkalmazás elhagyja az előtért (a fő bemeneti fókuszt) az eszközön, az időzítő a PIN-kód alaphelyzetbe állításával lesz visszaállítva. Egy olyan alkalmazás (B alkalmazás) sem fogja bekérni a PIN-kódot a felhasználótól, amely szintén ezt a PIN-kódot használja, mivel a számláló alaphelyzetbe állt. Az adatkérés akkor jelenik meg újra, amikor a rendszer ismét eléri a „Hozzáférési követelmények újbóli ellenőrzése ennyi idő után (perc)” beállítás értékét.
 
 iOS-eszközökön, ha a bemenet fő fókuszán kívüli alkalmazás ismét eléri **A hozzáférési követelmények ismételt ellenőrzése ennyi idő után (perc)** értéket, az adatkérés akkor is újra megjelenik, ha a PIN-kód különböző közzétevőktől származó alkalmazások között van megosztva. Így ha a felhasználó rendelkezik például egy _A_ alkalmazással az _X_ közzétevőtől, és egy _B_ alkalmazással az _Y_ közzétevőtől, akkor ez a két alkalmazás ugyanazon a PIN-kódon osztozik. A felhasználó fókuszában (előtér) az _A_ alkalmazás áll, a _B_ alkalmazás pedig kis méretűre van állítva. **A hozzáférési követelmények ismételt ellenőrzése ennyi idő után (perc)** érték elérése után a felhasználónak szüksége van PIN-kódra, hogy átváltson a _B_ alkalmazásra.
 
@@ -262,7 +262,6 @@ Csak a rendszergazda alkalmazásvédelmi szabályzatának értelmében „céges
 Az [Intune alkalmazás-burkoló eszköz](../developer/apps-prepare-mobile-application-management.md)által kezelt üzletági alkalmazások esetében az összes alkalmazásadatok a "céges" minősül.
 
 **Adatok távoli törlése**<br>
-
 Az Intune három különböző módon törölheti az alkalmazásadatok: 
 - Teljes eszköz törlése
 - Szelektív törlés a MDM 

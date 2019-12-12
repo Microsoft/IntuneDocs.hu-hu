@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9afaf2c8a63bfaed1fdb593baf42c8fa258d7893
-ms.sourcegitcommit: 1a22b8b31424847d3c86590f00f56c5bc3de2eb5
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74266335"
 ---
 # <a name="using-windows-10-virtual-machines-with-intune"></a>Windows 10 rendszerű virtuális gépek használata az Intune-nal
@@ -38,7 +38,7 @@ Windows 10 rendszerű virtuális gépek Intune-nal való kezelésekor tartsa sze
     - A Windows Autopilot és a kereskedelmi OOBE nem támogatott.
     - A regisztrációs állapot lapja nem támogatott az eszköz-környezeti házirendek esetében.
 
-## <a name="configuration"></a>Konfiguráció
+## <a name="configuration"></a>Configuration
 Az Intune nem támogat olyan konfigurációt, amely platformmegbízhatósági modul vagy hardveres kezelést használ, beleértve a következőket:
 - [BitLocker-beállítások](../configuration/device-profiles.md#endpoint-protection)
 - [Eszköz belső vezérlőprogram konfigurációs felületének beállításai](../configuration/device-profiles.md#device-firmware-configuration-interface)

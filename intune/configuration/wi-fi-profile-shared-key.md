@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 02d1311be0943d93f80f2f5a1c3f421d476af1e5
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74059823"
 ---
 # <a name="use-a-custom-device-profile-to-create-a-wifi-profile-with-a-pre-shared-key-in-intune"></a>Előmegosztott kulccsal rendelkező Wi-Fi-profil létrehozása egyéni eszköz-profil használatával az Intune-ban
@@ -70,7 +70,7 @@ Ez a funkció a következőket támogatja:
         > [!NOTE]
         > Ne hagyja ki a karaktersor elején található pontot.
 
-        Az SSID az az SSID, amelyhez létrehozza a házirendet. Ha például a Wi-Fi neve `Hotspot-1`, írja be a következőt: `./Vendor/MSFT/WiFi/Profile/Hotspot-1/Settings`.
+        Az SSID az az SSID, amelyhez létrehozza a házirendet. Ha például a Wi-Fi neve `Hotspot-1`, adja meg `./Vendor/MSFT/WiFi/Profile/Hotspot-1/Settings`.
 
     4. **Adattípus**: válassza a **karakterlánc**lehetőséget.
 
@@ -92,7 +92,7 @@ Az alábbi példában megtalálhatja az Android vagy Windows rendszerhez készü
 
 - A `<hex>53534944</hex>` helyére a `<name><SSID of wifi profile></name>` paraméter hexadecimális értékét kell beírni. Előfordulhat, hogy a Windows 10-es eszközök hamis `x87D1FDE8 Remediation failed` hibát adnak vissza, de az eszköz továbbra is tartalmazza a profilt.
 
-- Az XML speciális karaktereket tartalmaz, például a `&` (jel) karaktert. A speciális karakterek használata megakadályozhatja, hogy az XML a várt módon működjön. 
+- Az XML speciális karaktereket tartalmaz, például a `&` (jel). A speciális karakterek használata megakadályozhatja, hogy az XML a várt módon működjön. 
 
 ### <a name="example"></a>Példa
 
@@ -230,9 +230,9 @@ Meglévő Wi-Fi-kapcsolatból is létrehozhat egy XML-fájlt. Windows rendszerű
 1. Hozzon létre egy helyi mappát az exportált W-Fi-profilokhoz, például c:\WiFi.
 2. Nyisson meg egy parancssort rendszergazdaként (kattintson a jobb gombbal a `cmd` > **Futtatás rendszergazdaként**) elemre.
 3. Futtassa a `netsh wlan show profiles` parancsot. A rendszer felsorolja az összes profil nevét.
-4. Futtassa a `netsh wlan export profile name="YourProfileName" folder=c:\Wifi` parancsot. Ez a parancs létrehoz egy `Wi-Fi-YourProfileName.xml` nevű fájlt a c:\Wifi.
+4. Futtassa a `netsh wlan export profile name="YourProfileName" folder=c:\Wifi` parancsot. Ez a parancs létrehoz egy `Wi-Fi-YourProfileName.xml` nevű fájlt a c:\Wifi.-ben.
 
-    - Ha előmegosztott kulcsot tartalmazó Wi-Fi-profilt exportál, adja hozzá a `key=clear` parancsot a következő parancshoz:
+    - Ha előmegosztott kulcsot tartalmazó Wi-Fi-profilt exportál, adja hozzá `key=clear` a parancshoz:
   
         `netsh wlan export profile name="YourProfileName" key=clear folder=c:\Wifi`
 
@@ -241,9 +241,9 @@ Meglévő Wi-Fi-kapcsolatból is létrehozhat egy XML-fájlt. Windows rendszerű
 Az XML-fájl létrehozása után másolja és illessze be az XML-szintaxist az OMA-URI beállítások > **adattípusba**. [Hozzon létre egy egyéni profilt](#create-a-custom-profile) (ebben a cikkben) a lépéseket.
 
 > [!TIP]
-> a `\ProgramData\Microsoft\Wlansvc\Profiles\Interfaces\{guid}` az összes, XML formátumú profilt is tartalmazza.
+> a `\ProgramData\Microsoft\Wlansvc\Profiles\Interfaces\{guid}` az összes profilt XML formátumban is tartalmazza.
 
-## <a name="best-practices"></a>Ajánlott eljárások
+## <a name="best-practices"></a>Gyakorlati tanácsok
 
 - A Wi-Fi-profil PSK használatával való üzembe helyezése előtt győződjön meg róla, hogy az eszköz tud közvetlenül kapcsolódni a végponthoz.
 

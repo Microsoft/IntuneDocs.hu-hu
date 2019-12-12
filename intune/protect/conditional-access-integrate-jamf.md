@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 59edb9956ee117e0dbdb9d90a4fd4ef313fd5c66
-ms.sourcegitcommit: 2fddb293d37453736ffa54692d03eca642f3ab58
+ms.openlocfilehash: 01dae8f6c90155e649211ab226cf24eeade29b42
+ms.sourcegitcommit: f5108039f0ade52e95ea3ac1da1aa16d02224af3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74390464"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74946682"
 ---
 # <a name="integrate-jamf-pro-with-intune-for-compliance"></a>A Jamf Pro integrálása az Intune-nal a megfelelőség érdekében
 
@@ -71,7 +71,7 @@ Az Intune és a JAMF Pro összekötése:
 2. A JAMF Pro-val való integráció engedélyezése az Intune-nal.
 3. Feltételes hozzáférés konfigurálása a JAMF Pro-ban.
 
-### <a name="create-an-application-in-azure-active-directory"></a>Alkalmazás létrehozása Azure Active Directory
+### <a name="create-an-application-in-azure-active-directory"></a>Alkalmazás létrehozása az Azure Active Directoryban
 
 1. A [Azure Portal](https://portal.azure.com)lépjen a **Azure Active Directory** > alkalmazás- **regisztrációk**elemre, majd válassza az **új regisztráció**lehetőséget.
 
@@ -90,13 +90,21 @@ Az Intune és a JAMF Pro összekötése:
    > [!IMPORTANT]
    > Mielőtt elhagyja ezt a lapot, másolja ki az ügyfél titkos kulcsának értékét, és jegyezze fel későbbi használatra. Erre az értékre szüksége lesz a későbbi eljárásokban. Ez az érték nem érhető el újra az alkalmazás regisztrációjának újbóli létrehozása nélkül.
 
-6. Válassza az **API-engedélyek** elemet a **kezelés**alatt. Válassza ki a meglévő engedélyeket, majd válassza az **engedély eltávolítása** lehetőséget az engedélyek törléséhez. Az összes meglévő engedély eltávolítására akkor van szükség, amikor új engedélyt ad hozzá, és az alkalmazás csak akkor működik, ha az egyetlen szükséges engedéllyel rendelkezik.
+6. Válassza az **API-engedélyek** lehetőséget a **Kezelés** területen. 
 
-7. Új engedély hozzárendeléséhez válassza az **engedély hozzáadása**lehetőséget. Az **API-engedélyek kérése** lapon válassza az **Intune**lehetőséget, majd válassza az **alkalmazás engedélyei**lehetőséget. Jelölje be a csak **update_device_attributes**jelölőnégyzetet.
+7. Az API-engedélyek lapon válassza az **engedély hozzáadása** lehetőséget új engedély hozzáadásához. Az **API-engedélyek kérése** lapon válassza az **Intune**lehetőséget, majd válassza az **alkalmazás engedélyei**lehetőséget. Jelölje be a csak **update_device_attributes**jelölőnégyzetet.
 
-   Válassza a **Hozzáadás engedély** lehetőséget a konfiguráció mentéséhez.
+8. Várjon néhány percet, hogy az új engedély érvénybe léphet. Ezután válassza a **rendszergazdai jóváhagyás megadása lehetőséget a _bérlő >\<ához_** . Hitelesítse a fiókját az új ablakban, és az utasításokat követve adja meg az alkalmazás elérését.  
 
-8. Az **API-engedélyek** lapon jelölje be a **rendszergazdai jóváhagyás megadása a _bérlő >\<ához_** lehetőséget, majd válassza az **Igen**lehetőséget.  Az alkalmazás sikeres regisztrálását követően az API-engedélyek az alábbiak szerint jelennek meg:
+9. Előfordulhat, hogy néhány percet várnia kell, hogy a rendszergazdai engedély érvénybe lép.
+
+10. A lap tetején található **frissítés** gombra kattintva frissítse a lapot. Győződjön meg arról, hogy a **update_device_attributes** engedélyhez rendszergazdai jóváhagyás lett megadva. 
+
+11. Távolítsa el a rendszergazda beleegyezését a **felhasználó. olvasás** engedéllyel. ehhez kattintson a **...** menüre, és válassza a **rendszergazdai beleegyezés visszavonása**lehetőséget.
+
+12. Emellett el kell távolítania a **User. Read** engedélyt. Válassza a **...** menüt **felhasználó szerint. olvassa el** , majd válassza az **Eltávolítás engedélyt**. 
+
+8. Az alkalmazás sikeres regisztrálását követően az API-engedélyek csak egy **update_device_attributes** nevű engedélyt tartalmazhatnak, és a következőképpen kell megjelenniük:
 
    ![Sikeres engedélyek](./media/conditional-access-integrate-jamf/sucessfull-app-registration.png)
 

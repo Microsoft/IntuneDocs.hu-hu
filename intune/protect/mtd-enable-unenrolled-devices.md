@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 84f82cf2fde7d400e5531bac219b6cbb4877032f
-ms.sourcegitcommit: 960ffb2214c35d75ad219fa2571a999529a0abd4
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/25/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74478928"
 ---
 # <a name="enable-the-mobile-threat-defense-connector-in-intune-for-unenrolled-devices"></a>A Mobile Threat Defense-összekötő engedélyezése az Intune-ban a nem regisztrált eszközökön
@@ -72,7 +72,7 @@ A cég igényei alapján eldöntheti, hogy az MTD mely kapcsolós beállításai
 
 - Az **4,4-es vagy újabb verziójú Android-eszközök csatlakoztatásával *\<MTD-partner neve >* for app Protection Policy kiértékelés**: Ha engedélyezi ezt a beállítást, az eszköz veszélyforrások szintjének szabályát használó alkalmazás-védelmi házirendek kiértékelik az adott összekötőből származó adatokkal rendelkező eszközöket.
 
-- Az **iOS-eszközök 11-es vagy újabb verziójának összekapcsolása az alkalmazás-védelmi szabályzat kiértékeléséhez *>\<MTD*** : Ha engedélyezi ezt a beállítást, az eszköz veszélyforrások szintjének szabályát használó alkalmazás-védelmi házirendek kiértékelik az adott összekötőből származó adatokkal rendelkező eszközöket is.
+- Az **iOS-eszközök 11-es vagy újabb verziójának összekapcsolása az alkalmazás-védelmi szabályzat kiértékeléséhez *\<MTD*** : Ha engedélyezi ezt a beállítást, az eszköz veszélyforrások szintjének szabályát használó alkalmazás-védelmi házirendek kiértékelik az adott összekötőből származó adatokkal rendelkező eszközöket is.
 
 **Közös megosztott beállítások**
 

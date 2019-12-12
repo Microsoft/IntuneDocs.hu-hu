@@ -19,15 +19,15 @@ search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5aca7dbae7a74af399bcbf21aec1dd9dd2d1e851
-ms.sourcegitcommit: 2fddb293d37453736ffa54692d03eca642f3ab58
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74390748"
 ---
 # <a name="how-to-get-support-for-microsoft-intune"></a>Hogyan kérhet támogatást az Intune-hoz
 
-A Microsoft Intune-hoz a Microsoft globális műszaki, értékesítés előtti, számlázási és előfizetési támogatást nyújt. A támogatás interneten és telefonon is elérhető mind a fizetős, mind a próbaverziós előfizetésekhez. Az online műszaki támogatás angolul és japánul érhető el. Telefonos és online számlázási támogatás más nyelveken érhetők el.
+A Microsoft Intune-hoz a Microsoft globális műszaki, értékesítés előtti, számlázási és előfizetési támogatást nyújt. A támogatás interneten és telefonon is elérhető mind a fizetős, mind a próbaverziós előfizetésekhez. Az online műszaki támogatás angolul és japánul érhető el. Telefonos támogatás és online számlázási támogatás más nyelveken is elérhető.
 
 Intune-rendszergazdaként használhatja a **Súgó és támogatás** lehetőséget az Intune-hoz készült online támogatási jegy a Azure Portalból való beküldéséhez. A támogatási incidensek létrehozásához és kezeléséhez a fióknak rendelkeznie kell egy Azure Active Directory (Azure AD) szerepkörrel, amely tartalmazza a **Microsoft. Office 365. supportTickets** *műveletet* . További információ a támogatási jegy létrehozásához szükséges Azure AD-szerepkörökről és engedélyekről: [rendszergazdai szerepkörök a Azure Active Directoryban](https://docs.microsoft.com/azure/active-directory/active-directory-assign-admin-roles-azure-portal).
 
@@ -54,7 +54,7 @@ Ha újonnan létrehozott bérlőt használ az Intune-hoz, lehetséges, hogy a *S
 
 A hiba részletei között szerepel egy *munkamenet-azonosító*, egy *bővítmény* részletei és egyebek. 
  
-Ez a probléma akkor fordul elő, ha még nem hitelesítette az új bérlői fiókot a **M365 felügyeleti központban** https://admin.microsoft.comvagy az **Office 365-portálon** https://portal.office.comcímen. A probléma megoldásához válassza a *M365 felügyeleti központ* hivatkozását az üzenetben, vagy keresse fel https://portal.office.com, és jelentkezzen be. A hitelesítés a következő helyen, az Intune *súgója és támogatása* elérhetővé válik.
+Ez a probléma akkor fordul elő, ha még nem hitelesítette az új bérlői fiókot a **M365 felügyeleti központban** https://admin.microsoft.com vagy az **Office 365-portálon** https://portal.office.com címen. A probléma megoldásához válassza a *M365 felügyeleti központ* hivatkozását az üzenetben, vagy keresse fel https://portal.office.com , és jelentkezzen be. A hitelesítés a következő helyen, az Intune *súgója és támogatása* elérhetővé válik.
 
 
 **Súgó és támogatás elérése**:
@@ -90,7 +90,7 @@ Ez a probléma akkor fordul elő, ha még nem hitelesítette az új bérlői fi�
 
   *Segítségre van szüksége?* Megnyílik a *megoldások keresése* ablaktáblán. Ha azonban aktív támogatási esettel rendelkezik, megnyílik az ablak a *szolgáltatási kérelmek* ablaktáblán, ahol megtekintheti az aktív és a lezárt támogatási esetek részleteit.
 
-#### <a name="find-solutions"></a>Megoldások keresése
+#### <a name="find-solutions"></a>Hatékony megoldások
 
 ![Válassza a megoldások keresése panelt](./media/get-support/find-solutions.png)
 
@@ -102,7 +102,7 @@ Megadhatja például a **jelszó-szinkronizálási hibákat**. A találatok köz
 
 ![Hibaelhárítási ismeretek megtekintése](./media/get-support/troubleshooting-insights.png)
 
-#### <a name="contact-support"></a>Forduljon a támogatási szolgálathoz.
+#### <a name="contact-support"></a>Ügyfélszolgálat
 
 ![A kapcsolatfelvételi támogatás ablaktábla kiválasztása](./media/get-support/contact-support.png)
 
@@ -217,7 +217,7 @@ A támogatási kéréseket a Azure Portalon belül tekintheti meg. A korlátozot
    > [!IMPORTANT]  
    > A kormányzati ügyfelek számára a privát felhő csak a 15 számjegyű támogatási eset számát és az incidens állapotát tekintheti meg. A rendszer e-mailben küldi el a munkahelyi vagy riasztási kommunikációt és nyomon követést, valamint az Intune-konzolon megnyitott támogatási eset tükrözésével létrehozott 8 számjegyű támogatási eset számát.
 
-## <a name="additional-resources"></a>További források  
+## <a name="additional-resources"></a>További háttéranyagok  
 
 - [Számlázási és előfizetés-kezelési támogatás](https://support.office.com/article/Contact-Office-365-for-business-support-Admin-Help-32a17ca7-6fa0-4870-8a8d-e25ba4ccfd4b)
 - [Mennyiségi licencelés](https://go.microsoft.com/fwlink/p/?LinkID=282015)

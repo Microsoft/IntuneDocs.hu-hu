@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a8768022872d32116add0ed4ea4caf1f8fcb800f
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74059276"
 ---
 # <a name="troubleshoot-policies-and-profiles-and-in-intune"></a>Szabályzatok és profilok és az Intune hibáinak megoldása
@@ -79,7 +79,7 @@ Ellenőrizze a [bérlő állapotát](../fundamentals/tenant-status.md) , és ell
             - Az Android-eszközön nyissa meg az Céges portál alkalmazás > **eszközök** > válassza ki az eszközt a listából > az **eszközbeállítások ellenõrzése**lehetőséget.
             - Az iOS-eszközön nyissa meg a vállalati portál alkalmazást > **eszközök** > válassza ki az eszközt a listából > a **Beállítások ellenőrzését**.
 
-        - Windows-eszközön nyissa meg a **beállítások** > **fiókok** > **hozzáférési munkahelyi vagy iskolai** > Válassza ki a fiókot vagy a MDM-regisztrációt > **info** > **Sync**.
+        - Windows-eszközön nyissa meg a **beállítások** > **fiókok** > **hozzáférés munkahelyi vagy iskolai** > Válassza ki a fiókot vagy a MDM-regisztrációt > **info** > **Sync**.
 
     - Válassza ki az eszközt a házirend-specifikus információk megjelenítéséhez.
 
@@ -104,7 +104,7 @@ Ellenőrizze a [bérlő állapotát](../fundamentals/tenant-status.md) , és ell
 ## <a name="youre-unsure-if-a-profile-is-correctly-applied"></a>Nem biztos benne, hogy a profil megfelelően van-e alkalmazva
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
-2. Válassza az **eszközök** > **minden eszköz** lehetőséget, > válassza ki az eszköz > **eszköz konfigurációját**. 
+2. Válassza az **eszközök** > **minden eszköz** lehetőséget > válassza ki az eszköz > **eszköz konfigurációját**. 
 
     Minden eszköz felsorolja a profilokat. Minden profil rendelkezik **állapottal**. Az állapot akkor érvényes, ha az összes hozzárendelt profil, beleértve a hardvert és az operációs rendszer korlátozásait és követelményeit együttesen veszi figyelembe. A lehetséges állapotok a következők:
 
@@ -155,7 +155,7 @@ Előfordulhat, hogy az [eszközök regisztrálásának hibája](../enrollment/tr
 
 ### <a name="microsoft-intune-policy-related-errors-in-policyplatformlog"></a>Microsoft Intune-házirendekkel kapcsolatos hibák a policyplatform.log fájlban
 
-Az Intune-ügyfélszoftverrel felügyelt Windows rendszerű számítógépeken előfordulhat, hogy a `policyplatform.log` fájlban lévő házirend-hibák a Windows felhasználói fiókok felügyelete (UAC) nem alapértelmezett beállításaiból származnak az eszközön. Néhány nem alapértelmezett UAC-beállítás hatással lehet a Microsoft Intune ügyféltelepítéseire és a házirendek érvénybe léptetésére.
+Az Intune-ügyfélszoftverrel felügyelt Windows rendszerű számítógépeken előfordulhat, hogy az eszközön a Windows felhasználói fiókok felügyelete (UAC) nem alapértelmezett beállításai lehetnek a `policyplatform.log` fájlban lévő házirend-hibák. Néhány nem alapértelmezett UAC-beállítás hatással lehet a Microsoft Intune ügyféltelepítéseire és a házirendek érvénybe léptetésére.
 
 #### <a name="resolve-uac-issues"></a>UAC-problémák megoldása
 

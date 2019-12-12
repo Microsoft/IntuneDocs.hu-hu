@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: dc618f2502647ba33a16cff4305b9f4671e05996
-ms.sourcegitcommit: fc4b38660129d615068f34ad4b96b900d73f7b53
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74558188"
 ---
 # <a name="deploy-hybrid-azure-ad-joined-devices-by-using-intune-and-windows-autopilot"></a>Hibrid Azure AD-hez csatlakoztatott eszközök üzembe helyezése az Intune és a Windows Autopilot használatával
@@ -44,7 +44,7 @@ A regisztrálni kívánt eszközöknek a következő feltételeknek kell megfele
 
 1. Jelentkezzen be az Azure-ba, a bal oldali ablaktáblán válassza a **Azure Active Directory**lehetőséget.
 
-   ![A Azure Portal](./media/windows-autopilot-hybrid/auto-enroll-azure-main.png)
+   ![Azure Portal](./media/windows-autopilot-hybrid/auto-enroll-azure-main.png)
 
 1. Válassza a **Mobilitás (MDM és MAM)** elemet.
 
@@ -111,7 +111,7 @@ A Active Directory Intune-összekötőjét a Windows Server 2016-es vagy újabb 
 2. Az összekötő letöltéséhez kövesse az utasításokat.
 3. Az összekötő telepítéséhez nyissa meg a letöltött összekötő telepítési fájlját ( *ODJConnectorBootstrapper. exe)* .
 4. A beállítás végén válassza a **Konfigurálás**lehetőséget.
-5. Válassza **a bejelentkezés**lehetőséget.
+5. Válassza a **Bejelentkezés** lehetőséget.
 6. Adja meg a felhasználó globális rendszergazdai vagy Intune-rendszergazdai szerepkörének hitelesítő adatait.  
    A felhasználói fióknak rendelkeznie kell egy hozzárendelt Intune-licenccel.
 7. Nyissa meg az **eszközök** > **Windows** > **Windows-regisztráció** > **Intune-összekötő a Active Directoryhoz**lehetőséget, majd ellenőrizze, hogy a kapcsolódási állapot **aktív**-e.

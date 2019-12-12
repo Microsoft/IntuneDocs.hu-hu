@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8452f9b56032864380ec703bfd444dc85ef129b
-ms.sourcegitcommit: 13fa1a4a478cb0e03c7f751958bc17d9dc70010d
+ms.openlocfilehash: ba6b8fb66d25af3833e55eebc12e8b6df2fb5ba5
+ms.sourcegitcommit: 66e284fe092e19c1da72b4b770e45bf25ac7910c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74188265"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74860230"
 ---
 # <a name="create-a-compliance-policy-in-microsoft-intune"></a>Megfelelőségi szabályzat létrehozása Microsoft Intune
 
@@ -52,8 +52,8 @@ Az eszközök megfelelőségi házirendjeinek használatához győződjön meg r
   - iOS
   - macOS
   - Windows 10
-  - Windows 8.1
-  - Windows Phone 8.1
+  - Windows 8.1
+  - WVPN-profilokdows Phone 8.1
 
 - Eszközök regisztrálása az Intune-ban (a megfelelőségi állapot megtekintéséhez szükséges)
 
@@ -77,7 +77,7 @@ Az eszközök megfelelőségi házirendjeinek használatához győződjön meg r
      - **iOS/iPadOS**
      - **macOS**
      - **Windows Phone 8.1**
-     - **Windows 8.1 és újabb verziók**
+     - **Windows 8.1 és újabb**
      - **Windows 10 és újabb**
 
      Az *Android Enterprise*esetében ki kell választania egy **profil típusát**:
@@ -94,13 +94,13 @@ Az eszközök megfelelőségi házirendjeinek használatához győződjön meg r
 
    - **Helyek** *(Android-eszköz rendszergazdája)* : a szabályzatban az eszköz helye alapján kényszerítheti a megfelelőséget. Válasszon a meglévő helyekről. Még nem rendelkezik hellyel? Az Intune-ban a [webhelyek (hálózati kerítés) használatával](use-network-locations.md) biztosítunk útmutatást.  
 
-   - Nem **megfelelőségi műveletek**: olyan eszközök esetében, amelyek nem felelnek meg a megfelelőségi szabályzatoknak, hozzáadhat egy műveletsort az automatikus alkalmazáshoz. Módosíthatja az eszköz nem megfelelőként való megjelölésének ütemezését, megadhatja például, hogy egy nap elteltével. Hozzáadhat egy második műveletet is, amely e-mailt küld a felhasználónak, ha az eszköz nem megfelelő.
+   - Nem **megfelelőségi műveletek**: olyan eszközök esetében, amelyek nem felelnek meg a megfelelőségi szabályzatoknak, hozzáadhat egy műveletsort az automatikus alkalmazáshoz. Módosíthatja az eszköz nem megfelelőként való megjelölésének ütemezését, megadhatja például, hogy egy nap elteltével jelölje a rendszer nem megfelelőnek az eszközt. Hozzáadhat egy második műveletet is, amely e-mailt küld a felhasználónak, ha az eszköz nem megfelelő.
 
-     A [Műveletek hozzáadása nem megfelelő eszközökhöz](actions-for-noncompliance.md) további információval szolgál, többek között értesítési e-mailt hozhat létre a felhasználók számára.
+     A [Műveletek hozzáadása nem megfelelő eszközökhöz](actions-for-noncompliance.md) további információval szolgál, többek között arról, hogyan hozhat létre értesítési e-mailt a felhasználók számára.
 
      Például, a Helyek funkciót használja, és hozzáad egy helyet egy megfelelőségi szabályzatban. Az alapértelmezett meg nem felelési művelet alkalmazandó, ha kiválaszt legalább egy helyet. Ha az eszköz nem csatlakozik a megadott helyekhez, akkor azonnal nem megfelelőnek számít. Biztosíthat a felhasználóknak egy türelmi időszakot, például egy napot.
 
-   - **Hatókör (címkék)** : a hatókör-címkék nagyszerű lehetőséget kapnak házirendek hozzárendelésére és szűrésére meghatározott csoportokra, például értékesítésre, HR-re, az összes US-NC-alkalmazottakra stb. A beállítások hozzáadása után hozzá lehet adni egy hatókör-címkét a megfelelőségi szabályzatokhoz. [Hatókör-címkék használata a házirendek szűréséhez](../fundamentals/scope-tags.md) jó erőforrás.
+   - **Hatókör (címkék)** : a hatókör-címkék nagyszerű módot kapnak a házirendek adott csoportokra, például `US-NC IT Team` vagy `JohnGlenn_ITDepartment`történő szűrésére. A beállítások hozzáadása után hozzá lehet adni egy hatókör-címkét a megfelelőségi szabályzatokhoz. [Hatókör-címkék használata a házirendek szűréséhez](../fundamentals/scope-tags.md) jó erőforrás.
 
 4. Ha elkészült, válassza **az OK** > **Létrehozás** lehetőséget a módosítások mentéséhez. Ekkor létrejön a szabályzat, és megjelenik a listában. Ezután rendelje hozzá a szabályzatot a csoportokhoz.
 
@@ -173,7 +173,7 @@ Ha egy eszközhöz több megfelelőségi szabályzat tartozik, és az eszköz me
 |---------|---------|
 |Ismeretlen     |1|
 |Nem alkalmazható     |2|
-|Megfelelő|3|
+|Compliant (Megfelelő)|3|
 |Türelmi időszakban|4|
 |Nem megfelelő|5|
 |Hiba|6|

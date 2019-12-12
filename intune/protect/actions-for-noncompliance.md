@@ -16,10 +16,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9e3867bfc2de29c059766e134bd0d2c8801e1c70
-ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73712885"
 ---
 # <a name="automate-email-and-add-actions-for-noncompliant-devices-in-intune"></a>E-mailek automatizálása és műveletek hozzáadása a nem megfelelő eszközökhöz az Intune-ban
@@ -80,7 +80,7 @@ Ha e-mailt szeretne küldeni a felhasználóknak, hozzon létre egy értesítés
 
    ![Megfelelőségről szóló értesítési üzenetminta az Intune-ban](./media/actions-for-noncompliance/actionsfornoncompliance-1.PNG)
 
-   A folytatáshoz kattintson a **tovább** gombra.
+   A folytatáshoz kattintson a **Tovább** gombra.
 
 5. A **felülvizsgálat + létrehozás**alatt tekintse át a konfigurációkat, és győződjön meg arról, hogy az értesítési üzenet sablonja készen áll a használatra. Válassza a **Létrehozás** lehetőséget az értesítés létrehozásának befejezéséhez.
 

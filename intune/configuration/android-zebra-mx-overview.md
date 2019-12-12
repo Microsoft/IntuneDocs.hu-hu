@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 829d8f6b2691f91c14029e4f29e2ef11b070e596
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74059621"
 ---
 # <a name="use-and-manage-zebra-devices-with-zebra-mobility-extensions-in-microsoft-intune"></a>Zebra-eszközök használata és kezelése a zebra Mobility Extensions használatával Microsoft Intune
@@ -72,7 +72,7 @@ A következő lépések áttekintést nyújtanak. További részletekért lásd 
 5. Az **Indítás Mdm**területen hagyja meg az alapértelmezett értékeket. Adja hozzá a következő adatokat:
 
     - **Csomag neve**: `com.microsoft.windowsintune.companyportal`
-    - **Osztálynév**: `com.microsoft.windowsintune.companyportal.views.SplashActivity`
+    - **Osztály neve**: `com.microsoft.windowsintune.companyportal.views.SplashActivity`
 
 Folytassa a profil közzétételével, és használja a StageNow alkalmazással az eszközön. A Céges portál alkalmazás telepítve van és meg van nyitva az eszközön.
 
@@ -91,7 +91,7 @@ Az eszköz rendszergazdájaként (a zebra webhelyének megnyitása) [állítsa b
 1. A StageNow-ben hozzon létre egy profilt, és válassza a **Xpert mód**lehetőséget.
 2. Adja hozzá a **DevAdmin-kezelőt** a profilhoz.
 3. Eszköz- **rendszergazdaként való bekapcsoláshoz**állítsa be az **eszközkezelés műveletet** .
-4. Az **eszköz-felügyeleti csomag nevének** beállítása a következőre: `com.microsoft.windowsintune.companyportal`.
+4. Az **eszköz-felügyeleti csomag nevének** beállítása `com.microsoft.windowsintune.companyportal`.
 5. Adja meg az **eszköz rendszergazdai osztályának nevét** a következőre: `com.microsoft.omadm.client.PolicyManagerReceiver`.
 
 Folytassa a profil közzétételével, és használja a StageNow alkalmazással az eszközön. A Céges portál alkalmazás megkapja az eszköz rendszergazdai szerepkörét.
@@ -106,7 +106,7 @@ Az [Android-eszközök regisztrálása](../enrollment/android-enroll.md) a lép�
 
 A StageNow használatával hozzon létre egy profilt, amely az eszközön kezelni kívánt beállításokat konfigurálja. További részletekért lásd a zebra dokumentációját. A [profilok](http://techdocs.zebra.com/stagenow/3-2/stagingprofiles/) (a zebra webhelyének megnyitása) jó erőforrás lehet.
 
-Amikor létrehozza a profilt a StageNow-ben, az utolsó lépésben válassza az **EXPORTÁLÁS Mdm**lehetőséget. Ez a lépés létrehoz egy XML-fájlt. Mentse ezt a fájlt. Egy későbbi lépésben szüksége lesz rá.
+Amikor létrehozza a profilt a StageNow-ben, az utolsó lépésben válassza az **EXPORTÁLÁS Mdm**lehetőséget. Ez a lépés létrehoz egy XML-fájlt. Mentse el ezt a fájlt. Egy későbbi lépésben szüksége lesz rá.
 
 - Javasoljuk, hogy tesztelje a profilt, mielőtt üzembe helyezné a szervezetében lévő eszközökön. Ha tesztelni szeretné, az utolsó lépésben, amikor a StageNow használatával hoz létre profilokat a számítógépen, használja a **tesztelési** lehetőségeket. Ezután használja fel a StageNow által generált fájlt a StageNow alkalmazással az eszközön.
 
@@ -150,7 +150,7 @@ Az Intune-ban hozzon létre egy eszköz konfigurációs profilt:
 
 A profil létrejött, de egyelőre nem csinál semmit. Ezután [rendelje hozzá a profilt](device-profile-assign.md) , és [Figyelje annak állapotát](device-profile-monitor.md).
 
-Amikor az eszköz legközelebb ellenőrzi a konfigurációs frissítéseket, a rendszer az MX-profilt telepíti az eszközre. Az eszközök az Intune-nal szinkronizálhatók, ha az eszközök regisztrálva vannak, majd körülbelül 8 óránként. [A szinkronizálást is kényszerítheti az Intune-ban](../remote-actions/device-sync.md). Vagy az eszközön nyissa meg az **céges portál app** > **Beállítások** > **szinkronizálás**lehetőséget. 
+Amikor az eszköz legközelebb ellenőrzi a konfigurációs frissítéseket, a rendszer az MX-profilt telepíti az eszközre. Az eszközök az Intune-nal szinkronizálhatók, ha az eszközök regisztrálva vannak, majd körülbelül 8 óránként. [A szinkronizálást is kényszerítheti az Intune-ban](../remote-actions/device-sync.md). Vagy az eszközön nyissa meg a **céges portál alkalmazás** > **Beállítások** > **szinkronizálás**lehetőséget. 
 
 ## <a name="update-a-zebra-mx-configuration-after-its-assigned"></a>A zebra MX konfigurációjának frissítése a hozzárendelés után
 

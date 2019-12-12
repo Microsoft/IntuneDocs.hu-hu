@@ -5,7 +5,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 08/05/2019
+ms.date: 12/05/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 346960d8d1d79afc4494064570d1a03e83b8a302
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 8d7b8d96ae1582b5cb434c80d44ef55a31c4781b
+ms.sourcegitcommit: 0a85af9d584709ecc29062f91645a4c47a61ebb9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72510150"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74882298"
 ---
 # <a name="microsoft-intune-licensing"></a>Microsoft Intune licencelés
 A Microsoft Intune a különböző ügyfelek igényeihez és a szervezeti méretekhez érhető el, az iskolák és kisvállalkozások számára egyszerűen használható felügyeleti felülettel, a nagyvállalati ügyfelek által igényelt fejlettebb funkciókhoz. A legtöbb Microsoft Intunet tartalmazó licenc a System Center Configuration Manager használatának jogát is megadja, feltéve, hogy az előfizetés aktív marad. 
@@ -35,8 +35,8 @@ Az Intune-t a következő licencek tartalmazzák:
 - Enterprise Mobility + Security E3
 - Microsoft 365 Business
 - Microsoft 365 F1
-
-
+- Microsoft 365 kormányzati G5
+- Microsoft 365 Government G3
 
 ## <a name="microsoft-intune-for-education"></a>Microsoft Intune for Education
 A Intune for Education a következő licencek tartalmazzák:
@@ -46,7 +46,7 @@ A Intune for Education a következő licencek tartalmazzák:
 
 ## <a name="additional-information"></a>További információ
 - Egy Microsoft Intune felhasználói és eszköz-előfizetés önállóként érhető el a fent felsorolt csomagokon kívül.
-- A Microsoft Intune csak eszközre vonatkozó előfizetések olyan kioszk típusú forgatókönyvekhez érhetők el, amelyekben nincsenek használatban felhasználói affinitási funkciók.
+- A Microsoft Intune csak eszközre vonatkozó előfizetés használható a kioszkok, a dedikált eszközök, a telefonos eszközök, a IoT és más, felhasználó-alapú biztonsági és felügyeleti funkciókat nem igénylő önálló eszközök felügyeletére.
 - A megfelelő Microsoft Intune licencre akkor van szükség, ha egy felhasználó vagy eszköz közvetlenül vagy közvetve a Microsoft Intune szolgáltatástól származik, beleértve a Microsoft Intune szolgáltatás elérését egy [Microsoft API](https://docs.microsoft.com/legal/microsoft-apis/terms-of-use)-n keresztül.
 - Az Intune nem tartalmazza az előző táblázatokban nem szereplő licenceket.
 

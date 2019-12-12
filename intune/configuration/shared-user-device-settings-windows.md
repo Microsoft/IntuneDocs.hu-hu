@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 04/01/2019
+ms.date: 12/05/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0e59a4ba7a929df448eddaf36038c2d6deaa0a7a
-ms.sourcegitcommit: 23e9c48348a6eba494d072a2665b7481e5b5c84e
+ms.openlocfilehash: 96a89301bda738f57920b8d4e233663678e3fc91
+ms.sourcegitcommit: 66e284fe092e19c1da72b4b770e45bf25ac7910c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74547936"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74860278"
 ---
 # <a name="windows-10-and-later-settings-to-manage-shared-devices-using-intune"></a>Windows 10 és újabb beállítások a megosztott eszközök Intune-nal történő kezeléséhez
 
@@ -40,6 +40,8 @@ Az Intune ezen funkciójával kapcsolatos további információkért lásd: [hoz
 
 ## <a name="shared-multi-user-device-settings"></a>Megosztott többfelhasználós eszközbeállítások
 
+Ezek a beállítások a [SHAREDPC CSP](https://docs.microsoft.com/windows/client-management/mdm/sharedpc-csp)-t használják.
+
 - **Megosztott számítógép üzemmód**: válassza az **Engedélyezés** lehetőséget a megosztott számítógép üzemmód bekapcsolásához. Ebben a módban egyszerre csak egy felhasználó jelentkezik be az eszközre. Egy másik felhasználó nem tud bejelentkezni, amíg az első felhasználó kijelentkezik. **Nincs konfigurálva** (alapértelmezés) nem az Intune által felügyelt beállítást hagyja, és nem küld semmilyen szabályzatot az eszközön a beállítás szabályozására.
 - **Vendég fiók**: válasszon egy vendég lehetőséget a bejelentkezési képernyőn. A vendég fiókoknak nincs szükségük felhasználói hitelesítő adatokra vagy hitelesítésre. Ez a beállítás minden használatkor új helyi fiókot hoz létre. A választható lehetőségek:
   - **Vendég**: a vendég fiókot helyileg hozza létre az eszközön.
@@ -54,12 +56,16 @@ Az Intune ezen funkciójával kapcsolatos további információkért lásd: [hoz
 
 - **Helyi tárterület**: válassza az **engedélyezve** lehetőséget, hogy megakadályozza a felhasználók számára a fájlok mentését és megtekintését az eszköz merevlemezén. Válassza a **Letiltva** lehetőséget, hogy a felhasználók a fájlkezelő használatával helyileg lássák és mentsenják a fájlokat. **Nincs konfigurálva** (alapértelmezés) nem az Intune által felügyelt beállítást hagyja, és nem küld semmilyen szabályzatot az eszközön a beállítás szabályozására.
 - **Energiagazdálkodási házirendek**: Ha az **engedélyezve**értékre van állítva, a felhasználók nem kapcsolhatják ki a hibernált állapotot, az összes alvó műveletet nem lehet felülbírálni (például a fedél bezárása), és nem változtathatják meg az energiaellátási beállításokat. Ha a beállítás **Letiltva**értékre van állítva, a felhasználók hibernálják az eszközt, lezárhatók a fedelet az eszköz alvó állapotában, és módosíthatják az energiaellátási beállításokat. **Nincs konfigurálva** (alapértelmezés) nem az Intune által felügyelt beállítást hagyja, és nem küld semmilyen szabályzatot az eszközön a beállítás szabályozására.
-- **Alvó állapot időtúllépése (másodperc)** : adja meg az inaktív másodpercek számát (0-100), mielőtt az eszköz alvó üzemmódba kerül. Ha nem állít be időpontot, az eszköz 60 perc elteltével alvó állapotba kerül.
+- **Alvó állapot időtúllépése (másodperc)** : adja meg az inaktív másodpercek számát (0-18000), mielőtt az eszköz alvó üzemmódba kerül. `0` azt jelenti, hogy az eszköz soha nem alszik. Ha nem állít be időpontot, az eszköz 3600 másodperc (60 perc) elteltével alvó állapotba kerül.
 - **Bejelentkezés a számítógép ébresztése esetén**: beállítás **engedélyezve** értékre állításával a felhasználóknak jelszóval kell bejelentkezniük, ha az eszköz alvó üzemmódból származik. Válassza a **Letiltva** lehetőséget, hogy a felhasználóknak ne kelljen megadniuk felhasználónevét és jelszavát. **Nincs konfigurálva** (alapértelmezés) nem az Intune által felügyelt beállítást hagyja, és nem küld semmilyen szabályzatot az eszközön a beállítás szabályozására.
 - **Karbantartási kezdési idő (percben éjféltől)** : adja meg az időt percben (0-1440) az automatikus karbantartási feladatok, például a Windows Update futtatása esetén. Az alapértelmezett indítási idő az éjfél vagy a nulla (`0`) perc. A kezdés időpontjának megváltoztatásához adjon meg egy kezdő időpontot percben éjféltől. Ha például azt szeretné, hogy a karbantartás 2 ÓRAKOR kezdődjön, írja be a következőt: `120`. Ha azt szeretné, hogy a karbantartás 8 ÓRAKOR kezdődjön, írja be a következőt: `1200`.
 - **Oktatási szabályzatok**: válassza az **engedélyezve** lehetőséget az iskolákban használt eszközök ajánlott beállításainak használatához, amelyek szigorúbbak. Válassza a **Letiltva** lehetőséget, hogy az alapértelmezett és az ajánlott oktatási házirendek ne legyenek használatban. **Nincs konfigurálva** (alapértelmezés) nem az Intune által felügyelt beállítást hagyja, és nem küld semmilyen szabályzatot az eszközön a beállítás szabályozására.
 
   Az oktatási szabályzatok végrehajtásával kapcsolatos további információkért lásd: [Windows 10 konfigurációs javaslatok oktatási ügyfelek számára](https://docs.microsoft.com/education/windows/configure-windows-for-education).
+
+- **Gyors első bejelentkezés**: válassza az **engedélyezve** lehetőséget, hogy a felhasználók gyors első bejelentkezési élményt élvezzenek. Ha **engedélyezve van**, az eszköz automatikusan összekapcsolja az új, nem rendszergazdai Azure ad-fiókokat az előre konfigurált, jelölt helyi fiókokkal. Válassza a **Letiltva** lehetőséget a gyors első bejelentkezési élmény elkerülése érdekében. **Nincs konfigurálva** (alapértelmezés) nem az Intune által felügyelt beállítást hagyja, és nem küld semmilyen szabályzatot az eszközön a beállítás szabályozására.
+
+  [Hitelesítés/EnableFastFirstSignIn CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-authentication#authentication-enablefastfirstsignin)
 
 > [!TIP]
 > [Megosztott vagy vendég számítógép beállítása](https://docs.microsoft.com/windows/configuration/set-up-shared-or-guest-pc) (egy másik docs webhelyének megnyitása) Ez a Windows 10 szolgáltatás kiváló forrása, beleértve a közös módban beállítható fogalmakat és csoportházirendeket is.

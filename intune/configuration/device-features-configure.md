@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/04/2019
+ms.date: 12/12/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,16 +16,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f02188e6dd6cea6048731d119f8f307224810dd9
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.openlocfilehash: d887c7bc3c7e9ea8b6719993b5ba4909e9c18ea8
+ms.sourcegitcommit: df8e2c052fafb2d5d4e9b4fcd831ae0ecf7f8d16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74059953"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74992929"
 ---
 # <a name="add-ios-or-macos-device-feature-settings-in-intune"></a>iOS-es vagy macOS-es eszközfunkció-beállítások megadása az Intune-ban
-
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
 Az Intune számos funkciót és beállítást tartalmaz, amelyek segítségével a rendszergazdák vezérelhetik az iOS-és macOS-eszközöket. A rendszergazdák például a következőket tehetik:
 
@@ -48,13 +46,13 @@ Az Intune-ban konfigurálható beállítások listáját lásd: [AirPrint iOS](i
 
 További információ a AirPrint-ről: a [AirPrint névjegye](https://support.apple.com/HT201311) az Apple webhelyén.
 
-A következőkre vonatkozik:
+A következőre érvényes
 
 - iOS 7,0 és újabb verziók
 - iPadOS 13,0 és újabb verziók
 - macOS 10,10 és újabb verziók
 
-## <a name="app-notifications"></a>Alkalmazás-értesítések
+## <a name="app-notifications"></a>Alkalmazásértesítések
 
 Válassza ki, hogy az iOS-és iPad-eszközökön milyen alkalmazások kapják meg az értesítéseket. Az Intune-ból például elküldheti az alkalmazás értesítéseit, hogy azok megjelenjenek az értesítési központban, megjelenjenek a zárolási képernyőn, vagy hanglejátszást végeznek.
 
@@ -62,14 +60,14 @@ Az Intune-ban konfigurálható beállítások listáját itt tekintheti meg: [al
 
 A szolgáltatással kapcsolatos további információkért lásd: [értesítések](https://developer.apple.com/notifications/) az Apple webhelyén.
 
-A következőkre vonatkozik:
+A következőre érvényes
 
 - iOS 9,3 és újabb verziók
 - iPadOS 13,0 és újabb verziók
 
 ## <a name="associated-domains"></a>Társított tartományok
 
-A társított tartományok lehetővé teszik a tartományok, például a `contoso.com` és az alkalmazások közötti kapcsolat létrehozását. Ez a funkció lehetővé teszi a következőket:
+A társított tartományok lehetővé teszik a tartományok, például a `contoso.com`és az alkalmazások közötti kapcsolat létrehozását. Ez a funkció lehetővé teszi a következőket:
 
 - Megoszthatja az adatokat és bejelentkezési hitelesítő adatokat a szervezet alkalmazásai és webhelyei között.
 - Használja a webhelyén alapuló alkalmazás-szolgáltatásokat, például az egyszeri bejelentkezési alkalmazás bővítményét, az univerzális hivatkozásokat és a jelszó automatikus kitöltését.
@@ -80,7 +78,7 @@ Az Intune-ban konfigurálható beállítások listáját lásd: [társított tar
 
 A szolgáltatással kapcsolatos további információkért lásd: [az alkalmazás társított tartományának beállítása](https://developer.apple.com/documentation/security/password_autofill/setting_up_an_app_s_associated_domains) az Apple webhelyén.
 
-A következőkre vonatkozik:
+A következőre érvényes
 
 - macOS 10,15 és újabb verziók
 
@@ -93,7 +91,7 @@ Ezekkel a beállításokkal konfigurálhatja az alkalmazások elrendezését és
 
 Az Intune-ban konfigurálható beállítások listáját itt tekintheti meg: [kezdőképernyő elrendezése iOS](ios-device-features-settings.md#home-screen-layout)-en.
 
-A következőkre vonatkozik:
+A következőre érvényes
 
 - iOS 9,3 és újabb verziók
 - iPadOS 13,0 és újabb verziók
@@ -106,18 +104,18 @@ Az Intune-ban konfigurálható beállítások listáját itt tekintheti meg: a [
 
 A zárolási képernyőn megjelenő üzenetekkel kapcsolatos további információkért lásd: [LockScreenMessage](https://developer.apple.com/documentation/devicemanagement/lockscreenmessage) az Apple webhelyén.
 
-A következőkre vonatkozik:
+A következőre érvényes
 
 - iOS 9,3 és újabb verziók
 - iPadOS 13,0 és újabb verziók
 
 ## <a name="login-items"></a>Bejelentkezési elemek
 
-Ezzel a szolgáltatással kiválaszthatja azokat az alkalmazásokat, egyéni alkalmazásokat, fájlokat és mappákat, amelyeket a felhasználók az eszközökre való bejelentkezéskor nyitnak meg. 
+Ezzel a szolgáltatással kiválaszthatja azokat az alkalmazásokat, egyéni alkalmazásokat, fájlokat és mappákat, amelyeket a felhasználók az eszközökre való bejelentkezéskor nyitnak meg.
 
 Az Intune-ban konfigurálható beállítások listáját itt tekintheti meg: a macOS-beli [bejelentkezési elemek](macos-device-features-settings.md#login-items).
 
-A következőkre vonatkozik:
+A következőre érvényes
 
 - macOS 10,13 és újabb verziók
 
@@ -127,7 +125,7 @@ A bejelentkezési képernyő és a felhasználók számára elérhető függvén
 
 Az Intune-ban konfigurálható beállítások listáját lásd: [bejelentkezési ablak MacOS rendszeren](macos-device-features-settings.md#login-window).
 
-A következőkre vonatkozik:
+A következőre érvényes
 
 - macOS 10,7 és újabb verziók
 
@@ -144,7 +142,7 @@ Az egyszeri bejelentkezés használatához ellenőrizze, hogy rendelkezik-e az a
 
 Az Intune-ban konfigurálható beállítások listáját lásd: [egyszeri bejelentkezés iOS rendszeren](ios-device-features-settings.md#single-sign-on).
 
-A következőkre vonatkozik:
+A következőre érvényes
 
 - iOS 7,0 és újabb verziók
 - iPadOS 13,0 és újabb verziók
@@ -153,24 +151,31 @@ A következőkre vonatkozik:
 
 Ezek a beállítások olyan alkalmazás-bővítményt konfigurálnak, amely lehetővé teszi az egyszeri bejelentkezést (SSO) az iOS-, iPadOS-és macOS-eszközökhöz. A legtöbb üzletági (LOB) alkalmazás és a szervezet webhelyei bizonyos fokú biztonságos felhasználói hitelesítést igényelnek. Sok esetben a hitelesítéshez a felhasználóknak többször is meg kell adniuk ugyanazokat a hitelesítő adatokat. Az SSO a hitelesítő adatok egyszer való megadása után hozzáférést biztosít a felhasználóknak az alkalmazásokhoz és a webhelyekhez. A bejelentkezést követően a felhasználók automatikusan hozzáférhetnek az alkalmazásokhoz és a webhelyekhez, vagy használhatnak hozzáférést a Face ID, a Touch ID vagy az Apple PIN-kóddal.
 
-Az Intune-ban ezekkel a beállításokkal konfigurálhatja az Apple beépített Kerberos-bővítményét, vagy beállíthatja a szervezete által létrehozott egyszeri bejelentkezéses alkalmazás-bővítményt. Az SSO-alkalmazás bővítmény kezeli a felhasználók hitelesítését. Ezek a beállítások konfigurálják a hitelesítő adatok típusú egyszeri bejelentkezéses alkalmazás-bővítményeket, amelyek a kérdés-válasz hitelesítési folyamatok számára lettek kialakítva. Választhat az Apple által biztosított Kerberos-specifikus hitelesítő adatok és az általános hitelesítőadat-bővítmény közül.
+Az Intune-ban ezekkel a beállításokkal konfigurálhatja a szervezet, az identitás-szolgáltató vagy az Apple által létrehozott SSO AP-bővítményt. Az SSO-alkalmazás bővítmény kezeli a felhasználók hitelesítését. Ezek a beállítások az átirányítás típusa és a hitelesítő adatok típusú egyszeri bejelentkezéses alkalmazás-bővítmények konfigurálását végzik.
+
+- Az átirányítási típus a modern hitelesítési protokollok, például a OAuth és a egy SAML2 számára készült.
+- A hitelesítőadat-típus a kérdés-válasz hitelesítési folyamatokhoz lett tervezve. Választhat az Apple által biztosított Kerberos-specifikus hitelesítő adatok és az általános hitelesítőadat-bővítmény közül.
 
 Az Intune-ban konfigurálható beállítások listáját itt tekintheti meg: [iOS SSO-alkalmazás kiterjesztése](ios-device-features-settings.md#single-sign-on-app-extension) és [MacOS SSO-alkalmazás kiterjesztése](macos-device-features-settings.md#single-sign-on-app-extension).
 
-Az egyszeri bejelentkezéses alkalmazások kiterjesztésének fejlesztésével kapcsolatos további információkért tekintse meg a [bővíthető vállalati egyszeri bejelentkezést](https://developer.apple.com/videos/play/tech-talks/301) az Apple webhelyén.
+Az egyszeri bejelentkezéses alkalmazások kiterjesztésének fejlesztésével kapcsolatos további információkért tekintse meg a [bővíthető vállalati egyszeri bejelentkezést](https://developer.apple.com/videos/play/tech-talks/301) az Apple webhelyén. A szolgáltatás Apple-leírásának olvasásához tekintse meg az [egyszeri bejelentkezési bővítmények adattartalom-beállításait](https://support.apple.com/guide/mdm/single-sign-on-extensions-mdmfd9cdf845/web). 
 
 > [!NOTE]
 > Az **egyszeri bejelentkezési alkalmazás bővítményének** funkciója eltér az **egyszeri bejelentkezési** szolgáltatástól:
 >
-> - Az **egyszeri bejelentkezés alkalmazás-bővítmény** beállításai a iPadOS 13,0 (és újabb) és az iOS 13,0 (és újabb) verzióra vonatkoznak. Az **egyszeri bejelentkezés** beállításai a iPadOS 13,0 (és újabb) és az iOS 7,0 és újabb rendszerekre vonatkoznak.
-> - Az **egyszeri bejelentkezési alkalmazás-bővítmény** kezeli a hitelesítést az operációs rendszerrel. Az **egyszeri bejelentkezés**során egy adott alkalmazás kezeli a hitelesítést.
-> - Az **egyszeri bejelentkezési alkalmazás bővítmény**használatakor a felhasználók csendesen jelentkeznek be az alkalmazásokba vagy a webhelyekre, vagy a Face ID, a Touch ID vagy az Apple pincode vagy PIN-kóddal. **Egyszeri bejelentkezés**használata esetén a felhasználók egy másik alkalmazás használatával jelentkeznek be az alkalmazásokba és a webhelyekre.
+> - Az **egyszeri bejelentkezés alkalmazás-bővítmény** beállításai a iPadOS 13,0 (és újabb), az iOS 13,0 (és újabb), valamint a MacOS 10,15 (és újabb verziók) esetében érvényesek. Az **egyszeri bejelentkezés** beállításai a iPadOS 13,0 (és újabb) és az iOS 7,0 és újabb rendszerekre vonatkoznak.
 >
->    Az **egyszeri bejelentkezési alkalmazás bővítménye** az Apple operációs rendszert használja a hitelesítéshez. Így jobb végfelhasználói élményt biztosíthat.
+> - Az **egyszeri bejelentkezés alkalmazás-bővítmény** beállításai olyan bővítményeket határoznak meg, amelyeket az identitás-szolgáltatók vagy a szervezetek használhatnak a zökkenőmentes vállalati bejelentkezési élmény biztosításához. Az **egyszeri bejelentkezési** beállítások a Kerberos-fiók adatait határozzák meg, amikor a felhasználók hozzáférnek a kiszolgálókhoz vagy alkalmazásokhoz.
 >
-> - Fejlesztési szempontból az **egyszeri bejelentkezési alkalmazás bővítménye** bármilyen hitelesítő adatok egyszeri bejelentkezéses hitelesítését képes használni. **Egyszeri bejelentkezés**esetén csak Kerberos SSO-hitelesítést használhat.  
+> - Az **egyszeri bejelentkezési alkalmazás bővítménye** az Apple operációs rendszert használja a hitelesítéshez. Így előfordulhat, hogy az **egyszeri bejelentkezésnél**jobb a végfelhasználói élmény.
+>
+> - Egy fejlesztési perspektívából az **egyszeri bejelentkezési alkalmazás bővítménnyel**bármilyen típusú átirányítási SSO-vagy hitelesítő adatokat tartalmazó egyszeri bejelentkezéses hitelesítést használhat. **Egyszeri bejelentkezés**esetén csak Kerberos SSO-hitelesítést használhat.
+>
+> - A Kerberos **egyszeri bejelentkezési alkalmazás bővítményét** az Apple fejlesztette ki, és az iOS 13.0 + és a MacOS 10.15 + platformokra épül. A beépített Kerberos-bővítmény használatával a felhasználók bejelentkezhetnek a Kerberos-hitelesítést támogató natív alkalmazásokba és webhelyekre. Az **egyszeri bejelentkezés** nem a Kerberos Apple-implementációja.
+>
+> - A beépített Kerberos **egyszeri bejelentkezési alkalmazás-bővítmény** a weblapok és alkalmazások Kerberos-problémáit kezeli ugyanúgy, mint az **egyszeri bejelentkezés**. A beépített Kerberos-bővítmény azonban támogatja a jelszavak módosítását, és a vállalati hálózatokban jobban viselkedik. A Kerberos **egyszeri bejelentkezés alkalmazás-bővítmény** és az **egyszeri bejelentkezés**között a jobb teljesítmény és képességek miatt ajánlott a bővítmény használata.
 
-A következőkre vonatkozik:
+A következőre érvényes
 
 - iOS 13,0 és újabb verziók
 - iPadOS 13,0 és újabb verziók
@@ -182,18 +187,18 @@ Adjon hozzá egy egyéni. png,. jpg vagy. jpeg formátumú rendszerképet a fel�
 
 Az Intune-ban konfigurálható beállítások listáját lásd: [háttérkép az iOS](ios-device-features-settings.md#wallpaper)-ben.
 
-A következőkre vonatkozik:
+A következőre érvényes
 
 - iOS
 - iPadOS 13,0 és újabb verziók
 
 ## <a name="web-content-filter"></a>Webes tartalom szűrője
 
-Ezek a beállítások a weblapok kiértékeléséhez, valamint a felnőtt tartalmak és a felnőtt nyelv letiltásához használhatják az Apple beépített AutoSzűrő algoritmusát. Létrehozhatja az engedélyezett webhivatkozások és a korlátozott webes hivatkozások listáját is. Engedélyezheti például, hogy csak `contoso` webhely legyen megnyitva.
+Ezek a beállítások a weblapok kiértékeléséhez, valamint a felnőtt tartalmak és a felnőtt nyelv letiltásához használhatják az Apple beépített AutoSzűrő algoritmusát. Létrehozhatja az engedélyezett webhivatkozások és a korlátozott webes hivatkozások listáját is. Engedélyezheti például, hogy csak `contoso` webhelyeket nyisson meg.
 
 Az Intune-ban konfigurálható beállítások listáját itt tekintheti meg: [webes tartalom szűrője iOS rendszeren](ios-device-features-settings.md#web-content-filter).
 
-A következőkre vonatkozik:
+A következőre érvényes
 
 - iOS 7,0 és újabb verziók
 - iPadOS 13,0 és újabb verziók

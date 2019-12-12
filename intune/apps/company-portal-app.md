@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7a4d6db4f61dea1b073ccce7c4c3f727a91402c1
-ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74563637"
 ---
 # <a name="how-to-configure-the-microsoft-intune-company-portal-app"></a>A Microsoft Intune Céges portál alkalmazásának konfigurálása
@@ -149,13 +149,13 @@ A következő billentyűparancsok érhetők el a Windows Céges portál alkalmaz
 
 | Terület | Description | Billentyűparancs |
 |:------------------:|:--------------:|:-----------------:|
-| Navigációs menü | Navigációs | ALT + M |
-|  | Otthoni | ALT + H |
-|  | Minden alkalmazás | ALT + A |
+| Navigációs menü | Navigáció | Alt+M |
+|  | Otthoni | Alt+H |
+|  | Minden alkalmazás | Alt+A |
 |  | Telepített alkalmazások | Alt+I |
-|  | Visszajelzés küldése | ALT + F |
-|  | Saját profil | Alt + U |
-|  | Beállítások | ALT + T |
+|  | Visszajelzés küldése | Alt+F |
+|  | Saját profil | Alt+U |
+|  | Beállítások | Alt+T |
 | Kezdőlap – Eszköz csempe | Átnevezés | F2 |
 |  | Eltávolítás | Ctrl+D vagy Delete |
 |  | Hozzáférés ellenőrzése | Ctrl+M vagy F9 |
@@ -163,7 +163,7 @@ A következő billentyűparancsok érhetők el a Windows Céges portál alkalmaz
 |  | Eltávolítás | Ctrl+D vagy Delete |
 |  | Hozzáférés ellenőrzése | Ctrl+M vagy F9 |
 | Alkalmazás részletei | Telepítés | Ctrl+I |
-| Eszközök | Elérhető | CTRL + D |
+| Eszközök | Elérhető | Ctrl+D |
 
 A végfelhasználók az elérhető parancsikonokat is láthatják a Windows Céges portál alkalmazásban.
 
@@ -187,12 +187,12 @@ Egyes platformok és konfigurációk nem engedélyezik az önkiszolgáló eszkö
 |  | Windows 10<sup>(3)</sup> | iOS/iPadOS<sup>(3)</sup> | MacOS<sup>(3)</sup> | Android<sup>(3)</sup> |
 |----------------------|--------------------------|-------------------|-----------------------------------|-------------------------|
 | Kivonás | Elérhető<sup>(1)</sup> | Elérhető | Elérhető | Elérhető<sup>(7)</sup> |
-| Törlés | Elérhető | Elérhető<sup>(5)</sup> | NA | Elérhető<sup>(7)</sup> |
+| Törlés | Elérhető | Elérhető<sup>(5)</sup> | n/a | Elérhető<sup>(7)</sup> |
 | Átnevezés<sup>(4)</sup> | Elérhető | Elérhető | Elérhető | Elérhető |
-| Sync | Elérhető | Elérhető | Elérhető | Elérhető |
+| Szinkronizálás | Elérhető | Elérhető | Elérhető | Elérhető |
 | Távoli zárolás | Csak Windows Phone-telefon | Elérhető | Elérhető | Elérhető |
-| Jelszó alaphelyzetbe állítása | Csak Windows Phone-telefon | Elérhető<sup>(8)</sup> | NA | Elérhető<sup>(6)</sup> |
-| Kulcs helyreállítása | NA | NA | Elérhető<sup>(2)</sup> | NA |
+| PIN-kód alaphelyzetbe állítása | Csak Windows Phone-telefon | Elérhető<sup>(8)</sup> | n/a | Elérhető<sup>(6)</sup> |
+| Kulcshelyreállítás | n/a | n/a | Elérhető<sup>(2)</sup> | n/a |
 
 <sup>(1)</sup> a kivonás mindig **le van tiltva az Azure** ad-hez csatlakoztatott Windows-eszközökön.<br>
 <sup>(2)</sup> a MacOS rendszerhez készült **kulcs-helyreállítás** csak a webes portálon keresztül érhető el.<br>

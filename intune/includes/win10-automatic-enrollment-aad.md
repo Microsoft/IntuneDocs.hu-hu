@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 6f5b0c8df86cf5bf1206c1cccb879e37c7944a21
-ms.sourcegitcommit: 78f9750712c254d8b123ef15b74f30ca999aa128
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/03/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71912762"
 ---
 ## <a name="enable-windows-10-automatic-enrollment"></a>Windows 10-es eszközök automatikus regisztrációjának engedélyezése
@@ -50,6 +50,6 @@ Az automatikus regisztrálással a felhasználók Windows 10-es eszközeiket reg
     - **MDM-felderítési URL-cím**
     - **MDM megfelelőségi URL-címe**
 
-6. Kattintson a **Mentés** gombra.
+6. Válassza a **Mentés** lehetőséget.
 
 Alapértelmezés szerint a kétfaktoros hitelesítés nincs engedélyezve a szolgáltatáshoz. Ezzel együtt azonban az eszköz regisztrálásához ajánlatos kétfaktoros hitelesítést használni. A kétfaktoros hitelesítés engedélyezéséhez konfigurálnia kell egy kétfaktoros hitelesítési szolgáltatót az Azure AD-ban, a felhasználói fiókokat pedig többtényezős hitelesítéshez kell konfigurálnia. További információt az [Azure Multi-Factor Authentication-kiszolgáló – első lépések](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication-get-started-cloud) című témakörben talál.

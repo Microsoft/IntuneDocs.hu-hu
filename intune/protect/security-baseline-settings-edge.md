@@ -17,10 +17,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c75029c60609b0383e2f647e5b94144d4186248c
-ms.sourcegitcommit: 1a7f04c80548e035be82308d2618492f6542d3c0
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73754877"
 ---
 # <a name="microsoft-edge-baseline-settings-for-intune"></a>A Microsoft Edge alapkonfigurációjának beállításai az Intune-hoz
@@ -45,9 +45,9 @@ Tekintse meg a Microsoft Edge webböngésző alapkonfigurációjának beállít�
 
   Az SSL minimális támogatott verziójának beállítása. Ha úgy állítja be ezt a házirendet, hogy *nincs konfigurálva*, a Microsoft Edge a *TLS 1,0*alapértelmezett minimális verzióját használja. Ha az Engedélyezve értékre *van*állítva, a következő értékek közül választhat minimális verziót:
 
-  - TLS 1,0
-  - TLS 1,1
-  - TLS 1,2
+  - TLS 1.0
+  - TLS 1.1
+  - TLS 1.2
 
   - **Az SSL minimálisan engedélyezett verziója**  
     **Alapértelmezett**: TLS 1,2
@@ -98,7 +98,7 @@ Tekintse meg a Microsoft Edge webböngésző alapkonfigurációjának beállít�
  
   - **Támogatott hitelesítési sémák**  
     Válasszon a következő lehetőségek közül: 
-    - Alapvető
+    - Alapszintű
     - Digest
     - NTLM *(alapértelmezés szerint kiválasztva)*
     - Egyeztetés *(alapértelmezés szerint kiválasztva)*

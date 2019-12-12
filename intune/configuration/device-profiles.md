@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b74cdf29999bccdefaa94c84673b9ea89c335537
-ms.sourcegitcommit: 7001dc5a9cffeb2e161748f9e6dba126bf1cb06f
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/02/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74694947"
 ---
 # <a name="apply-features-and-settings-on-your-devices-using-device-profiles-in-microsoft-intune"></a>Szolgáltatások és beállítások alkalmazása az eszközökön a Microsoft Intune eszköz profiljainak használatával
@@ -161,7 +161,7 @@ Ez a funkció a következőket támogatja:
 
 - Windows 10 őszi alkotói frissítés, vagy későbbi verzió
 
-## <a name="extensions"></a>Extensions
+## <a name="extensions"></a>Bővítmények
 
 A [kernel-bővítmények](kernel-extensions-overview-macos.md) lehetővé teszik a rendszergazdák számára, hogy a MacOS-eszközökön a kernel szintjén szolgáltatásokat és programokat adjanak hozzá. Konfigurálja ezeket a beállításokat egy adott fejlesztőtől vagy partnertől származó összes bővítmény megbízhatóságához, vagy engedélyezze a megadott kernel-bővítményeket.
 
@@ -196,7 +196,7 @@ Ez a funkció a következőket támogatja:
 
 - Android Enterprise (OEMConfig)
 
-## <a name="powershell-scripts"></a>PowerShell-parancsfájlok
+## <a name="powershell-scripts"></a>PowerShell-parancsprogramok
 
 A [Windows 10-es eszközökön futó PowerShell-parancsfájlok](../apps/intune-management-extension.md) az Intune felügyeleti bővítmény használatával töltik fel a PowerShell-parancsfájlokat az Intune-ban, majd ezeket a parancsfájlokat futtatják az eszközökön. Azt is láthatja, hogy mire van szükség a bővítmény használatához, az Intune-hoz való hozzáadásához és egyéb fontos információkhoz.
 

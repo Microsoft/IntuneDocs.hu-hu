@@ -17,10 +17,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fbe2377bfd353dc00ddfdf53a6d091c486644194
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74059381"
 ---
 # <a name="configure-esim-cellular-profiles-in-intune---public-preview"></a>eSIM mobilhálózati profilok konfigurálása az Intune-ban – Nyilvános előzetes verzió
@@ -91,7 +91,7 @@ Az aktiváló kódokat tartalmazó CSV-fájl kezelése során Önnek vagy a rend
 2. A második és az azt követő összes további sor az egyedi, egyszer használható aktiváló kódokat tartalmazza, kétféle értékkel:
 
     1. Az első oszlop az egyedi ICCID (a SIM-chip azonosítója)
-    2. A második oszlop az egyező eszközazonosítókat tartalmazza, csak vesszővel elválasztva (a végén nincs vessző). Tekintse meg a következő példát:
+    2. A második oszlop az egyező eszközazonosítókat tartalmazza, csak vesszővel elválasztva (a végén nincs vessző). Tekintse meg az alábbi példát:
 
         ![Mobilszolgáltatói aktiváló kód csv-fájljának mintája](./media/esim-device-configuration/url-activation-code-examples.png)
 

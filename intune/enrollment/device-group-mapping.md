@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8ab720ffee3f468d3700558dfbde460ee8f712ea
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 8ee8bc3cdee9f61a901854e08000e9e2cbbb2864
+ms.sourcegitcommit: e75718ee6cf93c0e6c915f2776b785fe8db9f7e0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72505498"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74955371"
 ---
 # <a name="categorize-devices-into-groups"></a>Eszközök kategorizálása csoportokba
 
@@ -45,11 +45,10 @@ Bármilyen tetszés szerinti eszközkategóriát létrehozhat. Példa:
 ## <a name="how-to-configure-device-categories"></a>Az eszközkategóriák konfigurálása
 
 ### <a name="step-1-create-device-categories-on-the-intune-blade-of-the-azure-portal"></a>1\. lépés: Eszközkategóriák létrehozása az Azure Portal Intune panelén
-1. Az [Azure Portalbeli Intune-on](https://aka.ms/intuneportal) válassza az **Eszközök regisztrálása** elemet.
-2. Az **Eszközregisztráció** panelen válassza az **Eszközkategóriák** elemet.
-3. Az **Eszközkategóriák** lapon a **Létrehozás** elemmel hozhat létre új kategóriát.
-4. Az **Eszközkategória létrehozása** panelen töltse ki az új kategória **Név** és **Leírás** mezőjét (utóbbi nem kötelező).
-5. Amikor elkészült, válassza a **Létrehozás** gombot. Az új kategória megjelenik a kategóriák listájában.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431), válassza az **eszközök** > **eszköz kategóriák**elemet.
+2. Az **Eszközkategóriák** lapon a **Létrehozás** elemmel hozhat létre új kategóriát.
+3. Az **Eszközkategória létrehozása** panelen töltse ki az új kategória **Név** és **Leírás** mezőjét (utóbbi nem kötelező).
+4. Amikor elkészült, válassza a **Létrehozás** gombot. Az új kategória megjelenik a kategóriák listájában.
 
 Azure Active Directory (Azure AD) biztonsági csoportok létrehozásakor az eszközkategória nevét fogja használni a 2. lépésben.
 
@@ -64,20 +63,16 @@ Ha vannak konfigurált eszközcsoportok, amikor a felhasználók regisztrálják
 
 ### <a name="view-the-categories-of-devices-that-you-manage"></a>A felügyelt eszközök kategóriáinak megtekintése
 
-1. Az [Azure Portalbeli Intune-on](https://aka.ms/intuneportal) válassza az **Eszközök** elemet.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431), válassza az **eszközök** > **minden eszköz**lehetőséget.
 
-2. A **Felügyelet** alatt válassza a **Minden eszköz** lehetőséget.
+2. Az eszközlistában keresse meg az **Eszközkategória** oszlopot.
 
-3. Az eszközlistában keresse meg az **Eszközkategória** oszlopot.
-
-Ha az **Eszközkategória** oszlop nem jelenik meg, válassza az **Oszlopok** elemet. Jelölje ki a lista **Eszközkategória** elemét majd válassza az **Alkalmaz** lehetőséget.
+Ha nem látható az **eszköz kategóriája** oszlop, válassza az **oszlopok** > a **Kategória** > az **alkalmaz**lehetőséget.
 
 ### <a name="change-the-category-of-a-device"></a>Eszköz kategóriájának módosítása
 
-1. Az [Azure Portalbeli Intune-on](https://aka.ms/intuneportal) válassza az **Eszközök** elemet.
-2. A **Felügyelet** szakasz **Eszközök** paneljén válassza a **Minden eszköz** lehetőséget.
-3. Jelölje ki a kívánt eszközt az eszközök listájában. Ezután a **Felügyelet** eszköztulajdonságok panelén válassza a **Tulajdonságok** lehetőséget.
-4. A következő panelen a kijelölt eszköz **Eszközkategória** tulajdonságát átállíthatja a korábban konfigurált kategórianevek bármelyikére.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431), válassza az **eszközök** > **minden eszköz** lehetőséget, > Válassza ki a kívánt eszközt > a **Tulajdonságok**elemet.
+2. A következő panelen a kijelölt eszköz **Eszközkategória** tulajdonságát átállíthatja a korábban konfigurált kategórianevek bármelyikére.
 
 ## <a name="after-you-configure-device-groups"></a>Az eszközcsoportok konfigurálása után
 

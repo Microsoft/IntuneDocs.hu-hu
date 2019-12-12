@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure, seoapril2019
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 73848ee8301362f14fe2866a57329425d5e5cfbe
-ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74563665"
 ---
 # <a name="add-office-365-apps-to-windows-10-devices-with-microsoft-intune"></a>Office 365-alkalmazások hozzáadása a Windows 10-es eszközökhöz Microsoft Intune
@@ -142,7 +142,7 @@ Ha az **XML-adatértékek megadása** lehetőséget választotta a **Formátum**
 
 Amikor elkészült, válassza az **Alkalmazás hozzáadása** ablaktáblán a **Hozzáadás** lehetőséget. A létrehozott alkalmazás megjelenik az alkalmazáslistában. A következő lépés az alkalmazások társítása a kiválasztott csoportokhoz. További információ: [Alkalmazások hozzárendelése csoportokhoz](~/apps/apps-deploy.md).
 
-## <a name="deployment-details"></a>Központi telepítés részletei
+## <a name="deployment-details"></a>Telepítés részletei
 
 Ha az Intune-ból származó központi telepítési szabályzatot az Office- [konfigurációs szolgáltató (CSP)](https://docs.microsoft.com/windows/client-management/mdm/office-csp)segítségével rendeli hozzá a cél gépekhez, a befejező eszköz automatikusan letölti a telepítőcsomagot a *officecdn.microsoft.com* helyéről. A *Program Files* könyvtárában két könyvtár jelenik meg:
 

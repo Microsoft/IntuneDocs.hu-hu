@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/27/2019
+ms.date: 12/04/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: developer
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa6dacf8b6498175e9e7658689bee3a527e684cc
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: bce5d4377a1f5a591c71ff704937afeaccabf429
+ms.sourcegitcommit: 7cc45ef52dda08479bc6bdff7d11d2f6c0e7b93b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72490712"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74899365"
 ---
 # <a name="intune-data-warehouse-application-only-authentication"></a>Alkalmazásalapú hitelesítés az Intune-adattárházban
 
@@ -77,7 +77,7 @@ Ebben a szakaszban létre fog hozni egy kulcsértéket az alkalmazáshoz az Azur
 Ebben a szakaszban az alkalmazás engedélyeit fogja megadni.
 
 1. Válassza a **Szükséges engedélyek** lehetőséget a **Beállítások** panelen.
-2. Kattintson a **Hozzáadás**gombra.
+2. Kattintson a **Hozzáadás**lehetőségre.
 3. Válassza az **API hozzáadása** lehetőséget az **API kiválasztása** panel megjelenítéséhez.
 4. Válassza a **Microsoft Intune API (MicrosoftIntuneAPI)** lehetőséget, majd a **Kiválasztás** lehetőséget az **API kiválasztása** panelen. Ekkor az **Engedélyek kiválasztása** lépés lesz kijelölve, és megjelenik a **Hozzáférés engedélyezése** panel.
 5. Válassza a **Get data warehouse information from Microsoft Intune** (Adattárház-információk beolvasása a Microsoft Intune-ból) lehetőséget az **Alkalmazásengedélyek** szakaszban.
@@ -93,7 +93,7 @@ Hozzon létre a Visual Studióban egy .NET-keretrendszerre épülő, C# nyelvű 
 2. A bal oldali listában válassza a **Visual C#** lehetőséget a .NET-keretrendszerre épülő összes projekttípus megjelenítéséhez.
 3. Válassza a **Console App (.NET Framework)** lehetőséget, adja meg az alkalmazás nevét, majd kattintson az **OK** gombra az alkalmazás létrehozásához.
 4. A **Solution Explorer** (Megoldáskezelő) panelen válassza a **Program.cs** fájlt a kód megjelenítéséhez.
-5. Megoldáskezelő adjon hozzá egy hivatkozást a szerelvényhez `System.Configuration`.
+5. A Megoldáskezelőban adjon hozzá egy hivatkozást a szerelvény `System.Configuration`.
 6. Válassza a helyi menüben az **Add (Hozzáadás)**  > **New item (Új elem)** lehetőséget. Ekkor megjelenik az **Add New Item** (Új elem hozzáadása) párbeszédpanel.
 7. Válassza a bal oldali listában a **Visual C#** > **Code** (Kód) lehetőséget.
 8. Válassza a **Class** (Osztály) lehetőséget, módosítsa az osztály nevét az *IntuneDataWarehouseClass.cs* névre, és kattintson az **Add** (Hozzáadás) gombra.

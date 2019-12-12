@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 10/22/2019
+ms.date: 12/12/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,16 +16,14 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 54995b54d7810c02c5a8b24e5ddff3fa1f08cb05
-ms.sourcegitcommit: 737ad6c675deedfc6009f792023ff95981b06582
+ms.openlocfilehash: 5519bdc405e725556db18d36fa98289c4edb5090
+ms.sourcegitcommit: df8e2c052fafb2d5d4e9b4fcd831ae0ecf7f8d16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74117863"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74992894"
 ---
 # <a name="macos-device-feature-settings-in-intune"></a>macOS-eszköz funkciójának beállításai az Intune-ban
-
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
 Az Intune tartalmaz néhány beépített beállítást a macOS-eszközök funkcióinak testreszabásához. A rendszergazdák például hozzáadhatnak AirPrint-nyomtatókat, kiválaszthatják, hogy a felhasználók hogyan jelentkeznek be, konfigurálják az energiagazdálkodást, az egyszeri bejelentkezéses hitelesítés használatát és egyebeket.
 
@@ -85,7 +83,7 @@ AirPrinter-kiszolgálók hozzáadásához szüksége lesz a nyomtató IP-címér
 
 ## <a name="login-window"></a>Bejelentkezési ablak
 
-### <a name="settings-apply-to-device-enrollment-and-automated-device-enrollment"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése és automatikus eszközök beléptetése 
+### <a name="settings-apply-to-device-enrollment-and-automated-device-enrollment"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése és automatikus eszközök beléptetése
 
 #### <a name="window-layout"></a>Ablak elrendezése
 
@@ -131,33 +129,40 @@ Ez a funkció az alábbiakra vonatkozik:
 
 - **Egyszeri bejelentkezéses alkalmazás bővítményének típusa**: válassza ki a hitelesítő adatok egyszeri bejelentkezéses alkalmazás-bővítményének típusát. A választható lehetőségek:
 
-  - **Nincs konfigurálva**: az alkalmazás-bővítmények nem használatosak. Az egyszeri bejelentkezéses alkalmazások kiterjesztésének letiltásához állítsa át az egyszeri bejelentkezéses alkalmazás kiterjesztésének típusát a **Kerberos** vagy a **hitelesítő adatok** közül a **nincs konfigurálva**értékre
-  - **Hitelesítő adatok**: általános, testreszabható hitelesítőadat-alkalmazási bővítmény használata az egyszeri bejelentkezés használatához. Győződjön meg róla, hogy ismeri a szervezete SSO-alkalmazásának bővítmény-AZONOSÍTÓját és a csoport AZONOSÍTÓját.  
+  - **Nincs konfigurálva**: az alkalmazás-bővítmények nem használatosak. Az alkalmazás-bővítmény letiltásához állítsa az SSO-alkalmazás kiterjesztésének típusát **nincs konfigurálva**értékre.
+  - **Átirányítás**: általános, testreszabható átirányítási alkalmazás-bővítmény használata az egyszeri bejelentkezéshez modern hitelesítési folyamatokkal. Győződjön meg arról, hogy ismeri a szervezet alkalmazás-bővítményének bővítményét és a csoport AZONOSÍTÓját.
+  - **Hitelesítő adatok**: általános, testreszabható hitelesítőadat-alkalmazási bővítmény használata az egyszeri bejelentkezéshez a kérdés-válasz hitelesítési folyamatokkal. Győződjön meg róla, hogy ismeri a szervezete SSO-alkalmazásának bővítmény-AZONOSÍTÓját és a csoport AZONOSÍTÓját.  
   - **Kerberos**: az Apple beépített Kerberos-bővítményét használja, amely megtalálható a macOS Catalina 10,15-es és újabb verzióiban. Ez a beállítás a **hitelesítőadat** -alkalmazás kiterjesztésének Kerberos-specifikus verziója.
 
   > [!TIP]
-  > A **hitelesítő adatok** típusával adja hozzá a saját konfigurációs értékeit, hogy áthaladjon a bővítményen. Ehelyett érdemes lehet az Apple által biztosított beépített konfigurációs beállításokat használni a **Kerberos** -típusban.
+  > Az **átirányítás** és a **hitelesítő adatok** típusával adja hozzá a saját konfigurációs értékeit, hogy áthaladjon a bővítményen. Ha **hitelesítő adatokat**használ, érdemes lehet az Apple által biztosított beépített konfigurációs beállításokat használni a **Kerberos** -típusban.
 
-- **BŐVÍTMÉNY azonosítója** (csak hitelesítő adatok): adja meg az egyszeri bejelentkezéses alkalmazás kiterjesztését azonosító köteg azonosítóját, például `com.apple.ssoexample`.
-- **Csoport azonosítója** (csak hitelesítő adatok): adja meg az egyszeri bejelentkezéses alkalmazás-bővítmény csoportjának azonosítóját. A csoport azonosítója az Apple által generált 10 karakteres alfanumerikus (számok és betűk) karakterlánc, például `ABCDE12345`. 
+- **BŐVÍTMÉNY azonosítója** (átirányítás és hitelesítő adatok): adja meg az egyszeri bejelentkezéses alkalmazás kiterjesztését azonosító köteg azonosítóját, például `com.apple.ssoexample`.
+- **Csoport azonosítója** (átirányítás és hitelesítő adatok): adja meg az SSO-alkalmazás bővítményének csapat-azonosítóját. A csoport azonosítója az Apple által generált 10 karakteres alfanumerikus (számok és betűk) karakterlánc, például `ABCDE12345`. 
 
   [Keresse meg a csoport azonosítóját (az](https://help.apple.com/developer-account/#/dev55c3c710c) Apple webhelyének megnyitása), amely további információkat tartalmaz.
 
-- **Tartomány**: adja meg a hitelesítési tartomány nevét. A tartománynevet tőkésíteni kell, például `CONTOSO.COM`. A tartománynév általában megegyezik a DNS-tartománynévvel, de minden nagybetűvel.
-- **Tartományok**: Itt adhatja meg az SSO-n keresztül hitelesíthető helyek tartomány-vagy állomásnevek nevét. Ha például a webhely `mysite.contoso.com`, akkor `mysite` az állomásnév, és a `contoso.com` a tartománynév. Ha a felhasználók bármelyik webhelyhez csatlakoznak, az alkalmazás-bővítmény kezeli a hitelesítési kihívást. Ez a hitelesítés lehetővé teszi a felhasználók számára a bejelentkezéshez a Face ID, a Touch ID vagy az Apple pincode/PIN-kód használatát.
+- **Tartomány** (hitelesítő adat és Kerberos): adja meg a hitelesítési tartomány nevét. A tartománynevet tőkésíteni kell, például `CONTOSO.COM`. A tartománynév általában megegyezik a DNS-tartománynévvel, de minden nagybetűvel.
+
+- **Tartományok** (hitelesítő adatok és Kerberos): adja meg az SSO-n keresztül hitelesíthető helyek tartomány-vagy állomásnevek nevét. Ha például a webhely `mysite.contoso.com`, akkor `mysite` az állomásnév, és a `contoso.com` a tartománynév. Ha a felhasználók bármelyik webhelyhez csatlakoznak, az alkalmazás-bővítmény kezeli a hitelesítési kihívást. Ez a hitelesítés lehetővé teszi a felhasználók számára a bejelentkezéshez a Face ID, a Touch ID vagy az Apple pincode/PIN-kód használatát.
 
   - Az egyszeri bejelentkezési alkalmazás bővítményének Intune-profiljainak minden tartományának egyedinek kell lennie. A tartományokat nem lehet megismételni a Bejelentkezési alkalmazás bővítményeinek egyik profiljában sem, még akkor is, ha különböző típusú egyszeri bejelentkezéses alkalmazás-bővítményeket használ.
   - Ezek a tartományok nem megkülönböztetik a kis-és nagybetűket
 
-- **További konfiguráció** (csak hitelesítő adatok): adja meg az egyszeri bejelentkezéshez szükséges további adatokat, amelyeket át kell adni az SSO-alkalmazás kiterjesztésének:
-  - **Konfigurációs kulcs**: adja meg a hozzáadni kívánt elem nevét, például `user name`.
-  - **Value Type (értéktípus**): adja meg az adattípust. A választható lehetőségek:
+- **URL-címek** (csak átirányítás): adja meg az identitás-szolgáltatók URL-előtagjait, amelyek nevében az átirányítási alkalmazás BŐVÍTMÉNYE egyszeri bejelentkezést hajt végre. Amikor a rendszer átirányítja a felhasználót az URL-címekre, az SSO-alkalmazás kiterjesztése beavatkozik, és a rendszer bekéri az egyszeri bejelentkezést.
+
+  - Az Intune egyszeri bejelentkezési alkalmazás-bővítmények profiljaiban szereplő összes URL-nek egyedinek kell lennie. Nem lehet tartományt megismételni az egyszeri bejelentkezéses alkalmazás-kiterjesztési profilban, még akkor is, ha különböző típusú egyszeri bejelentkezéses alkalmazás-bővítményeket használ.
+  - Az URL-címeknek http://vagy https://kell kezdődnie.
+
+- **További konfiguráció** (átirányítás és hitelesítő adatok): adja meg az egyszeri bejelentkezéshez szükséges további adatokat, amelyeket át kell adni az SSO-alkalmazás kiterjesztésének:
+  - **Kulcs**: adja meg a hozzáadni kívánt elem nevét, például `user name`.
+  - **Típus**: adja meg az adattípust. A választható lehetőségek:
 
     - Sztring
     - Boolean: a **konfigurációs érték**mezőben adja meg `True` vagy `False`.
     - Egész szám: a **konfigurációs érték**mezőbe írjon be egy számot.
     
-  - **Konfigurációs érték**: adja meg az adathalmazt.
+  - **Érték**: adja meg az adathalmazt.
   
   - **Hozzáadás**: válassza ki a konfigurációs kulcsok hozzáadásához.
 
@@ -179,13 +184,19 @@ Ez a funkció az alábbiakra vonatkozik:
 - **Jelszó minimális kora** (csak Kerberos): Itt adhatja meg, hogy hány nap elteltével kell használni a jelszót a tartományon, mielőtt a felhasználó módosíthatja azt. **Nincs konfigurálva** (az alapértelmezett érték) nem kényszeríti ki a minimális korhatárt a jelszó megváltozása előtt.
 - **Jelszó lejáratáról szóló értesítés** (csak Kerberos): adja meg, hogy hány nap elteltével járjon le a jelszó, hogy a felhasználók értesítést kapjanak a jelszavuk lejáratáról. **Nincs konfigurálva** (alapértelmezés) `15` napot használ.
 - **Jelszó lejárata** (csak Kerberos esetén): adja meg, hogy hány nap elteltével kell megváltoztatni az eszköz jelszavát. **Nincs konfigurálva** (alapértelmezett): a felhasználói jelszavak soha nem járnak le.
+- **Jelszó-módosítási URL-cím** (csak Kerberos): adja meg azt az URL-címet, amely akkor indul el, amikor a felhasználó Kerberos-jelszó módosítását kezdeményez
 - **Egyszerű név** (csak Kerberos): adja meg a Kerberos-tag felhasználónevét. Nem kell belefoglalni a tartománynevet. `user@contoso.com`például `user` az egyszerű név, a `contoso.com` pedig a tartomány neve.
+
+  > [!TIP]
+  > - A egyszerű név változói az `{{ }}`kapcsos zárójelek megadásával is használhatók. A Felhasználónév megjelenítéséhez például írja be a következőt: `Username: {{username}}`. 
+  > - Azonban ügyeljen arra, hogy a változó behelyettesítése ne legyen érvényesítve a felhasználói felületen, és megkülönböztetik a kis-és nagybetűket. Ügyeljen arra, hogy a helyes adatokat adja meg.
+  
 - **Active Directory Helykód** (csak Kerberos): adja meg annak a Active Directory helynek a nevét, amelyet a Kerberos-bővítménynek használnia kell. Előfordulhat, hogy nem kell módosítania ezt az értéket, mivel a Kerberos-bővítmény automatikusan megkeresi a Active Directory hely kódját.
 - **Gyorsítótár neve** (csak Kerberos): adja meg a Kerberos-gyorsítótár általános biztonsági szolgáltatásainak (GSS) nevét. Valószínűleg nem kell beállítania ezt az értéket.  
 - **Jelszóra vonatkozó követelmények üzenet** (csak Kerberos): adja meg a szervezete jelszavának a felhasználók számára megjelenített szöveges verzióját. Az üzenet akkor jelenik meg, ha nincs szükség Active Directory jelszavával kapcsolatos bonyolultsági követelményekre, vagy ne adja meg a jelszó minimális hosszát.  
 - Alkalmazáscsomag- **azonosítók** (csak Kerberos): **adja hozzá** az App Bundle-azonosítókat, amelyeknek egyszeri bejelentkezést kell használniuk az eszközökön. Ezek az alkalmazások hozzáférést kapnak a Kerberos-jegy biztosításához, a hitelesítési jegyet, és hitelesítik a felhasználókat a hozzáférésre jogosult szolgáltatásokhoz.
 - **Tartományi tartomány leképezése** (csak Kerberos): **adja** meg a tartományhoz HOZZÁRENDELNI kívánt tartományi DNS-utótagokat. Akkor használja ezt a beállítást, ha a gazdagépek DNS-nevei nem egyeznek a tartománynév nevével. Valószínűleg nem kell létrehoznia ezt az egyéni tartomány – tartomány társítást.
-- **PKINIT-tanúsítvány** (csak Kerberos): **válassza ki** a nyilvános kulcsú titkosítást a kezdeti hitelesítési (PKINIT) tanúsítványhoz, amely a Kerberos hitelesítő adatok felhasználói beavatkozás nélküli megújítására használható. A tanúsítványnak olyan PKCS vagy SCEP tanúsítványnak kell lennie, amelyet korábban az Intune-ba adott hozzá.
+- **PKINIT-tanúsítvány** (csak Kerberos): **válassza ki** a Kerberos-hitelesítéshez használható kezdeti hitelesítési (PKINIT) tanúsítvány nyilvános kulcsú titkosítását. Az Intune-ban hozzáadott [PKCS](../protect/certficates-pfx-configure.md) -vagy [SCEP](../protect/certificates-scep-configure.md) -tanúsítványok közül választhat. A tanúsítványokkal kapcsolatos további információkért lásd: [tanúsítványok használata a hitelesítéshez Microsoft Intune](../protect/certificates-configure.md).
 
 ## <a name="associated-domains"></a>Társított tartományok
 

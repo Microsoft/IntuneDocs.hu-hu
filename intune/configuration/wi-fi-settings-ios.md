@@ -17,10 +17,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: dd37813e5ea0b6a64d7fae22cada06cccb01a942
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74059218"
 ---
 # <a name="add-wi-fi-settings-for-ios-devices-in-microsoft-intune"></a>iOS-eszközökre vonatkozó Wi-Fi-beállítások hozzáadása a Microsoft Intune-ban
@@ -75,7 +75,7 @@ Ez a cikk ezeket a beállításokat ismerteti.
 
   - **EAP-TLS**: Ezt is adja meg:
 
-    - **Kiszolgáló megbízhatósága** - **kiszolgálótanúsítvány neve**: **adjon** meg egy vagy több KÖZNAPI nevet a megbízható hitelesítésszolgáltató (CA) által kiadott tanúsítványokban a vezeték nélküli hálózati hozzáférési kiszolgálókhoz. Adja meg például a következőt: `mywirelessserver.contoso.com` vagy `mywirelessserver`. Ha megadja ezt az információt, elkerülheti azt a dinamikus megbízhatósági ablakot, amely akkor jelenik meg a felhasználók eszközein, amikor ehhez a Wi-Fi-hálózathoz csatlakoznak.
+    - **Kiszolgálói megbízhatóság** - **kiszolgálótanúsítvány**-kiszolgálók nevei: **adjon** meg egy vagy több KÖZNAPI nevet a megbízható hitelesítésszolgáltató (CA) által kiadott tanúsítványokban a vezeték nélküli hálózati hozzáférési kiszolgálókhoz. Adja meg például `mywirelessserver.contoso.com` vagy `mywirelessserver`. Ha megadja ezt az információt, elkerülheti azt a dinamikus megbízhatósági ablakot, amely akkor jelenik meg a felhasználók eszközein, amikor ehhez a Wi-Fi-hálózathoz csatlakoznak.
     - **Főtanúsítvány a kiszolgálóérvényesítéshez**: Válasszon egy meglévő megbízható főtanúsítvány-profilt. Ez a tanúsítvány lehetővé teszi az ügyfél számára, hogy megbízzon a vezeték nélküli hálózati hozzáférési kiszolgáló tanúsítványán.
 
     - **Ügyfél-hitelesítés** Válasszon **hitelesítési módszert**. A választható lehetőségek:
@@ -88,7 +88,7 @@ Ez a cikk ezeket a beállításokat ismerteti.
 
   - **EAP-TTLS**: Ezt is adja meg:
 
-    - **Kiszolgáló megbízhatósága** - **kiszolgálótanúsítvány neve**: **adjon** meg egy vagy több KÖZNAPI nevet a megbízható hitelesítésszolgáltató (CA) által kiadott tanúsítványokban a vezeték nélküli hálózati hozzáférési kiszolgálókhoz. Adja meg például a következőt: `mywirelessserver.contoso.com` vagy `mywirelessserver`. Ha megadja ezt az információt, elkerülheti azt a dinamikus megbízhatósági ablakot, amely akkor jelenik meg a felhasználók eszközein, amikor ehhez a Wi-Fi-hálózathoz csatlakoznak.
+    - **Kiszolgálói megbízhatóság** - **kiszolgálótanúsítvány**-kiszolgálók nevei: **adjon** meg egy vagy több KÖZNAPI nevet a megbízható hitelesítésszolgáltató (CA) által kiadott tanúsítványokban a vezeték nélküli hálózati hozzáférési kiszolgálókhoz. Adja meg például `mywirelessserver.contoso.com` vagy `mywirelessserver`. Ha megadja ezt az információt, elkerülheti azt a dinamikus megbízhatósági ablakot, amely akkor jelenik meg a felhasználók eszközein, amikor ehhez a Wi-Fi-hálózathoz csatlakoznak.
     - **Főtanúsítvány a kiszolgálóérvényesítéshez**: Válasszon egy meglévő megbízható főtanúsítvány-profilt. Ez a tanúsítvány lehetővé teszi az ügyfél számára, hogy megbízzon a vezeték nélküli hálózati hozzáférési kiszolgáló tanúsítványán.
 
     - **Ügyfél-hitelesítés** – Válasszon egy **hitelesítési módszert**. A választható lehetőségek:
@@ -108,7 +108,7 @@ Ez a cikk ezeket a beállításokat ismerteti.
 
   - **PEAP**: Ezt is adja meg:
 
-    - **Kiszolgáló megbízhatósága** - **kiszolgálótanúsítvány neve**: **adjon** meg egy vagy több KÖZNAPI nevet a megbízható hitelesítésszolgáltató (CA) által kiadott tanúsítványokban a vezeték nélküli hálózati hozzáférési kiszolgálókhoz. Adja meg például a következőt: `mywirelessserver.contoso.com` vagy `mywirelessserver`. Ha megadja ezt az információt, elkerülheti azt a dinamikus megbízhatósági ablakot, amely akkor jelenik meg a felhasználók eszközein, amikor ehhez a Wi-Fi-hálózathoz csatlakoznak.
+    - **Kiszolgálói megbízhatóság** - **kiszolgálótanúsítvány**-kiszolgálók nevei: **adjon** meg egy vagy több KÖZNAPI nevet a megbízható hitelesítésszolgáltató (CA) által kiadott tanúsítványokban a vezeték nélküli hálózati hozzáférési kiszolgálókhoz. Adja meg például `mywirelessserver.contoso.com` vagy `mywirelessserver`. Ha megadja ezt az információt, elkerülheti azt a dinamikus megbízhatósági ablakot, amely akkor jelenik meg a felhasználók eszközein, amikor ehhez a Wi-Fi-hálózathoz csatlakoznak.
     - **Főtanúsítvány a kiszolgálóérvényesítéshez**: Válasszon egy meglévő megbízható főtanúsítvány-profilt. Ez a tanúsítvány lehetővé teszi az ügyfél számára, hogy megbízzon a vezeték nélküli hálózati hozzáférési kiszolgáló tanúsítványán.
 
     - **Ügyfél-hitelesítés** – Válasszon egy **hitelesítési módszert**. A választható lehetőségek:

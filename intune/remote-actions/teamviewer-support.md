@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d03859d5775193e6bbc482c06b28942a1a5bce2f
-ms.sourcegitcommit: 28622c5455adfbce25a404de4d0437fa2b5370be
+ms.openlocfilehash: 0372c9629e111c460b095d8c0236305866da42e3
+ms.sourcegitcommit: ec69e7ccc6e6183862a48c1b03ca6a3bf573f354
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73712149"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74907202"
 ---
 # <a name="use-teamviewer-to-remotely-administer-intune-devices"></a>A TeamViewer használata Intune-eszközök távoli felügyeletéhez
 
@@ -48,7 +48,7 @@ A TeamViewer használatával engedélyezi a TeamViewer for Intune összekötőj�
 Ahhoz, hogy távsegítséget nyújthasson eszközökre, az alábbi lépéseket követve konfigurálja az Intune TeamViewer-összekötőt:
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
-2. Válassza az **eszközök** > **TeamViewer-összekötő**lehetőséget.
+2. Válassza a **bérlői felügyelet** > **Összekötők és tokenek** > **TeamViewer-összekötő**lehetőséget.
 3. Válassza a **Kapcsolódás** lehetőséget, és fogadja el a licencszerződést.
 4. Válassza **Az engedélyezéshez jelentkezzen be a TeamViewer szolgáltatásba** lehetőséget.
 5. Ekkor megnyílik a TeamViewer webhelyének egyik oldala. A TeamViewer-licenc hitelesítő adatainak megadását követően válassza a **Bejelentkezés** lehetőséget.
@@ -59,7 +59,7 @@ Az összekötő konfigurálása után megkezdheti egy eszköz távoli felügyele
 
 1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Válassza az **Eszközök**, majd a **Minden eszköz** lehetőséget.
-3. Jelölje ki a listában a távolról felügyelni kívánt eszközt. Az eszköz tulajdonságainál válassza az **Új távsegítség munkamenet** lehetőséget.
+3. A listából válassza ki azt az eszközt, amelyet távolról szeretne felügyelni > **...**  > **új Távsegítség-munkamenetet**.
 4. Miután az Intune kapcsolódott a TeamViewer szolgáltatáshoz, látni fog némi információt az eszközről. A **Kapcsolódás** lehetőséggel indítsa el a távoli munkamenetet.
 
 ![Androidos eszköz távoli felügyelet a TeamViewer használatával – példa](./media/teamviewer-support/android-teamviewer.png)

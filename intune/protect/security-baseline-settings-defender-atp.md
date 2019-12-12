@@ -5,7 +5,7 @@ description: Az Intune által támogatott biztonsági alapbeállítások a Micro
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/13/2019
+ms.date: 12/05/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7363682960cff6688e9727d2b6869b6bf357084
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.openlocfilehash: 85d0b28de6c133ece5116dd78b1646f497ff2f6b
+ms.sourcegitcommit: 0a85af9d584709ecc29062f91645a4c47a61ebb9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74060052"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74882326"
 ---
 # <a name="microsoft-defender-advanced-threat-protection-baseline-settings-for-intune"></a>A Microsoft Defender komplex veszélyforrások elleni védelem alapkonfigurációjának beállításai az Intune-ban
 
@@ -37,7 +37,7 @@ További információ: [WINDOWSDEFENDERAPPLICATIONGUARD CSP](https://docs.micros
 
 A Microsoft Edge használata közben a Microsoft Defender Application Guard védi a környezetet a szervezete által nem megbízható helyekről. Ha a felhasználók olyan helyeket látogatnak meg, amelyek nem szerepelnek az elszigetelt hálózati határon, a helyek egy Hyper-V virtuális böngészési munkamenetben nyílnak meg. A megbízható helyeket a hálózat határa határozza meg.  
 
-- **Application Guard** - *Settings/AllowWindowsDefenderApplicationGuard*  
+- **Application Guard** - *Beállítások/AllowWindowsDefenderApplicationGuard*  
   Válassza az *Igen* lehetőséget a funkció bekapcsolásához, amely nem megbízható helyeket nyit meg egy Hyper-V virtualizált tallózási tárolóban. Ha a *nincs konfigurálva*értékre van állítva, a rendszer minden helyet (megbízható és nem megbízható) nyit meg az eszközön, és nem virtualizált tárolóban.  
 
   **Alapértelmezett**: igen
@@ -590,11 +590,21 @@ További információ: [TŰZFAL CSP](https://docs.microsoft.com/windows/client-m
 
 További információ: [PASSPORTFORWORK CSP](https://docs.microsoft.com/windows/client-management/mdm/passportforwork-csp) a Windows dokumentációjában.
 
-- **Vállalati Windows Hello**  - TenantId/házirendek/UsePassportForWork konfigurálása    
+- **A vállalati Windows Hello** - *TenantId/házirendek/UsePassportForWork* konfigurálása    
   A vállalati Windows Hello egy alternatív módszer a Windowsba való bejelentkezéshez jelszavak, intelligens kártyák és virtuális intelligens kártyák helyett.  
 
-  - Ha az *Igen*értékre van állítva, akkor engedélyezi ezt a házirendet, és az eszköz kiépíti a vállalati Windows Hello-t.  
-  - Ha a *nincs konfigurálva*értékre van állítva, az alapterv nem befolyásolja az eszköz házirend-beállítását. Ez azt jelenti, hogy ha a vállalati Windows Hello le van tiltva egy eszközön, az továbbra is le lesz tiltva. Ha engedélyezve van, az továbbra is engedélyezett marad. 
+
+  > [!IMPORTANT]
+  > A beállítás beállításait a rendszer visszafordítja a feltételes jelentésből. Fordított érték esetén az *Igen* érték nem engedélyezi a Windows Hello használatát, hanem *nem konfiguráltként*kezeli őket. Ha a beállítás nincs konfigurálva értékre van állítva, a Windows Hello engedélyezve van az *alapkonfigurációt*fogadó eszközökön.
+  >
+  > A következő leírások módosultak, hogy tükrözzék ezt a viselkedést. A beállítások megadását a rendszer a biztonsági alapterv jövőbeli frissítésében rögzíti.
+
+  - Ha a *nincs konfigurálva*értékre van állítva, a Windows Hello engedélyezve van, és az eszköz kiépíti a vállalati Windows Hello szolgáltatást.
+  - Ha az *Igen*értékre van állítva, az alapterv nem befolyásolja az eszköz házirend-beállítását. Ez azt jelenti, hogy ha a vállalati Windows Hello le van tiltva egy eszközön, az továbbra is le lesz tiltva. Ha engedélyezve van, az továbbra is engedélyezett marad.
+  <!-- expected behavior 
+  - When set to *Yes*, you  enable this policy and the device provisions Windows Hello for Business.  
+  - When set to *Not configured*, the baseline does not affect the policy setting of the device. This means that if Windows Hello for Business is disabled on a device, it remains disabled. If its enabled, it remains enabled. 
+  -->
 
   A vállalati Windows Hello nem tiltható le ezen alapterven keresztül. A Windows Hello for Business letiltható a [Windows-regisztráció](windows-hello.md)konfigurálásakor, vagy az [Identity Protection](identity-protection-configure.md)eszköz konfigurációs profiljának részeként.  
 

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5f12feca6d43a4194e7c60639a93747c7f389f93
-ms.sourcegitcommit: fc4b38660129d615068f34ad4b96b900d73f7b53
+ms.openlocfilehash: 0b84cd52dfe2eb6332ddbc89bc00a17ec3361b79
+ms.sourcegitcommit: edd06a494a241d198ca9b0d3030c92195976e0d3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74558198"
+ms.lasthandoff: 12/11/2019
+ms.locfileid: "75000431"
 ---
 # <a name="set-up-enrollment-for-windows-devices"></a>Windowsos eszközök regisztrációjának beállítása
 
@@ -44,8 +44,8 @@ A Windows-eszközök regisztrálásának egyszerűsítését két tényező hat�
 
 ||**Azure AD Premium**|**Egyéb AD**|
 |----------|---------------|---------------|  
-|**Windows 10**|[Automatikus regisztráció](#enable-windows-10-automatic-enrollment) |Felhasználó beléptetése|
-|**Korábbi Windows-verziók**|Felhasználó beléptetése|Felhasználó beléptetése|
+|**Windows 10**|[Automatikus regisztráció](#enable-windows-10-automatic-enrollment) |Felhasználói regisztráció|
+|**Korábbi Windows-verziók**|Felhasználói regisztráció|Felhasználói regisztráció|
 
 Azok a cégek, amelyek használhatják az automatikus regisztrációt, a Windows Configuration Designer alkalmazással is konfigurálhatják az [eszközök csoportos regisztrációját](../windows-bulk-enroll.md).
 
@@ -123,9 +123,18 @@ Azure Active Directory eltérő CNAME-t használ az iOS-, Android-és Windows-es
 
 | Típus | Gazdagép neve | A következő helyre mutat | Élettartam |
 | --- | --- | --- | --- |
-| név | EnterpriseRegistration. company_domain. com | EnterpriseRegistration.windows.net | 1 óra|
+| NÉV | EnterpriseRegistration. company_domain. com | EnterpriseRegistration.windows.net | 1 óra|
 
 További információ az eszközök regisztrálásáról: [az eszközök identitásának kezelése a Azure Portal használatával](https://docs.microsoft.com/azure/active-directory/devices/device-management-azure-portal)
+
+## <a name="windows-10-auto-enrollment-and-device-registration"></a>A Windows 10 automatikus regisztrációja és az eszköz regisztrálása
+A CNAME DNS-bejegyzések létrehozása nem kötelező, viszont a CNAME rekordok létrehozása egyszerűbbé teszi a regisztrációt a felhasználók számára. Ha nem található beléptetési CNAME rekord, a rendszer kéri a felhasználókat, hogy manuálisan beírjanak a MDM-kiszolgáló nevét, a enrollment.manage.microsoft.us.
+
+| Típus | Gazdagép neve | A következő helyre mutat | Élettartam |
+| --- | --- | --- | --- |
+| CNAME | EnterpriseEnrollment.munkahelyi_tartomány.com | EnterpriseEnrollment-s.manage.microsoft.us | 1 óra|
+|CNAME | EnterpriseRegistration.munkahelyi_tartomány.com | EnterpriseRegistration.windows.net | 1 óra |
+
 
 ## <a name="next-steps"></a>További lépések
 

@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d54c58523fdb44080b6c4210d639f9ad0ce476e2
-ms.sourcegitcommit: b5e719fb507b1bc4774674e76c856c435e69f68c
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73801542"
 ---
 # <a name="configure-and-use-imported-pkcs-certificates-with-intune"></a>Importált PKCS-tanúsítványok konfigurálása és használata az Intune-nal
@@ -55,7 +55,7 @@ Az importált PKCS-tanúsítványok Intune-nal való használatához a következ
 
 - **Visual studio 2015 vagy újabb** (nem kötelező): a Visual Studióval felépítheti a segítő PowerShell-modult a pfx-tanúsítványok Microsoft Intuneba való importálására szolgáló parancsmagokkal. A segítő PowerShell-parancsmagok beszerzéséhez lásd: [PFXImport PowerShell-projekt a githubban](https://github.com/microsoft/Intune-Resource-Access/tree/develop/src/PFXImportPowershell).
 
-## <a name="how-it-works"></a>Működés
+## <a name="how-it-works"></a>Működési elv
 
 Ha az Intune-nal egy **importált pfx-tanúsítványt** telepít egy felhasználóhoz, az eszközön kívül két összetevőt is le kell játszani:
 
@@ -74,7 +74,7 @@ Ha az Intune-nal egy **importált pfx-tanúsítványt** telepít egy felhasznál
 3. Kövesse az útmutatást, hogy letöltse a *pfx tanúsítvány-összekötőt a Microsoft Intune* egy olyan helyre, amely elérhető a kiszolgálóról, amelyen az összekötőt telepíteni fogja.
 
 4. A letöltés befejezése után jelentkezzen be a kiszolgálóra, és futtassa a telepítőt (PfxCertificateConnectorBootstrapper. exe).  
-   - Ha elfogadja az alapértelmezett telepítési helyet, az összekötő a `Program Files\Microsoft Intune\PFXCertificateConnector` helyre települ.
+   - Ha elfogadja az alapértelmezett telepítési helyet, az összekötő telepíti a `Program Files\Microsoft Intune\PFXCertificateConnector`.
    - Az összekötő-szolgáltatás a helyi rendszerfiók alatt fut. Ha egy proxyra van szükség az internet-hozzáféréshez, ellenőrizze, hogy a helyi szolgáltatásfiók hozzáférhet-e a proxy beállításaihoz a kiszolgálón.
 
 5. A Microsoft Intune-hoz készült PFX tanúsítvány-összekötő telepítés után megnyitja a **Regisztráció** lapot. Az Intune-hoz való kapcsolódás engedélyezéséhez **Jelentkezzen be**, és adjon meg egy globális Azure-rendszergazdai vagy Intune-rendszergazdai engedélyekkel rendelkező fiókot.
@@ -100,7 +100,7 @@ A PowerShell-parancsmagok használatához saját maga hozza létre a projektet a
 
    ![GitHub Letöltés gomb](./media/certificates-imported-pfx-configure/github-download.png)
 
-2. Lépjen a `.\Intune-Resource-Access-develop\src\PFXImportPowershell\` elemre, és nyissa meg a projektet a Visual Studióval a **PFXImportPS. SLN**fájl használatával.
+2. Lépjen a `.\Intune-Resource-Access-develop\src\PFXImportPowershell\`ra, és nyissa meg a projektet a Visual Studióval a **PFXImportPS. SLN**fájl használatával.
 
 3. A felső részen váltson **hibakeresésről** **kiadásra**.
 
@@ -108,7 +108,7 @@ A PowerShell-parancsmagok használatához saját maga hozza létre a projektet a
 
    ![Visual Studio-Build lehetőség](./media/certificates-imported-pfx-configure/vs-build-release.png)
 
-5. A létrehozási folyamat létrehoz egy új mappát a PowerShell-modullal `.\Intune-Resource-Access-develop\src\PFXImportPowershell\PFXImportPS\bin\Release`.
+5. A létrehozási folyamat egy új mappát hoz létre a PowerShell-modullal `.\Intune-Resource-Access-develop\src\PFXImportPowershell\PFXImportPS\bin\Release`.
 
    Ezt a **kiadási** mappát fogja használni a következő lépésekhez.
 
@@ -124,9 +124,9 @@ A PowerShell-modul módszereket biztosít a kulcsok Windows-titkosítással tör
 
 2. A kiszolgálón nyissa meg a *PowerShellt* rendszergazdaként, majd navigáljon a PowerShell-modult tartalmazó *kiadási* mappához.
 
-3. A modul importálásához futtassa a `Import-Module .\IntunePfxImport.psd1` parancsot a modul importálásához.
+3. A modul importálásához futtassa `Import-Module .\IntunePfxImport.psd1` a modul importálásához.
 
-4. Ezután futtassa `Add-IntuneKspKey "Microsoft Software Key Storage Provider" "PFXEncryptionKey"`
+4. Következő lépésként futtassa `Add-IntuneKspKey "Microsoft Software Key Storage Provider" "PFXEncryptionKey"`
 
    > [!TIP]
    > A PFX-tanúsítványok importálásakor a használt szolgáltatót újra ki kell választani. Használhatja a **Microsoft szoftveres kulcstároló-szolgáltatót**, bár más szolgáltató használata is támogatott. A kulcs neve is megjelenik példaként, és használhat más nevet is.
@@ -145,7 +145,7 @@ A következő folyamat a PowerShell-parancsmagokat használja példaként a PFX-
 
 A lehetőségek a következők:  
 - Felhasználási cél (a tanúsítványokat egy címke alapján csoportosítja):  
-  - kiosztva
+  - nincs hozzárendelve
   - Smimeencryption tanúsítványhoz tartozó
   - Smimesigning tanúsítványhoz tartozó
 
@@ -164,25 +164,25 @@ Válassza ki azt a kulcstároló-szolgáltatót, amely megfelel a kulcs létreho
 
 2. A kiszolgálón nyissa meg a *PowerShellt* rendszergazdaként, majd navigáljon a PowerShell-modult tartalmazó *kiadási* mappához.
 
-3. A modul importálásához futtassa a következőt: `Import-Module .\IntunePfxImport.psd1`
+3. A modul importálásához futtassa `Import-Module .\IntunePfxImport.psd1`
 
-4. Az Intune Graph-ban való hitelesítéshez futtassa a következőt: `$authResult = Get-IntuneAuthenticationToken -AdminUserName "<Admin-UPN>"`
+4. Az Intune Graph-ban való hitelesítéshez futtassa `$authResult = Get-IntuneAuthenticationToken -AdminUserName "<Admin-UPN>"`
 
    > [!NOTE]
    > Mivel a hitelesítés a gráfon fut, engedélyeket kell biztosítania a AppID. Ha első alkalommal használta ezt a segédprogramot, *globális rendszergazdai jogosultsággal* kell rendelkeznie. A PowerShell-parancsmagok ugyanazt a AppID használják, mint a [PowerShell Intune-mintákkal](https://github.com/microsoftgraph/powershell-intune-samples).
 
-5. Alakítsa át az importálni kívánt PFX-fájlok jelszavát `$SecureFilePassword = ConvertTo-SecureString -String "<PFXPassword>" -AsPlainText -Force` futtatásával egy biztonságos karakterláncba.
+5. A `$SecureFilePassword = ConvertTo-SecureString -String "<PFXPassword>" -AsPlainText -Force`futtatásával alakítsa át a biztonságos karakterlánccá importálandó összes PFX-fájl jelszavát.
 
-6. **UserPFXCertificate** objektum létrehozásához futtassa a következőt: `$userPFXObject = New-IntuneUserPfxCertificate -PathToPfxFile "<FullPathPFXToCert>" $SecureFilePassword "<UserUPN>" "<ProviderName>" "<KeyName>" "<IntendedPurpose>" "<PaddingScheme>"`
+6. **UserPFXCertificate** objektum létrehozásához futtassa `$userPFXObject = New-IntuneUserPfxCertificate -PathToPfxFile "<FullPathPFXToCert>" $SecureFilePassword "<UserUPN>" "<ProviderName>" "<KeyName>" "<IntendedPurpose>" "<PaddingScheme>"`
 
    Például így: `$userPFXObject = New-IntuneUserPfxCertificate -PathToPfxFile "C:\temp\userA.pfx" $SecureFilePassword "userA@contoso.com" "Microsoft Software Key Storage Provider" "PFXEncryptionKey" "smimeEncryption" "pkcs1"`
 
    > [!NOTE]
-   > Ha a tanúsítványt a-összekötőt futtató kiszolgálótól eltérő rendszerből importálja, a használatnak a következő parancsot kell használnia, amely tartalmazza a kulcsfájl elérési útját: `$userPFXObject = New-IntuneUserPfxCertificate -PathToPfxFile "<FullPathPFXToCert>" $SecureFilePassword "<UserUPN>" "<ProviderName>" "<KeyName>" "<IntendedPurpose>" "<PaddingScheme>" "<File path to public key file>"`
+   > Ha az összekötőt futtató kiszolgálótól eltérő rendszerből importálja a tanúsítványt, akkor a következő parancsot kell használnia, amely tartalmazza a kulcsfájl elérési útját: `$userPFXObject = New-IntuneUserPfxCertificate -PathToPfxFile "<FullPathPFXToCert>" $SecureFilePassword "<UserUPN>" "<ProviderName>" "<KeyName>" "<IntendedPurpose>" "<PaddingScheme>" "<File path to public key file>"`
 
-7. Importálja az **UserPFXCertificate** objektumot az Intune-ba `Import-IntuneUserPfxCertificate -AuthenticationResult $authResult -CertificateList $userPFXObject` futtatásával
+7. A **UserPFXCertificate** objektum importálása az Intune-ba `Import-IntuneUserPfxCertificate -AuthenticationResult $authResult -CertificateList $userPFXObject` futtatásával
 
-8. A tanúsítvány érvényesítéséhez futtassa a következőt: `Get-IntuneUserPfxCertificate -AuthenticationResult $authResult -UserList "<UserUPN>"`
+8. A tanúsítvány érvényesítéséhez futtassa a következőt `Get-IntuneUserPfxCertificate -AuthenticationResult $authResult -UserList "<UserUPN>"`
 
 További információ az egyéb elérhető parancsokról: a [PFXImport PowerShell-projekt](https://github.com/microsoft/Intune-Resource-Access/tree/develop/src/PFXImportPowershell)információs fájlja a githubon.
 

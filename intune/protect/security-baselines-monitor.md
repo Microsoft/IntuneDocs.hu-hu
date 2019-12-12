@@ -17,10 +17,10 @@ ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7b7f14e939e7241cd34c01d73e9af822dea7acdc
-ms.sourcegitcommit: a7b479c84b3af5b85528db676594bdb3a1ff6ec6
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74410137"
 ---
 # <a name="monitor-security-baseline-and-profiles-in-microsoft-intune"></a>Biztonsági alapkonfiguráció és profilok figyelése Microsoft Intune
@@ -59,7 +59,7 @@ Ha egy eszköz eltérő állapotú az alapkonfiguráció különböző csoportja
 
 Ha például egy eszköz *nem megfelelőként*van besorolva, *és egy* vagy több olyan beállítást tartalmaz, amely nem egyezik az alapkonfigurációval, az *eszköz hibásan van besorolva.*
 
-Kattintson a diagramra a részletezéshez, és tekintse meg a különböző állapotokkal rendelkező eszközök listáját. A listából kiválaszthatja az egyes eszközök adatait, és megtekintheti az egyes eszközök részleteit. Például:
+Kattintson a diagramra a részletezéshez, és tekintse meg a különböző állapotokkal rendelkező eszközök listáját. A listából kiválaszthatja az egyes eszközök adatait, és megtekintheti az egyes eszközök részleteit. Példa:
 
 - Válassza ki az **eszköz konfigurációját** > válassza ki a profilt hibás állapottal:
 

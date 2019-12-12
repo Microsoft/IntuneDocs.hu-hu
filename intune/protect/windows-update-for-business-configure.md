@@ -16,10 +16,10 @@ ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a7c3398f28d7c396c873dd29f3e3fdd719c1a7c6
-ms.sourcegitcommit: f26039d674eb4d61ab68264dd1a10b2e5e1d842c
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/02/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74691774"
 ---
 # <a name="manage-windows-10-software-updates-in-intune"></a>Windows 10 rendszerű szoftverfrissítések kezelése az Intune-ban
@@ -93,7 +93,7 @@ A Windows 10-es frissítési gyűrűk támogatják a [hatókör címkéit](../fu
 
    Ha elkészült, kattintson a **tovább** gombra a *hozzárendelések*folytatásához.
 
-6. A **hozzárendelések**alatt válassza a **+ csoportok kiválasztása lehetőséget** , majd a frissítési kört egy vagy több csoporthoz rendelje. **Válassza a + csoportok kiválasztása lehetőséget** a hozzárendelés finomhangolásához. A folytatáshoz kattintson a **tovább** gombra.
+6. A **hozzárendelések**alatt válassza a **+ csoportok kiválasztása lehetőséget** , majd a frissítési kört egy vagy több csoporthoz rendelje. **Válassza a + csoportok kiválasztása lehetőséget** a hozzárendelés finomhangolásához. A folytatáshoz kattintson a **Tovább** gombra.
 
 7. A**felülvizsgálat + létrehozás**területen tekintse át a beállításokat, majd válassza a **Létrehozás** lehetőséget, amikor készen áll a Windows 10-es frissítési kör mentéséhez. Az új frissítési kör megjelenik a frissítési körök listájában.
 
@@ -107,7 +107,7 @@ Ezen a lapon megtekintheti a gyűrűk hozzárendelési állapotát, és az Átte
 - [Szünet](#pause)
 - [Folytatása](#resume)
 - [Kiterjesztése](#extend)
-- [Eltávolítása](#uninstall)
+- [Eltávolítás](#uninstall)
 
 ![Elérhető műveletek](./media/windows-update-for-business-configure/overview-actions.png)
 
@@ -138,7 +138,7 @@ Ha a frissítési típus szüneteltetve van, az adott gyűrű áttekintő panelj
 > [!IMPORTANT]
 > A szüneteltetési parancs kiadása után az eszközök akkor kapják meg ezt a parancsot, amikor legközelebb bejelentkeznek a szolgáltatásba. Megtörténhet, hogy mielőtt bejelentkeznek, még telepítenek egy ütemezett frissítést. Ha az adott eszköz ki van kapcsolva a felfüggesztési parancs kiadásakor, akkor a bekapcsolása után esetleg letölthet és telepíthet ütemezett frissítéseket, mielőtt bejelentkezik az Intune-ba.
 
-#### <a name="resume"></a>Folytatása
+#### <a name="resume"></a>Folytatás
 
 Amíg a frissítési kör szünetel, a **Folytatás** gombra kattintva visszaállíthatja a szolgáltatás és a minőségi frissítéseket az adott gyűrű aktív működéséhez. A frissítési kör folytatása után újra szüneteltetheti a gyűrűt.
 
@@ -148,7 +148,7 @@ Amíg a frissítési kör szünetel, a **Folytatás** gombra kattintva visszaál
 2. Válassza ki az elérhető lehetőségek közül a **funkció** vagy a **minőségi** frissítések folytatásához, majd kattintson **az OK gombra**.
 3. Egy frissítési típus folytatása után a másik frissítés folytatásához válassza a folytatás újra lehetőséget.
 
-#### <a name="extend"></a>Kiterjesztése  
+#### <a name="extend"></a>Bővítés  
 
 Amíg a frissítési kör szünetel, a **kiterjesztés** lehetőség kiválasztásával alaphelyzetbe állíthatja a szüneteltetési időszakot a szolgáltatás és a minőségi frissítések esetében az adott frissítési kör 35 napra.
 
@@ -227,7 +227,7 @@ Ha egy eszköz megkapja a Windows 10-es szolgáltatáshoz tartozó frissítési 
 
 3. Az **alapvető beállítások**területen adja meg a kívánt szolgáltatást, a leírását (nem kötelező) és a **szolgáltatások frissítését**, és válassza ki a Windows-verziót, amelyhez a kívánt szolgáltatáskészlet tartozik, majd válassza a **tovább**lehetőséget.
 
-4. A **hozzárendelések**alatt válassza a **+ csoportok kiválasztása lehetőséget** , majd a frissítési kört egy vagy több csoporthoz rendelje. A folytatáshoz kattintson a **tovább** gombra.
+4. A **hozzárendelések**alatt válassza a **+ csoportok kiválasztása lehetőséget** , majd a frissítési kört egy vagy több csoporthoz rendelje. A folytatáshoz kattintson a **Tovább** gombra.
 
 5. A **felülvizsgálat + létrehozás**területen tekintse át a beállításokat, majd válassza a **Létrehozás** lehetőséget, amikor készen áll a Windows 10-es szolgáltatás frissítési házirendjének mentéséhez.  
 

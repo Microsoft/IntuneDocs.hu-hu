@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6d89cfcafd5452b990509e0fa6fd431a614ee5c1
-ms.sourcegitcommit: a7b479c84b3af5b85528db676594bdb3a1ff6ec6
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74410261"
 ---
 # <a name="quickstart-send-notifications-to-noncompliant-devices"></a>Rövid útmutató: Értesítések küldése a nem megfelelő eszközökre
@@ -33,7 +33,7 @@ Alapértelmezés szerint az Intune a nem megfelelő eszköz észlelése után az
 
 Egy művelet, amely akkor végezhető el, ha egy eszköz nem felel meg a megfelelőségnek, hogy e-mailt küldjön az eszközök felhasználójának. Az e-mailes értesítéseket a küldés előtt testre is szabhatja. Így pontosan megadhatja az e-mail címzettjeit és tárgyát, az üzenet szövegét, a céges emblémát és a kapcsolattartási adatokat. Az Intune a nem megfelelő eszközről is tartalmaz adatokat az e-mailes értesítésben.
 
-Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon egy ingyenes próbafiókkal](../fundamentals/free-trial-sign-up.md).
+Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon ingyenes próbafiókot](../fundamentals/free-trial-sign-up.md).
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -48,7 +48,7 @@ Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központba](https://g
 Ha e-mailt szeretne küldeni a felhasználóknak, hozzon létre egy értesítési üzenetsablont. Ha egy eszköz nem megfelelő, a sablonban megadott adatok a felhasználóknak küldött e-mail tetején jelennek meg.
 
 1. Az Intune-ban válassza az **eszközök** > **megfelelőségi szabályzatok** > **értesítések** **Értesítés létrehozása** > .
-2. Adja meg a következő információkat:
+2. Adja meg az alábbi adatokat:
 
    - **Név**: *Contoso rendszergazda*
    - **Tárgy**: *Eszközmegfelelőség*
@@ -78,7 +78,7 @@ A következő lépésekkel létrehozhat egy megfelelőségi szabályzatot Window
 
 1. Az Intune-ban válassza az **eszközök** > **megfelelőségi szabályzatok** > **házirend létrehozása**lehetőséget.
 
-2. Adja meg a következő információkat:
+2. Adja meg az alábbi adatokat:
 
    - **Név**: *Windows 10-megfelelőség*
    - **Leírás**: *A Windows 10-re vonatkozó megfelelőségi szabályzat*

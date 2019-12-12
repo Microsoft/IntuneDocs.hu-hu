@@ -1,11 +1,11 @@
 ---
 title: Eszközmegfelelőségi szabályzatok az Azure-beli Microsoft Intune-ban | Microsoft Docs
-description: Az eszközök megfelelőségi házirendjeinek használatának első lépései, az állapot és a súlyossági szintek áttekintése, a türelmi időszakban állapot, a feltételes hozzáférés használata, a hozzárendelt házirend nélküli eszközök kezelése, valamint a Azure Portal megfelelőségének eltérései klasszikus portál Microsoft Intune
+description: 'Első lépések: eszközök megfelelőségi házirendjeinek használata, az állapot és a súlyossági szintek áttekintése, a türelmi időszakban állapot, a feltételes hozzáférés használata és a hozzárendelt házirend nélküli eszközök kezelése.'
 keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 10/21/2019
+ms.date: 12/05/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 967bf9937c71ff3ca7277f43fd969291eb5af6de
-ms.sourcegitcommit: c2e62f1ebdf75599c8e544287123c602f0f15f2b
+ms.openlocfilehash: 83b8c48d2bb594ca8b9c527d78922332e582363f
+ms.sourcegitcommit: 66e284fe092e19c1da72b4b770e45bf25ac7910c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72749176"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74860295"
 ---
 # <a name="set-rules-on-devices-to-allow-access-to-resources-in-your-organization-using-intune"></a>Szabályok beállítása az eszközökön a szervezet erőforrásaihoz való hozzáférés engedélyezéséhez az Intune használatával
 
@@ -91,7 +91,7 @@ Az Intune a beépített megfelelőségi szabályzatok egy készletét is tartalm
   - **Megfelelő** (*alapértelmezett*): biztonsági szolgáltatás kikapcsolva
   - **Nem megfelelő**: biztonsági szolgáltatás bekapcsolva
 
-  Ha egy eszközhöz nincs hozzárendelve megfelelőségi szabályzat, az eszköz alapértelmezés szerint megfelelőnek minősül. Ha a feltételes hozzáférést megfelelőségi szabályzatokkal használja, javasoljuk, hogy az alapértelmezett beállítást **ne megfelelőre**módosítsa. Ha egy végfelhasználó nem felel meg a szabályzatnak, akkor a [céges portál alkalmazás](../apps/company-portal-app.md) a `No compliance policies have been assigned`-et jeleníti meg.
+  Ha egy eszközhöz nincs hozzárendelve megfelelőségi szabályzat, az eszköz alapértelmezés szerint megfelelőnek minősül. Ha a feltételes hozzáférést megfelelőségi szabályzatokkal használja, javasoljuk, hogy az alapértelmezett beállítást **ne megfelelőre**módosítsa. Ha egy végfelhasználó nem felel meg a szabályzatnak, a [céges portál alkalmazás](../apps/company-portal-app.md) a `No compliance policies have been assigned`t jeleníti meg.
 
 - **Továbbfejlesztett jailbreak-észlelés**: Ha engedélyezve van, ez a beállítás az iOS-eszközök gyakrabban való bejelentkezését okozza az Intune-ban. A tulajdonság engedélyezésekor a rendszer igénybe veszi az eszköz helyalapú szolgáltatásait, mely hatással van az akkumulátorhasználatra. Az Intune nem tárolja a felhasználói hely adatterületét.
 
@@ -114,12 +114,12 @@ A következő táblázat ismerteti, hogyan történik a nem megfelelő beállít
 
 |**Szabályzat-beállítás**| **Platform** |
 | --- | ----|
-| **PIN-kód vagy jelszó konfigurálása** | - **Android 4,0 és újabb verziók**: karanténba helyezve<br>- **Samsung Knox Standard 4,0 és újabb**: karanténba helyezve<br>- **Android Enterprise**: karanténba helyezve  <br>  <br>- **iOS 8,0 és újabb verziók**: szervizelt<br>- **macOS 10,11 és újabb verziók**: szervizelt  <br>  <br>- **Windows 8,1 és újabb**: szervizelt<br>- **Windows Phone-telefon 8,1 és újabb verziók**: szervizelt|
-| **Eszköztitkosítás** | - **Android 4,0 és újabb verziók**: karanténba helyezve<br>- **Samsung Knox Standard 4,0 és újabb**: karanténba helyezve<br>- **Android Enterprise**: karanténba helyezve<br><br>- **iOS 8,0 és újabb verziók**: szervizelés (PIN-kód beállításával)<br>- **macOS 10,11 és újabb verziók**: szervizelés (PIN-kód beállításával)<br><br>- **Windows 8,1 és újabb verziók**: nem alkalmazható<br>- **Windows Phone-telefon 8,1 és újabb verziók**: szervizelt |
-| **Jailbreakelt vagy rootolt eszköz** | - **Android 4,0 és újabb**: karanténba helyezve (nem beállítás)<br>- **Samsung Knox Standard 4,0 és újabb**: karanténba helyezve (nem beállítás)<br>- **Android Enterprise**: karanténba helyezve (nem beállítás)<br><br>- **iOS 8,0 és újabb verziók**: karanténba helyezve (nem beállítás)<br>- **macOS 10,11 és újabb verziók**: nem alkalmazható<br><br>- **Windows 8,1 és újabb verziók**: nem alkalmazható<br>- **Windows Phone-telefon 8,1 és újabb verziók**: nem alkalmazható |
+| **PIN-kód vagy jelszó konfigurálása** | - **Android 4,0 és újabb verziók**: karanténba helyezve<br>- **Samsung Knox Standard 4,0 és újabb verziók**: karanténba helyezve<br>- **Android Enterprise**: karanténba helyezve  <br>  <br>- **iOS 8,0 és újabb verziók**: szervizelt<br>- **macOS 10,11 és újabb verziók**: szervizelt  <br>  <br>- **Windows 8,1 és újabb verziók**: szervizelt<br>- **Windows Phone-telefon 8,1 és újabb verziók**: szervizelt|
+| **Eszköztitkosítás** | - **Android 4,0 és újabb verziók**: karanténba helyezve<br>- **Samsung Knox Standard 4,0 és újabb verziók**: karanténba helyezve<br>- **Android Enterprise**: karanténba helyezve<br><br>- **iOS 8,0 és újabb verziók**: szervizelés (PIN-kód beállításával)<br>- **macOS 10,11 és újabb verziók**: szervizelés (PIN-kód beállításával)<br><br>- **Windows 8,1 és újabb verziók**: nem alkalmazható<br>- **Windows Phone-telefon 8,1 és újabb verziók**: szervizelt |
+| **Jailbreakelt vagy rootolt eszköz** | - **Android 4,0 és újabb verziók**: karanténba helyezve (nem beállítás)<br>- **Samsung Knox Standard 4,0 és újabb verziók**: karanténba helyezve (nem beállítás)<br>- **Android Enterprise**: karanténba helyezve (nem beállítás)<br><br>- **iOS 8,0 és újabb verziók**: karanténba helyezve (nem beállítás)<br>- **macOS 10,11 és újabb verziók**: nem alkalmazható<br><br>- **Windows 8,1 és újabb verziók**: nem alkalmazható<br>- **Windows Phone-telefon 8,1 és újabb verziók**: nem alkalmazható |
 | **E-mail profil** | - **Android 4,0 és újabb verziók**: nem alkalmazható<br>- **Samsung Knox Standard 4,0 és újabb verziók**: nem alkalmazható<br>- **Android Enterprise**: nem alkalmazható<br><br>- **iOS 8,0 és újabb verziók**: karanténba helyezve<br>- **macOS 10,11 és újabb verziók**: karanténba helyezve<br><br>- **Windows 8,1 és újabb verziók**: nem alkalmazható<br>- **Windows Phone-telefon 8,1 és újabb verziók**: nem alkalmazható |
-| **Operációs rendszer minimális verziója** | - **Android 4,0 és újabb verziók**: karanténba helyezve<br>- **Samsung Knox Standard 4,0 és újabb**: karanténba helyezve<br>- **Android Enterprise**: karanténba helyezve<br><br>- **iOS 8,0 és újabb verziók**: karanténba helyezve<br>- **macOS 10,11 és újabb verziók**: karanténba helyezve<br><br>- **Windows 8,1 és újabb verziók**: karanténba helyezve<br>- **Windows Phone-telefon 8,1 és újabb verziók**: karanténba helyezve |
-| **Operációs rendszer maximális verziója** | - **Android 4,0 és újabb verziók**: karanténba helyezve<br>- **Samsung Knox Standard 4,0 és újabb**: karanténba helyezve<br>- **Android Enterprise**: karanténba helyezve<br><br>- **iOS 8,0 és újabb verziók**: karanténba helyezve<br>- **macOS 10,11 és újabb verziók**: karanténba helyezve<br><br>- **Windows 8,1 és újabb verziók**: karanténba helyezve<br>- **Windows Phone-telefon 8,1 és újabb verziók**: karanténba helyezve |
+| **Operációs rendszer minimális verziója** | - **Android 4,0 és újabb verziók**: karanténba helyezve<br>- **Samsung Knox Standard 4,0 és újabb verziók**: karanténba helyezve<br>- **Android Enterprise**: karanténba helyezve<br><br>- **iOS 8,0 és újabb verziók**: karanténba helyezve<br>- **macOS 10,11 és újabb verziók**: karanténba helyezve<br><br>- **Windows 8,1 és újabb verziók**: karanténba helyezve<br>- **Windows Phone-telefon 8,1 és újabb verziók**: karanténba helyezve |
+| **Operációs rendszer maximális verziója** | - **Android 4,0 és újabb verziók**: karanténba helyezve<br>- **Samsung Knox Standard 4,0 és újabb verziók**: karanténba helyezve<br>- **Android Enterprise**: karanténba helyezve<br><br>- **iOS 8,0 és újabb verziók**: karanténba helyezve<br>- **macOS 10,11 és újabb verziók**: karanténba helyezve<br><br>- **Windows 8,1 és újabb verziók**: karanténba helyezve<br>- **Windows Phone-telefon 8,1 és újabb verziók**: karanténba helyezve |
 | **Windows-állapotigazolás** | - **Android 4,0 és újabb verziók**: nem alkalmazható<br>- **Samsung Knox Standard 4,0 és újabb verziók**: nem alkalmazható<br>- **Android Enterprise**: nem alkalmazható<br><br>- **iOS 8,0 és újabb verziók**: nem alkalmazható<br>- **macOS 10,11 és újabb verziók**: nem alkalmazható<br><br>- **Windows 10 és Windows 10 Mobile**: karanténba helyezve<br>- **Windows 8,1 és újabb verziók**: karanténba helyezve<br>- **Windows Phone-telefon 8,1 és újabb verziók**: nem alkalmazható |
 
 ---------------------------
@@ -130,21 +130,6 @@ A következő táblázat ismerteti, hogyan történik a nem megfelelő beállít
 
 - Ha a felhasználóra vonatkozó feltételes hozzáférési szabályzat érvényes, az eszköz le lesz tiltva.
 - A Céges portál alkalmazás értesíti a felhasználót a megfelelőségi problémákról.
-
-## <a name="azure-classic-portal-vs-azure-portal"></a>Klasszikus Azure portál és Azure Portal
-
-Az eszközmegfelelőségi szabályzatok Azure Portalon való használatának fő különbsége:
-
-- Az Azure Portalon a megfelelőségi szabályzatokat minden támogatott platformhoz külön kell létrehozni
-- A klasszikus Azure-portálon minden támogatott platformra ugyanaz az eszközmegfelelőségi szabályzat érvényes
-
-<!--- - In the Azure portal, you have the ability to specify actions and notifications that are initiated when a device is determined to be noncompliant. This ability does not exist in the Intune admin console.
-
-- In the Azure portal, you can set a grace period to allow time for the end-user to get their device back to compliance status before they completely lose the ability to get company data on their device. This is not available in the Intune admin console.--->
-
-A [klasszikus portálon](https://manage.microsoft.com) létrehozott eszközmegfelelőségi szabályzatok nem jelennek meg az [Azure Portalon](https://portal.azure.com). Továbbra is alkalmazva vannak azonban a felhasználókra, és kezelhetők a klasszikus portálon keresztül.
-
-Az Azure Portal eszközmegfelelőséggel kapcsolatos funkcióinak használatához új eszközmegfelelőségi szabályzatokat kell létrehoznia az Azure Portalon. Ha az Azure Portalon eszközmegfelelőségi szabályzatot rendel egy olyan felhasználóhoz, akihez már a klasszikus portálon is hozzá van rendelve egy másik eszközmegfelelőségi szabályzat, akkor az Azure Portal szabályzata elsőbbséggel bír a klasszikus portálon létrehozott szabályzattal szemben.
 
 ## <a name="next-steps"></a>További lépések
 
@@ -157,7 +142,7 @@ Az Azure Portal eszközmegfelelőséggel kapcsolatos funkcióinak használatáho
   - [macOS](compliance-policy-create-mac-os.md)
   - [Windows Holographic for Business](compliance-policy-create-windows.md#windows-holographic-for-business)
   - [Windows Phone 8.1](compliance-policy-create-windows-8-1.md)
-  - [Windows 8.1 és újabb verziók](compliance-policy-create-windows-8-1.md)
+  - [Windows 8.1 és újabb](compliance-policy-create-windows-8-1.md)
   - [Windows 10 és újabb](compliance-policy-create-windows.md)
 
 - A [házirend entitásokra](../reports-ref-policy.md) vonatkozó információk az Intune-adattárház házirend entitásait ismertetik.

@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 41c08d1912bf9c79507c2a6627205979504f340d
-ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74564226"
 ---
 # <a name="get-ready-to-configure-app-protection-policies-for-windows-10"></a>Felkészülés az alkalmazásvédelmi szabályzatok Windows 10 rendszereken történő konfigurálására 
@@ -35,7 +35,7 @@ Windows 10-es rendszerhez mobilalkalmazás-kezelést (MAM) úgy engedélyezhet, 
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Válassza a **minden szolgáltatás** lehetőséget, és válassza az **M365 Azure Active Directory** lehetőséget az irányítópultok váltásához.
-3. Válassza a **Azure Active Directory**lehetőséget.
+3. Válassza az **Azure Active Directory** lehetőséget
 4. A **Kezelés** csoportban válassza a **Mobilitás (MDM és MAM)** elemet.
 5. Kattintson a **Microsoft Intune** elemre.
 6. Konfigurálja a beállításokat az **alapértelmezett MAM URL-címek visszaállítása** csoportban a **Konfigurálás** ablaktáblán.

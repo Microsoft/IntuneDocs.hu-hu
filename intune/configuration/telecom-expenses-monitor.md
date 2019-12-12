@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 340659adfa3bbd40f98ccec9d8d44e952f7ec9b9
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74059932"
 ---
 # <a name="set-up-a-telecom-expense-management-service-in-intune"></a>Távközlésiköltség-kezelő szolgáltatás beállítása az Intune-ban
@@ -73,7 +73,7 @@ Az Intune a következő telekommunikációs felügyeleti szolgáltatóval integr
 
 3. Válassza a **Letiltás feloldása**lehetőséget. A **tiltás feloldásával** módosíthatja vagy frissítheti a lapon lévő beállításokat.
 
-4. Az **Intune/Datalert-kapcsolatok** > **kiszolgáló Mdm**területen válassza a **Microsoft Intune**lehetőséget.
+4. Az **Intune/Datalert-kapcsolatok** > **kiszolgáló MDM**válassza a **Microsoft Intune**lehetőséget.
 
 5. **Azure ad-tartomány**esetén adja meg az Azure-beli BÉRLŐi azonosítóját. Válassza a **kapcsolatok**lehetőséget.
 

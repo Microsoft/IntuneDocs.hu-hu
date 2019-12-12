@@ -17,10 +17,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 77f5787509438ec3280f29be8449d78979806042
-ms.sourcegitcommit: 16a9109b4028589c17695d41271ca4fee8b1d697
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/26/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74542329"
 ---
 # <a name="troubleshoot-wi-fi-device-configuration-profiles-in-microsoft-intune"></a>A Wi-Fi-eszköz konfigurációs profiljainak hibáinak megoldása Microsoft Intune
@@ -194,7 +194,7 @@ WiFiConfigurationServiceProvider: Node set value, type: (0x4), Result: (The oper
   1. Lépjen a **beállítások** > **fiókok** > **hozzáférés munkahelyi vagy iskolai rendszerhez elemre**.
   2. Válassza ki a munkahelyi vagy iskolai fiókját > **adatokat**.
   3. A **Beállítások** lap alján válassza a **jelentés létrehozása**lehetőséget.
-  4. Megnyílik egy ablak, amely megjeleníti a naplófájlok elérési útját. Válassza az **Exportálás**lehetőséget.
+  4. Megnyílik egy ablak, amely megjeleníti a naplófájlok elérési útját. Válassza az **Export** (Exportálás) lehetőséget.
   5. Nyissa meg a `\Users\Public\Documents\MDMDiagnostics` elérési utat, és tekintse meg a jelentést:
 
       > [!div class="mx-imgBorder"]

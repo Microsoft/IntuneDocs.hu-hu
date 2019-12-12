@@ -18,10 +18,10 @@ ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 810a898a3b2d1981babc231f32ed386bde37a856
-ms.sourcegitcommit: ce518a5dfe62c546a77f32ef372f36efbaad473f
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/25/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74465785"
 ---
 # <a name="tutorial-protect-exchange-online-email-on-unmanaged-devices"></a>Oktatóanyag: az Exchange Online e-mailek felügyelete nem felügyelt eszközökön
@@ -79,7 +79,7 @@ Ebben az oktatóanyagban az iOS-hez készült Intune app Protection-szabályzato
 
    ![Válassza ki az Outlook-alkalmazás védelmi házirendjének adatáthelyezési beállításait.](./media/tutorial-protect-email-on-unmanaged-devices/data-protection-settings.png)
 
-   A folytatáshoz kattintson a **tovább** gombra.
+   A folytatáshoz kattintson a **Tovább** gombra.
 
 6. A **hozzáférési követelmények** lapon megadhatja a PIN-kód és a hitelesítő adatok azon követelményeit, amelyeket a felhasználóknak meg kell felelniük az alkalmazások munkahelyi környezetben való eléréséhez. Konfigurálja a következő beállításokat, és az összes többi beállítást hagyja az alapértelmezett értékeken:
 
@@ -88,7 +88,7 @@ Ebben az oktatóanyagban az iOS-hez készült Intune app Protection-szabályzato
 
    ![Válassza ki az Outlook-alkalmazás védelmi házirendjének hozzáférési műveleteit.](./media/tutorial-protect-email-on-unmanaged-devices/access-requirements-settings.png)
 
-   A folytatáshoz kattintson a **tovább** gombra.
+   A folytatáshoz kattintson a **Tovább** gombra.
 
 7. A **feltételes indítás** lapon megadhatja az alkalmazás-védelmi szabályzat bejelentkezési biztonsági követelményeinek beállításához szükséges beállításokat. Ebben az oktatóanyagban nem kell konfigurálnia ezeket a beállításokat.
 
@@ -157,7 +157,7 @@ Most hozzunk létre két feltételes hozzáférési szabályzatot az összes esz
 
 9. A **házirend engedélyezése**területen válassza **a**be lehetőséget, majd válassza a **Létrehozás**lehetőséget.
 
-   ![Házirend létrehozása](./media/tutorial-protect-email-on-unmanaged-devices/enable-policy.png)  
+   ![Szabályzat létrehozása](./media/tutorial-protect-email-on-unmanaged-devices/enable-policy.png)  
 
 Létrejön a modern hitelesítési ügyfelek feltételes hozzáférési szabályzata. Most létrehozhat egy házirendet Exchange Active Sync-ügyfelek számára.
 
@@ -225,7 +225,7 @@ A létrehozott házirendekkel az eszközöknek regisztrálniuk kell az Intune-ba
 
 9. Nyomja meg **az Office 365-vel való bejelentkezést**. A rendszer további hitelesítést és regisztrációt kér. Miután bejelentkezett, tesztelheti az olyan műveleteket, mint például a Kivágás, a másolás, a Beillesztés és a Mentés másként lehetőség.
 
-## <a name="clean-up-resources"></a>Az erőforrások eltávolítása
+## <a name="clean-up-resources"></a>Erőforrások eltávolítása
 
 Ha már nincs szükség a tesztszabályzatokra, eltávolíthatja őket.
 
@@ -237,7 +237,7 @@ Ha már nincs szükség a tesztszabályzatokra, eltávolíthatja őket.
 
 4. Válassza a **végpontok biztonsága** > **feltételes hozzáférés**lehetőséget.
 
-5. A **szabályzat neve** listában válassza a helyi menüt ( **..** .) minden egyes tesztelési házirendhez, majd válassza a **Törlés**lehetőséget. A megerősítéshez válassza az **Igen** lehetőséget.
+5. A **szabályzat neve** listában válassza a helyi menüt ( **..** .) minden egyes tesztelési házirendhez, majd válassza a **Törlés**lehetőséget. Válassza az **Igen** lehetőséget a megerősítéshez.
 
 ## <a name="next-steps"></a>További lépések
 Ebben az oktatóanyagban létrehozott egy alkalmazás-védelmi szabályzatot, amely korlátozza, hogy a felhasználó mit tehet az Outlook alkalmazással, és feltételes hozzáférési szabályzatokat hozott létre az Outlook alkalmazás megköveteléséhez, valamint az MFA használatát a modern hitelesítési ügyfelek számára. További információ az Intune és a feltételes hozzáférés használatáról más alkalmazások és szolgáltatások elleni védelemhez: [feltételes hozzáférés beállítása](conditional-access.md).

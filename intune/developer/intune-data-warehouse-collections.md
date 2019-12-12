@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/22/2019
+ms.date: 12/04/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: developer
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4aad4e2295cb7b85abcb73a9c8e94ed7501348be
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 42d07f02e76669c735d09b5d7843a4102dd0f835
+ms.sourcegitcommit: 7cc45ef52dda08479bc6bdff7d11d2f6c0e7b93b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72490496"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74899247"
 ---
 # <a name="intune-data-warehouse-collections"></a>Intune adattárház-gyűjtemények
 
@@ -32,7 +32,7 @@ Az alábbi Intune adattárház-gyűjteményekkel a Data Warehouse API 1.0-ás ve
 ## <a name="apprevisions"></a>appRevisions
 Az **AppRevision** entitás listázza az alkalmazások összes verzióját.
 
-|          Tulajdonság          |                                      Leírás                                      |                Példa               |
+|          Tulajdonság          |                                      Description                                      |                Példa               |
 |:--------------------------:|:-------------------------------------------------------------------------------------:|:------------------------------------:|
 | AppKey                     | Az alkalmazás egyedi azonosítója.                                                         | 123                                  |
 | ApplicationId              | Az alkalmazás egyedi azonosítója – Az AppKey-hez hasonlít, de természetes kulcs.        | b66bc706-ffff-7437-0340-032819502773 |
@@ -53,7 +53,7 @@ Az **AppRevision** entitás listázza az alkalmazások összes verzióját.
 ## <a name="apptypes"></a>appTypes
 Az **appType** entitás az alkalmazás telepítési forrásait listázza.
 
-|   Tulajdonság  |        Leírás        |
+|   Tulajdonság  |        Description        |
 |:-----------:|:-------------------------:|
 | AppTypeID   | A típus azonosítója           |
 | AppTypeKey  | A kulcs helyettes kulcsa |
@@ -61,7 +61,7 @@ Az **appType** entitás az alkalmazás telepítési forrásait listázza.
 
 ### <a name="example"></a>Példa
 
-| AppTypeID |                Név               |                     Leírás                     |
+| AppTypeID |                Név               |                     Description                     |
 |:---------:|:---------------------------------:|:---------------------------------------------------:|
 | 0         | Android store app               | Android Áruházbeli alkalmazás.                             |
 | 1         | Android   LOB app                 | Üzletági Android-alkalmazás.                  |
@@ -80,20 +80,20 @@ Az **appType** entitás az alkalmazás telepítési forrásait listázza.
 ## <a name="compliancepolicystatusdeviceactivities"></a>compliancePolicyStatusDeviceActivities
 Az alábbi táblázatban foglaltuk össze az eszközökhöz rendelt megfelelőségi szabályzatok hozzárendelési állapotát. A lista felsorolja az egyes megfelelőségi állapotokban található eszközök számát is.
 
-|    Tulajdonság   |                                                                                      Leírás                                                                                     |  Példa |
+|    Tulajdonság   |                                                                                      Description                                                                                     |  Példa |
 |:-------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------:|
 | DateKey       | A megfelelőségi szabályzat összefoglalójának létrehozási dátumkulcsa.                                                                                                                   | 20161204 |
 | Ismeretlen       | Azoknak az eszközöknek a száma, amelyek offline állapotban vannak, vagy valamilyen más okból nem sikerült kapcsolatba lépniük az Intune-nal vagy az Azure AD-vel.                                                                           | 5        |
 | Nem alkalmazható | Azoknak az eszközöknek a száma, amelyeknél a rendszergazda által meghatározott eszközmegfelelőségi szabályzatok nem alkalmazhatók.                                                                                     | 201      |
 | Compliant (Megfelelő)     | Azoknak az eszközöknek a száma, amelyek megfelelnek a rendszergazda által meghatározott egy vagy több eszközmegfelelőségi szabályzatnak.                                                                        | 4083     |
-| InGracePeriod | Azoknak az eszközöknek a száma, amelyek nem megfelelőek, de a rendszergazda által meghatározott türelmi időszakban vannak.                                                                                  | 57       |
+| Türelmi időszakban | Azoknak az eszközöknek a száma, amelyek nem megfelelőek, de a rendszergazda által meghatározott türelmi időszakban vannak.                                                                                  | 57       |
 | Nem megfelelő  | Azoknak az eszköznek a száma, amelyek nem felelnek meg a rendszergazda által meghatározott egy vagy több eszközmegfelelőségi szabályzatnak, vagy a felhasználó nem a rendszergazda által meghatározott szabályzatoknak megfelelően járt el. | 43       |
 |    Hiba      |    Azoknak az eszközöknek a száma, amelyeknek nem sikerült kapcsolatba lépniük az Intune-nal vagy az Azure AD-vel, és hibaüzenetet küldtek.                                                                          |    3     |
 
 ## <a name="compliancepolicystatusdeviceperpolicyactivities"></a>compliancePolicyStatusDevicePerPolicyActivities
 Az alábbi táblázatban foglaltuk össze az eszközökhöz rendelt megfelelőségi szabályzatok hozzárendelési állapotát szabályzatonként és szabályzattípusonként. A lista szabályzatonként felsorolja az egyes megfelelőségi állapotokban található eszközök számát.
 
-|      Tulajdonság     |                                                                                      Leírás                                                                                     |  Példa |
+|      Tulajdonság     |                                                                                      Description                                                                                     |  Példa |
 |:-----------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------:|
 | DateKey           | A megfelelőségi szabályzat összefoglalójának létrehozási dátumkulcsa.                                                                                                                   | 20161219 |
 | PolicyKey         | Annak a megfelelőségi szabályzatnak a kulcsa, amelyhez az összefoglalás készült.                                                                                                                   | 10178    |
@@ -101,12 +101,12 @@ Az alábbi táblázatban foglaltuk össze az eszközökhöz rendelt megfelelős�
 | Ismeretlen           | Azoknak az eszközöknek a száma, amelyek offline állapotban vannak, vagy valamilyen más okból nem sikerült kapcsolatba lépniük az Intune-nal vagy az Azure AD-vel.                                                                           | 13       |
 | Nem alkalmazható     | Azoknak az eszközöknek a száma, amelyeknél a rendszergazda által meghatározott eszközmegfelelőségi szabályzatok nem alkalmazhatók.                                                                                     | 3        |
 | Compliant (Megfelelő)         | Azoknak az eszközöknek a száma, amelyek megfelelnek a rendszergazda által meghatározott egy vagy több eszközmegfelelőségi szabályzatnak.                                                                        | 45       |
-| InGracePeriod     | Azoknak az eszközöknek a száma, amelyek nem megfelelőek, de a rendszergazda által meghatározott türelmi időszakban vannak.                                                                                  | 3        |
+| Türelmi időszakban     | Azoknak az eszközöknek a száma, amelyek nem megfelelőek, de a rendszergazda által meghatározott türelmi időszakban vannak.                                                                                  | 3        |
 | Nem megfelelő      | Azoknak az eszköznek a száma, amelyek nem felelnek meg a rendszergazda által meghatározott egy vagy több eszközmegfelelőségi szabályzatnak, vagy a felhasználó nem a rendszergazda által meghatározott szabályzatoknak megfelelően járt el. | 7        |
 | Hiba             | Azoknak az eszközöknek a száma, amelyeknek nem sikerült kapcsolatba lépniük az Intune-nal vagy az Azure AD-vel, és hibaüzenetet küldtek.                                                                             | 3        |
 ## <a name="compliancestates"></a>complianceStates
 
-|      Tulajdonság      |                       Leírás                      |
+|      Tulajdonság      |                       Description                      |
 |:------------------:|:------------------------------------------------------:|
 | complianceStatus   | Az mdmStatusKey kulcsot használó eszközök megfelelőségi állapota       |
 | complianceStateKey | Az eszköz és a megfelelőségi állapot megfeleltetéséhez használt megfelelőségi kulcs |
@@ -114,20 +114,20 @@ Az alábbi táblázatban foglaltuk össze az eszközökhöz rendelt megfelelős�
 
 ### <a name="example"></a>Példa
 
-|  complianceStatus  |                       Leírás                      |
+|  complianceStatus  |                       Description                      |
 |:------------------:|:------------------------------------------------------:|
 |    Ismeretlen         |    Ismeretlen.                                                                        |
 |    Compliant (Megfelelő)       |    Compliant (Megfelelő).                                                                      |
-|    Nem megfelelő    |       Az eszköz nem megfelelő, és le van tiltva a vállalati erőforrásoknál.             |
+|    Noncompliant (Nem megfelelő)    |       Az eszköz nem megfelelő, és le van tiltva a vállalati erőforrásoknál.             |
 |    Ütközés        |    Ütközés más szabályokkal.                                                      |
 |    Hiba           |       HIba.                                                                       |
 |    ConfigManager   |    A Config Manager kezeli.                                                      |
-|    InGracePeriod   |       Az eszköz nem megfelelő, de hozzáfér a vállalati erőforrásokhoz          |
+|    Türelmi időszakban   |       Az eszköz nem megfelelő, de hozzáfér a vállalati erőforrásokhoz          |
 
 ## <a name="dates"></a>dátumok
 A **date** entitás olyan dátumokat jelöl, amelyekre több adattárház-entitás is hivatkozik.
 
-|     Tulajdonság    |                       Leírás                      |    Példa    |
+|     Tulajdonság    |                       Description                      |    Példa    |
 |:---------------:|:------------------------------------------------------:|:-------------:|
 | DateKey         | A dátum egyedi azonosítója az adattárházban. | 20160703      |
 | FullDate        | Az adott dátum teljes dátum/idő formátumban kifejezve.        | 2016. 7. 3. 0:00 |
@@ -150,7 +150,7 @@ A **date** entitás olyan dátumokat jelöl, amelyekre több adattárház-entit�
 
 ## <a name="devicecategories"></a>deviceCategories
 
-|      Tulajdonság      |                                    Leírás                                   |                Példa               |
+|      Tulajdonság      |                                    Description                                   |                Példa               |
 |:------------------:|:--------------------------------------------------------------------------------:|:------------------------------------:|
 | deviceCategoryID   | Egyedi azonosító az eszközkategóriához.                                       | fb415ba2-7c08-41f6-a5e5-685b50da2c4c |
 | deviceCategoryKey  | Az eszközkategória egyedi azonosítója az adattárházban – helyettes kulcs | 1                                    |
@@ -159,7 +159,7 @@ A **date** entitás olyan dátumokat jelöl, amelyekre több adattárház-entit�
 ## <a name="deviceconfigurationprofiledeviceactivities"></a>deviceConfigurationProfileDeviceActivities
 A **DeviceConfigurationProfileDeviceActivity** entitás a napi sikeres, függő, sikertelen vagy hibás állapotú eszközök számát sorolja fel. A szám az entitáshoz rendelt eszközkonfigurációs profilokat jelöli. Ha például az adott eszköz valamennyi hozzárendelt szabályzata tekintetében sikeres állapotú, akkor az entitás azon a napon eggyel növeli az értéket a sikeres állapotot jelző számlálón. Ha az adott eszköz két hozzárendelt profillal rendelkezik, amelyek közül az egyik sikeres, míg a másik hibás állapotú, akkor az entitás növeli az értéket a sikeres állapotot jelző számlálón, és hibás állapotba helyezi az eszközt. Az entitás azt sorolja fel, hogy hány eszköz van az egyes állapotokban az elmúlt 30 napon belüli adott napon.
 
-|  Tulajdonság |                                          Leírás                                          |  Példa |
+|  Tulajdonság |                                          Description                                          |  Példa |
 |:---------:|:---------------------------------------------------------------------------------------------:|:--------:|
 | DateKey   | A dátumkulcs azt jelzi, hogy az adattárházban mikor lett rögzítve az eszközkonfigurációs profil bejelentkezése. | 20160703 |
 | Függőben   | A függő állapotú egyedi eszközök száma.                                                    | 123      |
@@ -170,7 +170,7 @@ A **DeviceConfigurationProfileDeviceActivity** entitás a napi sikeres, függő,
 ## <a name="deviceconfigurationprofileuseractivities"></a>deviceConfigurationProfileUserActivities 
 A **DeviceConfigurationProfileUserActivity** entitás a napi sikeres, függő, sikertelen vagy hibás állapotú felhasználók számát sorolja fel. A szám az entitáshoz rendelt eszközkonfigurációs profilokat jelöli. Ha például az egyik felhasználó valamennyi hozzárendelt szabályzata tekintetében sikeres állapotú, akkor az entitás azon a napon eggyel növeli az értéket a sikeres állapotot jelző számlálón. Ha az adott felhasználó két hozzárendelt profillal rendelkezik, amelyek közül az egyik sikeres, míg a másik hibás állapotú, akkor a felhasználót hibás állapotúnak számítjuk. A **DeviceConfigurationProfileUserActivity** entitás azt sorolja fel, hogy hány felhasználó van az egyes állapotokban az elmúlt 30 napon belüli adott napon. 
 
-| Tulajdonság  | Leírás  | Példa  |
+| Tulajdonság  | Description  | Példa  |
 |------------|----------------------------------------------------------------------------------------------|-----------|
 | DateKey  | A dátumkulcs azt jelzi, hogy az adattárházban mikor lett rögzítve az eszközkonfigurációs profil bejelentkezése.  | 20160703  |
 | Függőben  | A függő állapotú egyedi felhasználók száma.  | 123  |
@@ -180,7 +180,7 @@ A **DeviceConfigurationProfileUserActivity** entitás a napi sikeres, függő, s
 
 ## <a name="devicepropertyhistories"></a>devicePropertyHistories
 
-|          Tulajdonság          |                                                                                      Leírás                                                                                     |
+|          Tulajdonság          |                                                                                      Description                                                                                     |
 |:--------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | DateKey                    | A napot megadó dátumtáblázat-hivatkozás.                                                                                                                                          |
 | DeviceKey                  | Az eszköz egyedi azonosítója az adattárházban – helyettes kulcs. Az Intune-eszközazonosítót tartalmazó eszköztáblára mutató hivatkozás.                               |
@@ -196,7 +196,7 @@ A **DeviceConfigurationProfileUserActivity** entitás a napi sikeres, függő, s
 ## <a name="deviceregistrationstates"></a>deviceRegistrationStates
 A **DeviceRegistrationState** entitás az adattárház más gyűjteményei által hivatkozott regisztrációtípust jelöli. 
 
-|           Tulajdonság          |                                     Leírás                                     |
+|           Tulajdonság          |                                     Description                                     |
 |:---------------------------:|:-----------------------------------------------------------------------------------:|
 | deviceRegistrationStateID   | Regisztrációs állapot egyedi azonosítója                                            |
 | deviceRegistrationStateKey  | A regisztrációs állapot egyedi azonosítója az adattárházban – helyettes kulcs |
@@ -213,7 +213,7 @@ A **DeviceRegistrationState** entitás az adattárház más gyűjteményei álta
 ## <a name="devices"></a>eszközök
 A **device** entitás felsorolja az összes kezelt regisztrált eszközt és azok lényeges tulajdonságait.
 
-|          Tulajdonság          |                                                                                       Leírás                                                                                      |
+|          Tulajdonság          |                                                                                       Description                                                                                      |
 |:--------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | DeviceKey                  | Az eszköz egyedi azonosítója az adattárházban – helyettes kulcs.                                                                                                               |
 | DeviceId                   | Az eszköz egyedi azonosítója.                                                                                                                                                     |
@@ -255,7 +255,7 @@ A **device** entitás felsorolja az összes kezelt regisztrált eszközt és azo
 ## <a name="devicetypes"></a>deviceTypes
 A **deviceType** entitás az adattárház más entitásai által hivatkozott eszköztípust jelöli. Az eszköztípus általában leírja az eszköz típusát, gyártóját vagy mindkettőt.
 
-|    Tulajdonság    |                                  Leírás                                 |
+|    Tulajdonság    |                                  Description                                 |
 |:--------------:|:----------------------------------------------------------------------------:|
 | DeviceTypeID   | Az eszköztípus egyedi azonosítója                                       |
 | DeviceTypeKey  | Az eszköztípus egyedi azonosítója az adattárházban – helyettes kulcs |
@@ -263,7 +263,7 @@ A **deviceType** entitás az adattárház más entitásai által hivatkozott esz
 
 ### <a name="example"></a>Példa
 
-| DeviceTypeID |        Név       |                      Leírás                      |
+| DeviceTypeID |        Név       |                      Description                      |
 |:------------:|:-----------------:|:-----------------------------------------------------:|
 | -1           | Nem érhető el   | Az eszköz típusa nem érhető el.                     |
 | 0            | Asztali           | Windows asztali eszköz                              |
@@ -277,7 +277,7 @@ A **deviceType** entitás az adattárház más entitásai által hivatkozott esz
 | 8            | IPhone            | iPhone-eszköz                                       |
 | 9            | IPad              | iPad-eszköz                                         |
 | 10           | IPod              | iPod-eszköz                                         |
-| 11           | Android           | Az Eszközadminisztrátorral felügyelt Android-eszköz   |
+| 11           | Android:           | Az Eszközadminisztrátorral felügyelt Android-eszköz   |
 | 12           | ISocConsumer      | iSoc Consumer-eszköz                                |
 | 13           | Unix              | UNIX rendszerű eszköz                                         |
 | 14           | MacMDM            | A beépített MDM-ügynökkel felügyelt Mac OS X-eszköz |
@@ -292,7 +292,7 @@ A **deviceType** entitás az adattárház más entitásai által hivatkozott esz
 ## <a name="deviceenrollmenttypes"></a>deviceEnrollmentTypes
 A **deviceEnrollmentType** entitás egy eszköz regisztrálásának módját jelöli. A regisztrációtípus a regisztrálás módszerét rögzíti. A felsorolt példák a különböző regisztrációtípusokat és azok jelentését mutatják be.
 
-|         Tulajdonság         |                                    Leírás                                    |
+|         Tulajdonság         |                                    Description                                    |
 |:------------------------:|:---------------------------------------------------------------------------------:|
 | deviceEnrollmentTypeID   | A regisztrációs típus egyedi azonosítója.                                       |
 | deviceEnrollmentTypeKey  | A regisztrációtípus egyedi azonosítója az adattárházban – helyettes kulcs. |
@@ -300,7 +300,7 @@ A **deviceEnrollmentType** entitás egy eszköz regisztrálásának módját jel
 
 ### <a name="example"></a>Példa
 
-| enrollmentTypeID |                Név                |                                        Leírás                                       |
+| enrollmentTypeID |                Név                |                                        Description                                       |
 |:----------------:|:----------------------------------:|:----------------------------------------------------------------------------------------:|
 | 0                | Ismeretlen                            | Regisztrálás típusa nem volt gyűjtve                                                      |
 | 1                | UserEnrollment                     | Felhasználó által vezérelt regisztráció BYOD-csatornán keresztül.                                           |
@@ -317,7 +317,7 @@ A **deviceEnrollmentType** entitás egy eszköz regisztrálásának módját jel
 ## <a name="enrollmentactivities"></a>enrollmentActivities 
 Az **EnrollmentActivity** entitás az eszközök regisztrálásának tevékenységét jelzi.
 
-| Tulajdonság                      | Leírás                                                               |
+| Tulajdonság                      | Description                                                               |
 |-------------------------------|---------------------------------------------------------------------------|
 | dateKey                       | A beléptetési tevékenység rögzítési dátumának kulcsa.               |
 | deviceEnrollmentTypeKey       | A beléptetés típusának kulcsa.                                        |
@@ -326,19 +326,19 @@ Az **EnrollmentActivity** entitás az eszközök regisztrálásának tevékenys�
 | enrollmentFailureCategoryKey  | A beléptetési hiba kategóriájának kulcsa (ha a regisztráció sikertelen volt).        |
 | enrollmentFailureReasonKey    | A beléptetési hiba okának kulcsa (ha a regisztráció sikertelen volt).          |
 | osVersion                     | Az eszköz operációs rendszerének verziója.                               |
-| count                         | A fenti besorolásoknak megfelelő beléptetési tevékenységek teljes száma.  |
+| darabszám                         | A fenti besorolásoknak megfelelő beléptetési tevékenységek teljes száma.  |
 
 ## <a name="enrollmenteventstatuses"></a>enrollmentEventStatuses 
 Az **EnrollmentEventStatus** entitás az eszközök regisztrálásának eredményét jelzi.
 
-| Tulajdonság                   | Leírás                                                                       |
+| Tulajdonság                   | Description                                                                       |
 |----------------------------|-----------------------------------------------------------------------------------|
 | enrollmentEventStatusKey   | A regisztrációs állapot egyedi azonosítója az adattárházban (helyettes kulcs)  |
-| enrollmentEventStatusName  | A beléptetési állapot neve. Lásd az alábbi példákat.                            |
+| enrollmentEventStatusName  | A beléptetési állapot neve. Ez az alábbi példákon látható.                            |
 
 ### <a name="example"></a>Példa
 
-| enrollmentEventStatusName  | Leírás                            |
+| enrollmentEventStatusName  | Description                            |
 |----------------------------|----------------------------------------|
 | Siker                    | Sikeres eszközök beléptetése         |
 | Sikertelen                     | Sikertelen eszközök beléptetése             |
@@ -347,14 +347,14 @@ Az **EnrollmentEventStatus** entitás az eszközök regisztrálásának eredmén
 ## <a name="enrollmentfailurecategories"></a>enrollmentFailureCategories 
 A **EnrollmentFailureCategory** entitás jelzi, hogy az eszközök regisztrálásának miért nem sikerült. 
 
-| Tulajdonság                       | Leírás                                                                                 |
+| Tulajdonság                       | Description                                                                                 |
 |--------------------------------|---------------------------------------------------------------------------------------------|
 | enrollmentFailureCategoryKey   | A beléptetési hiba kategóriájának egyedi azonosítója az adattárházban (helyettes kulcs)  |
-| enrollmentFailureCategoryName  | A beléptetési hiba kategóriájának neve. Lásd az alábbi példákat.                            |
+| enrollmentFailureCategoryName  | A beléptetési hiba kategóriájának neve. Ez az alábbi példákon látható.                            |
 
 ### <a name="example"></a>Példa
 
-| enrollmentFailureCategoryName   | Leírás                                                                                                   |
+| enrollmentFailureCategoryName   | Description                                                                                                   |
 |---------------------------------|---------------------------------------------------------------------------------------------------------------|
 | Nem alkalmazható                  | A beléptetési hiba kategóriája nem alkalmazható.                                                            |
 | Nem érhető el                   | A beléptetési hiba kategóriája nem érhető el.                                                             |
@@ -374,14 +374,14 @@ A **EnrollmentFailureCategory** entitás jelzi, hogy az eszközök regisztrálá
 ## <a name="enrollmentfailurereasons"></a>enrollmentFailureReasons  
 A **EnrollmentFailureReason** entitás egy adott meghibásodási kategórián belül egy eszköz regisztrálási hibájának részletesebb okát jelzi.  
 
-| Tulajdonság                     | Leírás                                                                               |
+| Tulajdonság                     | Description                                                                               |
 |------------------------------|-------------------------------------------------------------------------------------------|
 | enrollmentFailureReasonKey   | A beléptetési hiba okának egyedi azonosítója az adattárházban (helyettes kulcs)  |
-| enrollmentFailureReasonName  | A beléptetési hiba okának neve. Lásd az alábbi példákat.                            |
+| enrollmentFailureReasonName  | A beléptetési hiba okának neve. Ez az alábbi példákon látható.                            |
 
 ### <a name="example"></a>Példa
 
-| enrollmentFailureReasonName      | Leírás                                                                                                                                                                                            |
+| enrollmentFailureReasonName      | Description                                                                                                                                                                                            |
 |----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Nem alkalmazható                   | A beléptetési hiba oka nem alkalmazható.                                                                                                                                                       |
 | Nem érhető el                    | A beléptetési hiba oka nem érhető el.                                                                                                                                                        |
@@ -404,7 +404,7 @@ A **EnrollmentFailureReason** entitás egy adott meghibásodási kategórián be
 ## <a name="intunemanagementextensions"></a>intuneManagementExtensions
 Az **intuneManagementExtension** az **intuneManagementExtension**-állapotok az egyes Windows 10 rendszerű eszközökön naponta készülő listája. Az entitás az utolsó 60 nap adatait őrzi meg.
 
-|       Tulajdonság      |                          Leírás                          | Példa |
+|       Tulajdonság      |                          Description                          | Példa |
 |:-------------------:|:-------------------------------------------------------------:|:-------:|
 | DateKey             | A dátum egyedi azonosítója.                                | 123     |
 | TenantKey           | A bérlő egyedi azonosítója.                              | 456     |
@@ -415,7 +415,7 @@ Az **intuneManagementExtension** az **intuneManagementExtension**-állapotok az 
 ## <a name="intunemanagementextensionhealthstates"></a>intuneManagementExtensionHealthStates
 Az **IntuneManagementExtensionHealthState** az **IntuneManagementExtension** valamennyi lehetséges állapotának listáját tartalmazza.
 
-|      Tulajdonság     |                   Leírás                  | Példa |
+|      Tulajdonság     |                   Description                  | Példa |
 |:-----------------:|:----------------------------------------------:|:-------:|
 | ExtensionStateKey | Az állapot egyedi azonosítója.           | 2       |
 | ExtensionState    | Az IntuneManagementExtension állapota. | Kifogástalan |
@@ -423,7 +423,7 @@ Az **IntuneManagementExtensionHealthState** az **IntuneManagementExtension** val
 ## <a name="intunemanagementextensionversions"></a>intuneManagementExtensionVersions
 Az **IntuneManagementExtensionVersion** entitás az **IntuneManagementExtension** által használt valamennyi verzió listáját tartalmazza.
 
-|       Tulajdonság      |                          Leírás                          | Példa |
+|       Tulajdonság      |                          Description                          | Példa |
 |:-------------------:|:-------------------------------------------------------------:|:-------:|
 | ExtensionVersionKey | Az IntuneManagementExtension verziójának egyedi azonosítója. | 1       |
 | ExtensionVersion    | A négyjegyű verziószám.                                   | 1.0.2.0 |
@@ -432,7 +432,7 @@ Az **IntuneManagementExtensionVersion** entitás az **IntuneManagementExtension*
 
 A **MamApplication** entitás azokat az üzletági alkalmazásokat sorolja fel, amelyek felügyelete a Mobilalkalmazás-felügyelet használatával történik és nincsenek beléptetve a vállalat rendszerébe.
 
-| Tulajdonság | Leírás | Példa |
+| Tulajdonság | Description | Példa |
 |---------|------------|--------|
 | mamApplicationKey |A MAM-alkalmazás egyedi azonosítója. | 432 |
 | mamApplicationName |A MAM-alkalmazás neve. |MAM-alkalmazás példájának neve |
@@ -448,7 +448,7 @@ A **MamApplication** entitás azokat az üzletági alkalmazásokat sorolja fel, 
 A **MamApplicationInstance** entitás a felügyelt Mobilalkalmazás-felügyeleti (MAM) alkalmazásokat sorolja fel felhasználóként és eszközönként egy példányban. Az entitásban felsorolt összes felhasználó és eszköz védelem alatt áll, vagyis legalább egy MAM-szabályzat hozzájuk van rendelve.
 
 
-|          Tulajdonság          |                                                                                                  Leírás                                                                                                  |               Példa                |
+|          Tulajdonság          |                                                                                                  Description                                                                                                  |               Példa                |
 |----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|
 |   ApplicationInstanceKey   |                                                               A MAM-alkalmazáspéldány egyedi azonosítója az adattárházban – helyettes kulcs.                                                                |                 123                  |
 |           UserId           |                                                                              Azon felhasználó felhasználói azonosítója, aki ezt a MAM-alkalmazást telepítette.                                                                              | b66bc706-ffff-7437-0340-032819502773 |
@@ -456,7 +456,7 @@ A **MamApplicationInstance** entitás a felügyelt Mobilalkalmazás-felügyeleti
 | mamApplicationId | Annak a MAM-alkalmazásnak az azonosítója, amelyhez a MAM-alkalmazás példánya létrejött.   | 2016.11.23 12:00:00   |
 |     ApplicationVersion     |                                                                                     A MAM-alkalmazás verziószáma.                                                                                      |                  2                   |
 |        CreatedDate         |                                                                 A MAM-alkalmazáspéldány rekordjának létrehozási dátuma. Az érték lehet null is.                                                                 |        2016.11.23 12:00:00        |
-|          Platform          |                                                                          Az eszköz platformja, amelyen ez a MAM-alkalmazás telepítve van.                                                                           |                  2                   |
+|          Platfésm          |                                                                          Az eszköz platformja, amelyen ez a MAM-alkalmazás telepítve van.                                                                           |                  2                   |
 |      PlatformVersion       |                                                                      Az eszköz platformjának verziója, amelyen ez a MAM-alkalmazás telepítve van.                                                                       |                 2.2                  |
 |         SdkVersion         |                                                                            A MAM-SDK verziója, amellyel az adott MAM-alkalmazást becsomagolták.                                                                            |                 3.2                  |
 | mamDeviceId | Annak az eszköznek az azonosítója, amelyhez a MAM-alkalmazás példánya társítva van.   | 2016.11.23 12:00:00   |
@@ -474,7 +474,7 @@ A **MamCheckin** entitás a MAM-alkalmazáspéldány Intune szolgáltatásba tö
 > [!Note]  
 > Ha az alkalmazáspéldány naponta többször is bejelentkezik, azokat az adattárház egyetlen bejelentkezésként tárolja.
 
-| Tulajdonság | Leírás | Példa |
+| Tulajdonság | Description | Példa |
 |---------|------------|--------|
 | DateKey |A dátumkulcs azt jelzi, hogy az adattárházban mikor lett rögzítve a MAM-alkalmazás bejelentkezése. | 20160703 |
 | ApplicationInstanceKey |A MAM-alkalmazás bejelentkezéséhez társított alkalmazáspéldány kulcsa. | 123 |
@@ -488,10 +488,10 @@ A **MamCheckin** entitás a MAM-alkalmazáspéldány Intune szolgáltatásba tö
 
 A **MamDeviceHealth** entitás azokat az eszközöket jelöli, amelyekhez mobilalkalmazás-felügyeleti szabályzatok vannak rendelve, beleértve a jailbreakelt eszközöket is.
 
-| Tulajdonság | Leírás | Példa |
+| Tulajdonság | Description | Példa |
 |---------|------------|--------|
 | DeviceHealthKey |Az eszköz és a hozzá tartozó eszközállapot egyedi azonosítója az adattárházban – helyettes kulcs. |123 |
-| DeviceHealth |Az eszköz és a hozzá tartozó eszközállapot egyedi azonosítója – hasonló a DeviceHealthKey-hez, de az azonosító természetes kulcs. |b66bc706-ffff-7777-0340-032819502773 |
+| DeviceHealth |Az eszköz és a hozzá tartozó eszközállapot egyedi azonosítója – hasonló a DeviceHealthKey-hez, de az azonosító természetes kulcs. |b66bc706-FFFF-7777-0340-032819502773 |
 | DeviceHealthName |Az eszköz állapotát jelöli. <br>Not available – nincs információ az eszközről. <br>Healthy – az eszköz nem jailbreakelt. <br>Unhealthy – az eszköz jailbreakelt. |Not Available Healthy Unhealthy |
 | RowLastModifiedDateTimeUTC |Az adott MAM-eszközállapot adattárházban történt utolsó módosításának dátuma és időpontja (UTC). |2016.11.23 12:00:00 |
 
@@ -500,17 +500,17 @@ A **MamDeviceHealth** entitás azokat az eszközöket jelöli, amelyekhez mobila
 A **MamPlatform** entitás azoknak a platformoknak a nevét és típusát sorolja fel, amelyeken telepítettek MAM-alkalmazást.
 
 
-|          Tulajdonság          |                                    Leírás                                    |                         Példa                         |
+|          Tulajdonság          |                                    Description                                    |                         Példa                         |
 |----------------------------|-----------------------------------------------------------------------------------|---------------------------------------------------------|
 |        PlatformKey         |     A platform egyedi azonosítója az adattárházban – helyettes kulcs.      |                           123                           |
-|          Platform          | A platform egyedi azonosítója – a PlatformKey-hez hasonló, de természetes kulcs. |                           123                           |
+|          Platfésm          | A platform egyedi azonosítója – a PlatformKey-hez hasonló, de természetes kulcs. |                           123                           |
 |        PlatformName        |                                   A platform neve                                   | Nem érhető el <br>Nincsenek <br>Windows <br>iOS <br>Android. |
 | RowLastModifiedDateTimeUTC | A platform adattárházban történt utolsó módosításának dátuma és időpontja (UTC).  |                 2016.11.23 12:00:00                  |
 
 ## <a name="managementagenttypes"></a>managementAgentTypes
 A **managementAgentTypes** az eszköz kezelésére szolgáló ügynököket jelöli.
 
-|         Tulajdonság        |                                       Leírás                                       |
+|         Tulajdonság        |                                       Description                                       |
 |:-----------------------:|:---------------------------------------------------------------------------------------:|
 | ManagementAgentTypeID   | A kezelőügynök típusának egyedi azonosítója.                                         |
 | ManagementAgentTypeKey  | A kezelőügynök típusának egyedi azonosítója az adattárházban – helyettes kulcs. |
@@ -518,7 +518,7 @@ A **managementAgentTypes** az eszköz kezelésére szolgáló ügynököket jel�
 
 ### <a name="example"></a>Példa
 
-| ManagementAgentTypeID |                Név               |                                  Leírás                                 |
+| ManagementAgentTypeID |                Név               |                                  Description                                 |
 |:---------------------:|:---------------------------------:|:----------------------------------------------------------------------------:|
 | 1                     | EAS                               | Az Exchange Active Sync szolgáltatással kezelt eszköz                         |
 | 2                     | MDM                               | MDM-ügynökkel kezelt eszköz                                   |
@@ -535,7 +535,7 @@ A **managementAgentTypes** az eszköz kezelésére szolgáló ügynököket jel�
 ## <a name="managementstates"></a>managementStates
 A **ManagementStates** entitás az eszköz állapotáról ad információt. Ezek a részletek hasznosak lehetnek távoli műveletek végrehajtásakor és jailbreakelt vagy rootolt eszköz esetén.
 
-|       Tulajdonság      |                                     Leírás                                    |
+|       Tulajdonság      |                                     Description                                    |
 |:-------------------:|:----------------------------------------------------------------------------------:|
 | managementStateID   | A kezelés állapotának egyedi azonosítója.                                       |
 | managementStateKey  | A kezelés állapotának egyedi azonosítója az adattárházban – helyettes kulcs. |
@@ -543,7 +543,7 @@ A **ManagementStates** entitás az eszköz állapotáról ad információt. Ezek
 
 ### <a name="example"></a>Példa
 
-| managementStateID |      Név      |                                                   Leírás                                                   |
+| managementStateID |      Név      |                                                   Description                                                   |
 |:-----------------:|:--------------:|:---------------------------------------------------------------------------------------------------------------:|
 | 0                 | Kezelt        | Kezelt, függőben lévő távoli műveletek nélkül.                                                                       |
 | 1                 | RetirePending  | Az eszköz kivonására vonatkozó parancs van függőben.                                                             |
@@ -561,7 +561,7 @@ A **ManagementStates** entitás az eszköz állapotáról ad információt. Ezek
 ## <a name="mobileappinstallstates"></a>mobileAppInstallStates
 A MobileAppInstallState entitás egy mobilalkalmazás telepítési állapotát jelöli, miután az hozzá lett rendelve egy eszközöket, felhasználókat vagy mindkettőt tartalmazó csoporthoz.
 
-|       Tulajdonság      |                        Leírás                       |
+|       Tulajdonság      |                        Description                       |
 |:-------------------:|:--------------------------------------------------------:|
 | AppInstallStateKey  | A fiókhoz tartozó alkalmazástelepítési állapot egyedi azonosítója. |
 | AppInstallState     | Az alkalmazástelepítési állapot felsorolásértéke.                     |
@@ -570,19 +570,19 @@ A MobileAppInstallState entitás egy mobilalkalmazás telepítési állapotát j
 ## <a name="mobileappinstallstatuscounts"></a>mobileAppInstallStatusCounts
 Mobilalkalmazás telepítési állapotot jelöli egy adott céleszköztípushoz, a Mobilakalmazás-kezelés Microsoft Intune-nal való használatával.
 
-|      Tulajdonság      |                                                          Leírás                                                          |
+|      Tulajdonság      |                                                          Description                                                          |
 |:------------------:|:-----------------------------------------------------------------------------------------------------------------------------:|
 | DateKey            | Az alkalmazástelepítési állapot rögzítési dátumának kulcsa.                                                                     |
 | AppKey             | A mobilalkalmazás kulcsa, mely az AppRevision osztály egy példányát azonosítja.                                                          |
 | DeviceTypeKey      | A mobilalkalmazáshoz társított eszköztípus kulcsa.                                                              |
 | AppInstallStateKey | Az alkalmazástelepítési állapot kulcsa, mely a MobileAppInstallState osztály egy példányát azonosítja.                                         |
-| Hibakód          | Az alkalmazástelepítő, a mobilplatform vagy a szolgáltatás által az alkalmazás telepítésével kapcsolatban visszaadott hibakód. |
-| Darabszám              | Összesített szám.                                                                                                                  |
+| ErrorCode          | Az alkalmazástelepítő, a mobilplatform vagy a szolgáltatás által az alkalmazás telepítésével kapcsolatban visszaadott hibakód. |
+| Mennyiség              | Összesített szám.                                                                                                                  |
 
 ## <a name="ownertypes"></a>ownerTypes
 Az **ownerType** entitás jelzi, hogy az eszköz tulajdonosa a vállalat, magánszemély vagy ismeretlen.
 
-|    Tulajdonság   |                                                                                     Leírás                                                                                    |           Példa          |
+|    Tulajdonság   |                                                                                     Description                                                                                    |           Példa          |
 |:-------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------:|
 | ownerTypeID   | A tulajdonostípus egyedi azonosítója.                                                                                                                                               |                            |
 | ownerTypeKey  | A tulajdonostípus egyedi azonosítója az adattárházban – helyettes kulcs.                                                                                                       |                            |
@@ -594,7 +594,7 @@ Az **ownerType** entitás jelzi, hogy az eszköz tulajdonosa a vállalat, magán
 ## <a name="policies"></a>policies
 A **Szabályzat** entitás eszköz- és alkalmazáskonfigurációs profilokat, valamint megfelelőségi szabályzatokat tartalmaz. A szabályzatokat a Mobileszköz-kezelési (MDM) megoldás segítségével rendelheti hozzá a vállalat valamely csoportjához.
 
-|          Tulajdonság          |                                                                       Leírás                                                                      |                Példa               |
+|          Tulajdonság          |                                                                       Description                                                                      |                Példa               |
 |:--------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------:|
 | PolicyKey                  | A szabályzat adattárházban való jelölésére szolgáló egyedi kulcs.                                                                                              | 123                                  |
 | PolicyId                   | A szabályzat egyedi azonosítója az adattárházban.                                                                                                 | b66bc706-ffff-7437-0340-032819502773 |
@@ -608,7 +608,7 @@ A **Szabályzat** entitás eszköz- és alkalmazáskonfigurációs profilokat, v
 ## <a name="policydeviceactivities"></a>policyDeviceActivities
 Az alábbi táblázat a sikeres, függő, sikertelen vagy hibás állapotú eszközök napi számát tartalmazza. A szám a szabályzattípus-profilok szerinti adatot jelöli. Ha például az adott eszköz valamennyi hozzárendelt szabályzata tekintetében sikeres állapotú, akkor az entitás azon a napon eggyel növeli az értéket a sikeres állapotot jelző számlálón. Ha az adott eszköz két hozzárendelt profillal rendelkezik, amelyek közül az egyik sikeres, míg a másik hibás állapotú, akkor az entitás növeli az értéket a sikeres állapotot jelző számlálón, és hibás állapotba helyezi az eszközt. A **policyDeviceActivity** entitás azt sorolja fel, hogy hány eszköz van az egyes állapotokban az elmúlt 30 napon belüli adott napon.
 
-|  Tulajdonság |                                           Leírás                                           |        Példa        |
+|  Tulajdonság |                                           Description                                           |        Példa        |
 |:---------:|:-----------------------------------------------------------------------------------------------:|:---------------------:|
 | DateKey   | A dátumkulcs azt jelzi, hogy az adattárházban mikor lett rögzítve az eszközkonfigurációs profil bejelentkezése. | 20160703              |
 | Függőben   | A függő állapotú egyedi eszközök száma.                                                    | 123                   |
@@ -619,7 +619,7 @@ Az alábbi táblázat a sikeres, függő, sikertelen vagy hibás állapotú eszk
 
 ## <a name="policyplatformtypes"></a>policyPlatformTypes
 
-|        Tulajdonság        |                      Leírás                      |     Példa    |
+|        Tulajdonság        |                      Description                      |     Példa    |
 |:----------------------:|:-----------------------------------------------------:|:--------------:|
 | PolicyPlatformTypeKey  | A szabályzatplatform típusának egyedi kulcsa.        | 20170519       |
 | PolicyPlatformTypeId   | A szabályzatplatform típusának egyedi azonosítója. | 1              |
@@ -628,11 +628,11 @@ Az alábbi táblázat a sikeres, függő, sikertelen vagy hibás állapotú eszk
 ## <a name="policytypeactivities"></a>policyTypeActivities
 A **PolicyTypeActivity** entitás a sikeres, függő, sikertelen vagy hibás állapotú eszközök számát sorolja fel összesítve. Ezeket az állapotokat az adott eszköz-, illetve alkalmazáskonfigurációs profilra, valamint megfelelőségi szabályzatra vonatkozóan ismerteti.
 
-|    Tulajdonság   |                                          Leírás                                          |           Példa           |
+|    Tulajdonság   |                                          Description                                          |           Példa           |
 |:-------------:|:---------------------------------------------------------------------------------------------:|:---------------------------:|
 | DateKey       | A dátumkulcs azt jelzi, hogy az adattárházban mikor lett rögzítve az eszközkonfigurációs profil bejelentkezése. | 20160703                    |
 | PolicyKey     | Szabályzatkulcs, amely összekapcsolható a szabályzattal a policyName paraméter lekérése érdekében.                                | Windows 10 baseline         |
-| PolicyTypeKey | Szabályzatkulcs típusa, amely összekapcsolható a szabályzattípussal a szabályzattípus nevének lekérése érdekében.             | Windows 10-es megfelelőségi szabályzat |
+| PolicyTypeId | Szabályzatkulcs típusa, amely összekapcsolható a szabályzattípussal a szabályzattípus nevének lekérése érdekében.             | Windows 10-es megfelelőségi szabályzat |
 | Függőben       | A függő állapotú egyedi eszközök száma.                                                    | 123                         |
 | Sikerült     | A sikeres állapotú egyedi eszközök száma.                                                    | 12                          |
 | Hiba         | A hibás állapotú egyedi eszközök száma.                                                      | 10                          |
@@ -641,16 +641,16 @@ A **PolicyTypeActivity** entitás a sikeres, függő, sikertelen vagy hibás ál
 ## <a name="policytypes"></a>policyTypes
 A **PolicyType** entitás az eszköz- és alkalmazáskonfigurációs profilok, valamint a megfelelőségi szabályzatok típusait tartalmazza. A szabályzatokat a Mobileszköz-kezelési (MDM) megoldás segítségével rendelheti hozzá a vállalat valamely csoportjához.
 
-|    Tulajdonság    |                       Leírás                      |            Példa            |
+|    Tulajdonság    |                       Description                      |            Példa            |
 |:--------------:|:------------------------------------------------------:|:-----------------------------:|
 | PolicyTypeId   | A szabályzat egyedi azonosítója a forrásrendszerben.  | 123                           |
-| PolicyTypeKey  | A szabályzat egyedi azonosítója az adattárházban. | 1                             |
+| PolicyTypeId  | A szabályzat egyedi azonosítója az adattárházban. | 1                             |
 | PolicyTypeName | A szabályzattípus neve.                               | A Windows 10-re vonatkozó megfelelőségi szabályzat. |
 
 ## <a name="policyuseractivities"></a>policyUserActivities
 Az alábbi táblázat a sikeres, függő, sikertelen vagy hibás állapotú felhasználók napi számát tartalmazza. A szám a szabályzattípus-profilok szerinti adatot jelöli. Ha például az egyik felhasználó valamennyi hozzárendelt szabályzata tekintetében sikeres állapotú, akkor az entitás azon a napon eggyel növeli az értéket a sikeres állapotot jelző számlálón. Ha az adott felhasználó két hozzárendelt profillal rendelkezik, amelyek közül az egyik sikeres, míg a másik hibás állapotú, akkor a felhasználót hibás állapotúnak számítjuk. A **PolicyUserActivity** entitás azt sorolja fel, hogy hány felhasználó van az egyes állapotokban az elmúlt 30 napon belüli adott napon.
 
-|  Tulajdonság |                                          Leírás                                          |       Példa       |
+|  Tulajdonság |                                          Description                                          |       Példa       |
 |:---------:|:---------------------------------------------------------------------------------------------:|:-------------------:|
 | DateKey   | A dátumkulcs azt jelzi, hogy az adattárházban mikor lett rögzítve az eszközkonfigurációs profil bejelentkezése. | 20160703            |
 | Függőben   | A függő állapotú egyedi eszközök száma.                                                    | 123                 |
@@ -661,7 +661,7 @@ Az alábbi táblázat a sikeres, függő, sikertelen vagy hibás állapotú felh
 ## <a name="termsandconditions"></a>termsAndConditions
 A **termsAndConditions** entitás adott feltételek és kikötések (T&C) szabályzat tartalmának metaadatait és tartalmát jelöli. A T&C-szabályzatok tartalma megjelenik a felhasználóknak, amikor először próbálnak regisztrálni az Intune-ban, majd később a szerkesztéseknél is, amennyiben a rendszergazda kötelezővé tette az újbóli elfogadást. Ez lehetővé teszi, hogy a rendszergazda közzétegye azokat a feltételeket, amelyeket a felhasználónak el kell fogadnia ahhoz, hogy az eszközük regisztrálható legyen az Intune-ban.
 
-|    Tulajdonság        |    Leírás    |    Példa        |
+|    Tulajdonság        |    Description    |    Példa        |
 |----------------------------------|-----------------------------------------------------------------------------------------------|-----------------------------------------------------------|
 |    termsAndConditionsKey    |    Egy, a „userTermsAndConditionsAcceptances” gyűjteményben lévő egyik tételhez tartozó kulcs    |    123    |
 |    termsAndCondidionsId    |    Ennek a termsAndConditions-bejegyzésnek az azonosítója    |    276edcb7-7440-4339-b6c5-8b6fc556fee6    |
@@ -678,7 +678,7 @@ A **termsAndConditions** entitás adott feltételek és kikötések (T&C) szabá
 ## <a name="userdeviceassociations"></a>userDeviceAssociations
 A **UserDeviceAssociation** entitás tartalmazza a szervezet felhasználói hozzárendeléseit.
 
-|        Név        |                                             Leírás                                            |     Példa     |
+|        Név        |                                             Description                                            |     Példa     |
 |:------------------:|:--------------------------------------------------------------------------------------------------:|:---------------:|
 | UserKey            | A felhasználó egyedi azonosítója az adattárházban.   (Helyettes kulcs).                            | 123             |
 | DeviceKey          | Az eszköz egyedi azonosítója az adattárházban.                                             | 123             |
@@ -691,7 +691,7 @@ A **user** entitás a vállalaton belül hozzárendelt licenccel rendelkező ös
 
 A **user** entitásgyűjtemény felhasználói adatokat tartalmaz. A rekordok között akkor is ott vannak az adatgyűjtési időszakon belüli felhasználói állapotok, ha a felhasználót azóta eltávolították. Például az elmúlt egy hónap során hozzáadhattak az Intune-hoz egy felhasználót, majd el is távolíthatták onnan. Az elmúlt hónap adatai tartalmazzák a felhasználót és állapotát annak ellenére, hogy a felhasználó a jelentés időpontjában nincs jelen. Ekkor létrehozhat egy olyan jelentést, amely megjeleníti a felhasználó korábbi jelenlétének időtartamát az adatokban.
 
-|          Tulajdonság          |                                                                                                           Leírás                                                                                                          |                Példa               |
+|          Tulajdonság          |                                                                                                           Description                                                                                                          |                Példa               |
 |:--------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------:|
 | UserKey                    | A felhasználó egyedi azonosítója az adattárházban – helyettes kulcs.                                                                                                                                                         | 123                                  |
 | UserId                     | A felhasználó egyedi azonosítója – a UserKey-hez hasonló, de természetes kulcs.                                                                                                                                                    | b66bc706-ffff-7437-0340-032819502773 |
@@ -705,7 +705,7 @@ A **user** entitásgyűjtemény felhasználói adatokat tartalmaz. A rekordok k�
 ## <a name="usertermsandconditionsacceptances"></a>userTermsAndConditionsAcceptances
 A **userTermsAndConditionsAcceptance** entitás egy adott Feltételek és kikötések szabályzat adott felhasználó általi elfogadásának állapotát jelzi. A felhasználónak a feltételek legfrissebb verzióját kell elfogadnia ahhoz, hogy továbbra is hozzáférése legyen a Céges portálhoz.
 
-|    Tulajdonság    |    Leírás    |    Példa    |
+|    Tulajdonság    |    Description    |    Példa    |
 |-------------------------------|--------------------------------------------------------------------------------|----------------------------|
 |    dateKey    |    A „dates” gyűjteményen belüli dátumértéknek megfelelő kulcs.     |    20180823    |
 |    userKey    |    A „users” gyűjtemény egy felhasználójának leképezésére használt felhasználói kulcs.     |    20000    |
@@ -716,7 +716,7 @@ A **userTermsAndConditionsAcceptance** entitás egy adott Feltételek és kiköt
 ## <a name="vppprogramtypes"></a>vppProgramTypes 
 A **vppProgramType** entitás az alkalmazás lehetséges VPP-programtípusait listázza.
 
-|      Tulajdonság      |          Leírás         |
+|      Tulajdonság      |          Description         |
 |:------------------:|:----------------------------:|
 | VppProgramTypeID   | A típus azonosítója.           |
 | VppProgramTypeKey  | A kulcs helyettes kulcsa. |
@@ -724,7 +724,7 @@ A **vppProgramType** entitás az alkalmazás lehetséges VPP-programtípusait li
 
 ### <a name="example"></a>Példa
 
-|             VppProgramID             |         Név        | Leírás                |
+|             VppProgramID             |         Név        | Description                |
 |:------------------------------------:|:-------------------:|----------------------------|
 | 3DDA2474-470B-4503-9830-2665C21C1945 | Microsoft           | A Microsoft VPP-programja. |
 | 00000000-0000-0000-0000-000000000000 | Not Yet Available (Még nem érhető el) | Alapértelmezett érték, nincs VPP.   |

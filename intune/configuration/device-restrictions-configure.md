@@ -16,10 +16,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 704da2ee4f0f2e6dce222c89704c83a35368c02c
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74059541"
 ---
 # <a name="configure-device-restriction-settings-in-microsoft-intune"></a>Ezközkorlátozásokra vonatkozó beállítások konfigurálása a Microsoft Intune-ban
@@ -53,7 +53,7 @@ Ez a cikk bemutatja, hogyan hozhat létre egy eszköz-korlátozási profilt. A k
         - **iOS/iPadOS**
         - **macOS**
         - **Windows Phone 8.1**
-        - **Windows 8.1 és újabb verziók**
+        - **Windows 8.1 és újabb**
         - **Windows 10 és újabb**
 
     - **Profil típusa**: válassza az **eszközök korlátozásait**.

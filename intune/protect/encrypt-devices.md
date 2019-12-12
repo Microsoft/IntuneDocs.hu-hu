@@ -18,10 +18,10 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.openlocfilehash: 13d6a2b9cdc8596c7f5cf81218377754e9412be1
-ms.sourcegitcommit: 2fddb293d37453736ffa54692d03eca642f3ab58
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74390346"
 ---
 # <a name="use-device-encryption-with-intune"></a>Az eszközök titkosításának használata az Intune-nal
@@ -77,7 +77,7 @@ Az Intune-nal kezelhető FileVault-beállítás részleteiért lásd: [FileVault
    >
    > Ha a **kijelentkezéskor a Letiltás** beállítás nincs *konfigurálva*értékre van állítva, a **megkerülő időpontok száma** *nem konfigurálható* , és nem rendelkezhet értékkel.
    >
-   > Ezt a problémát egy jövőbeli frissítés fogja megoldani.
+   > A problémát egy jövőbeli frissítéssel fogjuk megoldani.
 
 8. Fejezze be a további beállítások konfigurációját, majd mentse a profilt.  
 

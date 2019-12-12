@@ -6,7 +6,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/25/2019
+ms.date: 12/12/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,16 +16,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6fde277e16043662420864adcc0458e3dccad308
-ms.sourcegitcommit: ce518a5dfe62c546a77f32ef372f36efbaad473f
+ms.openlocfilehash: 5f9a01adaa6f5ab59819c2924172c30a437ebd8c
+ms.sourcegitcommit: df8e2c052fafb2d5d4e9b4fcd831ae0ecf7f8d16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74465653"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74992915"
 ---
 # <a name="ios-and-ipados-device-settings-to-allow-or-restrict-features-using-intune"></a>iOS-és iPadOS-eszközök beállításai az Intune-t használó funkciók engedélyezéséhez vagy korlátozásához
-
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
 Ez a cikk az iOS-és iPadOS-eszközökön szabályozható különböző beállításokat sorolja fel és ismerteti. A mobileszköz-kezelési (MDM) megoldás részeként ezekkel a beállításokkal engedélyezheti vagy letilthatja a szolgáltatásokat, beállíthatja a jelszavas szabályokat, engedélyezheti vagy korlátozhatja az egyes alkalmazásokat, és így tovább.
 
@@ -41,7 +39,7 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
 > [!NOTE]
 > Ezek a beállítások a különböző regisztrációs típusokra vonatkoznak, és egyes beállítások az összes regisztrációs lehetőségre érvényesek. A különböző regisztrációs típusokkal kapcsolatos további információkért lásd: [iOS-regisztráció](../ios-enroll.md).
 
-## <a name="general"></a>Általános kérdések
+## <a name="general"></a>Általános
 
 ### <a name="settings-apply-to-all-enrollment-types"></a>A beállítások a következőre vonatkoznak: minden regisztrációs típus
 
@@ -52,7 +50,7 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
 ### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése, automatikus eszközök beléptetése (felügyelt)
 
 - Nem **megbízható TLS-tanúsítványok**: a **Letiltás** elem kiválasztásával megakadályozhatja a nem megbízható Transport Layer Security (TLS) tanúsítványait az eszközön. **Nincs konfigurálva** (alapértelmezés) engedélyezi a TLS-tanúsítványokat.
-- **Nyilvános PKI-frissítések engedélyezése**: **lehetővé** teszi, hogy a felhasználók szoftverfrissítéseket kapjanak anélkül, hogy az eszközeiket csatlakoztatják a számítógéphez.
+- **A nyilvános kulcsokra épülő infrastruktúrák frissítéseinek letiltása**: a **Letiltás** megakadályozza, hogy a felhasználók az eszközeik csatlakoztatása nélkül kapják meg a szoftverfrissítéseket. **Nincs konfigurálva** (az alapértelmezett) nem frissíti ezt a beállítást az eszközön.
 - **Ad-követés korlátozása**: válassza a **korlát** lehetőséget az eszköz hirdetési azonosítójának letiltásához. **Nincs konfigurálva** (az alapértelmezett) megtartja a használatát.
 
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: automatikus eszközök beléptetése (felügyelt)
@@ -95,7 +93,7 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
 - **Konfigurációs profil módosítása**: a **blokk** megakadályozza a konfigurációs profil módosítását az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára a konfigurációs profilok telepítését.
 - **Aktiválási zár**: válassza az **Engedélyezés lehetőséget** aktiválási zár felügyelt iOS-eszközökön való engedélyezéséhez. A Aktiválási zár megnehezíti az elveszett vagy ellopott eszközök újraaktiválását.
 - **Alkalmazás eltávolításának tiltása**: válassza a **Letiltás** lehetőséget a felhasználók alkalmazások eltávolításának megakadályozásához. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára az alkalmazások eltávolítását az eszközről.
-- **Blokkolja az USB-korlátozott üzemmódot**: válassza a **Letiltás** lehetőséget a felügyelt eszközökön az USB-korlátozott mód letiltásához. Az USB-Korlátozásos mód megakadályozza, hogy az USB-kiegészítők az adatok cseréjét egy órán át zárolt eszközre korlátozzák. **Nincs konfigurálva** (alapértelmezett) engedélyezi az USB-korlátozott üzemmódot.
+- **USB-tartozékok engedélyezése, ha az eszköz zárolva van**: az **Engedélyezés** lehetővé teszi, hogy az USB-tartozékok egy órán keresztül zárolt eszközzel legyenek kicserélve. **Nincs konfigurálva** (az alapértelmezett) nem FRISSÍTI az USB-korlátozott üzemmódot az eszközön.
 - **Automatikus dátum és idő kényszerítése**: a felügyelt eszközök **megkövetelése** a dátum & idő automatikus beállításához. Az eszköz időzónája frissül, amikor az eszköz mobil kapcsolattal rendelkezik, vagy engedélyezve van a Wi-Fi és a Location Services.
 - A **tanulóknak engedélyt kell kérniük az osztályteremből való távozásra**: az osztályterem alkalmazással egy nem felügyelt tanfolyamot **kell** bekapcsolni a tanulótól, hogy elhagyják a tanfolyamot. **Nincs konfigurálva** (alapértelmezés) nem kényszeríti a tanulót, hogy kérjen engedélyt.
 
@@ -314,8 +312,8 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
 - **Spotlight-keresés az internetről származó eredmények visszaadásához**: a leállítási **funkció** nem tér vissza az internetes keresés eredményeiből. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a Spotlight-keresés kapcsolódását az internethez a keresési eredmények biztosítása érdekében.
 
 - **Safari cookie-k**: válassza ki, hogyan történjen a cookie-k kezelése az eszközön. A választható lehetőségek:
-  - Allow
-  - Az összes cookie letiltása
+  - Engedélyezés
+  - Az összes cookie blokkolása:
   - Cookie-k engedélyezése a felkeresett webhelyekről
   - Cookie-k engedélyezése a jelenlegi webhelyről
 
@@ -413,7 +411,7 @@ Az iOS 9,3-es vagy újabb verzióját futtató eszközökre vonatkozik.
   
   - **Látható alkalmazások**: megadhatja a felhasználók által megtekinthető és elindítható alkalmazások listáját. Ezeken kívül a felhasználók más alkalmazásokat nem látnak és nem indíthatnak el.
 
-- **Alkalmazás URL-címe**: adja meg a megjeleníteni vagy elrejteni kívánt alkalmazás áruházbeli alkalmazásának URL-címét. Például:
+- **Alkalmazás URL-címe**: adja meg a megjeleníteni vagy elrejteni kívánt alkalmazás áruházbeli alkalmazásának URL-címét. Példa:
 
   - A Microsoft munkahelyi mappák alkalmazás hozzáadásához írja be `https://itunes.apple.com/us/app/work-folders/id950878067?mt=8` vagy `https://apps.apple.com/us/app/work-folders/id950878067?mt=8`. 
 
@@ -612,7 +610,7 @@ Egy CSV-fájlt is **importálhat** az alkalmazások neveinek és a Kötegük azo
 > Az iOS-eszközök Kioszk módra való konfigurálása előtt felügyelt módba kell állítania az eszközt az Apple Configurator eszközzel vagy az Apple Device Enrollment Program készülékregisztráció-kezelővel. Tekintse meg az Apple konfiguráló eszközének használatát ismertető témakört.
 > Ha a megadott iOS-alkalmazás a profil hozzárendelését követően települ, az eszköz mindaddig nem lép kioszk módba, amíg az eszköz újra nem indul.
 
-## <a name="domains"></a>Tartományok
+## <a name="domains"></a>Domains
 
 ### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése, automatikus eszközök beléptetése (felügyelt)
 
@@ -672,8 +670,8 @@ Az iOS Supervised (Felügyelt) módja csak a kezdeti eszközbeállítás során,
 > - iTunes
 > - Durva tartalom
 > - iCloud dokumentumok és adatok
-> - Többrésztvevős játékok
-> - Game Center ismerősök hozzáadása
+> - Több résztvevős játék
+> - Barátok hozzáadása a Game Centerben
 > - Siri
 
 ## <a name="next-steps"></a>További lépések

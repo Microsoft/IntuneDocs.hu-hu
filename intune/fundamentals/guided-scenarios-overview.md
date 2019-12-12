@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 460cabead711e6fa4559bcec39e556448cdf2237
-ms.sourcegitcommit: 2c8a41ee95a3fde150667a377770e51b621ead65
+ms.openlocfilehash: ebb17324355fff9631ef74a76388ef0ab797d437
+ms.sourcegitcommit: 7cc45ef52dda08479bc6bdff7d11d2f6c0e7b93b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73635367"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74899146"
 ---
 # <a name="intune-guided-scenarios-overview"></a>Az Intune interaktív forgatókönyvei – áttekintés 
 
@@ -33,7 +33,7 @@ Az interaktív forgatókönyvek nem az Intune normál munkafolyamatainak eltér�
 
 ## <a name="types-of-guided-scenarios"></a>Az interaktív forgatókönyvek típusai 
 
-Az egyszerűség kedvéért minden irányított forgatókönyv kihagyja az összetett hatókörű szolgáltatásokat, például a hatókör címkéit <link>, a kizárási csoportokat és a virtuális csoport hozzárendeléseit <link>. Az interaktív forgatókönyvek által létrehozott összes erőforrás örökli a rendszergazda minden hatókör-címkéjét, amely befejezi a forgatókönyvet. Bizonyos forgatókönyvek a közös beállítások bizonyos szintjének megfelelő testreszabási lehetőségeket biztosítanak a szorosan kapcsolódó forgatókönyvek lefedéséhez. Ezek a forgatókönyvek csak a csak befoglalási csoportokhoz tartozó csoportok hozzárendelését támogatják. Más irányított forgatókönyvek esetén a teljes forgatókönyv egy egységes felhasználói élményt garantál azáltal, hogy nincs testreszabás, és automatikusan új csoportot hoz létre az összes hozzárendelés fogadásához. Miután az interaktív forgatókönyv befejeződik, a kifinomultabb hozzárendeléseket ingyenesen használhatja a meglévő szabályzatok, az alkalmazások és a profilok munkaterhelése révén.  
+Az egyszerűség kedvéért minden irányított forgatókönyv kihagyja az összetett hatókörű funkciókat, például a hatókör címkéit, a kizárási csoportokat és a virtuális csoportok hozzárendeléseit. Az interaktív forgatókönyvek által létrehozott összes erőforrás örökli a rendszergazda minden hatókör-címkéjét, amely befejezi a forgatókönyvet. Bizonyos forgatókönyvek a közös beállítások bizonyos szintjének megfelelő testreszabási lehetőségeket biztosítanak a szorosan kapcsolódó forgatókönyvek lefedéséhez. Ezek a forgatókönyvek csak a csak befoglalási csoportokhoz tartozó csoportok hozzárendelését támogatják. Más irányított forgatókönyvek esetén a teljes forgatókönyv egy egységes felhasználói élményt garantál azáltal, hogy nincs testreszabás, és automatikusan új csoportot hoz létre az összes hozzárendelés fogadásához. Miután az interaktív forgatókönyv befejeződik, a kifinomultabb hozzárendeléseket ingyenesen használhatja a meglévő szabályzatok, az alkalmazások és a profilok munkaterhelése révén.  
 
 A következő forgatókönyvek vezérlik: 
 - A Microsoft Edge for Mobile üzembe helyezése 
@@ -72,7 +72,7 @@ Az irányított forgatókönyvek nem használhatók a meglévő erőforrások fi
 
 Az irányított forgatókönyvek nem használhatók meglévő erőforrások kivonására a kezdeti telepítés során felmerülő hiba miatt. A létrehozást követően az összes erőforrást, csoportot és hozzárendelést ki kell vonni a meglévő munkaterhelések használatával. 
 
-### <a name="updating"></a>Frissítése
+### <a name="updating"></a>Frissítés
 
 A technológia fejlődése során az Intune időről időre frissít egy interaktív forgatókönyvet, hogy javítsa a felhasználói élményt, a biztonságot vagy a forgatókönyv egyéb aspektusait. Ez a frissítés csak az irányított forgatókönyv által végrehajtott új központi telepítéseket érinti. Az Intune nem frissíti az interaktív forgatókönyv által korábban létrehozott meglévő erőforrásokat, hogy azok megfeleljenek az új ajánlott eljárásoknak vagy javaslatoknak.  
 

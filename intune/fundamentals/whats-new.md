@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 11/22/2019
+ms.date: 12/09/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 72aa710e5997593cca6a18f7c3cd421f792985bd
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 77cf4745262346ec2f8bfb5d4d7e67e1ee5c5e07
+ms.sourcegitcommit: edd06a494a241d198ca9b0d3030c92195976e0d3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74832713"
+ms.lasthandoff: 12/11/2019
+ms.locfileid: "75000380"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -54,13 +54,29 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 -->  
 
 <!-- ########################## -->
-## <a name="week-of-decmeber-2-2019"></a>Decmeber hét 2, 2019
+## <a name="week-of-december-9-2019"></a>2019. december 9-i hét
 
-#### <a name="new-system-center-configuration-manager-co-management-licensing--5027281--"></a>Új System Center Configuration Manager közös kezelési licencelés<!--5027281-->
-Mostantól elérhető egy új licenc, amely lehetővé teszi, hogy a frissítési garanciával rendelkező ügyfelek az Intune-os számítógép-felügyeleti jogosultságokat a közös felügyelethez szükséges további Intune-licenc vásárlása nélkül System Center Configuration Manager. Az ügyfeleknek többé nem kell egyéni Intune-/EMS-licenceket rendelniük a végfelhasználók számára.
-- A System Center Configuration Manager által felügyelt és a közös felügyeletbe beléptetett eszközök szinte azonos jogosultságokkal rendelkeznek, mint az Intune önálló felügyelt SZÁMÍTÓGÉPe. Az alaphelyzetbe állítást követően azonban nem lehet újra kiépíteni az Autopilot használatával.
+#### <a name="migrating-to-microsoft-edge-for-managed-browsing-scenarios---5173762---"></a>Migrálás a Microsoft Edge-be felügyelt böngészési forgatókönyvek esetén<!-- 5173762 -->
+
+Ahogy közeledünk a Intune Managed Browser kivonulásához, az alkalmazás-védelmi szabályzatok módosultak, hogy leegyszerűsítse a felhasználók az Edge-re való áthelyezéséhez szükséges lépéseket. Frissítettük az alkalmazás-védelmi házirend beállítását, amely **korlátozza a webes tartalom átvitelét más alkalmazásokkal** , hogy az a következők egyike legyen:
+
+- Bármely alkalmazás
+- Intune Managed Browser
+- Microsoft Edge
+- Nem felügyelt böngésző 
+
+Ha kiválasztja a **Microsoft Edge**lehetőséget, a végfelhasználók a feltételes hozzáférési üzenetküldést fogják látni, hogy a Microsoft Edge szükséges a felügyelt böngészési forgatókönyvekhez. A rendszer arra kéri, hogy töltse le és jelentkezzen be a Microsoft Edge-be a HRE-fiókjával, ha még nem tette volna meg.  Ez azzal egyenértékű, hogy a MAM-kompatibilis alkalmazásokat az alkalmazás konfigurációs beállításával megcélozta, `com.microsoft.intune.useEdge` **igaz**értékre van állítva. A **házirend által felügyelt böngészőket** használó meglévő alkalmazás-védelmi szabályzatok mostantól **Intune Managed Browser** lesznek kiválasztva, és a viselkedésben nem fog megjelenni a változás. Ez azt jelenti, hogy a felhasználók láthatják, hogy az üzenetküldés a Microsoft Edge használatára van beállítva, ha a **useEdge** -alkalmazás konfigurációjának beállítása **true (igaz**). Javasoljuk, hogy a felügyelt böngészési forgatókönyveket használó ügyfelek az alkalmazás-védelmi szabályzatokat a **webes tartalmak más alkalmazásokkal való átadásának korlátozásával** használják, hogy a felhasználók lássák a Microsoft Edge-re való áttérésre vonatkozó megfelelő útmutatást, függetlenül attól, hogy az alkalmazás milyen alkalmazásokat indít el. 
+
+<!-- ########################## -->
+## <a name="week-of-december-2-2019"></a>2019. december 2. hét
+
+#### <a name="new-microsoft-endpoint-configuration-manager-co-management-licensing--5027281--"></a>Új Microsoft-végpont Configuration Manager közös felügyelet licencelése<!--5027281-->
+Mostantól elérhető egy új licenc, amely lehetővé Configuration Manager teszi a frissítési garanciával rendelkező ügyfelek számára, hogy a Windows 10 rendszerű számítógépeken az Intune-nal közös felügyeletet igényeljen anélkül, hogy további Intune-licencet kellene vásárolnia a közös felügyelet Az ügyfeleknek már nem kell egyéni Intune-/EMS-licenceket rendelniük a végfelhasználók számára a Windows 10 közös felügyeletéhez.
+- A Configuration Manager által felügyelt és a közös felügyeletbe beléptetett eszközök szinte ugyanazok a jogosultságok, mint az Intune önálló MDM felügyelt számítógépei. Az alaphelyzetbe állítást követően azonban nem lehet újra kiépíteni az Autopilot használatával.
 - Az Intune-ba beléptetett Windows 10-es eszközök más módon teljes Intune-licencet igényelnek.
 - A más platformokon lévő eszközök továbbra is teljes Intune-licenceket igényelnek.
+
+További információ: [licencelési feltételek](https://www.microsoft.com/en-us/Licensing/product-licensing/products).
 
 
 <!-- ########################## -->
@@ -70,6 +86,10 @@ Mostantól elérhető egy új licenc, amely lehetővé teszi, hogy a frissítés
 ### <a name="app-management"></a>Alkalmazáskezelés
 
 #### <a name="smime-support-with-microsoft-outlook-for-ios---2669398-idready---"></a>S/MIME-támogatás az iOS-hez készült Microsoft Outlookkal<!-- 2669398 idready -->
+
+   > [!NOTE]
+   > Ez a szolgáltatás késleltetve lett, de hamarosan megjelent.
+
 Az Intune támogatja az iOS-eszközökön az iOS rendszerhez használható S/MIME-aláírási és titkosítási tanúsítványok kézbesítését. További információ: az [S/MIME konfigurálása az Outlookhoz az iOS rendszerhez](~/apps/app-configuration-policies-outlook-smime.md).
 
 #### <a name="ui-update-when-selectively-wiping-app-data---4102028---"></a>Felhasználói felület frissítése az alkalmazásadatok szelektív törléséhez<!-- 4102028 -->

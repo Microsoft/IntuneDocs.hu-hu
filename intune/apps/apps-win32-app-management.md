@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e8b3ee799374f4b3777f771d4bd6e186ddaeb55c
-ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74564026"
 ---
 # <a name="intune-standalone---win32-app-management"></a>Önálló Intune – Win32-alkalmazások kezelése
@@ -324,7 +324,7 @@ Ha úgy dönt, hogy nem **telepít automatikusan** egy függőséget, a rendszer
 
 Minden függőség betartja az Intune Win32-alkalmazás újrapróbálkozási logikáját (próbálja meg 5 perc után 3 alkalommal telepíteni) és a globális újraértékelési ütemtervet. Emellett a függőségek csak a Win32-alkalmazásnak az eszközön való telepítésekor érvényesek. A függőségek nem alkalmazhatók Win32-alkalmazások eltávolítására. A függőségek törléséhez a függőségi lista sorainak végén található függő alkalmazástól balra lévő három pontra kell kattintania. 
 
-## <a name="delivery-optimization"></a>Kézbesítési optimalizálás
+## <a name="delivery-optimization"></a>Kézbesítésoptimalizálás elemet
 
 A Windows 10 1709 és újabb rendszerű ügyfelek letöltik az Intune Win32-alkalmazás tartalmát egy kézbesítési optimalizálási összetevő használatával a Windows 10-ügyfélen. A kézbesítési optimalizálás a társ-társ funkciókat biztosítja, amelyet alapértelmezés szerint be kell kapcsolni. A kézbesítési optimalizálást a csoportházirend és az Intune-eszköz konfigurációja is konfigurálhatja. További információ: [a Windows 10 kézbesítési optimalizálása](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization). 
 

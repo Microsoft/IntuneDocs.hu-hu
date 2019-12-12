@@ -14,16 +14,16 @@ ms.technology: ''
 ms.assetid: 6ee841cc-5694-4ba1-8f66-1d58edec30a4
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fd00a0ae4cb6c3b150fe40cfc6cd7b71cfa973f3
-ms.sourcegitcommit: 0be25b59c8e386f972a855712fc6ec3deccede86
+ms.openlocfilehash: d6af0718f2b926383bb943b6321b4d5839346ce7
+ms.sourcegitcommit: df8e2c052fafb2d5d4e9b4fcd831ae0ecf7f8d16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72585248"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74991989"
 ---
 # <a name="use-audit-logs-to-track-and-monitor-events-in-microsoft-intune"></a>Naplók használata a Microsoft Intune eseményeinek nyomon követéséhez és figyeléséhez
 
-A naplók a Microsoft Intune változását eredményező tevékenységek rekordját tartalmazzák. Létrehozás, frissítés (Szerkesztés), törlés, hozzárendelés és távoli műveletek minden olyan naplózási esemény létrehozása, amelyet a rendszergazdák a legtöbb Intune-beli számítási feladathoz megtekinthetnek. Alapértelmezés szerint a naplózás minden ügyfél esetében engedélyezve van. Nem lehet letiltani.
+A naplók a Microsoft Intune változását eredményező tevékenységek rekordját tartalmazzák. Létrehozás, frissítés (Szerkesztés), törlés, hozzárendelés és távoli műveletek minden olyan naplózási esemény létrehozása, amelyet a rendszergazdák a legtöbb Intune-beli számítási feladathoz megtekinthetnek. Alapértelmezés szerint a naplózás minden ügyfél esetében engedélyezve van. A folyamat nem tiltható le.
 
 > [!NOTE]
 > A naplózási események a december 2017-es kiadásban kezdték meg a felvételt. Az előző események nem érhetők el.
@@ -40,9 +40,14 @@ A következő engedélyekkel rendelkező felhasználók tekinthetik meg az audit
 
 A naplókat a figyelés csoportban tekintheti meg az egyes Intune-munkaterhelésekhez:
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Válassza ki a munkaterhelést, amelyben át szeretné tekinteni a naplókat. Válassza például az **eszközök**lehetőséget.
-3. A **figyelés**területen válassza a **naplók**lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza a **bérlői felügyelet** > a **naplók**lehetőséget.
+3. Az eredmények szűréséhez válassza a **szűrés** lehetőséget, és pontosítsa az eredményeket a következő beállítások használatával.
+    - **Kategória**: **megfelelőség**, **eszköz**és **szerepkör**.
+    - **Tevékenység**: az itt felsorolt beállításokat a **Kategória**mezőben kiválasztott lehetőség korlátozza.
+    - **Dátumtartomány**: az előző hónap, hét vagy nap naplóinak kiválasztására van lehetőség.
+4. Válassza az **Alkalmaz** lehetőséget.
+4. Válasszon ki egy elemet a listában a tevékenység részleteinek megtekintéséhez.
 
 ## <a name="route-logs-to-azure-monitor"></a>Naplók átirányítása a Azure Monitorba
 
@@ -53,32 +58,10 @@ A naplók és az operatív naplók is átirányíthatók Azure Monitorba. A **na
 > [!NOTE]
 > További információ erről a szolgáltatásról és az előfeltételek használatáról: [naplózási adatok küldése a Storage-ba, az Event hubokba vagy a log analyticsbe](review-logs-using-azure-monitor.md).
 
-## <a name="review-audit-events"></a>Naplózási események áttekintése
-
-![Válassza ki a naplók az Intune-ban lehetőséget, hogy megjelenjenek a műveletek és dátumok, amikor események történtek](./media/monitor-audit-logs/monitor-audit-logs.png "Naplók")
-
-Az auditnaplók alapértelmezett listanézete a következő elemeket jeleníti meg:
-
-- Az előfordulás dátuma és időpontja
-- Kezdeményező (szereplő)
-- Alkalmazás neve
-- Tevékenység
-- Cél(ok)
-- Category
-- Állapot
-
-Ha részletesebb információkat szeretne látni egy eseményről, válasszon egy elemet a listában:
-
-![Konkrétabb információk az Intune-beli naplókról](./media/monitor-audit-logs/monitor-audit-log-detail.png "Napló részletei")
-
 > [!NOTE]
 > A **kezdeményező (Actor)** információt tartalmaz arról, hogy ki futtatta a feladatot, és hol futott. Ha például az Intune-ban futtatja a tevékenységet a Azure Portalban, az **alkalmazás** mindig listázza **Microsoft Intune portál bővítményt** , és az **alkalmazás-azonosító** mindig ugyanazt a GUID-t használja.
 >
 > A **cél (ok)** szakasz több célt és a módosított tulajdonságokat sorolja fel.  
-
-## <a name="filter-audit-events"></a>A naplózási események áttekintése
-
-Minden számítási feladathoz tartozik egy menüpont, mely előzetesen szűri az adott panelhez társított naplózási események kategóriáját. Egy különálló szűrési lehetőséggel válthat más kategóriákra, illetve az adott kategóriába tartozó eseményműveletek adataira. Az egyszerű felhasználónév alapján kereshet, például a műveletet végrehajtó felhasználó. A dátumtartomány-szűrők 24 órás, 7 napos és 30 napos beállítás használatát teszik lehetővé. Alapértelmezés szerint az utolsó 30 nap a naplózási események láthatók.
 
 ## <a name="use-graph-api-to-retrieve-audit-events"></a>A naplózott események beolvasása a Graph API-val
 

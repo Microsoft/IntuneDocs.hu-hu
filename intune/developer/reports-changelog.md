@@ -6,7 +6,7 @@ keywords: Intune-adattárház
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/23/2019
+ms.date: 12/04/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: developer
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f9740eed3ab727d76a9af4e46642d8279b310fd9
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: a37699542c5a9fe5268541aadc91b4c5d3ab5e9a
+ms.sourcegitcommit: 7cc45ef52dda08479bc6bdff7d11d2f6c0e7b93b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72490524"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74899309"
 ---
 # <a name="change-log-for-the-intune-data-warehouse-api"></a>Az Intune-adattárház API módosítási naplója
 
@@ -38,15 +38,15 @@ _Kiadás dátuma 2019 április_
 
 A következő táblázat felsorolja a közelmúltban eltávolított gyűjteményeket és az Intune-adattárházban található cserék gyűjteményeket.
 
-|    Gyűjtemény                          |    Módosítása     |    További információ                                                                                                                                                                                                                                                                                                                                                                 |
+|    gyűjtemény                          |    Változás     |    További információ                                                                                                                                                                                                                                                                                                                                                                 |
 |----------------------------------------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    mobileAppDeviceUserInstallStatus    |    Eltávolítva    |    Használja helyette a [mobileAppInstallStatusCounts](intune-data-warehouse-collections.md#mobileappinstallstatuscounts) .                                                                                                                                                                                                                                                                     |
 |    enrollmentTypes                     |    Eltávolítva    |    Használja helyette a [deviceEnrollmentTypes](intune-data-warehouse-collections.md#deviceenrollmenttypes) .                                                                                                                                                                                                                                                                                      |
 |    mdmStatuses                         |    Eltávolítva    |    Használja helyette a [complianceStates](intune-data-warehouse-collections.md#compliancestates) .                                                                                                                                                                                                                                                                                               |
-|    workPlaceJoinStateTypes             |    Eltávolítva    |    Ehelyett használja a `azureAdRegistered` tulajdonságot az [eszközök](intune-data-warehouse-collections.md#devices) és [devicePropertyHistories](intune-data-warehouse-collections.md#devicepropertyhistories) gyűjteményeknél.                                                                                                                                                                                                             |
+|    workPlaceJoinStateTypes             |    Eltávolítva    |    Ehelyett használja az [eszközök](intune-data-warehouse-collections.md#devices) és [devicePropertyHistories](intune-data-warehouse-collections.md#devicepropertyhistories) gyűjtemények `azureAdRegistered` tulajdonságát.                                                                                                                                                                                                             |
 |    clientRegistrationStateTypes        |    Eltávolítva    |    Használja helyette a [deviceRegistrationStates](intune-data-warehouse-collections.md#deviceregistrationstates) .                                                                                                                                                                                                                                                                             |
 |    currentUser                         |    Eltávolítva    |    Használja helyette a [felhasználók](intune-data-warehouse-collections.md#users) gyűjteményét.                                                                                                                                                                                                                                                                                                      |
-|    mdmDeviceInventoryHistories         |    Eltávolítva    |    A tulajdonságok többsége redundáns volt, vagy már a [devicePropertyHistories](intune-data-warehouse-collections.md#devicepropertyhistories) vagy az [eszközök](intune-data-warehouse-collections.md#devices) gyűjteményében is megtalálható. A két gyűjteményben még nem szereplő **mdmDeviceInventoryHistories** -tulajdonságok már nem érhetők el. Tekintse meg az alábbi részleteket.    |
+|    mdmDeviceInventoryHistories         |    Eltávolítva    |    A tulajdonságok többsége redundáns volt, vagy már a [devicePropertyHistories](intune-data-warehouse-collections.md#devicepropertyhistories) vagy az [eszközök](intune-data-warehouse-collections.md#devices) gyűjteményében is megtalálható. A két gyűjteményben még nem szereplő **mdmDeviceInventoryHistories** -tulajdonságok már nem érhetők el. A részleteket alább találja.    |
 
 A következő táblázat felsorolja a korábban a **mdmDeviceInventoryHistories** -gyűjteményben és a módosítás/csere során megtalált régi tulajdonságokat. A **mdmDeviceInventoryHistories** összes olyan tulajdonsága el lett távolítva, amely nem szerepel az alábbi listában.
 
@@ -55,7 +55,7 @@ A következő táblázat felsorolja a korábban a **mdmDeviceInventoryHistories*
 |    cellularTechnology          |    cellularTechnology az eszközök gyűjteményében                                     |
 |    deviceClientId              |    deviceId az eszközök gyűjteményében                                               |
 |    deviceManufacturer          |    gyártó az eszközök gyűjteményében                                           |
-|    deviceModel                 |    modell az eszközök gyűjteményében                                                  |
+|    DeviceModel                 |    modell az eszközök gyűjteményében                                                  |
 |    deviceName                  |    deviceName az eszközök gyűjteményében                                             |
 |    deviceOsPlatform            |    deviceTypeKey az eszközök gyűjteményében                                          |
 |    deviceOsVersion             |    osVersion a devicePropertyHistories-gyűjteményben                              |
@@ -105,8 +105,8 @@ A következő táblázat a [devicePropertyHistories](intune-data-warehouse-colle
 |    modell                         |    modell az eszközök gyűjteményében                                      |
 |    osFamily                      |    operatingSystem az eszközök gyűjteményében                            |
 |    osRevisionNumber              |    osVersion az eszközök gyűjteményében                                  |
-|    ProcessorArchitecture         |    Eltávolítva                                                          |
-|    ReferenceId                   |    azureAdDeviceId az eszközök gyűjteményében                            |
+|    processorArchitecture         |    Eltávolítva                                                          |
+|    referenceId                   |    azureAdDeviceId az eszközök gyűjteményében                            |
 |    serialNumber                  |    serialNumber az eszközök gyűjteményében                               |
 |    workplaceJoinStateKey         |    azureAdRegistered                                                |
 
@@ -130,8 +130,8 @@ A következő táblázat az [eszközök](intune-data-warehouse-collections.md#de
 |    lastPolicyUpdateUtc           |    Eltávolítva                                                          |
 |    mdmStatusKey                  |    complianceStateKey, hivatkozó complianceStates-gyűjtemény    |
 |    osFamily                      |    operatingSystem                                                  |
-|    ProcessorArchitecture         |    Eltávolítva                                                          |
-|    ReferenceId                   |    azureAdDeviceId                                                  |
+|    processorArchitecture         |    Eltávolítva                                                          |
+|    referenceId                   |    azureAdDeviceId                                                  |
 |    workplaceJoinStateKey         |    azureAdRegistered                                                |
 
 A következő táblázat a [enrollmentActivities](intune-data-warehouse-collections.md#enrollmentactivities) -gyűjteményben található tulajdonságok változásait sorolja fel: 

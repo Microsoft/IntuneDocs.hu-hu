@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 10/28/2019
+ms.date: 12/12/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,16 +16,14 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 381ceea979dedf9b33cb7ef9c47291e3ac6ce20c
-ms.sourcegitcommit: 737ad6c675deedfc6009f792023ff95981b06582
+ms.openlocfilehash: e73612080e52c8eb49a0c090b68e917e24fef3ab
+ms.sourcegitcommit: df8e2c052fafb2d5d4e9b4fcd831ae0ecf7f8d16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74117896"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74992955"
 ---
 # <a name="ios-and-ipados-device-settings-to-use-common-ios-features-in-intune"></a>iOS-és iPadOS-eszközök beállításai az Intune közös iOS-funkcióinak használatához
-
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
 Az Intune tartalmaz néhány beépített beállítást, amely lehetővé teszi, hogy az iOS-felhasználók különböző Apple-funkciókat használjanak az eszközön. A rendszergazdák például szabályozhatják, hogy az iOS-felhasználók hogyan használják a AirPrint-nyomtatókat, hogyan adhatnak hozzá alkalmazásokat és mappákat a kezdőképernyőn lévő dockhoz és lapokhoz, hogyan jeleníthetők meg az alkalmazás értesítései, megjelenjenek az eszköz címkéi adatai a zárolási képernyőn, egyszeri bejelentkezéses hitelesítés használata és felhasználók hitelesítése tanúsítványokkal.
 
@@ -48,7 +46,7 @@ Ez a cikk felsorolja ezeket a beállításokat, és leírja az egyes beállítá
 > Ügyeljen arra, hogy az összes nyomtatót ugyanahhoz a profilhoz adja. Az Apple megakadályozza, hogy több AirPrint-profil is megcélozza ugyanazt az eszközt.
 
 - **IP-cím**: adja meg a nyomtató IPv4-vagy IPv6-címét. Ha az állomásnevek használatával azonosítja a nyomtatókat, az IP-címet a nyomtató a terminálon való pingelésével érheti el. Az IP-cím és az elérési út (ebben a cikkben) beszerzése további részleteket tartalmaz.
-- **Elérési út**: az elérési út általában `ipp/print` a hálózaton lévő nyomtatókhoz. Az IP-cím és az elérési út (ebben a cikkben) beszerzése további részleteket tartalmaz.
+- **Elérési út**: az elérési út általában `ipp/print` a hálózatban lévő nyomtatókhoz. Az IP-cím és az elérési út (ebben a cikkben) beszerzése további részleteket tartalmaz.
 - **Port**: adja meg a AirPrint célhelyének figyelő portját. Ha üresen hagyja ezt a tulajdonságot, a AirPrint az alapértelmezett portot használja. Elérhető az iOS 11,0-es és újabb verzióiban.
 - **TLS**: válassza az **Engedélyezés** lehetőséget a AirPrint-kapcsolatok Transport Layer Security (TLS) használatával történő biztonságossá tételéhez. Elérhető az iOS 11,0-es és újabb verzióiban.
 
@@ -62,15 +60,15 @@ AirPrint-kiszolgálók hozzáadásához a következőket teheti:
 AirPrinter-kiszolgálók hozzáadásához szüksége lesz a nyomtató IP-címére, az erőforrás elérési útjára és a portra. Az alábbi lépések bemutatják, hogyan kérheti le ezeket az információkat.
 
 1. Olyan Mac gépen, amely ugyanahhoz a helyi hálózathoz (alhálózat) csatlakozik, mint a AirPrint-nyomtatók, nyissa meg a **terminált** (a **/Applications/Utilities alatt**).
-2. A terminálban írja be a `ippfind` értéket, majd kattintson az ENTER gombra.
+2. A terminálon írja be `ippfind`, majd válassza az ENTER billentyűt.
 
-    Jegyezze fel a nyomtató adatait. Előfordulhat például, hogy a `ipp://myprinter.local.:631/ipp/port1` értékhez hasonló értéket ad vissza. Az első rész a nyomtató neve. Az utolsó rész (`ipp/port1`) az erőforrás elérési útja.
+    Jegyezze fel a nyomtató adatait. Előfordulhat például, hogy a `ipp://myprinter.local.:631/ipp/port1`hoz hasonló értéket ad vissza. Az első rész a nyomtató neve. Az utolsó rész (`ipp/port1`) az erőforrás elérési útja.
 
-3. A terminálban írja be a `ping myprinter.local` értéket, majd kattintson az ENTER gombra.
+3. A terminálon írja be `ping myprinter.local`, majd válassza az ENTER billentyűt.
 
-   Jegyezze fel az IP-címet. Előfordulhat például, hogy a `PING myprinter.local (10.50.25.21)` értékhez hasonló értéket ad vissza.
+   Jegyezze fel az IP-címet. Előfordulhat például, hogy a `PING myprinter.local (10.50.25.21)`hoz hasonló értéket ad vissza.
 
-4. Használja az IP-cím és az erőforrás elérési útjának értékét. Ebben a példában az IP-cím `10.50.25.21`, az erőforrás elérési útja pedig `/ipp/port1`.
+4. Használja az IP-cím és az erőforrás elérési útjának értékét. Ebben a példában az IP-cím `10.50.25.21`, és az erőforrás elérési útja `/ipp/port1`.
 
 ## <a name="home-screen-layout"></a>A kezdőképernyő elrendezése
 
@@ -89,7 +87,7 @@ Az eszköz dockhoz legfeljebb **hat** elemet (az alkalmazások és a mappák egy
 - **Hozzáadás**: alkalmazások vagy mappák hozzáadása az eszközön lévő dockhoz.
 - **Típus**: adjon hozzá egy **alkalmazást** vagy egy **mappát**:
 
-  - **Alkalmazás**: válassza ezt a lehetőséget, ha alkalmazásokat szeretne hozzáadni a képernyőn lévő dockhoz. Be
+  - **Alkalmazás**: válassza ezt a lehetőséget, ha alkalmazásokat szeretne hozzáadni a képernyőn lévő dockhoz. Adja meg a következőt:
 
     - **Alkalmazás neve**: adja meg az alkalmazás nevét. A rendszer ezt a nevet használja a Azure Portalban való hivatkozáshoz. *Nem* jelenik meg az iOS-eszközön.
     - Alkalmazáscsomag- **azonosító**: adja meg az alkalmazás köteg-azonosítóját. További Példákért lásd a [beépített iOS-alkalmazások köteg-azonosítóit](bundle-ids-built-in-ios-apps.md) .
@@ -165,7 +163,7 @@ Ha a szabályzatot egy iPhone-hoz rendeli hozzá, az oldal az alábbi képhez ha
 
 ![iOS-eszköz módosított kezdőképernyővel](./media/ios-device-features-settings/Bd37PHa.png)
 
-## <a name="app-notifications"></a>Alkalmazás-értesítések
+## <a name="app-notifications"></a>Alkalmazásértesítések
 
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: automatikus eszközök beléptetése (felügyelt)
 
@@ -200,10 +198,10 @@ Ez a funkció az alábbiakra vonatkozik:
 
 - A **zárolási képernyő lábjegyzete**: Ha az eszköz elvesztése vagy ellopása történik, adjon meg egy olyan megjegyzést, amely segíthet a visszaadott eszköz beszerzésében. Megadhatja a kívánt szöveget. Például: `If found, call Contoso at ...`.
 
-  Az eszköz-jogkivonatok az eszközre vonatkozó információk hozzáadására is használhatók ezekhez a mezőkhöz. A sorozatszám megjelenítéséhez például írja be a következőt: `Serial Number: {{serialnumber}}`. A zárolási képernyőn a szöveg a következőhöz hasonlóan jelenik meg: `Serial Number 123456789ABC`. Változók beírásakor ügyeljen arra, hogy kapcsos zárójeleket használjon `{{ }}`. Az [alkalmazás-konfigurációs tokenek](../apps/app-configuration-policies-use-ios.md#tokens-used-in-the-property-list) tartalmazzák a használható változók listáját. A `deviceName` vagy bármely más, eszközre jellemző értéket is használhatja.
+  Az eszköz-jogkivonatok az eszközre vonatkozó információk hozzáadására is használhatók ezekhez a mezőkhöz. A sorozatszám megjelenítéséhez például írja be a következőt: `Serial Number: {{serialnumber}}`. A zárolási képernyőn a szöveg a `Serial Number 123456789ABC`hoz hasonlóan jelenik meg. Változók beírásakor ügyeljen arra, hogy kapcsos zárójeleket használjon `{{ }}`. Az [alkalmazás-konfigurációs tokenek](../apps/app-configuration-policies-use-ios.md#tokens-used-in-the-property-list) tartalmazzák a használható változók listáját. Használhatja `deviceName` vagy bármely más eszközre jellemző értéket is.
 
   > [!NOTE]
-  > A rendszer nem érvényesíti a változókat a felhasználói felületen, és megkülönbözteti a kis-és nagybetűket. Ennek eredményeképpen előfordulhat, hogy a profilok helytelen bevitelsel lettek mentve. Ha például `{{deviceid}}` helyett a `{{DeviceID}}` értéket adja meg, akkor az eszköz egyedi azonosítója helyett a literál sztring jelenik meg. Ügyeljen arra, hogy a helyes adatokat adja meg.
+  > A rendszer nem érvényesíti a változókat a felhasználói felületen, és megkülönbözteti a kis-és nagybetűket. Ennek eredményeképpen előfordulhat, hogy a profilok helytelen bevitelsel lettek mentve. Ha például `{{deviceid}}`helyett `{{DeviceID}}`t ad meg, akkor az eszköz egyedi azonosítója helyett a literál sztring jelenik meg. Ügyeljen arra, hogy a helyes adatokat adja meg.
 
 ## <a name="single-sign-on"></a>Egyszeri bejelentkezés
 
@@ -217,7 +215,7 @@ Ez a funkció az alábbiakra vonatkozik:
 
     Szükség esetén felülírhatja a tartományt is, ha beírja a kívánt tartománynevet a **Tartomány** szövegmezőbe.
 
-    A contoso például több régióval rendelkezik, például Európa, Ázsia és Észak-Amerika. A contoso szeretné, hogy az ázsiai felhasználók az egyszeri bejelentkezést használják, és az alkalmazásnak az UPN-t kell `username@asia.contoso.com` formátumban megadnia. Amikor kiválasztja az **egyszerű felhasználónév**lehetőséget, az egyes felhasználók tartománya az Azure ad-ből kerül, amely `contoso.com`. Így az ázsiai felhasználók esetében válassza az **egyszerű felhasználónév**lehetőséget, és írja be a `asia.contoso.com` értéket. A végfelhasználó UPN-je `username@asia.contoso.com` lesz, `username@contoso.com` helyett.
+    A contoso például több régióval rendelkezik, például Európa, Ázsia és Észak-Amerika. A contoso szeretné, hogy az ázsiai felhasználók az egyszeri bejelentkezést használják, és az alkalmazásnak az egyszerű felhasználónevet `username@asia.contoso.com` formátumban kell megadnia. Ha kijelöli az **egyszerű**felhasználónevet, a rendszer az egyes felhasználók tartományát az Azure ad-ből veszi, amely `contoso.com`. Az ázsiai felhasználók számára tehát válassza az **egyszerű felhasználónév**lehetőséget, és írja be `asia.contoso.com`. A végfelhasználó UPN-je `username@asia.contoso.com`válik `username@contoso.com`helyett.
 
   - **Intune-eszköz azonosítója**: az Intune automatikusan kiválasztja az Intune-eszköz azonosítóját.
 
@@ -234,15 +232,15 @@ Ez a funkció az alábbiakra vonatkozik:
   Ha egy felhasználó csatlakozik ezen webhelyekhez, az iOS-eszköz az egyszeri bejelentkezés hitelesítő adatait használja, és a felhasználónak nem kell hitelesítő adatokat megadnia. Ha a többtényezős hitelesítés engedélyezve van, akkor a felhasználóknak a második hitelesítést kell megadniuk.
 
   > [!NOTE]
-  > Ezeknek az URL-címeknek érvényes formátumú teljes tartományneveknek kell lenniük. Az Apple használatához a `http://<yourURL.domain>` formátumúnak kell lennie.
+  > Ezeknek az URL-címeknek érvényes formátumú teljes tartományneveknek kell lenniük. Az Apple megköveteli, hogy a `http://<yourURL.domain>` formátumban legyenek.
 
-  Az URL-egyeztetési mintáknak `http://` vagy `https://` előtaggal kell kezdődniük. Egy egyszerű karakterlánc-egyezés fut, így a `http://www.contoso.com/` URL-előtag nem egyezik meg `http://www.contoso.com:80/` értékkel. Az iOS 10,0-es vagy újabb verzióiban az összes egyező érték megadásához egyetlen helyettesítő karaktert \* lehet használni. Például `http://*.contoso.com/` a `http://store.contoso.com/` és a `http://www.contoso.com` értéknek felel meg.
+  Az URL-egyeztetési mintáknak `http://` vagy `https://` előtaggal kell kezdődniük. Egy egyszerű karakterlánc-egyezés fut, így a `http://www.contoso.com/` URL-előtag nem egyezik meg `http://www.contoso.com:80/`. Az iOS 10,0-es vagy újabb verzióiban az összes egyező érték megadására használhat egy helyettesítő karaktert \*. A `http://*.contoso.com/` például `http://store.contoso.com/` és `http://www.contoso.com`egyaránt megfelel.
 
-  A `http://.com` és a `https://.com` minták az összes HTTP-és HTTPS-URL-címet megegyeznek.
+  A `http://.com` és `https://.com` minták az összes HTTP-és HTTPS-URL-címet megegyeznek.
 
 - **Az egyszeri bejelentkezést használó alkalmazások**: **Adjon hozzá** olyan alkalmazásokat a végfelhasználók eszközeihez, amelyek használhatnak egyszeri bejelentkezést.
 
-  A `AppIdentifierMatches` tömbnek tartalmaznia kell az alkalmazáscsomag-azonosítóknak megfelelő karakterláncokat. Ezek a karakterláncok lehetnek pontos egyezések, például `com.contoso.myapp`, vagy a \* helyettesítő karakter használatával megadhatják a köteg AZONOSÍTÓjának előtag-egyezését. A helyettesítő karakternek egy pont karakter (.) után kell megjelennie, és csak egyszer szerepelhet a karakterlánc végén, például `com.contoso.*`. A helyettesítő karakter használatakor az összes olyan alkalmazás hozzáférést kap a fiókhoz, amelynek a kötegazonosítója a megadott előtaggal kezdődik.
+  A `AppIdentifierMatches` tömbnek tartalmaznia kell az alkalmazáscsomag-azonosítóknak megfelelő karakterláncokat. Ezek a karakterláncok lehetnek pontos egyezések (például `com.contoso.myapp`), vagy megadhat egy előtag-egyezést a köteg AZONOSÍTÓjában a \* helyettesítő karakter használatával. A helyettesítő karakternek egy pont karakter (.) után kell megjelennie, és csak egyszer szerepelhet a karakterlánc végén, például `com.contoso.*`. A helyettesítő karakter használatakor az összes olyan alkalmazás hozzáférést kap a fiókhoz, amelynek a kötegazonosítója a megadott előtaggal kezdődik.
 
   Az **Alkalmazásnév** elemnél megadhat egy felhasználóbarát nevet, amely alapján könnyebben felismeri a kötegazonosítót.
 
@@ -269,7 +267,7 @@ Ez a funkció az alábbiakra vonatkozik:
     - **Könyvjelző elérési útja**: az Apple módosította ezt a beállítást. Minden könyvjelző bekerül a **jóváhagyott helyek** mappába. A könyvjelzők nem jelennek meg a beírt könyvjelző elérési útjában.
     - **Title**: adjon meg egy leíró címet a könyvjelző számára.
 
-    Ha nem ad meg URL-címet, a végfelhasználók nem férhetnek hozzá a webhelyekhez, kivéve `microsoft.com`, `microsoft.net` és `apple.com`. Az Intune automatikusan engedélyezi ezeket az URL-címeket.
+    Ha nem ad meg URL-címet, a végfelhasználók a `microsoft.com`, a `microsoft.net`és a `apple.com`kivételével nem férhetnek hozzá a webhelyekhez. Az Intune automatikusan engedélyezi ezeket az URL-címeket.
 
 ## <a name="single-sign-on-app-extension"></a>Egyszeri bejelentkezési alkalmazás bővítménye
 
@@ -280,36 +278,43 @@ Ez a funkció az alábbiakra vonatkozik:
 
 ### <a name="settings-apply-to-all-enrollment-types"></a>A beállítások a következőre vonatkoznak: minden regisztrációs típus
 
-- **Egyszeri bejelentkezéses alkalmazás bővítményének típusa**: válassza ki a hitelesítő adatok egyszeri bejelentkezéses alkalmazás-bővítményének típusát. A választható lehetőségek:
+- **SSO-alkalmazás bővítményének típusa**: válassza ki az SSO-alkalmazás kiterjesztésének típusát. A választható lehetőségek:
 
-  - **Nincs konfigurálva**: az alkalmazás-bővítmények nem használatosak. Az alkalmazás-bővítmény letiltásához átválthatja az SSO-alkalmazás kiterjesztésének típusát a **Kerberos** vagy a **hitelesítő adatok** között, hogy **ne legyen konfigurálva**.
-  - **Hitelesítő adatok**: általános, testreszabható hitelesítőadat-alkalmazási bővítmény használata az egyszeri bejelentkezés végrehajtásához. Győződjön meg arról, hogy ismeri a szervezet SSO-alkalmazásának bővítmény-AZONOSÍTÓját.
+  - **Nincs konfigurálva**: az alkalmazás-bővítmények nem használatosak. Egy alkalmazás-bővítmény letiltásához átválthatja az SSO-alkalmazás kiterjesztésének típusát, hogy **ne legyen konfigurálva**.
+  - **Átirányítás**: általános, testreszabható átirányítási alkalmazás-bővítmény használata az egyszeri bejelentkezéshez modern hitelesítési folyamatokkal. Győződjön meg arról, hogy ismeri a szervezeti alkalmazás bővítményének AZONOSÍTÓját.
+  - **Hitelesítő adatok**: általános, testreszabható hitelesítőadat-alkalmazási bővítmény használata az egyszeri bejelentkezéshez a kérdés-válasz hitelesítési folyamatokkal. Győződjön meg arról, hogy ismeri a szervezeti alkalmazás bővítményének AZONOSÍTÓját.
   - **Kerberos**: az Apple beépített Kerberos-bővítményét használja, amely az iOS 13,0 (és újabb) és a iPadOS 13,0 (és újabb verziók) része. Ez a beállítás a **hitelesítőadat** -alkalmazás kiterjesztésének Kerberos-specifikus verziója.
 
   > [!TIP]
-  > A **hitelesítő adatok** típusával adja hozzá a saját konfigurációs értékeit, hogy áthaladjon a bővítményen. Ehelyett érdemes lehet az Apple által biztosított beépített konfigurációs beállításokat használni a **Kerberos** -típusban.
+  > Az **átirányítás** és a **hitelesítő adatok** típusával adja hozzá a saját konfigurációs értékeit, hogy áthaladjon a bővítményen. Ha **hitelesítő adatokat**használ, érdemes lehet az Apple által biztosított beépített konfigurációs beállításokat használni a **Kerberos** -típusban.
 
-- **BŐVÍTMÉNY azonosítója** (csak hitelesítő adatok): adja meg az SSO-alkalmazás kiterjesztését azonosító köteg-azonosítót, például `com.apple.extensiblesso`.
-- **Csoport azonosítója** (csak hitelesítő adatok): adja meg az egyszeri bejelentkezéses alkalmazás-bővítmény csoportjának azonosítóját. A csapat azonosítója az Apple által generált 10 karakteres alfanumerikus (számok és betűk) karakterlánc, például `ABCDE12345`. A csoport AZONOSÍTÓjának megadása nem kötelező.
+- **BŐVÍTMÉNY azonosítója** (átirányítás és hitelesítő adatok): adja meg az egyszeri bejelentkezéses alkalmazás kiterjesztését azonosító köteg azonosítóját, például `com.apple.extensiblesso`.
+
+- **Csoport azonosítója** (átirányítás és hitelesítő adatok): adja meg az SSO-alkalmazás bővítményének csapat-azonosítóját. A csoport azonosítója az Apple által generált 10 karakteres alfanumerikus (számok és betűk) karakterlánc, például `ABCDE12345`. A csoport AZONOSÍTÓjának megadása nem kötelező.
 
   [Keresse meg a csoport azonosítóját (az](https://help.apple.com/developer-account/#/dev55c3c710c) Apple webhelyének megnyitása), amely további információkat tartalmaz.
 
-- **Tartomány**: írja be a Kerberos-tartomány nevét. A tartománynevet tőkésíteni kell, például `CONTOSO.COM`. A tartománynév általában megegyezik a DNS-tartománynévvel, de minden nagybetűvel.
+- **Tartomány** (hitelesítő adat és Kerberos): adja meg a hitelesítési tartomány nevét. A tartománynevet tőkésíteni kell, például `CONTOSO.COM`. A tartománynév általában megegyezik a DNS-tartománynévvel, de minden nagybetűvel.
 
-- **Tartományok**: Itt adhatja meg az SSO-n keresztül hitelesíthető helyek tartomány-vagy állomásnevek nevét. Ha például a webhely `mysite.contoso.com`, akkor `mysite` az állomásnév, és a `contoso.com` a tartománynév. Ha a felhasználók bármelyik webhelyhez csatlakoznak, az alkalmazás-bővítmény kezeli a hitelesítési kihívást. Ez a hitelesítés lehetővé teszi a felhasználók számára a bejelentkezéshez a Face ID, a Touch ID vagy az Apple pincode/PIN-kód használatát.
+- **Tartományok** (hitelesítő adatok és Kerberos): adja meg az SSO-n keresztül hitelesíthető helyek tartomány-vagy állomásnevek nevét. Ha például a webhely `mysite.contoso.com`, akkor `mysite` az állomásnév, és a `contoso.com` a tartománynév. Ha a felhasználók bármelyik webhelyhez csatlakoznak, az alkalmazás-bővítmény kezeli a hitelesítési kihívást. Ez a hitelesítés lehetővé teszi a felhasználók számára a bejelentkezéshez a Face ID, a Touch ID vagy az Apple pincode/PIN-kód használatát.
 
   - Az egyszeri bejelentkezési alkalmazás bővítményének Intune-profiljainak minden tartományának egyedinek kell lennie. A tartományokat nem lehet megismételni a Bejelentkezési alkalmazás bővítményeinek egyik profiljában sem, még akkor is, ha különböző típusú egyszeri bejelentkezéses alkalmazás-bővítményeket használ.
   - Ezek a tartományok nem megkülönböztetik a kis-és nagybetűket
 
-- **További konfiguráció** (csak hitelesítő adatok): adja meg az egyszeri bejelentkezéshez szükséges további adatokat, amelyeket át kell adni az SSO-alkalmazás kiterjesztésének:
-  - **Konfigurációs kulcs**: adja meg a hozzáadni kívánt elem nevét, például `user name`.
-  - **Value Type (értéktípus**): adja meg az adattípust. A választható lehetőségek:
+- **URL-címek** (csak átirányítás): adja meg az identitás-szolgáltatók URL-előtagjait, amelyek nevében az átirányítási alkalmazás BŐVÍTMÉNYE egyszeri bejelentkezést hajt végre. Amikor a rendszer átirányítja a felhasználót az URL-címekre, az SSO-alkalmazás kiterjesztése beavatkozik, és a rendszer bekéri az egyszeri bejelentkezést.
+
+  - Az Intune egyszeri bejelentkezési alkalmazás-bővítmények profiljaiban szereplő összes URL-nek egyedinek kell lennie. Nem lehet tartományt megismételni az egyszeri bejelentkezéses alkalmazás-kiterjesztési profilban, még akkor is, ha különböző típusú egyszeri bejelentkezéses alkalmazás-bővítményeket használ.
+  - Az URL-címeknek http://vagy https://kell kezdődnie.
+
+- **További konfiguráció** (átirányítás és hitelesítő adatok): adja meg az egyszeri bejelentkezéshez szükséges további adatokat, amelyeket át kell adni az SSO-alkalmazás kiterjesztésének:
+  - **Kulcs**: adja meg a hozzáadni kívánt elem nevét, például `user name`.
+  - **Típus**: adja meg az adattípust. A választható lehetőségek:
 
     - Sztring
-    - Boolean: a **konfigurációs érték**mezőben adja meg a `True` vagy a `False` értéket.
+    - Boolean: a **konfigurációs érték**mezőben adja meg `True` vagy `False`.
     - Egész szám: a **konfigurációs érték**mezőbe írjon be egy számot.
     
-  - **Konfigurációs érték**: adja meg az adathalmazt.
+  - **Érték**: adja meg az adathalmazt.
 
   - **Hozzáadás**: válassza ki a konfigurációs kulcsok hozzáadásához.
 
@@ -322,12 +327,17 @@ Ez a funkció az alábbiakra vonatkozik:
   > - Ha több birodalmat használ, **engedélyezze** ezt a beállítást. Az alapértelmezett tartományként megadott **tartományi** értéket állítja be.
   > - Ha csak egy tartománya van, hagyja meg, hogy **nincs konfigurálva** (alapértelmezett).
 
-- **Egyszerű név** (csak Kerberos): adja meg a Kerberos-tag felhasználónevét. Nem kell belefoglalni a tartománynevet. Például `user@contoso.com`, `user` az egyszerű név, és a `contoso.com` a tartománynév.
+- **Egyszerű név** (csak Kerberos): adja meg a Kerberos-tag felhasználónevét. Nem kell belefoglalni a tartománynevet. `user@contoso.com`például `user` az egyszerű név, a `contoso.com` pedig a tartomány neve.
+
+  > [!TIP]
+  > - A egyszerű név változói az `{{ }}`kapcsos zárójelek megadásával is használhatók. A Felhasználónév megjelenítéséhez például írja be a következőt: `Username: {{username}}`. 
+  > - Azonban ügyeljen arra, hogy a változó behelyettesítése ne legyen érvényesítve a felhasználói felületen, és megkülönböztetik a kis-és nagybetűket. Ügyeljen arra, hogy a helyes adatokat adja meg.
+
 - **Active Directory Helykód** (csak Kerberos): adja meg annak a Active Directory helynek a nevét, amelyet a Kerberos-bővítménynek használnia kell. Előfordulhat, hogy nem kell módosítania ezt az értéket, mivel a Kerberos-bővítmény automatikusan megkeresi a Active Directory hely kódját.
 - **Gyorsítótár neve** (csak Kerberos): adja meg a Kerberos-gyorsítótár általános biztonsági szolgáltatásainak (GSS) nevét. Valószínűleg nem kell beállítania ezt az értéket.
 - Alkalmazáscsomag- **azonosítók** (csak Kerberos): **adja hozzá** az App Bundle-azonosítókat, amelyeknek egyszeri bejelentkezést kell használniuk az eszközökön. Ezek az alkalmazások hozzáférést kapnak a Kerberos-jegy biztosításához, a hitelesítési jegyet, és hitelesítik a felhasználókat a hozzáférésre jogosult szolgáltatásokhoz.
 - **Tartományi tartomány leképezése** (csak Kerberos): **adja** meg a tartományhoz HOZZÁRENDELNI kívánt tartományi DNS-utótagokat. Akkor használja ezt a beállítást, ha a gazdagépek DNS-nevei nem egyeznek a tartománynév nevével. Valószínűleg nem kell létrehoznia ezt az egyéni tartomány – tartomány társítást.
-- **PKINIT-tanúsítvány** (csak Kerberos): **válassza ki** a nyilvános kulcsú titkosítást a kezdeti hitelesítési (PKINIT) tanúsítványhoz, amely a Kerberos hitelesítő adatok felhasználói beavatkozás nélküli megújítására használható. A tanúsítványnak olyan PKCS vagy SCEP tanúsítványnak kell lennie, amelyet korábban az Intune-ba adott hozzá.
+- **PKINIT-tanúsítvány** (csak Kerberos): **válassza ki** a Kerberos-hitelesítéshez használható kezdeti hitelesítési (PKINIT) tanúsítvány nyilvános kulcsú titkosítását. Az Intune-ban hozzáadott [PKCS](../protect/certficates-pfx-configure.md) -vagy [SCEP](../protect/certificates-scep-configure.md) -tanúsítványok közül választhat. A tanúsítványokkal kapcsolatos további információkért lásd: [tanúsítványok használata a hitelesítéshez Microsoft Intune](../protect/certificates-configure.md).
 
 ## <a name="wallpaper"></a>Háttérkép
 

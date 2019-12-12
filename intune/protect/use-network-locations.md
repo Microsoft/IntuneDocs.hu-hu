@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 847ab759b697d402acb07d9c8d83d3a3ef9aaef2
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74058156"
 ---
 # <a name="use-locations-network-fence-in-intune"></a>Helyek (hálózati kerítés) használata az Intune-ban
@@ -30,7 +30,7 @@ Letilthatja a vállalati hálózathoz való hozzáférést, ha az eszköz elhagy
 
 Létrehozhat egy hálózati helyen alapuló megfelelőségi szabályzatot, amelyet másként hálózati kerítésnek is hívnak. A szabályzat biztosítja, hogy az eszköznek munkahelyi hálózathoz kelljen csatlakoznia a megfelelőséghez. Ez a szabályzat feltételes hozzáférési házirendekkel használható, így az eszközök *csak* akkor férhetnek hozzá a munkahelyi erőforrásokhoz, ha az eszköz csatlakoztatva van a munkahelyi hálózathoz. Ha az eszköz nem csatlakozik a munkahelyi hálózathoz, akkor nem megfelelő lesz, és nem fog tudni hozzáférni a munkahelyi erőforrásokhoz.
 
-Vegye figyelembe a következő helyzetet:
+Gondolkodjon el az alábbi megoldáson:
 
 A gyártási létesítményben néhány alkalmazott Android-eszközöket használ. Az alkalmazott kiviszi az Android-eszközt a létesítményből vagy üzemből. Az illetéktelen hozzáférés megakadályozásáért a következőket teheti:
 
@@ -54,7 +54,7 @@ Helyalapú megfelelőségi szabályzat létrehozásához tegye a következőket:
 
 2. Adja meg a következő tulajdonságokat:  
 
-   - Szükséges. Adja meg a hely **Név** mezejének értékét, például azt, hogy **Gyártási szint** vagy **44-es épület – biztonságos**.
+   - Kötelező megadni. Adja meg a hely **Név** mezejének értékét, például azt, hogy **Gyártási szint** vagy **44-es épület – biztonságos**.
    - Nem kötelező. Adjon meg egy **IPv4-tartományt** CIDR (Classless Interdomain Routing) jelöléssel, például: `aaa.bbb.ccc.ddd/n`.
    - Nem kötelező. Adja meg az **IPv4-átjáró** címét, például: `aaa.bbb.ccc.ddd`.
    - Nem kötelező. Adja meg az **IPv4 DHCP-kiszolgáló** címét, például: `aaa.bbb.ccc.ddd`.

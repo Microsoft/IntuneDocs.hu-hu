@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6e3219e32ef9bea838f0c19258d0b22a99083a12
-ms.sourcegitcommit: 1a22b8b31424847d3c86590f00f56c5bc3de2eb5
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74261565"
 ---
 # <a name="add-groups-to-organize-users-and-devices"></a>Csoportok hozzáadása a felhasználók és eszközök rendszerezéséhez
@@ -85,7 +85,7 @@ A következő típusú csoportokat veheti fel:
 > - Minden Android Enterprise-eszköz
 > - Minden iOS 11 és régebbi eszköz
 > - Marketing
-> - Emberi erőforrások (HR)
+> - Emberi erőforrások
 > - Az összes Charlotte-alkalmazott
 > - Minden WA-alkalmazott
 
@@ -103,7 +103,7 @@ A szervezet alapvető megfelelőségi követelményeinek létrehozásához létr
 
 A konfigurációs profilokkal kapcsolatos ajánlások és útmutatás: [házirendek társítása felhasználói csoportokhoz vagy](../configuration/device-profile-assign.md#user-groups-vs-device-groups) eszközcsoport- [javaslatokhoz](../configuration/device-profile-create.md#recommendations).
 
-## <a name="see-also"></a>Lásd még
+## <a name="see-also"></a>További információ
 
 - [Szerepköralapú hozzáférés-vezérlés (RBAC) Microsoft Intune](role-based-access-control.md)
 - [Az erőforrásokhoz való hozzáférés kezelése az Azure AD-csoportokkal](https://docs.microsoft.com/azure/active-directory/active-directory-manage-groups)

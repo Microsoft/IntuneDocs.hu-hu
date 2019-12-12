@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 96f6dc3d1a8f8589395cf49b3bb934adadf437a4
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 239dd8630eb361da8609e3a34eb2c9346a64dab0
+ms.sourcegitcommit: ec69e7ccc6e6183862a48c1b03ca6a3bf573f354
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72508509"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74907185"
 ---
 # <a name="troubleshoot-device-actions-in-intune"></a>Eszközök műveleteinek hibáinak megoldása az Intune-ban
 
@@ -32,7 +32,7 @@ A Microsoft Intune számos olyan műveletet tartalmaz, amelyek segítségével f
 ## <a name="bypass-activation-lock-action"></a>Aktiválási zár mellőzése művelet
 
 ### <a name="i-clicked-the-bypass-activation-lock-action-in-the-portal-but-nothing-happened-on-the-device"></a>Rákattintok a "megkerülés Aktiválási zár" műveletre a portálon, de semmi nem történt az eszközön.
-Ez a várt érték. A bypass Aktiválási zár művelet megkezdése után az Intune egy frissített kódot kér az Apple-től. Ha az eszköz a Aktiválási zár képernyőn látható, manuálisan írja be a kódot a PIN-kód mezőbe. Ez a kód 15 napig érvényes, ezért ügyeljen rá, hogy a törlés előtt kattintson a műveletre, és másolja a kódot.
+Ez a várható eredmény. A bypass Aktiválási zár művelet megkezdése után az Intune egy frissített kódot kér az Apple-től. Ha az eszköz a Aktiválási zár képernyőn látható, manuálisan írja be a kódot a PIN-kód mezőbe. Ez a kód 15 napig érvényes, ezért ügyeljen rá, hogy a törlés előtt kattintson a műveletre, és másolja a kódot.
 
 ### <a name="why-dont-i-see-the-bypass-activation-lock-code-in-the-hardware-overview-blade-of-my-ios-device"></a>Miért nem jelenik meg az iOS-eszköz hardver áttekintés paneljén a bypass Aktiválási zár kód?
 A legvalószínűbb ok a következők:
@@ -54,7 +54,7 @@ Nem. És nem kell megadnia a kötőjeleket.
 ## <a name="remove-devices-action"></a>Eszközök eltávolítása művelet
 
 ### <a name="how-do-i-tell-who-started-a-retirewipe"></a>Hogyan eldönteni, ki kezdte kivonni/törölni a kivonást?
-Nyissa meg az **Intune** > **eszközt** > **eszköz műveleteit** > a **kezdeményezett oszlop alapján** .
+A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)lépjen a **bérlői felügyelet** > a **naplók** > ellenőrizze a **kezdeményezett oszlop alapján** .
 Ha nem lát bejegyzést, a legvalószínűbb, hogy kezdeményezte a műveletet az eszköz felhasználója. Valószínűleg használták a Céges portál alkalmazást vagy a portal.manage.microsoft.com.
 
 ### <a name="why-wasnt-my-application-uninstalled-after-using-retire"></a>Miért nem távolította el az alkalmazást a kivonást követően?
@@ -63,13 +63,13 @@ Mivel nem tekintették felügyelt alkalmazásnak. Ebben a kontextusban egy felü
 - Az alkalmazás elérhetőként lett telepítve, majd a végfelhasználó telepíti a Céges portál alkalmazásból.
 
 ### <a name="why-is-wipe-grayed-out-for-android-enterprise-work-profile-devices"></a>Miért van szürkén kitörölve az androidos vállalati munkahelyi Profilos eszközökön?
-Ez a várt viselkedés. A Google nem engedélyezi a munkahelyi Profilos eszközök gyári alaphelyzetbe állítását a MDM-szolgáltatótól.
+Ez az elvárt működés. A Google nem engedélyezi a munkahelyi Profilos eszközök gyári alaphelyzetbe állítását a MDM-szolgáltatótól.
 
 ### <a name="why-can-i-sign-back-into-my-office-apps-after-my-device-was-retired"></a>Miért tudok újra bejelentkezni az Office-alkalmazásokba az eszköz kivonása után?
 Mivel az eszköz kivonása nem vonja vissza a hozzáférési jogkivonatokat. A feltételes hozzáférési szabályzatok segítségével csökkentheti ezt a feltételt.
 
 ### <a name="how-can-i-monitor-a-retirewipe-action-after-it-was-issued"></a>Hogyan figyelhető meg a kivonási/törlési művelet a kibocsátás után?
-Nyissa meg az **Intune** > **eszközt** > **eszköz műveleteit**.
+A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)lépjen a **bérlői felügyelet** > **naplók**elemre.
 
 ### <a name="why-do-wipes-sometimes-show-as-pending-indefinitely"></a>A törlési műveletek miért nem a határozatlan idejű függőben jelenjenek meg?
 Az eszközök az Alaphelyzetbe állítás elindítása előtt nem jelentik vissza az állapotukat az Intune szolgáltatásnak. Így a művelet függőként jelenik meg. Ha megerősítette a művelet sikerességét, törölje az eszközt a szolgáltatásból.

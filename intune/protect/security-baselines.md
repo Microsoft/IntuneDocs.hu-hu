@@ -17,10 +17,10 @@ ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1d3a2ce9e5a31e989452141a094b70b5e75cf464
-ms.sourcegitcommit: a7b479c84b3af5b85528db676594bdb3a1ff6ec6
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74409961"
 ---
 # <a name="use-security-baselines-to-configure-windows-10-devices-in-intune"></a>Biztonsági alapkonfigurációk használata a Windows 10-es eszközök Intune-ban való konfigurálásához
@@ -38,7 +38,7 @@ A különálló alaptípusok tartalmazhatják ugyanazokat a beállításokat, de
 > [!NOTE]
 > A Microsoft nem javasolja, hogy éles környezetben a biztonsági alapkonfigurációk előzetes verzióit használják. Az előzetes verziójú alapkonfiguráció beállításai az előzetes verzió során változhatnak.
 
-A biztonsági alapkonfigurációk segítségével teljes körű biztonságos munkafolyamattal rendelkezhet Microsoft 365 használatakor. Az előnyök többek között a következők:
+A biztonsági alapkonfigurációk segítségével teljes körű biztonságos munkafolyamattal rendelkezhet Microsoft 365 használatakor. Többek között a következő előnyöket kínálják:
 
 - A biztonsági alapkonfiguráció a biztonságot befolyásoló beállításokkal kapcsolatos ajánlott eljárásokat és javaslatokat tartalmazza. Az Intune-partnerek ugyanazzal a Windows biztonsági csoporttal rendelkeznek, amely csoportházirend biztonsági alapterveket hoz létre. Ezek az ajánlások az útmutató és a széleskörű tapasztalatok alapján érhetők el.
 - Ha még nem ismeri az Intune-t, és nem tudja, hol kezdjen hozzá, akkor a biztonsági alaptervek előnyt biztosítanak. Gyorsan létrehozhat és üzembe helyezhet egy biztonságos profilt, tudván, hogy segít megvédeni a szervezet erőforrásait és adatait.
@@ -182,7 +182,7 @@ A mentés után a rendszer azonnal újratelepíti az alaptervet a hozzárendelt 
    - **Alapkonfiguráció-módosítások elfogadása, de a meglévő beállítások megtartása** – ez a beállítás megőrzi a testreszabásokat az alapprofilban, és alkalmazza azokat a használni kívánt új verzióra.
    - **Alapkonfiguráció-módosítások elfogadása és a meglévő beállítások elvetése** – ez a lehetőség teljesen felülírja az eredeti profilt. A frissített profil az alapértelmezett értékeket fogja használni az összes beállításhoz.
 
-7. Válassza a **Küldés**lehetőséget. A profil frissítése a kiválasztott alapkonfigurációhoz, és az átalakítás befejezése után az alapkonfiguráció azonnal újratelepül a hozzárendelt csoportokba.
+7. Válassza a **Küldés** lehetőséget. A profil frissítése a kiválasztott alapkonfigurációhoz, és az átalakítás befejezése után az alapkonfiguráció azonnal újratelepül a hozzárendelt csoportokba.
 
 ### <a name="remove-a-security-baseline-assignment"></a>Biztonsági alapterv-hozzárendelés eltávolítása
 

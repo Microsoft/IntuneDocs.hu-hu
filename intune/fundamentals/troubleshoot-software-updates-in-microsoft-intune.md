@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7da927754971fb66a5d8442d0cdf18e0ebfbcd4a
-ms.sourcegitcommit: 78cebd3571fed72a3a99e9d33770ef3d932ae8ca
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74059080"
 ---
 # <a name="troubleshoot-software-updates-in-microsoft-intune"></a>A Microsoft Intune szoftverfrissítéseinek hibaelhárítása
@@ -37,7 +37,7 @@ Microsoft Intune ügyfelek a következő tünetek közül egyet vagy többet tap
 - Az eszközök magas CPU-kihasználtságot tapasztalnak.
 - Az alkalmazások lassan települnek az Intune-on keresztül.
 - A Microsoft Intune Center a következő hibaüzenetet jeleníti meg: `An error occurred while updating your computer. Error found: Code 0x800705b4`.
-- Az Intune felügyeleti konzol > csoportok > minden eszköz > állapota: `One or more agents that are installed on this computer have errors. The information for this computer may not be accurate or up-to-date.`
+- Az Intune felügyeleti konzolján > csoportok > minden eszköz > állapota a következőket mutatja: `One or more agents that are installed on this computer have errors. The information for this computer may not be accurate or up-to-date.`
 
 Ez a probléma akkor fordulhat elő, ha a felülírt frissítéseket (a frissítéseket egy másik frissítés váltja fel) nem utasította el egy hosszabb ideig. Bizonyos folyamatok, például az alkalmazások telepítése során a Windows az összes felülírt frissítést a sorban ellenőrzi, hogy a frissítések és azok utódai megfelelően legyenek leképezve. Ha a felülírt frissítések listája túl nagyra vált, az ellenőrzési feladat magas CPU-kihasználtságot okozhat a feldolgozási terhelés és a szükséges idő miatt. Ez a probléma elsősorban a Windows 7 rendszerű eszközöket érinti, mivel a Windows 7 rendszerhez elérhető nagy mennyiségű felülírt frissítés van. Előfordulhat, hogy az újabb operációs rendszerek nem rendelkeznek annyi rendelkezésre álló felváltott frissítéssel, és nem hajlamosak erre a hibára.
 

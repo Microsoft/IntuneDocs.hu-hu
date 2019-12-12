@@ -1,7 +1,7 @@
 ---
 title: Vállalati azonosítók hozzáadása az Intune-hoz
 titleSuffix: ''
-description: Ismerje meg, hogyan adhat hozzá vállalati azonosítókat (regisztrációs módszer, IMEI és sorozatszámok) a Microsoft Intune-bA.
+description: Megtudhatja, hogyan adhat hozzá vállalati azonosítókat (regisztrációs módszert, IMEI-t és sorozatszámokat) a Microsoft Intunehoz.
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c3d98a0e3c5bd2a5c11c9aa72d791306dfbe6578
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 4e1ee8ae54d81a050f3c8983269f40e8f61b5e75
+ms.sourcegitcommit: e75718ee6cf93c0e6c915f2776b785fe8db9f7e0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72503297"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74955473"
 ---
 # <a name="identify-devices-as-corporate-owned"></a>Eszközök azonosítása vállalati tulajdonúként
 
@@ -47,7 +47,7 @@ Intune-rendszergazdaként létrehozhat és importálhat egy olyan vesszővel tag
 
 Ez a funkció a következő platformokon támogatott:
 
-| Platform | IMEI-számok | Sorozatszámok |
+| Platfésm | IMEI-számok | Sorozatszámok |
 |---|---|---|
 | Windows | Támogatott (Windows Phone-telefon) | Nem támogatott |
 | iOS/macOS | Nem támogatott | Támogatott |
@@ -85,9 +85,7 @@ Ez a .csv- fájl egy szövegszerkesztőben megtekintve így jelenik meg:
 
 ### <a name="upload-a-csv-list-of-corporate-identifiers"></a>Céges azonosítók .csv-listájának feltöltése
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba, válassza az **eszközök beléptetése** > **vállalati eszközök azonosítói** > **Hozzáadás** > a **CSV-fájl feltöltése**lehetőséget.
-
-   ![A céges készülékazonosítók munkaterülete a Hozzáadás gomb kiemelésével](./media/corporate-identifiers-add/add-corp-id.png)
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431), válassza az **eszközök** > eszközök **regisztrálása** > **vállalati eszközök azonosítói** > **Hozzáadás** > **CSV-fájl feltöltése**lehetőséget.
 
 2. Az **Azonosítók hozzáadása** panelen adja meg az azonosító típusát: **IMEI** vagy **Sorozatszám**.
 
@@ -97,7 +95,7 @@ Ez a .csv- fájl egy szövegszerkesztőben megtekintve így jelenik meg:
 
 ## <a name="manually-enter-corporate-identifiers"></a>A céges azonosítók manuális megadása
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba, válassza az **eszközök beléptetése** > **vállalati eszközök azonosítói** > **Hozzáadás** manuálisan > az **ENTER billentyűt**.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431), válassza az **eszközök** > eszközök **regisztrálása** > **vállalati eszközök azonosítói** > **Hozzáadás** > **manuálisan**lehetőséget.
 
 2. Az **Azonosítók hozzáadása** panelen adja meg az azonosító típusát: **IMEI** vagy **Sorozatszám**.
 
@@ -107,11 +105,11 @@ Ez a .csv- fájl egy szövegszerkesztőben megtekintve így jelenik meg:
 
 A **Frissítés** elemre kattintva megtekintheti az új eszközazonosítókat.
 
-Az importált eszközöket nem mindig regisztrálja a rendszer. Emiatt az eszközök **Regisztrált** vagy **Nincs kapcsolat** állapotúak lehetnek. Utóbbi állapot azt jelenti, hogy az eszköz még nem lépett kapcsolatba az Intune szolgáltatással.
+Az importált eszközöket nem mindig regisztrálja a rendszer. Emiatt az eszközök **Regisztrált** vagy **Nincs kapcsolat** állapotúak lehetnek. Utóbbi állapot azt jelenti, hogy az eszköz még **nem lépett kapcsolatba** az Intune szolgáltatással.
 
 ## <a name="delete-corporate-identifiers"></a>Céges azonosítók törlése
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba, válassza az **eszközök beléptetése** > **vállalati eszközök azonosítói**lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431), válassza az **eszközök** > **eszközök regisztrálása** > **vállalati eszközök azonosítói**lehetőséget.
 2. Válassza ki a törölni kívánt eszközazonosítókat, majd kattintson a **Törlés** gombra.
 3. Hagyja jóvá a törlést.
 
@@ -125,7 +123,7 @@ Az IMEI-azonosítók részletes specifikációját a [3GGPP TS 23.003](https://p
 Az Intune-ban az eszközök tulajdonságai között mindegyik eszközbejegyzésnél szerepel a **Tulajdonos**. Rendszergazdaként megadhatja, hogy az adott eszköz **Személyes** vagy **Céges**. Ha az eszköz tulajdonosi típusa személyesről Vállalatire változik, az Intune az adott eszközről korábban összegyűjtött összes alkalmazási adatot 7 napon belül törli. Ha alkalmazható, az Intune törli a rekordban szereplő telefonszámot is. 
 
 **Eszköz tulajdonosának módosítása:**
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba, lépjen az **eszközök** pontra, és válassza ki az eszközt.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431), válassza az **eszközök** > **minden eszköz** lehetőséget, > Válassza ki az eszközt.
 2. Válassza a **Tulajdonságok** lehetőséget.
 3. Adja meg az **Eszköz tulajdonosa** beállításnál, hogy az eszköz **Személyes** vagy **Céges**.
 

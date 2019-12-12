@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5a7e58fc0ceafe428646b631c55c42a6d2b119e4
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 2d9fbbbb80cf25861b2e0afbf3d01cfca3ece5fd
+ms.sourcegitcommit: df8e2c052fafb2d5d4e9b4fcd831ae0ecf7f8d16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74832658"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74991764"
 ---
 # <a name="remove-devices-by-using-wipe-retire-or-manually-unenrolling-the-device"></a>Eszközök eltávolítása összes adatuk törlésével, az eszköz kivonásával vagy regisztrációja manuális törlésével
 
@@ -47,7 +47,7 @@ Az **Összes adat törlése** művelet visszaállítja az eszközön az alapért
 
 A **Regisztrációs állapot és felhasználói fiók megtartása** lehetőség csak a Windows 10 1709-es vagy újabb verziók esetében érhető el.
 
-A **védett törlés végrehajtása** beállítás megadásával gondoskodhat arról, hogy az eszköz kikapcsolásával ne legyen kijátszható a törlési művelet. A védett adatok törlésével a rendszer addig próbálkozik az eszköz alaphelyzetbe állításával. Bizonyos konfigurációk esetében ez a művelet nem tud újraindítani a thedevice.
+A **védett törlés végrehajtása** beállítás megadásával gondoskodhat arról, hogy az eszköz kikapcsolásával ne legyen kijátszható a törlési művelet. A védett adatok törlésével a rendszer addig próbálkozik az eszköz alaphelyzetbe állításával. Bizonyos konfigurációk esetében ez a művelet nem tudja újraindítani az eszközt.
 
 A rendszer újra alkalmazza az MDM-szabályzatokat az eszköz következő Intune-csatlakozásakor.
 
@@ -59,7 +59,7 @@ Az összes adat törlését akkor érdemes használni, ha szeretne alaphelyzetbe
 3. Válassza az **Eszközök** > **Minden eszköz** lehetőséget.
 4. Válassza ki az eszköz nevét, amelyen az összes adatot törölni szeretné.
 5. Az eszköz nevét megjelenítő panelen válassza az **Összes adat törlése** lehetőséget.
-6. A Windows 10 1709-es vagy újabb verziója esetén rendelkezésre áll a **Regisztrációs állapot és felhasználói fiók megtartása** lehetőség is. 
+6. A Windows 10 1709-es vagy újabb verziója esetén a **Törlés eszköz is megmarad, de a regisztrációs állapot és a társított felhasználói fiók lehetőség is megtartható** . 
     
     |Meg lesz őrizve az összes adat törlése során |Nem őrződik meg|
     | -------------|------------|

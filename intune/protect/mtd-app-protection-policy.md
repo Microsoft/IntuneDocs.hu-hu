@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 48dc7de86965741d8ed42bd5a5f29f72ae66d4f3
-ms.sourcegitcommit: 13fa1a4a478cb0e03c7f751958bc17d9dc70010d
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/19/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74188498"
 ---
 # <a name="create-mobile-threat-defense-app-protection-policy-with-intune"></a>Mobile Threat Defense-alkalmazás védelmi szabályzatának létrehozása az Intune-nal
@@ -61,7 +61,7 @@ Az [iOS/iPadOS vagy Android rendszerhez készült alkalmazás-védelmi szabályz
 
   A **művelet**lehetőségei:
 
-  - **Fájlhozzáférés**
+  - **Hozzáférés letiltása**
   - **Adatok törlése**
 
 - **Hozzárendelések**: rendelje hozzá a szabályzatot a felhasználók csoportjaihoz.  A csoport tagjai által használt eszközök az Intune app Protection használatával értékelik a vállalati adatelérést a megcélozott alkalmazásokban.

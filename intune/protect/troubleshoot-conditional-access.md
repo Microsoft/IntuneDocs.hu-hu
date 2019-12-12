@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c662de98ffa497c5fbc89ac1b78ed8537ff0d80c
-ms.sourcegitcommit: 88b6e6d70f5fa15708e640f6e20b97a442ef07c5
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/02/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71729231"
 ---
 # <a name="troubleshoot-conditional-access"></a>A feltételes hozzáférés hibaelhárítása
@@ -42,7 +42,7 @@ A feltételes hozzáférés működéséhez az alábbi követelményeknek kell t
 
 - A felhasználónak és az eszköznek is meg kell felelnie az Intune-ban hozzájuk rendelt megfelelőségi szabályzatoknak.
 
-- Alapértelmezés szerint lennie kell egy, a felhasználóhoz hozzárendelt eszközmegfelelőségi szabályzatnak. Ez a beállítás attól függően változhat, hogy az eszközök az Intune felügyeleti portálon az **eszköz megfelelőségének** > **megfelelőségi szabályzatának beállításai** alatt a **megfelelőségi szabályzattal nem rendelkező eszközöket** jelölte-e meg.
+- Alapértelmezés szerint lennie kell egy, a felhasználóhoz hozzárendelt eszközmegfelelőségi szabályzatnak. Ez a beállítás attól függ, hogy az eszközök az Intune felügyeleti portálon az **eszköz megfelelősége** > **megfelelőségi** szabályzata beállításnál megadott **megfelelőségi házirend nélkül legyenek megjelölve** .
 
 - Az eszközön aktiválni kell az Exchange ActiveSync protokollt, ha a felhasználó nem az Outlookot, hanem az eszköz natív levelezőprogramját használja. Ez automatikusan történik az iOS, a Windows Phone-telefon és az Android Knox rendszerű eszközök esetén.
 
@@ -93,7 +93,7 @@ Az egyes eszközökre vonatkozó feltételek megtekinthetők az Azure Portalon, 
 
 ## <a name="devices-are-noncompliant-but-users-are-not-blocked"></a>Az eszközök nem megfelelőek, de a felhasználók nincsenek letiltva
 
-- Windows rendszerű számítógépek esetén a feltételes hozzáférés csak a natív e-mail-alkalmazást, az Office 2013-et és a modern hitelesítést, vagy az Office 2016 blokkolja. Az Outlook korábbi verzióinak vagy a Windows rendszerű számítógépeken lévő összes levelezési alkalmazás blokkolása a HRE és a Active Directory összevonási szolgáltatások (AD FS) (AD FS) konfigurációt igényli a [SharePoint Online és az Exchange Online beállításaként Azure Active Directory feltételes Hozzáférés](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-no-modern-authentication).
+- Windows rendszerű számítógépek esetén a feltételes hozzáférés csak a natív e-mail-alkalmazást, az Office 2013-et és a modern hitelesítést, vagy az Office 2016 blokkolja. Az Outlook korábbi verzióinak, illetve a Windows rendszerű számítógépeken futó összes levelezési alkalmazásnak az HRE és a Active Directory összevonási szolgáltatások (AD FS) (AD FS) konfigurációkat kell megkövetelni a [SharePoint Online és az Exchange Online Azure Active Directory feltételes hozzáférés beállításakor](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-no-modern-authentication).
 
 - Ha egy kiválasztott eszköz összes adatát törli vagy kivonja azt az Intune felügyelete alól, a kivonást követően még több órán keresztül rendelkezhet hozzáféréssel. Ennek az az oka, hogy az Exchange hat órán keresztül gyorsítótárazza a hozzáférési jogosultságokat. Ebben az esetben érdemes más adatvédelmi megoldást keresnie a kivont eszközökre.
 
@@ -110,7 +110,7 @@ Ha egy eszköz nem megfelelő, de továbbra is rendelkezik hozzáféréssel, vé
 - Gondoskodjon az eszköz felderítéséről. Az Exchange Connector egy Exchange 2010-es CAS-kiszolgálóra mutat, a felhasználó pedig egy Exchange 2013-kiszolgálón van? Ebben az esetben, ha az alapértelmezett Exchange-szabály az Engedélyezés, az Intune nem észleli az eszköz kapcsolatát az Exchange szolgáltatással, még akkor sem, ha a felhasználó a célcsoportban van.
 
 - Ellenőrizze az eszköz meglétét/hozzáférési állapotát az Exchange-ben:
-  - Ezzel a PowerShell-parancsmaggal lekérheti a postaláda összes mobileszközjának listáját: "Get-ActiveSyncDeviceStatistics-Mailbox MBX". Ha az eszköz nem szerepel a listán, akkor nem fér hozzá az Exchange-hez.
+  - Ezzel a PowerShell-parancsmaggal lekérheti a következő postaláda összes mobileszköz-listáját: "Get-ActiveSyncDeviceStatistics-Mailbox MBX". Ha az eszköz nem szerepel a listán, akkor nem fér hozzá az Exchange-hez.
   
   - Ha az eszköz szerepel a felsorolásban, használja a "Get-CASmailbox-Identity:" UPN-t "| a FL parancsmaggal részletes információkat kaphat a hozzáférési állapotáról, és megadhatja a Microsoft ügyfélszolgálata.
 

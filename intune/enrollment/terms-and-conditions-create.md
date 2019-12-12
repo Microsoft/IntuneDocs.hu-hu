@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0718fae09228b9359b073901f3a344a09a6176e7
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 3fb5818609763753878fec7a84fd8c19eb154f88
+ms.sourcegitcommit: e75718ee6cf93c0e6c915f2776b785fe8db9f7e0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72509248"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74955439"
 ---
 # <a name="terms-and-conditions-for-user-access"></a>Felhasználói hozzáférés használati feltételei
 
@@ -46,31 +46,30 @@ Ha szeretné megtudni, hogy melyik módszer a legmegfelelőbb, tekintse meg a [s
 ## <a name="create-terms-and-conditions"></a>Használati feltételek létrehozása
 Az alábbi lépések végrehajtásával hozhat létre használati feltételeket. A megjelenítendő név és leírás adminisztrációs célt szolgál, míg a feltételek tulajdonságait a felhasználók láthatják a Céges portálon.
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Válassza az **Intune** panelen az **Eszközregisztráció** > **Feltételek és kikötések** lehetőséget.
-3. Válassza a **Létrehozás** lehetőséget.
-4. Az **alapok** lapon a következő információkat kell megadni:
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431), válassza a **bérlői felügyelet** > **használati**feltételek elemet.
+2. Válassza a **Létrehozás** lehetőséget.
+3. Az **alapok** lapon a következő információkat kell megadni:
 
    - **Name (név**): a Azure Portalban szereplő feltételek neve. A felhasználók nem látják ezt a nevet.
    - **Leírás**: További részletek, amelyek alapján könnyebben felismerhető az adott feltételkészlet az Azure Portalon.
 
     ![A feltételek és kikötések alapismeretek lapját bemutató Azure Portal képernyőképe](./media/terms-and-conditions-create/terms-basics-page.png)
 
-5. A **tovább** gombra kattintva lépjen a **feltételek** lapra, és adja meg a következő információkat:
+4. A **tovább** gombra kattintva lépjen a **feltételek** lapra, és adja meg a következő információkat:
 
    - **Cím**: a felhasználóknak ez jelenik meg a Céges portálon az **Összegzés** fölött.
    - **Használati feltételek**: Azok a használati feltételek, amelyeket a felhasználók látnak, és amelyek elfogadása vagy elutasítása kötelező.
    - **Feltételek összefoglalása**: Ez a szöveg ismerteti, hogy mi történik, ha a felhasználók elfogadják a feltételeket. Például: „Az eszköz regisztrálásával Ön elfogadja a Contoso által meghatározott használati feltételeket. Folytatás előtt figyelmesen olvassa el a feltételeket.”
 
-6. A **tovább** gombra kattintva nyissa meg a **hatókör címkék** lapot.
+5. A **tovább** gombra kattintva nyissa meg a **hatókör címkék** lapot.
 
-7. Válassza a **hatókör címkék kiválasztása**lehetőséget, válassza ki a feltételeket és kikötéseket hozzárendelni kívánt hatóköri címkéket, majd válassza a **kiválasztás**lehetőséget. 
+6. Válassza a **hatókör címkék kiválasztása**lehetőséget, válassza ki a feltételeket és kikötéseket hozzárendelni kívánt hatóköri címkéket, majd válassza a **kiválasztás**lehetőséget. 
 
-8. A **tovább** gombra kattintva lépjen a **hozzárendelések** lapra, és válassza az alábbi lehetőségek egyikét a **hozzárendeléshez**:
+7. A **tovább** gombra kattintva lépjen a **hozzárendelések** lapra, és válassza az alábbi lehetőségek egyikét a **hozzárendeléshez**:
     - **Minden felhasználó**: válassza ezt a lehetőséget a feltételek és kikötések minden felhasználóhoz való hozzárendeléséhez.
     - **Csoportok kiválasztása**: válassza ezt a lehetőséget, ha a feltételeket és kikötéseket az Ön által azonosított csoportokban mindenki számára szeretné hozzárendelni, **válassza a csoportok kiválasztása lehetőséget**.
 
-9. Válassza a **következő** > **Létrehozás**elemet.
+8. Válassza a **következő** > **Létrehozás**elemet.
 
 ## <a name="see-how-terms-are-displayed-to-your-users"></a>A felhasználóknak megjelenő feltételek megtekintése
 Az alábbi példában látható, hogyan jelenik meg a **Cím** és a **Feltételek összefoglalása** a felügyeleti konzolon és a Céges portálon.
@@ -84,8 +83,7 @@ Az alábbi példában látható, hogyan jelennek meg a használati feltételek a
 
 ## <a name="monitor-terms-and-conditions"></a>A használati feltételek figyelése
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba. 
-1. Válassza az Intune panelen az **Eszközregisztráció** > **Feltételek és kikötések** lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431), válassza a **bérlői felügyelet** > **használati**feltételek elemet.
 2. A használati feltételek listájában válassza ki azokat a feltételeket, amelyeknél meg szeretné tekinteni az elfogadást, majd válassza az **Elfogadási jelentés** lehetőséget.
 
 ## <a name="work-with-multiple-versions-of-terms-and-conditions"></a>A használati feltételek több változatának használata
@@ -95,12 +93,10 @@ Szerkesztheti a használati feltételeket, és felügyelheti verzióikat. Minden
 
 Tartsa meg az aktuális verziószámot, ha például az elírásokat javítja vagy megváltoztatja a formázást.
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431), válassza a **bérlői felügyelet** > **használati** feltételek > Válassza ki azokat a feltételeket és kikötéseket, amelyeket módosítani kíván > **tulajdonságai**között.
 
-2. Az Intune panelen válassza az **Eszközök beléptetése** > **Feltételek és kikötések** lehetőséget, válassza ki a módosítani kívánt használati feltételeket, majd válassza a **Tulajdonságok** lehetőséget.
+2. A **Tulajdonságok** panelen válassza a **Feltételek és kikötések** lehetőséget, majd szükség szerint módosítsa a **Cím**, a **Feltételek összefoglalása** és a **Feltételek és kikötések** szövegét. Ha a módosítások miatt a felhasználóknak újra el kell fogadniuk a feltételeket, válassza a **Kérje a felhasználóktól az újbóli elfogadást, és növelje a verziószámot a következőre** lehetőséget.
 
-4. A **Tulajdonságok** panelen válassza a **Feltételek és kikötések** lehetőséget, majd szükség szerint módosítsa a **Cím**, a **Feltételek összefoglalása** és a **Feltételek és kikötések** szövegét. Ha a módosítások miatt a felhasználóknak újra el kell fogadniuk a feltételeket, válassza a **Kérje a felhasználóktól az újbóli elfogadást, és növelje a verziószámot a következőre** lehetőséget.
-
-4. Válassza az **OK** > **Mentés** gombokat.
+3. Válassza az **OK** > **Mentés** gombokat.
 
 A használati feltételeket csak egyszer kell elfogadni, a több eszközzel bíró felhasználóknak tehát nem kell ezt megtenniük minden eszközön.

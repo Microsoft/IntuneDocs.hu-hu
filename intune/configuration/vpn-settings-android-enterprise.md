@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d9f52d3a7c40f27555a07682adf86b0339cef616
-ms.sourcegitcommit: 9013f7442bbface78feecde2922e8e546a622c16
+ms.openlocfilehash: 647e8869caf24638f6809479274dbf7a7b967b9e
+ms.sourcegitcommit: f5108039f0ade52e95ea3ac1da1aa16d02224af3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72491930"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74946631"
 ---
 # <a name="android-enterprise-device-settings-to-configure-vpn-in-intune"></a>Androidos vállalati eszközbeállítások a VPN konfigurálásához az Intune-ban
 
@@ -31,6 +31,9 @@ Ez a cikk felsorolja és leírja a VPN-kapcsolatoknak az Android rendszerű eszk
 Intune-rendszergazdaként VPN-beállításokat hozhat létre és rendelhet hozzá az Android Enterprise-eszközökhöz. 
 
 Ha többet szeretne megtudni a VPN-profilokról az Intune-ban, lásd: [VPN-profilok](vpn-settings-configure.md).
+
+> [!NOTE]
+> Az Always-On VPN konfigurálásához létre kell hoznia egy VPN-profilt, és létre kell hoznia egy [eszköz-korlátozási](device-restrictions-android-for-work.md#connectivity) profilt is, amely az Always-On VPN-beállítást konfigurálja.
 
 ## <a name="before-you-begin"></a>Előkészületek
 

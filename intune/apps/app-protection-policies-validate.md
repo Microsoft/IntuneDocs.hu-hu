@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e9c3e775773ab08721cb3a65858f3d8c8402104f
-ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74563736"
 ---
 # <a name="how-to-validate-your-app-protection-policy-setup-in-microsoft-intune"></a>Az alkalmazás-védelmi szabályzat beállításának érvényesítése Microsoft Intune
@@ -61,6 +61,6 @@ A felhasználói állapotnak megfelelően az alábbi műveleteket hajthatja vég
 - [Mi az Intune alkalmazásvédelmi szabályzata?](app-protection-policies.md)
 - [Az Intune-t tartalmazó licencek](../fundamentals/licenses.md)
 - [Licencek kiosztása a felhasználók számára, hogy regisztrálni tudják az eszközöket az Intune-ban](../fundamentals/licenses-assign.md)
-- [Az alkalmazás-védelmi szabályzat beállításának ellenőrzése](app-protection-policies-validate.md)
+- [Alkalmazásvédelmi szabályzatbeállítások érvényesítése](app-protection-policies-validate.md)
 - [Az alkalmazás-védelmi szabályzatok figyelése](app-protection-policies-monitor.md)
 

@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0e4f8768129ab035b4a935a900f62ab6f3379edd
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 46012b11cdb458243658e858b53c2dfb1a69dc88
+ms.sourcegitcommit: df8e2c052fafb2d5d4e9b4fcd831ae0ecf7f8d16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74832640"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74991804"
 ---
 # <a name="troubleshoot-windows-device-enrollment-problems-in-microsoft-intune"></a>A Windows-eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune
 
@@ -205,7 +205,7 @@ Hiba: "probléma történt. A szervezet nem támogatja a Windows ezen verziójá
 #### <a name="resolution"></a>Megoldás
 A probléma önálló Intune-környezetben való kijavításához kövesse az alábbi lépéseket: 
  
-1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza ki az **eszközök** > a **regisztrációs korlátozásokat** > válasszon egy eszköz típus eszközkorlátozási.    
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > a **regisztrációs korlátozásokat** > válasszon egy eszköz típusú korlátozást.    
 2. Válassza a **tulajdonságok** > **Szerkesztés** (a **platform beállításai**mellett) > a **Windows (Mdm)** **engedélyezése lehetőséget** .    
 3. Kattintson a **felülvizsgálat + mentés**gombra.    
  

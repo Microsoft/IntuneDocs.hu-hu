@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 83f0d980bc4fa1bfd0b48f87839fd6efa130aa70
-ms.sourcegitcommit: 73b362173929f59e9df57e54e76d19834f155433
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74563873"
 ---
 # <a name="set-up-intune-enrollment-of-android-enterprise-dedicated-devices"></a>Androidos vállalati dedikált eszközök Intune-regisztrációjának beállítása
@@ -35,7 +35,7 @@ Az Intune segítségével alkalmazásokat és beállításokat telepíthet az an
 
 Az ezen a módon felügyelt eszközök felhasználói fiók nélkül vannak regisztrálva az Intune-ban, és egyetlen végfelhasználóhoz sincsenek hozzárendelve. Nem rendeltetésük olyan személyes használatra szánt, vagy sok felhasználóspecifikus adatot igénylő alkalmazások futtatása, mint az Outlook vagy a Gmail.
 
-## <a name="device-requirements"></a>Eszközre vonatkozó követelmények
+## <a name="device-requirements"></a>Eszközkövetelmények
 
 Az eszközöknek meg kell felelniük az alábbi követelményeknek, amelyeket androidos vállalati dedikált eszközként kell kezelni:
 

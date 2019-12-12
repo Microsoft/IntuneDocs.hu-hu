@@ -17,10 +17,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 744277b0e49a4e3ca8b0fa3bac43c666110bb8a3
-ms.sourcegitcommit: a7b479c84b3af5b85528db676594bdb3a1ff6ec6
+ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74410351"
 ---
 # <a name="troubleshoot-bitlocker-policies-in-microsoft-intune"></a>A Microsoft Intune BitLocker-házirendjeinek hibáinak megoldása
@@ -190,7 +190,7 @@ A **házirend jelen van, de nem minden beállítás sikeresen konfigurálva** �
   > [!NOTE]
   > A TPM állapotát a **TPM. msc** parancs futtatásával is megtekintheti az eszközön.
 
-## <a name="summary"></a>Összegzés
+## <a name="summary"></a>Összefoglalás
 
 Ha elhárítja az Intune-nal kapcsolatos BitLocker-házirendekkel kapcsolatos problémákat, és ellenőrizheti, hogy a házirend eléri-e a kívánt eszközt, nyugodtan feltételezheti, hogy a probléma nem kapcsolódik közvetlenül az Intune-hoz. A probléma valószínűleg a Windows operációs rendszer vagy a hardver problémája. Ebben az esetben kezdjen más területeken, például a TPM-konfigurációval vagy az UEFI-vel és a biztonságos rendszerindítással.
 

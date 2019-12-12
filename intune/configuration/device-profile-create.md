@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 12/04/2019
+ms.date: 12/05/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b1d6b88b2ff6404f6c60a1c27c167c0721fa82bf
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 71f2bc855673b6b189ed7581b979527485e86083
+ms.sourcegitcommit: 66e284fe092e19c1da72b4b770e45bf25ac7910c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 12/05/2019
-ms.locfileid: "74832596"
+ms.locfileid: "74860383"
 ---
 # <a name="create-a-device-profile-in-microsoft-intune"></a>Eszközprofil létrehozása a Microsoft Intune-ban
 
@@ -93,7 +93,7 @@ Ez a cikk:
 
 ## <a name="scope-tags"></a>Hatókörcímkék
 
-A beállítások hozzáadása után hozzáadhat egy hatókör-címkét is a profilhoz. A hatókör-címkék meghatározott csoportokra, például HR-re vagy az összes US-NC-alkalmazottakra vonatkozó házirendeket oszthatnak ki és szűrhetik.
+A beállítások hozzáadása után hozzáadhat egy hatókör-címkét is a profilhoz. A hatókör címkéi a profilokat meghatározott informatikai csoportokra (például `US-NC IT Team` vagy `JohnGlenn_ITDepartment`) szűrik.
 
 További információ a hatóköri címkékről és a műveletekről: [a RBAC és a hatókör-címkék használata a terjesztéshez](../fundamentals/scope-tags.md).
 
