@@ -213,7 +213,7 @@ A probléma megoldásához az Intune-nal és a Configuration Managertel rendelke
 1. Nyissa meg a Configuration Manager-konzolt.    
 2. Válassza az **Adminisztráció**, majd a **Cloud Services**lehetőséget.    
 3. Kattintson a jobb gombbal **Microsoft Intune előfizetésre**, majd válassza a **platformok konfigurálása > Windows**lehetőséget.    
-4. Jelölje be a **Windows-regisztráció engedélyezése** ** >  > ** **OK gombra**.  
+4. Jelölje be a **Windows-regisztráció engedélyezése** > **ok** > **gombra**.  
 
 
 ### <a name="a-setup-failure-has-occurred-during-bulk-enrollment"></a>Telepítési hiba történt a csoportos regisztráció során.
