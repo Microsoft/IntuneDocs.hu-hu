@@ -15,16 +15,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1f90a5a13859ff19765e22444a84b9c11405af73
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: df5fb0ba370bff4f5ec99852484dfb1fd2cc9f60
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74059505"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75206499"
 ---
 # <a name="windows-holographic-for-business-device-settings-to-allow-or-restrict-features-using-intune"></a>Windows holografikus for Business-eszköz beállításai az Intune-t használó szolgáltatások engedélyezéséhez vagy korlátozásához
 
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
+
 
 Ez a cikk felsorolja és ismerteti a Windows holografikus for Business-eszközök, például a Microsoft Hololens által szabályozható beállítások különböző beállításait. A mobileszköz-kezelési (MDM) megoldás részeként ezekkel a beállításokkal engedélyezheti vagy letilthatja a szolgáltatásokat, vezérelheti a biztonságot és egyebeket.
 
@@ -101,7 +101,7 @@ Adja meg a következő beállításokat:
 
     Nyilvános környezetben működő, automatikus bejelentkezésű kioszkeszköz esetében ajánlott a legalacsonyabb szintű hozzáféréssel rendelkező felhasználótípust (például egyszerű helyi felhasználó fiókot) választania. Ha Azure Active Directory- (AD-) fiókot kíván konfigurálni a kioszkmódhoz, használja az `AzureAD\user@contoso.com` formátumot.
 
-- **Alkalmazás felhasználói modell azonosítója (AUMID)** : adja meg a KIOSZK alkalmazás AUMID. További információkat a [Find the Application User Model ID of an installed app](https://docs.microsoft.com/windows-hardware/customize/enterprise/find-the-application-user-model-id-of-an-installed-app) (Telepített alkalmazás alkalmazásfelhasználói modellben használt azonosítójának megkeresése) című témakörben találhat.
+- **Alkalmazás felhasználói modell azonosítója (AUMID)**: adja meg a KIOSZK alkalmazás AUMID. További információkat a [Find the Application User Model ID of an installed app](https://docs.microsoft.com/windows-hardware/customize/enterprise/find-the-application-user-model-id-of-an-installed-app) (Telepített alkalmazás alkalmazásfelhasználói modellben használt azonosítójának megkeresése) című témakörben találhat.
 
 ## <a name="reporting-and-telemetry"></a>Jelentéskészítés és telemetria
 

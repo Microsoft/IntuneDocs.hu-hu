@@ -15,16 +15,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 38f02d694f1935e4732805f3ae7c66fd9718057a
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 1d07066bcd599dc0cdbaf8fcf90ac1ee76be45fa
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74059608"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75206686"
 ---
 # <a name="use-device-firmware-configuration-interface-profiles-on-windows-devices-in-microsoft-intune-public-preview"></a>Eszköz belső vezérlőprogram konfigurációs felületi profiljainak használata Microsoft Intune (nyilvános előzetes verzió) esetén Windows-eszközökön
 
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
+
 
 Ha az Intune-t használja az Autopilot-eszközök kezeléséhez, a regisztrációt követően az UEFI (BIOS) beállításait is kezelheti az eszköz belső vezérlőprogram konfigurációs felületének (DFCI) használatával. Az előnyök, forgatókönyvek és előfeltételek áttekintését lásd: [a DFCI áttekintése](https://microsoft.github.io/mu/dyn/mu_plus/DfciPkg/Docs/Dfci_Feature/).
 
@@ -54,7 +54,7 @@ Ez a funkció az alábbiakra vonatkozik:
 
 ## <a name="create-your-azure-ad-security-groups"></a>Azure AD-beli biztonsági csoportok létrehozása
 
-Az Autopilot Deployment-profilok az Azure AD biztonsági csoportokhoz vannak rendelve. Ügyeljen arra, hogy olyan csoportokat hozzon létre, amelyek tartalmazzák a DFCI által támogatott eszközöket. A DFCI-eszközök esetében a legtöbb szervezet felhasználói csoportok helyett létrehozhat eszközcsoport-csoportokat. Vegyük példaként a következő eseteket:
+Az Autopilot Deployment-profilok az Azure AD biztonsági csoportokhoz vannak rendelve. Ügyeljen arra, hogy olyan csoportokat hozzon létre, amelyek tartalmazzák a DFCI által támogatott eszközöket. A DFCI-eszközök esetében a legtöbb szervezet felhasználói csoportok helyett létrehozhat eszközcsoport-csoportokat. Vegye figyelembe a következő forgatókönyveket:
 
 - Az emberi erőforrások (HR) különböző Windows-eszközökkel rendelkeznek. Biztonsági okokból nem szeretné, hogy a csoport minden felhasználója használhassa a kamerát az eszközökön. Ebben a forgatókönyvben létrehozhat egy HR biztonsági felhasználói csoportot, így a szabályzat a HR-csoportban lévő felhasználókra is vonatkozik, függetlenül az eszköz típusától.
 - A gyártási emeleten 10 eszköz van. Az összes eszközön meg szeretné akadályozni, hogy az eszközök USB-eszközről induljon el. Ebben az esetben létrehozhat egy biztonsági eszközök csoportot, és hozzáadhatja a 10 eszközt a csoporthoz.
@@ -104,7 +104,7 @@ Ez a profil tartalmazza a konfigurált DFCI-beállításokat.
         - **Nincs konfigurálva**: az Intune nem érinti ezt a funkciót, és az összes beállítást elhagyja.
         - **Engedélyezve**: az UEFI (BIOS) által közvetlenül kezelt beépített mikrofonok és hangszórók engedélyezve vannak. A perifériákat, például az USB-eszközöket, nem érinti.
         - **Letiltva**: az UEFI (BIOS) által közvetlenül kezelt beépített mikrofonok és hangszórók le vannak tiltva. A perifériákat, például az USB-eszközöket, nem érinti.
-    - **Rádiók (Bluetooth, Wi-Fi, NFC stb.)** : a lehetőségek:
+    - **Rádiók (Bluetooth, Wi-Fi, NFC stb.)**: a lehetőségek:
         - **Nincs konfigurálva**: az Intune nem érinti ezt a funkciót, és az összes beállítást elhagyja.
         - **Engedélyezve**: az UEFI (BIOS) által közvetlenül kezelt összes beépített rádió engedélyezve van. A perifériákat, például az USB-eszközöket, nem érinti.
         - **Letiltva**: az UEFI (BIOS) által közvetlenül kezelt összes beépített rádió le van tiltva. A perifériákat, például az USB-eszközöket, nem érinti.
@@ -112,7 +112,7 @@ Ez a profil tartalmazza a konfigurált DFCI-beállításokat.
         > [!WARNING]
         > Ha letiltja a **választógombok** beállítását, az eszköznek vezetékes hálózati kapcsolatra van szüksége. Ellenkező esetben előfordulhat, hogy az eszköz nem felügyelhető.
 
-    - **Rendszerindítás külső adathordozóról (USB, SD)** : az Ön beállításai:
+    - **Rendszerindítás külső adathordozóról (USB, SD)**: az Ön beállításai:
         - **Nincs konfigurálva**: az Intune nem érinti ezt a funkciót, és az összes beállítást elhagyja.
         - **Engedélyezve**: az UEFI (BIOS) lehetővé teszi a nem merevlemezes tárterületről történő rendszerindítás elindítását.
         - **Letiltva**: az UEFI (BIOS) nem teszi lehetővé a nem merevlemezes tárolóról történő rendszerindítás használatát.
@@ -148,7 +148,7 @@ Megadhatja a [bejelentkező eszközöket](../remote-actions/device-sync.md)is. S
 
 ## <a name="reuse-retire-or-recover-the-device"></a>Az eszköz újbóli felhasználása, kivonása vagy helyreállítása
 
-### <a name="reuse"></a>Újrafelhasználás
+### <a name="reuse"></a>Újbóli használatának
 
 Ha azt tervezi, hogy alaphelyzetbe állítja a Windowst az eszköz újrafelhasználásához, [törölje az eszközt](../remote-actions/devices-wipe.md). Ne **távolítsa** el az Autopilot-eszköz rekordját.
 
@@ -167,7 +167,7 @@ Ezekkel a lépésekkel feloldható az eszköz UEFI-(BIOS-) menüinek feloldása.
 
 Most már készen áll az eszköz törlésére. Az eszköz törlését követően törölje az Autopilot-rekordot. A rekord törlése megakadályozza, hogy az eszköz automatikusan újra regisztrálja az újraindítást.
 
-### <a name="recover"></a>Helyreállítás
+### <a name="recover"></a>Visszaszerez
 
 Ha töröl egy eszközt, és törli az Autopilot-rekordot az UEFI (BIOS) menük zárolásának feloldása előtt, akkor a menük zárolva maradnak. Az Intune nem tudja elküldeni a profilok frissítését a zárolás feloldásához.
 

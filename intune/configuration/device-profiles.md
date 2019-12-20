@@ -1,6 +1,6 @@
 ---
 title: Az eszköz szolgáltatásai és beállításai a Microsoft Intuneban – Azure | Microsoft Docs
-description: A különböző Microsoft Intune-eszközök profiljainak áttekintése. A szolgáltatások, korlátozások, e-mailek, Wi-Fi, VPN, oktatás, tanúsítványok, a Windows 10, a BitLocker és a Microsoft Defender, a Windows Information Protection, a felügyeleti sablonok és az egyéni eszközök konfigurációs beállításainak frissítése a Azure Portal. Ezen profilok használatával felügyelheti és védetté teheti a vállalat adatait és eszközeit.
+description: A különböző Microsoft Intune-eszközök profiljainak áttekintése. Információk a funkciókról, a korlátozásokról, az e-mailekről, a wifiről, a VPN-ről, az oktatásról, a tanúsítványokról, a Windows 10, a BitLocker és a Microsoft Defender, a Windows Information Protection, a felügyeleti sablonok és az egyéni eszközök Endpoint Manager felügyeleti központ. Ezen profilok használatával felügyelheti és védetté teheti a vállalat adatait és eszközeit.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
@@ -17,16 +17,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b74cdf29999bccdefaa94c84673b9ea89c335537
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 800bbd5199bd4389ee1ae8aa98a68e21456e7000
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74694947"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75206618"
 ---
 # <a name="apply-features-and-settings-on-your-devices-using-device-profiles-in-microsoft-intune"></a>Szolgáltatások és beállítások alkalmazása az eszközökön a Microsoft Intune eszköz profiljainak használatával
 
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
+
 
 A Microsoft Intune olyan beállításokat és funkciókat kínál, amelyeket Ön engedélyezhet vagy tilthat le a vállalatához tartozó különböző eszközökön. Ezek a beállítások és funkciók hozzáadódnak a "konfigurációs profilokhoz". Létrehozhat profilokat különböző eszközökhöz és különböző platformokhoz, például iOS-, Android-és Windows-rendszerekhez is. Ezután az Intune-nal alkalmazza vagy "rendelje hozzá" a profilt az eszközökhöz.
 
@@ -161,7 +161,7 @@ Ez a funkció a következőket támogatja:
 
 - Windows 10 őszi alkotói frissítés, vagy későbbi verzió
 
-## <a name="extensions"></a>Bővítmények
+## <a name="extensions"></a>Extensions
 
 A [kernel-bővítmények](kernel-extensions-overview-macos.md) lehetővé teszik a rendszergazdák számára, hogy a MacOS-eszközökön a kernel szintjén szolgáltatásokat és programokat adjanak hozzá. Konfigurálja ezeket a beállításokat egy adott fejlesztőtől vagy partnertől származó összes bővítmény megbízhatóságához, vagy engedélyezze a megadott kernel-bővítményeket.
 
@@ -196,7 +196,7 @@ Ez a funkció a következőket támogatja:
 
 - Android Enterprise (OEMConfig)
 
-## <a name="powershell-scripts"></a>PowerShell-parancsprogramok
+## <a name="powershell-scripts"></a>PowerShell-parancsfájlok
 
 A [Windows 10-es eszközökön futó PowerShell-parancsfájlok](../apps/intune-management-extension.md) az Intune felügyeleti bővítmény használatával töltik fel a PowerShell-parancsfájlokat az Intune-ban, majd ezeket a parancsfájlokat futtatják az eszközökön. Azt is láthatja, hogy mire van szükség a bővítmény használatához, az Intune-hoz való hozzáadásához és egyéb fontos információkhoz.
 

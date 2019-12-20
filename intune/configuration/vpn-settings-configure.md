@@ -15,16 +15,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9fab50e0aefd926b4dc7a2b3559576642d5d6b79
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: b11cbd3427b3b8e0a43a6e6e2af5fa80da45e16a
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74059314"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75206278"
 ---
 # <a name="create-vpn-profiles-to-connect-to-vpn-servers-in-intune"></a>VPN-profilok létrehozása a VPN-kiszolgálókhoz való csatlakozáshoz az Intune-ban
 
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
+
 
 A virtuális magánhálózatok (VPN) segítségével biztonságos távoli hozzáférést biztosíthat a felhasználóknak a szervezeti hálózathoz. Az eszközök VPN-kapcsolati profilt használnak a VPN-kiszolgálóval létesített kapcsolat indításához. A **VPN-profilok** a Microsoft Intune VPN-beállításokat rendelhetnek a szervezet felhasználóihoz és eszközeihez, így könnyen és biztonságosan kapcsolódhatnak a szervezeti hálózathoz.
 

@@ -17,16 +17,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 02d1311be0943d93f80f2f5a1c3f421d476af1e5
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 5a65000d46941876b95e0b110d21f2dfb900ca33
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74059823"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75206227"
 ---
 # <a name="use-a-custom-device-profile-to-create-a-wifi-profile-with-a-pre-shared-key-in-intune"></a>Előmegosztott kulccsal rendelkező Wi-Fi-profil létrehozása egyéni eszköz-profil használatával az Intune-ban
 
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
+
 
 Az előmegosztott kulcsokat (PSK) általában a WiFi-hálózatok vagy vezeték nélküli helyi hálózatok felhasználóinak hitelesítésére használják. Az Intune-nal hozhat létre egy előmegosztott kulccsal ellátott WiFi-profilt. A profil létrehozásához először készítenie kell egy **egyéni eszközkonfigurációs profilt** az Intune-ban. A cikk emellett tartalmaz néhány példát az EAP-alapú Wi-Fi-profilok létrehozásához is.
 
@@ -229,8 +229,8 @@ Meglévő Wi-Fi-kapcsolatból is létrehozhat egy XML-fájlt. Windows rendszerű
 
 1. Hozzon létre egy helyi mappát az exportált W-Fi-profilokhoz, például c:\WiFi.
 2. Nyisson meg egy parancssort rendszergazdaként (kattintson a jobb gombbal a `cmd` > **Futtatás rendszergazdaként**) elemre.
-3. Futtassa a `netsh wlan show profiles` parancsot. A rendszer felsorolja az összes profil nevét.
-4. Futtassa a `netsh wlan export profile name="YourProfileName" folder=c:\Wifi` parancsot. Ez a parancs létrehoz egy `Wi-Fi-YourProfileName.xml` nevű fájlt a c:\Wifi.-ben.
+3. `netsh wlan show profiles`futtatása. A rendszer felsorolja az összes profil nevét.
+4. `netsh wlan export profile name="YourProfileName" folder=c:\Wifi`futtatása. Ez a parancs létrehoz egy `Wi-Fi-YourProfileName.xml` nevű fájlt a c:\Wifi.-ben.
 
     - Ha előmegosztott kulcsot tartalmazó Wi-Fi-profilt exportál, adja hozzá `key=clear` a parancshoz:
   
@@ -243,7 +243,7 @@ Az XML-fájl létrehozása után másolja és illessze be az XML-szintaxist az O
 > [!TIP]
 > a `\ProgramData\Microsoft\Wlansvc\Profiles\Interfaces\{guid}` az összes profilt XML formátumban is tartalmazza.
 
-## <a name="best-practices"></a>Gyakorlati tanácsok
+## <a name="best-practices"></a>Ajánlott eljárások
 
 - A Wi-Fi-profil PSK használatával való üzembe helyezése előtt győződjön meg róla, hogy az eszköz tud közvetlenül kapcsolódni a végponthoz.
 

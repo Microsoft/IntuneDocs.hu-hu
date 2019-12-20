@@ -16,16 +16,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8b2efdc04414d29fc1d8d200525cb3a4a880ec01
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 6513c09f252d5a914ace4e57e5a593877a387172
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72776895"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75206550"
 ---
 # <a name="macos-device-settings-to-allow-or-restrict-features-using-intune"></a>macOS eszközbeállítások az Intune-t használó funkciók engedélyezéséhez vagy korlátozásához
 
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
+
 
 Ez a cikk a macOS-eszközökön szabályozható különböző beállításokat sorolja fel és ismerteti. A mobileszköz-kezelési (MDM) megoldás részeként ezekkel a beállításokkal engedélyezheti vagy letilthatja a szolgáltatásokat, beállíthatja a jelszavas szabályokat, engedélyezheti vagy korlátozhatja az egyes alkalmazásokat, és így tovább.
 
@@ -90,12 +90,12 @@ Ezek a beállítások hozzáadódnak az Intune-ban lévő eszköz konfiguráció
     Ez a funkció az alábbiakra vonatkozik:  
     - macOS 10.10.3 és újabb verziók
 
-  - **Nem alfanumerikus karakterek száma a jelszóban**: Itt adhatja meg, hogy hány összetett karakter szükséges a jelszóban (**0** – **4**).<br>A speciális karakterek olyan szimbólumok, mint például a „ **?** ”.
+  - **Nem alfanumerikus karakterek száma a jelszóban**: Itt adhatja meg, hogy hány összetett karakter szükséges a jelszóban (**0** – **4**).<br>A speciális karakterek olyan szimbólumok, mint például a „**?**”.
   - **Jelszó minimális hossza**: Itt adhatja meg a felhasználó által konfigurálandó jelszó minimális hosszát ( **4** és **16** karakter között).
   - **Egyszerű jelszavak**: az egyszerű jelszavak (például a **0000** vagy a **1234**) használatának engedélyezése.
   - Jelszó kérése a **Képernyő zárolása után legfeljebb perccel**: azt határozza meg, hogy mennyi ideig kell a számítógépnek inaktívnak lennie, mielőtt jelszó szükséges a zárolás feloldásához.
   - Ennyi **perc inaktivitás**után: megadhatja, hogy a számítógépnek mennyi ideig kell tétlennek lennie a képernyő zárolása előtt.
-  - **Jelszó érvényessége (nap)** : Itt adhatja meg, hogy hány nap elteltével kell módosítani a felhasználónak a jelszót (**1** – **255** nap).
+  - **Jelszó érvényessége (nap)**: Itt adhatja meg, hogy hány nap elteltével kell módosítani a felhasználónak a jelszót (**1** – **255** nap).
   - **Korábbi jelszavak újbóli használatának tiltása**: Itt adhatja meg, hogy a korábban használt jelszavak száma **1** és **24**között legyen.
 
 - A **PIN-kód módosításának tiltása a felhasználó**számára: válassza a **Letiltás** lehetőséget a PIN-kód módosításának, hozzáadásának vagy eltávolításának leállításához. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a PIN-kódok hozzáadását, módosítását vagy eltávolítását.

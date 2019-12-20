@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0a888e2087b98eeec82aeeb555677dddcb3eff4e
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: e9b44e50300c3bd034ca2bb3b0454a5ce953dc18
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74058239"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75206975"
 ---
 # <a name="use-apis-to-add-third-party-cas-for-scep-to-intune"></a>API-k használata az SCEP külső tanúsítványszolgáltatóinak Intune-ba való felvételére
 
@@ -202,7 +202,7 @@ Paraméterek:
 
     - transactionId Az SCEP-tranzakció azonosítója
     - certificateRequest DER kódolású PKCS #10 tanúsítványkérelem, sztringként kódolva Base64 kódolással
-    - certThumprint A telepített tanúsítvány ujjlenyomata
+    - a kiépített tanúsítvány ujjlenyomatának certThumprint SHA1-kivonata
     - certSerialNumber A telepített tanúsítvány sorozatszáma
     - certExpirationDate A telepített tanúsítvány lejárati dátuma. A dátum-idő sztringet webes UTC időként kell formázni (ÉÉÉÉ-HH-NNTmm:ss.sssTZD) ISO 8601.
     - certIssuingAuthority A tanúsítványt kiállító hitelesítésszolgáltató neve

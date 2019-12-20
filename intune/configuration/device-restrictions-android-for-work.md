@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 12/09/2019
+ms.date: 12/19/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 904c3d2267decdfa3929bf29376c05a995c77eb8
-ms.sourcegitcommit: f5108039f0ade52e95ea3ac1da1aa16d02224af3
+ms.openlocfilehash: b6afd80517df3496e0c1402fc0c76f3fc24969fa
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74946653"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75206601"
 ---
 # <a name="android-enterprise-device-settings-to-allow-or-restrict-features-using-intune"></a>Az androidos vállalati eszközbeállítások az Intune-t használó szolgáltatások engedélyezéséhez vagy korlátozásához
 
@@ -211,6 +211,7 @@ Teljes **képernyős mód**: válassza ki, hogy az eszköz futtat-e egy alkalmaz
   > [!NOTE]
   > Ez a beállítás nem felel meg az eszköz tulajdonosának (teljes mértékben felügyelt) eszközeinek. Ha ezt a beállítást konfigurálja, a rendszer figyelmen kívül hagyja a beállítást, és nincs hatással.
 
+- A felhasználó beállíthatja a **hitelesítő adatokat**: a **Letiltás** megakadályozza, hogy a felhasználók az eszközökhöz rendelt tanúsítványokat konfigurálja, még akkor is, ha azok nem a felhasználói fiókhoz vannak rendelve. A **nincs konfigurálva** lehet, hogy a felhasználók konfigurálják vagy megváltoztathatják a hitelesítő adataikat, amikor azok a-tárolóban férnek hozzájuk. 
 - **Személyes Google-fiókok**: a **Letiltás** megakadályozza, hogy a felhasználók személyes Google-Fiókjával bővítsék az eszközt. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára a személyes Google-fiók hozzáadását.
 
 ### <a name="applications"></a>Alkalmazások
@@ -220,11 +221,11 @@ Teljes **képernyős mód**: válassza ki, hogy az eszköz futtat-e egy alkalmaz
 - **Alkalmazás automatikus frissítései**: válassza ki, hogy mikor történjen az automatikus frissítések telepítése. A választható lehetőségek:
   - **Nincs konfigurálva**
   - **Felhasználó választása**
-  - **Never** (Soha)
+  - **Soha nem**
   - **Csak Wi-Fi**
-  - **Always** (Mindig)
+  - **Mindig**
 
-### <a name="connectivity"></a>Kapcsolódás
+### <a name="connectivity"></a>Connectivity
 
 - **Mindig bekapcsolt VPN**: Az **Engedélyezés** beállítással a VPN-ügyfél automatikusan csatlakozik és újracsatlakozik a VPN-hez. A mindig bekapcsolt VPN-kapcsolatokkal a kapcsolat folyamatosan fenntartható vagy azonnal elindítható, ha a felhasználó zárolja az eszközét, ha az eszköz újraindul, vagy ha a vezeték nélküli hálózat megváltozik. 
 
@@ -292,6 +293,9 @@ Ezek a beállítások az androidos nagyvállalati beléptetési típusokra vonat
 
 - **Fiókok hozzáadása és eltávolítása**: a **Letiltás** lehetőség kiválasztásával megakadályozhatja, hogy a végfelhasználók fiókokat adjanak hozzá vagy távolítanak el a munkahelyi profilban. Ha például a Gmail alkalmazást androidos munkahelyi profilban telepíti, megakadályozhatja, hogy a végfelhasználók fiókokat adjanak hozzá vagy távolítsanak el ebben a munkaprofilban. A **nincs konfigurálva** beállítás lehetővé teszi a munkahelyi profilban lévő fiókok hozzáadását.  
 
+  > [!NOTE]
+  > A Google-fiókok nem vehetők fel munkahelyi profilba.
+
 - **Névjegyek megosztása Bluetooth-kapcsolattal**: Engedélyezi egy másik Bluetooth-eszköz (például egy autó) a munkahelyi névjegyekhez való hozzáférését. Alapértelmezés szerint ez a beállítás nincs konfigurálva, a munkahelyi névjegyek pedig nem jelennek meg. A megosztás engedélyezéséhez és a munkahelyi profil névjegyeinek megjelenítéséhez válassza az **Engedélyezés** lehetőséget. Ez a beállítás az Android munkahelyi profilos, Android v6.0 és újabb operációs rendszerekkel rendelkező eszközökre vonatkozik. A beállítás engedélyezésével megengedheti bizonyos Bluetooth-eszközöknek, hogy az első kapcsolat alkalmával gyorsítótárazzák a munkahelyi kapcsolatokat. Ennek a szabályzatnak az eredeti párosítás/szinkronizálás utáni letiltása nem feltétlenül távolítja el a munkahelyi kapcsolatokat a Bluetooth-eszközről.
 
 - **Képernyőfelvétel**: a **Letiltás** elem kiválasztásával megakadályozhatja a képernyőképek vagy képernyőfelvételek készítését az eszközön a munkahelyi profilban. Ezen kívül megakadályozza a tartalom megjelenítését a biztonságos videokimenettel nem rendelkező megjelenítő eszközökön. A **nincs konfigurálva** beállítás lehetővé teszi a képernyőképek lekérését.
@@ -312,7 +316,7 @@ Ezek a beállítások az androidos nagyvállalati beléptetési típusokra vonat
 - **Jelszó minimális hossza**: Itt adhatja meg a jelszóban szereplő számjegyek vagy karakterek minimális számát (**4**-**16**).
 - **A munkahelyi profil zárolása legfeljebb ennyi perc inaktivitás után**: Itt adhatja meg, hogy mennyi idő után zárolódjon a munkahelyi profil. A felhasználónak ezután meg kell adnia a hitelesítő adatait a hozzáférés visszanyeréséhez.
 - **Sikertelen bejelentkezések száma, mielőtt törlődne az eszközön lévő összes adat**: Itt adhatja meg, hogy hányszor lehet helytelen jelszót megadni, mielőtt a rendszer törölné az eszközről a munkahelyi profil összes adatát.
-- **Jelszó érvényessége (nap)** : Itt adhatja meg, hogy hány nap elteltével kell megváltoztatni az eszköz jelszavát (**1**-**255**).
+- **Jelszó érvényessége (nap)**: Itt adhatja meg, hogy hány nap elteltével kell megváltoztatni az eszköz jelszavát (**1**-**255**).
 - **Kötelező jelszótípus**: Itt adhatja meg az eszközön beállítandó jelszó típusát. A következő lehetőségek közül választhat:
   - **Eszköz alapértelmezése**
   - **Alacsony biztonságú biometrikus**
@@ -333,7 +337,7 @@ Ezek a jelszó-beállítások a munkahelyi profilt használó eszközök személ
 - **Jelszó minimális hossza**: Itt adhatja meg a jelszóban szereplő számjegyek vagy karakterek minimális számát (**4**-**14**).
 - **Képernyőzárolás legfeljebb ennyi perc inaktivitás után**: Itt adhatja meg, hogy mennyi idő után zárolódjanak a tétlen eszközök
 - **Sikertelen bejelentkezések száma, mielőtt törlődne az eszközön lévő összes adat**: Itt adhatja meg, hogy hányszor lehet helytelen jelszót megadni, mielőtt a rendszer törölné az eszközről az adatokat
-- **Jelszó érvényessége (nap)** : Itt adhatja meg, hogy hány nap elteltével kell megváltoztatni az eszköz jelszavát (**1**-**255**)
+- **Jelszó érvényessége (nap)**: Itt adhatja meg, hogy hány nap elteltével kell megváltoztatni az eszköz jelszavát (**1**-**255**)
 - **Kötelező jelszótípus**: Itt adhatja meg az eszközön beállítandó jelszó típusát. A következő lehetőségek közül választhat:
   - **Eszköz alapértelmezése**
   - **Alacsony biztonságú biometrikus**
@@ -361,7 +365,7 @@ Ezek a jelszó-beállítások a munkahelyi profilt használó eszközök személ
 
   Ez a beállítás lehetővé teszi a rendszergazdák számára, hogy az ismeretlen forrásokból származó alkalmazások telepítését jobban szabályozzák. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy az alkalmazások telepítése ismeretlen forrásból történjen a személyes profilban. A **Letiltás** megakadályozza az alkalmazások telepítését a személyes profil Play áruháztól eltérő forrásokból.
 
-### <a name="connectivity"></a>Kapcsolódás
+### <a name="connectivity"></a>Connectivity
 
 - **Mindig bekapcsolt VPN**: Az **Engedélyezés** beállítással a VPN-ügyfél automatikusan csatlakozik és újracsatlakozik a VPN-hez. A mindig bekapcsolt VPN-kapcsolatokkal a kapcsolat folyamatosan fenntartható vagy azonnal elindítható, ha a felhasználó zárolja az eszközét, ha az eszköz újraindul, vagy ha a vezeték nélküli hálózat megváltozik. 
 

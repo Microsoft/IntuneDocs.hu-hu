@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 71f2bc855673b6b189ed7581b979527485e86083
-ms.sourcegitcommit: 66e284fe092e19c1da72b4b770e45bf25ac7910c
+ms.openlocfilehash: c8748639f0407de7b1bb83f646b7decf8c838766
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74860383"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75206669"
 ---
 # <a name="create-a-device-profile-in-microsoft-intune"></a>Eszközprofil létrehozása a Microsoft Intune-ban
 
@@ -39,7 +39,7 @@ Ez a cikk:
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Válassza az **eszközök** > **konfigurációs profilok**lehetőséget. Az alábbi lehetőségek állnak rendelkezésére:
+2. Válassza az **eszközök** > **konfigurációs profilok**lehetőséget. A következő lehetőségek közül választhat:
 
     - **Áttekintés**: felsorolja a profilok állapotát, és további részleteket biztosít a felhasználókhoz és eszközökhöz rendelt profilokhoz.
     - **Kezelés**: eszközbeállítások létrehozása, egyéni PowerShell- [szkriptek](../apps/intune-management-extension.md) feltöltése a profilba való futtatáshoz, valamint adattervek hozzáadása az eszközökhöz a [eSIM](esim-device-configuration.md)használatával.
@@ -70,7 +70,7 @@ Ez a cikk:
        - [Eszközkorlátozások](device-restrictions-configure.md)
        - [Kiadás verziófrissítése és üzemmód kapcsolója](edition-upgrade-configure-windows-10.md)
        - [Oktatás](education-settings-configure.md)
-       - [Email](email-settings-configure.md)
+       - [E-mail](email-settings-configure.md)
        - [Endpoint Protection](../protect/endpoint-protection-configure.md)
        - [Identity protection](../protect/identity-protection-configure.md)  
        - [Kioszkmód](kiosk-settings.md)
@@ -105,7 +105,7 @@ További információ a hatóköri címkékről és a műveletekről: [a RBAC é
 
 ## <a name="applicability-rules"></a>Alkalmazhatósági szabályok
 
-A következőre érvényes
+A következőkre vonatkozik:
 
 - Windows 10 és újabb
 

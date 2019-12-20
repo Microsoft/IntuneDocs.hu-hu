@@ -1,12 +1,11 @@
 ---
-title: A Microsoft Intune Windows Phone 8.1-es eszközökre vonatkozó VPN-beállításai
-titleSuffix: ''
-description: Útmutató a VPN-kapcsolatok Windows Phone 8.1 rendszerű eszközökön való konfigurálásához használható Intune-beállításokhoz.
+title: VPN-beállítások konfigurálása Windows Phone-telefon 8,1-eszközökön Microsoft Intune-Azure-ban | Microsoft Docs
+description: VPN-konfigurációs profil hozzáadása vagy létrehozása virtuális magánhálózati (VPN) konfigurációs beállításokkal, beleértve a kapcsolat részleteit, valamint az IP-vagy FQDN-címet tartalmazó proxybeállításokat, valamint a Windows Phone-telefon 8,1-at futtató eszközökön Microsoft Intune TCP-portot.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 3/6/2018
+ms.date: 12/19/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,90 +15,95 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 69de660e65ed2a0f3b6c9c7e4ce774a6fcde2676
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 70f33fe132eb6c3dbf91c5dc313369d75f4f3e24
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72506518"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75207026"
 ---
-# <a name="configure-vpn-settings-in-microsoft-intune-for-devices-running-windows-phone-81"></a>A Windows Phone 8.1 rendszerű eszközökre vonatkozó VPN-beállítások konfigurálása a Microsoft Intune-ban
+# <a name="add-vpn-settings-on-windows-phone-81-devices-in-microsoft-intune"></a>VPN-beállítások hozzáadása Windows Phone-telefon 8,1-eszközökön Microsoft Intune
 
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-A cikk a VPN-kapcsolatoknak a Windows Phone 8.1 rendszerű eszközökön való konfigurálására használható Intune-beállításokat ismerteti.
 
+A cikk a VPN-kapcsolatoknak a Windows Phone 8.1 rendszerű eszközökön való konfigurálására használható Intune-beállításokat ismerteti. 
 
 A megadott beállításoktól függően a következő listában található értékek némelyike nem konfigurálható.
 
+>[!IMPORTANT]
+>A Windows Phone-telefon 8,1 VPN-profilok a Windows 10-es eszközökre is alkalmazhatók.
+
 ## <a name="base-vpn-settings"></a>Alapvető VPN-beállítások
 
-- **Az összes beállítás alkalmazása csak Windows Phone 8.1 rendszeren** – Ez a beállítás a klasszikus Intune-portálon konfigurálható. Ez a beállítás az Azure Portalon nem módosítható. Ha ez a beállítás a **Konfigurálva** értékre van állítva, a rendszer minden beállítást csak a Windows Phone 8.1 rendszerű eszközökre alkalmaz. Ha a **Nincs konfigurálva** értékre van állítva, akkor a rendszer a Windows 10 Mobile rendszerű eszközökre is alkalmazza ezeket a beállításokat.
-- **Kapcsolat neve** – Nevezze el a kapcsolatot. A felhasználók akkor látják ezt a nevet, amikor megkeresik a rendelkezésre álló VPN-kapcsolatok listáját az eszközükön.
-- **Hitelesítési módszer** – Válassza ki a következő lehetőségek közül, hogy miképpen hitelesítik magukat az eszközök a VPN-kiszolgálón:
-  - **Tanúsítványok** – A **Hitelesítési tanúsítvány** szakaszban adja meg a kapcsolat hitelesítéséhez korábban létrehozott SCEP- vagy PKCS-tanúsítványprofilok valamelyikét. A tanúsítványprofilokról további információt a [How to configure certificates](../protect/certificates-configure.md) (Tanúsítványok konfigurálása) című cikkben találhat.
-  - **Felhasználónév és jelszó** – A végfelhasználóknak felhasználónevet és jelszót kell megadniuk, ha szeretnének bejelentkezni a VPN-kiszolgálóra.
-- **Kiszolgálók** – Adjon meg egy vagy több olyan VPN-kiszolgálót, amelyhez az eszközök csatlakozni fognak.
-  - **Hozzáadás** – Megnyitja a **Sor hozzáadása** panelt, melyen a következőket adhatja meg:
-    - **Leírás** – Adja meg a kiszolgáló leíró nevét (például **Contoso VPN-kiszolgáló**).
-    - **IP-cím vagy teljes tartománynév** – Adja meg annak a VPN-kiszolgálónak az IP-címét vagy teljes tartománynevét, amelyhez az eszközök csatlakoznak. Példák: **192.168.1.1**, **vpn.contoso.com**.
-    - **Alapértelmezett kiszolgáló** – Ezt a kiszolgálót engedélyezi alapértelmezett kiszolgálóként, melyet az eszközök kapcsolat létesítéséhez fognak használni. Csak egy kiszolgálót állítson be alapértelmezett kiszolgálóként.
-  - **Importálás** – Tallózással keressen meg egy, a kiszolgálók vesszővel tagolt listáját tartalmazó fájlt, melynek formátuma a következő: leírás, IP-cím vagy teljes tartománynév, alapértelmezett kiszolgáló. Indítsa el ezeknek a **Kiszolgálók** listába való importálását az **OK** gombra kattintva.
-  - **Exportálás** – Exportálja a kiszolgálók listáját egy vesszővel tagolt (CSV-) fájlba.
+- Az **összes beállítás alkalmazása csak Windows Phone-telefon 8,1-** re: ezt a beállítást a klasszikus Intune-portálon konfigurálhatja. A Microsoft Endpoint Manager felügyeleti központban ez a beállítás nem módosítható. Ha be **van**állítva, a rendszer a beállításokat csak Windows Phone-telefon 8,1-es eszközökre alkalmazza. Ha a **nincs konfigurálva**értékre van állítva, ezek a beállítások a Windows 10 Mobile rendszerű eszközökre is érvényesek.
+- **Kapcsolat neve**: Adja meg a kapcsolat nevét. A felhasználók akkor látják ezt a nevet, amikor megkeresik a rendelkezésre álló VPN-kapcsolatok listáját az eszközükön.
+- **Hitelesítési módszer**: Válassza ki a következő lehetőségek közül, hogy miképpen hitelesítik magukat az eszközök a VPN-kiszolgálón:
+  - **Tanúsítványok**: a **hitelesítési tanúsítvány**területen válassza ki a korábban létrehozott SCEP vagy PKCS-tanúsítvány profilját a kapcsolódás hitelesítéséhez. A tanúsítványprofilokról további információt a [How to configure certificates](../protect/certificates-configure.md) (Tanúsítványok konfigurálása) című cikkben találhat.
+  - **Felhasználónév és jelszó**: a végfelhasználóknak felhasználónevet és jelszót kell megadniuk a VPN-kiszolgálóra való bejelentkezéshez.
+- **Kiszolgálók**: Adjon meg egy vagy több olyan VPN-kiszolgálót, amelyhez az eszközök csatlakozni fognak.
+  - **Hozzáadás**: megnyitja a **sor hozzáadása** panelt, ahol megadhatja a következő adatokat:
+    - **Leírás**: adjon meg egy leíró nevet a kiszolgáló számára, például a **contoso VPN-kiszolgálót**.
+    - **IP-cím vagy**teljes tartománynév: adja meg annak a VPN-kiszolgálónak az IP-címét vagy teljesen minősített tartománynevét, amelyhez az eszközök csatlakoznak. Példák: **192.168.1.1**, **vpn.contoso.com**.
+    - **Alapértelmezett kiszolgáló**: Ezt a kiszolgálót engedélyezi alapértelmezett kiszolgálóként, melyet az eszközök kapcsolat létesítéséhez fognak használni. Csak egy kiszolgálót állítson be alapértelmezett kiszolgálóként.
+  - **Importálás**: tallózással keresse meg a kiszolgálók listáját tartalmazó vesszővel tagolt fájlt a következő formátumban: Leírás, IP-cím vagy teljes tartománynév, alapértelmezett kiszolgáló. A kiszolgálók a **Kiszolgálók** listába történő importálásához kattintson az **OK** gombra.
+  - **Exportálás**: exportálja a kiszolgálók listáját egy vesszővel tagolt (CSV) fájlba.
 
-- **VPN mellőzése a céges Wi-Fi-hálózatban** – Ezzel a beállítással letilthatja a VPN-kapcsolatot, amikor az eszköz a vállalati Wi-Fi-hálózathoz csatlakozik.
-- **VPN mellőzése az otthoni Wi-Fi-hálózatban** – Ezzel a beállítással letilthatja a VPN-kapcsolatot, amikor az eszköz otthoni Wi-Fi-hálózathoz csatlakozik.
+- **VPN mellőzése a vállalati Wi-Fi-hálózaton**: Ha engedélyezi ezt a beállítást, megadhatja, hogy a rendszer ne használja a VPN-kapcsolatokat, amikor az eszköz a vállalati Wi-Fi-hálózathoz csatlakozik.
+- **VPN mellőzése az otthoni Wi-Fi-hálózaton**: engedélyezze ezt a beállítást annak megadásához, hogy a VPN-kapcsolat ne legyen használatban, amikor az eszköz otthoni Wi-Fi-hálózathoz csatlakozik.
 
-- **Kapcsolat típusa** – Az alábbi listából válassza ki a VPN-kapcsolat típusát:
+- **Kapcsolat típusa**: Az alábbi listából válassza ki a VPN-kapcsolat típusát:
   - **Check Point Capsule VPN**
   - **SonicWall Mobile Connect**
   - **F5 Edge Client**
   - **Pulse Secure**
 
-- **Bejelentkezési csoport vagy tartomány** (csak SonicWall Mobile Connect esetén) – Adja meg annak a bejelentkezési csoportnak vagy tartománynak a nevét, amelyhez csatlakozni szeretne.
-- **Szerepkör** (csak Pulse Secure) – Adja meg annak a felhasználói szerepkörnek a nevét, amely hozzáfér ehhez a kapcsolathoz. A felhasználói szerepkörök személyes beállításokat definiálnak, és engedélyeznek vagy letiltanak bizonyos hozzáférési funkciókat.
-- **Tartomány** (csak Pulse Secure) – Adja meg a használni kívánt hitelesítési tartomány nevét. A hitelesítési tartomány a Pulse Secure kapcsolattípus által használt hitelesítési erőforrások csoportja.
+- **Bejelentkezési csoport vagy tartomány** (csak SonicWALL Mobile-kapcsolódás esetén): adja meg annak a bejelentkezési csoportnak vagy tartománynak a nevét, amelyhez csatlakozni szeretne.
+- **Szerepkör** (csak Pulse Secure): adja meg annak a felhasználói szerepkörnek a nevét, amely hozzáfér ehhez a kapcsolathoz. A felhasználói szerepkörök személyes beállításokat definiálnak, és engedélyeznek vagy letiltanak bizonyos hozzáférési funkciókat.
+- **Tartomány** (csak Pulse Secure): adja meg a használni kívánt hitelesítési tartomány nevét. A hitelesítési tartomány a Pulse Secure kapcsolattípus által használt hitelesítési erőforrások csoportja.
 
-- **DNS-utótagok keresési listája**  -  Vegyen fel egy vagy több DNS-utótagot a **Hozzáadás** gombra kattintva. A rendszer minden egyes megadott DNS-utótagra rákeres, amikor egy rövid nevet használó webhelyhez csatlakozik. Adja meg például a **tartomany1.contoso.com** és a **tartomany2.contoso.com** DNS-utótagot, majd látogasson el a `http://mywebsite` URL-címre. Ekkora a `http://mywebsite.domain1.contoso.com` és a `http://mywebsite.domain2.contoso.com` URL-címre fog keresni.
+- **DNS-utótagok keresési listája**: **adjon hozzá** egy vagy több DNS-t. A rendszer minden egyes megadott DNS-utótagra rákeres, amikor egy rövid nevet használó webhelyhez csatlakozik. Adja meg például a **tartomany1.contoso.com** és a **tartomany2.contoso.com** DNS-utótagot, majd látogasson el a `http://mywebsite` URL-címre. Ekkora a `http://mywebsite.domain1.contoso.com` és a `http://mywebsite.domain2.contoso.com` URL-címre fog keresni.
 
-- **Egyéni XML** – Itt a VPN-kapcsolatot konfiguráló egyéni XML-parancsokat adhat meg.
+- **Egyéni XML**: adja meg a VPN-kapcsolatokat konfiguráló egyéni XML-parancsokat.
 
-    **Példa a Pulse Secure esetére:**
+  **Pulse Secure példa**:
 
-```xml
-    <pulse-schema><isSingleSignOnCredential>true</isSingleSignOnCredential></pulse-schema>
-```
+  ```xml
+  <pulse-schema><isSingleSignOnCredential>true</isSingleSignOnCredential></pulse-schema>
+  ```
 
-**Példa a CheckPoint Mobile VPN esetére:**
+  **Ellenőrzőpont Mobile VPN-példa**:
 
-```xml
-    <CheckPointVPN port="443" name="CheckPointSelfhost" sso="true" debug="3" />
-```
+  ```xml
+  <CheckPointVPN port="443" name="CheckPointSelfhost" sso="true" debug="3" />
+  ```
 
-**Példa a SonicWall Mobile Connect esetére:**
+  **SonicWALL Mobile-csatlakozási példa**:
 
-```xml
-<MobileConnect><Compression>false</Compression><debugLogging>True</debugLogging><packetCapture>False</packetCapture></MobileConnect>
-```
+  ```xml
+  <MobileConnect><Compression>false</Compression><debugLogging>True</debugLogging><packetCapture>False</packetCapture></MobileConnect>
+  ```
 
-**Példa az F5 Edge Client esetére:**
+  **F5 Edge Client példa**:
 
-```xml
-    <f5-vpn-conf><single-sign-on-credential /></f5-vpn-conf>
-```
+  ```xml
+  <f5-vpn-conf><single-sign-on-credential /></f5-vpn-conf>
+  ```
 
-Az egyéni XML-parancsok írásával kapcsolatban további információt az egyes gyártók VPN-dokumentációjában talál.
+  Az egyéni XML-parancsok írásával kapcsolatos további információkért tekintse meg a gyártó VPN-dokumentációját.
 
-- **Bújtatás megosztása** - Az **Engedélyezés** vagy a **Letiltás** beállítással szabályozhatja, hogy az eszközök választhatnak-e a forgalomtól függően a kapcsolatok közül. Egy szállodai vendég például a munkahelyi fájlok elérésére a VPN-kapcsolatot, de egyszerű böngészésre a szálloda normál hálózatát használja.
-
-
-
+- **Megosztott bújtatás**: **engedélyezheti** vagy **letilthatja** ezt a beállítást, amely lehetővé teszi, hogy az eszközök döntsenek a forgalomtól függően, hogy melyik kapcsolatokat használják. Egy szállodai vendég például a munkahelyi fájlok elérésére a VPN-kapcsolatot, de egyszerű böngészésre a szálloda normál hálózatát használja.
 
 ## <a name="proxy-settings"></a>Proxybeállítások
 
-- **Proxybeállítások automatikus észlelése** – Ha a VPN-kiszolgáló proxykiszolgálót igényel a kapcsolathoz, adja meg, hogy szeretné-e, ha az eszközök automatikusan észlelnék a kapcsolatbeállításokat. További információt a Windows Server dokumentációjában talál.
-- **Automatikus konfigurációs szkript** – A proxykiszolgálót egy konfigurációs fájl segítségével konfigurálja. Adja meg a konfigurációs fájlt tartalmazó **Proxykiszolgáló URL-címét** (például `http://proxy.contoso.com`).
-- **Proxykiszolgáló használata** – Ha manuálisan szeretné megadni a proxykiszolgáló beállításait, akkor engedélyezze ezt a beállítást.
-  - **Cím** – Adja meg a proxykiszolgáló címét (IP-címként).
-  - **Portszám** – Adja meg a proxykiszolgálóhoz társított portszámot.
-- **Proxy mellőzése helyi címek esetén** – Ha a VPN-kiszolgáló proxykiszolgálót igényel a kapcsolathoz, válassza ezt a beállítást, ha a megadott helyi címekhez nem szeretné használni a proxykiszolgálót. További információt a Windows Server dokumentációjában talál.
+- **Proxybeállítások automatikus észlelése**: Ha a VPN-kiszolgáló proxykiszolgálót igényel a kapcsolathoz, adja meg, hogy szeretné-e, hogy az eszközök automatikusan azonosítsák a kapcsolódási beállításokat.
+- **Automatikus konfigurációs szkript**: A proxykiszolgálót egy konfigurációs fájl segítségével konfigurálja. Adja meg a konfigurációs fájlt tartalmazó **Proxykiszolgáló URL-címét** (például `http://proxy.contoso.com`).
+- **Proxykiszolgáló használata**: engedélyezze ezt a beállítást, ha manuálisan szeretné megadni a proxykiszolgáló beállításait.
+  - **Cím**: adja meg a proxykiszolgáló címét (IP-címként).
+  - **Portszám**: Adja meg a proxykiszolgálóhoz társított portszámot.
+- **Proxy mellőzése helyi címek**esetén: Ha a VPN-kiszolgáló proxykiszolgálót igényel a kapcsolathoz, és nem kívánja használni a proxykiszolgálót a megadott helyi címekhez, válassza ezt a lehetőséget.
+
+## <a name="next-steps"></a>További lépések
+
+A profil létrejött, de egyelőre nem csinál semmit. Ezután [rendelje hozzá a profilt](device-profile-assign.md) , és [Figyelje annak állapotát](device-profile-monitor.md).
+
+VPN-beállítások konfigurálása [Android](vpn-settings-android.md), [Android Enterprise](vpn-settings-android-enterprise.md), [MacOS](vpn-settings-macos.md)és [Windows 10 rendszerű](vpn-settings-windows-10.md) eszközökön.

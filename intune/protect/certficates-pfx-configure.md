@@ -1,11 +1,11 @@
 ---
 title: Magán-és nyilvános kulcsú tanúsítványok használata a Microsoft Intune-Azure-ban | Microsoft Docs
-description: A nyilvános kulcsú titkosítási szabványok (PKCS) tanúsítványait Microsoft Intune használatával. Ez magában foglalja a főtanúsítványok és tanúsítványsablonok használatát, az Intune Certificate Connector (NDES) telepítését, valamint a PKCS-tanúsítványhoz tartozó eszköz-konfigurációs profilokat.
+description: A nyilvános kulcsú titkosítási szabványok (PKCS) tanúsítványai a Microsoft Intune, a főtanúsítványok és tanúsítványsablonok használata, az Intune Certificate Connector (NDES) telepítése, valamint a PKCS-tanúsítványhoz tartozó eszköz-konfigurációs profilok használata.
 keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/07/2019
+ms.date: 12/12/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3db085e6e88f8f57eb0276afa77290df8574568f
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 9142ea3f7728fd24883a311bbf967a7a59dbf457
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73801714"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75207247"
 ---
 # <a name="configure-and-use-pkcs-certificates-with-intune"></a>PKCS-tanúsítványok konfigurálása és használata az Intune-nal
 
@@ -144,7 +144,7 @@ VPN-, WiFi-vagy más erőforrásokkal rendelkező eszköz hitelesítéséhez az 
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Válassza a **bérlői felügyelet** > **Összekötők és tokenek** > **tanúsítvány-összekötők** >  **+ Hozzáadás**lehetőséget.
+2. Válassza a **bérlői felügyelet** > **Összekötők és tokenek** > **tanúsítvány-összekötők** > **+ Hozzáadás**lehetőséget.
 
 3. Kattintson a *tanúsítvány-összekötő szoftver letöltése* a PKCS #12-összekötőhöz elemre, és mentse a fájlt egy olyan helyre, amely az összekötő telepítéséhez használt kiszolgálóról érhető el.
 
@@ -161,9 +161,7 @@ VPN-, WiFi-vagy más erőforrásokkal rendelkező eszköz hitelesítéséhez az 
 7. **Alkalmaz** > **Bezárás**
 8. Lépjen vissza az Intune-portálra (**intune** > **eszköz konfigurációja** > **tanúsítási összekötők**). Néhány pillanat múlva megjelenik egy zöld pipa jel, és a **kapcsolatok állapota** **aktív**. Az összekötő kiszolgáló mostantól kapcsolatba tud lépni az Intune-nal.
 9. Ha a hálózati környezetben van webproxyja, további konfigurációkra lehet szükség az összekötő működésének engedélyezéséhez. További információ: a [meglévő helyszíni proxykiszolgálók használata](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-connectors-with-proxy-servers) az Azure Active Directory dokumentációjában.
-
-> [!NOTE]  
-> A Microsoft Intune Tanúsítvány-összekötő a TLS 1,2-et támogatja. Ha a TLS 1,2 telepítve van az összekötőt futtató kiszolgálón, az összekötő a TLS 1,2-et használja. Ellenkező esetben a TLS 1,1 használatos. Az eszközök és a kiszolgáló közötti hitelesítéshez jelenleg a TLS 1.1 van használatban.
+<ul><li>Android Enterprise (*munkahelyi profil*)</li><li>iOS</li><li>macOS</li><li>A Windows 10 és újabb > a Microsoft Intune Tanúsítvány-összekötő támogatja a TLS 1,2-t. Ha a TLS 1,2 telepítve van az összekötőt futtató kiszolgálón, az összekötő a TLS 1,2-et használja. Ellenkező esetben a TLS 1,1 használatos. Az eszközök és a kiszolgáló közötti hitelesítéshez jelenleg a TLS 1.1 van használatban.
 
 ## <a name="create-a-trusted-certificate-profile"></a>Megbízható tanúsítványprofil létrehozása
 
@@ -208,17 +206,17 @@ VPN-, WiFi-vagy más erőforrásokkal rendelkező eszköz hitelesítéséhez az 
    
    |Beállítás     | Platfésm     | Details   |
    |------------|------------|------------|
-   |**Megújítási küszöb (%)**        |Összes         |Ajánlott érték 20%  | 
-   |**Tanúsítvány érvényességi időtartama**  |Összes         |Ha nem módosította a tanúsítványsablont, akkor ez a beállítás egy évig állítható be. |
-   |**Kulcstároló-szolgáltató (KSP)**   |Windows 10  | Windows esetén válassza ki a kulcsok tárolásának helyét az eszközön. |
-   |**Hitelesítésszolgáltató**      |Összes         |Megjeleníti a vállalati HITELESÍTÉSSZOLGÁLTATÓ belső teljes tartománynevét (FQDN).  |
-   |**Hitelesítésszolgáltató neve** |Összes         |Felsorolja a vállalati HITELESÍTÉSSZOLGÁLTATÓ nevét, például a "contoso hitelesítésszolgáltató" nevet. |
-   |**Tanúsítvány típusa**             |macOS       |Válasszon egy típust: <br> **-** **felhasználói** tanúsítványok a tulajdonos és a tanúsítvány Tárolóhálózati felhasználói és eszköz attribútumait is tartalmazhatják. <br><br>**-** az **eszközök** tanúsítványai csak a tulajdonos és a tanúsítvány Tárolóhálózati attribútumait tartalmazhatják. Eszköz használata olyan forgatókönyvekhez, mint a felhasználó nélküli eszközök, például kioszkok vagy más megosztott eszközök.  <br><br> Ez a beállítás hatással van a tulajdonos nevének formátumára. |
-   |**Tulajdonos nevének formátuma**          |Összes         |A legtöbb platform esetében állítsa ezt a beállítást a **köznapi névre** , hacsak másként nem kötelező.<br><br>MacOS esetén a tulajdonos nevének formátumát a tanúsítvány típusa határozza meg. Lásd a cikk [tulajdonos nevének formátumát a MacOS rendszerhez](#subject-name-format-for-macos) című cikkben. |
-   |**Tulajdonos alternatív neve**     |Összes         |Ha ez a beállítás nem kötelező, adja meg az egyszerű felhasználónév **(UPN)** beállítást. |
-   |**Kibővített kulcshasználat**           |**-** Android-eszköz rendszergazdája <br>**-** Android Enterprise (*eszköz tulajdonosa*, *munkahelyi profil*) <br> **-** Windows 10 |A tanúsítványokhoz általában szükség van az *ügyfél-hitelesítésre* , hogy a felhasználó vagy az eszköz hitelesíthető legyen egy kiszolgálóval. |
-   |**Minden alkalmazás titkos kulcshoz való hozzáférésének engedélyezése** |macOS  |Az **Engedélyezés** beállítás megadásával biztosíthatja, hogy a rendszer a társított Mac-eszközhöz a PKCS-tanúsítvány titkos kulcsához konfigurált alkalmazásokat adjon. <br><br> A beállítással kapcsolatos további információkért tekintse meg a [konfigurációs profil referenciájának](https://developer.apple.com/business/documentation/Configuration-Profile-Reference.pdf) *AllowAllAppsAccess* című szakaszt az Apple fejlesztői dokumentációjában. |
-   |**Főtanúsítvány**             |**-** Android-eszköz rendszergazdája <br> **-** Android Enterprise (*eszköz tulajdonosa*, *munkahelyi profil*) |Válasszon ki egy korábban hozzárendelt legfelső szintű HITELESÍTÉSSZOLGÁLTATÓI tanúsítvány-profilt. |
+   |**Megújítási küszöb (%)**        |<ul><li>Összes         |Ajánlott érték 20%  | 
+   |**Tanúsítvány érvényességi időtartama**  |<ul><li>Összes         |Ha nem módosította a tanúsítványsablont, akkor ez a beállítás egy évig állítható be. |
+   |**Kulcstároló-szolgáltató (KSP)**   |<ul><li>Windows 10  | Windows esetén válassza ki a kulcsok tárolásának helyét az eszközön. |
+   |**Hitelesítésszolgáltató**      |<ul><li>Összes         |Megjeleníti a vállalati HITELESÍTÉSSZOLGÁLTATÓ belső teljes tartománynevét (FQDN).  |
+   |**Hitelesítésszolgáltató neve** |<ul><li>Összes         |Felsorolja a vállalati HITELESÍTÉSSZOLGÁLTATÓ nevét, például a "contoso hitelesítésszolgáltató" nevet. |
+   |**Tanúsítvány típusa**             |<ul><li>Android Enterprise (*munkahelyi profil*)</li><li>iOS</li><li>macOS</li><li>Windows 10 és újabb|Válasszon egy típust: <ul><li> A **felhasználói** tanúsítványok a tulajdonos és a tanúsítvány Tárolóhálózati felhasználói és eszköz attribútumait is tartalmazhatják. </il><li>Az **eszközök** tanúsítványainak csak a tulajdonos és a tanúsítvány Tárolóhálózati attribútumait tartalmazhatják. Eszköz használata olyan forgatókönyvekhez, mint a felhasználó nélküli eszközök, például kioszkok vagy más megosztott eszközök.  <br><br> Ez a beállítás hatással van a tulajdonos nevének formátumára. |
+   |**Tulajdonos nevének formátuma**          |<ul><li>Összes         |A legtöbb platform esetében állítsa ezt a beállítást a **köznapi névre** , hacsak másként nem kötelező.<br><br>A következő platformokon a tulajdonos nevének formátumát a tanúsítvány típusa határozza meg: <ul><li>Android Enterprise (*munkahelyi profil*)</li><li>iOS</li><li>macOS</li><li>Windows 10 és újabb</li></ul>  <p> A cikk későbbi részében lásd a [tulajdonos nevének formátumát](#subject-name-format) . |
+   |**Tulajdonos alternatív neve**     |<ul><li>Összes         |Ha ez a beállítás nem kötelező, adja meg az egyszerű felhasználónév **(UPN)** beállítást. |
+   |**Kibővített kulcshasználat**           |<ul><li> Android-eszköz rendszergazdája </li><li>Android Enterprise (*eszköz tulajdonosa*, *munkahelyi profil*) </li><li>Windows 10 |A tanúsítványokhoz általában szükség van az *ügyfél-hitelesítésre* , hogy a felhasználó vagy az eszköz hitelesíthető legyen egy kiszolgálóval. |
+   |**Minden alkalmazás titkos kulcshoz való hozzáférésének engedélyezése** |<ul><li>macOS  |Az **Engedélyezés** beállítás megadásával biztosíthatja, hogy a rendszer a társított Mac-eszközhöz a PKCS-tanúsítvány titkos kulcsához konfigurált alkalmazásokat adjon. <br><br> A beállítással kapcsolatos további információkért tekintse meg a [konfigurációs profil referenciájának](https://developer.apple.com/business/documentation/Configuration-Profile-Reference.pdf) *AllowAllAppsAccess* című szakaszt az Apple fejlesztői dokumentációjában. |
+   |**Főtanúsítvány**             |<ul><li>Android-eszköz rendszergazdája </li><li>Android Enterprise (*eszköz tulajdonosa*, *munkahelyi profil*) |Válasszon ki egy korábban hozzárendelt legfelső szintű HITELESÍTÉSSZOLGÁLTATÓI tanúsítvány-profilt. |
 
 5. A profil mentéséhez kattintson az **OK** > **Létrehozás** gombra.
 
@@ -227,11 +225,18 @@ VPN-, WiFi-vagy más erőforrásokkal rendelkező eszköz hitelesítéséhez az 
    > [!NOTE]
    > Az androidos vállalati profillal rendelkező eszközökön a PKCS-tanúsítvány profil használatával telepített tanúsítványok nem láthatók az eszközön. A tanúsítvány sikeres központi telepítésének megerősítéséhez ellenőrizze a profil állapotát az Intune-konzolon.
 
-### <a name="subject-name-format-for-macos"></a>A macOS tulajdonos nevének formátuma
+### <a name="subject-name-format"></a>Tulajdonos nevének formátuma
 
-MacOS PKCS-tanúsítvány profil létrehozásakor a tulajdonos nevének formátuma a kiválasztott tanúsítvány típusától függ, amely a **felhasználó** vagy az **eszköz**.  
+Ha PKCS-tanúsítványsablont hoz létre a következő platformokhoz, a tulajdonos nevének formátuma a kiválasztott tanúsítvány típusától függ, amely a **felhasználó** vagy az **eszköz**.  
 
-> [!NOTE]  
+Platformok
+
+- Android Enterprise (*munkahelyi profil*)
+- iOS
+- macOS
+- Windows 10 és újabb
+
+> [!NOTE]
 > Létezik egy ismert probléma a PKCS használatával olyan tanúsítványok beszerzéséhez, [amelyek ugyanaz a probléma, mint a SCEP esetében,](certificates-profile-scep.md#avoid-certificate-signing-requests-with-escaped-special-characters) ha az eredményül kapott tanúsítvány-aláírási kérelemben szereplő tulajdonos neve (CSR) a következő karakterek egyikét tartalmazza Escape-karakterként (fordított perjel \\):
 > - \+
 > - ;
@@ -239,17 +244,17 @@ MacOS PKCS-tanúsítvány profil létrehozásakor a tulajdonos nevének formátu
 > - =
 
 - **Felhasználói tanúsítványtípus**  
-  A *tulajdonos nevének formátuma* a következő két változót tartalmazza: **KÖZNAPI név (CN)** és **e-mail (E)** . Az **Egyszerű név (CN)** az alábbi változók bármelyikére beállítható:
+  A *tulajdonos nevének formátuma* a következő két változót tartalmazza: **KÖZNAPI név (CN)** és **e-mail (E)**. Az **Egyszerű név (CN)** az alábbi változók bármelyikére beállítható:
 
-  - **CN = {{username}}** : a felhasználó egyszerű felhasználóneve, például janedoe@contoso.com.
-  - **CN={{AAD_Device_ID}}** : Egy Azure Active Directoryban való eszközregisztrációkor társított azonosító. Ez az azonosító jellemzően az Azure AD-ben való hitelesítéshez használatos.
-  - **CN = {{SERIALNUMBER}}** : az egyedi sorozatszám (Sn) általában a gyártó által az eszköz azonosítására használatos.
-  - **CN = {{IMEINumber}}** : a mobil telefon azonosítására szolgáló nemzetközi mobileszköz-identitás (IMEI) egyedi szám.
-  - **CN = {{OnPrem_Distinguished_Name}}** : relatív megkülönböztető nevek sorozata vesszővel elválasztva, például *CN = JANE DOE, OU = UserAccounts, DC = Corp, DC = contoso, DC = com*.
+  - **CN = {{username}}**: a felhasználó egyszerű felhasználóneve, például janedoe@contoso.com.
+  - **CN={{AAD_Device_ID}}**: Egy Azure Active Directoryban való eszközregisztrációkor társított azonosító. Ez az azonosító jellemzően az Azure AD-ben való hitelesítéshez használatos.
+  - **CN = {{SERIALNUMBER}}**: az egyedi sorozatszám (Sn) általában a gyártó által az eszköz azonosítására használatos.
+  - **CN = {{IMEINumber}}**: a mobil telefon azonosítására szolgáló nemzetközi mobileszköz-identitás (IMEI) egyedi szám.
+  - **CN = {{OnPrem_Distinguished_Name}}**: relatív megkülönböztető nevek sorozata vesszővel elválasztva, például *CN = JANE DOE, OU = UserAccounts, DC = Corp, DC = contoso, DC = com*.
 
     A *{{OnPrem_Distinguished_Name}}* változó használatához ne felejtse el szinkronizálni a *onpremisesdistinguishedname* User ATTRIBÚTUMot az Azure AD-vel való [Azure ad Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect) használatával.
 
-  - **CN = {{onPremisesSamAccountName}}** : a rendszergazdák a sAMAccountName attribútumot az Azure ad-vel a *onPremisesSamAccountName*nevű attribútumba szinkronizálva Active Directoryról az Azure ad-be. Az Intune a tanúsítvány kiállításának részeként helyettesítheti be ezt a változót. A samAccountName attribútum a Windows korábbi verziójából származó ügyfelek és kiszolgálók támogatásához használt felhasználói bejelentkezési név (pre-Windows 2000). A felhasználói bejelentkezési név formátuma: *DomainName\testUser*, vagy csak *tesztfelhasználó*.
+  - **CN = {{onPremisesSamAccountName}}**: a rendszergazdák a sAMAccountName attribútumot az Azure ad-vel a *onPremisesSamAccountName*nevű attribútumba szinkronizálva Active Directoryról az Azure ad-be. Az Intune a tanúsítvány kiállításának részeként helyettesítheti be ezt a változót. A samAccountName attribútum a Windows korábbi verziójából származó ügyfelek és kiszolgálók támogatásához használt felhasználói bejelentkezési név (pre-Windows 2000). A felhasználói bejelentkezési név formátuma: *DomainName\testUser*, vagy csak *tesztfelhasználó*.
 
     A ( *onPremisesSamAccountName* ) *{{onPremisesSamAccountName}}* változó használatához az Azure AD-vel a [Azure ad Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect) használatával kell szinkronizálnia a felhasználói attribútumot.
 
@@ -299,7 +304,7 @@ A *pfx-tanúsítványok összekötője Microsoft Intune* [támogatja az automati
   Változások ebben a kiadásban:  
   - Az összekötő lekérdezési időköze 5 perctől 30 másodpercre van csökkentve.
  
-### <a name="april-2-2019"></a>2019. április 02.
+### <a name="april-2-2019"></a>2019. április 2.
 
 - **Intune tanúsítvány-összekötő – verzió 6.1904.1.0**  
   Változások ebben a kiadásban:  

@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 12/16/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2e7c9824711ecbfb43a7c7dde71cc01b306b7fab
-ms.sourcegitcommit: 7cc45ef52dda08479bc6bdff7d11d2f6c0e7b93b
+ms.openlocfilehash: 1e96f46dc0e79de3fc78739c246abdc0b9e52702
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74899416"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75205530"
 ---
 # <a name="intune-discovered-apps"></a>Intune által felderített alkalmazások
 
@@ -54,14 +54,14 @@ Az alábbi lista tartalmazza az alkalmazás platformjának típusát, a személy
 
 | Platfésm | Személyes tulajdonú eszközök esetén | Vállalati tulajdonú eszközök esetén | Frissítési ciklus |
 |------------------------------------------------------------------------|----------------------------------|--------------------------------------------------|---------------------------------------|
-| Windows 10 (Win32-alkalmazások) Megjegyzés: az [Intune felügyeleti bővítmény szükséges](intune-management-extension.md) az eszközön | Nem alkalmazható | Minden, a programok telepítése és törlése listában található Win32-alkalmazás | Az eszközök beléptetése 24 óránként |
+| Windows 10 (Win32-alkalmazások) Megjegyzés: az [Intune felügyeleti bővítmény szükséges](intune-management-extension.md) az eszközön | Nem alkalmazható | Csak felügyelt alkalmazások | Az eszközök beléptetése 24 óránként |
 | Windows 10 (modern alkalmazások) | Csak felügyelt modern alkalmazások | Az eszközre telepített összes modern alkalmazás | Az eszközök regisztrációja 7 naponta |
 | Windows 8.1 | Csak felügyelt alkalmazások | Csak felügyelt alkalmazások | Az eszközök regisztrációja 7 naponta |
 | Windows Phone 8 | Csak felügyelt alkalmazások | Csak felügyelt alkalmazások | Az eszközök regisztrációja 7 naponta |
 | Windows RT | Csak felügyelt alkalmazások | Csak felügyelt alkalmazások | Az eszközök regisztrációja 7 naponta |
-| iOS | Csak felügyelt alkalmazások | Az összes, az eszközön telepített alkalmazás | Az eszközök regisztrációja 7 naponta |
-| macOS | Csak felügyelt alkalmazások | Az összes, az eszközön telepített alkalmazás | Az eszközök regisztrációja 7 naponta |
-| Android: | Csak felügyelt alkalmazások | Az összes, az eszközön telepített alkalmazás | Az eszközök regisztrációja 7 naponta |
+| iOS | Csak felügyelt alkalmazások | Az eszközre telepített összes alkalmazás | Az eszközök regisztrációja 7 naponta |
+| macOS | Csak felügyelt alkalmazások | Az eszközre telepített összes alkalmazás | Az eszközök regisztrációja 7 naponta |
+| Android: | Csak felügyelt alkalmazások | Az eszközre telepített összes alkalmazás | Az eszközök regisztrációja 7 naponta |
 | Vállalati Android | Csak felügyelt alkalmazások | Csak a munkahelyi profilba telepített alkalmazások | Az eszközök regisztrációja 7 naponta |
 
 > [!NOTE]

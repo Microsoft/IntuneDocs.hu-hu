@@ -16,16 +16,16 @@ search.appverid: MET150
 ms.reviewer: tycast
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 122872eff92a37c8724fd4a853091e51a0a54c66
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: f2bee04eabb7036d9a28ac628175b27f763d0ccb
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72506529"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75207060"
 ---
 # <a name="windows-10-and-windows-holographic-device-settings-to-add-vpn-connections-using-intune"></a>Windows 10 és Windows holografikus eszközök beállításai VPN-kapcsolatok hozzáadásához az Intune használatával
 
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
+
 
 Microsoft Intune használatával adhat hozzá és konfigurálhat VPN-kapcsolatokat az eszközökhöz. Ez a cikk a virtuális magánhálózatok (VPN) létrehozásakor leggyakrabban használt beállításokat és szolgáltatásokat sorolja fel és ismerteti. Ezek a VPN-beállítások és szolgáltatások az Intune-ban leküldett vagy az eszközökre telepített konfigurációs profilokban használatosak.
 
@@ -177,7 +177,7 @@ Ha a felhasználó a listában szereplő DNS-utótaghoz csatlakozik, akkor a fel
 
 Ha például a felhasználó már csatlakoztatva van egy megbízható DNS-utótaghoz, a rendszer figyelmen kívül hagyja a következő autotriggereket. Pontosabban, a listában szereplő DNS-utótagok megszakítják az összes többi hálózati újraindítást, beleértve a következőket:
 
-- Mindig bekapcsolva
+- Always on
 - Alkalmazás-alapú trigger
 - DNS-alapú autotrigger
 

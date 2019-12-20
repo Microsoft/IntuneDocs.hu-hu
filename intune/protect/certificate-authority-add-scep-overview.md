@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9454353ec4f8291d4d8c0001cc977838ecec787b
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 4d05e33dbc28707bc6f929be72ba4a77c2e0641c
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74540800"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75206057"
 ---
 # <a name="add-partner-certification-authority-in-intune-using-scep"></a>Partner hitelesítésszolgáltató hozzáadása az Intune-ban SCEP protokollal
 
@@ -72,7 +72,7 @@ Ahhoz, hogy egy külső SCEP-kiszolgáló egyéni kérdésen alapuló ellenőrz�
 
 Ehhez mindenképpen rendelkeznie kell az Azure AD-alkalmazás regisztrálásához szükséges engedélyekkel. Tekintse meg a [szükséges engedélyeket](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions)az Azure ad dokumentációjában.
 
-#### <a name="create-an-application-in-azure-active-directory"></a>Alkalmazás létrehozása az Azure Active Directoryban  
+#### <a name="create-an-application-in-azure-active-directory"></a>Alkalmazás létrehozása Azure Active Directory  
 
 1. A [Azure Portal](https://portal.azure.com)lépjen a **Azure Active Directory** > alkalmazás- **regisztrációk**elemre, majd válassza az **új regisztráció**lehetőséget.  
 
@@ -89,7 +89,7 @@ Ehhez mindenképpen rendelkeznie kell az Azure AD-alkalmazás regisztrálásáho
    > [!IMPORTANT]  
    > Mielőtt elhagyja ezt a lapot, másolja ki az ügyfél titkos kulcsának értékét, és jegyezze fel későbbi használatra a külső HITELESÍTÉSSZOLGÁLTATÓ által megvalósított implementációval. Ez az érték nem jelenik meg újra. Mindenképpen tekintse át a külső HITELESÍTÉSSZOLGÁLTATÓ útmutatását, hogy miként szeretné beállítani az alkalmazás AZONOSÍTÓját, a hitelesítési kulcsot és a bérlő AZONOSÍTÓját.  
 
-6. Jegyezze fel a **bérlő azonosítóját**. A bérlő azonosítója a fiókhoz tartozó @ bejelentkezés után a tartomány szövege. Ha például a fiókja *admin@name.onmicrosoft.com* , akkor a bérlő azonosítója **Name.onmicrosoft.com**.  
+6. Jegyezze fel a **bérlő azonosítóját**. A bérlő azonosítója a fiókhoz tartozó @ bejelentkezés után a tartomány szövege. Ha például a fiókja *admin@name.onmicrosoft.com*, akkor a bérlő azonosítója **Name.onmicrosoft.com**.  
 
 7. Az alkalmazás navigációs ablaktábláján nyissa meg az **API-engedélyeket** a **kezelés**területen, majd válassza az **engedély hozzáadása**elemet.  
 
@@ -119,7 +119,7 @@ Ha törli az eszköz regisztrációját vagy teljes tartalmát, a tanúsítvány
 ## <a name="third-party-certification-authority-partners"></a>Külső hitelesítésszolgáltató partnerek
 Az alábbi külső hitelesítésszolgáltatók támogatják az Intune-t:
 
-- [Entrust Datacard](https://info.entrustdatacard.com/pki-eval-tool)
+- [Entrust Datacard](https://go.entrustdatacard.com/pki/intune/)
 - [EJBCA GitHub nyílt forráskódú verzió](https://github.com/agerbergt/intune-ejbca-connector)
 - [EverTrust](https://evertrust.fr/en/products/)
 - [GlobalSign](https://downloads.globalsign.com/acton/attachment/2674/f-6903f60b-9111-432d-b283-77823cc65500/1/-/-/-/-/globalsign-aeg-microsoft-intune-integration-guide.pdf)

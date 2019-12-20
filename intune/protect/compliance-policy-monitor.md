@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 12/12/2019
+ms.date: 12/18/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 947472c5e589cb443c9a15d20a732c299cc48b44
-ms.sourcegitcommit: df8e2c052fafb2d5d4e9b4fcd831ae0ecf7f8d16
+ms.openlocfilehash: 89b4516017d7ac8bf1e27134db6a67a0a86b17cb
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992989"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75206074"
 ---
 # <a name="monitor-intune-device-compliance-policies"></a>Intune-eszközmegfelelőségi szabályzatok figyelése
 
@@ -36,9 +36,9 @@ A megfelelőségi jelentések segítenek az eszközmegfelelőség áttekintésé
 
 Nyissa meg az **Intune Eszközmegfelelőségi irányítópultját**:
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Válassza az **Eszközmegfelelőség** > **Áttekintés** elemet. Megnyílik az **Eszközmegfelelőségi irányítópult**.
+2. Válassza az **eszközök** > **Áttekintés** > **megfelelőségi állapot** lapot.
 
 > [!IMPORTANT]
 > Az eszközmegfelelőségi szabályzatok csak akkor alkalmazhatók az eszközökre, ha azok regisztrálva vannak az Intune-ban.
@@ -151,7 +151,7 @@ A **megfelelőségi diagram beállítása** megjeleníti az összes megfelelős�
 
 ## <a name="view-compliance-reports"></a>Megfelelőségi jelentések megtekintése
 
-A *megfelelőségi állapotú*diagramok használata mellett a felügyeleti központ *figyelés* lapján is megtekintheti a megfelelőségi jelentéseket.
+Amellett, hogy a diagramok a *megfelelőségi állapotot*használják, a **jelentések** > **eszköz megfelelősége**lehetőségre léphetnek.
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
@@ -161,7 +161,7 @@ A *megfelelőségi állapotú*diagramok használata mellett a felügyeleti közp
    - Nem megfelelő eszközök
    - Megfelelőségi szabályzat nélküli eszközök
    - Beállítás-megfelelőség
-   - Szabályzatmegfelelőség
+   - Szabályzatok megfelelősége
    - Windows Health igazolási jelentés
    - Fenyegetésfigyelő ügynök állapota
 
@@ -191,3 +191,7 @@ Szabályzatütközésről akkor beszélünk, hogy egy eszközre több Intune-sza
 - Ha az ütköző beállítások egy Intune konfigurációs szabályzatból és egy megfelelőségi szabályzatból kerülnek ki, akkor a megfelelőségi szabályzat beállításai érvényesülnek a konfigurációs szabályzatéival szemben. Ez még akkor is így van, ha a konfigurációs szabályzat beállításai biztonságosabbak.
 
 - Ha több megfelelőségi szabályzatot telepített, akkor az Intune a legbiztonságosabbat alkalmazza ezek közül.
+
+## <a name="next-steps"></a>További lépések
+
+[Megfelelőségi szabályzatok áttekintése](device-compliance-get-started.md)

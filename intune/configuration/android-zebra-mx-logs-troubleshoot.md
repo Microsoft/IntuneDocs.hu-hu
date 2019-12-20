@@ -17,16 +17,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7ed93c86d3fbe7ed7a6ac5d4b1a3494fb55f2bc
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 2319fb0d1198289398912793e52482bf66d87173
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72506993"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75206839"
 ---
 # <a name="troubleshoot-and-see-potential-issues-on-android-zebra-devices-in-microsoft-intune"></a>Az androidos Zebra-eszközök lehetséges problémáinak elhárítása és megjelenítése Microsoft Intune
 
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
+
 
 Microsoft Intune a [Zebra Mobility Extensions (MX) segítségével kezelheti az androidos Zebra-eszközöket](android-zebra-mx-overview.md). A zebra-eszközök használatakor a StageNow profilokat hozhat létre a beállítások kezeléséhez, és feltöltheti őket az Intune-ba. Az Intune a StageNow alkalmazás használatával alkalmazza a beállításokat az eszközökön. A StageNow alkalmazás egy részletes naplófájlt is létrehoz a hibakereséshez használt eszközön.
 

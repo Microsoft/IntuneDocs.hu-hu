@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 11/14/2018
+ms.date: 12/16/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: enrollment
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 684e9602e66842e26a7f8e233a8cee6db73f132d
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 9cddb9b74d9132ace07c17a3156e61148b720d66
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74098201"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75207179"
 ---
 # <a name="set-up-enrollment-for-macos-devices-in-intune"></a>Regisztráció beállítása macOS-eszközökhöz az Intune-ban
 
@@ -78,11 +78,9 @@ A Parallels Desktophoz meg kell adnia a virtuális gépek hardvertípusát és s
 A VMware Fusion esetében [szerkesztenie kell a .vmx-fájlt](https://kb.vmware.com/s/article/1014782) a virtuális gép hardvermodelljének és sorozatszámának megadásához. Azt javasoljuk, hogy a virtuális gépeket futtató eszközök hardvertípusa egyezzen meg a létrehozandó virtuális gépek hardvertípusával. A hardvertípust az **Apple menü** > **A Mac névjegye** > **Rendszerjelentés** > **Modellazonosító** területen találhatja meg. 
 
 ## <a name="user-approved-enrollment"></a>Felhasználó által jóváhagyott regisztráció
-A felhasználói jóváhagyott MDM-regisztráció egy olyan macOS-regisztrációs típus, amellyel bizonyos biztonsági szempontból kényes beállításokat kezelhet. További információt az [Apple támogatási dokumentumában találhat](https://support.apple.com/HT208019).
-
-November 2019-től kezdődően az összes új felhasználó által birtokolt macOS-regisztráció a felhasználó számára lesz jóváhagyva, mivel a felhasználónak manuálisan kell telepítenie a felügyeleti profilt a sikeres regisztráláshoz. A [beléptetési folyamat](https://docs.microsoft.com/intune-user-help/enroll-your-device-in-intune-macos-cp)során a felhasználó a **Rendszerbeállítások** > **profilokban**telepíti az Apple felügyeleti profilt.  A felügyeleti profil telepítéséhez szükséges utasítások a macOS Céges portál alkalmazásban érhetők el.
-
-Előfordulhat, hogy a 2019 november előtt regisztrált eszközök nem lesznek felhasználó által jóváhagyva, ha a felhasználó nem hagyta jóvá manuálisan a felügyeleti profilt. A felhasználók azonban visszatérhetnek a felügyeleti profilhoz, és a **Rendszerbeállítások** > **profiljaiban** > kiválaszthatják a **felügyeleti profilt** , > a **jóváhagyás**lehetőségre.
+A felhasználói jóváhagyott MDM-regisztráció egy olyan macOS-regisztrációs típus, amellyel bizonyos biztonsági szempontból kényes beállításokat kezelhet. További információt az [Apple támogatási dokumentumában találhat](https://support.apple.com/HT208019).  
+ 
+A BYOD beléptetési folyamata során a rendszer kérni fogja a felhasználótól, hogy manuálisan hagyja jóvá az Apple felügyeleti profilt. A macOS rendszerhez készült Céges portál alkalmazásban útmutatást nyújt. Bár a felügyeleti profil jóváhagyása nem szükséges a regisztráció befejezéséhez, az Intune a felhasználó által jóváhagyott regisztrációkat javasolja. Ha a felhasználó nem hagyja jóvá a profilt a regisztráció során, a felhasználó a **Rendszerbeállítások** > a **profilok**lehetőségre, válassza ki a felügyeleti profilt, és válassza a **jóváhagyás**lehetőséget.    
 
 ### <a name="find-out-if-a-device-is-user-approved"></a>Annak megállapítása, hogy az eszköz felhasználó által jóváhagyva
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).

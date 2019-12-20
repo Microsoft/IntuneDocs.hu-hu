@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c344a518890a2309a7805d61a5675e2646029bbb
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: c02ea34417073091e2f2841b363edfb9966ce558
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74564043"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75205904"
 ---
 # <a name="configure-google-chrome-for-android-devices-using-intune"></a>A Google Chrome beállítása Android-eszközökhöz az Intune használatával 
 
@@ -48,12 +48,16 @@ A felügyelt Google Play-alkalmazások Intune-hoz való hozzáadásával kapcsol
 
 ## <a name="add-app-configuration-for-managed-ae-devices"></a>Alkalmazás konfigurációjának hozzáadása a felügyelt AE-eszközökhöz
 
-1. Az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) panelen válassza az **alkalmazás-konfigurációs házirendek** > **Hozzáadás**lehetőséget.
-2. Adja hozzá a szabályzat nevét, válassza a **felügyelt eszközök** lehetőséget az eszköz regisztrálása alatt **, a platform alatt.**
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **alkalmazások** > **alkalmazás-konfigurációs házirendek** lehetőséget, >  > **felügyelt eszközöket** **vegyen fel** .
+2. Adja meg a következő adatokat:
+    - **Név** – Az Azure Portalon megjelenítendő profilnév.
+    - **Leírás** – Az Azure Portalon megjelenítendő profilleírás.
+    - **Eszköz beléptetésének típusa** – ez a beállítás **felügyelt eszközökre**van beállítva.
+    - **Platform** – válassza az **Android**lehetőséget.
 
     ![Google Chrome konfigurációs szabályzat hozzáadása](~/apps/media/apps-configure-chrome-android/add-policy.png)
 
-3. Kattintson a **társított alkalmazás** lehetőségre, és válassza a **Google Chrome**lehetőséget.
+3. Kattintson a **társított alkalmazás** elemre a **társított alkalmazás** ablaktábla megjelenítéséhez. Keresse meg és válassza ki a **Google Chrome**elemet. Ez a lista azokat a [felügyelt Google Play-alkalmazásokat tartalmazza, amelyeket jóváhagyott és szinkronizált az Intune-](~/apps/apps-add-android-for-work.md)nal.
 
     ![Válassza a Google Chrome lehetőséget a társított alkalmazás alatt](~/apps/media/apps-configure-chrome-android/associated-app.png)
 

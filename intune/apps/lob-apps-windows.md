@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 12/19/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f4c7b5e3cca06a3ec10ea1b3dfc5e45546c841f
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 0d7a166e97cb9161df7c6d024e200adec0974715
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74563902"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75204969"
 ---
 # <a name="add-a-windows-line-of-business-app-to-microsoft-intune"></a>Üzletági Windows-alkalmazás hozzáadása a Microsoft Intune-hoz
 
@@ -34,13 +34,13 @@ Az üzletági (LOB) alkalmazásokat egy alkalmazástelepítő fájlból adja hoz
 > [!IMPORTANT]
 > Ha Win32-alkalmazásokat telepít az *. msi* kiterjesztésű telepítési fájllal, vegye fontolóra az [Intune felügyeleti bővítmény](../apps/intune-management-extension.md)használatát. Ha az Autopilot-regisztráció során összekeveri a Win32-alkalmazások és az üzletági alkalmazások telepítését, előfordulhat, hogy az alkalmazás telepítése sikertelen lesz.  
 
-## <a name="step-1-specify-the-software-setup-file"></a>1\. lépés: A szoftvertelepítő fájl megadása
+## <a name="step-1-specify-the-software-setup-file"></a>1. lépés: A szoftvertelepítő fájl megadása
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Válassza az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**lehetőséget.
 3. Az **alkalmazás hozzáadása** panelen válassza az **üzletági alkalmazás** lehetőséget az **alkalmazás típusaként**.
 
-## <a name="step-2-configure-the-app-package-file"></a>2\. lépés: Az alkalmazáscsomag-fájl konfigurálása
+## <a name="step-2-configure-the-app-package-file"></a>2. lépés: Az alkalmazáscsomag-fájl konfigurálása
 
 1. Az **Alkalmazás hozzáadása** panelen válassza az **Alkalmazáscsomag-fájl** lehetőséget.
 2. Az **Alkalmazáscsomag-fájl** panelen válassza a tallózás gombot. Ez után jelölje ki az **.msi**, **.appx** vagy **.appxbundle** kiterjesztésű telepítőfájlt.
@@ -51,7 +51,7 @@ Az üzletági (LOB) alkalmazásokat egy alkalmazástelepítő fájlból adja hoz
 1. Amikor végzett, válassza az **OK** gombot.
 
 
-## <a name="step-3-configure-app-information"></a>3\. lépés: Az alkalmazás adatainak konfigurálása
+## <a name="step-3-configure-app-information"></a>3. lépés: Az alkalmazás adatainak konfigurálása
 
 1. Az **Alkalmazás hozzáadása** panelen válassza az **Alkalmazásadatok** lehetőséget.
 2. Az **Alkalmazás adatai** panelen konfigurálja az alábbi információkat. Lehetséges, hogy ezen a panelen néhány érték automatikusan ki lesz töltve.
@@ -70,12 +70,12 @@ Az üzletági (LOB) alkalmazásokat egy alkalmazástelepítő fájlból adja hoz
     - **Ikon**: Itt töltheti fel az alkalmazáshoz társított ikont. Ez az ikon jelenik meg az alkalmazásnál a Céges portálon böngésző felhasználók számára.
 3. Amikor végzett, válassza az **OK** gombot.
 
-## <a name="step-4-finish-up"></a>4\. lépés: befejezés
+## <a name="step-4-finish-up"></a>4. lépés: befejezés
 
 1. Az **Alkalmazás hozzáadása** panelen ellenőrizze, hogy helyesen konfigurálta-e az alkalmazásadatokat.
 2. Az alkalmazást a **Hozzáadás** elem kiválasztásával töltheti fel az Intune-ba.
 
-## <a name="step-5-update-a-line-of-business-app"></a>5\. lépés: Üzletági alkalmazás frissítése
+## <a name="step-5-update-a-line-of-business-app"></a>5. lépés: Üzletági alkalmazás frissítése
 
 [!INCLUDE [shared-proc-lob-updateapp](../includes/shared-proc-lob-updateapp.md)]
 
@@ -97,3 +97,5 @@ Ez a funkció akkor hasznos, ha nem szeretne versenyhelyzetbe kerülni. Konflikt
 - További tájékoztató az alkalmazás jellemzőinek és hozzárendelési állapotának figyeléséről. Lásd: [Alkalmazásadatok és -hozzárendelések figyelése](apps-monitor.md).
 
 - További tudnivalók az Intune-beli alkalmazás környezetéről. Lásd: [az alkalmazások életciklusának áttekintése Microsoft Intuneban](app-lifecycle.md).
+
+- További információ a Win32-alkalmazásokról. Lásd: [Win32-alkalmazások kezelése](~/apps/apps-win32-app-management.md).

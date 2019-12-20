@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 62f418e396c5030a47ea0bcb31914cd4e1069c40
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 83b2ffc7e942492be4560a56af0f3514cb1638a4
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74319844"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75206856"
 ---
 # <a name="use-a-microsoft-intune-custom-profile-to-create-a-per-app-vpn-profile-for-android-devices"></a>Alkalmazásonkénti VPN-profil létrehozása androidos eszközökhöz egyéni Microsoft Intune-profillal
 
@@ -38,7 +38,7 @@ Miután hozzárendeli a szabályzatot az Android rendszerű eszközhöz vagy fel
 >
 > Ez a profil csak a Pulse Secure és a Citrix kapcsolattípust támogatja.
 
-## <a name="step-1-create-a-vpn-profile"></a>1\. lépés: VPN-profil létrehozása
+## <a name="step-1-create-a-vpn-profile"></a>1. lépés: VPN-profil létrehozása
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Válassza az **eszközök** > **konfigurációs profilok** lehetőséget > a **profil létrehozása**elemet.
@@ -53,7 +53,7 @@ Miután hozzárendeli a szabályzatot az Android rendszerű eszközhöz vagy fel
 
 Jegyezze le a VPN-profil létrehozásakor megadott **Kapcsolat neve** értéket. Erre szükség lesz a következő lépésben. Például: **AlkVpnProfil**.
 
-## <a name="step-2-create-a-custom-configuration-policy"></a>2\. lépés: Egyéni konfigurációs szabályzat létrehozása
+## <a name="step-2-create-a-custom-configuration-policy"></a>2. lépés: Egyéni konfigurációs szabályzat létrehozása
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Válassza az **eszközök** > **konfigurációs profilok** lehetőséget > a **profil létrehozása**elemet.
@@ -84,6 +84,6 @@ A **feketelistás** érték használatával megadhatja azon alkalmazások listá
 4. Az **adattípus**mezőben adja meg a **karakterlánc**értéket.
 5. Az **Érték** mezőbe írja be a **BLACKLIST** (LETILTOTT) vagy a **WHITELIST** (ENGEDÉLYEZETT) értéket.
 
-## <a name="step-3-assign-both-policies"></a>3\. lépés: Mindkét szabályzat hozzárendelése
+## <a name="step-3-assign-both-policies"></a>3. lépés: Mindkét szabályzat hozzárendelése
 
 [Rendeljen mindkét eszközt](device-profile-assign.md) a szükséges felhasználókhoz vagy eszközökhöz.

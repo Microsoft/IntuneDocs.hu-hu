@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b5b469c759ac34a6d8de09163534a580346e48a1
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: b25b761b3857fdf91bbbe827d288d09e350a1a7a
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73415028"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75206091"
 ---
 # <a name="add-users-and-grant-administrative-permission-to-intune"></a>Felhasználók hozzáadása és rendszergazdai engedély biztosítása az Intune-hoz
 
@@ -57,22 +57,20 @@ Az Intune-előfizetéshez manuálisan is hozzáadhat felhasználókat a [Microso
 
 ### <a name="add-intune-users-in-the-azure-portal"></a>Intune-felhasználók felvétele az Azure Portalon
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Válassza a **Felhasználók** > **Minden felhasználó** lehetőséget.
-3. A Felügyeleti központban válassza az **Új felhasználó** elemet.
-   ![Képernyőkép az Új felhasználó hozzáadása elemről](./media/users-add/intune-add-user.png)
-4. Adja meg a következő felhasználói adatokat:
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza a **felhasználók** > **minden felhasználó**lehetőséget.
+2. A Felügyeleti központban válassza az **Új felhasználó** elemet.
+3. Adja meg a következő felhasználói adatokat:
    - **Név**
    - **Felhasználónév** – Az új név az Azure Active Directory portálon ![Képernyőkép a név és a felhasználónév hozzáadásáról](./media/users-add/intune-add-user-info.png) Válassza az **OK** gombot a folytatáshoz.
-5. Szükség esetén a következő felhasználói tulajdonságokat is megadhatja:
+4. Szükség esetén a következő felhasználói tulajdonságokat is megadhatja:
    - **Profil** – Munkahelyi adatok, többek között a **Beosztás megnevezése** és a **Részleg**
    - **Csoportok** – Válasszon a felhasználó által felehető csoportokat
    - **Címtár szerepkör** – Rendszergazdai jogosultságok adása a felhasználónak (többek között szolgáltatásadminisztrátor szerepkör az Intune-hoz).
 
    Az új felhasználó Intune-hoz adásához válassza a **Létrehozás** gombot.
-6. Válassza a **Profil** lehetőséget, majd válasszon egy **Felhasználási helyet** az új felhasználónak. A felhasználási hely megadása szükséges, mielőtt az új felhasználóhoz hozzárendelhetne egy Intune-licencet. A folytatáshoz válassza a **Mentés** gombot.
+5. Válassza a **Profil** lehetőséget, majd válasszon egy **Felhasználási helyet** az új felhasználónak. A felhasználási hely megadása szükséges, mielőtt az új felhasználóhoz hozzárendelhetne egy Intune-licencet. A folytatáshoz válassza a **Mentés** gombot.
     ![A felhasználási hely képernyőképe](./media/users-add/intune-add-user-loc.png)
-7. Intune-licenc felhasználóhoz rendeléséhez válassza a **Licencek** lehetőséget, majd a **Hozzárendelés** elemet. Az eszközök regisztrálásához és a vállalati erőforrások eléréséhez Intune-licenc szükséges. Válassza a **Termékek** lehetőséget, válassza ki a licenctípust, aztán a **Kiválasztás** lehetőséget, majd a **Hozzárendelés** elemet.
+6. Intune-licenc felhasználóhoz rendeléséhez válassza a **Licencek** lehetőséget, majd a **Hozzárendelés** elemet. Az eszközök regisztrálásához és a vállalati erőforrások eléréséhez Intune-licenc szükséges. Válassza a **Termékek** lehetőséget, válassza ki a licenctípust, aztán a **Kiválasztás** lehetőséget, majd a **Hozzárendelés** elemet.
 
 ## <a name="grant-admin-permissions"></a>Rendszergazdai jogosultságok megadása
 

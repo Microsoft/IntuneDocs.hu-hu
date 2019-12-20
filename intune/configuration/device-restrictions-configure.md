@@ -15,16 +15,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 704da2ee4f0f2e6dce222c89704c83a35368c02c
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 8c86252030a4baf957077cd889386bb8016554f1
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74059541"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75206567"
 ---
 # <a name="configure-device-restriction-settings-in-microsoft-intune"></a>Ezközkorlátozásokra vonatkozó beállítások konfigurálása a Microsoft Intune-ban
 
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
+
 
 Az Intune olyan eszköz-korlátozási szabályzatokat tartalmaz, amelyek segítségével a rendszergazdák vezérelhetik az Android, iOS, macOS és Windows rendszerű eszközöket. Ezek a korlátozások lehetővé teszik a beállítások és szolgáltatások széles körének szabályozását a szervezet erőforrásainak megóvása érdekében. A rendszergazdák például a következőket tehetik:
 

@@ -5,7 +5,7 @@ keywords: Mac OS X, macOS, OS X
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 11/14/2019
+ms.date: 12/16/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
@@ -19,12 +19,12 @@ ms.reviewer: kakyker
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba285fc9de58b3fb739a16722e0e05e36e840e87
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: f26594435689a4f7a178035264e006a497719d3e
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74098133"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75205486"
 ---
 # <a name="enroll-your-macos-device-using-the-company-portal-app"></a>MacOS-eszköz regisztrálása a Céges portál alkalmazás használatával  
 
@@ -67,18 +67,17 @@ A következő lépésekkel regisztrálja macOS-eszközét a szervezetében. Az e
 
 1. Jelentkezzen be Céges portálra munkahelyi vagy iskolai fiókjával.  
 2. Az alkalmazás megnyitásakor válassza az **Indítás**lehetőséget.  
-3. Tekintse át, hogy a cége [mit láthat és mit nem láthat](what-info-can-your-company-see-when-you-enroll-your-device-in-intune.md) a regisztrált eszközön. Ezután válassza a **Continue** (Folytatás) gombot.  
-4. A **felügyeleti profil telepítése** képernyőn válassza a **profil letöltése**lehetőséget.   
+3. Tekintse át, hogy a cége mit láthat és mit nem láthat a regisztrált eszközön. Ezután válassza a **Continue** (Folytatás) gombot.
+4.  Ha a rendszer kéri, adja meg az eszköz jelszavát a **felügyeleti profil telepítése** képernyőn.
 
-    ![Példa a Céges portálre, a felügyeleti profil telepítése képernyőre, és a "profil letöltése" gombra.](./media/install-mgmt-profile-mac-1911.PNG)   
-5. Ekkor megnyílik az eszköz rendszerbeállításai. Válassza a **telepítés** lehetőséget, majd válassza a **telepítés** újra lehetőséget. Ha a rendszer kéri, adja meg az eszköz jelszavát.  
+    ![Példa a Céges portál, a felügyeleti profil telepítése képernyőre, a jelszó kérése elemre.](./media/install-management-profile-macos-1912.PNG)   
+5. Az **eszközkezelés megerősítése** képernyőn válassza a **Rendszerbeállítások megnyitása**lehetőséget.  
 
-    ![Példa a macOS rendszer beállításairól, a telepítési kérésről, a "telepítés" gombra.](./media/system-preference-install-1911.PNG)  
-6. A profil telepítése után a rendszer a **felügyeleti profilban** megjelenik a profilok listájában.  
-
-   ![Példa a macOS rendszer beállításai, profilok képernyő, a telepített felügyeleti profil kiemelése képernyőképre.](./media/system-preference-verify-1911.PNG)   
-7. Vissza Céges portál.   
-8. Előfordulhat, hogy a szervezetnek frissítenie kell az eszköz beállításait. Ha elkészült a beállítások frissítésével, válassza a **Beállítások ellenőrzése**lehetőséget.  
+    ![Példa az eszközkezelés megerősítése képernyőre, és válassza ki a "rendszerbeállítások megnyitása" gombot.](./media/confirm-device-management-macos-1912.PNG)  
+6. Ekkor megnyílik az eszköz rendszerbeállításai. Válassza a **felügyeleti profil** lehetőséget az eszközök profilok listájában, majd válassza a **jóváhagyás > ** **jóváhagyás**lehetőséget.  
+    ![például a rendszerbeállítások, a felügyeleti profil képernyő képernyőképe, a "jóváhagyás" gomb kiemelése.](./media/management-profile-approve-macos-1912.PNG)   
+1. Térjen vissza a Céges portálhoz, és válassza a **Folytatás**lehetőséget.    
+2. Előfordulhat, hogy a szervezetnek frissítenie kell az eszköz beállításait. Ha elkészült a beállítások frissítésével, válassza a **Beállítások ellenőrzése**lehetőséget.  
 
     ![Példa a Céges portál képernyőképére, az eszközbeállítások képernyő frissítésére, és a "beállítások ellenõrzése" gombra.](./media/update-settings-mac-1911.PNG)  
 9. Ha a telepítés befejeződött, válassza a **kész**gombot.  

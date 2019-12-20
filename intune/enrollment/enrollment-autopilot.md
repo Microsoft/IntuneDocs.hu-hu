@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bce0e96ecdd4cf254273e26564b8cb132a6d2080
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: f15ddae79cdfec5635afff08abaee181e0517cc8
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74563859"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75207230"
 ---
 # <a name="enroll-windows-devices-in-intune-by-using-the-windows-autopilot"></a>Windows-eszközök regisztrálása az Intune-ban a Windows Autopilot használatával  
 A Windows Autopilot leegyszerűsíti az eszközök regisztrálását az Intune-ban. A testre szabott operációsrendszer-lemezképek létrehozása és karbantartása sok időt vesz igénybe. Gyakran ezeknek az egyéni operációsrendszer-lemezképeknek az új eszközökre való alkalmazásával is időt kell töltenie, hogy felkészítse az eszközöket a használatra, mielőtt a végfelhasználóknak adná azokat. A Microsoft Intune és az AutoPilot révén új eszközöket adhat hozzá a végfelhasználók számára anélkül, hogy egyéni operációsrendszer-lemezképek létrehozására, kezelésére és az eszközökre való alkalmazására lenne szükség. Az AutoPilot-eszközök Intune-nal való felügyelete során a regisztráció után szabályzatokat, profilokat, alkalmazásokat és sok mást is kezelni tud. A megoldás előnyeinek, használati eseteinek és előfeltételeinek áttekintéséről lásd [a Windows AutoPilot áttekintését](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot).
@@ -49,7 +49,7 @@ További információt a PowerShell-parancsmag ismertetése című témakörben 
 
 A Windows AutoPilot-eszközök felvételéhez importálhat egy CSV-fájlt az adataikkal.
 
-1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **Windows** > **eszközök** elemet (a **Windows Autopilot Deployment program** > **Importálás**elemnél.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **Windows** > **Windows-beléptetési** > **eszközök** elemet (a **Windows Autopilot Deployment program** > **Importálás**lehetőséget.
 
     ![A Windows AutoPilot-eszközök képernyőképe](./media/enrollment-autopilot/autopilot-import-device.png)
 
@@ -97,22 +97,22 @@ Az Autopilot-üzembehelyezési profilokkal Autopilot-eszközeit konfigurálhatja
 4. Válassza a **Tovább** elemet.
 5. Az **üzembe helyezési mód** **(OOBE)** lapon válassza az alábbi két lehetőség egyikét:
     - **Felhasználó-alapú**: Az ilyen profillal rendelkező eszközök az őket regisztráló felhasználóhoz vannak társítva. Az eszköz regisztrálásához felhasználói hitelesítő adatokra van szükség.
-    - **Öntelepítés (előzetes verzió)** : (a Windows 10 1809-es vagy újabb verziójára van szükség) ehhez a profilhoz tartozó eszközök nincsenek társítva az eszközt regisztrálni kívánó felhasználóhoz. Az eszköz telepítéséhez nincs szükség felhasználói hitelesítő adatokra. Ha egy eszközhöz nincs felhasználó társítva, a felhasználó-alapú megfelelőségi szabályzatok nem vonatkoznak rá. Öntelepítési mód használatakor a rendszer csak az eszközt célzó megfelelőségi szabályzatokat alkalmazza.
+    - **Öntelepítés (előzetes verzió)**: (a Windows 10 1809-es vagy újabb verziójára van szükség) ehhez a profilhoz tartozó eszközök nincsenek társítva az eszközt regisztrálni kívánó felhasználóhoz. Az eszköz telepítéséhez nincs szükség felhasználói hitelesítő adatokra. Ha egy eszközhöz nincs felhasználó társítva, a felhasználó-alapú megfelelőségi szabályzatok nem vonatkoznak rá. Öntelepítési mód használatakor a rendszer csak az eszközt célzó megfelelőségi szabályzatokat alkalmazza.
 
     ![Az OOBE oldalának képernyőképe](./media/enrollment-autopilot/create-profile-outofbox.png)
 
 6. A **Csatlakozás az Azure AD-hez mint** mezőben válassza az **Azure AD-hez csatlakoztatott** lehetőséget.
-7. Adja meg az alábbi lehetőségeket:
-    - **Végfelhasználói licencszerződés (EULA)** : (Windows 10, 1709-es vagy újabb verzió) Eldöntheti, hogy a felhasználók számára megjelenjen-e a végfelhasználói licencszerződés.
+7. Konfigurálja az alábbi beállításokat:
+    - **Végfelhasználói licencszerződés (EULA)**: (Windows 10, 1709-es vagy újabb verzió) Eldöntheti, hogy a felhasználók számára megjelenjen-e a végfelhasználói licencszerződés.
     - **Adatvédelmi beállítások**: Eldöntheti, hogy a felhasználók számára megjelenjenek-e az adatvédelmi beállítások.
     >[!IMPORTANT]
     >A diagnosztikai adatbeállítás alapértelmezett értéke a Windows-verziók között változik. A Windows 10 1903-es verzióját futtató eszközök esetében az alapértelmezett érték a teljes beépített élmény. További információ: [Windows diagnosztikai adatok](https://docs.microsoft.com/windows/privacy/windows-diagnostic-data) <br>
     
-    - A **fiók beállításainak módosítása (Windows 10, 1809-es vagy újabb verzió szükséges)** : az **Elrejtés** beállítás megadásával megakadályozhatja a Fiókbeállítások megjelenítését a vállalati bejelentkezési és tartományi hibák oldalain. Ez a beállítás megköveteli, hogy [az Azure Active Directoryban konfigurálva legyen a Vállalati védjegyezés](https://docs.microsoft.com/azure/active-directory/fundamentals/customize-branding).
+    - A **fiók beállításainak módosítása (Windows 10, 1809-es vagy újabb verzió szükséges)**: az **Elrejtés** beállítás megadásával megakadályozhatja a Fiókbeállítások megjelenítését a vállalati bejelentkezési és tartományi hibák oldalain. Ez a beállítás megköveteli, hogy [az Azure Active Directoryban konfigurálva legyen a Vállalati védjegyezés](https://docs.microsoft.com/azure/active-directory/fundamentals/customize-branding).
     - **Felhasználói fiók típusa**: Válassza ki a felhasználói fiók típusát (**Rendszergazda** vagy **Normál**). Lehetővé tesszük, hogy a felhasználó a helyi rendszergazda csoportba való felvételsel a helyi rendszergazdához csatlakozzon az eszközhöz. A felhasználó alapértelmezett rendszergazdaként nem engedélyezhető az eszközön.
     - A **White kesztyűs Oobe engedélyezése** (a Windows 10 1903-es vagy újabb verziójára van szükség; [További fizikai követelmények](https://docs.microsoft.com/windows/deployment/windows-autopilot/white-glove#prerequisites)): válassza az **Igen** lehetőséget a fehér kesztyű támogatásának engedélyezéséhez.
     - Az **eszköz nevének sablonjának alkalmazása** (a Windows 10 1809-es vagy újabb verziójára, valamint az Azure ad JOIN típusra van szükség): válassza az **Igen** lehetőséget, ha az eszköznek a regisztráció során való elnevezéséhez használni szeretné a sablont. A nevek legfeljebb 15 karakterből állhatnak, és betűket, számokat és kötőjelet tartalmazhatnak. A nevek nem állhatnak csak számokból. Hardverspecifikus sorozatszám hozzáadásához használja a [%SERIAL% makrót](https://docs.microsoft.com/windows/client-management/mdm/accounts-csp). Egy másik lehetőség a [%RAND:x% makró](https://docs.microsoft.com/windows/client-management/mdm/accounts-csp) használata, amellyel véletlenszerű számsort adhat hozzá. Az x a hozzáadni kívánt számjegyek számát jelenti. A [tartományhoz való csatlakozás profiljában](windows-autopilot-hybrid.md#create-and-assign-a-domain-join-profile)csak a hibrid eszközök előzetes javítását lehet megadni. 
-    - **Nyelv (Régió)** \*: Válassza ki az eszközön használandó nyelvet. Ez a lehetőség csak akkor érhető el, ha a **Telepítési mód** beállításnál az **Öntelepítő** lehetőséget választotta.
+    - **Nyelv (Régió)**\*: Válassza ki az eszközön használandó nyelvet. Ez a lehetőség csak akkor érhető el, ha a **Telepítési mód** beállításnál az **Öntelepítő** lehetőséget választotta.
     - A **billentyűzet automatikus konfigurálása**\*: Ha egy **nyelv (régió)** van kiválasztva, válassza az **Igen** lehetőséget a billentyűzet kijelölési oldalának kihagyásához. Ez a lehetőség csak akkor érhető el, ha a **Telepítési mód** beállításnál az **Öntelepítő** lehetőséget választotta.
 8. Válassza a **Tovább** elemet.
 9. A **hatókör címkék** lapon adja meg a profilra alkalmazni kívánt hatókör-címkéket. A hatókör-címkékkel kapcsolatos további információkért lásd: [a szerepköralapú hozzáférés-vezérlés és a hatókör-címkék használata a terjesztéshez](../fundamentals/scope-tags.md).

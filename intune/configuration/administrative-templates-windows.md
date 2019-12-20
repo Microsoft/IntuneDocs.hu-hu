@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ca087ec67542102a0cd3111d27a860500b23d3c4
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 9b848bc3cd6461b5c31e940ffbe330bc60374795
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74547984"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75206890"
 ---
 # <a name="use-windows-10-templates-to-configure-group-policy-settings-in-microsoft-intune"></a>Csoportházirend-beállítások konfigurálása a Windows 10-es sablonokkal Microsoft Intune
 
@@ -74,7 +74,7 @@ Ez a cikk a Windows 10-es eszközökhöz készült sablonok létrehozásának l�
 6. Válassza ki a kívánt beállításokat. Például az **Office**-on, és válassza a **korlátozott böngészés aktiválása**lehetőséget. Megjelenik a beállítás részletes leírása. Válassza az **engedélyezve**, **Letiltva**lehetőséget, vagy hagyja meg a beállítást **nincs konfigurálva** (alapértelmezett). A részletes leírás azt is ismerteti, hogy mi történik, ha az **engedélyezve**, a **Letiltva**vagy a **nincs konfigurálva**beállítást választja.
 7. A módosítások mentéséhez válassza az **OK** gombot.
 
-Folytassa a beállítások listájának átadását, és konfigurálja a kívánt beállításokat a környezetében. Az alábbiakban néhány példa következik:
+Folytassa a beállítások listájának átadását, és konfigurálja a kívánt beállításokat a környezetében. Néhány példa:
 
 - A **VBA-makró értesítési beállításainak** beállításával különböző Microsoft Office programokban, például a Wordben és az Excelben kezelheti a VBA-makrókat.
 - A fájlok letöltésének **engedélyezése** beállítással engedélyezheti vagy tilthatja le a letöltéseket az Internet Explorerben.
@@ -82,7 +82,7 @@ Folytassa a beállítások listájának átadását, és konfigurálja a kíván
 - Az aláíratlan **ActiveX-vezérlők letöltése** beállítással megakadályozhatja, hogy a felhasználók aláíratlan ActiveX-vezérlőket töltsenek le az Internet Explorerben.
 - A **rendszer-visszaállítás kikapcsolása** beállítás használatával engedélyezheti vagy megakadályozhatja, hogy a felhasználók futtassák a rendszer-visszaállítást az eszközön.
 - A **Kedvencek importálásának engedélyezése** beállítás megadásával engedélyezheti vagy letilthatja a felhasználók számára a Kedvencek importálását egy másik böngészőből a Microsoft Edge-be.
-- és még sok más...
+- És még sok más...
 
 ## <a name="find-some-settings"></a>Néhány beállítás megkeresése
 
@@ -92,7 +92,7 @@ Ezekben a sablonokban több száz beállítás érhető el. A beépített funkci
 
   ![Kattintson a Path (elérési út) elemre a csoportházirend vagy az ADMX elérési útja szerint csoportosított összes beállítás megjelenítéséhez az Intune-ban.](./media/administrative-templates-windows/path-filter-shows-excel-options.png)
 
-- A sablonban a **keresőmező** segítségével megtalálhatja a kívánt beállításokat. A kereséshez állítsa be a címet vagy az elérési utat. Keressen például a `copy`(Nem sikerült megnyitni a futási teret a(z)  hely esetén) üzenetre. A `copy` összes beállítása látható:
+- A sablonban a **keresőmező** segítségével megtalálhatja a kívánt beállításokat. A kereséshez állítsa be a címet vagy az elérési utat. Keressen például `copy`. A `copy` összes beállítása látható:
 
   ![Az Intune-beli felügyeleti sablonokban található összes Windows-és Office-beállítás megjelenítésének keresése a másolásban](./media/administrative-templates-windows/search-copy-settings.png) 
 

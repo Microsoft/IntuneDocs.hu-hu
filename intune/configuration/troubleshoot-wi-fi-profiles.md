@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 77f5787509438ec3280f29be8449d78979806042
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: c33ab3c72d6e76b44fec85ce40dc2d6510a294bc
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74542329"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75207128"
 ---
 # <a name="troubleshoot-wi-fi-device-configuration-profiles-in-microsoft-intune"></a>A Wi-Fi-eszköz konfigurációs profiljainak hibáinak megoldása Microsoft Intune
 
@@ -177,7 +177,7 @@ WiFiConfigurationServiceProvider: Node set value, type: (0x4), Result: (The oper
 
 ## <a name="common-issues"></a>Gyakori problémák
 
-### <a name="issue-1-the-wi-fi-profile-isnt-deployed-to-the-device"></a>1\. probléma: a Wi-Fi profil nincs központilag telepítve az eszközön
+### <a name="issue-1-the-wi-fi-profile-isnt-deployed-to-the-device"></a>1. probléma: a Wi-Fi profil nincs központilag telepítve az eszközön
 
 - Ellenőrizze, hogy a Wi-Fi profil a megfelelő csoporthoz van-e rendelve:
 
@@ -194,7 +194,7 @@ WiFiConfigurationServiceProvider: Node set value, type: (0x4), Result: (The oper
   1. Lépjen a **beállítások** > **fiókok** > **hozzáférés munkahelyi vagy iskolai rendszerhez elemre**.
   2. Válassza ki a munkahelyi vagy iskolai fiókját > **adatokat**.
   3. A **Beállítások** lap alján válassza a **jelentés létrehozása**lehetőséget.
-  4. Megnyílik egy ablak, amely megjeleníti a naplófájlok elérési útját. Válassza az **Export** (Exportálás) lehetőséget.
+  4. Megnyílik egy ablak, amely megjeleníti a naplófájlok elérési útját. Válassza az **Exportálás**lehetőséget.
   5. Nyissa meg a `\Users\Public\Documents\MDMDiagnostics` elérési utat, és tekintse meg a jelentést:
 
       > [!div class="mx-imgBorder"]
@@ -248,7 +248,7 @@ WiFiConfigurationServiceProvider: Node set value, type: (0x4), Result: (The oper
 
     Ha a naplóban hiba jelenik meg, másolja a hiba időbélyegét, és szűrje a napló szűrését. Ezután használja a "keresés" lehetőséget az időbélyegző használatával, hogy megtudja, mi történt a hiba előtt.
 
-### <a name="issue-2-the-wi-fi-profile-is-deployed-to-the-device-but-the-device-cant-connect-to-the-network"></a>2\. probléma: a Wi-Fi profil telepítve van az eszközön, de az eszköz nem tud csatlakozni a hálózathoz
+### <a name="issue-2-the-wi-fi-profile-is-deployed-to-the-device-but-the-device-cant-connect-to-the-network"></a>2. probléma: a Wi-Fi profil telepítve van az eszközön, de az eszköz nem tud csatlakozni a hálózathoz
 
 Ezt a problémát általában az Intune-on kívüli személy okozta. A következő feladatok segítenek megérteni és elhárítani a kapcsolódási problémákat:
 

@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 12/12/2019
+ms.date: 12/19/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e73612080e52c8eb49a0c090b68e917e24fef3ab
-ms.sourcegitcommit: df8e2c052fafb2d5d4e9b4fcd831ae0ecf7f8d16
+ms.openlocfilehash: 85fc8bf002a4d5d00d2163c0b75c49d11dcd9b61
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992955"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75206363"
 ---
 # <a name="ios-and-ipados-device-settings-to-use-common-ios-features-in-intune"></a>iOS-és iPadOS-eszközök beállításai az Intune közös iOS-funkcióinak használatához
 
@@ -87,9 +87,9 @@ Az eszköz dockhoz legfeljebb **hat** elemet (az alkalmazások és a mappák egy
 - **Hozzáadás**: alkalmazások vagy mappák hozzáadása az eszközön lévő dockhoz.
 - **Típus**: adjon hozzá egy **alkalmazást** vagy egy **mappát**:
 
-  - **Alkalmazás**: válassza ezt a lehetőséget, ha alkalmazásokat szeretne hozzáadni a képernyőn lévő dockhoz. Adja meg a következőt:
+  - **Alkalmazás**: válassza ezt a lehetőséget, ha alkalmazásokat szeretne hozzáadni a képernyőn lévő dockhoz. Be
 
-    - **Alkalmazás neve**: adja meg az alkalmazás nevét. A rendszer ezt a nevet használja a Azure Portalban való hivatkozáshoz. *Nem* jelenik meg az iOS-eszközön.
+    - **Alkalmazás neve**: adja meg az alkalmazás nevét. A rendszer ezt a nevet használja a Microsoft Endpoint Manager felügyeleti központban található referenciához. *Nem* jelenik meg az iOS-eszközön.
     - Alkalmazáscsomag- **azonosító**: adja meg az alkalmazás köteg-azonosítóját. További Példákért lásd a [beépített iOS-alkalmazások köteg-azonosítóit](bundle-ids-built-in-ios-apps.md) .
 
   - **Mappa**: válassza ezt a lehetőséget, ha mappát kíván hozzáadni a képernyőn a dockhoz.
@@ -99,8 +99,8 @@ Az eszköz dockhoz legfeljebb **hat** elemet (az alkalmazások és a mappák egy
     - **Mappa neve**: adja meg a mappa nevét. Ez a név jelenik meg a felhasználók számára az eszközön.
     - **Lapok listája**: **adjon hozzá** egy lapot, és adja meg a következő tulajdonságokat:
 
-      - **Oldal neve**: adja meg a lap nevét. A rendszer ezt a nevet használja a Azure Portalban való hivatkozáshoz. *Nem* jelenik meg az iOS-eszközön.
-      - **Alkalmazás neve**: adja meg az alkalmazás nevét. A rendszer ezt a nevet használja a Azure Portalban való hivatkozáshoz. *Nem* jelenik meg az iOS-eszközön.
+      - **Oldal neve**: adja meg a lap nevét. A rendszer ezt a nevet használja a Microsoft Endpoint Manager felügyeleti központban található referenciához. *Nem* jelenik meg az iOS-eszközön.
+      - **Alkalmazás neve**: adja meg az alkalmazás nevét. A rendszer ezt a nevet használja a Microsoft Endpoint Manager felügyeleti központban található referenciához. *Nem* jelenik meg az iOS-eszközön.
       - Alkalmazáscsomag- **azonosító**: adja meg az alkalmazás köteg-azonosítóját. További Példákért lásd a [beépített iOS-alkalmazások köteg-azonosítóit](bundle-ids-built-in-ios-apps.md) .
 
       Akár **20** oldalt is hozzáadhat az eszköz dockhoz.
@@ -129,7 +129,7 @@ Egy eszközön legfeljebb **40** lapot adhat hozzá.
 
 - **Lapok listája**: **adjon hozzá** egy lapot, és adja meg a következő tulajdonságokat:
 
-  - **Oldal neve**: adja meg a lap nevét. A rendszer ezt a nevet használja a Azure Portalban lévő hivatkozáshoz, és *nem* jelenik meg az iOS-eszközön.
+  - **Oldal neve**: adja meg a lap nevét. A rendszer ezt a nevet használja a Microsoft Endpoint Manager felügyeleti központban található referenciához, és *nem* jelenik meg az iOS-eszközön.
 
   Egy eszközön legfeljebb **60** elemet (alkalmazásokat és mappákat) adhat hozzá.
 
@@ -139,7 +139,7 @@ Egy eszközön legfeljebb **40** lapot adhat hozzá.
 
       - **Alkalmazás**: válassza ezt a lehetőséget, ha alkalmazásokat szeretne hozzáadni a képernyőn lévő laphoz. Ezt is adja meg:
 
-        - **Alkalmazás neve**: adja meg az alkalmazás nevét. A rendszer ezt a nevet használja a Azure Portalban való hivatkozáshoz. *Nem* jelenik meg az iOS-eszközön.
+        - **Alkalmazás neve**: adja meg az alkalmazás nevét. A rendszer ezt a nevet használja a Microsoft Endpoint Manager felügyeleti központban található referenciához. *Nem* jelenik meg az iOS-eszközön.
         - Alkalmazáscsomag- **azonosító**: adja meg az alkalmazás köteg-azonosítóját. További Példákért lásd a [beépített iOS-alkalmazások köteg-azonosítóit](bundle-ids-built-in-ios-apps.md) .
 
       - **Mappa**: válassza ezt a lehetőséget, ha mappát kíván hozzáadni a képernyőn a dockhoz.
@@ -149,8 +149,8 @@ Egy eszközön legfeljebb **40** lapot adhat hozzá.
         - **Mappa neve**: adja meg a mappa nevét. Ez a név jelenik meg a felhasználók számára az eszközön.
         - **Hozzáadás**: lapok hozzáadása a mappához. Adja meg a következő tulajdonságokat is:
 
-          - **Oldal neve**: adja meg a lap nevét. A rendszer ezt a nevet használja a Azure Portalban való hivatkozáshoz. *Nem* jelenik meg az iOS-eszközön.
-          - **Alkalmazás neve**: adja meg az alkalmazás nevét. A rendszer ezt a nevet használja a Azure Portalban való hivatkozáshoz. *Nem* jelenik meg az iOS-eszközön.
+          - **Oldal neve**: adja meg a lap nevét. A rendszer ezt a nevet használja a Microsoft Endpoint Manager felügyeleti központban található referenciához. *Nem* jelenik meg az iOS-eszközön.
+          - **Alkalmazás neve**: adja meg az alkalmazás nevét. A rendszer ezt a nevet használja a Microsoft Endpoint Manager felügyeleti központban található referenciához. *Nem* jelenik meg az iOS-eszközön.
           - Alkalmazáscsomag- **azonosító**: adja meg az alkalmazás köteg-azonosítóját. További Példákért lásd a [beépített iOS-alkalmazások köteg-azonosítóit](bundle-ids-built-in-ios-apps.md) .
 
 #### <a name="example"></a>Példa
@@ -163,7 +163,7 @@ Ha a szabályzatot egy iPhone-hoz rendeli hozzá, az oldal az alábbi képhez ha
 
 ![iOS-eszköz módosított kezdőképernyővel](./media/ios-device-features-settings/Bd37PHa.png)
 
-## <a name="app-notifications"></a>Alkalmazásértesítések
+## <a name="app-notifications"></a>Alkalmazás-értesítések
 
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: automatikus eszközök beléptetése (felügyelt)
 
@@ -172,8 +172,8 @@ Ha a szabályzatot egy iPhone-hoz rendeli hozzá, az oldal az alábbi képhez ha
     ![Alkalmazás-értesítés hozzáadása az iOS-profilban az Intune-ban](./media/ios-device-features-settings/ios-macos-app-notifications.png)
 
   - Alkalmazáscsomag- **azonosító**: adja meg a hozzáadni kívánt alkalmazás ALKALMAZÁSCSOMAG- **azonosítóját** . További Példákért lásd a [beépített iOS-alkalmazások köteg-azonosítóit](bundle-ids-built-in-ios-apps.md) .
-  - **Alkalmazás neve**: írja be a hozzáadni kívánt alkalmazás nevét. A rendszer ezt a nevet használja a Azure Portalban való hivatkozáshoz. *Nem* jelenik meg az eszközön.
-  - **Kiadó**: adja meg a hozzáadni kívánt alkalmazás közzétevőjét. A rendszer ezt a nevet használja a Azure Portalban való hivatkozáshoz. *Nem* jelenik meg az eszközön.
+  - **Alkalmazás neve**: írja be a hozzáadni kívánt alkalmazás nevét. A rendszer ezt a nevet használja a Microsoft Endpoint Manager felügyeleti központban található referenciához. *Nem* jelenik meg az eszközön.
+  - **Kiadó**: adja meg a hozzáadni kívánt alkalmazás közzétevőjét. A rendszer ezt a nevet használja a Microsoft Endpoint Manager felügyeleti központban található referenciához. *Nem* jelenik meg az eszközön.
   - **Értesítések**: **engedélyezheti** vagy **letilthatja** , hogy az alkalmazás értesítéseket küldjön az eszközre.
     - **Megjelenítés az értesítési központban**: az **Engedélyezés** beállítás megadásával az alkalmazás értesítéseket jeleníthet meg az eszköz értesítési központjában. A **Letiltás** beállítás megadásával megakadályozható, hogy az alkalmazás értesítéseket jelenít meg az értesítési központban.
     - **Megjelenítés a zárolási képernyőn**: válassza az **Engedélyezés** lehetőséget az eszköz zárolási képernyőjén az alkalmazás értesítéseinek megjelenítéséhez. A **Letiltás** beállítás megadásával megakadályozható, hogy az alkalmazás megjelenítse az értesítéseket a zárolási képernyőn.

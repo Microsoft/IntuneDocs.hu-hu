@@ -6,7 +6,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 3/5/2018
+ms.date: 12/18/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,16 +16,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: afaee427b593cfaed957279b520765242a1aacd3
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 4b83a0339d87375502159467af323fceae5eb6e2
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72506649"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75207077"
 ---
 # <a name="use-custom-policies-in-microsoft-intune-to-allow-and-block-apps-for-samsung-knox-standard-devices"></a>Alkalmazások engedélyezése és letiltása egyéni szabályzattal Samsung Knox Standard-eszközökön a Microsoft Intune-ban 
-
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
 Ennek a cikknek az eljárásaival elkészíthet egy egyéni Microsoft Intune-szabályzatot, amellyel az alábbiak egyikét hozhatja létre:
 
@@ -36,37 +34,41 @@ Ezek a beállítások kizárólag a Samsung Knox Standard rendszerű eszközök�
 
 ## <a name="create-an-allowed-or-blocked-app-list"></a>Az engedélyezett vagy tiltott alkalmazások listájának létrehozása
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-3. Az **Intune** panelen válassza az **Eszközkonfiguráció** lehetőséget.
-2. Az **Eszközkonfiguráció** panelen válassza a **Kezelés** > **Profilok** lehetőséget.
-2. A profilok listáját mutató panelen válassza a **Profil létrehozása** lehetőséget.
-3. A **Profil létrehozása** panelen írja be az eszközprofilra vonatkozó **Név** és **Leírás** (nem kötelező) szövegét.
-2. Válassza az **Android** lehetőséget a **Platform** beállításnál, valamint az **Egyéni** lehetőséget a **Profiltípus** beállításnál.
-3. Kattintson a **Beállítások** elemre.
-3. Az **Egyéni OMA-URI beállítások** panelen válassza a **Hozzáadás** lehetőséget.
-4. Az **OMA-URI beállítás hozzáadása vagy szerkesztése** párbeszédpanelen adja meg a következő beállításokat:
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **eszközök** > **konfigurációs profilok** lehetőséget > a **profil létrehozása**elemet.
+3. Adja meg a következő beállításokat:
 
-   Az eszközön nem futtatható alkalmazások listájához:
+    - **Név**: adjon meg egy leíró nevet a profilhoz. Nevezze el a profilokat, hogy később könnyen azonosítható legyen. A jó profilnév például a **Windows Phone egyéni profilja**.
+    - **Leírás**: Adjon meg egy olyan leírást, amely áttekintést ad a beállításról és egyéb fontos részleteket tartalmaz.
+    - **Platform**: válassza az **Android**lehetőséget.
+    - **Profil típusa**: válassza az **Egyéni**lehetőséget.
 
-   - **Név** – Írja be a következőt: **PreventStartPackages**.
-   - **Leírás** – Igény esetén beírhat egy leírást. Például: „Nem futtatható alkalmazások listája”.
-   - **Adattípus** – A legördülő listából válassza a **Sztring** elemet.
-   - **OMA-URI** – Írja be a következőt: **./Vendor/MSFT/PolicyManager/My/ApplicationManagement/PreventStartPackages**
-   - **Érték** – Adja meg az engedélyezni kívánt alkalmazáscsomagok nevének listáját. Elválasztóként használhatja a **; : ,** vagy a **|** karaktereket. (Például csomag1;csomag2;)
+4. Az **Egyéni OMA-URI-beállítások** menüben válassza a **Hozzáadás** lehetőséget. Adja meg a következő beállításokat:
+
+    Az eszközön nem futtatható alkalmazások listájához:
+
+    - **Név**: adja meg a **következőt: preventstartpackages**.
+    - **Leírás**: Adjon meg egy olyan leírást, amely áttekintést nyújt az adott beállításról, valamint más olyan releváns információkat tartalmaz, amelyek segítenek a profil megkeresésében. Adja meg például a **futtatásra blokkolt alkalmazások listáját**.
+    - **OMA-URI** (megkülönbözteti a kis-és nagybetűket): írja be a **./vendor/MSFT/PolicyManager/My/ApplicationManagement/PreventStartPackages**.
+    - **Adattípus**: válassza a **karakterlánc**lehetőséget.
+    - **Érték**: adja meg az engedélyezni kívánt alkalmazáscsomag-nevek listáját. A `;`, a `:`vagy a `|` elválasztóként használható. Például írja be a következőt: `package1;package2;`.
 
    Azon alkalmazások listájához, amelyek telepítése engedélyezett a felhasználók számára a Google Play áruházból, miközben minden más alkalmazás le van tiltva:
-   - **Név** – Írja be a következőt: **AllowInstallPackages**.
-   - **Leírás** – Igény esetén megadhat egy leírást. Például: „A Google Play áruházból telepíthető alkalmazások listája”.
-   - **Adattípus** – A legördülő listából válassza a **Sztring** elemet.
-   - **OMA-URI** – Írja be a következőt: **./Vendor/MSFT/PolicyManager/My/ApplicationManagement/AllowInstallPackages**
-   - **Érték** – Adja meg az engedélyezni kívánt alkalmazáscsomagok nevének listáját. Elválasztóként használhatja a **; : ,** vagy a **|** karaktereket. (Például csomag1;csomag2;)
 
-4. Kattintson az **OK** gombra, majd a **Profil létrehozása** panelen válassza a **Létrehozás** lehetőséget.
+    - **Név**: adja meg a **következőt: allowinstallpackages**.
+    - **Leírás**: adjon meg egy leírást, amely áttekintést nyújt a beállításról, valamint a profil megkeresését segítő egyéb releváns információkat. Adja meg például a **felhasználók által a Google Play áruházból telepíthető alkalmazások listáját**.
+    - **OMA-URI** (megkülönbözteti a kis-és nagybetűket): írja be a **./vendor/MSFT/PolicyManager/My/ApplicationManagement/AllowInstallPackages**.
+    - **Adattípus**: válassza a **karakterlánc**lehetőséget.
+    - **Érték**: adja meg az engedélyezni kívánt alkalmazáscsomag-nevek listáját. A `;`, a `:`vagy a `|` elválasztóként használható. Például írja be a következőt: `package1;package2;`.
+
+5. A módosítások mentéséhez válassza az **OK** gombot.
+6. Ha elkészült, válassza az **OK** > **Létrehozás** lehetőséget az Intune-profil létrehozásához. Ha elkészült, a profil megjelenik az **eszközök – konfigurációs profilok** listában.
 
 >[!TIP]
 > Az alkalmazás csomagazonosítóját úgy tudja megtalálni, hogy a Google Play áruházban megkeresi az alkalmazás oldalát. A csomagazonosítót az alkalmazáscsomag URL-címe tartalmazza. Például a Microsoft Word alkalmazás azonosítója **com.microsoft.office.word**.
 
-Amikor az egyes megcélzott eszközök legközelebb bejelentkeznek, az alkalmazásbeállítások érvénybe lépnek.
+Amikor a rendszer a következő alkalommal ellenőrzi, hogy minden megcélozt eszköz bejelentkezik-e, alkalmazza az alkalmazás beállításait.
 
+## <a name="next-steps"></a>További lépések
 
-<!---## Assign the custom profile--->
+A profil létrejött, de egyelőre nem csinál semmit. Ezután [rendelje hozzá a profilt](../device-profile-assign.md) , és [Figyelje annak állapotát](device-profile-monitor.md).

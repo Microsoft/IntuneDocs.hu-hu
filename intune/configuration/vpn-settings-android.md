@@ -15,16 +15,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8d9fefc2413e2dafbf5d0ad67ea15f5f8406cc1c
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 458c38e4cce7022d7a56e86cc171365f1496741e
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72506544"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75206295"
 ---
 # <a name="android-device-settings-to-configure-vpn-in-intune"></a>Az Android-eszköz beállításai a VPN konfigurálásához az Intune-ban
 
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
+
 
 Ez a cikk felsorolja és leírja az Android-eszközökön beállítható VPN-kapcsolati beállításokat. A mobileszköz-kezelési (MDM) megoldás részeként ezeket a beállításokat használja a VPN-kapcsolat létrehozásához, a VPN hitelesítésének módjához, a VPN-kiszolgáló típusának kiválasztásához és egyebekhez.
 

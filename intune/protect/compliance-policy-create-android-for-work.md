@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 09/16/2019
+ms.date: 12/19/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: be1fbb72821b61566da84d6f98094c9a2f6ffef2
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 42127964f72177bda1808bf4b9285af52cf32b80
+ms.sourcegitcommit: 42183c87b137710b8529049f8710d47127e99900
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72810257"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75303038"
 ---
 # <a name="android-enterprise-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>Androidos vállalati beállítások az eszközök megfelelő vagy nem megfelelőként való megjelöléséhez az Intune-nal
 
@@ -56,6 +56,8 @@ Intune-rendszergazdaként ezeket a megfelelőségi beállításokat használhatj
 > [!NOTE] 
 > A következő Mobile Threat Defense-(MTD-) szolgáltatók az alkalmazások konfigurációjának használatával támogatják az androidos vállalati eszközök tulajdonosának telepítését:
 > - Jobb mobil 
+> - Check Point SandBlast Mobile
+> - Lookout for Work
 > - Pradeo
 > - Sophos Mobile
 > - Zimperium 

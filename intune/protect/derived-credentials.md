@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 10/31/2019
+ms.date: 12/18/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c4d0772f9a0afce0607d0193bfb82ea6bd22709d
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: f9e8bc347dc6336f665fcabfb4e716fef4818515
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73445328"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75207203"
 ---
 # <a name="use-derived-credentials-in-microsoft-intune"></a>Származtatott hitelesítő adatok használata Microsoft Intuneban
 
@@ -160,28 +160,30 @@ Kerülje a származtatott hitelesítő adatok használatának megkövetelését 
 
 A származtatott hitelesítő adatok használatát igénylő házirendek létrehozása előtt állítson be egy hitelesítőadat-kiállítót az Intune-konzolon. A származtatott hitelesítőadat-kiállító egy bérlői szintű beállítás. A bérlők egyszerre csak egyetlen kiállítót támogatnak.
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és nyissa meg az **eszköz konfigurációja** > **származtatott hitelesítő adatokat**.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza a **bérlői felügyelet** > **Összekötők és tokenek** > **származtatott hitelesítő adatok**lehetőséget.
 
-   ![Származtatott hitelesítő adatok konfigurálása a konzolon](./media/derived-credentials/configure-provider.png)
+    > [!div class="mx-imgBorder"]
+    > ![származtatott hitelesítő adatok konfigurálása a konzolon](./media/derived-credentials/configure-provider.png)
 
-2. Adja meg a származtatott hitelesítő adatok kiállítói házirendjének felhasználóbarát **megjelenítendő nevét** .  Ez a név nem jelenik meg az eszköz felhasználói számára.
+3. Adja meg a származtatott hitelesítő adatok kiállítói házirendjének felhasználóbarát **megjelenítendő nevét** .  Ez a név nem jelenik meg az eszköz felhasználói számára.
 
-3. A **származtatott hitelesítő adatok kiállítója**mezőben válassza ki a bérlőhöz választott származtatott hitelesítő adatokat:
+4. A **származtatott hitelesítő adatok kiállítója**mezőben válassza ki a bérlőhöz választott származtatott hitelesítő adatokat:
    - DISA fajtatiszta
    - Entrust Datacard
    - Közbenjárni  
 
-4. A **származtatott hitelesítő adatok URL-címének** megadásával adjon meg egy olyan helyre mutató hivatkozást, amely egyéni utasításokat tartalmaz, amelyek segítségével a felhasználók származtatott hitelesítő adatokat kaphatnak a szervezet számára. Az utasításoknak a szervezet és a munkafolyamathoz kell tartoznia, amely ahhoz szükséges, hogy hitelesítő adatokat kapjon a választott kiállítótól. A hivatkozás megjelenik a Céges portál alkalmazásban, és elérhetőnek kell lennie az eszközről.
+5. A **származtatott hitelesítő adatok URL-címének** megadásával adjon meg egy olyan helyre mutató hivatkozást, amely egyéni utasításokat tartalmaz, amelyek segítségével a felhasználók származtatott hitelesítő adatokat kaphatnak a szervezet számára. Az utasításoknak a szervezet és a munkafolyamathoz kell tartoznia, amely ahhoz szükséges, hogy hitelesítő adatokat kapjon a választott kiállítótól. A hivatkozás megjelenik a Céges portál alkalmazásban, és elérhetőnek kell lennie az eszközről.
 
    Ha nem adja meg a saját URL-címét, az Intune olyan általános részletekre mutató hivatkozást biztosít, amelyek nem fedik le az összes forgatókönyvet. Előfordulhat, hogy ez az általános útmutató nem pontos a környezet számára.
 
-5. Válasszon ki egy vagy több lehetőséget az **értesítési típushoz**. Az értesítési típusok azok a módszerek, amelyeket a felhasználók tájékoztatására használ a következő esetekben:
+6. Válasszon ki egy vagy több lehetőséget az **értesítési típushoz**. Az értesítési típusok azok a módszerek, amelyeket a felhasználók tájékoztatására használ a következő esetekben:
 
    - Egy új származtatott hitelesítő adat beszerzéséhez regisztráljon egy eszközt egy kiállítóval.
    - Új származtatott hitelesítő adat beszerzése, ha az aktuális hitelesítő adatok lejárata lejár.
    - Használjon származtatott hitelesítő adatokat a Wi-Fi, VPN, e-mail vagy alkalmazás hitelesítéséhez, valamint az S/MIME aláíráshoz és a titkosításhoz.
 
-6. Ha elkészült, válassza a **Mentés** lehetőséget a származtatott hitelesítőadat-kiállító konfigurációjának befejezéséhez.
+7. Ha elkészült, válassza a **Mentés** lehetőséget a származtatott hitelesítőadat-kiállító konfigurációjának befejezéséhez.
 
 A konfiguráció mentése után módosíthatja az összes mezőt, kivéve a *származtatott hitelesítő adat kiállítóját*.  A kibocsátó módosításához tekintse meg [a származtatott hitelesítőadat-kiállító módosítása](#change-the-derived-credential-issuer)című témakört.
 
@@ -204,7 +206,7 @@ Az alkalmazás Intune-nal való üzembe helyezése mellett konfiguráljon egy In
 **Származtatott hitelesítő adatokat** is megadhat a következő profilok típusaihoz és céljaihoz:
 
 - [Alkalmazások](#use-derived-credentials-for-app-authentication)
-- [Email](../configuration/email-settings-ios.md)
+- [E-mail](../configuration/email-settings-ios.md)
 - [VPN](../configuration/vpn-settings-ios.md)
 - [S/MIME-aláírás és-titkosítás](certificates-s-mime-encryption-sign.md)
 - [Wi-Fi](../configuration/wi-fi-settings-ios.md)
@@ -216,19 +218,20 @@ Az alkalmazás Intune-nal való üzembe helyezése mellett konfiguráljon egy In
 
 ### <a name="use-derived-credentials-for-app-authentication"></a>Származtatott hitelesítő adatok használata az alkalmazás hitelesítéséhez
 
-Származtatott hitelesítő adatok használata a tanúsítványok alapú hitelesítéshez a webhelyek és az alkalmazások számára. Az alkalmazás hitelesítéséhez származtatott hitelesítő adatok továbbításához hajtsa végre az alábbi lépéseket az Intune-konzolon:  
+Származtatott hitelesítő adatok használata a tanúsítványok alapú hitelesítéshez a webhelyek és az alkalmazások számára. Származtatott hitelesítő adatok továbbítása az alkalmazás hitelesítéséhez:
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és lépjen az **eszköz konfigurációja** > **profilok** elemre, és válassza a **profil létrehozása**lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **eszközök** > **konfigurációs profilok** lehetőséget > a **profil létrehozása**elemet.
+3. Adja meg a következő beállításokat:
 
-2. A **név**mezőben adjon meg egy rövid nevet a profilhoz.
+    - **Név**: adjon meg egy leíró nevet a profilhoz. Nevezze el a profilokat, hogy később könnyen azonosítható legyen. Egy jó profilnév például az **iOS-eszközök profiljához tartozó hitelesítő adatok származtatása**.
+    - **Leírás**: Adjon meg egy olyan leírást, amely áttekintést ad a beállításról és egyéb fontos részleteket tartalmaz.
+    - **Platform**: válassza az **iOS/iPadOS**lehetőséget.
+    - **Profil típusa**: válassza ki a **származtatott hitelesítő adatokat**.
 
-3. A **Platform** beállításnál adja meg az **iOS** értéket.
-
-4. A **Profil típusa**beállításnál válassza a **származtatott hitelesítő adatok**lehetőséget.
-
-5. Válassza **az OK** , majd a **Létrehozás**lehetőséget.
-
-6. Válassza ki a **hozzárendeléseket** , és válassza ki, hogy mely csoportok kapják meg a szabályzatot.
+4. A módosítások mentéséhez válassza az **OK** gombot.
+5. Ha elkészült, válassza az **OK** > **Létrehozás** lehetőséget az Intune-profil létrehozásához. Ha elkészült, a profil megjelenik az **eszközök – konfigurációs profilok** listában.
+6. Válassza ki az új profilt >- **hozzárendeléseket**. Válassza ki azokat a csoportokat, amelyeknek meg kell kapniuk a szabályzatot.
  
 A felhasználók a származtatott hitelesítőadat-kiállító beállításakor megadott beállításoktól függően megkapják az alkalmazást vagy az e-mailes értesítést. Az értesítés tájékoztatja a felhasználót, hogy elindítsa a Céges portál, hogy a származtatott hitelesítőadat-házirendek feldolgozhatók legyenek.
 
@@ -252,11 +255,10 @@ A kibocsátó módosítása után a rendszer kéri a felhasználókat, hogy új 
 > [!IMPORTANT]  
 > Ha töröl egy kiállítót, és azonnal újrakonfigurálja ugyanezt a kiállítót, akkor továbbra is frissítenie kell a profilokat és az eszközöket a származtatott hitelesítő adatoknak a kiállítótól való használatára. A kibocsátó törlése előtt kapott származtatott hitelesítő adatok már nem érvényesek.
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba, és nyissa meg az **eszköz konfigurációja** > **származtatott hitelesítő adatokat**.
-
-2. Válassza a **Törlés** lehetőséget az aktuális származtatott hitelesítőadat-kiállító eltávolításához.
-
-3. Konfiguráljon egy új kiállítót.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza a **bérlői felügyelet** > **Összekötők és tokenek** > **származtatott hitelesítő adatok**lehetőséget.
+3. Válassza a **Törlés** lehetőséget az aktuális származtatott hitelesítőadat-kiállító eltávolításához.
+4. Konfiguráljon egy új kiállítót.
 
 ### <a name="update-profiles-that-use-derived-credentials"></a>Származtatott hitelesítő adatokat használó profilok frissítése
 
@@ -268,4 +270,4 @@ Miután töröl egy kiállítót, és hozzáad egy újat, az eszköz felhasznál
 
 ## <a name="next-steps"></a>További lépések
 
-[Eszköz konfigurációs profiljainak létrehozása](../configuration/device-profile-create.md)
+[Eszköz-konfigurációs profilok létrehozása](../configuration/device-profile-create.md).

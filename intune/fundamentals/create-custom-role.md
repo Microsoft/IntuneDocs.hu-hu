@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3ca83287c58f8d2fb7c8eec5f8cc793e2c67b77a
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 68c2dc7df123593513c14e16e2626c7426f50b01
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74390708"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75207417"
 ---
 # <a name="create-a-custom-role-in-intune"></a>Egyéni szerepkör létrehozása az Intune-ban
 
@@ -34,36 +34,30 @@ A szerepkörök létrehozásához, szerkesztéséhez vagy hozzárendeléséhez a
 
 ## <a name="to-create-a-custom-role"></a>Egyéni szerepkör létrehozása
 
-1. Jelentkezzen be az [Azure Portalon](https://portal.azure.com) az Intune-os hitelesítő adataival.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza a **szerepkörök** > **minden szerepkör** > **Hozzáadás**lehetőséget.
 
-2. Válassza a bal oldali menü **Minden szolgáltatás** pontját, majd írja be a szűrő szövegmezőbe az **Intune** nevet.
+2. Az **Egyéni szerepkör hozzáadása** panelen adja meg az új szerepkör nevét és leírását, majd kattintson az **Engedélyek** elemre.
 
-3. Válassza az **Intune** > **szerepkörök** > **minden szerepkör** > **Hozzáadás**lehetőséget.
+3. Az **Engedélyek** panelen válassza ki az ehhez a szerepkörhöz használni kívánt engedélyeket.
 
-4. Az **Egyéni szerepkör hozzáadása** panelen adja meg az új szerepkör nevét és leírását, majd kattintson az **Engedélyek** elemre.
+4. A **hatókör (címkék)** panelen válassza ki a szerepkörhöz tartozó címkéket. Ez a szerepkör hozzáférhet a címkével ellátható erőforrásokhoz is.
 
-5. Az **Engedélyek** panelen válassza ki az ehhez a szerepkörhöz használni kívánt engedélyeket.
+5. Ha elkészült, válassza az **OK** gombot.
 
-6. A **hatókör (címkék)** panelen válassza ki a szerepkörhöz tartozó címkéket. Ez a szerepkör hozzáférhet a címkével ellátható erőforrásokhoz is.
-
-7. Ha elkészült, válassza az **OK** gombot.
-
-8. Az **Egyéni szerepkör hozzáadása** panelen kattintson a **Létrehozás** elemre. Az új szerepkör megjelenik az **Intune-szerepkörök – minden szerepkör** panel listájában.
+6. Az **Egyéni szerepkör hozzáadása** panelen kattintson a **Létrehozás** elemre. Az új szerepkör megjelenik az **Intune-szerepkörök – minden szerepkör** panel listájában.
 
 
 ## <a name="copy-a-role"></a>Szerepkör másolása
 
 Egy meglévő szerepkört is másolhat.
 
-1. Jelentkezzen be az [Azure Portal](https://portal.azure.com) az Intune-beli hitelesítő adataival, és válassza az **Intune**lehetőséget.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza a **szerepkörök** > **minden szerepkör** lehetőséget, > válasszon ki egy szerepkört a listában > **duplikált**.
 
-2. Válassza ki a **szerepköröket** > **minden szerepkört** > válasszon ki egy szerepkört a listában > **duplikált**.
+2. Az **ismétlődő szerepkör**területen adjon meg egy nevet. Ügyeljen arra, hogy egyedi nevet használjon.
 
-3. Az **ismétlődő szerepkör**területen adjon meg egy nevet. Ügyeljen arra, hogy egyedi nevet használjon.
+3. Az eredeti szerepkör összes engedélye és hatókör-címkéje már ki lesz választva. Ezt követően módosíthatja az ismétlődő szerepkör **nevét**, **leírását**, **engedélyeit**és **hatókörét (címkéket)**.
 
-4. Az eredeti szerepkör összes engedélye és hatókör-címkéje már ki lesz választva. Ezt követően módosíthatja az ismétlődő szerepkör **nevét**, **leírását**, **engedélyeit**és **hatókörét (címkéket)** .
-
-5. Válassza a **Létrehozás** lehetőséget. 
+4. Válassza a **Létrehozás** lehetőséget. 
 
 ## <a name="next-steps"></a>További lépések
 - [Szerepkör társítása felhasználóhoz](assign-role.md)

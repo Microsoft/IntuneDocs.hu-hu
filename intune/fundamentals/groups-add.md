@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e3219e32ef9bea838f0c19258d0b22a99083a12
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: fe37ac412d01d3032685a0e66827d20e13b0db64
+ms.sourcegitcommit: 42183c87b137710b8529049f8710d47127e99900
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74261565"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75303077"
 ---
 # <a name="add-groups-to-organize-users-and-devices"></a>Csoportok hozzáadása a felhasználók és eszközök rendszerezéséhez
 
@@ -47,7 +47,7 @@ A következő típusú csoportokat veheti fel:
 
 3. A **csoport típusa**területen válasszon a következő lehetőségek közül:
 
-    - **Biztonság**: a biztonsági csoportok határozzák meg, hogy kik férhetnek hozzá az erőforrásokhoz, és az Intune-beli csoportok számára ajánlott. Létrehozhat például csoportokat a felhasználók számára, például a **Charlotte alkalmazottai** vagy a **contoso összes nő**számára. Vagy létrehozhat csoportokat eszközökhöz, például az **összes iOS-eszközhöz** vagy **az összes Windows 10 tanuló eszközhöz**.
+    - **Biztonság**: a biztonsági csoportok határozzák meg, hogy kik férhetnek hozzá az erőforrásokhoz, és az Intune-beli csoportok számára ajánlott. Létrehozhat például csoportokat a felhasználók számára, például az **összes Charlotte-alkalmazottat** vagy a **távoli munkatársakat**. Vagy létrehozhat csoportokat eszközökhöz, például az **összes iOS-eszközhöz** vagy **az összes Windows 10 tanuló eszközhöz**.
 
         > [!TIP]
         > A létrehozott felhasználók és csoportok is megtekinthetők a [Microsoft 365 felügyeleti központban](https://admin.microsoft.com), Azure Active Directory felügyeleti központban és [a Azure Portal Microsoft Intune](https://go.microsoft.com/fwlink/?linkid=2090973). A szervezet bérlője minden területen létrehozhatja és kezelheti a csoportokat.

@@ -17,16 +17,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 075e7a99f72de30e83447a2869154859e33356b9
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: e514c10ea61bb12ef3c4626b077aa105b66866f1
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74390839"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75206873"
 ---
 # <a name="use-and-manage-android-enterprise-devices-with-oemconfig-in-microsoft-intune"></a>Androidos nagyvállalati eszközök használata és kezelése a OEMConfig-ben Microsoft Intune
 
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
+
 
 A Microsoft Intune a OEMConfig használatával adhat hozzá, hozhat létre és szabhat testre OEM-specifikus beállításokat az androidos vállalati eszközökhöz. A OEMConfig általában az Intune-ban nem beépített beállítások konfigurálására szolgálnak. Az eredeti berendezésgyártó (OEM) különböző beállításokat tartalmaz. Az elérhető beállítások attól függnek, hogy az OEM milyen tartalmakat tartalmaz a OEMConfig alkalmazásban.
 

@@ -1,12 +1,12 @@
 ---
-title: Eszközkorlátozásokra vonatkozó beállítások a Microsoft Intune-ban Windows 8.1 rendszerű eszközök esetén
+title: Windows 8,1-eszközök korlátozási beállításai a Microsoft Intune-Azure-ban | Microsoft Docs
 titleSuffix: ''
 description: Az Intune azon beállításainak ismertetése, amelyekkel szabályozhatók az eszközbeállítások, illetve a funkciók köre a Windows 8.1 rendszerű eszközökön.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 3/6/2018
+ms.date: 12/19/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,19 +16,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0df55e79dbc54926c0507889620f2667d7b8bd7b
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 82eaf1bc2c0737e1cc54751ff6fb5751227d180c
+ms.sourcegitcommit: 42183c87b137710b8529049f8710d47127e99900
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72489833"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75302964"
 ---
-# <a name="microsoft-intune-windows-81-and-later-device-restriction-settings"></a>A Windows 8.1-es és újabb verzióinak eszközkorlátozásokra vonatkozó beállításai a Microsoft Intune-ban
+# <a name="microsoft-intune-windows-81-device-restriction-settings"></a>Microsoft Intune Windows 8,1-eszközök korlátozási beállításai
 
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
-
-A cikk bemutatja a Microsoft Intune olyan eszközkorlátozásokra vonatkozó beállításait, melyek konfigurálhatók Windows 8.1 és újabb rendszerű eszközökhöz.
-
+Ez a cikk a Windows 8,1 rendszerű eszközökhöz konfigurálható Microsoft Intune eszköz korlátozási beállításait ismerteti.
 
 ## <a name="general"></a>Általános
 
@@ -48,8 +45,6 @@ A cikk bemutatja a Microsoft Intune olyan eszközkorlátozásokra vonatkozó be�
 Ha engedélyezi ezt a beállítást a Windows 8.1 rendszerű eszközökön, az eszköz valamennyi felhasználójának rendelkeznie kell Microsoft-fiókkal.
 A titkosítás működéséhez az eszköznek teljesítenie kell a [Microsoft InstantGo](https://blogs.windows.com/windowsexperience/2014/06/19/instantgo-a-better-way-to-sleep/#IBHULcTfI4PokO8X.97) hardvertanúsítvány követelményeit.
 Amikor kényszeríti az eszközön a titkosítást, a helyreállítási kulcs csak a felhasználó OneDrive-fiókon keresztül elérhető Microsoft-fiókjából érhető el. Ez a kulcs nem állítható vissza egy felhasználó nevében. 
-
-
 
 ## <a name="browser"></a>Böngésző
 - **Automatikus kitöltés** – Engedélyezi a felhasználók számára a böngésző automatikus kiegészítési funkciója beállításainak módosítását.
@@ -75,3 +70,7 @@ Engedélyezése esetén meghatározhatja a **Naplózási jelentés helyét** is,
 ## <a name="cloud-and-storage"></a>Felhő és tárolás
 - **Munkamappák URL-címe** – Megadja a munkahelyi mappa URL-címét, hogy lehetővé tegye a dokumentumok szinkronizálását az eszközök között.
 - **Windows Posta alkalmazás elérése Microsoft-fiók nélkül** – Microsoft-fiók nélkül is hozzáférhetővé teszi a Windows Posta alkalmazást.
+
+## <a name="next-steps"></a>További lépések
+
+Hozzon létre egy eszköz-korlátozási profilt a [Windows 10 és újabb rendszereken](device-restrictions-windows-10.md).

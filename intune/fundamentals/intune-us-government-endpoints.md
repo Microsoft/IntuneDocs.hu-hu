@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d876c0268f38a09ea3729a7e19ee00b321ae897a
-ms.sourcegitcommit: edd06a494a241d198ca9b0d3030c92195976e0d3
+ms.openlocfilehash: 02c1508dd3eb9c8a8932c1504c6f4d0a53c5a0d5
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/11/2019
-ms.locfileid: "75000397"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75207383"
 ---
 # <a name="us-government-endpoints-for-microsoft-intune"></a>Az Egyesült Államok kormányzati végpontja Microsoft Intune
 
@@ -31,12 +31,14 @@ Ezen a lapon az Intune-környezetekben a proxybeállítások számára szükség
 
 A tűzfalak és proxykiszolgálók mögötti eszközök kezeléséhez engedélyeznie kell az Intune-nal való kommunikációt.
 
-- A proxykiszolgálónak támogatnia kell mind a **HTTP (80)** , mind a **HTTPS (443)** protokollt, mert az Intune-ügyfelek mindkét protokollt használják
+- A proxykiszolgálónak támogatnia kell mind a **HTTP (80)**, mind a **HTTPS (443)** protokollt, mert az Intune-ügyfelek mindkét protokollt használják
 - Bizonyos feladatokhoz (például a szoftverfrissítések letöltéséhez) az Intune-nak nem hitelesített proxykiszolgáló-hozzáférésre van szüksége a manage.microsoft.com
 
 Az egyes ügyfélszámítógépeken módosíthatja a proxykiszolgáló beállításait. A megadott proxykiszolgáló mögött található ügyfélszámítógépek beállításainak módosításához Csoportházirend beállításokat is használhat.
 
 A felügyelt eszközöket úgy kell beállítani, hogy **Minden felhasználó** hozzáférjen a szolgáltatásokhoz a tűzfalon keresztül.
+
+További információ a Windows 10 automatikus regisztrálásáról és az eszközök regisztrálásáról az USA kormányzati ügyfelei számára: [Windowsos eszközök](../enrollment/windows-enroll.md#windows-10-auto-enrollment-and-device-registration)regisztrációjának beállítása.
 
 A következő táblázat az Intune-ügyfél által elért portokat és szolgáltatásokat tartalmazza:
 
@@ -78,4 +80,3 @@ További információkért lásd:
 ## <a name="next-steps"></a>További lépések
 [Microsoft Intune hálózati végpontok](intune-endpoints.md)
 
-[A Windows 10 automatikus regisztrációja és az eszköz regisztrálása](../enrollment/windows-enroll.md#registration-and-enrollment-cnames)

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 73848ee8301362f14fe2866a57329425d5e5cfbe
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: b566dd58b01a411126ffabb46d526e4480c2ba0a
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74563665"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75205972"
 ---
 # <a name="add-office-365-apps-to-windows-10-devices-with-microsoft-intune"></a>Office 365-alkalmazások hozzáadása a Windows 10-es eszközökhöz Microsoft Intune
 
@@ -129,7 +129,7 @@ Ha a **konfigurációs tervező** lehetőséget választotta a Formátum legörd
 ## <a name="select-scope-tags-optional"></a>Hatóköri címkék kiválasztása (nem kötelező)
 A hatókör-címkék használatával meghatározhatja, hogy ki láthatja az ügyfélalkalmazások adatait az Intune-ban. A hatókör-címkék részletes ismertetését lásd: [a szerepköralapú hozzáférés-vezérlés és a hatókör-címkék használata a terjesztéshez](../fundamentals/scope-tags.md).
 
-1. Válassza a **hatókör (címkék)**  > **Hozzáadás**elemet.
+1. Válassza a **hatókör (címkék)** > **Hozzáadás**elemet.
 2. A **Select (kijelölés** ) mező használatával keresheti meg a hatókör címkéit.
 3. Jelölje be a jelölőnégyzetet az alkalmazáshoz hozzárendelni kívánt hatókör-címkék mellett.
 4. Válassza a **Kiválasztás** > **OK** lehetőséget.
@@ -142,7 +142,7 @@ Ha az **XML-adatértékek megadása** lehetőséget választotta a **Formátum**
 
 Amikor elkészült, válassza az **Alkalmazás hozzáadása** ablaktáblán a **Hozzáadás** lehetőséget. A létrehozott alkalmazás megjelenik az alkalmazáslistában. A következő lépés az alkalmazások társítása a kiválasztott csoportokhoz. További információ: [Alkalmazások hozzárendelése csoportokhoz](~/apps/apps-deploy.md).
 
-## <a name="deployment-details"></a>Telepítés részletei
+## <a name="deployment-details"></a>Központi telepítés részletei
 
 Ha az Intune-ból származó központi telepítési szabályzatot az Office- [konfigurációs szolgáltató (CSP)](https://docs.microsoft.com/windows/client-management/mdm/office-csp)segítségével rendeli hozzá a cél gépekhez, a befejező eszköz automatikusan letölti a telepítőcsomagot a *officecdn.microsoft.com* helyéről. A *Program Files* könyvtárában két könyvtár jelenik meg:
 
@@ -197,7 +197,7 @@ Ha azt állapítja meg, hogy az Intune és a hálózati infrastruktúra is a vá
 
 ## <a name="errors-during-installation-of-the-app-suite"></a>Hiba történt az alkalmazáscsomag telepítésekor
 
-A részletes telepítési naplók megtekintésével kapcsolatos információkért lásd: [az Office 365 ProPlus ULS-naplózásának engedélyezése](https://blogs.technet.microsoft.com/odsupport/2018/06/18/how-to-enable-office-365-proplus-uls-logging) .
+A részletes telepítési naplók megtekintésével kapcsolatos információkért lásd: [az Office 365 ProPlus ULS-naplózásának engedélyezése](/office/troubleshoot/diagnostic-logs/how-to-enable-office-365-proplus-uls-logging) .
 
 Az alábbi táblázatban az esetlegesen megjelenő gyakori hibakódok és azok jelentése található.
 

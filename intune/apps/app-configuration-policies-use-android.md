@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 80d6068a17e1d278f9226e26c9efab24d597e52e
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: ec80922cf2539fdbacb572fd96c5a5e45549b5c3
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74564268"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75205004"
 ---
 # <a name="add-app-configuration-policies-for-managed-android-enterprise-devices"></a>Alkalmazás-konfigurációs szabályzatok hozzáadása a felügyelt Android Enterprise-eszközökhöz
 
@@ -34,15 +34,15 @@ Az alkalmazás-konfigurációs szabályzatok a Microsoft Intune a Google Play-al
 > [!NOTE]  
 > Az alkalmazáskonfigurációt nem minden alkalmazás támogatja. Ellenőrizze, hogy az alkalmazás támogatja-e az alkalmazás-konfigurációs házirendeket az alkalmazás fejlesztőivel kapcsolatban.
 
-1. Az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ban válassza az **alkalmazások** > **alkalmazás-konfigurációs házirendek** >  **Hozzáadás**elemet.
-2. Adja meg a következő tulajdonságokat:
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **alkalmazások** > **alkalmazás-konfigurációs házirendek** >   > **felügyelt eszközök** **hozzáadása** lehetőséget.
+2. Adja hozzá a következő tulajdonságokat:
 
     - **Név**: adjon meg egy leíró nevet a szabályzatnak. Nevezze el a szabályzatokat, hogy később könnyebben azonosítható legyen. A helyes szabályzat neve például az **Android Enterprise Nine Work app Policy a teljes vállalat**számára.
     - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
-    - **Eszköz beléptetésének típusa**: válassza a **felügyelt eszközök**elemet.
+    - **Eszköz beléptetésének típusa**: Ez a beállítás **felügyelt eszközökre**van beállítva.
     - **Platform**: válassza az **Android**lehetőséget.
 
-3. Válassza a **társított alkalmazás**lehetőséget. Válassza ki azt az alkalmazást, amelyben meg szeretné határozni az alkalmazás konfigurációs szabályzatát. Válassza ki a felügyelt Google Play-alkalmazások listáját, amelyeket jóváhagyott és szinkronizált az Intune-nal.
+3. Válassza a **társított alkalmazás**lehetőséget. Válassza ki azt az Android-alkalmazást, amelyhez az alkalmazás-konfigurációs házirend társítva lesz. Válassza ki a [felügyelt Google Play-alkalmazások listáját, amelyeket jóváhagyott és szinkronizált az Intune-](~/apps/apps-add-android-for-work.md)nal.
 4. Válassza az **Engedélyek** lehetőséget. A konfigurációkat a következőkkel adhatja meg:
 
     - [A konfigurációtervező](#use-the-configuration-designer)
@@ -75,9 +75,9 @@ Ha változót szeretne megadni értéktípusnak, az alábbi lehetőségek közü
 | Domain | contoso.com |
 | Mail | john@contoso.com |
 | Részleges UPN | John |
-| Felhasználó azonosítója | 3ec2c00f-b125-4519-acf0-302ac3761822 |
+| Felhasználói azonosító | 3ec2c00f-b125-4519-acf0-302ac3761822 |
 | Felhasználónév | John Doe |
-| Egyszerű felhasználónév | john@contoso.com |
+| Egyszerű Felhasználónév | john@contoso.com |
 
 
 ### <a name="allow-only-configured-organization-accounts-in-multi-identity-apps"></a>Csak a konfigurált szervezeti fiókok engedélyezése a többidentitásos alkalmazásokban 
@@ -110,12 +110,12 @@ Az Android-eszközök funkcióinak eléréséhez előre konfigurálhatja az alka
 
 Egy alkalmazás például az eszköz mikrofonját használja. A rendszer felszólítja a felhasználót, hogy engedélyezze az alkalmazás számára a mikrofon használatára vonatkozó engedélyt.
 
-1. Az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ban válassza az **alkalmazások** > **alkalmazás-konfigurációs házirendek** >  **Hozzáadás**elemet.
-2. Adja meg a következő tulajdonságokat:
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **alkalmazások** > **alkalmazás-konfigurációs házirendek** >   > **felügyelt eszközök** **hozzáadása** lehetőséget.
+2. Adja hozzá a következő tulajdonságokat:
 
     - **Név**: adjon meg egy leíró nevet a szabályzatnak. Nevezze el a szabályzatokat, hogy később könnyebben azonosítható legyen. Például egy jó szabályzat neve az **Android Enterprise prompt engedélyek alkalmazás-házirend a teljes vállalat**számára.
     - **Leírás**. Adja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
-    - **Eszköz beléptetésének típusa**: válassza a **felügyelt eszközök**elemet.
+    - **Eszköz beléptetésének típusa**: Ez a beállítás **felügyelt eszközökre**van beállítva.
     - **Platform**: válassza az **Android**lehetőséget.
 
 3. Válassza a **társított alkalmazás**lehetőséget. Válassza ki azt az alkalmazást, amelynek meg szeretné határozni a konfigurációs szabályzatát. Válassza ki az androidos munkahelyi profil által jóváhagyott és az Intune-nal szinkronizált alkalmazások listájából.

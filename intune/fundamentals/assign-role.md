@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d9e337d47757e3c5507c94433f90d5c2863bc1b0
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: c82805bf70259d43d738644e5663b93533bcb56a
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72503008"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75207162"
 ---
 # <a name="assign-a-role-to-an-intune-user"></a>Szerepkör kiosztása Intune-felhasználóhoz
 
@@ -32,27 +32,23 @@ A szerepkörök létrehozásához, szerkesztéséhez vagy hozzárendeléséhez a
 - **Globális rendszergazda**
 - **Intune-beli szolgáltatás-rendszergazda**
 
-1. Jelentkezzen be az [Azure Portal](https://portal.azure.com) webhelyre.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza a **szerepkörök** > **minden szerepkör**lehetőséget.
 
-2. Válassza a **Minden szolgáltatás** > **Intune** lehetőséget. Az Intune a **Figyelés + felügyelet** szakaszban található.
+2. Az **Intune-szerepkörök – minden szerepkör** panelen válassza ki a hozzárendelni kívánt beépített szerepkört.
 
-3. Az **Intune** panelen válassza a **szerepkörök** > **minden szerepkör**lehetőséget.
+3. A <*szerepkör neve*> – **Áttekintés** panelen válassza a **kezelés** > **hozzárendelések**lehetőséget.
 
-4. Az **Intune-szerepkörök – minden szerepkör** panelen válassza ki a hozzárendelni kívánt beépített szerepkört.
+4. Kattintson a **Hozzárendelés** elemre az Egyéni szerepkör panelen.
 
-5. A <*szerepkör neve*> – **Áttekintés** panelen válassza a **kezelés** > **hozzárendelések**lehetőséget.
+5. A **szerepkör-hozzárendelések** panelen adja meg a hozzárendelés **nevét** és választható **hozzárendelésének leírását** .
 
-6. Kattintson a **Hozzárendelés** elemre az Egyéni szerepkör panelen.
+6. A **Tagok (csoportok)** területen válasszon ki egy csoportot, amely tartalmazza azt a felhasználót, akinek engedélyeket kíván adni.
 
-7. A **szerepkör-hozzárendelések** panelen adja meg a hozzárendelés **nevét** és választható **hozzárendelésének leírását** .
+7. **Hatókör (csoportok)** esetében válassza ki azt a csoportot, amely a fenti tag által felügyelni kívánt felhasználókat vagy eszközöket tartalmazza.
 
-8. A **Tagok (csoportok)** területen válasszon ki egy csoportot, amely tartalmazza azt a felhasználót, akinek engedélyeket kíván adni.
+8. A **hatókör (címkék)** területen válassza a címkék lehetőséget, ahol ez a szerepkör-hozzárendelés lesz alkalmazva.
 
-9. **Hatókör (csoportok)** esetében válassza ki azt a csoportot, amely a fenti tag által felügyelni kívánt felhasználókat vagy eszközöket tartalmazza.
-
-10. A **hatókör (címkék)** területen válassza a címkék lehetőséget, ahol ez a szerepkör-hozzárendelés lesz alkalmazva.
-
-11. Ha elkészült, válassza az **OK** gombot. Az új hozzárendelés megjelenik a hozzárendelések listájában.
+9. Ha elkészült, válassza az **OK** gombot. Az új hozzárendelés megjelenik a hozzárendelések listájában.
 
 
 ## <a name="next-steps"></a>További lépések

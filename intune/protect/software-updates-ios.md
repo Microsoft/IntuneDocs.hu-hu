@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 10/19/2019
+ms.date: 12/18/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -13,12 +13,12 @@ ms.localizationpriority: high
 ms.technology: ''
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f9750603d19d9b19697c7d2660351c4586432f6
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: bb146fdee7a1d7d770575334eeed84f73cda8894
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73984198"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75207485"
 ---
 # <a name="add-ios-software-update-policies-in-intune"></a>IOS-szoftverfrissítési szabályzatok hozzáadása az Intune-ban
 
@@ -32,8 +32,8 @@ Az eszköz körülbelül 8 óránként jelentkezik be az Intune-ba. Ha van elér
 
 ## <a name="configure-the-policy"></a>A szabályzat konfigurálása
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Válassza a **Szoftverfrissítések** > **iOS-frissítési szabályzatok** > **Létrehozás** lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **eszközök** > **frissítési szabályzatok iOS** - > **létrehozásához**lehetőséget.
 3. Az **alapvető beállítások** lapon adja meg a szabályzat nevét, adjon meg egy leírást (nem kötelező), majd kattintson a **tovább**gombra.
 
    ![Alapbeállítások lap](./media/software-updates-ios/basics-tab.png) 
@@ -77,10 +77,10 @@ Az Intune támogatási csapatával kapcsolatos útmutatásért lásd az [Intune-
 ## <a name="edit-a-policy"></a>Szabályzat szerkesztése
 Szerkeszthet egy meglévő szabályzatot, beleértve a korlátozott időpontok módosítását is:
 
-1. A **szoftverfrissítések**területen válassza az **iOS-re vonatkozó szabályzatok frissítése** lehetőséget, majd válassza ki a szerkeszteni kívánt szabályzatot.
+1. Válassza az **eszközök** > **frissítési szabályzatok iOS rendszerhez**lehetőséget. Válassza ki a szerkeszteni kívánt szabályzatot.
 
 2. A szabályzatok **tulajdonságainak**megtekintése közben válassza a **Szerkesztés** lehetőséget a módosítani kívánt szabályzat oldalhoz.  
-   ![a rendőri](./media/software-updates-ios/edit-policy.png)   
+   ![szabályzat szerkesztése](./media/software-updates-ios/edit-policy.png)   
 
 3. A módosítás bevezetése után válassza az **Áttekintés + mentés** > **Mentés** lehetőséget a módosítások mentéséhez, és térjen vissza a házirendek *tulajdonságaihoz*.  
  

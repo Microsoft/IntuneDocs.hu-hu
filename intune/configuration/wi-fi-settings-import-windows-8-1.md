@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 07/18/2018
+ms.date: 12/18/2019
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,18 +15,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40569af35a812074cc62546e3f85929416202b3b
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: f79ccdc71ddbfa3f25daef629515fb612de01852
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72506423"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75207009"
 ---
 # <a name="import-wi-fi-settings-for-windows-devices-in-intune"></a>Windows-eszközök Wi-Fi-beállításainak importálása az Intune-ba
 
-A Windows rendszert futtató eszközökre importálhatja az előzőleg fájlba exportált Wi-Fi konfigurációs profilt. **Windows 10 és újabb rendszerű eszközökhöz közvetlenül az Intune-ban is [létrehozhat Wi-Fi-profilt](wi-fi-settings-windows.md)** .
+A Windows rendszert futtató eszközökre importálhatja az előzőleg fájlba exportált Wi-Fi konfigurációs profilt. **Windows 10 és újabb rendszerű eszközökhöz közvetlenül az Intune-ban is [létrehozhat Wi-Fi-profilt](wi-fi-settings-windows.md)**.
 
-A következőre érvényes  
+A következőkre vonatkozik:  
 - Windows 8.1 és újabb
 - Windows 10 és újabb
 - A Windows 10 asztali vagy mobilverziója
@@ -38,35 +38,38 @@ A Windows rendszerben a `netsh wlan` használatával az Intune által is olvasha
 
 A szükséges Wi-Fi-profillal már rendelkező Windows-számítógépen kövesse az alábbi lépéseket:
 
-1. Hozzon létre egy helyi mappát az exportált W-Fi-profilokhoz, például a **c:\WiFi** mappát.
+1. Hozzon létre egy helyi mappát az exportált Wi-Fi profilok, például a **c:\WiFi**számára.
 2. Nyisson meg egy parancssort rendszergazdaként.
-3. Futtassa a `netsh wlan show profiles` parancsot, és jegyezze fel az exportálni kívánt profil nevét. Ebben a példában a profil neve: **WiFiName**.
-4. Futtassa a következő parancsot: `netsh wlan export profile name="ProfileName" folder=c:\Wifi`. Ezzel létrehozza a **Wi-Fi-WiFiName.xml** nevű Wi-Fi-profilfájlt a célmappában.
+3. Futtassa az `netsh wlan show profiles` parancsot. Jegyezze fel az exportálni kívánt profil nevét. Ebben a példában a profil neve: **WiFiName**.
+4. Futtassa az `netsh wlan export profile name="ProfileName" folder=c:\Wifi` parancsot. Ezzel létrehozza a **Wi-Fi-WiFiName.xml** nevű Wi-Fi-profilfájlt a célmappában.
 
 ## <a name="import-the-wi-fi-settings-into-intune"></a>Wi-Fi-beállítások importálása az Intune-ba
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Válassza az **Eszközkonfiguráció** > **Profilok** > **Profil létrehozása** lehetőséget.
-3. Adja meg az eszközkorlátozási profil nevét és leírását a **Név** és a **Leírás** mezőben.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **eszközök** > **konfigurációs profilok** lehetőséget > a **profil létrehozása**elemet.
+3. Adja meg a következő beállításokat:
+
+    - **Név**: adjon meg egy leíró nevet a profilhoz. A névnek **meg kell egyeznie** a Wi-Fi-profil XML-fájljában található névattribútummal. Ellenkező esetben sikertelen lesz a művelet.
+    - **Leírás**: Adjon meg egy olyan leírást, amely áttekintést ad a beállításról és egyéb fontos részleteket tartalmaz.
+    - **Platform**: válassza **a Windows 8,1 és újabb**lehetőséget.
+    - **Profil típusa**: válassza a **Wi-Fi importálás**lehetőséget.
 
     > [!IMPORTANT]
-    > - A névnek **meg kell egyeznie** a Wi-Fi-profil XML-fájljában található névattribútummal. Ellenkező esetben sikertelen lesz a művelet.
     > - Ha előmegosztott kulcsot tartalmazó Wi-Fi-profilt exportál, akkor **mindenképp** hozzá kell adnia a `key=clear` kapcsolót a parancshoz. Például írja be a következőt: `netsh wlan export profile name="ProfileName" key=clear folder=c:\Wifi`.
-    > - Az előmegosztott kulcsok Windows 10 rendszerben való használata szervizelési hiba megjelenéséhez vezet az Intune-ban. E hiba megjelenésekor a Wi-Fi-profilt a rendszer megfelelően hozzárendeli az eszközhöz, és a profil a várt módon fog működni.
+    > - Ha egy előmegosztott kulcsot használ a Windows 10 rendszerben, szervizelési hiba jelenik meg az Intune-ban. E hiba megjelenésekor a Wi-Fi-profilt a rendszer megfelelően hozzárendeli az eszközhöz, és a profil a várt módon fog működni.
     > - Az előmegosztott kulcsot tartalmazó Wi-Fi-profilok exportálásakor gondoskodjon a fájlok védelméről. A kulcs egyszerű szövegként szerepel, ezért az Ön felelőssége a kulcs védelme.
 
-4. A **Platform** beállításnál válassza a **Windows 8.1 és újabb** lehetőséget.
-5. A **Profil típusa** beállításnál válassza a **Wi-Fi importálás** lehetőséget.
-6. Adja meg a következő beállításokat:
-    - **Kapcsolat neve**: Adja meg a Wi-Fi-kapcsolat nevét. Ez a név jelenik meg a végfelhasználók számára elérhető Wi-Fi-hálózatok böngészése közben.
-    - **Profil XML**: A tallózás gombra kattintva válassza ki azt az XML-fájlt, amely az importálni kívánt Wi-Fi-profilbeállításokat tartalmazza.
+4. Adja meg a következő beállításokat:
+
+    - **Kapcsolat neve**: Adja meg a Wi-Fi-kapcsolat nevét. Ez a név jelenik meg a felhasználók számára az elérhető Wi-Fi-hálózatok tallózásával.
+    - **Profil XML-** fájlja: válassza a Tallózás gombot, és válassza ki azt az XML-fájlt, amely az importálni kívánt Wi-Fi profil beállításait tartalmazza.
     - **Fájl tartalma**: Megjeleníti a kiválasztott konfigurációs profil XML-kódját.
-7. Ha elkészült, a módosítások mentéséhez válassza az **OK** > **Létrehozás** lehetőséget. Ekkor létrejön a profil, és megjelenik a profilok listájában.
+
+5. A módosítások mentéséhez válassza az **OK** gombot.
+6. Ha elkészült, válassza az **OK** > **Létrehozás** lehetőséget az Intune-profil létrehozásához. Ha elkészült, a profil megjelenik az **eszközök – konfigurációs profilok** listában.
 
 ## <a name="next-steps"></a>További lépések
 
-A profil létrejön, de egyelőre nem csinál semmit. A következő lépés a [profil hozzárendelése](device-profile-assign.md).
+A profil létrejön, de egyelőre nem csinál semmit. Ezután [rendelje hozzá a profilt](../device-profile-assign.md) , és [Figyelje annak állapotát](device-profile-monitor.md).
 
-## <a name="more-resources"></a>További forrásanyagok
-
-[Wi-Fi-beállítások áttekintése](wi-fi-settings-configure.md), beleértve a többi rendelkezésre álló platformot is.
+Tekintse meg a [Wi-Fi beállítások áttekintését](wi-fi-settings-configure.md), beleértve a többi elérhető platformot is.

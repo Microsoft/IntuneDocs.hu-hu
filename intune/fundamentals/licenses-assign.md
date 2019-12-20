@@ -5,7 +5,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 10/31/2017
+ms.date: 12/12/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -16,30 +16,31 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dcdc2b69de52ea3bf23f4e3c5d11399b62bc8daa
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 9a62cc6ef2f1b3bd6f305fe6fa23a24f95d3dd37
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73414092"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75207356"
 ---
 # <a name="assign-licenses-to-users-so-they-can-enroll-devices-in-intune"></a>Intune-licencek hozzárendelése a felhasználókhoz, hogy regisztrálhassák az eszközöket
 
 Akár manuálisan adja hozzá a felhasználókat, akár a helyszíni Active Directoryból szinkronizál, először Intune-licencet kell hozzárendelnie minden felhasználóhoz, hogy a felhasználók regisztrálhassák eszközeiket az Intune-ban. A licencek listáját az [Intune-t tartalmazó licencek](../licenses.md) című témakörben találja.
 
-## <a name="assign-an-intune-license-in-the-microsoft-365-admin-center"></a>Intune-licenc kiosztása a Microsoft 365 felügyeleti központban
+> [!NOTE]
+> Azok a felhasználók, akik az Intune app Protection-szabályzatot kiosztották, és nem regisztrálják az eszközeiket Microsoft Intune a szabályzat fogadásához Intune-licenccel is rendelkezniük kell. 
 
-A [Microsoft 365 felügyeleti központtal](https://go.microsoft.com/fwlink/p/?LinkId=698854) manuálisan is hozzáadhat felhőalapú felhasználókat, és licenceket rendelhet a felhőalapú felhasználói fiókokhoz és a helyszíni Active Directoryról az Azure ad-be szinkronizált fiókokhoz is.
+## <a name="assign-an-intune-license-microsoft-endpoint-manager-admin-center"></a>Intune-licenc kiosztása a Microsoft Endpoint Manager felügyeleti központjában
 
-1. Jelentkezzen be a [Microsoft 365 felügyeleti központba](https://go.microsoft.com/fwlink/p/?LinkId=698854) a bérlői rendszergazdai hitelesítő adataival, majd válassza a **felhasználók** > **aktív felhasználók**lehetőséget.
+A [Microsoft Endpoint Manager felügyeleti központtal](https://go.microsoft.com/fwlink/?linkid=2109431) manuálisan is hozzáadhat felhőalapú felhasználókat, és licenceket rendelhet a felhőalapú felhasználói fiókokhoz és a helyszíni Active Directoryról az Azure ad-be szinkronizált fiókokhoz is.
 
-2. Válassza ki a felhasználói fiókot az Intune felhasználói licencek hozzárendelésére, és válassza a **Terméklicencek** > **Szerkesztés** lehetőséget.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza a **felhasználók** > **minden felhasználó** lehetőséget, > Válasszon felhasználói > **licencek** > **hozzárendelések**lehetőséget.
 
-3. Kapcsolja az **Intune** vagy az **Enterprise Mobility + Security** beállítást **Be**, és válassza a **Mentés** lehetőséget.
+2. Válassza az **Intune** > Save ( **Mentés**) jelölőnégyzetet.
 
-   ![A Microsoft 365 felügyeleti központ termék-licencek szakaszának képernyőképe.](./media/licenses-assign/office-assign-license.png)
+   ![A Microsoft 365 felügyeleti központ termék-licencek szakaszának képernyőképe.](./media/licenses-assign/mem-assign-license.png)
 
-4. A felhasználói fiókot most már rendelkezik a szolgáltatás használatához és az eszközöknek a felügyelet alá való regisztrálásához szükséges engedélyekkel.
+3. A felhasználói fiókot most már rendelkezik a szolgáltatás használatához és az eszközöknek a felügyelet alá való regisztrálásához szükséges engedélyekkel.
 
 > [!NOTE]
 > A felhasználók csak azt követően jelennek meg a klasszikus Intune-portálon, hogy regisztráltak egy eszközt az Intune PC-ügyfél használatával. Emellett kiválaszthat egy felhasználói csoportot az egyszerre való szerkesztéshez, vagy hozzáadva, vagy lecserélve az összes kijelölt felhasználó licencét.

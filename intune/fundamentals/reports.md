@@ -6,7 +6,7 @@ keywords: ''
 author: erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/18/2019
+ms.date: 12/19/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -15,12 +15,12 @@ ms.assetid: ''
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 05258c5363b43398dee1815bb91c50878803e426
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 21b83ec7b295a79dafc7527633cb31729ee40502
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74390934"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75206244"
 ---
 # <a name="intune-reports"></a>Intune-jelentések
 Microsoft Intune a jelentések lehetővé teszik, hogy hatékonyabban és proaktívan figyelje a végpontok állapotát és tevékenységét a szervezeten belül, valamint más jelentéskészítési adatait is biztosítson az Intune-ban. Láthatja például, hogy az eszközök megfelelőségével, az eszköz állapotával és az eszközök trendjeivel kapcsolatos jelentések jelennek meg. Emellett létrehozhat egyéni jelentéseket is, amelyekkel pontosabban megszerezheti az adatokra vonatkozó adatgyűjtést. 
@@ -53,16 +53,19 @@ A nem megfelelő eszközök jelentést készítenek a felületek adatairól jell
 
 A nem **megfelelő eszközökről** szóló jelentést a következő lépésekkel tekintheti meg:
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Válassza az **eszköz megfelelősége** > nem **megfelelő eszközök**elemet.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza ki az **eszközök** > a **figyelő** > nem **megfelelő eszközöket**.
 
     ![Nem megfelelő eszköz jelentés](./media/intune-reports/intune-reports-02.png)
+
+    > [!TIP]
+    > Ha korábban már használta az Intune-t a Azure Portalban, az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba való bejelentkezéssel és az **eszköz megfelelőségének** > nem **megfelelő eszközök**kiválasztásával megtalálta a fenti adatokat a Azure Portalban.
 
 ## <a name="device-compliance-report-organizational"></a>Eszköz megfelelőségi jelentése (szervezeti)
 Az eszközök megfelelőségi jelentéseinek célja, hogy széleskörűek legyenek a természetben, és az összesített mérőszámok azonosításához az adatoknak egy hagyományos jelentéskészítési nézetet biztosítanak. Ez a jelentés nagy adatkészletekkel való együttműködésre szolgál, hogy teljes eszköz megfelelőségi képet kapjon. Például az eszköz megfelelőségi jelentésében az eszközök megfelelőségi jelentése látható, hogy az eszközök minden megfelelőségi állapota szélesebb körű képet ad az adatkészletről, függetlenül attól, hogy mekkora az adatkészlet mérete. Ez a jelentés a rekordok teljes részletezését jeleníti meg az összesített metrikák kényelmes vizualizációja mellett. Ez a jelentés szűrők alkalmazásával és a jelentés létrehozása gomb kiválasztásával hozható létre. Ezzel frissíti az adatokat, hogy megjelenjenek a legújabb állapotok, amelyek segítségével megtekintheti az összesített adatokat alkotó egyes rekordokat. Az új keretrendszer jelentéseihez hasonlóan ezek a rekordok is rendezhetők és kereshetők, hogy a szükséges információkra koncentráljon. 
 
 Az eszköz állapotának generált jelentéseinek megtekintéséhez kövesse az alábbi lépéseket:
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Válassza a **jelentések** lehetőséget a jelentések összegzésének megtekintéséhez.
 3. Válassza az **Eszközmegfelelőség** elemet.
 4. Válassza ki a **megfelelőségi állapotot**, az **operációs rendszert**és a **tulajdonosi** szűrőket a jelentés pontosításához.
@@ -79,7 +82,7 @@ Kapcsolódó információk: a [Microsoft DEFENDER ATP megfelelőségének kikén
 
 Az eszköz megfelelőségi jelentése összegző jelentésként érhető el a **jelentések** munkafolyamatban. Az eszköz megfelelőségi jelentésének megtekintéséhez kövesse az alábbi lépéseket:
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Válassza a **jelentések** lehetőséget a jelentések összegzésének megtekintéséhez.
 
     ![Az Intune-jelentések összegzése](./media/intune-reports/intune-reports-01.png)
@@ -91,7 +94,7 @@ Az eszközök megfelelőségi trendjeire vonatkozó megfelelőségi jelentés eg
 
 A **trendek** jelentés a következő lépésekkel tekinthető meg:
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Válassza a **jelentések** > **trendek** lehetőséget, hogy megtekintse az eszköz megfelelőségét egy 60 napos trenden.
 
     ![Intune trend-jelentés](./media/intune-reports/intune-reports-03.png)
@@ -106,7 +109,7 @@ Egy példaként szolgáló speciális jelentés a platform beléptetési corelat
 
 Az alábbi lépések végrehajtásával hozhat létre és tekinthet meg egyéni jelentéseket:
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Válassza a **jelentések** > **diagnosztikai beállítások** Hozzáadás [diagnosztikai beállítás](reports.md#diagnostic-settings)lehetőséget.
 
     ![Az Intune-jelentések összegzése](./media/intune-reports/intune-reports-04.png)
@@ -148,7 +151,7 @@ A munkafüzetek szöveg-, elemzési és Azure-metrikákat és-paramétereket egy
 További információ az alábbi technológiákról:
 - [Blog – Microsoft Intune jelentési keretrendszer](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/New-Reporting-Framework-Coming-to-Intune/ba-p/1009553)
 - [Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-activity-logs-azure-monitor)
-- [Mi az a Log Analytics?](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview#what-is-log-analytics)
+- [Mi az Log Analytics?](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview#what-is-log-analytics)
 - [Lekérdezések naplózása](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview)
 - [Ismerkedés a Log Analyticsával Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal)
 - [Munkafüzetek Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/app/usage-workbooks)

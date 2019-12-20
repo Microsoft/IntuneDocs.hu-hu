@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 12/13/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,27 +18,27 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 26972bb034ea4cb65f1bf64c61c20395cf94dc36
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 36a84296aabd2d78cbc3cdc14ffb8f696afa5c22
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74564185"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75205258"
 ---
 # <a name="how-to-monitor-app-protection-policies"></a>Az alkalmazásvédelmi szabályzatok figyelése
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-A [Azure Portal](https://portal.azure.com)Intune app Protection paneljén a felhasználókra alkalmazott Mobile App Management-(MAM-) szabályzatok megfelelőségi állapotát figyelheti. Emellett információkat találhat a MAM-szabályzatok által érintett felhasználókról, a MAM-szabályzatok megfelelőségi állapotáról, valamint a felhasználók által esetlegesen tapasztalt problémákról.
+A [Azure Portal](https://portal.azure.com)Intune app Protection paneljén a felhasználókra alkalmazott alkalmazás-védelmi szabályzatok állapotát figyelheti. Emellett információkat találhat az alkalmazás-védelmi szabályzatok által érintett felhasználókról, a szabályzatok megfelelőségi állapotáról, valamint a felhasználók által esetlegesen tapasztalt problémákról.
 
 Az alkalmazás-védelmi házirendek három különböző helyen figyelhetők:
 - Összesített nézet
 - Részletes nézet
 - Jelentéskészítés nézet
 
+Az App Protection-adatok megőrzési időtartama 90 nap. Minden olyan alkalmazás-példány, amely az Intune szolgáltatásba bejelentkezett az elmúlt 90 napon belül, az alkalmazás védelmi állapota jelentés részét képezi. Az *alkalmazás-példány* egy egyedi felhasználó + alkalmazás + eszköz. 
+
 > [!NOTE]
 > További információt az [Alkalmazásvédelmi szabályzatok létrehozása és hozzárendelése](app-protection-policies.md) című cikkben talál.
-
-Az App Protection-adatok megőrzési időtartama 90 nap. Minden olyan alkalmazás-példány, amely az elmúlt 90 napban be van jelölve a MAM-szolgáltatásba, az alkalmazás védelmi állapota jelentés részét képezi. Az *alkalmazás-példány* egy egyedi felhasználó + alkalmazás + eszköz. 
 
 ## <a name="summary-view"></a>Összesített nézet
 
@@ -51,18 +51,34 @@ Az App Protection-adatok megőrzési időtartama 90 nap. Minden olyan alkalmazá
 - **Megjelölt felhasználók**: az eszközeivel kapcsolatos problémákat tapasztaló felhasználók száma. A rendszer a feltört (iOS) és a feltört (androidos) eszközöket a **megjelölt felhasználók**alatt jelenti. Ezen kívül a Google biztonság-eszköz igazolási ellenőrzésével megjelölt eszközökkel (ha a rendszergazda bekapcsolja azt) a felhasználók itt jelennek meg. 
 - **Potenciálisan ártalmas alkalmazásokkal rendelkező felhasználók**: azon felhasználók száma, akik kártékony alkalmazással rendelkezhetnek a Google Play Protect által észlelt Android-eszközön. 
 - **Felhasználói állapot az iOS** -hez és a **felhasználói állapothoz Android**rendszeren: azon felhasználók száma, akik az adott alkalmazáshoz hozzárendelt szabályzattal rendelkeznek a kapcsolódó platformhoz tartozó munkakörnyezetben. Ez az információ a szabályzat által kezelt felhasználók számát, valamint azon felhasználók számát jeleníti meg, akik olyan alkalmazást használnak, amelyet nem a munkahelyi környezetben lévő szabályzat céloz meg. Érdemes megfontolni ezen felhasználók bevonását a szabályzat hatálya alá.
-- **Legnépszerűbb védett iOS-alkalmazások**: a leggyakrabban használt iOS-alkalmazások alapján ez az információ a védett és a nem védett iOS-alkalmazások számát jeleníti meg.
-- **Legnépszerűbb védett Android-alkalmazások**: a leggyakrabban használt Android-alkalmazások alapján ez az információ a védett és a nem védett Android-alkalmazások számát jeleníti meg.
-- **Legfelső szintű konfigurált iOS-alkalmazások regisztráció nélkül**: a nem regisztrált eszközökhöz leggyakrabban használt iOS-alkalmazások alapján ez az információ a konfigurált iOS-alkalmazások számát mutatja.
-- **Legfelső szintű konfigurált Android-alkalmazások regisztráció nélkül**: a nem regisztrált eszközök leggyakrabban használt Android-alkalmazásai alapján ez az információ a konfigurált Android-alkalmazások számát mutatja.
+- Legnépszerűbb **védett iOS-alkalmazások** és **legnépszerűbb védett Android-alkalmazások**: a leggyakrabban használt iOS-és Android-alkalmazások alapján ez az információ a védett és a nem védett alkalmazások platformon alapuló számát jeleníti meg.
+- **Legfelső szintű konfigurált iOS-alkalmazások regisztráció** nélkül és a **legfelső szintű konfigurált Android-alkalmazások regisztráció nélkül**: a nem regisztrált eszközökön a leggyakrabban használt iOS-és Android-alkalmazások esetében ez az információ a konfigurált alkalmazások (például az alkalmazás-konfigurációs házirend használatával) számát jeleníti meg.
 
     > [!NOTE]
     > Platformonként több szabályzat esetén a felhasználó akkor minősül szabályzat által kezeltnek, ha legalább egy szabályzat hozzá van rendelve.
 
 ## <a name="detailed-view"></a>Részletes nézet
-Az összefoglalás részletes nézetét a **felhasználói állapot** csempére (az eszköz operációsrendszer-platformja alapján), a **potenciálisan ártalmas alkalmazások** csempére és a **megjelölt felhasználók** csempére kattintva érheti el.
+Az összefoglalás részletes nézetét kiválasztva megtekintheti a **megjelölt felhasználók** csempét, valamint az **esetlegesen ártalmas alkalmazások csempét használó felhasználókat** .
 
-### <a name="user-status"></a>Felhasználó állapota
+### <a name="flagged-users"></a>Megjelölt felhasználók
+A részletes nézetben látható a hibaüzenet, annak az alkalmazásnak a neve, amelynek a használata közben fellépett a hiba, az eszközök érintett operációsrendszer-platformja, valamint egy időbélyeg. A hiba általában a jailbroken (iOS) vagy a feltört (androidos) eszközökön van. Az "biztonság Device igazolás" feltételes indítási ellenőrzés által megjelölt eszközökkel rendelkező felhasználók itt is a Google által jelentett oknál fogva jelennek meg. Ahhoz, hogy egy felhasználó el legyen távolítva a jelentésből, meg kell változtatnia az eszköz állapotát, ami a következő legfelső szintű észlelési ellenőrzés (vagy a jailbreak-ellenőrzés/biztonság-ellenőrzés) után történik, amelyeknek pozitív eredményt kell jelenteniük. Ha az eszköz valóban szervizelve van, a megjelölt felhasználók jelentésének frissítése a panel újrabetöltésekor fog történni.
+
+### <a name="users-with-potentially-harmful-apps"></a>Potenciálisan ártalmas alkalmazásokat használó felhasználók
+Az alkalmazások feltételes indítási ellenőrzésének megkövetelése az eszközökön a **veszélyforrások vizsgálatát megkövetelő** eszközökkel a Google által jelentett veszélyforrások kategóriáját kell jelenteni. Ha az Intune-on keresztül üzembe helyezett alkalmazások vannak felsorolva, lépjen kapcsolatba az alkalmazás fejlesztővel, vagy távolítsa el az alkalmazást a felhasználókhoz való hozzárendeléshez. A részletes nézet a következőket jeleníti meg:
+
+- **Felhasználó**: a felhasználó neve.
+- **ALKALMAZÁSCSOMAG azonosítója**: az Android operációs rendszer egyedi módon határozza meg az alkalmazást.
+- **Ha az alkalmazás MAM-kompatibilis**: függetlenül attól, hogy az alkalmazás üzembe helyezése Microsoft Intuneon keresztül történik-e. 
+- A **fenyegetés kategóriája**: az alkalmazáshoz tartozó Google által meghatározott veszélyforrások kategóriája. 
+- **E-mail**: a felhasználó e-mail-címe.
+- **Eszköznév**: a felhasználói fiókhoz társított összes eszköz neve.
+- **Egy**időbélyegző: ez az utolsó szinkronizálás dátuma, amelyet a Google Microsoft Intune a potenciálisan ártalmas alkalmazásokkal kapcsolatban.
+
+## <a name="reporting-view"></a>Jelentéskészítés nézet
+
+Ugyanezeket a jelentéseket az **app Protection állapota** ablaktábla tetején tekintheti meg. A jelentések megtekintéséhez válassza az **alkalmazások** > az **App Protection állapota** > a **jelentések**elemet. A **jelentések** ablaktábla számos jelentést biztosít a felhasználók és az alkalmazások alapján, beleértve a következőket:
+
+### <a name="user-report"></a>Felhasználói jelentés
 Itt megkeresheti az adott felhasználókat, és ellenőrizheti a megfelelési állapotukat. Az **Alkalmazásjelentések** panelen a következő információk tekinthetők meg a kiválasztott felhasználóról:
 - **Ikon**: megjeleníti, hogy az alkalmazás állapota naprakész-e.
 - **Alkalmazás neve**: az alkalmazás neve.
@@ -86,7 +102,6 @@ Itt megkeresheti az adott felhasználókat, és ellenőrizheti a megfelelési á
 > - Ha első alkalommal jelentkezik be, az azt jelenti, hogy a felhasználó korábban már ki lett jelentkezve, és nem rendelkezik az Intune-beli alkalmazás-példányok regisztrálásával. Miután a felhasználó bejelentkezett, a felhasználó új alkalmazás-példány regisztrációt kap, és azonnal bejelentkezhet (a későbbi bejelentkezések során a korábban felsorolt késésekkel). Így az utolsó szinkronizálási idő 12:00 PM a felhasználói állapot jelentésben, és 12:01 PM (vagy 12:30 PM) az alkalmazás-védelmi házirend jelentésében. 
 > - Ha a felhasználó éppen csak elindítja az alkalmazást, a jelentett Legutóbbi szinkronizálási idő attól függ, hogy a felhasználó utoljára be van-e jelölve.
 
-
 A felhasználóhoz tartozó jelentések megtekintéséhez kövesse az alábbi lépéseket:
 
 1. Felhasználó kiválasztásához válassza a **felhasználói állapot** összegzése csempét.
@@ -102,36 +117,8 @@ A felhasználóhoz tartozó jelentések megtekintéséhez kövesse az alábbi l�
 >[!NOTE]
 > Ha a keresett felhasználók nem rendelkeznek telepített MAM-szabályzattal, egy üzenet jelenik meg, amely arról tájékoztatja, hogy a felhasználóra nem vonatkozik egyetlen MAM-szabályzat sem.Ha a keresett felhasználók nem rendelkeznek telepített MAM-szabályzattal, egy üzenet jelenik meg, amely arról tájékoztatja, hogy a felhasználóra nem vonatkozik egyetlen MAM-szabályzat sem.
 
-### <a name="flagged-users"></a>Megjelölt felhasználók
-A részletes nézetben látható a hibaüzenet, annak az alkalmazásnak a neve, amelynek a használata közben fellépett a hiba, az eszközök érintett operációsrendszer-platformja, valamint egy időbélyeg. A hiba általában a jailbroken (iOS) vagy a feltört (androidos) eszközökön van. Az "biztonság Device igazolás" feltételes indítási ellenőrzés által megjelölt eszközökkel rendelkező felhasználók itt is a Google által jelentett oknál fogva jelennek meg. Ahhoz, hogy egy felhasználó el legyen távolítva a jelentésből, meg kell változtatnia az eszköz állapotát, ami a következő legfelső szintű észlelési ellenőrzés (vagy a jailbreak-ellenőrzés/biztonság-ellenőrzés) után történik, amelyeknek pozitív eredményt kell jelenteniük. Ha az eszköz valóban szervizelve van, a megjelölt felhasználók jelentésének frissítése a panel újrabetöltésekor fog történni.
-
-### <a name="users-with-potentially-harmful-apps"></a>Potenciálisan ártalmas alkalmazásokat használó felhasználók
-A részletes nézet a következőket jeleníti meg:
-
-- A felhasználó.
-- Az alkalmazáscsomag azonosítója.
-- Ha az alkalmazás MAM-kompatibilis.
-- A fenyegetés kategóriája.
-- Az e-mailt.
-- Az eszköz neve.
-- Egy időbélyegző.
-
-Az alkalmazások feltételes indítási ellenőrzésének megkövetelése az eszközökön a **veszélyforrások vizsgálatát megkövetelő** eszközökkel a Google által jelentett veszélyforrások kategóriáját kell jelenteni. Ha az Intune-on keresztül üzembe helyezett alkalmazások vannak felsorolva, lépjen kapcsolatba az alkalmazás fejlesztővel, vagy távolítsa el az alkalmazást a felhasználókhoz való hozzárendeléshez. 
-
-## <a name="reporting-view"></a>Jelentéskészítés nézet
-
-Ugyanezeket a jelentéseket az **app Protection állapota** ablaktábla tetején tekintheti meg.
-
-> [!NOTE]
-> Az Intune további eszköz-jelentési mezőket biztosít, beleértve az alkalmazás regisztrációs AZONOSÍTÓját, az Android-gyártót, a modellt és a biztonsági javítás verzióját, valamint az iOS-modellt is. Az Intune-ban ezeket a mezőket az **alkalmazások** > **app protection-állapot** > **app Protection-jelentés: iOS, Android című**részében érheti el. Emellett ezek a paraméterek segítséget nyújtanak az eszköz gyártójának (Android) **engedélyezési** listájának, az eszköz modell **engedélyezési** listájának (Android és iOS) és az androidos biztonsági javítás minimális verziójának beállításának konfigurálásában. 
-
-További jelentések érhetők el a MAM-szabályzat megfelelőségi állapotának elősegítése érdekében. A jelentések megtekintéséhez válassza az **alkalmazások** > az **App Protection állapota** > a **jelentések**elemet. 
-
-A **jelentések** ablaktábla számos jelentést biztosít a felhasználók és az alkalmazások alapján, beleértve a következőket:
-
-- **Felhasználói jelentés**: Ez a jelentés a fenti [Részletes nézet](app-protection-policies-monitor.md#detailed-view) szakaszban található **felhasználói állapot** jelentésében megjelenő információkat ismerteti.
-
-- **Alkalmazás-jelentés**: a platform és az alkalmazás kiválasztása mellett ez a jelentés két különböző alkalmazás-védelmi állapotot biztosít, amelyeket a jelentés létrehozása előtt választhat ki. Az állapotok **védhetők** **vagy nem védettek**.
+### <a name="app-report"></a>Alkalmazás-jelentés
+Kereshet a platform és az alkalmazás között, és ez a jelentés két különböző app Protection-állapotot biztosít, amelyeket a jelentés létrehozása előtt kijelölhet. Az állapotok **védhetők** **vagy nem védettek**.
 
   - Felügyelt MAM-tevékenységekre vonatkozó felhasználói állapot (**védett**): Ez a jelentés felhasználónkénti alapon ismerteti az egyes felügyelt MAM-alkalmazások tevékenységeit. A MAM-szabályzatok által megcélozott összes alkalmazást megjeleníti az egyes felhasználókra vonatkozóan, valamint az egyes alkalmazások állapotát a MAM-szabályzatokkal bejelentkezve. A jelentés a MAM-szabályzattal megcélozott alkalmazások állapotát is tartalmazza, de soha nem volt bejelölve.
   - Nem felügyelt MAM-tevékenységekre vonatkozó felhasználói állapot (nem**védett**): Ez a jelentés a jelenleg nem felügyelt MAM-kompatibilis alkalmazások tevékenységeit ismerteti, felhasználónkénti alapon. Ez az alábbiak miatt fordulhat elő:
@@ -140,23 +127,39 @@ A **jelentések** ablaktábla számos jelentést biztosít a felhasználók és 
 
     ![Képernyőfelvétel a felhasználó alkalmazás-jelentési paneljéről, három alkalmazás részleteivel](./media/app-protection-policies-monitor/MAM-reporting-4.png)
 
-- **Felhasználói konfigurációs jelentés**: a kiválasztott felhasználó alapján ez a jelentés a felhasználó által fogadott alkalmazás-konfigurációk részleteit tartalmazza.
-- **Alkalmazás-konfigurációs jelentés**: a kiválasztott platformon és alkalmazáson alapuló alap, ez a jelentés részletesen ismerteti, hogy mely felhasználók kapott konfigurációkat a kiválasztott alkalmazáshoz.
-- **Alkalmazás-tanulási jelentés Windows Information Protectionhoz**: Ez a jelentés azt jeleníti meg, hogy mely alkalmazások próbálnak meg határokon átívelő házirendeket használni.
-- A **Windows Information Protection webhelyének megismerése**: Ez a jelentés azt jeleníti meg, hogy mely webhelyek próbálnak meg határokon átívelő házirendeket használni.
+### <a name="user-configuration-report"></a>**Felhasználói konfigurációs jelentés**
+A kiválasztott felhasználó alapján ez a jelentés részletesen ismerteti a felhasználó által fogadott alkalmazások konfigurációit.
 
-## <a name="table-grouping"></a>Táblacsoportosítás
+### <a name="app-configuration-report"></a>**Alkalmazás-konfigurációs jelentés**
+A kiválasztott platform és alkalmazás alapján ez a jelentés részletesen ismerteti, hogy mely felhasználók kaptak konfigurációkat a kiválasztott alkalmazáshoz.
 
-Az **app Protection felhasználói jelentés** adatainak megjelenítése után az alábbi módon összesítheti az adatokat:
+### <a name="app-learning-report-for-windows-information-protection"></a>Alkalmazás-tanulási jelentés Windows Information Protection
+Ez a jelentés azt jeleníti meg, hogy mely alkalmazások próbálnak meg határokon átívelő házirendeket használni.
 
-- **Érvényesítési eredmény**: az alkalmazások az alkalmazás védelmi állapota szerint vannak csoportosítva, ami "hiba", "figyelmeztetés" vagy "sikeres" lehet.
-- **Alkalmazás neve**: az adatok a tényleges alkalmazás neve szerint vannak csoportosítva. Az állapot "sikertelen", "figyelmeztetés" vagy "sikeres" lehet.
+### <a name="website-learning-for-windows-information-protection"></a>A Windows Information Protection webhelyének megismerése
+Ez a jelentés azt jeleníti meg, hogy mely webhelyek próbálnak meg határokon átívelő házirendeket használni.
 
 ## <a name="export-app-protection-activities"></a>Alkalmazás-védelmi tevékenységek exportálása
+Az alkalmazásvédelmi szabályzatokkal kapcsolatos összes tevékenységet egyetlen .csv-fájlba exportálhatja. Ez hasznos lehet az összes, a felhasználók felől jelentett alkalmazásvédelmi állapot elemzésében. Az **app Protection. csv fájl a következőket jeleníti**meg:
+- **Felhasználó**: a felhasználó neve.
+- **E-mail**: a felhasználó e-mail-címe.
+- **Alkalmazás**: az alkalmazás neve.
+- **Alkalmazás verziója**: az alkalmazás verziója.
+- **Eszköznév**: a felhasználói fiókhoz társított összes eszköz neve.
+- **Eszköz gyártója**: az eszköz gyártóját sorolja fel (csak Android esetén). 
+- **Eszköz modellje**: ez felsorolja az eszköz gyártóját (csak Android esetén). 
+- **Android-javítás verziója**: az utolsó Android biztonsági javítás dátuma.
+- **HRE-eszköz azonosítója**: ez az oszlop feltöltve lesz, ha az eszköz HRE van csatlakoztatva.
+- **Mdm-eszköz azonosítója**: ez az oszlop feltöltve lesz, ha az eszköz regisztrálva van Microsoft Intune Mdm.
+- **Platform**: az operációs rendszer.
+- **Platform verziója**: az operációs rendszer verziója.
+- **Felügyeleti típus**: a felügyelet típusa az eszközön. Például: Android Enterprise, nem felügyelt vagy MDM.  
+- **Alkalmazás védelmi állapota**: nem védett vagy védett.
+- **Házirend**: az alkalmazáshoz társított alkalmazás-védelmi szabályzatok.
+- **Utolsó szinkronizálás**: az alkalmazás Microsoft Intunesal való legutóbbi szinkronizálásakor. 
+- **Megfelelőségi állapot**: azt határozza meg, hogy a felhasználó eszközén lévő alkalmazás megfelel-e az alkalmazás-alapú feltételes hozzáférési szabályzatoknak.  
 
-Az alkalmazásvédelmi szabályzatokkal kapcsolatos összes tevékenységet egyetlen .csv-fájlba exportálhatja. Ez hasznos lehet az összes, a felhasználók felől jelentett alkalmazásvédelmi állapot elemzésében.
-
-Az App Protection-jelentés létrehozásához kövesse az alábbi lépéseket:
+Kövesse az alábbi lépéseket az App Protection. csv fájl vagy az App Configuration. csv fájl létrehozásához:
 
 1. Az Intune-os mobilalkalmazás-kezelés paneljén válassza az **Alkalmazásvédelmi jelentés** lehetőséget.
 
@@ -165,7 +168,10 @@ Az App Protection-jelentés létrehozásához kövesse az alábbi lépéseket:
 2. Válassza az **Igen** lehetőséget a jelentés mentéséhez, majd válassza a **Mentés másként**lehetőséget. Válassza ki azt a mappát, amelybe menteni szeretné a jelentést.
 
     ![Képernyőkép a Jelentés mentése jóváhagyó mezőről](./media/app-protection-policies-monitor/app-protection-report-csv-1.png)
-
+   
+> [!NOTE]
+> Az Intune további eszköz-jelentési mezőket biztosít, beleértve az alkalmazás regisztrációs AZONOSÍTÓját, az Android-gyártót, a modellt és a biztonsági javítás verzióját, valamint az iOS-modellt is. Az Intune-ban ezeket a mezőket az **alkalmazások** > **app protection-állapot** > **app Protection-jelentés: iOS, Android című**részében érheti el. Emellett ezek a paraméterek segítséget nyújtanak az eszköz gyártójának (Android) **engedélyezési** listájának, az eszköz modell **engedélyezési** listájának (Android és iOS) és az **androidos biztonsági javítás minimális verziójának** beállításának konfigurálásában.   
+ 
 ## <a name="see-also"></a>További információ
 - [iOS-alkalmazások közti adatátvitel kezelése](data-transfer-between-apps-manage-ios.md)
 - [Milyen hatással vannak az androidos alkalmazásokra az alkalmazásvédelmi szabályzatok?](../fundamentals/end-user-mam-apps-android.md)

@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 10/15/2019
+ms.date: 12/19/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e539f44fc9c9b4e7382368c0f3ad9f79bb1c98b1
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: d302db46510b664aec5b0a71fd8b19985e29be37
+ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72585876"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75206125"
 ---
 # <a name="use-policy-sets-to-group-collections-of-management-objects"></a>Csoportházirend-készletek használata a felügyeleti objektumok gyűjteményének csoportosításához
 
@@ -56,8 +56,8 @@ Házirend-készlet létrehozásakor a hozzárendelések egyetlen egységét kell
 
 ## <a name="how-to-create-a-policy-set"></a>Házirend-készlet létrehozása
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Az **Intune** panelen válassza a **házirend-készletek** > **szabályzatok** > **Létrehozás**lehetőséget.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza az **eszközök** > **házirend-készletek** > **szabályzatok** > **Létrehozás**lehetőséget.
 3. Az **alapvető beállítások** lapon adja hozzá a következő értékeket:
     - **Házirend-készlet neve** – adja meg a házirend-készlet nevét.
     - **Leírás** – nem kötelezően megadhatja a házirend-készlet leírását.
