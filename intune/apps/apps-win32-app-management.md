@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 01/02/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e8b3ee799374f4b3777f771d4bd6e186ddaeb55c
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 371800b39e04695eadc906465fdb013488836df9
+ms.sourcegitcommit: 3189c3a82cfd1ff3a58153dfec2e12fae7b9bdc7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74564026"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75622520"
 ---
 # <a name="intune-standalone---win32-app-management"></a>Önálló Intune – Win32-alkalmazások kezelése
 
@@ -313,7 +313,7 @@ Ha egy alkalmazás-függőséget szeretne hozzáadni a Win32-alkalmazáshoz, kö
 4. Kattintson a **Hozzáadás** gombra az alkalmazás-függőség hozzáadásához.
 5. Miután hozzáadta a függő alkalmazást (ka) t, kattintson a **kiválasztás**elemre.
 6. Válassza ki, hogy automatikusan szeretné-e telepíteni a függő alkalmazást az **Automatikus telepítés**lehetőségnél az **Igen** vagy a **nem** lehetőség kiválasztásával.
-7. Kattintson a **Mentés**gombra.
+7. Kattintson a **Mentés** gombra.
 
 A végfelhasználó láthatja, hogy a függő alkalmazások letöltése és telepítése a Win32-alkalmazás telepítési folyamatának részeként történik. Emellett, ha egy függő alkalmazás nincs telepítve, a végfelhasználó általában az alábbi értesítések egyikét fogja látni:
 - 1 vagy több függő alkalmazás telepítése nem sikerült
@@ -327,6 +327,9 @@ Minden függőség betartja az Intune Win32-alkalmazás újrapróbálkozási log
 ## <a name="delivery-optimization"></a>Kézbesítésoptimalizálás elemet
 
 A Windows 10 1709 és újabb rendszerű ügyfelek letöltik az Intune Win32-alkalmazás tartalmát egy kézbesítési optimalizálási összetevő használatával a Windows 10-ügyfélen. A kézbesítési optimalizálás a társ-társ funkciókat biztosítja, amelyet alapértelmezés szerint be kell kapcsolni. A kézbesítési optimalizálást a csoportházirend és az Intune-eszköz konfigurációja is konfigurálhatja. További információ: [a Windows 10 kézbesítési optimalizálása](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization). 
+
+> [!NOTE]
+> A Microsoft csatlakoztatott gyorsítótár-kiszolgálót a Configuration Manager terjesztési pontokon is telepítheti az Intune Win32-alkalmazás tartalmának gyorsítótárazásához. További információ: a [Microsoft csatlakoztatott gyorsítótára Configuration Manager – az Intune Win32-alkalmazások támogatása](https://docs.microsoft.com/configmgr/core/plan-design/hierarchy/microsoft-connected-cache#bkmk_intune).
 
 ## <a name="install-required-and-available-apps-on-devices"></a>Kötelező és elérhető alkalmazások telepítése az eszközökön
 
@@ -375,7 +378,7 @@ Ha szükséges, letilthatja az alkalmazás-hozzárendelések végfelhasználói 
 > Az Intune felügyeleti bővítmény telepített Win32-alkalmazásai nem lesznek eltávolítva a nem regisztrált eszközökön. A rendszergazdák kihasználhatják a hozzárendelések kizárását, hogy a Win32-alkalmazások ne BYOD eszközöket.
 
 ## <a name="troubleshoot-win32-app-issues"></a>A Win32-alkalmazások hibáinak elhárítása
-Az ügynöknaplók általában a következő helyen érhetők el az ügyfélgépen: `C:\ProgramData\Microsoft\IntuneManagementExtension\Logs`. A `CMTrace.exe` segítségével megtekintheti ezeket a naplófájlokat. A *CMTrace. exe* letölthető [Configuration Manager ügyféleszközök](https://docs.microsoft.com/sccm/core/support/tools)közül. 
+Az ügynöknaplók általában a következő helyen érhetők el az ügyfélgépen: `C:\ProgramData\Microsoft\IntuneManagementExtension\Logs`. A `CMTrace.exe` segítségével megtekintheti ezeket a naplófájlokat. További információ: [CMTrace](https://docs.microsoft.com/configmgr/core/support/cmtrace).
 
 ![Képernyőkép az ügynök naplóiról az ügyfélszámítógépen](./media/apps-win32-app-management/apps-win32-app-10.png)    
 
