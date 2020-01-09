@@ -6,7 +6,7 @@ keywords: Intune-adattárház
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 10/02/2019
+ms.date: 01/03/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: developer
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 64fc1bab596715be80fd3a91c003cac1176fe787
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 1fe4fabc86e7be647fa161d68fe8a4fe35e9eb6b
+ms.sourcegitcommit: 8d7406b75ef0d75cc2ed03b1a5e5f74ff10b98c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72490276"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75654124"
 ---
 # <a name="reference-for-policy-entities"></a>Házirend entitások referenciája
 
@@ -65,7 +65,7 @@ A **deviceConfigurationProfileDeviceActivity** entitás naponta listázza a sike
 | Tulajdonság  | Description | Példa |
 |---------|------------|--------|
 | dateKey |A dátumkulcs azt jelzi, hogy az adattárházban mikor lett rögzítve az eszközkonfigurációs profil bejelentkezése. |20160703 |
-| függőben |A függő állapotú egyedi eszközök száma. |123 |
+| Függőben |A függő állapotú egyedi eszközök száma. |123 |
 | Sikerült |A sikeres állapotú egyedi eszközök száma. |12 |
 | Hiba |A hibás állapotú egyedi eszközök száma. |10 |
 | sikertelen |A sikertelen állapotú egyedi eszközök száma. |2 |
@@ -75,7 +75,7 @@ A **deviceConfigurationProfileUserActivity** entitás naponta listázza a sikere
 | Tulajdonság  | Description | Példa |
 |---------|------------|--------|
 | dateKey |A dátumkulcs azt jelzi, hogy az adattárházban mikor lett rögzítve az eszközkonfigurációs profil bejelentkezése. |20160703 |
-| függőben |A függő állapotú egyedi felhasználók száma. |123 |
+| Függőben |A függő állapotú egyedi felhasználók száma. |123 |
 | Sikerült |A sikeres állapotú egyedi felhasználók száma. |12 |
 | Hiba |A hibás állapotú egyedi felhasználók száma. |10 |
 | sikertelen |A sikertelen állapotú egyedi felhasználók száma. |2 |
@@ -89,7 +89,7 @@ A **policyTypeActivity** entitás a sikeres, függő, sikertelen vagy hibás ál
 | dateKey |dateKey, amikor az eszköz konfigurációs profiljának beadását rögzítették az adattárházban. |20160703 |
 | policyKey |a policyKey a policyName lekéréséhez csatlakozhat a szabályzathoz. |Windows 10 baseline |
 | policyTypeKey |Szabályzatkulcs típusa, amely összekapcsolható a szabályzattípussal a szabályzattípus nevének lekérése érdekében. |Windows 10-es megfelelőségi szabályzat |
-| függőben |A függő állapotú egyedi eszközök száma. |123 |
+| Függőben |A függő állapotú egyedi eszközök száma. |123 |
 | Sikerült |A sikeres állapotú egyedi eszközök száma. |12 |
 | Hiba |A hibás állapotú egyedi eszközök száma. |10 |
 | sikertelen |A sikertelen állapotú egyedi eszközök száma. |2 |
@@ -149,7 +149,7 @@ Az alábbi táblázat a sikeres, függő, sikertelen vagy hibás állapotú eszk
 |Tulajdonság  |Description  |Példa  |
 |---------|---------|---------|
 |dateKey|A dátumkulcs azt jelzi, hogy az adattárházban mikor lett rögzítve az eszközkonfigurációs profil bejelentkezése.|20160703|
-|függőben|A függő állapotú egyedi eszközök száma.|123|
+|Függőben|A függő állapotú egyedi eszközök száma.|123|
 |Sikerült|A sikeres állapotú egyedi eszközök száma.|12|
 |policyKey|a policyKey a policyName lekéréséhez csatlakozhat a szabályzathoz.|Windows 10 baseline|
 |Hiba|A hibás állapotú egyedi eszközök száma.|10|
@@ -163,7 +163,7 @@ Az alábbi táblázat a sikeres, függő, sikertelen vagy hibás állapotú felh
 | Tulajdonság  |                                         Description                                         |       Példa       |
 |-----------|---------------------------------------------------------------------------------------------|---------------------|
 |  dateKey  | A dátumkulcs azt jelzi, hogy az adattárházban mikor lett rögzítve az eszközkonfigurációs profil bejelentkezése. |      20160703       |
-|  függőben  |                         A függő állapotú egyedi eszközök száma.                          |         123         |
+|  Függőben  |                         A függő állapotú egyedi eszközök száma.                          |         123         |
 | Sikerült |                         A sikeres állapotú egyedi eszközök száma.                          |         12          |
 | policyKey |                 a policyKey a policyName lekéréséhez csatlakozhat a szabályzathoz.                 | Windows 10 baseline |
 |   Hiba   |                          A hibás állapotú egyedi eszközök száma.                           |         10          |

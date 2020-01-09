@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b17b87462b2c73e265f062c33a06a810e7c58bf8
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: cfa2c5366d1b38cf819cfc68840a29fad9002979
+ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72504342"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75548112"
 ---
 # <a name="data-security-and-sharing-in-intune"></a>Adatbiztonság és -megosztás az Intune-ban
 
@@ -34,7 +34,7 @@ A Microsoft Intune a Microsoft Enterprise Mobility and Security Suite felhőszol
 
 A Microsoft Intune ugyanazokat a technikai és szervezési elveket követi, amelyeket a Microsoft Azure szervizcsapatai alkalmaznak az adatvédelmi incidensek ellen.
 
-További információ a [Szolgáltatásmegbízhatósági portálon](https://www.microsoft.com/en-us/TrustCenter/stp) található.
+További információ a [Szolgáltatásmegbízhatósági portálon](https://www.microsoft.com/en-us/TrustCenter/stp).
 
 Az Intune olyan adatmennyiség-csökkentő technikákat használ, mint az
 
@@ -68,11 +68,11 @@ Az egyes külső felekkel megosztott adatokról a következő cikkekből tájék
 - [A Google által az Intune-nak küldött adatok](data-google-sends-to-intune.md)
 - [A JAMF Pro által küldött adatokat az Intune-nak küldi](data-jamf-sends-to-intune.md)
 
-### <a name="system-center-configuration-manager-data-sharing"></a>Adatmegosztás a System Center Configuration Managerben
+### <a name="microsoft-endpoint-configuration-manager-data-sharing"></a>Microsoft Endpoint Configuration Manager adatmegosztás
 
-A Microsoft Intune semmilyen adatot sem oszt meg a System Center Configuration Managerrel. A System Center Configuration Manager az ügyfél által üzembe helyezett, felügyelt és működtetett helyszíni termék. A Configuration Manager által gyűjtött diagnosztikai és használati adatokat kizárólag a telepítési élmény, a minőség és a jövőbeli kiadások biztonságának javításához használja fel.
+A Microsoft Intune nem oszt meg semmilyen adatConfiguration Managert. Configuration Manager az ügyfél által közvetlenül üzembe helyezett, felügyelt és üzemeltetett helyszíni termék. A Configuration Manager által gyűjtött diagnosztikai és használati adatokat kizárólag a telepítési élmény, a minőség és a jövőbeli kiadások biztonságának javításához használja fel.
 
-További információ: [Diagnosztikai és használati adatok az SCCM számára](https://docs.microsoft.com/sccm/core/plan-design/diagnostics/diagnostics-and-usage-data). 
+További információ: [Configuration Manager diagnosztikai és használati adatok](https://docs.microsoft.com/configmgr/core/plan-design/diagnostics/diagnostics-and-usage-data). 
 
 
 ## <a name="next-steps"></a>További lépések

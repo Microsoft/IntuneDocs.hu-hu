@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 60a87340c1a275b8fb878ef2f3891cca23fc9c85
-ms.sourcegitcommit: f5108039f0ade52e95ea3ac1da1aa16d02224af3
+ms.openlocfilehash: 0ca5d475f92cbe3298689273dcdf0da1644078b2
+ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74946659"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75547041"
 ---
 # <a name="windows-10-and-later-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>Windows 10 és újabb beállítások az eszközök megfelelőségi vagy nem megfelelőként való megjelöléséhez az Intune használatával
 
@@ -102,15 +102,15 @@ További források:
 
 Csak a Windows 10 és újabb rendszerű, közösen felügyelt eszközökre vonatkozik. A csak Intune-eszközök nem elérhető állapotot adnak vissza.
 
-- **Eszköz megfelelőségének Megkövetelése System Center Configuration Manager**:  
+- **Eszköz megfelelőségének Megkövetelése Configuration Manager**:  
   - **Nincs konfigurálva** (*alapértelmezett*) – az Intune nem vizsgálja meg a megfelelőség Configuration Manager beállításait.
-  - **Kötelező** – kötelezővé kell tennie az összes beállítást (a konfigurációs elemeket) a System Center Configuration Manager.  
+  - **Kötelező** – kötelezővé kell tennie az összes beállítást (a konfigurációs elemeket) a Configuration Manager.  
 
     Megkövetelhető például, hogy minden szoftverfrissítés telepítve legyen az eszközökön. A Configuration Managerben az ehhez a követelményhez tartozó állapot a „Telepítve”. Ha az eszközön bármely program ismeretlen állapotban van, akkor az eszköz nem megfelelő az Intune-ban.
 
 ## <a name="system-security"></a>Rendszerbiztonság
 
-### <a name="password"></a>Jelszó
+### <a name="password"></a>Windows 10
 
 - **Jelszó megkövetelése a mobileszközök zárolásának feloldásához**:  
   - **Nincs konfigurálva** (*alapértelmezett*) – a rendszer nem értékeli ki a megfelelőségi és a nem megfelelőségi beállítást.

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 42d07f02e76669c735d09b5d7843a4102dd0f835
-ms.sourcegitcommit: 7cc45ef52dda08479bc6bdff7d11d2f6c0e7b93b
+ms.openlocfilehash: 7ceaf5c62f34cc248813a064de9e8e3710797779
+ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74899247"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75547919"
 ---
 # <a name="intune-data-warehouse-collections"></a>Intune adattárház-gyűjtemények
 
@@ -84,10 +84,10 @@ Az alábbi táblázatban foglaltuk össze az eszközökhöz rendelt megfelelős�
 |:-------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------:|
 | DateKey       | A megfelelőségi szabályzat összefoglalójának létrehozási dátumkulcsa.                                                                                                                   | 20161204 |
 | Ismeretlen       | Azoknak az eszközöknek a száma, amelyek offline állapotban vannak, vagy valamilyen más okból nem sikerült kapcsolatba lépniük az Intune-nal vagy az Azure AD-vel.                                                                           | 5        |
-| Nem alkalmazható | Azoknak az eszközöknek a száma, amelyeknél a rendszergazda által meghatározott eszközmegfelelőségi szabályzatok nem alkalmazhatók.                                                                                     | 201      |
-| Compliant (Megfelelő)     | Azoknak az eszközöknek a száma, amelyek megfelelnek a rendszergazda által meghatározott egy vagy több eszközmegfelelőségi szabályzatnak.                                                                        | 4083     |
+| NotApplicable | Azoknak az eszközöknek a száma, amelyeknél a rendszergazda által meghatározott eszközmegfelelőségi szabályzatok nem alkalmazhatók.                                                                                     | 201      |
+| megfelelőséget     | Azoknak az eszközöknek a száma, amelyek megfelelnek a rendszergazda által meghatározott egy vagy több eszközmegfelelőségi szabályzatnak.                                                                        | 4083     |
 | Türelmi időszakban | Azoknak az eszközöknek a száma, amelyek nem megfelelőek, de a rendszergazda által meghatározott türelmi időszakban vannak.                                                                                  | 57       |
-| Nem megfelelő  | Azoknak az eszköznek a száma, amelyek nem felelnek meg a rendszergazda által meghatározott egy vagy több eszközmegfelelőségi szabályzatnak, vagy a felhasználó nem a rendszergazda által meghatározott szabályzatoknak megfelelően járt el. | 43       |
+| NonCompliant  | Azoknak az eszköznek a száma, amelyek nem felelnek meg a rendszergazda által meghatározott egy vagy több eszközmegfelelőségi szabályzatnak, vagy a felhasználó nem a rendszergazda által meghatározott szabályzatoknak megfelelően járt el. | 43       |
 |    Hiba      |    Azoknak az eszközöknek a száma, amelyeknek nem sikerült kapcsolatba lépniük az Intune-nal vagy az Azure AD-vel, és hibaüzenetet küldtek.                                                                          |    3     |
 
 ## <a name="compliancepolicystatusdeviceperpolicyactivities"></a>compliancePolicyStatusDevicePerPolicyActivities
@@ -99,10 +99,10 @@ Az alábbi táblázatban foglaltuk össze az eszközökhöz rendelt megfelelős�
 | PolicyKey         | Annak a megfelelőségi szabályzatnak a kulcsa, amelyhez az összefoglalás készült.                                                                                                                   | 10178    |
 | PolicyPlatformKey | Annak a megfelelőségi szabályzathoz tartozó platformnak a kulcsa, amelyhez az összefoglalás készült.                                                                                            | 5        |
 | Ismeretlen           | Azoknak az eszközöknek a száma, amelyek offline állapotban vannak, vagy valamilyen más okból nem sikerült kapcsolatba lépniük az Intune-nal vagy az Azure AD-vel.                                                                           | 13       |
-| Nem alkalmazható     | Azoknak az eszközöknek a száma, amelyeknél a rendszergazda által meghatározott eszközmegfelelőségi szabályzatok nem alkalmazhatók.                                                                                     | 3        |
-| Compliant (Megfelelő)         | Azoknak az eszközöknek a száma, amelyek megfelelnek a rendszergazda által meghatározott egy vagy több eszközmegfelelőségi szabályzatnak.                                                                        | 45       |
+| NotApplicable     | Azoknak az eszközöknek a száma, amelyeknél a rendszergazda által meghatározott eszközmegfelelőségi szabályzatok nem alkalmazhatók.                                                                                     | 3        |
+| megfelelőséget         | Azoknak az eszközöknek a száma, amelyek megfelelnek a rendszergazda által meghatározott egy vagy több eszközmegfelelőségi szabályzatnak.                                                                        | 45       |
 | Türelmi időszakban     | Azoknak az eszközöknek a száma, amelyek nem megfelelőek, de a rendszergazda által meghatározott türelmi időszakban vannak.                                                                                  | 3        |
-| Nem megfelelő      | Azoknak az eszköznek a száma, amelyek nem felelnek meg a rendszergazda által meghatározott egy vagy több eszközmegfelelőségi szabályzatnak, vagy a felhasználó nem a rendszergazda által meghatározott szabályzatoknak megfelelően járt el. | 7        |
+| NonCompliant      | Azoknak az eszköznek a száma, amelyek nem felelnek meg a rendszergazda által meghatározott egy vagy több eszközmegfelelőségi szabályzatnak, vagy a felhasználó nem a rendszergazda által meghatározott szabályzatoknak megfelelően járt el. | 7        |
 | Hiba             | Azoknak az eszközöknek a száma, amelyeknek nem sikerült kapcsolatba lépniük az Intune-nal vagy az Azure AD-vel, és hibaüzenetet küldtek.                                                                             | 3        |
 ## <a name="compliancestates"></a>complianceStates
 
@@ -117,7 +117,7 @@ Az alábbi táblázatban foglaltuk össze az eszközökhöz rendelt megfelelős�
 |  complianceStatus  |                       Description                      |
 |:------------------:|:------------------------------------------------------:|
 |    Ismeretlen         |    Ismeretlen.                                                                        |
-|    Compliant (Megfelelő)       |    Compliant (Megfelelő).                                                                      |
+|    megfelelőséget       |    Compliant (Megfelelő).                                                                      |
 |    Noncompliant (Nem megfelelő)    |       Az eszköz nem megfelelő, és le van tiltva a vállalati erőforrásoknál.             |
 |    Ütközés        |    Ütközés más szabályokkal.                                                      |
 |    Hiba           |       HIba.                                                                       |
@@ -326,7 +326,7 @@ Az **EnrollmentActivity** entitás az eszközök regisztrálásának tevékenys�
 | enrollmentFailureCategoryKey  | A beléptetési hiba kategóriájának kulcsa (ha a regisztráció sikertelen volt).        |
 | enrollmentFailureReasonKey    | A beléptetési hiba okának kulcsa (ha a regisztráció sikertelen volt).          |
 | osVersion                     | Az eszköz operációs rendszerének verziója.                               |
-| darabszám                         | A fenti besorolásoknak megfelelő beléptetési tevékenységek teljes száma.  |
+| szám                         | A fenti besorolásoknak megfelelő beléptetési tevékenységek teljes száma.  |
 
 ## <a name="enrollmenteventstatuses"></a>enrollmentEventStatuses 
 Az **EnrollmentEventStatus** entitás az eszközök regisztrálásának eredményét jelzi.
@@ -525,7 +525,7 @@ A **managementAgentTypes** az eszköz kezelésére szolgáló ügynököket jel�
 | 3                     | EasMdm                            | Az Exchange Active Sync szolgáltatással és MDM-ügynökkel kezelt eszköz        |
 | 4                     | IntuneClient                      | Az Intune PC-ügynökkel kezelt eszköz                               |
 | 5                     | EasIntuneClient                   | Az Exchange Active Sync szolgáltatással és Intune PC-ügynökkel kezelt eszköz |
-| 8                     | ConfigManagerClient               | A System Center Configuration Manager-ügynökkel kezelt eszköz     |
+| 8                     | ConfigManagerClient               | Az eszközt a Configuration Manager ügynök felügyeli     |
 | 10                    | ConfigurationManagerClientMdm     | Az eszköz a Configuration Managerrel és az MDM-mel van felügyelve.                    |
 | 11                    | ConfigurationManagerCLientMdmEas  | Az eszközt a Configuration Manager, a MDM és a Exchange Active Sync felügyeli.               |
 | 16                    | Ismeretlen                           | A kezelőügynök típusa ismeretlen                                              |

@@ -17,12 +17,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: shpate
-ms.openlocfilehash: 7ce6def40c6c0fff3a28f884c458220283979234
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 001e68fdbab7074abb4e1bbefc697d3e34c47762
+ms.sourcegitcommit: 107fef144013b01ed768ca8973373f9cb3f0f7dc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74465775"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683782"
 ---
 # <a name="integrate-windows-hello-for-business-with-microsoft-intune"></a>A Vállalati Windows Hello integrálása a Microsoft Intune-nal  
 
@@ -53,9 +53,9 @@ E cikk segítségével az egész vállalatára vonatkozó alapértelmezett váll
 
 ## <a name="create-a-windows-hello-for-business-policy"></a>Vállalati Windows Hello-házirend létrehozása
 
-1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központba] (https://go.microsoft.com/fwlink/?linkid=2109431.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Lépjen az **eszközök** > beléptetés * * > **eszközök regisztrálása** > **a Windows Hello for Business**- **regisztráció** > . Megnyílik a vállalati Windows Hello panel.
+2. Nyissa meg az **eszközök** >  **beléptetés** > **eszközök regisztrálása** > windows **Hello for Business**- **regisztráció** > . Megnyílik a vállalati Windows Hello panel.
 
 3. Válasszon a következő lehetőségek közül a **vállalati Windows Hello konfigurálásához**:
 
@@ -111,7 +111,7 @@ E cikk segítségével az egész vállalatára vonatkozó alapértelmezett váll
 
    - **Telefonos bejelentkezés engedélyezése**:
 
-     Ha a beállítás az **Igen** értékre van beállítva, a felhasználók egy Remote Passport eszközt használhatnak hordozható társeszközként az asztali hitelesítéshez. Az asztali gépnek csatlakoztatva kell lennie az Azure Active Directoryhoz, és a társeszköznek rendelkeznie kell a Vállalati Windows Hello PIN-kódjával.
+     Ha a beállítás az **Igen** értékre van beállítva, a felhasználók egy Remote Passport eszközt használhatnak hordozható társeszközként az asztali hitelesítéshez. Az asztali gépnek csatlakoztatva kell lennie az Azure Active Directoryhoz, és a társeszköznek rendelkeznie kell a Windows Hello for Business PIN-kódjával.
 
 ## <a name="windows-holographic-for-business-support"></a>Windows Holographic for Business-támogatás
 

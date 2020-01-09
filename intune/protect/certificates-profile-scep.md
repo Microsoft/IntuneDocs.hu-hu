@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 321595a2ce8849b3d150b68f9dcc38dfda6ad940
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 88b7411095aee1b1d3a892ce4845812ceb1a9ac9
+ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74390289"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75547077"
 ---
 # <a name="create-and-assign-scep-certificate-profiles-in-intune"></a>SCEP-tanúsítványok létrehozása és társítása az Intune-ban
 
@@ -137,7 +137,7 @@ Miután [konfigurálta az infrastruktúrát](certificates-scep-configure.md) a e
 
         Válasszon az elérhető attribútumok közül:
 
-        - **E-mail cím**
+        - **E-mail-cím**
         - **Egyszerű felhasználónév (UPN)**
 
         A felhasználói tanúsítványok típusai például tartalmazhatják az egyszerű felhasználónevet (UPN) a tulajdonos alternatív neve mezőben. Ha az ügyféltanúsítványt egy hálózati házirend-kiszolgálón történő hitelesítésre használja, a tulajdonos alternatív neveként az egyszerű felhasználónevet (UPN) állítsa be.
@@ -148,7 +148,7 @@ Miután [konfigurálta az infrastruktúrát](certificates-scep-configure.md) a e
 
         Az elérhető attribútumok a következők:
 
-        - **E-mail cím**
+        - **E-mail-cím**
         - **Egyszerű felhasználónév (UPN)**
         - **DNS**
 
@@ -273,9 +273,9 @@ A SCEP-profilokat ugyanúgy rendelheti hozzá, mint az [eszközök profiljait](.
 
 - Tanúsítványprofilokat rendelhet felhasználógyűjteményekhez és eszközgyűjteményekhez is.
 
-- Ha azt szeretné, hogy a tanúsítványok gyorsan megjelenjenek az eszközökön a regisztráció után, a tanúsítványprofilt felhasználócsoporthoz és ne eszközcsoporthoz rendelje hozzá. Ha eszközcsoporthoz rendel hozzá, akkor teljes eszközregisztráció szükséges, mielőtt az eszköz megkaphatná a szabályzatokat.
+- Ha azt szeretné, hogy a tanúsítványok gyorsan megjelenjenek az eszközökön a regisztráció után, a tanúsítványprofilt felhasználócsoporthoz és ne eszközcsoporthoz rendelje hozzá. Ha eszközcsoporthoz rendeli, akkor teljes eszközregisztráció szükséges, mielőtt az eszköz megkaphatná a szabályzatokat.
 
-- Ha az Intune és a Configuration Manager együttes felügyeletét használja, akkor a Configuration Manager az **Intune** - **hoz vagy az Intune-hoz**tartozó erőforrás-hozzáférési szabályzat [munkaterhelésének csúszkáját állítsa be](https://docs.microsoft.com/sccm/comanage/how-to-switch-workloads) . Ez a beállítás lehetővé teszi, hogy a Windows 10-ügyfelek elindítsák a tanúsítvány kérelmezésének folyamatát.
+- Ha az Intune és a Configuration Manager együttes felügyeletét használja, Configuration Manager az **Intune** - **hoz vagy az Intune-** hoz készült erőforrás-hozzáférési szabályzatok [munkaterhelési csúszkáját állítsa be](https://docs.microsoft.com/configmgr/comanage/how-to-switch-workloads) . Ez a beállítás lehetővé teszi, hogy a Windows 10-ügyfelek elindítsák a tanúsítvány kérelmezésének folyamatát.
 
 - Bár a megbízható tanúsítvány profilját és a SCEP-tanúsítvány profilját külön hozza létre és rendeli hozzá, mindkettőt hozzá kell rendelni. Az SCEP-tanúsítvány házirendje nem működik együtt az eszközön. Győződjön meg arról, hogy a megbízható főtanúsítvány-profilok is ugyanarra a csoportra vannak telepítve, mint a SCEP-profil.
 

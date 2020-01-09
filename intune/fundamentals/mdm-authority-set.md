@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9735beff8aeebce84150c6cc8cb6df0082bd045d
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: a01b6643de2dd75c41aec0806b97df6154d99a7a
+ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75207145"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75547767"
 ---
 # <a name="set-the-mobile-device-management-authority"></a>Mobileszköz-felügyeleti szolgáltató megadása
 
@@ -34,7 +34,7 @@ A lehetséges konfigurációk a következők:
 
 - **Önálló Intune** – kizárólag felhőalapú felügyelet használata, amelyet az Azure Portal segítségével konfigurálhat. Az Intune-ban elérhető összes lehetőség a rendelkezésére áll. [MDM-szolgáltató beállítása az Intune-konzolon](#set-mdm-authority-to-intune).
 
-- **Intune közös felügyelet** – az Intune felhőalapú megoldásának integrációja System Center Configuration Manager Windows 10-es eszközökhöz. Az Intune-t a Configuration Manager konzolja segítségével konfigurálhatja. Az [eszközök automatikus regisztrálásának konfigurálása az Intune-ban](https://docs.microsoft.com/sccm/comanage/tutorial-co-manage-clients#configure-auto-enrollment-of-devices-to-intune). 
+- **Intune közös felügyelet** – az Intune felhőalapú megoldásának integrációja Configuration Manager Windows 10-es eszközökhöz. Az Intune-t a Configuration Manager konzolja segítségével konfigurálhatja. [Az eszközök automatikus regisztrálásának konfigurálása az Intune-](https://docs.microsoft.com/configmgr/comanage/tutorial-co-manage-clients#configure-auto-enrollment-of-devices-to-intune)ban. 
 
     > [!Important]
     >Az új hibrid MDM-ügyfelek bevezetése elavult. További információ: [áttérés hibrid mobileszköz-kezelésről az Intune-ra az Azure-](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Move-from-Hybrid-Mobile-Device-Management-to-Intune-on-Azure/ba-p/280150) blogbejegyzésben.
@@ -45,7 +45,7 @@ A lehetséges konfigurációk a következők:
 
 ## <a name="set-mdm-authority-to-intune"></a>Az Intune beállítása MDM-szolgáltatóként
 
-Ha még nem állította be az MDM-szolgáltatót, kövesse az alábbi lépéseket. A SCCM való váltásról lásd: [hibrid Mdm-felhasználók és-eszközök migrálása önálló Intune-ba](https://docs.microsoft.com/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa).
+Ha még nem állította be az MDM-szolgáltatót, kövesse az alábbi lépéseket. A SCCM való váltásról lásd: [hibrid Mdm-felhasználók és-eszközök migrálása önálló Intune-ba](https://docs.microsoft.com/configmgr/mdm/deploy-use/migrate-hybridmdm-to-intunesa).
 
 1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza ki a narancssárga szalagcímet a mobileszköz- **kezelő szolgáltató** beállításának megnyitásához. A narancssárga szalagcím csak akkor jelenik meg, ha még nem állított be az MDM-szolgáltatót.
 2. A **Mobileszköz-kezelő szolgáltató** szakaszban válassza ki az alábbiak közül a kívánt MDM-szolgáltatót:
@@ -77,7 +77,7 @@ Az új MDM-szolgáltatóra való váltás után, az eszköz bejelentkezése és 
 
 ## <a name="change-mdm-authority-to-office-365"></a>Az Office 365 beállítása mobileszköz-felügyeleti szolgáltatóként
 
-Az Office 365 MDM aktiválásához (vagy a MDM párhuzamos létezésének engedélyezéséhez a meglévő Intune-szolgáltatáson kívül) nyissa meg a [https://protection.office.com](https://protection.office.com), válassza az **adatveszteség-megelőzés** > **eszköz biztonsági házirendek** > **a felügyelt eszközök listájának megtekintése** > első **lépések**lehetőséget.
+Az Office 365 MDM aktiválásához (vagy a MDM párhuzamos létezésének engedélyezéséhez a meglévő Intune-szolgáltatáson kívül) nyissa meg a [https://protection.office.com](https://protection.office.com), válassza az **adatveszteség-megelőzés** > **eszköz biztonsági házirendek** > **a felügyelt eszközök listájának megtekintése** >  első **lépések**lehetőséget.
 
 További információ: [Mobileszköz-felügyelet (MDM) beállítása az Office 365-ben](https://support.office.com/en-us/article/Set-up-Mobile-Device-Management-MDM-in-Office-365-dd892318-bc44-4eb1-af00-9db5430be3cd).
 
@@ -105,7 +105,7 @@ A mobileszköz-felügyeleti szolgáltató nem állítható vissza Ismeretlenre. 
   - E-mail-profil
   - VPN-profil
   - Tanúsítványprofil
-  - Wi-Fi profil
+  - Wi-Fi-profil
   - Konfigurációs profilok
 - Az új MDM-szolgáltatóra való váltás után a Microsoft Intune felügyeleti konzol megfelelőségi adatainak akár egy hétre is szükségük lehet, hogy pontosan jelenjenek meg. Az Azure Active Directory és az eszköz megfelelőségi állapotai azonban pontosak maradnak, az eszköz így továbbra is védelem alatt áll.
 - Ügyeljen rá, hogy a meglévő beállításokat felülírandó új beállítások ugyanazzal a névvel rendelkezzenek, mint a korábbiak. Így az új beállítások biztosan felülírják a korábbiakat. Ellenkező esetben előfordulhat, hogy az eszközökön felesleges profilok és szabályzatok maradnak.    

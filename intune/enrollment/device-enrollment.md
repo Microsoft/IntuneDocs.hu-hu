@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bb9aa6349a88f226c063703d6cb035b3c89636fd
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: feee58d926a25e9132204798ba93d10a7c90f41e
+ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72503251"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75547835"
 ---
 # <a name="what-is-device-enrollment"></a>Mi az eszközregisztrálás?
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
@@ -60,7 +60,7 @@ Alapértelmezés szerint platformtól függetlenül minden eszköz regisztráci�
 |**Automatikus regisztráció** | Nem |Igen |Nem | [További információ](windows-enroll.md#enable-windows-10-automatic-enrollment)|
 |**Autopilot** |Igen |Igen |Nem | [További információ](enrollment-autopilot.md)
 |**Csoportos regisztráció** |Nem |Nem |Nem | [További információ](windows-bulk-enroll.md) |
-|**Közös felügyelet** |Nem |Igen |Nem | [További információ](https://docs.microsoft.com/sccm/core/clients/manage/co-management-overview)
+|**Közös felügyelet** |Nem |Igen |Nem | [További információ](https://docs.microsoft.com/configmgr/core/clients/manage/co-management-overview)
 |**GPO** |Nem |Igen |Nem | [További információ](https://docs.microsoft.com/windows/client-management/mdm/enroll-a-windows-10-device-automatically-using-group-policy)
 
 ## <a name="android-enrollment-methods"></a>Android-eszközök regisztrálási módszerei

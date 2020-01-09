@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a45160fc0e728b4c53590455a2bd0b5d904ddb1
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 2a300070e06725e165316172bf10ca079861f56f
+ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72504898"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75547561"
 ---
 # <a name="set-up-intune"></a>Az Intune beállítása
 
@@ -30,7 +30,7 @@ Ezek a beállítási lépések segítenek az Intune mobileszköz-kezelésének (
 
 Néhány lépés, például az Intune-előfizetés és az MDM-jogosultság beállítása, a legtöbb forgatókönyv esetén szükséges. Egyéb lépések, például egyéni tartomány konfigurálása vagy alkalmazások hozzáadása, nem kötelezőek, és a vállalat igényeitől függnek.
 
-Ha jelenleg a Microsoft System Center Configuration Manager használatával felügyeli a számítógépeket és a kiszolgálókat, akkor [a felhőhöz csatolhatja a Configuration Managert a közös felügyelettel](https://docs.microsoft.com/sccm/comanage/overview).
+Ha jelenleg a Microsoft Endpoint Configuration Manager használatával felügyeli a számítógépeket és a kiszolgálókat, akkor [a felhőhöz csatolhatja a Configuration Managert a közös felügyelettel](https://docs.microsoft.com/configmgr/comanage/overview).
 
 >[!TIP]
 >Ha egy erre jogosult csomagban megvásárol legalább 150 Intune-licencet, akkor használhatja a *FastTrack Center értékcsomagot*. Ennek a szolgáltatásnak a keretében a Microsoft szakemberei együttműködnek Önnel a környezete Intune-hoz való előkészítése érdekében. Lásd: [FastTrack Center juttatás az Enterprise Mobility + Securityhez (EMS)](https://docs.microsoft.com/enterprise-mobility-security/Solutions/enterprise-mobility-fasttrack-program).

@@ -6,7 +6,7 @@ keywords: Intune-adattárház
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 10/03/2019
+ms.date: 01/03/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: developer
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 36407bda1f74d0c4601f78cedc2af5426e944fee
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 85b6d49f435ec45a2c6a2b81387ea25a1c15299b
+ms.sourcegitcommit: 8d7406b75ef0d75cc2ed03b1a5e5f74ff10b98c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72503416"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75654073"
 ---
 # <a name="reference-for-devices-entities"></a>Eszközök típusú entitások referenciája
 
@@ -85,7 +85,7 @@ Az **enrollmentActivity** entitás az eszközök regisztrálásának tevékenys�
 | enrollmentFailureCategoryKey  | A beléptetési hiba kategóriájának kulcsa (ha a regisztráció sikertelen volt).        |
 | enrollmentFailureReasonKey    | A beléptetési hiba okának kulcsa (ha a regisztráció sikertelen volt).          |
 | osVersion                     | Az eszköz operációs rendszerének verziója.                               |
-| darabszám                         | A fenti besorolásoknak megfelelő beléptetési tevékenységek teljes száma.  |
+| szám                         | A fenti besorolásoknak megfelelő beléptetési tevékenységek teljes száma.  |
 
 ## <a name="enrollmenteventstatuses"></a>enrollmentEventStatuses 
 Az **enrollmentEventStatus** entitás az eszközök regisztrálásának eredményét jelzi.
@@ -218,7 +218,7 @@ Az **ManagementAgentType** entitás az eszköz kezeléséhez használt ügynök�
 | 3 |EasMdm | Az Exchange Active Sync szolgáltatással és MDM-ügynökkel kezelt eszköz |
 | 4 |IntuneClient | Az Intune PC-ügynökkel kezelt eszköz |
 | 5 |EasIntuneClient | Az Exchange Active Sync szolgáltatással és Intune PC-ügynökkel kezelt eszköz |
-| 8 |ConfigManagerClient | A System Center Configuration Manager-ügynökkel kezelt eszköz |
+| 8 |ConfigManagerClient | Az eszközt a Configuration Manager ügynök felügyeli |
 | 16 |Ismeretlen | A kezelőügynök típusa ismeretlen |
 
 ## <a name="devices"></a>eszközök

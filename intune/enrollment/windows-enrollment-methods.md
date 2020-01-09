@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: ''
-ms.openlocfilehash: b6144767ee69de8c1ff14e5c189c078994a9dcf4
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 060c3c00a228794d3f237a6362b048bf23e1a933
+ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74819716"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75547725"
 ---
 # <a name="intune-enrollment-methods-for-windows-devices"></a>Windows-eszközök Intune-regisztrálásának módszerei
 
@@ -49,7 +49,7 @@ Ha egy rendszergazda konfigurálta az automatikus regisztrációt (az Azure AD P
 A rendszergazdák a következő regisztrációs módszereket állíthatják be, amelyek nem igényelnek felhasználói beavatkozást:
 
 - A [hibrid Azure ad JOIN](https://docs.microsoft.com/windows/client-management/mdm/enroll-a-windows-10-device-automatically-using-group-policy) lehetővé teszi, hogy a rendszergazdák a hibrid Azure ad-hez csatlakoztatott eszközöket automatikusan regisztrálják Active Directory csoportházirendet. 
-- [Configuration Manager a közös felügyelet](https://docs.microsoft.com/sccm/comanage/overview) lehetővé teszi, hogy a rendszergazdák az Intune és a Configuration Manager kettős előnyeinek beszerzésével regisztrálják meglévő Configuration Manager felügyelt eszközeiket az Intune-ban. 
+- [Configuration Manager a közös felügyelet](https://docs.microsoft.com/configmgr/comanage/overview) lehetővé teszi, hogy a rendszergazdák az Intune és a Configuration Manager kettős előnyeinek beszerzésével regisztrálják meglévő Configuration Manager felügyelt eszközeiket az Intune-ban. 
 - A [Device beléptetési kezelő](device-enrollment-manager-enroll.md) (DEM) egy speciális szolgáltatásfiók. A DEM-fiókok rendelkeznek olyan engedélyekkel, amelyek lehetővé teszik a jogosult felhasználók számára több vállalati tulajdonú eszköz regisztrálását és kezelését. Az ilyen típusú eszközök például POS- vagy segédprogram-alkalmazásokhoz megfelelőek, de nem alkalmasak olyan felhasználók számára, akik hozzá szeretnének férni a levelezésükhöz vagy a vállalati erőforrásokhoz. Ez a módszer nem teszi lehetővé olyan szolgáltatások használatát, mint például a feltételes hozzáférés. 
 - A [tömeges regisztrálás](../windows-bulk-enroll.md) lehetővé teszi, hogy egy adott felhasználó nagy számú új vállalati tulajdonú eszközt csatlakoztasson Azure Active Directory és az Intune-hoz. Létre kell hoznia egy kiépítési csomagot a Windows Configuration Designer (WCD) alkalmazással. Ezután a kezdeti Windows OOBE-élmény vagy a meglévő Windows rendszerű számítógépek USB-adathordozójának használatával telepítheti a kiépítési csomagot, hogy automatikusan regisztrálja az eszközöket az Intune-ban. Ez a metódus nem engedélyezi a feltételes hozzáférés használatát. 
 - A [Windows IoT alapvető eszközeinek](https://docs.microsoft.com/windows/iot-core/manage-your-device/intunedeviceenrollment) beléptetése a Windows IoT alapirányítópultján történik az eszköz előkészítéséhez, majd a Windows Configuration Designer használatával kiépítési csomag létrehozásához. Ezután az SD-kártya adathordozójának használata a kezdeti rendszerindítás során telepíti a kiépítési csomagot, hogy automatikusan regisztrálja az eszközöket az Intune-ban.

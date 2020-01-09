@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ae2f3b2b9d620a9b0a6822edc8aa15e656361a74
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: d697b2b0bc3fa5ffea4f8e8ff15cd7c62af3ad30
+ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75206958"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75547949"
 ---
 # <a name="windows-10-and-newer-device-settings-to-allow-or-restrict-features-using-intune"></a>Windows 10 (és újabb) eszközbeállítások az Intune-t használó szolgáltatások engedélyezéséhez vagy korlátozásához
 
@@ -35,7 +35,7 @@ Ezek a beállítások hozzáadódnak az Intune-ban lévő eszköz konfiguráció
 
 [Hozzon létre egy eszköz konfigurációs profilt](device-restrictions-configure.md#create-the-profile).
 
-## <a name="app-store"></a>Alkalmazásáruház
+## <a name="app-store"></a>Alkalmazás-áruház
 
 Ezek a beállítások a [ApplicationManagement házirend CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationmanagement)-t használják, amely a támogatott Windows-kiadásokat is felsorolja.
 
@@ -89,7 +89,7 @@ Ezek a beállítások a [kapcsolódási házirendet](https://docs.microsoft.com/
 - **Mobil adatcsatorna**: válassza ki, hogy a végfelhasználók használhatnak-e olyan adatforrásokat, mint például a webes böngészés, ha a hálózathoz csatlakozik. A választható lehetőségek:
   - **Nincs konfigurálva** (alapértelmezett): az Intune nem módosítja vagy nem frissíti ezt a beállítást. A végfelhasználók kikapcsolhatják a felhasználókat.
   - **Letiltás**: ne engedélyezze a mobil adatcsatornát. A végfelhasználók nem kapcsolhatják be.
-  - **Engedélyezés (nem szerkeszthető)**: engedélyezi a mobil adatcsatornát. A végfelhasználók nem kapcsolhatják ki.
+  - **Engedélyezés (nem szerkeszthető)** : engedélyezi a mobil adatcsatornát. A végfelhasználók nem kapcsolhatják ki.
 
 - **Adatroaming**: a **blokk** megakadályozza a mobil adatroaming használatát az eszközön. **Nincs konfigurálva** (alapértelmezés) engedélyezi a hálózatok közötti barangolást az adatok elérésekor.
 - **VPN a mobil hálózaton keresztül**: a **Letiltás** megakadályozza, hogy az eszköz hozzáférjen a VPN-kapcsolatokhoz, amikor a hálózathoz csatlakozik. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a VPN számára bármilyen kapcsolat használatát, beleértve a mobilt is.
@@ -130,7 +130,7 @@ Ezek a beállítások a [EnterpriseCloudPrint házirend CSP](https://docs.micros
 - **Nyomtató hozzáférési szolgáltatójának URL-címe**: adja meg a hitelesítési végpont URL-címét az OAuth-tokenek lekéréséhez. Például írja be a következőt: `https://azuretenant.contoso.com/adfs`.
 - **Natív Azure-ügyfélalkalmazás GUID-azonosítója**: adja meg egy olyan ügyfélalkalmazás GUID azonosítóját, amely a OAuth származó OAuth-tokenek beolvasására jogosult. Például írja be a következőt: `E1CF1107-FF90-4228-93BF-26052DD2C714`.
 - **Nyomtatási szolgáltatás erőforrás-URI-ja**: adja meg a Azure Portalban konfigurált nyomtatási szolgáltatás OAuth erőforrás-URI-ját. Például írja be a következőt: `http://MicrosoftEnterpriseCloudPrint/CloudPrint`.
-- **Lekérdezhető nyomtatók maximális**száma: adja meg a lekérdezni kívánt nyomtatók maximális számát. Az alapértelmezett érték `20`.
+- **Lekérdezhető nyomtatók maximális**száma: adja meg a lekérdezni kívánt nyomtatók maximális számát. Az alapértelmezett érték 0.`20`
 - **Nyomtató-felderítési szolgáltatás erőforrás-URI-ja**: adja meg a OAuth-erőforrás URI-ját a Azure Portal konfigurált nyomtató-felderítési szolgáltatáshoz. Például írja be a következőt: `http://MopriaDiscoveryService/CloudPrint`.
 
 > [!TIP]
@@ -179,7 +179,7 @@ Egy. csv-fájlt is **importálhat** az alkalmazások listájával.
 Ezek a beállítások az [élmény házirend CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-experience)-t használják; amely a támogatott Windows-kiadásokat is felsorolja. 
 
 - **Képernyőfelvétel** (csak mobileszköz esetén): a **blokk** megakadályozza, hogy a végfelhasználók képernyőképeket kapjanak az eszközön. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
-- **Másolás és beillesztés (csak mobileszköz esetén)**: a **blokk** megakadályozza, hogy a végfelhasználók az eszközön lévő alkalmazások között másolást és beillesztést használjanak. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
+- **Másolás és beillesztés (csak mobileszköz esetén)** : a **blokk** megakadályozza, hogy a végfelhasználók az eszközön lévő alkalmazások között másolást és beillesztést használjanak. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
 - **Regisztráció manuális**törlése: a **blokk** megakadályozza a végfelhasználók számára a munkahelyi fiók törlését az eszköz munkahelyi Vezérlőpultjának használatával. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást.
 
   Ez a házirend-beállítás nem vonatkozik arra az esetre, ha a számítógép Azure AD-hez csatlakozik, és engedélyezve van az automatikus regisztráció.
@@ -226,12 +226,12 @@ Ezek a beállítások az [élmény házirend CSP](https://docs.microsoft.com/win
 
 ## <a name="locked-screen-experience"></a>Zárolási képernyő felülete
 
-- **Műveletközpont értesítései (csak mobil)**: a **Letiltás** megakadályozza a Műveletközpont értesítéseinek megjelenítését az eszköz zárolási képernyőjén. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy kiválasszák, hogy mely alkalmazások jelenjenek meg értesítések a zárolási képernyőn.
+- **Műveletközpont értesítései (csak mobil)** : a **Letiltás** megakadályozza a Műveletközpont értesítéseinek megjelenítését az eszköz zárolási képernyőjén. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy kiválasszák, hogy mely alkalmazások jelenjenek meg értesítések a zárolási képernyőn.
 
   [AboveLock/AllowActionCenterNotifications CSP](https://msdn.microsoft.com/ie/dn904962(v=vs.94)#AboveLock_AllowActionCenterNotifications)
 
-- **Zárolt képernyő kép URL-címe (csak asztali verzió)**: adja meg a Windows zárolási képernyőjének hátterében használt jpg, JPEG vagy PNG formátumú kép URL-címét. Például írja be a következőt: `https://contoso.com/image.png`. Ez a beállítás zárolja a rendszerképet, és ezt követően nem módosítható.
-- **Felhasználó által konfigurálható képernyő-időkorlát (csak mobil)**: **engedélyezi, hogy** a felhasználók konfigurálja a képernyő időkorlátját. **Nincs konfigurálva** (az alapértelmezett) nem adja meg a felhasználóknak ezt a lehetőséget.
+- **Zárolt képernyő kép URL-címe (csak asztali verzió)** : adja meg a Windows zárolási képernyőjének hátterében használt jpg, JPEG vagy PNG formátumú kép URL-címét. Például írja be a következőt: `https://contoso.com/image.png`. Ez a beállítás zárolja a rendszerképet, és ezt követően nem módosítható.
+- **Felhasználó által konfigurálható képernyő-időkorlát (csak mobil)** : **engedélyezi, hogy** a felhasználók konfigurálja a képernyő időkorlátját. **Nincs konfigurálva** (az alapértelmezett) nem adja meg a felhasználóknak ezt a lehetőséget.
 
   [DeviceLock/AllowScreenTimeoutWhileLockedUserConfig CSP](https://msdn.microsoft.com/ie/dn904962(v=vs.94)#DeviceLock_AllowScreenTimeoutWhileLockedUserConfig)
 
@@ -243,17 +243,17 @@ Ezek a beállítások az [élmény házirend CSP](https://docs.microsoft.com/win
 
   [AboveLock/AllowToasts CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-abovelock#abovelock-allowtoasts)
 
-- **Képernyő időkorlátja (csak mobil)**: állítsa be a képernyő zárolásának időtartamát (másodpercben) a képernyő kikapcsolásához. A támogatott értékek a 11-1800. Adja meg például a `300` értéket az időtúllépés 5 percre való beállításához.
+- **Képernyő időkorlátja (csak mobil)** : állítsa be a képernyő zárolásának időtartamát (másodpercben) a képernyő kikapcsolásához. A támogatott értékek a 11-1800. Adja meg például a `300` értéket az időtúllépés 5 percre való beállításához.
 
   [DeviceLock/ScreenTimeoutWhileLocked CSP](https://msdn.microsoft.com/ie/dn904962(v=vs.94)#DeviceLock_ScreenTimeoutWhileLocked)
 
-## <a name="messaging"></a>Üzenetkezelési
+## <a name="messaging"></a>Üzenetkezelés
 
 Ezek a beállítások az [üzenetküldési házirend CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-messaging)-t használják; amely a támogatott Windows-kiadásokat is felsorolja.
 
-- **Üzenet-szinkronizálás (csak mobil)**: a **Letiltás** letiltja a szöveges üzenetek biztonsági mentését és visszaállítását, valamint az üzenetek Windows-eszközök közötti szinkronizálását. A Letiltás segít elkerülni a szervezet vezérlőn kívüli kiszolgálókon tárolt adatok tárolását. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a felhasználók megváltoztassák ezeket a beállításokat, és szinkronizálják az üzeneteiket.
-- **MMS (csak mobil)**: a **LETILTÁS** letiltja az MMS-küldési és-fogadási funkciót az eszközön. A vállalatok esetében ezzel a szabályzattal letilthatja az MMS-eszközöket az eszközökön a naplózási vagy felügyeleti követelmények részeként. **Nincs konfigurálva** (alapértelmezés) engedélyezi az MMS küldését és fogadását.
-- **RCS (csak mobil)**: a **Letiltás** letiltja a kommunikációs szolgáltatások (RCS) a küldési és fogadási funkcióit az eszközön. A vállalatok esetében ezzel a szabályzattal tilthatja le a RCS az eszközökön a naplózási vagy felügyeleti követelmények részeként. **Nincs konfigurálva** (alapértelmezés) engedélyezi a RCS küldését és fogadását.
+- **Üzenet-szinkronizálás (csak mobil)** : a **Letiltás** letiltja a szöveges üzenetek biztonsági mentését és visszaállítását, valamint az üzenetek Windows-eszközök közötti szinkronizálását. A Letiltás segít elkerülni a szervezet vezérlőn kívüli kiszolgálókon tárolt adatok tárolását. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a felhasználók megváltoztassák ezeket a beállításokat, és szinkronizálják az üzeneteiket.
+- **MMS (csak mobil)** : a **LETILTÁS** letiltja az MMS-küldési és-fogadási funkciót az eszközön. A vállalatok esetében ezzel a szabályzattal letilthatja az MMS-eszközöket az eszközökön a naplózási vagy felügyeleti követelmények részeként. **Nincs konfigurálva** (alapértelmezés) engedélyezi az MMS küldését és fogadását.
+- **RCS (csak mobil)** : a **Letiltás** letiltja a kommunikációs szolgáltatások (RCS) a küldési és fogadási funkcióit az eszközön. A vállalatok esetében ezzel a szabályzattal tilthatja le a RCS az eszközökön a naplózási vagy felügyeleti követelmények részeként. **Nincs konfigurálva** (alapértelmezés) engedélyezi a RCS küldését és fogadását.
 
 ## <a name="microsoft-edge-browser"></a>Microsoft Edge böngésző
 
@@ -264,15 +264,15 @@ Ezek a beállítások a [böngésző házirend CSP](https://docs.microsoft.com/w
 Az elérhető beállítások a választott lehetőségtől függően változnak. A választható lehetőségek:
 
 - **Nem** (alapértelmezett): a Microsoft Edge nem kioszk módban fut. A Microsoft Edge összes beállítását módosíthatja és konfigurálhatja.
-- **Digitális/interaktív aláírások (Egyalkalmazásos kioszkok)**: a Microsoft Edge azon beállításainak szűrése, amelyek a digitális/interaktív aláírások Microsoft Edge kioszk módban használhatók csak a Windows 10 single-app kioszkok esetében. Ezzel a beállítással megnyithatja a teljes URL-címet, és csak az adott webhelyen lévő tartalmat jelenítheti meg. A [digitális jelek beállítása](https://docs.microsoft.com/windows/configuration/setup-digital-signage) a szolgáltatással kapcsolatos további információkat tartalmaz.
-- **InPrivate nyilvános böngészés (Egyalkalmazásos kioszk)**: a Microsoft Edge azon beállításainak szűrése, amelyek az InPrivate nyilvános böngészéshez használhatók a Microsoft Edge kioszk módban a Windows 10 single-app kioszkokon. A Microsoft Edge többoldalas verzióját futtatja.
-- **Normál mód (többalkalmazásos kioszk)**: a Microsoft Edge-beállítások normál, a Microsoft Edge kioszk üzemmódra érvényes beállításait szűri. A Microsoft Edge teljes verzióját futtatja minden böngészési funkcióval.
-- **Nyilvános böngészés (többalkalmazásos kioszk)**: szűri a Microsoft Edge azon beállításait, amelyek a Windows 10 többalkalmazásos kioszkban való nyilvános böngészésre alkalmazhatók.  Futtatja a Microsoft Edge multi-Tab verzióját.
+- **Digitális/interaktív aláírások (Egyalkalmazásos kioszkok)** : a Microsoft Edge azon beállításainak szűrése, amelyek a digitális/interaktív aláírások Microsoft Edge kioszk módban használhatók csak a Windows 10 single-app kioszkok esetében. Ezzel a beállítással megnyithatja a teljes URL-címet, és csak az adott webhelyen lévő tartalmat jelenítheti meg. A [digitális jelek beállítása](https://docs.microsoft.com/windows/configuration/setup-digital-signage) a szolgáltatással kapcsolatos további információkat tartalmaz.
+- **InPrivate nyilvános böngészés (Egyalkalmazásos kioszk)** : a Microsoft Edge azon beállításainak szűrése, amelyek az InPrivate nyilvános böngészéshez használhatók a Microsoft Edge kioszk módban a Windows 10 single-app kioszkokon. A Microsoft Edge többoldalas verzióját futtatja.
+- **Normál mód (többalkalmazásos kioszk)** : a Microsoft Edge-beállítások normál, a Microsoft Edge kioszk üzemmódra érvényes beállításait szűri. A Microsoft Edge teljes verzióját futtatja minden böngészési funkcióval.
+- **Nyilvános böngészés (többalkalmazásos kioszk)** : szűri a Microsoft Edge azon beállításait, amelyek a Windows 10 többalkalmazásos kioszkban való nyilvános böngészésre alkalmazhatók.  Futtatja a Microsoft Edge multi-Tab verzióját.
 
 > [!TIP]
 > A beállításokkal kapcsolatos további információkért lásd a [Microsoft Edge kioszk mód konfigurációs típusait](https://docs.microsoft.com/microsoft-edge/deploy/microsoft-edge-kiosk-mode-deploy#supported-configuration-types).
 
-Ez az eszköz-korlátozási profil közvetlenül kapcsolódik a [Windows kioszk beállításainak](kiosk-settings-windows.md)használatával létrehozott kioszk-profilhoz. Összefoglalás:
+Ez az eszköz-korlátozási profil közvetlenül kapcsolódik a [Windows kioszk beállításainak](kiosk-settings-windows.md)használatával létrehozott kioszk-profilhoz. Összefoglalásképpen:
 
 1. Hozza létre a [Windows kioszk beállítási](kiosk-settings-windows.md) profilt az eszköz teljes képernyős módban való futtatásához. Válassza ki a Microsoft Edge alkalmazást, és állítsa be a Microsoft Edge kioszk üzemmódot a kioszk profilban.
 2. Hozza létre a jelen cikkben ismertetett eszköz-korlátozási profilt, és konfigurálja a Microsoft Edge-ben engedélyezett bizonyos szolgáltatásokat és beállításokat. Ügyeljen arra, hogy ugyanazt a Microsoft Edge kioszk Mode-típust válassza, mint a kioszk-profilban ([Windows kioszk beállításai](kiosk-settings-windows.md)). 
@@ -302,7 +302,7 @@ Ez az eszköz-korlátozási profil közvetlenül kapcsolódik a [Windows kioszk 
   - **Kezdőlap gomb URL-címe**: adja meg a megnyitni kívánt URL-címet. Például írja be a következőt: `https://www.bing.com` vagy `https://www.contoso.com`.
   - **Kezdőlap gomb elrejtése**: elrejti a Kezdőlap gombot
 - A **Kezdőlap gomb módosításának engedélyezése a felhasználók**számára: **Igen** , lehetővé teszi a felhasználók számára a Kezdőlap gomb módosítását. A felhasználó módosításai felülbírálják a rendszergazdai beállításokat a Home (Kezdőlap) gombra. **Nem** (alapértelmezett) megakadályozza, hogy a felhasználók megváltoztassák, hogyan konfigurálta a rendszergazda a Kezdőlap gombot.
-- **Első futtatási élmény megjelenítése lap (csak mobil)**: **Igen** (alapértelmezés) a Microsoft Edge első használat bemutatása lapján látható. A Microsoft Edge első futtatásakor a bevezető oldal **nem** jelenik meg. Ez a funkció lehetővé teszi, hogy a vállalatok, például a nulla kibocsátási konfigurációkba beléptetett szervezetek regisztrálva legyenek ezen a lapon.
+- **Első futtatási élmény megjelenítése lap (csak mobil)** : **Igen** (alapértelmezés) a Microsoft Edge első használat bemutatása lapján látható. A Microsoft Edge első futtatásakor a bevezető oldal **nem** jelenik meg. Ez a funkció lehetővé teszi, hogy a vállalatok, például a nulla kibocsátási konfigurációkba beléptetett szervezetek regisztrálva legyenek ezen a lapon.
 - **Első futtatási élmény URL-listájának helye** (csak Windows 10 Mobile esetén): adja meg azt az URL-címet, amely az első futtatási oldal URL-címét tartalmazó XML-fájlra mutat. Például írja be a következőt: `https://www.contoso.com/sites.xml`.
 
 - **Böngésző frissítése üresjárati idő után**: adja meg az üresjárati percek számát, amíg a böngésző frissül, 0-1440 percen belül. Az alapértelmezett érték `5` perc. Ha `0` (nulla) értékre van állítva, a böngésző üresjárat után nem frissül.
@@ -331,7 +331,7 @@ Ez az eszköz-korlátozási profil közvetlenül kapcsolódik a [Windows kioszk 
   - **Minden oldalon**: a Kedvencek sáv megjelenítése az összes oldalon. A végfelhasználók nem változtathatják meg ezt a beállítást.
   - **Rejtett**: elrejti a Kedvencek sávot az összes oldalon. A végfelhasználók nem változtathatják meg ezt a beállítást.
 - A **Kedvencek módosításának engedélyezése**: az **Igen** (alapértelmezett) az operációs rendszer alapértelmezését használja, amely lehetővé teszi a felhasználók számára a lista módosítását. A **nem** teszi lehetővé a végfelhasználók számára a kedvencek listájának hozzáadását, importálását, rendezését és szerkesztését.
-  - **Kedvencek listája**: adja meg a Kedvencek fájl URL-címeinek listáját. Adja meg például `http://contoso.com/favorites.html`.
+  - **Kedvencek listája**: adja meg a Kedvencek fájl URL-címeinek listáját. Például adja hozzá a következőt: `http://contoso.com/favorites.html`.
 - **Kedvencek szinkronizálása a Microsoft-böngészők között** (csak asztali verzió): **Igen** kényszeríti a Windowst a Kedvencek szinkronizálására az Internet Explorer és a Microsoft Edge között. A Kedvencek között a hozzáadások, a törlések, a módosítások és a megrendelési módosítások megoszthatók a böngészők között.  **Nem** (alapértelmezett) az operációs rendszer alapértelmezését használja, amely lehetővé teheti a felhasználóknak a Kedvencek szinkronizálását a böngészők között.
 - **Alapértelmezett keresőmotor**: válassza ki az alapértelmezett keresőmotort az eszközön. A végfelhasználók ezt az értéket bármikor módosíthatják. A választható lehetőségek:
   - Keresőmotor az ügyfél Microsoft Edge-beállításaiban
@@ -367,7 +367,7 @@ Ha a "felhasználói felülbírálás tiltása és engedélyezése" lehetőség 
 - **Élő csempe adatgyűjtésének engedélyezése**: **Igen** (alapértelmezés) lehetővé teszi a Microsoft Edge számára a Start menübe rögzített élő csempék adatainak gyűjtését. **Nem** akadályozza meg az adatok gyűjtését, ami korlátozott felhasználói élményt biztosíthat a felhasználóknak.
 - A **felhasználó felülbírálhatja a tanúsítvány hibáit**: az **Igen** (alapértelmezett) lehetővé teszi, hogy a felhasználók hozzáférhessenek SSL/TRANSPORT Layer Security (SSL/TLS) hibákat tartalmazó webhelyekhez. **Nem** (a fokozott biztonsághoz ajánlott) megakadályozza, hogy a felhasználók SSL-vagy TLS-hibákkal férhessenek hozzá a webhelyekhez.
 
-### <a name="additional"></a>További
+### <a name="additional"></a>Továbbiak
 
 - **Microsoft Edge böngésző engedélyezése** (csak mobil): **Igen** (alapértelmezés) lehetővé teszi a Microsoft Edge webböngésző használatát a mobileszközön. **Nem** akadályozza meg a Microsoft Edge használatát az eszközön. Ha a **nem**lehetőséget választja, a többi egyéni beállítás csak az asztalra vonatkozik.
 - **Címsor legördülő menüjének engedélyezése**: **Igen** (alapértelmezés) lehetővé teszi a Microsoft Edge számára, hogy megjelenjen a címsor legördülő lista a javaslatok listájával. A **nem** állítja le a Microsoft Edge-t a legördülő listában szereplő javaslatok listájának megjelenítéséhez a beíráskor. Ha a **nem**értékre van állítva, akkor:
@@ -379,7 +379,7 @@ Ha a "felhasználói felülbírálás tiltása és engedélyezése" lehetőség 
 - **JavaScript engedélyezése**: az **Igen** (alapértelmezett) lehetővé teszi a parancsfájlok (például a JavaScript) futtatását a Microsoft Edge böngészőben. **Nem** akadályozza meg, hogy a böngészőben a Java-parancsfájlok fussanak.
 - A **felhasználók telepíthetik a bővítményeket**: **Igen** (alapértelmezés) lehetővé teszi a végfelhasználók számára a Microsoft Edge-bővítmények telepítését az eszközön. **Nem** akadályozza meg a telepítést.
 - **Fejlesztői bővítmények közvetlen telepítési engedélyezése**: az **Igen** (alapértelmezett) az operációs rendszer alapértelmezését használja, amely lehetővé teheti a közvetlen telepítési. A közvetlen telepítési telepíti és futtatja a nem ellenőrzött bővítményeket. **Nem** akadályozza meg, hogy a Microsoft Edge a közvetlen telepítési a **Load Extensions** szolgáltatást használja. Nem akadályozza meg, hogy a közvetlen telepítési bővítmények más módon, például a PowerShell használatával legyenek használva.
-- **Szükséges bővítmények**: válassza ki, hogy mely bővítményeket nem lehet kikapcsolni a végfelhasználók számára a Microsoft Edge-ben. Adja meg a csomag családjának nevét, majd kattintson a **Hozzáadás**gombra. [A csomaghoz tartozó családi név (PFN) megkeresése](https://docs.microsoft.com/sccm/protect/deploy-use/find-a-pfn-for-per-app-vpn) néhány útmutatást tartalmaz.
+- **Szükséges bővítmények**: válassza ki, hogy mely bővítményeket nem lehet kikapcsolni a végfelhasználók számára a Microsoft Edge-ben. Adja meg a csomag családjának nevét, majd kattintson a **Hozzáadás**gombra. [Az App VPN-hez tartozó PFN-csomag megkeresése](https://docs.microsoft.com/configmgr/protect/deploy-use/find-a-pfn-for-per-app-vpn) című témakörben talál útmutatást.
 
   **Importálhat** egy CSV-fájlt is, amely tartalmazza a csomag családjának nevét. Vagy **exportálja** a megadott csomagbeli család nevét.
 
@@ -396,7 +396,7 @@ Ezek a beállítások a [NetworkProxy házirend CSP](https://docs.microsoft.com/
   - **Proxy-kivételek**: adjon meg olyan URL-címeket, amelyek nem használhatják a proxykiszolgálót. Az egyes címeket pontosvesszővel választhatja el egymástól.
   - **Proxykiszolgáló kihagyása helyi cím esetén**: **nincs konfigurálva** (alapértelmezés) megakadályozza a proxykiszolgáló használatát az intraneten lévő helyi címekhez. **Engedélyezi** a proxykiszolgáló használatát a helyi címekhez.
 
-## <a name="password"></a>Jelszó
+## <a name="password"></a>Windows 10
 
 Ezek a beállítások a [DeviceLock házirend CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-devicelock)-t használják, amely a támogatott Windows-kiadásokat is felsorolja.
 
@@ -416,7 +416,7 @@ Ezek a beállítások a [DeviceLock házirend CSP](https://docs.microsoft.com/wi
     Ez a beállítás a kiadástól függően más hatással is van. A beállítás részletes ismertetését lásd: [DeviceLock/MAXDEVICEPASSWORDFAILEDATTEMPTS CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-devicelock#devicelock-maxdevicepasswordfailedattempts).
 
   - A **Képernyő zárolása legfeljebb ennyi perc inaktivitás**után: adja meg, hogy az eszköznek mennyi ideig kell tétlennek lennie a képernyő zárolása előtt.
-  - **Jelszó érvényessége (napokban)**: adja meg az időtartamot napokban, amikor az eszköz jelszavát módosítani kell, a 1-365-ból. Írja be például, hogy `90`, hogy a jelszót 90 nap után lejárja.
+  - **Jelszó érvényessége (napokban)** : adja meg az időtartamot napokban, amikor az eszköz jelszavát módosítani kell, a 1-365-ból. Írja be például, hogy `90`, hogy a jelszót 90 nap után lejárja.
   - **Korábbi jelszavak újbóli használatának tiltása**: Itt adhatja meg a korábban nem használható jelszavak számát 1-24-ről. Írja be például, hogy `5`, hogy a felhasználók nem állíthatnak be új jelszót a jelenlegi jelszavuk vagy az előző négy jelszavuk bármelyike számára.
   - **Jelszó kérése, ha az eszköz visszatér az inaktív állapotból** (mobil és holografikus): válassza a **szükséges** lehetőséget, hogy a felhasználóknak jelszót kell megadniuk az eszköz zárolásának feloldásához. **Nincs konfigurálva** (az alapértelmezett) nem igényel PIN-kódot vagy jelszót, amikor az eszköz visszatér inaktív állapotból.
   - **Egyszerű jelszavak**: a **Letiltás** beállítás megadásával a felhasználók nem hozhatnak létre egyszerű jelszavakat, például `1234` vagy `1111`. Állítsa be úgy, hogy **ne legyen konfigurálva** (alapértelmezett), hogy a felhasználók jelszavakat hozzanak létre, például `1234` vagy `1111`. Ez a beállítás a Windows-képjelszavak használatát is engedélyezi vagy letiltja.
@@ -555,13 +555,13 @@ Ezek a beállítások a [WirelessDisplay házirend CSP](https://docs.microsoft.c
 
   [System/TelemetryProxy CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-system#system-telemetryproxy)
 
-A módosítások mentéséhez válassza az **OK** gombot.
+A módosítások mentéséhez kattintson az **OK** gombra.
 
 ## <a name="search"></a>Keresés
 
 Ezek a beállítások a [keresési házirend CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-search)-t használják, amely a támogatott Windows-kiadásokat is felsorolja. 
 
-- **Biztonságos Keresés (csak mobil)**: annak szabályozása, hogy a Cortana hogyan szűri a felnőtt tartalmat a keresési eredmények között. A választható lehetőségek:
+- **Biztonságos Keresés (csak mobil)** : annak szabályozása, hogy a Cortana hogyan szűri a felnőtt tartalmat a keresési eredmények között. A választható lehetőségek:
   - **Felhasználó által definiált**: a végfelhasználók választhatják ki a saját beállításait.
   - **Szigorú**: a legmagasabb szintű szűrés a felnőtt tartalmakon.
   - **Mérsékelt**: mérsékelt szűrés a felnőtt tartalommal szemben. Az érvényes keresési eredmények nem szűrhetők.
@@ -687,7 +687,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
   [Defender/AllowBehaviorMonitoring CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowbehaviormonitoring)
 
-- **Hálózatvizsgáló rendszer (NIS)**: a NIS segítségével megvédheti az eszközöket a hálózati alapú biztonsági rések ellen. A Microsoft Endpoint Protection-központból származó ismert sebezhető pontok mintázatai alapján segít észlelni és blokkolni a rosszindulatú hálózati forgalmat.
+- **Hálózatvizsgáló rendszer (NIS)** : a NIS segítségével megvédheti az eszközöket a hálózati alapú biztonsági rések ellen. A Microsoft Endpoint Protection-központból származó ismert sebezhető pontok mintázatai alapján segít észlelni és blokkolni a rosszindulatú hálózati forgalmat.
 
   A hálózati védelem bekapcsolása és a hálózati blokkolás **engedélyezése** . A felhasználók nem kapcsolhatják ki. Ha ez a beállítás engedélyezve van, a felhasználók nem tudnak csatlakozni az ismert biztonsági rések eléréséhez.
 
@@ -723,7 +723,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
   [Defender/AllowUserUIAccess CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowuseruiaccess)
 
-- **Biztonsági intelligencia frissítési időköze (órában)**: adja meg azt az időközt, amelyet a Defender az új biztonsági intelligenciát keres, 0-24-ból. A választható lehetőségek:
+- **Biztonsági intelligencia frissítési időköze (órában)** : adja meg azt az időközt, amelyet a Defender az új biztonsági intelligenciát keres, 0-24-ból. A választható lehetőségek:
 
   - **Nincs konfigurálva** (alapértelmezett): az Intune nem módosítja vagy nem frissíti ezt a beállítást. Az operációs rendszer alapértelmezés szerint 8 óránként is megkeresi a frissítéseket.
   - Ne legyen **pipa**: a Defender nem keres új biztonsági intelligenciával kapcsolatos frissítéseket.
@@ -875,7 +875,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
   [Power/EnergySaverBatteryThresholdOnBattery CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-power#power-energysaverbatterythresholdonbattery)
 
-- **Fedél zárása (csak mobil)**: Ha az eszköz akkumulátor töltöttségét használja, válassza ki, hogy mi történjen a fedél bezárásakor. A választható lehetőségek:
+- **Fedél zárása (csak mobil)** : Ha az eszköz akkumulátor töltöttségét használja, válassza ki, hogy mi történjen a fedél bezárásakor. A választható lehetőségek:
 
   - **Nincs konfigurálva** (alapértelmezett): az Intune nem módosítja vagy nem frissíti ezt a beállítást.
   - **Nincs művelet**: az eszköz marad, és továbbra is az akkumulátor töltöttségét használja.
@@ -915,7 +915,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
   [Power/EnergySaverBatteryThresholdPluggedIn CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-power#power-energysaverbatterythresholdpluggedin)
 
-- **Fedél zárása (csak mobil)**: Ha az eszköz csatlakoztatva van, válassza ki, hogy mi történjen a fedél bezárásakor. A választható lehetőségek:
+- **Fedél zárása (csak mobil)** : Ha az eszköz csatlakoztatva van, válassza ki, hogy mi történjen a fedél bezárásakor. A választható lehetőségek:
 
   - **Nincs konfigurálva** (alapértelmezett): az Intune nem módosítja vagy nem frissíti ezt a beállítást.
   - **Nincs művelet**: az eszköz marad.

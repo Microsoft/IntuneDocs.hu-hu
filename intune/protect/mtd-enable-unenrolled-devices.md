@@ -18,19 +18,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 84f82cf2fde7d400e5531bac219b6cbb4877032f
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 9571f7d0ae10f33007d5ae50b403580232c2e870
+ms.sourcegitcommit: 06dce5c8111592ad774247e86e539dd3128117e5
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74478928"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545930"
 ---
 # <a name="enable-the-mobile-threat-defense-connector-in-intune-for-unenrolled-devices"></a>A Mobile Threat Defense-összekötő engedélyezése az Intune-ban a nem regisztrált eszközökön
 
 A Mobile Threat Defense (MTD) telepítésekor beállította a fenyegetések besorolására szolgáló szabályzatot a Mobile Threat Defense-partner konzolon, és létrehozta az alkalmazás-védelmi szabályzatot az Intune-ban. Ha már konfigurálta az Intune-összekötőt a MTD-partner konzolon, most már engedélyezheti a MTD-MTD kapcsolatát.
 
 > [!NOTE]
-> Ez a cikk az alkalmazás-védelmi házirendeket támogató összes Mobile Threat Defense-partnerre vonatkozik: Better Mobile (Android), Zimperium (iOS), Lookout for Work (Android/iOS).
+> Ez a cikk az alkalmazás-védelmi házirendeket támogató összes Mobile Threat Defense-partnerre vonatkozik: Better Mobile (Android), Zimperium (Android/iOS), Lookout for Work (Android/iOS).
 
 ## <a name="classic-conditional-access-policies-for-mtd-apps"></a>Klasszikus feltételes hozzáférési szabályzatok a MTD-alkalmazásokhoz
 

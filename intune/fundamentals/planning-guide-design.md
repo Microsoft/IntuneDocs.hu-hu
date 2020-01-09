@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 24f15cb179dfc2b12b642f5f196d04dce58d4377
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 5c18f3e8fb14d8592789b39856ec420790fad286
+ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72505204"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75547550"
 ---
 # <a name="create-a-design"></a>Terv létrehozása
 
@@ -84,7 +84,7 @@ A környezet ugyanis befolyásolhatja a tervezési döntéseket, ezért azt doku
 
   - Hogyan felügyelik a PC-s és a kiszolgálói környezetet?
 
-  - Használják-e a System Center Configuration Managert? Használnak-e külső gyártótól származó rendszerfelügyeleti platformot?
+  - A Microsoft Endpoint Configuration Managert használja? Használnak-e külső gyártótól származó rendszerfelügyeleti platformot?
 
 - **VPN-megoldás**
 
@@ -101,7 +101,7 @@ Az aktuális MDM-környezet dokumentálásakor mindenképpen jegyezze fel azokat
 | **SharePoint** | Helyszíni SharePoint | Nem tervezzük a SharePoint felhőbe költöztetését |  
 | **Aktuális MDM** | Exchange ActiveSync |  |
 | **Tanúsítványmegoldás** | Microsoft Server 2012 R2, AD tanúsítványszolgáltatások | Csak nyilvános kulcsú infrastruktúrát használunk a webhelykiszolgálókhoz |
-| **Rendszerfelügyelet** | System Center Configuration Manager CB 1606 | Meg szeretnénk vizsgálni a hibrid Intune-megoldás lehetőségét |
+| **Rendszerfelügyelet** | Configuration Manager CB 1606 | Meg szeretnénk vizsgálni a hibrid Intune-megoldás lehetőségét |
 | **VPN-megoldás** | Cisco AnyConnect |  |
 
 
@@ -109,7 +109,7 @@ A saját Intune-tervének kidolgozásához [letöltheti a fenti táblázat sablo
 
 ## <a name="choose-an-intune-deployment-option"></a>Intune-telepítési lehetőség választása
 
-Az Intune kétféle telepítési lehetőséget kínál, ezek az önálló és a hibrid. Önálló a felhőben futó Intune szolgáltatásra hivatkozik, amely az Intune és a System Center Configuration Manager közötti integrációra utal. Ez az útmutató elsősorban az önálló telepítésről szól. [Döntse el, melyik lehetőség felel meg az üzleti követelményeknek](https://docs.microsoft.com/sccm/mdm/understand/choose-between-standalone-intune-and-hybrid-mobile-device-management).
+Az Intune kétféle telepítési lehetőséget kínál, ezek az önálló és a hibrid. Önálló a felhőben futó Intune szolgáltatásra hivatkozik, amely az Intune és a Configuration Manager közötti integrációra utal. Ez az útmutató elsősorban az önálló telepítésről szól. [Döntse el, melyik lehetőség felel meg az üzleti követelményeknek](https://docs.microsoft.com/configmgr/mdm/understand/choose-between-standalone-intune-and-hybrid-mobile-device-management).
 
 > [!Important]
 >Az új hibrid MDM-ügyfelek bevezetése elavult. További információ: [áttérés hibrid mobileszköz-kezelésről az Intune-ra az Azure-](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Move-from-Hybrid-Mobile-Device-Management-to-Intune-on-Azure/ba-p/280150) blogbejegyzésben.
@@ -190,7 +190,7 @@ Csak az eszközökkel kapcsolatos alábbi szempontok alaposabb ismeretében lehe
 
 - Az eszközök tulajdonjoga
 
-- Tömeges regisztrálás
+- Csoportos regisztráció
 
 Vizsgáljuk meg ezeket a területeket részletesebben.
 
@@ -219,7 +219,7 @@ Az Intune támogatja a vállalati, illetve a személyes tulajdonban lévő eszk�
 
 A vállalati és a személyes tulajdonban lévő eszközökkel kapcsolatos használati esetekről a [3. szakasz: Használatieset-forgatókönyvek követelményeinek meghatározása](planning-guide-requirements.md) nyújt további tájékoztatást.
 
-### <a name="bulk-enrollment"></a>Tömeges regisztrálás
+### <a name="bulk-enrollment"></a>Csoportos regisztráció
 
  Az eszközök tömeges regisztrálását a platformtól függően többféleképpen valósíthatja meg. Ha tömeges regisztrálásra lesz szüksége, akkor [döntsön annak módjáról](../enrollment/device-enrollment.md), és a tervet ennek megfelelően dolgozza ki.
 
@@ -249,7 +249,7 @@ A [használati feltételekben](../enrollment/terms-and-conditions-create.md) leh
 
 | **Feltételek és kikötések neve** | **Használati eset** | **Célcsoport** |
 |:---:|:---:|:---:|
-| Vállalati feltételek | Vállalati | Vállalati felhasználók |                 
+| Vállalati feltételek | Vállalat | Vállalati felhasználók |                 
 | BYOD-feltételek | BYOD | BYOD-felhasználók |                
 
 
@@ -277,7 +277,7 @@ A végfelhasználók profilok segítségével kapcsolódnak a vállalati adatokh
 
 - Tanúsítványprofilok
 
-- Wi-Fi profil
+- Wi-Fi-profil
 
 - VPN-profil
 
@@ -310,7 +310,7 @@ Az alábbi példa szemlélteti, hogyan lehet dokumentálni a tanúsítványokat 
 
 A saját tanúsítványprofiljainak meghatározásához [letöltheti a fenti táblázat sablonját](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0).
 
-#### <a name="wi-fi-profile"></a>Wi-Fi profil
+#### <a name="wi-fi-profile"></a>Wi-Fi-profil
 
 A Wi-Fi-profilok révén a mobileszközök automatikusan csatlakozhatnak a vezeték nélküli hálózatokhoz. Az Intune-ban az összes támogatott platformhoz lehet Wi-Fi-profilt üzembe helyezni. További tudnivalók [az Intune Wi-Fi-profiltámogatásáról.](../configuration/wi-fi-settings-configure.md)
 
@@ -383,7 +383,7 @@ Az alkalmazásvédelmi szabályzatok azt definiálják, hogyan kezelheti egy alk
 
 
 A saját alkalmazásvédelmi szabályzatainak meghatározásához [letöltheti a fenti táblázat sablonját](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0).
-#### <a name="compliance-policies"></a>Megfelelőségi szabályzatok
+#### <a name="compliance-policies"></a>Compliance szabályzatokat
 
 A megfelelőségi szabályzatok határozzák meg, hogy egy adott eszköz megfelel-e bizonyos követelményeknek. Az Intune megfelelőségi szabályzatokkal határozza meg, hogy az eszközök megfelelőnek minősülnek-e, vagy sem. Ezt követően a megfelelőségi állapot alapján lehet korlátozni vagy engedélyezni a vállalati erőforrások elérését. Ha feltételes hozzáférésre van szükség, javasoljuk, hogy tervezzen egy [eszköz megfelelőségi szabályzatát](../protect/device-compliance-get-started.md).
 

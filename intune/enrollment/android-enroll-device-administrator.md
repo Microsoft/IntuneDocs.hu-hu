@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 678eb92bb6f5f23756092cd5d9cc1a645e1e8db3
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 309860fb5ddf6fa9488ecaf395534bf869234176
+ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74562353"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75547850"
 ---
 # <a name="android-device-administrator-enrollment"></a>Android-eszköz rendszergazdai regisztrációja
 
@@ -39,7 +39,7 @@ Ha továbbra is úgy dönt, hogy a felhasználók regisztrálják androidos eszk
 
 
 > [!Note]  
-> Az Android 10 és újabb verziók nem támogatottak a hibrid mobileszköz-kezelésben (hibrid MDM; Az Intune a System Center Configuration Manager-konzollal felügyelt), mert a hibrid MDM a 2019-es szeptember 1-én kikerül a szolgáltatásból. Ha továbbra is hibrid MDM használ, a lehető leghamarabb át kell térnie az Intune önálló verzióra. Ha segítségre van szüksége az áttelepítéshez, forduljon a támogatási szolgálathoz. További információk: [Áttérés a hibrid mobileszköz-kezelésről az Azure-beli Intune-ra](https://aka.ms/hybrid_notification).
+> Az Android 10 és újabb verziók nem támogatottak a hibrid mobileszköz-kezelésben (hibrid MDM; Az Intune a Configuration Manager-konzollal felügyelt), mert a hibrid MDM a 2019-es szeptember 1-én kikerül a szolgáltatásból. Ha továbbra is hibrid MDM használ, a lehető leghamarabb át kell térnie az Intune önálló verzióra. Ha segítségre van szüksége az áttelepítéshez, forduljon a támogatási szolgálathoz. További információk: [Áttérés a hibrid mobileszköz-kezelésről az Azure-beli Intune-ra](https://aka.ms/hybrid_notification).
 
 A Google androidos vállalati funkcióival kapcsolatos további információkért tekintse meg a következő cikkeket:
 - [A Google útmutatója az eszköz-rendszergazdától az Android Enterprise rendszerre való áttelepítéshez](http://static.googleusercontent.com/media/android.com/en/enterprise/static/2016/pdfs/enterprise/Android-Enterprise-Migration-Bluebook_2019.pdf)

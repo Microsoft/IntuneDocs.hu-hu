@@ -19,12 +19,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 79e1ba2441baa6773632c27f204bef01b015b990
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 48ad9ffe32dc7493195ec161e070734776381427
+ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74832727"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75547800"
 ---
 # <a name="troubleshoot-device-enrollment-in-microsoft-intune"></a>Az eszközök regisztrálásának hibája Microsoft Intune
 
@@ -113,7 +113,7 @@ Az eszközszámkorlát elérésének elkerüléséhez mindig távolítsa el a m�
 
     4. Kapcsolja be újból a DirSync eszközt, és ellenőrizze, hogy most már megfelelően van-e szinkronizálva a felhasználó.
 
-3. A System Center Configuration Managerbe integrált Intune használata esetén ellenőrizze, hogy a felhasználó érvényes felhőbeli felhasználói azonosítóval rendelkezik-e:
+3. Ha Configuration Managert használ az Intune-nal, ellenőrizze, hogy a felhasználó rendelkezik-e érvényes Felhőbeli felhasználói AZONOSÍTÓval:
 
     1. Nyissa meg az SQL Management Studiót.
 
@@ -332,7 +332,7 @@ További információt az [Ajánlott eljárások az Active Directory összevoná
 
 5. Ellenőrizze, hogy az iOS-hez készült Safari az alapértelmezett böngésző-e, és a cookie-k engedélyezettek-e.
 
-### <a name="enrolled-ios-device-doesnt-appear-in-console-when-using-system-center-configuration-manager-with-intune"></a>A regisztrált iOS-eszköz nem jelenik meg a konzolon a System Center Configuration Managerbe integrált Intune használata esetén
+### <a name="enrolled-ios-device-doesnt-appear-in-console-when-using-configuration-manager-with-intune"></a>A regisztrált iOS-eszköz nem jelenik meg a konzolon a Configuration Manager Intune-nal való használatakor
 **Hiba:** A felhasználó regisztrálja az iOS-eszközt, de az nem jelenik meg a Configuration Manager felügyeleti konzolon. Az eszköz nem jelzi, hogy már regisztrálva van. Lehetséges okok:
 
 - Az Ön Configuration Manager-helyén található Microsoft Intune-összekötő nem kommunikál az Intune szolgáltatással.
@@ -419,7 +419,7 @@ A letiltott eszközök törlését követően megkérheti a felhasználókat, ho
     3. Keresse meg a regisztrációs problémával rendelkező eszközt. Az eredmények szűkítéséhez keressen az eszköz neve vagy a MAC-/hardvercím alapján.
     4. Válassza ki az eszközt > **Törlés**. Törölje az eszközhöz társított összes többi bejegyzést.  
 
-## <a name="issues-when-using-system-center-configuration-manager-with-intune"></a>Problémák a System Center Configuration Managerbe integrált Intune használatakor
+## <a name="issues-when-using-configuration-manager-with-intune"></a>Problémák a Configuration Manager Intune-nal való használatakor
 
 ### <a name="mobile-devices-disappear"></a>Mobileszközök tűnnek el
 
@@ -433,7 +433,7 @@ Ha meg szeretné állapítani, hogy melyik eljárás vagy felhasználói fiók t
 
 #### <a name="check-how-device-was-removed"></a>Az eszköz eltávolításának ellenőrzése
 
-1. A Configuration Manager felügyeleti konzolban válassza a **Figyelés** &gt; **Rendszer állapota** &gt; **Állapotüzenet-lekérdezések** elemet.
+1. A Configuration Manager felügyeleti konzolon válassza a **figyelés** &gt; **rendszer állapota** &gt; **állapotüzenetek lekérdezése**elemet.
 
 2. Kattintson a jobb gombbal a **Manuálisan törölt gyűjtemény tagerőforrások** elemre, és válassza az **Üzenetek megjelenítése** parancsot.
 
@@ -499,7 +499,7 @@ Az előző fiók fióktanúsítványa továbbra is megtalálható a számítóg�
 |0x80043008, 0x80CF3008|Nem sikerült elindítani a Microsoft Online Management Updates szolgáltatást.|Lépjen kapcsolatba a Microsoft ügyfélszolgálatával a [Hogyan kérhet támogatást az Intune-hoz](../fundamentals/get-support.md) című szakaszban leírtak szerint.|
 |0x80043009, 0x80CF3009|Az ügyfélszámítógép már be van léptetve a szolgáltatásba.|Az ügyfélszámítógépet el kell távolítania, mielőtt újból beléptetheti a szolgáltatásba.|
 |0x8004300B, 0x80CF300B|Az ügyfélszoftver telepítési csomagja nem futtatható, mert az ügyfélen futó Windows-verzió nem támogatott.|Az Intune nem támogatja az ügyfélszámítógépen futó Windows-verziót.|
-|0xAB2|A Windows Installer nem tud hozzáférni a VBScript futtatókörnyezethez egy egyéni művelet végrehajtásához.|A hibát egy egyéni művelet okozza, amely dinamikus kötésű kódtárakon (DLL-eken) alapul. Előfordulhat, hogy a DLL hibáinak elhárításához a következő témakörben ismertetett eszközöket kell használnia: [Microsoft Support KB198038: Useful Tools for Package and Deployment Issues](https://support.microsoft.com/kb/198038) (Hasznos eszközök csomag- és telepítési problémák esetére).|
+|0xAB2|A Windows Installer nem tud hozzáférni a VBScript futtatókörnyezethez egy egyéni művelet végrehajtásához.|A hibát egy egyéni művelet okozza, amely dinamikus kötésű kódtárakon (DLL-eken) alapul. Előfordulhat, hogy a DLL hibaelhárításához a következő témakörben ismertetett eszközöket kell használnia: [Microsoft Support KB198038: Useful Tools for Package and Deployment Issues](https://support.microsoft.com/kb/198038).|
 |0x80cf0440|Megszakadt a kapcsolat a szolgáltatásvégponttal.|A próbafiók vagy a díjköteles fiók fel van függesztve. Hozzon létre egy új próbafiókot vagy díjköteles fiókot, és végezze el újból a regisztrálást.|
 
 ## <a name="next-steps"></a>További lépések

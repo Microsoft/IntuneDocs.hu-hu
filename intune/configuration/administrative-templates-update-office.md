@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dcd1948899ec4023a65c62f7106298b065b46883
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: 63ebbc22c5452c99439d34813509b5652daef1f0
+ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75206924"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75548085"
 ---
 # <a name="use-update-channel-and-target-version-settings-to-update-office-365-with-microsoft-intune-administrative-templates"></a>A frissítési csatorna és a célként megadott verzió beállításainak használatával frissítse az Office 365-et Microsoft Intune Felügyeleti sablonok
 
@@ -75,7 +75,7 @@ Miután hozzárendelte a szabályzatot és az eszköz szinkronizálásait, meger
     ![Felügyeleti sablon L_Updatebranch beállításkulcs – példa](./media/administrative-templates-update-office/admx-update-branch-registry-key.png)
 
     > [!TIP]
-    > Az [Office 365 ProPlus kezelése Configuration Manager](https://docs.microsoft.com/sccm/sum/deploy-use/manage-office-365-proplus-updates#bkmk_channel) listázza az értékeket, és azt, hogy mit jelentenek. A beállításjegyzék értékei a kiválasztott terjesztési csatornán alapulnak:
+    > Az [Office 365 ProPlus kezelése Configuration Manager](https://docs.microsoft.com/configmgr/sum/deploy-use/manage-office-365-proplus-updates#bkmk_channel) listázza az értékeket, és azt, hogy mit jelentenek. A beállításjegyzék értékei a kiválasztott terjesztési csatornán alapulnak:
     >
     >- Havi Channel-Value = "aktuális"
     >- Havi csatorna (megcélozva) – érték = "aktuális"
@@ -95,7 +95,7 @@ Ezen a ponton a rendszer sikeresen alkalmazta az Intune-szabályzatot az eszköz
     - `UpdateChannel`: a megadott beállításoktól függően változó dinamikus kulcs.
     - `CDNBaseUrl`: állítsa be, hogy az Office 365 Mikor telepítse az eszközt az eszközön.
 
-3. Tekintse meg a `UpdateChannel` értéket. Az érték azt jelzi, hogy az Office milyen gyakran frissül. Az [Office 365 ProPlus kezelése Configuration Manager](https://docs.microsoft.com/sccm/sum/deploy-use/manage-office-365-proplus-updates#bkmk_channel) listázza az értékeket, és azt, hogy mire vannak beállítva.
+3. Tekintse meg a `UpdateChannel` értéket. Az érték azt jelzi, hogy az Office milyen gyakran frissül. Az [Office 365 ProPlus kezelése Configuration Manager](https://docs.microsoft.com/configmgr/sum/deploy-use/manage-office-365-proplus-updates#bkmk_channel) listázza az értékeket, és azt, hogy mire vannak beállítva.
 
     Az alábbi példát követve láthatja, hogy `UpdateChannel` `http://officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60`re van beállítva, amely **havonta**:
 
@@ -134,7 +134,7 @@ Ezen a ponton az Office Update Channel sikeresen módosult az eszközön. Nyisso
 
 Ha többre van szüksége, kényszerítheti az Office-t, hogy letöltse a legújabb verziót. A következő lépéseket csak megerősítésként kell végrehajtani, vagy ha az eszközön gyorsan kell beszerezni a legújabb verziót. Ellenkező esetben az Office elvégzi a feladatot, és automatikusan frissíti.
 
-### <a name="step-1-force-the-office-version-to-update"></a>1. lépés: az Office-verzió frissítésének kényszerítése
+### <a name="step-1-force-the-office-version-to-update"></a>1\. lépés: az Office-verzió frissítésének kényszerítése
 
 1. Erősítse meg, hogy az Office-verzió támogatja a kiválasztott frissítési csatornát. Az [Office 365 ProPlus frissítési előzményei](https://docs.microsoft.com/officeupdates/update-history-office365-proplus-by-date) a különböző frissítési csatornákat támogató összeállítási számokat listázza.
 
@@ -150,7 +150,7 @@ Ha többre van szüksége, kényszerítheti az Office-t, hogy letöltse a legúj
 > - Ha módosít egy meglévő szabályzatot, a módosítások az összes hozzárendelt felhasználót érintik.
 > - Ha teszteli ezt a funkciót, javasolt létrehozni egy tesztelési házirendet, és hozzárendelni a szabályzatot a felhasználók egy tesztelési csoportjához.
 
-### <a name="step-2-check-the-office-version"></a>2. lépés: az Office verziójának keresése
+### <a name="step-2-check-the-office-version"></a>2\. lépés: az Office verziójának keresése
 
 Az alábbi lépéseket követve tesztelheti a szabályzatot, mielőtt az összes felhasználó számára telepítené a szabályzatot.
 
@@ -173,7 +173,7 @@ Az alábbi lépéseket követve tesztelheti a szabályzatot, mielőtt az összes
 
 ## <a name="next-steps"></a>További lépések
 
-[Az Office 365-ügyfelek csatorna-értékeinek frissítése](https://docs.microsoft.com/sccm/sum/deploy-use/manage-office-365-proplus-updates#bkmk_channel)
+[Az Office 365-ügyfelek csatorna-értékeinek frissítése](https://docs.microsoft.com/configmgr/sum/deploy-use/manage-office-365-proplus-updates#bkmk_channel)
 
 [Az Office 365 ProPlus készült Office Cloud Policy szolgáltatás áttekintése](https://docs.microsoft.com/deployoffice/overview-office-cloud-policy-service)
 

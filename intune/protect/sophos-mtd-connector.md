@@ -15,12 +15,12 @@ ms.technology: ''
 ms.assetid: ''
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e8823aa8467ef380223a486874c68d52926db733
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: f41d5d1ec3e302a277fe5e6ff6af9d33a7e89517
+ms.sourcegitcommit: d21539e52631c589bfeaa182418390f66672736c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72503740"
+ms.lasthandoff: 01/01/2020
+ms.locfileid: "75564917"
 ---
 # <a name="sophos-mobile-threat-defense-connector-with-intune"></a>A Sophos Mobile Threat Defense-összekötő az Intune-nal
 A mobil eszközök hozzáférését a vállalati erőforrásokhoz feltételes hozzáférés használatával szabályozhatja a Sophos Mobile, a Mobile Threat Defense (MTD) által a Microsoft Intune-nal integrálható megoldás alapján. A rendszer a Sophos Mobile alkalmazást futtató eszközökről gyűjtött telemetria alapján méri a kockázatot.
@@ -72,7 +72,7 @@ a SharePoint-példa szervizeléséhez ![hozzáférés biztosított](./media/soph
 - Microsoft Intune-előfizetés 
 - A Sophos Mobile Threat Defense-előfizetés
 
-További információ: a [Sophos webhelye](https://www.sophos.com/products/mobile-control).  
+További információ: a [Sophos webhelye](https://www.sophos.com/en-us/products/mobile-control.aspx).
 
 ## <a name="next-steps"></a>További lépések  
 - [A Sophos integrálása az Intune-nal](sophos-mtd-connector-integration.md)

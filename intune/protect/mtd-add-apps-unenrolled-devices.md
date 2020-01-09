@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f8dd7127594a0e23c85b9f8141ce6d398d9a447a
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: e1cf0a3d8b30955be8413b376acd223a924be843
+ms.sourcegitcommit: 06dce5c8111592ad774247e86e539dd3128117e5
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72795322"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545929"
 ---
 # <a name="add-mobile-threat-defense-apps-to-unenrolled-devices"></a>Mobile Threat Defense-alkalmazások hozzáadása a nem regisztrált eszközökhöz
 
@@ -34,7 +34,7 @@ A végfelhasználók számára szükséges a Microsoft Authenticator (iOS) az es
 Igény szerint az Intune-nal is hozzáadhatja és üzembe helyezheti a Microsoft Authenticator és a Mobile Threat Defense (MTD) alkalmazásokat.
 
 > [!NOTE] 
-> Ez a cikk az alkalmazás-védelmi házirendeket támogató összes Mobile Threat Defense-partnerre vonatkozik: Better Mobile (Android), Zimperium (iOS), Lookout for Work (Android/iOS).
+> Ez a cikk az alkalmazás-védelmi házirendeket támogató összes Mobile Threat Defense-partnerre vonatkozik: Better Mobile (Android), Zimperium (Android, iOS), Lookout for Work (Android/iOS).
 > 
 > A nem regisztrált eszközök esetében **nincs szükség iOS-es alkalmazás-konfigurációs szabályzatra** , amely beállítja az Intune-nal használt iOS-alkalmazás Mobile Threat Defense szolgáltatását. Ez a legfontosabb különbség az Intune-ban regisztrált eszközökhöz képest. 
 
@@ -76,8 +76,8 @@ Ha azonban az alkalmazást a Intune Céges portál keresztül szeretné elérhet
   - See the instructions for [adding iOS store apps to Microsoft Intune](../apps/store-apps-ios.md). Use this [Check Point SandBlast Mobile - App Store URL](https://apps.apple.com/us/app/sandblast-mobile-protect/id1006390797) when completing the **Configure app information** section. -->
 
 ### <a name="making-zimperium-available-to-end-users"></a>A Zimperium elérhetővé tétele a végfelhasználók számára
-<!-- - **Android**
-  - See the instructions for [adding Android store apps to Microsoft Intune](../apps/store-apps-android.md). Use this [Zimperium - Play Store URL](https://play.google.com/store/apps/details?id=com.zimperium.zips&hl=en) when completing the **Configure app information** section. -->
+- **Android--**
+  - Lásd a következő útmutatót: [Android Áruházbeli alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-android.md). Használja ezt a [Zimperium-Play áruház URL-címet](https://play.google.com/store/apps/details?id=com.zimperium.zips&hl=en) az alkalmazásadatok **konfigurálása** szakasz végrehajtásakor.
 - **iOS--**
   - Lásd a következő útmutatót: [iOS Store-alkalmazás felvétele a Microsoft Intune-ba](../apps/store-apps-ios.md). Használja ezt a [Zimperium-áruházi URL-címet](https://itunes.apple.com/us/app/zimperium-zips/id1030924459?mt=8) az alkalmazásadatok **konfigurálása** szakasz végrehajtásakor.
  

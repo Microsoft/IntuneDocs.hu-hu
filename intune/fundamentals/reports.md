@@ -15,12 +15,12 @@ ms.assetid: ''
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 21b83ec7b295a79dafc7527633cb31729ee40502
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: 3ae06ae3f9f76d86a792721d45f8319bfe6491fd
+ms.sourcegitcommit: 8d7406b75ef0d75cc2ed03b1a5e5f74ff10b98c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75206244"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75654226"
 ---
 # <a name="intune-reports"></a>Intune-jelentések
 Microsoft Intune a jelentések lehetővé teszik, hogy hatékonyabban és proaktívan figyelje a végpontok állapotát és tevékenységét a szervezeten belül, valamint más jelentéskészítési adatait is biztosítson az Intune-ban. Láthatja például, hogy az eszközök megfelelőségével, az eszköz állapotával és az eszközök trendjeivel kapcsolatos jelentések jelennek meg. Emellett létrehozhat egyéni jelentéseket is, amelyekkel pontosabban megszerezheti az adatokra vonatkozó adatgyűjtést. 
@@ -120,7 +120,7 @@ Az alábbi lépések végrehajtásával hozhat létre és tekinthet meg egyéni 
 
     ![Az Intune-jelentések összegzése](./media/intune-reports/intune-reports-04a.png)
 
-6. Kattintson a **Mentés**gombra.
+6. Kattintson a **Mentés** gombra.
 7. Ezután a **log Analytics** elemre kattintva hozzon létre és futtasson új napló-lekérdezést [log Analytics](reports.md#log-analytics)használatával.
 
    ![Log Analytics – napló lekérdezése](./media/intune-reports/intune-reports-05.png)
@@ -146,12 +146,12 @@ A Log Analytics a Azure Portal elsődleges eszköze a naplók írásához és a 
 ### <a name="workbooks"></a>Munkafüzetek
 A munkafüzetek szöveg-, elemzési és Azure-metrikákat és-paramétereket egyesítenek gazdag interaktív jelentésekben. A munkafüzetek szerkeszthető más csapattagok számára, akik ugyanahhoz az Azure-erőforrásokhoz férnek hozzá. További információ a munkafüzetekről: [Azure monitor munkafüzetek](https://docs.microsoft.com/azure/azure-monitor/app/usage-workbooks). Emellett a munkafüzet-sablonokkal is dolgozhat és járulhat hozzá. További információ: [Azure monitor munkafüzet-sablonok](https://go.microsoft.com/fwlink/?linkid=867045).
 
-## <a name="next-steps"></a>További lépések
+## <a name="next-steps"></a>További lépések 
 
 További információ az alábbi technológiákról:
 - [Blog – Microsoft Intune jelentési keretrendszer](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/New-Reporting-Framework-Coming-to-Intune/ba-p/1009553)
 - [Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-activity-logs-azure-monitor)
-- [Mi az Log Analytics?](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview#what-is-log-analytics)
+- [Mi az a Log Analytics?](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview#what-is-log-analytics)
 - [Lekérdezések naplózása](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview)
 - [Ismerkedés a Log Analyticsával Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal)
 - [Munkafüzetek Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/app/usage-workbooks)

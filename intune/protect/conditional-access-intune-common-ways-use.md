@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b9795ca8a585fd926cc269d493760b37aa7666eb
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: d30749a7eaa3d516bef2f2acff3e010d69db1c0e
+ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74051962"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75547058"
 ---
 # <a name="what-are-common-ways-to-use-conditional-access-with-intune"></a>Mik a feltételes hozzáférés az Intune-nal való használatának gyakori módjai?
 
@@ -83,11 +83,11 @@ Az asztali számítógépeken ken beállítható feltételes hozzáférés a mob
 
 #### <a name="corporate-owned"></a>Céges tulajdonú eszközök
 
-- Helyszíni **ad-tartományhoz csatlakoztatva:** Ezt a lehetőséget általában olyan szervezetek használják, amelyek ésszerűen kényelmesek ahhoz, hogy a számítógépeket az AD-csoportok házirendjein vagy a System Center Configuration Manageron keresztül kezelhesse.
+- Helyszíni **ad-tartományhoz csatlakoztatva:** Ezt a lehetőséget általában olyan szervezetek használják, amelyek ésszerűen kényelmesek ahhoz, hogy a számítógépeket az AD-csoportok házirendjein vagy a Configuration Manageron keresztül kezelhesse.
 
 - **Azure ad-tartományhoz csatlakoztatott és Intune-felügyelet:** Ez a forgatókönyv olyan szervezeteknek szól, amelyeknek először a felhőt szeretnék használni (azaz elsősorban a Cloud Services használatát, amelynek célja a helyszíni infrastruktúra használatának csökkentése) vagy csak felhőalapú (nincs helyszíni infrastruktúra). Az Azure AD-csatlakozás hibrid környezetben jól működik, és lehetővé teszi a Felhőbeli és a helyszíni alkalmazások és erőforrások elérését. Az eszköz csatlakozik az Azure AD-hez, és regisztrálva lesz az Intune-ban, amely feltételes hozzáférési feltételekként használható a vállalati erőforrások eléréséhez.
 
-- **Ad-tartományhoz csatlakoztatott és System Center Configuration Manager:** Az aktuális ág esetében System Center Configuration Manager olyan feltételes hozzáférési képességeket biztosít, amelyek a tartományhoz csatlakoztatott SZÁMÍTÓGÉPeken kívül a meghatározott megfelelőségi feltételeket is kiértékelik:
+- **Ad-tartományhoz csatlakoztatott és Configuration Manager:** Az aktuális ág esetében Configuration Manager olyan feltételes hozzáférési képességeket biztosít, amelyek a tartományhoz csatlakoztatott SZÁMÍTÓGÉPeken kívül a meghatározott megfelelőségi feltételeket is kiértékelik:
 
   - Titkosították-e a számítógépet?
 
@@ -95,7 +95,7 @@ Az asztali számítógépeken ken beállítható feltételes hozzáférés a mob
 
   - Jailbreakelték vagy rootolták az eszközt?
 
-#### <a name="bring-your-own-device-byod"></a>Saját eszközök használata (Bring Your Own Device, BYOD)
+#### <a name="bring-your-own-device-byod"></a>Saját eszközök használata (BYOD)
 
 - **Munkahelyi csatlakozás és Intune-felügyelet:** A felhasználók ebben az esetben a saját eszközeiket csatlakoztatva érhetik el a céges erőforrásokat és szolgáltatásokat. A munkahelyi csatlakoztatás és az eszközök regisztrálása az Intune MDM az eszköz szintű házirendek fogadásához, amelyek egy másik lehetőség a feltételes hozzáférési feltételek kiértékelésére.
 

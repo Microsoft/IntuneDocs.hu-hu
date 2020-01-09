@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c2ec3ab62c6effd80d6a02d6ae9052b41fed23c
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: e1f81d26227bb206aa55ca495f4a4ee5e8ae9907
+ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75207322"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75548123"
 ---
 # <a name="use-role-based-access-control-rbac-and-scope-tags-for-distributed-it"></a>A szerepköralapú hozzáférés-vezérlés (RBAC) és a hatókör-címkék használata a terjesztéshez
 
@@ -39,11 +39,11 @@ Tegyük fel például, hogy a Seattle regionális iroda rendszergazdája a szab�
 ## <a name="default-scope-tag"></a>Alapértelmezett hatókör címkéje
 A rendszer automatikusan hozzáadja az alapértelmezett hatóköri címkét a hatókör címkéit támogató összes címkézetlen objektumhoz.
 
-Az alapértelmezett hatókör címke funkció a System Center Configuration Manager biztonsági hatókörök szolgáltatásához hasonló. 
+A hatókör alapértelmezett címkéje funkció a Microsoft Endpoint Configuration Manager biztonsági hatókörök funkciójának hasonló. 
 
 ## <a name="to-create-a-scope-tag"></a>Hatókörcímke létrehozása
 
-1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza a **bérlői felügyelet** > **szerepkörök** > **hatókör (címkék)** > **Létrehozás**lehetőséget.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza a **bérlői felügyelet** > **szerepkörök** > **hatókör (címkék)**  > **Létrehozás**lehetőséget.
 
     ![Képernyőkép a hatókör-címke létrehozásáról.](./media/scope-tags/create-scope-tag.png)
 
@@ -57,7 +57,7 @@ Az alapértelmezett hatókör címke funkció a System Center Configuration Mana
 
 1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza a **bérlői felügyelet** > **szerepkörök** > **minden szerepkör** lehetőséget, > válassza ki a szerepkört > **hozzárendelések** > **hozzárendelés**elemet.
 2. Adja meg a **hozzárendelés nevét** és **leírását**.
-3. Válassza a **Tagok (csoportok)** > **Hozzáadás** > Válassza ki a hozzárendelés részeként használni kívánt csoportokat > válassza a > **OK** **lehetőséget** . A csoport felhasználói jogosultak lesznek a hatókör (csoportok) felhasználói/eszközeinek kezelésére.
+3. Válassza a **Tagok (csoportok)**  > **Hozzáadás** > Válassza ki a hozzárendelés részeként használni kívánt csoportokat > válassza a > **OK** **lehetőséget** . A csoport felhasználói jogosultak lesznek a hatókör (csoportok) felhasználói/eszközeinek kezelésére.
 
     ![Képernyőfelvétel a csoporttag kiválasztásáról.](./media/scope-tags/select-member-groups.png)
 
@@ -69,7 +69,7 @@ Az alapértelmezett hatókör címke funkció a System Center Configuration Mana
 
     ![Képernyőkép a hatókör-csoportok kiválasztásának egyéb lehetőségeiről.](./media/scope-tags/scope-group-other-options.png)
     
-5. Válassza a **hatókör (címkék)** > **Hozzáadás** > Válassza ki a szerepkörhöz hozzáadni kívánt címkéket > válassza a > **OK** **lehetőséget** . A tagok (csoportok) felhasználói hozzáférhetnek az olyan Intune-objektumokhoz, amelyek szintén rendelkeznek ugyanazzal a hatóköri címkével.
+5. Válassza a **hatókör (címkék)**  > **Hozzáadás** > Válassza ki a szerepkörhöz hozzáadni kívánt címkéket > válassza a > **OK** **lehetőséget** . A tagok (csoportok) felhasználói hozzáférhetnek az olyan Intune-objektumokhoz, amelyek szintén rendelkeznek ugyanazzal a hatóköri címkével.
 
     ![Képernyőkép a hatóköri címkék kiválasztásáról.](./media/scope-tags/select-scope-tags.png)
 
@@ -81,7 +81,7 @@ A hatókör címkéit támogató objektumok esetében a hatókör címkéi álta
 
 1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **konfigurációs profilok** lehetőséget, > válasszon egy profilt.
 
-2. Válassza a **tulajdonságok** > **hatókör (címkék)** > **Hozzáadás**elemet.
+2. Válassza a **tulajdonságok** > **hatókör (címkék)**  > **Hozzáadás**elemet.
 
     ![Képernyőkép a hatókör-címkék hozzáadásáról.](./media/scope-tags/add-scope-tags.png)
 

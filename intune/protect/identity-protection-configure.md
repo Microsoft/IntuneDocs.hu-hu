@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4fce03913042675588ea12e5399e6f5a1be04946
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: a4f5d3a232cab25c60189132732a0ea3f347c74a
+ms.sourcegitcommit: 107fef144013b01ed768ca8973373f9cb3f0f7dc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74188250"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683799"
 ---
 # <a name="use-windows-hello-for-business-on-windows-10-devices-with-microsoft-intune"></a>A Windows Hello for Business használata Windows 10-es eszközökön Microsoft Intune
 
@@ -71,6 +71,9 @@ Ez a cikk bemutatja, hogyan hozhat létre egy eszköz-konfigurációs profilt. A
 5. Ha elkészült, a módosítások mentéséhez válassza az **OK** > **Létrehozás** lehetőséget.
 
 Ekkor létrejön a profil, és megjelenik a profilok listájában. Ezután [rendelje hozzá](../configuration/device-profile-assign.md) ezt a profilt a felhasználókhoz és az eszközökhöz, hogy megfeleljen az igényeinek.
+
+> [!IMPORTANT]
+> Annak engedélyezéséhez, hogy több felhasználó legyen kiépítve egy eszközre, a vállalati Windows Hello-szabályzatot alkalmazza az eszközökre. Ha a házirend csak a felhasználókra vonatkozik, csak egy felhasználó lehet kiépítve egy eszközre.
 
 <!--  Removing image as part of design review; retaining source until we known the disposition.
 

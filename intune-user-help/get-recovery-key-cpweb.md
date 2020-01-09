@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 09/03/2019
+ms.date: 12/04/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
@@ -19,18 +19,20 @@ ms.reviewer: ''
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 822d995443ca23eac7f96f8314f9926804e0be24
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 44026c379a763db2cc43912e4ef09ae542fbe7db
+ms.sourcegitcommit: 8d7406b75ef0d75cc2ed03b1a5e5f74ff10b98c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72508521"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75653995"
 ---
 # <a name="get-a-recovery-key-for-a-macos-device"></a>A macOS-eszköz helyreállítási kulcsának beolvasása
 
 Használja a Céges portál webhelyét a zárolt macOS-eszköz helyreállítási kulcsának beszerzéséhez. Ha elfelejti az eszköz jelszavát, bejelentkezhet a Céges portál egy másik eszközről a kulcs lekéréséhez.  
 
-Ez a beállítás csak olyan eszközök esetében érhető el, amelyeket a szervezet a FileVault használatával titkosított. Nem érhető el a személyes titkosítású eszközökhöz.
+## <a name="get-recovery-key-from-company-portal-website"></a>Helyreállítási kulcs beolvasása Céges portál webhelyről
+
+Ez a beállítás a szervezet által a FileVault használatával titkosított eszközökhöz érhető el. Nem érhető el a személyes titkosítású eszközökhöz.
 
 1. Bármely eszközön jelentkezzen be a [céges portál webhelyére](https://portal.manage.microsoft.com) , és válassza a menü gomb > **eszközök** **menüpontot** .  
 2. Válassza ki a titkosított macOS-eszközt.  
@@ -45,6 +47,19 @@ Ez a beállítás csak olyan eszközök esetében érhető el, amelyeket a szerv
     Biztonsági okokból a kulcs öt perc múlva eltűnik. A kulcs ismételt megjelenítéséhez válassza a **helyreállítási kulcs beolvasása**elemet.
 
 Ha a kulcs nem található, de az eszköz megfelelően titkosított, forduljon a szervezet ügyfélszolgálatához. Az elérhetőségét keresse meg a [Vállalati portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).  
+
+## <a name="get-recovery-key-from-company-portal-app-for-ios"></a>Helyreállítási kulcs beolvasása Céges portál iOS-alkalmazásból
+
+A személyes helyreállítási kulcs (FileVault-kulcs) az iOS rendszerhez készült Céges portál alkalmazással kérhető le. A személyes helyreállítási kulccsal rendelkező eszközt regisztrálni kell az Intune-ban, és az Intune-on keresztül kell titkosítani a FileVault-mel. Ez a beállítás nem érhető el a személyes titkosítású eszközökhöz. 
+
+A Céges portál alkalmazás használatával megnyithatja a Safari webes nézetét, és lekérheti a személyes helyreállítási kulcsot. 
+
+1. Nyissa meg Céges portál.
+2. Kattintson a **helyreállítási kulcs beolvasása**elemre.
+
+    ![Képernyőkép a Céges portál iOS-alkalmazásról, amely a helyreállítási kulcsot mutatja](./media/get-recovery-key-cpweb-02.png)  
+
+A Céges portál webhely a Safari webes nézetében nyílik meg, és megjeleníti a kulcsot. 
 
 ## <a name="it-pro-support"></a>IT Pro-támogatás
 

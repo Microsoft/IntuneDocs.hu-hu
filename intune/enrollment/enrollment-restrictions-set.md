@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78f79a734d0a7b4901b2248b20abd9d304926dd2
-ms.sourcegitcommit: e75718ee6cf93c0e6c915f2776b785fe8db9f7e0
+ms.openlocfilehash: 4246dab0cf22053d76fdd50f99de53e827332a23
+ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74955507"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75547814"
 ---
 # <a name="set-enrollment-restrictions"></a>Regisztrációs korlátozások beállítása
 
@@ -144,7 +144,7 @@ Windows vállalati regisztrációnak minősülnek az alábbi módszerek:
 - Az eszköz regisztrálva van a Windows Autopilot szolgáltatásban, de a Windows beállításai nem csak MDM-regisztrációt igényelnek.
 - Az eszköz IMEI-száma szerepel az **Eszközregisztráció** >  **[Vállalati eszközazonosítók](corporate-identifiers-add.md)** listán. (Windows Phone 8.1-hez nem támogatott)
 - Az eszközregisztráció [tömeges kiépítési csomagban](windows-bulk-enroll.md) történik.
-- Az eszköz regisztrál a csoportházirend-objektumon keresztül, vagy [automatikus regisztrációt a SCCM-ből a közös felügyelethez](https://docs.microsoft.com/sccm/comanage/quickstart-paths#bkmk_path1).
+- Az eszköz a csoportházirend-objektumon keresztül regisztrálja, vagy az [Configuration Managerból való automatikus regisztrációt a közös felügyelethez](https://docs.microsoft.com/configmgr/comanage/quickstart-paths#bkmk_path1).
  
 A következő regisztrációk az Intune-ban vállalatiként vannak megjelölve. De mivel nem biztosítanak az Intune-rendszergazda eszközönkénti felügyeletet, a rendszer letiltja a következőket:
 - [Automatikus MDM-regisztráció](windows-enroll.md#enable-windows-10-automatic-enrollment) és [Azure Active Directory-csatlakozás a Windows beállítása során](https://docs.microsoft.com/azure/active-directory/device-management-azuread-joined-devices-frx)\*.

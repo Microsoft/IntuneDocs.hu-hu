@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 12/17/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eed0b8a74e69bc1552ae3e2badf485364ba37e94
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 01c95e1961871f33a3d8ed8c0b6c22502faca3a9
+ms.sourcegitcommit: 8d7406b75ef0d75cc2ed03b1a5e5f74ff10b98c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74563828"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75654022"
 ---
 # <a name="how-to-manage-ios-and-macos-apps-purchased-through-apple-volume-purchase-program-with-microsoft-intune"></a>A Apple Volume Purchase Program használatával vásárolt iOS-és macOS-alkalmazások kezelése Microsoft Intune
 
@@ -95,12 +95,12 @@ Mielőtt hozzálát, be kell szereznie a VPP-tokent az Apple-től, és fel kell 
         > Az ország/régió módosítása frissíti az alkalmazások metaadatait és az áruházbeli URL-címet a következő szinkronizáláskor a tokenrel létrehozott alkalmazások Apple szolgáltatásával. Az alkalmazás nem frissül, ha nem létezik az új ország/régió tárolóban.
 
     - **VPP-fiók típusa** –A következő lehetőségek közül választhat: **Üzlet** és **Oktatás**.
-    - **Alkalmazások automatikus frissítése** – Az automatikus frissítés engedélyezéséhez válasszon a **Be** és **Ki** érték közül. Engedélyezés esetén az Intune észleli, ha az alkalmazás-áruházban az adott VPP-alkalmazáshoz frissítés érhető el, és az eszköz legközelebbi bejelentkezésekor automatikusan leküldi a frissítéseket az eszközre. Az Apple VPP automatikus alkalmazásfrissítései csak a **Kötelező** telepítési szándékkal üzembe helyezett alkalmazásokat frissítik automatikusan. Az **elérhető** telepítési szándéktal telepített alkalmazások esetében az automatikus frissítés állapotjelző üzenetet hoz létre a rendszergazda számára, amely tájékoztatja, hogy az alkalmazás új verziója érhető el. Az állapotjelző üzenet az alkalmazás kiválasztásával, az eszköz telepítési állapotának kiválasztásával és az állapot részleteinek ellenőrzésével tekinthető meg. Emellett a felhasználó a Céges portálon nem telepítettként látja az alkalmazást, annak ellenére, hogy annak régebbi verziója telepítve van. Ebben az esetben a felhasználó újratelepítheti az alkalmazást, ha az alkalmazás újabb verzióját szeretné telepíteni a Céges portál alkalmazás részletek képernyőjén a **telepítés** gombra kattintva.
+    - **Alkalmazások automatikus frissítése** – Az automatikus frissítés engedélyezéséhez válasszon a **Be** és **Ki** érték közül. Engedélyezés esetén az Intune észleli, ha az alkalmazás-áruházban az adott VPP-alkalmazáshoz frissítés érhető el, és az eszköz legközelebbi bejelentkezésekor automatikusan leküldi a frissítéseket az eszközre. Az Apple VPP automatikus alkalmazásfrissítései csak a **Kötelező** telepítési szándékkal üzembe helyezett alkalmazásokat frissítik automatikusan. Az **elérhető** telepítési szándéktal üzembe helyezett alkalmazások esetében a felhasználó láthatja, hogy az alkalmazás nincs telepítve a céges portálon, noha az alkalmazás egy korábbi verziója telepítve van. Ebben az esetben a felhasználó újratelepítheti az alkalmazást, ha az alkalmazás újabb verzióját szeretné telepíteni a Céges portál alkalmazás részletek képernyőjén a **telepítés** gombra kattintva. Vegye figyelembe, hogy a felhasználók által beléptetett iOS-eszközök esetében a végfelhasználók továbbra is láthatják az összes felhasználó által licencelt VPP alkalmazást a Céges portálon belül. 
 
         > [!NOTE]
         > Az alkalmazások automatikus frissítései mind az eszköz, mind a felhasználó által licencelt, iOS 11,0-es, illetve macOS 10,12-es és újabb verziójú alkalmazások esetében működnek.
 
-    - **Engedélyezem a Microsoft számára, hogy a felhasználók és az eszközök adatait is el lehessen küldeni az Apple-nek.** – **Válassza az Elfogadom** lehetőséget a folytatáshoz. Az Apple-nek küldött Microisoft áttekintését lásd: az [Intune által az Apple](~/protect/data-intune-sends-to-apple.md)-nek küldött adatokat.
+    - **Engedélyezem a Microsoft számára, hogy a felhasználók és az eszközök adatait is el lehessen küldeni az Apple-nek.** – **Válassza az Elfogadom** lehetőséget a folytatáshoz. A Microsoft által az Apple-nek küldött adatokat az [Intune által az Apple](~/protect/data-intune-sends-to-apple.md)-nek küldött adatokat áttekintve tekintheti meg.
 
 6. Amikor elkészült, válassza a **Létrehozás** gombot.
 

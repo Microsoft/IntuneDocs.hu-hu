@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 11b93d41ac09f637d6c75a3f2f4b7f4213cecec7
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: b68ec61496c3c15acc8facc22a6fdfe3c65f06eb
+ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74819767"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75547870"
 ---
 # <a name="intune-enrollment-method-capabilities-for-windows-devices"></a>Intune regisztrációs módszer képességei Windows-eszközökhöz
 [!INCLUDE[azure_portal](../includes/azure_portal.md)]
@@ -30,7 +30,7 @@ ms.locfileid: "74819767"
 Több módszer is van a munkaerő eszközeinek Intune-ban való regisztrálására. Minden módszer eltérő ajánlott eljárásokkal és funkciókkal bír, ahogyan a lenti tábla mutatja.
 
 ## <a name="best-practices-by-enrollment-method"></a>Ajánlott eljárások regisztrációs módszer szerint
-| **Gyakorlati tanácsok** | **[Azure AD-hez csatlakoztatva](windows-enroll.md#enable-windows-10-automatic-enrollment)**|**[Azure AD-hez csatlakozott az Autopilot (felhasználói vezérelt mód)](enrollment-autopilot.md)** |**[Az Azure AD-hez csatlakozott az Autopilot (saját üzembe helyezési mód)](enrollment-autopilot.md)** |**[Tömeges](windows-bulk-enroll.md)**|**[DEM](device-enrollment-manager-enroll.md)** | **[BYOD](device-enrollment.md#bring-your-own-device)** | **[CSOPORTHÁZIREND-objektum](https://docs.microsoft.com/windows/client-management/mdm/enroll-a-windows-10-device-automatically-using-group-policy)** | **[Közös felügyelet](https://docs.microsoft.com/sccm/core/clients/manage/co-management-overview)** |
+| **Gyakorlati tanácsok** | **[Azure AD-hez csatlakoztatva](windows-enroll.md#enable-windows-10-automatic-enrollment)**|**[Azure AD-hez csatlakozott az Autopilot (felhasználói vezérelt mód)](enrollment-autopilot.md)** |**[Az Azure AD-hez csatlakozott az Autopilot (saját üzembe helyezési mód)](enrollment-autopilot.md)** |**[Tömeges](windows-bulk-enroll.md)**|**[DEM](device-enrollment-manager-enroll.md)** | **[BYOD](device-enrollment.md#bring-your-own-device)** | **[CSOPORTHÁZIREND-objektum](https://docs.microsoft.com/windows/client-management/mdm/enroll-a-windows-10-device-automatically-using-group-policy)** | **[Közös felügyelet](https://docs.microsoft.com/configmgr/core/clients/manage/co-management-overview)** |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |Az EDU-ban gyakran használt|![X](./media/enrollment-method-capab/xmark.png)|![Pipa](./media/enrollment-method-capab/checkmark.png)|![X](./media/enrollment-method-capab/xmark.png)|![Pipa](./media/enrollment-method-capab/checkmark.png)|![Pipa](./media/enrollment-method-capab/checkmark.png)|![X](./media/enrollment-method-capab/xmark.png)|![X](./media/enrollment-method-capab/xmark.png)|![X](./media/enrollment-method-capab/xmark.png)|
 |Az eszközök megosztott eszközként használhatók|![X](./media/enrollment-method-capab/xmark.png)|![X](./media/enrollment-method-capab/xmark.png)|![Pipa](./media/enrollment-method-capab/checkmark.png)|![Pipa](./media/enrollment-method-capab/checkmark.png)|![Pipa](./media/enrollment-method-capab/checkmark.png)|![X](./media/enrollment-method-capab/xmark.png)|![X](./media/enrollment-method-capab/xmark.png)|![X](./media/enrollment-method-capab/xmark.png)|
@@ -39,7 +39,7 @@ Több módszer is van a munkaerő eszközeinek Intune-ban való regisztrálásá
 
 ## <a name="capabilities-by-enrollment-method"></a>Funkciók regisztrációs módszer szerint
 
-| **Funkciók** | **[Azure AD-hez csatlakoztatva](windows-enroll.md#enable-windows-10-automatic-enrollment)**|**[Azure AD-hez csatlakozott az Autopilot (felhasználói vezérelt mód)](enrollment-autopilot.md)** |**[Az Azure AD-hez csatlakozott az Autopilot (saját üzembe helyezési mód)](enrollment-autopilot.md)** |**[Tömeges](windows-bulk-enroll.md)**|**[DEM](device-enrollment-manager-enroll.md)** | **[BYOD](device-enrollment.md#bring-your-own-device)** | **[CSOPORTHÁZIREND-objektum](https://docs.microsoft.com/windows/client-management/mdm/enroll-a-windows-10-device-automatically-using-group-policy)** | **[Közös felügyelet](https://docs.microsoft.com/sccm/core/clients/manage/co-management-overview)** |
+| **Funkciók** | **[Azure AD-hez csatlakoztatva](windows-enroll.md#enable-windows-10-automatic-enrollment)**|**[Azure AD-hez csatlakozott az Autopilot (felhasználói vezérelt mód)](enrollment-autopilot.md)** |**[Az Azure AD-hez csatlakozott az Autopilot (saját üzembe helyezési mód)](enrollment-autopilot.md)** |**[Tömeges](windows-bulk-enroll.md)**|**[DEM](device-enrollment-manager-enroll.md)** | **[BYOD](device-enrollment.md#bring-your-own-device)** | **[CSOPORTHÁZIREND-objektum](https://docs.microsoft.com/windows/client-management/mdm/enroll-a-windows-10-device-automatically-using-group-policy)** | **[Közös felügyelet](https://docs.microsoft.com/configmgr/core/clients/manage/co-management-overview)** |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |Conditional Access                                      |![Pipa](./media/enrollment-method-capab/checkmark.png)|![Pipa](./media/enrollment-method-capab/checkmark.png)|![Pipa](./media/enrollment-method-capab/checkmark.png)|![X](./media/enrollment-method-capab/xmark.png)|![Pipa](./media/enrollment-method-capab/checkmark.png)\*\*|![Pipa](./media/enrollment-method-capab/checkmark.png)|![Pipa](./media/enrollment-method-capab/checkmark.png)|![Pipa](./media/enrollment-method-capab/checkmark.png)|
 |A felhasználó az eszközhöz van rendelve                    |![Pipa](./media/enrollment-method-capab/checkmark.png)|![Pipa](./media/enrollment-method-capab/checkmark.png)|![X](./media/enrollment-method-capab/xmark.png)|![X](./media/enrollment-method-capab/xmark.png)|![X](./media/enrollment-method-capab/xmark.png)|![Pipa](./media/enrollment-method-capab/checkmark.png)|![Pipa](./media/enrollment-method-capab/checkmark.png)|![Pipa](./media/enrollment-method-capab/checkmark.png)|

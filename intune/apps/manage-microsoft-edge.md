@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e4761e2565402b4c3cdc993ff89cbedea8273609
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 304a6a60ea8dbfa98e62eb8e52a69e14af795746
+ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74563895"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75548014"
 ---
 # <a name="manage-web-access-by-using-microsoft-edge-with-microsoft-intune"></a>Webes elérés kezelése a Microsoft Edge és a Microsoft Intune használatával
 
@@ -199,6 +199,14 @@ Ezután használja a következő kulcs/érték párokat a szervezetek arculatán
 |    com. microsoft. Intune. Mam. managedbrowser. NewTabPage. BrandLogo    |    Igaz    |
 |    com. microsoft. Intune. Mam. managedbrowser. NewTabPage. BrandColor    |    Igaz    |
 
+## <a name="display-relevant-industry-news-on-new-tab-pages"></a>Releváns iparági Hírek megjelenítése az új lapokon
+
+A Microsoft Edge Mobile szolgáltatásban az új lap felületét az iparági Hírek megjelenítéséhez is beállíthatja, amely a szervezet számára fontos. Ha engedélyezi ezt a funkciót, a Microosft Edge Mobile a szervezet tartománynevét használja a webes Hírek összesítésére a szervezete, a szervezet iparága és a comeptitors számára, így a felhasználók a megfelelő külső híreket is megtalálják a centeralized új Lap lapjai a Microsoft Edge-ben. Az iparági Hírek alapértelmezés szerint ki vannak kapcsolva, és a segítségével a szervezet számára engedélyezhető. 
+
+|    Kulcs    |    Érték    |
+|------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+|    "com. microsoft. Intune. SohwIndustryNews"    |    Az **igaz** érték jelenik meg az iparági hírekben a Microsoft Edge Mobile új lapján.<p>A **false** (alapértelmezett) értékkel elrejtheti az iparági híreket az új lap lapról.    |
+
 ## <a name="configure-managed-bookmarks-for-microsoft-edge"></a>Felügyelt könyvjelzők konfigurálása a Microsoft Edge-hez
 
 A könnyű hozzáférés érdekében beállíthatja, hogy a felhasználók a Microsoft Edge használatakor milyen könyvjelzőket adjanak elérhetővé. 
@@ -268,7 +276,7 @@ Az engedélyezett/letiltott webhelyek listája a különböző URL-címek haszn�
   - `http://www.contoso.com:*`
   - `http://www.contoso.com: /*`
 
-## <a name="define-behavior-when-users-try-to-access-a-blocked-site"></a>Viselkedés meghatározása, amikor a felhasználók megpróbálnak hozzáférni egy letiltott helyhez
+## <a name="transition-users-to-their-personal-context-when-trying-to-access-a-blocked-site"></a>Felhasználók átváltása a személyes környezetbe egy letiltott hely elérésére tett kísérlet során
 
 A Microsoft Edge-be épített kettős identitású modellel rugalmasabb felhasználói élményt biztosíthat a végfelhasználók számára, mint amennyire a Intune Managed Browser. Ha a felhasználók egy letiltott helyet észlelnek a Microsoft Edge-ben, a munkakörnyezetük helyett megkérheti, hogy nyissa meg a hivatkozást a személyes környezetében. Ez lehetővé teszi számukra, hogy védve maradjanak, miközben a vállalati erőforrások biztonságban maradhatnak. Ha például egy felhasználó az Outlookon keresztül egy újságcikkre mutató hivatkozást kap, akkor a hivatkozást a személyes kontextusban vagy egy InPrivate lapon nyithatja meg. A munkahelyi környezet nem teszi lehetővé a hírek webhelyeinek használatát. Alapértelmezés szerint ezek a váltások engedélyezettek.
 
@@ -276,7 +284,16 @@ A következő kulcs/érték párokkal konfigurálhatja, hogy engedélyezettek-e 
 
 |    Kulcs    |    Érték    |
 |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    "com. microsoft. Intune. Mam. managedbrowser. openInPrivateIfBlock"    |    Az **igaz** érték esetén a korlátozott hivatkozások közvetlenül az InPrivate-böngészésben nyílnak meg.<p>**False** (alapértelmezett): a felhasználók dönthetnek úgy, hogy egy korlátozott hivatkozást nyitnak meg InPrivate-böngészéssel vagy személyes (MSA-) fiókkal.    |
+
+## <a name="open-restricted-links-directly-in-inprivate-tab-pages"></a>A korlátozott hivatkozások közvetlen megnyitása InPrivate-lapokon
+
+Beállíthatja, hogy a korlátozott hivatkozások közvetlenül az InPrivate-böngészésben legyenek megnyitva, ami zökkenőmentes böngészést biztosít a felhasználóknak. Ezzel a lépéssel megtakaríthatja a felhasználókat, hogy áttérjenek a személyes környezetre a hely megtekintéséhez. A InPrivate-böngészés nem felügyelt, így a felhasználók nem fognak tudni hozzáférni InPrivate-böngészési mód használata esetén. 
+
+|    Kulcs    |    Érték    |
+|----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    `com.microsoft.intune.mam.managedbrowser.AllowTransitionOnBlock`    |    A **true** értékkel engedélyezheti a Microsoft Edge számára a felhasználók személyes környezetbe való átváltását a blokkolt helyek megnyitására.<p>A **Letiltás** megakadályozza a Microsoft Edge számára a felhasználók átváltását. A felhasználók egyszerűen megjelenítenek egy üzenetet arról, hogy az elérni kívánt hely le van tiltva.    |
+
 
 ## <a name="use-microsoft-edge-on-ios-to-access-managed-app-logs"></a>A Microsoft Edge használata iOS rendszeren a felügyelt alkalmazások naplóihoz való hozzáféréshez 
 

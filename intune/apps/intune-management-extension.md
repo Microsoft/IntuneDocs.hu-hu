@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cef30238a4470395ccf58cf4d0619db78dd85b5a
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 3da8e89679f974c7d91cf19ae37365f75217d153
+ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74563464"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75548027"
 ---
 # <a name="use-powershell-scripts-on-windows-10-devices-in-intune"></a>PowerShell-parancsfájlok használata Windows 10-es eszközökön az Intune-ban
 
@@ -64,9 +64,9 @@ Az Intune felügyeleti bővítmény a következő előfeltételekkel rendelkezik
 
   - Configuration Manager és Intune-t használó közösen felügyelt eszközök. Győződjön meg arról, hogy az **alkalmazások** számítási feladatai az Intune vagy az **Intune** **kipróbálására** vannak beállítva. A következő cikkekben talál útmutatást: 
   
-    - [A közös felügyelet ismertetése](https://docs.microsoft.com/sccm/comanage/overview) 
-    - [Ügyfélalkalmazások munkaterhelése](https://docs.microsoft.com/sccm/comanage/workloads#client-apps)
-    - [Configuration Manager számításai feladatainak átvitele az Intune-ba](https://docs.microsoft.com/sccm/comanage/how-to-switch-workloads)
+    - [A közös felügyelet ismertetése](https://docs.microsoft.com/configmgr/comanage/overview) 
+    - [Ügyfélalkalmazások munkaterhelése](https://docs.microsoft.com/configmgr/comanage/workloads#client-apps)
+    - [Configuration Manager számítási feladatok Intune-ba való váltásának módja](https://docs.microsoft.com/configmgr/comanage/how-to-switch-workloads)
   
 > [!TIP]
 > Győződjön meg arról, hogy az eszközök [csatlakoznak](https://docs.microsoft.com/azure/active-directory/user-help/user-help-join-device-on-network) az Azure ad-hez. Azok az eszközök, amelyek csak az Azure AD-ben vannak [regisztrálva](https://docs.microsoft.com/azure/active-directory/user-help/user-help-register-device-on-network) , nem kapják meg a parancsfájlokat.
@@ -134,7 +134,7 @@ A **PowerShell-parancsfájlok** panelen válassza ki a megfigyelendő parancsfá
 
 ## <a name="intune-management-extension-logs"></a>Intune felügyeleti bővítmény naplófájljai
 
-Az ügyfélgépen lévő ügynökök naplói jellemzően `\ProgramData\Microsoft\IntuneManagementExtension\Logs`. A naplófájlok megtekintéséhez használhatja a [CMTrace. exe](https://docs.microsoft.com/sccm/core/support/tools) fájlt. 
+Az ügyfélgépen lévő ügynökök naplói jellemzően `\ProgramData\Microsoft\IntuneManagementExtension\Logs`. A naplófájlok megtekintéséhez használhatja a [CMTrace. exe](https://docs.microsoft.com/configmgr/core/support/cmtrace) fájlt.
 
 ![Képernyőkép vagy minta cmtrace-ügynök naplói Microsoft Intune](./media/apps-win32-app-management/apps-win32-app-10.png)  
 
@@ -142,7 +142,7 @@ Az ügyfélgépen lévő ügynökök naplói jellemzően `\ProgramData\Microsoft
 
 A **PowerShell-parancsfájlok** panelen kattintson a jobb gombbal a parancsfájlra, és válassza a **Törlés** lehetőséget.
 
-## <a name="common-issues-and-resolutions"></a>A leggyakoribb problémák és megoldásaik
+## <a name="common-issues-and-resolutions"></a>Gyakori problémák és megoldásaik
 
 ### <a name="issue-intune-management-extension-doesnt-download"></a>Probléma: az Intune felügyeleti bővítmény nem tölthető le
 

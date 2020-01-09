@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 46012b11cdb458243658e858b53c2dfb1a69dc88
-ms.sourcegitcommit: df8e2c052fafb2d5d4e9b4fcd831ae0ecf7f8d16
+ms.openlocfilehash: 622c09d03507a3a47433eab5b21702a656f8bffb
+ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74991804"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75547512"
 ---
 # <a name="troubleshoot-windows-device-enrollment-problems-in-microsoft-intune"></a>A Windows-eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune
 
@@ -40,7 +40,7 @@ Gyűjtse össze a következő információkat a problémával kapcsolatban:
 - Milyen platformon (Android, iOS, Windows) van probléma?
 - Hány felhasználót érint a rendszer? Az összes érintett felhasználó vagy csak néhány?
 - Hány eszközt érint a rendszer? Minden eszköz érintett vagy csak néhány?
-- Mi a MDM-szolgáltató? Ha System Center Configuration Manager, a Configuration Manager milyen verzióját használja?
+- Mi a MDM-szolgáltató? Ha a Microsoft Endpoint Configuration Manager, a Configuration Manager milyen verzióját használja?
 - Hogyan történik a beléptetés? A "saját eszközök használata" (BYOD) vagy Apple Készülékregisztrációs program (DEP) beléptetési profilokkal?
 
 ## <a name="error-messages"></a>Hibaüzenetek
@@ -213,7 +213,7 @@ A probléma megoldásához az Intune-nal és a Configuration Managertel rendelke
 1. Nyissa meg a Configuration Manager-konzolt.    
 2. Válassza az **Adminisztráció**, majd a **Cloud Services**lehetőséget.    
 3. Kattintson a jobb gombbal **Microsoft Intune előfizetésre**, majd válassza a **platformok konfigurálása > Windows**lehetőséget.    
-4. Jelölje be a **Windows-regisztráció engedélyezése** > **ok** > **gombra**.  
+4. Jelölje be a **Windows-regisztráció engedélyezése** ** >  > ** **OK gombra**.  
 
 
 ### <a name="a-setup-failure-has-occurred-during-bulk-enrollment"></a>Telepítési hiba történt a csoportos regisztráció során.
@@ -389,4 +389,4 @@ Ezt a problémát általában a Windows Autopilot-eszközöket létrehozó szerv
 - [A Microsoft Intune támogatási csapatának blogja](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/bg-p/IntuneCustomerSuccess)
 - [A Microsoft nagyvállalati mobilitási és biztonsági blogjának beolvasása](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Announcing-the-public-preview-of-Azure-AD-group-based-license/ba-p/245210)
 - [Támogatás kérése Microsoft Intune](../fundamentals/get-support.md)
-- [Közös felügyelettel kapcsolatos regisztrálási hibák keresése](https://docs.microsoft.com/sccm/comanage/how-to-monitor#enrollment-errors)
+- [Közös felügyelettel kapcsolatos regisztrálási hibák keresése](https://docs.microsoft.com/configmgr/comanage/how-to-monitor#enrollment-errors)

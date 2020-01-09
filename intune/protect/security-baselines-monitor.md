@@ -16,12 +16,12 @@ ms.reviewer: shpate
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b7f14e939e7241cd34c01d73e9af822dea7acdc
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: cbf82c0bef88e4a6d0e790f4b0ecdf73d2731d5d
+ms.sourcegitcommit: 9bb1bcd9f1bdd53b470073da956bbd8b0935dfbc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74410137"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75556402"
 ---
 # <a name="monitor-security-baseline-and-profiles-in-microsoft-intune"></a>Biztonsági alapkonfiguráció és profilok figyelése Microsoft Intune
 
@@ -42,11 +42,15 @@ Az **Áttekintés** panel két módszert biztosít az állapot figyelésére:
 - **Device View (eszköz nézet** ) – összefoglalás arról, hogy hány eszköz szerepel az alapkonfigurációban az egyes állapotok kategóriájában.
 - **Kategóriánként** – egy nézet, amely megjeleníti az alapkonfiguráció egyes kategóriáit, és az egyes alapértékekhez tartozó egyes állapotüzenetek esetében az eszközök százalékos arányát tartalmazza.
 
-Minden eszközt a következő állapotok egyike képvisel, amelyek az *eszköz* nézetben és a *kategóriánkénti* nézetekben is szerepelnek:
+Minden eszközt a következő állapotok egyike képvisel (az *eszköz* nézetben és a *kategóriánkénti* nézetekben is használatos):
 
 - Alapértékek – az alapkonfigurációban lévő összes **beállítás megegyezik az** ajánlott beállításokkal.
-- **Nem felel** meg az alapkonfigurációnak – az alapterv legalább egy beállítása nem felel meg az ajánlott beállításoknak.
-- **Helytelenül konfigurált – legalább** egy beállítás nincs megfelelően konfigurálva. Ez az állapot azt jelenti, hogy a beállítás ütközés, hiba vagy függő állapotú.
+- **Nem felel** meg az alapkonfigurációnak – az alapterv legalább egy beállítása nem felel meg az ajánlott beállításnak.
+
+  > [!NOTE]
+  > Amikor létrehoz vagy szerkeszt egy alapkonfigurációt, az alapértelmezett értékre vagy konfigurációs beállításra végrehajtott módosítások miatt a "nem felel meg az alapterv" állapotnak. Ha segítségre van szükség a módosított beállítások meghatározásához, forduljon a Microsoft ügyfélszolgálatahoz. 
+
+- **Helytelenül konfigurált – legalább** egy beállítás nincs megfelelően konfigurálva. Ez az állapot azt jelenti, hogy a beállítás ütközés, hiba vagy függő állapotban van.
 - **Nem alkalmazható** – legalább egy beállítás nem alkalmazható, és nincs alkalmazva.
 
 ### <a name="device-view"></a>Eszköz nézet
