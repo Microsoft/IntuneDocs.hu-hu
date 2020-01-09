@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 10/16/2019
+ms.date: 01/06/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bd02e2b7f9582308109d1e6986d7e6a8014e5af7
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 3399cf006543c0a3554c4c6ec812554462d74231
+ms.sourcegitcommit: a66b5916eaab9cb537e483064efc584a6a63a390
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72585892"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75691819"
 ---
 # <a name="guided-scenario---secure-microsoft-office-mobile-apps"></a>Interaktív forgatókönyv – biztonságos Microsoft Office Mobile apps 
 
@@ -46,7 +46,7 @@ Az Office Mobile apps és a Microsoft Edge for Mobile is támogatja a kettős id
 Az [Intune app Protection-házirendek](~/apps/app-protection-policy.md) segítenek a munkahelyi fájlok védelmében az Intune-ban regisztrált eszközökön. Az alkalmazásvédelmi szabályzatokat emellett a munkatársak tulajdonában álló, az Intune-ban felügyeletre nem regisztrált eszközökön is alkalmazhatja. Ebben az esetben annak ellenére, hogy a vállalat nem felügyeli az eszközt, továbbra is meg kell győződnie arról, hogy a munkahelyi fájlok és erőforrások védve vannak.
 
 Az alkalmazás-védelmi házirendek használatával megakadályozhatja, hogy a felhasználók a nem védett helyekről mentsenek munkahelyi fájlokat. Emellett korlátozható a más, alkalmazásvédelmi szabályzatokkal nem védett alkalmazásokba irányuló adattovábbítás. Íme néhány az alkalmazásvédelmi szabályzatok beállításai közül:
-- Adatáthelyezési szabályzatok, például a Mentés másként művelet letiltása és a Kivágás, másolás és beillesztés korlátozása.
+- Adatáthelyezési szabályzatok, például **a szervezeti adatpéldányok mentése**, valamint a **Kivágás, másolás és beillesztés korlátozása**.
 - Hozzáférési házirend-beállítások az egyszerű PIN-kód megkövetelése a hozzáféréshez, valamint a felügyelt alkalmazások futtatásának letiltása a feltört vagy feltört eszközökön.
 
 Az alkalmazásalapú feltételes hozzáférés és az ügyfélalkalmazás-felügyelet egy további biztonsági réteget jelent, mivel gondoskodik róla, hogy csak az Intune alkalmazásvédelmi szabályzatait támogató mobilalkalmazások férhessenek hozzá az Exchange Online-hoz és más Office 365-szolgáltatásokhoz.
@@ -112,7 +112,7 @@ Ebben a lépésben konfigurálnia kell a vállalati fájlok és e-mailek ezen al
 | A hozzáférési követelmények ismételt ellenőrzési művelete (perc inaktivitás után) | Ha a házirend által felügyelt alkalmazás a megadott ennyi percnél hosszabb ideig inaktív, az alkalmazás kérni fogja a hozzáférési követelményeket (azaz PIN-kód, feltételes indítási beállítások) az alkalmazás elindítása után az ismételt vizsgálathoz. | 30 |
 | Szervezeti adattárolók nyomtatása | Ha le van tiltva, az alkalmazás nem tudja kinyomtatni a védett adatforrásokat. | Letiltás |
 | Szabályzat által felügyelt alkalmazások hivatkozásainak megnyitása nem felügyelt böngészőkben | Ha le van tiltva, a szabályzattal felügyelt alkalmazás hivatkozásait felügyelt böngészővel kell megnyitni. | Letiltás |
-| Az Adatmásolás nem felügyelt alkalmazásokba | Ha le van tiltva, a felügyelt alkalmazások továbbra is a felügyelt alkalmazásokban maradnak. | Engedélyezés |
+| Az Adatmásolás nem felügyelt alkalmazásokba | Ha le van tiltva, a felügyelt alkalmazások továbbra is a felügyelt alkalmazásokban maradnak. | Engedélyezett |
 
 ## <a name="step-5---assignments"></a>5\. lépés – hozzárendelések
 

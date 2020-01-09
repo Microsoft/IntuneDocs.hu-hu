@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/26/2019
+ms.date: 01/06/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, get-started, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1b712922824fa9d54f33fb43114e852fbeb52a81
-ms.sourcegitcommit: 7cc45ef52dda08479bc6bdff7d11d2f6c0e7b93b
+ms.openlocfilehash: f11ccb51e08e96595dfcb9118c1f479f1b0fc3de
+ms.sourcegitcommit: a66b5916eaab9cb537e483064efc584a6a63a390
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74899432"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75692121"
 ---
 # <a name="app-protection-policies-overview"></a>Alkalmazásvédelmi szabályzatok áttekintése
 
@@ -62,7 +62,7 @@ Az alkalmazás-védelmi szabályzatok használatának fontos előnyei a követke
 
 - **Nem érinti a végfelhasználói hatékonyságot, és a szabályzatok nem érvényesek, ha személyes környezetben használják az alkalmazást.** A szabályzatok kizárólag munkahelyi környezetben vannak alkalmazva, így a vállalati adatok védelmét a személyes adatok érintése nélkül biztosíthatja.
 
-- **Az alkalmazás-védelmi szabályzatok gondoskodnak arról, hogy az alkalmazás-réteg védelme érvényben legyen.** Lehetősége van például a következőkre:
+- **Az alkalmazás-védelmi szabályzatok gondoskodnak arról, hogy az alkalmazás-réteg védelme érvényben legyen.** Lehetőség van például a következőkre:
   - PIN-kódot kérhet egy alkalmazás vállalati környezetben való megnyitásához 
   - Szabályozhatja az adatok megosztását az alkalmazások között 
   - Megakadályozhatja az alkalmazásadatok személyes tárhelyre való mentését
@@ -95,7 +95,7 @@ A korlátozások nélkül használt alkalmazások miatt összekeveredhetnek a v�
 ### <a name="data-protection-with-app-protection-policies-app"></a>Adatvédelem az App Protection-szabályzatokkal (alkalmazás)
 
 Az alkalmazás-védelmi házirendek használatával megakadályozhatja a vállalati adatok mentését az eszköz helyi tárolójába (lásd az alábbi ábrát). Emellett korlátozható a más, alkalmazásvédelmi szabályzatokkal nem védett alkalmazásokba irányuló adattovábbítás. Íme néhány az alkalmazásvédelmi szabályzatok beállításai közül:
-- Adatáthelyezési szabályzatok, például **a Mentés másként művelet letiltása**és a **Kivágás, másolás és beillesztés korlátozása**.
+- Adatáthelyezési szabályzatok, például **a szervezeti adatpéldányok mentése**, valamint a **Kivágás, másolás és beillesztés korlátozása**.
 - A hozzáférési szabályzat beállításai, például **Egyszerű PIN-kód megkövetelése a hozzáféréshez** és **A felügyelt alkalmazások futásának letiltása a függetlenített vagy feltört eszközökön**.
 
 ![A szabályzatok által védett vállalati adatok megjelenítését bemutató fogalmi rendszerkép](./media/app-protection-policy/apps-with-protection-policies.png)
@@ -169,7 +169,7 @@ A [Word, Excel és PowerPoint](https://products.office.com/business/office) alka
 
 - A végfelhasználónak rendelkeznie kell az Azure Active Directory-fiókjához rendelt [Office 365 Vállalati vagy Nagyvállalati verzió](https://products.office.com/business/compare-more-office-365-for-business-plans) licencével. Az előfizetésnek tartalmaznia kell a mobileszközökön használt Office-alkalmazásokat, és egy felhőalapú társzolgáltatás-fiókot is tartalmazhat a [OneDrive Vállalati verzióban](https://onedrive.live.com/about/business/). Az Office 365-licenceket a [Microsoft 365 felügyeleti központban](https://admin.microsoft.com) lehet hozzárendelni, ezeket az [utasításokat](https://support.office.com/article/Assign-or-remove-licenses-for-Office-365-for-business-997596b5-4173-4627-b915-36abac6786dc)követve.
 
-- A végfelhasználónak egy olyan felügyelt hellyel kell rendelkeznie, amelyet a részletes mentés másként funkcióval konfiguráltak „A Mentés másként művelet letiltása” alkalmazásvédelmi szabályzatbeállítás alatt. Ha például a felügyelt hely a OneDrive, a [OneDrive](https://onedrive.live.com/about/) alkalmazást konfigurálni kell a felhasználó Word, Excel és PowerPoint alkalmazásában.
+- A végfelhasználónak rendelkeznie kell egy felügyelt hellyel, amely a részletes Mentés másként funkció használatával van konfigurálva a "szervezet adatai másolatának mentése" alkalmazás-védelmi házirend-beállításban. Ha például a felügyelt hely a OneDrive, a [OneDrive](https://onedrive.live.com/about/) alkalmazást konfigurálni kell a felhasználó Word, Excel és PowerPoint alkalmazásában.
 
 - Ha a felügyelt hely a OneDrive, a végfelhasználóra életbe léptetett alkalmazásvédelmi szabályzatnak társítva kell lennie a OneDrive alkalmazással.
 
@@ -300,7 +300,7 @@ Az Intune alkalmazásvédelmi szabályzatai csak az Intune licencelt felhasznál
 Ennek a folyamatnak a célja, hogy az alkalmazás szintjén biztonságosan és védelemmel lássa el a szervezet adatait az alkalmazáson belül. Ez a funkció csak az iOS-ben érhető el, és a működéséhez szükséges az alkalmazások integrálása az Intune APP SDK for iOS 9.0.1-es vagy újabb verziójával. Az SDK-integráció szükséges a viselkedés kényszeríthetőségéhez a megcélzott alkalmazásoknál. Ez az integráció fokozatosan történik, és az egyes alkalmazáscsapatoktól függ. Néhány alkalmazás, amely ezek között szerepelhet: WXP, Outlook, Managed Browser és Yammer.
   
 ### <a name="ios-share-extension"></a>iOS-megosztási bővítmény
-Az iOS-megosztási bővítmény használatával megnyithatja a nem felügyelt alkalmazások munkahelyi vagy iskolai szolgáltatásait, még akkor is, ha az adatátviteli szabályzat **csak a felügyelt alkalmazásokra** van beállítva, vagy **nem rendelkezik alkalmazásokkal**. Az Intune alkalmazásvédelmi szabályzata nem tudja kezelni az iOS megosztási bővítményt az eszköz felügyelete nélkül. Ezért az _**Intune titkosítja a „céges” adatokat, mielőtt az alkalmazáson kívül megosztaná**_ . Ezt a titkosítási viselkedést a felügyelt alkalmazáson kívüli "céges" fájl megnyitására tett kísérlettel ellenőrizheti. A fájlnak titkosítottnak kell lennie, így nem nyitható meg a felügyelt alkalmazáson kívül mással.
+Az iOS-megosztási bővítmény használatával megnyithatja a nem felügyelt alkalmazások munkahelyi vagy iskolai szolgáltatásait, még akkor is, ha az adatátviteli szabályzat **csak a felügyelt alkalmazásokra** van beállítva, vagy **nem rendelkezik alkalmazásokkal**. Az Intune alkalmazásvédelmi szabályzata nem tudja kezelni az iOS megosztási bővítményt az eszköz felügyelete nélkül. Ezért az _**Intune titkosítja a „céges” adatokat, mielőtt az alkalmazáson kívül megosztaná**_ . Ezt a titkosítási viselkedést a felügyelt alkalmazáson kívüli "céges" fájl megnyitására tett kísérlettel ellenőrizheti. A fájlnak titkosítottnak kell lennie, így a felügyelt alkalmazáson kívül mással nem nyitható meg.
 
 ### <a name="multiple-intune-app-protection-access-settings-for-same-set-of-apps-and-users"></a>Több Intune app Protection-hozzáférési beállítás ugyanazon alkalmazások és felhasználók számára
 Az Intune app Protection-szabályzatok a hozzáféréshez meghatározott sorrendben lesznek alkalmazva a végfelhasználói eszközökön, amikor egy célzott alkalmazást próbálnak elérni a vállalati fiókból. A törlésnek általában elsőbbsége van, ezt követi a letiltás és a bezárható figyelmeztetés. Például az iOS-verzió frissítésére figyelmeztető minimálisan előírt iOS operációsrendszer-beállítás, ha érvényesíthető az adott felhasználóra/alkalmazásra, csak akkor kerül alkalmazásra, ha már életbe lépett a felhasználó hozzáférését letiltó minimálisan előírt iOS operációsrendszer-beállítás. Így tehát ha az informatikai rendszergazda a minimális iOS operációs rendszert 11.0.0.0-ra, a (csak figyelmeztetési) minimális iOS operációs rendszert 11.1.0.0-ra állította be, az alkalmazás elérését megkísérlő eszköz pedig az iOS 10-et használja, a végfelhasználó a minimális iOS operációsrendszer-verzióra vonatkozó szigorúbb beállítás alapján le lesz tiltva, és nem férhet hozzá az alkalmazáshoz.

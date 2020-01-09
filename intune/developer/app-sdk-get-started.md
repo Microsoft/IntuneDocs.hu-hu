@@ -5,7 +5,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 09/09/2019
+ms.date: 01/02/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: developer
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9742305905c5ba49930e13646bf13d8c248426b6
-ms.sourcegitcommit: 7cc45ef52dda08479bc6bdff7d11d2f6c0e7b93b
+ms.openlocfilehash: 3529a21483d0207dbfe55af914badf3ed895af1a
+ms.sourcegitcommit: a66b5916eaab9cb537e483064efc584a6a63a390
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74899387"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75691872"
 ---
 # <a name="get-started-with-the-microsoft-intune-app-sdk"></a>Bevezetés a Microsoft Intune App SDK használatába
 
@@ -60,7 +60,7 @@ A kérdőívben megadott e-mail-címek egyikén felvesszük Önnel a kapcsolatot
 
 4. Ezenfelül az alkalmazás mélyhivatkozását felvesszük a következő havi Intune-szolgáltatásfrissítésbe is. Ha például a regisztrációs adatokat júliusban töltötte ki, az alkalmazás mélyhivatkozása augusztus közepétől támogatott.
 
-Ha a jövőben változik az alkalmazás mélyhivatkozása, újra kell regisztrálnia az alkalmazást.
+A részletes hivatkozás az alkalmazás a nyilvános alkalmazás-áruházban való listájára mutató hivatkozás. Ha a jövőben változik az alkalmazás mélyhivatkozása, újra kell regisztrálnia az alkalmazást.
 
 > [!NOTE]
 > Ha az alkalmazást az Intune app SDK új verziójával frissíti, tájékoztatnia kell minket.
@@ -183,7 +183,7 @@ Miután regisztrálta az alkalmazást egy Azure-bérlőn belül, és **minden al
 7. Kattintson az **engedélyek hozzáadása**lehetőségre.
 
 > [!NOTE]
-> Ha az alkalmazás korlátozza a bejelentkezést a következő erőforráshoz való hozzáférés hibája miatt: https://intunemam.microsoftonline.com, meg kell küldenie egy megjegyzést, hogy msintuneappsdk@microsoft.com az alkalmazás ügyfél-azonosítójával. Ez egy manuális jóváhagyási folyamat jelenleg.
+> Ha az alkalmazás korlátozza a bejelentkezést az erőforráshoz való hozzáférés során fellépett hiba miatt: https\://intunemam.microsoftonline.com, az alkalmazás ügyfél-azonosítójával msintuneappsdk@microsoft.com megjegyzését kell elküldenie. Ez egy manuális jóváhagyási folyamat jelenleg.
 
 ### <a name="badge-your-app-optional"></a>Az alkalmazás megjelölése jelvénnyel (nem kötelező)
 
