@@ -7,12 +7,12 @@ ms.topic: include
 ms.date: 11/19/2019
 ms.author: erikje
 ms.custom: include file
-ms.openlocfilehash: a6ac1a5435104c1eeae203621179e62aa2b17568
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
-ms.translationtype: HT
+ms.openlocfilehash: e745290991da4d80c7e3839250edbfdd64ef1b7a
+ms.sourcegitcommit: 01c57ac880dcb5f474908977c89810f5bedaf326
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75207288"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75760966"
 ---
 Ezek a hirdetmények olyan fontos információkat tartalmaznak, amelyek segíthetnek a jövőbeli Intune-változások és-funkciók előkészítésében.
 
@@ -55,38 +55,6 @@ Február 2020 20. után ezek az eszközök nem kapják meg a biztonsági frissí
 
 #### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
 Az Intune-jelentéskészítéssel megtekintheti, hogy mely eszközökre vagy felhasználókra van hatással. Lépjen az Eszközök > Minden eszköz menüpontra, és szűrje a találatokat operációs rendszer alapján. További oszlopokat is hozzáadhat, amelyekkel azonosítható, hogy a szervezeten belül kik rendelkeznek a Windows Phone-telefon 8,1 rendszerű eszközökkel. Kérje meg, hogy a végfelhasználók a támogatott operációsrendszer-verzióra frissítse eszközeit.
-
-### <a name="update-your-intune-outlook-app-protection-policies-app--2576686--"></a>Az Intune Outlook app Protection-szabályzatok (alkalmazás) frissítése<!--2576686-->
-Előfordulhat, hogy beavatkozást kell végrehajtania, ha MC195618 kapott az üzenetközpont számára. A Microsoft 365-ütemtervben megosztott azonosítók: a 56325 és a 56326, az Intune és az iOS és az Android rendszerhez készült Outlook a bizalmas adatoknak a mail-értesítésekben és a naptári emlékeztetők alapján történő korlátozását támogatja. Ezeknek a frissítéseknek az eredményeképpen az iOS és az Android rendszerhez készült Outlook számos adatvédelmi alkalmazás-konfigurációs kulcs támogatását eltávolítja, amelyet jelenleg az értesítések kezelésére használ.
-
-#### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
-Noha az új funkciók nem voltak elérhetők, a következő alkalmazás-konfigurációs kulcsok nem fognak működni az iOS és az Android rendszerhez készült Outlookban:
-- com. microsoft. Outlook. mail. NotificationsEnabled
-- com. microsoft. Outlook. mail. NotificationsEnabled. UserChangeAllowed
-- com. microsoft. Outlook. Calendar. NotificationsEnabled
-- com. microsoft. Outlook. Calendar. NotificationsEnabled. UserChangeAllowed
-
-#### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
-Javasoljuk, hogy az új funkció előkészítéséhez konfigurálja az "org-adatértesítések" értéket a "szervezeti adatblokkok" értékkel rendelkező Intune App Protection szabályzat-adatvédelmi beállításban. Az iOS és az Android rendszerhez készült Outlook december 16 2019-án kezdődően a "szervezeti adatértesítések" adatvédelmi beállítást is tiszteletben tartja, és már nem támogatja a fent említett kulcsokat. Az új beállítás konfigurálása lehetővé teszi, hogy a bizalmas adatok ne legyenek kiszivárgott, ha a fenti konfigurációs kulcsok már nem támogatottak. Emellett az Outlook további részletességet biztosít, ha az "org-adatértesítések" adatvédelmi beállítás "szervezeti adatokat blokkol" értékre van állítva egy további alkalmazás-konfigurációs beállítással, a "Calendar Notifications". Az alkalmazás-védelmi házirend-beállítás és az alkalmazás konfigurációs beállításának kombinációja korlátozza a bizalmas adatokat a levelek értesítéseiben, miközben bizalmas adatokat helyez el a naptári értesítésekben, így a felhasználók megkaphatják az értekezleteket gyorsan megtalálhatja az értesítési vagy az értesítési központot.
-
-#### <a name="additional-information"></a>További információ
-Az Alkalmazásbeállítások és az Outlook beállításairól további információt a következő témakörben talál:
-- [App Protection házirend-beállítások, Android](../apps/app-protection-policy-settings-android.md)
-- [App Protection házirend-beállítások, iOS](../apps/app-protection-policy-settings-ios.md)
-- [Az Outlook telepítése az iOS-és Android-alkalmazásokhoz – konfigurációs beállítások](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune)
-
-
-### <a name="intune-plan-for-change-windows-10-version-1703-company-portal-moving-out-of-support--5026679--"></a>Az Intune terve a változáshoz: a Windows 10 1703-es verziójának támogatása Céges portál<!--5026679-->
-A Windows 10 1703-es verziója (más néven Windows 10, RS2) a 2019-es verzión kívülről a nagyvállalati és az EDU-kiadások esetében kikerült a szolgáltatásból. Az Intune a RS2/RS1 megfelelő Céges portál alkalmazásának támogatását a 2019. december 26-án kezdődően teszi lehetővé.
-
-#### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
-A továbbiakban nem jelenik meg új funkciók a Céges portál alkalmazás adott verziójában, de továbbra is támogatjuk a Céges portál alkalmazás ezen verzióját 2019-ig, beleértve a Céges portál alkalmazás biztonsági frissítéseit is. szükséges. Mivel azonban a Windows 10 1703-es verziója nem kap semmilyen biztonsági frissítést, ha a szolgáltatás kikerül a karbantartásból, javasoljuk, hogy frissítse Windows-eszközeit egy újabb Windows-verzióra, és győződjön meg arról, hogy a legújabb Céges portál alkalmazást használja, hogy továbbra is megkapja új funkciók és további funkciók.
-
-#### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
-A végrehajtott lépések a környezet konfigurációjától függenek. Általánosságban azonban érdemes megállapítani azokat az eszközöket, amelyek az operációs rendszer és/vagy a Céges portál régebbi verzióját használják az eszközön, és frissítik. Windows 10-es frissítési körök beállításához jelentkezzen be az Intune-> szoftverfrissítések – Windows 10 frissítési körökbe. A Céges portál legújabb verziója a 10.3.5601.0 verzió. A jövőbeli kiadásokkal naprakész maradhat a felhasználóktól, hogy beszerezze a Microsoft Store. Az Intune-nal is telepítheti a legújabb Windows-eszközökön a [Microsoft Store for Business](https://docs.microsoft.com/intune/windows-store-for-business)használatával.
-
-#### <a name="additional-information"></a>További információ
-[A Windows 10-es céges portál alkalmazás manuális hozzáadása a Microsoft Intune-nal](https://docs.microsoft.com/intune/store-apps-company-portal-app)
 
 
 ### <a name="take-action-use-microsoft-edge-for-your-protected-intune-browser-experience--5728447--"></a>Művelet: a Microsoft Edge használata a védett Intune-böngésző felhasználói felületén<!--5728447-->

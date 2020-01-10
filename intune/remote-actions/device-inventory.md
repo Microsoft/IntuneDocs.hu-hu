@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 94c38aaf28440511720280a3c5a1ebda5b9f2ab1
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: ce3f73834ffdc2648dae345f8fa2a8233d2bb8c9
+ms.sourcegitcommit: e7052114324b80d0503b107c934bb90b8eb29704
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74819780"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75756017"
 ---
 # <a name="see-device-details-in-intune"></a>Eszközadatok megtekintése az Intune-ban
 
@@ -94,6 +94,9 @@ Az eszközök által használt szolgáltatótól függően az összes adat gyűj
 |Titkosítva|Ha **Igen**, akkor az eszközön tárolt adatok titkosítva vannak.|Windows, iOS, Android|
 
 a \* nem érhető el az Androidban a Google Policy Managerrel, például a teljes körűen felügyelt és a dedikált eszközökkel
+
+> [!Note]  
+> A telefonszám nem leltározott az Android Enterprise dedikált vagy teljes mértékben felügyelt eszközökön.
 
 ## <a name="next-steps"></a>További lépések
 Ismerje meg az Intune-beli [eszközkezelés](device-management.md) további funkcióit.
