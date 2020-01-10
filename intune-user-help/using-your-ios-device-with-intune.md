@@ -18,13 +18,13 @@ ROBOTS: ''
 ms.reviewer: esmich
 ms.suite: ems
 ms.custom: intune-enduser
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec3f1996052e31a70ca44c40c277a7c5ff93819a
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.collection: ''
+ms.openlocfilehash: 774c67b67094782d98e8ca325f092f8a5760dd2f
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72507990"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75858930"
 ---
 # <a name="using-your-ios-device-with-intune-company-portal"></a>iOS-eszköz használata az Intune Céges portállal
 A cikk az iOS-hez készült Céges portálra vonatkozó feladatokat és információkat sorolja fel. Ezek ismerete segítheti az iOS-eszköz hibaelhárítását és felügyeletét. Kattintson a hivatkozások bármelyikére, ha további részleteket, lépéseket és képernyőképeket kíván megtekinteni.
@@ -49,5 +49,5 @@ A Céges portál jelenleg az Android 10.0-s és újabb verzióit támogatja.
 - [A használatra vonatkozó adatok Microsoft általi gyűjtésének kikapcsolása](turn-off-microsoft-usage-data-collection-ios.md)
 - [Az eszköz regisztrációjának törlése az Intune-ból](unenroll-your-device-from-intune-ios.md)
 - [Mi történik, ha törli az eszköz regisztrációját az Intune-ból?](what-happens-if-you-unenroll-your-device-from-intune-ios.md)
-- [Mi történik, ha alaphelyzetbe állít egy saját eszközt a Vállalati portálon?](what-happens-if-you-reset-your-device-using-the-company-portal-ios.md)
+- [Mi történik, ha alaphelyzetbe állít egy saját eszközt a Munkahelyi portál segítségével?](what-happens-if-you-reset-your-device-using-the-company-portal-ios.md)
 - [Az eszköz manuális szinkronizálása](sync-your-device-manually-ios.md)

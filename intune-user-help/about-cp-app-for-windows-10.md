@@ -17,13 +17,13 @@ ROBOTS: ''
 ms.reviewer: priyar
 ms.suite: ems
 ms.custom: intune-enduser
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 61825741a5651daa55727c706ba683628e723c8a
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.collection: ''
+ms.openlocfilehash: d2f143eea1186a667bb3255a323e95e5211b5e97
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72490283"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75857022"
 ---
 # <a name="installing-the-company-portal-app-for-windows-10"></a>A Windows 10 Céges portál alkalmazásának telepítése  
 
@@ -33,7 +33,7 @@ Miután telepítette a Vállalati portál alkalmazást, és annak használatáva
 
 - Letöltheti a vállalati alkalmazásokat a Vállalati portálról.
 
-- Automatikusan beállíthatja a vállalati e-mail-fiókját.
+- Automatikusan konfigurálhatja vállalati e-mail-fiókját.
 
 - Ha elveszíti vagy ellopják a telefonját, visszaállíthatja a gyári beállításait.
 

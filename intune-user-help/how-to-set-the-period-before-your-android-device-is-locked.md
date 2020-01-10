@@ -18,13 +18,13 @@ ROBOTS: ''
 ms.reviewer: arnab
 ms.suite: ems
 ms.custom: intune-enduser
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5665ae7d8093decc8ef2ea4ab1911b27e20e25dd
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.collection: ''
+ms.openlocfilehash: edea807b8c71f519c28f19b0343fa8ea0977712a
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72505788"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75855146"
 ---
 # <a name="how-to-set-the-amount-of-time-before-your-android-device-locks-its-screen"></a>Az Android-eszköz képernyőjének zárolása előtt eltelő idő beállítása
 
@@ -32,17 +32,17 @@ Ha újra csatlakozni szeretne a munkájához, meg kell adnia a jelszó időkorl�
 
 ## <a name="native-non-samsung-knox-device"></a>Natív (nem Samsung Knox-) eszköz
 
-1. Eszköze **beállításai** között koppintson a **Biztonság** &gt; **Automatikus zárolás** (egyes eszközökön a **Telefon zárolása ezt követően:** ) elemre.
+1. Az eszköz **beállításaiban** koppintson a **biztonsági** &gt; **automatikus zárolása** elemre (ez egyes eszközökön a **zárolási telefonszám után** jelenik meg).
 
-    Ha az **Automatically Lock (Automatikus lezárás**) (egyes eszközökön **Lock phone after (Telefon zárolása ezt követően:** ) menüpont nem látható, ellenőrizze, hogy érvényes jelszót adott-e meg a **Settings (Beállítások)** &gt; **Screen Lock** (Képernyőzárolás) &gt; **Password** (Jelszó) beállításban.
+    Ha az **automatikus zárolás** (a**telefon zárolása** néhány eszköz után) nem jelenik meg, ellenőrizze, hogy érvényes jelszót adott-e meg a **beállítások** &gt; **Képernyő zárolása** &gt; **jelszavában**.
 
 2. Válassza ki a jelszó lejárati értékét.
 
 ## <a name="samsung-knox-device"></a>Samsung Knox-eszköz
 
-1. Az eszköz **Settings** (Beállítások) alkalmazásában koppintson a **Lock screen and security** (Zárolási képernyő és biztonság) &gt; **Lock automatically** (Automatikus zárolás) elemre.
+1. Az eszköz **beállításaiban** koppintson a **zárolási képernyő és a biztonság** &gt; **automatikus zárolás**elemre.
 
-    Ha a **Lock automatically (Automatikus lezárás**) (egyes eszközökön **Lock phone after (Telefon zárolása ezt követően:** )) menüpont nem látható, ellenőrizze, hogy érvényes jelszót adott-e meg a **Settings (Beállítások)** &gt; **Screen Lock** (Képernyőzárolás) &gt; **Password** (Jelszó) beállításban.
+    Ha a **zárolás automatikus** zárolása (egyes eszközökön a**telefon zárolása után** ) nem jelenik meg, ellenőrizze, hogy érvényes jelszót adott-e meg a **beállítások** &gt; **Képernyő zárolása** &gt; **jelszavában**.
 
 2. Válassza ki a jelszó lejárati értékét.
 

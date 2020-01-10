@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 01/08/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4b2a6019a0af33cd227d88444bb5ddda5bc22715
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: a3074b30921a4daba7469e670a17ad29ee1edc00
+ms.sourcegitcommit: 8f56220e7cafc5bc43135940575a9acb5afde730
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75204901"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827802"
 ---
 # <a name="enable-win32-apps-on-s-mode-devices"></a>Win32-alkalmazások engedélyezése S módú eszközökön
 
@@ -45,7 +45,7 @@ A Win32-alkalmazások Windows 10-es eszközökön való futtatásának engedély
    - Az aláírt kiegészítő szabályzatot az Intune-ba feltöltve egy Windows 10 S módú kiegészítő szabályzat létrehozásával (lásd alább).
 3. A Win32-alkalmazások katalógusait az Intune-on keresztül engedélyezheti:
    - A katalógus fájljait (1 minden alkalmazáshoz) létrehozhatja, és a betétbiztosítási rendszerek vagy más tanúsítvány-infrastruktúrával aláírhatja őket.
-   - Az aláírt katalógust a [Microsoft Win32 Content PREP Tool](https://go.microsoft.com/fwlink/?linkid=2065730)használatával csomagolja ki a *. intunewin fájlba.* További információ: [win32 app Management – a Win32 alkalmazás tartalmának előkészítése feltöltésre](~/apps/apps-win32-app-management.md#prepare-the-win32-app-content-for-upload).
+   - Az aláírt katalógust a [Microsoft Win32 Content PREP Tool](https://go.microsoft.com/fwlink/?linkid=2065730)használatával csomagolja ki a *. intunewin fájlba.* A [Microsoft Win32 Content PREP Tool](https://go.microsoft.com/fwlink/?linkid=2065730)használatával nem léteznek elnevezési korlátozások a katalógusfájl létrehozásakor. Ha a *. intunewin* fájlt a megadott forrás mappájából és telepítési fájljából hozza létre, megadhat egy különálló mappát, amely csak katalógus-fájlokat tartalmaz a-a cmdline kapcsoló használatával. További információ: [win32 app Management – a Win32 alkalmazás tartalmának előkészítése feltöltésre](~/apps/apps-win32-app-management.md#prepare-the-win32-app-content-for-upload).
    - Az Intune az aláírt alkalmazás-katalógus használatával telepíti a Win32 alkalmazást az S Mode eszközön az [Intune felügyeleti bővítménnyel](~/apps/intune-management-extension.md).
 
 > [!NOTE]

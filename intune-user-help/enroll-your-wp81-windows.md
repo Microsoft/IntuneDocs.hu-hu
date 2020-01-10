@@ -18,13 +18,13 @@ ROBOTS: ''
 ms.reviewer: priyar
 ms.suite: ems
 ms.custom: intune-enduser
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 01b03e986cd2540c364f2b6d8d3e20412fd5b82e
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.collection: ''
+ms.openlocfilehash: 20228277e496ca6f594859d40836e50609d05a8a
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72506152"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75855441"
 ---
 # <a name="enroll-your-windows-phone-81-device-in-intune"></a>Windows Phone 8.1-eszköz regisztrálása az Intune-ban  
 
@@ -35,7 +35,7 @@ Az eszköz Intune-beli regisztrálásához kövesse az engedélyeinek megfelelő
 ## <a name="enroll-through-company-portal"></a>Regisztrálás Céges portál  
 Kövesse az alábbi lépéseket, ha a Microsoft Storeból telepítheti a Céges portál alkalmazást. 
 
-1. Koppintson a **Start** > **áruház**elemre.  
+1. Koppintson a **Start** > **Áruház** parancsra.  
 
 2. Koppintson a **Keresés** elemre, majd írja be a **vállalati portál** kifejezést.  
 
@@ -44,10 +44,10 @@ Kövesse az alábbi lépéseket, ha a Microsoft Storeból telepítheti a Céges 
 
     ![A Vállalati portál keresési eredményei](./media/WP81-1-CP-search-store-v2.png)  
 
-4. Koppintson a **Vállalati portál**  &gt; **Telepítés** elemre.  
+4. Koppintson **Céges portál**&gt; **telepítés**elemre.  
 
 
-    ![A Vállalati portál telepítése](./media/WP81-2-CP-install-v2.png)  
+    ![Vállalati portál telepítése](./media/WP81-2-CP-install-v2.png)  
 
 Regisztrálja az eszközt:  
 
@@ -73,7 +73,7 @@ Regisztrálja az eszközt:
 
     ![A Munkahelyi beállítások képernyő](./media/WP81-enroll-3-workplace-add-acct.png)  
 
-7. Adja meg a kért további információkat, majd fejezze be a regisztrációt a **bejelentkezés** elemre koppintva. Most látnia kell a munkahelyi fiókját a **Beállítások** &gt; **Munkahely** lap listájában.  
+7. Adja meg a kért további információkat, majd fejezze be a regisztrációt a **bejelentkezés** elemre koppintva. Ekkor látnia kell a munkahelyi fiókját a **beállítások** &gt; **munkahely** lapon.  
 
 
     ![A Fiók hozzáadva képernyő](./media/WP81-enroll-4-account-added.png)  
@@ -81,7 +81,7 @@ Regisztrálja az eszközt:
 ## <a name="enroll-through-settings-app"></a>Regisztrálás a beállítások alkalmazásban  
 Kövesse az alábbi lépéseket, ha nem fér hozzá a Microsoft Store a Windows Phone-telefon eszközről, vagy ha nincs Microsoft-fiókja.
 
-1. Koppintson a  **Beállítások** &gt; **Munkahely** elemre.  
+1. Koppintson a **beállítások** &gt; **munkahely**lehetőségre.  
 
 2. Koppintson a **fiók hozzáadása** elemre, majd jelentkezzen be a munkahelyi fiókjával.  
 

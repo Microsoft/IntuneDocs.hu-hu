@@ -16,17 +16,17 @@ searchScope:
 - User help
 ROBOTS: ''
 ms.custom: intune-enduser
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c27cb54f435b01abd1bea0b4bbfe7e15738debfc
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.collection: ''
+ms.openlocfilehash: bd5e601ee98b5b714838507c2c4e7a5fa1c87f4a
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72501445"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75858525"
 ---
 # <a name="resolve-a-threat-found-by-symantec-endpoint-protection-mobile"></a>Symantec Endpoint Protection Mobile által észlelt fenyegetés elhárítása
 
-A Symantec Endpoint Protection (SEP) Mobile egy mobilfenyegetés elleni védelmi szolgáltatás, amely lehetséges fenyegetéseket azonosít Android-eszközein. A fenyegetéseket a rendszer jelenti a Céges portál alkalmazásnak, ahol megoldatlan nem megfelelőségi problémákként jelennek meg. Amíg az eszköze nem megfelelőként van azonosítva, előfordulhat hogy nem lesz lehetősége a következőkre:
+A Symantec Endpoint Protection (SEP) Mobile egy mobilfenyegetés elleni védelmi szolgáltatás, amely lehetséges fenyegetéseket azonosít Android-eszközein. Ezek a fenyegetések a Céges portál alkalmazásnak lesznek jelentve, és megoldatlan nem megfelelőségi problémákként jelennek meg. Amíg az eszköze nem megfelelőként van azonosítva, előfordulhat hogy nem lesz lehetősége a következőkre:
 
 * Hozzáférés a vállalati e-mailekhez
 * Hozzáférés a vállalati Wi-Fi-hez
@@ -47,11 +47,11 @@ A cikk leírja, hogyan szerezhet ismét hozzáférést a vállalati erőforráso
 
     ![Példa-képernyőkép a Céges portál Eszközök oldaláról, az SEP Mobile figyelmeztetésével.](./media/CP-lookout-virus-banner-1808.png)
 
-## <a name="troubleshoot-an-app-threat"></a>Alkalmazásfenyegetés hibaelhárítása
+## <a name="troubleshoot-an-app-threat"></a>Alkalmazásfenyegetés elhárítása
 
 Az eszközére nézve fenyegetőnek ítélt alkalmazás telepítésekor értesítést kap az SEP Mobile alkalmazásban. Ha a érintett alkalmazás az eszközén marad, nem fogja tudni elérni a vállalati erőforrásokat.  
 
-A megoldáshoz jelölje ki az alkalmazást az SEP Mobile-ban megjelenő fenyegetések listájában. Ezután kövesse a képernyőn megjelenő utasításokat az alkalmazás eltávolításához.  
+A megoldáshoz jelölje ki az alkalmazást az SEP Mobile-ban megjelenő fenyegetések listájában. Ez után kövesse a képernyőn megjelenő utasításokat az alkalmazás eltávolításához.  
 
-További segítségre van szüksége? Forduljon a cég informatikai támogatási szolgálatához. A kapcsolatfelvételi adatait megtalálja a [Munkahelyi portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).   
+További segítségre van szüksége? Forduljon a cég informatikai támogatásához. A kapcsolatfelvételi adatait megtalálja a [Munkahelyi portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).   
 

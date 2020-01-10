@@ -18,13 +18,13 @@ ROBOTS: ''
 ms.reviewer: jieyang
 ms.suite: ems
 ms.custom: intune-enduser
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: cdc15f6880abca53ed2110daf6169cddb48464c2
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.collection: ''
+ms.openlocfilehash: 040ab4cecb07e471a9143278c6d87e8fe9a4964b
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72508465"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75858380"
 ---
 # <a name="remove-your-device-from-the-company-portal"></a>Eltávolíthatja az eszközét a vállalati portálról
 
@@ -38,9 +38,9 @@ Az eszköz eltávolítása:
 
     ![Képernyőkép az Eszközök oldalról, amelyen két csempén azonosítatlan, általános nevű eszközök láthatók. Közvetlenül az eszközök alatt egy szürke szalagcím helyezkedik el, amely arra kéri a felhasználót, hogy azonosítsa a használt eszközt, vagy adjon hozzá egy újat.](./media/rename-reset-device-step2-1808.png) 
 
-3. Válassza az **Eltávolítás** lehetőséget. Ha az Eltávolítás lehetőség nem jelenik meg az oldal tetején, válassza az **Egyéb (…)** > **Átnevezés** lehetőséget.  
+3. Válassza az **Eltávolítás** lehetőséget. Ha az Eltávolítás lehetőség nem jelenik meg az oldal tetején, válassza az **Egyéb (…)**  > **Átnevezés** lehetőséget.  
 
-   ![A kiválasztott eszközzel kapcsolatos lehetőségek a Céges portál webhelyén, felül az Átnevezés, az Eltávolítás, az Eszköz alaphelyzetbe állítása, a Jelszó alaphelyzetbe állítása és a Távoli zárolás lehetőségekre mutató hivatkozásokkal. ](./media/rename-reset-device-1808.png)  
+   ![A kiválasztott eszköz adatai a Céges portál webhelyén, felül az Átnevezés, az Eltávolítás, az Eszköz alaphelyzetbe állítása, a Jelszó alaphelyzetbe állítása és a Távoli zárolás lehetőségekre mutató hivatkozásokkal. ](./media/rename-reset-device-1808.png)  
   
 
     ![Az Egyéb ikon kinagyított képe egy piros nyíllal kiemelve.](./media/rename-reset-device-step3-more-1808.png)   

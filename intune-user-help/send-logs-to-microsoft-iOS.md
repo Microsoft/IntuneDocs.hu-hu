@@ -18,19 +18,19 @@ ROBOTS: ''
 ms.reviewer: esmich
 ms.suite: ems
 ms.custom: intune-enduser
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 13a6e9219c29b33404c2489bb6b60de513369e74
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.collection: ''
+ms.openlocfilehash: 972b2cb1c87cfebcff61062633388145e45e86ba
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72502093"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75858026"
 ---
 # <a name="send-logs-to-the-company-portal-developers-for-ios-devices"></a>Naplók küldése a Céges portál fejlesztőinek iOS-es eszközök esetén
 
-Egyes esetekben a Céges portál alkalmazás váratlanul kiléphet. Ez egy olyan probléma, amelyről az alkalmazás fejlesztői mindenképpen tudni szeretnének, mivel a visszajelzés segít az alkalmazás továbbfejlesztésében és a jövőbeni hasonló problémák megelőzésében. Az információk egy speciális dokumentumban, egy úgynevezett _diagnosztikai naplófájlban_ találhatók az eszközön.
+Egyes esetekben a Céges portál alkalmazás váratlanul kiléphet. Ez egy olyan probléma, amelyről az alkalmazás fejlesztői mindenképpen tudni szeretnének, mivel a visszajelzés segít az alkalmazás továbbfejlesztésében és a jövőbeni hasonló problémák megelőzésében. Ezek az információk az eszközön tárolt, _diagnostic log_ (diagnosztikai napló) nevű speciális dokumentumban találhatók.
 
-Ha a hibát Ön is tapasztalja, a Céges portál fejlesztőinek további információra van szükségük a hiba reprodukálásához és a probléma okának felderítéséhez. A szükséges lépések az alábbiak:
+Ha a hibát Ön is tapasztalja, a Céges portál fejlesztőinek további információra van szükségük a probléma okának felderítéséhez. A szükséges lépések az alábbiak:
 
 1. Kísérelje meg a hiba reprodukálását. Nem baj, ha nem sikerül, de ha igen, a következő lépés egyszerűbb lehet.
 2. Válassza a __Beállítások__ > __Adatvédelem__ > __Analitika__ > __Analytics Data__ (Analitikai adatok) lehetőséget. Ez a lista tartalmazza az alkalmazáshoz tartozó lezajlott tevékenységeket az összeomlásoktól kezdve az általános használati mintákig. Az adatok nem tartalmaznak személyes információkat. A rendszer a listát a legutóbbi tevékenységektől a legrégebbi tevékenységekig rendezi. Ha sikerült reprodukálnia a hibát, az az alkalmazáshoz tartozó tevékenységlista első elemeként jelenik meg a lapon. Ha nem sikerült reprodukálnia a hibát, görgessen le addig, amíg nem talál egy olyan elemet, amely a „Company Portal” („céges portál”) kifejezéssel kezdődik. Koppintson erre az elemre a megnyitáshoz.

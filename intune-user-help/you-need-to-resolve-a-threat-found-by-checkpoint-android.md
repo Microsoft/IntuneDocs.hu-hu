@@ -16,13 +16,13 @@ searchScope:
 - User help
 ROBOTS: ''
 ms.custom: intune-enduser
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 81248206fe406da6ad2d8a031c3f58ec170e18ef
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.collection: ''
+ms.openlocfilehash: 5f43cd0b7404c516fd4ef74d7db194891f5f8d82
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72507834"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75857341"
 ---
 # <a name="resolve-a-threat-found-by-sandblast-mobile-protect"></a>A SandBlast Mobile Protect által észlelt fenyegetés elhárítása
 
@@ -47,7 +47,7 @@ Mivel az alkalmazás integrálva van a vállalat MDM szolgáltatójával, korlá
 
   ![A Céges portál példaképernyőképe a SandBlast Mobile Protect figyelmeztetésével.](./media/CP-lookout-virus-banner-1808.png)  
 
-## <a name="troubleshoot-an-app-threat"></a>Alkalmazásfenyegetés hibaelhárítása  
+## <a name="troubleshoot-an-app-threat"></a>Alkalmazásfenyegetés elhárítása  
 
 Ha egy fenyegetésként észlelt alkalmazást telepít az eszközére, akkor értesítést fog kapni a SandBlast Mobile Protectben. Ha a érintett alkalmazás az eszközén marad, nem fogja tudni elérni a vállalati erőforrásokat.  
 

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1e96f46dc0e79de3fc78739c246abdc0b9e52702
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: f368f5f15f71246a2899f2acb7a791d65df26c99
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75205530"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75857043"
 ---
 # <a name="intune-discovered-apps"></a>Intune által felderített alkalmazások
 
@@ -59,14 +59,15 @@ Az alábbi lista tartalmazza az alkalmazás platformjának típusát, a személy
 | Windows 8.1 | Csak felügyelt alkalmazások | Csak felügyelt alkalmazások | Az eszközök regisztrációja 7 naponta |
 | Windows Phone 8 | Csak felügyelt alkalmazások | Csak felügyelt alkalmazások | Az eszközök regisztrációja 7 naponta |
 | Windows RT | Csak felügyelt alkalmazások | Csak felügyelt alkalmazások | Az eszközök regisztrációja 7 naponta |
-| iOS | Csak felügyelt alkalmazások | Az eszközre telepített összes alkalmazás | Az eszközök regisztrációja 7 naponta |
-| macOS | Csak felügyelt alkalmazások | Az eszközre telepített összes alkalmazás | Az eszközök regisztrációja 7 naponta |
-| Android: | Csak felügyelt alkalmazások | Az eszközre telepített összes alkalmazás | Az eszközök regisztrációja 7 naponta |
+| iOS | Csak felügyelt alkalmazások | Az összes, az eszközön telepített alkalmazás | Az eszközök regisztrációja 7 naponta |
+| macOS | Csak felügyelt alkalmazások | Az összes, az eszközön telepített alkalmazás | Az eszközök regisztrációja 7 naponta |
+| Android: | Csak felügyelt alkalmazások | Az összes, az eszközön telepített alkalmazás | Az eszközök regisztrációja 7 naponta |
 | Vállalati Android | Csak felügyelt alkalmazások | Csak a munkahelyi profilba telepített alkalmazások | Az eszközök regisztrációja 7 naponta |
 
 > [!NOTE]
 > - A Windows 10 hibrid Azure AD-hez csatlakoztatott eszközök, ahogyan az az alkalmazás-felügyeleti munkaterhelésben Configuration Managerban látható, jelenleg nem gyűjti az alkalmazás-leltárt az Intune felügyeleti bővítménnyel (IME), a fenti ütemterv szerint. A probléma megoldásához a Configuration Manager alkalmazás-felügyeleti munkaterhelését át kell kapcsolni az Intune-ba az eszközre való telepítéshez (IME szükséges a Win32 leltárhoz és a PowerShell telepítéséhez). Vegye figyelembe, hogy a viselkedés változásairól vagy frissítéseiről a [fejlesztés](../fundamentals/in-development.md) és/ [vagy Újdonságok](../fundamentals/whats-new.md)című cikkben van bejelentve.
 > - A 2019 novembere előtt regisztrált, személyes tulajdonú macOS-eszközök továbbra is megjeleníthetik az eszközre telepített összes alkalmazást, amíg az eszközök nem lesznek regisztrálva.
+> - Az Android Enterprise teljes körűen felügyelt és dedikált nem jeleníti meg a felderített alkalmazásokat.
 
 A felderített alkalmazások száma nem feltétlenül egyezik a telepített állapotú alkalmazások számával. A lehetséges eltérések a következők:
 

@@ -18,16 +18,16 @@ ROBOTS: ''
 ms.reviewer: chrisgre
 ms.suite: ems
 ms.custom: intune-enduser
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c4aca6fde21419d6ae1ca95d5a9aac5ab7f83d99
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.collection: ''
+ms.openlocfilehash: f6ac3399a4de4fe7372eca20f20eda61aa0dd23e
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72505828"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75854942"
 ---
 # <a name="how-to-reconnect-a-compromised-android-device"></a>Sérült biztonságú Android-eszköz ismételt csatlakoztatása
 
 A cég informatikai támogatási szolgálata azt észlelte, hogy Ön egy rootolt eszközt használ. A „feltört” állapot azt jelenti, hogy az eszközt az operációs rendszerhez való hozzáférés érdekében módosították, ami kedvezőtlenül befolyásolhatja a biztonságot, és fenyegetést jelenthet a vállalati erőforrásokra nézve. Ha ez történik, az adott eszköz a továbbiakban nem férhet hozzá a vállalati erőforrásokhoz.
 
-További segítségre van szüksége? Forduljon a cég informatikai támogatási szolgálatához (a kapcsolattartási adatokat a [céges portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980) találja), vagy írjon a <a href="mailto:wintunedroidfbk@microsoft.com?subject=I'm having trouble with a rooted device&body=Describe the issue you're experiencing here.">Microsoft Android-csapatának</a>.
+További segítségre van szüksége? Forduljon a cég informatikai támogatási szolgálatához (a kapcsolattartási adatokat a [Céges portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980) találja), vagy írjon a <a href="mailto:wintunedroidfbk@microsoft.com?subject=I'm having trouble with a rooted device&body=Describe the issue you're experiencing here.">Microsoft Android-csapatának</a>.

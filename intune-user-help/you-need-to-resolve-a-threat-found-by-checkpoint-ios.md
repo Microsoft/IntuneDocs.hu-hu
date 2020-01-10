@@ -16,13 +16,13 @@ searchScope:
 - User help
 ROBOTS: ''
 ms.custom: intune-enduser
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a5c979f19a2761d596cd48cfc7d88e003bfcb99
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.collection: ''
+ms.openlocfilehash: 386afdf91995f3e38eced269375e5e49ef6044d0
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72500898"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75858564"
 ---
 # <a name="resolve-a-threat-found-by-sandblast-mobile-protect"></a>A SandBlast Mobile Protect által észlelt fenyegetés elhárítása
 
@@ -46,10 +46,10 @@ Mivel az alkalmazás integrálva van a vállalat MDM szolgáltatójával, korlá
 
   ![A Céges portál eszközoldalának például szolgáló képernyőképe a SandBlast Mobile Protect figyelmeztetésével.](./media/CP-lookout-virus-banner-1808.png)  
 
-## <a name="troubleshoot-an-app-threat"></a>Alkalmazásfenyegetés hibaelhárítása  
+## <a name="troubleshoot-an-app-threat"></a>Alkalmazásfenyegetés elhárítása  
 
 Ha egy fenyegetésként észlelt alkalmazást telepít az eszközére, akkor értesítést fog kapni a SandBlast Mobile Protectben. Ha a érintett alkalmazás az eszközén marad, nem fogja tudni elérni a vállalati erőforrásokat.  
 
 A feloldáshoz válassza ki az alkalmazást a fenyegetések listájából a SandBlast Mobile Protectben. Ezután kövesse az alkalmazás eltávolítására vonatkozó utasításokat.  
 
-További segítségre van szüksége? Forduljon a cég informatikai támogatási szolgálatához. A kapcsolatfelvételi adatait megtalálja a [Munkahelyi portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).  
+További segítségre van szüksége? Forduljon a cég informatikai támogatásához. A kapcsolatfelvételi adatait megtalálja a [Munkahelyi portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).  

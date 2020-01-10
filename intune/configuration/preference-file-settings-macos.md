@@ -6,7 +6,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 12/02/2019
+ms.date: 01/09/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ed04c1bf135793da9cece9debc2c7cdd481601a
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: d226a5b8ee448b7b168a03fe6b8a1c63bc1be432
+ms.sourcegitcommit: 8f56220e7cafc5bc43135940575a9acb5afde730
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74691696"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827785"
 ---
 # <a name="add-a-property-list-file-to-macos-devices-using-microsoft-intune"></a>Tulajdonság-listaelem hozzáadása macOS-eszközökhöz Microsoft Intune használatával
 
@@ -50,9 +50,19 @@ Ezek a beállítások hozzáadódnak az Intune-ban lévő eszköz konfiguráció
 
 ## <a name="preference-file"></a>Preferenciafájl
 
-- **Preferencia tartomány neve**: a rendszer általában a webböngészők (Microsoft Edge), a [Microsoft Defender komplex veszélyforrások elleni védelem](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-atp-mac)és az egyéni alkalmazások számára használják a tulajdonságok listáját. A preferencia tartomány létrehozásakor létrejön egy köteg-azonosító is. Adja meg a csomag AZONOSÍTÓját, például `com.company.application`. Adja meg például a következőt: `com.Contoso.applicationName`, `com.Microsoft.Edge` vagy `com.microsoft.wdav`.
+- **Preferencia tartomány neve**: a rendszer általában a webböngészők (Microsoft Edge), a [Microsoft Defender komplex veszélyforrások elleni védelem](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-atp-mac)és az egyéni alkalmazások számára használják a tulajdonságok listáját. A preferencia tartomány létrehozásakor létrejön egy köteg-azonosító is. Adja meg a csomag AZONOSÍTÓját, például `com.company.application`. Adja meg például a következőt: `com.Contoso.applicationName`, `com.Microsoft.Edge`vagy `com.microsoft.wdav`.
 - **Tulajdonságlap fájlja**: válassza ki az alkalmazáshoz társított tulajdonságlap-fájlt. Győződjön meg róla, hogy `.plist` vagy `.xml` fájl. Töltse fel például `YourApp-Manifest.plist` vagy `YourApp-Manifest.xml` fájlt.
 - **Fájl tartalma**: a tulajdonság-lista fájljának legfontosabb adatai láthatók. Ha módosítania kell a legfontosabb adatokat, nyissa meg a fájlt egy másik szerkesztőben, majd töltse fel újra a fájlt az Intune-ban.
+
+Győződjön meg arról, hogy a fájl megfelelően van formázva. A fájlnak csak kulcs-érték párokkal kell rendelkeznie, és nem szabad becsomagolni `<dict>`, `<plist>`vagy `<xml>` címkékbe. Például a következő fájlnak hasonlónak kell lennie a tulajdonság-lista fájljához:
+
+```xml
+<key>SomeKey</key>
+<string>someString</string>
+<key>AnotherKey</key>
+<false/>
+...
+```
 
 A módosítások mentéséhez válassza az **OK** > **Létrehozás** lehetőséget. Ekkor létrejön a profil, és megjelenik a profilok listájában.
 

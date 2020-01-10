@@ -18,13 +18,13 @@ ROBOTS: ''
 ms.reviewer: esmich
 ms.suite: ems
 ms.custom: intune-enduser
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 81f90c8022fb471ffa8783d636c88ce67a296595
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.collection: ''
+ms.openlocfilehash: e37a82fe3cca461e8384843dc0710cb00c36b79c
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72502053"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75858079"
 ---
 # <a name="send-errors-to-your-company-support-for-issues-with-your-ios-device"></a>Hibák elküldése a cég informatikai támogatási szolgálatának az iOS-eszköz problémái alapján
 Előfordulhat, hogy hibát tapasztal iOS-eszközén a Céges portál alkalmazás használata során. Ilyen esetben e-mailt küldhet a cég támogatási szakemberének a hiba részleteivel. Ezek a részletek adják meg a hibához kapcsolódó, annak felderítéséhez szükséges információkat.

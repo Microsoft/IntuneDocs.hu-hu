@@ -18,19 +18,19 @@ ROBOTS: ''
 ms.reviewer: arnab
 ms.suite: ems
 ms.custom: intune-enduser
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0e4ed29d6a2da79b7bfd3502ebf8ce53259f1ae6
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.collection: ''
+ms.openlocfilehash: c13d125d44a25ec4b574ae7ba77eac3bda586dab
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72506068"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75854403"
 ---
 # <a name="install-the-company-portal-app-for-android"></a>A Céges portál alkalmazás telepítése Androidhoz
 
 A Céges portál alkalmazás hozzáférést biztosít a munkahelyi és az iskolai alkalmazásokhoz, valamint a levelezéshez és az internetkapcsolatokhoz. Ez az alkalmazás az ön eszköze biztonságának garantálásával munkahelye információinak is védelmet nyújt − például naprakészen tarja a vállalati alkalmazásait vagy gondoskodik róla, hogy az eszköze egy bizonyos idő elteltével lezárja magát. Ha többet szeretne megtudni a Céges portál szolgáltatásairól és az eszközök felügyeletéről, olvassa el az [Android-eszköz regisztrálásával](why-enroll-android-device.md)foglalkozó témakört.  
 
-1. Kattintson a **Home** (Kezdőképernyő) > **Play Store** (Play Áruház) elemre.
+1. Koppintson a **Home** (Kezdőképernyő)  > **Play Store** (Play Áruház) elemre.
 
 2. A keresőmezőbe írja be az **Intune vállalati portál** **kifejezést** .  
 

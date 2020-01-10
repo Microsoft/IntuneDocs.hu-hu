@@ -18,13 +18,13 @@ ROBOTS: ''
 ms.reviewer: elocholi
 ms.suite: ems
 ms.custom: intune-enduser
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 472b19802b3f82e8b8474ef21744e0298d09b05b
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.collection: ''
+ms.openlocfilehash: f27ab798aa5baf3777dbd3908401594c3ec05df2
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72507978"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75858760"
 ---
 # <a name="you-need-to-identify-your-device-when-youre-trying-to-enroll"></a>A regisztráláskor azonosítania kell az eszközt
 
@@ -32,6 +32,6 @@ Ha az Intune-ban regisztrálni próbálja macOS rendszerű eszközét, és megje
 
 1. Ha látja az eszközt ebben a listában, kattintson rá. Ha nem látja, válassza az **új eszköz** lehetőséget.
 2. Kattintson a **Folytatás**gombra.
-3. Írja be az eszköz sorozatszámának utolsó négy számjegyét, hogy az Intune ellenőrizhesse az regisztrációs állapotát. A sorozatszám megkereséséhez lásd: [Hogyan találhatom meg az eszköz sorozatszámát?](how-do-i-find-the-serial-number-on-my-device-macos.md).
+3. Írja be az eszköz sorozatszámának utolsó négy számjegyét, hogy az Intune ellenőrizhesse az regisztrációs állapotát. A sorozatszám megkereséséhez lásd: [Hogyan találhatom meg az eszköz sorozatszámát?](how-do-i-find-the-serial-number-on-my-device-macos.md)
 
 További segítségre van szüksége? Forduljon a cég informatikai támogatásához. Az elérhetőségét keresse meg a [Vállalati portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).

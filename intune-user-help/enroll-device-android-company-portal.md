@@ -18,13 +18,13 @@ ROBOTS: ''
 ms.reviewer: esmich
 ms.suite: ems
 ms.custom: intune-enduser
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5baf0e9079cc148101a68e5cd2d3a4ed500f567f
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.collection: ''
+ms.openlocfilehash: e0a2297509d6077d6508adaab96ae6eb3cf9b28f
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73414863"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75856734"
 ---
 # <a name="enroll-your-device-with-company-portal"></a>Az eszköz regisztrálása a Céges portál  
 Regisztrálja személyes vagy vállalati tulajdonú Android-eszközét, hogy biztonságos hozzáférést kapjon a vállalati e-mailekhez, alkalmazásokhoz és adatszolgáltatásokhoz. Céges portál támogatja az Android-eszközöket, beleértve a Samsung Knox-t, az Android 4,4-es vagy újabb verzióját.  

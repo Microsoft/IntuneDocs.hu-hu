@@ -18,13 +18,13 @@ ROBOTS: ''
 ms.reviewer: chrisbal
 ms.suite: ems
 ms.custom: intune-enduser
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 169007541bccfc3e26184ac71197265931afbfdd
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.collection: ''
+ms.openlocfilehash: f54f0d9453e93ad54a1d2a96ff25051f3d8bd3a1
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72508118"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75857673"
 ---
 # <a name="remove-your-device-from-management-if-you-declined-terms-of-use"></a>Az eszköz kivonása a felügyelet alól, ha nem fogadta el a használati feltételeket
 
@@ -38,7 +38,7 @@ A Vállalati portál alkalmazás eltávolítása előtt az **Eszközadminisztrá
 
 Az eszköz eltávolítása az Intune-ból és a Vállalati portál alkalmazás eltávolítása:
 
-1. Lépjen a **Settings** (Beállítások)&gt;**Security (Biztonság) &amp; Screen Lock (Képernyőzár)** &gt;**Device administrators** (Eszközadminisztrátorok) elemhez.
+1. Lépjen a **beállítások** &gt; **Biztonság &amp; képernyő-zárolás** &gt; az **eszközök rendszergazdái**.
 
     A lépés elvégzésével azonnal törli az eszköz regisztrációját.
 
@@ -54,4 +54,4 @@ Az Android-eszközhöz készült Céges portál alkalmazás által az eszközön
 - Törölje a '\storage\internal storage\Android\data\com.microsoft.windowsintune.companyportal' mappát.
 
 
-További segítségre van szüksége? Forduljon a cég informatikai támogatási szolgálatához (a kapcsolattartási adatokat a [céges portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980) találja), vagy írjon a <a href="mailto:wintunedroidfbk@microsoft.com?subject=I'm having unenrolling my Android device&body=Describe the issue you're experiencing here.">Microsoft Android-csapatának</a>.
+További segítségre van szüksége? Forduljon a cég informatikai támogatási szolgálatához (a kapcsolattartási adatokat a [Céges portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980) találja), vagy írjon a <a href="mailto:wintunedroidfbk@microsoft.com?subject=I'm having unenrolling my Android device&body=Describe the issue you're experiencing here.">Microsoft Android-csapatának</a>.

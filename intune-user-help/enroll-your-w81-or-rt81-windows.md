@@ -18,13 +18,13 @@ ROBOTS: ''
 ms.reviewer: priyar
 ms.suite: ems
 ms.custom: intune-enduser
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 085ec1f329eb9b423797a110ada53eb7693edf6f
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.collection: ''
+ms.openlocfilehash: 6fb6c1295947b9f51ef861b1fcc6582c6690137f
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72506138"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75855424"
 ---
 # <a name="how-to-enroll-your-windows-81-or-windows-rt-81-device-in-intune"></a>Windows 8.1- vagy Windows RT 8.1-eszköz regisztrálása az Intune-ban  
 
@@ -33,7 +33,7 @@ Ha munkahelye vagy iskolája a Microsoft Intune-t használja, eszközének regis
 
 Windows 8.1- vagy Windows RT 8.1-eszköz regisztrálása az Intune-ban:  
 
-1. Nyissa meg az eszközön a **Beállítások** &gt; **Gépház** &gt; **Hálózat** &gt; **Munkahely** lapot.  
+1. Az eszközön koppintson a **beállítások** &gt; **számítógép beállításai** &gt; **hálózati** &gt; **munkahely**elemre.  
 
     ![nav-to-workplace](./media/W81-1-workplacejoin.png)  
 
@@ -61,7 +61,7 @@ Windows 8.1- vagy Windows RT 8.1-eszköz regisztrálása az Intune-ban:
 
 Azt javasoljuk, hogy telepítse a Vállalati portál alkalmazást, mert azzal egyszerűen megismerheti és letöltheti az Ön és munkaköre szempontjából fontos vállalati alkalmazásokat. Attól függően, hogy a vállalat hogyan állította be az Intune-t, előfordulhat, hogy a Vállalati portál alkalmazás már a regisztrációs folyamat részeként települt. Ha az alkalmazáslistában szerepel a **Vállalati portál**, akkor már megvan Önnek az alkalmazás. Ha a vállalati portál nem jelenik meg az alkalmazáslistán, akkor a következő lépésekkel telepítheti.
 
-1. Koppintson a **Start** &gt; **Áruház** parancsra.  
+1. Koppintson a **Start** &gt; **áruház**elemre.  
 
 2. Koppintson a **Keresés** elemre, majd írja be a **vállalati portál** kifejezést.  
 

@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 10/03/2019
+ms.date: 01/09/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cdc849405b7404203faa6e86d3fed1ea8e35ec43
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 80ae9b3b1ab274e236ad43c52569574718d3eec4
+ms.sourcegitcommit: 637375a390b6e34f9c4415c77b99fe2980bbf554
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73414636"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75839307"
 ---
 # <a name="how-to-manage-data-transfer-between-ios-apps-in-microsoft-intune"></a>iOS-alkalmazások közti adatátvitel felügyelete a Microsoft Intune-ban
 
@@ -45,7 +45,7 @@ Az iOS- **es Open-in Management** szolgáltatással az alábbi módokon biztosí
 ## <a name="configure-user-upn-setting-for-microsoft-intune-or-third-party-emm"></a>Az egyszerű felhasználónév beállításának konfigurálása a Microsoft Intune-hoz vagy külső EMM-megoldáshoz
 A felhasználó UPN-beállításának konfigurálása az Intune által felügyelt eszközökön, vagy egy harmadik féltől származó, a regisztrált felhasználói fiók azonosítására **szolgáló más** gyártótól származó Az UPN-konfiguráció az Intune-ból üzembe helyezett alkalmazás-védelmi házirendekkel működik. Az alábbi eljárás az UPN-beállítás és az eredményül kapott felhasználói élmény konfigurálásának általános folyamata:
 
-1. Az [Azure Portalon](https://portal.azure.com) [hozzon létre és osszon ki alkalmazásvédelmi szabályzatot](app-protection-policies.md) az iOS-nek. A vállalati igényeknek megfelelően konfigurálja a szabályzat beállításait, majd válassza ki azokat az iOS-es alkalmazásokat, amelyekre ennek a szabályzatnak kell vonatkoznia.
+1. Az [Azure Portalon](https://portal.azure.com)[hozzon létre és osszon ki alkalmazásvédelmi szabályzatot](app-protection-policies.md) az iOS-nek. A vállalati igényeknek megfelelően konfigurálja a szabályzat beállításait, majd válassza ki azokat az iOS-es alkalmazásokat, amelyekre ennek a szabályzatnak kell vonatkoznia.
 
 2. Telepítse az Intune-ban vagy a külső MDM-megoldáson keresztül felügyelni kívánt alkalmazásokat és e-mail-profilt az alábbi általánosított lépések segítségével. Ezt a folyamatot az 1. *példa*is tárgyalja.
 
@@ -62,7 +62,7 @@ A felhasználó UPN-beállításának konfigurálása az Intune által felügyel
 4. Telepítse a regisztrált eszközökre a **Megnyitási engedélyek felügyelete** szabályzatot a az Intune vagy külső MDM-szolgáltató segítségével.
 
 
-### <a name="example-1-admin-experience-in-intune-or-third-party-mdm-console"></a>1. példa: A rendszergazda teendői az Intune- vagy a külső MDM-konzolon
+### <a name="example-1-admin-experience-in-intune-or-third-party-mdm-console"></a>1\. példa: A rendszergazda teendői az Intune- vagy a külső MDM-konzolon
 
 1. Nyissa meg az Intune vagy a külső MDM-szolgáltató felügyeleti konzolját. Nyissa meg a konzolnak azt a szakaszát, ahol a regisztrált iOS-eszközökre érvényes alkalmazáskonfigurációs beállításokat adja meg.
 
@@ -84,7 +84,7 @@ A felhasználó UPN-beállításának konfigurálása az Intune által felügyel
 > Az iOS-hez készült Outlook esetében ha a felügyelt eszközök alkalmazás konfigurációs szabályzatát "a Configuration Designer használata" beállítással telepíti, és engedélyezi a **csak munkahelyi vagy iskolai fiókok**engedélyezése beállítást, a rendszer automatikusan konfigurálja a IntuneMAMUPN konfigurációs kulcsot a Szabályzathoz tartozó jelenetek mögött. További részleteket az [iOS-és Android-alkalmazások konfigurációs házirendje – általános alkalmazás konfigurálása](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/New-Outlook-for-iOS-and-Android-App-Configuration-Policy/ba-p/370481)című témakör gyakori kérdések szakasza tartalmaz. 
 
 
-### <a name="example-2-end-user-experience"></a>2. példa: A végfelhasználó teendői
+### <a name="example-2-end-user-experience"></a>2\. példa: A végfelhasználó teendői
 
 Házirend *által* felügyelt alkalmazás megosztása *más ALKALMAZÁSOKKAL az operációs rendszer megosztásával*
 

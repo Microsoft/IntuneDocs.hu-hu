@@ -18,13 +18,13 @@ ROBOTS: ''
 ms.reviewer: jieyang
 ms.suite: ems
 ms.custom: intune-enduser
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2056d37b00f5e2ae7b36c6e1c02f20dc244eb290
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.collection: ''
+ms.openlocfilehash: 0cf9b886733c117df0fca38bc94a601d1e9dd8fb
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72502127"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75858133"
 ---
 # <a name="how-to-reset-your-device-passcode-from-the-company-portal-website"></a>Az eszköz jelszavának alaphelyzetbe állítása a Vállalati portál webhelyén
 
@@ -42,9 +42,9 @@ A PIN-kód alaphelyzetbe állítása nem érhető el az Android 7,0 és újabb r
 
     ![Az eszközök lap képernyőképe, amelyen két csempe azonosítatlan, általános névvel ellátott eszközök láthatók. A szürke szalagcím közvetlenül az eszközök alatt található, és felszólítja a felhasználót, hogy azonosítsa az Ön által használt eszközt, vagy újat adjon hozzá.](./media/rename-reset-device-step2-1808.png) 
 
-3. Válassza a **Jelszó alaphelyzetbe állítása** lehetőséget. Ha a jelszó lehetőség nem jelenik meg az oldal tetején, válassza az **Egyéb (…)** > **Jelszó alaphelyzetbe állítása** lehetőséget.   
+3. Válassza a **Jelszó alaphelyzetbe állítása** lehetőséget. Ha a jelszó lehetőség nem jelenik meg az oldal tetején, válassza az **Egyéb (…)**  > **Jelszó alaphelyzetbe állítása** lehetőséget.   
 
-   ![A kiválasztott eszközzel kapcsolatos lehetőségek a Céges portál webhelyén, felül az Átnevezés, az Eltávolítás, az Eszköz alaphelyzetbe állítása, a Jelszó alaphelyzetbe állítása és a Távoli zárolás lehetőségekre mutató hivatkozásokkal. ](./media/rename-reset-device-1808.png)   
+   ![A kiválasztott eszköz adatai a Céges portál webhelyén, felül az Átnevezés, az Eltávolítás, az Eszköz alaphelyzetbe állítása, a Jelszó alaphelyzetbe állítása és a Távoli zárolás lehetőségekre mutató hivatkozásokkal. ](./media/rename-reset-device-1808.png)   
 
     ![Képernyőkép a további ikonról, amely piros nyíllal van kiemelve.](./media/rename-reset-device-step3-more-1808.png)  
 

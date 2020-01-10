@@ -16,13 +16,13 @@ searchScope:
 - User help
 ROBOTS: ''
 ms.custom: intune-enduser
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8dd62e17db94807bc31cb4368de390ac2e38b90e
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.collection: ''
+ms.openlocfilehash: 5125dbc20924e7481eb9430bdff7cd2bae6cb5b8
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72502011"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75857982"
 ---
 # <a name="make-your-device-safer-with-the-right-password"></a>Tegye biztonságosabbá készülékét a megfelelő jelszóval
 
@@ -31,7 +31,7 @@ A céges erőforrásokhoz, például e-mailekhez és dokumentumokhoz való hozz�
 Ha a Windows-eszköz nem felel meg a cég informatikai támogatási szolgálata jelszószabályzatának, megjelenik egy üzenet, amely röviden ismerteti a problémát, és elmagyarázza, mit kell tennie, hogy a jelszava megfeleljen a követelményeknek.
 
 > [!Note]
-> A cég informatikai támogatási szolgálata több követelményt is beállíthat a jelszóhoz. Megadhatja például, hogy a jelszó bizonyos számú karakterből álljon, illetve hogy számok és betűk is szerepeljenek benne. Mivel több követelményt is be lehet állítani, ez az útmutató csak azt ismerteti, hogy hogyan állítsa be vagy változtassa meg a jelszavát. Nem ismerteti azonban a követelmények minden lehetséges kombinációját.
+> A cég informatikai támogatási szolgálata több követelményt is beállíthat a jelszóhoz. Megadhatja például, hogy a jelszó bizonyos számú karakterből álljon, illetve hogy számok és betűk is szerepeljenek benne. Mivel több követelményt is be lehet állítani, ez az útmutató csak azt ismerteti, hogy hogyan állítsa be vagy változtassa meg a jelszavát. A követelmények összes lehetséges kombinációjára vonatkozóan nem áll módunkban utasításokat biztosítani.
 
 ## <a name="to-change-your-password-on-windows-phone-81"></a>Jelszó módosítása Windows Phone 8.1 rendszerű telefonon
 

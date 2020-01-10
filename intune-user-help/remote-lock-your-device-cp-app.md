@@ -17,17 +17,17 @@ ROBOTS: ''
 ms.reviewer: jieyang
 ms.suite: ems
 ms.custom: intune-enduser
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f08ddd24d5aa8f7238af42c81ee2999d875b584
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.collection: ''
+ms.openlocfilehash: 1995e25accd2c8936aab4592f231fb399a8ee145
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72508483"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75858292"
 ---
 # <a name="lock-your-device-from-the-company-portal-app-for-windows-10"></a>Eszköz zárolása a Windows 10-es Céges portál alkalmazásból
 
-Elveszett vagy ellopott eszköz távoli zárolása a Windows 10-es Céges portál alkalmazásból. Ha az eszköz támogatja a funkciót, ez a beállítás az eszköz tartózkodási helyétől függetlenül lezárhatja annak képernyőjét. Amíg valaki be nem írja a helyes jelszót, addig az eszköz zárolása nem oldható fel, és az eszköz nem használható.
+Elveszett vagy ellopott eszköz távoli zárolása a Windows 10-es Céges portál alkalmazásból. Ha az eszköz támogatja a funkciót, ez a beállítás lezárhatja az eszköz képernyőjét, függetlenül attól, hogy az eszköz hol tartózkodik. Amíg valaki be nem írja a helyes jelszót, addig az eszköz zárolása nem oldható fel, és az eszköz nem használható.
 
 ## <a name="supported-devices"></a>Támogatott eszközök
 

@@ -18,13 +18,13 @@ ROBOTS: ''
 ms.reviewer: kakyker
 ms.suite: ems
 ms.custom: intune-enduser
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f26594435689a4f7a178035264e006a497719d3e
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.collection: ''
+ms.openlocfilehash: e04950a67938d883b0762c03efa371fcb74d0731
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75205486"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75855476"
 ---
 # <a name="enroll-your-macos-device-using-the-company-portal-app"></a>MacOS-eszköz regisztrálása a Céges portál alkalmazás használatával  
 
@@ -43,7 +43,7 @@ Az eszköz regisztrálása után a Céges portál mindig ellenőrzi, hogy az esz
 
 Ha a regisztrációt követően a szervezet új biztonsági követelményt (például többtényezős hitelesítést) érvényesít, Céges portál értesíti Önt. Lehetősége lesz módosítani beállításait, hogy továbbra is dolgozhasson az eszközéről.  
 
-További információk a regisztrációval kapcsolatban: [Mi történik a Céges portál alkalmazás telepítésekor és az eszköz regisztrálásakor?](what-happens-if-you-install-the-Company-Portal-app-and-enroll-your-device-in-intune-macos.md).  
+További információk a regisztrációval kapcsolatban: [Mi történik a Céges portál alkalmazás telepítésekor és az eszköz regisztrálásakor?](what-happens-if-you-install-the-Company-Portal-app-and-enroll-your-device-in-intune-macos.md)  
 
 ## <a name="get-your-macos-device-managed"></a>MacOS-eszköz felügyeletének beolvasása  
 A következő lépésekkel regisztrálja macOS-eszközét a szervezetében. Az eszközön macOS 10,12 vagy újabb rendszernek kell futnia.   

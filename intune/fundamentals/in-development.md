@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 12/19/2019
+ms.date: 01/07/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -16,16 +16,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 35e4612c9aa482204ea61c46c5cc56051874e6de
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: 01ea2f75d166e5cc6aef4b890dba5722a74c1f61
+ms.sourcegitcommit: 8f56220e7cafc5bc43135940575a9acb5afde730
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75207400"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827819"
 ---
-# <a name="in-development-for-microsoft-intune---december-2019"></a>Fejlesztés a Microsoft Intune – december 2019
+# <a name="in-development-for-microsoft-intune---january-2020"></a>Fejlesztés a Microsoft Intune – január 2020
 
-A készültség és a tervezés elősegítése érdekében ez az oldal felsorolja az Intune felhasználói felületének frissítéseit és a fejlesztés alatt álló, de még nem kiadott funkciókat. Az oldalon található információk mellett:
+A készültség és a tervezés elősegítése érdekében ez az oldal felsorolja az Intune felhasználói felületének frissítéseit és a fejlesztés alatt álló, de még nem kiadott funkciókat. Az oldalon található információk mellett: 
 
 - Ha várható, hogy a módosítás előtt végre kell hajtania a lépéseket, közzé kell tenni egy kiegészítő bejegyzést az Office Message Centerben.
 - Ha egy szolgáltatás éles környezetbe kerül, akár előzetes, akár általánosan elérhető, a szolgáltatás leírása az oldalról az [újdonságokra](whats-new.md)kerül át.
@@ -58,18 +58,21 @@ A készültség és a tervezés elősegítése érdekében ez az oldal felsorolj
 <!-- ***********************************************-->
 ## <a name="app-management"></a>Alkalmazáskezelés
 
-### <a name="user-licensed-vpp-apps-for-user-enrollment-ios-devices---5619268---"></a>Felhasználó által licencelt VPP-alkalmazások felhasználói beléptetési iOS-eszközökhöz<!-- 5619268 -->
-A felhasználók beléptetésére szolgáló iOS-eszközök esetében a végfelhasználók többé nem fognak megjelenni a rendelkezésre álló, eszközre licencelt VPP-alkalmazásokkal. A végfelhasználók azonban továbbra is láthatják az összes felhasználó által licencelt VPP-alkalmazást a Céges portálon belül. További információ a VPP-alkalmazásokról: [Apple Volume Purchase program által vásárolt iOS-és MacOS-alkalmazások kezelése Microsoft Intune használatával](~/apps/vpp-apps-ios.md).
-
-### <a name="retrieve-personal-recovery-key-from-mem-encrypted-macos-devices---4851745---"></a>Személyes helyreállítási kulcs beolvasása a MEM titkosított macOS-eszközökről<!-- 4851745 -->
-A végfelhasználók a saját helyreállítási kulcsát (FileVault-kulcs) az iOS Céges portál alkalmazás használatával tudják lekérni. A személyes helyreállítási kulccsal rendelkező eszközt regisztrálni kell az Intune-ban, és az Intune-on keresztül kell titkosítani a FileVault-mel. Az iOS Céges portál alkalmazás használatával a végfelhasználó megnyithatja a Safari webes nézetét, és lekérheti a személyes helyreállítási kulcsát. Az Intune-ban válassza az **eszközök** > *a titkosított és regisztrált macOS-eszköz > a* **helyreállítási kulcs beszerzése**lehetőséget. További információ a FileVault: FileVault- [titkosítás MacOS rendszerhez](~/protect/encrypt-devices.md#filevault-encryption-for-macos).
-
 ### <a name="display-notifications-for-the-company-portal-app-on-windows---1808082----"></a>Értesítések megjelenítése a Windows Céges portál alkalmazásához<!-- 1808082  -->
-A Windows-eszközökön a Céges portál alkalmazást frissítjük a bejelentési értesítések megjelenítéséhez a felhasználók számára, még akkor is, ha az alkalmazás be van zárva. A frissítés csak akkor jeleníti meg az elérhető alkalmazások értesítéseit, ha a telepítés állapota befejeződött vagy sikertelen. A Céges portál alkalmazás nem jeleníti meg az értesítéseket a szükséges alkalmazásokhoz.
+A Windows-eszközökön a Céges portál alkalmazást frissítjük a bejelentési értesítések megjelenítéséhez a felhasználók számára, még akkor is, ha az alkalmazás be van zárva. A frissítés csak akkor jeleníti meg az elérhető alkalmazások értesítéseit, ha a telepítés állapota befejeződött vagy sikertelen. A Céges portál alkalmazás nem jeleníti meg az értesítéseket a szükséges alkalmazásokhoz. 
 
 ### <a name="display-installation-status-messages-for-the-company-portal-app---2514416----"></a>A Céges portál alkalmazás telepítési állapotüzenetek megjelenítése<!-- 2514416  -->
 A Céges portál alkalmazás további alkalmazás-telepítési állapotüzenetek jelennek meg a végfelhasználók számára. Az új Win32-függőségi funkciókra az alábbi feltételek érvényesek:
 - Az alkalmazás telepítése nem sikerült. A rendszergazda által definiált függőségek nem teljesültek.
+
+### <a name="retarget-web-clips-to-microsoft-edge-on-ios-devices---5455276-idready---"></a>Webes klipek átcélzása a Microsoft Edge-hez iOS-eszközökön<!-- 5455276 idready -->
+Az iOS-eszközökön rögzített webalkalmazásként szolgáló webes klipeket frissíteni kell. Az újonnan telepített webklipek a Microsoft Edge-ben nyílnak meg a Intune Managed Browser helyett, ha egy védett böngészőben kell megnyitni. A meglévő webklipeket újra meg kell célozni, hogy a Managed Browser helyett a Microsoft Edge-ben nyíljon meg. 
+
+### <a name="user-experience-change-when-adding-apps-to-intune---4705829-idready---"></a>Felhasználói élmény változása alkalmazások Intune-beli hozzáadásakor<!-- 4705829 idready -->
+Az alkalmazások Intune-nal való hozzáadásakor új felhasználói élmény jelenik meg. Ez a felhasználói élmény ugyanazokat a beállításokat és adatokat tartalmazza, amelyeket korábban már használt, de az új felhasználói felület a varázslóhoz hasonló folyamatot követ, mielőtt hozzáad egy alkalmazást az Intune-hoz. Ez az új felület egy felülvizsgálati oldalt is biztosít az alkalmazás hozzáadása előtt. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **alkalmazások** > **minden alkalmazás** lehetőséget, > a **Hozzáadás**elemet. További információt az [Alkalmazások hozzáadása a Microsoft Intune-hoz](~/apps/apps-add.md) című cikkben talál.
+
+#### <a name="require-win32-apps-to-restart----3136567--"></a>Win32-alkalmazások újraindításának megkövetelése <!-- 3136567-->
+A sikeres telepítés után a Win32-alkalmazások újraindítására lehet szükség. Azt is megadhatja, hogy az újraindítás előtt mennyi idő elteltével (a türelmi időszakot) kell megadnia.
 
 <!-- ***********************************************-->
 ## <a name="device-configuration"></a>Eszközök konfigurálása
@@ -90,13 +93,50 @@ A rendszer elérhetővé teszi az új macOS-eszköz konfigurációs profilt, ame
 A következőkre vonatkozik:
 - macOS
 
+### <a name="vpn-profiles-with-ikev2-vpn-connections-can-use-always-on-with-ios-devices----1947932-idready---"></a>A IKEv2 VPN-kapcsolatokkal rendelkező VPN-profilok mindig az iOS-eszközökön használhatók <!-- 1947932 idready -->
+IOS-eszközökön létrehozhat olyan VPN-profilt, amely IKEv2-kapcsolattal (az**eszköz konfigurációjának** > **profiljaival** > **create Profile** > **iOS/iPadOS** for platform > **VPN** a profil típusa). A jövőbeli frissítésekben a IKEv2-mel is konfigurálhatja az Always-on. Ha be van állítva, a IKEv2 VPN-profilok automatikusan csatlakoznak, és csatlakoztatva maradnak (vagy gyorsan újracsatlakozhatnak) a VPN-hez. A hálózat vagy az eszközök újraindítása esetén is csatlakoztatva marad.
+
+Az iOS-en a always-on VPN a IKEv2-profilokra korlátozódik.
+
+Az aktuálisan konfigurálható IKEv2-beállítások megtekintéséhez lépjen a [VPN-beállítások hozzáadása iOS-eszközökön a Microsoft Intune](../configuration/vpn-settings-ios.md#ikev2-settings).
+
+A következőkre vonatkozik:
+- iOS
+
+### <a name="improved-user-interface-experience-when-creating-configuration-profiles-on-ios-and-macos-devices---5569008-5569039-5569057-5569110-5569116-5569131-5569139-5569153-5859984-idready---"></a>Továbbfejlesztett felhasználói felületi élmény a konfigurációs profilok iOS-és macOS-eszközökön való létrehozásakor<!-- 5569008-5569039-5569057-5569110-5569116-5569131-5569139-5569153-5859984 idready -->
+Ha iOS-vagy macOS-eszközökhöz hoz létre profilt, a rendszer frissíti az Endpoint Management felügyeleti központban található felhasználói élményt. Ez a változás hatással van a következő eszköz-konfigurációs profilokra (**eszközök** > **konfigurációs profilok** > **profil létrehozása** > **iOS** vagy **MacOS** for platform):
+
+- Egyéni: iOS, macOS
+- Eszköz funkciói: iOS, macOS
+- Eszköz korlátozásai: iOS, macOS
+- Endpoint Protection: macOS
+- Bővítmények: macOS
+- Preferencia fájl: macOS
+
+### <a name="improved-user-interface-experience-when-creating-oemconfig-configuration-profiles-on-android-enterprise-devices---5568645-idready----"></a>Továbbfejlesztett felhasználói felületi élmény OEMConfig-konfigurációs profilok létrehozásakor androidos vállalati eszközökön<!-- 5568645 idready  -->
+Ha androidos vállalati eszközökhöz hoz létre vagy szerkeszt egy OEMConfig-profilt, a rendszer frissíti az Endpoint Management felügyeleti központ felületét. A frissített élmény áttekintést nyújt a konfigurált beállításokról. Ez a változás hatással van a OEMConfig-eszköz konfigurációs profiljára (**eszközök** > **konfigurációs profilok** > **profil létrehozása** > **Android Enterprise** for platform > **OEMConfig** ).
+
+Ez a funkció az alábbiakra vonatkozik:
+- Vállalati Android 
 
 <!-- ***********************************************-->
-<!--## Device enrollment-->
+## <a name="device-enrollment"></a>Eszközök beléptetése
+
+### <a name="block-android-enrollments-by-device-manufacturer--5197392-idready--"></a>Android-regisztrációk letiltása az eszköz gyártója által<!--5197392 idready-->
+Az eszközök regisztrálása az eszköz gyártója alapján tiltható le. Ez az Android-eszköz rendszergazdája és az Android Enterprise Work Profiles eszközökre vonatkozik. A regisztrációs korlátozások megjelenítéséhez nyissa meg a [Microsoft Endpoint Manager felügyeleti Központját](https://go.microsoft.com/fwlink/?linkid=2109431)> **eszközök** > a **regisztrációs korlátozásokat**.
+
+
 
 <!-- ***********************************************-->
-<!--## Device management-->
+## <a name="device-management"></a>Eszközkezelés
 
+
+### <a name="new-information-in-device-details---4471759-5604099----"></a>Új információ az eszköz részleteiben<!-- 4471759 5604099  -->
+A következő információk lesznek hozzáadva az eszközök **áttekintő** lapjához:
+- Memória kapacitása (a fizikai memória mennyisége az eszközön)
+- Tárolási kapacitás (az eszközön található fizikai tárterület mennyisége) 
+- CPU-processzor típusa és sebessége
+- RAM-és processzor-adatmennyiség
 
 <!-- ***********************************************-->
 <!--## Intune apps-->
@@ -110,14 +150,20 @@ A következőkre vonatkozik:
 
 
 <!-- ***********************************************-->
-<!--## Role-based access control-->
+## <a name="role-based-access-control"></a>Szerepköralapú hozzáférés-vezérlés
+
+### <a name="new-intune-built-in-role-endpoint-security-manager--4253397-idready--"></a>Új Intune beépített szerepkör Endpoint Security Manager<!--4253397 idready-->
+Új Intune beépített szerepkör lesz elérhető: a Endpoint Security Manager. Ez az új szerepkör lehetővé teszi a rendszergazdák számára, hogy teljes hozzáférést biztosítson az Intune-beli Endpoint Manager-csomóponthoz, és készen álljanak a többi területre való A szerepkör a "biztonsági rendszergazda" szerepkör kiterjesztése az Azure AD-ből. Ha jelenleg csak a globális rendszergazdák szerepkörrel rendelkezik, akkor nincs szükség módosításra. Ha szerepköröket használ, és szeretné, hogy a végponti Security Manager milyen részletességgel rendelkezik, akkor rendelje hozzá ezt a szerepkört, ha elérhetővé válik. A beépített szerepkörökről további információt a [szerepköralapú hozzáférés-vezérlés](role-based-access-control.md)című témakörben talál.
+
+### <a name="intune-roles-user-interface-changes-coming--5801612-idready--"></a>Az Intune-szerepkörök felhasználói felületének módosításai elérkeznek<!--5801612 idready-->
+A [Microsoft Endpoint Manager felügyeleti központ](https://go.microsoft.com/fwlink/?linkid=2109431) felhasználói felületének > **bérlői adminisztrációs** > **szerepkörei** egy sokkal felhasználóbarát és intuitív kialakításban lesznek módosítva. Ez a felhasználói élmény ugyanazokat a beállításokat és adatokat tartalmazza, amelyeket most használ, de az új felület egy varázsló-szerű folyamatot alkalmaz.
 
 
 <!-- ***********************************************-->
+## <a name="security"></a>Biztonság
 
-<!--
-## Security
--->
+### <a name="derived-credentials-support-on-android-cobo-devices--4839592--"></a>Származtatott hitelesítő adatok támogatása androidos COBO-eszközökön<!--4839592-->
+A származtatott hitelesítő adatokat az Android Enterprise teljes körűen felügyelt eszközökön is használhatja. A támogatás a Entrust Datacard, a közbenjáró és a DISA fajtatiszta hitelesítő adatok beolvasására is használható. Az alkalmazás-hitelesítés, a Wi-Fi, a VPN, az S/MIME-aláírás és/vagy az azt támogató alkalmazások esetében a rendszer származtatott hitelesítő adatokat használhat. 
 
 <!-- ***********************************************-->
 ## <a name="notices"></a>Értesítések

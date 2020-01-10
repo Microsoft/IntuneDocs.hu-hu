@@ -18,13 +18,13 @@ ROBOTS: ''
 ms.reviewer: coferro
 ms.suite: ems
 ms.custom: intune-enduser
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 68f67d50c05d2ec6bb819c507f2374eec69a961c
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.collection: ''
+ms.openlocfilehash: 85e35707af0ea47169a5d075bfc4844ebaa87c5c
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72508433"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75858187"
 ---
 # <a name="reset-device-from-company-portal-website"></a>Eszköz alaphelyzetbe állítása Céges portál webhelyről
 
@@ -43,9 +43,9 @@ Az eszköz alaphelyzetbe állítása a Céges portálban nem érhető el minden 
 
     ![Az eszközök lap képernyőképe, amelyen két csempe azonosítatlan, általános névvel ellátott eszközök láthatók. A szürke szalagcím közvetlenül az eszközök alatt található, és felszólítja a felhasználót, hogy azonosítsa az Ön által használt eszközt, vagy újat adjon hozzá.](./media/rename-reset-device-step2-1808.png)  
 
-3. Válassza az **Alaphelyzetbe állítás** lehetőséget. Ha a visszaállítási lehetőség nem jelenik meg az oldal tetején, válassza az **Egyéb (…)** > **Alaphelyzet** lehetőséget.  
+3. Válassza az **Alaphelyzetbe állítás** lehetőséget. Ha a visszaállítási lehetőség nem jelenik meg az oldal tetején, válassza az **Egyéb (…)**  > **Alaphelyzet** lehetőséget.  
 
-     ![A kiválasztott eszközzel kapcsolatos lehetőségek a Céges portál webhelyén, felül az Átnevezés, az Eltávolítás, az Eszköz alaphelyzetbe állítása, a Jelszó alaphelyzetbe állítása és a Távoli zárolás lehetőségekre mutató hivatkozásokkal. ](./media/rename-reset-device-1808.png)  
+     ![A kiválasztott eszköz adatai a Céges portál webhelyén, felül az Átnevezés, az Eltávolítás, az Eszköz alaphelyzetbe állítása, a Jelszó alaphelyzetbe állítása és a Távoli zárolás lehetőségekre mutató hivatkozásokkal. ](./media/rename-reset-device-1808.png)  
 
     ![Képernyőkép a további ikonról, amely piros nyíllal van kiemelve.](./media/rename-reset-device-step3-more-1808.png)  
 

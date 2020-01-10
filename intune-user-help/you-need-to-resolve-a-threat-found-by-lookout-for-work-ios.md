@@ -16,13 +16,13 @@ searchScope:
 - User help
 ROBOTS: ''
 ms.custom: intune-enduser
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 309672805b89275e3a9aef7fae6b20754a923916
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.collection: ''
+ms.openlocfilehash: dc7d9b3127f5a6424ab31652f7bdfa8e6488f6ff
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72500716"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75858638"
 ---
 # <a name="resolve-a-threat-found-by-lookout-for-work"></a>A Lookout for Work által azonosított fenyegetés elhárítása  
 
@@ -48,11 +48,11 @@ Ha a Lookout for Work alkalmazás biztonsági vagy alkalmazásfenyegetést észl
 
     ![Példa képernyőkép a Céges portál Eszközök oldaláról, a Lookout for Work figyelmeztetésével.](./media/CP-lookout-virus-banner-1808.png)  
 
-## <a name="troubleshoot-an-app-threat"></a>Alkalmazásfenyegetés hibaelhárítása   
+## <a name="troubleshoot-an-app-threat"></a>Alkalmazásfenyegetés elhárítása   
 A Lookout for Work által fenyegetőnek ítélt alkalmazás telepítésekor az alábbi képernyőképen láthatóhoz hasonló üzenetet kap.  
 
 ![Példa képernyőkép a Lookout for Work által észlelt aktív és elhárított alkalmazásfenyegetések listájáról.](./media/ios-lfw-threat-example.png)    
 Koppintson a képernyő tetején látható alkalmazásnévre. Ezután kövesse az alkalmazás eltávolítására vonatkozó utasításokat. Amíg az alkalmazás az eszközén van, Ön nem fog hozzáférni a vállalati erőforrásokhoz.    
 
-További segítségre van szüksége? Forduljon a cég informatikai támogatási szolgálatához. A kapcsolatfelvételi adatait megtalálja a [Munkahelyi portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).    
+További segítségre van szüksége? Forduljon a cég informatikai támogatásához. A kapcsolatfelvételi adatait megtalálja a [Munkahelyi portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).    
 

@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/06/2019
+ms.date: 01/08/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -15,18 +15,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9e3867bfc2de29c059766e134bd0d2c8801e1c70
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 50478ecb615cf39bba0a205cb06f83e47728e366
+ms.sourcegitcommit: 8f56220e7cafc5bc43135940575a9acb5afde730
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73712885"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827836"
 ---
 # <a name="automate-email-and-add-actions-for-noncompliant-devices-in-intune"></a>E-mailek automatizálása és műveletek hozzáadása a nem megfelelő eszközökhöz az Intune-ban
 
 A megfelelőségi szabályzatoknak vagy szabályoknak nem megfelelő eszközökhöz hozzáadhat nem **megfelelőségi műveleteket**. Ez a funkció egy időben rendezett műveletsort konfigurál, például a végfelhasználói levelezést és egyebeket.
 
-## <a name="overview"></a>Házirend
+## <a name="overview"></a>Overview
 
 Alapértelmezés szerint az Intune a nem megfelelő eszköz észlelése után azonnal nem megfelelőként jelöli meg azt. Az Azure Active Directory (AD) [feltételes hozzáférés](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal) ezt követően blokkolja az eszközt. Ha egy eszköz nem megfelelő, a meg nem **felelés** esetén is rugalmasságot biztosít, hogy eldöntse, mi a teendő. Például nem kell azonnal letiltani az eszközt, hanem türelmi időszakot is meghatározhat az eszköz megfelelőségének visszaállításáig.
 
@@ -80,7 +80,7 @@ Ha e-mailt szeretne küldeni a felhasználóknak, hozzon létre egy értesítés
 
    ![Megfelelőségről szóló értesítési üzenetminta az Intune-ban](./media/actions-for-noncompliance/actionsfornoncompliance-1.PNG)
 
-   A folytatáshoz kattintson a **Tovább** gombra.
+   A folytatáshoz válassza a **Tovább** gombot.
 
 5. A **felülvizsgálat + létrehozás**alatt tekintse át a konfigurációkat, és győződjön meg arról, hogy az értesítési üzenet sablonja készen áll a használatra. Válassza a **Létrehozás** lehetőséget az értesítés létrehozásának befejezéséhez.
 
@@ -91,7 +91,7 @@ Ha e-mailt szeretne küldeni a felhasználóknak, hozzon létre egy értesítés
 
 Eszközmegfelelőségi szabályzat létrehozásakor az Intune automatikusan létrehoz egy meg nem felelés esetén végrehajtandó műveletet. Ha egy eszköz nem felel meg a megfelelőségi szabályzatnak, ez a művelet nem megfelelőként jelöli meg az eszközt. Testre szabhatja, hogy az eszköz meddig maradjon nem megfelelőként megjelölve. Ezt a műveletet nem lehet eltávolítani.
 
-További műveletet akkor vehet fel, ha megfelelőségi szabályzatot hoz létre, vagy frissít egy meglévő szabályzatot.
+Az eszközök nem megfelelőként való megjelölésére szolgáló alapértelmezett művelet mellett választható műveleteket is hozzáadhat a megfelelőségi szabályzat létrehozásakor, vagy frissítheti a meglévő szabályzatokat.
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 

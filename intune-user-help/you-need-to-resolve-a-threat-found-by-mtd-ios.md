@@ -16,17 +16,17 @@ searchScope:
 - User help
 ROBOTS: ''
 ms.custom: intune-enduser
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: dda1beeed4837f8ef457a437e7cde8b1cb946e06
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.collection: ''
+ms.openlocfilehash: 0f937f3d33e3d94196c243b3bbcbda26f6b12a87
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72500696"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75858547"
 ---
 # <a name="resolve-a-threat-found-by-a-mobile-threat-defense-app"></a>A Mobile Threat Defense alkalmazás által talált fenyegetések elhárítása
 
-A Mobile Threat Defense alkalmazás észleli az eszközeit fenyegető veszélyeket, és értesítést küld róluk. Egyes cégek a Mobile Threat Defense szolgáltatást egy MDM-szolgáltatóval, például az Intune-nal integrálják. Integrálás esetén a Mobile Threat Defense szolgáltatás jelentést készít a fenyegetésekről (gyanús alkalmazások, hálózatok és az operációs rendszer sebezhetősége), és a Céges portál alkalmazáson keresztül értesíti ezekről. Ezután a Mobile Threat Defense alkalmazásban megtekintheti a fenyegetés részleteit és az elhárítás lépéseit.  
+A Mobile Threat Defense-alkalmazások észlelik az eszközeit fenyegető veszélyeket, és értesítést küldenek róluk. Egyes cégek a Mobile Threat Defense szolgáltatást egy MDM-szolgáltatóval, például az Intune-nal integrálják. Integrálás esetén a Mobile Threat Defense szolgáltatás jelentést készít a fenyegetésekről (gyanús alkalmazások, hálózatok és az operációs rendszer sebezhetősége), és a Céges portál alkalmazáson keresztül értesíti ezekről. Ezután a Mobile Threat Defense alkalmazásban megtekintheti a fenyegetés részleteit és az elhárítás lépéseit.  
 
 A fenyegetések megoldatlan nem megfelelőségi problémákként jelennek meg a Céges portálon. Ha a fenyegetések elérnek egy adott kockázati szintet, a cég visszavonja az Ön hozzáférését a céges erőforrásokhoz. Amíg a fenyegetések jelen vannak, előfordulhat, hogy nem lehet végrehajtani a következőket:  
 
@@ -44,5 +44,5 @@ Az alábbiakban a cég vagy intézmény által beállítható, iOS-hez készült
 * [SandBlast Mobile Protect](you-need-to-resolve-a-threat-found-by-checkpoint-ios.md)
 * [Zimperium zIPS](you-need-to-resolve-a-threat-found-by-zips-ios.md)
 
-További segítségre van szüksége? Forduljon a cég informatikai támogatási szolgálatához. A kapcsolatfelvételi adatait megtalálja a [Munkahelyi portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).  
+További segítségre van szüksége? Forduljon a cég informatikai támogatásához. A kapcsolatfelvételi adatait megtalálja a [Munkahelyi portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).  
 

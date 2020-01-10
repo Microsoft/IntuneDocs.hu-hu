@@ -18,17 +18,17 @@ ROBOTS: ''
 ms.reviewer: jieyang
 ms.suite: ems
 ms.custom: intune-enduser
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c81c13d5da8eac1616ab7274b484befaa5685511
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.collection: ''
+ms.openlocfilehash: dae2f1733fe98729384c44cb19d28651a75d0862
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72502160"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75858344"
 ---
 # <a name="remotely-lock-your-device-from-the-company-portal-website"></a>Az eszköz távoli zárolása a Vállalati portál webhelyéről
 
-Elveszett vagy ellopott eszköz távoli zárolása a Céges portál webhelyről. Ha az eszköz támogatja a funkciót, ez a beállítás az eszköz tartózkodási helyétől függetlenül lezárhatja annak képernyőjét. Amíg valaki be nem írja a helyes jelszót, addig az eszköz zárolása nem oldható fel, és az eszköz nem használható.   
+Elveszett vagy ellopott eszköz távoli zárolása a Céges portál webhelyről. Ha az eszköz támogatja a funkciót, ez a beállítás lezárhatja az eszköz képernyőjét, függetlenül attól, hogy az eszköz hol tartózkodik. Amíg valaki be nem írja a helyes jelszót, addig az eszköz zárolása nem oldható fel, és az eszköz nem használható.   
 
 A távoli zárolás a következőknél működik:
 
@@ -45,9 +45,9 @@ A távoli zárolás a következőknél működik:
 
     ![Képernyőkép az Eszközök oldalról, amelyen két csempén azonosítatlan, általános nevű eszközök láthatók. Közvetlenül az eszközök alatt egy szürke szalagcím helyezkedik el, amely arra kéri a felhasználót, hogy azonosítsa a használt eszközt, vagy adjon hozzá egy újat.](./media/rename-reset-device-step2-1808.png) 
 
-3. Válassza a **Távoli zárolás** lehetőséget. Ha a zárolás lehetőség nem jelenik meg az oldal tetején, válassza az **Egyéb (…)** > **Távoli zárolás** lehetőséget.  
+3. Válassza a **Távoli zárolás** lehetőséget. Ha a zárolás lehetőség nem jelenik meg az oldal tetején, válassza az **Egyéb (…)**  > **Távoli zárolás** lehetőséget.  
 
-   ![A kiválasztott eszközzel kapcsolatos lehetőségek a Céges portál webhelyén, felül az Átnevezés, az Eltávolítás, az Eszköz alaphelyzetbe állítása, a Jelszó alaphelyzetbe állítása és a Távoli zárolás lehetőségekre mutató hivatkozásokkal. ](./media/rename-reset-device-1808.png) 
+   ![A kiválasztott eszköz adatai a Céges portál webhelyén, felül az Átnevezés, az Eltávolítás, az Eszköz alaphelyzetbe állítása, a Jelszó alaphelyzetbe állítása és a Távoli zárolás lehetőségekre mutató hivatkozásokkal. ](./media/rename-reset-device-1808.png) 
 
     ![Az Egyéb ikon kinagyított képe egy piros nyíllal kiemelve.](./media/rename-reset-device-step3-more-1808.png)    
 

@@ -18,13 +18,13 @@ ROBOTS: ''
 ms.reviewer: jieyang
 ms.suite: ems
 ms.custom: intune-enduser
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7674366cc0332afd8eba2a4f145f47e40d5472e2
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.collection: ''
+ms.openlocfilehash: 4cca8d649dbd64b0334dfbc83bbd75f2a0e36f3d
+ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72508453"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75858256"
 ---
 # <a name="rename-your-device-from-the-company-portal-website"></a>Az eszköz átnevezése a Vállalati portál webhelyről
 
@@ -36,9 +36,9 @@ Regisztrált és felügyelt eszközök átnevezése a Céges portál webhelyről
 
     ![Képernyőkép az Eszközök oldalról, amelyen két csempén azonosítatlan, általános nevű eszközök láthatók. Közvetlenül az eszközök alatt egy szürke szalagcím helyezkedik el, amely arra kéri a felhasználót, hogy azonosítsa a használt eszközt, vagy adjon hozzá egy újat.](./media/rename-reset-device-step2-1808.png)   
 
-3. Válassza az **Átnevezés** elemet. Ha az átnevezési lehetőség nem jelenik meg az oldal tetején, válassza az **Egyéb (…)** > **Átnevezés** lehetőséget.   
+3. Válassza az **Átnevezés** elemet. Ha az átnevezési lehetőség nem jelenik meg az oldal tetején, válassza az **Egyéb (…)**  > **Átnevezés** lehetőséget.   
 
-   ![A kiválasztott eszközzel kapcsolatos lehetőségek a Céges portál webhelyén, felül az Átnevezés, az Eltávolítás, az Eszköz alaphelyzetbe állítása, a Jelszó alaphelyzetbe állítása és a Távoli zárolás lehetőségekre mutató hivatkozásokkal. ](./media/rename-reset-device-1808.png)   
+   ![A kiválasztott eszköz adatai a Céges portál webhelyén, felül az Átnevezés, az Eltávolítás, az Eszköz alaphelyzetbe állítása, a Jelszó alaphelyzetbe állítása és a Távoli zárolás lehetőségekre mutató hivatkozásokkal. ](./media/rename-reset-device-1808.png)   
 
     ![Az Egyéb ikon kinagyított képe egy piros nyíllal kiemelve.](./media/rename-reset-device-step3-more-1808.png)  
 
