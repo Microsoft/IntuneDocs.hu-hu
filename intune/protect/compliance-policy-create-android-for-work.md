@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 12/19/2019
+ms.date: 01/07/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 42127964f72177bda1808bf4b9285af52cf32b80
-ms.sourcegitcommit: 42183c87b137710b8529049f8710d47127e99900
+ms.openlocfilehash: 60244bb268f7becadc427c397d7c2d1562bcf6b5
+ms.sourcegitcommit: ea81ad5f33f18d9fe43254e27e02de5eaef74a05
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75303038"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75722606"
 ---
 # <a name="android-enterprise-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>Androidos vállalati beállítások az eszközök megfelelő vagy nem megfelelőként való megjelöléséhez az Intune-nal
 
@@ -54,15 +54,7 @@ Intune-rendszergazdaként ezeket a megfelelőségi beállításokat használhatj
   - **Magas** – ez a legkevésbé biztonságos beállítás, mivel az összes veszélyforrást engedélyezi. Akkor lehet hasznos, ha ezt a megoldást kizárólag jelentéskészítési célokra használja.
   
 > [!NOTE] 
-> A következő Mobile Threat Defense-(MTD-) szolgáltatók az alkalmazások konfigurációjának használatával támogatják az androidos vállalati eszközök tulajdonosának telepítését:
-> - Jobb mobil 
-> - Check Point SandBlast Mobile
-> - Lookout for Work
-> - Pradeo
-> - Sophos Mobile
-> - Zimperium 
->  
->  Érdeklődjön az MTD-szolgáltatónál az androidos vállalati eszközök tulajdonosi platformjának az Intune-ban való támogatásához szükséges pontos konfigurációhoz. Ez a lista frissült, mivel az androidos vállalati eszközök tulajdonosi forgatókönyvei támogatják a MTD. 
+> A Mobile Threat Defense (MTD) szolgáltatói az alkalmazások konfigurációját használó androidos vállalati eszközök tulajdonosi telepítései esetében támogatottak. Érdeklődjön az MTD-szolgáltatónál az androidos vállalati eszközök tulajdonosi platformjának az Intune-ban való támogatásához szükséges pontos konfigurációhoz.
 
 #### <a name="google-play-protect"></a>Google Play Protect
 

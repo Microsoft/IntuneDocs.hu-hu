@@ -16,12 +16,12 @@ ms.reviewer: mghadial
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0de98a0820e15a09c2b3724b216359580327259e
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: f1e493e0d2d562c0f69454d1999e82b528c724a2
+ms.sourcegitcommit: e4602481a25a5e12379f673dfe801c611f51c35b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74465723"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75731279"
 ---
 # <a name="intune-compliance-reports-for-updates"></a>Intune-megfelelőségi jelentések a frissítésekhez
 
@@ -51,7 +51,7 @@ A Windows 10-es frissítések bevezetését a Windows Analytics megoldás [Updat
 
 Ha ezt a megoldást használja, egy kereskedelmi azonosítót kell központilag telepítenie az Intune által kezelt Windows 10 rendszerű eszközökre, amelyekről jelentést szeretne készíteni a frissítés megfelelőségéről.  
 
-Az Intune-ban az egyéni szabályzat OMA-URI beállításait használhatja a kereskedelmi azonosító konfigurálásához. Lásd: az [Intune házirend-beállításai Windows 10-es eszközökhöz Microsoft Intune](https://docs.microsoft.com/intune-classic/deploy-use/windows-10-policy-settings-in-microsoft-intune).  
+Az Intune-ban az egyéni szabályzat OMA-URI beállításait használhatja a kereskedelmi azonosító konfigurálásához. Lásd: [Egyéni beállítások használata Windows 10-es eszközökhöz az Intune-ban](../configuration/custom-settings-windows-10.md).
 
 A kereskedelmi azonosító konfigurálására szolgáló OMA-URI (kis-és nagybetűket megkülönböztető) útvonal a következő: *./VENDOR/MSFT/DMCLIENT/Provider/MS DM Server/CommercialID*  
 

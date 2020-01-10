@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 46b46cd4a407df686e094198c588371ed4a01bb6
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: de0d85b7e7fbc39e7ee78c3b54da08158b02b009
+ms.sourcegitcommit: e4602481a25a5e12379f673dfe801c611f51c35b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74832576"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75731490"
 ---
 # <a name="troubleshoot-ios-device-enrollment-problems-in-microsoft-intune"></a>IOS-eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune
 
@@ -40,7 +40,7 @@ Gyűjtse össze a következő információkat a problémával kapcsolatban:
 - Milyen platformon (Android, iOS, Windows) van probléma?
 - Hány felhasználót érint a rendszer? Az összes érintett felhasználó vagy csak néhány?
 - Hány eszközt érint a rendszer? Minden eszköz érintett vagy csak néhány?
-- Mi a MDM-szolgáltató? Ha System Center Configuration Manager, a Configuration Manager milyen verzióját használja?
+- Mi a MDM-szolgáltató? Ha Configuration Manager, a Configuration Manager milyen verzióját használja?
 - Hogyan történik a beléptetés? A "saját eszközök használata" (BYOD) vagy Apple Készülékregisztrációs program (DEP) beléptetési profilokkal?
 
 ## <a name="error-messages"></a>Hibaüzenetek
@@ -186,7 +186,7 @@ Ha a vállalat több tartományt használ a felhasználók hitelesítő adataiho
 **OK:** A Apple Push Notification Service-(APNs-) tanúsítvány hiányzik, érvénytelen vagy lejárt.
 
 #### <a name="resolution"></a>Megoldás
-Ellenőrizze, hogy hozzá van-e adva érvényes APNs-tanúsítvány az Intune-hoz. További információ: az [iOS-és Mac-eszközök kezelésének beállítása](https://docs.microsoft.com/intune-classic/deploy-use/set-up-ios-and-mac-management-with-microsoft-intune). 
+Ellenőrizze, hogy hozzá van-e adva érvényes APNs-tanúsítvány az Intune-hoz. További információt az iOS- [regisztráció beállítása](ios-enroll.md)című témakörben talál.
 
 ### <a name="accountnotonboarded"></a>AccountNotOnboarded
 
@@ -199,7 +199,7 @@ Ellenőrizze, hogy hozzá van-e adva érvényes APNs-tanúsítvány az Intune-ho
 > Győződjön meg arról, hogy megújítja a APNs-tanúsítványt. Ne cserélje le az APNs-tanúsítványt. Ha lecseréli a tanúsítványt, az összes iOS-eszközt újra regisztrálnia kell az Intune-ban. 
 
 - Az APNs-tanúsítvány megújítása az Intune önálló verziójában: [Apple Mdm push-tanúsítvány megújítása](apple-mdm-push-certificate-get.md#renew-apple-mdm-push-certificate).
-- A APNs-tanúsítvány megújításához az Intune Hybrid with Configuration Manager használatával: az [iOS-es hibrid eszközkezelés beállítása System Center Configuration Manager és Microsoft Intune](https://docs.microsoft.com/sccm/mdm/deploy-use/enroll-hybrid-ios-mac).
+- A APNs-tanúsítvány megújításához az Intune Hybrid with Configuration Manager használatával: az [iOS-es hibrid eszközkezelés beállítása Configuration Manager és Microsoft Intune](https://docs.microsoft.com/configmgr/mdm/deploy-use/enroll-hybrid-ios-mac).
 - A APNs-tanúsítvány megújításához az Office 365-ben lásd: [APNs-tanúsítvány létrehozása iOS-eszközökhöz](https://support.office.com/article/Create-an-APNs-Certificate-for-iOS-devices-522b43f4-a2ff-46f6-962a-dd4f47e546a7).
 
 ### <a name="xpc_type_error-connection-invalid"></a>XPC_TYPE_ERROR a kapcsolatok érvénytelenek

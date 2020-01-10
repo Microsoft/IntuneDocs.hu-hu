@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/04/2019
+ms.date: 01/06/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9b848bc3cd6461b5c31e940ffbe330bc60374795
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: 442432e7638c69083dcad5abc571c00e4051553d
+ms.sourcegitcommit: e4602481a25a5e12379f673dfe801c611f51c35b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75206890"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75731524"
 ---
 # <a name="use-windows-10-templates-to-configure-group-policy-settings-in-microsoft-intune"></a>Csoportházirend-beállítások konfigurálása a Windows 10-es sablonokkal Microsoft Intune
 
@@ -52,16 +52,10 @@ Ez a cikk a Windows 10-es eszközökhöz készült sablonok létrehozásának l�
     - **Platform**: válassza **a Windows 10 és újabb**lehetőséget.
     - **Profil típusa**: válassza a **Felügyeleti sablonok**lehetőséget.
 
-4. Válassza a **Létrehozás** lehetőséget. Az új ablakban válassza a **Beállítások**lehetőséget. Minden beállítás fel van sorolva, és az előző és a következő nyilak használatával további beállításokat tekinthet meg:
+4. Válassza a **Létrehozás** lehetőséget. Az új ablakban válassza ki a legördülő listát, és válassza a **minden termék**lehetőséget. A listából úgy is szűrheti a beállításokat, hogy csak a **Windows** -beállításokat jelenítse meg, csak az **Office** -beállításokat, vagy csak az **Edge 77-es vagy újabb verzióját** jeleníti meg:
 
-    ![Tekintse meg a beállítások listáját, és használja az előző és a tovább gombokat](./media/administrative-templates-windows/administrative-templates-sample-settings-list.png)
-
-    > [!TIP]
-    > Az Intune Windows-beállításai összekapcsolják a helyszíni csoportházirend elérési útját Helyicsoportházirend-szerkesztő (`gpedit`).
-
-5. A legördülő listában válassza a **minden termék**elemet. A listából úgy is szűrheti a beállításokat, hogy csak a **Windows** -beállításokat jelenítse meg, csak az **Office** -beállításokat, vagy csak az **Edge 77-es vagy újabb verzióját** jeleníti meg:
-
-    ![A lista szűrése az összes Windows vagy az összes Office-beállítás megjelenítéséhez a felügyeleti sablonokban az Intune-ban](./media/administrative-templates-windows/administrative-templates-choose-windows-office-all-products.png)
+    > [!div class="mx-imgBorder"]
+    > ![szűrheti a listát, hogy megjelenjen a felügyeleti sablonok összes Windows-vagy összes Office-beállítása az Intune-ban](./media/administrative-templates-windows/administrative-templates-choose-windows-office-all-products.png)
 
     > [!NOTE]
     > A Microsoft Edge-beállítások a következőkre vonatkoznak:
@@ -71,10 +65,18 @@ Ez a cikk a Windows 10-es eszközökhöz készült sablonok létrehozásának l�
     > - Windows 10 RS5 és újabb, [KB 4512534](https://support.microsoft.com/kb/4512534) -es verzióval
     > - Windows 10 19H1 és újabb, [KB 4512941](https://support.microsoft.com/kb/4512941) -es verzióval
 
-6. Válassza ki a kívánt beállításokat. Például az **Office**-on, és válassza a **korlátozott böngészés aktiválása**lehetőséget. Megjelenik a beállítás részletes leírása. Válassza az **engedélyezve**, **Letiltva**lehetőséget, vagy hagyja meg a beállítást **nincs konfigurálva** (alapértelmezett). A részletes leírás azt is ismerteti, hogy mi történik, ha az **engedélyezve**, a **Letiltva**vagy a **nincs konfigurálva**beállítást választja.
-7. A módosítások mentéséhez válassza az **OK** gombot.
+5. Minden beállítás fel van sorolva, és az előző és a következő nyilak használatával további beállításokat tekinthet meg:
 
-Folytassa a beállítások listájának átadását, és konfigurálja a kívánt beállításokat a környezetében. Néhány példa:
+    > [!div class="mx-imgBorder"]
+    > ![tekintse meg a beállítások listáját, és használja az előző és a tovább gombokat](./media/administrative-templates-windows/administrative-templates-sample-settings-list.png)
+
+    > [!TIP]
+    > Az Intune Windows-beállításai összekapcsolják a helyszíni csoportházirend elérési útját Helyicsoportházirend-szerkesztő (`gpedit`).
+
+6. Válassza ki a kívánt beállításokat. Például az **Office**-on, és válassza a **korlátozott böngészés aktiválása**lehetőséget. Megjelenik a beállítás részletes leírása. Válassza az **engedélyezve**, **Letiltva**lehetőséget, vagy hagyja meg a beállítást **nincs konfigurálva** (alapértelmezett). A részletes leírás azt is ismerteti, hogy mi történik, ha az **engedélyezve**, a **Letiltva**vagy a **nincs konfigurálva**beállítást választja.
+7. A módosítások mentéséhez kattintson az **OK** gombra.
+
+Folytassa a beállítások listájának átadását, és konfigurálja a kívánt beállításokat a környezetében. Az alábbiakban néhány példa következik:
 
 - A **VBA-makró értesítési beállításainak** beállításával különböző Microsoft Office programokban, például a Wordben és az Excelben kezelheti a VBA-makrókat.
 - A fájlok letöltésének **engedélyezése** beállítással engedélyezheti vagy tilthatja le a letöltéseket az Internet Explorerben.
@@ -82,19 +84,21 @@ Folytassa a beállítások listájának átadását, és konfigurálja a kíván
 - Az aláíratlan **ActiveX-vezérlők letöltése** beállítással megakadályozhatja, hogy a felhasználók aláíratlan ActiveX-vezérlőket töltsenek le az Internet Explorerben.
 - A **rendszer-visszaállítás kikapcsolása** beállítás használatával engedélyezheti vagy megakadályozhatja, hogy a felhasználók futtassák a rendszer-visszaállítást az eszközön.
 - A **Kedvencek importálásának engedélyezése** beállítás megadásával engedélyezheti vagy letilthatja a felhasználók számára a Kedvencek importálását egy másik böngészőből a Microsoft Edge-be.
-- És még sok más...
+- és még sok más...
 
 ## <a name="find-some-settings"></a>Néhány beállítás megkeresése
 
 Ezekben a sablonokban több száz beállítás érhető el. A beépített funkciókkal könnyebben megtalálhatja a konkrét beállításokat:
 
-- A sablonban válassza a **Beállítások**, az **állapot**, a **beállítás típusa**vagy az **elérési út** oszlopok elemet a lista rendezéséhez. Például a **path (elérési** út) oszlopra kattintva megtekintheti az `Microsoft Excel` útvonal összes beállítását:
+- A sablonban válassza a **Beállítások**, az **állapot**, a **beállítás típusa**vagy az **elérési út** oszlopok elemet a lista rendezéséhez. Válassza ki például az **elérési út** oszlopot, és a következő nyíl használatával tekintse meg a beállításokat a `Microsoft Excel` elérési úton:
 
-  ![Kattintson a Path (elérési út) elemre a csoportházirend vagy az ADMX elérési útja szerint csoportosított összes beállítás megjelenítéséhez az Intune-ban.](./media/administrative-templates-windows/path-filter-shows-excel-options.png)
+  > [!div class="mx-imgBorder"]
+  > ![kattintson a Path (elérési út) elemre a csoportházirend vagy az ADMX elérési útja szerint csoportosított összes beállítás megjelenítéséhez az Intune-beli felügyeleti sablonokban](./media/administrative-templates-windows/path-filter-shows-excel-options.png)
 
-- A sablonban a **keresőmező** segítségével megtalálhatja a kívánt beállításokat. A kereséshez állítsa be a címet vagy az elérési utat. Keressen például `copy`. A `copy` összes beállítása látható:
+- A sablonban a **keresőmező** segítségével megtalálhatja a kívánt beállításokat. Kereshet a beállítás vagy az elérési út alapján. Keressen például a `copy`(Nem sikerült megnyitni a futási teret a(z)  hely esetén) üzenetre. A `copy` összes beállítása látható:
 
-  ![Az Intune-beli felügyeleti sablonokban található összes Windows-és Office-beállítás megjelenítésének keresése a másolásban](./media/administrative-templates-windows/search-copy-settings.png) 
+  > [!div class="mx-imgBorder"]
+  > ![a Másolás gombra kattintva megjelenítheti az összes Windows-és Office-beállítást a felügyeleti sablonokban az Intune-ban](./media/administrative-templates-windows/search-copy-settings.png) 
 
   Egy másik példában keressen rá `microsoft word`. Megjelenik a Microsoft Word programhoz beállítható összes beállítás. A `explorer` megkeresve megtekintheti az összes olyan Internet Explorer-beállítást, amelyet hozzá tud adni a sablonhoz.
 
@@ -103,3 +107,5 @@ Ezekben a sablonokban több száz beállítás érhető el. A beépített funkci
 A sablon létre lett hozva, de még nem csinál semmit. Ezután [rendelje hozzá a sablont, más néven profilt](device-profile-assign.md) , és [Figyelje annak állapotát](device-profile-monitor.md).
 
 [Az Office 365 frissítése felügyeleti sablonok használatával](administrative-templates-update-office.md).
+
+[Oktatóanyag: a Windows 10 rendszerű eszközökön a felhő használatával konfigurálja a csoportházirendet az ADMX-sablonokkal és Microsoft Intune](tutorial-walkthrough-administrative-templates.md)
