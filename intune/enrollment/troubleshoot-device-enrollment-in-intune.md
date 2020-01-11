@@ -19,12 +19,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 48ad9ffe32dc7493195ec161e070734776381427
-ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
+ms.openlocfilehash: 328a578f4d2ada41bed17839f1f85b3b9add80fa
+ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75547800"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75885952"
 ---
 # <a name="troubleshoot-device-enrollment-in-microsoft-intune"></a>Az eszközök regisztrálásának hibája Microsoft Intune
 
@@ -56,7 +56,7 @@ A felügyelt eszközök felhasználói össze tudják gyűjteni a regisztráció
 Ezek a problémák az összes eszközplatformon előfordulhatnak.
 
 ### <a name="device-cap-reached"></a>Eszközök maximális száma elérve
-**Probléma:** A regisztráció során hibaüzenet (például **A Céges portál átmenetileg nem érhető el**) jelenik meg, és a Configuration Managerben a DMPdownloader.log a **DeviceCapReached** hibát tartalmazza.
+**Probléma:** A felhasználó a regisztráció során hibát kap (például **céges portál átmenetileg nem érhető el**).
 
 **Megoldás:**
 
@@ -113,23 +113,6 @@ Az eszközszámkorlát elérésének elkerüléséhez mindig távolítsa el a m�
 
     4. Kapcsolja be újból a DirSync eszközt, és ellenőrizze, hogy most már megfelelően van-e szinkronizálva a felhasználó.
 
-3. Ha Configuration Managert használ az Intune-nal, ellenőrizze, hogy a felhasználó rendelkezik-e érvényes Felhőbeli felhasználói AZONOSÍTÓval:
-
-    1. Nyissa meg az SQL Management Studiót.
-
-    2. Csatlakozzon a megfelelő adatbázishoz.
-
-    3. Nyissa meg az adatbázismappát, és keresse meg, majd nyissa meg a **CM_DBName** mappát, ahol a DBName az ügyféladatbázis neve.
-
-    4. A lap tetején kattintson az **Új lekérdezés** elemre, majd hajtsa végre az alábbi lekérdezéseket:
-
-        - Az összes felhasználó megjelenítéséhez: `select * from [CM_ DBName].[dbo].[User_DISC]`
-
-        - Adott felhasználók megjelenítéséhez használja a következő lekérdezést, ahol a (z)% testuser1% helyőrző a megkeresni kívánt felhasználó username@domain.com számára: `select * from [CM_ DBName].[dbo].[User_DISC] where User_Principal_Name0 like '%testuser1%'`
-
-        A lekérdezés megírása után válassza az **!Execute** lehetőséget.
-        Az eredmények visszaadása után keresse meg a felhő felhasználójának azonosítóját.  Ha nem található azonosító, a felhasználó nem rendelkezik Intune-licenccel.
-
 ### <a name="unable-to-create-policy-or-enroll-devices-if-the-company-name-contains-special-characters"></a>Nem lehet szabályzatot létrehozni vagy eszközöket regisztrálni, ha a vállalat neve speciális karaktereket tartalmaz.
 **Hiba:** Nem lehet szabályzatot létrehozni vagy eszközöket regisztrálni.
 
@@ -144,7 +127,7 @@ Az eszközszámkorlát elérésének elkerüléséhez mindig távolítsa el a m�
 - ha több felső szintű tartomány tartozik a szervezet egyszerű felhasználóneveinek utótagjaihoz (például @contoso.com vagy @fabrikam.com).
 
 
-Az [AD FS 2.0 összegzése](http://support.microsoft.com/kb/2607496) a <strong>SupportMultipleDomain</strong> kapcsolóval együtt használható, hogy az AD FS-kiszolgáló támogassa az ilyen helyzetet anélkül, hogy további AD FS 2.0 kiszolgálókra lenne szükség. További információt [ebben a blogban](https://blogs.technet.microsoft.com/abizerh/2013/02/05/supportmultipledomain-switch-when-managing-sso-to-office-365/) talál.
+Az [AD FS 2.0 összegzése](https://support.microsoft.com/kb/2607496) a <strong>SupportMultipleDomain</strong> kapcsolóval együtt használható, hogy az AD FS-kiszolgáló támogassa az ilyen helyzetet anélkül, hogy további AD FS 2.0 kiszolgálókra lenne szükség. További információt [ebben a blogban](https://blogs.technet.microsoft.com/abizerh/2013/02/05/supportmultipledomain-switch-when-managing-sso-to-office-365/) talál.
 
 
 ## <a name="android-issues"></a>Android-problémák
@@ -332,23 +315,6 @@ További információt az [Ajánlott eljárások az Active Directory összevoná
 
 5. Ellenőrizze, hogy az iOS-hez készült Safari az alapértelmezett böngésző-e, és a cookie-k engedélyezettek-e.
 
-### <a name="enrolled-ios-device-doesnt-appear-in-console-when-using-configuration-manager-with-intune"></a>A regisztrált iOS-eszköz nem jelenik meg a konzolon a Configuration Manager Intune-nal való használatakor
-**Hiba:** A felhasználó regisztrálja az iOS-eszközt, de az nem jelenik meg a Configuration Manager felügyeleti konzolon. Az eszköz nem jelzi, hogy már regisztrálva van. Lehetséges okok:
-
-- Az Ön Configuration Manager-helyén található Microsoft Intune-összekötő nem kommunikál az Intune szolgáltatással.
-- Az állapotkezelő (statmgr) vagy az adatfelderítés-kezelő (ddm) összetevő nem dolgozza fel az Intune szolgáltatás üzeneteit.
-- Előfordulhat, hogy az MDM-tanúsítványt az egyik fiókból töltötte le, és egy másik fiókban használta.
-
-
-**Megoldás:** tekintse át a következő naplófájlokat a lehetséges hibák azonosítása érdekében:
-
-- dmpdownloader.log
-- ddm.log
-- statmgr.log
-
-Hamarosan közzétesszük az arra vonatkozó példákat, hogy mit kell keresni ezekben a naplófájlokban.
-
-
 ### <a name="users-ios-device-is-stuck-on-an-enrollment-screen-for-more-than-10-minutes"></a>A felhasználó iOS-eszköze több mint 10 percig a regisztrációs képernyőn marad
 
 **Probléma**: Egy regisztrálandó eszköz elakadhat az alábbi két képernyő egyikén:
@@ -418,36 +384,6 @@ A letiltott eszközök törlését követően megkérheti a felhasználókat, ho
     2. Válassza az **eszközök** > **minden eszköz**lehetőséget.  
     3. Keresse meg a regisztrációs problémával rendelkező eszközt. Az eredmények szűkítéséhez keressen az eszköz neve vagy a MAC-/hardvercím alapján.
     4. Válassza ki az eszközt > **Törlés**. Törölje az eszközhöz társított összes többi bejegyzést.  
-
-## <a name="issues-when-using-configuration-manager-with-intune"></a>Problémák a Configuration Manager Intune-nal való használatakor
-
-### <a name="mobile-devices-disappear"></a>Mobileszközök tűnnek el
-
-**Hiba:** Miután sikeresen regisztrált egy mobileszközt a Configuration Managerbe, az eltűnik a mobileszköz-gyűjteményből. Az eszköz azonban továbbra is rendelkezik felügyeleti profillal, és szerepel a CSS-átjáróban.
-
-**Megoldás:** Ez a következők miatt fordulhat elő:
-
-- Egy egyéni folyamat eltávolítja a tartományhoz nem csatlakozó eszközöket, vagy
-- a felhasználó kivonta az eszközt az előfizetésből.
-Ha meg szeretné állapítani, hogy melyik eljárás vagy felhasználói fiók távolította el az eszközt a Configuration Manager konzolból, hajtsa végre az alábbi lépéseket.
-
-#### <a name="check-how-device-was-removed"></a>Az eszköz eltávolításának ellenőrzése
-
-1. A Configuration Manager felügyeleti konzolon válassza a **figyelés** &gt; **rendszer állapota** &gt; **állapotüzenetek lekérdezése**elemet.
-
-2. Kattintson a jobb gombbal a **Manuálisan törölt gyűjtemény tagerőforrások** elemre, és válassza az **Üzenetek megjelenítése** parancsot.
-
-3. Válasszon ki egy megfelelő időpontot vagy dátumot, illetve az elmúlt 12 órát.
-
-4. Keresse meg a kérdéses eszközt, és ellenőrizze, hogy miként történt az eltávolítása. Az alábbi példában látható, hogy az SCCMInstall fiók törölte az eszközt egy ismeretlen alkalmazáson keresztül.
-
-    ![Képernyőfelvétel az eszköztörlési diagnózisról](./media/troubleshoot-device-enrollment-in-intune/CM_With_Intune_Unknown_App_Deleted_Device.jpg)
-
-5. Ellenőrizze, hogy a Configuration Manager nem rendelkezik-e ütemezett feladattal, parancsfájllal vagy egyéb folyamattal, amely automatikusan kiürítheti a tartományhoz nem csatlakozó, a mobil- vagy a kapcsolódó eszközöket.
-
-### <a name="other-ios-enrollment-errors"></a>Egyéb iOS-beléptetési hibák
-
-Az iOS-regisztrálási hibák listáját a dokumentációban, az [iOS-eszközregisztrációs problémák hibaelhárítása a Microsoft Intune-ban](https://support.microsoft.com/help/4039809/troubleshooting-ios-device-enrollment-in-intune) című cikkben találhatja.
 
 ## <a name="pc-issues"></a>PC-kkel kapcsolatos problémák
 

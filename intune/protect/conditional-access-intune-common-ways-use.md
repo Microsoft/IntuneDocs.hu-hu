@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d30749a7eaa3d516bef2f2acff3e010d69db1c0e
-ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
+ms.openlocfilehash: 92e6aa1a66429c6407556444e903c158aff9dfa0
+ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75547058"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75885982"
 ---
 # <a name="what-are-common-ways-to-use-conditional-access-with-intune"></a>Mik a feltételes hozzáférés az Intune-nal való használatának gyakori módjai?
 
@@ -86,14 +86,6 @@ Az asztali számítógépeken ken beállítható feltételes hozzáférés a mob
 - Helyszíni **ad-tartományhoz csatlakoztatva:** Ezt a lehetőséget általában olyan szervezetek használják, amelyek ésszerűen kényelmesek ahhoz, hogy a számítógépeket az AD-csoportok házirendjein vagy a Configuration Manageron keresztül kezelhesse.
 
 - **Azure ad-tartományhoz csatlakoztatott és Intune-felügyelet:** Ez a forgatókönyv olyan szervezeteknek szól, amelyeknek először a felhőt szeretnék használni (azaz elsősorban a Cloud Services használatát, amelynek célja a helyszíni infrastruktúra használatának csökkentése) vagy csak felhőalapú (nincs helyszíni infrastruktúra). Az Azure AD-csatlakozás hibrid környezetben jól működik, és lehetővé teszi a Felhőbeli és a helyszíni alkalmazások és erőforrások elérését. Az eszköz csatlakozik az Azure AD-hez, és regisztrálva lesz az Intune-ban, amely feltételes hozzáférési feltételekként használható a vállalati erőforrások eléréséhez.
-
-- **Ad-tartományhoz csatlakoztatott és Configuration Manager:** Az aktuális ág esetében Configuration Manager olyan feltételes hozzáférési képességeket biztosít, amelyek a tartományhoz csatlakoztatott SZÁMÍTÓGÉPeken kívül a meghatározott megfelelőségi feltételeket is kiértékelik:
-
-  - Titkosították-e a számítógépet?
-
-  - A kártevő szoftver telepítve van? Frissítették az eszközt?
-
-  - Jailbreakelték vagy rootolták az eszközt?
 
 #### <a name="bring-your-own-device-byod"></a>Saját eszközök használata (BYOD)
 

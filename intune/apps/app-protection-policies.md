@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8657b6fa8110b4ea4bbf8ec0841d69197624dd9f
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 9b5f973e5ce169edcf6149b0588c905d8497cca2
+ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74563727"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75885746"
 ---
 # <a name="how-to-create-and-assign-app-protection-policies"></a>Alkalmazásvédelmi szabályzatok létrehozása és hozzárendelése
 
@@ -93,9 +93,6 @@ Ha iOS-/iPadOS-és Android-alkalmazásokhoz hoz létre alkalmazás-védelmi szab
 
 9. A **hozzárendelések** lap megjelenítéséhez kattintson a **tovább** gombra.<br>
    A **hozzárendelések** lapon engedélyezheti az alkalmazás-védelmi házirendet a felhasználók csoportjaihoz.
-   
-    >[!IMPORTANT]
-    > Ha az Intune-ban és a Configuration Managerben kezeli az eszközöket, a szabályzat csak a kijelölt csoport közvetlen felhasználói esetében lép érvénybe. A csoportba ágyazott alárendelt csoportok tagjaira a szabályzat nem vonatkozik.
 
 10. Kattintson a **Tovább gombra: felülvizsgálat + létrehozás** elemre, és tekintse át az alkalmazás védelmi házirendjéhez megadott értékeket és beállításokat.
 

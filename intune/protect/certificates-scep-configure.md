@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 86640c831e8836a72ad5a0a7d5023ff7d836a43a
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 501bfcbef0dd46f6021fc5db16cf3b9e2f2cd0c0
+ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73801579"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75886008"
 ---
 # <a name="configure-infrastructure-to-support-scep-with-intune"></a>Infrastruktúra konfigurálása az Intune-nal való SCEP támogatásához
 
@@ -253,7 +253,7 @@ Az alábbi eljárások segítségével konfigurálhatja a hálózati eszközök 
 
       - **Webkiszolgáló** > **Alkalmazásfejlesztés** > **ASP.NET 4.5**
 
-        Az ASP.NET 4.5 telepítése telepíti a .NET-keretrendszer 4.5-öt is. A .NET-keretrendszer 4.5 telepítésekor a **.NET-keretrendszer 4.5** alapszolgáltatásai mellett telepítse az **ASP.NET 4.5** és a **WCF-szolgáltatások** > **HTTP-aktiválás** szolgáltatást is.
+        Az ASP.NET 4.5 telepítése telepíti a .NET-keretrendszer 4.5-öt is. A .NET-keretrendszer 4.5 telepítésekor a **.NET-keretrendszer 4.5** alapszolgáltatásai mellett telepítse az **ASP.NET 4.5** és a **WCF-szolgáltatások** > **HTTP-aktiválás** szolgáltatását is.
 
       - **Felügyeleti eszközök** > **Kompatibilitás az IIS 6 kezelésével** > **Kompatibilitás az IIS 6 metabázisával**
       - **Felügyeleti eszközök** > **Kompatibilitás az IIS 6 kezelésével** > **IIS 6 WMI kompatibilitási mód**
@@ -373,8 +373,7 @@ A Microsoft Intune Tanúsítvány-összekötő a NDES szolgáltatást futtató k
 
    2. Futtassa a telepítőprogramot (**NDESConnectorSetup.exe**). A telepítő telepíti a NDES és az IIS-tanúsítvány regisztrációs pontjának (CRP) webszolgáltatásának irányelvmodul-modulját is. A *melynek neve certificateregistrationsvc*-alapú CRP-webszolgáltatás alkalmazásként fut az IIS-ben.
 
-      - Ha önálló Intune-hoz telepíti az NDES-t, akkor a CRP szolgáltatás automatikusan települ a tanúsítvány-összekötővel együtt.
-      - Az Intune és a Configuration Manager használatával a tanúsítvány regisztrációs pontját Configuration Manager helyrendszer-szerepkörként kell telepíteni.
+      Ha önálló Intune-hoz telepíti az NDES-t, akkor a CRP szolgáltatás automatikusan települ a tanúsítvány-összekötővel együtt.
 
 5. Amikor a rendszer kéri a tanúsítvány-összekötő ügyféltanúsítványt, válassza a **kiválasztás**lehetőséget, majd válassza ki a NDES-#3 kiszolgálóra telepített **ügyfél-hitelesítési** tanúsítványt a NDES-t [futtató kiszolgálón, amely](#install-and-bind-certificates-on-the-server-that-hosts-ndes) a jelen cikk korábbi részében található.
 

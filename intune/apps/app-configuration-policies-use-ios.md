@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2c447c67e631365e831f033c2811c36d936f2e85
-ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
+ms.openlocfilehash: d5a3204721a0d40cfb5bf729ca17ef8e4ded1f0f
+ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75547987"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75885772"
 ---
 # <a name="add-app-configuration-policies-for-managed-ios-devices"></a>Alkalmazáskonfigurációs szabályzatok hozzáadása felügyelt iOS-eszközökhöz
 
@@ -182,7 +182,7 @@ A DEP (Apple Készülékregisztrációs program) regisztrációi nem kompatibili
 
 1. Az Intune-ban szükség esetén adja hozzá a Intune Céges portál alkalmazást az **intune** > **apps** > **minden alkalmazás** > **Hozzáadás**lehetőséggel.
 2. Lépjen az **alkalmazások** > **alkalmazás-konfigurációs házirendek**elemre, és hozzon létre egy alkalmazás-konfigurációs házirendet a céges portál alkalmazáshoz.
-3. Hozzon létre egy alkalmazás-konfigurációs szabályzatot az alábbi XML-sel. Az alkalmazás-konfigurációs szabályzat létrehozásával és az XML-adatok megadásával kapcsolatos további információkért tekintse meg a [felügyelt iOS-eszközökhöz](app-configuration-policies-use-ios.md) vagy a hibrid Mdm tartozó alkalmazás-konfigurációs házirendek hozzáadása című témakört, és [alkalmazza a beállításokat iOS-alkalmazásokra Configuration Manager alkalmazás-konfigurációs házirendekkel](https://docs.microsoft.com/configmgr/mdm/deploy-use/configure-ios-apps-with-app-configuration-policies).
+3. Hozzon létre egy alkalmazás-konfigurációs szabályzatot az alábbi XML-sel. Az alkalmazás-konfigurációs szabályzat létrehozásával és az XML-adatok megadásával kapcsolatos további információkért tekintse meg az [alkalmazás-konfigurációs házirendek hozzáadása a felügyelt iOS-eszközökhöz](app-configuration-policies-use-ios.md)című témakört.
 
     ``` xml
     <dict>

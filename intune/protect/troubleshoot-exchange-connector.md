@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d50db72a66ee98b773973e96e03b7786c3c2d298
-ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
+ms.openlocfilehash: d3d9473b68f0420670130203409abf477355d93f
+ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75547942"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75885536"
 ---
 # <a name="troubleshoot-the-intune-exchange-connector"></a>Az Intune Exchange Connector hibáinak megoldása
 
@@ -40,7 +40,7 @@ Mielőtt elkezdené az Exchange Connector hibáinak elhárítását az Intune-ba
   - Az összekötőt első alkalommal állítja be? 
   - Az összekötő megfelelően működik, és nem sikerül?
   - Ha működik, milyen változások történtek az Intune-környezetben, az Exchange-környezetben vagy az összekötő szoftvert futtató számítógépen?
-- Mi a MDM-szolgáltató? Ha a Microsoft Endpoint Configuration Manager, a Configuration Manager melyik verzióját használja?
+- Mi a MDM-szolgáltató?
 - Milyen verziójú Exchange-verziót használ?
 
 ### <a name="use-powershell-to-get-more-data-on-exchange-connector-issues"></a>További információ az Exchange Connectorral kapcsolatos problémákról a PowerShell használatával

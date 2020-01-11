@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 12/03/2019
+ms.date: 01/10/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ef9548a77a3a745eda24b927118d1447d5afd1f0
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 3f336bdb9eca9900cc0250bb174c04d368da9eb9
+ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74784238"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75885585"
 ---
 # <a name="add-apps-to-microsoft-intune"></a>Alkalmazások hozzáadása a Microsoft Intune-hoz 
 
@@ -37,7 +37,7 @@ Az alkalmazások és eszközök céges felhasználói (a munkaerő) több alkalm
 
 Az Intune sokféle alkalmazástípust támogat. Az elérhető beállítások minden alkalmazástípus esetében eltérőek. Az Intune a következő típusú alkalmazások hozzáadását és hozzárendelését teszi lehetővé:
 
-| Alkalmazástípusok | Az  telepítése | Updates |
+| Alkalmazástípusok | Telepítés | Updates |
 |---|---|---|
 | Áruházbeli alkalmazások | Az Intune telepíti az alkalmazást az eszközön.  | Az alkalmazások frissítése automatikus. |
 | Belső fejlesztésű (üzletági) alkalmazások | Az Intune telepíti az alkalmazást az eszközön (a telepítőfájlt Önnek kell letöltenie). | Az alkalmazást Önnek kell frissítenie. |
@@ -133,7 +133,7 @@ A webes, az áruházbeli és az üzletági alkalmazásokon kívül érdemes tisz
 - **Microsoft Store Vállalatoknak (Windows 10)** : A Microsoft Store Vállalatoknak az a hely, ahol alkalmazásokat vásárolhat a szervezete számára egyenként vagy mennyiségi program keretében. Az áruházat a Microsoft Intune-nal összekapcsolva a mennyiségi programban vásárolt alkalmazásokat az Azure Portalon kezelheti. További információ: [A Microsoft Store Vállalatoknak áruházban vásárolt alkalmazások felügyelete](windows-store-for-business.md).
 
     > [!NOTE]
-    > A Windows-alkalmazások fájlnévkiterjesztései közé tartozik az **.msi**, **.appx**, **.appxbundle**, **.msix** és **.msixbundle**.  
+    > A windowsos alkalmazások fájlnévkiterjesztései közé tartozik az **.msi**, **.appx**, **.appxbundle**, **.msix** és **.msixbundle** is.  
 
 ## <a name="before-you-add-apps"></a>Mielőtt hozzáadna alkalmazásokat
 Mielőtt elkezdené az alkalmazások hozzáadását és hozzárendelését, vegye figyelembe a következőket:
@@ -211,4 +211,4 @@ Az alkalmazások Intune-hoz adásáról a különböző platformokon az alábbi 
 - [Microsoft Edge macOS rendszerhez](apps-edge-macos.md)
 - [Beépített alkalmazások](apps-add-built-in.md)
 - [Android Enterprise System-alkalmazás](apps-ae-system.md)
-- [Win32-alkalmazások](app-management.md)
+- [Win32-alkalmazások](~/apps/apps-win32-app-management.md)

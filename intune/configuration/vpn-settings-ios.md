@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e45d51feb91e0e188971133185ac0f0f13e5b1f4
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 9eb7ee99d69fd56707bd9dfe5453ffe0bb107bad
+ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74781141"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75885662"
 ---
 # <a name="add-vpn-settings-on-ios-devices-in-microsoft-intune"></a>VPN-beállítások hozzáadása iOS-eszközökön Microsoft Intune
 
@@ -138,6 +138,10 @@ Ezek a beállítások akkor érvényesek, ha a **kapcsolattípus** > **IKEv2**le
 
 - **TLS-verzió minimális**száma: adja meg a használni kívánt TLS-verziót. Adja meg `1.0`, `1.1`vagy `1.2`. Ha üresen hagyja, a rendszer a `1.0` alapértelmezett értékét használja.
 - **TLS-verzió maximális**száma: adja meg a használni kívánt TLS-verziót. Adja meg `1.0`, `1.1`vagy `1.2`. Ha üresen hagyja, a rendszer a `1.2` alapértelmezett értékét használja.
+
+> [!NOTE]
+> Felhasználói hitelesítés és tanúsítványok használatakor be kell állítani a TLS-verziók minimális és maximális értékeit.
+
 - **Tökéletes továbbítási titoktartás**: válassza az **Engedélyezés** lehetőséget a tökéletes továbbítási titoktartás (PFS) bekapcsolásához. A PFS egy olyan IP-biztonsági szolgáltatás, amely csökkenti annak hatását, ha egy munkamenetkulcs biztonsága sérül. A **Letiltás** (alapértelmezett) nem használ PFS-t.
 - **Tanúsítvány visszavonásának ellenőrzése**: válassza az **Engedélyezés** lehetőséget, hogy a rendszer ne vonja vissza a tanúsítványokat, mielőtt engedélyezné a VPN-kapcsolat sikerességét. Ez az ellenőrzési lehetőség a legjobb megoldás. Ha a VPN-kiszolgáló túllépi az időkorlátot a tanúsítvány visszavonásának meghatározása előtt, akkor a rendszer a hozzáférést is megadja. A **Letiltás** (alapértelmezett) nem vizsgálja a visszavont tanúsítványokat.
 
@@ -156,7 +160,7 @@ Ezek a beállítások akkor érvényesek, ha a **kapcsolattípus** > **IKEv2**le
     - SHA2 – 384
     - SHA2 – 512
   - **Diffie-Hellman csoport**: válassza ki a kívánt csoportot. Az alapértelmezett érték a Group `2`.
-  - **Élettartam** (perc): válassza ki, hogy mennyi ideig marad aktív a biztonsági társítás a kulcsok elforgatása előtt. `10` és `1440` közötti egész értéket adjon meg (1440 perc 24 óra). Az alapértelmezett érték a `1440`.
+  - **Élettartam** (perc): válassza ki, hogy mennyi ideig marad aktív a biztonsági társítás a kulcsok elforgatása előtt. `10` és `1440` közötti egész értéket adjon meg (1440 perc 24 óra). Az alapértelmezett szint a `1440`.
 
 - **Külön paraméterek beállítása a gyermek biztonsági társításokhoz**: az iOS lehetővé teszi, hogy külön paramétereket konfiguráljon az IKE-kapcsolathoz és az alárendelt kapcsolatokhoz. 
 
@@ -175,7 +179,7 @@ Ezek a beállítások akkor érvényesek, ha a **kapcsolattípus** > **IKEv2**le
     - SHA2 – 384
     - SHA2 – 512
   - **Diffie-Hellman csoport**: válassza ki a kívánt csoportot. Az alapértelmezett érték a Group `2`.
-  - **Élettartam** (perc): válassza ki, hogy mennyi ideig marad aktív a biztonsági társítás a kulcsok elforgatása előtt. `10` és `1440` közötti egész értéket adjon meg (1440 perc 24 óra). Az alapértelmezett érték a `1440`.
+  - **Élettartam** (perc): válassza ki, hogy mennyi ideig marad aktív a biztonsági társítás a kulcsok elforgatása előtt. `10` és `1440` közötti egész értéket adjon meg (1440 perc 24 óra). Az alapértelmezett szint a `1440`.
 
 ## <a name="automatic-vpn-settings"></a>Automatikus VPN-beállítások
 

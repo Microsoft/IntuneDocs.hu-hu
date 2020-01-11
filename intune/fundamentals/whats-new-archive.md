@@ -19,12 +19,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8bc9dd73a9d710b529f757ab336a2ab79e3f6888
-ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
+ms.openlocfilehash: 4a9454d11fd1209e715cbcb1e9d2ce7aae4a003c
+ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75547704"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75886058"
 ---
 # <a name="whats-new-in-the-microsoft-intune---previous-months"></a>A Microsoft Intune újdonságai – korábbi hónapok
 
@@ -2334,8 +2334,6 @@ Az Azure Portalon mostantól új folyamatok és eszközök érhetők el a felhas
 - Felhasználók részhalmazának áthelyezése az Intune-ba az Azure Portal használatával, miközben a többi felhasználó a hibrid MDM-ben marad
 - Eszközök migrálása az Intune-ba az Azure Portal használatával újbóli regisztráció nélkül
 
-A részletekért lásd: [Hibrid MDM-felhasználók és -eszközök migrálása az önálló Intune szolgáltatásba](https://docs.microsoft.com/configmgr/mdm/deploy-use/migrate-hybridmdm-to-intunesa).
-
 ### <a name="on-premises-exchange-connector-high-availability-support----676614---"></a>Magas rendelkezésre állású helyszíni Exchange Connector támogatása <!-- 676614 -->
 Miután az Exchange Connector létrehoz egy kapcsolatot az Exchange-lel a megadott ügyfél-hozzáférési kiszolgáló (CAS) használatával, az összekötő mostantól képes a többi CASs felderítésére. Ha az elsődleges CAS elérhetetlenné válik, az összekötő átvált egy másik CAS-ra (ha elérhető), amíg az elsődleges CAS elérhetősége helyre nem áll. További információért lásd: [Magas rendelkezésre állású helyszíni Exchange Connector támogatása](../protect/exchange-connector-install.md#on-premises-intune-exchange-connector-high-availability-support).
 
@@ -3003,7 +3001,7 @@ Akik iOS-es eszközt használnak, a Céges portálba való bejelentkezés után 
 ## <a name="may-2017"></a>2017. május
 
 ### <a name="change-your-mdm-authority-without-unenrolling-managed-devices--1103950--"></a>MDM-szolgáltató módosítása a felügyelt eszközök regisztrációjának törlése nélkül<!--1103950-->
-Már anélkül módosíthatja az MDM-szolgáltatót, hogy fel kellene vennie a kapcsolatot a Microsoft ügyfélszolgálatával, valamint anélkül, hogy el kellene végeznie a meglévő felügyelt eszközök regisztrációjának törlését és a regisztráció újbóli elvégzését. A Configuration Manager-konzolon [módosíthatja az MDM-szolgáltatót](/sccm/mdm/deploy-use/change-mdm-authority) a Configuration Manager (hibrid) beállításról Microsoft Intune (önálló) beállításra, vagy fordítva.
+Már anélkül módosíthatja az MDM-szolgáltatót, hogy fel kellene vennie a kapcsolatot a Microsoft ügyfélszolgálatával, valamint anélkül, hogy el kellene végeznie a meglévő felügyelt eszközök regisztrációjának törlését és a regisztráció újbóli elvégzését. A Configuration Manager-konzolon módosíthatja az MDM-szolgáltatót a Configuration Manager (hibrid) beállításról Microsoft Intune (önálló) beállításra, vagy fordítva.
 
 
 ### <a name="improved-notification-for-samsung-knox-startup-pins--1087143--"></a>Továbbfejlesztett értesítés a Samsung Knox indítási PIN-kódjaihoz<!--1087143-->

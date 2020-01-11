@@ -16,12 +16,12 @@ ms.reviewer: dagerrit
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ca0983b7b637b7e85bef97cd77e6c870c4e43eb
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: c705e8863ef4e01906a773d528f9ae2f40461c71
+ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72510012"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75885854"
 ---
 # <a name="basic-setup"></a>Alapszintű beállítás
 
@@ -74,9 +74,9 @@ Az Intune-ra való migráláshoz Intune-előfizetés szükséges.
 
 ### <a name="task-3-set-your-mdm-authority-to-intune"></a>3\. feladat: az Intune beállítása MDM-szolgáltatóként
 
-Az Intune kezelhető az Azure Portalról vagy a Configuration Manager Aktuális ágának konzoljáról. Ha nincs rá szükség, hogy az Intune-t a Configuration Manager Aktuális ágán alapuló környezettel integrálja, ajánlott az Intune-t az [Azure Portalról](https://portal.azure.com) kezelni.
+Javasoljuk, hogy az Intune-t a [Microsoft Endpoint Manager felügyeleti központjának](https://go.microsoft.com/fwlink/?linkid=2109431)használatával kezelje.
 
-Az Intune Azure-portál aktiválásához állítsa be az **Intune**-t MDM-szolgáltatóként. Ha másik MDM-szolgáltatót használ, akkor az Intune a Microsoft más felügyeleti konzoljainak is átadhatja a mobileszköz-felügyeletet. Ezek a helyzetek elég ritkán fordulnak elő.
+Állítsa be az MDM-szolgáltatót az **Intune**-ra. Ha másik MDM-szolgáltatót használ, akkor az Intune a Microsoft más felügyeleti konzoljainak is átadhatja a mobileszköz-felügyeletet. Ezek a helyzetek elég ritkán fordulnak elő.
 
 > [!IMPORTANT]
 > Ha első alkalommal adja át a mobileszköz-felügyeletet az Intune-nak, akkor mindenképpen az Intune-t adja meg MDM-szolgáltatónak.

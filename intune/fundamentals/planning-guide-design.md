@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5c18f3e8fb14d8592789b39856ec420790fad286
-ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
+ms.openlocfilehash: 8452f840fb269505656bf6594d3e5c196b4d7a06
+ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75547550"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75885785"
 ---
 # <a name="create-a-design"></a>Terv létrehozása
 
@@ -101,19 +101,11 @@ Az aktuális MDM-környezet dokumentálásakor mindenképpen jegyezze fel azokat
 | **SharePoint** | Helyszíni SharePoint | Nem tervezzük a SharePoint felhőbe költöztetését |  
 | **Aktuális MDM** | Exchange ActiveSync |  |
 | **Tanúsítványmegoldás** | Microsoft Server 2012 R2, AD tanúsítványszolgáltatások | Csak nyilvános kulcsú infrastruktúrát használunk a webhelykiszolgálókhoz |
-| **Rendszerfelügyelet** | Configuration Manager CB 1606 | Meg szeretnénk vizsgálni a hibrid Intune-megoldás lehetőségét |
+| **Rendszerfelügyelet** | Aktuális ág Configuration Manager | Szeretné megvizsgálni a közös felügyelet megoldását |
 | **VPN-megoldás** | Cisco AnyConnect |  |
 
 
 A saját Intune-tervének kidolgozásához [letöltheti a fenti táblázat sablonját](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0).
-
-## <a name="choose-an-intune-deployment-option"></a>Intune-telepítési lehetőség választása
-
-Az Intune kétféle telepítési lehetőséget kínál, ezek az önálló és a hibrid. Önálló a felhőben futó Intune szolgáltatásra hivatkozik, amely az Intune és a Configuration Manager közötti integrációra utal. Ez az útmutató elsősorban az önálló telepítésről szól. [Döntse el, melyik lehetőség felel meg az üzleti követelményeknek](https://docs.microsoft.com/configmgr/mdm/understand/choose-between-standalone-intune-and-hybrid-mobile-device-management).
-
-> [!Important]
->Az új hibrid MDM-ügyfelek bevezetése elavult. További információ: [áttérés hibrid mobileszköz-kezelésről az Intune-ra az Azure-](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Move-from-Hybrid-Mobile-Device-Management-to-Intune-on-Azure/ba-p/280150) blogbejegyzésben.
-
 
 ## <a name="intune-tenant-location"></a>Az Intune-bérlő földrajzi helye
 

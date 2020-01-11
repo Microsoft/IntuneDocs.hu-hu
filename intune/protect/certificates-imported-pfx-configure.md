@@ -2,27 +2,27 @@
 title: Importált PFX-tanúsítványok használata a Microsoft Intune-Azure-ban | Microsoft Docs
 description: Az importált nyilvános kulcsú titkosítási szabványok (PKCS) tanúsítványok használata Microsoft Intuneekkel, beleértve a tanúsítványok importálását, a tanúsítványsablon konfigurálását, az Intune importált PFX tanúsítvány-összekötő telepítését és az importált PKCS létrehozását A tanúsítvány profilja.
 keywords: ''
-author: ralms
+author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/07/2019
+ms.date: 01/10/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
-ms.reviewer: lacranda
+ms.reviewer: lacranda; rimarram
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d54c58523fdb44080b6c4210d639f9ad0ce476e2
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 2c33f4429c86160bbf180c8102e2dc7532bbd80e
+ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73801542"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75886024"
 ---
 # <a name="configure-and-use-imported-pkcs-certificates-with-intune"></a>Importált PKCS-tanúsítványok konfigurálása és használata az Intune-nal
 
@@ -46,14 +46,17 @@ Az importált PKCS-tanúsítványok Intune-nal való használatához a következ
 
   További információ az összekötő által elért összes hálózati végpontról: az [Intune hálózati konfigurációjának követelményei és sávszélessége](../fundamentals/network-bandwidth-use.md).
 
-- **Windows Server**:  
+- **Windows Server**:
+
   A PFX tanúsítvány-összekötőt a Windows Server használatával futtathatja Microsoft Intunehoz.  Az összekötő az Intune-ba importált tanúsítványok kéréseinek feldolgozására szolgál.
 
   Az Intune támogatja a *Microsoft Intune tanúsítvány-összekötő* telepítését ugyanarra a kiszolgálóra, mint a *pfx tanúsítvány-összekötőt a Microsoft Intunehoz*.
 
   Az összekötő támogatásához a kiszolgálónak a .NET 4,6-keretrendszer vagy újabb verziójának kell futnia. Ha a .NET 4,6-keretrendszer nincs telepítve az összekötő telepítésének megkezdése után, az összekötő telepítése automatikusan megtörténik.
 
-- **Visual studio 2015 vagy újabb** (nem kötelező): a Visual Studióval felépítheti a segítő PowerShell-modult a pfx-tanúsítványok Microsoft Intuneba való importálására szolgáló parancsmagokkal. A segítő PowerShell-parancsmagok beszerzéséhez lásd: [PFXImport PowerShell-projekt a githubban](https://github.com/microsoft/Intune-Resource-Access/tree/develop/src/PFXImportPowershell).
+- **Visual Studio 2015 vagy újabb** (nem kötelező):
+
+  A Visual Studióval felépítheti a segítő PowerShell-modult a PFX-tanúsítványok Microsoft Intuneba importálására szolgáló parancsmagokkal. A segítő PowerShell-parancsmagok beszerzéséhez lásd: [PFXImport PowerShell-projekt a githubban](https://github.com/microsoft/Intune-Resource-Access/tree/develop/src/PFXImportPowershell).
 
 ## <a name="how-it-works"></a>Működési elv
 
@@ -143,15 +146,14 @@ A hardveres biztonsági modult (HSM) használhatja a nyilvános/titkos kulcspár
 
 A következő folyamat a PowerShell-parancsmagokat használja példaként a PFX-tanúsítványok importálásához. A követelményektől függően különböző beállításokat választhat.
 
-A lehetőségek a következők:  
-- Felhasználási cél (a tanúsítványokat egy címke alapján csoportosítja):  
+A lehetőségek a következők:
+
+- Felhasználási cél (a tanúsítványokat egy címke alapján csoportosítja):
   - nincs hozzárendelve
   - Smimeencryption tanúsítványhoz tartozó
   - Smimesigning tanúsítványhoz tartozó
 
-- Kitöltési séma:  
-  - PKCS1
-  - oaepSha1
+- Kitöltési séma:
   - oaepSha256
   - oaepSha384
   - oaepSha512

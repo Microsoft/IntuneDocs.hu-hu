@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: de0d85b7e7fbc39e7ee78c3b54da08158b02b009
-ms.sourcegitcommit: e4602481a25a5e12379f673dfe801c611f51c35b
+ms.openlocfilehash: 9bca046302b221b934d0802c0bf637aced2cec3f
+ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75731490"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75885924"
 ---
 # <a name="troubleshoot-ios-device-enrollment-problems-in-microsoft-intune"></a>IOS-eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune
 
@@ -40,7 +40,7 @@ Gyűjtse össze a következő információkat a problémával kapcsolatban:
 - Milyen platformon (Android, iOS, Windows) van probléma?
 - Hány felhasználót érint a rendszer? Az összes érintett felhasználó vagy csak néhány?
 - Hány eszközt érint a rendszer? Minden eszköz érintett vagy csak néhány?
-- Mi a MDM-szolgáltató? Ha Configuration Manager, a Configuration Manager milyen verzióját használja?
+- Mi a MDM-szolgáltató?
 - Hogyan történik a beléptetés? A "saját eszközök használata" (BYOD) vagy Apple Készülékregisztrációs program (DEP) beléptetési profilokkal?
 
 ## <a name="error-messages"></a>Hibaüzenetek
@@ -199,7 +199,6 @@ Ellenőrizze, hogy hozzá van-e adva érvényes APNs-tanúsítvány az Intune-ho
 > Győződjön meg arról, hogy megújítja a APNs-tanúsítványt. Ne cserélje le az APNs-tanúsítványt. Ha lecseréli a tanúsítványt, az összes iOS-eszközt újra regisztrálnia kell az Intune-ban. 
 
 - Az APNs-tanúsítvány megújítása az Intune önálló verziójában: [Apple Mdm push-tanúsítvány megújítása](apple-mdm-push-certificate-get.md#renew-apple-mdm-push-certificate).
-- A APNs-tanúsítvány megújításához az Intune Hybrid with Configuration Manager használatával: az [iOS-es hibrid eszközkezelés beállítása Configuration Manager és Microsoft Intune](https://docs.microsoft.com/configmgr/mdm/deploy-use/enroll-hybrid-ios-mac).
 - A APNs-tanúsítvány megújításához az Office 365-ben lásd: [APNs-tanúsítvány létrehozása iOS-eszközökhöz](https://support.office.com/article/Create-an-APNs-Certificate-for-iOS-devices-522b43f4-a2ff-46f6-962a-dd4f47e546a7).
 
 ### <a name="xpc_type_error-connection-invalid"></a>XPC_TYPE_ERROR a kapcsolatok érvénytelenek

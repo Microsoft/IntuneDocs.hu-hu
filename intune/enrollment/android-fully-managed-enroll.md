@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5cd8c1a1d17ca38c42b6ed6821d20367b147ad6
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: d8397dea1dca97122aac6716ee3d51295b913538
+ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74562384"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75885937"
 ---
 # <a name="set-up-intune-enrollment-of-android-enterprise-fully-managed-devices"></a>Az Android Enterprise teljes körűen felügyelt eszközök Intune-regisztrációjának beállítása 
 
@@ -36,7 +36,7 @@ Az Intune segítségével alkalmazásokat és beállításokat telepíthet az an
 
 ## <a name="technical-requirements"></a>Technikai követelmények
 
-Az Android Enterprise teljes körűen felügyelt eszközeinek felügyeletéhez önálló Intune-bérlőre van szükség. A teljes körűen felügyelt eszközkezelés nem érhető el hibrid (Configuration Manager csatlakoztatott) módban vagy az örökölt Silverlight felügyeleti konzolon.
+Az Android Enterprise teljes körűen felügyelt eszközeinek felügyeletéhez önálló Intune-bérlőre van szükség. A teljes körűen felügyelt eszközkezelés nem érhető el az örökölt Silverlight felügyeleti konzolon.
 
 Az eszközöknek meg kell felelniük az alábbi követelményeknek, hogy az Android Enterprise teljes körűen felügyelt eszközként legyenek kezelve:
 

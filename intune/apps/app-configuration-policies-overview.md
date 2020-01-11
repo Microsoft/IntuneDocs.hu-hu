@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 479d88c09f48acbbfaedf1f4c69546b7f52dfbf1
-ms.sourcegitcommit: a66b5916eaab9cb537e483064efc584a6a63a390
+ms.openlocfilehash: 800193921e608a0d0c29dad5cf85b8781e715441
+ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75692195"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75885797"
 ---
 # <a name="app-configuration-policies-for-microsoft-intune"></a>Alkalmazáskonfigurációs szabályzatok a Microsoft Intune-hoz
 
@@ -93,7 +93,7 @@ Az alkalmazás konfigurációs szabályzatát az alábbi három módszer haszná
 
 ### <a name="ios-configuration-on-unmanaged-devices"></a>iOS-konfiguráció a nem felügyelt eszközökön
 
-Az iOS-konfigurációt az **Intune diagnosztikai naplójában** ellenőrizheti a felügyelt alkalmazások konfigurációjának nem felügyelt eszközein.
+Az iOS-konfigurációt az **Intune diagnosztikai naplójában** ellenőrizheti a felügyelt alkalmazások konfigurációjának nem felügyelt eszközein. Az alábbi lépések mellett a Microsoft Edge használatával is elérheti a felügyelt alkalmazás naplófájljait. További információ: a [Microsoft Edge használata iOS rendszeren a felügyelt alkalmazások naplófájljainak eléréséhez](~/apps/manage-microsoft-edge.md#use-microsoft-edge-on-ios-to-access-managed-app-logs).
 
 1. Ha még nincs telepítve az eszközön, töltse le és telepítse a **Intune Managed Browsert** az App Store áruházból. További információ: [Microsoft Intune védett alkalmazások](apps-supported-intune-apps.md).
 2. Indítsa el a **Intune Managed Browser** , és válassza a **Névjegy** > **intunehelp** elemet a navigációs sávon.
@@ -162,7 +162,7 @@ Ha androidos eszközről szeretne naplókat gyűjteni, Önnek vagy a felhasznál
     
 ## <a name="graph-api-support-for-app-configuration"></a>Graph API-támogatás az alkalmazáskonfigurációhoz
 
-Az alkalmazások konfigurációs feladatainak elvégzéséhez Graph API is használhatja. További információk: [Graph API-kézikönyv ‒ MAM célzott konfiguráció](https://graph.microsoft.io/docs/api-reference/beta/api/intune_mam_targetedmanagedappconfiguration_create).
+Az alkalmazások konfigurációs feladatainak elvégzéséhez Graph API is használhatja. Részletekért lásd: [Graph API a MAM-beli cél-konfiguráció hivatkozása](https://docs.microsoft.com/graph/api/resources/intune-shared-targetedmanagedappconfiguration?view=graph-rest-beta). Az Intune-nal és a Graph-nal kapcsolatos további információkért lásd: [az Intune használata Microsoft Graphban](https://docs.microsoft.com/graph/api/resources/intune-graph-overview?view=graph-rest-beta).
 
 ## <a name="troubleshooting"></a>Hibaelhárítás
 

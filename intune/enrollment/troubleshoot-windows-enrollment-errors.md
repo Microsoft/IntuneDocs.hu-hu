@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 622c09d03507a3a47433eab5b21702a656f8bffb
-ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
+ms.openlocfilehash: 0d5c6db598a7f64f75f6f5a8e0cf25b8e4b81465
+ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75547512"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75885891"
 ---
 # <a name="troubleshoot-windows-device-enrollment-problems-in-microsoft-intune"></a>A Windows-eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune
 
@@ -40,7 +40,7 @@ Gyűjtse össze a következő információkat a problémával kapcsolatban:
 - Milyen platformon (Android, iOS, Windows) van probléma?
 - Hány felhasználót érint a rendszer? Az összes érintett felhasználó vagy csak néhány?
 - Hány eszközt érint a rendszer? Minden eszköz érintett vagy csak néhány?
-- Mi a MDM-szolgáltató? Ha a Microsoft Endpoint Configuration Manager, a Configuration Manager milyen verzióját használja?
+- Mi a MDM-szolgáltató?
 - Hogyan történik a beléptetés? A "saját eszközök használata" (BYOD) vagy Apple Készülékregisztrációs program (DEP) beléptetési profilokkal?
 
 ## <a name="error-messages"></a>Hibaüzenetek
@@ -107,7 +107,6 @@ Hiba 8018000a: "hiba történt. Az eszköz már regisztrálva van.  Forduljon a 
 
 **OK:** A következő feltételek egyike igaz:
 - Egy másik felhasználó már regisztrálta az eszközt az Intune-ban, vagy csatlakoztatta az eszközt az Azure AD-hez. Annak megállapításához, hogy ez a helyzet-e, lépjen a **beállítások** > **fiókok** > **munkahelyi hozzáférés elemre**. Keresse meg az alábbihoz hasonló üzenetet: "egy másik felhasználó már csatlakoztatva van egy munkahelyi vagy iskolai hálózathoz. Távolítsa el a munkahelyi vagy iskolai kapcsolatokat, és próbálkozzon újra. "    
-- A Configuration Manager ügyfél ügynöke telepítve van a számítógépen.    
 
 #### <a name="resolution"></a>Megoldás
 
@@ -118,9 +117,6 @@ A probléma megoldásához használja az alábbi módszerek egyikét:
 2. Lépjen a **beállítások** > **fiókok** > **munkahelyi hozzáférés**elemre, majd távolítsa el a munkahelyi vagy iskolai fiókot.
 3. Jelentkezzen ki a Windowsból, majd jelentkezzen be a fiókjával.    
 4. Regisztrálja az eszközt az Intune-ban, vagy csatlakoztassa az eszközt az Azure AD-hez. 
-
-##### <a name="remove-the-configuration-manager-client"></a>Az Configuration Manager-ügyfél eltávolítása
-Távolítsa el a Configuration Manager ügyfelet, majd regisztrálja újra az eszközt.
 
 
 
@@ -160,7 +156,7 @@ Lépjen a [Microsoft 365 felügyeleti központba](https://portal.office.com/admi
 
 **OK:** Ez a hiba akkor fordulhat elő, ha Windows 10 rendszerű számítógépet próbál csatlakoztatni az Azure AD-hez, és az alábbi feltételek mindegyike teljesül: 
 - A MDM automatikus regisztrációja engedélyezve van az Azure-ban.    
-- Az Intune PC-ügyfél (Intune PC Agent) vagy a Configuration Manager ügyfél ügynöke telepítve van a Windows 10 rendszerű számítógépre.
+- Az Intune PC-ügyfél (Intune PC Agent) telepítve van a Windows 10 rendszerű számítógépen.
 
 #### <a name="resolution"></a>Megoldás
 A probléma megoldásához használja az alábbi módszerek egyikét:
@@ -171,7 +167,7 @@ A probléma megoldásához használja az alábbi módszerek egyikét:
 3. Állítsa a **Mdm felhasználói hatókörét** **none**értékre, majd kattintson a **Mentés**gombra.    
      
 ##### <a name="uninstall"></a>Eltávolítás
-Távolítsa el az Intune PC-ügyfelet vagy Configuration Manager-ügynököt a számítógépről.    
+Távolítsa el az Intune PC Client ügynököt a számítógépről.    
 
 ### <a name="the-software-cannot-be-installed"></a>A szoftver nem telepíthető.
 
@@ -208,13 +204,6 @@ A probléma önálló Intune-környezetben való kijavításához kövesse az al
 1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > a **regisztrációs korlátozásokat** > válasszon egy eszköz típusú korlátozást.    
 2. Válassza a **tulajdonságok** > **Szerkesztés** (a **platform beállításai**mellett) > a **Windows (Mdm)** **engedélyezése lehetőséget** .    
 3. Kattintson a **felülvizsgálat + mentés**gombra.    
- 
-A probléma megoldásához az Intune-nal és a Configuration Managertel rendelkező hibrid MDM hajtsa végre az alábbi lépéseket: 
-1. Nyissa meg a Configuration Manager-konzolt.    
-2. Válassza az **Adminisztráció**, majd a **Cloud Services**lehetőséget.    
-3. Kattintson a jobb gombbal **Microsoft Intune előfizetésre**, majd válassza a **platformok konfigurálása > Windows**lehetőséget.    
-4. Jelölje be a **Windows-regisztráció engedélyezése** ** >  > ** **OK gombra**.  
-
 
 ### <a name="a-setup-failure-has-occurred-during-bulk-enrollment"></a>Telepítési hiba történt a csoportos regisztráció során.
 

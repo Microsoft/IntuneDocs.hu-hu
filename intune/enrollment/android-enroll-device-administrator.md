@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 309860fb5ddf6fa9488ecaf395534bf869234176
-ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
+ms.openlocfilehash: ebeb5830136ad6dae19babbc8ecf45c1d6e5c36c
+ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75547850"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75885975"
 ---
 # <a name="android-device-administrator-enrollment"></a>Android-eszköz rendszergazdai regisztrációja
 
@@ -36,10 +36,6 @@ Ugyanezen okok miatt javasoljuk, hogy az eszközöket az eszköz rendszergazdai 
 Az Android-eszközök rendszergazdai támogatásának Intune-támogatásával kapcsolatos további információkért tekintse meg a [közlemények című szakaszt](../fundamentals/whats-new.md#decreasing-support-for-android-device-administrator).
 
 Ha továbbra is úgy dönt, hogy a felhasználók regisztrálják androidos eszközeiket az eszközök rendszergazdai felügyeletével, folytassa a következő szakasszal.  
-
-
-> [!Note]  
-> Az Android 10 és újabb verziók nem támogatottak a hibrid mobileszköz-kezelésben (hibrid MDM; Az Intune a Configuration Manager-konzollal felügyelt), mert a hibrid MDM a 2019-es szeptember 1-én kikerül a szolgáltatásból. Ha továbbra is hibrid MDM használ, a lehető leghamarabb át kell térnie az Intune önálló verzióra. Ha segítségre van szüksége az áttelepítéshez, forduljon a támogatási szolgálathoz. További információk: [Áttérés a hibrid mobileszköz-kezelésről az Azure-beli Intune-ra](https://aka.ms/hybrid_notification).
 
 A Google androidos vállalati funkcióival kapcsolatos további információkért tekintse meg a következő cikkeket:
 - [A Google útmutatója az eszköz-rendszergazdától az Android Enterprise rendszerre való áttelepítéshez](http://static.googleusercontent.com/media/android.com/en/enterprise/static/2016/pdfs/enterprise/Android-Enterprise-Migration-Bluebook_2019.pdf)

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4cfb0f69d74cc6146b2497cd53be3e123f79cc70
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: fdcf88449a4f6ec0b3b352afb87ebcb5bd0b8389
+ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72504359"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75885732"
 ---
 # <a name="audit-export-or-delete-personal-data-in-intune"></a>Személyes adatok naplózása, exportálása vagy törlése az Intune-ban
 
@@ -74,16 +74,6 @@ A **Kivonás** művelet eltávolítja az olyan, Intune által szolgáltatott ada
 ### <a name="delete-a-tenant-from-microsoft-intune"></a>Bérlő törlése a Microsoft Intune-ból
 
 Ha egy Intune-bérlőbeli ügyfél lemondja Intune-fiókját, akkor minden bérlői adat törölve lesz az Intune-fiók ügyfél általi lezárását követő 180 napon belül. Ha az AAD-bérlő más Microsoft nagyvállalati előfizetésekhez is társítva van (Azure, Office 365), akkor csak az Intune-ügyfél adatai lesznek törölve. Az AAD-bérlői erőforrás megmarad, hogy a többi előfizetés használhassa. Ha az Intune-fiók az AAD-bérlőhöz rendelt egyetlen előfizetés, akkor a bérlő törölve lesz, valamint törölve lesz minden erőforrás és az ügyfél összes adata is.
-
-### <a name="delete-a-user-in-a-hybrid-mobile-device-management-mdm-environment"></a>Felhasználó törlése hibrid mobileszköz-felügyeleti (MDM) környezetben
-Amennyiben hibrid MDM-környezettel rendelkezik (a Configuration Managerrel integrált Intune), a következő műveleteket kell végrehajtania (a megadott sorrendben), hogy egy felhasználót teljesen töröljön a helyszíni Active Directoryból, a Configuration Managerből, és az Intune-ból is.
-
-1. Törölje a felhasználót a helyszíni Active Directoryból (AD). A felhasználó ez után nem lesz szinkronizálva az Azure AD-val, és a Configuration Manager sem fogja észlelni. 
-2. A felhasználó és a hozzá tartozó adatok úgy törölhetők a Configuration Managerből, hogy törli a felhasználót a Configuration Manager konzolon. A konzolon nyissa meg az **Eszközök és megfelelőség** > **Felhasználók** elemet, kattintson a jobb gombbal a törölni kívánt felhasználóra, majd kattintson a **Törlés** lehetőségre.
-3. [Törölje a felhasználót az AAD-ból](https://docs.microsoft.com/azure/active-directory/fundamentals/add-users-azure-active-directory#delete-a-user). Ezáltal a felhasználó és a hozzá tartozó adatok egyidejűleg törölve lesznek az Azure Active Directoryból és az Intune-ból is. Amikor egy felhasználót törölnek az AAD-ból (végleges törléssel), az Intune jelzést kap a törlésről az AAD-tól és automatikusan elkezdi törölni az adott felhasználó összes személyes adatát az Intune szolgáltatásból. A felhasználó adatai az eltávolítási műveletet követő 30 napon belül törölve lesznek az Intune szolgáltatásból.
-
-> [!Important]
->Az új hibrid MDM-ügyfelek bevezetése elavult. További információ: [áttérés hibrid mobileszköz-kezelésről az Intune-ra az Azure-](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Move-from-Hybrid-Mobile-Device-Management-to-Intune-on-Azure/ba-p/280150) blogbejegyzésben.
 
 ## <a name="next-steps"></a>További lépések
 
