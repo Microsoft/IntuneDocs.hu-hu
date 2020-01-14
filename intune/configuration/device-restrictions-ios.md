@@ -6,7 +6,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 12/12/2019
+ms.date: 01/13/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 476817b70f18fdd45a678ef3e12d1d3312c03dd3
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: 39978043428f6ad912832007f60628815d6549a6
+ms.sourcegitcommit: fb72b19986f34907d228c856d2e6949751ec02a1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75206533"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75920073"
 ---
 # <a name="ios-and-ipados-device-settings-to-allow-or-restrict-features-using-intune"></a>iOS-és iPadOS-eszközök beállításai az Intune-t használó funkciók engedélyezéséhez vagy korlátozásához
 
@@ -127,7 +127,7 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
     Ez a beállítás a következőkre vonatkozik:  
     - iOS 11,3 és újabb verziók
 
-## <a name="password"></a>Jelszó
+## <a name="password"></a>Windows 10
 
 ### <a name="settings-apply-to-all-enrollment-types"></a>A beállítások a következőre vonatkoznak: minden regisztrációs típus
 
@@ -189,7 +189,7 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
   > [!NOTE]
   > A beállítás Intune KEZELŐFELÜLETe nem választja el az iOS-és a iPadOS által támogatott értékeket. Előfordulhat, hogy a felhasználói felület egy későbbi kiadásban frissül.
 
-- **Jelszó érvényessége (napokban)**: adja meg, hogy hány nap elteltével kell megváltoztatni az eszköz jelszavát.
+- **Jelszó érvényessége (napokban)** : adja meg, hogy hány nap elteltével kell megváltoztatni az eszköz jelszavát.
 - **Korábbi jelszavak újbóli használatának tiltása**: Itt adhatja meg, hogy hány új jelszót kell használni, amíg egy régit nem lehet újra felhasználni.
 - **Touch ID és Face ID feloldása**: válassza a **Letiltás** lehetőséget, nehogy ujjlenyomatot vagy arcot használjon az eszköz zárolásának feloldásához. A **nincs konfigurálva** beállítás lehetővé teszi, hogy a felhasználó ezeket a módszereket használja fel az eszköz zárolásának feloldásához.
 
@@ -312,8 +312,8 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
 - **Spotlight-keresés az internetről származó eredmények visszaadásához**: a leállítási **funkció** nem tér vissza az internetes keresés eredményeiből. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a Spotlight-keresés kapcsolódását az internethez a keresési eredmények biztosítása érdekében.
 
 - **Safari cookie-k**: válassza ki, hogyan történjen a cookie-k kezelése az eszközön. A választható lehetőségek:
-  - Lehetővé
-  - Az összes cookie letiltása
+  - Engedélyezett
+  - Az összes cookie blokkolása:
   - Cookie-k engedélyezése a felkeresett webhelyekről
   - Cookie-k engedélyezése a jelenlegi webhelyről
 
@@ -450,7 +450,7 @@ Vegye figyelembe, hogy az adatroaminghoz szükséges (tipp vagy fontos megjegyz�
   > [!IMPORTANT]
   > Ezt a beállítást távoli eszköz műveletként kezeli a rendszer. Így ez a beállítás nem jelenik meg az eszköz felügyeleti profiljában. Minden alkalommal, amikor a személyes hozzáférési pont állapota megváltozik az eszközön, az Intune szolgáltatás letiltja a **személyes hozzáférési pontokat** . Az Intune-ban, ha a jelentéskészítési állapot sikert mutat, akkor tudja, hogy működik, még akkor is, ha a beállítás nem jelenik meg az eszköz felügyeleti profiljában.
 
-- **Mobil használati szabályok (csak felügyelt alkalmazások esetén)**: adja meg azokat az adattípusokat, amelyeket a felügyelt alkalmazások használhatnak a mobil hálózatokon. A választható lehetőségek:
+- **Mobil használati szabályok (csak felügyelt alkalmazások esetén)** : adja meg azokat az adattípusokat, amelyeket a felügyelt alkalmazások használhatnak a mobil hálózatokon. A választható lehetőségek:
   - **A mobil adatmennyiség használatának tiltása**: az **összes felügyelt** alkalmazáshoz tartozó mobil adatmennyiség letiltása, vagy **adott alkalmazások kiválasztása**.
   - **A mobil adatátviteli funkció használatának letiltása barangolás közben**: az **összes felügyelt alkalmazáshoz** való barangolás vagy **adott alkalmazások kiválasztása**esetén tiltsa le a mobil adatátvitelt.
 
@@ -470,6 +470,11 @@ Vegye figyelembe, hogy az adatroaminghoz szükséges (tipp vagy fontos megjegyz�
   - iOS 12,2 és újabb verziók
 
 - **Csak a konfigurációs profilokat használó Wi-Fi-hálózatok csatlakoztatása**: **megköveteli** , hogy az eszköz csak az Intune konfigurációs profiljain keresztül beállított Wi-Fi-hálózatokat használja. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy az eszköz más Wi-Fi-hálózatokat használjon.
+
+  Ha **kötelező**megadni, győződjön meg arról, hogy az eszköznek van Wi-Fi profilja. Ha nem rendel Wi-Fi profilt, ez a beállítás megakadályozhatja, hogy az eszköz csatlakozzon az internethez. Más szóval, ha az eszköz korlátozási profilja egy Wi-Fi-profil előtt van hozzárendelve, előfordulhat, hogy az eszköz le lesz tiltva az internethez való csatlakozáskor.
+  
+  Ha nem tud kapcsolatot létesíteni, törölje az eszköz regisztrációját, és regisztrálja újra az eszközt egy Wi-Fi-profillal. Ezt követően állítsa be ezt a beállítást egy eszköz korlátozási profiljának **megköveteléséhez** , és rendelje hozzá a profilt az eszközhöz.
+
 - **Wi-Fi mindig be van kapcsolva**: Ha a beállítás **kötelező**, a Wi-Fi a beállítások alkalmazásban marad. A beállításokban vagy a vezérlési központban nem kapcsolható ki, még akkor is, ha az eszköz Airplane módban van. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára a Wi-Fi bekapcsolásának vagy kikapcsolásának szabályozását.
 
   A beállítás konfigurálása nem akadályozza meg, hogy a felhasználók kiválasszák a Wi-Fi hálózatot.
@@ -529,7 +534,7 @@ Vegye figyelembe, hogy az adatroaminghoz szükséges (tipp vagy fontos megjegyz�
 - **Titkosított biztonsági mentés**: az eszközök biztonsági mentéseit titkosítva **kell megadni.**
 - **Felügyelt alkalmazások szinkronizálása a felhővel**: **nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy az Intune-ban az alkalmazások szinkronizálják az adatait a felhasználó iCloud-fiókjával. A **blokk** megakadályozza az adatszinkronizálást az icloudba.
 - **Vállalati könyv biztonsági mentésének letiltása**: a **Letiltás** gombra kattintva megakadályozhatja, hogy a felhasználók biztonsági mentést készítsenek a vállalati könyvekből. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználóknak a könyvek biztonsági mentését.
-- A **vállalati könyv metaadatainak szinkronizálásának letiltása (megjegyzések és csúcsfények)**: a **blokk** megakadályozza a jegyzetek és a kiemelések szinkronizálását a nagyvállalati könyvekben. **Nincs konfigurálva** (alapértelmezés) engedélyezi a szinkronizálást.
+- A **vállalati könyv metaadatainak szinkronizálásának letiltása (megjegyzések és csúcsfények)** : a **blokk** megakadályozza a jegyzetek és a kiemelések szinkronizálását a nagyvállalati könyvekben. **Nincs konfigurálva** (alapértelmezés) engedélyezi a szinkronizálást.
 
 ### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése, automatikus eszközök beléptetése (felügyelt)
 
@@ -670,8 +675,8 @@ Az iOS Supervised (Felügyelt) módja csak a kezdeti eszközbeállítás során,
 > - iTunes
 > - Durva tartalom
 > - iCloud dokumentumok és adatok
-> - Többrésztvevős játékok
-> - Game Center ismerősök hozzáadása
+> - Több résztvevős játék
+> - Barátok hozzáadása a Game Centerben
 > - Siri
 
 ## <a name="next-steps"></a>További lépések

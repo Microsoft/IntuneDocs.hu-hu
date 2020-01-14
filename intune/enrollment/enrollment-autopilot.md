@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fd320dddeb7717461188bdb701044bf060e7d75e
-ms.sourcegitcommit: 0d9e1452fcf5f15a80230838f80a427b9951cdb1
+ms.openlocfilehash: 4e5a16a8be6fcce8c6c34d3ddf8979b17eccddd1
+ms.sourcegitcommit: fb72b19986f34907d228c856d2e6949751ec02a1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/21/2019
-ms.locfileid: "75324882"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75920125"
 ---
 # <a name="enroll-windows-devices-in-intune-by-using-the-windows-autopilot"></a>Windows-eszközök regisztrálása az Intune-ban a Windows Autopilot használatával  
 A Windows Autopilot leegyszerűsíti az eszközök regisztrálását az Intune-ban. A testre szabott operációsrendszer-lemezképek létrehozása és karbantartása sok időt vesz igénybe. Gyakran ezeknek az egyéni operációsrendszer-lemezképeknek az új eszközökre való alkalmazásával is időt kell töltenie, hogy felkészítse az eszközöket a használatra, mielőtt a végfelhasználóknak adná azokat. A Microsoft Intune és az AutoPilot révén új eszközöket adhat hozzá a végfelhasználók számára anélkül, hogy egyéni operációsrendszer-lemezképek létrehozására, kezelésére és az eszközökre való alkalmazására lenne szükség. Az AutoPilot-eszközök Intune-nal való felügyelete során a regisztráció után szabályzatokat, profilokat, alkalmazásokat és sok mást is kezelni tud. A megoldás előnyeinek, használati eseteinek és előfeltételeinek áttekintéséről lásd [a Windows AutoPilot áttekintését](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot).
@@ -178,11 +178,6 @@ Előfeltételek: Azure Active Directory Céges portál konfigurálva van, és a 
     ![A rövid felhasználónév képernyőképe](./media/enrollment-autopilot/friendly-name.png)
 
 4. Válassza az **OK** gombot.
-
-## <a name="autopilot-deployments-report"></a>Autopilot-alapú üzembe helyezési jelentés
-A Windows Autopilot szolgáltatásban üzembe helyezett összes eszközről megtekintheti a részleteket.
-A jelentés megjelenítéséhez nyissa meg a [Microsoft Endpoint Manager felügyeleti központját](https://go.microsoft.com/fwlink/?linkid=2109431), válassza az **eszközök** > **monitor** > Autopilot-alapú **telepítések**lehetőséget.
-Az Adatfrissítés az üzembe helyezést követő 30 napig elérhető.
 
 
 ## <a name="delete-autopilot-devices"></a>AutoPilot-eszközök törlése

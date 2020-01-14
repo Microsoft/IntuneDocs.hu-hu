@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 528b901c186099cc2680fc50a21dbdc2f34b7f65
-ms.sourcegitcommit: 637375a390b6e34f9c4415c77b99fe2980bbf554
+ms.openlocfilehash: 311941c3981e5883d392359dc0919bb85156c4be
+ms.sourcegitcommit: fb72b19986f34907d228c856d2e6949751ec02a1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75839287"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75920088"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -190,6 +190,9 @@ Továbbfejlesztettük a felhasználói élményt egy olyan megosztott eszközön
 
 #### <a name="use-pkcs-certificate-profiles-to-provision-devices-with-certificates---2317124-2317130-2317139-2340517-2340528-2340529----"></a>Tanúsítványokat tartalmazó eszközök kiépítése PKCS-tanúsítványok használatával<!-- 2317124, 2317130, 2317139, 2340517, 2340528, 2340529  -->
 Mostantól PKCS-alapú tanúsítvány-profilok használatával tanúsítványokat állíthat ki az Android for Work, iOS és Windows rendszerű *eszközökhöz* , ha a Wi-Fi-hez és VPN-hez hasonló profilokhoz van társítva. Korábban ez a három platform csak a felhasználó-alapú tanúsítványokat támogatta, az eszköz-alapú támogatás pedig macOS-re korlátozódik.
+
+> [!NOTE]
+> A PKCS-tanúsítványok profiljai nem támogatottak a Wi-Fi profilokkal. Ehelyett használjon SCEP-tanúsítvány-profilokat, ha [EAP-típust](../configuration/wi-fi-settings-windows.md#enterprise-profile)használ.
 
 Ha eszköz alapú tanúsítványt szeretne használni a támogatott platformok [PKCS-tanúsítványának létrehozása](../protect/certficates-pfx-configure.md#create-a-pkcs-certificate-profile) közben, válassza a **Beállítások**lehetőséget. Ekkor megjelenik a **tanúsítvány típusának**beállítása, amely támogatja az eszköz vagy a felhasználó beállításait.
 

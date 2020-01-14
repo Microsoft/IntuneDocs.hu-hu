@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d843cf707cf182655d0044dde289caca730ccd6b
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: a6f57783b0878cd25e6c7eacdf4b32e462790916
+ms.sourcegitcommit: 5db0769274d788a1218dca3ad90d8649927becb4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72810315"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75925810"
 ---
 # <a name="integrate-zimperium-with-intune"></a>A Zimperium integrálása az Intune-nal
 
@@ -31,7 +31,7 @@ A Zimperium mobilfenyegetések elleni megoldás Intune-beli integrálásához k�
 
 ## <a name="before-you-begin"></a>Előkészületek
 
-A következő lépések a [ZIMPERIUM MTD-konzolon](https://www.zimperium.com/platform) hajthatók végre, és lehetővé teszik a kapcsolódást az Intune-ban regisztrált eszközökre (az eszközök megfelelőségével) és a nem regisztrált eszközökre (az alkalmazás-védelmi házirendek használatával).
+A következő lépések a [ZIMPERIUM MTD-konzolon](https://www.zimperium.com/platform) hajthatók végre, és lehetővé teszik a Zimperium szolgáltatáshoz való kapcsolódást az Intune-ban regisztrált eszközökre (az eszközök megfelelőségének használatával) és a nem regisztrált eszközökre (az alkalmazás-védelmi házirendek használatával).
 
 Mielőtt elkezdené a Zimperium integrálását az Intune-nal, ellenőrizze, hogy rendelkezik-e az alábbi előfizetéssel és hitelesítő adatokkal:
 

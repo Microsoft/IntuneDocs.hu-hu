@@ -17,12 +17,12 @@ ms.reviewer: spshumwa
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8b2ce91cea1fdef211a8e6a9dc1c19086f355385
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 9cbdd99dfb7b42677048b4f214e7de537db0edda
+ms.sourcegitcommit: 5db0769274d788a1218dca3ad90d8649927becb4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72585273"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75925823"
 ---
 # <a name="bulk-enrollment-for-windows-devices"></a>Windowsos eszközök csoportos regisztrálása
 
@@ -44,11 +44,11 @@ Az Azure AD-felhasználók általános jogú felhasználók ezeken az eszközök
    ![Képernyőkép a Provision desktop services elem kiválasztásáról a Windows Configuration Designerben](./media/windows-bulk-enroll/bulk-enroll-select.png)
 
 3. Megnyílik egy **New project** (Új projekt) ablak, ahol az alábbi adatokat kell megadnia:
-   - **Name** (Név) – A projekt neve
+   - **Név** – A projekt neve
    - **Project folder** (Projektmappa) – A projekt mentési helye
    - **Description** (Leírás) – A projekt leírása (nem kötelező) ![Képernyőkép a név, a projektmappa és a leírás megadásáról a Windows Configuration Designerben](./media/windows-bulk-enroll/bulk-enroll-name.png)
 
-4. Adjon meg egyedi neveket az eszközök számára. A nevek tartalmazhatnak sorozatszámot (% SERIAL%) vagy véletlenszerűen beállított karakterek. Megadhat továbbá termékkulcsot arra az esetre, ha másik Windows-kiadásra vált, konfigurálhatja az eszközt közös használatra, és eltávolíthatja az előre telepített szoftvereket.
+4. Adjon meg egyedi neveket az eszközök számára. A nevek tartalmazhatnak sorozatszámot (% SERIAL%) vagy véletlenszerűen beállított karakterek. Lehetőség van termékkulcs megadására is, ha frissíti a Windows-kiadást, megosztott használatra konfigurálja az eszközt, és eltávolítja az előre telepített szoftvert.
    
    ![Képernyőkép a név és a termékkulcs megadásáról a Windows Configuration Designerben](./media/windows-bulk-enroll/bulk-enroll-device.png)
 
@@ -65,7 +65,7 @@ Az Azure AD-felhasználók általános jogú felhasználók ezeken az eszközök
 
 9. Az **Add applications** elemmel alkalmazásokat, az **Add certificates** elemmel tanúsítványokat vehet fel az eszközökre. A megadott alkalmazások és tanúsítványok telepítve lesznek az eszközön.
 
-10. Igény esetén a kiépítési csomagot jelszóval is védheti.  Kattintson a **Létrehozás** gombra.
+10. Igény esetén a kiépítési csomagot jelszóval is védheti.  Kattintson a **Létrehozás**gombra.
     ![Képernyőkép a csomagvédelemről a Windows Configuration Designerben](./media/windows-bulk-enroll/bulk-enroll-create.png)
 
 ## <a name="provision-devices"></a>Eszközök üzembe helyezése
@@ -95,7 +95,7 @@ A csomagban található beállítások sikerességét vagy hibáját a **kiépí
 
 ### <a name="bulk-enrollment-with-wi-fi"></a>Csoportos regisztrálás Wi-Fivel 
 
-A csoportosan regisztrált eszközök nem tudnak használni felhasználókat célzó tanúsítványokat Wi-Fi-n keresztüli üzembe helyezéssel. Az ilyen kapcsolatok kezeléséhez [eszközszintű tanúsítványokat](../protect/certificates-configure.md) kell használni. 
+Ha nem nyitott hálózatot használ, az [eszköz szintű tanúsítványokat](../protect/certificates-configure.md) kell használnia a kapcsolatok elindításához. A tömegesen beléptetett eszközök nem használhatók a felhasználó által megrendelt tanúsítványokhoz a hálózati hozzáféréshez. 
 
 ### <a name="conditional-access"></a>Conditional Access
 A feltételes hozzáférés nem érhető el a csoportos regisztráció használatával beléptetett Windows-eszközökhöz.
