@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 01/14/2020
 ms.topic: troubleshooting
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4783d24e3fc25583a61f88c2e7375d4eed673186
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 0786174ebb90352fa1a41923f9cfce305aece49f
+ms.sourcegitcommit: de663ef5f3e82e0d983899082a7f5b62c63f24ef
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74563486"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75956312"
 ---
 # <a name="troubleshoot-app-installation-issues"></a>Alkalmazások telepítésével kapcsolatos problémák elhárítása
 
@@ -47,7 +47,7 @@ Az Intune az adott felhasználók eszközein telepített alkalmazások alapján 
     > Ugyanazt az alkalmazást eltérő alkalmazásműveleti szándékkal rendelhetik hozzá különböző csoportokhoz. Egy alkalmazás feloldott szándéka például **Kizárva** értéket jelez, ha az alkalmazás ki van zárva egy felhasználó számára az alkalmazás-hozzárendelés során. További információ: [Alkalmazások hozzárendelési ütközéseinek feloldása](apps-deploy.md#how-conflicts-between-app-intents-are-resolved).<br><br>
     > Ha egy szükséges alkalmazás telepítése sikertelen, akkor Ön vagy a segélyszolgálat szinkronizálhatja az eszközt, és újra megkísérelheti az alkalmazás telepítését.
 
-Az alkalmazástelepítési hiba információi ismertetik a problémát. Ezen adatok segítségével meghatározhatja a probléma feloldásához szükséges műveletet. Az alkalmazások telepítési problémáinak elhárításával kapcsolatos további információkért lásd az [alkalmazások telepítési hibáit](troubleshoot-app-install.md#app-installation-errors)ismertető témakört.
+Az alkalmazástelepítési hiba információi ismertetik a problémát. Ezen adatok segítségével meghatározhatja a probléma feloldásához szükséges műveletet. Az alkalmazások telepítési problémáinak elhárításával kapcsolatos további információkért lásd az [Android-alkalmazások telepítési hibáit](troubleshoot-app-install.md#android-app-installation-errors) és az [iOS-alkalmazások telepítési hibáit](troubleshoot-app-install.md#ios-app-installation-errors)ismertető témakört.
 
 > [!Note]  
 > A **Hibaelhárítás** panel a böngészőben a [https://aka.ms/intunetroubleshooting](https://aka.ms/intunetroubleshooting) címen is elérhető.
@@ -105,11 +105,7 @@ A naplófájlok összegyűjtéséhez konkrét követelményekre van szükség:
 - A tárolt naplók titkosítva vannak a naplókban tárolt személyes azonosításra alkalmas adatok védelemmel.
 - A Win32-alkalmazások támogatási jegyének megnyitása közben csatolja a kapcsolódó hibák naplóit a fenti lépésekkel.
 
-## <a name="app-installation-errors"></a>Alkalmazástelepítési hibák
-
-Az alábbi hibaüzenetek és leírások az Androidos és iOS-es telepítési hibák részleteit mutatják be. 
-
-### <a name="android-errors"></a>Android hibák
+## <a name="android-app-installation-errors"></a>Android-alkalmazások telepítési hibái
 
 Ez a szakasz az eszköz rendszergazdája (DA) és a Samsung Knox-regisztrációt is említi. További információ: Android-eszközök [rendszergazdai regisztrációja](../enrollment/android-enroll-device-administrator.md) és [automatikus regisztrálása Android-eszközökön a Samsung Knox Mobile-regisztráció használatával](../enrollment/android-samsung-knox-mobile-enroll.md). 
 
@@ -130,7 +126,9 @@ Ez a szakasz az eszköz rendszergazdája (DA) és a Samsung Knox-regisztrációt
 | Az alkalmazás eltávolítása megszakadt, mert a folyamat újra lett indítva a telepítés során. (0xc7d14fbc) | Az alkalmazás telepítési folyamatát az operációs rendszer megszakította, vagy az eszköz újraindult. Próbálja megismételni a telepítést, és gyűjtsön Céges portál naplókat, ha ez a hiba újra bekövetkezik. |
 | Az alkalmazás-telepítési APK-fájl nem telepíthető, mert nem volt aláírva. (0xc7d14fb6) | Alapértelmezés szerint az Android operációs rendszer megköveteli, hogy az alkalmazások aláírva legyenek. Győződjön meg arról, hogy az alkalmazás aláírása az üzembe helyezés előtt megtörténik. |
 
-### <a name="ios-errors"></a>iOS hibák
+## <a name="ios-app-installation-errors"></a>iOS-alkalmazások telepítési hibái
+
+Az alábbi hibaüzenetek és leírások részletesen ismertetik az iOS telepítési hibáit. 
 
 | Hibaüzenet/kód | Leírás/hibaelhárítási tippek |
 |------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -164,7 +162,7 @@ Ez a szakasz az eszköz rendszergazdája (DA) és a Samsung Knox-regisztrációt
 | Az alkalmazás legújabb verziója nem tudott frissíteni egy korábbi verzióról. (0x87D13B9D) | Ez a hibaüzenet akkor jelenik meg, ha az alkalmazás telepítve van és felügyelt, de a helytelen verziója van az eszközön. Ez a helyzet akkor is vonatkozik, amikor egy eszköz megkapta az alkalmazás frissítésére szolgáló parancsot, de az új verzió még nincs telepítve és nem jelentett vissza. A rendszer ezt a hibát fogja jelenteni az eszköz első beadásához a frissítés telepítése után, és akkor következik be, amikor az eszköz nem jelenti az új verzió telepítését, vagy egy másik hiba miatt meghiúsul.  |
 
 
-### <a name="other-installation-errors"></a>Egyéb telepítési hibák
+## <a name="other-installation-errors"></a>Egyéb telepítési hibák
 
 |  Hibaüzenet/kód  |  Description  |
 |-----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

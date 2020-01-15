@@ -19,12 +19,12 @@ ms.reviewer: japoehlm
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 039ec17b1a56a7339f2159d7af6ad1bd9280bf63
-ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
+ms.openlocfilehash: 6c1b6417489d1443596113a18476b9cbc8f3832e
+ms.sourcegitcommit: 8cc3eca2bce847b0c2b40d8531698e21df848878
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75855510"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75951462"
 ---
 # <a name="enroll-your-organization-provided-ios-device-in-management"></a>A vállalat által biztosított iOS-eszköz felügyeleti regisztrálása
 
@@ -44,11 +44,7 @@ Ha nem a vállalat által biztosított, hanem saját iOS-eszközt használ, köv
 
 1. Kapcsolja be az iOS-eszközt.
 2. A **nyelv** kiválasztása után csatlakozzon egy Wi-Fi-hálózathoz.
-3. Az **iOS-eszköz beállítása** képernyőn válasszon az alábbi lehetőségek közül:
-   - **Beállítás új eszközként**
-   - **iCloud biztonsági másolat visszaállítása**
-   - **iTunes biztonsági másolat visszaállítása**
-
+3. Az **IOS-eszköz beállítása** képernyőn válassza a **beállítás új eszközként**lehetőséget.  
 4. Miután csatlakozott, megjelenik a **Konfiguráció** képernyő. Ez tudatja Önnel, hogy **[a cége] automatikusan konfigurálja az eszközét.**
 
    **A konfiguráció lehetővé teszi, hogy [a vállalata] felügyelje az eszközt a levegőben. A rendszergazda segítséget nyújthat az e-mailek és hálózati fiókok beállításában, az alkalmazások telepítésében és konfigurálásában, valamint a beállítások távoli kezelésében. A rendszergazda letilthatja a szolgáltatásokat, alkalmazásokat telepíthet és eltávolíthat, figyelheti és korlátozhatja az internetes forgalmat, és távolról törölheti az eszközt.**

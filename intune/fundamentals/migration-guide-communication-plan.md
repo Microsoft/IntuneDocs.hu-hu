@@ -17,12 +17,12 @@ ms.reviewer: dagerrit
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c4637a4f9f137e9db665d72118fd7a97d7a9f75a
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: f617e85e78ac5436567790d416c988742a2abe4c
+ms.sourcegitcommit: de663ef5f3e82e0d983899082a7f5b62c63f24ef
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72510129"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75956228"
 ---
 # <a name="plan-communications"></a>A kommunikáció tervezése
 
@@ -62,4 +62,4 @@ Az Intune további erőforrásokkal rendelkezik, amelyekkel elősegítheti az es
 
 - Az [A végfelhasználók oktatása az Intune használatával kapcsolatban](end-user-educate.md) című témakör részletezi a regisztrálás lépéseit az egyes mobiloperációsrendszer-platformok esetében.
 - Az Intune-eszközök regisztrálása a [rendszergazdáknak](../enrollment/device-enrollment.md) az Android-, iOS-és Mac-eszközök Intune-ban való regisztrálását ismerteti.
-- Ossza meg a [céges portál alkalmazás URL-címét](http://go.microsoft.com/fwlink/?LinkID=396941) Android-, iOS-és Windows-felhasználóival. Ez az URL-cím átirányítja az Android, iOS és Windows rendszerű eszközök megfelelő Céges portál alkalmazásának listájára.
+- Ossza meg a Céges portál alkalmazást Android-, iOS-és Windows-felhasználóival.

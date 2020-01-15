@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b4661b151493eb68cc6f71a5a77bd023ac27b826
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 331d4d312541f587077c70e19634e331f9ddc21e
+ms.sourcegitcommit: de663ef5f3e82e0d983899082a7f5b62c63f24ef
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72810223"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75956348"
 ---
 # <a name="set-up-lookout-mobile-endpoint-security-integration-with-intune"></a>A mobil végpontok biztonsági integrációjának beállítása az Intune-nal
 Az [előfeltételeknek](lookout-mobile-threat-defense-connector.md#prerequisites)megfelelő környezettel integrálhatja az Intune-nal a kilátó mobil végpontok biztonságát. A cikkben található információk végigvezetik az integráció beállításában és a fontos beállítások konfigurálásában az Intune-nal való használathoz.  
@@ -113,7 +113,7 @@ Az alábbi eljárás azt feltételezi, hogy korábban létrehozott egy felhaszn�
 6. Az összekötő konfigurálásának befejezéséhez válassza az **összekötő létrehozása** lehetőséget. Később, amikor elégedett az eredménnyel, kiterjesztheti a regisztrációt további felhasználói csoportokra.
 
 ## <a name="configure-intune-to-use-lookout-as-a-mobile-threat-defense-provider"></a>Az Intune konfigurálása Mobile Threat Defense-szolgáltatóként való kilátó használatára
-Miután konfigurálta a MES-t, be kell állítania egy kapcsolódást az [Intune-beli figyeléshez](https://docs.microsoft.com/en-us/intune/protect/mtd-connector-enable).  
+Miután konfigurálta a MES-t, be kell állítania egy kapcsolódást az [Intune-beli figyeléshez](~/protect/mtd-connector-enable.md).  
 
 ## <a name="additional-settings-in-the-lookout-mes-console"></a>További beállítások a kilátó MES-konzolon
 A következő további beállítások konfigurálhatók a kilátó MES-konzolon.  

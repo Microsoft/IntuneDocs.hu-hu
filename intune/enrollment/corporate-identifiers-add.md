@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4e1ee8ae54d81a050f3c8983269f40e8f61b5e75
-ms.sourcegitcommit: e75718ee6cf93c0e6c915f2776b785fe8db9f7e0
+ms.openlocfilehash: 7cc67ce304dba500095c130e035a0b29322c84ef
+ms.sourcegitcommit: de663ef5f3e82e0d983899082a7f5b62c63f24ef
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74955473"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75956300"
 ---
 # <a name="identify-devices-as-corporate-owned"></a>Eszközök azonosítása vállalati tulajdonúként
 
@@ -105,7 +105,7 @@ Ez a .csv- fájl egy szövegszerkesztőben megtekintve így jelenik meg:
 
 A **Frissítés** elemre kattintva megtekintheti az új eszközazonosítókat.
 
-Az importált eszközöket nem mindig regisztrálja a rendszer. Emiatt az eszközök **Regisztrált** vagy **Nincs kapcsolat** állapotúak lehetnek. Utóbbi állapot azt jelenti, hogy az eszköz még **nem lépett kapcsolatba** az Intune szolgáltatással.
+Az importált eszközöket nem mindig regisztrálja a rendszer. Emiatt az eszközök **Regisztrált** vagy **Nincs kapcsolat** állapotúak lehetnek. Utóbbi állapot azt jelenti, hogy az eszköz még nem lépett kapcsolatba az Intune szolgáltatással.
 
 ## <a name="delete-corporate-identifiers"></a>Céges azonosítók törlése
 
@@ -120,7 +120,7 @@ Az IMEI-azonosítók részletes specifikációját a [3GGPP TS 23.003](https://p
 
 ## <a name="change-device-ownership"></a>Eszköz tulajdonosának módosítása
 
-Az Intune-ban az eszközök tulajdonságai között mindegyik eszközbejegyzésnél szerepel a **Tulajdonos**. Rendszergazdaként megadhatja, hogy az adott eszköz **Személyes** vagy **Céges**. Ha az eszköz tulajdonosi típusa személyesről Vállalatire változik, az Intune az adott eszközről korábban összegyűjtött összes alkalmazási adatot 7 napon belül törli. Ha alkalmazható, az Intune törli a rekordban szereplő telefonszámot is. 
+Az Intune-ban az eszközök tulajdonságai között mindegyik eszközbejegyzésnél szerepel a **Tulajdonos**. Rendszergazdaként megadhatja, hogy az adott eszköz **Személyes** vagy **Céges**. Ha az eszköz tulajdonosi típusa a vállalattól a személyes értékre módosul, az Intune az adott eszközről korábban gyűjtött összes alkalmazás-információt 7 napon belül törli. Ha alkalmazható, az Intune törli a rekordban szereplő telefonszámot is. 
 
 **Eszköz tulajdonosának módosítása:**
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431), válassza az **eszközök** > **minden eszköz** lehetőséget, > Válassza ki az eszközt.

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3f336bdb9eca9900cc0250bb174c04d368da9eb9
-ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
+ms.openlocfilehash: 7170f723707ef709ef464b35bc3f6d3297341cf1
+ms.sourcegitcommit: de663ef5f3e82e0d983899082a7f5b62c63f24ef
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75885585"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75956215"
 ---
 # <a name="add-apps-to-microsoft-intune"></a>Alkalmazások hozzáadása a Microsoft Intune-hoz 
 
@@ -189,7 +189,7 @@ Az Intune a kötelező alkalmazásokat a következő feltételek alapján telep�
 
 ## <a name="app-installation-errors"></a>Alkalmazástelepítési hibák
 
-Az Intune alkalmazástelepítési hibáival kapcsolatos további információkért lásd: [Alkalmazástelepítési hibák](troubleshoot-app-install.md#app-installation-errors).
+Az Intune alkalmazástelepítési hibáival kapcsolatos további információkért lásd: [Alkalmazástelepítési hibák](troubleshoot-app-install.md).
 
 ## <a name="next-steps"></a>További lépések
 

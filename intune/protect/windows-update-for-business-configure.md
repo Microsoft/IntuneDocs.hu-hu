@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 12/12/2019
+ms.date: 01/14/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -15,12 +15,12 @@ ms.reviewer: mghadial
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ad630eb34b296d7ab77081a1e3063db8dffc64f9
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: dc9dd03714e24dae4b0c7afe9206c6a8d7d36c13
+ms.sourcegitcommit: de663ef5f3e82e0d983899082a7f5b62c63f24ef
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75207451"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75956282"
 ---
 # <a name="manage-windows-10-software-updates-in-intune"></a>Windows 10 rendszerű szoftverfrissítések kezelése az Intune-ban
 
@@ -34,7 +34,7 @@ Az Intune a következő házirend-típusokat biztosítja a frissítések kezelé
 
 - **Windows 10 frissítési kör**: Ez a házirend olyan beállítások gyűjteménye, amelyek a Windows 10 frissítéseinek telepítésekor konfigurálhatók.
 
-- **Windows 10 szolgáltatások frissítései (nyilvános előzetes verzió)**: Ez a szabályzat a megadott Windows-verzióra helyezi át az eszközöket, és az eszközökön beállított szolgáltatások lefagynak, amíg nem frissíti őket egy későbbi Windows-verzióra.  Habár a szolgáltatás verziója statikus marad, az eszközök továbbra is telepíthetik a szolgáltatás verziójához elérhető minőségi és biztonsági frissítéseket.
+- **Windows 10 szolgáltatások frissítései (nyilvános előzetes verzió)** : Ez a szabályzat a megadott Windows-verzióra helyezi át az eszközöket, és az eszközökön beállított szolgáltatások lefagynak, amíg nem frissíti őket egy későbbi Windows-verzióra.  Habár a szolgáltatás verziója statikus marad, az eszközök továbbra is telepíthetik a szolgáltatás verziójához elérhető minőségi és biztonsági frissítéseket.
 
 A Windows 10-es frissítési gyűrűkhöz és a Windows 10 rendszerhez készült szolgáltatásokhoz szabályzatokat rendelhet hozzá az eszközök csoportjaihoz. A Windows 10-es eszközök frissítéseinek kezeléséhez és az üzleti igényeknek megfelelő frissítési stratégia létrehozásához mindkét házirend-típust használhatja ugyanabban az Intune-környezetben.
 
@@ -63,7 +63,7 @@ A Windows 10 rendszerű eszközök Intune-ban való használatához a következ�
   > - Windows 10 mobil verzió  
   > - Windows 10 Enterprise LTSC. A Windows Update for Business (WUfB) jelenleg nem támogatja a *hosszú távú szolgáltatási csatornák* kiadásait. Alternatív javítási módszerek, például a WSUS vagy a Configuration Manager használatának megtervezése.
 
-- Windows-eszközökön a **visszajelzések & a diagnosztika** > a **diagnosztikai és használati adatokat** **alapszintű**, **bővített**vagy **teljes**értékre kell beállítani.  
+- Windows-eszközökön a **visszajelzések & a diagnosztika** > a **diagnosztikai és használati adatokat** **alapszintű**, **bővített**vagy **teljes**értékre kell beállítani.
 
   A Windows 10-es eszközök *diagnosztikai és használati adatokra* vonatkozó beállítását manuálisan is konfigurálhatja, vagy a Windows 10 és újabb rendszerekhez készült Intune-eszközök korlátozási profilját használhatja. Ha eszköz-korlátozási profilt használ, állítsa be a **használati adatok megosztására** szolgáló [eszköz korlátozási beállítását](../configuration/device-restrictions-windows-10.md#reporting-and-telemetry) legalább **alapszintű**értékre. Ez a beállítás a Windows 10 vagy újabb rendszerű eszközök korlátozási szabályzatának konfigurálásakor a **jelentéskészítés és a telemetria** kategóriában található.
 
@@ -90,7 +90,7 @@ A Windows 10-es frissítési gyűrűk támogatják a [hatókör címkéit](../fu
 
    Ha elkészült, kattintson a **tovább** gombra a *hozzárendelések*folytatásához.
 
-6. A **hozzárendelések**alatt válassza a **+ csoportok kiválasztása lehetőséget** , majd a frissítési kört egy vagy több csoporthoz rendelje. **Válassza a + csoportok kiválasztása lehetőséget** a hozzárendelés finomhangolásához. A folytatáshoz kattintson a **tovább** gombra.
+6. A **hozzárendelések**alatt válassza a **+ csoportok kiválasztása lehetőséget** , majd a frissítési kört egy vagy több csoporthoz rendelje. **Válassza a + csoportok kiválasztása lehetőséget** a hozzárendelés finomhangolásához. A folytatáshoz válassza a **Tovább** gombot.
 
 7. A**felülvizsgálat + létrehozás**területen tekintse át a beállításokat, majd válassza a **Létrehozás** lehetőséget, amikor készen áll a Windows 10-es frissítési kör mentéséhez. Az új frissítési kör megjelenik a frissítési körök listájában.
 
@@ -104,7 +104,7 @@ Ezen a lapon megtekintheti a gyűrűk hozzárendelési állapotát, és az Átte
 - [Szünet](#pause)
 - [Folytatása](#resume)
 - [Kiterjesztése](#extend)
-- [Eltávolítása](#uninstall)
+- [Eltávolítás](#uninstall)
 
 ![Elérhető műveletek](./media/windows-update-for-business-configure/overview-actions.png)
 
@@ -135,7 +135,7 @@ Ha a frissítési típus szüneteltetve van, az adott gyűrű áttekintő panelj
 > [!IMPORTANT]
 > A szüneteltetési parancs kiadása után az eszközök akkor kapják meg ezt a parancsot, amikor legközelebb bejelentkeznek a szolgáltatásba. Megtörténhet, hogy mielőtt bejelentkeznek, még telepítenek egy ütemezett frissítést. Ha az adott eszköz ki van kapcsolva a felfüggesztési parancs kiadásakor, akkor a bekapcsolása után esetleg letölthet és telepíthet ütemezett frissítéseket, mielőtt bejelentkezik az Intune-ba.
 
-#### <a name="resume"></a>Folytatása
+#### <a name="resume"></a>Folytatás
 
 Amíg a frissítési kör szünetel, a **Folytatás** gombra kattintva visszaállíthatja a szolgáltatás és a minőségi frissítéseket az adott gyűrű aktív működéséhez. A frissítési kör folytatása után újra szüneteltetheti a gyűrűt.
 
@@ -145,7 +145,7 @@ Amíg a frissítési kör szünetel, a **Folytatás** gombra kattintva visszaál
 2. Válassza ki az elérhető lehetőségek közül a **funkció** vagy a **minőségi** frissítések folytatásához, majd kattintson **az OK gombra**.
 3. Egy frissítési típus folytatása után a másik frissítés folytatásához válassza a folytatás újra lehetőséget.
 
-#### <a name="extend"></a>Kiterjesztése  
+#### <a name="extend"></a>Bővítés  
 
 Amíg a frissítési kör szünetel, a **kiterjesztés** lehetőség kiválasztásával alaphelyzetbe állíthatja a szüneteltetési időszakot a szolgáltatás és a minőségi frissítések esetében az adott frissítési kör 35 napra.
 
@@ -179,7 +179,7 @@ Az Eltávolítás használatakor vegye figyelembe a következőket:
 
 - Egy Windows 10-es eszközön a minőségi frissítés sikeres visszavonása után az eszköz felhasználói továbbra is megtekinthetik a **Windows beállításai** > **frissítések** > **frissítési előzmények**című témakörben felsorolt frissítést.
 
-- A szolgáltatások frissítéseinek kimondottan a frissítés eltávolításának ideje 2-60 nap. Ezt az időszakot a frissítési körök frissítési beállításának **beállítása a szolgáltatás frissítésének eltávolítási időtartama (2 – 60 nap)**. Az eszközre telepített szolgáltatás frissítése nem állítható vissza, ha a frissítés a beállított eltávolítási időtartamnál hosszabb ideig lett telepítve.
+- A szolgáltatások frissítéseinek kimondottan a frissítés eltávolításának ideje 2-60 nap. Ezt az időszakot a frissítési körök frissítési beállításának **beállítása a szolgáltatás frissítésének eltávolítási időtartama (2 – 60 nap)** . Az eszközre telepített szolgáltatás frissítése nem állítható vissza, ha a frissítés a beállított eltávolítási időtartamnál hosszabb ideig lett telepítve.
 
   Tegyük fel például, hogy egy frissítési gyűrű egy 20 napos szolgáltatás-frissítési eltávolítási időszakmal rendelkezik. 25 nap elteltével állítsa vissza a legújabb funkció frissítését, és használja az Eltávolítás lehetőséget.  Azok az eszközök, amelyek több mint 20 nappal ezelőtt telepítették a szolgáltatást, nem tudják eltávolítani, mert a karbantartási folyamat részeként eltávolítottak a szükséges biteket. Azonban azok az eszközök, amelyek csak a 19 napos frissítést telepítették, eltávolíthatják a frissítést, ha sikeresen bejelentkeznek az eltávolítási parancs fogadására, mielőtt meghaladják a 20 napos eltávolítási időszakot.
 
@@ -215,6 +215,10 @@ Ha egy eszköz megkapja a Windows 10-es szolgáltatáshoz tartozó frissítési 
 
   Ez a korlátozás azt vizsgálja, hogy a későbbiekben támogatni lehet-e.
 
+> [!IMPORTANT]
+> Ha az Intune-nal szeretné használni a szolgáltatás-frissítési szabályzatot, az eszközökön be kell kapcsolni az telemetria-t, az [*alapszintű*](../configuration/device-restrictions-windows-10.md#reporting-and-telemetry)minimális beállítással. A telemetria a *jelentéskészítés és a telemetria* alatt van konfigurálva az [eszköz korlátozási szabályzatának](../configuration/device-restrictions-configure.md)részeként.
+>
+> Azok az eszközök, amelyek szolgáltatás-frissítési házirendet kapnak, és amelyek Telemetria beállítása *nincs konfigurálva*, ami azt jelenti, hogy ki van kapcsolva, a Windows újabb verzióját telepítheti, mint a szolgáltatás frissítési házirendjében meghatározottak szerint. A telemetria megkövetelésének előfeltétele felülvizsgálat alatt áll, mivel ez a funkció az általános elérhetőség irányába mozdul.
 
 ### <a name="create-and-assign-windows-10-feature-updates"></a>Windows 10 rendszerű szolgáltatások frissítéseinek létrehozása és kiosztása
 
@@ -224,7 +228,7 @@ Ha egy eszköz megkapja a Windows 10-es szolgáltatáshoz tartozó frissítési 
 
 3. Az **alapvető beállítások**területen adja meg a kívánt szolgáltatást, a leírását (nem kötelező) és a **szolgáltatások frissítését**, és válassza ki a Windows-verziót, amelyhez a kívánt szolgáltatáskészlet tartozik, majd válassza a **tovább**lehetőséget.
 
-4. A **hozzárendelések**alatt válassza a **+ csoportok kiválasztása** lehetőséget, majd rendelje hozzá a szolgáltatás frissítésének központi telepítését egy vagy több csoporthoz. A folytatáshoz kattintson a **tovább** gombra.
+4. A **hozzárendelések**alatt válassza a **+ csoportok kiválasztása** lehetőséget, majd rendelje hozzá a szolgáltatás frissítésének központi telepítését egy vagy több csoporthoz. A folytatáshoz válassza a **Tovább** gombot.
 
 5. A **felülvizsgálat + létrehozás**területen tekintse át a beállításokat, majd válassza a **Létrehozás** lehetőséget, amikor készen áll a Windows 10-es szolgáltatás frissítési házirendjének mentéséhez.  
 
@@ -245,4 +249,3 @@ Ebből a panelből a következőket teheti:
 [Intune-megfelelőségi jelentések a frissítésekhez](../windows-update-compliance-reports.md)
 
 [A Windows 10 frissítési gyűrűk hibaelhárítása](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-Tip-Troubleshooting-Windows-10-Update-Ring-Policies/ba-p/714046)
-

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fe37ac412d01d3032685a0e66827d20e13b0db64
-ms.sourcegitcommit: 42183c87b137710b8529049f8710d47127e99900
+ms.openlocfilehash: 237eca2f8e00f00fda5fa3cf401be87de9602743
+ms.sourcegitcommit: de663ef5f3e82e0d983899082a7f5b62c63f24ef
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75303077"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75956263"
 ---
 # <a name="add-groups-to-organize-users-and-devices"></a>Csoportok hozzáadása a felhasználók és eszközök rendszerezéséhez
 
@@ -54,7 +54,7 @@ A következő típusú csoportokat veheti fel:
         >
         > Ha az elsődleges szerepköre az eszközkezelés, javasoljuk, hogy használja a [Microsoft Endpoint Manager felügyeleti központot](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-    - **Office 365**: ezek a csoportok úgy vannak kialakítva, hogy szabályozzák az Office 365-erőforrások elérését és megosztását. Létrehozhat például egy Office 365-csoportot az Outlook beérkezett fájlok vagy a naptár megosztásához. További információ: az [Office 365-csoportok megismerése](https://support.office.com/article/learn-about-office-365-groups-b565caa1-5c40-40ef-9915-60fdb2d97fa2).
+    - **Office 365**: a közös postaláda, a naptár, a fájlok, a SharePoint-webhelyek és egyéb funkciók elérését lehetővé tevő együttműködési lehetőségeket biztosít. Ez a lehetőség lehetővé teszi a szervezetnél kívüli személyek hozzáadását is a csoporthoz. További információ: az [Office 365-csoportok megismerése](https://support.office.com/article/learn-about-office-365-groups-b565caa1-5c40-40ef-9915-60fdb2d97fa2).
 
 4. Adja meg a **csoport nevét** és a **csoport leírását** az új csoport számára. Egyedinek kell lennie, és meg kell adni az adatokat, hogy mások tudják, mi a csoport.
 
