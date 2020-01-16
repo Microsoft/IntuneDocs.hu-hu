@@ -15,12 +15,12 @@ ms.technology: ''
 ms.assetid: ''
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7cc63be3c7c536cba67ef92288c12cc4032ae200
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 50973d883a3d31089e16dca5a9021643a821a3fb
+ms.sourcegitcommit: 52475fcd8d05d2f6b858d780ebb3d88eaadb0849
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72508805"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76036628"
 ---
 # <a name="wandera-mobile-threat-defense-connector-with-intune"></a>A Wanda Mobile Threat Defense-összekötő az Intune-nal  
 
@@ -48,7 +48,7 @@ Az Intune-ban való regisztráláskor a következő platformok támogatottak:
 - Android 5,0 és újabb verziók  
 - iOS 10,2 és újabb verziók  
 
-További információ a platformról és az eszközről: a [Wanda webhelyén](https://www.wandera.com/why-wandera/features/device-support/).
+További információ a platformról és az eszközről: a [Wanda webhelyén](https://www.wandera.com/classic-help-center/).
 
 ## <a name="prerequisites"></a>Előfeltételek  
 

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4e5a16a8be6fcce8c6c34d3ddf8979b17eccddd1
-ms.sourcegitcommit: fb72b19986f34907d228c856d2e6949751ec02a1
+ms.openlocfilehash: cb98ee2974cefeebb90689207388d5fe9229dad2
+ms.sourcegitcommit: 52475fcd8d05d2f6b858d780ebb3d88eaadb0849
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75920125"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76036660"
 ---
 # <a name="enroll-windows-devices-in-intune-by-using-the-windows-autopilot"></a>Windows-eszközök regisztrálása az Intune-ban a Windows Autopilot használatával  
 A Windows Autopilot leegyszerűsíti az eszközök regisztrálását az Intune-ban. A testre szabott operációsrendszer-lemezképek létrehozása és karbantartása sok időt vesz igénybe. Gyakran ezeknek az egyéni operációsrendszer-lemezképeknek az új eszközökre való alkalmazásával is időt kell töltenie, hogy felkészítse az eszközöket a használatra, mielőtt a végfelhasználóknak adná azokat. A Microsoft Intune és az AutoPilot révén új eszközöket adhat hozzá a végfelhasználók számára anélkül, hogy egyéni operációsrendszer-lemezképek létrehozására, kezelésére és az eszközökre való alkalmazására lenne szükség. Az AutoPilot-eszközök Intune-nal való felügyelete során a regisztráció után szabályzatokat, profilokat, alkalmazásokat és sok mást is kezelni tud. A megoldás előnyeinek, használati eseteinek és előfeltételeinek áttekintéséről lásd [a Windows AutoPilot áttekintését](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot).
@@ -37,7 +37,7 @@ A robotpilóta-telepítés négyféle típusú:
 ## <a name="prerequisites"></a>Előfeltételek
 - [Intune-előfizetés](../fundamentals/licenses.md)
 - [Engedélyezni kell a Windowsos eszközök automatikus regisztrációját](windows-enroll.md#enable-windows-10-automatic-enrollment)
-- [Előfizetés prémium szintű Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-get-started-premium) <!--&#40;[trial subscription](http://go.microsoft.com/fwlink/?LinkID=816845)&#41;-->
+- [Előfizetés prémium szintű Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-get-started-premium) <!--&#40;[trial subscription](https://go.microsoft.com/fwlink/?LinkID=816845)&#41;-->
 
 ## <a name="how-to-get-the-csv-for-import-in-intune"></a>A CSV-fájl beszerzése az Intune-ban történő importáláshoz
 

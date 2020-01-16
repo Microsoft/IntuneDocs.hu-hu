@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 09/19/2019
+ms.date: 01/15/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: remote-actions
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 443e1e2fff2a0c4641d3446bf72e455cc92ce784
-ms.sourcegitcommit: ec69e7ccc6e6183862a48c1b03ca6a3bf573f354
+ms.openlocfilehash: d42651b11891f3d830c0d90e70a9ecd98ea5bfb7
+ms.sourcegitcommit: 52475fcd8d05d2f6b858d780ebb3d88eaadb0849
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74907287"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76036608"
 ---
 # <a name="send-custom-notifications-in-intune"></a>Egyéni értesítések küldése az Intune-ban  
 
@@ -89,13 +89,13 @@ Az Intune nem követi az Ön által küldött egyéni értesítéseket, és az e
 
 ## <a name="send-a-custom-notification-to-a-single-device"></a>Egyéni értesítés küldése egyetlen eszközre  
 
-1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431) egy olyan fiókkal, amely jogosult értesítések létrehozására és küldésére, majd lépjen az **eszközök** > **minden eszköz**elemre.  
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431) egy olyan fiókkal, amely jogosult értesítések létrehozására és küldésére, majd lépjen az **eszközök** > **minden eszköz**elemre.
 
-2. Válassza ki azt az eszközt, amelyre értesítést szeretne küldeni.  
+2. Kattintson duplán annak a felügyelt eszköznek a nevére, amelyhez értesítést szeretne küldeni, hogy megnyissa az eszközök *Áttekintés* lapját.
 
-3. Az eszközök **áttekintése** lapon válassza a **...** (ellipszisek) lehetőséget az oldal jobb felső részén.  
+3. Az eszközök **áttekintése** lapon az **Egyéni értesítési eszköz küldése** művelettel nyissa meg az *Egyéni értesítés küldése* panelt. Ha ez a beállítás nem érhető el, válassza az oldal jobb felső részén található **...** (ellipszisek) lehetőséget, majd válassza az **Egyéni értesítés küldése**lehetőséget.
 
-4. Az egyéni **értesítési eszköz küldése** művelet kiválasztásával nyissa meg az *Egyéni értesítés küldése* panelt, ahol a következő üzenet részleteit adja meg:  
+4. Az **Egyéni értesítés küldése** panelen a következő üzenet részleteit kell megadnia:  
 
    - **Title (cím** ) – Itt adhatja meg az értesítés címét. A címek legfeljebb 50 karakterből állhatnak.  
    - **Törzs** – Itt adhatja meg az üzenetet. Az üzenetek legfeljebb 500 karakterből állhatnak.  

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, get-started, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3f1563c092d8dd4c34e4a18caea56910267eb623
-ms.sourcegitcommit: de663ef5f3e82e0d983899082a7f5b62c63f24ef
+ms.openlocfilehash: 3c340ffaacad303c4ff395c84d92e3907e42a521
+ms.sourcegitcommit: 52475fcd8d05d2f6b858d780ebb3d88eaadb0849
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 01/15/2020
-ms.locfileid: "75956340"
+ms.locfileid: "76036651"
 ---
 # <a name="app-protection-policies-overview"></a>Alkalmazásvédelmi szabályzatok áttekintése
 
@@ -184,7 +184,7 @@ A Skype vállalati verziójának használatára további követelmények vonatko
 
 ## <a name="app-protection-global-policy"></a>Alkalmazásvédelmi globális szabályzat
 
-A OneDrive-rendszergazdák az **admin.office.com** webhelyen az **Eszköz** hozzáférést választva konfigurálhatják a OneDrive- és SharePoint-ügyfélalkalmazások **mobilalkalmazás-kezelési** vezérlőit. 
+Ha a OneDrive rendszergazdája megkeresi a **admin.onedrive.com** , és kiválasztja az **eszközök hozzáférését**, beállíthatja a **mobileszköz-kezelési** vezérlőket a OneDrive és a SharePoint-ügyfélalkalmazások számára. 
 
 A OneDrive felügyeleti konzolján elérhető beállításokkal konfigurálható a **Globális** szabályzat nevű speciális Intune alkalmazásvédelmi szabályzat. Ez a globális szabályzat a bérlőn belül az összes felhasználóra vonatkozik, és nincs lehetőség a szabályzat célzására. 
 

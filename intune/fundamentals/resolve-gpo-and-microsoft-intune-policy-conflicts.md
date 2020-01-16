@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic-keep
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 745534f2c65bc9585ab4639f9d5a6d101638c5f9
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: a44f26c15a93f9384bb85b65da5a6c1ecaff0564
+ms.sourcegitcommit: 52475fcd8d05d2f6b858d780ebb3d88eaadb0849
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72509843"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76036563"
 ---
 # <a name="resolve-group-policy-objects-gpo-and-microsoft-intune-policy-conflicts"></a>Csoportházirend-objektumok (GPO) és Microsoft Intune-szabályzatütközések feloldása
 
@@ -111,10 +111,10 @@ WMI filters selectively apply GPOs to computers that satisfy the conditions of a
 
     - For GPOs that should apply only to PCs that you do not want to manage by using Intune, apply the filter **WindowsIntunePolicyEnabled=0**.
 
-For more information about how to apply WMI filters in Group Policy, see the blog post [Security Filtering, WMI Filtering, and Item-level Targeting in Group Policy Preferences](http://go.microsoft.com/fwlink/?LinkId=177883). --->
+For more information about how to apply WMI filters in Group Policy, see the blog post [Security Filtering, WMI Filtering, and Item-level Targeting in Group Policy Preferences](https://go.microsoft.com/fwlink/?LinkId=177883). --->
 
 
-A csoportházirend-objektumok alkalmazását korlátozhatja csak azokra a biztonsági csoportokra, amelyek a kijelölt csoportházirend-objektum Csoportházirend kezelése konzoljának **Biztonsági szűrés** területén vannak megadva. Alapértelmezés szerint a csoportházirend-objektumok a *Hitelesített felhasználók* csoportra vonatkoznak.
+A csoportházirend-objektumok alkalmazását korlátozhatja csak azokra a biztonsági csoportokra, amelyek a kijelölt csoportházirend-objektum Csoportházirend kezelése konzoljának **Biztonsági szűrés** területén vannak megadva. Alapértelmezés szerint a GPO-k a *Hitelesített felhasználók*csoportra vonatkoznak.
 
 - Az **Active Directory – felhasználók és számítógépek** beépülő modulban hozzon létre egy új biztonsági csoportot, amely azokat a számítógépeket és felhasználói fiókokat tartalmazza, amelyeket nem kíván az Intune által kezelni. A csoportnak adhatja például a *Nem szerepel a Microsoft Intune-ban* nevet.
 

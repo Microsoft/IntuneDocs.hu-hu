@@ -19,12 +19,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc781ea72b54468b21fb70e60e334f1c8d8832ea
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 9b0bb0bd1f0df3aeb4185542d424bd3ffffe42cd
+ms.sourcegitcommit: 52475fcd8d05d2f6b858d780ebb3d88eaadb0849
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74547953"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76036535"
 ---
 # <a name="tutorial-use-autopilot-to-enroll-windows-devices-in-intune"></a>Oktatóanyag – Windows-eszközök regisztrálása az Intune-ban az AutoPilot használatával
 
@@ -45,7 +45,7 @@ Az AutoPilot előnyeinek, használati eseteinek és előfeltételeinek áttekint
 
 ## <a name="prerequisites"></a>Előfeltételek
 - [Windowsos eszközök automatikus regisztrációjának beállítása](../quickstart-setup-auto-enrollment.md)
-- [Előfizetés prémium szintű Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-get-started-premium) <!--&#40;[trial subscription](http://go.microsoft.com/fwlink/?LinkID=816845)&#41;-->
+- [Előfizetés prémium szintű Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-get-started-premium) <!--&#40;[trial subscription](https://go.microsoft.com/fwlink/?LinkID=816845)&#41;-->
 
 
 ## <a name="add-devices"></a>Eszközök felvétele

@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic-keep
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ab5e5d3e645410b876a5d3d0be0eafed9c790780
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 831a22dfb6eebfe74b9886a1c83560f68a11c04e
+ms.sourcegitcommit: 52475fcd8d05d2f6b858d780ebb3d88eaadb0849
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72502656"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76036595"
 ---
 # <a name="manage-license-agreements-for-windows-pc-software-in-microsoft-intune"></a>Windows-számítógépes szoftverek licencszerződéseinek kezelése a Microsoft Intune-ban
 
@@ -51,7 +51,7 @@ Emellett olyan jelentéseket is létrehozhat, amelyek megjelenítik a szoftverek
 > A **Licencek** munkaterület csak akkor jelenik meg a felügyeleti konzolon, ha már legalább egy Windows-számítógépet felügyel az Intune-ügyféllel.
 
 ## <a name="add-microsoft-volume-licensing-agreements"></a>Microsoft mennyiségi licencszerződések hozzáadása
-Az Intune mennyiségi licencelszerződések a Microsoft mennyiségi licencszerződéseken keresztül vásárolt szoftverek licencinformációit tartalmazzák. Ha Microsoft mennyiségi licencszerződéseket szeretne hozzáadni az Intune-hoz, adja meg a szerződésszámok egyeztetett párjait. A szerződés- vagy engedélyezési számokat egyeztetni kell a megfelelő licenc- vagy regisztrációs számokkal. A szerződésszámpárokat akkor kapja meg, amikor licencszerződéseket vásárol a [Mennyiségi Licencelési Szolgáltatásközpontból (VLSC)](http://go.microsoft.com/fwlink/?LinkID=223842).
+Az Intune mennyiségi licencelszerződések a Microsoft mennyiségi licencszerződéseken keresztül vásárolt szoftverek licencinformációit tartalmazzák. Ha Microsoft mennyiségi licencszerződéseket szeretne hozzáadni az Intune-hoz, adja meg a szerződésszámok egyeztetett párjait. A szerződés- vagy engedélyezési számokat egyeztetni kell a megfelelő licenc- vagy regisztrációs számokkal. A szerződésszámpárokat akkor kapja meg, amikor licencszerződéseket vásárol a [Mennyiségi Licencelési Szolgáltatásközpontból (VLSC)](https://go.microsoft.com/fwlink/?LinkID=223842).
 
 1. A [Microsoft Intune felügyeleti konzolon](https://admin.manage.microsoft.com/) válassza a **Licencek** elemet.
 
@@ -67,7 +67,7 @@ Az Intune mennyiségi licencelszerződések a Microsoft mennyiségi licencszerz�
 
         - Csak az ASCII-karakterek támogatottak.
 
-        - A szerződés nevében nem használhatóak a következő karakterek: **~ ! @ # $ ^ &amp; &#42; ( ) = + [ ] { } \ | ; : ' " &lt; &gt; /** . A szóközök engedélyezettek a névben.
+        - A következő karakterek nem engedélyezettek a szerződés nevében: **~! @ # $ ^ &#42; &amp; () = + [] {} \ |;: ' "&lt; &gt; /** . A szóközök engedélyezettek a névben.
 
         - A fájl neve nem lehet hosszabb 128 karakternél.
 
@@ -77,11 +77,11 @@ Az Intune mennyiségi licencelszerződések a Microsoft mennyiségi licencszerz�
 
         A fájl létrehozásához adja meg a szerződéspárokat egy egyszerű szöveges dokumentumban a következő formátumok egyikében, a VLSC webhelyen regisztrált szervezettípustól függően. Soronként egy szerződésszámpár szerepeljen.
 
-        - **Open Value-ügyfelek:** *szerződésszám*, *szerződésszám ismétlése*, *szerződés neve*
+        - **Open Value-ügyfelek:** *Szerződésszám*, szerződés *ismétlése*, *Szerződés neve*
 
-        - **Open-ügyfelek:** *engedélyezési szám*, *kapcsolódó licencszám*, *szerződésnév*
+        - **Nyitott ügyfelek:** *engedély száma*, *kapcsolódó licenc száma*, *Szerződés neve*
 
-        - **Select- és nagyvállalati ügyfelek:** *szerződésszám*, *kapcsolódó regisztrációs szám*, *szerződésnév*
+        - **Select és Enterprise ügyfelek:** *Szerződés száma*, *kapcsolódó regisztrációs szám*, *Szerződés neve*
 
         A **Szerződések hozzáadása** űrlap új szerződések hozzáadásakor megkéri, hogy keresse meg az adott fájlt.
 
@@ -93,7 +93,7 @@ Az Intune mennyiségi licencelszerződések a Microsoft mennyiségi licencszerz�
 
         - **Szerződés neve** – Adja meg a szerződés egyedi nevét.
 
-            A szerződés neve legfeljebb 256 karakterből állhat, és nem tartalmazhatja a következő karaktereket: **~ ! @ # $ ^ &amp; &#42; ( ) = + [ ] { } \ | ; : ' " &lt; &gt; /** . A szóközök engedélyezettek a névben.
+            A szerződés neve legfeljebb 256 karakterből állhat, és nem tartalmazhatja a következő karaktereket: **~! @ # $ ^ &#42; &amp; () = + [] {} \ |;: ' "&lt; &gt; /** . A szóközök engedélyezettek a névben.
 
         - **Engedély/szerződés száma** – Adja meg a licencpár engedély-/szerződésszámát.
 
@@ -116,7 +116,7 @@ Az Intune mennyiségi licencelszerződések a Microsoft mennyiségi licencszerz�
 
 Megjelenik a **Minden szerződés** nézet, és az Intune a megadott szerződésszámpárok érvényesítése céljából kapcsolódik a Microsoft VLSC webhelyhez.
 
-Ha a licencszerződéseknek az Intune-hoz való hozzáadását követően szeretné frissíteni a mennyiségi licencekre vonatkozó információkat, válassza a **Licencek – áttekintés** lap **Frissítés most** elemét. Ez a művelet lekérdezi az aktuális licencinformációkat a [Microsoft Mennyiségi Licencelési Szolgáltatásközpontból (VLSC)](http://go.microsoft.com/fwlink/?LinkId=223842).
+Ha a licencszerződéseknek az Intune-hoz való hozzáadását követően szeretné frissíteni a mennyiségi licencekre vonatkozó információkat, válassza a **Licencek – áttekintés** lap **Frissítés most** elemét. Ez a művelet lekérdezi az aktuális licencinformációkat a [Microsoft Mennyiségi Licencelési Szolgáltatásközpontból (VLSC)](https://go.microsoft.com/fwlink/?LinkId=223842).
 
 > [!IMPORTANT]
 > A mennyiségi licencelési információk frissítéséig más adatokat láthat a szerződéslistában és a **Szerződések áttekintése** lap jogosultsági információinál.
@@ -146,7 +146,7 @@ Az Intune-hoz a Microsoft mennyiségi licencszerződésektől eltérő típusú 
 
 4. A **Szerződésadatok hozzáadása** területen adja meg a következőket:
 
-    - **Agreement name** (kötelező). A szerződés neve legfeljebb 256 karakterből állhat, és nem tartalmazhatja a következő karaktereket: **~ ! @ # $ ^ &amp; &#42; ( ) = + [ ] { } \ | ; : ' " &lt; &gt; /** . A szóközök engedélyezettek a névben.
+    - **Agreement name** (kötelező). A szerződés neve legfeljebb 256 karakterből állhat, és nem tartalmazhatja a következő karaktereket: **~! @ # $ ^ &#42; &amp; () = + [] {} \ |;: ' "&lt; &gt; /** . A szóközök engedélyezettek a névben.
 
     - **Kiadó** (kötelező). Amikor elkezdi beírni a kiadó nevét, a szolgáltatás lekérdezi a beírt betűket tartalmazó összes kiadónevet. Ha például a „soft” karaktereket írja be, a szolgáltatás lekérdezi a „soft” karakterláncot tartalmazó összes kiadónevet, például a „Microsoft” és a „Microsoft Research” kiadókat. A kiadóneveket a rendszer a Szoftverállomány-katalógusból kérdezi le. A terméknév beírása előtt ki kell választania a kiadót.
 

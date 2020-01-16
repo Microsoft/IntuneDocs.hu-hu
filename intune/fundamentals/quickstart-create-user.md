@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 75a875fc3ff11eb1e3befad425c16a710544f781
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: fdd97e69c97df5a266e147381d94b3d4419bab34
+ms.sourcegitcommit: 52475fcd8d05d2f6b858d780ebb3d88eaadb0849
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72509883"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76036579"
 ---
 # <a name="quickstart-create-a-user-in-intune-and-assign-them-a-license"></a>Gyors útmutató: felhasználó létrehozása az Intune-ban és licencek kiosztása
 
@@ -50,11 +50,11 @@ A felhasználóknak felhasználói fiókkal kell rendelkezniük az Intune-eszkö
 
 ## <a name="assign-a-license-to-the-user"></a>Licenc hozzárendelése a felhasználóhoz
 
-Miután létrehozott egy felhasználót, a [Microsoft 365 felügyeleti központot](http://go.microsoft.com/fwlink/p/?LinkId=698854) kell használnia ahhoz, hogy Intune-licencet Rendeljen hozzájuk. Ha nem rendel hozzá licencet a felhasználóhoz, nem fogja tudni regisztrálni az eszközét az Intune-ban. 
+Miután létrehozott egy felhasználót, a [Microsoft 365 felügyeleti központot](https://go.microsoft.com/fwlink/p/?LinkId=698854) kell használnia ahhoz, hogy Intune-licencet Rendeljen hozzájuk. Ha nem rendel hozzá licencet a felhasználóhoz, nem fogja tudni regisztrálni az eszközét az Intune-ban. 
 
 Intune-licenc kiosztása egy felhasználóhoz:
 
-1. Jelentkezzen be a [Microsoft 365 felügyeleti központba](http://go.microsoft.com/fwlink/p/?LinkId=698854) ugyanazzal a hitelesítő adatokkal, amelyeket az Intune-ba való bejelentkezéshez használt.
+1. Jelentkezzen be a [Microsoft 365 felügyeleti központba](https://go.microsoft.com/fwlink/p/?LinkId=698854) ugyanazzal a hitelesítő adatokkal, amelyeket az Intune-ba való bejelentkezéshez használt.
 2. Válassza a **felhasználók** > **aktív felhasználók** > lehetőséget, és válassza ki az imént létrehozott felhasználót.
 3. Válassza a **Terméklicencek** melletti **Szerkesztés** lehetőséget.
 4. A **Hely** listában válassza ki a felhasználó helyét.
@@ -68,7 +68,7 @@ Az új aktív Intune-felhasználó mostantól azt fogja látni, hogy **Intune** 
 
 ## <a name="clean-up-resources"></a>Erőforrások eltávolítása
 
-Ha már nincs szüksége erre a felhasználóra, törölheti a felhasználót a [Microsoft 365 felügyeleti központba](http://go.microsoft.com/fwlink/p/?LinkId=698854) , és kiválaszthatja a **felhasználók** > **aktív felhasználók** > *válassza ki a felhasználót a listában* > **Törlés** felhasználó > **Törlés felhasználó** > a **módosítások jóváhagyása** > **Bezárás gombra**.
+Ha már nincs szüksége erre a felhasználóra, törölheti a felhasználót a [Microsoft 365 felügyeleti központba](https://go.microsoft.com/fwlink/p/?LinkId=698854) , és kiválaszthatja a **felhasználók** > **aktív felhasználók** > *válassza ki a felhasználót a listában* > **Törlés** felhasználó > **Törlés felhasználó** > a **módosítások jóváhagyása** > **Bezárás gombra**.
 
 ## <a name="next-steps"></a>További lépések
 
