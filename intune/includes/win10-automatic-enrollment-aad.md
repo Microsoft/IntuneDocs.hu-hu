@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 6f5b0c8df86cf5bf1206c1cccb879e37c7944a21
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 748141dc494e28f25a09039a7a500411af76ace7
+ms.sourcegitcommit: 52475fcd8d05d2f6b858d780ebb3d88eaadb0849
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71912762"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76037610"
 ---
 ## <a name="enable-windows-10-automatic-enrollment"></a>Windows 10-es eszközök automatikus regisztrációjának engedélyezése
 
@@ -12,7 +12,7 @@ Az automatikus regisztrálással a felhasználók Windows 10-es eszközeiket reg
 
 **Előfeltételek**
 
-- Azure Active Directory Premium-előfizetés ([próba-előfizetés](http://go.microsoft.com/fwlink/?LinkID=816845))
+- Azure Active Directory Premium-előfizetés ([próba-előfizetés](https://go.microsoft.com/fwlink/?LinkID=816845))
 - Microsoft Intune-előfizetés
 
 ### <a name="configure-automatic-mdm-enrollment"></a>Az automatikus MDM-regisztráció konfigurálása
