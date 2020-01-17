@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 304a6a60ea8dbfa98e62eb8e52a69e14af795746
-ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
+ms.openlocfilehash: d1131eec2894aa8c7135b2f931a50ab85200e7e3
+ms.sourcegitcommit: 822a70c61f5d644216ccc401b8e8949bc39e8d4a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75548014"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76125276"
 ---
 # <a name="manage-web-access-by-using-microsoft-edge-with-microsoft-intune"></a>Webes elérés kezelése a Microsoft Edge és a Microsoft Intune használatával
 
@@ -217,6 +217,7 @@ A könnyű hozzáférés érdekében beállíthatja, hogy a felhasználók a Mic
 - A felhasználók nem törölhetik és nem módosíthatják ezeket a könyvjelzőket.
 - Ezek a könyvjelzők a lista tetején jelennek meg. A felhasználók által létrehozott könyvjelzők a könyvjelzők alatt jelennek meg.
 - Ha engedélyezte az alkalmazásproxy átirányítását, akkor a belső vagy külső URL-cím használatával adhat hozzá alkalmazásproxy-webalkalmazásokat.
+- Győződjön meg arról, hogy az összes URL-cím előtaggal van **http://** vagy **https://** , amikor beírja őket a listára.
 
 A felügyelt könyvjelzők konfigurálásához használja a következő kulcs/érték párokat:
 
@@ -243,7 +244,7 @@ A következő kulcs/érték párokkal konfigurálhatja a Microsoft Edge számár
 
 ### <a name="url-formats-for-allowed-and-blocked-site-list"></a>Az engedélyezett és a letiltott helyek listájának URL-formátuma 
 Az engedélyezett/letiltott webhelyek listája a különböző URL-címek használatával hozható létre. Ezek az engedélyezett minták a következő táblázatban vannak részletezve. Néhány megjegyzés az első lépések előtt: 
-- Az URL-címek listába történő bevitelekor ellenőrizze, hogy az URL-címet a **http** vagy a **https** előtaggal adta-e meg.
+- Győződjön meg arról, hogy az összes URL-cím előtaggal van **http://** vagy **https://** , amikor beírja őket a listára.
 - A helyettesítő karakteres szimbólumot (\*) a következő engedélyezett minták listájában szereplő szabályok alapján használhatja.
 - Egy helyettesítő karakter csak az állomásnév teljes összetevőjével (ponttal elválasztva) vagy az elérési út teljes részével (a továbbítási perjelekkel elválasztva) egyezik. A `http://*contoso.com` például **nem** támogatott.
 - A címben portszámokat is megadhat. Ha nem ad meg portszámot, a rendszer a következő értékeket használja:

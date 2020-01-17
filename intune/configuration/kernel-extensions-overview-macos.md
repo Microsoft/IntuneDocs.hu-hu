@@ -6,7 +6,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/04/2019
+ms.date: 01/16/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bce6b99723c5eada8f8f29e875a1df1daa02751a
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 1075054f3812e8c40f38e705a440c46ba09fdd0e
+ms.sourcegitcommit: 11cbd2a9d90dea20f6dc1f54f0a6acbeec3a71d6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74059351"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76146769"
 ---
 # <a name="add-macos-kernel-extensions-in-intune"></a>MacOS kernel-bővítmények hozzáadása az Intune-ban
 
@@ -55,7 +55,7 @@ Ez a cikk bemutatja, hogyan hozhat létre az Intune-ban kernel-bővítményeket 
 ## <a name="what-you-need-to-know"></a>Amit még tudnia kell
 
 - Aláíratlan örökölt kernel-bővítmények is hozzáadhatók.
-- Ügyeljen arra, hogy a rendszermag-bővítmény helyes csapat-azonosítóját és a köteg AZONOSÍTÓját adja meg. Az Intune nem ellenőrzi a beírt értékeket. Ha helytelen adatokat ad meg, a bővítmény nem fog működni az eszközön.
+- Ügyeljen arra, hogy a rendszermag-bővítmény helyes csapat-azonosítóját és a köteg AZONOSÍTÓját adja meg. Az Intune nem ellenőrzi a beírt értékeket. Ha helytelen adatokat ad meg, a bővítmény nem fog működni az eszközön. A csoport azonosítója pontosan 10 alfanumerikus karakter hosszú lehet. 
 
 > [!NOTE]
 > Az Apple közzétette az összes szoftver aláírásával és notarization kapcsolatos információkat. MacOS 10.14.5 és újabb rendszereken az Intune-on keresztül üzembe helyezett kernel-bővítményeknek nem kell megfelelniük az Apple notarization-szabályzatának.

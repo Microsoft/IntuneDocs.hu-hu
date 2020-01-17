@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dc618f2502647ba33a16cff4305b9f4671e05996
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: d87a4b5d46a5f0d40cebe3dbcaff211ff508d667
+ms.sourcegitcommit: 822a70c61f5d644216ccc401b8e8949bc39e8d4a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74558188"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76125310"
 ---
 # <a name="deploy-hybrid-azure-ad-joined-devices-by-using-intune-and-windows-autopilot"></a>Hibrid Azure AD-hez csatlakoztatott eszközök üzembe helyezése az Intune és a Windows Autopilot használatával
 Az Intune és a Windows Autopilot használatával hibrid Azure Active Directory (Azure AD) csatlakoztatott eszközöket állíthat be. Ehhez kövesse a cikk lépéseit.
@@ -181,7 +181,7 @@ Az Autopilot-eszközök regisztrálását követően a nevük az eszköz állom�
 
 
 ## <a name="create-and-assign-an-autopilot-deployment-profile"></a>Autopilot-üzembehelyezési profil létrehozása és hozzárendelése
-Az Autopilot-üzembehelyezési profilokkal Autopilot-eszközeit konfigurálhatja.
+Az AutoPilot üzembehelyezési profilokkal konfigurálhatja az AutoPilot-eszközöket.
 
 1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **windows** > **windows-regisztráció** > **központi telepítési profilok** > **profil létrehozása**lehetőséget.
 2. Az **alapvető beállítások** lapon adja meg a **nevet** és a **leírást**(nem kötelező).
@@ -209,17 +209,30 @@ Körülbelül 15 percet vesz igénybe, hogy az eszköz profiljának állapota *n
 ## <a name="create-and-assign-a-domain-join-profile"></a>Tartomány-csatlakoztatási profil létrehozása és hozzárendelése
 
 1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **konfigurációs profilok** > **profil létrehozása**lehetőséget.
-1. Adja meg a következő tulajdonságokat:
+2. Adja meg a következő tulajdonságokat:
    - **Név**: Adja meg az új profil leíró nevét.
    - **Leírás:** Itt adhatja meg a profil leírását.
    - **Platform**: válassza **a Windows 10 és újabb**lehetőséget.
    - **Profil típusa**: válassza a **tartományhoz való csatlakozás (előzetes verzió)** lehetőséget.
-1. Válassza a **Beállítások**lehetőséget, majd adja meg a **számítógép nevének előtagját**, a **tartománynevet**és a (választható) **szervezeti egységet** [DN formátumban](https://docs.microsoft.com/windows/desktop/ad/object-names-and-identities#distinguished-name). 
+3. Válassza a **Beállítások**lehetőséget, majd adja meg a **számítógép nevének előtagját**, a **tartománynevet**.
+4. Választható Adjon meg egy **szervezeti egységet** (OU) [DN formátumban](https://docs.microsoft.com/windows/desktop/ad/object-names-and-identities#distinguished-name). A lehetőségek a következők:
+   - Adja meg azt a szervezeti egységet, amelyben delegálta a vezérlést az Intune-összekötőt futtató Windows 2016-eszközhöz.
+   - Adja meg azt a szervezeti egységet, amelyben delegált vezérlést a helyszíni Active Directoryban található legfelső szintű számítógépeknek.
+   - Ha ezt üresen hagyja, a számítógép-objektum a Active Directory alapértelmezett tárolóban lesz létrehozva (CN = számítógépek, ha még nem [módosította](https://support.microsoft.com/en-us/help/324949/redirecting-the-users-and-computers-containers-in-active-directory-dom)).
+   
+   Íme néhány érvényes példa:
+   - OU = 1. szint, OU = Level2, DC = contoso, DC = com
+   - OU = enyém, DC = contoso, DC = com
+   
+   Íme néhány példa, amely nem érvényes:
+   - CN = számítógépek, DC = contoso, DC = com (nem adhat meg tárolót, ehelyett hagyja üresen az értéket a tartomány alapértelmezett értékének használatához)
+   - OU = enyém (a tartományt a DC = attributes használatával kell megadnia)
+     
    > [!NOTE]
    > Ne használjon idézőjeleket a **szervezeti egységben**lévő érték körül.
-1. Válassza **az OK** > **Létrehozás**elemet.  
+5. Válassza **az OK** > **Létrehozás**elemet.  
     Ekkor létrejön a profil, és megjelenik a listában.
-1. A profil hozzárendeléséhez kövesse az [eszköz profiljának](../configuration/device-profile-assign.md#assign-a-device-profile) kiosztása és a profil társítása ugyanahhoz [a lépésben használt](windows-autopilot-hybrid.md#create-a-device-group) csoporthoz című témakör lépéseit.
+6. A profil hozzárendeléséhez kövesse az [eszköz profiljának](../configuration/device-profile-assign.md#assign-a-device-profile) kiosztása és a profil társítása ugyanahhoz [a lépésben használt](windows-autopilot-hybrid.md#create-a-device-group) csoporthoz című témakör lépéseit.
    - Több tartományhoz való csatlakozás profilok üzembe helyezése
    
      a. Hozzon létre egy dinamikus csoportot, amely tartalmazza az összes Autopilot-eszközt egy adott Autopilot Deployment-profillal, írja be a következőt: (Device. enrollmentProfileName-EQ "Autopilot-profil neve"). 

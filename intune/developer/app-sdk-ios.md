@@ -1,5 +1,5 @@
 ---
-title: A Microsoft Intune App SDK iOS rendszeren – fejlesztői útmutató
+title: iOS-re készült Microsoft Intune App SDK – fejlesztői útmutató
 description: Az iOS-hez készült Microsoft Intune App SDK lehetővé teszi, hogy Intune-alkalmazásvédelmi szabályzatokat (vagy más néven APP- vagy MAM-szabályzatokat) építsen be natív iOS-alkalmazásába.
 keywords: ''
 author: Erikre
@@ -17,14 +17,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 38f9c9721942b4c9754d4e99e4e91d751ceedcf3
-ms.sourcegitcommit: 8d7406b75ef0d75cc2ed03b1a5e5f74ff10b98c0
+ms.openlocfilehash: f6edf3fd8d6c6aeefeb1e34c5b390360e7215f21
+ms.sourcegitcommit: 822a70c61f5d644216ccc401b8e8949bc39e8d4a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75653784"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76125293"
 ---
-# <a name="microsoft-intune-app-sdk-for-ios-developer-guide"></a>A Microsoft Intune App SDK iOS rendszeren – fejlesztői útmutató
+# <a name="microsoft-intune-app-sdk-for-ios-developer-guide"></a>iOS-re készült Microsoft Intune App SDK – fejlesztői útmutató
 
 > [!NOTE]
 > Javasoljuk, hogy olvassa el az [Intune App SDK használatának első lépései](app-sdk-get-started.md) című cikket, mely útmutatást nyújt az integráció előkészítéséhez a támogatott platformokon.
@@ -106,7 +106,7 @@ Az Intune App SDK az alábbi lépésekkel engedélyezhető:
 
     ![Intune App SDK (iOS) – csatolt keretrendszerek és könyvtárak](./media/app-sdk-ios/intune-app-sdk-ios-linked-frameworks-and-libraries.png)
 
-    Illessze be a `-force_load {PATH_TO_LIB}/libIntuneMAM.a` sort az alábbiak valamelyikébe (a `{PATH_TO_LIB}` helyére az Intune App SDK elérési útja kerüljön):
+    Írja be a `-force_load {PATH_TO_LIB}/libIntuneMAM.a` utasítást a következő helyek egyikére, kicserélve a `{PATH_TO_LIB}` sort az Intune App SDK elérési útjával:
    * A projekt `OTHER_LDFLAGS` Build konfigurációs beállítása.
    * A Xcode felhasználói felületének **másik mutatója**.
 
@@ -465,13 +465,14 @@ IntuneMAMPolicy.h | Az IntuneMAMPolicy osztály közzétesz néhány, az alkalma
 IntuneMAMFileProtectionManager.h | Az IntuneMAMFileProtectionManager osztály olyan API-kat tesz közzé, amelyeket az alkalmazás fájlok és könyvtárak védelmére használhat a megadott identitás alapján. Az identitást kezelheti az Intune, vagy lehet nem felügyelt, és az SDK alkalmazza a megfelelő MAM-szabályzatot. Ennek az osztálynak a használata nem kötelező. |
 IntuneMAMDataProtectionManager.h | A IntuneMAMDataProtectionManager osztály olyan API-kat tesz közzé, amelyeket az alkalmazás használhat adatpufferek védelmére a megadott identitás alapján. Az identitást kezelheti az Intune, vagy lehet nem felügyelt, és az SDK ennek megfelelően alkalmazza a titkosítást. |
 
-## <a name="implement-save-as-controls"></a>„Mentés másként” vezérlők implementálása
+## <a name="implement-save-as-and-open-from-controls"></a>A Mentés másként és a megnyitási vezérlők implementálása
 
-Az Intune lehetővé teszi a rendszergazdák számára a felügyelt alkalmazások adatmentéshez használható tárolási helyeinek meghatározását. Az alkalmazások lekérhetik az engedélyezett tárolási helyek listáját az Intune App SDK-tól az `IntuneMAMPolicy.h` fájlban meghatározott `isSaveToAllowedForLocation` API használatával.
+Az Intune lehetővé teszi, hogy a rendszergazdák kiválasszanak, hogy a felügyelt alkalmazások milyen tárolóhelyeket menthetnek az adatokból, vagy megnyithatják azokat. Az alkalmazások lekérhetik az Intune MAM SDK-t az engedélyezett mentési tárolási helyekhez a `IntuneMAMPolicy.h`ban definiált `isSaveToAllowedForLocation` API használatával. Az alkalmazások lekérhetik az Intune MAM SDK-t az engedélyezett nyitott tárolási helyekről a `IntuneMAMPolicy.h`ban definiált `isOpenFromAllowedForLocation` API használatával.
 
 Mielőtt az alkalmazások felügyelt adatokat menthetnének felhőbeli tárhelyre vagy helyi adattárolókba, az `isSaveToAllowedForLocation` API használatával ellenőriznie kell, hogy a rendszergazda engedélyezte-e az adatmentést az adott helyre.
+Mielőtt egy Felhőbeli tárolóból vagy helyi helyről nyit meg egy alkalmazást, az alkalmazásnak ellenőriznie kell a `isOpenFromAllowedForLocation` API-val, hogy tudja, hogy a rendszergazda engedélyezte-e az adatok onnan való megnyitását.
 
-Az alkalmazásoknak az `isSaveToAllowedForLocation` API használatakor át kell adniuk a tárolási hely UPN-jét, amennyiben az elérhető.
+Ha az alkalmazások a `isSaveToAllowedForLocation` vagy a `isOpenFromAllowedForLocation` API-t használják, akkor a tárolási helyhez meg kell adni az UPN-t, ha az elérhető.
 
 ### <a name="supported-save-locations"></a>Támogatott mentési helyek
 
@@ -481,12 +482,46 @@ Az `isSaveToAllowedForLocation` API által biztosított állandókkal ellenőriz
 * IntuneMAMSaveLocationOneDriveForBusiness
 * IntuneMAMSaveLocationSharePoint
 * IntuneMAMSaveLocationLocalDrive
+* IntuneMAMSaveLocationAccountDocument
 
 Az alkalmazásoknak az `isSaveToAllowedForLocation` állandóival kell ellenőrizniük, hogy az adatok menthetők-e „felügyeltnek” tekintett, például a OneDrive Vállalati verziójába, vagy „személyes” helyekre. Emellett akkor is szükséges az API használata, ha az alkalmazás nem képes megállapítani egy adott helyről, hogy az „felügyelt” vagy „személyes”.
 
-A „személyes” helyeket az `IntuneMAMSaveLocationOther` állandó képviseli.
-
 Az `IntuneMAMSaveLocationLocalDrive` állandót akkor érdemes használni, amikor az alkalmazás a helyi eszközre ment adatot.
+
+Ha a célhelyhez tartozó fiók ismeretlen, `nil` át kell adni. A `IntuneMAMSaveLocationLocalDrive` helynek mindig `nil`-fiókkal kell párosítani.
+
+### <a name="supported-open-locations"></a>Támogatott nyitott helyszínek
+
+A `isOpenFromAllowedForLocation` API állandókat biztosít annak vizsgálatához, hogy a rendszergazda engedélyezi-e az adatok megnyitását a `IntuneMAMPolicy.h`ban meghatározott következő helyekről.
+
+* IntuneMAMOpenLocationOther
+* IntuneMAMOpenLocationOneDriveForBusiness
+* IntuneMAMOpenLocationSharePoint
+* IntuneMAMOpenLocationCamera
+* IntuneMAMOpenLocationLocalStorage
+* IntuneMAMOpenLocationAccountDocument
+
+Az alkalmazásoknak a `isOpenFromAllowedForLocation` állandóit kell használniuk annak vizsgálatához, hogy az adatok megnyithatók-e a "felügyelt", például a OneDrive for Business vagy a "Personal" nevű helyekről. Emellett az API-t akkor kell használni, ha az alkalmazás nem tudja megállapítani, hogy a hely "felügyelt" vagy "személyes".
+
+A `IntuneMAMOpenLocationCamera` állandót akkor kell használni, ha az alkalmazás a kamera vagy a fényképalbum adatait nyitja meg.
+
+A `IntuneMAMOpenLocationLocalStorage` állandót akkor kell használni, ha az alkalmazás a helyi eszköz bármely pontjáról nyit meg adatforrást.
+
+A `IntuneMAMOpenLocationAccountDocument` állandót akkor kell használni, ha az alkalmazás egy felügyelt fiók identitásával rendelkező dokumentumot nyit meg (lásd a "megosztott adatok" szakaszt alább).
+
+Ha a forrás helyének fiókja ismeretlen, `nil` át kell adni. A `IntuneMAMOpenLocationLocalStorage`-és `IntuneMAMOpenLocationCamera`-helyet mindig `nil` fiókkal kell párosítani.
+
+### <a name="unknown-or-unlisted-locations"></a>Ismeretlen vagy nem listázott helyszínek
+
+Ha a kívánt hely nem szerepel a `IntuneMAMSaveLocation` vagy `IntuneMAMOpenLocation` felsorolásban, vagy ismeretlen, a két hely egyikét kell használni.
+* Ha a mentési helyet felügyelt fiókkal éri el, akkor a `IntuneMAMSaveLocationAccountDocument` helyet kell használni (`IntuneMAMOpenLocationAccountDocument` megnyitásához).
+* Ellenkező esetben használja a `IntuneMAMSaveLocationOther` helyet (`IntuneMAMOpenLocationOther` a megnyitáshoz).
+
+Fontos, hogy a rendszer egyértelművé tegye a felügyelt fiók és egy olyan fiók közötti különbséget, amely megosztja a felügyelt fiók egyszerű felhasználónevét. Például egy "user@contoso.com" UPN-vel bejelentkezett felügyelt fiók nem egyezik meg a Dropboxba bejelentkezett "user@contoso.com" UPN-fiókkal OneDrive. Ha egy ismeretlen vagy nem listázatlan szolgáltatást a felügyelt fiókba való bejelentkezéssel (pl. "user@contoso.com" a OneDrive-ba jelentkezett be) kell bejelentkeznie, azt a `AccountDocument` helynek kell képviselnie. Ha az ismeretlen vagy nem listázott szolgáltatás egy másik fiókkal jelentkezik be (például: "user@contoso.com" bejelentkezve a Dropboxba), akkor nem fér hozzá a helyhez egy felügyelt fiókkal, és a `Other` helynek kell megjelennie.
+
+### <a name="sharing-blocked-alert"></a>Letiltott riasztás megosztása
+
+A felhasználói felületi segítő függvények akkor használhatók, ha a `isSaveToAllowedForLocation` vagy `isOpenFromAllowedForLocation` API meghívása megtörténik, és a Mentés/Megnyitás művelet blokkolására van szükség. Ha az alkalmazás értesíti a felhasználót, hogy a művelet blokkolva van, meghívhatja a `IntuneMAMUIHelper.h`ban definiált `showSharingBlockedMessage` API-t egy általános üzenettel rendelkező riasztási nézet megjelenítéséhez.
 
 ## <a name="share-data-via-uiactivityviewcontroller"></a>Adatok megosztása az UIActivityViewController használatával
 
@@ -708,7 +743,7 @@ Nem. Valójában csak a munkahelyi vagy iskolai fiókokat kell regisztrálni az 
 
 Az alkalmazás felelős a felhasználók regisztrálásáért a sikeres hitelesítésüket követően. Szintén az alkalmazás felelős minden olyan fiók regisztrálásáért, amely már azelőtt jelen lehetett, mielőtt az alkalmazás kiegészült az MDM nélküli MAM funkcióval.
 
-Ezt az alkalmazásnak a `registeredAccounts:` metódussal ajánlott megtennie. Ez a metódus egy NSDictionary értéket ad vissza, amely tartalmazza az Intune MAM szolgáltatásban regisztrált valamennyi fiókot. Ha nem szerepel a listában valamelyik, az alkalmazásban már meglévő fiók, akkor az alkalmazásnak regisztrálnia kell a `registerAndEnrollAccount:` metódussal.
+Erre a célra az alkalmazásnak a `registeredAccounts:` metódust kell használnia. Ez a metódus egy NSDictionary értéket ad vissza, amely tartalmazza az Intune MAM szolgáltatásban regisztrált valamennyi fiókot. Ha nem szerepel a listában valamelyik, az alkalmazásban már meglévő fiók, akkor az alkalmazásnak regisztrálnia kell a `registerAndEnrollAccount:` metódussal.
 
 ### <a name="how-often-does-the-sdk-retry-enrollments"></a>Milyen gyakran próbálkozik újra az SDK a regisztrációval?
 

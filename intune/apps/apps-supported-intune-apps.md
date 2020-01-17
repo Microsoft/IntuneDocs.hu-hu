@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 67ff4f0cbe11c24c03b504968735e0a68d54f12d
-ms.sourcegitcommit: a66b5916eaab9cb537e483064efc584a6a63a390
+ms.openlocfilehash: c199964409a91aa6f5b75ae067968e37c1b1a189
+ms.sourcegitcommit: 822a70c61f5d644216ccc401b8e8949bc39e8d4a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75692175"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76125335"
 ---
 # <a name="microsoft-intune-protected-apps"></a>Microsoft Intune védett alkalmazások  
 
@@ -45,6 +45,7 @@ A következő táblázatok a támogatott partneri és Microsoft-alkalmazások r�
 
 | Alkalmazás címe | Alkalmazás leírása és adatai | Az App Store-hivatkozások támogatott platform (ok) hoz |
 |-------------------------------------------------|-------------------------|---------------------------------------------|
+| **Field Service Mobile**<p><img alt="Microsoft app - Field Service Mobile icon" src="./media/apps-supported-intune-apps/icon-m-field-service-mobile.png" width="100"> | A Dynamics 365 for Field Service biztosítja a többplatformos, többeszközes mező szolgáltatásként nyújtott mobil alkalmazást, amelyet kifejezetten a Field Service Worker igényeihez készítettek. A robusztus offline funkciók lehetővé teszik, hogy a helyszíni szolgáltatások munkatársai továbbra is hozzáférjenek és működjenek a távoli célhelyek internetkapcsolat nélküli meglátogatásakor szükséges adatokkal. A Field Service-munkatársak folyamatosan tájékoztatják a helyszíni munkát a területen, ha rendszeresen szinkronizálják az adatkiszolgálót a kiszolgálóra, hogy a megfelelő műveleteket el lehessen végezni, vagy a megfelelő lépések elindítását. A mobileszköz teljes mértékben testreszabható és bővíthető, így bármely szervezet saját maga is felhasználhatja az alkalmazást, meghatározhatja, hogy milyen típusú adatmező-szolgáltatási munkatársak férhetnek hozzá, és még sok más. | [Google Play-hivatkozás (Android)](https://play.google.com/store/apps/details?id=com.microsoft.d365.fs.mobile), [App Store-hivatkozás (iOS)](https://apps.apple.com/us/app/field-service-mobile/id1414669075) |
 | **Microsoft Azure Information Protection megjelenítője**<p><img alt="Microsoft app - Microsoft Azure Information Protection Viewer icon" src="./media/apps-supported-intune-apps/icon-m-azure-information-protection-viewer.png" width="100"> | Biztonságos együttműködés másokkal az a betekintő alkalmazás használatával. Megtekintheti azokat a védett fájlokat (tartalomvédelemmel ellátott e-mail-üzeneteket, PDF-fájlokat, képeket, szövegfájlokat), amelyeket valaki megosztott Önnel. | [Google Play-hivatkozás (Android)](https://play.google.com/store/apps/details?id=com.microsoft.ipviewer), [App Store-hivatkozás (iOS)](https://itunes.apple.com/us/app/rms-sharing/id689516635?mt=8) |
 | **Microsoft-foglalások**<p><img alt="Microsoft app - Microsoft Bookings icon" src="./media/apps-supported-intune-apps/icon-m-microsoft-bookings.png" width="100"> | A Microsoft Books egy találkozó-ütemezési alkalmazás, amely segít nyomon követni a foglalásokat, a munkatársakat és az ügyfeleket. Soha nem fog hiányozni egy találkozó, és kevesebb nem jelenik meg.<p>A foglalások alkalmazással a következőket teheti:<br><ul><li>A naptár megtekintése és kezelése</li><li>Foglalja le a foglalásokat, vagy módosítsa a meglévőket útközben is</li><li>Tekintse meg a személyzet tagjainak valós idejű rendelkezésre állását</li><li>Gyors és egyszerű reagálás az ügyfelekre</li><li>Gyors útmutató a következő foglaláshoz</li><li>Az ügyfelek listájának kezelése</li></ul> | [Google Play-hivatkozás (Android)](https://play.google.com/store/apps/details?id=com.microsoft.exchange.bookings),<br>[App Store-hivatkozás (iOS)](https://itunes.apple.com/us/app/microsoft-bookings/id1065657468?mt=8) |  
 | **Microsoft-Cortana**<p><img alt="Microsoft app - Microsoft Cortana icon" src="./media/apps-supported-intune-apps/icon-m-microsoft-cortana.png" width="100"> | Gyors, könnyű és szórakoztató, hogy a munka & a magánélet a személyes asszisztens Cortana. Az intelligens digitális asszisztenst a telefonjára helyezheti nyomon, így bármikor követheti a fontos dolgokat, bárhol is legyenek az eszközökön. | [Google Play-hivatkozás (Android)](https://play.google.com/store/apps/details?id=com.microsoft.cortana),<br>[App Store-hivatkozás (iOS)](https://apps.apple.com/us/app/cortana/id1054501703)
