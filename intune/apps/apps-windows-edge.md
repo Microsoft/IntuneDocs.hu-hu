@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 01/17/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b4839340ba1f3bad6f28a1120d882d0f600b1d44
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 0c58b0b02a6e4bc82295ef959c144918e82c30b6
+ms.sourcegitcommit: 665be113b593c3bc7d46b99599e720f781037dcf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74563566"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76258457"
 ---
 # <a name="add-microsoft-edge-for-windows-10-to-microsoft-intune"></a>A Microsoft Edge for Windows 10 hozzáadása a Microsoft Intunehoz
 
@@ -38,7 +38,7 @@ Az alkalmazások üzembe helyezése, konfigurálása, monitorozása vagy védele
 
 ## <a name="prerequisites"></a>Előfeltételek
 - A Windows 10 RS2 és újabb verziójának megadása kötelező.
-- A Microsoft Edge *77-es és újabb verziójának* előre telepített verzióit a felhasználói környezetben a **fejlesztői** és a **bétaverziós** csatornák esetében a rendszer felülírja a rendszerkörnyezetben telepített Edge-vel.
+- A Microsoft Edge *77-es és újabb verziójának* összes előre telepített verziója a felhasználói környezetben lévő összes csatornára felülírva lesz a rendszerkörnyezetben telepített peremhálózati állapottal.
 
 ## <a name="configure-the-app-in-intune"></a>Az alkalmazás konfigurálása az Intune-ban
 A Microsoft Edge 77-es vagy újabb verzióját a következő lépésekkel adhatja hozzá az Intune-hoz:
@@ -68,9 +68,10 @@ Ebben a lépésben az alkalmazás telepítésével kapcsolatos információkat n
 Ebben a lépésben konfigurálja az alkalmazás telepítési beállításait.
 
 1. Az **alkalmazás hozzáadása** panelen válassza az **Alkalmazásbeállítások**lehetőséget.
-2. Az **Alkalmazásbeállítások** ablaktáblán válassza a **béta** vagy a **dev** lehetőséget a **csatorna** listából annak meghatározásához, hogy melyik peremhálózati csatornát fogja telepíteni az alkalmazásból.
-    - **Bétaverzió** A Channel a Microsoft Edge legstabilabb előzetes verziója, és a legjobb választás a teljes pilóta számára a szervezeten belül. A főbb frissítések 6 hetente minden kiadásban a fejlesztői csatorna megismeréseit és fejlesztéseit is magában foglalja.
-    - **Fejlesztői** A Channel készen áll a vállalati visszajelzésekre Windows, Windows Server és macOS rendszereken. Minden héten frissül, és tartalmazza a legújabb javításokat és javításokat.
+2. Az **Alkalmazásbeállítások** ablaktáblán válassza a **STABLE**, a **Beta** vagy a **dev** lehetőséget a **Channel (csatorna** ) listából annak meghatározásához, hogy melyik peremhálózati csatornát fogja telepíteni az alkalmazásból.
+    - A **stabil** csatorna az ajánlott csatorna, amellyel széles körben üzembe helyezhetők a nagyvállalati környezetek. Hat hetente frissül, és minden kiadás a Beta Channel szolgáltatással kapcsolatos fejlesztési funkciókat tartalmaz.
+    - A Beta Channel a legstabilabb Microsoft Edge előzetes **verziója** , és a legjobb választás a teljes pilóta számára a szervezeten belül. A főbb frissítések 6 hetente minden kiadásban a fejlesztői csatorna megismeréseit és fejlesztéseit is magában foglalja.
+    - A **fejlesztői** csatorna készen áll a vállalati visszajelzésekre Windows, Windows Server és MacOS rendszereken. Minden héten frissül, és tartalmazza a legújabb javításokat és javításokat.
 
     > [!NOTE]
     > A Microsoft Edge böngésző emblémája az alkalmazással jelenik meg, amikor a felhasználók megkeresik a vállalati portált.
