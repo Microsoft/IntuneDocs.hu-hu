@@ -17,19 +17,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c58b0b02a6e4bc82295ef959c144918e82c30b6
-ms.sourcegitcommit: 665be113b593c3bc7d46b99599e720f781037dcf
+ms.openlocfilehash: 42f1c8fae156eaf08203f4a88cad8433749940ac
+ms.sourcegitcommit: b6fe084b0419b3c9d456a8b0439b00f8c784db23
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76258457"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76294795"
 ---
 # <a name="add-microsoft-edge-for-windows-10-to-microsoft-intune"></a>A Microsoft Edge for Windows 10 hozzáadása a Microsoft Intunehoz
 
 Az alkalmazások üzembe helyezése, konfigurálása, monitorozása vagy védelemmel való ellátása előtt hozzá kell adnia őket az Intune-hoz. Az elérhető [alkalmazások](~/apps/apps-add.md#app-types-in-microsoft-intune) egyike a Microsoft Edge *77-es és újabb verziója*. Ha ezt az alkalmazást az Intune-ban kiválasztja, a Microsoft Edge *77-es vagy újabb verzióját* a Windows 10 rendszert futtató eszközökhöz rendelheti hozzá és telepítheti.
 
 > [!IMPORTANT]
-> Az alkalmazás típusa **nyilvános előzetes** verzióban érhető el, és fejlesztői és bétaverziós csatornákat kínál a Windows 10 rendszerhez. A központi telepítés csak angol (EN) nyelven érhető el, de a végfelhasználók a **beállítások** > **nyelvek**területen módosíthatják a böngésző megjelenítési nyelvét. A Microsoft Edge egy, a rendszerkörnyezetben és hasonló architektúrákban telepített Win32-alkalmazás (x86-OS és x64-es OS-es x64-es alkalmazás). Az Intune észlelni fogja a Microsoft Edge összes meglévő telepítését. Ha a felhasználói környezetben van telepítve, a rendszer telepítése felülírja azt. Ha a rendszerkörnyezetbe van telepítve, a rendszer a telepítés sikerességét jelenti. Emellett a Microsoft Edge automatikus frissítései alapértelmezés szerint **be vannak kapcsolva** , és a Microsoft Edge nem távolítható el.
+> Az alkalmazás típusa **nyilvános előzetes** verzióban érhető el, és stabil, bétaverziós és fejlesztői csatornákat kínál a Windows 10 rendszerhez. A központi telepítés csak angol (EN) nyelven érhető el, de a végfelhasználók a **beállítások** > **nyelvek**területen módosíthatják a böngésző megjelenítési nyelvét. A Microsoft Edge egy, a rendszerkörnyezetben és hasonló architektúrákban telepített Win32-alkalmazás (x86-OS és x64-es OS-es x64-es alkalmazás). Az Intune észlelni fogja a Microsoft Edge összes meglévő telepítését. Ha a felhasználói környezetben van telepítve, a rendszer telepítése felülírja azt. Ha a rendszerkörnyezetbe van telepítve, a rendszer a telepítés sikerességét jelenti. Emellett a Microsoft Edge automatikus frissítései alapértelmezés szerint **be vannak kapcsolva** , és a Microsoft Edge nem távolítható el.
 
 > [!NOTE]
 > A Microsoft Edge *77-es és újabb* verziói a MacOS-re is elérhetők.
