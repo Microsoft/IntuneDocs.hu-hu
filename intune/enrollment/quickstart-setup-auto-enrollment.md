@@ -8,19 +8,19 @@ ms.service: microsoft-intune
 ms.subservice: enrollment
 ms.localizationpriority: high
 ms.topic: quickstart
-ms.date: 03/26/2019
+ms.date: 01/17/2020
 ms.author: erikje
 ms.reviewer: spshumwa
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e9649a84650a555e964cd9200ed2295fee5efb9a
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: e5cc7cf3661caa2b2640d9370d26402b7702d36b
+ms.sourcegitcommit: 70b40aa4743c8396f8d6a0163893c4a337d67c48
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74562309"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76541038"
 ---
 # <a name="quickstart-set-up-automatic-enrollment-for-windows-10-devices"></a>Rövid útmutató: Windows 10-es eszközök automatikus regisztrációjának beállítása
 
@@ -33,7 +33,7 @@ Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon ingyenes próbafióko
 - Microsoft Intune-előfizetés – [regisztráljon egy ingyenes próbafiókkal](../fundamentals/free-trial-sign-up.md).
 - Ennek a rövid útmutatónak a követéséhez [létre kell hoznia egy felhasználót](../fundamentals/quickstart-create-user.md), majd [létre kell hoznia egy csoportot](../fundamentals/quickstart-create-group.md).
 
-## <a name="sign-in-to-intune"></a>Bejelentkezés az Intune-ba
+## <a name="sign-in-to-intune-in-the-microsoft-endpoint-manager"></a>Bejelentkezés az Intune-ba a Microsoft Endpoint Managerben
 
 Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központba](https://go.microsoft.com/fwlink/?linkid=2109431) globális rendszergazdaként vagy Intune szolgáltatás-rendszergazdaként. Ha létrehozott egy Intune próba-előfizetést, az a fiók lesz a globális rendszergazda, amelyikkel azt létrehozta.
 
@@ -41,16 +41,20 @@ Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központba](https://g
 
 Ebben a példában MDM-regisztrációt fogunk használni, hogy a vállalati és saját tulajdonban lévő eszközök is automatikusan regisztrálhatók legyenek. Egy ingyenes Azure Active Directory Premium-előfizetésre regisztrál.
 
-1. A [Azure Portal](https://portal.azure.com)válassza a **Azure Active Directory** > **Mobility (Mdm és MAM)** lehetőséget.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza a **minden szolgáltatás** > **M365 Azure Active Directory** > **Azure Active Directory** > **mobilitás (Mdm és MAM)** lehetőséget.
 2. Válassza **A szolgáltatás használatához szerezze be az ingyenes Prémium szintű próbaverziót** lehetőséget. Ezt a lehetőséget választva engedélyezi az Azure Active Directory ingyenes Premium-próbaverziójával történő automatikus regisztrációt. 
 
     ![Az Azure Active Directory ingyenes Premium-próbaverziójának kiválasztása](./media/quickstart-setup-auto-enrollment/quickstart-setup-auto-enrollment-01.png)
 
-    Válassza az **Enterprise Mobility + Security E5** ingyenes próbaverzió lehetőséget. Emellett **aktiválnia** kell az ingyenes próbaverziót.
+3. Válassza az **Enterprise Mobility + Security E5** ingyenes próbaverzió lehetőséget. 
+4. Kattintson az **ingyenes próbaverzió** > **aktiválja** az ingyenes próbaverziót.
 
     ![Az Enterprise Mobility + Security E5 ingyenes próbaverzió lehetőség kiválasztása](./media/quickstart-setup-auto-enrollment/quickstart-setup-auto-enrollment-02.png)
 
-3. Válassza a **Microsoft Intune** elemet. 
+    > [!NOTE]
+    > Az aktiváláshoz egy percet is igénybe vehet. 
+
+3. Az Intune konfigurálásához válassza a **Microsoft Intune** lehetőséget. 
 
     ![A Microsoft Intune kiválasztása a listából](./media/quickstart-setup-auto-enrollment/quickstart-setup-auto-enrollment-03.png)
 
@@ -58,11 +62,14 @@ Ebben a példában MDM-regisztrációt fogunk használni, hogy a vállalati és 
 
     ![A „Néhány” elem kiválasztása a konfigurációs listából](./media/quickstart-setup-auto-enrollment/quickstart-setup-auto-enrollment-04.png)
 
-5. Válassza a **Csoportok kijelölése** > **Contoso tesztelők** > **Kiválasztás** lehetőséget a kijelölt csoportként.
+5. Kattintson a **csoportok kiválasztása** > **Contoso-tesztelők** > **válassza ki** a hozzárendelt csoportként lehetőséget.
 
     ![Válassza ki a regisztrálandó csoportot](./media/quickstart-setup-auto-enrollment/quickstart-setup-auto-enrollment-05.png)
 
 6. Válassza a **Néhány** lehetőséget az **MDM-felhasználói hatókör** területen az adatok az alkalmazottak eszközein való kezeléséhez.
+
+    ![Válassza ki a regisztrálandó csoportot](./media/quickstart-setup-auto-enrollment/quickstart-setup-auto-enrollment-06.png)
+
 7. Válassza a **Csoportok kijelölése** > **Contoso tesztelők** > **Kiválasztás** lehetőséget a kijelölt csoportként. 
 8. A hátralévő konfigurációs értékekhez használja az alapértelmezett értékeket.
 9. Válassza a **Mentés** elemet.

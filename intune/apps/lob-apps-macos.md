@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 81a084528fdc500bf9b6de0ca5fa847c2e0b3797
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 6b691e628b5b1b2ea2826e57fa9c4e1f2eaf7ae7
+ms.sourcegitcommit: 70b40aa4743c8396f8d6a0163893c4a337d67c48
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74563922"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76540894"
 ---
 # <a name="how-to-add-macos-line-of-business-lob-apps-to-microsoft-intune"></a>MacOS-es üzletági (LOB) alkalmazások hozzáadása a Microsoft Intune-hoz
 
@@ -59,7 +59,9 @@ Le kell töltenie egy külső eszközt, meg kell jelölnie a letöltött eszköz
 3. Használja az `IntuneAppUtil` parancsot az **Intune App Wrapping Tool for Mac** eszközben *.pkg* kiterjesztésű LOB-alkalmazásfájlok *.intunemac*-fájlból való burkolásához.<br>
 
     Példaparancsok a Microsoft Intune App Wrapping Tool for macOS eszközhöz:
-    
+    > [!IMPORTANT]
+    > Győződjön meg arról, hogy a `<source_file>` argumentum nem tartalmaz szóközt a `IntuneAppUtil` parancsok futtatása előtt.
+
     - `IntuneAppUtil -h`<br>
     Ez a parancs megjeleníti az eszköz használatára vonatkozó információkat.
     

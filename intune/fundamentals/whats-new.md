@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 311941c3981e5883d392359dc0919bb85156c4be
-ms.sourcegitcommit: fb72b19986f34907d228c856d2e6949751ec02a1
+ms.openlocfilehash: a150c7fd79235a5c76a1f460021464807fe66275
+ms.sourcegitcommit: af384c46ec8d8def6aa32c3b89947748dc6fd28f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75920088"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76517575"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -212,7 +212,7 @@ A naplózási tevékenység részletei mostantól tartalmazzák a hatókör cím
 ## <a name="week-of-december-2-2019"></a>2019. december 2. hét
 
 #### <a name="new-microsoft-endpoint-configuration-manager-co-management-licensing--5027281--"></a>Új Microsoft-végpont Configuration Manager közös felügyelet licencelése<!--5027281-->
-Mostantól elérhető egy új licenc, amely lehetővé Configuration Manager teszi a frissítési garanciával rendelkező ügyfelek számára, hogy a Windows 10 rendszerű számítógépeken az Intune-nal közös felügyeletet igényeljen anélkül, hogy további Intune-licencet kellene vásárolnia a közös felügyelet Az ügyfeleknek már nem kell egyéni Intune-/EMS-licenceket rendelniük a végfelhasználók számára a Windows 10 közös felügyeletéhez.
+A frissítési garanciával rendelkező ügyfelek a Windows 10 rendszerű számítógépeken az Intune közös felügyeletét anélkül érhetik el, hogy további Intune-licencet kellene vásárolnia a közös felügyelethez. Configuration Manager Az ügyfeleknek már nem kell egyéni Intune-/EMS-licenceket rendelniük a végfelhasználók számára a Windows 10 közös felügyeletéhez.
 - A Configuration Manager által felügyelt és a közös felügyeletbe beléptetett eszközök szinte ugyanazok a jogosultságok, mint az Intune önálló MDM felügyelt számítógépei. Az alaphelyzetbe állítást követően azonban nem lehet újra kiépíteni az Autopilot használatával.
 - Az Intune-ba beléptetett Windows 10-es eszközök más módon teljes Intune-licencet igényelnek.
 - A más platformokon lévő eszközök továbbra is teljes Intune-licenceket igényelnek.

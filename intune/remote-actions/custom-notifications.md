@@ -18,18 +18,37 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d42651b11891f3d830c0d90e70a9ecd98ea5bfb7
-ms.sourcegitcommit: 52475fcd8d05d2f6b858d780ebb3d88eaadb0849
+ms.openlocfilehash: 73b7617ad6a2d9aa756ddf9a8a4833289e5710ff
+ms.sourcegitcommit: af384c46ec8d8def6aa32c3b89947748dc6fd28f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76036608"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76517494"
 ---
 # <a name="send-custom-notifications-in-intune"></a>Egyéni értesítések küldése az Intune-ban  
 
 A Microsoft Intune használatával egyéni értesítéseket küldhet a felügyelt iOS-és Android-eszközök felhasználóinak. Ezek az üzenetek szabványos leküldéses értesítésként jelennek meg a Céges portál alkalmazásból és a felhasználó eszközén található Microsoft Intune alkalmazásból, ugyanúgy, mint az eszközön lévő más alkalmazások értesítései. A macOS és a Windows rendszerű eszközök nem támogatják az egyéni Intune-értesítéseket.   
 
-Az egyéni értesítési üzenetek közé tartozik egy rövid cím és egy 500 karakterből álló üzenettörzs. Ezek az üzenetek bármilyen általános kommunikációs célra testreszabhatók.
+Az egyéni értesítési üzenetek közé tartozik egy rövid cím és egy 500 karakterből álló üzenettörzs vagy kevesebb. Ezek az üzenetek bármilyen általános kommunikációs célra testreszabhatók.
+
+### <a name="what-the-notification-looks-like-on-an-ios-device"></a>Az értesítés az iOS-eszközön
+
+Ha a Céges portál alkalmazás egy iOS-eszközön van megnyitva, az értesítés az alábbi képernyőképre hasonlít:
+
+> [!div class="mx-imgBorder"]
+> ![Céges portál iOS-teszt értesítése](./media/custom-notifications/105046-1.png)
+
+Ha az eszköz zárolva van, az értesítés az alábbi képernyőképre hasonlít:
+
+> [!div class="mx-imgBorder"]
+> ![zárolt eszköz iOS-teszt értesítése](./media/custom-notifications/105046-2.png)
+
+### <a name="what-the-notification-looks-like-on-an-android-device"></a>Az értesítés megjelenése Android-eszközön
+
+Ha a Céges portál alkalmazás egy androidos eszközön van megnyitva, az értesítés az alábbi képernyőképre hasonlít:
+
+> [!div class="mx-imgBorder"]
+> ![androidos tesztek értesítése](./media/custom-notifications/105046-3.png)
 
 ## <a name="common-scenarios-for-sending-custom-notifications"></a>Egyéni értesítések küldésének gyakori forgatókönyvei  
 

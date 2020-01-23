@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/09/2020
+ms.date: 01/16/2020
 ms.topic: quickstart
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,18 +18,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 35dd017eaa2dd3cd6c17dc611aaa9d457b18aca2
-ms.sourcegitcommit: 637375a390b6e34f9c4415c77b99fe2980bbf554
+ms.openlocfilehash: e1baf0b4273a9074ac7172c08240a8e3c3a9d7fa
+ms.sourcegitcommit: 70b40aa4743c8396f8d6a0163893c4a337d67c48
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75839258"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76541115"
 ---
 # <a name="quickstart-try-microsoft-intune-for-free"></a>Rövid útmutató: A Microsoft Intune ingyenes kipróbálása
 
 A Microsoft Intune lehetővé teszi, hogy az eszközök és alkalmazások kezelésével védje a munkatársak vállalati adatait. Ezt a rövid útmutatót követve létrehoz majd egy ingyenes előfizetést az Intune tesztkörnyezetben történő kipróbálásához.
 
-Az Intune a Microsoft Azure Portal használatával felügyelt, felhőalapú szolgáltatásból kínál mobileszköz-kezelést (MDM) és mobilalkalmazás-kezelést (MAM). Az Intune használatával vállalata megfelelőségi szabályzatainak és követelményeinek eleget téve biztosíthatja munkatársai vállalati erőforrásainak (adatok, eszközök és alkalmazások) megfelelő konfigurálását, elérését és frissítését.
+Az Intune mobileszköz-felügyeletet (MDM) és Mobile App Management (MAM) szolgáltatást biztosít a Microsoft Endpoint Manager felügyeleti központtal felügyelt biztonságos felhőalapú szolgáltatásból. Az Intune használatával vállalata megfelelőségi szabályzatainak és követelményeinek eleget téve biztosíthatja munkatársai vállalati erőforrásainak (adatok, eszközök és alkalmazások) megfelelő konfigurálását, elérését és frissítését.
 
 ## <a name="prerequisites"></a>Előfeltételek
 A Microsoft Intune beállítása előtt tekintse át az alábbi követelményeket:
@@ -60,27 +60,31 @@ Az Intune kipróbálása 30 napig ingyenes. Ha már rendelkezik munkahelyi vagy 
 
     ![Fiókadatok képe](./media/free-trial-sign-up/intune-end-of-sign-up-process.png) 
 
-## <a name="sign-in-to-the-azure-portal"></a>Bejelentkezés az Azure Portalon
+## <a name="sign-in-to-intune-in-the-microsoft-endpoint-manager"></a>Bejelentkezés az Intune-ba a Microsoft Endpoint Managerben
 
-1. Nyisson meg egy böngészőablakot, és írja be a címsorba a következőt: **https://portal.azure.com** . 
-2. A bejelentkezéshez használja a fenti lépésekben megadott hitelesítő adatokat.
+Ha még nem jelentkezett be a portálra, hajtsa végre a következő lépéseket:
 
-    ![Az Azure Portal bejelentkezési oldalának képe](./media/free-trial-sign-up/azure-portal-signin.png)
+1. Nyisson meg egy böngészőablakot, és írja be a címsorba a következőt: **https://devicemanagement.microsoft.com** . 
+2. Használja a fenti lépésekben megadott felhasználói azonosítót a bejelentkezéshez ( *yourID@yourdomain* . onmicrosoft.com).
 
-3. Ha a Azure Portal Microsoft Intune szeretné megtekinteni, válassza a lap bal oldalán található oldalsávon az **összes szolgáltatás** elemet.
-4. A szűrőmezőben keressen rá a **Microsoft Intune-ra**, majd jelölje ki azt.
-5. Kattintson a **csillagra**, amivel felveszi az Intune-t a kedvenc szolgáltatásai listájának aljára. Nyissa meg az Intune irányítópultot.
+    ![A portál bejelentkezési oldalának képe](./media/free-trial-sign-up/azure-portal-signin.png)
 
 Amikor próbaverziót regisztrál, e-mailben elküldjük a fiókadatait és a regisztráció során megadott e-mail címet. Az e-mail megerősíti, hogy a próbaverzió aktív.
 
 > [!TIP]
-> Az Azure Portalon történő munkavégzés közben jobb eredményeket érhet el, ha a böngésző normál módban van és nem privát módban.
+> A Microsoft Endpoint Managerrel végzett munka során jobb eredményekkel járhat, ha a böngészőt normál módban, nem pedig privát módban dolgozik.
 
-## <a name="set-the-mdm-authority-to-intune"></a>Az Intune beállítása MDM-szolgáltatóként
+## <a name="confirm-the-mdm-authority-in-intune"></a>A MDM-szolgáltató megerősítése az Intune-ban
 
-Miután bejelentkezett az Azure Portalra, és kiválasztotta az Intune-t, megjelenhet egy narancs színű sáv, amely azt jelzi, hogy még nem állította be az MDM-szolgáltatót. A mobileszköz-felügyeleti (MDM-) szolgáltató beállítása szabja meg, hogy miként kezelheti mobileszközeit. Az MDM-szolgáltatót még azelőtt kell beállítani, hogy a felhasználók eszközöket regisztrálhatnának a kezeléshez.
+Alapértelmezés szerint az ingyenes próbaverzió létrehozásakor az MDM-szolgáltató van beállítva. A következő lépések végrehajtásával ellenőrizheti, hogy az MDM-szolgáltató be van-e állítva:
 
-Az Intune az alábbi lépésekkel állítható be MDM-szolgáltatóként.
+1. Ha még nem jelentkezett be, jelentkezzen be a Microsoft Endpoint Managerbe.
+2. Kattintson a **bérlői felügyelet**elemre.
+3. Tekintse meg a bérlő adatait. Az **Mdm-szolgáltatót** **Microsoft Intune**értékre kell beállítani.
+
+Ha a Microsoft Endpoint Managerbe való bejelentkezés után egy narancssárga szalagcím jelenik meg, amely azt jelzi, hogy még nem állította be a MDM-szolgáltatót, akkor most aktiválhatja. A mobileszköz-felügyeleti (MDM-) szolgáltató beállítása szabja meg, hogy miként kezelheti mobileszközeit. Az MDM-szolgáltatót még azelőtt kell beállítani, hogy a felhasználók eszközöket regisztrálhatnának a kezeléshez.
+
+### <a name="to-set-the-mdm-authority-to-intune-follow-these-steps"></a>Az MDM-szolgáltató Intune-beli beállításához kövesse az alábbi lépéseket:
 
 1. Nyisson meg egy böngészőablakot, és írja be a címsorba a következőt: **https://portal.azure.com** . 
 2. Válassza a **Minden szolgáltatás** > **Microsoft Intune** lehetőséget.
@@ -121,9 +125,9 @@ Ahogy fent említettük, ha a szervezete rendelkezik a saját egyéni tartománn
 
 ## <a name="admin-experiences"></a>Rendszergazdai felületek
 
-Két portált használhat:
-- Az Intune-irányítópultot az Azure-on ([portal.azure.com](https://portal.azure.com)), ahol megismerheti [az Intune képességeit](what-is-intune.md). Többnyire az Intune-irányítópulton fog dolgozni.
-- A Microsoft 365 felügyeleti központ ([admin.microsoft.com](https://admin.microsoft.com)) a felhasználók hozzáadására és kezelésére szolgál, ha nem használja a Azure Active Directory. Továbbá fiókjának számlázási- támogatási- és egyéb aspektusait is kezelheti itt.
+Két, leggyakrabban használt portált használhat:
+- A Microsoft Endpoint Manager felügyeleti központjának ([https://devicemanagement.microsoft.com/](https://devicemanagement.microsoft.com/)) segítségével megismerheti az [Intune képességeit](what-is-intune.md). Ebben az esetben a rendszergazda az Intune-nal fog működni.
+- A Microsoft 365 felügyeleti központ ([https://admin.microsoft.com](https://admin.microsoft.com)) a felhasználók hozzáadására és kezelésére szolgál, ha nem használja a Azure Active Directory. Továbbá fiókjának számlázási- támogatási- és egyéb aspektusait is kezelheti itt.
 
 ## <a name="next-steps"></a>További lépések
 

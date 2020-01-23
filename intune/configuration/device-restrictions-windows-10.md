@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ae7dd4a1873cd7117870c4c1408e512831ecaa4f
-ms.sourcegitcommit: 665be113b593c3bc7d46b99599e720f781037dcf
+ms.openlocfilehash: 81da5ca8e7eaa76f9a6705cc9e3c816234c461db
+ms.sourcegitcommit: af384c46ec8d8def6aa32c3b89947748dc6fd28f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76258470"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76517558"
 ---
 # <a name="windows-10-and-newer-device-settings-to-allow-or-restrict-features-using-intune"></a>Windows 10 (és újabb) eszközbeállítások az Intune-t használó szolgáltatások engedélyezéséhez vagy korlátozásához
 
@@ -850,6 +850,14 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
   [Defender/PUAProtection CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-puaprotection)
 
 - **Beküldési minták beleegyezett**: jelenleg ez a beállítás nincs hatással. Ne használja ezt a beállítást. Előfordulhat, hogy egy későbbi kiadásban el lehet távolítani.
+
+- **Hozzáférés-védelem: a** **Letiltás** megakadályozza a letöltött vagy letöltött fájlok vizsgálatát. A felhasználók nem kapcsolhatják be.
+
+  Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Ha letiltja a beállítást, majd visszavált a **nincs konfigurálva**értékre, az Intune a korábban beállított állapotban hagyja a beállítást. Alapértelmezés szerint az operációs rendszer engedélyezi ezt a funkciót, és lehetővé teszi a felhasználók számára a módosítását.
+
+  Az Intune nem kapcsolja be ezt a funkciót. Az engedélyezéshez használjon egyéni URI-t.
+
+  [Defender/AllowOnAccessProtection CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowonaccessprotection)
 
 - **Észlelt kártevő-fenyegetésekkel kapcsolatos műveletek**: válassza ki, hogyan szeretné kezelni a kártevő-szálakat. **Nincs konfigurálva** (alapértelmezett) lehetővé teszi a Microsoft Defender számára a legjobb lehetőség kiválasztását. Ha az **Engedélyezés**lehetőségre van beállítva, válassza ki azokat a műveleteket, amelyeket az észlelt fenyegetési szinteknél el szeretne végezni: alacsony, közepes, magas és súlyos. A választható lehetőségek:
   
