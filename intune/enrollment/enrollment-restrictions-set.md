@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4246dab0cf22053d76fdd50f99de53e827332a23
-ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
+ms.openlocfilehash: 699065a19087ec3cdf3d8fcbee765f968a1cbaee
+ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75547814"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76754701"
 ---
 # <a name="set-enrollment-restrictions"></a>Regisztrációs korlátozások beállítása
 
@@ -82,12 +82,13 @@ A rendszer tartalmaz alapértelmezett korlátozásokat mind az eszköztípusra, 
    > A Windows 10 nem adja meg a beléptetés során a Rev számot, így például ha a 10.0.17134.100-ben belép, és az eszköz 10.0.17134.174, a rendszer letiltja a regisztráció során.
 
 6. A **személyes tulajdonú**területen válassza az **Engedélyezés lehetőséget** a saját tulajdonú eszközökként engedélyezni kívánt platformok számára.
-7. A **tovább** gombra kattintva nyissa meg a **hozzárendelések** lapot.
-8. Válassza ki a **felvenni kívánt csoportokat** , majd a keresőmező segítségével keresse meg azokat a csoportokat, amelyeket ebbe a korlátozásba kíván foglalni. A korlátozás csak azokra a csoportokra lesz érvényes, amelyekhez hozzárendelte azt. Ha egy korlátozást egyetlen csoporthoz sem rendel hozzá, akkor az adott korlátozásnak semmilyen hatása nem lesz. Válassza a **Kiválasztás** elemet. 
+7. Az **eszköz gyártója**területen adja meg a blokkolni kívánt gyártók vesszővel tagolt listáját.
+8. A **tovább** gombra kattintva nyissa meg a **hozzárendelések** lapot.
+9. Válassza ki a **felvenni kívánt csoportokat** , majd a keresőmező segítségével keresse meg azokat a csoportokat, amelyeket ebbe a korlátozásba kíván foglalni. A korlátozás csak azokra a csoportokra lesz érvényes, amelyekhez hozzárendelte azt. Ha egy korlátozást egyetlen csoporthoz sem rendel hozzá, akkor az adott korlátozásnak semmilyen hatása nem lesz. Válassza a **Kiválasztás** elemet. 
     ![képernyő sapka a platform beállításainak kiválasztásához](./media/enrollment-restrictions-set/select-groups.png)
-9. A **tovább** gombra kattintva nyissa meg a **felülvizsgálat + létrehozás** lapot.
-10. Válassza a **Létrehozás** lehetőséget a korlátozás létrehozásához.
-11. Az új korlátozások az alapértelmezett korlátozásnál eggyel magasabb prioritással jönnek létre. Igény esetén [módosíthatja a prioritást](#change-enrollment-restriction-priority).
+10. A **tovább** gombra kattintva nyissa meg a **felülvizsgálat + létrehozás** lapot.
+11. Válassza a **Létrehozás** lehetőséget a korlátozás létrehozásához.
+12. Az új korlátozások az alapértelmezett korlátozásnál eggyel magasabb prioritással jönnek létre. Igény esetén [módosíthatja a prioritást](#change-enrollment-restriction-priority).
 
 
 ## <a name="create-a-device-limit-restriction"></a>Eszköz korlátozási korlátozásának létrehozása

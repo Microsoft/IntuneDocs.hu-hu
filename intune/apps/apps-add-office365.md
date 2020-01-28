@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 01/23/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b566dd58b01a411126ffabb46d526e4480c2ba0a
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: 86d02ae1277ff2fd6dfce9bf206628f5dc1c2a84
+ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75205972"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76755322"
 ---
 # <a name="add-office-365-apps-to-windows-10-devices-with-microsoft-intune"></a>Office 365-alkalmazások hozzáadása a Windows 10-es eszközökhöz Microsoft Intune
 
@@ -47,100 +47,99 @@ Az alkalmazások hozzárendelése, figyelése, konfigurálása és védelme elő
 - **Office-verzió**: - Itt választhatja ki, hogy az Office 32 bites vagy 64 bites verzióját szeretné hozzárendelni. A 32 bites verziót 32 bites és 64 bites eszközökön is, a 64 bites verziót viszont csak 64 bites eszközökön telepítheti.
 - **MSI eltávolítása a végfelhasználói eszközökről** – Itt választhatja ki, hogy eltávolítja-e a már meglévő Office .MSI-alkalmazásokat a végfelhasználói eszközökről. A telepítés nem lesz sikeres, ha a végfelhasználói eszközökön már meglévő .MSI-alkalmazások vannak. Az eltávolítás nem korlátozódik az **Alkalmazáscsomag konfigurálásánál** telepítésre kiválasztott alkalmazásokra, mert minden Office (MSI) alkalmazást eltávolít a végfelhasználói eszközről. További információkért lásd: [Az Office már meglévő MSI-verzióinak eltávolítása az Office 365 ProPlusra való frissítés esetén](https://docs.microsoft.com/deployoffice/upgrade-from-msi-version). Amikor az Intune újratelepíti a végfelhasználói gépekre az Office-t, a végfelhasználók automatikusan ugyanazokat a nyelvi csomagokat kapják meg, mint az előző .MSI-alapú Office-telepítésnél.
 
-## <a name="get-started"></a>Első lépések
+## <a name="select-the-office-365-suite-app-type"></a>Válassza ki az Office 365 Suite-alkalmazás típusát
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Válassza az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**lehetőséget.
-3. Az **Alkalmazások hozzáadása** ablaktáblán, az **Alkalmazástípus** listában, az **Office 365 csomag** alatt válassza a **Windows 10** lehetőséget.
+3. Az **alkalmazás típusának kiválasztása** ablaktábla **Office 365 Suite** szakaszában válassza a **Windows 10** lehetőséget.
+4. Kattintson a **Kiválasztás** lehetőségre. Megjelenik az **Office 365 Suite hozzáadása** lépések.
 
-## <a name="select-settings-format"></a>Beállítások formátumának kiválasztása
 
-Kiválaszthat egy módszert az Alkalmazásbeállítások konfigurálásához a **Beállítások formátumának**kiválasztásával. A formázási lehetőségek beállítása a következők:
-- Configuration Designer
-- XML-adatok megadása
-
-Ha kiválasztja a **Configuration Designer** alkalmazást, az **alkalmazás hozzáadása** panel két további beállítási lehetőséget is kínál:
-- App Suite konfigurálása
-- App Suite-beállítások
-
-<img alt="Add Office 365 - Configuration designer" src="./media/apps-add-office365/apps-add-office365-02.png" width="700">
-
-Ha az **XML-adatértékek megadása** lehetőséget választja, az **alkalmazás hozzáadása** panelen JELENÍTSE meg az **XML-adatbevitel** beállítást. Válassza ezt a **konfigurációs fájl** ablaktábla megjelenítéséhez. 
-
-![Office 365 Configuration Designer hozzáadása](./media/apps-add-office365/apps-add-office365-01.png)
-    
-Az **XML-adatok megadása** beállítással kapcsolatos további információkért lásd: az alábbi [XML-adatok megadása](apps-add-office365.md#enter-xml-format) .
-
-## <a name="configure-app-suite-information"></a>App Suite-információk konfigurálása
+## <a name="step-1---app-suite-information"></a>1\. lépés – App Suite-információk
 
 Ebben a lépésben adhatja meg az alkalmazáscsomag adatait. Ezek alapján azonosíthatja az alkalmazáscsomagot az Intune-ban, és a felhasználók is ezek alapján találhatják meg azt a céges portálon.
 
-1. Az **Alkalmazás hozzáadása** ablaktáblán válassza az **Alkalmazáscsomag adatai** lehetőséget.
-2. Az **Alkalmazáscsomag adatai** ablaktáblán tegye a következőket:
+1. Az **App Suite-információk** lapon ellenőrizheti vagy módosíthatja az alapértelmezett értékeket:
     - **Csomag neve:** Itt adhatja meg az alkalmazáscsomag céges portálon megjelenő nevét. Ügyeljen arra, hogy minden megadott csomagnév egyedi legyen. Ha ugyanazt a csomagnevet kétszer adja meg, csak az egyik alkalmazás fog megjelenni a felhasználók számára a céges portálon.
     - **Csomag leírása:** Itt adhatja meg az alkalmazáscsomag leírását. Felsorolhatja például a kiválasztott belefoglalt alkalmazásokat.
     - **Közzétevő:** Közzétevőként a Microsoft jelenik meg.
     - **Kategória:** Választhat egyet vagy többet a beépített alkalmazáskategóriák közül, vagy megadhat egyénileg létrehozott kategóriát is. Ez a beállítás megkönnyíti a Céges portálon kereső felhasználóknak az alkalmazás megtalálását.
-    - **Megjelenítés kiemelt alkalmazásként a Céges portálon:** Ezzel a beállítással hangsúlyosan jelenítheti meg az alkalmazáscsomagot a céges portál főoldalán az alkalmazásokat kereső felhasználók számára.
+    - **Megjelenítés Kiemelt alkalmazásként a céges portálban**: ezzel a beállítással a vállalati portál főoldalán jelenítheti meg az App Suite-t, amikor a felhasználók megkeresik az alkalmazásokat.
     - **Információs URL-cím:** Igény szerint megadhatja az alkalmazással kapcsolatos információkat tartalmazó webhely URL-címét. Ez az URL-cím jelenik meg a felhasználók számára a céges portálon.
     - **Adatvédelmi nyilatkozat URL-címe:** Igény esetén itt adhatja meg az alkalmazás adatvédelmi nyilatkozatát tartalmazó webhely URL-címét. Ez az URL-cím jelenik meg a felhasználók számára a céges portálon.
     - **Fejlesztő:** Fejlesztőként a Microsoft jelenik meg.
     - **Tulajdonos:** Tulajdonosként a Microsoft jelenik meg.
     - **Megjegyzések**: Ide írhatja be az alkalmazáshoz társítani kívánt megjegyzéseket.
     - **Embléma:** – Amikor a felhasználók a céges portálon keresnek, az alkalmazás mellett megjelenik az Office 365-embléma.
-3. Válassza az **OK** gombot.
+2. Az **App Suite konfigurálása** lap megjelenítéséhez kattintson a **tovább** gombra.
 
-## <a name="configure-app-suite"></a>App Suite konfigurálása
+## <a name="step-2---option-1-configure-app-suite-using-the-configuration-designer"></a>2\. lépés – (**1. lehetőség**) az App Suite konfigurálása a Configuration Designer használatával 
 
-Ha a **konfigurációs tervező** lehetőséget választotta a Formátum legördülő lista **beállítása** alatt, az alkalmazás **hozzáadása** panelen megjelenik az **alkalmazáscsomag konfigurálása** lehetőség. Válassza ki azokat az Office-alkalmazásokat, melyeket szeretne eszközökhöz hozzárendelni.
+A **konfigurációs beállítások formátumának**kiválasztásával kiválaszthatja az Alkalmazásbeállítás konfigurálásának módját. A formázási lehetőségek beállítása a következők:
+- Configuration Designer
+- XML-adatok megadása
 
-1. Az **Alkalmazás felvétele** ablaktáblán válassza az **Alkalmazáscsomag konfigurálása** lehetőséget.
-2. Az **Alkalmazáscsomag konfigurálása** ablaktáblán válassza ki a szokásos Office-alkalmazásokat, melyeket szeretne eszközökhöz hozzárendelni.  
-    Emellett telepíthet alkalmazásokat a Microsoft Project online asztali ügyfeléhez és a Microsoft Visio online 2. csomagjához is, ha saját licencekkel rendelkezik.
-3. Válassza az **OK** gombot.
+Ha kiválasztja a **Configuration Designer** alkalmazást, az **alkalmazás hozzáadása** panel három további beállítási területre fog váltani:
+- App Suite konfigurálása
+- App Suite-információk
+- Tulajdonságok
 
-## <a name="configure-app-suite-settings"></a>App Suite-beállítások konfigurálása
+<img alt="Add Office 365 - Configuration designer" src="./media/apps-add-office365/apps-add-office365-02.png" width="700">
 
-Ha a **konfigurációs tervező** lehetőséget választotta a Formátum legördülő lista **beállítása** alatt, az alkalmazás **hozzáadása** panelen megjelenik az **alkalmazáscsomag beállításai** lehetőség. Ebben a lépésben az alkalmazáscsomag telepítési beállításait konfigurálhatja. A beállítások minden, a csomaghoz hozzáadott alkalmazásra vonatkoznak.
-
-1. Az **Alkalmazás hozzáadása** ablaktáblán válassza az **Alkalmazáscsomag beállításai** lehetőséget.
-2. Az **Alkalmazáscsomag beállításai** ablaktáblán tegye a következőket:
-    - **Office-verzió**: Itt választhatja ki, hogy az Office 32 bites vagy 64 bites verzióját szeretné hozzárendelni. A 32 bites verziót 32 bites és 64 bites eszközökön is, a 64 bites verziót viszont csak 64 bites eszközökön telepítheti.
+1. A **Configuration App Suite** lapon válassza a **Configuration Designer**elemet.
+   - **Office-alkalmazások kiválasztása**: válassza ki az eszközökhöz hozzárendelni kívánt szabványos Office-alkalmazásokat a legördülő listában szereplő alkalmazások közül.
+   - **Más Office-alkalmazások kijelölése (licenc szükséges)** : válassza ki az eszközökhöz hozzárendelni kívánt további Office-alkalmazásokat, valamint a legördülő listában szereplő alkalmazások kiválasztásával. Ezek közé tartoznak a licencelt alkalmazások, például a Microsoft Project online asztali ügyfélprogram és a Microsoft Visio online 2. csomag.
+   - **Architektúra**: válassza ki, hogy az Office ProPlus **32 bites** vagy **64 bites** verzióját szeretné-e hozzárendelni. A 32 bites verziót 32 bites és 64 bites eszközökön is, a 64 bites verziót viszont csak 64 bites eszközökön telepítheti.
     - **Frissítési csatorna**: Itt választhatja ki, hogyan történjen az Office frissítése az eszközökön. A különböző frissítési csatornákkal kapcsolatban az [Office 365 ProPlus frissítési csatornáinak áttekintése](https://docs.microsoft.com/DeployOffice/overview-of-update-channels-for-office-365-proplus) című témakörben találhat további információt. A következő lehetőségek közül választhat:
         - **Havonta**
         - **Havonta (megcélzott)**
         - **Semi-Annual**
         - **Féléves (megcélzott)**
 
-        A csatorna kiválasztása után igény szerint kattinthat az **Adott** elemre az Office adott verziójának telepítéséhez a végfelhasználói eszközök kiválasztott csatornáján. Ekkor kiválaszthatja az Office **adott verzióját** a használathoz.
-        
-        Az elérhető verziók idővel változni fognak. Ezért egy új központi telepítés létrehozásakor újabb verziók válhatnak elérhetővé, és előfordulhat, hogy egyes régebbi verziók már nem érhetők el. A jelenleg üzemelő példányok továbbra is a régebbi verziót telepítik, de a verziólista csatornánként folyamatosan frissül.
-        
-        A rögzített verziót (vagy bármely tulajdonságot) frissítő és lehetőség szerint üzembe helyezett eszközök esetén, ha azokon az előző verziót telepítették, az állapotjelentés az eszköz bejelentkezéséig a Telepítve állapotot mutatja. Amikor az eszköz bejelentkezik, az állapot ideiglenesen Ismeretlenre vált, de ez a felhasználó számára nem látható. Amikor a felhasználó kezdeményezi az újabb elérhető verzió telepítését, látni fogja, hogy az állapot Telepítettre változott.
-        
-        További információkért lásd: [Az Office 365 ProPlus frissítési csatornáinak áttekintése](https://docs.microsoft.com/DeployOffice/overview-of-update-channels-for-office-365-proplus).
-
-    - **MSI eltávolítása a végfelhasználói eszközökről** – Itt választhatja ki, hogy eltávolítja-e a már meglévő Office .MSI-alkalmazásokat a végfelhasználói eszközökről. A telepítés nem lesz sikeres, ha a végfelhasználói eszközökön már meglévő .MSI-alkalmazások vannak. Az eltávolítás nem korlátozódik az **Alkalmazáscsomag konfigurálásánál** telepítésre kiválasztott alkalmazásokra, mert minden Office (MSI) alkalmazást eltávolít a végfelhasználói eszközről. További információkért lásd: [Az Office már meglévő MSI-verzióinak eltávolítása az Office 365 ProPlusra való frissítés esetén](https://docs.microsoft.com/deployoffice/upgrade-from-msi-version). Amikor az Intune újratelepíti a végfelhasználói gépekre az Office-t, a végfelhasználók automatikusan ugyanazokat a nyelvi csomagokat kapják meg, mint az előző .MSI-alapú Office-telepítésnél. 
-    - **Alkalmazás végfelhasználói licencszerződésének automatikus elfogadása**: Ezt a beállítást akkor jelölje be, ha nem követeli meg a végfelhasználóktól, hogy elfogadják a licencszerződést. Ebben az esetben az Intune automatikusan elfogadja a szerződést.
+        A csatorna kiválasztása után kiválaszthatja a következőket:
+        - **Más verziók eltávolítása**: válassza az **Igen** lehetőséget az Office (MSI) más verzióinak felhasználói eszközökről való eltávolításához. Akkor válassza ezt a lehetőséget, ha el szeretné távolítani a meglévő Office-t. A végfelhasználói eszközökről származó MSI-alkalmazások. A telepítés nem lesz sikeres, ha a végfelhasználói eszközökön már meglévő .MSI-alkalmazások vannak. Az eltávolítás nem korlátozódik az **Alkalmazáscsomag konfigurálásánál** telepítésre kiválasztott alkalmazásokra, mert minden Office (MSI) alkalmazást eltávolít a végfelhasználói eszközről. További információkért lásd: [Az Office már meglévő MSI-verzióinak eltávolítása az Office 365 ProPlusra való frissítés esetén](https://docs.microsoft.com/deployoffice/upgrade-from-msi-version). Amikor az Intune újratelepíti a végfelhasználói gépekre az Office-t, a végfelhasználók automatikusan ugyanazokat a nyelvi csomagokat kapják meg, mint az előző .MSI-alapú Office-telepítésnél. 
+        - **Telepítendő verzió**: válassza ki a telepíteni kívánt Office-verziót.
+        - **Megadott verzió**: Ha a fenti beállításban **megadott** **verziót** választotta, akkor kiválaszthatja, hogy az Office adott verzióját a végfelhasználói eszközökön a kiválasztott csatornára telepítse. 
+            
+            Az elérhető verziók idővel változni fognak. Ezért egy új központi telepítés létrehozásakor újabb verziók válhatnak elérhetővé, és előfordulhat, hogy egyes régebbi verziók már nem érhetők el. A jelenleg üzemelő példányok továbbra is a régebbi verziót telepítik, de a verziólista csatornánként folyamatosan frissül.
+            
+            A rögzített verziót (vagy bármely tulajdonságot) frissítő és lehetőség szerint üzembe helyezett eszközök esetén, ha azokon az előző verziót telepítették, az állapotjelentés az eszköz bejelentkezéséig a Telepítve állapotot mutatja. Amikor az eszköz bejelentkezik, az állapot ideiglenesen Ismeretlenre vált, de ez a felhasználó számára nem látható. Amikor a felhasználó kezdeményezi az újabb elérhető verzió telepítését, látni fogja, hogy az állapot Telepítettre változott.
+            
+            További információkért lásd: [Az Office 365 ProPlus frissítési csatornáinak áttekintése](https://docs.microsoft.com/DeployOffice/overview-of-update-channels-for-office-365-proplus).
     - **Megosztott aktiválás használata**: A megosztott aktiválás akkor használatos, amikor több felhasználó használja ugyanazt a számítógépet. További információ: [Az Office 365 megosztott aktiválásának áttekintése](https://docs.microsoft.com/DeployOffice/overview-of-shared-computer-activation-for-office-365-proplus).
+    - **Alkalmazás végfelhasználói licencszerződésének automatikus elfogadása**: Ezt a beállítást akkor jelölje be, ha nem követeli meg a végfelhasználóktól, hogy elfogadják a licencszerződést. Ebben az esetben az Intune automatikusan elfogadja a szerződést.
     - **Nyelvek**: Az Office automatikusan telepít minden olyan támogatott nyelvet, amely telepítve van a Windowsban a végfelhasználói eszközön. Ezt a beállítást akkor jelölje be, ha az alkalmazáscsomaghoz további nyelveket szeretne telepíteni. <p></p>
-    További nyelveket helyezhet üzembe az Intune által felügyelt Office 365 Pro Plus-alkalmazások számára. Az elérhető nyelvek listája tartalmazza a nyelvi csomag **Típusát** (alap, részleges vagy nyelvi ellenőrzési) is. A Azure Portal válassza a **Microsoft Intune** > az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**lehetőséget. Az **alkalmazás hozzáadása** panel **alkalmazás típusa** listájában válassza a **Windows 10** az **Office 365 Suite**elemet. Válassza a **nyelvek** lehetőséget az **App Suite beállítások** ablaktábláján. További információkért lásd [a nyelvek az Office 365 ProPlusban történő üzembe helyezésének áttekintését](https://docs.microsoft.com/deployoffice/overview-of-deploying-languages-in-office-365-proplus).
+        További nyelveket helyezhet üzembe az Intune által felügyelt Office 365 Pro Plus-alkalmazások számára. Az elérhető nyelvek listája tartalmazza a nyelvi csomag **Típusát** (alap, részleges vagy nyelvi ellenőrzési) is. A Azure Portal válassza a **Microsoft Intune** > az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**lehetőséget. Az **alkalmazás hozzáadása** panel **alkalmazás típusa** listájában válassza a **Windows 10** az **Office 365 Suite**elemet. Válassza a **nyelvek** lehetőséget az **App Suite beállítások** ablaktábláján. További információkért lásd [a nyelvek az Office 365 ProPlusban történő üzembe helyezésének áttekintését](https://docs.microsoft.com/deployoffice/overview-of-deploying-languages-in-office-365-proplus).
+2. Kattintson a **tovább** gombra a **hatókör címkék** oldal megjelenítéséhez.
 
-## <a name="select-scope-tags-optional"></a>Hatóköri címkék kiválasztása (nem kötelező)
+## <a name="step-2---option-2-configure-app-suite-using-xml-data"></a>2\. lépés – (**2. lehetőség**) az App Suite konfigurálása XML-adatok használatával 
+
+Ha az **App Suite konfigurálása** **lapon az** **XML-adatok megadása** lehetőséget választotta, az Office App Suite-t egyéni konfigurációs fájllal is konfigurálhatja.
+
+![Office 365 Configuration Designer hozzáadása](./media/apps-add-office365/apps-add-office365-01.png)
+
+1. A konfigurációs XML-fájl hozzáadva.
+2. Kattintson a **tovább** gombra a **hatókör címkék** oldal megjelenítéséhez.
+
+Az XML-adatok beírásával kapcsolatos további információkért lásd: [az Office üzembehelyezési eszköz konfigurációs beállításai](https://docs.microsoft.com/DeployOffice/configuration-options-for-the-office-2016-deployment-tool).
+
+## <a name="step-3---select-scope-tags-optional"></a>3\. lépés – hatókör-címkék kiválasztása (nem kötelező)
 A hatókör-címkék használatával meghatározhatja, hogy ki láthatja az ügyfélalkalmazások adatait az Intune-ban. A hatókör-címkék részletes ismertetését lásd: [a szerepköralapú hozzáférés-vezérlés és a hatókör-címkék használata a terjesztéshez](../fundamentals/scope-tags.md).
 
-1. Válassza a **hatókör (címkék)** > **Hozzáadás**elemet.
-2. A **Select (kijelölés** ) mező használatával keresheti meg a hatókör címkéit.
-3. Jelölje be a jelölőnégyzetet az alkalmazáshoz hozzárendelni kívánt hatókör-címkék mellett.
-4. Válassza a **Kiválasztás** > **OK** lehetőséget.
+1. Kattintson a **hatókör címkék kiválasztása** lehetőségre, hogy felvegye az alkalmazáscsomag hatókör-címkéit. 
+2. A **hozzárendelések** lap megjelenítéséhez kattintson a **tovább** gombra.
 
-## <a name="enter-xml-format"></a>XML-formátum megadása
+## <a name="step-4---assignments"></a>4\. lépés – hozzárendelések
 
-Ha az **XML-adatértékek megadása** lehetőséget választotta a **Formátum** legördülő listában, az **alkalmazás hozzáadása** panelen megjelenik az **XML-formátum megadása** lehetőség. További információ: [konfigurációs beállítások az Office-telepítő eszközhöz](https://docs.microsoft.com/DeployOffice/configuration-options-for-the-office-2016-deployment-tool).
+1. Válassza ki a **szükséges**, a **regisztrált eszközök számára elérhető**lehetőséget, vagy **távolítsa el** a csoport hozzárendeléseit az alkalmazáscsomag számára. További információ: [csoportok hozzáadása a felhasználók és eszközök rendszerezéséhez](~/fundamentals/groups-add.md) , valamint [alkalmazások társítása a csoportokhoz Microsoft Intune](apps-deploy.md)használatával.
+2. Kattintson a **tovább** gombra a **felülvizsgálat + létrehozás** lap megjelenítéséhez. 
 
-## <a name="finish-up"></a>Befejezés
+## <a name="step-5---review--create"></a>5\. lépés – felülvizsgálat + létrehozás
 
-Amikor elkészült, válassza az **Alkalmazás hozzáadása** ablaktáblán a **Hozzáadás** lehetőséget. A létrehozott alkalmazás megjelenik az alkalmazáslistában. A következő lépés az alkalmazások társítása a kiválasztott csoportokhoz. További információ: [Alkalmazások hozzárendelése csoportokhoz](~/apps/apps-deploy.md).
+1. Tekintse át az alkalmazáscsomag által megadott értékeket és beállításokat.
+2. Ha elkészült, kattintson a **Létrehozás** gombra, hogy hozzáadja az alkalmazást az Intune-hoz.
+
+    Megjelenik a létrehozott Office 365 ablak 10 alkalmazáscsomag **áttekintő** panelje.
 
 ## <a name="deployment-details"></a>Központi telepítés részletei
 
@@ -205,10 +204,10 @@ Az alábbi táblázatban az esetlegesen megjelenő gyakori hibakódok és azok j
 
 | Állapot | Fázis | Description |
 |--------------------------------------------------|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1460 (ERROR_TIMEOUT) | Letöltés | Nem sikerült letölteni az Office-telepítő eszközt |
+| 1460 (ERROR_TIMEOUT) | Letöltések | Nem sikerült letölteni az Office-telepítő eszközt |
 | 13 (ERROR_INVALID_DATA) | - | Nem sikerült ellenőrizni a letöltött Office-telepítő eszköz aláírását |
 | A CertVerifyCertificateChainPolicy függvény által visszaadott hibakód | - | Nem sikerült a letöltött Office-telepítő eszköz hitelesítési ellenőrzése |
-| 997 | WIP | Telepítés |
+| 997 | WIP | A |
 | 0 | Telepítés után | A telepítés sikeres volt |
 | 1603 (ERROR_INSTALL_FAILURE) | - | Nem sikerült végrehajtani az előfeltételek ellenőrzését, például: SxS (a rendszer a 2016 MSI telepítését követően megpróbálta telepíteni) a mismatchOthers verzióban |
 | 0x8000ffff (E_UNEXPECTED) | - | Kísérlet történt az eltávolításra, miközben a számítógépen nem található meg az Office Kattintásra szolgáltatás |
@@ -218,7 +217,7 @@ Az alábbi táblázatban az esetlegesen megjelenő gyakori hibakódok és azok j
 
 ### <a name="office-deployment-tool-error-codes"></a>Az Office-telepítő eszköz hibakódjai
 
-| Forgatókönyv | Visszatérési kód | Felhasználói felület | Megjegyzés |
+| Forgatókönyv | Visszatérési kód | UI | Megjegyzés |
 |------------------------------------------------------------------------------------------------------------------|---------------------------------------|----------------------------------------------------|------------------------------------|
 | Kísérlet történt az eltávolításra, miközben nincs aktív Kattintásra-telepítés | -2147418113, 0x8000ffff vagy 2147549183 | Hibakód: 30088-1008Error kód: 30125-1011 (404) | Office-telepítő eszköz |
 | Telepítés, miközben telepítve van az MSI-verzió | 1603 | - | Office-telepítő eszköz |
@@ -231,4 +230,4 @@ Az alábbi táblázatban az esetlegesen megjelenő gyakori hibakódok és azok j
 
 ## <a name="next-steps"></a>További lépések
 
-- Az alkalmazásoknak a választott csoportokhoz való hozzárendeléséhez tekintse meg az [Alkalmazások hozzárendelése csoportokhoz](/intune-azure/manage-apps/deploy-apps) című cikket.
+- Az alkalmazáscsomag további csoportokhoz rendeléséhez lásd: [alkalmazások társítása csoportokhoz](/intune-azure/manage-apps/deploy-apps).

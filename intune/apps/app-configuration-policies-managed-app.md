@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 01/23/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 68032f47be043e8c49b6ad922392d14549293c35
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 06c1119b474d82c4d00db3276179b962ff5b5a44
+ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74564274"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76755561"
 ---
 # <a name="add-app-configuration-policies-for-managed-apps-without-device-enrollment"></a>Alkalmazáskonfigurációs szabályzatok hozzáadása felügyelt alkalmazásokhoz eszközbeléptetés nélkül
 
@@ -33,16 +33,29 @@ Az alkalmazáskonfigurációs szabályzatokat nem regisztrált eszközökön is 
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Válassza ki az **alkalmazások** > **alkalmazás-konfigurációs szabályzatok** >  > **felügyelt alkalmazások** **hozzáadása** lehetőséget.
-3. Adja meg a következő adatokat:
-    - **Név**  
-      Az Azure Portalon megjelenő profilnév.
-    - **Leírás**  
-      Az Azure Portalon megjelenő profilleírás.
+3. Az **alapvető beállítások** lapon adja meg a következő adatokat:
+    - **Name (név**): a Azure Portalban megjelenő profil neve.
+    - **Description (Leírás**): a profil leírása, amely megjelenik a Azure Portalban.
+    - **Eszköz beléptetésének típusa**: kiválasztva a felügyelt alkalmazások.
 4. Válassza a **nyilvános alkalmazások kiválasztása** lehetőséget, vagy **válassza az egyéni alkalmazások** lehetőséget a konfigurálni kívánt alkalmazás kiválasztásához. Válassza ki a listából azon alkalmazásokat, amelyeket jóváhagyott az Intune-nal való szinkronizáláshoz.
-5. Az alkalmazás által támogatott konfigurációs beállításokhoz írja be a **nevet** és az **értéket**.  
+5. A **Beállítások** lap megjelenítéséhez kattintson a **tovább** gombra.
+6. Az alkalmazás által támogatott konfigurációs beállításokhoz írja be a **nevet** és az **értéket**. 
+
+   Az Intune App SDK-val kompatibilis alkalmazások támogatják a kulcs-érték párokban megadott konfigurációkat. Ha többet szeretne megtudni a támogatott kulcs-érték párokban megadott konfigurációkról, tekintse meg az egyes alkalmazások dokumentációját. Fontos megjegyezni, hogy használhat olyan tokeneket, amelyek dinamikusan töltődnek fel az alkalmazás által generált adatokkal. További információ: [konfigurációs értékek a tokenek használatához](~/apps/app-configuration-policies-managed-app.md#configuration-values-for-using-tokens). Az iOS Outlook alkalmazás konfigurációs szabályzatának beállításairól [Az iOS Outlook alkalmazás konfigurációjának kezelése a Microsoft Intune-nal](https://technet.microsoft.com/library/mt813789(v=exchg.150).aspx) című témakörben tájékozódhat.
+
     Egy konfiguráció törléséhez válassza a három pontot ( **...** ), majd a **Törlés** lehetőséget.  
-    
-Az Intune App SDK-val kompatibilis alkalmazások támogatják a kulcs-érték párokban megadott konfigurációkat. Ha többet szeretne megtudni a támogatott kulcs-érték párokban megadott konfigurációkról, tekintse meg az egyes alkalmazások dokumentációját. Fontos megjegyezni, hogy használhat olyan tokeneket, amelyek dinamikusan töltődnek fel az alkalmazás által generált adatokkal. Az iOS Outlook alkalmazás konfigurációs szabályzatának beállításairól [Az iOS Outlook alkalmazás konfigurációjának kezelése a Microsoft Intune-nal](https://technet.microsoft.com/library/mt813789(v=exchg.150).aspx) című témakörben tájékozódhat.
+
+7. A **hozzárendelések** lap megjelenítéséhez kattintson a **tovább** gombra.
+8. Kattintson **a csoportok kiválasztása**elemre.
+9. Válasszon ki egy csoportot a **csoportok kiválasztása** ablaktáblán, és kattintson a **kiválasztás**elemre.
+10. Kattintson a **Válassza ki a kizárandó csoportokat** lehetőségre a kapcsolódó panel megjelenítéséhez.
+11. Válassza ki azokat a csoportokat, amelyeket ki szeretne zárni, majd kattintson a **Kijelölés** lehetőségre.
+
+    >[!NOTE]
+    >Csoportok hozzáadásakor, ha bármely más csoport már bele lett foglalva egy adott hozzárendelés-típus esetében, az előre ki van jelölve, és nem módosítható más belefoglalási hozzárendelés-típusok esetében. Ezért az adott csoport használatba lett véve, és így nem használható kizárt csoportként.
+
+12. Kattintson a **tovább** gombra a **felülvizsgálat + létrehozás** lap megjelenítéséhez.
+13. A **Létrehozás** gombra kattintva adja hozzá az alkalmazás konfigurációs szabályzatát az Intune-hoz.
 
 ## <a name="configuration-values-for-using-tokens"></a>Konfigurációs értékek jogkivonatok használatához
 
@@ -57,7 +70,6 @@ Az Intune a következő tokentípusokat támogatja a konfigurációs beállítá
 - \{\{userid\}\} – például: 3ec2c00f-b125-4519-acf0-302ac3761822
 - \{\{username\}\} — például: John Doe
 - \{\{PrimarySMTPAddress\}\}– például: testuser@ad.domain.com
-
 
 > [!Note]  
 > A \{\{ és \}\} karaktereket csak a tokentípusok használják, ezek más célokra nem használhatók.

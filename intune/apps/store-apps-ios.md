@@ -6,7 +6,7 @@ keywords: Intune
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 01/22/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5616b27b97d5623958ec872390e2a6de79db3c5
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 2daa7428cf8677f9e1a2b11db2b3ce65e2df8bc4
+ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74563451"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76755000"
 ---
 # <a name="add-ios-store-apps-to-microsoft-intune"></a>iOS-es áruházbeli alkalmazások hozzáadása a Microsoft Intune-hoz
 
@@ -43,14 +43,18 @@ Ezzel az eljárással csak az áruházban ingyenesen elérhető alkalmazások ho
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Válassza az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**lehetőséget.
-3. Az **Alkalmazás típusa** lista **Áruházbeli alkalmazás** területén válassza az **iOS** lehetőséget.
-4. Válassza a **Keresés az App Store-ban** lehetőséget.
-5. A **Keresés az App Store** -ban panelen válassza ki az App Store ország/régió területi beállítást.
-6. Írja be a **Keresés** mezőbe az alkalmazás nevét (vagy a név egy részét).  
+3. Az **alkalmazás típusának kiválasztása** ablaktáblán az elérhető **áruházbeli alkalmazások** típusai területen válassza az **iOS áruházbeli alkalmazás**lehetőséget.
+4. Kattintson a **Kiválasztás** lehetőségre.<br>
+   Megjelenik az **alkalmazás hozzáadása** lépések.
+5. Válassza a **Keresés az App Store-ban** lehetőséget.
+6. A **Keresés az App Store** -ban panelen válassza ki az App Store ország/régió területi beállítást.
+7. Írja be a **Keresés** mezőbe az alkalmazás nevét (vagy a név egy részét).  
     Az Intune ekkor rákeres arra az áruházban, és a kapott eredmények listáját adja vissza.
-7. Az eredmények listájában válassza ki a kívánt alkalmazást, majd válassza a **Kiválasztás** lehetőséget.
-8. Az alkalmazás konfigurálásához az **Alkalmazás hozzáadása** panelen válassza az **Alkalmazás adatai** elemet.
-9. Az **Alkalmazásadatok** panelen adja meg az alkalmazás adatait. A választott alkalmazástól függően előfordulhat, hogy egyes értékek automatikusan ki vannak töltve a panelen:
+8. Az eredmények listájában válassza ki a kívánt alkalmazást, majd válassza a **Kiválasztás** lehetőséget.<br>
+
+   Az alkalmazás- **információ** lap megjelenik az **alkalmazás hozzáadása** panelen. Ha lehetséges, az alkalmazás adatai az áruházból kiválasztott alkalmazás alapján lesznek hozzáadva.
+
+9. Az **alkalmazás adatai** lapon adja meg az alkalmazás részleteit. A választott alkalmazástól függően előfordulhat, hogy egyes értékek automatikusan ki vannak töltve a panelen:
     - **Név**: Itt adhatja meg az alkalmazás céges portálon megjelenítendő nevét. Gondoskodjon róla, hogy az alkalmazás neve egyedi legyen. Ha két alkalmazás neve megegyezik, a felhasználók csak az egyik alkalmazást fogják látni a céges portálon.
     - **Leírás**: Itt adhatja meg az alkalmazás leírását. A leírás a céges portálon jelenik meg a felhasználók számára.
     - **Kiadó:** Adja meg az alkalmazás kiadójának nevét.
@@ -58,17 +62,21 @@ Ezzel az eljárással csak az áruházban ingyenesen elérhető alkalmazások ho
     - **Minimális operációsrendszer-verzió**: A listából válassza ki az operációs rendszer legkorábbi olyan verzióját, amelyre az alkalmazás telepíthető. Ha az alkalmazást régebbi operációs rendszerrel rendelkező eszközhöz rendelik hozzá, akkor nem lesz telepítve.
     - **Érvényes eszköztípusok**: A listából válassza ki az alkalmazás által használt eszközöket.
     - **Kategória:** Választhat egyet vagy többet a beépített alkalmazáskategóriák közül, vagy megadhat egyénileg létrehozott kategóriát is. Ezzel megkönnyítheti a felhasználók számára az alkalmazás megkeresését a céges portálon való böngészés során.
-    - **Megjelenítés kiemelt alkalmazásként a Céges portálon:** Ezzel a beállítással hangsúlyosan jelenítheti meg az alkalmazáscsomagot a céges portál főoldalán az alkalmazásokat kereső felhasználók számára.
+    - **Megjelenítés Kiemelt alkalmazásként a céges portálban**: ezzel a beállítással a vállalati portál főoldalán jelenítheti meg az App Suite-t, amikor a felhasználók megkeresik az alkalmazásokat.
     - **Információs URL-cím:** Igény szerint megadhatja az alkalmazással kapcsolatos információkat tartalmazó webhely URL-címét. Ez az URL-cím jelenik meg a felhasználók számára a céges portálon.
     - **Adatvédelmi nyilatkozat URL-címe:** Igény esetén itt adhatja meg az alkalmazás adatvédelmi nyilatkozatát tartalmazó webhely URL-címét. Ez az URL-cím jelenik meg a felhasználók számára a céges portálon.
     - **Fejlesztő**: Igény esetén megadhatja az alkalmazás fejlesztőjének nevét. Ez a mező csak a rendszergazdák számára látható, a felhasználók számára nem.
     - **Tulajdonos**: Igény esetén megadhatja az alkalmazás tulajdonosának nevét (például *HR-osztály*). Ez a mező csak a rendszergazdák számára látható, a felhasználók számára nem.
     - **Megjegyzések:** : Ide írhatja be igény szerint az alkalmazáshoz társítani kívánt megjegyzéseket. Ez a mező csak rendszergazdáknak jelenik meg, a végfelhasználók nem láthatják.
     - **Ikon** (nem kötelező): Itt töltheti fel az alkalmazáshoz hozzárendelni kívánt ikont. Ez az alkalmazásikon jelenik meg a céges portálon böngésző felhasználók számára.
-10. Válassza az **OK** gombot.
-11. Válassza a **Hozzáadás** elemet.
+10. Kattintson a **tovább** gombra a **hatókör címkék** oldal megjelenítéséhez.
+11. Kattintson a **hatókör címkék kiválasztása** lehetőségre, hogy felvegye a hatókör címkéit az alkalmazáshoz. További információ: [a szerepköralapú hozzáférés-vezérlés (RBAC) és a hatókör-címkék használata a terjesztéshez](~/fundamentals/scope-tags.md).
+12. A **hozzárendelések** lap megjelenítéséhez kattintson a **tovább** gombra.
+13. Válassza ki az alkalmazás csoportjának hozzárendeléseit. További információ: [csoportok hozzáadása a felhasználók és eszközök rendszerezéséhez](~/fundamentals/groups-add.md). 
+14. Kattintson a **tovább** gombra a **felülvizsgálat + létrehozás** lap megjelenítéséhez. Tekintse át az alkalmazáshoz megadott értékeket és beállításokat.
+15. Ha elkészült, kattintson a **Létrehozás** gombra, hogy hozzáadja az alkalmazást az Intune-hoz.
 
-A létrehozott alkalmazás megjelenik az alkalmazáslistában, ahol hozzárendelheti a kiválasztott csoportokhoz.
+Megjelenik a létrehozott alkalmazás **Áttekintés** panelje.
 
 ## <a name="next-steps"></a>További lépések
 

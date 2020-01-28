@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 01/23/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d5a3204721a0d40cfb5bf729ca17ef8e4ded1f0f
-ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
+ms.openlocfilehash: 0d4bbd0a5b57391edad726c7e936d0072a791673
+ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75885772"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76755765"
 ---
 # <a name="add-app-configuration-policies-for-managed-ios-devices"></a>Alkalmazáskonfigurációs szabályzatok hozzáadása felügyelt iOS-eszközökhöz
 
@@ -51,34 +51,39 @@ Miután kiválasztotta a belefoglalt csoportokat az alkalmazáskonfigurálási s
 ## <a name="create-an-app-configuration-policy"></a>Alkalmazáskonfigurációs szabályzat konfigurálása
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
-2. Válassza ki az **alkalmazások** > **alkalmazás-konfigurációs szabályzatok** >  > **felügyelt eszközök** **hozzáadása** elemet.
-3. Adja meg a következő adatokat:
+2. Válassza ki az **alkalmazások** > **alkalmazás-konfigurációs szabályzatok** >  > **felügyelt eszközök** **hozzáadása** elemet. Vegye figyelembe, hogy a **felügyelt eszközök** és a **felügyelt alkalmazások**közül választhat. További információ: az [alkalmazás konfigurációját támogató alkalmazások](~/apps/app-configuration-policies-overview.md#apps-that-support-app-configuration).
+3. Az **alapvető beállítások** lapon adja meg a következő adatokat:
     - **Név** – Az Azure Portalon megjelenítendő profilnév.
     - **Leírás** – Az Azure Portalon megjelenítendő profilleírás.
     - **Eszköz beléptetésének típusa** – ez a beállítás **felügyelt eszközökre**van beállítva.
-4. A **Platform** beállításban válassza az **iOS** lehetőséget.
-5. Válassza a **Társított alkalmazás** lehetőséget. A **Társított alkalmazás** panelen jelölje ki azt a felügyelt alkalmazást, amelyre a konfigurációt alkalmazni szeretné, majd nyomja meg az **OK** gombot.
-6. Válassza a **konfigurációs beállítások** lehetőséget a **konfigurációs beállítások** ablaktábla megjelenítéséhez.
-7. Válassza a **Konfigurációs beállítások formátuma** lehetőséget. Konfigurációs adatok hozzáadásához válassza az alábbi módszerek egyikét:
+4. **Platformként**válassza az **iOS/iPadOS** lehetőséget.
+5. Kattintson a célcsoport **kiválasztása** elemre a **célként megadott alkalmazás**mellett. Megjelenik a **társított alkalmazás** panel. 
+6. A megtekintett **alkalmazás** ablaktáblán válassza ki a konfigurációs házirendhez társítandó felügyelt alkalmazást, majd kattintson **az OK**gombra.
+7. A **Beállítások** lap megjelenítéséhez kattintson a **tovább** gombra.
+8. A legördülő listából válassza ki a **konfigurációs beállítások formátumát**. Konfigurációs adatok hozzáadásához válassza az alábbi módszerek egyikét:
     - **Konfigurációtervező használata**
     - **XML-adatok megadása**<br><br>
     A konfigurációtervező használatáról a [Konfigurációtervező használatát](#use-configuration-designer) ismertető cikkben talál bővebb információt. Az XML-adatok megadásáról az [XML-adatok megadása](#enter-xml-data) című cikkben talál útmutatást. 
-8. Miután hozzáadta a konfigurációs adatokat, kattintson **az OK gombra**, majd válassza a **Hozzáadás** lehetőséget a konfigurációs szabályzat hozzáadásához. Ekkor megjelenik a konfigurációs szabályzat áttekintő panelje.
-9. Válassza a **Hozzárendelések** lehetőséget a belefoglalási és kizárási beállítások megjelenítéséhez. 
+9. A **hozzárendelések** lap megjelenítéséhez kattintson a **tovább** gombra.
+10. A **hozzárendelés**a következőhöz elem melletti legördülő listában válassza ki a **kiválasztott csoportokat**, az **összes felhasználót**, **az összes eszközt**, vagy az **összes felhasználót és az összes levies** elemet az alkalmazás konfigurációs házirendjének hozzárendeléséhez.
 
     ![Képernyőkép a szabályzat-hozzárendelések Belefoglalás lapjáról](./media/app-configuration-policies-use-ios/app-config-policy01.png)
-10. Válassza a **Minden felhasználó** lehetőséget a **Belefoglalás** lapon.
+
+11. A legördülő listában válassza az **összes felhasználó** lehetőséget.
 
     ![Képernyőkép a szabályzat-hozzárendelések legördülő listájának Minden felhasználó lehetőségéről](./media/app-configuration-policies-use-ios/app-config-policy02.png)
-11. Válassza a **Kizárás** lapot. 
+
 12. Kattintson a **Válassza ki a kizárandó csoportokat** lehetőségre a kapcsolódó panel megjelenítéséhez.
 
     ![Képernyőkép a szabályzat-hozzárendelésekről – válassza ki a kizárni kívánt csoportokat](./media/app-configuration-policies-use-ios/app-config-policy03.png)
+
 13. Válassza ki azokat a csoportokat, amelyeket ki szeretne zárni, majd kattintson a **Kijelölés** lehetőségre.
 
     >[!NOTE]
     >Csoportok hozzáadásakor, ha bármely más csoport már bele lett foglalva egy adott hozzárendelés-típus esetében, az előre ki van jelölve, és nem módosítható más belefoglalási hozzárendelés-típusok esetében. Ezért az adott csoport használatba lett véve, és így nem használható kizárt csoportként.
-14. Kattintson a **Mentés** gombra.
+
+14. Kattintson a **tovább** gombra a **felülvizsgálat + létrehozás** lap megjelenítéséhez.
+15. A **Létrehozás** gombra kattintva adja hozzá az alkalmazás konfigurációs szabályzatát az Intune-hoz.
 
 ## <a name="use-configuration-designer"></a>A configuration designer használata
 

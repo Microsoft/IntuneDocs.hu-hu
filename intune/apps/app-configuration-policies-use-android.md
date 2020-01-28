@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 01/23/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec80922cf2539fdbacb572fd96c5a5e45549b5c3
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: b30da567d1a25028c51cf8268eab9613a7c3b8af
+ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75205004"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76755477"
 ---
 # <a name="add-app-configuration-policies-for-managed-android-enterprise-devices"></a>Alkalmazás-konfigurációs szabályzatok hozzáadása a felügyelt Android Enterprise-eszközökhöz
 
@@ -34,21 +34,43 @@ Az alkalmazás-konfigurációs szabályzatok a Microsoft Intune a Google Play-al
 > [!NOTE]  
 > Az alkalmazáskonfigurációt nem minden alkalmazás támogatja. Ellenőrizze, hogy az alkalmazás támogatja-e az alkalmazás-konfigurációs házirendeket az alkalmazás fejlesztőivel kapcsolatban.
 
-1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **alkalmazások** > **alkalmazás-konfigurációs házirendek** >   > **felügyelt eszközök** **hozzáadása** lehetőséget.
-2. Adja hozzá a következő tulajdonságokat:
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza ki az **alkalmazások** > **alkalmazás-konfigurációs szabályzatok** >  > **felügyelt eszközök** **hozzáadása** elemet. Vegye figyelembe, hogy a **felügyelt eszközök** és a **felügyelt alkalmazások**közül választhat. További információ: az [alkalmazás konfigurációját támogató alkalmazások](~/apps/app-configuration-policies-overview.md#apps-that-support-app-configuration).
+3. Az **alapvető beállítások** lapon adja meg a következő adatokat:
+    - **Név** – Az Azure Portalon megjelenítendő profilnév.
+    - **Leírás** – Az Azure Portalon megjelenítendő profilleírás.
+    - **Eszköz beléptetésének típusa** – ez a beállítás **felügyelt eszközökre**van beállítva.
+4. Válassza az **Android Enterprise** lehetőséget **platformként**.
+5. Kattintson a célcsoport **kiválasztása** elemre a **célként megadott alkalmazás**mellett. Megjelenik a **társított alkalmazás** panel. 
+6. A **társított alkalmazás** panelen válassza ki a konfigurációs házirendhez társítandó felügyelt alkalmazást, majd kattintson **az OK**gombra.
+7. A **Beállítások** lap megjelenítéséhez kattintson a **tovább** gombra.
+8. Kattintson a **Hozzáadás** gombra az **engedélyek hozzáadása** panel megjelenítéséhez.
+9. Kattintson a felülbírálni kívánt engedélyekre. A megadott engedélyek felülbírálják az "alapértelmezett alkalmazás engedélyei" házirendet a kiválasztott alkalmazásokhoz.
+10. Az **engedélyek állapotának** beállítása az egyes engedélyekhez. A **parancssorból**, az **automatikus engedélyezésből**vagy az **automatikus megtagadás**lehetőség közül választhat. Az engedélyekkel kapcsolatos további információkért tekintse [meg az androidos vállalati beállítások az eszközök megfelelőként való megjelölését az Intune használatával](~/protect/compliance-policy-create-android-for-work.md)című témakört.
+11. A legördülő listából válassza ki a **konfigurációs beállítások formátumát**. Konfigurációs adatok hozzáadásához válassza az alábbi módszerek egyikét:
+    - **Konfigurációtervező használata**
+    - **JSON-adatbevitel**<br><br>
+    A konfigurációtervező használatáról a [Konfigurációtervező használatát](#use-the-configuration-designer) ismertető cikkben talál bővebb információt. Az XML-adatok bevitelével kapcsolatos részletekért lásd: [JSON-adatok megadása](#enter-json-data). 
+12. A **hozzárendelések** lap megjelenítéséhez kattintson a **tovább** gombra.
+13. A **hozzárendelés**a következőhöz elem melletti legördülő listában válassza ki a **kiválasztott csoportokat**, az **összes felhasználót**, **az összes eszközt**, vagy az **összes felhasználót és az összes levies** elemet az alkalmazás konfigurációs házirendjének hozzárendeléséhez.
 
-    - **Név**: adjon meg egy leíró nevet a szabályzatnak. Nevezze el a szabályzatokat, hogy később könnyebben azonosítható legyen. A helyes szabályzat neve például az **Android Enterprise Nine Work app Policy a teljes vállalat**számára.
-    - **Leírás:** Itt adhatja meg a profil leírását. A beállítás használata nem kötelező, de ajánlott.
-    - **Eszköz beléptetésének típusa**: Ez a beállítás **felügyelt eszközökre**van beállítva.
-    - **Platform**: válassza az **Android**lehetőséget.
+    ![Képernyőkép a szabályzat-hozzárendelések Belefoglalás lapjáról](./media/app-configuration-policies-use-ios/app-config-policy01.png)
 
-3. Válassza a **társított alkalmazás**lehetőséget. Válassza ki azt az Android-alkalmazást, amelyhez az alkalmazás-konfigurációs házirend társítva lesz. Válassza ki a [felügyelt Google Play-alkalmazások listáját, amelyeket jóváhagyott és szinkronizált az Intune-](~/apps/apps-add-android-for-work.md)nal.
-4. Válassza az **Engedélyek** lehetőséget. A konfigurációkat a következőkkel adhatja meg:
+14. A legördülő listában válassza az **összes felhasználó** lehetőséget.
 
-    - [A konfigurációtervező](#use-the-configuration-designer)
-    - [A JSON-szerkesztő](#enter-the-json-editor)
+    ![Képernyőkép a szabályzat-hozzárendelések legördülő listájának Minden felhasználó lehetőségéről](./media/app-configuration-policies-use-ios/app-config-policy02.png)
 
-5. Válassza **az OK** > **Hozzáadás**lehetőséget.
+15. Kattintson a **Válassza ki a kizárandó csoportokat** lehetőségre a kapcsolódó panel megjelenítéséhez.
+
+    ![Képernyőkép a szabályzat-hozzárendelésekről – válassza ki a kizárni kívánt csoportokat](./media/app-configuration-policies-use-ios/app-config-policy03.png)
+
+16. Válassza ki azokat a csoportokat, amelyeket ki szeretne zárni, majd kattintson a **Kijelölés** lehetőségre.
+
+    >[!NOTE]
+    >Csoportok hozzáadásakor, ha bármely más csoport már bele lett foglalva egy adott hozzárendelés-típus esetében, az előre ki van jelölve, és nem módosítható más belefoglalási hozzárendelés-típusok esetében. Ezért az adott csoport használatba lett véve, és így nem használható kizárt csoportként.
+
+17. Kattintson a **tovább** gombra a **felülvizsgálat + létrehozás** lap megjelenítéséhez.
+18. A **Létrehozás** gombra kattintva adja hozzá az alkalmazás konfigurációs szabályzatát az Intune-hoz.
 
 ## <a name="use-the-configuration-designer"></a>A konfigurációtervező használata
 
@@ -75,12 +97,12 @@ Ha változót szeretne megadni értéktípusnak, az alábbi lehetőségek közü
 | Domain | contoso.com |
 | Mail | john@contoso.com |
 | Részleges UPN | John |
-| Felhasználói azonosító | 3ec2c00f-b125-4519-acf0-302ac3761822 |
+| Felhasználó azonosítója | 3ec2c00f-b125-4519-acf0-302ac3761822 |
 | Felhasználónév | John Doe |
 | Egyszerű Felhasználónév | john@contoso.com |
 
 
-### <a name="allow-only-configured-organization-accounts-in-multi-identity-apps"></a>Csak a konfigurált szervezeti fiókok engedélyezése a többidentitásos alkalmazásokban 
+### <a name="allow-only-configured-organization-accounts-in-multi-identity-apps"></a>Csak a konfigurált szervezeti fiókok engedélyezése a többszörös identitást használó alkalmazásokban 
 
 Android-eszközök esetén használja az alábbi kulcs/érték párokat:
 
@@ -90,9 +112,9 @@ Android-eszközök esetén használja az alábbi kulcs/érték párokat:
 
    > [!NOTE]
    > Az Outlookot az Android 2.2.222 és újabb verziójához, a Word, az Excel, a PowerPoint for Android 16.0.9327.1000 és újabb verziójához, vagy a OneDrive for Android 5,28 és újabb verzióhoz kell használnia, ha csak a konfigurált, többszörös identitású szervezeti fiókok engedélyezése<p></p>
-   > Microsoft Intune rendszergazdaként beállíthatja, hogy mely felhasználói fiókok legyenek hozzáadva Microsoft Office alkalmazásokhoz a felügyelt eszközökön. A hozzáférést korlátozhatja csak a szervezeti felhasználói fiókokra, és blokkolhatja a személyes fiókok használatát a regisztrált eszközökön. A támogató alkalmazások feldolgozzák az alkalmazáskonfigurációt, majd eltávolítják és letiltják a nem jóváhagyott fiókokat.<p></p>
+   > Microsoft Intune rendszergazdaként beállíthatja, hogy mely felhasználói fiókok legyenek hozzáadva Microsoft Office alkalmazásokhoz a felügyelt eszközökön. A hozzáférést korlátozhatja csak a szervezeti felhasználói fiókokra, és blokkolhatja a személyes fiókok használatát a regisztrált eszközökön. A támogató alkalmazások feldolgozzák az alkalmazás konfigurációját, majd eltávolítják és letiltják a jóvá nem hagyott fiókokat.<p></p>
 
-## <a name="enter-the-json-editor"></a>A JSON-szerkesztő megnyitása
+## <a name="enter-json-data"></a>JSON-adatbevitel
 
 Az alkalmazások bizonyos konfigurációs beállításai (például a köteg típusú alkalmazások) nem konfigurálhatók a Configuration designerrel. Ezekhez az értékekhez használja a JSON-szerkesztőt. A beállítások megadása ezen alkalmazások számára az alkalmazás telepítésekor automatikusan történik.
 

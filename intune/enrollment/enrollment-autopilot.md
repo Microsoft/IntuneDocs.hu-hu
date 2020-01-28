@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cb98ee2974cefeebb90689207388d5fe9229dad2
-ms.sourcegitcommit: 52475fcd8d05d2f6b858d780ebb3d88eaadb0849
+ms.openlocfilehash: a4ece1fd1d47213ff9da8b8fcc2e53155ad76628
+ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76036660"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76754541"
 ---
 # <a name="enroll-windows-devices-in-intune-by-using-the-windows-autopilot"></a>Windows-eszközök regisztrálása az Intune-ban a Windows Autopilot használatával  
 A Windows Autopilot leegyszerűsíti az eszközök regisztrálását az Intune-ban. A testre szabott operációsrendszer-lemezképek létrehozása és karbantartása sok időt vesz igénybe. Gyakran ezeknek az egyéni operációsrendszer-lemezképeknek az új eszközökre való alkalmazásával is időt kell töltenie, hogy felkészítse az eszközöket a használatra, mielőtt a végfelhasználóknak adná azokat. A Microsoft Intune és az AutoPilot révén új eszközöket adhat hozzá a végfelhasználók számára anélkül, hogy egyéni operációsrendszer-lemezképek létrehozására, kezelésére és az eszközökre való alkalmazására lenne szükség. Az AutoPilot-eszközök Intune-nal való felügyelete során a regisztráció után szabályzatokat, profilokat, alkalmazásokat és sok mást is kezelni tud. A megoldás előnyeinek, használati eseteinek és előfeltételeinek áttekintéséről lásd [a Windows AutoPilot áttekintését](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot).
@@ -102,7 +102,7 @@ Az AutoPilot üzembehelyezési profilokkal konfigurálhatja az AutoPilot-eszköz
     ![Az OOBE oldalának képernyőképe](./media/enrollment-autopilot/create-profile-outofbox.png)
 
 6. A **Csatlakozás az Azure AD-hez mint** mezőben válassza az **Azure AD-hez csatlakoztatott** lehetőséget.
-7. Adja meg az alábbi lehetőségeket:
+7. Konfigurálja az alábbi beállításokat:
     - **Végfelhasználói licencszerződés (EULA)** : (Windows 10, 1709-es vagy újabb verzió) Eldöntheti, hogy a felhasználók számára megjelenjen-e a végfelhasználói licencszerződés.
     - **Adatvédelmi beállítások**: Eldöntheti, hogy a felhasználók számára megjelenjenek-e az adatvédelmi beállítások.
     >[!IMPORTANT]
@@ -158,6 +158,11 @@ Az Autopilot-eszköz feltöltése után szerkesztheti az eszköz bizonyos attrib
 A riasztások jelzik, hogy az AutoPilot programban hány eszközhöz nincs hozzárendelve AutoPilot üzembehelyezési profil. A riasztás adatai alapján a profilok létrehozhatók és a hozzárendelés nélküli eszközökhöz rendelhetők. A riasztásra kattintva megjelenik a Windows AutoPilot-eszközök részletes adatokat is tartalmazó, teljes listája.
 
 A nem hozzárendelt eszközökre vonatkozó riasztások megtekintéséhez a [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **Áttekintés** > **beléptetési riasztások** > a nem **hozzárendelt eszközök**elemet.  
+
+## <a name="autopilot-deployments-report"></a>Autopilot-alapú üzembe helyezési jelentés
+A Windows Autopilot szolgáltatásban üzembe helyezett összes eszközről megtekintheti a részleteket.
+A jelentés megjelenítéséhez nyissa meg a [Microsoft Endpoint Manager felügyeleti központját](https://go.microsoft.com/fwlink/?linkid=2109431), válassza az **eszközök** > **monitor** > Autopilot-alapú **telepítések**lehetőséget.
+Az Adatfrissítés az üzembe helyezést követő 30 napig elérhető.
 
 ## <a name="assign-a-user-to-a-specific-autopilot-device"></a>Felhasználó hozzárendelése egy adott Autopilot-eszközhöz
 

@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 01/23/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 01ca17c9f8e3fd86e12f225621e6dc0e07bb4acb
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 3cf4c2abb5506f297af8a4e77145abea5360381b
+ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74564081"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76755357"
 ---
 # <a name="assign-office-365-to-macos-devices-with-microsoft-intune"></a>Az Office 365 hozzárendelése macOS rendszerű eszközökhöz a Microsoft Intune-nal
 
@@ -38,47 +38,52 @@ Mielőtt elkezdené az Office 365 hozzáadását a macOS-eszközökhöz, érdeme
 - Az Intune csak a Mac Office 2016 csomagban megtalálható Office-alkalmazások hozzáadását támogatja.
 - Ha bármely Office-alkalmazás meg van nyitva, amikor az Intune telepíti az alkalmazáscsomagot, előfordulhat, hogy elvesznek a felhasználók adatai a nem mentett fájlokból.
 
-## <a name="create-and-configure-the-app-suite"></a>Az alkalmazáscsomag létrehozása és konfigurálása
+## <a name="select-the-office-365-suite-app-type"></a>Válassza ki az Office 365 Suite-alkalmazás típusát
 
-Az Office 365 hozzáadása az **Alkalmazások** panelről.
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Válassza az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**lehetőséget.
-3. Az **Office 365 csomag** csoport **Alkalmazás típusa** listájáról válassza ki a **macOS** lehetőséget.
-4. Az **Alkalmazáscsomag adatai** lehetőségre kattintva megtekintheti az alkalmazáscsomagra vonatkozó információkat.  
-    Ezek alapján azonosíthatja az alkalmazáscsomagot az Intune-ban, és a felhasználók is ezek alapján találhatják meg azt a céges portálon.
-5. Adja meg az alábbi adatokat:
+3. Válassza a **MacOS** lehetőséget az **alkalmazás típusának kiválasztása** ablaktábla **Office 365 Suite** szakaszában.
+4. Kattintson a **Kiválasztás** lehetőségre. Megjelenik az **Office 365 Suite hozzáadása** lépések.
+
+## <a name="step-1---app-suite-information"></a>1\. lépés – App Suite-információk
+
+Ebben a lépésben adhatja meg az alkalmazáscsomag adatait. Ezek alapján azonosíthatja az alkalmazáscsomagot az Intune-ban, és a felhasználók is ezek alapján találhatják meg azt a céges portálon.
+
+1. Az **App Suite-információk** lapon ellenőrizheti vagy módosíthatja az alapértelmezett értékeket:
     - **Csomag neve:** Itt adhatja meg az alkalmazáscsomag céges portálon megjelenő nevét. Ügyeljen arra, hogy minden megadott csomagnév egyedi legyen. Ha ugyanazt a csomagnevet kétszer adja meg, csak az egyik alkalmazás fog megjelenni a felhasználók számára a céges portálon.
-    - **Csomag leírása:** Itt adhatja meg az alkalmazáscsomag leírását.
+    - **Csomag leírása:** Itt adhatja meg az alkalmazáscsomag leírását. Felsorolhatja például a kiválasztott belefoglalt alkalmazásokat.
     - **Közzétevő:** Közzétevőként a Microsoft jelenik meg.
-    - **Kategória:** Választhat egyet vagy többet a beépített kategóriák közül, vagy megadhat egyénileg létrehozott kategóriát is. Ez a beállítás megkönnyíti a Céges portálon kereső felhasználóknak az alkalmazás megtalálását.
-    - **Megjelenítés kiemelt alkalmazásként a Céges portálon:** Ezzel a beállítással hangsúlyosan jelenítheti meg az alkalmazáscsomagot a céges portál főoldalán az alkalmazásokat kereső felhasználók számára.
+    - **Kategória:** Választhat egyet vagy többet a beépített alkalmazáskategóriák közül, vagy megadhat egyénileg létrehozott kategóriát is. Ez a beállítás megkönnyíti a Céges portálon kereső felhasználóknak az alkalmazás megtalálását.
+    - **Megjelenítés Kiemelt alkalmazásként a céges portálban**: ezzel a beállítással a vállalati portál főoldalán jelenítheti meg az App Suite-t, amikor a felhasználók megkeresik az alkalmazásokat.
     - **Információs URL-cím:** Igény szerint megadhatja az alkalmazással kapcsolatos információkat tartalmazó webhely URL-címét. Ez az URL-cím jelenik meg a felhasználók számára a céges portálon.
     - **Adatvédelmi nyilatkozat URL-címe:** Igény esetén itt adhatja meg az alkalmazás adatvédelmi nyilatkozatát tartalmazó webhely URL-címét. Ez az URL-cím jelenik meg a felhasználók számára a céges portálon.
     - **Fejlesztő:** Fejlesztőként a Microsoft jelenik meg.
     - **Tulajdonos:** Tulajdonosként a Microsoft jelenik meg.
-    - **Megjegyzések:** : Ide írhatja be igény szerint az alkalmazáshoz társítani kívánt megjegyzéseket.
+    - **Megjegyzések**: Ide írhatja be az alkalmazáshoz társítani kívánt megjegyzéseket.
     - **Embléma:** – Amikor a felhasználók a céges portálon keresnek, az alkalmazás mellett megjelenik az Office 365-embléma.
-6. Válassza az **OK** gombot.
-7. Az **Alkalmazás hozzáadása** panelen válassza a **Hozzáadás** lehetőséget.  
-    A csomag egyetlen bejegyzés formájában jelenik meg az alkalmazások listájában.
+2. Kattintson a **tovább** gombra a **hatókör címkék** oldal megjelenítéséhez.
 
-## <a name="configure-app-assignments"></a>Alkalmazás-hozzárendelések konfigurálása
+## <a name="step-2---select-scope-tags-optional"></a>2\. lépés – hatókör-címkék kiválasztása (nem kötelező)
+A hatókör-címkék használatával meghatározhatja, hogy ki láthatja az ügyfélalkalmazások adatait az Intune-ban. A hatókör-címkék részletes ismertetését lásd: [a szerepköralapú hozzáférés-vezérlés és a hatókör-címkék használata a terjesztéshez](../fundamentals/scope-tags.md).
 
-Ebben a lépésben az alkalmazáscsomag hozzárendeléseit konfigurálhatja. 
+1. Kattintson a **hatókör címkék kiválasztása** lehetőségre, hogy felvegye az alkalmazáscsomag hatókör-címkéit. 
+2. A **hozzárendelések** lap megjelenítéséhez kattintson a **tovább** gombra.
 
-1. Az **Office 365** csomagot áttekintő panel megjelenítéséhez válassza az **Office 365** alkalmazáscsomagot az alkalmazások listáján.
-2. Az **Office 365** panelen válassza a **Hozzárendelések** lehetőséget.
-3. Az alkalmazáscsomagot használó csoport megadásához válassza a **Csoport hozzáadása** lehetőséget.  
-    Ekkor megjelenik a **Csoport hozzáadása** panel.
-4. A **Hozzárendelés típusa** beállítást állítsa **Kötelező** vagy **Elérhető** értékre.
-5. Rendelje hozzá a csomagot a kijelölt csoportokhoz. További információ: [Alkalmazások hozzárendelése csoportokhoz a Microsoft Intune-nal](apps-deploy.md).
+## <a name="step-3---assignments"></a>3\. lépés – hozzárendelések
+
+1. Válassza ki az alkalmazáscsomag számára a **regisztrált eszközökhöz** tartozó csoportos hozzárendelésekhez **szükséges** vagy elérhető lehetőséget. További információ: [csoportok hozzáadása a felhasználók és eszközök rendszerezéséhez](~/fundamentals/groups-add.md) , valamint [alkalmazások társítása a csoportokhoz Microsoft Intune](apps-deploy.md)használatával.
 
     >[!Note]
-    > Az Office 365 alkalmazáscsomag az Intune-on keresztül nem távolítható el.
+    > A macOS App Suite-hoz készült Office 365 nem távolítható el az Intune-on keresztül.
 
-5. A **Hozzárendelés** panelen kattintson az **OK** gombra.
-6. A **Csoport hozzáadása** panelen kattintson az **OK** gombra.
-7. A hozzárendelés véglegesítéséhez kattintson a **Mentés** lehetőségre.
+2. Kattintson a **tovább** gombra a **felülvizsgálat + létrehozás** lap megjelenítéséhez. 
+
+## <a name="step-4---review--create"></a>4\. lépés – felülvizsgálat + létrehozás
+
+1. Tekintse át az alkalmazáscsomag által megadott értékeket és beállításokat.
+2. Ha elkészült, kattintson a **Létrehozás** gombra, hogy hozzáadja az alkalmazást az Intune-hoz.
+
+    Megjelenik a létrehozott Office 365 ablak 10 alkalmazáscsomag **áttekintő** panelje. A csomag egyetlen bejegyzés formájában jelenik meg az alkalmazások listájában.
 
 ## <a name="next-steps"></a>További lépések
 

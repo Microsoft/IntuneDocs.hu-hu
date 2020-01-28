@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/18/2019
+ms.date: 01/24/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 644297777e8a103d6ffdc5f025ebf8f29591fda8
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: d04897d38c1b46f27fe86e72ecfa6856aa9eece2
+ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74188470"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76755657"
 ---
 # <a name="create-a-conditional-access-policy-for-exchange-on-premises-and-legacy-exchange-online-dedicated"></a>Feltételes hozzáférési szabályzat létrehozása a helyszíni Exchange-hez és az örökölt dedikált Exchange Online-hoz
 
@@ -37,7 +37,7 @@ A feltételes hozzáférés konfigurálása előtt ellenőrizze, hogy a követke
 
 - Exchange-verziója: **exchange 2010 SP1 vagy újabb**. Az Exchange-kiszolgáló ügyfél-hozzáférési kiszolgálótömbje (CAS) nem támogatott.
 
-- Telepítette és használja a [Exchange Active Sync helyszíni Exchange Connectort](exchange-connector-install.md), amely összeköti az Intune-t a helyszíni Exchange-hez.
+- Telepítette és használja az [Exchange ActiveSync helyszíni Exchange Connectort](exchange-connector-install.md), amely az Intune-t a helyszíni Exchange-hez köti.
 
     >[!IMPORTANT]  
     >Az Intune egy előfizetésben több helyszíni Exchange-összekötőt is támogat.  A helyszíni Exchange Connector azonban egyetlen Intune-bérlőre vonatkozik, és más Bérlővel nem használható.  Ha a cége egynél több helyszíni Exchange-összekötővel rendelkezik, minden Exchange-szervezet részére külön összekötőt építhet ki.
@@ -84,40 +84,57 @@ Mielőtt az alábbi eljárást használja a helyszíni Exchange-hozzáférés be
 
 3. A helyszíni Exchange- **hozzáférés** panel **Igen** elemét választva engedélyezheti a helyszíni *Exchange-hozzáférés-vezérlést*.
 
+   > [!div class="mx-imgBorder"]
+   > ![példa a helyszíni Exchange-hozzáférés képernyőre](./media/conditional-access-exchange-create/exchange-on-premises-access.png)
+
 4. A **hozzárendelés**területen válassza **a csoportok kiválasztása a belefoglaláshoz**lehetőséget, majd válasszon ki egy vagy több csoportot a hozzáférés konfigurálásához.
 
    A kiválasztott csoportok tagjai a feltételes hozzáférési szabályzattal rendelkeznek a helyszíni Exchange-hozzáféréshez. A szabályzatot fogadó felhasználóknak regisztrálniuk kell az eszközeiket az Intune-ban, és meg kell felelniük a megfelelőségi profiloknak ahhoz, hogy hozzáférhessenek a helyszíni Exchange-hez.
 
-5. A csoportok kizárásához válassza a **kizárni kívánt csoportok kiválasztása**lehetőséget, majd válasszon ki egy vagy több olyan csoportot, amely mentesül az eszközök regisztrálására és a megfelelőségi profiloknak való megfelelésre a helyszíni Exchange elérése előtt. 
+   > [!div class="mx-imgBorder"]
+   > ![válassza ki a csoportokat](./media/conditional-access-exchange-create/select-groups.png)
 
-6. Ezután konfigurálja a helyszíni Intune Exchange Connector beállításait.  A *helyszíni Exchange-hozzáférés* **beállítása** ablakban válassza az **Exchange ActiveSync helyszíni összekötő** lehetőséget, majd válassza ki a konfigurálni kívánt Exchange-szervezet összekötőjét.
+5. A csoportok kizárásához válassza a **kizárni kívánt csoportok kiválasztása**lehetőséget, majd válasszon ki egy vagy több olyan csoportot, amely mentesül az eszközök regisztrálására és a megfelelőségi profiloknak való megfelelésre a helyszíni Exchange elérése előtt.
 
-7. A **Beállítások**területen válassza a **felhasználói értesítések** lehetőséget a felhasználóknak küldött alapértelmezett e-mail-üzenet módosításához, ha az eszköz nem megfelelő, és szeretné elérni a helyszíni Exchange-t. Az üzenetsablon egy jelölőnyelvet használ.  Amint beírja az üzenetet, azt is követheti, hogy mit fog látni a címzett.
+   Válassza a **Mentés** lehetőséget a konfiguráció mentéséhez, és térjen vissza az **Exchange-hozzáférés** ablaktáblára.
+
+6. Ezután konfigurálja a helyszíni Intune Exchange Connector beállításait. A konzolon válassza a **bérlői felügyelet** > **exchange-hozzáférés**> **Exchange ActiveSync helyszíni összekötő** lehetőséget, majd válassza ki a konfigurálni kívánt Exchange-szervezet összekötőjét.
+
+7. **Felhasználói értesítések**esetén válassza a **Szerkesztés** lehetőséget a **szervezet szerkesztése** munkafolyamat megnyitásához, ahol módosíthatja a *felhasználói értesítési* üzenetet.
+
+   > [!div class="mx-imgBorder"]
+   > ![például képernyőkép a szervezeti munkafolyamat szerkesztése az értesítésekhez](./media/conditional-access-exchange-create/edit-organization-user-notification.png)
+
+   Módosítsa a felhasználóknak küldött alapértelmezett e-mail-üzenetet, ha az eszköz nem megfelelő, és szeretné elérni a helyszíni Exchange-t. Az üzenetsablon egy jelölőnyelvet használ. Azt is megtekintheti, hogy az üzenet hogyan néz ki a beírt módon
+
+   Válassza a **felülvizsgálat + mentés**lehetőséget, majd **mentse** a módosításokat a helyszíni Exchange-hozzáférés konfigurálásának befejezéséhez.
+
    > [!TIP]
    > A jelölőnyelvekről ez a [Wikipedia-cikk](https://en.wikipedia.org/wiki/Markup_language) nyújt tájékoztatást.
- 
-   A módosítások mentéséhez kattintson **az OK gombra** , hogy elvégezze a helyszíni Exchange-hozzáférés konfigurálását.
 
-8. Ezután válassza a **speciális Exchange Active Sync hozzáférési beállítások** elemet a *speciális Exchange ActiveSync hozzáférési beállítások* panel megnyitásához, ahol az eszköz-hozzáférési szabályokat konfigurálhatja:  
+8. Ezután válassza a **speciális Exchange ActiveSync hozzáférési beállítások** elemet a *speciális Exchange ActiveSync hozzáférési beállítások* munkafolyamatának megnyitásához, ahol az eszköz-hozzáférési szabályokat konfigurálja.
+
+   > [!div class="mx-imgBorder"]
+   > ![a speciális beállításokhoz tartozó szervezeti munkafolyamat szerkesztése című képernyőképet](./media/conditional-access-exchange-create/edit-organization-advanced-settings.png)
 
    - A nem **felügyelt eszközök hozzáféréséhez**állítsa be a globális alapértelmezett szabályt a hozzáféréshez a feltételes hozzáférés vagy más szabályok által nem érintett eszközökről:
 
      - **Hozzáférés engedélyezése** – az összes eszköz azonnal hozzáférhet a helyszíni Exchange-hez. Azok az eszközök, amelyek az előző eljárásban megadott csoportokba tartozó felhasználókhoz tartoznak, le vannak tiltva, ha később kiértékelik azokat, amelyek nem felelnek meg a megfelelő szabályzatoknak, vagy nincsenek regisztrálva az Intune-ban.
 
-     - **Hozzáférés letiltása** és **karanténba helyezése** – az összes eszköz azonnal le lesz tiltva a helyszíni Exchange-hez való hozzáféréshez. Azok az eszközök, amelyek az előző eljárás részeként konfigurált csoportokban lévő felhasználókhoz tartoznak, hozzáférhetnek az Intune-ban az eszköz regisztrálása után, és megfelelőnek értékelik azokat. 
+     - **Hozzáférés letiltása** és **karanténba helyezése** – az összes eszköz azonnal le lesz tiltva a helyszíni Exchange-hez való hozzáféréshez. Azok az eszközök, amelyek az előző eljárás részeként konfigurált csoportokban lévő felhasználókhoz tartoznak, hozzáférhetnek az Intune-ban az eszköz regisztrálása után, és megfelelőnek értékelik azokat.
 
        A Samsung Knox standard-t *nem* futtató Android-eszközök nem támogatják ezt a beállítást, és mindig le vannak tiltva.
 
-   -  Az **eszközök platformjának kivételei**esetében válassza a **Hozzáadás**lehetőséget, majd adja meg a környezethez szükséges platform részleteit. 
-   
+   - Az **eszközök platformjának kivételei**esetében válassza a **Hozzáadás**lehetőséget, majd adja meg a környezetéhez szükséges adatokat.
+
       Ha a nem **felügyelt eszköz hozzáférésének** beállítása **blokkolva**értékre van állítva, a regisztrált és megfelelő eszközök akkor is engedélyezettek, ha a platform kivételt okoz.  
-   
-   A módosítások mentéséhez kattintson **az OK gombra** .
 
-9. Válassza a **Mentés** lehetőséget az Exchange feltételes hozzáférési szabályzatának mentéséhez.
+9. A módosítások mentéséhez kattintson **az OK gombra** .
 
-Ezután hozzon létre egy megfelelőségi szabályzatot, és rendelje hozzá a felhasználókhoz az Intune-nal a mobileszközök kiértékeléséhez lásd: [az eszközök megfelelőségének megkezdése](device-compliance-get-started.md).
+10. Válassza a **felülvizsgálat + mentés**lehetőséget, **majd mentse az Exchange** feltételes hozzáférési szabályzatát.
 
 ## <a name="next-steps"></a>További lépések
+
+Ezután hozzon létre egy megfelelőségi szabályzatot, és rendelje hozzá a felhasználókhoz az Intune-nal a mobileszközök kiértékeléséhez lásd: [az eszközök megfelelőségének megkezdése](device-compliance-get-started.md).
 
 [A helyszíni Intune Exchange Connector hibaelhárítása Microsoft Intune](https://support.microsoft.com/help/4471887)

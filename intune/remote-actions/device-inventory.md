@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0bbcad362ef2b2dcfdd170cd2e902d55cee00310
-ms.sourcegitcommit: af384c46ec8d8def6aa32c3b89947748dc6fd28f
+ms.openlocfilehash: 11e3465c583197582a545cdd6f4b71bc8d24e115
+ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76517592"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76754201"
 ---
 # <a name="see-device-details-in-intune"></a>Eszközadatok megtekintése az Intune-ban
 
@@ -67,9 +67,9 @@ Az eszközök által használt szolgáltatótól függően az összes adat gyűj
 |Megosztott eszköz|Ha **Igen**, akkor az eszköz több felhasználó között van megosztva.|Windows, iOS|
 |Felhasználó által jóváhagyott regisztráció|Ha **Igen**, akkor az eszköz felhasználó által jóváhagyott regisztrációja lehetővé teszi, hogy a rendszergazdák bizonyos biztonsági beállításokat kezelhesse az eszközön.|Windows, iOS|
 |Operációs rendszer|Az eszközön futó operációs rendszer.|Windows, iOS|
-|Operációs rendszer verziója|Az eszközön futó operációs rendszer verziója.|Windows, iOS|
+|Operációs rendszer verziója|Az eszköz operációs rendszerének verziója.|Windows, iOS|
 |Operációs rendszer nyelve|Az eszközön futó operációs rendszerhez beállított nyelv.|Windows, iOS|
-|Buildszám|Az operációs rendszer összeállításának száma.|Android:|
+|Build száma|Az operációs rendszer összeállításának száma.|Android:|
 |Biztonsági javítási szint|Az eszköz biztonsági javítási szintje.|Android:|
 |Teljes tárterület|Az eszközön lévő teljes tárterület (gigabájtban).|Windows, iOS|
 |Szabad tárterület|Az eszközön lévő felhasználatlan tárterület (gigabájtban).|Windows, iOS|
@@ -84,7 +84,7 @@ Az eszközök által használt szolgáltatótól függően az összes adat gyűj
 |ICCID|Az integrált áramköri kártya (ICC) azonosítója, amely a SIM-kártya egyedi azonosítószáma.|Windows, iOS, Android|
 |Regisztrálás dátuma|Az eszköz Intune-ban történt regisztrálásának dátuma és időpontja.|Windows, iOS, Android|
 |Utolsó kapcsolat|Az eszköz Intune-hoz való utolsó kapcsolódásának dátuma és időpontja.|Windows, iOS, Android|
-|Kód az aktiválási zár megkerüléséhez|Az aktiválási zár megkerüléséhez használható kód.|iOS|
+|Kód az aktiválási zár megkerüléséhez|Az aktiválási zár letiltására alkalmas kód.|iOS|
 |Az Azure AD-ban regisztrálva|Ha **Igen**, akkor az eszköz regisztrálva van az Azure Active Directoryban.|Windows, iOS, Android|
 |Intune regisztrálva|Ha **Igen**, az eszköz regisztrálva van az Intune-ban|Windows, iOS, Android|
 |Megfelelőség|Az eszköz megfelelőségi állapota.|Windows, iOS, Android|

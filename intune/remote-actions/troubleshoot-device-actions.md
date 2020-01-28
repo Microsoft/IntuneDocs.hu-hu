@@ -18,23 +18,23 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 239dd8630eb361da8609e3a34eb2c9346a64dab0
-ms.sourcegitcommit: ec69e7ccc6e6183862a48c1b03ca6a3bf573f354
+ms.openlocfilehash: 7d4517d89e3b7365834e904c815b30a362540906
+ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74907185"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76755595"
 ---
 # <a name="troubleshoot-device-actions-in-intune"></a>Eszközök műveleteinek hibáinak megoldása az Intune-ban
 
 A Microsoft Intune számos olyan műveletet tartalmaz, amelyek segítségével felügyelheti az eszközöket. Ez a cikk az eszközök műveleteinek megoldásához segítséget nyújtó gyakori kérdésekre ad választ.
 
-## <a name="bypass-activation-lock-action"></a>Aktiválási zár mellőzése művelet
+## <a name="disable-activation-lock-action"></a>Aktiválási zár művelet letiltása
 
-### <a name="i-clicked-the-bypass-activation-lock-action-in-the-portal-but-nothing-happened-on-the-device"></a>Rákattintok a "megkerülés Aktiválási zár" műveletre a portálon, de semmi nem történt az eszközön.
-Ez a várható eredmény. A bypass Aktiválási zár művelet megkezdése után az Intune egy frissített kódot kér az Apple-től. Ha az eszköz a Aktiválási zár képernyőn látható, manuálisan írja be a kódot a PIN-kód mezőbe. Ez a kód 15 napig érvényes, ezért ügyeljen rá, hogy a törlés előtt kattintson a műveletre, és másolja a kódot.
+### <a name="i-clicked-the-disable-activation-lock-action-in-the-portal-but-nothing-happened-on-the-device"></a>Rákattintottam a "letiltás Aktiválási zár" műveletet a portálon, de semmi nem történt az eszközön.
+Ez a várt érték. A letiltási Aktiválási zár művelet megkezdése után az Intune egy frissített kódot kér az Apple-től. Ha az eszköz a Aktiválási zár képernyőn látható, manuálisan írja be a kódot a PIN-kód mezőbe. Ez a kód 15 napig érvényes, ezért ügyeljen rá, hogy a törlés előtt kattintson a műveletre, és másolja a kódot.
 
-### <a name="why-dont-i-see-the-bypass-activation-lock-code-in-the-hardware-overview-blade-of-my-ios-device"></a>Miért nem jelenik meg az iOS-eszköz hardver áttekintés paneljén a bypass Aktiválási zár kód?
+### <a name="why-dont-i-see-the-disable-activation-lock-code-in-the-hardware-overview-blade-of-my-ios-device"></a>Miért nem látom az iOS-eszköz hardver áttekintés paneljén a Letiltás Aktiválási zár kódot?
 A legvalószínűbb ok a következők:
 - A kód lejárt, és törölve lett a szolgáltatásból.
 - Az eszköz nem felügyeli az eszköz korlátozási szabályzatát, hogy engedélyezze Aktiválási zár.
@@ -43,12 +43,12 @@ A kódot a Graph Explorerben a következő lekérdezéssel tekintheti meg:
 
 ```GET - https://graph.microsoft.com/beta/deviceManagement/manageddevices('deviceId')?$select=activationLockBypassCode.```
 
-### <a name="why-is-the-bypass-activation-lock-action-greyed-out-for-my-ios-device"></a>Miért jelenik meg az iOS-eszközön a megkerülés Aktiválási zár művelet szürkén?
+### <a name="why-is-the-disable-activation-lock-action-greyed-out-for-my-ios-device"></a>Miért szürke a Letiltás Aktiválási zár művelet az iOS-eszközön?
 A legvalószínűbb ok a következők: 
 - A kód lejárt, és törölve lett a szolgáltatásból.
 - Az eszköz nem felügyeli az eszköz korlátozási szabályzatát, hogy engedélyezze Aktiválási zár.
 
-### <a name="is-the-bypass-activation-lock-code-case-sensitive"></a>A kis-és nagybetűk megkülönböztetése Aktiválási zár?
+### <a name="is-the-disable-activation-lock-code-case-sensitive"></a>A letiltási Aktiválási zár kódja kis-és nagybetűket?
 Nem. És nem kell megadnia a kötőjeleket.
 
 ## <a name="remove-devices-action"></a>Eszközök eltávolítása művelet

@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/06/2020
+ms.date: 01/23/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -16,16 +16,16 @@ ms.assetid: e44f1756-52e1-4ed5-bf7d-0e80363a8674
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a4a4c6d40dc729fb72210c455c7819baaf89de3b
-ms.sourcegitcommit: a66b5916eaab9cb537e483064efc584a6a63a390
+ms.openlocfilehash: 03b8f050dc6232b87d1149aff0a93cd7b06839cd
+ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75691825"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76755408"
 ---
 # <a name="sign-line-of-business-apps-so-they-can-be-deployed-to-windows-devices-with-intune"></a>Üzleti alkalmazások aláírása, hogy telepíteni lehessen őket Windows-eszközökre az Intune segítségével
 
-Intune-rendszergazdaként üzletági (LOB) univerzális alkalmazásokat telepíthet a Windows 8,1 asztali vagy Windows 10 asztali & mobileszközökön, beleértve a Céges portál alkalmazást is. A. Appx alkalmazások Windows 8,1 asztali vagy Windows 10 rendszerű asztali & mobileszközökön való üzembe helyezéséhez a Windows-eszközök által már megbízhatóként használt nyilvános hitelesítésszolgáltatótól származó kód-aláíró tanúsítványt használhat, vagy használhatja saját hitelesítésszolgáltatóját is.
+Intune-rendszergazdaként üzletági (LOB) univerzális alkalmazásokat telepíthet a Windows 8,1 asztali vagy Windows 10 asztali & mobileszközökön, beleértve a Céges portál alkalmazást is. A *. Appx* alkalmazások Windows 8,1 asztali vagy Windows 10 rendszerű asztali & mobileszközökön való üzembe helyezéséhez a Windows-eszközök által már megbízhatóként használt nyilvános hitelesítésszolgáltatótól származó kód-aláíró tanúsítványt használhat, vagy használhatja saját hitelesítésszolgáltatóját is.
 
  > [!NOTE]
  > A Windows 8,1 Desktophoz vállalati házirend szükséges a közvetlen telepítési engedélyezéséhez vagy a közvetlen telepítési kulcsok használatához (automatikusan engedélyezve a tartományhoz csatlakoztatott eszközök esetében). További információ: [Windows 8 közvetlen telepítési](https://blogs.technet.microsoft.com/scd-odtsp/2012/09/27/windows-8-sideloading-requirements-from-technet/).
@@ -52,10 +52,11 @@ Ha a felhasználók vagy eszközök számára szükséges módon telepíti az al
 
 Ha a Windows 10-es eszköze még nem bízik meg a hitelesítésszolgáltatóban, akkor a Appx-csomag aláírása és az Intune szolgáltatásba való feltöltése után fel kell töltenie a kód aláíró tanúsítványát az Intune-portálra:
 
-1. Kattintson az ügyfélalkalmazások lehetőségre
-2. Kattintson a Windows Enterprise-tanúsítványok elemre.
-3. Válassza a fájl kiválasztása elemet a kód aláíró tanúsítványa alatt.
-4. Válassza ki a. cer fájlt, és kattintson a feltöltés gombra.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Kattintson a **bérlői felügyelet** > **Összekötők és tokenek** > **Windows Enterprise certifcates**elemre.
+3. Válasszon ki egy fájlt a **Code-aláíró tanúsítványfájl**területen.
+4. Válassza ki a *. cer* fájlt, és kattintson a **Megnyitás**gombra.
+5. Kattintson a **feltöltés** gombra a tanúsítványfájl Intune-ba való hozzáadásához.
 
 Most, hogy az Intune szolgáltatás által Appx üzemelő Windows 10 asztali & mobileszköz automatikusan letölti a megfelelő vállalati tanúsítványt, és az alkalmazás a telepítés után is elindítható.
 
@@ -94,7 +95,7 @@ Ha nem kíván hozzáférést biztosítani a Microsoft Storehoz, manuálisan tel
       ![APPXBUN fájllal mentett Függőségek mappa képe](./media/app-sideload-windows/Win10CP-Dependencies-save.png)
    2. Helyezze el a kilenc függőségcsomagot a Függőségek mappában.  
       Ha a függőségeket nem ebben a formátumban helyezi el, az Intune nem tudja majd felismerni és feltölteni őket a csomag feltöltésekor, így a folyamat sikertelen lesz a következő hiba miatt.  
-      ![Hibaüzenet – meg kell adni a Windows-alkalmazás függőségét.](./media/app-sideload-windows/Win10CP-error-message.png)
+      <img alt="Error message - The Windows app dependency must be provided." src="./media/app-sideload-windows/Win10CP-error-message.png" width="200">
 6. Lépjen vissza az Intune-ba, és töltse fel a Céges portál alkalmazást új alkalmazásként. Telepítse szükséges alkalmazásként a kívánt felhasználói célcsoport számára.  
 
 Itt talál további információkat arról, hogy az Intune miképpen kezeli az univerzális alkalmazások függőségeit: [appxbundle telepítése függőségekkel a Microsoft Intune MDM-en keresztül](https://blogs.technet.microsoft.com/configmgrdogs/2016/11/30/deploying-an-appxbundle-with-dependencies-via-microsoft-intune-mdm/).  

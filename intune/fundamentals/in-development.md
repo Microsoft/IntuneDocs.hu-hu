@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 01ea2f75d166e5cc6aef4b890dba5722a74c1f61
-ms.sourcegitcommit: 8f56220e7cafc5bc43135940575a9acb5afde730
+ms.openlocfilehash: 78022dc4bdfa108bcd04e180ab413cbf04d2c728
+ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75827819"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76755612"
 ---
 # <a name="in-development-for-microsoft-intune---january-2020"></a>Fejlesztés a Microsoft Intune – január 2020
 
@@ -65,27 +65,12 @@ A Windows-eszközökön a Céges portál alkalmazást frissítjük a bejelentés
 A Céges portál alkalmazás további alkalmazás-telepítési állapotüzenetek jelennek meg a végfelhasználók számára. Az új Win32-függőségi funkciókra az alábbi feltételek érvényesek:
 - Az alkalmazás telepítése nem sikerült. A rendszergazda által definiált függőségek nem teljesültek.
 
-### <a name="retarget-web-clips-to-microsoft-edge-on-ios-devices---5455276-idready---"></a>Webes klipek átcélzása a Microsoft Edge-hez iOS-eszközökön<!-- 5455276 idready -->
+### <a name="retarget-web-clips-to-microsoft-edge-on-ios-devices---5455276---"></a>Webes klipek átcélzása a Microsoft Edge-hez iOS-eszközökön<!-- 5455276 -->
 Az iOS-eszközökön rögzített webalkalmazásként szolgáló webes klipeket frissíteni kell. Az újonnan telepített webklipek a Microsoft Edge-ben nyílnak meg a Intune Managed Browser helyett, ha egy védett böngészőben kell megnyitni. A meglévő webklipeket újra meg kell célozni, hogy a Managed Browser helyett a Microsoft Edge-ben nyíljon meg. 
 
-### <a name="user-experience-change-when-adding-apps-to-intune---4705829-idready---"></a>Felhasználói élmény változása alkalmazások Intune-beli hozzáadásakor<!-- 4705829 idready -->
-Az alkalmazások Intune-nal való hozzáadásakor új felhasználói élmény jelenik meg. Ez a felhasználói élmény ugyanazokat a beállításokat és adatokat tartalmazza, amelyeket korábban már használt, de az új felhasználói felület a varázslóhoz hasonló folyamatot követ, mielőtt hozzáad egy alkalmazást az Intune-hoz. Ez az új felület egy felülvizsgálati oldalt is biztosít az alkalmazás hozzáadása előtt. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **alkalmazások** > **minden alkalmazás** lehetőséget, > a **Hozzáadás**elemet. További információt az [Alkalmazások hozzáadása a Microsoft Intune-hoz](~/apps/apps-add.md) című cikkben talál.
-
-#### <a name="require-win32-apps-to-restart----3136567--"></a>Win32-alkalmazások újraindításának megkövetelése <!-- 3136567-->
-A sikeres telepítés után a Win32-alkalmazások újraindítására lehet szükség. Azt is megadhatja, hogy az újraindítás előtt mennyi idő elteltével (a türelmi időszakot) kell megadnia.
 
 <!-- ***********************************************-->
 ## <a name="device-configuration"></a>Eszközök konfigurálása
-
-### <a name="add-automatic-proxy-settings-to-wi-fi-profiles-for-android-enterprise-work-profiles---4490822-idready---"></a>Automatikus proxybeállítások hozzáadása Wi-Fi profilokhoz androidos vállalati munkahelyi profilokhoz<!-- 4490822 idready -->
-Az Android Enterprise munkahelyi profil eszközein Wi-Fi profilok hozhatók létre. Ha a Wi-Fi Enterprise-típust választja, megadhatja a Wi-Fi-hálózaton használt bővíthető hitelesítési protokoll (EAP) típusát is.
-
-Egy jövőbeli frissítés esetében, ha a vállalat típusát választja, megadhatja az automatikus proxybeállításokat, beleértve a proxykiszolgáló URL-címét, például a `proxy.contoso.com`.
-
-A konfigurálható aktuális Wi-Fi beállítások megjelenítéséhez nyissa meg a [Wi-Fi beállítások hozzáadása az Android Enterprise és az Android kioszkot futtató eszközökhöz Microsoft Intune](../configuration/wi-fi-settings-android-enterprise.md).
-
-A következőkre vonatkozik:
-- Androidos vállalati munkahelyi profil
 
 ### <a name="wired-network-device-configuration-profiles-for-macos-devices---3508686----"></a>Vezetékes hálózati eszközök konfigurációs profiljai macOS-eszközökhöz<!-- 3508686  -->
 A rendszer elérhetővé teszi az új macOS-eszköz konfigurációs profilt, amely a vezetékes hálózatokat (az**eszköz konfigurációját** > **profilokat** > a **profil létrehozása** > **MacOS** platformon > **vezetékes hálózat** profil típusa) beállítására. Ezzel a szolgáltatással 802.1 x-profilokat hozhat létre a vezetékes hálózatok kezeléséhez, és ezeket a vezetékes hálózatokat a macOS-eszközökre is üzembe helyezheti.
@@ -120,10 +105,7 @@ Ez a funkció az alábbiakra vonatkozik:
 - Vállalati Android 
 
 <!-- ***********************************************-->
-## <a name="device-enrollment"></a>Eszközök beléptetése
-
-### <a name="block-android-enrollments-by-device-manufacturer--5197392-idready--"></a>Android-regisztrációk letiltása az eszköz gyártója által<!--5197392 idready-->
-Az eszközök regisztrálása az eszköz gyártója alapján tiltható le. Ez az Android-eszköz rendszergazdája és az Android Enterprise Work Profiles eszközökre vonatkozik. A regisztrációs korlátozások megjelenítéséhez nyissa meg a [Microsoft Endpoint Manager felügyeleti Központját](https://go.microsoft.com/fwlink/?linkid=2109431)> **eszközök** > a **regisztrációs korlátozásokat**.
+<!--## Device enrollment-->
 
 
 
@@ -151,9 +133,6 @@ A következő információk lesznek hozzáadva az eszközök **áttekintő** lap
 
 <!-- ***********************************************-->
 ## <a name="role-based-access-control"></a>Szerepköralapú hozzáférés-vezérlés
-
-### <a name="new-intune-built-in-role-endpoint-security-manager--4253397-idready--"></a>Új Intune beépített szerepkör Endpoint Security Manager<!--4253397 idready-->
-Új Intune beépített szerepkör lesz elérhető: a Endpoint Security Manager. Ez az új szerepkör lehetővé teszi a rendszergazdák számára, hogy teljes hozzáférést biztosítson az Intune-beli Endpoint Manager-csomóponthoz, és készen álljanak a többi területre való A szerepkör a "biztonsági rendszergazda" szerepkör kiterjesztése az Azure AD-ből. Ha jelenleg csak a globális rendszergazdák szerepkörrel rendelkezik, akkor nincs szükség módosításra. Ha szerepköröket használ, és szeretné, hogy a végponti Security Manager milyen részletességgel rendelkezik, akkor rendelje hozzá ezt a szerepkört, ha elérhetővé válik. A beépített szerepkörökről további információt a [szerepköralapú hozzáférés-vezérlés](role-based-access-control.md)című témakörben talál.
 
 ### <a name="intune-roles-user-interface-changes-coming--5801612-idready--"></a>Az Intune-szerepkörök felhasználói felületének módosításai elérkeznek<!--5801612 idready-->
 A [Microsoft Endpoint Manager felügyeleti központ](https://go.microsoft.com/fwlink/?linkid=2109431) felhasználói felületének > **bérlői adminisztrációs** > **szerepkörei** egy sokkal felhasználóbarát és intuitív kialakításban lesznek módosítva. Ez a felhasználói élmény ugyanazokat a beállításokat és adatokat tartalmazza, amelyeket most használ, de az új felület egy varázsló-szerű folyamatot alkalmaz.

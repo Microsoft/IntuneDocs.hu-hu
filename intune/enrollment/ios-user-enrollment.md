@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d77a275e3a48845f56b22ecc21b75f664ea619c5
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 0872eef38e3ea5a70ebb64d3ae3c62069045fa97
+ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74691754"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76754624"
 ---
 # <a name="set-up-ios-and-ipados-user-enrollment-preview"></a>IOS-és iPadOS-felhasználói regisztráció beállítása (előzetes verzió)
 
@@ -54,23 +54,14 @@ A beléptetési profil meghatározza az eszközök egy csoportjára alkalmazott 
 
 3. Válassza a **Tovább** elemet.
 
-4. A **Beállítások** lapon megadhatja, hogy a felhasználók a kívánt regisztrációs típust használják. Másik lehetőségként beállíthatja az alapértelmezett értéket.
+4. A **Beállítások** lapon válassza az alábbi lehetőségek egyikét a **beléptetési típushoz**:
 
     ![Beállítások lap](./media/ios-user-enrollment/settings-page.png)
 
-    - Ha azt szeretné, hogy a profil összes felhasználója használhassa a felhasználói regisztrációt, kövesse az alábbi lépéseket:
-        1. Ahhoz, **hogy a felhasználó megkövetelje az eszköz típusának kiválasztását**, válassza a **nincs konfigurálva**lehetőséget.
-        2. Az **alapértelmezett regisztráció típusa**beállításnál válassza a **felhasználói regisztráció**lehetőséget.
-    - Ha azt szeretné, hogy a profil összes felhasználója használja az eszközök regisztrálását, kövesse az alábbi lépéseket:
-        1. Ahhoz, **hogy a felhasználó megkövetelje az eszköz típusának kiválasztását**, válassza a **nincs konfigurálva**lehetőséget.
-        2. Az **alapértelmezett regisztráció típusa**beállításnál válassza az **eszközök beléptetése**lehetőséget.
-    - Ha az ebben a csoportban lévő összes felhasználó számára meg szeretné adni, hogy melyik regisztrációs típust szeretné használni, válassza a **kötelező** lehetőséget, ha a **felhasználónak az eszköz típusának**kiválasztását igényli. Amikor a felhasználók regisztrálják az eszközeiket, választhatják, hogy az eszköz tulajdonosa és a **(vállalat) tulajdonában** **van** -e az eszköz. Ha az előbbi lehetőséget választja, az eszköz regisztrálása a felhasználói regisztráció használatával történik. Ha az utóbbit választják, az eszköz regisztrálása az eszközök regisztrálásával történik. Ha a felhasználó úgy dönt, hogy az **eszköz tulajdonosa**, akkor egy másik lehetőség is gondoskodik a teljes eszköz védelméről, vagy csak a biztonságos munkavégzéssel kapcsolatos alkalmazások és adatmennyiségek biztonságáról. A végfelhasználó választása, hogy az eszköz csak az eszközön megvalósított regisztrációs típust határozza meg. Ez a felhasználói döntés nem jelenik meg az Intune-ban az eszköz tulajdonjoga attribútumban. További információ a felhasználói élményről: [IOS-eszköz hozzáférésének beállítása a vállalati erőforrásokhoz](https://docs.microsoft.com/intune-user-help/enroll-your-device-in-intune-ios).
+    - **Eszközök beléptetése**: a profil összes felhasználója az eszközök regisztrálását fogja használni.
+    - **Felhasználó beléptetése**: a profil összes felhasználója a felhasználó beléptetését fogja használni.
+    - **Döntés a felhasználó választása alapján**: a csoport összes felhasználója megadhatja, hogy melyik regisztrációs típust kívánja használni. Amikor a felhasználók regisztrálják az eszközeiket, egy lehetőség közül választhatnak, hogy az eszköz tulajdonosa és a **(vállalat) tulajdonában** **van** -e az eszköz. Ha az utóbbit választják, az eszköz regisztrálása az eszközök regisztrálásával történik. Ha a felhasználó úgy dönt, hogy az **eszköz tulajdonosa**, akkor egy másik lehetőség is gondoskodik a teljes eszköz védelméről, vagy csak a biztonságos munkavégzéssel kapcsolatos alkalmazások és adatmennyiségek biztonságáról. A végfelhasználó annak kiválasztása, hogy az eszköz tulajdonosa-e, meghatározza, hogy a regisztráció milyen típusú legyen implementálva az eszközön. Ezt a felhasználói választ az Intune-ban található eszköz tulajdonosi attribútuma is tükrözi. További információ a felhasználói élményről: [IOS-eszköz hozzáférésének beállítása a vállalati erőforrásokhoz](https://docs.microsoft.com/intune-user-help/enroll-your-device-in-intune-ios).
     
-    > [!NOTE]
-    > A következő értesítés pontatlan, és el lesz távolítva a felhasználói felületen.
-    > "A felhasználói regisztrációt célzó eszközökön való feltételes hozzáféréshez a Azure Authenticator alkalmazást kötelező alkalmazásként kell leküldeni a felhasználói csoport számára az egyszeri bejelentkezés és a Workplace Join engedélyezéséhez."
-    > Rendszergazdaként nem kell végrehajtania semmilyen műveletet a hitelesítő alkalmazás felhasználóknak való leküldéséhez. A rendszer arra Céges portál utasítja a felhasználókat, hogy telepítse a hitelesítő alkalmazást a felhasználó beléptetési folyamatának elvégzéséhez, hogy ezek a forgatókönyvek megfelelően működjenek.
-
 5. Válassza a **Tovább** elemet.
 
 6. A **hozzárendelések** lapon válassza ki azokat a felhasználói csoportokat, amelyek azokat a felhasználókat tartalmazzák, amelyekhez hozzá szeretné rendelni ezt a profilt. Kiválaszthatja, hogy a profilt az összes felhasználóhoz vagy adott csoporthoz rendeli. A kiválasztott csoportokba tartozó összes felhasználó a fent kiválasztott beléptetési típust fogja használni. Az eszközbeállítások nem támogatottak a felhasználói beléptetési forgatókönyvek esetében, mert a szolgáltatás felhasználói identitásokon alapul, és nem az eszközökön. Kiválaszthatja, hogy a profilt az összes felhasználóhoz vagy adott csoporthoz rendeli.

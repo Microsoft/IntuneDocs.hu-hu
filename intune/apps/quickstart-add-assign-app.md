@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d09857c4e5b63947a6e3b3140f673f0887f7f920
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 40337b3c45885dacf486173814044a27b7f3f6cc
+ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74563407"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76755068"
 ---
 # <a name="quickstart-add-and-assign-a-client-app"></a>Rövid útmutató: Ügyfélalkalmazás hozzáadása és hozzárendelése
 
@@ -45,20 +45,18 @@ Az alkalmazás belefoglalásával az Intune kezelheti annak részleteit.
 
 A következő lépéseket követve adjon hozzá egy alkalmazást az Intune-hoz:
 1. Az [Intune](https://aka.ms/intuneportal)-ban válassza az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**lehetőséget. 
-2. Válassza a **Windows 10** lehetőséget az **Alkalmazástípus** legördülő mező **Office 365 csomag** szakaszában.
-3. A hozzárendelni kívánt Office-alkalmazások kiválasztásához válassza az **Alkalmazáscsomag konfigurálása** lehetőséget.
-4. Az alapértelmezett alkalmazások elfogadásához kattintson az **OK** gombra.
-5. Válassza az **Alkalmazáscsomag adatai** lehetőséget.
-6. Adja meg a **Microsoft Office 365 alkalmazáscsomag** kifejezést a **csomag neveként**.
-7. A **csomag leírásaként**adja meg **a Microsoft Office 365 App Suite** -t.
-8. A **Megjelenítés kiemelt alkalmazásként a Céges portálon** lehetőségnél kattintson az **Igen** gombra.
-9. Kattintson az **OK**gombra.
-
-    ![Képernyőkép az alkalmazás adatainak hozzáadásáról](./media/quickstart-add-assign-app/quickstart-add-assign-app-01.png)
-
-10. Válassza az **Alkalmazáscsomag beállításai** lehetőséget.
-11. A **Frissítési csatorna** legördülő mezőben válassza a **Havonta** elemet.
-12. Kattintson az **OK** > **Hozzáadás** lehetőségre.
+2. Az **alkalmazás típusának kiválasztása** ablaktábla **Office 365 Suite** szakaszában válassza a **Windows 10** lehetőséget.
+3. Kattintson a **Kiválasztás** lehetőségre. Megjelenik az **alkalmazás hozzáadása** lépések.
+4. Erősítse meg az alapértelmezett részleteket az **App Suite-információk** lapon.
+5. Az **App Suite konfigurálása** lap megjelenítéséhez kattintson a **tovább** gombra.
+6. A **frissítési csatorna** mellett válassza a **havonta** lehetőséget a legördülő listából.
+7. Erősítse meg a fennmaradó alapértelmezett részleteket az ***App Suite konfigurálása** lapon.
+8. Kattintson a **tovább** gombra a **hatókör címkék** oldal megjelenítéséhez.
+9. Kattintson a **hatókör címkék kiválasztása** lehetőségre, hogy felvegye a hatókör címkéit az alkalmazáshoz. További információ: [a szerepköralapú hozzáférés-vezérlés (RBAC) és a hatókör-címkék használata a terjesztéshez](~/fundamentals/scope-tags.md).
+10. A **hozzárendelések** lap megjelenítéséhez kattintson a **tovább** gombra.
+11. Válassza ki az alkalmazás csoportjának hozzárendeléseit. További információ: [csoportok hozzáadása a felhasználók és eszközök rendszerezéséhez](~/fundamentals/groups-add.md). 
+12. Kattintson a **tovább** gombra a **felülvizsgálat + létrehozás** lap megjelenítéséhez. Tekintse át az alkalmazáshoz megadott értékeket és beállításokat.
+13. Ha elkészült, kattintson a **Létrehozás** gombra, hogy hozzáadja az alkalmazást az Intune-hoz.
 
 ## <a name="assign-the-app-to-a-group"></a>Az alkalmazás csoporthoz rendelése
 
@@ -93,7 +91,7 @@ Az Intune-on keresztül elérhető **Contoso To-Do** alkalmazás telepítéséhe
     > [!NOTE]
     > Ha nem sikerült alkalmazásokat hozzárendelni az Intune-felhasználóhoz, a következő üzenet jelenik meg: *A rendszergazda nem tetten elérhetővé ezeket az alkalmazásokat.*
 
-5. Kattintson az **Install** (Telepítés) gombra.
+5. Kattintson a **Telepítés** gombra.
 
 Ha a cég megköveteli a Céges portál alkalmazottakhoz való hozzárendelését, a Windows 10-es Céges portál alkalmazás hozzárendelése manuálisan is elvégezhető közvetlenül az Intune-ból. További információ: [A Windows 10-es Céges portál alkalmazás manuális hozzáadása a Microsoft Intune-nal](../company-portal-app.md).
 

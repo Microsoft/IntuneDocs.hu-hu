@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 39978043428f6ad912832007f60628815d6549a6
-ms.sourcegitcommit: fb72b19986f34907d228c856d2e6949751ec02a1
+ms.openlocfilehash: f99479200e66b080e107475f0a031c5756da6051
+ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75920073"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76754575"
 ---
 # <a name="ios-and-ipados-device-settings-to-allow-or-restrict-features-using-intune"></a>iOS-és iPadOS-eszközök beállításai az Intune-t használó funkciók engedélyezéséhez vagy korlátozásához
 
@@ -223,7 +223,7 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
   Ez a funkció az alábbiakra vonatkozik:  
   - iOS 11,0 és újabb verziók
   
-<sup>1</sup> Ha a képernyő zárolása ennyi **perc inaktivitás** után és a **Képernyő zárolása után legfeljebb perccel a jelszó megadása után beállítás van** beállítva, akkor azokat a rendszer sorrend szerint alkalmazza. Ha például mindkét beállítás értékét **5** percre állítja be, a képernyő öt perc elteltével automatikusan kikapcsol, és az eszköz további öt perc múlva zárolva lesz. Ha azonban a felhasználó manuálisan kapcsolja ki a képernyőt, azonnal a második beállítás lesz alkalmazva. Ugyanebben a példában azt követően, hogy a felhasználó kikapcsolta a képernyőt, öt perccel később zárolja az eszközt.
+<sup>1</sup> ha a képernyő zárolása ennyi **perc inaktivitás** után és a **képernyőfelvétel után legfeljebb perccel a jelszó megadása után** beállítás van megadva, akkor a rendszer az alkalmazásokban alkalmazza őket. Ha például mindkét beállítás értékét **5** percre állítja be, a képernyő öt perc elteltével automatikusan kikapcsol, és az eszköz további öt perc múlva zárolva lesz. Ha azonban a felhasználó manuálisan kapcsolja ki a képernyőt, azonnal a második beállítás lesz alkalmazva. Ugyanebben a példában azt követően, hogy a felhasználó kikapcsolta a képernyőt, öt perccel később zárolja az eszközt.
 
 ## <a name="locked-screen-experience"></a>Zárolási képernyő felülete
 
@@ -313,7 +313,7 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
 
 - **Safari cookie-k**: válassza ki, hogyan történjen a cookie-k kezelése az eszközön. A választható lehetőségek:
   - Engedélyezett
-  - Az összes cookie blokkolása:
+  - Az összes cookie letiltása
   - Cookie-k engedélyezése a felkeresett webhelyekről
   - Cookie-k engedélyezése a jelenlegi webhelyről
 
@@ -636,7 +636,7 @@ Az iOS Supervised (Felügyelt) módja csak a kezdeti eszközbeállítás során,
 
 - App Lock (Egyetlen alkalmazás mód) 
 - Globális HTTP-Proxy 
-- Aktiválási zár megkerülése 
+- Aktiválási zár letiltása 
 - Önálló egyetlen alkalmazás mód 
 - Webtartalomszűrő 
 - Háttér és zárolási képernyő beállítása 
@@ -676,7 +676,7 @@ Az iOS Supervised (Felügyelt) módja csak a kezdeti eszközbeállítás során,
 > - Durva tartalom
 > - iCloud dokumentumok és adatok
 > - Több résztvevős játék
-> - Barátok hozzáadása a Game Centerben
+> - Game Center ismerősök hozzáadása
 > - Siri
 
 ## <a name="next-steps"></a>További lépések

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7170f723707ef709ef464b35bc3f6d3297341cf1
-ms.sourcegitcommit: de663ef5f3e82e0d983899082a7f5b62c63f24ef
+ms.openlocfilehash: 099d68568cd920c9ae3f328b4e9fba95424e46fd
+ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75956215"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76755272"
 ---
 # <a name="add-apps-to-microsoft-intune"></a>Alkalmazások hozzáadása a Microsoft Intune-hoz 
 
@@ -74,10 +74,10 @@ A következő táblázatban megtekintheti a konkrét alkalmazástípusokat és a
 
 <sup>1</sup> az Android Enterprise és Android rendszerű munkahelyi profilokkal kapcsolatos további információkért lásd az alábbi [licencelt alkalmazások ismertetése](apps-add.md#understanding-licensed-apps) című témakört.
 
-Microsoft Intune az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**elem kiválasztásával adhat hozzá egy alkalmazást. Megjelenik az **Alkalmazás hozzáadása** panel, ahol kiválaszthatja az **alkalmazás típusát**. 
+Microsoft Intune az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**elem kiválasztásával adhat hozzá egy alkalmazást. Megjelenik az **alkalmazás típusának kiválasztása** ablaktábla, és lehetővé teszi az **alkalmazás típusának**kiválasztását. 
 
 >[!TIP]
-> Az üzletági (LOB) alkalmazásokat egy alkalmazástelepítő fájlból adja hozzá. Egy iOS LOB-alkalmazás telepítéséhez például az **Alkalmazás hozzáadása** panel **Alkalmazás típusa** részén az **Üzletági alkalmazás** beállítás megadásával adhatja hozzá az alkalmazást. Ezután válassza ki az alkalmazáscsomag (.ipa kiterjesztésű) fájlját. Az ilyen típusú alkalmazások általában belső fejlesztésűek.
+> Az üzletági (LOB) alkalmazásokat egy alkalmazástelepítő fájlból adja hozzá. Az iOS LOB-alkalmazások telepítéséhez például az alkalmazás **típusának kiválasztása** ablaktáblán az üzletági **alkalmazás** lehetőség kiválasztásával adhatja hozzá az alkalmazást. Ezután válassza ki az alkalmazáscsomag (.ipa kiterjesztésű) fájlját. Az ilyen típusú alkalmazások általában belső fejlesztésűek.
 
 ## <a name="assess-app-requirements"></a>Alkalmazáskövetelmények értékelése
 Rendszergazdaként nem csak azt kell meghatároznia, hogy mely alkalmazásokra lesz szüksége a csapatának, hanem azt is, hogy az egyes csoportoknak és alcsoportoknak milyen funkciókra lesz szükségük. Minden alkalmazáshoz meg kell határoznia a szükséges platformokat, az alkalmazásra igényt tartó felhasználói csoportokat, a csoportokra alkalmazandó konfigurációs szabályzatokat és az alkalmazandó védelmi szabályzatokat.  

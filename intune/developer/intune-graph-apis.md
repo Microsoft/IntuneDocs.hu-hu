@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1a5381d139247424d976b6b510d62681f623203a
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: ac63ef1f35e7b4730e275c6c9e566c53463c72ce
+ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72490507"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76754796"
 ---
 # <a name="how-to-use-azure-ad-to-access-the-intune-apis-in-microsoft-graph"></a>Az Azure AD használata az Intune API-k elérésére a Microsoft Graphban
 
@@ -68,7 +68,7 @@ Ha alkalmazásokat szeretne regisztrálni a Microsoft Graph API használatához:
     - A bérlői rendszergazdafiókot.
     - Olyan bérlői felhasználói fiókot, amelyen engedélyezve van **A felhasználók regisztrálhatnak alkalmazásokat** beállítás.
 
-2. A menüben válassza az **Azure Active Directory** &gt; **Alkalmazásregisztrációk** elemet.
+2. A menüből válassza **Azure Active Directory** &gt; alkalmazás- **regisztrációk**lehetőséget.
 
     <img src="../media/azure-ad-app-reg.png" width="157" height="170" alt="The App registrations menu command" />
 
@@ -90,15 +90,15 @@ Ha alkalmazásokat szeretne regisztrálni a Microsoft Graph API használatához:
 
     1. Jegyezze fel az **Alkalmazás azonosítója** mező értékét.
 
-    2. Válassza a **Beállítások** &gt; **API-hozzáférés** &gt; **Szükséges engedélyek** lehetőséget.
+    2. Válassza a **beállítások** &gt; **API-hozzáférés** &gt; **szükséges engedélyek**lehetőséget.
 
     <img src="../media/azure-ad-req-perm.png" width="483" height="186" alt="The Required permissions setting" />
 
-6. A **Szükséges engedélyek** panelen válassza a **Hozzáadás** &gt; **API-hozzáférés hozzáadása** &gt; **API kiválasztása** lehetőséget.
+6. A **szükséges engedélyek** panelen válassza a **Hozzáadás** &gt; **API-hozzáférés hozzáadása** &gt; **válasszon ki egy API**-t.
 
     <img src="../media/azure-ad-add-graph.png" width="436" height="140" alt="The Microsoft Graph setting" />
 
-7. Az **API kiválasztása** panelen válassza a **Microsoft Graph** &gt; **Kiválasztás** lehetőséget.  Ekkor megnyílik a **Hozzáférés engedélyezése** panel, amelyen látható az alkalmazás számára elérhető engedélyhatókörök listája.
+7. Az **API kiválasztása** panelen válassza a **Microsoft Graph** &gt; a **kijelölés**elemet.  Ekkor megnyílik a **Hozzáférés engedélyezése** panel, amelyen látható az alkalmazás számára elérhető engedélyhatókörök listája.
 
     <img src="../media/azure-ad-perm-scopes.png" width="489" height="248" alt="Intune Graph API permission scopes" />
 
@@ -240,7 +240,7 @@ Jelenleg minden Intune-engedélyhatókörhöz rendszergazdai hozzáférés szük
 
 - A következő távoli műveletek szintén engedélyezettek:
   - Eszközök megkeresése
-  - Aktiválási zár megkerülése
+  - Aktiválási zár letiltása
   - Távsegítség kérése
 
 ### <a name="rac-ro"></a>DeviceManagementRBAC.Read.All
@@ -344,7 +344,7 @@ Az alábbi példa az Intune-fiókhoz társított eszközök C#-kód használatá
 3. Adja hozzá a projekthez a Microsoft ADAL NuGet-csomagot a Megoldáskezelő segítségével.
 
     1. Kattintson a jobb gombbal a Megoldáskezelőre.
-    2. Válassza a **Manage NuGet-Packages…** (NuGet-csomagok kezelése) &gt; **Browse** (Tallózás) lehetőséget.
+    2. Válassza a **Manage NuGet-Packages…** (NuGet-csomagok kezelése) &gt; **Tallózás**.
     3. Válassza ki a `Microsoft.IdentityModel.Clients.ActiveDirectory` elemet, majd kattintson az **Install** (Telepítés) elemre.
 
     <img src="../media/aad-auth-cpp-install-package.png" width="624" height="458" alt="Selecting the Azure AD identity model module" />

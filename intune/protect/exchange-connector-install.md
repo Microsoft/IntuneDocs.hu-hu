@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/18/2019
+ms.date: 01/24/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,25 +18,26 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 62db99fc2e47bdfa1a767db3bb2916649dedc074
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 7d00fec5efd9caa54c7f481389e3993e9797699c
+ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74164690"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76755728"
 ---
 # <a name="set-up-the-on-premises-intune-exchange-connector"></a>A helyszíni Intune Exchange Connector beállítása
-Az Exchange-hez való hozzáférés védelmének elősegítése érdekében az Intune a Microsoft Intune Exchange Connector néven ismert helyszíni összetevőre támaszkodik. Ezt az összekötőt a helyszíni *Exchange ActiveSync-összekötőnek* is nevezik az Intune-konzol egyes helyein. 
 
-A cikkben található információk segítségével telepítheti és figyelheti az Intune Exchange Connectort. Az összekötőt a [feltételes hozzáférési szabályzatok](conditional-access-exchange-create.md) segítségével engedélyezheti vagy letilthatja a helyszíni Exchange-postaládák elérését. 
+Az Exchange-hez való hozzáférés védelmének elősegítése érdekében az Intune a Microsoft Intune Exchange Connector néven ismert helyszíni összetevőre támaszkodik. Ezt az összekötőt a helyszíni *Exchange ActiveSync-összekötőnek* is nevezik az Intune-konzol egyes helyein.
+
+A cikkben található információk segítségével telepítheti és figyelheti az Intune Exchange Connectort. Az összekötőt a [feltételes hozzáférési szabályzatok](conditional-access-exchange-create.md) segítségével engedélyezheti vagy letilthatja a helyszíni Exchange-postaládák elérését.
 
 Az összekötő telepítve van, és a helyszíni hardveren fut. Felfedi az Exchange-hez csatlakozó eszközöket, és az eszköz adatait az Intune szolgáltatással kommunikálja. Az összekötő lehetővé teszi, hogy az eszközök regisztrálása és megfelelősége alapján engedélyezi vagy blokkolja az eszközöket. Ezek a kommunikáció a HTTPS protokollt használják.
 
-Amikor egy eszköz megpróbál hozzáférni a helyszíni Exchange-kiszolgálóhoz, az Exchange Connector Maps Exchange ActiveSync-(EAS-) rekordokat hoz az Exchange Server Intune-rekordjaihoz, így biztosítva, hogy az eszköz regisztrálva legyen az Intune-ban, és megfelel az eszköz szabályzatának. A feltételes hozzáférési szabályzattól függően az eszköz engedélyezhető vagy letiltható. További információ: [Mi a feltételes hozzáférés használatának gyakori módjai az Intune](conditional-access-intune-common-ways-use.md) -ban?
+Amikor egy eszköz megpróbál hozzáférni a helyszíni Exchange-kiszolgálóhoz, az Exchange Connector leképezi az Exchange ActiveSync-(EAS-) rekordokat az Exchange Serverben az Intune-rekordokhoz, hogy az eszköz regisztrálva legyen az Intune-ban, és megfeleljen az eszköz szabályzatának. A feltételes hozzáférési szabályzattól függően az eszköz engedélyezhető vagy letiltható. További információ: [Mi a feltételes hozzáférés használatának gyakori módjai az Intune](conditional-access-intune-common-ways-use.md) -ban?
 
-A *felderítési* és az *engedélyezési és a blokkolási* műveletek is szabványos Exchange PowerShell-parancsmagokkal hajthatók végre. Ezek a műveletek az Exchange Connector első telepítésekor megadott szolgáltatásfiókot használják. 
+A *felderítési* és az *engedélyezési és a blokkolási* műveletek is szabványos Exchange PowerShell-parancsmagokkal hajthatók végre. Ezek a műveletek az Exchange Connector első telepítésekor megadott szolgáltatásfiókot használják.
 
-Az Intune-előfizetések esetében több Intune Exchange-összekötő telepítése is támogatott. Ha több helyszíni Exchange-szervezettel rendelkezik, mindegyikhez beállíthat külön összekötőt. Az egyes Exchange-szervezetekhez azonban csak egy összekötő telepíthető.  
+Az Intune-előfizetések esetében több Intune Exchange-összekötő telepítése is támogatott. Ha egynél több helyszíni Exchange-szervezettel rendelkezik, külön összekötőt állíthat be mindegyikhez. Az egyes Exchange-szervezetekhez azonban csak egy összekötő telepíthető.  
 
 Kövesse az alábbi általános lépéseket egy olyan kapcsolat beállításához, amely lehetővé teszi az Intune számára a helyszíni Exchange Serverrel való kommunikációt:
 
@@ -84,9 +85,12 @@ Az Intune Exchange Connectort támogató Windows Serveren:
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).  Olyan fiókot használjon, amely rendszergazda a helyszíni Exchange-kiszolgálón, és amely rendelkezik az Exchange Server használatára szolgáló licenccel.
 
-2. Válassza a **bérlői felügyelet** > **Exchange-hozzáférés**lehetőséget.  
+2. Válassza a **bérlői felügyelet** > **Exchange-hozzáférés**lehetőséget.
 
 3. A **telepítés**területen válassza az **Exchange ActiveSync helyszíni összekötő** lehetőséget, majd válassza a **Hozzáadás**lehetőséget.
+
+   > [!div class="mx-imgBorder"]
+   > ![Exchange ActiveSync helyszíni összekötő hozzáadása](./media/exchange-connector-install/add-connector.png)
 
 4. Az **összekötő hozzáadása** lapon válassza a helyszíni **összekötő letöltése**lehetőséget. Az Intune Exchange Connector egy tömörített (. zip) mappában található, amely megnyitható vagy menthető. A **Fájl letöltése** párbeszédpanelen kattintson a **Mentés** gombra a tömörített mappa biztonságos helyen való tárolásához.
 
@@ -127,9 +131,9 @@ Az Intune Exchange Connector telepítéséhez kövesse az alábbi lépéseket. H
 
        1. Válassza az **OK** gombot.
 
-4. A **felhasználó (tartomány \ Felhasználónév)** és a **jelszó** mezőkben adja meg az Exchange-kiszolgálóhoz való kapcsolódáshoz szükséges hitelesítő adatokat. A megadott fióknak rendelkeznie kell egy, az Intune használatához szükséges licenccel. 
+4. A **felhasználó (tartomány \ Felhasználónév)** és a **jelszó** mezőkben adja meg az Exchange-kiszolgálóhoz való kapcsolódáshoz szükséges hitelesítő adatokat. A megadott fióknak rendelkeznie kell egy, az Intune használatához szükséges licenccel.
 
-5. Adja meg a hitelesítő adatokat az értesítések egy felhasználó Exchange Server-postaládába való küldéséhez. Ezt a felhasználót dedikálhatja kizárólag az értékesítésekre. Az értesítések felhasználónak Exchange-postaládára van szüksége az értesítések e-mailben való elküldéséhez. Ezeket az értesítéseket feltételes hozzáférési szabályzatok használatával konfigurálhatja az Intune-ban.  
+5. Adja meg a hitelesítő adatokat az értesítések egy felhasználó Exchange Server-postaládába való küldéséhez. Ezt a felhasználót dedikálhatja kizárólag az értékesítésekre. Az értesítések felhasználónak Exchange-postaládára van szüksége az értesítések e-mailben való elküldéséhez. Ezeket az értesítéseket feltételes hozzáférési szabályzatok használatával konfigurálhatja az Intune-ban.
 
    Győződjön meg arról, hogy az automatikus észlelés szolgáltatás és az Exchange-webszolgáltatások konfigurálva vannak az Exchange HITELESÍTÉSSZOLGÁLTATÓKon. Az ezzel kapcsolatos további információkért lásd: [Ügyfélelérési kiszolgáló](https://technet.microsoft.com/library/dd298114.aspx).
 
@@ -145,14 +149,14 @@ Az Intune Exchange Connector telepítéséhez kövesse az alábbi lépéseket. H
 
 A konfigurálás során az Exchange Connector tárolja a proxybeállításokat az Internet elérésének engedélyezéséhez. Ha a proxybeállítások módosulnak, konfigurálja újra az Exchange Connectort, hogy alkalmazza a frissített proxybeállításokat az Exchange connectorra.
 
-Miután az Exchange Connector létrehozta a csatlakozást, a rendszer automatikusan szinkronizálja és hozzáadja az Exchange-összekötőt az Exchange által felügyelt felhasználókhoz társított mobileszközök számára. Ez a szinkronizálás hosszabb időt is igénybe vehet.
+Miután az Exchange Connector létrehozta a csatlakozást, a rendszer automatikusan szinkronizálja és hozzáadja az Exchange-összekötőt az Exchange által felügyelt felhasználókhoz társított mobileszközök számára. Ez a szinkronizálás eltarthat egy ideig.
 
 > [!NOTE]
 > Ha telepíti az Intune Exchange Connectort, és később törölnie kell az Exchange-csatlakozást, el kell távolítania az összekötőt arról a számítógépről, amelyre telepítették.
 
 ## <a name="install-connectors-for-multiple-exchange-organizations"></a>Összekötők telepítése több Exchange-szervezethez
 
-Az Intune-előfizetések esetében több Intune Exchange-összekötőt is támogat. Több Exchange-szervezettel rendelkező bérlő esetében csak egy összekötőt állíthat be minden Exchange-szervezethez. 
+Az Intune-előfizetések esetében több Intune Exchange-összekötőt is támogat. Több Exchange-szervezettel rendelkező bérlő esetében csak egy összekötőt állíthat be minden Exchange-szervezethez.
 
 Ha az összekötőket több Exchange-szervezethez való csatlakozásra szeretné telepíteni, töltse le egyszer a. zip mappát. Ugyanezt a letöltést használja az egyes telepített összekötők esetében. Minden további összekötő esetében kövesse az előző szakaszban leírt lépéseket a telepítőprogram kinyeréséhez és futtatásához az Exchange-szervezeten belüli kiszolgálón.
 
@@ -160,7 +164,7 @@ Az Intune-hoz csatlakozó összes Exchange-szervezet támogatja a magas rendelke
 
 ## <a name="on-premises-intune-exchange-connector-high-availability-support"></a>Helyszíni Intune Exchange Connector – magas rendelkezésre állás támogatása  
 
-A helyszíni összekötő esetében a magas rendelkezésre állás azt jelenti, hogy ha az összekötő által használt Exchange CAS elérhetetlenné válik, az összekötő átválthat az adott Exchange-szervezethez tartozó más HITELESÍTÉSSZOLGÁLTATÓKra. Az Exchange Connector maga nem támogatja a magas rendelkezésre állást. Ha az összekötő meghibásodik, nincs automatikus feladatátvétel. A sikertelen összekötő cseréjéhez [telepítenie kell egy új összekötőt](#reinstall-the-intune-exchange-connector) .
+A helyszíni összekötő esetében a magas rendelkezésre állás azt jelenti, hogy ha az összekötő által használt Exchange CAS elérhetetlenné válik, az összekötő átválthat az adott Exchange-szervezethez tartozó más HITELESÍTÉSSZOLGÁLTATÓKra. Az Exchange Connector maga nem támogatja a magas rendelkezésre állást. Ha az összekötő meghibásodik, nincs automatikus feladatátvétel, és [telepítenie kell egy új összekötőt](#reinstall-the-intune-exchange-connector) a sikertelen összekötő cseréjéhez.
 
 A feladatátvételhez az összekötő a megadott HITELESÍTÉSSZOLGÁLTATÓK használatával hozza létre az Exchange-hez való sikeres kapcsolódást. Ezután felfedi a további CASst az adott Exchange-szervezet számára. Ez a felderítés lehetővé teszi, hogy az összekötő átadja a feladatátvételt egy másik CAS számára, ha van ilyen, amíg az elsődleges CAS elérhetővé nem válik.
 
@@ -203,22 +207,22 @@ Előfordulhat, hogy újra kell telepítenie az Intune Exchange Connectort. Mivel
 
 3. Folytassa az [Intune Exchange Connector telepítése és konfigurálása](#install-and-configure-the-intune-exchange-connector) című szakasz lépéseit, majd jelentkezzen be újra az Intune-ba.
 
-4. A végső ablakban kattintson a **Bezárás** gombra a telepítés befejezéséhez.
-   ![a telepítő befejezése](./media/exchange-connector-install/successful-reinstall.png)
+4. A végső ablakban válassza a **Bezárás** lehetőséget a telepítés befejezéséhez.
+   ![teljes telepítő](./media/exchange-connector-install/successful-reinstall.png)
 
 ## <a name="monitor-an-exchange-connector"></a>Exchange-összekötő figyelése
 
-Miután sikeresen konfigurálta az Exchange Connectort, megtekintheti a kapcsolatok állapotát és a legutóbbi sikeres szinkronizálási kísérletet.
+Miután sikeresen konfigurálta az Exchange Connectort, megtekintheti a kapcsolatok állapotát és a legutóbbi sikeres szinkronizálási kísérletet:
 
-Az Exchange Connector-kapcsolatok ellenőrzése:
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-1. Az Intune irányítópultján válassza az **Exchange-hozzáférés**lehetőséget.
+2. Válassza a **bérlői felügyelet** > **Exchange-hozzáférés**lehetőséget.
 
-2. Válassza a **helyszíni Exchange-hozzáférés** lehetőséget az egyes Exchange-összekötők kapcsolati állapotának ellenőrzéséhez.
+3. Válassza az **Exchange ActiveSync helyszíni összekötő**lehetőséget, majd válassza ki a megtekinteni kívánt összekötőt.
 
-Ellenőrizheti a legutóbbi sikeres szinkronizálási kísérlet dátumát és időpontját is.
+4. A konzol megjeleníti a kiválasztott összekötő részleteit, ahol megtekintheti az utolsó sikeres szinkronizálás **állapotát** és dátumát és időpontját.
 
-Az Intune 1710-as verziótól kezdődően az [Exchange Connector és az intune System Center Operations Manager felügyeleti csomagja](https://www.microsoft.com/download/details.aspx?id=55990&751be11f-ede8-5a0c-058c-2ee190a24fa6=True&e6b34bbe-475b-1abd-2c51-b5034bcdd6d2=True&fa43d42b-25b5-4a42-fe9b-1634f450f5ee=True)is használható. A felügyeleti csomag különböző módokon figyeli az Exchange Connectort, amikor problémákba ütközik.
+A konzolon belüli állapot mellett használhatja a [System Center Operations Manager felügyeleti csomagot az Exchange connectorhoz és az Intune](https://www.microsoft.com/download/details.aspx?id=55990&751be11f-ede8-5a0c-058c-2ee190a24fa6=True&e6b34bbe-475b-1abd-2c51-b5034bcdd6d2=True&fa43d42b-25b5-4a42-fe9b-1634f450f5ee=True)-hoz. A felügyeleti csomag különböző módokon figyeli az Exchange Connectort, amikor problémákba ütközik.
 
 ## <a name="manually-force-a-quick-sync-or-full-sync"></a>Gyors szinkronizálás vagy teljes szinkronizálás manuális kényszerítése
 
@@ -230,11 +234,14 @@ Az Intune Exchange Connector rendszeresen szinkronizálja az EAS-és az Intune-e
 
 Az Intune-irányítópulton a **gyors szinkronizálás** vagy a **teljes szinkronizálás** lehetőség használatával kényszerítheti az összekötők szinkronizálásának futtatását:
 
-   1. Az Intune irányítópultján válassza az **Exchange-hozzáférés**lehetőséget.
+   1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-   2. Válassza **a helyszíni Exchange-hozzáférés**lehetőséget.
+   2. Válassza a **bérlői felügyelet** > **exchange-hozzáférés** >  **Exchange ActiveSync helyszíni összekötőt**.
 
-   3. Válassza a szinkronizálni kívánt összekötőt, majd válassza a **Gyors szinkronizálás** vagy a **Teljes szinkronizálás** lehetőséget.
+   3. Válassza ki a szinkronizálni kívánt összekötőt, majd válassza a gyors szinkronizálás vagy a teljes szinkronizálás lehetőséget.
+
+   > [!div class="mx-imgBorder"]
+   > ![példa az összekötő részleteinek képernyőképére](./media/exchange-connector-install/connector-details.png)
 
 ## <a name="next-steps"></a>További lépések
 

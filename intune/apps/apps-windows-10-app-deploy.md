@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 01/21/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c9d792bd07ae8d7d712748874d64314dd258c5e8
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 58f6c4e2c99c7e2c169014a71bb1cfd2bc85219b
+ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74563946"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76755238"
 ---
 # <a name="windows-10-app-deployment-by-using-microsoft-intune"></a>Windows 10-es alkalmazások központi telepítése Microsoft Intune használatával 
 
@@ -39,6 +39,26 @@ A Windows 10-es eszközökön támogatott alkalmazástípusok az üzleti alkalma
 > Csak a Windows 10 1803-es és újabb verziói támogatják az alkalmazások telepítését, ha nincs hozzárendelve elsődleges felhasználó.
 >
 > A LOB-alkalmazások telepítése nem támogatott a Windows 10 Home kiadásait futtató eszközökön.
+
+## <a name="supported-windows-10-app-types"></a>Támogatott Windows 10-es alkalmazások típusai
+
+Az egyes alkalmazás-típusok a Windows 10 azon verziója alapján támogatottak, amelyen a felhasználók futnak. A következő táblázat az alkalmazás típusát és a Windows 10 támogatását tartalmazza.
+
+| Alkalmazás típusa | Otthoni | Pro | Üzleti | Enterprise | Oktatás | S üzemmód | Hololense | SurfaceHub | WCOS | Mobil |
+|----------------|------|-----|----------|------------|-----------|--------|-----------|------------|------|--------|
+|  . MSI | Nem | Igen | Igen | Igen | Igen | Nem | Nem | Nem | Nem | Nem |
+| . IntuneWin | Nem | Igen | Igen | Igen | Igen | 19H2 + | Nem | Nem | Nem | Nem |
+| Office-C2R | Nem | Igen | Igen | Igen | Igen | Nem | Nem | Nem | Nem | Nem |
+| LOB: APPX/MSIX | Igen | Igen | Igen | Igen | Igen | Igen | Igen | Igen | Igen | Igen |
+| MSFB offline | Igen | Igen | Igen | Igen | Igen | Igen | Igen | Igen | Igen | Igen |
+| Online MSFB | Igen | Igen | Igen | Igen | Igen | Igen | RS4 + | Igen | Igen | Igen |
+| Webalkalmazások | Igen | Igen | Igen | Igen | Igen | Igen | Igen<sup>1 | Igen<sup>1 | Igen | Igen |
+| Tár hivatkozása | Igen | Igen | Igen | Igen | Igen | Igen | Igen | Igen | Igen | Igen |
+
+<sup>1</sup> indítás csak a vállalati portálról.
+
+> [!NOTE]
+> Minden Windows-alkalmazás típusához regisztráció szükséges.
 
 ## <a name="windows-10-lob-apps"></a>Windows 10 LOB-alkalmazások
 
@@ -84,7 +104,7 @@ Ha egyetlen felhasználó vagy eszköz házirendje ütközik, a következő prio
 - Az eszközkörnyezetek szabályzatai magasabb prioritásúak a felhasználói környezetekéinél. 
 - A telepítési szabályzatok magasabb prioritásúak az eltávolításiaknál.
 
-További információ: [Alkalmazás-hozzárendelések belefoglalása vagy kizárása a Microsoft Intune-ban](apps-inc-exl-assignments.md). Az Intune-beli alkalmazástípusokat az [Alkalmazások hozzáadása a Microsoft Intune-hoz](apps-add.md) című cikk ismerteti.
+További információért lásd: [Alkalmazás-hozzárendelések belefoglalása vagy kizárása a Microsoft Intune-ban](apps-inc-exl-assignments.md). Az Intune-beli alkalmazástípusokat az [Alkalmazások hozzáadása a Microsoft Intune-hoz](apps-add.md) című cikk ismerteti.
 
 ## <a name="next-steps"></a>További lépések
 

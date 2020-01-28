@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4a03366037f9b0eced70f0375b3f4b39401e3141
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 8441a93a34af68a680aec2f48b3a5375fa74558c
+ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72509807"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76754303"
 ---
 # <a name="role-based-access-control-rbac-with-microsoft-intune"></a>Szerepköralapú hozzáférés-vezérlés (RBAC) Microsoft Intune
 
@@ -52,6 +52,7 @@ A csoportok számára további konfigurálás nélkül is hozzárendelhet beép�
 - **Alkalmazáskezelő**: Kezeli a mobil- és felügyelt alkalmazásokat, olvashatja az eszközadatokat, és megtekintheti az eszközkonfigurációs profilokat.
 - **Intune szerepkör-rendszergazda**: az egyéni Intune-szerepkörök kezelése és hozzárendelések hozzárendelése a beépített Intune-szerepkörökhöz. Ez az egyetlen Intune-szerepkör, amely engedélyeket rendelhet a rendszergazdákhoz.
 - **Iskolai rendszergazda**: a Windows 10-es eszközök kezelése a [Intune for Educationban](../introduction-intune-education.md).
+- **Endpoint Security Manager**: a biztonsági és megfelelőségi funkciók, például a biztonsági alapkonfigurációk, az eszközök megfelelősége, a feltételes hozzáférés és a Microsoft Defender ATP kezelése.
 
 ### <a name="custom-roles"></a>Egyéni szerepkörök
 Egyéni engedélyekkel saját szerepköröket is létrehozhat. További információ az egyéni szerepkörökről: [Egyéni szerepkör létrehozása](create-custom-role.md).
@@ -62,12 +63,12 @@ Egyéni engedélyekkel saját szerepköröket is létrehozhat. További informá
 | Globális rendszergazda | Olvasás/írás | Olvasás/írás |
 | Intune-szolgáltatásadminisztrátor | Olvasás/írás | Olvasás/írás |
 | Feltételes hozzáférésű rendszergazda | Nincsenek | Nincsenek |
-| Biztonsági rendszergazda | Csak olvasható | Csak olvasható |
+| Biztonsági rendszergazda | Csak olvasás (teljes körű rendszergazdai engedélyek a végpontok biztonsági csomópontja számára) | Csak olvasható |
 | Biztonsági operátor | Csak olvasható | Csak olvasható |
 | Biztonsági olvasó | Csak olvasható | Csak olvasható |
 | Megfelelőségi rendszergazda | Nincsenek | Csak olvasható |
 | Megfelelőségi adatkezelő | Nincsenek | Csak olvasható |
-| Globális olvasó | Csak olvasás | Csak olvasás |
+| Globális olvasó | Csak olvasható | Csak olvasható |
 
 > [!TIP]
 > Az Intune három Azure AD-bővítményt is megjelenít: **felhasználók**, **csoportok**és **feltételes hozzáférés**, amelyek az Azure ad RBAC vannak szabályozva. A **Felhasználóifiók-adminisztrátori** szerepkör csak az Azure AD-felhasználói vagy -csoporttevékenységek végrehajtására jogosít fel, és nem biztosít teljes körű engedélyt az összes Intune-beli tevékenységhez. További információ: [RBAC az Azure ad-vel](https://docs.microsoft.com/azure/active-directory/active-directory-assign-admin-roles).

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 93570bc9dab20801ea6681f6a142de62990a1c57
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 061644a1c83b02902a6bbdaf3cfbd04815d32ea3
+ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73712960"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76755034"
 ---
 # <a name="manually-add-the-windows-10-company-portal-app-by-using-microsoft-intune"></a>A Windows 10-es Céges portál alkalmazás manuális hozzáadása a Microsoft Intune-nal
 
@@ -56,7 +56,7 @@ A felhasználók maguk telepíthetik a Microsoft Store-ból a Céges portál alk
     Ezt a műveletet az x86, az x64 és az ARM architektúrák esetében kell végrehajtani:<br> 
     *A 1507-as minimális operációsrendszer-verzióként, 12 csomaggal, a 1511-es és a 15 csomag kiválasztásakor a 1607 kiválasztásakor 9 szükséges keretrendszer-csomag található.*
 
-8. Az Azure Portalon található Microsoft Intune-ban töltse fel a Céges portál alkalmazást új alkalmazásként. Az alkalmazás **hozzáadása** panel alkalmazás **típusa** részén az üzletági alkalmazás lehetőség kiválasztásával adhatja hozzá az alkalmazást. Ezután válassza ki az alkalmazáscsomag-fájlt (kiterjesztés. AppxBundle).
+8. Az Azure Portalon található Microsoft Intune-ban töltse fel a Céges portál alkalmazást új alkalmazásként. Az **alkalmazás típusának** **kiválasztása** ablaktáblán az üzletági alkalmazás lehetőség kiválasztásával adhatja hozzá az alkalmazást. Ezután válassza ki az alkalmazáscsomag-fájlt (kiterjesztés. AppxBundle).
 
 9. A **függőségi alkalmazások kiválasztása** területen válassza ki a 7. lépésben letöltött összes függőséget a shift-click paranccsal, és ellenőrizze, hogy a **hozzáadott** oszlop **Igen** értéket jelenít-e meg a szükséges architektúrák esetében.
 
