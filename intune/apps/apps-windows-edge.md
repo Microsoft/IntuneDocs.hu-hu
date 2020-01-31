@@ -17,19 +17,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f648be9588ec9b220a9dab29db1f5bd935b455f4
-ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
+ms.openlocfilehash: fa0156d059513a2586eb7d8866d23508be0af10c
+ms.sourcegitcommit: 5ad0ce27a30ee3ef3beefc46d2ee49db6ec0cbe3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76755221"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76886678"
 ---
 # <a name="add-microsoft-edge-for-windows-10-to-microsoft-intune"></a>A Microsoft Edge for Windows 10 hozzáadása a Microsoft Intunehoz
 
 Az alkalmazások üzembe helyezése, konfigurálása, monitorozása vagy védelemmel való ellátása előtt hozzá kell adnia őket az Intune-hoz. Az elérhető [alkalmazások](~/apps/apps-add.md#app-types-in-microsoft-intune) egyike a Microsoft Edge *77-es és újabb verziója*. Ha ezt az alkalmazást az Intune-ban kiválasztja, a Microsoft Edge *77-es vagy újabb verzióját* a Windows 10 rendszert futtató eszközökhöz rendelheti hozzá és telepítheti.
 
 > [!IMPORTANT]
-> Az alkalmazás típusa **nyilvános előzetes** verzióban érhető el, és stabil, bétaverziós és fejlesztői csatornákat kínál a Windows 10 rendszerhez. A központi telepítés csak angol (EN) nyelven érhető el, de a végfelhasználók a **beállítások** > **nyelvek**területen módosíthatják a böngésző megjelenítési nyelvét. A Microsoft Edge egy, a rendszerkörnyezetben és hasonló architektúrákban telepített Win32-alkalmazás (x86-OS és x64-es OS-es x64-es alkalmazás). Az Intune észlelni fogja a Microsoft Edge összes meglévő telepítését. Ha a felhasználói környezetben van telepítve, a rendszer telepítése felülírja azt. Ha a rendszerkörnyezetbe van telepítve, a rendszer a telepítés sikerességét jelenti. Emellett a Microsoft Edge automatikus frissítései alapértelmezés szerint **be vannak kapcsolva** .
+> Az alkalmazás típusa **nyilvános előzetes** verzióban érhető el, és stabil, bétaverziós és fejlesztői csatornákat kínál a Windows 10 rendszerhez. A központi telepítés csak angol (EN) nyelven érhető el, de a végfelhasználók a **beállítások** > **nyelvek**területen módosíthatják a böngésző megjelenítési nyelvét. A Microsoft Edge egy, a rendszerkörnyezetben és hasonló architektúrákban telepített Win32-alkalmazás (x86-OS és x64-es OS-es x64-es alkalmazás). Az Intune észlelni fogja a Microsoft Edge összes meglévő telepítését. Ha a felhasználói környezetben van telepítve, a rendszer telepítése felülírja azt. Ha a rendszerkörnyezetbe van telepítve, a rendszer a telepítés sikerességét jelenti. Emellett a Microsoft Edge automatikus frissítései alapértelmezés szerint **be vannak kapcsolva** , és a Microsoft Edge nem távolítható el.
 
 > [!NOTE]
 > A Microsoft Edge *77-es és újabb* verziói a MacOS-re is elérhetők.
@@ -92,29 +92,6 @@ A létrehozott alkalmazás megjelenik az alkalmazáslistában, ahol hozzárendel
 
 > [!NOTE]
 > Ha törli a Microsoft Edge központi telepítésének hozzárendelését, az az eszközön marad.
-
-## <a name="uninstall-the-app"></a>Az alkalmazás eltávolítása
-
-Ha el kell távolítania a Microsoft Edge-t a felhasználó eszközeiről, kövesse az alábbi lépéseket.
-
-1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
-2. Válassza az **alkalmazások** > **minden alkalmazás** lehetőséget, > a *Microsoft Edge* alkalmazás > **hozzárendelések** > **Csoport hozzáadása**elemet.
-3. A **Csoport hozzáadása** panelen válassza az **Eltávolítás**lehetőséget.
-
-    > [!NOTE]
-    > Az alkalmazást a kiválasztott csoportok eszközeiből távolítja el, ha az Intune már telepítette az alkalmazást az eszközre a **regisztrált eszközökön** vagy a **szükséges** hozzárendelésen keresztül ugyanazzal az üzembe helyezéssel.
-
-4. Válassza ki a **belefoglalt csoportok** lehetőséget az alkalmazás-hozzárendelés által érintett felhasználók csoportjai kiválasztásához.
-5. Válassza ki azokat a csoportokat, amelyekre alkalmazni szeretné az eltávolítási hozzárendelést.
-6. A **csoportok kiválasztása** panelen kattintson a **kiválasztás** elemre.
-7. A hozzárendelés megadásához kattintson az **OK gombra** a **hozzárendelés ablaktáblán** .
-8. Ha ki szeretne zárni felhasználói csoportokat az alkalmazás-hozzárendelésből, válassza a **Csoportok kizárása** lehetőséget.
-9. Ha valamilyen csoport kizárása mellett döntött, válassza a **Csoportok kiválasztása** ablaktáblán a **Kiválasztás** lehetőséget.
-10. A **Csoport hozzáadása** panelen kattintson **az OK gombra** .
-11. Válassza a **Mentés** lehetőséget az alkalmazás- **hozzárendelések** ablaktáblán.
-
-> [!IMPORTANT]
-> Az alkalmazás sikeres eltávolításához távolítsa el a telepítéshez a tagokat vagy a csoport-hozzárendelést, mielőtt a hozzárendelést el szeretné távolítani. Ha egy csoport egy alkalmazás telepítéséhez és egy alkalmazás eltávolításához is hozzá van rendelve, az alkalmazás továbbra is megmarad, és nem távolítható el.
 
 ## <a name="troubleshooting"></a>Hibaelhárítás
 **A Microsoft Edge 77-es és újabb verziói a Windows 10 rendszerhez:**<br>

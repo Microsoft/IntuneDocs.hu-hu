@@ -5,7 +5,7 @@ description: Ismerteti, hogyan lehet engedélyezni a BitLocker-titkosítást az 
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 10/02/2019
+ms.date: 01/29/2020
 ms.topic: troubleshooting
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 744277b0e49a4e3ca8b0fa3bac43c666110bb8a3
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 61b703837598ddbe2c0c44874928b4444466c811
+ms.sourcegitcommit: 5ad0ce27a30ee3ef3beefc46d2ee49db6ec0cbe3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74410351"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76886781"
 ---
 # <a name="troubleshoot-bitlocker-policies-in-microsoft-intune"></a>A Microsoft Intune BitLocker-házirendjeinek hibáinak megoldása
 
@@ -183,7 +183,7 @@ A **házirend jelen van, de nem minden beállítás sikeresen konfigurálva** �
 
 - Mivel a BitLocker a TPM-re támaszkodik, azt is megállapíthatja, hogy a BitLocker nem működik az Intune-nal vagy a házirenddel kapcsolatos probléma miatt, hanem azért, mert maga az eszköz nem rendelkezik TPM-lapka vagy TPM-mel a BIOS-ban.
 
-  További tippként megerősítheti ugyanezt a Windows Eseménynapló az **alkalmazások és szolgáltatások napló** > **Windows** > **BitLocker API**című részében. A **BITLOCKER API** -eseménynaplóban talál egy 853-es azonosítójú eseményt, amely azt jelenti, hogy a TPM nem érhető el:
+  További tippként megerősítheti ugyanezt a Windows Eseménynapló **alkalmazások és szolgáltatások naplójában** > **Microsoft** > **Windows** > **BitLocker API**. A **BITLOCKER API** -eseménynaplóban talál egy 853-es azonosítójú eseményt, amely azt jelenti, hogy a TPM nem érhető el:
 
   ![853-es AZONOSÍTÓJÚ esemény](./media/troubleshooting-bitlocker-policies/event-error.png)
 

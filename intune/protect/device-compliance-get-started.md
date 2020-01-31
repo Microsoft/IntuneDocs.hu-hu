@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 83b8c48d2bb594ca8b9c527d78922332e582363f
-ms.sourcegitcommit: 66e284fe092e19c1da72b4b770e45bf25ac7910c
+ms.openlocfilehash: a56d8f7aface3628ba5bc8985128ebb49c9cf404
+ms.sourcegitcommit: b0d683917af83170f85022b270270d8ced8e301c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74860295"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76812166"
 ---
 # <a name="set-rules-on-devices-to-allow-access-to-resources-in-your-organization-using-intune"></a>Szabályok beállítása az eszközökön a szervezet erőforrásaihoz való hozzáférés engedélyezéséhez az Intune használatával
 
@@ -92,6 +92,10 @@ Az Intune a beépített megfelelőségi szabályzatok egy készletét is tartalm
   - **Nem megfelelő**: biztonsági szolgáltatás bekapcsolva
 
   Ha egy eszközhöz nincs hozzárendelve megfelelőségi szabályzat, az eszköz alapértelmezés szerint megfelelőnek minősül. Ha a feltételes hozzáférést megfelelőségi szabályzatokkal használja, javasoljuk, hogy az alapértelmezett beállítást **ne megfelelőre**módosítsa. Ha egy végfelhasználó nem felel meg a szabályzatnak, a [céges portál alkalmazás](../apps/company-portal-app.md) a `No compliance policies have been assigned`t jeleníti meg.
+
+
+> [!NOTE]
+> Az iOS-eszközök továbbfejlesztett jailbreak-észlelése átmenetileg le lett tiltva az Intune-ban.
 
 - **Továbbfejlesztett jailbreak-észlelés**: Ha engedélyezve van, ez a beállítás az iOS-eszközök gyakrabban való bejelentkezését okozza az Intune-ban. A tulajdonság engedélyezésekor a rendszer igénybe veszi az eszköz helyalapú szolgáltatásait, mely hatással van az akkumulátorhasználatra. Az Intune nem tárolja a felhasználói hely adatterületét.
 

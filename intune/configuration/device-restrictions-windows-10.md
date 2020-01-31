@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 12/19/2019
+ms.date: 01/28/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 81da5ca8e7eaa76f9a6705cc9e3c816234c461db
-ms.sourcegitcommit: af384c46ec8d8def6aa32c3b89947748dc6fd28f
+ms.openlocfilehash: 0dd1ecb5666b8bbb8b26a001be56372d86839f31
+ms.sourcegitcommit: b0d683917af83170f85022b270270d8ced8e301c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76517558"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76812319"
 ---
 # <a name="windows-10-and-newer-device-settings-to-allow-or-restrict-features-using-intune"></a>Windows 10 (és újabb) eszközbeállítások az Intune-t használó szolgáltatások engedélyezéséhez vagy korlátozásához
 
@@ -39,8 +39,11 @@ Ezek a beállítások hozzáadódnak az Intune-ban lévő eszköz konfiguráció
 
 Ezek a beállítások a [ApplicationManagement házirend CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationmanagement)-t használják, amely a támogatott Windows-kiadásokat is felsorolja.
 
-- **App Store** (csak mobil): **nincs konfigurálva** (alapértelmezés) lehetővé teszi a végfelhasználók számára az alkalmazás-áruház elérését a mobileszközökön. **Letiltja** az alkalmazás-áruház használatát.
-- Az **áruházból származó alkalmazások automatikus frissítése**: **nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a rendszer automatikusan frissítse az alkalmazásokat a Microsoft Storeról. A **Letiltás** megakadályozza a frissítések automatikus telepítését.
+- **App Store** (csak mobil): a **Letiltás** megakadályozza, hogy a végfelhasználók hozzáférjenek az App Store-hoz a mobileszközök számára. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Alapértelmezés szerint az operációs rendszer lehetővé teszi a végfelhasználók számára az alkalmazás-áruház elérését.
+- **Áruházból származó alkalmazások automatikus frissítése**: a **Letiltás** megakadályozza, hogy a rendszer automatikusan telepítse a frissítéseket a Microsoft Storeról. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Alapértelmezés szerint az operációs rendszer lehetővé teszi, hogy a Microsoft Store telepített alkalmazások automatikusan frissüljenek.
+
+  [ApplicationManagement/AllowAppStoreAutoUpdate CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationmanagement#applicationmanagement-allowappstoreautoupdate)
+
 - **Megbízható alkalmazás telepítése**: válassza ki, hogy a nem Microsoft Store alkalmazásokat lehet-e telepíteni, más néven közvetlen telepítési. A közvetlen telepítési telepíti, majd futtatja vagy teszteli az Microsoft Store által nem tanúsított alkalmazást. Például egy olyan alkalmazás, amely csak a vállalaton belül található. A választható lehetőségek:
   - **Nincs konfigurálva** (alapértelmezett): az Intune nem módosítja vagy nem frissíti ezt a beállítást.
   - **Letiltás**: megakadályozza a közvetlen telepítési. Nem Microsoft Store alkalmazások nem telepíthetők.
@@ -51,16 +54,36 @@ Ezek a beállítások a [ApplicationManagement házirend CSP](https://docs.micro
   - **Engedélyezés**: lehetővé teszi a fejlesztői üzemmód és a közvetlen telepítési alkalmazások használatát.
 
   Az [eszköz fejlesztésének engedélyezése](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development) további információt tartalmaz a szolgáltatással kapcsolatban.
+  
+  [ApplicationManagement/AllowAllTrustedApps CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationmanagement#applicationmanagement-allowalltrustedapps)
 
-- **Megosztott felhasználói alkalmazásadatok**: válassza az **Engedélyezés lehetőséget** az alkalmazásadatok különböző felhasználók közötti megosztásához ugyanazon az eszközön és az alkalmazás más példányai között. **Nincs konfigurálva** (az alapértelmezett) megakadályozza az adatmegosztást más felhasználókkal és ugyanazon alkalmazás más példányaival.
-- **Csak privát áruház használata**: **az** alkalmazások csak privát áruházból tölthetők le, és nem tölthetők le a nyilvános áruházból, beleértve a kiskereskedelmi katalógust is. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi az alkalmazások letöltését egy privát áruházból és egy nyilvános áruházból.
-- **Áruházból származó alkalmazások indítása**: a **Letiltás** letiltja az eszközön előre telepített vagy a Microsoft Store letöltött összes alkalmazást. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi az alkalmazások megnyitását.
-- **Alkalmazásadatok telepítése a rendszerköteten**: a **blokk** leállítja az alkalmazások adattárolását az eszköz rendszerkötetén. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi az alkalmazások számára a rendszerlemez kötetén tárolt adattárolást.
-- **Alkalmazások telepítése a rendszermeghajtón**: a **Letiltás** megakadályozza, hogy az alkalmazások a rendszermeghajtón telepítsenek az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi az alkalmazások telepítését a rendszermeghajtón.
-- **Játék DVR** (csak asztali verzió): a **Letiltás** letiltja a Windows-játékok rögzítését és a szórást. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a játékok rögzítését és közvetítését.
+- **Megosztott felhasználói alkalmazásadatok**: válassza az **Engedélyezés lehetőséget** az alkalmazásadatok különböző felhasználók közötti megosztásához ugyanazon az eszközön és az alkalmazás más példányai között. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Alapértelmezés szerint az operációs rendszer megakadályozhatja az adatmegosztást más felhasználókkal és ugyanazon alkalmazás más példányaival.
+
+  [ApplicationManagement/AllowSharedUserAppData CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationmanagement#applicationmanagement-allowshareduserappdata)
+
+- **Csak privát áruház használata**: **az** alkalmazások csak privát áruházból tölthetők le, és nem tölthetők le a nyilvános áruházból, beleértve a kiskereskedelmi katalógust is. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Alapértelmezés szerint az operációs rendszer lehetővé teszi, hogy az alkalmazások egy privát áruházból és egy nyilvános áruházból tölthetők le.
+
+  [ApplicationManagement/RequirePrivateStoreOnly CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationmanagement#applicationmanagement-requireprivatestoreonly)
+
+- **Áruházból származó alkalmazások indítása**: a **Letiltás** letiltja az eszközön előre telepített vagy a Microsoft Store letöltött összes alkalmazást. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Alapértelmezés szerint az operációs rendszer lehetővé teszi az alkalmazások megnyitását.
+
+  [ApplicationManagement/DisableStoreOriginatedApps CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationmanagement#applicationmanagement-disablestoreoriginatedapps)
+
+- **Alkalmazásadatok telepítése a rendszerköteten**: a **blokk** leállítja az alkalmazások adattárolását az eszköz rendszerkötetén. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Alapértelmezés szerint az operációs rendszer lehetővé teszi, hogy az alkalmazások a rendszerlemez kötetén tárolják az adattárolást.
+
+  [ApplicationManagement/RestrictAppDataToSystemVolume CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationmanagement#applicationmanagement-restrictappdatatosystemvolume)
+
+- **Alkalmazások telepítése a rendszermeghajtón**: a **Letiltás** megakadályozza, hogy az alkalmazások a rendszermeghajtón telepítsenek az eszközön. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Alapértelmezés szerint az operációs rendszer engedélyezheti az alkalmazások telepítését a rendszermeghajtón.
+
+  [ApplicationManagement/RestrictAppToSystemVolume CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationmanagement#applicationmanagement-restrictapptosystemvolume)
+
+- **Játék DVR** (csak asztali verzió): a **Letiltás** letiltja a Windows-játékok rögzítését és a szórást. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Alapértelmezés szerint az operációs rendszer engedélyezheti a játékok rögzítését és közvetítését.
+
+  [ApplicationManagement/AllowGameDVR CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationmanagement#applicationmanagement-allowgamedvr)
+
 - **Csak áruházbeli alkalmazások**: Ez a beállítás határozza meg azt a felhasználói élményt, amikor a felhasználók a Microsoft Storetól eltérő helyekről telepítik az alkalmazásokat. A választható lehetőségek:
 
-  - **Nincs konfigurálva** (alapértelmezett): lehetővé teszi, hogy a végfelhasználók alkalmazásokat telepítsenek a Microsoft Storetól eltérő helyekről, beleértve a más házirend-beállításokban definiált alkalmazásokat is.  
+  - **Nincs konfigurálva** (alapértelmezett): az Intune nem módosítja vagy nem frissíti ezt a beállítást. Alapértelmezés szerint az operációs rendszer lehetővé teszi, hogy a végfelhasználók alkalmazásokat telepítsenek a Microsoft Storetól eltérő helyekről, beleértve a más házirend-beállításokban definiált alkalmazásokat is.  
   - **Bárhol**: kikapcsolja az alkalmazások javaslatait, és lehetővé teszi, hogy a felhasználók tetszőleges helyről telepítsenek alkalmazásokat.  
   - **Csak tárolás**: kényszeríti a végfelhasználókat, hogy csak az Microsoft Store telepítsenek alkalmazásokat.
   - **Javaslatok**: ha a Microsoft Storeban elérhető webről telepít egy alkalmazást, a felhasználók egy, az áruházból letöltött üzenetet látnak.  
@@ -68,11 +91,11 @@ Ezek a beállítások a [ApplicationManagement házirend CSP](https://docs.micro
 
   [SmartScreen/EnableAppInstallControl CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-smartscreen#smartscreen-enableappinstallcontrol)
 
-- **Felhasználói vezérlés a telepítésekben**: Ha **nincs konfigurálva** (alapértelmezett), Windows Installer megakadályozhatja, hogy a felhasználók a rendszergazdák számára fenntartott telepítési beállításokat módosíthassák, például a fájlok telepítéséhez a címtárat. A **Letiltás** lehetővé teszi a felhasználók számára, hogy megváltoztassák ezeket a telepítési beállításokat, és néhány Windows Installer biztonsági funkciót kihagynak.
+- **Felhasználói vezérlés a telepítésekben**: a **Letiltás** megakadályozza, hogy a felhasználók megváltoztassák a rendszergazdák számára fenntartott telepítési beállításokat, például a fájlok telepítéséhez a címtárba való belépést. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Alapértelmezés szerint a Windows Installer megakadályozhatja, hogy a felhasználók megváltoztassák ezeket a telepítési beállításokat, és néhány Windows Installer biztonsági funkciót kihagynak.
 
   [ApplicationManagement/MSIAllowUserControlOverInstall CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationmanagement#applicationmanagement-msiallowusercontroloverinstall)
 
-- **Alkalmazások telepítése emelt szintű jogosultságokkal**: Ha a **nincs konfigurálva** értékre van állítva, a rendszer az aktuális felhasználó engedélyeit alkalmazza, amikor olyan programokat telepít, amelyeket a rendszergazda nem telepít vagy biztosít. Ha a rendszerre telepít bármely programot, a **letiltja** a Windows Installert a emelt szintű engedélyek használatára. Ezek a jogosultságok minden programra kiterjeszthetők.
+- **Alkalmazások telepítése emelt szintű jogosultságokkal** **: az** átirányítja a Windows Installert emelt szintű engedélyek használatára, amikor a rendszerre telepít bármely programot. Ezek a jogosultságok minden programra kiterjeszthetők. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), az Intune nem módosítja vagy nem frissíti ezt a beállítást. Alapértelmezés szerint a rendszer az aktuális felhasználó engedélyeit alkalmazza, amikor olyan programokat telepít, amelyeket a rendszergazda nem telepít vagy kínál. 
 
   [ApplicationManagement/MSIAlwaysInstallWithElevatedPrivileges CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationmanagement#applicationmanagement-msialwaysinstallwithelevatedprivileges)
 
@@ -130,7 +153,7 @@ Ezek a beállítások a [EnterpriseCloudPrint házirend CSP](https://docs.micros
 - **Nyomtató hozzáférési szolgáltatójának URL-címe**: adja meg a hitelesítési végpont URL-címét az OAuth-tokenek lekéréséhez. Például írja be a következőt: `https://azuretenant.contoso.com/adfs`.
 - **Natív Azure-ügyfélalkalmazás GUID-azonosítója**: adja meg egy olyan ügyfélalkalmazás GUID azonosítóját, amely a OAuth származó OAuth-tokenek beolvasására jogosult. Például írja be a következőt: `E1CF1107-FF90-4228-93BF-26052DD2C714`.
 - **Nyomtatási szolgáltatás erőforrás-URI-ja**: adja meg a Azure Portalban konfigurált nyomtatási szolgáltatás OAuth erőforrás-URI-ját. Például írja be a következőt: `http://MicrosoftEnterpriseCloudPrint/CloudPrint`.
-- **Lekérdezhető nyomtatók maximális**száma: adja meg a lekérdezni kívánt nyomtatók maximális számát. Az alapértelmezett érték 0.`20`
+- **Lekérdezhető nyomtatók maximális**száma: adja meg a lekérdezni kívánt nyomtatók maximális számát. Az alapértelmezett érték `20`.
 - **Nyomtató-felderítési szolgáltatás erőforrás-URI-ja**: adja meg a OAuth-erőforrás URI-ját a Azure Portal konfigurált nyomtató-felderítési szolgáltatáshoz. Például írja be a következőt: `http://MopriaDiscoveryService/CloudPrint`.
 
 > [!TIP]
@@ -232,7 +255,7 @@ Ezek a beállítások az [élmény házirend CSP](https://docs.microsoft.com/win
 
 - **Zárolt képernyő kép URL-címe (csak asztali verzió)** : adja meg a Windows zárolási képernyőjének hátterében használt jpg, JPEG vagy PNG formátumú kép URL-címét. Például írja be a következőt: `https://contoso.com/image.png`. Ez a beállítás zárolja a rendszerképet, és ezt követően nem módosítható.
 
-  [Személyre szabás/LockScreenImageUrl CSP](https://docs.microsoft.com/en-us/windows/client-management/mdm/personalization-csp)
+  [Személyre szabás/LockScreenImageUrl CSP](https://docs.microsoft.com/windows/client-management/mdm/personalization-csp)
 
 - **Felhasználó által konfigurálható képernyő-időkorlát (csak mobil)** : **engedélyezi, hogy** a felhasználók konfigurálja a képernyő időkorlátját. **Nincs konfigurálva** (az alapértelmezett) nem adja meg a felhasználóknak ezt a lehetőséget.
 
@@ -250,7 +273,7 @@ Ezek a beállítások az [élmény házirend CSP](https://docs.microsoft.com/win
 
   [DeviceLock/ScreenTimeoutWhileLocked CSP](https://msdn.microsoft.com/ie/dn904962(v=vs.94)#DeviceLock_ScreenTimeoutWhileLocked)
 
-## <a name="messaging"></a>Üzenetkezelés
+## <a name="messaging"></a>Üzenetkezelési
 
 Ezek a beállítások az [üzenetküldési házirend CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-messaging)-t használják; amely a támogatott Windows-kiadásokat is felsorolja.
 
@@ -334,7 +357,7 @@ Ez az eszköz-korlátozási profil közvetlenül kapcsolódik a [Windows kioszk 
   - **Minden oldalon**: a Kedvencek sáv megjelenítése az összes oldalon. A végfelhasználók nem változtathatják meg ezt a beállítást.
   - **Rejtett**: elrejti a Kedvencek sávot az összes oldalon. A végfelhasználók nem változtathatják meg ezt a beállítást.
 - A **Kedvencek módosításának engedélyezése**: az **Igen** (alapértelmezett) az operációs rendszer alapértelmezését használja, amely lehetővé teszi a felhasználók számára a lista módosítását. A **nem** teszi lehetővé a végfelhasználók számára a kedvencek listájának hozzáadását, importálását, rendezését és szerkesztését.
-  - **Kedvencek listája**: adja meg a Kedvencek fájl URL-címeinek listáját. Például adja hozzá a következőt: `http://contoso.com/favorites.html`.
+  - **Kedvencek listája**: adja meg a Kedvencek fájl URL-címeinek listáját. Adja meg például `http://contoso.com/favorites.html`.
 - **Kedvencek szinkronizálása a Microsoft-böngészők között** (csak asztali verzió): **Igen** kényszeríti a Windowst a Kedvencek szinkronizálására az Internet Explorer és a Microsoft Edge között. A Kedvencek között a hozzáadások, a törlések, a módosítások és a megrendelési módosítások megoszthatók a böngészők között.  **Nem** (alapértelmezett) az operációs rendszer alapértelmezését használja, amely lehetővé teheti a felhasználóknak a Kedvencek szinkronizálását a böngészők között.
 - **Alapértelmezett keresőmotor**: válassza ki az alapértelmezett keresőmotort az eszközön. A végfelhasználók ezt az értéket bármikor módosíthatják. A választható lehetőségek:
   - Keresőmotor az ügyfél Microsoft Edge-beállításaiban
@@ -370,7 +393,7 @@ Ha a "felhasználói felülbírálás tiltása és engedélyezése" lehetőség 
 - **Élő csempe adatgyűjtésének engedélyezése**: **Igen** (alapértelmezés) lehetővé teszi a Microsoft Edge számára a Start menübe rögzített élő csempék adatainak gyűjtését. **Nem** akadályozza meg az adatok gyűjtését, ami korlátozott felhasználói élményt biztosíthat a felhasználóknak.
 - A **felhasználó felülbírálhatja a tanúsítvány hibáit**: az **Igen** (alapértelmezett) lehetővé teszi, hogy a felhasználók hozzáférhessenek SSL/TRANSPORT Layer Security (SSL/TLS) hibákat tartalmazó webhelyekhez. **Nem** (a fokozott biztonsághoz ajánlott) megakadályozza, hogy a felhasználók SSL-vagy TLS-hibákkal férhessenek hozzá a webhelyekhez.
 
-### <a name="additional"></a>Továbbiak
+### <a name="additional"></a>További
 
 - **Microsoft Edge böngésző engedélyezése** (csak mobil): **Igen** (alapértelmezés) lehetővé teszi a Microsoft Edge webböngésző használatát a mobileszközön. **Nem** akadályozza meg a Microsoft Edge használatát az eszközön. Ha a **nem**lehetőséget választja, a többi egyéni beállítás csak az asztalra vonatkozik.
 - **Címsor legördülő menüjének engedélyezése**: **Igen** (alapértelmezés) lehetővé teszi a Microsoft Edge számára, hogy megjelenjen a címsor legördülő lista a javaslatok listájával. A **nem** állítja le a Microsoft Edge-t a legördülő listában szereplő javaslatok listájának megjelenítéséhez a beíráskor. Ha a **nem**értékre van állítva, akkor:
@@ -558,7 +581,7 @@ Ezek a beállítások a [WirelessDisplay házirend CSP](https://docs.microsoft.c
 
   [System/TelemetryProxy CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-system#system-telemetryproxy)
 
-A módosítások mentéséhez kattintson az **OK** gombra.
+A módosítások mentéséhez válassza az **OK** gombot.
 
 ## <a name="search"></a>Keresés
 

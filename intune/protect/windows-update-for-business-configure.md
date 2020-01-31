@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 01/24/2020
+ms.date: 01/29/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -15,12 +15,12 @@ ms.reviewer: mghadial
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: beafee4eb22d641748ca41f8f4c01c48ead87741
-ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
+ms.openlocfilehash: e478402f826809bda4f81315d5a1a4ff6e1a8b88
+ms.sourcegitcommit: 5ad0ce27a30ee3ef3beefc46d2ee49db6ec0cbe3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76754337"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76886799"
 ---
 # <a name="manage-windows-10-software-updates-in-intune"></a>Windows 10 rendszerű szoftverfrissítések kezelése az Intune-ban
 
@@ -92,7 +92,7 @@ A Windows 10-es frissítési gyűrűk támogatják a [hatókör címkéit](../fu
 
 6. A **hozzárendelések**alatt válassza a **+ csoportok kiválasztása lehetőséget** , majd a frissítési kört egy vagy több csoporthoz rendelje. **Válassza a + csoportok kiválasztása lehetőséget** a hozzárendelés finomhangolásához. A folytatáshoz kattintson a **tovább** gombra.
 
-7. A**felülvizsgálat + létrehozás**területen tekintse át a beállításokat, majd válassza a **Létrehozás** lehetőséget, amikor készen áll a Windows 10-es frissítési kör mentéséhez. Az új frissítési kör megjelenik a frissítési körök listájában.
+7. A **felülvizsgálat + létrehozás**területen tekintse át a beállításokat, majd válassza a **Létrehozás** lehetőséget, amikor készen áll a Windows 10-es frissítési kör mentéséhez. Az új frissítési kör megjelenik a frissítési körök listájában.
 
 ### <a name="manage-your-windows-10-update-rings"></a>Windows 10-es frissítési gyűrűk kezelése
 
@@ -244,10 +244,12 @@ Ebből a panelből a következőket teheti:
 - A központi telepítés módosításához válassza a **Tulajdonságok** lehetőséget.  A *Tulajdonságok* ablaktáblán válassza a **Szerkesztés** lehetőséget a *központi telepítési beállítások vagy hozzárendelések*megnyitásához, ahol módosíthatja a központi telepítést.
 - A szabályzattal kapcsolatos információk megtekintéséhez válassza a **végfelhasználói frissítés állapota** lehetőséget.
 
+## <a name="validation-and-reporting-for-windows-10-updates"></a>Ellenőrzés és jelentéskészítés Windows 10 rendszerű frissítésekhez
+
+A Windows 10-es frissítési körök és a Windows 10 szolgáltatások frissítései esetében az [Intune megfelelőségi jelentéseinek](../windows-update-compliance-reports.md) használatával figyelheti az eszközök frissítési állapotát. Ez a megoldás [Update Compliancet](https://docs.microsoft.com/windows/deployment/update/update-compliance-monitor) használ az Azure-előfizetéssel.
+
 ## <a name="next-steps"></a>További lépések
 
 [Az Intune által támogatott Windows Update-beállítások](../windows-update-settings.md)
-
-[Intune-megfelelőségi jelentések a frissítésekhez](../windows-update-compliance-reports.md)
 
 [A Windows 10 frissítési gyűrűk hibaelhárítása](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-Tip-Troubleshooting-Windows-10-Update-Ring-Policies/ba-p/714046)

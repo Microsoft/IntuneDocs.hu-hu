@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: be6a254360d8e8e9ef1396515d261b6ff9077b87
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: d2a5629e6a318836e23c6a2f7fceb59363a0ed72
+ms.sourcegitcommit: b0d683917af83170f85022b270270d8ced8e301c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73713118"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76812494"
 ---
 # <a name="reset-or-remove-a-device-passcode-in-intune"></a>Eszközök PIN-kódjának visszaállítása vagy eltávolítása az Intune-ban
 
@@ -34,7 +34,7 @@ Ez a dokumentum a PIN-kód alaphelyzetbe állítása és a munkahelyi profil PIN
 | Platfésm | Támogatott? |
 | ---- | ---- |
 | 6\.x vagy régebbi verziójú Android-eszközök | Igen |
-| Vállalati Android rendszerű eszközök kioszkmódban | Igen |
+| Eszköz tulajdonosként regisztrált androidos vállalati eszközök | Igen |
 | iOS-eszközök | Igen |
 | Felhasználói regisztrációval regisztrált iOS-eszközök | Nem |
 | Munkahelyi profillal regisztrált Android-eszközök | Nem |

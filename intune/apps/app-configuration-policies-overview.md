@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 800193921e608a0d0c29dad5cf85b8781e715441
-ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
+ms.openlocfilehash: 8c9dc1d95806bcddf423bb4d92dbdf4961c15809
+ms.sourcegitcommit: b0d683917af83170f85022b270270d8ced8e301c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75885797"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76812479"
 ---
 # <a name="app-configuration-policies-for-microsoft-intune"></a>Alkalmazáskonfigurációs szabályzatok a Microsoft Intune-hoz
 
@@ -95,9 +95,9 @@ Az alkalmazás konfigurációs szabályzatát az alábbi három módszer haszná
 
 Az iOS-konfigurációt az **Intune diagnosztikai naplójában** ellenőrizheti a felügyelt alkalmazások konfigurációjának nem felügyelt eszközein. Az alábbi lépések mellett a Microsoft Edge használatával is elérheti a felügyelt alkalmazás naplófájljait. További információ: a [Microsoft Edge használata iOS rendszeren a felügyelt alkalmazások naplófájljainak eléréséhez](~/apps/manage-microsoft-edge.md#use-microsoft-edge-on-ios-to-access-managed-app-logs).
 
-1. Ha még nincs telepítve az eszközön, töltse le és telepítse a **Intune Managed Browsert** az App Store áruházból. További információ: [Microsoft Intune védett alkalmazások](apps-supported-intune-apps.md).
-2. Indítsa el a **Intune Managed Browser** , és válassza a **Névjegy** > **intunehelp** elemet a navigációs sávon.
-3. Kattintson az **Első lépések** lehetőségre.
+1. Ha még nincs telepítve az eszközön, töltse le és telepítse a **Microsoft Edge** alkalmazást az App Store áruházból. További információ: [Microsoft Intune védett alkalmazások](apps-supported-intune-apps.md).
+2. Indítsa el a **Microsoft Edge** alkalmazást, és válassza ki a **Névjegy** > **intunehelp** elemet a navigációs sávon.
+3. Kattintson az első **lépések**elemre.
 4. Kattintson a **megosztási naplók**elemre.
 5. Az Ön által választott levelezési alkalmazás használatával elküldheti a naplót saját magára, hogy megtekinthető legyen a SZÁMÍTÓGÉPén. 
 6. Tekintse át a **IntuneMAMDiagnostics. txt** fájlt a szövegfájl-megjelenítőben.
@@ -139,9 +139,9 @@ Az alkalmazás konfigurációjának részleteinek meg kell egyezniük a bérlőh
 
 Az iOS-konfigurációt érvényesítheti az **Intune diagnosztikai naplóval** a felügyelt eszközökön a felügyelt alkalmazások konfigurálásához.
 
-1. Ha még nincs telepítve az eszközön, töltse le és telepítse a **Intune Managed Browsert** az App Store áruházból. További információ: [Microsoft Intune védett alkalmazások](apps-supported-intune-apps.md).
-2. Indítsa el a **Intune Managed Browser** , és válassza a **Névjegy** > **intunehelp** elemet a navigációs sávon.
-3. Kattintson az **Első lépések** lehetőségre.
+1. Ha még nincs telepítve az eszközön, töltse le és telepítse a **Microsoft Edge** alkalmazást az App Store áruházból. További információ: [Microsoft Intune védett alkalmazások](apps-supported-intune-apps.md).
+2. Indítsa el a **Microsoft Edge** -t, és válassza ki a **Névjegy** > **intunehelp** elemet a navigációs sávon.
+3. Kattintson az első **lépések**elemre.
 4. Kattintson a **megosztási naplók**elemre.
 5. Az Ön által választott levelezési alkalmazás használatával elküldheti a naplót saját magára, hogy megtekinthető legyen a SZÁMÍTÓGÉPén. 
 6. Tekintse át a **IntuneMAMDiagnostics. txt** fájlt a szövegfájl-megjelenítőben.

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8452f840fb269505656bf6594d3e5c196b4d7a06
-ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
+ms.openlocfilehash: 9fa02a61148a03a64b88b38dcdc1799b30bc45db
+ms.sourcegitcommit: 5ad0ce27a30ee3ef3beefc46d2ee49db6ec0cbe3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75885785"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76886724"
 ---
 # <a name="create-a-design"></a>Terv létrehozása
 
@@ -308,7 +308,10 @@ A Wi-Fi-profilok révén a mobileszközök automatikusan csatlakozhatnak a vezet
 
 Az alábbi példa a Wi-Fi-profilok tervezését szemlélteti:
 
-| **típus** | **profil neve** | **eszköz platform** | **használati esetek** | | Wi-Fi | Ázsia Wi-Fi profilja | Android | Vállalat, BYOD Asia-régió | | Wi-Fi | Wi-Fi profil Észak-Amerika | Android, iOS, Windows 10 Mobile | Vállalat, BYOD Észak-Amerika régió |
+| **Típus** | **Profilnév** | **Eszközplatform** | **Használati esetek** |
+|:---:|:---:|:---:|:---:|
+| Wi-Fi | Ázsiai Wi-Fi-profil | Android: | Vállalati, BYOD, ázsiai régió|
+| Wi-Fi | Észak-amerikai Wi-Fi-profil | Android, iOS, Windows 10 Mobile | Vállalati, BYOD, észak-amerikai régió |
 
 A saját Wi-Fi-profiljainak meghatározásához [letöltheti a fenti táblázat sablonját](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0).
 

@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/07/2019
+ms.date: 01/28/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5a65000d46941876b95e0b110d21f2dfb900ca33
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: c9b56ba1515608afb6c2a0d151f5412711d49e57
+ms.sourcegitcommit: 5ad0ce27a30ee3ef3beefc46d2ee49db6ec0cbe3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75206227"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76886717"
 ---
 # <a name="use-a-custom-device-profile-to-create-a-wifi-profile-with-a-pre-shared-key-in-intune"></a>Előmegosztott kulccsal rendelkező Wi-Fi-profil létrehozása egyéni eszköz-profil használatával az Intune-ban
 
@@ -32,7 +32,7 @@ Az előmegosztott kulcsokat (PSK) általában a WiFi-hálózatok vagy vezeték n
 
 Ez a funkció a következőket támogatja:
 
-- Android:
+- Android-eszköz rendszergazdája
 - Windows
 - EAP-alapú Wi-Fi
 
@@ -243,7 +243,7 @@ Az XML-fájl létrehozása után másolja és illessze be az XML-szintaxist az O
 > [!TIP]
 > a `\ProgramData\Microsoft\Wlansvc\Profiles\Interfaces\{guid}` az összes profilt XML formátumban is tartalmazza.
 
-## <a name="best-practices"></a>Ajánlott eljárások
+## <a name="best-practices"></a>Bevált gyakorlatok
 
 - A Wi-Fi-profil PSK használatával való üzembe helyezése előtt győződjön meg róla, hogy az eszköz tud közvetlenül kapcsolódni a végponthoz.
 

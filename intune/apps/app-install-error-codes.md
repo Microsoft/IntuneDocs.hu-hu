@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/21/2020
+ms.date: 01/27/2020
 ms.topic: troubleshooting
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b8ade7676cb8f6265dd63eb1ba7847c50f526a9a
-ms.sourcegitcommit: 70b40aa4743c8396f8d6a0163893c4a337d67c48
+ms.openlocfilehash: 3502b1c1a73a9e98ed2901fc24dc69ab09136427
+ms.sourcegitcommit: b0d683917af83170f85022b270270d8ced8e301c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76549338"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76812440"
 ---
 # <a name="intune-app-installation-error-reference"></a>Az Intune-alkalmazás telepítési hibájának referenciája
 
@@ -90,9 +90,7 @@ Az alábbi hibaüzenetek és leírások részletesen ismertetik az iOS telepít�
 | 0x87D13B72 | – 2016330894 | Megszakadt az internetkapcsolat.  | Az alkalmazás jegyzékfájljának érvényesítése sikertelen hálózati kapcsolat miatt (a kapcsolat megszakadt) |
 | 0x87D13B73 | – 2016330893 | Megszakadt az internetkapcsolat.  | Az alkalmazás jegyzékfájljának érvényesítése sikertelen hálózati kapcsolat miatt (nem kapcsolódik az internethez) |
 | 0x87D13B77 | – 2016330889 | A biztonságos kapcsolatok sikertelenek voltak.  | A hálózati kapcsolat miatt nem sikerült érvényesíteni az alkalmazás jegyzékfájlját (a biztonságos kapcsolat meghiúsult) |
-| 0x87D13B6F | – 2016330897 |  |   |
 | 0x87D13B80 | – 2016330880 | CannotConnectToITunesStoreError | Az alkalmazás telepítése sikertelen volt, mert nem sikerült csatlakozni az ITunes áruházhoz |
-| 0x87D13B6E | – 2016330898 |   | Az alkalmazás jegyzékfájljának érvényesítése sikertelen hálózati kapcsolat miatt (ismeretlen) |
 | 0x87D13B9F  | – 2016330849 | A VPP-alkalmazáshoz frissítés érhető el | A rendszer ezt a kódot adja vissza egy VPP-alkalmazás telepítésekor, de elérhető egy újabb verzió. |
 
 ## <a name="other-installation-errors"></a>Egyéb telepítési hibák
@@ -102,7 +100,7 @@ Az alábbi hibaüzenetek és leírások részletesen ismertetik az iOS telepít�
 | 0x80073CFF | – 2147009281 | (ügyfél-hiba) | Az alkalmazás telepítéséhez közvetlen telepítési-kompatibilis rendszerrel kell rendelkeznie. Győződjön meg arról, hogy az alkalmazáscsomag megbízható aláírással van aláírva, és telepítve van egy tartományhoz csatlakoztatott eszközön, amelyen engedélyezve van a AllowAllTrustedApps házirend, vagy egy olyan eszköz, amelyen engedélyezve van a AllowAllTrustedApps szabályzat, és amely rendelkezik Windows közvetlen telepítési-licenccel. További információ: a Windows áruházbeli alkalmazások csomagolásának hibaelhárítása, üzembe helyezése és lekérdezése. |
 | 0x80CF201C  | – 2133909476 | (ügyfél-hiba) | Az alkalmazás telepítéséhez közvetlen telepítési-kompatibilis rendszerrel kell rendelkeznie. Győződjön meg arról, hogy az alkalmazáscsomag megbízható aláírással van aláírva, és telepítve van egy tartományhoz csatlakoztatott eszközön, amelyen engedélyezve van a AllowAllTrustedApps házirend, vagy egy olyan eszköz, amelyen engedélyezve van a AllowAllTrustedApps szabályzat, és amely rendelkezik Windows közvetlen telepítési-licenccel. További információ: a Windows áruházbeli alkalmazások csomagolásának hibaelhárítása, üzembe helyezése és lekérdezése. |
 | 0x80073CF0 | – 2147009296 | A csomag nincs aláírva.     A közzétevő neve nem egyezik meg az aláíró tanúsítvány tulajdonosával.     További információért olvassa el az Appxpackagingom eseménynaplóban talál-eseménynaplót. További információ: a Windows áruházbeli alkalmazások csomagolásának hibaelhárítása, üzembe helyezése és lekérdezése. | A csomag nem nyitható meg. Lehetséges okok: |
-| 0x80073CF3 | – 2147009296 | A bejövő csomag ütközik egy telepített csomaggal.     Nem található a megadott csomagfüggőség.     A csomag nem támogatja a megfelelő processzorarchitektúrát.     További információért olvassa el a AppXDeployment-Server eseménynaplóját. További információ: a Windows áruházbeli alkalmazások csomagolásának hibaelhárítása, üzembe helyezése és lekérdezése. | A csomag nem tudta frissíteni, függőséget vagy ütközést érvényesíteni. Lehetséges okok: |
+| 0x80073CF3 | – 2147009296 | A bejövő csomag ütközik egy telepített csomaggal.     A megadott csomag-függőség nem található.     A csomag nem támogatja a megfelelő processzor-architektúrát.     További információért olvassa el a AppXDeployment-Server eseménynaplóját. További információ: a Windows áruházbeli alkalmazások csomagolásának hibaelhárítása, üzembe helyezése és lekérdezése. | A csomag nem tudta frissíteni, függőséget vagy ütközést érvényesíteni. Lehetséges okok: |
 | 0x80073CFB | – 2147009285 | Növelje az alkalmazás verziószámát, majd építse újra, majd írja alá újra a csomagot.     Az új csomag telepítése előtt távolítsa el a régi csomagot a rendszer minden felhasználója számára.     További információ: a Windows áruházbeli alkalmazások csomagolásának hibaelhárítása, üzembe helyezése és lekérdezése.      | A megadott csomag már telepítve van, és a csomag újratelepítése le van tiltva. Ez a hiba akkor jelenhet meg, ha olyan csomagot telepít, amely nem azonos a már telepített csomaggal. Erősítse meg, hogy a csomag része a digitális aláírásnak is. A csomagok újraépítése vagy újbóli aláírása után a csomag már nem bitenkénti meg a korábban telepített csomaggal. Ez a hiba kétféleképpen javítható ki: |
 | 0x87D1041C | – 2016345060 | A végfelhasználó eltávolította az alkalmazást.     A csomagban lévő azonosító adatok nem egyeznek meg a hibás alkalmazásokhoz tartozó eszközök jelentéseivel.     Az önfrissítő rendszercsomagok a termék verziója nem felel meg az alkalmazásnak az Intune-on kívüli frissítés utáni információjának.     Kérje meg a felhasználót, hogy telepítse újra az alkalmazást a vállalati portálról. Vegye figyelembe, hogy a szükséges alkalmazások újratelepítése automatikusan megtörténik, amikor az eszköz következő bejelentkezik. | Az alkalmazás telepítése sikerült, de az alkalmazás nem észlelhető. Az alkalmazást az Intune sikeresen telepítette, majd ezt követően eltávolította. Az alkalmazás eltávolításának okai a következők: |
 | 0x8000FFFF | – 2147418113 |   | Váratlan hiba történt a telepítés során. További információért olvassa el a telepítési naplókat. |

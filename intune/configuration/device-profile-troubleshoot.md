@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 12/04/2019
+ms.date: 01/28/2020
 ms.topic: troubleshooting
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,16 +17,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 95186e4d1e54737ffeaa5e4c9728d188c2f867d6
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: 881d0f095d2144ae42db4825336275980a19f419
+ms.sourcegitcommit: b0d683917af83170f85022b270270d8ced8e301c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75206635"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76812361"
 ---
 # <a name="common-questions-issues-and-resolutions-with-device-policies-and-profiles-in-microsoft-intune"></a>Gyakori kérdések, problémák és megoldások az eszközök házirendjével és profiljaival Microsoft Intune
-
-
 
 Választ kaphat a gyakori kérdésekre, amikor az Intune-ban dolgozik az eszközök profiljaival és házirendjeivel. Ez a cikk a beadási időintervallumokat is felsorolja, és több lehetőséget biztosít az ütközések kezelésére.
 
@@ -84,6 +82,8 @@ Az eszközök akkor jelentkeznek be az Intune-ba, amikor értesítést kapnak a 
 
 Más módosítások, például a kapcsolattartási adatok módosítása a Céges portál alkalmazásban, nem okoz azonnali értesítést az eszközöknek.
 
+A házirend vagy profil beállításait minden bejelentkezéskor alkalmazza a rendszer. Előfordulhat, hogy a [Windows 10 Mdm házirend frissítése](https://www.petervanderwoude.nl/post/windows-10-mdm-policy-refresh/) jó erőforrás.
+
 ## <a name="if-multiple-policies-are-assigned-to-the-same-user-or-device-how-do-i-know-which-settings-gets-applied"></a>Ha ugyanazon felhasználóhoz vagy eszközhöz több szabályzat is hozzá van rendelve, honnan tudható, hogy mely beállítások lesznek alkalmazva?
 
 Ha ugyanahhoz a felhasználóhoz vagy eszközhöz két vagy több házirend van hozzárendelve, akkor a rendszer az egyes beállítások szintjén alkalmazza a beállításokat:
@@ -122,7 +122,7 @@ Amikor töröl egy profilt, vagy eltávolít egy olyan eszközt a csoportból, a
     - Egyszerű jelszavak engedélyezése
     - Jelszó minimális hossza
     - Kötelező jelszótípus
-    - Jelszó lejárata (nap)
+    - Jelszó lejárta (napokban)
     - Jelszóelőzmények megjegyzése
     - Sikertelen bejelentkezések engedélyezett száma az eszköz törlése előtt
     - Tétlen percek száma, mielőtt az eszköz újból kéri a jelszót
@@ -146,8 +146,8 @@ Amikor töröl egy profilt, vagy eltávolít egy olyan eszközt a csoportból, a
 
   - **iOS**: Az összes beállítás törlődik, kivéve a következőket:
   
-    - Hangroaming engedélyezése
-    - Adatroaming engedélyezése
+    - Hangroaming használatának engedélyezése
+    - Adatroaming használatának engedélyezése
     - Automatikus szinkronizálás engedélyezése roaming közben
 
 ## <a name="i-changed-a-device-restriction-profile-but-the-changes-havent-taken-effect"></a>Módosítottam egy eszközkorlátozási profilt, de a módosítások még nem léptek érvénybe

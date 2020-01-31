@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2d9fbbbb80cf25861b2e0afbf3d01cfca3ece5fd
-ms.sourcegitcommit: df8e2c052fafb2d5d4e9b4fcd831ae0ecf7f8d16
+ms.openlocfilehash: 7cda7404d24ccb9bb1c42d6bb66d77f29ac925ac
+ms.sourcegitcommit: b0d683917af83170f85022b270270d8ced8e301c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74991764"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76812460"
 ---
 # <a name="remove-devices-by-using-wipe-retire-or-manually-unenrolling-the-device"></a>Eszközök eltávolítása összes adatuk törlésével, az eszköz kivonásával vagy regisztrációja manuális törlésével
 
@@ -88,7 +88,7 @@ Az alábbi táblázatok ismertetik, hogy milyen adatokat távolít el a rendszer
 
 |Adattípus|iOS|
 |-------------|-------|
-|Vállalati alkalmazások és az Intune által telepített egyéb vonatkozó adatok|**Céges portál használatával telepített alkalmazások:** A felügyeleti profilba rögzített alkalmazások esetében az összes alkalmazásadatok és az alkalmazások el lesznek távolítva. Ezek az alkalmazások tartalmazzák az App Store-ból eredetileg telepített alkalmazásokat és a később vállalati alkalmazásokként kezelt alkalmazásokat. <br /><br /> **A Mobile App Management szolgáltatást használó Microsoft-alkalmazások és az App Store áruházból lettek telepítve:** A Céges portál által nem felügyelt alkalmazások esetén a rendszer eltávolítja az alkalmazás helyi tárolójában lévő, a Mobile Application Management (MAM) titkosítással védett vállalati alkalmazásadatok szolgáltatásait. Az alkalmazáson kívüli MAM-titkosítás által védett adatforgalom titkosítva és használhatatlan marad, de nem törlődik. A személyes alkalmazásadatok és az alkalmazások nem törlődnek.|
+|Vállalati alkalmazások és az Intune által telepített egyéb vonatkozó adatok|**Céges portál használatával telepített alkalmazások:** A felügyeleti profilba rögzített alkalmazások esetében az összes alkalmazásadatok és az alkalmazások el lesznek távolítva. Ezek az alkalmazások magukban foglalják az App Store-ból eredetileg telepített alkalmazásokat, amelyeket később vállalati alkalmazásként felügyelnek, kivéve, ha az alkalmazás nem lesz eltávolítva az eszköz eltávolításakor. <br /><br /> **A Mobile App Management szolgáltatást használó Microsoft-alkalmazások és az App Store áruházból lettek telepítve:** A Céges portál által nem felügyelt alkalmazások esetén a rendszer eltávolítja az alkalmazás helyi tárolójában lévő, a Mobile Application Management (MAM) titkosítással védett vállalati alkalmazásadatok szolgáltatásait. Az alkalmazáson kívüli MAM-titkosítás által védett adatforgalom titkosítva és használhatatlan marad, de nem törlődik. A személyes alkalmazásadatok és az alkalmazások nem törlődnek.|
 |Beállítások|Az Intune-szabályzat által konfigurált beállítások érvényüket vesztik. A felhasználók megváltoztathatják a beállításokat.|
 |Wi-Fi és VPN profilbeállításai|Eltávolítva.|
 |Tanúsítvány profilbeállításai|A tanúsítványok törlődnek és visszavonásra kerülnek.|
@@ -197,7 +197,7 @@ Ha szeretne teljesen kivonni egy Apple DEP-eszközt az Intune általi felügyele
 
     ![Képernyőkép az újbóli hozzárendelésről az Apple esetében](./media/devices-wipe/apple-reassign.png)
 
-## <a name="fresh-start"></a>Új kezdet
+## <a name="fresh-start"></a>Új kezdés
 
 Alkalmazható a Windows 10-es eszközökre. További információ az [új kezdésről](device-fresh-start.md).
 

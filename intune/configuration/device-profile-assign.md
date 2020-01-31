@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 12/19/2019
+ms.date: 01/28/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 252af3c7447b59ee6aaeb4cb05bed0579ae8af4c
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: 5b61c333f41054194b44c7517e508fe1ef6d28d4
+ms.sourcegitcommit: b0d683917af83170f85022b270270d8ced8e301c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75206703"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76812366"
 ---
 # <a name="assign-user-and-device-profiles-in-microsoft-intune"></a>Felhasználói és eszközprofilok hozzárendelése a Microsoft Intune-ban
 
@@ -31,7 +31,11 @@ Létrehoz egy profilt, és tartalmazza a megadott beállításokat. A következ�
 Ebből a cikkből megtudhatja, hogyan rendelhet hozzá egy profilt, és tartalmaz néhány információt a hatókör-címkék használatáról a profilokban.
 
 > [!NOTE]  
-> Ha eltávolítanak egy profilt, vagy már nincs hozzárendelve egy eszközhöz, a beállítás megtarthatja a meglévő értéket. A beállítás nem tér át alapértelmezett értékre. Ha másik értékre szeretné módosítani a beállítást, hozzon létre egy új profilt, és rendelje hozzá.
+> Ha egy profil el lett távolítva vagy már nincs hozzárendelve egy eszközhöz, a profil beállításaitól függően különböző dolgok is megtörténhetnek. A beállítások a kriptográfiai szolgáltatókon alapulnak, és minden CSP másképp kezeli a profil eltávolítását. Előfordulhat például, hogy egy beállítás megtartja a meglévő értéket, és nem állítja vissza az alapértelmezett értéket. A viselkedést az operációs rendszer minden CSP vezérli. A Windows-kriptográfiai szolgáltatók listáját a következő témakörben tekintheti meg: [Configuration Service Provider (CSP) referenciája](https://docs.microsoft.com/windows/client-management/mdm/configuration-service-provider-reference).
+>
+> Ha másik értékre szeretné módosítani a beállításokat, hozzon létre egy új profilt, konfigurálja a beállítást a **nincs konfigurálva**értékre, és rendelje hozzá a profilt. Az eszközre való alkalmazása után a felhasználóknak vezérlővel kell megváltoztatniuk a beállítást a kívánt értékre.
+>
+> A beállítások konfigurálásakor javasoljuk, hogy egy kísérleti csoportba telepítsen. További információk az Intune bevezetéséről: bevezetési [terv létrehozása](../fundamentals/planning-guide-rollout-plan.md).
 
 ## <a name="before-you-begin"></a>Előkészületek
 
@@ -69,7 +73,7 @@ Windows 10-es eszközökön olyan **alkalmazhatósági szabályokat** adhat hozz
 
 Sok felhasználó kérdezi, hogy mikor kell felhasználói csoportokat használni, és mikor kell használni az eszközök csoportjait. A válasz a céltól függ. Íme néhány útmutató az első lépésekhez.
 
-### <a name="device-groups"></a>Eszközcsoportok
+### <a name="device-groups"></a>Device groups
 
 Ha egy eszközön szeretné alkalmazni a beállításokat, függetlenül attól, hogy ki jelentkezett be, majd rendelje hozzá a profilokat az eszközök csoportjához. Az eszközök csoportjaira alkalmazott beállítások mindig az eszközön mennek, nem a felhasználó.
 
