@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78022dc4bdfa108bcd04e180ab413cbf04d2c728
-ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
+ms.openlocfilehash: d71ae3c15dddedd5d9ebfaf06fcae25af89f6b82
+ms.sourcegitcommit: c46b0c2d4507be6a2786a4ea06009b2d5aafef85
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76755612"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76912631"
 ---
 # <a name="in-development-for-microsoft-intune---january-2020"></a>Fejlesztés a Microsoft Intune – január 2020
 
@@ -110,15 +110,9 @@ Ez a funkció az alábbiakra vonatkozik:
 
 
 <!-- ***********************************************-->
-## <a name="device-management"></a>Eszközkezelés
+<!--## Device management-->
 
 
-### <a name="new-information-in-device-details---4471759-5604099----"></a>Új információ az eszköz részleteiben<!-- 4471759 5604099  -->
-A következő információk lesznek hozzáadva az eszközök **áttekintő** lapjához:
-- Memória kapacitása (a fizikai memória mennyisége az eszközön)
-- Tárolási kapacitás (az eszközön található fizikai tárterület mennyisége) 
-- CPU-processzor típusa és sebessége
-- RAM-és processzor-adatmennyiség
 
 <!-- ***********************************************-->
 <!--## Intune apps-->

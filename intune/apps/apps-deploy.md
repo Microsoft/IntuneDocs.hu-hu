@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e990cd94c0f8622d07e59b4130566a1dc2953a1c
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 15d6a67cb41455a1e3c0830e9ed242bfa52b0269
+ms.sourcegitcommit: c46b0c2d4507be6a2786a4ea06009b2d5aafef85
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74563997"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76912658"
 ---
 # <a name="assign-apps-to-groups-with-microsoft-intune"></a>Alkalmazások hozzárendelése csoportokhoz a Microsoft Intune-nal
 
@@ -132,7 +132,7 @@ A felügyelt Google Play-alkalmazások nem felügyelt eszközökhöz való hozz�
 Ha az Intune-konzolon kiadja az alkalmazás szelektív törlését, a munkahelyi fiók automatikusan el lesz távolítva a Play Áruház alkalmazásból, és a végfelhasználó ettől kezdve nem látja a munkahelyi alkalmazásokat a Play Áruház app Catalogban. Ha a munkahelyi fiókot eltávolítják egy eszközről, az Play Áruház telepített alkalmazások továbbra is telepítve lesznek az eszközön, és nem lesznek eltávolítva. 
 
 ## <a name="app-uninstall-setting-for-ios-managed-apps"></a>Az iOS által felügyelt alkalmazások alkalmazás-eltávolítási beállítása
-IOS-eszközök esetén kiválaszthatja, hogy mi történik a felügyelt alkalmazásokkal az eszköz Intune-regisztrációjának törlésével vagy a felügyeleti profil eltávolításával az **eszköz eltávolítási** beállításának eltávolításával. Ez a beállítás csak az eszköz regisztrálását követően érvényes az alkalmazásokra, és az alkalmazások felügyelt vannak telepítve. A beállítás nem konfigurálható webalkalmazásokhoz vagy webes hivatkozásokhoz. 
+IOS-eszközök esetén kiválaszthatja, hogy mi történik a felügyelt alkalmazásokkal az eszköz Intune-regisztrációjának törlésével vagy a felügyeleti profil eltávolításával az **eszköz eltávolítási** beállításának eltávolításával. Ez a beállítás csak az eszköz regisztrálását követően érvényes az alkalmazásokra, és az alkalmazások felügyelt vannak telepítve. A beállítás nem konfigurálható webalkalmazásokhoz vagy webes hivatkozásokhoz. Csak a Mobile Application Management (MAM) által védett adatok törlődnek az alkalmazás szelektív törlése után.
 
 A beállítás alapértelmezett értékei az új hozzárendelésekhez az alábbiak szerint vannak feltöltve:
 

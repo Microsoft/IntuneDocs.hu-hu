@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 01/27/2020
+ms.date: 01/30/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0e3cc3ab37f732281811cebd8275416a660852ba
-ms.sourcegitcommit: 5ad0ce27a30ee3ef3beefc46d2ee49db6ec0cbe3
+ms.openlocfilehash: 59f1aee9d00e185cbe5852725a1e7e3c4d7233ea
+ms.sourcegitcommit: c46b0c2d4507be6a2786a4ea06009b2d5aafef85
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76886753"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76912884"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -60,6 +60,9 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
 ### <a name="app-management"></a>Alkalmazáskezelés
+
+#### <a name="intune-support-for-additional-microsoft-edge-version-77-deployment-channel-for-macos---5983950----"></a>Intune-támogatás a Microsoft Edge 77-es verziójának további, a macOS-hez készült telepítési csatornájának telepítéséhez<!-- 5983950  -->
+Microsoft Intune mostantól támogatja a további **stabil** üzembe helyezési csatornát a MacOS-hez készült Microsoft Edge alkalmazáshoz. A **stabil** csatorna az ajánlott csatorna, amellyel a Microsoft Edge nagyvállalati környezetben is üzembe helyezhető. Hat hetente frissül, és minden kiadás a **Beta** Channel szolgáltatással kapcsolatos fejlesztési funkciókat tartalmaz. A **stabil** és a **bétaverziós** csatornákon kívül az Intune egy **fejlesztői** csatornát is támogat. A nyilvános előzetes verzió a Microsoft Edge 77-es és újabb verzióihoz készült stabil és fejlesztői csatornákat kínál a macOS rendszerhez. Alapértelmezés szerint a böngésző automatikus frissítései be vannak kapcsolva. További információ: [Microsoft Edge hozzáadása MacOS-eszközökhöz Microsoft Intune használatával](~/apps/apps-edge-macos.md).
 
 #### <a name="retirement-of-intune-managed-browser--5728447---"></a>Intune Managed Browser kivonása<!--5728447 -->
 A Intune Managed Browser megszűnik. Használja a Microsoft Edge-t a védett Intune-böngésző felhasználói felületéhez. További információkért lásd a "[művelet végrehajtása: a Microsoft Edge használata a védett Intune-böngészővel](~/fundamentals/whats-new.md#take-action-use-microsoft-edge-for-your-protected-intune-browser-experience)" című szakaszt az alábbi [hirdetményekben](~/fundamentals/whats-new.md#notices) .
@@ -121,7 +124,10 @@ A következő információk mostantól az eszközök **Áttekintés** lapján é
 A távoli művelet **megkerülése aktiválási zár** át lett nevezve a **aktiválási zár letiltására**. További információ: iOS- [aktiválási zár letiltása az Intune](../remote-actions/device-activation-lock-bypass.md)-nal.
 
 #### <a name="windows-10-feature-update-deployment-support-for-autopilot-devices---5948137-----"></a>Windows 10 funkció-frissítési üzembe helyezés támogatása az Autopilot-eszközökhöz<!-- 5948137   -->
-Az Intune mostantól támogatja a [Windows 10-es funkcióinak frissítését](../protect/windows-update-for-business-configure.md#windows-10-feature-updates) az Autopilot használatával üzembe helyezett eszközökkel.  
+Az Intune mostantól támogatja az Autopilot regisztrált eszközök célzását a [Windows 10-es funkcióinak frissítésével](../protect/windows-update-for-business-configure.md#windows-10-feature-updates).
+
+A Windows 10 szolgáltatás frissítési házirendjei nem alkalmazhatók az Autopilot-ből a Box Experience (OOBE) alkalmazásban, és csak az első Windows Update vizsgálatra érvényesek, miután egy eszköz befejezte az üzembe helyezést (ez általában egy nap).
+
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
 ### <a name="monitor-and-troubleshoot"></a>Monitorozás és hibaelhárítás

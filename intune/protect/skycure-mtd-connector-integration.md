@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f6c28b222307ee20e3198033ef6aa4af3d756e7e
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 19c1bb959212ebeaea40f7089cba5533b6efeb71
+ms.sourcegitcommit: c46b0c2d4507be6a2786a4ea06009b2d5aafef85
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72681323"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76912607"
 ---
 # <a name="set-up-symantec-endpoint-protection-mobile-integration-with-intune"></a>A Symantec Endpoint Protection Mobile és az Intune közötti integráció beállítása
 
@@ -40,7 +40,7 @@ A Symantec Endpoint Protection Mobile (SEP Mobile) és az Intune közötti integ
 - Az integráció végrehajtásához az Azure AD-fióknak globális rendszergazdai fióknak kell lennie.
 ### <a name="network-setup"></a>Hálózati beállítás
 
-Ha meg szeretne győződni róla, hogy a hálózata megfelelően van beállítva a SEP Mobile-integrációhoz, tekintse meg a [hálózati konfiguráció beállításáról szóló](https://portal.skycure.com/articles/Documentation/Setting-up-your-network-configuration-26-8-2016) Symantec-cikket.
+Győződjön meg arról, hogy a hálózat megfelelően van konfigurálva a SEP Mobile telepítőjének való integrációhoz a [telepítés után a Sep-kezelő konfigurálását](https://support.symantec.com/us/en/article.HOWTO80819.html)végző Symantec-cikkre való hivatkozással.
 
 ### <a name="full-integration-vs-read-only"></a>Teljes integráció vagy csak olvasható
 
@@ -112,7 +112,7 @@ A SEP Mobile a Mobile Threat Defense szolgáltatást futtató eszközöket az Az
     ![Kép a címtár-azonosítóról az Azure Portalon](./media/skycure-mtd-connector-integration/symantec-azure-portal-directory-ID.png)
 
 ### <a name="optional-create-a-dedicated-security-group-for-devices-that-need-to-run-the-sep-mobile-apps"></a>(Választható) Hozzon létre egy dedikált biztonsági csoportot azon eszközök számára, amelyek SEP Mobile-alkalmazásokat szeretnének futtatni
-1. Az [Azure Portal](https://portal.azure.com) **Kezelés** területén válassza a **Felhasználók és csoportok**, majd a **Minden csoport** lehetőséget.
+1. Az [Azure Portal](https://portal.azure.com)**Kezelés** területén válassza a **Felhasználók és csoportok**, majd a **Minden csoport** lehetőséget.
 
 2. Kattintson a **Hozzáadás** gombra. Írjon be egy **csoportnevet**. A **Tagság típusa** területen válassza a **Hozzárendelt** lehetőséget.
 

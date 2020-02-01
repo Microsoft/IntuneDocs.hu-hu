@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/21/2020
+ms.date: 01/30/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 58f6c4e2c99c7e2c169014a71bb1cfd2bc85219b
-ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
+ms.openlocfilehash: fa4510b95e1e84d9f94158833dac555daa33c690
+ms.sourcegitcommit: c46b0c2d4507be6a2786a4ea06009b2d5aafef85
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76755238"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76912556"
 ---
 # <a name="windows-10-app-deployment-by-using-microsoft-intune"></a>Windows 10-es alkalmazások központi telepítése Microsoft Intune használatával 
 
@@ -80,22 +80,28 @@ A Microsoft Store for Business alkalmazások kategorizálása:
 Az alkalmazás típusától függően a következő két módszer egyikével telepítheti az alkalmazást egy Windows 10-es eszközre:
 
 - **Felhasználói környezet**: Ha egy alkalmazás felhasználói környezetben van telepítve, a felügyelt alkalmazás az adott felhasználó számára az eszközre kerül, amikor a felhasználó bejelentkezik az eszközre. Vegye figyelembe, hogy az alkalmazás telepítése nem sikerül, amíg a felhasználó be nem jelentkezik az eszközre. 
-  - A modern üzletági alkalmazások és a Microsoft Store for Business-alkalmazások (online és offline) felhasználói környezetben is üzembe helyezhetők. Az alkalmazások támogatják mind a szükséges, mind az elérhető szándékot.
+  - A modern LOB-alkalmazások és a Microsoft Store for Business-alkalmazások (online és offline) felhasználói környezetben is üzembe helyezhetők. Az alkalmazások támogatják mind a szükséges, mind az elérhető szándékot.
   - A felhasználói módban vagy kettős módban létrehozott Win32-alkalmazások felhasználói környezetben is üzembe helyezhetők, és mind a szükséges, mind a rendelkezésre álló szándékot támogatják. 
 - **Eszköz környezete**: Ha az alkalmazás az eszköz kontextusában van telepítve, a felügyelt alkalmazás közvetlenül az Intune-ba települ az eszközre.
-  - Csak a modern üzletági alkalmazások és az offline licenccel rendelkező Microsoft Store for Business alkalmazások helyezhetők üzembe az eszköz környezetében. Ezek az alkalmazások csak a szükséges szándékot támogatják.
+  - Az eszközök környezetében csak a modern LOB-alkalmazások és az offline licenccel rendelkező Microsoft Store vállalati alkalmazások helyezhetők üzembe. Ezek az alkalmazások csak a szükséges szándékot támogatják.
   - A gépi mód vagy kettős mód használatával létrehozott Win32-alkalmazások az eszköz kontextusában telepíthetők, és csak a szükséges szándékot támogatják.
 
 > [!NOTE]
 > A kettős üzemmódú alkalmazásokként létrehozott Win32-alkalmazások esetében a rendszergazdának ki kell választania, hogy az alkalmazás felhasználói vagy gépi üzemmódú alkalmazásként fog működni az adott példánnyal társított összes hozzárendeléshez. A telepítési környezet nem módosítható hozzárendelés alapján.  
 
-Ha egy alkalmazás az eszköz kontextusában van telepítve, a telepítés csak akkor lesz sikeres, ha az eszköz környezetét támogató eszközre irányul. Az eszközkörnyezetben történő üzembe helyezés ezen felül a következő feltételeknek tesz eleget:
-- Ha egy alkalmazás az eszköz kontextusában van telepítve, és egy felhasználóra irányul, a telepítés sikertelen lesz. A következő állapot és hiba jelenik meg a felügyeleti konzolon:
+Az alkalmazások csak az eszköz környezetében telepíthetők, ha az eszköz és az Intune-alkalmazás típusa is támogatott. A következő alkalmazás-típusokat telepítheti az eszköz környezetében, és hozzárendelheti ezeket az alkalmazásokat egy eszköz csoportjához:
+
+- Win32-alkalmazások
+- Offline licenccel rendelkező Microsoft Store az üzleti alkalmazásokhoz
+- LOB-alkalmazások (MSI, APPX és MSIX)
+- Office 365 ProPlus
+
+A Windows LOB-alkalmazásokat (konkrétan APPX és MSIX) és Microsoft Store for Business apps (offline alkalmazások), amelyeket az eszköz környezetében való telepítéshez kiválasztottak, hozzá kell rendelni az eszközhöz. A telepítés sikertelen lesz, ha az alkalmazások egyike a felhasználói környezetben van telepítve. A következő állapot és hiba jelenik meg a felügyeleti konzolon:
   - Állapot: Sikertelen.
   - Hiba: A felhasználó nem célozhatja meg az eszköz környezetének telepítését.
-- Ha egy alkalmazás az eszköz kontextusában van telepítve, de olyan eszközre irányul, amely nem támogatja az eszköz kontextusát, a telepítés sikertelen lesz. A következő állapot és hiba jelenik meg a felügyeleti konzolon:
-  - Állapot: Sikertelen.
-  - Hiba: A platform nem támogatja az eszközkörnyezetben történő telepítést. 
+
+> [!IMPORTANT]
+> Ha az Autopilot White kesztyű kiépítési forgatókönyvével együtt használja, nincs szükség a LOB-alkalmazásokra és a Microsoft Store az eszköz kontextusában üzembe helyezett üzleti alkalmazásokra az eszközcsoport célzásához. További információ: a [Windows Autopilot White kesztyű üzembe helyezése](https://docs.microsoft.com/windows/deployment/windows-autopilot/white-glove).
 
 > [!Note]
 > Ha egy adott központi telepítéssel ment egy alkalmazás-hozzárendelést, az adott hozzárendelés kontextusa nem módosítható, kivéve a modern alkalmazásokat. Modern alkalmazások esetén a kontextust a felhasználói környezetből az eszköz környezetére módosíthatja. 

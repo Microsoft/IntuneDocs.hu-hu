@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 01/21/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c31dd652022ae0d394ab2229a0c25b362ad8574d
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 6ebcb81cd0f186a3fd23e0701d12ea871eab129a
+ms.sourcegitcommit: c46b0c2d4507be6a2786a4ea06009b2d5aafef85
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74563589"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76912571"
 ---
 # <a name="add-microsoft-edge-to-macos-devices-using-microsoft-intune"></a>Microsoft Edge hozzáadása macOS-eszközökhöz Microsoft Intune használatával
 
@@ -65,11 +65,15 @@ Ebben a lépésben az alkalmazás telepítésével kapcsolatos információkat n
 Ebben a lépésben konfigurálja az alkalmazás telepítési beállításait.
 
 1. Az **alkalmazás hozzáadása** panelen válassza az **Alkalmazásbeállítások**lehetőséget.
-2. Az **Alkalmazásbeállítások** ablaktáblán a **bétaverzió** automatikusan ki van választva, és nem módosítható.
-    - A **Beta** Channel a legstabilabb Microsoft Edge előzetes verziója, és a legjobb választás a teljes pilóta számára a szervezeten belül. A főbb frissítések 6 hetente.
+2. Az **Alkalmazásbeállítások** ablaktáblán válassza a **STABLE**, a **Beta** vagy a **dev** lehetőséget a **Channel (csatorna** ) listából annak meghatározásához, hogy melyik peremhálózati csatornát fogja telepíteni az alkalmazásból.
+
+    - A **stabil** csatorna az ajánlott csatorna, amellyel széles körben üzembe helyezhetők a nagyvállalati környezetek. Hat hetente frissül, és minden kiadás a Beta Channel szolgáltatással kapcsolatos fejlesztési funkciókat tartalmaz.
+    - A Beta Channel a legstabilabb Microsoft Edge előzetes **verziója** , és a legjobb választás a teljes pilóta számára a szervezeten belül. A főbb frissítések 6 hetente minden kiadásban a fejlesztői csatorna megismeréseit és fejlesztéseit is magában foglalja.
+    - A **fejlesztői** csatorna készen áll a vállalati visszajelzésekre Windows, Windows Server és MacOS rendszereken. Minden héten frissül, és tartalmazza a legújabb javításokat és javításokat.
 
     > [!NOTE]
     > A Microsoft Edge böngésző emblémája az alkalmazással jelenik meg, amikor a felhasználók megkeresik a vállalati portált.
+
 3.  Válassza az **OK** gombot.
 
 ## <a name="select-scope-tags-optional"></a>Hatóköri címkék kiválasztása (nem kötelező)

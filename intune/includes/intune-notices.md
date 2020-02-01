@@ -7,12 +7,12 @@ ms.topic: include
 ms.date: 11/19/2019
 ms.author: erikje
 ms.custom: include file
-ms.openlocfilehash: e745290991da4d80c7e3839250edbfdd64ef1b7a
-ms.sourcegitcommit: 01c57ac880dcb5f474908977c89810f5bedaf326
+ms.openlocfilehash: 9aa82268fb02f5124e48eb303f19cf32be02c284
+ms.sourcegitcommit: c46b0c2d4507be6a2786a4ea06009b2d5aafef85
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75760966"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76912632"
 ---
 Ezek a hirdetmények olyan fontos információkat tartalmaznak, amelyek segíthetnek a jövőbeli Intune-változások és-funkciók előkészítésében.
 
@@ -21,9 +21,9 @@ A januári Intune szolgáltatás frissítése során új biztonsági szerepkört
  
 #### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
 Jelenleg az Azure AD-ben három szerepkör érhető el a biztonsági szakemberek számára:
-- A biztonsági olvasó szerepkör az Azure AD-ben, amely csak olvasási hozzáférést biztosít az Intune-hoz.
+- Biztonsági olvasó szerepkör az Azure AD-ben, amely csak olvasási hozzáférést biztosít az Intune-hoz.
 - Biztonsági operátori szerepkör az Azure AD-ben, amely csak olvasási hozzáférést biztosít az Intune-hoz.
-- Biztonsági rendszergazda az Azure AD-ben. Amikor az Intune a januári frissítést, valamint az Intune írásvédett engedélyeit tartalmazza, a Endpoint Security Manager szerepkör által biztosított új engedélyek a következők:
+- Biztonsági rendszergazda az Azure AD-ben. Amikor az Intune a januári frissítést, valamint a csak olvasási jogosultsággal rendelkező Intune-t szállítja, a Endpoint Security Manager szerepkör által biztosított új engedélyek a következők:
     - Eszközök megfelelőségi házirendjeinek olvasása, létrehozása, frissítése, törlése és társítása
     - Felügyelt eszközök olvasása, törlése és frissítése
     - Biztonsági alapkonfigurációk olvasása, létrehozása, frissítése, törlése és kiosztása
@@ -72,25 +72,11 @@ A Intune Managed Browserról a Microsoft Edge-re való zökkenőmentes áttéré
 2. Győződjön meg arról, hogy az Ön környezetében található összes MAM-védelemmel ellátott alkalmazás rendelkezik "a webes tartalmak átvitelének korlátozása más alkalmazásokkal" beállítással "szabályzat által felügyelt böngészők" értékre. 
 3. A "com. microsoft. Intune. useEdge" nevű felügyelt alkalmazás-konfigurációs beállítással megcélzott összes MAM-védelemmel ellátott érték értéke TRUE (igaz). A következő hónapban a 1911-es kiadással megkezdheti a 2. és a 3. lépést a "webtartalom átvitelének korlátozása más alkalmazásokkal" beállítással, hogy a "Microsoft Edge" legyen kiválasztva az alkalmazás-védelmi szabályzatok adatvédelem szakaszában. . 
 
-Az iOS-és Android-alapú webklipek támogatása hamarosan elérhető lesz. Ha ez a támogatás megjelent, újra meg kell céloznia a már meglévő webklipeket, hogy azok a Managed Browser helyett a Microsoft Edge-ben legyenek megnyitva. 
+Az iOS-és Android-alapú webklipek támogatása hamarosan elérhető lesz. Ha ez a támogatás megjelent, újra meg kell céloznia a meglévő webklipeket, hogy azok a Managed Browser helyett a Microsoft Edge-ben legyenek megnyitva. 
 
 #### <a name="additional-information"></a>További információ
 További információért látogasson el a [Microsoft Edge és az alkalmazás-védelmi szabályzatok használatával](../apps/manage-microsoft-edge.md) foglalkozó dokumentumokra, vagy tekintse meg a [támogatási blogbejegyzését](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Use-Microsoft-Edge-for-your-Protected-Intune-Browser-Experience/ba-p/1004269).
 
-### <a name="plan-for-change-updated-experience-when-enrolling-android-enterprise-dedicated-devices-in-intune--5198878--"></a>Tervezze meg a változást: az androidos vállalati dedikált eszközök Intune-ban való regisztrálásának frissített felhasználói felülete<!--5198878-->
-Az Intune novemberi vagy 1911-as verziójában a SCEP-eszközök tanúsítvány-telepítésének támogatása a Wi-Fi profilokhoz való tanúsítványalapú hozzáférés engedélyezése érdekében az androidos vállalati dedikált eszközökhöz nyújt támogatást. Ez a módosítás azt is magában foglalja, hogy az androidos vállalati dedikált eszközök regisztrálása során a folyamat néhány kisebb változást is igényel.
-
-#### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
-Ha az androidos vállalati dedikált eszközöket felügyeli az Ön környezetében, akkor az egyes változások novemberben jelennek meg.
-
-- Új Android Enterprise-eszközök regisztrálásához: a végfelhasználók a regisztráció során különböző lépéseket fognak látni az eszközökön. A regisztráció továbbra is megkezdi a mai napig (QR, NFC, Zero Touch vagy Device Identifier), de a novemberi kiadás után a kötelező alkalmazás telepítési lépése lesz.
-- Dedikált eszközként regisztrált meglévő Android-eszközök esetén: az Intune a november elején kezdi meg automatikusan telepíteni a Microsoft Intune alkalmazást az eszközökön. Semmilyen műveletet nem kell elvégeznie. A rendszer automatikusan letölti és telepíti az alkalmazást az eszközökön. 
-
-#### <a name="what-can-i-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
-Javasoljuk, hogy frissítse a végfelhasználói útmutatást, és tájékoztassa az ügyfélszolgálatot erről a változásról. További részletekért és képernyőképekhez kattintson a további információk elemre. A változás megkezdése előtt frissítjük az Újdonságok oldalát.
-
-#### <a name="additional-information"></a>További információ
-[https://aka.ms/Dedicated_devices_enrollment](https://aka.ms/Dedicated_devices_enrollment)
 
 ### <a name="end-of-support-for-legacy-pc-management"></a>A régi számítógép-felügyelet támogatásának vége
 
@@ -106,7 +92,7 @@ A Google által végzett módosítások miatt az Intune-felhasználók a követk
 - Az Intune csak az Android 10 vagy újabb rendszerű, a Q2 CY2020-t futtató Android-eszközök teljes támogatását teszi lehetővé. Az Android 10 vagy újabb rendszerű eszközökön futó rendszergazda által felügyelt eszközök nem lesznek teljesen felügyelve. Különösen az érintett eszközök nem kapják meg az új jelszóra vonatkozó követelményeket.
     - Ebben az időkeretben nem kerül sor a Samsung Knox-eszközökre, mert az Intune a Knox platformmal való integrációja révén kiterjesztett támogatást biztosít. Ez több időt biztosít az eszköz rendszergazdai felügyeletének megtervezésére.    
 - Az Android 10 alatti Android-verziókban továbbra is az eszköz rendszergazdája által felügyelt Android-eszközöket nem érinti a rendszer, és továbbra is teljes körűen felügyelhető az eszköz rendszergazdájával.    
-- Az Android 10 vagy újabb rendszerű eszközökön a Google az eszköz-rendszergazdai felügyeleti ügynökök (például Céges portál) számára korlátozta az eszköz-azonosító információk elérését. Ez a korlátozás a következő Intune-funkciókat érinti az Android 10 vagy újabb rendszerű eszközök frissítése után:  
+- Az Android 10 vagy újabb rendszerű eszközökön a Google az eszköz-rendszergazdai felügyeleti ügynökök (például Céges portál) számára korlátozta az eszköz-azonosító információk elérését. Ez a korlátozás a következő Intune-funkciókra van hatással, miután egy eszköz frissítve lett az Android 10-es vagy újabb verzióra:  
     - A VPN hálózati hozzáférés-vezérlése már nem fog működni.   
     - Az eszközök vállalati tulajdonú IMEI-vagy sorozatszámmal való azonosítása nem fogja automatikusan megjelölni az eszközöket vállalati tulajdonban.  
     - Az IMEI-azonosító és a sorozatszám többé nem lesz látható a rendszergazdák számára az Intune-ban. 
@@ -158,6 +144,6 @@ Javasoljuk, hogy a szervezet azonnal vegye fontolóra ezt a műveleti tervet:
 - Tekintse át az [asztali alkalmazást](https://www.microsoft.com/fasttrack/microsoft-365/desktop-app-assure?rtc=1) az FastTrack-on keresztül, amely segítséget nyújt a Microsoft-alkalmazások kompatibilitási ígéretéhez.
 - Meglévő örökölt Intune szoftveres ügyfél által felügyelt eszközök átváltása a Microsoft által ajánlott megoldásra a Windows 10 felügyeletéhez a MDM-kezelés használatával. Regisztrálja az összes új Windows 10-es számítógépet az Intune-hoz készült MDM-felügyelettel a Azure Portal.
 
-További információért tekintse meg a [blogbejegyzésben](https://aka.ms/Windows7_Intune) .
+További információt a [blogbejegyzésben](https://aka.ms/Windows7_Intune)talál.
 
 

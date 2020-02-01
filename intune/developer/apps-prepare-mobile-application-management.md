@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a8b5b323c4bb80cd15bf9c6c8f0f7a8be577d6bf
-ms.sourcegitcommit: 8d7406b75ef0d75cc2ed03b1a5e5f74ff10b98c0
+ms.openlocfilehash: 842af9c8fffcb3755c81260739f4949768e75bac
+ms.sourcegitcommit: c46b0c2d4507be6a2786a4ea06009b2d5aafef85
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75653937"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76912675"
 ---
 # <a name="prepare-line-of-business-apps-for-app-protection-policies"></a>Üzletági alkalmazások felkészítése az alkalmazásvédelmi szabályzatok használatára
 
@@ -41,7 +41,6 @@ Az alkalmazásvédelmi szabályzatok támogatásához készült alkalmazásburko
 ### <a name="reasons-to-use-the-app-wrapping-tool"></a>Mikor érdemes használni az Alkalmazásburkoló eszközt?
 
 * Az alkalmazásban nincsenek beépített adatvédelmi funkciók
-* Egyszerű az alkalmazás
 * Az alkalmazás belső telepítésű
 * Nincs hozzáférése az alkalmazás forráskódjához
 * Másvalaki fejlesztette az alkalmazást
@@ -63,7 +62,6 @@ További információk az SDK-ról: [Áttekintés](app-sdk.md). Az SDK használa
 ### <a name="reasons-to-use-the-sdk"></a>Az SDK használatának előnyei
 
 * Az alkalmazásban nincsenek beépített adatvédelmi funkciók
-* Az alkalmazás összetett és számos felületet tartalmaz
 * Az alkalmazás nyilvános alkalmazás-áruházból, például a Google Play vagy az Apple App Store áruházból telepíthető
 * Ön alkalmazásfejlesztő, és rendelkezik az SDK használatához szükséges technikai tudással
 * Az alkalmazás más SDK-integrációkkal rendelkezik
@@ -76,13 +74,13 @@ További információk az SDK-ról: [Áttekintés](app-sdk.md). Az SDK használa
 |**iOS--**|Igen – használja az [Intune App SDK Xamarin-kötéseket](app-sdk-xamarin.md).|Nem|
 |**Android--**| Igen – használja az [Intune App SDK Xamarin-kötéseket](app-sdk-xamarin.md).|Nem|
 
-### <a name="not-using-an-app-development-platform-listed-above"></a>Nem használ a fentiekben felsorolt app Development platformot?
+## <a name="not-using-an-app-development-platform-listed-above"></a>Nem használ a fentiekben felsorolt app Development platformot?
 
 Az Intune SDK Fejlesztői csapata aktívan teszteli és karbantartja a natív Android, iOS (obj-C, Swift), a Xamarin, a Xamarin. Forms és a Cordova platformmal létrehozott alkalmazásokat. Míg egyes ügyfelek sikerrel jártak az Intune SDK-val más platformokkal, például a natív és a NativeScript reagálva, a támogatott platformoktól eltérő módon nem biztosítunk explicit útmutatást vagy beépülő modult az alkalmazás-fejlesztőknek. 
 
 ## <a name="feature-comparison"></a>Szolgáltatások összehasonlítása
 
-Ez a táblázat az App SDK-hoz és az alkalmazásburkoló eszközhöz használható beállításokat sorolja fel.
+Ez a táblázat felsorolja azokat a beállításokat, amelyek engedélyezve vannak, ha az alkalmazás az App SDK-t vagy az alkalmazás-burkoló eszközt használja. Egyes szolgáltatások esetében az alkalmazás-fejlesztőknek az Intune SDK-val való alapszintű integráción kívül kell alkalmazniuk az alkalmazásokat, és nem engedélyezett, ha az alkalmazás az alkalmazás burkoló eszközét használja. 
 
 |Szolgáltatás|App SDK|Alkalmazásburkoló eszköz|
 |-----------|---------------------|-----------|
@@ -105,9 +103,9 @@ Ez a táblázat az App SDK-hoz és az alkalmazásburkoló eszközhöz használha
 |Képernyőrögzítés letiltása (csak Android esetén)|X|X|
 |Eszközregisztráció nélküli MAM támogatása|X|X|
 |Alkalmazás adatainak teljes törlése|X|X|
-|Munkahelyi és iskolai adatok szelektív törlése több identitásos helyzetekben <br><br>**Megjegyzés:** iOS esetén a felügyeleti profil törlésekor az alkalmazást is törli.|X||
+|Munkahelyi és iskolai adatok szelektív törlése több Identitásos helyzetekben <br><br>**Megjegyzés:** iOS esetén a felügyeleti profil törlésekor az alkalmazást is törli.|X||
 |A „Mentés másként” művelet letiltása|X||
-|Célként megadott alkalmazás konfigurációja (vagy az alkalmazás konfigurációja a "MAM Channel" használatával)|X||
+|Célként megadott alkalmazás konfigurációja (vagy az alkalmazás konfigurációja a "MAM Channel" használatával)|X|X|
 |Többszörös identitás támogatása|X||
 |Testreszabható stílus |X|||
 |Igény szerinti VPN-alkalmazáskapcsolatok Citrix mVPN segítségével|X|X| 
@@ -119,6 +117,11 @@ Ez a táblázat az App SDK-hoz és az alkalmazásburkoló eszközhöz használha
 |Minimális iOS Intune SDK-verzió megkövetelése (csak iOS)|X|X|
 |Biztonság-eszköz igazolása (csak Android esetén)|X|X|
 |Veszélyforrások vizsgálata az alkalmazásokban (csak Android esetén)|X|X|
+|A maxmimum Mobile Threat Defense szállítói eszköz kockázati szintjének megkövetelése|X||
+|Alkalmazás-értesítési tartalom konfigurálása a szervezeti fiókokhoz|X|X|
+|Jóváhagyott billentyűzetek használatának megkövetelése (csak Android esetén)|X|X|
+|Alkalmazás-védelmi házirend megkövetelése (feltételes hozzáférés)|X||
+|Jóváhagyott ügyfélalkalmazás megkövetelése (feltételes hozzáférés)|X||
 
 ## <a name="next-steps"></a>További lépések
 

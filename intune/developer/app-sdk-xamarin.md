@@ -17,22 +17,22 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa8d4fd8dabd862899cab116c61d4ae4584d398c
-ms.sourcegitcommit: 7cc45ef52dda08479bc6bdff7d11d2f6c0e7b93b
+ms.openlocfilehash: 10f3d4c54d9a8fcb797ae3359b1a833ac9080548
+ms.sourcegitcommit: c46b0c2d4507be6a2786a4ea06009b2d5aafef85
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74899378"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76912699"
 ---
 # <a name="microsoft-intune-app-sdk-xamarin-bindings"></a>Microsoft Intune App SDK Xamarin Bindings
 
 > [!NOTE]
 > Először célszerű elolvasnia az [Intune App SDK használatának első lépései](app-sdk-get-started.md) című cikket, amely bemutatja az integráció előkészítését a támogatott platformokon.
 
-## <a name="overview"></a>Házirend
+## <a name="overview"></a>Overview
 Az [Intune App SDK Xamarin Bindings](https://github.com/msintuneappsdk/intune-app-sdk-xamarin) lehetővé teszi az [Intune alkalmazásvédelmi szabályzatok](../apps/app-protection-policy.md) használatát a Xamarinnal készített iOS- és Android-alkalmazásokban. A kötések lehetővé teszik a fejlesztők számára, hogy Intune alkalmazásvédelmi funkciókat építsenek be a Xamarin-alapú alkalmazásaikba.
 
-A Microsoft Intune App SDK Xamarin Bindings lehetővé teszi, hogy Intune alkalmazásvédelmi szabályzatokat (vagy más néven alkalmazás- vagy MAM-szabályzatokat) építsen be a Xamarinnal fejlesztett alkalmazásokba. A MAM-kompatibilis alkalmazás az, amelyik integrálva van az Intune App SDK-val. Mindez lehetővé teszi a rendszergazdáknak, hogy alkalmazásvédelmi szabályzatokat telepítsenek a mobilalkalmazásra vonatkozóan, ha az Intune aktívan felügyeli az alkalmazást.
+A Microsoft Intune App SDK Xamarin Bindings lehetővé teszi, hogy Intune alkalmazásvédelmi szabályzatokat (vagy más néven alkalmazás- vagy MAM-szabályzatokat) építsen be a Xamarinnal fejlesztett alkalmazásokba. MAM-kompatibilisnek az Intune App SDK-val integrált alkalmazásokat nevezzük. Mindez lehetővé teszi a rendszergazdáknak, hogy alkalmazásvédelmi szabályzatokat telepítsenek a mobilalkalmazásra vonatkozóan, ha az Intune aktívan felügyeli az alkalmazást.
 
 ## <a name="whats-supported"></a>Támogatott források és műveletek
 
@@ -54,12 +54,23 @@ Az Intune App SDK Xamarin Bindingsszal létrehozott Xamarin-alkalmazásokra most
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-A [licencfeltételek](https://github.com/msintuneappsdk/intune-app-sdk-xamarin/blob/master/Microsoft%20License%20Terms%20Intune%20App%20SDK%20Xamarin%20Component.pdf) áttekintése. Nyomtassa ki és őrizze meg a licencfeltételeket. Az Intune App SDK Xamarin Bindings letöltésével és használatával elfogadja licencfeltételeket. Amennyiben a feltételeket nem fogadja el, ne használja a szoftvert.
+A [licencfeltételek](https://github.com/msintuneappsdk/intune-app-sdk-xamarin/blob/master/Microsoft%20License%20Terms%20Intune%20App%20SDK%20Xamarin%20Component.pdf) áttekintése. Nyomtassa ki és őrizze meg a szerződés egy példányát. Az Intune App SDK Xamarin Bindings letöltésével és használatával elfogadja licencfeltételeket. Ha nem fogadja el, ne használja a szoftvert.
 
 Az Intune SDK a [hitelesítésre](https://azure.microsoft.com/documentation/articles/active-directory-authentication-scenarios/) és a feltételes indítási forgatókönyvekre támaszkodik [Active Directory-hitelesítési tárre (ADAL)](https://azure.microsoft.com/documentation/articles/active-directory-authentication-libraries/) , amelyeknek az alkalmazásoknak a [Azure Active Directoryval](https://azure.microsoft.com/documentation/articles/active-directory-whatis/)való konfigurálására van szükségük. 
 
 Ha az alkalmazás már konfigurálva van a ADAL vagy a MSAL használatára, és rendelkezik a saját egyéni ügyfél-azonosítójával a hitelesítéshez a Azure Active Directory használatával, győződjön meg arról, hogy a Xamarin-alkalmazás engedélyeit az Intune Mobile Application Management (MAM) szolgáltatáshoz adja meg majd. Az útmutató az Intune[app Protection szolgáltatáshoz](app-sdk-get-started.md#give-your-app-access-to-the-intune-app-protection-service-optional)című szakaszában található útmutatást követve megtudhatja, [Hogyan](app-sdk-get-started.md)érheti el az alkalmazást az Intune-hoz.
 
+## <a name="security-considerations"></a>Biztonsági megfontolások
+
+A lehetséges hamisítási, információfelfedési és a jogok kiterjesztéséből adódó támadások megelőzése érdekében:
+
+* Győződjön meg arról, hogy a Xamarin-alkalmazások fejlesztése biztonságos munkaállomáson történik.
+* Győződjön meg arról, hogy a kötések érvényes Microsoft-forrásból származnak:
+  * [MS Intune app SDK NuGet-profil](https://www.nuget.org/profiles/msintuneappsdk)
+  * [Intune app SDK Xamarin GitHub-adattár](https://github.com/msintuneappsdk/intune-app-sdk-xamarin)
+* Konfigurálja a NuGet konfigurációját úgy, hogy az aláírt, nem módosított NuGet-csomagokat Bízzon meg a projektben.
+További információ: [aláírt csomagok telepítése](https://docs.microsoft.com/nuget/consume-packages/installing-signed-packages) .
+* Gondoskodjon a Xamarin alkalmazást tartalmazó kimeneti könyvtár védelméről. Fontolja meg a kimeneti oldal számára egy felhasználói szintű könyvtár használatát.
 
 
 ## <a name="enabling-intune-app-protection-polices-in-your-ios-mobile-app"></a>Az Intune alkalmazásvédelmi szabályzatainak engedélyezése az iOS-mobilalkalmazásban
@@ -120,7 +131,7 @@ Ha ki szeretne zárni egy osztályt a MAM-ification a remapper használatával, 
 ```
 
 > [!NOTE]
-> Jelenleg a remapper hibája megakadályozza a hibakeresést a Xamarin. Android-alkalmazásokban. A manuális integráció ajánlott az alkalmazás hibakereséséhez, amíg a probléma nem oldódik meg.
+> A remapper jelenleg megakadályozza a hibakeresést a Xamarin. Android-alkalmazásokban. A manuális integráció ajánlott az alkalmazás hibakereséséhez.
 
 #### <a name="renamed-methodsapp-sdk-androidmdrenamed-methods"></a>[Átnevezett metódusok](app-sdk-android.md#renamed-methods)
 Sok esetben az androidos osztályban rendelkezésre álló metódus végsőként van megjelölve a helyettesítő MAM-osztályban. Ebben az esetben a helyettesítő MAM-osztály egy hasonlóan elnevezett metódust biztosít (a `MAM` utótaggal), amelyet felül kell írni. Így például a `MAMActivity` származtatásakor az `OnCreate()` felülírása, illetve a `base.OnCreate()` metódus hívása helyett az `Activity` tevékenységnek felül kell írnia az `OnMAMCreate()` metódust, és meg kell hívnia a `base.OnMAMCreate()` metódust.
@@ -185,7 +196,7 @@ IMAMEnrollmentManager mgr = MAMComponents.Get<IMAMEnrollmentManager>();
 `Xamarin.Forms`-alkalmazások esetén a `Microsoft.Intune.MAM.Remapper`-csomag az `MAM` osztályok a gyakran használt `Xamarin.Forms` osztályok osztály-hierarchiába való beírásával automatikusan végrehajtja a MAM-osztály cseréjét. 
 
 > [!NOTE]
-> A Xamarin. Forms integrációt a fentiekben ismertetett Xamarin. Android-integráció mellett kell elvégezni. A remapper másként viselkedik a Xamarin. Forms-alkalmazásoknál, így a kézi MAM-cserék továbbra is szükségesek.
+> A Xamarin. Forms integrációt a fentiekben ismertetett Xamarin. Android-integráció mellett kell elvégezni. A remapper a Xamarin. Forms alkalmazások esetében eltérően viselkedik, ezért a kézi MAM-cseréket továbbra is el kell végezni.
 
 Miután hozzáadta az újraleképezést a projekthez, el kell végeznie a MAM-beli egyenértékű visszahelyezést. Például a `FormsAppCompatActivity` és a `FormsApplicationActivity` továbbra is használható az alkalmazásban, ha a felülbírálások `OnCreate` és `OnResume` a MAM-ekvivalens `OnMAMCreate` és `OnMAMResume`.
 
@@ -209,7 +220,7 @@ Ennek az az oka, hogy ha a remapper módosítja a Xamarin osztályok öröklés�
 > A remapper újra ír egy függőséget, amelyet a Visual Studio az IntelliSense automatikus kiegészítéséhez használ. Ezért előfordulhat, hogy újra kell töltenie és újra létre kell hoznia a projektet, ha a remapper hozzá van adva az IntelliSensehoz a módosítások megfelelő felismeréséhez.
 
 #### <a name="troubleshooting"></a>Hibaelhárítás
-* Ha üres, fehér képernyőt tapasztal az alkalmazás indításakor, akkor előfordulhat, hogy a fő szálon végre kell hajtania a navigációs hívásokat.
+* Ha egy üres, fehér képernyő jelenik meg az alkalmazás indításakor, akkor előfordulhat, hogy a fő szálon végre kell hajtania a navigációs hívásokat.
 * Az Intune SDK-Xamarin kötései nem támogatják a többplatformos keretrendszert használó alkalmazásokat, például a MvvmCross-et a MvvmCross és az Intune MAM-osztályok közötti ütközések miatt. Előfordulhat, hogy néhány ügyfél sikerrel járt együtt az alkalmazások egyszerű Xamarin. Forms-ra való áthelyezése után, és nem biztosítunk explicit útmutatást vagy beépülő modult az MvvmCross használó alkalmazás-fejlesztőknek.
 
 ### <a name="company-portal-app"></a>Vállalati portál alkalmazás
