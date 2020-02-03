@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 88b7411095aee1b1d3a892ce4845812ceb1a9ac9
-ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
+ms.openlocfilehash: ad363785888a92d1e8be4f2d28690278a2efaae9
+ms.sourcegitcommit: c7c6be3833d9a63d43f31d598b555b49b33cf5cb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75547077"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76966300"
 ---
 # <a name="create-and-assign-scep-certificate-profiles-in-intune"></a>SCEP-tanúsítványok létrehozása és társítása az Intune-ban
 
@@ -223,7 +223,7 @@ Miután [konfigurálta az infrastruktúrát](certificates-scep-configure.md) a e
 
      Adjon meg egy vagy több URL-címet azon NDES-kiszolgálók esetében, amelyek tanúsítványokat állítanak ki a SCEP használatával. Írja be például a következőt: *https://ndes.contoso.com/certsrv/mscep/mscep.dll* . Szükség szerint további SCEP URL-címeket is hozzáadhat a terheléselosztáshoz, mivel az URL-címeket a rendszer véletlenszerűen leküldi az eszközre a profil használatával. Ha az egyik SCEP-kiszolgáló nem érhető el, a SCEP-kérelem sikertelen lesz, és lehetséges, hogy a későbbi eszköz-bejelentkezések esetében a tanúsítvány kérése ugyanarra a kiszolgálóra irányul, amely le van hajtva.
 
-8. Kattintson az **OK**, majd a **Létrehozás** gombra. Ekkor létrejön a profil, és megjelenik az *eszköz konfigurációja-profilok* listán.
+8. Válassza **az OK**, majd a **Létrehozás**lehetőséget. Ekkor létrejön a profil, és megjelenik az *eszköz konfigurációja-profilok* listán.
 
 ### <a name="avoid-certificate-signing-requests-with-escaped-special-characters"></a>A tanúsítvány-aláírási kérelmek elhagyása Escape-speciális karakterekkel
 
@@ -285,3 +285,5 @@ A SCEP-profilokat ugyanúgy rendelheti hozzá, mint az [eszközök profiljait](.
 ## <a name="next-steps"></a>További lépések
 
 [Profilok hozzárendelése](../configuration/device-profile-assign.md)
+
+[SCEP-tanúsítványok profiljainak üzembe helyezésével kapcsolatos hibák](../protect/troubleshoot-scep-certificate-profiles.md)

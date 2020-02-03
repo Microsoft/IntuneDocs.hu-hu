@@ -7,30 +7,14 @@ ms.topic: include
 ms.date: 11/19/2019
 ms.author: erikje
 ms.custom: include file
-ms.openlocfilehash: 9aa82268fb02f5124e48eb303f19cf32be02c284
-ms.sourcegitcommit: c46b0c2d4507be6a2786a4ea06009b2d5aafef85
+ms.openlocfilehash: 6064fb657454106a8a7213e0bbbcecdcef765857
+ms.sourcegitcommit: c7c6be3833d9a63d43f31d598b555b49b33cf5cb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76912632"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76966358"
 ---
 Ezek a hirdetmények olyan fontos információkat tartalmaznak, amelyek segíthetnek a jövőbeli Intune-változások és-funkciók előkészítésében.
-
-### <a name="updated-feature-new-rbac-role-coming-to-intune--4253397--"></a>Frissített funkció: új RBAC-szerepkör érkezik az Intune-hoz<!--4253397-->
-A januári Intune szolgáltatás frissítése során új biztonsági szerepkört tervezzük az Intune-ban. Ez a szerepkör "Endpoint Security Manager" néven jelenik meg az Intune-ban, és a szerepkör az Azure AD "biztonsági rendszergazda" szerepkörének bővítése.
- 
-#### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
-Jelenleg az Azure AD-ben három szerepkör érhető el a biztonsági szakemberek számára:
-- Biztonsági olvasó szerepkör az Azure AD-ben, amely csak olvasási hozzáférést biztosít az Intune-hoz.
-- Biztonsági operátori szerepkör az Azure AD-ben, amely csak olvasási hozzáférést biztosít az Intune-hoz.
-- Biztonsági rendszergazda az Azure AD-ben. Amikor az Intune a januári frissítést, valamint a csak olvasási jogosultsággal rendelkező Intune-t szállítja, a Endpoint Security Manager szerepkör által biztosított új engedélyek a következők:
-    - Eszközök megfelelőségi házirendjeinek olvasása, létrehozása, frissítése, törlése és társítása
-    - Felügyelt eszközök olvasása, törlése és frissítése
-    - Biztonsági alapkonfigurációk olvasása, létrehozása, frissítése, törlése és kiosztása
-    - Biztonsági feladatok olvasása és frissítése
- 
-### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
-Tekintse át az Intune RBAC-szerepköröket még ma. Ha jelenleg csak a globális rendszergazdák szerepkörrel rendelkezik, akkor nincs szükség módosításra. Ha szerepköröket használ, és szeretné, hogy a végponti Security Manager milyen részletességgel rendelkezik, akkor rendelje hozzá ezt a szerepkört, ha elérhetővé válik. Tekintse [meg](../fundamentals/whats-new.md) az Intune újdonságait ismertető oldalt a naprakész Intune-kiadással kapcsolatos információkért. 
 
 ### <a name="updated-support-statement-for-adobe-acrobat-reader-for-intune-mobile-app--5746776--"></a>Frissítettük az "Adobe Acrobat Reader for Intune" Mobile App támogatási utasítását<!--5746776-->
 A MC188653 augusztus végén megosztjuk az Adobe Acrobat Reader for Intune Mobile App-t, amely a 2019. december 1-én ért véget, az Adobe pedig az Intune app Protection-házirendjeinek támogatását tervezte a fő Acrobat Reader-alkalmazásban. Azóta megkaptuk a vásárlói visszajelzéseket, hogy több időt kellene biztosítani a rendszergazdák számára a cél eléréséhez, és a végfelhasználók számára az Adobe Acrobat Reader for Intune használatának megkezdéséhez. Az Adobe Acrobat Reader az Intune-nal való magas kihasználtsága miatt a végfelhasználói eszközökön, valamint a nagyvállalati forgatókönyvek szempontjából fontos, hogy minden tapasztalat megfelel a szervezete által biztosított alkalmazások védelmének. 

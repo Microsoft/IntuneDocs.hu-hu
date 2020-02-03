@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 501bfcbef0dd46f6021fc5db16cf3b9e2f2cd0c0
-ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
+ms.openlocfilehash: 24d0a8160d852a5a44f5df688b7e0bc230d56704
+ms.sourcegitcommit: c7c6be3833d9a63d43f31d598b555b49b33cf5cb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75886008"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76966385"
 ---
 # <a name="configure-infrastructure-to-support-scep-with-intune"></a>Infrastruktúra konfigurálása az Intune-nal való SCEP támogatásához
 
@@ -378,6 +378,32 @@ A Microsoft Intune Tanúsítvány-összekötő a NDES szolgáltatást futtató k
 5. Amikor a rendszer kéri a tanúsítvány-összekötő ügyféltanúsítványt, válassza a **kiválasztás**lehetőséget, majd válassza ki a NDES-#3 kiszolgálóra telepített **ügyfél-hitelesítési** tanúsítványt a NDES-t [futtató kiszolgálón, amely](#install-and-bind-certificates-on-the-server-that-hosts-ndes) a jelen cikk korábbi részében található.
 
    Miután kiválasztotta az ügyfél-hitelesítési tanúsítványt, a rendszer visszaküldi az **ügyféltanúsítványt Microsoft Intune tanúsítvány-összekötő** Surface-re. Bár a kiválasztott tanúsítvány nem látható, kattintson a **tovább** gombra a tanúsítvány tulajdonságainak megtekintéséhez. Válassza a **Tovább**, majd a **Telepítés** lehetőséget.
+
+> [!NOTE]
+> Az Intune tanúsítvány-összekötő elindítása előtt az alábbi módosításokat kell elvégezni a GCC magas bérlők számára.
+> 
+> Szerkessze az alább felsorolt két konfigurációs fájlt, amely frissíti a GCC magas környezethez tartozó szolgáltatási végpontokat. Figyelje meg, hogy ezek a frissítések a **. com** értékről a **. us** utótagokra módosítják az URI azonosítókat. A NDESConnectorUI. exe. config fájlon belül összesen három URI-frissítés, valamint egy frissítés található a NDESConnector. exe. config fájlban.
+> 
+> - Fájlnév: < install_Path > \Microsoft Intune\NDESConnectorUI\NDESConnectorUI.exe.config
+> 
+>   Példa: (%programfiles%\Microsoft Intune\NDESConnectorUI\NDESConnectorUI.exe.config)
+>   ```
+>    <appSettings>
+>        <add key="SignInURL" value="https://portal.manage.microsoft.us/Home/ClientLogon"/>
+>        <add key="LocationServiceEndpoint" value="RestUserAuthLocationService/RestUserAuthLocationService/ServiceAddresses"/>
+>        <add key="AccountPortalURL" value="https://manage.microsoft.us"/>
+>    </appSettings>
+>   ```
+> 
+> - Fájlnév: < install_Path > \Microsoft Intune\NDESConnectorSvc\NDESConnector.exe.config
+>
+>   Példa: (%programfiles%\Microsoft Intune\NDESConnectorSvc\NDESConnector.exe.config)
+>    ```
+>    <appSettings>
+>        <add key="BaseServiceAddress" value="https://manage.microsoft.us/" />
+>    ```
+>
+> Ha ezek a módosítások nem fejeződött be, a GCC High bérlők a következő hibaüzenetet kapják meg: "hozzáférés megtagadva", nem jogosult a lap megtekintésére "
 
 6. Ha a varázsló befejeződött, még mielőtt bezárná, válassza a **Launch the Certificate Connector UI** (Certificate Connector felhasználói felületének indítása) lehetőséget.
 
