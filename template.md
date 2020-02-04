@@ -14,12 +14,12 @@ ms.service: ''
 ms.technology: ''
 ms.assetid:
 - GET ONE FROM guidgenerator.com
-ms.openlocfilehash: 0a5e90c6bc6b352f4d7a0fc0ae22c65110563461
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: ed2d00541c2d89efd0f8cd6aa60f29c527656fc0
+ms.sourcegitcommit: 5178aec0244e023e73546f3d10f1a76eaf1f4a3e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68354410"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76971821"
 ---
 # <a name="metadata-and-markdown-template"></a>Metaadat- és markdown-sablon
 
@@ -82,7 +82,7 @@ Az egyazon markdown-fájlban lévő címsorra való hivatkozáshoz tekintse meg 
 
 Az egyazon adattárban lévő címsorra való hivatkozáshoz használjon relatív hivatkozást és hashtaggel történő hivatkozást.
 
-- Például: [az aláírási folyamat műszaki áttekintése](./understand-explore/rms-for-individuals-user-signup.md#technical-overview-of-the-sign-up-process)
+- Például: [a regisztrációs folyamat műszaki áttekintése](./understand-explore/rms-for-individuals-user-signup.md#technical-overview-of-the-sign-up-process)
 
 Külső fájlra hivatkozáshoz használja hivatkozásként a teljes URL-címet.
 
@@ -90,7 +90,7 @@ Külső fájlra hivatkozáshoz használja hivatkozásként a teljes URL-címet.
 
 Ha a markdown-fájlban egy URL-cím jelenik meg, akkor az egy kattintható hivatkozássá alakul.
 
-- Példa: http://www.github.com
+- Például: http://www.github.com
 
 ## <a name="lists"></a>Listák
 
@@ -108,7 +108,7 @@ Ha a markdown-fájlban egy URL-cím jelenik meg, akkor az egy kattintható hivat
 1. Ez
 1. pedig
 1. egy
-1. beágyazott
+1. beágyazva
     1. Josephine Scarlett
     1. Plum professzor
 1. rendezett
@@ -132,7 +132,7 @@ Ha a markdown-fájlban egy URL-cím jelenik meg, akkor az egy kattintható hivat
   - Patricia Peacock
   - John Green
 - tartalmazza  
-- más
+- másik
     1. Mustard ezredes
     1. Mrs. White
 - listákat is
@@ -216,7 +216,7 @@ Ez egy példa a következőre: `in-line code`.
 
 <iframe width="420" height="315" src="https://www.youtube.com/embed/R6_eWWfNB54" frameborder="0" allowfullscreen></iframe>
 
-## <a name="docsms-extentions"></a>docs.ms kiterjesztések
+## <a name="docsms-extensions"></a>docs.ms-bővítmények
 
 ### <a name="button"></a>Gomb
 

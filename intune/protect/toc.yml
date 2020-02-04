@@ -6,7 +6,7 @@
     - name: Eszközvédelem – áttekintés
       href: device-protect.md
       displayName: compliant; noncompliant; mfa
-- name: Gyorsútmutatók
+- name: Rövid útmutatók
   items:
     - name: Eszközmegfelelőségi szabályzat létrehozása
       href: quickstart-set-password-length-android.md
@@ -46,13 +46,13 @@
           href: privacy-data-audit-export-delete.md
         - name: Windows Információvédelem
           href: windows-information-protection-configure.md
-- name: Használati útmutatók
+- name: Útmutatók
   items:
     - name: Az erőforrások elérését engedélyező szabályok beállítása az eszközökön
       items:
         - name: Megfelelőség – áttekintés
           href: device-compliance-get-started.md
-        - name: Házirend létrehozása
+        - name: Szabályzat létrehozása
           href: create-compliance-policy.md
         - name: Helyalapú megfelelőség
           href: use-network-locations.md
@@ -225,6 +225,20 @@
           href: troubleshoot-conditional-access.md
         - name: A tanúsítvány-összekötő hibaelhárítása
           href: troubleshoot-certificate-connector-events.md
+        - name: SCEP-tanúsítványprofilok hibaelhárítása
+          items:
+            - name: SCEP-tanúsítványprofilok hibaelhárítása
+              href: troubleshoot-scep-certificate-profiles.md
+            - name: Profilok érvénybe léptetése eszközökön
+              href: troubleshoot-scep-certificate-profile-deployment.md
+            - name: Eszköz és NDES közötti kommunikáció
+              href: troubleshoot-scep-certificate-device-to-ndes.md
+            - name: NDES-műveletek
+              href: troubleshoot-scep-certificate-ndes-policy-module.md
+            - name: Tanúsítvány kézbesítése az eszközökre
+              href: troubleshoot-scep-certificate-delivery.md
+            - name: Jelentéskészítés tanúsítvány üzembe helyezéséhez
+              href: troubleshoot-scep-certificate-reporting.md
         - name: Az Exchange-összekötő hibaelhárítása
           items:
             - name: Az Exchange-összekötő hibaelhárítása

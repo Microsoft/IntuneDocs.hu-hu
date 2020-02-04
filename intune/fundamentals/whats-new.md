@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 01/30/2020
+ms.date: 02/03/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1e0fab1eebfaf780cabca45d3a31e1994c2a2355
-ms.sourcegitcommit: c7c6be3833d9a63d43f31d598b555b49b33cf5cb
+ms.openlocfilehash: 2f46b8c7f0f57ab7831d6487495946aa9326b2d5
+ms.sourcegitcommit: 24487f078349795922dc497c952e8358cf767a1a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76966359"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977784"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -54,6 +54,14 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 ### Role-based access control
 -->  
 
+<!-- ########################## -->
+## <a name="week-of-february-03-2020"></a>Február 2020. hét
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name="app-management"></a>Alkalmazáskezelés
+
+#### <a name="company-portal-app-improved-performance---6178652---"></a>Céges portál alkalmazás teljesítményének növelése<!-- 6178652 -->
+A Céges portál alkalmazás frissítve lett, hogy támogassa a ARM64 processzorokat használó eszközök jobb teljesítményét, például a Surface Pro X. korábban, az Céges portál emulált ARM32 módban működött. Most a Céges portál alkalmazás natív módon van lefordítva a ARM64. További információ a Céges portál alkalmazásról: [a Microsoft Intune céges portál alkalmazás konfigurálása](~/apps/company-portal-app.md).
 
 <!-- ########################## -->
 ## <a name="week-of-january-27-2020"></a>2020. január 27-i hét
