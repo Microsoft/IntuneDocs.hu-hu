@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ae7ffe5a8c20aa7edd67853ff86ef9e28cf2d175
-ms.sourcegitcommit: c46b0c2d4507be6a2786a4ea06009b2d5aafef85
+ms.openlocfilehash: 38bc86b1b9ba85eb7885a0e00673e551821063c1
+ms.sourcegitcommit: 459b0ee01eb6e69cc0ce66d4c4b81d73f510f96d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76913180"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77034243"
 ---
 # <a name="overview-for-troubleshooting-scep-certificate-profiles-with-microsoft-intune"></a>Az SCEP-tanúsítványok profiljainak hibaelhárítása Microsoft Intune
 
@@ -115,11 +115,11 @@ Az alábbi lista azokat a naplókat és konzolokat tartalmazza, amelyeket a köv
 
 ### <a name="logs-for-android-devices"></a>Naplók Android-eszközökhöz
 
-Android rendszerű eszközök esetén használja az **android céges portál** alkalmazás naplófájlját, az **OMADM. log**fájlt. A naplók összegyűjtése és áttekintése előtt engedélyezze a [részletes naplózás](/intune-user-help/use-verbose-logging-to-help-your-it-administrator-fix-device-issues-android.md) engedélyezése beállítást, majd reprodukálja a problémát.
+Android rendszerű eszközök esetén használja az **android céges portál** alkalmazás naplófájlját, az **OMADM. log**fájlt. A naplók összegyűjtése és áttekintése előtt engedélyezze a [részletes naplózás](/intune-user-help/use-verbose-logging-to-help-your-it-administrator-fix-device-issues-android) engedélyezése beállítást, majd reprodukálja a problémát.
 
-A OMADM. logs eszközről való összegyűjtéséhez tekintse meg a [feltöltési és e-mail-naplók USB-kábellel való használatát](/intune-user-help/send-logs-to-your-it-admin-using-cable-android.md)ismertető témakört.
+A OMADM. logs eszközről való összegyűjtéséhez tekintse meg a [feltöltési és e-mail-naplók USB-kábellel való használatát](/intune-user-help/send-logs-to-your-it-admin-using-cable-android)ismertető témakört.
 
-Emellett [feltölthet és e-mail-naplókat](/intune-user-help/send-logs-to-your-it-admin-by-email-android.md#upload-and-email-logs-from-microsoft-intune-app) is a támogatáshoz.
+Emellett [feltölthet és e-mail-naplókat](/intune-user-help/send-logs-to-your-it-admin-by-email-android#upload-and-email-logs-from-microsoft-intune-app) is a támogatáshoz.
 
 ### <a name="logs-for-ios-and-ipados-devices"></a>IOS-és iPadOS-eszközök naplófájljai
 
