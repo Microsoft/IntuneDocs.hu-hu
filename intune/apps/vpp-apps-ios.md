@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0bc511669ec8a88523581b3afbcca161d5208934
-ms.sourcegitcommit: de663ef5f3e82e0d983899082a7f5b62c63f24ef
+ms.openlocfilehash: d965ac35719d809ab922d28f76dec1754e9a4c6b
+ms.sourcegitcommit: 9b29478f815e10c46c8030abe0146d601ce0e28c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75956189"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77051626"
 ---
 # <a name="how-to-manage-ios-and-macos-apps-purchased-through-apple-volume-purchase-program-with-microsoft-intune"></a>A Apple Volume Purchase Program használatával vásárolt iOS-és macOS-alkalmazások kezelése Microsoft Intune
 
@@ -46,13 +46,13 @@ A hely jogkivonatait Volume Purchase program-(VPP-) tokeneknek is nevezzük. Eze
 ## <a name="how-are-purchased-apps-licensed"></a>Hogyan történik a megvásárolt alkalmazások licencelése?
 A megvásárolt alkalmazások az Apple által az iOS-és macOS-eszközökhöz kínált két típusú licenccel rendelkező csoportokhoz rendelhetők.
 
-|   | Eszköz licencelése | Felhasználói licencek |
+|   | Eszköz licencelése | Felhasználói licencelés |
 |-----|------------------|----------------|
 | **App Store-bejelentkezés** | Nem kötelező. | Minden végfelhasználónak egyedi Apple ID azonosítót kell használnia, amikor a rendszer kéri, hogy jelentkezzen be az App Store-ba. |
 | **Az eszköz konfigurációja blokkolja az App Store-hoz való hozzáférést** | Az alkalmazások Céges portál használatával telepíthetők és frissíthetők. | Az Apple VPP-hez való csatlakozás meghívásához hozzáféréssel kell rendelkeznie az App Store-hoz. Ha az App Store letiltására vonatkozó szabályzatot állított be, a VPP-alkalmazások felhasználói licencelése nem fog működni. |
 | **Alkalmazás automatikus frissítése** | Ahogy az Intune-rendszergazda konfigurálja az Apple VPP-token beállításaiban, ahol az alkalmazás **hozzárendelési típusa** **szükséges**. <br> <br> Ha a **hozzárendelés típusa** **regisztrált eszközökhöz érhető el**, az elérhető alkalmazások frissítései a céges portálból telepíthetők. | A végfelhasználó által a személyes App Store-ban konfigurált beállítások szerint. Ezt nem lehet az Intune-rendszergazda felügyelni. |
-| **Felhasználó beléptetése** | Not supported. | Felügyelt Apple-azonosítók használatával támogatott. |
-| **Könyvek** | Not supported. | Támogatott. |
+| **Felhasználó beléptetése** | Nem támogatott. | Felügyelt Apple-azonosítók használatával támogatott. |
+| **Könyvek** | Nem támogatott. | Támogatott. |
 | **Használatban lévő licencek** | 1 licenc eszközönként. A licenc társítva van az eszközhöz. | 1 licenc legfeljebb 5 eszközhöz ugyanazzal a személyes Apple ID azonosítóval. A licenc a felhasználóhoz van társítva. <br> <br> A személyes Apple ID azonosítóval és az Intune-ban felügyelt Apple ID-vel társított végfelhasználók 2 alkalmazás-licencet használnak.|
 | **Licenc áttelepítése** | Az alkalmazások csendesen telepíthetik a felhasználót az eszközre. | Az alkalmazások nem telepíthetők át az eszközről a felhasználói licencekre. |
 
@@ -131,6 +131,11 @@ Az Intune-ban megvásárolt alkalmazások nevét, metaadatait és licencelési i
 >[!NOTE]
 >Az elérhető üzembe helyezési szándék nem támogatott az eszközök csoportjai esetében, csak a felhasználói csoportok támogatottak. A megjelenített alkalmazások listája egy tokenhez van társítva. Ha van egy olyan alkalmazása, amely több VPP-tokenhez is társítva van, akkor ugyanaz az alkalmazás többször is megjelenik; minden tokenhez egyszer.
 
+> [!NOTE]  
+> Az Intune (vagy bármely más MDM) valójában nem telepíti a VPP-alkalmazásokat. Ehelyett az Intune csatlakozik a VPP-fiókjához, és megadja az Apple-nek, hogy mely alkalmazás-licenceket rendelje hozzá az eszközökhöz. Innentől kezdve az összes tényleges telepítést az Apple és az eszköz között kezeljük.
+> 
+> [Apple MDM protokoll referenciája, 135-es oldal](https://developer.apple.com/business/documentation/MDM-Protocol-Reference.pdf)
+
 ## <a name="end-user-prompts-for-vpp"></a>VPP-figyelmeztetés a végfelhasználónak
 
 A végfelhasználó különféle helyzetekben figyelmeztetést fog kapni VPP-alkalmazások telepítésére. A különféle feltételek az alábbi táblázatban láthatók:
@@ -208,6 +213,6 @@ Igen. Az Intune rendszergazdája túllépheti az alkalmazáselőfizetéseket. Ha
 
 ## <a name="next-steps"></a>További lépések
 
-Lásd [az alkalmazások figyelésével](apps-monitor.md) foglalkozó útmutatót, amely az alkalmazás-hozzárendelések figyeléséhez nyújt segítséget.
+Az alkalmazás-hozzárendelések figyeléséhez a [How to monitor apps](apps-monitor.md) (Alkalmazások figyelése) című témakörben találhat segítséget.
 
 Az alkalmazással kapcsolatos problémák elhárításával kapcsolatos információkért lásd: [alkalmazások hibaelhárítása](~/apps/troubleshoot-app-install.md) .

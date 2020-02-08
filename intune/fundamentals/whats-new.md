@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2f46b8c7f0f57ab7831d6487495946aa9326b2d5
-ms.sourcegitcommit: 24487f078349795922dc497c952e8358cf767a1a
-ms.translationtype: MT
+ms.openlocfilehash: 6db39fc2ac3b162a7728aacd8d255d65516dcbd2
+ms.sourcegitcommit: 9b29478f815e10c46c8030abe0146d601ce0e28c
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76977784"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77051558"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -68,24 +68,6 @@ A Céges portál alkalmazás frissítve lett, hogy támogassa a ARM64 processzor
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
 ### <a name="app-management"></a>Alkalmazáskezelés
-
-#### <a name="new-setting-to-remove-specific-windows-built-in-apps---6184390---"></a>Új beállítás a megadott Windows beépített alkalmazások eltávolításához<!-- 6184390 -->
-A Windows 10-es eszközökhöz készült új konfigurációs házirend-beállítás használatával eltávolíthatja a következő beépített Windows-alkalmazásokat:
-
-- Vegyes valóság megjelenítője
-- MSN Időjárás
-- Alkalmazás telepítője
-- Microsoft-tippek
-- Saját iroda
-- Microsoft Solitaire-gyűjtemény 
-- Mobil csomagok
-- Visszajelzési központ 
-- Xbox 
-- Groove-zene
-- Mail
-- Naptár
-
-A Microsoft Endpoint Manager felügyeleti központban válassza az **eszközök** > **konfigurációs profilok** > **profil létrehozása**lehetőséget. Ezután válassza a **Windows 10 és újabb** **platformot**. Válassza ki az **eszközre vonatkozó korlátozásokat** a **profil típusaként**. Az **eszköz korlátozásai** ablaktáblán válassza az **App Store** lehetőséget. A **beépített alkalmazások eltávolítása**elem melletti ablaktábla alján válassza az **Eltávolítás**lehetőséget. További információ a beépített alkalmazásokról: [beépített alkalmazások hozzáadása a Microsoft Intunehoz](~/apps/apps-add-built-in.md).
 
 #### <a name="intune-support-for-additional-microsoft-edge-version-77-deployment-channel-for-macos---5983950----"></a>Intune-támogatás a Microsoft Edge 77-es verziójának további, a macOS-hez készült telepítési csatornájának telepítéséhez<!-- 5983950  -->
 Microsoft Intune mostantól támogatja a további **stabil** üzembe helyezési csatornát a MacOS-hez készült Microsoft Edge alkalmazáshoz. A **stabil** csatorna az ajánlott csatorna, amellyel a Microsoft Edge nagyvállalati környezetben is üzembe helyezhető. Hat hetente frissül, és minden kiadás a **Beta** Channel szolgáltatással kapcsolatos fejlesztési funkciókat tartalmaz. A **stabil** és a **bétaverziós** csatornákon kívül az Intune egy **fejlesztői** csatornát is támogat. A nyilvános előzetes verzió a Microsoft Edge 77-es és újabb verzióihoz készült stabil és fejlesztői csatornákat kínál a macOS rendszerhez. Alapértelmezés szerint a böngésző automatikus frissítései be vannak kapcsolva. További információ: [Microsoft Edge hozzáadása MacOS-eszközökhöz Microsoft Intune használatával](~/apps/apps-edge-macos.md).

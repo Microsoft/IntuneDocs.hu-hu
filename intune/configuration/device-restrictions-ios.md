@@ -6,7 +6,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 01/13/2020
+ms.date: 02/04/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f99479200e66b080e107475f0a031c5756da6051
-ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
+ms.openlocfilehash: dc252068d963d75bf6ade79852d6ba01bda8800b
+ms.sourcegitcommit: 9b29478f815e10c46c8030abe0146d601ce0e28c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76754575"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77051609"
 ---
 # <a name="ios-and-ipados-device-settings-to-allow-or-restrict-features-using-intune"></a>iOS-és iPadOS-eszközök beállításai az Intune-t használó funkciók engedélyezéséhez vagy korlátozásához
 
@@ -411,7 +411,7 @@ Az iOS 9,3-es vagy újabb verzióját futtató eszközökre vonatkozik.
   
   - **Látható alkalmazások**: megadhatja a felhasználók által megtekinthető és elindítható alkalmazások listáját. Ezeken kívül a felhasználók más alkalmazásokat nem látnak és nem indíthatnak el.
 
-- **Alkalmazás URL-címe**: adja meg a megjeleníteni vagy elrejteni kívánt alkalmazás áruházbeli alkalmazásának URL-címét. Példa:
+- **Alkalmazás URL-címe**: adja meg a megjeleníteni vagy elrejteni kívánt alkalmazás áruházbeli alkalmazásának URL-címét. Például:
 
   - A Microsoft munkahelyi mappák alkalmazás hozzáadásához írja be `https://itunes.apple.com/us/app/work-folders/id950878067?mt=8` vagy `https://apps.apple.com/us/app/work-folders/id950878067?mt=8`. 
 
@@ -420,8 +420,6 @@ Az iOS 9,3-es vagy újabb verzióját futtató eszközökre vonatkozik.
   Az alkalmazás URL-címének megkereséséhez nyissa meg az iTunes App Store áruházat, és keresse meg az alkalmazást. Keressen például `Microsoft Remote Desktop` vagy `Microsoft Word`. Válassza ki az alkalmazást, és másolja az URL-címet.
 
   Az iTunes használatával is megkeresheti az alkalmazást, majd a **hivatkozás másolása** feladat használatával beolvashatja az alkalmazás URL-címét.
-  
-  A csomagok AZONOSÍTÓjának megkeresésével kapcsolatos további információkért lásd: [az iOS-alkalmazások csomag-azonosítójának megkeresése](https://support.microsoft.com/help/4294074/how-to-find-the-bundle-id-for-an-ios-app).
 
 - Alkalmazáscsomag- **azonosító**: adja meg a kívánt alkalmazás ALKALMAZÁSCSOMAG- [azonosítóját](bundle-ids-built-in-ios-apps.md) . Megjelenítheti vagy elrejtheti a beépített alkalmazásokat és üzletági alkalmazásokat. Az Apple webhelye tartalmazza a [beépített Apple apps-alkalmazásokat](https://support.apple.com/HT208094).
 - **Alkalmazás neve**: adja meg a kívánt alkalmazás nevét. Megjelenítheti vagy elrejtheti a beépített alkalmazásokat és üzletági alkalmazásokat. Az Apple webhelye tartalmazza a [beépített Apple apps-alkalmazásokat](https://support.apple.com/HT208094).
@@ -559,7 +557,9 @@ Vegye figyelembe, hogy az adatroaminghoz szükséges (tipp vagy fontos megjegyz�
 
 ## <a name="autonomous-single-app-mode"></a>Autonóm Egyalkalmazásos mód
 
-Ezekkel a beállításokkal konfigurálhatja az iOS-es eszközöket adott alkalmazások autonóm Egyalkalmazásos módban való futtatására. Ha ez a mód be van állítva, és az alkalmazás fut, az eszköz zárolva van. Csak ezt az alkalmazást futtathatja. Például hozzáadhat egy olyan alkalmazást, amely lehetővé teszi a felhasználók számára, hogy tesztelje az eszközt. Az alkalmazás használatának befejezésekor vagy a szabályzat eltávolításakor az eszköz visszatér a szokásos állapotába.
+Ezekkel a beállításokkal konfigurálhatja az iOS/iPadOS eszközöket adott alkalmazások autonóm Egyalkalmazásos módban való futtatására. Ha ez a mód be van állítva, és a felhasználó elindít egy konfigurált alkalmazást, az eszköz zárolva lesz az adott alkalmazáshoz. Az alkalmazás/feladat váltás le van tiltva, amíg a felhasználó kilép az engedélyezett alkalmazásból.
+
+Egy iskolai vagy egyetemi környezetben például hozzáadhat egy olyan alkalmazást, amely lehetővé teszi, hogy a felhasználók tesztet tegyenek az eszközön. Vagy zárja be az eszközt a Céges portál alkalmazásba, amíg a végfelhasználó nem hitelesíti magát. Ha a felhasználó befejezi az alkalmazások műveleteit, vagy eltávolítja ezt a házirendet, az eszköz visszatér a szokásos állapotába.
 
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: automatikus eszközök beléptetése (felügyelt)
 
@@ -676,7 +676,7 @@ Az iOS Supervised (Felügyelt) módja csak a kezdeti eszközbeállítás során,
 > - Durva tartalom
 > - iCloud dokumentumok és adatok
 > - Több résztvevős játék
-> - Game Center ismerősök hozzáadása
+> - Barátok hozzáadása a Game Centerben
 > - Siri
 
 ## <a name="next-steps"></a>További lépések
