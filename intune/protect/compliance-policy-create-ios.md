@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 10/22/2019
+ms.date: 02/07/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3b83b764af415349b287df2a09f9b4c355734c28
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: e9bcfed67eda96bb4d79317bcc69d21a5f8197bc
+ms.sourcegitcommit: 2b905913840d4133a7964fe4f54a58ea6e421e12
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72810235"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77074631"
 ---
 # <a name="ios-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>iOS-beállítások az eszközök megfelelő vagy nem megfelelőként való megjelöléséhez az Intune-nal
 
@@ -51,7 +51,7 @@ Intune-rendszergazdaként ezeket a megfelelőségi beállításokat használhatj
 
 A levelezési profilokkal kapcsolatos további információkért lásd: a [vállalati levelezéshez való hozzáférés konfigurálása e-mail-profilok használatával az Intune-](../configuration/email-settings-configure.md)nal.
 
-## <a name="device-health"></a>Eszközállapot
+## <a name="device-health"></a>Eszköz állapota
 
 - Feltört **eszközök**:  
   - **Nincs konfigurálva** (*alapértelmezett*) – a rendszer nem értékeli ki a megfelelőségi és a nem megfelelőségi beállítást.
@@ -69,21 +69,21 @@ A levelezési profilokkal kapcsolatos további információkért lásd: a [váll
 
 ### <a name="operating-system-version"></a>Operációs rendszer verziója  
 
-- Az **operációs rendszer szükséges minimális** verziója *(iOS 8,0 és újabb)* :  
+- **Operációs rendszer minimális verziója** *(iOS 8,0 és újabb)* :  
   Ha egy eszköz nem teljesíti az operációs rendszer szükséges minimális verziójára vonatkozó követelményt, nem megfelelőként jelenik meg. Megjelenik egy hivatkozás, amelyen a verziófrissítésre vonatkozó információk érhetők el. A végfelhasználó dönthet úgy, hogy frissíti az eszközét. Ezután hozzáférhetnek a szervezeti erőforrásokhoz.
 
-- **Maximálisan engedélyezett operációsrendszer-verzió** *(iOS 8,0 és újabb)* :  
+- **Maximális operációsrendszer-verzió** *(iOS 8,0 és újabb)* :  
   Ha egy eszköz a szabályban megadott operációsrendszer-verziónál újabb verziót használ, a rendszer letiltja a szervezeti erőforrásokhoz való hozzáférést. A végfelhasználónak kapcsolatba kell lépnie a rendszergazdával. Az eszköz addig nem fér hozzá a szervezeti erőforrásokhoz, amíg egy szabály nem változik, hogy az operációs rendszer verziója engedélyezve legyen.
 
 - **Operációsrendszer-Build minimális verziója** *(iOS 8,0 és újabb)* :  
-  Amikor az Apple közzéteszi a biztonsági frissítéseket, a rendszer általában frissíti a Build számát, nem pedig az operációs rendszer verzióját. Ezzel a szolgáltatással megadhatja az eszközön a minimálisan megengedett Build-számot.
+  Amikor az Apple közzéteszi a biztonsági frissítéseket, a rendszer általában frissíti a Build számát, nem pedig az operációs rendszer verzióját. Ez a funkció használatával adja meg a minimális megengedett buildszám az eszközön.
 
 - **Operációsrendszer-Build maximális verziója** *(iOS 8,0 és újabb)* :  
-  Amikor az Apple közzéteszi a biztonsági frissítéseket, a rendszer általában frissíti a Build számát, nem pedig az operációs rendszer verzióját. Ezzel a szolgáltatással adhatja meg az eszközön a maximálisan megengedett Build-számot.
+  Amikor az Apple közzéteszi a biztonsági frissítéseket, a rendszer általában frissíti a Build számát, nem pedig az operációs rendszer verzióját. Ez a funkció használatával adja meg a maximális megengedett buildszám az eszközön.
 
 ## <a name="system-security"></a>Rendszerbiztonság
 
-### <a name="password"></a>Jelszó
+### <a name="password"></a>Windows 10
 
 > [!NOTE]
 > Miután megfelelőségi vagy konfigurációs szabályzatot alkalmazott egy iOS-eszközre, a felhasználóktól 15 percenként egy PIN-kódot kér a rendszer. A kérések mindaddig megjelennek, amíg a felhasználó meg nem ad egy PIN-kódot. Ha az iOS-eszközhöz PIN-kód van beállítva, a titkosítási folyamat automatikusan elindul. Az eszköz mindaddig titkosítva marad, amíg le nem tiltja a PIN-kódot.

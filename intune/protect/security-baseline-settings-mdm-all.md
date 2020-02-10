@@ -5,7 +5,7 @@ description: Tekintse át a Windows MDM biztonsági alapkonfigurációjának kü
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 12/05/2019
+ms.date: 02/07/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6b2cb1b277f78ed81dea8c2d82eff6860182ea5d
-ms.sourcegitcommit: 7cc45ef52dda08479bc6bdff7d11d2f6c0e7b93b
+ms.openlocfilehash: abf23bff0d8889b57ab05c55b7e1464d0a9d2436
+ms.sourcegitcommit: 32391f74241ee3289a76ccd5319fe700b800d427
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74899250"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77075790"
 ---
 # <a name="windows-mdm-security-baseline-settings-for-intune"></a>A Windows MDM biztonsági alapkonfigurációjának beállításai az Intune-ban
 
@@ -208,13 +208,13 @@ További információ: [szabályzat CSP-böngésző](https://docs.microsoft.com/
   
   **Alapértelmezett**: igen
   
-- **Tanúsítvány-hibák felülbírálásának megakadályozása**:  
+- **A tanúsítvány-hibák felülbírálásának megakadályozása a felhasználónál**:  
   Ezzel a házirend-beállítással megakadályozható, hogy a felhasználó figyelmen kívül hagyja a böngészést megszakító SSL/Transport Layer Security (SSL/TLS) tanúsítványokat (például a "lejárt", a "visszavont" vagy a "név eltérése" hibákat) az Internet Explorerben. Ha engedélyezi ezt a házirend-beállítást, a felhasználó nem folytathatja a böngészést. Ha letiltja vagy nem konfigurálja ezt a házirend-beállítást, akkor a felhasználó dönthet úgy, hogy figyelmen kívül hagyja a tanúsítvány hibáit, és folytatja a böngészést.  
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067126)
   
   **Alapértelmezett**: igen
 
-## <a name="connectivity"></a>Kapcsolódás
+## <a name="connectivity"></a>Csatlakozás
 
 További információ: [Policy CSP – kapcsolat](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-connectivity) a Windows dokumentációjában.
 
@@ -486,7 +486,7 @@ További információ: [Policy CSP –](https://docs.microsoft.com/windows/clien
 
 További információ: [Policy CSP-ExploitGuard](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-exploitguard) a Windows dokumentációjában.
 
-- **Védelem XML-fájljának kihasználása**:  
+- **XML feltöltése**:  
   Lehetővé teszi a rendszergazda számára egy olyan konfiguráció kiküldését, amely a kívánt rendszer-és alkalmazás-kockázatcsökkentő beállításokat jelöli a szervezet összes eszközén. A konfigurációt egy XML-fájl jelképezi. A védelem kiaknázásával megvédheti az eszközöket olyan kártevők ellen, amelyek kihasználják a kiaknázást és a fertőzést. A Windows biztonsági alkalmazás vagy a PowerShell használatával hozhat létre kockázatcsökkentő (más néven konfiguráció) készletet. Ezt követően exportálhatja ezt a konfigurációt XML-fájlként, és megoszthatja azt több, a hálózaton található géppel, hogy mindegyiknek ugyanazokat a kockázatcsökkentő beállításokat adja meg. Egy meglévő EMET konfigurációs XML-fájlt is konvertálhat, és importálhatja a biztonsági rés kiaknázása konfigurációs XML-fájlba.  
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067035)
 
@@ -507,6 +507,64 @@ További információ: [Policy CSP-fájlkezelő](https://docs.microsoft.com/wind
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067107)
 
   **Alapértelmezett**: letiltva
+
+## <a name="firewall"></a>Tűzfal
+
+További információ: [2.2.2 FW_PROFILE_TYPE]( https://docs.microsoft.com/openspecs/windows_protocols/ms-fasp/7704e238-174d-4a5e-b809-5f3787dd8acc) a Windows-protokollok dokumentációjában.
+
+- **Tűzfal-profil tartománya**:  
+  Meghatározza azokat a profilokat, amelyekhez a szabály tartozik: tartomány, privát, nyilvános. Ez az érték a tartományokhoz csatlakozó hálózatok profilját jelöli.  
+  [További információ](https://go.microsoft.com/fwlink/?linkid=2066796)
+
+  - **Bejövő kapcsolatok blokkolva**:  
+    **Alapértelmezett**: igen
+
+  - **Kimenő kapcsolatok szükségesek**:  
+    **Alapértelmezett**: igen
+
+  - **Bejövő értesítések blokkolva**:  
+    **Alapértelmezett**: igen
+
+  - **Tűzfal engedélyezve**:  
+    **Alapértelmezés**: engedélyezett
+
+- **Nyilvános tűzfal profilja**:  
+  Meghatározza azokat a profilokat, amelyekhez a szabály tartozik: tartomány, privát, nyilvános. Ez az érték a nyilvános hálózatok profilját jelöli. Ezek a hálózatok a kiszolgáló gazdagépének rendszergazdái. A besorolás akkor történik meg, amikor a gazdagép először csatlakozik a hálózathoz. Ezek a hálózatok általában olyan repülőtereken, kávézókban és más nyilvános helyeken találhatók, ahol a hálózatban vagy a hálózati rendszergazdában található társak nem megbízhatók.  
+  [További információ](https://go.microsoft.com/fwlink/?linkid=2067143)
+
+  - **Bejövő kapcsolatok blokkolva**:  
+    **Alapértelmezett**: igen
+
+  - **Kimenő kapcsolatok szükségesek**:  
+    **Alapértelmezett**: igen
+
+  - **Bejövő értesítések blokkolva**:  
+    **Alapértelmezett**: igen
+
+  - **Tűzfal engedélyezve**:  
+    **Alapértelmezés**: engedélyezett
+
+  - **Nincs egyesítve a csoportházirendből származó kapcsolatbiztonsági szabályok**:  
+    **Alapértelmezett**: igen
+
+  - **A csoportházirend házirend-szabályai nincsenek egyesítve**:  
+    **Alapértelmezett**: igen
+
+- **Saját tűzfal-profil**:  
+  Meghatározza azokat a profilokat, amelyekhez a szabály tartozik: tartomány, privát, nyilvános. Ez az érték a magánhálózatok profilját jelöli.  
+  [További információ](https://go.microsoft.com/fwlink/?linkid=2067041)
+
+  - **Bejövő kapcsolatok blokkolva**:  
+    **Alapértelmezett**: igen
+
+  - **Kimenő kapcsolatok szükségesek**:  
+    **Alapértelmezett**: igen
+
+  - **Bejövő értesítések blokkolva**:  
+    **Alapértelmezett**: igen
+
+  - **Tűzfal engedélyezve**:  
+    **Alapértelmezés**: engedélyezett
 
 ## <a name="internet-explorer"></a>Internet Explorer
 
@@ -1286,7 +1344,7 @@ További információ: [Policy CSP-LocalPoliciesSecurityOptions](https://docs.mi
   **Alapértelmezett**: NTLM V2 és 128 bites titkosítás szükséges
 
 - **A zárolási képernyő inaktivitásának percben történő aktiválása, amíg a**képernyőkímélő be nem fejeződik:  
-  A Windows észleli a bejelentkezési munkamenetek tétlenségét, és ha a tétlenség ideje túllépi a tétlenségi korlátot, a rendszer futtatja a képernyőkímélőt és lezárja a munkamenetet.  
+  A Windows a bejelentkezési munkamenetek inaktivitását észleli, és ha az inaktív idő mennyisége meghaladja az inaktivitási korlátot, a képernyőkímélő futni fog, és zárolja a munkamenetet.  
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067210)
 
   **Alapértelmezett**: 15
@@ -1477,6 +1535,153 @@ További információ: [Policy CSP-LocalPoliciesSecurityOptions](https://docs.mi
 
   **Alapértelmezett**: igen
 
+## <a name="microsoft-defender"></a>Microsoft Defender
+
+További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender) a Windows dokumentációjában.
+
+- **Bejövő üzenetek ellenőrzése**:  
+  Engedélyezi vagy engedélyezi az e-mailek vizsgálatát.  
+  [További információ](https://go.microsoft.com/fwlink/?linkid=2067116)
+
+  **Alapértelmezett**: igen
+
+- **Office-alkalmazások – alárendelt folyamat típusa**:  
+  Az Office-alkalmazások nem hozhatnak létre alárendelt folyamatokat. Ide tartozik a Word, az Excel, a PowerPoint, a OneNote és a hozzáférés. Ez egy tipikus kártevő-viselkedés, különösen olyan makró-alapú támadások esetében, amelyek az Office-alkalmazások használatával próbálnak meg rosszindulatú végrehajtható fájlokat elindítani vagy letölteni.  
+  [További információ](https://go.microsoft.com/fwlink/?linkid=2067121)
+
+  **Alapértelmezett**: letiltás
+
+- **Defender-minta küldésének beleegyező típusa**:  
+  A Microsoft Defender felhasználói beleegyezési szintjének ellenőrzése az adatküldéshez. Ha a szükséges engedély már meg lett adva, a Microsoft Defender beküldi őket. Ha nem (és ha a felhasználónak nem kell megadnia a kérdést), a felhasználói felület megadását kéri (ha a Defender/AllowCloudProtection engedélyezett) az adatok elküldése előtt.  
+  [További információ](https://go.microsoft.com/fwlink/?linkid=2067131)
+
+  **Alapértelmezett**: biztonságos minták automatikus küldése
+
+- **Aláírás-frissítési időköz (óra)** :  
+  A Defender-aláírás frissítési időköze órában.
+
+  **Alapértelmezett**: 4
+
+- **Parancsfájl letöltött adattartalom-végrehajtási típusa**:  
+  A Defender-szkript letöltötte a hasznos adatok végrehajtási típusát.
+
+  **Alapértelmezett**: letiltás
+  
+- **Hitelesítő adatok ellopási típusának tiltása**:  
+  A Microsoft Defender hitelesítőadat-őr virtualizálás-alapú biztonságot használ a titkok elkülönítésére, így csak a rendszerjogosultságú rendszerszoftverek férhetnek hozzájuk. A titkos kulcsokhoz való jogosulatlan hozzáférés a hitelesítő adatok ellopására, például pass-The-hash vagy pass-The-Ticket típusú támadásokra is vezethet. A Microsoft Defender hitelesítőadat-őr megakadályozza ezeket a támadásokat az NTLM jelszó-kivonatok, a Kerberos-jegyek és az alkalmazások tartományi hitelesítő adatokként tárolt hitelesítő adatainak védelmével.  
+  [További információ](https://go.microsoft.com/fwlink/?linkid=2067065)
+  
+  **Alapértelmezett**: Engedélyezés
+
+- **E-mail tartalom végrehajtásának típusa**:  
+  Ez a szabály blokkolja a következő fájltípusokat a futtatott vagy a Microsoft Outlookban vagy webmailben (például Gmail.com vagy Outlook.com) található e-mailből: végrehajtható fájlok (például. exe,. dll vagy. scr) parancsfájlok (például PowerShell. ps, VisualBasic. vbs, vagy a JavaScript. js fájl) parancsfájl-archiválási fájlok.  
+  [További információ](https://go.microsoft.com/fwlink/?linkid=2067063)
+
+  **Alapértelmezett**: letiltás
+
+::: zone-end
+::: zone pivot="mdm-may-2019"
+
+- **Adobe Reader indítása alárendelt folyamatban**:  
+  **Alapértelmezett**: Engedélyezés
+
+::: zone-end
+::: zone pivot="mdm-preview,mdm-may-2019"
+
+- **Hálózati védelem**:  
+  Ez a szabályzat lehetővé teszi a hálózati védelem (Letiltás/naplózás) bekapcsolását a Microsoft Defender Exploit Guard-ben. A hálózatvédelem a Microsoft Defender kiaknázási őr szolgáltatása, amely megvédi az alkalmazottakat az adathalászat-csalások, a biztonsági rések és a rosszindulatú tartalmak interneten való elérésének bármely alkalmazásával. Ez magában foglalja a harmadik féltől származó böngészőknek a veszélyes helyekhez való csatlakozásának megakadályozását. Az érték típusa egész szám. Ha engedélyezi ezt a beállítást, a hálózati védelem be van kapcsolva, és az alkalmazottak nem kapcsolhatják ki. A viselkedését a következő beállítások szabályozzák: letiltás és naplózás. Ha engedélyezi ezt a házirendet a "letiltás" beállítással, a felhasználók és az alkalmazások le vannak tiltva a veszélyes tartományokhoz való csatlakozáskor. Ezt a tevékenységet a Microsoft Defender Security Centerban tekintheti meg. Ha engedélyezi ezt a házirendet a "naplózás" beállítással, a felhasználók/alkalmazások nem lesznek letiltva a veszélyes tartományokhoz való csatlakozáskor. Ezt a tevékenységet azonban továbbra is megtekintheti a Microsoft Defender Security Centerban. Ha letiltja ezt a házirendet, a felhasználók/alkalmazások nem lesznek letiltva a veszélyes tartományokhoz való csatlakozáskor. A Microsoft Defender Security Centerban semmilyen hálózati tevékenység nem jelenik meg. Ha nem konfigurálja ezt a házirendet, a hálózati blokkolás alapértelmezés szerint le van tiltva.  
+  [További információ](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/enable-network-protection)
+
+  **Alapértelmezett**: Engedélyezés
+
+- **Defender-ütemterv vizsgálatának napja**:  
+  Defender-ütemterv vizsgálatának napja.
+
+  **Alapértelmezett**: mindennapi
+
+- **Felhőbe szállított védelem**:  
+  A számítógép legjobb védelméhez a Microsoft Defender adatokat küld a Microsoftnak a talált problémákról. A Microsoft elemezni fogja ezeket az információkat, többet tudhat meg az Ön és más ügyfelek problémáit érintő problémákról, és továbbfejlesztett megoldásokat kínál.  
+  [További információ](https://go.microsoft.com/fwlink/?linkid=2067039)
+
+  **Alapértelmezett**: igen  
+
+- A **Defender vélhetően nemkívánatos alkalmazásának művelete**:  
+  A Microsoft Defender Antivirus vélhetően nemkívánatos alkalmazás-(PUA-) védelmi funkciója képes azonosítani és letiltani a PUAs a hálózaton lévő végpontokon való letöltés és telepítés során. Ezek az alkalmazások nem tekintendők vírusok, kártevők vagy más típusú fenyegetéseknek, de olyan végpontokon is végezhetnek műveleteket, amelyek hátrányosan befolyásolják a teljesítményüket vagy a használatukat. A PUA olyan alkalmazásokra is hivatkozhat, amelyeknek a megítélése szerint rossz hírnevük van. A tipikus PUA-viselkedés többek között az alábbiakat tartalmazza: különböző típusú szoftver-árukapcsolás ad-befecskendezés a böngészők és a beállításjegyzék-optimalizálók számára, amelyek a hibákat észlelik, a hibák kijavításához, de a végponton maradva nem módosítanak vagy optimalizálást (más néven " Rogue Antivirus "programok". Ezek az alkalmazások növelhetik a kártevő szoftverrel fertőzött hálózat kockázatát, így a rosszindulatú fertőzések nehezebben azonosíthatók, és az informatikai erőforrások az alkalmazások tisztításával is felhasználhatók.  
+  [További információ](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-puaprotection)
+
+  **Alapértelmezett**: letiltás  
+
+- **Parancsfájl által eltorzított Makrónév típusa**:  
+  A kártevők és egyéb fenyegetések megpróbálják eltorzítani vagy elrejteni a kártékony kódokat bizonyos parancsfájlokban. Ez a szabály akadályozza meg, hogy a rendszer ne futtasson olyan parancsfájlokat, amelyek nem futtathatók.  
+  [További információ](https://go.microsoft.com/fwlink/?linkid=2067026)
+
+  **Alapértelmezett**: letiltás
+
+- **Cserélhető meghajtók vizsgálata teljes vizsgálat során**:  
+  Lehetővé teszi a Microsoft Defender számára, hogy a teljes vizsgálat során kártékony és nemkívánatos szoftvereket keressen a cserélhető meghajtókon (például flash-meghajtókon). A Microsoft Defender víruskereső a végrehajtás előtt megkeresi az USB-eszközökön lévő összes fájlt.  
+  [További információ](https://go.microsoft.com/fwlink/?linkid=2067036)
+
+  **Alapértelmezett**: igen  
+
+- **Archív fájlok vizsgálata**:  
+  Defender-vizsgálat archív fájljai.
+
+  **Alapértelmezett**: igen
+
+- **Viselkedés figyelése**:  
+  Engedélyezi vagy engedélyezi a Microsoft Defender viselkedésének figyelését. A Windows 10-es verzióba ágyazott érzékelők begyűjtik és feldolgozzák az operációs rendszer viselkedési jeleit, és elküldik az érzékelő adatait a Microsoft Defender ATP privát, elkülönített, Felhőbeli példányának.  
+  [További információ](https://go.microsoft.com/fwlink/?linkid=2067111)
+
+  **Alapértelmezett**: igen
+
+- **Hálózati mappákból megnyitott fájlok vizsgálata**:  
+  Ha a fájlok csak olvashatók, a felhasználó nem tudja eltávolítani az észlelt kártevőket.
+
+  **Alapértelmezett**: igen
+
+- Nem **megbízható USB-folyamat típusa**:  
+  Ezzel a szabállyal a rendszergazdák megakadályozhatják az aláíratlan vagy nem megbízható végrehajtható fájlok futtatását USB cserélhető meghajtókról, beleértve az SD-kártyákat is.  
+  [További információ](https://go.microsoft.com/fwlink/?linkid=2067100)
+
+  **Alapértelmezett**: letiltás
+
+- **Office-alkalmazások egyéb folyamat-injektálási típusa**:  
+  Az Office-alkalmazások, például a Word, az Excel, a PowerPoint és a OneNote, nem tudnak kódot beszúrni más folyamatokra. Ezt általában a kártevők használják rosszindulatú kód futtatására arra az kísérletre, hogy el lehessen rejteni a tevékenységet a víruskereső keresőmotorokból.  
+  [További információ](https://go.microsoft.com/fwlink/?linkid=2067019)
+
+  **Alapértelmezett**: letiltás
+
+- **Office-makróvédelmi kód engedélyezése a Win32 importálási típusának**:  
+  A kártevők az Office-fájlokban lévő makróvírus használatával importálhatók és betölthetők a Win32 DLL-fájlok, amelyekkel az API-hívások lehetővé teszik a további fertőzés használatát a rendszeren. Ez a szabály megkísérli letiltani a Win32 DLL-eket importálni képes makrókat tartalmazó Office-fájlokat. Ide tartozik a Word, az Excel, a PowerPoint és a OneNote.  
+  [További információ](https://go.microsoft.com/fwlink/?linkid=2067130)
+
+  **Alapértelmezett**: letiltás
+
+- **Defender Cloud Block-szint**:  
+  A Defender Cloud Block szintje.
+
+  **Alapértelmezett**: nincs konfigurálva
+
+- **Valós idejű figyelés**:  
+  A Defender valós idejű figyelést igényel.
+
+  **Alapértelmezett**: igen
+
+::: zone-end
+::: zone pivot="mdm-may-2019"
+
+- **Az Office kommunikációs alkalmazások indítása alárendelt folyamatokban**:  
+  **Alapértelmezett**: Engedélyezés
+
+::: zone-end
+::: zone pivot="mdm-preview,mdm-may-2019"
+
+- **Office-alkalmazások végrehajtható tartalom-létrehozási vagy-indítási típusa**:  
+  Ez a szabály a végrehajtható fájlokat létrehozó vagy indító gyanús és kártékony bővítmények és parancsfájlok (bővítmények) által használt jellemző viselkedéseket célozza meg. Ez egy tipikus kártevő-módszer. Az Office-alkalmazások nem használják a bővítményeket. Ezek a bővítmények általában a Windows Scripting Hostt használják (). WSH-fájlok) az egyes feladatokat automatizáló vagy felhasználó által létrehozott kiegészítő funkciókat biztosító parancsfájlok futtatásához.  
+  [További információ](https://go.microsoft.com/fwlink/?linkid=2067108)
+
+  **Alapértelmezett**: letiltás
+
 ## <a name="ms-security-guide"></a>MS biztonsági útmutató
 
 További információ: [Policy CSP-MSSecurityGuide](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-mssecurityguide) a Windows dokumentációjában.
@@ -1530,7 +1735,7 @@ További információ: [Policy CSP-MSSLegacy](https://docs.microsoft.com/windows
 
   **Alapértelmezett**: letiltva
 
-## <a name="power"></a>Főkapcsoló
+## <a name="power"></a>Energiaellátás
 
 További információ: [házirend CSP-Power](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-power) a Windows dokumentációjában.
 
@@ -1596,7 +1801,7 @@ További információ: [Policy CSP-RemoteAssistance](https://docs.microsoft.com/
 ::: zone-end
 ::: zone pivot="mdm-preview,mdm-may-2019"
 
-## <a name="remote-desktop-services"></a>Távoli Asztali Szolgáltatások (Remote Desktop Services)
+## <a name="remote-desktop-services"></a>Távoli asztali szolgáltatások
 
 További információ: [Policy CSP-RemoteDesktopServices](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-remotedesktopservices) a Windows dokumentációjában.
 
@@ -1778,217 +1983,12 @@ További információ: [Policy CSP-WindowsConnectionManager](https://docs.micros
 
   **Alapértelmezett**: engedélyezve
 
-## <a name="microsoft-defender"></a>Microsoft Defender
-
-További információ: [Policy CSP-Defender](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender) a Windows dokumentációjában.
-
-- **Bejövő üzenetek ellenőrzése**:  
-  Engedélyezi vagy engedélyezi az e-mailek vizsgálatát.  
-  [További információ](https://go.microsoft.com/fwlink/?linkid=2067116)
-
-  **Alapértelmezett**: igen
-
-- **Office-alkalmazások – alárendelt folyamat típusa**:  
-  Az Office-alkalmazások nem hozhatnak létre alárendelt folyamatokat. Ide tartozik a Word, az Excel, a PowerPoint, a OneNote és a hozzáférés. Ez egy tipikus kártevő-viselkedés, különösen olyan makró-alapú támadások esetében, amelyek az Office-alkalmazások használatával próbálnak meg rosszindulatú végrehajtható fájlokat elindítani vagy letölteni.  
-  [További információ](https://go.microsoft.com/fwlink/?linkid=2067121)
-
-  **Alapértelmezett**: letiltás
-
-- **Defender-minta küldésének beleegyező típusa**:  
-  A Microsoft Defender felhasználói beleegyezési szintjének ellenőrzése az adatküldéshez. Ha a szükséges engedély már meg lett adva, a Microsoft Defender beküldi őket. Ha nem (és ha a felhasználónak nem kell megadnia a kérdést), a felhasználói felület megadását kéri (ha a Defender/AllowCloudProtection engedélyezett) az adatok elküldése előtt.  
-  [További információ](https://go.microsoft.com/fwlink/?linkid=2067131)
-
-  **Alapértelmezett**: biztonságos minták automatikus küldése
-
-- **Aláírás-frissítési időköz (óra)** :  
-  A Defender-aláírás frissítési időköze órában.
-
-  **Alapértelmezett**: 4
-
-- **Parancsfájl letöltött adattartalom-végrehajtási típusa**:  
-  A Defender-szkript letöltötte a hasznos adatok végrehajtási típusát.
-
-  **Alapértelmezett**: letiltás
-  
-- **Hitelesítő adatok ellopási típusának tiltása**:  
-  A Microsoft Defender hitelesítőadat-őr virtualizálás-alapú biztonságot használ a titkok elkülönítésére, így csak a rendszerjogosultságú rendszerszoftverek férhetnek hozzájuk. A titkos kódokhoz való illetéktelen hozzáférés a hitelesítési adatok ellopását okozó (például pass-the-hash vagy pass-the-ticket típusú) támadásokhoz vezethetnek. A Microsoft Defender hitelesítőadat-őr megakadályozza ezeket a támadásokat az NTLM jelszó-kivonatok, a Kerberos-jegyek és az alkalmazások tartományi hitelesítő adatokként tárolt hitelesítő adatainak védelmével.  
-  [További információ](https://go.microsoft.com/fwlink/?linkid=2067065)
-  
-  **Alapértelmezett**: Engedélyezés
-
-- **E-mail tartalom végrehajtásának típusa**:  
-  Ez a szabály blokkolja a következő fájltípusokat a futtatott vagy a Microsoft Outlookban vagy webmailben (például Gmail.com vagy Outlook.com) található e-mailből: végrehajtható fájlok (például. exe,. dll vagy. scr) parancsfájlok (például PowerShell. ps, VisualBasic. vbs, vagy a JavaScript. js fájl) parancsfájl-archiválási fájlok.  
-  [További információ](https://go.microsoft.com/fwlink/?linkid=2067063)
-
-  **Alapértelmezett**: letiltás
-
 ::: zone-end
 ::: zone pivot="mdm-may-2019"
-
-- **Adobe Reader indítása alárendelt folyamatban**:  
-  **Alapértelmezett**: Engedélyezés
-
-::: zone-end
-::: zone pivot="mdm-preview,mdm-may-2019"
-
-- **Hálózati védelem**:  
-  Ez a szabályzat lehetővé teszi a hálózati védelem (Letiltás/naplózás) bekapcsolását a Microsoft Defender Exploit Guard-ben. A hálózatvédelem a Microsoft Defender kiaknázási őr szolgáltatása, amely megvédi az alkalmazottakat az adathalászat-csalások, a biztonsági rések és a rosszindulatú tartalmak interneten való elérésének bármely alkalmazásával. Ez magában foglalja a harmadik féltől származó böngészőknek a veszélyes helyekhez való csatlakozásának megakadályozását. Az érték típusa egész szám. Ha engedélyezi ezt a beállítást, a hálózati védelem be van kapcsolva, és az alkalmazottak nem kapcsolhatják ki. A viselkedését a következő beállítások szabályozzák: letiltás és naplózás. Ha engedélyezi ezt a házirendet a "letiltás" beállítással, a felhasználók és az alkalmazások le vannak tiltva a veszélyes tartományokhoz való csatlakozáskor. Ezt a tevékenységet a Microsoft Defender Security Centerban tekintheti meg. Ha engedélyezi ezt a házirendet a "naplózás" beállítással, a felhasználók/alkalmazások nem lesznek letiltva a veszélyes tartományokhoz való csatlakozáskor. Ezt a tevékenységet azonban továbbra is megtekintheti a Microsoft Defender Security Centerban. Ha letiltja ezt a házirendet, a felhasználók/alkalmazások nem lesznek letiltva a veszélyes tartományokhoz való csatlakozáskor. A Microsoft Defender Security Centerban semmilyen hálózati tevékenység nem jelenik meg. Ha nem konfigurálja ezt a házirendet, a hálózati blokkolás alapértelmezés szerint le van tiltva.  
-  [További információ](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/enable-network-protection)
-
-  **Alapértelmezett**: Engedélyezés
-
-- **Defender-ütemterv vizsgálatának napja**:  
-  Defender-ütemterv vizsgálatának napja.
-
-  **Alapértelmezett**: mindennapi
-
-- **Felhőbe szállított védelem**:  
-  A számítógép legjobb védelméhez a Microsoft Defender adatokat küld a Microsoftnak a talált problémákról. A Microsoft elemezni fogja ezeket az információkat, többet tudhat meg az Ön és más ügyfelek problémáit érintő problémákról, és továbbfejlesztett megoldásokat kínál.  
-  [További információ](https://go.microsoft.com/fwlink/?linkid=2067039)
-
-  **Alapértelmezett**: igen  
-
-- A **Defender vélhetően nemkívánatos alkalmazásának művelete**:  
-  A Microsoft Defender Antivirus vélhetően nemkívánatos alkalmazás-(PUA-) védelmi funkciója képes azonosítani és letiltani a PUAs a hálózaton lévő végpontokon való letöltés és telepítés során. Ezek az alkalmazások nem tekintendők vírusok, kártevők vagy más típusú fenyegetéseknek, de olyan végpontokon is végezhetnek műveleteket, amelyek hátrányosan befolyásolják a teljesítményüket vagy a használatukat. A PUA olyan alkalmazásokra is hivatkozhat, amelyeknek a megítélése szerint rossz hírnevük van. A tipikus PUA-viselkedés többek között az alábbiakat tartalmazza: különböző típusú szoftver-árukapcsolás ad-befecskendezés a böngészők és a beállításjegyzék-optimalizálók számára, amelyek a hibákat észlelik, a hibák kijavításához, de a végponton maradva nem módosítanak vagy optimalizálást (más néven " Rogue Antivirus "programok". Ezek az alkalmazások növelhetik a kártevő szoftverrel fertőzött hálózat kockázatát, így a rosszindulatú fertőzések nehezebben azonosíthatók, és az informatikai erőforrások az alkalmazások tisztításával is felhasználhatók.  
-  [További információ](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-puaprotection)
-
-  **Alapértelmezett**: letiltás  
-
-- **Parancsfájl által eltorzított Makrónév típusa**:  
-  A kártevők és egyéb fenyegetések megpróbálják eltorzítani vagy elrejteni a kártékony kódokat bizonyos parancsfájlokban. Ez a szabály akadályozza meg, hogy a rendszer ne futtasson olyan parancsfájlokat, amelyek nem futtathatók.  
-  [További információ](https://go.microsoft.com/fwlink/?linkid=2067026)
-
-  **Alapértelmezett**: letiltás
-
-- **Cserélhető meghajtók vizsgálata teljes vizsgálat során**:  
-  Lehetővé teszi a Microsoft Defender számára, hogy a teljes vizsgálat során kártékony és nemkívánatos szoftvereket keressen a cserélhető meghajtókon (például flash-meghajtókon). A Microsoft Defender víruskereső a végrehajtás előtt megkeresi az USB-eszközökön lévő összes fájlt.  
-  [További információ](https://go.microsoft.com/fwlink/?linkid=2067036)
-
-  **Alapértelmezett**: igen  
-
-- **Archív fájlok vizsgálata**:  
-  Defender-vizsgálat archív fájljai.
-
-  **Alapértelmezett**: igen
-
-- **Viselkedés figyelése**:  
-  Engedélyezi vagy engedélyezi a Microsoft Defender viselkedésének figyelését. A Windows 10-es verzióba ágyazott érzékelők begyűjtik és feldolgozzák az operációs rendszer viselkedési jeleit, és elküldik az érzékelő adatait a Microsoft Defender ATP privát, elkülönített, Felhőbeli példányának.  
-  [További információ](https://go.microsoft.com/fwlink/?linkid=2067111)
-
-  **Alapértelmezett**: igen
-
-- **Hálózati mappákból megnyitott fájlok vizsgálata**:  
-  Ha a fájlok csak olvashatók, a felhasználó nem tudja eltávolítani az észlelt kártevőket.
-
-  **Alapértelmezett**: igen
-
-- Nem **megbízható USB-folyamat típusa**:  
-  Ezzel a szabállyal a rendszergazdák megakadályozhatják az aláíratlan vagy nem megbízható végrehajtható fájlok futtatását USB cserélhető meghajtókról, beleértve az SD-kártyákat is.  
-  [További információ](https://go.microsoft.com/fwlink/?linkid=2067100)
-
-  **Alapértelmezett**: letiltás
-
-- **Office-alkalmazások egyéb folyamat-injektálási típusa**:  
-  Az Office-alkalmazások, például a Word, az Excel, a PowerPoint és a OneNote, nem tudnak kódot beszúrni más folyamatokra. Ezt általában a kártevők használják rosszindulatú kód futtatására arra az kísérletre, hogy el lehessen rejteni a tevékenységet a víruskereső keresőmotorokból.  
-  [További információ](https://go.microsoft.com/fwlink/?linkid=2067019)
-
-  **Alapértelmezett**: letiltás
-
-- **Office-makróvédelmi kód engedélyezése a Win32 importálási típusának**:  
-  A kártevők az Office-fájlokban lévő makróvírus használatával importálhatók és betölthetők a Win32 DLL-fájlok, amelyekkel az API-hívások lehetővé teszik a további fertőzés használatát a rendszeren. Ez a szabály megkísérli letiltani a Win32 DLL-eket importálni képes makrókat tartalmazó Office-fájlokat. Ide tartozik a Word, az Excel, a PowerPoint és a OneNote.  
-  [További információ](https://go.microsoft.com/fwlink/?linkid=2067130)
-
-  **Alapértelmezett**: letiltás
-
-- **Defender Cloud Block-szint**:  
-  A Defender Cloud Block szintje.
-
-  **Alapértelmezett**: nincs konfigurálva
-
-- **Valós idejű figyelés**:  
-  A Defender valós idejű figyelést igényel.
-
-  **Alapértelmezett**: igen
-
-::: zone-end
-::: zone pivot="mdm-may-2019"
-
-- **Az Office kommunikációs alkalmazások indítása alárendelt folyamatokban**:  
-  **Alapértelmezett**: Engedélyezés
-
-::: zone-end
-::: zone pivot="mdm-preview,mdm-may-2019"
-
-- **Office-alkalmazások végrehajtható tartalom-létrehozási vagy-indítási típusa**:  
-  Ez a szabály a végrehajtható fájlokat létrehozó vagy indító gyanús és kártékony bővítmények és parancsfájlok (bővítmények) által használt jellemző viselkedéseket célozza meg. Ez egy tipikus kártevő-módszer. Az Office-alkalmazások nem használják a bővítményeket. Ezek a bővítmények általában a Windows Scripting Hostt használják (). WSH-fájlok) az egyes feladatokat automatizáló vagy felhasználó által létrehozott kiegészítő funkciókat biztosító parancsfájlok futtatásához.  
-  [További információ](https://go.microsoft.com/fwlink/?linkid=2067108)
-
-  **Alapértelmezett**: letiltás
-
-::: zone-end
-::: zone pivot="mdm-may-2019"
-
-## <a name="microsoft-defender-firewall"></a>Microsoft Defender-tűzfal
-
-További információ: [2.2.2 FW_PROFILE_TYPE]( https://docs.microsoft.com/openspecs/windows_protocols/ms-fasp/7704e238-174d-4a5e-b809-5f3787dd8acc) a Windows-protokollok dokumentációjában.
-
-- **Tűzfal-profil tartománya**:  
-  Meghatározza azokat a profilokat, amelyekhez a szabály tartozik: tartomány, privát, nyilvános. Ez az érték a tartományokhoz csatlakozó hálózatok profilját jelöli.  
-  [További információ](https://go.microsoft.com/fwlink/?linkid=2066796)
-
-  - **Bejövő kapcsolatok blokkolva**:  
-    **Alapértelmezett**: igen
-
-  - **Kimenő kapcsolatok szükségesek**:  
-    **Alapértelmezett**: igen
-
-  - **Bejövő értesítések blokkolva**:  
-    **Alapértelmezett**: igen
-
-  - **Tűzfal engedélyezve**:  
-    **Alapértelmezés**: engedélyezett
-
-- **Nyilvános tűzfal profilja**:  
-  Meghatározza azokat a profilokat, amelyekhez a szabály tartozik: tartomány, privát, nyilvános. Ez az érték a nyilvános hálózatok profilját jelöli. Ezek a hálózatok a kiszolgáló gazdagépének rendszergazdái. A besorolás akkor történik meg, amikor a gazdagép először csatlakozik a hálózathoz. Ezek a hálózatok általában olyan repülőtereken, kávézókban és más nyilvános helyeken találhatók, ahol a hálózatban vagy a hálózati rendszergazdában található társak nem megbízhatók.  
-  [További információ](https://go.microsoft.com/fwlink/?linkid=2067143)
-
-  - **Bejövő kapcsolatok blokkolva**:  
-    **Alapértelmezett**: igen
-
-  - **Kimenő kapcsolatok szükségesek**:  
-    **Alapértelmezett**: igen
-
-  - **Bejövő értesítések blokkolva**:  
-    **Alapértelmezett**: igen
-
-  - **Tűzfal engedélyezve**:  
-    **Alapértelmezés**: engedélyezett
-
-  - **Nincs egyesítve a csoportházirendből származó kapcsolatbiztonsági szabályok**:  
-    **Alapértelmezett**: igen
-
-  - **A csoportházirend házirend-szabályai nincsenek egyesítve**:  
-    **Alapértelmezett**: igen
-
-- **Saját tűzfal-profil**:  
-  Meghatározza azokat a profilokat, amelyekhez a szabály tartozik: tartomány, privát, nyilvános. Ez az érték a magánhálózatok profilját jelöli.  
-  [További információ](https://go.microsoft.com/fwlink/?linkid=2067041)
-
-  - **Bejövő kapcsolatok blokkolva**:  
-    **Alapértelmezett**: igen
-
-  - **Kimenő kapcsolatok szükségesek**:  
-    **Alapértelmezett**: igen
-
-  - **Bejövő értesítések blokkolva**:  
-    **Alapértelmezett**: igen
-
-  - **Tűzfal engedélyezve**:  
-    **Alapértelmezés**: engedélyezett
 
 ## <a name="windows-hello-for-business"></a>Vállalati Windows Hello
 
-- **Fokozott hamisítás szükséges, ha elérhető**
+- **Fokozott hamisítás elleni kihasználás engedélyezése, ha elérhető**
 
   Ha igen, akkor az eszközök fokozott hamisítást alkalmaznak, ha elérhető. Ha nem, a rendszer letiltja a hamisítás elleni hamisítást. Nincs konfigurálva, az ügyfélen végzett konfigurációk tiszteletben tartása.  
   [További információ](https://go.microsoft.com/fwlink/?linkid=2067192)
@@ -2132,7 +2132,7 @@ A következő beállítások egyike:
 - **Adobe Reader indítása alárendelt folyamatban**
 - **Office kommunikációs alkalmazások indítása alárendelt folyamatban**
 
-*[Új]* [ **Microsoft Defender-tűzfal**](#microsoft-defender-firewall)
+*[Új]* [ **tűzfal**](#firewall)
 
 - **Tűzfal-profil tartománya**
   - **Bejövő kapcsolatok blokkolva**

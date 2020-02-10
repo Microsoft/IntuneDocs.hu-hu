@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e64741a92804ec4149b654480166720ff3092e35
-ms.sourcegitcommit: 665be113b593c3bc7d46b99599e720f781037dcf
+ms.openlocfilehash: 957e2b8065662af1b0f1a28108a740ef253a3b3e
+ms.sourcegitcommit: 2b905913840d4133a7964fe4f54a58ea6e421e12
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76258508"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77074648"
 ---
 # <a name="manage-web-access-by-using-microsoft-edge-with-microsoft-intune"></a>Webes elérés kezelése a Microsoft Edge és a Microsoft Intune használatával
 
@@ -108,7 +108,7 @@ Alkalmazás-konfiguráció létrehozása a Microsoft Edge-hez:
     > [!NOTE]
     > A Microsoft Edge ugyanazokat a kulcs-érték párokat használja, mint a Managed Browser. Androidon a Microsoft Edge-nek az alkalmazás-konfigurációs szabályzatok érvénybe léptetéséhez az alkalmazás-védelmi szabályzatokat kell megcéloznia.
 
-8. Ha elkészült, kattintson az **OK** gombra.
+8. Ha elkészült, kattintson **az OK gombra**.
 9. A **konfigurációs szabályzat hozzáadása** panelen válassza a **Hozzáadás**lehetőséget.<br>
     Ekkor létrejön az új konfiguráció, és megjelenik az **alkalmazás konfigurációja** ablaktáblán.
 
@@ -169,7 +169,7 @@ Célozza meg a Microsoft Edge-t a következő kulcs/érték párokkal, hogy enge
 
 |    Kulcs    |    Érték    |
 |-------------------------------------------------------------------|-------------|
-|    com. microsoft. Intune. Mam. managedbrowser. AppProxyRedirection    |    true    |
+|    com.microsoft.intune.mam.managedbrowser.AppProxyRedirection    |    true    |
 
 További információ arról, hogyan használható a Microsoft Edge és az Azure AD Application Proxy a helyszíni webalkalmazásokhoz való zökkenőmentes (és védett) hozzáféréshez. a jobb együttműködés érdekében lásd: az Intune és a Azure Active Directory összevonása a [felhasználói hozzáférés javítására](https://cloudblogs.microsoft.com/enterprisemobility/2017/07/06/better-together-intune-and-azure-active-directory-team-up-to-improve-user-access). Ez a blogbejegyzés a Intune Managed Browserra hivatkozik, de a tartalom a Microsoft Edge-re is vonatkozik.
 
@@ -181,7 +181,7 @@ A Kezdőlap parancsikonjának konfigurálásához használja a következő kulcs
 
 |    Kulcs    |    Érték    |
 |-------------------------------------------------------------------|-------------|
-|    com. microsoft. Intune. Mam. managedbrowser. homepage   |    Adjon meg egy érvényes URL-címet. A helytelen URL-címek biztonsági intézkedésként le vannak tiltva.<br>**Példa:**  <`https://www.bing.com`>
+|    com.microsoft.intune.mam.managedbrowser.homepage   |    Adjon meg egy érvényes URL-címet. A helytelen URL-címek biztonsági intézkedésként le vannak tiltva.<br>**Példa:**  <`https://www.bing.com`>
 
 ## <a name="configure-your-organizations-logo-and-brand-color-for-new-tab-pages-in-microsoft-edge"></a>A szervezet emblémájának és a márka színének konfigurálása új lapokra a Microsoft Edge-ben
 
@@ -223,7 +223,7 @@ A felügyelt könyvjelzők konfigurálásához használja a következő kulcs/é
 
 |    Kulcs    |    Érték    |
 |---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    com. microsoft. Intune. Mam. managedbrowser. Bookmarks    |    A konfiguráció értéke könyvjelzők listája. Mindegyik könyvjelző a könyvjelző és a könyvjelző URL-címét tartalmazza. Válassza el a címet és az URL-címet a `|` karakterrel.      Például:<br>`Microsoft Bing|https://www.bing.com`<br>Több könyvjelző konfigurálásához válassza el az egyes párokat a dupla karakter `||`.<p>Például:<br>`Microsoft Bing|https://www.bing.com||Contoso|https://www.contoso.com`    |
+|    com.microsoft.intune.mam.managedbrowser.bookmarks    |    A konfiguráció értéke könyvjelzők listája. Mindegyik könyvjelző a könyvjelző és a könyvjelző URL-címét tartalmazza. Válassza el a címet és az URL-címet a `|` karakterrel.      Példa:<br>`Microsoft Bing|https://www.bing.com`<br>Több könyvjelző konfigurálásához válassza el az egyes párokat a dupla karakter `||`.<p>Példa:<br>`Microsoft Bing|https://www.bing.com||Contoso|https://www.contoso.com`    |
 
 ## <a name="display-myapps-within-microsoft-edge-bookmarks"></a>MyApps megjelenítése a Microsoft Edge-könyvjelzők között
 
@@ -231,7 +231,7 @@ Alapértelmezés szerint a felhasználók a Microsoft Edge-könyvjelzőn belül 
 
 |    Kulcs    |    Érték    |
 |------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
-|    com. microsoft. Intune. Mam. managedbrowser. MyApps    |    A **true (igaz** ) érték a Microsoft Edge-könyvjelzőn belüli MyApps mutatja.<p>**Hamis** elrejti a MyApps a Microsoft Edge-n belül.    |
+|    com.microsoft.intune.mam.managedbrowser.MyApps    |    A **true (igaz** ) érték a Microsoft Edge-könyvjelzőn belüli MyApps mutatja.<p>**Hamis** elrejti a MyApps a Microsoft Edge-n belül.    |
 
 ## <a name="specify-allowed-or-blocked-sites-list-for-microsoft-edge"></a>Engedélyezett vagy letiltott webhelyek listájának megadása a Microsoft Edge-hez
 Az alkalmazás konfigurációja segítségével meghatározhatja, hogy a felhasználók mely helyeket érhetik el a munkahelyi profil használatakor. Ha engedélyezési listát használ, a felhasználók csak a már felsorolt webhelyek elérésére képesek. Ha letiltott listát használ, a felhasználók az összes helyet elérhetik, kivéve azokat, amelyeket kifejezetten blokkolt. Csak egy engedélyezett vagy letiltott listát kell kiírnia, mindkettőt nem. Ha mindkettőt bevezeti, a rendszer az engedélyezett listát is tiszteletben tartja.  
@@ -240,7 +240,7 @@ A következő kulcs/érték párokkal konfigurálhatja a Microsoft Edge számár
 
 |    Kulcs    |    Érték    |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    A következő lehetőségek közül választhat:<p>1. az engedélyezett URL-címek megadása (csak ezek az URL-címek engedélyezettek, más webhelyek nem érhetők el):<br>`com.microsoft.intune.mam.managedbrowser.AllowListURLs`<p>2. a blokkolt URL-címek megadása (az összes többi hely elérhető):<br>`com.microsoft.intune.mam.managedbrowser.BlockListURLs`    |    A kulcs megfelelő értéke egy URL-címlista. Minden olyan URL-címet meg kell adnia, amelyet egyetlen értékként szeretne engedélyezni vagy letiltani, egy pipe `|` karakterrel elválasztva.<br>**Példák:**<br>`URL1|URL2|URL3`<br>`http://.contoso.com/|https://.bing.com/|https://expenses.contoso.com`  |
+|    A következő lehetőségek közül választhat:<p>1. az engedélyezett URL-címek megadása (csak ezek az URL-címek engedélyezettek, más webhelyek nem érhetők el):<br>`com.microsoft.intune.mam.managedbrowser.AllowListURLs`<p>2. a blokkolt URL-címek megadása (az összes többi hely elérhető):<br>`com.microsoft.intune.mam.managedbrowser.BlockListURLs`    |    A kulcs megfelelő értéke egy URL-címlista. Minden olyan URL-címet meg kell adnia, amelyet egyetlen értékként szeretne engedélyezni vagy letiltani, egy pipe `|` karakterrel elválasztva.<br>**Példák**<br>`URL1|URL2|URL3`<br>`http://.contoso.com/|https://.bing.com/|https://expenses.contoso.com`  |
 
 ### <a name="url-formats-for-allowed-and-blocked-site-list"></a>Az engedélyezett és a letiltott helyek listájának URL-formátuma 
 Az engedélyezett/letiltott webhelyek listája a különböző URL-címek használatával hozható létre. Ezek az engedélyezett minták a következő táblázatban vannak részletezve. Néhány megjegyzés az első lépések előtt: 
@@ -252,7 +252,7 @@ Az engedélyezett/letiltott webhelyek listája a különböző URL-címek haszn�
   - HTTPS – 443-as port
 - A portszám helyettesítő karakterrel való használata **nem** támogatott. Például a `http://www.contoso.com:*` és a `http://www.contoso.com:*/` nem támogatottak. 
 
-    |    URL-cím    |    Details    |    Egyezik    |    Nem egyezik    |
+    |    URL-cím    |    Részletek    |    Egyezik    |    Nem egyezik    |
     |-------------------------------------------|--------------------------------------------------------|-------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|
     |    `http://www.contoso.com`    |    Egyetlen lapnak felel meg    |    `www.contoso.com`    |    `host.contoso.com`<br>`www.contoso.com/images`<br>`contoso.com/`    |
     |    `http://contoso.com`    |    Egyetlen lapnak felel meg    |    `contoso.com/`    |    `host.contoso.com`<br>`www.contoso.com/images`<br>`www.contoso.com`    |
@@ -285,16 +285,15 @@ A következő kulcs/érték párokkal konfigurálhatja, hogy engedélyezettek-e 
 
 |    Kulcs    |    Érték    |
 |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    "com. microsoft. Intune. Mam. managedbrowser. openInPrivateIfBlock"    |    Az **igaz** érték esetén a korlátozott hivatkozások közvetlenül az InPrivate-böngészésben nyílnak meg.<p>**False** (alapértelmezett): a felhasználók dönthetnek úgy, hogy egy korlátozott hivatkozást nyitnak meg InPrivate-böngészéssel vagy személyes (MSA-) fiókkal.    |
+|    `com.microsoft.intune.mam.managedbrowser.AllowTransitionOnBlock`    |    **True** (alapértelmezett) – lehetővé teszi a Microsoft Edge számára a felhasználók személyes környezetbe való átváltását a blokkolt helyek megnyitására.<p>**False (hamis** ) – megakadályozza, hogy a Microsoft Edge áttérjen a felhasználóknak. A felhasználók egyszerűen megjelenítenek egy üzenetet arról, hogy az elérni kívánt hely le van tiltva.    |
 
 ## <a name="open-restricted-links-directly-in-inprivate-tab-pages"></a>A korlátozott hivatkozások közvetlen megnyitása InPrivate-lapokon
 
-Beállíthatja, hogy a korlátozott hivatkozások közvetlenül az InPrivate-böngészésben legyenek megnyitva, ami zökkenőmentes böngészést biztosít a felhasználóknak. Ezzel a lépéssel megtakaríthatja a felhasználókat, hogy áttérjenek a személyes környezetre a hely megtekintéséhez. A InPrivate-böngészés nem felügyelt, így a felhasználók nem fognak tudni hozzáférni InPrivate-böngészési mód használata esetén. 
+Beállíthatja, hogy a korlátozott hivatkozások közvetlenül az InPrivate-böngészésben legyenek megnyitva, ami zökkenőmentes böngészést biztosít a felhasználóknak. Ezzel a lépéssel megtakaríthatja a felhasználókat, hogy áttérjenek a személyes környezetre a hely megtekintéséhez. A InPrivate-böngészés nem felügyelt, így a felhasználók nem fognak tudni hozzáférni InPrivate-böngészési mód használata esetén.
 
 |    Kulcs    |    Érték    |
 |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    `com.microsoft.intune.mam.managedbrowser.AllowTransitionOnBlock`    |    A **true** értékkel engedélyezheti a Microsoft Edge számára a felhasználók személyes környezetbe való átváltását a blokkolt helyek megnyitására.<p>A **Letiltás** megakadályozza a Microsoft Edge számára a felhasználók átváltását. A felhasználók egyszerűen megjelenítenek egy üzenetet arról, hogy az elérni kívánt hely le van tiltva.    |
-
+|    `com.microsoft.intune.mam.managedbrowser.openInPrivateIfBlock`    |    Az **igaz** érték esetén a korlátozott hivatkozások közvetlenül az InPrivate-böngészésben nyílnak meg.<p>**False** (alapértelmezett): a felhasználók dönthetnek úgy, hogy egy korlátozott hivatkozást nyitnak meg InPrivate-böngészéssel vagy személyes (MSA-) fiókkal.    |
 
 ## <a name="use-microsoft-edge-on-ios-to-access-managed-app-logs"></a>A Microsoft Edge használata iOS rendszeren a felügyelt alkalmazások naplóihoz való hozzáféréshez 
 

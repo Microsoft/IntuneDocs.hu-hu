@@ -18,14 +18,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6db39fc2ac3b162a7728aacd8d255d65516dcbd2
-ms.sourcegitcommit: 9b29478f815e10c46c8030abe0146d601ce0e28c
-ms.translationtype: HT
+ms.openlocfilehash: 988f9cce63c8119c6ce813c4ef3f3cb93379d64e
+ms.sourcegitcommit: 32391f74241ee3289a76ccd5319fe700b800d427
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77051558"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77075722"
 ---
-# <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
+# <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune
 
 Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhatja a [fontos megjegyzéseket](#notices), a [korábbi kiadásokat](whats-new-archive.md)és az [Intune szolgáltatás frissítéseinek kiadásával](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Microsoft-Intune-Service-Updates/ba-p/358728)kapcsolatos információkat is. 
 
@@ -60,8 +60,12 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
 ### <a name="app-management"></a>Alkalmazáskezelés
 
+#### <a name="microsoft-edge-version-77-and-later-on-windows-10-devices---5843584---"></a>A Microsoft Edge 77-es és újabb verziói a Windows 10-es eszközökön<!-- 5843584 -->
+Az Intune mostantól támogatja a Microsoft Edge 77-es és újabb verziójának eltávolítását a Windows 10-es eszközökön. További információ: a [Microsoft Edge for Windows 10 hozzáadása a Microsoft Intunehoz](~/apps/apps-windows-edge.md).
+
 #### <a name="company-portal-app-improved-performance---6178652---"></a>Céges portál alkalmazás teljesítményének növelése<!-- 6178652 -->
 A Céges portál alkalmazás frissítve lett, hogy támogassa a ARM64 processzorokat használó eszközök jobb teljesítményét, például a Surface Pro X. korábban, az Céges portál emulált ARM32 módban működött. Most a Céges portál alkalmazás natív módon van lefordítva a ARM64. További információ a Céges portál alkalmazásról: [a Microsoft Intune céges portál alkalmazás konfigurálása](~/apps/company-portal-app.md).
+
 
 <!-- ########################## -->
 ## <a name="week-of-january-27-2020"></a>2020. január 27-i hét

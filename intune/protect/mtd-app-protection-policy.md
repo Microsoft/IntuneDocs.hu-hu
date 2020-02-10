@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7cc873079d9a139edfa2217d97806afe0c5bbf28
-ms.sourcegitcommit: 06dce5c8111592ad774247e86e539dd3128117e5
+ms.openlocfilehash: 7279921719677fce0845517aefc5958f57ce13cb
+ms.sourcegitcommit: 32391f74241ee3289a76ccd5319fe700b800d427
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/30/2019
-ms.locfileid: "75545956"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77075705"
 ---
 # <a name="create-mobile-threat-defense-app-protection-policy-with-intune"></a>Mobile Threat Defense-alkalmazás védelmi szabályzatának létrehozása az Intune-nal
 
@@ -49,7 +49,7 @@ Az alkalmazás-védelmi szabályzat MTD való használatának előfeltételei:
 
 Az [iOS/iPadOS vagy Android rendszerhez készült alkalmazás-védelmi szabályzat létrehozásához](../apps/app-protection-policies.md#app-protection-policies-for-iosipados-and-android-apps)kövesse az alábbi információkat, valamint az *alkalmazások*, a *feltételes indítás*és a *hozzárendelés* lapokon:
 
-- **Alkalmazások**: válassza ki a használni kívánt Mobile Threat Defense-partnerhez tartozó alkalmazást.
+- **Alkalmazások**: válassza ki azokat az alkalmazásokat, amelyeket az alkalmazás-védelmi szabályzatok alapján szeretne megcélozni. A szolgáltatáskészlet esetében ezek az alkalmazások le lesznek tiltva, vagy szelektíven törlődnek a kiválasztott Mobile Threat Defense-gyártótól származó eszköz kockázati értékelése alapján. 
 - **Feltételes indítás**: az *eszköz feltételei*alatt válassza a legördülő listát a **maximálisan engedélyezett veszélyforrások szintjének**kiválasztásához.
 
   A veszélyforrások szintjének **értékének**beállításai:
@@ -61,7 +61,7 @@ Az [iOS/iPadOS vagy Android rendszerhez készült alkalmazás-védelmi szabályz
 
   A **művelet**lehetőségei:
 
-  - **Hozzáférés letiltása**
+  - **Fájlhozzáférés**
   - **Adatok törlése**
 
 - **Hozzárendelések**: rendelje hozzá a szabályzatot a felhasználók csoportjaihoz.  A csoport tagjai által használt eszközök az Intune app Protection használatával értékelik a vállalati adatelérést a megcélozott alkalmazásokban.

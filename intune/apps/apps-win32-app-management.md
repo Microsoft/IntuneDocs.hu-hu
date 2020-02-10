@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c120fab1da43230888866cba9d818d7b433b711e
-ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
+ms.openlocfilehash: dbefd797fead7113045ee7e7655b715a0b4961fd
+ms.sourcegitcommit: 32391f74241ee3289a76ccd5319fe700b800d427
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76755289"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77075824"
 ---
 # <a name="intune-standalone---win32-app-management"></a>Önálló Intune – Win32-alkalmazások kezelése
 
@@ -80,7 +80,7 @@ Ha paraméterek nélkül futtatja `IntuneWinAppUtil.exe` a parancssori ablakban,
 |    `IntuneWinAppUtil -h`    |    Ez a parancs megjeleníti az eszköz használatára vonatkozó információkat.    |
 |    `IntuneWinAppUtil -c c:\testapp\v1.0 -s c:\testapp\v1.0\setup.exe -o c:\testappoutput\v1.0 -q`    |    Ez a parancs létrehozza az `.intunewin` fájlt a megadott forrásmappa és telepítőfájl alapján. Az MSI-telepítőfájlhoz az eszköz lekéri az Intune-hoz szükséges adatokat. Ha a `-q` van megadva, a parancs csendes módban fog futni, és ha a kimeneti fájl már létezik, felül fogja írni. Ha a kimeneti mappa még nem létezik, akkor automatikusan létrejön.    |
 
-*. Intunewin* -fájl létrehozásakor helyezzen el minden olyan fájlt, amelyre szüksége van a telepítési mappa almappájára való hivatkozáshoz. Ezután használjon egy relatív elérési utat a szükséges fájlra való hivatkozáshoz. Példa:
+*. Intunewin* -fájl létrehozásakor helyezzen el minden olyan fájlt, amelyre szüksége van a telepítési mappa almappájára való hivatkozáshoz. Ezután használjon egy relatív elérési utat a szükséges fájlra való hivatkozáshoz. Például:
 
 **Telepítési forrás mappája:** *c:\testapp\v1.0*<br>
 **Licencfájl:** *c:\testapp\v1.0\licenses\license.txt*
@@ -122,7 +122,7 @@ Az alábbi lépések útmutatást nyújtanak a Windows-alkalmazások Intune-hoz 
 1. Az **alkalmazás adatai** lapon adja meg az alkalmazás részleteit. A választott alkalmazástól függően előfordulhat, hogy egyes értékek automatikusan ki vannak töltve a panelen.
     - **Név**: Itt adhatja meg az alkalmazás a Céges portálon megjelenő nevét. Ügyeljen arra, hogy a megadott alkalmazásnevek egyediek legyenek. Ha ugyanazt az alkalmazásnevet kétszer adja meg, csak az egyik alkalmazás fog megjelenni a Céges portálon.
     - **Leírás**: Itt adhatja meg az alkalmazás leírását. A leírás megjelenik a Céges portálon.
-    - **Kiadó:** Adja meg az alkalmazás kiadójának nevét.
+    - **Kiadó**: Adja meg az alkalmazás kiadójának nevét.
     - **Kategória**: Választhat egyet vagy többet a beépített kategóriák közül, vagy megadhat egyénileg létrehozott kategóriát is. A kategóriákkal megkönnyítheti a felhasználók számára az alkalmazás megkeresését a Céges portálon való böngészés során.
     - **Megjelenítés Kiemelt alkalmazásként a céges portál**: az alkalmazás megjelenítése a vállalati portál főoldalán, amikor a felhasználók megkeresik az alkalmazásokat.
     - **Információs URL-cím:** Igény szerint megadhatja az alkalmazással kapcsolatos információkat tartalmazó webhely URL-címét. Az URL-cím megjelenik a Céges portálon.
@@ -140,7 +140,7 @@ Az alábbi lépések útmutatást nyújtanak a Windows-alkalmazások Intune-hoz 
 
         Ha például az alkalmazás fájlneve **MyApp123**, adja hozzá a következőt:<br>
         `msiexec /p “MyApp123.msp”`<p>
-        Ha pedig az alkalmazás `ApplicationName.exe`, a parancs az alkalmazás neve, amelyet a csomag által támogatott parancs-argumentumok (kapcsolók) követnek. <br>Példa:<br>
+        Ha pedig az alkalmazás `ApplicationName.exe`, a parancs az alkalmazás neve, amelyet a csomag által támogatott parancs-argumentumok (kapcsolók) követnek. <br>Például:<br>
         `ApplicationName.exe /quiet`<br>
         A fenti parancsban a `ApplicationName.exe` csomag támogatja a `/quiet` Command argumentumot.<p> 
         Az alkalmazáscsomag által támogatott argumentumok esetében forduljon az alkalmazás forgalmazójához.
@@ -204,7 +204,7 @@ Az alábbi lépések útmutatást nyújtanak a Windows-alkalmazások Intune-hoz 
         2. Ha végzett a követelmények szabályainak beállításával, kattintson **az OK gombra**.
 2. Az **észlelési szabályok** lap megjelenítéséhez kattintson a **tovább** gombra.   
 
-### <a name="step-4-detection-rules"></a>4\. lépés: észlelési szabályok
+## <a name="step-4-detection-rules"></a>4\. lépés: észlelési szabályok
 
 1. Az **észlelési szabályok** lapon konfigurálja a szabályokat az alkalmazás jelenlétének észleléséhez:
     
@@ -268,7 +268,7 @@ Az alábbi lépések útmutatást nyújtanak a Windows-alkalmazások Intune-hoz 
 
 2. A szabály (ok) hozzáadása után kattintson a **tovább** gombra a **függőségek** lap megjelenítéséhez.
 
-### <a name="step-5-dependencies"></a>5\. lépés: függőségek
+## <a name="step-5-dependencies"></a>5\. lépés: függőségek
 
 Az alkalmazás-függőségek olyan alkalmazások, amelyeket telepíteni kell a Win32-alkalmazás telepítése előtt. Megkövetelheti, hogy más alkalmazások függőségként legyenek telepítve. Pontosabban, az eszköznek a Win32-alkalmazás telepítése előtt telepítenie kell a függő alkalmazást (ka) t. A rendszer legfeljebb 100 függőséget tartalmaz, amely magában foglalja a benne foglalt függőségek függőségeit, valamint magát az alkalmazást. Win32-alkalmazások függőségei csak a Win32-alkalmazás hozzáadása és az Intune-ba való feltöltése után adhatók hozzá. Miután hozzáadta a Win32-alkalmazást, megjelenik a **függőségek** lehetőség a Win32-alkalmazás ablaktábláján. 
 
