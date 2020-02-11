@@ -49,7 +49,7 @@ Ezek az utasítások az Office 365, az Exchange 2016, az Exchange 2013 alkalmaz�
 A LinkedIn-fiókkapcsolatok lehetővé teszik a felhasználóknak a nyilvános LinkedIn-profiladatok megtekintését bizonyos Microsoft-alkalmazásokban. Alapértelmezés szerint a felhasználók dönthetnek úgy, hogy összekötik a LinkedIn-fiókjukat a munkahelyi vagy iskolai Microsoft-fiókjukkal további LinkedIn-profiladatok eléréséhez. 
 
 > [!NOTE]
-> A LinkedIn-integráció jelenleg nem érhető el az egyesült államokbeli ügyfeleknek, illetve azon szervezeteknek, amelyek Exchange Online-postaládái a következő országokban üzemelnek: Ausztrália, Kanada, Kína, Franciaország, Németország, India, Dél-Korea, Egyesült Királyság, Japán és Dél-Afrika.
+> A LinkedIn-integráció jelenleg nem érhető el az egyesült államokbeli ügyfeleknek, illetve azon szervezeteknek, amelyek Exchange Online-postaládái a következő országokban üzemelnek: Ausztrália, Kanada, Kína, Franciaország, Németország, India, Dél-Korea, Egyesült Királyság, Japán és Dél-afrikai Köztársaság.
 
 Az Intune App SDK és az Intune alkalmazásvédelmi szabályzatai nem támogatják a LinkedIn-fiókkapcsolatok kezelését, más módon azonban lehetséges kezelni őket. Letilthatja a LinkedIn-fiókkapcsolatokat a teljes szervezete számára, vagy engedélyezheti a LinkedIn-fiókkapcsolatokat kizárólag a szervezete bizonyos felhasználói csoportjainak. Ezek a beállítások az összes Office 365-alkalmazásban és minden platformon (böngészőben, mobileszközön és asztali gépen is) érvényesek a LinkedIn-kapcsolatokra. A következőket teheti:
 

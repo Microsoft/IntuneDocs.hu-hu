@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 10/31/2019
+ms.date: 02/07/2020
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
@@ -19,12 +19,12 @@ ms.reviewer: arnab
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: ced722fd671826e828b4dd79956a7dad1010bd84
-ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
+ms.openlocfilehash: 003141402c1d068775caee6ca4405efc5ca7552f
+ms.sourcegitcommit: e1ff157f692983b49bdd6e20cc9d0f93c3b3733c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75856751"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124860"
 ---
 # <a name="enroll-device-with-android-work-profile"></a>Eszköz regisztrálása androidos munkahelyi profillal
 
@@ -45,15 +45,12 @@ Többet tudhat meg arról, hogy [mi történik a munkahelyi profil létrehozása
 3. Tekintse át a szervezete által megjelenített és nem látható tudnivalókat. Ezután koppintson a **Folytatás**gombra. 
 
     ![Példa Céges portál kép az adatvédelmi képernyőről, a Folytatás gomb kiemelése.](./media/android-privacy-screen-1911.png)  
-4. Tekintse át, hogy mit várhat a közelgő lépésekben. Ezután koppintson a **tovább**gombra.  
 
-    ![Példa Céges portál képre, a következő képernyőre, majd a Tovább gombra.](./media/android-wp-04-1908.png)  
-
-5. Tekintse át a Google használati feltételeit a munkahelyi profil létrehozásához. Ezután koppintson az **elfogadás & folytatás**gombra. A képernyő megjelenése az eszköz Android-verziójától függően változhat. 
+4. Tekintse át a Google használati feltételeit a munkahelyi profil létrehozásához. Ezután koppintson az **elfogadás &AMP; folytatás**gombra. A képernyő megjelenése az eszköz Android-verziójától függően változhat. 
 
     ![Képernyőfelvétel a Google munkahelyi profiljának használati feltételeiről](./media/android-wp-05-1908.png)  
 
-6. Várjon, amíg a munkahelyi profil be van állítva.  
+5. Várjon, amíg a munkahelyi profil be van állítva.  
 
     ![A munkahelyi profil beállítása képernyő képernyőképe.](./media/android-wp-05a-1908.png)  
 
@@ -61,20 +58,20 @@ Többet tudhat meg arról, hogy [mi történik a munkahelyi profil létrehozása
 
     ![Képernyőkép a "már félúton van" képernyő átirányítási üzenettel.](./media/android-wp-05b-1908.png)  
 
-7. A **vállalati hozzáférés beállítása** képernyőn győződjön meg arról, hogy a munkahelyi profil létrejött. Ezután koppintson a **Folytatás**gombra.  
+6. A **vállalati hozzáférés beállítása** képernyőn győződjön meg arról, hogy a munkahelyi profil létrejött. Ezután koppintson a **Folytatás**gombra.  
 
     ![Képernyőkép a vállalati hozzáférés beállításáról, amely a munkahelyi profilt hozza létre.](./media/work-profile-complete-1911.png)  
 
-8. Győződjön meg arról, hogy a munkahelyi profil aktív. Ezután koppintson a **Folytatás**gombra. 
+7. Győződjön meg arról, hogy a munkahelyi profil aktív. Ezután koppintson a **Folytatás**gombra. 
 
     ![Képernyőkép a vállalati hozzáférés beállításáról, amely a munkahelyi profilt aktívnak mutatja.](./media/work-profile-active-1911.png)  
 
-9. Előfordulhat, hogy a szervezetnek frissítenie kell az eszköz beállításait. A beállítások módosításához koppintson a **feloldás** elemre. Ha elkészült a beállítások frissítésével, koppintson a **Folytatás**gombra.    
+8. Előfordulhat, hogy a szervezetnek frissítenie kell az eszköz beállításait. A beállítások módosításához koppintson a **feloldás** elemre. Ha elkészült a beállítások frissítésével, koppintson a **Folytatás**gombra.    
 
     ![Példa Céges portál képe, az eszközbeállítások képernyő frissítése, a feloldás és a Folytatás gomb kiemelése.](./media/resolve-settings-1911.png) 
 
 
-10. Ha a telepítés befejeződött, koppintson a **kész**gombra.  
+9. Ha a telepítés befejeződött, koppintson a **kész**gombra.  
 
     ![Példa a Céges portál, a vállalati hozzáférés beállítása képernyőre, amely a befejezett telepítőt és a kész gomb kiemelését jeleníti meg.](./media/work-profile-done-1911.png)  
 

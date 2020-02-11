@@ -6,7 +6,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 11/14/2019
+ms.date: 02/07/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a3b391bb4ab064c080083e2c31dc28483f6d419a
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 7e38e4f8552b6ef217d264cfa74597bda5c665ab
+ms.sourcegitcommit: e1ff157f692983b49bdd6e20cc9d0f93c3b3733c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74098221"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125047"
 ---
 # <a name="ui-updates-for-intune-end-user-apps"></a>Felhasználói felületi frissítések az Intune végfelhasználói alkalmazásaiban
 
@@ -36,9 +36,14 @@ Ha Ön alkalmazott vagy tanuló, tekintse meg a képernyőképeket, és mutasson
 
 <!---End-user messaging for accounts 1573558, 1712; changes to be made for other platforms for 1801 Users of the Company Portal website, will be blocked from taking actions that require write access to your tenant. They will see appropriate error messaging explaining that their account is under maintenance. Similar changes are coming to the Company Portal apps for Android, iOS, macOS, and Windows soon. ![Error message that occurs during account move](./media/whats-new-app-ui/account-move-rom-iwp-user-1712.png)--->
 
+## <a name="week-of-february-3-2020"></a>2020. február 3. hét
+
+### <a name="screen-removed-from-company-portal-android-work-profile-enrollment---6103987---"></a>Képernyő eltávolítva Céges portál, Android munkahelyi profil regisztrációja <!--6103987 -->
+A **Mi a következő lépés?** a képernyőn el lett távolítva az Android munkahelyi profil beléptetési folyamata céges portál a felhasználói élmény egyszerűsítése érdekében. A frissített Android munkahelyi profil regisztrálási folyamatának megtekintéséhez nyissa meg az [androidos munkahelyi Profil regisztrálása](/intune-user-help/enroll-device-android-work-profile) című témakört.  
+
 ## <a name="week-of-november-11-2019"></a>November 11-i hét, 2019  
 
-#### <a name="web-apps-launched-from-the-windows-company-portal-app---5030972---"></a>A Windows Céges portál alkalmazásból indított webalkalmazások<!-- 5030972 -->
+### <a name="web-apps-launched-from-the-windows-company-portal-app----5030972---"></a>A Windows Céges portál alkalmazásból indított webalkalmazások <!-- 5030972 -->
 A végfelhasználók mostantól közvetlenül a Windows Céges portál alkalmazásból is elindíthatják a webalkalmazásokat. A végfelhasználók kiválaszthatják a webalkalmazást, majd kiválaszthatják a **Megnyitás böngészőben**lehetőséget. A közzétett webes URL-cím közvetlenül egy böngészőben nyílik meg. Ez a funkció a következő héten lesz bevezetve. A Web Apps szolgáltatással kapcsolatos további információkért lásd: [webalkalmazások hozzáadása Microsoft Intunehoz](~/apps/web-app.md).
 
 ![Példa a Windows Céges portál alkalmazásból indított webalkalmazásra](./media/whats-new-app-ui/webapp-open-in-browser.png)  
@@ -58,13 +63,13 @@ Az Androidhoz készült Céges portál alkalmazásban található beállítási 
 
 A következő képernyők az Android munkahelyi profil regisztrálásának frissített ellenőrzőlistáját mutatják be:
 
-|Frissítve|Előző|  
+|Frissített|Előző|  
 |---|---|  
 |![Példa a munkahelyi profil beállításának rendszerképére Céges portálban, amely az egyszerűsített ellenőrzőlistát és az új ikonokat mutatja be.](./media/whats-new-app-ui/work-profile-checklist-1911.png)|![Példa a Céges portál korábbi munkahelyi profil beállításának képére, amely egy teendői ellenőrzőlistát mutat be.](./media/whats-new-app-ui/work-profile-checklist-1904.png)|   
 
 A következő képernyők az Android-eszközök rendszergazdai regisztrációjának frissített ellenőrzőlistáját mutatják be:  
 
-|Frissítve|Előző|  
+|Frissített|Előző|  
 |---|---|  
 |![Példa az Android-eszközök rendszergazdai beállításának képe Céges portálban, amely az egyszerűsített ellenőrzőlistát és az új ikonokat mutatja.](./media/whats-new-app-ui/android-checklist-1911.png)|![Példa a korábbi Android-eszköz rendszergazdai beállításának rendszerképére Céges portálban, amely egy teendői ellenőrzőlistát mutat be.](./media/whats-new-app-ui/android-checklist-1904.png)|  
 
@@ -158,7 +163,7 @@ A végfelhasználók mostantól képesek lesznek elindítani az alkalmazás-és 
 ## <a name="week-of-october-22-2018"></a>2018. október 22-i hét
 
 ### <a name="add-custom-brand-image-for-company-portal-app----1916266---"></a>Egyéni arculat hozzáadása Céges portál alkalmazáshoz <!-- 1916266 -->
-A Microsoft Intune rendszergazdájaként Ön olyan egyéni márkaemblémát tölthet fel, amely háttérképként jelenik majd meg a felhasználónak az iOS Céges portál alkalmazásban található profiloldalán. További információkat a Céges portál alkalmazás konfigurálásáról [a Microsoft Intune Céges portál alkalmazás konfigurálását](../apps/company-portal-app.md) ismertető cikkből tudhat meg.  
+A Microsoft Intune-rendszergazdák feltölthetnek egy egyéni márkaemblémát, amely háttérképként jelenik meg a felhasználó profiloldalán az iOS-en, a Céges portál alkalmazásban. További információkat a Céges portál alkalmazás konfigurálásáról [a Microsoft Intune Céges portál alkalmazás konfigurálását](../apps/company-portal-app.md) ismertető cikkből tudhat meg.  
 
 ## <a name="week-of-august-27-2018"></a>2018. augusztus 27-i hét  
 
@@ -175,7 +180,7 @@ Többek között a következő frissítéseket fogja látni:
 - Nagy méretű alkalmazáskatalógusok javított teljesítménye
 - Nagyobb hozzáférhetőség minden felhasználó számára  
 
-|Frissítve|Előző|
+|Frissített|Előző|
 |---|---|
 |![A frissített eszköz oldalán az eszköz pontosan az eszközadatok fölé van igazítva, és nem a teljes lista fölött ugrik fel.](./media/whats-new-app-ui/iwp-device-after-1803.png)|![Az eszközoldal előző verziója.](./media/whats-new-app-ui/iwp-device-before-1803.png)|
 |![A frissített alkalmazástelepítési oldalon az alkalmazás pontosan a leírás és a különböző telepítési adatok, így a közzététel dátuma, a verzió és az alkalmazástípus fölött jelenik meg.](./media/whats-new-app-ui/iwp-app-install-after-1803.png)|![A telepítésoldal előző verziója.](./media/whats-new-app-ui/iwp-app-install-before-1803.png)|  
@@ -183,7 +188,7 @@ Többek között a következő frissítéseket fogja látni:
 ## <a name="week-of-july-16-2018"></a>2018. július 16-ai hét  
 
 ### <a name="more-opportunities-to-sync-in-the-company-portal-app-for-windows"></a>További szinkronizálási lehetőségek a windowsos Céges portál alkalmazásban   
-A Windowsos Céges portál alkalmazás mostantól lehetővé teszi, hogy a szinkronizálási folyamatot közvetlenül a Windows tálcájáról vagy a Start menüből is elindíthassa. Ez a funkció abban az esetben igazán hasznos, ha csak szinkronizálni szeretné eszközeit, hogy utána hozzáférhessen a vállalati erőforrásokhoz. Az új szolgáltatás eléréséhez kattintson a jobb gombbal a tálcán vagy a **Start** menüben rögzített vállalati portál ikonra. A megjelenő menüpontok közül (azaz a gyorslistában) válassza **Az eszköz szinkronizálása** lehetőséget. Megnyílik a Céges portál alkalmazás **Beállítások** lapja és megkezdődik a szinkronizálás.  
+A Windowsos Céges portál alkalmazás mostantól lehetővé teszi, hogy a szinkronizálási folyamatot közvetlenül a Windows tálcájáról vagy a Start menüből is elindíthassa. Ez a funkció abban az esetben igazán hasznos, ha csak szinkronizálni szeretné eszközeit, hogy utána hozzáférhessen a vállalati erőforrásokhoz. Az új szolgáltatás eléréséhez kattintson a jobb gombbal a tálcán vagy a **Start** menüben rögzített vállalati portál ikonra. A megjelenő menüpontok közül (azaz a gyorslistában) válassza **Az eszköz szinkronizálása** lehetőséget. Megnyílik a Céges portál alkalmazás **Beállítások** lapja, és megkezdődik a szinkronizálás.  
 
 ![A Windows tálcájának képernyője egy eszköz asztalán. A Céges portál alkalmazás ikonjára kattintva megjelenik egy menü a Rögzítés a tálcán, az Ablak bezárása és az Eszköz szinkronizálása lehetőségekkel.](./media/whats-new-app-ui/sync-device-from-start-menu-1807.png)  
 
@@ -262,7 +267,7 @@ Ha engedélyezte az [eszközcsoport-leképezést](../enrollment/device-group-map
 
 ### <a name="improvements-to-device-setup-workflow-in-the-company-portal-for-ios-in-version-290----1417174---"></a>Az eszköz beállítási munkafolyamatának fejlesztései az iOS rendszerhez készült Céges portál 2.9.0 verziójában <!-- 1417174 -->
 
-Továbbfejlesztettük az iOS rendszerre készült Céges portál alkalmazás eszközbeállítási munkafolyamatát. Nyelvezete felhasználóbarátabb lett, képernyőit – ahol lehetett – összevontuk. Ezenkívül a nyelvezetet cégéhez igazítottuk, ezért az Ön cégének neve jelenik meg a telepítés során látható szövegekben.
+Továbbfejlesztettük az iOS rendszerre készült Céges portál alkalmazás eszközbeállítási munkafolyamatát. Nyelvezete felhasználóbarátabb lett, képernyőit – ahol lehetett – összevontuk. A nyelvezetet ezenkívül az Ön cégére alkalmaztuk, ezért a beállítás szövegében végig a konkrét cégnév jelenik meg.
 
 > [!NOTE]
 > Azt a cégnevet használjuk, amelyet az Azure Portal **Microsoft Intune** > **Ügyfélalkalmazások**  > **Céges portál védjegyezése** > **Cég neve** alatt adott meg. Ha nem állította be ezt az értéket, az **Azure Active Directory** > **Tulajdonságok** > **Név** alatt megadott bérlő nevét használjuk. Ha nem állított be vállalat nevét Céges portál védjegyezésben, és nem szeretné megjeleníteni a bérlő nevét, javasoljuk, hogy a vállalat nevét a Céges portál branding (védjegyezés) lapon állítsa be. Ha nem szeretné, hogy ez a karakterlánc megjelenjen a Céges portál fejlécében, akkor törölje a jelet a "cég nevének megjelenítése az embléma mellett" jelölőnégyzetből.
@@ -281,7 +286,7 @@ Továbbfejlesztettük az iOS rendszerre készült Céges portál alkalmazás esz
 ## <a name="week-of-november-6-2017"></a>2017. November 6-i hét
 
 ### <a name="updates-to-the-company-portal-app-for-windows-10---1299474--"></a>A Windows 10-es Céges portál alkalmazás frissítései <!--1299474-->
-Frissítettük a Windows 10-es Céges portál alkalmazás beállítások oldalát, hogy egységesebbek legyenek a beállítások és a beállításoknál elvégezhető felhasználói műveletek. Az elrendezését is átalakítottuk, hogy jobban igazodjon a többi Windows-alkalmazáséhoz.
+Frissítettük a Windows 10-es Céges portál alkalmazás beállítások oldalát, hogy egységesebbek legyenek a beállítások és a beállításoknál elvégezhető felhasználói műveletek. A frissített szerkezet igazodik a többi Windows-alkalmazás elrendezéséhez.
 
 |Előtte|Utána|
 |---|---|
@@ -557,9 +562,9 @@ Az androidos Céges portál alkalmazás frissítésének köszönhetően bejelen
 ### <a name="improved-app-install-status-for-the-windows-10-company-portal-app---676495--"></a>Továbbfejlesztett alkalmazások telepítési állapota a Windows 10-es Céges portál alkalmazáshoz <!--676495-->
 A Windows 10-es Céges portál alkalmazás mostantól telepítési folyamatjelző sávot tartalmaz az alkalmazás részleteit megjelenítő oldalon. A funkciót a Windows 10 évfordulós frissítését és újabb kiadásait futtató eszközök modern alkalmazásai támogatják.
 
-__Előtte__ ![ Kép a betöltési képernyő előző verziójáról, amelyen az állapotra csak a „telepítés” kifejezés utal. ](./media/whats-new-app-ui/cp_win10_install_status_before_1704.png)
+__Mielőtt__ ![egy képet a betöltési képernyő előző verziójáról, ahol az állapot egyszerűen a "telepítés"](./media/whats-new-app-ui/cp_win10_install_status_before_1704.png)
 
-__Utána__ ![Kép a betöltési képernyő frissített verziójáról, amelyen mostantól a telepítés folyamatjelző sávja is látható.](./media/whats-new-app-ui/cp_win10_install_status_after_1704.png)
+__Miután__ ![egy képet a betöltési képernyő frissített verziójáról, amely most egy telepítési folyamatjelző sávot mutat.](./media/whats-new-app-ui/cp_win10_install_status_after_1704.png)
 
 ## <a name="february-2017"></a>2017. február
 

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9afaf2c8a63bfaed1fdb593baf42c8fa258d7893
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 486ca7eae1b1e8b016f44c735ec04a23145421a8
+ms.sourcegitcommit: e1ff157f692983b49bdd6e20cc9d0f93c3b3733c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74266335"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124979"
 ---
 # <a name="using-windows-10-virtual-machines-with-intune"></a>Windows 10 rendszerű virtuális gépek használata az Intune-nal
 
@@ -33,7 +33,7 @@ Windows 10 rendszerű virtuális gépek Intune-nal való kezelésekor tartsa sze
 
 ## <a name="enrollment"></a>Beléptetés
 - Az Intune-nal nem ajánlott az igény szerinti, a munkamenet-állomást futtató virtuális gépek kezelése. Minden virtuális gépet regisztrálni kell a létrehozásakor. Emellett a virtuális gépek rendszeres törlésével a rendszer törli az árva eszközöket az Intune-ban mindaddig, amíg meg nem [tisztítják](../remote-actions/devices-wipe.md#automatically-delete-devices-with-cleanup-rules)őket. 
-- A Windows Autopilot önálló üzembe helyezési módja nem támogatott, mert platformmegbízhatósági modult (TPM) igényel. 
+- A Windows Autopilot öntelepítő és a fehér kesztyű központi telepítési típusai nem támogatottak, mert fizikai platformmegbízhatósági modul (TPM) szükségesek hozzájuk. 
 - A kezdőélmény (OOBE) beléptetése nem támogatott olyan virtuális gépeken, amelyek csak RDP használatával érhetők el (például az Azure-ban üzemeltetett virtuális gépeken). Ez a korlátozás a következőket jelenti:
     - A Windows Autopilot és a kereskedelmi OOBE nem támogatott.
     - A regisztrációs állapot lapja nem támogatott az eszköz-környezeti házirendek esetében.
@@ -48,7 +48,7 @@ Az Intune automatikusan észleli a virtuális gépeket, és azokat "virtuális g
 
 A felszabadított virtuális gépek hozzájárulhatnak a nem megfelelő eszközök jelentéseihez, mert nem tudnak [bejelentkezni az Intune szolgáltatásba](../configuration/device-profile-troubleshoot.md#how-long-does-it-take-for-devices-to-get-a-policy-profile-or-app-after-they-are-assigned).
 
-## <a name="retirement"></a>Kivonás
+## <a name="retirement"></a>Nyugdíj
 Ha csak RDP-hozzáféréssel rendelkezik, ne használja a [Törlés műveletet](../remote-actions/devices-wipe.md#wipe). A törlés művelettel törölheti a virtuális gép RDP-beállításait, és megakadályozhatja, hogy a rendszer soha ne csatlakozzon újra.
 
 

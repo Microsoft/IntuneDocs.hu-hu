@@ -15,12 +15,12 @@ ms.reviewer: aiwang
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3f3359bc5544b3a353271ea17083c8c3acb49742
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 06982bdf0aff1870f1a759f68bc6cdd48227a3cf
+ms.sourcegitcommit: e1ff157f692983b49bdd6e20cc9d0f93c3b3733c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72584467"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124996"
 ---
 # <a name="windows-update-settings-for-intune"></a>Windows Update-beállítások az Intune-hoz  
 
@@ -255,4 +255,4 @@ A felhasználói élmény beállításai vezérlik az eszköz újraindítására
 
 A továbbítási optimalizálás már nem a Windows 10-es frissítési kör részeként van konfigurálva a szoftverfrissítések alatt. A kézbesítési optimalizálás már be van állítva az eszköz konfigurációjával. A korábbi konfigurációk azonban továbbra is elérhetők maradnak a konzolon. Ezeket a korábbi konfigurációkat úgy távolíthatja el, hogy *nem konfigurálja*őket, de másképp nem módosítható. 
 
-Az új és a régi házirend közötti ütközések elkerülése érdekében lásd: [váltás meglévő frissítési körökből a kézbesítési optimalizálásba](../configuration/delivery-optimization-windows.md#move-existing-update-rings-to-delivery-optimization) , majd helyezze át a beállításokat egy kézbesítési optimalizálási profilba.
+Az új és a régi házirend közötti ütközések elkerülése érdekében tekintse meg a [Windows 10-es frissítési körökből származó kézbesítési optimalizálás eltávolítása](../configuration/delivery-optimization-windows.md#remove-delivery-optimization-from-windows-10-update-rings) című témakört, majd helyezze át a beállításokat egy kézbesítési optimalizálási profilba.

@@ -18,15 +18,15 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e9da7acfc34dbd25902fc6fb9617ba395216a9b3
-ms.sourcegitcommit: 24487f078349795922dc497c952e8358cf767a1a
+ms.openlocfilehash: 4f97c4c56073044e79b5251dc83c54decb5c9c55
+ms.sourcegitcommit: e1ff157f692983b49bdd6e20cc9d0f93c3b3733c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76977801"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124843"
 ---
 # <a name="enroll-windows-devices-in-intune-by-using-the-windows-autopilot"></a>Windows-eszközök regisztrálása az Intune-ban a Windows Autopilot használatával  
-A Windows Autopilot leegyszerűsíti az eszközök regisztrálását az Intune-ban. A testre szabott operációsrendszer-lemezképek létrehozása és karbantartása sok időt vesz igénybe. Gyakran ezeknek az egyéni operációsrendszer-lemezképeknek az új eszközökre való alkalmazásával is időt kell töltenie, hogy felkészítse az eszközöket a használatra, mielőtt a végfelhasználóknak adná azokat. A Microsoft Intune és az AutoPilot révén új eszközöket adhat hozzá a végfelhasználók számára anélkül, hogy egyéni operációsrendszer-lemezképek létrehozására, kezelésére és az eszközökre való alkalmazására lenne szükség. Az AutoPilot-eszközök Intune-nal való felügyelete során a regisztráció után szabályzatokat, profilokat, alkalmazásokat és sok mást is kezelni tud. A megoldás előnyeinek, használati eseteinek és előfeltételeinek áttekintéséről lásd [a Windows AutoPilot áttekintését](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot).
+A Windows Autopilot egyszerűbbé teszi az eszközök regisztrálását az Intune-ban. A testre szabott operációsrendszer-lemezképek létrehozása és karbantartása sok időt vesz igénybe. Gyakran ezeknek az egyéni operációsrendszer-lemezképeknek az új eszközökre való alkalmazásával is időt kell töltenie, hogy felkészítse az eszközöket a használatra, mielőtt a végfelhasználóknak adná azokat. A Microsoft Intune és az AutoPilot révén új eszközöket adhat hozzá a végfelhasználók számára anélkül, hogy egyéni operációsrendszer-lemezképek létrehozására, kezelésére és az eszközökre való alkalmazására lenne szükség. Az AutoPilot-eszközök Intune-nal való felügyelete során a regisztráció után szabályzatokat, profilokat, alkalmazásokat és sok mást is kezelni tud. A megoldás előnyeinek, használati eseteinek és előfeltételeinek áttekintéséről lásd [a Windows AutoPilot áttekintését](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot).
 
 A robotpilóta-telepítés négyféle típusú:
 - [Saját üzembe helyezési mód](https://docs.microsoft.com/windows/deployment/windows-autopilot/self-deploying) kioszkokhoz, digitális aláírásokhoz vagy megosztott eszközhöz
@@ -81,19 +81,19 @@ A Windows AutoPilot-eszközök felvételéhez importálhat egy CSV-fájlt az ada
 4. Ha a **Tagság típusa** alatt a **Dinamikus eszköz** lehetőséget választotta, akkor válassza a **Csoport** panel **Dinamikus eszköz tagok** lehetőségét, és gépelje be az alábbi kódok bármelyikét a **Speciális szabály** mezőbe. Ezek a szabályok csak az Autopilot-eszközöket gyűjtik, mert azok az attribútumok, amelyek csak az Autopilot-eszközök által vannak kiértékelve. A nem robotpilóta-attribútumok alapján létrehozott csoportok nem garantálják, hogy a csoportba tartozó eszközök ténylegesen regisztrálva vannak az Autopilot-ban.
     - Ha olyan csoportot szeretne létrehozni, amely tartalmazza az összes Autopilot-eszközt, írja be a következőt: `(device.devicePhysicalIDs -any _ -contains "[ZTDId]")`
     - Az Intune csoport címkéje mezője az Azure AD-eszközök Rendeléskód attribútumára mutat. Ha olyan csoportot szeretne létrehozni, amely tartalmazza az összes Autopilot-eszközt egy adott csoport címkével (az Azure AD-eszköz Rendeléskód), a következőt kell beírnia: `(device.devicePhysicalIds -any _ -eq "[OrderID]:179887111881")`
-    - Ha létre kíván hozni egy csoportot, amely az egy adott beszerzési rendelési azonosítóval rendelkező összes Autopilot-eszközét tartalmazza, írja be a következőt: `(device.devicePhysicalIds -any _ -eq "[PurchaseOrderId]:76222342342")`
+    - Ha létre kíván hozni egy csoportot egy adott beszerzési rendelési azonosítóval rendelkező összes Autopilot-eszközből, írja be a következőt: `(device.devicePhysicalIds -any _ -eq "[PurchaseOrderId]:76222342342")`.
     
     A **Speciális szabály** kódjának megadása után válassza a **Mentés** lehetőséget.
 5. Válassza a **Létrehozás** lehetőséget.  
 
 ## <a name="create-an-autopilot-deployment-profile"></a>AutoPilot üzembehelyezési profil létrehozása
-Az AutoPilot üzembehelyezési profilokkal konfigurálhatja az AutoPilot-eszközöket. A bérlők számára legfeljebb 350 profilt hozhat létre.
+Az Autopilot-üzembehelyezési profilokkal Autopilot-eszközeit konfigurálhatja. A bérlők számára legfeljebb 350 profilt hozhat létre.
 1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **windows** > **windows-regisztráció** > **központi telepítési profilok** > **profil létrehozása**lehetőséget.
 2. Az **alapvető beállítások** lapon adja meg a **nevet** és a **leírást**(nem kötelező).
 
     ![Képernyőkép az alapok lapról](./media/enrollment-autopilot/create-profile-basics.png)
 
-3. Ha azt szeretné, hogy a hozzárendelt csoportokban lévő minden eszköz automatikusan átálljon az AutoPilotra, állítsa a **Minden megcélzott eszköz AutoPilot-eszközzé alakítása** beállítást **Igen** értékre. A hozzárendelt csoportokban a vállalat tulajdonában lévő, nem Autopilot-eszközök regisztrálva lesznek az Autopilot Deployment szolgáltatásban. A személyes tulajdonban lévő eszközök nem lesznek átalakítva az Autopilot szolgáltatásba. A regisztráció feldolgozása 48 órát is igénybe vehet. Az eszköz regisztrációjának törlése és alaphelyzetbe állítása után az Autopilot regisztrálja az eszközt. Miután ilyen módon regisztrál egy eszközt, a beállítás letiltása vagy a profil-hozzárendelés eltávolítása nem távolítja el az eszközt az Autopilot üzembehelyezési szolgáltatásból. Ehhez [közvetlenül kell törölnie az eszközt](enrollment-autopilot.md#delete-autopilot-devices).
+3. Ha azt szeretné, hogy a hozzárendelt csoportokban lévő minden eszköz automatikusan átálljon az AutoPilotra, állítsa a **Minden megcélzott eszköz AutoPilot-eszközzé alakítása** beállítást **Igen** értékre. A hozzárendelt csoportokban a vállalat tulajdonában lévő, nem Autopilot-eszközök regisztrálva lesznek az Autopilot Deployment szolgáltatásban. A személyes tulajdonban lévő eszközök nem lesznek átalakítva az Autopilot szolgáltatásba. Hagyjon 48 órát a regisztráció feldolgozására. Az eszköz regisztrációjának törlése és alaphelyzetbe állítása után az Autopilot regisztrálja az eszközt. Miután ilyen módon regisztrál egy eszközt, a beállítás letiltása vagy a profil-hozzárendelés eltávolítása nem távolítja el az eszközt az Autopilot üzembehelyezési szolgáltatásból. Ehhez [közvetlenül kell törölnie az eszközt](enrollment-autopilot.md#delete-autopilot-devices).
 4. Válassza a **Tovább** elemet.
 5. Az **üzembe helyezési mód** **(OOBE)** lapon válassza az alábbi két lehetőség egyikét:
     - **Felhasználó-alapú**: Az ilyen profillal rendelkező eszközök az őket regisztráló felhasználóhoz vannak társítva. Az eszköz regisztrálásához felhasználói hitelesítő adatokra van szükség.
@@ -101,8 +101,11 @@ Az AutoPilot üzembehelyezési profilokkal konfigurálhatja az AutoPilot-eszköz
 
     ![Az OOBE oldalának képernyőképe](./media/enrollment-autopilot/create-profile-outofbox.png)
 
+   > [!NOTE]
+   > A halványan vagy árnyékolt színnel megjelenő beállításokat a rendszer jelenleg nem támogatja a kiválasztott központi telepítési módban.
+
 6. A **Csatlakozás az Azure AD-hez mint** mezőben válassza az **Azure AD-hez csatlakoztatott** lehetőséget.
-7. Konfigurálja az alábbi beállításokat:
+7. Adja meg az alábbi lehetőségeket:
     - **Végfelhasználói licencszerződés (EULA)** : (Windows 10, 1709-es vagy újabb verzió) Eldöntheti, hogy a felhasználók számára megjelenjen-e a végfelhasználói licencszerződés.
     - **Adatvédelmi beállítások**: Eldöntheti, hogy a felhasználók számára megjelenjenek-e az adatvédelmi beállítások.
     >[!IMPORTANT]
@@ -210,7 +213,7 @@ Ha nem kíván a mobileszközök felügyeletével foglalkozni, más portálokon 
 - Szinkronizálni a más portálon végzett profil-hozzárendeléseket
 - Megjeleníteni az eszközlista más portálon végzett módosításait
 
-## <a name="windows-autopilot-for-existing-devices"></a>Windows Autopilot a meglévő eszközökhöz
+## <a name="windows-autopilot-for-existing-devices"></a>Windows Autopilot meglévő eszközökhöz
 
 Ha a Configuration Manager [meglévő eszközökhöz használható AutoPilot szolgáltatásával](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/New-Windows-Autopilot-capabilities-and-expanded-partner-support/ba-p/260430) regisztrál, egy korrelátorazonosítóval csoportosíthatja a Windows-eszközöket. A korrelátorazonosító az AutoPilot konfigurációs fájljának egyik paramétere. Az [enrollmentProfileName Azure AD-beli eszközattribútum](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-dynamic-membership#rules-for-devices) beállítása automatikusan az ezzel megegyező „OfflineAutopilotprofile-\<korrelátorazonosítóra\>” módosul. Így tetszőleges dinamikus Azure AD-csoportok hozhatók létre korrelátorazonosító alapján az enrollmentprofileName attribútum használatával.
 

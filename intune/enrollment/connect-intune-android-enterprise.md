@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b2c6463ddce7d04168e1929414faf441ae415837
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 581d88e49391bc874625e9c84318c039706b0c1b
+ms.sourcegitcommit: e1ff157f692983b49bdd6e20cc9d0f93c3b3733c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74563848"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124826"
 ---
 # <a name="connect-your-intune-account-to-your-managed-google-play-account"></a>Az Intune-fiók összekötése a felügyelt Google Play-fiókkal
 
@@ -41,7 +41,7 @@ Ahhoz, hogy egyszerűbb legyen az Android Enterprise Management konfigurálása 
 > [!NOTE]
 > A Google- és a Microsoft-tartományok közötti interakció miatt ennél a lépésnél előfordulhat, hogy módosítania kell a böngésző beállításait.  Ügyeljen rá, hogy a „portal.azure.com” és a „play.google.com” tartomány azonos biztonsági zónában legyen található a böngészőben.
 
-1. Ha még nem tette meg, készítse elő a mobileszköz-kezelést úgy, hogy a **Microsoft Intune-t** állítja be [mobileszköz-kezelői szolgáltatóként](../fundamentals/mdm-authority-set.md).
+1. Ha még nem tette meg, készítse elő a mobileszköz-kezelést úgy, hogy a  [Microsoft Intune](../fundamentals/mdm-authority-set.md) -t állítja be a mobileszköz-kezelő **szolgáltatóként**.
 2. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431), válassza az **eszközök** > **android** > **Android-regisztráció** > **felügyelt Google Play**lehetőséget.  Ha egyéni Intune-rendszergazdai szerepkört használ, akkor ennek eléréséhez szervezeti olvasási és frissítési engedély szükséges.
    
    ![Vállalati Android regisztrációs képernyő](./media/connect-intune-android-enterprise/android-work-bind.png)
@@ -69,4 +69,4 @@ Kikapcsolhatja az Android vállalati regisztrációját és felügyeletét. Ehhe
 
 ## <a name="next-steps"></a>További lépések
 
-Miután kapcsolódott a felügyelt Google Play-fiókhoz, beállíthatja az [androidos vállalati munkahelyi Profilos eszközöket](android-work-profile-enroll.md), beállíthatja az androidos [vállalati dedikált eszközöket](android-kiosk-enroll.md) , és [beállíthatja az androidos nagyvállalati szintű felügyelt eszközöket](android-kiosk-enroll.md)
+Miután kapcsolódott a felügyelt Google Play-fiókhoz, beállíthatja az [androidos vállalati munkahelyi Profilos eszközöket](android-work-profile-enroll.md), beállíthatja az androidos [vállalati dedikált eszközöket](android-kiosk-enroll.md) , és [beállíthatja az androidos nagyvállalati szintű felügyelt eszközöket](android-fully-managed-enroll.md)

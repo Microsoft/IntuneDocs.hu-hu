@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 02/03/2020
+ms.date: 02/07/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,14 +18,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 988f9cce63c8119c6ce813c4ef3f3cb93379d64e
-ms.sourcegitcommit: 32391f74241ee3289a76ccd5319fe700b800d427
+ms.openlocfilehash: dc2e77db1aa322eb70c64d82ddca238f49b39fb2
+ms.sourcegitcommit: e1ff157f692983b49bdd6e20cc9d0f93c3b3733c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77075722"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125030"
 ---
-# <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune
+# <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
 Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhatja a [fontos megjegyzéseket](#notices), a [korábbi kiadásokat](whats-new-archive.md)és az [Intune szolgáltatás frissítéseinek kiadásával](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Microsoft-Intune-Service-Updates/ba-p/358728)kapcsolatos információkat is. 
 
@@ -66,6 +66,8 @@ Az Intune mostantól támogatja a Microsoft Edge 77-es és újabb verziójának 
 #### <a name="company-portal-app-improved-performance---6178652---"></a>Céges portál alkalmazás teljesítményének növelése<!-- 6178652 -->
 A Céges portál alkalmazás frissítve lett, hogy támogassa a ARM64 processzorokat használó eszközök jobb teljesítményét, például a Surface Pro X. korábban, az Céges portál emulált ARM32 módban működött. Most a Céges portál alkalmazás natív módon van lefordítva a ARM64. További információ a Céges portál alkalmazásról: [a Microsoft Intune céges portál alkalmazás konfigurálása](~/apps/company-portal-app.md).
 
+#### <a name="screen-removed-from-company-portal-android-work-profile-enrollment--6103987---"></a>Képernyő eltávolítva Céges portál, Android munkahelyi profil regisztrációja<!--6103987 -->
+A **Mi a következő lépés?** a képernyőn el lett távolítva az Android munkahelyi profil beléptetési folyamata céges portál a felhasználói élmény egyszerűsítése érdekében. A frissített Android munkahelyi profil regisztrálási folyamatának megtekintéséhez nyissa meg az [androidos munkahelyi Profil regisztrálása](/intune-user-help/enroll-device-android-work-profile) című témakört.  
 
 <!-- ########################## -->
 ## <a name="week-of-january-27-2020"></a>2020. január 27-i hét

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 957e2b8065662af1b0f1a28108a740ef253a3b3e
-ms.sourcegitcommit: 2b905913840d4133a7964fe4f54a58ea6e421e12
+ms.openlocfilehash: 3ae5a7508f27dbf15a58ba3386e744bb63bf102b
+ms.sourcegitcommit: e1ff157f692983b49bdd6e20cc9d0f93c3b3733c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77074648"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125013"
 ---
 # <a name="manage-web-access-by-using-microsoft-edge-with-microsoft-intune"></a>Webes elérés kezelése a Microsoft Edge és a Microsoft Intune használatával
 
@@ -223,7 +223,7 @@ A felügyelt könyvjelzők konfigurálásához használja a következő kulcs/é
 
 |    Kulcs    |    Érték    |
 |---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    com.microsoft.intune.mam.managedbrowser.bookmarks    |    A konfiguráció értéke könyvjelzők listája. Mindegyik könyvjelző a könyvjelző és a könyvjelző URL-címét tartalmazza. Válassza el a címet és az URL-címet a `|` karakterrel.      Példa:<br>`Microsoft Bing|https://www.bing.com`<br>Több könyvjelző konfigurálásához válassza el az egyes párokat a dupla karakter `||`.<p>Példa:<br>`Microsoft Bing|https://www.bing.com||Contoso|https://www.contoso.com`    |
+|    com.microsoft.intune.mam.managedbrowser.bookmarks    |    A konfiguráció értéke könyvjelzők listája. Mindegyik könyvjelző a könyvjelző és a könyvjelző URL-címét tartalmazza. Válassza el a címet és az URL-címet a `|` karakterrel.      Például:<br>`Microsoft Bing|https://www.bing.com`<br>Több könyvjelző konfigurálásához válassza el az egyes párokat a dupla karakter `||`.<p>Például:<br>`Microsoft Bing|https://www.bing.com||Contoso|https://www.contoso.com`    |
 
 ## <a name="display-myapps-within-microsoft-edge-bookmarks"></a>MyApps megjelenítése a Microsoft Edge-könyvjelzők között
 
@@ -293,7 +293,19 @@ Beállíthatja, hogy a korlátozott hivatkozások közvetlenül az InPrivate-bö
 
 |    Kulcs    |    Érték    |
 |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    `com.microsoft.intune.mam.managedbrowser.AllowTransitionOnBlock`    |    A **true** értékkel engedélyezheti a Microsoft Edge számára a felhasználók személyes környezetbe való átváltását a blokkolt helyek megnyitására.<p>A **Letiltás** megakadályozza a Microsoft Edge számára a felhasználók átváltását. A felhasználók egyszerűen megjelenítenek egy üzenetet arról, hogy az elérni kívánt hely le van tiltva.    |
+
+## <a name="disable-microsoft-edge-prompt-to-save-passwords"></a>A Microsoft Edge-kérés letiltása a jelszavak mentéséhez
+
+|    Kulcs    |    Érték    |
+|----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    `com.microsoft.intune.mam.managedbrowser.openInPrivateIfBlock`    |    Az **igaz** érték esetén a korlátozott hivatkozások közvetlenül az InPrivate-böngészésben nyílnak meg.<p>**False** (alapértelmezett): a felhasználók dönthetnek úgy, hogy egy korlátozott hivatkozást nyitnak meg InPrivate-böngészéssel vagy személyes (MSA-) fiókkal.    |
+
+Alapértelmezés szerint a Microsoft Edge iOS-ben a felhasználók jelszavait mentheti a kulcstartóba. Ha le szeretné tiltani ezt a kérdést a szervezete számára, konfigurálja a következő beállítást:
+
+|    Kulcs    |    Érték    |
+|-----------|-------------|
+|     "com. microsoft. Intune. Mam. managedbrowser. disableFeatures"    |    a **jelszó** letiltja a jelszavak mentésének megadását.    |
 
 ## <a name="use-microsoft-edge-on-ios-to-access-managed-app-logs"></a>A Microsoft Edge használata iOS rendszeren a felügyelt alkalmazások naplóihoz való hozzáféréshez 
 
