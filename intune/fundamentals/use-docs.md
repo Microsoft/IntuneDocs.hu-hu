@@ -11,12 +11,12 @@ author: dougeby
 ms.author: dougeby
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 42e16be44dba539007967dd921da4c8d4f095ec4
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 607e1136fd3ab5661a2b054410d6fc7fce94994d
+ms.sourcegitcommit: 1aaff35fddb3d06458d739968d28971fed0bb2ba
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72504818"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77155343"
 ---
 # <a name="using-the-intune-docs"></a>Az Intune-dokumentáció használata
 
@@ -82,11 +82,11 @@ Az Intune-dokumentumok, például a docs.microsoft.com a legtöbb tartalom, nyí
 
 2. A forrásfájl szerkesztéséhez kattintson a ceruza ikonra.  
 
-3. Módosítsa a Markdown forrását. További információ: a [Markdown használata a docs írásához](https://docs.microsoft.com/contribute/how-to-write-use-markdown).  
+3. Módosítsa a Markdown forrását. További információ: a [Markdown használata a docs írásához](https://docs.microsoft.com/contribute/contribute-how-to-write-use-markdown).  
 
 4. A fájl módosítása szakaszban adja meg a nyilvános véglegesítés megjegyzését, amely leírja, hogy *mi* változott. Ezután kattintson a **javaslat fájl módosítása**elemre.  
 
-5. Görgessen lefelé, és ellenőrizze az elvégzett módosításokat. Kattintson a **pull-kérelem létrehozása** elemre az űrlap megnyitásához. Írja le, *Miért* hajtotta végre ezt a módosítást. Kattintson a **Create pull request** (Lekéréses kérelem létrehozása) parancsra.
+5. Görgessen lefelé, és ellenőrizze az elvégzett módosításokat. Kattintson a **pull-kérelem létrehozása** elemre az űrlap megnyitásához. Írja le, *Miért* hajtotta végre ezt a módosítást. Kattintson a **pull-kérelem létrehozása**lehetőségre.
 
 Az írás csapat megkapja a lekéréses kérelmet, hozzárendeli az elemeket a megfelelő íróval, áttekinti a szöveget, és elvégzi a gyors szerkesztést, valamint jóváhagyja és egyesíti a módosításokat, vagy kapcsolatba lép Önnel a frissítéssel kapcsolatos további információkért.  
 
