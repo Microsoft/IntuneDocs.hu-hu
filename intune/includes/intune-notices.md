@@ -7,14 +7,29 @@ ms.topic: include
 ms.date: 11/19/2019
 ms.author: erikje
 ms.custom: include file
-ms.openlocfilehash: 6064fb657454106a8a7213e0bbbcecdcef765857
-ms.sourcegitcommit: c7c6be3833d9a63d43f31d598b555b49b33cf5cb
+ms.openlocfilehash: 4e93cb7f2d503704251b16d1af03924358020d4e
+ms.sourcegitcommit: 1aaff35fddb3d06458d739968d28971fed0bb2ba
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76966358"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77156694"
 ---
 Ezek a hirdetmények olyan fontos információkat tartalmaznak, amelyek segíthetnek a jövőbeli Intune-változások és-funkciók előkészítésében.
+
+### <a name="plan-for-change-change-in-experience-when-enrolling-android-enterprise-dedicated-devices-in-intune--6114580--"></a>Tervezze meg a változást: az androidos vállalati dedikált eszközök Intune-beli regisztrálásakor tapasztalható változás<!--6114580-->
+A novemberi kiadásban a SCEP-tanúsítvány üzembe helyezésének támogatása támogatott az Android Enterprise dedikált eszközökön, amelyek lehetővé teszik a Wi-Fi profilok tanúsítványon alapuló elérését. Ez a változás érintette az androidos vállalati dedikált eszközök néhány kisebb beléptetési folyamatának változását. A márciusi vagy a 2003-es frissítéssel kapcsolatban további változtatások szükségesek.
+
+#### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
+Ha az androidos vállalati dedikált eszközöket felügyeli az Ön környezetében, akkor az egyes változások márciusban jelennek meg.
+- A 2019 november 22. és a 1911 szolgáltatás frissítése előtt beléptetett, meglévő androidos eszközökhöz: ezek az eszközök rendelkeznek a telepített Microsoft Intune alkalmazással. Miután márciusban megtörtént a háttérbeli változások bevezetése az Intune szolgáltatásban március SCEP, az eszközökre telepített és a Wi-Fi profilokhoz társított tanúsítványok alkalmazása megkezdődik.
+- A 2019. november 22. és a változás előtt beléptetett eszközök esetében márciusban bekövetkezik: ezekhez az eszközökhöz telepítve van a Microsoft Intune alkalmazás. Az eszközökre központilag telepített és Wi-Fi profilokhoz kapcsolódó SCEP-tanúsítványok továbbra is érvényben maradnak.
+- Az új Android Enterprise dedikált eszközök regisztrációja a változás után márciusban: a végfelhasználók a regisztráció során különböző lépéseket fognak látni az eszközökön. A regisztráció továbbra is megkezdi a mai napig (QR, NFC, Zero Touch vagy Device Identifier), de nem lesz kötelező app install lépés. Ehelyett a rendszer automatikusan telepíti az Microsoft Intune alkalmazást az eszközökön. Emellett a végfelhasználóknak nem kell megkoppintani az "Intune-ügynök engedélyezése" lehetőséget a folyamat során. A Wi-Fi profilokhoz társított SCEP-tanúsítványok telepíthetők ezeken az eszközökön.
+
+#### <a name="what-can-i-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
+Frissítheti a végfelhasználói útmutatást, és értesítheti az ügyfélszolgálatot erről a változásról. Frissítjük az Újdonságok oldalát, és értesítjük Önt, ha ez a változás elindul.
+
+#### <a name="additional-information"></a>További információ
+[SCEP-tanúsítványok támogatása androidos vállalati dedikált eszközökön](https://aka.ms/Dedicated_devices_enrollment)
 
 ### <a name="updated-support-statement-for-adobe-acrobat-reader-for-intune-mobile-app--5746776--"></a>Frissítettük az "Adobe Acrobat Reader for Intune" Mobile App támogatási utasítását<!--5746776-->
 A MC188653 augusztus végén megosztjuk az Adobe Acrobat Reader for Intune Mobile App-t, amely a 2019. december 1-én ért véget, az Adobe pedig az Intune app Protection-házirendjeinek támogatását tervezte a fő Acrobat Reader-alkalmazásban. Azóta megkaptuk a vásárlói visszajelzéseket, hogy több időt kellene biztosítani a rendszergazdák számára a cél eléréséhez, és a végfelhasználók számára az Adobe Acrobat Reader for Intune használatának megkezdéséhez. Az Adobe Acrobat Reader az Intune-nal való magas kihasználtsága miatt a végfelhasználói eszközökön, valamint a nagyvállalati forgatókönyvek szempontjából fontos, hogy minden tapasztalat megfelel a szervezete által biztosított alkalmazások védelmének. 
