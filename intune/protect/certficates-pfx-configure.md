@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9142ea3f7728fd24883a311bbf967a7a59dbf457
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: 6d35d7470508b610f850ca7f9f394e0d26bec677
+ms.sourcegitcommit: 576b9528629981e87e775fac146932e502f07a74
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75207247"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77258096"
 ---
 # <a name="configure-and-use-pkcs-certificates-with-intune"></a>PKCS-tanúsítványok konfigurálása és használata az Intune-nal
 
@@ -76,7 +76,7 @@ A PKCS-tanúsítványok Intune-nal való használatához a következő infrastru
   - Telepítse a PFX tanúsítvány-összekötőt Microsoft Intune a kiszolgálón.  
   - A fontos frissítések automatikus fogadásához győződjön meg arról, hogy a tűzfalak nyitva vannak, amelyek lehetővé teszik, hogy az összekötő kapcsolatba lépjen a **443**-es port **AutoUpdate.msappproxy.net** .   
 
-  További információ az Intune-hoz és az összekötő-hozzáféréshez használt hálózati végpontokról: [Microsoft Intune hálózati végpontok](../fundamentals/intune-endpoints.md).
+  További információ: [Microsoft Intune hálózati végpontok és az](../fundamentals/intune-endpoints.md) [Intune hálózati konfigurációs követelményei és sávszélessége](../fundamentals/network-bandwidth-use.md).
 
 - **Windows Server**:  
   Windows-kiszolgálót használ a gazdagéphez:
@@ -144,7 +144,7 @@ VPN-, WiFi-vagy más erőforrásokkal rendelkező eszköz hitelesítéséhez az 
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Válassza a **bérlői felügyelet** > **Összekötők és tokenek** > **tanúsítvány-összekötők** > **+ Hozzáadás**lehetőséget.
+2. Válassza a **bérlői felügyelet** > **Összekötők és tokenek** > **tanúsítvány-összekötők** >  **+ Hozzáadás**lehetőséget.
 
 3. Kattintson a *tanúsítvány-összekötő szoftver letöltése* a PKCS #12-összekötőhöz elemre, és mentse a fájlt egy olyan helyre, amely az összekötő telepítéséhez használt kiszolgálóról érhető el.
 
@@ -204,7 +204,7 @@ VPN-, WiFi-vagy más erőforrásokkal rendelkező eszköz hitelesítéséhez az 
 
 4. Válassza a **Beállítások**lehetőséget, és konfigurálja a kiválasztott platformra vonatkozó tulajdonságokat:
    
-   |Beállítás     | Platfésm     | Details   |
+   |Beállítás     | Platform     | Részletek   |
    |------------|------------|------------|
    |**Megújítási küszöb (%)**        |<ul><li>Összes         |Ajánlott érték 20%  | 
    |**Tanúsítvány érvényességi időtartama**  |<ul><li>Összes         |Ha nem módosította a tanúsítványsablont, akkor ez a beállítás egy évig állítható be. |
@@ -244,17 +244,17 @@ Platformok
 > - =
 
 - **Felhasználói tanúsítványtípus**  
-  A *tulajdonos nevének formátuma* a következő két változót tartalmazza: **KÖZNAPI név (CN)** és **e-mail (E)**. Az **Egyszerű név (CN)** az alábbi változók bármelyikére beállítható:
+  A *tulajdonos nevének formátuma* a következő két változót tartalmazza: **KÖZNAPI név (CN)** és **e-mail (E)** . Az **Egyszerű név (CN)** az alábbi változók bármelyikére beállítható:
 
-  - **CN = {{username}}**: a felhasználó egyszerű felhasználóneve, például janedoe@contoso.com.
-  - **CN={{AAD_Device_ID}}**: Egy Azure Active Directoryban való eszközregisztrációkor társított azonosító. Ez az azonosító jellemzően az Azure AD-ben való hitelesítéshez használatos.
-  - **CN = {{SERIALNUMBER}}**: az egyedi sorozatszám (Sn) általában a gyártó által az eszköz azonosítására használatos.
-  - **CN = {{IMEINumber}}**: a mobil telefon azonosítására szolgáló nemzetközi mobileszköz-identitás (IMEI) egyedi szám.
-  - **CN = {{OnPrem_Distinguished_Name}}**: relatív megkülönböztető nevek sorozata vesszővel elválasztva, például *CN = JANE DOE, OU = UserAccounts, DC = Corp, DC = contoso, DC = com*.
+  - **CN = {{username}}** : a felhasználó egyszerű felhasználóneve, például janedoe@contoso.com.
+  - **CN={{AAD_Device_ID}}** : Egy Azure Active Directoryban való eszközregisztrációkor társított azonosító. Ez az azonosító jellemzően az Azure AD-ben való hitelesítéshez használatos.
+  - **CN = {{SERIALNUMBER}}** : az egyedi sorozatszám (Sn) általában a gyártó által az eszköz azonosítására használatos.
+  - **CN = {{IMEINumber}}** : a mobil telefon azonosítására szolgáló nemzetközi mobileszköz-identitás (IMEI) egyedi szám.
+  - **CN = {{OnPrem_Distinguished_Name}}** : relatív megkülönböztető nevek sorozata vesszővel elválasztva, például *CN = JANE DOE, OU = UserAccounts, DC = Corp, DC = contoso, DC = com*.
 
     A *{{OnPrem_Distinguished_Name}}* változó használatához ne felejtse el szinkronizálni a *onpremisesdistinguishedname* User ATTRIBÚTUMot az Azure AD-vel való [Azure ad Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect) használatával.
 
-  - **CN = {{onPremisesSamAccountName}}**: a rendszergazdák a sAMAccountName attribútumot az Azure ad-vel a *onPremisesSamAccountName*nevű attribútumba szinkronizálva Active Directoryról az Azure ad-be. Az Intune a tanúsítvány kiállításának részeként helyettesítheti be ezt a változót. A samAccountName attribútum a Windows korábbi verziójából származó ügyfelek és kiszolgálók támogatásához használt felhasználói bejelentkezési név (pre-Windows 2000). A felhasználói bejelentkezési név formátuma: *DomainName\testUser*, vagy csak *tesztfelhasználó*.
+  - **CN = {{onPremisesSamAccountName}}** : a rendszergazdák a sAMAccountName attribútumot az Azure ad-vel a *onPremisesSamAccountName*nevű attribútumba szinkronizálva Active Directoryról az Azure ad-be. Az Intune a tanúsítvány kiállításának részeként helyettesítheti be ezt a változót. A samAccountName attribútum a Windows korábbi verziójából származó ügyfelek és kiszolgálók támogatásához használt felhasználói bejelentkezési név (pre-Windows 2000). A felhasználói bejelentkezési név formátuma: *DomainName\testUser*, vagy csak *tesztfelhasználó*.
 
     A ( *onPremisesSamAccountName* ) *{{onPremisesSamAccountName}}* változó használatához az Azure AD-vel a [Azure ad Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect) használatával kell szinkronizálnia a felhasználói attribútumot.
 
@@ -290,17 +290,17 @@ Platformok
 
 A két tanúsítvány-összekötő frissítései rendszeresen jelennek meg. Amikor frissítünk egy összekötőt, itt olvashat a változásokról.
 
-A *pfx-tanúsítványok összekötője Microsoft Intune* [támogatja az automatikus frissítéseket](#requirements), az *Intune tanúsítvány-összekötő* pedig manuálisan frissül.
+Az *Microsoft Intune pfx tanúsítvány-összekötője* [támogatja az automatikus frissítéseket](#requirements), az *Intune tanúsítvány-összekötő* pedig manuálisan frissül.
 
 ### <a name="may-17-2019"></a>Május 17., 2019
 
-- **PFX-tanúsítványok összekötője Microsoft Intune-Version 6.1905.0.404**  
+- **PFX tanúsítvány-összekötő a Microsoft Intune-Version 6.1905.0.404**  
   Változások ebben a kiadásban:  
   - Kijavítva a probléma, hogy a meglévő PFX-tanúsítványok továbbra is újra fel lesznek dolgozva, ami miatt az összekötő leállítja az új kérések feldolgozását. 
 
 ### <a name="may-6-2019"></a>2019. május 6.
 
-- **PFX-tanúsítványok összekötője Microsoft Intune-Version 6.1905.0.402**  
+- **PFX tanúsítvány-összekötő a Microsoft Intune-Version 6.1905.0.402**  
   Változások ebben a kiadásban:  
   - Az összekötő lekérdezési időköze 5 perctől 30 másodpercre van csökkentve.
  
@@ -312,7 +312,7 @@ A *pfx-tanúsítványok összekötője Microsoft Intune* [támogatja az automati
   - A tanúsítvány visszavonására vonatkozó megbízhatósági javításokat tartalmaz.  
   - Teljesítménnyel kapcsolatos javításokat tartalmaz, amelyekkel növelheti a PKCS-tanúsítványkérelmek feldolgozásának gyors módját.  
 
-- **PFX-tanúsítványok összekötője Microsoft Intune-Version 6.1904.0.401**
+- **PFX tanúsítvány-összekötő a Microsoft Intune-Version 6.1904.0.401**
   > [!NOTE]  
   > A PFX-összekötő ezen verziójának automatikus frissítése 2019 április 11-én nem érhető el.  
 
