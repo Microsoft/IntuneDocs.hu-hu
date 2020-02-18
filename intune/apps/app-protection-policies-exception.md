@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ea66458060417fc828b2b7735b384e8cd3e25a9
-ms.sourcegitcommit: 637375a390b6e34f9c4415c77b99fe2980bbf554
+ms.openlocfilehash: b52a914e1577fe13f0bec970a9c3ebe38aa2cdc8
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75839396"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77414946"
 ---
 # <a name="how-to-create-exceptions-to-the-intune-app-protection-policy-app-data-transfer-policy"></a>Kivételek létrehozása a Intune App Protection szabályzat (alkalmazás) adatátviteli házirendjében
 
@@ -38,7 +38,7 @@ Az Intune alkalmazás-védelmi szabályzatában az alkalmazás **az adatok más 
 > Az adatátviteli szabályzat kivételeinek módosítása vagy bővítése, például a korlátozások kivágása, másolása és beillesztése, nincs hatással más alkalmazásvédelmi szabályzatokra. 
 
 ## <a name="ios-data-transfer-exceptions"></a>Az iOS-es adatátviteli szabályzat kivételei
-Az iOS-es szabályzatok esetén URL-protokoll alapján konfigurálhatók az adatátviteli kivételek. Ha kivételt szeretne hozzáadni, olvassa el az alkalmazás fejlesztője által készített dokumentációt, és ellenőrizze, milyen URL-protokollok vannak támogatva. További információ az iOS-adatátviteli kivételekről: [iOS-alkalmazás védelmi szabályzatának beállításai – adatátviteli kivételek](app-protection-policy-settings-ios.md#data-transfer-exemptions).
+Az iOS/iPadOS-alapú házirendek esetében az adatátviteli kivételeket URL-protokoll szerint konfigurálhatja. Ha kivételt szeretne hozzáadni, olvassa el az alkalmazás fejlesztője által készített dokumentációt, és ellenőrizze, milyen URL-protokollok vannak támogatva. További információ az iOS/iPadOS adatátviteli kivételekről: [iOS-alkalmazás védelmi szabályzatának beállításai – adatátviteli kivételek](app-protection-policy-settings-ios.md#data-transfer-exemptions).
 
 > [!NOTE]
 > A Microsoft nem rendelkezik olyan módszerrel, amellyel manuálisan megkereshető lenne az URL protokoll alkalmazáskivételek külső alkalmazásokhoz való létrehozáshoz. 
@@ -53,9 +53,9 @@ Az androidos szabályzatok esetén alkalmazáscsomagok alapján konfigurálható
 ### <a name="example"></a>Példa
 Ha a **Webex** csomagot kivételként hozzáadja a MAM adatátviteli szabályzatához, akkor a felügyelt Outlook-e-mailekben a Webex-hivatkozásokat közvetlenül a Webex-alkalmazásban lehet megnyitni. Az adatátvitel azonban továbbra is korlátozva marad az egyéb nem kezelt alkalmazásokban.
 
-- iOS-es **WebEx** -példa: Ha engedélyezni szeretné, hogy az Intune által felügyelt alkalmazások meg tudják hívni az **WebEx** alkalmazást, a következő sztringhez adatátviteli kivételt kell hozzáadnia: <code>wbx</code>
+- iOS/iPadOS **WebEx** -példa: Ha engedélyezni szeretné, hogy az Intune által felügyelt alkalmazások meg tudják hívni az **WebEx** alkalmazást, a következő sztringhez adatátviteli kivételt kell hozzáadnia: <code>wbx</code>
     
-- iOS **Maps** – példa: Ha engedélyezni szeretné, hogy az Intune által felügyelt alkalmazások meg tudják hívni a natív **Maps** alkalmazást, a következő sztringhez hozzá kell adnia egy adatátviteli kivételt: <code>maps</code>
+- iOS/iPadOS **Maps** – példa: Ha engedélyezni szeretné, hogy az Intune által felügyelt alkalmazások meg tudják hívni a natív **Maps** alkalmazást, a következő sztringhez adatátviteli kivételt kell hozzáadnia: <code>maps</code>
 
 - Androidos **WebEx** -példa: Ha engedélyezni szeretné, hogy az Intune által felügyelt alkalmazások meghívja a **WebEx** alkalmazást, a következő sztringhez adatátviteli kivételt kell hozzáadnia: <code>com.cisco.webex.meetings</code>
     

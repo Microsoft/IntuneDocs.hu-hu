@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 12/05/2019
+ms.date: 02/13/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a56d8f7aface3628ba5bc8985128ebb49c9cf404
-ms.sourcegitcommit: b0d683917af83170f85022b270270d8ced8e301c
+ms.openlocfilehash: 867873c78b34d5573084a3a6e44d7d4d67846423
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76812166"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77413644"
 ---
 # <a name="set-rules-on-devices-to-allow-access-to-resources-in-your-organization-using-intune"></a>Szabályok beállítása az eszközökön a szervezet erőforrásaihoz való hozzáférés engedélyezéséhez az Intune használatával
 
@@ -104,7 +104,9 @@ Az Intune a beépített megfelelőségi szabályzatok egy készletét is tartalm
   - A helymeghatározási szolgáltatások használatának engedélyezése a vállalati portál számára.
   - Jailbreakelés állapotának kiértékelése és jelentése az Intune-nak legalább 72 óránként. Máskülönben az eszköz „nem megfelelő” állapotúként lesz megjelölve. A kiértékelés a Céges portál alkalmazás megnyitásával vagy az eszköz 500 méteres vagy újabb fizikai mozgatásával aktiválódik. Ha az eszköz 72 órán belül nem helyezi át a 500 métert, a felhasználónak meg kell nyitnia a Céges portál alkalmazást a kibővített Jail Break kiértékeléséhez.
 
-- **Megfelelőségi állapot érvényességi időtartama (nap)** : Adja meg azt az időszakot, amelyben az eszközöknek jelenteniük kell az állapotukat minden fogadott megfelelőségi szabályzat vonatkozásában. A rendszer nem megfelelőként kezeli azokat az eszközöket, melyek ebben az időszakban nem adják vissza állapotukat. Az alapértelmezett érték 30 nap.
+- **Megfelelőségi állapot érvényességi időtartama (nap)** : Adja meg azt az időszakot, amelyben az eszközöknek jelenteniük kell az állapotukat minden fogadott megfelelőségi szabályzat vonatkozásában. A rendszer nem megfelelőként kezeli azokat az eszközöket, melyek ebben az időszakban nem adják vissza állapotukat. Az alapértelmezett érték 30 nap. A minimális érték 1 nap.
+
+  Ez a beállítás azt jeleníti meg, **hogy az aktív** alapértelmezett megfelelőségi szabályzat (**eszközök** > **figyelő** > **beállítás megfelelősége**). A szabályzat háttérbeli feladata naponta egyszer fut.
 
 Ezeket a beállításokat a beépített szabályzatok segítségével figyelheti. Az Intune az eszköz platformtól függően különböző időközönként [frissíti vagy ellenőrzi a frissítéseket](create-compliance-policy.md#refresh-cycle-times) . A [Microsoft Intune eszköz-szabályzatokkal és-profilokkal kapcsolatos gyakori kérdések, problémák és megoldások](../configuration/device-profile-troubleshoot.md) jó erőforrás.
 
@@ -146,7 +148,7 @@ A következő táblázat ismerteti, hogyan történik a nem megfelelő beállít
   - [macOS](compliance-policy-create-mac-os.md)
   - [Windows Holographic for Business](compliance-policy-create-windows.md#windows-holographic-for-business)
   - [Windows Phone 8.1](compliance-policy-create-windows-8-1.md)
-  - [Windows 8.1 és újabb](compliance-policy-create-windows-8-1.md)
+  - [Windows 8.1 és újabb verziók](compliance-policy-create-windows-8-1.md)
   - [Windows 10 és újabb](compliance-policy-create-windows.md)
 
 - A [házirend entitásokra](../reports-ref-policy.md) vonatkozó információk az Intune-adattárház házirend entitásait ismertetik.

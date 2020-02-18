@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 10/2/2019
+ms.date: 2/14/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: enrollment
@@ -18,19 +18,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e23e582a853f0b424296d8fb42f6c7d8fdd2984c
-ms.sourcegitcommit: 0d9e1452fcf5f15a80230838f80a427b9951cdb1
+ms.openlocfilehash: 9c6fb7da3a791d369fc3005367ee7670af8bc63e
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/21/2019
-ms.locfileid: "75324865"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77414134"
 ---
 # <a name="intune-actions-and-options-supported-with-apple-user-enrollment"></a>Az Apple User beléptetésével támogatott Intune-műveletek és-beállítások
 
 A felhasználó beléptetése az eszközkezelés lehetőségeinek egy részhalmazát támogatja. Ha egy korábban már meglévő konfigurációs profilt alkalmaz egy felhasználó beléptetési eszközére, a rendszer csak a felhasználói beléptetés által támogatott beállításokat alkalmazza az adott eszközre.
 
 > [!NOTE]
-> Az Apple felhasználói regisztrációjának támogatása az Intune-ban jelenleg előzetes verzióban érhető el.
+> Az Apple felhasználói regisztrációjának támogatása az Intune-ban jelenleg előzetes verzióban érhető el az iOS és a iPadOS számára.
 
 ## <a name="password-settings"></a>Jelszóbeállítások
 
@@ -46,7 +46,7 @@ A rendszergazdák a következő műveleteket és beállításokat hajthatják v�
 - Kivonás
 - Törlés
 - Távoli zárolás
-- Sync
+- Szinkronizálás
 
 Az összes többi művelet nem támogatott.
 
@@ -107,19 +107,15 @@ A felhasználó beléptetésével regisztrált eszközökön a következő beál
 - Az alkalmazás-védelmi szabályzatok továbbra is érvényesek lesznek ezekre az alkalmazásokra. Azonban nem fogja tudni átvenni a felügyeletet, vagy felügyelt verziót telepíteni az alkalmazások közül, hacsak a felhasználó nem törli őket az eszközről.
 - A felügyeletet igénylő műveletek, konfigurációk, beállítások és parancsok. 
 
-## <a name="options-not-supported-in-preview"></a>Az előzetes verzióban nem támogatott beállítások
-- A személyes tulajdonban lévő eszközök engedélyezésére/letiltására vonatkozó beléptetési eszközök típusai 
 
 ## <a name="known-issues-in-preview"></a>Az előzetes verzióban ismert problémák
 - VPP-licenc visszavonása: a licenc visszavonásáról szóló értesítés nem jelenik meg. A jelenlegi viselkedés az, hogy a visszavonás sikeres, de a végfelhasználó nem kap értesítést. 
 - VPP Application Reporting: az ügyfélalkalmazások > alkalmazások > [alkalmazás neve] > eszköz telepítési állapotában található jelentésben a felhasználó által beléptetett eszközökre telepített VPP-alkalmazások jelentése "sikertelen", még akkor is, ha az alkalmazás sikeresen üzembe helyezte az eszközt. 
 - Application Reporting: a felhasználói regisztrációval nem támogatott alkalmazások típusai esetén a jelentések nem releváns hibaüzeneteket biztosíthatnak. 
 - Céges portál az alkalmazás felhasználói felületén: a felhasználók az összes megcélozt alkalmazást láthatják, függetlenül attól, hogy támogatottak-e a felhasználók által regisztrált eszközök. 
-- Céges portál az alkalmazás felhasználói felületén: a felhasználók ugyanazt a szöveget látják, amely azt jelzi, hogy mely szervezetek láthatják és nem látják a felhasználók és eszközök regisztrálását.
-- Ha a felhasználó a "saját szervezetem az eszköz tulajdonosa" lehetőséget választja a beléptetés során, az eszköz az Intune-ban továbbra is személyesként van megjelölve, kivéve, ha a felügyeleti konzolon vagy gráfon keresztül másképp módosítják 
-- Beléptetési célzás: a iPadOS nem szerepel a platform-választóban. a iPadOS előzetes verzióban érhető el, de explicit módon nem szerepel a felügyeleti konzolon. 
+- Céges portál az alkalmazás felhasználói felületén: a felhasználók ugyanazt a szöveget látják, amely azt jelzi, hogy mely szervezetek láthatják a felhasználók és az eszközök regisztrálását, ha a rendszergazda testreszabta azt a szöveget, amely szerint a szervezetek nem
 
 
 ## <a name="next-steps"></a>További lépések
 
-[IOS-és iPadOS-felhasználói regisztráció beállítása](ios-user-enrollment.md)
+[IOS-/iPadOS-és iPadOS-felhasználói regisztráció beállítása](ios-user-enrollment.md)

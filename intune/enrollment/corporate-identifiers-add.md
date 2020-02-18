@@ -1,7 +1,7 @@
 ---
 title: Vállalati azonosítók hozzáadása az Intune-hoz
 titleSuffix: ''
-description: Megtudhatja, hogyan adhat hozzá vállalati azonosítókat (regisztrációs módszert, IMEI-t és sorozatszámokat) a Microsoft Intunehoz.
+description: Ismerje meg, hogyan adhat hozzá vállalati azonosítókat (regisztrációs módszer, IMEI és sorozatszámok) a Microsoft Intune-bA.
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7cc67ce304dba500095c130e035a0b29322c84ef
-ms.sourcegitcommit: de663ef5f3e82e0d983899082a7f5b62c63f24ef
+ms.openlocfilehash: 51538f8994557bba718f0e8344b1da8d3c7193fa
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75956300"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77414408"
 ---
 # <a name="identify-devices-as-corporate-owned"></a>Eszközök azonosítása vállalati tulajdonúként
 
@@ -47,14 +47,14 @@ Intune-rendszergazdaként létrehozhat és importálhat egy olyan vesszővel tag
 
 Ez a funkció a következő platformokon támogatott:
 
-| Platfésm | IMEI-számok | Sorozatszámok |
+| Platform | IMEI-számok | Sorozatszámok |
 |---|---|---|
 | Windows | Támogatott (Windows Phone-telefon) | Nem támogatott |
 | iOS/macOS | Nem támogatott | Támogatott |
 | Eszköz rendszergazdája által felügyelt Android OS v10 | Nem támogatott | Nem támogatott |
 | Egyéb Android | Nem támogatott | Támogatott |
 
-<!-- When you upload serial numbers for corporate-owned iOS devices, they must be paired with a corporate enrollment profile. Devices must then be enrolled using either Apple’s device enrollment program (DEP) or Apple Configurator to have them appear as corporate-owned. -->
+<!-- When you upload serial numbers for corporate-owned iOS/iPadOS devices, they must be paired with a corporate enrollment profile. Devices must then be enrolled using either Apple’s device enrollment program (DEP) or Apple Configurator to have them appear as corporate-owned. -->
 
 [Ismerje meg, hogyan találhatja meg egy Apple-eszköz sorozatszámát](https://support.apple.com/HT204308).<br>
 [Ismerje meg, hogyan találhatja meg a saját Apple-eszköz sorozatszámát](https://support.google.com/store/answer/3333000).
@@ -77,8 +77,8 @@ Ez a .csv- fájl egy szövegszerkesztőben megtekintve így jelenik meg:
 ```
 
 > [!IMPORTANT]
-> Egyes Android-és iOS-eszközök több IMEI-számmal rendelkeznek. Az Intune regisztrált eszközönként csak egy IMEI-számot olvas be. Ha olyan IMEI-számot importál, amely nem az Intune által leltározott, akkor az eszköz a vállalat által birtokolt eszköz helyett személyes eszközként lesz besorolva. Ha egy eszközhöz több IMEI-számot importál, a leltárban nem szereplő számok **Ismeretlen** regisztrációs állapottal jelennek meg.<br>
->Megjegyzés: a sorozatszámok az iOS-eszközök azonosításának ajánlott formája.
+> Egyes Android-és iOS-/iPadOS-eszközök több IMEI-számmal rendelkeznek. Az Intune regisztrált eszközönként csak egy IMEI-számot olvas be. Ha olyan IMEI-számot importál, amely nem az Intune által leltározott, akkor az eszköz a vállalat által birtokolt eszköz helyett személyes eszközként lesz besorolva. Ha egy eszközhöz több IMEI-számot importál, a leltárban nem szereplő számok **Ismeretlen** regisztrációs állapottal jelennek meg.<br>
+>Azt is vegye figyelembe, hogy a iiOS-vagy iPadOSOS-eszközök azonosításának ajánlott formája a sorozatszám.
 >Az Android-sorozatszámok nem garantáltan egyediek vagy jelennek meg. Egyeztessen az eszköz szállítójával arról, hogy a sorozatszám tekinthető-e megbízható eszközazonosítónak.
 >Elképzelhető, hogy az a sorozatszám, amelyet az eszköz az Intune felé jelez, nem egyezik meg az eszköz Android beállítások/Névjegy (Android Settings/About) menüjében megjelenő azonosítóval. Ellenőrizze, hogy az eszköz gyártója milyen típusú sorozatszámot tüntet fel itt.
 >Ha a feltöltendő sorozatszámokból álló fájl pontokat (.) tartalmaz, a feltöltés sikertelen lesz. A pontokat tartalmazó sorozatszámok nem támogatottak.
@@ -105,7 +105,7 @@ Ez a .csv- fájl egy szövegszerkesztőben megtekintve így jelenik meg:
 
 A **Frissítés** elemre kattintva megtekintheti az új eszközazonosítókat.
 
-Az importált eszközöket nem mindig regisztrálja a rendszer. Emiatt az eszközök **Regisztrált** vagy **Nincs kapcsolat** állapotúak lehetnek. Utóbbi állapot azt jelenti, hogy az eszköz még nem lépett kapcsolatba az Intune szolgáltatással.
+Az importált eszközöket nem mindig regisztrálja a rendszer. Emiatt az eszközök **Regisztrált** vagy **Nincs kapcsolat** állapotúak lehetnek. Utóbbi állapot azt jelenti, hogy az eszköz még **nem lépett kapcsolatba** az Intune szolgáltatással.
 
 ## <a name="delete-corporate-identifiers"></a>Céges azonosítók törlése
 

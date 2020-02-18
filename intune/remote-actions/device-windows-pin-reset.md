@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b643ed41d01b70376dac32c26a66dcf9f9735ceb
-ms.sourcegitcommit: ec69e7ccc6e6183862a48c1b03ca6a3bf573f354
+ms.openlocfilehash: c4b3313d5ec7fe81944431276a63bfafb7a1b3dc
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74907219"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77413633"
 ---
 # <a name="reset-the-passcode-on-windows-devices-using-intune"></a>Jelszó alaphelyzetbe állítása Windows rendszerű eszközökön az Intune-nal
 
@@ -55,17 +55,17 @@ A felügyelt Windows rendszerű eszközökön az [Intune Windows 10-es egyéni e
 
 **Az eszközszabályzat használata** - `./Device/Vendor/MSFT/PassportForWork/*tenant ID*/Policies/EnablePinRecovery`
 
-Cserélje le a *bérlői azonosítót* az [Azure Portalon](https://portal.azure.com), az Azure Active Directory **Tulajdonságok** területén található Azure Active Directory-azonosítóval.
+Cserélje le a *bérlői azonosítót* az **Azure Portalon**, az Azure Active Directory [Tulajdonságok](https://portal.azure.com) területén található Azure Active Directory-azonosítóval.
 
 Állítsa ennek a CPS-nek az értékét **True**-ra.
 
 > [!TIP]
-> Miután létrehozta a szabályzatot, üzembe helyezheti, vagy hozzárendelheti egy csoporthoz. A szabályzat felhasználói vagy eszközcsoportokhoz rendelhető hozzá. Ha felhasználói csoporthoz rendeli, a csoportban olyan felhasználók is lehetnek, akik más, például iOS rendszerű eszközökkel is rendelkeznek. Bár ezekre az eszközökre technikai értelemben nem alkalmazható a szabályzat, mégis megjelennek az állapotadatok között.
+> Miután létrehozta a szabályzatot, üzembe helyezheti, vagy hozzárendelheti egy csoporthoz. A szabályzat felhasználói vagy eszközcsoportokhoz rendelhető hozzá. Ha egy felhasználói csoporthoz rendeli hozzá, akkor a csoport tartalmazhat más eszközökkel (például iOS/iPadOS) rendelkező felhasználókat is. Bár ezekre az eszközökre technikai értelemben nem alkalmazható a szabályzat, mégis megjelennek az állapotadatok között.
 
 ## <a name="reset-the-passcode"></a>A PIN-kód alaphelyzetbe állítása
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431). 
-2. Válassza az **Eszközök**, majd a **Minden eszköz** lehetőséget.
+2. Kattintson az **Eszközök**, majd a **Minden eszköz** elemre.
 3. Válassza ki azt az eszközt, amelyen át szeretné állítani a jelszót. Az eszköz tulajdonságai között válassza a **jelszó alaphelyzetbe állítása**lehetőséget.
 4. Válassza az **Igen** lehetőséget a megerősítéshez. A PIN-kód létrejön, és a következő hét nap folyamán megtekinthető a portálon.
 

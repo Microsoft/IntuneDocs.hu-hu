@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b30da567d1a25028c51cf8268eab9613a7c3b8af
-ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
+ms.openlocfilehash: 52c8d10f0b8d06d68d75450c3d708f910bc5ddd4
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76755477"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77415038"
 ---
 # <a name="add-app-configuration-policies-for-managed-android-enterprise-devices"></a>Alkalmazás-konfigurációs szabályzatok hozzáadása a felügyelt Android Enterprise-eszközökhöz
 
@@ -92,17 +92,17 @@ Ha változót szeretne megadni értéktípusnak, az alábbi lehetőségek közü
 | Beállítás | Példa |
 |----|----|
 | HRE-eszköz azonosítója | dc0dc142-11d8-4b12-bfea-cae2a8514c82 |
-| Fiókazonosító | fc0dc142-71d8-4B12-bbea-bae2a8514c81 |
+| Fiókazonosító | fc0dc142-71d8-4b12-bbea-bae2a8514c81 |
 | Intune-eszközazonosító | b9841cd9-9843-405f-be28-b2265c59ef97 |
 | Domain | contoso.com |
 | Mail | john@contoso.com |
 | Részleges UPN | John |
 | Felhasználó azonosítója | 3ec2c00f-b125-4519-acf0-302ac3761822 |
 | Felhasználónév | John Doe |
-| Egyszerű Felhasználónév | john@contoso.com |
+| Egyszerű felhasználónév | john@contoso.com |
 
 
-### <a name="allow-only-configured-organization-accounts-in-multi-identity-apps"></a>Csak a konfigurált szervezeti fiókok engedélyezése a többszörös identitást használó alkalmazásokban 
+### <a name="allow-only-configured-organization-accounts-in-multi-identity-apps"></a>Csak a konfigurált szervezeti fiókok engedélyezése a többidentitásos alkalmazásokban 
 
 Android-eszközök esetén használja az alábbi kulcs/érték párokat:
 
@@ -112,7 +112,7 @@ Android-eszközök esetén használja az alábbi kulcs/érték párokat:
 
    > [!NOTE]
    > Az Outlookot az Android 2.2.222 és újabb verziójához, a Word, az Excel, a PowerPoint for Android 16.0.9327.1000 és újabb verziójához, vagy a OneDrive for Android 5,28 és újabb verzióhoz kell használnia, ha csak a konfigurált, többszörös identitású szervezeti fiókok engedélyezése<p></p>
-   > Microsoft Intune rendszergazdaként beállíthatja, hogy mely felhasználói fiókok legyenek hozzáadva Microsoft Office alkalmazásokhoz a felügyelt eszközökön. A hozzáférést korlátozhatja csak a szervezeti felhasználói fiókokra, és blokkolhatja a személyes fiókok használatát a regisztrált eszközökön. A támogató alkalmazások feldolgozzák az alkalmazás konfigurációját, majd eltávolítják és letiltják a jóvá nem hagyott fiókokat.<p></p>
+   > Microsoft Intune rendszergazdaként beállíthatja, hogy mely felhasználói fiókok legyenek hozzáadva Microsoft Office alkalmazásokhoz a felügyelt eszközökön. A hozzáférést korlátozhatja csak a szervezeti felhasználói fiókokra, és blokkolhatja a személyes fiókok használatát a regisztrált eszközökön. A támogató alkalmazások feldolgozzák az alkalmazáskonfigurációt, majd eltávolítják és letiltják a nem jóváhagyott fiókokat.<p></p>
 
 ## <a name="enter-json-data"></a>JSON-adatbevitel
 
@@ -152,7 +152,7 @@ Egy alkalmazás például az eszköz mikrofonját használja. A rendszer felszó
 ## <a name="additional-information"></a>További információ
 
 - [Felügyelt Google Play-alkalmazás kiosztása androidos vállalati eszközökhöz](apps-add-android-for-work.md#assigning-a-managed-google-play-app-to-android-enterprise-work-profile-devices)
-- [Az Outlook telepítése az iOS-és Android-alkalmazásokhoz – konfigurációs beállítások](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune)
+- [Az Outlook telepítése iOS-/iPadOS-és Android-alkalmazás konfigurációs beállításaihoz](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune)
 
 ## <a name="next-steps"></a>További lépések
 

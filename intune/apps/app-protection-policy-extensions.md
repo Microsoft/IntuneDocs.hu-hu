@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1ff4fcd7d1b2115c4fbe0bc00759ef3d60482904
-ms.sourcegitcommit: a66b5916eaab9cb537e483064efc584a6a63a390
+ms.openlocfilehash: e568bb5520b4f8cc242cb58a1ee48e8729f4e387
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75692103"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77414599"
 ---
 # <a name="protecting-application-extensions"></a>Az alkalmazások bővítményeinek védelme
 
@@ -31,7 +31,7 @@ Ez a cikk a Microsoft Intune bővítmények alkalmazás-védelmi házirendjeit i
 
 ## <a name="add-ins-for-outlook-app"></a>Bővítmények az Outlook alkalmazáshoz
 
-Az Outlook-bővítmények lehetővé teszik a népszerű alkalmazások integrálását az e-mail-ügyfélprogrammal. Az Outlook-bővítmények a web, a Windows, a Mac és az Outlook alkalmazásban érhetők el az Android és az iOS rendszerhez. Az Intune APP SDK és az Intune app Protection-szabályzatok nem támogatják a bővítmények Outlookhoz való felügyeletének támogatását, de a használatuk korlátozásának más módjai is vannak. Mivel a bővítmények felügyelete a Microsoft Exchange-en keresztül történik, a felhasználók megoszthatnak adatokat és üzeneteket az Outlook és a nem felügyelt bővítményalkalmazások között, kivéve ha az adott felhasználónál ki vannak kapcsolva a bővítmények az Exchange-ben.
+Az Outlook-bővítmények lehetővé teszik a népszerű alkalmazások integrálását az e-mail-ügyfélprogrammal. Az Outlook-bővítmények a web, a Windows, a Mac és az Outlook Android és iOS/iPadOS rendszereken érhetők el. Az Intune APP SDK és az Intune app Protection-szabályzatok nem támogatják a bővítmények Outlookhoz való felügyeletének támogatását, de a használatuk korlátozásának más módjai is vannak. Mivel a bővítmények felügyelete a Microsoft Exchange-en keresztül történik, a felhasználók megoszthatnak adatokat és üzeneteket az Outlook és a nem felügyelt bővítményalkalmazások között, kivéve ha az adott felhasználónál ki vannak kapcsolva a bővítmények az Exchange-ben.
 
 Ha szeretné beszüntetni a végfelhasználók számára az Outlook-bővítmények elérését és telepítését (ez hatással van az összes Outlook-ügyfélre), az Exchange felügyeleti központban végezze el a következő szerepkör-módosításokat:
 
@@ -64,7 +64,7 @@ Ha a LinkedIn-integráció engedélyezve van a bérlőjében, akkor a LinkedIn-f
 Ha egy felhasználó hozzájárul az adatok fiókok közötti megosztásához, akkor a LinkedIn-integráció – az Office-bővítményekhez hasonlóan – a meglévő Microsoft Graph API-kat használja. A LinkedIn-integráció az Office-bővítmények számára elérhető API-knak csak egy részhalmazát használja, és támogatja a különféle kizárásokat.
 
 
-|Microsoft Graph-engedélyek  |Description  |
+|Microsoft Graph-engedélyek  |Leírás  |
 |---------|---------|
 |[Személyek](https://developer.microsoft.com/graph/docs/concepts/permissions_reference#people-permissions) olvasásának engedélyezése     |Engedélyezi az alkalmazásnak a bejelentkezett felhasználó számára releváns személyek pontozott listájának olvasását. A lista tartalmazhat helyi kapcsolatokat, közösségi hálózati kapcsolatokat, szervezeti címjegyzékbeli kapcsolatokat, illetve olyan személyeket, akikkel a felhasználó nemrég kommunikált (például e-mailben vagy Skype-on).         |
 |[Naptárak](https://developer.microsoft.com/graph/docs/concepts/permissions_reference#calendars-permissions) olvasásának engedélyezése     |Engedélyezi az alkalmazásnak a felhasználó naptáraiban lévő események olvasását. Ideértve például a bejelentkezett felhasználó naptárában lévő értekezleteket, azok időpontjával, helyével és résztvevőivel együtt.         |

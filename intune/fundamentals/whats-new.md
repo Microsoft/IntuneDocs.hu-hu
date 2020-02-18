@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cd2efc759f4edf2a2ae62c98cb04af61ff20088c
-ms.sourcegitcommit: 576b9528629981e87e775fac146932e502f07a74
-ms.translationtype: HT
+ms.openlocfilehash: 7018e2ab4290219c752f44b4b391822438461e8e
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77258113"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77415085"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -55,7 +55,11 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 -->  
 
 <!-- ########################## -->
-## <a name="week-of-february-03-2020"></a>Február 2020. hét
+## <a name="week-of-february-10-2020"></a>2020. február 10-i hét
+
+### <a name="windows-7-ends-extended-support---3042987--"></a>A Windows 7 kiterjesztett támogatást ér véget <!--3042987-->
+A Windows 7 2020 január 14-én elérte a kiterjesztett támogatás végét. Az Intune elavult támogatást biztosít a Windows 7 rendszert futtató eszközökhöz. A számítógép védelmének biztosítására szolgáló technikai segítségnyújtás és automatikus frissítés már nem érhető el. Frissítsen a Windows 10-es verzióra. További információ: [change blog post](https://aka.ms/Windows7_Intune).
+
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
 ### <a name="app-management"></a>Alkalmazáskezelés
@@ -67,7 +71,7 @@ Az Intune mostantól támogatja a Microsoft Edge 77-es és újabb verziójának 
 A **Mi a következő lépés?** a képernyőn el lett távolítva az Android munkahelyi profil beléptetési folyamata céges portál a felhasználói élmény egyszerűsítése érdekében. A frissített Android munkahelyi profil regisztrálási folyamatának megtekintéséhez nyissa meg az [androidos munkahelyi Profil regisztrálása](/intune-user-help/enroll-device-android-work-profile) című témakört.  
 
 #### <a name="company-portal-app-improved-performance---6178652---"></a>Céges portál alkalmazás teljesítményének növelése<!-- 6178652 -->
-A szolgáltatás egy későbbi időpontban lesz kivezetve.
+A Céges portál alkalmazás frissítve lett, hogy támogassa a ARM64 processzorokat használó eszközök jobb teljesítményét, például a Surface Pro X. korábban, az Céges portál emulált ARM32 módban működött. A 10.4.7080.0 és újabb verziókban a Céges portál alkalmazás natív módon van lefordítva a ARM64. További információ a Céges portál alkalmazásról: [a Microsoft Intune céges portál alkalmazás konfigurálása](~/apps/company-portal-app.md).
 
 <!-- ########################## -->
 ## <a name="week-of-january-27-2020"></a>2020. január 27-i hét

@@ -1,7 +1,7 @@
 ---
-title: IOS-eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune
+title: IOS-/iPadOS-eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune
 titleSuffix: Microsoft Intune
-description: Javaslatok az iOS-eszközök Intune-beli regisztrálásával kapcsolatos leggyakoribb problémák elhárításához.
+description: Javaslatok az iOS/iPadOS-eszközök Intune-beli regisztrálásával kapcsolatos leggyakoribb problémák elhárításához.
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
@@ -17,16 +17,16 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9bca046302b221b934d0802c0bf637aced2cec3f
-ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
+ms.openlocfilehash: 7e8234db93d9b06a71e1f5cd6e51daca2d1ea2b1
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75885924"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77415175"
 ---
-# <a name="troubleshoot-ios-device-enrollment-problems-in-microsoft-intune"></a>IOS-eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune
+# <a name="troubleshoot-iosipados-device-enrollment-problems-in-microsoft-intune"></a>Az iOS/iPadOS eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune
 
-Ez a cikk segít az Intune-rendszergazdáknak az iOS-eszközök Intune-beli regisztrálásakor felmerülő problémák megértésében és hibaelhárításában.
+Ez a cikk segít az Intune-rendszergazdáknak az iOS/iPadOS-eszközök Intune-beli regisztrálásakor felmerülő problémák megismerésében és elhárításában.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -34,10 +34,10 @@ Mielőtt elkezdené a hibaelhárítást, fontos, hogy gyűjtsön néhány alapve
 
 Gyűjtse össze a következő információkat a problémával kapcsolatban:
 
-- Mi a pontos hibaüzenet?
+- Pontosan milyen hibaüzenet jelenik meg?
 - Hol látja a hibaüzenetet?
-- Mikor jelentkezett először a probléma? Valaha is működött a regisztráció?
-- Milyen platformon (Android, iOS, Windows) van probléma?
+- Mikor indult el a probléma? Valaha is működött a regisztráció?
+- Milyen platformra (Android, iOS/iPadOS, Windows) van probléma?
 - Hány felhasználót érint a rendszer? Az összes érintett felhasználó vagy csak néhány?
 - Hány eszközt érint a rendszer? Minden eszköz érintett vagy csak néhány?
 - Mi a MDM-szolgáltató?
@@ -47,12 +47,12 @@ Gyűjtse össze a következő információkat a problémával kapcsolatban:
 
 ### <a name="profile-installation-failed-a-network-error-has-occurred"></a>A profil telepítése nem sikerült. Hálózati hiba történt.
 
-**OK:** Meghatározatlan probléma van az iOS-sel az eszközön.
+**OK:** Meghatározatlan probléma van az iOS/iPadOS az eszközön.
 
 #### <a name="resolution"></a>Megoldás
 
-1. Ha meg szeretné akadályozni az adatvesztést az alábbi lépésekben (az iOS visszaállítása törli az eszközön lévő összes adatmentést), ügyeljen arra, hogy készítsen biztonsági másolatot az adatairól.
-2. Helyezze az eszközt helyreállítási módba, majd állítsa vissza. Győződjön meg arról, hogy új eszközként állítja be. További információ az iOS-eszközök visszaállításáról: [https://support.apple.com/HT201263](https://support.apple.com/HT201263).
+1. Ha meg szeretné akadályozni az adatvesztést az alábbi lépésekben (az iOS/iPadOS visszaállítása törli az eszközön lévő összes adattal), ügyeljen arra, hogy készítsen biztonsági másolatot az adatairól.
+2. Helyezze az eszközt helyreállítási módba, majd állítsa vissza. Győződjön meg arról, hogy új eszközként állítja be. További információ az iOS/iPadOS eszközök visszaállításáról: [https://support.apple.com/HT201263](https://support.apple.com/HT201263).
 3. Regisztrálja újra az eszközt.
 
 ### <a name="profile-installation-failed-connection-to-the-server-could-not-be-established"></a>A profil telepítése nem sikerült. Nem lehet csatlakozni a kiszolgálóhoz.
@@ -64,7 +64,7 @@ Gyűjtse össze a következő információkat a problémával kapcsolatban:
 2. Válassza a **További szolgáltatások**lehetőséget, keresse meg az Intune-t, majd válassza az **Intune**lehetőséget.
 3. Válassza az **Eszközök regisztrálása** > **Regisztrációs korlátozások** lehetőséget.
 4. Az **eszközök típusának korlátozása**területen válassza ki a > **tulajdonságokat** beállítani kívánt korlátozást > **válassza a platformok** lehetőséget > válassza az **iOS** **engedélyezése lehetőséget** , majd kattintson **az OK**gombra.
-5. Válassza a **platformok konfigurálása**lehetőséget, válassza a személyes tulajdonú iOS-eszközök **engedélyezése** lehetőséget, majd kattintson **az OK**gombra.
+5. Válassza a **platformok konfigurálása**lehetőséget, válassza a személyes tulajdonú iOS-/iPadOS-eszközök **engedélyezése** lehetőséget, majd kattintson **az OK**gombra.
 6. Regisztrálja újra az eszközt.
 
 **OK:** A DNS-ben a szükséges CNAME rekordok nem léteznek.
@@ -99,7 +99,7 @@ Ha a vállalat több tartományt használ a felhasználók hitelesítő adataiho
 **OK:** Az eszköz már regisztrálva van egy másik MDM-szolgáltatóval.
 
 #### <a name="resolution"></a>Megoldás
-1. Nyissa meg az iOS-eszköz **beállításait** , lépjen az **Általános > eszközkezelés**elemre.
+1. Nyissa meg az iOS/iPadOS eszköz **beállításait** , lépjen az **Általános > eszközkezelés**elemre.
 2. Távolítsa el a meglévő felügyeleti profilt.
 3. Regisztrálja újra az eszközt.
 
@@ -131,7 +131,7 @@ Ha a vállalat több tartományt használ a felhasználók hitelesítő adataiho
  > [!NOTE]
     > Ez a hiba akkor is megjelenhet, ha a felhasználó több eszközt próbál regisztrálni, mint amennyit az eszköz regisztrálása engedélyez. Ha ezek a lépések nem oldják meg a problémát, kövesse az **eszközök maximális** száma című cikkben ismertetett lépéseket.
 
-### <a name="device-cap-reached"></a>Elérte az eszközök maximális számát
+### <a name="device-cap-reached"></a>Elérte az eszközök maximális száma
 
 **OK:** A felhasználó több eszközt próbál regisztrálni az eszköz beléptetési korlátján kívül.
 
@@ -177,7 +177,7 @@ Ha a vállalat több tartományt használ a felhasználók hitelesítő adataiho
 
 #### <a name="resolution"></a>Megoldás
 
-1. Az iOS-eszköz **beállításainak** megnyitása > **általános** > **eszközkezelés**.
+1. Nyissa meg az iOS/iPadOS eszköz **beállításait** > **általános** > **eszközkezelés**.
 2. Koppintson a meglévő felügyeleti profilra, és koppintson a **felügyelet eltávolítása**elemre.
 3. Regisztrálja újra az eszközt.
 
@@ -186,7 +186,7 @@ Ha a vállalat több tartományt használ a felhasználók hitelesítő adataiho
 **OK:** A Apple Push Notification Service-(APNs-) tanúsítvány hiányzik, érvénytelen vagy lejárt.
 
 #### <a name="resolution"></a>Megoldás
-Ellenőrizze, hogy hozzá van-e adva érvényes APNs-tanúsítvány az Intune-hoz. További információt az iOS- [regisztráció beállítása](ios-enroll.md)című témakörben talál.
+Ellenőrizze, hogy hozzá van-e adva érvényes APNs-tanúsítvány az Intune-hoz. További információ: [iOS/iPadOS-regisztráció beállítása](ios-enroll.md).
 
 ### <a name="accountnotonboarded"></a>AccountNotOnboarded
 
@@ -196,10 +196,10 @@ Ellenőrizze, hogy hozzá van-e adva érvényes APNs-tanúsítvány az Intune-ho
 Újítsa meg az APNs-tanúsítványt, majd regisztrálja újra az eszközt.
 
 > [!IMPORTANT]
-> Győződjön meg arról, hogy megújítja a APNs-tanúsítványt. Ne cserélje le az APNs-tanúsítványt. Ha lecseréli a tanúsítványt, az összes iOS-eszközt újra regisztrálnia kell az Intune-ban. 
+> Győződjön meg arról, hogy megújítja a APNs-tanúsítványt. Ne cserélje le az APNs-tanúsítványt. Ha lecseréli a tanúsítványt, az összes iOS/iPadOS eszközt újra regisztrálnia kell az Intune-ban. 
 
 - Az APNs-tanúsítvány megújítása az Intune önálló verziójában: [Apple Mdm push-tanúsítvány megújítása](apple-mdm-push-certificate-get.md#renew-apple-mdm-push-certificate).
-- A APNs-tanúsítvány megújításához az Office 365-ben lásd: [APNs-tanúsítvány létrehozása iOS-eszközökhöz](https://support.office.com/article/Create-an-APNs-Certificate-for-iOS-devices-522b43f4-a2ff-46f6-962a-dd4f47e546a7).
+- A APNs-tanúsítvány megújításához az Office 365-ben tekintse meg az [APNs-tanúsítvány létrehozása iOS-/iPadOS-eszközökhöz](https://support.office.com/article/Create-an-APNs-Certificate-for-iOS-devices-522b43f4-a2ff-46f6-962a-dd4f47e546a7)című témakört.
 
 ### <a name="xpc_type_error-connection-invalid"></a>XPC_TYPE_ERROR a kapcsolatok érvénytelenek
 
@@ -238,6 +238,19 @@ Amikor bekapcsol egy beléptetési profilhoz rendelt DEP által felügyelt eszk�
 
 #### <a name="resolution"></a>Megoldás
 Tiltsa le az MFA-t, majd regisztrálja újra az eszközt.
+
+### <a name="the-enrollment-status-page-times-out-before-the-sign-in-screen"></a>A regisztrációs állapot lap időtúllépést eredményez a bejelentkezési képernyő előtt
+
+**OK:** Ez a probléma akkor fordulhat elő, ha a következő feltételek mindegyike teljesül:
+- A beléptetési állapot lapot használja az üzleti alkalmazások Microsoft Store nyomon követéséhez.
+- Rendelkezik egy Azure AD feltételes hozzáférési szabályzattal, amely az eszköz megfelelőségi vezérlőként való jelölését használja.
+- A szabályzat minden felhőalapú alkalmazásra és Windowsra vonatkozik.
+
+#### <a name="resolution"></a>Megoldás:
+Próbálja ki a következők egyikét:
+- Az Intune-beli megfelelőségi szabályzatok megcélzása az eszközökre. Győződjön meg arról, hogy a megfelelőség meghatározható a felhasználó bejelentkezése előtt.
+- Offline licencelés használata az áruházbeli alkalmazásokhoz. Így a Windows-ügyfélnek nem kell az eszköz megfelelőségének meghatározása előtt ellenőriznie a Microsoft Store.
+
 
 ## <a name="next-steps"></a>További lépések
 

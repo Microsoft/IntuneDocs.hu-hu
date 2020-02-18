@@ -1,7 +1,7 @@
 ---
-title: iOS-eszköz felhasználójának kijelentkeztetése
+title: Egy iOS/iPadOS-eszköz felhasználójának kijelentkezése
 titleSuffix: Microsoft Intune
-description: Ez a cikk ismerteti, hogy hogyan lehet kijelentkeztetni egy Intune által felügyelt iOS-eszköz aktuális felhasználóját.”
+description: Ismerje meg, hogyan jelentkezhet be egy iOS/iPadOS-eszköz aktuális felhasználója az Intune-nal. "
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
@@ -17,14 +17,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fdb23916319b06fb4d85b913209d1ac9e007d551
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 6e23f95d169a95244abc8669eb9a19150cff8138
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73713175"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77413694"
 ---
-# <a name="logout-the-current-user-on-intune-managed-ios-devices"></a>Intune által felügyelt iOS-eszköz aktuális felhasználójának kijelentkeztetése
+# <a name="logout-the-current-user-on-intune-managed-iosipados-devices"></a>Az aktuális felhasználó kijelentkezése az Intune által felügyelt iOS-/iPadOS-eszközökön
 
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
@@ -35,7 +35,7 @@ Az **Aktuális felhasználó kijelentkeztetése** művelet kijelentkezteti egy m
 
 - Windows – nem támogatott
 - Windows Phone – nem támogatott
-- iOS – az iOS 9.3-as és újabb verzióiban támogatott (csak megosztott iPad eszközökön)
+- iOS/iPadOS – az iOS/iPadOS 9,3-es és újabb verzióiban támogatott (csak megosztott iPad eszközök esetén)
 - macOS – nem támogatott
 - Android – nem támogatott
 
@@ -43,7 +43,7 @@ Az **Aktuális felhasználó kijelentkeztetése** művelet kijelentkezteti egy m
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431) , és válassza az **eszközök**lehetőséget.
 4. Az **Eszközök és csoportok** panelen válassza a **Minden eszköz** lehetőséget.
-5. A felügyelt eszközök listájából válasszon ki egy iOS-eszközt, majd kattintson az **Aktuális felhasználó kijelentkeztetése** távoli eszközműveletre.
+5. A felügyelt eszközök listájából válassza ki az iOS/iPadOS eszközt, majd válassza az aktuális felhasználói eszköz távoli műveletének **kijelentkezése** lehetőséget.
 
 ## <a name="next-steps"></a>További lépések
 

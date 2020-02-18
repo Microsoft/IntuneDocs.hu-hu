@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3d8aadbd876ea03da0f16acea82b71ebd85cf9be
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: fbafca746c43dada6281ffbfe1e34f01afa8ab91
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73712246"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77413679"
 ---
 # <a name="find-the-primary-user-of-an-intune-device"></a>Intune-eszköz elsődleges felhasználójának megkeresése
 
@@ -53,7 +53,7 @@ Ahhoz, hogy megjelenjenek a megosztott eszközök Céges portálján, az elérhe
 ## <a name="who-is-assigned-as-the-primary-user"></a>Ki van rendelve elsődleges felhasználóként?
 Az Intune a regisztráció után automatikusan hozzáadja az elsődleges felhasználót az eszközökhöz. A beléptetési módszer határozza meg, hogy mikor kerül be az elsődleges felhasználó egy eszközre.
 
-| Platfésm | Regisztráció módszere | Elsődleges felhasználó hozzárendelve | Az elsődleges felhasználó hozzá van rendelve |
+| Platform | Regisztráció módszere | Elsődleges felhasználó hozzárendelve | Az elsődleges felhasználó hozzá van rendelve |
 | ---- | ---- | ---- | ---- |
 | Windows | Munkahelyi vagy iskolai (felhasználó által vezérelt) hozzáadása | Felhasználó regisztrálása | Regisztráció során |   
 | Windows | Modern alkalmazás-bejelentkezés (felhasználó által vezérelt) | Felhasználó regisztrálása | Regisztráció során | 
@@ -63,13 +63,13 @@ Az Intune a regisztráció után automatikusan hozzáadja az elsődleges felhasz
 | Windows | Csak a MDM regisztrálása | Felhasználó regisztrálása | Regisztráció során | 
 | Windows | Hibrid AADJ + automatikus regisztrálási csoportházirend-objektum | Első felhasználó a Windowsba való bejelentkezéshez | Amikor az első felhasználó bejelentkezik a Windowsba| 
 | Windows | Megosztott kezelés | Első felhasználó a Windowsba való bejelentkezéshez | Amikor az első felhasználó bejelentkezik a Windowsba | 
-| Windows | Azure AD JOIN (csoportos beléptetési jogkivonat) | Nincsenek | Not applicable | 
-| Windows | Azure AD JOIN (Autopilot öntelepítő üzemmód) | Nincsenek | Not applicable | 
-| Többplatformos | Felhasználó által vezérelt regisztráció Céges portál alkalmazással | Felhasználó regisztrálása | Regisztráció során |
-| Többplatformos | Eszköz beléptetési kezelője (DEM) | DEM-felhasználó regisztrálása | Regisztráció során |
-| iOS, macOS | Apple automatikus eszközök beléptetése (DEP felhasználói affinitással | Felhasználó regisztrálása | Regisztráció során |
-| iOS, macOS | Apple automatikus eszközök beléptetése (DEP felhasználói affinitás nélkül) | Nincsenek | Not applicable |
-| Android: | Androidos vállalati tulajdonú, dedikált eszközök | Nincsenek | Not applicable |
+| Windows | Azure AD JOIN (csoportos beléptetési jogkivonat) | Nincsenek | Nem alkalmazható | 
+| Windows | Azure AD JOIN (Autopilot öntelepítő üzemmód) | Nincsenek | Nem alkalmazható | 
+| Platformfüggetlen | Felhasználó által vezérelt regisztráció Céges portál alkalmazással | Felhasználó regisztrálása | Regisztráció során |
+| Platformfüggetlen | Eszköz beléptetési kezelője (DEM) | DEM-felhasználó regisztrálása | Regisztráció során |
+| iOS/iPadOS, macOS | Apple automatikus eszközök beléptetése (DEP felhasználói affinitással | Felhasználó regisztrálása | Regisztráció során |
+| iOS/iPadOS, macOS | Apple automatikus eszközök beléptetése (DEP felhasználói affinitás nélkül) | Nincsenek | Nem alkalmazható |
+| Android: | Androidos vállalati tulajdonú, dedikált eszközök | Nincsenek | Nem alkalmazható |
 
 ## <a name="primary-user-and-azure-ad-device-owner"></a>Elsődleges felhasználó és Azure AD-eszköz tulajdonosa
 Bizonyos esetekben előfordulhat, hogy az Intune elsődleges felhasználója nem azonos az Azure AD-eszköz **tulajdonosi** tulajdonságával (a megtekinthető az **eszközök** > **Azure ad-eszközök**területen). Az Azure AD-eszköz tulajdonosát az eszköz regisztrációja során Azure Active Directoryba adja hozzá a rendszer.

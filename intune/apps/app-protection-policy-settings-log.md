@@ -18,19 +18,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af665cf1165e2fc4d433a58a802b42bd8910276a
-ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
+ms.openlocfilehash: ddddfdceaccd53025033c27301c53ecf85d34d48
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75885564"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77414940"
 ---
 # <a name="review-client-app-protection-logs"></a>Ügyfelekre vonatkozó alkalmazásvédelmi naplók áttekintése
 
 Ismerje meg az alkalmazásvédelmi naplók áttekinthető beállításait. A naplók eléréséhez engedélyezze az Intune Diagnostics szolgáltatást egy mobil ügyfélen. 
 
 A naplók engedélyezésére és gyűjtésére szolgáló folyamat a következő platformokra változik:
-- **iOS-eszközök** – az iOS-hez készült Microsoft Edge használatával gyűjthet naplókat. Részletekért lásd: [webes elérés kezelése a Microsoft Edge és a Microsoft Intune használatával](~/apps/manage-microsoft-edge.md#use-microsoft-edge-on-ios-to-access-managed-app-logs). 
+- **iOS/iPadOS-eszközök** – a Microsoft Edge for iOS/iPadOS használatával gyűjtheti össze a naplókat. Részletekért lásd: [webes elérés kezelése a Microsoft Edge és a Microsoft Intune használatával](~/apps/manage-microsoft-edge.md#use-microsoft-edge-on-ios-to-access-managed-app-logs). 
 - **Windows 10-es eszközök** – a *MDMDiag* és az eseménynaplókat használja. Tekintse meg a Windows [Mdm hibáinak diagnosztizálása](https://docs.microsoft.com/windows/client-management/mdm/diagnose-mdm-failures-in-windows-10) a Windows 10 rendszerben című témakört, valamint a Windows [10 Intune-szabályzat hibáit](https://blogs.technet.microsoft.com/configmgrdogs/2018/08/09/troubleshooting-windows-10-intune-policy-failures/)ismertető blogot.
 - **Android-eszközök** – az App Protection-szabályzat (alkalmazás) nem rendelkezik az Android-eszközökön található diagnosztikai adattal.
 

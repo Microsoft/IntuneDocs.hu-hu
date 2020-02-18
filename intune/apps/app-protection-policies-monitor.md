@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 36a84296aabd2d78cbc3cdc14ffb8f696afa5c22
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: 5d2902c876fab12c1ba1e45783327f1ea08ab4d8
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75205258"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77414659"
 ---
 # <a name="how-to-monitor-app-protection-policies"></a>Az alkalmazásvédelmi szabályzatok figyelése
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
@@ -51,8 +51,8 @@ Az App Protection-adatok megőrzési időtartama 90 nap. Minden olyan alkalmazá
 - **Megjelölt felhasználók**: az eszközeivel kapcsolatos problémákat tapasztaló felhasználók száma. A rendszer a feltört (iOS) és a feltört (androidos) eszközöket a **megjelölt felhasználók**alatt jelenti. Ezen kívül a Google biztonság-eszköz igazolási ellenőrzésével megjelölt eszközökkel (ha a rendszergazda bekapcsolja azt) a felhasználók itt jelennek meg. 
 - **Potenciálisan ártalmas alkalmazásokkal rendelkező felhasználók**: azon felhasználók száma, akik kártékony alkalmazással rendelkezhetnek a Google Play Protect által észlelt Android-eszközön. 
 - **Felhasználói állapot az iOS** -hez és a **felhasználói állapothoz Android**rendszeren: azon felhasználók száma, akik az adott alkalmazáshoz hozzárendelt szabályzattal rendelkeznek a kapcsolódó platformhoz tartozó munkakörnyezetben. Ez az információ a szabályzat által kezelt felhasználók számát, valamint azon felhasználók számát jeleníti meg, akik olyan alkalmazást használnak, amelyet nem a munkahelyi környezetben lévő szabályzat céloz meg. Érdemes megfontolni ezen felhasználók bevonását a szabályzat hatálya alá.
-- Legnépszerűbb **védett iOS-alkalmazások** és **legnépszerűbb védett Android-alkalmazások**: a leggyakrabban használt iOS-és Android-alkalmazások alapján ez az információ a védett és a nem védett alkalmazások platformon alapuló számát jeleníti meg.
-- **Legfelső szintű konfigurált iOS-alkalmazások regisztráció** nélkül és a **legfelső szintű konfigurált Android-alkalmazások regisztráció nélkül**: a nem regisztrált eszközökön a leggyakrabban használt iOS-és Android-alkalmazások esetében ez az információ a konfigurált alkalmazások (például az alkalmazás-konfigurációs házirend használatával) számát jeleníti meg.
+- **Legnépszerűbb védett iOS-/iPadOS-alkalmazások** és **legnépszerűbb védett Android-alkalmazások**: a leggyakrabban használt iOS-/iPadOS-és Android-alkalmazások alapján ez az információ a védett és a nem védett alkalmazások platformon alapuló számát jeleníti meg.
+- **Top-konfigurált iOS-/iPadOS-alkalmazások** regisztráció nélkül, és a **legfelső szintű konfigurált Android-alkalmazások regisztráció nélkül**: a nem regisztrált eszközökön a leggyakrabban használt iOS-/iPadOS-és Android-alkalmazások esetében ez az információ a konfigurált alkalmazások számát mutatja platform (például az alkalmazás-konfigurációs házirend használatával).
 
     > [!NOTE]
     > Platformonként több szabályzat esetén a felhasználó akkor minősül szabályzat által kezeltnek, ha legalább egy szabályzat hozzá van rendelve.
@@ -170,9 +170,9 @@ Kövesse az alábbi lépéseket az App Protection. csv fájl vagy az App Configu
     ![Képernyőkép a Jelentés mentése jóváhagyó mezőről](./media/app-protection-policies-monitor/app-protection-report-csv-1.png)
    
 > [!NOTE]
-> Az Intune további eszköz-jelentési mezőket biztosít, beleértve az alkalmazás regisztrációs AZONOSÍTÓját, az Android-gyártót, a modellt és a biztonsági javítás verzióját, valamint az iOS-modellt is. Az Intune-ban ezeket a mezőket az **alkalmazások** > **app protection-állapot** > **app Protection-jelentés: iOS, Android című**részében érheti el. Emellett ezek a paraméterek segítséget nyújtanak az eszköz gyártójának (Android) **engedélyezési** listájának, az eszköz modell **engedélyezési** listájának (Android és iOS) és az **androidos biztonsági javítás minimális verziójának** beállításának konfigurálásában.   
+> Az Intune további eszköz-jelentési mezőket biztosít, beleértve az alkalmazás regisztrációs AZONOSÍTÓját, az Android-gyártót, a modellt és a biztonsági javítás verzióját, valamint az iOS-modellt is. Az Intune-ban ezeket a mezőket az **alkalmazások** > **app protection-állapot** > **app Protection-jelentés: iOS/iPadOS, Android**. Emellett ezek a paraméterek segítséget nyújtanak az eszköz gyártójának (Android) **engedélyezési** listájának, az eszköz modell **engedélyezési** listájának (Android és iOS) és az **androidos biztonsági javítás minimális verziójának** beállításának konfigurálásában.   
  
 ## <a name="see-also"></a>További információ
-- [iOS-alkalmazások közti adatátvitel kezelése](data-transfer-between-apps-manage-ios.md)
+- [Az iOS/iPadOS alkalmazások közötti adatátvitel kezelése](data-transfer-between-apps-manage-ios.md)
 - [Milyen hatással vannak az androidos alkalmazásokra az alkalmazásvédelmi szabályzatok?](../fundamentals/end-user-mam-apps-android.md)
-- [Milyen hatással vannak az iOS-es alkalmazásokra az alkalmazásvédelmi szabályzatok?](../fundamentals/end-user-mam-apps-ios.md)
+- [Mi várható, ha az iOS/iPadOS alkalmazást az alkalmazás-védelmi szabályzatok kezelik](../fundamentals/end-user-mam-apps-ios.md)

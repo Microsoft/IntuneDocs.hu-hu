@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic-keep
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fb67cf2cb17b78c4034c3b73e229e160723d975e
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: a4fdbf7ca252af9eb8513d437e3275692a1f8d13
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73414392"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77415242"
 ---
 # <a name="manage-windows-pcs-as-computers-via-intune-software-client"></a>Windows rendszerű számítógépek kezelése az Intune-szoftverügyfélen keresztül számítógépként
 
@@ -30,7 +30,7 @@ ms.locfileid: "73414392"
 > [!WARNING]
 > A Microsoft bejelentette, hogy a [Windows 7 támogatása 2020. január 14-én véget ér](https://support.microsoft.com/help/4057281/windows-7-support-will-end-on-january-14-2020). Ezen a napon az Intune visszavonja a Windows 7 operációs rendszerű eszközök támogatását. A Microsoft a szolgáltatási és támogatási kimaradások megelőzése érdekében kifejezetten ajánlja a Windows 10-re való átállást.
 > 
-> További információkért lásd: az [Intune-terv változásának megtervezése, a Windows 7 támogatásának megszűnése](../fundamentals/whats-new.md#intune-plan-for-change-nearing-end-of-support-for-windows-7).
+> További információ: [a Change blog bejegyzésének megtervezése](https://aka.ms/Windows7_Intune).
 
 > [!NOTE]
 > A Microsoft Intune-ban kezelheti a Windows-számítógépeket [mobileszközként a mobileszköz-kezelés (MDM),](../enrollment/windows-enroll.md) vagy számítógépként az Intune szoftverügyfél használatával, a lent ismertetett módon. A Microsoft azonban azt javasolja, hogy az ügyfelek [lehetőség szerint az MDM-megoldást válasszák](../enrollment/windows-enroll.md) a felügyelethez. További információ: a [Windows rendszerű számítógépek számítógépként vagy mobileszközökként való kezelésének összehasonlítása](pc-management-comparison.md) 

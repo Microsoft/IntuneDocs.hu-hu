@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dde69fc70522684193f9cf6712a2192f77110dab
-ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
+ms.openlocfilehash: b780f22fd6823499128a3975f1812a1d1f7c032b
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76754252"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77413776"
 ---
 # <a name="what-is-microsoft-intune-device-management"></a>A Microsoft Intune-eszközfelügyelet ismertetése
 
@@ -36,7 +36,7 @@ Az **Eszközök** munkafolyamat áttekintést nyújt a felügyelt eszközökről
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 3. Válassza az **Eszközök** lehetőséget. Ez a nézet részletes információkat jelenít meg az egyes eszközökről, illetve megjeleníti a velük elvégezhető műveleteket, például:
 
-   - Az **Áttekintés** a regisztrált eszközök pillanatképét jeleníti meg, valamint azt, hogy hány eszköz használja a különböző platformokat (Android, iOS és egyebek).
+   - Az **Áttekintés** megjeleníti a beléptetett eszközök vizualizációs pillanatképét, valamint azt is, hogy hány eszköz használja a különböző platformokat, például Android, iOS/iPadOS stb.
    - A **Minden eszköz** az Ön által kezelt regisztrált eszközöket jeleníti meg.
 
      Az **Exportálás** funkcióval létrehozhat egy .csv formátumú listát minden eszközről, egyenként 10000 (Internet Explorer), iletve 30000 (Microsoft Edge, Chrome) eszközzel.
@@ -70,7 +70,7 @@ Az egyes műveletek az eszköz platformjának és konfigurációjának függvén
   - [Távirányítás Androidhoz](teamviewer-support.md)
   - [Eszköz szinkronizálása](device-sync.md)
   - [Eszköz átnevezése](device-rename.md)
-  - [Egyéni értesítés küldése](custom-notifications.md#send-a-custom-notification-to-a-single-device) (Android, iOS)
+  - [Egyéni értesítés küldése](custom-notifications.md#send-a-custom-notification-to-a-single-device) (Android, iOS/iPadOS)
   - [BitLocker-kulcs elforgatása](../protect/encrypt-devices.md#rotate-bitlocker-recovery-keys) (csak Windows)
 
 ## <a name="next-steps"></a>További lépések

@@ -16,17 +16,17 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1001a7a3fde9c203fdad3d146ace57736ae7128d
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 21167b226556100e7e9920f31f859d6d6ce2a7bb
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73713450"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77415524"
 ---
 # <a name="sync-devices-to-get-the-latest-policies-and-actions-with-intune"></a>Az eszközök szinkronizálása az Intune-nal a legfrissebb szabályzatok és műveletek beolvasásához
 
 
-A **Szinkronizálás** eszközművelet kikényszeríti a választott eszköz azonnali bejelentkezését az Intune-nál. Bejelentkezéskor az eszköz azonnal fogadja az összes hozzárendelt, függőben lévő műveletet vagy szabályzatot. Ez a funkció segíthet a vonatkozó szabályzatok azonnali ellenőrzésében és a hibák elhárításában anélkül, hogy ki kellene várni a következő ütemezett bejelentkezést.
+A **Szinkronizálás** eszközművelet kikényszeríti a választott eszköz azonnali bejelentkezését az Intune-nál. Bejelentkezéskor az eszköz azonnal fogadja az hozzárendelt összes függőben lévő műveletet vagy szabályzatot. Ez a funkció segíthet a vonatkozó szabályzatok azonnali ellenőrzésében és a hibák elhárításában anélkül, hogy ki kellene várni a következő ütemezett bejelentkezést.
 
 ## <a name="supported-platforms"></a>Támogatott platformok
 
@@ -49,7 +49,7 @@ A [frissítési ciklus idején](../configuration/device-profile-troubleshoot.md#
 
 ## <a name="retryable-error-codes"></a>Újrapróbálható hibakódok
 
-Ha a rendszergazda a **Szinkronizálás** eszközműveletet futtatja, a sikertelen iOS- és Android-alkalmazásokhoz használható újrapróbálható hibakód továbbra is elérhető. Ha azonban az alkalmazás nem újrapróbálható hibakódot generált, akkor az hét napig nem lesz elérhető az eszköz számára.
+Amikor egy rendszergazda futtatja a **szinkronizálási** eszköz műveletét, az iOS/iPadOS és az Android-alkalmazások, amelyek nem sikerültek, és egy újrapróbálkozást lehetővé tevő hibakódot eredményeznek, továbbra is elérhetők Ha azonban az alkalmazás nem újrapróbálható hibakódot generált, akkor az hét napig nem lesz elérhető az eszköz számára.
 
 
 | Hibakód  | Javasolt leírás | Újrapróbálható |

@@ -15,12 +15,12 @@ ms.reviewer: chrisbal
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
-ms.openlocfilehash: d0b4f8d5124924d013e7ac131dafc947a95c7b65
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 99738de7efc473c7886762534c6e377b4dba8397
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74059799"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77415113"
 ---
 # <a name="application-protection-policies-and-work-profiles-on-android-enterprise-devices-in-intune"></a>Alkalmazás-védelmi szabályzatok és munkahelyi profilok az Android Enterprise-eszközökön az Intune-ban
 
@@ -55,11 +55,11 @@ Az egyes Android-alkalmazások több módon is engedélyezve vannak az ALKALMAZ�
 
 Az ALKALMAZÁSsal kompatibilis alkalmazások listájának megtekintéséhez tekintse [meg a felügyelt alkalmazások a Mobile Application Protection-szabályzatok gazdag készletét](https://www.microsoft.com/cloud-platform/microsoft-intune-apps).
 
-## <a name="deployment-scenarios"></a>Üzembe helyezési helyzetek
+## <a name="deployment-scenarios"></a>Üzembe helyezési forgatókönyvek
 
 Ez a szakasz az APP-WE és az Android Enterprise Work Profile telepítési forgatókönyvek fontos jellemzőit ismerteti.
 
-### <a name="app-we"></a>ALKALMAZÁS – WE
+### <a name="app-we"></a>APP-WE
 
 ALKALMAZÁS – a (z) rendszerbe állítást nem igénylő alkalmazások esetében a telepítés szabályzatokat határoz meg az alkalmazásokon, nem pedig az eszközökön. Ebben az esetben az eszközöket általában nem MDM-szolgáltató (például Intune) regisztrálja vagy kezeli. Az alkalmazások védelméhez és a szervezeti információhoz való hozzáféréshez a rendszergazdák az alkalmazás által felügyelhető alkalmazásokat használják, és adatvédelmi szabályzatokat alkalmazhatnak ezekre az alkalmazásokra.
 
@@ -106,7 +106,7 @@ Az Office-alkalmazások, például az Outlook és a OneDrive "többszörös iden
 
 Munkahelyi profilok használata esetén érdemes lehet letiltani a többszörös identitás működését. Ha letiltja, a munkahelyi profilban az alkalmazás jelvényes példányai csak a szervezet identitásával konfigurálhatók. Az Office Android-alkalmazások támogatásához használja az engedélyezett fiókok alkalmazás konfigurációs beállítását.
 
-További információ: [az Outlook telepítése iOS-és Android-alkalmazásokhoz konfigurációs beállítások](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune).
+További információ: [az Outlook telepítése az iOS/iPadOS és az Android-alkalmazások konfigurációs beállításaihoz](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune).
 
 ## <a name="when-to-use-intune-app"></a>Mikor kell használni az Intune-alkalmazást?
 

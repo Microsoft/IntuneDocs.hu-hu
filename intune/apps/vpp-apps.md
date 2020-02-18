@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3c4218dc02f11b9ada07126ce24d6dc4080b23ec
-ms.sourcegitcommit: a66b5916eaab9cb537e483064efc584a6a63a390
+ms.openlocfilehash: 0b16ab43a2b2c3b2a38aeee14614f2c8361c3d83
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75692138"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77415425"
 ---
 # <a name="manage-volume-purchased-apps-and-books-with-microsoft-intune"></a>Mennyiségi programban vásárolt alkalmazások és könyvek kezelése a Microsoft Intune-nal
 
@@ -39,6 +39,6 @@ A Microsoft Intune segítséget nyújt az ilyen program keretében vásárolt al
 
 Az Intune-nal felügyelheti az iOS-áruházból mennyiségi programban vásárolt alkalmazásokat és könyveket, valamint azokat az alkalmazásokat, amelyeket a Vállalati Microsoft Áruházból vásárolt. A következő témakörökből tájékozódhat arról, hogy miképpen kezelheti a különféle áruházakból származó licencbe vett alkalmazásokat:
 
-- [Mennyiségi programban vásárolt iOS-alkalmazások felügyelete](vpp-apps-ios.md)
+- [IOS/iPadOS mennyiségi licencszerződés keretében vásárolt alkalmazások kezelése](vpp-apps-ios.md)
 - [A Vállalati Microsoft Áruházból mennyiségi programban vásárolt alkalmazások felügyelete](windows-store-for-business.md)
-- [iOS-es e-könyvek kezelése](vpp-ebooks-ios.md)
+- [IOS/iPadOS-e-könyvek kezelése](vpp-ebooks-ios.md)

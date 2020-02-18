@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0372c9629e111c460b095d8c0236305866da42e3
-ms.sourcegitcommit: ec69e7ccc6e6183862a48c1b03ca6a3bf573f354
+ms.openlocfilehash: 812b2e40c32b1442e632739c3964eb57027e6d9e
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74907202"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77413729"
 ---
 # <a name="use-teamviewer-to-remotely-administer-intune-devices"></a>A TeamViewer használata Intune-eszközök távoli felügyeletéhez
 
@@ -29,7 +29,7 @@ Az Intune által kezelt eszközök a [TeamViewer](https://www.teamviewer.com) ha
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-- Használjon támogatott eszközt. Az Intune által felügyelt Android-eszköz rendszergazdája, androidos munkahelyi profil, Windows, iOS és macOS rendszerű eszközök támogatják a távoli felügyeletet. A TeamViewer nem feltétlenül támogatja a Windows Holographic (HoloLens), Windows Team (Surface Hub), vagy Windows 10 S rendszerű eszközöket. A támogatással kapcsolatban tekintse át a [TeamViewer](https://www.teamviewer.com) frissítéseit.
+- Használjon támogatott eszközt. Az Intune által felügyelt Android-eszköz rendszergazdája, az Android munkahelyi profil, a Windows, az iOS/iPadOS és a macOS rendszerű eszközök támogatják a távoli felügyeletet. A TeamViewer nem feltétlenül támogatja a Windows Holographic (HoloLens), Windows Team (Surface Hub), vagy Windows 10 S rendszerű eszközöket. A támogatással kapcsolatban tekintse át a [TeamViewer](https://www.teamviewer.com) frissítéseit.
 
 > [!NOTE]
 > Az Android dedikált és teljes körűen felügyelt funkciója nem támogatott.
@@ -58,7 +58,7 @@ Ahhoz, hogy távsegítséget nyújthasson eszközökre, az alábbi lépéseket k
 Az összekötő konfigurálása után megkezdheti egy eszköz távoli felügyeletét. Hajtsa végre a következő lépéseket: 
 
 1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431).
-2. Válassza az **Eszközök**, majd a **Minden eszköz** lehetőséget.
+2. Kattintson az **Eszközök**, majd a **Minden eszköz** elemre.
 3. A listából válassza ki azt az eszközt, amelyet távolról szeretne felügyelni > **...**  > **új Távsegítség-munkamenetet**.
 4. Miután az Intune kapcsolódott a TeamViewer szolgáltatáshoz, látni fog némi információt az eszközről. A **Kapcsolódás** lehetőséggel indítsa el a távoli munkamenetet.
 

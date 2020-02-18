@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: add92c038e33ba1b5873eb0e9588242f8f3d0f57
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: 75914dc77fe351fffda21768b0136e636c567998
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75207434"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77415124"
 ---
 # <a name="set-up-enrollment-for-windows-devices"></a>Windowsos eszközök regisztrációjának beállítása
 
@@ -44,8 +44,8 @@ A Windows-eszközök regisztrálásának egyszerűsítését két tényező hat�
 
 ||**Azure AD Premium**|**Egyéb AD**|
 |----------|---------------|---------------|  
-|**Windows 10**|[Automatikus regisztráció](#enable-windows-10-automatic-enrollment) |Felhasználó beléptetése|
-|**Korábbi Windows-verziók**|Felhasználó beléptetése|Felhasználó beléptetése|
+|**Windows 10**|[Automatikus regisztráció](#enable-windows-10-automatic-enrollment) |Felhasználói regisztráció|
+|**Korábbi Windows-verziók**|Felhasználói regisztráció|Felhasználói regisztráció|
 
 Azok a cégek, amelyek használhatják az automatikus regisztrációt, a Windows Configuration Designer alkalmazással is konfigurálhatják az [eszközök csoportos regisztrációját](../windows-bulk-enroll.md).
 
@@ -91,7 +91,7 @@ A Contoso DNS-rendszergazdájának a következő CNAME-elemeket kell létrehozni
 |CNAME|EnterpriseEnrollment.us.contoso.com|EnterpriseEnrollment-s.manage.microsoft.com|1 óra|
 |CNAME|EnterpriseEnrollment.eu.contoso.com|EnterpriseEnrollment-s.manage.microsoft.com| 1 óra|
 
-`EnterpriseEnrollment-s.manage.microsoft.com` – A levelezési tartomány nevéből felismert tartománynévvel irányítja át a felhasználókat az Intune-ba.
+A`EnterpriseEnrollment-s.manage.microsoft.com` cím a levelezési tartomány nevéből felismert tartománynév használatával irányítja át a felhasználókat az Intune-ba.
 
 A DNS-rekord módosításának terjesztése akár 72 órát is igénybe vehet. Az Intune-ban nem ellenőrizhető a DNS-módosítás, amíg a DNS-rekord propagálása zajlik.
 
@@ -119,7 +119,7 @@ A végfelhasználói regisztrációra vonatkozó utasításokért lásd: [Window
 A végfelhasználói feladatokkal kapcsolatban lásd: [Információk végfelhasználóknak a Microsoft Intune használatáról](../fundamentals/end-user-educate.md).
 
 ## <a name="registration-and-enrollment-cnames"></a>Regisztráció és regisztrálási CNAME-rekordok
-Azure Active Directory eltérő CNAME-t használ az iOS-, Android-és Windows-eszközökön az eszközök regisztrálásához. Az Intune feltételes hozzáféréséhez regisztrálni kell az eszközöket, más néven a munkahelyi csatlakozást. Ha feltételes hozzáférést szeretne használni, a EnterpriseRegistration CNAME-t is konfigurálnia kell minden egyes vállalat neveként.
+A Azure Active Directory egy másik CNAME-t használ, amelyet az iOS-/iPadOS-, Android-és Windows-eszközökön használt eszközök regisztrálására használ. Az Intune feltételes hozzáféréséhez regisztrálni kell az eszközöket, más néven a munkahelyi csatlakozást. Ha feltételes hozzáférést szeretne használni, a EnterpriseRegistration CNAME-t is konfigurálnia kell minden egyes vállalat neveként.
 
 | Típus | Gazdagép neve | A következő helyre mutat | Élettartam |
 | --- | --- | --- | --- |

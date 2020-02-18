@@ -10,7 +10,7 @@
       href: device-management-capabilities.md
     - name: Regisztrációs beállítások
       href: enrollment-options.md
-- name: Gyorsútmutatók
+- name: Rövid útmutatók
   items:
     - name: Automatikus regisztráció beállítása
       href: quickstart-setup-auto-enrollment.md
@@ -20,7 +20,7 @@
   items:
     - name: Windows-eszközök regisztrálása Autopilottal
       href: tutorial-use-autopilot-enroll-devices.md
-    - name: iOS-eszközök regisztrálása DEP használatával
+    - name: iOS/iPadOS-eszközök regisztrálása DEP használatával
       href: tutorial-use-device-enrollment-program-enroll-ios.md
 - name: Fogalmak
   items:
@@ -36,11 +36,11 @@
     - name: Többtényezős hitelesítés
       href: multi-factor-authentication.md
       displayName: mfa; multifactor
-    - name: Készülékregisztráció-kezelő
+    - name: Eszközregisztráció-kezelő
       href: device-enrollment-manager-enroll.md
     - name: Eszközök hozzárendelése csoportokhoz
       href: device-group-mapping.md
-- name: Használati útmutatók
+- name: Útmutatók
   items:
     - name: Windows-regisztráció beállítása
       items:
@@ -84,12 +84,12 @@
         - name: Samsung Knox Mobile Enrollment
           href: android-samsung-knox-mobile-enroll.md
           displayName: kda; kme
-    - name: iOS-eszközök regisztrálásának beállítása
+    - name: Az iOS/iPadOS-regisztráció beállítása
       href: ios-enroll.md
       items:
         - name: Készülékregisztrációs program
           href: device-enrollment-program-enroll-ios.md
-        - name: Felhasználóregisztráció beállítása iOS-hez és iPadOS-hez
+        - name: Felhasználóregisztráció beállítása iOS/iPadOS-hez és iPadOS-hez
           href: ios-user-enrollment.md
         - name: Támogatott felhasználóregisztrációs műveletek és beállítások
           href: ios-user-enrollment-supported-actions.md
@@ -109,7 +109,7 @@
         - name: Eszközök regisztrálásával kapcsolatos problémák elhárítása
           href: troubleshoot-device-enrollment-in-intune.md
           displayName: sso
-        - name: iOS-eszközök regisztrálásával kapcsolatos problémák elhárítása
+        - name: iOS/iPadOS-eszközök regisztrálásával kapcsolatos problémák elhárítása
           href: troubleshoot-ios-enrollment-errors.md
         - name: Windows-eszközök regisztrálásával kapcsolatos problémák elhárítása
           href: troubleshoot-windows-enrollment-errors.md

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1a5c980b3f9ababaf94aa7b279e533679ed74b0e
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 6941b3b79dd690c9861c8efead7f525e56e2b350
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72503373"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77415418"
 ---
 # <a name="manage-android-work-profile-devices-with-intune"></a>Androidos munkahelyi profilos eszközök kezelése az Intune-nal
 
@@ -55,7 +55,7 @@ Az Android Enterprise infrastruktúrát biztosít az alkalmazások konfiguráci�
 
 ## <a name="email-configuration"></a>E-mail-konfiguráció
 
-Az Android Enterprise nem biztosít alapértelmezett e-mail-alkalmazást vagy natív e-mail-profilt, például az iOS által megadott objektumot. Ehelyett e-mail-konfigurációk adhatók meg az alkalmazáskonfigurációs beállítások használatával az olyan levelezőalkalmazásokhoz, amelyek támogatják ezt. A Gmail és a Nine Work két Exchange ActiveSync (EAS) ügyfélalkalmazás a Play Áruházban, amelyek támogatják az Android Enterprise-alkalmazás konfigurációját.
+Az Android Enterprise nem biztosít alapértelmezett e-mail alkalmazást vagy natív e-mail-profilt, például az iOS/iPadOS által megadott objektumot. Ehelyett e-mail-konfigurációk adhatók meg az alkalmazáskonfigurációs beállítások használatával az olyan levelezőalkalmazásokhoz, amelyek támogatják ezt. A Gmail és a Nine Work két Exchange ActiveSync (EAS) ügyfélalkalmazás a Play Áruházban, amelyek támogatják az Android Enterprise-alkalmazás konfigurációját.
 
 Az Intune konfigurációsablonokat biztosít a Gmail és a Nine Work alkalmazáshoz, ha azok munkahelyi alkalmazásként vannak felügyelve. Az alkalmazáskonfigurációs profilokat támogató más levelezőalkalmazások mobilalkalmazás-konfigurációs szabályzatokkal konfigurálhatók.
 

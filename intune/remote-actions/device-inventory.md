@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 11e3465c583197582a545cdd6f4b71bc8d24e115
-ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
+ms.openlocfilehash: af4270587ab5894d52a7d12b1c2082b7b3298e51
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76754201"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77413746"
 ---
 # <a name="see-device-details-in-intune"></a>Eszközadatok megtekintése az Intune-ban
 
@@ -45,7 +45,7 @@ Ez a cikk bemutatja, hogyan tekintheti meg az összes eszközét és azok tulajd
       - [Újraindítás](device-restart.md) (kizárólag Windowson)
       - [Újrakezdés](device-fresh-start.md) (kizárólag Windowson)
       - Távsegítség-munkamenet indítása
-   - [Saját létrehozású eszközkategória](../enrollment/device-group-mapping.md) hozzárendelésére és az eszköz tulajdonosának (saját eszköz vagy vállalati eszköz) átállítására használja a **Tulajdonságok** lehetőséget.
+   - **Saját létrehozású eszközkategória** hozzárendelésére és az eszköz tulajdonosának (saját eszköz vagy vállalati eszköz) átállítására használja a [Tulajdonságok](../enrollment/device-group-mapping.md) lehetőséget.
    - A **hardver** számos információt tartalmaz az eszközről, például az eszköz azonosítóját, az operációs rendszert és a verziót, a tárolóhelyet és további részleteket.
    - Az **Észlelt alkalmazások** verziójukkal együtt sorolja fel azon telepített alkalmazásokat, amelyet az Intune talált az eszközön. További információ: az [Intune által felderített alkalmazások](../apps/app-discovered-apps.md).
    - Az **Eszközmegfelelőség** a hozzárendelt megfelelőségi szabályzatok listája mellett azt is tartalmazza, hogy az eszköz megfelelő vagy nem.
@@ -57,7 +57,7 @@ Az eszközök által használt szolgáltatótól függően az összes adat gyűj
 > [!Note]  
 > A hardver-és a szoftveres leltár 7 naponta frissül az Intune szolgáltatásban.
 
-|Adat|Description|Platfésm| 
+|Adat|Leírás|Platform| 
 |--------------|----------------------|----|  
 |Név|Az eszköz neve.|Windows, iOS|
 |Felügyeleti név|A csak a konzolon használt eszköznév. Ennek a névnek a módosítása nem változtatja meg a nevet az eszközön.|Windows, iOS|
@@ -69,29 +69,29 @@ Az eszközök által használt szolgáltatótól függően az összes adat gyűj
 |Operációs rendszer|Az eszközön futó operációs rendszer.|Windows, iOS|
 |Operációs rendszer verziója|Az eszköz operációs rendszerének verziója.|Windows, iOS|
 |Operációs rendszer nyelve|Az eszközön futó operációs rendszerhez beállított nyelv.|Windows, iOS|
-|Build száma|Az operációs rendszer összeállításának száma.|Android:|
+|Buildszám|Az operációs rendszer összeállításának száma.|Android:|
 |Biztonsági javítási szint|Az eszköz biztonsági javítási szintje.|Android:|
 |Teljes tárterület|Az eszközön lévő teljes tárterület (gigabájtban).|Windows, iOS|
 |Szabad tárterület|Az eszközön lévő felhasználatlan tárterület (gigabájtban).|Windows, iOS|
-|IMEI|Az eszköz Nemzetközi mobilkészülék-azonosító (IMEI) száma.|Windows, iOS, Android|
-|MEID|Az eszköz mobilkészülék-azonosító száma.|Windows, iOS, Android|
-|Gyártó|Az eszköz gyártója.|Windows, iOS, Android|
-|Modell|Az eszköz típusa.|Windows, iOS, Android|
-|Telefonszám|Az eszközhöz rendelt telefonszám.|Windows, iOS, Android *|
-|Előfizetés-szolgáltató|Az eszköz vezeték nélküli szolgáltatója.|Windows, iOS, Android|
-|Mobiltechnológia|Az eszköz által használt rádiórendszer.|Windows, iOS, Android|
-|Wi-Fi MAC|Az eszköz MAC-címe.|Windows, iOS, Android|
-|ICCID|Az integrált áramköri kártya (ICC) azonosítója, amely a SIM-kártya egyedi azonosítószáma.|Windows, iOS, Android|
-|Regisztrálás dátuma|Az eszköz Intune-ban történt regisztrálásának dátuma és időpontja.|Windows, iOS, Android|
-|Utolsó kapcsolat|Az eszköz Intune-hoz való utolsó kapcsolódásának dátuma és időpontja.|Windows, iOS, Android|
+|IMEI|Az eszköz Nemzetközi mobilkészülék-azonosító (IMEI) száma.|Windows, iOS/iPadOS, Android|
+|MEID|Az eszköz mobilkészülék-azonosító száma.|Windows, iOS/iPadOS, Android|
+|Gyártó|Az eszköz gyártója.|Windows, iOS/iPadOS, Android|
+|Modell|Az eszköz típusa.|Windows, iOS/iPadOS, Android|
+|Telefonszám|Az eszközhöz rendelt telefonszám.|Windows, iOS/iPadOS, Android *|
+|Előfizetés-szolgáltató|Az eszköz vezeték nélküli szolgáltatója.|Windows, iOS/iPadOS, Android|
+|Mobiltechnológia|Az eszköz által használt rádiórendszer.|Windows, iOS/iPadOS, Android|
+|Wi-Fi MAC|Az eszköz MAC-címe.|Windows, iOS/iPadOS, Android|
+|ICCID|Az integrált áramköri kártya (ICC) azonosítója, amely a SIM-kártya egyedi azonosítószáma.|Windows, iOS/iPadOS, Android|
+|Regisztrálás dátuma|Az eszköz Intune-ban történt regisztrálásának dátuma és időpontja.|Windows, iOS/iPadOS, Android|
+|Utolsó kapcsolat|Az eszköz Intune-hoz való utolsó kapcsolódásának dátuma és időpontja.|Windows, iOS/iPadOS, Android|
 |Kód az aktiválási zár megkerüléséhez|Az aktiválási zár letiltására alkalmas kód.|iOS|
-|Az Azure AD-ban regisztrálva|Ha **Igen**, akkor az eszköz regisztrálva van az Azure Active Directoryban.|Windows, iOS, Android|
-|Intune regisztrálva|Ha **Igen**, az eszköz regisztrálva van az Intune-ban|Windows, iOS, Android|
-|Megfelelőség|Az eszköz megfelelőségi állapota.|Windows, iOS, Android|
-|EAS aktiválva|Ha **Igen**, akkor az eszköz szinkronizálva van egy Exchange-postafiókkal.|Windows, iOS, Android|
-|EAS-aktiválási azonosító|Az eszköz Exchange ActiveSync-azonosítója.|Windows, iOS, Android|
-|Felügyelt|Ha **Igen**, akkor a rendszergazdák fokozott felügyelettel rendelkeznek az eszköz felett.|Windows, iOS, Android|
-|Titkosítva|Ha **Igen**, akkor az eszközön tárolt adatok titkosítva vannak.|Windows, iOS, Android|
+|Az Azure AD-ban regisztrálva|Ha **Igen**, akkor az eszköz regisztrálva van az Azure Active Directoryban.|Windows, iOS/iPadOS, Android|
+|Intune regisztrálva|Ha **Igen**, az eszköz regisztrálva van az Intune-ban|Windows, iOS/iPadOS, Android|
+|Megfelelőség|Az eszköz megfelelőségi állapota.|Windows, iOS/iPadOS, Android|
+|EAS aktiválva|Ha **Igen**, akkor az eszköz szinkronizálva van egy Exchange-postafiókkal.|Windows, iOS/iPadOS, Android|
+|EAS-aktiválási azonosító|Az eszköz Exchange ActiveSync-azonosítója.|Windows, iOS/iPadOS, Android|
+|Felügyelt|Ha **Igen**, akkor a rendszergazdák fokozott felügyelettel rendelkeznek az eszköz felett.|Windows, iOS/iPadOS, Android|
+|Titkosítva|Ha **Igen**, akkor az eszközön tárolt adatok titkosítva vannak.|Windows, iOS/iPadOS, Android|
 
 > [!Note]  
 > A telefonszám nem leltározott az Android Enterprise dedikált vagy teljes mértékben felügyelt eszközökön.

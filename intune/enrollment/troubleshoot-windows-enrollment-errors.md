@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d5c6db598a7f64f75f6f5a8e0cf25b8e4b81465
-ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
+ms.openlocfilehash: 70b7fbaa29434c775720ab423f38e29bc329861a
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75885891"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77415156"
 ---
 # <a name="troubleshoot-windows-device-enrollment-problems-in-microsoft-intune"></a>A Windows-eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune
 
@@ -34,10 +34,10 @@ Mielőtt elkezdené a hibaelhárítást, fontos, hogy gyűjtsön néhány alapve
 Gyűjtse össze a következő információkat a problémával kapcsolatban:
 - Érvényes Intune-licenc van hozzárendelve a felhasználóhoz? Ahhoz, hogy a felhasználók regisztrálni tudják eszközeiket, hozzá kell rendelni a szükséges licencet.
 - A legújabb frissítés telepítve van a Windows-eszközön? Az Intune egyes funkciói csak a Windows legújabb verziójával működnek. A Windows Updateon keresztül elérhető ismert problémák számos javítást biztosítanak. A legújabb frissítések alkalmazása gyakran javít egy Windows-eszköz regisztrálásával kapcsolatos problémát. 
-- Mi a pontos hibaüzenet?
+- Pontosan milyen hibaüzenet jelenik meg?
 - Hol látja a hibaüzenetet?
-- Mikor jelentkezett először a probléma? Valaha is működött a regisztráció? 
-- Milyen platformon (Android, iOS, Windows) van probléma?
+- Mikor indult el a probléma? Valaha is működött a regisztráció? 
+- Milyen platformra (Android, iOS/iPadOS, Windows) van probléma?
 - Hány felhasználót érint a rendszer? Az összes érintett felhasználó vagy csak néhány?
 - Hány eszközt érint a rendszer? Minden eszköz érintett vagy csak néhány?
 - Mi a MDM-szolgáltató?
@@ -176,7 +176,7 @@ Hiba: "a szoftver nem telepíthető, 0x80cf4017."
 **OK:** Az ügyfélszoftver elavult.
 
 #### <a name="resolution"></a>Megoldás
-1. Jelentkezzen be itt: [https://admin.manage.microsoft.com](https://admin.manage.microsoft.com).    
+1. Jelentkezzen be [https://admin.manage.microsoft.comba ](https://admin.manage.microsoft.com).    
 2. Nyissa meg a **felügyeleti** > **ügyfélszoftver letöltése**lehetőséget, majd kattintson az **ügyfélszoftver letöltése**elemre.    
 3. Mentse a telepítőcsomagot, majd telepítse az ügyfélszoftvert. 
 
@@ -188,7 +188,7 @@ Hiba: "a fiók tanúsítványa nem érvényes, és lehet, hogy lejárt, 0x80cf40
 **OK:** Az ügyfélszoftver elavult.
 
 #### <a name="resolution"></a>Megoldás
-1. Jelentkezzen be itt: [https://admin.manage.microsoft.com](https://admin.manage.microsoft.com).    
+1. Jelentkezzen be [https://admin.manage.microsoft.comba ](https://admin.manage.microsoft.com).    
 2. Nyissa meg a **felügyeleti** > **ügyfélszoftver letöltése**lehetőséget, majd kattintson az **ügyfélszoftver letöltése**elemre.    
 3. Mentse a telepítőcsomagot, majd telepítse az ügyfélszoftvert.    
 
@@ -369,7 +369,7 @@ Ezt a problémát általában a Windows Autopilot-eszközöket létrehozó szerv
 8. Jelölje be a **csak a következő objektumokat a mappában** jelölőnégyzetből, majd jelölje ki a **számítógép-objektumokat**, **hozzon létre a kijelölt objektumokat**ebben a mappában, és **törölje a kijelölt objektumokat a mappában** jelölőnégyzetből.
 9. Válassza a **Tovább** elemet.
 10. Az **engedélyek**területen jelölje be a **teljes hozzáférés** jelölőnégyzetet. Ez a művelet kijelöli az összes többi beállítást.
-11. Válassza a **Tovább** > **Befejezés** lehetőséget.
+11. Válassza a **következő** > **Befejezés**lehetőséget.
 
 ## <a name="next-steps"></a>További lépések
 

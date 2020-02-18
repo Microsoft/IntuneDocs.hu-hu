@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f368f5f15f71246a2899f2acb7a791d65df26c99
-ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
+ms.openlocfilehash: a727cf03f53ee003c27708a04ad475f0b370c487
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75857043"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77415002"
 ---
 # <a name="intune-discovered-apps"></a>Intune által felderített alkalmazások
 
@@ -52,14 +52,14 @@ Az Intune a bérlőben lévő egyes eszközök felderített alkalmazásainak lis
 
 Az alábbi lista tartalmazza az alkalmazás platformjának típusát, a személyes eszközök számára figyelt alkalmazásokat, a vállalat által birtokolt eszközökön figyelt alkalmazásokat, valamint a frissítési ciklust. További információ az Intune által támogatott alkalmazás-típusokról: [alkalmazások típusai Microsoft Intuneban](apps-add.md#app-types-in-microsoft-intune).
 
-| Platfésm | Személyes tulajdonú eszközök esetén | Vállalati tulajdonú eszközök esetén | Frissítési ciklus |
+| Platform | Személyes tulajdonú eszközök esetén | Vállalati tulajdonú eszközök esetén | Frissítési ciklus |
 |------------------------------------------------------------------------|----------------------------------|--------------------------------------------------|---------------------------------------|
 | Windows 10 (Win32-alkalmazások) Megjegyzés: az [Intune felügyeleti bővítmény szükséges](intune-management-extension.md) az eszközön | Nem alkalmazható | Csak felügyelt alkalmazások | Az eszközök beléptetése 24 óránként |
 | Windows 10 (modern alkalmazások) | Csak felügyelt modern alkalmazások | Az eszközre telepített összes modern alkalmazás | Az eszközök regisztrációja 7 naponta |
-| Windows 8.1 | Csak felügyelt alkalmazások | Csak felügyelt alkalmazások | Az eszközök regisztrációja 7 naponta |
+| Windows 8.1 | Csak felügyelt alkalmazások | Csak felügyelt alkalmazások | Az eszközök regisztrációja 7 naponta |
 | Windows Phone 8 | Csak felügyelt alkalmazások | Csak felügyelt alkalmazások | Az eszközök regisztrációja 7 naponta |
 | Windows RT | Csak felügyelt alkalmazások | Csak felügyelt alkalmazások | Az eszközök regisztrációja 7 naponta |
-| iOS | Csak felügyelt alkalmazások | Az összes, az eszközön telepített alkalmazás | Az eszközök regisztrációja 7 naponta |
+| iOS/iPadOS | Csak felügyelt alkalmazások | Az összes, az eszközön telepített alkalmazás | Az eszközök regisztrációja 7 naponta |
 | macOS | Csak felügyelt alkalmazások | Az összes, az eszközön telepített alkalmazás | Az eszközök regisztrációja 7 naponta |
 | Android: | Csak felügyelt alkalmazások | Az összes, az eszközön telepített alkalmazás | Az eszközök regisztrációja 7 naponta |
 | Vállalati Android | Csak felügyelt alkalmazások | Csak a munkahelyi profilba telepített alkalmazások | Az eszközök regisztrációja 7 naponta |

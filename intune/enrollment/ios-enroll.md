@@ -1,7 +1,7 @@
 ---
-title: iOS-eszközök regisztrálása az Intune-ban
+title: IOS-/iPadOS-eszközök regisztrálása az Intune-ban
 titleSuffix: Microsoft Intune
-description: iOS-eszközök a Microsoft Intune-ban való regisztrációjának beállítása.
+description: IOS-/iPadOS-eszközök regisztrálásának beállítása Microsoft Intuneban.
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
@@ -18,53 +18,53 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2fb5208cd7df6dc68bcd20455ae9e06a9dbd7ff5
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 8d5aeb17084ea0bb76429b1fa15c9de5855220ab
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72503146"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77415297"
 ---
-# <a name="enroll-ios-devices-in-intune"></a>iOS-eszközök regisztrálása az Intune-ban
+# <a name="enroll-iosipados-devices-in-intune"></a>IOS-/iPadOS-eszközök regisztrálása az Intune-ban
 
 Az Intune lehetővé teszi az iPadek és iPhone-eszközök mobileszköz-felügyeletét (MDM), hogy biztonságos hozzáférést biztosítson a felhasználóknak a vállalati levelezéshez, az adatszolgáltatásokhoz és az alkalmazásokhoz
 
-Intune-rendszergazdaként beállíthatja az iOS-és iPadOS-eszközök regisztrálását a vállalati erőforrások eléréséhez. Lehetővé teheti a felhasználók számára a személyes tulajdonú eszközök regisztrálását, azaz a "saját eszközök használata" (BYOD) beléptetését. Beállíthatja a vállalati tulajdonú eszközök regisztrálását is.
+Intune-rendszergazdaként beállíthatja az iOS/iPadOS és a iPadOS eszközök regisztrációját a vállalati erőforrások eléréséhez. Lehetővé teheti a felhasználók számára a személyes tulajdonú eszközök regisztrálását, azaz a "saját eszközök használata" (BYOD) beléptetését. Beállíthatja a vállalati tulajdonú eszközök regisztrálását is.
 
-## <a name="prerequisites-for-ios-enrollment"></a>Az iOS eszközök beléptetésének előfeltételei
+## <a name="prerequisites-for-iosipados-enrollment"></a>IOS/iPadOS-regisztráció előfeltételei
 
-iOS-eszközök engedélyezése előtt végezze el az alábbi lépéseket:
+Az iOS/iPadOS-eszközök engedélyezése előtt végezze el a következő lépéseket:
 
 - Győződjön [meg arról, hogy az eszköz jogosult az Apple-eszközök regisztrálására](https://support.apple.com/en-us/HT204142#eligibility).
 - [Az Intune beállítása](../fundamentals/setup-steps.md) – Ezekkel a lépésekkel állíthatja be az Intune-infrastruktúrát. Különösen fontos, hogy az eszközregisztrációhoz szükség van [saját MDM-szolgáltató beállítására](../fundamentals/mdm-authority-set.md).
-- [Apple MDM push-tanúsítvány beszerzése](apple-mdm-push-certificate-get.md) – Az Apple tanúsítványt igényel az iOS- és macOS eszközök felügyeletének lehetővé tételéhez.
+- [Apple Mdm push-tanúsítvány beszerzése](apple-mdm-push-certificate-get.md) – az Apple-nek tanúsítványra van szüksége a IOiOS/iPadOS és a MacOS rendszerű eszközök felügyeletének engedélyezéséhez.
 
-## <a name="user-owned-ios-and-ipados-devices-byod"></a>Felhasználó által birtokolt iOS-és iPadOS-eszközök (BYOD)
+## <a name="user-owned-iosipados-and-ipados-devices-byod"></a>Felhasználó által birtokolt iOS-/iPadOS-és iPadOS-eszközök (BYOD)
 
 Azt is engedélyezheti, hogy a felhasználók saját személyes eszközeiket regisztrálják az Intune-felügyelethez. Ezt „saját eszköz használata” vagy BYOD (Bring Your Own Device) néven ismerjük. A felhasználók regisztrálására három lehetőség áll rendelkezésre:
 - Az alkalmazás-védelmi szabályzatok a legkönnyebb BYOD élményt biztosítják, és csak az alkalmazás szintjén biztosítanak felügyeletet. Ha azonban egy 6 számjegyű, összetett PIN-kóddal rendelkező eszközt is biztonságossá kíván tenni, ezeket a házirendeket a felhasználó beléptetésével együtt is használhatja.
 - Az eszközök regisztrálása a szokásos BYOD-regisztrációnak tekinthető. Számos felügyeleti lehetőséggel látja el a rendszergazdákat.
 - A felhasználó beléptetése egy egyszerűbb regisztrációs folyamat, amely az Eszközkezelő lehetőségeinek egy részhalmazát biztosítja a rendszergazdák számára. Ez a szolgáltatás jelenleg előzetes kiadásban elérhető. 
 
-Miután végrehajtotta az előfeltételeket és a hozzárendelt felhasználói licenceket, a felhasználók letöltheti az Intune Céges portál alkalmazást az App Store áruházból, és követheti a regisztrációs utasításokat az alkalmazásban. Az iOS-eszközök Céges portál adatvédelmi nyilatkozatát az [adatvédelmi nyilatkozat testreszabása](../apps/company-portal-app.md#privacy-statement-customization)című részben leírtak szerint szabhatja testre.
+Miután végrehajtotta az előfeltételeket és a hozzárendelt felhasználói licenceket, a felhasználók letöltheti az Intune Céges portál alkalmazást az App Store áruházból, és követheti a regisztrációs utasításokat az alkalmazásban. Az iOS/iPadOS eszközökön a Céges portál adatvédelmi nyilatkozatát az [adatvédelmi nyilatkozat testreszabása](../apps/company-portal-app.md#privacy-statement-customization)című részben leírtak szerint szabhatja testre.
 
-## <a name="company-owned-ios-devices"></a>Vállalati tulajdonban lévő iOS-eszközök
+## <a name="company-owned-iosipados-devices"></a>Vállalati tulajdonú iOS/iPadOS-eszközök
 
-A felhasználóknak eszközöket vásárló szervezetek számára az Intune a következő módszereket támogatja a vállalati tulajdonban lévő iOS-eszközök regisztrálásához:
+A felhasználók számára eszközöket megvásároló szervezetek esetében az Intune a következő iOS/iPadOS vállalati tulajdonú eszközök regisztrálási módszereit támogatja:
 
 - Az Apple készülékregisztrációs programja (DEP)
 - Apple School Manager
 - Regisztrálás az Apple Configurator és a Beállítási asszisztens segítségével
 - Apple Configurator – közvetlen regisztráció
 
-A vállalati tulajdonban lévő iOS-eszközök [készülékregisztráció-kezelő](device-enrollment-manager-enroll.md) fiók használatával is regisztrálhatók.
+A vállalat által birtokolt iOS-/iPadOS-eszközöket egy [eszköz beléptetési kezelői](device-enrollment-manager-enroll.md) fiókjával is regisztrálhatja.
 
 ## <a name="device-enrollment-program"></a>Készülékregisztrációs program
 
-A szervezetek az Apple Device Enrollment készülékregisztrációs programján keresztül vásárolhatnak iOS-eszközöket. A DEP vezeték nélkül képes telepíteni egy regisztrációs profilt, amely felügyelet alá helyezi az eszközöket. További információ: [Készülékregisztrációs program](device-enrollment-program-enroll-ios.md).
+A szervezetek iOS/iPadOS-eszközöket vásárolhatnak az Apple Készülékregisztrációs program (DEP) használatával. A DEP vezeték nélkül képes telepíteni egy regisztrációs profilt, amely felügyelet alá helyezi az eszközöket. További információ: [Készülékregisztrációs program](device-enrollment-program-enroll-ios.md).
 
 ## <a name="user-enrollment"></a>Felhasználói regisztráció
-A felhasználó regisztrálása a rendszergazdák számára a felügyeleti lehetőségek egy részhalmazát adja meg a többi regisztrációs módszerhez képest. További információ: a [felhasználói regisztráció által támogatott műveletek, jelszavak és egyéb beállítások](ios-user-enrollment-supported-actions.md) , valamint az [iOS és a iPadOS felhasználói regisztrációjának beállítása](ios-user-enrollment.md).
+A felhasználó regisztrálása a rendszergazdák számára a felügyeleti lehetőségek egy részhalmazát adja meg a többi regisztrációs módszerhez képest. További információkért lásd: [felhasználói regisztráció által támogatott műveletek, jelszavak és egyéb beállítások](ios-user-enrollment-supported-actions.md) , valamint az [iOS/iPadOS és a iPadOS felhasználói regisztrációjának beállítása](ios-user-enrollment.md).
 
 ## <a name="apple-school-manager"></a>Apple School Manager
 
@@ -72,7 +72,7 @@ Az Apple School Manager egy eszközvásárlási és -regisztrációs program isk
 
 ## <a name="apple-configurator"></a>Apple Configurator
 
-iOS-eszközök regisztrálhatók a Mac számítógépen futó Apple Configuratorral is. Az eszközök előkészítéséhez csatlakoztassa őket USB-kapcsolaton keresztül, és telepítsen regisztrációs profilt. Az Apple Configurator használatával kétféle módon lehet regisztrálni az eszközöket:
+IOS/iPadOS-eszközöket regisztrálhat Mac számítógépeken futó Apple konfigurátor használatával. Az eszközök előkészítéséhez csatlakoztassa őket USB-kapcsolaton keresztül, és telepítsen regisztrációs profilt. Az Apple Configurator használatával kétféle módon lehet regisztrálni az eszközöket:
 
 - Regisztrálás a Beállítási asszisztenssel – ez a folyamat törli az eszköz összes adatát, felkészíti az eszközt a Beállítási asszisztens futtatására, és telepíti a cég szabályzatait az eszköz új felhasználójának.
 - Közvetlen regisztrálás – ez a folyamat nem törli az eszköz összes adatát, és előre definiált szabályzattal regisztrálja azt. A módszer felhasználói affinitás nélküli eszközökkel használható.
@@ -89,11 +89,11 @@ Felhasználói affinitás szükséges az alábbiak támogatásához:
 - Feltételes hozzáférés az e-mailekhez és a vállalati adatszolgáltatásokhoz
 - Vállalati portál alkalmazás
 
-### <a name="how-users-enroll-corporate-owned-ios-devices-with-user-affinity"></a>A vállalat által birtokolt iOS-eszközök regisztrálása felhasználói affinitás használatával
+### <a name="how-users-enroll-corporate-owned-iosipados-devices-with-user-affinity"></a>Vállalati tulajdonú iOS-/iPadOS-eszközök felhasználói affinitással való regisztrálása a felhasználók számára
 
 1. Amikor a felhasználók bekapcsolják az eszközüket, megjelenik a Beállítási asszisztens befejezését kérő üzenet.
 2. A telepítés befejezése után a rendszer kéri a felhasználóktól az Apple ID azonosítójuk megadását. Az Apple ID azonosítót azért kell megadni, hogy az eszköz telepíthesse a Céges portál alkalmazást.
-3. Az iOS-eszköz automatikusan telepíti a Céges portál alkalmazást az App Store-ból.
+3. Az iOS/iPadOS eszköz automatikusan telepíti a Céges portál alkalmazást az App Store áruházból.
 4. A felhasználóknak el kell indítaniuk a Céges portál alkalmazást, és be kell jelentkezniük az Intune-előfizetésükhöz társított hitelesítő adatok (mint az egyszerű felhasználónév vagy UPN) használatával.
 5. Bejelentkezés után a regisztráció kész. A felhasználók ezután az összes funkciójával együtt használhatják az eszközt.
 
@@ -105,4 +105,4 @@ Ha szükség van a felhasználói affinitásra, az eszköz regisztrálása előt
 
 ## <a name="see-also"></a>További információ
 
-[IOS-eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune](https://support.microsoft.com/help/4039809)
+[IOS-/iPadOS-eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune](https://support.microsoft.com/help/4039809)

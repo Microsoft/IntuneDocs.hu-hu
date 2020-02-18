@@ -19,12 +19,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 328a578f4d2ada41bed17839f1f85b3b9add80fa
-ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
+ms.openlocfilehash: 9cb323dc6f8110d77343fb11c9e0a1c40f9e3cd8
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75885952"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77415278"
 ---
 # <a name="troubleshoot-device-enrollment-in-microsoft-intune"></a>Az eszközök regisztrálásának hibája Microsoft Intune
 
@@ -36,7 +36,7 @@ Ez a cikk az [eszközök regisztrálásával](device-enrollment.md) kapcsolatos 
 A hibaelhárítás megkezdése előtt ellenőrizze, hogy az Intune megfelelően van-e konfigurálva a regisztráláshoz. Ezekről a konfigurációs követelményekről itt olvashat:
 
 - [Felkészülés az eszközök regisztrálására a Microsoft Intune-ban](../fundamentals/setup-steps.md)
-- [iOS- és Mac-eszközök kezelésének beállítása](../ios-enroll.md)
+- [IOS-/iPadOS-és Mac-eszközök felügyeletének beállítása](../ios-enroll.md)
 - [Windowsos eszközök kezelésének beállítása](windows-enroll.md)
 - [Android-eszközök kezelésének beállítása](android-enroll.md) – nincs szükség további lépésekre
 
@@ -49,7 +49,7 @@ Azt is biztosíthatja, hogy a felhasználó eszközén megfelelően legyen beál
 A felügyelt eszközök felhasználói össze tudják gyűjteni a regisztrációs és diagnosztikai naplókat, hogy átnézhesse őket. A naplók felhasználók általi gyűjtésére vonatkozó utasítások itt találhatók:
 
 - [Az Android regisztrálási hibáinak elküldése a rendszergazdának](https://docs.microsoft.com/intune-user-help/send-enrollment-errors-to-your-it-admin-android)
-- [Az iOS-hibák elküldése a rendszergazdának](https://docs.microsoft.com/intune-user-help/send-errors-to-your-it-admin-ios)
+- [IOS/iPadOS-hibák elküldése a rendszergazdának](https://docs.microsoft.com/intune-user-help/send-errors-to-your-it-admin-ios)
 
 
 ## <a name="general-enrollment-issues"></a>Eszközök regisztrálásával kapcsolatos általános problémák
@@ -93,7 +93,7 @@ Az eszközszámkorlát elérésének elkerüléséhez mindig távolítsa el a m�
 
 4. Ha nem sikerül, ellenőrizze, hogy a felhasználói hitelesítő adatokat megfelelően szinkronizálta-e a rendszer az Azure Active Directoryval.
 
-5. Ha a felhasználó bejelentkezése sikerül, egy iOS-eszköz kérni fogja, hogy telepítse az Intune Vállalati portál alkalmazást, és regisztráljon. Az Android-eszközökön manuálisan kell telepítenie az Intune Vállalati portál alkalmazást, amelyet követően újból megpróbálkozhat a regisztrációval.
+5. Ha a felhasználó sikeresen bejelentkezik, az iOS/iPadOS eszköz kérni fogja, hogy telepítse a Intune Céges portál alkalmazást, és regisztrálja. Az Android-eszközökön manuálisan kell telepítenie az Intune Vállalati portál alkalmazást, amelyet követően újból megpróbálkozhat a regisztrációval.
 
 ### <a name="mdm-authority-not-defined"></a>Nincs megadva mobileszköz-kezelési szolgáltató
 **Hiba:** Megjelenik egy **Nincs megadva mobileszköz-kezelési szolgáltató** hibaüzenet.
@@ -244,23 +244,23 @@ A következő lépésekben csupán a tanúsítvány megfelelő telepítésének 
 Ha a kiszolgálótanúsítványt megfelelően telepítette, az eredményeknél csak pipák jelennek meg. Ha a fenti probléma továbbra sem szűnt meg, piros X jelenik meg a jelentés „Certificate Name Matches” (Tanúsítványnév-egyezések) és „SSL Certificate is correctly Installed” (Az SSL-tanúsítvány megfelelő telepítése) részében.
 
 
-## <a name="ios-issues"></a>iOS-problémák
+## <a name="iosipados-issues"></a>iOS/iPadOS problémák
 
-### <a name="ios-enrollment-errors"></a>Az iOS beléptetési hibái
-A következő táblázat azon hibákat tartalmazza, melyeket iOS-eszközök az Intune-ban való regisztrálásakor tapasztalhatnak a végfelhasználók.
+### <a name="iosipados-enrollment-errors"></a>iOS-/iPadOS-regisztrálási hibák
+A következő táblázat felsorolja azokat a hibákat, amelyeket a végfelhasználók láthatnak az iOS/iPadOS-eszközök Intune-beli regisztrálásakor.
 
 |Hibaüzenet|Probléma|Megoldás|
 |-------------|-----|----------|
-|NoEnrollmentPolicy|Nem található eszközregisztrációs szabályzat|Ellenőrizze, hogy az összes regisztrációs előfeltétel, mint például az Apple Push Notification szolgáltatás (APNs) tanúsítványa konfigurálva van-e, illetve azt, hogy az „iOS mint platform” engedélyezve van-e. Útmutatásért tekintse meg a [Set up iOS and Mac device management](../ios-enroll.md) (iOS- és Mac-eszközök kezelésének beállítása) című cikket.|
-|DeviceCapReached|A már regisztrált mobileszközök száma túl magas.|A felhasználónak el kell távolítania az aktuálisan regisztrált mobileszközeit a Céges portálról, mielőtt másikat regisztrálhatna. Kövesse a megfelelő eszköz típusára vonatkozó utasításokat: [Android](https://docs.microsoft.com/intune-user-help/unenroll-your-device-from-intune-android), [iOS](https://docs.microsoft.com/intune-user-help/unenroll-your-device-from-intune-ios), [Windows](https://docs.microsoft.com/intune-user-help/unenroll-your-device-from-intune-windows).|
-|APNSCertificateNotValid|Probléma merült fel azzal a tanúsítvánnyal kapcsolatban, amely lehetővé teszi a mobileszköz és a céges hálózat közötti kommunikációt.<br /><br />|Az Apple Push Notification Service (APNs) révén elérhetők a regisztrált iOS-eszközök. A következő esetekben a regisztráció meghiúsul és ez az üzenet jelenik meg:<ul><li>Az APNs-tanúsítvány beszerzésének lépéseit nem végezték el, vagy</li><li>Az APNs-tanúsítvány lejárt.</li></ul>A felhasználók konfigurálásához olvassa el [Az Active Directory szinkronizálása és felhasználók hozzáadása az Intune szolgáltatáshoz](../fundamentals/users-add.md) című szakaszt, valamint a [felhasználók és eszközök rendszerezésével](../fundamentals/groups-add.md) kapcsolatos tudnivalókat.|
-|AccountNotOnboarded|Probléma merült fel azzal a tanúsítvánnyal kapcsolatban, amely lehetővé teszi a mobileszköz és a céges hálózat közötti kommunikációt.<br /><br />|Az Apple Push Notification Service (APNs) révén elérhetők a regisztrált iOS-eszközök. A következő esetekben a regisztráció meghiúsul és ez az üzenet jelenik meg:<ul><li>Az APNs-tanúsítvány beszerzésének lépéseit nem végezték el, vagy</li><li>Az APNs-tanúsítvány lejárt.</li></ul>További információ: [Az iOS kezelésének beállítása a Microsoft Intune-nal](../ios-enroll.md).|
-|DeviceTypeNotSupported|Lehet, hogy a felhasználó nem iOS-eszközzel próbált meg regisztrálni. A regisztrálni próbált mobileszköz típusa nem támogatott.<br /><br />Győződjön meg róla, hogy az eszközön az iOS 8.0-ás vagy újabb verziója fut.<br /><br />|Győződjön meg róla, hogy a felhasználó eszközén 8.0-ás vagy újabb iOS-verziót fut.|
-|UserLicenseTypeInvalid|A mobileszköz nem regisztrálható, mert a felhasználói fiók még nem tagja egy szükséges felhasználói csoportnak.<br /><br />|Ahhoz, hogy a felhasználók regisztrálhassák eszközeiket, a megfelelő felhasználói csoport tagjának kell lenniük. Ez az üzenet azt jelenti, hogy nem rendelkeznek a megfelelő licenctípussal a mobileszköz-kezelő szolgáltatóhoz. Például ez a hiba jelenik meg, ha az alábbi állítások közül mindkettő igaz:<ol><li>Az Intune van beállítva mobileszköz-kezelési szolgáltatóként</li><li>Egy System Center 2012 R2 Configuration Manager-licencet használnak.</li></ol>További információért tekintse át az alábbi cikkeket:<br /><br />Olvassa el [Az iOS és Mac kezelésének beállítása a Microsoft Intune-nal](../ios-enroll.md) című szakaszt, illetve a felhasználók konfigurálásával kapcsolatban [Az Active Directory szinkronizálása és felhasználók hozzáadása az Intune szolgáltatáshoz](../fundamentals/users-add.md) című szakaszt, valamint a [felhasználók és eszközök rendszerezésével](../fundamentals/groups-add.md) kapcsolatos tudnivalókat.|
+|NoEnrollmentPolicy|Nem található eszközregisztrációs szabályzat|Győződjön meg arról, hogy az összes regisztrációs előfeltétel, például a Apple Push Notification Service (APNs) tanúsítvány be van állítva, és hogy az "iOS/iPadOS as a platform" engedélyezve van. Útmutatásért lásd: [iOS-/iPadOS-és Mac-eszközök kezelésének beállítása](../ios-enroll.md).|
+|DeviceCapReached|A már regisztrált mobileszközök száma túl magas.|A felhasználónak el kell távolítania az aktuálisan regisztrált mobileszközeit a Céges portálról, mielőtt másikat regisztrálhatna. Tekintse meg az Ön által használt eszköz típusára vonatkozó utasításokat: [Android](https://docs.microsoft.com/intune-user-help/unenroll-your-device-from-intune-android), [iOS/iPadOS](https://docs.microsoft.com/intune-user-help/unenroll-your-device-from-intune-ios), [Windows](https://docs.microsoft.com/intune-user-help/unenroll-your-device-from-intune-windows).|
+|APNSCertificateNotValid|Probléma merült fel azzal a tanúsítvánnyal kapcsolatban, amely lehetővé teszi a mobileszköz és a céges hálózat közötti kommunikációt.<br /><br />|A Apple Push Notification Service (APNs) biztosítja a regisztrált iOS/iPadOS-eszközökhöz való kapcsolódáshoz szükséges csatornát. A következő esetekben a regisztráció meghiúsul és ez az üzenet jelenik meg:<ul><li>Az APNs-tanúsítvány beszerzésének lépéseit nem végezték el, vagy</li><li>Az APNs-tanúsítvány lejárt.</li></ul>A felhasználók konfigurálásához olvassa el [Az Active Directory szinkronizálása és felhasználók hozzáadása az Intune szolgáltatáshoz](../fundamentals/users-add.md) című szakaszt, valamint a [felhasználók és eszközök rendszerezésével](../fundamentals/groups-add.md) kapcsolatos tudnivalókat.|
+|AccountNotOnboarded|Probléma merült fel azzal a tanúsítvánnyal kapcsolatban, amely lehetővé teszi a mobileszköz és a céges hálózat közötti kommunikációt.<br /><br />|A Apple Push Notification Service (APNs) biztosítja a regisztrált iOS/iPadOS-eszközökhöz való kapcsolódáshoz szükséges csatornát. A következő esetekben a regisztráció meghiúsul és ez az üzenet jelenik meg:<ul><li>Az APNs-tanúsítvány beszerzésének lépéseit nem végezték el, vagy</li><li>Az APNs-tanúsítvány lejárt.</li></ul>További információkért tekintse át [az iOS/iPadOS és a Mac Management beállítása a Microsoft Intunekal](../ios-enroll.md)című témakört.|
+|DeviceTypeNotSupported|Lehet, hogy a felhasználó nem iOS-eszközzel próbált meg regisztrálni. A regisztrálni próbált mobileszköz típusa nem támogatott.<br /><br />Győződjön meg arról, hogy az eszközön a 8,0-es vagy újabb iOS-/iPadOS-verzió fut.<br /><br />|Győződjön meg arról, hogy a felhasználó eszközén a 8,0-es vagy újabb iOS-/iPadOS-verzió fut.|
+|UserLicenseTypeInvalid|A mobileszköz nem regisztrálható, mert a felhasználói fiók még nem tagja egy szükséges felhasználói csoportnak.<br /><br />|Ahhoz, hogy a felhasználók regisztrálhassák eszközeiket, a megfelelő felhasználói csoport tagjának kell lenniük. Ez az üzenet azt jelenti, hogy nem rendelkeznek a megfelelő licenctípussal a mobileszköz-kezelő szolgáltatóhoz. Például ez a hiba jelenik meg, ha az alábbi állítások közül mindkettő igaz:<ol><li>Az Intune van beállítva mobileszköz-kezelési szolgáltatóként</li><li>Egy System Center 2012 R2 Configuration Manager-licencet használnak.</li></ol>További információért tekintse át az alábbi cikkeket:<br /><br />Tekintse át az [iOS-/iPadOS-és Mac-kezelés beállítása a Microsoft Intune](../ios-enroll.md) és a [szinkronizálási Active Directory](../fundamentals/users-add.md) felhasználók beállításával és a felhasználók [és eszközök rendszerezésével](../fundamentals/groups-add.md)kapcsolatos tudnivalókat ismertető témakört.|
 |MdmAuthorityNotDefined|A mobileszköz-kezelő szolgáltató még nincs megadva.<br /><br />|A mobileszköz-kezelő szolgáltató még nincs megadva az Intune-ban.<br /><br />Tekintse meg az 1. elemet [Az első lépések a Microsoft Intune 30 napos próbaverziójában](../fundamentals/free-trial-sign-up.md) „6. lépés: Mobileszközök regisztrálása és alkalmazások telepítése” szakaszában.|
 
 ### <a name="devices-are-inactive-or-the-admin-console-cant-communicate-with-them"></a>Az eszközök inaktívak, vagy a felügyeleti konzol nem tud kommunikálni velük
-**Probléma:** Az iOS-eszközök nem jelentkeznek be az Intune szolgáltatásba. Az eszközök csak a szolgáltatásba való rendszeres bejelentkezéssel őrizhetik meg a vállalati erőforrásokhoz való hozzáférési jogosultságukat. Ha az eszközök rendszeres bejelentkezése nem történik meg:
+**Probléma:** az iOS/iPadOS-eszközök nem ellenőrzik az Intune szolgáltatást. Az eszközök csak a szolgáltatásba való rendszeres bejelentkezéssel őrizhetik meg a vállalati erőforrásokhoz való hozzáférési jogosultságukat. Ha az eszközök rendszeres bejelentkezése nem történik meg:
 
 - Nem kaphatják meg a szabályzatot, az alkalmazásokat és a távoli parancsokat az Intune szolgáltatástól.
 - A felügyeleti konzolon **Nem megfelelő** felügyeleti állapotúnak látszanak.
@@ -268,15 +268,15 @@ A következő táblázat azon hibákat tartalmazza, melyeket iOS-eszközök az I
 
 **Megoldás:** Az alábbi megoldások megosztásával segíthet a végfelhasználóknak visszaszerezni a vállalati erőforrásokhoz való hozzáférési jogosultságukat.
 
-Amikor a felhasználók elindítják a Vállalati portál iOS-alkalmazást, megállapítható, hogy az eszköz kapcsolata megszakadt-e az Intune-nal. Ha az alkalmazás azt észleli, hogy nincs kapcsolat, automatikusan megpróbál szinkronizálni az Intune-nal az újrakapcsolódáshoz, és a felhasználók a következő értesítést fogják látni: **A szinkronizálási kísérlet folyamatban van...** .
+Ha a felhasználók elindítják az iOS/iPadOS Céges portál alkalmazást, megtudhatja, hogy az eszközük elvesztette-e az Intune-nal való kapcsolatfelvételt. Ha az alkalmazás azt észleli, hogy nincs kapcsolat, automatikusan megpróbál szinkronizálni az Intune-nal az újrakapcsolódáshoz, és a felhasználók a következő értesítést fogják látni: **A szinkronizálási kísérlet folyamatban van...** .
 
   ![A szinkronizálási kísérlet folyamatban van – értesítés](./media/troubleshoot-device-enrollment-in-intune/ios_cp_app_trying_to_sync_notification.png)
 
-Ha a szinkronizálás sikeres, a **Sikeres szinkronizálás** beágyazott értesítés jelenik meg a Vállalati portál iOS-alkalmazásban, amely azt jelzi, hogy az eszköz kifogástalan állapotban van.
+Ha a szinkronizálás sikeres, a **szinkronizálás sikeres** beágyazott értesítés jelenik meg az iOS/iPadOS céges portál alkalmazásban, ami azt jelzi, hogy az eszköz kifogástalan állapotban van.
 
   ![Sikeres szinkronizálás – értesítés](./media/troubleshoot-device-enrollment-in-intune/ios_cp_app_sync_successful_notification.png)
 
-Ha a szinkronizálás sikertelen, a felhasználók a **Nem lehet szinkronizálni** beágyazott értesítést fogják látni a Vállalati portál iOS-alkalmazásban.
+Ha a szinkronizálás sikertelen, a felhasználók **nem tudják szinkronizálni** a beágyazott értesítéseket az iOS/iPadOS céges portál alkalmazásban.
 
   ![Nem lehet szinkronizálni – értesítés](./media/troubleshoot-device-enrollment-in-intune/ios_cp_app_unable_to_sync_notification.png)
 
@@ -287,9 +287,9 @@ A probléma elhárításához a felhasználóknak a **Nem lehet szinkronizálni*
 Regisztráció után az eszközök ismét kifogástalan állapotba kerülnek, és visszakapják a vállalati erőforrásokhoz való hozzáférési jogosultságukat.
 
 ### <a name="verify-ws-trust-13-is-enabled"></a>Ellenőrizze, hogy a WS-Trust 1.3 engedélyezve van-e
-**Probléma:** Az eszközregisztrációs programhoz (DEP) tartozó iOS-eszközöket nem lehet regisztrálni
+**Probléma** Készülékregisztrációs program (DEP) iOS/iPadOS-eszközök nem regisztrálhatók
 
-A felhasználói affinitással rendelkező DEP-eszközök regisztrálása esetében a felhasználói jogkivonat kérelmezéséhez engedélyezni kell a WS-Trust 1.3 Username/Mixed végpontot. Az Active Directory alapértelmezés szerint engedélyezi ezt a végpontot. A Get-AdfsEndpoint PowerShell-parancsmagot futtatva, majd a trust/13/UsernameMixed végpontot megkeresve láthatja az engedélyezett végpontok listáját. Példa:
+A felhasználói affinitással rendelkező DEP-eszközök regisztrálása esetében a felhasználói jogkivonat kérelmezéséhez engedélyezni kell a WS-Trust 1.3 Username/Mixed végpontot. Az Active Directory alapértelmezés szerint engedélyezi ezt a végpontot. A Get-AdfsEndpoint PowerShell-parancsmagot futtatva, majd a trust/13/UsernameMixed végpontot megkeresve láthatja az engedélyezett végpontok listáját. Például:
 
       Get-AdfsEndpoint -AddressPath “/adfs/services/trust/13/UsernameMixed”
 
@@ -301,7 +301,7 @@ További információt az [Ajánlott eljárások az Active Directory összevoná
 
 
 ### <a name="profile-installation-failed"></a>Profiltelepítési hiba
-**Hiba:** **Profiltelepítési hiba** üzenet jelenik meg egy iOS-eszközön.
+**Probléma:** Egy felhasználó egy iOS-/iPadOS-eszközön **sikertelenül** kapott egy profilt.
 
 ### <a name="troubleshooting-steps-for-failed-profile-installation"></a>Sikertelen profiltelepítés hibaelhárításának lépései
 
@@ -313,9 +313,9 @@ További információt az [Ajánlott eljárások az Active Directory összevoná
 
 4. Navigáljon a [https://portal.manage.microsoft.com](https://portal.manage.microsoft.com) oldalra, és telepítse a profilt a rendszer kérésekor.
 
-5. Ellenőrizze, hogy az iOS-hez készült Safari az alapértelmezett böngésző-e, és a cookie-k engedélyezettek-e.
+5. Ellenőrizze, hogy az iOS/iPadOS Safari az alapértelmezett böngésző-e, és hogy a cookie-k engedélyezve vannak-e.
 
-### <a name="users-ios-device-is-stuck-on-an-enrollment-screen-for-more-than-10-minutes"></a>A felhasználó iOS-eszköze több mint 10 percig a regisztrációs képernyőn marad
+### <a name="users-iosipados-device-is-stuck-on-an-enrollment-screen-for-more-than-10-minutes"></a>A felhasználó iOS-/iPadOS-eszköze több mint 10 percen belül beragadt a beléptetési képernyőn
 
 **Probléma**: Egy regisztrálandó eszköz elakadhat az alábbi két képernyő egyikén:
 - A végső Microsoft-konfigurációra való várakozás során
@@ -323,11 +323,11 @@ További információt az [Ajánlott eljárások az Active Directory összevoná
 
 A probléma a következő esetekben jelentkezhet:
 - átmeneti szolgáltatáskimaradás tapasztalható az Apple szolgáltatásaiban, vagy
-- az iOS-regisztráció a táblán látható módon VPP-tokenek használatára van beállítva, de a VPP-token problémába ütközik.
+- az iOS-/iPadOS-regisztráció VPP-tokenek használatára van beállítva, ahogy az a táblázatban látható, de a VPP-tokennél valami nem stimmel.
 
 | Regisztrációs beállítások | Érték |
 | ---- | ---- |
-| Platfésm | iOS |
+| Platform | iOS/iPadOS |
 | Felhasználói affinitás | Felhasználói affinitással rendelkező eszközök regisztrálása |
 |Hitelesítés a Céges portállal az Apple Beállítási asszisztense helyett | Igen |
 | A Céges portál telepítése a VPP-vel | Token használata: token címe |
@@ -435,7 +435,7 @@ Az előző fiók fióktanúsítványa továbbra is megtalálható a számítóg�
 |0x80043008, 0x80CF3008|Nem sikerült elindítani a Microsoft Online Management Updates szolgáltatást.|Lépjen kapcsolatba a Microsoft ügyfélszolgálatával a [Hogyan kérhet támogatást az Intune-hoz](../fundamentals/get-support.md) című szakaszban leírtak szerint.|
 |0x80043009, 0x80CF3009|Az ügyfélszámítógép már be van léptetve a szolgáltatásba.|Az ügyfélszámítógépet el kell távolítania, mielőtt újból beléptetheti a szolgáltatásba.|
 |0x8004300B, 0x80CF300B|Az ügyfélszoftver telepítési csomagja nem futtatható, mert az ügyfélen futó Windows-verzió nem támogatott.|Az Intune nem támogatja az ügyfélszámítógépen futó Windows-verziót.|
-|0xAB2|A Windows Installer nem tud hozzáférni a VBScript futtatókörnyezethez egy egyéni művelet végrehajtásához.|A hibát egy egyéni művelet okozza, amely dinamikus kötésű kódtárakon (DLL-eken) alapul. Előfordulhat, hogy a DLL hibaelhárításához a következő témakörben ismertetett eszközöket kell használnia: [Microsoft Support KB198038: Useful Tools for Package and Deployment Issues](https://support.microsoft.com/kb/198038).|
+|0xAB2|A Windows Installer nem tud hozzáférni a VBScript futtatókörnyezethez egy egyéni művelet végrehajtásához.|A hibát egy egyéni művelet okozza, amely dinamikus kötésű kódtárakon (DLL-eken) alapul. Előfordulhat, hogy a DLL hibáinak elhárításához a következő témakörben ismertetett eszközöket kell használnia: [Microsoft Support KB198038: Useful Tools for Package and Deployment Issues](https://support.microsoft.com/kb/198038) (Hasznos eszközök csomag- és telepítési problémák esetére).|
 |0x80cf0440|Megszakadt a kapcsolat a szolgáltatásvégponttal.|A próbafiók vagy a díjköteles fiók fel van függesztve. Hozzon létre egy új próbafiókot vagy díjköteles fiókot, és végezze el újból a regisztrálást.|
 
 ## <a name="next-steps"></a>További lépések

@@ -1,7 +1,7 @@
 ---
-title: IOS-eszközök regisztrálása – felhasználó beléptetése
+title: IOS-/iPadOS-eszközök regisztrálása – felhasználó beléptetése
 titleSuffix: Microsoft Intune
-description: Ismerje meg, hogyan állíthatja be az iOS-és a iPadOS-felhasználók regisztrációját.
+description: Ismerje meg, hogyan állíthatja be az iOS/iPadOS és a iPadOS felhasználói regisztrációját.
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
@@ -18,16 +18,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0872eef38e3ea5a70ebb64d3ae3c62069045fa97
-ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
+ms.openlocfilehash: d22d8d4772754fddbd366610402d64acc28ffc65
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76754624"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77415264"
 ---
-# <a name="set-up-ios-and-ipados-user-enrollment-preview"></a>IOS-és iPadOS-felhasználói regisztráció beállítása (előzetes verzió)
+# <a name="set-up-iosipados-and-ipados-user-enrollment-preview"></a>IOS/iPadOS és iPadOS felhasználói regisztráció beállítása (előzetes verzió)
 
-Beállíthatja az Intune-t az iOS-és iPadOS-eszközök regisztrálásához az Apple felhasználói beléptetési folyamatával. A felhasználó beléptetésével a rendszergazdák a felügyeleti lehetőségek egyszerűsített részhalmazát érhetik el a többi regisztrációs módszerhez képest.
+Beállíthatja az Intune-t az iOS-/iPadOS-és iPadOS-eszközök regisztrálásához az Apple felhasználói beléptetési folyamatával. A felhasználó beléptetésével a rendszergazdák a felügyeleti lehetőségek egyszerűsített részhalmazát érhetik el a többi regisztrációs módszerhez képest.
 
 További információ a felhasználói regisztrációval elérhető lehetőségekről: a [felhasználói regisztráció által támogatott műveletek, jelszavak és egyéb beállítások](ios-user-enrollment-supported-actions.md).
 
@@ -43,13 +43,13 @@ További információ a felhasználói regisztrációval elérhető lehetősége
 
 A beléptetési profil meghatározza az eszközök egy csoportjára alkalmazott beállításokat a regisztráció során. 
 
-1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **ios** > **iOS-regisztráció** > **regisztrációs típusok (előzetes verzió)**  > **profil létrehozása** > **iOS/iPadOS**. Ez a profil határozza meg, hogy az iOS-és iPadOS-végfelhasználók milyen regisztrációs élményt kapnak a vállalati Apple-módszerekkel nem regisztrált eszközökön. Ha módosítani szeretné a módosításokat, ezt a profilt a létrehozása után is szerkesztheti.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **ios** > **iOS-regisztráció** > **regisztrációs típusok (előzetes verzió)**  > **profil létrehozása** > **iOS/iPadOS**. Ez a profil határozza meg, hogy az iOS-/iPadOS-és iPadOS-végfelhasználók milyen regisztrációs élményt kapnak a vállalati Apple-módszerekkel nem regisztrált eszközökön. Ha módosítani szeretné a módosításokat, ezt a profilt a létrehozása után is szerkesztheti.
 
     ![Apple beléptetési profil létrehozása](./media/ios-user-enrollment/create-profile.png)
 
-2. Az **alapvető beállítások** lapon adja meg a profil **nevét** és **leírását** felügyeleti célból. A felhasználók nem látják ezeket az adatokat. A **Név** mező felhasználásával dinamikus csoportot hozhat létre az Azure Active Directoryban. Használja a profilnevet az enrollmentProfileName paraméter meghatározásához, hogy ezzel a regisztrációs profillal rendelhesse hozzá az eszközöket. További információk az [Azure Active Directory-alapú dinamikus csoportokról](https://docs.microsoft.com/azure/active-directory/active-directory-groups-dynamic-membership-azure-portal#rules-for-devices).
+2. Az **alapvető beállítások** lapon adja meg a profil **nevét** és **leírását** felügyeleti célból. A felhasználók nem látják ezeket az adatokat. A **Név** mező felhasználásával dinamikus csoportot hozhat létre az Azure Active Directoryban. Használja a profilnevet az enrollmentProfileName paraméter meghatározásához, hogy ezt a regisztrációs profilt rendelhesse hozzá az eszközökhöz. További információk az [Azure Active Directory-alapú dinamikus csoportokról](https://docs.microsoft.com/azure/active-directory/active-directory-groups-dynamic-membership-azure-portal#rules-for-devices).
 
-    ![Alapismeretek lap](./media/ios-user-enrollment/basics-page.png)
+    ![Alapvető beállítások lap](./media/ios-user-enrollment/basics-page.png)
 
 
 3. Válassza a **Tovább** elemet.
@@ -60,7 +60,7 @@ A beléptetési profil meghatározza az eszközök egy csoportjára alkalmazott 
 
     - **Eszközök beléptetése**: a profil összes felhasználója az eszközök regisztrálását fogja használni.
     - **Felhasználó beléptetése**: a profil összes felhasználója a felhasználó beléptetését fogja használni.
-    - **Döntés a felhasználó választása alapján**: a csoport összes felhasználója megadhatja, hogy melyik regisztrációs típust kívánja használni. Amikor a felhasználók regisztrálják az eszközeiket, egy lehetőség közül választhatnak, hogy az eszköz tulajdonosa és a **(vállalat) tulajdonában** **van** -e az eszköz. Ha az utóbbit választják, az eszköz regisztrálása az eszközök regisztrálásával történik. Ha a felhasználó úgy dönt, hogy az **eszköz tulajdonosa**, akkor egy másik lehetőség is gondoskodik a teljes eszköz védelméről, vagy csak a biztonságos munkavégzéssel kapcsolatos alkalmazások és adatmennyiségek biztonságáról. A végfelhasználó annak kiválasztása, hogy az eszköz tulajdonosa-e, meghatározza, hogy a regisztráció milyen típusú legyen implementálva az eszközön. Ezt a felhasználói választ az Intune-ban található eszköz tulajdonosi attribútuma is tükrözi. További információ a felhasználói élményről: [IOS-eszköz hozzáférésének beállítása a vállalati erőforrásokhoz](https://docs.microsoft.com/intune-user-help/enroll-your-device-in-intune-ios).
+    - **Döntés a felhasználó választása alapján**: a csoport összes felhasználója megadhatja, hogy melyik regisztrációs típust kívánja használni. Amikor a felhasználók regisztrálják az eszközeiket, egy lehetőség közül választhatnak, hogy az eszköz tulajdonosa és a **(vállalat) tulajdonában** **van** -e az eszköz. Ha az utóbbit választják, az eszköz regisztrálása az eszközök regisztrálásával történik. Ha a felhasználó úgy dönt, hogy az **eszköz tulajdonosa**, akkor egy másik lehetőség is gondoskodik a teljes eszköz védelméről, vagy csak a biztonságos munkavégzéssel kapcsolatos alkalmazások és adatmennyiségek biztonságáról. A végfelhasználó annak kiválasztása, hogy az eszköz tulajdonosa-e, meghatározza, hogy a regisztráció milyen típusú legyen implementálva az eszközön. Ezt a felhasználói választ az Intune-ban található eszköz tulajdonosi attribútuma is tükrözi. Ha többet szeretne megtudni a felhasználói élményről, tekintse meg az [iOS/iPadOS eszköz hozzáférésének beállítása a vállalati erőforrásokhoz](https://docs.microsoft.com/intune-user-help/enroll-your-device-in-intune-ios)című témakört.
     
 5. Válassza a **Tovább** elemet.
 

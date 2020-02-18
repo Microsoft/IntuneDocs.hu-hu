@@ -1,6 +1,6 @@
 ---
-title: Elveszett iOS-eszközök megkeresése az Azure-beli Microsoft Intune-ban | Microsoft Docs
-description: Keresse meg az elveszett vagy ellopott iOS eszközöket a Microsoft Intune eszközkeresési funkciójával. Az eszközkeresési művelet használatakor biztonsági és adatvédelmi információkat is kaphat.
+title: Elveszett iOS/iPadOS-eszközök megkeresése az Microsoft Intune-Azure-ban | Microsoft Docs
+description: Az elveszett vagy ellopott iOS-/iPadOS-eszközök megkereséséhez használja a Microsoft Intune eszközének megkeresése funkcióját. Az eszközkeresési művelet használatakor biztonsági és adatvédelmi információkat is kaphat.
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
@@ -16,22 +16,22 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 817f46558932c074abc37b45d2885496419a0db0
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: dc276a6235fb4951c83b62e3c488145062814728
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73712423"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77415581"
 ---
-# <a name="locate-lost-or-stolen-ios-devices-with-intune"></a>Elveszett vagy ellopott iOS-eszközök megkeresése az Intune-nal
+# <a name="locate-lost-or-stolen-iosipados-devices-with-intune"></a>Elveszett vagy ellopott iOS-/iPadOS-eszközök megkeresése az Intune-nal
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-Az **Eszköz megkeresése** művelettel megjelenítheti térképen az elveszett vagy ellopott iOS-eszközök helyét. Az eszköznek felügyelt módban kell lennie. A művelet használata előtt győződjön meg róla, hogy az eszközt [Elveszett módba](device-lost-mode.md) állította.
+Az elveszett vagy ellopott iOS/iPadOS eszköz helyének lekéréséhez használja az **eszköz megkeresése** műveletet. Az eszköznek felügyelt módban kell lennie. A művelet használata előtt győződjön meg róla, hogy az eszközt [Elveszett módba](device-lost-mode.md) állította.
 
 ## <a name="supported-platforms"></a>Támogatott platformok
 
-- iOS 9.3 és újabb verziók
+- iOS/iPadOS 9,3 és újabb verziók
 
 Ez a funkció nem támogatott a következő rendszereken: 
 - Windows
@@ -42,17 +42,17 @@ Ez a funkció nem támogatott a következő rendszereken:
 ## <a name="locate-a-lost-or-stolen-device"></a>Elveszett vagy ellopott eszköz megkeresése
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
-3. Válassza az **Eszközök**, majd a **Minden eszköz** lehetőséget.
-4. A felügyelt eszközök listájából válasszon ki egy iOS-eszközt, és válassza a **...További** lehetőséget. Majd válassza az **Eszköz megkeresése** távoli műveletet.
+3. Kattintson az **Eszközök**, majd a **Minden eszköz** elemre.
+4. A felügyelt eszközök listájából válassza ki az iOS/iPadOS eszközt, és válassza a **... Továbbiak**. Majd válassza az **Eszköz megkeresése** távoli műveletet.
 5. Miután a rendszer megtalálta az eszközt, megjeleníti annak helyét az **Eszköz megkeresése** panelen.
     ![Egy eszköz Azure-beli Intune-nal való megkeresésének képernyőképe](./media/device-locate/locate-device.png)
 
 
 ## <a name="activate-lost-mode-sound-alert-on-an-ios-device"></a>Az Elveszett üzemmód hangos riasztásának engedélyezése iOS-eszközön
 
-Ha valaki elveszt az iOS 9.3-as vagy újabb rendszerű eszközét, azon távolról aktiválható egy riasztási hang, amely segít megtalálni. Az eszköznek ehhez [Elveszett üzemmódban](device-lost-mode.md) kell lennie.
+Ha valaki elvesztette az iOS/iPadOS 9,3-es vagy újabb eszközét, távolról is aktiválhatja az eszközt riasztási hang lejátszásához, hogy a felhasználó megtalálja. Az eszköznek ehhez [Elveszett üzemmódban](device-lost-mode.md) kell lennie.
 
-Az [Azure Portalbeli Intune-ban](https://aka.ms/intuneportal), válassza az **Eszközök** > **Minden eszköz** > kívánt iOS-eszköz > **Áttekintés** > **További** > **Elveszett üzemmódhoz tartozó hang lejátszása (csak felügyelettel)** lehetőséget.
+A [Azure Portal Intune-ban](https://aka.ms/intuneportal)válassza az **eszközök** > **minden eszköz** lehetőséget > válasszon ki egy IOS/IPadOS-eszközt > **Áttekintés** > **további** > az **elveszett üzemmódú hang lejátszása (csak felügyelet esetén)** .
 
 A hang lejátszása egészen addig folytatódik, amíg a felhasználó le nem tiltja a hangot az eszközön, vagy az eszköz ki nem lép az Elveszett üzemmódból.
 

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0440e2d6f5890b20ccf020c40bb1037bcfcae38
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 1c6383b19943b8c501f86894a8c49b2130cb582a
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74564124"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77414982"
 ---
 # <a name="selectively-wipe-data-using-app-protection-policy-conditional-launch-actions-in-intune"></a>Adatok szelektív törlése az App Protection-szabályzat feltételes indítási műveleteivel az Intune-ban
 
@@ -49,7 +49,7 @@ Ezekkel a beállításokkal egyértelműen megadható az összes vállalati adat
 Az alkalmazásvédelmi szabályzatbeállítások táblázata a **Beállítás**, **Érték** és **Művelet** oszlopokból áll.
 
 ### <a name="ios-policy-settings"></a>iOS-es szabályzatbeállítások
-iOS rendszeren a következő beállításokhoz konfigurálhat műveleteket a **Beállítások** legördülő lista használatával:
+Az iOS/iPadOS esetében a következő beállításokhoz tartozó műveleteket konfigurálhatja a **legördülő menü** használatával:
 - PIN-kód-megadási kísérletek maximális száma
 - Offline türelmi időszak
 - Függetlenített/feltört eszközök
@@ -59,7 +59,7 @@ iOS rendszeren a következő beállításokhoz konfigurálhat műveleteket a **B
 - Eszközmodell(ek)
 - Az eszköz maximálisan engedélyezett veszélyforrása
 
-Az **Eszközmodell(ek)** beállítás használatához adjon meg egy iOS-modellazonosítókat tartalmazó, pontosvesszővel tagolt listát. Ezekben az értékekben nincsenek megkülönböztetve a kis- és a nagybetűk. Az "eszköz modell (ek)" bemenethez tartozó Intune-jelentéskészítésen kívül az iOS-modell azonosítóját a [HockeyApp támogatási dokumentációjának](https://support.hockeyapp.net/kb/client-integration-ios-mac-os-x-tvos/ios-device-types) eszköz típusa oszlopában vagy a [harmadik féltől származó github-tárházban](https://gist.github.com/adamawolf/3048717)találja.<br>
+Az **Eszközmodell(ek)** beállítás használatához adjon meg egy iOS-modellazonosítókat tartalmazó, pontosvesszővel tagolt listát. Ezek az értékek nem tesznek különbséget a kis-és nagybetűk között. Az "eszköz modell (ek)" bemenethez tartozó Intune-jelentéskészítésen kívül az iOS-modell azonosítóját a [HockeyApp támogatási dokumentációjának](https://support.hockeyapp.net/kb/client-integration-ios-mac-os-x-tvos/ios-device-types) eszköz típusa oszlopában vagy a [harmadik féltől származó github-tárházban](https://gist.github.com/adamawolf/3048717)találja.<br>
 Példabemenet: *iPhone5,2; iPhone5,3*
 
 A végfelhasználói eszközökön az Intune-ügyfél az Intune-ban az Application Protection-szabályzatokhoz megadott eszközmodellsztringek egyszerű egyeztetése alapján végez műveleteket. Az egyeztetés teljes mértékben az eszköz által jelentett értéktől függ. Az informatikai rendszergazda számára ajánlatos ellenőrizni, hogy a szándéknak megfelelő viselkedés történik-e, ennek a beállításnak kölönféle eszközgyártókon és modelleken alapuló, kisméretű felhasználói csoportot célzó tesztelésével. Az alapértelmezett érték a **Nincs konfigurálva**.<br>
@@ -85,9 +85,9 @@ Android rendszeren a következő beállításokhoz konfigurálhat műveleteket a
 - Minimális Céges portál verzió
 - Az eszköz maximálisan engedélyezett veszélyforrása
 
-A **minimális céges portál verzió**használatával megadhatja a végfelhasználói eszközön kényszerített céges portál adott minimálisan meghatározott verzióját. Ez a feltételes indítási beállítás lehetővé teszi az értékek megadását a **hozzáférés letiltásához**, az **adatok törléséhez**és a **Figyelmeztetés** lehetséges műveletekhez, ha az egyes értékek nem teljesülnek. Az érték lehetséges formátuma a *[Major] mintázatot követi. [ Minor]* , *[főverzió]. [ Alverzió]. [Build]* vagy *[főverzió]. [ Alverzió]. [Build]. [Változat]* . Mivel előfordulhat, hogy egyes végfelhasználók nem részesítik előnyben az alkalmazások kényszerített frissítését a helyszínen, a "figyelmeztetés" beállítás ideális lehet a beállítás konfigurálásakor. Az Google Play Áruház jó munkát végez, amely csak az alkalmazások frissítéseinek különbözeti bájtjait küldi el, de ez továbbra is nagy mennyiségű adat lehet, amelyet a felhasználó esetleg nem szeretne használni, ha a frissítéskor adatokat használ. A frissítés kényszerítése és a frissített alkalmazások letöltése nem várt adatforgalmi díjat eredményezhet a frissítéskor. Ha be van állítva a **minimális céges portál verziószáma** , az hatással lesz minden olyan végfelhasználóra, aki beolvassa a céges portál és a céges portál jövőbeli verzióinak 5.0.4560.0 verzióját. Ez a beállítás nem lesz hatással a felhasználók olyan Céges portál verzióját használó felhasználóra, amely régebbi, mint a szolgáltatás által kiadott verzió. Az alkalmazás automatikus frissítéseit az eszközön használó végfelhasználók valószínűleg nem fogják látni a szolgáltatásból származó párbeszédpaneleket, mivel azok valószínűleg a legújabb Céges portál-verziót fogják használni. Ez a beállítás csak a regisztrált és a nem regisztrált eszközökön futó alkalmazás-védelemmel rendelkező Android.
+A **minimális céges portál verzió**használatával megadhatja a végfelhasználói eszközön kényszerített céges portál adott minimálisan meghatározott verzióját. Ez a feltételes indítási beállítás lehetővé teszi az értékek megadását a **hozzáférés letiltásához**, az **adatok törléséhez**és a **Figyelmeztetés** lehetséges műveletekhez, ha az egyes értékek nem teljesülnek. Az érték lehetséges formátumai a *[Major] mintát követik. [ Minor]* , *[főverzió]. [ Alverzió]. [Build]* vagy *[főverzió]. [ Alverzió]. [Build]. [Változat]* . Mivel előfordulhat, hogy egyes végfelhasználók nem részesítik előnyben az alkalmazások kényszerített frissítését a helyszínen, a "figyelmeztetés" beállítás ideális lehet a beállítás konfigurálásakor. Az Google Play Áruház jó munkát végez, amely csak az alkalmazások frissítéseinek különbözeti bájtjait küldi el, de ez továbbra is nagy mennyiségű adat lehet, amelyet a felhasználó esetleg nem szeretne használni, ha a frissítéskor adatokat használ. A frissítés kényszerítése és a frissített alkalmazások letöltése nem várt adatforgalmi díjat eredményezhet a frissítéskor. Ha be van állítva a **minimális céges portál verziószáma** , az hatással lesz minden olyan végfelhasználóra, aki beolvassa a céges portál és a céges portál jövőbeli verzióinak 5.0.4560.0 verzióját. Ez a beállítás nem lesz hatással a felhasználók olyan Céges portál verzióját használó felhasználóra, amely régebbi, mint a szolgáltatás által kiadott verzió. Az alkalmazás automatikus frissítéseit az eszközön használó végfelhasználók valószínűleg nem fogják látni a szolgáltatásból származó párbeszédpaneleket, mivel azok valószínűleg a legújabb Céges portál-verziót fogják használni. Ez a beállítás csak a regisztrált és a nem regisztrált eszközökön futó alkalmazás-védelemmel rendelkező Android.
 
-Az **Eszközgyártó(k)** beállítás használatához gépelje be az Android-gyártók pontosvesszővel tagolt felsorolását. Ezekben az értékekben nincsenek megkülönböztetve a kis- és a nagybetűk. Az Intune-jelentéskészítés mellett az eszközök androidos gyártóját is megtalálhatja az eszköz beállításai között. <br>
+Az **Eszközgyártó(k)** beállítás használatához gépelje be az Android-gyártók pontosvesszővel tagolt felsorolását. Ezek az értékek nem tesznek különbséget a kis-és nagybetűk között. Az Intune-jelentéskészítés mellett az eszközök androidos gyártóját is megtalálhatja az eszköz beállításai között. <br>
 Példabemenet: *A gyártó;B gyártó* 
 
 >[!NOTE]

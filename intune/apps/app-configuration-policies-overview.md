@@ -1,7 +1,7 @@
 ---
 title: Alkalmazáskonfigurációs szabályzatok a Microsoft Intune-hoz
 titleSuffix: ''
-description: Ismertető a Microsoft Intune alkalmazáskonfigurációs szabályzatainak iOS- vagy Android-eszközön való használatához.
+description: Ismerje meg, hogyan használhatók az alkalmazás-konfigurációs szabályzatok iOS/iPadOS vagy Android rendszerű eszközön a Microsoft Intuneban.
 keywords: ''
 author: Erikre
 ms.author: erikre
@@ -18,18 +18,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8c9dc1d95806bcddf423bb4d92dbdf4961c15809
-ms.sourcegitcommit: b0d683917af83170f85022b270270d8ced8e301c
+ms.openlocfilehash: a2cf53b26c1617ca7fc493c837e57823c23781bc
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76812479"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77414854"
 ---
 # <a name="app-configuration-policies-for-microsoft-intune"></a>Alkalmazáskonfigurációs szabályzatok a Microsoft Intune-hoz
 
 Az alkalmazás-konfigurációs házirendek segíthetnek az alkalmazások telepítésével kapcsolatos problémák elhárításában azáltal, hogy a konfigurációs beállításokat egy olyan házirendhez rendeli hozzá, amely hozzá van rendelve a végfelhasználók számára az alkalmazás futtatása előtt. Ezt követően a rendszer automatikusan megadja a beállításokat, amikor az alkalmazás konfigurálva van a végfelhasználói eszközön, és a végfelhasználóknak nem kell végrehajtaniuk a műveletet. A konfigurációs beállítások minden alkalmazás esetében egyediek. 
 
-Alkalmazás-konfigurációs szabályzatokat hozhat létre és használhat az iOS-és Android-alkalmazások konfigurációs beállításainak megadásához. Ezek a konfigurációs beállítások lehetővé teszik, hogy az alkalmazások testreszabhatók legyenek az alkalmazások konfigurációjának és felügyeletének használatával. A konfigurációs házirend beállításai akkor használatosak, amikor az alkalmazás ellenőrzi ezeket a beállításokat, általában az alkalmazás első futtatásakor. 
+Alkalmazás-konfigurációs szabályzatokat hozhat létre és használhat az iOS-/iPadOS-és Android-alkalmazások konfigurációs beállításainak megadásához. Ezek a konfigurációs beállítások lehetővé teszik, hogy az alkalmazások testreszabhatók legyenek az alkalmazások konfigurációjának és felügyeletének használatával. A konfigurációs házirend beállításai akkor használatosak, amikor az alkalmazás ellenőrzi ezeket a beállításokat, általában az alkalmazás első futtatásakor. 
 
 Az alkalmazás konfigurációs beállításai például a következők bármelyikének megadását tehetik szükségessé:
 
@@ -71,7 +71,7 @@ A **felügyelt alkalmazások** kiválasztása az eszköz **beléptetési típusa
 ![Eszköz beléptetésének típusa](./media/app-configuration-policies-overview/device-enrollment-type.png)
 
 > [!NOTE]
-> A többszörös identitású alkalmazások, például a Microsoft Outlook esetében a felhasználói beállítások is megtekinthetők. A célzott beérkezett fájlok például figyelembe veszik a felhasználói beállításokat, és nem változtatják meg a konfigurációt. Más paraméterek használatával megadhatja, hogy a felhasználók módosíthatják-e a beállítást. További információ: az [Outlook telepítése iOS-és Android-alkalmazásokhoz konfigurációs beállítások](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune).
+> A többszörös identitású alkalmazások, például a Microsoft Outlook esetében a felhasználói beállítások is megtekinthetők. A célzott beérkezett fájlok például figyelembe veszik a felhasználói beállításokat, és nem változtatják meg a konfigurációt. Más paraméterek használatával megadhatja, hogy a felhasználók módosíthatják-e a beállítást. További információ: az [Outlook telepítése iOS-/iPadOS-és Android-alkalmazásokhoz konfigurációs beállítások](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune).
 
 ## <a name="validate-the-applied-app-configuration-policy"></a>Az alkalmazott alkalmazás-konfigurációs házirend ellenőrzése
 
@@ -93,7 +93,7 @@ Az alkalmazás konfigurációs szabályzatát az alábbi három módszer haszná
 
 ### <a name="ios-configuration-on-unmanaged-devices"></a>iOS-konfiguráció a nem felügyelt eszközökön
 
-Az iOS-konfigurációt az **Intune diagnosztikai naplójában** ellenőrizheti a felügyelt alkalmazások konfigurációjának nem felügyelt eszközein. Az alábbi lépések mellett a Microsoft Edge használatával is elérheti a felügyelt alkalmazás naplófájljait. További információ: a [Microsoft Edge használata iOS rendszeren a felügyelt alkalmazások naplófájljainak eléréséhez](~/apps/manage-microsoft-edge.md#use-microsoft-edge-on-ios-to-access-managed-app-logs).
+Az iOS/iPadOS konfigurációt az **Intune diagnosztikai naplójában** ellenőrizheti a felügyelt alkalmazások konfigurációjának nem felügyelt eszközein. Az alábbi lépések mellett a Microsoft Edge használatával is elérheti a felügyelt alkalmazás naplófájljait. További információ: a [Microsoft Edge használata iOS/iPadOS a felügyelt alkalmazások naplófájljainak eléréséhez](~/apps/manage-microsoft-edge.md#use-microsoft-edge-on-ios-to-access-managed-app-logs).
 
 1. Ha még nincs telepítve az eszközön, töltse le és telepítse a **Microsoft Edge** alkalmazást az App Store áruházból. További információ: [Microsoft Intune védett alkalmazások](apps-supported-intune-apps.md).
 2. Indítsa el a **Microsoft Edge** alkalmazást, és válassza ki a **Névjegy** > **intunehelp** elemet a navigációs sávon.
@@ -137,7 +137,7 @@ Az alkalmazás konfigurációjának részleteinek meg kell egyezniük a bérlőh
 
 ### <a name="ios-configuration-on-managed-devices"></a>iOS-konfiguráció a felügyelt eszközökön
 
-Az iOS-konfigurációt érvényesítheti az **Intune diagnosztikai naplóval** a felügyelt eszközökön a felügyelt alkalmazások konfigurálásához.
+Az iOS/iPadOS konfigurációt érvényesítheti az **Intune diagnosztikai naplóval** a felügyelt eszközökön a felügyelt alkalmazások konfigurálásához.
 
 1. Ha még nincs telepítve az eszközön, töltse le és telepítse a **Microsoft Edge** alkalmazást az App Store áruházból. További információ: [Microsoft Intune védett alkalmazások](apps-supported-intune-apps.md).
 2. Indítsa el a **Microsoft Edge** -t, és válassza ki a **Névjegy** > **intunehelp** elemet a navigációs sávon.
@@ -149,7 +149,7 @@ Az iOS-konfigurációt érvényesítheti az **Intune diagnosztikai naplóval** a
 
 ### <a name="android-configuration-on-managed-devices"></a>Android-konfiguráció a felügyelt eszközökön
 
-Az iOS-konfigurációt érvényesítheti az **Intune diagnosztikai naplóval** a felügyelt eszközökön a felügyelt alkalmazások konfigurálásához.
+Az iOS/iPadOS konfigurációt érvényesítheti az **Intune diagnosztikai naplóval** a felügyelt eszközökön a felügyelt alkalmazások konfigurálásához.
 
 Ha androidos eszközről szeretne naplókat gyűjteni, Önnek vagy a felhasználónak USB-kapcsolaton keresztül le kell töltenie a naplókat az eszközről (vagy az eszközön található **fájlkezelővel** egyenértékű). A lépések a következők:
 
@@ -173,7 +173,7 @@ Ha a naplók egy olyan konfigurációs paramétert mutatnak be, amely úgy van m
 
 ### <a name="managed-devices"></a>Felügyelt eszközök
 
-- Megtudhatja, hogyan használhatja az alkalmazáskonfigurációt az iOS-eszközeivel.  Lásd: [alkalmazás-konfigurációs szabályzatok hozzáadása a felügyelt iOS-eszközökhöz](app-configuration-policies-use-ios.md).
+- Ismerje meg, hogyan használhatja az alkalmazások konfigurációját iOS-/iPadOS-eszközökkel.  Lásd: [alkalmazás-konfigurációs szabályzatok hozzáadása a felügyelt iOS-vagy iPadOS-eszközökhöz](app-configuration-policies-use-ios.md).
 - Megtudhatja, hogyan használhatja az alkalmazáskonfigurációt az Android-eszközeivel.  Lásd: [Alkalmazáskonfigurációs szabályzatok hozzáadása kezelt Android-eszközökhöz](app-configuration-policies-use-android.md).
 
 ### <a name="managed-apps"></a>Felügyelt alkalmazások

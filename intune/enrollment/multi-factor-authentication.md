@@ -17,12 +17,12 @@ ROBOTS: ''
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: db04b93deffd2476a97b952fd1c6942fa79e1f05
-ms.sourcegitcommit: e75718ee6cf93c0e6c915f2776b785fe8db9f7e0
+ms.openlocfilehash: 14347d12888ff5ef61d4543409a08fbdeb371c89
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74955388"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77415205"
 ---
 # <a name="require-multi-factor-authentication-for-intune-device-enrollments"></a>Többtényezős hitelesítés megkövetelése az Intune-os eszközregisztrációhoz
 
@@ -36,7 +36,7 @@ Az MFA az alábbiak közül követeli meg legalább két ellenőrzési mód hasz
 - egy, a felhasználó birtokában lévő dolog (nehezen másolható, megbízható eszköz, például telefon)
 - egy, a felhasználót azonosító dolog (biometrikus adatok, például ujjlenyomat).
 
-Az MFA iOS, Android, Windows 8.1-es vagy újabb, Windows Phone 8.1-es vagy Windows 10 Mobile vagy újabb rendszerű eszközökön támogatott.
+Az MFA iOS/iPadOS, Android, Windows 8,1 vagy újabb, Windows Phone-telefon 8,1 vagy Windows 10 Mobile vagy újabb rendszerű eszközök esetén támogatott.
 
 Az MFA engedélyezésekor a végfelhasználóknak kétféle hitelesítő adatot kell megadniuk az eszközök regisztrációjához.
 

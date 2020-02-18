@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 09b4cfad0490f35a85e4c72b937b2ba5c0472030
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 84d33e0ff6bbe407d9838f97214f37d042a2e261
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74564370"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77414698"
 ---
 # <a name="what-is-microsoft-intune-app-management"></a>A Microsoft Intune-alkalmazásfelügyelet ismertetése
 
@@ -51,13 +51,13 @@ Az Intune MAM két konfigurációt támogat:
 
 Az Intune számos szolgáltatással segít a szükséges alkalmazások üzembe helyezésében azokon az eszközökön, amelyeken futtatni kívánják azokat. Az alábbi táblázat az alkalmazáskezelési lehetőségeket foglalja össze.
 
-|  | Android/Android Enterprise | iOS | macOS | Windows 10 | WVPN-profilokdows Phone 8.1 |
+|  | Android/Android Enterprise | iOS/iPadOS | macOS | Windows 10 | WVPN-profilokdows Phone 8.1 |
 |-------------------------------------------------------------------------------------|---------|-----|-------|------------|-------------------|
 | Alkalmazások hozzáadása és hozzárendelése eszközökhöz és felhasználókhoz | Igen | Igen | Igen | Igen | Igen |
 | Alkalmazások hozzárendelése az Intune-ban nem regisztrált eszközökhöz | Igen | Igen | Nem | Nem | Nem |
 | Az alkalmazások indítási viselkedését vezérlő alkalmazáskonfigurációs szabályzatok használata | Igen | Igen | Nem | Nem | Nem |
 | Mobilalkalmazás-kiépítési szabályzatok használata a lejárt alkalmazások megújítására | Nem | Igen | Nem | Nem | Nem |
-| Az alkalmazásokban található vállalati adatok védelme alkalmazásvédelmi szabályzatokkal | Igen | Igen | Nem | No <sup>1</sup> | Nem |
+| Az alkalmazásokban található vállalati adatok védelme alkalmazásvédelmi szabályzatokkal | Igen | Igen | Nem | Nem <sup>1</sup> | Nem |
 | Csak a vállalati adatok eltávolítása egy telepített alkalmazásból (alkalmazások szelektív törlése) | Igen | Igen | Nem | Igen | Igen |
 | Az alkalmazás-hozzárendelések monitorozása | Igen | Igen | Igen | Igen | Igen |
 | Egy alkalmazás-áruházból mennyiségi licencszerződés keretében vásárolt alkalmazások hozzárendelése és nyomon követése | Nem | Nem | Nem | Igen | Nem |
@@ -85,7 +85,7 @@ Az alkalmazásokkal kapcsolatos legtöbb információt megtalálhatja az **alkal
 
 A következő négy szakasz az **alkalmazások** ablaktáblán elérhető beállításokat ismerteti.
 
-### <a name="manage"></a>A számítógépeken futó
+### <a name="manage"></a>Felügyelet
 - **Alkalmazások**: Ezzel a beállítással a munkaerő által használt alkalmazásokat adhatja hozzá, tekintheti meg, rendelheti hozzá és figyelheti. További információkért lásd:
   - [Alkalmazások hozzáadása](apps-add.md).
   - [Alkalmazások hozzárendelése](apps-deploy.md).
@@ -98,7 +98,7 @@ A következő négy szakasz az **alkalmazások** ablaktáblán elérhető beáll
   - [Alkalmazásvédelmi szabályzatok](app-protection-policies.md).
 - **Alkalmazások szelektív törlése**: Ezzel a lehetőséggel csak a céges adatokat törli a kijelölt felhasználók eszközeiről. További információkért lásd:
   - [Alkalmazások szelektív törlése](apps-selective-wipe.md).
-- **iOS-alkalmazáskiépítési profilok**: Az iOS-alkalmazások tartalmaznak egy kiépítési profilt és kódot, tanúsítvánnyal aláírva. Ha a tanúsítvány lejár, az alkalmazás a továbbiakban nem futtatható. Az Intune biztosítja az eszközöket, amelyek segítségével proaktív módon rendelhet hozzá új kiépítési profilt azokhoz az eszközökhöz, amelyeken hamarosan lejárnak az alkalmazások. További információkért lásd:
+- **iOS-es alkalmazás-létesítési profilok**: az iOS-es/iPadOS-alkalmazások tartalmazzák a kiépítési profilt és a tanúsítvány által aláírt kódot. Ha a tanúsítvány lejár, az alkalmazás a továbbiakban nem futtatható. Az Intune biztosítja az eszközöket, amelyek segítségével proaktív módon rendelhet hozzá új kiépítési profilt azokhoz az eszközökhöz, amelyeken hamarosan lejárnak az alkalmazások. További információkért lásd:
   - [iOS-alkalmazáskiépítési profilok](app-provisioning-profile-ios.md).
 
 Az e szakasz tartalmával kapcsolatos további információ: [Alkalmazáskezelés](app-management.md).
@@ -115,7 +115,7 @@ Az e szakasz tartalmával kapcsolatos további információ: [Alkalmazáskezelé
 Az e szakasz tartalmával kapcsolatos további információ: [Alkalmazások figyelése](apps-monitor.md).
 
 ### <a name="set-up"></a>Beállítás
-- **iOS VPP-jogkivonatok**: Megtekintheti és felhasználhatja az iOS Volume Purchase Program (VPP) keretében beszerzett licenceit. További információkért lásd:
+- **iOS VPP-tokenek**: az iOS/IPadOS Volume Purchase program-(VPP-) licencek alkalmazása és megtekintése. További információkért lásd:
   - [iOS Volume-Purchased Program keretében vásárolt alkalmazások](vpp-apps-ios.md)
 - **Windowsos vállalati tanúsítvány**: Egy üzletági alkalmazások felügyelt Windows-eszközökre való terjesztésére szolgáló kódaláíró tanúsítvány alkalmazása, vagy az állapota megtekintése.
 - **Windowsos Symantec-tanúsítvány**: Egy XAP és WP8.x appx-fájlok Windows 10 Mobile-eszközökre való terjesztéséhez szükséges Symantec kódaláíró tanúsítvány alkalmazása, vagy az állapota megtekintése.

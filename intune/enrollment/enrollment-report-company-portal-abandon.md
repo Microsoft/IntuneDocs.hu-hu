@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ae3c2380aa27096be2490d2404858179ea9d222e
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: b7861d26650aaf74ea9c58608c33e72495244575
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72503174"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77414231"
 ---
 # <a name="incomplete-user-enrollments-report"></a>Hiányos felhasználói beléptetési jelentés
 
@@ -44,7 +44,7 @@ Ha egy felhasználó úgy dönt, hogy leállítja a regisztrációt, és többsz
 
 ## <a name="what-does-the-report-show"></a>Mi mutat meg a jelentés?
 
-A jelentések tartalmazzák az iOS-és Android-eszközökre vonatkozó adatgyűjtést.
+A jelentések tartalmazzák az iOS/iPadOS és az Android rendszerű eszközökre vonatkozó adatgyűjtést.
 
 A jelentés az elmúlt két hétre vonatkozó adatokat jelenít meg, de szűrheti a jelentést az elmúlt 30 napban bármely időszak megjelenítésére.
 
@@ -74,7 +74,7 @@ A következő táblázatok a nem teljes beléptetést kérő felhasználói műv
 
 #### <a name="setup-checklist-section"></a>Beállítási ellenőrzőlista szakasz
 
-| Művelet neve | Képernyő vagy folyamat | Platfésm | Művelet |
+| Művelet neve | Képernyő vagy folyamat | Platform | Művelet |
 | ---- |---- |---- |---- |
 | EnrollmentWrapUp | A rendszer arra kéri, hogy nyisson meg egy oldalt a Céges portálon. | iOS/Android | **Mégse** |
 | EnrollmentWrapUp | Eszközregisztrációs képernyő, ami addig látható, amíg be nem fejeződik a **vállalati erőforrások betöltése** | iOS/Android | Időtartam > 30 perc |
@@ -84,12 +84,12 @@ A következő táblázatok a nem teljes beléptetést kérő felhasználói műv
 
 #### <a name="platform-screens-section"></a>Platformképernyők szakasz
 
-| Művelet neve | Képernyő vagy folyamat | Platfésm | Művelet |
+| Művelet neve | Képernyő vagy folyamat | Platform | Művelet |
 | ---- |---- |---- |---- |
-| iOSProfileLaunch | Rákérdezés a konfigurációs profil megjelenítésére | iOS | **Figyelmen kívül hagyás** |
-| iOSProfileLaunch | Profilképernyő telepítése | iOS | **Mégse** |
-| iOSProfileLaunch | Rákérdezés, hogy megbízik-e a profil forrásában az eszköz regisztrációjához | iOS | **Mégse** |
-| iOSProfileLaunch | Profiltelepítési képernyő, amely a profil telepítésének befejeződéséig látható | iOS | Időtartam > 30 perc |
+| iOSProfileLaunch | Rákérdezés a konfigurációs profil megjelenítésére | iOS/iPadOS | **Figyelmen kívül hagyás** |
+| iOSProfileLaunch | Profilképernyő telepítése | iOS/iPadOS | **Mégse** |
+| iOSProfileLaunch | Rákérdezés, hogy megbízik-e a profil forrásában az eszköz regisztrációjához | iOS/iPadOS | **Mégse** |
+| iOSProfileLaunch | Profiltelepítési képernyő, amely a profil telepítésének befejeződéséig látható | iOS/iPadOS | Időtartam > 30 perc |
 | AndroidPermissions | Eszközadminisztrátor aktiválása képernyő | Android: | **Mégse** |
 | AndroidPermissions | A hívások kezdeményezésének és kezelésének jóváhagyáskérésétől addig, amíg az eszközrendszergazda végre nem hajtja az **aktiválást** | Android: | Időtartam > 30 perc |
 | KnoxActivation | KLMS-ügynök aktiválása (csak Samsung) | Android:| **Mégse** |
@@ -97,14 +97,14 @@ A következő táblázatok a nem teljes beléptetést kérő felhasználói műv
 
 #### <a name="terms-of-use-section"></a>Használati feltételek szakasz
 
-| Művelet neve | Képernyő vagy folyamat | Platfésm | Művelet |
+| Művelet neve | Képernyő vagy folyamat | Platform | Művelet |
 | ---- |---- |---- |---- |
 | TermsofUse | Használati feltételek (ha a rendszergazda konfigurálta) | iOS/Android | **Összes elutasítása** |
 | TermsofUse | Használati feltételek megjelenítése az **Összes elfogadása** kiválasztásáig | iOS/Android | Időtartam > 30 perc |
 
 #### <a name="complianceactivation-section"></a>Megfelelőség/aktiválás képernyő
 
-| Művelet neve | Képernyő vagy folyamat | Platfésm | Művelet |
+| Művelet neve | Képernyő vagy folyamat | Platform | Művelet |
 | ---- |---- |---- |---- |
 | Megfelelőség | Eszközmegfelelőség (ha a rendszergazda beállította) nem zöldként jelenik meg a regisztráció utáni hozzáférés-beállítás esetén| iOS/Android | **Elhalasztás** |
 | Megfelelőség | Az eszközmegfelelőség nem zöldként jelenik meg, amíg nem frissíti zöldként való megjelenítésre | iOS/Android | Időtartam > 30 perc |

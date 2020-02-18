@@ -1,6 +1,6 @@
 ---
-title: Az Outlook beállításai iOS és Android rendszerű eszközökhöz a Microsoft Intune-ban
-description: Létrehozhat egy konfigurációs szabályzatot az iOS- és Android-eszközökön futó Microsoft Outlook beállításainak megadásához.
+title: Outlook-beállítások iOS/iPadOS és Android rendszerű eszközökhöz a Microsoft Intune
+description: Hozzon létre egy konfigurációs szabályzatot az iOS-/iPadOS-és Android-eszközökön futó Microsoft Outlook-beállítások beállításához.
 keywords: ''
 author: Erikre
 ms.author: erikre
@@ -16,19 +16,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ea33ae26983b33a1642d364281ed146a8a10184d
-ms.sourcegitcommit: a66b5916eaab9cb537e483064efc584a6a63a390
+ms.openlocfilehash: 0df11a6a09773e66fdad4387df101b2f64c24192
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75692237"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77415064"
 ---
 # <a name="microsoft-outlook-configuration-settings"></a>A Microsoft Outlook konfigurációs beállításai 
 
-Az iOS- és Android-eszközökön futó Microsoft Outlook beállításainak elvégzéséhez konfigurációs szabályzatot is használhat. 
+Az iOS-/iPadOS-és Android-eszközökön futó Microsoft Outlook-beállítások konfigurálásához használjon konfigurációs szabályzatot. 
 
 Regisztrált eszközök esetén:
-- Alkalmazáskonfigurációs szabályzat felügyelt iOS-eszközökhöz történő létrehozásával kapcsolatban lásd: [Alkalmazáskonfigurációs szabályzatok hozzáadása felügyelt iOS-eszközökhöz](app-configuration-policies-use-ios.md). 
+- A felügyelt iOS-/iPadOS-eszközökhöz készült alkalmazás-konfigurációs szabályzatok létrehozásával kapcsolatban lásd: [alkalmazás-konfigurációs házirendek hozzáadása a felügyelt iOS-eszközökhöz](app-configuration-policies-use-ios.md). 
 - Alkalmazáskonfigurációs szabályzat felügyelt androidos eszközökhöz történő létrehozásával kapcsolatban lásd: [Alkalmazáskonfigurációs szabályzatok hozzáadása felügyelt Android-eszközökhöz](app-configuration-policies-use-android.md). 
 
 A nem regisztrált eszközök esetében lásd: [alkalmazás-konfigurációs szabályzatok hozzáadása a felügyelt alkalmazásokhoz eszközök regisztrációja nélkül](app-configuration-policies-managed-app.md) az iOS és az Android rendszerhez készült alkalmazás-konfigurációs házirend létrehozásához az Outlookhoz.

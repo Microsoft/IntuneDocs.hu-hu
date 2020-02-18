@@ -1,7 +1,7 @@
 ---
-title: Apple MDM push-tanúsítvány beszerzése az Intune-hoz
+title: Apple MDM Push-tanúsítvány beszerzése az Intune-hoz
 titleSuffix: ''
-description: Apple MDM push-tanúsítvány beszerzése iOS-eszközök Intune-nal való kezeléséhez.
+description: Apple MDM push-tanúsítvány beszerzése az iOS-/iPadOS-eszközök Intune-nal való kezeléséhez.
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
@@ -18,24 +18,24 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 178e1a3d0f58eb925c4d48be10bfa46e68c6b2c6
-ms.sourcegitcommit: e75718ee6cf93c0e6c915f2776b785fe8db9f7e0
+ms.openlocfilehash: 673f63194b46ca7e4dbf1206d363cbe70c6e6098
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74955456"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77414429"
 ---
 # <a name="get-an-apple-mdm-push-certificate"></a>Apple MDM push-tanúsítvány beszerzése
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-Az Intune-nak Apple MDM Push-tanúsítványra van szüksége ahhoz, hogy felügyelni tudja az iOS- és macOS-eszközöket. Miután hozzáadta a tanúsítványt az Intune-hoz, felhasználói a következő segítségével regisztrálhatják az eszközeiket:
+Apple MDM push-tanúsítvány szükséges ahhoz, hogy az Intune kezelje az iOS-/iPadOS-és macOS-eszközöket. Miután hozzáadta a tanúsítványt az Intune-hoz, felhasználói a következő segítségével regisztrálhatják az eszközeiket:
 
 - A Céges portál alkalmazás.
 
 - Az Apple tömeges regisztrálási módjai, mint a Készülékregisztrációs program, az Apple School Manager vagy az Apple Configurator.
 
-A regisztrálási lehetőségekről további információt talál a [iOS-eszközök regisztrálásának módjai](ios-enroll.md) című témakörben.
+A regisztrálási lehetőségekkel kapcsolatos további információkért lásd: [az iOS/iPadOS-eszközök regisztrálási módjának kiválasztása](ios-enroll.md).
 
 Amikor a leküldéses tanúsítvány lejár, meg kell újítani. Megújításkor győződjön meg róla, hogy ugyanazt az Apple ID-t használja, mint a leküldéses tanúsítvány létrehozásakor.
 
@@ -64,7 +64,7 @@ Jegyezze fel az azonosítót, hogy ne feledje a tanúsítványt időben megújí
 Keresse meg a tanúsítványfájlt (.pem), majd kattintson a **Megnyitás** gombra, és válassza a **Feltöltés** elemet. A leküldéses tanúsítvány lehetővé teszi, hogy az Intune regisztrálja és felügyelje az Apple-eszközöket.
 
 ## <a name="renew-apple-mdm-push-certificate"></a>Apple MDM push-tanúsítvány megújítása
-Az Apple MDM push-tanúsítvány egy évig érvényes, és az iOS és macOS eszközkezelés karbantartásához évente meg kell újítani. Ha a tanúsítvány lejár, a regisztrált Apple-eszközöket nem lehet elérni.
+Az Apple MDM push-tanúsítvány egy évig érvényes, és az iOS/iPadOS és a macOS rendszerű eszközök felügyeletének fenntartása érdekében évente meg kell újítani. Ha a tanúsítvány lejár, a regisztrált Apple-eszközöket nem lehet elérni.
 
 A tanúsítványt a rendszer ahhoz az Apple-azonosítóhoz társítja, amely létrehozta azt. Az MDM push-tanúsítványt ugyanazzal az Apple-azonosítóval kell megújítani, amellyel létrehozták.
 
@@ -73,7 +73,7 @@ A tanúsítványt a rendszer ahhoz az Apple-azonosítóhoz társítja, amely lé
 3. Válassza az **MDM push-tanúsítvány létrehozása** lehetőséget az Apple Push Certificates Portal webhely megnyitásához. Keresse meg a megújítani kívánt tanúsítványt, és kattintson a **Megújítás** elemre.
 4. A **Push-tanúsítvány megújítása** képernyőn adjon meg jegyzeteket a tanúsítvány későbbi azonosításának megkönnyítése érdekében, majd a **Fájl kiválasztása** elemet választva keresse meg a letöltött új kérelemfájlt, és válassza a **Feltöltés** lehetőséget.
    > [!TIP]
-   > A tanúsítványok a felhasználóazonosító alapján azonosíthatók. A felhasználóazonosító GUID részének azonosításához tekintse meg a **Tulajdonos azonosítóját** a tanúsítvány részletei között. Vagy egy regisztrált iOS-eszközön lépjen a **Beállítások** > **Általános** > **Eszköz** **Felügyelet** > **Felügyeleti profil** > **További részletek** > **Felügyeleti profil** részre. A **Téma** elnevezésű második sori elem tartalmazza az egyedi GUID azonosítót, amelyet megfeleltethet az Apple Push Certificates portál tanúsítványának.
+   > A tanúsítványok a felhasználóazonosító alapján azonosíthatók. A felhasználóazonosító GUID részének azonosításához tekintse meg a **Tulajdonos azonosítóját** a tanúsítvány részletei között. Vagy egy regisztrált iOS/iPadOS **-eszközön** lépjen a **beállítások** > **általános** > **eszközkezelés** > **felügyeleti profil** > **További részletek** > **felügyeleti profil**elemre. A **Téma** elnevezésű második sori elem tartalmazza az egyedi GUID azonosítót, amelyet megfeleltethet az Apple Push Certificates portál tanúsítványának.
  
 6. A **Megerősítés** képernyőn kattintson a **Letöltés** elemre, majd mentse helyileg a .pem fájlt.
 7. Az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ban válassza az **Apple Mdm push-tanúsítvány** Tallózás ikonját, válassza ki az Apple-től Letöltött. PEM-fájlt, és válassza a **feltöltés**lehetőséget.

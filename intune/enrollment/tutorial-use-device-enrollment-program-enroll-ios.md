@@ -1,7 +1,7 @@
 ---
-title: Oktatóanyag – az Apple Business Manager vagy a Készülékregisztrációs program használata iOS-eszközök Intune-beli regisztrálásához
+title: Oktatóanyag – az Apple Business Manager vagy a Készülékregisztrációs program használata az iOS-/iPadOS-eszközök Intune-beli regisztrálásához
 titleSuffix: Microsoft Intune
-description: Ebben az oktatóanyagban be fogja állítani az Apple vállalati eszközök regisztrálási funkcióit az ABM-ből az iOS-eszközök Intune-ban való regisztrálásához.
+description: Ebben az oktatóanyagban be fogja állítani az Apple vállalati eszközök regisztrálási funkcióit az ABM-ből az iOS/iPadOS-eszközök Intune-ban való regisztrálásához.
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
@@ -15,14 +15,14 @@ ms.technology: ''
 ms.assetid: ''
 Customer intent: As an Intune admin, I want to set up the Apple's corporate device enrollment features so that corporate devices can automatically enroll in Intune.
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f5599e7ea8c9a26c4624f98133db566fb07c89af
-ms.sourcegitcommit: 5178aec0244e023e73546f3d10f1a76eaf1f4a3e
+ms.openlocfilehash: 9aab0233c05416fc50413a7889435cb221179730
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76971781"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77415140"
 ---
-# <a name="tutorial-use-apples-corporate-device-enrollment-features-in-apple-business-manager-abm-to-enroll-ios-devices-in-intune"></a>Oktatóanyag: az Apple Business Manager (ABM) vállalati eszközök beléptetési funkcióinak használata az iOS-eszközök Intune-beli regisztrálásához
+# <a name="tutorial-use-apples-corporate-device-enrollment-features-in-apple-business-manager-abm-to-enroll-iosipados-devices-in-intune"></a>Oktatóanyag: az Apple Business Manager (ABM) vállalati eszközök regisztrálási funkcióinak használata az iOS/iPadOS-eszközök Intune-beli regisztrálásához
 Az Apple Business Manager eszköz-beléptetési funkciói leegyszerűsítik az eszközök regisztrálását. Az Intune támogatja az Apple régebbi Készülékregisztrációs program (DEP) portálját is, de javasoljuk, hogy az Apple Business Managerrel frissen kezdjen. Az Microsoft Intune és az Apple vállalati eszközök regisztrálásával az eszközök automatikusan biztonságosan lesznek regisztrálva, amikor a felhasználó első alkalommal bekapcsolja az eszközt. Az eszközöket tehát számos felhasználónak is kiszállíthatja anélkül, hogy az egyes eszközöket külön kell beállítania. 
 
 Az oktatóanyag segítségével megtanulhatja a következőket:
@@ -40,7 +40,7 @@ Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon ingyenes próbafióko
 - [Apple Mdm push-tanúsítvány](apple-mdm-push-certificate-get.md) beszerzése
 
 ## <a name="get-an-apple-device-enrollment-token"></a>Apple-eszközök regisztrálási jogkivonatának beszerzése
-Az iOS-eszközöknek az Apple vállalati beléptetési funkcióival való regisztrálása előtt Apple Device beléptetési jogkivonat-(. PEM) fájlra van szükség. Ez a token lehetővé teszi, hogy az Intune szinkronizálja a vállalat tulajdonában lévő Apple-eszközökre vonatkozó információkat. Azt is engedélyezi, hogy az Intune regisztrációs profilokat töltsön fel az Apple számára, és eszközöket rendeljen ezen profilokhoz.
+Az iOS/iPadOS-eszközök az Apple vállalati beléptetési funkcióival való regisztrálása előtt Apple Device beléptetési jogkivonat-(. PEM) fájlra van szükség. Ez a token lehetővé teszi, hogy az Intune szinkronizálja a vállalat tulajdonában lévő Apple-eszközökre vonatkozó információkat. Azt is engedélyezi, hogy az Intune regisztrációs profilokat töltsön fel az Apple számára, és eszközöket rendeljen ezen profilokhoz.
 
 Az ABM vagy a DEP portál használatával hozzon létre egy eszköz-beléptetési jogkivonatot. A portálok segítségével eszközöket rendelhet hozzá az Intune-hoz a felügyelethez.
 
@@ -77,14 +77,14 @@ Az ABM vagy a DEP portál használatával hozzon létre egy eszköz-beléptetés
 
 11. Ha hatókör-címkéket kíván alkalmazni, hogy korlátozza, mely rendszergazdák férhetnek hozzá ehhez a jogkivonathoz, válassza a hatókörök lehetőséget.
 
-## <a name="create-an-apple-enrollment-profile"></a>Az Apple-regisztrációs profil létrehozása
-Most, hogy telepítette a jogkivonatot, létrehozhat egy regisztrációs profilt a vállalat által birtokolt iOS-eszközökhöz. A regisztrálás során az eszközök csoportjára alkalmazott beállításokat egy készülékregisztrációs profil határozza meg.
+## <a name="create-an-apple-enrollment-profile"></a>Apple-regisztrációs profil létrehozása
+Most, hogy telepítette a jogkivonatot, létrehozhat egy regisztrációs profilt a vállalat által birtokolt iOS-/iPadOS-eszközökhöz. A regisztrálás során az eszközök csoportjára alkalmazott beállításokat egy készülékregisztrációs profil határozza meg.
 
 1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **ios** > **iOS-regisztráció** > a **beléptetési program jogkivonatok**lehetőséget.
 
 2. Válassza ki az imént telepített jogkivonatot, válassza a **profilok** > **profil létrehozása**lehetőséget.
 
-3. A **profil létrehozása**területen adja meg a *TestDEPProfile* **nevet** és *tesztelési DEP-t iOS-eszközökhöz* a **leíráshoz**. Ezeket a felhasználók nem fogják látni.
+3. A **profil létrehozása**területen adja meg a *TestDEPProfile* **nevet** és *tesztelési DEP-t iOS-/iPadOS-eszközökhöz* a **leíráshoz**. Ezeket a felhasználók nem fogják látni.
 
 4. Válassza az **iOS** lehetőséget a **platform**területen.
 
@@ -96,11 +96,11 @@ Most, hogy telepítette a jogkivonatot, létrehozhat egy regisztrációs profilt
 
 8. Ha a felhasználói affinitással való regisztrációt választotta, a hitelesítést a Céges portál használatával végzi el, és a VPP használatával telepíti a Céges portált, döntse el, hogy az Céges portált egyetlen alkalmazás módban szeretné-e futtatni a hitelesítésig. Ezzel a beállítással biztosíthatja, hogy a felhasználó ne férhessen hozzá más alkalmazásokhoz, amíg el nem végezte a vállalati beléptetést. Ha korlátozni szeretné a felhasználót erre a folyamatra, amíg a regisztráció be nem fejeződik, válassza az **Igen** lehetőséget a **Futtatás céges portál alatt egyetlen alkalmazás módban a hitelesítésig**. 
 
-9. Válassza az **eszközkezelés beállítások** lehetőséget, és válassza az **Igen** lehetőséget a **felügyelt**elemnél. A felügyelt eszközök a legtöbb felügyeleti lehetőséget biztosítanak a vállalati iOS-eszközökhöz.
+9. Válassza az **eszközkezelés beállítások** lehetőséget, és válassza az **Igen** lehetőséget a **felügyelt**elemnél. A felügyelt eszközök a legtöbb felügyeleti lehetőséget biztosítanak a vállalati iOS-/iPadOS-eszközökhöz.
 
 10. A **zárolt regisztráció** területen válassza az **Igen** lehetőséget annak biztosítása érdekében, hogy a felhasználók ne tudják eltávolítani a vállalati eszköz felügyeletét. 
 
-11. Válasszon egy beállítást a **számítógépek szinkronizálása** lehetőséggel annak megállapításához, hogy az iOS-eszközök képesek-e a számítógépekkel való szinkronizálásra.
+11. Válasszon egy beállítást a **számítógépek szinkronizálása** lehetőséggel annak megállapításához, hogy az iOS/iPadOS-eszközök képesek-e a számítógépekkel való szinkronizálásra.
 
 12. Alapértelmezés szerint az Apple az eszköz típusával (pl. iPad) nevezi az eszközt. Ha másik nevet szeretne megadni, válassza az **Igen** lehetőséget az **eszköznév alkalmazása sablonban**. Adja meg az eszközökre alkalmazni kívánt nevet, ahol a (z) *{{Serial}}* és *{{DeviceType}}* karakterláncok az egyes eszközök sorozatszámát és típusát is helyettesítik. Ellenkező esetben válassza a **nem** lehetőséget az **eszköznév sablon alkalmazása**elemnél.
 
@@ -112,7 +112,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhat egy regisztrációs profilt
 
 16. Az eszköz aktiválása során különböző képernyőket jeleníthet meg vagy **rejtheti** **el.** A legzökkenőmentesebb regisztrációs élmény érdekében az összes képernyőt **elrejtve**állítsa be.
 
-17. Válassza az **OK** > **Létrehozás** lehetőséget.
+17. Válassza az **OK** > **Létrehozás** lehetőségeket.
 
 ## <a name="sync-managed-devices-to-intune"></a>Felügyelt eszközök szinkronizálása az Intune-nal
 
@@ -120,7 +120,7 @@ Miután beállította az ABM-, ASM-vagy DEP-portálon a beléptetési program to
 
 1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **ios** > **iOS-regisztráció** > a **beléptetési program jogkivonatok** elemet > Válassza ki a tokent a listában > **eszközök** > **szinkronizálás**lehetőséget.
 
-## <a name="assign-an-enrollment-profile-to-ios-devices"></a>Regisztrációs profil kiosztása iOS-eszközökhöz
+## <a name="assign-an-enrollment-profile-to-iosipados-devices"></a>Regisztrációs profil kiosztása iOS/iPadOS-eszközökhöz
 
 Ahhoz, hogy egy eszközt regisztrálni lehessen, először hozzá kell rendelni egy regisztrációs programprofilt. Ezek az eszközök az Apple-től szinkronizálva vannak az Intune-nal, és hozzá kell rendelni a megfelelő MDM-kiszolgálói jogkivonathoz az ABM, ASM vagy DEP portálon.
 
@@ -134,12 +134,12 @@ Beállította a felügyeletet és a szinkronizálást az Apple és az Intune kö
 
 ## <a name="next-steps"></a>További lépések
 
-További információ az iOS-eszközök regisztrálásához használható egyéb lehetőségekről.
+További információ az iOS/iPadOS-eszközök regisztrálásához használható egyéb lehetőségekről.
 
 > [!div class="nextstepaction"]
-> [Részletes, iOS-es DEP-regisztrációval foglalkozó cikk](device-enrollment-program-enroll-ios.md)
+> [Részletes iOS/iPadOS DEP-beléptetési cikk](device-enrollment-program-enroll-ios.md)
 
 <!--commenting out because inaccurate>
 ## Clean up resources
-<!--If you don't want to use iOS corporate enrolled devices anymore, you can delete them.>
+<!--If you don't want to use iOS/iPadOS corporate enrolled devices anymore, you can delete them.>
 <!--- If the devices are enrolled in Intune, you must first [delete them from the Azure Active Directory portal](../remote-actions/devices-wipe.md#delete-devices-from-the-azure-active-directory-portal).>

@@ -1,7 +1,7 @@
 ---
-title: iOS-es felügyelt mód a Microsoft Intune-nal
+title: IOS/iPadOS felügyelt mód bekapcsolása Microsoft Intune
 titleSuffix: ''
-description: Információ az iOS-es felügyelt mód bekapcsolásáról az Intune-ban.
+description: Ismerje meg, hogyan kapcsolhatja be az iOS/iPadOS felügyelt módot az Intune-nal.
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
@@ -17,19 +17,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1e995dbc89321bf844151accd654a2d17d35afd9
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 0d266dbc9fa72b1579e05e7798315e2e718a9797
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73713431"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77413662"
 ---
-# <a name="turn-on-ios-supervised-mode"></a>iOS-es felügyelt mód bekapcsolása
+# <a name="turn-on-iosipados-supervised-mode"></a>IOS/iPadOS felügyelt üzemmód bekapcsolása
 
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-Az Apple iOS-es felügyelt mód több lehetőséget biztosít a rendszergazdáknak Apple-eszközök kezelésénél, ami különösen a nagy méretekben üzembe helyezett vállalati tulajdonban lévő eszközök esetén hasznos. Például korlátozhatja az AirDropot, vagy letilthatja a felhasználók számára az eszköz nevének módosítását. A felügyelt módot megkövetelő beállítások listáját az [iOS-es eszközkorlátozási beállítások az Intune-ban](../configuration/device-restrictions-ios.md) című témakörben találja.
+Az Apple iOS/iPadOS által felügyelt mód több lehetőséget biztosít a rendszergazdáknak az Apple-eszközök kezelésekor, ami hasznos lehet a nagy léptékű vállalati eszközök számára. Például korlátozhatja az AirDropot, vagy letilthatja a felhasználók számára az eszköz nevének módosítását. A felügyelt módot megkövetelő beállítások listáját az [iOS-es eszközkorlátozási beállítások az Intune-ban](../configuration/device-restrictions-ios.md) című témakörben találja.
 
 Az Intune az Apple [készülékregisztrációs program (DEP)](../enrollment/device-enrollment-program-enroll-ios.md) keretében biztosít lehetőséget az eszközök felügyelt módú üzemeltetéséhez.
 
@@ -41,7 +41,7 @@ A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com
 
 ## <a name="turn-on-supervised-mode-after-enrollment"></a>Felügyelt mód bekapcsolása regisztrálás után
 
-Ha a regisztráció már megtörtént, az iOS-eszközt össze kell kötni egy Mac számítógéppel, és az [Apple Configuratort használva](../enrollment/apple-configurator-enroll-ios.md) engedélyezni kell rajta a felügyelt módot (ami alaphelyzetbe állítja az eszközt). Regisztráció után az Intune-ban nem lehetséges az eszközt felügyelt módra konfigurálni.
+A regisztrációt követően a felügyelt mód bekapcsolásának egyetlen módja az iOS/iPadOS-eszköz csatlakoztatása Mac számítógéphez, és [az Apple konfigurátor használata](../enrollment/apple-configurator-enroll-ios.md) (amely alaphelyzetbe állítja az eszközt). Regisztráció után az Intune-ban nem lehetséges az eszközt felügyelt módra konfigurálni.
 
 ## <a name="identify-a-supervised-device"></a>Felügyelt eszköz azonosítása
 

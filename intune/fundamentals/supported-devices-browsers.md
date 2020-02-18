@@ -18,14 +18,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2b58cbd0aa07babd36c7a7e5aa3dcc5b8d32d58a
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 7c27debc75ac02ab86eb93ce4e5af8c81464d0d4
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73415034"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77415227"
 ---
-# <a name="supported-operating-systems-and-browsers-in-intune"></a>Az Intune-ban támogatott operációs rendszerek és böngészők
+# <a name="supported-operating-systems-and-browsers-in-intune"></a>Támogatott operációs rendszereket és böngészőket az Intune-ban
 
 A Microsoft Intune beállítása előtt tekintse át a támogatott operációs rendszereket és böngészőket.
 
@@ -87,7 +87,7 @@ Az alábbi Samsung-modellek nem támogatják a Knoxot. Ezeket az Androidhoz kés
 
 ### <a name="windows-pc-software-client"></a>Windowsos számítógépeken futó szoftveres ügyfél
 
-A windowsos számítógépekre a regisztráció alternatívájaként telepítheti az [Intune szoftveres ügyfelet](manage-windows-pcs-with-microsoft-intune.md) is. Ez a funkció csak a klasszikus Intune-portálon érhető el. Az Intune szoftveres ügyfele segítségével a Windows 7 és újabb rendszerű számítógépeket felügyelheti (kivéve a Windows 10 Home verziót).
+A windowsos számítógépekre a regisztráció alternatívájaként telepítheti az [Intune szoftveres ügyfelet](manage-windows-pcs-with-microsoft-intune.md) is. Ez a funkció csak a klasszikus Intune-portálon érhető el. Az Intune-ügyfélszoftver használatával 10 és újabb rendszerű számítógépeket kezelhet, a Windows 10 Home Edition kivételével.
 
 > [!Note]
 > A Microsoft bejelentette, hogy a Windows 7 támogatása január 14-én 2020-án végződik. Ezen a napon az Intune visszavonja a Windows 7 operációs rendszerű eszközök támogatását.
@@ -106,7 +106,7 @@ You can manage [Exchange ActiveSync devices](../enrollment/device-enrollment.md#
 
 A különféle felügyeleti tevékenységek elvégzésére a következő két felügyeleti webhely valamelyikét kell használnia.
 
-- [Microsoft 365 Felügyeleti központ](https://go.microsoft.com/fwlink/p/?LinkId=698854)
+- [Microsoft 365 felügyeleti központ](https://go.microsoft.com/fwlink/p/?LinkId=698854)
 - [Azure Portal](https://portal.azure.com/)
 
 Ezeken a portálokon jelenleg a következő böngészők támogatottak:

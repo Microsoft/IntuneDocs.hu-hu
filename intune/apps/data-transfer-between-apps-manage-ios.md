@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 80ae9b3b1ab274e236ad43c52569574718d3eec4
-ms.sourcegitcommit: 637375a390b6e34f9c4415c77b99fe2980bbf554
+ms.openlocfilehash: ef9810f9414af4d1f57fa71189a6960b491800c0
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75839307"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77414885"
 ---
 # <a name="how-to-manage-data-transfer-between-ios-apps-in-microsoft-intune"></a>iOS-alkalmazások közti adatátvitel felügyelete a Microsoft Intune-ban
 
@@ -45,7 +45,7 @@ Az iOS- **es Open-in Management** szolgáltatással az alábbi módokon biztosí
 ## <a name="configure-user-upn-setting-for-microsoft-intune-or-third-party-emm"></a>Az egyszerű felhasználónév beállításának konfigurálása a Microsoft Intune-hoz vagy külső EMM-megoldáshoz
 A felhasználó UPN-beállításának konfigurálása az Intune által felügyelt eszközökön, vagy egy harmadik féltől származó, a regisztrált felhasználói fiók azonosítására **szolgáló más** gyártótól származó Az UPN-konfiguráció az Intune-ból üzembe helyezett alkalmazás-védelmi házirendekkel működik. Az alábbi eljárás az UPN-beállítás és az eredményül kapott felhasználói élmény konfigurálásának általános folyamata:
 
-1. Az [Azure Portalon](https://portal.azure.com)[hozzon létre és osszon ki alkalmazásvédelmi szabályzatot](app-protection-policies.md) az iOS-nek. A vállalati igényeknek megfelelően konfigurálja a szabályzat beállításait, majd válassza ki azokat az iOS-es alkalmazásokat, amelyekre ennek a szabályzatnak kell vonatkoznia.
+1. A [Azure Portal](https://portal.azure.com) [hozzon létre és rendeljen hozzá egy app Protection-szabályzatot](app-protection-policies.md) iOS/iPadOS. A vállalati igényeknek megfelelően konfigurálja a szabályzat beállításait, majd válassza ki azokat az iOS-es alkalmazásokat, amelyekre ennek a szabályzatnak kell vonatkoznia.
 
 2. Telepítse az Intune-ban vagy a külső MDM-megoldáson keresztül felügyelni kívánt alkalmazásokat és e-mail-profilt az alábbi általánosított lépések segítségével. Ezt a folyamatot az 1. *példa*is tárgyalja.
 
@@ -105,7 +105,7 @@ Az iOS által felügyelt alkalmazások *megosztása* *egy házirend által* fel�
 1. A Word alkalmazás indításakor a következő két élmény egyike fordul elő:
    1. Az Intune-alkalmazás az alábbiak szerint védi az adatvédelmet:
       - A felhasználó bejelentkezett a munkahelyi fiókjába, amely megfelel a Microsoft Word alkalmazás alkalmazás-konfigurációs beállításaiban megadott fiók UPN-nek. 
-      - A rendszergazda által konfigurált alkalmazás beállításai a Microsoft Word felhasználói fiókjára vonatkoznak.  Ide tartozik a **más alkalmazásoktól érkező adatok fogadásának** beállítása a **minden alkalmazásra a bejövő szervezeti** adatértékkel.
+      - A rendszergazda által konfigurált alkalmazás-beállítások a Microsoft Word felhasználói fiókjára vonatkoznak.  Ide tartozik a **más alkalmazásoktól érkező adatok fogadásának** beállítása a **minden alkalmazásra a bejövő szervezeti** adatértékkel.
       - Az adatátvitel sikeres lesz, és a dokumentum a munkahelyi identitással van címkézve az alkalmazásban.  Az Intune-alkalmazás védi a dokumentum felhasználói műveleteit.
    1. Az Intune-alkalmazás **nem** védi az adatvédelmet, ha:
       - A felhasználó **nem** jelentkezett be a munkahelyi fiókjába.

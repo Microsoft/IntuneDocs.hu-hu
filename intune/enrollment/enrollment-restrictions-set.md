@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0dac0607fcaa92ebe65a7ddacc3cd91c63bf246e
-ms.sourcegitcommit: 5178aec0244e023e73546f3d10f1a76eaf1f4a3e
+ms.openlocfilehash: 1263df126b371780b3c5c14ae619f0cb7c83d475
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76971863"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77415305"
 ---
 # <a name="set-enrollment-restrictions"></a>Regisztrációs korlátozások beállítása
 
@@ -44,11 +44,11 @@ Többek között az alábbi regisztrációs korlátozásokat hozhatja létre:
 - Regisztrációra alkalmas eszközplatformok:
   - Android-eszköz rendszergazdája
   - Androidos vállalati munkahelyi profil
-  - iOS
+  - iOS/iPadOS
   - macOS
   - Windows
   - Windows Mobile
-- Platform operációsrendszer-verziója iOS, Android rendszerű eszköz rendszergazdája, Android Enterprise Work profil, Windows és Windows Mobile rendszerű eszközökhöz. (Csak a Windows 10-es verziók használhatók. Hagyja üresen, ha a Windows 8.1 engedélyezett.)
+- Platform operációsrendszer-verziója iOS/iPadOS, Android-eszköz rendszergazdája, Android Enterprise Work profil, Windows és Windows Mobile rendszerhez. (Csak a Windows 10-es verziók használhatók. Hagyja üresen, ha a Windows 8.1 engedélyezett.)
   - Minimális verzió.
   - Maximális verzió.
 - [Személyes tulajdonú eszközök](device-enrollment.md#bring-your-own-device) korlátozása (iOS, Android rendszerű eszköz rendszergazdája, Android Enterprise Work profil, MacOS, Windows és Windows Mobile).
@@ -67,7 +67,7 @@ A rendszer tartalmaz alapértelmezett korlátozásokat mind az eszköztípusra, 
 5. A **verziók**területen válassza ki azokat a minimális és maximális verziókat, amelyeknek az engedélyezett platformokat támogatni szeretné. A verzióra vonatkozó korlátozások csak a Céges portál regisztrált eszközökre vonatkoznak.
      Támogatott verzióformátumok többek között az alábbiak:
     - Az Android-eszköz rendszergazdája és az Android Enterprise munkahelyi profil támogatja a főverzió. alverzió. Rev. Build használatát.
-    - az iOS támogatja a főverzió. alverzió. Rev. Az operációs rendszer verziói nem vonatkoznak a Készülékregisztrációs program, az Apple School Manager vagy az Apple konfigurátor alkalmazással regisztrált Apple-eszközökre.
+    - az iOS/iPadOS a főverzió. alverzió. Rev-et támogatja. Az operációs rendszer verziói nem vonatkoznak a Készülékregisztrációs program, az Apple School Manager vagy az Apple konfigurátor alkalmazással regisztrált Apple-eszközökre.
     - A Windows csak a Windows 10-es főverzió. alverzió. Build. Rev-et támogatja.
     
     > [!IMPORTANT]
@@ -105,7 +105,7 @@ A rendszer tartalmaz alapértelmezett korlátozásokat mind az eszköztípusra, 
 8. Válassza a **Létrehozás** lehetőséget a korlátozás létrehozásához.
 9. Az új korlátozások az alapértelmezett korlátozásnál eggyel magasabb prioritással jönnek létre. Igény esetén [módosíthatja a prioritást](#change-enrollment-restriction-priority).
 
-A BYOD-regisztráció során a felhasználók értesítést kapnak arról, hogy mikor teljesítik a regisztrált eszközök maximális számát. IOS rendszeren például:
+BYOD regisztrációk során a felhasználóknak megjelenik egy értesítés, értesíti, ha a regisztrált eszközök maximális számát. IOS rendszeren például:
 
 ![Az iOS-eszközön megjelenő limitértesítés](./media/enrollment-restrictions-set/enrollment-restrictions-ios-set-limit-notification.png)
 
@@ -158,8 +158,8 @@ Az alábbi személyes regisztrációs módszerek is le lesznek tiltva:
 \* Ha az AutoPilottal regisztrált, ezek nincsenek letiltva.
 
 
-## <a name="blocking-personal-ios-devices"></a>Személyes iOS-eszközök blokkolása
-Alapértelmezés szerint az Intune a személyes tulajdonú iOS-eszközöket sorolja fel. Az iOS-eszköznek a vállalat tulajdonában kell lennie, és az alábbi feltételek valamelyikét kell teljesítenie:
+## <a name="blocking-personal-iosipados-devices"></a>Személyes iOS-/iPadOS-eszközök blokkolása
+Alapértelmezés szerint az Intune a személyes tulajdonú iOS/iPadOS-eszközöket sorolja fel. Ahhoz, hogy a vállalat tulajdonában legyen besorolva, az iOS/iPadOS-eszköznek az alábbi feltételek egyikét kell teljesítenie:
 - Sorozatszámmal vagy IMEI-számmal regisztrálva.
 - Regisztrálva van az automatikus eszközök regisztrációjának használatával (korábban Készülékregisztrációs program)
 

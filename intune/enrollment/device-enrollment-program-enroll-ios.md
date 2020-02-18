@@ -1,7 +1,7 @@
 ---
-title: iOS-eszközök regisztrálása – Készülékregisztrációs program
+title: IOS-/iPadOS-eszközök regisztrálása – Készülékregisztrációs program
 titleSuffix: Microsoft Intune
-description: Céges tulajdonú iOS-es eszközök regisztrálása az Apple készülékregisztrációs programjával (DEP).
+description: Megtudhatja, hogyan regisztrálhat a vállalat által birtokolt iOS-/iPadOS-eszközöket a Készülékregisztrációs program használatával.
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
@@ -18,16 +18,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b3fe6d1e2a0dcdeafad56d3facccb96f5d0721e4
-ms.sourcegitcommit: 2b905913840d4133a7964fe4f54a58ea6e421e12
+ms.openlocfilehash: 6167c48dcfd6b29749dca8d0378ff31ca239b154
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77074665"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77415358"
 ---
-# <a name="automatically-enroll-ios-devices-with-apples-device-enrollment-program"></a>iOS-eszközök automatikus regisztrálása az Apple készülékregisztrációs programjával (DEP)
+# <a name="automatically-enroll-iosipados-devices-with-apples-device-enrollment-program"></a>IOS-/iPadOS-eszközök automatikus regisztrálása az Apple Készülékregisztrációs program
 
-Beállíthatja az Intune-t az Apple [Készülékregisztrációs programon (DEP)](https://deploy.apple.com)keresztül vásárolt iOS-eszközök regisztrálásához. A DEP lehetővé teszi, hogy nagy számú eszközt regisztráljon anélkül, hogy megérintse őket. Az olyan eszközök, mint az iPhone, az iPadek és a MacBook közvetlenül a felhasználók számára is elhelyezhetők. Amikor a felhasználó bekapcsolja az eszközt, a beállítási asszisztens, amely magában foglalja az Apple-termékekre jellemző beépített élményt, előre konfigurált beállításokkal fut, és az eszköz regisztrálja magát a felügyeletre.
+Beállíthatja az Intune-t az Apple [Készülékregisztrációs programon (DEP)](https://deploy.apple.com)keresztül vásárolt iOS/iPadOS-eszközök regisztrálásához. A DEP lehetővé teszi, hogy nagy számú eszközt regisztráljon anélkül, hogy megérintse őket. Az olyan eszközök, mint az iPhone, az iPadek és a MacBook közvetlenül a felhasználók számára is elhelyezhetők. Amikor a felhasználó bekapcsolja az eszközt, a beállítási asszisztens, amely magában foglalja az Apple-termékekre jellemző beépített élményt, előre konfigurált beállításokkal fut, és az eszköz regisztrálja magát a felügyeletre.
 
 A DEP-regisztráció engedélyezéséhez az Intune és az Apple Business Manager (ABM) vagy az Apple School Manager (ASM) portálok is használhatók. Meg kell adni a sorozatszámok vagy a megrendelési sorszámok listáját, hogy az Intune-nal való felügyelethez eszközöket rendeljen hozzá. Az Intune-ban olyan DEP-beléptetési profilokat hozhat létre, amelyek a regisztráció során az eszközökre alkalmazott beállításokat tartalmazzák. Vegye figyelembe, hogy a DEP-regisztráció nem használható az [eszköz beléptetési kezelőjének](device-enrollment-manager-enroll.md) fiókjával.
 
@@ -38,15 +38,15 @@ A DEP-regisztráció engedélyezéséhez az Intune és az Apple Business Manager
 
 A DEP-regisztrációk nem kompatibilisek a Céges portál alkalmazás App Store-verziójával. Hozzáférést biztosíthat a felhasználóknak a Céges portál alkalmazáshoz egy DEP-eszközön. Érdemes megadnia ezt a hozzáférést, hogy a felhasználók kiválasszák, hogy mely vállalati alkalmazásokat szeretnék használni az eszközön, vagy hogy a regisztrálási folyamat elvégzéséhez a modern hitelesítést használják. 
 
-Ha a regisztráció során engedélyezni szeretné a modern hitelesítést, küldje le az alkalmazást az eszközre a DEP-profilban található VPP (Volume Purchase program) használatával a **céges portál telepítésével** . További információ: iOS- [eszközök automatikus regisztrálása az Apple Készülékregisztrációs program](device-enrollment-program-enroll-ios.md#create-an-apple-enrollment-profile).
+Ha a regisztráció során engedélyezni szeretné a modern hitelesítést, küldje le az alkalmazást az eszközre a DEP-profilban található VPP (Volume Purchase program) használatával a **céges portál telepítésével** . További információ: [iOS/iPadOS-eszközök automatikus regisztrálása az Apple Készülékregisztrációs program](device-enrollment-program-enroll-ios.md#create-an-apple-enrollment-profile).
 
 Annak engedélyezéséhez, hogy a Céges portál automatikusan frissítsen, és adja meg a Céges portál alkalmazást a DEP szolgáltatással már regisztrált eszközökön, telepítse az Céges portál alkalmazást az Intune-ban az [alkalmazás-konfigurációs szabályzattal](../apps/app-configuration-policies-use-ios.md) megkövetelt mennyiségi vásárlási program (VPP) alkalmazással.
 
 ## <a name="what-is-supervised-mode"></a>A felügyelt mód ismertetése
 
-Az Apple az iOS 5-tel vezette be a felügyelt módot. A felügyelt módban lévő iOS-eszközök több vezérlővel is kezelhetők, például a képernyőfelvételek blokkolásával és az alkalmazások az App Store áruházból való telepítésének blokkolásával. Ezért különösen hasznos a vállalati tulajdonú eszközök esetében. Az Intune az Apple készülékregisztrációs program (DEP) keretében biztosít lehetőséget az eszközök felügyelt módú üzemeltetésének beállítására.
+Az Apple felügyelt módot vezetett be az iOS/iPadOS 5 verzióban. A felügyelt módban lévő iOS-/iPadOS-eszközök további vezérlőkkel kezelhetők, például a képernyőfelvételek letiltásával és az alkalmazások az App Store áruházból való telepítésének blokkolásával. Ezért különösen hasznos a vállalati tulajdonú eszközök esetében. Az Intune az Apple készülékregisztrációs program (DEP) keretében biztosít lehetőséget az eszközök felügyelt módú üzemeltetésének beállítására.
 
-A nem felügyelt DEP-eszközök támogatása megszűnt az iOS 11-ben. Az iOS 11-es és újabb verzióiban a DEP-konfigurációval rendelkező eszközöknek mindig felügyeltnek kell lenniük. Egy későbbi iOS-kiadásban a DEP is_supervised jelölőjét nem veszi figyelembe a rendszer.
+A nem felügyelt DEP-eszközök támogatása elavult volt az iOS/iPadOS 11 verzióban. Az iOS/iPadOS 11 és újabb verzióiban a DEP által konfigurált eszközöket mindig felügyelni kell. A DEP is_supervised jelzőt a rendszer figyelmen kívül hagyja egy jövőbeli iOS-/iPadOS-kiadásban.
 
 <!--
 **Steps to enable enrollment programs from Apple**
@@ -63,7 +63,7 @@ A nem felügyelt DEP-eszközök támogatása megszűnt az iOS 11-ben. Az iOS 11-
 
 ## <a name="get-an-apple-dep-token"></a>Apple DEP-token beszerzése
 
-Az iOS-eszközök DEP-regisztrációjához először is egy Apple-től származó DEP-tokenre (.p7m) van szükség. Ez a token (jogkivonat) teszi lehetővé az Intune számára a vállalat által birtokolt DEP-eszközök adatainak szinkronizálását. Azt is engedélyezi, hogy az Intune regisztrációs profilokat töltsön fel az Apple számára, és eszközöket rendeljen ezen profilokhoz.
+Az iOS/iPadOS-eszközök DEP-sel való regisztrálásához az Apple-től származó DEP-jogkivonat (. p7m) fájl szükséges. Ez a token (jogkivonat) teszi lehetővé az Intune számára a vállalat által birtokolt DEP-eszközök adatainak szinkronizálását. Azt is engedélyezi, hogy az Intune regisztrációs profilokat töltsön fel az Apple számára, és eszközöket rendeljen ezen profilokhoz.
 
 Az Apple Business Manager vagy az Apple School Manager portál használatával hozhat létre jogkivonatot. Az ABM/ASM portál használatával eszközöket rendelhet hozzá az Intune-hoz a felügyelethez.
 
@@ -105,7 +105,7 @@ Az Apple Business Manager vagy az Apple School Manager portál használatával h
 
    Az Apple Portalon lépjen a **telepítési programok** &gt; **Készülékregisztrációs program** &gt; a **hozzárendelési előzmények megtekintése** elemre, és tekintse meg az eszközök listáját és a Mdm-kiszolgáló hozzárendelését.
 
-### <a name="step-3-save-the-apple-id-used-to-create-this-token"></a>3\. lépés Mentse a token létrehozásához használt Apple ID-t.
+### <a name="step-3-save-the-apple-id-used-to-create-this-token"></a>3\. lépés. Mentse a token létrehozásához használt Apple ID-t.
 
 A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)adja meg az Apple ID-t későbbi használatra.
 
@@ -117,7 +117,7 @@ A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com
 2. Ha [hatókör-címkéket](../fundamentals/scope-tags.md) kíván alkalmazni erre a DEP-tokenre, válassza a **hatókör (címkék)** lehetőséget, és válassza ki a kívánt hatókör-címkéket. A jogkivonatra alkalmazott hatókör-címkéket a rendszer a tokenhez hozzáadott profilok és eszközök öröklik.
 3. Válassza a **Létrehozás** lehetőséget.
 
-A leküldéses tanúsítvány lehetővé teszi, hogy az Intune regisztrálja és felügyelje az iOS-eszközöket a szabályzatoknak a regisztrált mobileszközökre való leküldésével. Az Intune automatikusan szinkronizálja az Apple-lel a regisztrációs programfiók adatait.
+A leküldéses tanúsítvánnyal az Intune az iOS/iPadOS-eszközöket regisztrálhatja és felügyelheti, ha a szabályzatot leküldi a regisztrált mobileszközökön. Az Intune automatikusan szinkronizálja az Apple-lel a regisztrációs programfiók adatait.
 
 ## <a name="create-an-apple-enrollment-profile"></a>Apple-regisztrációs profil létrehozása
 
@@ -155,7 +155,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
     >
     > Ezek nem támogatottak az Apple beállítási asszisztenssel való hitelesítéskor.
 
-6. Ha a **céges portál** lehetőséget választotta, **ahol a felhasználóknak hitelesíteniük kell a HITELESÍTÉST**, a VPP-token használatával automatikusan telepítheti a céges portál az eszközre. Ebben az esetben a felhasználónak nem kell megadnia egy Apple ID azonosítót. A Céges portál VPP-jogkivonattal való telepítéséhez válasszon egy jogkivonatot a **Céges portál telepítése a VPP-vel** résznél. Ehhez a Céges portál már hozzá lett adva a VPP-tokenhez. Győződjön meg arról, hogy a Céges portál alkalmazás továbbra is frissül a regisztráció után, és ellenőrizze, hogy konfigurálta-e az alkalmazás telepítését az Intune-ban (Intune > Client apps). Annak érdekében, hogy a felhasználói beavatkozás nem szükséges, valószínűleg szeretné, hogy a Céges portál iOS VPP-alkalmazásként legyen elérhető, szükség esetén végezze el a szükséges alkalmazást, és használja az eszköz licencelését a hozzárendeléshez. Fontos, hogy a jogkivonat ne járjon le, és hogy elég eszközlicenccel rendelkezzen a Céges portál alkalmazáshoz. Ha a jogkivonat lejár vagy lejár a licencek közül, az Intune telepíti az App Store-Céges portált, és felszólítja az Apple ID azonosítóra. 
+6. Ha a **céges portál** lehetőséget választotta, **ahol a felhasználóknak hitelesíteniük kell a HITELESÍTÉST**, a VPP-token használatával automatikusan telepítheti a céges portál az eszközre. Ebben az esetben a felhasználónak nem kell megadnia egy Apple ID azonosítót. A Céges portál VPP-jogkivonattal való telepítéséhez válasszon egy jogkivonatot a **Céges portál telepítése a VPP-vel** résznél. Ehhez a Céges portál már hozzá lett adva a VPP-tokenhez. Győződjön meg arról, hogy a Céges portál alkalmazás továbbra is frissül a regisztráció után, és ellenőrizze, hogy konfigurálta-e az alkalmazás telepítését az Intune-ban (Intune > Client apps). Annak érdekében, hogy a felhasználói beavatkozás nem szükséges, a legvalószínűbb, hogy iOS/iPadOS VPP-alkalmazásként kívánja használni a Céges portál, a szükséges alkalmazást kell használnia, és az eszköz licencelését használja a hozzárendeléshez. Fontos, hogy a jogkivonat ne járjon le, és hogy elég eszközlicenccel rendelkezzen a Céges portál alkalmazáshoz. Ha a jogkivonat lejár vagy lejár a licencek közül, az Intune telepíti az App Store-Céges portált, és felszólítja az Apple ID azonosítóra. 
 
     > [!NOTE]
     > Ha **kijelöli, hogy a felhasználóknak hogyan kell céges portál hitelesíteniük** a szolgáltatást, akkor győződjön meg arról, hogy az eszköz beléptetési folyamata a vállalati portál DEP-eszközre való letöltésének első 24 óráján belül történik. Ellenkező esetben előfordulhat, hogy a regisztráció meghiúsul, és a gyári beállítások visszaállítására lesz szükség az eszköz regisztrálásához.
@@ -168,7 +168,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
 
     A többtényezős hitelesítés nem támogatott egyetlen eszközön, egyetlen alkalmazás módban. Ez a korlátozás azért van, mert az eszköz nem tud másik alkalmazásra váltani, hogy elvégezze a hitelesítés második tényezőjét. Ezért ha a többtényezős hitelesítést egyetlen app Mode-eszközön szeretné használni, a második tényezőnek egy másik eszközön kell lennie.
 
-    Ez a funkció csak akkor támogatott iOS 11.3.1-es és újabb verziók.
+    Ez a funkció csak iOS/iPadOS 11.3.1 és újabb rendszereken támogatott.
 
    ![Képernyőkép az Egyalkalmazásos módból.](./media/device-enrollment-program-enroll-ios/single-app-mode.png)
 
@@ -176,7 +176,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
 
     ![Az Eszközkezelési beállítások képernyőképe.](./media/device-enrollment-program-enroll-ios/supervisedmode.png)
 
-    A **felügyelt** eszközök esetében több felügyeleti lehetőséget érhet el, és az Aktiválási zár funkció alapértelmezés szerint le van tiltva. A Microsoft a DEP használatát javasolja a felügyelt üzemmód engedélyezéséhez, különösen ha nagy mennyiségű iOS-eszközt helyez üzembe.
+    A **felügyelt** eszközök esetében több felügyeleti lehetőséget érhet el, és az Aktiválási zár funkció alapértelmezés szerint le van tiltva. A Microsoft a DEP használatát javasolja a felügyelt üzemmód engedélyezéséhez, különösen ha nagy mennyiségű iOS/iPadOS eszközt helyez üzembe.
 
     A rendszer kétféle módon is tudatja a felhasználókkal, hogy az eszközük felügyelet alatt áll:
 
@@ -184,9 +184,9 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
    - A **Beállítások** > **Általános** > **Névjegy** képernyőn a következő felirat látható: „Ez egy felügyelt iPhone. A Contoso figyelheti az internetes forgalmat és megállapíthatja a készülék helyét.” figyelmeztetés.
 
      > [!NOTE]
-     > A felügyelet nélkül regisztrált eszközöket csak az Apple Configurator segítségével tudja átállítani felügyelt eszközzé. Az eszköz ily módon való átállításához csatlakoztatnia kell az iOS-eszközt egy Mac számítógéphez USB-kábellel. Ezzel kapcsolatban az [Apple Configurator dokumentációjában](http://help.apple.com/configurator/mac/2.3) talál további információkat.
+     > A felügyelet nélkül regisztrált eszközöket csak az Apple Configurator segítségével tudja átállítani felügyelt eszközzé. Az eszköz ily módon történő alaphelyzetbe állításához csatlakoztatni kell egy iOS/iPadOS-eszközt egy Mac számítógéphez USB-kábellel. Ezzel kapcsolatban az [Apple Configurator dokumentációjában](http://help.apple.com/configurator/mac/2.3) talál további információkat.
 
-10. Válassza ki, hogy a profilt használó eszközök zárolt regisztrációját kívánja-e használni. A **Zárolt regisztráció** letiltja azokat az iOS-beállításokat a **Beállítások** menüből, amelyek segítségével eltávolítható a felügyeleti profil. Az eszközök regisztrálását követően a beállítás nem módosítható az eszköz törlése nélkül. A zárolt regisztrációjú eszközökön a **Felügyelt** felügyeleti módot az *Igen* értékre kell beállítani. 
+10. Válassza ki, hogy a profilt használó eszközök zárolt regisztrációját kívánja-e használni. A **zárolt regisztráció** letiltja az iOS/iPadOS beállításait, amelyek lehetővé teszik a felügyeleti profil eltávolítását a **Beállítások** menüből. Az eszközök regisztrálását követően a beállítás nem módosítható az eszköz törlése nélkül. A zárolt regisztrációjú eszközökön a **Felügyelt** felügyeleti módot az *Igen* értékre kell beállítani. 
 
 11. Válassza ki, hogy szeretné-e, hogy a profilt használó eszközök képesek legyenek **szinkronizálni a számítógépekkel**. Ha az **Apple Configurator engedélyezése tanúsítvány szerint** lehetőséget választja, tanúsítványt kell választania az **Apple Configurator-tanúsítványok** területen.
 
@@ -270,7 +270,7 @@ Választhat egy alapértelmezett profilt, amelyet a rendszer az adott tokennel r
 ## <a name="distribute-devices"></a>Eszközök terjesztése
 Az eddigiekben engedélyezte az eszközfelügyeletet és a szinkronizálást az Apple és az Intune között, valamint a DEP-eszközök regisztrálása céljából hozzárendelt egy profilt. Az eszközök ekkor már kioszthatók a felhasználóknak. Felhasználói affinitással rendelkező eszközök esetén minden felhasználóhoz hozzá kell rendelni egy Intune-licencet. A felhasználói affinitás nélküli eszközökhöz licenc szükséges. Az aktivált eszköz nem tud beléptetési profilt alkalmazni, amíg az eszköz nem törlődik.
 
-Lásd: [iOS-eszköz regisztrálása az Intune-ban a Készülékregisztrációs programmal](/intune-user-help/enroll-your-device-dep-ios).
+Lásd: [iOS-/iPadOS-eszköz regisztrálása az Intune-ban a Készülékregisztrációs program](/intune-user-help/enroll-your-device-dep-ios).
 
 ## <a name="renew-a-dep-token"></a>DEP-token megújítása  
 1. Ugrás a deploy.apple.com címre.  
