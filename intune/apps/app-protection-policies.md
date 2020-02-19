@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9b5f973e5ce169edcf6149b0588c905d8497cca2
-ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
+ms.openlocfilehash: c7a6914e8174023704cfc593ec08a525ec5889f3
+ms.sourcegitcommit: ecaff388038fb800f2e646f8efcf8f3b1e2fd1b1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75885746"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77437902"
 ---
 # <a name="how-to-create-and-assign-app-protection-policies"></a>Alkalmazásvédelmi szabályzatok létrehozása és hozzárendelése
 
@@ -49,10 +49,10 @@ Ha iOS-/iPadOS-és Android-alkalmazásokhoz hoz létre alkalmazás-védelmi szab
 3. Válassza a **házirend létrehozása** lehetőséget, és válassza az **iOS/IPadOS** vagy az **Android**lehetőséget. Megjelenik a **házirend létrehozása** panel.
 4. Az **alapvető beállítások** lapon adja hozzá a következő értékeket:
 
-    | Érték | Description |
+    | Érték | Leírás |
     |--------------|------------------------------------------------|
     | Név | Az alkalmazás védelmi szabályzatának neve. |
-    | Description | Választható Az alkalmazás védelmi szabályzatának leírása. |
+    | Leírás | Választható Az alkalmazás védelmi szabályzatának leírása. |
 
 
     A **platform** értéke a fenti választás alapján van beállítva.
@@ -62,10 +62,10 @@ Ha iOS-/iPadOS-és Android-alkalmazásokhoz hoz létre alkalmazás-védelmi szab
 5. Az **alkalmazások** lap megjelenítéséhez kattintson a **tovább** gombra.<br>
     Az **alkalmazások** oldalon kiválaszthatja, hogyan szeretné alkalmazni a szabályzatot különböző eszközökön futó alkalmazásokra. Legalább egy alkalmazást fel kell vennie.<p>
     
-    | Érték/beállítás | Description |
+    | Érték/beállítás | Leírás |
     |-------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
     | Az alkalmazások célzása minden eszköz típusán | Ezzel a beállítással a szabályzatot a felügyeleti állapotú eszközökön futó alkalmazásokra is megcélozhatja. Válassza a **nem** lehetőséget az alkalmazások célzásához adott eszközökön. További információ: [a TARGET app Protection-szabályzatok az eszközkezelés alapján](#target-app-protection-policies-based-on-device-management-state) |
-    |     Eszközök típusai | Ezzel a beállítással adhatja meg, hogy a szabályzat a MDM által felügyelt vagy nem felügyelt eszközökre vonatkozzon-e. IOS-ALKALMAZÁSokra vonatkozó szabályzatok esetén válasszon a nem **felügyelt** és **felügyelt** eszközök közül. Android-ALKALMAZÁSokra vonatkozó szabályzatok esetén válassza a nem **felügyelt**, **androidos eszközök rendszergazdája**és az **Android Enterprise**lehetőséget.  |
+    |     Eszközök típusai | Ezzel a beállítással adhatja meg, hogy a szabályzat a MDM által felügyelt vagy nem felügyelt eszközökre vonatkozzon-e. IOS/iPadOS esetén válasszon a nem **felügyelt** és **felügyelt** eszközök közül. Android-ALKALMAZÁSokra vonatkozó szabályzatok esetén válassza a nem **felügyelt**, **androidos eszközök rendszergazdája**és az **Android Enterprise**lehetőséget.  |
     | Nyilvános alkalmazások | Kattintson a **nyilvános alkalmazások kiválasztása** lehetőségre a célként használandó alkalmazások kiválasztásához. |
     | Egyéni alkalmazások | Az **egyéni alkalmazások kiválasztása** lehetőségre kattintva kiválaszthat egy köteg-azonosító alapján megcélzott egyéni alkalmazásokat. |
     
@@ -103,7 +103,7 @@ Ha iOS-/iPadOS-és Android-alkalmazásokhoz hoz létre alkalmazás-védelmi szab
 
 A végfelhasználók az App Store-ból vagy a Google Play áruházból tölthetik le az alkalmazásokat. További információkért lásd:
 * [Milyen hatással vannak az androidos alkalmazásokra az alkalmazásvédelmi szabályzatok?](../fundamentals/end-user-mam-apps-android.md)
-* [Milyen hatással vannak az iOS-es alkalmazásokra az alkalmazásvédelmi szabályzatok?](../fundamentals/end-user-mam-apps-ios.md)
+* [Mi várható, ha az iOS/iPadOS alkalmazást az alkalmazás-védelmi szabályzatok kezelik](../fundamentals/end-user-mam-apps-ios.md)
 
 ## <a name="change-existing-policies"></a>A meglévő szabályzatok módosítása
 A meglévő szabályzatokat szerkesztheti, és alkalmazhatja azokat a megcélzott felhasználókra. Ha azonban a meglévő szabályzatok módosításakor a felhasználók már be voltak jelentkezve az alkalmazásokba, csak egy 8 órás időszak elteltével láthatják a változtatásokat.
@@ -120,10 +120,10 @@ A változtatások hatásának érzékeléséhez a felhasználónak ki kell jelen
 
 4. Az **alkalmazások** oldalon kiválaszthatja, hogyan szeretné alkalmazni a szabályzatot különböző eszközökön futó alkalmazásokra. Legalább egy alkalmazást fel kell vennie.<p>
     
-    | Érték/beállítás | Description |
+    | Érték/beállítás | Leírás |
     |-------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
     | Az alkalmazások célzása minden eszköz típusán | Ezzel a beállítással a szabályzatot a felügyeleti állapotú eszközökön futó alkalmazásokra is megcélozhatja. Válassza a **nem** lehetőséget az alkalmazások célzásához adott eszközökön. További információ: [a TARGET app Protection-szabályzatok az eszközkezelés alapján](#target-app-protection-policies-based-on-device-management-state) |
-    |     Eszközök típusai | Ezzel a beállítással adhatja meg, hogy a szabályzat a MDM által felügyelt vagy nem felügyelt eszközökre vonatkozzon-e. IOS-ALKALMAZÁSokra vonatkozó szabályzatok esetén válasszon a nem **felügyelt** és **felügyelt** eszközök közül. Android-ALKALMAZÁSokra vonatkozó szabályzatok esetén válassza a nem **felügyelt**, **androidos eszközök rendszergazdája**és az **Android Enterprise**lehetőséget.  |
+    |     Eszközök típusai | Ezzel a beállítással adhatja meg, hogy a szabályzat a MDM által felügyelt vagy nem felügyelt eszközökre vonatkozzon-e. IOS/iPadOS esetén válasszon a nem **felügyelt** és **felügyelt** eszközök közül. Android-ALKALMAZÁSokra vonatkozó szabályzatok esetén válassza a nem **felügyelt**, **androidos eszközök rendszergazdája**és az **Android Enterprise**lehetőséget.  |
     | Nyilvános alkalmazások | Kattintson a **nyilvános alkalmazások kiválasztása** lehetőségre a célként használandó alkalmazások kiválasztásához. |
     | Egyéni alkalmazások | Az **egyéni alkalmazások kiválasztása** lehetőségre kattintva kiválaszthat egy köteg-azonosító alapján megcélzott egyéni alkalmazásokat. |
 
@@ -166,7 +166,7 @@ A változtatások hatásának érzékeléséhez a felhasználónak ki kell jelen
 ## <a name="target-app-protection-policies-based-on-device-management-state"></a>Eszközkezelési állapottól függő alkalmazásvédelmi szabályzatok
 Vállalatoknál gyakori, hogy a felhasználóknak engedélyezett mind az Intune által felügyelt (MDM) eszközök használata, mind pedig a nem felügyelt, csak az Intune alkalmazásvédelmi szabályzatok által védett eszközök használata. A nem felügyelt eszközöket gyakran saját (BYOD-) eszközöknek nevezik.
 
-Mivel az Intune alkalmazásvédelmi szabályzatok a felhasználói identitásra irányulnak, a felhasználók védelmi beállításait a rendszer alkalmazhatja mind a regisztrált (MDM által felügyelt), mind pedig a regisztrálatlan (MDM nélküli) eszközökre. Emiatt lehetősége van megadni, hogy az Intune alkalmazásvédelmi szabályzatot az Intune-ban regisztrált vagy regisztrálatlan iOS- és Android-eszközökre kívánja-e alkalmazni. A nem felügyelt eszközökre vonatkozóan egyetlen védelmi szabályzattal rendelkezhet, amelyben szigorú adatvesztés-megelőzési (DLP) vezérlők találhatók, valamint egy külön védelmi szabályzat a MDM által felügyelt eszközökhöz, ahol a DLP-vezérlők valamivel nyugodtabbak lehetnek. További információ arról, hogy ez hogyan működik a személyes Android Enterprise-eszközökön: [alkalmazás-védelmi szabályzatok és munkahelyi profilok](android-deployment-scenarios-app-protection-work-profiles.md).
+Mivel az Intune alkalmazásvédelmi szabályzatok a felhasználói identitásra irányulnak, a felhasználók védelmi beállításait a rendszer alkalmazhatja mind a regisztrált (MDM által felügyelt), mind pedig a regisztrálatlan (MDM nélküli) eszközökre. Ezért az Intune app Protection-szabályzatot az Intune-ban regisztrált vagy nem regisztrált iOS-/iPadOS-és Android-eszközökre is megcélozhatja. A nem felügyelt eszközökre vonatkozóan egyetlen védelmi szabályzattal rendelkezhet, amelyben szigorú adatvesztés-megelőzési (DLP) vezérlők találhatók, valamint egy külön védelmi szabályzat a MDM által felügyelt eszközökhöz, ahol a DLP-vezérlők valamivel nyugodtabbak lehetnek. További információ arról, hogy ez hogyan működik a személyes Android Enterprise-eszközökön: [alkalmazás-védelmi szabályzatok és munkahelyi profilok](android-deployment-scenarios-app-protection-work-profiles.md).
 
 Ezen szabályzatok létrehozásához keresse meg az **alkalmazások** > **alkalmazás-védelmi házirendek** elemet az Intune-konzolon, majd válassza a **házirend létrehozása**lehetőséget. Másik lehetőségként egy meglévő alkalmazásvédelmi szabályzatot is szerkeszthet. Ahhoz, hogy az alkalmazás védelmi szabályzata a felügyelt és a nem felügyelt eszközökre is vonatkozzon, navigáljon az **alkalmazások** lapra, és győződjön meg róla, hogy az **összes eszközön a cél az alkalmazásokhoz** beállítás értéke **Igen**, az alapértelmezett érték. Ha azt szeretné, hogy a rendszer részletesen hozzárendelje a hozzárendelést a felügyeleti állapot alapján, a **nem**értékre állítsa a **cél alkalmazást az összes eszközön** . 
 
@@ -182,15 +182,15 @@ Ezen szabályzatok létrehozásához keresse meg az **alkalmazások** > **alkalm
 
 IOS esetén további alkalmazás-konfigurációs beállításokra van szükség az alkalmazás-beállítások az Intune-ban regisztrált eszközökön futó alkalmazások számára történő megcélzásához:
 
-- Az **IntuneMAMUPN** beállítást az MDM által felügyelt összes alkalmazáshoz be kell állítani. További információért lásd: [iOS-alkalmazások közti adatátvitel felügyelete a Microsoft Intune-ban](data-transfer-between-apps-manage-ios.md#configure-user-upn-setting-for-microsoft-intune-or-third-party-emm).
-- A **IntuneMAMDeviceID** minden harmadik féltől származó és üzletági Mdm felügyelt alkalmazáshoz konfigurálni kell. Az **IntuneMAMDeviceID** beállítást az eszközazonosító jogkivonatra kell konfigurálni. Például így: `key=IntuneMAMDeviceID, value={{deviceID}}`. További információt az [Alkalmazáskonfigurációs szabályzatok hozzáadása felügyelt iOS-eszközökhöz](app-configuration-policies-use-ios.md) című témakörben talál.
+- Az **IntuneMAMUPN** beállítást az MDM által felügyelt összes alkalmazáshoz be kell állítani. További információ: az [iOS/iPadOS alkalmazások közötti adatátvitel kezelése Microsoft Intuneban](data-transfer-between-apps-manage-ios.md#configure-user-upn-setting-for-microsoft-intune-or-third-party-emm).
+- A **IntuneMAMDeviceID** minden harmadik féltől származó és üzletági Mdm felügyelt alkalmazáshoz konfigurálni kell. Az **IntuneMAMDeviceID** beállítást az eszközazonosító jogkivonatra kell konfigurálni. Például `key=IntuneMAMDeviceID, value={{deviceID}}`. További információ: alkalmazás- [konfigurációs szabályzatok hozzáadása a felügyelt iOS-/iPadOS-eszközökhöz](app-configuration-policies-use-ios.md).
 - Amennyiben csak az **IntuneMAMDeviceID** van konfigurálva, az Intune APP nem felügyeltnek tekinti az eszközt.
 
 > [!NOTE]
-> Ha kifejezetten iOS-eszközökre vonatkozó támogatási információkat keres az alkalmazásvédelmi szabályzatok eszközkezelési állapottól függő alkalmazásáról, lásd: [MAM-alapú védelmi szabályzatok alkalmazása eszközkezelési állapot alapján](../fundamentals/whats-new-archive.md#mam-protection-policies-targeted-based-on-management-state).
+> Adott iOS-/iPadOS-támogatással kapcsolatos információkért lásd: a [felügyeleti állapot alapján megcélzott MAM Protection-szabályzatok](../fundamentals/whats-new-archive.md#mam-protection-policies-targeted-based-on-management-state).
 
 ## <a name="policy-settings"></a>Szabályzatbeállítások
-Az iOS és az Android szabályzatbeállításait tartalmazó lista megtekintéséhez válasszon a következő hivatkozások közül:
+Az iOS/iPadOS és az Android rendszerhez készült házirend-beállítások teljes listájának megjelenítéséhez válasszon az alábbi hivatkozások közül:
 
 - [iOS-szabályzatok](app-protection-policy-settings-ios.md)
 - [Android-szabályzatok](app-protection-policy-settings-android.md)
@@ -200,4 +200,4 @@ Az iOS és az Android szabályzatbeállításait tartalmazó lista megtekintés�
 
 ## <a name="see-also"></a>További információ
 * [Milyen hatással vannak az androidos alkalmazásokra az alkalmazásvédelmi szabályzatok?](../fundamentals/end-user-mam-apps-android.md)
-* [Milyen hatással vannak az iOS-es alkalmazásokra az alkalmazásvédelmi szabályzatok?](../fundamentals/end-user-mam-apps-ios.md)
+* [Mi várható, ha az iOS/iPadOS alkalmazást az alkalmazás-védelmi szabályzatok kezelik](../fundamentals/end-user-mam-apps-ios.md)

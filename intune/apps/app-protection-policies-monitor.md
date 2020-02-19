@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5d2902c876fab12c1ba1e45783327f1ea08ab4d8
-ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.openlocfilehash: 899e2d2dc8458d0909f01e9dfcc1056874ef0fa7
+ms.sourcegitcommit: ecaff388038fb800f2e646f8efcf8f3b1e2fd1b1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77414659"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77437970"
 ---
 # <a name="how-to-monitor-app-protection-policies"></a>Az alkalmazásvédelmi szabályzatok figyelése
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
@@ -170,7 +170,7 @@ Kövesse az alábbi lépéseket az App Protection. csv fájl vagy az App Configu
     ![Képernyőkép a Jelentés mentése jóváhagyó mezőről](./media/app-protection-policies-monitor/app-protection-report-csv-1.png)
    
 > [!NOTE]
-> Az Intune további eszköz-jelentési mezőket biztosít, beleértve az alkalmazás regisztrációs AZONOSÍTÓját, az Android-gyártót, a modellt és a biztonsági javítás verzióját, valamint az iOS-modellt is. Az Intune-ban ezeket a mezőket az **alkalmazások** > **app protection-állapot** > **app Protection-jelentés: iOS/iPadOS, Android**. Emellett ezek a paraméterek segítséget nyújtanak az eszköz gyártójának (Android) **engedélyezési** listájának, az eszköz modell **engedélyezési** listájának (Android és iOS) és az **androidos biztonsági javítás minimális verziójának** beállításának konfigurálásában.   
+> Az Intune további eszköz-jelentési mezőket biztosít, beleértve az alkalmazás regisztrációs AZONOSÍTÓját, az Android-gyártót, a modellt és a biztonsági javítás verzióját, valamint az iOS/iPadOS modellt. Az Intune-ban ezeket a mezőket az **alkalmazások** > **app protection-állapot** > **app Protection-jelentés: iOS/iPadOS, Android**. Emellett ezek a paraméterek segítséget nyújtanak az eszköz gyártójának (Android) **engedélyezési** listájának, az eszköz modell **engedélyezési** listájának (Android és iOS) és az **androidos biztonsági javítás minimális verziójának** beállításának konfigurálásában.   
  
 ## <a name="see-also"></a>További információ
 - [Az iOS/iPadOS alkalmazások közötti adatátvitel kezelése](data-transfer-between-apps-manage-ios.md)

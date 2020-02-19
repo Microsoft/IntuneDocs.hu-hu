@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b52a914e1577fe13f0bec970a9c3ebe38aa2cdc8
-ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.openlocfilehash: 09c8a8819c288663936174e9317267c39eac63bc
+ms.sourcegitcommit: ecaff388038fb800f2e646f8efcf8f3b1e2fd1b1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77414946"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77437851"
 ---
 # <a name="how-to-create-exceptions-to-the-intune-app-protection-policy-app-data-transfer-policy"></a>Kivételek létrehozása a Intune App Protection szabályzat (alkalmazás) adatátviteli házirendjében
 
@@ -66,7 +66,7 @@ Ha a **Webex** csomagot kivételként hozzáadja a MAM adatátviteli szabályzat
     
     <code>com.samsung.android.messaging</code>
 
-- Android- **tanúsítvány telepítője** – példa: Ha a natív **tanúsítvány-telepítő** alkalmazást szeretné felvenni, hogy az Android rendszerhez készült Outlook képes legyen egy e-mail-mellékletként megjelenő S/MIME-tanúsítványt telepíteni az Android-tárolóba, hozzá kell adnia az adatátviteli kivételt a következő sztringhez: <code>com.android.certinstaller</code>. További információ: [érzékenység címkézése és védelme az Outlookban az iOS és az Android rendszerhez](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/sensitive-labeling-and-protection-outlook-for-ios-android).
+- Android- **tanúsítvány telepítője** – példa: Ha a natív **tanúsítvány-telepítő** alkalmazást szeretné felvenni, hogy az Android rendszerhez készült Outlook képes legyen egy e-mail-mellékletként megjelenő S/MIME-tanúsítványt telepíteni az Android-tárolóba, hozzá kell adnia az adatátviteli kivételt a következő sztringhez: <code>com.android.certinstaller</code>. További információ: [érzékenység címkézése és védelme az Outlookban iOS/iPadOS és Android rendszerhez](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/sensitive-labeling-and-protection-outlook-for-ios-android).
 
 ## <a name="next-steps"></a>További lépések
 

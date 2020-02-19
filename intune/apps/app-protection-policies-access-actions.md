@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1c6383b19943b8c501f86894a8c49b2130cb582a
-ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.openlocfilehash: 64faf797c69302e2a5cdbdde090330ab99fcc2e4
+ms.sourcegitcommit: ecaff388038fb800f2e646f8efcf8f3b1e2fd1b1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77414982"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77437885"
 ---
 # <a name="selectively-wipe-data-using-app-protection-policy-conditional-launch-actions-in-intune"></a>Adatok szelektív törlése az App Protection-szabályzat feltételes indítási műveleteivel az Intune-ban
 
@@ -59,7 +59,7 @@ Az iOS/iPadOS esetében a következő beállításokhoz tartozó műveleteket ko
 - Eszközmodell(ek)
 - Az eszköz maximálisan engedélyezett veszélyforrása
 
-Az **Eszközmodell(ek)** beállítás használatához adjon meg egy iOS-modellazonosítókat tartalmazó, pontosvesszővel tagolt listát. Ezek az értékek nem tesznek különbséget a kis-és nagybetűk között. Az "eszköz modell (ek)" bemenethez tartozó Intune-jelentéskészítésen kívül az iOS-modell azonosítóját a [HockeyApp támogatási dokumentációjának](https://support.hockeyapp.net/kb/client-integration-ios-mac-os-x-tvos/ios-device-types) eszköz típusa oszlopában vagy a [harmadik féltől származó github-tárházban](https://gist.github.com/adamawolf/3048717)találja.<br>
+Az **eszköz-modell (ek)** beállítás használatához adja meg az iOS/iPadOS modell-azonosítók pontosvesszővel elválasztott listáját. Ezek az értékek nem tesznek különbséget a kis-és nagybetűk között. Az "eszköz modell (ek)" bemenethez tartozó Intune-jelentéskészítésen kívül az iOS/iPadOS modell azonosítóját a [HockeyApp támogatási dokumentációjának](https://support.hockeyapp.net/kb/client-integration-ios-mac-os-x-tvos/ios-device-types) eszköz típusa oszlopában vagy a [harmadik fél GitHub-tárházában](https://gist.github.com/adamawolf/3048717)találhatja meg.<br>
 Példabemenet: *iPhone5,2; iPhone5,3*
 
 A végfelhasználói eszközökön az Intune-ügyfél az Intune-ban az Application Protection-szabályzatokhoz megadott eszközmodellsztringek egyszerű egyeztetése alapján végez műveleteket. Az egyeztetés teljes mértékben az eszköz által jelentett értéktől függ. Az informatikai rendszergazda számára ajánlatos ellenőrizni, hogy a szándéknak megfelelő viselkedés történik-e, ennek a beállításnak kölönféle eszközgyártókon és modelleken alapuló, kisméretű felhasználói csoportot célzó tesztelésével. Az alapértelmezett érték a **Nincs konfigurálva**.<br>
@@ -67,8 +67,8 @@ A végfelhasználói eszközökön az Intune-ügyfél az Intune-ban az Applicati
 - Megadottak engedélyezése (nem megadottak tiltása)
 - Megadottak engedélyezése (nem megadottak törlése)
 
-**Mi történik, ha az informatikai rendszergazda az ugyanazokra az alkalmazásokra és azonos Intune-felhasználóra célzott szabályzatok között bemenetként a iOS-modellazonosítók egy másik listáját adja meg?**<br>
-Ha két alkalmazásvédelmi szabályzat konfigurált értékei között ütközés van, az Intune általában a legkorlátozóbb megközelítést alkalmazza. Ezért a célzott Intune-felhasználó által megnyitott alkalmazásnak leküldött, eredményül kapott szabályzat az *A szabályzatban* és a *B szabályzatban* listázott iOS-modellazonosító(k) metszete lesz, ugyanarra az alkalmazás/felhasználó kombinációra célozva. Ha például az *A szabályzat* meghatározza az „iPhone5,2; iPhone5,3” szabályt, míg a *B szabályzat* az „iPhone5,3” szabályt az *A szabályzat* és a *B szabályzat* által is megcélzott Intune-felhasználó számára az eredményül kapott szabályzat az „iPhone5,3” lesz. 
+**Mi történik, ha a rendszergazda bekapcsolja az iOS/iPadOS modell-azonosító (k) egy másik listáját az azonos Intune-felhasználóhoz tartozó házirendek között?**<br>
+Ha két alkalmazásvédelmi szabályzat konfigurált értékei között ütközés van, az Intune általában a legkorlátozóbb megközelítést alkalmazza. Így a célként megadott Intune-felhasználó által a megnevezett alkalmazásnak küldött eredő házirend az *a szabályzatban* szereplő iOS/iPadOS-modell-azonosító (k), valamint a *B* házirend ugyanazon alkalmazás-és felhasználói kombinációra irányul. Ha például az *A szabályzat* meghatározza az „iPhone5,2; iPhone5,3” szabályt, míg a *B szabályzat* az „iPhone5,3” szabályt az *A szabályzat* és a *B szabályzat* által is megcélzott Intune-felhasználó számára az eredményül kapott szabályzat az „iPhone5,3” lesz. 
 
 ### <a name="android-policy-settings"></a>Android-szabályzat beállításai
 

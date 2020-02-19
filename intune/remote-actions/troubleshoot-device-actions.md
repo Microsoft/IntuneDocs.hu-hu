@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7d4517d89e3b7365834e904c815b30a362540906
-ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
+ms.openlocfilehash: f4fca28329a5cd0adc7269929c4b2c2807bebf5e
+ms.sourcegitcommit: ecaff388038fb800f2e646f8efcf8f3b1e2fd1b1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76755595"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77437953"
 ---
 # <a name="troubleshoot-device-actions-in-intune"></a>Eszközök műveleteinek hibáinak megoldása az Intune-ban
 
@@ -34,7 +34,7 @@ A Microsoft Intune számos olyan műveletet tartalmaz, amelyek segítségével f
 ### <a name="i-clicked-the-disable-activation-lock-action-in-the-portal-but-nothing-happened-on-the-device"></a>Rákattintottam a "letiltás Aktiválási zár" műveletet a portálon, de semmi nem történt az eszközön.
 Ez a várt érték. A letiltási Aktiválási zár művelet megkezdése után az Intune egy frissített kódot kér az Apple-től. Ha az eszköz a Aktiválási zár képernyőn látható, manuálisan írja be a kódot a PIN-kód mezőbe. Ez a kód 15 napig érvényes, ezért ügyeljen rá, hogy a törlés előtt kattintson a műveletre, és másolja a kódot.
 
-### <a name="why-dont-i-see-the-disable-activation-lock-code-in-the-hardware-overview-blade-of-my-ios-device"></a>Miért nem látom az iOS-eszköz hardver áttekintés paneljén a Letiltás Aktiválási zár kódot?
+### <a name="why-dont-i-see-the-disable-activation-lock-code-in-the-hardware-overview-blade-of-my-iosipados-device"></a>Miért nem látom a Letiltás Aktiválási zár kódot az iOS/iPadOS eszköz hardver áttekintés paneljén?
 A legvalószínűbb ok a következők:
 - A kód lejárt, és törölve lett a szolgáltatásból.
 - Az eszköz nem felügyeli az eszköz korlátozási szabályzatát, hogy engedélyezze Aktiválási zár.
@@ -43,7 +43,7 @@ A kódot a Graph Explorerben a következő lekérdezéssel tekintheti meg:
 
 ```GET - https://graph.microsoft.com/beta/deviceManagement/manageddevices('deviceId')?$select=activationLockBypassCode.```
 
-### <a name="why-is-the-disable-activation-lock-action-greyed-out-for-my-ios-device"></a>Miért szürke a Letiltás Aktiválási zár művelet az iOS-eszközön?
+### <a name="why-is-the-disable-activation-lock-action-greyed-out-for-my-iosipados-device"></a>Miért szürke a Letiltás Aktiválási zár művelet az iOS/iPadOS eszközön?
 A legvalószínűbb ok a következők: 
 - A kód lejárt, és törölve lett a szolgáltatásból.
 - Az eszköz nem felügyeli az eszköz korlátozási szabályzatát, hogy engedélyezze Aktiválási zár.
@@ -90,7 +90,7 @@ Mivel az alaphelyzetbe állítási jogkivonat nincs aktiválva az eszközön. Az
 3. A felhasználónak el kell fogadnia a másodlagos kérést, hogy engedélyezze a PIN-kód alaphelyzetbe állítását.
 A lépések elvégzése után többé nem kell megkapnia ezt a választ.
 
-### <a name="why-am-i-prompted-to-set-a-new-passcode-on-my-ios-device-when-i-issue-the-remove-passcode-action"></a>Miért kérik új PIN-kód beállítását az iOS-eszközön, amikor kiadom a PIN-kód eltávolítása műveletet?
+### <a name="why-am-i-prompted-to-set-a-new-passcode-on-my-iosipados-device-when-i-issue-the-remove-passcode-action"></a>Miért kérik új PIN-kód beállítását az iOS/iPadOS eszközön a PIN-kód eltávolítása művelet kiadása során?
 Mivel az egyik megfelelőségi szabályzathoz PIN-kód szükséges.
 
 ## <a name="next-steps"></a>További lépések

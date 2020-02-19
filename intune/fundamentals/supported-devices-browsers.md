@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7c27debc75ac02ab86eb93ce4e5af8c81464d0d4
-ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.openlocfilehash: e28f8a2cc43e4ca210a391151383633da457c056
+ms.sourcegitcommit: ecaff388038fb800f2e646f8efcf8f3b1e2fd1b1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77415227"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77437919"
 ---
 # <a name="supported-operating-systems-and-browsers-in-intune"></a>Támogatott operációs rendszereket és böngészőket az Intune-ban
 
@@ -92,11 +92,11 @@ A windowsos számítógépekre a regisztráció alternatívájaként telepíthet
 > [!Note]
 > A Microsoft bejelentette, hogy a Windows 7 támogatása január 14-én 2020-án végződik. Ezen a napon az Intune visszavonja a Windows 7 operációs rendszerű eszközök támogatását.
 >
-> További információ [: az Intune-terv változásának megtervezése: a Windows 7 támogatásának megszűnése](https://docs.microsoft.com/intune/fundamentals/whats-new#intune-plan-for-change-nearing-end-of-support-for-windows-7)
+> További információkért lásd [: Intune-terv a változáshoz: a Windows 7 támogatásának vége](https://docs.microsoft.com/intune/fundamentals/whats-new#windows-7-ends-extended-support-).
 >
 > A Microsoft Intune a Silverlight-alapú Intune-konzol támogatását kivonja a 2020. október 15-én. Ez a nyugdíjazás magában foglalja a Silverlight-konzol konfigurált PC-ügyfélszoftverének (más néven a PC-ügynök) befejezésének támogatását.
 >
-> További információ: [a Silverlight-alapú felügyeleti konzol Microsoft Intune befejezésének támogatása](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Take-Action-Microsoft-Intune-ending-support-for-the-Silverlight/ba-p/916249)
+> További tudnivalókért tekintse meg [a Silverlight-alapú felügyeleti konzol Microsoft Intune befejezésének támogatását](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Take-Action-Microsoft-Intune-ending-support-for-the-Silverlight/ba-p/916249)ismertető témakört.
 
 <!--  ### Exchange ActiveSync management
 

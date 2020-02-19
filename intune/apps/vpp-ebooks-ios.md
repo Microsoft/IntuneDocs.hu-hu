@@ -1,5 +1,5 @@
 ---
-title: Mennyiségi programban vásárolt iOS-es e-könyvek kezelése
+title: Mennyiségi programban vásárolt iOS/iPadOS-e-könyvek kezelése
 titleSuffix: Microsoft Intune
 description: Az iOS-áruházból mennyiségi programban vásárolt könyvek szinkronizálása az Intune-nal, majd használatuk felügyelete és nyomon követése.
 keywords: ''
@@ -18,14 +18,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08275e2573fe8aae8c59ea25c85cdd8f7a3246ee
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: f7c2bd0603961b9d618b3f743ecb323fb7fc9823
+ms.sourcegitcommit: ecaff388038fb800f2e646f8efcf8f3b1e2fd1b1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74563750"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77437868"
 ---
-# <a name="how-to-manage-ios-ebooks-you-purchased-through-a-volume-purchase-program-with-microsoft-intune"></a>Mennyiségi vásárlási program keretében vásárolt iOS-es e-könyvek kezelése a Microsoft Intune-nal
+# <a name="how-to-manage-iosipados-ebooks-you-purchased-through-a-volume-purchase-program-with-microsoft-intune"></a>Mennyiségi vásárlási program keretében vásárolt iOS/iPadOS-e-könyvek kezelése Microsoft Intune
 
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
@@ -37,7 +37,7 @@ A Microsoft Intune segít a program keretében vásárolt könyvek szinkronizál
 A könyvek kezelésének eljárásai hasonlók a [VPP-alkalmazások kezeléséhez](../vpp-apps-ios.md).
 
 ## <a name="manage-volume-purchased-books-for-ios-devices"></a>Mennyiségi programban vásárolt könyvek kezelése iOS-eszközökön
-Az [Apple Volume Purchase Program for Business (VPP)](https://www.apple.com/business/vpp/) vagy az [Apple Volume Purchase Program for Education](https://volume.itunes.apple.com/us/store) programon keresztül vásárolhat egyszerre több licencet az iOS-könyvekhez. Ez az eljárás magában fogalja Apple VPP-fiók beállítását az Apple webhelyén, és az Apple VPP-token feltöltését az Intune-ba.  Ezután szinkronizálhatja a mennyiségi vásárlás adatait az Intune-nal, és nyomon követheti a mennyiségi programban vásárolt könyvek használatát.
+Az iOS/iPadOS-könyvekhez több licencet is vásárolhat a [Apple Volume Purchase program for Business](https://www.apple.com/business/vpp/) vagy az [oktatási Apple Volume Purchase program](https://volume.itunes.apple.com/us/store). Ez az eljárás magában fogalja Apple VPP-fiók beállítását az Apple webhelyén, és az Apple VPP-token feltöltését az Intune-ba.  Ezután szinkronizálhatja a mennyiségi vásárlás adatait az Intune-nal, és nyomon követheti a mennyiségi programban vásárolt könyvek használatát.
 
 ## <a name="before-you-start"></a>Előkészületek
 Mielőtt hozzálát, szerezzen be VPP-tokent az Apple-től, és töltse fel az Intune-fiókjába. Egyéb rendelkezések:
@@ -46,7 +46,7 @@ Mielőtt hozzálát, szerezzen be VPP-tokent az Apple-től, és töltse fel az I
 * A tokenek egy évig érvényesek.
 * Alapértelmezés szerint az Intune naponta kétszer szinkronizál az Apple VPP szolgáltatással. Manuális szinkronizálás bármikor kezdeményezhető.
 * Miután a VPP-tokent az Intune-ba importálta, ne importálja ugyanezt a tokent egy másik eszközfelügyeleti megoldásba. Ez a licenc-hozzárendelések és a felhasználói rekordok elvesztését eredményezheti.
-* Mielőtt az iOS-könyveket az Intune-nal kezdené használni, távolítsa el a más mobileszköz-felügyeleti (MDM) megoldás használatával létrehozott összes meglévő VPP-felhasználói fiókot. Az Intune biztonsági okokból nem szinkronizálja ezeket a felhasználói fiókokat az Intune-ba. Az Intune csak az Intune által létrehozott adatokat szinkronizálja az Apple VPP szolgáltatásból.
+* Mielőtt az iOS/iPadOS-könyveket az Intune-nal kezdené használni, távolítsa el a más mobileszköz-felügyeleti (MDM) szállítókkal létrehozott meglévő VPP-felhasználói fiókokat. Az Intune biztonsági okokból nem szinkronizálja ezeket a felhasználói fiókokat az Intune-ba. Az Intune csak az Intune által létrehozott adatokat szinkronizálja az Apple VPP szolgáltatásból.
 * Csak olyan eszközhöz rendelhet hozzá könyvet, amelyen telepítve van a beépített iBooks alkalmazás. Ha nincs, akkor a felhasználónak újra kell telepítenie az alkalmazást, hogy el tudják olvasni a könyvet. Az Intune jelenleg nem használható eltávolított beépített alkalmazások újratelepítésére.
 * Csak az Apple Volume Purchase Program webhelyéről rendelhet hozzá könyveket. A házon belül létrehozott könyveket nem töltheti fel és rendelheti hozzá.
 * Jelenleg nem rendelhet hozzá könyveket a felhasználói kategóriákhoz ugyanúgy, ahogyan az alkalmazásokat.

@@ -1,6 +1,6 @@
 ---
-title: Az iOS Elveszett eszköz módjának aktiválása az Azure-beli Microsoft Intune-ban | Microsoft Docs
-description: Az Elveszett eszköz mód bekapcsolásakor megadhat egy egyéni üzenetet a Microsoft Intune-nal, mely megjelenik az elveszett vagy ellopott iOS-eszköz zárolási képernyőjén. Emellett az Elveszett eszköz mód használatakor biztonsági és adatvédelmi információkat is kaphat.
+title: IOS/iPadOS elveszett mód aktiválása az Microsoft Intune-Azure-val | Microsoft Docs
+description: Az elveszett mód bekapcsolásával vagy elindításával testreszabhatja az elveszett vagy ellopott iOS/iPadOS eszközök zárolási képernyőjén megjelenő üzeneteket Microsoft Intune használatával. Emellett az Elveszett eszköz mód használatakor biztonsági és adatvédelmi információkat is kaphat.
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
@@ -16,22 +16,22 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2956be9e32587c3bf86ce009a6927269c11ffced
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 9a4103c819c0d4bd377b9c6ab2359cb7465cdd9c
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73712237"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77415599"
 ---
-# <a name="enable-lost-mode-on-ios-devices-with-intune"></a>Az Elveszett eszköz mód bekapcsolása egy iOS-eszközön az Intune-nal
+# <a name="enable-lost-mode-on-iosipados-devices-with-intune"></a>Elveszett mód engedélyezése iOS-vagy iPadOS-eszközökön az Intune-nal
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-Az **Elveszett eszköz mód** eszközművelet segítségével engedélyezheti az elveszett eszköz módot elveszett vagy ellopott iOS-es eszközökön. Ebben a módban megadható egy üzenet és egy telefonszám, amely megjelenik az eszköz zárolási képernyőjén. Az Elveszett eszköz mód csak felügyelt módban lévő, vállalati tulajdonú iOS-eszközök esetén használható.
+Az **elveszett eszköz mód** művelettel engedélyezheti az elveszett üzemmódot az elveszett vagy ellopott iOS/iPadOS eszközökön. Ebben a módban megadható egy üzenet és egy telefonszám, amely megjelenik az eszköz zárolási képernyőjén. Az elveszett mód használatához az eszköznek felügyelt módban lévő, vállalati tulajdonú iOS-/iPadOS-eszköznek kell lennie.
 
 ## <a name="supported-platforms"></a>Támogatott platformok
 
-- iOS 9.3 és újabb verziók
+- iOS/iPadOS 9,3 és újabb verziók
 
 Ez a funkció nem támogatott a következő rendszereken: 
 - Windows
@@ -42,12 +42,12 @@ Ez a funkció nem támogatott a következő rendszereken:
 ## <a name="enable-lost-mode"></a>Az Elveszett mód engedélyezése
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
-3. Válassza az **Eszközök**, majd a **Minden eszköz** lehetőséget.
-4. A felügyelt eszközök listájából válassza ki az iOS-eszközt, majd válassza az **elveszett módot (csak felügyelt**eszköz esetén).
+3. Kattintson az **Eszközök**, majd a **Minden eszköz** elemre.
+4. A felügyelt eszközök listájából válassza ki az iOS/iPadOS eszközt, majd válassza az **elveszett módot (csak felügyelt**eszköz esetén).
 5. Az **elveszett mód**területen válassza az **Engedélyezés**lehetőséget.
 6. A **zárolási képernyőn megjelenítendő üzenetben**írja be az eszköz zárolási képernyőjén megjelenítendő üzenetet.
 7. Szükség esetén megadhat egy telefonszámot a **megjelenítendő** telefonszám mezőben.
-6. A módosítások mentéséhez válassza az **OK** gombot.
+6. A módosítások mentéséhez kattintson az **OK** gombra.
 
 Az Elveszett eszköz mód engedélye teljesen letiltja az eszköz használatát. A végfelhasználó az Elveszett eszköz mód kikapcsolásáig nem tud hozzáférni az eszközhöz. Ha az Elveszett eszköz mód engedélyezve van, az [Eszköz megkeresése](device-locate.md) művelettel meghatározhatja az eszköz földrajzi helyét.
 

@@ -1,6 +1,6 @@
 ---
 title: Eszközök újraindítása az Azure-beli Microsoft Intune-ban | Microsoft Docs
-description: Újraindíthatja a Windows- és iOS-eszközöket a Microsoft Intune használatával az Azure Portalon az Újraindítás távoli művelettel.
+description: Indítsa újra a Windows és iOS/iPadOS eszközöket a Azure Portal Microsoft Intune használatával a Távoli újraindítás művelettel.
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 82ebf35d0eb435f2df4e6cf55274808e6fa690f4
-ms.sourcegitcommit: af384c46ec8d8def6aa32c3b89947748dc6fd28f
+ms.openlocfilehash: 54fa0f796e96a2487793197cbbbe548fd8490856
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76517541"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77415620"
 ---
 # <a name="remotely-restart-devices-with-intune"></a>Az eszközök távoli újraindítása az Intune-nal
 
@@ -35,10 +35,10 @@ Az eszköz **újraindítása** művelet hatására az eszköz újraindul (5 perc
 - Windows – A Windows 8.1-es és újabb verziói esetén támogatott
 - Windows Phone – A Windows Phone 8.1-es és újabb verziói esetén támogatott
 - Androidos kioszk-eszközök – az Android 7,0-es és újabb verzióiban támogatott
-- iOS – támogatott
+- iOS/iPadOS – támogatott
 
     > [!Note]  
-    > Ehhez a parancshoz felügyelt eszközökre és az **Eszközzárolás** hozzáférési jogosultságra van szükség. Az eszköz azonnal újraindul. Újraindítás után a PIN-kóddal zárolt iOS-eszközök nem csatlakoznak újra a Wi-Fi-hálózathoz. Újraindítás után az eszköz lehet, hogy nem fog tudni kommunikálni a kiszolgálóval.
+    > Ehhez a parancshoz felügyelt eszközökre és az **Eszközzárolás** hozzáférési jogosultságra van szükség. Az eszköz azonnal újraindul. A PIN-kóddal zárolt iOS/iPadOS-eszközök nem csatlakoznak újra a Wi-Fi-hálózathoz az újraindítás után. Újraindítás után az eszköz lehet, hogy nem fog tudni kommunikálni a kiszolgálóval.
 - macOS – nem támogatott
 - Androidos és androidos munkahelyi profillal rendelkező eszközök – nem támogatottak
 

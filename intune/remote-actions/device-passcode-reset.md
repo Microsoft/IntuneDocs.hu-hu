@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d2a5629e6a318836e23c6a2f7fceb59363a0ed72
-ms.sourcegitcommit: b0d683917af83170f85022b270270d8ced8e301c
+ms.openlocfilehash: cd6e58efa096c006780c17d991a9ea5da26099d4
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76812494"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77415551"
 ---
 # <a name="reset-or-remove-a-device-passcode-in-intune"></a>Eszközök PIN-kódjának visszaállítása vagy eltávolítása az Intune-ban
 
@@ -31,12 +31,12 @@ Ez a dokumentum a PIN-kód alaphelyzetbe állítása és a munkahelyi profil PIN
 
 ## <a name="supported-platforms-for-device-level-passcode-reset"></a>Az eszközszintű PIN-kód alaphelyzetbe állításának támogatott platformjai
 
-| Platfésm | Támogatott? |
+| Platform | Támogatott? |
 | ---- | ---- |
 | 6\.x vagy régebbi verziójú Android-eszközök | Igen |
 | Eszköz tulajdonosként regisztrált androidos vállalati eszközök | Igen |
-| iOS-eszközök | Igen |
-| Felhasználói regisztrációval regisztrált iOS-eszközök | Nem |
+| iOS/iPadOS-eszközök | Igen |
+| Felhasználói regisztrációval regisztrált iOS/iPadOS-eszközök | Nem |
 | Munkahelyi profillal regisztrált Android-eszközök | Nem |
 | 7\.0-ás vagy újabb verziójú Android-eszközök | Nem |
 | macOS | Nem |
@@ -46,7 +46,7 @@ Android-eszközök esetén ez azt jelenti, hogy az eszköz szintű PIN-kód alap
 
 ## <a name="supported-platforms-for-android-enterprise-work-profile-passcode-reset"></a>Azok a platformok, amelyeken alaphelyzetbe állítható a vállalati Android munkahelyi profil PIN-kódja
 
-| Platfésm | Támogatott? |
+| Platform | Támogatott? |
 | ---- | ---- |
 | Munkahelyi profillal regisztrált, 8.0-s vagy újabb verziójú vállalati Android-eszközök | Igen |
 | Munkahelyi profillal regisztrált, 7.x vagy korábbi verziójú vállalati Android-eszközök | Nem |
@@ -58,7 +58,7 @@ A munkahelyi profilokhoz a PIN-kód alaphelyzetbe állítása művelettel hozhat
 
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431) a következő szerepkörök bármelyikével: Azure Active Directory globális rendszergazda, Azure Active Directory Intune szolgáltatás-rendszergazda, segélyszolgálat-kezelő vagy szerepkör-rendszergazda.
-2. Válassza az **Eszközök**, majd a **Minden eszköz** lehetőséget.
+2. Kattintson az **Eszközök**, majd a **Minden eszköz** elemre.
 3. Az Ön által kezel eszközök listájáról válasszon ki egy eszközt, majd válassza a **...További** lehetőséget. Majd válassza a **PIN-kód eltávolítása** távoli eszközműveletet.
 
 ## <a name="reset-android-work-profile-passcodes"></a>Androidos munkahelyi profilok PIN-kódjának alaphelyzetbe állítása
@@ -68,9 +68,9 @@ A támogatott, androidos munkahelyi profillal regisztrált vállalati eszközök
 A 8.x vagy újabb verziójú, munkahelyi profillal regisztrált vállalati Android-eszközök végfelhasználói a regisztráció befejezése után azonnal értesítést kapnak arról, hogy aktiválniuk kell az új PIN-kódot. Az értesítés akkor jelenik meg, ha a munkahelyi profilban kötelező jelszót megadni, és be is van állítva jelszó. A PIN-kód megadása után az értesítés eltűnik.
 
 
-## <a name="remove-ios-passcodes"></a>iOS-beli PIN-kódok eltávolítása
+## <a name="remove-iosipados-passcodes"></a>IOS/iPadOS PIN-kódok eltávolítása
 
-A PIN-kódok alaphelyzetbe állítás helyett törlődnek az iOS-eszközökről. Ha PIN-kódokra vonatkozó megfelelőségi szabályzat van érvényben, az eszköz megkéri a felhasználót, hogy állítson be egy új jelszót a Beállítások területen.
+Az Alaphelyzetbe állítás helyett a rendszer eltávolítja a PIN-kódokat az iOS/iPadOS-eszközökről. Ha PIN-kódokra vonatkozó megfelelőségi szabályzat van érvényben, az eszköz megkéri a felhasználót, hogy állítson be egy új jelszót a Beállítások területen.
 
 ## <a name="next-steps"></a>További lépések
 

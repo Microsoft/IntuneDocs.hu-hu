@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f79a9bc845cb87c0536552b4d214cb82280b041
-ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.openlocfilehash: 1a9ce1a881e9a30d0f18cb676e7f7f11c4b5c8b1
+ms.sourcegitcommit: ecaff388038fb800f2e646f8efcf8f3b1e2fd1b1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77414680"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77437834"
 ---
 # <a name="intune-app-installation-error-reference"></a>Az Intune-alkalmazás telepítési hibájának referenciája
 
@@ -62,7 +62,7 @@ A következő hibaüzenetek és leírások részletesen ismertetik az iOS/iPadOS
 | 0x87D11388 | -2016341112 | az iOS/iPadOS eszköz jelenleg foglalt.  | Az iOS-/iPadOS-eszköz foglalt, ami hibát eredményezett. Az eszköz zárolva van. A felhasználónak fel kell oldania az eszköz zárolását az alkalmazás telepítéséhez. |
 | 0x87D13B64 | -2016330908 | Az alkalmazás telepítése nem sikerült.  | Hiba történt az alkalmazás telepítése közben. a hiba megoldásához iOS/iPadOS-konzol naplói szükségesek. |
 | 0x87D13B66 | -2016330906 | Az alkalmazás felügyelt, de a felhasználó lejárt vagy el lett távolítva.  | Vagy a felhasználó explicit módon eltávolította az alkalmazást, vagy az alkalmazás lejárt, de nem tölthető le, vagy az alkalmazás észlelése nem felel meg az eszköz válaszának.   Emellett ez a hiba iOS/iPadOS 9.2.2 platform-hiba alapján fordulhat elő. |
-| 0x87D13B60 | -2016330912 | Az alkalmazás telepítésre van ütemezve, de a tranzakció elvégzéséhez szükség van egy beváltási kódra.  | Ez a hiba általában a fizetős iOS/iPadOS áruházbeli alkalmazásokban fordul elő. |
+| 0x87D13B60 | -2016330912 | Az alkalmazás telepítésre van ütemezve, de a tranzakció elvégzéséhez szükség van egy beváltási kódra.  | Ez a hiba általában az iOS Store áruház fizetős alkalmazásainál fordul elő. |
 | 0x87D1041C | – 2016345060 | A telepítés sikeres befejezése után az alkalmazás nem észlelhető.  | Az alkalmazás észlelésének eredménye nem egyezett meg az eszköz által küldött válasszal. |
 | 0x87D13B62 | -2016330910 | A felhasználó elutasította az alkalmazás telepítésére vonatkozó ajánlatot.  | Az alkalmazás első telepítése közben a felhasználó a megszakítás lehetőségre kattintott. Kérje meg a felhasználót, hogy fogadja el a telepítési kérelmet a következő alkalommal. |
 | 0x87D13B63 | -2016330909 | A felhasználó elutasította az alkalmazás frissítésére vonatkozó ajánlatot.  | A végfelhasználó rákattint a Mégse gombra a frissítési folyamat során. Szükség szerint telepítse az üzembe helyezést, vagy oktatja a felhasználót, hogy fogadja el a frissítési kérést. |
@@ -83,7 +83,7 @@ A következő hibaüzenetek és leírások részletesen ismertetik az iOS/iPadOS
 | 0x87d13b69 | – 2016330903 | Az eszköz VPP licencelése csak iOS/iPadOS 9.0 + rendszerű eszközök esetén alkalmazható.  | Az érintett iOS/iPadOS-eszközök frissítése iOS/iPadOS 9.0 +. |
 | 0x87d13b8f | – 2016330865 | Az alkalmazás telepítve van az eszközön, de nem felügyelt.  | Ez a hiba csak LOB-alkalmazásokban fordul elő. Az alkalmazás az Intune-on kívül lett telepítve. A hiba megoldásához távolítsa el az alkalmazást az eszközről. Amikor legközelebb megtörténik az eszköz szinkronizálása, az eszköznek telepítenie kell az alkalmazást az Intune-ból. |
 | 0x87d13b68 | – 2016330904 | Felhasználó által elutasított alkalmazások kezelése  | Kérje meg a felhasználót, hogy fogadja el az alkalmazások felügyeletét. |
-| 0x87d1279d | – 2016335971 | Ismeretlen hiba.  | Ez a hiba az iOS/iPadOS áruházbeli alkalmazások esetében fordul elő, de a hiba forgatókönyve ismeretlen. |
+| 0x87d1279d | – 2016335971 | Ismeretlen hiba.  | Ez a hiba az iOS áruházbeli alkalmazások esetében fordul elő, de a hiba forgatókönyve ismeretlen. |
 | 0x87D13B9D | – 2016330851 | Az alkalmazás legújabb verziója nem tudott frissíteni egy korábbi verzióról.  | Ez a hibaüzenet akkor jelenik meg, ha az alkalmazás telepítve van és felügyelt, de a helytelen verziója van az eszközön. Ez a helyzet akkor is vonatkozik, amikor egy eszköz megkapta az alkalmazás frissítésére szolgáló parancsot, de az új verzió még nincs telepítve és nem jelentett vissza. A rendszer ezt a hibát fogja jelenteni az eszköz első beadásához a frissítés telepítése után, és akkor következik be, amikor az eszköz nem jelenti az új verzió telepítését, vagy egy másik hiba miatt meghiúsul. |
 | 0x87D13B6F | – 2016330897 | Az Intune-nal létesített kapcsolódás időkorlátja lejárt.  | Az alkalmazás jegyzékfájljának érvényesítése sikertelen hálózati kapcsolat miatt (időtúllépés) |
 | 0x87D13B70 | – 2016330896 | Megszakadt az internetkapcsolat.  | Az alkalmazás jegyzékfájljának érvényesítése sikertelen hálózati kapcsolat miatt (nem található az állomás) |

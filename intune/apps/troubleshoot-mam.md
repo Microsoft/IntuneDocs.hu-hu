@@ -17,24 +17,24 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 49bf59805476ebbcce3148738e40bfd11e4744eb
-ms.sourcegitcommit: 637375a390b6e34f9c4415c77b99fe2980bbf554
+ms.openlocfilehash: e7214c4d262c332933e88af2cc158870bd844c5d
+ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75839317"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77415466"
 ---
 # <a name="troubleshoot-mobile-application-management"></a>Mobilalkalmazás-kezelési hibaelhárítás
 
 Ez a témakör a Intune App Protection (más néven MAM vagy Mobile Application Management) használatakor bekövetkezett gyakori problémák megoldásait ismerteti.
 
-Ha ezekkel az információkkal nem tudja megoldani a problémát, a következő témakörben talál további részleteket a segítségkéréshez: [Hogyan kérhet támogatást az Intune-hoz](../fundamentals/get-support.md).
+Ha ezekkel az információkkal nem tudja megoldani a problémát, a [Hogyan kérhet támogatást az Intune-hoz](../fundamentals/get-support.md) című témakörben talál további részleteket a segítségkéréshez.
 
 ## <a name="common-it-administrator-issues"></a>A rendszergazdáknál gyakran előforduló problémák
 
 Ezek olyan gyakori problémák, amikor a rendszergazda az Intune app Protection-szabályzatok használata során felmerülhet.
 
-| Probléma | Description | Megoldás |
+| Probléma | Leírás | Megoldás |
 | -- | -- | -- |
 | A Skype Vállalati verzióra nem vonatkozó szabályzat | Az Azure Portalon beállított, eszközregisztráció nélküli alkalmazásvédelmi szabályzat nem lép életbe az iOS- és Android-eszközökön futó Skype Vállalati verzió alkalmazásra vonatkozóan. | A Skype Vállalati verziót a modern hitelesítésre kell beállítani.  Kövesse a [Bérlő engedélyezése modern hitelesítéshez](https://social.technet.microsoft.com/wiki/contents/articles/34339.skype-for-business-online-enable-your-tenant-for-modern-authentication.aspx) című részben található utasításokat a modern hitelesítés beállításához Skype-hoz. |
 | Nem alkalmazott Office-alkalmazás-szabályzat | Az alkalmazásvédelmi szabályzatok egyetlen felhasználónál sem lépnek életbe a [támogatott Office-alkalmazásokra](https://www.microsoft.com/cloud-platform/microsoft-intune-partners) vonatkozóan. | Ellenőrizze, hogy a felhasználók rendelkeznek-e Intune-licenccel, illetve, hogy a használt alkalmazásvédelmi szabályzat megcélozza-e az Office-alkalmazásokat. Az újonnan beállított alkalmazásvédelmi szabályzatok életbe lépéséhez esetenként 8 órának is el kell telnie. |
@@ -42,7 +42,7 @@ Ezek olyan gyakori problémák, amikor a rendszergazda az Intune app Protection-
 |Az alkalmazásvédelmi szabályzat jelentéseiből hiányzó felhasználói fiókok | A felügyeleti konzol jelentéseiben nem szerepelnek azok a felhasználói fiókok, amelyekre a közelmúltban alkalmazták az alkalmazásvédelmi szabályzatot. | Az alkalmazásvédelmi szabályzattal újonnan megcélzott felhasználók esetében előfordul, hogy 24 órának is el kell telnie, hogy a felhasználó megjelenjen a jelentésekben. |
 | Nem működő szabályzatváltozások | Az alkalmazásvédelmi szabályzatokat érintő változások és frissítések életbe lépéséhez akár 8 órára is szükség lehet. | Ha alkalmazandó, a végfelhasználó jelentkezzen ki az alkalmazásból, majd jelentkezzen be újra, ezzel kényszerítve a szinkronizálást a szolgáltatással. |
 | Az alkalmazásvédelmi szabályzat nem működik a DEP-pel | Az alkalmazásvédelmi szabályzat nem lép érvénybe az Apple DEP-eszközökön. | Győződjön meg róla, hogy használja-e a Felhasználói affinitás funkciót az Apple Eszközregisztrációs programmal (DEP). Felhasználói affinitásra minden olyan alkalmazás esetében szükség van, amely felhasználói hitelesítést igényel DEP alatt. <br><br>Az iOS DEP-regisztrációval kapcsolatos további információkért tekintse meg az [iOS-eszközök automatikus regisztrálása az Apple Készülékregisztrációs programban](../enrollment/device-enrollment-program-enroll-ios.md) című témakört.|
-| Az adatátviteli szabályzat nem működik iOS-szel | A **Más alkalmazásokból való adatátvitel engedélyezése az alkalmazásnak** és a **Más alkalmazásokból való adatfogadás engedélyezése az alkalmazásnak** szabályzatok nem tudják kezelni az adatátvitelt az iOS-ben. | Lásd: az [iOS-alkalmazások közötti adatátvitel kezelése Microsoft Intuneban](data-transfer-between-apps-manage-ios.md). |
+| Az adatátviteli szabályzat nem működik iOS-szel | Az **alkalmazás átviheti** az adatátvitelt más alkalmazásokba, és **lehetővé teszi az alkalmazások számára más alkalmazásokból érkező adatok fogadását** , nem sikerült az adatátvitelt az iOS/iPadOS szolgáltatásban kezelni. | Lásd: az [iOS-alkalmazások közötti adatátvitel kezelése Microsoft Intuneban](data-transfer-between-apps-manage-ios.md). |
 
 ## <a name="common-end-user-issues"></a>A végfelhasználóknál előforduló gyakori problémák
 
@@ -56,9 +56,9 @@ A végfelhasználóknál előforduló gyakori problémák a következő kategór
 
 ### <a name="normal-usage-scenarios"></a>Normál használati forgatókönyvek
 
-Platfésm | Forgatókönyv | Magyarázat |
+Platform | Forgatókönyv | Magyarázat |
 ---| --- | --- |
-iOS | A végfelhasználó az iOS megosztási bővítménnyel megnyithatja a munkahelyi vagy az iskolai adatokat a nem felügyelt alkalmazásokban, még akkor is, ha az adatátviteli szabályzat beállítása **Csak felügyelt alkalmazások** vagy **Nincs alkalmazás**. Nem jár ez adatszivárgással? | Az Intune alkalmazásvédelmi szabályzata nem tudja kezelni az iOS megosztási bővítményt az eszköz felügyelete nélkül. Ezért az **Intune titkosítja a „céges” adatokat, mielőtt az alkalmazáson kívül megosztaná**. Ezt úgy ellenőrizheti, hogy megpróbálja megnyitni a „céges” fájlt a felügyelt alkalmazáson kívüli más alkalmazással. A fájlnak titkosítottnak kell lennie, így a felügyelt alkalmazáson kívül mással nem nyitható meg.
+iOS | A végfelhasználó az iOS megosztási bővítménnyel megnyithatja a munkahelyi vagy az iskolai adatokat a nem felügyelt alkalmazásokban, még akkor is, ha az adatátviteli szabályzat beállítása **Csak felügyelt alkalmazások** vagy **Nincs alkalmazás**. Nem jár ez adatszivárgással? | Az Intune alkalmazásvédelmi szabályzata nem tudja kezelni az iOS megosztási bővítményt az eszköz felügyelete nélkül. Ezért az **Intune titkosítja a „céges” adatokat, mielőtt az alkalmazáson kívül megosztaná**. Ezt úgy ellenőrizheti, hogy megpróbálja megnyitni a „céges” fájlt a felügyelt alkalmazáson kívül. A fájlnak titkosítottnak kell lennie, így a felügyelt alkalmazáson kívül mással nem nyitható meg.
 iOS | Miért kéri a végfelhasználó **a Microsoft Authenticator alkalmazás telepítését** . | Erre akkor van szükség, ha alkalmazás-alapú feltételes hozzáférés van alkalmazva. lásd: [jóváhagyott ügyfélalkalmazás megkövetelése](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access).
 Android: | Miért kell a végfelhasználónak akkor is **telepítenie a Céges portál alkalmazást**, ha MAM-alkalmazásvédelmet használok eszközregisztráció nélkül?  | Androidon a legtöbb alkalmazásvédelmi funkció be van építve a Céges portál alkalmazásba. **Annak ellenére, hogy a Céges portál alkalmazás mindig szükséges, eszközregisztrációra nincs szükség**. A regisztráció nélküli alkalmazásvédelemhez a végfelhasználónak telepítenie kell a Céges portál alkalmazást az eszközre.
 iOS/Android | Nem alkalmazták az alkalmazás-védelmi szabályzatot az Outlook alkalmazásban az e-mailek piszkozatára | Mivel az Outlook a vállalati és a személyes kontextust is támogatja, nem kényszeríti ki a MAM-t az e-mailek piszkozatára.
@@ -71,7 +71,7 @@ iOS | A PDF-mellékletek megnyitása az Outlook alkalmazásban meghiúsul "a mű
 
 ### <a name="normal-usage-dialogs"></a>Normál használati párbeszédpanelek
 
-Platfésm | Üzenet vagy párbeszédpanel | Magyarázat |
+Platform | Üzenet vagy párbeszédpanel | Magyarázat |
 --- | --- | --- |
 iOS, Android | **Bejelentkezés**: Az adatok védelme érdekében a munkahelyének felügyelnie kell ezt az alkalmazást. A művelet befejezéséhez jelentkezzen be a munkahelyi vagy az iskolai fiókjába. | A végfelhasználónak be kell jelentkeznie a munkahelyi vagy iskolai fiókjával az alkalmazás használatához, amelyhez egy alkalmazás-védelmi szabályzat szükséges. Ahhoz, hogy a szabályzat érvényes legyen, a felhasználónak hitelesítenie kell Azure Active Directory.
 iOS, Android |**Újraindítás szükséges**: A munkahelye most már védi az adatait ebben az alkalmazásban. A folytatáshoz újra kell indítania az alkalmazást. | Az alkalmazás nemrég kapott egy Intune app Protection-szabályzatot, és újra kell indítani ahhoz, hogy a szabályzat érvényes legyen.
