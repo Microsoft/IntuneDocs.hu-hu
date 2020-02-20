@@ -25,11 +25,11 @@
           href: device-restart.md
     - name: Apple-eszközműveletek
       items:
-        - name: Elveszett iOS-eszköz megkeresése
+        - name: Elveszett iOS/iPadOS-eszköz megkeresése
           href: device-locate.md
-        - name: Az iOS-es elveszett mód engedélyezése
+        - name: iiOS/iPadOSOS-os elveszett mód engedélyezése
           href: device-lost-mode.md
-        - name: iOS-es felügyelt mód bekapcsolása
+        - name: iOS/iPadOS-es felügyelt mód bekapcsolása
           href: device-supervised-mode.md
         - name: macOS-eszköz adatainak törlése
           href: device-erase.md
