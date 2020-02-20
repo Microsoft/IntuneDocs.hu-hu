@@ -19,12 +19,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9b0bb0bd1f0df3aeb4185542d424bd3ffffe42cd
-ms.sourcegitcommit: 52475fcd8d05d2f6b858d780ebb3d88eaadb0849
+ms.openlocfilehash: 257b15879f6df5763c407904a2c2b46319d64fb7
+ms.sourcegitcommit: cd90650c339795d44702e9dcd0b9679a7b438bb2
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76036535"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77473735"
 ---
 # <a name="tutorial-use-autopilot-to-enroll-windows-devices-in-intune"></a>Oktatóanyag – Windows-eszközök regisztrálása az Intune-ban az AutoPilot használatával
 
@@ -91,8 +91,8 @@ Ezután létrehoz egy eszközcsoportot, és belehelyezi az előbb betöltött Au
 Egy eszközcsoport létrehozása után létre kell hoznia egy Deployment-profilt az AutoPilot-eszközök konfigurálásához.
 
 1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **windows** > **windows-regisztráció** > **központi telepítési profilok** > **profil létrehozása**lehetőséget.
-2. Az **alapbeállítások** lapon a Tor **neve**mezőbe írja be az *Autopilot-profilt*. A **Leírás** mezőbe írja be az *AutoPilot-eszközök tesztprofilja* leírást.
-3. Állítsa a **Minden megcélzott eszköz átalakítása az Autopilotra** beállítást **Igen** értékre. Ez a beállítás biztosítja, hogy a listában lévő összes eszköz regisztrálva legyen az Autopilot üzembehelyezési szolgáltatásban. A regisztráció feldolgozása 48 órát is igénybe vehet.
+2. Az **alapvető beállítások** lapon, a **név**mezőben adja meg az *Autopilot-profilt*. A **Leírás** mezőbe írja be az *AutoPilot-eszközök tesztprofilja* leírást.
+3. Állítsa a **Minden megcélzott eszköz átalakítása az Autopilotra** beállítást **Igen** értékre. Ez a beállítás biztosítja, hogy a listában lévő összes eszköz regisztrálva legyen az Autopilot üzembehelyezési szolgáltatásban. Hagyjon 48 órát a regisztráció feldolgozására.
 4. Válassza a **Tovább** elemet.
 5. A beépített felhasználói **élmény (OOBE)** lapon a **központi telepítési mód**beállításnál válassza a **felhasználó által vezérelt**elemet. Az ilyen profillal rendelkező eszközök az őket regisztráló felhasználóhoz vannak társítva. Az eszköz regisztrálásához felhasználói hitelesítő adatokra van szükség.
 6. A **Csatlakozás az Azure AD-hez mint** mezőben válassza az **Azure AD-hez csatlakoztatott** lehetőséget.
