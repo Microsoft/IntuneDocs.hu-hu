@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7018e2ab4290219c752f44b4b391822438461e8e
-ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.openlocfilehash: c130ced8359311751c5ad68ac9789b11329595e0
+ms.sourcegitcommit: 67f926ba83f8a955e16b741a610ad84d6044f8f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77415085"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77529336"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -55,11 +55,21 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 -->  
 
 <!-- ########################## -->
+## <a name="week-of-february-17-2020"></a>2020. február 17-i hét
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name="app-management"></a>Alkalmazáskezelés
+
+#### <a name="microsofts-new-office-app---5859926---"></a>Microsoft új Office-alkalmazás<!-- 5859926 -->
+A Microsoft új Office-alkalmazásának letöltése és használata általánosan elérhető. Az Office-alkalmazás egy összevont felhasználói felület, amelyben a felhasználók egyetlen alkalmazáson belül dolgozhatnak a Word, az Excel és a PowerPoint használatával. Az alkalmazást megcélozhatja egy alkalmazás-védelmi szabályzattal, hogy biztosítsa, hogy az elérni kívánt információ védve legyen.
+
+További információ: [az Intune app Protection-szabályzatok engedélyezése az Office Mobile Preview alkalmazással](https://techcommunity.microsoft.com/t5/intune-customer-success/support-tip-how-to-enable-intune-app-protection-policies-with/ba-p/1045493).
+
+<!-- ########################## -->
 ## <a name="week-of-february-10-2020"></a>2020. február 10-i hét
 
 ### <a name="windows-7-ends-extended-support---3042987--"></a>A Windows 7 kiterjesztett támogatást ér véget <!--3042987-->
 A Windows 7 2020 január 14-én elérte a kiterjesztett támogatás végét. Az Intune elavult támogatást biztosít a Windows 7 rendszert futtató eszközökhöz. A számítógép védelmének biztosítására szolgáló technikai segítségnyújtás és automatikus frissítés már nem érhető el. Frissítsen a Windows 10-es verzióra. További információ: [change blog post](https://aka.ms/Windows7_Intune).
-
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
 ### <a name="app-management"></a>Alkalmazáskezelés

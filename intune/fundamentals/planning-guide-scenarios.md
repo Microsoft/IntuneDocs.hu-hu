@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 96ebae46fd4935c3070319f16d35d5b53888e94c
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 3f432ab20170dc702d2014bbac68ced06e51082e
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72505179"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514897"
 ---
 # <a name="identify-mobile-device-management-use-case-scenarios"></a>Mobileszköz-kezelési használati esetek azonosítása
 
@@ -64,12 +64,12 @@ Határozza meg, hogy az egyes használati esetek tartalmaznak-e alárendelt hasz
 
 ## <a name="organizational-groups-for-your-scenarios"></a>Céges csoportok a használati eseteihez
 
-Ezután azonosítania kell az egyes használati esetekhez és alesetekhez kapcsolódó munkahelyi csoportokat. Példa:
+Ezután azonosítania kell az egyes használati esetekhez és alesetekhez kapcsolódó munkahelyi csoportokat. Például:
 
 | **Használati esetek** | **Használati alesetek** | **Munkahelyi csoportok** |
 |:---:|:---:|:---:|
-| Vállalati | Infomunkás | HR, pénzügy |               
-| Vállalati | Vezető | HR, pénzügy |            
+| Vállalati | Infomunkás | HR, Pénzügy |               
+| Vállalati | Vezető | HR, Pénzügy |            
 | Vállalati | Kioszkmód | Kereskedelem |
 | BYOD | Infomunkás | Marketing, értékesítés |            
 | BYOD | Vezető | Marketing, értékesítés |
@@ -79,15 +79,15 @@ Ezután azonosítania kell az egyes használati esetekhez és alesetekhez kapcso
 
 A következő lépés az egyes használati esetekhez kapcsolódó mobileszköz-platformok azonosítása. Egynél több is lehet.
 
-A vállalati használati esetei támogathatják például az iOS és az Androidra fejlesztett Samsung Knox eszközplatformokat. A saját eszközhasználati (BYOD) szabályzata tartalmazhat támogatást további mobileszköz-platformokhoz, például Androidhoz (nem Samsung Knox) és Windows 10 Mobile-hoz. Az előző példákból kiindulva mobileszköz-platformokat társítottunk mindegyik használati esethez.
+A vállalati használati eset például az iOS/iPadOS és az Android Samsung Knox-eszközök platformját is támogatja. A saját eszközhasználati (BYOD) szabályzata tartalmazhat támogatást további mobileszköz-platformokhoz, például Androidhoz (nem Samsung Knox) és Windows 10 Mobile-hoz. Az előző példákból kiindulva mobileszköz-platformokat társítottunk mindegyik használati esethez.
 
-| **Használati esetek** | **Használati alesetek** | **CSOPORTOK** | **Eszközplatformok** |   
+| **Használati esetek** | **Használati alesetek** | **Csoportok** | **Eszközplatformok** |   
 |:---:|:---:|:---:|:---:|
-| Vállalati | Infomunkás | HR, pénzügy | iOS |                                                           
-| Vállalati | Vezetők | HR, pénzügy | iOS |                                                           
+| Vállalati | Infomunkás | HR, Pénzügy | iOS/iPadOS |                                                           
+| Vállalati | Vezetők | HR, Pénzügy | iOS/iPadOS |                                                           
 | Vállalati | Kioszkmód | Kereskedelem | Android: |
-| BYOD | Infomunkás | Marketing, értékesítés | iOS |                                                           
-| BYOD | Vezetők | Marketing, értékesítés | iOS |
+| BYOD | Infomunkás | Marketing, értékesítés | iOS/iPadOS |                                                           
+| BYOD | Vezetők | Marketing, értékesítés | iOS/iPadOS |
 
 ## <a name="next-steps"></a>További lépések
 

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 237eca2f8e00f00fda5fa3cf401be87de9602743
-ms.sourcegitcommit: de663ef5f3e82e0d983899082a7f5b62c63f24ef
+ms.openlocfilehash: 183e8cc5924f6ce1f002225150d808841924e20c
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75956263"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514642"
 ---
 # <a name="add-groups-to-organize-users-and-devices"></a>Csoportok hozzáadása a felhasználók és eszközök rendszerezéséhez
 
@@ -34,7 +34,7 @@ A következő típusú csoportokat veheti fel:
 - **Hozzárendelt csoportok** – felhasználók vagy eszközök manuális hozzáadása egy statikus csoporthoz. 
 - **Dinamikus csoportok** (prémium szintű Azure ad) – a létrehozott kifejezés alapján automatikusan hozzáadhat felhasználókat és eszközöket a felhasználói csoportokhoz vagy az eszközökhöz.
 
-  Ha például egy felhasználót ad hozzá a felettes címéhez, a rendszer automatikusan hozzáadja a felhasználót a **minden kezelő** felhasználói csoporthoz. Vagy ha egy eszközön az iOS-eszköz operációs rendszerének típusa van, a rendszer automatikusan hozzáadja az eszközt az **összes iOS** -eszköz eszközök csoportjához.
+  Ha például egy felhasználót ad hozzá a felettes címéhez, a rendszer automatikusan hozzáadja a felhasználót a **minden kezelő** felhasználói csoporthoz. Vagy ha egy eszköz iOS/iPadOS eszköz operációs rendszer típusú, a rendszer automatikusan hozzáadja az eszközt az **összes iOS/iPadOS-** eszközhöz.
 
 ## <a name="add-a-new-group"></a>Új csoport felvétele
 
@@ -47,14 +47,14 @@ A következő típusú csoportokat veheti fel:
 
 3. A **csoport típusa**területen válasszon a következő lehetőségek közül:
 
-    - **Biztonság**: a biztonsági csoportok határozzák meg, hogy kik férhetnek hozzá az erőforrásokhoz, és az Intune-beli csoportok számára ajánlott. Létrehozhat például csoportokat a felhasználók számára, például az **összes Charlotte-alkalmazottat** vagy a **távoli munkatársakat**. Vagy létrehozhat csoportokat eszközökhöz, például az **összes iOS-eszközhöz** vagy **az összes Windows 10 tanuló eszközhöz**.
+    - **Biztonság**: a biztonsági csoportok határozzák meg, hogy kik férhetnek hozzá az erőforrásokhoz, és az Intune-beli csoportok számára ajánlott. Létrehozhat például csoportokat a felhasználók számára, például az **összes Charlotte-alkalmazottat** vagy a **távoli munkatársakat**. Vagy létrehozhat csoportokat az eszközökhöz, például az **összes iOS/iPadOS-eszközhöz** vagy **az összes Windows 10 tanuló eszközhöz**.
 
         > [!TIP]
         > A létrehozott felhasználók és csoportok is megtekinthetők a [Microsoft 365 felügyeleti központban](https://admin.microsoft.com), Azure Active Directory felügyeleti központban és [a Azure Portal Microsoft Intune](https://go.microsoft.com/fwlink/?linkid=2090973). A szervezet bérlője minden területen létrehozhatja és kezelheti a csoportokat.
         >
         > Ha az elsődleges szerepköre az eszközkezelés, javasoljuk, hogy használja a [Microsoft Endpoint Manager felügyeleti központot](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-    - **Office 365**: a közös postaláda, a naptár, a fájlok, a SharePoint-webhelyek és egyéb funkciók elérését lehetővé tevő együttműködési lehetőségeket biztosít. Ez a lehetőség lehetővé teszi a szervezetnél kívüli személyek hozzáadását is a csoporthoz. További információ: az [Office 365-csoportok megismerése](https://support.office.com/article/learn-about-office-365-groups-b565caa1-5c40-40ef-9915-60fdb2d97fa2).
+    - **Office 365**: a közös postaláda, a naptár, a fájlok, a SharePoint-webhelyek és egyéb funkciók elérését lehetővé tevő együttműködési lehetőségeket biztosít. Ez a beállítás lehetővé teszi a szervezetnél kívüli személyek hozzáadását is a csoporthoz. További információ: az [Office 365-csoportok megismerése](https://support.office.com/article/learn-about-office-365-groups-b565caa1-5c40-40ef-9915-60fdb2d97fa2).
 
 4. Adja meg a **csoport nevét** és a **csoport leírását** az új csoport számára. Egyedinek kell lennie, és meg kell adni az adatokat, hogy mások tudják, mi a csoport.
 

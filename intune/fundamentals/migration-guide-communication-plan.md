@@ -17,12 +17,12 @@ ms.reviewer: dagerrit
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f617e85e78ac5436567790d416c988742a2abe4c
-ms.sourcegitcommit: de663ef5f3e82e0d983899082a7f5b62c63f24ef
+ms.openlocfilehash: c880251d59810dc02446020ed02fd6049878262c
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75956228"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515016"
 ---
 # <a name="plan-communications"></a>A kommunikáció tervezése
 
@@ -52,7 +52,7 @@ Rövid, részletes videókat hoztunk létre, amelyek segítségével a felhaszn�
 
 - [Android-eszköz regisztrálása](https://www.youtube.com/watch?v=k0Q_sGLSx6o&t=1s)
 - [Androidos munkahelyi profil eszköz regisztrálása](https://www.youtube.com/watch?v=9Dl8HsGk4tI&t=3s)
-- [iOS-eszköz regisztrálása](https://www.youtube.com/watch?v=mJyv6YcHi7c)
+- [IOS-/iPadOS-eszköz regisztrálása](https://www.youtube.com/watch?v=mJyv6YcHi7c)
 - [macOS-eszköz regisztrálása](https://www.youtube.com/watch?v=Pa2pfhwq_yk)
 - [Windows regisztrálása](https://www.youtube.com/watch?v=TKQxEckBHiE)
 
@@ -61,5 +61,5 @@ Rövid, részletes videókat hoztunk létre, amelyek segítségével a felhaszn�
 Az Intune további erőforrásokkal rendelkezik, amelyekkel elősegítheti az eszközök regisztrálását a felhasználók számára:
 
 - Az [A végfelhasználók oktatása az Intune használatával kapcsolatban](end-user-educate.md) című témakör részletezi a regisztrálás lépéseit az egyes mobiloperációsrendszer-platformok esetében.
-- Az Intune-eszközök regisztrálása a [rendszergazdáknak](../enrollment/device-enrollment.md) az Android-, iOS-és Mac-eszközök Intune-ban való regisztrálását ismerteti.
-- Ossza meg a Céges portál alkalmazást Android-, iOS-és Windows-felhasználóival.
+- Az Intune-eszközök regisztrálása a [rendszergazdáknak](../enrollment/device-enrollment.md) az Android-, iOS-/iPadOS-és Mac-eszközök Intune-ban való regisztrálását ismerteti.
+- Ossza meg a Céges portál alkalmazást Android-, iOS-/iPadOS-és Windows-felhasználóival.

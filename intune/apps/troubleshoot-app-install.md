@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0a7216dedf67f6ee9fc8d899756f789d1c0dccc6
-ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.openlocfilehash: 13aea23f58c69d5c7e38f77ae7dfa19bd12edd35
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77415499"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77511651"
 ---
 # <a name="troubleshoot-app-installation-issues"></a>Alkalmazások telepítésével kapcsolatos problémák elhárítása
 
@@ -50,7 +50,7 @@ Az Intune az adott felhasználók eszközein telepített alkalmazások alapján 
     > Ugyanazt az alkalmazást eltérő alkalmazásműveleti szándékkal rendelhetik hozzá különböző csoportokhoz. Egy alkalmazás feloldott szándéka például **Kizárva** értéket jelez, ha az alkalmazás ki van zárva egy felhasználó számára az alkalmazás-hozzárendelés során. További információ: [Alkalmazások hozzárendelési ütközéseinek feloldása](apps-deploy.md#how-conflicts-between-app-intents-are-resolved).<br><br>
     > Ha egy szükséges alkalmazás telepítése sikertelen, akkor Ön vagy a segélyszolgálat szinkronizálhatja az eszközt, és újra megkísérelheti az alkalmazás telepítését.
 
-Az alkalmazástelepítési hiba információi ismertetik a problémát. Ezen adatok segítségével meghatározhatja a probléma feloldásához szükséges műveletet. Az alkalmazások telepítési problémáinak elhárításával kapcsolatos további információkért lásd az [Android-alkalmazások telepítési hibáit](app-install-error-codes.md#android-app-installation-errors) és az [iOS-alkalmazások telepítési hibáit](app-install-error-codes.md#ios-app-installation-errors)ismertető témakört.
+Az alkalmazástelepítési hiba információi ismertetik a problémát. Ezen adatok segítségével meghatározhatja a probléma feloldásához szükséges műveletet. Az alkalmazások telepítési problémáinak elhárításával kapcsolatos további információkért lásd az [Android-alkalmazások telepítési hibáit](app-install-error-codes.md#android-app-installation-errors) és az [iOS-alkalmazások telepítési hibáit](app-install-error-codes.md#ios-and-ipados-app-installation-errors)ismertető témakört.
 
 > [!Note]  
 > A **Hibaelhárítás** panel a böngészőben a [https://aka.ms/intunetroubleshooting](https://aka.ms/intunetroubleshooting) címen is elérhető.
@@ -65,7 +65,7 @@ Az alkalmazások telepítésekor a következő műveleteket kell figyelembe venn
   3. Navigáljon [Azure Active Directory felhasználóhoz](https://portal.azure.com/#pane/Microsoft_AAD_IAM/UsersManagementMenupane/AllUsers).
   4. Válassza ki az érintett felhasználót, és kattintson az **eszközök**elemre.
   5. Ha a felhasználó túllépi a beállított korlátot, törölje azokat az elavult rekordokat, amelyekre már nincs szükség.
-- IOS/iPadOS DEP-eszközök esetén győződjön meg arról, hogy a felhasználó **regisztrálva van a felhasználó által** az Intune-eszköz áttekintés paneljén. Ha a NA-t jeleníti meg, akkor telepítsen egy konfigurációs házirendet a Intune Céges portálhoz. További információ: [a céges portál alkalmazás konfigurálása](app-configuration-policies-use-ios.md#configure-the-company-portal-app-to-support-ios-dep-devices).
+- IOS/iPadOS DEP-eszközök esetén győződjön meg arról, hogy a felhasználó **regisztrálva van a felhasználó által** az Intune-eszköz áttekintés paneljén. Ha a NA-t jeleníti meg, akkor telepítsen egy konfigurációs házirendet a Intune Céges portálhoz. További információ: [a céges portál alkalmazás konfigurálása](app-configuration-policies-use-ios.md#configure-the-company-portal-app-to-support-ios-and-ipados-dep-devices).
 
 ## <a name="win32-app-installation-troubleshooting"></a>Win32-alkalmazás telepítésének hibaelhárítása
 

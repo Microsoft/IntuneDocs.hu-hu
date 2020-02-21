@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 08/06/2019
+ms.date: 02/18/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,16 +15,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0c11be374e36ec32feb9540f6cfd4f1bc794e9c
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: 81300651355e52f438ea2a314eeb1d0d48e3fcbc
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75206312"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77510864"
 ---
 # <a name="android-enterprise-device-settings-to-configure-vpn-in-intune"></a>Androidos vállalati eszközbeállítások a VPN konfigurálásához az Intune-ban
-
-
 
 Ez a cikk felsorolja és leírja a VPN-kapcsolatoknak az Android rendszerű eszközökön való felügyeletére vonatkozó különböző beállításokat. A mobileszköz-kezelési (MDM) megoldás részeként ezeket a beállításokat használja a VPN-kapcsolat létrehozásához, a VPN hitelesítésének módjához, a VPN-kiszolgáló típusának kiválasztásához és egyebekhez.
 
@@ -77,4 +75,4 @@ Ha többet szeretne megtudni a VPN-profilokról az Intune-ban, lásd: [VPN-profi
 
 [Rendelje hozzá a profilt](device-profile-assign.md), és [kövesse nyomon az állapotát](device-profile-monitor.md).
 
-Az [Android](vpn-settings-android.md), [iOS](vpn-settings-ios.md), [MacOS](vpn-settings-macos.md), [Windows 10 és újabb](vpn-settings-windows-10.md), [Windows 8,1](vpn-settings-windows-8-1.md)és [Windows Phone-telefon 8,1](vpn-settings-windows-phone-8-1.md) rendszerű eszközökhöz VPN-profilokat is létrehozhat.
+VPN-profilokat is létrehozhat [Android](vpn-settings-android.md), [iOS/iPadOS](vpn-settings-ios.md), [MacOS](vpn-settings-macos.md), [Windows 10 és újabb](vpn-settings-windows-10.md), [Windows 8,1](vpn-settings-windows-8-1.md)és [Windows Phone-telefon 8,1](vpn-settings-windows-phone-8-1.md) rendszerű eszközökhöz.

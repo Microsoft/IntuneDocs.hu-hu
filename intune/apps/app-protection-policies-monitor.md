@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 899e2d2dc8458d0909f01e9dfcc1056874ef0fa7
-ms.sourcegitcommit: ecaff388038fb800f2e646f8efcf8f3b1e2fd1b1
+ms.openlocfilehash: 317f39b28909196d03ef5e7c68c7980f5fdfea3f
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77437970"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77512211"
 ---
 # <a name="how-to-monitor-app-protection-policies"></a>Az alkalmazásvédelmi szabályzatok figyelése
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
@@ -48,7 +48,7 @@ Az App Protection-adatok megőrzési időtartama 90 nap. Minden olyan alkalmazá
    ![Képernyőkép az Intune Mobile Application Management panel összefoglalás csempéje](./media/app-protection-policies-monitor/app-protection-user-status-summary.png)
 
 - **Hozzárendelt felhasználók**: a vállalat olyan hozzárendelt felhasználóinak teljes száma, akik olyan alkalmazást használnak, amely egy munkahelyi környezetben található házirendhez van társítva, és amely védett és licenccel rendelkezik, valamint a nem védett és a licenccel nem rendelkező hozzárendelt felhasználók számára.
-- **Megjelölt felhasználók**: az eszközeivel kapcsolatos problémákat tapasztaló felhasználók száma. A rendszer a feltört (iOS) és a feltört (androidos) eszközöket a **megjelölt felhasználók**alatt jelenti. Ezen kívül a Google biztonság-eszköz igazolási ellenőrzésével megjelölt eszközökkel (ha a rendszergazda bekapcsolja azt) a felhasználók itt jelennek meg. 
+- **Megjelölt felhasználók**: az eszközeivel kapcsolatos problémákat tapasztaló felhasználók száma. A rendszer a feltört (iOS/iPadOS) és a feltört (Android) eszközöket a **megjelölt felhasználók**alatt jelenti. Ezen kívül a Google biztonság-eszköz igazolási ellenőrzésével megjelölt eszközökkel (ha a rendszergazda bekapcsolja azt) a felhasználók itt jelennek meg. 
 - **Potenciálisan ártalmas alkalmazásokkal rendelkező felhasználók**: azon felhasználók száma, akik kártékony alkalmazással rendelkezhetnek a Google Play Protect által észlelt Android-eszközön. 
 - **Felhasználói állapot az iOS** -hez és a **felhasználói állapothoz Android**rendszeren: azon felhasználók száma, akik az adott alkalmazáshoz hozzárendelt szabályzattal rendelkeznek a kapcsolódó platformhoz tartozó munkakörnyezetben. Ez az információ a szabályzat által kezelt felhasználók számát, valamint azon felhasználók számát jeleníti meg, akik olyan alkalmazást használnak, amelyet nem a munkahelyi környezetben lévő szabályzat céloz meg. Érdemes megfontolni ezen felhasználók bevonását a szabályzat hatálya alá.
 - **Legnépszerűbb védett iOS-/iPadOS-alkalmazások** és **legnépszerűbb védett Android-alkalmazások**: a leggyakrabban használt iOS-/iPadOS-és Android-alkalmazások alapján ez az információ a védett és a nem védett alkalmazások platformon alapuló számát jeleníti meg.
@@ -61,7 +61,7 @@ Az App Protection-adatok megőrzési időtartama 90 nap. Minden olyan alkalmazá
 Az összefoglalás részletes nézetét kiválasztva megtekintheti a **megjelölt felhasználók** csempét, valamint az **esetlegesen ártalmas alkalmazások csempét használó felhasználókat** .
 
 ### <a name="flagged-users"></a>Megjelölt felhasználók
-A részletes nézetben látható a hibaüzenet, annak az alkalmazásnak a neve, amelynek a használata közben fellépett a hiba, az eszközök érintett operációsrendszer-platformja, valamint egy időbélyeg. A hiba általában a jailbroken (iOS) vagy a feltört (androidos) eszközökön van. Az "biztonság Device igazolás" feltételes indítási ellenőrzés által megjelölt eszközökkel rendelkező felhasználók itt is a Google által jelentett oknál fogva jelennek meg. Ahhoz, hogy egy felhasználó el legyen távolítva a jelentésből, meg kell változtatnia az eszköz állapotát, ami a következő legfelső szintű észlelési ellenőrzés (vagy a jailbreak-ellenőrzés/biztonság-ellenőrzés) után történik, amelyeknek pozitív eredményt kell jelenteniük. Ha az eszköz valóban szervizelve van, a megjelölt felhasználók jelentésének frissítése a panel újrabetöltésekor fog történni.
+A részletes nézetben látható a hibaüzenet, annak az alkalmazásnak a neve, amelynek a használata közben fellépett a hiba, az eszközök érintett operációsrendszer-platformja, valamint egy időbélyeg. A hiba általában a jailbroken (iOS/iPadOS) vagy a feltört (androidos) eszközökön van. Az "biztonság Device igazolás" feltételes indítási ellenőrzés által megjelölt eszközökkel rendelkező felhasználók itt is a Google által jelentett oknál fogva jelennek meg. Ahhoz, hogy egy felhasználó el legyen távolítva a jelentésből, meg kell változtatnia az eszköz állapotát, ami a következő legfelső szintű észlelési ellenőrzés (vagy a jailbreak-ellenőrzés/biztonság-ellenőrzés) után történik, amelyeknek pozitív eredményt kell jelenteniük. Ha az eszköz valóban szervizelve van, a megjelölt felhasználók jelentésének frissítése a panel újrabetöltésekor fog történni.
 
 ### <a name="users-with-potentially-harmful-apps"></a>Potenciálisan ártalmas alkalmazásokat használó felhasználók
 Az alkalmazások feltételes indítási ellenőrzésének megkövetelése az eszközökön a **veszélyforrások vizsgálatát megkövetelő** eszközökkel a Google által jelentett veszélyforrások kategóriáját kell jelenteni. Ha az Intune-on keresztül üzembe helyezett alkalmazások vannak felsorolva, lépjen kapcsolatba az alkalmazás fejlesztővel, vagy távolítsa el az alkalmazást a felhasználókhoz való hozzárendeléshez. A részletes nézet a következőket jeleníti meg:
@@ -170,7 +170,7 @@ Kövesse az alábbi lépéseket az App Protection. csv fájl vagy az App Configu
     ![Képernyőkép a Jelentés mentése jóváhagyó mezőről](./media/app-protection-policies-monitor/app-protection-report-csv-1.png)
    
 > [!NOTE]
-> Az Intune további eszköz-jelentési mezőket biztosít, beleértve az alkalmazás regisztrációs AZONOSÍTÓját, az Android-gyártót, a modellt és a biztonsági javítás verzióját, valamint az iOS/iPadOS modellt. Az Intune-ban ezeket a mezőket az **alkalmazások** > **app protection-állapot** > **app Protection-jelentés: iOS/iPadOS, Android**. Emellett ezek a paraméterek segítséget nyújtanak az eszköz gyártójának (Android) **engedélyezési** listájának, az eszköz modell **engedélyezési** listájának (Android és iOS) és az **androidos biztonsági javítás minimális verziójának** beállításának konfigurálásában.   
+> Az Intune további eszköz-jelentési mezőket biztosít, beleértve az alkalmazás regisztrációs AZONOSÍTÓját, az Android-gyártót, a modellt és a biztonsági javítás verzióját, valamint az iOS/iPadOS modellt. Az Intune-ban ezeket a mezőket az **alkalmazások** > **app protection-állapot** > **app Protection-jelentés: iOS/iPadOS, Android**. Emellett ezek a paraméterek segítenek beállítani az eszköz gyártójának **engedélyezési** listáját (Android), az eszköz modelljének **engedélyezési** listáját (Android és iOS/IPadOS) és az **Android minimálisan előírt biztonsági javításának** beállításait.   
  
 ## <a name="see-also"></a>További információ
 - [Az iOS/iPadOS alkalmazások közötti adatátvitel kezelése](data-transfer-between-apps-manage-ios.md)

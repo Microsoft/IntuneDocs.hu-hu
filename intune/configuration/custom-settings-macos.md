@@ -6,7 +6,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 06/26/2019
+ms.date: 02/18/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5c24c120b033a4db0162e985ef185932dd931eda
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 492c90bc1d032b32ebc3a4b8465163085674f245
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72506924"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77511446"
 ---
 # <a name="use-custom-settings-for-macos-devices-in-microsoft-intune"></a>macOS-eszközökre vonatkozó egyéni beállítások használata a Microsoft Intune-ban
 
@@ -42,7 +42,7 @@ Ez a cikk útmutatást nyújt az Apple konfigurátor és az Apple-profil kezelő
 
 ## <a name="what-you-need-to-know"></a>Amit még tudnia kell
 
-- Ha az **Apple konfigurátor** használatával hozza létre a konfigurációs profilt, ügyeljen arra, hogy az exportált beállítások kompatibilisek legyenek az eszközök MacOS-verziójával. A nem kompatibilis beállításokból fakadó problémák megoldásával kapcsolatos információkat az [Apple Developer](https://developer.apple.com/) webhelyről letölthető **Configuration Profile Reference** és **Mobile Device Management Protocol Reference** című (angol nyelvű) útmutatókban talál.
+- Ha az **Apple konfigurátor** használatával hozza létre a konfigurációs profilt, ügyeljen arra, hogy az exportált beállítások kompatibilisek legyenek az eszközök MacOS-verziójával. A nem kompatibilis beállításokból fakadó problémák megoldásával kapcsolatos információkat az **Apple Developer** webhelyről letölthető **Configuration Profile Reference** és [Mobile Device Management Protocol Reference](https://developer.apple.com/) című (angol nyelvű) útmutatókban talál.
 
 - Az **Apple Profile Manager** használatakor:
 
@@ -52,7 +52,7 @@ Ez a cikk útmutatást nyújt az Apple konfigurátor és az Apple-profil kezelő
 
     Töltse le és mentse ezt a fájlt. A fájlt az Intune-profilban adja majd meg. 
 
-  - Ügyeljen arra, hogy az Apple profil Managerből exportált beállítások kompatibilisek legyenek az eszközök macOS-verziójával. A nem kompatibilis beállításokból fakadó problémák megoldásával kapcsolatos információkat az [Apple Developer](https://developer.apple.com/) webhelyről letölthető **Configuration Profile Reference** és **Mobile Device Management Protocol Reference** című (angol nyelvű) útmutatókban talál.
+  - Ügyeljen arra, hogy az Apple profil Managerből exportált beállítások kompatibilisek legyenek az eszközök macOS-verziójával. A nem kompatibilis beállításokból fakadó problémák megoldásával kapcsolatos információkat az **Apple Developer** webhelyről letölthető **Configuration Profile Reference** és [Mobile Device Management Protocol Reference](https://developer.apple.com/) című (angol nyelvű) útmutatókban talál.
 
 ## <a name="custom-configuration-profile-settings"></a>Egyéni konfigurációs profil beállításai
 
@@ -70,4 +70,4 @@ A módosítások mentéséhez válassza az **OK** > **Létrehozás** lehetőség
 
 A profil létrejött, de egyelőre nem csinál semmit. Következő lépésként [végezze el a profil hozzárendelését](device-profile-assign.md).
 
-Tekintse meg, hogyan [hozhat létre profilokat iOS-eszközökön](../custom-settings-ios.md).
+Lásd: [a profil létrehozása iOS-/iPadOS-eszközökön](../custom-settings-ios.md).

@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 77be59d126dc7e73bee468ca938938c6bb1b2e1a
-ms.sourcegitcommit: c46b0c2d4507be6a2786a4ea06009b2d5aafef85
+ms.openlocfilehash: 40075ad3c90f9ce5131d88780d15eec5c258e276
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76913196"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515254"
 ---
 # <a name="troubleshoot-the-delivery-of-certificates-provisioned-by-scep-to-devices-in-microsoft-intune"></a>A SCEP által a Microsoft Intune eszközökre kiosztott tanúsítványok kézbesítésének hibáinak megoldása
 
@@ -73,9 +73,9 @@ Tekintse át az [eszközök OMADM naplóját](troubleshoot-scep-certificate-prof
 2018-02-27T05:20:15.3520000    INFO    Event     com.microsoft.omadm.platforms.android.certmgr.state.NativeScepCertInstallStateMachine    18327       21    SCEP cert 'ModelName=AC_51…%2FLogicalName_39907…;Hash=1677525787' state changed from CERT_ACCESS_REQUESTED to CERT_ACCESS_GRANTED
 ```
 
-### <a name="ios-and-ipados"></a>iOS-és iPadOS
+### <a name="iosipados"></a>iOS/iPadOS
 
-Az iOS-vagy iPadOS-eszközön megtekintheti az Eszközkezelő profil alatt található tanúsítványt. Részletezés – a telepített tanúsítványok részleteinek megtekintéséhez.
+Az iOS-/iPadOS-vagy iPadOS-eszközön megtekintheti az eszköz felügyeleti profiljában található tanúsítványt. Részletezés – a telepített tanúsítványok részleteinek megtekintéséhez.
 
 ![iOS-tanúsítvány](../protect/media/troubleshoot-scep-certificate-delivery/ios-certificate.png)
 
@@ -108,7 +108,7 @@ Az eszközön található tanúsítvány megtekintéséhez futtassa a **certmgr.
 
 Ennek a lépésnek a hibaelhárításához tekintse át az OMA DM-naplóban naplózott hibákat.
 
-### <a name="ios-and-ipados"></a>iOS-és iPadOS
+### <a name="iosipados"></a>iOS/iPadOS
 
 Ennek a lépésnek a hibaelhárításához tekintse át az eszközök hibakeresési naplójában naplózott hibákat.
 

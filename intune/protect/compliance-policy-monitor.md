@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 89b4516017d7ac8bf1e27134db6a67a0a86b17cb
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: 128f615a9551c31e6b0e0de4f1d269083874bf48
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75206074"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515118"
 ---
 # <a name="monitor-intune-device-compliance-policies"></a>Intune-eszközmegfelelőségi szabályzatok figyelése
 
@@ -77,7 +77,7 @@ A különböző eszközmegfelelőségi szabályzatállapotok leírása:
   - Azok az eszközök, amelyek nem rendelkeznek megfelelőségi szabályzattal, és nem rendelkeznek a megfelelőség ellenőrzéséhez szükséges triggerrel
   - Azok az eszközök, amelyeket nem ellenőriztek a megfelelőségi szabályzat legutóbbi frissítése óta
   - Egy adott felhasználóhoz nem társított eszközök, például:
-    - az Apple Készülékregisztrációs programon (DEP) keresztül vásárolt iOS-eszközök, amelyek nem rendelkeznek felhasználói affinitással
+    - az Apple Készülékregisztrációs programon (DEP) keresztül vásárolt iOS/iPadOS-eszközök, amelyek nem rendelkeznek felhasználói affinitással
     - Androidos kioszk vagy Android Enterprise dedikált eszközök
   - Eszköz beléptetési kezelőjével (DEM) regisztrált eszközök
 
@@ -161,7 +161,7 @@ Amellett, hogy a diagramok a *megfelelőségi állapotot*használják, a **jelen
    - Nem megfelelő eszközök
    - Megfelelőségi szabályzat nélküli eszközök
    - Beállítás-megfelelőség
-   - Szabályzatok megfelelősége
+   - Szabályzatmegfelelőség
    - Windows Health igazolási jelentés
    - Fenyegetésfigyelő ügynök állapota
 

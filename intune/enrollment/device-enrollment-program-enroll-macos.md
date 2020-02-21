@@ -1,7 +1,7 @@
 ---
-title: MacOS-eszközök regisztrálása – Készülékregisztrációs Program vagy az Apple School Manager
+title: MacOS-eszközök regisztrálása – Apple Business Manager vagy Apple School Manager
 titleSuffix: ''
-description: Céges tulajdonú macOS-es eszközök regisztrálása az Apple készülékregisztrációs programjával (DEP).
+description: Útmutató a vállalat által birtokolt macOS-eszközök regisztrálásához.
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
@@ -18,22 +18,22 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d55139a106599664f801a6bf73b0e0e8db24b57a
-ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.openlocfilehash: 6ef08ea65a4976bcf77154108e415634dbae8e05
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77414494"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514336"
 ---
-# <a name="automatically-enroll-macos-devices-with-the-device-enrollment-program-or-apple-school-manager"></a>macOS-eszközök automatikus regisztrálása a készülékregisztrációs programmal vagy az Apple School Manager használatával
+# <a name="automatically-enroll-macos-devices-with-the-apple-business-manager-or-apple-school-manager"></a>MacOS-eszközök automatikus regisztrálása az Apple Business Manager vagy az Apple School Manager segítségével
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-Az Apple [Készülékregisztrációs program (DEP)](https://deploy.apple.com) vagy az [Apple School Manager](https://school.apple.com/)használatával vásárolt MacOS-eszközökhöz Intune-regisztrációt állíthat be. Is használhatja ezeket a regisztrációk esetében nagy számú eszközt anélkül, hogy kézbe venné őket. A macOS-eszközöket közvetlenül a felhasználóknak küldheti el. Amikor a felhasználó bekapcsolja az eszközt, a Beállítási asszisztens az előre konfigurált beállítások szerint fut, és regisztrálja az eszközt az Intune felügyeleti szolgáltatásban.
+Az Apple [Business Manager](https://business.apple.com/) vagy az [Apple School Manager](https://school.apple.com/)használatával megvásárolt MacOS-eszközökhöz az Intune-regisztrációt állíthatja be. Is használhatja ezeket a regisztrációk esetében nagy számú eszközt anélkül, hogy kézbe venné őket. A macOS-eszközöket közvetlenül a felhasználóknak küldheti el. Amikor a felhasználó bekapcsolja az eszközt, a Beállítási asszisztens az előre konfigurált beállítások szerint fut, és regisztrálja az eszközt az Intune felügyeleti szolgáltatásban.
 
-Regisztráció beállítása az Intune és az Apple DEP-portált használja. Regisztrációs profilok, Regisztrálás során az eszközre vonatkozó beállításokat tartalmazó hoz létre.
+A regisztráció beállításához az Intune és az Apple portál is használható. Regisztrációs profilok, Regisztrálás során az eszközre vonatkozó beállításokat tartalmazó hoz létre.
 
-A DEP-regisztráció vagy az Apple School Manager sem működik együtt az [eszköz beléptetési kezelőjével](device-enrollment-manager-enroll.md).
+Sem az Apple Business Manager-regisztráció, sem az Apple School Manager nem működik együtt az [eszköz beléptetési kezelőjével](device-enrollment-manager-enroll.md).
 
 <!--
 **Steps to enable enrollment programs from Apple**

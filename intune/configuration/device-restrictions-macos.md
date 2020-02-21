@@ -6,7 +6,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 10/22/2019
+ms.date: 02/18/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6513c09f252d5a914ace4e57e5a593877a387172
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: 3d26c4c6cd05a411555f7824ad21b72431eb569c
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75206550"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77511172"
 ---
 # <a name="macos-device-settings-to-allow-or-restrict-features-using-intune"></a>macOS eszközbeállítások az Intune-t használó funkciók engedélyezéséhez vagy korlátozásához
 
@@ -90,12 +90,12 @@ Ezek a beállítások hozzáadódnak az Intune-ban lévő eszköz konfiguráció
     Ez a funkció az alábbiakra vonatkozik:  
     - macOS 10.10.3 és újabb verziók
 
-  - **Nem alfanumerikus karakterek száma a jelszóban**: Itt adhatja meg, hogy hány összetett karakter szükséges a jelszóban (**0** – **4**).<br>A speciális karakterek olyan szimbólumok, mint például a „**?**”.
+  - **Nem alfanumerikus karakterek száma a jelszóban**: Itt adhatja meg, hogy hány összetett karakter szükséges a jelszóban (**0** – **4**).<br>A speciális karakterek olyan szimbólumok, mint például a „ **?** ”.
   - **Jelszó minimális hossza**: Itt adhatja meg a felhasználó által konfigurálandó jelszó minimális hosszát ( **4** és **16** karakter között).
   - **Egyszerű jelszavak**: az egyszerű jelszavak (például a **0000** vagy a **1234**) használatának engedélyezése.
   - Jelszó kérése a **Képernyő zárolása után legfeljebb perccel**: azt határozza meg, hogy mennyi ideig kell a számítógépnek inaktívnak lennie, mielőtt jelszó szükséges a zárolás feloldásához.
   - Ennyi **perc inaktivitás**után: megadhatja, hogy a számítógépnek mennyi ideig kell tétlennek lennie a képernyő zárolása előtt.
-  - **Jelszó érvényessége (nap)**: Itt adhatja meg, hogy hány nap elteltével kell módosítani a felhasználónak a jelszót (**1** – **255** nap).
+  - **Jelszó érvényessége (nap)** : Itt adhatja meg, hogy hány nap elteltével kell módosítani a felhasználónak a jelszót (**1** – **255** nap).
   - **Korábbi jelszavak újbóli használatának tiltása**: Itt adhatja meg, hogy a korábban használt jelszavak száma **1** és **24**között legyen.
 
 - A **PIN-kód módosításának tiltása a felhasználó**számára: válassza a **Letiltás** lehetőséget a PIN-kód módosításának, hozzáadásának vagy eltávolításának leállításához. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a PIN-kódok hozzáadását, módosítását vagy eltávolítását.
@@ -163,7 +163,7 @@ Ha alkalmazásokat szeretne hozzáadni a listához, a következőket teheti:
 - **ICloud könyvjelző biztonsági mentésének letiltása**: a **blokk** megakadályozza, hogy az iCloud szinkronizálja az eszközök könyvjelzőit. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a könyvjelzők szinkronizálását az icloudba.
 - **ICloud-jegyzetek biztonsági mentésének letiltása**: a **blokk** megakadályozza, hogy az iCloud szinkronizálja az eszközök megjegyzéseit. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a jegyzetek szinkronizálását az icloudba.
 - Az **iCloud Photo Library**letiltása: a **blokk** letiltja az iCloud fényképgyűjteményt, és megakadályozza, hogy az iCloud szinkronizálja az eszközök fényképeit. Az iCloud fényképgyűjteményből nem teljes mértékben letöltött fényképek el lesznek távolítva az eszköz helyi tárolójából. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi fényképek szinkronizálását az eszköz és az ICloud Photo Library között.
-- **Handoff**: **nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy megkezdjék a munkát egy MacOS-eszközön, majd folytassa az elindított munkát egy másik iOS-vagy MacOS-eszközön. A **Letiltás** megakadályozza a handoff funkciót az eszközön. 
+- **Handoff**: **nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy megkezdjék a munkát egy MacOS-eszközön, majd folytassa az elindított munkát egy másik iOS/iPadOS vagy MacOS rendszerű eszközön. A **Letiltás** megakadályozza a handoff funkciót az eszközön. 
 
   Ez a funkció az alábbiakra vonatkozik:  
   - macOS 10,15 és újabb verziók
@@ -178,4 +178,4 @@ Ha alkalmazásokat szeretne hozzáadni a listához, a következőket teheti:
 
 [Rendelje hozzá a profilt](../device-profile-assign.md), és [kövesse nyomon az állapotát](../device-profile-monitor.md).
 
-Az eszköz funkcióit és beállításait [iOS](../device-restrictions-ios.md) -eszközökön is korlátozhatja.
+Az eszköz funkcióit és beállításait az [iOS-/iPadOS-](../device-restrictions-ios.md) eszközökön is korlátozhatja.

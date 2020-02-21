@@ -18,19 +18,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c18b6bcc8ec6e8d78862c0368c920fd3d79ce2b5
-ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
+ms.openlocfilehash: 49c629039c08c892c7d6b19422d79c9eb1a8d760
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76755578"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77510469"
 ---
 # <a name="protect-devices-with-microsoft-intune"></a>Eszközök védelme a Microsoft Intune-nal
 
 A Microsoft Intune segít megvédeni a kezelt eszközöket és az azokon tárolt adatokat.
 
 ## <a name="device-configuration"></a>Eszközök konfigurálása
-Az Intune [konfigurációs szabályzatai](../configuration/device-profiles.md) egy sor beállítás és funkció ellenőrzésével járulnak hozzá az eszközök védelméhez. Példa:
+Az Intune [konfigurációs szabályzatai](../configuration/device-profiles.md) egy sor beállítás és funkció ellenőrzésével járulnak hozzá az eszközök védelméhez. Például:
 
 - Korlátozhatja az eszköz hardveres funkcióit, például a kamera vagy a Bluetooth használatát.
 - Megfelelő és nem megfelelő alkalmazásokat konfigurálhat. Nem megfelelő alkalmazás telepítése esetén riasztást kap (és egyes platformok képesek ténylegesen megakadályozni a telepítést).
@@ -43,7 +43,7 @@ Ha egy eszközt [ki kell vonni az Intune-felügyelet alól](../remote-actions/de
 
 ## <a name="require-devices-to-be-compliant"></a>Megfelelőség előírása az eszközök számára
 Az Intune olyan [eszközmegfelelőségi szabályzatokat](device-compliance-get-started.md) biztosít, amelyek segítségével értékelheti (és bizonyos esetekben kijavíthatja) azokat az eszközöket, amelyek nem felelnek meg a meghatározott szabályoknak. Jelentéseket kaphat például a következőkről:
-- feltört iOS-eszközök
+- iOS/iPadOS eszközök
 - titkosított vagy nem titkosított eszközök
 - Windows 10-es eszközök állapota (az állapotigazolási szolgáltatás adatai alapján).
 
@@ -60,7 +60,7 @@ A [többtényezős hitelesítés (MFA)](../enrollment/multi-factor-authenticatio
 Az Intune lehetővé teszi az integrációt a [Vállalati Windows Hello](windows-hello.md) nevű, a Windows 10-ben és későbbi verziókban használható alternatív bejelentkezési módszerrel, amely az Active Directoryt vagy az Azure Active Directory egy fiókját használja jelszó, intelligens kártya vagy virtuális intelligens kártya helyett.
 
 ## <a name="disable-activation-lock-on-ios-devices"></a>Aktiválási zár letiltása iOS-eszközökön
-Az aktiválási zár funkció segít megvédeni a felhasználói eszközöket. A funkció engedélyezése esetén senki nem törölheti vagy aktiválhatja újra az eszközt addig, amíg meg nem adta a felhasználó Apple ID azonosítóját és jelszavát. Azonban ez problémákkal is járhat, például akkor, ha a felhasználó a zár feloldása nélkül elhagyja a céget. Az [iOS-aktiválási zár letiltása](../remote-actions/device-activation-lock-disable.md) segíthet a felügyelt iOS-eszközök zárolásának eltávolításában, amely lehetővé teszi az újbóli hozzárendelését vagy törlését.
+Az aktiválási zár funkció segít megvédeni a felhasználói eszközöket. A funkció engedélyezése esetén senki nem törölheti vagy aktiválhatja újra az eszközt addig, amíg meg nem adta a felhasználó Apple ID azonosítóját és jelszavát. Azonban ez problémákkal is járhat, például akkor, ha a felhasználó a zár feloldása nélkül elhagyja a céget. Az [iOS/iPadOS aktiválási zár letiltása](../remote-actions/device-activation-lock-disable.md) segíthet a felügyelt iOS-/iPadOS-eszközök zárolásának eltávolításában, amely lehetővé teszi az újbóli kiosztását vagy törlését.
 
 ## <a name="next-steps"></a>További lépések
 

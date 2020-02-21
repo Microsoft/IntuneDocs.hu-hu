@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c662de98ffa497c5fbc89ac1b78ed8537ff0d80c
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 0d6dc10eca80a7d403d0ff44c25d3cfaed85fafa
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71729231"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514200"
 ---
 # <a name="troubleshoot-conditional-access"></a>A feltételes hozzáférés hibaelhárítása
 Ez a cikk azt ismerteti, mi a teendő, ha a felhasználók nem férhetnek hozzá a feltételes hozzáféréssel védett erőforrásokhoz, vagy ha a felhasználók hozzáférhetnek a védett erőforrásokhoz, de le kell tiltani őket.
@@ -60,7 +60,7 @@ Az egyes eszközökre vonatkozó feltételek megtekinthetők az Azure Portalon, 
 
 - Az eszköz első regisztrálásakor a megfelelőségi adatok rögzítése az eszközhöz időbe telhet. Várjon néhány percet, és próbálkozzon újra.
 
-- IOS-eszközök esetén a meglévő e-mail-profil letilthatja az Intune-rendszergazda által létrehozott e-mail-profil üzembe helyezését, így az eszköz nem megfelelőnek bizonyulhat. Ebben az esetben a Céges portál alkalmazás értesíti a felhasználót, hogy a manuálisan konfigurált e-mail-profil miatt nem felel meg a felhasználónak, és felszólítja a felhasználót, hogy távolítsa el a profilt. Miután a felhasználó eltávolította a meglévő e-mail-profilt, az Intune e-mail-profilja sikeresen üzembe helyezhető. A probléma megelőzése érdekében kérje meg a felhasználókat, hogy regisztráció előtt távolítsanak el minden meglévő e-mail-profilt az eszközről.
+- IOS-/iPadOS-eszközök esetén a meglévő e-mail-profil letilthatja az Intune-rendszergazda által létrehozott e-mail-profil üzembe helyezését, így az eszköz nem megfelelőnek bizonyulhat. Ebben az esetben a Céges portál alkalmazás értesíti a felhasználót, hogy a manuálisan konfigurált e-mail-profil miatt nem felel meg a felhasználónak, és felszólítja a felhasználót, hogy távolítsa el a profilt. Miután a felhasználó eltávolította a meglévő e-mail-profilt, az Intune e-mail-profilja sikeresen üzembe helyezhető. A probléma megelőzése érdekében kérje meg a felhasználókat, hogy regisztráció előtt távolítsanak el minden meglévő e-mail-profilt az eszközről.
 
 - Előfordulhat, hogy az eszköz egy ellenőrzési megfelelőségi állapotba kerül, és megakadályozza, hogy a felhasználó másik bejelentkezést indítson el. Ha ebben az állapotban van egy eszköz:
   - Győződjön meg róla, hogy az eszköz a Céges portál alkalmazás legújabb verzióját használja.

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: be8fbb0bd96891eb3af3157deddfc325ebc5f2b9
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 884d7f5d4710b44c302598b3c34e704beace240a
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72508929"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515271"
 ---
 # <a name="symantec-endpoint-protection-mobile-connector"></a>Symantec Endpoint Protection Mobile-összekötő
 
@@ -41,7 +41,7 @@ Az Intune-eszközök megfelelőségi házirendjein keresztül engedélyezheti a 
 
 ## <a name="how-do-intune-and-sep-mobile-help-protect-your-company-resources"></a>Hogyan segíti az Intune és a SEP Mobile a vállalati erőforrások védelmét?
 
-Az Androidra és iOS-re készült SEP Mobile alkalmazás rögzíti a fájlrendszer, a hálózati protokollkészlet, valamint az eszközök és az alkalmazások telemetriai adatait, ha elérhetők, és továbbítja őket a Symantec felhőszolgáltatásnak, amely felméri az eszköz kockázatát a mobil veszélyforrások tekintetében.
+A SEP Mobile apps for Android vagy iOS/iPadOS rögzíti a fájlrendszer, a hálózati verem, az eszköz és az alkalmazás telemetria, ahol elérhető, majd elküldi a Symantec Cloud Service-nek, hogy felmérje az eszköz kockázatát a mobil fenyegetések ellen.
 
 Az Intune eszközmegfelelőségi szabályzata tartalmaz egy szabályt a SEP Mobile-hoz, amely a SEP Mobile kockázatfelmérésén alapul. Ha ez a szabály engedélyezve van, az Intune az engedélyezett szabályzat alapján értékeli az eszköz megfelelőségét.
 
@@ -121,7 +121,7 @@ Az Intune és a SEP Mobile integrálásához szükséges lépések:
 
 - [A SEP Mobile és az Intune közötti integráció beállítása](skycure-mtd-connector-integration.md)
 
-- [A SEP Mobile-alkalmazások, a Microsoft Authenticator és az iOS-es alkalmazáskonfigurációs szabályzat felvétele és hozzárendelése](mtd-apps-ios-app-configuration-policy-add-assign.md)
+- [A SEP Mobile apps, a Microsoft Authenticator és az iOS/iPadOS alkalmazás-konfigurációs szabályzat hozzáadása és kiosztása](mtd-apps-ios-app-configuration-policy-add-assign.md)
 
 - [A SEP Mobile eszközmegfelelőségi szabályzatának létrehozása az Intune-ban](mtd-device-compliance-policy-create.md)
 

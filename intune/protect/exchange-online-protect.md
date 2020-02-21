@@ -18,16 +18,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ffcc4a7e48064e6a458126667cf6ab2c4e75777
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: ac670fd5e17462688fdfcde1b047e1071a49353a
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72502257"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515203"
 ---
 # <a name="protect-office-365-exchange-online-without-requiring-device-management"></a>Az Office 365 Exchange Online védelmének biztosítása eszközkezelés megkövetelése nélkül
 
-Ha az eszközkezelési rendszer kiépítésével járó többletterhek nélkül szeretne az alkalmazottaknak hozzáférést biztosítani a munkahelyi e-mail-címükhöz, erre van lehetősége. Az Intune-on keresztül biztosíthat hozzáférést az Office 365 Exchange Online szolgáltatáshoz. A szükséges lépések elvégzéséhez erősítse meg, hogy rendelkezik Microsoft 365- , illetve (prémium szintű) Azure Active Directory- és Intune-licenccel. Az alkalmazottaknak [támogatott iOS- vagy Android-eszközökkel](../fundamentals/supported-devices-browsers.md) kell rendelkezniük. 
+Ha az eszközkezelési rendszer kiépítésével járó többletterhek nélkül szeretne az alkalmazottaknak hozzáférést biztosítani a munkahelyi e-mail-címükhöz, erre van lehetősége. Az Intune-on keresztül biztosíthat hozzáférést az Office 365 Exchange Online szolgáltatáshoz. A szükséges lépések elvégzéséhez erősítse meg, hogy rendelkezik Microsoft 365- , illetve (prémium szintű) Azure Active Directory- és Intune-licenccel. Az alkalmazottaknak [támogatott iOS/iPadOS vagy Android rendszerű eszközre](../fundamentals/supported-devices-browsers.md)van szükségük. 
 
 Ha az eszközkezelő rendszer kiépítése mellett dönt, erre van lehetősége. Az ilyen típusú alkalmazásvédelem ugyanis eszközkezeléstől függetlenül is működik. 
 
@@ -41,7 +41,7 @@ Ha az eszközkezelő rendszer kiépítése mellett dönt, erre van lehetősége.
 
 ## <a name="what-to-tell-employees-and-students"></a>Miről kell tájékoztatni az alkalmazottakat és a tanulókat?
 
-* Kérje meg az alkalmazottakat és a tanulókat arra, hogy töltsék le és telepítsék a Microsoft Outlookot vagy a Microsoft SharePointot iOS rendszeren az Apple App Store áruházból, Androidon pedig a Google Play Áruházból. 
+* Kérje meg az alkalmazottakat és a tanulókat, hogy töltse le és telepítse a Microsoft Outlookot vagy a Microsoft SharePointot iOS/iPadOS az Apple App Store áruházból vagy Androidról a Google Play Áruház. 
 * Ha le van tiltva a modern hitelesítést nem használó alkalmazásokhoz való hozzáférés, hívja fel az alkalmazottak és a tanulók figyelmét erre a korlátozásra. 
 
 ## <a name="next-steps"></a>További lépések

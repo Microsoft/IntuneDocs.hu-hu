@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cafe9d3036a727d79de88eda050399138da55675
-ms.sourcegitcommit: 24487f078349795922dc497c952e8358cf767a1a
+ms.openlocfilehash: 7113552e09a7c7fa145a452e56575bfaf5297c3e
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76977750"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514564"
 ---
 # <a name="in-development-for-microsoft-intune---february-2020"></a>Fejlesztés a Microsoft Intune – február 2020
 
@@ -65,8 +65,8 @@ A Windows-eszközökön a Céges portál alkalmazást frissítjük a bejelentés
 A Céges portál alkalmazás további alkalmazás-telepítési állapotüzenetek jelennek meg a végfelhasználók számára. Az új Win32-függőségi funkciókra az alábbi feltételek érvényesek:
 - Az alkalmazás telepítése nem sikerült. A rendszergazda által definiált függőségek nem teljesültek.
 
-### <a name="retarget-web-clips-to-microsoft-edge-on-ios-devices---5455276---"></a>Webes klipek átcélzása a Microsoft Edge-hez iOS-eszközökön<!-- 5455276 -->
-Az iOS-eszközökön rögzített webalkalmazásként szolgáló webes klipeket frissíteni kell. Az újonnan telepített webklipek a Microsoft Edge-ben nyílnak meg a Intune Managed Browser helyett, ha egy védett böngészőben kell megnyitni. A meglévő webklipeket újra meg kell célozni, hogy a Managed Browser helyett a Microsoft Edge-ben nyíljon meg.
+### <a name="retarget-web-clips-to-microsoft-edge-on-iosipados-devices---5455276---"></a>Webes klipek átcélzása a Microsoft Edge-be iOS-/iPadOS-eszközökön<!-- 5455276 -->
+Az iOS-/iPadOS-eszközökön rögzített webalkalmazásként feldolgozható webklipeket frissíteni kell. Az újonnan telepített webklipek a Microsoft Edge-ben nyílnak meg a Intune Managed Browser helyett, ha egy védett böngészőben kell megnyitni. A meglévő webklipeket újra meg kell célozni, hogy a Managed Browser helyett a Microsoft Edge-ben nyíljon meg.
 
 ### <a name="macos-company-portal-user-experience-improvements---5568987---"></a>a macOS Céges portál felhasználói élményének fejlesztése<!-- 5568987 -->
 Fejlesztjük a macOS-eszközök regisztrálási élményét és a Mac Céges portál alkalmazást. A következőket várhatja el:
@@ -92,22 +92,22 @@ A rendszer elérhetővé teszi az új macOS-eszköz konfigurációs profilt, ame
 A következőkre vonatkozik:
 - macOS
 
-### <a name="vpn-profiles-with-ikev2-vpn-connections-can-use-always-on-with-ios-devices----1947932-idready---"></a>A IKEv2 VPN-kapcsolatokkal rendelkező VPN-profilok mindig az iOS-eszközökön használhatók <!-- 1947932 idready -->
-IOS-eszközökön létrehozhat olyan VPN-profilt, amely IKEv2-kapcsolattal (az**eszköz konfigurációjának** > **profiljaival** > **create Profile** > **iOS/iPadOS** for platform > **VPN** a profil típusa). A jövőbeli frissítésekben a IKEv2-mel is konfigurálhatja az Always-on. Ha be van állítva, a IKEv2 VPN-profilok automatikusan csatlakoznak, és csatlakoztatva maradnak (vagy gyorsan újracsatlakozhatnak) a VPN-hez. A hálózat vagy az eszközök újraindítása esetén is csatlakoztatva marad.
+### <a name="vpn-profiles-with-ikev2-vpn-connections-can-use-always-on-with-iosipados-devices----1947932-idready---"></a>A IKEv2 VPN-kapcsolatokkal rendelkező VPN-profilok mindig az iOS/iPadOS eszközökön használhatók <!-- 1947932 idready -->
+IOS-/iPadOS-eszközökön létrehozhat egy IKEv2-kapcsolattal rendelkező VPN-profilt (az**eszköz konfigurációjának** > **profiljait** > **profil létrehozása** > **iOS/iPadOS** for platform > **VPN** a profil típusa). A jövőbeli frissítésekben a IKEv2-mel is konfigurálhatja az Always-on. Ha be van állítva, a IKEv2 VPN-profilok automatikusan csatlakoznak, és csatlakoztatva maradnak (vagy gyorsan újracsatlakozhatnak) a VPN-hez. A hálózat vagy az eszközök újraindítása esetén is csatlakoztatva marad.
 
-Az iOS-en a always-on VPN a IKEv2-profilokra korlátozódik.
+IOS/iPadOS esetén a always-on VPN a IKEv2-profilokra korlátozódik.
 
-Az aktuálisan konfigurálható IKEv2-beállítások megtekintéséhez lépjen a [VPN-beállítások hozzáadása iOS-eszközökön a Microsoft Intune](../configuration/vpn-settings-ios.md#ikev2-settings).
+Az aktuálisan konfigurálható IKEv2-beállítások megtekintéséhez lépjen a [VPN-beállítások hozzáadása iOS/iPadOS eszközökhöz a Microsoft Intune](../configuration/vpn-settings-ios.md#ikev2-settings).
 
 A következőkre vonatkozik:
 - iOS
 
-### <a name="improved-user-interface-experience-when-creating-configuration-profiles-on-ios-and-macos-devices---5569008-5569039-5569057-5569110-5569116-5569131-5569139-5569153-5859984-idready---"></a>Továbbfejlesztett felhasználói felületi élmény a konfigurációs profilok iOS-és macOS-eszközökön való létrehozásakor<!-- 5569008-5569039-5569057-5569110-5569116-5569131-5569139-5569153-5859984 idready -->
-Ha iOS-vagy macOS-eszközökhöz hoz létre profilt, a rendszer frissíti az Endpoint Management felügyeleti központban található felhasználói élményt. Ez a változás hatással van a következő eszköz-konfigurációs profilokra (**eszközök** > **konfigurációs profilok** > **profil létrehozása** > **iOS** vagy **MacOS** for platform):
+### <a name="improved-user-interface-experience-when-creating-configuration-profiles-on-iosipados-and-macos-devices---5569008-5569039-5569057-5569110-5569116-5569131-5569139-5569153-5859984-idready---"></a>Továbbfejlesztett felhasználói felületi élmény a konfigurációs profilok iOS/iPadOS és macOS rendszerű eszközökön való létrehozásakor<!-- 5569008-5569039-5569057-5569110-5569116-5569131-5569139-5569153-5859984 idready -->
+Ha iOS/iPadOS vagy macOS rendszerű eszközökhöz hoz létre profilt, a rendszer frissíti az Endpoint Management felügyeleti központban található felhasználói élményt. Ez a változás hatással van a következő eszköz-konfigurációs profilokra (**eszközök** > **konfigurációs profilok** > **profil létrehozása** > **iOS** vagy **MacOS** for platform):
 
-- Egyéni: iOS, macOS
-- Eszköz funkciói: iOS, macOS
-- Eszköz korlátozásai: iOS, macOS
+- Egyéni: iOS/iPadOS, macOS
+- Eszköz szolgáltatásai: iOS/iPadOS, macOS
+- Eszköz korlátozásai: iOS/iPadOS, macOS
 - Endpoint Protection: macOS
 - Bővítmények: macOS
 - Preferencia fájl: macOS

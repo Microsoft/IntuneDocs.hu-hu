@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 08/28/2019
+ms.date: 02/18/2020
 ms.topic: troubleshooting
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -17,18 +17,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 66acf4d8b88097c3262f44493ab72b3900781eed
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 8a9c74281df61fbf81914461286353d49b89a4f9
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72504961"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77510745"
 ---
 # <a name="send-log-data-to-storage-event-hubs-or-log-analytics-in-intune-preview"></a>Naplózási adatküldés a Storage, az Event hubok vagy a log Analytics számára az Intune-ban (előzetes verzió)
 
 A Microsoft Intune tartalmaz olyan beépített naplókat, amelyek a környezettel kapcsolatos információkat biztosítanak:
 
-- A **naplók** az Intune-ban megjelenő különböző eseményekre vagy feladatokra vonatkozó adatokat jelenítik meg.
+- A **naplók** az Intune-ban változást előidéző tevékenységek rekordjait jelenítik meg, beleértve a létrehozási, frissítési (szerkesztési), törlési, hozzárendelési és távoli műveleteket.
 - Az **operatív naplók (előzetes verzió)** részletesen ismertetik a regisztrálni kívánt felhasználók és eszközök részleteit, valamint a nem megfelelő eszközök részleteit.
 - Az **eszköz megfelelőségi szervezeti naplói (előzetes verzió)** az eszköz megfelelőségének szervezeti jelentését mutatják be az Intune-ban, valamint a nem megfelelő eszközök részleteit.
 
@@ -45,7 +45,7 @@ Ez a cikk bemutatja, hogyan lehet **diagnosztikai beállításokkal** elküldeni
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-A szolgáltatás használatához a következőkre lesz szüksége:
+A funkció használatához a következőkre lesz szüksége:
 
 * Azure-előfizetés: Ha nem rendelkezik Azure-előfizetéssel, [regisztrálhat egy ingyenes próbaverzióra](https://azure.microsoft.com/free/).
 * Microsoft Intune-környezet (bérlő) az Azure-ban
@@ -53,16 +53,17 @@ A szolgáltatás használatához a következőkre lesz szüksége:
 
 Attól függően, hogy hová szeretné átirányítani a naplózási naplót, a következő szolgáltatások egyikére lesz szüksége:
 
-* Egy [Azure Storage](https://docs.microsoft.com/azure/storage/common/storage-account-overview) -fiók *listkeys műveletének beolvasása* -engedélyekkel. Javasoljuk, hogy használjon általános Storage-fiókot, és ne blob Storage-fiókot. A tárolás díjszabásával kapcsolatban lásd az [Azure Storage-díjkalkulátort](https://azure.microsoft.com/pricing/calculator/?service=storage). 
+* Egy [Azure Storage](https://docs.microsoft.com/azure/storage/common/storage-account-overview) -fiók *listkeys műveletének beolvasása* -engedélyekkel. Javasoljuk, hogy használjon általános Storage-fiókot, és ne blob Storage-fiókot. A tárolási díjszabással kapcsolatos információkért tekintse meg az [Azure Storage díjszabási számológépét](https://azure.microsoft.com/pricing/calculator/?service=storage). 
 * Egy [Azure Event hub-névtér](https://docs.microsoft.com/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace) , amely integrálható a harmadik féltől származó megoldásokkal.
 * Egy [Azure log Analytics-munkaterületet](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace) , amely naplókat küld log Analyticsba.
 
 ## <a name="send-logs-to-azure-monitor"></a>Naplók küldése az Azure monitornak
 
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. A **figyelés**területen válassza a **diagnosztikai beállítások**elemet. Amikor először nyitja meg, kapcsolja be. Ellenkező esetben adjon hozzá egy beállítást.
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Válassza a **jelentések** > **diagnosztikai beállítások**lehetőséget. Amikor először nyitja meg, kapcsolja be. Ellenkező esetben adjon hozzá egy beállítást.
 
-    ![A diagnosztikai beállítások bekapcsolása az Intune-ban a naplók Azure Monitorba való küldéséhez](./media/review-logs-using-azure-monitor/diagnostics-settings-turn-on.png)
+    > [!div class="mx-imgBorder"]
+    > ![bekapcsolja a diagnosztikai beállításokat az Intune-ban, hogy naplófájlokat küldjön a Azure Monitor](./media/review-logs-using-azure-monitor/diagnostics-settings-turn-on.png)
 
 3. Adja meg a következő tulajdonságokat:
 
@@ -104,7 +105,8 @@ Attól függően, hogy hová szeretné átirányítani a naplózási naplót, a 
 
     Ha elkészült, a beállítások a következő beállításokhoz hasonlóan néznek ki: 
 
-    ![Az Intune-naplókat egy Azure Storage-fiókba küldő minta képe](./media/review-logs-using-azure-monitor/diagnostics-settings-example.png)
+    > [!div class="mx-imgBorder"]
+    > ![minta rendszerkép, amely Intune-naplókat küld egy Azure Storage-fiókba](./media/review-logs-using-azure-monitor/diagnostics-settings-example.png)
 
 4. **Mentse** a változtatásokat. A beállítás megjelenik a listában. A létrehozást követően módosíthatja a beállításokat, ha a beállítások **szerkesztése** > **Mentés**lehetőségre kattint.
 
@@ -112,22 +114,15 @@ Attól függően, hogy hová szeretné átirányítani a naplózási naplót, a 
 
 A naplókat az Intune más részeiben is exportálhatja, beleértve a regisztrációt, a megfelelőséget, a konfigurációt, az eszközöket, az ügyfélalkalmazások és egyebeket.
 
-Például a naplók exportálásához az eszköz megfelelőségének használatakor:
-
-1. Jelentkezzen be az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)-ba.
-2. Válassza az **eszköz megfelelősége** > **figyelő** > **naplózási naplók**elemet:
-
-    ![Naplók kiválasztása az Intune-beli adatAzure Monitor Storage, Events hubok vagy Analytics szolgáltatásba való átirányításához](./media/review-logs-using-azure-monitor/audit-logs-under-monitor-in-compliance.png)
-
-3. Válassza **az adatbeállítások exportálása**lehetőséget. Ha nincs engedélyezve, bekapcsolhatja a **diagnosztikai beállításokat**. Azt is megadhatja, hogy hová szeretné elküldeni a naplókat a [naplók küldése az Azure monitorba](#send-logs-to-azure-monitor) című cikkben leírtak szerint (ez a cikk).
+További információ: [események nyomon követésére és figyelésére szolgáló naplók használata](monitor-audit-logs.md). A naplók küldésének helye az [Azure monitorba](#send-logs-to-azure-monitor) című cikkben leírtak szerint eldöntheti, hogy hová szeretné elküldeni a naplókat.
 
 ## <a name="cost-considerations"></a>Költségekkel kapcsolatos szempontok
 
 Ha már rendelkezik Microsoft Intune licenccel, a Storage-fiók és az Event hub beállításához Azure-előfizetésre van szükség. Az Azure-előfizetés általában ingyenes. Azonban az Azure-erőforrások használatáért kell fizetnie, beleértve az archiváláshoz használt Storage-fiókot és a streaming Event hub-t. Az adatmennyiség és a költségek a bérlő méretétől függően változnak.
 
-### <a name="storage-size-for-activity-logs"></a>Tevékenységnaplók tárterületmérete
+### <a name="storage-size-for-activity-logs"></a>A tevékenységi naplók tárolási mérete
 
-Minden auditnapló-esemény körülbelül 2 KB adattárhelyet foglal el. Az 100 000-felhasználókkal rendelkező bérlők napi körülbelül 1 500 000 eseményt igényelhetnek. Naponta 3 GB tárterületre lehet szükség. Mivel az írások jellemzően öt perces kötegekben történnek, havonta körülbelül 9 000 írási művelet várható.
+Minden naplózási esemény körülbelül 2 KB tárterületet használ. Az 100 000-felhasználókkal rendelkező bérlők napi körülbelül 1 500 000 eseményt igényelhetnek. Naponta 3 GB tárterületre lehet szükség. Mivel az írások jellemzően öt perces kötegekben történnek, havonta körülbelül 9 000 írási művelet várható.
 
 A következő táblázatok a bérlő méretétől függően a költségbecslést mutatják. Emellett egy általános célú v2-es Storage-fiókot is tartalmaz az USA nyugati régiójában legalább egy évig az adatmegőrzéshez. A naplókhoz várt adatmennyiség becsült értékének megszerzéséhez használja az [Azure Storage díjszabási számológépét](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
@@ -135,49 +130,49 @@ A következő táblázatok a bérlő méretétől függően a költségbecslést
 
 | | |
 |---|---|
-|Napi események| 1,5 millió|
-|Becsült adatmennyiség havonta| 90 GB|
-|Becsült díj havonta (USD)| 1,93 dollár|
-|Becsült díj évente (USD)| 23,12 dollár|
+|Esemény/nap| 1 500 000|
+|Becsült adatmennyiség havonta| 90 GB|
+|Becsült díj havonta (USD)| $1,93|
+|Becsült díj évente (USD)| $23,12|
 
 **Naplózás 1 000-felhasználókkal**
 
 | | |
 |---|---|
-|Napi események| 15 000|
-|Becsült adatmennyiség havonta| 900 MB|
-|Becsült díj havonta (USD)| 0,02 dollár|
-|Becsült díj évente (USD)| 0,24 dollár|
+|Esemény/nap| 15,000|
+|Becsült adatmennyiség havonta| 900 MB|
+|Becsült díj havonta (USD)| $0,02|
+|Becsült díj évente (USD)| $0,24|
 
-### <a name="event-hub-messages-for-activity-logs"></a>Tevékenységnaplók eseményközpont-üzenetei
+### <a name="event-hub-messages-for-activity-logs"></a>Event hub-üzenetek a tevékenység naplóihoz
 
 Az eseményeket általában öt percenként kell kötegelt beszámítani, és egyetlen üzenetként kell elküldeni az adott időkereten belüli összes eseményre. Az Event hub-ban lévő üzenet maximális mérete 256 KB. Ha az adott időkereten belül az összes üzenet teljes mérete meghaladja ezt a kötetet, akkor több üzenet is el lesz küldve.
 
 Például körülbelül 18 esemény/másodperc általában a több mint 100 000 felhasználó nagy bérlője esetében fordul elő. Ez 5 percenként 5 400 eseményt tesz elérhetővé (300 másodperc x 18 esemény). A naplófájlok körülbelül 2 KB/eseményre vonatkoznak. Ez 10,8 MB-nyi adattal egyenlő. Így a 43-es üzeneteket az Event hub továbbítja az adott öt perces intervallumban.
 
-Az alábbi táblázat egy alapszintű eseményközpont becsült havi költségét tartalmazza az eseményadatok mennyiségének függvényében az USA nyugati régiójában. A naplókhoz várt adatmennyiség becsléséhez használja a [Event Hubs árképzési számológépet](https://azure.microsoft.com/pricing/details/event-hubs/).
+Az alábbi táblázat az USA nyugati régiójában található alapszintű Event hub becsült költségét tartalmazza, az események mennyiségétől függően. A naplókhoz várt adatmennyiség becsléséhez használja a [Event Hubs árképzési számológépet](https://azure.microsoft.com/pricing/details/event-hubs/).
 
 **Naplózás 100 000-felhasználókkal**
 
 | | |
 |---|---|
-|Események száma másodpercenként| 18|
-|Események száma ötperces időközönként| 5400|
-|Adatmennyiség az egyes időablakokban| 10,8 MB|
-|Üzenetek száma időközönként| 43|
-|Üzenetek száma havonta| 371 520|
-|Becsült díj havonta (USD)| 10,83 dollár|
+|Események másodpercenként| 18|
+|Események száma öt percenként| 5 400|
+|Kötet/időköz| 10,8 MB|
+|Üzenetek/időköz| 43|
+|Üzenet/hó| 371 520|
+|Becsült díj havonta (USD)| $10,83|
 
 **Naplózás 1 000-felhasználókkal**
 
 | | |
 |---|---|
-|Események száma másodpercenként|0,1 |
-|Események száma ötperces időközönként| 52|
-|Adatmennyiség az egyes időablakokban|104 KB |
-|Üzenetek száma időközönként|1 |
-|Üzenetek száma havonta|8640 |
-|Becsült díj havonta (USD)|10,80 dollár |
+|Események másodpercenként|0,1 |
+|Események száma öt percenként| 52|
+|Kötet/időköz|104 KB |
+|Üzenetek/időköz|1 |
+|Üzenet/hó|8 640 |
+|Becsült díj havonta (USD)|$10,80 |
 
 ### <a name="log-analytics-cost-considerations"></a>Log Analytics a költséghatékonysággal kapcsolatos megfontolások
 
@@ -213,15 +208,15 @@ A folyamatos átviteli költségek a percenként fogadott üzenetek számától 
 
 ### <a name="how-do-i-integrate-intune-audit-logs-with-my-siem-system"></a>Hogyan integrálja az Intune-naplókat az SIEM-rendszerrel?
 
-Az Azure Monitor és az Event Hubs együttes használatával streamelje a naplókat az SIEM-rendszerbe. Először [továbbítsa a naplókat egy Event hubhoz](https://docs.microsoft.com/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub). Ezután [állítsa be a Siem eszközt](https://docs.microsoft.com/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub#access-data-from-your-event-hub) a konfigurált Event hub-val. 
+Azure Monitor és Event Hubs használatával továbbíthatja a naplókat az SIEM-rendszerébe. Először [továbbítsa a naplókat egy Event hubhoz](https://docs.microsoft.com/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub). Ezután [állítsa be a Siem eszközt](https://docs.microsoft.com/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub#access-data-from-your-event-hub) a konfigurált Event hub-val. 
 
 ### <a name="what-siem-tools-are-currently-supported"></a>Jelenleg milyen SIEM-eszközök támogatottak?
 
-Jelenleg a [splunk](https://docs.microsoft.com/azure/active-directory/reports-monitoring/tutorial-integrate-activity-logs-with-splunk), a QRadar és a [Sumo Logic](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure_Active_Directory) támogatja a Azure monitort (megnyílik egy új webhely). Az összekötők működéséről [az Azure monitorozási adatok egy eseményközpontba külső eszközökben való használat céljából való streamelését](https://docs.microsoft.com/azure/azure-monitor/platform/stream-monitoring-data-event-hubs) ismertető cikkben talál további információt.
+Jelenleg a [splunk](https://docs.microsoft.com/azure/active-directory/reports-monitoring/tutorial-integrate-activity-logs-with-splunk), a QRadar és a [Sumo Logic](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure_Active_Directory) támogatja a Azure monitort (megnyílik egy új webhely). További információ az összekötők működéséről: az [Azure monitoring-adatok átvitele egy Event hub-ba külső eszköz általi felhasználás](https://docs.microsoft.com/azure/azure-monitor/platform/stream-monitoring-data-event-hubs)céljából.
 
 ### <a name="can-i-access-the-data-from-an-event-hub-without-using-an-external-siem-tool"></a>Az Event hub adatait külső SIEM-eszköz használata nélkül is elérheti?
 
-Igen. Az [Event Hubs API](https://docs.microsoft.com/azure/event-hubs/event-hubs-dotnet-standard-getstarted-receive-eph) használatával is elérheti a naplókat az egyéni alkalmazásokban.
+Igen. Az egyéni alkalmazás naplóihoz való hozzáféréshez használhatja a [Event HUBS API](https://docs.microsoft.com/azure/event-hubs/event-hubs-dotnet-standard-getstarted-receive-eph)-t.
 
 ### <a name="what-data-is-stored"></a>Milyen adattárolók vannak tárolva?
 
@@ -229,6 +224,6 @@ Az Intune nem tárolja a folyamaton keresztül továbbított összes adathalmazt
 
 ## <a name="next-steps"></a>További lépések
 
-* [Tevékenységnaplók archiválása egy Storage-fiókba](https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account)
-* [Tevékenységnaplók irányítása egy eseményközpontba](https://docs.microsoft.com/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub)
+* [Archiválási tevékenység naplófájljai egy Storage-fiókba](https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account)
+* [Tevékenységek naplóinak irányítása egy Event hubhoz](https://docs.microsoft.com/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub)
 * [Tevékenységek naplóinak integrálása Log Analytics](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)

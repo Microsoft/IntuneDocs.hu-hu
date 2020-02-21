@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a4d6db4f61dea1b073ccce7c4c3f727a91402c1
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 6c016dd8a1d8a21e3ac96ab8637e26a029b18dbc
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74563637"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77511803"
 ---
 # <a name="how-to-configure-the-microsoft-intune-company-portal-app"></a>A Microsoft Intune Céges portál alkalmazásának konfigurálása
 
@@ -39,7 +39,7 @@ A felhasználók a Microsoft Intune Céges portálon férhetnek hozzá a vállal
 
 A Céges portál személyre szabásával segítséget nyújt a végfelhasználók számára ismerős és hasznos felhasználói élményben. Ehhez az Intune-portálon válassza az **alkalmazások** > a **branding és a Testreszabás**lehetőséget, majd adja meg a szükséges beállításokat.
 
-Amikor egy felhasználó egy iOS-alkalmazást telepít a Céges portál, a rendszer kérni fogja a kérést. Ez akkor fordul elő, ha az iOS-alkalmazás az alkalmazás-áruházhoz van csatolva, egy mennyiségi vásárlási programhoz (VPP) vagy egy üzletági (LOB) alkalmazáshoz csatolva. A prompt lehetővé teszi, hogy a felhasználók elfogadják a műveletet, vagy engedélyezzék az alkalmazás felügyeletét. A prompt megjeleníti a vállalat nevét, vagy ha a cég neve nem érhető el, **céges portál** jelenik meg. 
+Ha a felhasználó egy iOS/iPadOS alkalmazást telepít a Céges portál, akkor a rendszer egy kérést kap. Ez akkor fordul elő, ha az iOS/iPadOS alkalmazás az alkalmazás-áruházhoz van csatolva, egy mennyiségi vásárlási programhoz (VPP) vagy egy üzletági (LOB) alkalmazáshoz csatolva. A prompt lehetővé teszi, hogy a felhasználók elfogadják a műveletet, vagy engedélyezzék az alkalmazás felügyeletét. A prompt megjeleníti a vállalat nevét, vagy ha a cég neve nem érhető el, **céges portál** jelenik meg. 
 
 > [!Note]
 > Az Azure Government használata esetében a végfelhasználó alkalmazásnaplókkal döntheti el, hogy hogyan végzi a megosztást, amikor segítségkérési folyamatot indít el egy probléma kapcsán. Ha azonban nem az Azure Governmentet használja, akkor a Windows 10 Céges portál közvetlenül a Microsoftnak küldi az alkalmazásnaplókat, amikor egy felhasználó segítségkérési folyamatot indít el egy probléma kapcsán. Az alkalmazásnaplók Microsoftnak való elküldésével könnyebben háríthatók el és oldhatók meg a problémák. 
@@ -92,11 +92,11 @@ Válasszon olyan emblémát, amely fehér vagy világos háttéren mutat a legjo
 
 ### <a name="brand-image-for-company-portal"></a>Márkakép a Céges portálhoz
 
-Márkakép feltöltése, amely tükrözi a vállalati márkát. A módosítások mentése után kiválaszthatja a **Beállítások előnézetét** a panel tetején található Intune webes portálon, hogy megtudja, hogyan fog kinézni a konfigurációk. Vegye figyelembe, hogy a márkakép előnézetét csak egy iOS-eszközön lehet megtekinteni, az Intune webes portálján nem. 
+Márkakép feltöltése, amely tükrözi a vállalati márkát. A módosítások mentése után kiválaszthatja a **Beállítások előnézetét** a panel tetején található Intune webes portálon, hogy megtudja, hogyan fog kinézni a konfigurációk. Vegye figyelembe, hogy az iOS-vagy iPadOS-eszközön csak a márka rendszerképét tekintheti meg, nem pedig az Intune webes portálon. 
 
 |Mező neve|További információ|
 |---|---|
-|**Márkakép feltöltése**| Ez a beállítás lehetővé teszi a márka képének megjelenítését. Az iOS Céges portál háttérképként jelenik meg a felhasználó profiljának oldalán.<p><ul><li>Ajánlott képszélesség: nagyobb mint 1125px (legalább 650 px szükséges)</li><li>Maximális képméret: 1,3 MB</li><li>Fájltípus: PNG, JPG vagy JPEG</li></ul>|
+|**Márkakép feltöltése**| Ez a beállítás lehetővé teszi a márka képének megjelenítését. Az iOS-/iPadOS-Céges portál háttérképként jelenik meg a felhasználó profiljának oldalán.<p><ul><li>Ajánlott képszélesség: nagyobb mint 1125px (legalább 650 px szükséges)</li><li>Maximális képméret: 1,3 MB</li><li>Fájltípus: PNG, JPG vagy JPEG</li></ul>|
 
 A megfelelő márkakép javíthatja a felhasználó Céges portálba vetett bizalmát a cég márkájának hangsúlyozásával. Íme néhány tipp, amelyet érdemes figyelembe venni a kép Céges portálhoz történő beszerzésekor, kiválasztásakor és optimalizálásakor. 
 
@@ -108,7 +108,7 @@ A megfelelő márkakép javíthatja a felhasználó Céges portálba vetett biza
 
 - Szükségtelen metaadatok eltávolítása. A képfájl tartalmazhat metaadatokat, például kameraprofilt, földrajzi helyet, címet, feliratot stb. Használjon képoptimalizáló eszközt ezeknek az adatoknak az eltávolításához a minőség fájlméretkorlátok betartásával történő megőrzéséhez. 
 
-Miután hozzáadta vagy megváltoztatta a rendszerképét az Intune-ban, előfordulhat, hogy a végfelhasználó nem látja az iOS-eszközök változását, amíg a Céges portál felismerte a rendszerindítási módosítást, majd újraindult a márka rendszerképének megjelenítéséhez. 
+Miután hozzáadta vagy megváltoztatta a rendszerképét az Intune-ban, előfordulhat, hogy a végfelhasználó nem látja az iOS/iPadOS-eszközök változását, amíg a Céges portál felismerte az indítást, majd újraindították a márka rendszerképének megjelenítéséhez. 
 
 ### <a name="brand-image-examples"></a>Példa a Brand-képekre
 
@@ -122,20 +122,20 @@ Az alábbi képen az iPhone arculatát bemutató példa látható:
 
 ## <a name="privacy-statement-customization"></a>Adatvédelmi nyilatkozat testreszabása
 
-Testreszabhatja a szervezete számára a felügyelt iOS-eszközökön megjelenő adatvédelmi nyilatkozatot. Ez az üzenet felsorolja azokat az elemeket, amelyeket a szervezet nem láthat vagy végezhet a felügyelt iOS-eszközökön.
+Testreszabhatja a szervezete számára megjelenő adatvédelmi nyilatkozatot a felügyelt iOS-/iPadOS-eszközökön. Ez az üzenet felsorolja azokat az elemeket, amelyeket a szervezet nem láthat vagy nem végez a felügyelt iOS-/iPadOS-eszközökön.
 
 A **céges portál testreszabás** > **eszközkezelés és adatvédelmi üzenet**területen a következőket teheti:
 
 - Fogadja el az **alapértelmezett értéket** a lista használatára a következő módon, vagy
-- Az **Egyéni** elem kiválasztásával testreszabhatja azon elemek listáját, amelyeket a szervezet nem láthat vagy végezhet a felügyelt iOS-eszközökön. A [Markdown](https://daringfireball.net/projects/markdown/) használatával felsorolásjeleket, félkövéreket, dőlteket és hivatkozásokat adhat hozzá.
+- Az **Egyéni** elem kiválasztásával testreszabhatja azon elemek listáját, amelyeket a szervezet nem láthat vagy nem végez a felügyelt iOS-vagy iPadOS-eszközökön. A [Markdown](https://daringfireball.net/projects/markdown/) használatával felsorolásjeleket, félkövéreket, dőlteket és hivatkozásokat adhat hozzá.
 
 ## <a name="company-portal-derived-credentials-for-ios-devices"></a>Céges portál származtatott hitelesítő adatok iOS-eszközökhöz
-Az Intune támogatja a személyes személyazonosság-ellenőrzés (PIV) és a Common Access Card (CAC) származtatott hitelesítő adatait a DISA fajtiszta, a Entrust Datacard és a közbenjáró hitelesítő adatokkal. A végfelhasználók az iOS-eszköz regisztrálását követően további lépéseket hajtanak végre az identitásuk ellenőrzéséhez a Céges portál alkalmazásban. A származtatott hitelesítő adatok lehetővé teszik a felhasználók számára, hogy először állítanak be egy hitelesítő adatot a bérlő számára, majd egy olyan profilt céloznak meg, amely származtatott hitelesítő adatokat használ a felhasználóknak vagy az eszközöknek.
+Az Intune támogatja a személyes személyazonosság-ellenőrzés (PIV) és a Common Access Card (CAC) származtatott hitelesítő adatait a DISA fajtiszta, a Entrust Datacard és a közbenjáró hitelesítő adatokkal. A végfelhasználók az iOS/iPadOS-eszköz regisztrálását követően további lépéseket tesznek az identitásuk ellenőrzéséhez a Céges portál alkalmazásban. A származtatott hitelesítő adatok lehetővé teszik a felhasználók számára, hogy először állítanak be egy hitelesítő adatot a bérlő számára, majd egy olyan profilt céloznak meg, amely származtatott hitelesítő adatokat használ a felhasználóknak vagy az eszközöknek.
 
 > [!NOTE]
 > A felhasználó az Intune-on keresztül megadott hivatkozás alapján a származtatott hitelesítő adatokra vonatkozó utasításokat fogja látni.
 
-Az iOS-eszközök származtatott hitelesítő adataival kapcsolatos további információkért lásd: [származtatott hitelesítő adatok használata Microsoft Intuneban](~/protect/derived-credentials.md).
+Az iOS-es/iPadOS-eszközök származtatott hitelesítő adataival kapcsolatos további információkért lásd: [származtatott hitelesítő adatok használata Microsoft Intuneban](~/protect/derived-credentials.md).
 
 ## <a name="dark-mode-for-ios-company-portal"></a>Sötét mód iOS-Céges portál
 
@@ -147,15 +147,15 @@ A végfelhasználók a billentyűparancsok (gyorssegédek) használatával indí
 
 A következő billentyűparancsok érhetők el a Windows Céges portál alkalmazásban.
 
-| Terület | Description | Billentyűparancs |
+| Terület | Leírás | Billentyűparancs |
 |:------------------:|:--------------:|:-----------------:|
-| Navigációs menü | Navigáció | Alt+M |
-|  | Otthoni | Alt+H |
-|  | Minden alkalmazás | Alt+A |
+| Navigációs menü | Navigáció | ALT + M |
+|  | Otthoni | ALT + H |
+|  | Minden alkalmazás | ALT + A |
 |  | Telepített alkalmazások | Alt+I |
-|  | Visszajelzés küldése | Alt+F |
-|  | Saját profil | Alt+U |
-|  | Beállítások | Alt+T |
+|  | Visszajelzés küldése | ALT + F |
+|  | Saját profil | Alt + U |
+|  | Beállítások | ALT + T |
 | Kezdőlap – Eszköz csempe | Átnevezés | F2 |
 |  | Eltávolítás | Ctrl+D vagy Delete |
 |  | Hozzáférés ellenőrzése | Ctrl+M vagy F9 |
@@ -177,7 +177,7 @@ A felhasználók a helyi vagy távoli eszközökön végezhetnek műveleteket a 
 - **Átnevezés** – ez a művelet megváltoztatja azt az eszköznév, amelyet a felhasználó láthat a céges portálban. Nem módosítja a helyi eszköznév nevét, csak a Céges portál lévő listaelemet.
 - **Sync (szinkronizálás** ) – Ez a művelet az Intune szolgáltatással kezdeményezi az eszköz beadását. Ez a Céges portál **ellenőrzési állapotaként** jelenik meg.
 - **Távoli zárolás** – ezzel zárolja az eszközt, és PIN-kódot igényel a zárolás feloldásához.
-- Jelszó **alaphelyzetbe állítása** – ezzel a művelettel alaphelyzetbe állíthatja az eszköz PIN-kódját. IOS-eszközökön a PIN-kód el lesz távolítva, és a végfelhasználónak új kódot kell megadnia a beállításokban. A támogatott androidos eszközökön új PIN-kódot hoz létre az Intune, és ideiglenesen megjelenik a Céges portál.
+- Jelszó **alaphelyzetbe állítása** – ezzel a művelettel alaphelyzetbe állíthatja az eszköz PIN-kódját. IOS-/iPadOS-eszközökön a rendszer eltávolítja a PIN-kódot, és a végfelhasználónak meg kell adnia egy új kódot a beállításokban. A támogatott androidos eszközökön új PIN-kódot hoz létre az Intune, és ideiglenesen megjelenik a Céges portál.
 - **Kulcs helyreállítása** – ezzel a művelettel helyreállíthatja a titkosított MacOS-eszközök személyes helyreállítási kulcsát a céges portál webhelyről. 
 
 ### <a name="self-service-actions"></a>Önkiszolgáló műveletek
@@ -187,12 +187,12 @@ Egyes platformok és konfigurációk nem engedélyezik az önkiszolgáló eszkö
 |  | Windows 10<sup>(3)</sup> | iOS/iPadOS<sup>(3)</sup> | MacOS<sup>(3)</sup> | Android<sup>(3)</sup> |
 |----------------------|--------------------------|-------------------|-----------------------------------|-------------------------|
 | Kivonás | Elérhető<sup>(1)</sup> | Elérhető | Elérhető | Elérhető<sup>(7)</sup> |
-| Törlés | Elérhető | Elérhető<sup>(5)</sup> | n/a | Elérhető<sup>(7)</sup> |
+| Törlés | Elérhető | Elérhető<sup>(5)</sup> | NA | Elérhető<sup>(7)</sup> |
 | Átnevezés<sup>(4)</sup> | Elérhető | Elérhető | Elérhető | Elérhető |
 | Szinkronizálás | Elérhető | Elérhető | Elérhető | Elérhető |
 | Távoli zárolás | Csak Windows Phone-telefon | Elérhető | Elérhető | Elérhető |
-| PIN-kód alaphelyzetbe állítása | Csak Windows Phone-telefon | Elérhető<sup>(8)</sup> | n/a | Elérhető<sup>(6)</sup> |
-| Kulcshelyreállítás | n/a | n/a | Elérhető<sup>(2)</sup> | n/a |
+| PIN-kód alaphelyzetbe állítása | Csak Windows Phone-telefon | Elérhető<sup>(8)</sup> | NA | Elérhető<sup>(6)</sup> |
+| Kulcs helyreállítása | NA | NA | Elérhető<sup>(2)</sup> | NA |
 
 <sup>(1)</sup> a kivonás mindig **le van tiltva az Azure** ad-hez csatlakoztatott Windows-eszközökön.<br>
 <sup>(2)</sup> a MacOS rendszerhez készült **kulcs-helyreállítás** csak a webes portálon keresztül érhető el.<br>

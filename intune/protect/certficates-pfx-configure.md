@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 12/12/2019
+ms.date: 02/20/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6d35d7470508b610f850ca7f9f394e0d26bec677
-ms.sourcegitcommit: 576b9528629981e87e775fac146932e502f07a74
+ms.openlocfilehash: b963a508ac140988993d3953d6a9d6398404e7b6
+ms.sourcegitcommit: 67f926ba83f8a955e16b741a610ad84d6044f8f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77258096"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77529294"
 ---
 # <a name="configure-and-use-pkcs-certificates-with-intune"></a>PKCS-tanúsítványok konfigurálása és használata az Intune-nal
 
@@ -66,7 +66,7 @@ A PKCS-tanúsítványok Intune-nal való használatához a következő infrastru
   A Microsoft Intune Tanúsítvány-összekötő támogatja a Federal Information Processing standard (FIPS) üzemmódot is. A FIPS nem szükséges, de ha engedélyezve van, akkor lehetőség van tanúsítványok kibocsátására és visszavonására.
 
 - **Pfx tanúsítvány-összekötő a Microsoft Intunehoz**:  
-  Ha az S/MIME e-mailek titkosítását tervezi használni, az Intune-portálon töltheti le a pfx-tanúsítványok importálását támogató *pfx tanúsítvány-összekötőt* .  Nyissa meg az **eszköz konfigurációja** > **tanúsítvány-összekötők** > **Hozzáadás**lehetőséget, majd kövesse a *lépéseket az importált pfx-tanúsítványokhoz tartozó összekötő telepítéséhez*. Az **PfxCertificateConnectorBootstrapper. exe**telepítőjének letöltéséhez használja a portál letöltési hivatkozását. 
+  Ha az S/MIME e-mailek titkosítását tervezi használni, az Intune-portálon töltheti le a pfx-tanúsítványok importálását támogató *pfx tanúsítvány-összekötőt* .  Nyissa meg az **eszköz konfigurációja** > **tanúsítvány-összekötők** > **Hozzáadás**lehetőséget, majd kövesse a *lépéseket az importált pfx-tanúsítványokhoz tartozó összekötő telepítéséhez*. Az **PfxCertificateConnectorBootstrapper. exe**telepítőjének letöltéséhez használja a portál letöltési hivatkozását.
 
   Minden Intune-bérlő támogatja az összekötő egyetlen példányát. Ezt az összekötőt telepítheti ugyanarra a kiszolgálóra, mint az Microsoft Intune Certificate Connector példánya.
 
@@ -79,10 +79,12 @@ A PKCS-tanúsítványok Intune-nal való használatához a következő infrastru
   További információ: [Microsoft Intune hálózati végpontok és az](../fundamentals/intune-endpoints.md) [Intune hálózati konfigurációs követelményei és sávszélessége](../fundamentals/network-bandwidth-use.md).
 
 - **Windows Server**:  
-  Windows-kiszolgálót használ a gazdagéphez:
+  Windows-kiszolgáló használata a gazdagéphez:
 
   - Microsoft Intune Tanúsítvány-összekötő – hitelesítéshez és S/MIME e-mail aláírási forgatókönyvekhez
   - PFX tanúsítvány-összekötő a Microsoft Intunehoz – S/MIME e-mail titkosítási forgatókönyvek esetén.
+
+  Az összekötőknek a felügyelt eszközökhöz tartozó, az [eszköz végpontjának tartalmában](https://docs.microsoft.com/intune/fundamentals/intune-endpoints#access-for-managed-devices)megjelenő portokhoz kell hozzáférnie.
 
   Az Intune támogatja a *pfx tanúsítvány-összekötő* telepítését ugyanarra a kiszolgálóra, mint a *Microsoft Intune tanúsítvány-összekötő*.
   
@@ -124,7 +126,7 @@ VPN-, WiFi-vagy más erőforrásokkal rendelkező eszköz hitelesítéséhez az 
 9. A **Bővítmények** lapon ellenőrizze, hogy az **Alkalmazásszabályzatok** területen láthatók-e a következő elemek: Titkosított fájlrendszer, Biztonságos e-mail, Ügyfél-hitelesítés.
 
     > [!IMPORTANT]
-    > iOS-tanúsítványsablonok esetén a **Kiterjesztések** lapon frissítse a **Kulcshasználat** beállítást, és ügyeljen rá, hogy **Az aláírás igazolja az eredetet** jelölőnégyzet ne legyen bejelölve.
+    > IOS-/iPadOS-tanúsítványsablonok esetén a **kiterjesztések** **lapon frissítse a kulcshasználat beállítást**, és győződjön meg róla, hogy az **aláírás az eredet igazolása** elem nincs kiválasztva.
 
 10. A **Biztonság** lapon vegye fel annak a kiszolgálónak a fiókját, amelyen telepíti a Microsoft Intune Tanúsítvány-összekötőt. Adja meg a fiók számára az **Olvasás** és **Beléptetés** engedélyeket.
 11. A tanúsítvány mentéséhez válassza ki az **Alkalmaz** > **OK** elemet. Zárja be a **Tanúsítvány-sablonok konzolt**.

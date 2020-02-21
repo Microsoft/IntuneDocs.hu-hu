@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: apps; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 569906cea8467d568d302f4e44b26c3394213b62
-ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.openlocfilehash: 670e5033ddf2a04cd5bd87040d85eef764dca519
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77414967"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77512296"
 ---
 # <a name="overview-of-the-app-lifecycle-in-microsoft-intune"></a>Az alkalmazások Microsoft Intune-beli életciklusának áttekintése
 
@@ -42,7 +42,7 @@ Miután felvette az alkalmazást az Intune-ba, [azt felhasználókhoz és felüg
 
 Az alkalmazások életciklusa során általában az alkalmazás több új verziója is megjelenik. Az Intune számos eszközt kínál a központilag telepített alkalmazások [verziófrissítésére](apps-add.md). Ezen túlmenően bizonyos alkalmazásokhoz további funkciók is konfigurálhatók, például:
 
-- az [iOS-alkalmazás konfigurációs házirendjei](app-configuration-policies-use-ios.md) az alkalmazás futtatásakor használt kompatibilis iOS/iPadOS alkalmazások beállításait biztosítják. Például egyes alkalmazásokhoz szükség lehet bizonyos márkajelzési beállításokra, vagy a célkiszolgáló nevére, amelyhez csatlakoznia kell.
+- az [iOS/iPadOS alkalmazás-konfigurációs szabályzatok](app-configuration-policies-use-ios.md) az alkalmazás futtatásakor használt kompatibilis iOS-/iPadOS-alkalmazások beállításait biztosítják. Például egyes alkalmazásokhoz szükség lehet bizonyos márkajelzési beállításokra, vagy a célkiszolgáló nevére, amelyhez csatlakoznia kell.
 - A [Managed Browser-házirendek](app-configuration-managed-browser.md) segítségével konfigurálhatja a [Microsoft Edge](~/apps/apps-supported-intune-apps.md#microsoft-apps)beállításait, amely lecseréli az alapértelmezett böngészőt, és lehetővé teszi a felhasználók által felkereshető webhelyek korlátozását.
 
 ## <a name="protect"></a>Védelem

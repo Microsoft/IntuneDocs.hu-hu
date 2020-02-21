@@ -18,12 +18,12 @@ ms.reviewer: ''
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 267f09c3dc16aab10fbe64f0e8662ee6f7c7ffa0
-ms.sourcegitcommit: ec69e7ccc6e6183862a48c1b03ca6a3bf573f354
+ms.openlocfilehash: 1d8950e57c2427c522d337807d315ed5c399c0d5
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74908225"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514081"
 ---
 # <a name="tutorial-walkthrough-intune-in-microsoft-endpoint-manager"></a>Oktatóanyag: útmutató az Intune-hoz a Microsoft Endpoint Managerben
 
@@ -32,7 +32,7 @@ Az [Azure](https://docs.microsoft.com/learn/modules/welcome-to-azure) több mint
 > [!NOTE]
 > A Microsoft Endpoint Manager egyetlen, integrált végpont-felügyeleti platform az összes végpont kezeléséhez. Ez a Microsoft Endpoint Manager felügyeleti központ integrálja a ConfigMgr és a Microsoft Intune.
 
-Az oktatóanyagban a következőket végezheti el:
+Az oktatóanyag során az alábbi lépéseket fogja végrehajtani:
 > [!div class="checklist"]
 > * Ismerkedés a Microsoft Endpoint Manager felügyeleti központjával
 > * A Microsoft Endpoint Manager felügyeleti központ nézetének testreszabása
@@ -70,7 +70,7 @@ Kövesse az alábbi lépéseket az Intune jobb megismeréséhez a Microsoft Endp
     
     Az Intune-nal kezelheti a munkaerő eszközeit és alkalmazásait, beleértve a vállalati adataik elérését. A mobileszköz-felügyeleti (MDM) szolgáltatás használatához először regisztrálni kell az eszközöket az Intune-ban. Az eszközök regisztrálásakor azok egy MDM-tanúsítványt kapnak. Ez a tanúsítvány az Intune szolgáltatással való kommunikációra szolgál. 
 
-    Több módszer is van a munkaerő eszközeinek Intune-ba való regisztrálására. Az egyes módszerek az eszköz tulajdonosától (személyes vagy céges), az eszköztípustól (iOS, Windows, Android) és a felügyeleti követelményektől (alaphelyzetbe állítások, affinitás, zárolás) függ. Az eszközök regisztrálásának engedélyezése előtt azonban be kell állítania az Intune-infrastruktúrát. Különösen fontos, hogy az eszközregisztrációhoz szükség van [saját MDM-szolgáltató beállítására](mdm-authority-set.md). Az Intune-környezet (bérlő) készenléti állapotáról további információt az [Intune beállítása](setup-steps.md)című témakörben talál. Ha elkészült az Intune-Bérlővel, regisztrálhat eszközöket. További információt az eszközregisztrációról a [Mi az eszközregisztrálás?](../enrollment/device-enrollment.md) című témakörben találhat
+    Több módszer is van a munkaerő eszközeinek Intune-ba való regisztrálására. Az egyes módszerek az eszköz tulajdonlása (személyes vagy vállalati), az eszköz típusa (iOS/iPadOS, Windows, Android) és a felügyeleti követelmények (alaphelyzetbe állítás, affinitás, zárolás) függnek. Az eszközök regisztrálásának engedélyezése előtt azonban be kell állítania az Intune-infrastruktúrát. Különösen fontos, hogy az eszközregisztrációhoz szükség van [saját MDM-szolgáltató beállítására](mdm-authority-set.md). Az Intune-környezet (bérlő) készenléti állapotáról további információt az [Intune beállítása](setup-steps.md)című témakörben talál. Ha elkészült az Intune-Bérlővel, regisztrálhat eszközöket. További információt az eszközregisztrációról a [Mi az eszközregisztrálás?](../enrollment/device-enrollment.md) című témakörben találhat
 
 3. A navigációs ablaktáblán válassza az **eszközök** lehetőséget a regisztrált eszközök adatainak megjelenítéséhez az Intune-bérlőben. 
 
@@ -117,7 +117,7 @@ Kövesse az alábbi lépéseket az Intune jobb megismeréséhez a Microsoft Endp
     > [!TIP]
     > Ha korábban már használta az Intune-t a Azure Portalban, az [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) -ba való bejelentkezéssel, majd az **eszköz konfigurációjának**kiválasztásával megtalálta a fenti adatokat a Azure Portalban.
 
-    Az Intune olyan beállításokat és funkciókat kínál, amelyeket Ön engedélyezhet vagy letilthat a vállalatához tartozó különböző eszközökön. Ezek a beállítások és funkciók hozzáadódnak a "konfigurációs profilokhoz". Létrehozhat profilokat különböző eszközökhöz és különböző platformokhoz, például iOS, Android, macOS és Windows rendszerekhez. Ezt követően az Intune használatával alkalmazhatja a profilt a szervezet eszközeire.   
+    Az Intune olyan beállításokat és funkciókat kínál, amelyeket Ön engedélyezhet vagy letilthat a vállalatához tartozó különböző eszközökön. Ezek a beállítások és funkciók hozzáadódnak a "konfigurációs profilokhoz". Létrehozhat profilokat különböző eszközökhöz és különböző platformokhoz, például iOS/iPadOS, Android, macOS és Windows rendszerekhez. Ezt követően az Intune használatával alkalmazhatja a profilt a szervezet eszközeire.   
 
     Az eszköz konfigurációjával kapcsolatos további információkért lásd: a [szolgáltatások beállításainak alkalmazása az eszközökön a Microsoft Intune eszköz profiljainak használatával](../configuration/device-profiles.md).
 

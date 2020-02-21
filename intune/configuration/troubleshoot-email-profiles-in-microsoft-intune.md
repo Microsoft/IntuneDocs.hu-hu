@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/05/2019
+ms.date: 02/18/2020
 ms.topic: troubleshooting
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 38e8998d1720434b0fe866fc5cd41a0b733fc49b
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: a19830130f992a002b73402f5e13a8f062539917
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74059847"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77512670"
 ---
 # <a name="common-issues-and-resolutions-with-email-profiles-in-microsoft-intune"></a>A Microsoft Intune e-mail-profiljaival kapcsolatos gyakori problémák és megoldások
 
@@ -33,7 +33,7 @@ Tekintse át az e-mail-profilokkal kapcsolatos gyakori problémákat, valamint a
 
 - Az e-mail profilok az eszközt regisztráló felhasználó számára lettek telepítve. Az e-mail-profil konfigurálásához az Intune a felhasználó e-mail-profiljában lévő Azure Active Directory (AD) tulajdonságokat használja a regisztráció során. Az [eszközökhöz tartozó e-mail-beállítások](email-settings-configure.md) megfelelő erőforrást adhatnak hozzá.
 - Android Enterprise esetén a felügyelt Google Play Áruház használatával telepítse a Gmail vagy a Nine for Work szolgáltatást. A [felügyelt Google Play-alkalmazások hozzáadása](../apps/apps-add-android-for-work.md) a lépéseket sorolja fel.
-- Az iOS és az Android rendszerhez készült Microsoft Outlook nem támogatja az e-mail-profilokat. Ehelyett helyezzen üzembe egy alkalmazás-konfigurációs házirendet. További információ: [Outlook konfigurációs beállítás](../apps/app-configuration-policies-outlook.md).
+- Az iOS/iPadOS és az Android rendszerhez készült Microsoft Outlook nem támogatja az e-mail-profilokat. Ehelyett helyezzen üzembe egy alkalmazás-konfigurációs házirendet. További információ: [Outlook konfigurációs beállítás](../apps/app-configuration-policies-outlook.md).
 - Előfordulhat, hogy az eszközökre irányuló e-mail-profilok (nem felhasználói csoportok) nem lesznek továbbítva az eszközre. Ha az eszköz elsődleges felhasználóval rendelkezik, az eszközök célzásának működnie kell. Ha az e-mail-profil felhasználói tanúsítványokat tartalmaz, ügyeljen arra, hogy a felhasználói csoportokat célozza meg.
 - Előfordulhat, hogy a rendszer ismételten kéri a felhasználókat az e-mail-profil jelszavának megadására. Ebben az esetben az e-mail-profilban hivatkozott összes tanúsítványt ellenőriznie kell. Ha az egyik tanúsítvány nem egy felhasználóhoz van rendelve, az Intune megpróbálja telepíteni az e-mail-profilt.
 
@@ -41,7 +41,7 @@ Tekintse át az e-mail-profilokkal kapcsolatos gyakori problémákat, valamint a
 
 Ha a felhasználók e-mail-profilt hoznak létre az Intune-ban vagy az Office 365-MDM való regisztráció előtt, előfordulhat, hogy az Intune által telepített e-mail-profil nem a várt módon működik:
 
-- **iOS**: az Intune az állomásnév és az e-mail cím alapján észleli a meglévő, duplikált e-mail profilt. A felhasználó által létrehozott e-mail-profil blokkolja az Intune által létrehozott profil telepítését. Ez egy gyakori probléma, mivel az iOS-felhasználók általában létrehoznak egy e-mail-profilt, majd regisztrálhatnak. A Céges portál alkalmazás állapota szerint a felhasználó nem megfelelő, és megkérheti a felhasználót, hogy távolítsa el az e-mail-profilt.
+- **iOS/iPadOS**: az Intune az állomásnév és az e-mail-cím alapján észleli a meglévő, duplikált e-mail-profilt. A felhasználó által létrehozott e-mail-profil blokkolja az Intune által létrehozott profil telepítését. Ez egy gyakori probléma, mivel az iOS/iPadOS-felhasználók általában létrehoznak egy e-mail-profilt, majd regisztráljanak. A Céges portál alkalmazás állapota szerint a felhasználó nem megfelelő, és megkérheti a felhasználót, hogy távolítsa el az e-mail-profilt.
 
   A felhasználónak el kell távolítania az e-mail-profilt, hogy az Intune-profil üzembe helyezhető legyen. A probléma megelőzése érdekében kérje meg a felhasználókat, hogy regisztráljanak, és engedélyezzék az Intune-nak az e-mail-profil üzembe helyezését. Ezután a felhasználók létrehozhatják az e-mail-profilját.
 

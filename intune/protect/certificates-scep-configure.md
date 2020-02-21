@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 24d0a8160d852a5a44f5df688b7e0bc230d56704
-ms.sourcegitcommit: c7c6be3833d9a63d43f31d598b555b49b33cf5cb
+ms.openlocfilehash: c454ae6184f4d2a7c3c31f3c61d2cf4331ac187c
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76966385"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514098"
 ---
 # <a name="configure-infrastructure-to-support-scep-with-intune"></a>Infrastruktúra konfigurálása az Intune-nal való SCEP támogatásához
 
@@ -97,7 +97,7 @@ A NDES szolgáltatás és a környezetben található összes támogató infrast
 
 A SCEP használatakor a következő tanúsítványokat és sablonokat használja a rendszer.
 
-|Objektum    |Details    |
+|Objektum    |Részletek    |
 |----------|-----------|
 |**SCEP tanúsítványsablon**         |Az eszközök SCEP-kéréseinek fullfil használt, a kiállító HITELESÍTÉSSZOLGÁLTATÓhoz konfigurálni kívánt sablon. |
 |**Ügyfél-hitelesítési tanúsítvány** |A kiállító HITELESÍTÉSSZOLGÁLTATÓtól vagy nyilvános HITELESÍTÉSSZOLGÁLTATÓTÓL kérelmezve.<br /> Ezt a tanúsítványt a NDES szolgáltatást futtató számítógépre kell telepíteni, amelyet az Intune Certificate Connector használ.<br /> Ha a tanúsítvány *ügyfél* -és *kiszolgáló-hitelesítési* kulcshasználat (**Kibővített kulcshasználat**) van BEÁLLÍTVA a tanúsítvány kiállításához használt hitelesítésszolgáltatói sablonban. Ezt követően ugyanazt a tanúsítványt használhatja a kiszolgáló-és ügyfél-hitelesítéshez is. |
@@ -148,7 +148,7 @@ A következő részekben a Windows Server 2012 R2 vagy újabb, valamint a Active
        > [!IMPORTANT]
        > Csak a szükséges alkalmazás-házirendeket adja hozzá. A kiválasztott elemekkel kapcsolatban kérje ki a biztonsági rendszergazda véleményét is.
 
-     - IOS-és macOS-tanúsítványsablonok esetén szerkessze a **kulcshasználat** is, és győződjön meg arról, hogy az **aláírás az eredet igazolása** nincs kiválasztva.
+     - IOS-/iPadOS-és macOS-tanúsítványsablonok esetében szerkessze a **kulcshasználat** is, és győződjön meg arról, hogy az **aláírás az eredet igazolása** nincs kiválasztva.
 
      ![Sablon, a bővítményeket tartalmazó lap](./media/certificates-scep-configure/scep-ndes-extensions.jpg)  
 
@@ -217,7 +217,7 @@ A tanúsítványsablon érvényességi időtartamának módosítása nem kötele
 Alapértelmezés szerint az Intune a sablonban konfigurált értéket használja. A HITELESÍTÉSSZOLGÁLTATÓT azonban úgy is beállíthatja, hogy a kérelmező más értéket adjon meg, és ez az érték az Intune-konzolon belülről is megadható.
 
 > [!IMPORTANT]
-> IOS és macOS esetén mindig a sablonban beállított értéket használja.
+> Az iOS/iPadOS és a macOS esetében mindig a sablonban beállított értéket használja.
 
 #### <a name="to-configure-a-value-that-can-be-set-from-within-the-intune-console"></a>Az Intune-konzolon megadható érték konfigurálása
 

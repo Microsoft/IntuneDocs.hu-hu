@@ -15,12 +15,12 @@ ms.technology: ''
 ms.assetid: ''
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e565f40aac2a2b97f547a5b68a70a887d9e820ae
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: d90e3757ced90bea21e4033b6baa93bfa201b1f2
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75207468"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514217"
 ---
 # <a name="integrate-wandera-mobile-threat-protection-with-intune"></a>A Wander Mobile Threat Protection integrálása az Intune-nal  
 
@@ -61,7 +61,7 @@ Az a Wanderers-hez való *csatlakozási* művelethez egy egyszeri konfiguráció
 2. Válassza a **bérlői felügyelet** > **Összekötők és tokenek** > **Mobile Threat Defense** > **Hozzáadás**lehetőséget.
 3. Az **összekötő hozzáadása** lapon használja a legördülő menüt, és válassza a **Bolyongás**lehetőséget. Majd válassza a **Létrehozás**lehetőséget.  
 4. A Mobile Threat Defense panelen válassza a **Wanda** MTD-összekötőt az összekötők listájáról az *összekötő szerkesztése* ablaktábla megnyitásához. Válassza **a Bolyongás felügyeleti konzol megnyitása** lehetőséget a [radar](https://radar.wandera.com/login), a Wanda felügyeleti konzol megnyitásához és a bejelentkezéshez. 
-5. A Wanda-konzolon lépjen a **beállítások** > **az** *Microsoft Intune*a következőre:, és **válassza a (** **
+5. A Wanda-konzolon lépjen a **beállítások** > **az** *Microsoft Intune*a következőre:, és **válassza a (**
 
    ![Intune kiválasztása](./media/wandera-mtd-connector-integration/set-up-intune-in-radar.png)
 
@@ -73,7 +73,7 @@ Az a Wanderers-hez való *csatlakozási* művelethez egy egyszeri konfiguráció
 
    ![Integrációk és engedélyek](./media/wandera-mtd-connector-integration/integrations-and-permissions.png) 
 
-8. A RADAR-konzolon másolja az **SyncOnly** csoport nevét, amely megjelenik az **** Ezt a nevet fogja használni az Intune-ban a Bolyongás szinkronizálására szolgáló csoport konfigurálásához.
+8. A RADAR-konzolon másolja az **SyncOnly** csoport nevét, amely megjelenik az Ezt a nevet fogja használni az Intune-ban a Bolyongás szinkronizálására szolgáló csoport konfigurálásához.
 
    ![Szinkronizálási csoport](./media/wandera-mtd-connector-integration/sync-group-name.png) 
 
@@ -91,7 +91,7 @@ A következő fejezetek és eljárások végigvezetik a folyamaton.
 További információ erről a folyamatról: Wanda, bejelentkezés a Wanda [radarba](https://radar.wandera.com/login). Nyissa meg a **beállítások** > a következőt:, majd válassza az **alkalmazás leküldése** **lapot, majd**a **Microsoft Intune**lehetőséget. Az alkalmazás leküldéses lapja az Intune-ra vonatkozó utasításokkal frissül.  
 
 ### <a name="add-the-wandera-apps"></a>A Wanda-alkalmazások hozzáadása  
-Ügyfélalkalmazások létrehozása az Intune-ban a vándor alkalmazás üzembe helyezéséhez Android és iOS rendszerű eszközökön. Lásd: [MTD-alkalmazások hozzáadása](mtd-apps-ios-app-configuration-policy-add-assign.md) a bolyongó alkalmazásokhoz tartozó eljárásokhoz és egyéni részletekhez.  
+Ügyfélalkalmazások létrehozása az Intune-ban a vándor alkalmazás üzembe helyezéséhez Android-és iOS-vagy iPadOS-eszközökön. Lásd: [MTD-alkalmazások hozzáadása](mtd-apps-ios-app-configuration-policy-add-assign.md) a bolyongó alkalmazásokhoz tartozó eljárásokhoz és egyéni részletekhez.  
 
 Az alkalmazások létrehozása után térjen vissza ide a szinkronizálási csoport létrehozásához és az alkalmazások hozzárendeléséhez.
 
@@ -105,20 +105,20 @@ Az alkalmazások létrehozása után térjen vissza ide a szinkronizálási csop
 
    ![a szinkronizálási csoport konfigurálása](./media/wandera-mtd-connector-integration/configure-sync-group.png)
 
-3. Válassza ki a **tagokat** , és rendeljen hozzá olyan csoportokat, amelyek tartalmazzák a Bolyongás használatával használni kívánt Android-és iOS-eszközöket.
+3. Válassza ki a **tagokat** , és rendeljen hozzá olyan csoportokat, amelyek tartalmazzák a Bolyongás használatával használni kívánt Android-és iOS-/iPadOS-eszközöket.
 
 4. A csoport mentéséhez válassza a **Létrehozás** lehetőséget.
 
 További információ: [alkalmazások telepítése](../apps/apps-deploy.md)
 
 ### <a name="assign-the-wandera-apps-to-the-synchronization-group"></a>A bolyongó alkalmazások kiosztása a szinkronizálási csoportnak  
-Ismételje meg az alábbi eljárást az iOS-hez és Androidhoz létrehozott Wanda-alkalmazáshoz.
+Ismételje meg az alábbi eljárást az iOS/iPadOS és Android rendszerhez létrehozott Wanda-alkalmazáshoz.
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Válassza az **alkalmazások** > **minden alkalmazás** lehetőséget, és válassza ki a vándor alkalmazást.
 3. Válassza a **hozzárendelések** , majd a **Csoport hozzáadása**lehetőséget.  
 4. A *Csoport hozzáadása* panelen a *hozzárendelés típusa* beállításnál válassza a **kötelező**lehetőséget.
-5. Válassza a **befoglalt csoportok**lehetőséget, majd **válassza ki a felvenni kívánt csoportokat**. Adja meg a Wanda-szinkronizáláshoz létrehozott csoportot, majd kattintson **az OK** **gombra >  > OK gombra.** **** Válassza a **Mentés** lehetőséget a csoport hozzárendelésének befejezéséhez. 
+5. Válassza a **befoglalt csoportok**lehetőséget, majd **válassza ki a felvenni kívánt csoportokat**. Adja meg a Wanda-szinkronizáláshoz létrehozott csoportot, majd kattintson **az OK** **gombra >  > OK gombra.** Válassza a **Mentés** lehetőséget a csoport hozzárendelésének befejezéséhez. 
 
 ## <a name="next-steps"></a>További lépések  
 Most, hogy konfigurálta az integrációt, megkezdheti a házirendek konfigurálását, a speciális feltételes hozzáférés beállítását és a jelentések megtekintését a Wanda felügyeleti konzolon. A Bolyongás kezelésével és konfigurálásával kapcsolatos további tudnivalókért tekintse meg a következő témakört: [támogatási központ első lépések útmutató](https://radar.wandera.com/?return_to=https://wandera.force.com/Customer/s/getting-started) a Wanda dokumentációjában. 

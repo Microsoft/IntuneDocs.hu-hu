@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 62ba66469dfff004c3cd6a60284ec7466e8b9f00
-ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.openlocfilehash: 84fe9e1d60e3e65289ca18735e64e82ac9c64f4a
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77415512"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514183"
 ---
 # <a name="remove-devices-by-using-wipe-retire-or-manually-unenrolling-the-device"></a>Eszközök eltávolítása összes adatuk törlésével, az eszköz kivonásával vagy regisztrációja manuális törlésével
 
@@ -47,7 +47,7 @@ Az **Összes adat törlése** művelet visszaállítja az eszközön az alapért
 
 A **Regisztrációs állapot és felhasználói fiók megtartása** lehetőség csak a Windows 10 1709-es vagy újabb verziók esetében érhető el.
 
-A **védett törlés végrehajtása** beállítás megadásával gondoskodhat arról, hogy az eszköz kikapcsolásával ne legyen kijátszható a törlési művelet. A védett adatok törlésével a rendszer addig próbálkozik az eszköz alaphelyzetbe állításával. Bizonyos konfigurációk esetében ez a művelet nem tudja újraindítani az eszközt.
+A **védett törlés végrehajtása** beállítás megadásával gondoskodhat arról, hogy az eszköz kikapcsolásával ne legyen kijátszható a törlési művelet. A védett adatok törlésével a rendszer addig próbálkozik az eszköz alaphelyzetbe állításával. Bizonyos konfigurációk esetében ez a művelet [nem tudja újraindítani](troubleshoot-device-actions.md#wipe-action)az eszközt.
 
 A rendszer újra alkalmazza az MDM-szabályzatokat az eszköz következő Intune-csatlakozásakor.
 

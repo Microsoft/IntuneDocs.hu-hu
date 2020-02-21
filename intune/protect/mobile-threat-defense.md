@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b67e3b14fd94376fb6dacad88fa58ddc460a6bc5
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: f056f665ebee0d1e2315129a4fe739b2c490ca98
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73057587"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514846"
 ---
 # <a name="mobile-threat-defense-integration-with-intune"></a>A Mobile Threat Defense integrációja az Intune-nal
 
@@ -50,7 +50,7 @@ Ha engedélyezve van, az Intune a személyes és a vállalati tulajdonú eszköz
 Ez a szolgáltatás nem kötelező, a leltáradatokat pedig nem osztjuk meg alapértelmezés szerint. Az Intune rendszergazdájának engedélyeznie kell az **alkalmazás-szinkronizálást iOS-eszközökön** a Mobile Threat Defense-összekötő beállításaiban, mielőtt bármely alkalmazás leltári információja meg van osztva.
 
 **Alkalmazásleltár**  
-Ha engedélyezi az iOS-eszközök alkalmazásszinkronizáicóját, az Intune mind a személyes, mind a vállalati tulajdonban lévő, iOS rendszerű eszközöktől alkalmazásleltár-adatokat küld az Ön MTD-szolgáltatójának. Az alkalmazásleltár adatai az alábbiakat tartalmazzák:
+Ha engedélyezi az alkalmazás-szinkronizálást iOS-/iPadOS-eszközökhöz, a vállalati és a személyes tulajdonú iOS-/iPadOS-eszközökből származó készletek a MTD-szolgáltatónak lesznek továbbítva. Az alkalmazásleltár adatai az alábbiakat tartalmazzák:
 
 - Alkalmazásazonosító
 - Alkalmazásverzió

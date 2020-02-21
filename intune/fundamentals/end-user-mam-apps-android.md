@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 946ce31c613ddb3c7dd2bf4dfde7561dd56e4ca0
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: a7aa439fcf60173cac71f0fc71ebac481660c785
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73414061"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514693"
 ---
 # <a name="what-to-expect-when-your-android-app-is-managed-by-app-protection-policies"></a>Milyen hatással vannak az androidos alkalmazásokra az alkalmazásvédelmi szabályzatok?
 
@@ -81,4 +81,4 @@ A rendszer a következő fájltípusokat támogatja:
 |A pfile egy általános „burkoló” formátum a védett fájlokhoz, amelyben a titkosított tartalom és az Azure Information Protection-licencek is megtalálhatók. Ez bármilyen fájltípus védelmére használható.|
 
 ## <a name="next-steps"></a>További lépések
-[Milyen hatással vannak az iOS-es alkalmazásokra az alkalmazásvédelmi szabályzatok?](end-user-mam-apps-ios.md)
+[Mi várható, ha az iOS/iPadOS alkalmazást az alkalmazás-védelmi szabályzatok kezelik](end-user-mam-apps-ios.md)

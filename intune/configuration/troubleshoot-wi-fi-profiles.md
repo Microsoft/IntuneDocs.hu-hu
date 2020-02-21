@@ -1,11 +1,11 @@
 ---
 title: A Wi-Fi-eszköz profil naplóinak hibakeresése és áttekintése a Microsoft Intune-Azure-ban | Microsoft Docs
-description: A Wi-Fi-eszközök konfigurációs profiljaival kapcsolatos problémák megismerése és hibaelhárítása az Android, iOS és Windows rendszerű eszközökön Microsoft Intuneban. Tekintse át a naplókat, és tekintse meg a gyakori problémákat és a lehetséges megoldásokat.
+description: Az Android, iOS/iPadOS és Windows rendszerű eszközökhöz készült Wi-Fi-konfigurációs profilokkal kapcsolatos problémák ismertetése és hibaelhárítása Microsoft Intune-ben. Tekintse át a naplókat, és tekintse meg a gyakori problémákat és a lehetséges megoldásokat.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 02/18/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,16 +16,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 70f471e7f4db7ddce89d8956474822375c684944
-ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
+ms.openlocfilehash: db663f96f1e4fe84c506395b98c52956069e5426
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75547980"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77512823"
 ---
 # <a name="troubleshoot-wi-fi-device-configuration-profiles-in-microsoft-intune"></a>A Wi-Fi-eszköz konfigurációs profiljainak hibáinak megoldása Microsoft Intune
 
-Az Intune-ban olyan eszköz-konfigurációs profilokat hozhat létre, amelyek tartalmazzák a WiFi-hálózathoz tartozó kapcsolatbeállításokat. Ezekkel a beállításokkal csatlakoztathatók a felhasználók Android-, iOS-és Windows-eszközei a szervezeti hálózathoz.
+Az Intune-ban olyan eszköz-konfigurációs profilokat hozhat létre, amelyek tartalmazzák a WiFi-hálózathoz tartozó kapcsolatbeállításokat. Ezekkel a beállításokkal csatlakoztathatók a felhasználók Android-, iOS-/iPadOS-és Windows-eszközei a szervezeti hálózathoz.
 
 Ez a cikk azt mutatja be, hogy a Wi-Fi profil hogyan néz ki, ha az eszközre való sikeres alkalmazásra vonatkozik. Emellett a naplózási információkat, a gyakori problémákat és egyebeket is tartalmaz. Ez a cikk segítséget nyújt a Wi-Fi profilok hibakeresésében.
 
@@ -100,25 +100,25 @@ A következő napló a keresési eredményeket jeleníti meg, és a Wi-Fi profil
 
 ```
 
-## <a name="ios"></a>iOS
+## <a name="iosipados"></a>iOS/iPadOS
 
 Miután telepítette a Wi-Fi profilt az eszközön, a **felügyeleti profilban**látható:
 
 > [!div class="mx-imgBorder"]
-> ![felügyeleti profil iOS-eszközön](./media/troubleshoot-wi-fi-profiles/ios-management-profile.png)
+> ![felügyeleti profil iOS/iPadOS-eszközön az Intune-ban](./media/troubleshoot-wi-fi-profiles/ios-management-profile.png)
 
 > [!div class="mx-imgBorder"]
-> ![Wi-Fi-kapcsolat Wi-Fi-hálózatként jelenik meg iOS-eszközön](./media/troubleshoot-wi-fi-profiles/ios-wifi-connection-in-management-profile.png)
+> ![Wi-Fi-kapcsolat Wi-Fi-hálózatként jelenik meg az Intune-ban iOS-/iPadOS-eszközön](./media/troubleshoot-wi-fi-profiles/ios-wifi-connection-in-management-profile.png)
 
-### <a name="review-the-ios-console-and-device-logs"></a>Az iOS-konzol és az eszközök naplófájljainak áttekintése
+### <a name="review-the-iosipados-console-and-device-logs"></a>Az iOS/iPadOS konzol és az eszközök naplófájljainak áttekintése
 
-IOS-eszközökön a Céges portál-alkalmazás naplója nem tartalmazza a Wi-Fi profilokkal kapcsolatos információkat. A Wi-Fi profilok telepítési adatainak megtekintéséhez használja a konzol/eszköz naplókat:
+IOS-/iPadOS-eszközökön a Céges portál-alkalmazás naplója nem tartalmazza a Wi-Fi profilokkal kapcsolatos információkat. A Wi-Fi profilok telepítési adatainak megtekintéséhez használja a konzol/eszköz naplókat:
 
-1. Az iOS-eszköz csatlakoztatása Mac-hez. Válassza az **alkalmazások** > **segédprogramok**lehetőséget, és nyissa meg a konzol alkalmazást.
+1. Az iOS/iPadOS eszköz csatlakoztatása Mac-hez. Válassza az **alkalmazások** > **segédprogramok**lehetőséget, és nyissa meg a konzol alkalmazást.
 2. A **művelet**területen jelölje be az **információs üzenetek belefoglalása** és a **hibakeresési üzenetek belefoglalása**jelölőnégyzetet:
 
     > [!div class="mx-imgBorder"]
-    > ![tartalmazza a tájékoztató üzeneteket, és hibakeresési üzeneteket is tartalmazhatnak az iOS-konzol alkalmazásban](./media/troubleshoot-wi-fi-profiles/ios-console-app-include-info-messages-debug-messages.png)
+    > ![tartalmazza az információs üzeneteket, és hibakeresési üzeneteket is tartalmazhatnak az iOS/iPadOS konzol alkalmazásban](./media/troubleshoot-wi-fi-profiles/ios-console-app-include-info-messages-debug-messages.png)
 
 3. Hozza létre újra a forgatókönyvet, és mentse a naplókat szövegfájlba:
 
@@ -194,7 +194,7 @@ WiFiConfigurationServiceProvider: Node set value, type: (0x4), Result: (The oper
   1. Lépjen a **beállítások** > **fiókok** > **hozzáférés munkahelyi vagy iskolai rendszerhez elemre**.
   2. Válassza ki a munkahelyi vagy iskolai fiókját > **adatokat**.
   3. A **Beállítások** lap alján válassza a **jelentés létrehozása**lehetőséget.
-  4. Megnyílik egy ablak, amely megjeleníti a naplófájlok elérési útját. Válassza az **Export** (Exportálás) lehetőséget.
+  4. Megnyílik egy ablak, amely megjeleníti a naplófájlok elérési útját. Válassza az **Exportálás**lehetőséget.
   5. Nyissa meg a `\Users\Public\Documents\MDMDiagnostics` elérési utat, és tekintse meg a jelentést:
 
       > [!div class="mx-imgBorder"]
@@ -263,7 +263,7 @@ Ezt a problémát általában az Intune-on kívüli személy okozta. A következ
 
 - A Microsoft Intune Wi-Fi profiljaival kapcsolatos további információkért tekintse meg a következő cikkeket:
 
-  - Wi-Fi-beállítások hozzáadása [Android](wi-fi-settings-android.md), [iOS](wi-fi-settings-ios.md)és [Windows 10 és újabb](wi-fi-settings-windows.md)rendszerű eszközökhöz.
+  - Wi-Fi-beállítások hozzáadása [Android](wi-fi-settings-android.md), [iOS/iPadOS](wi-fi-settings-ios.md)és [Windows 10 és újabb](wi-fi-settings-windows.md)rendszerű eszközökhöz.
   - [Támogatási tipp – a NDES konfigurálása a SCEP-tanúsítványok telepítéséhez az Intune-ban](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-Tip-How-to-configure-NDES-for-SCEP-certificate/ba-p/455125)
   - Az [SCEP-tanúsítvány profiljának üzembe helyezése](https://support.microsoft.com/help/4526725/troubleshooting-scep-profile-deployment-to-android-devices-in-intune) és a [NDES-konfiguráció](https://support.microsoft.com/help/4459540/troubleshoot-ndes-configuration-for-use-with-intune)hibáinak megoldása.
 

@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f9e8bc347dc6336f665fcabfb4e716fef4818515
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: 91442d262adb1d85217cb73f2f415766b89267af
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75207203"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77510520"
 ---
 # <a name="use-derived-credentials-in-microsoft-intune"></a>Származtatott hitelesítő adatok használata Microsoft Intuneban
 
@@ -37,7 +37,7 @@ A származtatott hitelesítő adatok a National Institute of Standards and Techn
 
 - Az Intune rendszergazdája a következő objektumokhoz tartozó *hitelesítési módszerként* adja meg a **származtatott hitelesítő adatokat** :
 
-  - Gyakori profilok, például Wi-Fi, VPN és e-mailek, beleértve az iOS Native mail alkalmazást
+  - Gyakori profilok, például Wi-Fi, VPN és e-mailek, beleértve az iOS/iPadOS natív levelezési alkalmazást
 
   - Alkalmazás-hitelesítés
 
@@ -76,7 +76,7 @@ A különböző kiállítók használatával kapcsolatos fontos információkér
 
 Tervezze meg a Intune Céges portál alkalmazás telepítését olyan eszközökre, amelyek egy származtatott hitelesítő adatot fognak regisztrálni. Az eszköz felhasználói a Céges portál alkalmazást használják a hitelesítő adatok regisztrálási folyamatának elindításához.
 
-IOS-eszközök esetén tekintse [meg az iOS-es áruházbeli alkalmazások hozzáadása a Microsoft Intunehoz](../apps/store-apps-ios.md)című témakört.
+IOS-/iPadOS-eszközök esetén lásd: [iOS/iPadOS áruházbeli alkalmazások hozzáadása Microsoft Intunehoz](../apps/store-apps-ios.md).
 
 ## <a name="plan-for-derived-credentials"></a>A származtatott hitelesítő adatok megtervezése
 
@@ -198,7 +198,7 @@ Az alkalmazás Intune-nal való üzembe helyezése mellett konfiguráljon egy In
 **Hajtsa végre a következő feladatokat**:
   
 1. Töltse le a [DISA fajtatiszta alkalmazást](https://cyber.mil/pki-pke/purebred/).
-2. Telepítse a DISA fajtatiszta alkalmazást az Intune-ban.  Lásd: [iOS-es üzletági alkalmazás hozzáadása Microsoft Intunehoz](../apps/lob-apps-ios.md).
+2. Telepítse a DISA fajtatiszta alkalmazást az Intune-ban.  További információ: [iOS/iPadOS üzletági alkalmazás hozzáadása a Microsoft Intunehoz](../apps/lob-apps-ios.md).
 3. [Hozzon létre egy alkalmazásbeli VPN-t](../configuration/vpn-settings-configure.md) a DISA fajtatiszta alkalmazáshoz.
 
 ## <a name="use-derived-credentials-for-authentication-and-smime-signing-and-encryption"></a>Származtatott hitelesítő adatok használata a hitelesítéshez és az S/MIME-aláíráshoz és-titkosításhoz
@@ -224,12 +224,12 @@ Származtatott hitelesítő adatok használata a tanúsítványok alapú hiteles
 2. Válassza az **eszközök** > **konfigurációs profilok** lehetőséget > a **profil létrehozása**elemet.
 3. Adja meg a következő beállításokat:
 
-    - **Név**: adjon meg egy leíró nevet a profilhoz. Nevezze el a profilokat, hogy később könnyen azonosítható legyen. Egy jó profilnév például az **iOS-eszközök profiljához tartozó hitelesítő adatok származtatása**.
+    - **Név**: adjon meg egy leíró nevet a profilhoz. Nevezze el a profilokat, hogy később könnyen azonosítható legyen. Egy jó profilnév például az **iOS/iPadOS Devices-profilhoz tartozó hitelesítő adatok származtatása**.
     - **Leírás**: Adjon meg egy olyan leírást, amely áttekintést ad a beállításról és egyéb fontos részleteket tartalmaz.
     - **Platform**: válassza az **iOS/iPadOS**lehetőséget.
     - **Profil típusa**: válassza ki a **származtatott hitelesítő adatokat**.
 
-4. A módosítások mentéséhez válassza az **OK** gombot.
+4. A módosítások mentéséhez kattintson az **OK** gombra.
 5. Ha elkészült, válassza az **OK** > **Létrehozás** lehetőséget az Intune-profil létrehozásához. Ha elkészült, a profil megjelenik az **eszközök – konfigurációs profilok** listában.
 6. Válassza ki az új profilt >- **hozzárendeléseket**. Válassza ki azokat a csoportokat, amelyeknek meg kell kapniuk a szabályzatot.
  

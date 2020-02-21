@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b3affffdf69445ced667d718587303a5409423bf
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 0d9e61cbe4f6d6e07c61fe182e639e715996f9ee
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72502394"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514438"
 ---
 # <a name="prevent-data-leaks-on-non-managed-devices-using-microsoft-intune"></a>Adatszivárgás megakadályozása nem felügyelt eszközökön a Microsoft Intune-nal
 
@@ -47,7 +47,7 @@ A lentebb ismertetett cselekvési terv az alábbi feltételek teljesülése eset
 
 ## <a name="action-plan"></a>Műveletterv
 
-iOS és Android rendszerű eszközök esetén:
+IOS/iPadOS és Android rendszerű eszközök esetén:
 
 1. Ismerje meg az [alkalmazásvédelmi szabályzatok](../apps/app-protection-policy.md) működését.
 2. Ismerje meg az [alkalmazásvédelmi szabályzatok létrehozását és telepítését](../apps/app-protection-policies.md) Office-mobilalkalmazások esetén.
@@ -63,7 +63,7 @@ Windows 10-es eszközök esetén:
 
 További tájékoztatás érdekében ossza meg az alábbi hivatkozások közül a helyzetnek megfelelőt:
 
-* [Milyen hatással vannak az iOS-es alkalmazásokra az alkalmazásvédelmi szabályzatok?](../fundamentals/end-user-mam-apps-ios.md)
+* [Mi várható, ha az iOS/iPadOS alkalmazást az alkalmazás-védelmi szabályzatok kezelik](../fundamentals/end-user-mam-apps-ios.md)
 * [Milyen hatással vannak az androidos alkalmazásokra az alkalmazásvédelmi szabályzatok?](../fundamentals/end-user-mam-apps-android.md)
 
 ## <a name="next-steps"></a>További lépések

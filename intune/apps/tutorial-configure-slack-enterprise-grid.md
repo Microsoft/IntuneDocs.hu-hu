@@ -18,12 +18,12 @@ ms.reviewer: ''
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cd0a4b0c5e0b4cbaa7ef43ec40cddb3ab30d3070
-ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.openlocfilehash: f5045e78eaca19e5a78468c7c4b6698e4e1a5019
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77415483"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77511548"
 ---
 # <a name="tutorial-configure-slack-to-use-intune-for-emm-and-app-configuration"></a>Oktatóanyag: a Slack konfigurálása az Intune és az alkalmazások konfigurációjának használatára
 
@@ -32,8 +32,8 @@ A Slack egy csoportmunka-alkalmazás, amelyet Microsoft Intune használhat.
 Az oktatóanyag során az alábbi lépéseket fogja végrehajtani:
 > [!div class="checklist"]
 > - Állítsa be az Intune-t nagyvállalati mobilitási felügyeleti (ã) szolgáltatóként a Slack Enterprise Griden. A Grid terv munkaterületeinek hozzáférését korlátozhatja az Intune által felügyelt eszközökre.
-> - Alkalmazás-konfigurációs szabályzatok létrehozásával kezelheti az iOS-es és az androidos munkahelyi profilú eszközökhöz készült Slack-alkalmazáshoz készült Slack alkalmazást.
-> - Hozzon létre Intune-os megfelelőségi szabályzatokat az Android és iOS rendszerű eszközök feltételeinek megadásához.
+> - Alkalmazás-konfigurációs szabályzatok létrehozásával kezelheti az iOS/iPadOS és a Slack alkalmazás androidos munkahelyi profilú eszközökhöz készült Slack-alkalmazásait.
+> - Hozzon létre Intune-megfelelőségi szabályzatokat az Android és az iOS/iPadOS eszközök feltételeinek megadásához.
 
 Ha nem rendelkezik Intune-előfizetéssel, [regisztráljon ingyenes próbafiókot](../fundamentals/free-trial-sign-up.md).
 
@@ -51,10 +51,10 @@ A Slack [Azure Active Directory](https://docs.microsoft.com/azure/active-directo
 Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központba](https://go.microsoft.com/fwlink/?linkid=2109431) globális rendszergazdaként vagy Intune szolgáltatás-rendszergazdaként. Ha létrehozott egy Intune próba-előfizetést, az a fiók lesz a globális rendszergazda, amelyikkel létrehozta azt.
 
 ## <a name="set-up-slack-for-emm-on-ios-devices"></a>A Slack beállítása az iOS-eszközökön
-Adja hozzá az iOS-alapú alkalmazáshoz készült Slack for az Intune-bérlőt, és hozzon létre egy alkalmazás-konfigurációs szabályzatot, amely lehetővé teszi, hogy a szervezet iOS-felhasználói hozzáférhessenek az Intune-hoz az Intune-nal
+Adja hozzá az iOS/iPadOS alkalmazáshoz tartozó Slack for az az az Intune-bérlőt, és hozzon létre egy alkalmazás-konfigurációs szabályzatot, amely lehetővé teszi, hogy a szervezetek iOS-/iPadOS-felhasználói hozzáférhessenek az Intune-nal az Intune-
 
 ### <a name="add-slack-for-emm-to-intune"></a>Tartalékidő hozzáadása az Intune-hoz
-Adja hozzá a Slack for az az az az az a-hez, amely felügyelt iOS-alkalmazás az Intune-ban, és rendeljen Az alkalmazások platform-specifikusak, ezért hozzá kell adnia egy külön Intune-alkalmazást a Slack-felhasználók számára az Android-eszközökön.
+Adja hozzá a Slack for az az az az iPadOS-hez felügyelt iOS-/-alkalmazásként az Intune-ban, és rendeljen hozzá Az alkalmazások platform-specifikusak, ezért hozzá kell adnia egy külön Intune-alkalmazást a Slack-felhasználók számára az Android-eszközökön.
 1. A felügyeleti központban válassza az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**elemet.
 2. Az **alkalmazás típusa**területen válassza ki az **iOS** áruházbeli alkalmazást.
 3. Válassza a **Keresés az App Store-ban** lehetőséget. Adja meg a "Slack for ír" keresési kifejezést, és válassza ki az alkalmazást. A **Keresés az App Store** -ban panelen kattintson a **kiválasztás** elemre.
@@ -84,7 +84,7 @@ Adja hozzá az alkalmazás konfigurációs szabályzatát a Slack iOS-hez/iPadOS
 12. Kattintson a **Mentés**gombra.
 
 ### <a name="optional-create-an-ios-device-compliance-policy"></a>Választható IOS-eszköz megfelelőségi szabályzatának létrehozása
-Hozzon létre egy Intune eszközmegfelelőségi szabályzatot, ahol megadja, hogy milyen feltételeknek kell teljesülnie ahhoz, hogy az eszköz megfelelő legyen. Ebben az oktatóanyagban iOS-eszközökhöz hozunk létre eszközmegfelelőségi szabályzatot. A megfelelőségi szabályzatok platform-specifikusak, ezért létre kell hoznia egy külön szabályzatot a Slack-felhasználók számára az Android-eszközökön.
+Hozzon létre egy Intune eszközmegfelelőségi szabályzatot, ahol megadja, hogy milyen feltételeknek kell teljesülnie ahhoz, hogy az eszköz megfelelő legyen. Ebben az oktatóanyagban létrehozunk egy eszköz-megfelelőségi szabályzatot iOS/iPadOS-eszközökhöz. A megfelelőségi szabályzatok platform-specifikusak, ezért létre kell hoznia egy külön szabályzatot a Slack-felhasználók számára az Android-eszközökön.
 1. A felügyeleti központban válassza az **eszközök megfelelősége** > **házirendek** > **házirend létrehozása**lehetőséget.
 2. A név mezőbe írja be az "iOS-megfelelőségi szabályzat tesztelése" kifejezést.
 3. A Leírás mezőbe írja be az "iOS-megfelelőségi szabályzat tesztelése" kifejezést.
@@ -105,7 +105,7 @@ Hozzon létre egy Intune eszközmegfelelőségi szabályzatot, ahol megadja, hog
 Adja hozzá a Slack felügyelt Google Play alkalmazást az Intune-bérlőhöz, és hozzon létre egy alkalmazás-konfigurációs szabályzatot, amely lehetővé teszi, hogy a szervezetek Android-felhasználói hozzáférhessenek a Slackhez az Intune-nal.
 
 ### <a name="add-slack-to-intune"></a>Tartalékidő hozzáadása az Intune-hoz
-A Slack hozzáadása felügyelt Google Play-alkalmazásként az Intune-ban, és a Slack-felhasználók kiosztása. Az alkalmazások platform-specifikusak, ezért hozzá kell adnia egy külön Intune-alkalmazást a Slack-felhasználók számára iOS-eszközökön.
+A Slack hozzáadása felügyelt Google Play-alkalmazásként az Intune-ban, és a Slack-felhasználók kiosztása. Az alkalmazások platform-specifikusak, ezért hozzá kell adnia egy külön Intune-alkalmazást a Slack-felhasználók számára iOS/iPadOS-eszközökön.
 1. Az Intune-ban válassza az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**lehetőséget.
 2. Az alkalmazás típusa területen válassza az **áruházbeli alkalmazás – felügyelt Google Play**lehetőséget.
 3. Válassza a **felügyelt Google Play-jóváhagyás**lehetőséget. Adja meg a "Slack for ír" keresési kifejezést, és válassza ki az alkalmazást.
@@ -120,7 +120,7 @@ A Slack hozzáadása felügyelt Google Play-alkalmazásként az Intune-ban, és 
 10. Kattintson a **Mentés**gombra.
 
 ### <a name="add-an-app-configuration-policy-for-slack"></a>Alkalmazás-konfigurációs szabályzat hozzáadása a Slackhez
-Alkalmazás-konfigurációs szabályzat hozzáadása a Slackhez. A felügyelt eszközökre vonatkozó alkalmazás-konfigurációs házirendek platform-specifikusak, ezért külön szabályzatot kell hozzáadnia a Slack-felhasználók számára iOS-eszközökön.
+Alkalmazás-konfigurációs szabályzat hozzáadása a Slackhez. A felügyelt eszközökre vonatkozó alkalmazás-konfigurációs házirendek platform-specifikusak, ezért külön szabályzatot kell hozzáadnia a Slack-felhasználók számára iOS/iPadOS-eszközökön.
 1. Az Intune-ban válassza az **alkalmazások** > **alkalmazás-konfigurációs házirendek** > **Hozzáadás**elemet.
 2. A név mezőben adja meg a Slack-alkalmazás konfigurációs szabályzatának tesztjét.
 3. Az eszközök regisztrálása területen válassza a **felügyelt eszközök**elemet.
@@ -136,7 +136,7 @@ Alkalmazás-konfigurációs szabályzat hozzáadása a Slackhez. A felügyelt es
 12. Kattintson a **Mentés**gombra.
 
 ### <a name="optional-create-an-android-device-compliance-policy"></a>Választható Android-eszköz megfelelőségi szabályzatának létrehozása
-Hozzon létre egy Intune eszközmegfelelőségi szabályzatot, ahol megadja, hogy milyen feltételeknek kell teljesülnie ahhoz, hogy az eszköz megfelelő legyen. Ebben az oktatóanyagban egy eszköz-megfelelőségi szabályzatot hozunk létre Android-eszközökhöz. A megfelelőségi szabályzatok platform-specifikusak, ezért külön szabályzatot kell létrehoznia a Slack-felhasználók számára iOS-eszközökön.
+Hozzon létre egy Intune eszközmegfelelőségi szabályzatot, ahol megadja, hogy milyen feltételeknek kell teljesülnie ahhoz, hogy az eszköz megfelelő legyen. Ebben az oktatóanyagban egy eszköz-megfelelőségi szabályzatot hozunk létre Android-eszközökhöz. A megfelelőségi szabályzatok platform-specifikusak, ezért létre kell hoznia egy külön szabályzatot a Slack-felhasználók számára iOS/iPadOS-eszközökön.
 1. Az Intune-ban válassza az **Eszközmegfelelőség** > **Szabályzatok** > **Szabályzat létrehozása** lehetőséget.
 2. A név mezőben adja meg az "Android-megfelelőségi szabályzat tesztelése" kifejezést.
 3. A Leírás mezőbe írja be az "Android-megfelelőségi szabályzat tesztelése" kifejezést.
@@ -155,13 +155,13 @@ Hozzon létre egy Intune eszközmegfelelőségi szabályzatot, ahol megadja, hog
 
 ## <a name="launch-slack"></a>Tartalékidő elindítása
 
-Az imént létrehozott szabályzatokkal minden olyan iOS-vagy Android-alapú munkahelyi profil-eszközre, amely megpróbál bejelentkezni az egyik munkaterületre, az Intune-ban regisztrálni kell. Ennek a forgatókönyvnek a teszteléséhez próbálja meg a Slack for az az, hogy egy Intune-ban regisztrált iOS-eszközön, vagy egy Intune-ban regisztrált Android munkahelyi profil eszközön indítsa el a slacket. 
+Az imént létrehozott szabályzatokkal minden olyan iOS/iPadOS vagy Android rendszerű munkahelyi profilt futtató eszköznek, amely megpróbál bejelentkezni az egyik munkaterületre, az Intune-ban regisztrálnia kell. Ennek a forgatókönyvnek a teszteléséhez próbálja meg a Slack for az az, hogy az Intune-ban regisztrált iOS-vagy iPadOS-eszközön, vagy egy Intune-ban regisztrált Android munkahelyi profil-eszközön. 
 
 ## <a name="next-steps"></a>További lépések
 
 Ebben az oktatóanyagban:
 - Az Intune-t nagyvállalati mobilitási szolgáltatásként (am) kell beállítania a Slack Enterprise Gridben. 
-- Alkalmazás-konfigurációs szabályzatokat hozott létre az iOS-es és az androidos munkahelyi profilú eszközökhöz készült Slack alkalmazás kezeléséhez.
-- Az Android és az iOS rendszerű eszközök megfelelőségi feltételeinek megadásához az Intune-eszközök megfelelőségi szabályzatait kell létrehoznia.
+- Létrehozta az alkalmazás-konfigurációs szabályzatokat, hogy az iOS/iPadOS és az androidos munkahelyi profilú eszközök Slack alkalmazásával kezelje a Slack for az a-t.
+- Az Android és az iOS/iPadOS eszközök feltételeinek megadásához meg kell felelnie az Intune-eszközök megfelelőségi házirendjeinek.
 
 Az alkalmazás-konfigurációs házirendekkel kapcsolatos további információkért lásd: [alkalmazás-konfigurációs házirendek a Microsoft Intunehoz](app-configuration-policies-overview.md). Az eszközök megfelelőségi házirendjeivel kapcsolatos további tudnivalókért lásd: [szabályok beállítása eszközökön a szervezet erőforrásaihoz való hozzáférés engedélyezéséhez az Intune használatával](../protect/device-compliance-get-started.md).

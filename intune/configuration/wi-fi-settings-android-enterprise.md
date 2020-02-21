@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 10/08/2019
+ms.date: 02/18/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 04d35f49f9e07cb72a1fea92210b05e0a95ec256
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: aef1747fdbb3118db82f6e99c2838632c8a9d369
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74390810"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77512449"
 ---
 # <a name="add-wi-fi-settings-for-android-enterprise-dedicated-and-fully-managed-devices-in-microsoft-intune"></a>Wi-Fi-beállítások hozzáadása az Android Enterprise dedikált és teljes mértékben felügyelt eszközökhöz Microsoft Intune
 
@@ -49,7 +49,7 @@ Akkor válassza ezt a lehetőséget, ha androidos vállalati dedikált vagy telj
   - **WEP előmegosztott kulcs**: Írja be a jelszót az **Előmegosztott kulcs** mezőbe. A cég hálózatának beállítása vagy konfigurálása során a rendszer egy jelszót vagy egy hálózati kulcsot is konfigurál. Adja meg ezt a jelszót vagy hálózati kulcsot a PSK értékeként.
   - **WPA előre megosztott kulcs**: Írja be a jelszót az **Előmegosztott kulcs** mezőbe. A cég hálózatának beállítása vagy konfigurálása során a rendszer egy jelszót vagy egy hálózati kulcsot is konfigurál. Adja meg ezt a jelszót vagy hálózati kulcsot a PSK értékeként.
 
-### <a name="enterprise"></a>Enterprise
+### <a name="enterprise"></a>Vállalati
 
 - **Wi-Fi típusa**: Válassza a **Vállalati** elemet.
 - **SSID**: adja meg a szolgáltatáskészlet **azonosítóját**, amely annak a vezeték nélküli hálózatnak a valódi neve, amelyhez az eszközök csatlakoznak. A felhasználók azonban csak a konfigurált **hálózatnevet** látják, amikor kiválasztják a kapcsolatot.
@@ -90,7 +90,7 @@ Akkor válassza ezt a lehetőséget, ha androidos vállalati dedikált vagy telj
       - **Felhasználónév és jelszó**: Felhasználónév és jelszó kérése a felhasználótól a kapcsolat hitelesítéséhez. Ezt is adja meg:
         - **Nem EAP hitelesítési módszer (belső identitás)** : Válassza ki a kapcsolat hitelesítési módját. Mindenképpen ugyanazt a protokollt válassza, amely a Wi-Fi-hálózathoz van konfigurálva. A választható lehetőségek:
 
-          - **Nincsenek**
+          - **Egyik sem**
           - **Microsoft CHAP 2-es verzió (MS-CHAP v2)**
 
       - **Tanúsítványok**: válassza ki azt az SCEP-profilt, amely az eszközre is telepítve van. Az eszköz ezt a tanúsítványt adja meg identitásként a kiszolgálónak a kapcsolat hitelesítéséhez.
@@ -105,7 +105,7 @@ Akkor válassza ezt a lehetőséget, ha androidos vállalati dedikált vagy telj
 - **SSID**: adja meg a szolgáltatáskészlet **azonosítóját**, amely annak a vezeték nélküli hálózatnak a valódi neve, amelyhez az eszközök csatlakoznak. A felhasználók azonban csak a konfigurált **hálózatnevet** látják, amikor kiválasztják a kapcsolatot.
 - **Rejtett hálózat**: Válassza az **Engedélyezés** lehetőséget, hogy a hálózat ne jelenjen meg az eszközön elérhető hálózatok listájában. A rendszer ilyenkor nem továbbítja az SSID-t. Válassza a **Letiltás** lehetőséget, ha meg szeretné jeleníteni a hálózatot az eszközön elérhető hálózatok listájában.
 
-### <a name="enterprise"></a>Enterprise
+### <a name="enterprise"></a>Vállalati
 
 - **Wi-Fi típusa**: Válassza a **Vállalati** elemet.
 - **SSID**: adja meg a szolgáltatáskészlet **azonosítóját**, amely annak a vezeték nélküli hálózatnak a valódi neve, amelyhez az eszközök csatlakoznak. A felhasználók azonban csak a konfigurált **hálózatnevet** látják, amikor kiválasztják a kapcsolatot.
@@ -146,7 +146,7 @@ Akkor válassza ezt a lehetőséget, ha androidos vállalati dedikált vagy telj
       - **Felhasználónév és jelszó**: Felhasználónév és jelszó kérése a felhasználótól a kapcsolat hitelesítéséhez. Ezt is adja meg:
         - **Nem EAP hitelesítési módszer (belső identitás)** : Válassza ki a kapcsolat hitelesítési módját. Mindenképpen ugyanazt a protokollt válassza, amely a Wi-Fi-hálózathoz van konfigurálva. A választható lehetőségek:
 
-          - **Nincsenek**
+          - **Egyik sem**
           - **Microsoft CHAP 2-es verzió (MS-CHAP v2)**
 
       - **Tanúsítványok**: Válassza ki azt az SCEP vagy PKCS ügyféltanúsítvány-profilt, amely szintén üzembe lesz helyezve az eszközön. Az eszköz ezt a tanúsítványt adja meg identitásként a kiszolgálónak a kapcsolat hitelesítéséhez.
@@ -157,4 +157,4 @@ Akkor válassza ezt a lehetőséget, ha androidos vállalati dedikált vagy telj
 
 A profil létrejön, de egyelőre nem csinál semmit. Ezután [rendelje hozzá ezt a profilt](device-profile-assign.md) , és [Figyelje annak állapotát.](device-profile-monitor.md)
 
-Az [Android](wi-fi-settings-android.md), [iOS](wi-fi-settings-ios.md), [MacOS](wi-fi-settings-macos.md), [Windows 10](wi-fi-settings-windows.md)és [Windows 8,1 rendszerű](wi-fi-settings-import-windows-8-1.md) eszközökhöz Wi-Fi profilokat is létrehozhat.
+Az [Android](wi-fi-settings-android.md), [iOS/iPadOS](wi-fi-settings-ios.md), [MacOS](wi-fi-settings-macos.md), [Windows 10](wi-fi-settings-windows.md)és [Windows 8,1 rendszerű](wi-fi-settings-import-windows-8-1.md) eszközökhöz Wi-Fi profilokat is létrehozhat.

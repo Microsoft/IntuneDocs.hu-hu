@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3dae74321b6825a1b94551addfd7621450fd8ae4
-ms.sourcegitcommit: c46b0c2d4507be6a2786a4ea06009b2d5aafef85
+ms.openlocfilehash: 26eb6a5cb8e7aba01ce32ab8bec8ad917604a55c
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76913248"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514778"
 ---
 # <a name="troubleshoot-deployment-of-a-scep-certificate-profile-to-devices-in-microsoft-intune"></a>SCEP-tanúsítvány profiljának a Microsoft Intune eszközre történő központi telepítésével kapcsolatos hibák megoldása
 
@@ -59,9 +59,9 @@ Példák a legfontosabb bejegyzésekre:
 - `ModelName=AC_51bad41f-3854-4eb5-a2f2-0f7a94034ee8%2FLogicalName_39907e78_e61b_4730_b9fa_d44a53e4111c%3BHash=-1518303401`
 - `NDESUrls&amp;gt;&amp;lt;NDESUrl&amp;gt;https://<server>-contoso.msappproxy.net/certsrv/mscep/mscep.dll&amp;lt;/NDESUrl&amp;gt;&amp;lt;/NDESUrls`
 
-## <a name="ios-and-ipados"></a>iOS-és iPadOS
+## <a name="iosipados"></a>iOS/iPadOS
 
-### <a name="validate-that-the-ios-or-ipados-device-was-sent-the-policy"></a>Annak ellenőrzése, hogy az iOS-vagy iPadOS-eszköz el lett-e küldve a szabályzatnak
+### <a name="validate-that-the-iosipados-device-was-sent-the-policy"></a>Annak ellenőrzése, hogy az iOS/iPadOS-eszköz el lett-e küldve a szabályzatnak
 
 Ha ellenőrizni szeretné, hogy a rendszer elküldte-e a profilt a várt eszközre, a [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431) lépjen a **hibaelhárítás + támogatás** > **Hibaelhárítás**elemre.  A *hibaelhárítási* ablakban állítsa be a **hozzárendeléseket** a **konfigurációs profilokra** , majd ellenőrizze a következő konfigurációkat:
 

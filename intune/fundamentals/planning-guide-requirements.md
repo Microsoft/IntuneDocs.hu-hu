@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7c72cf963822284702f6b924ca506f8ec1157e91
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: a03a92f715496b3c647a12bb99457d151ead54a3
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72505136"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514931"
 ---
 # <a name="determine-use-case-scenario-requirements"></a>Használatieset-forgatókönyvek követelményeinek meghatározása
 
@@ -35,13 +35,13 @@ Az is elképzelhető, hogy a céges használatieset-forgatókönyvekhez olyan mu
 
 Itt található néhány példa a munkahelyi használatieset-forgatókönyvek követelményeire, amelyekben az egyes használatieset- és alhasználatieset-forgatókönyvekre, munkahelyi csoportra és mobileszköz-platformra különböző követelmények vonatkoznak. A következő táblázatot is felhasználhatja munkahelye használatieset-követelményeinek megadásához:
 
-| **Használati esetek** | **Használati alesetek** | **CSOPORTOK** | **Eszközplatformok** | **Requirements** |
+| **Használati esetek** | **Használati alesetek** | **Csoportok** | **Eszközplatformok** | **Requirements** |
 |:---:|:---:|:---:|:---:|:---:|
-| Vállalati | Infomunkás | HR, pénzügy | iOS | Biztonságos e-mail, eszközbeállítások, profilok, alkalmazások |                                                          
-| Vállalati | Vezetők | HR, pénzügy | iOS | Biztonságos e-mail, eszközbeállítások, profilok, alkalmazások |                                                         
+| Vállalati | Infomunkás | HR, Pénzügy | iOS/iPadOS | Biztonságos e-mail, eszközbeállítások, profilok, alkalmazások |                                                          
+| Vállalati | Vezetők | HR, Pénzügy | iOS/iPadOS | Biztonságos e-mail, eszközbeállítások, profilok, alkalmazások |                                                         
 | Vállalati | Kioszkmód | Kereskedelem | Android: | Eszközbeállítások, profilok, alkalmazások |
-| BYOD | Infomunkás | Marketing, értékesítés | iOS | Biztonságos e-mail, eszközbeállítások, profilok, alkalmazások |                                                         
-| BYOD | Vezetők | Marketing, értékesítés | iOS | Biztonságos e-mail, eszközbeállítások, profilok, alkalmazások |
+| BYOD | Infomunkás | Marketing, értékesítés | iOS/iPadOS | Biztonságos e-mail, eszközbeállítások, profilok, alkalmazások |                                                         
+| BYOD | Vezetők | Marketing, értékesítés | iOS/iPadOS | Biztonságos e-mail, eszközbeállítások, profilok, alkalmazások |
 
 [Letöltheti a fenti táblázat sablonját](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0), hogy beírja a cég használatieset- és alhasználatieset-követelményeit.
 

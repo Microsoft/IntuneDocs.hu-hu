@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d04897d38c1b46f27fe86e72ecfa6856aa9eece2
-ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
+ms.openlocfilehash: acc8241bf5b9ea05fcb23772586d459ca9e5e143
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76755657"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515101"
 ---
 # <a name="create-a-conditional-access-policy-for-exchange-on-premises-and-legacy-exchange-online-dedicated"></a>Feltételes hozzáférési szabályzat létrehozása a helyszíni Exchange-hez és az örökölt dedikált Exchange Online-hoz
 
@@ -40,7 +40,7 @@ A feltételes hozzáférés konfigurálása előtt ellenőrizze, hogy a követke
 - Telepítette és használja az [Exchange ActiveSync helyszíni Exchange Connectort](exchange-connector-install.md), amely az Intune-t a helyszíni Exchange-hez köti.
 
     >[!IMPORTANT]  
-    >Az Intune egy előfizetésben több helyszíni Exchange-összekötőt is támogat.  A helyszíni Exchange Connector azonban egyetlen Intune-bérlőre vonatkozik, és más Bérlővel nem használható.  Ha a cége egynél több helyszíni Exchange-összekötővel rendelkezik, minden Exchange-szervezet részére külön összekötőt építhet ki.
+    >Az Intune egy előfizetésben több helyszíni Exchange-összekötőt is támogat.  A helyszíni Exchange Connector azonban egyetlen Intune-bérlőre vonatkozik, és más Bérlővel nem használható.  Ha a cég egynél több helyszíni Exchange-összekötővel rendelkezik, minden Exchange-szervezet részére külön összekötőt építhet ki.
 
 - A helyszíni Exchange-szervezet összekötője bármely gépen telepíthető, feltéve, hogy a gép kommunikálni tud az Exchange-kiszolgálóval.
 
@@ -68,7 +68,7 @@ A feltételes hozzáférés konfigurálása előtt ellenőrizze, hogy a követke
 - EAS levelezési ügyfélprogramok **Androidos munkahelyi profilos eszközökön:** A **munkahelyi profilban** csak a **Gmail** és **Nine Work for Android Enterprise** alkalmazások támogatottak az androidos munkahelyi profilos eszközökön. Az androidos munkahelyi profilokkal végzett feltételes hozzáféréshez telepítenie kell egy e-mail-profilt a Gmail vagy a Nine work for Android Enterprise alkalmazáshoz, és ezeket az alkalmazásokat kötelező telepítésként is telepítenie kell.
 
 > [!NOTE]
-> Az Android és az iOS rendszerhez készült Microsoft Outlook nem támogatott a helyszíni Exchange-összekötőn keresztül. Ha szeretné kihasználni Azure Active Directory feltételes hozzáférési szabályzatokat, és Intune App Protection szabályzatokat az iOS-hez és az Androidhoz készült Outlook használatával a helyszíni postaládákhoz, tekintse meg a [hibrid modern hitelesítés használata az Outlookban iOS és Android](https://docs.microsoft.com/Exchange/clients/outlook-for-ios-and-android/use-hybrid-modern-auth)rendszerhez című témakört.
+> A Microsoft Outlook for Android és az iOS/iPadOS nem támogatott a helyszíni Exchange-összekötőn keresztül. Ha szeretné kihasználni Azure Active Directory feltételes hozzáférési szabályzatokat, és Intune App Protection szabályzatokat az iOS/iPadOS és az Android rendszerhez a helyszíni postaládákhoz, tekintse meg a [hibrid modern hitelesítés használata az Outlookban iOS/iPadOS és Android](https://docs.microsoft.com/Exchange/clients/outlook-for-ios-and-android/use-hybrid-modern-auth)rendszerhez című témakört.
 
 ### <a name="support-for-pcs"></a>Számítógépek támogatása
 

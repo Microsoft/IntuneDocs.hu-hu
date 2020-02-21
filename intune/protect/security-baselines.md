@@ -16,12 +16,12 @@ ms.reviewer: shpate
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 04436c38fc6c4100a8232ea1ad23585f350d6aae
-ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
+ms.openlocfilehash: f468518130b1a3a98fd31fb235679ece574c3029
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75548149"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514285"
 ---
 # <a name="use-security-baselines-to-configure-windows-10-devices-in-intune"></a>Biztonsági alapkonfigurációk használata a Windows 10-es eszközök Intune-ban való konfigurálásához
 
@@ -38,7 +38,7 @@ A különálló alaptípusok tartalmazhatják ugyanazokat a beállításokat, de
 > [!NOTE]
 > A Microsoft nem javasolja, hogy éles környezetben a biztonsági alapkonfigurációk előzetes verzióit használják. Az előzetes verziójú alapkonfiguráció beállításai az előzetes verzió során változhatnak.
 
-A biztonsági alapkonfigurációk segítségével teljes körű biztonságos munkafolyamattal rendelkezhet Microsoft 365 használatakor. Többek között a következő előnyöket kínálják:
+A biztonsági alapkonfigurációk segítségével teljes körű biztonságos munkafolyamattal rendelkezhet Microsoft 365 használatakor. Az előnyök többek között a következők:
 
 - A biztonsági alapkonfiguráció a biztonságot befolyásoló beállításokkal kapcsolatos ajánlott eljárásokat és javaslatokat tartalmazza. Az Intune-partnerek ugyanazzal a Windows biztonsági csoporttal rendelkeznek, amely csoportházirend biztonsági alapterveket hoz létre. Ezek az ajánlások az útmutató és a széleskörű tapasztalatok alapján érhetők el.
 - Ha még nem ismeri az Intune-t, és nem tudja, hol kezdjen hozzá, akkor a biztonsági alaptervek előnyt biztosítanak. Gyorsan létrehozhat és üzembe helyezhet egy biztonságos profilt, tudván, hogy segít megvédeni a szervezet erőforrásait és adatait.
@@ -182,7 +182,7 @@ A mentés után a rendszer azonnal újratelepíti az alaptervet a hozzárendelt 
    - **Alapkonfiguráció-módosítások elfogadása, de a meglévő beállítások megtartása** – ez a beállítás megőrzi a testreszabásokat az alapprofilban, és alkalmazza azokat a használni kívánt új verzióra.
    - **Alapkonfiguráció-módosítások elfogadása és a meglévő beállítások elvetése** – ez a lehetőség teljesen felülírja az eredeti profilt. A frissített profil az alapértelmezett értékeket fogja használni az összes beállításhoz.
 
-7. Válassza a **Küldés** lehetőséget. A profil frissítése a kiválasztott alapkonfigurációhoz, és az átalakítás befejezése után az alapkonfiguráció azonnal újratelepül a hozzárendelt csoportokba.
+7. Válassza a **Küldés**lehetőséget. A profil frissítése a kiválasztott alapkonfigurációhoz, és az átalakítás befejezése után az alapkonfiguráció azonnal újratelepül a hozzárendelt csoportokba.
 
 ### <a name="remove-a-security-baseline-assignment"></a>Biztonsági alapterv-hozzárendelés eltávolítása
 
@@ -214,7 +214,7 @@ Szigorúan szólva, nem. A Microsoft biztonsági csapata a vállalatokat, péld�
 
 - A Microsoft továbbra is közzéteszi a csoportházirend-objektumok (GPO-k) és a [biztonsági megfelelőségi eszközkészlet](https://docs.microsoft.com/windows/security/threat-protection/security-compliance-toolkit-10)biztonsági alapkonfigurációit, mivel azok sok évig tartanak. Ezeket az alapterveket számos szervezet használja. Az alapkonfigurációk javaslatai a Microsoft Security csapatának a nagyvállalati ügyfelekkel és külső ügynökségekkel való összevonása, beleértve a védelmi minisztériumot (DoD), a National Institute of Standards and Technology (NIST) és egyebeket. Ezekkel a szervezetekkel megoszthatjuk javaslatait és alapterveit. Ezeknek a szervezeteknek saját javaslatai is vannak, amelyek szorosan tükrözik a Microsoft javaslatait. Ahogy a mobileszköz-felügyelet (MDM) továbbra is a felhőbe növekszik, a Microsoft ezzel egyenértékű MDM-ajánlásokat hozott létre ezekről a csoportházirend-alaptervekről. Ezek a további alapkonfigurációk a Microsoft Intunera épülnek, és megfelelőségi jelentéseket tartalmaznak a felhasználók, csoportok és eszközök számára, amelyek követik az alaptervet (vagy nem követik).
 
-- Számos ügyfél kiindulási pontként használja az Intune alapkonfigurációjának javaslatait, majd testreszabja azt az informatikai és biztonsági igények kielégítése érdekében. A Microsoft Windows 10-es RS5 **Mdm biztonsági** alapkonfigurációja a kiadás első alapterve. Ez az alapkonfiguráció általános infrastruktúraként készült, amely lehetővé teszi, hogy az ügyfelek később más biztonsági alapterveket is importálnak a CIS, a NIST és más szabványok alapján. Jelenleg a Windowshoz érhető el, és végül az iOS és az Android rendszerre is kiterjed.
+- Számos ügyfél kiindulási pontként használja az Intune alapkonfigurációjának javaslatait, majd testreszabja azt az informatikai és biztonsági igények kielégítése érdekében. A Microsoft Windows 10-es RS5 **Mdm biztonsági** alapkonfigurációja a kiadás első alapterve. Ez az alapkonfiguráció általános infrastruktúraként készült, amely lehetővé teszi, hogy az ügyfelek később más biztonsági alapterveket is importálnak a CIS, a NIST és más szabványok alapján. Jelenleg a Windowshoz érhető el, és végül iOS/iPadOS és Android rendszerre is kiterjed.
 
 - Áttelepítés a helyszíni Active Directory csoportházirendből egy tiszta felhőalapú megoldásba Azure Active Directory (AD) használatával, Microsoft Intune egy utazás. A [biztonsági megfelelőségi eszközkészlet](https://docs.microsoft.com/windows/security/threat-protection/security-compliance-toolkit-10) olyan csoportházirend-sablonokat is tartalmaz, amelyek segíthetnek a hibrid ad és az Azure ad-hez csatlakoztatott eszközök kezelésében. Ezek az eszközök igény szerint lekérhetik a felhő (Intune) és a csoportházirend-beállítások MDM beállításait a helyszíni tartományvezérlőkön.
 

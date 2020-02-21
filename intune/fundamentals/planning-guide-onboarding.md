@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fdc704d1971dfcc46ee2c3f5550e201d7a8e89fb
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 1cdfc7d42d3bffe1abe21deddfe146af953b150a
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72505180"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514948"
 ---
 # <a name="implement-your-microsoft-intune-plan"></a>A Microsoft Intune-terv megvalósítása
 
@@ -39,7 +39,7 @@ Az önálló Intune-ra vonatkozó követelmények az alábbiak:
 
 - Office 365-előfizetés (Office-alkalmazásokhoz és alkalmazásvédelmi szabályzat által kezelt alkalmazásokhoz)
 
-- Apple APNs-tanúsítvány (iOS eszközplatform kezeléséhez)
+- Apple APNs-tanúsítvány (az iOS/iPadOS-eszközök kezelésének engedélyezéséhez)
 
 - Azure AD Connect (címtár-szinkronizáláshoz)
 
@@ -88,7 +88,7 @@ Mielőtt elkezdené az eszközök beállítását, konfigurálását, felügyele
 
 ### <a name="task-6-enable-device-platforms"></a>6\. feladat: eszközplatformok engedélyezése
 
-Alapértelmezés szerint a legtöbb eszközplatform engedélyezve van, kivéve az Apple-eszközöket (iOS és Mac). Az iOS-eszközök Intune-beli regisztrálása és felügyelete előtt az eszközplatformot engedélyezni kell. Ehhez létre kell hoznia egy MDM leküldéses tanúsítványt, amelyet az Intune-hoz kell adnia.
+Alapértelmezés szerint a legtöbb eszköz-platform engedélyezve van az Apple-eszközök kivételével (iOS/iPadOS és Mac). Az iOS/iPadOS-eszközök Intune-ban való regisztrálása és kezelése előtt engedélyezni kell az eszköz platformját. Ehhez létre kell hoznia egy MDM leküldéses tanúsítványt, amelyet az Intune-hoz kell adnia.
 
 - További információ [az Apple-eszközök regisztrációjának engedélyezéséről](../enrollment/apple-mdm-push-certificate-get.md).
 
@@ -130,7 +130,7 @@ Az Intune támogatja a feltételes hozzáférést az Exchange Online-hoz, a hely
 
 ### <a name="task-13-enroll-devices"></a>13. feladat: eszközök regisztrálása
 
-Az Intune az iOS, Mac OS, Android, Windows asztali és Windows Mobile eszközplatformokat támogatja. A mobileszköz-platformokat szükség szerint regisztrálja, figyelembe véve az Intune üzembe helyezésének használatieset-forgatókönyveit és a követelményeket.
+Az Intune az iOS/iPadOS, a Mac OS, az Android, a Windows Desktop és a Windows Mobile Device platformokat támogatja. A mobileszköz-platformokat szükség szerint regisztrálja, figyelembe véve az Intune üzembe helyezésének használatieset-forgatókönyveit és a követelményeket.
 
 - További információk: [eszközök regisztrálása](../enrollment/device-enrollment.md).
 

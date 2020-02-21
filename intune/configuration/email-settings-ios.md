@@ -1,11 +1,11 @@
 ---
-title: Az iOS-eszközök e-mail-beállításainak konfigurálása a Microsoft Intune-Azure-ban | Microsoft Docs
-description: Tekintse meg az összes olyan e-mail-beállítást, amelyet konfigurálhat és hozzáadhat az iOS-eszközökhöz a Microsoft Intuneban, beleértve az Exchange-kiszolgálók használatát és az attribútumok Azure Active Directoryból való beszerzését. Emellett engedélyezheti az SSL használatát, hitelesítheti a tanúsítványokkal vagy felhasználónévvel/jelszóval rendelkező felhasználókat, és az iOS-eszközökön szinkronizálhatja az e-maileket a Microsoft Intune eszköz konfigurációs profiljaival.
+title: Az iOS/iPadOS eszközök e-mail-beállításainak konfigurálása a Microsoft Intune-Azure-ban | Microsoft Docs
+description: Tekintse meg az iOS-és iPadOS-eszközökhöz konfigurálható és hozzáadható e-mail-beállítások listáját Microsoft Intuneban, beleértve az Exchange-kiszolgálók használatát és az attribútumok Azure Active Directoryból való beszerzését. Emellett engedélyezheti az SSL használatát, hitelesítheti a tanúsítványokkal vagy felhasználónévvel/jelszóval rendelkező felhasználókat, és szinkronizálhatja az e-maileket iOS/iPadOS eszközökön a Microsoft Intune eszköz konfigurációs profiljaival.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/12/2019
+ms.date: 02/18/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,25 +15,25 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 73de0ac94ff02e43fe73ca6357f6008ba71e3b93
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 0ea06c50b1da237d4a822e80a8085b3b51913cec
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74390820"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77512806"
 ---
-# <a name="add-e-mail-settings-for-ios-devices-in-microsoft-intune"></a>Az iOS-eszközök e-mail beállításainak hozzáadása a Microsoft Intune
+# <a name="add-e-mail-settings-for-ios-and-ipados-devices-in-microsoft-intune"></a>E-mail beállítások hozzáadása az iOS-és iPadOS-eszközökhöz Microsoft Intune
 
 Microsoft Intune az e-mail-kiszolgálóhoz való kapcsolódáshoz hozzon létre és konfiguráljon e-mailt, válassza ki a felhasználók hitelesítésének módját, az S/MIME titkosítást és egyebeket.
 
-Ez a cikk felsorolja és leírja az iOS rendszerű eszközökön elérhető összes e-mail-beállítást. Létrehozhat egy eszköz-konfigurációs profilt, amellyel leküldheti vagy telepítheti ezeket az e-mail-beállításokat iOS-eszközeire.
+Ez a cikk felsorolja és leírja az iOS/iPadOS rendszerű eszközökön elérhető összes e-mail beállítást. Létrehozhat egy eszköz-konfigurációs profilt, amellyel leküldheti vagy telepítheti ezeket az e-mail-beállításokat iOS-/iPadOS-eszközeire.
 
 ## <a name="before-you-begin"></a>Előkészületek
 
 [Hozzon létre egy eszköz konfigurációs profilt](../email-settings-configure.md).
 
 > [!NOTE]
-> Ezek a beállítások minden regisztrációs típushoz elérhetők. A regisztrációs típusokkal kapcsolatos további információkért lásd: [iOS-regisztráció](../ios-enroll.md).
+> Ezek a beállítások minden regisztrációs típushoz elérhetők. A regisztrációs típusokkal kapcsolatos további információkért lásd: [iOS/iPadOS-regisztráció](../ios-enroll.md).
 
 ## <a name="exchange-activesync-account-settings"></a>Exchange ActiveSync-fiók beállításai
 
@@ -72,7 +72,7 @@ Ez a cikk felsorolja és leírja az iOS rendszerű eszközökön elérhető öss
 
   - Egyes szervezetek letilthatják a végfelhasználóknak az[önkiszolgáló alkalmazás-hozzáférést](https://docs.microsoft.com/azure/active-directory/manage-apps/manage-self-service-access). Ebben a forgatókönyvben a modern hitelesítéses bejelentkezés sikertelen lehet mindaddig, amíg a rendszergazda létre nem hozza az „iOS Accounts” vállalati alkalmazást, és hozzáférést nem ad a felhasználóknak hozzá az Azure AD-ben.
 
-    Az alapértelmezett művelet az alkalmazás hozzáadása az [alkalmazás-hozzáférési panel](https://docs.microsoft.com/azure/active-directory/user-help/active-directory-saas-access-panel-introduction) **Alkalmazás hozzáadása** funkciójával, **üzleti jóváhagyás nélkül**. További információ: [felhasználók hozzárendelése alkalmazásokhoz](https://docs.microsoft.com/azure/active-directory/manage-apps/ways-users-get-assigned-to-applications).
+    Az alapértelmezett művelet egy alkalmazás hozzáadása az [alkalmazás-hozzáférési panelen](https://docs.microsoft.com/azure/active-directory/user-help/active-directory-saas-access-panel-introduction) az alkalmazás **hozzáadása** funkció **üzleti jóváhagyás nélkül**. További információ: [felhasználók hozzárendelése alkalmazásokhoz](https://docs.microsoft.com/azure/active-directory/manage-apps/ways-users-get-assigned-to-applications).
 
   > [!NOTE]
   > Az OAuth engedélyezésekor a következők történnek:  
@@ -114,7 +114,7 @@ Ez a cikk felsorolja és leírja az iOS rendszerű eszközökön elérhető öss
   A választható lehetőségek:
 
   - **S/MIME letiltása** (alapértelmezett): nem használ s/MIME e-mail tanúsítványokat az e-mailek aláírásához, titkosításához és visszafejtéséhez.
-  - **S/MIME engedélyezése**: lehetővé teszi a felhasználóknak az e-mailek aláírását és/vagy titkosítását az iOS Native mail alkalmazásban. Ezt is adja meg:
+  - **S/MIME engedélyezése**: lehetővé teszi a felhasználóknak az e-mailek aláírását és/vagy titkosítását az iOS/iPadOS natív posta alkalmazásban. Ezt is adja meg:
 
     - **S/MIME-aláírás engedélyezve**: a **Letiltás** (alapértelmezett) nem teszi lehetővé a felhasználók számára az üzenet digitális aláírását. Az **Engedélyezés** beállítás megadása esetén a felhasználók digitálisan aláírják a kimenő e-maileket a megadott fiókhoz. Az aláírás segítségével az üzenetek fogadására jogosult felhasználók biztosak lehetnek abban, hogy az üzenet az adott feladótól származik, és nem a feladótól érkező személynek.
       - A **felhasználó módosíthatja a beállítást**: az **Engedélyezés** beállítás megadásával engedélyezhető a felhasználók számára az aláírási beállítások módosítása. **Letiltás** (alapértelmezett) megakadályozza, hogy a felhasználók megváltoztassák az aláírást, és kényszerítse a felhasználókat, hogy a konfigurált aláírást használják.

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f0b5e67c433f2d3633219650f48307dccae196e9
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: b9fe275be3f7eccee7f60dc27e5068e5b91ca93d
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73713281"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514149"
 ---
 # <a name="app-based-conditional-access-with-intune"></a>Alkalmazás-alapú feltételes hozzáférés az Intune-nal
 
@@ -34,7 +34,7 @@ Az alkalmazás-alapú feltételes hozzáférés és az ügyfélalkalmazások kez
 > [!NOTE]
 > A felügyelt alkalmazásra alkalmazásvédelmi szabályzatok vonatkoznak, és az Intune-nal felügyelhető.
 
-Azzal, hogy csak a Microsoft Outlook alkalmazásnak engedélyezi az Exchange Online elérését, blokkolhatja az iOS és az Android beépített levelezőalkalmazásait. Ezenfelül blokkolhatja az Intune alkalmazásvédelmi szabályzattal el nem látott alkalmazások SharePoint Online-elérését is.
+Az iOS/iPadOS és az Android rendszerű eszközökön blokkolhatja a beépített e-mail-alkalmazásokat, ha csak a Microsoft Outlook alkalmazás fér hozzá az Exchange Online-hoz. Ezenfelül blokkolhatja az Intune alkalmazásvédelmi szabályzattal el nem látott alkalmazások SharePoint Online-elérését is.
 
 ## <a name="prerequisites"></a>Előfeltételek
 

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 64faf797c69302e2a5cdbdde090330ab99fcc2e4
-ms.sourcegitcommit: ecaff388038fb800f2e646f8efcf8f3b1e2fd1b1
+ms.openlocfilehash: 0425b6a3f2c82f6ad2119286c8697f0eb0fc2f82
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77437885"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77513906"
 ---
 # <a name="selectively-wipe-data-using-app-protection-policy-conditional-launch-actions-in-intune"></a>Adatok szelektív törlése az App Protection-szabályzat feltételes indítási műveleteivel az Intune-ban
 
@@ -122,5 +122,5 @@ Ha egy beállítás teljesen konfigurálva van, akkor a sor megjelenik a csak ol
 
 Az Intune alkalmazásvédelmi szabályzatairól a következő helyeken tájékozódhat bővebben:
 - [Alkalmazásvédelmi szabályzatok létrehozása és hozzárendelése](app-protection-policies.md)
-- [iOS-eszközök alkalmazásvédelmi szabályzatainak beállításai](app-protection-policy-settings-ios.md)
+- [iOS/iPadOS-alkalmazás védelmi házirendjének beállításai](app-protection-policy-settings-ios.md)
 - [Android-eszközök alkalmazásvédelmi szabályzatainak beállításai a Microsoft Intune-ban](app-protection-policy-settings-android.md) 

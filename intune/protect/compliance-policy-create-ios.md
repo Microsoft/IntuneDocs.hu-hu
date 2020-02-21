@@ -1,6 +1,6 @@
 ---
-title: iOS-eszközök megfelelőségi beállításai a Microsoft Intuneban – Azure | Microsoft Docs
-description: Tekintse meg az iOS-eszközök megfelelőségének beállításakor használható összes beállítást Microsoft Intuneban. E-mail-cím, a feltört eszközök bejelölése, az engedélyezett minimális és maximális operációs rendszer beállítása, a jelszó korlátozásának beállítása, beleértve a jelszó hosszát és az eszköz inaktivitását, az alkalmazások korlátozását stb.
+title: iOS/iPadOS-eszközök megfelelőségi beállításai a Microsoft Intuneban – Azure | Microsoft Docs
+description: Tekintse meg az iOS-/iPadOS-eszközök megfelelőségének beállításakor használható összes beállítást Microsoft Intuneban. E-mail-cím, a feltört eszközök bejelölése, az engedélyezett minimális és maximális operációs rendszer beállítása, a jelszó korlátozásának beállítása, beleértve a jelszó hosszát és az eszköz inaktivitását, az alkalmazások korlátozását stb.
 keywords: ''
 author: brenduns
 ms.author: brenduns
@@ -17,16 +17,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e9bcfed67eda96bb4d79317bcc69d21a5f8197bc
-ms.sourcegitcommit: 2b905913840d4133a7964fe4f54a58ea6e421e12
+ms.openlocfilehash: 437673878335b04b76c53b13f18acac32213720a
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77074631"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514030"
 ---
-# <a name="ios-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>iOS-beállítások az eszközök megfelelő vagy nem megfelelőként való megjelöléséhez az Intune-nal
+# <a name="iosipados-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>iOS/iPadOS-beállítások az eszközök megfelelőségi vagy nem megfelelőként való megjelöléséhez az Intune használatával
 
-Ez a cikk felsorolja és leírja az iOS-eszközökön az Intune-ban konfigurálható különböző megfelelőségi beállításokat. A mobileszköz-kezelési (MDM) megoldás részeként ezekkel a beállításokkal megkövetelheti, hogy az e-mailek, a feltört (feltört) eszközök nem megfelelőek legyenek, beállíthatja az engedélyezett veszélyforrásokat, beállíthatja a jelszavakat, és így tovább.
+Ez a cikk azokat a megfelelőségi beállításokat sorolja fel és ismerteti, amelyek az iOS-és iPadOS-eszközökön konfigurálhatók az Intune-ban. A mobileszköz-kezelési (MDM) megoldás részeként ezekkel a beállításokkal megkövetelheti, hogy az e-mailek, a feltört (feltört) eszközök nem megfelelőek legyenek, beállíthatja az engedélyezett veszélyforrásokat, beállíthatja a jelszavakat, és így tovább.
 
 Ez a funkció az alábbiakra vonatkozik:
 
@@ -51,7 +51,7 @@ Intune-rendszergazdaként ezeket a megfelelőségi beállításokat használhatj
 
 A levelezési profilokkal kapcsolatos további információkért lásd: a [vállalati levelezéshez való hozzáférés konfigurálása e-mail-profilok használatával az Intune-](../configuration/email-settings-configure.md)nal.
 
-## <a name="device-health"></a>Eszköz állapota
+## <a name="device-health"></a>Eszközállapot
 
 - Feltört **eszközök**:  
   - **Nincs konfigurálva** (*alapértelmezett*) – a rendszer nem értékeli ki a megfelelőségi és a nem megfelelőségi beállítást.
@@ -83,14 +83,14 @@ A levelezési profilokkal kapcsolatos további információkért lásd: a [váll
 
 ## <a name="system-security"></a>Rendszerbiztonság
 
-### <a name="password"></a>Windows 10
+### <a name="password"></a>Jelszó
 
 > [!NOTE]
-> Miután megfelelőségi vagy konfigurációs szabályzatot alkalmazott egy iOS-eszközre, a felhasználóktól 15 percenként egy PIN-kódot kér a rendszer. A kérések mindaddig megjelennek, amíg a felhasználó meg nem ad egy PIN-kódot. Ha az iOS-eszközhöz PIN-kód van beállítva, a titkosítási folyamat automatikusan elindul. Az eszköz mindaddig titkosítva marad, amíg le nem tiltja a PIN-kódot.
+> Miután megfelelőségi vagy konfigurációs szabályzatot alkalmazott egy iOS/iPadOS eszközre, a rendszer 15 percenként kéri a felhasználókat a PIN-kód beállítására. A kérések mindaddig megjelennek, amíg a felhasználó meg nem ad egy PIN-kódot. Ha az iOS/iPadOS eszközhöz PIN-kód van beállítva, a titkosítási folyamat automatikusan elindul. Az eszköz mindaddig titkosítva marad, amíg le nem tiltja a PIN-kódot.
 
 - **Jelszó megkövetelése a mobileszközök zárolásának feloldásához**:  
   - **Nincs konfigurálva** (*alapértelmezett*) – a rendszer nem értékeli ki a megfelelőségi és a nem megfelelőségi beállítást.  
-  - **Kötelező** – a felhasználóknak jelszót kell megadniuk ahhoz, hogy hozzáférjenek az eszközhöz. A jelszót használó iOS-eszközöket titkosítja a rendszer.
+  - **Kötelező** – a felhasználóknak jelszót kell megadniuk ahhoz, hogy hozzáférjenek az eszközhöz. a jelszót használó iOS/iPadOS-eszközök titkosítva vannak.
 
 - **Egyszerű jelszavak**:  
   - **Nincs konfigurálva** (*alapértelmezett*) – a felhasználók létrehozhatnak olyan egyszerű jelszavakat, mint a **1234** vagy a **1111**.
@@ -125,7 +125,7 @@ A levelezési profilokkal kapcsolatos további információkért lásd: a [váll
   Alkalmazásokat úgy korlátozhat, hogy kötegazonosítójukat hozzáadja a szabályzathoz. Ha egy eszközön telepítve van az alkalmazás, az eszköz nem megfelelőként van megjelölve.
 
   - **Alkalmazás neve** – adjon meg egy felhasználóbarát nevet, amely segít a csomag azonosítójának azonosításában.
-  - Alkalmazáscsomag **azonosítója** – adja meg az alkalmazás-szolgáltató által hozzárendelt egyedi köteg azonosítóját. A csomag AZONOSÍTÓjának megkereséséhez lásd: [az iOS-alkalmazáshoz tartozó csomag azonosítójának megkeresése](https://support.microsoft.com/help/4294074/how-to-find-the-bundle-id-for-an-ios-app) (egy másik Microsoft-webhely megnyitása).  
+  - Alkalmazáscsomag **azonosítója** – adja meg az alkalmazás-szolgáltató által hozzárendelt egyedi köteg azonosítóját. A csomag AZONOSÍTÓjának megkereséséhez tekintse meg [az iOS/iPadOS alkalmazáshoz tartozó csomag azonosítójának megkeresése](https://support.microsoft.com/help/4294074/how-to-find-the-bundle-id-for-an-ios-app) (egy másik Microsoft-webhely megnyitása) című témakört.  
 
 ## <a name="next-steps"></a>További lépések
 

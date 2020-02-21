@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2fa80697f24167e2a9634bd506e9548ca654129f
-ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
+ms.openlocfilehash: bd1aaa545f11f7eaaa591f2057f4a6c8946fac4a
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75547090"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514166"
 ---
 # <a name="enforce-compliance-for-microsoft-defender-atp-with-conditional-access-in-intune"></a>A Microsoft Defender ATP megfelelőségének betartatása feltételes hozzáféréssel az Intune-ban
 
@@ -62,7 +62,7 @@ Ha a Microsoft Defender ATP-t az Intune-nal szeretné használni, győződjön m
 - [Microsoft DEFENDER ATP](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) és hozzáférés a microsoft Defender Security Centerhoz (ATP-portál)
 
 > [!NOTE]
-> Az iOS és az Android Intune app Protection-szabályzatok nem támogatják a Microsoft Defender ATP használatát.
+> Az iOS/iPadOS és az Android Intune app Protection-szabályzatok nem támogatják a Microsoft Defender ATP használatát.
 
 ## <a name="enable-microsoft-defender-atp-in-intune"></a>A Microsoft Defender ATP engedélyezése az Intune-ban
 

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 099d68568cd920c9ae3f328b4e9fba95424e46fd
-ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
+ms.openlocfilehash: dc262dc67c967ffd2c6525c4370df8e9fa0e4dff
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76755272"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77511837"
 ---
 # <a name="add-apps-to-microsoft-intune"></a>Alkalmazások hozzáadása a Microsoft Intune-hoz 
 
@@ -37,7 +37,7 @@ Az alkalmazások és eszközök céges felhasználói (a munkaerő) több alkalm
 
 Az Intune sokféle alkalmazástípust támogat. Az elérhető beállítások minden alkalmazástípus esetében eltérőek. Az Intune a következő típusú alkalmazások hozzáadását és hozzárendelését teszi lehetővé:
 
-| Alkalmazástípusok | Telepítés | Updates |
+| Alkalmazástípusok | Telepítés | Frissítések |
 |---|---|---|
 | Áruházbeli alkalmazások | Az Intune telepíti az alkalmazást az eszközön.  | Az alkalmazások frissítése automatikus. |
 | Belső fejlesztésű (üzletági) alkalmazások | Az Intune telepíti az alkalmazást az eszközön (a telepítőfájlt Önnek kell letöltenie). | Az alkalmazást Önnek kell frissítenie. |
@@ -52,7 +52,7 @@ A következő táblázatban megtekintheti a konkrét alkalmazástípusokat és a
 | --- | --- | --- |
 | Androidos áruházbeli alkalmazások  | Áruházbeli alkalmazás  | Válassza az **Android** lehetőséget az **alkalmazás típusa** területen, majd adja meg a Google Play áruház alkalmazáshoz tartozó URL-címét. |
 | Androidos vállalati alkalmazások  | Áruházbeli alkalmazás  | Válassza az **Android** lehetőséget az **alkalmazás típusa**területen, majd adja meg az alkalmazás felügyelt Google Play áruházbeli URL-címét. <sup>1</sup> |
-| iOS-es áruházbeli alkalmazások  | Áruházbeli alkalmazás  | Válassza az **iOS** lehetőséget az **alkalmazás típusa** területen, keresse meg az alkalmazást majd jelölje ki az Intune-ban. |
+| iOS/iPadOS áruházbeli alkalmazások  | Áruházbeli alkalmazás  | Válassza az **iOS** lehetőséget az **alkalmazás típusa** területen, keresse meg az alkalmazást majd jelölje ki az Intune-ban. |
 | Windows Phone 8.1-es áruházbeli alkalmazások  | Áruházbeli alkalmazás  | Válassza a **Windows Phone 8.1** lehetőséget az **alkalmazás típusa** területen, majd adja meg a Microsoft Store alkalmazáshoz tartozó URL-címét. |
 | Microsoft Store-beli alkalmazások  | Áruházbeli alkalmazás  | Válassza a **Windows** lehetőséget az **alkalmazás típusa** területen, majd adja meg a Microsoft Store alkalmazáshoz tartozó URL-címét. |
 | Felügyelt Google Play-alkalmazások | Áruházbeli alkalmazás  | Válassza a **felügyelt Google Play** lehetőséget az **alkalmazás típusa**területen, keresse meg az alkalmazást, és válassza ki az alkalmazást az Intune-ban. |
@@ -61,10 +61,10 @@ A következő táblázatban megtekintheti a konkrét alkalmazástípusokat és a
 | Microsoft Edge, 77-es és újabb verziók a Windows 10 rendszerhez | Áruházbeli alkalmazás | Válassza a **Windows 10** lehetőséget a **Microsoft Edge, a 77-es és újabb verzióban** az **alkalmazás típusa**területen. |
 | Microsoft Edge, 77-es és újabb verziók macOS-re | Áruházbeli alkalmazás | Válassza a **MacOS** lehetőséget a **Microsoft Edge, a 77-es és újabb verzióban** az **alkalmazás típusaként**. |
 | Androidos üzletági (LOB) alkalmazások | Üzletági (LOB) alkalmazás | Válassza az **Üzletági alkalmazás** lehetőséget az **alkalmazás típusa** területen, válassza az **Alkalmazáscsomag-fájl** elemet, majd adjon meg egy **.apk** kiterjesztésű Androidos telepítőfájlt.  |
-| iOS-es üzletági alkalmazások | Üzletági (LOB) alkalmazás | Válassza az **Üzletági alkalmazás** lehetőséget az **alkalmazás típusa** területen, válassza az **Alkalmazáscsomag-fájl** elemet, majd adjon meg egy **.ipa** kiterjesztésű iOS-es telepítőfájlt.  |
+| iOS/iPadOS LOB-alkalmazások | Üzletági (LOB) alkalmazás | Válassza az **üzletági** alkalmazás lehetőséget az **alkalmazás típusa**területen, válassza ki az **alkalmazáscsomag-fájlt**, majd adjon meg egy **. ipa**kiterjesztésű iOS/iPadOS telepítési fájlt.  |
 | Windows Phone LOB-alkalmazások | Üzletági (LOB) alkalmazás | Válassza az **Üzletági alkalmazás** lehetőséget az **alkalmazás típusa** területen, válassza az **Alkalmazáscsomag-fájl** elemet, majd adjon meg egy **.xap** kiterjesztésű Windows Phone-telepítőfájlt.  |
 | Windows LOB apps | Üzletági (LOB) alkalmazás | Válassza az **Üzletági alkalmazás** lehetőséget az alkalmazás típusa területen, válassza az **Alkalmazáscsomag-fájl** elemet, majd adjon meg egy **.msi**, **.appx**, **.appxbundle**, **.msix** vagy **.msixbundle** kiterjesztésű Windows-telepítőfájlt. |
-| Beépített iOS-alkalmazás  | Beépített alkalmazás | Válassza a **Beépített alkalmazás** lehetőséget az **alkalmazás típusa** területen, majd jelöljön ki egy beépített alkalmazást az elérhető alkalmazások listáján.  |
+| Beépített iOS-/iPadOS-alkalmazás  | Beépített alkalmazás | Válassza a **Beépített alkalmazás** lehetőséget az **alkalmazás típusa** területen, majd jelöljön ki egy beépített alkalmazást az elérhető alkalmazások listáján.  |
 | Beépített Android-alkalmazás  | Beépített alkalmazás | Válassza a **Beépített alkalmazás** lehetőséget az **alkalmazás típusa** területen, majd jelöljön ki egy beépített alkalmazást az elérhető alkalmazások listáján.  |
 | Webalkalmazások  | Web app  | Válassza a **Webes hivatkozás** lehetőséget az **alkalmazás típusa** területen, majd adjon meg egy érvényes, a webalkalmazásra mutató URL-címet.  |
 | A Vállalati Android rendszeralkalmazásai  | Áruházbeli alkalmazás  | Válassza az **Android Enterprise System app** elemet az **alkalmazás típusa**területen, majd adja meg az alkalmazás nevét, közzétevőjét és csomagfájl.  |
@@ -77,7 +77,7 @@ A következő táblázatban megtekintheti a konkrét alkalmazástípusokat és a
 Microsoft Intune az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**elem kiválasztásával adhat hozzá egy alkalmazást. Megjelenik az **alkalmazás típusának kiválasztása** ablaktábla, és lehetővé teszi az **alkalmazás típusának**kiválasztását. 
 
 >[!TIP]
-> Az üzletági (LOB) alkalmazásokat egy alkalmazástelepítő fájlból adja hozzá. Az iOS LOB-alkalmazások telepítéséhez például az alkalmazás **típusának kiválasztása** ablaktáblán az üzletági **alkalmazás** lehetőség kiválasztásával adhatja hozzá az alkalmazást. Ezután válassza ki az alkalmazáscsomag (.ipa kiterjesztésű) fájlját. Az ilyen típusú alkalmazások általában belső fejlesztésűek.
+> Az üzletági (LOB) alkalmazásokat egy alkalmazástelepítő fájlból adja hozzá. IOS/iPadOS LOB-alkalmazás telepítéséhez például az alkalmazás **típusának kiválasztása** ablaktáblán **az üzletági** **alkalmazás** lehetőség kiválasztásával adhatja hozzá az alkalmazást. Ezután válassza ki az alkalmazáscsomag (.ipa kiterjesztésű) fájlját. Az ilyen típusú alkalmazások általában belső fejlesztésűek.
 
 ## <a name="assess-app-requirements"></a>Alkalmazáskövetelmények értékelése
 Rendszergazdaként nem csak azt kell meghatároznia, hogy mely alkalmazásokra lesz szüksége a csapatának, hanem azt is, hogy az egyes csoportoknak és alcsoportoknak milyen funkciókra lesz szükségük. Minden alkalmazáshoz meg kell határoznia a szükséges platformokat, az alkalmazásra igényt tartó felhasználói csoportokat, a csoportokra alkalmazandó konfigurációs szabályzatokat és az alkalmazandó védelmi szabályzatokat.  
@@ -109,8 +109,8 @@ Az [Intune az üzembe helyezésének tervezésével, kialakításával és kivit
 ### <a name="determine-the-type-of-app-for-your-solution"></a>A saját megoldáshoz tartozó alkalmazás meghatározása
 
 Az alábbi alkalmazástípusok közül választhat:
-- **Áruházbeli alkalmazások**: Azok az alkalmazások, amelyeket a Microsoft, az iOS vagy az Android áruházába töltöttek fel, áruházbeli alkalmazásoknak számítanak. Az áruházbeli alkalmazásokat a szolgáltatójuk tartja karban és frissíti. Az áruház listájából Ön választja ki az alkalmazást, és teszi elérhetővé a felhasználói számára az Intune segítségével.
-- **Belső fejlesztésű (üzletági) alkalmazások**: A belső fejlesztésű alkalmazások üzletági (LOB) alkalmazások. Az ilyen típusú alkalmazások funkciói az Intune által támogatott platformok (például Windows, iOS, macOS vagy Android) egyikére lettek létrehozva. A cége egy külön fájlként hozza létre és teszi elérhetővé Ön számára a frissítéseket. Az alkalmazás frissítéseit a felhasználók számára az Intune-nal teheti elérhetővé.
+- **Áruházbeli alkalmazások**: a Microsoft áruházba, az iOS/iPadOS-tárolóba vagy az Android áruházba feltöltött alkalmazások áruházbeli alkalmazások. Az áruházbeli alkalmazásokat a szolgáltatójuk tartja karban és frissíti. Az áruház listájából Ön választja ki az alkalmazást, és teszi elérhetővé a felhasználói számára az Intune segítségével.
+- **Belső fejlesztésű (üzletági) alkalmazások**: A belső fejlesztésű alkalmazások üzletági (LOB) alkalmazások. Az ilyen típusú alkalmazások funkciói az Intune által támogatott platformok (például Windows, iOS/iPadOS, macOS vagy Android) egyikére lettek létrehozva. A cége egy külön fájlként hozza létre és teszi elérhetővé Ön számára a frissítéseket. Az alkalmazás frissítéseit a felhasználók számára az Intune-nal teheti elérhetővé.
 - **Webes alkalmazások**: A webalkalmazások ügyfél-kiszolgáló alkalmazások. A kiszolgáló szolgáltatja a webalkalmazást, amely tartalmazza a felhasználói felületet, a tartalmat és a funkciókat. A modern webszolgáltatási platformok emellett gyakran kínálnak biztonsági, terheléselosztási és egyéb szolgáltatásokat. Az ilyen típusú alkalmazásokat külön, a weben kezelik. Ehhez az alkalmazástípushoz az Intune-t kell használnia. Azt is Ön dönti el, hogy mely felhasználói csoportok férhetnek hozzá ezekhez az alkalmazásokhoz. Vegye figyelembe, hogy az Android nem támogatja a webalkalmazásokat.
 
 A szervezet alkalmazásigényének felmérésekor vegye figyelembe, hogy ezek az alkalmazások hogyan integrálhatók felhőszolgáltatásokkal, milyen adatokhoz férhetnek hozzá, elérhetők-e BYOD-felhasználók számára, valamint szükség van-e hozzájuk internet-hozzáférésre.
@@ -128,18 +128,18 @@ Az Intune által kezelt alkalmazások regisztráció nélkül nyújtanak alkalma
 
 ### <a name="understanding-licensed-apps"></a>A licencelt alkalmazások megértése
 A webes, az áruházbeli és az üzletági alkalmazásokon kívül érdemes tisztában lennie a Volume Purchase Program alkalmazásainak és a licencelt alkalmazások sajátosságaival, például: 
-- **Vállalati Apple Volume Purchasing Program (iOS)** : Az iOS App Store áruháza lehetővé teszi, hogy több licencet is vásároljon a vállalatnál használni kívánt alkalmazásokhoz. Több licenc vásárlásával hatékonyabban kezelhetők a vállalaton belüli alkalmazások. További információ: [Mennyiségi programban vásárolt iOS-alkalmazások felügyelete](vpp-apps-ios.md).
+- **Apple Volume Purchase program for Business (iOS)** : az iOS/IPadOS App Store-ban több licencet vásárolhat a vállalatnál futtatni kívánt alkalmazásokhoz. Több licenc vásárlásával hatékonyabban kezelhetők a vállalaton belüli alkalmazások. További információ: [iOiOS/iPadOSS mennyiségi licencszerződés keretében vásárolt alkalmazások kezelése](vpp-apps-ios.md).
 - **Androidos munkahelyi profil**: Az alkalmazások androidos munkahelyi profilt használó eszközökhöz való hozzárendelése eltér a hagyományos androidos eszközökhöz való hozzárendeléstől. Minden olyan alkalmazás, amelyet az androidos munkahelyi profil részeként telepít a felügyelt Google Play áruházból szerezhető be. Az Intune használatával megkeresheti a kívánt alkalmazásokat, és jóváhagyhatja azokat. Az alkalmazás megjelenik az Azure Portal **Licencelt alkalmazások** lapján, és a hozzárendelése ugyanúgy kezelhető, mint bármely más alkalmazásé.
 - **Microsoft Store Vállalatoknak (Windows 10)** : A Microsoft Store Vállalatoknak az a hely, ahol alkalmazásokat vásárolhat a szervezete számára egyenként vagy mennyiségi program keretében. Az áruházat a Microsoft Intune-nal összekapcsolva a mennyiségi programban vásárolt alkalmazásokat az Azure Portalon kezelheti. További információ: [A Microsoft Store Vállalatoknak áruházban vásárolt alkalmazások felügyelete](windows-store-for-business.md).
 
     > [!NOTE]
-    > A windowsos alkalmazások fájlnévkiterjesztései közé tartozik az **.msi**, **.appx**, **.appxbundle**, **.msix** és **.msixbundle** is.  
+    > A Windows-alkalmazások fájlnévkiterjesztései közé tartozik az **.msi**, **.appx**, **.appxbundle**, **.msix** és **.msixbundle**.  
 
 ## <a name="before-you-add-apps"></a>Mielőtt hozzáadna alkalmazásokat
 Mielőtt elkezdené az alkalmazások hozzáadását és hozzárendelését, vegye figyelembe a következőket:
 
 - Ha áruházból végzi az alkalmazások felvételét és hozzárendelését, a felhasználók csak akkor tudják telepíteni az alkalmazásokat, ha rendelkeznek fiókkal az adott áruházban.
-- Előfordulhat, hogy egyes hozzárendelendő alkalmazások beépített iOS-alkalmazásoktól függenek. Ha például egy könyv iOS-es áruházból való hozzárendelését végzi, az eszközön elérhetőnek kell lennie az iBooks alkalmazásnak. Ha eltávolította a beépített iBooks alkalmazást, azt az Intune használatával nem tudja újratelepíteni.
+- Előfordulhat, hogy egyes hozzárendelt alkalmazások vagy elemek a beépített iOS/iPadOS alkalmazásoktól függenek. Ha például egy könyvet rendel az iOS/iPadOS-tárolóhoz, az iBooks alkalmazásnak jelen kell lennie az eszközön. Ha eltávolította a beépített iBooks alkalmazást, azt az Intune használatával nem tudja újratelepíteni.
 
 > [!IMPORTANT]
 > Ha az alkalmazás telepítését követően módosítja annak nevét az Intune Azure Portalon, az alkalmazást nem fogják megtalálni a parancsok.
@@ -153,7 +153,7 @@ A felhőtárhelyre vonatkozó követelmények az alábbiak:
 - A feltöltött fájlok legfeljebb 8 GB méretűek lehetnek.
 
   > [!NOTE]
-  > A Windows rendszerű üzletági (LOB) alkalmazások, például a Win32, a Windows Universal AppX, a Windows Universal AppX Bundle, a Windows Universal MSI X és a Windows Universal MSI X Bundle, legfeljebb 8 GB méretűek lehetnek. Minden más LOB-alkalmazás, többek között az iOS LOB-alkalmazások, legfeljebb 2 GB-os mérethatárt tartalmazhat.
+  > A Windows rendszerű üzletági (LOB) alkalmazások, például a Win32, a Windows Universal AppX, a Windows Universal AppX Bundle, a Windows Universal MSI X és a Windows Universal MSI X Bundle, legfeljebb 8 GB méretűek lehetnek. Minden más LOB-alkalmazás, beleértve az iOS/iPadOS LOB-alkalmazásokat, legfeljebb 2 GB-os mérethatárt tartalmazhat.
 
 ## <a name="create-and-edit-categories-for-apps"></a>Alkalmazáskategóriák létrehozása és szerkesztése
 

@@ -1,6 +1,6 @@
 ---
-title: iOS-felhasználói alkalmazások letöltése
-description: Módszerek az iOS-alkalmazások elérhetővé tételére végfelhasználók számára
+title: IOS-/iPadOS-felhasználói alkalmazások letöltése
+description: Az iOS/iPadOS alkalmazások elérhetővé tételének módszerei a végfelhasználók számára
 keywords: ''
 author: lenewsad
 ms.author: lanewsad
@@ -17,14 +17,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 06cc977ce8b0b892e1020436f89ada4a40bac3f2
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 344c2e3f3ed53852aa6b749c9ebf6d451dd313ff
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73413983"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514387"
 ---
-# <a name="how-your-ios-users-get-their-apps"></a>iOS-felhasználói alkalmazások letöltése
+# <a name="how-your-iosipados-users-get-their-apps"></a>IOS-/iPadOS-felhasználói alkalmazások letöltése
 
 Ez a témakör ismerteti, hogy végfelhasználói hol és hogyan juthatnak hozzá a Microsoft Intune-ban elérhetővé tett alkalmazásokhoz.
 
@@ -32,11 +32,11 @@ Ez a témakör ismerteti, hogy végfelhasználói hol és hogyan juthatnak hozz�
 
 **Elérhető alkalmazások** – A Vállalati portál alkalmazáslistájában szereplő azon alkalmazások, amelyeknek a telepítése nem kötelező.
 
-**Felügyelt alkalmazások** –  Azok a szabályzatokkal felügyelhető alkalmazások, amelyeket az Intune „burkolt be”, vagy az Intune App szoftverfejlesztői készlettel (SDK) készültek. Ezek az alkalmazások az Intune-nal felügyelhetők, és azokra alkalmazásvédelmi szabályzatok alkalmazhatók.
+**Felügyelt alkalmazások** –  Azok a szabályzatokkal felügyelhető alkalmazások, amelyeket az Intune „burkolt be”, vagy az Intune App szoftverfejlesztői készlettel (SDK) készültek. Ezek az alkalmazások az Intune-nal kezelhetők, és alkalmazásvédelmi szabályzatokkal felügyelhetők.
 
-Nem **felügyelt alkalmazások**– a felhasználók által az INTUNE app SDK-val nem integrált iOS App Store-ból letölthető alkalmazások. Az Intune nem szabályozza az alkalmazások terjesztését, felügyeletét vagy szelektív törlését.  
+Nem **felügyelt alkalmazások**– a felhasználók által az INTUNE app SDK-val nem integrált iOS/IPadOS App Store-ból letölthető alkalmazások. Az Intune nem szabályozza az alkalmazások terjesztését, felügyeletét vagy szelektív törlését.  
 
-Az Apple korlátozásai tiltják az üzletági és a felügyelt App Store-alkalmazások listázását a Vállalati portál alkalmazásban. Ezt megkerülendő, az iOS-es Vállalati portál alkalmazás csempéi a felhasználókat valamennyi alkalmazásuk eléréséhez egyetlen hely (a Vállalati portál webhely) különböző nézeteihez irányítják.
+Az Apple korlátozásai tiltják az üzletági és a felügyelt App Store-alkalmazások listázását a Vállalati portál alkalmazásban. A probléma megkerüléséhez az iOS/iPadOS ponthoz tartozó Céges portál alkalmazás csempéi az összes alkalmazásához egy helyen (a Céges portál webhelyen) különböző nézeteket.
 
 A regisztrált felhasználók úgy jutnak hozzá az alkalmazásokhoz, hogy a következő csempékre kattintanak a Munkahelyi portál alkalmazás Alkalmazások képernyőjén:
 

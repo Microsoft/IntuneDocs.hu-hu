@@ -15,12 +15,12 @@ ms.technology: ''
 ms.assetid: cde4d389-1770-4226-85a3-a2f3b3fb92a3
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 563b117583f8b8c1f4da08d5d4e3399d5939bf97
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: fd2f03edeb1e402401911ab2c80fa0d699e2628c
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72504364"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514880"
 ---
 # <a name="pradeo-mobile-threat-defense-connector-with-intune"></a>A Pradeo Mobile Threat Defense-összekötő működése az Intune-nal
 
@@ -30,7 +30,7 @@ A feltételes hozzáférési szabályzatokat az Intune-eszköz megfelelőségi s
 
 ## <a name="how-do-intune-and-pradeo-help-protect-your-company-resources"></a>Hogyan segíti az Intune és a Pradeo a vállalati erőforrások védelmét?
 
-Az Androidra és iOS-re készült Pradeo alkalmazás rögzíti a fájlrendszer, a hálózati protokollkészlet, valamint az eszközök és az alkalmazások telemetriai adatait, ha elérhetők, és továbbítja őket a Pradeo felhőszolgáltatásnak, amely felméri az eszköz kockázatát a mobil veszélyforrások tekintetében.
+Az Android és az iOS/iPadOS Pradeo alkalmazás rögzíti a fájlrendszer, a hálózati verem, az eszköz és az alkalmazás telemetria, ahol elérhető, majd a telemetria adatokat elküldi a Pradeo Cloud Service-nek, hogy felmérje az eszköz kockázatát a mobil fenyegetések ellen.
 
 Az Intune eszközmegfelelőségi szabályzata tartalmaz egy szabályt a Pradeo Mobile Threat Defense-hez, amely a Pradeo kockázatfelmérésén alapul. Ha ez a szabály engedélyezve van, az Intune az engedélyezett szabályzat alapján értékeli az eszköz megfelelőségét. Amennyiben az eszköz nem megfelelőnek minősül, akkor megszűnik a felhasználók hozzáférése az olyan erőforrásokhoz, mint az Exchange Online és a SharePoint Online. A mobileszközeikre telepített Pradeo mobilalkalmazás segítséget nyújt a felhasználóknak a probléma elhárításához és a vállalati erőforrásokhoz való hozzáférés visszaszerzéséhez.
 

@@ -1,6 +1,6 @@
 ---
-title: Az iOS-szoftverfrissítési szabályzatok konfigurálása az Azure-beli Microsoft Intune-ban | Microsoft Docs
-description: A Microsoft Intune-ben hozzon létre vagy adjon hozzá egy konfigurációs házirendet, amely korlátozza, hogy a szoftverfrissítések automatikusan telepítsenek iOS-eszközökre. Megadhatja azokat a dátumokat és időpontokat, amelyeknél nem szeretné, hogy települjenek a frissítések. Ezt a szabályzatot csoportokhoz, felhasználókhoz és eszközökhöz is hozzárendelheti, és ellenőrizheti az esetleges telepítési hibákat is vele.
+title: Az iOS/iPadOS szoftverfrissítési szabályzatok konfigurálása a Microsoft Intuneban – Azure | Microsoft Docs
+description: Microsoft Intuneban hozzon létre vagy adjon hozzá egy konfigurációs szabályzatot, amely korlátozza, hogy a szoftverfrissítések automatikus telepítése az iOS-/iPadOS-eszközökön történjen. Megadhatja azokat a dátumokat és időpontokat, amelyeknél nem szeretné, hogy települjenek a frissítések. Ezt a szabályzatot csoportokhoz, felhasználókhoz és eszközökhöz is hozzárendelheti, és ellenőrizheti az esetleges telepítési hibákat is vele.
 keywords: ''
 author: brenduns
 ms.author: brenduns
@@ -13,16 +13,16 @@ ms.localizationpriority: high
 ms.technology: ''
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bb146fdee7a1d7d770575334eeed84f73cda8894
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: 8f977e449bc38aee84262a401b4b238505aa5b8b
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75207485"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514795"
 ---
-# <a name="add-ios-software-update-policies-in-intune"></a>IOS-szoftverfrissítési szabályzatok hozzáadása az Intune-ban
+# <a name="add-iosipados-software-update-policies-in-intune"></a>IOS/iPadOS-szoftverfrissítési szabályzatok hozzáadása az Intune-ban
 
-A-frissítési szabályzatokkal kikényszerítheti a legújabb elérhető rendszerfrissítések automatikus telepítését a felügyelt iOS-eszközökön. A szabályzat beállításakor megadhatja azokat a napokat és időpontokat, amikor nem szeretné, hogy az eszközök frissítéseket telepítsenek.
+A szoftverfrissítési házirendek lehetővé teszik a felügyelt iOS-/iPadOS-eszközök kikényszerítését a legújabb elérhető operációsrendszer-frissítések automatikus telepítéséhez. A szabályzat beállításakor megadhatja azokat a napokat és időpontokat, amikor nem szeretné, hogy az eszközök frissítéseket telepítsenek.
 
 Ez a funkció az alábbiakra vonatkozik:
 
@@ -52,7 +52,7 @@ Az eszköz körülbelül 8 óránként jelentkezik be az Intune-ba. Ha van elér
    > [!IMPORTANT]  
    > A *kezdési időt* és a *befejezési időpontot* a 12-es értékre beállított szabályzat 0 óra, nem pedig 24 óra. Ez az eredmény nem korlátozza a korlátozást.  
     
-   A felügyelt iOS-eszközökön megadott idő elteltével a szoftverfrissítések láthatóságának késleltetéséhez konfigurálja ezeket a beállításokat az [eszközök korlátozásai](../configuration/device-restrictions-ios.md#general)között. A szoftverfrissítési házirendek felülbírálják az eszközre vonatkozó korlátozásokat. Ha a szoftverfrissítések láthatóságának késleltetése érdekében a szoftverfrissítési házirendet és a korlátozást is beállítja, az eszköz a szabályzat által megadott szoftverfrissítéseket kényszeríti. A korlátozás arra az esetre vonatkozik, ha a felhasználók nem látják saját maguknak az eszköz frissítését, és a frissítést az iOS-frissítési szabályzat által meghatározott első alkalommal küldi el a rendszer.
+   A felügyelt iOS-/iPadOS-eszközökön a szoftverfrissítések láthatóságának késleltetéséhez konfigurálja ezeket a beállításokat az [eszköz korlátozásai](../configuration/device-restrictions-ios.md#general)között. A szoftverfrissítési házirendek felülbírálják az eszközre vonatkozó korlátozásokat. Ha a szoftverfrissítések láthatóságának késleltetése érdekében a szoftverfrissítési házirendet és a korlátozást is beállítja, az eszköz a szabályzat által megadott szoftverfrissítéseket kényszeríti. A korlátozás arra az esetre vonatkozik, ha a felhasználók nem látják saját maguknak az eszköz frissítését, és a frissítést az iOS-frissítési szabályzat által meghatározott első alkalommal küldi el a rendszer.
 
    A *frissítési szabályzat beállításainak*konfigurálása után kattintson a **Tovább gombra**. 
 
@@ -66,7 +66,7 @@ Az eszköz körülbelül 8 óránként jelentkezik be az Intune-ba. Ha van elér
 
    A rendszer ekkor kiértékeli a szabályzat hatókörébe tartozó felhasználók által használt eszközök frissítési megfelelőségét. Ez a szabályzat a felhasználó nélküli eszközöket is támogatja.
 
-7. A **felülvizsgálat + létrehozás** lapon tekintse át a beállításokat, majd válassza a **Létrehozás** lehetőséget, amikor készen áll az iOS-frissítési szabályzat mentéséhez. Az új szabályzat az iOS-es frissítési szabályzatok listájában jelenik meg.
+7. A **felülvizsgálat + létrehozás** lapon tekintse át a beállításokat, majd válassza a **Létrehozás** lehetőséget, amikor készen áll az iOS/iPadOS frissítési szabályzat mentéséhez. Az új szabályzat az iOS-es frissítési szabályzatok listájában jelenik meg.
 
 
 Az Intune támogatási csapatával kapcsolatos útmutatásért lásd az [Intune-ban felügyelt eszközökre vonatkozó szoftverfrissítések láthatóságának késleltetését](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Delaying-visibility-of-software-updates-in-Intune-for-supervised/ba-p/345753)ismertető témakört.
@@ -90,7 +90,7 @@ Szerkeszthet egy meglévő szabályzatot, beleértve a korlátozott időpontok m
 
 ## <a name="monitor-device-installation-failures"></a>Eszközök telepítési hibáinak figyelése
 <!-- 1352223 -->
-A **szoftverfrissítések** > az **iOS-eszközök telepítési hibái** megjelenítik a frissítési szabályzat által megcélozott felügyelt iOS-eszközök listáját, frissítést próbáltak meg, és nem lehetett frissíteni. Minden eszköz mellett látható egy állapotleírás, amelyből kiderül, hogy az adott eszköz miért nem frissült automatikusan. A kifogástalan, naprakész eszközök nem jelennek meg a listában. A naprakész eszközökön telepítve van az a legújabb frissítés, amelyet az eszköz támogatni képes.
+A **szoftverfrissítések** > az **iOS-eszközök telepítési hibái** megjelenítik a frissítési szabályzat által megcélozott felügyelt iOS-/iPadOS-eszközök listáját, a frissítés kísérletét, és nem sikerült frissíteni. Minden eszköz mellett látható egy állapotleírás, amelyből kiderül, hogy az adott eszköz miért nem frissült automatikusan. A kifogástalan, naprakész eszközök nem jelennek meg a listában. A naprakész eszközökön telepítve van az a legújabb frissítés, amelyet az eszköz támogatni képes.
 
 ## <a name="next-steps"></a>További lépések
 

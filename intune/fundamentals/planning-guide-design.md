@@ -1,5 +1,5 @@
 ---
-title: Microsoft Intune terv létrehozása
+title: A Microsoft Intune-terv létrehozása
 titleSuffix: Microsoft Intune
 description: Ez a cikk segít tervet kidolgozni a kizárólag felhőalapú Microsoft Intune-környezet megtervezéséhez és implementációjához.
 keywords: ''
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9fa02a61148a03a64b88b38dcdc1799b30bc45db
-ms.sourcegitcommit: 5ad0ce27a30ee3ef3beefc46d2ee49db6ec0cbe3
+ms.openlocfilehash: f676a0e39bb5dae32d3032d1703dbb44f6b2e54a
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76886724"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514965"
 ---
 # <a name="create-a-design"></a>Terv létrehozása
 
@@ -182,19 +182,19 @@ Csak az eszközökkel kapcsolatos alábbi szempontok alaposabb ismeretében lehe
 
 - Az eszközök tulajdonjoga
 
-- Csoportos regisztráció
+- Tömeges beléptetés
 
 Vizsgáljuk meg ezeket a területeket részletesebben.
 
 ### <a name="determine-supported-device-platforms"></a>A támogatott eszközplatformok meghatározása
 
-A terv kidolgozásakor tudnia kell, hogy milyen eszközök lesznek a környezetben, és ellenőrizni kell, hogy ezeket az Intune támogatja-e. Az Intune az iOS, az Android és a Windows platformot támogatja.
+A terv kidolgozásakor tudnia kell, hogy milyen eszközök lesznek a környezetben, és ellenőrizni kell, hogy ezeket az Intune támogatja-e. Az Intune támogatja az iOS/iPadOS, az Android és a Windows platformot.
 
 [A Intune által támogatott eszközök teljes listája](supported-devices-browsers.md).
 
 ### <a name="devices"></a>Eszközök
 
-Az Intune a mobileszközök felügyelete révén védi a vállalati adatokat és teszi lehetővé, hogy a végfelhasználók több helyszínen is dolgozhassanak. Az Intune több eszközplatformot is támogat, ezért javasolt a szervezet tervében dokumentálnia a támogatni tervezett eszközöket, OS-platformokat és verziókat. Példa:
+Az Intune a mobileszközök felügyelete révén védi a vállalati adatokat és teszi lehetővé, hogy a végfelhasználók több helyszínen is dolgozhassanak. Az Intune több eszközplatformot is támogat, ezért javasolt a szervezet tervében dokumentálnia a támogatni tervezett eszközöket, OS-platformokat és verziókat. Például:
 
 | **Eszközplatform** | **Operációsrendszer-verziók** |
 |:---:|:---:|
@@ -211,7 +211,7 @@ Az Intune támogatja a vállalati, illetve a személyes tulajdonban lévő eszk�
 
 A vállalati és a személyes tulajdonban lévő eszközökkel kapcsolatos használati esetekről a [3. szakasz: Használatieset-forgatókönyvek követelményeinek meghatározása](planning-guide-requirements.md) nyújt további tájékoztatást.
 
-### <a name="bulk-enrollment"></a>Csoportos regisztráció
+### <a name="bulk-enrollment"></a>Tömeges beléptetés
 
  Az eszközök tömeges regisztrálását a platformtól függően többféleképpen valósíthatja meg. Ha tömeges regisztrálásra lesz szüksége, akkor [döntsön annak módjáról](../enrollment/device-enrollment.md), és a tervet ennek megfelelően dolgozza ki.
 
@@ -221,7 +221,7 @@ Ezekben a szakaszokban a következő, a használatieset-forgatókönyvek követe
 
 - Használati feltételekkel kapcsolatos szabályzatok
 
-- Konfigurációs szabályzatok
+- Beállítási házirendek
 
 - Erőforrás-profilok
 
@@ -241,19 +241,19 @@ A [használati feltételekben](../enrollment/terms-and-conditions-create.md) leh
 
 | **Feltételek és kikötések neve** | **Használati eset** | **Célcsoport** |
 |:---:|:---:|:---:|
-| Vállalati feltételek | Vállalat | Vállalati felhasználók |                 
+| Vállalati feltételek | Vállalati | Vállalati felhasználók |                 
 | BYOD-feltételek | BYOD | BYOD-felhasználók |                
 
 
 A saját felhasználói csoportjai számára feltüntetni kívánt használati feltételek feltérképezéséhez [letöltheti a fenti táblázat sablonját](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0).
 
-### <a name="configuration-policies"></a>Konfigurációs szabályzatok
+### <a name="configuration-policies"></a>Beállítási házirendek
 
 A konfigurációs szabályzatok az eszközök biztonsági beállításainak és szolgáltatásainak kezelésére használhatók. A konfigurációs szabályzatok megtervezésekor a használati esetek követelményeit taglaló szakasz alapján határozza meg az Intune-eszközökhöz szükséges konfigurációkat. Dokumentálja a beállításokat, és hogy hogyan kell azokat konfigurálni. Azt is dokumentálja, hogy ezek mely felhasználói vagy eszközcsoportokra vonatkoznak.
 
 Platformonként legalább egy konfigurációs szabályzatot célszerű létrehozni. Szükség esetén platformonként több konfigurációs szabályzatot is létrehozhat. Az alábbi példában négy különféle konfigurációs szabályzat látható, különböző platformokhoz és használatieset-forgatókönyvekhez.
 
-| **Szabályzat neve** | **Eszközplatform** | **Beállítások** | **Célcsoport** |   
+| **Szabályzat neve** | **Eszközplatform** | **Gépház** | **Célcsoport** |   
 |:---:|:---:|:---:|:---:|
 | Vállalati – iOS | iOS | PIN-kód szükséges, Hossz: 6, Felhőbeli biztonsági mentés korlátozása | Vállalati eszközök |                                                           
 | Vállalati – Android | Android: | PIN-kód szükséges, Hossz: 6, Felhőbeli biztonsági mentés korlátozása | Vállalati eszközök |                                                           
@@ -269,11 +269,11 @@ A végfelhasználók profilok segítségével kapcsolódnak a vállalati adatokh
 
 - Tanúsítványprofilok
 
-- Wi-Fi-profil
+- Wi-Fi profil
 
 - VPN-profil
 
-- E-mail profil
+- E-mail-profil
 
 Vizsgáljuk meg ezeket a profiltípusokat részletesebben.
 
@@ -296,13 +296,13 @@ Az alábbi példa szemlélteti, hogyan lehet dokumentálni a tanúsítványokat 
 
 | **Típus** | **Profilnév** | **Eszközplatform** | **Használati esetek** |   
 |:---:|:---:|:---:|:---:|
-| Legfelső szintű hitelesítésszolgáltató | Vállalati legfelső szintű hitelesítésszolgáltató | Android, iOS, Windows Mobile | Vállalati, BYOD  |                                                           
-| SCEP | Felhasználói tanúsítvány | Android, iOS, Windows Mobile | Vállalati, BYOD |                                                           
+| Legfelső szintű hitelesítésszolgáltató | Vállalati legfelső szintű hitelesítésszolgáltató | Android, iOS/iPadOS, Windows Mobile | Vállalati, BYOD  |                                                           
+| SCEP | Felhasználói tanúsítvány | Android, iOS/iPadOS, Windows Mobile | Vállalati, BYOD |                                                           
 
 
 A saját tanúsítványprofiljainak meghatározásához [letöltheti a fenti táblázat sablonját](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0).
 
-#### <a name="wi-fi-profile"></a>Wi-Fi-profil
+#### <a name="wi-fi-profile"></a>Wi-Fi profil
 
 A Wi-Fi-profilok révén a mobileszközök automatikusan csatlakozhatnak a vezeték nélküli hálózatokhoz. Az Intune-ban az összes támogatott platformhoz lehet Wi-Fi-profilt üzembe helyezni. További tudnivalók [az Intune Wi-Fi-profiltámogatásáról.](../configuration/wi-fi-settings-configure.md)
 
@@ -311,7 +311,7 @@ Az alábbi példa a Wi-Fi-profilok tervezését szemlélteti:
 | **Típus** | **Profilnév** | **Eszközplatform** | **Használati esetek** |
 |:---:|:---:|:---:|:---:|
 | Wi-Fi | Ázsiai Wi-Fi-profil | Android: | Vállalati, BYOD, ázsiai régió|
-| Wi-Fi | Észak-amerikai Wi-Fi-profil | Android, iOS, Windows 10 Mobile | Vállalati, BYOD, észak-amerikai régió |
+| Wi-Fi | Észak-amerikai Wi-Fi-profil | Android, iOS/iPadOS, Windows 10 Mobile | Vállalati, BYOD, észak-amerikai régió |
 
 A saját Wi-Fi-profiljainak meghatározásához [letöltheti a fenti táblázat sablonját](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0).
 
@@ -323,12 +323,12 @@ Az alábbi példában egy VPN-profil dokumentálását szemléltetjük.
 
 | **Típus** | **Profilnév** | **Eszközplatform** | **Használati esetek** |
 |:---:|:---:|:---:|:---:|
-| VPN | VPN, Cisco, bármilyen csatlakozási profil | Android, iOS, Windows 10 Mobile | Vállalati, BYOD, Észak-Amerika és Németország|
+| VPN | VPN, Cisco, bármilyen csatlakozási profil | Android, iOS/iPadOS, Windows 10 Mobile | Vállalati, BYOD, Észak-Amerika és Németország|
 | VPN | Pulse Secure | Android: | Vállalati, BYOD, ázsiai régió |
 
 A saját VPN-profiljainak meghatározásához [letöltheti a fenti táblázat sablonját](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0).
 
-#### <a name="email-profile"></a>E-mail profil
+#### <a name="email-profile"></a>E-mail-profil
 
 Az e-mail-profilokkal automatikusan be lehet állítani a levelezőprogramokban a kapcsolati adatokat és az e-mail-konfigurációt. Az Intune csak bizonyos eszközökön támogatja az e-mail-profilokat. További tudnivalók az [e-mail-profilokról és a támogatott platformokról](../configuration/email-settings-configure.md).
 
@@ -336,8 +336,8 @@ Az alábbi példában az e-mail-profilok dokumentálását szemléltetjük:
 
 | **Típus** | **Profilnév** | **Eszközplatform** | **Használati esetek** |
 |:---:|:---:|:---:|:---:|
-| E-mail profil | iOS-es e-mail-profil | iOS | Vállalati – Infómunkás BYOD |
-| E-mail profil | Android Knox e-mail-profil | Android Knox | BYOD |
+| E-mail-profil | iOS-es e-mail-profil | iOS | Vállalati – Infómunkás BYOD |
+| E-mail-profil | Android Knox e-mail-profil | Android Knox | BYOD |
 
 A saját e-mail-profiljainak meghatározásához [letöltheti a fenti táblázat sablonját](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0).
 ### <a name="apps"></a>Apps
@@ -348,13 +348,13 @@ Az Intune-nal többféleképpen is eljuttathat alkalmazásokat a felhasználókh
 
 - [iOS Volume Purchase Program for Business (VPP)](../apps/vpp-apps-ios.md)
 
-- [Vállalati Microsoft Áruházbeli alkalmazások](../apps/windows-store-for-business.md)
+- [A Microsoft Store Vállalatoknak áruházból származó alkalmazások](../apps/windows-store-for-business.md)
 
 #### <a name="app-type-requirements"></a>Alkalmazástípusok követelményei
 
 Mivel az alkalmazásokat felhasználók és eszközök számára is lehet telepíteni, célszerű eldöntenie, hogy mely alkalmazásokat felügyelje az Intune. A lista összeállításakor igyekezzen megválaszolni a következő kérdéseket:
 
-- Igényelnek-e az alkalmazások integrációt a felhőszolgáltatásokkal?
+- Az alkalmazásokhoz szükséges integráció a felhőszolgáltatásokkal?
 
 - Minden alkalmazás elérhető lesz a BYOD-felhasználók számára?
 
@@ -371,14 +371,14 @@ Mivel az alkalmazásokat felhasználók és eszközök számára is lehet telep�
 
 Az alkalmazásvédelmi szabályzatok azt definiálják, hogyan kezelheti egy alkalmazás a vállalati adatokat, így minimalizálják az adatvesztést. Az Intune minden mobilalkalmazás-felügyelettel kompatibilis alkalmazás esetén támogatja az alkalmazásvédelmi szabályzatok használatát. Az alkalmazásvédelmi szabályzat kialakításakor meg kell határoznia, hogy az adott alkalmazásban hogyan szeretné korlátozni a vállalati adatok elérését. Célszerű megismerkednie az [alkalmazásvédelmi szabályzatok](../apps/app-protection-policy.md) működésével. Az alábbi példával a meglévő alkalmazások és a szükséges védelem dokumentálását mutatjuk be.
 
-| **Alkalmazás** | **Rendeltetés** | **Platformok** | **Használati eset** | **Alkalmazásvédelmi szabályzat** |
+| **Alkalmazás** | **Cél** | **Platformok** | **Használati eset** | **Alkalmazásvédelmi szabályzat** |
 |:---:|:---:|:---:|:---:|:---:|
 | Outlook Mobile  | Elérhető | iOS | Vállalati – Vezetők | Nem lehet jailbreakelni, fájlok titkosítása |                                                         
-| Word | Elérhető | iOS, Android – Samsung Knox, nem Knox, Windows 10 Mobile | Vállalati, BYOD | Nem lehet jailbreakelni, fájlok titkosítása |                                                         
+| Word | Elérhető | iOS/iPadOS, Android – Samsung Knox, nem Knox, Windows 10 Mobile | Vállalati, BYOD | Nem lehet jailbreakelni, fájlok titkosítása |                                                         
 
 
 A saját alkalmazásvédelmi szabályzatainak meghatározásához [letöltheti a fenti táblázat sablonját](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0).
-#### <a name="compliance-policies"></a>Compliance szabályzatokat
+#### <a name="compliance-policies"></a>Megfelelőségi házirendek
 
 A megfelelőségi szabályzatok határozzák meg, hogy egy adott eszköz megfelel-e bizonyos követelményeknek. Az Intune megfelelőségi szabályzatokkal határozza meg, hogy az eszközök megfelelőnek minősülnek-e, vagy sem. Ezt követően a megfelelőségi állapot alapján lehet korlátozni vagy engedélyezni a vállalati erőforrások elérését. Ha feltételes hozzáférésre van szükség, javasoljuk, hogy tervezzen egy [eszköz megfelelőségi szabályzatát](../protect/device-compliance-get-started.md).
 
@@ -386,9 +386,9 @@ A követelmények és a használati esetek alapján döntse el, hogy hány eszk�
 
 Az alábbi példa egy megfelelőségi szabályzat tervezését szemlélteti:
 
-| **Szabályzat neve** | **Eszközplatform** | **Beállítások** | **Célcsoport** |
+| **Szabályzat neve** | **Eszközplatform** | **Gépház** | **Célcsoport** |
 |:---:|:---:|:---:|:---:|
-| Megfelelőségi szabályzat | iOS, Android – Samsung Knox, nem Knox, Windows 10 Mobile | PIN-kód szükséges, nem lehet jailbreakelni | Vállalati, BYOD |
+| Megfelelőségi szabályzat | iOS/iPadOS, Android – Samsung Knox, nem Knox, Windows 10 Mobile | PIN-kód szükséges, nem lehet jailbreakelni | Vállalati, BYOD |
 
 
 A saját megfelelőségi szabályzatainak meghatározásához [letöltheti a fenti táblázat sablonját](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0).
@@ -404,8 +404,8 @@ Az alábbi példa bemutatja, hogyan dokumentálhatja a feltételes hozzáférés
 
 | **Szolgáltatás** | **Modern hitelesítési platformok** | **Egyszerű hitelesítés** | **Használati esetek** |
 |:---:|:---:|:---:|:---:|
-| Exchange Online | iOS, Android | A nem megfelelő eszközök letiltása az Intune által támogatott platformokon | Vállalati, BYOD |
-| SharePoint Online | iOS, Android |  | Vállalati, BYOD |
+| Exchange Online | iOS/iPadOS, Android | A nem megfelelő eszközök letiltása az Intune által támogatott platformokon | Vállalati, BYOD |
+| SharePoint Online | iOS/iPadOS, Android |  | Vállalati, BYOD |
 
 A feltételes hozzáférési szabályzatok megadásához [letöltheti a fenti táblázat sablonját](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0) .
 

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f4fca28329a5cd0adc7269929c4b2c2807bebf5e
-ms.sourcegitcommit: ecaff388038fb800f2e646f8efcf8f3b1e2fd1b1
+ms.openlocfilehash: 545f287e8b7ee82e2008f239171b22e01714b8c7
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77437953"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514744"
 ---
 # <a name="troubleshoot-device-actions-in-intune"></a>Eszközök műveleteinek hibáinak megoldása az Intune-ban
 
@@ -92,6 +92,20 @@ A lépések elvégzése után többé nem kell megkapnia ezt a választ.
 
 ### <a name="why-am-i-prompted-to-set-a-new-passcode-on-my-iosipados-device-when-i-issue-the-remove-passcode-action"></a>Miért kérik új PIN-kód beállítását az iOS/iPadOS eszközön a PIN-kód eltávolítása művelet kiadása során?
 Mivel az egyik megfelelőségi szabályzathoz PIN-kód szükséges.
+
+
+## <a name="wipe-action"></a>Az Összes adat törlése művelet
+
+### <a name="i-cant-restart-a-windows-10-device-after-using-the-wipe-action"></a>Nem tudok újraindítani egy Windows 10-es eszközt a törlési művelet használata után
+Ennek oka az, hogy a válassza ki az **eszközt, és továbbra is törli a törlést, még akkor is, ha az eszközök elvesztik a teljesítményt. Ha ezt a beállítást választja, vegye figyelembe, hogy előfordulhat, hogy a Windows 10 rendszerű eszközök újraindulnak.** Windows 10 rendszerű eszközön.
+
+Ez akkor fordulhat elő, ha a Windows telepítése jelentős sérülést okoz, amely megakadályozza az operációs rendszer újratelepítését. Ebben az esetben a folyamat meghiúsul, és a [Windows helyreállítási környezetben]( https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)elhagyja a rendszert.
+
+### <a name="i-cant-restart-a-bitlocker-encrypted-device-after-using-the-wipe-action"></a>A törlési művelet használata után nem lehet újraindítani a BitLocker által titkosított eszközt
+Ennek oka az, hogy a válassza ki az **eszközt, és továbbra is törli a törlést, még akkor is, ha az eszközök elvesztik a teljesítményt. Ha ezt a beállítást választja, vegye figyelembe, hogy előfordulhat, hogy a Windows 10 rendszerű eszközök újraindulnak.** lehetőség egy BitLocker-titkosítású eszközön.
+
+A probléma megoldásához a rendszerindító adathordozó használatával telepítse újra a Windows 10 rendszert az eszközön.
+
 
 ## <a name="next-steps"></a>További lépések
 

@@ -1,11 +1,11 @@
 ---
 title: Androidos e-mail-beállítások a Microsoft Intuneban – Azure | Microsoft Docs
-description: Hozzon létre egy eszköz-konfigurációs e-mail-profilt, amely Exchange-kiszolgálókat használ, és adja meg az attribútumokat Azure Active Directory. Engedélyezze az SSL-t vagy SMIME, hitelesítse a felhasználókat tanúsítványokkal vagy felhasználónévvel/jelszóval, és szinkronizálja az e-maileket és az ütemezett adatokat az Android Samsung Knox-eszközökön Microsoft Intune használatával
+description: Egy konfigurációs e-mail profilok létrehozása, amelyek Exchange-kiszolgálók, és attribútumok lekérése az Azure Active Directoryból. Engedélyezze az SSL-t vagy SMIME, hitelesítse a felhasználókat tanúsítványokkal vagy felhasználónévvel/jelszóval, és szinkronizálja az e-maileket és az ütemezett adatokat az Android Samsung Knox-eszközökön Microsoft Intune használatával
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 01/15/2019
+ms.date: 02/18/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,16 +15,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 43a2b00ae824656621c8a586e41ba6425c69ed40
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 0a1bc53e0f05818b28bbd975e0de5cf5c9368afb
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72506767"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77512857"
 ---
 # <a name="android-device-settings-to-configure-email-authentication-and-synchronization-in-intune"></a>Az e-mailek, a hitelesítés és a szinkronizálás konfigurálása az Intune-ban Android-eszközbeállítások
 
-Ez a cikk felsorolja és leírja az Android Samsung Knox-eszközök Intune-ban való vezérlésére szolgáló különböző e-mail-beállításokat. A mobileszköz-kezelési (MDM) megoldás részeként ezekkel a beállításokkal konfigurálhatja az e-mail-kiszolgálókat, az SSL használatával titkosíthatja az e-maileket, és egyéb műveleteket is elvégezheti.
+Ez a cikk felsorolja és leírja az Android Samsung Knox-eszközök Intune-ban való vezérlésére szolgáló különböző e-mail-beállításokat. A mobileszköz-felügyelet (MDM) megoldás részeként használja ezeket a beállításokat állítson be egy e-mail-kiszolgálót, e-mailek és más titkosítása SSL használatával.
 
 Intune-rendszergazdaként e-mail-beállításokat hozhat létre és rendelhet hozzá az Android Samsung Knox standard-eszközökhöz.
 
@@ -83,4 +83,4 @@ Az Intune e-mail profiljaival kapcsolatos további információkért lásd az [e
 
 [Rendelje hozzá a profilt](device-profile-assign.md), és [kövesse nyomon az állapotát](device-profile-monitor.md).
 
-E-mail-profilokat az [Android Enterprise-Work profil](email-settings-android-enterprise.md), az [iOS](email-settings-ios.md), a [Windows 10 és az újabb verziók](email-settings-windows-10.md), valamint a [Windows Phone-telefon 8,1](email-settings-windows-phone-8-1.md)is létrehozhat.
+E-mail-profilokat az [Android Enterprise-Work profilhoz](email-settings-android-enterprise.md), az [iOS/iPadOS](email-settings-ios.md), a [Windows 10 és újabb rendszerekhez](email-settings-windows-10.md), valamint a [Windows Phone-telefon 8,1](email-settings-windows-phone-8-1.md)-hez is létrehozhat.

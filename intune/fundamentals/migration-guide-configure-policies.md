@@ -1,5 +1,5 @@
 ---
-title: Eszköz-és alkalmazás-megfelelőség konfigurálása az Intune-áttelepítés során
+title: Intune-migráció során az eszköz- és megfelelőségi konfigurálása
 titleSuffix: Microsoft Intune
 description: Ez a cikk az eszközmegfelelőségi és alkalmazáskezelési szabályzatok Microsoft Intune-migráció során történő konfigurálásához szükséges lépéseket ismerteti.
 keywords: ''
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 191be009f8d9e6fc448126834ef48f0bc6e2edc4
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: c8e4671790b72583219f1df64a0ef3491d707ea7
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72505343"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515033"
 ---
 # <a name="configure-device-compliance-and-app-management-policies-when-migrating-to-microsoft-intune"></a>Eszközmegfelelőségi és alkalmazásfelügyeleti szabályzatok konfigurálása Microsoft Intune-migráció során
 
@@ -44,7 +44,7 @@ Lehet, hogy minden eszközplatform más beállítási lehetőségeket kínál, d
 
 ## <a name="task-list-for-device-compliance-policies"></a>Feladatlista az eszközmegfelelőségi szabályzatokhoz
 
-### <a name="task-1-add-device-groups-optional"></a>1. feladat: eszközcsoportok létrehozása (nem kötelező)
+### <a name="task-1-add-device-groups-optional"></a>1\. feladat: eszközcsoportok létrehozása (nem kötelező)
 
 Létrehozhat eszközcsoportokat, ha bizonyos felügyeleti feladatokat eszközidentitás, nem pedig felhasználói identitás alapján kell elvégeznie.
 
@@ -52,23 +52,23 @@ Az eszközcsoportok elsősorban kioszkok, adott helyszínre telepített vagy mű
 
 Ha az eszközök regisztrálása előtt eszközcsoportokat konfigurál, az eszközkategóriák alapján a regisztrációnál automatikusan csoportosíthatja is az eszközöket. Ezután automatikusan megkapják a csoportjukra érvényes eszközszabályzatokat. [Csoportok – első lépések](groups-get-started.md).
 
-### <a name="task-2-use-resource-access-profiles-wi-fi-vpn-and-email-certificates"></a>2. feladat: erőforrás-hozzáférési profilok (Wi-Fi-, VPN- és e-mail-tanúsítványok) használata
+### <a name="task-2-use-resource-access-profiles-wi-fi-vpn-and-email-certificates"></a>2\. feladat: erőforrás-hozzáférési profilok (Wi-Fi-, VPN- és e-mail-tanúsítványok) használata
 
 Az erőforrás-hozzáférési profilok tanúsítványokat és hozzáférési konfigurációkat bocsátanak rendelkezésre a regisztrált eszközökhöz. Ha tanúsítványalapú hitelesítést használ, [konfigurálja a tanúsítványokat](../protect/certificates-configure.md).
 
-### <a name="task-3-create-and-deploy-device-configuration-profiles"></a>3. feladat: eszközkonfigurációs profilok létrehozása és telepítése
+### <a name="task-3-create-and-deploy-device-configuration-profiles"></a>3\. feladat: eszközkonfigurációs profilok létrehozása és telepítése
 
 Az eszközszintű beállítások (például kamera letiltása, alkalmazás-áruház, egyalkalmazásos mód, kezdőképernyő stb.) betartatásához eszközkonfigurációs profilt kell létrehozni. További információ az [eszközprofilokról](../configuration/device-profiles.md).
 
-#### <a name="directly-import-ios-configuration-profiles-optional"></a>iOS-es konfigurációs profilok közvetlen importálása (nem kötelező)
+#### <a name="directly-import-iosipados-configuration-profiles-optional"></a>IOS-/iPadOS-konfigurációs profilok közvetlen importálása (nem kötelező)
 
 - **Apple Configurator iOS-profilok (iOS 7.1 és újabb):** Ha a korábbi MDM-megoldás Apple Configurator-profilokat (.mobileconfig-fájlokat) használ, az Intune ezeket közvetlenül tudja importálni egyéni konfigurációs szabályzatokként.
 
-- **iOS Mobile Application Configuration-szabályzatok:** Ha a korábbi MDM-megoldás iOS Mobile Application Configuration-szabályzatokat használ, az Intune ezeket közvetlenül be tudja importálni, amennyiben megfelelnek az Apple által tulajdonságlistákhoz megadott XML-formátumnak.
+- **iOS-es mobileszköz-konfigurációs házirendek:** Ha a meglévő MDM-megoldás iOS/iPadOS Mobile alkalmazás-konfigurációs házirendeket használ, akkor az Intune közvetlenül importálhatja azokat, amennyiben azok megfelelnek az Apple által a tulajdonságok listájához megadott XML-formátumnak.
 
 - Útmutató egyéni szabályzat felvételéhez [iOS-en](../configuration/custom-settings-ios.md).
 
-### <a name="task-4-create-and-deploy-device-compliance-policies-optional"></a>4. feladat: eszközmegfelelőségi szabályzatok létrehozása és telepítése (nem kötelező)
+### <a name="task-4-create-and-deploy-device-compliance-policies-optional"></a>4\. feladat: eszközmegfelelőségi szabályzatok létrehozása és telepítése (nem kötelező)
 
 Az eszközmegfelelőségi szabályzatok biztonsági jellegű beállítások értékét vizsgálják, és jelentik, hogy mely eszközök felelnek meg a vállalati előírásoknak, és melyek nem. A beállítások a következők:
 
@@ -82,7 +82,7 @@ További források az eszközmegfelelőségi szabályzatokkal kapcsolatban:
 
 - Az [eszközmegfelelőségi szabályzatok](../protect/device-compliance-get-started.md) ismertetése
 
-### <a name="task-5-publish-and-deploy-apps"></a>5. feladat: alkalmazások közzététele és telepítése
+### <a name="task-5-publish-and-deploy-apps"></a>5\. feladat: alkalmazások közzététele és telepítése
 
 Az Intune MDM használata esetén alkalmazásokat telepíthet automatikus telepítésük megkövetelésével vagy a Céges portálon való közzétételükkel.
 
@@ -90,7 +90,7 @@ Az Intune MDM használata esetén alkalmazásokat telepíthet automatikus telep�
 
 - [Alkalmazások üzembe helyezése](../apps/apps-deploy.md).
 
-### <a name="task-6-enable-device-enrollment"></a>6. feladat: eszközök regisztrálásának lehetővé tétele
+### <a name="task-6-enable-device-enrollment"></a>6\. feladat: eszközök regisztrálásának lehetővé tétele
 
 Az eszköz regisztrálása az eszköz kezeléséhez szükséges. Útmutató [a vállalati és a személyes tulajdonú eszközök regisztrációra való felkészítéséhez](../enrollment/device-enrollment.md)
 

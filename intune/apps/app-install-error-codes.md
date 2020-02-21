@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1a9ce1a881e9a30d0f18cb676e7f7f11c4b5c8b1
-ms.sourcegitcommit: ecaff388038fb800f2e646f8efcf8f3b1e2fd1b1
+ms.openlocfilehash: ef20d378740eae73c41521d8dfc7f8fdd853fdb9
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77437834"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77513899"
 ---
 # <a name="intune-app-installation-error-reference"></a>Az Intune-alkalmazás telepítési hibájának referenciája
 
@@ -51,7 +51,7 @@ Ez a szakasz az eszköz rendszergazdája (DA) és a Samsung Knox-regisztrációt
 | 0xC7D14FB1  | – 942583887 | A végfelhasználó megszakította az alkalmazás telepítését. | A felhasználó explicit módon eltávolította az alkalmazást. Ezt a hibát akkor adja vissza a rendszer, amikor a felhasználó megszakította az Android operációsrendszer-telepítési tevékenységet. Amikor az operációs rendszer telepítésről szóló prompt megjelent, a felhasználó a Mégse gombra vagy a prompton kívülre kattintott. Ezt a hibát a rendszer csak a DA forgatókönyvek esetében adja vissza. KNOX-forgatókönyvek esetén a rendszer nem kéri a felhasználót a telepítésre, ezt csendesen teheti meg. Az Intune megjelenít egy értesítést, amelyre rákattintva a felhasználó újrapróbálkozhat. Ha az alkalmazás egy elérhető alkalmazás, akkor az értesítés elhagyható. Ha azonban az alkalmazás szükséges, nem lehet elvetni. Kérje meg a felhasználót, hogy ne szakítsa meg a telepítést. |
 | 0xC7D14FB9 | – 942583879 | A végfelhasználó megszakította az alkalmazás telepítését. (Az elfogadás kérése) | Tájékoztassa a felhasználót, hogy fogadja el az Intune-ban üzembe helyezett alkalmazást, és amikor a rendszer kéri, telepítse az alkalmazást. |
 
-## <a name="ios-app-installation-errors"></a>iOS-alkalmazások telepítési hibái
+## <a name="ios-and-ipados-app-installation-errors"></a>iOS-és iPadOS-alkalmazások telepítési hibái
 
 A következő hibaüzenetek és leírások részletesen ismertetik az iOS/iPadOS telepítési hibáit. 
 

@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 12/05/2019
+ms.date: 02/18/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8748639f0407de7b1bb83f646b7decf8c838766
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: 6dff94a9bfeb21f09b8a8c629e10ba562d7e642b
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75206669"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77511426"
 ---
 # <a name="create-a-device-profile-in-microsoft-intune"></a>Eszközprofil létrehozása a Microsoft Intune-ban
 
@@ -57,7 +57,7 @@ Ez a cikk:
        - **iOS/iPadOS**
        - **macOS**
        - **Windows Phone 8.1**
-       - **Windows 8.1 és újabb**
+       - **Windows 8.1 és újabb verziók**
        - **Windows 10 és újabb**
 
    - **Profil típusa**: válassza ki a létrehozni kívánt beállítások típusát. A megjelenő lista a választott **platformtól** függ.
@@ -87,7 +87,7 @@ Ez a cikk:
 
      Ha például az **iOS/iPadOS** lehetőséget választja a platformhoz, a profil típusa beállítás a következő profilhoz hasonlóan néz ki:
 
-     ![IOS-profil létrehozása az Intune-ban](./media/device-profile-create/create-device-profile.png)
+     ![IOS-/iPadOS-profil létrehozása az Intune-ban](./media/device-profile-create/create-device-profile.png)
 
 4. Ha elkészült, válassza **az OK** > **Létrehozás** lehetőséget a módosítások mentéséhez. Ekkor létrejön a profil, és megjelenik a listában.
 
@@ -101,7 +101,7 @@ További információ a hatóköri címkékről és a műveletekről: [a RBAC é
 
 1. Válassza a **hatókör (címkék)** lehetőséget.
 2. Új hatóköri címke létrehozásához válassza a **Hozzáadás** lehetőséget. Vagy válasszon ki egy meglévő hatókör címkét a listából.
-3. A módosítások mentéséhez válassza az **OK** gombot.
+3. A módosítások mentéséhez kattintson az **OK** gombra.
 
 ## <a name="applicability-rules"></a>Alkalmazhatósági szabályok
 
@@ -171,10 +171,10 @@ Profilok létrehozásakor vegye figyelembe az alábbi javaslatokat:
   **Profilnév**: felügyeleti sablon – OneDrive konfigurációs profil az összes Windows 10 felhasználóhoz  
   **Profil leírása**: a OneDrive felügyeleti sablon profilja, amely tartalmazza a minimális és alapbeállításokat minden Windows 10 felhasználóhoz. A user@contoso.com hozta létre, hogy megakadályozza a felhasználók számára a szervezeti adatok személyes OneDrive-fiókokhoz való megosztását.
 
-  **Profil neve**: VPN-profil az összes iOS-felhasználóhoz  
-  **Profil leírása**: VPN-profil, amely tartalmazza az iOS-felhasználók minimális és alapszintű beállításait a contoso VPN-hez való csatlakozáshoz. Létrehozta user@contoso.com így a felhasználók automatikusan hitelesítik magukat a VPN-en ahelyett, hogy a felhasználók felhasználónevét és jelszavát kérik.
+  **Profil neve**: VPN-profil az összes iOS/iPadOS-felhasználóhoz  
+  **Profil leírása**: VPN-profil, amely tartalmazza az iOS/iPadOS összes felhasználójának a contoso VPN-hez való csatlakozáshoz szükséges minimális és alapszintű beállításait. Létrehozta user@contoso.com így a felhasználók automatikusan hitelesítik magukat a VPN-en ahelyett, hogy a felhasználók felhasználónevét és jelszavát kérik.
 
-- Hozza létre a profilt a feladatával, például a Microsoft Edge beállításainak konfigurálása, a Microsoft Defender víruskereső beállításainak engedélyezése, az iOS-es jailbroken-eszközök letiltása stb.
+- Hozza létre a profilt a feladatával, például a Microsoft Edge beállításainak konfigurálása, a Microsoft Defender víruskereső beállításainak engedélyezése, az iOS/iPadOS feltört eszközök letiltása stb.
 
 - Olyan profilok hozhatók létre, amelyek adott csoportokra, például marketingre, értékesítésre, rendszergazdákra vagy hely vagy iskolai rendszerre vonatkoznak.
 

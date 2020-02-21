@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e93e69b5cce2c54ae07410309b33870dd828f563
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: bd204271b9ae3e57e15a101647444913749f4109
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72509088"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514234"
 ---
 # <a name="data-collection-in-intune"></a>Adatgyűjtés az Intune-ban
 
@@ -60,11 +60,11 @@ Az Intune által gyűjtött azonosított adatok többek között az alábbiak le
   - ICCID
   - Telefonszám
 - Az auditnapló adatai, többek között az alábbi tevékenységekhez kapcsolódó adatok
-  - A számítógépeken futó
+  - Felügyelet
   - Létrehozás
   - Frissítés (szerkesztés)
   - Törlés
-  - Hozzárendelés
+  - Kiosztás
   - Távoli feladatok
 - Támogatási információk
   - Kapcsolattartási adatok (név, telefonszám, e-mail-cím)
@@ -112,7 +112,7 @@ Az Intune által gyűjtött álnevesített adatok többek között az alábbiak 
   - Fiókazonosító
   - EAS-eszközazonosító
   - Platformspecifikus azonosítók
-  - AppleID iOS-eszközök esetén
+  - AppleID iOS-/iPadOS-eszközökhöz
   - MAC-címek Mac-eszközök esetén
   - Windows-azonosító Windows-eszközök esetén
 - Felügyelt alkalmazás adatai
@@ -136,7 +136,7 @@ Az Intune által gyűjtött összesített adatok többek között az alábbiak l
   - installedDeviceCount: Azoknak az eszközöknek a száma, amelyeken az alkalmazás telepítve van.
   - notApplicableDeviceCount: Azoknak az eszközöknek a száma, amelyeken az alkalmazás nem telepíthető.
   - notInstalledDeviceCount: Azoknak az eszközöknek a száma, amelyekre az alkalmazás telepíthető, de nincs telepíve rajtuk.
-  - pendingInstallDeviceCount: Azoknak az eszközöknek a száma, amelyekre az alkalmazás telepíthető, és a telepítés függőben van.
+  - pendingInstallDeviceCount: azon eszközök száma, amelyeken az alkalmazás alkalmazható, és a telepítés függőben van.
 
 ## <a name="next-steps"></a>További lépések
 

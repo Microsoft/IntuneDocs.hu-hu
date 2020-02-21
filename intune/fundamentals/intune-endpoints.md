@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2503013e6ca0d907a05c81f895b44878784dbbd4
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 817f68d7082674145d482dc4c0bd1527fe0edb0b
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72502721"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514506"
 ---
 # <a name="network-endpoints-for-microsoft-intune"></a>Microsoft Intune hálózati végpontok  
 
@@ -93,7 +93,7 @@ A következő táblázat az Intune-ügyfél által elért portokat és szolgált
 
 Ha az Intune-t használja PowerShell-parancsfájlok vagy Win32-alkalmazások üzembe helyezéséhez, hozzáférést kell biztosítania azokhoz a végpontokhoz is, amelyekben a bérlő jelenleg található.
 
-|ASU | Tároló neve | CDN |
+|ASU | Tároló neve | Tartalomkézbesítési hálózat (CDN) |
 | --- | --- |--- |
 | AMSUA0601 | prodmsua06data | https:\//prodmsua06data.azureedge.net |
 | AMSUA0602 | prodamsua0602data | https:\//prodamsua0602data.azureedge.net |
@@ -143,10 +143,10 @@ Kézbesítési optimalizálási metaadatok:
 
 ## <a name="apple-device-network-information"></a>Apple-eszközhálózati információ  
 
-|Felhasználási mód:|Állomásnév (IP-cím/alhálózat)|Protokoll|Port|
+|Felhasználási mód|Hostname (IP address/subnet)|Protokoll|Port|
 |-----|--------|------|-------|
 |Apple-kiszolgálók tartalmának beolvasása és megjelenítése|itunes.apple.com<br>\*. itunes.apple.com<br>\*. mzstatic.com<br>\*. phobos.apple.com<br> \*. phobos.itunes-apple.com.akadns.net |    HTTP    |      80      |
 |Kommunikáció a APNS-kiszolgálókkal|#-courier.push.apple.com<br>a "#" a 0 és 50 közötti véletlenszerű szám.|    TCP     |  5223 és 443  |
 |Különböző funkciók, többek között a World Wide Web, az iTunes Store, a macOS App Store, az iCloud, az üzenetküldés stb. |phobos.apple.com<br>ocsp.apple.com<br>ax.itunes.apple.com<br>ax.itunes.apple.com.edgesuite.net| HTTP/HTTPS |  80 vagy 443   |
 
-További információ: Apple [szoftvertermékek által használt TCP-és UDP-portok](https://support.apple.com/en-us/HT202944), [MacOS-, iOS-és iTunes Server Host-kapcsolatok, valamint iTunes-alapú háttér-folyamatok](https://support.apple.com/en-us/HT201999), valamint [Ha a MacOS-és iOS-ügyfelek nem kapnak Apple leküldéses értesítéseket](https://support.apple.com/en-us/HT203609).  
+További információkért lásd az Apple [szoftvertermékek által használt Apple TCP-és UDP-portokat](https://support.apple.com/HT202944), [a MacOS, iOS/iPadOS, valamint az iTunes Server Host Connections és az iTunes-alapú háttérben futó folyamatokat](https://support.apple.com/HT201999), illetve [Ha a MacOS-és iOS-/IPadOS-ügyfelek nem kapnak Apple leküldéses értesítéseket](https://support.apple.com/HT203609).  

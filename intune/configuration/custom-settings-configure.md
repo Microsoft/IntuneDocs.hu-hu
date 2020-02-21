@@ -1,11 +1,11 @@
 ---
 title: Egyéni eszközbeállítások az Azure-beli Intune-ban | Microsoft Docs
-description: A Windows Phone-telefon, a Windows 8,1, a Windows 10 és újabb, az Android, az Android Enterprise, a macOS és az iOS rendszerű eszközök egyéni beállításainak használatára szolgáló profil hozzáadása vagy létrehozása Microsoft Intune
+description: A Windows Phone-telefon, a Windows 8,1, a Windows 10 és újabb, az Android, az Android Enterprise, a macOS és az iOS/iPadOS eszközök egyéni beállításainak használatára szolgáló profil hozzáadása vagy létrehozása Microsoft Intune
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/05/2019
+ms.date: 02/18/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,22 +15,22 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1c815a2c911dba6d17fc864b446122931fa88e91
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: d2ca5a120e50819208743564279a5d16c6b4aa2f
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73755369"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77511514"
 ---
 # <a name="create-a-profile-with-custom-settings-in-intune"></a>Egyéni beállításokkal rendelkező profil létrehozása az Intune-ban
 
 ## <a name="what-are-custom-profiles"></a>Mik azok az egyéni profilok?
 
-A Microsoft Intune számos beépített beállítást tartalmaz az eszközök különböző funkcióinak vezérléséhez. Emellett egyéni profilokat is létrehozhat. Az egyéni profilok akkor hasznosak, ha olyan eszközbeállításokat és funkciókat kíván használni, amelyek nem érhetők el beépítetten az Intune-ban. Ezen profilok a szervezet eszközeinek módosítható funkcióit és beállításait tartalmazzák. Létrehozhat például egy olyan egyéni profilt, amely minden iOS rendszerű eszközre ugyanazt a beállítást alkalmazza.
+A Microsoft Intune számos beépített beállítást tartalmaz az eszközök különböző funkcióinak vezérléséhez. Emellett egyéni profilokat is létrehozhat. Az egyéni profilok akkor hasznosak, ha olyan eszközbeállításokat és funkciókat kíván használni, amelyek nem érhetők el beépítetten az Intune-ban. Ezen profilok a szervezet eszközeinek módosítható funkcióit és beállításait tartalmazzák. Létrehozhat például egy egyéni profilt, amely ugyanazt a szolgáltatást állítja be minden iOS/iPadOS eszközhöz.
 
 További információt a konfigurációs profilokról a [Microsoft Intune-eszközprofilokat bemutató](device-profiles.md) cikkben találhat. 
 
-Ez a cikk Android-, Android Enterprise-, iOS-, macOS-, valamint Windows-eszközökön használható egyéni profilok létrehozásához tartalmaz hivatkozásokat.
+Ez a cikk az Android, az Android Enterprise, az iOS/iPadOS, a macOS és a Windows rendszerhez készült egyéni profilok létrehozására mutató hivatkozásokat tartalmaz.
 
 ## <a name="available-platforms"></a>Elérhető platformok
 

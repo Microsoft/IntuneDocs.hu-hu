@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 38bc86b1b9ba85eb7885a0e00673e551821063c1
-ms.sourcegitcommit: 459b0ee01eb6e69cc0ce66d4c4b81d73f510f96d
+ms.openlocfilehash: 4496a5bbc6d5ee5134dc4e6a795494710ea6865d
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77034243"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515220"
 ---
 # <a name="overview-for-troubleshooting-scep-certificate-profiles-with-microsoft-intune"></a>Az SCEP-tanúsítványok profiljainak hibaelhárítása Microsoft Intune
 
@@ -123,9 +123,9 @@ Emellett [feltölthet és e-mail-naplókat](/intune-user-help/send-logs-to-your-
 
 ### <a name="logs-for-ios-and-ipados-devices"></a>IOS-és iPadOS-eszközök naplófájljai
 
-Az iOS-t vagy iPadOS-t futtató eszközökön olyan hibakeresési naplókat és **Xcode** használ, amelyek Mac számítógépen futnak:
+Az iOS/iPadOS operációs rendszert futtató eszközökön olyan hibakeresési naplókat és **Xcode** használ, amelyek Mac számítógépen futnak:
 
-1. Az iOS-eszköz csatlakoztatása Mac számítógéphez, majd az **alkalmazások** > **segédprogramok** elemre kattintva nyissa meg a konzol alkalmazást. 
+1. Az iOS/iPadOS eszköz csatlakoztatása Mac számítógéphez, majd az **alkalmazások** > **segédprogramok** elemre kattintva nyissa meg a konzol alkalmazást. 
 
 2. A **művelet**területen jelölje be az **információs üzenetek belefoglalása** és a **hibakeresési üzenetek belefoglalása**jelölőnégyzetet.
 

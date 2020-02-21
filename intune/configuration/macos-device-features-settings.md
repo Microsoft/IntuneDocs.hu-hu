@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 12/12/2019
+ms.date: 02/18/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 791e2a1313480bdf1ad95988d48664d6620ba0b3
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: df5b53be159fd082090e61fd736e4c9329644c85
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75206346"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77512738"
 ---
 # <a name="macos-device-feature-settings-in-intune"></a>macOS-eszköz funkciójának beállításai az Intune-ban
 
@@ -29,7 +29,7 @@ Az Intune tartalmaz néhány beépített beállítást a macOS-eszközök funkci
 
 Ezekkel a szolgáltatásokkal vezérelheti a macOS-eszközöket a mobileszköz-kezelési (MDM) megoldás részeként.
 
-Ez a cikk felsorolja ezeket a beállításokat, és leírja az egyes beállításokat. Emellett felsorolja azokat a lépéseket, amelyekkel lekérheti a AirPrint-nyomtatók IP-címét, elérési útját és portját a Terminal app (Emulator) használatával. Az eszköz funkcióival kapcsolatos további információkért lépjen az [iOS-vagy MacOS-eszköz funkció beállításainak hozzáadása lehetőségre](device-features-configure.md).
+Ez a cikk felsorolja ezeket a beállításokat, és leírja az egyes beállításokat. Emellett felsorolja azokat a lépéseket, amelyekkel lekérheti a AirPrint-nyomtatók IP-címét, elérési útját és portját a Terminal app (Emulator) használatával. Az eszköz funkcióival kapcsolatos további információkért lépjen az [iOS/iPadOS vagy a MacOS-eszköz szolgáltatás beállításainak hozzáadása lehetőségre](device-features-configure.md).
 
 ## <a name="before-you-begin"></a>Előkészületek
 
@@ -44,8 +44,8 @@ Ez a cikk felsorolja ezeket a beállításokat, és leírja az egyes beállítá
 
 - **IP-cím**: adja meg a nyomtató IPv4-vagy IPv6-címét. Ha állomásneveket használ a nyomtatók azonosítására, akkor az IP-címet a nyomtatónak a terminál alkalmazásban történő pingelésével érheti el. [Az IP-cím és az elérési út](#get-the-ip-address-and-path) (ebben a cikkben) beszerzése további részleteket tartalmaz.
 - **Elérési út**: adja meg a nyomtató elérési útját. Az elérési út általában a hálózatban lévő nyomtatókhoz `ipp/print`. [Az IP-cím és az elérési út](#get-the-ip-address-and-path) (ebben a cikkben) beszerzése további részleteket tartalmaz.
-- **Port** (iOS 11,0 és újabb): adja meg a AirPrint célhelyének figyelési portját. Ha üresen hagyja ezt a tulajdonságot, a AirPrint az alapértelmezett portot használja.
-- **TLS** (iOS 11,0 és újabb): válassza az **Engedélyezés** lehetőséget a AirPrint-kapcsolatok Transport Layer Security (TLS) használatával történő biztonságossá tételéhez.
+- **Port** (iOS 11.0 +, iPadOS 13.0 +): adja meg a AirPrint célhelyének figyelő portját. Ha üresen hagyja ezt a tulajdonságot, a AirPrint az alapértelmezett portot használja.
+- **TLS** (iOS 11.0 +, iPadOS 13.0 +): válassza az **Engedélyezés** lehetőséget a AirPrint-kapcsolatok biztonságossá tételéhez Transport Layer Security (TLS) használatával.
 
 - **Hozzáadás** A AirPrint-kiszolgáló. Több AirPrint-kiszolgálót is hozzáadhat.
 
@@ -105,7 +105,7 @@ AirPrinter-kiszolgálók hozzáadásához szüksége lesz a nyomtató IP-címér
 - **Újraindítás gomb**: az **Elrejtés** gomb nem jeleníti meg az újraindítás gombot a bejelentkezési képernyőn. **Nincs konfigurálva** (alapértelmezés) az újraindítás gombot jeleníti meg.
 - **Alvó állapot gomb**: az **Elrejtés** nem jelenik meg a bejelentkezési képernyő alvó állapot gombján. **Nincs konfigurálva** (alapértelmezés) az alvó gomb megjelenítése.
 
-#### <a name="other"></a>Más
+#### <a name="other"></a>Egyéb
 
 - **Felhasználói bejelentkezés letiltása a konzolról**: **letiltja** a bejelentkezéshez használt MacOS-parancssor elrejtése. A tipikus felhasználók esetében **Tiltsa le** ezt a beállítást. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a speciális felhasználók számára a bejelentkezést a MacOS parancssor használatával. A konzol mód megadásához a felhasználók a Felhasználónév mezőbe beírhatják `>console`, és a konzol ablakban kell hitelesíteniük.
 
@@ -219,7 +219,7 @@ Ez a funkció az alábbiakra vonatkozik:
 
   `osascript -e 'id of app "ExampleApp"'`
 
-- **Tartomány**: adja meg az alkalmazáshoz társítandó webhely tartományát. A tartomány tartalmaz egy szolgáltatástípus és egy teljes tartománynevet (például `webcredentials:www.contoso.com`).
+- **Tartomány**: adja meg az alkalmazáshoz társítandó webhely tartományát. A tartomány tartalmaz egy szolgáltatástípus és egy teljes tartománynevet (például `webcredentials: www.contoso.com`).
 
   A társított tartomány összes altartományával egyeztetheti `*.` (egy csillag helyettesítő karakter és egy pont) megadásával a tartomány kezdete előtt. Az időszakot kötelező megadni. A pontos tartományok magasabb prioritással rendelkeznek, mint a helyettesítő tartományok. Így a fölérendelt tartományokból származó minták egyeztetése akkor történik meg, *Ha* nem található egyezés a teljes altartományban.
 
@@ -238,4 +238,4 @@ Ez a funkció az alábbiakra vonatkozik:
 
 [Rendelje hozzá a profilt](device-profile-assign.md), és [kövesse nyomon az állapotát](device-profile-monitor.md).
 
-Az eszközök funkcióit az [iOS](ios-device-features-settings.md)rendszeren is megadhatja.
+Az eszköz funkcióit [iOS/iPadOS](ios-device-features-settings.md)is konfigurálhatja.

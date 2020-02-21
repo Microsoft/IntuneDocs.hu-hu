@@ -1,7 +1,7 @@
 ---
-title: Az iOS-es Osztályterem alkalmazás Intune-beállításai
+title: Az iOS/iPadOS tanterem alkalmazás Intune-beállításai
 titleSuffix: Microsoft Intune
-description: Tájékoztatás az Intune azon beállításairól, amelyekkel szabályozhatók az Osztályterem alkalmazás beállításai az iOS-eszközökön.
+description: Ismerje meg az Intune azon beállításait, amelyek segítségével szabályozhatja az osztályterem alkalmazás beállításait az iOS-vagy iPadOS-eszközökön.
 keywords: ''
 author: lenewsad
 ms.author: lanewsad
@@ -18,17 +18,17 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6814b4d98b8512ce95119b05cc299964e486ac64
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 74b9e6818de2853ae22a1fa1bb580b32075dcf19
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74784221"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514421"
 ---
-# <a name="how-to-configure-intune-settings-for-the-ios-classroom-app"></a>Az iOS-beli Osztályterem alkalmazás Intune-beállításainak konfigurálása
+# <a name="how-to-configure-intune-settings-for-the-iosipados-classroom-app"></a>Az iOS/iPadOS tantermi alkalmazás Intune-beállításainak konfigurálása
 
 > [!NOTE]
-> Az Intune jelenleg nem támogatja az osztályterem alkalmazás konfigurálását. Ez a cikk csak az Intune-ban meglévő iOS-es oktatási profilokkal rendelkező felhasználókra érvényes.  
+> Az Intune jelenleg nem támogatja az osztályterem alkalmazás konfigurálását. Ez a cikk csak az Intune-ban már meglévő iOS/iPadOS oktatási profilokkal rendelkező felhasználókra érvényes.  
 
 ## <a name="introduction"></a>Bevezetés
 Az [Osztályterem](https://itunes.apple.com/app/id1085319084) egy olyan alkalmazás, amely lehetővé teszi az oktatóknak a tanulási folyamat és a diákok eszközeinek irányítását az osztályteremben. Néhány példa a tanároknak az alkalmazás által elérhető lehetőségeire:
@@ -39,7 +39,7 @@ Az [Osztályterem](https://itunes.apple.com/app/id1085319084) egy olyan alkalmaz
 - Egy könyvjelzőre vagy egy könyv adott fejezetére léptetheti a diákok iPadjeit
 - Megjelenítheti egy diák iPad-képernyőjét az Apple TV-n
 
-Az Osztályterem alkalmazást csak az után telepítheti eszközére, hogy létrehozott és konfigurált egy Intune iOS oktatási eszközprofilt.
+Az osztályterem eszközön való beállításához létre kell hoznia és konfigurálnia kell egy Intune iOS/iPadOS oktatási eszköz profilját.
 
 ## <a name="before-you-start"></a>Előkészületek
 
@@ -47,9 +47,9 @@ A beállítások konfigurálása előtt vegye figyelembe a következőket:
 
 - Az oktatók és a diákok iPadjeinek regisztrálva kell lenniük az Intune-ban.
 - Győződjön meg arról, hogy az oktató eszközén telepítve van az [Apple Osztályterem](https://itunes.apple.com/us/app/classroom/id1085319084?mt=8) alkalmazás. Telepítheti az alkalmazást manuálisan, vagy használhatja az [Intune-alkalmazáskezelést](../apps/app-management.md).
-- Tanúsítványokat kell konfigurálnia az oktatói és a diákeszközök közötti kapcsolat hitelesítéséhez (lásd a 2. lépést: iOS-es oktatási profil létrehozása és hozzárendelése az Intune-ban).
+- Tanúsítványokat kell konfigurálnia a tanári és a tanulói eszközök közötti kapcsolatok hitelesítéséhez (lásd: 2. lépés, iOS/iPadOS oktatási profil létrehozása és kiosztása az Intune-ban).
 - A tanári és a hallgatói iPadeknek azonos Wi-Fi hálózaton kell lenniük, és a Bluetooth használatának engedélyezése is szükséges.
-- Az Osztályterem alkalmazás iOS 9.3 vagy újabb operációs rendszerű felügyelt iPadeken működik.
+- Az osztályterem alkalmazás iOS/iPadOS 9,3 vagy újabb rendszerű felügyelt Ipadeken fut.
 - Ebben a kiadásban az Intune az 1:1-es forgatókönyv kezelését támogatja, amelynek esetén minden diák saját dedikált iPad készülékkel rendelkezik.
 
 
@@ -72,7 +72,7 @@ Az SDS-be a következő módszerek valamelyikével importálhat adatokat:
 - [További információ a Microsoft School Data Sync-kel kapcsolatban](https://sds.microsoft.com/)
 - [További tudnivalók az Azure Active Directorybeli licencelésről](https://docs.microsoft.com/azure/active-directory/active-directory-licensing-whatis-azure-portal)
 
-## <a name="step-2---create-and-assign-an-ios-education-profile-in-intune"></a>2\. lépés – Egy iOS-es Oktatás profil létrehozása és hozzárendelése az Intune-ban
+## <a name="step-2---create-and-assign-an-iosipados-education-profile-in-intune"></a>2\. lépés – iOS/iPadOS oktatási profil létrehozása és társítása az Intune-ban
 
 ### <a name="configure-general-settings"></a>Általános beállítások konfigurálása
 
@@ -80,7 +80,7 @@ Az SDS-be a következő módszerek valamelyikével importálhat adatokat:
 3. Az **Intune** panelen válassza az **Eszközkonfiguráció** lehetőséget.
 2. Az **Eszközkonfiguráció** panel **Kezelés** területén válassza a **Profilok** lehetőséget.
 5. A profilok paneljén válassza a **Profil létrehozása** lehetőséget.
-6. A **Profil létrehozása** panelen adja meg az iOS-es oktatási profil **Nevét** és **Leírását**.
+6. A **profil létrehozása** panelen adja meg az iOS/iPadOS oktatási profil **nevét** és **leírását** .
 7. A **Platform** legördülő listájában válassza az **iOS** lehetőséget.
 8. A **Profil típusa** legördülő listában válassza az **Oktatás** lehetőséget.
 9. Válassza a **Beállítások** > **Konfigurálás** lehetőséget.

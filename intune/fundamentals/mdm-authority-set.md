@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 43c5d0731736df193bf615391ad486a60dff6cdd
-ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
+ms.openlocfilehash: b611b2307b7b4f7e789e7db9d070e4b6b3f1350c
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75885898"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514489"
 ---
 # <a name="set-the-mobile-device-management-authority"></a>Mobileszköz-felügyeleti szolgáltató megadása
 
@@ -47,7 +47,7 @@ Ha még nem állította be az MDM-szolgáltatót, kövesse az alábbi lépéseke
 1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza ki a narancssárga szalagcímet a mobileszköz- **kezelő szolgáltató** beállításának megnyitásához. A narancssárga szalagcím csak akkor jelenik meg, ha még nem állított be az MDM-szolgáltatót.
 2. A **Mobileszköz-kezelő szolgáltató** szakaszban válassza ki az alábbiak közül a kívánt MDM-szolgáltatót:
    - **Intune MDM-szolgáltató**
-   - **Nincsenek**
+   - **Egyik sem**
 
    ![Képernyőkép az Intune mobileszköz-kezelő szolgáltató beállítására szolgáló képernyőjéről](./media/mdm-authority-set/set-mdm-auth.png)
 
@@ -69,11 +69,11 @@ Ezekben az esetekben a jóváhagyás szigorúan csak egy mobileszköz-felügyele
 Az új MDM-szolgáltatóra való váltás után, az eszköz bejelentkezése és a szolgáltatóval való szinkronizálása előtt valószínűleg egy átmeneti időszak következik, amely akár 8 órán át is tarthat. Konfigurálnia kell az új MDM-szolgáltató beállításait annak biztosításához, hogy a regisztrált eszközök továbbra is felügyelet és védelem alatt maradnak a módosítás után. 
 - Az eszközöknek csatlakozniuk kell a szolgáltatáshoz a váltás után annak érdekében, hogy az új MDM-szolgáltató (az Intune önálló verziója) lecserélhesse az eszköz meglévő beállításait.
 - Miután módosította az MDM-szolgáltatót, az előző MDM-szolgáltató alapszintű beállításai (például a profilok) az eszközön maradnak legfeljebb hét napig, vagy amíg az eszköz első alkalommal nem csatlakozik a szolgáltatáshoz. Javasoljuk, hogy a lehető leghamarabb konfigurálja az alkalmazásokat és a beállításokat (szabályzatok, profilok, alkalmazások stb.) az új MDM-szolgáltatóban, és telepítse a beállítást azokra a felhasználói csoportokra, amelyek a meglévő regisztrált eszközökkel rendelkező felhasználókat tartalmazzák. Amint egy eszköz csatlakozik a szolgáltatáshoz az MDM-szolgáltató váltása után, megkapja az új MDM-szolgáltató beállításait, és meggátolja a felügyeleti és a védelmi hiányosságokat.
-- Azok az eszközök, amelyek nem rendelkeznek hozzárendelt felhasználókkal (általában az iOS Készülékregisztrációs programja vagy csoportos regisztrálási folyamatok esetén), nem migrálhatók az új MDM-szolgáltatóba. Ezeknek az eszközöknek az új MDM-szolgáltatóba való áthelyezéséhez az ügyfélszolgálat segítségét kell kérnie.
+- Azok az eszközök, amelyek nem rendelkeznek társított felhasználókkal (általában iOS/iPadOS Készülékregisztrációs program vagy tömeges beléptetési forgatókönyvekkel) nem települnek át az új MDM-szolgáltatóba. Ezeknek az eszközöknek az új MDM-szolgáltatóba való áthelyezéséhez az ügyfélszolgálat segítségét kell kérnie.
 
 ## <a name="change-mdm-authority-to-office-365"></a>Az Office 365 beállítása mobileszköz-felügyeleti szolgáltatóként
 
-Az Office 365 MDM aktiválásához (vagy a MDM párhuzamos létezésének engedélyezéséhez a meglévő Intune-szolgáltatáson kívül) nyissa meg a [https://protection.office.com](https://protection.office.com), válassza az **adatveszteség-megelőzés** > **eszköz biztonsági házirendek** > **a felügyelt eszközök listájának megtekintése** >  első **lépések**lehetőséget.
+Az Office 365 MDM aktiválásához (vagy a MDM párhuzamos létezésének engedélyezéséhez a meglévő Intune-szolgáltatáson kívül) nyissa meg a [https://protection.office.com](https://protection.office.com), válassza az **adatveszteség-megelőzés** > **eszköz biztonsági házirendek** > **a felügyelt eszközök listájának megtekintése** > első **lépések**lehetőséget.
 
 További információ: [Mobileszköz-felügyelet (MDM) beállítása az Office 365-ben](https://support.office.com/en-us/article/Set-up-Mobile-Device-Management-MDM-in-Office-365-dd892318-bc44-4eb1-af00-9db5430be3cd).
 
@@ -93,7 +93,7 @@ A mobileszköz-felügyeleti szolgáltató nem állítható vissza Ismeretlenre. 
 - Az MDM-szolgáltató módosítása során (vagy röviddel utána) bekapcsolt és online állapotban lévő eszközök esetében akár 8 órás késés várható (a következő ütemezett rendszeres bejelentkezés idejétől függően), mielőtt az eszközök regisztrációja befejeződne az új MDM-szolgáltató szolgáltatása alatt.    
 
   > [!IMPORTANT]    
-  > Az MDM-szolgáltató módosítása és a megújított APNs-tanúsítvány az új szolgáltatóra való feltöltése között az iOS-eszközök új eszközregisztrációi és -bejelentkezései sikertelenek lesznek. Ezért különösen fontos, hogy az MDM-szolgáltató módosítása után a lehető leghamarabb tekintse át és töltse fel az APNs-tanúsítványt az új szolgáltatóba.
+  > Az MDM-szolgáltató módosítása és a megújított APNs-tanúsítvány új szolgáltatóra való feltöltése után az új eszközök regisztrációja és az iOS-és iPadOS-eszközökhöz való bejelentkezés meghiúsul. Ezért különösen fontos, hogy az MDM-szolgáltató módosítása után a lehető leghamarabb tekintse át és töltse fel az APNs-tanúsítványt az új szolgáltatóba.
 
 - A felhasználók gyorsan átválthatnak az új MDM-szolgáltatóra, ha manuálisan bejelentkeznek az eszközről a szolgáltatásba. Ezt könnyen megtehetik a Céges portál alkalmazásból, ha elindítanak egy eszközmegfelelőségi ellenőrzést.
 - Annak ellenőrzéséhez, hogy a dolgok megfelelően működnek-e, miután az eszközök be lettek jelentkezve, és szinkronizálva lettek a szolgáltatással az MDM-szolgáltató módosítása után, keresse meg az eszközöket az új MDM-szolgáltatóban.
@@ -101,7 +101,7 @@ A mobileszköz-felügyeleti szolgáltató nem állítható vissza Ismeretlenre. 
   - E-mail-profil
   - VPN-profil
   - Tanúsítványprofil
-  - Wi-Fi-profil
+  - Wi-Fi profil
   - Konfigurációs profilok
 - Az új MDM-szolgáltatóra való váltás után a Microsoft Intune felügyeleti konzol megfelelőségi adatainak akár egy hétre is szükségük lehet, hogy pontosan jelenjenek meg. Az Azure Active Directory és az eszköz megfelelőségi állapotai azonban pontosak maradnak, az eszköz így továbbra is védelem alatt áll.
 - Ügyeljen rá, hogy a meglévő beállításokat felülírandó új beállítások ugyanazzal a névvel rendelkezzenek, mint a korábbiak. Így az új beállítások biztosan felülírják a korábbiakat. Ellenkező esetben előfordulhat, hogy az eszközökön felesleges profilok és szabályzatok maradnak.    

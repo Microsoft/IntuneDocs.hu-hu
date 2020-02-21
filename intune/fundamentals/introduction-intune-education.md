@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 71ccea34694bde8ea80a779b36ef612fcefb1add
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 97177f91edea1205f6e8349ee1a7194d0f5300e5
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72510196"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514540"
 ---
 # <a name="how-is-intune-for-education-different-from-the-full-device-management-experience-in-intune"></a>Miben tér el az Intune for Education az Intune teljes eszközfelügyeleti felületétől?
 
@@ -29,7 +29,7 @@ Az Intune for Education úgy segíti elő a tanárok és diákok hatékony munk�
 
 ![Az Intune for Education-konzol és az Intune-konzol összehasonlítása.](./media/introduction-intune-education/intune-azure-vs-intuneEDU.png)
 
-Az Intune for Educationben a Windows 10-es és iOS-es eszközök felügyeletéhez az Intune-ban elérhető összes mobileszköz-kezelési lehetőséget használhatja. A teljes körű eszközfelügyelet felületén Windows, iOS és Android rendszerű eszközök is kezelhetők.  
+Intune for Education lehetővé teszi a Windows 10 és az iOS/iPadOS eszközök felügyeletét az Intune-ban elérhető teljes MDM-képességek használatával. A teljes körű eszközkezelés lehetővé teszi a Windows, iOS/iPadOS és Android rendszerű eszközök kezelését.  
 
 Az Intune for Educationt önmagában, és az [Intune-ban elérhető összes eszközfelügyeleti lehetőséggel](what-is-intune.md) összhangban is használhatja. Az Intune for Educationt a [Microsoft Education](https://microsoft.com/education) keretében elérhető többi eszköz mellett is használhatja, így könnyebben kihasználhatja a Microsoft oktatási célú eszközeiben rejlő lehetőségeket.  
 

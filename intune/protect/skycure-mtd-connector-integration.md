@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 19c1bb959212ebeaea40f7089cba5533b6efeb71
-ms.sourcegitcommit: c46b0c2d4507be6a2786a4ea06009b2d5aafef85
+ms.openlocfilehash: 9f639c4d2c2bcfa62f828fa18973fe6a513b1a82
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76912607"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514863"
 ---
 # <a name="set-up-symantec-endpoint-protection-mobile-integration-with-intune"></a>A Symantec Endpoint Protection Mobile és az Intune közötti integráció beállítása
 
@@ -54,7 +54,7 @@ A SEP Mobile kétféleképpen integrálható az Intune-nal:
 
 ### <a name="how-are-the-sep-mobile-apps-used-with-azure-ad-and-intune"></a>Hogyan használja az Azure AD és az Intune a SEP Mobile-alkalmazásokat?
 
-- **iOS-es alkalmazás:** A végfelhasználók iOS-es alkalmazással jelentkezhetnek be az Azure AD-ba.
+- **iOS-alkalmazás:** Lehetővé teszi a végfelhasználók számára az Azure AD-be való bejelentkezést iOS-/iPadOS-alkalmazás használatával.
 
 - **Androidos alkalmazás:** A végfelhasználók androidos alkalmazással jelentkezhetnek be az Azure AD-ba.
 
@@ -77,11 +77,11 @@ A SEP Mobile kétféleképpen integrálható az Intune-nal:
 
 5. Amikor megnyílik a bejelentkezési oldal, adja meg Intune-os hitelesítő adatait, majd válassza az **Elfogadom** lehetőséget.
 
-    ![Kép az iOS-alkalmazás Intune-bejelentkezési képernyőjéről](./media/skycure-mtd-connector-integration/symantec-portal-basic-accept.png)
+    ![Az iOS/iPadOS alkalmazás Intune-beli bejelentkezési kérésének képe](./media/skycure-mtd-connector-integration/symantec-portal-basic-accept.png)
 
 6. Miután hozzáadta az alkalmazást az Azure AD-hoz, megjelenik egy erről szóló értesítés.
 
-    ![Kép az iOS-alkalmazás sikeres hozzáadását jelző képernyőről](./media/skycure-mtd-connector-integration/symantec-portal-basic-added.png)
+    ![Az iOS/iPadOS alkalmazás befejezési képernyőjének képe](./media/skycure-mtd-connector-integration/symantec-portal-basic-added.png)
 
 7. Ismételje meg ezeket a lépéseket a **SEP Mobile Android** és **Management** alkalmazásokhoz.
 
@@ -136,11 +136,11 @@ A SEP Mobile a Mobile Threat Defense szolgáltatást futtató eszközöket az Az
 
 6. A **iOS-alkalmazás** elem mellett válassza a **Hozzáadás az Active Directoryhoz** lehetőséget.
 
-    ![Kép az iOS-alkalmazás az Active Directoryhoz való hozzáadásáról](./media/skycure-mtd-connector-integration/symantec-portal-basic-add.png)
+    ![A kép, amely az iOS/iPadOS alkalmazás hozzáadását mutatja Active Directory](./media/skycure-mtd-connector-integration/symantec-portal-basic-add.png)
 
 7. Jelentkezzen be a címtárat kezelő Office 365-fiók Azure Active Directory-hitelesítő adataival.
 
-8. Válassza az **Elfogadás** gombot a SEP Mobile iOS-alkalmazás az Azure Active Directoryhoz való hozzáadásához.
+8. Az **elfogadás** gombra kattintva adja hozzá a Sep Mobile iOS/iPadOS alkalmazást Azure Active Directoryhoz.
 
     ![Kép az Elfogadás gombról](./media/skycure-mtd-connector-integration/symantec-portal-basic-accept.png)
 

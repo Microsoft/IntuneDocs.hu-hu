@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 01/28/2020
+ms.date: 02/18/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5b61c333f41054194b44c7517e508fe1ef6d28d4
-ms.sourcegitcommit: b0d683917af83170f85022b270270d8ced8e301c
+ms.openlocfilehash: c6678c3fbc247ac0595775c0ccc72c7bdb9c55e1
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76812366"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77513095"
 ---
 # <a name="assign-user-and-device-profiles-in-microsoft-intune"></a>Felhasználói és eszközprofilok hozzárendelése a Microsoft Intune-ban
 
@@ -77,7 +77,7 @@ Sok felhasználó kérdezi, hogy mikor kell felhasználói csoportokat használn
 
 Ha egy eszközön szeretné alkalmazni a beállításokat, függetlenül attól, hogy ki jelentkezett be, majd rendelje hozzá a profilokat az eszközök csoportjához. Az eszközök csoportjaira alkalmazott beállítások mindig az eszközön mennek, nem a felhasználó.
 
-Példa:
+Például:
 
 - Az eszközcsoport olyan eszközök felügyeletéhez hasznos, amelyek nem rendelkeznek dedikált felhasználóval. Például vannak olyan eszközök, amelyek a jegyek, a beolvasási leltár, a kihelyezett munkavégzők megosztva vannak, egy adott raktárhoz vannak rendelve, és így tovább. Helyezze ezeket az eszközöket egy eszköz csoportba, és rendelje hozzá a profilokat az eszközök csoportjához.
 
@@ -89,9 +89,9 @@ Ha szeretne összefoglalni, akkor használja az erőforráscsoportok használat�
 
 ### <a name="user-groups"></a>Felhasználói csoportok
 
-A felhasználói csoportokra alkalmazott Profilbeállítások mindig a felhasználóval mennek át, és a felhasználó a sok eszközre való bejelentkezéskor. Normális, hogy a felhasználóknak sok eszközük van, például a Surface Pro for Work és egy személyes iOS-eszköz. Emellett normális, hogy valaki hozzáfér az e-mailekhez és más szervezeti erőforrásokhoz az eszközökről.
+A felhasználói csoportokra alkalmazott Profilbeállítások mindig a felhasználóval mennek át, és a felhasználó a sok eszközre való bejelentkezéskor. Normális, hogy a felhasználóknak sok eszközük van, például a Surface Pro for Work és egy személyes iOS/iPadOS-eszköz. Emellett normális, hogy valaki hozzáfér az e-mailekhez és más szervezeti erőforrásokhoz az eszközökről.
 
-Példa:
+Például:
 
 - Egy ügyfélszolgálati ikont szeretne elhelyezni az összes felhasználó számára az összes eszközön. Ebben a forgatókönyvben ezeket a felhasználókat egy felhasználói csoportba helyezheti, és az ügyfélszolgálat ikonjának profilját hozzárendelheti ehhez a felhasználói csoporthoz.
 - A felhasználók új szervezet által birtokolt eszközt kapnak. A felhasználó tartományi fiókkal jelentkezik be az eszközre. Az eszköz automatikusan regisztrálva van az Azure AD-ben, és automatikusan az Intune kezeli. Ez a profil jó példa a felhasználók csoportjához való hozzárendelésre.
@@ -111,7 +111,7 @@ A profilok kiosztásakor használja a következő táblázatot a csoportok belef
 
 ![A támogatott beállítások közé tartoznak a profil-hozzárendelésből származó csoportok vagy kizárások](./media/device-profile-assign/include-exclude-user-device-groups.png)
 
-### <a name="what-you-should-know"></a>Tudnivalók
+### <a name="what-you-should-know"></a>Alapismeretek
 
 - A kizárás elsőbbséget élvez a következő azonos csoport típusú forgatókönyvek belefoglalásakor:
 

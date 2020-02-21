@@ -16,21 +16,21 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 88beb8f4791c127b0a225878f5bc43b6dd9b4025
-ms.sourcegitcommit: 637375a390b6e34f9c4415c77b99fe2980bbf554
+ms.openlocfilehash: 9afb8f431ae301fe74f420c11205a7ed2637434b
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75839381"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514625"
 ---
 # <a name="guided-scenario---deploy-microsoft-edge-for-mobile"></a>Interaktív forgatókönyv – a Microsoft Edge for Mobile üzembe helyezése 
 
-Ennek az [interaktív forgatókönyvnek](~/fundamentals/guided-scenarios-overview.md)a követésével a Microsoft Edge alkalmazást hozzárendelheti a felhasználókhoz iOS-vagy Android-eszközökön a szervezetében. Az alkalmazás hozzárendelésével lehetővé teheti, hogy a felhasználók zökkenőmentesen böngésszék a tartalmat a vállalati eszközeik használatával. 
+Ennek az [interaktív forgatókönyvnek](~/fundamentals/guided-scenarios-overview.md)a követésével a Microsoft Edge alkalmazást hozzárendelheti a felhasználókhoz iOS/IPadOS vagy Android rendszerű eszközökön a szervezetében. Az alkalmazás hozzárendelésével lehetővé teheti, hogy a felhasználók zökkenőmentesen böngésszék a tartalmat a vállalati eszközeik használatával. 
 
-A Microsoft Edge lehetővé teszi a felhasználók számára, hogy a beépített funkciókkal, amelyek segítségével összevonhatja, rendezheti és kezelheti a munkahelyi tartalmakat. Az iOS-és Android-eszközök azon felhasználói, akik vállalati Azure AD-fiókjával jelentkeznek be a Microsoft Edge alkalmazásban, megkeresik a böngészőt, és előre betöltve a munkahelyi **Kedvencek** és a definiált webhely-szűrők használatával.
+A Microsoft Edge lehetővé teszi a felhasználók számára, hogy a beépített funkciókkal, amelyek segítségével összevonhatja, rendezheti és kezelheti a munkahelyi tartalmakat. Az iOS/iPadOS és az Android rendszerű eszközök azon felhasználói, akik a Microsoft Edge alkalmazásban lévő vállalati Azure AD-fiókkal jelentkeznek be, megkeresik a böngészőben előre betöltött böngészőt a munkahelyi **Kedvencek** és a definiált webhely-szűrők használatával.
 
 > [!NOTE]
-> Ha letiltotta a felhasználók számára az iOS-vagy Android-eszközök regisztrálását, akkor ez a forgatókönyv nem engedélyezi a regisztrációt, és a felhasználóknak maguknak kell telepíteniük az Edge-t.
+> Ha letiltotta a felhasználók számára az iOS/iPadOS vagy Android rendszerű eszközök regisztrálását, akkor ez a forgatókönyv nem engedélyezi a regisztrációt, és a felhasználóknak maguknak kell telepíteniük az Edge-t.
 Az Intune-szabályzatok által engedélyezett Microsoft Edge Enterprise-funkciók a következők: 
 
 - **Kettős identitás** – a felhasználók egy munkahelyi fiókot és egy személyes fiókot is hozzáadhatnak a böngészéshez. A két identitás között teljes elkülönítés áll fenn, amely hasonló az Office 365 és az Outlook architektúrájának és felhasználói felületéhez. Az Intune-rendszergazdák a munkahelyi fiókon belül megadhatják a védett böngészési élmény kívánt szabályzatait. 
@@ -49,9 +49,9 @@ Az Intune-szabályzatok által engedélyezett Microsoft Edge Enterprise-funkció
 
 ## <a name="step-1---introduction"></a>1\. lépés – bevezetés
 
-A **Microsoft Edge for Mobile interaktív forgatókönyv üzembe helyezését** követve a Microsoft Edge alapszintű üzembe helyezését fogja beállítani az iOS-és Android-felhasználók kiválasztott csoportja számára. Ez a telepítés a **kettős identitást** és a **felügyelt kedvenceket, valamint a Kezdőlap parancsikonjait**fogja megvalósítani. Emellett a kiválasztott felhasználók által beléptetett eszközök automatikusan az Intune által telepített Microsoft Edge alkalmazást fogják telepíteni. Ez az automatikus telepítés minden felhasználó által vezérelt regisztrációs típuson bekövetkezik, többek között a következők: 
-- iOS-regisztráció a Céges portál alkalmazáson keresztül 
-- iOS-felhasználó-affinitás regisztráció az Apple Business Manageren keresztül 
+A **Microsoft Edge for Mobile interaktív forgatókönyv üzembe helyezését** követve a Microsoft Edge alapszintű üzembe helyezését fogja beállítani az iOS/iPadOS és az Android-felhasználók kiválasztott csoportja számára. Ez a telepítés a **kettős identitást** és a **felügyelt kedvenceket, valamint a Kezdőlap parancsikonjait**fogja megvalósítani. Emellett a kiválasztott felhasználók által beléptetett eszközök automatikusan az Intune által telepített Microsoft Edge alkalmazást fogják telepíteni. Ez az automatikus telepítés minden felhasználó által vezérelt regisztrációs típuson bekövetkezik, többek között a következők: 
+- iOS/iPadOS-regisztráció a Céges portál alkalmazáson keresztül 
+- iOS/iPadOS felhasználó-affinitási regisztráció az Apple Business Manageren keresztül 
 - Régi Android-regisztráció a Céges portál alkalmazáson keresztül 
 
 Ez az interaktív forgatókönyv automatikusan lehetővé teszi, hogy a **MyApps** megjelenjenek a Microsoft Edge-Kedvencek között, és konfigurálja a böngészőt az Intune céges portál alkalmazáshoz beállított arculattal. 
@@ -60,13 +60,13 @@ Ez az interaktív forgatókönyv automatikusan lehetővé teszi, hogy a **MyApps
 A felhasználók számára szükséges munkahelyi kedvenceket és a webböngészéshez szükséges szűrőket kérjük. A folytatás előtt győződjön meg arról, hogy a következő feladatokat hajtja végre:
 
 - Felhasználók hozzáadása az Azure AD-csoportokhoz. További információkért lásd: [alapszintű csoport létrehozása és Tagok hozzáadása Azure Active Directory használatával](https://go.microsoft.com/fwlink/?linkid=2102458).
-- IOS-vagy Android-eszközök regisztrálása az Intune-ban. További információ: [eszközök beléptetése](https://go.microsoft.com/fwlink/?linkid=2102547).
+- IOS-/iPadOS-vagy Android-eszközök regisztrálása az Intune-ban. További információ: [eszközök beléptetése](https://go.microsoft.com/fwlink/?linkid=2102547).
 - A Microsoft Edge-ben hozzáadandó munkahelyi kedvencek listájának összegyűjtése.
 - A Microsoft Edge-ben érvényesíteni kívánt webhely-szűrők listájának összegyűjtése.
 
 ## <a name="step-2---basics"></a>2\. lépés – alapismeretek
 
-Ebben a lépésben meg kell adnia az új Microsoft Edge-szabályzatok nevét és leírását. Ezek a házirendek később is szerepelhetnek, ha módosítania kell a hozzárendeléseket és a konfigurációkat. Az interaktív forgatókönyvben az iOS-eszközökhöz és az Android-eszközökhöz készült Microsoft Edge Android-alkalmazásokhoz is hozzá kell adnia és hozzá kell rendelnie egy Microsoft Edge iOS-alkalmazást. Emellett ez a lépés az alkalmazások konfigurációs szabályzatait is létrehozza.
+Ebben a lépésben meg kell adnia az új Microsoft Edge-szabályzatok nevét és leírását. Ezek a házirendek később is szerepelhetnek, ha módosítania kell a hozzárendeléseket és a konfigurációkat. Az interaktív forgatókönyv a Microsoft Edge iOS/iPadOS alkalmazást is hozzáadja az iOS-és iPadOS-eszközökhöz, valamint egy Microsoft Edge Android-alkalmazást az Android-eszközökhöz. Emellett ez a lépés az alkalmazások konfigurációs szabályzatait is létrehozza.
 
 ## <a name="step-3---configuration"></a>3\. lépés – konfiguráció
 
@@ -74,7 +74,7 @@ Ebben a lépésben az interaktív forgatókönyv úgy konfigurálja a Microsoft 
 
 ## <a name="step-4---assignments"></a>4\. lépés – hozzárendelések
 
-Ebben a lépésben kiválaszthatja azokat a felhasználói csoportokat, amelyeket fel szeretne venni, hogy a Microsoft Edge Mobile be legyen állítva a működésre. A Microsoft Edge a felhasználók által regisztrált összes iOS-és Android-eszközön is telepítve lesz.
+Ebben a lépésben kiválaszthatja azokat a felhasználói csoportokat, amelyeket fel szeretne venni, hogy a Microsoft Edge Mobile be legyen állítva a működésre. A Microsoft Edge a felhasználók által beléptetett iOS-/iPadOS-és Android-eszközökön is telepítve lesz.
 
 ## <a name="step-5---review--create"></a>5\. lépés – felülvizsgálat + létrehozás
 

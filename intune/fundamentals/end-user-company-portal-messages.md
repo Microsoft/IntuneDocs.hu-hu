@@ -17,12 +17,12 @@ ms.reviewer: aanavath
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57467d3d073666c1c22ac0a412f68a258d5b3d75
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: cbc4e1cc8cf7bd578690bf3e34353a60ec67cdab
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73414073"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514727"
 ---
 # <a name="help-end-users-understand-company-portal-app-messages"></a>A Vállalati portál alkalmazás üzeneteinek ismertetése a végfelhasználókkal
 
@@ -50,7 +50,7 @@ Megerősítő válasszal a felhasználó engedélyezi, hogy az eszköz telefonsz
 > [!NOTE]
 > **A Munkahelyi portál alkalmazás soha nem indít telefonhívásokat, és nem is kezeli azokat.** Az üzenet szövegét a Google szabja meg, és nem módosítható.
 
-A **Hardver** lap megnyitásához válassza a **Csoportok** > **Minden mobileszköz** > **Eszközök** lehetőséget. Jelölje ki a felhasználó eszközét, és válassza a **Tulajdonságok megjelenítése** > **Hardver** lehetőséget.
+A **Hardver** lap megnyitásához válassza a **Csoportok** > **Minden mobileszköz** > **Eszközök** lehetőséget. Jelölje ki a felhasználó eszközét, majd válassza a **Tulajdonságok megjelenítése** > **Hardver** lehetőséget.
 
 ### <a name="what-happens-if-users-deny-access"></a>Mi történik, ha a felhasználók nem engedélyezik a hozzáférést
 
@@ -106,7 +106,7 @@ Megerősítő válasszal a felhasználó engedélyezi, hogy eszköze adatnaplók
 
 Ha a felhasználó nem engedélyezi a hozzáférést, e-mailben akkor is elküldheti az adatnaplókat, ám azok nem másolhatók az SD-kártyára.
 
-Amikor a felhasználók a hozzáférés megtagadása után másodszor bejelentkeznek a Vállalati portál alkalmazásba, az üzenetben látható egy **Ne jelenjen meg többé** feliratú jelölőnégyzet, amelynek bejelölésével végleg kikapcsolhatják az üzenet megjelenítését. Ha a felhasználó engedélyezi a hozzáférést, de később megtagadja, az üzenet újból megjelenik, amikor a felhasználó a legközelebb megpróbálja elküldeni a naplókat. Amennyiben azonban a felhasználók később ismét engedélyezni szeretnék a hozzáférést, a **Beállítások** > **Alkalmazások** > **Vállalati portál** > **Engedélyek** > **Tárterület** lapon tehetik ezt meg.
+Amikor a felhasználók a hozzáférés megtagadása után másodszor bejelentkeznek a Munkahelyi portál alkalmazásba, az üzenetben látható egy **Ne jelenjen meg többé** feliratú jelölőnégyzet, amelynek bejelölésével végleg kikapcsolhatják az üzenet megjelenítését. Ha a felhasználó engedélyezi a hozzáférést, de később megtagadja, az üzenet újból megjelenik, amikor a felhasználó a legközelebb megpróbálja elküldeni a naplókat. Amennyiben azonban a felhasználók később ismét engedélyezni szeretnék a hozzáférést, a **Beállítások** > **Alkalmazások** > **Vállalati portál** > **Engedélyek** > **Tárterület** lapon tehetik ezt meg.
 
 
 ### <a name="how-to-explain-this-to-your-users"></a>A felhasználók tájékoztatásának módja
@@ -126,7 +126,7 @@ Ha nem adta hozzá a Céges portált az **Engedélyezett alkalmazások** vagy a 
 
 Adja hozzá a Céges portál az **engedélyezett alkalmazások** vagy a **mentesített alkalmazások** listájához a Windows Information Protection (folyamatban lévő) alkalmazás-védelmi házirendben. További információ: [A Windows Információvédelem (WIP) alkalmazásvédelmi szabályzatainak létrehozása és bevezetése az Intune használatával](../apps/windows-information-protection-policy-create.md).
 
-## <a name="approve-a-ios-company-app-line-of-business-app-on-your-ios-device"></a>IOS-es vállalati alkalmazás jóváhagyása (üzletági alkalmazás) iOS-eszközön 
+## <a name="approve-a-iosipados-company-app-line-of-business-app-on-your-iosipados-device"></a>IOS/iPadOS vállalati alkalmazás (üzletági alkalmazás) jóváhagyása iOS-vagy iPadOS-eszközön 
 
 ### <a name="where-it-appears"></a>Megjelenési helye
 
@@ -136,7 +136,7 @@ a szervezet által fejlesztett, az App Store-ban nem elérhető iOS-alkalmazáso
 
 ### <a name="what-it-means"></a>Jelentés
 
-Ez az üzenet azt jelenti, hogy módosítania kell az iOS-eszköz beállításait a vállalat által az iOS-eszközön fejlesztett alkalmazások jóváhagyásához és telepítéséhez.
+Ez az üzenet azt jelenti, hogy módosítania kell az iOS/iPadOS eszköz beállításait a vállalat által az iOS-vagy iPadOS-eszközön fejlesztett alkalmazások jóváhagyásához és telepítéséhez.
 
 Ha az alkalmazásokat a Céges portál használatával telepíti, és elindítja az alkalmazást, az alábbi lépéseket követve jóváhagyhatja az alkalmazást a letöltés után:
 

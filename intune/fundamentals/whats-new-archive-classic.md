@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e88741609dc1a351d1971c907cd2e442cfd4b905
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 94ff28cf36457d2d8b20e173508b7c9894a7d5bc
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72999523"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77510537"
 ---
 # <a name="whats-new-in-the-intune-classic-portal---previous-months"></a>A klasszikus Intune-portál újdonságai – korábbi hónapok
 
@@ -46,7 +46,7 @@ A Céges portál androidos, iOS-es és windowsos verziója is új ikont kap az E
 
 #### <a name="sign-in-progress-indicator-in-android-company-portal---953374--"></a>Bejelentkezési állapotjelző az Android Céges portál <!--953374-->
 
-Az androidos Céges portál alkalmazás frissítésének köszönhetően bejelentkezési folyamatjelző jelenik meg, ha a felhasználó elindítja az alkalmazást vagy folytatja a használatát. A folyamatjelző új állapotokon halad végig, ezek időrendben a következők: „Csatlakozás...”, „Bejelentkezés...” és „Biztonsági követelmények keresése...” – a felhasználó ezt követően fér hozzá az alkalmazáshoz. Az Androidhoz készült Céges portál alkalmazás új képernyőképei az [Újdonságok az Intune-alkalmazás felhasználói felületén](whats-new-app-ui.md) oldalon láthatók.
+Az androidos Céges portál alkalmazás frissítésének köszönhetően bejelentkezési folyamatjelző jelenik meg, ha a felhasználó elindítja az alkalmazást vagy folytatja a használatát. A folyamatjelző új állapotokon halad végig, ezek időrendben a következők: „Csatlakozás...”, „Bejelentkezés...” és „Biztonsági követelmények keresése...” – a felhasználó ezt követően fér hozzá az alkalmazáshoz. Az Androidhoz készült Céges portál alkalmazás új képernyői az [Újdonságok az Intune-alkalmazás felhasználói felületén](whats-new-app-ui.md) oldalon láthatók.
 
 #### <a name="block-apps-from-accessing-sharepoint-online----679339---"></a>A SharePoint Online elérésének letiltása az alkalmazások számára <!-- 679339 -->
 
@@ -60,7 +60,7 @@ Az iOS-es Céges portál alkalmazásban mostantól új, konkrétabb hibaüzenete
 
 #### <a name="improved-app-install-status-for-the-windows-10-company-portal-app---676495--"></a>Továbbfejlesztett alkalmazások telepítési állapota a Windows 10-es Céges portál alkalmazáshoz <!--676495-->
 
-Az alkalmazások telepítésének új fejlesztése a Windows 10-es Céges portál alkalmazásban:
+Az alkalmazás telepítése elindult a Windows 10-es céges portál alkalmazást az új fejlesztések az alábbiak:
 - Gyorsabb jelentéskészítés az MSI-csomagok folyamatban lévő telepítéséhez
 - Gyorsabb jelentéskészítés a Windows 10 évfordulós frissítését és újabb kiadásait futtató eszközök modern alkalmazásainak folyamatban lévő telepítéséhez
 - Új folyamatjelző sáv a Windows 10 évfordulós frissítését és újabb kiadásait futtató eszközök modern alkalmazásainak telepítéséhez
@@ -69,7 +69,7 @@ Az új folyamatjelző sávot megnézheti az [Újdonságok az Intune-alkalmazás 
 
 #### <a name="bulk-enroll-windows-10-devices----747607---"></a>Windows 10-es eszközök tömeges regisztrálása <!-- 747607 -->
 
-Mostantól a Windows Configuration Designer (WCD) használatával a Windows 10 alkotói frissítéssel rendelkező nagy számú eszközt csatlakoztathat az Azure Active Directoryhez és az Intune-hoz. Ha Azure AD-bérlőhöz be szeretné kapcsolni a [tömeges MDM-regisztrálást](../enrollment/windows-bulk-enroll.md), a Windows Configuration Designerrel hozzon létre olyan kiépítési csomagot, amely csatlakoztatja az eszközöket az Azure AD-bérlőhöz, majd alkalmazza a csomagot a csoportosan regisztrálni és felügyelni kívánt vállalati tulajdonú eszközökre. A csomagok alkalmazását követően az eszközök csatlakoznak az Azure AD-hez, regisztrálnak az Intune-ban, és készen állnak az Azure AD-felhasználók bejelentkezésére.  Az Azure AD-felhasználók általános jogú felhasználók ezeken az eszközökön, akik megkapják majd a kijelölt szabályzatokat és a kötelező alkalmazásokat. Az önkiszolgáló és a Céges portált használó módszer jelenleg nincs támogatva.
+Mostantól a Windows Configuration Designer (WCD) használatával a Windows 10 alkotói frissítéssel rendelkező nagy számú eszközt csatlakoztathat az Azure Active Directoryhez és az Intune-hoz. Ha Azure AD-bérlőhöz be szeretné kapcsolni a [tömeges MDM-regisztrálást](../enrollment/windows-bulk-enroll.md), a Windows Configuration Designerrel hozzon létre olyan kiépítési csomagot, amely csatlakoztatja az eszközöket az Azure AD-bérlőhöz, majd alkalmazza a csomagot a csoportosan regisztrálni és felügyelni kívánt vállalati tulajdonú eszközökre. A csomagok alkalmazását követően az eszközök csatlakoznak az Azure AD-hez, regisztrálnak az Intune-ban, és készen állnak az Azure AD-felhasználók bejelentkezésére.  Az Azure AD-felhasználók általános jogú felhasználók ezeken az eszközökön, akik megkapják majd a kijelölt szabályzatokat és a kötelező alkalmazásokat. Az önkiszolgáló és a Céges portált használó forgatókönyvek jelenleg nem támogatottak.
 
 ### <a name="whats-new-in-the-public-preview-of-intune-in-the-azure-portal--736542--"></a>Az Intune nyilvános előzetes verziójának újdonságai a Azure Portal<!--736542-->
 
@@ -361,9 +361,9 @@ Az új alkalmazással a felhasználók további platformszolgáltatásokat érhe
 > [!IMPORTANT]
 > __Az Intune és az Android for Work használatával kapcsolatos tájékoztató:__ Bár az Android for Work-alkalmazásokat telepítheti a __Szükséges__ művelettel, az __Elérhető__ művelettel csak akkor telepíthet alkalmazásokat, ha az Intune-csoportok át lettek telepítve az új Azure AD csoportkezelési rendszerbe.
 
-__Az Intune App SDK for Cordova beépülő modul most már támogatja a regisztráció nélküli MAM-ot__ Az alkalmazásfejlesztők mostantól az eszközök regisztrálása nélkül használhatják az Intune App SDK for Cordova beépülő modult a mobilalkalmazás-felügyeleti funkciók engedélyezéséhez az Android- és az iOS-rendszerhez készült, Cordova-alapú saját alkalmazásokban. Az Intune App SDK for Cordova beépülő modul [itt](https://github.com/msintuneappsdk/cordova-plugin-ms-intune-mam) található.
+__Az Intune app SDK for Cordova beépülő modul mostantól támogatja a MAM regisztráció nélkül__ Az alkalmazások fejlesztői mostantól az Intune app SDK for Cordova beépülő modullal engedélyezhetik a MAM-funkciókat az eszközök regisztrációja nélkül az Android-és iOS-vagy iPadOS-alkalmazásokhoz tartozó Cordova-alapú alkalmazásokban. Az Intune App SDK for Cordova beépülő modul [itt](https://github.com/msintuneappsdk/cordova-plugin-ms-intune-mam) található.
 
-__Az Intune App SDK Xamarin összetevő most már támogatja a regisztráció nélküli MAM-ot__ Az alkalmazásfejlesztők mostantól az eszközök regisztrálása nélkül használhatják az Intune App SDK Xamarin összetevőt a mobilalkalmazás-felügyeleti funkciók engedélyezéséhez az Android- és az iOS-rendszerhez készült, Xamarin-alapú saját alkalmazásokban. Az Intune App SDK Xamarin összetevő [itt](https://github.com/msintuneappsdk/intune-app-sdk-xamarin) található.
+Az __Intune app SDK Xamarin összetevője mostantól támogatja a MAM regisztráció nélkül__ Az alkalmazások fejlesztői mostantól az Intune app SDK Xamarin összetevővel engedélyezhetik a MAM-funkciókat az eszközök regisztrációja nélkül a Xamarin-alapú Android-és iOS-vagy iPadOS-alkalmazásokban. Az Intune App SDK Xamarin összetevő [itt](https://github.com/msintuneappsdk/intune-app-sdk-xamarin) található.
 
 ### <a name="notices"></a>Értesítések
 

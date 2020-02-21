@@ -1,6 +1,6 @@
 ---
-title: iOS-alkalmazások alkalmazásvédelmi szabályzatokkal
-description: Ez a témakör azt ismerteti, hogy milyen hatással vannak az iOS-alkalmazásokra az alkalmazásvédelmi szabályzatok.
+title: iOS/iPadOS alkalmazások alkalmazás-védelmi szabályzatokkal
+description: Ez a témakör azt mutatja be, mire számíthat, ha az iOS/iPadOS alkalmazást az alkalmazás-védelmi szabályzatok kezelik.
 keywords: ''
 author: lenewsad
 ms.author: lanewsad
@@ -17,14 +17,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 165ce160339647e396b9cfc3a8374f21c77665f8
-ms.sourcegitcommit: f9dc50642efa8656054ef67f9335b9b46b655f93
+ms.openlocfilehash: c854811a9deb938613af872f3cf86244ab9121b3
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75606621"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514659"
 ---
-# <a name="what-to-expect-when-your-ios-app-is-managed-by-app-protection-policies"></a>Milyen hatással vannak az iOS-alkalmazásokra az alkalmazásvédelmi szabályzatok?
+# <a name="what-to-expect-when-your-iosipados-app-is-managed-by-app-protection-policies"></a>Mi várható, ha az iOS/iPadOS alkalmazást az alkalmazás-védelmi szabályzatok kezelik
 
 Az Intune app Protection-szabályzatok a munkahelyi vagy iskolai használatra használt alkalmazásokra vonatkoznak. Ez azt jelenti, hogy ha az alkalmazottak és a tanulók személyes környezetben használják az alkalmazásaikat, akkor a saját tapasztalataikban nem tapasztalnak különbséget. A munkahelyi vagy iskolai kontextusban azonban kéréseket kaphatnak a fiókok döntéseinek meghozatalához, a beállítások frissítéséhez vagy a segítségért való kapcsolatfelvételhez. Ebből a cikkből megtudhatja, hogy a felhasználók milyen élményt nyújtanak, amikor megpróbálnak hozzáférni és használni az Intune által védett alkalmazásokat.  
 
@@ -34,7 +34,7 @@ Ha az eszköz **nincs regisztrálva az Intune-ban**, a rendszer az alkalmazás e
 
 <!--- The following screenshot from the Skype app illustrates this restart request: --->
 
-<!---  ![Screenshot of the iOS device showing PIN prompt](./media/end-user-mam-apps-ios/iOS_AppPINPrompt.png) --->
+<!---  ![Screenshot of the iOS/iPadOS device showing PIN prompt](./media/end-user-mam-apps-ios/iOS_AppPINPrompt.png) --->
 
 Az **Intune-felügyeletre regisztrált** eszközöknél üzenet jelenik meg, amely tájékoztatja a felhasználót, hogy az alkalmazás mostantól felügyelet alatt áll.
 

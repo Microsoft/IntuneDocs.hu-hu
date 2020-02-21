@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 15d6a67cb41455a1e3c0830e9ed242bfa52b0269
-ms.sourcegitcommit: c46b0c2d4507be6a2786a4ea06009b2d5aafef85
+ms.openlocfilehash: cee415174d68f3e6c9e72f0f0e06aa0d5d80ad91
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76912658"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77511854"
 ---
 # <a name="assign-apps-to-groups-with-microsoft-intune"></a>Alkalmazások hozzárendelése csoportokhoz a Microsoft Intune-nal
 
@@ -49,7 +49,7 @@ Az alábbi táblázat az alkalmazások felhasználókhoz és eszközökhöz val�
 | A végfelhasználók a webalapú Intune Céges portálon telepítik az elérhető alkalmazásokat | Igen | Igen |
 
 > [!NOTE]
-> Jelenleg (mind üzletági, mind pedig áruházbeli) iOS- és Android-alkalmazásokat rendelhet hozzá azokhoz az eszközökhöz, melyek nincsenek regisztrálva az Intune-ban.
+> Jelenleg az Intune-ban nem regisztrált eszközökhöz iOS-/iPadOS-és Android-alkalmazásokat (üzletági és áruházban vásárolt alkalmazásokat) rendelhet hozzá.
 >
 > Az alkalmazásfrissítések fogadásához az Intune-ban nem regisztrált eszközök felhasználóinak fel kell keresniük saját céges portáljukat, hogy manuálisan telepítsék az alkalmazásfrissítéseket.
 
@@ -58,7 +58,7 @@ Az alábbi táblázat az alkalmazások felhasználókhoz és eszközökhöz val�
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Válassza az **alkalmazások** > **minden alkalmazás**lehetőséget.
 3. Az **Alkalmazások** ablaktáblán jelölje ki a hozzárendelni kívánt alkalmazást.
-4. A menü **Kezelés** szakaszában válassza a **Hozzárendelések**. elemet.
+4. A menü **Kezelés** szakaszában válassza a **Hozzárendelések** elemet.
 5. Válassza a **Csoport hozzáadása** lehetőséget az alkalmazáshoz kapcsolódó **Csoport hozzáadása** ablaktábla megnyitásához.
 6. Az adott alkalmazáshoz válasszon egy **hozzárendelés-típust**:
    - **Regisztrálva lévő eszközökhöz**: rendelje hozzá az alkalmazást azon felhasználók csoportjaihoz, akik telepíthetik az alkalmazást a céges portál alkalmazásból vagy webhelyről.
@@ -67,9 +67,9 @@ Az alábbi táblázat az alkalmazások felhasználókhoz és eszközökhöz val�
    - **Eltávolítás**: az alkalmazást a kiválasztott csoportok eszközeiből távolítja el, ha az Intune már telepítette az alkalmazást az eszközön a "rendelkezésre álló regisztrált eszközökön" vagy a "kötelező" hozzárendelés használatával ugyanazzal az üzembe helyezéssel. A központi telepítés után nem távolíthatók el a webes hivatkozások.
 
      > [!NOTE]
-     > **Csak iOS-alkalmazások esetén**:
-     > - Ha azt szeretné beállítani, hogy mi történik a felügyelt alkalmazásokkal, ha az eszközök már nem kezelhetők, kiválaszthatja a kívánt beállítást az Eltávolítás az **eszköz eltávolításakor**lehetőség alatt. További információ: alkalmazás- [eltávolítási beállítás az iOS által felügyelt alkalmazásokhoz](apps-deploy.md#app-uninstall-setting-for-ios-managed-apps).
-     > - Ha létrehozott egy iOS-es VPN-profilt, amely az alkalmazáson belüli VPN-beállításokat tartalmazza, akkor a VPN **-profilt**is kiválaszthatja. Az alkalmazás futtatásakor megnyílik a VPN-kapcsolat. További tudnivalókért lásd: [VPN-beállítások iOS-eszközökön](../vpn-settings-ios.md).
+     > **Csak iOS/iPadOS-alkalmazások esetén**:
+     > - Ha azt szeretné beállítani, hogy mi történik a felügyelt alkalmazásokkal, ha az eszközök már nem kezelhetők, kiválaszthatja a kívánt beállítást az Eltávolítás az **eszköz eltávolításakor**lehetőség alatt. További információ: alkalmazás- [eltávolítási beállítás iOS/iPadOS felügyelt alkalmazásokhoz](apps-deploy.md#app-uninstall-setting-for-ios-managed-apps).
+     > - Ha létrehozott egy iOS/iPadOS VPN-profilt, amely az alkalmazáson belüli VPN-beállításokat tartalmazza, akkor **a VPN-** profilt a VPN területen választhatja ki. Az alkalmazás futtatásakor megnyílik a VPN-kapcsolat. További információ: [VPN-beállítások iOS/IPadOS-eszközökhöz](../vpn-settings-ios.md).
      >
      > **Csak Android-alkalmazások esetén**: Ha az Android **-alkalmazást regisztráció nélkül vagy anélkül**telepíti, a jelentéskészítési állapot csak a regisztrált eszközökön lesz elérhető.
      >
@@ -114,7 +114,7 @@ Az alábbi táblázatban található információk segítenek megérteni az ered
 
 > [!NOTE]
 > Csak áruházból származó felügyelt iOS-alkalmazások esetén, ha ezeket az alkalmazásokat a Microsoft Intune-ban **kötelezőként** rendeli hozzá, akkor a **Kötelező** és az **Elérhető** szándék automatikusan egyaránt fog vonatkozni rájuk.<br><br>
-> A kötelező hozzárendelési szándékkal célzott (nem iOS VPP) iOS Store-alkalmazások az eszköz bejelentkezésekor kikényszerítetten hozzá lesznek rendelve az eszközhöz, és megjelennek a Céges portál alkalmazásban is.<br><br>
+> a kötelező szándékú iOS-es áruházbeli alkalmazásokat (nem iOS/iPadOS VPP-alkalmazásokat) a rendszer az eszköz beadásának időpontjában érvényesíti az eszközön, és a Céges portál alkalmazásban is megjelenik.<br><br>
 > Ha ütközés lép fel az **eltávolításkor az eszköz eltávolításakor** , az alkalmazás nem lesz eltávolítva az eszközről, ha az eszköz már nem lett felügyelve.
 
 ## <a name="managed-google-play-app-deployment-to-unmanaged-devices"></a>Felügyelt Google Play-alkalmazások telepítése nem felügyelt eszközökre
@@ -132,7 +132,7 @@ A felügyelt Google Play-alkalmazások nem felügyelt eszközökhöz való hozz�
 Ha az Intune-konzolon kiadja az alkalmazás szelektív törlését, a munkahelyi fiók automatikusan el lesz távolítva a Play Áruház alkalmazásból, és a végfelhasználó ettől kezdve nem látja a munkahelyi alkalmazásokat a Play Áruház app Catalogban. Ha a munkahelyi fiókot eltávolítják egy eszközről, az Play Áruház telepített alkalmazások továbbra is telepítve lesznek az eszközön, és nem lesznek eltávolítva. 
 
 ## <a name="app-uninstall-setting-for-ios-managed-apps"></a>Az iOS által felügyelt alkalmazások alkalmazás-eltávolítási beállítása
-IOS-eszközök esetén kiválaszthatja, hogy mi történik a felügyelt alkalmazásokkal az eszköz Intune-regisztrációjának törlésével vagy a felügyeleti profil eltávolításával az **eszköz eltávolítási** beállításának eltávolításával. Ez a beállítás csak az eszköz regisztrálását követően érvényes az alkalmazásokra, és az alkalmazások felügyelt vannak telepítve. A beállítás nem konfigurálható webalkalmazásokhoz vagy webes hivatkozásokhoz. Csak a Mobile Application Management (MAM) által védett adatok törlődnek az alkalmazás szelektív törlése után.
+IOS-/iPadOS-eszközök esetén kiválaszthatja, hogy mi történik a felügyelt alkalmazásokban az eszköz Intune-regisztrációjának törlésével vagy a felügyeleti profil eltávolításával az **eszköz eltávolításának** beállításával. Ez a beállítás csak az eszköz regisztrálását követően érvényes az alkalmazásokra, és az alkalmazások felügyelt vannak telepítve. A beállítás nem konfigurálható webalkalmazásokhoz vagy webes hivatkozásokhoz. Csak a Mobile Application Management (MAM) által védett adatok törlődnek az alkalmazás szelektív törlése után.
 
 A beállítás alapértelmezett értékei az új hozzárendelésekhez az alábbiak szerint vannak feltöltve:
 

@@ -6,24 +6,24 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/18/2019
+ms.date: 02/18/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 4b6dcbcc-4661-4463-9a36-698d673502c6
-ms.reviewer: elocholi
+ms.reviewer: jinyoon
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 01dae8f6c90155e649211ab226cf24eeade29b42
-ms.sourcegitcommit: f5108039f0ade52e95ea3ac1da1aa16d02224af3
+ms.openlocfilehash: 9dab1025e283ed1591c22b03ed4e3a61d40a20c3
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74946682"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515084"
 ---
 # <a name="integrate-jamf-pro-with-intune-for-compliance"></a>A Jamf Pro integrálása az Intune-nal a megfelelőség érdekében
 
@@ -71,7 +71,7 @@ Az Intune és a JAMF Pro összekötése:
 2. A JAMF Pro-val való integráció engedélyezése az Intune-nal.
 3. Feltételes hozzáférés konfigurálása a JAMF Pro-ban.
 
-### <a name="create-an-application-in-azure-active-directory"></a>Alkalmazás létrehozása az Azure Active Directoryban
+### <a name="create-an-application-in-azure-active-directory"></a>Alkalmazás létrehozása Azure Active Directory
 
 1. A [Azure Portal](https://portal.azure.com)lépjen a **Azure Active Directory** > alkalmazás- **regisztrációk**elemre, majd válassza az **új regisztráció**lehetőséget.
 
@@ -90,21 +90,19 @@ Az Intune és a JAMF Pro összekötése:
    > [!IMPORTANT]
    > Mielőtt elhagyja ezt a lapot, másolja ki az ügyfél titkos kulcsának értékét, és jegyezze fel későbbi használatra. Erre az értékre szüksége lesz a későbbi eljárásokban. Ez az érték nem érhető el újra az alkalmazás regisztrációjának újbóli létrehozása nélkül.
 
-6. Válassza az **API-engedélyek** lehetőséget a **Kezelés** területen. 
+6. Válassza az **API-engedélyek** elemet a **kezelés**alatt. 
 
-7. Az API-engedélyek lapon válassza az **engedély hozzáadása** lehetőséget új engedély hozzáadásához. Az **API-engedélyek kérése** lapon válassza az **Intune**lehetőséget, majd válassza az **alkalmazás engedélyei**lehetőséget. Jelölje be a csak **update_device_attributes**jelölőnégyzetet.
+7. Az API-engedélyek lapon távolítsa el az alkalmazás összes engedélyét. ehhez kattintson a **...** ikonra az egyes meglévő engedélyek mellett. Vegye figyelembe, hogy ez kötelező; az integráció nem fog sikerülni, ha az alkalmazás regisztrálásakor váratlan további engedélyek vannak.
 
-8. Várjon néhány percet, hogy az új engedély érvénybe léphet. Ezután válassza a **rendszergazdai jóváhagyás megadása lehetőséget a _bérlő >\<ához_** . Hitelesítse a fiókját az új ablakban, és az utasításokat követve adja meg az alkalmazás elérését.  
+8. Ezután hozzáadjuk az eszközök attribútumainak frissítéséhez szükséges engedélyeket. Az **API-engedélyek** lap bal felső részén kattintson az **engedély hozzáadása** lehetőségre új engedély hozzáadásához. 
 
-9. Előfordulhat, hogy néhány percet várnia kell, hogy a rendszergazdai engedély érvénybe lép.
+9. Az **API-engedélyek kérése** lapon válassza az **Intune**lehetőséget, majd válassza az **alkalmazás engedélyei**lehetőséget. Jelölje be a csak a **update_device_attributes** jelölőnégyzetet, és mentse az új engedélyt.
 
-10. A lap tetején található **frissítés** gombra kattintva frissítse a lapot. Győződjön meg arról, hogy a **update_device_attributes** engedélyhez rendszergazdai jóváhagyás lett megadva. 
+10. Ezután adja meg a rendszergazdai jóváhagyást ehhez az alkalmazáshoz az **API-engedélyek** lap bal felső sarkában található  **_\<a_ rendszergazdai jóváhagyás megadása** lehetőséget választva a bérlő >. Előfordulhat, hogy újra kell hitelesítenie a fiókját az új ablakban, és az utasításokat követve meg kell adnia az alkalmazáshoz való hozzáférést.  
 
-11. Távolítsa el a rendszergazda beleegyezését a **felhasználó. olvasás** engedéllyel. ehhez kattintson a **...** menüre, és válassza a **rendszergazdai beleegyezés visszavonása**lehetőséget.
+11. A lap tetején található **frissítés** gombra kattintva frissítse a lapot. Győződjön meg arról, hogy a **update_device_attributes** engedélyhez rendszergazdai jóváhagyás lett megadva. 
 
-12. Emellett el kell távolítania a **User. Read** engedélyt. Válassza a **...** menüt **felhasználó szerint. olvassa el** , majd válassza az **Eltávolítás engedélyt**. 
-
-8. Az alkalmazás sikeres regisztrálását követően az API-engedélyek csak egy **update_device_attributes** nevű engedélyt tartalmazhatnak, és a következőképpen kell megjelenniük:
+12. Az alkalmazás sikeres regisztrálását követően az API-engedélyek csak egy **update_device_attributes** nevű engedélyt tartalmazhatnak, és a következőképpen kell megjelenniük:
 
    ![Sikeres engedélyek](./media/conditional-access-integrate-jamf/sucessfull-app-registration.png)
 

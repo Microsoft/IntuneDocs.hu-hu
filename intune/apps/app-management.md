@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 84d33e0ff6bbe407d9838f97214f37d042a2e261
-ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.openlocfilehash: 6e00a2d3c245c1297f2ea28ab0184369e7d92980
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77414698"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77513945"
 ---
 # <a name="what-is-microsoft-intune-app-management"></a>A Microsoft Intune-alkalmazásfelügyelet ismertetése
 
@@ -92,20 +92,20 @@ A következő négy szakasz az **alkalmazások** ablaktáblán elérhető beáll
   - [Alkalmazások figyelése](apps-monitor.md).
 - **Alkalmazás-konfigurációs szabályzatok**: Ezt a lehetőséget választva megadhatja azokat a beállításokat, amelyekre szükség lehet, amikor egy felhasználó egy alkalmazást futtat. További információkért lásd:
   - [Az Intune alkalmazáskonfigurációs szabályzatai](app-configuration-policies-overview.md).
-    - [iOS-es alkalmazáskonfigurációs szabályzatok](app-configuration-policies-use-ios.md).
+    - [iOS/iPadOS alkalmazás-konfigurációs szabályzatok](app-configuration-policies-use-ios.md).
     - [Androidos alkalmazáskonfigurációs szabályzatok](app-configuration-policies-use-android.md).
 - **Alkalmazásvédelmi szabályzatok**: Ezt a lehetőséget választva beállításokat társíthat egy alkalmazáshoz és hozzájárulhat az általa használt céges adatok védelméhez. Korlátozhatja például egy alkalmazás más alkalmazásokkal való kommunikációját, vagy előírhatja PIN-kód megadását a felhasználónak egy céges alkalmazás eléréséhez. További információkért lásd:
   - [Alkalmazásvédelmi szabályzatok](app-protection-policies.md).
 - **Alkalmazások szelektív törlése**: Ezzel a lehetőséggel csak a céges adatokat törli a kijelölt felhasználók eszközeiről. További információkért lásd:
   - [Alkalmazások szelektív törlése](apps-selective-wipe.md).
 - **iOS-es alkalmazás-létesítési profilok**: az iOS-es/iPadOS-alkalmazások tartalmazzák a kiépítési profilt és a tanúsítvány által aláírt kódot. Ha a tanúsítvány lejár, az alkalmazás a továbbiakban nem futtatható. Az Intune biztosítja az eszközöket, amelyek segítségével proaktív módon rendelhet hozzá új kiépítési profilt azokhoz az eszközökhöz, amelyeken hamarosan lejárnak az alkalmazások. További információkért lásd:
-  - [iOS-alkalmazáskiépítési profilok](app-provisioning-profile-ios.md).
+  - [iOS/iPadOS-alkalmazás létesítési profiljai](app-provisioning-profile-ios.md).
 
 Az e szakasz tartalmával kapcsolatos további információ: [Alkalmazáskezelés](app-management.md).
 
 ### <a name="monitor"></a>Figyelő
 - **Alkalmazáslicencek**: Az alkalmazás-áruházakból vásárolt mennyiségi licencszerződéses alkalmazások megtekintése, hozzárendelése és figyelése. További információkért lásd:
-  - [iOS Volume Purchase Program-alkalmazások](vpp-apps-ios.md).
+  - [iOS/iPadOS mennyiségi programban vásárolt program (VPP) alkalmazások](vpp-apps-ios.md).
   - [A Microsoft Store Vállalatoknak áruházból mennyiségi programban vásárolt alkalmazások](windows-store-for-business.md).
 - **Felderített alkalmazások**: Az Intune által az eszközhöz hozzárendelt vagy rá telepített alkalmazások megtekintése. További információ: az [Intune által felderített alkalmazások](app-discovered-apps.md).
 - **Alkalmazástelepítési állapot**: Egy Ön által létrehozott alkalmazás-hozzárendelés állapotának megtekintése. További információk: [Alkalmazásadatok és -hozzárendelések figyelése a Microsoft Intune-ban](apps-monitor.md#device-and-user-status-graphs).
@@ -116,7 +116,7 @@ Az e szakasz tartalmával kapcsolatos további információ: [Alkalmazások figy
 
 ### <a name="set-up"></a>Beállítás
 - **iOS VPP-tokenek**: az iOS/IPadOS Volume Purchase program-(VPP-) licencek alkalmazása és megtekintése. További információkért lásd:
-  - [iOS Volume-Purchased Program keretében vásárolt alkalmazások](vpp-apps-ios.md)
+  - [iOS/iPadOS mennyiségi licencszerződés keretében vásárolt alkalmazások](vpp-apps-ios.md)
 - **Windowsos vállalati tanúsítvány**: Egy üzletági alkalmazások felügyelt Windows-eszközökre való terjesztésére szolgáló kódaláíró tanúsítvány alkalmazása, vagy az állapota megtekintése.
 - **Windowsos Symantec-tanúsítvány**: Egy XAP és WP8.x appx-fájlok Windows 10 Mobile-eszközökre való terjesztéséhez szükséges Symantec kódaláíró tanúsítvány alkalmazása, vagy az állapota megtekintése.
 - **Microsoft Store Vállalatoknak áruház** – A Microsoft Store Vállalatoknak áruházba történő integráció beállítása. Ezt követően az Intune-ban szinkronizálhatja és kioszthatja a megvásárolt alkalmazásokat, továbbá nyilvántarthatja a licenchasználatot. További információkért lásd:

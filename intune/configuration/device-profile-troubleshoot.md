@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 01/28/2020
+ms.date: 02/18/2020
 ms.topic: troubleshooting
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 881d0f095d2144ae42db4825336275980a19f419
-ms.sourcegitcommit: b0d683917af83170f85022b270270d8ced8e301c
+ms.openlocfilehash: 21497716f17ced83bdcc1952cb952151f993bb7b
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76812361"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77511327"
 ---
 # <a name="common-questions-issues-and-resolutions-with-device-policies-and-profiles-in-microsoft-intune"></a>Gyakori kérdések, problémák és megoldások az eszközök házirendjével és profiljaival Microsoft Intune
 
@@ -36,11 +36,11 @@ A probléma következményei vendég Wi-Fi beállításával mérsékelhetők. A
 
 Néhány további javaslat:  
 
-- Ha a csatlakoztatni kívánt Wi-Fi-hálózat jelszót vagy hozzáférési kódot használ, győződjön meg arról, hogy közvetlenül tud kapcsolódni a Wi-Fi-útválasztóhoz. Ezt kipróbálhatja egy iOS-eszközzel.
+- Ha a csatlakoztatni kívánt Wi-Fi-hálózat jelszót vagy hozzáférési kódot használ, győződjön meg arról, hogy közvetlenül tud kapcsolódni a Wi-Fi-útválasztóhoz. A teszteléshez iOS/iPadOS eszközt használhat.
 - A Wi-Fi-végponthoz (Wi-Fi-útválasztóhoz) való sikeres kapcsolódás után jegyezze fel az SSID-t és a használt hitelesítő adatokat (ez a jelszó vagy a hitelesítő kód).
 - Adja meg az SSID-t és a hitelesítő adatokat (jelszót vagy hitelesítő kódot) az Előmegosztott kulcs mezőben. 
 - Alkalmazza egy tesztcsoportra, amelynek csak néhány tagja van, lehetőleg a rendszergazdák közül. 
-- Szinkronizálja az iOS-eszközt az Intune-nal. Regisztráljon, ha ezt még nem tette meg. 
+- Az iOS/iPadOS eszköz szinkronizálása az Intune-nal. Regisztráljon, ha ezt még nem tette meg. 
 - Próbáljon meg újból kapcsolódni ugyanahhoz a Wi-Fi-végponthoz (az első lépésben leírtak szerint).
 - Bővítse ki a kört nagyobb csoportokra és végül mindenkire, aki a szervezetben várhatóan felhasználó lesz. 
 
@@ -52,25 +52,25 @@ Ha egy eszköz nem ellenőrzi, hogy az első értesítés után beolvassa-e a sz
 
 **Becsült** gyakoriságok:
 
-| Platfésm | Frissítési ciklus|
+| Platform | Frissítési ciklus|
 | --- | --- |
-| iOS | Körülbelül 8 óránként |
+| iOS/iPadOS | Körülbelül 8 óránként |
 | macOS | Körülbelül 8 óránként |
 | Android: | Körülbelül 8 óránként |
 | Eszközként regisztrált Windows 10 számítógépek | Körülbelül 8 óránként |
 | Windows Phone | Körülbelül 8 óránként |
-| Windows 8.1 | Körülbelül 8 óránként |
+| Windows 8.1 | Körülbelül 8 óránként |
 
 Ha az eszköz nemrég lett regisztrálva, a megfelelőség, a nem megfelelőség és a konfiguráció-ellenőrzés gyakrabban fut le, ami a **következő:**
 
-| Platfésm | Gyakoriság |
+| Platform | Gyakoriság |
 | --- | --- |
-| iOS | 1 órán át 15 percenként, majd 8 óránként |  
+| iOS/iPadOS | 1 órán át 15 percenként, majd 8 óránként |  
 | macOS | 1 órán át 15 percenként, majd 8 óránként | 
 | Android: | 15 percen át 3 percenként, majd 2 órán át 15 percenként, majd körülbelül 8 óránként | 
 | Eszközként regisztrált Windows 10 számítógépek | 15 percen át 3 percenként, majd 2 órán át 15 percenként, majd körülbelül 8 óránként | 
 | Windows Phone | 15 percen át 5 percenként, majd 2 órán át 15 percenként, majd körülbelül 8 óránként | 
-| Windows 8.1 | 15 percen át 5 percenként, majd 2 órán át 15 percenként, majd körülbelül 8 óránként | 
+| Windows 8.1 | 15 percen át 5 percenként, majd 2 órán át 15 percenként, majd körülbelül 8 óránként | 
 
 A felhasználók bármikor megnyithatja a Céges portál alkalmazást, a **beállítások** > a **szinkronizálás** segítségével azonnal megkeresheti a házirend-vagy profil-frissítéseket.
 
@@ -102,7 +102,7 @@ Az ütközési értékek az alkalmazás védelmi házirendjében elérhető legs
 
 Egy házirend települ az alkalmazásba, és érvénybe lép. A rendszer egy második szabályzatot helyez üzembe. Ebben az esetben az első házirend elsőbbséget élvez, és alkalmazva marad. A második szabályzat ütközést jelez. Ha mindkettő egyszerre van alkalmazva, ami azt jelenti, hogy nincs korábbi házirend, akkor mindkettő ütközést jelez. Minden ütközésnél a legszigorúbb beállítás lesz érvényes.
 
-## <a name="what-happens-when-ios-custom-policies-conflict"></a>Mi történik, ha az egyéni iOS-házirendek ütköznek?
+## <a name="what-happens-when-iosipados-custom-policies-conflict"></a>Mi történik, ha az iOS/iPadOS egyéni házirendek ütköznek?
 
 Az Intune nem értékeli a konfigurációs Apple-fájlok vagy az Open Mobile Alliance egységes erőforrás-azonosítóra (OMA-URI) vonatkozó egyéni szabályzatainak tartalmát. Csak kézbesítési mechanizmusként funkcionál.
 
@@ -122,7 +122,7 @@ Amikor töröl egy profilt, vagy eltávolít egy olyan eszközt a csoportból, a
     - Egyszerű jelszavak engedélyezése
     - Jelszó minimális hossza
     - Kötelező jelszótípus
-    - Jelszó lejárta (napokban)
+    - Jelszó lejárata (nap)
     - Jelszóelőzmények megjegyzése
     - Sikertelen bejelentkezések engedélyezett száma az eszköz törlése előtt
     - Tétlen percek száma, mielőtt az eszköz újból kéri a jelszót
@@ -144,10 +144,10 @@ Amikor töröl egy profilt, vagy eltávolít egy olyan eszközt a csoportból, a
     - NFC használatának engedélyezése
     - Wi-Fi használatának engedélyezése
 
-  - **iOS**: Az összes beállítás törlődik, kivéve a következőket:
+  - **iOS/iPadOS**: az összes beállítás törlődik, kivéve a következőket:
   
-    - Hangroaming használatának engedélyezése
-    - Adatroaming használatának engedélyezése
+    - Hangroaming engedélyezése
+    - Adatroaming engedélyezése
     - Automatikus szinkronizálás engedélyezése roaming közben
 
 ## <a name="i-changed-a-device-restriction-profile-but-the-changes-havent-taken-effect"></a>Módosítottam egy eszközkorlátozási profilt, de a módosítások még nem léptek érvénybe
@@ -156,7 +156,7 @@ A beállítás után Windows Phone-telefon eszközök nem teszik lehetővé a MD
 
 Ha a profilt kevésbé biztonságos értékre szeretné módosítani, állítsa vissza a biztonsági házirendeket. Például a Windows 8,1 operációs rendszer asztalán, a jobb > válassza a **beállítások** > **Vezérlőpult**lehetőséget. Válassza a **Felhasználói fiókok** kisalkalmazást. A bal oldali navigációs menüben található a **biztonsági házirendek alaphelyzetbe állítása** hivatkozás (az alsó felé). Válassza ki ezt, majd a **Szabályzatok alaphelyzetbe állítása** lehetőséget.
 
-Előfordulhat, hogy más MDM-eszközöket (például Android, Windows Phone-telefon 8,1 vagy újabb, iOS és Windows 10) ki kell vonni, majd újból regisztrálni kell az Intune-ba egy kevésbé korlátozó profil alkalmazásához.
+Előfordulhat, hogy más MDM-eszközöket (például Android, Windows Phone-telefon 8,1 vagy újabb), iOS/iPadOS és Windows 10 rendszert kell kivonni, majd újból regisztrálnia kell az Intune-ba egy kevésbé korlátozó profil alkalmazásához.
 
 ## <a name="some-settings-in-a-windows-10-profile-return-not-applicable"></a>A Windows 10-es profil egyes beállításai "nem alkalmazható" értéket adnak vissza
 

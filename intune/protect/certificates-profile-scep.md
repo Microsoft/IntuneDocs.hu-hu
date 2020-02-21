@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ad363785888a92d1e8be4f2d28690278a2efaae9
-ms.sourcegitcommit: c7c6be3833d9a63d43f31d598b555b49b33cf5cb
+ms.openlocfilehash: 03775716763125d61a8d31ef8d73bfca44f1d4d8
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76966300"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514064"
 ---
 # <a name="create-and-assign-scep-certificate-profiles-in-intune"></a>SCEP-tanúsítványok létrehozása és társítása az Intune-ban
 
@@ -137,7 +137,7 @@ Miután [konfigurálta az infrastruktúrát](certificates-scep-configure.md) a e
 
         Válasszon az elérhető attribútumok közül:
 
-        - **E-mail-cím**
+        - **E-mail cím**
         - **Egyszerű felhasználónév (UPN)**
 
         A felhasználói tanúsítványok típusai például tartalmazhatják az egyszerű felhasználónevet (UPN) a tulajdonos alternatív neve mezőben. Ha az ügyféltanúsítványt egy hálózati házirend-kiszolgálón történő hitelesítésre használja, a tulajdonos alternatív neveként az egyszerű felhasználónevet (UPN) állítsa be.
@@ -148,7 +148,7 @@ Miután [konfigurálta az infrastruktúrát](certificates-scep-configure.md) a e
 
         Az elérhető attribútumok a következők:
 
-        - **E-mail-cím**
+        - **E-mail cím**
         - **Egyszerű felhasználónév (UPN)**
         - **DNS**
 
@@ -273,14 +273,14 @@ A SCEP-profilokat ugyanúgy rendelheti hozzá, mint az [eszközök profiljait](.
 
 - Tanúsítványprofilokat rendelhet felhasználógyűjteményekhez és eszközgyűjteményekhez is.
 
-- Ha azt szeretné, hogy a tanúsítványok gyorsan megjelenjenek az eszközökön a regisztráció után, a tanúsítványprofilt felhasználócsoporthoz és ne eszközcsoporthoz rendelje hozzá. Ha eszközcsoporthoz rendeli, akkor teljes eszközregisztráció szükséges, mielőtt az eszköz megkaphatná a szabályzatokat.
+- Ha azt szeretné, hogy a tanúsítványok gyorsan megjelenjenek az eszközökön a regisztráció után, a tanúsítványprofilt felhasználócsoporthoz és ne eszközcsoporthoz rendelje hozzá. Ha eszközcsoporthoz rendel hozzá, akkor teljes eszközregisztráció szükséges, mielőtt az eszköz megkaphatná a szabályzatokat.
 
 - Ha az Intune és a Configuration Manager együttes felügyeletét használja, Configuration Manager az **Intune** - **hoz vagy az Intune-** hoz készült erőforrás-hozzáférési szabályzatok [munkaterhelési csúszkáját állítsa be](https://docs.microsoft.com/configmgr/comanage/how-to-switch-workloads) . Ez a beállítás lehetővé teszi, hogy a Windows 10-ügyfelek elindítsák a tanúsítvány kérelmezésének folyamatát.
 
 - Bár a megbízható tanúsítvány profilját és a SCEP-tanúsítvány profilját külön hozza létre és rendeli hozzá, mindkettőt hozzá kell rendelni. Az SCEP-tanúsítvány házirendje nem működik együtt az eszközön. Győződjön meg arról, hogy a megbízható főtanúsítvány-profilok is ugyanarra a csoportra vannak telepítve, mint a SCEP-profil.
 
 > [!NOTE]
-> IOS-eszközökön, amikor egy SCEP-tanúsítvány profilja egy további profillal van társítva, például Wi-Fi-vagy VPN-profilhoz, az eszköz megkapja a további profilok tanúsítványát. Ez azt eredményezi, hogy az iOS-eszközön több tanúsítvány is érkezik az SCEP-tanúsítványkérelem által.  Ha egyetlen tanúsítványra van szükség, a SCEP-tanúsítványok helyett PKCS-tanúsítványokat kell használnia.  Ennek az az oka, hogy a SCEP és a PKCS-tanúsítványok eszközökre való kézbesítésének eltérései a következők:
+> IOS/iPadOS-eszközökön, ha egy SCEP-profil egy további profillal van társítva, például Wi-Fi-vagy VPN-profilhoz, az eszköz minden további profilhoz tanúsítványt kap. Ez azt eredményezi, hogy az iOS/iPadOS eszközön több tanúsítvány is található a SCEP-tanúsítványkérelem által.  Ha egyetlen tanúsítványra van szükség, a SCEP-tanúsítványok helyett PKCS-tanúsítványokat kell használnia.  Ennek az az oka, hogy a SCEP és a PKCS-tanúsítványok eszközökre való kézbesítésének eltérései a következők:
 
 ## <a name="next-steps"></a>További lépések
 

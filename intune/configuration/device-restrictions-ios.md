@@ -1,12 +1,12 @@
 ---
-title: iOS-eszközbeállítások a Microsoft Intuneban – Azure | Microsoft Docs
+title: iOS/iPadOS eszközbeállítások a Microsoft Intuneban – Azure | Microsoft Docs
 titleSuffix: ''
-description: IOS-eszközökön lévő beállítások hozzáadása, konfigurálása vagy létrehozása a funkciók korlátozásához, beleértve a jelszóval kapcsolatos követelmények beállítását, a zárolt képernyő használatát, a beépített alkalmazásokat, a korlátozott vagy jóváhagyott alkalmazások hozzáadását, a Bluetooth-eszközök kezelését, a felhőhöz való kapcsolódást a biztonsági mentéshez és tároláshoz. a kioszk mód engedélyezése, tartományok hozzáadása és annak szabályozása, hogy a felhasználók hogyan használják a Safari böngészőt Microsoft Intuneban.
+description: IOS/iPadOS eszközökhöz tartozó beállítások hozzáadása, konfigurálása vagy létrehozása a funkciók korlátozásához, beleértve a jelszó megadását, a zárolt képernyő vezérlését, a beépített alkalmazások használatát, a korlátozott vagy jóváhagyott alkalmazások hozzáadását, a Bluetooth-eszközök kezelését, a felhőhöz való kapcsolódást a biztonsági mentéshez és tároláshoz, Microsoft Intune a kioszk mód engedélyezése, tartományok hozzáadása és a felhasználók által a Safari böngészővel való
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 02/04/2020
+ms.date: 02/18/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,18 +16,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dc252068d963d75bf6ade79852d6ba01bda8800b
-ms.sourcegitcommit: 9b29478f815e10c46c8030abe0146d601ce0e28c
+ms.openlocfilehash: 1e352ca0c0100ebe1756d621feb725e040521901
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77051609"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77513068"
 ---
 # <a name="ios-and-ipados-device-settings-to-allow-or-restrict-features-using-intune"></a>iOS-és iPadOS-eszközök beállításai az Intune-t használó funkciók engedélyezéséhez vagy korlátozásához
 
 Ez a cikk az iOS-és iPadOS-eszközökön szabályozható különböző beállításokat sorolja fel és ismerteti. A mobileszköz-kezelési (MDM) megoldás részeként ezekkel a beállításokkal engedélyezheti vagy letilthatja a szolgáltatásokat, beállíthatja a jelszavas szabályokat, engedélyezheti vagy korlátozhatja az egyes alkalmazásokat, és így tovább.
 
-Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs profiljához, majd az iOS-eszközökhöz vannak rendelve vagy telepítve.
+Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs profiljához, majd az iOS/iPadOS-eszközökhöz vannak rendelve vagy telepítve.
 
 > [!TIP]
 > Ezek a beállítások az Apple MDM beállításait használják. További információ ezekről a beállításokról: az [Apple mobileszköz-kezelési beállításai](https://support.apple.com/guide/mdm/welcome/web) (az Apple webhelyén nyílik meg).
@@ -37,7 +37,7 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
 [Hozzon létre egy eszköz-korlátozási konfigurációs profilt](../device-restrictions-configure.md).
 
 > [!NOTE]
-> Ezek a beállítások a különböző regisztrációs típusokra vonatkoznak, és egyes beállítások az összes regisztrációs lehetőségre érvényesek. A különböző regisztrációs típusokkal kapcsolatos további információkért lásd: [iOS-regisztráció](../ios-enroll.md).
+> Ezek a beállítások a különböző regisztrációs típusokra vonatkoznak, és egyes beállítások az összes regisztrációs lehetőségre érvényesek. A különböző regisztrációs típusokkal kapcsolatos további információkért lásd: [iOS/iPadOS-regisztráció](../ios-enroll.md).
 
 ## <a name="general"></a>Általános
 
@@ -45,7 +45,7 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
 
 - **Használati adatok megosztása**: a **Letiltás** elem kiválasztásával megakadályozhatja, hogy az eszköz diagnosztikai és használati adatokat küldjön az Apple-nek. **Nincs konfigurálva** (alapértelmezés) engedélyezi ezt az adatküldés.
 
-- **Képernyőfelvétel**: a **Letiltás** elem kiválasztásával megakadályozhatja a képernyőképek vagy képernyőfelvételek készítését az eszközön. Az iOS 9,0-es és újabb verzióiban blokkolja a képernyőfelvételeket is. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára, hogy képként vagy videóként rögzítse a képernyő tartalmát.
+- **Képernyőfelvétel**: a **Letiltás** elem kiválasztásával megakadályozhatja a képernyőképek vagy képernyőfelvételek készítését az eszközön. Az iOS/iPadOS 9,0-es és újabb verzióiban blokkolja a képernyőfelvételeket is. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára, hogy képként vagy videóként rögzítse a képernyő tartalmát.
 
 ### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése, automatikus eszközök beléptetése (felügyelt)
 
@@ -61,6 +61,7 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
 
   Ez a funkció az alábbiakra vonatkozik:  
   - iOS-9.3.2 és újabb verziók
+  - iPadOS 13,0 és újabb verziók
 
 - A **távoli képernyő megfigyelése az osztályterem alkalmazásban**: válassza a **Letiltás** lehetőséget, hogy megakadályozza, hogy az osztályterem alkalmazás távolról megtekintse a képernyőt az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi az Apple tanterem alkalmazás számára a képernyő megtekintését.
 
@@ -68,21 +69,22 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
 
   Ez a funkció az alábbiakra vonatkozik:  
   - iOS 9,3 és újabb verziók
+  - iPadOS 13,0 és újabb verziók
 
-- Nem megfigyelt képernyő-figyelés az **osztályterembeli alkalmazásban**: Ha a beállítás **engedélyezésre**van állítva, a tanárok a tanulók ismeretei nélkül, az osztályterem alkalmazással csendben láthatják a tanulók számára készült iOS-eszközök képernyőjét. Az osztályterem alkalmazással az osztályban regisztrált tanulói eszközök automatikusan engedélyt adnak a tanfolyam oktatójának. **Nincs konfigurálva** (alapértelmezés) megakadályozza ezt a funkciót.
+- Nem megfigyelt képernyő-figyelés az **osztályterem alkalmazással**: Ha a beállítás értéke **Engedélyezés**, a tanárok a tanulók ismeretei nélkül, az osztályterem alkalmazással csendben láthatják a tanulók iOS/iPadOS eszközeinek képernyőjét. Az osztályterem alkalmazással az osztályban regisztrált tanulói eszközök automatikusan engedélyt adnak a tanfolyam oktatójának. **Nincs konfigurálva** (alapértelmezés) megakadályozza ezt a funkciót.
 
   Ha ezt a beállítást szeretné használni, állítsa a **képernyőfelvétel** beállítást a **blokkolás**értékre.
 
 - **Nagyvállalati alkalmazás megbízhatósága**: a **Letiltás** elem kiválasztásával távolítsa el a **megbízható vállalati fejlesztő** gombot a beállítások > Általános > profilok & eszközkezelés az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára az alkalmazás-áruházból letöltött alkalmazások megbízhatóságának megválasztását.
-- **Fiók módosítása**: Ha a **blokkolás**értékre van állítva, a felhasználó nem tudja frissíteni az eszközre vonatkozó beállításokat az iOS-beállítások alkalmazásból. A felhasználó például nem tud új fiókokat létrehozni, vagy módosítani a felhasználónevet vagy a jelszót. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy megváltoztassák ezeket a beállításokat.
+- **Fiók módosítása**: Ha a **blokkolás**értékre van állítva, a felhasználó nem tudja frissíteni az eszközre vonatkozó beállításokat az iOS/iPadOS beállítások alkalmazásból. A felhasználó például nem tud új fiókokat létrehozni, vagy módosítani a felhasználónevet vagy a jelszót. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy megváltoztassák ezeket a beállításokat.
 
-  Ez a funkció az iOS-beállítások alkalmazásból elérhető beállításokra is vonatkozik, például a levelezés, a névjegyek, a naptár, a Twitter stb. Ez a funkció nem vonatkozik azokra az alkalmazásokra, amelyek olyan Fiókbeállítások, amelyek nem konfigurálhatók az iOS-beállítások alkalmazásból, például a Microsoft Outlook alkalmazásból.
+  Ez a funkció az iOS/iPadOS beállítások alkalmazásból elérhető beállításokra is vonatkozik, például a levelezés, a névjegyek, a naptár, a Twitter stb. Ez a funkció nem vonatkozik azokra az alkalmazásokra, amelyek olyan Fiókbeállítások, amelyek nem konfigurálhatók az iOS/iPadOS beállítások alkalmazásból, például a Microsoft Outlook alkalmazásból.
 
 - **Képernyő időpontja**: a **Letiltás** gombra kattintva megakadályozhatja, hogy a felhasználók a saját korlátozásokat állítsanak be a képernyőn megadott időben (eszközbeállítások). A **nincs konfigurálva** beállítás lehetővé teszi, hogy a felhasználó az eszközön korlátozásokat (például szülői vezérlőket, tartalmakat és adatvédelmi korlátozásokat) konfiguráljon az eszközön.
 
   A rendszer átnevezte ezt a beállítást, mert **engedélyezte a korlátozásokat az eszközbeállítások között**. A változás hatása:  
   
-  - iOS-11.4.1 és korábbi verziók: a **Letiltás** megakadályozza, hogy a végfelhasználók saját korlátozásokat állítsanak be az eszközbeállítások között. A viselkedés ugyanaz; és nincsenek változások a végfelhasználók számára.
+  - iOS-11.4.1 és régebbi: a **Letiltás** megakadályozza, hogy a végfelhasználók saját korlátozásokat állítsanak be az eszközbeállítások között. A viselkedés ugyanaz; és nincsenek változások a végfelhasználók számára.
   - iOS 12,0 és újabb verziók: a **Letiltás** megakadályozza, hogy a végfelhasználók saját **képernyős időt** állítsanak be az eszközbeállítások során (beállítások > általános > képernyő idő), beleértve a tartalom-és adatvédelmi korlátozásokat. Az iOS 12,0-re frissített eszközök többé nem látják a korlátozások lapot az eszközbeállítások esetében (Beállítások > Általános > eszközkezelés > felügyeleti profil > korlátozásai). Ezek a beállítások a **képernyőn**jelennek meg.
   
 - Az **összes tartalom és beállítás törlésére szolgáló beállítás használata az eszközön**: válassza a **Letiltás** lehetőséget, hogy a felhasználók ne tudják használni az összes tartalom és beállítás törlése lehetőséget az eszközön. **Nincs konfigurálva** (alapértelmezés) hozzáférést biztosít a felhasználóknak a beállításokhoz.
@@ -91,7 +93,7 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
 - **Háttérkép módosítása**: a **blokk** megakadályozza a háttérkép módosítását. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a felhasználó módosítsa a háttérképet az eszközön.
 - **Vállalati alkalmazások megbízhatósági beállításainak módosítása**: a **Letiltás** megakadályozza, hogy a felhasználó módosítsa a vállalati alkalmazás megbízhatósági beállításait a felügyelt eszközökön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára az alkalmazás-áruházból letöltött alkalmazások megmegbízhatóságát.
 - **Konfigurációs profil módosítása**: a **blokk** megakadályozza a konfigurációs profil módosítását az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára a konfigurációs profilok telepítését.
-- **Aktiválási zár**: válassza az **Engedélyezés lehetőséget** aktiválási zár felügyelt iOS-eszközökön való engedélyezéséhez. A Aktiválási zár megnehezíti az elveszett vagy ellopott eszközök újraaktiválását.
+- **Aktiválási zár**: válassza az **Engedélyezés lehetőséget** aktiválási zár felügyelt iOS-vagy iPadOS-eszközökön való engedélyezéséhez. A Aktiválási zár megnehezíti az elveszett vagy ellopott eszközök újraaktiválását.
 - **Alkalmazás eltávolításának tiltása**: válassza a **Letiltás** lehetőséget a felhasználók alkalmazások eltávolításának megakadályozásához. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára az alkalmazások eltávolítását az eszközről.
 - **USB-tartozékok engedélyezése, ha az eszköz zárolva van**: az **Engedélyezés** lehetővé teszi, hogy az USB-tartozékok egy órán keresztül zárolt eszközzel legyenek kicserélve. **Nincs konfigurálva** (az alapértelmezett) nem FRISSÍTI az USB-korlátozott üzemmódot az eszközön, és az USB-tartozékok le lesznek tiltva az adatoknak az eszközről történő átvitele esetén, ha egy órán keresztül zárolva van.
 - **Automatikus dátum és idő kényszerítése**: a felügyelt eszközök **megkövetelése** a dátum & idő automatikus beállításához. Az eszköz időzónája frissül, amikor az eszköz mobil kapcsolattal rendelkezik, vagy engedélyezve van a Wi-Fi és a Location Services.
@@ -99,24 +101,28 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
 
   Ez a funkció az alábbiakra vonatkozik:  
   - iOS 11,3 és újabb verziók
+  - iPadOS 13,0 és újabb verziók
 
 - Alkalmazások **zárolásának engedélyezése az alkalmazáshoz és az eszköz zárolása az értesítés nélkül**: az **Engedélyezés** lehetővé teszi, hogy a tanár zárolja az alkalmazásokat, vagy zárolja az eszközt az osztályterem alkalmazással anélkül, hogy a tanulót kellene kérnie. Az alkalmazások zárolása azt jelenti, hogy az eszköz csak a tanár által megadott alkalmazásokat fér hozzá. **Nincs konfigurálva** (alapértelmezés) megakadályozza, hogy a tanárok az osztályterem alkalmazással zárolják az alkalmazásokat és az eszközöket anélkül, hogy a tanulót kellene kérniük.
 
   Ez a funkció az alábbiakra vonatkozik:  
   - iOS 11,0 és újabb verziók
+  - iPadOS 13,0 és újabb verziók
 
 - **Tantermi osztályok automatikus csatlakoztatása rákérdezés nélkül**: az **Engedélyezés** automatikusan lehetővé teszi a tanulók számára az osztályterem alkalmazásban található osztályhoz való csatlakozást a tanár megkérdezése nélkül. **Nincs konfigurálva** (alapértelmezés) arra kéri a tanárt, hogy a tanulók az osztályterem alkalmazásban lévő osztályhoz csatlakozzanak.
 
   Ez a funkció az alábbiakra vonatkozik:  
   - iOS 11,0 és újabb verziók
+  - iPadOS 13,0 és újabb verziók
 
 - **VPN-létrehozás letiltása**: a **blokk** megakadályozza, hogy a felhasználók VPN-konfigurációs beállításokat hozzanak létre. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a felhasználók VPN-eket hozzanak létre az eszközön.
 - A **eSIM beállításainak módosítása**: a **Letiltás** megakadályozza, hogy a felhasználók eltávolítsák vagy felvesznek egy mobil csomagot az eszköz eSIM. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy megváltoztassák ezeket a beállításokat.
 
   Ez a funkció az alábbiakra vonatkozik:  
   - iOS 12,1 és újabb verziók
+  - iPadOS 13,0 és újabb verziók
 
-- **Szoftverfrissítések késleltetése**: Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), a szoftverfrissítések az eszközön jelennek meg, ahogy az Apple felszabadítja őket. Ha például egy iOS-es frissítést az Apple adott időpontban szabadít fel, akkor ez a frissítés természetesen az eszközön jelenik meg a kiadási dátum körül.
+- **Szoftverfrissítések késleltetése**: Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), a szoftverfrissítések az eszközön jelennek meg, ahogy az Apple felszabadítja őket. Ha például egy iOS-/iPadOS-frissítést az Apple egy adott időpontban szabadít fel, akkor ez a frissítés természetesen megjelenik az eszközön a kiadási dátum körül.
 
   Az **Engedélyezés** beállítás megadásával késleltetheti, hogy a szoftverfrissítések mikor jelenjenek meg az eszközökön, 0-90 nap múlva. Ez a beállítás nem szabályozza, hogy a frissítések Mikor vagy nincsenek telepítve. 
 
@@ -126,8 +132,9 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
 
     Ez a beállítás a következőkre vonatkozik:  
     - iOS 11,3 és újabb verziók
+    - iPadOS 13,0 és újabb verziók
 
-## <a name="password"></a>Windows 10
+## <a name="password"></a>Jelszó
 
 ### <a name="settings-apply-to-all-enrollment-types"></a>A beállítások a következőre vonatkoznak: minden regisztrációs típus
 
@@ -159,13 +166,13 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
 
 - Sikertelen **bejelentkezések száma az eszköz törlése előtt**: Itt adhatja meg, hogy hány sikertelen bejelentkezés után kerüljön sor az eszköz törlésére (4-11).
   
-  az iOS beépített biztonságot tartalmaz, amely hatással lehet erre a beállításra. Előfordulhat például, hogy az iOS késlelteti a szabályzat aktiválását a bejelentkezési hibák számától függően. Azt is fontolóra veheti, hogy ismételten ugyanazzal a PIN-kóddal adja meg ugyanazt a jelszót, mint egy kísérletet. Az Apple [IOS-alapú biztonsági útmutatója](https://www.apple.com/business/site/docs/iOS_Security_Guide.pdf) (az Apple webhelyének megnyitása) jó erőforrás, és pontosabb részleteket biztosít a PIN-kódokról.
+  az iOS/iPadOS beépített biztonságot tartalmaz, amely hatással lehet erre a beállításra. Előfordulhat például, hogy az iOS/iPadOS a bejelentkezési hibák számától függően késlelteti a szabályzatot. Azt is fontolóra veheti, hogy ismételten ugyanazzal a PIN-kóddal adja meg ugyanazt a jelszót, mint egy kísérletet. Az Apple [iOS/iPadOS biztonsági útmutatója](https://www.apple.com/business/site/docs/iOS_Security_Guide.pdf) (az Apple webhelyének megnyitása) jó erőforrás, és pontosabb részleteket biztosít a PIN-kódokról.
   
-- A **Képernyő zárolása előtt legfeljebb perccel a jelszó megadása kötelező**<sup>1</sup>: adja meg, hogy az eszköz mennyi ideig maradjon üresjáratban, mielőtt a felhasználónak újra meg kell adnia a jelszavát. Ha a megadott idő hosszabb az eszközön jelenleg beállított értéknél, akkor az eszköz figyelmen kívül hagyja a beírt időt. IOS 8,0 és újabb rendszerű eszközökön támogatott.
+- A **Képernyő zárolása előtt legfeljebb perccel a jelszó megadása kötelező**<sup>1</sup>: adja meg, hogy az eszköz mennyi ideig maradjon üresjáratban, mielőtt a felhasználónak újra meg kell adnia a jelszavát. Ha a megadott idő hosszabb az eszközön jelenleg beállított értéknél, akkor az eszköz figyelmen kívül hagyja a beírt időt. IOS 8.0 + és iPadOS 13.0 + rendszert futtató eszközökön támogatott.
 
 - **Legfeljebb ennyi perc inaktivitás után (képernyő zárolása**<sup>1)</sup>: Itt adhatja meg, hogy legfeljebb hány perc inaktivitás engedélyezett az eszközön a képernyő zárolása előtt.
 
-  **iOS-beállítások**:  
+  **iOS-/iPadOS-beállítások**:  
 
   - **Nincs konfigurálva** (alapértelmezett): az Intune nem érinti ezt a beállítást.
   - **Azonnal**: a képernyő zárolása 30 másodperc inaktivitás után történik.
@@ -174,7 +181,7 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
   - **3**: a képernyő zárolása 3 perc inaktivitás után történik.
   - **4**: a képernyő zárolása 4 perc inaktivitás után történik.
   - **5**: a képernyő 5 perc inaktivitás után zárolja.
-    
+
   **iPadOS beállítások**:  
 
   - **Nincs konfigurálva** (alapértelmezett): az Intune nem érinti ezt a beállítást.
@@ -184,7 +191,7 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
   - **10**: a képernyő zárolása 10 perc inaktivitás után történik.
   - **15**: a képernyőfelvételek 15 perc inaktivitás után zárolva vannak.
 
-  Ha egy érték nem vonatkozik az iOS-re vagy a iPadOS, az Apple a legközelebbi *legalacsonyabb* értéket használja. Ha például `4` percet ad meg, a iPadOS-eszközök `2` percet használnak. Ha `10` percet ad meg, az iOS-eszközök `5` percet használnak. Ez egy Apple-korlátozás.
+  Ha egy érték nem vonatkozik az iOS-re és a iPadOS, az Apple a legközelebbi *legalacsonyabb* értéket használja. Ha például `4` percet ad meg, a iPadOS-eszközök `2` percet használnak. Ha `10` percet ad meg, az iOS-eszközök `5` percet használnak. Ez egy Apple-korlátozás.
   
   > [!NOTE]
   > A beállítás Intune KEZELŐFELÜLETe nem választja el az iOS-és a iPadOS által támogatott értékeket. Előfordulhat, hogy a felhasználói felület egy későbbi kiadásban frissül.
@@ -197,6 +204,7 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
 
   A Face ID a következőkre vonatkozik:  
   - iOS 11,0 és újabb verziók
+  - iPadOS 13,0 és újabb verziók
 
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: automatikus eszközök beléptetése (felügyelt)
 
@@ -208,8 +216,9 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
 
     A Face ID a következőkre vonatkozik:  
     - iOS 11,0 és újabb verziók
+    - iPadOS 13,0 és újabb verziók
 
-- **Jelszó automatikus**kitöltésének tiltása: válassza a **Letiltás** lehetőséget, hogy ne használja az automatikus kitöltés jelszava funkciót iOS rendszeren. A **blokk** kiválasztása a következő hatással is van:
+- **Jelszó automatikus**kitöltésének tiltása: válassza a **Letiltás** lehetőséget, hogy ne használja az automatikus kitöltés jelszavait az iOS/iPadOS. A **blokk** kiválasztása a következő hatással is van:
 
   - A felhasználók nem kérik a mentett jelszavak használatát a Safariban vagy bármely alkalmazásban.
   - Az automatikus erős jelszavak le vannak tiltva, és az erős jelszavakat nem javasoljuk a felhasználók számára.
@@ -222,6 +231,7 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
 
   Ez a funkció az alábbiakra vonatkozik:  
   - iOS 11,0 és újabb verziók
+  - iPadOS 13,0 és újabb verziók
   
 <sup>1</sup> ha a képernyő zárolása ennyi **perc inaktivitás** után és a **képernyőfelvétel után legfeljebb perccel a jelszó megadása után** beállítás van megadva, akkor a rendszer az alkalmazásokban alkalmazza őket. Ha például mindkét beállítás értékét **5** percre állítja be, a képernyő öt perc elteltével automatikusan kikapcsol, és az eszköz további öt perc múlva zárolva lesz. Ha azonban a felhasználó manuálisan kapcsolja ki a képernyőt, azonnal a második beállítás lesz alkalmazva. Ugyanebben a példában azt követően, hogy a felhasználó kikapcsolta a képernyőt, öt perccel később zárolja az eszközt.
 
@@ -247,25 +257,25 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
   > [!NOTE]
   > Ha ez a beállítás le van tiltva, az alkalmazás-áruházból telepített külső gyártótól származó billentyűzetek is le vannak tiltva.
 
-  - Nem **felügyelt alkalmazások beolvasásának engedélyezése a felügyelt névjegyek fiókjaiból**: Ha **engedélyezi**, a nem felügyelt alkalmazások, például a beépített iOS-névjegyek alkalmazás, a felügyelt alkalmazásokból származó kapcsolattartási adatokat, például az Outlook Mobile alkalmazást is beolvashatja és elérheti. **Nincs konfigurálva** (alapértelmezés) megakadályozza az olvasást, beleértve az ismétlődések eltávolítását is az eszköz beépített névjegyek alkalmazásában.  
+  - Nem **felügyelt alkalmazások beolvasásának engedélyezése a felügyelt névjegyek fiókjairól**: Ha **engedélyezi**, a nem felügyelt alkalmazások, például a beépített iOS/iPadOS névjegyek alkalmazás képes olvasni és elérni a kapcsolattartási adatokat a felügyelt alkalmazásokból, beleértve az Outlook Mobile alkalmazást is. **Nincs konfigurálva** (alapértelmezés) megakadályozza az olvasást, beleértve az ismétlődések eltávolítását is az eszköz beépített névjegyek alkalmazásában.  
   
     Ez a beállítás engedélyezi vagy megakadályozza a kapcsolattartási adatok olvasását. Nem szabályozza a kapcsolatok szinkronizálását az alkalmazások között.
   
     Ha ezt a beállítást szeretné használni, állítsa be a **vállalati dokumentumok megtekintése a nem felügyelt alkalmazásokban** beállítást a **blokkoláshoz**.
 
-  További információ erről a két beállításról, valamint azok hatása az Outlook for iOS-kapcsolat exportálási szinkronizálására [: támogatási Tipp: az egyéni Intune-profil beállításainak használata az iOS Native Contacts alkalmazással](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-Tip-Use-Intune-custom-profile-settings-with-the-iOS/ba-p/298453).
+  További információ erről a két beállításról, valamint azok hatása az Outlook for iOS/iPadOS-kapcsolat exportálási szinkronizálására [: támogatási Tipp: az egyéni Intune-profil beállításainak használata az iOS/IPadOS Native Contacts alkalmazással](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-Tip-Use-Intune-custom-profile-settings-with-the-iOS/ba-p/298453).
 
 - **AirDrop kezelése nem felügyelt célként**: a kényszerített AirDrop nem felügyelt eldobási **célként kell tekinteni** . Leállítja a felügyelt alkalmazások számára az adatok küldését a AirDrop használatával. 
 - **Nem vállalati dokumentumok megtekintése a vállalati alkalmazásokban: a** **blokk** megakadályozza a nem vállalati dokumentumok megtekintését a vállalati alkalmazásokban. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a dokumentumok megtekinthetők legyenek a vállalat által felügyelt alkalmazásokban.
 
-  A **Letiltás** beállítás meggátolja a kapcsolatfelvételt az iOS-ben az Outlookban. További információ [: támogatási Tipp: az Outlook iOS Contact Sync engedélyezése a IOS12 Mdm-vezérlőkkel](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-Tip-Enabling-Outlook-iOS-Contact-Sync-with-iOS12-MDM/ba-p/298453).
+  A **Letiltás** beállítással meggátolhatja a kapcsolatfelvételt az Outlookban az iOS-/iPadOS-szinkronizáláshoz. További információ [: támogatási Tipp: az Outlook iOS/IPadOS Contact Sync engedélyezése a IOS12 Mdm-vezérlőkkel](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-Tip-Enabling-Outlook-iOS-Contact-Sync-with-iOS12-MDM/ba-p/298453).
 
 ### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése, automatikus eszközök beléptetése (felügyelt)
 
 - **ITunes Store-jelszó megkövetelése az összes vásárláshoz**: a felhasználónak meg kell **adnia az Apple** ID jelszót az egyes alkalmazásokhoz vagy az iTunes-vásárlásokhoz. **Nincs konfigurálva** (az alapértelmezett) lehetővé teszi a vásárlásokat anélkül, hogy minden alkalommal jelszót kellene kérnie.
 - **Alkalmazáson belüli vásárlások**: a **Letiltás** elem kiválasztásával megakadályozhatja az alkalmazáson belüli vásárlásokat az áruházból. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi az áruházban való vásárlást egy futó alkalmazáson belül.
 - A **"Erotika" címkével megjelölt tartalmak letöltése az iBooks áruházból**: a **Letiltás** beállítás megtiltásával megakadályozhatja, hogy a felhasználók ne töltsenek le olyan adathordozókat az iBooks áruházból, amely az erotika. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára a könyvek letöltését az "Erotika" kategóriával.
-- A **felügyelt alkalmazások számára lehetővé teszi a névjegyek írását a nem felügyelt névjegyalbumba**: Ha az **Engedélyezés**, a felügyelt alkalmazások, például az Outlook Mobile alkalmazás, a beépített iOS Contacts alkalmazásba mentheti vagy szinkronizálhatja a kapcsolattartási adatokat, beleértve az üzleti és vállalati kapcsolatokat is. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), a felügyelt alkalmazások nem tudják menteni vagy szinkronizálni a kapcsolattartási adatokat az eszköz beépített iOS Contacts alkalmazásával.
+- **Névjegyek írásának engedélyezése a felügyelt alkalmazásoknak a nem felügyelt névjegyek fiókjai**számára: Ha **engedélyezi**, a felügyelt alkalmazások, például az Outlook Mobile alkalmazás, a beépített iOS/iPadOS Contacts alkalmazásba menthetik vagy szinkronizálhatják a kapcsolattartási adatokat, beleértve az üzleti és vállalati kapcsolatokat is. Ha a **nincs konfigurálva** értékre van állítva (alapértelmezett), a felügyelt alkalmazások nem tudják menteni vagy szinkronizálni a kapcsolattartási adatokat a beépített iOS/iPadOS névjegyek alkalmazásba az eszközön.
   
   Ha ezt a beállítást szeretné használni, állítsa be a **vállalati dokumentumok megtekintése a nem felügyelt alkalmazásokban** beállítást a **blokkoláshoz**.
 
@@ -275,28 +285,29 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
 
 - **App Store**: **letiltja** az alkalmazás-áruházhoz való hozzáférést a felügyelt eszközökön. **Nincs konfigurálva** (alapértelmezés) engedélyezi a hozzáférést.
 
-  Az iOS 13,0-es verziótól kezdve a beállításhoz felügyelt eszközök szükségesek.
+  Az iOS/iPadOS 13,0-es verziótól kezdve ehhez a beállításhoz felügyelt eszközökre van szükség.
 
   - **Alkalmazások telepítése az App Store-ból**: válassza a **Letiltás** lehetőséget az alkalmazás-áruház az eszköz kezdőlapjára való blokkolásához. A végfelhasználók továbbra is használhatják az iTunest vagy az Apple Configurator eszközt alkalmazások telepítésére. **Nincs konfigurálva** (alapértelmezés) engedélyezi az App Store-t a kezdőképernyőn.
-  - Alkalmazások **automatikus**letöltése: válassza a **Letiltás** lehetőséget, hogy megakadályozza a más eszközökön vásárolt alkalmazások automatikus letöltését. Nem érinti a meglévő alkalmazások frissítéseit. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi más iOS-eszközökön vásárolt alkalmazások letöltését az eszközön.
+  - Alkalmazások **automatikus**letöltése: válassza a **Letiltás** lehetőséget, hogy megakadályozza a más eszközökön vásárolt alkalmazások automatikus letöltését. Nem érinti a meglévő alkalmazások frissítéseit. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy más iOS/iPadOS eszközökön vásárolt alkalmazások letöltsék az eszközt.
 
-- **Kifejezetten iTunes zene, podcast vagy Hírek tartalma**: a **Letiltás** elemre kattintva megakadályozhatja az iTunes-zene, podcast vagy Hírek tartalmát. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy az eszköz hozzáférjen az áruházból származó felnőttként használt tartalomhoz. az iOS 13 és újabb verziókhoz csak felügyelt eszközökre lehet szükség. 
+- **Kifejezetten iTunes zene, podcast vagy Hírek tartalma**: a **Letiltás** elemre kattintva megakadályozhatja az iTunes-zene, podcast vagy Hírek tartalmát. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy az eszköz hozzáférjen az áruházból származó felnőttként használt tartalomhoz.
 
-  Az iOS 13,0-es verziótól kezdve a beállításhoz felügyelt eszközök szükségesek.
+  Az iOS/iPadOS 13,0-es verziótól kezdve ehhez a beállításhoz felügyelt eszközökre van szükség.
 
 - **Game Center ismerősök hozzáadása**: a **Letiltás** megakadályozza, hogy a felhasználók Game Center barátokat adjanak hozzá. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára a barátok hozzáadását Game Center.
 
-  Az iOS 13,0-es verziótól kezdve a beállításhoz felügyelt eszközök szükségesek.
+  Az iOS/iPadOS 13,0-es verziótól kezdve ehhez a beállításhoz felügyelt eszközökre van szükség.
 
 - **Game Center**: a Game Center alkalmazás használatának **tiltása** . **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a Game Center alkalmazás használatát az eszközön.
 - **Többrésztvevős játék**: válassza a **Letiltás** lehetőséget a többrésztvevős játékok elkerüléséhez. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára, hogy többrésztvevős játékokat játsszon az eszközön.
 
-  Az iOS 13,0-es verziótól kezdve a beállításhoz felügyelt eszközök szükségesek.
+  Az iOS/iPadOS 13,0-es verziótól kezdve ehhez a beállításhoz felügyelt eszközökre van szükség.
 
 - **Hozzáférés hálózati meghajtóhoz a Files alkalmazásban**: a kiszolgálói üzenetblokk (SMB) protokoll használatával az eszközök hozzáférhetnek a hálózati kiszolgálón található fájlokhoz vagy egyéb erőforrásokhoz. A **Letiltás** beállítás meggátolja a hálózati SMB-meghajtón lévő fájlok elérését. **Nincs konfigurálva** (alapértelmezés) engedélyezi a hozzáférést.
 
   Ez a funkció az alábbiakra vonatkozik:  
-  - iOS és iPadOS 13,0 és újabb verziók
+  - iOS 13,0 és újabb verziók
+  - iPadOS 13,0 és újabb verziók
 
 ## <a name="built-in-apps"></a>Beépített alkalmazások
 
@@ -325,11 +336,11 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
 
 - **Kamera**: válassza a **Letiltás** lehetőséget a kamera elérésének megakadályozásához az eszközön. **Nincs konfigurálva** (alapértelmezés) engedélyezi az eszköz kamerájának elérését.
 
-  Az iOS 13,0-es verziótól kezdve a beállításhoz felügyelt eszközök szükségesek.
+  Az iOS/iPadOS 13,0-es verziótól kezdve ehhez a beállításhoz felügyelt eszközökre van szükség.
 
   - **FaceTime**: **blokkolás** a FaceTime-alkalmazáshoz való hozzáférés megakadályozása érdekében. **Nincs konfigurálva** (alapértelmezés) engedélyezi a FaceTime alkalmazás elérését az eszközön.
 
-    Az iOS 13,0-es verziótól kezdve a beállításhoz felügyelt eszközök szükségesek.
+    Az iOS/iPadOS 13,0-es verziótól kezdve ehhez a beállításhoz felügyelt eszközökre van szükség.
 
 - **Siri káromkodás szűrő**: **megkövetelő** , hogy a Siri ne diktáljon vagy beszélje meg a káromkodás nyelvét.
 
@@ -349,16 +360,19 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
 
   Ez a funkció az alábbiakra vonatkozik:  
   - iOS 4,0 és újabb verziók
+  - iPadOS 13,0 és újabb verziók
 
 - Az **iPhone**: **nincs konfigurálva** (alapértelmezett) funkció lehetővé teszi, hogy a Find My app (az alkalmazás megkeresése) funkciót használja az eszköz hozzávetőleges helyének lekéréséhez. A **Letiltás** megakadályozza a funkció megkeresését a saját alkalmazásban. 
 
   Ez a funkció az alábbiakra vonatkozik:  
-  - iOS 13,0 és iPadOS 13,0 és újabb
+  - iOS 13,0 és újabb verziók
+  - iPadOS 13,0 és újabb verziók
 
 - **Ismerősök megkeresése**: **nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy az alkalmazás megkeresése funkcióval megkeresse a családot és a barátokat egy Apple-eszközről vagy iCloud.com. A **Letiltás** megakadályozza a funkció megkeresését a saját alkalmazásban.
 
   Ez a funkció az alábbiakra vonatkozik:  
-  - iOS 13,0 és iPadOS 13,0 és újabb
+  - iOS 13,0 és újabb verziók
+  - iPadOS 13,0 és újabb verziók
 
 - **A barátok keresése alkalmazás beállításainak módosítása**: a **Letiltás** megakadályozza a barátok alkalmazás beállításainak módosítását. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára a barátok keresése alkalmazás beállításainak módosítását.
 
@@ -368,11 +382,11 @@ Ezek a beállítások hozzáadódnak az Intune-ban az eszköz konfigurációs pr
 
 - **Safari**: **Letiltás** a Safari böngésző használatával az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára a Safari böngésző használatát.
 
-  Az iOS 13,0-es verziótól kezdve a beállításhoz felügyelt eszközök szükségesek.
+  Az iOS/iPadOS 13,0-es verziótól kezdve ehhez a beállításhoz felügyelt eszközökre van szükség.
 
 - **Safari automatikus kitöltés**: a **Letiltás** letiltja az eszközön található Safari automatikus kitöltés szolgáltatását. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára a webböngésző automatikus kiegészítési beállításainak módosítását.
 
-  Az iOS 13,0-es verziótól kezdve a beállításhoz felügyelt eszközök szükségesek.
+  Az iOS/iPadOS 13,0-es verziótól kezdve ehhez a beállításhoz felügyelt eszközökre van szükség.
 
 ## <a name="restricted-apps"></a>Korlátozott alkalmazások
 
@@ -399,7 +413,7 @@ Ha alkalmazásokat szeretne hozzáadni a listához, a következőket teheti:
 
 ## <a name="show-or-hide-apps"></a>Alkalmazások megjelenítése vagy elrejtése
 
-Az iOS 9,3-es vagy újabb verzióját futtató eszközökre vonatkozik.
+Az iOS 9.3 + és iPadOS 13.0 + rendszert futtató eszközökre vonatkozik.
 
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: automatikus eszközök beléptetése (felügyelt)
 
@@ -459,6 +473,7 @@ Vegye figyelembe, hogy az adatroaminghoz szükséges (tipp vagy fontos megjegyz�
 
   Ez a funkció az alábbiakra vonatkozik:  
   - iOS 11,0 és újabb verziók
+  - iPadOS 13,0 és újabb verziók
 
 - **Személyes elérési pont felhasználói módosítása**: Ha **blokkolásra**van beállítva, a felhasználó nem módosíthatja a személyes hozzáférési pont beállítását. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a végfelhasználók számára, hogy engedélyezzék vagy letiltsák a személyes hozzáférési pontját.
 
@@ -466,6 +481,7 @@ Vegye figyelembe, hogy az adatroaminghoz szükséges (tipp vagy fontos megjegyz�
 
   Ez a funkció az alábbiakra vonatkozik:  
   - iOS 12,2 és újabb verziók
+  - iPadOS 13,0 és újabb verziók
 
 - **Csak a konfigurációs profilokat használó Wi-Fi-hálózatok csatlakoztatása**: **megköveteli** , hogy az eszköz csak az Intune konfigurációs profiljain keresztül beállított Wi-Fi-hálózatokat használja. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy az eszköz más Wi-Fi-hálózatokat használjon.
 
@@ -478,7 +494,8 @@ Vegye figyelembe, hogy az adatroaminghoz szükséges (tipp vagy fontos megjegyz�
   A beállítás konfigurálása nem akadályozza meg, hogy a felhasználók kiválasszák a Wi-Fi hálózatot.
 
   Ez a funkció az alábbiakra vonatkozik:  
-  - iOS és iPadOS 13,0 és újabb verziók
+  - iOS 13,0 és újabb verziók
+  - iPadOS 13,0 és újabb verziók
 
 ## <a name="connected-devices"></a>Csatlakoztatott eszközök
 
@@ -495,7 +512,7 @@ Vegye figyelembe, hogy az adatroaminghoz szükséges (tipp vagy fontos megjegyz�
 - **AirDrop**: **letiltja** a AirDrop használatát az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a AirDrop funkció használatát a tartalmak a közeli eszközökkel való cseréjéhez.
 - **Apple Watch-párosítás**: a **blokk** megakadályozza az Apple Watch párosítását. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy az eszköz párosítva legyen egy Apple Watch használatával.
 - **Bluetooth-módosítás**: a **Letiltás** leállítja a végfelhasználók számára a Bluetooth-beállítások módosítását az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi, hogy a felhasználó módosítsa ezeket a beállításokat.
-- **Az IOS-eszköz által párosítható eszközök vezérlése**a következővel: **nincs konfigurálva** (alapértelmezés) – a gazdagép párosítása lehetővé teszi a rendszergazda számára, hogy az IOS-eszköz által párosítható eszközöket biztosítson a rendszergazdának. A **blokk** megakadályozza a gazdagép párosítását.
+- **A gazdagép párosítása az iOS-/iPadOS-eszköz párosítása a**következővel: **nincs konfigurálva** (alapértelmezés) lehetővé teszi a gazdagép párosítását, hogy a rendszergazda vezérelje, hogy az iOS-/iPadOS-eszközök milyen eszközöket tudnak párosítani. A **blokk** megakadályozza a gazdagép párosítását.
 - **AirPrint letiltása**: a **Letiltás** lehetőség kiválasztásával megakadályozhatja a AirPrint funkció használatát az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára a AirPrint használatát.
   - **AirPrint hitelesítő adatok tárolásának letiltása a kulcstartóban**: a **blokkolás** megakadályozza a kulcstartó tárolását a Felhasználónév és a jelszó használatával az eszközön. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a AirPrint-Felhasználónév és-jelszó tárolását a kulcstartó alkalmazásban.
   - **Megbízható TLS-tanúsítvány megkövetelése a AirPrint**: **megköveteli** , hogy az eszköz megbízható tanúsítványokat használjon a TLS-nyomtatással való kommunikációhoz.
@@ -504,11 +521,13 @@ Vegye figyelembe, hogy az adatroaminghoz szükséges (tipp vagy fontos megjegyz�
 
   Ez a funkció az alábbiakra vonatkozik:  
   - iOS 11,0 és újabb verziók
+  - iPadOS 13,0 és újabb verziók
 
 - **Hozzáférés a fájlokhoz USB-meghajtón**: az eszközök csatlakozhatnak és megnyithatnak egy USB-meghajtón található fájlokat. A **Letiltás** beállítás megadásával megakadályozható, hogy az eszköz HOZZÁFÉRJEN az USB-meghajtóhoz a fájlok alkalmazásban, ha az USB-kapcsolat az eszközhöz csatlakozik. A funkció letiltása azt is megakadályozza, hogy a végfelhasználók fájlokat vigyenek át egy iPadhez csatlakoztatott USB-meghajtóra. **Nincs konfigurálva** (az alapértelmezett érték) a fájlok alkalmazásban található USB-meghajtó elérését teszi lehetővé.
 
   Ez a funkció az alábbiakra vonatkozik:  
-  - iOS és iPadOS 13,0 és újabb verziók
+  - iOS 13,0 és újabb verziók
+  - iPadOS 13,0 és újabb verziók
 
 ## <a name="keyboard-and-dictionary"></a>Billentyűzet és szótár
 
@@ -523,7 +542,8 @@ Vegye figyelembe, hogy az adatroaminghoz szükséges (tipp vagy fontos megjegyz�
 - **QuickPath**: **nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára a QuickPath használatát, amely lehetővé teszi a folyamatos bevitelt az eszköz billentyűzetén. A felhasználók a kulcsok szövegének megírásával írhatják be a szavakat. A **Letiltás** megakadályozza, hogy a felhasználók a QuickPath használják. 
 
   Ez a funkció az alábbiakra vonatkozik:  
-  - iOS 13,0 és iPadOS 13,0 és újabb
+  - iOS 13,0 és újabb verziók
+  - iPadOS 13,0 és újabb verziók
 
 ## <a name="cloud-and-storage"></a>Felhő és tárolás
 
@@ -539,21 +559,21 @@ Vegye figyelembe, hogy az adatroaminghoz szükséges (tipp vagy fontos megjegyz�
 - **A Photo Stream szinkronizálása iCloud**-ba: **nincs konfigurálva** (alapértelmezett) lehetővé teszi a felhasználók számára, hogy az eszközön lévő **Photo streamet** szinkronizálják az icloudba, és az összes felhasználó eszközén elérhetővé tegyék a fényképeket. A **blokk** megakadályozza, hogy a Photo Stream szinkronizáljon az icloudba. A funkció blokkolása adatvesztést eredményezhet. 
 - **iCloud Photo Library**: a **Letiltás** beállítás megadásával letilthatja a fényképek és videók felhőben való tárolását az iCloud Photo Library használatával. A rendszer eltávolít minden olyan fényképet, amely nincs teljesen letöltve az iCloud Photo Library-ből az eszközre. **Nincs konfigurálva** (az alapértelmezett beállítás) az iCloud Photo Library használatát teszi lehetővé.
 - **Megosztott Photo Stream**: válassza a **Letiltás** lehetőséget az **iCloud Photo Sharing** eszközön való letiltásához. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a megosztott fényképek folyamatos átvitelét.
-- **Handoff**: **nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy megkezdsék a munkát egy IOS-eszközön, majd folytatják az elindított munkát egy másik iOS-vagy MacOS-eszközön. A **blokk** megakadályozza ezt a handoff.
+- **Handoff**: **nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy egy IOS-vagy iPadOS-eszközön működjenek, majd folytassa a munkát, amelyet egy másik iOS/iPadOS vagy MacOS rendszerű eszközön indítottak el. A **blokk** megakadályozza ezt a handoff.
 
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: automatikus eszközök beléptetése (felügyelt)
 
 - **Biztonsági mentés az icloudba**: **nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználó számára az eszköz icloudba történő biztonsági mentését. A **Letiltás** leállítja a felhasználótól, hogy biztonsági másolatot készít az eszközről az icloudba.
 
-  Az iOS 13,0-es verziótól kezdve a beállításhoz felügyelt eszközök szükségesek.
+  Az iOS/iPadOS 13,0-es verziótól kezdve ehhez a beállításhoz felügyelt eszközökre van szükség.
 
 - **ICloud-dokumentum szinkronizálásának letiltása**: **nincs konfigurálva** (alapértelmezés) lehetővé teszi a dokumentumok és a kulcs-érték szinkronizálását az iCloud tárhelyére. A **blokk** megakadályozza, hogy az iCloud szinkronizálja a dokumentumokat és az adatokkal.
 
-  Az iOS 13,0-es verziótól kezdve a beállításhoz felügyelt eszközök szükségesek.
+  Az iOS/iPadOS 13,0-es verziótól kezdve ehhez a beállításhoz felügyelt eszközökre van szükség.
 
 - **ICloud-kulcstartó szinkronizálásának**letiltása: válassza a **Letiltás** lehetőséget a kulcstartóban tárolt hitelesítő adatok icloudba való szinkronizálásának letiltásához. **Nincs konfigurálva** (alapértelmezés) lehetővé teszi a felhasználók számára, hogy szinkronizálják ezeket a hitelesítő adatokat.
 
-  Az iOS 13,0-es verziótól kezdve a beállításhoz felügyelt eszközök szükségesek.
+  Az iOS/iPadOS 13,0-es verziótól kezdve ehhez a beállításhoz felügyelt eszközökre van szükség.
 
 ## <a name="autonomous-single-app-mode"></a>Autonóm Egyalkalmazásos mód
 
@@ -612,14 +632,14 @@ Egy CSV-fájlt is **importálhat** az alkalmazások neveinek és a Kötegük azo
 - **Nagyítás-vezérlés**: a felhasználó által végrehajtott nagyítási módosítások **engedélyezése** . A **nincs konfigurálva beállítás** megakadályozza a nagyítás módosítását.
 
 > [!NOTE]
-> Az iOS-eszközök Kioszk módra való konfigurálása előtt felügyelt módba kell állítania az eszközt az Apple Configurator eszközzel vagy az Apple Device Enrollment Program készülékregisztráció-kezelővel. Tekintse meg az Apple konfiguráló eszközének használatát ismertető témakört.
-> Ha a megadott iOS-alkalmazás a profil hozzárendelését követően települ, az eszköz mindaddig nem lép kioszk módba, amíg az eszköz újra nem indul.
+> Az iOS/iPadOS-eszköz teljes képernyős módban való konfigurálásához az Apple konfigurátor eszközt vagy az Apple Készülékregisztrációs programt kell használnia ahhoz, hogy az eszközt felügyelt módba lehessen helyezni. Tekintse meg az Apple konfiguráló eszközének használatát ismertető témakört.
+> Ha a megadott iOS-/iPadOS-alkalmazás a profil hozzárendelését követően települ, az eszköz mindaddig nem lép kioszk módba, amíg az eszköz újra nem indul.
 
 ## <a name="domains"></a>Domains
 
 ### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>A beállítások a következőkre vonatkoznak: eszközök beléptetése, automatikus eszközök beléptetése (felügyelt)
 
-- **Jelöletlen e-mail-tartományok** > **e-mail-tartomány URL-címe**: adjon hozzá egy vagy több URL-címet a listához. Ha a végfelhasználók a megadott tartománytól eltérő tartományból kapnak e-mailt, az iOS-es mail alkalmazásban az e-mail nem megbízhatóként van megjelölve.
+- **Jelöletlen e-mail-tartományok** > **e-mail-tartomány URL-címe**: adjon hozzá egy vagy több URL-címet a listához. Ha a végfelhasználók a megadott tartománytól eltérő tartományból kapnak e-mailt, az iOS/iPadOS mail alkalmazásban az e-mail nem megbízhatóként van megjelölve.
 
 - **Felügyelt webtartományok** > **webes tartomány URL-címe**; Adjon hozzá egy vagy több URL-címet a listához. Ha a rendszer letölti a dokumentumokat a megadott tartományokból, felügyelt tekintendők. Ez a beállítás csak a Safari böngészővel letöltött dokumentumokra vonatkozik.
 
@@ -629,10 +649,11 @@ Egy CSV-fájlt is **importálhat** az alkalmazások neveinek és a Kötegük azo
 
   Ez a beállítás a következőkre vonatkozik:  
   - iOS 9,3 és újabb verziók
+  - iPadOS 13,0 és újabb verziók
 
 ## <a name="settings-that-require-supervised-mode"></a>Felügyelt üzemmódot igénylő beállítások
 
-Az iOS Supervised (Felügyelt) módja csak a kezdeti eszközbeállítás során, az Apple Készülékregisztrációs programján keresztül vagy az Apple Configuratorral engedélyezhető. A Supervised (Felügyelt) mód engedélyezése után az Intune az alábbi funkciókkal konfigurálhatja az eszközöket:
+az iOS/iPadOS felügyelt mód csak az Apple Készülékregisztrációs program vagy az Apple konfigurátor használatával engedélyezhető a kezdeti eszköz beállítása során. A Supervised (Felügyelt) mód engedélyezése után az Intune az alábbi funkciókkal konfigurálhatja az eszközöket:
 
 - App Lock (Egyetlen alkalmazás mód) 
 - Globális HTTP-Proxy 

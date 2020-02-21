@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 01/07/2020
+ms.date: 02/18/2020
 ms.topic: tutorial
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 80f489bc91f6d2f51cf9ee378793043a49c4e949
-ms.sourcegitcommit: e4602481a25a5e12379f673dfe801c611f51c35b
+ms.openlocfilehash: a96f291203e1513ab89196b26a7802856f90e048
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75735026"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77511233"
 ---
 # <a name="tutorial-use-the-cloud-to-configure-group-policy-on-windows-10-devices-with-admx-templates-and-microsoft-intune"></a>Oktatóanyag: a Windows 10 rendszerű eszközökön a felhő használatával konfigurálja a csoportházirendet az ADMX-sablonokkal és Microsoft Intune
 
@@ -41,7 +41,7 @@ Az ADMX-házirendekkel kapcsolatos további információkért lásd: az [ADMX-al
 
 Microsoft Intune ezek a sablonok az Intune szolgáltatásba épülnek, és **Felügyeleti sablonok** profiljaiként érhetők el. Ebben a profilban konfigurálhatja a felvenni kívánt beállításokat, majd "hozzárendelheti" ezt a profilt az eszközökhöz.
 
-Az oktatóanyagban a következőket végezheti el:
+Az oktatóanyag során az alábbi lépéseket fogja végrehajtani:
 
 > [!div class="checklist"]
 > * Ismerkedjen meg a [Microsoft Endpoint Manager felügyeleti központjával](https://go.microsoft.com/fwlink/?linkid=2109431).
@@ -110,7 +110,7 @@ Ez a felügyeleti központ az eszközök felügyeletére koncentrál, és tartal
 
 A Endpoint Manager felügyeleti központot a [Microsoft 365 felügyeleti központból](https://admin.microsoft.com)is megnyithatja:
 
-1. Látogasson el ide: [https://admin.microsoft.com](https://admin.microsoft.com).
+1. Lépjen [https://admin.microsoft.com](https://admin.microsoft.com).
 2. Jelentkezzen be a Microsoft 365 bérlői előfizetés rendszergazdai fiókjával.
 3. A **felügyeleti központok**területen válassza **az összes felügyeleti központ** > **Endpoint Management**lehetőséget. Megnyílik a Endpoint Manager felügyeleti központ.
 
@@ -193,7 +193,7 @@ A következő lépésekben hozzon létre biztonsági csoportokat, és vegyen fel
 
   - Minden tanuló
   - Minden Android-eszköz
-  - Minden iOS-eszköz
+  - Minden iOS-/iPadOS-eszköz
   - Marketing
   - Emberi erőforrások
   - Az összes Charlotte-alkalmazott
@@ -203,7 +203,7 @@ A következő lépésekben hozzon létre biztonsági csoportokat, és vegyen fel
 
 A létrehozott felhasználókat és csoportokat a [Microsoft 365 felügyeleti központban](https://admin.microsoft.com), az Azure ad-ben is láthatja a Azure Portal, és [a Azure Portal Microsoft Intune](https://go.microsoft.com/fwlink/?linkid=2090973). A bérlői előfizetéshez tartozó összes területen létrehozhat és kezelhet csoportokat. **Ha a cél az eszközkezelés, használja a [Microsoft Endpoint Manager felügyeleti központot](https://go.microsoft.com/fwlink/?linkid=2109431)** .
 
-### <a name="review-group-membership"></a>Csoporttagság felülvizsgálata
+### <a name="review-group-membership"></a>Csoporttagság áttekintése
 
 1. A Endpoint Manager felügyeleti központban válassza ki a **felhasználók** > a meglévő felhasználók nevét.
 
@@ -474,7 +474,7 @@ Ez a szakasz a következő erőforrásokat használja. Ezeket az erőforrásokat
         **Felhasználó**: adja meg a Microsoft 365 bérlői előfizetés rendszergazdai fiókját.  
         **Password (jelszó**): adja meg a jelszavát.
 
-    4. Válassza ki az **Elfogadás** lehetőséget.
+    4. Válassza az **elfogadás**lehetőséget.
 
 9. Hozza létre a **teszt konfigurációs** konfigurációs profilt. Adja meg a következőt:
 

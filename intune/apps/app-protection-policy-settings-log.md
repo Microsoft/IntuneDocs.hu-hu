@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ddddfdceaccd53025033c27301c53ecf85d34d48
-ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.openlocfilehash: 6b45f4b2bdcf70aa9df8a426f0a63ee0f19a2545
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77414940"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77511990"
 ---
 # <a name="review-client-app-protection-logs"></a>Ügyfelekre vonatkozó alkalmazásvédelmi naplók áttekintése
 
@@ -34,7 +34,7 @@ A naplók engedélyezésére és gyűjtésére szolgáló folyamat a következő
 - **Windows 10-es eszközök** – a *MDMDiag* és az eseménynaplókat használja. Tekintse meg a Windows [Mdm hibáinak diagnosztizálása](https://docs.microsoft.com/windows/client-management/mdm/diagnose-mdm-failures-in-windows-10) a Windows 10 rendszerben című témakört, valamint a Windows [10 Intune-szabályzat hibáit](https://blogs.technet.microsoft.com/configmgrdogs/2018/08/09/troubleshooting-windows-10-intune-policy-failures/)ismertető blogot.
 - **Android-eszközök** – az App Protection-szabályzat (alkalmazás) nem rendelkezik az Android-eszközökön található diagnosztikai adattal.
 
-A következő táblázat felsorolja az App Protection-házirend beállításának nevét és a naplóban rögzített támogatott értékeket. Emellett minden beállítás azonosítja a Microsoft Endpoint Manager-portálon található házirend-beállítást. Az egyes beállításokkal kapcsolatos részletes információkért lásd: [iOS-alkalmazás védelmi szabályzatának beállításai](~/apps/app-protection-policy-settings-ios.md).
+A következő táblázat felsorolja az App Protection-házirend beállításának nevét és a naplóban rögzített támogatott értékeket. Emellett minden beállítás azonosítja a Microsoft Endpoint Manager-portálon található házirend-beállítást. Az egyes beállításokkal kapcsolatos részletes információkért lásd: [iOS/iPadOS alkalmazás-védelmi házirend-beállítások](~/apps/app-protection-policy-settings-ios.md).
 
 ## <a name="app-protection-policy-settings"></a>Alkalmazásvédelmi szabályzatbeállítások
 

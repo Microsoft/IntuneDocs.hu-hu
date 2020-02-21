@@ -15,19 +15,19 @@ ms.technology: ''
 ms.assetid: ''
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f41d5d1ec3e302a277fe5e6ff6af9d33a7e89517
-ms.sourcegitcommit: d21539e52631c589bfeaa182418390f66672736c
+ms.openlocfilehash: 7d17749353bc3904a3d99210a5d56531d9af9c28
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/01/2020
-ms.locfileid: "75564917"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514812"
 ---
 # <a name="sophos-mobile-threat-defense-connector-with-intune"></a>A Sophos Mobile Threat Defense-összekötő az Intune-nal
 A mobil eszközök hozzáférését a vállalati erőforrásokhoz feltételes hozzáférés használatával szabályozhatja a Sophos Mobile, a Mobile Threat Defense (MTD) által a Microsoft Intune-nal integrálható megoldás alapján. A rendszer a Sophos Mobile alkalmazást futtató eszközökről gyűjtött telemetria alapján méri a kockázatot.
 Az Intune-eszköz megfelelőségi szabályzatai által engedélyezett, a Sophos Mobile Risk Assessment szolgáltatáson alapuló feltételes hozzáférési szabályzatokat konfigurálhatja, amelyekkel engedélyezheti vagy letilthatja a nem megfelelő eszközök hozzáférését a vállalati erőforrásokhoz az észlelt fenyegetések alapján.
 
 ## <a name="how-do-intune-and-sophos-mobile-help-protect-your-company-resources"></a>Hogyan segít az Intune és a Sophos Mobile a vállalati erőforrások védelmében?
-Az Android és az iOS rendszerhez készült Sophos Mobile alkalmazás rögzíti a fájlrendszer, a hálózati verem, az eszköz és az alkalmazás telemetria, ahol elérhető, majd elküldi a telemetria adatokat a Sophos Mobile Cloud Service-nek, hogy felmérje az eszköz kockázatát a mobil veszélyforrások számára.
+A Sophos Mobile App for Android és az iOS/iPadOS rögzíti a fájlrendszer, a hálózati verem, az eszköz és az alkalmazás telemetria, ahol elérhető, majd elküldi a telemetria adatokat a Sophos Mobile Cloud Service-nek, hogy felmérje az eszköz kockázatát a mobil fenyegetések ellen.
 Az Intune-eszköz megfelelőségi szabályzata tartalmaz egy szabályt a Sophos Mobile Threat Defense számára, amely a Sophos Mobile Risk Assessment alapján történik. Ha ez a szabály engedélyezve van, az Intune az engedélyezett szabályzat alapján értékeli az eszköz megfelelőségét. Amennyiben az eszköz nem megfelelőnek minősül, akkor megszűnik a felhasználók hozzáférése az olyan erőforrásokhoz, mint az Exchange Online és a SharePoint Online. A felhasználók az eszközökön telepített Sophos Mobile alkalmazásból is kaphatnak útmutatást a probléma megoldásához és a vállalati erőforrásokhoz való hozzáférés visszaszerzéséhez.  
 
 ## <a name="sample-scenarios"></a>Mintaforgatókönyvek

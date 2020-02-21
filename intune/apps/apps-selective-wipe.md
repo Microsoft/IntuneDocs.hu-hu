@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9c0ca82b434b83937c7962b2676ce3c2a12c1424
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 1f6992aa93e1ca5a095b1e92a16a07bd0eb1c2f5
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74564005"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77513639"
 ---
 # <a name="how-to-wipe-only-corporate-data-from-intune-managed-apps"></a>Csak vállalati adatok törlése az Intune által felügyelt alkalmazásokból
 
@@ -32,7 +32,7 @@ ms.locfileid: "74564005"
 Ha egy eszközt elveszítenek vagy ellopnak, vagy ha a dolgozó elhagyja a vállalatot, fontos eltávolítani a vállalati alkalmazásadatokat az eszközről. Előfordul, hogy a személyes adatokat meg kell őrizni, különösen, ha az eszköz a dolgozó saját tulajdona.
 
 >[!NOTE]
-> Az iOS, az Android és a Windows 10 platform az egyetlen olyan platform, amely jelenleg támogatott a vállalati adatok Intune által felügyelt alkalmazásokból való törléséhez. Az Intune által felügyelt alkalmazások olyan alkalmazások, amelyek tartalmazzák az Intune APP SDK-t, és rendelkeznek egy licenccel rendelkező felhasználói fiókkal a szervezet számára. Az alkalmazás-védelmi házirendek telepítése nem szükséges az alkalmazás szelektív törlésének engedélyezéséhez.
+> Az iOS/iPadOS, az Android és a Windows 10 platform az egyetlen olyan platform, amely jelenleg támogatott a vállalati adatok Intune által felügyelt alkalmazásokból való törléséhez. Az Intune által felügyelt alkalmazások olyan alkalmazások, amelyek tartalmazzák az Intune APP SDK-t, és rendelkeznek egy licenccel rendelkező felhasználói fiókkal a szervezet számára. Az alkalmazás-védelmi házirendek telepítése nem szükséges az alkalmazás szelektív törlésének engedélyezéséhez.
 
 A vállalati alkalmazásadatok szelektív törléséhez hozzon létre törlési kérést az ebben a témakörben leírt lépésekkel. A kérelem teljesítése után az alkalmazás a következő futtatásakor az eszközön a vállalati adatok törlődnek az alkalmazásból. Törlési kérelem létrehozásán kívül új műveletként konfigurálható a céges adatok szelektív törlése, ha az alkalmazásvédelmi szabályzatok (APP) hozzáférési beállításai nem teljesülnek. Ez a funkció lehetővé teszi, hogy a céges adatokat automatikusan védje vagy eltávolítsa az előre konfigurált feltételeken alapuló alkalmazásokról.
 

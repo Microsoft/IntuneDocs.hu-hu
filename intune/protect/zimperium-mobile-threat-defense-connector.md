@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b4ff350bd8c1c16eedd30a6b7af4f3927bce3c3e
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 9d0fe5634e5af6ef4c6f19e067131f151733c0b5
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72508752"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515237"
 ---
 # <a name="zimperium-mobile-threat-defense-connector-with-intune"></a>Zimperium Mobile Threat Defense-összekötő az Intune-nal
 
@@ -33,7 +33,7 @@ A feltételes hozzáférési szabályzatok az Intune-eszköz megfelelőségi sza
 
 ## <a name="how-do-intune-and-zimperium-help-protect-your-company-resources"></a>Hogyan segíti az Intune és a Zimperium a vállalati erőforrások védelmét?
 
-Az Androidra és iOS-re készült Zimperium alkalmazás rögzíti a fájlrendszer, a hálózati protokollkészlet, valamint az eszközök és az alkalmazások telemetriai adatait, ha elérhetők, és továbbítja őket a Zimperium felhőszolgáltatásnak, amely felméri az eszköz kockázatát a mobil veszélyforrások tekintetében.
+Az Android és az iOS/iPadOS Zimperium alkalmazás rögzíti a fájlrendszer, a hálózati verem, az eszköz és az alkalmazás telemetria, ahol elérhető, majd a telemetria adatokat elküldi a Zimperium Cloud Service-nek, hogy felmérje az eszköz kockázatát a mobil fenyegetések ellen.
 
 Az Intune eszközmegfelelőségi szabályzata tartalmaz egy szabályt a Zimperium mobilfenyegetések elleni védelméhez, amely a Zimperium kockázatfelmérésén alapul. Ha ez a szabály engedélyezve van, az Intune az engedélyezett szabályzat alapján értékeli az eszköz megfelelőségét. Amennyiben az eszköz nem megfelelőnek minősül, akkor megszűnik a felhasználók hozzáférése az olyan erőforrásokhoz, mint az Exchange Online és a SharePoint Online. A mobileszközeikre telepített Zimperium mobilalkalmazás segítséget nyújt a felhasználóknak a probléma elhárításához és a vállalati erőforrásokhoz való hozzáférés visszaszerzéséhez.
 

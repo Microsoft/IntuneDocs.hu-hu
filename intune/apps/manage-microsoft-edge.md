@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3ae5a7508f27dbf15a58ba3386e744bb63bf102b
-ms.sourcegitcommit: e1ff157f692983b49bdd6e20cc9d0f93c3b3733c
+ms.openlocfilehash: 40a7e1884a7e36bf56038bdafdd15a1556ef46c7
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77125013"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77513452"
 ---
 # <a name="manage-web-access-by-using-microsoft-edge-with-microsoft-intune"></a>Webes elérés kezelése a Microsoft Edge és a Microsoft Intune használatával
 
@@ -101,7 +101,7 @@ Alkalmazás-konfiguráció létrehozása a Microsoft Edge-hez:
 2. Válassza az **alkalmazások** > **alkalmazás-konfigurációs házirendek** > **Hozzáadás**elemet.
 3. A **konfigurációs szabályzat hozzáadása** panelen adja meg az alkalmazás konfigurációs beállításainak **nevét** és **leírását** (nem kötelező).
 4. Az **Eszközregisztráció** típusaként válassza a **Felügyelt alkalmazások** lehetőséget.
-5. Válassza **a kötelező alkalmazás kiválasztása**lehetőséget. Ezután a megtekintett **alkalmazások** panelen válassza az iOS-hez, az Androidhoz vagy mindkettőhöz tartozó **Managed Browser** vagy **Edge** elemet.
+5. Válassza **a kötelező alkalmazás kiválasztása**lehetőséget. Ezután a megtekintett **alkalmazások** ablaktáblán válassza az iOS/iPadOS, az Android vagy a (z) rendszerhez tartozó **Managed Browser** vagy **Edge** lehetőséget.
 6. A **konfigurációs szabályzat hozzáadása** panelre való visszatéréshez kattintson **az OK gombra** .
 7. Válassza a **Konfigurációs beállítások** lehetőséget. A **konfigurációs** panelen kulcs-érték párokat határozhat meg a Microsoft Edge konfigurációinak megadásához. A jelen cikk későbbi részeiben további információt talál a definiálható kulcs-érték párokról.
 
@@ -136,7 +136,7 @@ Androidon:
 - A Microsoft Edge elindítja, ha csak a Microsoft Edge van letöltve az eszközön, és az Intune-szabályzattal van megcélozva.
 - Managed Browser elindítja, ha csak Managed Browser van az eszközön, és az Intune-szabályzattal van megcélozva.
 
-Az iOS rendszeren, ha az alkalmazásokban integrálva van az Intune SDK for iOS 9.0.9+ verziója:
+IOS/iPadOS esetén olyan alkalmazások esetében, amelyek integrálták az Intune SDK for iOS v-t. 9.0.9+ verziója:
 - A Intune Managed Browser akkor indul el, ha a Managed Browser és a Microsoft Edge is az eszközön van.  
 - A Microsoft Edge elindítja, ha csak a Microsoft Edge van az eszközön, és az Intune-szabályzattal van megcélozva.
 - Managed Browser elindítja, ha csak Managed Browser van az eszközön, és az Intune-szabályzattal van megcélozva.
@@ -201,7 +201,7 @@ Ezután használja a következő kulcs/érték párokat a szervezetek arculatán
 
 ## <a name="display-relevant-industry-news-on-new-tab-pages"></a>Releváns iparági Hírek megjelenítése az új lapokon
 
-A Microsoft Edge Mobile szolgáltatásban az új lap felületét az iparági Hírek megjelenítéséhez is beállíthatja, amely a szervezet számára fontos. Ha engedélyezi ezt a funkciót, a Microosft Edge Mobile a szervezet tartománynevét használja a webes Hírek összesítésére a szervezete, a szervezet iparága és a comeptitors számára, így a felhasználók a megfelelő külső híreket is megtalálják a centeralized új Lap lapjai a Microsoft Edge-ben. Az iparági Hírek alapértelmezés szerint ki vannak kapcsolva, és a segítségével a szervezet számára engedélyezhető. 
+A Microsoft Edge Mobile szolgáltatásban az új lap felületét az iparági Hírek megjelenítéséhez is beállíthatja, amely a szervezet számára fontos. Ha engedélyezi ezt a funkciót, a Microsoft Edge Mobile a szervezet tartománynevét használja a webes Hírek összesítésére a szervezet, a szervezet iparága és a versenytársak számára, így a felhasználók a központi Újdonságok alapján találhatják meg a releváns külső híreket. Lap lapjai a Microsoft Edge-ben. Az iparági Hírek alapértelmezés szerint ki vannak kapcsolva, és a segítségével a szervezet számára engedélyezhető. 
 
 |    Kulcs    |    Érték    |
 |------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
@@ -293,7 +293,7 @@ Beállíthatja, hogy a korlátozott hivatkozások közvetlenül az InPrivate-bö
 
 |    Kulcs    |    Érték    |
 |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    `com.microsoft.intune.mam.managedbrowser.AllowTransitionOnBlock`    |    A **true** értékkel engedélyezheti a Microsoft Edge számára a felhasználók személyes környezetbe való átváltását a blokkolt helyek megnyitására.<p>A **Letiltás** megakadályozza a Microsoft Edge számára a felhasználók átváltását. A felhasználók egyszerűen megjelenítenek egy üzenetet arról, hogy az elérni kívánt hely le van tiltva.    |
+|    `com.microsoft.intune.mam.managedbrowser.openInPrivateIfBlock`    |    Az **igaz** érték automatikusan nyitja meg a helyeket egy InPrivate-lapon anélkül, hogy a felhasználót arra kellene kérni, hogy a személyes fiókjára váltson. <p> A **false** (alapértelmezett) érték letiltja a helyet a Microsoft Edge-en belül, és a rendszer arra kéri a felhasználót, hogy váltson a személyes fiókjára a megtekintéshez.    |
 
 ## <a name="disable-microsoft-edge-prompt-to-save-passwords"></a>A Microsoft Edge-kérés letiltása a jelszavak mentéséhez
 

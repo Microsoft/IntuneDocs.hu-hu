@@ -1,6 +1,6 @@
 ---
 title: A Microsoft Intune szolgáltatás leírása
-description: A Microsoft Intune egy felhőalapú szolgáltatás, amellyel Windows, iOS, Mac OS X, Android és Windows Mobile rendszerű eszközök felügyelhetők.
+description: A Microsoft Intune egy felhőalapú szolgáltatás, amely a Windows, iOS/iPadOS, Mac OS X, Android és Windows Mobile rendszerű eszközök felügyeletét segíti.
 keywords: ''
 author: dougeby
 ms.author: dougeby
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7744fe217f39436e91f90fdf567f469c01986da4
-ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
+ms.openlocfilehash: 2b65276ed2da827017406c67838afd89a766b2dc
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75885657"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515067"
 ---
 # <a name="microsoft-intune-service-description"></a>A Microsoft Intune szolgáltatás leírása
 
@@ -47,7 +47,7 @@ Az Intune használatát egy 30 napos ingyenes próbaverzióval kezdheti meg, ame
 
 --->
 ## <a name="intune-onboarding-benefit"></a>Kedvezményes Intune-bevezetési támogatás
-A Microsoft az Intune bevezetési juttatást a jogosult csomagokban foglalt jogosult szolgáltatások esetében kínálja. Ez lehetővé teszi, hogy távoli segítséget kérjen a Microsoft szakértőitől az Intune-környezet üzembe helyezéséhez. A bevezetési értékelemmel kapcsolatos további információkért lásd: [A Microsoft Intune bevezetési értékelemének leírása](https://go.microsoft.com/fwlink/?LinkId=619281).
+A Microsoft az Intune bevezetési értékelemet a jogosult csomagokban foglalt jogosult szolgáltatások esetében kínálja. Ez lehetővé teszi, hogy távoli segítséget kérjen a Microsoft szakértőitől az Intune-környezet üzembe helyezéséhez. A bevezetési értékelemmel kapcsolatos további információkért lásd: [A Microsoft Intune bevezetési értékelemének leírása](https://go.microsoft.com/fwlink/?LinkId=619281).
 
 
 ## <a name="learn-how-intune-service-updates-affect-you"></a>Az Intune szolgáltatásfrissítéseinek hatása a felhasználókra

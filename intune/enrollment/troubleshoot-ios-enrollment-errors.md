@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7e8234db93d9b06a71e1f5cd6e51daca2d1ea2b1
-ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.openlocfilehash: a29fab4be6e2046b2c6757505001a7ba3455b8d6
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77415175"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514319"
 ---
 # <a name="troubleshoot-iosipados-device-enrollment-problems-in-microsoft-intune"></a>Az iOS/iPadOS eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune
 
@@ -238,18 +238,6 @@ Amikor bekapcsol egy beléptetési profilhoz rendelt DEP által felügyelt eszk�
 
 #### <a name="resolution"></a>Megoldás
 Tiltsa le az MFA-t, majd regisztrálja újra az eszközt.
-
-### <a name="the-enrollment-status-page-times-out-before-the-sign-in-screen"></a>A regisztrációs állapot lap időtúllépést eredményez a bejelentkezési képernyő előtt
-
-**OK:** Ez a probléma akkor fordulhat elő, ha a következő feltételek mindegyike teljesül:
-- A beléptetési állapot lapot használja az üzleti alkalmazások Microsoft Store nyomon követéséhez.
-- Rendelkezik egy Azure AD feltételes hozzáférési szabályzattal, amely az eszköz megfelelőségi vezérlőként való jelölését használja.
-- A szabályzat minden felhőalapú alkalmazásra és Windowsra vonatkozik.
-
-#### <a name="resolution"></a>Megoldás:
-Próbálja ki a következők egyikét:
-- Az Intune-beli megfelelőségi szabályzatok megcélzása az eszközökre. Győződjön meg arról, hogy a megfelelőség meghatározható a felhasználó bejelentkezése előtt.
-- Offline licencelés használata az áruházbeli alkalmazásokhoz. Így a Windows-ügyfélnek nem kell az eszköz megfelelőségének meghatározása előtt ellenőriznie a Microsoft Store.
 
 
 ## <a name="next-steps"></a>További lépések

@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f0e2e2101706b9b9afa77553244a438a2299903b
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 67d9b5df39311d58571f875b8d41c16088010fad
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73414028"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514302"
 ---
 # <a name="common-ways-to-use-microsoft-intune"></a>A Microsoft Intune használatának gyakori módjai
 
@@ -35,7 +35,7 @@ Az alábbiakban röviden bemutatjuk az Intune-ra épülő hat leggyakoribb forga
 >Tudni szeretné, hogy a Microsoft informatikai részlege hogyan használja az Intune-t annak biztosítására, hogy a Microsoft dolgozói hozzáférjenek a vállalati erőforrásokhoz a mobileszközeikről, és eközben hogyan gondoskodik a vállalati adatok védelméről? [Olvassa el ezt az angol nyelvű technikai esettanulmányt](https://www.microsoft.com/itshowcase/Article/Content/588), amely részletesen leírja, hogyan használja a Microsoft informatikai részlege az Intune-t és az egyéb szolgáltatásokat az identitás, az eszközök, az alkalmazások és az adatok kezeléséhez.  
 
 >[!IMPORTANT]
->A nemrégiben a „Trident” kártevő által az iOS-eszközök ellen indított támadások miatt biztosítani szeretnénk a mobileszközök naprakészségét. Ezért tettük közzé a [mobileszközök folyamatos frissítésének a Microsoft Intune segítségével történő biztosítását](https://blogs.technet.microsoft.com/enterprisemobility/2016/08/26/ensuring-mobile-devices-are-up-to-date-using-microsoft-intune/) ismertető blogbejegyzést. Ez bemutatja az Intune által kínált különböző lehetőségeket a mobileszközök biztonságának és naprakészségének fenntartására.
+>Szeretnénk biztosítani, hogy a mobileszközök naprakészek legyenek a legutóbbi "Trident" kártevők elleni támadásokkal kapcsolatban iOS/iPadOS eszközökön. Ezért tettük közzé a [mobileszközök folyamatos frissítésének a Microsoft Intune segítségével történő biztosítását](https://blogs.technet.microsoft.com/enterprisemobility/2016/08/26/ensuring-mobile-devices-are-up-to-date-using-microsoft-intune/) ismertető blogbejegyzést. Ez bemutatja az Intune által kínált különböző lehetőségeket a mobileszközök biztonságának és naprakészségének fenntartására.
 
 ## <a name="protecting-your-on-premises-email-and-data-so-it-can-be-safely-accessed-by-mobile-devices"></a>A helyszíni e-mailek és adatok védelme a mobileszközökről történő biztonságos hozzáférés lehetővé tételéhez
 

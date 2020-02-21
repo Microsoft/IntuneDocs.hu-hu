@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 12/12/2018
+ms.date: 02/18/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.reviewer: tycast
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f2bee04eabb7036d9a28ac628175b27f763d0ccb
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: 47be57dece7867109565622ec2a1380e9a9d57d7
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75207060"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77512500"
 ---
 # <a name="windows-10-and-windows-holographic-device-settings-to-add-vpn-connections-using-intune"></a>Windows 10 és Windows holografikus eszközök beállításai VPN-kapcsolatok hozzáadásához az Intune használatával
 
@@ -185,4 +185,4 @@ Ha például a felhasználó már csatlakoztatva van egy megbízható DNS-utóta
 
 A profil létrejött, de egyelőre nem csinál semmit. Ezután [rendelje hozzá a profilt](device-profile-assign.md), és [Figyelje annak állapotát](device-profile-monitor.md).
 
-VPN-beállítások konfigurálása [Android](vpn-settings-android.md), [iOS](vpn-settings-ios.md)és [MacOS](vpn-settings-macos.md) rendszerű eszközökön.
+VPN-beállítások konfigurálása [Android](vpn-settings-android.md), [iOS/iPadOS](vpn-settings-ios.md)és [MacOS](vpn-settings-macos.md) rendszerű eszközökön.

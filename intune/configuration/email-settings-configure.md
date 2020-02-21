@@ -1,12 +1,12 @@
 ---
 title: E-mail-beállítások konfigurálása a Microsoft Intune-ban – Azure | Microsoft Docs
 titleSuffix: ''
-description: E-mail-profilt hozhat létre a Microsoft Intune-ban, majd üzembe helyezheti ezt a profilt Android Enterprise-, iOS- és Windows-eszközökön. E-mail-profil használatával olyan gyakori e-mail-beállítások konfigurálhatók, mint a levelezési kiszolgáló, és az Ön által felügyelt eszközökön a vállalati levelezéshez való csatlakozáshoz használt hitelesítési módszer.
+description: Hozzon létre egy e-mail-profilt a Microsoft Intuneban, és telepítse ezt a profilt Android Enterprise, iOS, iPadOS és Windows rendszerű eszközökre. E-mail-profil használatával olyan gyakori e-mail-beállítások konfigurálhatók, mint a levelezési kiszolgáló, és az Ön által felügyelt eszközökön a vállalati levelezéshez való csatlakozáshoz használt hitelesítési módszer.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/07/2019
+ms.date: 02/18/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 110db564dce5ad68d3c2a26b85e60ecbe99e7335
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 908a20098917540e6f823d94c6643d15f13ecf68
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74059428"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77511085"
 ---
 # <a name="add-email-settings-to-devices-using-intune"></a>E-mail-beállítások hozzáadása az Intune-t használó eszközökhöz
 
@@ -29,10 +29,11 @@ A Microsoft Intune különböző e-mail-beállításokat tartalmaz, amelyeket al
 
 E-mail-profilok segítségével a következő eszközökön konfigurálhatók a beépített e-mail-beállítások:
 
-- Android Samsung Knox Standard (4.0-s és újabb verziók)
+- Android Samsung Knox standard 4,0 és újabb verziók
 - Vállalati Android
-- iOS 8.0 és újabb verziók
-- Windows Phone 8.1 és újabb verziók
+- iOS 8,0 és újabb verziók
+- iPadOS 13,0 és újabb verziók
+- Windows Phone-telefon 8,1 és újabb
 - Windows 10 (asztali rendszer) és Windows 10 Mobile
 
 Ez a cikk azt mutatja be, hogyan hozható létre e-mail-profil a Microsoft Intune-ban. Az egyes platformok különleges beállításaira mutató hivatkozásokat is tartalmaz.
@@ -89,7 +90,7 @@ Az e-mail-profilok biztonsága az alábbi módszerekkel fokozható:
 
 Ha a felhasználó már konfigurált e-mail-fiókot, az e-mail-profil a platformtól függően, másként lesz hozzárendelve.
 
-- **iOS**: A rendszer az állomásnév és az e-mail cím alapján egy meglévő, duplikált e-mail profilt észlelt. Az ugyanezeket az adatokat tartalmazó e-mail-profil megakadályozza az Intune-profil hozzárendelését. Ebben az esetben a Céges portál alkalmazás értesíti a felhasználót, hogy nem felel meg a felhasználónak, és felszólítja a felhasználót, hogy manuálisan távolítsa el a konfigurált profilt. A forgatókönyv megelőzése érdekében kérje meg a végfelhasználókat, hogy regisztráljanak az e-mail-profil telepítése *előtt* , amely lehetővé teszi az Intune számára a profil beállítását.
+- **iOS/iPadOS**: a rendszer az állomásnév és az e-mail-cím alapján egy meglévő, duplikált e-mail-profilt észlel. Az ugyanezeket az adatokat tartalmazó e-mail-profil megakadályozza az Intune-profil hozzárendelését. Ebben az esetben a Céges portál alkalmazás értesíti a felhasználót, hogy nem felel meg a felhasználónak, és felszólítja a felhasználót, hogy manuálisan távolítsa el a konfigurált profilt. A forgatókönyv megelőzése érdekében kérje meg a végfelhasználókat, hogy regisztráljanak az e-mail-profil telepítése *előtt* , amely lehetővé teszi az Intune számára a profil beállítását.
 
 - **Windows**: A rendszer az állomásnév és az e-mail-cím alapján egy már meglévő e-mail profilt észlel. Az Intune felülírja a végfelhasználó által létrehozott meglévő e-mail-profilt.
 

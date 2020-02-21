@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a2cf53b26c1617ca7fc493c837e57823c23781bc
-ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.openlocfilehash: 334cadfb7e668febad95a512eb34f62a73667ec6
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77414854"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77513996"
 ---
 # <a name="app-configuration-policies-for-microsoft-intune"></a>Alkalmazáskonfigurációs szabályzatok a Microsoft Intune-hoz
 
@@ -91,7 +91,7 @@ Az alkalmazás konfigurációs szabályzatát az alábbi három módszer haszná
 
 ## <a name="diagnostic-logs"></a>Diagnosztikai naplók
 
-### <a name="ios-configuration-on-unmanaged-devices"></a>iOS-konfiguráció a nem felügyelt eszközökön
+### <a name="iosipados-configuration-on-unmanaged-devices"></a>iOS/iPadOS konfiguráció nem felügyelt eszközökön
 
 Az iOS/iPadOS konfigurációt az **Intune diagnosztikai naplójában** ellenőrizheti a felügyelt alkalmazások konfigurációjának nem felügyelt eszközein. Az alábbi lépések mellett a Microsoft Edge használatával is elérheti a felügyelt alkalmazás naplófájljait. További információ: a [Microsoft Edge használata iOS/iPadOS a felügyelt alkalmazások naplófájljainak eléréséhez](~/apps/manage-microsoft-edge.md#use-microsoft-edge-on-ios-to-access-managed-app-logs).
 
@@ -135,7 +135,7 @@ Az alkalmazás konfigurációjának részleteinek meg kell egyezniük a bérlőh
 
 ![Megcélzó alkalmazás konfigurációja](./media/app-configuration-policies-overview/targeted-app-configuration-3.png)
 
-### <a name="ios-configuration-on-managed-devices"></a>iOS-konfiguráció a felügyelt eszközökön
+### <a name="iosipados-configuration-on-managed-devices"></a>iOS/iPadOS-konfiguráció a felügyelt eszközökön
 
 Az iOS/iPadOS konfigurációt érvényesítheti az **Intune diagnosztikai naplóval** a felügyelt eszközökön a felügyelt alkalmazások konfigurálásához.
 

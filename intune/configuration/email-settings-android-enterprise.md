@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 08/07/2019
+ms.date: 02/18/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,18 +16,18 @@ search.appverid: MET150
 ms.reviewer: maholdaa
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dc86e82f189377d63422cc3306b8554637164b0f
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: 978ddf279dc221a56fddaf99da4dbb2377a93c24
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75206431"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77511153"
 ---
 # <a name="android-enterprise-device-settings-to-configure-email-authentication-and-synchronization-in-intune"></a>Az androidos vállalati eszközbeállítások az e-mailek, a hitelesítés és a szinkronizálás konfigurálásához az Intune-ban
 
 
 
-Ez a cikk felsorolja és leírja az androidos vállalati eszközökön szabályozható különböző e-mail-beállításokat. A mobileszköz-kezelési (MDM) megoldás részeként ezekkel a beállításokkal konfigurálhatja az e-mail-kiszolgálókat, az SSL használatával titkosíthatja az e-maileket, és egyéb műveleteket is elvégezheti.
+Ez a cikk felsorolja és leírja az androidos vállalati eszközökön szabályozható különböző e-mail-beállításokat. A mobileszköz-felügyelet (MDM) megoldás részeként használja ezeket a beállításokat állítson be egy e-mail-kiszolgálót, e-mailek és más titkosítása SSL használatával.
 
 Intune-rendszergazdaként e-mail-beállításokat hozhat létre és rendelhet hozzá az androidos vállalati eszközökhöz a munkahelyi profilban.
 
@@ -63,4 +63,4 @@ Hozzon létre egy [eszköz konfigurációs profilt](email-settings-configure.md#
 
 [Rendelje hozzá a profilt](device-profile-assign.md), és [kövesse nyomon az állapotát](device-profile-monitor.md).
 
-Az [Android Samsung Knox](email-settings-android.md), [iOS](email-settings-ios.md), [Windows 10 és újabb rendszerű](email-settings-windows-10.md)eszközökön is létrehozhat e-mail-profilokat, valamint [Windows Phone-telefon 8,1](email-settings-windows-phone-8-1.md) -es eszközöket.
+E-mail-profilokat is létrehozhat [Android Samsung Knox](email-settings-android.md), [iOS/iPadOS](email-settings-ios.md), [Windows 10 és újabb rendszerű](email-settings-windows-10.md)eszközökhöz, valamint [Windows Phone-telefon 8,1](email-settings-windows-phone-8-1.md) -es eszközöket.

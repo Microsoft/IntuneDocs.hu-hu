@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 777267f10edac5bbdbe23ceb3068d4366a8df7b7
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 0d5a51d82551795ed8ad5c740d5fb852ff292e1b
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72509947"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514914"
 ---
 # <a name="develop-a-rollout-plan"></a>Bevezetési terv kidolgozása
 
@@ -58,7 +58,7 @@ A sikeres próbaüzemet követően készen áll az éles bevezetésre a cég tö
 
 - **Földrajzi hely** <br/>Ebben a megközelítésben egy adott földrajzi régió minden felhasználója számára üzembe helyezhető, függetlenül attól, hogy ugyanazt a kontinenst, országot/régiót vagy ugyanazon vállalat felépítése. A több fázisú bevezetésnek ez a típusa lehetővé teszi, hogy a felhasználók meghatározott helye legyen a középpontban. Ez lehetővé teszi [körültekintőbb](#user-assisted-enrollment) megközelítési mód alkalmazását, mert az egyidejűleg üzembe helyezett Intune-helyek száma kevesebb. Mivel esély van arra, hogy különböző részlegek vagy használati esetek ugyanazon a helyen legyenek, ezért a különböző használati esetek egyidejűleg is telepíthetők.
 
-- **Platform** <br/>Ez a típusú telepítés hasonló platformok egyidejű telepítését jelenti. Erre jó példa lehet az, hogy az első hónapban az összes iOS-eszköz, majd az összes Android-, végül az összes Windows-eszköz kerül sorra. A több fázisú üzembe helyezésnek ez a típusa leegyszerűsíti a segélyszolgálati támogatást, mert egyszerre csak egyetlen platformot kell támogatnia.
+- **Platform** <br/>Ez a típusú telepítés hasonló platformok egyidejű telepítését jelenti. Ilyen lehet például az összes iOS-/iPadOS-eszköz az első hónapban, majd az Android, majd a Windows. A több fázisú üzembe helyezésnek ez a típusa leegyszerűsíti a segélyszolgálati támogatást, mert egyszerre csak egyetlen platformot kell támogatnia.
 
 Itt egy olyan Intune bevezetési tervre található példa, amely magába foglalja a célcsoportokat és az ütemterveket:
 
@@ -104,7 +104,7 @@ Itt következik a fenti Intune-regisztrációs terv regisztrációs módszerekke
 | Éles bevezetés, 2. fázis |  |  | Kereskedelem |  |
 | Önkiszolgáló |  |  | Kereskedelem |  |
 | Éles bevezetés, 3. fázis |  |  |  | Vezetők, HR, pénzügy |
-| Önkiszolgáló |  |  |  | HR, pénzügy |
+| Önkiszolgáló |  |  |  | HR, Pénzügy |
 | Körültekintő |  |  |  | Vezetők |
 
 ## <a name="next-steps"></a>További lépések

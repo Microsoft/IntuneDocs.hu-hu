@@ -16,12 +16,12 @@ ms.reviewer: dougeby
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ab41026cd9b2ceeaaa478fc27c984d0d89db4c5
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 3a15bf0bd8ed0a46f330b159e45d0a5d5a4c7059
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74058528"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77510384"
 ---
 # <a name="device-management-overview"></a>Eszközkezelés áttekintése
 
@@ -33,7 +33,7 @@ Az Eszközkezelő szolgáltató segítségével a szervezet gondoskodhat arról,
 
 A válasz [Microsoft Intune](what-is-intune.md). Az Intune mobileszköz-kezelést (MDM) és mobilalkalmazás-kezelést (MAM) is kínál. Minden MDM- és MAM-megoldás fő feladatai közé tartoznak a következők:
 
-- Az iOS-, Android-, Windows-és macOS-eszközök biztonságos kezelése, valamint a különböző mobil környezetek támogatása.
+- Gondoskodjon a különböző mobil környezetek támogatásáról, valamint az iOS/iPadOS, Android, Windows és macOS rendszerű eszközök biztonságos kezeléséről.
 - Győződjön meg arról, hogy az eszközök és alkalmazások megfelelnek a szervezet biztonsági követelményeinek.
 - Olyan házirendeket hozhat létre, amelyek segítenek megőrizni a szervezet adatait a szervezet tulajdonában lévő és a személyes eszközökön.
 - Az ezeket a szabályzatokat érvényesítő egyetlen, egységes mobilmegoldás használata, valamint az eszközök, alkalmazások, felhasználók és csoportok kezelésének támogatása.
@@ -47,7 +47,7 @@ Számos vállalat, köztük a Microsoft is az Intune használatával védi a fel
 
 Sokan rendelkeznek több, különböző platformokat használó eszközzel. Egy alkalmazott használhat például Surface Pro-t a munkájához, és egy Androidos mobileszközt magáncélokra. Az is gyakori, hogy az illető ezekről az eszközökről egyaránt használja az olyan vállalati erőforrásokat, amilyen az Outlook és a SharePoint.
 
-Az Intune-nal személyenként több eszköz, és az egyes eszközökön futó több platform, például iOS, macOS, Android és Windows is kezelhető. Az Intune elkülöníti a szabályzatokat és a beállításokat az eszköz platformja alapján. Így egyszerűen kezelheti és megtekintheti egy adott platform eszközeit.
+Az Intune-nal több eszközt is kezelhet személyenként, valamint az egyes eszközökön futó különböző platformokat, például az iOS/iPadOS, a macOS, az Android és a Windows rendszert. Az Intune elkülöníti a szabályzatokat és a beállításokat az eszköz platformja alapján. Így egyszerűen kezelheti és megtekintheti egy adott platform eszközeit.
 
 A **[Gyakori helyzetek](common-scenarios.md)** kitűnő forrás, amelyből megtudhatja, hogyan válaszolja meg az Intune a mobileszközökkel végzett munka során gyakran felmerülő kérdéseket. Megtalálhatja a következő helyzetek ismertetését:  
 
@@ -59,11 +59,11 @@ Az Intune-nal kapcsolatos további információkért lásd: [Mi az az Intune](wh
 
 ## <a name="integration-with-secure-and-protect-services"></a>Integráció biztonsági és védelmi szolgáltatásokkal
 
-Minden eszközkezelési megoldás fő feladata a biztonság és a védelem. Az Intune erőssége a más szolgáltatásokkal való integráció, ennek a feladatnak a szolgálatában. Példa:
+Minden eszközkezelési megoldás fő feladata a biztonság és a védelem. Az Intune erőssége a más szolgáltatásokkal való integráció, ennek a feladatnak a szolgálatában. Például:
 
 - A **Microsoft 365** kulcsszerepet játszik a gyakori informatikai feladatok egyszerűsítésében. A Microsoft 365 felügyeleti központban felhasználókat hoz létre, és kezelheti a csoportokat. Emellett más szolgáltatásokhoz is hozzáférhet, például az Intune-hoz, az Azure AD-hoz és egyebekhez.
 
-  Hozzon létre például egy iOS-eszközök csoportot Microsoft 365. Az Intune ez után olyan iOS-funkciókkal kapcsolatos szabályzatokat küld le az iOS-eszközök csoportjának, mint az App Store-hozzáférés, az AirDrop használata, biztonsági másolatot készítése az iCloudban, az Apple webes szűrőjének használata és sok egyéb.
+  Hozzon létre például egy iOS/iPadOS Devices csoportot Microsoft 365. Ezt követően az Intune használatával leküldheti a szabályzatokat az iOS/iPadOS eszközök csoportba, amely az iOS/iPadOS funkciókra koncentrál, például az alkalmazás-áruház eléréséhez, a AirDrop használatával, az Apple webes szűrő használatával történő biztonsági mentéssel, valamint egyebekkel.
 
 - A **Windows Defender** a Windows 10-es eszközök védelmében közreműködő számos biztonsági funkciót tartalmaz. Az Intune és a Windows Defender együttes használatával megteheti például a következőket:
 
@@ -97,7 +97,7 @@ Az Eszközkezelő felügyeleti központban a következőket teheti:
 - [Szerepkörök kezelése](role-based-access-control.md)  
 - Szoftverfrissítések kezelése
   - [Windows 10-frissítések kezelése](../protect/windows-update-for-business-configure.md)  
-  - [iOS-frissítések kezelése](../protect/software-updates-ios.md)  
+  - [IOS-/iPadOS-frissítések kezelése](../protect/software-updates-ios.md)  
 - [Azure Active Directory](https://docs.microsoft.com/azure/active-directory)  
 - [Felhasználók kezelése](https://docs.microsoft.com/azure/active-directory/fundamentals/add-users-azure-active-directory)
 - [Csoportok és tagok kezelése](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-manage-groups)

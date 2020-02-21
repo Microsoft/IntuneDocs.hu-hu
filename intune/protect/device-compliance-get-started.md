@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 867873c78b34d5573084a3a6e44d7d4d67846423
-ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.openlocfilehash: b593cab8a9a89f895c668b2b49583b73cbfccffa
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77413644"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515169"
 ---
 # <a name="set-rules-on-devices-to-allow-access-to-resources-in-your-organization-using-intune"></a>Szabályok beállítása az eszközökön a szervezet erőforrásaihoz való hozzáférés engedélyezéséhez az Intune használatával
 
@@ -95,9 +95,9 @@ Az Intune a beépített megfelelőségi szabályzatok egy készletét is tartalm
 
 
 > [!NOTE]
-> Az iOS-eszközök továbbfejlesztett jailbreak-észlelése átmenetileg le lett tiltva az Intune-ban.
+> Az iOS-/iPadOS-eszközök továbbfejlesztett jailbreak-észlelése átmenetileg le lett tiltva az Intune-ban.
 
-- **Továbbfejlesztett jailbreak-észlelés**: Ha engedélyezve van, ez a beállítás az iOS-eszközök gyakrabban való bejelentkezését okozza az Intune-ban. A tulajdonság engedélyezésekor a rendszer igénybe veszi az eszköz helyalapú szolgáltatásait, mely hatással van az akkumulátorhasználatra. Az Intune nem tárolja a felhasználói hely adatterületét.
+- **Továbbfejlesztett jailbreak-észlelés**: Ha engedélyezve van, ez a beállítás iOS/iPadOS-eszközöket eredményez az Intune-ban gyakrabban való bejelentkezéshez. A tulajdonság engedélyezésekor a rendszer igénybe veszi az eszköz helyalapú szolgáltatásait, mely hatással van az akkumulátorhasználatra. Az Intune nem tárolja a felhasználói hely adatterületét.
 
   Ennek a beállításnak az engedélyezésekor az eszközöknek meg kell felelnie a következőknek:
   - Engedélyezze a Location Services szolgáltatást az operációs rendszer szintjén.

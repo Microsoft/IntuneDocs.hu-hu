@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c7a6914e8174023704cfc593ec08a525ec5889f3
-ms.sourcegitcommit: ecaff388038fb800f2e646f8efcf8f3b1e2fd1b1
+ms.openlocfilehash: 7d1a55f758be50c342a5c8851106f0c37e6aec50
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77437902"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77513724"
 ---
 # <a name="how-to-create-and-assign-app-protection-policies"></a>Alkalmazásvédelmi szabályzatok létrehozása és hozzárendelése
 
@@ -74,21 +74,21 @@ Ha iOS-/iPadOS-és Android-alkalmazásokhoz hoz létre alkalmazás-védelmi szab
     Ezen a lapon megtekintheti az adatveszteség-megelőzési (DLP) vezérlők beállításait, beleértve a kivágási, másolási, beillesztési és mentési korlátozásokat is. Ezek a beállítások határozzák meg, hogy a felhasználók hogyan használják az adatvédelmi szabályzat hatálya alá eső alkalmazásokban lévő adatszolgáltatásokat.
 
     **Adatvédelmi beállítások**:<br>
-    - **iOS/iPadOS adatvédelem** – további információ: [iOS-alkalmazás védelmi szabályzatának beállításai – adatvédelem](~/apps/app-protection-policy-settings-ios.md#data-protection).
+    - **iOS/iPadOS adatvédelem** – további információ: [iOS/iPadOS alkalmazás-védelmi házirend-beállítások – adatvédelem](~/apps/app-protection-policy-settings-ios.md#data-protection).
     - **Android-adatvédelem** – további információért lásd: az [Android-alkalmazások védelmi házirendjének beállításai – adatvédelem](~/apps/app-protection-policy-settings-android.md#data-protection).
 
 7. A **hozzáférési követelmények** lap megjelenítéséhez kattintson a **tovább** gombra.<br>
     Ezen a lapon megadhatja a PIN-kód és a hitelesítő adatok azon követelményeit, amelyeket a felhasználóknak meg kell felelniük az alkalmazások munkahelyi környezetben való eléréséhez. 
  
     **Hozzáférési követelmények beállításai**:<br>
-    - **iOS/iPadOS hozzáférési követelmények** – további információért lásd: az [iOS-alkalmazások védelmi házirendjének beállításai – hozzáférési követelmények](~/apps/app-protection-policy-settings-ios.md#access-requirements).
+    - **iOS/iPadOS hozzáférési követelmények** – további információ: [iOS/iPadOS alkalmazás-védelmi házirend-beállítások – hozzáférési követelmények](~/apps/app-protection-policy-settings-ios.md#access-requirements).
     - **Android-hozzáférési követelmények** – további információért lásd: az [Android-alkalmazások védelmi házirendjének beállításai – hozzáférési követelmények](~/apps/app-protection-policy-settings-android.md#access-requirements).
 
 8. Kattintson a **tovább** gombra a **feltételes indítási** oldal megjelenítéséhez.<br>
     Ezen a lapon adhatók meg az alkalmazás-védelmi szabályzat bejelentkezési biztonsági követelményei. Válasszon egy **Beállítást**, és adjon meg egy **Értéket**, amelynek a felhasználónak meg kell felelnie ahhoz, hogy bejelentkezhessen a vállalati alkalmazásába. Ezután válassza ki azt a **műveletet** , amelyet el szeretne végezni, ha a felhasználók nem felelnek meg a követelményeknek. Bizonyos esetekben egy beállításhoz több művelet is megadható.
 
     **Feltételes indítási beállítások**:<br>
-    - **iOS/iPadOS feltételes indítás** – további információért lásd: az [iOS-alkalmazások védelmi házirendjének beállításai – feltételes indítás](~/apps/app-protection-policy-settings-ios.md#conditional-launch).
+    - **iOS/iPadOS feltételes indítás** – további információ: [iOS/iPadOS app Protection Policy Settings – feltételes indítás](~/apps/app-protection-policy-settings-ios.md#conditional-launch).
     - **Android feltételes indítás** – további információért lásd: [Android-alkalmazás védelmi házirendjének beállításai – feltételes indítás](~/apps/app-protection-policy-settings-android.md#conditional-launch).
 
 9. A **hozzárendelések** lap megjelenítéséhez kattintson a **tovább** gombra.<br>
@@ -180,7 +180,7 @@ Ezen szabályzatok létrehozásához keresse meg az **alkalmazások** > **alkalm
 > [!NOTE]
 > Az Android-eszközök arra kérik, hogy telepítse a Intune Céges portál alkalmazást, függetlenül attól, hogy melyik típusú eszköz van kiválasztva. Ha például az "Android Enterprise" lehetőséget választja, akkor a nem felügyelt Android-eszközökkel rendelkező felhasználókat is kéri a rendszer.
 
-IOS esetén további alkalmazás-konfigurációs beállításokra van szükség az alkalmazás-beállítások az Intune-ban regisztrált eszközökön futó alkalmazások számára történő megcélzásához:
+Az iOS/iPadOS esetében további alkalmazás-konfigurációs beállítások szükségesek az alkalmazás-beállítások az Intune-ban regisztrált eszközökön lévő alkalmazásokhoz való megcélzásához:
 
 - Az **IntuneMAMUPN** beállítást az MDM által felügyelt összes alkalmazáshoz be kell állítani. További információ: az [iOS/iPadOS alkalmazások közötti adatátvitel kezelése Microsoft Intuneban](data-transfer-between-apps-manage-ios.md#configure-user-upn-setting-for-microsoft-intune-or-third-party-emm).
 - A **IntuneMAMDeviceID** minden harmadik féltől származó és üzletági Mdm felügyelt alkalmazáshoz konfigurálni kell. Az **IntuneMAMDeviceID** beállítást az eszközazonosító jogkivonatra kell konfigurálni. Például `key=IntuneMAMDeviceID, value={{deviceID}}`. További információ: alkalmazás- [konfigurációs szabályzatok hozzáadása a felügyelt iOS-/iPadOS-eszközökhöz](app-configuration-policies-use-ios.md).
@@ -192,7 +192,7 @@ IOS esetén további alkalmazás-konfigurációs beállításokra van szükség 
 ## <a name="policy-settings"></a>Szabályzatbeállítások
 Az iOS/iPadOS és az Android rendszerhez készült házirend-beállítások teljes listájának megjelenítéséhez válasszon az alábbi hivatkozások közül:
 
-- [iOS-szabályzatok](app-protection-policy-settings-ios.md)
+- [iOS/iPadOS szabályzatok](app-protection-policy-settings-ios.md)
 - [Android-szabályzatok](app-protection-policy-settings-android.md)
 
 ## <a name="next-steps"></a>További lépések

@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba6b8fb66d25af3833e55eebc12e8b6df2fb5ba5
-ms.sourcegitcommit: 66e284fe092e19c1da72b4b770e45bf25ac7910c
+ms.openlocfilehash: 68fcdb66591ec0e566aa702b3ca4d6c5c5448859
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74860230"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514013"
 ---
 # <a name="create-a-compliance-policy-in-microsoft-intune"></a>Megfelelőségi szabályzat létrehozása Microsoft Intune
 
@@ -52,7 +52,7 @@ Az eszközök megfelelőségi házirendjeinek használatához győződjön meg r
   - iOS
   - macOS
   - Windows 10
-  - Windows 8.1
+  - Windows 8.1
   - WVPN-profilokdows Phone 8.1
 
 - Eszközök regisztrálása az Intune-ban (a megfelelőségi állapot megtekintéséhez szükséges)
@@ -67,7 +67,7 @@ Az eszközök megfelelőségi házirendjeinek használatához győződjön meg r
 
 3. A következő tulajdonságokat kell megadnia:
 
-   - **Név**: adjon meg egy leíró nevet a szabályzatnak. Nevezze el a szabályzatokat, hogy később könnyebben azonosítható legyen. A megfelelő szabályzat neve például **nem megfelelőként jelöli**meg az iOS-es feltört eszközöket.
+   - **Név**: adjon meg egy leíró nevet a szabályzatnak. Nevezze el a szabályzatokat, hogy később könnyebben azonosítható legyen. A megfelelő szabályzat neve például az **iOS/iPadOS feltört eszközök nem megfelelőként való megjelölése**.
 
    - **Leírás**: adja meg a szabályzat leírását. A beállítás használata nem kötelező, de ajánlott.
 
@@ -77,7 +77,7 @@ Az eszközök megfelelőségi házirendjeinek használatához győződjön meg r
      - **iOS/iPadOS**
      - **macOS**
      - **Windows Phone 8.1**
-     - **Windows 8.1 és újabb**
+     - **Windows 8.1 és újabb verziók**
      - **Windows 10 és újabb**
 
      Az *Android Enterprise*esetében ki kell választania egy **profil típusát**:
@@ -161,7 +161,7 @@ Az alábbi táblázat összefoglalja ezt részletesen:
 |---------|---------|---------|
 |Nem megfelelő |Nincs hozzárendelve türelmi időszak |Nem megfelelő |
 |Nem megfelelő |Tegnapi dátum|Nem megfelelő|
-|Nem megfelelő |Holnapi dátum|Türelmi időszakban|
+|Nem megfelelő |Holnapi dátum|InGracePeriod|
 
 Az eszközmegfelelőségi szabályzatok figyelésével kapcsolatos további információkért lásd: [Intune-eszközmegfelelőségi szabályzatok figyelése](compliance-policy-monitor.md).
 
@@ -174,7 +174,7 @@ Ha egy eszközhöz több megfelelőségi szabályzat tartozik, és az eszköz me
 |Ismeretlen     |1|
 |Nem alkalmazható     |2|
 |Compliant (Megfelelő)|3|
-|Türelmi időszakban|4|
+|InGracePeriod|4|
 |Nem megfelelő|5|
 |Hiba|6|
 

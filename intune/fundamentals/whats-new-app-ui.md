@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7e38e4f8552b6ef217d264cfa74597bda5c665ab
-ms.sourcegitcommit: e1ff157f692983b49bdd6e20cc9d0f93c3b3733c
+ms.openlocfilehash: b4999a813384c68bb394c7e73dee1c5c452459b9
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77125047"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515288"
 ---
 # <a name="ui-updates-for-intune-end-user-apps"></a>Felhasználói felületi frissítések az Intune végfelhasználói alkalmazásaiban
 
@@ -59,7 +59,7 @@ A macOS-regisztrálási élmény Céges portál egyszerűbb regisztrációs foly
 ## <a name="week-of-october-28-2019"></a>2019. október 28-i hét  
 
 ### <a name="improved-checklist-design-in-company-portal-app-for-android----5550857---"></a>Továbbfejlesztett ellenőrzőlista-kialakítás az androidos Céges portál alkalmazásban <!-- 5550857 -->  
-Az Androidhoz készült Céges portál alkalmazásban található beállítási ellenőrzőlista egy könnyű kialakítással és új ikonokkal frissült. A módosítások összhangban vannak az iOS rendszerhez készült Céges portál alkalmazás legújabb frissítéseivel. A frissített regisztrációs lépések megtekintéséhez tekintse meg az androidos [munkahelyi Profil regisztrálása](/intune-user-help/enroll-device-android-work-profile) és [az Android-eszköz regisztrálása](/intune-user-help/enroll-device-android-company-portal)című témakört.  
+Az Androidhoz készült Céges portál alkalmazásban található beállítási ellenőrzőlista egy könnyű kialakítással és új ikonokkal frissült. A módosítások összhangban vannak az iOS/iPadOS Céges portál alkalmazásban végrehajtott legújabb frissítésekkel. A frissített regisztrációs lépések megtekintéséhez tekintse meg az androidos [munkahelyi Profil regisztrálása](/intune-user-help/enroll-device-android-work-profile) és [az Android-eszköz regisztrálása](/intune-user-help/enroll-device-android-company-portal)című témakört.  
 
 A következő képernyők az Android munkahelyi profil regisztrálásának frissített ellenőrzőlistáját mutatják be:
 
@@ -192,7 +192,7 @@ A Windowsos Céges portál alkalmazás mostantól lehetővé teszi, hogy a szink
 
 ![A Windows tálcájának képernyője egy eszköz asztalán. A Céges portál alkalmazás ikonjára kattintva megjelenik egy menü a Rögzítés a tálcán, az Ablak bezárása és az Eszköz szinkronizálása lehetőségekkel.](./media/whats-new-app-ui/sync-device-from-start-menu-1807.png)  
 
-### <a name="new-browsing-experiences-in-the-company-portal-app-for-windows"></a>Új böngészési élmény a windowsos céges portál alkalmazásban  
+### <a name="new-browsing-experiences-in-the-company-portal-app-for-windows"></a>Új böngészési élmény a windowsos Céges portál alkalmazásban  
 
 Most, amikor a Windows Céges portál alkalmazásban böngészik vagy keres alkalmazásokat, válthat a meglévő **csempék** nézet és az új **részletek** nézet között. Ez az új nézet felsorolja az alkalmazás részleteit, például a nevet, a közzétevőt, a közzétételi dátumot és a telepítési állapotot.  
 
@@ -216,7 +216,7 @@ A Windows 10-es Intune Céges portál alkalmazást frissítettük a [Fluent Desi
 ## <a name="week-of-april-2-2018"></a>2018. április 2-i hét
 
 ### <a name="user-experience-update-for-the-company-portal-app-for-ios----1412866---"></a>Az iOS rendszerhez készült Céges portál alkalmazás felhasználói élményének frissítése <!-- 1412866 -->
-Nagyszabású felhasználóiélmény-frissítést adtunk ki az iOS-es Céges portál alkalmazáshoz. A frissítéshez teljes vizuális átalakulás is tartozik, amely modernebb megjelenést és élményt biztosít. Az alkalmazás működését változatlanul hagytuk, használhatóságát és kezelhetőségét azonban fejlesztettük.  
+Megjelent egy jelentős felhasználói élmény frissítés az iOS/iPadOS Céges portál alkalmazáshoz. A frissítéshez teljes vizuális átalakulás is tartozik, amely modernebb megjelenést és élményt biztosít. Az alkalmazás működését változatlanul hagytuk, használhatóságát és kezelhetőségét azonban fejlesztettük.  
 
 Amit még tapasztalni fog:
 - IPhone X támogatása.
@@ -267,7 +267,7 @@ Ha engedélyezte az [eszközcsoport-leképezést](../enrollment/device-group-map
 
 ### <a name="improvements-to-device-setup-workflow-in-the-company-portal-for-ios-in-version-290----1417174---"></a>Az eszköz beállítási munkafolyamatának fejlesztései az iOS rendszerhez készült Céges portál 2.9.0 verziójában <!-- 1417174 -->
 
-Továbbfejlesztettük az iOS rendszerre készült Céges portál alkalmazás eszközbeállítási munkafolyamatát. Nyelvezete felhasználóbarátabb lett, képernyőit – ahol lehetett – összevontuk. A nyelvezetet ezenkívül az Ön cégére alkalmaztuk, ezért a beállítás szövegében végig a konkrét cégnév jelenik meg.
+Javítottuk az eszköz beállítási munkafolyamatát az iOS/iPadOS Céges portál alkalmazásban. Nyelvezete felhasználóbarátabb lett, képernyőit – ahol lehetett – összevontuk. A nyelvezetet ezenkívül az Ön cégére alkalmaztuk, ezért a beállítás szövegében végig a konkrét cégnév jelenik meg.
 
 > [!NOTE]
 > Azt a cégnevet használjuk, amelyet az Azure Portal **Microsoft Intune** > **Ügyfélalkalmazások**  > **Céges portál védjegyezése** > **Cég neve** alatt adott meg. Ha nem állította be ezt az értéket, az **Azure Active Directory** > **Tulajdonságok** > **Név** alatt megadott bérlő nevét használjuk. Ha nem állított be vállalat nevét Céges portál védjegyezésben, és nem szeretné megjeleníteni a bérlő nevét, javasoljuk, hogy a vállalat nevét a Céges portál branding (védjegyezés) lapon állítsa be. Ha nem szeretné, hogy ez a karakterlánc megjelenjen a Céges portál fejlécében, akkor törölje a jelet a "cég nevének megjelenítése az embléma mellett" jelölőnégyzetből.
@@ -303,7 +303,7 @@ A relevancia megállapításának finomításán még dolgozunk, ezért várjuk 
 ### <a name="search-improvements-to-the-company-portal-website----1331697---"></a>Keresés a Céges portál webhelyének fejlesztése terén <!-- 1331697 -->
 Továbbfejlesztjük az alkalmazáskeresési lehetőségeket, első lépésben a [Céges portál weboldalról](https://portal.manage.microsoft.com) elérhetőket. A keresések a Név és a Leírás mezőben megadott információkon túl az alkalmazáskategóriák megadásával finomíthatók. Az eredményeket alapértelmezés szerint relevancia alapján állítja sorrendbe a rendszer. 
 
-Ezeket a változtatásokat az iOS-es felhasználók is észlelni fogják, mert a Céges portál weboldal része az iOS-es Céges portál alkalmazásnak. Az androidos és windowsos Céges portál alkalmazásokba az elkövetkező hónapokban lesznek bevezetve hasonló újítások.
+az iOS-felhasználók is megkapják ezt a változást, mivel a Céges portál webhely az iOS/iPadOS Céges portál alkalmazás részeként is használatos. Az androidos és windowsos Céges portál alkalmazásokba az elkövetkező hónapokban lesznek bevezetve hasonló újítások.
 
 A relevancia megállapításának finomításán még dolgozunk, ezért várjuk a tapasztalatokkal kapcsolatos visszajelzéseket, melyek a Céges portál weboldalának alján található „Visszajelzés” hivatkozást használva küldhetők el.
 

@@ -17,12 +17,12 @@ ms.reviewer: dagerrit
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8c0571eb2a369e440b3c7732b6d55ba05ace2c34
-ms.sourcegitcommit: 637375a390b6e34f9c4415c77b99fe2980bbf554
+ms.openlocfilehash: 183a1dc7083aa9b427df225297fb7c393939220f
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75839359"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515050"
 ---
 # <a name="configure-app-protection-policies-optional"></a>Alkalmazásvédelmi szabályzatok konfigurálása (nem kötelező)
 
@@ -38,7 +38,7 @@ Az alkalmazásvédelmi szabályzatok alkalmazásszinten működnek, így nem ig�
 
 ## <a name="app-protection-policies-with-lob-apps"></a>Alkalmazásvédelmi szabályzatok üzletági alkalmazásokkal
 
-A [Microsoft Intune App SDK-val](../developer/app-sdk-get-started.md) vagy a Microsoft Intune iOS-en és Androidon is elérhető alkalmazásburkoló eszközével az üzletági alkalmazásokat is bevonhatja a mobilalkalmazás-védelmi szabályzatok hatókörébe. További információ: [iOS-hez készült alkalmazásburkoló eszköz](../developer/app-wrapper-prepare-ios.md) és [Androidhoz készült alkalmazásburkoló eszköz](./../developer/app-wrapper-prepare-android.md). Lásd még: [Üzletági alkalmazások előkészítése alkalmazásvédelemre](../developer/apps-prepare-mobile-application-management.md).
+A Mobile App Protection-szabályzatokat az üzletági (LOB) alkalmazásokra is kiterjesztheti az iOS/iPadOS és az Android platformhoz készült [Microsoft Intune app SDK](../developer/app-sdk-get-started.md) vagy a Microsoft Intune alkalmazás-burkoló eszköz használatával. További információ: [iOS-hez készült alkalmazásburkoló eszköz](../developer/app-wrapper-prepare-ios.md) és [Androidhoz készült alkalmazásburkoló eszköz](./../developer/app-wrapper-prepare-android.md). Lásd még: [Üzletági alkalmazások előkészítése alkalmazásvédelemre](../developer/apps-prepare-mobile-application-management.md).
 
 ## <a name="how-do-app-protection-policies-help-during-migration"></a>Hogyan segítenek a migráció során az alkalmazásvédelmi szabályzatok?
 

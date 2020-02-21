@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 70b7fbaa29434c775720ab423f38e29bc329861a
-ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.openlocfilehash: dae8e92209a8640ab3254e073d3043d390c3791b
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77415156"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514251"
 ---
 # <a name="troubleshoot-windows-device-enrollment-problems-in-microsoft-intune"></a>A Windows-eszközök regisztrálásával kapcsolatos problémák elhárítása Microsoft Intune
 
@@ -370,6 +370,20 @@ Ezt a problémát általában a Windows Autopilot-eszközöket létrehozó szerv
 9. Válassza a **Tovább** elemet.
 10. Az **engedélyek**területen jelölje be a **teljes hozzáférés** jelölőnégyzetet. Ez a művelet kijelöli az összes többi beállítást.
 11. Válassza a **következő** > **Befejezés**lehetőséget.
+
+### <a name="the-enrollment-status-page-times-out-before-the-sign-in-screen"></a>A regisztrációs állapot lap időtúllépést eredményez a bejelentkezési képernyő előtt
+
+**OK:** Ez a probléma akkor fordulhat elő, ha a következő feltételek mindegyike teljesül:
+- A beléptetési állapot lapot használja az üzleti alkalmazások Microsoft Store nyomon követéséhez.
+- Rendelkezik egy Azure AD feltételes hozzáférési szabályzattal, amely az eszköz megfelelőségi vezérlőként való jelölését használja.
+- A szabályzat minden felhőalapú alkalmazásra és Windowsra vonatkozik.
+
+#### <a name="resolution"></a>Megoldás:
+Próbálja ki a következők egyikét:
+- Az Intune-beli megfelelőségi szabályzatok megcélzása az eszközökre. Győződjön meg arról, hogy a megfelelőség meghatározható a felhasználó bejelentkezése előtt.
+- Offline licencelés használata az áruházbeli alkalmazásokhoz. Így a Windows-ügyfélnek nem kell az eszköz megfelelőségének meghatározása előtt ellenőriznie a Microsoft Store.
+
+
 
 ## <a name="next-steps"></a>További lépések
 

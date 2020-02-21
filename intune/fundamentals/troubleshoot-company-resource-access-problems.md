@@ -1,6 +1,6 @@
 ---
 title: Hibák és állapotkódok a Microsoft Intuneban – Azure | Microsoft Docs
-description: Tekintse meg a hibák, az állapotkód, a leírások és a felbontások listáját a MDM által felügyelt eszközök használatakor, a vállalati erőforrásokhoz való hozzáféréshez, az iOS-eszközökön előforduló hibákhoz, valamint az OMA-hibákhoz Microsoft Intune.
+description: Tekintse meg a hibák, az állapotkód, a leírások és a felbontások listáját a MDM által felügyelt eszközök használatakor, hozzáférés a vállalati erőforrásokhoz, az iOS-es/iPadOS-eszközökön észlelt hibák, valamint az OMA reagálási hibák a Microsoft Intune.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 17a8ebfcad2bcf485771f26184377aeb2c4bf4e1
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: bf31ce5f812603534f30b3b3aa3836ede0be6f6d
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72509789"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77510588"
 ---
 # <a name="common-error-codes-and-descriptions-in-microsoft-intune"></a>Gyakori hibakódok és leírások a Microsoft Intune
 
@@ -78,7 +78,7 @@ Ha támogatási segítségre van szüksége, tekintse meg [a Microsoft Intune t�
 |-2016341111|0x87D11389|Az iOS-eszköz váratlan üresjárati állapotot adott vissza|
 |-2016341112|0x87D11388|Az iOS-eszköz jelenleg elfoglalt|
 
-## <a name="errors-returned-by-ios-devices"></a>iOS-eszközök által visszaadott hibák
+## <a name="errors-returned-by-iosipados-devices"></a>IOS/iPadOS-eszközök által visszaadott hibák
 
 ### <a name="company-portal-errors"></a>A Céges portál hibái
 
@@ -87,7 +87,7 @@ Ha támogatási segítségre van szüksége, tekintse meg [a Microsoft Intune t�
 |__Belső kiszolgálóhiba__ <br>Úgy tűnik, hogy a szerver belső hibája miatt nem tudott kapcsolatba lépni velünk. Próbálkozzon újra, és ha a probléma továbbra is fennáll, forduljon a rendszergazdához.|500-as hiba|Ezt a hibát valószínűleg az Intune szolgáltatásban fennálló probléma okozza. A hibát az Intune szolgáltatás oldalán kell elhárítani, és valószínűleg nem a felhasználói oldalon fennálló probléma következménye.|
 |__Átmenetileg nem érhető el__ <br>Úgy tűnik, hogy azért nem tudott kapcsolatba lépni velünk, mert a szolgáltatás átmenetileg nem érhető el. Próbálkozzon újra, és ha a probléma továbbra is fennáll, forduljon a rendszergazdához.|503-as hiba|Ez feltehetően az Intune szolgáltatás átmeneti problémájának, például a szolgáltatás karbantartásának következménye. A hibát az Intune szolgáltatás oldalán kell elhárítani, és valószínűleg nem a felhasználói oldalon fennálló probléma következménye.|
 |__Nem lehet kapcsolódni a kiszolgálóhoz__ <br>Úgy tűnik, hogy nem tudott kapcsolatba lépni velünk. Próbálkozzon újra, és ha a probléma továbbra is fennáll, forduljon a rendszergazdához.|Nincs hozzá társított HTTP-állapotkód|Nem sikerült biztonságos kapcsolatot létrehozni a kiszolgálóval, feltehetően a használatban lévő tanúsítványok SSL-hibája miatt. A hibát okozhatják olyan felhasználói konfigurációk, melyek nem felelnek meg az Apple App Transport Security (ATS) követelményeinek.|
-|__Hiba történt__ <br>A Céges portál ügyfele nem tudott betöltődni. Próbálkozzon újra, és ha a probléma továbbra is fennáll, forduljon a rendszergazdához.|400-as hiba|Bármely 4-gyel kezdődő HTTP-állapotkódú hiba, amelyhez nem tartozik pontosabb hibaüzenet, így jelenik meg. Ez az iOS-hez készült Céges portál alkalmazásban jelentkező ügyféloldali hiba.|
+|__Hiba történt__ <br>A Céges portál ügyfele nem tudott betöltődni. Próbálkozzon újra, és ha a probléma továbbra is fennáll, forduljon a rendszergazdához.|400-as hiba|Bármely 4-gyel kezdődő HTTP-állapotkódú hiba, amelyhez nem tartozik pontosabb hibaüzenet, így jelenik meg. Ez egy ügyféloldali hiba történik az iOS/iPadOS Céges portál alkalmazásban.|
 |__Nem érhető el a kiszolgáló__ <br>Úgy tűnik, hogy nem tudott kapcsolatba lépni velünk. Próbálkozzon újra, és ha a probléma továbbra is fennáll, forduljon a rendszergazdához.|500-as hiba|Bármely 5-tel kezdődő HTTP-állapotkódú hiba, amelyhez nem tartozik pontosabb hibaüzenet, így jelenik meg. Ez az Intune szolgáltatásban jelentkező kiszolgálóoldali hiba.|
 
 ### <a name="service-errors"></a>Szolgáltatási hibák
@@ -276,7 +276,7 @@ Ha támogatási segítségre van szüksége, tekintse meg [a Microsoft Intune t�
 |-2016332105|0x87D136B7|4007:Ismeretlen fájlformátum|
 |-2016332106|0x87D136B6|4006:A profil eltávolításának dátuma a múltban van|
 |-2016332107|0x87D136B5|4005:A PIN-kód nem felel meg|
-|-2016332108|0x87D136B4|4004:A felhasználó megszakította a telepítést|
+|-2016332108|0x87D136B4|4004: a felhasználó megszakította a telepítést|
 |-2016332109|0x87D136B3|4003:A profil nincs a telepítési várólistán|
 |-2016332110|0x87D136B2|4002:Ismétlődő UUID|
 |-2016332111|0x87D136B1|4001:Telepítési hiba|
@@ -316,7 +316,7 @@ Ha támogatási segítségre van szüksége, tekintse meg [a Microsoft Intune t�
 |-2016344112|0x87D107D0|DCMO(1200): A művelet sikeresen végbement|
 |-2016345595|0x87D10205|Syncml(517): Egy atomi parancsra adott válasz túl nagy volt ahhoz, hogy elférjen egyetlen üzenetben.|
 |-2016345596|0x87D10204|Syncml(516): A parancs egy atomi elemen belül volt, és az atomi elem végrehajtása nem sikerült. A parancs visszaállítása sikertelen.|
-|-2016345598|0x87D10202|Syncml(514): A SyncML parancs nem fejeződött be sikeresen, mert a műveletet már a parancs feldolgozása előtt megszakították.|
+|-2016345598|0x87D10202|SyncML (514): a SyncML parancs nem fejeződött be sikeresen, mert a műveletet már megszakították a parancs feldolgozása előtt.|
 |-2016345599|0x87D10201|Syncml(513): A címzett nem támogatja vagy elutasítja a SyncML szinkronizálási protokoll megadott verzióját, amelyet a kérés SyncML-üzenetében használtak.|
 |-2016345600|0x87D10200|Syncml(512): Alkalmazáshiba történt a szinkronizálási munkamenetben.|
 |-2016345601|0x87D101FF|Syncml(511): Súlyos hiba történt a kiszolgálón a kérés feldolgozása közben.|
@@ -368,7 +368,7 @@ Ha támogatási segítségre van szüksége, tekintse meg [a Microsoft Intune t�
 |-2016345812|0x87D1012C|Syncml(300): A kért célhely több kért alternatíva egyike.|
 |-2016345896|0x87D100D8|Syncml(216): Egy parancs egy atomi elemen belül volt, és az atomi elem végrehajtása nem sikerült. A parancs visszaállítása sikeres.|
 |-2016345897|0x87D100D7|Syncml(215): Egy parancs végrehajtása nem történt meg, mivel a felhasználói beavatkozás során a felhasználó nem fogadta el a lehetőséget.|
-|-2016345898|0x87D100D6|Syncml(214): A művelet megszakadt. A SyncML-parancs sikeresen befejeződött, további parancsok azonban nem lesznek végrehajtva a munkamenetben.|
+|-2016345898|0x87D100D6|SyncML (214): a művelet megszakadt. A SyncML-parancs sikeresen befejeződött, további parancsok azonban nem lesznek végrehajtva a munkamenetben.|
 |-2016345899|0x87D100D5|Syncml(213): A darabolt elem elfogadva és pufferelve.|
 |-2016345900|0x87D100D4|Syncml(212): Hitelesítés elfogadva. További hitelesítés nem szükséges a szinkronizációs munkamenet hátralévő részére. A válaszkód csak olyan kérésekre alkalmazható válaszként, amelyekben a hitelesítő adatok meg lettek adva.|
 |-2016345901|0x87D100D3|Syncml(211): Az elem nem lett törölve. A kért elem nem található. Valószínűleg korábban törölve lett.|

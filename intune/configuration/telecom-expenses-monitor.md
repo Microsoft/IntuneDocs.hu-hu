@@ -1,12 +1,12 @@
 ---
 title: Távközlési költségek kezelésére szolgáló szolgáltatás beállítása Microsoft Intune-Azure-ban | Microsoft Docs
 titleSuffix: ''
-description: A Microsoft Intune integrálása a Saaswedo Telecom költségelszámolás szolgáltatásával az adatok használatának monitorozásához, valamint a küszöbértékek és korlátok beállításához Android és iOS rendszerű eszközökön.
+description: A Microsoft Intune integrálása a Saaswedo Telecom költségelszámolás szolgáltatásával az adatok használatának monitorozásához, valamint a küszöbértékek és korlátok beállításához Android, iOS és iPadOS eszközökön.
 keywords: Saaswedo
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/05/2019
+ms.date: 02/18/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -18,16 +18,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9c97a3ad329ce0e431c6dc8ef318306e4e002f36
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: e6c4d08d1010654a16e13981a0d3353b2418524a
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75207111"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77512874"
 ---
 # <a name="set-up-a-telecom-expense-management-service-in-intune"></a>Távközlésiköltség-kezelő szolgáltatás beállítása az Intune-ban
-
-
 
 Az Intune-nal kezelheti a távközlési költségeket a szervezet tulajdonában lévő mobileszközök adatfelhasználásával kapcsolatban. Az Intune integrálható a Saaswedo [Datalert telekommunikációs költségeinek kezelésével](http://datalert.biz/get-started). A Datalert egy valós idejű, távközlési költségek kezelésére szolgáló megoldás, amely a távközlési adatok használatát kezeli. Segít elkerülni az Intune által felügyelt eszközök költséges és váratlan adatátviteli és barangolási díját.
 
@@ -50,7 +48,8 @@ A Datalert szolgáltatás Intune-nal való használatához bizonyos konfiguráci
 
   A Knox-t [támogató Android-verziók](https://seap.samsung.com/faq/what-versions-android-support-knox-standard-and-knox-premium-sdks-0) (a Samsung webhelyén nyílik meg) a Knox által támogatott verziókat listázza.
 
-- iOS 8.0 és újabb verziók
+- iOS 8,0 és újabb verziók
+- iPadOS 13,0 és újabb verziók
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -65,7 +64,7 @@ Az Intune a következő telekommunikációs felügyeleti szolgáltatóval integr
 
 ## <a name="deploy-the-intune-and-datalert-solution"></a>Az Intune és a Datalert megoldás üzembe helyezése
 
-### <a name="step-1-connect-the-datalert-service-to-intune"></a>1. lépés: a Datalert szolgáltatás összekötése az Intune-nal
+### <a name="step-1-connect-the-datalert-service-to-intune"></a>1\. lépés: a Datalert szolgáltatás összekötése az Intune-nal
 
 1. Jelentkezzen be a Datalert felügyeleti konzolba rendszergazdai hitelesítő adatokkal.
 
@@ -105,7 +104,7 @@ Az Intune a következő telekommunikációs felügyeleti szolgáltatóval integr
 
    ![A Datalert sikeres csatlakozást jelző lapja](./media/telecom-expenses-monitor/tem-datalert-mdm-profiles.png)
 
-### <a name="step-2-confirm-telecom-expense-management-is-active-in-intune"></a>2. lépés: a távközlési költségek kezelésének megerősítése aktív az Intune-ban
+### <a name="step-2-confirm-telecom-expense-management-is-active-in-intune"></a>2\. lépés: a távközlési költségek kezelésének megerősítése aktív az Intune-ban
 
 Az 1. lépés elvégzése után a rendszer automatikusan engedélyezi a hozzáférést. Az Intune-ban a kapcsolatok állapota **aktív**. A következő lépések végrehajtásával ellenőrizheti, hogy az állapot aktív-e:
 
@@ -115,7 +114,7 @@ Az 1. lépés elvégzése után a rendszer automatikusan engedélyezi a hozzáf�
 
    ![Az Intune oldala, rajta az Aktív állapotú Datalert-kapcsolattal](./media/telecom-expenses-monitor/tem-azure-portal-enable-service.png)
 
-### <a name="step-3-deploy-the-datalert-app-to-devices"></a>3. lépés: a Datalert alkalmazás üzembe helyezése az eszközökön
+### <a name="step-3-deploy-the-datalert-app-to-devices"></a>3\. lépés: a Datalert alkalmazás üzembe helyezése az eszközökön
 
 Annak ellenőrzéséhez, hogy a csak a szervezet által birtokolt sorokból származó adatfelhasználást gyűjti-e be, ügyeljen arra, hogy:
 
@@ -136,11 +135,11 @@ Ezek a kategóriák a felhasználók számára jelennek meg a regisztráció sor
 
 #### <a name="add-the-datalert-app-to-intune"></a>A Datalert alkalmazás hozzáadása az Intune-hoz
 
-A következő lépésekkel adja hozzá a Datalert alkalmazást. Példaként használja az iOS-t. [Alkalmazások hozzáadása](../apps/apps-add.md) és a [hatókör-címkék használata](../fundamentals/scope-tags.md) részletesebb információkat tartalmaz ezekről a lépésekről.
+A következő lépésekkel adja hozzá a Datalert alkalmazást. Például iOS/iPadOS használatos. [Alkalmazások hozzáadása](../apps/apps-add.md) és a [hatókör-címkék használata](../fundamentals/scope-tags.md) részletesebb információkat tartalmaz ezekről a lépésekről.
 
 1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**lehetőséget.
 
-2. Válassza ki az **alkalmazás típusát**. IOS esetében például válassza az **áruházbeli alkalmazás-iOS**lehetőséget.
+2. Válassza ki az **alkalmazás típusát**. IOS/iPadOS esetén például válassza az **app-iOS/IPadOS áruház**lehetőséget.
 
 3. A **Keresés az App Store**-ban írja be a **Datalert** kifejezést a Datalert alkalmazás megkereséséhez.
 
@@ -164,7 +163,7 @@ A következő lépésekkel adja hozzá a Datalert alkalmazást. Példaként hasz
 
    ![Képernyőkép a Szabályzat hozzáadása panelről](./media/telecom-expenses-monitor/tem-assign-datalert-app-to-device-group.png)
 
-### <a name="step-4-add-organization-phone-lines-to-the-datalert-console"></a>4. lépés: szervezeti telefonos sorok hozzáadása a Datalert-konzolhoz
+### <a name="step-4-add-organization-phone-lines-to-the-datalert-console"></a>4\. lépés: szervezeti telefonos sorok hozzáadása a Datalert-konzolhoz
 
 Az Intune és a Datalert Services mostantól az egymással való kommunikációra van konfigurálva. Ezután adja hozzá a szervezete fizetős telefonvonalait a Datalert-konzolhoz. Továbbá adja meg a küszöbértékeket és műveleteket a mobil-vagy barangolásos használati szabálysértések esetében. Manuálisan is hozzáadhat vállalati fizetős telefonvonalat a Datalert-konzolhoz, vagy automatikusan hozzáadhatja őket az Intune-ban regisztrált eszköz után.
 
@@ -178,7 +177,7 @@ A Datalert szolgáltatás most aktív. Megkezdi az adathasználat figyelését, 
 
 A végfelhasználói élmény érdekében a következő cikkek segíthetnek:
 
-- [iOS-eszköz regisztrálása a távközlésiköltség-kezelőben](https://docs.microsoft.com/intune-user-help/enroll-your-device-with-telecom-expense-management-ios)
+- [IOS/iPadOS-eszköz regisztrálása a távközlési költségek kezelésében](https://docs.microsoft.com/intune-user-help/enroll-your-device-with-telecom-expense-management-ios)
 - [Android-eszköz regisztrálása a távközlésiköltség-kezelőben](https://docs.microsoft.com/intune-user-help/enroll-your-device-with-telecom-expense-management-android)
 
 ## <a name="turn-off-the-datalert-service"></a>A Datalert szolgáltatás kikapcsolása

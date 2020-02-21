@@ -1,7 +1,7 @@
 ---
-title: Az iOS-es Osztályterem alkalmazás megosztott eszközeire vonatkozó Intune-beállítások
+title: Az Intune megosztott eszközének beállításai az iOS/iPadOS osztályterem alkalmazáshoz
 titleSuffix: Microsoft Intune
-description: Tájékoztatás az Intune azon beállításairól, amelyekkel szabályozhatók az Osztályterem alkalmazás beállításai az iOS-eszközökön.
+description: Ismerje meg az Intune azon beállításait, amelyek segítségével szabályozhatja az osztályterem alkalmazás beállításait az iOS-vagy iPadOS-eszközökön.
 keywords: ''
 author: lenewsad
 ms.author: lanewsad
@@ -18,23 +18,23 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0edfd9b8ee8b45952d9c22d5365d09d125ea7710
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 412dc9a12f5a13b5fbd738f3ac1b5b1033a2635b
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74784255"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514710"
 ---
-# <a name="configure-intune-education-settings-for-shared-ipad-devices"></a>Az Intune oktatási beállításainak konfigurálása megosztott iPad eszközökhöz
+# <a name="configure-intune-education-settings-for-shared-ipad-devices"></a>Megosztott iPad-eszközökhöz az Intune oktatási beállításainak konfigurálása
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
 > [!NOTE]
-> Az Intune jelenleg nem támogatja az osztályterem alkalmazás konfigurálását. Ez a cikk csak az Intune-ban meglévő iOS-es oktatási profilokkal rendelkező felhasználókra érvényes.
+> Az Intune jelenleg nem támogatja az osztályterem alkalmazás konfigurálását. Ez a cikk csak az Intune-ban már meglévő iOS/iPadOS oktatási profilokkal rendelkező felhasználókra érvényes.
 
-Az Intune támogatja az iOS-es Osztályterem alkalmazást, amely lehetővé teszi az oktatóknak a tanulási folyamat és a diákok eszközeinek irányítását az osztályteremben. Az Osztályterem alkalmazás mellett az Apple támogatja a diákok iPad eszközeinek olyan konfigurációját, amely egyetlen eszköz több diák általi használatát teszi lehetővé. Ebből a dokumentumból megtudhatja, hogy ezt hogyan valósíthatja meg az Intune-nal.
+Az Intune támogatja az iOS/iPadOS tantermi alkalmazást, amely segítséget nyújt a tanárok számára a tanuláshoz és a tanulói eszközök felügyeletéhez az osztályteremben. Az Osztályterem alkalmazás mellett az Apple támogatja a diákok iPad eszközeinek olyan konfigurációját, amely egyetlen eszköz több diák általi használatát teszi lehetővé. Ebből a dokumentumból megtudhatja, hogy ezt hogyan valósíthatja meg az Intune-nal.
 
-További információ a dedikált (egyszemélyes használatban lévő) iPad eszközök Osztályterem alkalmazással való konfigurációjáról: [Az iOS-beli Osztályterem alkalmazás Intune-beállításainak konfigurálása](education-settings-configure-ios.md).
+További információ a dedikált (1:1) iPad-eszközök az osztályterem alkalmazás használatához való konfigurálásáról: az [Intune beállításainak konfigurálása az iOS/IPadOS osztályterem alkalmazáshoz](education-settings-configure-ios.md).
 
 ## <a name="before-you-start"></a>Előkészületek
 
@@ -64,7 +64,7 @@ Az SDS-be a következő módszerek valamelyikével importálhat adatokat:
 - [További tudnivalók az Azure Active Directorybeli licencelésről](https://docs.microsoft.com/azure/active-directory/active-directory-licensing-whatis-azure-portal)
 
 
-## <a name="step-2---create-and-assign-an-ios-education-profile-in-intune"></a>2\. lépés – Egy iOS-es Oktatás profil létrehozása és hozzárendelése az Intune-ban
+## <a name="step-2---create-and-assign-an-iosipados-education-profile-in-intune"></a>2\. lépés – iOS/iPadOS oktatási profil létrehozása és társítása az Intune-ban
 
 ### <a name="configure-general-settings"></a>Általános beállítások konfigurálása
 
@@ -72,7 +72,7 @@ Az SDS-be a következő módszerek valamelyikével importálhat adatokat:
 3. Az **Intune** panelen válassza az **Eszközkonfiguráció** lehetőséget.
 2. Az **Eszközkonfiguráció** panel **Kezelés** területén válassza a **Profilok** lehetőséget.
 5. A profilok paneljén válassza a **Profil létrehozása** lehetőséget.
-6. A **Profil létrehozása** panelen adja meg az iOS-es oktatási profil **Nevét** és **Leírását**.
+6. A **profil létrehozása** panelen adja meg az iOS/iPadOS oktatási profil **nevét** és **leírását** .
 7. A **Platform** legördülő listájában válassza az **iOS** lehetőséget.
 8. A **Profil típusa** legördülő listában válassza az **Oktatás** lehetőséget.
 9. Válassza a **Beállítások** > **Konfigurálás** lehetőséget.

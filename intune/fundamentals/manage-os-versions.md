@@ -14,15 +14,15 @@ ms.localizationpriority: high
 ms.assetid: 361ef17b-1ee0-4879-b7b1-d678b0787f5a
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 681b4f690d03cd21c5a430e02cb0f3584d2e680e
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: ec7d4b8d83935b961d05e2e6fd22dd2d3f7e4086
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72510124"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514523"
 ---
 # <a name="manage-operating-system-versions-with-intune"></a>Operációsrendszer-verziók kezelése az Intune-nal
-A korszerű mobil- és asztali platformokon gyors ütemben követik egymást az operációs rendszerek főbb részeit érintő frissítések, javítások és új kiadások. A Windows platform frissítéseinek és javításainak bevezetése teljes mértékben kezelhető központilag. Más platformok, például az iOS és a Android esetében azonban a végfelhasználóknak is részt kell vennie a folyamatban.  A Microsoft Intune-nal könnyedén kialakíthatja a különböző platformokon futó operációsrendszer-verziók felügyeleti rendszerét.
+A korszerű mobil- és asztali platformokon gyors ütemben követik egymást az operációs rendszerek főbb részeit érintő frissítések, javítások és új kiadások. A frissítések és a javítások teljes körű kezelését a Windows rendszerben végezheti el, de más platformokon, például az iOS/iPadOS és az Android rendszerekben a végfelhasználóknak is részt kell venniük a folyamatban.  A Microsoft Intune-nal könnyedén kialakíthatja a különböző platformokon futó operációsrendszer-verziók felügyeleti rendszerét.
 
 Az Intune segítséget nyújt az alábbi, gyakran előforduló feladatok kivitelezéséhez: 
 - A végfelhasználók eszközein található operációsrendszer-verziók meghatározása

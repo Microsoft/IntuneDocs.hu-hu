@@ -7,14 +7,25 @@ ms.topic: include
 ms.date: 11/19/2019
 ms.author: erikje
 ms.custom: include file
-ms.openlocfilehash: d360fa5efe2deba2d19cd67e6ed9f8cbb7f864d9
-ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.openlocfilehash: f23d81ddb07fcafb198cd725781747b61a3b73ea
+ms.sourcegitcommit: 67f926ba83f8a955e16b741a610ad84d6044f8f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77415072"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77529335"
 ---
 Ezek a hirdetmények olyan fontos információkat tartalmaznak, amelyek segíthetnek a jövőbeli Intune-változások és-funkciók előkészítésében.
+
+### <a name="microsoft-intune-support-for-windows-10-mobile-ending--3544938--"></a>A Windows 10 Mobile Microsoft Intune támogatása<!--3544938-->
+A Microsoft mainstream támogatása a Windows 10 Mobile-ban 2019 decemberében fejeződött be. A jelen támogatási nyilatkozatban említettek szerint a Windows 10 Mobile-felhasználók többé nem jogosultak új biztonsági frissítések, nem biztonsági gyorsjavítások, ingyenes támogatott támogatási lehetőségek vagy a Microsoft Online technikai jellegű frissítéseinek fogadására. A teljes mobil operációs rendszer támogatásán alapuló Microsoft Intune mostantól a Windows 10 Mobile-alkalmazás és a Windows 10 Mobile operációs rendszer Céges portál is támogatja a 2020-es májusi 11.
+
+#### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
+Ha a szervezetében üzembe helyezett Windows 10 Mobile-eszközöket használ, a 2020-as és a május 11. között új eszközöket regisztrálhat, hozzáadhat vagy eltávolíthat szabályzatokat és alkalmazásokat, vagy frissítheti a felügyeleti beállításokat. Május 11. után a rendszer leállítja az új regisztrációkat, és végül eltávolítja a Windows 10 Mobile managementet az Intune felhasználói felületéről. Az eszközök többé nem fogják bejelentkezni az Intune szolgáltatásba, és töröljük az eszköz-és a házirend-adategységeket.  
+
+#### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
+Az Intune-jelentéskészítéssel megtekintheti, hogy mely eszközökre vagy felhasználókra van hatással. Nyissa meg az **eszközök** > **minden eszköz** lehetőséget, és szűrje az operációs rendszer alapján. További oszlopokat is hozzáadhat, amelyekkel azonosítható, hogy a szervezeten belül kik rendelkeznek a Windows 10 Mobile rendszerű eszközökkel. Kérje meg, hogy a végfelhasználók frissítse eszközeiket, vagy szüntessék meg a vállalati hozzáférés eszközeinek használatát.
+
+
 
 ### <a name="plan-for-change-change-in-experience-when-enrolling-android-enterprise-dedicated-devices-in-intune--6114580--"></a>Tervezze meg a változást: az androidos vállalati dedikált eszközök Intune-beli regisztrálásakor tapasztalható változás<!--6114580-->
 A novemberi kiadásban a SCEP-tanúsítvány üzembe helyezésének támogatása támogatott az Android Enterprise dedikált eszközökön, amelyek lehetővé teszik a Wi-Fi profilok tanúsítványon alapuló elérését. Ez a változás érintette az androidos vállalati dedikált eszközök néhány kisebb beléptetési folyamatának változását. A márciusi vagy a 2003-es frissítéssel kapcsolatban további változtatások szükségesek.
@@ -44,16 +55,6 @@ Tájékoztassa a végfelhasználókat és a helpdesket erről a változásról. 
 
 #### <a name="additional-information"></a>További információ
 https://helpx.adobe.com/acrobat/kb/intune-app-end-of-life.html
-
-
-### <a name="end-support-for-windows-phone-81--3544909--"></a>Windows Phone-telefon 8,1-es végpont-támogatás<!--3544909-->
-A Microsoft mainstream Windows Phone-telefon 8,1-es verziójának támogatása 2017 júliusában fejeződött be, és a meghosszabbított támogatás az 2019-as év végén fejeződött be. A Windows Phone-telefon 8,1-es Céges portál alkalmazás a 2017 októbere óta tart fenn fenntartási módban. A Microsoft Intune mostantól a Windows Phone-telefon 8,1 2020. február 20-án megszűnik a támogatás.
-
-#### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
-Február 2020 20. után ezek az eszközök nem kapják meg a biztonsági frissítéseket, és nem regisztrálhat új eszközöket. A meglévő Windows Phone-telefon 8,1 rendszerű eszközök regisztrálva maradnak (házirend, alkalmazások, jelentéskészítés), de Megjegyzés: a meglévő regisztrációk hibaelhárítása ezen dátum után nem támogatott, mivel számos összetevő, például a harmadik féltől származó tanúsítványok már befejezték a támogatását platform. Az Intune leállítja a kompatibilitási tesztelést az Intune-nal és a Windows Phone-telefon 8,1-mel.
-
-#### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
-Az Intune-jelentéskészítéssel megtekintheti, hogy mely eszközökre vagy felhasználókra van hatással. Lépjen az Eszközök > Minden eszköz menüpontra, és szűrje a találatokat operációs rendszer alapján. További oszlopokat is hozzáadhat, amelyekkel azonosítható, hogy a szervezeten belül kik rendelkeznek a Windows Phone-telefon 8,1 rendszerű eszközökkel. Kérje meg, hogy a végfelhasználók a támogatott operációsrendszer-verzióra frissítse eszközeit.
 
 
 ### <a name="take-action-use-microsoft-edge-for-your-protected-intune-browser-experience--5728447--"></a>Művelet: a Microsoft Edge használata a védett Intune-böngésző felhasználói felületén<!--5728447-->

@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5092fa37f0bf6bd1320fa06fa58ac5e36f55aa3c
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 62031fd42a0067b206d6804fd0c3939db3fd8e3b
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74410186"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514115"
 ---
 # <a name="use-certificates-for-authentication-in-microsoft-intune"></a>Tanúsítványok használata a Microsoft Intune történő hitelesítéshez
 
@@ -77,13 +77,13 @@ Harmadik féltől származó (nem a Microsofttól származó) hitelesítésszolg
 
 ## <a name="supported-platforms-and-certificate-profiles"></a>Támogatott platformok és tanúsítványok profiljai
 
-| Platfésm              | Megbízható tanúsítvány profilja | PKCS-tanúsítvány profilja | SCEP-tanúsítvány profilja | PKCS importált tanúsítvány profilja  |
+| Platform              | Megbízható tanúsítvány profilja | PKCS-tanúsítvány profilja | SCEP-tanúsítvány profilja | PKCS importált tanúsítvány profilja  |
 |--|--|--|--|---|
 | Android-eszköz rendszergazdája | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png)|  ![Támogatott](./media/certificates-configure/green-check.png) |
 | Vállalati Android <br> -Teljes körűen felügyelt (eszköz tulajdonosa)   | ![Támogatott](./media/certificates-configure/green-check.png) |   | ![Támogatott](./media/certificates-configure/green-check.png) |   |
 | Vállalati Android <br> -Dedikált (eszköz tulajdonosa)   | ![Támogatott](./media/certificates-configure/green-check.png)  |   | ![Támogatott](./media/certificates-configure/green-check.png)  |   |
 | Vállalati Android <br> -Munkahelyi profil    | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) |
-| iOS                   | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) |
+| iOS/iPadOS                   | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) | ![Támogatott](./media/certificates-configure/green-check.png) |
 | macOS                 | ![Támogatott](./media/certificates-configure/green-check.png) |  ![Támogatott](./media/certificates-configure/green-check.png) |![Támogatott](./media/certificates-configure/green-check.png)|![Támogatott](./media/certificates-configure/green-check.png)|
 | WVPN-profilokdows Phone 8.1     |![Támogatott](./media/certificates-configure/green-check.png)  |  | ![Támogatott](./media/certificates-configure/green-check.png)| ![Támogatott](./media/certificates-configure/green-check.png) |
 | Windows 8.1 és újabb |![Támogatott](./media/certificates-configure/green-check.png)  |  |![Támogatott](./media/certificates-configure/green-check.png) |   |

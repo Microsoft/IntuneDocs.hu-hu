@@ -1,11 +1,11 @@
 ---
 title: Wi-Fi-profil létrehozása az eszközökhöz a Microsoft Intune-ban – Azure | Microsoft Docs
-description: Itt láthatja a Wi-Fi eszközkonfigurációs profilok Microsoft Intune-ban való létrehozásának lépéseit. Profilok létrehozása Android, Android Enterprise, Android kioszk, iOS, macOS, Windows 10 és újabb rendszerekhez, valamint Windows holografikus for Business. Ezekkel a profilokkal Wi-Fi-kapcsolatot hozhat létre tanúsítványok használatához, EAP-típus és hitelesítési módszer kiválasztásához, proxy engedélyezéséhez és egyebekhez.
+description: Itt láthatja a Wi-Fi eszközkonfigurációs profilok Microsoft Intune-ban való létrehozásának lépéseit. Profilokat hozhat létre az Android, az Android Enterprise, az Android kioszk, az iOS, a iPadOS, a macOS, a Windows 10 és újabb rendszerekhez, valamint a Windows holografikus for Business szolgáltatáshoz. Ezekkel a profilokkal Wi-Fi-kapcsolatot hozhat létre tanúsítványok használatához, EAP-típus és hitelesítési módszer kiválasztásához, proxy engedélyezéséhez és egyebekhez.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 02/18/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,21 +16,21 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 47eae4d2e662be85de2831666f944e57ba674417
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: 3110998970eeaf654ab57397ec827090a4103f34
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75206108"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77512330"
 ---
 # <a name="add-and-use-wi-fi-settings-on-your-devices-in-microsoft-intune"></a>Wi-Fi-beállítások hozzáadása és használata az eszközökön a Microsoft Intune-ban
 
 A Wi-Fi olyan vezeték nélküli hálózat, amelyet számos mobileszköz használ a hálózati hozzáféréshez. A Microsoft Intune beépített Wi-Fi-beállításokat tartalmaz, amelyek a szervezet felhasználóira és eszközeire telepíthetők. A beállítások ezt a csoportját "profilnak" nevezzük, és különböző felhasználókhoz és csoportokhoz rendelhetők. A hozzárendelést követően a felhasználók anélkül férhetnek hozzá a szervezet Wi-Fi hálózatához, hogy azt maguknak kellene konfigurálniuk.
 
-Tegyük fel például, hogy egy új, Contoso Wi-Fi nevű vezeték nélküli hálózatot helyez üzembe. Ekkor szeretné beállítani, hogy az összes iOS-eszköz kapcsolódjon ehhez a hálózathoz. Ennek folyamata a következő:
+Tegyük fel például, hogy egy új, Contoso Wi-Fi nevű vezeték nélküli hálózatot helyez üzembe. Ezután be kívánja állítani az összes iOS/iPadOS eszközt, hogy csatlakozhasson ehhez a hálózathoz. Ennek folyamata a következő:
 
 1. Hozzon létre egy Wi-Fi profilt, amely tartalmazza a contoso Wi-Fi vezeték nélküli hálózathoz csatlakozó beállításokat.
-2. Rendelje hozzá a profilt egy olyan csoporthoz, amely az iOS-eszközök összes felhasználóját tartalmazza.
+2. Rendelje hozzá a profilt egy olyan csoporthoz, amely az összes iOS/iPadOS-eszköz felhasználóját tartalmazza.
 3. A felhasználók az eszközükön a vezeték nélküli hálózatok listájában találják az új Contoso Wi-Fi-hálózatot. Ezután az Ön által kiválasztott hitelesítési módszerrel csatlakozhatnak a hálózathoz.
 
 Ez a cikk a Wi-Fi-profil létrehozásának lépéseit sorolja fel. Emellett olyan hivatkozásokat is tartalmaz, amelyek leírják az egyes platformok különböző beállításait.
@@ -41,9 +41,10 @@ A Wi-Fi-profilok a következő eszközplatformokat támogatják:
 
 - Android 4 és újabb verziók
 - Android Enterprise és kioszk
-- iOS 8.0 és újabb verziók
+- iOS 8,0 és újabb verziók
+- iPadOS 13,0 és újabb verziók
 - macOS X 10,11 és újabb verziók
-- Windows 10 vagy újabb, Windows 10 Mobile és Windows Holographic for Business
+- Windows 10 és újabb, Windows 10 Mobile és Windows holografikus for Business
 
 > [!NOTE]
 > A Windows 8.1-et futtató eszközökön importálhatja egy másik eszköz korábban exportált Wi-Fi-konfigurációját.
@@ -62,7 +63,7 @@ A Wi-Fi-profilok a következő eszközplatformokat támogatják:
       - **Android Enterprise**
       - **iOS/iPadOS**
       - **macOS**
-      - **Windows 8.1 és újabb**
+      - **Windows 8.1 és újabb verziók**
       - **Windows 10 és újabb**
 
     - **Profil típusa**: válassza a **Wi-Fi**lehetőséget.

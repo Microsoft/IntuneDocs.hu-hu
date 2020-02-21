@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d302db46510b664aec5b0a71fd8b19985e29be37
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: 48bfe727615f5165fc70ed2e08f98f01203dc895
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75206125"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514829"
 ---
 # <a name="use-policy-sets-to-group-collections-of-management-objects"></a>Csoportházirend-készletek használata a felügyeleti objektumok gyűjteményének csoportosításához
 
@@ -52,7 +52,7 @@ A következő felügyeleti objektumokat veheti fel egy házirend-készletbe:
 Házirend-készlet létrehozásakor a hozzárendelések egyetlen egységét kell létrehoznia, és kezelni kell a különböző objektumok közötti társításokat. Egy házirend-készlet a külső objektumokra mutató hivatkozás lesz. A befoglalt objektumok módosításai is hatással lesznek a házirend-készletre. Miután létrehozta a szabályzatot, többször is megtekintheti és szerkesztheti az objektumait és hozzárendeléseit. 
 
 > [!NOTE]
-> A házirend-készletek támogatják a Windows, az Android, a macOS és az iOS beállításokat, és több platformot is hozzá lehet rendelni.
+> A házirend-készletek támogatják a Windows, az Android, a macOS és az iOS/iPadOS beállításait, és több platformot is hozzá lehet rendelni.
 
 ## <a name="how-to-create-a-policy-set"></a>Házirend-készlet létrehozása
 
@@ -82,15 +82,15 @@ A házirendek új, 1910-as számú házirend-készlete a következő ismert prob
 - Házirend-készlet létrehozásakor, ha egy hatókörrel rendelkező rendszergazda egy hatóköri címke nélkül próbál létrehozni egy házirend-készletet, a **felülvizsgálat + létrehozás** lap elérésekor az érvényesítés sikertelen lesz, és hibaüzenet jelenik meg az állapotsoron. A rendszergazdának a folyamat egy másik lapjára kell váltania, majd vissza kell térnie a **felülvizsgálat + létrehozás** lapra. Ez engedélyezi a **létrehozási** beállítást.  
  
 - A házirend-készletek jelenleg a következő típusú alkalmazásokat támogatják:
-    - iOS store app
-    - üzletági iOS-alkalmazás
-    - Felügyelt iOS-es üzletági alkalmazás
+    - iOS/iPadOS áruházbeli alkalmazás
+    - iOS/iPadOS üzletági alkalmazás
+    - Felügyelt iOS/iPadOS üzletági alkalmazás
     - Android store app
     - Üzletági Android-alkalmazás
     - Felügyelt androidos üzletági alkalmazás
     - Office 365 ProPlus csomag (Windows 10)
     - Webes hivatkozás
-    - Beépített iOS-alkalmazás
+    - Beépített iOS-/iPadOS-alkalmazás
     - Beépített Android-alkalmazás
 
 - Nem támogatott, hogy az **összes felhasználóra** vonatkozó szabályzat-hozzárendelést az **Autopilot-profilhoz** lehessen beállítani.
@@ -103,18 +103,18 @@ A házirendek új, 1910-as számú házirend-készlete a következő ismert prob
 
 - A szabályzatokat támogató MAM-szabályzatok típusai a következők: 
     - MAM-beli BEFEJEZő (Windows) MDM megcélzó felügyelt alkalmazások védelme 
-    - A MAM iOS megcélozott felügyelt alkalmazásának védelme
+    - MAM iiOS/iPadOSOS megcélzó felügyelt alkalmazások védelme
     - MAM Android megcélozott felügyelt alkalmazások védelme
-    - A MAM iOS által kezelt felügyelt alkalmazás konfigurációja
+    - MAM iOS/iPadOS megcélozt felügyelt alkalmazás konfigurációja
     - MAM Android megcélozott felügyelt alkalmazás konfigurációja
 
 - A szabályzatot nem támogató MAM-szabályzatok a következők: 
     - MAM-beli folyamatban lévő (Windows) felügyelt alkalmazások védelme
 
 - A MAM dolgozza fel a hozzárendeléseket a következő típusú házirendek közvetlen hozzárendeléseiként:
-    - A MAM iOS megcélozott felügyelt alkalmazásának védelme
+    - MAM iOS/iPadOS megcélzó felügyelt alkalmazások védelme
     - MAM Android megcélozott felügyelt alkalmazások védelme
-    - A MAM iOS által kezelt felügyelt alkalmazás konfigurációja
+    - MAM iOS/iPadOS megcélozt felügyelt alkalmazás konfigurációja
     - MAM Android megcélozott felügyelt alkalmazás konfigurációja
 
     Ha egy házirendet egy csoportba központilag telepített házirendhez ad hozzá, akkor a csoport a munkaterhelésben közvetlenül hozzárendelt értékként jelenik meg, nem pedig a "házirend-készleten keresztül" hozzárendeléssel. Ennek eredményeképpen a MAM nem dolgozza fel a házirend-készletekből érkező csoport-hozzárendelési törléseket.

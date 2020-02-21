@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 01/28/2020
+ms.date: 02/18/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c9b56ba1515608afb6c2a0d151f5412711d49e57
-ms.sourcegitcommit: 5ad0ce27a30ee3ef3beefc46d2ee49db6ec0cbe3
+ms.openlocfilehash: b83367bb2f1d3622a1fc4e11eedd88f3f26ee8dd
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76886717"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77510605"
 ---
 # <a name="use-a-custom-device-profile-to-create-a-wifi-profile-with-a-pre-shared-key-in-intune"></a>Előmegosztott kulccsal rendelkező Wi-Fi-profil létrehozása egyéni eszköz-profil használatával az Intune-ban
 
@@ -44,7 +44,7 @@ Ez a funkció a következőket támogatja:
 
 - Egyszerűbb lehet, ha a kódot egy, az adott hálózathoz már csatlakozó számítógépről másolja. Ennek leírását a cikk későbbi részében megtalálhatja.
 - További OMA-URI-beállítások megadásával több hálózatot és kulcsot is hozzáadhat.
-- iOS-rendszereken a profil létrehozásához használja az Apple Configurator programot egy Mac munkaállomáson.
+- IOS/iPadOS esetén a profil beállításához használja az Apple konfigurátort egy Mac-állomáson.
 - Az előmegosztott kulcsokhoz egy 64 hexadecimális számból álló sztringet vagy egy 8–63 nyomtatható ASCII-karakterből álló jelszót kell megadnia. Bizonyos karakterek, például a csillag (*) nem támogatottak.
 
 ## <a name="create-a-custom-profile"></a>Egyéni profil létrehozása

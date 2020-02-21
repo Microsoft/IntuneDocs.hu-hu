@@ -17,12 +17,12 @@ ms.reviewer: sumitp
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0094cdd12b2594cb60260d768daec8c5bed04c9c
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 3812d19122cf4dd85edf00a6fa12d9f2b89529aa
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72510253"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514591"
 ---
 # <a name="use-the-troubleshooting-portal-to-help-users-at-your-company"></a>Segítségnyújtás a céges felhasználóknak a hibaelhárítási portál használatával
 
@@ -61,12 +61,12 @@ A **Hibaelhárítás** panel használatával felhasználói információkat teki
 
 ![Hibaelhárítási irányítópult, a következő táblázatban leírt számozott területtel](./media/help-desk-operators/troubleshooting-dash.png)
 
-| Terület | Név | Description |
+| Terület | Név | Leírás |
 | ---  | ---  | ---         |
 | 1.   | Fiók állapota  | Az aktuális Intune-bérlő állapotát jeleníti meg, amely lehet **Aktív** vagy **Inaktív**.       |
 | 2.   | Felhasználó kiválasztása  | Az aktuálisan kiválasztott felhasználó neve. Új felhasználó kiválasztásához kattintson a **Felhasználó váltása** lehetőségre.       |
 | 3.   | Felhasználó állapota  | Megjeleníti a felhasználó Intune-licencének állapotát, az eszközök számát, az egyes eszközök megfelelőségét, az alkalmazások számát és az alkalmazások megfelelőségét.       |
-| 4.   | Felhasználói adatok  | A listából kiválaszthatja a panelen megtekintendő információkat. <br>Az alábbiak közül választhat: <ul><li>Ügyfélalkalmazások<li>Megfelelőségi szabályzatok<li> Konfigurációs szabályzatok<li>Alkalmazásvédelmi szabályzatok <li>Regisztrációs korlátozások</ul>      |
+| 4.   | Felhasználói adatok  | A listából kiválaszthatja a panelen megtekintendő információkat. <br>Az alábbiak közül választhat: <ul><li>Ügyfélalkalmazások<li>Megfelelőségi házirendek<li> Beállítási házirendek<li>Alkalmazásvédelmi szabályzatok <li>Regisztrációs korlátozások</ul>      |
 | 5.   | Csoporttagság  | Megjeleníti azokat csoportokat, amelyeknek a kiválasztott felhasználó jelenleg a tagja.       |
 
 <!-- this section needs to be updated
@@ -248,7 +248,7 @@ An app protection policy is available to mobile apps that integrate with EMS tec
 
 A Regisztrációs hibák táblázat a sikertelen regisztrációs kísérleteket jeleníti meg. A lenti táblázatban szereplő eszközök esetében előfordulhat, hogy egy újabb próbálkozás során sikerült regisztrálnia. Nem minden sikertelen kísérlet jelenik meg. A kockázatcsökkentési adatok nem érhetők el minden funkcióhoz.
 
-| Táblázatoszlop | Description |
+| Táblázatoszlop | Leírás |
 |-------------|----------|
 | Regisztráció kezdete | A felhasználó első regisztrációjának kezdési időpontja. |
 | Operációs rendszer | Az eszköz operációs rendszere. |
@@ -259,7 +259,7 @@ A Regisztrációs hibák táblázat a sikertelen regisztrációs kísérleteket 
 
 Egy hibasort kijelölve további adatokat jeleníthet meg.
 
-| Szakasz | Description |
+| Section | Leírás |
 |-------------|----------|
 | Hiba részletei | A hiba részletes leírása. |
 | Lehetséges megoldások | Javasolt lépések a hiba megoldásához. Bizonyos hibákat nem lehet javítani. |
@@ -267,9 +267,9 @@ Egy hibasort kijelölve további adatokat jeleníthet meg.
 
 ### <a name="enrollment-errors"></a>Regisztrációs hibák
 
-| Hiba | Details |
+| Hiba | Részletek |
 |-------------|----------|
-| iOS időtúllépés vagy hiba | Időtúllépés az eszköz és az Intune között a felhasználó regisztrációs folyamatának elhúzódása miatt. |
+| iOS/iPadOS időtúllépés vagy hiba | Időtúllépés az eszköz és az Intune között a felhasználó regisztrációs folyamatának elhúzódása miatt. |
 | Felhasználó nem található vagy nincs licence | A felhasználó nem rendelkezik licenccel, vagy eltávolították a szolgáltatásból. |
 | Már regisztrált eszköz | Valaki regisztrálni próbált egy eszközt a Céges portállal egy olyan eszközön, amelyet egy másik felhasználó már regisztrált. |
 | Nincs előkészítve az Intune-ban | Valaki úgy próbált regisztrálni, hogy előtte nem konfigurálta az Intune mobileszköz-kezelési (MDM-) szolgáltatót. |
@@ -286,14 +286,14 @@ Egy hibasort kijelölve további adatokat jeleníthet meg.
 | Az Autopilot beléptetési metódusa váratlan | Az eszköz nem engedélyezett módszer használatával próbált regisztrálni. |
 | Robotpilóta-eszköz eltávolítva | A regisztrálni próbált eszköz el lett távolítva az Autopilot-ből ehhez a fiókhoz. |
 | Eszközök maximális száma elérve | A regisztráció le lett tiltva egy rendszergazda által konfigurált eszközkorlátozás miatt. |
-| Apple-bevezetés | Az iOS-eszközök regisztrációja jelenleg le van tiltva egy Intune-beli hiányzó vagy lejárt Apple MDM Push-tanúsítvány miatt. |
+| Apple-bevezetés | Az iOS/iPadOS-eszközök jelenleg nem regisztrálhatók az Intune-ban lévő hiányzó vagy lejárt Apple MDM push-tanúsítvány miatt. |
 | Az eszköz nincs előzetesen regisztrálva | Az eszközt nem regisztrálták előre, mert annak céges és személyes regisztrációját egy rendszergazda letiltotta. |
 | Nem támogatott funkció | A felhasználó valószínűleg egy, az Intune-konfigurációval nem kompatibilis módon próbált regisztrálni. |
 
 ## <a name="collect-available-data-from-mobile-device"></a>Rendelkezésre álló adatok gyűjtése mobileszközön
 
 A következő erőforrásokkal eszközadatokat gyűjthet a felhasználói eszközök hibáinak elhárításakor:
-- [Az iOS regisztrálási hibáinak elküldése a rendszergazdának](/intune-user-help/send-errors-to-your-it-admin-ios)
+- [IOS/iPadOS-regisztrálási hibák elküldése a rendszergazdának](/intune-user-help/send-errors-to-your-it-admin-ios)
 - [A cég informatikai támogatási szolgálatának segítése az eszközproblémák megoldásában részletes naplózással](/intune-user-help/use-verbose-logging-to-help-your-it-administrator-fix-device-issues-android)
 - [Android-naplók elküldése a cég informatikai támogatási szolgálatának USB-kábelen keresztül](/intune-user-help/send-diagnostic-data-logs-to-your-it-administrator-using-a-usb-cable-android)
 - [Az Android diagnosztikai adatait tartalmazó naplófájlok elküldése e-mailben a rendszergazdának](/intune-user-help/send-logs-to-your-it-admin-by-email-android)

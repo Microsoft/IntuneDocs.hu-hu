@@ -16,16 +16,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3399cf006543c0a3554c4c6ec812554462d74231
-ms.sourcegitcommit: a66b5916eaab9cb537e483064efc584a6a63a390
+ms.openlocfilehash: 0232855773626693d848f77e561c51d281739215
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75691819"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514608"
 ---
 # <a name="guided-scenario---secure-microsoft-office-mobile-apps"></a>Interaktív forgatókönyv – biztonságos Microsoft Office Mobile apps 
 
-Ha ezt az útmutatást az Eszközkezelő portálon követi, az iOS-és Android-eszközökön is engedélyezheti az Intune-alkalmazások alapszintű védelmét.
+Az Eszközkezelő portálon ez az interaktív forgatókönyv alapján engedélyezheti az Intune app Protection alapszintű védelmét iOS/iPadOS és Android rendszerű eszközökön.
 
 Az Ön által engedélyezett alkalmazás-védelem a következő műveleteket fogja érvényesíteni: 
 - A munkahelyi fájlok titkosítása.
@@ -51,7 +51,7 @@ Az alkalmazás-védelmi házirendek használatával megakadályozhatja, hogy a f
 
 Az alkalmazásalapú feltételes hozzáférés és az ügyfélalkalmazás-felügyelet egy további biztonsági réteget jelent, mivel gondoskodik róla, hogy csak az Intune alkalmazásvédelmi szabályzatait támogató mobilalkalmazások férhessenek hozzá az Exchange Online-hoz és más Office 365-szolgáltatásokhoz.
 
-Azzal, hogy csak a Microsoft Outlook alkalmazásnak engedélyezi az Exchange Online elérését, blokkolhatja az iOS és az Android beépített levelezőalkalmazásait. Ezenfelül blokkolhatja az Intune alkalmazásvédelmi szabályzattal el nem látott alkalmazások SharePoint Online-elérését is.
+Az iOS/iPadOS és az Android rendszerű eszközökön blokkolhatja a beépített e-mail-alkalmazásokat, ha csak a Microsoft Outlook alkalmazás fér hozzá az Exchange Online-hoz. Ezenfelül blokkolhatja az Intune alkalmazásvédelmi szabályzattal el nem látott alkalmazások SharePoint Online-elérését is.
 
 Ebben a példában a rendszergazda alkalmazásvédelmi szabályzatokkal látta el az Outlook alkalmazást, majd egy feltételes hozzáférési szabállyal felvette az Outlookot a céges levelezés elérésére használható jóváhagyott alkalmazások listájára.
 
@@ -69,7 +69,7 @@ Szüksége lesz az Intune rendszergazdai engedélyeinek követésére:
 
 Az **Intune app Protection** irányított forgatókönyv követésével megakadályozhatja, hogy az adatok a szervezeten kívül is megosszák vagy szivárognak. 
 
-A hozzárendelt iOS-és Android-felhasználóknak minden alkalommal meg kell adniuk egy PIN-kódot, amikor megnyitnak egy Office-alkalmazást. 5 sikertelen PIN-kód próbálkozás után a felhasználóknak vissza kell állítania a PIN-kódját. Ha már megkövetelt egy eszköz PIN-kódját, a rendszer nem érinti a felhasználókat.
+A hozzárendelt iOS/iPadOS és Android rendszerű felhasználóknak minden alkalommal meg kell adniuk egy PIN-kódot, amikor megnyitnak egy Office-alkalmazást. 5 sikertelen PIN-kód próbálkozás után a felhasználóknak vissza kell állítania a PIN-kódját. Ha már megkövetelt egy eszköz PIN-kódját, a rendszer nem érinti a felhasználókat.
 
 ### <a name="what-you-will-need-to-continue"></a>A folytatáshoz szükséges művelet
 
@@ -86,7 +86,7 @@ Ebben a lépésben meg kell adnia az új alkalmazás-védelmi szabályzat **elő
 
 ## <a name="step-3---apps"></a>3\. lépés – alkalmazások
 
-Az első lépésekhez ez az interaktív forgatókönyv az iOS-és Android-eszközökön való védelemhez előre kiválasztja a következő mobil alkalmazásokat:
+Ha segítségre van szüksége az első lépésekhez, ez az interaktív forgatókönyv az iOS-/iPadOS-és Android-eszközök védelméhez előre kiválasztja a következő Mobile apps-alkalmazásokat:
 - Microsoft Excel 
 - Microsoft Word 
 - Microsoft Teams 
@@ -105,7 +105,7 @@ Ha kiválasztotta az alkalmazásokat, kattintson a **tovább**gombra.
 
 Ebben a lépésben konfigurálnia kell a vállalati fájlok és e-mailek ezen alkalmazásokban való eléréséhez és megosztásához szükséges követelményeket. Alapértelmezés szerint a felhasználók menthetik az adatait a szervezet OneDrive és SharePoint-fiókjaiba.
 
-| Beállítás | Description | Alapértelmezett érték |
+| Beállítás | Leírás | Alapértelmezett érték |
 |---------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
 | PIN-kód típusa | A numerikus PIN-kódok az összes számból állnak. A PIN-kódok alfanumerikus karakterekből és speciális karakterekből állnak.  IOS/iPadOS esetén a "PIN-kód" típus konfigurálásához az alkalmazásnak az Intune SDK 7.1.12 vagy újabb verziójára van szüksége. Numerikus típusú kód az Intune SDK bármelyik verziójával használható. | Numerikus |
 | PIN-kód minimális hosszának kiválasztása | Meghatározza a számjegyek minimális számát a PIN-kód sorrendjében. | 6 |

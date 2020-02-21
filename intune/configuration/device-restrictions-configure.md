@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/04/2019
+ms.date: 02/18/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,18 +15,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8c86252030a4baf957077cd889386bb8016554f1
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: 53985a9af523ecf60efda5c5c651161c132e326c
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75206567"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77511221"
 ---
 # <a name="configure-device-restriction-settings-in-microsoft-intune"></a>Ezközkorlátozásokra vonatkozó beállítások konfigurálása a Microsoft Intune-ban
 
 
 
-Az Intune olyan eszköz-korlátozási szabályzatokat tartalmaz, amelyek segítségével a rendszergazdák vezérelhetik az Android, iOS, macOS és Windows rendszerű eszközöket. Ezek a korlátozások lehetővé teszik a beállítások és szolgáltatások széles körének szabályozását a szervezet erőforrásainak megóvása érdekében. A rendszergazdák például a következőket tehetik:
+Az Intune olyan eszközök korlátozási szabályzatokat tartalmaz, amelyek segítségével a rendszergazdák vezérelhetik az Android, az iOS/iPadOS, a macOS és a Windows rendszerű eszközöket. Ezek a korlátozások lehetővé teszik a beállítások és szolgáltatások széles körének szabályozását a szervezet erőforrásainak megóvása érdekében. A rendszergazdák például a következőket tehetik:
 
 - Az eszköz kamerájának engedélyezése vagy letiltása
 - A Google Play, az alkalmazás-áruházak, a dokumentumok megtekintése és a játékok elérésének szabályozása
@@ -44,7 +44,7 @@ Ez a cikk bemutatja, hogyan hozhat létre egy eszköz-korlátozási profilt. A k
 2. Válassza az **eszközök** > **konfigurációs profilok** lehetőséget > a **profil létrehozása**elemet.
 3. Adja meg a következő tulajdonságokat:
 
-    - **Név**: adjon meg egy leíró nevet a szabályzatnak. Nevezze el a szabályzatokat, hogy később könnyebben azonosítható legyen. Például egy jó szabályzat neve **iOS: a kamera letiltása az eszközökön**.
+    - **Név**: adjon meg egy leíró nevet a szabályzatnak. Nevezze el a szabályzatokat, hogy később könnyebben azonosítható legyen. Egy jó szabályzat neve például **iOS/iPadOS: a kamera letiltása az eszközökön**.
     - **Leírás**: adja meg a szabályzat leírását. A beállítás használata nem kötelező, de ajánlott.
     - **Platform**: válassza ki az eszközök platformját. A választható lehetőségek:  
 
@@ -53,7 +53,7 @@ Ez a cikk bemutatja, hogyan hozhat létre egy eszköz-korlátozási profilt. A k
         - **iOS/iPadOS**
         - **macOS**
         - **Windows Phone 8.1**
-        - **Windows 8.1 és újabb**
+        - **Windows 8.1 és újabb verziók**
         - **Windows 10 és újabb**
 
     - **Profil típusa**: válassza az **eszközök korlátozásait**.

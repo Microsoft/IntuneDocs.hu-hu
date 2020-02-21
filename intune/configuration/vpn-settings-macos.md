@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 09/09/2019
+ms.date: 02/18/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e0bb2cb757e944369642807f117683dad3a9805a
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: b20a7eca6f71d46380f9fcdb1674226cc54a104f
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75206261"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77510779"
 ---
 # <a name="add-vpn-settings-on-macos-devices-in-microsoft-intune"></a>VPN-beállítások hozzáadása macOS-eszközökön Microsoft Intune
 
@@ -53,7 +53,7 @@ A megadott beállításoktól függően a következő listában található ért
   - **Egyéni VPN**
 - **Megosztott bújtatás**: **engedélyezheti** vagy **letilthatja** ezt a beállítást, amely lehetővé teszi, hogy az eszközök döntsenek a forgalomtól függően, hogy melyik kapcsolatokat használják. Egy szállodai vendég például a munkahelyi fájlok elérésére a VPN-kapcsolatot, de egyszerű böngészésre a szálloda normál hálózatát használja.
 
-<!--- **Per-app VPN** - Select this option if you want to associate this VPN connection with an iOS or macOS app so that the connection will be opened when the app is run. You can associate the VPN profile with an app when you assign the software. For more information, see [How to assign and monitor apps](../apps/apps-deploy.md). --->
+<!--- **Per-app VPN** - Select this option if you want to associate this VPN connection with an iOS/iPadOS or macOS app so that the connection will be opened when the app is run. You can associate the VPN profile with an app when you assign the software. For more information, see [How to assign and monitor apps](../apps/apps-deploy.md). --->
 
 ## <a name="custom-vpn-settings"></a>Egyéni VPN-beállítások
 
@@ -72,4 +72,4 @@ Ha az **Egyéni VPN** lehetőséget választotta, konfigurálja ezeket a beáll�
 
 A profil létrejött, de egyelőre nem csinál semmit. Ezután [rendelje hozzá a profilt](device-profile-assign.md) , és [Figyelje annak állapotát](device-profile-monitor.md).
 
-VPN-beállítások konfigurálása [Android](vpn-settings-android.md), [Android Enterprise](vpn-settings-android-enterprise.md), [iOS](vpn-settings-ios.md)és [Windows 10 rendszerű](vpn-settings-windows-10.md) eszközökön.
+VPN-beállítások konfigurálása [Android](vpn-settings-android.md), [Android Enterprise](vpn-settings-android-enterprise.md), [iOS/iPadOS](vpn-settings-ios.md)és [Windows 10 rendszerű](vpn-settings-windows-10.md) eszközökön.

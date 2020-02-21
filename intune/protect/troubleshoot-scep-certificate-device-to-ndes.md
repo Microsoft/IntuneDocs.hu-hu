@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8c81fa9b521b0d950fb69c29f7625981e709863d
-ms.sourcegitcommit: c46b0c2d4507be6a2786a4ea06009b2d5aafef85
+ms.openlocfilehash: 7945f1df3ddf1a6ff2c42a537e1071d1b5acff24
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76913268"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514268"
 ---
 # <a name="troubleshoot-device-to-ndes-server-communication-for-scep-certificate-profiles-in-microsoft-intune"></a>Az eszköz NDES-kiszolgálóval való kommunikációjának megoldása a Microsoft Intune SCEP-tanúsítvány profiljaihoz
 
@@ -89,7 +89,7 @@ fe80::f53d:89b8:c3e8:5fec%13 GET /certsrv/mscep/mscep.dll operation=GetCACaps&me
 fe80::f53d:89b8:c3e8:5fec%13 Dalvik/2.1.0+(Linux;+U;+Android+5.0;+P01M+Build/LRX21V) - 200 0 0 421 
 ```
 
-### <a name="ios-and-ipados-devices"></a>iOS-és iPadOS-eszközök
+### <a name="iosipados-devices"></a>iOS/iPadOS-eszközök
 
 Tekintse át az [eszközök hibakeresési naplóját](troubleshoot-scep-certificate-profiles.md#logs-for-ios-and-ipados-devices). Keresse meg az alábbihoz hasonló bejegyzéseket, amelyeket a rendszer naplóz, amikor az eszköz csatlakozik a NDES-hez:
 
@@ -153,7 +153,7 @@ Az alábbi példához hasonló, 500-as állapotkódot használó kapcsolatok azt
 
 4. Kattintson a **felhasználó vagy csoport hozzáadása...** elemre, írja be **IIS_IURS** az **adja meg a kijelölendő objektumok nevét mezőbe**, majd kattintson **az OK**gombra.
 
-5. Kattintson az **OK**gombra.
+5. Kattintson az **OK** gombra.
 
 6. Indítsa újra a számítógépet, majd próbálja megismételni a csatlakoztatást az eszközről.
 
@@ -161,7 +161,7 @@ Az alábbi példához hasonló, 500-as állapotkódot használó kapcsolatok azt
 
 A következő lépések végrehajtásával tesztelheti a SCEP-tanúsítvány profiljában megadott URL-címet.
 
-1. Az Intune-ban szerkessze a SCEP-tanúsítvány profilját, és másolja a kiszolgáló URL-címét. Az URL-címnek a *https://contoso.com/certsrv/mscep/msecp.dll hoz* kell hasonlítani.
+1. Az Intune-ban szerkessze a SCEP-tanúsítvány profilját, és másolja a kiszolgáló URL-címét. Az URL-címnek a *https://contoso.com/certsrv/mscep/msecp.dllhoz* kell hasonlítani.
 
 2. Nyisson meg egy webböngészőt, majd keresse meg a SCEP-kiszolgáló URL-címét. Az eredménynek a következőnek kell lennie: **HTTP 403,0 – tiltott**. Ez az eredmény azt jelzi, hogy az URL-cím megfelelően működik.
 
@@ -285,7 +285,7 @@ Az Azure AD Application Proxy konfigurálva van. Amikor megkeresi a SCEP-kiszolg
 
 `This page can't be displayed`
 
-- **OK**: Ez a probléma akkor fordul elő, ha a SCEP külső URL-címe helytelen az alkalmazásproxy konfigurációjában. Erre az URL-címre https://contoso.com/certsrv/mscep/mscep.dll példa.
+- **OK**: Ez a probléma akkor fordul elő, ha a SCEP külső URL-címe helytelen az alkalmazásproxy konfigurációjában. Erre az URL-címre https://contoso.com/certsrv/mscep/mscep.dllpélda.
 
   **Megoldás**: használja az *yourtenant.msappproxy.net* alapértelmezett tartományát az SCEP külső URL-címéhez az alkalmazásproxy konfigurációjában.
 

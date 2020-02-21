@@ -1,11 +1,11 @@
 ---
-title: VPN-beállítások konfigurálása iOS-eszközökhöz a Microsoft Intune-Azure-ban | Microsoft Docs
-description: VPN-konfigurációs profil hozzáadása vagy létrehozása virtuális magánhálózati (VPN) konfigurációs beállításokkal, ideértve a kapcsolat adatait, a hitelesítési módszereket és a vegyes alagútkezelést az alapbeállításoknál; az egyéni VPN-beállításokat azonosítóval, és a kulcs és érték párokat; az alkalmazásonkénti VPN-beállításokat, ideértve a Safari URL-eket és az igény szerinti VPN-eket SSID-vel vagy DNS-keresési tartományokkal; valamint a proxybeállításokat konfigurációs parancsfájl, IP- vagy FQDN-cím belefoglalásához, illetve TCP-port Microsoft Intune-ban való beállításához az iOS-t futtató eszközökhöz.
+title: VPN-beállítások konfigurálása iOS/iPadOS-eszközökhöz a Microsoft Intune-Azure-ban | Microsoft Docs
+description: VPN-konfigurációs profil hozzáadása vagy létrehozása virtuális magánhálózati (VPN) konfigurációs beállításokkal, beleértve a kapcsolati adatokat, a hitelesítési módszereket és a felosztott bújtatást az alapbeállításokban; az egyéni VPN-beállítások az azonosítóval és a kulcs-érték párokkal. az alkalmazáson belüli VPN-beállítások, amelyek tartalmazzák a Safari URL-címeket, valamint az igény szerinti VPN-eket SSID-vagy DNS-keresési tartománnyal. az iOS/iPadOS rendszert futtató eszközökön a Microsoft Intune konfigurációs parancsfájlt, IP-címet vagy teljes tartománynevet és TCP-portot tartalmazó proxybeállításokat is tartalmaz.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/13/2019
+ms.date: 02/18/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,23 +15,23 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9eb7ee99d69fd56707bd9dfe5453ffe0bb107bad
-ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
+ms.openlocfilehash: 01c6ae06459590fa9bb9842e90ad53e6c522d6a6
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75885662"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77512483"
 ---
-# <a name="add-vpn-settings-on-ios-devices-in-microsoft-intune"></a>VPN-beállítások hozzáadása iOS-eszközökön Microsoft Intune
+# <a name="add-vpn-settings-on-ios-and-ipados-devices-in-microsoft-intune"></a>VPN-beállítások hozzáadása az iOS-és iPadOS-eszközökhöz Microsoft Intune
 
-A Microsoft Intune számos VPN-beállítást tartalmaz, amelyek telepíthetők az iOS-eszközére. Ezek a beállítások VPN-kapcsolatok létrehozására és konfigurálására használhatók a szervezet hálózatához. Ez a cikk ezeket a beállításokat ismerteti. Egyes beállítások csak egyes VPN-ügyfelekhez állnak rendelkezésre, például a Citrix, Zscaler és másokhoz.
+Microsoft Intune számos VPN-beállítást tartalmaz, amelyek telepíthetők iOS/iPadOS-eszközökre. Ezek a beállítások VPN-kapcsolatok létrehozására és konfigurálására használhatók a szervezet hálózatához. Ez a cikk ezeket a beállításokat ismerteti. Egyes beállítások csak egyes VPN-ügyfelekhez állnak rendelkezésre, például a Citrix, Zscaler és másokhoz.
 
 ## <a name="before-you-begin"></a>Előkészületek
 
 [Hozzon létre egy eszköz konfigurációs profilt](vpn-settings-configure.md).
 
 > [!NOTE]
-> Ezek a beállítások minden regisztrációs típushoz elérhetők. A regisztrációs típusokkal kapcsolatos további információkért lásd: [iOS-regisztráció](../enrollment/ios-enroll.md).
+> Ezek a beállítások minden regisztrációs típushoz elérhetők. A regisztrációs típusokkal kapcsolatos további információkért lásd: [iOS/iPadOS-regisztráció](../enrollment/ios-enroll.md).
 
 ## <a name="connection-type"></a>Kapcsolat típusa
 
@@ -130,7 +130,7 @@ Ezek a beállítások akkor érvényesek, ha a **kapcsolattípus** > **IKEv2**le
 - **Kiszolgálói tanúsítvány köznapi neve**: adja meg a tanúsítványhoz tartozó CN-t. Ha üresen hagyja, a rendszer a távoli azonosító értékét használja.
 
 - **Elhalt társ-észlelési arány**: válassza ki, hogy a VPN-ügyfél milyen gyakran ellenőrizze, hogy a VPN-alagút aktív-e. A választható lehetőségek:
-  - **Nincs konfigurálva**: az iOS rendszer alapértelmezett beállítását használja, amely a **közepes**érték megadásával megegyező lehet.
+  - **Nincs konfigurálva**: az iOS/iPadOS rendszer alapértelmezett beállítását használja, amely lehet ugyanaz, mint a **Medium**kiválasztása.
   - **Nincs**: letiltja a kézbesítetlen társ-észlelést.
   - **Alacsony**: egy életben tartási üzenetet küld 30 percenként.
   - **Közepes** (alapértelmezett): 10 percenként elküld egy életben tartási üzenetet.
@@ -145,11 +145,11 @@ Ezek a beállítások akkor érvényesek, ha a **kapcsolattípus** > **IKEv2**le
 - **Tökéletes továbbítási titoktartás**: válassza az **Engedélyezés** lehetőséget a tökéletes továbbítási titoktartás (PFS) bekapcsolásához. A PFS egy olyan IP-biztonsági szolgáltatás, amely csökkenti annak hatását, ha egy munkamenetkulcs biztonsága sérül. A **Letiltás** (alapértelmezett) nem használ PFS-t.
 - **Tanúsítvány visszavonásának ellenőrzése**: válassza az **Engedélyezés** lehetőséget, hogy a rendszer ne vonja vissza a tanúsítványokat, mielőtt engedélyezné a VPN-kapcsolat sikerességét. Ez az ellenőrzési lehetőség a legjobb megoldás. Ha a VPN-kiszolgáló túllépi az időkorlátot a tanúsítvány visszavonásának meghatározása előtt, akkor a rendszer a hozzáférést is megadja. A **Letiltás** (alapértelmezett) nem vizsgálja a visszavont tanúsítványokat.
 
-- A **biztonsági társítás paramétereinek konfigurálása**: **nincs konfigurálva** (alapértelmezés) az iOS rendszer alapértelmezett értékeit használja. Válassza az **Engedélyezés** lehetőséget a biztonsági TÁRSÍTÁSOK VPN-kiszolgálóval való létrehozásakor használt paraméterek megadásához:
+- A **biztonsági társítás paramétereinek konfigurálása**: **nincs konfigurálva** (alapértelmezés) az iOS/iPadOS rendszer alapértelmezett értékeit használja. Válassza az **Engedélyezés** lehetőséget a biztonsági TÁRSÍTÁSOK VPN-kiszolgálóval való létrehozásakor használt paraméterek megadásához:
   - **Titkosítási algoritmus**: válassza ki a kívánt algoritmust:
     - DES
     - 3DES
-    - AES-128
+    - AES – 128
     - AES-256 (alapértelmezett)
     - AES-128 – GCM
     - AES-256 – GCM
@@ -160,15 +160,15 @@ Ezek a beállítások akkor érvényesek, ha a **kapcsolattípus** > **IKEv2**le
     - SHA2 – 384
     - SHA2 – 512
   - **Diffie-Hellman csoport**: válassza ki a kívánt csoportot. Az alapértelmezett érték a Group `2`.
-  - **Élettartam** (perc): válassza ki, hogy mennyi ideig marad aktív a biztonsági társítás a kulcsok elforgatása előtt. `10` és `1440` közötti egész értéket adjon meg (1440 perc 24 óra). Az alapértelmezett szint a `1440`.
+  - **Élettartam** (perc): válassza ki, hogy mennyi ideig marad aktív a biztonsági társítás a kulcsok elforgatása előtt. `10` és `1440` közötti egész értéket adjon meg (1440 perc 24 óra). Az alapértelmezett érték `1440`.
 
-- **Külön paraméterek beállítása a gyermek biztonsági társításokhoz**: az iOS lehetővé teszi, hogy külön paramétereket konfiguráljon az IKE-kapcsolathoz és az alárendelt kapcsolatokhoz. 
+- **A gyermek biztonsági társítások külön paramétereinek konfigurálása**: az iOS/iPadOS lehetővé teszi külön paraméterek konfigurálását az IKE-kapcsolathoz és az alárendelt kapcsolatokhoz. 
 
   **Nincs konfigurálva** (alapértelmezés) az előző **biztonsági társítás paramétereinek** beállítása beállításban megadott értékeket használja. Válassza az **Engedélyezés** lehetőséget a *gyermek* biztonsági társítások VPN-kiszolgálóval való létrehozásakor használt paraméterek megadásához:
   - **Titkosítási algoritmus**: válassza ki a kívánt algoritmust:
     - DES
     - 3DES
-    - AES-128
+    - AES – 128
     - AES-256 (alapértelmezett)
     - AES-128 – GCM
     - AES-256 – GCM
@@ -179,13 +179,13 @@ Ezek a beállítások akkor érvényesek, ha a **kapcsolattípus** > **IKEv2**le
     - SHA2 – 384
     - SHA2 – 512
   - **Diffie-Hellman csoport**: válassza ki a kívánt csoportot. Az alapértelmezett érték a Group `2`.
-  - **Élettartam** (perc): válassza ki, hogy mennyi ideig marad aktív a biztonsági társítás a kulcsok elforgatása előtt. `10` és `1440` közötti egész értéket adjon meg (1440 perc 24 óra). Az alapértelmezett szint a `1440`.
+  - **Élettartam** (perc): válassza ki, hogy mennyi ideig marad aktív a biztonsági társítás a kulcsok elforgatása előtt. `10` és `1440` közötti egész értéket adjon meg (1440 perc 24 óra). Az alapértelmezett érték `1440`.
 
 ## <a name="automatic-vpn-settings"></a>Automatikus VPN-beállítások
 
-- **Alkalmazásonkénti VPN**: Engedélyezi az alkalmazásonkénti VPN használatát. Lehetővé teszi a VPN-kapcsolat automatikus aktiválását bizonyos alkalmazások megnyitásakor. Ezenkívül társítja az alkalmazásokat ehhez a VPN-profilhoz. Az alkalmazáson belüli VPN használata nem támogatott a IKEv2 esetében. További információért lásd az [alkalmazásonkénti VPN beállítására vonatkozó utasításokat iOS-hez](vpn-setting-configure-per-app.md). 
+- **Alkalmazásonkénti VPN**: Engedélyezi az alkalmazásonkénti VPN használatát. Lehetővé teszi a VPN-kapcsolat automatikus aktiválását bizonyos alkalmazások megnyitásakor. Ezenkívül társítja az alkalmazásokat ehhez a VPN-profilhoz. Az alkalmazáson belüli VPN használata nem támogatott a IKEv2 esetében. További információ: [az App VPN beállítása iOS/iPadOS](vpn-setting-configure-per-app.md). 
   - **Szolgáltatótípus**: Csak a Pulse Secure-hoz és az egyéni VPN-hez érhető el.
-  - Az iOS-es **alkalmazásonkénti VPN**-profilok Pulse Secure-ral vagy egyéni VPN-nel való használatakor választhat az alkalmazásrétegbeli (alkalmazásproxy) és csomagszintű (csomagalagút) alagútkezelés között. A **Szolgáltatótípus** értékét az alkalmazásrétegbeli alagútkezeléshez állítsa az **alkalmazásproxy** lehetőségre, a csomagrétegbeli alagútkezeléshez pedig állítsa a **csomagalagút** lehetőségre. Ha nem biztos a megfelelő értékben, tekintse meg a VPN-szolgáltató dokumentációját.
+  - Ha a Pulse Secure vagy egy egyéni VPN használatával iOS/iPadOS **-alapú VPN** -profilokat használ, válassza az alkalmazás-réteg bújtatás (App-proxy) vagy a csomag szintű bújtatás (csomag-alagút) lehetőséget. A **Szolgáltatótípus** értékét az alkalmazásrétegbeli alagútkezeléshez állítsa az **alkalmazásproxy** lehetőségre, a csomagrétegbeli alagútkezeléshez pedig állítsa a **csomagalagút** lehetőségre. Ha nem biztos a megfelelő értékben, tekintse meg a VPN-szolgáltató dokumentációját.
   - **A VPN-t aktiváló Safari URL-címek**: Megadhat egy vagy több webhelycímet. Ezeket az URL-címeket az eszköz Safari böngészőjében megnyitva a VPN-kapcsolat automatikusan létrejön.
 
 - **Igény szerinti VPN**: Ezzel a beállítással feltételes szabályokat állíthat be, melyek a VPN-kapcsolat indítását vezérlik. Létrehozhat például egy olyan feltételt, amelyben a rendszer csak akkor használja a VPN-kapcsolatot, ha az eszköz nem kapcsolódik a vállalati Wi-Fi-hálózathoz. Vagy hozzon létre egy feltételt. Ha például egy eszköz nem fér hozzá egy megadott DNS-keresési tartományhoz, akkor a VPN-kapcsolat nem indul el.
@@ -201,7 +201,7 @@ Ezek a beállítások akkor érvényesek, ha a **kapcsolattípus** > **IKEv2**le
   - **Művelet**: Válasszon a következő lehetőségek közül:
     - Kapcsolódás
     - Kapcsolat kiértékelése
-    - Mellőzés
+    - Kihagyás
     - Kapcsolat bontása
 
 ## <a name="proxy-settings"></a>Proxybeállítások

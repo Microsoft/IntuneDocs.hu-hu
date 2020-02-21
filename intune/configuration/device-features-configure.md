@@ -1,11 +1,11 @@
 ---
-title: iOS- és macOS-eszközprofilok létrehozása az Azure-beli Microsoft Intune-ban | Microsoft Docs
-description: Adjon hozzá vagy hozzon létre egy iOS-vagy macOS-eszköz profilt, majd konfigurálja a AirPrint beállításait, a kezdőképernyő elrendezését, az alkalmazások értesítéseit, a megosztott eszközt, az egyszeri bejelentkezést és a webtartalom-szűrő beállításait a Microsoft Intuneban.
+title: IOS-/iPadOS-vagy macOS-eszköz profil létrehozása a Microsoft Intune-Azure-ban | Microsoft Docs
+description: IOS-, iPadOS-vagy macOS-eszköz profil hozzáadása vagy létrehozása, majd a AirPrint beállításainak konfigurálása, a kezdőképernyő elrendezése, az alkalmazás értesítései, a megosztott eszközök, az egyszeri bejelentkezés és a webtartalom-szűrő beállításai a Microsoft Intuneban.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 12/12/2019
+ms.date: 02/18/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,16 +16,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1fb628d68f50ce1862b3cce51f9fd08804d042a6
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: 52c31cc7d3949b42251d3e45075864762cda6930
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75206720"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77513146"
 ---
-# <a name="add-ios-or-macos-device-feature-settings-in-intune"></a>iOS-es vagy macOS-es eszközfunkció-beállítások megadása az Intune-ban
+# <a name="add-ios-ipados-or-macos-device-feature-settings-in-intune"></a>IOS-, iPadOS-vagy macOS-eszköz szolgáltatás beállításainak hozzáadása az Intune-ban
 
-Az Intune számos funkciót és beállítást tartalmaz, amelyek segítségével a rendszergazdák vezérelhetik az iOS-és macOS-eszközöket. A rendszergazdák például a következőket tehetik:
+Az Intune számos funkciót és beállítást tartalmaz, amelyek segítségével a rendszergazdák vezérelhetik az iOS, a iPadOS és a macOS rendszerű eszközöket. A rendszergazdák például a következőket tehetik:
 
 - A hálózatban lévő AirPrint-nyomtatók elérésének engedélyezése a felhasználók számára
 - Alkalmazások és mappák hozzáadása a kezdőképernyőn, beleértve az új lapok hozzáadását
@@ -34,15 +34,15 @@ Az Intune számos funkciót és beállítást tartalmaz, amelyek segítségével
 - Biztonságos egyszeri bejelentkezési élményt biztosíthat a felhasználóknak az alkalmazások közötti hitelesítő adatok megosztásához
 - Felnőtt nyelvet használó webhelyek szűrése, valamint adott webhelyek engedélyezése vagy letiltása
 
-Az Intune a "konfigurációs profilok" használatával hozza létre és szabja testre ezeket a beállításokat a szervezet igényeinek megfelelően. Miután hozzáadta ezeket a funkciókat egy profilhoz, leküldheti vagy üzembe helyezheti a profilt az iOS-és macOS-eszközökön a szervezetben.
+Az Intune a "konfigurációs profilok" használatával hozza létre és szabja testre ezeket a beállításokat a szervezet igényeinek megfelelően. Miután hozzáadta ezeket a funkciókat egy profilhoz, leküldheti vagy üzembe helyezheti a profilt iOS/iPadOS és macOS rendszerű eszközökre a szervezetben.
 
-Ez a cikk a konfigurálható különböző szolgáltatásokat ismerteti, és bemutatja, hogyan hozhat létre egy eszköz-konfigurációs profilt. Az [iOS](ios-device-features-settings.md) -és [MacOS](macos-device-features-settings.md) -eszközökhöz elérhető összes beállítás is megjelenik.
+Ez a cikk a konfigurálható különböző szolgáltatásokat ismerteti, és bemutatja, hogyan hozhat létre egy eszköz-konfigurációs profilt. Az [iOS/iPadOS](ios-device-features-settings.md) és a [MacOS](macos-device-features-settings.md) rendszerű eszközökhöz elérhető összes beállítást is megtekintheti.
 
 ## <a name="airprint"></a>AirPrint
 
 A AirPrint egy Apple-szolgáltatás, amely lehetővé teszi, hogy az eszközök vezeték nélküli hálózaton keresztül nyomtassanak a fájlokra. Az Intune-ban AirPrint-információkat adhat hozzá az eszközökhöz.
 
-Az Intune-ban konfigurálható beállítások listáját lásd: [AirPrint iOS](ios-device-features-settings.md#airprint) -en és [AirPrint MacOS rendszeren](macos-device-features-settings.md#airprint).
+Az Intune-ban konfigurálható beállítások listáját lásd: [AirPrint iOS/iPadOS](ios-device-features-settings.md#airprint) és [AirPrint MacOS rendszeren](macos-device-features-settings.md#airprint).
 
 További információ a AirPrint-ről: a [AirPrint névjegye](https://support.apple.com/HT201311) az Apple webhelyén.
 
@@ -54,9 +54,9 @@ A következőkre vonatkozik:
 
 ## <a name="app-notifications"></a>Alkalmazás-értesítések
 
-Válassza ki, hogy az iOS-és iPad-eszközökön milyen alkalmazások kapják meg az értesítéseket. Az Intune-ból például elküldheti az alkalmazás értesítéseit, hogy azok megjelenjenek az értesítési központban, megjelenjenek a zárolási képernyőn, vagy hanglejátszást végeznek.
+Válassza ki, hogy az iOS-és iPadOS-eszközökön milyen alkalmazások kapják meg az értesítéseket. Az Intune-ból például elküldheti az alkalmazás értesítéseit, hogy azok megjelenjenek az értesítési központban, megjelenjenek a zárolási képernyőn, vagy hanglejátszást végeznek.
 
-Az Intune-ban konfigurálható beállítások listáját itt tekintheti meg: [alkalmazások értesítései iOS rendszeren](ios-device-features-settings.md#app-notifications).
+Az Intune-ban konfigurálható beállítások listáját itt tekintheti meg: [alkalmazások értesítései iOS/iPadOS](ios-device-features-settings.md#app-notifications).
 
 A szolgáltatással kapcsolatos további információkért lásd: [értesítések](https://developer.apple.com/notifications/) az Apple webhelyén.
 
@@ -89,7 +89,7 @@ Ezekkel a beállításokkal konfigurálhatja az alkalmazások elrendezését és
 - Alkalmazások és mappák a képernyőhöz való hozzáadásához használja a **Dock** beállításait. Például jelenítse meg a Safarit és a posta alkalmazást az eszköz dockján.
 - Adja hozzá a kezdőképernyőn megjeleníteni kívánt **lapokat** és az egyes oldalakon megjeleníteni kívánt alkalmazásokat. Például vegyen fel egy **contoso** -lapot, és adja hozzá a beállítások alkalmazást ezen a lapon.
 
-Az Intune-ban konfigurálható beállítások listáját itt tekintheti meg: [kezdőképernyő elrendezése iOS](ios-device-features-settings.md#home-screen-layout)-en.
+Az Intune-ban konfigurálható beállítások listáját itt tekintheti meg: [kezdőképernyő elrendezése iOS/iPadOS](ios-device-features-settings.md#home-screen-layout).
 
 A következőkre vonatkozik:
 
@@ -100,7 +100,7 @@ A következőkre vonatkozik:
 
 Ezekkel a beállításokkal egyéni üzenetet vagy szöveget jeleníthet meg a bejelentkezési ablak és a zárolási képernyő megjelenítéséhez. Megadhat például egy "ha elveszett, vissza..." értéket. üzenet, és az eszköz címkével kapcsolatos információk megjelenítése.
 
-Az Intune-ban konfigurálható beállítások listáját itt tekintheti meg: a [képernyő-üzenet beállításainak zárolása iOS rendszeren](ios-device-features-settings.md#lock-screen-message).
+Az Intune-ban konfigurálható beállítások listáját itt tekintheti meg: a [képernyő-üzenet beállításainak zárolása iOS/iPadOS](ios-device-features-settings.md#lock-screen-message).
 
 A zárolási képernyőn megjelenő üzenetekkel kapcsolatos további információkért lásd: [LockScreenMessage](https://developer.apple.com/documentation/devicemanagement/lockscreenmessage) az Apple webhelyén.
 
@@ -136,11 +136,11 @@ A legtöbb üzletviteli alkalmazás biztonsági célokból megkövetel bizonyos 
 Az egyszeri bejelentkezés használatához ellenőrizze, hogy rendelkezik-e az alábbiakkal:
 
 - Egy alkalmazás, amely úgy van kódolva, hogy az eszközön egyszeri bejelentkezéssel megkeresse a felhasználói hitelesítőadat-tárolót.
-- Az iOS-eszközön való egyszeri bejelentkezéshez konfigurált Intune.
+- Az Intune az iOS/iPadOS eszköz egyszeri bejelentkezéshez van konfigurálva.
 
 ![Egyszeri bejelentkezés panel](./media/device-features-configure/sso-blade.png)
 
-Az Intune-ban konfigurálható beállítások listáját lásd: [egyszeri bejelentkezés iOS rendszeren](ios-device-features-settings.md#single-sign-on).
+Az Intune-ban konfigurálható beállítások listáját lásd: [egyszeri bejelentkezés iOS/iPadOS](ios-device-features-settings.md#single-sign-on).
 
 A következőkre vonatkozik:
 
@@ -156,7 +156,7 @@ Az Intune-ban ezekkel a beállításokkal konfigurálhatja a szervezet, az ident
 - Az átirányítási típus a modern hitelesítési protokollok, például a OAuth és a egy SAML2 számára készült.
 - A hitelesítőadat-típus a kérdés-válasz hitelesítési folyamatokhoz lett tervezve. Választhat az Apple által biztosított Kerberos-specifikus hitelesítő adatok és az általános hitelesítőadat-bővítmény közül.
 
-Az Intune-ban konfigurálható beállítások listáját itt tekintheti meg: [iOS SSO-alkalmazás kiterjesztése](ios-device-features-settings.md#single-sign-on-app-extension) és [MacOS SSO-alkalmazás kiterjesztése](macos-device-features-settings.md#single-sign-on-app-extension).
+Az Intune-ban konfigurálható beállítások listáját itt tekintheti meg: [iOS/IPADOS SSO app Extension](ios-device-features-settings.md#single-sign-on-app-extension) és [MacOS SSO app Extension](macos-device-features-settings.md#single-sign-on-app-extension).
 
 Az egyszeri bejelentkezéses alkalmazások kiterjesztésének fejlesztésével kapcsolatos további információkért tekintse meg a [bővíthető vállalati egyszeri bejelentkezést](https://developer.apple.com/videos/play/tech-talks/301) az Apple webhelyén. A szolgáltatás Apple-leírásának olvasásához tekintse meg az [egyszeri bejelentkezési bővítmények adattartalom-beállításait](https://support.apple.com/guide/mdm/single-sign-on-extensions-mdmfd9cdf845/web). 
 
@@ -171,7 +171,7 @@ Az egyszeri bejelentkezéses alkalmazások kiterjesztésének fejlesztésével k
 >
 > - Egy fejlesztési perspektívából az **egyszeri bejelentkezési alkalmazás bővítménnyel**bármilyen típusú átirányítási SSO-vagy hitelesítő adatokat tartalmazó egyszeri bejelentkezéses hitelesítést használhat. **Egyszeri bejelentkezés**esetén csak Kerberos SSO-hitelesítést használhat.
 >
-> - A Kerberos **egyszeri bejelentkezési alkalmazás bővítményét** az Apple fejlesztette ki, és az iOS 13.0 + és a MacOS 10.15 + platformokra épül. A beépített Kerberos-bővítmény használatával a felhasználók bejelentkezhetnek a Kerberos-hitelesítést támogató natív alkalmazásokba és webhelyekre. Az **egyszeri bejelentkezés** nem a Kerberos Apple-implementációja.
+> - A Kerberos **egyszeri bejelentkezés alkalmazás-bővítményét** az Apple fejlesztette ki, és az iOS/iPadOS 13.0 + és a MacOS 10.15 + platformokra épül. A beépített Kerberos-bővítmény használatával a felhasználók bejelentkezhetnek a Kerberos-hitelesítést támogató natív alkalmazásokba és webhelyekre. Az **egyszeri bejelentkezés** nem a Kerberos Apple-implementációja.
 >
 > - A beépített Kerberos **egyszeri bejelentkezési alkalmazás-bővítmény** a weblapok és alkalmazások Kerberos-problémáit kezeli ugyanúgy, mint az **egyszeri bejelentkezés**. A beépített Kerberos-bővítmény azonban támogatja a jelszavak módosítását, és a vállalati hálózatokban jobban viselkedik. A Kerberos **egyszeri bejelentkezés alkalmazás-bővítmény** és az **egyszeri bejelentkezés**között a jobb teljesítmény és képességek miatt ajánlott a bővítmény használata.
 
@@ -183,9 +183,9 @@ A következőkre vonatkozik:
 
 ## <a name="wallpaper"></a>Háttérkép
 
-Adjon hozzá egy egyéni. png,. jpg vagy. jpeg formátumú rendszerképet a felügyelt iOS-eszközökhöz. Például az Intune használatával vegyen fel egy vállalati emblémát az eszközök zárolási képernyőjére.
+Adjon hozzá egy egyéni. png,. jpg vagy. jpeg formátumú rendszerképet a felügyelt iOS-vagy iPadOS-eszközökhöz. Például az Intune használatával vegyen fel egy vállalati emblémát az eszközök zárolási képernyőjére.
 
-Az Intune-ban konfigurálható beállítások listáját lásd: [háttérkép az iOS](ios-device-features-settings.md#wallpaper)-ben.
+Az Intune-ban konfigurálható beállítások listáját lásd: [Wallpaper on iOS/iPadOS](ios-device-features-settings.md#wallpaper).
 
 A következőkre vonatkozik:
 
@@ -196,7 +196,7 @@ A következőkre vonatkozik:
 
 Ezek a beállítások a weblapok kiértékeléséhez, valamint a felnőtt tartalmak és a felnőtt nyelv letiltásához használhatják az Apple beépített AutoSzűrő algoritmusát. Létrehozhatja az engedélyezett webhivatkozások és a korlátozott webes hivatkozások listáját is. Engedélyezheti például, hogy csak `contoso` webhelyeket nyisson meg.
 
-Az Intune-ban konfigurálható beállítások listáját itt tekintheti meg: [webes tartalom szűrője iOS rendszeren](ios-device-features-settings.md#web-content-filter).
+Az Intune-ban konfigurálható beállítások listáját itt tekintheti meg: [webtartalom-szűrő iOS/iPadOS](ios-device-features-settings.md#web-content-filter).
 
 A következőkre vonatkozik:
 
@@ -229,4 +229,4 @@ Ekkor létrejön a profil, és megjelenik a profilok listájában. Ügyeljen arr
 
 A profil létrehozása után készen áll a hozzárendelésre. Ezután [rendelje hozzá a profilt](device-profile-assign.md) , és [Figyelje annak állapotát](device-profile-monitor.md).
 
-Megtekintheti az [iOS](ios-device-features-settings.md) -és [MacOS](macos-device-features-settings.md) -eszközök összes eszköz-funkciójának beállításait.
+Az [iOS/iPadOS](ios-device-features-settings.md) és a [MacOS](macos-device-features-settings.md) rendszerű eszközökhöz tartozó összes eszköz-szolgáltatás beállításának megtekintése.

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dfa93bb758447c872d172ded7706fd7507a42f11
-ms.sourcegitcommit: c7c6be3833d9a63d43f31d598b555b49b33cf5cb
+ms.openlocfilehash: d7edf84ada3c84b7ad31748909ef81a877237fd5
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76966283"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514472"
 ---
 # <a name="us-government-endpoints-for-microsoft-intune"></a>Az Egyesült Államok kormányzati végpontja Microsoft Intune
 
@@ -44,7 +44,7 @@ A következő táblázat az Intune-ügyfél által elért portokat és szolgált
 
 |**Végpont**|**IP-cím**|
 |---------------------|-----------|
-|*. manage.microsoft.us | 52.243.26.209 <br> 52.247.173.11 <br> 52.227.183.12 <br>52.227.180.205 <br> 52.227.178.107 <br> 13.72.185.168 <br> 52.227.173.179 <br> 52.227.175.242 <br> 13.72.39.209 <br> 52.243.26.209 <br> 52.247.173.11 |
+|*.manage.microsoft.us | 52.243.26.209 <br> 52.247.173.11 <br> 52.227.183.12 <br>52.227.180.205 <br> 52.227.178.107 <br> 13.72.185.168 <br> 52.227.173.179 <br> 52.227.175.242 <br> 13.72.39.209 <br> 52.243.26.209 <br> 52.247.173.11 |
 | enterpriseregistration.microsoftonline.us | 13.72.188.239 <br> 13.72.55.179 |
 
 ## <a name="us-government-customer-designated-endpoints"></a>Az Egyesült Államok kormányzati ügyfelei által kijelölt végpontok:
@@ -74,8 +74,8 @@ A mobileszköz-kezelés (MDM) használatával kezelt Intune által felügyelt es
 További információkért lásd:
 
 - [Apple-szoftvertermékek által használt TCP-és UDP-portok](https://support.apple.com/HT202944)
-- [A macOS, az iOS és az iTunes Server Host Connections és az iTunes háttér-folyamatai](https://support.apple.com/HT201999)
-- [Ha a macOS-és iOS-ügyfelek nem kapnak Apple leküldéses értesítéseket](https://support.apple.com/HT203609)
+- [A macOS, az iOS/iPadOS és az iTunes Server Host Connections és az iTunes-alapú háttér-folyamatok ismertetése](https://support.apple.com/HT201999)
+- [Ha a macOS-és iOS-/iPadOS-ügyfelek nem kapnak Apple leküldéses értesítéseket](https://support.apple.com/HT203609)
 
 ## <a name="next-steps"></a>További lépések
 [Microsoft Intune hálózati végpontok](intune-endpoints.md)

@@ -17,12 +17,12 @@ ms.reviewer: dagerrit
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 86cef30c31b53c6bfd1873390fb7546cbeab2a53
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 936e4836938ddddc8e795d85de5a449ee77edaa4
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72510036"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77514999"
 ---
 # <a name="special-migration-considerations"></a>Speciális migrációs megfontolások
 
@@ -32,7 +32,7 @@ A meglévő MDM-szolgáltatói környezettől függően speciális migrációs m
 
 Az Apple Készülékregisztrációs programja (DEP) által elvégzett beállításokat a végfelhasználó nem távolíthatja el az eszközről. A DEP speciális felügyeleti funkcióinak megőrzéséhez az eszközön adattörlést kell végrehajtani az újszerű állapotba történő visszaállításához az Intune-beli regisztráláshoz.
 
-A DEP használatának folytatásához az eszközök Intune-beli felügyeletére lásd: [iOS-eszközök regisztrálása a Készülékregisztrációs program segítségével](../enrollment/device-enrollment-program-enroll-ios.md).
+Ha továbbra is szeretné használni a DEP-t az eszközök Intune-ban való kezeléséhez, [állítsa be az iOS/iPadOS-eszközök regisztrálását Készülékregisztrációs program](../enrollment/device-enrollment-program-enroll-ios.md).
 
 
 ## <a name="next-steps"></a>További lépések

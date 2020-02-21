@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/13/2019
+ms.date: 02/18/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,23 +17,23 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 800bbd5199bd4389ee1ae8aa98a68e21456e7000
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: 951d3df8b842f1a0e76f875ea9fc7921c413494f
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75206618"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77513070"
 ---
 # <a name="apply-features-and-settings-on-your-devices-using-device-profiles-in-microsoft-intune"></a>Szolgáltatások és beállítások alkalmazása az eszközökön a Microsoft Intune eszköz profiljainak használatával
 
 
 
-A Microsoft Intune olyan beállításokat és funkciókat kínál, amelyeket Ön engedélyezhet vagy tilthat le a vállalatához tartozó különböző eszközökön. Ezek a beállítások és funkciók hozzáadódnak a "konfigurációs profilokhoz". Létrehozhat profilokat különböző eszközökhöz és különböző platformokhoz, például iOS-, Android-és Windows-rendszerekhez is. Ezután az Intune-nal alkalmazza vagy "rendelje hozzá" a profilt az eszközökhöz.
+A Microsoft Intune olyan beállításokat és funkciókat kínál, amelyeket Ön engedélyezhet vagy tilthat le a vállalatához tartozó különböző eszközökön. Ezek a beállítások és funkciók hozzáadódnak a "konfigurációs profilokhoz". Létrehozhat profilokat különböző eszközökhöz és különböző platformokhoz, például iOS/iPadOS, Android és Windows rendszerekhez is. Ezután az Intune-nal alkalmazza vagy "rendelje hozzá" a profilt az eszközökhöz.
 
 A mobileszköz-kezelési (MDM) megoldás részeként ezeket a konfigurációs profilokat használhatja a különböző feladatok elvégzéséhez. Néhány példa profilok használatára:
 
 - Windows 10-es eszközökön használjon az Internet Explorerben ActiveX-vezérlőket blokkoló profilt tartalmazó sablont.
-- IOS-és macOS-eszközökön engedélyezze a felhasználók számára a AirPrint-nyomtatók használatát a szervezetben.
+- IOS/iPadOS és macOS rendszerű eszközökön engedélyezze a felhasználóknak a AirPrint-nyomtatók használatát a szervezetben.
 - A Bluetooth-hozzáférés engedélyezése vagy letiltása az eszközön.
 - Hozzon létre egy Wi-Fi-vagy VPN-profilt, amely különböző eszközöket biztosít a vállalati hálózathoz való hozzáféréshez.
 - Szoftverfrissítések kezelése, beleértve a telepítésük időpontját is.
@@ -62,12 +62,12 @@ Ez a funkció a következőket támogatja:
 - iOS/iPadOS
 - macOS
 - WVPN-profilokdows Phone 8.1
-- Windows 8.1
+- Windows 8.1
 - Windows 10 és újabb
 
 ## <a name="custom-profile"></a>Egyéni profil
 
-Az [Egyéni beállítások](custom-settings-configure.md) lehetővé teszik a rendszergazdák számára az Intune-ba nem beépített eszközbeállítások hozzárendelését. Az androidos eszközökön OMA-URI értékeket adhat meg. iOS-eszközökön importálható egy, az Apple Configuratorban létrehozott konfigurációs fájl.
+Az [Egyéni beállítások](custom-settings-configure.md) lehetővé teszik a rendszergazdák számára az Intune-ba nem beépített eszközbeállítások hozzárendelését. Az androidos eszközökön OMA-URI értékeket adhat meg. IOS-/iPadOS-eszközök esetén importálhatja az Apple konfigurátorban létrehozott konfigurációs fájlt.
 
 Ez a funkció a következőket támogatja:
 
@@ -89,7 +89,7 @@ Ez a funkció a következőket támogatja:
 
 ## <a name="device-features"></a>Eszközfunkciók
 
-Az [eszköz szolgáltatásai](device-features-configure.md) vezérlik az iOS-és MacOS-eszközök funkcióit, például a AirPrint, az értesítéseket és a zárolási képernyő üzeneteit.
+Az [eszköz szolgáltatásai](device-features-configure.md) vezérlik az iOS/iPadOS és a MacOS rendszerű eszközök funkcióit, például a AirPrint, az értesítéseket és a zárolási képernyő üzeneteit.
 
 Ez a funkció a következőket támogatja:
 
@@ -106,7 +106,7 @@ Ez a funkció a következőket támogatja:
 
 ## <a name="device-restrictions"></a>Eszközkorlátozások
 
-Az [eszközkorlátozásokkal](device-restrictions-configure.md) kezelhető a biztonság, a hardver, az adatmegosztás és az eszközök több beállítása. Létrehozható például egy olyan eszközkorlátozási profil, amely megakadályozza, hogy az iOS-eszközök felhasználói használják az eszköz kameráját. 
+Az [eszközkorlátozásokkal](device-restrictions-configure.md) kezelhető a biztonság, a hardver, az adatmegosztás és az eszközök több beállítása. Hozzon létre például egy olyan eszköz-korlátozási profilt, amely megakadályozza, hogy az iOS/iPadOS eszköz felhasználói az eszköz kameráját használják. 
 
 Ez a funkció a következőket támogatja:
 
@@ -129,7 +129,7 @@ Ez a funkció a következőket támogatja:
 
 Az [Oktatási beállítások – Windows 10](education-settings-configure.md) segítségével konfigurálhatja a [Windows Vizsga alkalmazás](https://education.microsoft.com/gettrained/win10takeatest) beállításait. A beállítások konfigurálásakor az eszközön a vizsga befejezéséig nem futhat másik alkalmazás.
 
-Az [Oktatási beállítások – iOS](../fundamentals/education-settings-configure-ios-shared.md) az iOS-es Osztályterem alkalmazás segítségével lehetővé teszi az oktatási folyamat és a diákok eszközeinek irányítását az osztályteremben. Az iPad eszközöket úgy is konfigurálhatja, hogy sok diák megoszthat egyetlen eszközt.
+[Oktatási beállítások – az iOS/iPadOS](../fundamentals/education-settings-configure-ios-shared.md) az iOS/iPadOS tantermi alkalmazást használja a tanuláshoz és a tanulói eszközök felügyeletéhez az osztályteremben. Az iPad eszközöket úgy is konfigurálhatja, hogy sok diák megoszthat egyetlen eszközt.
 
 ## <a name="email"></a>E-mail
 
@@ -161,7 +161,7 @@ Ez a funkció a következőket támogatja:
 
 - Windows 10 őszi alkotói frissítés, vagy későbbi verzió
 
-## <a name="extensions"></a>Extensions
+## <a name="extensions"></a>Bővítmények
 
 A [kernel-bővítmények](kernel-extensions-overview-macos.md) lehetővé teszik a rendszergazdák számára, hogy a MacOS-eszközökön a kernel szintjén szolgáltatásokat és programokat adjanak hozzá. Konfigurálja ezeket a beállításokat egy adott fejlesztőtől vagy partnertől származó összes bővítmény megbízhatóságához, vagy engedélyezze a megadott kernel-bővítményeket.
 
@@ -186,7 +186,7 @@ Ez a funkció a következőket támogatja:
 
 - Windows 10 és újabb
 
-A kioszk beállításai az [Android](device-restrictions-android.md#kiosk), az [Android Enterprise](device-restrictions-android-for-work.md#dedicated-device-settings)és az [iOS](device-restrictions-ios.md#kiosk)rendszerű eszközök korlátozásai is elérhetők.
+A kioszk beállításai az [Android](device-restrictions-android.md#kiosk), az [Android Enterprise](device-restrictions-android-for-work.md#dedicated-device-settings)és az [iOS/iPadOS](device-restrictions-ios.md#kiosk)eszközre vonatkozó korlátozásokként is elérhetők.
 
 ## <a name="oemconfig"></a>OEMConfig
 
@@ -196,7 +196,7 @@ Ez a funkció a következőket támogatja:
 
 - Android Enterprise (OEMConfig)
 
-## <a name="powershell-scripts"></a>PowerShell-parancsfájlok
+## <a name="powershell-scripts"></a>PowerShell-parancsprogramok
 
 A [Windows 10-es eszközökön futó PowerShell-parancsfájlok](../apps/intune-management-extension.md) az Intune felügyeleti bővítmény használatával töltik fel a PowerShell-parancsfájlokat az Intune-ban, majd ezeket a parancsfájlokat futtatják az eszközökön. Azt is láthatja, hogy mire van szükség a bővítmény használatához, az Intune-hoz való hozzáadásához és egyéb fontos információkhoz.
 
@@ -219,7 +219,7 @@ Ez a funkció a következőket támogatja:
 
 ## <a name="update-policies"></a>Frissítési szabályzatok
 
-Az [iOS-es frissítési szabályzatok](../protect/software-updates-ios.md) az iOS-eszközökön telepítendő szoftverfrissítésekre vonatkozó iOS-es szabályzatok létrehozását és hozzárendelését mutatják be. A telepítés állapotát is áttekintheti.
+az [iOS/iPadOS frissítési szabályzatai](../protect/software-updates-ios.md) bemutatják, hogyan hozhat létre és rendelhet hozzá iOS/iPadOS szabályzatokat a szoftverfrissítések iOS/iPadOS-eszközökre való telepítéséhez. A telepítés állapotát is áttekintheti.
 
 A Windows-eszközök frissítési házirendjeivel kapcsolatban lásd: [kézbesítési optimalizálás](delivery-optimization-windows.md). 
 
@@ -240,7 +240,7 @@ Ez a funkció a következőket támogatja:
 - iOS/iPadOS
 - macOS
 - WVPN-profilokdows Phone 8.1
-- Windows 8.1
+- Windows 8.1
 - Windows 10 és újabb
 
 ## <a name="wi-fi"></a>Wi-Fi

@@ -1,7 +1,7 @@
 ---
 title: Apple mennyiségi licencszerződés keretében vásárolt alkalmazások kezelése
 titleSuffix: Microsoft Intune
-description: Ismerje meg, hogyan szinkronizálhatja az iOS-es és macOS-es alkalmazás-áruházból mennyiségi programban vásárolt alkalmazásokat a Microsoft Intuneba, majd kezelheti és nyomon követheti a használatot.
+description: Ismerje meg, hogyan szinkronizálhatja az iOS/iPadOS és macOS App Store-ból mennyiségi programban vásárolt alkalmazásokat a Microsoft Intuneba, majd kezelheti és nyomon követheti a használatot.
 keywords: ''
 author: Erikre
 ms.author: erikre
@@ -18,19 +18,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d965ac35719d809ab922d28f76dec1754e9a4c6b
-ms.sourcegitcommit: 9b29478f815e10c46c8030abe0146d601ce0e28c
+ms.openlocfilehash: 9127ee06bc2125f476c18e9b8e46a127e48d0245
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77051626"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77513401"
 ---
 # <a name="how-to-manage-ios-and-macos-apps-purchased-through-apple-volume-purchase-program-with-microsoft-intune"></a>A Apple Volume Purchase Program használatával vásárolt iOS-és macOS-alkalmazások kezelése Microsoft Intune
 
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-Az Apple segítségével több licencet vásárolhat egy olyan alkalmazáshoz, amelyet az [Apple Business Manager](https://business.apple.com/) vagy az [Apple School Manager](https://school.apple.com/)használatával iOS-és MacOS-eszközökön kíván használni a szervezetben. Ezután szinkronizálhatja a mennyiségi vásárlás adatait az Intune-nal, és nyomon követheti a mennyiségi programban vásárolt alkalmazás használatát. Az alkalmazás-licencek megvásárlásával hatékonyan kezelheti a vállalaton belüli alkalmazásokat, és megőrizheti a megvásárolt alkalmazások tulajdonjogát és felügyeletét. 
+Az Apple segítségével több licencet vásárolhat egy olyan alkalmazáshoz, amelyet az [Apple Business Manager](https://business.apple.com/) vagy az [Apple School Manager](https://school.apple.com/)használatával iOS/iPadOS és MacOS rendszerű eszközökön kíván használni a szervezetben. Ezután szinkronizálhatja a mennyiségi vásárlás adatait az Intune-nal, és nyomon követheti a mennyiségi programban vásárolt alkalmazás használatát. Az alkalmazás-licencek megvásárlásával hatékonyan kezelheti a vállalaton belüli alkalmazásokat, és megőrizheti a megvásárolt alkalmazások tulajdonjogát és felügyeletét. 
 
 A Microsoft Intune a program keretében vásárolt alkalmazások kezelésében nyújt segítséget:
 
@@ -38,13 +38,13 @@ A Microsoft Intune a program keretében vásárolt alkalmazások kezelésében n
 - Nyomon követheti, hogy hány licenc áll rendelkezésre, és hogyan lettek használva a megvásárolt alkalmazásokhoz.
 - Az alkalmazások telepítésének segítése a saját licencek számától függetlenül.
 
-Emellett szinkronizálhatja, kezelheti és hozzárendelheti az Apple Business Managerben vásárolt könyveket az Intune-ból iOS-eszközökre. További információkat a [Mennyiségi vásárlási program keretében vásárolt iOS-es e-könyvek kezelése](vpp-ebooks-ios.md) című cikkben talál.
+Emellett szinkronizálhatja, kezelheti és hozzárendelheti az Apple Business Managerben vásárolt könyveket az Intune-nal az iOS/iPadOS-eszközökhöz. További információ: [mennyiségi vásárlási program keretében vásárolt iOS/iPadOS-e-könyvek kezelése](vpp-ebooks-ios.md).
 
 ## <a name="what-are-location-tokens"></a>Mik azok a helyek jogkivonatai?
 A hely jogkivonatait Volume Purchase program-(VPP-) tokeneknek is nevezzük. Ezek a tokenek az Apple Business Manager használatával megvásárolt licencek hozzárendelésére és kezelésére szolgálnak. A tartalomkezelők a licenceket olyan tartózkodási jogkivonatokkal vásárolhatják meg és társítják, amelyekhez engedélyük van az Apple Business Managerben. A rendszer ezután letölti az Apple Business Managerből a hely jogkivonatait, és feltölti Microsoft Intune. Microsoft Intune támogatja a több helyre vonatkozó tokenek feltöltését a bérlőn. A tokenek egy évig érvényesek.
 
 ## <a name="how-are-purchased-apps-licensed"></a>Hogyan történik a megvásárolt alkalmazások licencelése?
-A megvásárolt alkalmazások az Apple által az iOS-és macOS-eszközökhöz kínált két típusú licenccel rendelkező csoportokhoz rendelhetők.
+A megvásárolt alkalmazások az Apple által az iOS/iPadOS és a macOS rendszerű eszközökhöz kínált két típusú licenccel rendelkező csoportokhoz rendelhetők.
 
 |   | Eszköz licencelése | Felhasználói licencelés |
 |-----|------------------|----------------|
@@ -156,9 +156,9 @@ A végfelhasználó különféle helyzetekben figyelmeztetést fog kapni VPP-alk
 
 ## <a name="revoking-app-licenses"></a>Alkalmazás-licencek visszavonása
 
-Egy adott eszköz, felhasználó vagy alkalmazás alapján visszavonhatja az összes kapcsolódó iOS-vagy macOS-alkalmazás licencét.  Az iOS-és macOS-platformok között azonban van néhány különbség. 
+Egy adott eszköz, felhasználó vagy alkalmazás alapján visszavonhatja az összes kapcsolódó iOS/iPadOS vagy macOS mennyiségi vásárlási program (VPP) alkalmazás licencét.  Van azonban néhány különbség az iOS/iPadOS és a macOS platformon. 
 
-|   | iOS | macOS |
+|   | iOS/iPadOS | macOS |
 |-----|------------------|----------------|
 | **Alkalmazás-hozzárendelés eltávolítása** | Ha egy felhasználóhoz hozzárendelt alkalmazást eltávolít, az Intune visszaigényli a felhasználó vagy az eszköz licencét, és eltávolítja az alkalmazást az eszközről. | Ha eltávolít egy felhasználóhoz hozzárendelt alkalmazást, az Intune visszaállítja a felhasználó vagy az eszköz licencét. Az alkalmazás nem lesz eltávolítva az eszközről. |
 | **Alkalmazás licencének visszavonása** | Az alkalmazás licencének visszavonása visszaállítja az alkalmazás licencét a felhasználótól vagy az eszköztől. Az alkalmazás az eszközről való eltávolításához módosítania kell a hozzárendelést az **Eltávolítás** elemre. | Az alkalmazás licencének visszavonása visszaállítja az alkalmazás licencét a felhasználótól vagy az eszköztől. A visszavont licenccel rendelkező macOS-alkalmazás továbbra is használható az eszközön, de nem frissíthető, amíg a licencet nem rendeli hozzá a felhasználóhoz vagy eszközhöz. Az Apple szerint az ilyen alkalmazásokat egy 30 napos türelmi időszak után távolítja el a rendszer. Az Apple azonban nem biztosít olyan eszközt, amellyel az Intune eltávolíthatja az alkalmazást az eltávolítási hozzárendelés művelettel.
@@ -184,14 +184,14 @@ Az Apple VPP-token megújításához töltse le az Apple Business Manager vagy a
 
 ## <a name="deleting-a-vpp-app"></a>VPP-alkalmazás törlése
 
-Jelenleg az iOS VPP-alkalmazások nem törölhetők a Microsoft Intune-ból.
+Jelenleg nem törölhet iOS/iPadOS VPP-alkalmazást Microsoft Intuneról.
 
 ## <a name="assigning-custom-role-permissions-for-vpp"></a>Egyéni szerepkör-engedélyek kiosztása VPP-hez
 
 Az Apple VPP-tokenekhez és VPP-alkalmazásokhoz való hozzáférés az Intune-ban egyéni rendszergazdai szerepkörökhöz hozzárendelt engedélyektől függetlenül is szabályozható.
 
 * Ha engedélyezni szeretné az Intune egyéni szerepkörének az Apple VPP-tokenek kezelését az **alkalmazások** > **Apple VPP-tokenek**területen, rendeljen engedélyeket a **felügyelt alkalmazásokhoz**.
-* Ha engedélyezni szeretné az Intune egyéni szerepkörét az iOS VPP-tokenekkel vásárolt alkalmazások kezeléséhez az **alkalmazások** > az **összes alkalmazás**területen, rendeljen engedélyeket a **Mobile apps**szolgáltatáshoz. 
+* Ha engedélyezni szeretné az Intune egyéni szerepkörét az iOS/iPadOS VPP-tokenekkel vásárolt alkalmazások kezeléséhez az **alkalmazások** > **minden alkalmazás**területen, a **Mobile apps**szolgáltatáshoz rendeljen engedélyeket. 
 
 ## <a name="additional-information"></a>További információ
 

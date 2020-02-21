@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/05/2019
+ms.date: 02/18/2020
 ms.topic: troubleshooting
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a8768022872d32116add0ed4ea4caf1f8fcb800f
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 9acb934cdf67aae9c18091a0340f27de635b5399
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74059276"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77511017"
 ---
 # <a name="troubleshoot-policies-and-profiles-and-in-intune"></a>Szabályzatok és profilok és az Intune hibáinak megoldása
 
@@ -77,7 +77,7 @@ Ellenőrizze a [bérlő állapotát](../fundamentals/tenant-status.md) , és ell
 
         - A bejelentkezés kényszerítése:
             - Az Android-eszközön nyissa meg az Céges portál alkalmazás > **eszközök** > válassza ki az eszközt a listából > az **eszközbeállítások ellenõrzése**lehetőséget.
-            - Az iOS-eszközön nyissa meg a vállalati portál alkalmazást > **eszközök** > válassza ki az eszközt a listából > a **Beállítások ellenőrzését**.
+            - Az iOS-/iPadOS-eszközön nyissa meg a vállalati portál alkalmazást > **eszközök** > válassza ki az eszközt a listáról > **ellenőrzési beállítások**.
 
         - Windows-eszközön nyissa meg a **beállítások** > **fiókok** > **hozzáférés munkahelyi vagy iskolai** > Válassza ki a fiókot vagy a MDM-regisztrációt > **info** > **Sync**.
 
@@ -91,7 +91,7 @@ Ellenőrizze a [bérlő állapotát](../fundamentals/tenant-status.md) , és ell
 
         **Szabályzat állapota**:
 
-        - **Nem alkalmazható**: Ez a házirend nem támogatott ezen a platformon. Az iOS-házirendek például nem működnek az Android rendszeren. A Samsung KNOX-szabályzatok nem működnek Windows-eszközökön.
+        - **Nem alkalmazható**: Ez a házirend nem támogatott ezen a platformon. Az iOS/iPadOS szabályzatok például nem működnek az Android rendszeren. A Samsung KNOX-szabályzatok nem működnek Windows-eszközökön.
         - **Ütközés**: van egy meglévő beállítás az eszközön, amelyet az Intune nem tud felülbírálni. Másik lehetőségként két házirendet is üzembe helyezett ugyanazzal a beállítással különböző értékek használatával.
         - **Függőben**: az eszköz nem ellenőrizte az Intune-t a szabályzat beszerzéséhez. Vagy az eszköz fogadta a szabályzatot, de nem jelentette az állapotot az Intune-nak.
         - **Hibák**: keressen hibákat és lehetséges megoldásokat a [Vállalati erőforrás-hozzáférési problémák elhárításához](../fundamentals/troubleshoot-company-resource-access-problems.md).
@@ -110,7 +110,7 @@ Ellenőrizze a [bérlő állapotát](../fundamentals/tenant-status.md) , és ell
 
     - **Megfelel**: az eszköz megkapta a profilt és a jelentéseket az Intune-nak, amely megfelel a beállításnak.
 
-    - **Nem alkalmazható**: a profil beállítása nem alkalmazható. Az iOS-eszközök e-mail-beállításai például nem alkalmazhatók Android-eszközre.
+    - **Nem alkalmazható**: a profil beállítása nem alkalmazható. Az iOS/iPadOS eszközök e-mail-beállításai például nem érvényesek az Android-eszközökre.
 
     - **Függőben**: a rendszer elküldje a profilt az eszközre, de nem jelentett állapotot az Intune-nak. Például az Android rendszeren csak akkor működik a titkosítás, ha a felhasználó engedélyezi, ezért függőben lehet.
 
@@ -121,7 +121,7 @@ Ellenőrizze a [bérlő állapotát](../fundamentals/tenant-status.md) , és ell
 
 ## <a name="policy-troubleshooting-resources"></a>Házirend-hibaelhárítási erőforrások
 
-- [Az eszközökön nem alkalmazott iOS-vagy Android-házirendek hibaelhárítása](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-tip-Troubleshooting-iOS-or-Android-policies-not-applying/ba-p/280154) (egy másik Microsoft-webhely megnyitása)
+- [Az eszközökön nem alkalmazott iOS-/iPadOS-vagy Android-házirendek hibaelhárítása](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-tip-Troubleshooting-iOS-or-Android-policies-not-applying/ba-p/280154) (egy másik Microsoft-webhely megnyitása)
 - [Windows 10 Intune-szabályzatok hibáinak elhárítása](https://blogs.technet.microsoft.com/configmgrdogs/2018/08/09/troubleshooting-windows-10-intune-policy-failures/) (blog megnyitása)
 - [A Windows 10 rendszerhez készült CSP egyéni beállításainak megoldása](https://support.microsoft.com/en-us/help/4055338/troubleshoot-csp-setting-windows-10-computer-intune) (egy másik Microsoft-webhely megnyitása)
 - [Windows 10 csoportházirend vs INTUNE Mdm házirendje](https://blogs.technet.microsoft.com/cbernier/2018/04/02/windows-10-group-policy-vs-intune-mdm-policy-who-wins/) (egy másik Microsoft-webhely megnyitása)
@@ -144,7 +144,7 @@ Ha a házirendet kevésbé biztonságos értékre szeretné módosítani, előfo
 
 Például a Windows 8,1-ben az asztalon, a jobb oldalon a **varázsok** sáv megnyitásához. Válassza a **beállítások** > **Vezérlőpult** > **felhasználói fiókok**elemet. A bal oldalon válassza a **Biztonsági szabályzatok alaphelyzetbe állítása** hivatkozást, majd válassza a **Szabályzatok alaphelyzetbe állítása** lehetőséget.
 
-Előfordulhat, hogy más platformokon (például Android, iOS vagy Windows Phone-telefon 8,1) ki kell vonni a rendszert, és újból regisztrálni kell, hogy kevésbé szigorú házirendet alkalmazzon.
+Előfordulhat, hogy más platformokon (például Android, iOS/iPadOS és Windows Phone-telefon 8,1) ki kell vonni, majd újból regisztrálni kell a kevésbé korlátozó szabályzatok alkalmazásához.
 
 Előfordulhat, hogy az [eszközök regisztrálásának hibája](../enrollment/troubleshoot-device-enrollment-in-intune.md) jó erőforrás.
 
