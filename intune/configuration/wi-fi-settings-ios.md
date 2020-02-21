@@ -1,12 +1,12 @@
 ---
-title: Wi-Fi-beállítások konfigurálása iOS-eszközökhöz a Microsoft Intune-ban – Azure | Microsoft Docs
+title: Wi-Fi-beállítások konfigurálása iOS/iPadOS-eszközökhöz a Microsoft Intune-Azure-ban | Microsoft Docs
 titleSuffix: ''
-description: Létrehozhat vagy hozzáadhat egy eszközkonfigurációs Wi-Fi-profilt az iOS-eszközökhöz. Megtekintheti a Microsoft Intune különböző beállításait, beleértve a tanúsítványok hozzáadását, az EAP-típusok kiválasztását és a hitelesítési módszer kiválasztását.
+description: Hozzon létre vagy adjon hozzá egy WiFi-eszköz konfigurációs profilt iOS/iPadOS-eszközökhöz. Megtekintheti a Microsoft Intune különböző beállításait, beleértve a tanúsítványok hozzáadását, az EAP-típusok kiválasztását és a hitelesítési módszer kiválasztását.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/13/2019
+ms.date: 02/18/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,16 +16,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dd37813e5ea0b6a64d7fae22cada06cccb01a942
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 68685428ac94dfe08306858774eaf98fb079e66c
+ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74059218"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77512313"
 ---
-# <a name="add-wi-fi-settings-for-ios-devices-in-microsoft-intune"></a>iOS-eszközökre vonatkozó Wi-Fi-beállítások hozzáadása a Microsoft Intune-ban
+# <a name="add-wi-fi-settings-for-ios-and-ipados-devices-in-microsoft-intune"></a>Wi-Fi-beállítások hozzáadása iOS-és iPadOS-eszközökhöz Microsoft Intune
 
-Adott Wi-Fi-beállításokkal rendelkező profilt hozhat létre, majd ezt a profilt üzembe helyezheti az iOS-eszközökön. Microsoft Intune számos funkciót kínál, többek között hitelesítéssel a hálózattal, PKCS-vagy SCEP-tanúsítvány hozzáadásával.
+Létrehozhat egy adott WiFi-beállításokkal rendelkező profilt, majd ezt a profilt telepítheti iOS-/iPadOS-eszközeire. Microsoft Intune számos funkciót kínál, többek között hitelesítéssel a hálózattal, PKCS-vagy SCEP-tanúsítvány hozzáadásával.
 
 Ezek a Wi-Fi-beállítások két kategóriára vannak osztva, alapszintű és vállalati szintű beállításokra.
 
@@ -36,7 +36,7 @@ Ez a cikk ezeket a beállításokat ismerteti.
 [Eszközprofil létrehozása](../device-profile-create.md).
 
 > [!NOTE]
-> Ezek a beállítások minden regisztrációs típushoz elérhetők. A regisztrációs típusokkal kapcsolatos további információkért lásd: [iOS-regisztráció](../enrollment/ios-enroll.md).
+> Ezek a beállítások minden regisztrációs típushoz elérhetők. A regisztrációs típusokkal kapcsolatos további információkért lásd: [iOS/iPadOS-regisztráció](../enrollment/ios-enroll.md).
 
 ## <a name="basic-profiles"></a>Alapszintű profilok
 
