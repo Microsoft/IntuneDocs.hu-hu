@@ -100,7 +100,7 @@
     - name: macOS-regisztráció beállítása
       href: macos-enroll.md
       items:
-        - name: Készülékregisztrációs program vagy Apple School Manager
+        - name: Automatikus eszközregisztráció
           href: device-enrollment-program-enroll-macos.md
     - name: Hiányos regisztrációs jelenté
       href: enrollment-report-company-portal-abandon.md

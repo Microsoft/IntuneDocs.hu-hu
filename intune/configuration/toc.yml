@@ -23,7 +23,7 @@
           href: administrative-templates-windows.md
         - name: Az Office frissítése felügyeleti sablonokkal
           href: administrative-templates-update-office.md
-    - name: Eszközfunkciók iOS-en és macOS-en
+    - name: Eszközfunkciók iOS/iPadOS-en és macOS-en
       href: device-features-configure.md
     - name: Eszközbeállítások és -funkciók korlátozása
       href: device-restrictions-configure.md
@@ -47,7 +47,7 @@
       items:
         - name: Alkalmazásonkénti VPN Androidhoz
           href: android-pulse-secure-per-app-vpn.md
-        - name: Alkalmazásonkénti VPN iOS-hez
+        - name: Alkalmazásonkénti VPN iOS/iPadOS-hez
           href: vpn-setting-configure-per-app.md
     - name: Wi-Fi-hálózat
       href: wi-fi-settings-configure.md
@@ -117,7 +117,7 @@
               href: wi-fi-settings-android-enterprise.md
             - name: Egyéni
               href: custom-settings-android-for-work.md
-        - name: iOS
+        - name: iOS/iPadOS
           items:
             - name: Eszközfunkciók
               href: ios-device-features-settings.md

@@ -18,7 +18,7 @@
           href: in-development.md
         - name: Fontos megjegyzések
           href: 'whats-new.md#notices'
-- name: Gyorsútmutatók
+- name: Rövid útmutatók
   items:
     - name: Az Intune ingyenes kipróbálása
       href: free-trial-sign-up.md
@@ -63,11 +63,11 @@
       href: manage-os-versions.md
     - name: A Windows Holographic kezelése
       href: windows-holographic-for-business.md
-- name: Használati útmutatók
+- name: Útmutatók
   items:
     - name: Telepítési terv kidolgozása
       items:
-        - name: Planning guide (Tervezési útmutató)
+        - name: Tervezési útmutató
           href: planning-guide.md
           items:
             - name: Célok és célkitűzések meghatározása
@@ -102,7 +102,7 @@
                   href: migration-guide-configure-policies.md
                 - name: Alkalmazásvédelmi szabályzatok konfigurálása
                   href: migration-guide-app-protection-policies.md
-                - name: Az áttelepítés szempontjai
+                - name: A migrálás szempontjai
                   href: migration-guide-considerations.md
             - name: Áttelepítési kampány
               href: migration-guide-campaign.md
@@ -127,7 +127,7 @@
               href: end-user-mam-apps-ios.md
             - name: Android-alkalmazások beszerzése
               href: end-user-apps-android.md
-            - name: iOS-alkalmazások beszerzése
+            - name: iOS/iPadOS-alkalmazások beszerzése
               href: end-user-apps-ios.md
             - name: Windows-alkalmazások beszerzése
               href: end-user-apps-windows.md
@@ -201,18 +201,18 @@
           href: tenant-status.md
         - name: Segítség a felhasználóknak a problémák elhárításában
           href: help-desk-operators.md
-        - name: Auditnaplók Intune-tevékenységekhez
-          href: monitor-audit-logs.md
-        - name: Naplók figyelése az Azure Monitorral
-          href: review-logs-using-azure-monitor.md
         - name: Az Intune-dokumentáció használata
           href: use-docs.md
         - name: Támogatás kérése
           href: get-support.md
-    - name: Reports
+    - name: Jelentések
       items:
         - name: Intune-jelentések
           href: reports.md
+        - name: Auditnaplók Intune-tevékenységekhez
+          href: monitor-audit-logs.md
+        - name: Naplók figyelése az Azure Monitorral
+          href: review-logs-using-azure-monitor.md
 - name: Hivatkozás
   items:
     - name: Hibakódok és leírások
@@ -233,7 +233,7 @@
           href: ui-changes.md
         - name: Klasszikus Intune-csoportok
           href: groups-get-started.md
-        - name: Az iOS oktatási beállításai
+        - name: Az iOS/iPadOS oktatási beállításai
           items:
             - name: iPad
               href: education-settings-configure-ios.md

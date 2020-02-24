@@ -27,7 +27,7 @@
       items:
         - name: Elveszett iOS/iPadOS-eszköz megkeresése
           href: device-locate.md
-        - name: iiOS/iPadOSOS-os elveszett mód engedélyezése
+        - name: Az iOS/iPadOS-es elveszett mód bekapcsolása
           href: device-lost-mode.md
         - name: iOS/iPadOS-es felügyelt mód bekapcsolása
           href: device-supervised-mode.md
