@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d9e61cbe4f6d6e07c61fe182e639e715996f9ee
-ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
+ms.openlocfilehash: 7f7a6203fcf641c41192eec8aaa0835939376d54
+ms.sourcegitcommit: 47c9af81c385c7e893fe5a85eb79cf08e69e6831
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77514438"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77575931"
 ---
 # <a name="prevent-data-leaks-on-non-managed-devices-using-microsoft-intune"></a>Adatszivárgás megakadályozása nem felügyelt eszközökön a Microsoft Intune-nal
 
@@ -31,7 +31,7 @@ Ha az Office 365 által üzemeltetett vállalati adatokhoz engedélyez hozzáfé
 
 Az Intune-nal létrehozott alkalmazásvédelmi szabályzatok azokon az eszközökön is érvényesek lesznek, amelyeket nem a Microsoft által kínált eszközkezelési megoldással kezelnek. Az eszközön található személyes adatokra nincs hatással a rendszer: az informatikai szolgálat kizárólag a vállalati adatokat kezeli. 
 
-A vállalati adatok védelméhez alkalmazásvédelmi szabályzatokat állíthat be az Office-mobilalkalmazásokhoz Windows, iOS és Android rendszereken. A szabályzatokkal beállíthat alkalmazásalapú PIN-kódokat, titkosíthatja a vállalati adatokat, de olyan speciális beállításokat is alkalmazhat, amelyek a felhasználó által a felügyelt és a nem felügyelt alkalmazások között használt kivágási, másolási, beillesztési vagy mentés másként műveleteket korlátozzák. Emellett anélkül törölheti az eszközről a vállalati adatokat, hogy a felhasználónak regisztrálnia kellene az eszközt.
+Megadhatja az Office Mobile apps alkalmazás-védelmi szabályzatait Windows, iOS/iPadOS vagy Android rendszerű eszközökön a vállalati adatvédelem érdekében. A szabályzatokkal beállíthat alkalmazásalapú PIN-kódokat, titkosíthatja a vállalati adatokat, de olyan speciális beállításokat is alkalmazhat, amelyek a felhasználó által a felügyelt és a nem felügyelt alkalmazások között használt kivágási, másolási, beillesztési vagy mentés másként műveleteket korlátozzák. Emellett anélkül törölheti az eszközről a vállalati adatokat, hogy a felhasználónak regisztrálnia kellene az eszközt.
 
 Az Intune alkalmazásvédelmi szabályzatai függetlenek az eszközkezeléstől. Az alkalmazásvédelmi szabályzatokkal Office-mobilalkalmazásokat lehet kezelni akár nem felügyelt eszközön, akár az Intune-nal felügyelt eszközökön, sőt a nem a Microsoft által kínált mobileszköz-kezelési megoldásokkal felügyelt eszközökön is.
 
@@ -42,7 +42,7 @@ A lentebb ismertetett cselekvési terv az alábbi feltételek teljesülése eset
 * A vállalat készen áll a felhőre való biztonságos áttérésre.
 * A vállalat Office 365 Exchange Online-t, SharePoint Online-t, OneDrive vállalati verziót vagy Yammert használ.
 * A vállalat rendelkezik licenccel a Microsoft 365, az Enterprise Mobility + Security (EMS) vagy az Azure Information Protection egyikéhez.
-* A vállalat engedélyezi a felhasználóknak, hogy saját vagy céges tulajdonú, Windows, iOS vagy Android rendszerű eszközeikről hozzáférjenek a vállalati adatokhoz.
+* A vállalat lehetővé teszi a felhasználók számára a vállalati adatok elérését a vállalati vagy személyes tulajdonú Windows, iOS/iPadOS vagy Android rendszerű eszközökről.
 * A vállalat nem szeretné megkövetelni a személyes tulajdonú eszközök eszközkezelési szolgáltatásban való regisztrálását.
 
 ## <a name="action-plan"></a>Műveletterv

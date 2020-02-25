@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/21/2019
+ms.date: 02/24/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ ms.reviewer: shpate
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cbf82c0bef88e4a6d0e790f4b0ecdf73d2731d5d
-ms.sourcegitcommit: 9bb1bcd9f1bdd53b470073da956bbd8b0935dfbc
+ms.openlocfilehash: 3d8ee4ec6a5bcb29a51b68cff7b840823b678636
+ms.sourcegitcommit: 5881979c45fc973cba382413eaa193d369b8dcf6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75556402"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77569285"
 ---
 # <a name="monitor-security-baseline-and-profiles-in-microsoft-intune"></a>Biztonsági alapkonfiguráció és profilok figyelése Microsoft Intune
 
@@ -63,7 +63,7 @@ Ha egy eszköz eltérő állapotú az alapkonfiguráció különböző csoportja
 
 Ha például egy eszköz *nem megfelelőként*van besorolva, *és egy* vagy több olyan beállítást tartalmaz, amely nem egyezik az alapkonfigurációval, az *eszköz hibásan van besorolva.*
 
-Kattintson a diagramra a részletezéshez, és tekintse meg a különböző állapotokkal rendelkező eszközök listáját. A listából kiválaszthatja az egyes eszközök adatait, és megtekintheti az egyes eszközök részleteit. Példa:
+Kattintson a diagramra a részletezéshez, és tekintse meg a különböző állapotokkal rendelkező eszközök listáját. A listából kiválaszthatja az egyes eszközök adatait, és megtekintheti az egyes eszközök részleteit. Például:
 
 - Válassza ki az **eszköz konfigurációját** > válassza ki a profilt hibás állapottal:
 
@@ -106,6 +106,18 @@ A profil figyelése betekintést nyújt az eszközök központi telepítési ál
 
    ![Tekintse meg a biztonsági alapkonfigurációk profiljának különböző figyelési lehetőségeit.](./media/security-baselines-monitor/monitor-status-options.png)
 
+## <a name="view-endpoint-security-configurations-per-device"></a>Végpont biztonsági konfigurációinak megtekintése eszközönként
+
+Megtekintheti az egyes eszközökre vonatkozó biztonsági konfigurációk részleteit, amelyek segítségével elkülönítheti a helytelenül konfigurált beállításokat.
+
+1. Jelentkezzen be a bejelentkezés a [Microsoft Endpoint Manager felügyeleti központba](https://go.microsoft.com/fwlink/?linkid=2109431).
+
+2. Lépjen az **eszközök** > **minden eszköz** elemre, és válassza ki a megtekinteni kívánt eszközt.
+
+3. A *figyelő* kategóriában válassza a **végpont biztonsági konfiguráció** elemet az adott eszközre érvényes biztonsági konfigurációk listájának megtekintéséhez.
+
+4. Kiválaszthat egy végponti biztonsági konfigurációt a részletezéshez, és megtekintheti a biztonsági konfiguráció értékelésével kapcsolatos további részleteket az eszközön.
+
 ## <a name="troubleshoot-using-per-setting-status"></a>Hibakeresési állapot használata – problémamegoldás
 
 Központilag telepített egy biztonsági alapkonfigurációt, de a telepítés állapota hibát jelez. A következő lépések útmutatást nyújtanak a hiba elhárításához.
@@ -135,6 +147,7 @@ Windows 10-es eszközökön létezik egy beépített MDM diagnosztikai informác
 A [Mdm hibák diagnosztizálása a Windows 10](https://docs.microsoft.com/windows/client-management/mdm/diagnose-mdm-failures-in-windows-10) rendszerben további információt nyújt erről a beépített jelentésről.
 
 > [!TIP]
+>
 > - Egyes beállítások a GUID azonosítót is felsorolják. Ezt a globálisan egyedi azonosítót a beállított értékekhez tartozó helyi beállításjegyzékben (Regedit) is megkeresheti.
 > - A Eseménynapló naplók tartalmazhatnak bizonyos hibákat a problémás beállításról (**eseménynapló** > **alkalmazások és szolgáltatások naplói** > **Microsoft** > **Windows** > **DeviceManagement-Enterprise-Diagnostics-Provider** > **Admin**).
 

@@ -1,5 +1,5 @@
 ---
-title: A pipa-ellenőrzési pont MTD integrálása
+title: Ellenőrzés Point SandBlast MTD integrálása
 titleSuffix: Microsoft Intune
 description: A CheckPoint SandBlast Mobile Threat Defense (MTD) beállítása az Intune-ban a mobileszközök a vállalati erőforrásokhoz való hozzáférésének kezeléséhez.
 keywords: ''
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 514baf3395a2cad9682e6c070b8615f320cc214c
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 0f543d38b6688b03126e8fb7d5666c1383b2fc0f
+ms.sourcegitcommit: 47c9af81c385c7e893fe5a85eb79cf08e69e6831
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73801463"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77576493"
 ---
 # <a name="integrate-check-point-sandblast-mobile-with-intune"></a>A Check Point SandBlast Mobile integrálása az Intune-nal
 
@@ -74,7 +74,7 @@ A Check Point SandBlast alkalmazás hitelesítési folyamata a következőkből 
 
 4. Válassza a **Microsoft Intune** elemet az **MDM szolgáltatás** legördülő listából.
 
-5. Miután beállította a Microsoft Intune-t mobileszköz-kezelési szolgáltatásként, a megjelenő **Microsoft Intune-konfiguráció** ablakban válassza a **Hozzáadás a saját szervezethez** lehetőséget az egyes eszközplatformokhoz: iOS, Android és Windows a Check Point SandBlast Mobile hitelesítésére az Intune-nal és az Azure AD-vel való kommunikációhoz.
+5. Miután beállította Microsoft Intune MDM szolgáltatásként, megjelenik a **Microsoft Intune konfigurációs** ablak, válassza a Hozzáadás a **saját szervezethez** minden eszköz platformhoz: iOS/IPadOS, Android és Windows, hogy engedélyezze a leválasztást a saját szervezetnek az Intune-nal és az Azure ad-vel való kommunikációhoz.
 
     ![Kép a Check Point MTD Intune-konfigurációjáról](./media/checkpoint-sandblast-mobile-mtd-connector-integration/checkpoint-MTD-1.PNG)
 

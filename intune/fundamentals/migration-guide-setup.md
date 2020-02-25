@@ -16,12 +16,12 @@ ms.reviewer: dagerrit
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c705e8863ef4e01906a773d528f9ae2f40461c71
-ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
+ms.openlocfilehash: 08041a57ab52f395283e57cda596d00ba168aba1
+ms.sourcegitcommit: 3964e6697b4d43e2c69a15e97c8d16f8c838645b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75885854"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77556482"
 ---
 # <a name="basic-setup"></a>Alapszintű beállítás
 
@@ -53,26 +53,19 @@ Ha az Intune VPN-, Wi-Fi- vagy e-mail-profiljaihoz tanúsítványalapú hiteles�
 
 - [PFX-tanúsítványinfrastruktúra konfigurálása](/intune/certficates-pfx-configure)
 
-
 ## <a name="task-list-for-an-intune-setup"></a>Intune-beállítás feladatlistája
 
-### <a name="task-1-intune-subscription"></a>1\. feladat: Intune-előfizetés
+### <a name="task-1-intune-subscription"></a>1. feladat: Intune-előfizetés
 
-Az Intune-ra való migráláshoz Intune-előfizetés szükséges.
+Az Intune-ba való Migrálás előtt először Intune- [előfizetésre](account-sign-up.md)van szüksége.
 
-- [Ezen a lapon](https://admin.microsoft.com/Signup/Signup.aspx?OfferId=40BE278A-DFD1-470a-9EF7-9F2596EA7FF9&dl=INTUNE_A&ali=1#0) útmutatást találhat a következőkhöz:
-
-  - Új AAD-bérlőhöz kapcsolt új Intune-előfizetés létrehozása
-
-  - Intune-előfizetés összekapcsolása meglévő AAD-bérlőbe való bejelentkezés révén.
-
-### <a name="task-2-assign-intune-user-licenses"></a>2\. feladat: Intune felhasználói licencek kiosztása
+### <a name="task-2-assign-intune-user-licenses"></a>2. feladat: Intune felhasználói licencek kiosztása
 
 - Ismerje meg, [hogyan oszthatja ki az Intune felhasználói licenceit](licenses-assign.md).
 
 - Ha új Azure Active Directory-bérlőt hozott létre, ismerje meg, [hogyan lehet új felhasználókat létrehozni vagy a helyszíni Active Directory (AD) felhasználóit ide szinkronizálni.](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect)
 
-### <a name="task-3-set-your-mdm-authority-to-intune"></a>3\. feladat: az Intune beállítása MDM-szolgáltatóként
+### <a name="task-3-set-your-mdm-authority-to-intune"></a>3. feladat: az Intune beállítása MDM-szolgáltatóként
 
 Javasoljuk, hogy az Intune-t a [Microsoft Endpoint Manager felügyeleti központjának](https://go.microsoft.com/fwlink/?linkid=2109431)használatával kezelje.
 

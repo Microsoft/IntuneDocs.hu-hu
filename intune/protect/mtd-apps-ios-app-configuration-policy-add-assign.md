@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 04a18befe73ce63f5619c3efc6def4189db9c8df
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: efdb1912fdbb2f28c6859fae4407116173daa99d
+ms.sourcegitcommit: 47c9af81c385c7e893fe5a85eb79cf08e69e6831
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74188487"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77576290"
 ---
 # <a name="add-and-assign-mobile-threat-defense-mtd-apps-with-intune"></a>Mobile Threat Defense- (MTD) alkalmazások felvétele és hozzárendelése az Intune-nal
 
@@ -78,11 +78,11 @@ Válassza ki az MTD-szolgáltatójának megfelelő szakaszt:
 
     1. Lépjen az [Azure Portalra](https://portal.azure.com), jelentkezzen be a hitelesítő adataival, majd nyissa meg az alkalmazás lapot.
 
-    2. Adja hozzá a **Lookout for Work iOS alkalmazást natív ügyfélalkalmazásként**.
+    2. Adja hozzá a **Lookout for Work iOS alkalmazást****natív ügyfélalkalmazásként**.
 
     3. Cserélje le a **com.lookout.enterprise.yourcompanyname** sort az IPA aláírásakor választott ügyfélcsomag-azonosítóval.
 
-    4. Adja hozzá ezt az átirányítási URI-t: **&lt;companyportal://code/>** , valamint az eredeti átirányítási URI-ja URL-kódolású verzióját.
+    4. Adja hozzá ezt az átirányítási URI-t:**&lt;companyportal://code/>**, valamint az eredeti átirányítási URI-ja URL-kódolású verzióját.
 
     5. Adjon hozzá **Delegált engedélyeket** az alkalmazásához.
 
@@ -164,11 +164,11 @@ Használja ugyanazt az Azure AD-fiókot, amelyet korábban a [Symantec Endpoint 
 
   - Lépjen a **Settings** (Beállítások) lapra, majd az **Integrations** (Integrációk) alatt válassza az **Intune** lehetőséget. Válassza az **EMM Integration Selection** (EMM-integráció kiválasztása) lehetőséget. Válassza a **Microsoft** lehetőséget, majd mentse a kijelölés.
 
-  - Kattintson az **Integration setup files** (Integráció-telepítőfájlok) hivatkozásra, és mentse a létrejövő \*.zip fájlt. A .zip-fájlban található a * **.plist**-fájl, amellyel létrehozható az iOS-es alkalmazáskonfigurációs szabályzat az Intune-ban.
+  - Kattintson az **Integration setup files** (Integráció-telepítőfájlok) hivatkozásra, és mentse a létrejövő \*.zip fájlt. A .zip-fájlban található a ***.plist**-fájl, amellyel létrehozható az iOS-es alkalmazáskonfigurációs szabályzat az Intune-ban.
 
   - A SEP Mobile iOS-es alkalmazáskonfigurációs szabályzat felvételéhez lásd a következő útmutatót:[A Microsoft Intune alkalmazáskonfigurációs szabályzatának használata iOS-hez](../apps/app-configuration-policies-use-ios.md).
 
-    - A **konfigurációs beállítások formátuma**beállításnál válassza az **XML-adatok megadása**lehetőséget, másolja a tartalmat a * **. plist** fájlból, és illessze be a tartalmát a konfigurációs szabályzat törzsébe.
+    - A **konfigurációs beállítások formátuma**beállításnál válassza az **XML-adatok megadása**lehetőséget, másolja a tartalmat a ***. plist** fájlból, és illessze be a tartalmát a konfigurációs szabályzat törzsébe.
 
 > [!NOTE]
 > Ha nem sikerült beolvasni a fájlokat, lépjen kapcsolatba a [Symantec Endpoint Protection Mobile nagyvállalati támogatási szolgálatával](https://support.symantec.com/en_US/contact-support.html).
@@ -203,7 +203,7 @@ A Zimperium iOS-es alkalmazáskonfigurációs szabályzat felvételéhez kövess
 
 ### <a name="pradeo-app-configuration-policy"></a>Pradeo-alkalmazás konfigurációs szabályzata
 
-A Pradeo nem támogatja az alkalmazás-konfigurációs szabályzatot iOS rendszeren.  Ehelyett egy konfigurált alkalmazás beszerzéséhez a Pradeo együtt kell működnie a kívánt beállításokkal előre konfigurált egyéni IPA-vagy APK-fájlok megvalósításához.
+A Pradeo nem támogatja az alkalmazás-konfigurációs szabályzatot az iOS/iPadOS.  Ehelyett egy konfigurált alkalmazás beszerzéséhez a Pradeo együtt kell működnie a kívánt beállításokkal előre konfigurált egyéni IPA-vagy APK-fájlok megvalósításához.
 
 ### <a name="better-mobile-app-configuration-policy"></a>Better Mobile-alkalmazások konfigurációs szabályzata
 

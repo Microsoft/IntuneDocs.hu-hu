@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 85b6d49f435ec45a2c6a2b81387ea25a1c15299b
-ms.sourcegitcommit: 8d7406b75ef0d75cc2ed03b1a5e5f74ff10b98c0
+ms.openlocfilehash: 19ecbc632b924dda297b3692cabf5345b4724b30
+ms.sourcegitcommit: 47c9af81c385c7e893fe5a85eb79cf08e69e6831
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654073"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77575784"
 ---
 # <a name="reference-for-devices-entities"></a>Eszközök típusú entitások referenciája
 
@@ -42,7 +42,7 @@ Az **eszközök** kategória a mobileszközök olyan entitásait tartalmazza, am
 
 A **deviceTypes** entitás a más adatraktár-entitások által hivatkozott eszköz típusát jelöli. Az eszköztípus általában leírja az eszköz típusát, gyártóját vagy mindkettőt.
 
-| Tulajdonság  | Description |
+| Tulajdonság  | Leírás |
 |---------|------------|
 | DeviceTypeID |Az eszköztípus egyedi azonosítója |
 | deviceTypeKey |Az eszköztípus egyedi azonosítója az adattárházban – helyettes kulcs |
@@ -50,7 +50,7 @@ A **deviceTypes** entitás a más adatraktár-entitások által hivatkozott eszk
 
 ### <a name="example"></a>Példa
 
-| DeviceTypeID  | Név | Description |
+| DeviceTypeID  | Név | Leírás |
 |---------|------------|--------|
 | 0 |Asztali |Windows asztali eszköz |
 | 1 |WindowsRT |Windows RT rendszerű eszköz |
@@ -76,7 +76,7 @@ A **deviceTypes** entitás a más adatraktár-entitások által hivatkozott eszk
 ## <a name="enrollmentactivities"></a>enrollmentActivities 
 Az **enrollmentActivity** entitás az eszközök regisztrálásának tevékenységét jelzi.
 
-| Tulajdonság                      | Description                                                               |
+| Tulajdonság                      | Leírás                                                               |
 |-------------------------------|---------------------------------------------------------------------------|
 | dateKey                       | A beléptetési tevékenység rögzítési dátumának kulcsa.               |
 | deviceEnrollmentTypeKey       | A beléptetés típusának kulcsa.                                        |
@@ -85,19 +85,19 @@ Az **enrollmentActivity** entitás az eszközök regisztrálásának tevékenys�
 | enrollmentFailureCategoryKey  | A beléptetési hiba kategóriájának kulcsa (ha a regisztráció sikertelen volt).        |
 | enrollmentFailureReasonKey    | A beléptetési hiba okának kulcsa (ha a regisztráció sikertelen volt).          |
 | osVersion                     | Az eszköz operációs rendszerének verziója.                               |
-| szám                         | A fenti besorolásoknak megfelelő beléptetési tevékenységek teljes száma.  |
+| count                         | A fenti besorolásoknak megfelelő beléptetési tevékenységek teljes száma.  |
 
 ## <a name="enrollmenteventstatuses"></a>enrollmentEventStatuses 
 Az **enrollmentEventStatus** entitás az eszközök regisztrálásának eredményét jelzi.
 
-| Tulajdonság                   | Description                                                                       |
+| Tulajdonság                   | Leírás                                                                       |
 |----------------------------|-----------------------------------------------------------------------------------|
 | enrollmentEventStatusKey   | A regisztrációs állapot egyedi azonosítója az adattárházban (helyettes kulcs)  |
-| enrollmentEventStatusName  | A beléptetési állapot neve. Ez az alábbi példákon látható.                            |
+| enrollmentEventStatusName  | A beléptetési állapot neve. Lásd az alábbi példákat.                            |
 
 ### <a name="example"></a>Példa
 
-| enrollmentEventStatusName  | Description                            |
+| enrollmentEventStatusName  | Leírás                            |
 |----------------------------|----------------------------------------|
 | Siker                    | Sikeres eszközök beléptetése         |
 | Sikertelen                     | Sikertelen eszközök beléptetése             |
@@ -106,14 +106,14 @@ Az **enrollmentEventStatus** entitás az eszközök regisztrálásának eredmén
 ## <a name="enrollmentfailurecategories"></a>enrollmentFailureCategories 
 A **EnrollmentFailureCategory** entitás jelzi, hogy az eszközök regisztrálásának miért nem sikerült. 
 
-| Tulajdonság                       | Description                                                                                 |
+| Tulajdonság                       | Leírás                                                                                 |
 |--------------------------------|---------------------------------------------------------------------------------------------|
 | enrollmentFailureCategoryKey   | A beléptetési hiba kategóriájának egyedi azonosítója az adattárházban (helyettes kulcs)  |
-| enrollmentFailureCategoryName  | A beléptetési hiba kategóriájának neve. Ez az alábbi példákon látható.                            |
+| enrollmentFailureCategoryName  | A beléptetési hiba kategóriájának neve. Lásd az alábbi példákat.                            |
 
 ### <a name="example"></a>Példa
 
-| enrollmentFailureCategoryName   | Description                                                                                                   |
+| enrollmentFailureCategoryName   | Leírás                                                                                                   |
 |---------------------------------|---------------------------------------------------------------------------------------------------------------|
 | Nem alkalmazható                  | A beléptetési hiba kategóriája nem alkalmazható.                                                            |
 | Nem érhető el                   | A beléptetési hiba kategóriája nem érhető el.                                                             |
@@ -133,14 +133,14 @@ A **EnrollmentFailureCategory** entitás jelzi, hogy az eszközök regisztrálá
 ## <a name="enrollmentfailurereasons"></a>enrollmentFailureReasons  
 A **EnrollmentFailureReason** entitás egy adott meghibásodási kategórián belül egy eszköz regisztrálási hibájának részletesebb okát jelzi.  
 
-| Tulajdonság                     | Description                                                                               |
+| Tulajdonság                     | Leírás                                                                               |
 |------------------------------|-------------------------------------------------------------------------------------------|
 | enrollmentFailureReasonKey   | A beléptetési hiba okának egyedi azonosítója az adattárházban (helyettes kulcs)  |
-| enrollmentFailureReasonName  | A beléptetési hiba okának neve. Ez az alábbi példákon látható.                            |
+| enrollmentFailureReasonName  | A beléptetési hiba okának neve. Lásd az alábbi példákat.                            |
 
 ### <a name="example"></a>Példa
 
-| enrollmentFailureReasonName      | Description                                                                                                                                                                                            |
+| enrollmentFailureReasonName      | Leírás                                                                                                                                                                                            |
 |----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Nem alkalmazható                   | A beléptetési hiba oka nem alkalmazható.                                                                                                                                                       |
 | Nem érhető el                    | A beléptetési hiba oka nem érhető el.                                                                                                                                                        |
@@ -163,7 +163,7 @@ A **EnrollmentFailureReason** entitás egy adott meghibásodási kategórián be
 
 A **enrollmentType** entitás azt jelzi, hogy az eszköz vállalati, személyes tulajdonú vagy ismeretlen.
 
-| Tulajdonság  | Description | Példa |
+| Tulajdonság  | Leírás | Példa |
 |---------|------------|--------|
 | ownerTypeID |A tulajdonostípus egyedi azonosítója. | |
 | ownerTypeKey |A tulajdonostípus egyedi azonosítója az adattárházban – helyettes kulcs. | |
@@ -176,7 +176,7 @@ A **enrollmentType** entitás azt jelzi, hogy az eszköz vállalati, személyes 
 
 Az **managementStates** entitás az eszköz állapotáról nyújt részleteket. Ezek a részletek hasznosak lehetnek távoli műveletek végrehajtásakor és jailbreakelt vagy rootolt eszköz esetén.
 
-| Tulajdonság  | Description |
+| Tulajdonság  | Leírás |
 |---------|------------|
 | managementStateID | A kezelés állapotának egyedi azonosítója. |
 | managementStateKey | A kezelés állapotának egyedi azonosítója az adattárházban – helyettes kulcs. |
@@ -184,7 +184,7 @@ Az **managementStates** entitás az eszköz állapotáról nyújt részleteket. 
 
 ### <a name="example"></a>Példa
 
-| managementStateID  | Név | Description |
+| managementStateID  | Név | Leírás |
 |---------|------------|--------|
 | 0 |Kezelt | Kezelt, függőben lévő távoli műveletek nélkül. |
 | 1 |RetirePending | Az eszköz kivonására vonatkozó parancs van függőben. |
@@ -203,7 +203,7 @@ Az **managementStates** entitás az eszköz állapotáról nyújt részleteket. 
 
 Az **ManagementAgentType** entitás az eszköz kezeléséhez használt ügynököket jelöli.
 
-| Tulajdonság  | Description |
+| Tulajdonság  | Leírás |
 |---------|------------|
 | managementAgentTypeID | A kezelőügynök típusának egyedi azonosítója. |
 | managementAgentTypeKey | A kezelőügynök típusának egyedi azonosítója az adattárházban – helyettes kulcs. |
@@ -211,7 +211,7 @@ Az **ManagementAgentType** entitás az eszköz kezeléséhez használt ügynök�
 
 ### <a name="example"></a>Példa
 
-| ManagementAgentTypeID  | Név | Description |
+| ManagementAgentTypeID  | Név | Leírás |
 |---------|------------|--------|
 | 1 |EAS | Az Exchange Active Sync szolgáltatással kezelt eszköz |
 | 2 |MDM | MDM-ügynökkel kezelt eszköz |
@@ -225,7 +225,7 @@ Az **ManagementAgentType** entitás az eszköz kezeléséhez használt ügynök�
 
 Az **eszközök** entitás felsorolja a felügyelet alatt álló összes regisztrált eszközt, valamint a hozzájuk tartozó tulajdonságokat.
 
-|          Tulajdonság          |                                                                                       Description                                                                                      |
+|          Tulajdonság          |                                                                                       Leírás                                                                                      |
 |:--------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | deviceKey                  | Az eszköz egyedi azonosítója az adattárházban – helyettes kulcs.                                                                                                               |
 | deviceId                   | Az eszköz egyedi azonosítója.                                                                                                                                                     |
@@ -242,14 +242,14 @@ Az **eszközök** entitás felsorolja a felügyelet alatt álló összes regiszt
 | deviceCategoryKey          | Az eszközhöz társított kategória kulcsa.                                                                                                                                     |
 | deviceEnrollmentType       | Az eszközhöz társított, a regisztráció módját jelző regisztrációtípus kulcsa.                                                                                             |
 | complianceStateKey         | Az eszközhöz társított megfelelőségi állapot kulcsa.                                                                                                                             |
-| osVersion                  | Az eszközön futó operációs rendszer verziószáma.                                                                                                                                                |
+| osVersion                  | Az eszköz operációs rendszerének verziója.                                                                                                                                                |
 | easDeviceId                | Az eszköz Exchange ActiveSync-azonosítója.                                                                                                                                                  |
 | serialNumber               | Sorozatszám                                                                                                                                                                           |
 | userId                     | Az eszközhöz társított felhasználó egyedi azonosítója.                                                                                                                           |
 | rowLastModifiedDateTimeUTC | Az eszköz adattárházban történő utolsó módosításának dátuma és időpontja (UTC).                                                                                                       |
 | gyártó               | Az eszköz gyártója                                                                                                                                                             |
 | modell                      | Az eszköz típusa                                                                                                                                                                    |
-| operatingSystem            | Az eszközön futó operációs rendszer. Windows, iOS stb.                                                                                                                                   |
+| operatingSystem            | Az eszközön futó operációs rendszer. Windows, iOS/iPadOS stb.                                                                                                                                   |
 | isDeleted                  | Bináris érték, amely azt jelzi, hogy az eszköz törölve van vagy sem.                                                                                                                                 |
 | androidSecurityPatchLevel  | Az Android biztonsági javítási szintje                                                                                                                                                           |
 | MEID                       | MEID                                                                                                                                                                                   |
@@ -268,7 +268,7 @@ Az **eszközök** entitás felsorolja a felügyelet alatt álló összes regiszt
 
 A **devicePropertyHistory** entitás ugyanazokkal a tulajdonságokkal rendelkezik, mint az eszközök táblázata, valamint az egyes rekordok napi pillanatképe az elmúlt 90 nap folyamán. A DateKey mező az egyes sorok napját jelzi.
 
-|          Tulajdonság          |                                                                                      Description                                                                                     |
+|          Tulajdonság          |                                                                                      Leírás                                                                                     |
 |:--------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | dateKey                    | A napot megadó dátumtáblázat-hivatkozás.                                                                                                                                          |
 | deviceKey                  | Az eszköz egyedi azonosítója az adattárházban – helyettes kulcs. Az Intune-eszközazonosítót tartalmazó eszköztáblára mutató hivatkozás.                               |
@@ -279,6 +279,6 @@ A **devicePropertyHistory** entitás ugyanazokkal a tulajdonságokkal rendelkezi
 | azureADRegistered          | Regisztrálva van-e az eszköz az Azure Active Directoryban.                                                                                                                             |
 | complianceStateKey         | Kulcs a ComplianceState-hez.                                                                                                                                                            |
 | OSVersion                  | Operációs rendszer verziója.                                                                                                                                                                          |
-| Jailbreakelt                 | Az, hogy az eszköz jailbreakelve vagy rootolva van-e.                                                                                                                                         |
+| jailBroken                 | Az, hogy az eszköz jailbreakelve vagy rootolva van-e.                                                                                                                                         |
 | deviceCategoryKey          | Az eszközhöz tartozó eszközkategória attribútum kulcsa. 
 

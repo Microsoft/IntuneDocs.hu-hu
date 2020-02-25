@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 01c6ae06459590fa9bb9842e90ad53e6c522d6a6
-ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
+ms.openlocfilehash: 2964893102bc1b6f9967b1a37261b860d8ea0104
+ms.sourcegitcommit: 5881979c45fc973cba382413eaa193d369b8dcf6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77512483"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77569387"
 ---
 # <a name="add-vpn-settings-on-ios-and-ipados-devices-in-microsoft-intune"></a>VPN-beállítások hozzáadása az iOS-és iPadOS-eszközökhöz Microsoft Intune
 
@@ -43,7 +43,7 @@ Válassza ki a VPN-kapcsolat típusát a következő szállítók listájáról:
 - **SonicWall Mobile Connect**
 - **F5 Access Legacy**: Az F5 Access alkalmazás 2.1 és annál korábbi verzióihoz használható.
 - **F5 Access**: Az F5 Access alkalmazás 3.0 és annál újabb verzióihoz használható.
-- **Palo Alto Networks GlobalProtect (Legacy)** : A Palo Alto Networks GlobalProtect alkalmazás 4.1 és annál korábbi verzióihoz használható.
+- **Palo Alto Networks GlobalProtect (Legacy)**: A Palo Alto Networks GlobalProtect alkalmazás 4.1 és annál korábbi verzióihoz használható.
 - **Palo Alto Networks GlobalProtect**: A Palo Alto Networks GlobalProtect alkalmazás 5.0 és annál újabb verzióihoz használható.
 - **Pulse Secure**
 - **Cisco (IPsec)**
@@ -78,15 +78,14 @@ Az alábbi listában látható beállításokat a kiválasztott VPN-kapcsolat t�
 - **Bújtatás megosztása**: Az **Engedélyezés** vagy a **Letiltás** beállítással szabályozhatja, hogy az eszközök választhatnak-e a forgalomtól függően a kapcsolatok közül. Egy szállodai vendég például a munkahelyi fájlok elérésére a VPN-kapcsolatot, de egyszerű böngészésre a szálloda normál hálózatát használja.
 
 - **VPN-azonosító** (egyéni VPN, Zscaler és Citrix): a használt VPN-alkalmazás azonosítója, amelyet a VPN-szolgáltató biztosít.
-  - **Kulcs-érték párok megadása vállalata egyéni VPN attribútumainak konfigurálásához**: **Kulcsok** és **Értékek** hozzáadásával vagy importálásával szabhatja testre a VPN-kapcsolatot. Ne feledje, rendszerint ezeket az értékeket is a VPN-szolgáltató biztosítja.
+- **Adja meg a kulcs/érték párokat a szervezet egyéni VPN-attribútumaihoz** (egyéni VPN, Zscaler és Citrix): a VPN-kapcsolat testreszabására szolgáló **kulcsok** és **értékek** hozzáadása vagy importálása. Ne feledje, rendszerint ezeket az értékeket is a VPN-szolgáltató biztosítja.
 
-- **Hálózati hozzáférés-vezérlés engedélyezése** (Citrix SSO, F5 Access): Ha az **Elfogadom**lehetőséget választja, az eszköz azonosítója szerepel a VPN-profilban. Ez az azonosító a VPN hitelesítéséhez használható a hálózati hozzáférés engedélyezéséhez vagy letiltásához.
+- A **hálózati hozzáférés-vezérlés (NAC) engedélyezése** (Cisco AnyConnect, Citrix SSO, F5 Access): Ha az **Elfogadom**lehetőséget választja, az eszköz azonosítója szerepel a VPN-profilban. Ez az azonosító a VPN hitelesítéséhez használható a hálózati hozzáférés engedélyezéséhez vagy letiltásához.
 
-  **F5-hozzáférés használata esetén**ügyeljen a következőre:
+    **Ha a Cisco AnyConnect-t ISE**-mel használja, ügyeljen arra, hogy:
 
-  - Erősítse meg, hogy az F5 BIG-IP 13.1.1.5 használja. A BIG-IP 14 nem támogatott.
-  - A BIG-IP integrálása az Intune-nal a NAC-hoz. Tekintse [meg az Áttekintés: az APM konfigurálása eszköz-testhelyzeti ellenőrzésekhez az Endpoint Management Systems](https://support.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-client-configuration-7-1-6/6.html#guid-0bd12e12-8107-40ec-979d-c44779a8cc89) F5 útmutatót.
-  - Engedélyezze a NAC-t a VPN-profilban.
+    - Ha még nem tette meg, akkor az ISE-t integrálja a NAC-nal az Intune-nal a következő témakörben leírtak szerint: **Microsoft Intune konfigurálása Mdm-kiszolgálóként** a [Cisco Identity Services Engine rendszergazdai útmutatójában](https://www.cisco.com/c/en/us/td/docs/security/ise/2-1/admin_guide/b_ise_admin_guide_21/b_ise_admin_guide_20_chapter_01000.html).
+    - Engedélyezze a NAC-t a VPN-profilban.
 
   **Ha a CITRIX SSO-t átjáróval használja**, ügyeljen arra, hogy:
 
@@ -95,10 +94,11 @@ Az alábbi listában látható beállításokat a kiválasztott VPN-kapcsolat t�
   - A Citrix Gateway integrálása az Intune-nal a NAC-nal. Tekintse meg az [integrációs Microsoft Intune/Enterprise Mobility Suite NetScaler (LDAP + OTP-forgatókönyv)](https://www.citrix.com/content/dam/citrix/en_us/documents/guide/integrating-microsoft-intune-enterprise-mobility-suite-with-netscaler.pdf) Citrix telepítési útmutatót.
   - Engedélyezze a NAC-t a VPN-profilban.
 
-  **Fontos részletek**:  
+  **F5-hozzáférés használata esetén**ügyeljen a következőre:
 
-  - Ha a NAC engedélyezve van, a VPN-kapcsolat 24 óránként megszakad. A VPN-t azonnal újra lehet kapcsolni.
-  - Az eszköz azonosítója a profil része, de nem jelenik meg az Intune-ban. Ezt az azonosítót a Microsoft sehol sem tárolja és nem osztja meg.
+  - Erősítse meg, hogy az F5 BIG-IP 13.1.1.5 vagy újabb verziót használja. 
+  - A BIG-IP integrálása az Intune-nal a NAC-hoz. Tekintse [meg az Áttekintés: az APM konfigurálása eszköz-testhelyzeti ellenőrzésekhez az Endpoint Management Systems](https://support.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-client-configuration-7-1-6/6.html#guid-0bd12e12-8107-40ec-979d-c44779a8cc89) F5 útmutatót.
+  - Engedélyezze a NAC-t a VPN-profilban.
 
   Az eszköz AZONOSÍTÓját támogató VPN-partnerek esetében a VPN-ügyfél (például a Citrix SSO) lekérheti az azonosítót. Ezután lekérdezheti az Intune-t az eszköz regisztrálásának megerősítéséhez, és ha a VPN-profil megfelelő vagy nem megfelelő.
 

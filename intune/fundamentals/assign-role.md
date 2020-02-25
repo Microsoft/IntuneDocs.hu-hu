@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 780a248f16a8a5028875c9c2401921ea23d0af24
-ms.sourcegitcommit: 70b40aa4743c8396f8d6a0163893c4a337d67c48
+ms.openlocfilehash: 19fff092f7eccfc6de2a027c7834c52698176cbf
+ms.sourcegitcommit: 5881979c45fc973cba382413eaa193d369b8dcf6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76540928"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77569166"
 ---
 # <a name="assign-a-role-to-an-intune-user"></a>Szerepkör kiosztása Intune-felhasználóhoz
 
@@ -34,23 +34,20 @@ A szerepkörök létrehozásához, szerkesztéséhez vagy hozzárendeléséhez a
 
 1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza a **bérlői felügyelet** > **szerepkörök** > **minden szerepkör**lehetőséget.
 
-2. Az **Intune-szerepkörök – minden szerepkör** panelen válassza ki a hozzárendelni kívánt beépített szerepkört.
+2. Az **Intune-szerepkörök – minden szerepkör** panelen válassza ki azt a beépített szerepkört, **amelyet hozzá szeretne**rendelni > **hozzárendelésekhez** > hozzárendeléshez.
 
-3. A <*szerepkör neve*> – **Áttekintés** panelen válassza a **kezelés** > **hozzárendelések**lehetőséget.
+5. Az **alapvető beállítások** lapon adja meg a **hozzárendelés nevét** és az opcionális **hozzárendelés leírását**, majd válassza a **tovább**lehetőséget.
 
-4. Kattintson a **Hozzárendelés** elemre az Egyéni szerepkör panelen.
+6. A **felügyeleti csoportok** lapon válassza ki azt a csoportot, amely tartalmazza azt a felhasználót, akinek engedélyeket kíván adni. Kattintson a **Tovább** gombra.
 
-5. A **szerepkör-hozzárendelések** panelen adja meg a hozzárendelés **nevét** és választható **hozzárendelésének leírását** .
+7. A **hatókör (csoportok)** lapon válassza ki azt a csoportot, amely a fenti tag által felügyelni kívánt felhasználókat vagy eszközöket tartalmazza. Kattintson a **Tovább** gombra.
 
-6. A **Tagok (csoportok)** területen válasszon ki egy csoportot, amely tartalmazza azt a felhasználót, akinek engedélyeket kíván adni.
+8. A **hatókör (címkék)** lapon válassza a címkék elemet, ahol ez a szerepkör-hozzárendelés lesz alkalmazva. Kattintson a **Tovább** gombra.
 
-7. **Hatókör (csoportok)** esetében válassza ki azt a csoportot, amely a fenti tag által felügyelni kívánt felhasználókat vagy eszközöket tartalmazza.
-
-8. A **hatókör (címkék)** területen válassza a címkék lehetőséget, ahol ez a szerepkör-hozzárendelés lesz alkalmazva.
-
-9. Ha elkészült, válassza az **OK** gombot. Az új hozzárendelés megjelenik a hozzárendelések listájában.
-
+9. Ha elkészült a **felülvizsgálat + létrehozás** oldalon, válassza a **Létrehozás**lehetőséget. Az új hozzárendelés megjelenik a hozzárendelések listájában.
 
 ## <a name="next-steps"></a>További lépések
 - [További információ az Intune-beli szerepköralapú hozzáférés-vezérlésről](role-based-access-control.md)
 - [Egyéni szerepkör létrehozása](create-custom-role.md)
+
+

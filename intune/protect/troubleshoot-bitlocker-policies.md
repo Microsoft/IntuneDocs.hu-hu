@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 61b703837598ddbe2c0c44874928b4444466c811
-ms.sourcegitcommit: 5ad0ce27a30ee3ef3beefc46d2ee49db6ec0cbe3
+ms.openlocfilehash: f3b32268d0b04dee84a737b9a1c768bc4fab7202
+ms.sourcegitcommit: 3964e6697b4d43e2c69a15e97c8d16f8c838645b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76886781"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77556499"
 ---
 # <a name="troubleshoot-bitlocker-policies-in-microsoft-intune"></a>A Microsoft Intune BitLocker-házirendjeinek hibáinak megoldása
 
@@ -39,7 +39,9 @@ A Microsoft Intune a következő módszerekkel kezelheti a BitLockert Windows 10
 
 - A **biztonsági alapkonfigurációk - ** [biztonsági alaptervek](security-baselines.md) a beállítások és a megfelelő biztonsági csapat által a Windows-eszközök biztonságossá tételéhez javasolt alapértelmezett értékek. A különböző alapforrások, például a *Mdm biztonsági* alapkonfiguráció vagy a *Microsoft Defender ATP* alapkonfigurációja ugyanazokat a beállításokat és különböző beállításokat is képes kezelni, mint az egymástól. Emellett ugyanúgy kezelhetik az eszköz konfigurációs házirendjeivel felügyelt beállításokat is. 
 
-Az Intune-on kívül lehetséges, hogy a BitLocker beállításait más módon, például a Csoportházirend felügyeli, vagy manuálisan állítja be az eszköz felhasználója.
+Az Intune mellett a modern készenléti és HSTI kompatibilis hardverek esetében a BitLocker-eszközök titkosítása automatikusan bekapcsol, amikor a felhasználó csatlakoztat egy eszközt az Azure AD-hoz. Az Azure AD olyan portált biztosít, ahol a helyreállítási kulcsokról is készíthető biztonsági másolat, így a felhasználók igény szerint lekérhetik saját helyreállítási kulcsát az önkiszolgáló szolgáltatáshoz.
+
+Az is lehetséges, hogy a BitLocker beállításait más módon, például a Csoportházirend felügyeli, vagy manuálisan állítja be az eszköz felhasználója.
 
 Függetlenül attól, hogy a beállítások hogyan lesznek alkalmazva egy eszközre, a BitLocker-házirendek a [BITLOCKER CSP](https://docs.microsoft.com/windows/client-management/mdm/bitlocker-csp) -t használják a titkosítás konfigurálásához az eszközön. A BitLocker CSP be van építve a Windowsba, és amikor az Intune egy BitLocker-házirendet telepít egy hozzárendelt eszközre, az eszközön található BitLocker CSP a megfelelő értékeket írja a Windows beállításjegyzékbe, hogy a házirend beállításai érvénybe lépnek.
 
@@ -164,6 +166,15 @@ A **házirend jelen van, de nem minden beállítás sikeresen konfigurálva** �
 
   2. **A BitLocker nem támogatott az összes hardveren**.
      Még ha a Windows megfelelő verziója is van, előfordulhat, hogy az alapul szolgáló eszköz hardvere nem felel meg a BitLocker-titkosítás követelményeinek. A [BitLocker rendszerkövetelményeit](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-overview#system-requirements) a Windows dokumentációjában találja meg, de a legfontosabb, hogy az eszköz kompatibilis TPM-lapka (1,2 vagy újabb) és egy Trusted COMPUTING Group (TCG) szabványnak megfelelő BIOS vagy UEFI belső vezérlőprogram legyen.
+     
+A **BitLocker titkosítása nem csendesen történik** – konfigurált egy Endpoint Protection szabályzatot a "figyelmeztetés más lemez titkosításhoz" beállítással, és a titkosítási varázsló továbbra is megjelenik:
+
+- **Annak megerősítése, hogy a Windows verziója támogatja a csendes titkosítást** Ehhez legalább 1803-es verzió szükséges. Ha a felhasználó nem administator az eszközön, mint amennyire a 1809-es minimális verzióra van szükség. Továbbá 1809 a modern készenléti állapotot nem támogató eszközök támogatása
+
+A **BitLocker által titkosított eszköz nem megfelelőnek tekinti az Intune megfelelőségi szabályzatait** – ez a probléma akkor fordul elő, ha a BitLocker-titkosítás nem fejeződött be. Az olyan tényezők alapján, mint például a lemez mérete, a fájlok száma és a BitLocker-beállítások, a BitLocker-titkosítás hosszú időt is igénybe vehet. A titkosítás befejezése után az eszköz megfelelőként jelenik meg. Az eszközök a WIndows-frissítések legutóbbi telepítése után is átmenetileg nem megfelelővé válhatnak.
+
+Az eszközök titkosítása **128 bites algorithim történik, ha a házirend-specifikus 256 bit** – alapértelmezés szerint a Windows 10 a XTS-AES 128 bites titkosítású meghajtót titkosítja. Tekintse meg ezt az útmutatót a [BitLocker 256 bites titkosításának beállításához az Autopilot során](https://techcommunity.microsoft.com/t5/intune-customer-success/setting-256-bit-encryption-for-bitlocker-during-autopilot-with/ba-p/323791#).
+
 
 **Példa vizsgálatra**
 

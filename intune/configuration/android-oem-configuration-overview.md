@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9cc568cbadb683f632ffd2365ab7023cd796f231
-ms.sourcegitcommit: 5ad0ce27a30ee3ef3beefc46d2ee49db6ec0cbe3
+ms.openlocfilehash: 282464ebb616f5c8dec928b93f4852603bb20e10
+ms.sourcegitcommit: 5881979c45fc973cba382413eaa193d369b8dcf6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76886692"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77569438"
 ---
 # <a name="use-and-manage-android-enterprise-devices-with-oemconfig-in-microsoft-intune"></a>Androidos nagyvállalati eszközök használata és kezelése a OEMConfig-ben Microsoft Intune
 
@@ -34,7 +34,7 @@ Ez a funkció az alábbiakra vonatkozik:
 
 Ez a cikk a OEMConfig ismerteti, felsorolja az előfeltételeket, bemutatja, hogyan hozhat létre konfigurációs profilt, és listázza a támogatott OEMConfig-alkalmazásokat az Intune-ban.
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Házirend
 
 A OEMConfig szabályzatok az [alkalmazás-konfigurációs házirendhez](../apps/app-configuration-policies-overview.md)hasonló speciális típusú eszköz-konfigurációs házirend. A OEMConfig egy, a Google által meghatározott szabvány, amely az alkalmazások konfigurációját használja az Androidon az eszközök beállításainak az OEM-ek által írt alkalmazásokba való küldéséhez (eredeti berendezésgyártó). Ez a szabvány lehetővé teszi, hogy a számítógépgyártók és a EMMs (nagyvállalati mobilitási felügyelet) szabványosított módon hozzanak létre és támogassák az OEM-specifikus szolgáltatásokat. [További információ a OEMConfig](https://blog.google/products/android-enterprise/oemconfig-supports-enterprise-device-features/).
 
@@ -151,7 +151,7 @@ A standard szintű alkalmazásokhoz képest a OEMConfig-alkalmazások kibővíti
 
 | OEM | Csomagazonosító | OEM-dokumentáció (ha elérhető) |
 | --- | --- | ---|
-| Samsung | com. Samsung. Android. Knox. kpu | [A Knox szolgáltatás beépülő moduljának rendszergazdai útmutatója](https://docs.samsungknox.com/knox-service-plugin/admin-guide/index.htm) |
+| Samsung | com.samsung.android.knox.kpu | [A Knox szolgáltatás beépülő moduljának rendszergazdai útmutatója](https://docs.samsungknox.com/knox-service-plugin/admin-guide/index.htm) |
 | Zebra-technológiák | com. zebra. oemconfig. Common | [A zebra OEMConfig áttekintése](http://techdocs.zebra.com/oemconfig ) |
 | Datalogic | com. Datalogic. oemconfig | [A Datalogic OEMConfig felhasználói dokumentációja](https://datalogic.github.io/oemconfig/) |
 | Honeywell | com. Honeywell. oemconfig |  |
@@ -161,7 +161,7 @@ A standard szintű alkalmazásokhoz képest a OEMConfig-alkalmazások kibővíti
 | Spectralink – eszköz | com. Spectralink. slnkdevicesettings  |  |
 | Spectralink – naplózás | com. Spectralink. slnklogger |  |
 | Spectralink - VQO | com. Spectralink. slnkvqo |  |
-| Globális HMD | com. hmdglobal. app. oemconfig. Ironman |  |
+| Seuic | com. seuic. seuicoemconfig | |
 
 -----------------
 

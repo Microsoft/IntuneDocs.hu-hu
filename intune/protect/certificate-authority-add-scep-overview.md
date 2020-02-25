@@ -16,16 +16,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4d05e33dbc28707bc6f929be72ba4a77c2e0641c
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: 85aac54a81d81dc138dd12612db183aae839b72b
+ms.sourcegitcommit: 47c9af81c385c7e893fe5a85eb79cf08e69e6831
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75206057"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77575986"
 ---
 # <a name="add-partner-certification-authority-in-intune-using-scep"></a>Partner hitelesítésszolgáltató hozzáadása az Intune-ban SCEP protokollal
 
-Harmadik féltől származó hitelesítésszolgáltatók (CA) használata az Intune-nal. A külső hitelesítésszolgáltatók létrehozhatnak új vagy megújított tanúsítványokat a Egyszerű tanúsítványigénylési protokoll (SCEP) használatával, és támogathatják a Windows, az iOS, az Android és a macOS rendszerű eszközöket.
+Harmadik féltől származó hitelesítésszolgáltatók (CA) használata az Intune-nal. A külső hitelesítésszolgáltatók létrehozhatnak új vagy megújított tanúsítványokat a Egyszerű tanúsítványigénylési protokoll (SCEP) használatával, és támogathatják a Windows, az iOS/iPadOS, az Android és a macOS rendszerű eszközöket.
 
 A funkció használata két részből áll: a nyílt forráskódú API-val kapcsolatos és az Intune-rendszergazdai feladatokból.
 

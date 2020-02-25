@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9deee0dca675d7fd95445131ed98ea195972c6ac
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: c134eb1fc413a32f2a27034d8c3a993f18f8a9c9
+ms.sourcegitcommit: 47c9af81c385c7e893fe5a85eb79cf08e69e6831
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74409823"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77576268"
 ---
 # <a name="tutorial-protect-exchange-online-email-on-managed-devices"></a>Oktatóanyag: Az Exchange Online e-mailjeinek védelme felügyelt eszközökön
 
@@ -45,11 +45,11 @@ Az oktatóanyag végrehajtásához szüksége lesz egy tesztelési bérlőre a k
 
 - Office 365 Vállalati előfizetés, ami magában foglalja az Exchange-et ([ingyenes próbaverzió](https://go.microsoft.com/fwlink/p/?LinkID=510938))
 
-Mielőtt elkezdené, hozzon létre az iOS eszközök számára egy teszteszközprofilt a következő oktatóanyag lépéseit követve: [Rövid útmutató: E-mail-profil létrehozása iOS operációs rendszeren](../configuration/quickstart-email-profile.md).
+Mielőtt elkezdené, hozzon létre egy tesztelési eszköz profilt iOS-eszközökhöz a gyors útmutató [: e-mail profil létrehozása iOS-hez/iPadOS](../configuration/quickstart-email-profile.md).
 
 ## <a name="sign-in-to-intune"></a>Bejelentkezés az Intune-ba
 
-Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központba](https://go.microsoft.com/fwlink/?linkid=2109431) [globális rendszergazdaként](../fundamentals/users-add.md#types-of-administrators) vagy Intune [szolgáltatás-rendszergazdaként](../fundamentals/users-add.md#types-of-administrators). Ha létrehozott egy Intune próba-előfizetést, az a fiók lesz a globális rendszergazda, amelyikkel azt létrehozta.
+Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központba](https://go.microsoft.com/fwlink/?linkid=2109431) [globális rendszergazdaként](../fundamentals/users-add.md#types-of-administrators) vagy Intune [szolgáltatás-rendszergazdaként](../fundamentals/users-add.md#types-of-administrators). Ha létrehozott egy Intune próba-előfizetést, az a fiók lesz a globális rendszergazda, amelyikkel létrehozta azt.
 
 ## <a name="create-the-ios-device-compliance-policy"></a>Az iOS eszközmegfelelőségi szabályzat létrehozása
 
@@ -152,7 +152,7 @@ Most létrehozunk egy feltételes hozzáférési szabályzatot, amelyhez minden 
 
    5. Válassza a **Kijelölés** elemet.
 
-   ![Conrols kiválasztása](./media/tutorial-protect-email-on-enrolled-devices/ios-ca-policy-grant-access.png)
+   ![Vezérlők kijelölése](./media/tutorial-protect-email-on-enrolled-devices/ios-ca-policy-grant-access.png)
 
 8. A **Szabályzat engedélyezése** alatt válassza a **Bekapcsolás** elemet.
 
@@ -162,7 +162,7 @@ Most létrehozunk egy feltételes hozzáférési szabályzatot, amelyhez minden 
 
 ## <a name="try-it-out"></a>Próbálja ki!
 
-A létrehozott szabályzat megköveteli, hogy az Office 365 e-mail-alkalmazásába történő belépést megkísérlő iOS-eszközök mindegyikének regisztrálnia kell az Intune-ban, és az iOS rendszerhez készült Office mobilalkalmazást kell használnia. A forgatókönyv teszteléséhez egy iOS-eszközön próbáljon meg a tesztelési bérlő egyik felhasználójának hitelesítő adataival bejelentkezni az Exchange Online-ra. A rendszer kérni fogja, hogy regisztrálja az eszközt és telepítse az Outlook mobilalkalmazást.
+A létrehozott szabályzatokkal minden olyan iOS-eszköz, amely megpróbál bejelentkezni az Office 365-ba, regisztrálnia kell az Intune-ban, és az Outlook Mobile App for iOS/iPadOS-t kell használnia. A forgatókönyv teszteléséhez egy iOS-eszközön próbáljon meg a tesztelési bérlő egyik felhasználójának hitelesítő adataival bejelentkezni az Exchange Online-ra. A rendszer kérni fogja, hogy regisztrálja az eszközt és telepítse az Outlook mobilalkalmazást.
 
 1. iPhone-on történő teszteléshez válassza a **Beállítások** > **Jelszavak és fiókok** > **Fiók hozzáadása** > **Exchange** elemet.
 
@@ -181,11 +181,11 @@ Ha már nincs szükség a tesztszabályzatokra, eltávolíthatja őket.
 
 2. Válassza az **eszközök** > **megfelelőségi szabályzatok**lehetőséget.
 
-3. A **Szabályzat neve** listában válassza a tesztszabályzat helyi menüjét ( **...** ), majd válassza a **Törlés** elemet. Válassza az **OK** lehetőséget a megerősítéshez.
+3. A **Szabályzat neve** listában válassza a tesztszabályzat helyi menüjét (**...**), majd válassza a **Törlés** elemet. Válassza az **OK** lehetőséget a megerősítéshez.
 
 4. Válassza a **végpontok biztonsága** > **feltételes hozzáférés**lehetőséget.
 
-5. A **Szabályzat neve** listában válassza a tesztszabályzat helyi menüjét ( **...** ), majd válassza a **Törlés** elemet. Válassza az **Igen** lehetőséget a megerősítéshez.
+5. A **Szabályzat neve** listában válassza a tesztszabályzat helyi menüjét (**...**), majd válassza a **Törlés** elemet. Válassza az **Igen** lehetőséget a megerősítéshez.
 
 ## <a name="next-steps"></a>További lépések
 

@@ -1,5 +1,5 @@
 ---
-title: Alkalmazások előkészítése a Mobile Application Managementhez Microsoft Intune
+title: Alkalmazások előkészítése mobilalkalmazás-kezeléshez a Microsoft Intune-nal
 description: Az ebben a témakörben leírtak segítenek eldönteni, mikor használja az Alkalmazásburkoló eszközt és az App SDK-t arra, hogy engedélyezze az egyéni, üzletági alkalmazások számára a mobilalkalmazás-kezelési szabályzatok használatát.
 keywords: ''
 author: Erikre
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 842af9c8fffcb3755c81260739f4949768e75bac
-ms.sourcegitcommit: c46b0c2d4507be6a2786a4ea06009b2d5aafef85
+ms.openlocfilehash: e2075ed8328e6a33732e03fbf521d32b2edd6a35
+ms.sourcegitcommit: 47c9af81c385c7e893fe5a85eb79cf08e69e6831
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76912675"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77575837"
 ---
 # <a name="prepare-line-of-business-apps-for-app-protection-policies"></a>Üzletági alkalmazások felkészítése az alkalmazásvédelmi szabályzatok használatára
 
@@ -103,7 +103,7 @@ Ez a táblázat felsorolja azokat a beállításokat, amelyek engedélyezve vann
 |Képernyőrögzítés letiltása (csak Android esetén)|X|X|
 |Eszközregisztráció nélküli MAM támogatása|X|X|
 |Alkalmazás adatainak teljes törlése|X|X|
-|Munkahelyi és iskolai adatok szelektív törlése több Identitásos helyzetekben <br><br>**Megjegyzés:** iOS esetén a felügyeleti profil törlésekor az alkalmazást is törli.|X||
+|Munkahelyi és iskolai adatok szelektív törlése több Identitásos helyzetekben <br><br>**Megjegyzés:** IOS/iPadOS esetén a felügyeleti profil eltávolításakor az alkalmazás is törlődik.|X||
 |A „Mentés másként” művelet letiltása|X||
 |Célként megadott alkalmazás konfigurációja (vagy az alkalmazás konfigurációja a "MAM Channel" használatával)|X|X|
 |Többszörös identitás támogatása|X||
@@ -117,7 +117,7 @@ Ez a táblázat felsorolja azokat a beállításokat, amelyek engedélyezve vann
 |Minimális iOS Intune SDK-verzió megkövetelése (csak iOS)|X|X|
 |Biztonság-eszköz igazolása (csak Android esetén)|X|X|
 |Veszélyforrások vizsgálata az alkalmazásokban (csak Android esetén)|X|X|
-|A maxmimum Mobile Threat Defense szállítói eszköz kockázati szintjének megkövetelése|X||
+|Maximális mobil veszélyforrások elleni védelem szállítói eszköz kockázati szintjének megkövetelése|X||
 |Alkalmazás-értesítési tartalom konfigurálása a szervezeti fiókokhoz|X|X|
 |Jóváhagyott billentyűzetek használatának megkövetelése (csak Android esetén)|X|X|
 |Alkalmazás-védelmi házirend megkövetelése (feltételes hozzáférés)|X||

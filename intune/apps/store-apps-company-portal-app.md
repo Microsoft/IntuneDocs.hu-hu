@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/06/2019
+ms.date: 02/21/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,21 +18,21 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 061644a1c83b02902a6bbdaf3cfbd04815d32ea3
-ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
+ms.openlocfilehash: 9c2083d6f259b62b2856e08fec5ebcb696cbc0df
+ms.sourcegitcommit: 47c9af81c385c7e893fe5a85eb79cf08e69e6831
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76755034"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77576443"
 ---
-# <a name="manually-add-the-windows-10-company-portal-app-by-using-microsoft-intune"></a>A Windows 10-es Céges portál alkalmazás manuális hozzáadása a Microsoft Intune-nal
+# <a name="add-the-windows-10-company-portal-app-by-using-microsoft-intune"></a>Adja hozzá a Windows 10 Céges portál alkalmazást a Microsoft Intune használatával
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-A felhasználók maguk telepíthetik a Microsoft Store-ból a Céges portál alkalmazást eszközkezelés és alkalmazástelepítés céljából. Ha a cég megköveteli a felhasználókhoz való hozzárendelést, a Windows 10-es Céges portál alkalmazás hozzárendelése manuálisan is elvégezhető közvetlenül az Intune-ból. Erre akkor is van lehetőség, ha még nem integrálta az Intune-t a Microsoft Store Vállalatoknak szolgáltatással.
+A felhasználók maguk telepíthetik a Microsoft Store-ból a Céges portál alkalmazást eszközkezelés és alkalmazástelepítés céljából. Ha az üzleti igények megkövetelik a Céges portál alkalmazás hozzárendelését, akkor a Windows 10 Céges portál alkalmazást közvetlenül az Intune-ból rendelheti hozzá. Erre akkor is van lehetőség, ha még nem integrálta az Intune-t a Microsoft Store Vállalatoknak szolgáltatással.
 
- > [!NOTE]
- > A jelen cikkben ismertetett lehetőség a frissítések manuális hozzárendelését követeli meg minden egyes alkalommal, amikor egy alkalmazás új frissítése jelenik meg.
+ > [!IMPORTANT]
+ > Ha letölti a Céges portál alkalmazást, az ebben a cikkben ismertetett beállításhoz szükség van a manuális frissítések hozzárendelésére minden alkalommal, amikor egy alkalmazás frissítését kibocsátják. A Windows 10-es Autopilot-eszközökhöz készült Céges portál alkalmazás telepítéséhez lásd: a [Windows 10 céges portál app Autopilot-eszközök hozzáadása](~/apps/store-apps-company-portal-autopilot.md).
 
 ## <a name="configure-settings-to-show-offline-apps"></a>A beállítások konfigurálása offline alkalmazások megjelenítéséhez
 1. Jelentkezzen be a [Microsoft Store Vállalatoknak](https://www.microsoft.com/business-store) szolgáltatásba a rendszergazdai fiókjával.
@@ -43,7 +43,7 @@ A felhasználók maguk telepíthetik a Microsoft Store-ból a Céges portál alk
 
 ## <a name="download-the-offline-company-portal-app"></a>Az Intune Céges portál alkalmazás letöltése
 1. Keresse meg és válassza ki a **Céges portál** alkalmazást.
-2. Állítsa a **licenc típusát** **offline-ra**.
+2. Állítsa a **licenc típusát****offline-ra**.
 3. Válassza **Az alkalmazás letöltése** lehetőséget az offline Céges portál letöltéséhez és a leltárba való felvételéhez.
 4. Válassza a **Felügyelet** lehetőséget a **Céges portál** alkalmazáslapján.
 5. A **Platform** listából válassza ki a **Windows 10 minden eszközre** lehetőséget, majd válassza ki a megfelelő értékeket a **Minimális verzió**, az **Architektúra** és az **Alkalmazás metaadatainak letöltése** elemekhez. 
@@ -95,7 +95,7 @@ Itt ismertetjük az alkalmazás aláírásának és hozzárendelésének ezt a m
 3. A Windows 10-es Céges portál alkalmazás aláírásához futtassa a parancsfájlt az annak fejlécében található bemeneti paraméterekkel, amint az az alábbi táblázatban látható.  
     A függőségeket nem kell hozzáadni a parancsprogramhoz. Csak akkor van rájuk szükség, amikor éppen folyamatban van az alkalmazás feltöltése az Intune felügyeleti konzolra.
 
-| Paraméter |  Description  |
+| Paraméter |  Leírás  |
 |---|---|
 | InputWin10AppxBundle  |  Az appxbundle forrásfájl elérési útja. |
 | OutputWin10AppxBundle | Az aláírt appxbundle fájl kimeneti útja. 

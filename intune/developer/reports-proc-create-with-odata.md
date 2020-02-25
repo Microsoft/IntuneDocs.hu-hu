@@ -18,16 +18,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 18815fb671e853bc0463fed750d40b80ccb285fb
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 7fbbffb187fc9e9537bf647bc33e3d98879369c3
+ms.sourcegitcommit: 47c9af81c385c7e893fe5a85eb79cf08e69e6831
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74784272"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77576050"
 ---
 # <a name="create-an-intune-report-from-the-odata-feed-with-power-bi"></a>Intune-jelentés létrehozása az OData-adatcsatornából a Power BI-jal
 
-Ez a cikk azt ismerteti, hogyan hozhat létre fatérkép vizualizációt az Intune-adatairól, ha a felhasználók egy interaktív szűrőt Power BI Desktopanak. A pénzügyi vezető például tudni szeretné, hogyan hasonlítják össze az eszközök összesített eloszlását a vállalati tulajdonú eszközök és a személyes eszközök között. A fatérkép-diagram megmutatja az eszköztípusok teljes számát. Látható benne, hogy hány iOS-es, hány androidos és hány windowsos eszköz van vállalati, és hány személyes tulajdonban.
+Ez a cikk azt ismerteti, hogyan hozhat létre fatérkép vizualizációt az Intune-adatairól, ha a felhasználók egy interaktív szűrőt Power BI Desktopanak. A pénzügyi vezető például tudni szeretné, hogyan hasonlítják össze az eszközök összesített eloszlását a vállalati tulajdonú eszközök és a személyes eszközök között. A fatérkép-diagram megmutatja az eszköztípusok teljes számát. Megtekintheti az iOS-/iPadOS-, Android-és Windows-eszközök számát, amelyek vállalati vagy személyes tulajdonban vannak.
 
 ## <a name="overview-of-creating-the-chart"></a>A diagram létrehozásának áttekintése
 
@@ -69,7 +69,7 @@ Telepítse a Power BI Desktop legújabb verzióját. Ezt a [PowerBI.microsoft.co
 
     ![Szervezeti fiók hitelesítő adatai](./media/reports-proc-create-with-odata/reports-create-02-org-account.png)
 
-10. Válassza a **Csatlakozás** lehetőséget. Ekkor megnyílik a Navigátor, és megjelenik rajta az Intune-adattárházban található táblák listája.
+10. Válassza a **Kapcsolódás** lehetőséget. Ekkor megnyílik a Navigátor, és megjelenik rajta az Intune-adattárházban található táblák listája.
 
     ![Képernyőfelvétel a Navigátorról – az adatraktár tábláinak listája](./media/reports-proc-create-with-odata/reports-create-02-loadentities.png)
 

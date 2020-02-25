@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/21/2019
+ms.date: 02/24/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ ms.reviewer: shpate
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f468518130b1a3a98fd31fb235679ece574c3029
-ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
+ms.openlocfilehash: 43e104d9f32f6b6204ffc3bd461bb06764543e3c
+ms.sourcegitcommit: 5881979c45fc973cba382413eaa193d369b8dcf6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77514285"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77569268"
 ---
 # <a name="use-security-baselines-to-configure-windows-10-devices-in-intune"></a>Biztonsági alapkonfigurációk használata a Windows 10-es eszközök Intune-ban való konfigurálásához
 
@@ -75,7 +75,7 @@ Az Intune-nal az alábbi biztonsági alapkonfigurációk használhatók. A hivat
   - [Előzetes verzió: a MDM biztonsági alapterve október 2018](security-baseline-settings-mdm-all.md?pivots=mdm-preview)
 
 - **Microsoft DEFENDER ATP** alapkonfiguráció
-   *(az alapkonfiguráció használatához a környezetnek meg kell felelnie a [Microsoft Defender komplex veszélyforrások elleni védelem](advanced-threat-protection.md#prerequisites)használatára vonatkozó előfeltételeknek)* .
+   *(az alapkonfiguráció használatához a környezetnek meg kell felelnie a [Microsoft Defender komplex veszélyforrások elleni védelem](advanced-threat-protection.md#prerequisites)használatára vonatkozó előfeltételeknek)*.
   - [A Microsoft Defender ATP alapterve](security-baseline-settings-defender-atp.md)
 
   > [!NOTE]
@@ -142,7 +142,7 @@ A biztonsági alapkonfigurációkkal végzett munka gyakori feladatai a követke
 
    ![Az alapterv áttekintése](./media/security-baselines/review.png)
 
-9. Miután létrehozta a profilt, szerkessze az **eszköz biztonsági** > **biztonsági**alapkonfigurációi területen, válassza ki a konfigurált alaptípust, majd válassza a **profilok**lehetőséget. Válassza ki a profilt az elérhető profilok listájából, majd válassza a **Tulajdonságok**lehetőséget. Az összes elérhető konfigurációs lapon módosíthatja a beállításokat, majd a módosítások elvégzéséhez válassza a **felülvizsgálat + mentés** lehetőséget.
+9. Miután létrehozta a profilt, szerkessze a **végpont biztonsági** > **biztonsági alaptervek**területen, válassza ki a konfigurált alaptípust, majd válassza a **profilok**lehetőséget. Válassza ki a profilt az elérhető profilok listájából, majd válassza a **Tulajdonságok**lehetőséget. Az összes elérhető konfigurációs lapon módosíthatja a beállításokat, majd a módosítások elvégzéséhez válassza a **felülvizsgálat + mentés** lehetőséget.
 
 ### <a name="change-the-baseline-version-for-a-profile"></a>Profil alapverziójának módosítása
 

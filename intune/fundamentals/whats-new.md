@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 02/07/2020
+ms.date: 02/24/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c130ced8359311751c5ad68ac9789b11329595e0
-ms.sourcegitcommit: 67f926ba83f8a955e16b741a610ad84d6044f8f9
+ms.openlocfilehash: c485d3c0cfc707324dd6be681b6341650acb8750
+ms.sourcegitcommit: 47c9af81c385c7e893fe5a85eb79cf08e69e6831
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77529336"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77576457"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -32,10 +32,10 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 > [!Note]
 > A [havi frissítés](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Microsoft-Intune-Service-Updates/ba-p/358728) akár három napot is igénybe vehet, és a következő sorrendben fog megjelenni:
 >
-> - 1\. nap: Ázsia és a Csendes-óceáni térség (APAC)
-> - 2\. nap: Európa, Közel-Kelet, Afrika (EMEA)
-> - 3\. nap: Észak-Amerika
-> - 4\. nap +: az Intune a Government számára
+> - 1. nap: Ázsia és a Csendes-óceáni térség (APAC)
+> - 2. nap: Európa, Közel-Kelet, Afrika (EMEA)
+> - 3. nap: Észak-Amerika
+> - 4. nap +: az Intune a Government számára
 >
 > Egyes funkciók bevezetése több hetet igénybe vehet, így előfordulhat, hogy nem elérhetők a felhasználók számára az első héten.
 >
@@ -53,6 +53,105 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 ### Monitor and troubleshoot
 ### Role-based access control
 -->  
+
+<!-- ########################## -->
+## <a name="week-of-february-24-2020"></a>2020. február 24-i hét
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name="app-management"></a>Alkalmazáskezelés
+
+#### <a name="macos-company-portal-user-experience-improvements---5568987---"></a>a macOS Céges portál felhasználói élményének fejlesztése<!-- 5568987 -->
+Javítottuk a macOS-eszközök regisztrálási élményét és a Mac Céges portál alkalmazást. A következőt fogja látni:
+- Jobb Microsoft automatikus **frissítési** élmény a regisztráció során, amely biztosítja, hogy a felhasználók a céges portál legújabb verziójával rendelkezzenek.
+- Továbbfejlesztett megfelelőség-ellenőrzési lépés a regisztráció során.
+- A másolt incidensek azonosítóinak támogatása, így a felhasználók gyorsabban küldhetnek hibákat az eszközeiről a céges támogatási csapatnak.
+
+A regisztrációval és a Mac Céges portál alkalmazással kapcsolatos további információkért lásd: [MacOS-eszköz regisztrálása a céges portál alkalmazás használatával](/intune-user-help/enroll-your-device-in-intune-macos-cp). 
+
+<!-- ########################## -->
+## <a name="week-of-february-17-2020-2002-service-release"></a>Február 17-i hét, 2020 (2002-es kiadás)
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name="app-management"></a>Alkalmazáskezelés
+
+#### <a name="microsoft-defender-advanced-threat-protection-atp-app-for-macos---5424618---"></a>Microsoft Defender Advanced Threat Protection (ATP) alkalmazás macOS rendszerhez<!-- 5424618 -->
+Az Intune segítségével egyszerűen üzembe helyezheti a macOS rendszerhez készült Microsoft Defender Advanced Threat Protection (ATP) alkalmazást a felügyelt Mac-eszközökön. További információ: a [Microsoft DEFENDER ATP hozzáadása MacOS-eszközökhöz Microsoft Intune](~/apps/apps-advanced-threat-protection-macos.md) és a [Microsoft Defender komplex veszélyforrások elleni védelem Mac rendszerhez](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-atp-mac).  
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name="device-configuration"></a>Eszközök konfigurálása
+
+#### <a name="enable-network-access-control-nac-with-cisco-anyconnect-vpn-on-ios-devices---4860111----"></a>A hálózati hozzáférés-vezérlés (NAC) engedélyezése a Cisco AnyConnect VPN-sel iOS-eszközökön<!-- 4860111  -->
+IOS-eszközökön létrehozhat egy VPN-profilt, és különböző kapcsolattípust használhat, beleértve a Cisco AnyConnect-t (az**eszköz konfigurációjának** > **profiljait** , > **profil létrehozása** > **iOS** for platform > **VPN** a profil típusa > **Cisco AnyConnect** for kapcsolattípus). 
+
+Engedélyezheti a hálózati hozzáférés-vezérlést (NAC) a Cisco AnyConnect használatával. A szolgáltatás használata:
+
+1. A [Cisco Identity Services Engine rendszergazdai útmutatójában](https://www.cisco.com/c/en/us/td/docs/security/ise/2-1/admin_guide/b_ise_admin_guide_21/b_ise_admin_guide_20_chapter_01000.html)a Cisco Identity Services Engine (ISE) az Azure-ban való konfigurálásához kövesse az **Microsoft Intune konfigurálása Mdm-kiszolgálóként** című témakör lépéseit.
+2. Az Intune-eszköz konfigurációs profiljában válassza a **hálózati Access Control engedélyezése (NAC)** beállítást.
+
+Az összes rendelkezésre álló VPN-beállítás megjelenítéséhez nyissa [meg a VPN-beállítások konfigurálása iOS-eszközökön](../configuration/vpn-settings-ios.md)című témakört.
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name="device-enrollment"></a>Eszközök beléptetése
+
+#### <a name="serial-number-on-the-apple-mdm-push-certificate-page--5947765----"></a>Sorozatszám az Apple MDM push-tanúsítvány oldalán<!--5947765  -->
+Az Apple MDM push-tanúsítvány lapja most megjeleníti a sorozatszámot. A sorozatszám szükséges ahhoz, hogy újra hozzáférhessen az Apple MDM push-tanúsítványhoz, ha a tanúsítvány létrehozásához használt Apple ID azonosítóhoz való hozzáférés elvész. A sorozatszám megjelenítéséhez nyissa meg az **eszközök** > **iOS** > **iOS-regisztráció** > az **Apple Mdm push-tanúsítvány**lehetőséget.
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name="device-management"></a>Eszközkezelés
+
+#### <a name="new-update-schedule-options-for-pushing-os-updates-to-enrolled-iosipados-devices--5879689----"></a>Új frissítési ütemterv beállítások az operációs rendszer frissítéseinek beléptetéséhez a beléptetett iOS/iPadOS-eszközökön<!--5879689  -->
+Az iOS/iPadOS operációs rendszer frissítéseinek ütemezésekor a következő lehetőségek közül választhat. Ez az Apple Business Manager vagy az Apple School Manager regisztrációs típusait használó eszközökre vonatkozik.
+- Frissítés a következő bejelentkezéskor
+- Frissítés az ütemezett idő alatt
+- Frissítés az ütemezett időkereten kívül
+
+Az utóbbi két lehetőség esetében több időablakot is létrehozhat.
+
+Az új beállítások megjelenítéséhez nyissa meg a MEM >- **eszközök** > **iOS** **- > frissítési szabályzatok iOS/iPadOS > a** **profil létrehozása**lehetőséget.
+
+#### <a name="choose-which-iosipados-updates-to-push-to-enrolled-devices--5879689----"></a>Válassza ki, hogy mely iOS-/iPadOS-frissítéseket szeretné leküldeni a regisztrált eszközökre<!--5879689  -->
+Kiválaszthat egy adott iOS/iPadOS-frissítést (kivéve a legújabb frissítést) az Apple Business Manager vagy az Apple School Manager használatával beléptetett eszközökre való leküldéshez. Az ilyen eszközöknek rendelkeznie kell egy olyan eszköz-konfigurációs házirenddel, amely bizonyos számú nap elteltével késlelteti a szoftverfrissítés láthatóságát. Ennek a funkciónak a megtekintéséhez nyissa meg a MEM >- **eszközök** ** > ios** -es > **frissítési szabályzatok iOS/iPadOS > a** **profil létrehozása**lehetőséget.
+
+### <a name="all-devices-list-improved-search-sort-and-filter--6179023--"></a>Minden eszköz lista Továbbfejlesztett keresés, rendezés és szűrés<!--6179023-->
+A minden eszköz lista javult a jobb teljesítmény, a keresés, a rendezés és a szűrés érdekében.
+
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name="device-security"></a>Eszköz biztonsága
+
+#### <a name="improved-intune-reporting-experience---3791418-----"></a>Továbbfejlesztett Intune jelentéskészítési élmény<!-- 3791418   -->
+Az Intune mostantól továbbfejlesztett jelentéskészítési lehetőségeket kínál, beleértve az új jelentési típusokat, a jobb jelentési szervezetet, a célzottabb nézeteket, a jobb jelentési funkciókat, valamint a több konzisztens és kellő időben megjelenő adatát. A jelentéskészítési élmény a nyilvános előzetes verzióról a GA-ra (általánosan elérhető) vált. Emellett a GA-kiadás a honosítási támogatást, a hibajavításokat, a tervezési javításokat és az eszközök megfelelőségi adatainak a [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)lévő csempén való összegzését is biztosítja. 
+
+Az új Jelentéstípusok a következőkre összpontosítanak:
+- **Működés** – a negatív állapotú friss rekordokat biztosít. 
+- **Szervezet** – a teljes állapot szélesebb körű összegzését biztosítja.
+- **Előzmények** – mintákat és trendeket biztosít egy adott időszakra vonatkozóan.
+- **Specialist** – lehetővé teszi, hogy a nyers adatait használja saját egyéni jelentéseinek létrehozásához.
+
+Az új jelentések első halmaza az eszköz megfelelőségére koncentrál. További információ: [Blog Microsoft Intune jelentési keretrendszer](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/New-Reporting-Framework-Coming-to-Intune/ba-p/1009553) és [Intune-jelentések](~/fundamentals/reports.md).
+
+#### <a name="consolidated-the-location-of-security-baselines-in-the-ui---6177074-----"></a>A biztonsági alapkonfigurációk helyének konszolidálása a felhasználói felületen<!-- 6177074   -->
+A biztonsági alapkonfigurációk [megkereséséhez](../protect/security-baselines.md) szükséges elérési utakat összevontuk a Microsoft Endpoint Manager felügyeleti központban a *biztonsági* ALAPKONFIGURÁCIÓk több felhasználói felületi helyről való eltávolításával. A biztonsági alapkonfigurációk megkereséséhez használja a következő elérési utat: **Endpoint security** > **biztonsági**alapkonfigurációk.
+
+#### <a name="expanded-support-for-imported-pkcs-certificates---6044197-wnready---"></a>Az importált PKCS-tanúsítványok kibővített támogatása<!-- 6044197 WNReady -->
+Bővítettük az [importált PKCS-tanúsítványok](../protect/certificates-imported-pfx-configure.md#supported-platforms) használatának támogatását az *Android Enterprise teljes körűen felügyelt eszközök*támogatásához. A PFX-tanúsítványok importálása általában az S/MIME titkosítási forgatókönyvek esetében használatos, ahol minden eszközön szükség van egy felhasználó titkosítási tanúsítványára, hogy az e-mail visszafejtése megtörténjen.
+
+A PFX-tanúsítványok importálása a következő platformokon támogatott:
+- Android – eszköz rendszergazdája
+- Android Enterprise – teljes körűen felügyelt
+- Android Enterprise-Work profil
+- iOS
+- Mac
+- Windows 10
+
+#### <a name="view-the-endpoint-security-configuration-for-devices---6206460----"></a>Az eszközök Endpoint Security-konfigurációjának megtekintése<!-- 6206460  -->
+Frissítettük a lehetőség nevét a Microsoft Endpoint Manager felügyeleti központban, amely az [adott eszközre érvényes Endpoint Security-konfigurációk](../protect/security-baselines-monitor.md#view-endpoint-security-configurations-per-device)megtekintését teszi elérhetővé. A rendszer átnevezi a **végpontok biztonsági konfigurációját** , mert a biztonsági alapterveken kívül létrehozott további házirendeket is megjeleníti. Korábban a beállítás neve *biztonsági*alapkonfiguráció. 
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name="role-based-access-control"></a>Szerepköralapú hozzáférés-vezérlés
+
+#### <a name="intune-roles-user-interface-changes-coming--5801612-----"></a>Az Intune-szerepkörök felhasználói felületének módosításai elérkeznek<!--5801612   -->
+A [Microsoft Endpoint Manager felügyeleti központ](https://go.microsoft.com/fwlink/?linkid=2109431) felhasználói felületének > **bérlői adminisztrációs** > **szerepkörei** sokkal jobb és intuitív kialakítást biztosítanak. Ez a felhasználói élmény ugyanazokat a beállításokat és adatokat tartalmazza, amelyeket most használ, de az új felület egy varázsló-szerű folyamatot alkalmaz.
 
 <!-- ########################## -->
 ## <a name="week-of-february-17-2020"></a>2020. február 17-i hét
@@ -147,7 +246,6 @@ A következő információk mostantól az eszközök **Áttekintés** lapján é
 - Tárolási kapacitás (az eszközön található fizikai tárterület mennyisége) 
 - CPU-architektúra
 
-
 #### <a name="ios-bypass-activation-lock-remote-action-renamed-to-disable-activation-lock---5904591----"></a>iOS-megkerülés Aktiválási zár távoli művelet átnevezve Aktiválási zár letiltására <!--5904591  -->
 A távoli művelet **megkerülése aktiválási zár** át lett nevezve a **aktiválási zár letiltására**. További információ: iOS- [aktiválási zár letiltása az Intune](../remote-actions/device-activation-lock-bypass.md)-nal.
 
@@ -155,7 +253,6 @@ A távoli művelet **megkerülése aktiválási zár** át lett nevezve a **akti
 Az Intune mostantól támogatja az Autopilot regisztrált eszközök célzását a [Windows 10-es funkcióinak frissítésével](../protect/windows-update-for-business-configure.md#windows-10-feature-updates).
 
 A Windows 10 szolgáltatás frissítési házirendjei nem alkalmazhatók az Autopilot-ből a Box Experience (OOBE) alkalmazásban, és csak az első Windows Update vizsgálatra érvényesek, miután egy eszköz befejezte az üzembe helyezést (ez általában egy nap).
-
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
 ### <a name="monitor-and-troubleshoot"></a>Monitorozás és hibaelhárítás
@@ -305,13 +402,12 @@ Továbbfejlesztettük a felhasználói élményt egy olyan megosztott eszközön
 - [Intune-eszközök megfelelőségének áttekintése](../protect/device-compliance-get-started.md)
 
 #### <a name="use-pkcs-certificate-profiles-to-provision-devices-with-certificates---2317124-2317130-2317139-2340517-2340528-2340529----"></a>Tanúsítványokat tartalmazó eszközök kiépítése PKCS-tanúsítványok használatával<!-- 2317124, 2317130, 2317139, 2340517, 2340528, 2340529  -->
-Mostantól PKCS-alapú tanúsítvány-profilok használatával tanúsítványokat állíthat ki az Android for Work, iOS és Windows rendszerű *eszközökhöz* , ha a Wi-Fi-hez és VPN-hez hasonló profilokhoz van társítva. Korábban ez a három platform csak a felhasználó-alapú tanúsítványokat támogatta, az eszköz-alapú támogatás pedig macOS-re korlátozódik.
+Mostantól PKCS-alapú tanúsítvány-profilok használatával tanúsítványokat állíthat ki az Android for Work, iOS/iPadOS és Windows rendszerű *eszközökhöz* , ha a Wi-Fi-hez és a VPN-hez hasonló profilokhoz van társítva. Korábban ez a három platform csak a felhasználó-alapú tanúsítványokat támogatta, az eszköz-alapú támogatás pedig macOS-re korlátozódik.
 
 > [!NOTE]
 > A PKCS-tanúsítványok profiljai nem támogatottak a Wi-Fi profilokkal. Ehelyett használjon SCEP-tanúsítvány-profilokat, ha [EAP-típust](../configuration/wi-fi-settings-windows.md#enterprise-profile)használ.
 
 Ha eszköz alapú tanúsítványt szeretne használni a támogatott platformok [PKCS-tanúsítványának létrehozása](../protect/certficates-pfx-configure.md#create-a-pkcs-certificate-profile) közben, válassza a **Beállítások**lehetőséget. Ekkor megjelenik a **tanúsítvány típusának**beállítása, amely támogatja az eszköz vagy a felhasználó beállításait.
-
 
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
@@ -323,7 +419,6 @@ Az új központosított naplózási szolgáltatás mostantól egyetlen oldalra g
 #### <a name="scope-tag-information-included-in-audit-log-activity-details--5763534---"></a>A naplózási tevékenység részleteiben szereplő hatóköri címke adatai<!--5763534 -->
 A naplózási tevékenység részletei mostantól tartalmazzák a hatókör címkével kapcsolatos információkat (a hatókör címkéit támogató Intune-objektumok esetében). További információ a naplókról: [események nyomon követésére és figyelésére szolgáló naplók használata](monitor-audit-logs.md).
 
-
 <!-- ########################## -->
 ## <a name="week-of-december-2-2019"></a>2019. december 2. hét
 
@@ -334,7 +429,6 @@ A frissítési garanciával rendelkező ügyfelek a Windows 10 rendszerű szám�
 - A más platformokon lévő eszközök továbbra is teljes Intune-licenceket igényelnek.
 
 További információ: [licencelési feltételek](https://www.microsoft.com/en-us/Licensing/product-licensing/products).
-
 
 <!-- ########################## -->
 ## <a name="week-of-november-18-2019-1911-service-release"></a>November 18. és 2019. hét (1911 szolgáltatás kiadása)
@@ -462,7 +556,6 @@ Az Intune mostantól támogatja a SCEP telepítését az Android Enterprise dedi
 #### <a name="intune-audit-logs-for-business-to-business-collaboration--5670211---"></a>Intune-naplók a vállalatok közötti együttműködéshez<!--5670211 -->
 A vállalatok közötti (B2B) együttműködés lehetővé teszi, hogy biztonságosan megossza a vállalat alkalmazásait és szolgáltatásait a vendég felhasználókkal bármely más szervezettől, miközben a saját vállalati adatok felett tartja a felügyeletet. Az Intune mostantól támogatja a B2B vendég felhasználói számára a naplókat. Ha például a vendég felhasználó változtatásokat hajt végre, az Intune a naplók segítségével rögzítheti ezeket az eseményeket. További információ: [Mi a vendég felhasználói hozzáférés a Azure Active Directory B2B-ben?](https://docs.microsoft.com/azure/active-directory/b2b/what-is-b2b)
 
-
 <!-- ########################## -->
 ## <a name="week-of-november-11-2019"></a>November 11-i hét, 2019  
 
@@ -479,7 +572,6 @@ A macOS-regisztrálási élmény Céges portál egyszerűbb regisztrációs foly
 
 #### <a name="web-apps-launched-from-the-windows-company-portal-app---5030972---"></a>A Windows Céges portál alkalmazásból indított webalkalmazások<!-- 5030972 -->
 A végfelhasználók mostantól közvetlenül a Windows Céges portál alkalmazásból is elindíthatják a webalkalmazásokat. A végfelhasználók kiválaszthatják a webalkalmazást, majd kiválaszthatják a **Megnyitás böngészőben**lehetőséget. A közzétett webes URL-cím közvetlenül egy böngészőben nyílik meg. Ez a funkció a következő héten lesz bevezetve. A Web Apps szolgáltatással kapcsolatos további információkért lásd: [webalkalmazások hozzáadása Microsoft Intunehoz](~/apps/web-app.md).  
-
 
 #### <a name="new-assignment-type-column-in-company-portal-for-windows-10----5459950----"></a>Új hozzárendelési típus oszlop a Windows 10-es Céges portál <!-- 5459950  -->
 A Céges portál > **telepített alkalmazások** > **hozzárendelés típusa** oszlop átnevezve lett a **szervezet**számára.  Az oszlop alatt a felhasználók **Igen** vagy nem értékkel látják, hogy az alkalmazás a szervezet által kötelező vagy **nem** kötelezően elérhetővé válik. Ezek a módosítások azért történtek, mert az eszköz felhasználói zavarosak voltak az elérhető alkalmazások fogalmával kapcsolatban. A felhasználók további információkat találhatnak az alkalmazások telepítéséről Céges portálről az [alkalmazás telepítése és megosztása eszközön](/intune-user-help/install-apps-cpapp-windows). A Céges portál alkalmazásnak a felhasználók számára történő konfigurálásával kapcsolatos további információkért lásd: [a Microsoft Intune céges portál alkalmazás konfigurálása](~/apps/company-portal-app.md).  
@@ -500,3 +592,5 @@ Az előző hónapok esetében tekintse meg az Újdonságok [archívumát](whats-
 ## <a name="notices"></a>Értesítések
 
 [!INCLUDE [Intune notices](../includes/intune-notices.md)]
+
+

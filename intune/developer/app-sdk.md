@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fcb3a9f817b0e765fee79342bcd212f33509209a
-ms.sourcegitcommit: 8d7406b75ef0d75cc2ed03b1a5e5f74ff10b98c0
+ms.openlocfilehash: 8d47d91388fffd0e5716d20be640c4afbad2862e
+ms.sourcegitcommit: 47c9af81c385c7e893fe5a85eb79cf08e69e6831
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75653546"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77576318"
 ---
 # <a name="microsoft-intune-app-sdk-overview"></a>A Microsoft Intune App SDK áttekintése
 Az iOS és az Android rendszerhez elérhető Intune app SDK lehetővé teszi, hogy az alkalmazás támogassa az Intune [app Protection-szabályzatokat](../apps/app-protection-policy.md). Ha az alkalmazáson alkalmazás-védelmi házirendek vannak alkalmazva, az Intune felügyelhető, és az Intune felügyelt alkalmazásként ismeri fel. Az SDK arra törekszik, hogy csökkentse az alkalmazás fejlesztője által igényelt kód módosításának mértékét. Az SDK legtöbb funkcióját alkalmazása működésének módosítása nélkül is engedélyezheti. A végfelhasználói és informatikai rendszergazdák számára az SDK API-jai segítségével testre szabhatja az alkalmazás viselkedését az alkalmazás részvételét igénylő funkciók támogatásához.
@@ -56,7 +56,7 @@ A rendszergazdák kötelezhetik a végfelhasználót PIN-kód megadására az al
 A rendszergazdák kötelezhetik a felhasználókat arra, hogy munkahelyi vagy iskolai fiókkal jelentkezzenek be az alkalmazás eléréséhez. Az Intune App SDK az Azure Active Directory segítségével teszi lehetővé az egyszeri bejelentkezést, ami azt jelenti, hogy a hitelesítő adatokat elég egyszer megadni, és a későbbi bejelentkezések során a rendszer ismét azokat használja. A rendszer az Azure Active Directoryval összevont identitáskezelési megoldások hitelesítését is támogatja.
 
 ### <a name="check-device-health-and-compliance"></a>Eszközök állapotának és megfelelőségének ellenőrzése
-A rendszergazdák ellenőrizhetik az eszközök állapotát és az Intune-szabályzatoknak való megfelelőségét, mielőtt a végfelhasználók hozzáférhetnének az alkalmazáshoz. Az iOS rendszeren a szabályzat ellenőrzi, hogy az eszköz jailbreakelt-e. Az Android rendszeren a szabályzat ellenőrzi, hogy az eszköz rootolt-e.
+A rendszergazdák ellenőrizhetik az eszközök állapotát és az Intune-szabályzatoknak való megfelelőségét, mielőtt a végfelhasználók hozzáférhetnének az alkalmazáshoz. IOS/iPadOS esetén ez a szabályzat ellenőrzi, hogy az eszközt feltörték-e. Az Android rendszeren a szabályzat ellenőrzi, hogy az eszköz rootolt-e.
 
 ### <a name="support-multi-identity"></a>Többszörös identitás támogatása
 A többszörös identitás támogatása egy olyan szolgáltatása az SDK-nak, amely lehetővé teszi a szabályzatok által felügyelt (vállalati) és a felügyelet nélküli (személyes) fiókok ugyanazon alkalmazásban való egyidejű használatát.

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3f67a08ef3cbfae4a801333e5f8ffb5469e723ed
-ms.sourcegitcommit: ecaff388038fb800f2e646f8efcf8f3b1e2fd1b1
+ms.openlocfilehash: 65a13c2690f08c2244f31854556a88b6301c6ac5
+ms.sourcegitcommit: 47c9af81c385c7e893fe5a85eb79cf08e69e6831
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77438055"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77576022"
 ---
 # <a name="disable-activation-lock-on-supervised-iosipados-devices-with-intune"></a>A felügyelt iOS-/iPadOS-eszközök Aktiválási zár letiltása az Intune-nal
 
@@ -63,7 +63,7 @@ Az Intune az iOS/iPadOS 8,0-es vagy újabb verzióját futtató felügyelt eszk�
 Az eszközök Aktiválási zár letiltásához a következő utasításokat követve engedélyeznie kell azt:
 
 1. Az [eszköz korlátozási beállításainak konfigurálása](/intune-azure/configure-devices/how-to-configure-device-restrictions)című témakörben leírtak alapján konfigurálhatja az iOS/iPadOS Intune-eszköz korlátozási profilját.
-2. Az [Általános](../configuration/device-restrictions-ios.md) beállítások szakaszában található **iOS-re vonatkozó eszközkorlátozási beállítások** között engedélyezze az **Aktiválási zár** lehetőséget.
+2. Az [iOS/iPadOS eszköz korlátozási beállításainál](../configuration/device-restrictions-ios.md)az **általános** beállítások területen engedélyezze a **aktiválási zár**lehetőséget.
 3. Mentse a profilt, majd [rendelje](../configuration/device-profile-assign.md) hozzá azokhoz az eszközökhöz, amelyeken a letiltási aktiválási zár szeretné kezelni.
 
 

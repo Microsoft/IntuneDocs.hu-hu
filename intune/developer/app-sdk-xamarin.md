@@ -17,22 +17,22 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 10f3d4c54d9a8fcb797ae3359b1a833ac9080548
-ms.sourcegitcommit: c46b0c2d4507be6a2786a4ea06009b2d5aafef85
+ms.openlocfilehash: eaa34611d4ac2526ac28fb554b02133f0e9b87f3
+ms.sourcegitcommit: 47c9af81c385c7e893fe5a85eb79cf08e69e6831
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76912699"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77575895"
 ---
 # <a name="microsoft-intune-app-sdk-xamarin-bindings"></a>Microsoft Intune App SDK Xamarin Bindings
 
 > [!NOTE]
 > Először célszerű elolvasnia az [Intune App SDK használatának első lépései](app-sdk-get-started.md) című cikket, amely bemutatja az integráció előkészítését a támogatott platformokon.
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Házirend
 Az [Intune App SDK Xamarin Bindings](https://github.com/msintuneappsdk/intune-app-sdk-xamarin) lehetővé teszi az [Intune alkalmazásvédelmi szabályzatok](../apps/app-protection-policy.md) használatát a Xamarinnal készített iOS- és Android-alkalmazásokban. A kötések lehetővé teszik a fejlesztők számára, hogy Intune alkalmazásvédelmi funkciókat építsenek be a Xamarin-alapú alkalmazásaikba.
 
-A Microsoft Intune App SDK Xamarin Bindings lehetővé teszi, hogy Intune alkalmazásvédelmi szabályzatokat (vagy más néven alkalmazás- vagy MAM-szabályzatokat) építsen be a Xamarinnal fejlesztett alkalmazásokba. MAM-kompatibilisnek az Intune App SDK-val integrált alkalmazásokat nevezzük. Mindez lehetővé teszi a rendszergazdáknak, hogy alkalmazásvédelmi szabályzatokat telepítsenek a mobilalkalmazásra vonatkozóan, ha az Intune aktívan felügyeli az alkalmazást.
+A Microsoft Intune App SDK Xamarin Bindings lehetővé teszi, hogy Intune alkalmazásvédelmi szabályzatokat (vagy más néven alkalmazás- vagy MAM-szabályzatokat) építsen be a Xamarinnal fejlesztett alkalmazásokba. A MAM-kompatibilis alkalmazás az, amelyik integrálva van az Intune App SDK-val. Mindez lehetővé teszi a rendszergazdáknak, hogy alkalmazásvédelmi szabályzatokat telepítsenek a mobilalkalmazásra vonatkozóan, ha az Intune aktívan felügyeli az alkalmazást.
 
 ## <a name="whats-supported"></a>Támogatott források és műveletek
 
@@ -54,7 +54,7 @@ Az Intune App SDK Xamarin Bindingsszal létrehozott Xamarin-alkalmazásokra most
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-A [licencfeltételek](https://github.com/msintuneappsdk/intune-app-sdk-xamarin/blob/master/Microsoft%20License%20Terms%20Intune%20App%20SDK%20Xamarin%20Component.pdf) áttekintése. Nyomtassa ki és őrizze meg a szerződés egy példányát. Az Intune App SDK Xamarin Bindings letöltésével és használatával elfogadja licencfeltételeket. Ha nem fogadja el, ne használja a szoftvert.
+A [licencfeltételek](https://github.com/msintuneappsdk/intune-app-sdk-xamarin/blob/master/Microsoft%20License%20Terms%20Intune%20App%20SDK%20Xamarin%20Component.pdf) áttekintése. Nyomtassa ki és őrizze meg a licencfeltételeket. Az Intune App SDK Xamarin Bindings letöltésével és használatával elfogadja licencfeltételeket. Amennyiben a feltételeket nem fogadja el, ne használja a szoftvert.
 
 Az Intune SDK a [hitelesítésre](https://azure.microsoft.com/documentation/articles/active-directory-authentication-scenarios/) és a feltételes indítási forgatókönyvekre támaszkodik [Active Directory-hitelesítési tárre (ADAL)](https://azure.microsoft.com/documentation/articles/active-directory-authentication-libraries/) , amelyeknek az alkalmazásoknak a [Azure Active Directoryval](https://azure.microsoft.com/documentation/articles/active-directory-whatis/)való konfigurálására van szükségük. 
 
@@ -108,7 +108,7 @@ További információ: [aláírt csomagok telepítése](https://docs.microsoft.c
 A MAM-funkciókat kiemelő Xamarin. az iOS-alkalmazások a [githubon](https://github.com/msintuneappsdk/sample-intune-xamarin-ios)érhetők el.
 
 > [!NOTE] 
-> iOS rendszerre nincs remapper. A Xamarin.Forms-alkalmazásokba való integrálásnak ugyanúgy kell történnie, mint általában a Xamarin.iOS-projektek esetén. 
+> Az iOS/iPadOS esetében nincs remapper. A Xamarin.Forms-alkalmazásokba való integrálásnak ugyanúgy kell történnie, mint általában a Xamarin.iOS-projektek esetén. 
 
 ## <a name="enabling-intune-app-protection-policies-in-your-android-mobile-app"></a>Az Intune alkalmazásvédelmi szabályzatainak engedélyezése Androidos mobilalkalmazásban
 1. Adja hozzá Xamarin.Android-projektjéhez a [Microsoft.Intune.MAM.Xamarin.Android NuGet-csomagot](https://www.nuget.org/packages/Microsoft.Intune.MAM.Xamarin.Android).
@@ -133,10 +133,10 @@ Ha ki szeretne zárni egy osztályt a MAM-ification a remapper használatával, 
 > [!NOTE]
 > A remapper jelenleg megakadályozza a hibakeresést a Xamarin. Android-alkalmazásokban. A manuális integráció ajánlott az alkalmazás hibakereséséhez.
 
-#### <a name="renamed-methodsapp-sdk-androidmdrenamed-methods"></a>[Átnevezett metódusok](app-sdk-android.md#renamed-methods)
+#### <a name="renamed-methods"></a>[Átnevezett metódusok](app-sdk-android.md#renamed-methods)
 Sok esetben az androidos osztályban rendelkezésre álló metódus végsőként van megjelölve a helyettesítő MAM-osztályban. Ebben az esetben a helyettesítő MAM-osztály egy hasonlóan elnevezett metódust biztosít (a `MAM` utótaggal), amelyet felül kell írni. Így például a `MAMActivity` származtatásakor az `OnCreate()` felülírása, illetve a `base.OnCreate()` metódus hívása helyett az `Activity` tevékenységnek felül kell írnia az `OnMAMCreate()` metódust, és meg kell hívnia a `base.OnMAMCreate()` metódust.
 
-#### <a name="mam-applicationapp-sdk-androidmdmamapplication"></a>[MAM-alkalmazás](app-sdk-android.md#mamapplication)
+#### <a name="mam-application"></a>[MAM-alkalmazás](app-sdk-android.md#mamapplication)
 Az alkalmazásnak meg kell határoznia egy `Android.App.Application` osztályt. Ha manuálisan integrálja a MAM-t, a `MAMApplication`tól örökölni kell. Ügyeljen rá, hogy az alosztály megfelelően jelölve legyen a `[Application]` attribútummal, és felülbírálja a `(IntPtr, JniHandleOwnership)` konstruktort.
 
 ```csharp
@@ -150,7 +150,7 @@ Az alkalmazásnak meg kell határoznia egy `Android.App.Application` osztályt. 
 > [!NOTE]
 > A MAM Xamarin-kötésekkel kapcsolatos probléma miatt az alkalmazás hibakeresési módban való üzembe helyezésekor összeomlást eredményezhet. Megkerülő megoldásként a `Debuggable=false` attribútumot hozzá kell adni a `Application` osztályhoz, és a `android:debuggable="true"` jelzőt el kell távolítani a jegyzékfájlból, ha az manuálisan be lett állítva.
 
-#### <a name="enable-features-that-require-app-participationapp-sdk-androidmdenable-features-that-require-app-participation"></a>[Alkalmazások részvételét igénylő szolgáltatások engedélyezése](app-sdk-android.md#enable-features-that-require-app-participation)
+#### <a name="enable-features-that-require-app-participation"></a>[Alkalmazások részvételét igénylő szolgáltatások engedélyezése](app-sdk-android.md#enable-features-that-require-app-participation)
 Példa: annak megállapítása, hogy az alkalmazáshoz szükséges-e PIN-kód
 
 ```csharp
@@ -170,7 +170,7 @@ Példa: annak megállapítása, hogy engedélyezve van-e az eszközre vagy a fel
 MAMPolicyManager.GetPolicy(currentActivity).GetIsSaveToLocationAllowed(SaveLocation service, String username);
 ```
 
-#### <a name="register-for-notifications-from-the-sdkapp-sdk-androidmdregister-for-notifications-from-the-sdk"></a>[Regisztráció az SDK értesítéseire](app-sdk-android.md#register-for-notifications-from-the-sdk)
+#### <a name="register-for-notifications-from-the-sdk"></a>[Regisztráció az SDK értesítéseire](app-sdk-android.md#register-for-notifications-from-the-sdk)
 Az alkalmazásnak regisztrálnia kell az SDK által küldött értesítésekhez egy `MAMNotificationReceiver` létrehozásával és a `MAMNotificationReceiverRegistry`val való regisztrálásával. Ezt úgy teheti meg, hogy megadja a fogadó és a kívánt értesítés típusát `App.OnMAMCreate`ban, az alábbi példában látható módon:
 
 ```csharp
@@ -185,7 +185,7 @@ public override void OnMAMCreate()
     ...
 ```
 
-#### <a name="mam-enrollment-managerapp-sdk-androidmdmamenrollmentmanager"></a>[MAM beléptetési kezelő](app-sdk-android.md#mamenrollmentmanager)
+#### <a name="mam-enrollment-manager"></a>[MAM beléptetési kezelő](app-sdk-android.md#mamenrollmentmanager)
 
 ```csharp
 IMAMEnrollmentManager mgr = MAMComponents.Get<IMAMEnrollmentManager>();
@@ -234,5 +234,5 @@ Az eszközregisztráció nélküli alkalmazásvédelem esetében a felhasználó
 ### <a name="sample-applications"></a>Példák az alkalmazásokra
 A Xamarin. Android-és Xamarin. Forms-alkalmazások MAM-funkcióit kiemelő példák a [githubon](https://github.com/msintuneappsdk/Taskr-Sample-Intune-Xamarin-Android-Apps)érhetők el.
 
-## <a name="support"></a>Support
+## <a name="support"></a>Támogatás
 Ha a szervezete egy meglévő Intune-ügyfél, forduljon a Microsoft ügyfélszolgálati képviselőjéhez, és nyisson meg egy támogatási jegyet, és hozzon létre egy problémát [a GitHub-problémák oldalon](https://github.com/msintuneappsdk/intune-app-sdk-xamarin/issues). A lehető leghamarabb segíteni fogunk. 

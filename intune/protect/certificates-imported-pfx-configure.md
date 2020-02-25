@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 02/20/2020
+ms.date: 02/21/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0b615adf6435ecafb0dd6ca31be9ae96e4b98dde
-ms.sourcegitcommit: 67f926ba83f8a955e16b741a610ad84d6044f8f9
+ms.openlocfilehash: 02fa3acdaf0dc450afee97dfaaf5870166013356
+ms.sourcegitcommit: 5881979c45fc973cba382413eaa193d369b8dcf6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77529311"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77569523"
 ---
 # <a name="configure-and-use-imported-pkcs-certificates-with-intune"></a>Importált PKCS-tanúsítványok konfigurálása és használata az Intune-nal
 
@@ -31,6 +31,17 @@ A Microsoft Intune támogatja az importált nyilvános kulcsú (PKCS) tanúsítv
 Az S/MIME titkosítás kihívást jelent, mivel az e-mailek egy adott tanúsítvánnyal vannak titkosítva. A tanúsítvány titkos kulcsát kell használnia, amely a levelezést az eszközön titkosítja, hogy visszafejthető legyen. A titkosítási tanúsítványok megújítása rendszeresen megtörténik, ami azt jelenti, hogy az összes eszközön szükség lehet a titkosítási előzményekre, így biztosíthatja a régebbi e-mailek olvasását.  Mivel ugyanazt a tanúsítványt kell használni az eszközök között, nem lehet [SCEP](certificates-scep-configure.md) -vagy [PKCS](certficates-pfx-configure.md) -tanúsítvány-profilokat használni erre a célra, mivel ezek a tanúsítványok kézbesítési mechanizmusai eszközönként egyedi tanúsítványokat szolgáltatnak.
 
 Az S/MIME Intune-nal való használatával kapcsolatos további információkért az [s/MIME használatával titkosítsa az e-maileket](certificates-s-mime-encryption-sign.md).
+
+## <a name="supported-platforms"></a>Támogatott platformok
+
+Az Intune támogatja a PFX-tanúsítványok importálását a következő platformokon:
+
+- Android – eszköz rendszergazdája
+- Android Enterprise – teljes körűen felügyelt
+- Android Enterprise-Work profil
+- iOS
+- Mac
+- Windows 10
 
 ## <a name="requirements"></a>Követelmények
 
@@ -209,7 +220,7 @@ A tanúsítványok Intune-ba importálása után hozzon létre egy **Importált 
 
    - **Felhasználási cél**: Itt adhatja meg a profilhoz importált tanúsítványok kívánt célját. A rendszergazdák más felhasználási célokra is importálhatók tanúsítványokat (például S/MIME-aláírás vagy S/MIME-titkosítás). A tanúsítványprofilban kijelölt felhasználási cél alapján lesznek párosítva a megfelelő importált tanúsítványok. A felhasználási cél az importált tanúsítványok együttes csoportosítása, és nem garantálja, hogy az adott címkével importált tanúsítványok megfelelnek a kívánt célnak.  
    - **Tanúsítvány érvényességi időtartama**: Ha az érvényességi időszak nem módosult a tanúsítványsablon esetében, ez a beállítás alapértelmezés szerint egy év.
-   - **Kulcstároló-szolgáltató (KSP)** : Windows rendszer esetén válasszon helyet a kulcsok tárolására az eszközön.
+   - **Kulcstároló-szolgáltató (KSP)**: Windows rendszer esetén válasszon helyet a kulcsok tárolására az eszközön.
 
 5. A profil mentéséhez kattintson az **OK** > **Létrehozás** gombra.
 

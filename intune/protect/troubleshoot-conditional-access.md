@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d6dc10eca80a7d403d0ff44c25d3cfaed85fafa
-ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
+ms.openlocfilehash: f4a1d0575ce4c46c56fd1b3d2a7526a18a076fcf
+ms.sourcegitcommit: 47c9af81c385c7e893fe5a85eb79cf08e69e6831
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77514200"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77576127"
 ---
 # <a name="troubleshoot-conditional-access"></a>A feltételes hozzáférés hibaelhárítása
 Ez a cikk azt ismerteti, mi a teendő, ha a felhasználók nem férhetnek hozzá a feltételes hozzáféréssel védett erőforrásokhoz, vagy ha a felhasználók hozzáférhetnek a védett erőforrásokhoz, de le kell tiltani őket.
@@ -44,7 +44,7 @@ A feltételes hozzáférés működéséhez az alábbi követelményeknek kell t
 
 - Alapértelmezés szerint lennie kell egy, a felhasználóhoz hozzárendelt eszközmegfelelőségi szabályzatnak. Ez a beállítás attól függ, hogy az eszközök az Intune felügyeleti portálon az **eszköz megfelelősége** > **megfelelőségi** szabályzata beállításnál megadott **megfelelőségi házirend nélkül legyenek megjelölve** .
 
-- Az eszközön aktiválni kell az Exchange ActiveSync protokollt, ha a felhasználó nem az Outlookot, hanem az eszköz natív levelezőprogramját használja. Ez automatikusan történik az iOS, a Windows Phone-telefon és az Android Knox rendszerű eszközök esetén.
+- Az eszközön aktiválni kell az Exchange ActiveSync protokollt, ha a felhasználó nem az Outlookot, hanem az eszköz natív levelezőprogramját használja. Ez automatikusan megtörténik iOS/iPadOS, Windows Phone-telefon és Android Knox rendszerű eszközök esetén.
 
 - Helyszíni Exchange esetén az Intune Exchange-összekötőt megfelelően kell konfigurálni. További információ: [az Exchange Connector hibaelhárítása Microsoft Intuneban](troubleshoot-exchange-connector.md).
 

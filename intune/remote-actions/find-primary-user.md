@@ -17,18 +17,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fbafca746c43dada6281ffbfe1e34f01afa8ab91
-ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.openlocfilehash: 7ff03682ab406b92e3ea7f1e416188119913cc87
+ms.sourcegitcommit: 5881979c45fc973cba382413eaa193d369b8dcf6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77413679"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77569455"
 ---
 # <a name="find-the-primary-user-of-an-intune-device"></a>Intune-eszköz elsődleges felhasználójának megkeresése
 
 Az elsődleges felhasználó, más néven a felhasználó-eszköz kapcsolat, az összes Intune-eszköz tulajdonsága. Egy Intune-eszközhöz nulla vagy egy elsődleges felhasználó rendelhető. Ha nincs hozzárendelve elsődleges felhasználó, az eszközt "megosztott eszköznek" nevezzük.
 
-## <a name="how-to-find-a-devices-primary-user"></a>Az eszköz elsődleges felhasználójának megkeresése
+## <a name="find-a-devices-primary-user"></a>Eszköz elsődleges felhasználójának keresése
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Válassza az **eszközök** lehetőséget > válasszon ki egy eszközt.
@@ -38,7 +38,7 @@ Az elsődleges felhasználó, más néven a felhasználó-eszköz kapcsolat, az 
 Az elsődleges felhasználó tulajdonság a licenccel rendelkező Intune-felhasználó az eszközre való leképezésére szolgál a következőben:
 - A Céges portál alkalmazás
 - Végfelhasználói webhely
-- INFORMATIKAI szakemberek, például a Azure Portal hibaelhárítási lapjai. Ezek az oldalak a felhasználói fiókokat az elsődleges felhasználó használatával képezik le az eszközökre.    
+- INFORMATIKAI szakemberek, például a Azure Portal hibaelhárítási lapjai. Ezek az oldalak a felhasználói fiókokat az elsődleges felhasználó használatával képezik le az eszközökre. 
 
 ### <a name="company-portal-app"></a>Vállalati portál alkalmazás
 A Céges portál alkalmazás azt várja, hogy a Céges portálbe bejelentkezett felhasználói fiók az adott eszköz elsődleges felhasználója. Ha egy másik felhasználó lett hozzárendelve elsődleges felhasználóként, a Céges portál figyelmeztetést jelenít meg:

@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 62ee300b7357132e6f9e18ef4528110dfc988dc3
-ms.sourcegitcommit: 8d7406b75ef0d75cc2ed03b1a5e5f74ff10b98c0
+ms.openlocfilehash: 11e757d22274a0e1cc327d9037a74e4ffac024dd
+ms.sourcegitcommit: 47c9af81c385c7e893fe5a85eb79cf08e69e6831
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75653665"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77576344"
 ---
 # <a name="prepare-ios-apps-for-app-protection-policies-with-the-intune-app-wrapping-tool"></a>iOS-alkalmazások előkészítése alkalmazásvédelmi szabályzatokkal való felügyeletre az Intune alkalmazásburkoló eszközével
 
@@ -226,7 +226,7 @@ Az IntuneMAMPackager/Contents/MacOS mappában nyissa meg a `Parameters.plist` ne
 | ADAL válasz URI-ja |Sztring|üres| Ugyanaz, mint az-AR|
 | Részletes üzenetek engedélyezve |Logikai|hamis| Ugyanaz, mint a -v|
 | Hiányzó jogosultságok eltávolítása |Logikai|hamis| Ugyanaz, mint a -c|
-| Az alapértelmezett Build frissítésének tiltása |Boolen|hamis| Ugyanaz, mint a -b argumentumok nélkül|
+| Az alapértelmezett Build frissítésének tiltása |Logikai|hamis| Ugyanaz, mint a -b argumentumok nélkül|
 | Build sztringjének felülbírálása |Sztring|üres| A burkolt kimeneti alkalmazás egyéni CFBundleVersion-száma|
 | A Citrix XenMobile app SDK belefoglalása (csak hálózati változat)|Logikai|hamis| Ugyanaz, mint a-Citrix|
 | Bővítménylétesítési profilok elérési útjai |Sztringek tömbje|üres| Az alkalmazás bővítménylétesítési profiljainak tömbje.
@@ -255,7 +255,7 @@ Mostantól telepítheti az alkalmazást a felhasználócsoportok számára, és 
 * Maga az alkalmazás új verzióban jelent meg. Az alkalmazás előző verziója a burkolás után az Intune-konzolba lett feltöltve.
 * Az Intune iOS-hez használható alkalmazásburkoló eszközének olyan új verziója jelent meg, amely lehetővé teszi a fontosabb hibajavításokat vagy meghatározott alkalmazásvédelmi szabályzatokkal kapcsolatos Intune-funkciókat. Ilyen új verzió 6-8 hetente jelenik meg, és a [Microsoft Intune App Wrapping Tool for iOS](https://github.com/msintuneappsdk/intune-app-wrapping-tool-ios) GitHub-tárházban érhető el.
 
-iOS-alkalmazások esetében az alkalmazás aláírásához használt tanúsítvány- vagy létesítési profiltól eltérő profillal is burkolhatók az alkalmazások, azonban ha az alkalmazásban megadott jogosultságok nem szerepelnek az új létesítési profilban, a burkolás meghiúsul. Ha az „-e” parancssori opcióval (amely eltávolítja a hiányzó jogosultságokat az alkalmazásból) kényszeríti a sikeres burkolást az ilyen esetekben, előfordulhat, hogy az alkalmazás nem megfelelően fog működni.
+Az iOS/iPadOS esetében, míg az alkalmazás aláírásához használt eredeti tanúsítvány vagy kiépítési profil eltérő lehet, ha az alkalmazásban megadott jogosultságok nem szerepelnek az új létesítési profilban, a tördelés sikertelen lesz. Ha az „-e” parancssori opcióval (amely eltávolítja a hiányzó jogosultságokat az alkalmazásból) kényszeríti a sikeres burkolást az ilyen esetekben, előfordulhat, hogy az alkalmazás nem megfelelően fog működni.
 
 Ajánlott eljárások az újraburkoláshoz:
 
@@ -315,7 +315,7 @@ A burkolt alkalmazások lehetőséget biztosítanak a felhasználóknak, hogy az
 
 Az alkalmazásburkoló eszköz iOS-verziójának optimális működéséhez bizonyos követelményeknek teljesülniük kell.
 
-|Követelmény|Details|
+|Követelmény|Részletek|
 |---------------|-----------|
 |iOS-beli létesítési profil|Használat előtt ellenőrizze a létesítési profil érvényességét. iOS-alkalmazások feldolgozásakor az alkalmazásburkoló eszköz nem ellenőrzi a létesítési profil érvényességét. Ha lejárt létesítési profil van megadva, az alkalmazásburkoló eszköz tartalmazza a lejárt létesítési profilt, és addig nem szerez tudomást a problémáról, amíg az alkalmazás telepítése meg nem hiúsul egy iOS-eszközön.|
 |iOS-beli aláíró tanúsítvány|Mielőtt megadja az aláíró tanúsítványt, ellenőrizze, hogy érvényes-e. iOS-alkalmazások feldolgozásánál az alkalmazásburkoló eszköz nem ellenőrzi a tanúsítvány érvényességét. Ha lejárt tanúsítvány kivonatát adja meg, az eszköz feldolgozza és aláírja az alkalmazást, de nem tudja telepíteni az eszközökre.<br /><br />Ügyeljen rá, hogy a beburkolt alkalmazás aláírására használt tanúsítvány megtalálható legyen a létesítési profilban. Az eszköz nem ellenőrzi, hogy a létesítési profil rendelkezik-e egyezéssel a burkolt alkalmazás aláírásához megadott tanúsítványhoz.|
@@ -327,7 +327,7 @@ Az alkalmazást a burkolása előtt *jogosultságok* megadásával további enge
 
 ### <a name="supported-capabilities-for-the-app-wrapping-tool-for-ios"></a>Az iOS rendszerhez készült alkalmazásburkoló eszköz támogatott képességei
 
-|Képesség|Description|Ajánlott útmutatás|
+|Képesség|Leírás|Ajánlott útmutatás|
 |--------------|---------------|------------------------|
 |Alkalmazáscsoportok|Alkalmazáscsoportok használatával biztosíthatja több alkalmazás hozzáférését a megosztott tárolókhoz, és engedélyezheti a folyamatközi kommunikációt az alkalmazások között.<br /><br />Az alkalmazáscsoportok engedélyezéséhez nyissa meg a **Capabilities** (Képességek) panelt, és kattintson az **On** (Bekapcsolás) lehetőségre az **App Groups** (Alkalmazáscsoportok) beállításnál. Felvehet alkalmazáscsoportokat, illetve kijelölhet meglévőket.|Alkalmazáscsoportok használatakor használjon címfeloldási DNS-t:<br /><br />*csoport.com.cégnév.Alkalmazáscsoport*|
 |Háttérbeli üzemmódok|A háttérbeli üzemmódok engedélyezése esetén az iOS-alkalmazás tovább futhat a háttérben is.||
@@ -419,7 +419,7 @@ Az alkalmazásburkoló eszköz használata során kövesse az alábbi biztonság
 
 ## <a name="intune-app-wrapping-tool-for-ios-with-citrix-mdx-mvpn"></a>Intune alkalmazásburkoló eszköz iOS rendszerhez Citrix MDX mVPN-nel
 
-Ez a funkció az iOS rendszerre készült Citrix MDX alkalmazásburkolóval való integrációt jelenti. Az integráció egyszerűen egy további, opcionális parancssori jelzőt (`-citrix`) az általános Intune alkalmazásburkoló eszközökhöz.
+Ez a funkció az iOS/iPadOS-hez készült Citrix MDX alkalmazás-burkolóval való integráció. Az integráció egyszerűen egy további, opcionális parancssori jelzőt (`-citrix`) az általános Intune alkalmazásburkoló eszközökhöz.
 
 ### <a name="requirements"></a>Követelmények
 

@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 02/24/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40a7e1884a7e36bf56038bdafdd15a1556ef46c7
-ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
+ms.openlocfilehash: 9a3436b9590204691201f8341d1e2f896e9ffff6
+ms.sourcegitcommit: 47c9af81c385c7e893fe5a85eb79cf08e69e6831
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77513452"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77576373"
 ---
 # <a name="manage-web-access-by-using-microsoft-edge-with-microsoft-intune"></a>Webes elérés kezelése a Microsoft Edge és a Microsoft Intune használatával
 
@@ -159,12 +159,12 @@ A Microsoft Edge és az [Azure ad Application proxy](https://docs.microsoft.com/
 > [!NOTE]
 > Az Alkalmazásproxy frissített átirányítási adatainak érvénybe lépése a Managed Browserben és a Microsoft Edge-ben akár 24 órát is igénybe vehet.
 
-#### <a name="step-1-enable-automatic-redirection-to-microsoft-edge-from-outlook"></a>1\. lépés: automatikus átirányítás engedélyezése a Microsoft Edge-ből az Outlookból
+#### <a name="step-1-enable-automatic-redirection-to-microsoft-edge-from-outlook"></a>1. lépés: automatikus átirányítás engedélyezése a Microsoft Edge-ből az Outlookból
 Konfigurálja az Outlookot egy olyan alkalmazás-védelmi szabályzattal, amely lehetővé teszi a **webes tartalom megosztását a szabályzat által felügyelt böngészőkkel**.
 
 ![Képernyőkép az alkalmazás-védelmi szabályzatról – webes tartalom megosztása a szabályzattal felügyelt böngészőkkel](./media/manage-microsoft-edge/manage-microsoft-edge-03.png)
 
-#### <a name="step-2-set-the-app-configuration-setting-to-enable-app-proxy"></a>2\. lépés: az alkalmazás-konfigurációs beállítás beállítása az alkalmazásproxy engedélyezéséhez
+#### <a name="step-2-set-the-app-configuration-setting-to-enable-app-proxy"></a>2. lépés: az alkalmazás-konfigurációs beállítás beállítása az alkalmazásproxy engedélyezéséhez
 Célozza meg a Microsoft Edge-t a következő kulcs/érték párokkal, hogy engedélyezze az alkalmazásproxy-t a Microsoft Edge számára:
 
 |    Kulcs    |    Érték    |
@@ -181,14 +181,14 @@ A Kezdőlap parancsikonjának konfigurálásához használja a következő kulcs
 
 |    Kulcs    |    Érték    |
 |-------------------------------------------------------------------|-------------|
-|    com.microsoft.intune.mam.managedbrowser.homepage   |    Adjon meg egy érvényes URL-címet. A helytelen URL-címek biztonsági intézkedésként le vannak tiltva.<br>**Példa:**  <`https://www.bing.com`>
+|    com.microsoft.intune.mam.managedbrowser.homepage   |    Adjon meg egy érvényes URL-címet. A helytelen URL-címek biztonsági intézkedésként le vannak tiltva.<br>**Példa:** <`https://www.bing.com`>
 
 ## <a name="configure-your-organizations-logo-and-brand-color-for-new-tab-pages-in-microsoft-edge"></a>A szervezet emblémájának és a márka színének konfigurálása új lapokra a Microsoft Edge-ben
 
 Ezekkel a beállításokkal testreszabhatja a Microsoft Edge új lap lapját, hogy az oldal hátterében megjelenjen a szervezet emblémája és a márka színe.
 
 A szervezet emblémájának és színének feltöltéséhez először hajtsa végre a következő lépéseket:
-- A Azure Portal belül navigáljon az Intune-> ügyfélalkalmazások – > branding és a Testreszabás – > vállalati identitás arculata
+- A Azure Portal belül navigáljon a [Microsoft Endpoint Manager felügyeleti központhoz](https://go.microsoft.com/fwlink/?linkid=2109431) -> **bérlői felügyelet** -> **branding and customization** -> **vállalati identitás arculata**.
 - A márka emblémájának beállításához a "Megjelenítés" alatt válassza a "csak vállalati embléma" lehetőséget. A transzparens háttér-emblémák használata javasolt. 
 - A márka háttérszínének megadásához a "Megjelenítés" területen válassza a "téma színe" lehetőséget. A Microsoft Edge a szín világosabb árnyalatát alkalmazza az új lap lapon, amely biztosítja, hogy a lap nagy mértékben olvasható legyen. 
 
@@ -295,17 +295,29 @@ Beállíthatja, hogy a korlátozott hivatkozások közvetlenül az InPrivate-bö
 |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    `com.microsoft.intune.mam.managedbrowser.openInPrivateIfBlock`    |    Az **igaz** érték automatikusan nyitja meg a helyeket egy InPrivate-lapon anélkül, hogy a felhasználót arra kellene kérni, hogy a személyes fiókjára váltson. <p> A **false** (alapértelmezett) érték letiltja a helyet a Microsoft Edge-en belül, és a rendszer arra kéri a felhasználót, hogy váltson a személyes fiókjára a megtekintéshez.    |
 
-## <a name="disable-microsoft-edge-prompt-to-save-passwords"></a>A Microsoft Edge-kérés letiltása a jelszavak mentéséhez
+## <a name="disable-microsoft-edge-features-to-customize-the-end-user-experience-for-your-organizations-needs"></a>A Microsoft Edge-funkciók letiltása a szervezet igényeinek megfelelő végfelhasználói élmény testreszabásához
 
-|    Kulcs    |    Érték    |
-|----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    `com.microsoft.intune.mam.managedbrowser.openInPrivateIfBlock`    |    Az **igaz** érték esetén a korlátozott hivatkozások közvetlenül az InPrivate-böngészésben nyílnak meg.<p>**False** (alapértelmezett): a felhasználók dönthetnek úgy, hogy egy korlátozott hivatkozást nyitnak meg InPrivate-böngészéssel vagy személyes (MSA-) fiókkal.    |
-
+### <a name="disable-prompts-that-offer-to-save-passwords"></a>A jelszavak mentéséhez felkínált kérések letiltása
 Alapértelmezés szerint a Microsoft Edge iOS-ben a felhasználók jelszavait mentheti a kulcstartóba. Ha le szeretné tiltani ezt a kérdést a szervezete számára, konfigurálja a következő beállítást:
 
 |    Kulcs    |    Érték    |
+|-----------------------|-----------------------|
+|    `com.microsoft.intune.mam.managedbrowser.disableFeatures`    |    a **jelszó** letiltja a végfelhasználók jelszavának mentésére vonatkozó kéréseket.    |
+
+### <a name="disable-inprivate-browsing-and-microsoft-accounts-to-restrict-browsing-to-work-only-contexts"></a>Az InPrivate-böngészés és a Microsoft-fiókok letiltása a csak munkahelyi környezetekben való böngészés korlátozására
+
+Ha a szervezete egy magasan szabályozott iparágban működik, vagy egy alkalmazáson belüli VPN-t használ, hogy a felhasználók hozzáférjenek a munkahelyi erőforrásokhoz a Microsoft Edge használatával, dönthet úgy, hogy a Microsoft Edge hatókörét csak MAM-védelemmel ellátott környezetre használja. Ez a funkció csak a MDM által regisztrált eszközökhöz érhető el.
+
+|    Kulcs    |    Érték    |
 |-----------|-------------|
-|     "com. microsoft. Intune. Mam. managedbrowser. disableFeatures"    |    a **jelszó** letiltja a jelszavak mentésének megadását.    |
+|    `com.microsoft.intune.mam.managedbrowser.disableFeatures`    |    **InPrivate** – letiltja az InPrivate-böngészést, <br> a **MSA** letiltja a felhasználók személyes Microsoft-fiókjaik (MSA-EK) hozzáadását a Microsoft Edge-alkalmazásokhoz. <br> Több szolgáltatás letiltásához válassza a `|`az értékeket. Például `inprivate|msa` letiltja az InPrivate-és a személyes fiókokat is.   |
+
+### <a name="restrict-microsoft-edge-use-to-allowed-accounts-only"></a>A Microsoft Edge használatának korlátozása csak a fiókok számára
+
+A InPrivate-és MSA-böngészés letiltása mellett csak akkor engedélyezheti a Microsoft Edge használatát, ha a felhasználó a HRE-fiókjával van bejelentkezve. Ez a funkció csak MDM regisztrált felhasználók számára érhető el. A beállítás konfigurálásával kapcsolatos további információkért tekintse meg a következőt:
+
+- [Android-beállítás](~/apps/app-configuration-policies-use-android.md#allow-only-configured-organization-accounts-in-multi-identity-apps)
+- [iOS-beállítás](~/apps/app-configuration-policies-use-ios.md#allow-only-configured-organization-accounts-in-multi-identity-apps)
 
 ## <a name="use-microsoft-edge-on-ios-to-access-managed-app-logs"></a>A Microsoft Edge használata iOS rendszeren a felügyelt alkalmazások naplóihoz való hozzáféréshez 
 
@@ -322,10 +334,10 @@ Ha szeretné megtudni, hogyan tekintheti meg a naplókat az Android-eszközökö
 
 A Microsoft Edge-re vonatkozó további biztonsági és adatvédelmi megfontolások a következők:
 
-- A Microsoft Edge nem használja fel azokat a beállításokat, amelyeket a felhasználók az eszközökön lévő natív böngészőhöz beállítottak, mert a Microsoft Edge nem fér hozzá ezekhez a beállításokhoz.
+- A Microsoft Edge nem használja fel azokat a beállításokat, amelyeket a felhasználók a natív böngészőhttps://docs.microsoft.com/en-us/intune/apps/app-configuration-policies-use-android#allow-only-configured-organization-accounts-in-multi-identity-apps állítanak be az eszközökön, mert a Microsoft Edge nem fér hozzá ezekhez a beállításokhoz.
 - Beállíthatja, hogy az **egyszerű PIN-kód megkövetelése a hozzáféréshez** vagy a **vállalati hitelesítő adatok megkövetelése a hozzáféréshez** a Microsoft Edge-hez társított alkalmazás-védelmi szabályzatban. Ha a felhasználó kiválasztja a Súgó hivatkozást a hitelesítés lapon, böngészhet bármely internetes webhelyen, függetlenül attól, hogy hozzáadták-e őket a szabályzat letiltott listájához.
 - A Microsoft Edge csak akkor képes blokkolni a hozzáférést a webhelyekhez, ha azokat közvetlenül érik el. Nem blokkolja a hozzáférést, ha a felhasználó köztes szolgáltatásokat (például egy fordítási szolgáltatást) használ a hely eléréséhez.
-- A hitelesítés engedélyezéséhez és az Intune-dokumentációhoz való hozzáféréshez a * **. microsoft.com** kivételt képez az engedélyezési vagy tiltólista beállításai alól. Mindig engedélyezve van.
+- A hitelesítés engedélyezéséhez és az Intune-dokumentációhoz való hozzáféréshez a ***. microsoft.com** kivételt képez az engedélyezési vagy tiltólista beállításai alól. Mindig engedélyezve van.
 - A felhasználók kikapcsolhatják az adatgyűjtés lehetőségeit. A Microsoft termék- és szolgáltatásfejlesztési célból automatikus módszerekkel név nélküli adatokat gyűjt a Managed Browser teljesítményéről és használatáról. A felhasználók kikapcsolhatják az adatgyűjtést az eszköz **Használati adatok** beállításával. Nem tudja befolyásolni ezen adatok gyűjtését. IOS-eszközökön nem nyithatók meg azok a webhelyek, amelyeken lejárt vagy nem megbízható tanúsítvánnyal rendelkező felhasználók látogatnak.
 
 ## <a name="next-steps"></a>További lépések

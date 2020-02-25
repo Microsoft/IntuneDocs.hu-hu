@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7113552e09a7c7fa145a452e56575bfaf5297c3e
-ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
+ms.openlocfilehash: 1b590e8564f14ce9958c5a1c126edf5dd6740cd1
+ms.sourcegitcommit: 47c9af81c385c7e893fe5a85eb79cf08e69e6831
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77514564"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77576386"
 ---
 # <a name="in-development-for-microsoft-intune---february-2020"></a>Fejlesztés a Microsoft Intune – február 2020
 
@@ -68,20 +68,6 @@ A Céges portál alkalmazás további alkalmazás-telepítési állapotüzenetek
 ### <a name="retarget-web-clips-to-microsoft-edge-on-iosipados-devices---5455276---"></a>Webes klipek átcélzása a Microsoft Edge-be iOS-/iPadOS-eszközökön<!-- 5455276 -->
 Az iOS-/iPadOS-eszközökön rögzített webalkalmazásként feldolgozható webklipeket frissíteni kell. Az újonnan telepített webklipek a Microsoft Edge-ben nyílnak meg a Intune Managed Browser helyett, ha egy védett böngészőben kell megnyitni. A meglévő webklipeket újra meg kell célozni, hogy a Managed Browser helyett a Microsoft Edge-ben nyíljon meg.
 
-### <a name="macos-company-portal-user-experience-improvements---5568987---"></a>a macOS Céges portál felhasználói élményének fejlesztése<!-- 5568987 -->
-Fejlesztjük a macOS-eszközök regisztrálási élményét és a Mac Céges portál alkalmazást. A következőket várhatja el:
-- Jobb Microsoft automatikus **frissítési** élmény a regisztráció során, amely biztosítja, hogy a felhasználók a céges portál legújabb verziójával rendelkezzenek.
-- Továbbfejlesztett megfelelőség-ellenőrzési lépés a regisztráció során.
-- A másolt incidensek azonosítóinak támogatása, így a felhasználók gyorsabban küldhetnek hibákat az eszközeiről a céges támogatási csapatnak.
-
-A regisztrációval és a Mac Céges portál alkalmazással kapcsolatos további információkért lásd: macOS-eszköz regisztrálása a Céges portál alkalmazással (https://docs.microsoft.com/intune-user-help/enroll-your-device-in-intune-macos-cp). 
-
-
-### <a name="screen-removed-from-company-portal-android-work-profile-enrollment--6103987---"></a>Képernyő eltávolítva Céges portál, Android munkahelyi profil regisztrációja<!--6103987 -->
-A **Mi a következő lépés?** a rendszer eltávolítja az androidos munkahelyi profil beléptetési folyamatát céges portál a felhasználói élmény egyszerűsítése érdekében. Az androidos munkahelyi profil regisztrálási folyamatának megtekintéséhez nyissa meg az [androidos]( https://docs.microsoft.com/intune-user-help/enroll-device-android-work-profile) munkahelyi profil beléptetése című részt.
-
-### <a name="microsoft-defender-advanced-threat-protection-atp-app-for-macos---5424518-idready---"></a>Microsoft Defender Advanced Threat Protection (ATP) alkalmazás macOS rendszerhez<!-- 5424518 idready -->
-Az Intune-nal egyszerűen üzembe helyezheti a macOS rendszerhez készült Microsoft Defender Advanced Threat Protection (ATP) alkalmazást a felügyelt Mac-eszközökön. További információ: [a Microsoft Defender komplex veszélyforrások elleni védelem Mac rendszerhez](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-atp-mac). 
 
 <!-- ***********************************************-->
 ## <a name="device-configuration"></a>Eszközök konfigurálása
@@ -129,48 +115,20 @@ Ez a funkció az alábbiakra vonatkozik:
 ### <a name="change-primary-user-for-windows-devices----3794742---"></a>Windows-eszközök elsődleges felhasználójának módosítása <!-- 3794742 -->
 Megváltoztathatja az elsődleges felhasználót a Windows Hybrid és az Azure AD-hez csatlakoztatott eszközökhöz. Ehhez nyissa meg az **Intune** > **eszközök** > **minden eszköz** > válasszon egy eszközt > **Tulajdonságok** > **elsődleges felhasználó**. 
 
-### <a name="serial-number-on-the-apple-mdm-push-certificate-page--5947765---"></a>Sorozatszám az Apple MDM push-tanúsítvány oldalán<!--5947765 -->
-Az Apple MDM push-tanúsítvány lapján megjelenik a sorozatszám. A sorozatszám szükséges ahhoz, hogy újra hozzáférhessen az Apple MDM push-tanúsítványhoz, ha a tanúsítvány létrehozásához használt Apple ID azonosítóhoz való hozzáférés elvész. A sorozatszám megjelenítéséhez nyissa meg az **eszközök** > **iOS** > **iOS-regisztráció** > az **Apple Mdm push-tanúsítvány**lehetőséget.
-
-### <a name="choose-which-iosipados-updates-to-push-to-enrolled-devices--5879689---"></a>Válassza ki, hogy mely iOS-/iPadOS-frissítéseket szeretné leküldeni a regisztrált eszközökre<!--5879689 -->
-Kiválaszthat egy adott iOS/iPadOS-frissítést, amely az Apple Business Manager vagy az Apple School Manager használatával regisztrált eszközökre küldi le azokat. Az ilyen eszközöknek rendelkeznie kell egy olyan eszköz-konfigurációs házirenddel, amely bizonyos számú nap elteltével késlelteti a szoftverfrissítés láthatóságát. Ennek a funkciónak a megtekintéséhez nyissa meg a MEM >- **eszközök** ** > ios** -es > **frissítési szabályzatok iOS/iPadOS > a** **profil létrehozása**lehetőséget.
-
-### <a name="new-update-schedule-options-for-pushing-os-updates-to-enrolled-iosipados-devices--5879689--"></a>Új frissítési ütemterv beállítások az operációs rendszer frissítéseinek beléptetéséhez a beléptetett iOS/iPadOS-eszközökön<!--5879689-->
-Az iOS/iPadOS operációs rendszer frissítéseinek ütemezésekor a következő lehetőségek közül választhat. Ez az Apple Business Manager vagy az Apple School Manager regisztrációs típusait használó eszközökre vonatkozik.
-- Frissítés a következő bejelentkezéskor
-- Frissítés az ütemezett idő alatt
-- Frissítés az ütemezett időkereten kívül
-
-Az utóbbi két lehetőség esetében több időablakot is létrehozhat.
-
-Az új beállítások megjelenítéséhez nyissa meg a MEM >- **eszközök** > **iOS** **- > frissítési szabályzatok iOS/iPadOS > a** **profil létrehozása**lehetőséget.
-
 
 <!-- ***********************************************-->
 <!--## Intune apps-->
  
 
 <!-- ***********************************************-->
-## <a name="monitoring-and-troubleshooting"></a>Figyelés és hibaelhárítás
-
-### <a name="improved-intune-reporting-experience---3791418-idready---"></a>Továbbfejlesztett Intune jelentéskészítési élmény<!-- 3791418 idready -->
-Az Intune mostantól továbbfejlesztett jelentéskészítési lehetőségeket kínál, beleértve az új jelentési típusokat, a jobb jelentési szervezetet, a célzottabb nézeteket, a jobb jelentési funkciókat, valamint a több konzisztens és kellő időben megjelenő adatát. A jelentéskészítési élmény a nyilvános előzetes verzióról a GA-ra (általánosan elérhető) vált. Emellett a GA-kiadás a honosítási támogatást, a hibajavításokat, a tervezési javításokat és az eszközök megfelelőségi adatainak a [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)lévő csempén való összegzését is biztosítja.
-
-Az új Jelentéstípusok a következőkre összpontosítanak:
-- **Működés** – a negatív állapotú friss rekordokat biztosít. 
-- **Szervezet** – a teljes állapot szélesebb körű összegzését biztosítja.
-- **Előzmények** – mintákat és trendeket biztosít egy adott időszakra vonatkozóan.
-- **Specialist** – lehetővé teszi, hogy a nyers adatait használja saját egyéni jelentéseinek létrehozásához.
-
-Az új jelentések első halmaza az eszköz megfelelőségére koncentrál. További információ: [Blog Microsoft Intune jelentési keretrendszer](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/New-Reporting-Framework-Coming-to-Intune/ba-p/1009553) és [Intune-jelentések](~/fundamentals/reports.md).
-
-
+<!--
+## Monitoring and troubleshooting
+-->
 
 <!-- ***********************************************-->
-## <a name="role-based-access-control"></a>Szerepköralapú hozzáférés-vezérlés
-
-### <a name="intune-roles-user-interface-changes-coming--5801612-idready--"></a>Az Intune-szerepkörök felhasználói felületének módosításai elérkeznek<!--5801612 idready-->
-A [Microsoft Endpoint Manager felügyeleti központ](https://go.microsoft.com/fwlink/?linkid=2109431) felhasználói felületének > **bérlői adminisztrációs** > **szerepkörei** egy sokkal felhasználóbarát és intuitív kialakításban lesznek módosítva. Ez a felhasználói élmény ugyanazokat a beállításokat és adatokat tartalmazza, amelyeket most használ, de az új felület egy varázsló-szerű folyamatot alkalmaz.
+<!--
+## Role-based access control
+-->
 
 
 <!-- ***********************************************-->
