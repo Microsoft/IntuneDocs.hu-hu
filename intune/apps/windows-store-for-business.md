@@ -18,18 +18,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3c1627ba89ad50b2053187a20fee6cbc7a9064e8
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 6faaa800d8dedc53ab20f1dae2c3049132642b7d
+ms.sourcegitcommit: 29f3ba071c9348686d3ad6f3b8864d8557e05b97
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74562493"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77609160"
 ---
 # <a name="how-to-manage-volume-purchased-apps-from-the-microsoft-store-for-business-with-microsoft-intune"></a>Mennyiségi programban vásárolt alkalmazások felügyelete a Microsoft Store for Business és a Microsoft Intune használatával
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-A [Vállalati Microsoft Áruház](https://www.microsoft.com/business-store) az a hely, ahol alkalmazásokat vásárolhat a szervezete számára egyenként vagy mennyiségi program keretében. Az áruházat a Microsoft Intune-nal összekapcsolva a mennyiségi programban vásárolt alkalmazásokat az Azure Portalról kezelheti. Példa:
+A [Vállalati Microsoft Áruház](https://www.microsoft.com/business-store) az a hely, ahol alkalmazásokat vásárolhat a szervezete számára egyenként vagy mennyiségi program keretében. Az áruházat a Microsoft Intune-nal összekapcsolva a mennyiségi programban vásárolt alkalmazásokat az Azure Portalról kezelheti. Például:
 * Szinkronizálhatja az áruházból az Intune-nal megvásárolt (vagy ingyenes) alkalmazások listáját.
 * A szinkronizált alkalmazások megjelennek az Intune felügyeleti konzolján; ezen alkalmazásokat a többi alkalmazáshoz hasonlóan oszthatja ki.
 * Az alkalmazások online és offline licenccel rendelkező verziója is szinkronizálva van az Intune-nal. Az alkalmazások neve "online" vagy "offline" értékkel lesz hozzáfűzve a portálon.
@@ -48,7 +48,7 @@ Mielőtt elkezdené a Vállalati Microsoft Áruházból származó alkalmazások
 - A Vállalati Microsoft Áruházban vásárolt online és offline licencelt alkalmazásokat az Intune portál egyaránt szinkronizálja. Ezeket az alkalmazásokat eszközcsoportok vagy felhasználói csoportok számára telepítheti. 
 - Az online alkalmazástelepítéseket az áruház felügyeli.
 - Az Intune az ingyenes offline alkalmazásokat is szinkronizálja. Ezeket az alkalmazásokat az Intune, és nem az Áruház telepíti.
-- Az eszközök akkor használhatják ezt a lehetőséget, ha csatlakoztatva vannak az Active Directory Domain Services szolgáltatáshoz vagy egy munkahelyhez.
+- Ennek a funkciónak a használatához csatlakoztatni kell az eszközöket a Active Directory tartományi szolgáltatásokhoz, az Azure AD-hez vagy a munkahelyhez csatlakoztatva.
 - A regisztrált eszközöknek a Windows 10 1511-es vagy újabb verzióját kell használniuk.
 
 Emellett a kapcsolódó készletek és a Vállalati Microsoft Áruházból szinkronizált offline licencelt alkalmazások mostantól egyetlen alkalmazásbejegyzésben jelennek meg a felhasználói felületen. A különálló csomagok üzembe helyezési adatait szintén egyetlen bejegyzésben összesítjük. Ha a Azure Portal kapcsolódó készleteit szeretné megtekinteni, válassza az **alkalmazások** panel **alkalmazás-licencek** elemét.

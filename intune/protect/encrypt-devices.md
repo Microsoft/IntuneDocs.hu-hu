@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 12/04/2019
+ms.date: 02/25/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.reviewer: annovich
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
-ms.openlocfilehash: 5209ce7fba30a156de055503751104f9090d49d7
-ms.sourcegitcommit: e7052114324b80d0503b107c934bb90b8eb29704
+ms.openlocfilehash: a5c844377dcd69b6caf5ef9f72fcb8dbb4ef8bd0
+ms.sourcegitcommit: 29f3ba071c9348686d3ad6f3b8864d8557e05b97
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75756005"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77609314"
 ---
 # <a name="use-device-encryption-with-intune"></a>Az eszközök titkosításának használata az Intune-nal
 
@@ -39,17 +39,30 @@ Az Intune egy beépített [titkosítási jelentést](encryption-monitor.md) is b
 
 Az Intune-nal konfigurálhatja a FileVault a macOS-t futtató eszközökön. Ezután az Intune titkosítási jelentésével megtekintheti az eszközök titkosítási adatait, valamint felügyelheti a FileVault titkosított eszközök helyreállítási kulcsait.
 
-Vegye figyelembe, hogy a felhasználó által jóváhagyott eszközök regisztrációja szükséges ahhoz, hogy a FileVault működjön az eszközön. A felhasználónak manuálisan jóvá kell hagynia a felügyeleti profilt a rendszer prefrences a regisztráláshoz a felhasználó által jóváhagyottnak tekintendő. 
+A felhasználó által jóváhagyott eszközök regisztrációja szükséges ahhoz, hogy a FileVault működjön az eszközön. A felhasználónak manuálisan jóvá kell hagynia a felügyeleti profilt a rendszerbeállításokból a regisztrációhoz a felhasználó által jóváhagyottként.
 
 A FileVault egy teljes lemezes titkosítási program, amely a macOS rendszer részét képezi. Az Intune-nal a **macOS 10,13-es vagy újabb verzióját**futtató eszközökön is konfigurálhatja a FileVault.
 
 A FileVault konfigurálásához hozzon létre egy [eszköz konfigurációs profilt](../configuration/device-profile-create.md) az Endpoint Protection számára a MacOS platformon. A FileVault beállításai a macOS Endpoint Protection számára elérhető beállítások kategóriák egyike.
 
-Miután létrehozott egy szabályzatot az eszközök FileVault való titkosításához, a szabályzatot két fázisban alkalmazza az eszközökre. Első lépésként az eszköz készen áll arra, hogy az Intune beolvassa és biztonsági másolatot készíteni a helyreállítási kulcsról. Ezt a letéti értéknek nevezzük. A kulcs letétbe helyezése után a lemez titkosítása is elindítható.
+Miután létrehozott egy szabályzatot az eszközök FileVault való titkosításához, a szabályzatot két fázisban alkalmazza az eszközökre. Első lépésként az eszköz készen áll arra, hogy az Intune beolvassa és biztonsági másolatot készíteni a helyreállítási kulcsról. Ezt a műveletet letétnek nevezzük. A kulcs letétbe helyezése után a lemez titkosítása is elindítható.
 
 ![FileVault-beállítások](./media/encrypt-devices/filevault-settings.png)
 
 Az Intune-nal kezelhető FileVault-beállítás részleteiért lásd: [FileVault](endpoint-protection-macos.md#filevault) a MacOS Endpoint Protection-beállításokhoz tartozó Intune-cikkben.
+
+### <a name="permissions-to-manage-filevault"></a>Engedélyek a FileVault kezeléséhez
+
+A FileVault az Intune-ban való kezeléséhez a fióknak rendelkeznie kell a megfelelő Intune [szerepköralapú hozzáférés-vezérlési](../fundamentals/role-based-access-control.md) (RBAC) engedélyekkel.
+
+A következő FileVault engedélyek, amelyek a **távoli feladatok** kategóriába tartoznak, valamint az engedélyt MEGADÓ beépített RBAC-szerepköröket:
+ 
+- **FileVault kulcs beolvasása**:
+  - Ügyfélszolgálati operátor
+  - Endpoint Security Manager
+
+- **FileVault-kulcs elforgatása**
+  - Ügyfélszolgálati operátor
 
 ### <a name="how-to-configure-macos-filevault"></a>MacOS-FileVault konfigurálása
 
@@ -84,7 +97,7 @@ Miután az Intune titkosít egy macOS-eszközt a FileVault-mel, megtekintheti az
 
 ### <a name="retrieve-personal-recovery-key-from-mem-encrypted-macos-devices"></a>Személyes helyreállítási kulcs beolvasása a MEM titkosított macOS-eszközökről
 
-A végfelhasználók a saját helyreállítási kulcsát (FileVault-kulcs) az iOS Céges portál alkalmazás használatával tudják lekérni. A személyes helyreállítási kulccsal rendelkező eszközt regisztrálni kell az Intune-ban, és az Intune-on keresztül kell titkosítani a FileVault-mel. Az iOS Céges portál alkalmazás használatával a végfelhasználó megnyithat egy olyan weblapot, amely tartalmazza a FileVault személyes helyreállítási kulcsát. A helyreállítási kulcsot az Intune-ból is lekérheti, ha kijelöli az **eszközök** > *a titkosított és regisztrált macOS-eszközt > a* **helyreállítási kulcs beolvasása**lehetőségre. 
+A végfelhasználók a saját helyreállítási kulcsát (FileVault Key) az iOS Céges portál alkalmazás használatával kérik le. A személyes helyreállítási kulccsal rendelkező eszközt regisztrálni kell az Intune-ban, és az Intune-on keresztül kell titkosítani a FileVault-mel. Az iOS Céges portál alkalmazás használatával a végfelhasználó megnyithat egy olyan weblapot, amely tartalmazza a FileVault személyes helyreállítási kulcsát. A helyreállítási kulcsot az Intune-ból is lekérheti, ha kijelöli az **eszközök** > *a titkosított és regisztrált macOS-eszközt > a* **helyreállítási kulcs beolvasása**lehetőségre. 
 
 ## <a name="bitlocker-encryption-for-windows-10"></a>BitLocker-titkosítás a Windows 10 rendszerhez
 
@@ -131,7 +144,7 @@ Az eszközöknek meg kell felelniük a következő előfeltételeknek a BitLocke
 
   - **Ügyfél által vezérelt helyreállítási jelszó elforgatása**
 
-  Ez a beállítás a Windows 10 Endpoint Protection eszköz-konfigurációs szabályzatának részeként a *Windows-titkosítás* területen található.
+  Ez a beállítás a Windows 10 Endpoint Protection eszköz-konfigurációs szabályzatának részeként a *Windows-titkosítás* alatt található.
   
 #### <a name="to-rotate-the-bitlocker-recovery-key"></a>A BitLocker helyreállítási kulcsának elforgatása
 

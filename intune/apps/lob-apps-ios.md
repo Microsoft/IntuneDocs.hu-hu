@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0b7c0a7dfa4337983c12ada2d0f415c771bd0548
-ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
+ms.openlocfilehash: 507c7ecff9715ebf9f24567c735592f3f255ccc9
+ms.sourcegitcommit: 29f3ba071c9348686d3ad6f3b8864d8557e05b97
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76755187"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77609182"
 ---
 # <a name="add-an-ios-line-of-business-app-to-microsoft-intune"></a>IOS-es üzletági alkalmazások hozzáadása a Microsoft Intune-hoz
 
@@ -31,10 +31,13 @@ ms.locfileid: "76755187"
 
 A cikkben található információ segítségével iOS rendszerű üzletági alkalmazást adhat hozzá a Microsoft Intune-hoz. Az üzletági (LOB) alkalmazások olyan alkalmazások, amelyeket az Intune-ban egy IPA-alkalmazás telepítési fájljában adhat hozzá. Az ilyen alkalmazásokat általában házon belül írják. Először csatlakoznia kell az iOS Developer Enterprise programhoz. Ennek módjáról további információt az [Apple webhelyén](https://developer.apple.com/programs/ios/enterprise/)talál.
 
->[!NOTE]
->Az iOS-eszközök felhasználói eltávolíthatnak néhányat a beépített iOS-alkalmazások közül, például a Részvények vagy a Térképek alkalmazást. Az Intune nem használható ezek újratelepítésére. Amennyiben a felhasználó törölte ezeket az alkalmazásokat, manuálisan telepítheti újra őket az App Store áruházból.
+> [!NOTE]
+> Az iOS-eszközök felhasználói eltávolíthatnak néhányat a beépített iOS-alkalmazások közül, például a Részvények vagy a Térképek alkalmazást. Az Intune nem használható ezek újratelepítésére. Amennyiben a felhasználó törölte ezeket az alkalmazásokat, manuálisan telepítheti újra őket az App Store áruházból.
 >
->az iOS LOB-alkalmazások esetében az alkalmazás legfeljebb 4 GB méretű lehet.
+> az iOS LOB-alkalmazások esetében az alkalmazás legfeljebb 4 GB méretű lehet.
+
+> [!NOTE]
+> A köteg-azonosítók (például a *com. contoso. app*) az alkalmazások egyedi azonosítói. Ha például egy LOB-alkalmazás béta verzióját szeretné telepíteni tesztelési célból az éles verzió mellett, a bétaverziónak eltérő egyedi azonosítóval kell rendelkeznie (például: *com. contoso. app-Beta*). Ellenkező esetben a béta verziója átfedésben van az éles környezettel, és frissítésként lesz kezelve. Az. ipa fájl átnevezése nem befolyásolja ezt a viselkedést.
 
 ## <a name="select-the-app-type"></a>Válassza ki az alkalmazás típusát
 
@@ -57,8 +60,8 @@ A cikkben található információ segítségével iOS rendszerű üzletági alk
 1. Az **alkalmazás adatai** lapon adja meg az alkalmazás részleteit. A választott alkalmazástól függően előfordulhat, hogy egyes értékek automatikusan ki vannak töltve a panelen.
     - **Név**: Itt adhatja meg az alkalmazás a Céges portálon megjelenő nevét. Ügyeljen arra, hogy a megadott alkalmazásnevek egyediek legyenek. Ha ugyanazt az alkalmazásnevet kétszer adja meg, csak az egyik alkalmazás fog megjelenni a Céges portálon.
     - **Leírás**: Itt adhatja meg az alkalmazás leírását. A leírás megjelenik a Céges portálon.
-    - **Kiadó:** Adja meg az alkalmazás kiadójának nevét.
-    - **Minimális operációsrendszer-verzió**: A listából kiválaszthatja az operációs rendszer legkorábbi olyan verzióját, amelyre az alkalmazás telepíthető. Ha az alkalmazást régebbi operációs rendszerrel rendelkező eszközhöz rendelik hozzá, akkor nem lesz telepítve.
+    - **Kiadó**: Adja meg az alkalmazás kiadójának nevét.
+    - **Minimális operációsrendszer-verzió**: A listából kiválaszthatja az operációs rendszer legkorábbi olyan verzióját, amelyre az alkalmazás telepíthető. Ha az alkalmazást régebbi operációs rendszerű eszközhöz rendeli hozzá, nem fog települni.
     - **Kategória**: Választhat egyet vagy többet a beépített kategóriák közül, vagy megadhat egyénileg létrehozott kategóriát is. A kategóriákkal megkönnyítheti a felhasználók számára az alkalmazás megkeresését a Céges portálon való böngészés során.
     - **Megjelenítés Kiemelt alkalmazásként a céges portál**: az alkalmazás megjelenítése a vállalati portál főoldalán, amikor a felhasználók megkeresik az alkalmazásokat.
     - **Információs URL-cím:** Igény szerint megadhatja az alkalmazással kapcsolatos információkat tartalmazó webhely URL-címét. Az URL-cím megjelenik a Céges portálon.

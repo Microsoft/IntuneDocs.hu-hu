@@ -7,12 +7,12 @@ ms.topic: include
 ms.date: 11/19/2019
 ms.author: erikje
 ms.custom: include file
-ms.openlocfilehash: f23d81ddb07fcafb198cd725781747b61a3b73ea
-ms.sourcegitcommit: 67f926ba83f8a955e16b741a610ad84d6044f8f9
+ms.openlocfilehash: 373aeea9ab4fcbd075ac2ab18f205f3ddd191a39
+ms.sourcegitcommit: 29f3ba071c9348686d3ad6f3b8864d8557e05b97
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77529335"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77609298"
 ---
 Ezek a hirdetmények olyan fontos információkat tartalmaznak, amelyek segíthetnek a jövőbeli Intune-változások és-funkciók előkészítésében.
 
@@ -84,7 +84,7 @@ Az örökölt számítógépek felügyelete 2020. október 15-én megszűnik. Fr
 
 [További információ](https://go.microsoft.com/fwlink/?linkid=2107122)
 
-### <a name="decreasing-support-for-android-device-administrator"></a>Az Android-eszközök rendszergazdai támogatásának csökkentése 
+### <a name="decreasing-support-for-android-device-administrator--5857738--"></a>Az Android-eszközök rendszergazdai támogatásának csökkentése<!--5857738-->
 Android-eszköz rendszergazdája (más néven a "régi" Android-kezelés és az Android 2,2 kiadásban megjelent) az androidos eszközök felügyeletének módja. A továbbfejlesztett felügyeleti funkciók azonban mostantól elérhetők az [Android Enterprise](../enrollment/connect-intune-android-enterprise.md) (Android 5,0) verzióban. A modern, gazdagabb és biztonságosabb eszközkezelés érdekében a Google az új Android-kiadásokban csökkenti az eszköz-rendszergazda támogatását.
 
 #### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
@@ -108,24 +108,5 @@ Ha el szeretné kerülni a Q3-CY2020 érkező funkciók csökkentését, javasol
 - [A Google útmutatója az eszköz-rendszergazdától az Android Enterprise rendszerre való áttelepítéshez](http://static.googleusercontent.com/media/android.com/en/enterprise/static/2016/pdfs/enterprise/Android-Enterprise-Migration-Bluebook_2019.pdf)
 - [A Google dokumentációja az eszköz rendszergazdai API-jával való érvénytelenítésének tervéről](https://developers.google.com/android/work/device-admin-deprecation)
 
-### <a name="plan-for-change-intune-app-sdk-and-app-protection-policies-for-android-moving-to-support-android-50-and-higher-in-an-upcoming-release---4911065---"></a>Tervezze meg a változást: az Intune app SDK és az alkalmazás-védelmi szabályzatok Android rendszerre való áttérés az Android 5,0 és újabb verzióinak támogatásához egy közelgő kiadásban <!--4911065 -->
-Az Intune egy közelgő kiadásban az Android 5. x (nyalóka) és újabb verzióinak támogatására lesz áthelyezve. Frissítheti az összes burkolt alkalmazást a legújabb Intune app SDK-val, és frissítheti az eszközeit.
-
-#### <a name="how-does-this-affect-me"></a>Hogyan érint ez engem?
-Ha nem használja az SDK-t vagy az alkalmazást az Androidhoz, akkor ez a változás nem érinti Önt. Ha az Intune app SDK-t használja, frissítsen a legújabb verzióra, és frissítse az eszközeit az Android 5. x vagy újabb verziójára. Ha nem frissíti, az alkalmazások nem kapják meg a frissítéseket, és a tapasztalatok minősége idővel csökken.
-
-Az alábbi listában megtalálhatja az Intune-ban regisztrált általános eszközök listáját, amelyek az Android 4. x verzióját futtatják. Ha rendelkezik ezekkel az eszközökkel, hajtsa végre a megfelelő lépéseket annak biztosításához, hogy az eszköz támogassa az Android 5,0-es vagy újabb verzióját, vagy hogy a rendszer az Android 5,0-es vagy újabb verzióját támogató eszközre cserélje. Ez a lista nem minden olyan eszköz teljes, amelyet ki kell értékelni:
-
-- Samsung SM – T561  
-- Samsung SM – T365
-- Samsung GT – I9195
-- Samsung SM – G800F
-- Samsung SM – G357FZ
-- Motorola XT1080
-- Samsung GT – I9305
-- Samsung SM – T231
-
-#### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Hogyan készüljek fel a változásra?
-Alkalmazások becsomagolása a legújabb Intune app SDK-val. Az "a minimális operációsrendszer-verzió megkövetelése (csak figyelmeztetés)" beállítást is beállíthatja úgy, hogy a végfelhasználók tájékoztassák a felhasználókat a személyes eszközökről a frissítéshez.
 
 

@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7264f5152f1b2b3beb58fc873fb7775d63bdccba
-ms.sourcegitcommit: 47c9af81c385c7e893fe5a85eb79cf08e69e6831
+ms.openlocfilehash: 48d2e88fbe35729a5b8496d4ac1a4c444df3d89f
+ms.sourcegitcommit: 29f3ba071c9348686d3ad6f3b8864d8557e05b97
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77576351"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77609143"
 ---
 # <a name="microsoft-intune-app-sdk-for-ios-developer-guide"></a>A Microsoft Intune App SDK iOS rendszeren – fejlesztői útmutató
 
@@ -95,7 +95,7 @@ Az iOS-hoz készült Intune App SDK révén minimális kódmódosítással adhat
 
 Az Intune App SKD engedélyezéséhez kövesse az alábbi lépéseket:
 
-1. **1. lehetőség – keretrendszer (ajánlott)**: Ha a Xcode 10.2 +-t használja, és az alkalmazás/bővítmény gyors kódot tartalmaz, csatolja a `IntuneMAMSwift.framework` és `IntuneMAMSwiftStub.framework` a céljához: húzzon `IntuneMAMSwift.framework` és `IntuneMAMSwiftStub.framework` a projekt céljának **beágyazott bináris fájljainak** listájára.
+1. **1. lehetőség – keretrendszer (ajánlott)** : Ha a Xcode 10.2 +-t használja, és az alkalmazás/bővítmény gyors kódot tartalmaz, csatolja a `IntuneMAMSwift.framework` és `IntuneMAMSwiftStub.framework` a céljához: húzzon `IntuneMAMSwift.framework` és `IntuneMAMSwiftStub.framework` a projekt céljának **beágyazott bináris fájljainak** listájára.
 
     Ellenkező esetben kapcsolja `IntuneMAM.framework` a célhelyhez: húzza a `IntuneMAM.framework`t a projekt céljának **beágyazott bináris fájlok** listájára.
 
@@ -531,21 +531,30 @@ A 8.0.2 kiadásától kezdődően az Intune App SDK képes szűrni az `UIActivit
 
 Dokumentumoknak az `UIActivityViewController` és az `UIDocumentInteractionController` általi megosztásakor az iOS másolási műveletet jelenít meg a megosztott dokumentum megnyitását támogató alkalmazások mindegyike mellett. Az alkalmazások az Info.plist fájljukban lévő `CFBundleDocumentTypes` beállításban közlik a támogatott dokumentumok típusát. Ez a megosztástípus többé nem lesz elérhető, ha a szabályzat tiltja a nem felügyelt alkalmazásokkal való megosztást. Helyette a felhasználónak egy felhasználói felület nélküli műveleti bővítményt kell hozzáadnia az alkalmazásokhoz, amely az Intune APP SDK-ra hivatkozik. A műveleti bővítmény mindössze egy kódcsonk. A fájlmegosztó viselkedést az SDK implementálja. Kövesse az alábbi lépéseket:
 
-1. Az alkalmazás Info.plist fájljában a `CFBundleURLTypes` alatt szerepelnie kell legalább egy schemeURL-definíciónak.
+1. Az alkalmazásnak legalább egy schemeURL meg kell határoznia az info. plist `CFBundleURLTypes`ban, valamint a hozzá tartozó `-intunemam`-munkatársaival. Például:
+    ```objc
+    <key>CFBundleURLSchemes</key>
+    <array>
+        <string>launch-com.contoso.myapp</string>
+        <string>launch-com.contoso.myapp-intunemam</string>
+    </array>
+    ```
 
-2. Az alkalmazásnak és a műveleti bővítménynek benne kell lennie legalább egy közös alkalmazáscsoportban, az alkalmazáscsoportnak pedig szerepelnie kell az `AppGroupIdentifiers` tömbben az alkalmazás és bővítmény IntuneMAMSettings katalógusaiban.
+2. Az alkalmazás és a művelet kiterjesztésének meg kell egyeznie legalább egy alkalmazás csoporttal, és az alkalmazás csoportjának a `AppGroupIdentifiers` tömb alatt kell szerepelnie az alkalmazás és a bővítmény IntuneMAMSettings-szótárak alatt.
 
-3. A műveleti bővítmény neveként adja meg a „Megnyitás a következőben:” szöveget az alkalmazás nevével kiegészítve. Szükség esetén az Info.plist fájl honosítható.
+3. Az alkalmazás és a művelet kiterjesztésének is rendelkeznie kell a kulcstartó megosztási képességével, és meg kell osztania a `com.microsoft.intune.mam` kulcstartó csoportot.
 
-4. Adjon meg egy sablonikont a bővítményhez az [Apple fejlesztői dokumentációjában](https://developer.apple.com/ios/human-interface-guidelines/extensions/sharing-and-actions/) leírt módon. Ezek a képek az IntuneMAMConfigurator eszközzel is generálhatók az alkalmazás .app mappájából. Ehhez futtassa a következőt:
+4. A műveleti bővítmény neveként adja meg a „Megnyitás a következőben:” szöveget az alkalmazás nevével kiegészítve. Szükség esetén az Info.plist fájl honosítható.
+
+5. Adjon meg egy sablonikont a bővítményhez az [Apple fejlesztői dokumentációjában](https://developer.apple.com/ios/human-interface-guidelines/extensions/sharing-and-actions/) leírt módon. Ezek a képek az IntuneMAMConfigurator eszközzel is generálhatók az alkalmazás .app mappájából. Ehhez futtassa a következőt:
 
     ```bash
     IntuneMAMConfigurator -generateOpenInIcons /path/to/app.app -o /path/to/output/directory
     ```
 
-5. A bővítmény Info.plist fájljában az IntuneMAMSettings alatt adjon meg egy logikai típusú beállítást, melynek neve `OpenInActionExtension`, értéke pedig YES.
+6. A bővítmény Info.plist fájljában az IntuneMAMSettings alatt adjon meg egy logikai típusú beállítást, melynek neve `OpenInActionExtension`, értéke pedig YES.
 
-6. Konfigurálja az `NSExtensionActivationRule` szabályt, hogy támogasson egyetlen fájlt és az alkalmazás `CFBundleDocumentTypes` tulajdonságának minden típusát, amely `com.microsoft.intune.mam` előtaggal rendelkezik. Ha az alkalmazás például a public.text és public.image típusokat támogatja, akkor az aktiválási szabály a következő lesz:
+7. Konfigurálja az `NSExtensionActivationRule` szabályt, hogy támogasson egyetlen fájlt és az alkalmazás `CFBundleDocumentTypes` tulajdonságának minden típusát, amely `com.microsoft.intune.mam` előtaggal rendelkezik. Ha az alkalmazás például a public.text és public.image típusokat támogatja, akkor az aktiválási szabály a következő lesz:
 
     ```objc
     SUBQUERY (

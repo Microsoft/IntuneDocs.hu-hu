@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 02/20/2020
+ms.date: 02/25/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b963a508ac140988993d3953d6a9d6398404e7b6
-ms.sourcegitcommit: 67f926ba83f8a955e16b741a610ad84d6044f8f9
+ms.openlocfilehash: 99983b2d2776e72232c65fcfb12d8075061d804b
+ms.sourcegitcommit: 29f3ba071c9348686d3ad6f3b8864d8557e05b97
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77529294"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77609342"
 ---
 # <a name="configure-and-use-pkcs-certificates-with-intune"></a>PKCS-tanúsítványok konfigurálása és használata az Intune-nal
 
@@ -210,12 +210,13 @@ VPN-, WiFi-vagy más erőforrásokkal rendelkező eszköz hitelesítéséhez az 
    |------------|------------|------------|
    |**Megújítási küszöb (%)**        |<ul><li>Összes         |Ajánlott érték 20%  | 
    |**Tanúsítvány érvényességi időtartama**  |<ul><li>Összes         |Ha nem módosította a tanúsítványsablont, akkor ez a beállítás egy évig állítható be. |
-   |**Kulcstároló-szolgáltató (KSP)**   |<ul><li>Windows 10  | Windows esetén válassza ki a kulcsok tárolásának helyét az eszközön. |
+   |**Kulcstároló-szolgáltató (KSP)**   |<ul><li>Windows 10  |Windows esetén válassza ki a kulcsok tárolásának helyét az eszközön. |
    |**Hitelesítésszolgáltató**      |<ul><li>Összes         |Megjeleníti a vállalati HITELESÍTÉSSZOLGÁLTATÓ belső teljes tartománynevét (FQDN).  |
    |**Hitelesítésszolgáltató neve** |<ul><li>Összes         |Felsorolja a vállalati HITELESÍTÉSSZOLGÁLTATÓ nevét, például a "contoso hitelesítésszolgáltató" nevet. |
+   |**Tanúsítványsablon neve**    |<ul><li>Összes         |Felsorolja a tanúsítványsablon nevét. |
    |**Tanúsítvány típusa**             |<ul><li>Android Enterprise (*munkahelyi profil*)</li><li>iOS</li><li>macOS</li><li>Windows 10 és újabb|Válasszon egy típust: <ul><li> A **felhasználói** tanúsítványok a tulajdonos és a tanúsítvány Tárolóhálózati felhasználói és eszköz attribútumait is tartalmazhatják. </il><li>Az **eszközök** tanúsítványainak csak a tulajdonos és a tanúsítvány Tárolóhálózati attribútumait tartalmazhatják. Eszköz használata olyan forgatókönyvekhez, mint a felhasználó nélküli eszközök, például kioszkok vagy más megosztott eszközök.  <br><br> Ez a beállítás hatással van a tulajdonos nevének formátumára. |
-   |**Tulajdonos nevének formátuma**          |<ul><li>Összes         |A legtöbb platform esetében állítsa ezt a beállítást a **köznapi névre** , hacsak másként nem kötelező.<br><br>A következő platformokon a tulajdonos nevének formátumát a tanúsítvány típusa határozza meg: <ul><li>Android Enterprise (*munkahelyi profil*)</li><li>iOS</li><li>macOS</li><li>Windows 10 és újabb</li></ul>  <p> A cikk későbbi részében lásd a [tulajdonos nevének formátumát](#subject-name-format) . |
-   |**Tulajdonos alternatív neve**     |<ul><li>Összes         |Ha ez a beállítás nem kötelező, adja meg az egyszerű felhasználónév **(UPN)** beállítást. |
+   |**Tulajdonos nevének formátuma**          |<ul><li>Összes         |A tulajdonos nevének formátumának konfigurálásáról a jelen cikk későbbi, a [tulajdonos nevének formázása](#subject-name-format) című részében olvashat bővebben.  <br><br> A legtöbb platform esetében használja a **köznapi név** lehetőséget, hacsak nem kötelező. <br><br>A következő platformokon a tulajdonos nevének formátumát a tanúsítvány típusa határozza meg: <ul><li>Android Enterprise (*munkahelyi profil*)</li><li>iOS</li><li>macOS</li><li>Windows 10 és újabb</li></ul>  <p>  |
+   |**Tulajdonos alternatív neve**     |<ul><li>Összes         |Az *attribútum*esetében válassza az egyszerű felhasználónév **(UPN)** lehetőséget, ha másként nem szükséges, adjon meg egy megfelelő *értéket*, majd kattintson a **Hozzáadás**gombra. <br><br>További információ: a [tulajdonos nevének formázása](#subject-name-format) a cikk későbbi részében.|
    |**Kibővített kulcshasználat**           |<ul><li> Android-eszköz rendszergazdája </li><li>Android Enterprise (*eszköz tulajdonosa*, *munkahelyi profil*) </li><li>Windows 10 |A tanúsítványokhoz általában szükség van az *ügyfél-hitelesítésre* , hogy a felhasználó vagy az eszköz hitelesíthető legyen egy kiszolgálóval. |
    |**Minden alkalmazás titkos kulcshoz való hozzáférésének engedélyezése** |<ul><li>macOS  |Az **Engedélyezés** beállítás megadásával biztosíthatja, hogy a rendszer a társított Mac-eszközhöz a PKCS-tanúsítvány titkos kulcsához konfigurált alkalmazásokat adjon. <br><br> A beállítással kapcsolatos további információkért tekintse meg a [konfigurációs profil referenciájának](https://developer.apple.com/business/documentation/Configuration-Profile-Reference.pdf) *AllowAllAppsAccess* című szakaszt az Apple fejlesztői dokumentációjában. |
    |**Főtanúsítvány**             |<ul><li>Android-eszköz rendszergazdája </li><li>Android Enterprise (*eszköz tulajdonosa*, *munkahelyi profil*) |Válasszon ki egy korábban hozzárendelt legfelső szintű HITELESÍTÉSSZOLGÁLTATÓI tanúsítvány-profilt. |
@@ -286,8 +287,6 @@ Platformok
   > - Az eszköz *tulajdonosának* vagy *San* -tanúsítványának (például **IMEI**, **serialnumber**és **FullyQualifiedDomainName**) használt tulajdonságai olyan tulajdonságok, amelyek az eszközhöz hozzáféréssel rendelkező személy által meghamisítható.
   > - Egy eszköznek támogatnia kell az adott profilhoz tartozó tanúsítvány-profilban megadott összes változót az adott eszközre való telepítéshez.  Ha például a **{{IMEI}}** egy SCEP-profil tulajdonos nevében van használatban, és olyan eszközhöz van rendelve, amely nem rendelkezik IMEI-számmal, akkor a profilt nem lehet telepíteni.  
  
-
-
 ## <a name="whats-new-for-connectors"></a>Az összekötők újdonságai
 
 A két tanúsítvány-összekötő frissítései rendszeresen jelennek meg. Amikor frissítünk egy összekötőt, itt olvashat a változásokról.
@@ -305,7 +304,7 @@ Az *Microsoft Intune pfx tanúsítvány-összekötője* [támogatja az automatik
 - **PFX tanúsítvány-összekötő a Microsoft Intune-Version 6.1905.0.402**  
   Változások ebben a kiadásban:  
   - Az összekötő lekérdezési időköze 5 perctől 30 másodpercre van csökkentve.
- 
+
 ### <a name="april-2-2019"></a>2019. április 2.
 
 - **Intune tanúsítvány-összekötő – verzió 6.1904.1.0**  

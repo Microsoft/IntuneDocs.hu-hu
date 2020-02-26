@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c485d3c0cfc707324dd6be681b6341650acb8750
-ms.sourcegitcommit: 47c9af81c385c7e893fe5a85eb79cf08e69e6831
+ms.openlocfilehash: d2f984392983d81bc64edb7206469babdb806d63
+ms.sourcegitcommit: 29f3ba071c9348686d3ad6f3b8864d8557e05b97
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77576457"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77609272"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -32,10 +32,10 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 > [!Note]
 > A [havi frissítés](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Microsoft-Intune-Service-Updates/ba-p/358728) akár három napot is igénybe vehet, és a következő sorrendben fog megjelenni:
 >
-> - 1. nap: Ázsia és a Csendes-óceáni térség (APAC)
-> - 2. nap: Európa, Közel-Kelet, Afrika (EMEA)
-> - 3. nap: Észak-Amerika
-> - 4. nap +: az Intune a Government számára
+> - 1\. nap: Ázsia és a Csendes-óceáni térség (APAC)
+> - 2\. nap: Európa, Közel-Kelet, Afrika (EMEA)
+> - 3\. nap: Észak-Amerika
+> - 4\. nap +: az Intune a Government számára
 >
 > Egyes funkciók bevezetése több hetet igénybe vehet, így előfordulhat, hogy nem elérhetők a felhasználók számára az első héten.
 >
@@ -167,7 +167,7 @@ További információ: [az Intune app Protection-szabályzatok engedélyezése a
 <!-- ########################## -->
 ## <a name="week-of-february-10-2020"></a>2020. február 10-i hét
 
-### <a name="windows-7-ends-extended-support---3042987--"></a>A Windows 7 kiterjesztett támogatást ér véget <!--3042987-->
+### <a name="windows-7-ends-extended-support--3042987---"></a>A Windows 7 kiterjesztett támogatást ér véget<!--3042987 -->
 A Windows 7 2020 január 14-én elérte a kiterjesztett támogatás végét. Az Intune elavult támogatást biztosít a Windows 7 rendszert futtató eszközökhöz. A számítógép védelmének biztosítására szolgáló technikai segítségnyújtás és automatikus frissítés már nem érhető el. Frissítsen a Windows 10-es verzióra. További információ: [change blog post](https://aka.ms/Windows7_Intune).
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->

@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 84fe9e1d60e3e65289ca18735e64e82ac9c64f4a
-ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
+ms.openlocfilehash: 41a46bd400c5901f0352709f6057bddac262ff9e
+ms.sourcegitcommit: 29f3ba071c9348686d3ad6f3b8864d8557e05b97
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77514183"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77609375"
 ---
 # <a name="remove-devices-by-using-wipe-retire-or-manually-unenrolling-the-device"></a>Eszközök eltávolítása összes adatuk törlésével, az eszköz kivonásával vagy regisztrációja manuális törlésével
 
@@ -196,6 +196,9 @@ Ha szeretne teljesen kivonni egy Apple DEP-eszközt az Intune általi felügyele
 5. Válassza az **Újbóli hozzárendelés** lehetőséget.
 
     ![Képernyőkép az újbóli hozzárendelésről az Apple esetében](./media/devices-wipe/apple-reassign.png)
+
+## <a name="device-states"></a>Eszközök állapota
+Az eszközök állapotának leírását a [managementStates gyűjteményben](https://docs.microsoft.com/intune/developer/intune-data-warehouse-collections.md#managementstates)tekintheti meg.
 
 ## <a name="fresh-start"></a>Új kezdés
 

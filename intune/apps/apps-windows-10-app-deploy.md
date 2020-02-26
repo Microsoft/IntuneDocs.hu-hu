@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/30/2020
+ms.date: 02/25/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fa4510b95e1e84d9f94158833dac555daa33c690
-ms.sourcegitcommit: c46b0c2d4507be6a2786a4ea06009b2d5aafef85
+ms.openlocfilehash: 7251a2db0c36db9d01e51ca8fc62bd4e072d80e6
+ms.sourcegitcommit: 29f3ba071c9348686d3ad6f3b8864d8557e05b97
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76912556"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77609227"
 ---
 # <a name="windows-10-app-deployment-by-using-microsoft-intune"></a>Windows 10-es alkalmazások központi telepítése Microsoft Intune használatával 
 
@@ -44,18 +44,19 @@ A Windows 10-es eszközökön támogatott alkalmazástípusok az üzleti alkalma
 
 Az egyes alkalmazás-típusok a Windows 10 azon verziója alapján támogatottak, amelyen a felhasználók futnak. A következő táblázat az alkalmazás típusát és a Windows 10 támogatását tartalmazza.
 
-| Alkalmazás típusa | Otthoni | Pro | Üzleti | Enterprise | Oktatás | S üzemmód | Hololense | SurfaceHub | WCOS | Mobil |
+| Alkalmazás típusa | Otthoni | Pro | Business | Enterprise | Oktatás | S üzemmód | HoloLens<sup>1 | Surface Hub | WCOS | Mobiltelefon |
 |----------------|------|-----|----------|------------|-----------|--------|-----------|------------|------|--------|
 |  . MSI | Nem | Igen | Igen | Igen | Igen | Nem | Nem | Nem | Nem | Nem |
 | . IntuneWin | Nem | Igen | Igen | Igen | Igen | 19H2 + | Nem | Nem | Nem | Nem |
-| Office-C2R | Nem | Igen | Igen | Igen | Igen | Nem | Nem | Nem | Nem | Nem |
+| Office-C2R | Nem | Igen | Igen | Igen | Igen | RS4 + | Nem | Nem | Nem | Nem |
 | LOB: APPX/MSIX | Igen | Igen | Igen | Igen | Igen | Igen | Igen | Igen | Igen | Igen |
 | MSFB offline | Igen | Igen | Igen | Igen | Igen | Igen | Igen | Igen | Igen | Igen |
-| Online MSFB | Igen | Igen | Igen | Igen | Igen | Igen | RS4 + | Igen | Igen | Igen |
-| Webalkalmazások | Igen | Igen | Igen | Igen | Igen | Igen | Igen<sup>1 | Igen<sup>1 | Igen | Igen |
+| Online MSFB | Igen | Igen | Igen | Igen | Igen | Igen | RS4 + | Nem | Igen | Igen |
+| Webalkalmazások | Igen | Igen | Igen | Igen | Igen | Igen | Igen<sup>2 | Igen<sup>2 | Igen | Igen<sup>2 |
 | Tár hivatkozása | Igen | Igen | Igen | Igen | Igen | Igen | Igen | Igen | Igen | Igen |
 
-<sup>1</sup> indítás csak a vállalati portálról.
+<sup>1</sup> az alkalmazások kezelésének feloldásához frissítse a HoloLens eszközt a [holografikus for Business](../fundamentals/windows-holographic-for-business.md)rendszerre.<br />
+<sup>2</sup> indítás csak a céges portál.
 
 > [!NOTE]
 > Minden Windows-alkalmazás típusához regisztráció szükséges.
@@ -110,7 +111,7 @@ Ha egyetlen felhasználó vagy eszköz házirendje ütközik, a következő prio
 - Az eszközkörnyezetek szabályzatai magasabb prioritásúak a felhasználói környezetekéinél. 
 - A telepítési szabályzatok magasabb prioritásúak az eltávolításiaknál.
 
-További információért lásd: [Alkalmazás-hozzárendelések belefoglalása vagy kizárása a Microsoft Intune-ban](apps-inc-exl-assignments.md). Az Intune-beli alkalmazástípusokat az [Alkalmazások hozzáadása a Microsoft Intune-hoz](apps-add.md) című cikk ismerteti.
+További információ: [Alkalmazás-hozzárendelések belefoglalása vagy kizárása a Microsoft Intune-ban](apps-inc-exl-assignments.md). Az Intune-beli alkalmazástípusokat az [Alkalmazások hozzáadása a Microsoft Intune-hoz](apps-add.md) című cikk ismerteti.
 
 ## <a name="next-steps"></a>További lépések
 

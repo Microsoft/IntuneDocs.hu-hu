@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 02/20/2020
+ms.date: 02/25/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6808a76ca95bfa1d694907732d9e4fff3dd5e69c
-ms.sourcegitcommit: 67f926ba83f8a955e16b741a610ad84d6044f8f9
+ms.openlocfilehash: c7709d4162b065952d2f2f7acc778739ccb34eb7
+ms.sourcegitcommit: 29f3ba071c9348686d3ad6f3b8864d8557e05b97
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77529387"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77609329"
 ---
 # <a name="microsoft-intune-protected-apps"></a>Microsoft Intune védett alkalmazások  
 
@@ -57,7 +57,7 @@ A következő táblázatok a támogatott partneri és Microsoft-alkalmazások r�
 | **Microsoft-számlázás**<p><img alt="Microsoft app - Microsoft Invoicing icon" src="./media/apps-supported-intune-apps/icon-m-microsoft-invoicing.png" width="100"> | A Microsoft számlázása megkönnyíti a kisvállalkozások számára a professzionális megjelenésű becslések és számlák létrehozását, a gyors befizetést és időt takaríthat meg. Akár az íróasztalon, akár útközben is, a számlázással gyorsan hozhat létre és küldhet számlákat, fogadhat online fizetéseket, és kevesebb időt takaríthat meg a papírmunka mellett. | [Google Play-hivatkozás (Android)](https://play.google.com/store/apps/details?id=com.microsoft.dynamics.ProjectMadeira),<br>[App Store-hivatkozás (iOS)](https://itunes.apple.com/us/app/microsoft-invoicing/id1145475572?mt=8) |  
 | **Microsoft-Kaizala**<p><img alt="Microsoft app - Microsoft Kaizala icon" src="./media/apps-supported-intune-apps/icon-m-microsoft-kiazala.png" width="100"> | A Microsoft Kaizala egy nagy csoportos kommunikációs és munkahelyi felügyeletre tervezett mobil alkalmazás és szolgáltatás. A Kaizala megkönnyíti a teljes értéklánc használatával történő kapcsolódást és koordinálást, beleértve a mezők alkalmazottai, szállítói, partnerei és ügyfelei számára, bárhol is legyenek. | [Google Play-hivatkozás (Android)](https://play.google.com/store/apps/details?id=com.microsoft.mobile.polymer),<br>[App Store-hivatkozás (iOS)](https://itunes.apple.com/in/app/microsoft-kaizala/id1112208399) |  
 | **Microsoft Launcher**<p><img alt="Microsoft app - Microsoft Launcher icon" src="./media/apps-supported-intune-apps/icon-m-microsoft-launcher.png" width="100"> | A Microsoft Launcher (korábbi nevén Arrow Launcher) személyre szabhatja az Android-eszközét, hogy az megfeleljen a saját stílusának, a témák színeinek, az ikon-csomagoknak és egyéb lehetőségeknek. Microsoft-fiók vagy munkahelyi/iskolai fiókkal a saját hírcsatornájában elérheti a naptárt, a dokumentumokat és a legutóbbi tevékenységeket. A Windows rendszerű SZÁMÍTÓGÉPén fényképeket, dokumentumokat és weblapokat is megnyithat, hogy az összes eszközön hatékony legyen. | [Google Play-hivatkozás (Android)](https://play.google.com/store/apps/details?id=com.microsoft.launcher) |  
-| **Microsoft Office**<p><img alt="Microsoft app - Microsoft Office icon" src="./media/apps-supported-intune-apps/icon-m-microsoft-office.png" width="100"> | A Microsoft Office alkalmazás egy összevont felhasználói felület, amelyben a felhasználók egyetlen alkalmazáson belül dolgozhatnak a Word, az Excel és a PowerPoint programban. | [Google Play-hivatkozás (Android)](https://play.google.com/store/apps/details?id=com.microsoft.office.officehubrow),<br>[App Store-hivatkozás (iOS)](https://apps.apple.com/app/microsoft-office/id541164041) |  
+| **Microsoft Office**<p><img alt="Microsoft app - Microsoft Office icon" src="./media/apps-supported-intune-apps/icon-m-microsoft-office.png" width="100"> | A Microsoft Office alkalmazás a Word-, Excel-és PowerPoint-alkalmazásokat kombinálja, és olyan új képességekkel rendelkezik, amelyek egyszerűbb, de hatékonyabb irodai élményt nyújtanak. | [Google Play-hivatkozás (Android)](https://play.google.com/store/apps/details?id=com.microsoft.office.officehubrow),<br>[App Store-hivatkozás (iOS)](https://apps.apple.com/app/microsoft-office/id541164041) |  
 | **Microsoft-OneDrive**<p><img alt="Microsoft app - Microsoft OneDrive for Business icon" src="./media/apps-supported-intune-apps/icon-m-microsoft-onedrive-for-business.png" width="100"> | A munkahelyi fájlok online tárterületének beszerzésével megoszthatja és együttműködhet másokkal a munkahelyi vagy iskolai munkatársaival. Emellett egyszerűen elérheti személyes és munkahelyi fájljait, ha útközben van.<p><p>Ez az alkalmazás az Android és az iOS/iPadOS több identitást használó alkalmazásként is használható. | [Google Play-hivatkozás (Android)](https://play.google.com/store/apps/details?id=com.microsoft.skydrive),<br>[App Store-hivatkozás (iOS)](https://itunes.apple.com/us/app/onedrive-cloud-storage-for/id477537958?mt=8) |  
 | **Microsoft OneNote**<p><img alt="Microsoft app - Microsoft OneNote icon" src="./media/apps-supported-intune-apps/icon-m-microsoft-onenote.png" width="100"> | A saját digitális notebookjának a saját gondolatait, felfedezéseit és ötleteit rögzítheti a OneNote-ban. Ragadja meg az inspiráció pillanatát, vegye figyelembe az osztály jegyzeteit, vagy kövesse nyomon az olyan megbízások listáját, amelyek túl fontosak a felejtsd. Akár otthon, akár az irodában, akár útközben is, a jegyzetek az összes eszközön elérhetők lesznek.<p><p>Ez az alkalmazás az Android és az iOS/iPadOS több identitást használó alkalmazásként is használható. | [Google Play-hivatkozás (Android)](https://play.google.com/store/apps/details?id=com.microsoft.office.onenote),<br>[App Store-hivatkozás (iOS)](https://itunes.apple.com/us/app/microsoft-onenote-for-iphone/id410395246?mt=8) |  
 | **Microsoft Outlook**<p><img alt="Microsoft app - Microsoft Outlook icon" src="./media/apps-supported-intune-apps/icon-m-microsoft-outlook.png" width="100"> | Az e-mailek, a naptár, a névjegyek és a mellékletek egyetlen egységesített nézetével többet érhet el az ingyenes e-mail alkalmazás használatával. A legfontosabb üzenetek automatikus kibontása az összes e-mail-fiókban. Egyszerűen megtekintheti a naptárt, megoszthatja az elérhető időpontokat, ütemezhet értekezleteket és fájlokat csatolhat e-mail-, OneDrive-vagy Dropbox-fájlokhoz mindössze néhány koppintással.<p><p>Ez az alkalmazás az Android és az iOS/iPadOS több identitást használó alkalmazásként is használható.| [Google Play-hivatkozás (Android)](https://play.google.com/store/apps/details?id=com.microsoft.office.outlook),<br>[App Store-hivatkozás (iOS)](https://itunes.apple.com/us/app/microsoft-outlook/id951937596?mt=8) |  

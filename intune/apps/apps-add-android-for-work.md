@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aaed7ec6ba1daa28949b2c1f0997b76135b7e88f
-ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
+ms.openlocfilehash: a4b3bd06bad6c31c2d0fb4c31a7ad605af96be86
+ms.sourcegitcommit: 29f3ba071c9348686d3ad6f3b8864d8557e05b97
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77513605"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77609187"
 ---
 # <a name="add-managed-google-play-apps-to-android-enterprise-devices-with-intune"></a>Felügyelt Google Play-alkalmazások hozzáadása androidos vállalati eszközökhöz az Intune-nal
 
@@ -224,6 +224,9 @@ Az Android Enterprise Work profiling-eszközökre telepített felügyelt Google 
 
 ## <a name="delete-managed-google-play-apps"></a>Felügyelt Google Play-alkalmazások törlése
 Ha szükséges, törölheti a felügyelt Google Play-alkalmazásokat Microsoft Intuneról. A felügyelt Google Play-alkalmazások törléséhez nyissa meg Microsoft Intune a Azure Portalban, és válassza az **alkalmazások** > **minden alkalmazás**lehetőséget. Az alkalmazás listából válassza a felügyelt Google Play alkalmazás jobb oldalán található három pontot (...), majd válassza a **Törlés** lehetőséget a megjelenített listából. Ha töröl egy felügyelt Google Play-alkalmazást az alkalmazások listájáról, a felügyelt Google Play-alkalmazás automatikusan nem lesz jóváhagyva.
+
+> [!NOTE]
+> Ha egy alkalmazás jóváhagyása nem engedélyezett, vagy törölve lett a felügyelt Google Play áruházból, a rendszer nem távolítja el az Intune Client appss listáról. Így továbbra is megcélozhat egy eltávolítási szabályzatot a felhasználók számára, még akkor is, ha az alkalmazás nincs jóváhagyva.
 
 ## <a name="android-enterprise-system-apps"></a>A Vállalati Android rendszeralkalmazásai
 
