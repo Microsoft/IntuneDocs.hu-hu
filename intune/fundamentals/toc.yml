@@ -39,6 +39,8 @@
   items:
     - name: Mi az az Intune for Education?
       href: introduction-intune-education.md
+    - name: Mi az Intune for US Government?
+      href: introduction-intune-government.md
     - name: Magas szintű architektúra
       href: high-level-architecture.md
     - name: Eszközök életciklusa

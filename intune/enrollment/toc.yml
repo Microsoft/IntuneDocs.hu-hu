@@ -113,3 +113,5 @@
           href: troubleshoot-ios-enrollment-errors.md
         - name: Windows-eszközök regisztrálásával kapcsolatos problémák elhárítása
           href: troubleshoot-windows-enrollment-errors.md
+        - name: Android-eszközök regisztrálásával kapcsolatos problémák elhárítása
+          href: troubleshoot-android-enrollment.md
