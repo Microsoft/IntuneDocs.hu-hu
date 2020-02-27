@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 282464ebb616f5c8dec928b93f4852603bb20e10
-ms.sourcegitcommit: 5881979c45fc973cba382413eaa193d369b8dcf6
+ms.openlocfilehash: f6798082f293db6745ea4a15155e15ea112ca6fd
+ms.sourcegitcommit: 8b716db3c0fdbb7dff62497ec283902a5069a343
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/24/2020
-ms.locfileid: "77569438"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77652419"
 ---
 # <a name="use-and-manage-android-enterprise-devices-with-oemconfig-in-microsoft-intune"></a>Androidos nagyvállalati eszközök használata és kezelése a OEMConfig-ben Microsoft Intune
 
@@ -162,6 +162,7 @@ A standard szintű alkalmazásokhoz képest a OEMConfig-alkalmazások kibővíti
 | Spectralink – naplózás | com. Spectralink. slnklogger |  |
 | Spectralink - VQO | com. Spectralink. slnkvqo |  |
 | Seuic | com. seuic. seuicoemconfig | |
+| UNITECH Electronics | com. UNITECH. oemconfig | |
 
 -----------------
 

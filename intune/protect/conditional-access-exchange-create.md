@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 01/24/2020
+ms.date: 02/26/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4962b4c75460b129f9df7729b5a34485d8ee0760
-ms.sourcegitcommit: 47c9af81c385c7e893fe5a85eb79cf08e69e6831
+ms.openlocfilehash: 29ddc53af79121965698d67f0d4510ac34bbabca
+ms.sourcegitcommit: 8b716db3c0fdbb7dff62497ec283902a5069a343
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77576070"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77652453"
 ---
 # <a name="create-a-conditional-access-policy-for-exchange-on-premises-and-legacy-exchange-online-dedicated"></a>Feltételes hozzáférési szabályzat létrehozása a helyszíni Exchange-hez és az örökölt dedikált Exchange Online-hoz
 
@@ -66,6 +66,24 @@ A feltételes hozzáférés konfigurálása előtt ellenőrizze, hogy a követke
 - Natív e-mail alkalmazás iOS/iPadOS.
 - EAS levelezési ügyfélprogramok, mint például a Gmail az Android 4-es vagy újabb verzióiban.
 - EAS levelezési ügyfélprogramok **Androidos munkahelyi profilos eszközökön:** A **munkahelyi profilban** csak a **Gmail** és **Nine Work for Android Enterprise** alkalmazások támogatottak az androidos munkahelyi profilos eszközökön. Az androidos munkahelyi profilokkal végzett feltételes hozzáféréshez telepítenie kell egy e-mail-profilt a Gmail vagy a Nine work for Android Enterprise alkalmazáshoz, és ezeket az alkalmazásokat kötelező telepítésként is telepítenie kell.
+
+  Feltételes hozzáférés beállítása androidos munkahelyi profilú eszközökhöz:
+
+  1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
+  
+  2. **Szükség**szerint telepítse a Gmail vagy a Nine Work alkalmazást.
+
+  3. Válassza az **eszközök** > **konfigurációs profilok** > **profil létrehozása**lehetőséget, adja meg a profil **nevét** és **leírását** .
+
+  4. Válassza az **Android Enterprise** lehetőséget a **platformon**, majd válassza az **e-mail** lehetőséget a **Profil típusa**mezőben.
+
+  5. Adja meg az [e-mail profil beállításait](https://docs.microsoft.com/intune/configuration/email-settings-android-enterprise#android-enterprise).
+
+  6. Ha elkészült, a módosítások mentéséhez válassza az **OK** > **Létrehozás** lehetőséget.
+
+  7. Az e-mail profil létrehozása után [rendelje hozzá a csoportokhoz](https://docs.microsoft.com/intune/device-profile-assign).
+
+  8. Az [eszközön alapuló feltételes hozzáférés](https://docs.microsoft.com/intune/protect/conditional-access-intune-common-ways-use#device-based-conditional-access)beállítása.
 
 > [!NOTE]
 > A Microsoft Outlook for Android és az iOS/iPadOS nem támogatott a helyszíni Exchange-összekötőn keresztül. Ha szeretné kihasználni Azure Active Directory feltételes hozzáférési szabályzatokat, és Intune App Protection szabályzatokat az iOS/iPadOS és az Android rendszerhez a helyszíni postaládákhoz, tekintse meg a [hibrid modern hitelesítés használata az Outlookban iOS/iPadOS és Android](https://docs.microsoft.com/Exchange/clients/outlook-for-ios-and-android/use-hybrid-modern-auth)rendszerhez című témakört.

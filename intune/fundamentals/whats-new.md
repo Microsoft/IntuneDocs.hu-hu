@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d2f984392983d81bc64edb7206469babdb806d63
-ms.sourcegitcommit: 29f3ba071c9348686d3ad6f3b8864d8557e05b97
+ms.openlocfilehash: 17bb4ca225fa93352428cbe208c2fc1a53812f2c
+ms.sourcegitcommit: 8b716db3c0fdbb7dff62497ec283902a5069a343
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77609272"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77652301"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -223,7 +223,7 @@ Az Android Enterprise munkahelyi profil eszközein Wi-Fi profilok hozhatók lét
 
 Ha a vállalat típusát választja, megadhatja az automatikus proxybeállításokat is, beleértve a proxykiszolgáló URL-címét, például a `proxy.contoso.com`.
 
-A konfigurálható aktuális Wi-Fi beállítások megjelenítéséhez nyissa meg a [Wi-Fi beállítások hozzáadása az Android Enterprise és az Android kioszkot futtató eszközökhöz Microsoft Intune](../configuration/wi-fi-settings-android-enterprise.md).
+A konfigurálható aktuális Wi-Fi beállítások megjelenítéséhez nyissa meg a [Wi-Fi beállítások hozzáadása az Android Enterprise és az Android kioszkot futtató eszközökhöz Microsoft Intune](../configuration/wi-fi-settings-android-enterprise.md#work-profile-only).
 
 A következőkre vonatkozik:
 - Androidos vállalati munkahelyi profil
