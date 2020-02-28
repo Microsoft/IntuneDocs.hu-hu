@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b593cab8a9a89f895c668b2b49583b73cbfccffa
-ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
+ms.openlocfilehash: 45bcabf8c7dc932c9415fbd309bf09f53499fbcc
+ms.sourcegitcommit: 045ca42cad6f86024af9a38a380535f42a6b4bef
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77515169"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77781932"
 ---
 # <a name="set-rules-on-devices-to-allow-access-to-resources-in-your-organization-using-intune"></a>Szabályok beállítása az eszközökön a szervezet erőforrásaihoz való hozzáférés engedélyezéséhez az Intune használatával
 
@@ -93,16 +93,13 @@ Az Intune a beépített megfelelőségi szabályzatok egy készletét is tartalm
 
   Ha egy eszközhöz nincs hozzárendelve megfelelőségi szabályzat, az eszköz alapértelmezés szerint megfelelőnek minősül. Ha a feltételes hozzáférést megfelelőségi szabályzatokkal használja, javasoljuk, hogy az alapértelmezett beállítást **ne megfelelőre**módosítsa. Ha egy végfelhasználó nem felel meg a szabályzatnak, a [céges portál alkalmazás](../apps/company-portal-app.md) a `No compliance policies have been assigned`t jeleníti meg.
 
-
-> [!NOTE]
-> Az iOS-/iPadOS-eszközök továbbfejlesztett jailbreak-észlelése átmenetileg le lett tiltva az Intune-ban.
-
-- **Továbbfejlesztett jailbreak-észlelés**: Ha engedélyezve van, ez a beállítás iOS/iPadOS-eszközöket eredményez az Intune-ban gyakrabban való bejelentkezéshez. A tulajdonság engedélyezésekor a rendszer igénybe veszi az eszköz helyalapú szolgáltatásait, mely hatással van az akkumulátorhasználatra. Az Intune nem tárolja a felhasználói hely adatterületét.
+- **Továbbfejlesztett jailbreak-észlelés**: Ha engedélyezve van, ez a beállítás azt eredményezi, hogy a feltört eszköz állapota gyakrabban fordul elő iOS-/iPadOS-eszközökön. Ez a beállítás csak a feltört eszközöket blokkoló megfelelőségi szabályzatot célzó eszközöket érinti. A tulajdonság engedélyezése az eszköz Location Services szolgáltatását használja, és hatással lehet az akkumulátor használatára. A felhasználói helyadatok nem az Intune-ban tárolódnak, és a háttérben csak a jailbreak-észlelést kiváltó gyakran használják. 
 
   Ennek a beállításnak az engedélyezésekor az eszközöknek meg kell felelnie a következőknek:
   - Engedélyezze a Location Services szolgáltatást az operációs rendszer szintjén.
-  - A helymeghatározási szolgáltatások használatának engedélyezése a vállalati portál számára.
-  - Jailbreakelés állapotának kiértékelése és jelentése az Intune-nak legalább 72 óránként. Máskülönben az eszköz „nem megfelelő” állapotúként lesz megjelölve. A kiértékelés a Céges portál alkalmazás megnyitásával vagy az eszköz 500 méteres vagy újabb fizikai mozgatásával aktiválódik. Ha az eszköz 72 órán belül nem helyezi át a 500 métert, a felhasználónak meg kell nyitnia a Céges portál alkalmazást a kibővített Jail Break kiértékeléséhez.
+  - Mindig engedélyezze a Céges portál számára a Location Services használatát.
+
+  A kiértékelést a Céges portál alkalmazás megnyitásával vagy az eszköz fizikai áthelyezésével, körülbelül 500 méteres vagy annál nagyobb távolsággal indítjuk el. Az iOS 13 és a rendszereken ez a funkció megköveteli, hogy a felhasználók mindig engedélyezzék az összes lehetőséget, amikor az eszköz felszólítja őket, hogy továbbra is lehetővé tegyék, hogy az Céges portál a háttérben használják a helyüket. Ha a felhasználók nem mindig engedélyezik a tartózkodási hely elérését, és ezzel a beállítással házirenddel rendelkeznek, az eszköz nem megfelelőként lesz megjelölve. Vegye figyelembe, hogy az Intune nem tudja garantálni, hogy az egyes jelentős helyekre vonatkozó változások biztosítják a jailbreak-észlelési ellenőrzéseket, mivel ez az eszköz hálózati kapcsolataitól függ.
 
 - **Megfelelőségi állapot érvényességi időtartama (nap)** : Adja meg azt az időszakot, amelyben az eszközöknek jelenteniük kell az állapotukat minden fogadott megfelelőségi szabályzat vonatkozásában. A rendszer nem megfelelőként kezeli azokat az eszközöket, melyek ebben az időszakban nem adják vissza állapotukat. Az alapértelmezett érték 30 nap. A minimális érték 1 nap.
 

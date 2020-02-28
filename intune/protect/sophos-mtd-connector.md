@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 04/30/2019
+ms.date: 02/21/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -15,16 +15,19 @@ ms.technology: ''
 ms.assetid: ''
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7d17749353bc3904a3d99210a5d56531d9af9c28
-ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
+ms.openlocfilehash: 816968d512b73a8592c7a86b39c41057aa99e827
+ms.sourcegitcommit: 045ca42cad6f86024af9a38a380535f42a6b4bef
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77514812"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77782053"
 ---
 # <a name="sophos-mobile-threat-defense-connector-with-intune"></a>A Sophos Mobile Threat Defense-összekötő az Intune-nal
 A mobil eszközök hozzáférését a vállalati erőforrásokhoz feltételes hozzáférés használatával szabályozhatja a Sophos Mobile, a Mobile Threat Defense (MTD) által a Microsoft Intune-nal integrálható megoldás alapján. A rendszer a Sophos Mobile alkalmazást futtató eszközökről gyűjtött telemetria alapján méri a kockázatot.
 Az Intune-eszköz megfelelőségi szabályzatai által engedélyezett, a Sophos Mobile Risk Assessment szolgáltatáson alapuló feltételes hozzáférési szabályzatokat konfigurálhatja, amelyekkel engedélyezheti vagy letilthatja a nem megfelelő eszközök hozzáférését a vállalati erőforrásokhoz az észlelt fenyegetések alapján.
+
+> [!NOTE]
+> A Mobile Threat Defense gyártója nem regisztrált eszközök esetén nem támogatott.
 
 ## <a name="how-do-intune-and-sophos-mobile-help-protect-your-company-resources"></a>Hogyan segít az Intune és a Sophos Mobile a vállalati erőforrások védelmében?
 A Sophos Mobile App for Android és az iOS/iPadOS rögzíti a fájlrendszer, a hálózati verem, az eszköz és az alkalmazás telemetria, ahol elérhető, majd elküldi a telemetria adatokat a Sophos Mobile Cloud Service-nek, hogy felmérje az eszköz kockázatát a mobil fenyegetések ellen.

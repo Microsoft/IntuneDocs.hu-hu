@@ -5,7 +5,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 07/26/2019
+ms.date: 02/27/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: remote-actions
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af4270587ab5894d52a7d12b1c2082b7b3298e51
-ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.openlocfilehash: df814abf9cdff3eb4d9fbac8183618461b590adb
+ms.sourcegitcommit: 045ca42cad6f86024af9a38a380535f42a6b4bef
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77413746"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77781917"
 ---
 # <a name="see-device-details-in-intune"></a>Eszközadatok megtekintése az Intune-ban
 
@@ -39,11 +39,16 @@ Ez a cikk bemutatja, hogyan tekintheti meg az összes eszközét és azok tulajd
    - Az **Áttekintés** megjeleníti az eszköz nevét, és felsorolja az eszköz néhány kulcsfontosságú tulajdonságát, például azt, hogy egy saját eszköz (BYOD) eszköz-e, és hogy van-e. A következő műveleteket végezheti el az eszközön:
       - [Kivonás](devices-wipe.md#retire)
       - [Törlés](devices-wipe.md#wipe)
+      - [Törlés](devices-wipe.md#delete-devices-from-the-intune-portal)
       - [Távoli zárolás](device-remote-lock.md)
-      - [Eszköz szinkronizálása](device-sync.md)
+      - [Szinkronizálási](device-sync.md)
       - [Új PIN-kód](device-passcode-reset.md)
       - [Újraindítás](device-restart.md) (kizárólag Windowson)
       - [Újrakezdés](device-fresh-start.md) (kizárólag Windowson)
+      - [Autopilot alaphelyzetbe állítása]() (csak Windows)
+      - [Gyors vizsgálat](../configuration/device-restrictions-windows-10.md) (csak Windows 10 esetén)
+      - [Teljes vizsgálat](../configuration/device-restrictions-windows-10.md) (csak Windows 10 esetén)
+       - [Eszköz átnevezése](device-rename.md)
       - Távsegítség-munkamenet indítása
    - **Saját létrehozású eszközkategória** hozzárendelésére és az eszköz tulajdonosának (saját eszköz vagy vállalati eszköz) átállítására használja a [Tulajdonságok](../enrollment/device-group-mapping.md) lehetőséget.
    - A **hardver** számos információt tartalmaz az eszközről, például az eszköz azonosítóját, az operációs rendszert és a verziót, a tárolóhelyet és további részleteket.

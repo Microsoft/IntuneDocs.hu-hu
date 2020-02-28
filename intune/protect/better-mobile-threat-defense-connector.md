@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 07/25/2018
+ms.date: 02/21/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -15,18 +15,18 @@ ms.technology: ''
 ms.assetid: ''
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1a52636a140778f6e78bfe081cda40b36ef2354f
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: cbab3aae2e38e1ce7d3c8c526b706d70e0cf2b2a
+ms.sourcegitcommit: 045ca42cad6f86024af9a38a380535f42a6b4bef
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72509637"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77781206"
 ---
 # <a name="better-mobile-threat-defense-connector-with-intune"></a>Better Mobile Threat Defense-összekötő az Intune-hoz
 
 A mobileszköz-hozzáférés a vállalati erőforrásokhoz a feltételes hozzáférés használatával szabályozható a jobb Mobile, a Mobile Threat Defense (MTD) által a Microsoft Intune-nal integrálható megoldás alapján. A kockázatfelmérés a Better Mobile alkalmazást futtató eszközökről gyűjtött telemetriai adatokon alapul.
 
-A feltételes hozzáférési szabályzatokat az Intune-eszközök megfelelőségi házirendjein keresztül engedélyező, jobb mobileszköz-kockázatértékelés alapján konfigurálhatja, amellyel engedélyezheti vagy letilthatja a nem megfelelő eszközök hozzáférését a vállalati erőforrásokhoz az észlelt fenyegetések alapján.
+A feltételes hozzáférési szabályzatokat a felügyelt eszközökre vonatkozó Intune-eszközök megfelelőségi szabályzatai alapján engedélyezheti, és a nem megfelelő eszközök számára engedélyezheti vagy letilthatja a nem megfelelő eszközök hozzáférését a vállalati erőforrásokhoz az észlelt érték alapján. fenyegetések. A nem regisztrált eszközök esetében az alkalmazás-védelmi házirendek segítségével kényszerítheti ki az észlelt fenyegetések alapján egy blokkot vagy szelektív törlést.
 
 ## <a name="how-do-intune-and-better-mobile-help-protect-your-company-resources"></a>Hogyan segíti az Intune és a Better Mobile a vállalati erőforrások védelmét?
 
@@ -105,3 +105,5 @@ Ha az eszközön rosszindulatú alkalmazásokat, például kártevőket észlel 
 - [Better Mobile eszközmegfelelőségi szabályzat létrehozása](mtd-device-compliance-policy-create.md)
 
 - [A Better Mobile MTD-összekötő engedélyezése](mtd-connector-enable.md)
+
+- [MTD-szabályzat létrehozása](mtd-app-protection-policy.md) 

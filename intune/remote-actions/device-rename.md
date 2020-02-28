@@ -5,7 +5,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 07/05/2019
+ms.date: 02/27/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: remote-actions
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 11b339a3e94e60db43e8237d9f3d2c729b48a57d
-ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.openlocfilehash: b286e095613c56f2d6fdfa5a2cf2cd1398611f12
+ms.sourcegitcommit: 045ca42cad6f86024af9a38a380535f42a6b4bef
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77413606"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77781838"
 ---
 # <a name="rename-a-device-in-intune"></a>Eszköz átnevezése az Intune-ban
 
@@ -37,7 +37,7 @@ Ez a funkció jelenleg nem támogatja a hibrid Azure AD Windows-eszközök átne
 ## <a name="rename-a-device"></a>Eszköz átnevezése
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
-3. Válassza az **eszközök** > **minden eszköz** lehetőséget > válasszon ki egy eszközt > **további** > **átnevezése eszköz**.
+3. Válassza az **eszközök** > **minden eszköz** lehetőséget > válasszon ki egy eszközt > **..** . > **átnevezi az eszközt**.
 4. Az **eszköz átnevezése** panelen írja be az új nevet a szövegmezőbe. Betűket, számokat és kötőjeleket is használhat. A névnek legalább egy betűt vagy kötőjelet tartalmaznia kell.
 5. Ha az Átnevezés után újra szeretné indítani az eszközt, az újraindítás után az **Igen** gombra kattintva **indítsa újra**a rendszert.
 6. Válassza az **Átnevezés**lehetőséget.

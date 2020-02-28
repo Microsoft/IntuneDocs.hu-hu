@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b780f22fd6823499128a3975f1812a1d1f7c032b
-ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.openlocfilehash: 03bfdfb87c969381b582481367ab0457f6b50049
+ms.sourcegitcommit: 045ca42cad6f86024af9a38a380535f42a6b4bef
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77413776"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77781888"
 ---
 # <a name="what-is-microsoft-intune-device-management"></a>A Microsoft Intune-eszközfelügyelet ismertetése
 
@@ -39,7 +39,7 @@ Az **Eszközök** munkafolyamat áttekintést nyújt a felügyelt eszközökről
    - Az **Áttekintés** megjeleníti a beléptetett eszközök vizualizációs pillanatképét, valamint azt is, hogy hány eszköz használja a különböző platformokat, például Android, iOS/iPadOS stb.
    - A **Minden eszköz** az Ön által kezelt regisztrált eszközöket jeleníti meg.
 
-     Az **Exportálás** funkcióval létrehozhat egy .csv formátumú listát minden eszközről, egyenként 10000 (Internet Explorer), iletve 30000 (Microsoft Edge, Chrome) eszközzel.
+     Az **Exportálás** funkcióval az összes eszközön létrehozhat egy. zip-listát az 10 000-es (Internet Explorer) vagy 30 000 (Microsoft Edge, Chrome) növekményekben.
 
      Válassza ki bármelyik eszközt az [eszköz további részleteinek megtekintéséhez](device-inventory.md), beleértve a hardver részleteit, a telepített alkalmazásokat, a megfelelőségi szabályzat állapotát és egyebeket.
 

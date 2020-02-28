@@ -5,7 +5,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 09/18/2018
+ms.date: 02/27/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: remote-actions
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cd6e58efa096c006780c17d991a9ea5da26099d4
-ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.openlocfilehash: 9481e25a3d9aa48e21c4e01194dfa7ee1ad1bd38
+ms.sourcegitcommit: 045ca42cad6f86024af9a38a380535f42a6b4bef
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77415551"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77782161"
 ---
 # <a name="reset-or-remove-a-device-passcode-in-intune"></a>Eszközök PIN-kódjának visszaállítása vagy eltávolítása az Intune-ban
 
@@ -59,7 +59,7 @@ A munkahelyi profilokhoz a PIN-kód alaphelyzetbe állítása művelettel hozhat
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431) a következő szerepkörök bármelyikével: Azure Active Directory globális rendszergazda, Azure Active Directory Intune szolgáltatás-rendszergazda, segélyszolgálat-kezelő vagy szerepkör-rendszergazda.
 2. Kattintson az **Eszközök**, majd a **Minden eszköz** elemre.
-3. Az Ön által kezel eszközök listájáról válasszon ki egy eszközt, majd válassza a **...További** lehetőséget. Majd válassza a **PIN-kód eltávolítása** távoli eszközműveletet.
+3. A felügyelt eszközök listájából válassza ki az eszközt, majd válassza a **PIN-kód eltávolítása**lehetőséget.
 
 ## <a name="reset-android-work-profile-passcodes"></a>Androidos munkahelyi profilok PIN-kódjának alaphelyzetbe állítása
 

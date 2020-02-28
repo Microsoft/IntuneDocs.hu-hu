@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 06/11/2019
+ms.date: 02/21/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f0123647fb1e8a1d52506ad0753906f974103aad
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 628aa93af912d6c50a6897dbf871702e46b4893e
+ms.sourcegitcommit: 045ca42cad6f86024af9a38a380535f42a6b4bef
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72502206"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77782145"
 ---
 # <a name="lookout-mobile-endpoint-security-connector-with-intune"></a>A Mobile Endpoint Security-összekötő kilátója az Intune-nal
 
@@ -32,7 +32,7 @@ A Microsoft Intune-nal integrálható, Lookout nevű, veszélyforrások elleni m
 - Telepített kártékony alkalmazások
 - Kártékony hálózati profilok
 
-A feltételes hozzáférési szabályzatok az Intune megfelelőségi szabályzatai által engedélyezett kockázatértékelés alapján állíthatók be. A beállítások lehetővé teszik a nem megfelelő eszközök engedélyezését vagy letiltását az észlelt fenyegetések alapján.
+A feltételes hozzáférési szabályzatok az Intune megfelelőségi szabályzatai által a regisztrált eszközökre vonatkozóan engedélyezett kockázatértékelés alapján konfigurálhatók, amelynek segítségével engedélyezheti vagy letilthatja a nem megfelelő eszközök hozzáférését a vállalati erőforrásokhoz az észlelt fenyegetések alapján. A nem regisztrált eszközök esetében az alkalmazás-védelmi házirendek segítségével kényszerítheti ki az észlelt fenyegetések alapján egy blokkot vagy szelektív törlést.
 
 ## <a name="how-do-intune-and-lookout-mobile-endpoint-security-help-protect-company-resources"></a>Hogyan segít a vállalati erőforrások védelme az Intune-ban és a mobil Endpoint Security szolgáltatásban?
 A Lookout mobilalkalmazása, a **Lookout for Work** telepítve van és fut a mobileszközökön. Az alkalmazás rögzíti a fájlrendszer, a hálózati protokollkészlet, valamint az eszközök és az alkalmazások telemetriai adatait, ha elérhetők, és továbbítja őket a Lookout veszélyforrások elleni eszközvédelmi felhőszolgáltatásnak, amely kiszámítja az eszköz kockázatát a mobil veszélyforrások tekintetében. A Lookout konzolon igény szerint módosítható a fenyegetések kockázatiszint-besorolása.  
@@ -86,7 +86,7 @@ Ha az eszközön rosszindulatú alkalmazásokat, például kártevőket észlel 
 ![A feltételes hozzáférés fogalmi képe, amely lehetővé teszi a hozzáférést a szervizelés után](./media/lookout-mobile-threat-defense-connector/network-wifi-unblocked.png)
 ### <a name="control-access-to-sharepoint-online-based-on-threat-to-network"></a>Hozzáférés vezérlése a SharePoint Online-hoz hálózati fenyegetés alapján
 
-Észleli a hálózat elleni támadásokat, például a közbeékelődéses (man-in-the-middle) támadást és az eszköz jelentette kockázat alapján megakadályozza a vállalati fájlok szinkronizálását.
+Észleli a hálózat elleni támadásokat, például a közbeékelődéses ({1}man-in-the-middle{2}) támadást és az eszköz jelentette kockázat alapján megakadályozza a vállalati fájlok szinkronizálását.
 
 **A SharePoint Online letiltása hálózati fenyegetések észlelése esetén:**
 
@@ -99,7 +99,9 @@ Ha az eszközön rosszindulatú alkalmazásokat, például kártevőket észlel 
 
 ## <a name="next-steps"></a>További lépések
 A legfontosabb lépések a megoldás megvalósítása érdekében:
-1. [A Lookout-integráció beállítása](lookout-mtd-connector-integration.md)
-2. [A mobil végpontok biztonságának engedélyezése az Intune-ban](mtd-connector-enable.md)
-3. [A Lookout for Work felvétele és hozzárendelése](mtd-apps-ios-app-configuration-policy-add-assign.md)
-4. [A Lookout eszközmegfelelőségi szabályzatának konfigurálása](mtd-device-compliance-policy-create.md)
+- [A Lookout-integráció beállítása](lookout-mtd-connector-integration.md)
+- [A mobil végpontok biztonságának engedélyezése az Intune-ban](mtd-connector-enable.md)
+- [A Lookout for Work felvétele és hozzárendelése](mtd-apps-ios-app-configuration-policy-add-assign.md)
+- [A Lookout eszközmegfelelőségi szabályzatának konfigurálása](mtd-device-compliance-policy-create.md)
+- [MTD-szabályzat létrehozása](mtd-app-protection-policy.md)
+

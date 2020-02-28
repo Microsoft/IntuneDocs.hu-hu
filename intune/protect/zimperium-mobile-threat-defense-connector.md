@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 12/29/2017
+ms.date: 02/21/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,18 +18,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9d0fe5634e5af6ef4c6f19e067131f151733c0b5
-ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
+ms.openlocfilehash: 32ace832e44f1cb6d334f69a0c1f03cb41515b2f
+ms.sourcegitcommit: 045ca42cad6f86024af9a38a380535f42a6b4bef
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77515237"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77782048"
 ---
 # <a name="zimperium-mobile-threat-defense-connector-with-intune"></a>Zimperium Mobile Threat Defense-összekötő az Intune-nal
 
 A mobileszköz-hozzáférés a vállalati erőforrásokhoz a feltételes hozzáférés használatával szabályozható a Zimperium által végzett, a Microsoft Intune-nal integrálható Mobile Threat Defense (MTD) megoldás kockázatértékelése alapján. A kockázatfelmérés a Zimperium alkalmazást futtató eszközökről gyűjtött telemetriai adatokon alapul.
 
-A feltételes hozzáférési szabályzatok az Intune-eszköz megfelelőségi szabályzatai által engedélyezett Zimperium kockázatértékelés alapján konfigurálhatók. A kockázatértékelési házirend engedélyezheti vagy letilthatja a nem megfelelő eszközök hozzáférését a vállalati erőforrásokhoz az észlelt fenyegetések alapján.
+A feltételes hozzáférési szabályzatokat az Intune eszköz megfelelőségi szabályzatai által engedélyezett Zimperium kockázatértékelés alapján konfigurálhatja a regisztrált eszközökre, amelyek segítségével engedélyezheti vagy letilthatja a nem megfelelő eszközök hozzáférését a vállalati erőforrásokhoz az észlelt érték alapján. fenyegetések. A nem regisztrált eszközök esetében az alkalmazás-védelmi házirendek segítségével kényszerítheti ki az észlelt fenyegetések alapján egy blokkot vagy szelektív törlést.
 
 ## <a name="how-do-intune-and-zimperium-help-protect-your-company-resources"></a>Hogyan segíti az Intune és a Zimperium a vállalati erőforrások védelmét?
 
@@ -108,3 +108,5 @@ Ha az eszközön kártékony alkalmazásokat, például kártevőket észlel a r
 - [Zimperiummal használható eszközmegfelelőségi szabályzat létrehozása](mtd-device-compliance-policy-create.md)
 
 - [Zimperium MTD-összekötő engedélyezése](mtd-connector-enable.md)
+
+- [MTD-szabályzat létrehozása](../protect/mtd-app-protection-policy.md)

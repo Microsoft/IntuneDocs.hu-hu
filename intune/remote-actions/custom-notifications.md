@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 02/25/2020
+ms.date: 02/27/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: remote-actions
@@ -18,16 +18,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5195ee83efb68cea061e69f5cad49e9d43458450
-ms.sourcegitcommit: 29f3ba071c9348686d3ad6f3b8864d8557e05b97
+ms.openlocfilehash: afcb49447aa044b730d2271603d4966466318193
+ms.sourcegitcommit: 045ca42cad6f86024af9a38a380535f42a6b4bef
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77609358"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77782022"
 ---
-# <a name="send-custom-notifications-in-intune"></a>Egyéni értesítések küldése az Intune-ban  
+# <a name="send-custom-notifications-in-intune"></a>Egyéni értesítések küldése az Intune-ban
 
-A Microsoft Intune használatával egyéni értesítéseket küldhet a felügyelt iOS-/iPadOS-és Android-eszközök felhasználóinak. Ezek az üzenetek szabványos leküldéses értesítésként jelennek meg a Céges portál alkalmazásból és a felhasználó eszközén található Microsoft Intune alkalmazásból, ugyanúgy, mint az eszközön lévő más alkalmazások értesítései. A macOS és a Windows rendszerű eszközök nem támogatják az egyéni Intune-értesítéseket.   
+A Microsoft Intune használatával egyéni értesítéseket küldhet a felügyelt iOS-/iPadOS-és Android-eszközök felhasználóinak. Ezek az üzenetek szabványos leküldéses értesítésként jelennek meg a Céges portál alkalmazásból és a felhasználó eszközén található Microsoft Intune alkalmazásból, ugyanúgy, mint az eszközön lévő más alkalmazások értesítései. A macOS és a Windows rendszerű eszközök nem támogatják az egyéni Intune-értesítéseket.
 
 Az egyéni értesítési üzenetek közé tartozik egy rövid cím és egy 500 karakterből álló üzenettörzs vagy kevesebb. Ezek az üzenetek bármilyen általános kommunikációs célra testreszabhatók.
 
@@ -76,14 +76,14 @@ Ha a Céges portál alkalmazás egy androidos eszközön van megnyitva, az érte
 - Legfeljebb 25 üzenetet küldhet a csoportoknak óránként. Ez a korlátozás a bérlő szintjén van. Ez a korlátozás nem vonatkozik az értesítések az egyes eszközökre való küldésekor.
 - Legfeljebb 25 üzenetet küldhet a csoportoknak óránként. Ez a korlátozás a bérlő szintjén van. Ez a korlátozás nem vonatkozik a magánszemélyeknek küldött értesítések küldésére.
 - Amikor üzeneteket küld az egyes eszközökre, óránként legfeljebb 10 üzenetet küldhet ugyanarra az eszközre.
-- Az értesítéseket csoportokba tartozó felhasználók számára is elküldheti. Amikor értesítéseket küld a csoportoknak, minden értesítés közvetlenül legfeljebb 25 csoportot célozhat meg. A beágyazott csoportok nem számítanak bele a teljes összegbe. Amikor értesítést küld egy csoportnak, az üzenetek csak a csoportban lévő felhasználókat célozzák meg, és a felhasználó által regisztrált iOS-vagy Android-eszközökre küldenek. Az értesítés megcélzásakor a rendszer figyelmen kívül hagyja a csoportban lévő eszközöket.
-- Értesítéseket egyetlen eszközre is küldhet. A csoportok használata helyett válasszon ki egy eszközt, majd egy távoli [eszköz művelettel](device-management.md#available-device-actions) küldje el az egyéni értesítést.  
+- Az értesítéseket csoportokba tartozó felhasználók számára is elküldheti. Amikor értesítéseket küld a csoportoknak, minden értesítés közvetlenül legfeljebb 25 csoportot célozhat meg. A beágyazott csoportok nem számítanak bele a teljes összegbe. Amikor értesítést küld egy csoportnak, az üzenetek csak a csoportban lévő felhasználókat célozzák meg, és minden olyan iOS/iPadOS vagy Android rendszerű eszközre küldenek, amelyet a felhasználó regisztrált. Az értesítés megcélzásakor a rendszer figyelmen kívül hagyja a csoportban lévő eszközöket.
+- Értesítéseket egyetlen eszközre is küldhet. A csoportok használata helyett válasszon ki egy eszközt, majd egy távoli [eszköz művelettel](device-management.md#available-device-actions) küldje el az egyéni értesítést.
 
 **Kézbesítés**:
 
 - Az Intune üzeneteket küld a felhasználók Céges portál alkalmazásnak vagy a Microsoft Intune alkalmazásnak, amely ezután létrehozza a leküldéses értesítést. A felhasználóknak nem kell bejelentkezniük az alkalmazásba az értesítés leküldéséhez az eszközön, de az eszközt a megcélzó felhasználónak kell regisztrálnia.
-- Az Intune, a Céges portál alkalmazás és a Microsoft Intune alkalmazás nem tudja garantálni az egyéni értesítések kézbesítését. Előfordulhat, hogy az egyéni értesítések több órányi késés után is megjelennek, így sürgős üzenetekhez nem használhatók.  
-- Az Intune-ból származó egyéni értesítési üzenetek szabványos leküldéses értesítésként jelennek meg az eszközökön. Ha a Céges portál alkalmazás egy iOS-eszközön van megnyitva, amikor megkapja az értesítést, a rendszer leküldéses értesítés helyett az alkalmazásban jeleníti meg az értesítést.  
+- Az Intune, a Céges portál alkalmazás és a Microsoft Intune alkalmazás nem tudja garantálni az egyéni értesítések kézbesítését. Előfordulhat, hogy az egyéni értesítések több órányi késés után is megjelennek, így sürgős üzenetekhez nem használhatók.
+- Az Intune-ból származó egyéni értesítési üzenetek szabványos leküldéses értesítésként jelennek meg az eszközökön. Ha a Céges portál alkalmazás iOS/iPadOS eszközön van megnyitva, amikor megkapja az értesítést, a rendszer leküldéses értesítés helyett az alkalmazásban jeleníti meg az értesítést.  
 - Az egyéni értesítések az eszköz beállításaitól függően az iOS/iPadOS és az Android rendszerű eszközök zárolási képernyőjén is láthatók.  
 - Az Android-eszközökön más alkalmazások is hozzáférhetnek az egyéni értesítések adataihoz. Ne használja őket bizalmas kommunikációra.  
 - Azok a felhasználók, akik nemrég lettek regisztrálva, vagy egy csoportból eltávolított felhasználók, továbbra is kaphatnak olyan egyéni értesítést, amelyet később küldenek a csoportnak.  Hasonlóképpen, ha a csoportba egy egyéni értesítés elküldése után ad hozzá egy felhasználót egy csoporthoz, az újonnan felvett használatával megkaphatja a korábban elküldött értesítési üzenetet.  
@@ -98,7 +98,7 @@ Ha a Céges portál alkalmazás egy androidos eszközön van megnyitva, az érte
 
    ![Egyéni értesítés létrehozása](./media/custom-notifications/custom-notifications.png)  
 
-3. A **hozzárendelések** lapon válassza ki azokat a csoportokat, amelyekhez az egyéni értesítést el szeretné küldeni, majd a folytatáshoz kattintson a Tovább gombra. Ha egy értesítést küld egy csoportnak, akkor csak az adott csoport felhasználóit célozza meg; az értesítés az adott felhasználó által regisztrált összes iOS-és Android-eszközt megkeresi.
+3. A **hozzárendelések** lapon válassza ki azokat a csoportokat, amelyekhez az egyéni értesítést el szeretné küldeni, majd a folytatáshoz kattintson a Tovább gombra. Ha egy értesítést küld egy csoportnak, akkor csak az adott csoport felhasználóit célozza meg; az értesítés az adott felhasználó által beléptetett iOS-/iPadOS-és Android-eszközökre fog belépni.
 
 4. A **felülvizsgálat + létrehozás** lapon tekintse át az információkat, és ha készen áll az értesítés elküldésére, válassza a **Létrehozás**lehetőséget.  
 

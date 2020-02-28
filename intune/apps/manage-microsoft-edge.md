@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9622eb33cb4e7732b573e8caf56acf4e3966badb
-ms.sourcegitcommit: 29f3ba071c9348686d3ad6f3b8864d8557e05b97
+ms.openlocfilehash: 6bcec352121781162f5f03a14717fdea62515db2
+ms.sourcegitcommit: 045ca42cad6f86024af9a38a380535f42a6b4bef
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77609120"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77781189"
 ---
 # <a name="manage-web-access-by-using-microsoft-edge-with-microsoft-intune"></a>Webes elérés kezelése a Microsoft Edge és a Microsoft Intune használatával
 
@@ -171,7 +171,7 @@ Célozza meg a Microsoft Edge-t a következő kulcs/érték párokkal, hogy enge
 |-------------------------------------------------------------------|-------------|
 |    com.microsoft.intune.mam.managedbrowser.AppProxyRedirection    |    true    |
 
-További információ arról, hogyan használható a Microsoft Edge és az Azure AD Application Proxy a helyszíni webalkalmazásokhoz való zökkenőmentes (és védett) hozzáféréshez. a jobb együttműködés érdekében lásd: az Intune és a Azure Active Directory összevonása a [felhasználói hozzáférés javítására](https://cloudblogs.microsoft.com/enterprisemobility/2017/07/06/better-together-intune-and-azure-active-directory-team-up-to-improve-user-access). Ez a blogbejegyzés a Intune Managed Browserra hivatkozik, de a tartalom a Microsoft Edge-re is vonatkozik.
+További információ arról, hogyan használható a Microsoft Edge és az Azure AD Application Proxy a helyszíni webalkalmazásokhoz való zökkenőmentes (és védett) hozzáféréshez. a jobb együttműködés érdekében lásd: az Intune és a Azure Active Directory összevonása a [felhasználói hozzáférés javítására](https://techcommunity.microsoft.com/t5/enterprise-mobility-security/better-together-intune-and-azure-active-directory-team-up-to/ba-p/250254). Ez a blogbejegyzés a Intune Managed Browserra hivatkozik, de a tartalom a Microsoft Edge-re is vonatkozik.
 
 ## <a name="configure-a-homepage-shortcut-for-microsoft-edge"></a>Kezdőlap parancsikon konfigurálása a Microsoft Edge-hez
 

@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 02/27/2020
 ms.service: microsoft-intune
 ms.subservice: apps
 ms.localizationpriority: high
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e9c3e775773ab08721cb3a65858f3d8c8402104f
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: ae6bfd71cb6730c9e71075df5ea2f45aa514178a
+ms.sourcegitcommit: 045ca42cad6f86024af9a38a380535f42a6b4bef
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74563736"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77781692"
 ---
 # <a name="how-to-validate-your-app-protection-policy-setup-in-microsoft-intune"></a>Az alkalmazás-védelmi szabályzat beállításának érvényesítése Microsoft Intune
 
@@ -61,6 +61,6 @@ A felhasználói állapotnak megfelelően az alábbi műveleteket hajthatja vég
 - [Mi az Intune alkalmazásvédelmi szabályzata?](app-protection-policies.md)
 - [Az Intune-t tartalmazó licencek](../fundamentals/licenses.md)
 - [Licencek kiosztása a felhasználók számára, hogy regisztrálni tudják az eszközöket az Intune-ban](../fundamentals/licenses-assign.md)
-- [Alkalmazásvédelmi szabályzatbeállítások érvényesítése](app-protection-policies-validate.md)
+- [Az alkalmazás-védelmi szabályzat beállításának ellenőrzése](app-protection-policies-validate.md)
 - [Az alkalmazás-védelmi szabályzatok figyelése](app-protection-policies-monitor.md)
 

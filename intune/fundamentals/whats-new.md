@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 17bb4ca225fa93352428cbe208c2fc1a53812f2c
-ms.sourcegitcommit: 8b716db3c0fdbb7dff62497ec283902a5069a343
+ms.openlocfilehash: af8b46605d099a920ee512bce3ba94708b4a9eac
+ms.sourcegitcommit: 045ca42cad6f86024af9a38a380535f42a6b4bef
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77652301"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77781172"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -67,6 +67,17 @@ Javítottuk a macOS-eszközök regisztrálási élményét és a Mac Céges port
 - A másolt incidensek azonosítóinak támogatása, így a felhasználók gyorsabban küldhetnek hibákat az eszközeiről a céges támogatási csapatnak.
 
 A regisztrációval és a Mac Céges portál alkalmazással kapcsolatos további információkért lásd: [MacOS-eszköz regisztrálása a céges portál alkalmazás használatával](/intune-user-help/enroll-your-device-in-intune-macos-cp). 
+
+#### <a name="app-protection-policies-for-better-mobile-now-supports-ios-and-ipados---6224512----"></a>Az App Protection-szabályzatok a Better Mobile-hoz már támogatja az iOS-és iPadOS<!-- 6224512  -->
+
+2019 októberében az Intune app Protection-szabályzat hozzáadta a Microsoft Threat Defense-partnereinktől származó adatok használatát. Ezzel a frissítéssel mostantól egy alkalmazás-védelmi szabályzattal blokkolhatja, vagy szelektíven törölheti a felhasználókat a vállalati adatok alapján, az iOS-és iPadOS jobb mobil használatával.  További információ: [a Mobile Threat Defense-alkalmazás védelmi szabályzatának létrehozása az Intune](../protect/mtd-app-protection-policy.md)-nal.
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name="device-management"></a>Eszközkezelés
+
+#### <a name="exports-from-the-all-devices-list--now-in-zipped-csv-format--6343117--"></a>Exportálás a minden eszköz listából most tömörített CSV-formátumban<!--6343117-->
+Az **eszközökről** > az **összes eszköz** lapon lévő exportálás már tömörített CSV-formátumban van.
+
 
 <!-- ########################## -->
 ## <a name="week-of-february-17-2020-2002-service-release"></a>Február 17-i hét, 2020 (2002-es kiadás)
@@ -164,7 +175,9 @@ A Microsoft új Office-alkalmazásának letöltése és használata általánosa
 
 További információ: [az Intune app Protection-szabályzatok engedélyezése az Office Mobile Preview alkalmazással](https://techcommunity.microsoft.com/t5/intune-customer-success/support-tip-how-to-enable-intune-app-protection-policies-with/ba-p/1045493).
 
+
 <!-- ########################## -->
+
 ## <a name="week-of-february-10-2020"></a>2020. február 10-i hét
 
 ### <a name="windows-7-ends-extended-support--3042987---"></a>A Windows 7 kiterjesztett támogatást ér véget<!--3042987 -->

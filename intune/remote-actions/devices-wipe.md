@@ -5,7 +5,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 04/08/2019
+ms.date: 2/27/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: remote-actions
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 41a46bd400c5901f0352709f6057bddac262ff9e
-ms.sourcegitcommit: 29f3ba071c9348686d3ad6f3b8864d8557e05b97
+ms.openlocfilehash: 931a1255a0b7aef6f776e8e0bf259e1ea0dd8d65
+ms.sourcegitcommit: 045ca42cad6f86024af9a38a380535f42a6b4bef
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77609375"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77781850"
 ---
 # <a name="remove-devices-by-using-wipe-retire-or-manually-unenrolling-the-device"></a>Eszközök eltávolítása összes adatuk törlésével, az eszköz kivonásával vagy regisztrációja manuális törlésével
 
@@ -47,8 +47,6 @@ Az **Összes adat törlése** művelet visszaállítja az eszközön az alapért
 
 A **Regisztrációs állapot és felhasználói fiók megtartása** lehetőség csak a Windows 10 1709-es vagy újabb verziók esetében érhető el.
 
-A **védett törlés végrehajtása** beállítás megadásával gondoskodhat arról, hogy az eszköz kikapcsolásával ne legyen kijátszható a törlési művelet. A védett adatok törlésével a rendszer addig próbálkozik az eszköz alaphelyzetbe állításával. Bizonyos konfigurációk esetében ez a művelet [nem tudja újraindítani](troubleshoot-device-actions.md#wipe-action)az eszközt.
-
 A rendszer újra alkalmazza az MDM-szabályzatokat az eszköz következő Intune-csatlakozásakor.
 
 Az összes adat törlését akkor érdemes használni, ha szeretne alaphelyzetbe állítani egy adott eszközt, mielőtt új felhasználónak adná, illetve abban az esetben, ha az eszközt elveszítették vagy ellopták. Az **Összes adat törlése** műveletet körültekintően használja. Az eszközön tárolt adatok a művelet után nem állíthatók vissza.
@@ -71,8 +69,8 @@ Az összes adat törlését akkor érdemes használni, ha szeretne alaphelyzetbe
     |A felhasználói profilon kívüli felhasználói adatok||
     |Felhasználói automatikus bejelentkezés|| 
     
-         
-7. Az összes adat törlésének megerősítéséhez válassza az **Igen** lehetőséget.
+7. **Törölje az eszközt, és folytassa a törléssel, még akkor is, ha az eszköz elveszti a teljesítményt.** a beállítás megadásával gondoskodhat róla, hogy az eszköz kikapcsolásával ne legyen kijátszható a törlési művelet. Ezzel a beállítással továbbra is próbálkozhat az eszköz alaphelyzetbe állításával. Bizonyos konfigurációk esetében ez a művelet [nem tudja újraindítani](troubleshoot-device-actions.md#wipe-action)az eszközt.        
+8. Az összes adat törlésének megerősítéséhez válassza az **Igen** lehetőséget.
 
 Ha az eszköz be van kapcsolva és csatlakoztatva van, az **Összes adat törlése** műveletnek az összes eszköztípusra való propagálása kevesebb mint 15 percet vesz igénybe.
 

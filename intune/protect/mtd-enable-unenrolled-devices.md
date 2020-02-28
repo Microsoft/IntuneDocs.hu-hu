@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 10/21/2019
+ms.date: 02/20/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,19 +18,23 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9571f7d0ae10f33007d5ae50b403580232c2e870
-ms.sourcegitcommit: 06dce5c8111592ad774247e86e539dd3128117e5
+ms.openlocfilehash: 25d7c357c0ea313891f80433f33cd4ac57cfad2c
+ms.sourcegitcommit: 045ca42cad6f86024af9a38a380535f42a6b4bef
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/30/2019
-ms.locfileid: "75545930"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77782090"
 ---
 # <a name="enable-the-mobile-threat-defense-connector-in-intune-for-unenrolled-devices"></a>A Mobile Threat Defense-összekötő engedélyezése az Intune-ban a nem regisztrált eszközökön
 
 A Mobile Threat Defense (MTD) telepítésekor beállította a fenyegetések besorolására szolgáló szabályzatot a Mobile Threat Defense-partner konzolon, és létrehozta az alkalmazás-védelmi szabályzatot az Intune-ban. Ha már konfigurálta az Intune-összekötőt a MTD-partner konzolon, most már engedélyezheti a MTD-MTD kapcsolatát.
 
 > [!NOTE]
-> Ez a cikk az alkalmazás-védelmi házirendeket támogató összes Mobile Threat Defense-partnerre vonatkozik: Better Mobile (Android), Zimperium (Android/iOS), Lookout for Work (Android/iOS).
+> Ez a cikk az alkalmazás-védelmi házirendeket támogató összes Mobile Threat Defense-partnerre vonatkozik:
+>
+> - Jobb mobil (Android, iOS/iPadOS)
+> - Zimperium (Android, iOS/iPadOS)
+> - Lookout for Work (Android, iOS/iPadOS)
 
 ## <a name="classic-conditional-access-policies-for-mtd-apps"></a>Klasszikus feltételes hozzáférési szabályzatok a MTD-alkalmazásokhoz
 
@@ -72,7 +76,7 @@ A cég igényei alapján eldöntheti, hogy az MTD mely kapcsolós beállításai
 
 - Az **4,4-es vagy újabb verziójú Android-eszközök csatlakoztatásával *\<MTD-partner neve >* for app Protection Policy kiértékelés**: Ha engedélyezi ezt a beállítást, az eszköz veszélyforrások szintjének szabályát használó alkalmazás-védelmi házirendek kiértékelik az adott összekötőből származó adatokkal rendelkező eszközöket.
 
-- Az **iOS-eszközök 11-es vagy újabb verziójának összekapcsolása az alkalmazás-védelmi szabályzat kiértékeléséhez *\<MTD*** : Ha engedélyezi ezt a beállítást, az eszköz veszélyforrások szintjének szabályát használó alkalmazás-védelmi házirendek kiértékelik az adott összekötőből származó adatokkal rendelkező eszközöket is.
+- Az **iOS-eszközök 11-es vagy újabb verziójának összekapcsolása az alkalmazás-védelmi szabályzat kiértékeléséhez *>\<MTD*** : Ha engedélyezi ezt a beállítást, az eszköz veszélyforrások szintjének szabályát használó alkalmazás-védelmi házirendek kiértékelik az adott összekötőből származó adatokkal rendelkező eszközöket is.
 
 **Közös megosztott beállítások**
 
