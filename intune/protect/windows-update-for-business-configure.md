@@ -15,12 +15,12 @@ ms.reviewer: mghadial
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e478402f826809bda4f81315d5a1a4ff6e1a8b88
-ms.sourcegitcommit: 5ad0ce27a30ee3ef3beefc46d2ee49db6ec0cbe3
+ms.openlocfilehash: c9245ca028bdb5589df8c76b10560d9130a1108c
+ms.sourcegitcommit: 9ee2401a2f01373a962749b0728c22385dbcba6d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76886799"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78181721"
 ---
 # <a name="manage-windows-10-software-updates-in-intune"></a>Windows 10 rendszerű szoftverfrissítések kezelése az Intune-ban
 
@@ -77,14 +77,14 @@ A Windows 10-es frissítési gyűrűk támogatják a [hatókör címkéit](../fu
 
 ### <a name="create-and-assign-update-rings"></a>Frissítési körök létrehozása és hozzárendelése
 
-1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába]( https://go.microsoft.com/fwlink/?linkid=2109431).
+1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 
 2. Válassza az **eszközök** > **Windows** > **Windows 10 frissítési** körök > **Létrehozás**lehetőséget.
 
 3. Az *alapvető beállítások*területen adjon meg egy nevet, egy leírást (nem kötelező), majd kattintson a **tovább**gombra.
-  ![frissítési kör létrehozása]( ./media/windows-update-for-business-configure/basics-tab.png)
-  
-4. A **frissítési kör beállításai**területen konfigurálja az üzleti igényeknek megfelelő beállításokat. Az elérhető beállításokkal kapcsolatos további információkért lásd: a Windows Update beállításai. A *frissítési és felhasználói élmény* beállításainak konfigurálása után kattintson a **Tovább gombra**.
+  ![frissítési kör létrehozása](./media/windows-update-for-business-configure/basics-tab.png)
+
+4. A **frissítési kör beállításai**területen konfigurálja az üzleti igényeknek megfelelő beállításokat. Az elérhető beállításokkal kapcsolatos további információkért lásd: a [Windows Update beállításai](../protect/windows-update-settings.md). A *frissítési és felhasználói élmény* beállításainak konfigurálása után kattintson a **Tovább gombra**.
 
 5. A **hatókör címkék**területen válassza a **+ hatókör címkék lehetőséget** a *címkék kiválasztása* ablaktábla megnyitásához, ha alkalmazni szeretné őket a frissítési gyűrűre. Válasszon ki egy vagy több címkét, majd kattintson a **kiválasztás** elemre, és adja hozzá őket a frissítési gyűrűhöz, és térjen vissza a *hatókör címke*s oldalára.
 
@@ -135,7 +135,7 @@ Ha a frissítési típus szüneteltetve van, az adott gyűrű áttekintő panelj
 > [!IMPORTANT]
 > A szüneteltetési parancs kiadása után az eszközök akkor kapják meg ezt a parancsot, amikor legközelebb bejelentkeznek a szolgáltatásba. Megtörténhet, hogy mielőtt bejelentkeznek, még telepítenek egy ütemezett frissítést. Ha az adott eszköz ki van kapcsolva a felfüggesztési parancs kiadásakor, akkor a bekapcsolása után esetleg letölthet és telepíthet ütemezett frissítéseket, mielőtt bejelentkezik az Intune-ba.
 
-#### <a name="resume"></a>Folytatása
+#### <a name="resume"></a>Folytatás
 
 Amíg a frissítési kör szünetel, a **Folytatás** gombra kattintva visszaállíthatja a szolgáltatás és a minőségi frissítéseket az adott gyűrű aktív működéséhez. A frissítési kör folytatása után újra szüneteltetheti a gyűrűt.
 

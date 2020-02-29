@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 02/28/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40cbb62a620d6e174ab8acb76798ba53080b78cf
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: efc712840a75e533e85ea8c930e2b2ac5aaf119e
+ms.sourcegitcommit: 9ee2401a2f01373a962749b0728c22385dbcba6d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74563974"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78181738"
 ---
 # <a name="include-and-exclude-app-assignments-in-microsoft-intune"></a>Alkalmazás-hozzárendelések belefoglalása vagy kizárása a Microsoft Intune-ban
 
@@ -58,7 +58,7 @@ Ha csoportokhoz szeretne alkalmazást hozzárendelni a belefoglalás és kizár�
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Válassza az **alkalmazások** > **minden alkalmazás**lehetőséget. Megjelenik a hozzáadott alkalmazások listája.
 3. Válassza ki a hozzárendelni kívánt alkalmazást. Megjelennek az alkalmazás adatai egy irányítópulton. 
-4. A menü **Kezelés** szakaszában válassza a **Hozzárendelések**. elemet. 
+4. A menü **Kezelés** szakaszában válassza a **Hozzárendelések** elemet. 
 
     ![Alkalmazás-hozzárendelések belefoglalása alkalmazások hozzárendelésekor](./media/apps-inc-exl-assignments/apps-inc-exl-01.png)
 

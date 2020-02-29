@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8d473d29536b4ffdcc221c8cf61c63725bae0fa2
-ms.sourcegitcommit: 8d7406b75ef0d75cc2ed03b1a5e5f74ff10b98c0
+ms.openlocfilehash: 699665f93d04801223f2fc6e6536d9b675e75242
+ms.sourcegitcommit: 9ee2401a2f01373a962749b0728c22385dbcba6d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75653903"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78181942"
 ---
 # <a name="microsoft-intune-app-sdk-for-android-testing-guide"></a>Microsoft Intune app SDK Androidhoz – tesztelési útmutató
 
@@ -58,7 +58,7 @@ PIN-kód megkövetelése a vállalati erőforrások eléréséhez. Emellett a v�
     - A promptot nem sikerült bemutatni, mert egy helytelenül integrált `MAMActivity` érték lehet. További információ a `MAMActivity`ről: [Microsoft Intune app SDK for Android fejlesztői útmutató](app-sdk-android.md).
 
 > [!NOTE] 
-> Ha az előző teszt nem működik, az alábbi tesztek valószínűleg sikertelenek lesznek. Az [SDK](app-sdk-android.md##sdk-integration) és a [ADAL](app-sdk-android.md#configure-azure-active-directory-authentication-library-adal) integráció áttekintése.
+> Ha az előző teszt nem működik, az alábbi tesztek valószínűleg sikertelenek lesznek. Az [SDK](app-sdk-android.md#sdk-integration) és a [ADAL](app-sdk-android.md#configure-azure-active-directory-authentication-library-adal) integráció áttekintése.
 
 ### <a name="restrict-transferring-and-receiving-data-with-other-apps"></a>Az adatátviteli és-fogadási művelet korlátozása más alkalmazásokkal
 A vállalat által felügyelt alkalmazások közötti adatátvitel a következőképpen szabályozható:

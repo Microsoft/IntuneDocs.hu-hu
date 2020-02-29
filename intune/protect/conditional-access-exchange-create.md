@@ -18,14 +18,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 29ddc53af79121965698d67f0d4510ac34bbabca
-ms.sourcegitcommit: 8b716db3c0fdbb7dff62497ec283902a5069a343
+ms.openlocfilehash: 6650c091917ea265783044efd78b19a7e032e6a7
+ms.sourcegitcommit: 5511b4f2b8a3383176a7afe2a22ad5a8d42caf7b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77652453"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78169297"
 ---
-# <a name="create-a-conditional-access-policy-for-exchange-on-premises-and-legacy-exchange-online-dedicated"></a>Feltételes hozzáférési szabályzat létrehozása a helyszíni Exchange-hez és az örökölt dedikált Exchange Online-hoz
+# <a name="configure-exchange-on-premises-access-for-intune"></a>Helyszíni Exchange-hozzáférés konfigurálása az Intune-hoz
 
 Ez a cikk bemutatja, hogyan konfigurálhatja a feltételes hozzáférést a helyszíni Exchange-hez az eszközök megfelelősége alapján.
 
@@ -62,12 +62,13 @@ A feltételes hozzáférés konfigurálása előtt ellenőrizze, hogy a követke
 
 ### <a name="support-for-mobile-devices"></a>A mobileszközök támogatása
 
-- Windows Phone 8.1 és újabb verziók
-- Natív e-mail alkalmazás iOS/iPadOS.
-- EAS levelezési ügyfélprogramok, mint például a Gmail az Android 4-es vagy újabb verzióiban.
-- EAS levelezési ügyfélprogramok **Androidos munkahelyi profilos eszközökön:** A **munkahelyi profilban** csak a **Gmail** és **Nine Work for Android Enterprise** alkalmazások támogatottak az androidos munkahelyi profilos eszközökön. Az androidos munkahelyi profilokkal végzett feltételes hozzáféréshez telepítenie kell egy e-mail-profilt a Gmail vagy a Nine work for Android Enterprise alkalmazáshoz, és ezeket az alkalmazásokat kötelező telepítésként is telepítenie kell.
+- **Windows Phone-telefon 8,1-es és újabb verziók** – feltételes hozzáférési szabályzat létrehozása: [feltételes hozzáférési házirendek létrehozása](../protect/create-conditional-access-intune.md)
+- **Natív e-mail alkalmazás iOS/iPadOS** – feltételes hozzáférési szabályzat létrehozása: [feltételes hozzáférési házirendek létrehozása](../protect/create-conditional-access-intune.md)
+- **EAS levelezési ügyfélprogramok, mint például a Gmail az Android 4-es vagy újabb verzióiban** – feltételes hozzáférési szabályzat létrehozásával kapcsolatban lásd a [feltételes hozzáférési házirendek létrehozása](../protect/create-conditional-access-intune.md) című témakört.
 
-  Feltételes hozzáférés beállítása androidos munkahelyi profilú eszközökhöz:
+- **EAS levelezési ügyfélprogramok androidos munkahelyi Profilos eszközökön** – az androidos munkahelyi profil eszközein csak a *Gmail* és *a Nine work for Android Enterprise* támogatott. Az androidos munkahelyi profilokkal végzett feltételes hozzáféréshez telepítenie kell egy e-mail-profilt a *Gmail* vagy a *Nine work for Android Enterprise* alkalmazáshoz, és ezeket az alkalmazásokat kötelező telepítésként is telepítenie kell. Az alkalmazás üzembe helyezését követően beállíthatja az eszközön alapuló feltételes hozzáférést.
+
+#### <a name="to-set-up-conditional-access-for-android-work-profile-devices"></a>Feltételes hozzáférés beállítása androidos munkahelyi profilú eszközökhöz
 
   1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
   

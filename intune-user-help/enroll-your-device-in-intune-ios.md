@@ -19,12 +19,12 @@ ms.reviewer: tisilv
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: bd9fd38fdc244bc48333496c2f266ff039e55585
-ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
+ms.openlocfilehash: 92d1ca850d8bb542f0b7fe027ab7af8c12089ef8
+ms.sourcegitcommit: 9ee2401a2f01373a962749b0728c22385dbcba6d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75855563"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78181755"
 ---
 # <a name="set-up-ios-device-access-to-your-company-resources"></a>A céges erőforrásokhoz iOS-eszközzel történő hozzáférés beállítása  
 
@@ -54,7 +54,7 @@ Eszköze regisztrálása után a Céges portál alkalmazás folyamatosan gondosk
 ### <a name="setting-notifications"></a>Értesítések beállítása  
 Ha a regisztráció után a vállalat új biztonsági követelményt, például többtényezős hitelesítést vezet be, a Céges portál alkalmazás értesíti Önt. Lehetősége lesz módosítani beállításait, hogy továbbra is dolgozhasson az eszközéről.  
 
-További információk a regisztrációval kapcsolatban: [Mi történik a Céges portál alkalmazás telepítésekor és az eszköz regisztrálásakor?](https://docs.microsoft.com//intune-user-help/what-happens-if-you-install-the-company-portal-app-and-enroll-your-device-in-intune-ios)  
+További információk a regisztrációval kapcsolatban: [Mi történik a Céges portál alkalmazás telepítésekor és az eszköz regisztrálásakor?](https://docs.microsoft.com//intune-user-help/what-happens-if-you-install-the-company-portal-app-and-enroll-your-device-in-intune-ios).  
 
 ## <a name="enroll-your-ios-device"></a>IOS-eszköz regisztrálása  
 
@@ -71,10 +71,10 @@ Előfordulhat, hogy a regisztráció során a rendszer több, mint néhány perc
     ![Példa a "hozzáférés beállítása" képernyőn látható Céges portál képernyőképre.](./media/ios-enrollment-checklist-1909.PNG)  
 
 4. Megjelenik az **eszköz és a beléptetési típus kiválasztása** képernyő, és felszólítja az eszköz típusára.  
-    * Koppintson a **(szervezet)** elemre az eszköz tulajdonosa, ha az eszközt a szervezettől kapta. Ezután ugorjon a [teljes eszköz védelme](###secure-entire-device) ebben a cikkben a telepítés befejezéséhez.  
-    * Koppintson a **saját eszköz** elemre, ha otthonról indított személyes eszközt használ. Folytassa a következő lépéssel.  
+    * Koppintson a **(szervezet)** elemre az eszköz tulajdonosa, ha az eszközt a szervezettől kapta. Ezután ugorjon a [teljes eszköz védelme](#secure-entire-device) ebben a cikkben a telepítés befejezéséhez.  
+    * Koppintson a **saját eszköz** elemre, ha otthonról indított személyes eszközt használ. Ezután folytassa a következő lépéssel.  
 
-    Ha nem látja ezt a képernyőt, ugorjon a [teljes eszköz védelme](enroll-your-device-in-intune-ios.md#secure-entire-device) a telepítés befejezéséhez.  
+    Ha nem látja ezt a képernyőt, ugorjon a [teljes eszköz védelme](#secure-entire-device) a telepítés befejezéséhez.  
     
     ![Példa a Céges portál, "eszköz és beléptetési típus kiválasztása" képernyőre, az eszköz típusának beállításaira.](./media/ios-device-type-1909.PNG)  
 
@@ -169,7 +169,7 @@ Előfordulhat, hogy a regisztráció során a rendszer több, mint néhány perc
 7. Adja meg az eszköz jelszavát. Ezután koppintson a **telepítés**gombra.  
 
 8. A **Bejelentkezés** képernyőn adja meg a felügyelt Apple ID azonosítóhoz tartozó jelszót. A legtöbb esetben ezek a hitelesítő adatok ugyanazok, mint a munkahelyi vagy iskolai fiókjába való bejelentkezéshez, kivéve, ha a szervezete eltérő hitelesítő adatokat adott meg. 
-9. Koppintson a **Bejelentkezés** lehetőségre.  
+9. Koppintson **a bejelentkezés**elemre.  
 10. Egy sikeres üzenet jelenik meg a képernyőn röviden a profil telepítése után. A profil telepítésének ellenőrzéséhez lépjen a **profilok & eszközkezelés** beállítások elemre. A profilt a **mobileszköz-kezelés** területen találja.  
 
     ![Példa a beállítások alkalmazás képernyőképére, a profilok & Az eszközkezelés beállításai elemre, amely a felügyeleti profilt mutatja.](./media/ios-12-cp-enroll-1904.PNG)  
@@ -184,4 +184,4 @@ Ha Ön rendszergazda, és az eszközök regisztrálása során problémákba ker
 ## <a name="next-steps"></a>További lépések  
 Olyan alkalmazásokat kereshet, amelyek segítséget nyújtanak a munkahelyi vagy iskolai munkához. Ismerje meg, [Hogyan érhetők el az alkalmazások](use-managed-apps-on-your-device-ios.md) céges portálon keresztül.  
 
-További segítségre van szüksége? Forduljon a cég informatikai támogatásához. A kapcsolatfelvételi adatait megtalálja a [Munkahelyi portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).  
+További segítségre van szüksége? Forduljon a cég informatikai támogatási szolgálatához. A kapcsolatfelvételi adatait megtalálja a [Munkahelyi portál webhelyén](https://go.microsoft.com/fwlink/?linkid=2010980).  

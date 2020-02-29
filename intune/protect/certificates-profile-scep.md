@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 74a15a1e2ac382fc215f634e19722224460896d3
-ms.sourcegitcommit: 8b716db3c0fdbb7dff62497ec283902a5069a343
+ms.openlocfilehash: 8a8daab16d0b595444ff5cb13f97cd2703127340
+ms.sourcegitcommit: 9ee2401a2f01373a962749b0728c22385dbcba6d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77652385"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78181891"
 ---
 # <a name="create-and-assign-scep-certificate-profiles-in-intune"></a>SCEP-tanúsítványok létrehozása és társítása az Intune-ban
 
@@ -277,7 +277,7 @@ A SCEP-profilokat ugyanúgy rendelheti hozzá, mint az [eszközök profiljait](.
 
 - Ha az Intune és a Configuration Manager együttes felügyeletét használja, Configuration Manager az **Intune** - **hoz vagy az Intune-** hoz készült erőforrás-hozzáférési szabályzatok [munkaterhelési csúszkáját állítsa be](https://docs.microsoft.com/configmgr/comanage/how-to-switch-workloads) . Ez a beállítás lehetővé teszi, hogy a Windows 10-ügyfelek elindítsák a tanúsítvány kérelmezésének folyamatát.
 
-- Bár a megbízható tanúsítvány profilját és a SCEP-tanúsítvány profilját külön hozza létre és rendeli hozzá, mindkettőt hozzá kell rendelni. Az SCEP-tanúsítvány házirendje nem működik együtt az eszközön. Győződjön meg arról, hogy a megbízható főtanúsítvány-profilok is ugyanarra a csoportra vannak telepítve, mint a SCEP-profil.
+- Bár a megbízható tanúsítvány profilját és a SCEP-tanúsítvány profilját külön hozza létre és rendeli hozzá, mindkettőt hozzá kell rendelni. Az SCEP-tanúsítvány házirendje nem működik együtt az eszközön. Győződjön meg arról, hogy a megbízható főtanúsítvány-profilok is ugyanarra a csoportra vannak telepítve, mint a SCEP-profil. Ha például egy felhasználói csoportba helyez üzembe egy SCEP-tanúsítványt, a megbízható legfelső szintű (és köztes) tanúsítvány profilját is ugyanarra a felhasználói csoportra kell telepíteni.
 
 > [!NOTE]
 > IOS-eszközökön, amikor egy SCEP vagy egy PKCS-tanúsítvány profilja egy további profillal van társítva, például Wi-Fi-vagy VPN-profilhoz, az eszköz megkapja a további profilok mindegyikének tanúsítványát. Ez azt eredményezi, hogy az iOS-eszközön több tanúsítvány is érkezik a SCEP vagy a PKCS-tanúsítvány kérelme alapján. 
