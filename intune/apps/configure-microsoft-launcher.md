@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 02/26/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b0145a17434d8b309806f468bf066d54ae117144
-ms.sourcegitcommit: 1aaff35fddb3d06458d739968d28971fed0bb2ba
+ms.openlocfilehash: 55f76b0c5c71f7828fed17233c2b81d6b066cc3b
+ms.sourcegitcommit: fab685b22a010fe231b27a0c5eda34a6f22f4c8d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77155360"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78216109"
 ---
 # <a name="configure-microsoft-launcher"></a>A Microsoft Launcher konfigurálása
 
@@ -58,12 +58,12 @@ A következő táblázat felsorolja a Microsoft Launcher elérhető konfiguráci
 |    Konfigurációs kulcs    |    Érték típusa    |    Alapértelmezett érték    |    Leírás     |
 |---------------------------------------------------|------------------|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    Regisztráció típusa    |    Sztring     |    Alapértelmezett    |    Lehetővé teszi a beléptetési típus beállítását, amelyre a szabályzat vonatkozik. Az **alapértelmezett** érték jelenleg a **CorporateOwnedBuisnessOnly**-ra hivatkozik. Jelenleg nincsenek más támogatott regisztrációs típusok.        JSON-kulcs neve: management_mode_key        |
-|    Kezdőképernyő alkalmazás megrendelésének felhasználói módosítása engedélyezve    |    Logikai    |    Igaz    |    Lehetővé teszi annak megadását, hogy a végfelhasználó módosíthatja-e a **kezdőképernyő-alkalmazás megrendelésének** beállításait.<ul><li>Ha **igaz**értékre van állítva, a házirendben definiált alkalmazási sorrend csak a kezdeti telepítéshez lesz érvényesítve. Ezt követően a szabályzatot nem kényszeríti ki a felhasználó által esetlegesen végrehajtott módosítások tiszteletben tartására.</li><li>Ha **hamis**értékre van állítva, a rendszer minden egyes szinkronizáláskor érvényesíti az alkalmazás sorrendjét.</li></ul><br>**Megjegyzés:** A kezdőképernyő-alkalmazás sorrendje csak a JSON-szerkesztő használatával konfigurálható.<br><br>JSON-kulcs neve:<br>`com.microsoft.launcher.HomeScreen.AppOrder.UserChangeAllowed`    |
+|    Kezdőképernyő alkalmazás megrendelésének felhasználói módosítása engedélyezve    |    Logikai    |    True (Igaz)    |    Lehetővé teszi annak megadását, hogy a végfelhasználó módosíthatja-e a **kezdőképernyő-alkalmazás megrendelésének** beállításait.<ul><li>Ha **igaz**értékre van állítva, a házirendben definiált alkalmazási sorrend csak a kezdeti telepítéshez lesz érvényesítve. Ezt követően a szabályzatot nem kényszeríti ki a felhasználó által esetlegesen végrehajtott módosítások tiszteletben tartására.</li><li>Ha **hamis**értékre van állítva, a rendszer minden egyes szinkronizáláskor érvényesíti az alkalmazás sorrendjét.</li></ul><br>**Megjegyzés:** A kezdőképernyő-alkalmazás sorrendje csak a JSON-szerkesztő használatával konfigurálható.<br><br>JSON-kulcs neve:<br>`com.microsoft.launcher.HomeScreen.AppOrder.UserChangeAllowed`    |
 |    Rácsvonal méretének beállítása    |    Sztring    |    automatikus    |    Lehetővé teszi az alkalmazások rácsos méretének megadását a kezdőképernyőn pozícionálva. Az alkalmazás sorainak és oszlopainak számát a következő formátumban állíthatja be a rácsvonalak méretének meghatározásához: `columns;rows`. Ha a rács méretét határozza meg, a kezdőképernyő egy sorában megjelenő alkalmazások maximális száma lesz a beállított sorok száma, és a kezdőképernyő egyik oszlopában megjelenő alkalmazások maximális száma a beállított oszlopok száma.<br><br>        JSON-kulcs neve:<br>`com.microsoft.launcher.HomeScreen.GridSize`    |
 |    Eszköz háttérképének beállítása    |    Sztring    |    Null    |    Lehetővé teszi, hogy tetszőleges háttérképet állítson be a háttérképként beállítani kívánt rendszerkép URL-címének megadásával.<br><br>JSON-kulcs neve:<br>`com.microsoft.launcher.Wallpaper.URL`    |
-|    Az eszköz tapétájának felhasználói módosításának beállítása engedélyezett    |    Logikai    |    Igaz    |    Lehetővé teszi annak megadását, hogy a végfelhasználó módosíthatja-e az eszköz háttérképének beállítása beállítást.<ul><li>Ha **igaz**értékre van állítva, a rendszer a szabályzat háttérképét csak a kezdeti telepítéshez kényszeríti ki. Ezt követően a szabályzatot nem kényszeríti ki a felhasználó által esetlegesen végrehajtott módosítások tiszteletben tartására.</li><li>Ha **hamis**értékre van állítva, a rendszer minden szinkronizáláskor kikényszeríti a hátteret.</li></ul><br>JSON-kulcs neve:<br>`com.microsoft.launcher.Wallpaper.URL.UserChangeAllowed`        |
-|    Hírcsatorna engedélyezése    |    Logikai    |    Igaz    |    Lehetővé teszi, hogy az eszközön engedélyezze az indító hírcsatornát, amikor a felhasználó a kezdőképernyő jobb oldalán található.<ul><li>Ha **igaz**értékre van állítva, a hírcsatorna engedélyezve lesz.</li><li>Ha **hamis**értékre van állítva, a hírcsatorna le lesz tiltva.</li></ul><br>JSON-kulcs neve:<br>`com.microsoft.launcher.Feed.Enabled`    |
-|    A hírcsatorna lehetővé teszi a felhasználói módosítás engedélyezését    |    Logikai    |    Igaz    |     Lehetővé teszi annak megadását, hogy a végfelhasználó módosíthatja-e a **hírcsatorna engedélyezésének** beállítását.<ul><li>Ha **igaz**értékre van állítva, a rendszer csak a kezdeti telepítéshez kényszeríti ki a hírcsatornát. Ezt követően a szabályzatot nem kényszeríti ki a felhasználó által esetlegesen végrehajtott módosítások tiszteletben tartására.</li><li>Ha **hamis**értékre van állítva, a rendszer minden szinkronizáláskor kikényszeríti a hírcsatornát.</li></ul><br>JSON-kulcs neve:`com.microsoft.launcher.Feed.Enabled.UserChangeAllowed`    |
+|    Az eszköz tapétájának felhasználói módosításának beállítása engedélyezett    |    Bool    |    True (Igaz)    |    Lehetővé teszi annak megadását, hogy a végfelhasználó módosíthatja-e az eszköz háttérképének beállítása beállítást.<ul><li>Ha **igaz**értékre van állítva, a rendszer a szabályzat háttérképét csak a kezdeti telepítéshez kényszeríti ki. Ezt követően a szabályzatot nem kényszeríti ki a felhasználó által esetlegesen végrehajtott módosítások tiszteletben tartására.</li><li>Ha **hamis**értékre van állítva, a rendszer minden szinkronizáláskor kikényszeríti a hátteret.</li></ul><br>JSON-kulcs neve:<br>`com.microsoft.launcher.Wallpaper.URL.UserChangeAllowed`        |
+|    Hírcsatorna engedélyezése    |    Logikai    |    True (Igaz)    |    Lehetővé teszi, hogy az eszközön engedélyezze az indító hírcsatornát, amikor a felhasználó a kezdőképernyő jobb oldalán található.<ul><li>Ha **igaz**értékre van állítva, a hírcsatorna engedélyezve lesz.</li><li>Ha **hamis**értékre van állítva, a hírcsatorna le lesz tiltva.</li></ul><br>JSON-kulcs neve:<br>`com.microsoft.launcher.Feed.Enabled`    |
+|    A hírcsatorna lehetővé teszi a felhasználói módosítás engedélyezését    |    Logikai    |    True (Igaz)    |     Lehetővé teszi annak megadását, hogy a végfelhasználó módosíthatja-e a **hírcsatorna engedélyezésének** beállítását.<ul><li>Ha **igaz**értékre van állítva, a rendszer csak a kezdeti telepítéshez kényszeríti ki a hírcsatornát. Ezt követően a szabályzatot nem kényszeríti ki a felhasználó által esetlegesen végrehajtott módosítások tiszteletben tartására.</li><li>Ha **hamis**értékre van állítva, a rendszer minden szinkronizáláskor kikényszeríti a hírcsatornát.</li></ul><br>JSON-kulcs neve:`com.microsoft.launcher.Feed.Enabled.UserChangeAllowed`    |
 
 ## <a name="enter-json-data"></a>JSON-adatbevitel
 

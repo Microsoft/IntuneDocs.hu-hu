@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e0ed343f652c4afe87273eeaa4a2e35b7669056d
-ms.sourcegitcommit: 637375a390b6e34f9c4415c77b99fe2980bbf554
+ms.openlocfilehash: d26721ff27f380917fec7f4d23c0c5524737a4a3
+ms.sourcegitcommit: fab685b22a010fe231b27a0c5eda34a6f22f4c8d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75839244"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78216158"
 ---
 # <a name="understand-app-protection-policy-delivery-timing"></a>Az App Protection-szabályzat kézbesítési időzítésének ismertetése
 
@@ -33,11 +33,12 @@ Ismerkedjen meg a különböző központi telepítési Windows alkalmazás-véde
 
 Az alkalmazás-védelmi szabályzat kézbesítése a licencelési állapottól és az Intune szolgáltatás regisztrálásával függ a felhasználók számára.  
 
-|    Felhasználói állapot    |    Az App Protection működése     |    Újrapróbálkozási időköz (lásd a megjegyzést)    |    Miért történik ez?    |
+|    Felhasználói állapot    |    Az App Protection működése     |    Újrapróbálkozási időköz (lásd a megjegyzést)    |    Miért jelentkezik?    |
 |-----------------------------------------------------|-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
 |    A bérlő nincs előkészítve    |    Várjon a következő újrapróbálkozási időközre.  Az alkalmazás védelme nem aktív a felhasználó számára.    |    24 óra    |    Akkor következik be, amikor nem állította be a bérlőt az Intune-hoz.    |
 |    A felhasználó nem rendelkezik licenccel     |    Várjon a következő újrapróbálkozási időközre.  Az alkalmazás védelme nem aktív a felhasználó számára.     |    12 óra – az androidos eszközökön az intervallumhoz az Intune APP SDK 5.6.0 vagy újabb verziójára van szükség. Ellenkező esetben az Android-eszközök esetében az intervallum 24 óra.   |    Akkor következik be, amikor nem licencelte a felhasználót az Intune-hoz.    |
 |    A felhasználóhoz nincs hozzárendelve alkalmazás-védelmi szabályzat    |    Várjon a következő újrapróbálkozási időközre.  Az alkalmazás védelme nem aktív a felhasználó számára.    |    12 óra        |    Akkor következik be, amikor nincs hozzárendelve az Alkalmazásbeállítások a felhasználóhoz.    |
+|    A felhasználó által hozzárendelt alkalmazás-védelmi szabályzatok, de az alkalmazás nincs definiálva az alkalmazás-védelmi házirendekben   |    Várjon a következő újrapróbálkozási időközre.  Az alkalmazás védelme nem aktív a felhasználó számára.    |    12 óra        |    Akkor következik be, amikor nem adta hozzá az alkalmazást az ALKALMAZÁShoz.    |
 |    A felhasználó sikeresen regisztrált az Intune MAM-ban    |    Az App Protection házirend-beállításokkal lesz alkalmazva.    A frissítések az újrapróbálkozási időköz alapján történnek    |    Felhasználói terhelés alapján meghatározott Intune-szolgáltatás.    Általában 30 perc.     |    Akkor következik be, amikor a felhasználó sikeresen regisztrálta az Intune szolgáltatásban a MAM-konfigurációt.    |
 
 > [!NOTE]

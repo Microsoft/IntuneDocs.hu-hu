@@ -18,20 +18,20 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 80390c638aa038769bdf972b7355dfa221c6cda2
-ms.sourcegitcommit: 9ee2401a2f01373a962749b0728c22385dbcba6d
+ms.openlocfilehash: 6a4952f8e747c5a42e2159461da8e87465bc41d4
+ms.sourcegitcommit: fab685b22a010fe231b27a0c5eda34a6f22f4c8d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78181789"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78216056"
 ---
 # <a name="add-apps-to-microsoft-intune"></a>Alkalmazások hozzáadása a Microsoft Intune-hoz 
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-Az alkalmazások hozzárendelése, figyelése, konfigurálása és védelme előtt hozzá kell adnia őket a Microsoft Intune-hoz.
+Az alkalmazások konfigurálása, kiosztása, felügyelete vagy figyelése előtt hozzá kell adnia őket a Microsoft Intunehoz.
 
-Az alkalmazások és eszközök céges felhasználói (a munkaerő) több alkalmazáskövetelménnyel rendelkezhetnek. Mielőtt alkalmazásokat adna hozzá az Intune-hoz, ezzel elérhetővé téve azokat a munkaerő számára, célszerű felmérnie és megértenie néhány alkalmazásokkal kapcsolatos alapvetést. Ismernie kell az Intune-ban elérhető különböző alkalmazástípusokat. Fel kell mérnie az alkalmazáskövetelményeket, így a munkaerő számára szükséges platformokat és funkciókat. Meg kell határoznia, hogy az Intune-nal kezeli-e az eszközöket (és azok alkalmazásait), vagy az Intune-nal kezeli az alkalmazásokat, az eszközöket azonban nem. Végül meg kell határoznia a munkaerő által igényelt alkalmazásokat és funkciókat és azt, hogy ezekre kiknek van szükségük. Ez a cikk segíthet az első lépések megtételében.
+Az alkalmazások és eszközök céges felhasználói (a munkaerő) több alkalmazáskövetelménnyel rendelkezhetnek. Mielőtt alkalmazásokat adna hozzá az Intune-hoz, és elérhetővé teszi őket a munkaerő számára, hasznos lehet néhány alkalmazási alapértéket felmérni és értelmezni. Az Intune-hoz különböző típusú alkalmazások érhetők el. Meg kell határoznia a vállalat felhasználói számára szükséges alkalmazási követelményeket, például a munkaerő által igényelt platformokat és képességeket. Meg kell határoznia, hogy az Intune-nal kezeli-e az eszközöket (és azok alkalmazásait), vagy az Intune-nal kezeli az alkalmazásokat, az eszközöket azonban nem. Emellett meg kell határoznia a munkaerő által igényelt alkalmazásokat és képességeket, és akiknek szüksége van rájuk. Ez a cikk segíthet az első lépések megtételében.
 
 ## <a name="app-types-in-microsoft-intune"></a>Alkalmazástípusok a Microsoft Intune-ban
 
@@ -128,9 +128,9 @@ Az Intune által kezelt alkalmazások regisztráció nélkül nyújtanak alkalma
 
 ### <a name="understanding-licensed-apps"></a>A licencelt alkalmazások megértése
 A webes, az áruházbeli és az üzletági alkalmazásokon kívül érdemes tisztában lennie a Volume Purchase Program alkalmazásainak és a licencelt alkalmazások sajátosságaival, például: 
-- **Apple Volume Purchase program for Business (iOS)** : az iOS/IPadOS App Store-ban több licencet vásárolhat a vállalatnál futtatni kívánt alkalmazásokhoz. Több licenc vásárlásával hatékonyabban kezelhetők a vállalaton belüli alkalmazások. További információ: [iOiOS/iPadOSS mennyiségi licencszerződés keretében vásárolt alkalmazások kezelése](vpp-apps-ios.md).
+- **Apple Volume Purchase program for Business (iOS)**: az iOS/IPadOS App Store-ban több licencet vásárolhat a vállalatnál futtatni kívánt alkalmazásokhoz. Több licenc vásárlásával hatékonyabban kezelhetők a vállalaton belüli alkalmazások. További információ: [iOiOS/iPadOSS mennyiségi licencszerződés keretében vásárolt alkalmazások kezelése](vpp-apps-ios.md).
 - **Androidos munkahelyi profil**: Az alkalmazások androidos munkahelyi profilt használó eszközökhöz való hozzárendelése eltér a hagyományos androidos eszközökhöz való hozzárendeléstől. Minden olyan alkalmazás, amelyet az androidos munkahelyi profil részeként telepít a felügyelt Google Play áruházból szerezhető be. Az Intune használatával megkeresheti a kívánt alkalmazásokat, és jóváhagyhatja azokat. Az alkalmazás megjelenik az Azure Portal **Licencelt alkalmazások** lapján, és a hozzárendelése ugyanúgy kezelhető, mint bármely más alkalmazásé.
-- **Microsoft Store Vállalatoknak (Windows 10)** : A Microsoft Store Vállalatoknak az a hely, ahol alkalmazásokat vásárolhat a szervezete számára egyenként vagy mennyiségi program keretében. Az áruházat a Microsoft Intune-nal összekapcsolva a mennyiségi programban vásárolt alkalmazásokat az Azure Portalon kezelheti. További információ: [A Microsoft Store Vállalatoknak áruházban vásárolt alkalmazások felügyelete](windows-store-for-business.md).
+- **Microsoft Store Vállalatoknak (Windows 10)**: A Microsoft Store Vállalatoknak az a hely, ahol alkalmazásokat vásárolhat a szervezete számára egyenként vagy mennyiségi program keretében. Az áruházat a Microsoft Intune-nal összekapcsolva a mennyiségi programban vásárolt alkalmazásokat az Azure Portalon kezelheti. További információ: [A Microsoft Store Vállalatoknak áruházban vásárolt alkalmazások felügyelete](windows-store-for-business.md).
 
     > [!NOTE]
     > A Windows-alkalmazások fájlnévkiterjesztései közé tartozik az **.msi**, **.appx**, **.appxbundle**, **.msix** és **.msixbundle**.  
@@ -167,7 +167,7 @@ Amikor hozzáad egy alkalmazást az Intune-hoz, kiválaszthatja a kívánt kateg
 5. A következő lehetőségek közül választhat:
     - Új kategória megadásához válassza a **Kategória létrehozása** panel **Hozzáadás** elemét, majd adja meg a kategória nevét.  
     A neveket csak egy nyelven lehet megadni, és az Intune nem fordítja le őket.
-    - Kategória szerkesztéséhez válassza a kategória melletti három pontot ( **...** ) majd a **Rögzítés irányítópulton** vagy **Törlés** lehetőséget.
+    - Kategória szerkesztéséhez válassza a kategória melletti három pontot (**...**) majd a **Rögzítés irányítópulton** vagy **Törlés** lehetőséget.
 6. Válassza a **Létrehozás** lehetőséget.
 
 ## <a name="apps-that-are-added-automatically-by-intune"></a>Az Intune által automatikusan hozzáadott alkalmazások

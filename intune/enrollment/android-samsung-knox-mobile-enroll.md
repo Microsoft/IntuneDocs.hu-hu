@@ -1,12 +1,12 @@
 ---
-title: Android-eszközök automatikus regisztrálása a Samsung Knox Mobile beléptetésével
+title: Samsung Knox mobileszköz beléptetési használata Android-eszközök automatikus regisztrálása
 titleSuffix: Microsoft Intune
 description: Útmutató az Android-eszközök a Samsung KME-vel történő regisztrálásához
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: ''
-ms.date: 12/06/2018
+ms.date: 02/27/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: enrollment
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ecb043300578e5eba0613b6fa5f0fb249b1e515c
-ms.sourcegitcommit: a66b5916eaab9cb537e483064efc584a6a63a390
+ms.openlocfilehash: 1ccbba6163bfa0cd7b65bc25d71a0aff9babeda3
+ms.sourcegitcommit: fab685b22a010fe231b27a0c5eda34a6f22f4c8d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75692157"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78216172"
 ---
 # <a name="automatically-enroll-android-devices-by-using-samsungs-knox-mobile-enrollment"></a>Eszközök automatikus regisztrációja a Samsung Knox Mobile Enrollmenttel
 
@@ -63,15 +63,16 @@ Miután sikeresen regisztrálta a cégét, az alábbi adatokkal létrehozhat egy
 
 | MDM-profil – mezők| Kötelező? | értékek | 
 |-------------------|-----------|-------| 
-|MDM-kiszolgáló URI-azonosítója     | Nem        |Hagyja üresen a mezőt. 
-|Profilnév       | Igen       |Adjon meg egy profilnevet. 
-|Description        | Nem        |Adjon meg egy leírást a profilhoz. 
-|MDM-ügynök APK-ja      | Igen       |https://aka.ms/intune_kme_deviceowner 
-|Az alkalmazás engedélyezése Google-eszköztulajdonosként | Igen | A lehetőség kiválasztásával Android Enterprise-ként regisztrálhatja az eszközt. 
-|Támogatott mobileszköz-kezelés      | Igen       |Microsoft Intune 
-|A rendszeralkalmazások engedélyezettek maradnak | Nem | A lehetőség kiválasztásával biztosíthatja, hogy az összes alkalmazás engedélyezve legyen, és elérhető legyen a profilhoz. Ha ez a beállítás nincs bejelölve, a rendszer csak a rendszeralkalmazások egy korlátozott készletét jeleníti meg az eszköz alkalmazások tálcáján. Az olyan alkalmazások, mint például az e-mail-alkalmazás, rejtve maradnak. 
-|Egyéni JSON        | Nem        |{"com.google.android.apps.work.clouddpc.EXTRA_ENROLLMENT_TOKEN": "Enter Intune enrollment token string"}. Ismerje meg, a [Beléptetési profil létrehozásának](android-kiosk-enroll.md) folyamatát. 
-| Jogi szerződések hozzáadása | Nem | Hagyja üresen a mezőt. 
+|MDM-kiszolgáló URI-azonosítója     | Nem        |Hagyja üresen a mezőt.| 
+|Profilnév       | Igen       |Adjon meg egy profilnevet. |
+|Leírás        | Nem        |Adjon meg egy leírást a profilhoz. |
+|MDM-ügynök APK-ja      | Igen       |https://aka.ms/intune_kme_deviceowner| 
+|Egyéni JSON        | Nem        |{"com.google.android.apps.work.clouddpc.EXTRA_ENROLLMENT_TOKEN": "Enter Intune enrollment token string"}. Ismerje meg, a [Beléptetési profil létrehozásának](android-kiosk-enroll.md) folyamatát. |
+|A telepítővarázsló kihagyása  | Nem        |Válassza ezt a lehetőséget, ha ki szeretné hagyni a végfelhasználó számára a szabványos eszköz telepítési kéréseit.|
+|Regisztráció megszakításának engedélyezése a végfelhasználó számára | Nem | Válassza ezt a beállítást, ha engedélyezni szeretné a felhasználók számára, hogy megszakítsák a KME-t.|
+| Jogi szerződések hozzáadása | Nem | Hagyja üresen a mezőt. |
+| Támogatási kapcsolattartási adatok | Igen | Válassza a szerkesztés lehetőséget a kapcsolattartási adatok frissítéséhez |
+|Knox-licenc társítása a profilhoz | Nem | Hagyja üresen a beállítást. Az Intune-ba való regisztráláshoz nem szükséges Knox-licenc.|
 
 ### <a name="for-android"></a>Android rendszerhez
 
@@ -79,16 +80,17 @@ Részletes útmutatásért tekintse [meg a Samsung profil létrehozásával](htt
 
 | MDM-profil – mezők| Kötelező? | értékek |
 |-------------------|-----------|-------|
-|MDM-kiszolgáló URI-azonosítója     | Nem        |Hagyja üresen a mezőt.
-|Profilnév       | Igen       |Adjon meg egy profilnevet.
-|leírás        | Nem        |Adjon meg egy leírást a profilhoz.
-|MDM-ügynök APK-ja      | Igen       |https://aka.ms/intune_kme
-|Az alkalmazás engedélyezése Google-eszköztulajdonosként | Nem | Android esetén hagyja üresen a beállítást. Ez a beállítás csak az Android Enterprise rendszerre érvényes.
-|A telepítővarázsló kihagyása  | Nem        |Válassza ezt a lehetőséget, ha ki szeretné hagyni a végfelhasználó számára a szabványos eszköz telepítési kéréseit.
-|Regisztráció megszakításának engedélyezése a végfelhasználó számára | Nem | Válassza ezt a beállítást, ha engedélyezni szeretné a felhasználók számára, hogy megszakítsák a KME-t.
-|Egyéni JSON        | Nem        |Hagyja üresen a mezőt.
-| Jogi szerződések hozzáadása | Nem | Hagyja üresen a mezőt.
-Knox-licenc társítása a profilhoz | Nem | Hagyja üresen a beállítást. Az Intune-ba való regisztráláshoz nem szükséges Knox-licenc.
+|MDM-kiszolgáló URI-azonosítója     | Nem        |Hagyja üresen a mezőt.|
+|Profilnév       | Igen       |Adjon meg egy profilnevet.|
+|Leírás        | Nem        |Adjon meg egy leírást a profilhoz.|
+|Válassza ki a MDM | Igen | Válasszon az egyik MDMs közül. |
+|MDM-ügynök APK-ja      | Igen       |https://aka.ms/intune_kme|
+|Egyéni JSON-adatfájlok        | Nem        |Hagyja üresen a mezőt.|
+|Dupla DAR | Nem | Hagyja üresen a mezőt.|
+|QR-kód a beléptetéshez | Nem | A regisztráció sebességének megadásához QR-kódot is hozzáadhat.|
+|Rendszeralkalmazások | Igen | Válasszon egyet a felsorolt lehetőségek közül. |
+|Jogi szerződés hozzáadása | Nem | Hagyja üresen a mezőt.|
+|Vállalat neve | Igen | Ez a név jelenik meg az eszközök beléptetése során. |
 
 ## <a name="add-devices"></a>Eszközök felvétele
 
@@ -122,7 +124,7 @@ További segítségre van szüksége? Tekintse meg a teljes [KME felhasználói 
 
 ## <a name="frequently-asked-questions"></a>Gyakori kérdések
 
-- **Eszköz tulajdonosának támogatása:**  - **eszköz tulajdonosának támogatása:** az Intune támogatja a dedikált és teljes mértékben felügyelt eszközök regisztrálását a KME-portál használatával. Egyéb Android Enterprise eszköztulajdonosi módok támogatására is sor kerül, amint elérhetővé válnak az Intune-ban.
+- **Eszköz tulajdonosának támogatása:** - **eszköz tulajdonosának támogatása:** az Intune támogatja a dedikált és teljes mértékben felügyelt eszközök regisztrálását a KME-portál használatával. Egyéb Android Enterprise eszköztulajdonosi módok támogatására is sor kerül, amint elérhetővé válnak az Intune-ban.
 
 - A **munkahelyi profil nem támogatott:** A KME a vállalati eszközök regisztrálási módszere és az Android munkahelyi profilban regisztrált eszközök biztosítják, hogy a munkahelyi és a személyes adatmennyiség külön legyen a személyes eszközökön. Így az eszközök a KME használatával történő beléptetése nem támogatott forgatókönyv az Intune-ban.
 

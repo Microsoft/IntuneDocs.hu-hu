@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e7709eac2b360aa09415249c1c3f704b52a492b
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.openlocfilehash: cd05547d4699888f5fade58fb5a50557604d81ea
+ms.sourcegitcommit: fab685b22a010fe231b27a0c5eda34a6f22f4c8d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75206584"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78216041"
 ---
 # <a name="android-and-samsung-knox-standard-device-restriction-settings-lists-in-intune"></a>Android-és Samsung Knox standard-eszközök korlátozási beállításainak listája az Intune-ban
 
@@ -30,12 +30,12 @@ A cikk bemutatja a Microsoft Intune összes olyan eszközkorlátozásokra vonatk
 >[!TIP]
 >Ha a kívánt beállítások nem elérhetőek, lehet, hogy konfigurálni tudja az eszközöket egy [egyéni profil](../custom-settings-android.md) használatával.
 
-## <a name="general"></a>Általános
+## <a name="general"></a>Általános kérdések
 
 - **Kamera**: válassza a **Letiltás** lehetőséget a kamera elérésének megakadályozásához. A **nincs konfigurálva** beállítás lehetővé teszi az eszköz kamerájának elérését.
 - **Másolás és beillesztés (csak Samsung Knox esetén)**: a **Letiltás** lehetőség kiválasztásával megakadályozhatja a másolást és beillesztést. A **nincs konfigurálva** beállítás lehetővé teszi a másolási és beillesztési függvények használatát az eszközön.
 - **Vágólap megosztása az alkalmazások között (csak Samsung Knox esetén)**: a **Letiltás** lehetőség kiválasztásával megakadályozható, hogy a vágólapon az alkalmazások közötti másolás és beillesztés történjen. **Nincs konfigurálva** , lehetővé teszi az alkalmazások közötti másolást és beillesztést a vágólap használatával.
-- **Diagnosztikai adatok beküldése (csak Samsung Knox esetén)**: válassza a **Letiltás** lehetőséget, ha le szeretné állítani, hogy a felhasználó diagnosztikai adatokat küldjön az eszközről. A **nincs konfigurálva** beállítás lehetővé teszi a felhasználó számára az adatküldést.
+- **Diagnosztikai adatok beküldése (csak Samsung Knox esetén)**: válassza a **Letiltás** lehetőséget, ha le szeretné állítani, hogy a felhasználó hibajelentéseket küldjön az eszközről. A **nincs konfigurálva** beállítás lehetővé teszi a felhasználó számára az adatküldést.
 - **Törlés (csak Samsung Knox esetén)**: lehetővé teszi, hogy a felhasználó [törlési](../remote-actions/devices-wipe.md) műveletet futtasson az eszközön.
 - Földrajzi hely **(csak Samsung Knox esetén)**: válassza a **Letiltás** lehetőséget, hogy letiltsa az eszközt a helyadatok használatával. A **nincs konfigurálva** beállítás lehetővé teszi az eszköz számára a helyadatok használatát.
 - Kikapcsolás **(csak Samsung Knox esetén)**: a **Letiltás** elem kiválasztásával megakadályozhatja, hogy a felhasználó kikapcsolja az eszközt. Ha ez a beállítás le van tiltva, az eszköz nem állítható be, és nem működik a **sikertelen bejelentkezések száma** . A **nincs konfigurálva** beállítás lehetővé teszi, hogy a felhasználó kikapcsolja az eszközt.
@@ -101,12 +101,12 @@ Ha alkalmazást szeretne hozzáadni a listához, a következőket teheti:
 > [!IMPORTANT]
 > A korlátozott alkalmazás-beállításokat használó eszközöket felhasználói csoportokhoz kell rendelni.
 
-## <a name="browser"></a>Böngésző
+## <a name="browser"></a>Browser
 
 - **Webböngésző (csak Samsung Knox esetén)**: válassza a **Letiltás** lehetőséget, hogy megakadályozza az alapértelmezett böngésző használatát az eszközön. A **nincs konfigurálva** beállítás lehetővé teszi az eszköz alapértelmezett webböngészőjének használatát.
 - **Automatikus kitöltés (csak Samsung Knox esetén)**: a **Letiltás** gombra kattintva megakadályozhatja a szöveg automatikus kitöltését a böngészőben. A **nincs konfigurálva** beállítás lehetővé teszi a webböngésző automatikus kitöltés funkciójának használatát.
 - **Cookie-k (csak Samsung Knox esetén)**: válassza ki, hogyan szeretné kezelni a cookie-kat az eszköz webhelyeiről. A választható lehetőségek:
-  - Lehetővé
+  - Allow
   - Az összes cookie letiltása
   - Cookie-k engedélyezése a felkeresett webhelyekről
   - Cookie-k engedélyezése a jelenlegi webhelyről

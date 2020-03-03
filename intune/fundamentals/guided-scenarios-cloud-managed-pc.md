@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/18/2019
+ms.date: 02/26/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f78f3696827ebd50084f0e4b012c5f94427eeb35
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 9ddd59715a0730a52738088700a1f2b9166bfa80
+ms.sourcegitcommit: fab685b22a010fe231b27a0c5eda34a6f22f4c8d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74164566"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78216221"
 ---
 # <a name="guided-scenario---cloud-managed-modern-desktop"></a>Interaktív forgatókönyv – felhőben felügyelt modern asztal
 
@@ -43,7 +43,7 @@ Ha szeretné kiértékelni a felhőben felügyelt modern asztalt a saját szerve
   - Biztonsági alaptervek olvasás, létrehozás, törlés, hozzárendelés és frissítés
   - Az olvasási, létrehozási, törlési, hozzárendelési és frissítési szabályzatok beállítása
 
-## <a name="step-1---introduction"></a>1\. lépés – bevezetés
+## <a name="step-1---introduction"></a>1. lépés – bevezetés
 
 Ennek az interaktív forgatókönyvnek a használatával egy tesztelési felhasználót kell beállítania, egy eszköz regisztrálása az Intune-ban, és az eszköz üzembe helyezése az Intune által ajánlott beállításokkal, valamint a Windows 10 és az Office ProPlus. Az eszköz a Microsoft Defender komplex veszélyforrások elleni védelemhez is be lesz állítva, ha [engedélyezi ezt a védelmet az Intune-ban](~/protect/advanced-threat-protection.md#enable-microsoft-defender-atp-in-intune). Az Ön által beállított felhasználó és a regisztrált eszköz új biztonsági csoportokhoz lesz hozzáadva, és a biztonság és a termelékenység ajánlott beállításaival lesz konfigurálva. 
 
@@ -55,13 +55,13 @@ Ebben az interaktív helyzetben meg kell adnia a tesztelési eszközt, és teszt
 - Választható [Regisztrálja a tesztelő eszközt a Windows Autopilot szolgáltatásban](~/enrollment/enrollment-autopilot.md#add-devices).
 - Választható A saját [szervezet Azure Active Directory bejelentkezési oldalának](https://go.microsoft.com/fwlink/?linkid=2102455)engedélyezése.
 
-## <a name="step-2---user"></a>2\. lépés – felhasználó
+## <a name="step-2---user"></a>2. lépés – felhasználó
 
 Válassza ki az eszközön beállítani kívánt felhasználót. Ez a személy lesz az eszköz elsődleges felhasználója.
 
 Ha további felhasználókat vagy eszközöket szeretne hozzáadni ehhez a konfigurációhoz, egyszerűen adja hozzá a felhasználókat és az eszközöket a varázsló által generált HRE biztonsági csoportokhoz. A többi irányított forgatókönyvtől eltérően a varázslót nem kell többször futtatnia, mert a konfiguráció nem testreszabható. Csak adjon hozzá több felhasználót és eszközt a létrehozott HRE-csoportokhoz. A varázsló befejezése után megtekintheti az üzembe helyezett ajánlott házirendek által létrehozott csoportot. 
 
-## <a name="step-3---device"></a>3\. lépés – eszköz
+## <a name="step-3---device"></a>3. lépés – eszköz
 
 Győződjön meg arról, hogy az eszközön a Windows 10 1903-es vagy újabb verziója fut.  Az elsődleges felhasználónak be kell állítania az eszközt, amikor megkapja. A felhasználó két beállítási lehetőség közül választhat. 
 
@@ -71,7 +71,7 @@ A Windows Autopilot automatizálja az új eszközök konfigurációját, így a 
 ### <a name="option-b--manual-device-enrollment"></a>B. lehetőség – manuális eszközök beléptetése
 A felhasználók manuálisan fogják beállítani és regisztrálni az új eszközöket a mobileszköz-felügyeletben. A forgatókönyv elvégzése után állítsa alaphelyzetbe az eszközt, és adja meg az elsődleges felhasználónak a Windows-eszközök regisztrálására vonatkozó utasításokat. További információ: [Windows 10-es eszköz csatlakoztatása az Azure ad-hez az első futtatási élményben](https://docs.microsoft.com/azure/active-directory/devices/azuread-joined-devices-frx#joining-a-device).
 
-## <a name="step-4---review--create"></a>4\. lépés – felülvizsgálat + létrehozás
+## <a name="step-4---review--create"></a>4. lépés – felülvizsgálat + létrehozás
 
 Az utolsó lépés lehetővé teszi a konfigurált beállítások összefoglalásának áttekintését. Miután áttekintette a beállításokat, kattintson a **telepítés** elemre az interaktív forgatókönyv befejezéséhez. Miután az interaktív forgatókönyv elkészült, megjelenik egy táblázat az erőforrások között. Ezeket az erőforrásokat később is szerkesztheti, azonban ha elhagyja az összegző nézetet, a rendszer nem menti a táblát.
 

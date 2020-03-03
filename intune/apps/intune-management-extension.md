@@ -5,7 +5,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 02/26/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3da8e89679f974c7d91cf19ae37365f75217d153
-ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
+ms.openlocfilehash: f8af7a756d95051be52a5380467cb4f9be2533b3
+ms.sourcegitcommit: fab685b22a010fe231b27a0c5eda34a6f22f4c8d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75548027"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78216199"
 ---
 # <a name="use-powershell-scripts-on-windows-10-devices-in-intune"></a>PowerShell-parancsfájlok használata Windows 10-es eszközökön az Intune-ban
 
@@ -142,7 +142,7 @@ Az ügyfélgépen lévő ügynökök naplói jellemzően `\ProgramData\Microsoft
 
 A **PowerShell-parancsfájlok** panelen kattintson a jobb gombbal a parancsfájlra, és válassza a **Törlés** lehetőséget.
 
-## <a name="common-issues-and-resolutions"></a>Gyakori problémák és megoldásaik
+## <a name="common-issues-and-resolutions"></a>Gyakori problémák és megoldások
 
 ### <a name="issue-intune-management-extension-doesnt-download"></a>Probléma: az Intune felügyeleti bővítmény nem tölthető le
 
@@ -185,7 +185,7 @@ A [Windows 10 automatikus regisztrációjának engedélyezése](../enrollment/wi
 - A parancsfájlokkal kapcsolatos problémák elkülönítéséhez a következőket teheti:
 
   - Tekintse át a PowerShell-végrehajtási konfigurációt az eszközökön. Útmutatásért tekintse meg a [PowerShell végrehajtási szabályzatát](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6) .
-  - Futtasson egy minta parancsfájlt az Intune felügyeleti bővítmény használatával. Hozza létre például a `C:\Scripts` könyvtárat, és adja meg mindenki számára a teljes hozzáférést. Futtassa az alábbi parancsprogramot:
+  - Futtasson egy minta parancsfájlt az Intune felügyeleti bővítmény használatával. Hozza létre például a `C:\Scripts` könyvtárat, és adja meg mindenki számára a teljes hozzáférést. Futtassa a következő parancsfájlt:
 
     ```powershell
     write-output "Script worked" | out-file c:\Scripts\output.txt
