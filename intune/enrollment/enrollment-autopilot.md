@@ -18,21 +18,21 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f97c4c56073044e79b5251dc83c54decb5c9c55
-ms.sourcegitcommit: e1ff157f692983b49bdd6e20cc9d0f93c3b3733c
+ms.openlocfilehash: 499a1fa468193a5be2da05a62568301f4f23aaf4
+ms.sourcegitcommit: 6608dc70d01376e0cd90aa620a2fe01337f6a2f1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77124843"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78260265"
 ---
 # <a name="enroll-windows-devices-in-intune-by-using-the-windows-autopilot"></a>Windows-eszközök regisztrálása az Intune-ban a Windows Autopilot használatával  
 A Windows Autopilot egyszerűbbé teszi az eszközök regisztrálását az Intune-ban. A testre szabott operációsrendszer-lemezképek létrehozása és karbantartása sok időt vesz igénybe. Gyakran ezeknek az egyéni operációsrendszer-lemezképeknek az új eszközökre való alkalmazásával is időt kell töltenie, hogy felkészítse az eszközöket a használatra, mielőtt a végfelhasználóknak adná azokat. A Microsoft Intune és az AutoPilot révén új eszközöket adhat hozzá a végfelhasználók számára anélkül, hogy egyéni operációsrendszer-lemezképek létrehozására, kezelésére és az eszközökre való alkalmazására lenne szükség. Az AutoPilot-eszközök Intune-nal való felügyelete során a regisztráció után szabályzatokat, profilokat, alkalmazásokat és sok mást is kezelni tud. A megoldás előnyeinek, használati eseteinek és előfeltételeinek áttekintéséről lásd [a Windows AutoPilot áttekintését](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot).
 
 A robotpilóta-telepítés négyféle típusú:
 - [Saját üzembe helyezési mód](https://docs.microsoft.com/windows/deployment/windows-autopilot/self-deploying) kioszkokhoz, digitális aláírásokhoz vagy megosztott eszközhöz
-- A [fehér kesztyű](https://docs.microsoft.com/windows/deployment/windows-autopilot/white-glove) lehetővé teszi a partnerek vagy az informatikai munkatársak számára, hogy előzetesen kiépítsék a Windows 10 RENDSZERű számítógépeket, hogy teljesen konfigurálva legyenek, és készen álljanak a[meglévő eszközökre](https://docs.microsoft.com/windows/deployment/windows-autopilot/existing-devices) , így egyszerűen üzembe helyezheti a Windows 10-es legújabb verzióját a meglévő eszközökön
+- A [fehér kesztyű](https://docs.microsoft.com/windows/deployment/windows-autopilot/white-glove) lehetővé teszi a partnerek vagy az informatikai munkatársak számára a Windows 10 rendszerű számítógépek előzetes kiépítését, hogy az teljes mértékben konfigurálva legyen, és készen álljon az üzleti használatra
+- A [meglévő eszközökhöz készült Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/existing-devices) lehetővé teszi a Windows 10 legújabb verziójának egyszerű telepítését a meglévő eszközökre
 - [Felhasználó által vezérelt mód](https://docs.microsoft.com/windows/deployment/windows-autopilot/user-driven) a hagyományos felhasználók számára. 
-
 
 ## <a name="prerequisites"></a>Előfeltételek
 - [Intune-előfizetés](../fundamentals/licenses.md)
@@ -174,6 +174,9 @@ Ez a jelentés előzetes verzióban érhető el. Az eszköz központi telepíté
 Felhasználót rendelhet hozzá egy adott Autopilot-eszközhöz. Ez a hozzárendelés előre kitölti a [vállalati védjeggyel ellátott](https://docs.microsoft.com/azure/active-directory/fundamentals/customize-branding) bejelentkezési oldal felhasználói űrlapját az Azure Active Directoryból származó adatokkal a Windows beállítása során. Egyéni üdvözlési megnevezés beállítását is lehetővé teszi. A windowsos bejelentkezési adatokat nem tölti ki előre és nem is módosítja. Ilyen módon csak licenccel rendelkező Intune-felhasználók rendelhetők hozzá.
 
 Előfeltételek: Azure Active Directory Céges portál konfigurálva van, és a Windows 10 1809-es vagy újabb verziójával.
+
+> [!NOTE]
+> Ha az ADFS-t használja, a felhasználó egy adott Autopilot-eszközhöz való hozzárendelésével nem működik.
 
 1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **Windows** > **Windows-beléptetési** > **eszközök** lehetőséget (a **windows Autopilot Deployment program** területen > Válassza ki az eszközt, > a **felhasználó kiosztása**elemet.
 

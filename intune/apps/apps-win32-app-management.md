@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/21/2020
+ms.date: 03/03/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dbefd797fead7113045ee7e7655b715a0b4961fd
-ms.sourcegitcommit: 32391f74241ee3289a76ccd5319fe700b800d427
+ms.openlocfilehash: 516d5148ac44d72aaacf1d670d2d4f0345823d49
+ms.sourcegitcommit: 6608dc70d01376e0cd90aa620a2fe01337f6a2f1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77075824"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78260282"
 ---
 # <a name="intune-standalone---win32-app-management"></a>Önálló Intune – Win32-alkalmazások kezelése
 
@@ -342,6 +342,11 @@ A végfelhasználó megtekinti a Windows pirítóssal kapcsolatos értesítések
 A következő rendszerkép értesíti a felhasználót, hogy az alkalmazás megváltoztatja az eszközön végrehajtott módosításokat.
 
 ![Képernyőfelvétel a felhasználót arról, hogy az alkalmazás módosításai történnek](./media/apps-win32-app-management/apps-win32-app-09.png)    
+
+Emellett a Céges portál alkalmazás további alkalmazás-telepítési állapotüzenetek is megjeleníti a végfelhasználók számára. A következő feltételek érvényesek a Win32 függőségi funkciókra:
+- Az alkalmazás telepítése nem sikerült. A rendszergazda által definiált függőségek nem teljesültek.
+- Az alkalmazás telepítése sikeresen megtörtént, de újraindítást igényel.
+- Az alkalmazás telepítése folyamatban van, de a folytatáshoz újraindítás szükséges.
 
 ## <a name="set-win32-app-availability-and-notifications"></a>Win32-alkalmazás rendelkezésre állásának és értesítéseinek beállítása
 Beállíthatja a Win32-alkalmazás kezdési idejét és határidejét. A kezdési időpontban az Intune felügyeleti bővítmény elindítja az alkalmazás tartalmának letöltését, és gyorsítótárazza azt a szükséges szándék érdekében. Az alkalmazás a határidő lejártakor lesz telepítve. Az elérhető alkalmazások esetében a kezdési idő akkor fog megjelenni, ha az alkalmazás megjelenik a Céges portálban, és a tartalom le lesz töltve, amikor a végfelhasználó a Céges portáltól kéri az alkalmazást. Emellett engedélyezheti az újraindítási türelmi időszakot is. 

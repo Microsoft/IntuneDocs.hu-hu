@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: abf23bff0d8889b57ab05c55b7e1464d0a9d2436
-ms.sourcegitcommit: 32391f74241ee3289a76ccd5319fe700b800d427
+ms.openlocfilehash: a46532467f8de7caf8cc88fe60e7a5cbc10ba147
+ms.sourcegitcommit: a25f556aa9df4fcd9fdacccd12c9029bc6c5fe20
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77075790"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78256526"
 ---
 # <a name="windows-mdm-security-baseline-settings-for-intune"></a>A Windows MDM biztonsági alapkonfigurációjának beállításai az Intune-ban
 
@@ -214,7 +214,7 @@ További információ: [szabályzat CSP-böngésző](https://docs.microsoft.com/
   
   **Alapértelmezett**: igen
 
-## <a name="connectivity"></a>Csatlakozás
+## <a name="connectivity"></a>Kapcsolat
 
 További információ: [Policy CSP – kapcsolat](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-connectivity) a Windows dokumentációjában.
 
@@ -364,7 +364,7 @@ További információ: [Policy CSP-DeviceLock](https://docs.microsoft.com/window
   Ha a *jelszó megkövetelése* *Igen*értékre van állítva, a következő beállítások érhetők el.
 
   - **Jelszó minimális karakterkészletének száma**:  
-    Az erős PIN-kódokhoz vagy jelszóhoz szükséges összetett elemek (kis-és nagybetűk, számok és írásjelek) száma. A PIN-kód kikényszeríti a következő viselkedést az asztali és a mobileszközök esetében: 1 – 2 számjegyből és kisbetűkből álló karakterek esetén 3 számjegyű, kisbetűket és nagybetűket kell megadni. Asztali Microsoft-fiókok és tartományi fiókok esetében nem támogatott. 4 számjegyű, kisbetűket, nagybetűket és speciális karaktereket kell megadni. Az asztali verzióban nem támogatott. Az alapértelmezett érték az 1.  
+    Az erős PIN-kódokhoz vagy jelszóhoz szükséges összetett elemek (kis-és nagybetűk, számok és írásjelek) száma. A PIN-kód kikényszeríti a következő viselkedést az asztali és a mobileszközök esetében: 1 – 2 számjegyből és kisbetűkből álló karakterek esetén 3 számjegyű, kisbetűket és nagybetűket kell megadni. Asztali Microsoft-fiókok és tartományi fiókok esetében nem támogatott. 4 számjegyű, kisbetűket, nagybetűket és speciális karaktereket kell megadni. Az asztali verzióban nem támogatott.  
     [További információ](https://go.microsoft.com/fwlink/?linkid=2067055)
 
     **Alapértelmezett**: 3

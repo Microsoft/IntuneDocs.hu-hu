@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 02/24/2020
+ms.date: 03/03/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af8b46605d099a920ee512bce3ba94708b4a9eac
-ms.sourcegitcommit: 045ca42cad6f86024af9a38a380535f42a6b4bef
+ms.openlocfilehash: 7148db8f3fbfce4862afd12cabf7729645d737bf
+ms.sourcegitcommit: 6608dc70d01376e0cd90aa620a2fe01337f6a2f1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77781172"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78260197"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -53,6 +53,26 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 ### Monitor and troubleshoot
 ### Role-based access control
 -->  
+
+<!-- ########################## -->
+## <a name="week-of-march-2-2020"></a>2020. március 2. hét
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name="device-management"></a>Eszközkezelés
+
+### <a name="bulk-remote-actions--4576882--"></a>Tömeges távoli műveletek<!--4576882-->
+Mostantól tömeges parancsokat is kiállíthat a következő távoli műveletekhez: újraindítás, átnevezés, Autopilot alaphelyzetbe állítása, szinkronizálás, törlés és törlés. Az új tömeges műveletek megtekintéséhez lépjen a [Microsoft Endpoint Manager felügyeleti központ](https://go.microsoft.com/fwlink/?linkid=2109431) > **eszközök** > **minden eszköz** > **tömeges műveletek**.
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name="app-management"></a>Alkalmazáskezelés
+
+#### <a name="company-portal-app-installation-status-messages-for-win32-apps----2514416---"></a>Alkalmazás-telepítési állapotüzenetek Céges portál Win32-alkalmazásokhoz <!-- 2514416 -->
+A Céges portál alkalmazás további alkalmazás-telepítési állapotüzenetek megjelenítését jeleníti meg a végfelhasználók számára. A következő feltételek érvényesek az új Win32-függőségi funkciókra:
+- Az alkalmazás telepítése nem sikerült. A rendszergazda által definiált függőségek nem teljesültek.
+- Az alkalmazás telepítése sikeresen megtörtént, de újraindítást igényel.
+- Az alkalmazás telepítése folyamatban van, de a folytatáshoz újraindítás szükséges.
+
+További információ: [win32 app Management](~/apps/apps-win32-app-management.md).
 
 <!-- ########################## -->
 ## <a name="week-of-february-24-2020"></a>2020. február 24-i hét

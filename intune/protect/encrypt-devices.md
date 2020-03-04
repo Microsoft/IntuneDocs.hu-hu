@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 02/25/2019
+ms.date: 03/03/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.reviewer: annovich
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
-ms.openlocfilehash: a5c844377dcd69b6caf5ef9f72fcb8dbb4ef8bd0
-ms.sourcegitcommit: 29f3ba071c9348686d3ad6f3b8864d8557e05b97
+ms.openlocfilehash: a2b988af00ce1ab5b9fa4e664d09b383403bd002
+ms.sourcegitcommit: 6608dc70d01376e0cd90aa620a2fe01337f6a2f1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77609314"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78260350"
 ---
 # <a name="use-device-encryption-with-intune"></a>Az eszközök titkosításának használata az Intune-nal
 
@@ -125,6 +125,32 @@ Konfigurálja a BitLockert, ha a Windows 10 vagy újabb rendszerű platformhoz h
 5. Konfigurálja a BitLocker beállításait az üzleti igények kielégítéséhez, majd kattintson **az OK gombra**.
 
 6. Fejezze be a további beállítások konfigurációját, majd mentse a profilt.
+
+### <a name="silently-enable-bitlocker-on-devices"></a>A BitLocker csendes engedélyezése az eszközökön
+
+Beállíthat egy BitLocker-szabályzatot, amely automatikusan és csendesen engedélyezi a BitLockert az eszközön. Ez azt jelenti, hogy a BitLocker lehetővé teszi a sikeres bejelentkezést anélkül, hogy felhasználói FELÜLETET kellene bemutatnia, még akkor is, ha az adott felhasználó nem helyi rendszergazda az eszközön.
+
+**Eszköz előfeltételei**:
+
+Az eszköznek meg kell felelnie a következő feltételeknek, hogy jogosult legyen a BitLocker csendes engedélyezésére:
+
+- Az eszközön a Windows 10 1809-es vagy újabb verziójának kell futnia.
+- Az eszköznek az Azure AD-hez kell csatlakoznia  
+
+**BitLocker-házirend konfigurációja**:
+
+A BitLocker [alapbeállításaihoz](../protect/endpoint-protection-windows-10.md#bitlocker-base-settings) a következő két beállítást kell konfigurálni a BitLocker-házirendben:
+
+- **Figyelmeztetés más lemezes titkosítási** = *blokkhoz*.
+- Lehetővé **teszi a szabványos felhasználók számára a titkosítás engedélyezését az Azure ad Join** = *engedélyezésekor*
+
+A BitLocker-házirendben **nem szükséges** indítási PIN-kód vagy indítókulcs használata. Ha TPM-indítási PIN-kód vagy indítókulcs *szükséges*, a BitLocker nem tud csendesen engedélyezni és a végfelhasználótól interakciót igényel.  Ez a követelmény a következő három [BITLOCKER operációsrendszer-meghajtó beállításain](../protect/endpoint-protection-windows-10.md#bitlocker-os-drive-settings) keresztül teljesül ugyanabban a házirendben:
+
+- A **kompatibilis TPM-indítási PIN-kód** nem állítható be a TPM-sel *való indítási PIN-kód megköveteléséhez*
+- A **kompatibilis TPM-indítási kulcs** nem állítható be a TPM-sel *való indítási kulcs megköveteléséhez*
+- A **kompatibilis TPM-indítási kulcs és PIN-kód** nem állítható be *indítási kulcs megkövetelése és PIN-kód rögzítése a TPM-* sel
+
+
 
 ### <a name="manage-bitlocker"></a>BitLocker kezelése
 

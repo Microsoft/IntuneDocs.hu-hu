@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f8782d18b1a16ffc9bc7e48b19a1b70fdfbe71b8
-ms.sourcegitcommit: fab685b22a010fe231b27a0c5eda34a6f22f4c8d
+ms.openlocfilehash: 07463f3bcac7d657659ece7fed2c40db53ee2122
+ms.sourcegitcommit: a25f556aa9df4fcd9fdacccd12c9029bc6c5fe20
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78216151"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78256373"
 ---
 # <a name="how-to-manage-volume-purchased-apps-from-the-microsoft-store-for-business-with-microsoft-intune"></a>Mennyiségi programban vásárolt alkalmazások felügyelete a Microsoft Store for Business és a Microsoft Intune használatával
 
@@ -51,7 +51,8 @@ Mielőtt elkezdené a Vállalati Microsoft Áruházból származó alkalmazások
 - Ennek a funkciónak a használatához csatlakoztatni kell az eszközöket a Active Directory tartományi szolgáltatásokhoz, az Azure AD-hez vagy a munkahelyhez csatlakoztatva.
 - A regisztrált eszközöknek a Windows 10 1511-es vagy újabb verzióját kell használniuk.
 
-Emellett a kapcsolódó készletek és a Vállalati Microsoft Áruházból szinkronizált offline licencelt alkalmazások mostantól egyetlen alkalmazásbejegyzésben jelennek meg a felhasználói felületen. A különálló csomagok üzembe helyezési adatait szintén egyetlen bejegyzésben összesítjük. Ha a Azure Portal kapcsolódó készleteit szeretné megtekinteni, válassza az **alkalmazások** panel **alkalmazás-licencek** elemét.
+> [!NOTE]
+Ha az áruházat a felügyelt eszközökön letiltja (manuálisan, házirend vagy Csoportházirend használatával), az online licenccel rendelkező alkalmazások telepítése sikertelen lesz.
 
 ## <a name="associate-your-microsoft-store-for-business-account-with-intune"></a>A Vállalati Microsoft Áruházbeli fiók összekapcsolása az Intune-nal
 Mielőtt engedélyezné a szinkronizálást az Intune-konzolon, konfigurálnia kell az áruházbeli fiókját az Intune használatára felügyeleti eszközként:
@@ -89,7 +90,7 @@ Az offline alkalmazások célcsoportjai lehetnek felhasználói csoportok, eszk�
 Az offline alkalmazások telepíthetők egy eszköz adott felhasználója vagy az összes felhasználója számára. 
 
 
-A Vállalati Microsoft Áruházból származó alkalmazások hozzárendelésekor az alkalmazást telepítő minden felhasználó egy-egy licencet használ fel. Ha felhasználja egy kiosztott alkalmazás összes elérhető licencét, akkor nem oszthat ki több példányt. Hajtsa végre az alábbi műveletek egyikét:
+A Vállalati Microsoft Áruházból származó alkalmazások hozzárendelésekor az alkalmazást telepítő minden felhasználó egy-egy licencet használ fel. Ha felhasználja egy kiosztott alkalmazás összes elérhető licencét, akkor nem oszthat ki több példányt. Válasszon a következő lehetőségek közül:
 * Távolítsa el az alkalmazást néhány eszközről.
 * Szűkítse le az aktuális hozzárendelés hatókörét annyi felhasználóra, ahány elérhető licenccel rendelkezik.
 * Vásároljon további példányokat az alkalmazásból a Vállalati Microsoft Áruházban.

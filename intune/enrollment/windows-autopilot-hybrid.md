@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d87a4b5d46a5f0d40cebe3dbcaff211ff508d667
-ms.sourcegitcommit: 822a70c61f5d644216ccc401b8e8949bc39e8d4a
+ms.openlocfilehash: d30c02e67579e7c4e2d577f8804189fec1c6110d
+ms.sourcegitcommit: 6608dc70d01376e0cd90aa620a2fe01337f6a2f1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76125310"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78260248"
 ---
 # <a name="deploy-hybrid-azure-ad-joined-devices-by-using-intune-and-windows-autopilot"></a>Hibrid Azure AD-hez csatlakoztatott eszközök üzembe helyezése az Intune és a Windows Autopilot használatával
 Az Intune és a Windows Autopilot használatával hibrid Azure Active Directory (Azure AD) csatlakoztatott eszközöket állíthat be. Ehhez kövesse a cikk lépéseit.
@@ -39,12 +39,14 @@ A regisztrálni kívánt eszközöknek a következő feltételeknek kell megfele
 - Pingelje a csatlakoztatni kívánt tartomány tartományvezérlőjét.
 - Ha proxyt használ, a WPAD-proxybeállítások beállítást engedélyezni és konfigurálni kell.
 - Az out-of-box (OOBE) felületén keresztül végezhető el.
+- Olyan engedélyezési típust használjon, amelyet Azure Active Directory támogat az OOBE-ben.
+
 
 ## <a name="set-up-windows-10-automatic-enrollment"></a>Windows 10-es eszközök automatikus regisztrációjának beállítása
 
 1. Jelentkezzen be az Azure-ba, a bal oldali ablaktáblán válassza a **Azure Active Directory**lehetőséget.
 
-   ![Azure Portal](./media/windows-autopilot-hybrid/auto-enroll-azure-main.png)
+   ![A Azure Portal](./media/windows-autopilot-hybrid/auto-enroll-azure-main.png)
 
 1. Válassza a **Mobilitás (MDM és MAM)** elemet.
 
@@ -111,7 +113,7 @@ A Active Directory Intune-összekötőjét a Windows Server 2016-es vagy újabb 
 2. Az összekötő letöltéséhez kövesse az utasításokat.
 3. Az összekötő telepítéséhez nyissa meg a letöltött összekötő telepítési fájlját ( *ODJConnectorBootstrapper. exe)* .
 4. A beállítás végén válassza a **Konfigurálás**lehetőséget.
-5. Válassza a **Bejelentkezés** lehetőséget.
+5. Válassza **a bejelentkezés**lehetőséget.
 6. Adja meg a felhasználó globális rendszergazdai vagy Intune-rendszergazdai szerepkörének hitelesítő adatait.  
    A felhasználói fióknak rendelkeznie kell egy hozzárendelt Intune-licenccel.
 7. Nyissa meg az **eszközök** > **Windows** > **Windows-regisztráció** > **Intune-összekötő a Active Directoryhoz**lehetőséget, majd ellenőrizze, hogy a kapcsolódási állapot **aktív**-e.
@@ -181,11 +183,11 @@ Az Autopilot-eszközök regisztrálását követően a nevük az eszköz állom�
 
 
 ## <a name="create-and-assign-an-autopilot-deployment-profile"></a>Autopilot-üzembehelyezési profil létrehozása és hozzárendelése
-Az AutoPilot üzembehelyezési profilokkal konfigurálhatja az AutoPilot-eszközöket.
+Az Autopilot-üzembehelyezési profilokkal Autopilot-eszközeit konfigurálhatja.
 
 1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **windows** > **windows-regisztráció** > **központi telepítési profilok** > **profil létrehozása**lehetőséget.
 2. Az **alapvető beállítások** lapon adja meg a **nevet** és a **leírást**(nem kötelező).
-3. Ha azt szeretné, hogy a hozzárendelt csoportokban lévő minden eszköz automatikusan átálljon az AutoPilotra, állítsa a **Minden megcélzott eszköz AutoPilot-eszközzé alakítása** beállítást **Igen** értékre. A hozzárendelt csoportokban a vállalat tulajdonában lévő, nem Autopilot-eszközök regisztrálva lesznek az Autopilot Deployment szolgáltatásban. A személyes tulajdonban lévő eszközök nem lesznek átalakítva az Autopilot szolgáltatásba. A regisztráció feldolgozása 48 órát is igénybe vehet. Az eszköz regisztrációjának törlése és alaphelyzetbe állítása után az Autopilot regisztrálja az eszközt. Miután ilyen módon regisztrál egy eszközt, a beállítás letiltása vagy a profil-hozzárendelés eltávolítása nem távolítja el az eszközt az Autopilot üzembehelyezési szolgáltatásból. Ehhez [közvetlenül kell törölnie az eszközt](enrollment-autopilot.md#delete-autopilot-devices).
+3. Ha azt szeretné, hogy a hozzárendelt csoportokban lévő minden eszköz automatikusan átálljon az AutoPilotra, állítsa a **Minden megcélzott eszköz AutoPilot-eszközzé alakítása** beállítást **Igen** értékre. A hozzárendelt csoportokban a vállalat tulajdonában lévő, nem Autopilot-eszközök regisztrálva lesznek az Autopilot Deployment szolgáltatásban. A személyes tulajdonban lévő eszközök nem lesznek átalakítva az Autopilot szolgáltatásba. Hagyjon 48 órát a regisztráció feldolgozására. Az eszköz regisztrációjának törlése és alaphelyzetbe állítása után az Autopilot regisztrálja az eszközt. Miután ilyen módon regisztrál egy eszközt, a beállítás letiltása vagy a profil-hozzárendelés eltávolítása nem távolítja el az eszközt az Autopilot üzembehelyezési szolgáltatásból. Ehhez [közvetlenül kell törölnie az eszközt](enrollment-autopilot.md#delete-autopilot-devices).
 4. Válassza a **Tovább** elemet.
 5. A beépített felhasználói **élmény (OOBE)** lapon a **telepítési mód**beállításnál válassza a **felhasználó által vezérelt**lehetőséget.
 6. Az **illesztés az Azure ad** -ba mezőben válassza a **hibrid Azure ad-hez csatlakoztatott**lehetőséget.

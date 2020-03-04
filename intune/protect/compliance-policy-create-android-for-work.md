@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 60244bb268f7becadc427c397d7c2d1562bcf6b5
-ms.sourcegitcommit: ea81ad5f33f18d9fe43254e27e02de5eaef74a05
+ms.openlocfilehash: 163f5dd246fb17e7d67a8baffbae9926f2f4bc79
+ms.sourcegitcommit: a25f556aa9df4fcd9fdacccd12c9029bc6c5fe20
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75722606"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78256441"
 ---
 # <a name="android-enterprise-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>Androidos vállalati beállítások az eszközök megfelelő vagy nem megfelelőként való megjelöléséhez az Intune-nal
 
@@ -48,7 +48,7 @@ Intune-rendszergazdaként ezeket a megfelelőségi beállításokat használhatj
 - Az eszköznek **az eszköz veszélyforrási szintjére vagy az alá való helyezésének megkövetelése**: válassza ki a [Mobile Threat Defense szolgáltatás](mobile-threat-defense.md)által kiértékelt maximálisan engedélyezett veszélyforrások szintjét. Azok az eszközök, amelyek túllépik ezt a veszélyforrást, nem megfelelőként vannak megjelölve. A beállítás használatához válassza ki a megengedett kockázati szintet:
 
   - **Nincs konfigurálva** (*alapértelmezett*) – a rendszer nem értékeli ki a megfelelőségi és a nem megfelelőségi beállítást.
-  - **Biztonságos** – ez a legbiztonságosabb beállítás, ami azt jelenti, hogy az eszközhöz nem tartozhat fenyegetés. Bármilyen szintű fenyegetés észlelésekor az eszközt a rendszer nem megfelelőként fogja értékeli.
+  - **Biztonságos** – ez a legbiztonságosabb beállítás, ami azt jelenti, hogy az eszközhöz nem tartozhat fenyegetés. Bármilyen szintű fenyegetés észlelésekor az eszközt a rendszer nem megfelelőként értékeli.
   - **Alacsony**: – az eszköz csak abban az esetben minősül megfelelőnek, ha kizárólag alacsony szintű fenyegetések állnak fenn. Bármilyen magasabb szintű fenyegetés esetén az eszköz nem megfelelő státuszúnak minősül.
   - **Közepes** – az eszköz abban az esetben minősül megfelelőnek, ha az eszközön lévő fenyegetések alacsony vagy közepes szintűek. Magas szintű fenyegetés észlelésekor a rendszer nem megfelelőként értékeli az eszközt.
   - **Magas** – ez a legkevésbé biztonságos beállítás, mivel az összes veszélyforrást engedélyezi. Akkor lehet hasznos, ha ezt a megoldást kizárólag jelentéskészítési célokra használja.
@@ -75,7 +75,7 @@ Intune-rendszergazdaként ezeket a megfelelőségi beállításokat használhatj
 
   *Alapértelmezés szerint nincs konfigurálva a verzió*.
 
-- **Minimális biztonsági javítási szint**: válassza ki a legrégebbi biztonsági javítási szintet, amelyet az eszköz tartalmazhat. Az ennél régebbi javítási verzióval rendelkező eszközök nem megfelelőek. A dátumot éééé-hh-nn formátumban kell megadni.
+- **Minimális biztonsági javítási szint**: válassza ki a legrégebbi biztonsági javítási szintet, amelyet az eszköz tartalmazhat. Az ennél régebbi javítási szintű eszközök nem megfelelőek. A dátumot éééé-hh-nn formátumban kell megadni.
 
   *Alapértelmezés szerint nincs beállítva dátum*.
 
@@ -84,11 +84,8 @@ Intune-rendszergazdaként ezeket a megfelelőségi beállításokat használhatj
 
 - **Jelszó megkövetelése a mobileszközök zárolásának feloldásához**: 
   - **Nincs konfigurálva** (*alapértelmezett*) – a rendszer nem értékeli ki a megfelelőségi és a nem megfelelőségi beállítást.
-  - **Kötelező** – a felhasználóknak jelszót kell megadniuk ahhoz, hogy hozzáférjenek az eszközhöz. 
-
-  Ez a beállítás az eszköz szintjén érvényes. Ha csak a munkahelyi profil szintjén kell jelszót megkövetelni, használja a konfigurációs szabályzatot. Lásd: [androidos vállalati eszköz konfigurációs beállításai](../configuration/device-restrictions-android-for-work.md).
-
-  - **Jelszó megkövetelt típusa**: Megadható, hogy a jelszó csak számjegyeket, vagy számokat és más karaktereket vegyesen tartalmazzon. A választható lehetőségek:
+  - **Kötelező** – a felhasználóknak jelszót kell megadniuk ahhoz, hogy hozzáférjenek az eszközhöz.
+  - **Jelszó megkövetelt típusa**: Megadható, hogy a jelszó csak számjegyeket vagy számokat és más karaktereket vegyesen tartalmazzon. A választható lehetőségek:
     - **Alapértelmezett eszköz** – a jelszó-megfelelőség kiértékelése érdekében ügyeljen arra, hogy az **eszköz alapértelmezett értékén**kívül más jelszót válasszon.  
     - **Jelszó szükséges, nincs korlátozás**
     - **Gyenge biometrikus** - [erős és gyenge biometria](https://android-developers.googleblog.com/2018/06/better-biometrics-in-android-p.html) (az Android webhelyének megnyitása)
@@ -142,7 +139,7 @@ Intune-rendszergazdaként ezeket a megfelelőségi beállításokat használhatj
 - Az eszköznek **az eszköz veszélyforrási szintjére vagy az alá való helyezésének megkövetelése**: válassza ki a [Mobile Threat Defense szolgáltatás](mobile-threat-defense.md)által kiértékelt maximálisan engedélyezett veszélyforrások szintjét. Azok az eszközök, amelyek túllépik ezt a veszélyforrást, nem megfelelőként vannak megjelölve. A beállítás használatához válassza ki a megengedett kockázati szintet:
 
   - **Nincs konfigurálva** (*alapértelmezett*) – a rendszer nem értékeli ki a megfelelőségi és a nem megfelelőségi beállítást.
-  - **Biztonságos** – ez a legbiztonságosabb beállítás, ami azt jelenti, hogy az eszközhöz nem tartozhat fenyegetés. Bármilyen szintű fenyegetés észlelésekor az eszközt a rendszer nem megfelelőként fogja értékeli.
+  - **Biztonságos** – ez a legbiztonságosabb beállítás, ami azt jelenti, hogy az eszközhöz nem tartozhat fenyegetés. Bármilyen szintű fenyegetés észlelésekor az eszközt a rendszer nem megfelelőként értékeli.
   - **Alacsony** – az eszköz csak abban az esetben minősül megfelelőnek, ha kizárólag alacsony szintű fenyegetések állnak fenn. Bármilyen magasabb szintű fenyegetés esetén az eszköz nem megfelelő státuszúnak minősül.
   - **Közepes** – az eszköz abban az esetben minősül megfelelőnek, ha az eszközön lévő fenyegetések alacsony vagy közepes szintűek. Magas szintű fenyegetés észlelésekor a rendszer nem megfelelőként értékeli az eszközt.
   - **Magas** – ez a legkevésbé biztonságos beállítás, mivel az összes veszélyforrást engedélyezi. Akkor lehet hasznos, ha ezt a megoldást kizárólag jelentéskészítési célokra használja.
@@ -185,7 +182,7 @@ Intune-rendszergazdaként ezeket a megfelelőségi beállításokat használhatj
 
   Ez a beállítás az eszköz szintjén érvényes. Ha csak a munkahelyi profil szintjén kell jelszót megkövetelni, használja a konfigurációs szabályzatot. Lásd: [androidos vállalati eszköz konfigurációs beállításai](../configuration/device-restrictions-android-for-work.md).
 
-- **Jelszó megkövetelt típusa**: Megadható, hogy a jelszó csak számjegyeket, vagy számokat és más karaktereket vegyesen tartalmazzon. A választható lehetőségek:
+- **Jelszó megkövetelt típusa**: Megadható, hogy a jelszó csak számjegyeket vagy számokat és más karaktereket vegyesen tartalmazzon. A választható lehetőségek:
   - **Eszköz alapértelmezése**
   - **Alacsony biztonságú biometrikus**
   - **Legalább numerikus** (*alapértelmezett*): adja meg a **jelszó minimális hosszát** , amelyet a felhasználónak 4 és 16 karakter között kell megadnia.
@@ -220,7 +217,7 @@ Intune-rendszergazdaként ezeket a megfelelőségi beállításokat használhatj
   Alkalmazások közvetlen telepítéséhez az ismeretlen forrásokat engedélyezni kell. Ha nem telepít közvetlenül Android-alkalmazásokat, akkor a megfelelőségi szabályzat engedélyezéséhez adja meg a **Letiltás** beállítást ehhez a funkcióhoz.
 
   > [!IMPORTANT]
-  > Az alkalmazások közvetlen telepítéséhez engedélyezni kell az **Ismeretlen forrásból származó alkalmazások letiltása** beállítást. Csak akkor szükséges ennek a megfelelőségi szabályzatnak a kényszerítése, ha nem telepít közvetlenül Android-alkalmazásokat az eszközökön.
+  > Az alkalmazások közvetlen telepítéséhez engedélyezni kell az **Ismeretlen forrásból származó alkalmazások letiltása** beállítást. Csak akkor szükséges ennek a megfelelőségi szabályzatnak a kényszerítése, ha nem végzi Android-alkalmazások közvetlen telepítését az eszközökön.
 
   Ezt a beállítást nem kell konfigurálnia, mert az Android Enterprise-eszközök mindig korlátozzák az ismeretlen forrásból történő telepítést.
 
@@ -238,7 +235,7 @@ Intune-rendszergazdaként ezeket a megfelelőségi beállításokat használhatj
 
   Ezt a beállítást nem kell konfigurálnia, mert az USB-hibakeresés már le van tiltva az androidos vállalati eszközökön.
 
-- **Minimális biztonsági javítási szint**: válassza ki a legrégebbi biztonsági javítási szintet, amelyet az eszköz tartalmazhat. Az ennél régebbi javítási verzióval rendelkező eszközök nem megfelelőek. A dátumot éééé-hh-nn formátumban kell megadni.
+- **Minimális biztonsági javítási szint**: válassza ki a legrégebbi biztonsági javítási szintet, amelyet az eszköz tartalmazhat. Az ennél régebbi javítási szintű eszközök nem megfelelőek. A dátumot éééé-hh-nn formátumban kell megadni.
 
   *Alapértelmezés szerint nincs beállítva dátum*.
 

@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 01/16/2020
+ms.date: 03/02/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f6798082f293db6745ea4a15155e15ea112ca6fd
-ms.sourcegitcommit: 8b716db3c0fdbb7dff62497ec283902a5069a343
+ms.openlocfilehash: 1bc811bcac80f8321284ece8d3860efc7164a270
+ms.sourcegitcommit: a25f556aa9df4fcd9fdacccd12c9029bc6c5fe20
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77652419"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78256322"
 ---
 # <a name="use-and-manage-android-enterprise-devices-with-oemconfig-in-microsoft-intune"></a>Androidos nagyvállalati eszközök használata és kezelése a OEMConfig-ben Microsoft Intune
 
@@ -170,6 +170,8 @@ Ha létezik egy OEMConfig-alkalmazás az eszközhöz, de nem szerepel a fenti t�
 
 > [!NOTE]
 > A OEMConfig-alkalmazásokat az Intune-nak kell bejelentkeznie ahhoz, hogy OEMConfig-profilokkal lehessen konfigurálni őket. Az alkalmazások támogatása után nem kell felvennie a kapcsolatot a Microsofttal a bérlőben való beállításával kapcsolatban. Csak kövesse az ezen az oldalon található utasításokat.
+>
+> Ha egy OEMConfig-alkalmazás hibásan viselkedik, akkor forduljon a OEMConfig alkalmazás fejlesztőihez. Az Intune nem felelős az egyes OEMConfig-alkalmazásokkal kapcsolatos technikai problémákért.
 
 ## <a name="next-steps"></a>További lépések
 

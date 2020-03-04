@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 48d2e88fbe35729a5b8496d4ac1a4c444df3d89f
-ms.sourcegitcommit: 29f3ba071c9348686d3ad6f3b8864d8557e05b97
+ms.openlocfilehash: 024f92b35b3b2885f58a7b544144d328c34ab499
+ms.sourcegitcommit: a25f556aa9df4fcd9fdacccd12c9029bc6c5fe20
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77609143"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78256475"
 ---
 # <a name="microsoft-intune-app-sdk-for-ios-developer-guide"></a>A Microsoft Intune App SDK iOS rendszeren – fejlesztői útmutató
 
@@ -142,7 +142,7 @@ Az Intune App SKD engedélyezéséhez kövesse az alábbi lépéseket:
    >  </array>
    >  ```
 
-4. A kulcstartó megosztásának engedélyezése után kövesse az alábbi lépéseket egy külön hozzáférési csoport létrehozásához, amelyben az Intune app SDK tárolja az adattárolót. A kulcslánc-hozzáférési csoportokat a kezelőfelületet vagy a jogosultságokat tartalmazó fájl használatával hozhatja létre. Ha a felhasználói felületet használja a kulcstartó-hozzáférési csoport létrehozásához, kövesse az alábbi lépéseket:
+4. A kulcstartó megosztásának engedélyezése után kövesse az alábbi lépéseket egy külön hozzáférési csoport létrehozásához, amelyben az Intune app SDK tárolja az adattárolót. Kulcslánc-hozzáférési csoportot a felhasználói felületen vagy a jogosultságfájllal hozhat létre. Ha a felhasználói felületet használja a kulcstartó-hozzáférési csoport létrehozásához, kövesse az alábbi lépéseket:
 
      a. Ha a Mobile alkalmazás nem rendelkezik definiált kulcstartó-hozzáférési csoportokkal, adja hozzá az alkalmazás köteg-AZONOSÍTÓját az **első** csoporthoz.
     
@@ -194,7 +194,7 @@ Javasoljuk, hogy az alkalmazás a [ADAL](https://github.com/AzureAD/azure-active
 
 2. Engedélyezze a ADAL/MSAL egyszeri bejelentkezést (SSO) a kulcstartó-hozzáférési csoportok `com.microsoft.adalcache` hozzáadásával.
 
-3. Ha explicit módon beállítja az ADAL megosztott gyorsítótárának kulcslánccsoportját, akkor feltétlenül a következő értékre állítsa: `<appidprefix>.com.microsoft.adalcache`. Az ADAL ezt állítja be, hacsak Ön felül nem bírálja. Ha egyéni kulcslánccsoportot szeretne megadni a `com.microsoft.adalcache` helyett az Info.plist fájl „IntuneMAMSettings” szakaszában, azt az `ADALCacheKeychainGroupOverride` kulccsal kell megadnia.
+3. Ha explicit módon beállítja az ADAL megosztott gyorsítótárának kulcslánccsoportját, akkor feltétlenül a következő értékre állítsa: `<appidprefix>.com.microsoft.adalcache`. Az ADAL ezt állítja be, hacsak Ön felül nem bírálja. Ha a `com.microsoft.adalcache` helyett egyéni kulcslánccsoportot szeretne megadni, az Info.plist fájl IntuneMAMSettings szakaszában, az `ADALCacheKeychainGroupOverride` kulccsal teheti meg.
 
 ### <a name="configure-adalmsal-settings-for-the-intune-app-sdk"></a>Az Intune app SDK ADAL/MSAL beállításainak konfigurálása
 
@@ -264,12 +264,16 @@ SplashDuration | Szám | Az Intune-kezdőképernyő megjelenésének minimális 
 BackgroundColor| Sztring| Megadja az Intune SDK FELHASZNÁLÓIFELÜLET-összetevőinek háttérszínét. Hexadecimális RGB-sztringet fogad el „#XXXXXX” alakban, amelyben az X-ek helyén számjegy (0–9), illetve és A és F közötti nagybetű állhat. A kettőskereszt jel kihagyható.   | Nem kötelező. Az alapértelmezett érték a rendszer háttérszíne, amely az iOS-es és az iOS-es sötét üzemmód beállítása szerint változhat. |
 ForegroundColor| Sztring| Megadja az Intune SDK felhasználói felületi összetevőinek előtér-színét, például a szöveg színét. Hexadecimális RGB-sztringet fogad el „#XXXXXX” alakban, amelyben az X-ek helyén számjegy (0–9), illetve és A és F közötti nagybetű állhat. A kettőskereszt jel kihagyható.  | Nem kötelező. Az alapértelmezett érték a rendszerfelirat színe, amely az iOS-es és az iOS-es sötét üzemmód beállítása szerint változhat. |
 AccentColor | Sztring| Meghatározza az Intune SDK felhasználói felületi összetevőinek hangsúlyozási színét, például a gomb szövegének színét és a PIN-kód kiemelésének színét. Hexadecimális RGB-sztringet fogad el „#XXXXXX” alakban, amelyben az X-ek helyén számjegy (0–9), illetve és A és F közötti nagybetű állhat. A kettőskereszt jel kihagyható.| Nem kötelező. Alapértéke a rendszer kék színe. |
+SecondaryBackgroundColor| Sztring| Megadja a MTD képernyők másodlagos háttérszínét. Hexadecimális RGB-sztringet fogad el „#XXXXXX” alakban, amelyben az X-ek helyén számjegy (0–9), illetve és A és F közötti nagybetű állhat. A kettőskereszt jel kihagyható.   | Nem kötelező. Az alapértelmezett érték a fehér. |
+SecondaryForegroundColor| Sztring| Megadja a MTD képernyők másodlagos előtéri színét, például a lábjegyzet színét. Hexadecimális RGB-sztringet fogad el „#XXXXXX” alakban, amelyben az X-ek helyén számjegy (0–9), illetve és A és F közötti nagybetű állhat. A kettőskereszt jel kihagyható.  | Nem kötelező. Az alapértelmezett érték a szürke. |
 SupportsDarkMode| Logikai | Meghatározza, hogy az Intune SDK felhasználói felületének színséma be kell-e tartania a rendszer sötét üzemmódjának beállítását, ha nincs megadva kifejezett érték a BackgroundColor/ForegroundColor/AccentColor | Nem kötelező. Az alapértelmezett érték az igen. |
 MAMTelemetryDisabled| Logikai| Az határozható meg vele, hogy az SDK ne küldjön telemetriai adatokat a háttérrendszerének.| Nem kötelező. Az alapértelmezett érték a nem. |
 MAMTelemetryUsePPE | Logikai | Itt adhatja meg, hogy a MAM SDK-t küldjön-e adatokat a PPE telemetriai háttérrendszernek. Akkor használja ezt a beállítást, ha teszteli az alkalmazásokat az Intune szabályzatával. Megakadályozhatja vele, hogy a teszt telemetriai adatai keveredjenek az ügyfelek adataival. | Nem kötelező. Az alapértelmezett érték a nem. |
 MaxFileProtectionLevel | Sztring | Nem kötelező. Itt engedélyezheti az alkalmazásnak az által támogatott maximális `NSFileProtectionType` szintnek a meghatározását. Ez az érték felülbírálja a szolgáltatás által küldött szabályzatot, ha a szint magasabb, mint amit az alkalmazás támogatni képes. A lehetséges értékek: `NSFileProtectionComplete`, `NSFileProtectionCompleteUnlessOpen`, `NSFileProtectionCompleteUntilFirstUserAuthentication`, `NSFileProtectionNone`.|
 OpenInActionExtension | Logikai | A beállítása YES a műveleti bővítményekben való megnyitáshoz. További információért lásd az Adatok megosztása az UIActivityViewController használatával szakaszt. |
 WebViewHandledURLSchemes | Sztringek tömbje | Az alkalmazás WebView-ja által kezelt URL-sémát határozza meg. | Kötelező, ha az alkalmazás olyan WebView-t használ, amely az URL-címeket hivatkozásokkal és/vagy javascripttel kezeli. |
+DocumentBrowserFileCachePath | Sztring | Ha az alkalmazás a [`UIDocumentBrowserViewController`](https://developer.apple.com/documentation/uikit/uidocumentbrowserviewcontroller?language=objc) használatával böngészhet a különböző szolgáltatók fájljai között, ezt az elérési utat megadhatja az alkalmazás Homokozójában, hogy az Intune SDK el tudja dobni a visszafejtett felügyelt fájlokat a mappába. | Nem kötelező. Az alapértelmezett érték a `/Documents/` könyvtár. |
+VerboseLoggingEnabled | Logikai | Ha az Igen értékre van állítva, az Intune részletes módban fog bejelentkezni. | Nem kötelező. Alapértelmezés szerint nem |
 
 ## <a name="receive-app-protection-policy"></a>Alkalmazásvédelmi szabályzat fogadása
 
@@ -452,7 +456,7 @@ A metódus visszatérési értéke közli az SDK-val, hogy az alkalmazásnak kel
 
 * Ha a visszatérési érték true (igaz), akkor az alkalmazásnak kell kezelnie az újraindítást.
 
-* Ha a visszatérési érték false, akkor az SDK fogja újraindítani az alkalmazást a metódus visszatérése után. Az SDK azonnal megjeleníti a felhasználónak az újraindítást kérő párbeszédpanelt.
+* „False” érték esetén a metódus visszatérése után az SDK indítja újra az alkalmazást. Az SDK azonnal megjeleníti a felhasználónak az újraindítást kérő párbeszédpanelt.
 
 ## <a name="customize-your-apps-behavior-with-apis"></a>Az alkalmazás viselkedésének testreszabása API-kkal
 
@@ -464,6 +468,14 @@ IntuneMAMPolicyManager.h | Az IntuneMAMPolicyManager osztály közzé teszi az a
 IntuneMAMPolicy.h | Az IntuneMAMPolicy osztály közzétesz néhány, az alkalmazásra vonatkozó MAM-szabályzatbeállítást. Ezeknek a szabályzatbeállításoknak a közzététele azért történt, hogy az alkalmazás testre szabhassa a felhasználói felületét. A legtöbb szabályzatbeállítást az SDK kényszeríti, nem az alkalmazás. Az alkalmazás által implementálandó egyetlen beállítás a Mentés másként vezérlő. Ez az osztály közzétesz néhány, a Mentés másként vezérlő végrehajtásához szükséges API-t. |
 IntuneMAMFileProtectionManager.h | Az IntuneMAMFileProtectionManager osztály olyan API-kat tesz közzé, amelyeket az alkalmazás fájlok és könyvtárak védelmére használhat a megadott identitás alapján. Az identitást kezelheti az Intune, vagy lehet nem felügyelt, és az SDK alkalmazza a megfelelő MAM-szabályzatot. Ennek az osztálynak a használata nem kötelező. |
 IntuneMAMDataProtectionManager.h | A IntuneMAMDataProtectionManager osztály olyan API-kat tesz közzé, amelyeket az alkalmazás használhat adatpufferek védelmére a megadott identitás alapján. Az identitást kezelheti az Intune, vagy lehet nem felügyelt, és az SDK ennek megfelelően alkalmazza a titkosítást. |
+
+## <a name="implement-allowed-accounts"></a>Engedélyezett fiókok implementálása
+
+Az Intune lehetővé teszi, hogy a rendszergazdák megadják, hogy mely fiókokat lehet bejelentkezni a felhasználó. Az alkalmazások lekérhetik az Intune app SDK-t az engedélyezett fiókok megadott listájához, és csak az engedélyezett fiókokat kell bejelentkezniük az eszközre.
+
+Az engedélyezett fiókok lekérdezéséhez az alkalmazásnak ellenőriznie kell a `IntuneMAMEnrollmentManager``allowedAccounts` tulajdonságát. A `allowedAccounts` tulajdonság vagy egy olyan tömb, amely az engedélyezett fiókokat vagy a nulla értéket tartalmazza. Ha a tulajdonság üres, akkor nem adtak meg engedélyezett fiókokat.
+
+Az alkalmazások a `IntuneMAMAllowedAccountsDidChangeNotification` értesítés betartásával is reagálnak a `allowedAccounts` tulajdonság változásaira. Az értesítés akkor jelenik meg, amikor a `allowedAccounts` tulajdonság megváltoznak az értékben.
 
 ## <a name="implement-save-as-and-open-from-controls"></a>A Mentés másként és a megnyitási vezérlők implementálása
 
@@ -729,6 +741,16 @@ Alapértelmezés szerint az alkalmazások egyszeres identitásnak minősülnek. 
     Az alkalmazás szelektív törlése esetén az SDK a `wipeDataForAccount``IntuneMAMPolicyDelegate` metódusát hívja meg. Az alkalmazás felelős azért, hogy törölje a felhasználó fiókját és a hozzá kapcsolódó adatokat. Az SDK képes arra, hogy töröljön minden fájlt, amely a felhasználó tulajdonában van. Akkor teszi ezt, ha az alkalmazás a „FALSE” eredményt adja vissza a `wipeDataForAccount` hívásból.
 
     Vegye figyelembe, hogy a metódus meghívása egy háttérszálból történik. Az alkalmazás csak akkor adhat vissza értéket, ha a felhasználóhoz tartozó összes adat el lett távolítva (a fájlok kivételével, amennyiben az alkalmazás „FALSE” eredményt ad vissza).
+
+## <a name="siri-intents"></a>Siri-leképezések
+Ha az alkalmazás a Siri szándékait integrálja, kérjük, olvassa el a `IntuneMAMPolicy.h` `areSiriIntentsAllowed` megjegyzéseit a forgatókönyv támogatásával kapcsolatos útmutatásért. 
+    
+## <a name="notifications"></a>Értesítések
+Ha az alkalmazás értesítést kap, kérjük, olvassa el a `IntuneMAMPolicy.h` `notificationPolicy` megjegyzéseit a forgatókönyv támogatásával kapcsolatos útmutatásért.  Javasoljuk, hogy az alkalmazások regisztráljanak a `IntuneMAMPolicyManager.h`ban ismertetett `IntuneMAMPolicyDidChangeNotification`ra, és ezt az értéket a kulcstartón keresztül kommunikáljanak a `UNNotificationServiceExtension`.
+## <a name="displaying-web-content-within-application"></a>Webes tartalom megjelenítése az alkalmazáson belül
+Ha az alkalmazás képes a webhelyek webes nézetben való megjelenítésére, és a megjelenített weblapok képesek tetszőleges helyekre navigálni, az alkalmazás responisble az aktuális identitás beállítására, hogy a felügyelt adatok a weben keresztül ne legyenek kiszivárgott megtekintése. Ilyenek például a "javaslat olyan szolgáltatás" vagy "visszajelzés" weblapok, amelyek közvetlen vagy közvetett hivatkozásokkal rendelkeznek a keresőmotorhoz.
+A többszörös identitású alkalmazásoknak a webes nézet megjelenítése előtt az üres karakterláncban kell megadniuk a IntuneMAMPolicyManager setUIPolicyIdentity. A webes nézet elutasítása után az alkalmazásnak meg kell hívnia a setUIPolicyIdentity átadását az aktuális identitásban.
+Az egyetlen identitást használó alkalmazásoknak a webes nézet megjelenítése előtt meg kell hívniuk az IntuneMAMPolicyManager setCurrentThreadIdentity. A webes nézet elutasítása után az alkalmazásnak meg kell hívnia a setCurrentThreadIdentity átadását.
 
 ## <a name="ios-best-practices"></a>Gyakorlati tanácsok iOS rendszerhez
 

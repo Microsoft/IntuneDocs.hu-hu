@@ -5,24 +5,24 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/13/2019
+ms.date: 03/03/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: 3af7c91b-8292-4c7e-8d25-8834fcf3517a
-ms.reviewer: karthig
+ms.reviewer: mattsha
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e2909e7ad1ced9483a6cec58f1f3009f56946f5f
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 467e347a84cef1fb7ac302da5a4264f23b4be5a2
+ms.sourcegitcommit: 6608dc70d01376e0cd90aa620a2fe01337f6a2f1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74058431"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78260333"
 ---
 # <a name="windows-10-and-later-settings-to-protect-devices-using-intune"></a>Windows 10 (és újabb) beállítások az eszközök az Intune-nal való védelemmel való ellátásához
 
@@ -92,7 +92,7 @@ Az Alkalmazásőr csak a 64 bites Windows 10-eszközöknél érhető el. Ennek a
     - Helyi nyomtatók
     - Hálózati nyomtatók  
 
-- **Naplók gyűjtése**  
+- **Naplók összegyűjtése**  
   **Alapértelmezett**: nincs konfigurálva  
   Application Guard CSP: [audit/AuditApplicationGuard](https://go.microsoft.com/fwlink/?linkid=872418)  
 
@@ -440,7 +440,7 @@ A Microsoft Edge-nek telepítve kell lennie az eszközön.
 
 ## <a name="windows-encryption"></a>Windows-titkosítás  
  
-### <a name="windows-settings"></a>Windowsos beállítások  
+### <a name="windows-settings"></a>Windows Gépház  
 
 - **Eszközök titkosítása**  
   **Alapértelmezett**: nincs konfigurálva  
@@ -472,6 +472,9 @@ Az alapbeállítások minden típusú adatmeghajtóra vonatkozó univerzális Bi
   - **Letiltás** – a figyelmeztető üzenet letiltása, ha egy másik lemez-titkosítási szolgáltatás van az eszközön.  
   - **Nincs konfigurálva** – engedélyezze a figyelmeztetést más lemezes titkosítás megjelenítéséhez.  
 
+  > [!TIP]  
+  > Ha az Azure AD-hez csatlakoztatott és a Windows 1809-es vagy újabb verzióját futtató eszközön szeretné automatikusan telepíteni a BitLockert, ezt a beállítást a *Letiltás*értékre kell állítani. További információ: [a BitLocker csendes engedélyezése az eszközökön](../protect/encrypt-devices.md#silently-enable-bitlocker-on-devices).
+
   Ha a *blokkolás*értékre van állítva, akkor a következő beállítást állíthatja be:  
 
   - **Titkosítás engedélyezése az általános jogú felhasználók számára az Azure AD JOIN szolgáltatásban**  
@@ -481,6 +484,9 @@ Az alapbeállítások minden típusú adatmeghajtóra vonatkozó univerzális Bi
 
      - **Engedélyezés** – az általános jogú felhasználók (nem rendszergazdák) engedélyezhetik a BitLocker titkosítást a bejelentkezéskor.  
      - **Nincs konfigurálva** , csak a rendszergazdák engedélyezhetik a BitLocker titkosítást az eszközön.  
+
+  > [!TIP]  
+  > Ha az Azure AD-hez csatlakoztatott és a Windows 1809-es vagy újabb verzióját futtató eszközön szeretné automatikusan telepíteni a BitLockert, ezt a beállítást *engedélyezni*kell. További információ: [a BitLocker csendes engedélyezése az eszközökön](../protect/encrypt-devices.md#silently-enable-bitlocker-on-devices).
 
 - **Titkosítási módszerek konfigurálása**  
   **Alapértelmezett**: nincs konfigurálva  
@@ -555,6 +561,9 @@ Ezek a beállítások kifejezetten az operációsrendszer-adatmeghajtókra érv�
     - **Indítási PIN-kód tiltása a TPM-sel**  
     - **Indítási PIN-kód megkövetelése a TPM-sel**
 
+    > [!TIP]
+    > Ha az Azure AD-hez csatlakoztatott és a Windows 1809-es vagy újabb verzióját futtató eszközön szeretné automatikusan telepíteni a BitLockert, akkor ez a beállítás nem állítható be a TPM-sel *való indítási PIN-kód megkövetelése*érdekében. További információ: [a BitLocker csendes engedélyezése az eszközökön](../protect/encrypt-devices.md#silently-enable-bitlocker-on-devices).
+
   - **Kompatibilis TPM-indítási kulcs**  
     **Alapértelmezett**: indítási kulcs engedélyezése a TPM-sel  
 
@@ -564,6 +573,9 @@ Ezek a beállítások kifejezetten az operációsrendszer-adatmeghajtókra érv�
     - **Indítási kulcs letiltása a TPM-sel**  
     - **Indítási kulcs megkövetelése a TPM-sel**  
 
+    > [!TIP]
+    > Ha az Azure AD-hez csatlakoztatott és a Windows 1809-es vagy újabb verzióját futtató eszközön szeretné automatikusan telepíteni a BitLockert, akkor ez a beállítás nem állítható be a TPM-sel *rendelkező indítási kulcs megkövetelésére*. További információ: [a BitLocker csendes engedélyezése az eszközökön](../protect/encrypt-devices.md#silently-enable-bitlocker-on-devices).
+
   - **Kompatibilis TPM-indítási kulcs és PIN-kód**  
     **Alapértelmezett**: indítási kulcs és PIN-kód engedélyezése a TPM-sel  
 
@@ -571,6 +583,9 @@ Ezek a beállítások kifejezetten az operációsrendszer-adatmeghajtókra érv�
     - **Indítási kulcs és PIN-kód engedélyezése a TPM-sel**  
     - **Indítási kulcs és PIN-kód tiltása a TPM-sel**  
     - **Indítási kulcs és PIN-kód megkövetelése a TPM-sel**   
+
+    > [!TIP]  
+    > Ha az Azure AD-hez csatlakoztatott és a Windows 1809-es vagy újabb verzióját futtató eszközön szeretné automatikusan telepíteni a BitLockert, akkor ez a beállítás nem állítható be *indítási kulcs megköveteléséhez és a TPM-sel való PIN-kód*megadásához. További információ: [a BitLocker csendes engedélyezése az eszközökön](../protect/encrypt-devices.md#silently-enable-bitlocker-on-devices).
 
 - **PIN-kód minimális hossza**  
     **Alapértelmezett**: nincs konfigurálva  
@@ -1403,7 +1418,7 @@ Ezekkel a beállításokkal konfigurálhatja a Windows 10-eszközök helyi bizto
   
   Ez a biztonsági beállítás lehetővé teszi a kiszolgáló számára, hogy megkövetelje a 128 bites titkosítás és/vagy az NTLMv2 munkamenet-biztonság egyeztetését.  
 
-  - **Nincsenek**  
+  - **Egyik sem**  
   - **NTLMv2-munkamenet biztonságának megkövetelése**  
   - **128 bites titkosítás megkövetelése**  
   - **NTLMv2 és 128 bites titkosítás**  
@@ -1414,7 +1429,7 @@ Ezekkel a beállításokkal konfigurálhatja a Windows 10-eszközök helyi bizto
 
   Ez a biztonsági beállítás határozza meg, hogy melyik kérdés-válasz hitelesítési protokollt használja a rendszer a hálózati bejelentkezésekhez.  
 
-  - **Nincsenek**  
+  - **Egyik sem**  
   - **NTLMv2-munkamenet biztonságának megkövetelése**  
   - **128 bites titkosítás megkövetelése**  
   - **NTLMv2 és 128 bites titkosítás**  
@@ -1606,7 +1621,7 @@ Ezekkel a beállításokkal konfigurálhatja a Windows 10-eszközök helyi bizto
   Ez a beállítás határozza meg a tartozék-felügyeleti szolgáltatás indítási típusát.  
   - **Kézi**
   - **Automatikus**
-  - **Letiltva**
+  - **Tiltva**
 
 - **Xbox Live Auth Manager szolgáltatás**  
   **Alapértelmezett**: manuális  
@@ -1615,7 +1630,7 @@ Ezekkel a beállításokkal konfigurálhatja a Windows 10-eszközök helyi bizto
   Ez a beállítás határozza meg az élő Auth Manager szolgáltatás indítási típusát.  
   - **Kézi**
   - **Automatikus**
-  - **Letiltva**
+  - **Tiltva**
  
 - **Xbox Live game Save szolgáltatás**  
   **Alapértelmezett**: manuális  
@@ -1624,7 +1639,7 @@ Ezekkel a beállításokkal konfigurálhatja a Windows 10-eszközök helyi bizto
   Ez a beállítás határozza meg az élő játékok mentési szolgáltatásának indítási típusát.  
   - **Kézi**
   - **Automatikus**
-  - **Letiltva**
+  - **Tiltva**
 
 - **Xbox Live hálózatkezelési szolgáltatás**  
   **Alapértelmezett**: manuális  
@@ -1633,7 +1648,7 @@ Ezekkel a beállításokkal konfigurálhatja a Windows 10-eszközök helyi bizto
   Ez a beállítás határozza meg a hálózati szolgáltatás indítási típusát.  
   - **Kézi**
   - **Automatikus**
-  - **Letiltva**
+  - **Tiltva**
 
 ## <a name="user-rights"></a>Felhasználói jogosultságok
 

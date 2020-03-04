@@ -18,14 +18,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: adca40b558a75d2c080fe453218f232a37b21daa
-ms.sourcegitcommit: cd90650c339795d44702e9dcd0b9679a7b438bb2
+ms.openlocfilehash: a1eca1f8911e9c6aae3b3725cf15f04d954c5f48
+ms.sourcegitcommit: 6608dc70d01376e0cd90aa620a2fe01337f6a2f1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77473763"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78260316"
 ---
-# <a name="automatically-enroll-iosipados-devices-with-apples-device-enrollment-program"></a>IOS-/iPadOS-eszközök automatikus regisztrálása az Apple Készülékregisztrációs program
+# <a name="automatically-enroll-iosipados-devices-with-apples-device-enrollment-program"></a>iOS/iPadOS-eszközök automatikus regisztrálása az Apple készülékregisztrációs programjával
 
 Beállíthatja az Intune-t az Apple [Készülékregisztrációs programon (DEP)](https://deploy.apple.com)keresztül vásárolt iOS/iPadOS-eszközök regisztrálásához. A DEP lehetővé teszi, hogy nagy számú eszközt regisztráljon anélkül, hogy megérintse őket. Az olyan eszközök, mint az iPhone, az iPadek és a MacBook közvetlenül a felhasználók számára is elhelyezhetők. Amikor a felhasználó bekapcsolja az eszközt, a beállítási asszisztens, amely magában foglalja az Apple-termékekre jellemző beépített élményt, előre konfigurált beállításokkal fut, és az eszköz regisztrálja magát a felügyeletre.
 
@@ -41,6 +41,8 @@ A DEP-regisztrációk nem kompatibilisek a Céges portál alkalmazás App Store-
 Ha a regisztráció során engedélyezni szeretné a modern hitelesítést, küldje le az alkalmazást az eszközre a DEP-profilban található VPP (Volume Purchase program) használatával a **céges portál telepítésével** . További információ: [iOS/iPadOS-eszközök automatikus regisztrálása az Apple Készülékregisztrációs program](device-enrollment-program-enroll-ios.md#create-an-apple-enrollment-profile).
 
 Annak engedélyezéséhez, hogy a Céges portál automatikusan frissítsen, és adja meg a Céges portál alkalmazást a DEP szolgáltatással már regisztrált eszközökön, telepítse az Céges portál alkalmazást az Intune-ban az [alkalmazás-konfigurációs szabályzattal](../apps/app-configuration-policies-use-ios.md) megkövetelt mennyiségi vásárlási program (VPP) alkalmazással.
+
+Megjegyzés: az automatikus eszközök beléptetése során, míg a Céges portál Egyalkalmazásos módban fut, a "További információ" hivatkozásra kattintva egy hibaüzenet jelenik meg, amely egy adott alkalmazási mód miatt hibaüzenetet jelenít meg. A regisztráció befejezése után további információkat tekinthet meg a CP-ben, ha az eszköz már nem önálló alkalmazás módban van. 
 
 ## <a name="what-is-supervised-mode"></a>A felügyelt mód ismertetése
 
@@ -144,7 +146,7 @@ Most, hogy telepítette a jogkivonatot, létrehozhatja a regisztrációs profilt
 5. A **Felhasználói affinitást** aszerint állítsa be, hogy a profilhoz tartozó eszközöket hozzárendelt felhasználóval vagy anélkül szükséges-e regisztrálni.
     - **Regisztráció felhasználói affinitással** – Ezt a lehetőséget olyan eszközökhöz válassza, amelyek a felhasználók tulajdonában vannak, de egyes szolgáltatásokhoz, például alkalmazások telepítéséhez, a Céges portált kívánják használni. Ha az ADFS-t használja, és a beléptetési profil **hitelesítése céges portál** a **nem**értékre van állítva, a [ws-Trust 1,3 username/kevert végpontnál](https://technet.microsoft.com/library/adfs2-help-endpoints) [további információra](https://technet.microsoft.com/itpro/powershell/windows/adfs/get-adfsendpoint) van szükség.
 
-    - **Regisztráció felhasználói affinitás nélkül** – Ezt a lehetőséget olyan eszközökhöz válassza, amelyek nincsenek egy adott felhasználóhoz társítva. Ezt a lehetőséget olyan eszközök esetén használja, amelyek nem férnek hozzá a helyi felhasználói adatszolgáltatásokhoz. Egyes alkalmazások, mint például a Céges portál alkalmazás, nem működnek.
+    - **Regisztráció felhasználói affinitás nélkül** – Ezt a lehetőséget olyan eszközökhöz válassza, amelyek nincsenek egy adott felhasználóhoz társítva. Ezt a lehetőséget olyan eszközök esetén használja, amelyek nem férnek hozzá a helyi felhasználói adatszolgáltatásokhoz. A Céges portál alkalmazáshoz hasonló alkalmazások nem működnek.
 
 5. Ha a **felhasználói affinitással való regisztrációt**választotta, a felhasználók a céges portál az Apple beállítási asszisztense helyett engedélyezheti a hitelesítést.
 

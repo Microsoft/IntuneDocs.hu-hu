@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 02/24/2020
+ms.date: 03/02/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6bcec352121781162f5f03a14717fdea62515db2
-ms.sourcegitcommit: 045ca42cad6f86024af9a38a380535f42a6b4bef
+ms.openlocfilehash: 9092b40b25ccc19c8b0de97b23c96a845d578df7
+ms.sourcegitcommit: a25f556aa9df4fcd9fdacccd12c9029bc6c5fe20
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77781189"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78256403"
 ---
 # <a name="manage-web-access-by-using-microsoft-edge-with-microsoft-intune"></a>Webes elérés kezelése a Microsoft Edge és a Microsoft Intune használatával
 
@@ -183,6 +183,13 @@ A Kezdőlap parancsikonjának konfigurálásához használja a következő kulcs
 |-------------------------------------------------------------------|-------------|
 |    com.microsoft.intune.mam.managedbrowser.homepage   |    Adjon meg egy érvényes URL-címet. A helytelen URL-címek biztonsági intézkedésként le vannak tiltva.<br>**Példa:**  <`https://www.bing.com`>
 
+## <a name="configure-multiple-top-site-shortcuts-for-new-tab-pages-in-microsoft-edge"></a>Több felső szintű parancsikon konfigurálása új lapokhoz a Microsoft Edge-ben 
+A Kezdőlap parancsikonjának konfigurálásához hasonlóan több felső szintű parancsikon is konfigurálható az új lapokon a Microsoft Edge-ben. A felhasználó nem szerkesztheti vagy törölheti ezeket a parancsikonokat egy felügyelt környezetben.
+
+|    Kulcs    |    Érték    |
+|-------------------------------------------------------------------|-------------|
+|    com. microsoft. Intune. Mam. managedbrowser. managedTopSites   |    Adja meg a Value URL-címek készletét. A felső szintű helyek mindegyike egy címet és egy URL-címet tartalmaz. Válassza el a címet és az URL-címet a `|` karakterrel. Például: <br> `GitHub | https://github.com/||LinkedIn|https://www.linkedin.com`
+
 ## <a name="configure-your-organizations-logo-and-brand-color-for-new-tab-pages-in-microsoft-edge"></a>A szervezet emblémájának és a márka színének konfigurálása új lapokra a Microsoft Edge-ben
 
 Ezekkel a beállításokkal testreszabhatja a Microsoft Edge új lap lapját, hogy az oldal hátterében megjelenjen a szervezet emblémája és a márka színe.
@@ -205,7 +212,7 @@ A Microsoft Edge Mobile szolgáltatásban az új lap felületét az iparági Hí
 
 |    Kulcs    |    Érték    |
 |------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
-|    com. microsoft. Intune. ShowIndustryNews    |    Az **igaz** érték jelenik meg az iparági hírekben a Microsoft Edge Mobile új lapján.<p>A **false** (alapértelmezett) értékkel elrejtheti az iparági híreket az új lap lapról.    |
+|    com. microsoft. Intune. Mam. managedbrowser. NewTabPage. IndustryNews    |    Az **igaz** érték jelenik meg az iparági hírekben a Microsoft Edge Mobile új lapján.<p>A **false** (alapértelmezett) értékkel elrejtheti az iparági híreket az új lap lapról.    |
 
 ## <a name="configure-managed-bookmarks-for-microsoft-edge"></a>Felügyelt könyvjelzők konfigurálása a Microsoft Edge-hez
 
@@ -287,13 +294,25 @@ A következő kulcs/érték párokkal konfigurálhatja, hogy engedélyezettek-e 
 |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    `com.microsoft.intune.mam.managedbrowser.AllowTransitionOnBlock`    |    **True** (alapértelmezett) – lehetővé teszi a Microsoft Edge számára a felhasználók személyes környezetbe való átváltását a blokkolt helyek megnyitására.<p>**False (hamis** ) – megakadályozza, hogy a Microsoft Edge áttérjen a felhasználóknak. A felhasználók egyszerűen megjelenítenek egy üzenetet arról, hogy az elérni kívánt hely le van tiltva.    |
 
+## <a name="disable-inprivate-and-microsoft-accounts-msa-to-restrict-personal-browsing"></a>A személyes böngészés korlátozásához tiltsa le az InPrivate-és a Microsoft-fiókokat (MSA)
+Egyes ügyfelek, akik a Microsoft Edge használatával egy alkalmazáson belüli VPN-t használó nagymértékben szabályozott iparágakban szeretnék a felhasználókat a HRE-környezeten belül böngészni. A MDM-eszközökhöz a következő alkalmazás-konfigurációs beállítások használhatók. Ez a funkció nem érhető el a MAM-ban regisztrált eszközökhöz. 
+
+|    Kulcs    |    Érték    |
+|-------------------------------------------------------------------|-------------------------------------------------------|
+|     `com.microsoft.intune.mam.managedbrowser.disabledFeatures`    |    a **InPrivate** letiltja a InPrivate-böngészőt. <br> a **MSA** letiltja a felhasználók személyes MSA-fiókjainak hozzáadását a Microsoft Edge-hez.<br> Az InPrivate-és a MSA-fiókok letiltásához használja a `inprivate| msa`    |  
+
+
+Azt is korlátozhatja, hogy a felhasználók **csak** akkor böngésszenek a Microsoft Edge Mobile használatával a Mdm-eszközökön, ha a felhasználó a HRE munkahelyi fiókjával jelentkezik be. A kulcsokról további információt a szervezeti fiók csak a Microsoft Edge-hez való konfigurálásához a következő témakörben talál:
+- [Android org – csak fiók](https://docs.microsoft.com/intune/apps/app-configuration-policies-use-android#allow-only-configured-organization-accounts-in-multi-identity-apps)
+- [iOS org – csak fiókok](https://docs.microsoft.com/intune/apps/app-configuration-policies-use-ios#allow-only-configured-organization-accounts-in-multi-identity-apps)
+
 ## <a name="open-restricted-links-directly-in-inprivate-tab-pages"></a>A korlátozott hivatkozások közvetlen megnyitása InPrivate-lapokon
 
 Beállíthatja, hogy a korlátozott hivatkozások közvetlenül az InPrivate-böngészésben legyenek megnyitva, ami zökkenőmentes böngészést biztosít a felhasználóknak. Ezzel a lépéssel megtakaríthatja a felhasználókat, hogy áttérjenek a személyes környezetre a hely megtekintéséhez. A InPrivate-böngészés nem felügyelt, így a felhasználók nem fognak tudni hozzáférni InPrivate-böngészési mód használata esetén.
 
 |    Kulcs    |    Érték    |
 |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    `com.microsoft.intune.mam.managedbrowser.openInPrivateIfBlock`    |    Az **igaz** érték automatikusan nyitja meg a helyeket egy InPrivate-lapon anélkül, hogy a felhasználót arra kellene kérni, hogy a személyes fiókjára váltson. <p> A **false** (alapértelmezett) érték letiltja a helyet a Microsoft Edge-en belül, és a rendszer arra kéri a felhasználót, hogy váltson a személyes fiókjára a megtekintéshez.    |
+|    `com.microsoft.intune.mam.managedbrowser.openInPrivateIfBlocked`    |    Az **igaz** érték automatikusan nyitja meg a helyeket egy InPrivate-lapon anélkül, hogy a felhasználót arra kellene kérni, hogy a személyes fiókjára váltson. <p> A **false** (alapértelmezett) érték letiltja a helyet a Microsoft Edge-en belül, és a rendszer arra kéri a felhasználót, hogy váltson a személyes fiókjára a megtekintéshez.    |
 
 ## <a name="disable-microsoft-edge-features-to-customize-the-end-user-experience-for-your-organizations-needs"></a>A Microsoft Edge-funkciók letiltása a szervezet igényeinek megfelelő végfelhasználói élmény testreszabásához
 

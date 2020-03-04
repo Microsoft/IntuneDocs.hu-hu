@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a4b3bd06bad6c31c2d0fb4c31a7ad605af96be86
-ms.sourcegitcommit: 29f3ba071c9348686d3ad6f3b8864d8557e05b97
+ms.openlocfilehash: 126ea5a1798252f29e988553edfea462eff2fd7e
+ms.sourcegitcommit: a25f556aa9df4fcd9fdacccd12c9029bc6c5fe20
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77609187"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78256458"
 ---
 # <a name="add-managed-google-play-apps-to-android-enterprise-devices-with-intune"></a>Felügyelt Google Play-alkalmazások hozzáadása androidos vállalati eszközökhöz az Intune-nal
 
@@ -155,9 +155,6 @@ A felügyelt Google Play Private-alkalmazásokkal kapcsolatos további informác
 A felügyelt Google Play-webhivatkozások telepíthetők és kezelhetők ugyanúgy, mint más Android-alkalmazások. Az eszközön való telepítéskor a rendszer a felhasználó alkalmazás-listájában fogja megjelenni az általuk telepített többi alkalmazás mellett. A rendszer az eszköz böngészőjében indít el.
 
 A webhivatkozások a Microsoft Edge vagy bármely más, a telepítéshez kiválasztott böngésző alkalmazásban nyílnak meg. Ügyeljen arra, hogy legalább egy böngészőt helyezzen üzembe az eszközökön ahhoz, hogy a webhivatkozások megfelelően meg tudják nyitni a webhelyeket. A webes hivatkozások (teljes képernyős, önálló és minimális felhasználói felület) összes **megjelenítési** lehetősége azonban csak a Chrome böngészővel használható. 
-
-> [!IMPORTANT]
-> Ennek a dokumentumnak a közzétételét követően egy ismert Google-hiba található, amely megakadályozza, hogy a webhivatkozások a Chrome-on kívül más böngészőkkel is megnyissák az eszközöket. A Google elkötelezett a hiba kijavítása érdekében.  Ez az értesítés akkor kerül eltávolításra, ha a Microsoft megerősítette, hogy a Google közzétette a javítást.
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Válassza az **alkalmazások** > **minden alkalmazás** > **Hozzáadás**lehetőséget.
