@@ -1,11 +1,11 @@
 ---
 title: Importált PFX-tanúsítványok használata a Microsoft Intune-Azure-ban | Microsoft Docs
-description: Az importált nyilvános kulcsú titkosítási szabványok (PKCS) tanúsítványok használata Microsoft Intuneekkel, beleértve a tanúsítványok importálását, a tanúsítványsablon konfigurálását, az Intune importált PFX tanúsítvány-összekötő telepítését és az importált PKCS létrehozását A tanúsítvány profilja.
+description: Az importált nyilvános kulcsú titkosítási szabványok (PKCS) tanúsítványait Microsoft Intune használatával használhatja. Importálja a tanúsítványokat, konfigurálja a tanúsítványsablonokat, telepítse az Intune-ba importált PFX-tanúsítvány-összekötőt, és hozzon létre egy importált PKCS-tanúsítvány profilt.
 keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 02/21/2020
+ms.date: 03/04/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,18 +17,24 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 02fa3acdaf0dc450afee97dfaaf5870166013356
-ms.sourcegitcommit: 5881979c45fc973cba382413eaa193d369b8dcf6
+ms.openlocfilehash: d31093f4765969d97f3d57f4b41eaa5ef98daaf1
+ms.sourcegitcommit: b4502dc09b82985265299968a11158f5898b56e0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/24/2020
-ms.locfileid: "77569523"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78287577"
 ---
 # <a name="configure-and-use-imported-pkcs-certificates-with-intune"></a>Importált PKCS-tanúsítványok konfigurálása és használata az Intune-nal
 
 A Microsoft Intune támogatja az importált nyilvános kulcsú (PKCS) tanúsítványok használatát, amelyet gyakran használnak az S/MIME titkosításhoz az e-mail-profilokkal. Az Intune egyes e-mail-profiljai támogatják az S/MIME engedélyezését, ahol meghatározható az S/MIME aláíró tanúsítványa és az S/MIME titkosítási tanúsítvány.
 
-Az S/MIME titkosítás kihívást jelent, mivel az e-mailek egy adott tanúsítvánnyal vannak titkosítva. A tanúsítvány titkos kulcsát kell használnia, amely a levelezést az eszközön titkosítja, hogy visszafejthető legyen. A titkosítási tanúsítványok megújítása rendszeresen megtörténik, ami azt jelenti, hogy az összes eszközön szükség lehet a titkosítási előzményekre, így biztosíthatja a régebbi e-mailek olvasását.  Mivel ugyanazt a tanúsítványt kell használni az eszközök között, nem lehet [SCEP](certificates-scep-configure.md) -vagy [PKCS](certficates-pfx-configure.md) -tanúsítvány-profilokat használni erre a célra, mivel ezek a tanúsítványok kézbesítési mechanizmusai eszközönként egyedi tanúsítványokat szolgáltatnak.
+Az S/MIME titkosítás kihívást jelent, mivel az e-mailek egy adott tanúsítvánnyal vannak titkosítva:
+
+- A tanúsítvány titkos kulcsát kell használnia, amely a levelezést az eszközön titkosítja, hogy visszafejthető legyen.
+- Az eszközön lévő tanúsítvány lejárta előtt új tanúsítványt kell importálnia, hogy az eszközök továbbra is visszafejtsék az új e-maileket. A tanúsítványok megújítása nem támogatott.
+- A titkosítási tanúsítványok megújítása rendszeresen megtörténik, ami azt jelenti, hogy a korábbi tanúsítványokat továbbra is meg kell őrizni az eszközökön, hogy a régebbi e-mailek továbbra is visszafejtve legyenek.  
+
+Mivel ugyanazt a tanúsítványt kell használni az eszközök között, nem lehet [SCEP](certificates-scep-configure.md) -vagy [PKCS](certficates-pfx-configure.md) -tanúsítvány-profilokat használni erre a célra, mivel ezek a tanúsítványok kézbesítési mechanizmusai eszközönként egyedi tanúsítványokat szolgáltatnak.
 
 Az S/MIME Intune-nal való használatával kapcsolatos további információkért az [s/MIME használatával titkosítsa az e-maileket](certificates-s-mime-encryption-sign.md).
 
@@ -75,7 +81,7 @@ Az importált PKCS-tanúsítványok Intune-nal való használatához a következ
 
 Ha az Intune-nal egy **importált pfx-tanúsítványt** telepít egy felhasználóhoz, az eszközön kívül két összetevőt is le kell játszani:
 
-- **Intune szolgáltatás**: a pfx-tanúsítványokat titkosított állapotban tárolja, és kezeli a tanúsítvány központi telepítését a felhasználói eszközön.  A tanúsítvány titkos kulcsait védő jelszavakat a rendszer a hardveres biztonsági modul (HSM) vagy a Windows-titkosítás használatával a feltöltés előtt titkosítja, így biztosítva, hogy az Intune bármikor ne férhessen hozzá a titkos kulcshoz.
+- **Intune szolgáltatás**: a pfx-tanúsítványokat titkosított állapotban tárolja, és kezeli a tanúsítvány központi telepítését a felhasználói eszközön.  A tanúsítvány titkos kulcsait védő jelszavak titkosítása a hardveres biztonsági modul (HSM) vagy a Windows-titkosítás használatával történik, így biztosítva, hogy az Intune bármikor ne férhessen hozzá a titkos kulcshoz.
 
 - **Pfx tanúsítvány-összekötő a Microsoft Intunehoz**: Ha egy eszköz az Intune-ba importált pfx-tanúsítványt kér, a titkosított jelszót, a tanúsítványt és az eszköz nyilvános kulcsát elküldi az összekötőnek.  Az összekötő visszafejti a jelszót a helyszíni titkos kulccsal, majd újratitkosítja a jelszót (és minden plist-profilt, ha iOS-et használ) az eszköz kulcsával, mielőtt elküldené a tanúsítványt az Intune-nak.  Az Intune ezután továbbítja a tanúsítványt az eszköznek, és az eszköz visszafejti azt az eszköz titkos kulcsával, és telepítheti a tanúsítványt.
 
@@ -186,7 +192,7 @@ Válassza ki azt a kulcstároló-szolgáltatót, amely megfelel a kulcs létreho
    > [!NOTE]
    > Mivel a hitelesítés a gráfon fut, engedélyeket kell biztosítania a AppID. Ha első alkalommal használta ezt a segédprogramot, *globális rendszergazdai jogosultsággal* kell rendelkeznie. A PowerShell-parancsmagok ugyanazt a AppID használják, mint a [PowerShell Intune-mintákkal](https://github.com/microsoftgraph/powershell-intune-samples).
 
-5. A `$SecureFilePassword = ConvertTo-SecureString -String "<PFXPassword>" -AsPlainText -Force`futtatásával alakítsa át a biztonságos karakterlánccá importálandó összes PFX-fájl jelszavát.
+5. Konvertálja a jelszót minden PFX-fájlhoz, amelyet importál egy biztonságos karakterláncba `$SecureFilePassword = ConvertTo-SecureString -String "<PFXPassword>" -AsPlainText -Force`futtatásával.
 
 6. **UserPFXCertificate** objektum létrehozásához futtassa `$userPFXObject = New-IntuneUserPfxCertificate -PathToPfxFile "<FullPathPFXToCert>" $SecureFilePassword "<UserUPN>" "<ProviderName>" "<KeyName>" "<IntendedPurpose>"`
 
@@ -220,9 +226,18 @@ A tanúsítványok Intune-ba importálása után hozzon létre egy **Importált 
 
    - **Felhasználási cél**: Itt adhatja meg a profilhoz importált tanúsítványok kívánt célját. A rendszergazdák más felhasználási célokra is importálhatók tanúsítványokat (például S/MIME-aláírás vagy S/MIME-titkosítás). A tanúsítványprofilban kijelölt felhasználási cél alapján lesznek párosítva a megfelelő importált tanúsítványok. A felhasználási cél az importált tanúsítványok együttes csoportosítása, és nem garantálja, hogy az adott címkével importált tanúsítványok megfelelnek a kívánt célnak.  
    - **Tanúsítvány érvényességi időtartama**: Ha az érvényességi időszak nem módosult a tanúsítványsablon esetében, ez a beállítás alapértelmezés szerint egy év.
-   - **Kulcstároló-szolgáltató (KSP)**: Windows rendszer esetén válasszon helyet a kulcsok tárolására az eszközön.
+   - **Kulcstároló-szolgáltató (KSP)** : Windows rendszer esetén válasszon helyet a kulcsok tárolására az eszközön.
 
 5. A profil mentéséhez kattintson az **OK** > **Létrehozás** gombra.
+
+## <a name="support-for-third-party-partners"></a>Harmadik féltől származó partnerek támogatása
+
+A következő partnerek olyan támogatott módszereket vagy eszközöket biztosítanak, amelyekkel PFX-tanúsítványokat importálhat az Intune-ba.
+
+### <a name="digicert"></a>DigiCert
+Ha a DigiCert PKI platform szolgáltatást használja, az **Intune S/MIME-tanúsítványok DigiCert importálási eszköze** segítségével importálhatja a pfx-tanúsítványokat az Intune-ba. Az eszköz használata lecseréli a [pfx-tanúsítványok importálása az Intune](#import-pfx-certificates-to-intune) -ba című szakaszban ismertetett utasításokat a jelen cikk korábbi részében leírtak szerint.
+
+Ha többet szeretne megtudni a DigiCert importálási eszközről, beleértve az eszköz beszerzésének módját, tekintse meg a https://knowledge.digicert.com/tutorials/microsoft-intune.html a DigiCert Tudásbázisban.
 
 ## <a name="next-steps"></a>További lépések
 

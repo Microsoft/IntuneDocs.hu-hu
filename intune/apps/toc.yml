@@ -161,6 +161,8 @@
             - name: Alkalmazásvédelmi szabályzatok áttekintése
               href: app-protection-policy.md
               displayName: app; protection; policy
+            - name: Alkalmazást használó adatvédelmi keretrendszer
+              href: app-protection-framework.md
             - name: Alkalmazásvédelmi szabályzatok létrehozása
               items:
                 - name: Általános beállítások

@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 02/24/2020
+ms.date: 03/04/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ ms.reviewer: shpate
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3d8ee4ec6a5bcb29a51b68cff7b840823b678636
-ms.sourcegitcommit: 5881979c45fc973cba382413eaa193d369b8dcf6
+ms.openlocfilehash: 5d03d6026430c7f9f02cc8504ccc610c3be99902
+ms.sourcegitcommit: b4502dc09b82985265299968a11158f5898b56e0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/24/2020
-ms.locfileid: "77569285"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78287565"
 ---
 # <a name="monitor-security-baseline-and-profiles-in-microsoft-intune"></a>Biztonsági alapkonfiguráció és profilok figyelése Microsoft Intune
 
@@ -45,10 +45,10 @@ Az **Áttekintés** panel két módszert biztosít az állapot figyelésére:
 Minden eszközt a következő állapotok egyike képvisel (az *eszköz* nézetben és a *kategóriánkénti* nézetekben is használatos):
 
 - Alapértékek – az alapkonfigurációban lévő összes **beállítás megegyezik az** ajánlott beállításokkal.
-- **Nem felel** meg az alapkonfigurációnak – az alapterv legalább egy beállítása nem felel meg az ajánlott beállításnak.
+- Nem **felel** meg az alapkonfigurációnak – az alaptervben egy vagy több beállítás módosult az eredeti alapterv alapértelmezett értékeiből. Az egyes biztonsági alapkonfigurációk alapértelmezett értékei az alapkonfiguráció ajánlott értékei.
 
   > [!NOTE]
-  > Amikor létrehoz vagy szerkeszt egy alapkonfigurációt, az alapértelmezett értékre vagy konfigurációs beállításra végrehajtott módosítások miatt a "nem felel meg az alapterv" állapotnak. Ha segítségre van szükség a módosított beállítások meghatározásához, forduljon a Microsoft ügyfélszolgálatahoz. 
+  > Amikor létrehoz vagy szerkeszt egy alapkonfigurációt, az alapértelmezett értékre vagy konfigurációs beállításra végrehajtott módosítások miatt a *nem egyezik* az alapkonfiguráció állapotával. Ha segítségre van szükség a módosított beállítások meghatározásához, forduljon a Microsoft ügyfélszolgálatahoz. 
 
 - **Helytelenül konfigurált – legalább** egy beállítás nincs megfelelően konfigurálva. Ez az állapot azt jelenti, hogy a beállítás ütközés, hiba vagy függő állapotban van.
 - **Nem alkalmazható** – legalább egy beállítás nem alkalmazható, és nincs alkalmazva.

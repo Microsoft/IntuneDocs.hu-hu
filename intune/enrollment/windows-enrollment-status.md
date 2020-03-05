@@ -1,7 +1,7 @@
 ---
 title: Regisztráció állapotának beállítása lap
 titleSuffix: Microsoft Intune
-description: Üdvözlő lap beállítása a Windows 10-es eszközök regisztrálására szolgáló felhasználók számára.
+description: Állítsa be a felhasználók számára a Windows 10 rendszerű üdvözlő oldal.
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
@@ -18,18 +18,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a3a470c9a92f7792af2b371acf873807ad344afb
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.openlocfilehash: 232d4841d71d738b4f099437fb4845928d887dd5
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74781107"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78290310"
 ---
 # <a name="set-up-an-enrollment-status-page"></a>Regisztráció állapotának beállítása lap
  
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
  
-A regisztrációs állapot lap (ESP) megjeleníti a Windows 10-es eszközök telepítési adatait (1803-es és újabb verziók) a kezdeti eszközök regisztrációja során. Példa:
+A regisztrációs állapot lap (ESP) megjeleníti a Windows 10-es eszközök telepítési adatait (1803-es és újabb verziók) a kezdeti eszközök regisztrációja során. Például:
 - a [Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/) használatakor 
 - a beléptetési állapot lap házirend alkalmazása után a rendszer első alkalommal elindít egy felügyelt eszközt. 
 
@@ -86,9 +86,9 @@ A felhasználók számos csoportba tartozhatnak, és számos regisztrációs ál
 2. Vigye a kurzort a listában a profilra.
 3. A függőleges három ponttal húzza a profilt a kívánt helyre a listában.
 
-## <a name="block-access-to-a-device-until-a-specific-application-is-installed"></a>Eszköz hozzáférésének letiltása egy adott alkalmazás telepítése előtt
+## <a name="block-access-to-a-device-until-a-specific-application-is-installed"></a>Hozzáférés letiltása egy eszközhöz csak egy adott alkalmazás telepítve van
 
-Megadhatja, hogy mely alkalmazásokat kell telepíteni, mielőtt a felhasználó el tudja érni az asztalt.
+Megadhatja, hogy mely alkalmazásokat kell telepíteni, mielőtt a felhasználó számára elérhető az asztalon.
 
 1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **windows** > **Windows-regisztráció** > **regisztráció állapota lapot**.
 2. Válassza ki a profil > **beállításait**.
@@ -133,8 +133,8 @@ A fiók beállításakor a regisztráció állapota lap a következő elemeket k
   - Felhasználónkénti LoB MSI-alkalmazások, melyek társítása „Minden eszköz”, „Minden felhasználó” vagy egy olyan felhasználói csoport, amelynek az eszközt beléptető felhasználó a tagja.
   - Gépenkénti LoB MSI-alkalmazások, melyek társítása „Minden felhasználó” vagy egy olyan felhasználói csoport, amelynek az eszközt beléptető felhasználó a tagja.
   - Üzletági áruházbeli alkalmazások, online áruházbeli alkalmazások és offline tár alkalmazások, amelyek a következő objektumok bármelyikéhez vannak rendelve:
-    - Minden eszköz
-    - All Users
+    - All Devices
+    - Minden felhasználó
     - Egy felhasználói csoport, amelyben az eszköz regisztrálására szolgáló felhasználó tagja, a telepítési környezet felhasználói értékre van állítva.
   - Win32-alkalmazások (csak Windows 10 1903-es és újabb verziók) 
 - Csatlakozási profilok
@@ -155,6 +155,7 @@ Hibaelhárítással kapcsolatos leggyakoribb kérdések.
       - Autopilot
       - Közös felügyelet Configuration Manager
       - Ha minden új felhasználó bejelentkezik az eszközre, amely a regisztrációs állapot lap házirendjét először alkalmazza
+      - Ha az **egyetlen megjelenített lap a beépített felhasználói élmény (OOBE)** beállítással rendelkező eszközökön be van kapcsolva, és a házirend be van állítva, akkor csak az eszközre bejelentkező első felhasználó kapja meg a beléptetési állapot lapot.
 
 - Hogyan lehet letiltani a beléptetési állapot lapot, ha az eszközön konfigurálva van?
   - A beléptetési állapot lap házirendje a regisztráció időpontjában van beállítva egy eszközön. A regisztráció állapota lap letiltásához le kell tiltania a felhasználók és eszközök regisztrációjának állapota lap szakaszt. Az egyéni OMA-URI beállítások létrehozásával letilthatja a szakaszt a következő konfigurációkkal.

@@ -2,7 +2,7 @@
 title: Az Intune-dokumentáció használata
 titleSuffix: Microsoft Intune
 description: Megtudhatja, hogyan keresheti meg az Intune-dokumentumokat, hogyan biztosíthat dokumentációt, és Hogyan járulhat hozzá a dokumentumokhoz.
-ms.date: 09/15/2019
+ms.date: 03/03/2020
 ms.service: microsoft-intune
 ms.subservice: fundamentals
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: dougeby
 ms.author: dougeby
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 607e1136fd3ab5661a2b054410d6fc7fce94994d
-ms.sourcegitcommit: 1aaff35fddb3d06458d739968d28971fed0bb2ba
+ms.openlocfilehash: de30ade4c145a930ed370fd651c35bd57700c76d
+ms.sourcegitcommit: b4502dc09b82985265299968a11158f5898b56e0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77155343"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78287540"
 ---
 # <a name="using-the-intune-docs"></a>Az Intune-dokumentáció használata
 
@@ -114,3 +114,23 @@ Kövesse az alábbi általános irányelveket az Intune docs-ban való közremű
 - Kövesse a [GitHub flow-munkafolyamatot](https://guides.github.com/introduction/flow/).  
 
 - Blog és Tweet (vagy bármi más) a hozzájárulásaival kapcsolatban gyakran!  
+
+## <a name="consolidation-of-documentation-for-microsoft-endpoint-manager"></a>A Microsoft Endpoint Manager dokumentációjának összevonása
+
+Az Intune és a Configuration Manager együttes forgatókönyvének jobb támogatása érdekében ez a dokumentációs könyvtár [https://docs.microsoft.com/memdocs/intunere ](https://docs.microsoft.com/memdocs/intune)kerül. A Configuration Manager dokumentációs könyvtár később átkerül [https://docs.microsoft.com/memdocs/configmgrre ](https://docs.microsoft.com/memdocs/configmgr). Az összes hivatkozás automatikusan át lesz irányítva, így nem kell módosítania a tartalom olvasását.
+
+Ha visszajelzést ad, vagy hozzájárul a cikkekhez, néhány módosításra van szükség:
+
+- A meglévő GitHub-problémák továbbra is az eredeti tárházban maradnak, [https://github.com/MicrosoftDocs/IntuneDocs/issues](https://github.com/MicrosoftDocs/IntuneDocs/issues).
+
+  - Ezek a problémák nem jelennek meg nyitott vagy lezárt problémákként a csatolt cikk visszajelzés szakaszában.
+
+  - Továbbra is dolgozunk a problémák megoldásán.
+
+  - Bizonyos esetekben előfordulhat, hogy a nehéz döntést olyan problémával zárjuk, amely nem hiszem, hogy a probléma időben megoldható.
+
+  - Ha probléma merül fel a meglévő tárházban, és szenvedélyes, a memdocs-tárházban található áttelepített cikkre vonatkozó visszajelzések.
+
+- Az áttelepítés előtt egyesítjük és lezárjuk az összes nyitott lekéréses kérelmet.
+
+- Az áttelepítés után a visszajelzések vagy a cikkek szerkesztése után a probléma vagy a lekéréses kérelem a memdocs adattárba lép.

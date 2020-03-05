@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 03/03/2020
+ms.date: 03/04/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,16 +18,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7148db8f3fbfce4862afd12cabf7729645d737bf
-ms.sourcegitcommit: 6608dc70d01376e0cd90aa620a2fe01337f6a2f1
+ms.openlocfilehash: c6a9033b0c4ac241b7fbc8a34db7e757229d82c5
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78260197"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78290276"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
-Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhatja a [fontos megjegyzéseket](#notices), a [korábbi kiadásokat](whats-new-archive.md)és az [Intune szolgáltatás frissítéseinek kiadásával](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Microsoft-Intune-Service-Updates/ba-p/358728)kapcsolatos információkat is. 
+Megtudhatja, milyen Újdonságok vannak a Microsoft Intune hetente. Megtalálhatja a [fontos megjegyzéseket](#notices), a [korábbi kiadásokat](whats-new-archive.md)és az [Intune szolgáltatás frissítéseinek kiadásával](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Microsoft-Intune-Service-Updates/ba-p/358728)kapcsolatos információkat is. 
 
 > [!Note]
 > A [havi frissítés](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Microsoft-Intune-Service-Updates/ba-p/358728) akár három napot is igénybe vehet, és a következő sorrendben fog megjelenni:
@@ -60,19 +60,16 @@ Heti összesítésben olvashat a Microsoft Intune újdonságairól. Megtalálhat
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
 ### <a name="device-management"></a>Eszközkezelés
 
-### <a name="bulk-remote-actions--4576882--"></a>Tömeges távoli műveletek<!--4576882-->
+#### <a name="microsoft-endpoint-manager-tenant-attach-device-sync-and-device-actions---6317104-cm3555758--"></a>Microsoft Endpoint Manager-bérlő csatolása: eszköz-szinkronizálás és eszközök műveletei<!-- 6317104, CM3555758-->
+A Microsoft Endpoint Manager egyetlen konzolon egyesíti a Configuration Manager és az Intune-t. Az 2002,2-Configuration Manager es Technical Preview verziótól kezdődően a Configuration Manager-eszközöket feltöltheti a Cloud Service-be, és műveleteket végezhet rajtuk a felügyeleti központban. További információ: [Configuration Manager Technical preview 2002,2-es verziójának szolgáltatásai](https://docs.microsoft.com/configmgr/core/get-started/2020/technical-preview-2002-2#bkmk_attach).
+
+A frissítés telepítése előtt tekintse át a [Configuration Manager Technical Preview-cikket](https://docs.microsoft.com/configmgr/core/get-started/technical-preview) . Ez a cikk az általános követelményeket és korlátozásokat ismerteti a technikai előzetes verzió használatára, a verziók közötti frissítésre és a visszajelzések megadására vonatkozóan.
+
+#### <a name="bulk-remote-actions--4576882--"></a>Tömeges távoli műveletek<!--4576882-->
 Mostantól tömeges parancsokat is kiállíthat a következő távoli műveletekhez: újraindítás, átnevezés, Autopilot alaphelyzetbe állítása, szinkronizálás, törlés és törlés. Az új tömeges műveletek megtekintéséhez lépjen a [Microsoft Endpoint Manager felügyeleti központ](https://go.microsoft.com/fwlink/?linkid=2109431) > **eszközök** > **minden eszköz** > **tömeges műveletek**.
 
-<!-- vvvvvvvvvvvvvvvvvvvvvv -->
-### <a name="app-management"></a>Alkalmazáskezelés
-
-#### <a name="company-portal-app-installation-status-messages-for-win32-apps----2514416---"></a>Alkalmazás-telepítési állapotüzenetek Céges portál Win32-alkalmazásokhoz <!-- 2514416 -->
-A Céges portál alkalmazás további alkalmazás-telepítési állapotüzenetek megjelenítését jeleníti meg a végfelhasználók számára. A következő feltételek érvényesek az új Win32-függőségi funkciókra:
-- Az alkalmazás telepítése nem sikerült. A rendszergazda által definiált függőségek nem teljesültek.
-- Az alkalmazás telepítése sikeresen megtörtént, de újraindítást igényel.
-- Az alkalmazás telepítése folyamatban van, de a folytatáshoz újraindítás szükséges.
-
-További információ: [win32 app Management](~/apps/apps-win32-app-management.md).
+#### <a name="all-devices-list-improved-search-sort-and-filter--6179023--"></a>Minden eszköz lista Továbbfejlesztett keresés, rendezés és szűrés<!--6179023-->
+A minden eszköz lista javult a jobb teljesítmény, a keresés, a rendezés és a szűrés érdekében.
 
 <!-- ########################## -->
 ## <a name="week-of-february-24-2020"></a>2020. február 24-i hét
@@ -143,8 +140,6 @@ Az új beállítások megjelenítéséhez nyissa meg a MEM >- **eszközök** > *
 #### <a name="choose-which-iosipados-updates-to-push-to-enrolled-devices--5879689----"></a>Válassza ki, hogy mely iOS-/iPadOS-frissítéseket szeretné leküldeni a regisztrált eszközökre<!--5879689  -->
 Kiválaszthat egy adott iOS/iPadOS-frissítést (kivéve a legújabb frissítést) az Apple Business Manager vagy az Apple School Manager használatával beléptetett eszközökre való leküldéshez. Az ilyen eszközöknek rendelkeznie kell egy olyan eszköz-konfigurációs házirenddel, amely bizonyos számú nap elteltével késlelteti a szoftverfrissítés láthatóságát. Ennek a funkciónak a megtekintéséhez nyissa meg a MEM >- **eszközök** ** > ios** -es > **frissítési szabályzatok iOS/iPadOS > a** **profil létrehozása**lehetőséget.
 
-### <a name="all-devices-list-improved-search-sort-and-filter--6179023--"></a>Minden eszköz lista Továbbfejlesztett keresés, rendezés és szűrés<!--6179023-->
-A minden eszköz lista javult a jobb teljesítmény, a keresés, a rendezés és a szűrés érdekében.
 
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
