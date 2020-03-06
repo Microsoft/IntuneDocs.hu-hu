@@ -16,11 +16,11 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: dfb9ec9d28b00e454884bbf0bf296cd72cba4b6f
-ms.sourcegitcommit: 5881979c45fc973cba382413eaa193d369b8dcf6
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/24/2020
-ms.locfileid: "77569208"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78369804"
 ---
 # <a name="use-role-based-access-control-rbac-and-scope-tags-for-distributed-it"></a>A szerepköralapú hozzáférés-vezérlés (RBAC) és a hatókör-címkék használata a terjesztéshez
 
@@ -43,7 +43,7 @@ A hatókör alapértelmezett címkéje funkció a Microsoft Endpoint Configurati
 
 ## <a name="to-create-a-scope-tag"></a>Hatókörcímke létrehozása
 
-1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza a **bérlői felügyelet** > **szerepkörök** > **hatókör (címkék)** > **Létrehozás**lehetőséget.
+1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza a **bérlői felügyelet** > **szerepkörök** > **hatókör (címkék)**  > **Létrehozás**lehetőséget.
 2. Az **alapok** lapon adja meg a **nevet** és a **leírást**(nem kötelező). Kattintson a **Tovább** gombra.
 3. A **hozzárendelések** lapon válassza ki azokat a csoportokat, amelyek az ehhez a hatókörhöz hozzárendelni kívánt eszközöket tartalmazzák. Kattintson a **Tovább** gombra.
 4. A **felülvizsgálat + létrehozás** lapon válassza a **Létrehozás**lehetőséget.
@@ -72,7 +72,7 @@ A hatókör címkéit támogató objektumok esetében a hatókör címkéi álta
 
 1. A [Microsoft Endpoint Manager felügyeleti központban](https://go.microsoft.com/fwlink/?linkid=2109431)válassza az **eszközök** > **konfigurációs profilok** lehetőséget, > válasszon egy profilt.
 
-2. Válassza a **tulajdonságok** > **hatókör (címkék)** > **Szerkesztés** > **válassza a hatókör címkék elemet** > Válassza ki a profilhoz hozzáadni kívánt címkéket.
+2. Válassza a **tulajdonságok** > **hatókör (címkék)**  > **Szerkesztés** > **válassza a hatókör címkék elemet** > Válassza ki a profilhoz hozzáadni kívánt címkéket.
 4. Válassza a kijelölés > **felülvizsgálat + mentés** **lehetőséget** .
 
 ## <a name="scope-tag-details"></a>Hatóköri címke részletei
