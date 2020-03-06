@@ -18,11 +18,11 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6dff94a9bfeb21f09b8a8c629e10ba562d7e642b
-ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77511426"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78369406"
 ---
 # <a name="create-a-device-profile-in-microsoft-intune"></a>Eszközprofil létrehozása a Microsoft Intune-ban
 
@@ -70,7 +70,7 @@ Ez a cikk:
        - [Eszközkorlátozások](device-restrictions-configure.md)
        - [Kiadás verziófrissítése és üzemmód kapcsolója](edition-upgrade-configure-windows-10.md)
        - [Oktatás](education-settings-configure.md)
-       - [E-mail](email-settings-configure.md)
+       - [Email](email-settings-configure.md)
        - [Endpoint Protection](../protect/endpoint-protection-configure.md)
        - [Identity protection](../protect/identity-protection-configure.md)  
        - [Kioszkmód](kiosk-settings.md)
@@ -101,7 +101,7 @@ További információ a hatóköri címkékről és a műveletekről: [a RBAC é
 
 1. Válassza a **hatókör (címkék)** lehetőséget.
 2. Új hatóköri címke létrehozásához válassza a **Hozzáadás** lehetőséget. Vagy válasszon ki egy meglévő hatókör címkét a listából.
-3. A módosítások mentéséhez kattintson az **OK** gombra.
+3. A módosítások mentéséhez válassza az **OK** gombot.
 
 ## <a name="applicability-rules"></a>Alkalmazhatósági szabályok
 

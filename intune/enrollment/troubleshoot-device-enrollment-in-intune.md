@@ -20,11 +20,11 @@ search.appverid: MET150
 ms.custom: intune-classic, seoapril2019
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9cb323dc6f8110d77343fb11c9e0a1c40f9e3cd8
-ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77415278"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78369024"
 ---
 # <a name="troubleshoot-device-enrollment-in-microsoft-intune"></a>Az eszközök regisztrálásának hibája Microsoft Intune
 
@@ -327,7 +327,7 @@ A probléma a következő esetekben jelentkezhet:
 
 | Regisztrációs beállítások | Érték |
 | ---- | ---- |
-| Platform | iOS/iPadOS |
+| Platfvagym | iOS/iPadOS |
 | Felhasználói affinitás | Felhasználói affinitással rendelkező eszközök regisztrálása |
 |Hitelesítés a Céges portállal az Apple Beállítási asszisztense helyett | Igen |
 | A Céges portál telepítése a VPP-vel | Token használata: token címe |

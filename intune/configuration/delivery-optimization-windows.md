@@ -16,11 +16,11 @@ ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: kerimh
 ms.openlocfilehash: 9fb4aab6b02c6ad6a5d2f18ca9d15beafc12d58a
-ms.sourcegitcommit: e1ff157f692983b49bdd6e20cc9d0f93c3b3733c
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77124809"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78369943"
 ---
 # <a name="delivery-optimization-settings-in-microsoft-intune"></a>Kézbesítési optimalizálási beállítások a Microsoft Intune
 
