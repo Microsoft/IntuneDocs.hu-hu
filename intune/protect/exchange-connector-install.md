@@ -19,11 +19,11 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7d00fec5efd9caa54c7f481389e3993e9797699c
-ms.sourcegitcommit: 139853f8d6ea61786da7056cfb9024a6459abd70
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76755728"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370011"
 ---
 # <a name="set-up-the-on-premises-intune-exchange-connector"></a>A helyszíni Intune Exchange Connector beállítása
 
@@ -54,7 +54,7 @@ A következő táblázat felsorolja azon számítógép követelményeit, amelyr
 
 |  Követelmény  |   További információ     |
 |---------------|------------------------|
-|  Operating systems        | Az Intune támogatja az Intune Exchange Connectort olyan számítógépen, amelyen a Windows Server 2008 SP2 64-bit, a Windows Server 2008 R2, a Windows Server 2012, a Windows Server 2012 R2 vagy a Windows Server 2016 bármely kiadása fut.<br /><br />Az összekötő nem támogatott a Server Core telepítéseken.  |
+|  Operációs rendszerek        | Az Intune támogatja az Intune Exchange Connectort olyan számítógépen, amelyen a Windows Server 2008 SP2 64-bit, a Windows Server 2008 R2, a Windows Server 2012, a Windows Server 2012 R2 vagy a Windows Server 2016 bármely kiadása fut.<br /><br />Az összekötő nem támogatott a Server Core telepítéseken.  |
 | Microsoft Exchange          | A helyszíni összekötőhöz a Microsoft Exchange 2010 SP3 vagy újabb verziójára, vagy régi dedikált Exchange Online-ra van szükség. Lépjen kapcsolatba a fiókkezelővel annak megállapításához, hogy a dedikált Exchange Online-környezet *új* vagy *régi* konfigurációval rendelkezik-e. |
 | Mobileszköz-kezelő szolgáltató           | [Mobileszköz-kezelő szolgáltatóként a Microsoft Intune-t állítsa be](../fundamentals/mdm-authority-set.md). |
 | Hardver              | Azon számítógépnek, amelyre az összekötőt telepíteni kívánja, 1,6 GHz-es processzorral, 2 GB memóriával és legalább 10 GB szabad lemezterülettel kell rendelkeznie. |

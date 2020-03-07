@@ -19,11 +19,11 @@ search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a37699542c5a9fe5268541aadc91b4c5d3ab5e9a
-ms.sourcegitcommit: 7cc45ef52dda08479bc6bdff7d11d2f6c0e7b93b
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74899309"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370176"
 ---
 # <a name="change-log-for-the-intune-data-warehouse-api"></a>Az Intune-adattárház API módosítási naplója
 
@@ -38,7 +38,7 @@ _Kiadás dátuma 2019 április_
 
 A következő táblázat felsorolja a közelmúltban eltávolított gyűjteményeket és az Intune-adattárházban található cserék gyűjteményeket.
 
-|    gyűjtemény                          |    Változás     |    További információ                                                                                                                                                                                                                                                                                                                                                                 |
+|    Gyűjtemény                          |    Változás     |    További információ                                                                                                                                                                                                                                                                                                                                                                 |
 |----------------------------------------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    mobileAppDeviceUserInstallStatus    |    Eltávolítva    |    Használja helyette a [mobileAppInstallStatusCounts](intune-data-warehouse-collections.md#mobileappinstallstatuscounts) .                                                                                                                                                                                                                                                                     |
 |    enrollmentTypes                     |    Eltávolítva    |    Használja helyette a [deviceEnrollmentTypes](intune-data-warehouse-collections.md#deviceenrollmenttypes) .                                                                                                                                                                                                                                                                                      |
@@ -46,7 +46,7 @@ A következő táblázat felsorolja a közelmúltban eltávolított gyűjtemény
 |    workPlaceJoinStateTypes             |    Eltávolítva    |    Ehelyett használja az [eszközök](intune-data-warehouse-collections.md#devices) és [devicePropertyHistories](intune-data-warehouse-collections.md#devicepropertyhistories) gyűjtemények `azureAdRegistered` tulajdonságát.                                                                                                                                                                                                             |
 |    clientRegistrationStateTypes        |    Eltávolítva    |    Használja helyette a [deviceRegistrationStates](intune-data-warehouse-collections.md#deviceregistrationstates) .                                                                                                                                                                                                                                                                             |
 |    currentUser                         |    Eltávolítva    |    Használja helyette a [felhasználók](intune-data-warehouse-collections.md#users) gyűjteményét.                                                                                                                                                                                                                                                                                                      |
-|    mdmDeviceInventoryHistories         |    Eltávolítva    |    A tulajdonságok többsége redundáns volt, vagy már a [devicePropertyHistories](intune-data-warehouse-collections.md#devicepropertyhistories) vagy az [eszközök](intune-data-warehouse-collections.md#devices) gyűjteményében is megtalálható. A két gyűjteményben még nem szereplő **mdmDeviceInventoryHistories** -tulajdonságok már nem érhetők el. A részleteket alább találja.    |
+|    mdmDeviceInventoryHistories         |    Eltávolítva    |    A tulajdonságok többsége redundáns volt, vagy már a [devicePropertyHistories](intune-data-warehouse-collections.md#devicepropertyhistories) vagy az [eszközök](intune-data-warehouse-collections.md#devices) gyűjteményében is megtalálható. A két gyűjteményben még nem szereplő **mdmDeviceInventoryHistories** -tulajdonságok már nem érhetők el. Tekintse meg az alábbi részleteket.    |
 
 A következő táblázat felsorolja a korábban a **mdmDeviceInventoryHistories** -gyűjteményben és a módosítás/csere során megtalált régi tulajdonságokat. A **mdmDeviceInventoryHistories** összes olyan tulajdonsága el lett távolítva, amely nem szerepel az alábbi listában.
 
@@ -55,7 +55,7 @@ A következő táblázat felsorolja a korábban a **mdmDeviceInventoryHistories*
 |    cellularTechnology          |    cellularTechnology az eszközök gyűjteményében                                     |
 |    deviceClientId              |    deviceId az eszközök gyűjteményében                                               |
 |    deviceManufacturer          |    gyártó az eszközök gyűjteményében                                           |
-|    DeviceModel                 |    modell az eszközök gyűjteményében                                                  |
+|    deviceModel                 |    modell az eszközök gyűjteményében                                                  |
 |    deviceName                  |    deviceName az eszközök gyűjteményében                                             |
 |    deviceOsPlatform            |    deviceTypeKey az eszközök gyűjteményében                                          |
 |    deviceOsVersion             |    osVersion a devicePropertyHistories-gyűjteményben                              |
@@ -65,12 +65,12 @@ A következő táblázat felsorolja a korábban a **mdmDeviceInventoryHistories*
 |    exchangeDeviceId            |    easDeviceId az eszközök gyűjteményében                                            |
 |    IMEI                        |    IMEI az eszközök gyűjteményében                                                   |
 |    isSupervised                |    isSupervised tulajdonság az eszközök gyűjteményében                              |
-|    Jailbreakelt                  |    feltört a devicePropertyHistories-gyűjteményben                             |
+|    jailBroken                  |    feltört a devicePropertyHistories-gyűjteményben                             |
 |    MEID                        |    meid tulajdonság az eszközök gyűjteményében                                      |
 |    OEM                         |    gyártó az eszközök gyűjteményében                                           |
 |    osName                      |    deviceTypeKey az eszközök gyűjteményében, hivatkozó deviceTypes-gyűjtemény    |
 |    Telefonszám                 |    Telefonszám az eszközök gyűjteményében                                            |
-|    Platformtípus                |    modell az eszközök gyűjteményében                                                  |
+|    platformType                |    modell az eszközök gyűjteményében                                                  |
 |    termék                     |    deviceTypeKey az eszközök gyűjteményében                                          |
 |    productVersion              |    osVersion a devicePropertyHistories-gyűjteményben                              |
 |    serialNumber                |    serialNumber az eszközök gyűjteményében                                           |

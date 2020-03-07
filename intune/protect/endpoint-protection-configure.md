@@ -17,11 +17,11 @@ ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 mr.reviewer: karthib
 ms.openlocfilehash: 45cdbfe98bca8f7b0e307ed47ad3f78193e6d04c
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74164555"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370096"
 ---
 # <a name="add-endpoint-protection-settings-in-intune"></a>Endpoint Protection-beállítások hozzáadása az Intune-ban
 
@@ -47,7 +47,7 @@ A profil létrehozása előtt tekintse át a következő cikkeket, amelyek rész
 
 3. Adja meg az Endpoint Protection-profil **nevét** és **leírását**.
 
-4. A **Platform** legördülő listából válassza ki azt az eszközplatformot, amelyre egyéni beállításokat szeretne alkalmazni. Jelenleg az alábbi platformok egyikét választhatja ki az eszközkorlátozási beállításokhoz:
+4. A **Platform** legördülő listából válassza ki azt az eszközplatformot, amelyre egyéni beállításokat szeretne alkalmazni. Jelenleg az alábbi platformokra vonatkozóan lehet eszközkorlátozási beállításokat megadni:
 
    - **macOS**
    - **Windows 10 és újabb**

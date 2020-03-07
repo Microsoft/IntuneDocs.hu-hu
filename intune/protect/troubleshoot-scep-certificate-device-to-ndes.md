@@ -17,11 +17,11 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7945f1df3ddf1a6ff2c42a537e1071d1b5acff24
-ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77514268"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370062"
 ---
 # <a name="troubleshoot-device-to-ndes-server-communication-for-scep-certificate-profiles-in-microsoft-intune"></a>Az eszköz NDES-kiszolgálóval való kommunikációjának megoldása a Microsoft Intune SCEP-tanúsítvány profiljaihoz
 

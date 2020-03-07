@@ -17,11 +17,11 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 68fcdb66591ec0e566aa702b3ca4d6c5c5448859
-ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77514013"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78368367"
 ---
 # <a name="create-a-compliance-policy-in-microsoft-intune"></a>Megfelelőségi szabályzat létrehozása Microsoft Intune
 
@@ -94,9 +94,9 @@ Az eszközök megfelelőségi házirendjeinek használatához győződjön meg r
 
    - **Helyek** *(Android-eszköz rendszergazdája)* : a szabályzatban az eszköz helye alapján kényszerítheti a megfelelőséget. Válasszon a meglévő helyekről. Még nem rendelkezik hellyel? Az Intune-ban a [webhelyek (hálózati kerítés) használatával](use-network-locations.md) biztosítunk útmutatást.  
 
-   - Nem **megfelelőségi műveletek**: olyan eszközök esetében, amelyek nem felelnek meg a megfelelőségi szabályzatoknak, hozzáadhat egy műveletsort az automatikus alkalmazáshoz. Módosíthatja az eszköz nem megfelelőként való megjelölésének ütemezését, megadhatja például, hogy egy nap elteltével jelölje a rendszer nem megfelelőnek az eszközt. Hozzáadhat egy második műveletet is, amely e-mailt küld a felhasználónak, ha az eszköz nem megfelelő.
+   - Nem **megfelelőségi műveletek**: olyan eszközök esetében, amelyek nem felelnek meg a megfelelőségi szabályzatoknak, hozzáadhat egy műveletsort az automatikus alkalmazáshoz. Módosíthatja az eszköz nem megfelelőként való megjelölésének ütemezését, megadhatja például, hogy egy nap elteltével. Hozzáadhat egy második műveletet is, amely e-mailt küld a felhasználónak, ha az eszköz nem megfelelő.
 
-     A [Műveletek hozzáadása nem megfelelő eszközökhöz](actions-for-noncompliance.md) további információval szolgál, többek között arról, hogyan hozhat létre értesítési e-mailt a felhasználók számára.
+     A [Műveletek hozzáadása nem megfelelő eszközökhöz](actions-for-noncompliance.md) további információval szolgál, többek között értesítési e-mailt hozhat létre a felhasználók számára.
 
      Például, a Helyek funkciót használja, és hozzáad egy helyet egy megfelelőségi szabályzatban. Az alapértelmezett meg nem felelési művelet alkalmazandó, ha kiválaszt legalább egy helyet. Ha az eszköz nem csatlakozik a megadott helyekhez, akkor azonnal nem megfelelőnek számít. Biztosíthat a felhasználóknak egy türelmi időszakot, például egy napot.
 
