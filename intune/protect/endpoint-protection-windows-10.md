@@ -18,11 +18,11 @@ search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 467e347a84cef1fb7ac302da5a4264f23b4be5a2
-ms.sourcegitcommit: 6608dc70d01376e0cd90aa620a2fe01337f6a2f1
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78260333"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78368468"
 ---
 # <a name="windows-10-and-later-settings-to-protect-devices-using-intune"></a>Windows 10 (és újabb) beállítások az eszközök az Intune-nal való védelemmel való ellátásához
 

@@ -16,11 +16,11 @@ search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0dd1ecb5666b8bbb8b26a001be56372d86839f31
-ms.sourcegitcommit: b0d683917af83170f85022b270270d8ced8e301c
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76812319"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78368402"
 ---
 # <a name="windows-10-and-newer-device-settings-to-allow-or-restrict-features-using-intune"></a>Windows 10 (és újabb) eszközbeállítások az Intune-t használó szolgáltatások engedélyezéséhez vagy korlátozásához
 
@@ -35,7 +35,7 @@ Ezek a beállítások hozzáadódnak az Intune-ban lévő eszköz konfiguráció
 
 [Hozzon létre egy eszköz konfigurációs profilt](device-restrictions-configure.md#create-the-profile).
 
-## <a name="app-store"></a>Alkalmazás-áruház
+## <a name="app-store"></a>Alkalmazásáruház
 
 Ezek a beállítások a [ApplicationManagement házirend CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationmanagement)-t használják, amely a támogatott Windows-kiadásokat is felsorolja.
 
@@ -273,7 +273,7 @@ Ezek a beállítások az [élmény házirend CSP](https://docs.microsoft.com/win
 
   [DeviceLock/ScreenTimeoutWhileLocked CSP](https://msdn.microsoft.com/ie/dn904962(v=vs.94)#DeviceLock_ScreenTimeoutWhileLocked)
 
-## <a name="messaging"></a>Üzenetkezelési
+## <a name="messaging"></a>Üzenetküldés
 
 Ezek a beállítások az [üzenetküldési házirend CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-messaging)-t használják; amely a támogatott Windows-kiadásokat is felsorolja.
 
@@ -761,7 +761,7 @@ Ezek a beállítások a [Defender Policy CSP](https://docs.microsoft.com/windows
 
   - **Nincs konfigurálva** (alapértelmezett): az Intune nem módosítja vagy nem frissíti ezt a beállítást. Az operációs rendszer alapértelmezett értéke az összes fájl figyelésére használható.
   - **Figyelés letiltva**
-  - **Az összes fájl figyelése**
+  - **Minden fájl figyelése**
   - **Csak a bejövő fájlok figyelése**
   - **Csak a kimenő fájlok figyelése**
 

@@ -19,11 +19,11 @@ search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b25b761b3857fdf91bbbe827d288d09e350a1a7a
-ms.sourcegitcommit: e166b9746fcf0e710e93ad012d2f52e2d3ed2644
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75206091"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78368428"
 ---
 # <a name="add-users-and-grant-administrative-permission-to-intune"></a>Felhasználók hozzáadása és rendszergazdai engedély biztosítása az Intune-hoz
 
@@ -44,7 +44,7 @@ Az Intune-előfizetéshez manuálisan is hozzáadhat felhasználókat a [Microso
 4. Adja meg a következő felhasználói adatokat:
    - **Utónév**
    - **Vezetéknév**
-   - **Megjelenítendő név**
+   - **Megjelenített név**
    - **Felhasználói név** – A szolgáltatás eléréséhez használt és az Azure Active Directoryban tárolt egyszerű felhasználónév (UPN)
    - **Hely**
    - **Kapcsolattartási adatok** (nem kötelező)
