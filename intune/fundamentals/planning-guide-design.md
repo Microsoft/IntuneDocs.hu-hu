@@ -19,11 +19,11 @@ search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f676a0e39bb5dae32d3032d1703dbb44f6b2e54a
-ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77514965"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78369610"
 ---
 # <a name="create-a-design"></a>Terv létrehozása
 
@@ -182,7 +182,7 @@ Csak az eszközökkel kapcsolatos alábbi szempontok alaposabb ismeretében lehe
 
 - Az eszközök tulajdonjoga
 
-- Tömeges beléptetés
+- Tömeges regisztrálás
 
 Vizsgáljuk meg ezeket a területeket részletesebben.
 
@@ -211,7 +211,7 @@ Az Intune támogatja a vállalati, illetve a személyes tulajdonban lévő eszk�
 
 A vállalati és a személyes tulajdonban lévő eszközökkel kapcsolatos használati esetekről a [3. szakasz: Használatieset-forgatókönyvek követelményeinek meghatározása](planning-guide-requirements.md) nyújt további tájékoztatást.
 
-### <a name="bulk-enrollment"></a>Tömeges beléptetés
+### <a name="bulk-enrollment"></a>Tömeges regisztrálás
 
  Az eszközök tömeges regisztrálását a platformtól függően többféleképpen valósíthatja meg. Ha tömeges regisztrálásra lesz szüksége, akkor [döntsön annak módjáról](../enrollment/device-enrollment.md), és a tervet ennek megfelelően dolgozza ki.
 
@@ -269,7 +269,7 @@ A végfelhasználók profilok segítségével kapcsolódnak a vállalati adatokh
 
 - Tanúsítványprofilok
 
-- Wi-Fi profil
+- Wi-Fi-profil
 
 - VPN-profil
 
@@ -302,7 +302,7 @@ Az alábbi példa szemlélteti, hogyan lehet dokumentálni a tanúsítványokat 
 
 A saját tanúsítványprofiljainak meghatározásához [letöltheti a fenti táblázat sablonját](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0).
 
-#### <a name="wi-fi-profile"></a>Wi-Fi profil
+#### <a name="wi-fi-profile"></a>Wi-Fi-profil
 
 A Wi-Fi-profilok révén a mobileszközök automatikusan csatlakozhatnak a vezeték nélküli hálózatokhoz. Az Intune-ban az összes támogatott platformhoz lehet Wi-Fi-profilt üzembe helyezni. További tudnivalók [az Intune Wi-Fi-profiltámogatásáról.](../configuration/wi-fi-settings-configure.md)
 

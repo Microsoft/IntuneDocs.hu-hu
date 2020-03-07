@@ -18,11 +18,11 @@ search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: bfa2758546595d1e6237d88e128958c50759eb04
-ms.sourcegitcommit: 5881979c45fc973cba382413eaa193d369b8dcf6
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/24/2020
-ms.locfileid: "77569183"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78369805"
 ---
 # <a name="create-a-custom-role-in-intune"></a>Egyéni szerepkör létrehozása az Intune-ban
 
@@ -52,7 +52,7 @@ Egy meglévő szerepkört is másolhat.
 
 2. Az **alapvető beállítások** lapon adjon meg egy nevet. Ügyeljen arra, hogy egyedi nevet használjon.
 
-3. Az eredeti szerepkör összes engedélye és hatókör-címkéje már ki lesz választva. Ezt követően módosíthatja az ismétlődő szerepkör **nevét**, **leírását**, **engedélyeit**és **hatókörét (címkéket)**.
+3. Az eredeti szerepkör összes engedélye és hatókör-címkéje már ki lesz választva. Ezt követően módosíthatja az ismétlődő szerepkör **nevét**, **leírását**, **engedélyeit**és **hatókörét (címkéket)** .
 
 4. Miután elvégezte az összes szükséges módosítást, kattintson a **tovább** gombra a **felülvizsgálat + létrehozás** lap beszerzéséhez. Válassza a **Létrehozás** lehetőséget. 
 

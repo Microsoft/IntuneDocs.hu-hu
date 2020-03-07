@@ -18,11 +18,11 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 494878c78189aed2612883017f4808be72b8f15d
-ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77511599"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78369163"
 ---
 # <a name="frequently-asked-questions-about-mam-and-app-protection"></a>Gyakori kérdések az MAM-ről és az alkalmazásvédelemről
 
@@ -210,7 +210,7 @@ Az Intune alkalmazásvédelmi szabályzatai csak az Intune licencelt felhasznál
 Ennek célja az alkalmazáson belüli céges adatok védelmének biztosítása az alkalmazás szintjén. Ez a funkció csak iOS/iPadOS esetén érhető el, és az iOS/iPadOS, 9.0.1 vagy újabb verziójú Intune APP SDK-t integráló alkalmazások részvételét igényli. Az SDK-integráció szükséges a viselkedés kényszeríthetőségéhez a megcélzott alkalmazásoknál. Ez az integráció fokozatosan történik, és az egyes alkalmazáscsapatoktól függ. Néhány alkalmazás, amely ezek között szerepelhet: WXP, Outlook, Managed Browser és Yammer.
   
 **Használhatom az iOS-megosztás bővítményt a munkahelyi vagy iskolai adatok nem felügyelt alkalmazásokban való megnyitásához, még ha az adatátviteli szabályzatot "csak felügyelt alkalmazások" vagy "Nincsenek alkalmazások" értékre állítja. Nem ez az adatszivárgás?**<br></br>
-Az Intune alkalmazásvédelmi szabályzata nem tudja kezelni az iOS megosztási bővítményt az eszköz felügyelete nélkül. Ezért az _**Intune titkosítja a „céges” adatokat, mielőtt az alkalmazáson kívül megosztaná**_ . Ezt úgy ellenőrizheti, hogy megpróbálja megnyitni a „céges” fájlt a felügyelt alkalmazáson kívül. A fájlnak titkosítottnak kell lennie, így a felügyelt alkalmazáson kívül mással nem nyitható meg.
+Az Intune alkalmazásvédelmi szabályzata nem tudja kezelni az iOS megosztási bővítményt az eszköz felügyelete nélkül. Ezért az _**Intune titkosítja a „céges” adatokat, mielőtt az alkalmazáson kívül megosztaná**_ . Ezt úgy ellenőrizheti, hogy megpróbálja megnyitni a „céges” fájlt a felügyelt alkalmazáson kívüli más alkalmazással. A fájlnak titkosítottnak kell lennie, így nem nyitható meg a felügyelt alkalmazáson kívül mással.
 
 **Hogyan működnek az egyazon alkalmazás- és felhasználói csoportokra konfigurált többes Intune alkalmazásvédelmi hozzáférési beállítások az iOS-eszközökön?**<br></br>
 Az Intune alkalmazásvédelmi hozzáférési szabályzatai adott sorrendben lépnek érvénybe a végfelhasználói eszközökön, amikor azok a vállalati környezetből megkísérelnek hozzáférni az alkalmazásokhoz. A törlésnek általában elsőbbsége van, ezt követi a letiltás és a bezárható figyelmeztetés. Ha például alkalmazható az adott felhasználóra/alkalmazásra, egy minimális iOS/iPadOS operációs rendszerre vonatkozó beállítás, amely figyelmezteti a felhasználót, hogy frissítse az iOS/iPadOS verzióját, akkor az iOS/iPadOS operációs rendszer minimálisan szükséges beállítása után lesz alkalmazva, amely letiltja a felhasználót. Így abban az esetben, ha a rendszergazda a minimális iOS/iPadOS operációs rendszert konfigurálja a 11.0.0.0 és a minimális iOS/iPadOS operációs rendszerre (csak figyelmeztetés) a 11.1.0.0-ra, az alkalmazást az iOS/iPadOS 10 verzióra próbáló eszközhöz való hozzáféréshez, a végfelhasználót pedig blokkolja a minimálisan korlátozó beállítás az iOS/iPadOS operációs rendszerhez, amely letiltott hozzáférést eredményez.

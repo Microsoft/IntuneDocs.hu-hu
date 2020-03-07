@@ -18,11 +18,11 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c6678c3fbc247ac0595775c0ccc72c7bdb9c55e1
-ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77513095"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78369407"
 ---
 # <a name="assign-user-and-device-profiles-in-microsoft-intune"></a>Felhasználói és eszközprofilok hozzárendelése a Microsoft Intune-ban
 
@@ -73,7 +73,7 @@ Windows 10-es eszközökön olyan **alkalmazhatósági szabályokat** adhat hozz
 
 Sok felhasználó kérdezi, hogy mikor kell felhasználói csoportokat használni, és mikor kell használni az eszközök csoportjait. A válasz a céltól függ. Íme néhány útmutató az első lépésekhez.
 
-### <a name="device-groups"></a>Device groups
+### <a name="device-groups"></a>Eszközcsoportok
 
 Ha egy eszközön szeretné alkalmazni a beállításokat, függetlenül attól, hogy ki jelentkezett be, majd rendelje hozzá a profilokat az eszközök csoportjához. Az eszközök csoportjaira alkalmazott beállítások mindig az eszközön mennek, nem a felhasználó.
 

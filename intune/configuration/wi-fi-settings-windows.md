@@ -17,11 +17,11 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 68601d8ccf06cebf668c75857d23536e2c9e6553
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72503519"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78369785"
 ---
 # <a name="add-wi-fi-settings-for-windows-10-and-later-devices-in-intune"></a>Wi-Fi-beállítások hozzáadása Windows 10 és újabb rendszerű eszközökhöz az Intune-ban
 
@@ -163,7 +163,7 @@ Az Intune-ban nem elérhető összes beállításhoz exportálhatja a Wi-Fi-beá
 
 A profil létrejön, de egyelőre nem csinál semmit. A következő lépés a [profil hozzárendelése](device-profile-assign.md).
 
-## <a name="more-resources"></a>További forrásanyagok
+## <a name="more-resources"></a>További források
 
 - A [Windows 8.1](wi-fi-settings-import-windows-8-1.md) rendszerhez rendelkezésre álló beállítások megtekintése.
 - [Wi-Fi-beállítások áttekintése](wi-fi-settings-configure.md), beleértve a többi platformot is.
