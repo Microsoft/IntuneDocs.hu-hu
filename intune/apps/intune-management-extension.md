@@ -18,11 +18,11 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f8af7a756d95051be52a5380467cb4f9be2533b3
-ms.sourcegitcommit: fab685b22a010fe231b27a0c5eda34a6f22f4c8d
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78216199"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78369309"
 ---
 # <a name="use-powershell-scripts-on-windows-10-devices-in-intune"></a>PowerShell-parancsfájlok használata Windows 10-es eszközökön az Intune-ban
 
@@ -185,7 +185,7 @@ A [Windows 10 automatikus regisztrációjának engedélyezése](../enrollment/wi
 - A parancsfájlokkal kapcsolatos problémák elkülönítéséhez a következőket teheti:
 
   - Tekintse át a PowerShell-végrehajtási konfigurációt az eszközökön. Útmutatásért tekintse meg a [PowerShell végrehajtási szabályzatát](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6) .
-  - Futtasson egy minta parancsfájlt az Intune felügyeleti bővítmény használatával. Hozza létre például a `C:\Scripts` könyvtárat, és adja meg mindenki számára a teljes hozzáférést. Futtassa a következő parancsfájlt:
+  - Futtasson egy minta parancsfájlt az Intune felügyeleti bővítmény használatával. Hozza létre például a `C:\Scripts` könyvtárat, és adja meg mindenki számára a teljes hozzáférést. Futtassa az alábbi parancsprogramot:
 
     ```powershell
     write-output "Script worked" | out-file c:\Scripts\output.txt
