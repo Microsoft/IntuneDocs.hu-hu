@@ -16,11 +16,11 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2964893102bc1b6f9967b1a37261b860d8ea0104
-ms.sourcegitcommit: 5881979c45fc973cba382413eaa193d369b8dcf6
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/24/2020
-ms.locfileid: "77569387"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78369311"
 ---
 # <a name="add-vpn-settings-on-ios-and-ipados-devices-in-microsoft-intune"></a>VPN-beállítások hozzáadása az iOS-és iPadOS-eszközökhöz Microsoft Intune
 
@@ -43,7 +43,7 @@ Válassza ki a VPN-kapcsolat típusát a következő szállítók listájáról:
 - **SonicWall Mobile Connect**
 - **F5 Access Legacy**: Az F5 Access alkalmazás 2.1 és annál korábbi verzióihoz használható.
 - **F5 Access**: Az F5 Access alkalmazás 3.0 és annál újabb verzióihoz használható.
-- **Palo Alto Networks GlobalProtect (Legacy)**: A Palo Alto Networks GlobalProtect alkalmazás 4.1 és annál korábbi verzióihoz használható.
+- **Palo Alto Networks GlobalProtect (Legacy)** : A Palo Alto Networks GlobalProtect alkalmazás 4.1 és annál korábbi verzióihoz használható.
 - **Palo Alto Networks GlobalProtect**: A Palo Alto Networks GlobalProtect alkalmazás 5.0 és annál újabb verzióihoz használható.
 - **Pulse Secure**
 - **Cisco (IPsec)**

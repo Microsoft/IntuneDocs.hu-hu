@@ -18,11 +18,11 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 437673878335b04b76c53b13f18acac32213720a
-ms.sourcegitcommit: c780e9988341a20f94fdeb8672bd13e0b302da93
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77514030"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370181"
 ---
 # <a name="iosipados-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>iOS/iPadOS-beállítások az eszközök megfelelőségi vagy nem megfelelőként való megjelöléséhez az Intune használatával
 
@@ -83,7 +83,7 @@ A levelezési profilokkal kapcsolatos további információkért lásd: a [váll
 
 ## <a name="system-security"></a>Rendszerbiztonság
 
-### <a name="password"></a>Jelszó
+### <a name="password"></a>Windows 10
 
 > [!NOTE]
 > Miután megfelelőségi vagy konfigurációs szabályzatot alkalmazott egy iOS/iPadOS eszközre, a rendszer 15 percenként kéri a felhasználókat a PIN-kód beállítására. A kérések mindaddig megjelennek, amíg a felhasználó meg nem ad egy PIN-kódot. Ha az iOS/iPadOS eszközhöz PIN-kód van beállítva, a titkosítási folyamat automatikusan elindul. Az eszköz mindaddig titkosítva marad, amíg le nem tiltja a PIN-kódot.
