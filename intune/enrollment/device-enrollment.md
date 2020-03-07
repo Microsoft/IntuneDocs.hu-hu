@@ -18,11 +18,11 @@ search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7955c91a33edef37b86f5bd8f29dfb681d28030e
-ms.sourcegitcommit: 51591b862d97904291af7aa53a6eb341b11a761e
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77415344"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78368544"
 ---
 # <a name="what-is-device-enrollment"></a>Mi az eszközregisztrálás?
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
@@ -86,7 +86,7 @@ Saját eszközök használata (BYOD) személyes tulajdonú telefonok, tabletták
 ## <a name="corporate-owned-device"></a>Céges eszköz
 A [céges eszközök (COD)](corporate-identifiers-add.md) közé tartoznak a szervezet tulajdonában lévő és a dolgozóknak kiosztott telefonok, táblagépek és számítógépek. A céges eszközök (COD) regisztrációja olyan forgatókönyveket támogat, mint például az automatikus regisztráció, a megosztott eszközök vagy az előre engedélyezett regisztrációs követelmények. A céges eszközök regisztrálásának egy rendszergazdák és menedzserek által gyakran használt módja a készülékregisztráció-kezelő (DEM) alkalmazása. az iOS-/iPadOS-eszközök közvetlenül az Apple által biztosított Készülékregisztrációs program-(DEP-) eszközökön regisztrálhatók. Az IMEI-számmal rendelkező eszközök is azonosíthatók és megcímkézve vállalati tulajdonban.
 
-### <a name="device-enrollment-manager"></a>Készülékregisztráció-kezelő
+### <a name="device-enrollment-manager"></a>Eszközregisztráció-kezelő
 Az eszközregisztráció-kezelő (DEM) egy speciális felhasználói fiók, amely több vállalati tulajdonú eszköz regisztrációjára és felügyeletére szolgál. A kezelők tudják telepíteni a Vállalati portált és regisztrálni számos, felhasználó nélküli eszközt. Az ilyen típusú eszközök például POS- vagy segédprogram-alkalmazásokhoz megfelelőek, de nem alkalmasak olyan felhasználók számára, akik hozzá szeretnének férni a levelezésükhöz vagy a vállalati erőforrásokhoz. További információ a [DEM](device-enrollment-manager-enroll.md) módszerről.
 
 ### <a name="apple-device-enrollment-program"></a>Apple Készülékregisztrációs program
