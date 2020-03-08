@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f5d11cade1e22ca5d306dd1896e8136f9e7c1ed
-ms.sourcegitcommit: a25f556aa9df4fcd9fdacccd12c9029bc6c5fe20
+ms.openlocfilehash: bbb6a53158ff713ad3c3ff768b2a5e6b1c75605f
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78256390"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78856271"
 ---
 # <a name="what-is-microsoft-intune-device-management"></a>A Microsoft Intune-eszközfelügyelet ismertetése
 
@@ -29,22 +29,22 @@ ms.locfileid: "78256390"
 
 Rendszergazdaként meg kell győződnie arról, hogy a felügyelt eszközök a felhasználók munkájához szükséges erőforrásokat nyújtják, és megvédik az adatokat.
 
-Az **Eszközök** munkafolyamat áttekintést nyújt a felügyelt eszközökről, és lehetővé teszi, hogy távolról hajtson végre műveleteket rajtuk.
+Az **eszközök** munkaterhelés segítségével betekintést nyerhet a felügyelt eszközökre, és lehetővé teszi a távoli feladatok aktiválását ezeken az eszközökön.
 
 ## <a name="get-to-your-devices"></a>Az eszközök elérése
 
 1. Jelentkezzen be a [Microsoft Endpoint Manager felügyeleti központjába](https://go.microsoft.com/fwlink/?linkid=2109431).
 3. Válassza az **Eszközök** lehetőséget. Ez a nézet részletes információkat jelenít meg az egyes eszközökről, illetve megjeleníti a velük elvégezhető műveleteket, például:
 
-   - Az **Áttekintés** megjeleníti a beléptetett eszközök vizualizációs pillanatképét, valamint azt is, hogy hány eszköz használja a különböző platformokat, például Android, iOS/iPadOS stb.
+   - Az **Áttekintés** megjeleníti a regisztrált eszközök vizuális pillanatképét, a különböző platformokat használó eszközök számát és egyebeket.
    - A **Minden eszköz** az Ön által kezelt regisztrált eszközöket jeleníti meg.
 
      Az **Exportálás** funkcióval az összes eszközön létrehozhat egy. zip-listát az 10 000-es (Internet Explorer) vagy 30 000 (Microsoft Edge, Chrome) növekményekben.
 
-     Válassza ki bármelyik eszközt az [eszköz további részleteinek megtekintéséhez](device-inventory.md), beleértve a hardver részleteit, a telepített alkalmazásokat, a megfelelőségi szabályzat állapotát és egyebeket.
+     Válassza ki az eszköz [további részleteit](device-inventory.md), például a hardver részleteit, a telepített alkalmazásokat, a szabályzatokat és egyebeket.
 
    - Az **Azure AD-eszközök** – az Azure Active Directory (AD) szolgáltatásban regisztrált vagy azzal összekapcsolt eszközöket jeleníti meg. További tudnivalók az [Azure AD eszközkezeléséről](https://docs.microsoft.com/azure/active-directory/device-management-introduction).
-   - Az **Eszközműveletek** az eszközökön végrehajtott távoli műveletek előzményei, amelyek tartalmazzák a műveletet, az állapotot, a műveletet kezdeményező felhasználót és az időt.
+   - Az eszközök **műveletei** tartalmazzák a távoli műveletek előzményeit, amelyek különböző eszközökön futottak, beleértve a műveletet, az állapotát, a művelet elindítását és az időpontot.
 
      ![Képernyőkép az eszközműveletek figyeléséről](./media/device-management/monitor-device-actions.png)
 
@@ -57,21 +57,26 @@ Az egyes műveletek az eszköz platformjának és konfigurációjának függvén
 
 - [Az eszközleltár megtekintése](device-inventory.md)
 - A távoli eszközműveletek futtatása:
-  - [Kivonás](devices-wipe.md#retire)
-  - [Törlés](devices-wipe.md#wipe)
-  - [Távoli zárolás](device-remote-lock.md)
-  - [Új PIN-kód](device-passcode-reset.md)
+  - [Autopilot alaphelyzetbe állítása](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-autopilot-reset#reset-devices-with-remote-windows-autopilot-reset)
+  - [BitLocker-kulcs elforgatása](../protect/encrypt-devices.md#rotate-bitlocker-recovery-keys) (csak Windows)
+  - [Törlés](devices-wipe.md#delete-devices-from-the-intune-portal)
   - [Aktiválási zár letiltása](device-activation-lock-disable.md) (csak iOS esetén)
   - [Újrakezdés](device-fresh-start.md) (kizárólag Windowson)
-  - [Elveszett eszköz mód](device-lost-mode.md) (kizárólag iOS esetében)
+  - [Teljes vizsgálat](../configuration/device-restrictions-windows-10.md#microsoft-defender-antivirus) (csak Windows 10 esetén)
   - [Eszköz megkeresése](device-locate.md) (kizárólag iOS esetében)
-  - [Újraindítás](device-restart.md) (kizárólag Windowson)
-  - [Windows 10-es PIN-kód alaphelyzetbe állítása](device-windows-pin-reset.md)
+  - [Elveszett eszköz mód](device-lost-mode.md) (kizárólag iOS esetében)
+  - [Gyors vizsgálat](../configuration/device-restrictions-windows-10.md#microsoft-defender-antivirus) (csak Windows 10 esetén)
   - [Távirányítás Androidhoz](teamviewer-support.md)
-  - [Eszköz szinkronizálása](device-sync.md)
+  - [Távoli zárolás](device-remote-lock.md)
   - [Eszköz átnevezése](device-rename.md)
+  - [Új PIN-kód](device-passcode-reset.md)
+  - [Újraindítás](device-restart.md) (kizárólag Windowson)
+  - [Kivonás](devices-wipe.md#retire)
+  - [A Windows Defender biztonsági intelligencia frissítése](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/manage-protection-updates-windows-defender-antivirus)
+  - [Windows 10-es PIN-kód alaphelyzetbe állítása](device-windows-pin-reset.md)
+  - [Törlés](devices-wipe.md#wipe)
   - [Egyéni értesítés küldése](custom-notifications.md#send-a-custom-notification-to-a-single-device) (Android, iOS/iPadOS)
-  - [BitLocker-kulcs elforgatása](../protect/encrypt-devices.md#rotate-bitlocker-recovery-keys) (csak Windows)
+  - [Eszköz szinkronizálása](device-sync.md)
 
 ## <a name="next-steps"></a>További lépések
 

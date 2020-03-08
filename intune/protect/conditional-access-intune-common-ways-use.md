@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 92e6aa1a66429c6407556444e903c158aff9dfa0
-ms.sourcegitcommit: 2506cdbfccefd42587a76f14ee50c3849dad1708
+ms.openlocfilehash: 8fe72ccf07cb0280a7d0ce929f8f08df7738bfcc
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75885982"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78856035"
 ---
 # <a name="what-are-common-ways-to-use-conditional-access-with-intune"></a>Mik a feltételes hozzáférés az Intune-nal való használatának gyakori módjai?
 
@@ -42,7 +42,7 @@ Az Intune és a Azure Active Directory együttműködve gondoskodhat arról, hog
 
 Az Intune biztosítja az eszközök megfelelőségi állapotát értékelő eszközmegfelelőségi szabályzatokat. A megfelelőségi állapotot a rendszer a Azure Active Directory, amely a Azure Active Directoryban létrehozott feltételes hozzáférési szabályzat kikényszeríti a vállalati erőforrásokhoz való hozzáféréskor.
 
-Az Exchange Online-hoz és más Office 365-termékekhez készült eszköz-alapú feltételes hozzáférési szabályzatok a [Azure Portalon](https://docs.microsoft.com/intune-azure/introduction/what-is-microsoft-intune)keresztül konfigurálhatók.  
+Az Exchange Online-hoz és más Office 365-termékekhez készült eszköz-alapú feltételes hozzáférési szabályzatok a [Azure Portalon](../fundamentals/what-is-intune.md)keresztül konfigurálhatók.
 
 - További információ [: a felügyelt eszközök megkövetelése feltételes hozzáféréssel a Azure Active Directoryban](https://docs.microsoft.com/azure/active-directory/conditional-access/require-managed-devices).
 
@@ -79,7 +79,7 @@ Az Intune és a Mobile Threat Defense integrációja az eszköz kockázatán ala
 
 ### <a name="conditional-access-for-windows-pcs"></a>Feltételes hozzáférés Windows rendszerű számítógépeken
 
-Az asztali számítógépeken ken beállítható feltételes hozzáférés a mobileszközökhöz hasonló lehetőségeket biztosít. Ez a szakasz a feltételes hozzáférés Intune által felügyelt Windows rendszerű gépeken alkalmazható módjait tekinti át.
+Az asztali számítógépeken ken beállítható feltételes hozzáférés a mobileszközökhöz hasonló lehetőségeket biztosít. Beszéljünk arról, hogyan használhatja a feltételes hozzáférést a számítógépek Intune-nal való kezeléséhez.
 
 #### <a name="corporate-owned"></a>Céges tulajdonú eszközök
 
@@ -87,7 +87,7 @@ Az asztali számítógépeken ken beállítható feltételes hozzáférés a mob
 
 - **Azure ad-tartományhoz csatlakoztatott és Intune-felügyelet:** Ez a forgatókönyv olyan szervezeteknek szól, amelyeknek először a felhőt szeretnék használni (azaz elsősorban a Cloud Services használatát, amelynek célja a helyszíni infrastruktúra használatának csökkentése) vagy csak felhőalapú (nincs helyszíni infrastruktúra). Az Azure AD-csatlakozás hibrid környezetben jól működik, és lehetővé teszi a Felhőbeli és a helyszíni alkalmazások és erőforrások elérését. Az eszköz csatlakozik az Azure AD-hez, és regisztrálva lesz az Intune-ban, amely feltételes hozzáférési feltételekként használható a vállalati erőforrások eléréséhez.
 
-#### <a name="bring-your-own-device-byod"></a>Saját eszközök használata (BYOD)
+#### <a name="bring-your-own-device-byod"></a>Saját eszközök használata (Bring Your Own Device, BYOD)
 
 - **Munkahelyi csatlakozás és Intune-felügyelet:** A felhasználók ebben az esetben a saját eszközeiket csatlakoztatva érhetik el a céges erőforrásokat és szolgáltatásokat. A munkahelyi csatlakoztatás és az eszközök regisztrálása az Intune MDM az eszköz szintű házirendek fogadásához, amelyek egy másik lehetőség a feltételes hozzáférési feltételek kiértékelésére.
 
@@ -142,11 +142,11 @@ Ha az EAS-rekord új, és nem ismeri az Intune-t, az Intune olyan parancsmagot a
 10. Az Exchange-kiszolgáló elküldi az értesítést az EAS-ügyfélhez, hogy a felhasználó hozzáférhessen az e-mailjeihez.
 
 
-#### <a name="whats-the-intune-role"></a>Mi az Intune szerepe?
+#### <a name="whats-the-intune-role"></a>Mi az Intune-szerepkör?
 
 Az Intune kiértékeli és felügyeli az eszköz állapotát.
 
-#### <a name="whats-the-exchange-server-role"></a>Mi az Exchange-kiszolgáló szerepe?
+#### <a name="whats-the-exchange-server-role"></a>Mi az Exchange Server-szerepkör?
 
 Az Exchange Server API-t és infrastruktúrát biztosít az eszközök karanténba helyezéséhez.
 

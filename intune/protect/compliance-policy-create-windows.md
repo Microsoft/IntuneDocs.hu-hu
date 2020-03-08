@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ca5d475f92cbe3298689273dcdf0da1644078b2
-ms.sourcegitcommit: a82d25d98fdf0ba766f8f074871d4f13725e23f9
+ms.openlocfilehash: e0fb33748c5bd21ca8997e2195ba0b7d71f4f6f9
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75547041"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78856119"
 ---
 # <a name="windows-10-and-later-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>Windows 10 és újabb beállítások az eszközök megfelelőségi vagy nem megfelelőként való megjelöléséhez az Intune használatával
 
@@ -44,7 +44,7 @@ Intune-rendszergazdaként ezeket a megfelelőségi beállításokat használhatj
 ### <a name="windows-health-attestation-service-evaluation-rules"></a>A Windows Health igazolási szolgáltatás kiértékelési szabályai
 
 - **BitLocker megkövetelése**:  
-   A Windows BitLocker meghajtótitkosítás a Windows operációs rendszer kötetén tárolt összes adatot titkosítja. A BitLocker a platformmegbízhatósági modul (TPM) segítségével gondoskodik a Windows operációs rendszer és a felhasználói adatainak védelméről. Azt is segít megerősíteni, hogy a számítógép nincs-e illetéktelenül megoldva, még akkor is, ha annak felügyelet nélküli, elveszett vagy ellopták. Ha a számítógépen kompatibilis TPM található, a BitLocker a TPM-mel zárolja az adatokat védő titkosítási kulcsokat. Ennek eredményeképpen a kulcsok nem érhetők el, amíg a TPM nem ellenőrzi a számítógép állapotát.  
+   A Windows BitLocker-meghajtótitkosítás titkosítja a Windows operációs rendszer kötetén tárolt összes adatot. A BitLocker a platformmegbízhatósági modul (TPM) segítségével gondoskodik a Windows operációs rendszer és a felhasználói adatainak védelméről. Azt is segít megerősíteni, hogy a számítógép nincs-e illetéktelenül megoldva, még akkor is, ha annak felügyelet nélküli, elveszett vagy ellopták. Ha a számítógépen kompatibilis TPM található, a BitLocker a TPM használatával zárolja az adatokat védő a titkosítási kulcsokat. Ennek eredményeképpen a kulcsok nem érhetők el, amíg a TPM nem ellenőrzi a számítógép állapotát.  
 
    - **Nincs konfigurálva** (*alapértelmezett*) – a rendszer nem értékeli ki a megfelelőségi és a nem megfelelőségi beállítást.
    - **Kötelező** – az eszköz a rendszer kikapcsolásakor vagy hibernálása esetén a meghajtón tárolt adatok védelme a jogosulatlan hozzáféréstől.  
@@ -106,7 +106,7 @@ Csak a Windows 10 és újabb rendszerű, közösen felügyelt eszközökre vonat
   - **Nincs konfigurálva** (*alapértelmezett*) – az Intune nem vizsgálja meg a megfelelőség Configuration Manager beállításait.
   - **Kötelező** – kötelezővé kell tennie az összes beállítást (a konfigurációs elemeket) a Configuration Manager.  
 
-    Megkövetelhető például, hogy minden szoftverfrissítés telepítve legyen az eszközökön. A Configuration Managerben az ehhez a követelményhez tartozó állapot a „Telepítve”. Ha az eszközön bármely program ismeretlen állapotban van, akkor az eszköz nem megfelelő az Intune-ban.
+    Megkövetelhető például, hogy minden szoftverfrissítés telepítve legyen az eszközökön. Configuration Managerban ez a követelmény a "telepített" állapottal rendelkezik. Ha az eszközön bármely program ismeretlen állapotban van, akkor az eszköz nem megfelelő az Intune-ban.
 
 ## <a name="system-security"></a>Rendszerbiztonság
 

@@ -18,18 +18,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cc2843073d11e5c9dae989a60f357dcfeb16a5d2
+ms.openlocfilehash: 075f4bdd52bfa72e2eaed051c765d77d7b80e6fd
 ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78290808"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78856222"
 ---
 # <a name="data-protection-framework-using-app-protection-policies"></a>Adatvédelmi szabályzatok az alkalmazás-védelmi házirendek használatával 
 
 Ahogy egyre több szervezet valósít meg mobileszköz-stratégiákat a munkahelyi vagy iskolai adatok eléréséhez, az adatszivárgás elleni védelem a legfontosabb. Az Intune Mobile Application Management megoldás az adatszivárgás elleni védelemhez az alkalmazás-védelmi szabályzatok (alkalmazás). Az alkalmazás olyan szabályok, amelyek biztosítják, hogy a szervezet által tárolt adatmennyiség biztonságban maradjon, vagy egy felügyelt alkalmazásban legyenek, függetlenül attól, hogy az eszköz regisztrálva van-e. További információ: az [app Protection-házirendek áttekintése](~/apps/app-protection-policy.md). 
 
-Az alkalmazás-védelmi szabályzatok konfigurálásakor a különböző beállítások és beállítások száma lehetővé teszi a szervezetek számára, hogy a védelmet az adott igényeknek megfelelően testre szabják. A rugalmasság miatt előfordulhat, hogy nem nyilvánvaló, hogy a teljes forgatókönyv megvalósításához szükség van a házirend-beállításokra. Annak érdekében, hogy a szervezetek a megerősítő törekvéseket rangsorolják, a Microsoft új besorolást vezetett be a [biztonsági konfigurációkhoz a Windows 10](https://aka.ms/secconframework)rendszerben, az Intune pedig kihasználja ezt a besorolást az alkalmazás-adatvédelmi keretrendszerhez a Mobile App Management szolgáltatásban.  
+Az alkalmazás-védelmi szabályzatok konfigurálásakor a különböző beállítások és beállítások száma lehetővé teszi a szervezetek számára, hogy a védelmet az adott igényeknek megfelelően testre szabják. A rugalmasság miatt előfordulhat, hogy nem nyilvánvaló, hogy a teljes forgatókönyv megvalósításához szükség van a házirend-beállításokra. Annak érdekében, hogy a szervezetek rangsorolják az ügyfél-végpontok megerősítésének céljait, a Microsoft új besorolást vezetett be a [Windows 10-es biztonsági konfigurációkhoz](https://aka.ms/secconframework), az Intune pedig hasonló besorolást alkalmaz a Mobile APP Management alkalmazás-adatvédelmi keretrendszeréhez.  
 
 Az alkalmazás adatvédelmi konfigurációs keretrendszere három különböző konfigurációs forgatókönyvbe van rendezve: 
 
@@ -48,7 +48,7 @@ A Microsoft a következő üzembe helyezési kör megközelítését javasolja a
 | Üzembe helyezési kör  | Bérlő  | Értékelő csapatok  | Kimenet  | Idővonal  |
 |--------------------|------------------------|-------------------------------------------------------------------|----------------------------------------------------------|----------------------------------------|
 | Minőségbiztosítás  | Üzem előtti bérlő  | Mobil képesség tulajdonosai, biztonság, kockázatértékelés, adatvédelem, UX  | Funkcionális forgatókönyvek ellenőrzése, vázlat dokumentációja  | 0-30 nap  |
-| Előzetes  | Üzemi bérlő  | Mobil képesség tulajdonosai, UX  | Végfelhasználói forgatókönyv érvényesítése, felhasználó felé irányuló dokumentáció  | 7-14 nap, utólagos minőségi garancia  |
+| Előzetes verzió  | Üzemi bérlő  | Mobil képesség tulajdonosai, UX  | Végfelhasználói forgatókönyv érvényesítése, felhasználó felé irányuló dokumentáció  | 7-14 nap, utólagos minőségi garancia  |
 | Éles  | Üzemi bérlő  | Mobil képesség tulajdonosai, informatikai ügyfélszolgálat  | –  | 7 nap több hétre, post Preview  |
 
 A fenti táblázat azt jelzi, hogy az alkalmazás-védelmi szabályzatok összes módosítását először üzem előtti környezetben kell végrehajtani, hogy tisztában legyen a házirend-beállítás következményeivel. A tesztelés befejezése után a változtatások behelyezhetők a termelési környezetbe, és alkalmazhatók az éles felhasználók egy részhalmazára, általában az IT-részlegre és az egyéb kapcsolódó csoportokra. Végül pedig a bevezetést elvégezheti a mobil felhasználói Közösség többi részén is. Az éles környezetbe való bevezetés hosszabb időt is igénybe vehet, attól függően, hogy milyen hatással van a változásra. Ha nincs felhasználói befolyás, a változásnak gyorsan el kell indulnia, míg ha a változás a felhasználó által kifejtett hatást eredményez, előfordulhat, hogy a bevezetésnek lassabbnak kell lennie, mivel a felhasználók populációjának módosításait kell kommunikálni. 
@@ -174,7 +174,8 @@ A 3. szinten kikényszerített házirend-beállítások közé tartozik a 2. és
 | Adatátvitel |       Adatok fogadása más alkalmazásokból  |          Szabályzattal felügyelt alkalmazások  |          iOS/iPadOS, Android         |  |
 | Adatátvitel |       Harmadik féltől származó billentyűzetek  |          Letiltás  |          iOS/iPadOS        | Az iOS-ben ez letiltja az összes külső gyártótól származó billentyűzet működését az alkalmazáson belül.  |
 | Adatátvitel |       Jóváhagyott billentyűzetek  |          Kötelező  |          Android:        | Android esetén a billentyűzeteket ki kell választani ahhoz, hogy használni lehessen az üzembe helyezett Android-eszközök alapján.  |
-| Adatátvitel |       Válassza ki a jóváhagyni kívánt billentyűzeteket  |          *Válassza ki a kívánt billentyűzeteket*  |          Android:        | Android esetén a billentyűzeteket ki kell választani ahhoz, hogy használni lehessen az üzembe helyezett Android-eszközök alapján.  |
+| Adatátvitel |       Válassza ki a jóváhagyni kívánt billentyűzeteket  |          *billentyűzetek hozzáadása/eltávolítása*  |          Android:        | Android esetén a billentyűzeteket ki kell választani ahhoz, hogy használni lehessen az üzembe helyezett Android-eszközök alapján.  |
+| Funkció |       Szervezeti adattárolók nyomtatása  |          Letiltás  |          iOS/iPadOS, Android         |  |
 
 #### <a name="access-requirements"></a>Hozzáférési követelmények
 
@@ -184,7 +185,6 @@ A 3. szinten kikényszerített házirend-beállítások közé tartozik a 2. és
 |       PIN-kód minimális hosszának kiválasztása  |          6  |          iOS/iPadOS, Android  |
 |       PIN-kód alaphelyzetbe állítása napok száma után  |          Igen  |          iOS/iPadOS, Android  |
 |       Napok száma  |          365  |          iOS/iPadOS, Android  |
-|       Válassza ki a megtartani kívánt korábbi PIN-értékek számát  |          5  |          Android:  |
 
 #### <a name="conditional-launch"></a>Feltételes indítás
 
@@ -195,10 +195,11 @@ A 3. szinten kikényszerített házirend-beállítások közé tartozik a 2. és
 
 ## <a name="next-steps"></a>További lépések
 
-- [Alkalmazásvédelmi szabályzatok létrehozása és telepítése Microsoft Intune-ban](app-protection-policies.md)
-- [Az Android-alkalmazások elérhető védelmi házirendjének beállításai a Microsoft Intune](app-protection-policy-settings-android.md)
-- [Az iOS/iPadOS app Protection házirend-beállításai a Microsoft Intune](app-protection-policy-settings-ios.md)
+A rendszergazdák az [Intune PowerShell-parancsfájljainak](https://github.com/microsoftgraph/powershell-intune-samples) [Intune app Protection](https://github.com/microsoft/Intune-Config-Frameworks/tree/master/AppProtectionPolicies) importálásával beépíthetik a fenti konfigurációs szinteket a gyűrűs üzembe helyezési módszertanban a tesztelési és a termelési célokra.
 
 ## <a name="see-also"></a>További információ
 
+- [Alkalmazásvédelmi szabályzatok létrehozása és telepítése Microsoft Intune-ban](app-protection-policies.md)
+- [Az Android-alkalmazások elérhető védelmi házirendjének beállításai a Microsoft Intune](app-protection-policy-settings-android.md)
+- [Az iOS/iPadOS app Protection házirend-beállításai a Microsoft Intune](app-protection-policy-settings-ios.md)
 - A harmadik féltől származó alkalmazások, például a Salesforce mobilalkalmazás, speciális módon működnek együtt az Intune-nal a vállalati adatok védelme érdekében. Ha szeretne többet megtudni arról, hogy a Salesforce alkalmazás konkrétan hogyan működik együtt az Intune-nal (az MDM alkalmazáskonfigurációs beállításait is beleértve), olvassa el [A Salesforce alkalmazás és a Microsoft Intune](https://gallery.technet.microsoft.com/Salesforce-App-and-Intune-c47d44ee/file/188000/1/Salesforce%20App%20and%20Intune%20for%20external.pdf) című témakört.

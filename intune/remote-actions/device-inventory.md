@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df814abf9cdff3eb4d9fbac8183618461b590adb
-ms.sourcegitcommit: 045ca42cad6f86024af9a38a380535f42a6b4bef
+ms.openlocfilehash: bef6f8a00b0b5df64dd1c65ad048fe8331911979
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77781917"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78856144"
 ---
 # <a name="see-device-details-in-intune"></a>Eszközadatok megtekintése az Intune-ban
 
@@ -45,7 +45,7 @@ Ez a cikk bemutatja, hogyan tekintheti meg az összes eszközét és azok tulajd
       - [Új PIN-kód](device-passcode-reset.md)
       - [Újraindítás](device-restart.md) (kizárólag Windowson)
       - [Újrakezdés](device-fresh-start.md) (kizárólag Windowson)
-      - [Autopilot alaphelyzetbe állítása]() (csak Windows)
+      - [Autopilot alaphelyzetbe állítása](/windows/deployment/windows-autopilot/windows-autopilot-reset#reset-devices-with-remote-windows-autopilot-reset) (csak Windows)
       - [Gyors vizsgálat](../configuration/device-restrictions-windows-10.md) (csak Windows 10 esetén)
       - [Teljes vizsgálat](../configuration/device-restrictions-windows-10.md) (csak Windows 10 esetén)
        - [Eszköz átnevezése](device-rename.md)
@@ -62,7 +62,7 @@ Az eszközök által használt szolgáltatótól függően az összes adat gyűj
 > [!Note]  
 > A hardver-és a szoftveres leltár 7 naponta frissül az Intune szolgáltatásban.
 
-|Adat|Leírás|Platform| 
+|Adat|Leírás|Platfvagym| 
 |--------------|----------------------|----|  
 |Név|Az eszköz neve.|Windows, iOS|
 |Felügyeleti név|A csak a konzolon használt eszköznév. Ennek a névnek a módosítása nem változtatja meg a nevet az eszközön.|Windows, iOS|

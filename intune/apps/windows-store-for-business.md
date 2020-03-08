@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 07463f3bcac7d657659ece7fed2c40db53ee2122
-ms.sourcegitcommit: a25f556aa9df4fcd9fdacccd12c9029bc6c5fe20
+ms.openlocfilehash: aa68716d31b95773c485cb93ef8c39fe9d9fa95e
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78256373"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78856179"
 ---
 # <a name="how-to-manage-volume-purchased-apps-from-the-microsoft-store-for-business-with-microsoft-intune"></a>Mennyiségi programban vásárolt alkalmazások felügyelete a Microsoft Store for Business és a Microsoft Intune használatával
 
@@ -52,7 +52,7 @@ Mielőtt elkezdené a Vállalati Microsoft Áruházból származó alkalmazások
 - A regisztrált eszközöknek a Windows 10 1511-es vagy újabb verzióját kell használniuk.
 
 > [!NOTE]
-Ha az áruházat a felügyelt eszközökön letiltja (manuálisan, házirend vagy Csoportházirend használatával), az online licenccel rendelkező alkalmazások telepítése sikertelen lesz.
+> Ha az áruházat a felügyelt eszközökön letiltja (manuálisan, házirend vagy Csoportházirend használatával), az online licenccel rendelkező alkalmazások telepítése sikertelen lesz.
 
 ## <a name="associate-your-microsoft-store-for-business-account-with-intune"></a>A Vállalati Microsoft Áruházbeli fiók összekapcsolása az Intune-nal
 Mielőtt engedélyezné a szinkronizálást az Intune-konzolon, konfigurálnia kell az áruházbeli fiókját az Intune használatára felügyeleti eszközként:

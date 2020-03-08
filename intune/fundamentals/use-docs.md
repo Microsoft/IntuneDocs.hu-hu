@@ -11,12 +11,12 @@ author: dougeby
 ms.author: dougeby
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: de30ade4c145a930ed370fd651c35bd57700c76d
-ms.sourcegitcommit: b4502dc09b82985265299968a11158f5898b56e0
+ms.openlocfilehash: cb833f54c994779409611d2dcdff48d92336c0c5
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78287540"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78856102"
 ---
 # <a name="using-the-intune-docs"></a>Az Intune-dokumentáció használata
 
@@ -117,7 +117,7 @@ Kövesse az alábbi általános irányelveket az Intune docs-ban való közremű
 
 ## <a name="consolidation-of-documentation-for-microsoft-endpoint-manager"></a>A Microsoft Endpoint Manager dokumentációjának összevonása
 
-Az Intune és a Configuration Manager együttes forgatókönyvének jobb támogatása érdekében ez a dokumentációs könyvtár [https://docs.microsoft.com/memdocs/intunere ](https://docs.microsoft.com/memdocs/intune)kerül. A Configuration Manager dokumentációs könyvtár később átkerül [https://docs.microsoft.com/memdocs/configmgrre ](https://docs.microsoft.com/memdocs/configmgr). Az összes hivatkozás automatikusan át lesz irányítva, így nem kell módosítania a tartalom olvasását.
+Az Intune és a Configuration Manager együttes forgatókönyvének jobb támogatása érdekében ez a dokumentációs könyvtár https://docs.microsoft.com/mem/intunere kerül. A Configuration Manager dokumentációs könyvtár később átkerül https://docs.microsoft.com/mem/configmgrre. Az összes hivatkozás automatikusan át lesz irányítva, így nem kell módosítania a tartalom olvasását.
 
 Ha visszajelzést ad, vagy hozzájárul a cikkekhez, néhány módosításra van szükség:
 

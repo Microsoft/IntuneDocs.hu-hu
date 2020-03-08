@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7251a2db0c36db9d01e51ca8fc62bd4e072d80e6
-ms.sourcegitcommit: 29f3ba071c9348686d3ad6f3b8864d8557e05b97
+ms.openlocfilehash: 88867e76df3d77aefc96a30c7e198f9d36950c25
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77609227"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78856068"
 ---
 # <a name="windows-10-app-deployment-by-using-microsoft-intune"></a>Windows 10-es alkalmazások központi telepítése Microsoft Intune használatával 
 
@@ -44,7 +44,7 @@ A Windows 10-es eszközökön támogatott alkalmazástípusok az üzleti alkalma
 
 Az egyes alkalmazás-típusok a Windows 10 azon verziója alapján támogatottak, amelyen a felhasználók futnak. A következő táblázat az alkalmazás típusát és a Windows 10 támogatását tartalmazza.
 
-| Alkalmazás típusa | Otthoni | Pro | Business | Enterprise | Oktatás | S üzemmód | HoloLens<sup>1 | Surface Hub | WCOS | Mobiltelefon |
+| Alkalmazás típusa | Otthoni | Pro | Business | Vállalati | Oktatás | S üzemmód | HoloLens<sup>1 | Surface Hub | WCOS | Mobiltelefon |
 |----------------|------|-----|----------|------------|-----------|--------|-----------|------------|------|--------|
 |  . MSI | Nem | Igen | Igen | Igen | Igen | Nem | Nem | Nem | Nem | Nem |
 | . IntuneWin | Nem | Igen | Igen | Igen | Igen | 19H2 + | Nem | Nem | Nem | Nem |
@@ -54,9 +54,11 @@ Az egyes alkalmazás-típusok a Windows 10 azon verziója alapján támogatottak
 | Online MSFB | Igen | Igen | Igen | Igen | Igen | Igen | RS4 + | Nem | Igen | Igen |
 | Webalkalmazások | Igen | Igen | Igen | Igen | Igen | Igen | Igen<sup>2 | Igen<sup>2 | Igen | Igen<sup>2 |
 | Tár hivatkozása | Igen | Igen | Igen | Igen | Igen | Igen | Igen | Igen | Igen | Igen |
+| Microsoft Edge | Nem | Igen | Igen | Igen | Igen | 19H2 +<sup>3 | Nem | Nem | Nem | Nem |
 
 <sup>1</sup> az alkalmazások kezelésének feloldásához frissítse a HoloLens eszközt a [holografikus for Business](../fundamentals/windows-holographic-for-business.md)rendszerre.<br />
-<sup>2</sup> indítás csak a céges portál.
+<sup>2</sup> indítás csak a céges portál.<br />
+<sup>3</sup> az Edge-alkalmazás sikeres telepítéséhez az eszközöknek is hozzá kell rendelni az S-Mode házirendet.
 
 > [!NOTE]
 > Minden Windows-alkalmazás típusához regisztráció szükséges.

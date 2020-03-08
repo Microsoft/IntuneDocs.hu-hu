@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af5bb1c95a15a5c52585278605e2f7a86307cb76
-ms.sourcegitcommit: 045ca42cad6f86024af9a38a380535f42a6b4bef
+ms.openlocfilehash: 7a322788dba092f44af2f0664fe810f8392b9f56
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77782232"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78855983"
 ---
 # <a name="disable-activation-lock-on-supervised-iosipados-devices-with-intune"></a>A felügyelt iOS-/iPadOS-eszközök Aktiválási zár letiltása az Intune-nal
 
@@ -62,7 +62,7 @@ Az Intune az iOS/iPadOS 8,0-es vagy újabb verzióját futtató felügyelt eszk�
 ## <a name="before-you-start"></a>Előkészületek
 Az eszközök Aktiválási zár letiltásához a következő utasításokat követve engedélyeznie kell azt:
 
-1. Az [eszköz korlátozási beállításainak konfigurálása](/intune-azure/configure-devices/how-to-configure-device-restrictions)című témakörben leírtak alapján konfigurálhatja az iOS/iPadOS Intune-eszköz korlátozási profilját.
+1. Az [eszköz korlátozási beállításainak konfigurálása](../configuration/device-restrictions-configure.md)című témakörben leírtak alapján konfigurálhatja az iOS/iPadOS Intune-eszköz korlátozási profilját.
 2. Az [iOS/iPadOS eszköz korlátozási beállításainál](../configuration/device-restrictions-ios.md)az **általános** beállítások területen engedélyezze a **aktiválási zár**lehetőséget.
 3. Mentse a profilt, majd [rendelje](../configuration/device-profile-assign.md) hozzá azokhoz az eszközökhöz, amelyeken a letiltási aktiválási zár szeretné kezelni.
 
@@ -78,7 +78,7 @@ Az Intune **Disable aktiválási zár** távoli eszköz művelettel a felhaszná
 3. Az **Intune** panelen válassza az **Eszközök** lehetőséget.
 4. Az **Eszközök** panelen válassza a **Minden eszköz** lehetőséget.
 5. A felügyelt eszközök listájában válassza a Aktiválási zár eszköz távoli **letiltása** műveletet.
-6. Nyissa meg az eszköz „Hardver” szakaszát, majd **feltételes hozzáféréssel** másolja ki az **Aktiválási zár megkerülési kódjának** értékét.
+6. Nyissa meg az eszköz "hardver" szakaszát, majd másolja a **aktiválási zár megkerülő kód** értékét a **feltételes hozzáférés lehetőségre**.
 
     >[!NOTE]
     >Az eszköz összes adatának törlése előtt másolja ki a megkerülési kódot. Ha az eszközbeállításokat a kód kimásolása előtt állítja vissza, a kód el lesz távolítva az Azure-ból.
