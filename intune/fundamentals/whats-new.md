@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c6a9033b0c4ac241b7fbc8a34db7e757229d82c5
+ms.openlocfilehash: eb34a67539e1c2ed181189589aa3fc5b0e86fa97
 ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78290276"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78893162"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Újdonságok a Microsoft Intune-ban
 
@@ -66,7 +66,7 @@ A Microsoft Endpoint Manager egyetlen konzolon egyesíti a Configuration Manager
 A frissítés telepítése előtt tekintse át a [Configuration Manager Technical Preview-cikket](https://docs.microsoft.com/configmgr/core/get-started/technical-preview) . Ez a cikk az általános követelményeket és korlátozásokat ismerteti a technikai előzetes verzió használatára, a verziók közötti frissítésre és a visszajelzések megadására vonatkozóan.
 
 #### <a name="bulk-remote-actions--4576882--"></a>Tömeges távoli műveletek<!--4576882-->
-Mostantól tömeges parancsokat is kiállíthat a következő távoli műveletekhez: újraindítás, átnevezés, Autopilot alaphelyzetbe állítása, szinkronizálás, törlés és törlés. Az új tömeges műveletek megtekintéséhez lépjen a [Microsoft Endpoint Manager felügyeleti központ](https://go.microsoft.com/fwlink/?linkid=2109431) > **eszközök** > **minden eszköz** > **tömeges műveletek**.
+Mostantól tömeges parancsokat is kiadhat a következő távoli műveletekhez: újraindítás, átnevezés, Autopilot alaphelyzetbe állítása, törlés és törlés. Az új tömeges műveletek megtekintéséhez lépjen a [Microsoft Endpoint Manager felügyeleti központ](https://go.microsoft.com/fwlink/?linkid=2109431) > **eszközök** > **minden eszköz** > **tömeges műveletek**.
 
 #### <a name="all-devices-list-improved-search-sort-and-filter--6179023--"></a>Minden eszköz lista Továbbfejlesztett keresés, rendezés és szűrés<!--6179023-->
 A minden eszköz lista javult a jobb teljesítmény, a keresés, a rendezés és a szűrés érdekében.
