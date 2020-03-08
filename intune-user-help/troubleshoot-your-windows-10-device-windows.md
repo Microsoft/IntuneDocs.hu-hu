@@ -20,11 +20,11 @@ ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
 ms.openlocfilehash: 75c28fb662daaf96aba6324b468b50e7c9081fd2
-ms.sourcegitcommit: caee3c3fa77586314aa8040b0caf32a0527b669e
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75857891"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78369067"
 ---
 # <a name="troubleshoot-your-windows-10-device-enrollment"></a>Windows 10-es eszközök regisztrálásával kapcsolatos problémák elhárítása
 Ha regisztrálta az eszközt, de továbbra sem tud hozzáférni a munkahelyi vagy iskolai e-mailekhez és fájlokhoz, próbálja meg ezeket a hibaelhárítási lépéseket.  

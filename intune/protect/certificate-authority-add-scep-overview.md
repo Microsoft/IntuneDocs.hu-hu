@@ -17,11 +17,11 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 85aac54a81d81dc138dd12612db183aae839b72b
-ms.sourcegitcommit: 47c9af81c385c7e893fe5a85eb79cf08e69e6831
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77575986"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370035"
 ---
 # <a name="add-partner-certification-authority-in-intune-using-scep"></a>Partner hitelesítésszolgáltató hozzáadása az Intune-ban SCEP protokollal
 
@@ -89,7 +89,7 @@ Ehhez mindenképpen rendelkeznie kell az Azure AD-alkalmazás regisztrálásáho
    > [!IMPORTANT]  
    > Mielőtt elhagyja ezt a lapot, másolja ki az ügyfél titkos kulcsának értékét, és jegyezze fel későbbi használatra a külső HITELESÍTÉSSZOLGÁLTATÓ által megvalósított implementációval. Ez az érték nem jelenik meg újra. Mindenképpen tekintse át a külső HITELESÍTÉSSZOLGÁLTATÓ útmutatását, hogy miként szeretné beállítani az alkalmazás AZONOSÍTÓját, a hitelesítési kulcsot és a bérlő AZONOSÍTÓját.  
 
-6. Jegyezze fel a **bérlő azonosítóját**. A bérlő azonosítója a fiókhoz tartozó @ bejelentkezés után a tartomány szövege. Ha például a fiókja *admin@name.onmicrosoft.com*, akkor a bérlő azonosítója **Name.onmicrosoft.com**.  
+6. Jegyezze fel a **bérlő azonosítóját**. A bérlő azonosítója a fiókhoz tartozó @ bejelentkezés után a tartomány szövege. Ha például a fiókja *admin@name.onmicrosoft.com* , akkor a bérlő azonosítója **Name.onmicrosoft.com**.  
 
 7. Az alkalmazás navigációs ablaktábláján nyissa meg az **API-engedélyeket** a **kezelés**területen, majd válassza az **engedély hozzáadása**elemet.  
 
