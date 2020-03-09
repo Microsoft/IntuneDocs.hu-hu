@@ -16,15 +16,15 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 358a396e762f1f20051abadfc2f3df80f37ca8c8
-ms.sourcegitcommit: ebf72b038219904d6e7d20024b107f4aa68f57e6
+ms.sourcegitcommit: 25e4847ead0f56c269cfefe1e01c1b9106a28cf1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72502295"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78368466"
 ---
 # <a name="macos-endpoint-protection-settings-in-intune"></a>MacOS Endpoint Protection-beállítások az Intune-ban  
 
-Ez a cikk a macOS-t futtató eszközökhöz konfigurálható Endpoint Protection-beállításokat ismerteti. Ezeket a beállításokat macOS-eszköz konfigurációs profiljának használatával konfigurálhatja [az Intune](endpoint-protection-configure.md) -ban.  
+A cikk a macOS rendszerű eszközökhöz konfigurálható, végpontvédelemre vonatkozó beállításokat mutatja be. Ezeket a beállításokat macOS-eszköz konfigurációs profiljának használatával konfigurálhatja [az Intune](endpoint-protection-configure.md) -ban.  
 
 ## <a name="gatekeeper"></a>Forgalomirányító  
 
